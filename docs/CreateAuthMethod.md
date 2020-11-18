@@ -1,0 +1,14 @@
+# CreateAuthMethod
+
+## Properties
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**access_expires** | **int** | Access expiration date in Unix timestamp (select 0 for access without expiry date) | [optional] [default to 0]
+**bound_ips** | **list[str]** | A CIDR whitelist with the IPs that the access is restricted to | [optional] 
+**name** | **str** | Auth Method name | 
+**token** | **str** | Use a specific profile from your akeyless/profiles/ folder | [optional] 
+**uid_token** | **str** | The universal identity token, Required only for universal_identity authentication | [optional] 
+
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+
+
