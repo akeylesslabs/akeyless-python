@@ -57,6 +57,7 @@ Method | HTTP request | Description
 [**list_roles**](V2Api.md#list_roles) | **POST** /list-roles | 
 [**list_targets**](V2Api.md#list_targets) | **POST** /list-targets | 
 [**move_objects**](V2Api.md#move_objects) | **POST** /move-objects | 
+[**raw_creds**](V2Api.md#raw_creds) | **POST** /raw-creds | 
 [**refresh_key**](V2Api.md#refresh_key) | **POST** /refresh-key | 
 [**reverse_rbac**](V2Api.md#reverse_rbac) | **POST** /reverse-rbac | 
 [**rollback_secret**](V2Api.md#rollback_secret) | **POST** /rollback-secret | 
@@ -3262,6 +3263,66 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | moveObjectsResponse wraps response body. |  -  |
+**0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **raw_creds**
+> SystemAccessCredentialsReplyObj raw_creds(body=body)
+
+
+
+### Example
+
+```python
+from __future__ import print_function
+import time
+import akeyless
+from akeyless.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.akeyless.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = akeyless.Configuration(
+    host = "https://api.akeyless.io"
+)
+
+
+# Enter a context with an instance of the API client
+with akeyless.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = akeyless.V2Api(api_client)
+    body = akeyless.RawCreds() # RawCreds |  (optional)
+
+    try:
+        api_response = api_instance.raw_creds(body=body)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling V2Api->raw_creds: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**RawCreds**](RawCreds.md)|  | [optional] 
+
+### Return type
+
+[**SystemAccessCredentialsReplyObj**](SystemAccessCredentialsReplyObj.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | rawCredsResponse wraps response body. |  -  |
 **0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
