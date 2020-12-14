@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **bound_clients_id** | **list[str]** | The clients ids that login is restricted to. | [optional] 
 **issuer** | **str** | Issuer URL | [optional] 
 **jwks_uri** | **str** | The URL to the JSON Web Key Set (JWKS) that containing the public keys that should be used to verify any JSON Web Token (JWT) issued by the authorization server. | [optional] 
+**unique_identifier** | **str** | A unique identifier to distinguish different users | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

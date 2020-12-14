@@ -5,7 +5,7 @@ reverseRBAC is a command that shows which auth methods have access to a particul
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **path** | **str** | Path to an object | 
-**token** | **str** | Use a specific profile from your akeyless/profiles/ folder | [optional] 
+**token** | **str** | Authentication token (see &#x60;/auth&#x60; and &#x60;/configure&#x60;) | [optional] 
 **type** | **str** | Type of object (item, am, role) | 
 **uid_token** | **str** | The universal identity token, Required only for universal_identity authentication | [optional] 
 

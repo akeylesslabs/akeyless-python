@@ -19,7 +19,7 @@ Name | Type | Description | Notes
 **issuer** | **str** | Issuer URL | [optional] [default to 'https://sts.windows.net/---bound_tenant_id---']
 **jwks_uri** | **str** | The URL to the JSON Web Key Set (JWKS) that containing the public keys that should be used to verify any JSON Web Token (JWT) issued by the authorization server. | [optional] [default to 'https://login.microsoftonline.com/common/discovery/keys']
 **name** | **str** | Auth Method name | 
-**token** | **str** | Use a specific profile from your akeyless/profiles/ folder | [optional] 
+**token** | **str** | Authentication token (see &#x60;/auth&#x60; and &#x60;/configure&#x60;) | [optional] 
 **uid_token** | **str** | The universal identity token, Required only for universal_identity authentication | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

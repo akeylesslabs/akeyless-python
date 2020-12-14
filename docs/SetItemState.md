@@ -5,7 +5,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **desired_state** | **str** | Desired item state (Enabled, Disabled) | 
 **name** | **str** | Current item name | 
-**token** | **str** | Use a specific profile from your akeyless/profiles/ folder | [optional] 
+**token** | **str** | Authentication token (see &#x60;/auth&#x60; and &#x60;/configure&#x60;) | [optional] 
 **uid_token** | **str** | The universal identity token, Required only for universal_identity authentication | [optional] 
 **version** | **int** | The specific version you want to update: 0&#x3D;item level state (default) | [optional] [default to 0]
 

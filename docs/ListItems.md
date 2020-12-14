@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **pagination_token** | **str** | Next page reference | [optional] 
 **path** | **str** | Path to folder | [optional] 
 **tag** | **str** | Filter by item tag | [optional] 
-**token** | **str** | Use a specific profile from your akeyless/profiles/ folder | [optional] 
+**token** | **str** | Authentication token (see &#x60;/auth&#x60; and &#x60;/configure&#x60;) | [optional] 
 **type** | **list[str]** | The item types list of the requested items. In case it is empty, all types of items will be returned. options: [key, static-secret, dynamic-secret] | [optional] 
 **uid_token** | **str** | The universal identity token, Required only for universal_identity authentication | [optional] 
 

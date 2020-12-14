@@ -16,6 +16,7 @@ Name | Type | Description | Notes
 **item_size** | **int** |  | [optional] 
 **item_state** | **str** | ItemState defines the different states an Item can be in | [optional] 
 **item_tags** | **list[str]** |  | [optional] 
+**item_targets_assoc** | [**list[ItemTargetAssociation]**](ItemTargetAssociation.md) |  | [optional] 
 **item_type** | **str** |  | [optional] 
 **item_versions** | [**list[ItemVersion]**](ItemVersion.md) |  | [optional] 
 **last_version** | **int** |  | [optional] 

@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **name** | **str** | SSH certificate issuer name | 
 **principals** | **str** | Signed certificates with principal, e.g example_role1,example_role2 | [optional] 
 **signer_key_name** | **str** | A key to sign the certificate with | 
-**token** | **str** | Use a specific profile from your akeyless/profiles/ folder | [optional] 
+**token** | **str** | Authentication token (see &#x60;/auth&#x60; and &#x60;/configure&#x60;) | [optional] 
 **ttl** | **int** | The requested Time To Live for the certificate, use second units | 
 **uid_token** | **str** | The universal identity token, Required only for universal_identity authentication | [optional] 
 
