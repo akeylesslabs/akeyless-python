@@ -159,6 +159,7 @@ from akeyless.models.static_creds_auth_output import StaticCredsAuthOutput
 from akeyless.models.system_access_credentials_reply_obj import SystemAccessCredentialsReplyObj
 from akeyless.models.target import Target
 from akeyless.models.target_item_association import TargetItemAssociation
+from akeyless.models.target_type_detailes_input import TargetTypeDetailesInput
 from akeyless.models.uid_token_details import UIDTokenDetails
 from akeyless.models.uid_create_child_token import UidCreateChildToken
 from akeyless.models.uid_create_child_token_output import UidCreateChildTokenOutput
@@ -171,7 +172,6 @@ from akeyless.models.uid_rotate_token_output import UidRotateTokenOutput
 from akeyless.models.unconfigure import Unconfigure
 from akeyless.models.universal_identity_access_rules import UniversalIdentityAccessRules
 from akeyless.models.universal_identity_details import UniversalIdentityDetails
-from akeyless.models.update import Update
 from akeyless.models.update_aws_target_details import UpdateAWSTargetDetails
 from akeyless.models.update_db_target_details import UpdateDBTargetDetails
 from akeyless.models.update_item import UpdateItem

@@ -42,6 +42,7 @@ class Item(object):
         'deletion_date': 'datetime',
         'is_enabled': 'bool',
         'item_general_info': 'ItemGeneralInfo',
+        'item_id': 'int',
         'item_metadata': 'str',
         'item_name': 'str',
         'item_size': 'int',
@@ -52,7 +53,6 @@ class Item(object):
         'item_versions': 'list[ItemVersion]',
         'last_version': 'int',
         'next_rotation_date': 'datetime',
-        'producer_status': 'str',
         'protection_key_name': 'str',
         'public_value': 'str',
         'rotation_interval': 'int',
@@ -68,6 +68,7 @@ class Item(object):
         'deletion_date': 'deletion_date',
         'is_enabled': 'is_enabled',
         'item_general_info': 'item_general_info',
+        'item_id': 'item_id',
         'item_metadata': 'item_metadata',
         'item_name': 'item_name',
         'item_size': 'item_size',
@@ -78,14 +79,13 @@ class Item(object):
         'item_versions': 'item_versions',
         'last_version': 'last_version',
         'next_rotation_date': 'next_rotation_date',
-        'producer_status': 'producer_status',
         'protection_key_name': 'protection_key_name',
         'public_value': 'public_value',
         'rotation_interval': 'rotation_interval',
         'with_customer_fragment': 'with_customer_fragment'
     }
 
-    def __init__(self, auto_rotate=None, cert_issuer_signer_key_name=None, certificate_issue_details=None, certificates=None, client_permissions=None, deletion_date=None, is_enabled=None, item_general_info=None, item_metadata=None, item_name=None, item_size=None, item_state=None, item_tags=None, item_targets_assoc=None, item_type=None, item_versions=None, last_version=None, next_rotation_date=None, producer_status=None, protection_key_name=None, public_value=None, rotation_interval=None, with_customer_fragment=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, auto_rotate=None, cert_issuer_signer_key_name=None, certificate_issue_details=None, certificates=None, client_permissions=None, deletion_date=None, is_enabled=None, item_general_info=None, item_id=None, item_metadata=None, item_name=None, item_size=None, item_state=None, item_tags=None, item_targets_assoc=None, item_type=None, item_versions=None, last_version=None, next_rotation_date=None, protection_key_name=None, public_value=None, rotation_interval=None, with_customer_fragment=None, local_vars_configuration=None):  # noqa: E501
         """Item - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -99,6 +99,7 @@ class Item(object):
         self._deletion_date = None
         self._is_enabled = None
         self._item_general_info = None
+        self._item_id = None
         self._item_metadata = None
         self._item_name = None
         self._item_size = None
@@ -109,7 +110,6 @@ class Item(object):
         self._item_versions = None
         self._last_version = None
         self._next_rotation_date = None
-        self._producer_status = None
         self._protection_key_name = None
         self._public_value = None
         self._rotation_interval = None
@@ -132,6 +132,8 @@ class Item(object):
             self.is_enabled = is_enabled
         if item_general_info is not None:
             self.item_general_info = item_general_info
+        if item_id is not None:
+            self.item_id = item_id
         if item_metadata is not None:
             self.item_metadata = item_metadata
         if item_name is not None:
@@ -152,8 +154,6 @@ class Item(object):
             self.last_version = last_version
         if next_rotation_date is not None:
             self.next_rotation_date = next_rotation_date
-        if producer_status is not None:
-            self.producer_status = producer_status
         if protection_key_name is not None:
             self.protection_key_name = protection_key_name
         if public_value is not None:
@@ -330,6 +330,27 @@ class Item(object):
         """
 
         self._item_general_info = item_general_info
+
+    @property
+    def item_id(self):
+        """Gets the item_id of this Item.  # noqa: E501
+
+
+        :return: The item_id of this Item.  # noqa: E501
+        :rtype: int
+        """
+        return self._item_id
+
+    @item_id.setter
+    def item_id(self, item_id):
+        """Sets the item_id of this Item.
+
+
+        :param item_id: The item_id of this Item.  # noqa: E501
+        :type: int
+        """
+
+        self._item_id = item_id
 
     @property
     def item_metadata(self):
@@ -542,29 +563,6 @@ class Item(object):
         """
 
         self._next_rotation_date = next_rotation_date
-
-    @property
-    def producer_status(self):
-        """Gets the producer_status of this Item.  # noqa: E501
-
-        ProducerStatus defines types of Producer Status  # noqa: E501
-
-        :return: The producer_status of this Item.  # noqa: E501
-        :rtype: str
-        """
-        return self._producer_status
-
-    @producer_status.setter
-    def producer_status(self, producer_status):
-        """Sets the producer_status of this Item.
-
-        ProducerStatus defines types of Producer Status  # noqa: E501
-
-        :param producer_status: The producer_status of this Item.  # noqa: E501
-        :type: str
-        """
-
-        self._producer_status = producer_status
 
     @property
     def protection_key_name(self):

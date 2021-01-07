@@ -67,7 +67,7 @@ class UidListChildren(object):
     def auth_method_name(self):
         """Gets the auth_method_name of this UidListChildren.  # noqa: E501
 
-        The universal identity auth method name  # noqa: E501
+        The universal identity auth method name, required only when uid-token is not provided  # noqa: E501
 
         :return: The auth_method_name of this UidListChildren.  # noqa: E501
         :rtype: str
@@ -78,7 +78,7 @@ class UidListChildren(object):
     def auth_method_name(self, auth_method_name):
         """Sets the auth_method_name of this UidListChildren.
 
-        The universal identity auth method name  # noqa: E501
+        The universal identity auth method name, required only when uid-token is not provided  # noqa: E501
 
         :param auth_method_name: The auth_method_name of this UidListChildren.  # noqa: E501
         :type: str

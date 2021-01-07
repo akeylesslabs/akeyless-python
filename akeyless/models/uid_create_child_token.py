@@ -40,7 +40,8 @@ class UidCreateChildToken(object):
         'child_ttl': 'int',
         'comment': 'str',
         'token': 'str',
-        'uid_token': 'str'
+        'uid_token': 'str',
+        'uid_token_id': 'str'
     }
 
     attribute_map = {
@@ -50,10 +51,11 @@ class UidCreateChildToken(object):
         'child_ttl': 'child-ttl',
         'comment': 'comment',
         'token': 'token',
-        'uid_token': 'uid-token'
+        'uid_token': 'uid-token',
+        'uid_token_id': 'uid-token-id'
     }
 
-    def __init__(self, auth_method_name=None, child_deny_inheritance=None, child_deny_rotate=None, child_ttl=None, comment=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, auth_method_name=None, child_deny_inheritance=None, child_deny_rotate=None, child_ttl=None, comment=None, token=None, uid_token=None, uid_token_id=None, local_vars_configuration=None):  # noqa: E501
         """UidCreateChildToken - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -66,6 +68,7 @@ class UidCreateChildToken(object):
         self._comment = None
         self._token = None
         self._uid_token = None
+        self._uid_token_id = None
         self.discriminator = None
 
         if auth_method_name is not None:
@@ -82,12 +85,14 @@ class UidCreateChildToken(object):
             self.token = token
         if uid_token is not None:
             self.uid_token = uid_token
+        if uid_token_id is not None:
+            self.uid_token_id = uid_token_id
 
     @property
     def auth_method_name(self):
         """Gets the auth_method_name of this UidCreateChildToken.  # noqa: E501
 
-        The universal identity auth method name  # noqa: E501
+        The universal identity auth method name, required only when uid-token is not provided  # noqa: E501
 
         :return: The auth_method_name of this UidCreateChildToken.  # noqa: E501
         :rtype: str
@@ -98,7 +103,7 @@ class UidCreateChildToken(object):
     def auth_method_name(self, auth_method_name):
         """Sets the auth_method_name of this UidCreateChildToken.
 
-        The universal identity auth method name  # noqa: E501
+        The universal identity auth method name, required only when uid-token is not provided  # noqa: E501
 
         :param auth_method_name: The auth_method_name of this UidCreateChildToken.  # noqa: E501
         :type: str
@@ -243,6 +248,29 @@ class UidCreateChildToken(object):
         """
 
         self._uid_token = uid_token
+
+    @property
+    def uid_token_id(self):
+        """Gets the uid_token_id of this UidCreateChildToken.  # noqa: E501
+
+        The ID of the uid-token, required only when uid-token is not provided  # noqa: E501
+
+        :return: The uid_token_id of this UidCreateChildToken.  # noqa: E501
+        :rtype: str
+        """
+        return self._uid_token_id
+
+    @uid_token_id.setter
+    def uid_token_id(self, uid_token_id):
+        """Sets the uid_token_id of this UidCreateChildToken.
+
+        The ID of the uid-token, required only when uid-token is not provided  # noqa: E501
+
+        :param uid_token_id: The uid_token_id of this UidCreateChildToken.  # noqa: E501
+        :type: str
+        """
+
+        self._uid_token_id = uid_token_id
 
     def to_dict(self):
         """Returns the model properties as a dict"""
