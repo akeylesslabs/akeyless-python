@@ -34,43 +34,66 @@ class GetDynamicSecretValue(object):
                             and the value is json key in definition.
     """
     openapi_types = {
+        'host': 'str',
         'name': 'str',
-        'tag_host': 'str',
         'target': 'str',
         'token': 'str',
         'uid_token': 'str'
     }
 
     attribute_map = {
+        'host': 'host',
         'name': 'name',
-        'tag_host': 'tag-host',
         'target': 'target',
         'token': 'token',
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, name=None, tag_host=None, target=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, host=None, name=None, target=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """GetDynamicSecretValue - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
+        self._host = None
         self._name = None
-        self._tag_host = None
         self._target = None
         self._token = None
         self._uid_token = None
         self.discriminator = None
 
+        if host is not None:
+            self.host = host
         self.name = name
-        if tag_host is not None:
-            self.tag_host = tag_host
         if target is not None:
             self.target = target
         if token is not None:
             self.token = token
         if uid_token is not None:
             self.uid_token = uid_token
+
+    @property
+    def host(self):
+        """Gets the host of this GetDynamicSecretValue.  # noqa: E501
+
+        Host  # noqa: E501
+
+        :return: The host of this GetDynamicSecretValue.  # noqa: E501
+        :rtype: str
+        """
+        return self._host
+
+    @host.setter
+    def host(self, host):
+        """Sets the host of this GetDynamicSecretValue.
+
+        Host  # noqa: E501
+
+        :param host: The host of this GetDynamicSecretValue.  # noqa: E501
+        :type: str
+        """
+
+        self._host = host
 
     @property
     def name(self):
@@ -96,29 +119,6 @@ class GetDynamicSecretValue(object):
             raise ValueError("Invalid value for `name`, must not be `None`")  # noqa: E501
 
         self._name = name
-
-    @property
-    def tag_host(self):
-        """Gets the tag_host of this GetDynamicSecretValue.  # noqa: E501
-
-        Host  # noqa: E501
-
-        :return: The tag_host of this GetDynamicSecretValue.  # noqa: E501
-        :rtype: str
-        """
-        return self._tag_host
-
-    @tag_host.setter
-    def tag_host(self, tag_host):
-        """Sets the tag_host of this GetDynamicSecretValue.
-
-        Host  # noqa: E501
-
-        :param tag_host: The tag_host of this GetDynamicSecretValue.  # noqa: E501
-        :type: str
-        """
-
-        self._tag_host = tag_host
 
     @property
     def target(self):
