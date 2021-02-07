@@ -3,6 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**args** | **list[str]** | Optional input as &#x60;key-value&#x60; pairs | [optional] 
 **host** | **str** | Host | [optional] 
 **name** | **str** | Dynamic secret name | 
 **target** | **str** | Target Name | [optional] 

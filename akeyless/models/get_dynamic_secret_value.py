@@ -34,6 +34,7 @@ class GetDynamicSecretValue(object):
                             and the value is json key in definition.
     """
     openapi_types = {
+        'args': 'list[str]',
         'host': 'str',
         'name': 'str',
         'target': 'str',
@@ -42,6 +43,7 @@ class GetDynamicSecretValue(object):
     }
 
     attribute_map = {
+        'args': 'args',
         'host': 'host',
         'name': 'name',
         'target': 'target',
@@ -49,12 +51,13 @@ class GetDynamicSecretValue(object):
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, host=None, name=None, target=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, args=None, host=None, name=None, target=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """GetDynamicSecretValue - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
+        self._args = None
         self._host = None
         self._name = None
         self._target = None
@@ -62,6 +65,8 @@ class GetDynamicSecretValue(object):
         self._uid_token = None
         self.discriminator = None
 
+        if args is not None:
+            self.args = args
         if host is not None:
             self.host = host
         self.name = name
@@ -71,6 +76,29 @@ class GetDynamicSecretValue(object):
             self.token = token
         if uid_token is not None:
             self.uid_token = uid_token
+
+    @property
+    def args(self):
+        """Gets the args of this GetDynamicSecretValue.  # noqa: E501
+
+        Optional input as `key-value` pairs  # noqa: E501
+
+        :return: The args of this GetDynamicSecretValue.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._args
+
+    @args.setter
+    def args(self, args):
+        """Sets the args of this GetDynamicSecretValue.
+
+        Optional input as `key-value` pairs  # noqa: E501
+
+        :param args: The args of this GetDynamicSecretValue.  # noqa: E501
+        :type: list[str]
+        """
+
+        self._args = args
 
     @property
     def host(self):
