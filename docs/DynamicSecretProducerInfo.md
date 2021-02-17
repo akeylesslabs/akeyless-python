@@ -4,6 +4,7 @@ DynamicSecretProducerInfo The dynamic secret producer info This parameter releva
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**producer_metadata** | **str** |  | [optional] 
 **producer_status** | **str** | ProducerStatus defines types of Producer Status | [optional] 
 **producer_type** | **str** |  | [optional] 
 

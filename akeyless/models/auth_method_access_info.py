@@ -35,6 +35,7 @@ class AuthMethodAccessInfo(object):
     """
     openapi_types = {
         'access_expires': 'int',
+        'access_id_alias': 'str',
         'api_key_access_rules': 'APIKeyAccessRules',
         'aws_iam_access_rules': 'AWSIAMAccessRules',
         'azure_ad_access_rules': 'AzureADAccessRules',
@@ -50,6 +51,7 @@ class AuthMethodAccessInfo(object):
 
     attribute_map = {
         'access_expires': 'access_expires',
+        'access_id_alias': 'access_id_alias',
         'api_key_access_rules': 'api_key_access_rules',
         'aws_iam_access_rules': 'aws_iam_access_rules',
         'azure_ad_access_rules': 'azure_ad_access_rules',
@@ -63,13 +65,14 @@ class AuthMethodAccessInfo(object):
         'universal_identity_access_rules': 'universal_identity_access_rules'
     }
 
-    def __init__(self, access_expires=None, api_key_access_rules=None, aws_iam_access_rules=None, azure_ad_access_rules=None, cidr_whitelist=None, email_pass_access_rules=None, huawei_access_rules=None, ldap_access_rules=None, oauth2_access_rules=None, rules_type=None, saml_access_rules=None, universal_identity_access_rules=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, access_expires=None, access_id_alias=None, api_key_access_rules=None, aws_iam_access_rules=None, azure_ad_access_rules=None, cidr_whitelist=None, email_pass_access_rules=None, huawei_access_rules=None, ldap_access_rules=None, oauth2_access_rules=None, rules_type=None, saml_access_rules=None, universal_identity_access_rules=None, local_vars_configuration=None):  # noqa: E501
         """AuthMethodAccessInfo - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._access_expires = None
+        self._access_id_alias = None
         self._api_key_access_rules = None
         self._aws_iam_access_rules = None
         self._azure_ad_access_rules = None
@@ -85,6 +88,8 @@ class AuthMethodAccessInfo(object):
 
         if access_expires is not None:
             self.access_expires = access_expires
+        if access_id_alias is not None:
+            self.access_id_alias = access_id_alias
         if api_key_access_rules is not None:
             self.api_key_access_rules = api_key_access_rules
         if aws_iam_access_rules is not None:
@@ -128,6 +133,29 @@ class AuthMethodAccessInfo(object):
         """
 
         self._access_expires = access_expires
+
+    @property
+    def access_id_alias(self):
+        """Gets the access_id_alias of this AuthMethodAccessInfo.  # noqa: E501
+
+        for accounts where AccessId holds encrypted email this field will hold generated AccessId, for accounts based on regular AccessId it will be equal to accessId itself  # noqa: E501
+
+        :return: The access_id_alias of this AuthMethodAccessInfo.  # noqa: E501
+        :rtype: str
+        """
+        return self._access_id_alias
+
+    @access_id_alias.setter
+    def access_id_alias(self, access_id_alias):
+        """Sets the access_id_alias of this AuthMethodAccessInfo.
+
+        for accounts where AccessId holds encrypted email this field will hold generated AccessId, for accounts based on regular AccessId it will be equal to accessId itself  # noqa: E501
+
+        :param access_id_alias: The access_id_alias of this AuthMethodAccessInfo.  # noqa: E501
+        :type: str
+        """
+
+        self._access_id_alias = access_id_alias
 
     @property
     def api_key_access_rules(self):

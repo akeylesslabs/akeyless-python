@@ -41,8 +41,11 @@ class TargetTypeDetailesInput(object):
         'aws_secret_access_key': 'str',
         'aws_session_token': 'str',
         'db_host_name': 'str',
+        'db_name': 'str',
         'db_port': 'str',
         'db_pwd': 'str',
+        'db_server_certificates': 'str',
+        'db_server_name': 'str',
         'db_user_name': 'str',
         'host_name': 'str',
         'host_port': 'str',
@@ -64,8 +67,11 @@ class TargetTypeDetailesInput(object):
         'aws_secret_access_key': 'aws_secret_access_key',
         'aws_session_token': 'aws_session_token',
         'db_host_name': 'db_host_name',
+        'db_name': 'db_name',
         'db_port': 'db_port',
         'db_pwd': 'db_pwd',
+        'db_server_certificates': 'db_server_certificates',
+        'db_server_name': 'db_server_name',
         'db_user_name': 'db_user_name',
         'host_name': 'host_name',
         'host_port': 'host_port',
@@ -79,7 +85,7 @@ class TargetTypeDetailesInput(object):
         'url': 'url'
     }
 
-    def __init__(self, admin_name=None, admin_pwd=None, aws_access_key_id=None, aws_region=None, aws_secret_access_key=None, aws_session_token=None, db_host_name=None, db_port=None, db_pwd=None, db_user_name=None, host_name=None, host_port=None, ip=None, mongodb_db_name=None, mongodb_uri_connection=None, port=None, rabbitmq_server_password=None, rabbitmq_server_uri=None, rabbitmq_server_user=None, url=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, admin_name=None, admin_pwd=None, aws_access_key_id=None, aws_region=None, aws_secret_access_key=None, aws_session_token=None, db_host_name=None, db_name=None, db_port=None, db_pwd=None, db_server_certificates=None, db_server_name=None, db_user_name=None, host_name=None, host_port=None, ip=None, mongodb_db_name=None, mongodb_uri_connection=None, port=None, rabbitmq_server_password=None, rabbitmq_server_uri=None, rabbitmq_server_user=None, url=None, local_vars_configuration=None):  # noqa: E501
         """TargetTypeDetailesInput - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -92,8 +98,11 @@ class TargetTypeDetailesInput(object):
         self._aws_secret_access_key = None
         self._aws_session_token = None
         self._db_host_name = None
+        self._db_name = None
         self._db_port = None
         self._db_pwd = None
+        self._db_server_certificates = None
+        self._db_server_name = None
         self._db_user_name = None
         self._host_name = None
         self._host_port = None
@@ -121,10 +130,16 @@ class TargetTypeDetailesInput(object):
             self.aws_session_token = aws_session_token
         if db_host_name is not None:
             self.db_host_name = db_host_name
+        if db_name is not None:
+            self.db_name = db_name
         if db_port is not None:
             self.db_port = db_port
         if db_pwd is not None:
             self.db_pwd = db_pwd
+        if db_server_certificates is not None:
+            self.db_server_certificates = db_server_certificates
+        if db_server_name is not None:
+            self.db_server_name = db_server_name
         if db_user_name is not None:
             self.db_user_name = db_user_name
         if host_name is not None:
@@ -296,6 +311,27 @@ class TargetTypeDetailesInput(object):
         self._db_host_name = db_host_name
 
     @property
+    def db_name(self):
+        """Gets the db_name of this TargetTypeDetailesInput.  # noqa: E501
+
+
+        :return: The db_name of this TargetTypeDetailesInput.  # noqa: E501
+        :rtype: str
+        """
+        return self._db_name
+
+    @db_name.setter
+    def db_name(self, db_name):
+        """Sets the db_name of this TargetTypeDetailesInput.
+
+
+        :param db_name: The db_name of this TargetTypeDetailesInput.  # noqa: E501
+        :type: str
+        """
+
+        self._db_name = db_name
+
+    @property
     def db_port(self):
         """Gets the db_port of this TargetTypeDetailesInput.  # noqa: E501
 
@@ -336,6 +372,52 @@ class TargetTypeDetailesInput(object):
         """
 
         self._db_pwd = db_pwd
+
+    @property
+    def db_server_certificates(self):
+        """Gets the db_server_certificates of this TargetTypeDetailesInput.  # noqa: E501
+
+        (Optional) DBServerCertificates defines the set of root certificate authorities that clients use when verifying server certificates. If DBServerCertificates is empty, TLS uses the host's root CA set.  # noqa: E501
+
+        :return: The db_server_certificates of this TargetTypeDetailesInput.  # noqa: E501
+        :rtype: str
+        """
+        return self._db_server_certificates
+
+    @db_server_certificates.setter
+    def db_server_certificates(self, db_server_certificates):
+        """Sets the db_server_certificates of this TargetTypeDetailesInput.
+
+        (Optional) DBServerCertificates defines the set of root certificate authorities that clients use when verifying server certificates. If DBServerCertificates is empty, TLS uses the host's root CA set.  # noqa: E501
+
+        :param db_server_certificates: The db_server_certificates of this TargetTypeDetailesInput.  # noqa: E501
+        :type: str
+        """
+
+        self._db_server_certificates = db_server_certificates
+
+    @property
+    def db_server_name(self):
+        """Gets the db_server_name of this TargetTypeDetailesInput.  # noqa: E501
+
+        (Optional) ServerName is used to verify the hostname on the returned certificates unless InsecureSkipVerify is given. It is also included in the client's handshake to support virtual hosting unless it is an IP address.  # noqa: E501
+
+        :return: The db_server_name of this TargetTypeDetailesInput.  # noqa: E501
+        :rtype: str
+        """
+        return self._db_server_name
+
+    @db_server_name.setter
+    def db_server_name(self, db_server_name):
+        """Sets the db_server_name of this TargetTypeDetailesInput.
+
+        (Optional) ServerName is used to verify the hostname on the returned certificates unless InsecureSkipVerify is given. It is also included in the client's handshake to support virtual hosting unless it is an IP address.  # noqa: E501
+
+        :param db_server_name: The db_server_name of this TargetTypeDetailesInput.  # noqa: E501
+        :type: str
+        """
+
+        self._db_server_name = db_server_name
 
     @property
     def db_user_name(self):

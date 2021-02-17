@@ -34,29 +34,55 @@ class DynamicSecretProducerInfo(object):
                             and the value is json key in definition.
     """
     openapi_types = {
+        'producer_metadata': 'str',
         'producer_status': 'str',
         'producer_type': 'str'
     }
 
     attribute_map = {
+        'producer_metadata': 'producer_metadata',
         'producer_status': 'producer_status',
         'producer_type': 'producer_type'
     }
 
-    def __init__(self, producer_status=None, producer_type=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, producer_metadata=None, producer_status=None, producer_type=None, local_vars_configuration=None):  # noqa: E501
         """DynamicSecretProducerInfo - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
+        self._producer_metadata = None
         self._producer_status = None
         self._producer_type = None
         self.discriminator = None
 
+        if producer_metadata is not None:
+            self.producer_metadata = producer_metadata
         if producer_status is not None:
             self.producer_status = producer_status
         if producer_type is not None:
             self.producer_type = producer_type
+
+    @property
+    def producer_metadata(self):
+        """Gets the producer_metadata of this DynamicSecretProducerInfo.  # noqa: E501
+
+
+        :return: The producer_metadata of this DynamicSecretProducerInfo.  # noqa: E501
+        :rtype: str
+        """
+        return self._producer_metadata
+
+    @producer_metadata.setter
+    def producer_metadata(self, producer_metadata):
+        """Sets the producer_metadata of this DynamicSecretProducerInfo.
+
+
+        :param producer_metadata: The producer_metadata of this DynamicSecretProducerInfo.  # noqa: E501
+        :type: str
+        """
+
+        self._producer_metadata = producer_metadata
 
     @property
     def producer_status(self):
