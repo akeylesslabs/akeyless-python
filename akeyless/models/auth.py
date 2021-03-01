@@ -42,7 +42,6 @@ class Auth(object):
         'cloud_id': 'str',
         'jwt': 'str',
         'ldap_password': 'str',
-        'ldap_proxy_url': 'str',
         'ldap_username': 'str',
         'uid_token': 'str'
     }
@@ -56,12 +55,11 @@ class Auth(object):
         'cloud_id': 'cloud-id',
         'jwt': 'jwt',
         'ldap_password': 'ldap_password',
-        'ldap_proxy_url': 'ldap_proxy_url',
         'ldap_username': 'ldap_username',
         'uid_token': 'uid_token'
     }
 
-    def __init__(self, access_id=None, access_key=None, access_type='access_key', admin_email=None, admin_password=None, cloud_id=None, jwt=None, ldap_password=None, ldap_proxy_url=None, ldap_username=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, access_id=None, access_key=None, access_type='access_key', admin_email=None, admin_password=None, cloud_id=None, jwt=None, ldap_password=None, ldap_username=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """Auth - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -75,7 +73,6 @@ class Auth(object):
         self._cloud_id = None
         self._jwt = None
         self._ldap_password = None
-        self._ldap_proxy_url = None
         self._ldap_username = None
         self._uid_token = None
         self.discriminator = None
@@ -96,8 +93,6 @@ class Auth(object):
             self.jwt = jwt
         if ldap_password is not None:
             self.ldap_password = ldap_password
-        if ldap_proxy_url is not None:
-            self.ldap_proxy_url = ldap_proxy_url
         if ldap_username is not None:
             self.ldap_username = ldap_username
         if uid_token is not None:
@@ -286,29 +281,6 @@ class Auth(object):
         """
 
         self._ldap_password = ldap_password
-
-    @property
-    def ldap_proxy_url(self):
-        """Gets the ldap_proxy_url of this Auth.  # noqa: E501
-
-        Address URL for LDAP proxy (relevant only for access-type=ldap)  # noqa: E501
-
-        :return: The ldap_proxy_url of this Auth.  # noqa: E501
-        :rtype: str
-        """
-        return self._ldap_proxy_url
-
-    @ldap_proxy_url.setter
-    def ldap_proxy_url(self, ldap_proxy_url):
-        """Sets the ldap_proxy_url of this Auth.
-
-        Address URL for LDAP proxy (relevant only for access-type=ldap)  # noqa: E501
-
-        :param ldap_proxy_url: The ldap_proxy_url of this Auth.  # noqa: E501
-        :type: str
-        """
-
-        self._ldap_proxy_url = ldap_proxy_url
 
     @property
     def ldap_username(self):

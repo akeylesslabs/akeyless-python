@@ -11,7 +11,6 @@ Name | Type | Description | Notes
 **cloud_id** | **str** | The cloud identity (relevant only for access-type&#x3D;azure_ad,aws_iam) | [optional] 
 **jwt** | **str** | The Json Web Token (relevant only for access-type&#x3D;jwt/oidc) | [optional] 
 **ldap_password** | **str** | LDAP password (relevant only for access-type&#x3D;ldap) | [optional] 
-**ldap_proxy_url** | **str** | Address URL for LDAP proxy (relevant only for access-type&#x3D;ldap) | [optional] 
 **ldap_username** | **str** | LDAP username (relevant only for access-type&#x3D;ldap) | [optional] 
 **uid_token** | **str** | The universal_identity token (relevant only for access-type&#x3D;universal_identity) | [optional] 
 

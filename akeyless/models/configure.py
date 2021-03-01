@@ -39,8 +39,7 @@ class Configure(object):
         'access_type': 'str',
         'admin_email': 'str',
         'admin_password': 'str',
-        'azure_ad_object_id': 'str',
-        'ldap_proxy_url': 'str'
+        'azure_ad_object_id': 'str'
     }
 
     attribute_map = {
@@ -49,11 +48,10 @@ class Configure(object):
         'access_type': 'access-type',
         'admin_email': 'admin-email',
         'admin_password': 'admin-password',
-        'azure_ad_object_id': 'azure_ad_object_id',
-        'ldap_proxy_url': 'ldap_proxy_url'
+        'azure_ad_object_id': 'azure_ad_object_id'
     }
 
-    def __init__(self, access_id=None, access_key=None, access_type='access_key', admin_email=None, admin_password=None, azure_ad_object_id=None, ldap_proxy_url=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, access_id=None, access_key=None, access_type='access_key', admin_email=None, admin_password=None, azure_ad_object_id=None, local_vars_configuration=None):  # noqa: E501
         """Configure - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -65,7 +63,6 @@ class Configure(object):
         self._admin_email = None
         self._admin_password = None
         self._azure_ad_object_id = None
-        self._ldap_proxy_url = None
         self.discriminator = None
 
         if access_id is not None:
@@ -80,8 +77,6 @@ class Configure(object):
             self.admin_password = admin_password
         if azure_ad_object_id is not None:
             self.azure_ad_object_id = azure_ad_object_id
-        if ldap_proxy_url is not None:
-            self.ldap_proxy_url = ldap_proxy_url
 
     @property
     def access_id(self):
@@ -220,29 +215,6 @@ class Configure(object):
         """
 
         self._azure_ad_object_id = azure_ad_object_id
-
-    @property
-    def ldap_proxy_url(self):
-        """Gets the ldap_proxy_url of this Configure.  # noqa: E501
-
-        Address URL for ldap proxy (relevant only for access-type=ldap)  # noqa: E501
-
-        :return: The ldap_proxy_url of this Configure.  # noqa: E501
-        :rtype: str
-        """
-        return self._ldap_proxy_url
-
-    @ldap_proxy_url.setter
-    def ldap_proxy_url(self, ldap_proxy_url):
-        """Sets the ldap_proxy_url of this Configure.
-
-        Address URL for ldap proxy (relevant only for access-type=ldap)  # noqa: E501
-
-        :param ldap_proxy_url: The ldap_proxy_url of this Configure.  # noqa: E501
-        :type: str
-        """
-
-        self._ldap_proxy_url = ldap_proxy_url
 
     def to_dict(self):
         """Returns the model properties as a dict"""

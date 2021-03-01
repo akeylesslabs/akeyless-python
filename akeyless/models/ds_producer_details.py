@@ -107,6 +107,7 @@ class DSProducerDetails(object):
         'groups': 'str',
         'host_name': 'str',
         'host_port': 'str',
+        'last_admin_rotation': 'int',
         'mongodb_db_name': 'str',
         'mongodb_roles': 'str',
         'mongodb_uri_connection': 'str',
@@ -206,6 +207,7 @@ class DSProducerDetails(object):
         'groups': 'groups',
         'host_name': 'host_name',
         'host_port': 'host_port',
+        'last_admin_rotation': 'last_admin_rotation',
         'mongodb_db_name': 'mongodb_db_name',
         'mongodb_roles': 'mongodb_roles',
         'mongodb_uri_connection': 'mongodb_uri_connection',
@@ -231,7 +233,7 @@ class DSProducerDetails(object):
         'venafi_zone': 'venafi_zone'
     }
 
-    def __init__(self, active=None, admin_name=None, admin_pwd=None, admin_rotation_interval_days=None, allow_subdomains=None, allowed_domains=None, artifactory_admin_apikey=None, artifactory_admin_username=None, artifactory_base_url=None, artifactory_token_audience=None, artifactory_token_scope=None, auto_generated_folder=None, aws_access_key_id=None, aws_access_mode=None, aws_region=None, aws_role_arns=None, aws_secret_access_key=None, aws_session_token=None, aws_user_console_access=None, aws_user_groups=None, aws_user_policies=None, aws_user_programmatic_access=None, azure_app_object_id=None, azure_client_id=None, azure_client_secret=None, azure_tenant_id=None, azure_user_groups_obj_id=None, azure_user_portal_access=None, azure_user_programmatic_access=None, azure_user_roles_template_id=None, chef_organizations=None, chef_server_access_mode=None, chef_server_host_name=None, chef_server_key=None, chef_server_port=None, chef_server_url=None, chef_server_username=None, chef_skip_ssl=None, create_cert_using_pki=None, db_host_name=None, db_isolation_level=None, db_max_idle_conns=None, db_max_open_conns=None, db_name=None, db_port=None, db_pwd=None, db_server_certificates=None, db_server_name=None, db_user_name=None, dynamic_secret_id=None, dynamic_secret_key=None, dynamic_secret_name=None, dynamic_secret_type=None, eks_access_key_id=None, eks_assume_role=None, eks_cluster_ca_certificate=None, eks_cluster_endpoint=None, eks_cluster_name=None, eks_region=None, eks_secret_access_key=None, enable_admin_rotation=None, failure_message=None, fixed_user_only=None, gke_cluster_ca_certificate=None, gke_cluster_compute_zone=None, gke_cluster_endpoint=None, gke_cluster_name=None, gke_project_id=None, gke_service_account_key=None, gke_service_account_name=None, groups=None, host_name=None, host_port=None, mongodb_db_name=None, mongodb_roles=None, mongodb_uri_connection=None, mssql_creation_statements=None, mssql_revocation_statements=None, mysql_creation_statements=None, postgres_creation_statements=None, rabbitmq_server_password=None, rabbitmq_server_uri=None, rabbitmq_server_user=None, rabbitmq_user_conf_permission=None, rabbitmq_user_read_permission=None, rabbitmq_user_tags=None, rabbitmq_user_vhost=None, rabbitmq_user_write_permission=None, root_first_in_chain=None, should_stop=None, signer_key_name=None, store_private_key=None, user_principal_name=None, user_ttl=None, venafi_api_key=None, venafi_zone=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, active=None, admin_name=None, admin_pwd=None, admin_rotation_interval_days=None, allow_subdomains=None, allowed_domains=None, artifactory_admin_apikey=None, artifactory_admin_username=None, artifactory_base_url=None, artifactory_token_audience=None, artifactory_token_scope=None, auto_generated_folder=None, aws_access_key_id=None, aws_access_mode=None, aws_region=None, aws_role_arns=None, aws_secret_access_key=None, aws_session_token=None, aws_user_console_access=None, aws_user_groups=None, aws_user_policies=None, aws_user_programmatic_access=None, azure_app_object_id=None, azure_client_id=None, azure_client_secret=None, azure_tenant_id=None, azure_user_groups_obj_id=None, azure_user_portal_access=None, azure_user_programmatic_access=None, azure_user_roles_template_id=None, chef_organizations=None, chef_server_access_mode=None, chef_server_host_name=None, chef_server_key=None, chef_server_port=None, chef_server_url=None, chef_server_username=None, chef_skip_ssl=None, create_cert_using_pki=None, db_host_name=None, db_isolation_level=None, db_max_idle_conns=None, db_max_open_conns=None, db_name=None, db_port=None, db_pwd=None, db_server_certificates=None, db_server_name=None, db_user_name=None, dynamic_secret_id=None, dynamic_secret_key=None, dynamic_secret_name=None, dynamic_secret_type=None, eks_access_key_id=None, eks_assume_role=None, eks_cluster_ca_certificate=None, eks_cluster_endpoint=None, eks_cluster_name=None, eks_region=None, eks_secret_access_key=None, enable_admin_rotation=None, failure_message=None, fixed_user_only=None, gke_cluster_ca_certificate=None, gke_cluster_compute_zone=None, gke_cluster_endpoint=None, gke_cluster_name=None, gke_project_id=None, gke_service_account_key=None, gke_service_account_name=None, groups=None, host_name=None, host_port=None, last_admin_rotation=None, mongodb_db_name=None, mongodb_roles=None, mongodb_uri_connection=None, mssql_creation_statements=None, mssql_revocation_statements=None, mysql_creation_statements=None, postgres_creation_statements=None, rabbitmq_server_password=None, rabbitmq_server_uri=None, rabbitmq_server_user=None, rabbitmq_user_conf_permission=None, rabbitmq_user_read_permission=None, rabbitmq_user_tags=None, rabbitmq_user_vhost=None, rabbitmq_user_write_permission=None, root_first_in_chain=None, should_stop=None, signer_key_name=None, store_private_key=None, user_principal_name=None, user_ttl=None, venafi_api_key=None, venafi_zone=None, local_vars_configuration=None):  # noqa: E501
         """DSProducerDetails - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -310,6 +312,7 @@ class DSProducerDetails(object):
         self._groups = None
         self._host_name = None
         self._host_port = None
+        self._last_admin_rotation = None
         self._mongodb_db_name = None
         self._mongodb_roles = None
         self._mongodb_uri_connection = None
@@ -481,6 +484,8 @@ class DSProducerDetails(object):
             self.host_name = host_name
         if host_port is not None:
             self.host_port = host_port
+        if last_admin_rotation is not None:
+            self.last_admin_rotation = last_admin_rotation
         if mongodb_db_name is not None:
             self.mongodb_db_name = mongodb_db_name
         if mongodb_roles is not None:
@@ -2064,6 +2069,27 @@ class DSProducerDetails(object):
         """
 
         self._host_port = host_port
+
+    @property
+    def last_admin_rotation(self):
+        """Gets the last_admin_rotation of this DSProducerDetails.  # noqa: E501
+
+
+        :return: The last_admin_rotation of this DSProducerDetails.  # noqa: E501
+        :rtype: int
+        """
+        return self._last_admin_rotation
+
+    @last_admin_rotation.setter
+    def last_admin_rotation(self, last_admin_rotation):
+        """Sets the last_admin_rotation of this DSProducerDetails.
+
+
+        :param last_admin_rotation: The last_admin_rotation of this DSProducerDetails.  # noqa: E501
+        :type: int
+        """
+
+        self._last_admin_rotation = last_admin_rotation
 
     @property
     def mongodb_db_name(self):

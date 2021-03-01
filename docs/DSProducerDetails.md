@@ -76,6 +76,7 @@ Name | Type | Description | Notes
 **groups** | **str** |  | [optional] 
 **host_name** | **str** |  | [optional] 
 **host_port** | **str** |  | [optional] 
+**last_admin_rotation** | **int** |  | [optional] 
 **mongodb_db_name** | **str** |  | [optional] 
 **mongodb_roles** | **str** |  | [optional] 
 **mongodb_uri_connection** | **str** |  | [optional] 

@@ -44,7 +44,7 @@ class AkeylessGatewayConfig(object):
         'log_forwarding': 'LogForwardingConfigPart',
         'migrations': 'MigrationsConfigPart',
         'producers': 'ProducersConfigPart',
-        'saml': 'SamlConfigPart',
+        'saml': 'DefaultConfigPart',
         'uidentity': 'UIdentityConfigPart',
         'version': 'int'
     }
@@ -329,7 +329,7 @@ class AkeylessGatewayConfig(object):
 
 
         :return: The saml of this AkeylessGatewayConfig.  # noqa: E501
-        :rtype: SamlConfigPart
+        :rtype: DefaultConfigPart
         """
         return self._saml
 
@@ -339,7 +339,7 @@ class AkeylessGatewayConfig(object):
 
 
         :param saml: The saml of this AkeylessGatewayConfig.  # noqa: E501
-        :type: SamlConfigPart
+        :type: DefaultConfigPart
         """
 
         self._saml = saml

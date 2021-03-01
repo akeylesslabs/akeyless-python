@@ -15,7 +15,7 @@
 
 from __future__ import absolute_import
 
-__version__ = "2.1.0"
+__version__ = "2.2.0"
 
 # import apis into sdk package
 from akeyless.api.v2_api import V2Api
@@ -94,6 +94,7 @@ from akeyless.models.decrypt_file_output import DecryptFileOutput
 from akeyless.models.decrypt_output import DecryptOutput
 from akeyless.models.decrypt_pkcs1 import DecryptPKCS1
 from akeyless.models.decrypt_pkcs1_output import DecryptPKCS1Output
+from akeyless.models.default_config_part import DefaultConfigPart
 from akeyless.models.delete_auth_method import DeleteAuthMethod
 from akeyless.models.delete_auth_method_output import DeleteAuthMethodOutput
 from akeyless.models.delete_auth_methods import DeleteAuthMethods
@@ -229,7 +230,6 @@ from akeyless.models.rules import Rules
 from akeyless.models.saml_access_rules import SAMLAccessRules
 from akeyless.models.saml_attribute import SAMLAttribute
 from akeyless.models.ssh_certificate_issue_details import SSHCertificateIssueDetails
-from akeyless.models.saml_config_part import SamlConfigPart
 from akeyless.models.set_item_state import SetItemState
 from akeyless.models.set_role_rule import SetRoleRule
 from akeyless.models.sign_pkcs1 import SignPKCS1
