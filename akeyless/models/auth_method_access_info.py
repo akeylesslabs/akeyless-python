@@ -41,6 +41,7 @@ class AuthMethodAccessInfo(object):
         'azure_ad_access_rules': 'AzureADAccessRules',
         'cidr_whitelist': 'str',
         'email_pass_access_rules': 'EmailPassAccessRules',
+        'gcp_access_rules': 'GCPAccessRules',
         'huawei_access_rules': 'HuaweiAccessRules',
         'ldap_access_rules': 'LDAPAccessRules',
         'oauth2_access_rules': 'OAuth2AccessRules',
@@ -57,6 +58,7 @@ class AuthMethodAccessInfo(object):
         'azure_ad_access_rules': 'azure_ad_access_rules',
         'cidr_whitelist': 'cidr_whitelist',
         'email_pass_access_rules': 'email_pass_access_rules',
+        'gcp_access_rules': 'gcp_access_rules',
         'huawei_access_rules': 'huawei_access_rules',
         'ldap_access_rules': 'ldap_access_rules',
         'oauth2_access_rules': 'oauth2_access_rules',
@@ -65,7 +67,7 @@ class AuthMethodAccessInfo(object):
         'universal_identity_access_rules': 'universal_identity_access_rules'
     }
 
-    def __init__(self, access_expires=None, access_id_alias=None, api_key_access_rules=None, aws_iam_access_rules=None, azure_ad_access_rules=None, cidr_whitelist=None, email_pass_access_rules=None, huawei_access_rules=None, ldap_access_rules=None, oauth2_access_rules=None, rules_type=None, saml_access_rules=None, universal_identity_access_rules=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, access_expires=None, access_id_alias=None, api_key_access_rules=None, aws_iam_access_rules=None, azure_ad_access_rules=None, cidr_whitelist=None, email_pass_access_rules=None, gcp_access_rules=None, huawei_access_rules=None, ldap_access_rules=None, oauth2_access_rules=None, rules_type=None, saml_access_rules=None, universal_identity_access_rules=None, local_vars_configuration=None):  # noqa: E501
         """AuthMethodAccessInfo - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -78,6 +80,7 @@ class AuthMethodAccessInfo(object):
         self._azure_ad_access_rules = None
         self._cidr_whitelist = None
         self._email_pass_access_rules = None
+        self._gcp_access_rules = None
         self._huawei_access_rules = None
         self._ldap_access_rules = None
         self._oauth2_access_rules = None
@@ -100,6 +103,8 @@ class AuthMethodAccessInfo(object):
             self.cidr_whitelist = cidr_whitelist
         if email_pass_access_rules is not None:
             self.email_pass_access_rules = email_pass_access_rules
+        if gcp_access_rules is not None:
+            self.gcp_access_rules = gcp_access_rules
         if huawei_access_rules is not None:
             self.huawei_access_rules = huawei_access_rules
         if ldap_access_rules is not None:
@@ -261,6 +266,27 @@ class AuthMethodAccessInfo(object):
         """
 
         self._email_pass_access_rules = email_pass_access_rules
+
+    @property
+    def gcp_access_rules(self):
+        """Gets the gcp_access_rules of this AuthMethodAccessInfo.  # noqa: E501
+
+
+        :return: The gcp_access_rules of this AuthMethodAccessInfo.  # noqa: E501
+        :rtype: GCPAccessRules
+        """
+        return self._gcp_access_rules
+
+    @gcp_access_rules.setter
+    def gcp_access_rules(self, gcp_access_rules):
+        """Sets the gcp_access_rules of this AuthMethodAccessInfo.
+
+
+        :param gcp_access_rules: The gcp_access_rules of this AuthMethodAccessInfo.  # noqa: E501
+        :type: GCPAccessRules
+        """
+
+        self._gcp_access_rules = gcp_access_rules
 
     @property
     def huawei_access_rules(self):

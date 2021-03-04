@@ -35,26 +35,31 @@ class GetCloudIdentity(object):
     """
     openapi_types = {
         'azure_ad_object_id': 'str',
+        'gcp_audience': 'str',
         'url_safe': 'bool'
     }
 
     attribute_map = {
         'azure_ad_object_id': 'azure_ad_object_id',
+        'gcp_audience': 'gcp-audience',
         'url_safe': 'url_safe'
     }
 
-    def __init__(self, azure_ad_object_id=None, url_safe=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, azure_ad_object_id=None, gcp_audience=None, url_safe=None, local_vars_configuration=None):  # noqa: E501
         """GetCloudIdentity - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._azure_ad_object_id = None
+        self._gcp_audience = None
         self._url_safe = None
         self.discriminator = None
 
         if azure_ad_object_id is not None:
             self.azure_ad_object_id = azure_ad_object_id
+        if gcp_audience is not None:
+            self.gcp_audience = gcp_audience
         if url_safe is not None:
             self.url_safe = url_safe
 
@@ -82,10 +87,33 @@ class GetCloudIdentity(object):
         self._azure_ad_object_id = azure_ad_object_id
 
     @property
+    def gcp_audience(self):
+        """Gets the gcp_audience of this GetCloudIdentity.  # noqa: E501
+
+        GCP JWT audience  # noqa: E501
+
+        :return: The gcp_audience of this GetCloudIdentity.  # noqa: E501
+        :rtype: str
+        """
+        return self._gcp_audience
+
+    @gcp_audience.setter
+    def gcp_audience(self, gcp_audience):
+        """Sets the gcp_audience of this GetCloudIdentity.
+
+        GCP JWT audience  # noqa: E501
+
+        :param gcp_audience: The gcp_audience of this GetCloudIdentity.  # noqa: E501
+        :type: str
+        """
+
+        self._gcp_audience = gcp_audience
+
+    @property
     def url_safe(self):
         """Gets the url_safe of this GetCloudIdentity.  # noqa: E501
 
-        escapes the token so it can be safely placed inside a URL query  # noqa: E501
+        Escapes the token so it can be safely placed inside a URL query  # noqa: E501
 
         :return: The url_safe of this GetCloudIdentity.  # noqa: E501
         :rtype: bool
@@ -96,7 +124,7 @@ class GetCloudIdentity(object):
     def url_safe(self, url_safe):
         """Sets the url_safe of this GetCloudIdentity.
 
-        escapes the token so it can be safely placed inside a URL query  # noqa: E501
+        Escapes the token so it can be safely placed inside a URL query  # noqa: E501
 
         :param url_safe: The url_safe of this GetCloudIdentity.  # noqa: E501
         :type: bool

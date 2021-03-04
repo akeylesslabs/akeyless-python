@@ -63,7 +63,7 @@ class GatewayCreateProducerPostgreSQL(object):
         'user_ttl': 'user-ttl'
     }
 
-    def __init__(self, creation_statements=None, gateway_url='http://localhost:8000', name=None, postgresql_db_name=None, postgresql_host='127.0.0.1', postgresql_password=None, postgresql_port='3306', postgresql_username=None, producer_encryption_key=None, token=None, uid_token=None, user_ttl='60m', local_vars_configuration=None):  # noqa: E501
+    def __init__(self, creation_statements=None, gateway_url='http://localhost:8000', name=None, postgresql_db_name=None, postgresql_host='127.0.0.1', postgresql_password=None, postgresql_port='5432', postgresql_username=None, producer_encryption_key=None, token=None, uid_token=None, user_ttl='60m', local_vars_configuration=None):  # noqa: E501
         """GatewayCreateProducerPostgreSQL - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()

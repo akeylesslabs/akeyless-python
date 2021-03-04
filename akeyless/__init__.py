@@ -15,7 +15,7 @@
 
 from __future__ import absolute_import
 
-__version__ = "2.2.0"
+__version__ = "2.2.1"
 
 # import apis into sdk package
 from akeyless.api.v2_api import V2Api
@@ -56,6 +56,8 @@ from akeyless.models.create_auth_method_awsiam import CreateAuthMethodAWSIAM
 from akeyless.models.create_auth_method_awsiam_output import CreateAuthMethodAWSIAMOutput
 from akeyless.models.create_auth_method_azure_ad import CreateAuthMethodAzureAD
 from akeyless.models.create_auth_method_azure_ad_output import CreateAuthMethodAzureADOutput
+from akeyless.models.create_auth_method_gcp import CreateAuthMethodGCP
+from akeyless.models.create_auth_method_gcp_output import CreateAuthMethodGCPOutput
 from akeyless.models.create_auth_method_huawei import CreateAuthMethodHuawei
 from akeyless.models.create_auth_method_huawei_output import CreateAuthMethodHuaweiOutput
 from akeyless.models.create_auth_method_ldap import CreateAuthMethodLDAP
@@ -121,6 +123,7 @@ from akeyless.models.encrypt_file_output import EncryptFileOutput
 from akeyless.models.encrypt_output import EncryptOutput
 from akeyless.models.encrypt_pkcs1 import EncryptPKCS1
 from akeyless.models.encrypt_pkcs1_output import EncryptPKCS1Output
+from akeyless.models.gcp_access_rules import GCPAccessRules
 from akeyless.models.gateway_add_sub_admins import GatewayAddSubAdmins
 from akeyless.models.gateway_add_sub_admins_output import GatewayAddSubAdminsOutput
 from akeyless.models.gateway_create_producer_artifactory import GatewayCreateProducerArtifactory

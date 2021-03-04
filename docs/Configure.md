@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **admin_email** | **str** | Email (relevant only for access-type&#x3D;password) | [optional] 
 **admin_password** | **str** | Password (relevant only for access-type&#x3D;password) | [optional] 
 **azure_ad_object_id** | **str** | Azure Active Directory ObjectId (relevant only for access-type&#x3D;azure_ad) | [optional] 
+**gcp_audience** | **str** | GCP JWT audience | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

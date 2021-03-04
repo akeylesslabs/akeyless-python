@@ -40,6 +40,7 @@ class Auth(object):
         'admin_email': 'str',
         'admin_password': 'str',
         'cloud_id': 'str',
+        'gcp_audience': 'str',
         'jwt': 'str',
         'ldap_password': 'str',
         'ldap_username': 'str',
@@ -53,13 +54,14 @@ class Auth(object):
         'admin_email': 'admin-email',
         'admin_password': 'admin-password',
         'cloud_id': 'cloud-id',
+        'gcp_audience': 'gcp-audience',
         'jwt': 'jwt',
         'ldap_password': 'ldap_password',
         'ldap_username': 'ldap_username',
         'uid_token': 'uid_token'
     }
 
-    def __init__(self, access_id=None, access_key=None, access_type='access_key', admin_email=None, admin_password=None, cloud_id=None, jwt=None, ldap_password=None, ldap_username=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, access_id=None, access_key=None, access_type='access_key', admin_email=None, admin_password=None, cloud_id=None, gcp_audience=None, jwt=None, ldap_password=None, ldap_username=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """Auth - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -71,6 +73,7 @@ class Auth(object):
         self._admin_email = None
         self._admin_password = None
         self._cloud_id = None
+        self._gcp_audience = None
         self._jwt = None
         self._ldap_password = None
         self._ldap_username = None
@@ -89,6 +92,8 @@ class Auth(object):
             self.admin_password = admin_password
         if cloud_id is not None:
             self.cloud_id = cloud_id
+        if gcp_audience is not None:
+            self.gcp_audience = gcp_audience
         if jwt is not None:
             self.jwt = jwt
         if ldap_password is not None:
@@ -148,7 +153,7 @@ class Auth(object):
     def access_type(self):
         """Gets the access_type of this Auth.  # noqa: E501
 
-        Access Type (access_key/password/saml/ldap/azure_ad/aws_iam/universal_identity/jwt)  # noqa: E501
+        Access Type (access_key/password/saml/ldap/azure_ad/aws_iam/universal_identity/jwt/gcp)  # noqa: E501
 
         :return: The access_type of this Auth.  # noqa: E501
         :rtype: str
@@ -159,7 +164,7 @@ class Auth(object):
     def access_type(self, access_type):
         """Sets the access_type of this Auth.
 
-        Access Type (access_key/password/saml/ldap/azure_ad/aws_iam/universal_identity/jwt)  # noqa: E501
+        Access Type (access_key/password/saml/ldap/azure_ad/aws_iam/universal_identity/jwt/gcp)  # noqa: E501
 
         :param access_type: The access_type of this Auth.  # noqa: E501
         :type: str
@@ -217,7 +222,7 @@ class Auth(object):
     def cloud_id(self):
         """Gets the cloud_id of this Auth.  # noqa: E501
 
-        The cloud identity (relevant only for access-type=azure_ad,aws_iam)  # noqa: E501
+        The cloud identity (relevant only for access-type=azure_ad,aws_iam,gcp)  # noqa: E501
 
         :return: The cloud_id of this Auth.  # noqa: E501
         :rtype: str
@@ -228,13 +233,36 @@ class Auth(object):
     def cloud_id(self, cloud_id):
         """Sets the cloud_id of this Auth.
 
-        The cloud identity (relevant only for access-type=azure_ad,aws_iam)  # noqa: E501
+        The cloud identity (relevant only for access-type=azure_ad,aws_iam,gcp)  # noqa: E501
 
         :param cloud_id: The cloud_id of this Auth.  # noqa: E501
         :type: str
         """
 
         self._cloud_id = cloud_id
+
+    @property
+    def gcp_audience(self):
+        """Gets the gcp_audience of this Auth.  # noqa: E501
+
+        GCP JWT audience  # noqa: E501
+
+        :return: The gcp_audience of this Auth.  # noqa: E501
+        :rtype: str
+        """
+        return self._gcp_audience
+
+    @gcp_audience.setter
+    def gcp_audience(self, gcp_audience):
+        """Sets the gcp_audience of this Auth.
+
+        GCP JWT audience  # noqa: E501
+
+        :param gcp_audience: The gcp_audience of this Auth.  # noqa: E501
+        :type: str
+        """
+
+        self._gcp_audience = gcp_audience
 
     @property
     def jwt(self):
