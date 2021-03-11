@@ -228,7 +228,7 @@ class GatewayCreateProducerAws(object):
     def aws_role_arns(self):
         """Gets the aws_role_arns of this GatewayCreateProducerAws.  # noqa: E501
 
-        AWS Role ARNs to be use in the Assume Role operation (relevant only for assume_rile mode)  # noqa: E501
+        AWS Role ARNs to be used in the Assume Role operation (relevant only for assume_role mode)  # noqa: E501
 
         :return: The aws_role_arns of this GatewayCreateProducerAws.  # noqa: E501
         :rtype: str
@@ -239,7 +239,7 @@ class GatewayCreateProducerAws(object):
     def aws_role_arns(self, aws_role_arns):
         """Sets the aws_role_arns of this GatewayCreateProducerAws.
 
-        AWS Role ARNs to be use in the Assume Role operation (relevant only for assume_rile mode)  # noqa: E501
+        AWS Role ARNs to be used in the Assume Role operation (relevant only for assume_role mode)  # noqa: E501
 
         :param aws_role_arns: The aws_role_arns of this GatewayCreateProducerAws.  # noqa: E501
         :type: str

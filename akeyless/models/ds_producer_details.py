@@ -108,9 +108,18 @@ class DSProducerDetails(object):
         'host_name': 'str',
         'host_port': 'str',
         'last_admin_rotation': 'int',
+        'mongodb_atlas_api_private_key': 'str',
+        'mongodb_atlas_api_public_key': 'str',
+        'mongodb_atlas_project_id': 'str',
         'mongodb_db_name': 'str',
+        'mongodb_default_auth_db': 'str',
+        'mongodb_host_port': 'str',
+        'mongodb_is_atlas': 'bool',
+        'mongodb_password': 'str',
         'mongodb_roles': 'str',
         'mongodb_uri_connection': 'str',
+        'mongodb_uri_options': 'str',
+        'mongodb_username': 'str',
         'mssql_creation_statements': 'str',
         'mssql_revocation_statements': 'str',
         'mysql_creation_statements': 'str',
@@ -208,9 +217,18 @@ class DSProducerDetails(object):
         'host_name': 'host_name',
         'host_port': 'host_port',
         'last_admin_rotation': 'last_admin_rotation',
+        'mongodb_atlas_api_private_key': 'mongodb_atlas_api_private_key',
+        'mongodb_atlas_api_public_key': 'mongodb_atlas_api_public_key',
+        'mongodb_atlas_project_id': 'mongodb_atlas_project_id',
         'mongodb_db_name': 'mongodb_db_name',
+        'mongodb_default_auth_db': 'mongodb_default_auth_db',
+        'mongodb_host_port': 'mongodb_host_port',
+        'mongodb_is_atlas': 'mongodb_is_atlas',
+        'mongodb_password': 'mongodb_password',
         'mongodb_roles': 'mongodb_roles',
         'mongodb_uri_connection': 'mongodb_uri_connection',
+        'mongodb_uri_options': 'mongodb_uri_options',
+        'mongodb_username': 'mongodb_username',
         'mssql_creation_statements': 'mssql_creation_statements',
         'mssql_revocation_statements': 'mssql_revocation_statements',
         'mysql_creation_statements': 'mysql_creation_statements',
@@ -233,7 +251,7 @@ class DSProducerDetails(object):
         'venafi_zone': 'venafi_zone'
     }
 
-    def __init__(self, active=None, admin_name=None, admin_pwd=None, admin_rotation_interval_days=None, allow_subdomains=None, allowed_domains=None, artifactory_admin_apikey=None, artifactory_admin_username=None, artifactory_base_url=None, artifactory_token_audience=None, artifactory_token_scope=None, auto_generated_folder=None, aws_access_key_id=None, aws_access_mode=None, aws_region=None, aws_role_arns=None, aws_secret_access_key=None, aws_session_token=None, aws_user_console_access=None, aws_user_groups=None, aws_user_policies=None, aws_user_programmatic_access=None, azure_app_object_id=None, azure_client_id=None, azure_client_secret=None, azure_tenant_id=None, azure_user_groups_obj_id=None, azure_user_portal_access=None, azure_user_programmatic_access=None, azure_user_roles_template_id=None, chef_organizations=None, chef_server_access_mode=None, chef_server_host_name=None, chef_server_key=None, chef_server_port=None, chef_server_url=None, chef_server_username=None, chef_skip_ssl=None, create_cert_using_pki=None, db_host_name=None, db_isolation_level=None, db_max_idle_conns=None, db_max_open_conns=None, db_name=None, db_port=None, db_pwd=None, db_server_certificates=None, db_server_name=None, db_user_name=None, dynamic_secret_id=None, dynamic_secret_key=None, dynamic_secret_name=None, dynamic_secret_type=None, eks_access_key_id=None, eks_assume_role=None, eks_cluster_ca_certificate=None, eks_cluster_endpoint=None, eks_cluster_name=None, eks_region=None, eks_secret_access_key=None, enable_admin_rotation=None, failure_message=None, fixed_user_only=None, gke_cluster_ca_certificate=None, gke_cluster_compute_zone=None, gke_cluster_endpoint=None, gke_cluster_name=None, gke_project_id=None, gke_service_account_key=None, gke_service_account_name=None, groups=None, host_name=None, host_port=None, last_admin_rotation=None, mongodb_db_name=None, mongodb_roles=None, mongodb_uri_connection=None, mssql_creation_statements=None, mssql_revocation_statements=None, mysql_creation_statements=None, postgres_creation_statements=None, rabbitmq_server_password=None, rabbitmq_server_uri=None, rabbitmq_server_user=None, rabbitmq_user_conf_permission=None, rabbitmq_user_read_permission=None, rabbitmq_user_tags=None, rabbitmq_user_vhost=None, rabbitmq_user_write_permission=None, root_first_in_chain=None, should_stop=None, signer_key_name=None, store_private_key=None, user_principal_name=None, user_ttl=None, venafi_api_key=None, venafi_zone=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, active=None, admin_name=None, admin_pwd=None, admin_rotation_interval_days=None, allow_subdomains=None, allowed_domains=None, artifactory_admin_apikey=None, artifactory_admin_username=None, artifactory_base_url=None, artifactory_token_audience=None, artifactory_token_scope=None, auto_generated_folder=None, aws_access_key_id=None, aws_access_mode=None, aws_region=None, aws_role_arns=None, aws_secret_access_key=None, aws_session_token=None, aws_user_console_access=None, aws_user_groups=None, aws_user_policies=None, aws_user_programmatic_access=None, azure_app_object_id=None, azure_client_id=None, azure_client_secret=None, azure_tenant_id=None, azure_user_groups_obj_id=None, azure_user_portal_access=None, azure_user_programmatic_access=None, azure_user_roles_template_id=None, chef_organizations=None, chef_server_access_mode=None, chef_server_host_name=None, chef_server_key=None, chef_server_port=None, chef_server_url=None, chef_server_username=None, chef_skip_ssl=None, create_cert_using_pki=None, db_host_name=None, db_isolation_level=None, db_max_idle_conns=None, db_max_open_conns=None, db_name=None, db_port=None, db_pwd=None, db_server_certificates=None, db_server_name=None, db_user_name=None, dynamic_secret_id=None, dynamic_secret_key=None, dynamic_secret_name=None, dynamic_secret_type=None, eks_access_key_id=None, eks_assume_role=None, eks_cluster_ca_certificate=None, eks_cluster_endpoint=None, eks_cluster_name=None, eks_region=None, eks_secret_access_key=None, enable_admin_rotation=None, failure_message=None, fixed_user_only=None, gke_cluster_ca_certificate=None, gke_cluster_compute_zone=None, gke_cluster_endpoint=None, gke_cluster_name=None, gke_project_id=None, gke_service_account_key=None, gke_service_account_name=None, groups=None, host_name=None, host_port=None, last_admin_rotation=None, mongodb_atlas_api_private_key=None, mongodb_atlas_api_public_key=None, mongodb_atlas_project_id=None, mongodb_db_name=None, mongodb_default_auth_db=None, mongodb_host_port=None, mongodb_is_atlas=None, mongodb_password=None, mongodb_roles=None, mongodb_uri_connection=None, mongodb_uri_options=None, mongodb_username=None, mssql_creation_statements=None, mssql_revocation_statements=None, mysql_creation_statements=None, postgres_creation_statements=None, rabbitmq_server_password=None, rabbitmq_server_uri=None, rabbitmq_server_user=None, rabbitmq_user_conf_permission=None, rabbitmq_user_read_permission=None, rabbitmq_user_tags=None, rabbitmq_user_vhost=None, rabbitmq_user_write_permission=None, root_first_in_chain=None, should_stop=None, signer_key_name=None, store_private_key=None, user_principal_name=None, user_ttl=None, venafi_api_key=None, venafi_zone=None, local_vars_configuration=None):  # noqa: E501
         """DSProducerDetails - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -313,9 +331,18 @@ class DSProducerDetails(object):
         self._host_name = None
         self._host_port = None
         self._last_admin_rotation = None
+        self._mongodb_atlas_api_private_key = None
+        self._mongodb_atlas_api_public_key = None
+        self._mongodb_atlas_project_id = None
         self._mongodb_db_name = None
+        self._mongodb_default_auth_db = None
+        self._mongodb_host_port = None
+        self._mongodb_is_atlas = None
+        self._mongodb_password = None
         self._mongodb_roles = None
         self._mongodb_uri_connection = None
+        self._mongodb_uri_options = None
+        self._mongodb_username = None
         self._mssql_creation_statements = None
         self._mssql_revocation_statements = None
         self._mysql_creation_statements = None
@@ -486,12 +513,30 @@ class DSProducerDetails(object):
             self.host_port = host_port
         if last_admin_rotation is not None:
             self.last_admin_rotation = last_admin_rotation
+        if mongodb_atlas_api_private_key is not None:
+            self.mongodb_atlas_api_private_key = mongodb_atlas_api_private_key
+        if mongodb_atlas_api_public_key is not None:
+            self.mongodb_atlas_api_public_key = mongodb_atlas_api_public_key
+        if mongodb_atlas_project_id is not None:
+            self.mongodb_atlas_project_id = mongodb_atlas_project_id
         if mongodb_db_name is not None:
             self.mongodb_db_name = mongodb_db_name
+        if mongodb_default_auth_db is not None:
+            self.mongodb_default_auth_db = mongodb_default_auth_db
+        if mongodb_host_port is not None:
+            self.mongodb_host_port = mongodb_host_port
+        if mongodb_is_atlas is not None:
+            self.mongodb_is_atlas = mongodb_is_atlas
+        if mongodb_password is not None:
+            self.mongodb_password = mongodb_password
         if mongodb_roles is not None:
             self.mongodb_roles = mongodb_roles
         if mongodb_uri_connection is not None:
             self.mongodb_uri_connection = mongodb_uri_connection
+        if mongodb_uri_options is not None:
+            self.mongodb_uri_options = mongodb_uri_options
+        if mongodb_username is not None:
+            self.mongodb_username = mongodb_username
         if mssql_creation_statements is not None:
             self.mssql_creation_statements = mssql_creation_statements
         if mssql_revocation_statements is not None:
@@ -2092,9 +2137,75 @@ class DSProducerDetails(object):
         self._last_admin_rotation = last_admin_rotation
 
     @property
+    def mongodb_atlas_api_private_key(self):
+        """Gets the mongodb_atlas_api_private_key of this DSProducerDetails.  # noqa: E501
+
+
+        :return: The mongodb_atlas_api_private_key of this DSProducerDetails.  # noqa: E501
+        :rtype: str
+        """
+        return self._mongodb_atlas_api_private_key
+
+    @mongodb_atlas_api_private_key.setter
+    def mongodb_atlas_api_private_key(self, mongodb_atlas_api_private_key):
+        """Sets the mongodb_atlas_api_private_key of this DSProducerDetails.
+
+
+        :param mongodb_atlas_api_private_key: The mongodb_atlas_api_private_key of this DSProducerDetails.  # noqa: E501
+        :type: str
+        """
+
+        self._mongodb_atlas_api_private_key = mongodb_atlas_api_private_key
+
+    @property
+    def mongodb_atlas_api_public_key(self):
+        """Gets the mongodb_atlas_api_public_key of this DSProducerDetails.  # noqa: E501
+
+
+        :return: The mongodb_atlas_api_public_key of this DSProducerDetails.  # noqa: E501
+        :rtype: str
+        """
+        return self._mongodb_atlas_api_public_key
+
+    @mongodb_atlas_api_public_key.setter
+    def mongodb_atlas_api_public_key(self, mongodb_atlas_api_public_key):
+        """Sets the mongodb_atlas_api_public_key of this DSProducerDetails.
+
+
+        :param mongodb_atlas_api_public_key: The mongodb_atlas_api_public_key of this DSProducerDetails.  # noqa: E501
+        :type: str
+        """
+
+        self._mongodb_atlas_api_public_key = mongodb_atlas_api_public_key
+
+    @property
+    def mongodb_atlas_project_id(self):
+        """Gets the mongodb_atlas_project_id of this DSProducerDetails.  # noqa: E501
+
+        mongodb atlas fields  # noqa: E501
+
+        :return: The mongodb_atlas_project_id of this DSProducerDetails.  # noqa: E501
+        :rtype: str
+        """
+        return self._mongodb_atlas_project_id
+
+    @mongodb_atlas_project_id.setter
+    def mongodb_atlas_project_id(self, mongodb_atlas_project_id):
+        """Sets the mongodb_atlas_project_id of this DSProducerDetails.
+
+        mongodb atlas fields  # noqa: E501
+
+        :param mongodb_atlas_project_id: The mongodb_atlas_project_id of this DSProducerDetails.  # noqa: E501
+        :type: str
+        """
+
+        self._mongodb_atlas_project_id = mongodb_atlas_project_id
+
+    @property
     def mongodb_db_name(self):
         """Gets the mongodb_db_name of this DSProducerDetails.  # noqa: E501
 
+        common fields  # noqa: E501
 
         :return: The mongodb_db_name of this DSProducerDetails.  # noqa: E501
         :rtype: str
@@ -2105,12 +2216,97 @@ class DSProducerDetails(object):
     def mongodb_db_name(self, mongodb_db_name):
         """Sets the mongodb_db_name of this DSProducerDetails.
 
+        common fields  # noqa: E501
 
         :param mongodb_db_name: The mongodb_db_name of this DSProducerDetails.  # noqa: E501
         :type: str
         """
 
         self._mongodb_db_name = mongodb_db_name
+
+    @property
+    def mongodb_default_auth_db(self):
+        """Gets the mongodb_default_auth_db of this DSProducerDetails.  # noqa: E501
+
+
+        :return: The mongodb_default_auth_db of this DSProducerDetails.  # noqa: E501
+        :rtype: str
+        """
+        return self._mongodb_default_auth_db
+
+    @mongodb_default_auth_db.setter
+    def mongodb_default_auth_db(self, mongodb_default_auth_db):
+        """Sets the mongodb_default_auth_db of this DSProducerDetails.
+
+
+        :param mongodb_default_auth_db: The mongodb_default_auth_db of this DSProducerDetails.  # noqa: E501
+        :type: str
+        """
+
+        self._mongodb_default_auth_db = mongodb_default_auth_db
+
+    @property
+    def mongodb_host_port(self):
+        """Gets the mongodb_host_port of this DSProducerDetails.  # noqa: E501
+
+
+        :return: The mongodb_host_port of this DSProducerDetails.  # noqa: E501
+        :rtype: str
+        """
+        return self._mongodb_host_port
+
+    @mongodb_host_port.setter
+    def mongodb_host_port(self, mongodb_host_port):
+        """Sets the mongodb_host_port of this DSProducerDetails.
+
+
+        :param mongodb_host_port: The mongodb_host_port of this DSProducerDetails.  # noqa: E501
+        :type: str
+        """
+
+        self._mongodb_host_port = mongodb_host_port
+
+    @property
+    def mongodb_is_atlas(self):
+        """Gets the mongodb_is_atlas of this DSProducerDetails.  # noqa: E501
+
+
+        :return: The mongodb_is_atlas of this DSProducerDetails.  # noqa: E501
+        :rtype: bool
+        """
+        return self._mongodb_is_atlas
+
+    @mongodb_is_atlas.setter
+    def mongodb_is_atlas(self, mongodb_is_atlas):
+        """Sets the mongodb_is_atlas of this DSProducerDetails.
+
+
+        :param mongodb_is_atlas: The mongodb_is_atlas of this DSProducerDetails.  # noqa: E501
+        :type: bool
+        """
+
+        self._mongodb_is_atlas = mongodb_is_atlas
+
+    @property
+    def mongodb_password(self):
+        """Gets the mongodb_password of this DSProducerDetails.  # noqa: E501
+
+
+        :return: The mongodb_password of this DSProducerDetails.  # noqa: E501
+        :rtype: str
+        """
+        return self._mongodb_password
+
+    @mongodb_password.setter
+    def mongodb_password(self, mongodb_password):
+        """Sets the mongodb_password of this DSProducerDetails.
+
+
+        :param mongodb_password: The mongodb_password of this DSProducerDetails.  # noqa: E501
+        :type: str
+        """
+
+        self._mongodb_password = mongodb_password
 
     @property
     def mongodb_roles(self):
@@ -2137,6 +2333,7 @@ class DSProducerDetails(object):
     def mongodb_uri_connection(self):
         """Gets the mongodb_uri_connection of this DSProducerDetails.  # noqa: E501
 
+        mongodb fields  # noqa: E501
 
         :return: The mongodb_uri_connection of this DSProducerDetails.  # noqa: E501
         :rtype: str
@@ -2147,12 +2344,55 @@ class DSProducerDetails(object):
     def mongodb_uri_connection(self, mongodb_uri_connection):
         """Sets the mongodb_uri_connection of this DSProducerDetails.
 
+        mongodb fields  # noqa: E501
 
         :param mongodb_uri_connection: The mongodb_uri_connection of this DSProducerDetails.  # noqa: E501
         :type: str
         """
 
         self._mongodb_uri_connection = mongodb_uri_connection
+
+    @property
+    def mongodb_uri_options(self):
+        """Gets the mongodb_uri_options of this DSProducerDetails.  # noqa: E501
+
+
+        :return: The mongodb_uri_options of this DSProducerDetails.  # noqa: E501
+        :rtype: str
+        """
+        return self._mongodb_uri_options
+
+    @mongodb_uri_options.setter
+    def mongodb_uri_options(self, mongodb_uri_options):
+        """Sets the mongodb_uri_options of this DSProducerDetails.
+
+
+        :param mongodb_uri_options: The mongodb_uri_options of this DSProducerDetails.  # noqa: E501
+        :type: str
+        """
+
+        self._mongodb_uri_options = mongodb_uri_options
+
+    @property
+    def mongodb_username(self):
+        """Gets the mongodb_username of this DSProducerDetails.  # noqa: E501
+
+
+        :return: The mongodb_username of this DSProducerDetails.  # noqa: E501
+        :rtype: str
+        """
+        return self._mongodb_username
+
+    @mongodb_username.setter
+    def mongodb_username(self, mongodb_username):
+        """Sets the mongodb_username of this DSProducerDetails.
+
+
+        :param mongodb_username: The mongodb_username of this DSProducerDetails.  # noqa: E501
+        :type: str
+        """
+
+        self._mongodb_username = mongodb_username
 
     @property
     def mssql_creation_statements(self):

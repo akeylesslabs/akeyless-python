@@ -35,9 +35,17 @@ class GatewayCreateProducerMongo(object):
     """
     openapi_types = {
         'gateway_url': 'str',
+        'mongodb_atlas_api_private_key': 'str',
+        'mongodb_atlas_api_public_key': 'str',
+        'mongodb_atlas_project_id': 'str',
+        'mongodb_default_auth_db': 'str',
+        'mongodb_host_port': 'str',
         'mongodb_name': 'str',
+        'mongodb_password': 'str',
         'mongodb_roles': 'str',
         'mongodb_server_uri': 'str',
+        'mongodb_uri_options': 'str',
+        'mongodb_username': 'str',
         'name': 'str',
         'producer_encryption_key_name': 'str',
         'token': 'str',
@@ -47,9 +55,17 @@ class GatewayCreateProducerMongo(object):
 
     attribute_map = {
         'gateway_url': 'gateway-url',
+        'mongodb_atlas_api_private_key': 'mongodb-atlas-api-private-key',
+        'mongodb_atlas_api_public_key': 'mongodb-atlas-api-public-key',
+        'mongodb_atlas_project_id': 'mongodb-atlas-project-id',
+        'mongodb_default_auth_db': 'mongodb-default-auth-db',
+        'mongodb_host_port': 'mongodb-host-port',
         'mongodb_name': 'mongodb-name',
+        'mongodb_password': 'mongodb-password',
         'mongodb_roles': 'mongodb-roles',
         'mongodb_server_uri': 'mongodb-server-uri',
+        'mongodb_uri_options': 'mongodb-uri-options',
+        'mongodb_username': 'mongodb-username',
         'name': 'name',
         'producer_encryption_key_name': 'producer-encryption-key-name',
         'token': 'token',
@@ -57,16 +73,24 @@ class GatewayCreateProducerMongo(object):
         'user_ttl': 'user-ttl'
     }
 
-    def __init__(self, gateway_url='http://localhost:8000', mongodb_name=None, mongodb_roles='[]', mongodb_server_uri=None, name=None, producer_encryption_key_name=None, token=None, uid_token=None, user_ttl='60m', local_vars_configuration=None):  # noqa: E501
+    def __init__(self, gateway_url='http://localhost:8000', mongodb_atlas_api_private_key=None, mongodb_atlas_api_public_key=None, mongodb_atlas_project_id=None, mongodb_default_auth_db=None, mongodb_host_port=None, mongodb_name=None, mongodb_password=None, mongodb_roles='[]', mongodb_server_uri=None, mongodb_uri_options=None, mongodb_username=None, name=None, producer_encryption_key_name=None, token=None, uid_token=None, user_ttl='60m', local_vars_configuration=None):  # noqa: E501
         """GatewayCreateProducerMongo - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._gateway_url = None
+        self._mongodb_atlas_api_private_key = None
+        self._mongodb_atlas_api_public_key = None
+        self._mongodb_atlas_project_id = None
+        self._mongodb_default_auth_db = None
+        self._mongodb_host_port = None
         self._mongodb_name = None
+        self._mongodb_password = None
         self._mongodb_roles = None
         self._mongodb_server_uri = None
+        self._mongodb_uri_options = None
+        self._mongodb_username = None
         self._name = None
         self._producer_encryption_key_name = None
         self._token = None
@@ -76,10 +100,27 @@ class GatewayCreateProducerMongo(object):
 
         if gateway_url is not None:
             self.gateway_url = gateway_url
+        if mongodb_atlas_api_private_key is not None:
+            self.mongodb_atlas_api_private_key = mongodb_atlas_api_private_key
+        if mongodb_atlas_api_public_key is not None:
+            self.mongodb_atlas_api_public_key = mongodb_atlas_api_public_key
+        if mongodb_atlas_project_id is not None:
+            self.mongodb_atlas_project_id = mongodb_atlas_project_id
+        if mongodb_default_auth_db is not None:
+            self.mongodb_default_auth_db = mongodb_default_auth_db
+        if mongodb_host_port is not None:
+            self.mongodb_host_port = mongodb_host_port
         self.mongodb_name = mongodb_name
+        if mongodb_password is not None:
+            self.mongodb_password = mongodb_password
         if mongodb_roles is not None:
             self.mongodb_roles = mongodb_roles
-        self.mongodb_server_uri = mongodb_server_uri
+        if mongodb_server_uri is not None:
+            self.mongodb_server_uri = mongodb_server_uri
+        if mongodb_uri_options is not None:
+            self.mongodb_uri_options = mongodb_uri_options
+        if mongodb_username is not None:
+            self.mongodb_username = mongodb_username
         self.name = name
         if producer_encryption_key_name is not None:
             self.producer_encryption_key_name = producer_encryption_key_name
@@ -114,6 +155,121 @@ class GatewayCreateProducerMongo(object):
         self._gateway_url = gateway_url
 
     @property
+    def mongodb_atlas_api_private_key(self):
+        """Gets the mongodb_atlas_api_private_key of this GatewayCreateProducerMongo.  # noqa: E501
+
+        MongoDB Atlas private key  # noqa: E501
+
+        :return: The mongodb_atlas_api_private_key of this GatewayCreateProducerMongo.  # noqa: E501
+        :rtype: str
+        """
+        return self._mongodb_atlas_api_private_key
+
+    @mongodb_atlas_api_private_key.setter
+    def mongodb_atlas_api_private_key(self, mongodb_atlas_api_private_key):
+        """Sets the mongodb_atlas_api_private_key of this GatewayCreateProducerMongo.
+
+        MongoDB Atlas private key  # noqa: E501
+
+        :param mongodb_atlas_api_private_key: The mongodb_atlas_api_private_key of this GatewayCreateProducerMongo.  # noqa: E501
+        :type: str
+        """
+
+        self._mongodb_atlas_api_private_key = mongodb_atlas_api_private_key
+
+    @property
+    def mongodb_atlas_api_public_key(self):
+        """Gets the mongodb_atlas_api_public_key of this GatewayCreateProducerMongo.  # noqa: E501
+
+        MongoDB Atlas public key  # noqa: E501
+
+        :return: The mongodb_atlas_api_public_key of this GatewayCreateProducerMongo.  # noqa: E501
+        :rtype: str
+        """
+        return self._mongodb_atlas_api_public_key
+
+    @mongodb_atlas_api_public_key.setter
+    def mongodb_atlas_api_public_key(self, mongodb_atlas_api_public_key):
+        """Sets the mongodb_atlas_api_public_key of this GatewayCreateProducerMongo.
+
+        MongoDB Atlas public key  # noqa: E501
+
+        :param mongodb_atlas_api_public_key: The mongodb_atlas_api_public_key of this GatewayCreateProducerMongo.  # noqa: E501
+        :type: str
+        """
+
+        self._mongodb_atlas_api_public_key = mongodb_atlas_api_public_key
+
+    @property
+    def mongodb_atlas_project_id(self):
+        """Gets the mongodb_atlas_project_id of this GatewayCreateProducerMongo.  # noqa: E501
+
+        MongoDB Atlas project ID  # noqa: E501
+
+        :return: The mongodb_atlas_project_id of this GatewayCreateProducerMongo.  # noqa: E501
+        :rtype: str
+        """
+        return self._mongodb_atlas_project_id
+
+    @mongodb_atlas_project_id.setter
+    def mongodb_atlas_project_id(self, mongodb_atlas_project_id):
+        """Sets the mongodb_atlas_project_id of this GatewayCreateProducerMongo.
+
+        MongoDB Atlas project ID  # noqa: E501
+
+        :param mongodb_atlas_project_id: The mongodb_atlas_project_id of this GatewayCreateProducerMongo.  # noqa: E501
+        :type: str
+        """
+
+        self._mongodb_atlas_project_id = mongodb_atlas_project_id
+
+    @property
+    def mongodb_default_auth_db(self):
+        """Gets the mongodb_default_auth_db of this GatewayCreateProducerMongo.  # noqa: E501
+
+        MongoDB server default authentication database  # noqa: E501
+
+        :return: The mongodb_default_auth_db of this GatewayCreateProducerMongo.  # noqa: E501
+        :rtype: str
+        """
+        return self._mongodb_default_auth_db
+
+    @mongodb_default_auth_db.setter
+    def mongodb_default_auth_db(self, mongodb_default_auth_db):
+        """Sets the mongodb_default_auth_db of this GatewayCreateProducerMongo.
+
+        MongoDB server default authentication database  # noqa: E501
+
+        :param mongodb_default_auth_db: The mongodb_default_auth_db of this GatewayCreateProducerMongo.  # noqa: E501
+        :type: str
+        """
+
+        self._mongodb_default_auth_db = mongodb_default_auth_db
+
+    @property
+    def mongodb_host_port(self):
+        """Gets the mongodb_host_port of this GatewayCreateProducerMongo.  # noqa: E501
+
+        MongoDB server host and port  # noqa: E501
+
+        :return: The mongodb_host_port of this GatewayCreateProducerMongo.  # noqa: E501
+        :rtype: str
+        """
+        return self._mongodb_host_port
+
+    @mongodb_host_port.setter
+    def mongodb_host_port(self, mongodb_host_port):
+        """Sets the mongodb_host_port of this GatewayCreateProducerMongo.
+
+        MongoDB server host and port  # noqa: E501
+
+        :param mongodb_host_port: The mongodb_host_port of this GatewayCreateProducerMongo.  # noqa: E501
+        :type: str
+        """
+
+        self._mongodb_host_port = mongodb_host_port
+
+    @property
     def mongodb_name(self):
         """Gets the mongodb_name of this GatewayCreateProducerMongo.  # noqa: E501
 
@@ -137,6 +293,29 @@ class GatewayCreateProducerMongo(object):
             raise ValueError("Invalid value for `mongodb_name`, must not be `None`")  # noqa: E501
 
         self._mongodb_name = mongodb_name
+
+    @property
+    def mongodb_password(self):
+        """Gets the mongodb_password of this GatewayCreateProducerMongo.  # noqa: E501
+
+        MongoDB server password. You will prompted to provide a password if it will not appear in CLI parameters  # noqa: E501
+
+        :return: The mongodb_password of this GatewayCreateProducerMongo.  # noqa: E501
+        :rtype: str
+        """
+        return self._mongodb_password
+
+    @mongodb_password.setter
+    def mongodb_password(self, mongodb_password):
+        """Sets the mongodb_password of this GatewayCreateProducerMongo.
+
+        MongoDB server password. You will prompted to provide a password if it will not appear in CLI parameters  # noqa: E501
+
+        :param mongodb_password: The mongodb_password of this GatewayCreateProducerMongo.  # noqa: E501
+        :type: str
+        """
+
+        self._mongodb_password = mongodb_password
 
     @property
     def mongodb_roles(self):
@@ -165,7 +344,7 @@ class GatewayCreateProducerMongo(object):
     def mongodb_server_uri(self):
         """Gets the mongodb_server_uri of this GatewayCreateProducerMongo.  # noqa: E501
 
-        Server URI  # noqa: E501
+        MongoDB server URI  # noqa: E501
 
         :return: The mongodb_server_uri of this GatewayCreateProducerMongo.  # noqa: E501
         :rtype: str
@@ -176,15 +355,59 @@ class GatewayCreateProducerMongo(object):
     def mongodb_server_uri(self, mongodb_server_uri):
         """Sets the mongodb_server_uri of this GatewayCreateProducerMongo.
 
-        Server URI  # noqa: E501
+        MongoDB server URI  # noqa: E501
 
         :param mongodb_server_uri: The mongodb_server_uri of this GatewayCreateProducerMongo.  # noqa: E501
         :type: str
         """
-        if self.local_vars_configuration.client_side_validation and mongodb_server_uri is None:  # noqa: E501
-            raise ValueError("Invalid value for `mongodb_server_uri`, must not be `None`")  # noqa: E501
 
         self._mongodb_server_uri = mongodb_server_uri
+
+    @property
+    def mongodb_uri_options(self):
+        """Gets the mongodb_uri_options of this GatewayCreateProducerMongo.  # noqa: E501
+
+        MongoDB server URI options  # noqa: E501
+
+        :return: The mongodb_uri_options of this GatewayCreateProducerMongo.  # noqa: E501
+        :rtype: str
+        """
+        return self._mongodb_uri_options
+
+    @mongodb_uri_options.setter
+    def mongodb_uri_options(self, mongodb_uri_options):
+        """Sets the mongodb_uri_options of this GatewayCreateProducerMongo.
+
+        MongoDB server URI options  # noqa: E501
+
+        :param mongodb_uri_options: The mongodb_uri_options of this GatewayCreateProducerMongo.  # noqa: E501
+        :type: str
+        """
+
+        self._mongodb_uri_options = mongodb_uri_options
+
+    @property
+    def mongodb_username(self):
+        """Gets the mongodb_username of this GatewayCreateProducerMongo.  # noqa: E501
+
+        MongoDB server username  # noqa: E501
+
+        :return: The mongodb_username of this GatewayCreateProducerMongo.  # noqa: E501
+        :rtype: str
+        """
+        return self._mongodb_username
+
+    @mongodb_username.setter
+    def mongodb_username(self, mongodb_username):
+        """Sets the mongodb_username of this GatewayCreateProducerMongo.
+
+        MongoDB server username  # noqa: E501
+
+        :param mongodb_username: The mongodb_username of this GatewayCreateProducerMongo.  # noqa: E501
+        :type: str
+        """
+
+        self._mongodb_username = mongodb_username
 
     @property
     def name(self):
@@ -215,7 +438,7 @@ class GatewayCreateProducerMongo(object):
     def producer_encryption_key_name(self):
         """Gets the producer_encryption_key_name of this GatewayCreateProducerMongo.  # noqa: E501
 
-        Dynamic producer encryption key  # noqa: E501
+        Encrypt producer with following key  # noqa: E501
 
         :return: The producer_encryption_key_name of this GatewayCreateProducerMongo.  # noqa: E501
         :rtype: str
@@ -226,7 +449,7 @@ class GatewayCreateProducerMongo(object):
     def producer_encryption_key_name(self, producer_encryption_key_name):
         """Sets the producer_encryption_key_name of this GatewayCreateProducerMongo.
 
-        Dynamic producer encryption key  # noqa: E501
+        Encrypt producer with following key  # noqa: E501
 
         :param producer_encryption_key_name: The producer_encryption_key_name of this GatewayCreateProducerMongo.  # noqa: E501
         :type: str

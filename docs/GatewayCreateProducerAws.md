@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **access_mode** | **str** |  | [optional] 
 **access_secret_key** | **str** | Secret Access Key | 
 **admin_rotation_interval_days** | **int** | Admin credentials rotation interval (days) | [optional] [default to 0]
-**aws_role_arns** | **str** | AWS Role ARNs to be use in the Assume Role operation (relevant only for assume_rile mode) | [optional] 
+**aws_role_arns** | **str** | AWS Role ARNs to be used in the Assume Role operation (relevant only for assume_role mode) | [optional] 
 **aws_user_console_access** | **bool** | AWS User console access | [optional] [default to False]
 **aws_user_groups** | **str** | AWS User groups | [optional] 
 **aws_user_policies** | **str** | AWS User policies | [optional] 
