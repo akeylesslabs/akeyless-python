@@ -70,7 +70,6 @@ Method | HTTP request | Description
 [**gateway_update_tmp_users**](V2Api.md#gateway_update_tmp_users) | **POST** /gateway-update-producer-tmp-creds | 
 [**get_account_logo**](V2Api.md#get_account_logo) | **POST** /get-account-logo | 
 [**get_auth_method**](V2Api.md#get_auth_method) | **POST** /get-auth-method | 
-[**get_dynamic_pki_certificate**](V2Api.md#get_dynamic_pki_certificate) | **POST** /get-dynamic-pki-certificate | 
 [**get_dynamic_secret_value**](V2Api.md#get_dynamic_secret_value) | **POST** /get-dynamic-secret-value | 
 [**get_role**](V2Api.md#get_role) | **POST** /get-role | 
 [**get_rsa_public**](V2Api.md#get_rsa_public) | **POST** /get-rsa-public | 
@@ -4063,62 +4062,6 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | getAuthMethodResponse wraps response body. |  -  |
-**0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **get_dynamic_pki_certificate**
-> dict(str, str) get_dynamic_pki_certificate()
-
-
-
-### Example
-
-```python
-from __future__ import print_function
-import time
-import akeyless
-from akeyless.rest import ApiException
-from pprint import pprint
-# Defining the host is optional and defaults to https://api.akeyless.io
-# See configuration.py for a list of all supported configuration parameters.
-configuration = akeyless.Configuration(
-    host = "https://api.akeyless.io"
-)
-
-
-# Enter a context with an instance of the API client
-with akeyless.ApiClient() as api_client:
-    # Create an instance of the API class
-    api_instance = akeyless.V2Api(api_client)
-    
-    try:
-        api_response = api_instance.get_dynamic_pki_certificate()
-        pprint(api_response)
-    except ApiException as e:
-        print("Exception when calling V2Api->get_dynamic_pki_certificate: %s\n" % e)
-```
-
-### Parameters
-This endpoint does not need any parameter.
-
-### Return type
-
-**dict(str, str)**
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | getDynamicSecretValueResponse wraps response body. |  -  |
 **0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

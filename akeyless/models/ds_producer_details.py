@@ -38,14 +38,11 @@ class DSProducerDetails(object):
         'admin_name': 'str',
         'admin_pwd': 'str',
         'admin_rotation_interval_days': 'int',
-        'allow_subdomains': 'bool',
-        'allowed_domains': 'str',
         'artifactory_admin_apikey': 'str',
         'artifactory_admin_username': 'str',
         'artifactory_base_url': 'str',
         'artifactory_token_audience': 'str',
         'artifactory_token_scope': 'str',
-        'auto_generated_folder': 'str',
         'aws_access_key_id': 'str',
         'aws_access_mode': 'str',
         'aws_region': 'str',
@@ -72,7 +69,6 @@ class DSProducerDetails(object):
         'chef_server_url': 'str',
         'chef_server_username': 'str',
         'chef_skip_ssl': 'bool',
-        'create_cert_using_pki': 'bool',
         'db_host_name': 'str',
         'db_isolation_level': 'str',
         'db_max_idle_conns': 'str',
@@ -132,13 +128,21 @@ class DSProducerDetails(object):
         'rabbitmq_user_tags': 'str',
         'rabbitmq_user_vhost': 'str',
         'rabbitmq_user_write_permission': 'str',
-        'root_first_in_chain': 'bool',
         'should_stop': 'str',
-        'signer_key_name': 'str',
-        'store_private_key': 'bool',
         'user_principal_name': 'str',
         'user_ttl': 'str',
+        'venafi_allow_subdomains': 'bool',
+        'venafi_allowed_domains': 'list[str]',
         'venafi_api_key': 'str',
+        'venafi_auto_generated_folder': 'str',
+        'venafi_base_url': 'str',
+        'venafi_root_first_in_chain': 'bool',
+        'venafi_sign_using_akeyless_pki': 'bool',
+        'venafi_signer_key_name': 'str',
+        'venafi_store_private_key': 'bool',
+        'venafi_tpp_password': 'str',
+        'venafi_tpp_username': 'str',
+        'venafi_use_tpp': 'bool',
         'venafi_zone': 'str'
     }
 
@@ -147,14 +151,11 @@ class DSProducerDetails(object):
         'admin_name': 'admin_name',
         'admin_pwd': 'admin_pwd',
         'admin_rotation_interval_days': 'admin_rotation_interval_days',
-        'allow_subdomains': 'allow_subdomains',
-        'allowed_domains': 'allowed_domains',
         'artifactory_admin_apikey': 'artifactory_admin_apikey',
         'artifactory_admin_username': 'artifactory_admin_username',
         'artifactory_base_url': 'artifactory_base_url',
         'artifactory_token_audience': 'artifactory_token_audience',
         'artifactory_token_scope': 'artifactory_token_scope',
-        'auto_generated_folder': 'auto_generated_folder',
         'aws_access_key_id': 'aws_access_key_id',
         'aws_access_mode': 'aws_access_mode',
         'aws_region': 'aws_region',
@@ -181,7 +182,6 @@ class DSProducerDetails(object):
         'chef_server_url': 'chef_server_url',
         'chef_server_username': 'chef_server_username',
         'chef_skip_ssl': 'chef_skip_ssl',
-        'create_cert_using_pki': 'create_cert_using_pki',
         'db_host_name': 'db_host_name',
         'db_isolation_level': 'db_isolation_level',
         'db_max_idle_conns': 'db_max_idle_conns',
@@ -241,17 +241,25 @@ class DSProducerDetails(object):
         'rabbitmq_user_tags': 'rabbitmq_user_tags',
         'rabbitmq_user_vhost': 'rabbitmq_user_vhost',
         'rabbitmq_user_write_permission': 'rabbitmq_user_write_permission',
-        'root_first_in_chain': 'root_first_in_chain',
         'should_stop': 'should_stop',
-        'signer_key_name': 'signer_key_name',
-        'store_private_key': 'store_private_key',
         'user_principal_name': 'user_principal_name',
         'user_ttl': 'user_ttl',
+        'venafi_allow_subdomains': 'venafi_allow_subdomains',
+        'venafi_allowed_domains': 'venafi_allowed_domains',
         'venafi_api_key': 'venafi_api_key',
+        'venafi_auto_generated_folder': 'venafi_auto_generated_folder',
+        'venafi_base_url': 'venafi_base_url',
+        'venafi_root_first_in_chain': 'venafi_root_first_in_chain',
+        'venafi_sign_using_akeyless_pki': 'venafi_sign_using_akeyless_pki',
+        'venafi_signer_key_name': 'venafi_signer_key_name',
+        'venafi_store_private_key': 'venafi_store_private_key',
+        'venafi_tpp_password': 'venafi_tpp_password',
+        'venafi_tpp_username': 'venafi_tpp_username',
+        'venafi_use_tpp': 'venafi_use_tpp',
         'venafi_zone': 'venafi_zone'
     }
 
-    def __init__(self, active=None, admin_name=None, admin_pwd=None, admin_rotation_interval_days=None, allow_subdomains=None, allowed_domains=None, artifactory_admin_apikey=None, artifactory_admin_username=None, artifactory_base_url=None, artifactory_token_audience=None, artifactory_token_scope=None, auto_generated_folder=None, aws_access_key_id=None, aws_access_mode=None, aws_region=None, aws_role_arns=None, aws_secret_access_key=None, aws_session_token=None, aws_user_console_access=None, aws_user_groups=None, aws_user_policies=None, aws_user_programmatic_access=None, azure_app_object_id=None, azure_client_id=None, azure_client_secret=None, azure_tenant_id=None, azure_user_groups_obj_id=None, azure_user_portal_access=None, azure_user_programmatic_access=None, azure_user_roles_template_id=None, chef_organizations=None, chef_server_access_mode=None, chef_server_host_name=None, chef_server_key=None, chef_server_port=None, chef_server_url=None, chef_server_username=None, chef_skip_ssl=None, create_cert_using_pki=None, db_host_name=None, db_isolation_level=None, db_max_idle_conns=None, db_max_open_conns=None, db_name=None, db_port=None, db_pwd=None, db_server_certificates=None, db_server_name=None, db_user_name=None, dynamic_secret_id=None, dynamic_secret_key=None, dynamic_secret_name=None, dynamic_secret_type=None, eks_access_key_id=None, eks_assume_role=None, eks_cluster_ca_certificate=None, eks_cluster_endpoint=None, eks_cluster_name=None, eks_region=None, eks_secret_access_key=None, enable_admin_rotation=None, failure_message=None, fixed_user_only=None, gke_cluster_ca_certificate=None, gke_cluster_compute_zone=None, gke_cluster_endpoint=None, gke_cluster_name=None, gke_project_id=None, gke_service_account_key=None, gke_service_account_name=None, groups=None, host_name=None, host_port=None, last_admin_rotation=None, mongodb_atlas_api_private_key=None, mongodb_atlas_api_public_key=None, mongodb_atlas_project_id=None, mongodb_db_name=None, mongodb_default_auth_db=None, mongodb_host_port=None, mongodb_is_atlas=None, mongodb_password=None, mongodb_roles=None, mongodb_uri_connection=None, mongodb_uri_options=None, mongodb_username=None, mssql_creation_statements=None, mssql_revocation_statements=None, mysql_creation_statements=None, postgres_creation_statements=None, rabbitmq_server_password=None, rabbitmq_server_uri=None, rabbitmq_server_user=None, rabbitmq_user_conf_permission=None, rabbitmq_user_read_permission=None, rabbitmq_user_tags=None, rabbitmq_user_vhost=None, rabbitmq_user_write_permission=None, root_first_in_chain=None, should_stop=None, signer_key_name=None, store_private_key=None, user_principal_name=None, user_ttl=None, venafi_api_key=None, venafi_zone=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, active=None, admin_name=None, admin_pwd=None, admin_rotation_interval_days=None, artifactory_admin_apikey=None, artifactory_admin_username=None, artifactory_base_url=None, artifactory_token_audience=None, artifactory_token_scope=None, aws_access_key_id=None, aws_access_mode=None, aws_region=None, aws_role_arns=None, aws_secret_access_key=None, aws_session_token=None, aws_user_console_access=None, aws_user_groups=None, aws_user_policies=None, aws_user_programmatic_access=None, azure_app_object_id=None, azure_client_id=None, azure_client_secret=None, azure_tenant_id=None, azure_user_groups_obj_id=None, azure_user_portal_access=None, azure_user_programmatic_access=None, azure_user_roles_template_id=None, chef_organizations=None, chef_server_access_mode=None, chef_server_host_name=None, chef_server_key=None, chef_server_port=None, chef_server_url=None, chef_server_username=None, chef_skip_ssl=None, db_host_name=None, db_isolation_level=None, db_max_idle_conns=None, db_max_open_conns=None, db_name=None, db_port=None, db_pwd=None, db_server_certificates=None, db_server_name=None, db_user_name=None, dynamic_secret_id=None, dynamic_secret_key=None, dynamic_secret_name=None, dynamic_secret_type=None, eks_access_key_id=None, eks_assume_role=None, eks_cluster_ca_certificate=None, eks_cluster_endpoint=None, eks_cluster_name=None, eks_region=None, eks_secret_access_key=None, enable_admin_rotation=None, failure_message=None, fixed_user_only=None, gke_cluster_ca_certificate=None, gke_cluster_compute_zone=None, gke_cluster_endpoint=None, gke_cluster_name=None, gke_project_id=None, gke_service_account_key=None, gke_service_account_name=None, groups=None, host_name=None, host_port=None, last_admin_rotation=None, mongodb_atlas_api_private_key=None, mongodb_atlas_api_public_key=None, mongodb_atlas_project_id=None, mongodb_db_name=None, mongodb_default_auth_db=None, mongodb_host_port=None, mongodb_is_atlas=None, mongodb_password=None, mongodb_roles=None, mongodb_uri_connection=None, mongodb_uri_options=None, mongodb_username=None, mssql_creation_statements=None, mssql_revocation_statements=None, mysql_creation_statements=None, postgres_creation_statements=None, rabbitmq_server_password=None, rabbitmq_server_uri=None, rabbitmq_server_user=None, rabbitmq_user_conf_permission=None, rabbitmq_user_read_permission=None, rabbitmq_user_tags=None, rabbitmq_user_vhost=None, rabbitmq_user_write_permission=None, should_stop=None, user_principal_name=None, user_ttl=None, venafi_allow_subdomains=None, venafi_allowed_domains=None, venafi_api_key=None, venafi_auto_generated_folder=None, venafi_base_url=None, venafi_root_first_in_chain=None, venafi_sign_using_akeyless_pki=None, venafi_signer_key_name=None, venafi_store_private_key=None, venafi_tpp_password=None, venafi_tpp_username=None, venafi_use_tpp=None, venafi_zone=None, local_vars_configuration=None):  # noqa: E501
         """DSProducerDetails - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -261,14 +269,11 @@ class DSProducerDetails(object):
         self._admin_name = None
         self._admin_pwd = None
         self._admin_rotation_interval_days = None
-        self._allow_subdomains = None
-        self._allowed_domains = None
         self._artifactory_admin_apikey = None
         self._artifactory_admin_username = None
         self._artifactory_base_url = None
         self._artifactory_token_audience = None
         self._artifactory_token_scope = None
-        self._auto_generated_folder = None
         self._aws_access_key_id = None
         self._aws_access_mode = None
         self._aws_region = None
@@ -295,7 +300,6 @@ class DSProducerDetails(object):
         self._chef_server_url = None
         self._chef_server_username = None
         self._chef_skip_ssl = None
-        self._create_cert_using_pki = None
         self._db_host_name = None
         self._db_isolation_level = None
         self._db_max_idle_conns = None
@@ -355,13 +359,21 @@ class DSProducerDetails(object):
         self._rabbitmq_user_tags = None
         self._rabbitmq_user_vhost = None
         self._rabbitmq_user_write_permission = None
-        self._root_first_in_chain = None
         self._should_stop = None
-        self._signer_key_name = None
-        self._store_private_key = None
         self._user_principal_name = None
         self._user_ttl = None
+        self._venafi_allow_subdomains = None
+        self._venafi_allowed_domains = None
         self._venafi_api_key = None
+        self._venafi_auto_generated_folder = None
+        self._venafi_base_url = None
+        self._venafi_root_first_in_chain = None
+        self._venafi_sign_using_akeyless_pki = None
+        self._venafi_signer_key_name = None
+        self._venafi_store_private_key = None
+        self._venafi_tpp_password = None
+        self._venafi_tpp_username = None
+        self._venafi_use_tpp = None
         self._venafi_zone = None
         self.discriminator = None
 
@@ -373,10 +385,6 @@ class DSProducerDetails(object):
             self.admin_pwd = admin_pwd
         if admin_rotation_interval_days is not None:
             self.admin_rotation_interval_days = admin_rotation_interval_days
-        if allow_subdomains is not None:
-            self.allow_subdomains = allow_subdomains
-        if allowed_domains is not None:
-            self.allowed_domains = allowed_domains
         if artifactory_admin_apikey is not None:
             self.artifactory_admin_apikey = artifactory_admin_apikey
         if artifactory_admin_username is not None:
@@ -387,8 +395,6 @@ class DSProducerDetails(object):
             self.artifactory_token_audience = artifactory_token_audience
         if artifactory_token_scope is not None:
             self.artifactory_token_scope = artifactory_token_scope
-        if auto_generated_folder is not None:
-            self.auto_generated_folder = auto_generated_folder
         if aws_access_key_id is not None:
             self.aws_access_key_id = aws_access_key_id
         if aws_access_mode is not None:
@@ -441,8 +447,6 @@ class DSProducerDetails(object):
             self.chef_server_username = chef_server_username
         if chef_skip_ssl is not None:
             self.chef_skip_ssl = chef_skip_ssl
-        if create_cert_using_pki is not None:
-            self.create_cert_using_pki = create_cert_using_pki
         if db_host_name is not None:
             self.db_host_name = db_host_name
         if db_isolation_level is not None:
@@ -561,20 +565,36 @@ class DSProducerDetails(object):
             self.rabbitmq_user_vhost = rabbitmq_user_vhost
         if rabbitmq_user_write_permission is not None:
             self.rabbitmq_user_write_permission = rabbitmq_user_write_permission
-        if root_first_in_chain is not None:
-            self.root_first_in_chain = root_first_in_chain
         if should_stop is not None:
             self.should_stop = should_stop
-        if signer_key_name is not None:
-            self.signer_key_name = signer_key_name
-        if store_private_key is not None:
-            self.store_private_key = store_private_key
         if user_principal_name is not None:
             self.user_principal_name = user_principal_name
         if user_ttl is not None:
             self.user_ttl = user_ttl
+        if venafi_allow_subdomains is not None:
+            self.venafi_allow_subdomains = venafi_allow_subdomains
+        if venafi_allowed_domains is not None:
+            self.venafi_allowed_domains = venafi_allowed_domains
         if venafi_api_key is not None:
             self.venafi_api_key = venafi_api_key
+        if venafi_auto_generated_folder is not None:
+            self.venafi_auto_generated_folder = venafi_auto_generated_folder
+        if venafi_base_url is not None:
+            self.venafi_base_url = venafi_base_url
+        if venafi_root_first_in_chain is not None:
+            self.venafi_root_first_in_chain = venafi_root_first_in_chain
+        if venafi_sign_using_akeyless_pki is not None:
+            self.venafi_sign_using_akeyless_pki = venafi_sign_using_akeyless_pki
+        if venafi_signer_key_name is not None:
+            self.venafi_signer_key_name = venafi_signer_key_name
+        if venafi_store_private_key is not None:
+            self.venafi_store_private_key = venafi_store_private_key
+        if venafi_tpp_password is not None:
+            self.venafi_tpp_password = venafi_tpp_password
+        if venafi_tpp_username is not None:
+            self.venafi_tpp_username = venafi_tpp_username
+        if venafi_use_tpp is not None:
+            self.venafi_use_tpp = venafi_use_tpp
         if venafi_zone is not None:
             self.venafi_zone = venafi_zone
 
@@ -661,48 +681,6 @@ class DSProducerDetails(object):
         """
 
         self._admin_rotation_interval_days = admin_rotation_interval_days
-
-    @property
-    def allow_subdomains(self):
-        """Gets the allow_subdomains of this DSProducerDetails.  # noqa: E501
-
-
-        :return: The allow_subdomains of this DSProducerDetails.  # noqa: E501
-        :rtype: bool
-        """
-        return self._allow_subdomains
-
-    @allow_subdomains.setter
-    def allow_subdomains(self, allow_subdomains):
-        """Sets the allow_subdomains of this DSProducerDetails.
-
-
-        :param allow_subdomains: The allow_subdomains of this DSProducerDetails.  # noqa: E501
-        :type: bool
-        """
-
-        self._allow_subdomains = allow_subdomains
-
-    @property
-    def allowed_domains(self):
-        """Gets the allowed_domains of this DSProducerDetails.  # noqa: E501
-
-
-        :return: The allowed_domains of this DSProducerDetails.  # noqa: E501
-        :rtype: str
-        """
-        return self._allowed_domains
-
-    @allowed_domains.setter
-    def allowed_domains(self, allowed_domains):
-        """Sets the allowed_domains of this DSProducerDetails.
-
-
-        :param allowed_domains: The allowed_domains of this DSProducerDetails.  # noqa: E501
-        :type: str
-        """
-
-        self._allowed_domains = allowed_domains
 
     @property
     def artifactory_admin_apikey(self):
@@ -808,27 +786,6 @@ class DSProducerDetails(object):
         """
 
         self._artifactory_token_scope = artifactory_token_scope
-
-    @property
-    def auto_generated_folder(self):
-        """Gets the auto_generated_folder of this DSProducerDetails.  # noqa: E501
-
-
-        :return: The auto_generated_folder of this DSProducerDetails.  # noqa: E501
-        :rtype: str
-        """
-        return self._auto_generated_folder
-
-    @auto_generated_folder.setter
-    def auto_generated_folder(self, auto_generated_folder):
-        """Sets the auto_generated_folder of this DSProducerDetails.
-
-
-        :param auto_generated_folder: The auto_generated_folder of this DSProducerDetails.  # noqa: E501
-        :type: str
-        """
-
-        self._auto_generated_folder = auto_generated_folder
 
     @property
     def aws_access_key_id(self):
@@ -1375,27 +1332,6 @@ class DSProducerDetails(object):
         """
 
         self._chef_skip_ssl = chef_skip_ssl
-
-    @property
-    def create_cert_using_pki(self):
-        """Gets the create_cert_using_pki of this DSProducerDetails.  # noqa: E501
-
-
-        :return: The create_cert_using_pki of this DSProducerDetails.  # noqa: E501
-        :rtype: bool
-        """
-        return self._create_cert_using_pki
-
-    @create_cert_using_pki.setter
-    def create_cert_using_pki(self, create_cert_using_pki):
-        """Sets the create_cert_using_pki of this DSProducerDetails.
-
-
-        :param create_cert_using_pki: The create_cert_using_pki of this DSProducerDetails.  # noqa: E501
-        :type: bool
-        """
-
-        self._create_cert_using_pki = create_cert_using_pki
 
     @property
     def db_host_name(self):
@@ -2647,27 +2583,6 @@ class DSProducerDetails(object):
         self._rabbitmq_user_write_permission = rabbitmq_user_write_permission
 
     @property
-    def root_first_in_chain(self):
-        """Gets the root_first_in_chain of this DSProducerDetails.  # noqa: E501
-
-
-        :return: The root_first_in_chain of this DSProducerDetails.  # noqa: E501
-        :rtype: bool
-        """
-        return self._root_first_in_chain
-
-    @root_first_in_chain.setter
-    def root_first_in_chain(self, root_first_in_chain):
-        """Sets the root_first_in_chain of this DSProducerDetails.
-
-
-        :param root_first_in_chain: The root_first_in_chain of this DSProducerDetails.  # noqa: E501
-        :type: bool
-        """
-
-        self._root_first_in_chain = root_first_in_chain
-
-    @property
     def should_stop(self):
         """Gets the should_stop of this DSProducerDetails.  # noqa: E501
 
@@ -2689,48 +2604,6 @@ class DSProducerDetails(object):
         """
 
         self._should_stop = should_stop
-
-    @property
-    def signer_key_name(self):
-        """Gets the signer_key_name of this DSProducerDetails.  # noqa: E501
-
-
-        :return: The signer_key_name of this DSProducerDetails.  # noqa: E501
-        :rtype: str
-        """
-        return self._signer_key_name
-
-    @signer_key_name.setter
-    def signer_key_name(self, signer_key_name):
-        """Sets the signer_key_name of this DSProducerDetails.
-
-
-        :param signer_key_name: The signer_key_name of this DSProducerDetails.  # noqa: E501
-        :type: str
-        """
-
-        self._signer_key_name = signer_key_name
-
-    @property
-    def store_private_key(self):
-        """Gets the store_private_key of this DSProducerDetails.  # noqa: E501
-
-
-        :return: The store_private_key of this DSProducerDetails.  # noqa: E501
-        :rtype: bool
-        """
-        return self._store_private_key
-
-    @store_private_key.setter
-    def store_private_key(self, store_private_key):
-        """Sets the store_private_key of this DSProducerDetails.
-
-
-        :param store_private_key: The store_private_key of this DSProducerDetails.  # noqa: E501
-        :type: bool
-        """
-
-        self._store_private_key = store_private_key
 
     @property
     def user_principal_name(self):
@@ -2775,6 +2648,48 @@ class DSProducerDetails(object):
         self._user_ttl = user_ttl
 
     @property
+    def venafi_allow_subdomains(self):
+        """Gets the venafi_allow_subdomains of this DSProducerDetails.  # noqa: E501
+
+
+        :return: The venafi_allow_subdomains of this DSProducerDetails.  # noqa: E501
+        :rtype: bool
+        """
+        return self._venafi_allow_subdomains
+
+    @venafi_allow_subdomains.setter
+    def venafi_allow_subdomains(self, venafi_allow_subdomains):
+        """Sets the venafi_allow_subdomains of this DSProducerDetails.
+
+
+        :param venafi_allow_subdomains: The venafi_allow_subdomains of this DSProducerDetails.  # noqa: E501
+        :type: bool
+        """
+
+        self._venafi_allow_subdomains = venafi_allow_subdomains
+
+    @property
+    def venafi_allowed_domains(self):
+        """Gets the venafi_allowed_domains of this DSProducerDetails.  # noqa: E501
+
+
+        :return: The venafi_allowed_domains of this DSProducerDetails.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._venafi_allowed_domains
+
+    @venafi_allowed_domains.setter
+    def venafi_allowed_domains(self, venafi_allowed_domains):
+        """Sets the venafi_allowed_domains of this DSProducerDetails.
+
+
+        :param venafi_allowed_domains: The venafi_allowed_domains of this DSProducerDetails.  # noqa: E501
+        :type: list[str]
+        """
+
+        self._venafi_allowed_domains = venafi_allowed_domains
+
+    @property
     def venafi_api_key(self):
         """Gets the venafi_api_key of this DSProducerDetails.  # noqa: E501
 
@@ -2794,6 +2709,195 @@ class DSProducerDetails(object):
         """
 
         self._venafi_api_key = venafi_api_key
+
+    @property
+    def venafi_auto_generated_folder(self):
+        """Gets the venafi_auto_generated_folder of this DSProducerDetails.  # noqa: E501
+
+
+        :return: The venafi_auto_generated_folder of this DSProducerDetails.  # noqa: E501
+        :rtype: str
+        """
+        return self._venafi_auto_generated_folder
+
+    @venafi_auto_generated_folder.setter
+    def venafi_auto_generated_folder(self, venafi_auto_generated_folder):
+        """Sets the venafi_auto_generated_folder of this DSProducerDetails.
+
+
+        :param venafi_auto_generated_folder: The venafi_auto_generated_folder of this DSProducerDetails.  # noqa: E501
+        :type: str
+        """
+
+        self._venafi_auto_generated_folder = venafi_auto_generated_folder
+
+    @property
+    def venafi_base_url(self):
+        """Gets the venafi_base_url of this DSProducerDetails.  # noqa: E501
+
+
+        :return: The venafi_base_url of this DSProducerDetails.  # noqa: E501
+        :rtype: str
+        """
+        return self._venafi_base_url
+
+    @venafi_base_url.setter
+    def venafi_base_url(self, venafi_base_url):
+        """Sets the venafi_base_url of this DSProducerDetails.
+
+
+        :param venafi_base_url: The venafi_base_url of this DSProducerDetails.  # noqa: E501
+        :type: str
+        """
+
+        self._venafi_base_url = venafi_base_url
+
+    @property
+    def venafi_root_first_in_chain(self):
+        """Gets the venafi_root_first_in_chain of this DSProducerDetails.  # noqa: E501
+
+
+        :return: The venafi_root_first_in_chain of this DSProducerDetails.  # noqa: E501
+        :rtype: bool
+        """
+        return self._venafi_root_first_in_chain
+
+    @venafi_root_first_in_chain.setter
+    def venafi_root_first_in_chain(self, venafi_root_first_in_chain):
+        """Sets the venafi_root_first_in_chain of this DSProducerDetails.
+
+
+        :param venafi_root_first_in_chain: The venafi_root_first_in_chain of this DSProducerDetails.  # noqa: E501
+        :type: bool
+        """
+
+        self._venafi_root_first_in_chain = venafi_root_first_in_chain
+
+    @property
+    def venafi_sign_using_akeyless_pki(self):
+        """Gets the venafi_sign_using_akeyless_pki of this DSProducerDetails.  # noqa: E501
+
+
+        :return: The venafi_sign_using_akeyless_pki of this DSProducerDetails.  # noqa: E501
+        :rtype: bool
+        """
+        return self._venafi_sign_using_akeyless_pki
+
+    @venafi_sign_using_akeyless_pki.setter
+    def venafi_sign_using_akeyless_pki(self, venafi_sign_using_akeyless_pki):
+        """Sets the venafi_sign_using_akeyless_pki of this DSProducerDetails.
+
+
+        :param venafi_sign_using_akeyless_pki: The venafi_sign_using_akeyless_pki of this DSProducerDetails.  # noqa: E501
+        :type: bool
+        """
+
+        self._venafi_sign_using_akeyless_pki = venafi_sign_using_akeyless_pki
+
+    @property
+    def venafi_signer_key_name(self):
+        """Gets the venafi_signer_key_name of this DSProducerDetails.  # noqa: E501
+
+
+        :return: The venafi_signer_key_name of this DSProducerDetails.  # noqa: E501
+        :rtype: str
+        """
+        return self._venafi_signer_key_name
+
+    @venafi_signer_key_name.setter
+    def venafi_signer_key_name(self, venafi_signer_key_name):
+        """Sets the venafi_signer_key_name of this DSProducerDetails.
+
+
+        :param venafi_signer_key_name: The venafi_signer_key_name of this DSProducerDetails.  # noqa: E501
+        :type: str
+        """
+
+        self._venafi_signer_key_name = venafi_signer_key_name
+
+    @property
+    def venafi_store_private_key(self):
+        """Gets the venafi_store_private_key of this DSProducerDetails.  # noqa: E501
+
+
+        :return: The venafi_store_private_key of this DSProducerDetails.  # noqa: E501
+        :rtype: bool
+        """
+        return self._venafi_store_private_key
+
+    @venafi_store_private_key.setter
+    def venafi_store_private_key(self, venafi_store_private_key):
+        """Sets the venafi_store_private_key of this DSProducerDetails.
+
+
+        :param venafi_store_private_key: The venafi_store_private_key of this DSProducerDetails.  # noqa: E501
+        :type: bool
+        """
+
+        self._venafi_store_private_key = venafi_store_private_key
+
+    @property
+    def venafi_tpp_password(self):
+        """Gets the venafi_tpp_password of this DSProducerDetails.  # noqa: E501
+
+
+        :return: The venafi_tpp_password of this DSProducerDetails.  # noqa: E501
+        :rtype: str
+        """
+        return self._venafi_tpp_password
+
+    @venafi_tpp_password.setter
+    def venafi_tpp_password(self, venafi_tpp_password):
+        """Sets the venafi_tpp_password of this DSProducerDetails.
+
+
+        :param venafi_tpp_password: The venafi_tpp_password of this DSProducerDetails.  # noqa: E501
+        :type: str
+        """
+
+        self._venafi_tpp_password = venafi_tpp_password
+
+    @property
+    def venafi_tpp_username(self):
+        """Gets the venafi_tpp_username of this DSProducerDetails.  # noqa: E501
+
+
+        :return: The venafi_tpp_username of this DSProducerDetails.  # noqa: E501
+        :rtype: str
+        """
+        return self._venafi_tpp_username
+
+    @venafi_tpp_username.setter
+    def venafi_tpp_username(self, venafi_tpp_username):
+        """Sets the venafi_tpp_username of this DSProducerDetails.
+
+
+        :param venafi_tpp_username: The venafi_tpp_username of this DSProducerDetails.  # noqa: E501
+        :type: str
+        """
+
+        self._venafi_tpp_username = venafi_tpp_username
+
+    @property
+    def venafi_use_tpp(self):
+        """Gets the venafi_use_tpp of this DSProducerDetails.  # noqa: E501
+
+
+        :return: The venafi_use_tpp of this DSProducerDetails.  # noqa: E501
+        :rtype: bool
+        """
+        return self._venafi_use_tpp
+
+    @venafi_use_tpp.setter
+    def venafi_use_tpp(self, venafi_use_tpp):
+        """Sets the venafi_use_tpp of this DSProducerDetails.
+
+
+        :param venafi_use_tpp: The venafi_use_tpp of this DSProducerDetails.  # noqa: E501
+        :type: bool
+        """
+
+        self._venafi_use_tpp = venafi_use_tpp
 
     @property
     def venafi_zone(self):
