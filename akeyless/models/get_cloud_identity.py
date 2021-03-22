@@ -35,29 +35,34 @@ class GetCloudIdentity(object):
     """
     openapi_types = {
         'azure_ad_object_id': 'str',
+        'debug': 'bool',
         'gcp_audience': 'str',
         'url_safe': 'bool'
     }
 
     attribute_map = {
         'azure_ad_object_id': 'azure_ad_object_id',
+        'debug': 'debug',
         'gcp_audience': 'gcp-audience',
         'url_safe': 'url_safe'
     }
 
-    def __init__(self, azure_ad_object_id=None, gcp_audience=None, url_safe=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, azure_ad_object_id=None, debug=None, gcp_audience=None, url_safe=None, local_vars_configuration=None):  # noqa: E501
         """GetCloudIdentity - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._azure_ad_object_id = None
+        self._debug = None
         self._gcp_audience = None
         self._url_safe = None
         self.discriminator = None
 
         if azure_ad_object_id is not None:
             self.azure_ad_object_id = azure_ad_object_id
+        if debug is not None:
+            self.debug = debug
         if gcp_audience is not None:
             self.gcp_audience = gcp_audience
         if url_safe is not None:
@@ -85,6 +90,27 @@ class GetCloudIdentity(object):
         """
 
         self._azure_ad_object_id = azure_ad_object_id
+
+    @property
+    def debug(self):
+        """Gets the debug of this GetCloudIdentity.  # noqa: E501
+
+
+        :return: The debug of this GetCloudIdentity.  # noqa: E501
+        :rtype: bool
+        """
+        return self._debug
+
+    @debug.setter
+    def debug(self, debug):
+        """Sets the debug of this GetCloudIdentity.
+
+
+        :param debug: The debug of this GetCloudIdentity.  # noqa: E501
+        :type: bool
+        """
+
+        self._debug = debug
 
     @property
     def gcp_audience(self):

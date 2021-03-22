@@ -34,24 +34,50 @@ class GetCloudIdentityOutput(object):
                             and the value is json key in definition.
     """
     openapi_types = {
+        'provider': 'str',
         'token': 'str'
     }
 
     attribute_map = {
+        'provider': 'provider',
         'token': 'token'
     }
 
-    def __init__(self, token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, provider=None, token=None, local_vars_configuration=None):  # noqa: E501
         """GetCloudIdentityOutput - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
+        self._provider = None
         self._token = None
         self.discriminator = None
 
+        if provider is not None:
+            self.provider = provider
         if token is not None:
             self.token = token
+
+    @property
+    def provider(self):
+        """Gets the provider of this GetCloudIdentityOutput.  # noqa: E501
+
+
+        :return: The provider of this GetCloudIdentityOutput.  # noqa: E501
+        :rtype: str
+        """
+        return self._provider
+
+    @provider.setter
+    def provider(self, provider):
+        """Sets the provider of this GetCloudIdentityOutput.
+
+
+        :param provider: The provider of this GetCloudIdentityOutput.  # noqa: E501
+        :type: str
+        """
+
+        self._provider = provider
 
     @property
     def token(self):

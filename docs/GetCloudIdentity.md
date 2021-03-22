@@ -5,6 +5,7 @@ getCloudIdentity is a command that gets Cloud Identity Token (relevant only for 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **azure_ad_object_id** | **str** | Azure Active Directory ObjectId (relevant only for access-type&#x3D;azure_ad) | [optional] 
+**debug** | **bool** |  | [optional] 
 **gcp_audience** | **str** | GCP JWT audience | [optional] 
 **url_safe** | **bool** | Escapes the token so it can be safely placed inside a URL query | [optional] 
 
