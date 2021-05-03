@@ -35,28 +35,33 @@ class GetTarget(object):
     """
     openapi_types = {
         'name': 'str',
+        'show_versions': 'bool',
         'token': 'str',
         'uid_token': 'str'
     }
 
     attribute_map = {
         'name': 'name',
+        'show_versions': 'show-versions',
         'token': 'token',
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, name=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, name=None, show_versions=False, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """GetTarget - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._name = None
+        self._show_versions = None
         self._token = None
         self._uid_token = None
         self.discriminator = None
 
         self.name = name
+        if show_versions is not None:
+            self.show_versions = show_versions
         if token is not None:
             self.token = token
         if uid_token is not None:
@@ -86,6 +91,29 @@ class GetTarget(object):
             raise ValueError("Invalid value for `name`, must not be `None`")  # noqa: E501
 
         self._name = name
+
+    @property
+    def show_versions(self):
+        """Gets the show_versions of this GetTarget.  # noqa: E501
+
+        Include all target versions in reply  # noqa: E501
+
+        :return: The show_versions of this GetTarget.  # noqa: E501
+        :rtype: bool
+        """
+        return self._show_versions
+
+    @show_versions.setter
+    def show_versions(self, show_versions):
+        """Sets the show_versions of this GetTarget.
+
+        Include all target versions in reply  # noqa: E501
+
+        :param show_versions: The show_versions of this GetTarget.  # noqa: E501
+        :type: bool
+        """
+
+        self._show_versions = show_versions
 
     @property
     def token(self):

@@ -34,34 +34,60 @@ class DynamicSecretProducerInfo(object):
                             and the value is json key in definition.
     """
     openapi_types = {
+        'gw_cluster_id': 'int',
         'producer_metadata': 'str',
         'producer_status': 'str',
         'producer_type': 'str'
     }
 
     attribute_map = {
+        'gw_cluster_id': 'gw_cluster_id',
         'producer_metadata': 'producer_metadata',
         'producer_status': 'producer_status',
         'producer_type': 'producer_type'
     }
 
-    def __init__(self, producer_metadata=None, producer_status=None, producer_type=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, gw_cluster_id=None, producer_metadata=None, producer_status=None, producer_type=None, local_vars_configuration=None):  # noqa: E501
         """DynamicSecretProducerInfo - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
+        self._gw_cluster_id = None
         self._producer_metadata = None
         self._producer_status = None
         self._producer_type = None
         self.discriminator = None
 
+        if gw_cluster_id is not None:
+            self.gw_cluster_id = gw_cluster_id
         if producer_metadata is not None:
             self.producer_metadata = producer_metadata
         if producer_status is not None:
             self.producer_status = producer_status
         if producer_type is not None:
             self.producer_type = producer_type
+
+    @property
+    def gw_cluster_id(self):
+        """Gets the gw_cluster_id of this DynamicSecretProducerInfo.  # noqa: E501
+
+
+        :return: The gw_cluster_id of this DynamicSecretProducerInfo.  # noqa: E501
+        :rtype: int
+        """
+        return self._gw_cluster_id
+
+    @gw_cluster_id.setter
+    def gw_cluster_id(self, gw_cluster_id):
+        """Sets the gw_cluster_id of this DynamicSecretProducerInfo.
+
+
+        :param gw_cluster_id: The gw_cluster_id of this DynamicSecretProducerInfo.  # noqa: E501
+        :type: int
+        """
+
+        self._gw_cluster_id = gw_cluster_id
 
     @property
     def producer_metadata(self):
@@ -88,7 +114,7 @@ class DynamicSecretProducerInfo(object):
     def producer_status(self):
         """Gets the producer_status of this DynamicSecretProducerInfo.  # noqa: E501
 
-        ProducerStatus defines types of Producer Status  # noqa: E501
+        RotationStatus defines types of rotation Status  # noqa: E501
 
         :return: The producer_status of this DynamicSecretProducerInfo.  # noqa: E501
         :rtype: str
@@ -99,7 +125,7 @@ class DynamicSecretProducerInfo(object):
     def producer_status(self, producer_status):
         """Sets the producer_status of this DynamicSecretProducerInfo.
 
-        ProducerStatus defines types of Producer Status  # noqa: E501
+        RotationStatus defines types of rotation Status  # noqa: E501
 
         :param producer_status: The producer_status of this DynamicSecretProducerInfo.  # noqa: E501
         :type: str

@@ -35,28 +35,38 @@ class GetTargetDetails(object):
     """
     openapi_types = {
         'name': 'str',
+        'show_versions': 'bool',
+        'target_version': 'int',
         'token': 'str',
         'uid_token': 'str'
     }
 
     attribute_map = {
         'name': 'name',
+        'show_versions': 'show-versions',
+        'target_version': 'target-version',
         'token': 'token',
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, name=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, name=None, show_versions=False, target_version=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """GetTargetDetails - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._name = None
+        self._show_versions = None
+        self._target_version = None
         self._token = None
         self._uid_token = None
         self.discriminator = None
 
         self.name = name
+        if show_versions is not None:
+            self.show_versions = show_versions
+        if target_version is not None:
+            self.target_version = target_version
         if token is not None:
             self.token = token
         if uid_token is not None:
@@ -86,6 +96,52 @@ class GetTargetDetails(object):
             raise ValueError("Invalid value for `name`, must not be `None`")  # noqa: E501
 
         self._name = name
+
+    @property
+    def show_versions(self):
+        """Gets the show_versions of this GetTargetDetails.  # noqa: E501
+
+        Include all target versions in reply  # noqa: E501
+
+        :return: The show_versions of this GetTargetDetails.  # noqa: E501
+        :rtype: bool
+        """
+        return self._show_versions
+
+    @show_versions.setter
+    def show_versions(self, show_versions):
+        """Sets the show_versions of this GetTargetDetails.
+
+        Include all target versions in reply  # noqa: E501
+
+        :param show_versions: The show_versions of this GetTargetDetails.  # noqa: E501
+        :type: bool
+        """
+
+        self._show_versions = show_versions
+
+    @property
+    def target_version(self):
+        """Gets the target_version of this GetTargetDetails.  # noqa: E501
+
+        Target version  # noqa: E501
+
+        :return: The target_version of this GetTargetDetails.  # noqa: E501
+        :rtype: int
+        """
+        return self._target_version
+
+    @target_version.setter
+    def target_version(self, target_version):
+        """Sets the target_version of this GetTargetDetails.
+
+        Target version  # noqa: E501
+
+        :param target_version: The target_version of this GetTargetDetails.  # noqa: E501
+        :type: int
+        """
+
+        self._target_version = target_version
 
     @property
     def token(self):

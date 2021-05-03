@@ -20,10 +20,12 @@ Method | HTTP request | Description
 [**create_db_target**](V2Api.md#create_db_target) | **POST** /create-db-target | 
 [**create_dynamic_secret**](V2Api.md#create_dynamic_secret) | **POST** /create-dynamic-secret | 
 [**create_key**](V2Api.md#create_key) | **POST** /create-key | 
+[**create_managed_key**](V2Api.md#create_managed_key) | **POST** /create-managed-key | 
 [**create_pki_cert_issuer**](V2Api.md#create_pki_cert_issuer) | **POST** /create-pki-cert-issuer | 
 [**create_rabbit_mq_target**](V2Api.md#create_rabbit_mq_target) | **POST** /create-rabbitMQ-target | 
 [**create_rdp_target**](V2Api.md#create_rdp_target) | **POST** /create-rdp-target | 
 [**create_role**](V2Api.md#create_role) | **POST** /create-role | 
+[**create_rotated_secret**](V2Api.md#create_rotated_secret) | **POST** /create-rotated-secret | 
 [**create_secret**](V2Api.md#create_secret) | **POST** /create-secret | 
 [**create_ssh_cert_issuer**](V2Api.md#create_ssh_cert_issuer) | **POST** /create-ssh-cert-issuer | 
 [**create_ssh_target**](V2Api.md#create_ssh_target) | **POST** /create-ssh-target | 
@@ -43,13 +45,17 @@ Method | HTTP request | Description
 [**delete_target_association**](V2Api.md#delete_target_association) | **POST** /delete-assoc-target-item | 
 [**delete_targets**](V2Api.md#delete_targets) | **POST** /delete-targets | 
 [**describe_item**](V2Api.md#describe_item) | **POST** /describe-item | 
+[**describe_permissions**](V2Api.md#describe_permissions) | **POST** /describe-permissions | 
 [**encrypt**](V2Api.md#encrypt) | **POST** /encrypt | 
 [**encrypt_pkcs1**](V2Api.md#encrypt_pkcs1) | **POST** /encrypt-pkcs1 | 
 [**gateway_add_sub_admins**](V2Api.md#gateway_add_sub_admins) | **POST** /gateway-add-sub-admins | 
 [**gateway_create_producer_artifactory**](V2Api.md#gateway_create_producer_artifactory) | **POST** /gateway-create-producer-artifactory | 
 [**gateway_create_producer_aws**](V2Api.md#gateway_create_producer_aws) | **POST** /gateway-create-producer-aws | 
 [**gateway_create_producer_azure**](V2Api.md#gateway_create_producer_azure) | **POST** /gateway-create-producer-azure | 
+[**gateway_create_producer_certificate_automation**](V2Api.md#gateway_create_producer_certificate_automation) | **POST** /gateway-create-producer-certificate-automation | 
+[**gateway_create_producer_custom**](V2Api.md#gateway_create_producer_custom) | **POST** /gateway-create-producer-custom | 
 [**gateway_create_producer_eks**](V2Api.md#gateway_create_producer_eks) | **POST** /gateway-create-producer-eks | 
+[**gateway_create_producer_gcp**](V2Api.md#gateway_create_producer_gcp) | **POST** /gateway-create-producer-gcp | 
 [**gateway_create_producer_gke**](V2Api.md#gateway_create_producer_gke) | **POST** /gateway-create-producer-gke | 
 [**gateway_create_producer_mongo**](V2Api.md#gateway_create_producer_mongo) | **POST** /gateway-create-producer-mongo | 
 [**gateway_create_producer_mssql**](V2Api.md#gateway_create_producer_mssql) | **POST** /gateway-create-producer-mssql | 
@@ -57,7 +63,6 @@ Method | HTTP request | Description
 [**gateway_create_producer_postgre_sql**](V2Api.md#gateway_create_producer_postgre_sql) | **POST** /gateway-create-producer-postgresql | 
 [**gateway_create_producer_rabbit_mq**](V2Api.md#gateway_create_producer_rabbit_mq) | **POST** /gateway-create-producer-rabbitmq | 
 [**gateway_create_producer_rdp**](V2Api.md#gateway_create_producer_rdp) | **POST** /gateway-create-producer-rdp | 
-[**gateway_create_producer_venafi**](V2Api.md#gateway_create_producer_venafi) | **POST** /gateway-create-producer-venafi | 
 [**gateway_delete_producer**](V2Api.md#gateway_delete_producer) | **POST** /gateway-delete-producer | 
 [**gateway_delete_sub_admins**](V2Api.md#gateway_delete_sub_admins) | **POST** /gateway-delete-sub-admins | 
 [**gateway_get_config**](V2Api.md#gateway_get_config) | **POST** /gateway-get-config | 
@@ -68,11 +73,15 @@ Method | HTTP request | Description
 [**gateway_revoke_tmp_users**](V2Api.md#gateway_revoke_tmp_users) | **POST** /gateway-revoke-producer-tmp-creds | 
 [**gateway_start_producer**](V2Api.md#gateway_start_producer) | **POST** /gateway-start-producer | 
 [**gateway_stop_producer**](V2Api.md#gateway_stop_producer) | **POST** /gateway-stop-producer | 
+[**gateway_update_item**](V2Api.md#gateway_update_item) | **POST** /update-managed-key | 
 [**gateway_update_tmp_users**](V2Api.md#gateway_update_tmp_users) | **POST** /gateway-update-producer-tmp-creds | 
 [**get_account_logo**](V2Api.md#get_account_logo) | **POST** /get-account-logo | 
 [**get_auth_method**](V2Api.md#get_auth_method) | **POST** /get-auth-method | 
 [**get_dynamic_secret_value**](V2Api.md#get_dynamic_secret_value) | **POST** /get-dynamic-secret-value | 
+[**get_kube_exec_creds**](V2Api.md#get_kube_exec_creds) | **POST** /get-kube-exec-creds | 
+[**get_pki_certificate**](V2Api.md#get_pki_certificate) | **POST** /get-pki-certificate | 
 [**get_role**](V2Api.md#get_role) | **POST** /get-role | 
+[**get_rotated_secret_value**](V2Api.md#get_rotated_secret_value) | **POST** /get-rotated-secret-value | 
 [**get_rsa_public**](V2Api.md#get_rsa_public) | **POST** /get-rsa-public | 
 [**get_secret_value**](V2Api.md#get_secret_value) | **POST** /get-secret-value | 
 [**get_ssh_certificate**](V2Api.md#get_ssh_certificate) | **POST** /get-ssh-certificate | 
@@ -103,6 +112,8 @@ Method | HTTP request | Description
 [**update_rabbit_mq_target_details**](V2Api.md#update_rabbit_mq_target_details) | **POST** /update-rabbitmq-target-details | 
 [**update_rdp_target_details**](V2Api.md#update_rdp_target_details) | **POST** /update-rdp-target-details | 
 [**update_role**](V2Api.md#update_role) | **POST** /update-role | 
+[**update_rotated_secret**](V2Api.md#update_rotated_secret) | **POST** /update-rotated-secret | 
+[**update_rotation_settings**](V2Api.md#update_rotation_settings) | **POST** /update-rotation-settingsrotate-key | 
 [**update_secret_val**](V2Api.md#update_secret_val) | **POST** /update-secret-val | 
 [**update_ssh_target_details**](V2Api.md#update_ssh_target_details) | **POST** /update-ssh-target-details | 
 [**update_target**](V2Api.md#update_target) | **POST** /update-target | 
@@ -834,7 +845,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **create_aws_target**
-> object create_aws_target(body)
+> CreateTargetOutput create_aws_target(body)
 
 
 
@@ -874,7 +885,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**object**
+[**CreateTargetOutput**](CreateTargetOutput.md)
 
 ### Authorization
 
@@ -894,7 +905,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **create_db_target**
-> object create_db_target(body)
+> CreateTargetOutput create_db_target(body)
 
 
 
@@ -934,7 +945,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**object**
+[**CreateTargetOutput**](CreateTargetOutput.md)
 
 ### Authorization
 
@@ -1073,6 +1084,66 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **create_managed_key**
+> CreateManagedKeyOutput create_managed_key(body)
+
+
+
+### Example
+
+```python
+from __future__ import print_function
+import time
+import akeyless
+from akeyless.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.akeyless.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = akeyless.Configuration(
+    host = "https://api.akeyless.io"
+)
+
+
+# Enter a context with an instance of the API client
+with akeyless.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = akeyless.V2Api(api_client)
+    body = akeyless.CreateManagedKey() # CreateManagedKey | 
+
+    try:
+        api_response = api_instance.create_managed_key(body)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling V2Api->create_managed_key: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**CreateManagedKey**](CreateManagedKey.md)|  | 
+
+### Return type
+
+[**CreateManagedKeyOutput**](CreateManagedKeyOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**201** | CreateManagedKeyResponse wraps response body. |  -  |
+**0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **create_pki_cert_issuer**
 > CreatePKICertIssuerOutput create_pki_cert_issuer(body)
 
@@ -1134,7 +1205,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **create_rabbit_mq_target**
-> object create_rabbit_mq_target(body)
+> CreateTargetOutput create_rabbit_mq_target(body)
 
 
 
@@ -1174,7 +1245,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**object**
+[**CreateTargetOutput**](CreateTargetOutput.md)
 
 ### Authorization
 
@@ -1194,7 +1265,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **create_rdp_target**
-> object create_rdp_target(body)
+> CreateTargetOutput create_rdp_target(body)
 
 
 
@@ -1234,7 +1305,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**object**
+[**CreateTargetOutput**](CreateTargetOutput.md)
 
 ### Authorization
 
@@ -1309,6 +1380,66 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | createRoleResponse wraps response body. |  -  |
+**0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **create_rotated_secret**
+> CreateRotatedSecretOutput create_rotated_secret(body)
+
+
+
+### Example
+
+```python
+from __future__ import print_function
+import time
+import akeyless
+from akeyless.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.akeyless.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = akeyless.Configuration(
+    host = "https://api.akeyless.io"
+)
+
+
+# Enter a context with an instance of the API client
+with akeyless.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = akeyless.V2Api(api_client)
+    body = akeyless.CreateRotatedSecret() # CreateRotatedSecret | 
+
+    try:
+        api_response = api_instance.create_rotated_secret(body)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling V2Api->create_rotated_secret: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**CreateRotatedSecret**](CreateRotatedSecret.md)|  | 
+
+### Return type
+
+[**CreateRotatedSecretOutput**](CreateRotatedSecretOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | createRotatedSecretResponse wraps response body. |  -  |
 **0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -1434,7 +1565,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **create_ssh_target**
-> object create_ssh_target(body)
+> CreateTargetOutput create_ssh_target(body)
 
 
 
@@ -1474,7 +1605,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**object**
+[**CreateTargetOutput**](CreateTargetOutput.md)
 
 ### Authorization
 
@@ -1494,7 +1625,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **create_target**
-> object create_target(body)
+> CreateTargetOutput create_target(body)
 
 
 
@@ -1534,7 +1665,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**object**
+[**CreateTargetOutput**](CreateTargetOutput.md)
 
 ### Authorization
 
@@ -1554,7 +1685,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **create_web_target**
-> object create_web_target(body)
+> CreateTargetOutput create_web_target(body)
 
 
 
@@ -1594,7 +1725,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**object**
+[**CreateTargetOutput**](CreateTargetOutput.md)
 
 ### Authorization
 
@@ -2453,6 +2584,66 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **describe_permissions**
+> DescribePermissionsOutput describe_permissions(body)
+
+
+
+### Example
+
+```python
+from __future__ import print_function
+import time
+import akeyless
+from akeyless.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.akeyless.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = akeyless.Configuration(
+    host = "https://api.akeyless.io"
+)
+
+
+# Enter a context with an instance of the API client
+with akeyless.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = akeyless.V2Api(api_client)
+    body = akeyless.DescribePermissions() # DescribePermissions | 
+
+    try:
+        api_response = api_instance.describe_permissions(body)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling V2Api->describe_permissions: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**DescribePermissions**](DescribePermissions.md)|  | 
+
+### Return type
+
+[**DescribePermissionsOutput**](DescribePermissionsOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | DescribePermissionsResponse wraps response body. |  -  |
+**0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **encrypt**
 > EncryptOutput encrypt(body)
 
@@ -2813,6 +3004,126 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **gateway_create_producer_certificate_automation**
+> GatewayCreateProducerCertificateAutomationOutput gateway_create_producer_certificate_automation(body)
+
+
+
+### Example
+
+```python
+from __future__ import print_function
+import time
+import akeyless
+from akeyless.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.akeyless.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = akeyless.Configuration(
+    host = "https://api.akeyless.io"
+)
+
+
+# Enter a context with an instance of the API client
+with akeyless.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = akeyless.V2Api(api_client)
+    body = akeyless.GatewayCreateProducerCertificateAutomation() # GatewayCreateProducerCertificateAutomation | 
+
+    try:
+        api_response = api_instance.gateway_create_producer_certificate_automation(body)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling V2Api->gateway_create_producer_certificate_automation: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**GatewayCreateProducerCertificateAutomation**](GatewayCreateProducerCertificateAutomation.md)|  | 
+
+### Return type
+
+[**GatewayCreateProducerCertificateAutomationOutput**](GatewayCreateProducerCertificateAutomationOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**201** | gatewayCreateProducerCertificateAutomationResponse wraps response body. |  -  |
+**0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **gateway_create_producer_custom**
+> GatewayCreateProducerCustomOutput gateway_create_producer_custom(body=body)
+
+
+
+### Example
+
+```python
+from __future__ import print_function
+import time
+import akeyless
+from akeyless.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.akeyless.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = akeyless.Configuration(
+    host = "https://api.akeyless.io"
+)
+
+
+# Enter a context with an instance of the API client
+with akeyless.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = akeyless.V2Api(api_client)
+    body = akeyless.GatewayCreateProducerCustom() # GatewayCreateProducerCustom |  (optional)
+
+    try:
+        api_response = api_instance.gateway_create_producer_custom(body=body)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling V2Api->gateway_create_producer_custom: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**GatewayCreateProducerCustom**](GatewayCreateProducerCustom.md)|  | [optional] 
+
+### Return type
+
+[**GatewayCreateProducerCustomOutput**](GatewayCreateProducerCustomOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | gatewayCreateProducerCustomResponse wraps response body. |  -  |
+**0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **gateway_create_producer_eks**
 > GatewayCreateProducerEksOutput gateway_create_producer_eks(body)
 
@@ -2869,6 +3180,66 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | gatewayCreateProducerEksResponse wraps response body. |  -  |
+**0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **gateway_create_producer_gcp**
+> GatewayCreateProducerGcpOutput gateway_create_producer_gcp(body)
+
+
+
+### Example
+
+```python
+from __future__ import print_function
+import time
+import akeyless
+from akeyless.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.akeyless.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = akeyless.Configuration(
+    host = "https://api.akeyless.io"
+)
+
+
+# Enter a context with an instance of the API client
+with akeyless.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = akeyless.V2Api(api_client)
+    body = akeyless.GatewayCreateProducerGcp() # GatewayCreateProducerGcp | 
+
+    try:
+        api_response = api_instance.gateway_create_producer_gcp(body)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling V2Api->gateway_create_producer_gcp: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**GatewayCreateProducerGcp**](GatewayCreateProducerGcp.md)|  | 
+
+### Return type
+
+[**GatewayCreateProducerGcpOutput**](GatewayCreateProducerGcpOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**201** | gatewayCreateProducerGcpResponse wraps response body. |  -  |
 **0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -3289,66 +3660,6 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | gatewayCreateProducerRdpResponse wraps response body. |  -  |
-**0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **gateway_create_producer_venafi**
-> GatewayCreateProducerAwsOutput gateway_create_producer_venafi(body)
-
-
-
-### Example
-
-```python
-from __future__ import print_function
-import time
-import akeyless
-from akeyless.rest import ApiException
-from pprint import pprint
-# Defining the host is optional and defaults to https://api.akeyless.io
-# See configuration.py for a list of all supported configuration parameters.
-configuration = akeyless.Configuration(
-    host = "https://api.akeyless.io"
-)
-
-
-# Enter a context with an instance of the API client
-with akeyless.ApiClient() as api_client:
-    # Create an instance of the API class
-    api_instance = akeyless.V2Api(api_client)
-    body = akeyless.GatewayCreateProducerAws() # GatewayCreateProducerAws | 
-
-    try:
-        api_response = api_instance.gateway_create_producer_venafi(body)
-        pprint(api_response)
-    except ApiException as e:
-        print("Exception when calling V2Api->gateway_create_producer_venafi: %s\n" % e)
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **body** | [**GatewayCreateProducerAws**](GatewayCreateProducerAws.md)|  | 
-
-### Return type
-
-[**GatewayCreateProducerAwsOutput**](GatewayCreateProducerAwsOutput.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**201** | gatewayCreateProducerVenafiResponse wraps response body. |  -  |
 **0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -3952,6 +4263,61 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **gateway_update_item**
+> gateway_update_item()
+
+
+
+### Example
+
+```python
+from __future__ import print_function
+import time
+import akeyless
+from akeyless.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.akeyless.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = akeyless.Configuration(
+    host = "https://api.akeyless.io"
+)
+
+
+# Enter a context with an instance of the API client
+with akeyless.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = akeyless.V2Api(api_client)
+    
+    try:
+        api_instance.gateway_update_item()
+    except ApiException as e:
+        print("Exception when calling V2Api->gateway_update_item: %s\n" % e)
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**201** |  |  -  |
+**0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **gateway_update_tmp_users**
 > gateway_update_tmp_users(body)
 
@@ -4187,6 +4553,122 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **get_kube_exec_creds**
+> GetKubeExecCredsOutput get_kube_exec_creds(body)
+
+
+
+### Example
+
+```python
+from __future__ import print_function
+import time
+import akeyless
+from akeyless.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.akeyless.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = akeyless.Configuration(
+    host = "https://api.akeyless.io"
+)
+
+
+# Enter a context with an instance of the API client
+with akeyless.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = akeyless.V2Api(api_client)
+    body = akeyless.GetKubeExecCreds() # GetKubeExecCreds | 
+
+    try:
+        api_response = api_instance.get_kube_exec_creds(body)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling V2Api->get_kube_exec_creds: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**GetKubeExecCreds**](GetKubeExecCreds.md)|  | 
+
+### Return type
+
+[**GetKubeExecCredsOutput**](GetKubeExecCredsOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | getKubeExecCredsResponse wraps response body. |  -  |
+**0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_pki_certificate**
+> GetPKICertificateOutput get_pki_certificate()
+
+
+
+### Example
+
+```python
+from __future__ import print_function
+import time
+import akeyless
+from akeyless.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.akeyless.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = akeyless.Configuration(
+    host = "https://api.akeyless.io"
+)
+
+
+# Enter a context with an instance of the API client
+with akeyless.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = akeyless.V2Api(api_client)
+    
+    try:
+        api_response = api_instance.get_pki_certificate()
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling V2Api->get_pki_certificate: %s\n" % e)
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**GetPKICertificateOutput**](GetPKICertificateOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | getPKICertificateResponse wraps response body. |  -  |
+**0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **get_role**
 > Role get_role(body)
 
@@ -4243,6 +4725,66 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | getRoleResponse wraps response body. |  -  |
+**0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_rotated_secret_value**
+> dict(str, str) get_rotated_secret_value(body)
+
+
+
+### Example
+
+```python
+from __future__ import print_function
+import time
+import akeyless
+from akeyless.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.akeyless.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = akeyless.Configuration(
+    host = "https://api.akeyless.io"
+)
+
+
+# Enter a context with an instance of the API client
+with akeyless.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = akeyless.V2Api(api_client)
+    body = akeyless.GetRotatedSecretValue() # GetRotatedSecretValue | 
+
+    try:
+        api_response = api_instance.get_rotated_secret_value(body)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling V2Api->get_rotated_secret_value: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**GetRotatedSecretValue**](GetRotatedSecretValue.md)|  | 
+
+### Return type
+
+**dict(str, str)**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | getRotatedSecretValueResponse wraps response body. |  -  |
 **0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -5111,7 +5653,7 @@ configuration = akeyless.Configuration(
 with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
-    body = akeyless.RotateKey() # RotateKey | 
+    body = akeyless.UpdateRotationSettings() # UpdateRotationSettings | 
 
     try:
         api_response = api_instance.rotate_key(body)
@@ -5124,7 +5666,7 @@ with akeyless.ApiClient() as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**RotateKey**](RotateKey.md)|  | 
+ **body** | [**UpdateRotationSettings**](UpdateRotationSettings.md)|  | 
 
 ### Return type
 
@@ -6043,6 +6585,122 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | updateRoleResponse wraps response body. |  -  |
+**0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **update_rotated_secret**
+> UpdateRotatedSecretOutput update_rotated_secret(body)
+
+
+
+### Example
+
+```python
+from __future__ import print_function
+import time
+import akeyless
+from akeyless.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.akeyless.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = akeyless.Configuration(
+    host = "https://api.akeyless.io"
+)
+
+
+# Enter a context with an instance of the API client
+with akeyless.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = akeyless.V2Api(api_client)
+    body = akeyless.UpdateRotatedSecret() # UpdateRotatedSecret | 
+
+    try:
+        api_response = api_instance.update_rotated_secret(body)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling V2Api->update_rotated_secret: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**UpdateRotatedSecret**](UpdateRotatedSecret.md)|  | 
+
+### Return type
+
+[**UpdateRotatedSecretOutput**](UpdateRotatedSecretOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | updateRotatedSecretResponse wraps response body. |  -  |
+**0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **update_rotation_settings**
+> RotateKeyOutput update_rotation_settings()
+
+
+
+### Example
+
+```python
+from __future__ import print_function
+import time
+import akeyless
+from akeyless.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.akeyless.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = akeyless.Configuration(
+    host = "https://api.akeyless.io"
+)
+
+
+# Enter a context with an instance of the API client
+with akeyless.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = akeyless.V2Api(api_client)
+    
+    try:
+        api_response = api_instance.update_rotation_settings()
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling V2Api->update_rotation_settings: %s\n" % e)
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**RotateKeyOutput**](RotateKeyOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | rotateKeyResponse wraps response body. |  -  |
 **0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

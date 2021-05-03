@@ -90,7 +90,7 @@ class CreateKey(object):
     def alg(self):
         """Gets the alg of this CreateKey.  # noqa: E501
 
-        Key type; options: [AES128GCM, AES256GCM, AES128SIV, AES256SIV, RSA1024, RSA2048]  # noqa: E501
+        Key type; options: [AES128GCM, AES256GCM, AES128SIV, AES256SIV, RSA1024, RSA2048, RSA3072, RSA4096]  # noqa: E501
 
         :return: The alg of this CreateKey.  # noqa: E501
         :rtype: str
@@ -101,7 +101,7 @@ class CreateKey(object):
     def alg(self, alg):
         """Sets the alg of this CreateKey.
 
-        Key type; options: [AES128GCM, AES256GCM, AES128SIV, AES256SIV, RSA1024, RSA2048]  # noqa: E501
+        Key type; options: [AES128GCM, AES256GCM, AES128SIV, AES256SIV, RSA1024, RSA2048, RSA3072, RSA4096]  # noqa: E501
 
         :param alg: The alg of this CreateKey.  # noqa: E501
         :type: str

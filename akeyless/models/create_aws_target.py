@@ -34,46 +34,48 @@ class CreateAwsTarget(object):
                             and the value is json key in definition.
     """
     openapi_types = {
+        'access_key': 'str',
         'access_key_id': 'str',
         'comment': 'str',
         'name': 'str',
         'protection_key': 'str',
         'region': 'str',
-        'secret_access_key': 'str',
         'session_token': 'str',
         'token': 'str',
         'uid_token': 'str'
     }
 
     attribute_map = {
-        'access_key_id': 'access_key_id',
+        'access_key': 'access-key',
+        'access_key_id': 'access-key-id',
         'comment': 'comment',
         'name': 'name',
         'protection_key': 'protection_key',
         'region': 'region',
-        'secret_access_key': 'secret_access_key',
-        'session_token': 'session_token',
+        'session_token': 'session-token',
         'token': 'token',
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, access_key_id=None, comment=None, name=None, protection_key=None, region=None, secret_access_key=None, session_token=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, access_key=None, access_key_id=None, comment=None, name=None, protection_key=None, region=None, session_token=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """CreateAwsTarget - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
+        self._access_key = None
         self._access_key_id = None
         self._comment = None
         self._name = None
         self._protection_key = None
         self._region = None
-        self._secret_access_key = None
         self._session_token = None
         self._token = None
         self._uid_token = None
         self.discriminator = None
 
+        if access_key is not None:
+            self.access_key = access_key
         if access_key_id is not None:
             self.access_key_id = access_key_id
         if comment is not None:
@@ -83,14 +85,33 @@ class CreateAwsTarget(object):
             self.protection_key = protection_key
         if region is not None:
             self.region = region
-        if secret_access_key is not None:
-            self.secret_access_key = secret_access_key
         if session_token is not None:
             self.session_token = session_token
         if token is not None:
             self.token = token
         if uid_token is not None:
             self.uid_token = uid_token
+
+    @property
+    def access_key(self):
+        """Gets the access_key of this CreateAwsTarget.  # noqa: E501
+
+
+        :return: The access_key of this CreateAwsTarget.  # noqa: E501
+        :rtype: str
+        """
+        return self._access_key
+
+    @access_key.setter
+    def access_key(self, access_key):
+        """Sets the access_key of this CreateAwsTarget.
+
+
+        :param access_key: The access_key of this CreateAwsTarget.  # noqa: E501
+        :type: str
+        """
+
+        self._access_key = access_key
 
     @property
     def access_key_id(self):
@@ -204,27 +225,6 @@ class CreateAwsTarget(object):
         """
 
         self._region = region
-
-    @property
-    def secret_access_key(self):
-        """Gets the secret_access_key of this CreateAwsTarget.  # noqa: E501
-
-
-        :return: The secret_access_key of this CreateAwsTarget.  # noqa: E501
-        :rtype: str
-        """
-        return self._secret_access_key
-
-    @secret_access_key.setter
-    def secret_access_key(self, secret_access_key):
-        """Sets the secret_access_key of this CreateAwsTarget.
-
-
-        :param secret_access_key: The secret_access_key of this CreateAwsTarget.  # noqa: E501
-        :type: str
-        """
-
-        self._secret_access_key = secret_access_key
 
     @property
     def session_token(self):

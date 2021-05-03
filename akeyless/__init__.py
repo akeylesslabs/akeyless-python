@@ -15,7 +15,7 @@
 
 from __future__ import absolute_import
 
-__version__ = "2.3.1"
+__version__ = "2.4.0"
 
 # import apis into sdk package
 from akeyless.api.v2_api import V2Api
@@ -74,18 +74,23 @@ from akeyless.models.create_db_target import CreateDBTarget
 from akeyless.models.create_dynamic_secret import CreateDynamicSecret
 from akeyless.models.create_key import CreateKey
 from akeyless.models.create_key_output import CreateKeyOutput
+from akeyless.models.create_managed_key import CreateManagedKey
+from akeyless.models.create_managed_key_output import CreateManagedKeyOutput
 from akeyless.models.create_pki_cert_issuer import CreatePKICertIssuer
 from akeyless.models.create_pki_cert_issuer_output import CreatePKICertIssuerOutput
 from akeyless.models.create_rabbit_mq_target import CreateRabbitMQTarget
 from akeyless.models.create_rdp_target import CreateRdpTarget
 from akeyless.models.create_role import CreateRole
 from akeyless.models.create_role_auth_method_assoc_output import CreateRoleAuthMethodAssocOutput
+from akeyless.models.create_rotated_secret import CreateRotatedSecret
+from akeyless.models.create_rotated_secret_output import CreateRotatedSecretOutput
 from akeyless.models.create_ssh_cert_issuer import CreateSSHCertIssuer
 from akeyless.models.create_ssh_cert_issuer_output import CreateSSHCertIssuerOutput
 from akeyless.models.create_ssh_target import CreateSSHTarget
 from akeyless.models.create_secret import CreateSecret
 from akeyless.models.create_secret_output import CreateSecretOutput
 from akeyless.models.create_target_item_assoc_output import CreateTargetItemAssocOutput
+from akeyless.models.create_target_output import CreateTargetOutput
 from akeyless.models.create_web_target import CreateWebTarget
 from akeyless.models.customer_fragment import CustomerFragment
 from akeyless.models.customer_fragments_json import CustomerFragmentsJson
@@ -114,6 +119,8 @@ from akeyless.models.delete_target import DeleteTarget
 from akeyless.models.delete_target_association import DeleteTargetAssociation
 from akeyless.models.delete_targets import DeleteTargets
 from akeyless.models.describe_item import DescribeItem
+from akeyless.models.describe_permissions import DescribePermissions
+from akeyless.models.describe_permissions_output import DescribePermissionsOutput
 from akeyless.models.dynamic_secret_producer_info import DynamicSecretProducerInfo
 from akeyless.models.elasticsearch_log_forwarding_config import ElasticsearchLogForwardingConfig
 from akeyless.models.email_pass_access_rules import EmailPassAccessRules
@@ -123,6 +130,7 @@ from akeyless.models.encrypt_file_output import EncryptFileOutput
 from akeyless.models.encrypt_output import EncryptOutput
 from akeyless.models.encrypt_pkcs1 import EncryptPKCS1
 from akeyless.models.encrypt_pkcs1_output import EncryptPKCS1Output
+from akeyless.models.external_kms_key_id import ExternalKMSKeyId
 from akeyless.models.gcp_access_rules import GCPAccessRules
 from akeyless.models.gateway_add_sub_admins import GatewayAddSubAdmins
 from akeyless.models.gateway_add_sub_admins_output import GatewayAddSubAdminsOutput
@@ -132,8 +140,16 @@ from akeyless.models.gateway_create_producer_aws import GatewayCreateProducerAws
 from akeyless.models.gateway_create_producer_aws_output import GatewayCreateProducerAwsOutput
 from akeyless.models.gateway_create_producer_azure import GatewayCreateProducerAzure
 from akeyless.models.gateway_create_producer_azure_output import GatewayCreateProducerAzureOutput
+from akeyless.models.gateway_create_producer_certificate_automation import GatewayCreateProducerCertificateAutomation
+from akeyless.models.gateway_create_producer_certificate_automation_output import GatewayCreateProducerCertificateAutomationOutput
+from akeyless.models.gateway_create_producer_chef import GatewayCreateProducerChef
+from akeyless.models.gateway_create_producer_chef_output import GatewayCreateProducerChefOutput
+from akeyless.models.gateway_create_producer_custom import GatewayCreateProducerCustom
+from akeyless.models.gateway_create_producer_custom_output import GatewayCreateProducerCustomOutput
 from akeyless.models.gateway_create_producer_eks import GatewayCreateProducerEks
 from akeyless.models.gateway_create_producer_eks_output import GatewayCreateProducerEksOutput
+from akeyless.models.gateway_create_producer_gcp import GatewayCreateProducerGcp
+from akeyless.models.gateway_create_producer_gcp_output import GatewayCreateProducerGcpOutput
 from akeyless.models.gateway_create_producer_gke import GatewayCreateProducerGke
 from akeyless.models.gateway_create_producer_gke_output import GatewayCreateProducerGkeOutput
 from akeyless.models.gateway_create_producer_mssql import GatewayCreateProducerMSSQL
@@ -177,6 +193,7 @@ from akeyless.models.get_producers_list_reply_obj import GetProducersListReplyOb
 from akeyless.models.get_rsa_public import GetRSAPublic
 from akeyless.models.get_rsa_public_output import GetRSAPublicOutput
 from akeyless.models.get_role import GetRole
+from akeyless.models.get_rotated_secret_value import GetRotatedSecretValue
 from akeyless.models.get_ssh_certificate import GetSSHCertificate
 from akeyless.models.get_ssh_certificate_output import GetSSHCertificateOutput
 from akeyless.models.get_secret_value import GetSecretValue
@@ -208,6 +225,9 @@ from akeyless.models.list_targets_output import ListTargetsOutput
 from akeyless.models.log_forwarding_config_part import LogForwardingConfigPart
 from akeyless.models.logstash_log_forwarding_config import LogstashLogForwardingConfig
 from akeyless.models.logz_io_log_forwarding_config import LogzIoLogForwardingConfig
+from akeyless.models.managed_key_details_info import ManagedKeyDetailsInfo
+from akeyless.models.managed_key_status_info import ManagedKeyStatusInfo
+from akeyless.models.managed_key_target_info import ManagedKeyTargetInfo
 from akeyless.models.migration_general import MigrationGeneral
 from akeyless.models.migrations_config_part import MigrationsConfigPart
 from akeyless.models.move_objects import MoveObjects
@@ -229,6 +249,9 @@ from akeyless.models.rollback_secret import RollbackSecret
 from akeyless.models.rollback_secret_output import RollbackSecretOutput
 from akeyless.models.rotate_key import RotateKey
 from akeyless.models.rotate_key_output import RotateKeyOutput
+from akeyless.models.rotated_secret_details_info import RotatedSecretDetailsInfo
+from akeyless.models.rotator import Rotator
+from akeyless.models.rotators_config_part import RotatorsConfigPart
 from akeyless.models.rules import Rules
 from akeyless.models.saml_access_rules import SAMLAccessRules
 from akeyless.models.saml_attribute import SAMLAttribute
@@ -263,11 +286,17 @@ from akeyless.models.update_aws_target_details import UpdateAWSTargetDetails
 from akeyless.models.update_db_target_details import UpdateDBTargetDetails
 from akeyless.models.update_item import UpdateItem
 from akeyless.models.update_item_output import UpdateItemOutput
+from akeyless.models.update_managed_key import UpdateManagedKey
 from akeyless.models.update_output import UpdateOutput
 from akeyless.models.update_rdp_target_details import UpdateRDPTargetDetails
 from akeyless.models.update_rabbit_mq_target_details import UpdateRabbitMQTargetDetails
 from akeyless.models.update_role import UpdateRole
 from akeyless.models.update_role_output import UpdateRoleOutput
+from akeyless.models.update_rotated_secret import UpdateRotatedSecret
+from akeyless.models.update_rotated_secret_output import UpdateRotatedSecretOutput
+from akeyless.models.update_rotated_secret_sc import UpdateRotatedSecretSC
+from akeyless.models.update_rotated_secret_sc_output import UpdateRotatedSecretSCOutput
+from akeyless.models.update_rotation_settings import UpdateRotationSettings
 from akeyless.models.update_ssh_target_details import UpdateSSHTargetDetails
 from akeyless.models.update_secret_val import UpdateSecretVal
 from akeyless.models.update_secret_val_output import UpdateSecretValOutput

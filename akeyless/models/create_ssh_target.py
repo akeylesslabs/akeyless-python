@@ -35,48 +35,68 @@ class CreateSSHTarget(object):
     """
     openapi_types = {
         'comment': 'str',
-        'ip': 'list[str]',
+        'host': 'str',
         'name': 'str',
         'port': 'str',
+        'private_key': 'str',
+        'private_key_password': 'str',
         'protection_key': 'str',
+        'ssh_password': 'str',
+        'ssh_username': 'str',
         'token': 'str',
         'uid_token': 'str'
     }
 
     attribute_map = {
         'comment': 'comment',
-        'ip': 'ip',
+        'host': 'host',
         'name': 'name',
         'port': 'port',
+        'private_key': 'private-key',
+        'private_key_password': 'private-key-password',
         'protection_key': 'protection_key',
+        'ssh_password': 'ssh-password',
+        'ssh_username': 'ssh-username',
         'token': 'token',
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, comment=None, ip=None, name=None, port=None, protection_key=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, comment=None, host=None, name=None, port=None, private_key=None, private_key_password=None, protection_key=None, ssh_password=None, ssh_username=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """CreateSSHTarget - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._comment = None
-        self._ip = None
+        self._host = None
         self._name = None
         self._port = None
+        self._private_key = None
+        self._private_key_password = None
         self._protection_key = None
+        self._ssh_password = None
+        self._ssh_username = None
         self._token = None
         self._uid_token = None
         self.discriminator = None
 
         if comment is not None:
             self.comment = comment
-        if ip is not None:
-            self.ip = ip
+        if host is not None:
+            self.host = host
         self.name = name
         if port is not None:
             self.port = port
+        if private_key is not None:
+            self.private_key = private_key
+        if private_key_password is not None:
+            self.private_key_password = private_key_password
         if protection_key is not None:
             self.protection_key = protection_key
+        if ssh_password is not None:
+            self.ssh_password = ssh_password
+        if ssh_username is not None:
+            self.ssh_username = ssh_username
         if token is not None:
             self.token = token
         if uid_token is not None:
@@ -106,25 +126,25 @@ class CreateSSHTarget(object):
         self._comment = comment
 
     @property
-    def ip(self):
-        """Gets the ip of this CreateSSHTarget.  # noqa: E501
+    def host(self):
+        """Gets the host of this CreateSSHTarget.  # noqa: E501
 
 
-        :return: The ip of this CreateSSHTarget.  # noqa: E501
-        :rtype: list[str]
+        :return: The host of this CreateSSHTarget.  # noqa: E501
+        :rtype: str
         """
-        return self._ip
+        return self._host
 
-    @ip.setter
-    def ip(self, ip):
-        """Sets the ip of this CreateSSHTarget.
+    @host.setter
+    def host(self, host):
+        """Sets the host of this CreateSSHTarget.
 
 
-        :param ip: The ip of this CreateSSHTarget.  # noqa: E501
-        :type: list[str]
+        :param host: The host of this CreateSSHTarget.  # noqa: E501
+        :type: str
         """
 
-        self._ip = ip
+        self._host = host
 
     @property
     def name(self):
@@ -173,6 +193,48 @@ class CreateSSHTarget(object):
         self._port = port
 
     @property
+    def private_key(self):
+        """Gets the private_key of this CreateSSHTarget.  # noqa: E501
+
+
+        :return: The private_key of this CreateSSHTarget.  # noqa: E501
+        :rtype: str
+        """
+        return self._private_key
+
+    @private_key.setter
+    def private_key(self, private_key):
+        """Sets the private_key of this CreateSSHTarget.
+
+
+        :param private_key: The private_key of this CreateSSHTarget.  # noqa: E501
+        :type: str
+        """
+
+        self._private_key = private_key
+
+    @property
+    def private_key_password(self):
+        """Gets the private_key_password of this CreateSSHTarget.  # noqa: E501
+
+
+        :return: The private_key_password of this CreateSSHTarget.  # noqa: E501
+        :rtype: str
+        """
+        return self._private_key_password
+
+    @private_key_password.setter
+    def private_key_password(self, private_key_password):
+        """Sets the private_key_password of this CreateSSHTarget.
+
+
+        :param private_key_password: The private_key_password of this CreateSSHTarget.  # noqa: E501
+        :type: str
+        """
+
+        self._private_key_password = private_key_password
+
+    @property
     def protection_key(self):
         """Gets the protection_key of this CreateSSHTarget.  # noqa: E501
 
@@ -194,6 +256,48 @@ class CreateSSHTarget(object):
         """
 
         self._protection_key = protection_key
+
+    @property
+    def ssh_password(self):
+        """Gets the ssh_password of this CreateSSHTarget.  # noqa: E501
+
+
+        :return: The ssh_password of this CreateSSHTarget.  # noqa: E501
+        :rtype: str
+        """
+        return self._ssh_password
+
+    @ssh_password.setter
+    def ssh_password(self, ssh_password):
+        """Sets the ssh_password of this CreateSSHTarget.
+
+
+        :param ssh_password: The ssh_password of this CreateSSHTarget.  # noqa: E501
+        :type: str
+        """
+
+        self._ssh_password = ssh_password
+
+    @property
+    def ssh_username(self):
+        """Gets the ssh_username of this CreateSSHTarget.  # noqa: E501
+
+
+        :return: The ssh_username of this CreateSSHTarget.  # noqa: E501
+        :rtype: str
+        """
+        return self._ssh_username
+
+    @ssh_username.setter
+    def ssh_username(self, ssh_username):
+        """Sets the ssh_username of this CreateSSHTarget.
+
+
+        :param ssh_username: The ssh_username of this CreateSSHTarget.  # noqa: E501
+        :type: str
+        """
+
+        self._ssh_username = ssh_username
 
     @property
     def token(self):

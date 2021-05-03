@@ -4,6 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **default_protection_key_id** | **int** |  | [optional] 
+**default_secret_location** | **str** |  | [optional] 
 **open_id_connect_access_id** | **str** |  | [optional] 
 **saml_access_id** | **str** |  | [optional] 
 

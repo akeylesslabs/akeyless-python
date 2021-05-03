@@ -37,8 +37,7 @@ class GetKubeExecCreds(object):
         'alt_names': 'str',
         'cert_issuer_name': 'str',
         'common_name': 'str',
-        'key_file_path': 'str',
-        'outfile': 'str',
+        'key_data_base64': 'str',
         'token': 'str',
         'uid_token': 'str',
         'uri_sans': 'str'
@@ -48,14 +47,13 @@ class GetKubeExecCreds(object):
         'alt_names': 'alt-names',
         'cert_issuer_name': 'cert-issuer-name',
         'common_name': 'common-name',
-        'key_file_path': 'key-file-path',
-        'outfile': 'outfile',
+        'key_data_base64': 'key-data-base64',
         'token': 'token',
         'uid_token': 'uid-token',
         'uri_sans': 'uri-sans'
     }
 
-    def __init__(self, alt_names=None, cert_issuer_name=None, common_name=None, key_file_path=None, outfile=None, token=None, uid_token=None, uri_sans=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, alt_names=None, cert_issuer_name=None, common_name=None, key_data_base64=None, token=None, uid_token=None, uri_sans=None, local_vars_configuration=None):  # noqa: E501
         """GetKubeExecCreds - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -64,8 +62,7 @@ class GetKubeExecCreds(object):
         self._alt_names = None
         self._cert_issuer_name = None
         self._common_name = None
-        self._key_file_path = None
-        self._outfile = None
+        self._key_data_base64 = None
         self._token = None
         self._uid_token = None
         self._uri_sans = None
@@ -76,9 +73,8 @@ class GetKubeExecCreds(object):
         self.cert_issuer_name = cert_issuer_name
         if common_name is not None:
             self.common_name = common_name
-        self.key_file_path = key_file_path
-        if outfile is not None:
-            self.outfile = outfile
+        if key_data_base64 is not None:
+            self.key_data_base64 = key_data_base64
         if token is not None:
             self.token = token
         if uid_token is not None:
@@ -158,52 +154,27 @@ class GetKubeExecCreds(object):
         self._common_name = common_name
 
     @property
-    def key_file_path(self):
-        """Gets the key_file_path of this GetKubeExecCreds.  # noqa: E501
+    def key_data_base64(self):
+        """Gets the key_data_base64 of this GetKubeExecCreds.  # noqa: E501
 
-        The client public or private key file path (in case of a private key, it will be use to extract the public key)  # noqa: E501
+        PKI key file contents. If this option is used, the certificate will be printed to stdout  # noqa: E501
 
-        :return: The key_file_path of this GetKubeExecCreds.  # noqa: E501
+        :return: The key_data_base64 of this GetKubeExecCreds.  # noqa: E501
         :rtype: str
         """
-        return self._key_file_path
+        return self._key_data_base64
 
-    @key_file_path.setter
-    def key_file_path(self, key_file_path):
-        """Sets the key_file_path of this GetKubeExecCreds.
+    @key_data_base64.setter
+    def key_data_base64(self, key_data_base64):
+        """Sets the key_data_base64 of this GetKubeExecCreds.
 
-        The client public or private key file path (in case of a private key, it will be use to extract the public key)  # noqa: E501
+        PKI key file contents. If this option is used, the certificate will be printed to stdout  # noqa: E501
 
-        :param key_file_path: The key_file_path of this GetKubeExecCreds.  # noqa: E501
-        :type: str
-        """
-        if self.local_vars_configuration.client_side_validation and key_file_path is None:  # noqa: E501
-            raise ValueError("Invalid value for `key_file_path`, must not be `None`")  # noqa: E501
-
-        self._key_file_path = key_file_path
-
-    @property
-    def outfile(self):
-        """Gets the outfile of this GetKubeExecCreds.  # noqa: E501
-
-        Output file path with the certificate. If not provided, the file with the certificate will be created in the same location of the provided public key with the -cert extension  # noqa: E501
-
-        :return: The outfile of this GetKubeExecCreds.  # noqa: E501
-        :rtype: str
-        """
-        return self._outfile
-
-    @outfile.setter
-    def outfile(self, outfile):
-        """Sets the outfile of this GetKubeExecCreds.
-
-        Output file path with the certificate. If not provided, the file with the certificate will be created in the same location of the provided public key with the -cert extension  # noqa: E501
-
-        :param outfile: The outfile of this GetKubeExecCreds.  # noqa: E501
+        :param key_data_base64: The key_data_base64 of this GetKubeExecCreds.  # noqa: E501
         :type: str
         """
 
-        self._outfile = outfile
+        self._key_data_base64 = key_data_base64
 
     @property
     def token(self):

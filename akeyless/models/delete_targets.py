@@ -66,7 +66,7 @@ class DeleteTargets(object):
     def path(self):
         """Gets the path of this DeleteTargets.  # noqa: E501
 
-        Path to delete the auth methods from  # noqa: E501
+        Path to delete the targets from  # noqa: E501
 
         :return: The path of this DeleteTargets.  # noqa: E501
         :rtype: str
@@ -77,7 +77,7 @@ class DeleteTargets(object):
     def path(self, path):
         """Sets the path of this DeleteTargets.
 
-        Path to delete the auth methods from  # noqa: E501
+        Path to delete the targets from  # noqa: E501
 
         :param path: The path of this DeleteTargets.  # noqa: E501
         :type: str

@@ -44,6 +44,7 @@ class AkeylessGatewayConfig(object):
         'log_forwarding': 'LogForwardingConfigPart',
         'migrations': 'MigrationsConfigPart',
         'producers': 'ProducersConfigPart',
+        'rotators': 'RotatorsConfigPart',
         'saml': 'DefaultConfigPart',
         'uidentity': 'UIdentityConfigPart',
         'version': 'int'
@@ -60,12 +61,13 @@ class AkeylessGatewayConfig(object):
         'log_forwarding': 'log_forwarding',
         'migrations': 'migrations',
         'producers': 'producers',
+        'rotators': 'rotators',
         'saml': 'saml',
         'uidentity': 'uidentity',
         'version': 'version'
     }
 
-    def __init__(self, admins=None, cache=None, cf=None, config_protection_key_name=None, general=None, ldap=None, leadership=None, log_forwarding=None, migrations=None, producers=None, saml=None, uidentity=None, version=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, admins=None, cache=None, cf=None, config_protection_key_name=None, general=None, ldap=None, leadership=None, log_forwarding=None, migrations=None, producers=None, rotators=None, saml=None, uidentity=None, version=None, local_vars_configuration=None):  # noqa: E501
         """AkeylessGatewayConfig - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -81,6 +83,7 @@ class AkeylessGatewayConfig(object):
         self._log_forwarding = None
         self._migrations = None
         self._producers = None
+        self._rotators = None
         self._saml = None
         self._uidentity = None
         self._version = None
@@ -106,6 +109,8 @@ class AkeylessGatewayConfig(object):
             self.migrations = migrations
         if producers is not None:
             self.producers = producers
+        if rotators is not None:
+            self.rotators = rotators
         if saml is not None:
             self.saml = saml
         if uidentity is not None:
@@ -322,6 +327,27 @@ class AkeylessGatewayConfig(object):
         """
 
         self._producers = producers
+
+    @property
+    def rotators(self):
+        """Gets the rotators of this AkeylessGatewayConfig.  # noqa: E501
+
+
+        :return: The rotators of this AkeylessGatewayConfig.  # noqa: E501
+        :rtype: RotatorsConfigPart
+        """
+        return self._rotators
+
+    @rotators.setter
+    def rotators(self, rotators):
+        """Sets the rotators of this AkeylessGatewayConfig.
+
+
+        :param rotators: The rotators of this AkeylessGatewayConfig.  # noqa: E501
+        :type: RotatorsConfigPart
+        """
+
+        self._rotators = rotators
 
     @property
     def saml(self):

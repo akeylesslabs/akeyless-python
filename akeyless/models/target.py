@@ -34,42 +34,55 @@ class Target(object):
                             and the value is json key in definition.
     """
     openapi_types = {
+        'client_permissions': 'list[str]',
         'comment': 'str',
+        'last_version': 'int',
         'protection_key_name': 'str',
         'target_id': 'int',
         'target_items_assoc': 'list[TargetItemAssociation]',
         'target_name': 'str',
         'target_type': 'str',
+        'target_versions': 'list[ItemVersion]',
         'with_customer_fragment': 'bool'
     }
 
     attribute_map = {
+        'client_permissions': 'client_permissions',
         'comment': 'comment',
+        'last_version': 'last_version',
         'protection_key_name': 'protection_key_name',
         'target_id': 'target_id',
         'target_items_assoc': 'target_items_assoc',
         'target_name': 'target_name',
         'target_type': 'target_type',
+        'target_versions': 'target_versions',
         'with_customer_fragment': 'with_customer_fragment'
     }
 
-    def __init__(self, comment=None, protection_key_name=None, target_id=None, target_items_assoc=None, target_name=None, target_type=None, with_customer_fragment=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, client_permissions=None, comment=None, last_version=None, protection_key_name=None, target_id=None, target_items_assoc=None, target_name=None, target_type=None, target_versions=None, with_customer_fragment=None, local_vars_configuration=None):  # noqa: E501
         """Target - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
+        self._client_permissions = None
         self._comment = None
+        self._last_version = None
         self._protection_key_name = None
         self._target_id = None
         self._target_items_assoc = None
         self._target_name = None
         self._target_type = None
+        self._target_versions = None
         self._with_customer_fragment = None
         self.discriminator = None
 
+        if client_permissions is not None:
+            self.client_permissions = client_permissions
         if comment is not None:
             self.comment = comment
+        if last_version is not None:
+            self.last_version = last_version
         if protection_key_name is not None:
             self.protection_key_name = protection_key_name
         if target_id is not None:
@@ -80,8 +93,31 @@ class Target(object):
             self.target_name = target_name
         if target_type is not None:
             self.target_type = target_type
+        if target_versions is not None:
+            self.target_versions = target_versions
         if with_customer_fragment is not None:
             self.with_customer_fragment = with_customer_fragment
+
+    @property
+    def client_permissions(self):
+        """Gets the client_permissions of this Target.  # noqa: E501
+
+
+        :return: The client_permissions of this Target.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._client_permissions
+
+    @client_permissions.setter
+    def client_permissions(self, client_permissions):
+        """Sets the client_permissions of this Target.
+
+
+        :param client_permissions: The client_permissions of this Target.  # noqa: E501
+        :type: list[str]
+        """
+
+        self._client_permissions = client_permissions
 
     @property
     def comment(self):
@@ -103,6 +139,27 @@ class Target(object):
         """
 
         self._comment = comment
+
+    @property
+    def last_version(self):
+        """Gets the last_version of this Target.  # noqa: E501
+
+
+        :return: The last_version of this Target.  # noqa: E501
+        :rtype: int
+        """
+        return self._last_version
+
+    @last_version.setter
+    def last_version(self, last_version):
+        """Sets the last_version of this Target.
+
+
+        :param last_version: The last_version of this Target.  # noqa: E501
+        :type: int
+        """
+
+        self._last_version = last_version
 
     @property
     def protection_key_name(self):
@@ -208,6 +265,27 @@ class Target(object):
         """
 
         self._target_type = target_type
+
+    @property
+    def target_versions(self):
+        """Gets the target_versions of this Target.  # noqa: E501
+
+
+        :return: The target_versions of this Target.  # noqa: E501
+        :rtype: list[ItemVersion]
+        """
+        return self._target_versions
+
+    @target_versions.setter
+    def target_versions(self, target_versions):
+        """Sets the target_versions of this Target.
+
+
+        :param target_versions: The target_versions of this Target.  # noqa: E501
+        :type: list[ItemVersion]
+        """
+
+        self._target_versions = target_versions
 
     @property
     def with_customer_fragment(self):

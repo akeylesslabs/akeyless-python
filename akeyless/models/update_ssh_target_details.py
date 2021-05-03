@@ -34,69 +34,94 @@ class UpdateSSHTargetDetails(object):
                             and the value is json key in definition.
     """
     openapi_types = {
-        'ip': 'list[str]',
+        'host': 'str',
         'name': 'str',
+        'new_version': 'bool',
         'port': 'str',
+        'private_key': 'str',
+        'private_key_password': 'str',
         'protection_key': 'str',
+        'ssh_password': 'str',
+        'ssh_username': 'str',
         'token': 'str',
         'uid_token': 'str'
     }
 
     attribute_map = {
-        'ip': 'ip',
+        'host': 'host',
         'name': 'name',
+        'new_version': 'new-version',
         'port': 'port',
+        'private_key': 'private-key',
+        'private_key_password': 'private-key-password',
         'protection_key': 'protection_key',
+        'ssh_password': 'ssh-password',
+        'ssh_username': 'ssh-username',
         'token': 'token',
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, ip=None, name=None, port=None, protection_key=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, host=None, name=None, new_version=False, port=None, private_key=None, private_key_password=None, protection_key=None, ssh_password=None, ssh_username=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """UpdateSSHTargetDetails - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
-        self._ip = None
+        self._host = None
         self._name = None
+        self._new_version = None
         self._port = None
+        self._private_key = None
+        self._private_key_password = None
         self._protection_key = None
+        self._ssh_password = None
+        self._ssh_username = None
         self._token = None
         self._uid_token = None
         self.discriminator = None
 
-        if ip is not None:
-            self.ip = ip
+        if host is not None:
+            self.host = host
         self.name = name
+        if new_version is not None:
+            self.new_version = new_version
         if port is not None:
             self.port = port
+        if private_key is not None:
+            self.private_key = private_key
+        if private_key_password is not None:
+            self.private_key_password = private_key_password
         if protection_key is not None:
             self.protection_key = protection_key
+        if ssh_password is not None:
+            self.ssh_password = ssh_password
+        if ssh_username is not None:
+            self.ssh_username = ssh_username
         if token is not None:
             self.token = token
         if uid_token is not None:
             self.uid_token = uid_token
 
     @property
-    def ip(self):
-        """Gets the ip of this UpdateSSHTargetDetails.  # noqa: E501
+    def host(self):
+        """Gets the host of this UpdateSSHTargetDetails.  # noqa: E501
 
 
-        :return: The ip of this UpdateSSHTargetDetails.  # noqa: E501
-        :rtype: list[str]
+        :return: The host of this UpdateSSHTargetDetails.  # noqa: E501
+        :rtype: str
         """
-        return self._ip
+        return self._host
 
-    @ip.setter
-    def ip(self, ip):
-        """Sets the ip of this UpdateSSHTargetDetails.
+    @host.setter
+    def host(self, host):
+        """Sets the host of this UpdateSSHTargetDetails.
 
 
-        :param ip: The ip of this UpdateSSHTargetDetails.  # noqa: E501
-        :type: list[str]
+        :param host: The host of this UpdateSSHTargetDetails.  # noqa: E501
+        :type: str
         """
 
-        self._ip = ip
+        self._host = host
 
     @property
     def name(self):
@@ -124,6 +149,29 @@ class UpdateSSHTargetDetails(object):
         self._name = name
 
     @property
+    def new_version(self):
+        """Gets the new_version of this UpdateSSHTargetDetails.  # noqa: E501
+
+        Whether to create a new version of not  # noqa: E501
+
+        :return: The new_version of this UpdateSSHTargetDetails.  # noqa: E501
+        :rtype: bool
+        """
+        return self._new_version
+
+    @new_version.setter
+    def new_version(self, new_version):
+        """Sets the new_version of this UpdateSSHTargetDetails.
+
+        Whether to create a new version of not  # noqa: E501
+
+        :param new_version: The new_version of this UpdateSSHTargetDetails.  # noqa: E501
+        :type: bool
+        """
+
+        self._new_version = new_version
+
+    @property
     def port(self):
         """Gets the port of this UpdateSSHTargetDetails.  # noqa: E501
 
@@ -143,6 +191,48 @@ class UpdateSSHTargetDetails(object):
         """
 
         self._port = port
+
+    @property
+    def private_key(self):
+        """Gets the private_key of this UpdateSSHTargetDetails.  # noqa: E501
+
+
+        :return: The private_key of this UpdateSSHTargetDetails.  # noqa: E501
+        :rtype: str
+        """
+        return self._private_key
+
+    @private_key.setter
+    def private_key(self, private_key):
+        """Sets the private_key of this UpdateSSHTargetDetails.
+
+
+        :param private_key: The private_key of this UpdateSSHTargetDetails.  # noqa: E501
+        :type: str
+        """
+
+        self._private_key = private_key
+
+    @property
+    def private_key_password(self):
+        """Gets the private_key_password of this UpdateSSHTargetDetails.  # noqa: E501
+
+
+        :return: The private_key_password of this UpdateSSHTargetDetails.  # noqa: E501
+        :rtype: str
+        """
+        return self._private_key_password
+
+    @private_key_password.setter
+    def private_key_password(self, private_key_password):
+        """Sets the private_key_password of this UpdateSSHTargetDetails.
+
+
+        :param private_key_password: The private_key_password of this UpdateSSHTargetDetails.  # noqa: E501
+        :type: str
+        """
+
+        self._private_key_password = private_key_password
 
     @property
     def protection_key(self):
@@ -166,6 +256,48 @@ class UpdateSSHTargetDetails(object):
         """
 
         self._protection_key = protection_key
+
+    @property
+    def ssh_password(self):
+        """Gets the ssh_password of this UpdateSSHTargetDetails.  # noqa: E501
+
+
+        :return: The ssh_password of this UpdateSSHTargetDetails.  # noqa: E501
+        :rtype: str
+        """
+        return self._ssh_password
+
+    @ssh_password.setter
+    def ssh_password(self, ssh_password):
+        """Sets the ssh_password of this UpdateSSHTargetDetails.
+
+
+        :param ssh_password: The ssh_password of this UpdateSSHTargetDetails.  # noqa: E501
+        :type: str
+        """
+
+        self._ssh_password = ssh_password
+
+    @property
+    def ssh_username(self):
+        """Gets the ssh_username of this UpdateSSHTargetDetails.  # noqa: E501
+
+
+        :return: The ssh_username of this UpdateSSHTargetDetails.  # noqa: E501
+        :rtype: str
+        """
+        return self._ssh_username
+
+    @ssh_username.setter
+    def ssh_username(self, ssh_username):
+        """Sets the ssh_username of this UpdateSSHTargetDetails.
+
+
+        :param ssh_username: The ssh_username of this UpdateSSHTargetDetails.  # noqa: E501
+        :type: str
+        """
+
+        self._ssh_username = ssh_username
 
     @property
     def token(self):

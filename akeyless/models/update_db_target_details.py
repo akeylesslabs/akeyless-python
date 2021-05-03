@@ -39,6 +39,7 @@ class UpdateDBTargetDetails(object):
         'mongo_db_name': 'str',
         'mongo_uri': 'str',
         'name': 'str',
+        'new_version': 'bool',
         'port': 'str',
         'protection_key': 'str',
         'pwd': 'str',
@@ -53,6 +54,7 @@ class UpdateDBTargetDetails(object):
         'mongo_db_name': 'mongo_db_name',
         'mongo_uri': 'mongo_uri',
         'name': 'name',
+        'new_version': 'new-version',
         'port': 'port',
         'protection_key': 'protection_key',
         'pwd': 'pwd',
@@ -61,7 +63,7 @@ class UpdateDBTargetDetails(object):
         'user_name': 'user_name'
     }
 
-    def __init__(self, db_type=None, host_name=None, mongo_db_name=None, mongo_uri=None, name=None, port=None, protection_key=None, pwd=None, token=None, uid_token=None, user_name=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, db_type=None, host_name=None, mongo_db_name=None, mongo_uri=None, name=None, new_version=False, port=None, protection_key=None, pwd=None, token=None, uid_token=None, user_name=None, local_vars_configuration=None):  # noqa: E501
         """UpdateDBTargetDetails - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -72,6 +74,7 @@ class UpdateDBTargetDetails(object):
         self._mongo_db_name = None
         self._mongo_uri = None
         self._name = None
+        self._new_version = None
         self._port = None
         self._protection_key = None
         self._pwd = None
@@ -89,6 +92,8 @@ class UpdateDBTargetDetails(object):
         if mongo_uri is not None:
             self.mongo_uri = mongo_uri
         self.name = name
+        if new_version is not None:
+            self.new_version = new_version
         if port is not None:
             self.port = port
         if protection_key is not None:
@@ -210,6 +215,29 @@ class UpdateDBTargetDetails(object):
             raise ValueError("Invalid value for `name`, must not be `None`")  # noqa: E501
 
         self._name = name
+
+    @property
+    def new_version(self):
+        """Gets the new_version of this UpdateDBTargetDetails.  # noqa: E501
+
+        Whether to create a new version of not  # noqa: E501
+
+        :return: The new_version of this UpdateDBTargetDetails.  # noqa: E501
+        :rtype: bool
+        """
+        return self._new_version
+
+    @new_version.setter
+    def new_version(self, new_version):
+        """Sets the new_version of this UpdateDBTargetDetails.
+
+        Whether to create a new version of not  # noqa: E501
+
+        :param new_version: The new_version of this UpdateDBTargetDetails.  # noqa: E501
+        :type: bool
+        """
+
+        self._new_version = new_version
 
     @property
     def port(self):

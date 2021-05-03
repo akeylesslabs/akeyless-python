@@ -35,15 +35,19 @@ class ItemGeneralInfo(object):
     """
     openapi_types = {
         'cert_issue_details': 'CertificateIssueInfo',
-        'dynamic_secret_producer_details': 'DynamicSecretProducerInfo'
+        'dynamic_secret_producer_details': 'DynamicSecretProducerInfo',
+        'managed_key_details': 'ManagedKeyDetailsInfo',
+        'rotated_secret_details': 'RotatedSecretDetailsInfo'
     }
 
     attribute_map = {
         'cert_issue_details': 'cert_issue_details',
-        'dynamic_secret_producer_details': 'dynamic_secret_producer_details'
+        'dynamic_secret_producer_details': 'dynamic_secret_producer_details',
+        'managed_key_details': 'managed_key_details',
+        'rotated_secret_details': 'rotated_secret_details'
     }
 
-    def __init__(self, cert_issue_details=None, dynamic_secret_producer_details=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, cert_issue_details=None, dynamic_secret_producer_details=None, managed_key_details=None, rotated_secret_details=None, local_vars_configuration=None):  # noqa: E501
         """ItemGeneralInfo - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -51,12 +55,18 @@ class ItemGeneralInfo(object):
 
         self._cert_issue_details = None
         self._dynamic_secret_producer_details = None
+        self._managed_key_details = None
+        self._rotated_secret_details = None
         self.discriminator = None
 
         if cert_issue_details is not None:
             self.cert_issue_details = cert_issue_details
         if dynamic_secret_producer_details is not None:
             self.dynamic_secret_producer_details = dynamic_secret_producer_details
+        if managed_key_details is not None:
+            self.managed_key_details = managed_key_details
+        if rotated_secret_details is not None:
+            self.rotated_secret_details = rotated_secret_details
 
     @property
     def cert_issue_details(self):
@@ -99,6 +109,48 @@ class ItemGeneralInfo(object):
         """
 
         self._dynamic_secret_producer_details = dynamic_secret_producer_details
+
+    @property
+    def managed_key_details(self):
+        """Gets the managed_key_details of this ItemGeneralInfo.  # noqa: E501
+
+
+        :return: The managed_key_details of this ItemGeneralInfo.  # noqa: E501
+        :rtype: ManagedKeyDetailsInfo
+        """
+        return self._managed_key_details
+
+    @managed_key_details.setter
+    def managed_key_details(self, managed_key_details):
+        """Sets the managed_key_details of this ItemGeneralInfo.
+
+
+        :param managed_key_details: The managed_key_details of this ItemGeneralInfo.  # noqa: E501
+        :type: ManagedKeyDetailsInfo
+        """
+
+        self._managed_key_details = managed_key_details
+
+    @property
+    def rotated_secret_details(self):
+        """Gets the rotated_secret_details of this ItemGeneralInfo.  # noqa: E501
+
+
+        :return: The rotated_secret_details of this ItemGeneralInfo.  # noqa: E501
+        :rtype: RotatedSecretDetailsInfo
+        """
+        return self._rotated_secret_details
+
+    @rotated_secret_details.setter
+    def rotated_secret_details(self, rotated_secret_details):
+        """Sets the rotated_secret_details of this ItemGeneralInfo.
+
+
+        :param rotated_secret_details: The rotated_secret_details of this ItemGeneralInfo.  # noqa: E501
+        :type: RotatedSecretDetailsInfo
+        """
+
+        self._rotated_secret_details = rotated_secret_details
 
     def to_dict(self):
         """Returns the model properties as a dict"""

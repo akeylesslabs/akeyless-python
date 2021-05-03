@@ -34,32 +34,32 @@ class AssocTargetItem(object):
                             and the value is json key in definition.
     """
     openapi_types = {
-        'item_name': 'str',
+        'name': 'str',
         'target_name': 'str',
         'token': 'str',
         'uid_token': 'str'
     }
 
     attribute_map = {
-        'item_name': 'item-name',
+        'name': 'name',
         'target_name': 'target-name',
         'token': 'token',
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, item_name=None, target_name=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, name=None, target_name=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """AssocTargetItem - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
-        self._item_name = None
+        self._name = None
         self._target_name = None
         self._token = None
         self._uid_token = None
         self.discriminator = None
 
-        self.item_name = item_name
+        self.name = name
         self.target_name = target_name
         if token is not None:
             self.token = token
@@ -67,29 +67,29 @@ class AssocTargetItem(object):
             self.uid_token = uid_token
 
     @property
-    def item_name(self):
-        """Gets the item_name of this AssocTargetItem.  # noqa: E501
+    def name(self):
+        """Gets the name of this AssocTargetItem.  # noqa: E501
 
         The item to associate  # noqa: E501
 
-        :return: The item_name of this AssocTargetItem.  # noqa: E501
+        :return: The name of this AssocTargetItem.  # noqa: E501
         :rtype: str
         """
-        return self._item_name
+        return self._name
 
-    @item_name.setter
-    def item_name(self, item_name):
-        """Sets the item_name of this AssocTargetItem.
+    @name.setter
+    def name(self, name):
+        """Sets the name of this AssocTargetItem.
 
         The item to associate  # noqa: E501
 
-        :param item_name: The item_name of this AssocTargetItem.  # noqa: E501
+        :param name: The name of this AssocTargetItem.  # noqa: E501
         :type: str
         """
-        if self.local_vars_configuration.client_side_validation and item_name is None:  # noqa: E501
-            raise ValueError("Invalid value for `item_name`, must not be `None`")  # noqa: E501
+        if self.local_vars_configuration.client_side_validation and name is None:  # noqa: E501
+            raise ValueError("Invalid value for `name`, must not be `None`")  # noqa: E501
 
-        self._item_name = item_name
+        self._name = name
 
     @property
     def target_name(self):

@@ -110,7 +110,7 @@ class UploadRSA(object):
     def alg(self):
         """Gets the alg of this UploadRSA.  # noqa: E501
 
-        Key type. options: [RSA1024, RSA2048]  # noqa: E501
+        Key type. options: [RSA1024, RSA2048, RSA3072, RSA4096]  # noqa: E501
 
         :return: The alg of this UploadRSA.  # noqa: E501
         :rtype: str
@@ -121,7 +121,7 @@ class UploadRSA(object):
     def alg(self, alg):
         """Sets the alg of this UploadRSA.
 
-        Key type. options: [RSA1024, RSA2048]  # noqa: E501
+        Key type. options: [RSA1024, RSA2048, RSA3072, RSA4096]  # noqa: E501
 
         :param alg: The alg of this UploadRSA.  # noqa: E501
         :type: str

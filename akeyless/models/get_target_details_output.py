@@ -34,24 +34,50 @@ class GetTargetDetailsOutput(object):
                             and the value is json key in definition.
     """
     openapi_types = {
+        'target': 'Target',
         'value': 'TargetTypeDetailesInput'
     }
 
     attribute_map = {
-        'value': 'Value'
+        'target': 'target',
+        'value': 'value'
     }
 
-    def __init__(self, value=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, target=None, value=None, local_vars_configuration=None):  # noqa: E501
         """GetTargetDetailsOutput - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
+        self._target = None
         self._value = None
         self.discriminator = None
 
+        if target is not None:
+            self.target = target
         if value is not None:
             self.value = value
+
+    @property
+    def target(self):
+        """Gets the target of this GetTargetDetailsOutput.  # noqa: E501
+
+
+        :return: The target of this GetTargetDetailsOutput.  # noqa: E501
+        :rtype: Target
+        """
+        return self._target
+
+    @target.setter
+    def target(self, target):
+        """Sets the target of this GetTargetDetailsOutput.
+
+
+        :param target: The target of this GetTargetDetailsOutput.  # noqa: E501
+        :type: Target
+        """
+
+        self._target = target
 
     @property
     def value(self):

@@ -35,6 +35,7 @@ class UpdateWebTargetDetails(object):
     """
     openapi_types = {
         'name': 'str',
+        'new_version': 'bool',
         'protection_key': 'str',
         'token': 'str',
         'uid_token': 'str',
@@ -43,19 +44,21 @@ class UpdateWebTargetDetails(object):
 
     attribute_map = {
         'name': 'name',
+        'new_version': 'new-version',
         'protection_key': 'protection_key',
         'token': 'token',
         'uid_token': 'uid-token',
         'url': 'url'
     }
 
-    def __init__(self, name=None, protection_key=None, token=None, uid_token=None, url=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, name=None, new_version=False, protection_key=None, token=None, uid_token=None, url=None, local_vars_configuration=None):  # noqa: E501
         """UpdateWebTargetDetails - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._name = None
+        self._new_version = None
         self._protection_key = None
         self._token = None
         self._uid_token = None
@@ -63,6 +66,8 @@ class UpdateWebTargetDetails(object):
         self.discriminator = None
 
         self.name = name
+        if new_version is not None:
+            self.new_version = new_version
         if protection_key is not None:
             self.protection_key = protection_key
         if token is not None:
@@ -96,6 +101,29 @@ class UpdateWebTargetDetails(object):
             raise ValueError("Invalid value for `name`, must not be `None`")  # noqa: E501
 
         self._name = name
+
+    @property
+    def new_version(self):
+        """Gets the new_version of this UpdateWebTargetDetails.  # noqa: E501
+
+        Whether to create a new version of not  # noqa: E501
+
+        :return: The new_version of this UpdateWebTargetDetails.  # noqa: E501
+        :rtype: bool
+        """
+        return self._new_version
+
+    @new_version.setter
+    def new_version(self, new_version):
+        """Sets the new_version of this UpdateWebTargetDetails.
+
+        Whether to create a new version of not  # noqa: E501
+
+        :param new_version: The new_version of this UpdateWebTargetDetails.  # noqa: E501
+        :type: bool
+        """
+
+        self._new_version = new_version
 
     @property
     def protection_key(self):

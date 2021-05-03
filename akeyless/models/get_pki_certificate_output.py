@@ -34,24 +34,50 @@ class GetPKICertificateOutput(object):
                             and the value is json key in definition.
     """
     openapi_types = {
+        'data': 'str',
         'path': 'str'
     }
 
     attribute_map = {
+        'data': 'data',
         'path': 'path'
     }
 
-    def __init__(self, path=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, data=None, path=None, local_vars_configuration=None):  # noqa: E501
         """GetPKICertificateOutput - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
+        self._data = None
         self._path = None
         self.discriminator = None
 
+        if data is not None:
+            self.data = data
         if path is not None:
             self.path = path
+
+    @property
+    def data(self):
+        """Gets the data of this GetPKICertificateOutput.  # noqa: E501
+
+
+        :return: The data of this GetPKICertificateOutput.  # noqa: E501
+        :rtype: str
+        """
+        return self._data
+
+    @data.setter
+    def data(self, data):
+        """Sets the data of this GetPKICertificateOutput.
+
+
+        :param data: The data of this GetPKICertificateOutput.  # noqa: E501
+        :type: str
+        """
+
+        self._data = data
 
     @property
     def path(self):

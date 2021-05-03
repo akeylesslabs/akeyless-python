@@ -34,33 +34,66 @@ class DeleteTarget(object):
                             and the value is json key in definition.
     """
     openapi_types = {
+        'enforce_deletion': 'bool',
         'name': 'str',
+        'target_version': 'int',
         'token': 'str',
         'uid_token': 'str'
     }
 
     attribute_map = {
+        'enforce_deletion': 'enforce-deletion',
         'name': 'name',
+        'target_version': 'target-version',
         'token': 'token',
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, name=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, enforce_deletion=False, name=None, target_version=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """DeleteTarget - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
+        self._enforce_deletion = None
         self._name = None
+        self._target_version = None
         self._token = None
         self._uid_token = None
         self.discriminator = None
 
+        if enforce_deletion is not None:
+            self.enforce_deletion = enforce_deletion
         self.name = name
+        if target_version is not None:
+            self.target_version = target_version
         if token is not None:
             self.token = token
         if uid_token is not None:
             self.uid_token = uid_token
+
+    @property
+    def enforce_deletion(self):
+        """Gets the enforce_deletion of this DeleteTarget.  # noqa: E501
+
+        Enforce deletion  # noqa: E501
+
+        :return: The enforce_deletion of this DeleteTarget.  # noqa: E501
+        :rtype: bool
+        """
+        return self._enforce_deletion
+
+    @enforce_deletion.setter
+    def enforce_deletion(self, enforce_deletion):
+        """Sets the enforce_deletion of this DeleteTarget.
+
+        Enforce deletion  # noqa: E501
+
+        :param enforce_deletion: The enforce_deletion of this DeleteTarget.  # noqa: E501
+        :type: bool
+        """
+
+        self._enforce_deletion = enforce_deletion
 
     @property
     def name(self):
@@ -86,6 +119,29 @@ class DeleteTarget(object):
             raise ValueError("Invalid value for `name`, must not be `None`")  # noqa: E501
 
         self._name = name
+
+    @property
+    def target_version(self):
+        """Gets the target_version of this DeleteTarget.  # noqa: E501
+
+        Target version  # noqa: E501
+
+        :return: The target_version of this DeleteTarget.  # noqa: E501
+        :rtype: int
+        """
+        return self._target_version
+
+    @target_version.setter
+    def target_version(self, target_version):
+        """Sets the target_version of this DeleteTarget.
+
+        Target version  # noqa: E501
+
+        :param target_version: The target_version of this DeleteTarget.  # noqa: E501
+        :type: int
+        """
+
+        self._target_version = target_version
 
     @property
     def token(self):

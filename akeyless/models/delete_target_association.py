@@ -35,28 +35,38 @@ class DeleteTargetAssociation(object):
     """
     openapi_types = {
         'assoc_id': 'str',
+        'name': 'str',
+        'target_name': 'str',
         'token': 'str',
         'uid_token': 'str'
     }
 
     attribute_map = {
         'assoc_id': 'assoc-id',
+        'name': 'name',
+        'target_name': 'target-name',
         'token': 'token',
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, assoc_id=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, assoc_id=None, name=None, target_name=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """DeleteTargetAssociation - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._assoc_id = None
+        self._name = None
+        self._target_name = None
         self._token = None
         self._uid_token = None
         self.discriminator = None
 
-        self.assoc_id = assoc_id
+        if assoc_id is not None:
+            self.assoc_id = assoc_id
+        self.name = name
+        if target_name is not None:
+            self.target_name = target_name
         if token is not None:
             self.token = token
         if uid_token is not None:
@@ -82,10 +92,56 @@ class DeleteTargetAssociation(object):
         :param assoc_id: The assoc_id of this DeleteTargetAssociation.  # noqa: E501
         :type: str
         """
-        if self.local_vars_configuration.client_side_validation and assoc_id is None:  # noqa: E501
-            raise ValueError("Invalid value for `assoc_id`, must not be `None`")  # noqa: E501
 
         self._assoc_id = assoc_id
+
+    @property
+    def name(self):
+        """Gets the name of this DeleteTargetAssociation.  # noqa: E501
+
+        Item name  # noqa: E501
+
+        :return: The name of this DeleteTargetAssociation.  # noqa: E501
+        :rtype: str
+        """
+        return self._name
+
+    @name.setter
+    def name(self, name):
+        """Sets the name of this DeleteTargetAssociation.
+
+        Item name  # noqa: E501
+
+        :param name: The name of this DeleteTargetAssociation.  # noqa: E501
+        :type: str
+        """
+        if self.local_vars_configuration.client_side_validation and name is None:  # noqa: E501
+            raise ValueError("Invalid value for `name`, must not be `None`")  # noqa: E501
+
+        self._name = name
+
+    @property
+    def target_name(self):
+        """Gets the target_name of this DeleteTargetAssociation.  # noqa: E501
+
+        The target to associate  # noqa: E501
+
+        :return: The target_name of this DeleteTargetAssociation.  # noqa: E501
+        :rtype: str
+        """
+        return self._target_name
+
+    @target_name.setter
+    def target_name(self, target_name):
+        """Sets the target_name of this DeleteTargetAssociation.
+
+        The target to associate  # noqa: E501
+
+        :param target_name: The target_name of this DeleteTargetAssociation.  # noqa: E501
+        :type: str
+        """
+
+        self._target_name = target_name
 
     @property
     def token(self):

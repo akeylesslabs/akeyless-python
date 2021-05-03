@@ -35,29 +35,34 @@ class DeleteItemOutput(object):
     """
     openapi_types = {
         'deletion_date': 'datetime',
+        'item_id': 'int',
         'item_name': 'str',
         'version_deleted': 'int'
     }
 
     attribute_map = {
         'deletion_date': 'deletion_date',
+        'item_id': 'item_id',
         'item_name': 'item_name',
         'version_deleted': 'version_deleted'
     }
 
-    def __init__(self, deletion_date=None, item_name=None, version_deleted=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, deletion_date=None, item_id=None, item_name=None, version_deleted=None, local_vars_configuration=None):  # noqa: E501
         """DeleteItemOutput - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._deletion_date = None
+        self._item_id = None
         self._item_name = None
         self._version_deleted = None
         self.discriminator = None
 
         if deletion_date is not None:
             self.deletion_date = deletion_date
+        if item_id is not None:
+            self.item_id = item_id
         if item_name is not None:
             self.item_name = item_name
         if version_deleted is not None:
@@ -83,6 +88,27 @@ class DeleteItemOutput(object):
         """
 
         self._deletion_date = deletion_date
+
+    @property
+    def item_id(self):
+        """Gets the item_id of this DeleteItemOutput.  # noqa: E501
+
+
+        :return: The item_id of this DeleteItemOutput.  # noqa: E501
+        :rtype: int
+        """
+        return self._item_id
+
+    @item_id.setter
+    def item_id(self, item_id):
+        """Sets the item_id of this DeleteItemOutput.
+
+
+        :param item_id: The item_id of this DeleteItemOutput.  # noqa: E501
+        :type: int
+        """
+
+        self._item_id = item_id
 
     @property
     def item_name(self):

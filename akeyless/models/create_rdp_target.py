@@ -34,105 +34,63 @@ class CreateRdpTarget(object):
                             and the value is json key in definition.
     """
     openapi_types = {
-        'admin_name': 'str',
-        'admin_pwd': 'str',
         'comment': 'str',
-        'host_name': 'str',
-        'host_port': 'str',
+        'host': 'str',
         'name': 'str',
+        '_pass': 'str',
+        'port': 'str',
         'protection_key': 'str',
         'token': 'str',
-        'uid_token': 'str'
+        'uid_token': 'str',
+        'user': 'str'
     }
 
     attribute_map = {
-        'admin_name': 'admin_name',
-        'admin_pwd': 'admin_pwd',
         'comment': 'comment',
-        'host_name': 'host_name',
-        'host_port': 'host_port',
+        'host': 'host',
         'name': 'name',
+        '_pass': 'pass',
+        'port': 'port',
         'protection_key': 'protection_key',
         'token': 'token',
-        'uid_token': 'uid-token'
+        'uid_token': 'uid-token',
+        'user': 'user'
     }
 
-    def __init__(self, admin_name=None, admin_pwd=None, comment=None, host_name=None, host_port=None, name=None, protection_key=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, comment=None, host=None, name=None, _pass=None, port=None, protection_key=None, token=None, uid_token=None, user=None, local_vars_configuration=None):  # noqa: E501
         """CreateRdpTarget - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
-        self._admin_name = None
-        self._admin_pwd = None
         self._comment = None
-        self._host_name = None
-        self._host_port = None
+        self._host = None
         self._name = None
+        self.__pass = None
+        self._port = None
         self._protection_key = None
         self._token = None
         self._uid_token = None
+        self._user = None
         self.discriminator = None
 
-        if admin_name is not None:
-            self.admin_name = admin_name
-        if admin_pwd is not None:
-            self.admin_pwd = admin_pwd
         if comment is not None:
             self.comment = comment
-        if host_name is not None:
-            self.host_name = host_name
-        if host_port is not None:
-            self.host_port = host_port
+        if host is not None:
+            self.host = host
         self.name = name
+        if _pass is not None:
+            self._pass = _pass
+        if port is not None:
+            self.port = port
         if protection_key is not None:
             self.protection_key = protection_key
         if token is not None:
             self.token = token
         if uid_token is not None:
             self.uid_token = uid_token
-
-    @property
-    def admin_name(self):
-        """Gets the admin_name of this CreateRdpTarget.  # noqa: E501
-
-
-        :return: The admin_name of this CreateRdpTarget.  # noqa: E501
-        :rtype: str
-        """
-        return self._admin_name
-
-    @admin_name.setter
-    def admin_name(self, admin_name):
-        """Sets the admin_name of this CreateRdpTarget.
-
-
-        :param admin_name: The admin_name of this CreateRdpTarget.  # noqa: E501
-        :type: str
-        """
-
-        self._admin_name = admin_name
-
-    @property
-    def admin_pwd(self):
-        """Gets the admin_pwd of this CreateRdpTarget.  # noqa: E501
-
-
-        :return: The admin_pwd of this CreateRdpTarget.  # noqa: E501
-        :rtype: str
-        """
-        return self._admin_pwd
-
-    @admin_pwd.setter
-    def admin_pwd(self, admin_pwd):
-        """Sets the admin_pwd of this CreateRdpTarget.
-
-
-        :param admin_pwd: The admin_pwd of this CreateRdpTarget.  # noqa: E501
-        :type: str
-        """
-
-        self._admin_pwd = admin_pwd
+        if user is not None:
+            self.user = user
 
     @property
     def comment(self):
@@ -158,46 +116,25 @@ class CreateRdpTarget(object):
         self._comment = comment
 
     @property
-    def host_name(self):
-        """Gets the host_name of this CreateRdpTarget.  # noqa: E501
+    def host(self):
+        """Gets the host of this CreateRdpTarget.  # noqa: E501
 
 
-        :return: The host_name of this CreateRdpTarget.  # noqa: E501
+        :return: The host of this CreateRdpTarget.  # noqa: E501
         :rtype: str
         """
-        return self._host_name
+        return self._host
 
-    @host_name.setter
-    def host_name(self, host_name):
-        """Sets the host_name of this CreateRdpTarget.
+    @host.setter
+    def host(self, host):
+        """Sets the host of this CreateRdpTarget.
 
 
-        :param host_name: The host_name of this CreateRdpTarget.  # noqa: E501
+        :param host: The host of this CreateRdpTarget.  # noqa: E501
         :type: str
         """
 
-        self._host_name = host_name
-
-    @property
-    def host_port(self):
-        """Gets the host_port of this CreateRdpTarget.  # noqa: E501
-
-
-        :return: The host_port of this CreateRdpTarget.  # noqa: E501
-        :rtype: str
-        """
-        return self._host_port
-
-    @host_port.setter
-    def host_port(self, host_port):
-        """Sets the host_port of this CreateRdpTarget.
-
-
-        :param host_port: The host_port of this CreateRdpTarget.  # noqa: E501
-        :type: str
-        """
-
-        self._host_port = host_port
+        self._host = host
 
     @property
     def name(self):
@@ -223,6 +160,48 @@ class CreateRdpTarget(object):
             raise ValueError("Invalid value for `name`, must not be `None`")  # noqa: E501
 
         self._name = name
+
+    @property
+    def _pass(self):
+        """Gets the _pass of this CreateRdpTarget.  # noqa: E501
+
+
+        :return: The _pass of this CreateRdpTarget.  # noqa: E501
+        :rtype: str
+        """
+        return self.__pass
+
+    @_pass.setter
+    def _pass(self, _pass):
+        """Sets the _pass of this CreateRdpTarget.
+
+
+        :param _pass: The _pass of this CreateRdpTarget.  # noqa: E501
+        :type: str
+        """
+
+        self.__pass = _pass
+
+    @property
+    def port(self):
+        """Gets the port of this CreateRdpTarget.  # noqa: E501
+
+
+        :return: The port of this CreateRdpTarget.  # noqa: E501
+        :rtype: str
+        """
+        return self._port
+
+    @port.setter
+    def port(self, port):
+        """Sets the port of this CreateRdpTarget.
+
+
+        :param port: The port of this CreateRdpTarget.  # noqa: E501
+        :type: str
+        """
+
+        self._port = port
 
     @property
     def protection_key(self):
@@ -292,6 +271,27 @@ class CreateRdpTarget(object):
         """
 
         self._uid_token = uid_token
+
+    @property
+    def user(self):
+        """Gets the user of this CreateRdpTarget.  # noqa: E501
+
+
+        :return: The user of this CreateRdpTarget.  # noqa: E501
+        :rtype: str
+        """
+        return self._user
+
+    @user.setter
+    def user(self, user):
+        """Sets the user of this CreateRdpTarget.
+
+
+        :param user: The user of this CreateRdpTarget.  # noqa: E501
+        :type: str
+        """
+
+        self._user = user
 
     def to_dict(self):
         """Returns the model properties as a dict"""

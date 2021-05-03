@@ -69,6 +69,7 @@ class DSProducerDetails(object):
         'chef_server_url': 'str',
         'chef_server_username': 'str',
         'chef_skip_ssl': 'bool',
+        'create_sync_url': 'str',
         'db_host_name': 'str',
         'db_isolation_level': 'str',
         'db_max_idle_conns': 'str',
@@ -93,6 +94,12 @@ class DSProducerDetails(object):
         'enable_admin_rotation': 'bool',
         'failure_message': 'str',
         'fixed_user_only': 'str',
+        'gcp_key_algo': 'str',
+        'gcp_service_account_email': 'str',
+        'gcp_service_account_key': 'list[int]',
+        'gcp_token_lifetime': 'str',
+        'gcp_token_scope': 'str',
+        'gcp_token_type': 'str',
         'gke_cluster_ca_certificate': 'str',
         'gke_cluster_compute_zone': 'str',
         'gke_cluster_endpoint': 'str',
@@ -119,6 +126,7 @@ class DSProducerDetails(object):
         'mssql_creation_statements': 'str',
         'mssql_revocation_statements': 'str',
         'mysql_creation_statements': 'str',
+        'payload': 'str',
         'postgres_creation_statements': 'str',
         'rabbitmq_server_password': 'str',
         'rabbitmq_server_uri': 'str',
@@ -128,7 +136,10 @@ class DSProducerDetails(object):
         'rabbitmq_user_tags': 'str',
         'rabbitmq_user_vhost': 'str',
         'rabbitmq_user_write_permission': 'str',
+        'revoke_sync_url': 'str',
+        'rotate_sync_url': 'str',
         'should_stop': 'str',
+        'timeout_seconds': 'int',
         'user_principal_name': 'str',
         'user_ttl': 'str',
         'venafi_allow_subdomains': 'bool',
@@ -182,6 +193,7 @@ class DSProducerDetails(object):
         'chef_server_url': 'chef_server_url',
         'chef_server_username': 'chef_server_username',
         'chef_skip_ssl': 'chef_skip_ssl',
+        'create_sync_url': 'create_sync_url',
         'db_host_name': 'db_host_name',
         'db_isolation_level': 'db_isolation_level',
         'db_max_idle_conns': 'db_max_idle_conns',
@@ -206,6 +218,12 @@ class DSProducerDetails(object):
         'enable_admin_rotation': 'enable_admin_rotation',
         'failure_message': 'failure_message',
         'fixed_user_only': 'fixed_user_only',
+        'gcp_key_algo': 'gcp_key_algo',
+        'gcp_service_account_email': 'gcp_service_account_email',
+        'gcp_service_account_key': 'gcp_service_account_key',
+        'gcp_token_lifetime': 'gcp_token_lifetime',
+        'gcp_token_scope': 'gcp_token_scope',
+        'gcp_token_type': 'gcp_token_type',
         'gke_cluster_ca_certificate': 'gke_cluster_ca_certificate',
         'gke_cluster_compute_zone': 'gke_cluster_compute_zone',
         'gke_cluster_endpoint': 'gke_cluster_endpoint',
@@ -232,6 +250,7 @@ class DSProducerDetails(object):
         'mssql_creation_statements': 'mssql_creation_statements',
         'mssql_revocation_statements': 'mssql_revocation_statements',
         'mysql_creation_statements': 'mysql_creation_statements',
+        'payload': 'payload',
         'postgres_creation_statements': 'postgres_creation_statements',
         'rabbitmq_server_password': 'rabbitmq_server_password',
         'rabbitmq_server_uri': 'rabbitmq_server_uri',
@@ -241,7 +260,10 @@ class DSProducerDetails(object):
         'rabbitmq_user_tags': 'rabbitmq_user_tags',
         'rabbitmq_user_vhost': 'rabbitmq_user_vhost',
         'rabbitmq_user_write_permission': 'rabbitmq_user_write_permission',
+        'revoke_sync_url': 'revoke_sync_url',
+        'rotate_sync_url': 'rotate_sync_url',
         'should_stop': 'should_stop',
+        'timeout_seconds': 'timeout_seconds',
         'user_principal_name': 'user_principal_name',
         'user_ttl': 'user_ttl',
         'venafi_allow_subdomains': 'venafi_allow_subdomains',
@@ -259,7 +281,7 @@ class DSProducerDetails(object):
         'venafi_zone': 'venafi_zone'
     }
 
-    def __init__(self, active=None, admin_name=None, admin_pwd=None, admin_rotation_interval_days=None, artifactory_admin_apikey=None, artifactory_admin_username=None, artifactory_base_url=None, artifactory_token_audience=None, artifactory_token_scope=None, aws_access_key_id=None, aws_access_mode=None, aws_region=None, aws_role_arns=None, aws_secret_access_key=None, aws_session_token=None, aws_user_console_access=None, aws_user_groups=None, aws_user_policies=None, aws_user_programmatic_access=None, azure_app_object_id=None, azure_client_id=None, azure_client_secret=None, azure_tenant_id=None, azure_user_groups_obj_id=None, azure_user_portal_access=None, azure_user_programmatic_access=None, azure_user_roles_template_id=None, chef_organizations=None, chef_server_access_mode=None, chef_server_host_name=None, chef_server_key=None, chef_server_port=None, chef_server_url=None, chef_server_username=None, chef_skip_ssl=None, db_host_name=None, db_isolation_level=None, db_max_idle_conns=None, db_max_open_conns=None, db_name=None, db_port=None, db_pwd=None, db_server_certificates=None, db_server_name=None, db_user_name=None, dynamic_secret_id=None, dynamic_secret_key=None, dynamic_secret_name=None, dynamic_secret_type=None, eks_access_key_id=None, eks_assume_role=None, eks_cluster_ca_certificate=None, eks_cluster_endpoint=None, eks_cluster_name=None, eks_region=None, eks_secret_access_key=None, enable_admin_rotation=None, failure_message=None, fixed_user_only=None, gke_cluster_ca_certificate=None, gke_cluster_compute_zone=None, gke_cluster_endpoint=None, gke_cluster_name=None, gke_project_id=None, gke_service_account_key=None, gke_service_account_name=None, groups=None, host_name=None, host_port=None, last_admin_rotation=None, mongodb_atlas_api_private_key=None, mongodb_atlas_api_public_key=None, mongodb_atlas_project_id=None, mongodb_db_name=None, mongodb_default_auth_db=None, mongodb_host_port=None, mongodb_is_atlas=None, mongodb_password=None, mongodb_roles=None, mongodb_uri_connection=None, mongodb_uri_options=None, mongodb_username=None, mssql_creation_statements=None, mssql_revocation_statements=None, mysql_creation_statements=None, postgres_creation_statements=None, rabbitmq_server_password=None, rabbitmq_server_uri=None, rabbitmq_server_user=None, rabbitmq_user_conf_permission=None, rabbitmq_user_read_permission=None, rabbitmq_user_tags=None, rabbitmq_user_vhost=None, rabbitmq_user_write_permission=None, should_stop=None, user_principal_name=None, user_ttl=None, venafi_allow_subdomains=None, venafi_allowed_domains=None, venafi_api_key=None, venafi_auto_generated_folder=None, venafi_base_url=None, venafi_root_first_in_chain=None, venafi_sign_using_akeyless_pki=None, venafi_signer_key_name=None, venafi_store_private_key=None, venafi_tpp_password=None, venafi_tpp_username=None, venafi_use_tpp=None, venafi_zone=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, active=None, admin_name=None, admin_pwd=None, admin_rotation_interval_days=None, artifactory_admin_apikey=None, artifactory_admin_username=None, artifactory_base_url=None, artifactory_token_audience=None, artifactory_token_scope=None, aws_access_key_id=None, aws_access_mode=None, aws_region=None, aws_role_arns=None, aws_secret_access_key=None, aws_session_token=None, aws_user_console_access=None, aws_user_groups=None, aws_user_policies=None, aws_user_programmatic_access=None, azure_app_object_id=None, azure_client_id=None, azure_client_secret=None, azure_tenant_id=None, azure_user_groups_obj_id=None, azure_user_portal_access=None, azure_user_programmatic_access=None, azure_user_roles_template_id=None, chef_organizations=None, chef_server_access_mode=None, chef_server_host_name=None, chef_server_key=None, chef_server_port=None, chef_server_url=None, chef_server_username=None, chef_skip_ssl=None, create_sync_url=None, db_host_name=None, db_isolation_level=None, db_max_idle_conns=None, db_max_open_conns=None, db_name=None, db_port=None, db_pwd=None, db_server_certificates=None, db_server_name=None, db_user_name=None, dynamic_secret_id=None, dynamic_secret_key=None, dynamic_secret_name=None, dynamic_secret_type=None, eks_access_key_id=None, eks_assume_role=None, eks_cluster_ca_certificate=None, eks_cluster_endpoint=None, eks_cluster_name=None, eks_region=None, eks_secret_access_key=None, enable_admin_rotation=None, failure_message=None, fixed_user_only=None, gcp_key_algo=None, gcp_service_account_email=None, gcp_service_account_key=None, gcp_token_lifetime=None, gcp_token_scope=None, gcp_token_type=None, gke_cluster_ca_certificate=None, gke_cluster_compute_zone=None, gke_cluster_endpoint=None, gke_cluster_name=None, gke_project_id=None, gke_service_account_key=None, gke_service_account_name=None, groups=None, host_name=None, host_port=None, last_admin_rotation=None, mongodb_atlas_api_private_key=None, mongodb_atlas_api_public_key=None, mongodb_atlas_project_id=None, mongodb_db_name=None, mongodb_default_auth_db=None, mongodb_host_port=None, mongodb_is_atlas=None, mongodb_password=None, mongodb_roles=None, mongodb_uri_connection=None, mongodb_uri_options=None, mongodb_username=None, mssql_creation_statements=None, mssql_revocation_statements=None, mysql_creation_statements=None, payload=None, postgres_creation_statements=None, rabbitmq_server_password=None, rabbitmq_server_uri=None, rabbitmq_server_user=None, rabbitmq_user_conf_permission=None, rabbitmq_user_read_permission=None, rabbitmq_user_tags=None, rabbitmq_user_vhost=None, rabbitmq_user_write_permission=None, revoke_sync_url=None, rotate_sync_url=None, should_stop=None, timeout_seconds=None, user_principal_name=None, user_ttl=None, venafi_allow_subdomains=None, venafi_allowed_domains=None, venafi_api_key=None, venafi_auto_generated_folder=None, venafi_base_url=None, venafi_root_first_in_chain=None, venafi_sign_using_akeyless_pki=None, venafi_signer_key_name=None, venafi_store_private_key=None, venafi_tpp_password=None, venafi_tpp_username=None, venafi_use_tpp=None, venafi_zone=None, local_vars_configuration=None):  # noqa: E501
         """DSProducerDetails - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -300,6 +322,7 @@ class DSProducerDetails(object):
         self._chef_server_url = None
         self._chef_server_username = None
         self._chef_skip_ssl = None
+        self._create_sync_url = None
         self._db_host_name = None
         self._db_isolation_level = None
         self._db_max_idle_conns = None
@@ -324,6 +347,12 @@ class DSProducerDetails(object):
         self._enable_admin_rotation = None
         self._failure_message = None
         self._fixed_user_only = None
+        self._gcp_key_algo = None
+        self._gcp_service_account_email = None
+        self._gcp_service_account_key = None
+        self._gcp_token_lifetime = None
+        self._gcp_token_scope = None
+        self._gcp_token_type = None
         self._gke_cluster_ca_certificate = None
         self._gke_cluster_compute_zone = None
         self._gke_cluster_endpoint = None
@@ -350,6 +379,7 @@ class DSProducerDetails(object):
         self._mssql_creation_statements = None
         self._mssql_revocation_statements = None
         self._mysql_creation_statements = None
+        self._payload = None
         self._postgres_creation_statements = None
         self._rabbitmq_server_password = None
         self._rabbitmq_server_uri = None
@@ -359,7 +389,10 @@ class DSProducerDetails(object):
         self._rabbitmq_user_tags = None
         self._rabbitmq_user_vhost = None
         self._rabbitmq_user_write_permission = None
+        self._revoke_sync_url = None
+        self._rotate_sync_url = None
         self._should_stop = None
+        self._timeout_seconds = None
         self._user_principal_name = None
         self._user_ttl = None
         self._venafi_allow_subdomains = None
@@ -447,6 +480,8 @@ class DSProducerDetails(object):
             self.chef_server_username = chef_server_username
         if chef_skip_ssl is not None:
             self.chef_skip_ssl = chef_skip_ssl
+        if create_sync_url is not None:
+            self.create_sync_url = create_sync_url
         if db_host_name is not None:
             self.db_host_name = db_host_name
         if db_isolation_level is not None:
@@ -495,6 +530,18 @@ class DSProducerDetails(object):
             self.failure_message = failure_message
         if fixed_user_only is not None:
             self.fixed_user_only = fixed_user_only
+        if gcp_key_algo is not None:
+            self.gcp_key_algo = gcp_key_algo
+        if gcp_service_account_email is not None:
+            self.gcp_service_account_email = gcp_service_account_email
+        if gcp_service_account_key is not None:
+            self.gcp_service_account_key = gcp_service_account_key
+        if gcp_token_lifetime is not None:
+            self.gcp_token_lifetime = gcp_token_lifetime
+        if gcp_token_scope is not None:
+            self.gcp_token_scope = gcp_token_scope
+        if gcp_token_type is not None:
+            self.gcp_token_type = gcp_token_type
         if gke_cluster_ca_certificate is not None:
             self.gke_cluster_ca_certificate = gke_cluster_ca_certificate
         if gke_cluster_compute_zone is not None:
@@ -547,6 +594,8 @@ class DSProducerDetails(object):
             self.mssql_revocation_statements = mssql_revocation_statements
         if mysql_creation_statements is not None:
             self.mysql_creation_statements = mysql_creation_statements
+        if payload is not None:
+            self.payload = payload
         if postgres_creation_statements is not None:
             self.postgres_creation_statements = postgres_creation_statements
         if rabbitmq_server_password is not None:
@@ -565,8 +614,14 @@ class DSProducerDetails(object):
             self.rabbitmq_user_vhost = rabbitmq_user_vhost
         if rabbitmq_user_write_permission is not None:
             self.rabbitmq_user_write_permission = rabbitmq_user_write_permission
+        if revoke_sync_url is not None:
+            self.revoke_sync_url = revoke_sync_url
+        if rotate_sync_url is not None:
+            self.rotate_sync_url = rotate_sync_url
         if should_stop is not None:
             self.should_stop = should_stop
+        if timeout_seconds is not None:
+            self.timeout_seconds = timeout_seconds
         if user_principal_name is not None:
             self.user_principal_name = user_principal_name
         if user_ttl is not None:
@@ -1334,6 +1389,27 @@ class DSProducerDetails(object):
         self._chef_skip_ssl = chef_skip_ssl
 
     @property
+    def create_sync_url(self):
+        """Gets the create_sync_url of this DSProducerDetails.  # noqa: E501
+
+
+        :return: The create_sync_url of this DSProducerDetails.  # noqa: E501
+        :rtype: str
+        """
+        return self._create_sync_url
+
+    @create_sync_url.setter
+    def create_sync_url(self, create_sync_url):
+        """Sets the create_sync_url of this DSProducerDetails.
+
+
+        :param create_sync_url: The create_sync_url of this DSProducerDetails.  # noqa: E501
+        :type: str
+        """
+
+        self._create_sync_url = create_sync_url
+
+    @property
     def db_host_name(self):
         """Gets the db_host_name of this DSProducerDetails.  # noqa: E501
 
@@ -1840,6 +1916,132 @@ class DSProducerDetails(object):
         """
 
         self._fixed_user_only = fixed_user_only
+
+    @property
+    def gcp_key_algo(self):
+        """Gets the gcp_key_algo of this DSProducerDetails.  # noqa: E501
+
+
+        :return: The gcp_key_algo of this DSProducerDetails.  # noqa: E501
+        :rtype: str
+        """
+        return self._gcp_key_algo
+
+    @gcp_key_algo.setter
+    def gcp_key_algo(self, gcp_key_algo):
+        """Sets the gcp_key_algo of this DSProducerDetails.
+
+
+        :param gcp_key_algo: The gcp_key_algo of this DSProducerDetails.  # noqa: E501
+        :type: str
+        """
+
+        self._gcp_key_algo = gcp_key_algo
+
+    @property
+    def gcp_service_account_email(self):
+        """Gets the gcp_service_account_email of this DSProducerDetails.  # noqa: E501
+
+
+        :return: The gcp_service_account_email of this DSProducerDetails.  # noqa: E501
+        :rtype: str
+        """
+        return self._gcp_service_account_email
+
+    @gcp_service_account_email.setter
+    def gcp_service_account_email(self, gcp_service_account_email):
+        """Sets the gcp_service_account_email of this DSProducerDetails.
+
+
+        :param gcp_service_account_email: The gcp_service_account_email of this DSProducerDetails.  # noqa: E501
+        :type: str
+        """
+
+        self._gcp_service_account_email = gcp_service_account_email
+
+    @property
+    def gcp_service_account_key(self):
+        """Gets the gcp_service_account_key of this DSProducerDetails.  # noqa: E501
+
+
+        :return: The gcp_service_account_key of this DSProducerDetails.  # noqa: E501
+        :rtype: list[int]
+        """
+        return self._gcp_service_account_key
+
+    @gcp_service_account_key.setter
+    def gcp_service_account_key(self, gcp_service_account_key):
+        """Sets the gcp_service_account_key of this DSProducerDetails.
+
+
+        :param gcp_service_account_key: The gcp_service_account_key of this DSProducerDetails.  # noqa: E501
+        :type: list[int]
+        """
+
+        self._gcp_service_account_key = gcp_service_account_key
+
+    @property
+    def gcp_token_lifetime(self):
+        """Gets the gcp_token_lifetime of this DSProducerDetails.  # noqa: E501
+
+
+        :return: The gcp_token_lifetime of this DSProducerDetails.  # noqa: E501
+        :rtype: str
+        """
+        return self._gcp_token_lifetime
+
+    @gcp_token_lifetime.setter
+    def gcp_token_lifetime(self, gcp_token_lifetime):
+        """Sets the gcp_token_lifetime of this DSProducerDetails.
+
+
+        :param gcp_token_lifetime: The gcp_token_lifetime of this DSProducerDetails.  # noqa: E501
+        :type: str
+        """
+
+        self._gcp_token_lifetime = gcp_token_lifetime
+
+    @property
+    def gcp_token_scope(self):
+        """Gets the gcp_token_scope of this DSProducerDetails.  # noqa: E501
+
+
+        :return: The gcp_token_scope of this DSProducerDetails.  # noqa: E501
+        :rtype: str
+        """
+        return self._gcp_token_scope
+
+    @gcp_token_scope.setter
+    def gcp_token_scope(self, gcp_token_scope):
+        """Sets the gcp_token_scope of this DSProducerDetails.
+
+
+        :param gcp_token_scope: The gcp_token_scope of this DSProducerDetails.  # noqa: E501
+        :type: str
+        """
+
+        self._gcp_token_scope = gcp_token_scope
+
+    @property
+    def gcp_token_type(self):
+        """Gets the gcp_token_type of this DSProducerDetails.  # noqa: E501
+
+
+        :return: The gcp_token_type of this DSProducerDetails.  # noqa: E501
+        :rtype: str
+        """
+        return self._gcp_token_type
+
+    @gcp_token_type.setter
+    def gcp_token_type(self, gcp_token_type):
+        """Sets the gcp_token_type of this DSProducerDetails.
+
+
+        :param gcp_token_type: The gcp_token_type of this DSProducerDetails.  # noqa: E501
+        :type: str
+        """
+
+        self._gcp_token_type = gcp_token_type
 
     @property
     def gke_cluster_ca_certificate(self):
@@ -2394,6 +2596,27 @@ class DSProducerDetails(object):
         self._mysql_creation_statements = mysql_creation_statements
 
     @property
+    def payload(self):
+        """Gets the payload of this DSProducerDetails.  # noqa: E501
+
+
+        :return: The payload of this DSProducerDetails.  # noqa: E501
+        :rtype: str
+        """
+        return self._payload
+
+    @payload.setter
+    def payload(self, payload):
+        """Sets the payload of this DSProducerDetails.
+
+
+        :param payload: The payload of this DSProducerDetails.  # noqa: E501
+        :type: str
+        """
+
+        self._payload = payload
+
+    @property
     def postgres_creation_statements(self):
         """Gets the postgres_creation_statements of this DSProducerDetails.  # noqa: E501
 
@@ -2583,6 +2806,48 @@ class DSProducerDetails(object):
         self._rabbitmq_user_write_permission = rabbitmq_user_write_permission
 
     @property
+    def revoke_sync_url(self):
+        """Gets the revoke_sync_url of this DSProducerDetails.  # noqa: E501
+
+
+        :return: The revoke_sync_url of this DSProducerDetails.  # noqa: E501
+        :rtype: str
+        """
+        return self._revoke_sync_url
+
+    @revoke_sync_url.setter
+    def revoke_sync_url(self, revoke_sync_url):
+        """Sets the revoke_sync_url of this DSProducerDetails.
+
+
+        :param revoke_sync_url: The revoke_sync_url of this DSProducerDetails.  # noqa: E501
+        :type: str
+        """
+
+        self._revoke_sync_url = revoke_sync_url
+
+    @property
+    def rotate_sync_url(self):
+        """Gets the rotate_sync_url of this DSProducerDetails.  # noqa: E501
+
+
+        :return: The rotate_sync_url of this DSProducerDetails.  # noqa: E501
+        :rtype: str
+        """
+        return self._rotate_sync_url
+
+    @rotate_sync_url.setter
+    def rotate_sync_url(self, rotate_sync_url):
+        """Sets the rotate_sync_url of this DSProducerDetails.
+
+
+        :param rotate_sync_url: The rotate_sync_url of this DSProducerDetails.  # noqa: E501
+        :type: str
+        """
+
+        self._rotate_sync_url = rotate_sync_url
+
+    @property
     def should_stop(self):
         """Gets the should_stop of this DSProducerDetails.  # noqa: E501
 
@@ -2604,6 +2869,27 @@ class DSProducerDetails(object):
         """
 
         self._should_stop = should_stop
+
+    @property
+    def timeout_seconds(self):
+        """Gets the timeout_seconds of this DSProducerDetails.  # noqa: E501
+
+
+        :return: The timeout_seconds of this DSProducerDetails.  # noqa: E501
+        :rtype: int
+        """
+        return self._timeout_seconds
+
+    @timeout_seconds.setter
+    def timeout_seconds(self, timeout_seconds):
+        """Sets the timeout_seconds of this DSProducerDetails.
+
+
+        :param timeout_seconds: The timeout_seconds of this DSProducerDetails.  # noqa: E501
+        :type: int
+        """
+
+        self._timeout_seconds = timeout_seconds
 
     @property
     def user_principal_name(self):

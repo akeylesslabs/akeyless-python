@@ -34,8 +34,6 @@ class TargetTypeDetailesInput(object):
                             and the value is json key in definition.
     """
     openapi_types = {
-        'admin_name': 'str',
-        'admin_pwd': 'str',
         'aws_access_key_id': 'str',
         'aws_region': 'str',
         'aws_secret_access_key': 'str',
@@ -47,21 +45,21 @@ class TargetTypeDetailesInput(object):
         'db_server_certificates': 'str',
         'db_server_name': 'str',
         'db_user_name': 'str',
-        'host_name': 'str',
-        'host_port': 'str',
-        'ip': 'list[str]',
+        'host': 'str',
         'mongodb_db_name': 'str',
         'mongodb_uri_connection': 'str',
+        'password': 'str',
         'port': 'str',
+        'private_key': 'str',
+        'private_key_password': 'str',
         'rabbitmq_server_password': 'str',
         'rabbitmq_server_uri': 'str',
         'rabbitmq_server_user': 'str',
-        'url': 'str'
+        'url': 'str',
+        'username': 'str'
     }
 
     attribute_map = {
-        'admin_name': 'admin_name',
-        'admin_pwd': 'admin_pwd',
         'aws_access_key_id': 'aws_access_key_id',
         'aws_region': 'aws_region',
         'aws_secret_access_key': 'aws_secret_access_key',
@@ -73,26 +71,26 @@ class TargetTypeDetailesInput(object):
         'db_server_certificates': 'db_server_certificates',
         'db_server_name': 'db_server_name',
         'db_user_name': 'db_user_name',
-        'host_name': 'host_name',
-        'host_port': 'host_port',
-        'ip': 'ip',
+        'host': 'host',
         'mongodb_db_name': 'mongodb_db_name',
         'mongodb_uri_connection': 'mongodb_uri_connection',
+        'password': 'password',
         'port': 'port',
+        'private_key': 'private_key',
+        'private_key_password': 'private_key_password',
         'rabbitmq_server_password': 'rabbitmq_server_password',
         'rabbitmq_server_uri': 'rabbitmq_server_uri',
         'rabbitmq_server_user': 'rabbitmq_server_user',
-        'url': 'url'
+        'url': 'url',
+        'username': 'username'
     }
 
-    def __init__(self, admin_name=None, admin_pwd=None, aws_access_key_id=None, aws_region=None, aws_secret_access_key=None, aws_session_token=None, db_host_name=None, db_name=None, db_port=None, db_pwd=None, db_server_certificates=None, db_server_name=None, db_user_name=None, host_name=None, host_port=None, ip=None, mongodb_db_name=None, mongodb_uri_connection=None, port=None, rabbitmq_server_password=None, rabbitmq_server_uri=None, rabbitmq_server_user=None, url=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, aws_access_key_id=None, aws_region=None, aws_secret_access_key=None, aws_session_token=None, db_host_name=None, db_name=None, db_port=None, db_pwd=None, db_server_certificates=None, db_server_name=None, db_user_name=None, host=None, mongodb_db_name=None, mongodb_uri_connection=None, password=None, port=None, private_key=None, private_key_password=None, rabbitmq_server_password=None, rabbitmq_server_uri=None, rabbitmq_server_user=None, url=None, username=None, local_vars_configuration=None):  # noqa: E501
         """TargetTypeDetailesInput - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
-        self._admin_name = None
-        self._admin_pwd = None
         self._aws_access_key_id = None
         self._aws_region = None
         self._aws_secret_access_key = None
@@ -104,22 +102,20 @@ class TargetTypeDetailesInput(object):
         self._db_server_certificates = None
         self._db_server_name = None
         self._db_user_name = None
-        self._host_name = None
-        self._host_port = None
-        self._ip = None
+        self._host = None
         self._mongodb_db_name = None
         self._mongodb_uri_connection = None
+        self._password = None
         self._port = None
+        self._private_key = None
+        self._private_key_password = None
         self._rabbitmq_server_password = None
         self._rabbitmq_server_uri = None
         self._rabbitmq_server_user = None
         self._url = None
+        self._username = None
         self.discriminator = None
 
-        if admin_name is not None:
-            self.admin_name = admin_name
-        if admin_pwd is not None:
-            self.admin_pwd = admin_pwd
         if aws_access_key_id is not None:
             self.aws_access_key_id = aws_access_key_id
         if aws_region is not None:
@@ -142,18 +138,20 @@ class TargetTypeDetailesInput(object):
             self.db_server_name = db_server_name
         if db_user_name is not None:
             self.db_user_name = db_user_name
-        if host_name is not None:
-            self.host_name = host_name
-        if host_port is not None:
-            self.host_port = host_port
-        if ip is not None:
-            self.ip = ip
+        if host is not None:
+            self.host = host
         if mongodb_db_name is not None:
             self.mongodb_db_name = mongodb_db_name
         if mongodb_uri_connection is not None:
             self.mongodb_uri_connection = mongodb_uri_connection
+        if password is not None:
+            self.password = password
         if port is not None:
             self.port = port
+        if private_key is not None:
+            self.private_key = private_key
+        if private_key_password is not None:
+            self.private_key_password = private_key_password
         if rabbitmq_server_password is not None:
             self.rabbitmq_server_password = rabbitmq_server_password
         if rabbitmq_server_uri is not None:
@@ -162,48 +160,8 @@ class TargetTypeDetailesInput(object):
             self.rabbitmq_server_user = rabbitmq_server_user
         if url is not None:
             self.url = url
-
-    @property
-    def admin_name(self):
-        """Gets the admin_name of this TargetTypeDetailesInput.  # noqa: E501
-
-
-        :return: The admin_name of this TargetTypeDetailesInput.  # noqa: E501
-        :rtype: str
-        """
-        return self._admin_name
-
-    @admin_name.setter
-    def admin_name(self, admin_name):
-        """Sets the admin_name of this TargetTypeDetailesInput.
-
-
-        :param admin_name: The admin_name of this TargetTypeDetailesInput.  # noqa: E501
-        :type: str
-        """
-
-        self._admin_name = admin_name
-
-    @property
-    def admin_pwd(self):
-        """Gets the admin_pwd of this TargetTypeDetailesInput.  # noqa: E501
-
-
-        :return: The admin_pwd of this TargetTypeDetailesInput.  # noqa: E501
-        :rtype: str
-        """
-        return self._admin_pwd
-
-    @admin_pwd.setter
-    def admin_pwd(self, admin_pwd):
-        """Sets the admin_pwd of this TargetTypeDetailesInput.
-
-
-        :param admin_pwd: The admin_pwd of this TargetTypeDetailesInput.  # noqa: E501
-        :type: str
-        """
-
-        self._admin_pwd = admin_pwd
+        if username is not None:
+            self.username = username
 
     @property
     def aws_access_key_id(self):
@@ -441,67 +399,25 @@ class TargetTypeDetailesInput(object):
         self._db_user_name = db_user_name
 
     @property
-    def host_name(self):
-        """Gets the host_name of this TargetTypeDetailesInput.  # noqa: E501
+    def host(self):
+        """Gets the host of this TargetTypeDetailesInput.  # noqa: E501
 
 
-        :return: The host_name of this TargetTypeDetailesInput.  # noqa: E501
+        :return: The host of this TargetTypeDetailesInput.  # noqa: E501
         :rtype: str
         """
-        return self._host_name
+        return self._host
 
-    @host_name.setter
-    def host_name(self, host_name):
-        """Sets the host_name of this TargetTypeDetailesInput.
+    @host.setter
+    def host(self, host):
+        """Sets the host of this TargetTypeDetailesInput.
 
 
-        :param host_name: The host_name of this TargetTypeDetailesInput.  # noqa: E501
+        :param host: The host of this TargetTypeDetailesInput.  # noqa: E501
         :type: str
         """
 
-        self._host_name = host_name
-
-    @property
-    def host_port(self):
-        """Gets the host_port of this TargetTypeDetailesInput.  # noqa: E501
-
-
-        :return: The host_port of this TargetTypeDetailesInput.  # noqa: E501
-        :rtype: str
-        """
-        return self._host_port
-
-    @host_port.setter
-    def host_port(self, host_port):
-        """Sets the host_port of this TargetTypeDetailesInput.
-
-
-        :param host_port: The host_port of this TargetTypeDetailesInput.  # noqa: E501
-        :type: str
-        """
-
-        self._host_port = host_port
-
-    @property
-    def ip(self):
-        """Gets the ip of this TargetTypeDetailesInput.  # noqa: E501
-
-
-        :return: The ip of this TargetTypeDetailesInput.  # noqa: E501
-        :rtype: list[str]
-        """
-        return self._ip
-
-    @ip.setter
-    def ip(self, ip):
-        """Sets the ip of this TargetTypeDetailesInput.
-
-
-        :param ip: The ip of this TargetTypeDetailesInput.  # noqa: E501
-        :type: list[str]
-        """
-
-        self._ip = ip
+        self._host = host
 
     @property
     def mongodb_db_name(self):
@@ -546,6 +462,27 @@ class TargetTypeDetailesInput(object):
         self._mongodb_uri_connection = mongodb_uri_connection
 
     @property
+    def password(self):
+        """Gets the password of this TargetTypeDetailesInput.  # noqa: E501
+
+
+        :return: The password of this TargetTypeDetailesInput.  # noqa: E501
+        :rtype: str
+        """
+        return self._password
+
+    @password.setter
+    def password(self, password):
+        """Sets the password of this TargetTypeDetailesInput.
+
+
+        :param password: The password of this TargetTypeDetailesInput.  # noqa: E501
+        :type: str
+        """
+
+        self._password = password
+
+    @property
     def port(self):
         """Gets the port of this TargetTypeDetailesInput.  # noqa: E501
 
@@ -565,6 +502,48 @@ class TargetTypeDetailesInput(object):
         """
 
         self._port = port
+
+    @property
+    def private_key(self):
+        """Gets the private_key of this TargetTypeDetailesInput.  # noqa: E501
+
+
+        :return: The private_key of this TargetTypeDetailesInput.  # noqa: E501
+        :rtype: str
+        """
+        return self._private_key
+
+    @private_key.setter
+    def private_key(self, private_key):
+        """Sets the private_key of this TargetTypeDetailesInput.
+
+
+        :param private_key: The private_key of this TargetTypeDetailesInput.  # noqa: E501
+        :type: str
+        """
+
+        self._private_key = private_key
+
+    @property
+    def private_key_password(self):
+        """Gets the private_key_password of this TargetTypeDetailesInput.  # noqa: E501
+
+
+        :return: The private_key_password of this TargetTypeDetailesInput.  # noqa: E501
+        :rtype: str
+        """
+        return self._private_key_password
+
+    @private_key_password.setter
+    def private_key_password(self, private_key_password):
+        """Sets the private_key_password of this TargetTypeDetailesInput.
+
+
+        :param private_key_password: The private_key_password of this TargetTypeDetailesInput.  # noqa: E501
+        :type: str
+        """
+
+        self._private_key_password = private_key_password
 
     @property
     def rabbitmq_server_password(self):
@@ -649,6 +628,27 @@ class TargetTypeDetailesInput(object):
         """
 
         self._url = url
+
+    @property
+    def username(self):
+        """Gets the username of this TargetTypeDetailesInput.  # noqa: E501
+
+
+        :return: The username of this TargetTypeDetailesInput.  # noqa: E501
+        :rtype: str
+        """
+        return self._username
+
+    @username.setter
+    def username(self, username):
+        """Sets the username of this TargetTypeDetailesInput.
+
+
+        :param username: The username of this TargetTypeDetailesInput.  # noqa: E501
+        :type: str
+        """
+
+        self._username = username
 
     def to_dict(self):
         """Returns the model properties as a dict"""

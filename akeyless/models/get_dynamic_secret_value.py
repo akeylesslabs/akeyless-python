@@ -38,6 +38,7 @@ class GetDynamicSecretValue(object):
         'host': 'str',
         'name': 'str',
         'target': 'str',
+        'timeout': 'int',
         'token': 'str',
         'uid_token': 'str'
     }
@@ -47,11 +48,12 @@ class GetDynamicSecretValue(object):
         'host': 'host',
         'name': 'name',
         'target': 'target',
+        'timeout': 'timeout',
         'token': 'token',
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, args=None, host=None, name=None, target=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, args=None, host=None, name=None, target=None, timeout=15, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """GetDynamicSecretValue - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -61,6 +63,7 @@ class GetDynamicSecretValue(object):
         self._host = None
         self._name = None
         self._target = None
+        self._timeout = None
         self._token = None
         self._uid_token = None
         self.discriminator = None
@@ -72,6 +75,8 @@ class GetDynamicSecretValue(object):
         self.name = name
         if target is not None:
             self.target = target
+        if timeout is not None:
+            self.timeout = timeout
         if token is not None:
             self.token = token
         if uid_token is not None:
@@ -81,7 +86,7 @@ class GetDynamicSecretValue(object):
     def args(self):
         """Gets the args of this GetDynamicSecretValue.  # noqa: E501
 
-        Optional input as `key-value` pairs  # noqa: E501
+        Optional arguments as key=value pairs or JSON strings, e.g - \\\"--args=csr=base64_encoded_csr --args=common_name=bar\\\" or args='{\\\"csr\\\":\\\"base64_encoded_csr\\\"}. It is possible to combine both formats.'  # noqa: E501
 
         :return: The args of this GetDynamicSecretValue.  # noqa: E501
         :rtype: list[str]
@@ -92,7 +97,7 @@ class GetDynamicSecretValue(object):
     def args(self, args):
         """Sets the args of this GetDynamicSecretValue.
 
-        Optional input as `key-value` pairs  # noqa: E501
+        Optional arguments as key=value pairs or JSON strings, e.g - \\\"--args=csr=base64_encoded_csr --args=common_name=bar\\\" or args='{\\\"csr\\\":\\\"base64_encoded_csr\\\"}. It is possible to combine both formats.'  # noqa: E501
 
         :param args: The args of this GetDynamicSecretValue.  # noqa: E501
         :type: list[str]
@@ -170,6 +175,29 @@ class GetDynamicSecretValue(object):
         """
 
         self._target = target
+
+    @property
+    def timeout(self):
+        """Gets the timeout of this GetDynamicSecretValue.  # noqa: E501
+
+        Timeout in seconds  # noqa: E501
+
+        :return: The timeout of this GetDynamicSecretValue.  # noqa: E501
+        :rtype: int
+        """
+        return self._timeout
+
+    @timeout.setter
+    def timeout(self, timeout):
+        """Sets the timeout of this GetDynamicSecretValue.
+
+        Timeout in seconds  # noqa: E501
+
+        :param timeout: The timeout of this GetDynamicSecretValue.  # noqa: E501
+        :type: int
+        """
+
+        self._timeout = timeout
 
     @property
     def token(self):
