@@ -15,7 +15,7 @@
 
 from __future__ import absolute_import
 
-__version__ = "2.4.1"
+__version__ = "2.4.2"
 
 # import apis into sdk package
 from akeyless.api.v2_api import V2Api
