@@ -43,9 +43,12 @@ class CreateAuthMethodHuawei(object):
         'bound_tenant_name': 'list[str]',
         'bound_user_id': 'list[str]',
         'bound_user_name': 'list[str]',
+        'force_sub_claims': 'bool',
         'name': 'str',
+        'password': 'str',
         'token': 'str',
-        'uid_token': 'str'
+        'uid_token': 'str',
+        'username': 'str'
     }
 
     attribute_map = {
@@ -58,12 +61,15 @@ class CreateAuthMethodHuawei(object):
         'bound_tenant_name': 'bound-tenant-name',
         'bound_user_id': 'bound-user-id',
         'bound_user_name': 'bound-user-name',
+        'force_sub_claims': 'force-sub-claims',
         'name': 'name',
+        'password': 'password',
         'token': 'token',
-        'uid_token': 'uid-token'
+        'uid_token': 'uid-token',
+        'username': 'username'
     }
 
-    def __init__(self, access_expires=0, auth_url='https://iam.myhwclouds.com:443/v3', bound_domain_id=None, bound_domain_name=None, bound_ips=None, bound_tenant_id=None, bound_tenant_name=None, bound_user_id=None, bound_user_name=None, name=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, access_expires=0, auth_url='https://iam.myhwclouds.com:443/v3', bound_domain_id=None, bound_domain_name=None, bound_ips=None, bound_tenant_id=None, bound_tenant_name=None, bound_user_id=None, bound_user_name=None, force_sub_claims=None, name=None, password=None, token=None, uid_token=None, username=None, local_vars_configuration=None):  # noqa: E501
         """CreateAuthMethodHuawei - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -78,9 +84,12 @@ class CreateAuthMethodHuawei(object):
         self._bound_tenant_name = None
         self._bound_user_id = None
         self._bound_user_name = None
+        self._force_sub_claims = None
         self._name = None
+        self._password = None
         self._token = None
         self._uid_token = None
+        self._username = None
         self.discriminator = None
 
         if access_expires is not None:
@@ -101,11 +110,17 @@ class CreateAuthMethodHuawei(object):
             self.bound_user_id = bound_user_id
         if bound_user_name is not None:
             self.bound_user_name = bound_user_name
+        if force_sub_claims is not None:
+            self.force_sub_claims = force_sub_claims
         self.name = name
+        if password is not None:
+            self.password = password
         if token is not None:
             self.token = token
         if uid_token is not None:
             self.uid_token = uid_token
+        if username is not None:
+            self.username = username
 
     @property
     def access_expires(self):
@@ -315,6 +330,29 @@ class CreateAuthMethodHuawei(object):
         self._bound_user_name = bound_user_name
 
     @property
+    def force_sub_claims(self):
+        """Gets the force_sub_claims of this CreateAuthMethodHuawei.  # noqa: E501
+
+        if true: enforce role-association must include sub claims  # noqa: E501
+
+        :return: The force_sub_claims of this CreateAuthMethodHuawei.  # noqa: E501
+        :rtype: bool
+        """
+        return self._force_sub_claims
+
+    @force_sub_claims.setter
+    def force_sub_claims(self, force_sub_claims):
+        """Sets the force_sub_claims of this CreateAuthMethodHuawei.
+
+        if true: enforce role-association must include sub claims  # noqa: E501
+
+        :param force_sub_claims: The force_sub_claims of this CreateAuthMethodHuawei.  # noqa: E501
+        :type: bool
+        """
+
+        self._force_sub_claims = force_sub_claims
+
+    @property
     def name(self):
         """Gets the name of this CreateAuthMethodHuawei.  # noqa: E501
 
@@ -338,6 +376,29 @@ class CreateAuthMethodHuawei(object):
             raise ValueError("Invalid value for `name`, must not be `None`")  # noqa: E501
 
         self._name = name
+
+    @property
+    def password(self):
+        """Gets the password of this CreateAuthMethodHuawei.  # noqa: E501
+
+        Required only when the authentication process requires a username and password  # noqa: E501
+
+        :return: The password of this CreateAuthMethodHuawei.  # noqa: E501
+        :rtype: str
+        """
+        return self._password
+
+    @password.setter
+    def password(self, password):
+        """Sets the password of this CreateAuthMethodHuawei.
+
+        Required only when the authentication process requires a username and password  # noqa: E501
+
+        :param password: The password of this CreateAuthMethodHuawei.  # noqa: E501
+        :type: str
+        """
+
+        self._password = password
 
     @property
     def token(self):
@@ -384,6 +445,29 @@ class CreateAuthMethodHuawei(object):
         """
 
         self._uid_token = uid_token
+
+    @property
+    def username(self):
+        """Gets the username of this CreateAuthMethodHuawei.  # noqa: E501
+
+        Required only when the authentication process requires a username and password  # noqa: E501
+
+        :return: The username of this CreateAuthMethodHuawei.  # noqa: E501
+        :rtype: str
+        """
+        return self._username
+
+    @username.setter
+    def username(self, username):
+        """Sets the username of this CreateAuthMethodHuawei.
+
+        Required only when the authentication process requires a username and password  # noqa: E501
+
+        :param username: The username of this CreateAuthMethodHuawei.  # noqa: E501
+        :type: str
+        """
+
+        self._username = username
 
     def to_dict(self):
         """Returns the model properties as a dict"""

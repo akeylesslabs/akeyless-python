@@ -42,14 +42,16 @@ class UpdateRotatedSecret(object):
         'new_metadata': 'str',
         'new_name': 'str',
         'new_version': 'bool',
+        'password': 'str',
         'rm_tag': 'list[str]',
-        'rotation_interval': 'str',
         'rotation_hour': 'int',
+        'rotation_interval': 'str',
         'rotator_creds_type': 'str',
         'ssh_password': 'str',
         'ssh_username': 'str',
         'token': 'str',
-        'uid_token': 'str'
+        'uid_token': 'str',
+        'username': 'str'
     }
 
     attribute_map = {
@@ -61,17 +63,19 @@ class UpdateRotatedSecret(object):
         'new_metadata': 'new-metadata',
         'new_name': 'new-name',
         'new_version': 'new-version',
+        'password': 'password',
         'rm_tag': 'rm-tag',
+        'rotation_hour': 'rotation-hour',
         'rotation_interval': 'rotation-interval',
-        'rotation_hour': 'rotation_hour',
-        'rotator_creds_type': 'rotator_creds_type',
+        'rotator_creds_type': 'rotator-creds-type',
         'ssh_password': 'ssh-password',
         'ssh_username': 'ssh-username',
         'token': 'token',
-        'uid_token': 'uid-token'
+        'uid_token': 'uid-token',
+        'username': 'username'
     }
 
-    def __init__(self, add_tag=None, auto_rotate=None, gateway_url='http://localhost:8000', key=None, name=None, new_metadata='default_metadata', new_name=None, new_version=False, rm_tag=None, rotation_interval=None, rotation_hour=None, rotator_creds_type=None, ssh_password=None, ssh_username=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, add_tag=None, auto_rotate=None, gateway_url='http://localhost:8000', key=None, name=None, new_metadata='default_metadata', new_name=None, new_version=False, password=None, rm_tag=None, rotation_hour=None, rotation_interval=None, rotator_creds_type=None, ssh_password=None, ssh_username=None, token=None, uid_token=None, username=None, local_vars_configuration=None):  # noqa: E501
         """UpdateRotatedSecret - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -85,14 +89,16 @@ class UpdateRotatedSecret(object):
         self._new_metadata = None
         self._new_name = None
         self._new_version = None
+        self._password = None
         self._rm_tag = None
-        self._rotation_interval = None
         self._rotation_hour = None
+        self._rotation_interval = None
         self._rotator_creds_type = None
         self._ssh_password = None
         self._ssh_username = None
         self._token = None
         self._uid_token = None
+        self._username = None
         self.discriminator = None
 
         if add_tag is not None:
@@ -110,12 +116,14 @@ class UpdateRotatedSecret(object):
             self.new_name = new_name
         if new_version is not None:
             self.new_version = new_version
+        if password is not None:
+            self.password = password
         if rm_tag is not None:
             self.rm_tag = rm_tag
-        if rotation_interval is not None:
-            self.rotation_interval = rotation_interval
         if rotation_hour is not None:
             self.rotation_hour = rotation_hour
+        if rotation_interval is not None:
+            self.rotation_interval = rotation_interval
         if rotator_creds_type is not None:
             self.rotator_creds_type = rotator_creds_type
         if ssh_password is not None:
@@ -126,6 +134,8 @@ class UpdateRotatedSecret(object):
             self.token = token
         if uid_token is not None:
             self.uid_token = uid_token
+        if username is not None:
+            self.username = username
 
     @property
     def add_tag(self):
@@ -314,6 +324,29 @@ class UpdateRotatedSecret(object):
         self._new_version = new_version
 
     @property
+    def password(self):
+        """Gets the password of this UpdateRotatedSecret.  # noqa: E501
+
+        Required only when the authentication process requires a username and password  # noqa: E501
+
+        :return: The password of this UpdateRotatedSecret.  # noqa: E501
+        :rtype: str
+        """
+        return self._password
+
+    @password.setter
+    def password(self, password):
+        """Sets the password of this UpdateRotatedSecret.
+
+        Required only when the authentication process requires a username and password  # noqa: E501
+
+        :param password: The password of this UpdateRotatedSecret.  # noqa: E501
+        :type: str
+        """
+
+        self._password = password
+
+    @property
     def rm_tag(self):
         """Gets the rm_tag of this UpdateRotatedSecret.  # noqa: E501
 
@@ -337,6 +370,27 @@ class UpdateRotatedSecret(object):
         self._rm_tag = rm_tag
 
     @property
+    def rotation_hour(self):
+        """Gets the rotation_hour of this UpdateRotatedSecret.  # noqa: E501
+
+
+        :return: The rotation_hour of this UpdateRotatedSecret.  # noqa: E501
+        :rtype: int
+        """
+        return self._rotation_hour
+
+    @rotation_hour.setter
+    def rotation_hour(self, rotation_hour):
+        """Sets the rotation_hour of this UpdateRotatedSecret.
+
+
+        :param rotation_hour: The rotation_hour of this UpdateRotatedSecret.  # noqa: E501
+        :type: int
+        """
+
+        self._rotation_hour = rotation_hour
+
+    @property
     def rotation_interval(self):
         """Gets the rotation_interval of this UpdateRotatedSecret.  # noqa: E501
 
@@ -358,27 +412,6 @@ class UpdateRotatedSecret(object):
         """
 
         self._rotation_interval = rotation_interval
-
-    @property
-    def rotation_hour(self):
-        """Gets the rotation_hour of this UpdateRotatedSecret.  # noqa: E501
-
-
-        :return: The rotation_hour of this UpdateRotatedSecret.  # noqa: E501
-        :rtype: int
-        """
-        return self._rotation_hour
-
-    @rotation_hour.setter
-    def rotation_hour(self, rotation_hour):
-        """Sets the rotation_hour of this UpdateRotatedSecret.
-
-
-        :param rotation_hour: The rotation_hour of this UpdateRotatedSecret.  # noqa: E501
-        :type: int
-        """
-
-        self._rotation_hour = rotation_hour
 
     @property
     def rotator_creds_type(self):
@@ -488,6 +521,29 @@ class UpdateRotatedSecret(object):
         """
 
         self._uid_token = uid_token
+
+    @property
+    def username(self):
+        """Gets the username of this UpdateRotatedSecret.  # noqa: E501
+
+        Required only when the authentication process requires a username and password  # noqa: E501
+
+        :return: The username of this UpdateRotatedSecret.  # noqa: E501
+        :rtype: str
+        """
+        return self._username
+
+    @username.setter
+    def username(self, username):
+        """Sets the username of this UpdateRotatedSecret.
+
+        Required only when the authentication process requires a username and password  # noqa: E501
+
+        :param username: The username of this UpdateRotatedSecret.  # noqa: E501
+        :type: str
+        """
+
+        self._username = username
 
     def to_dict(self):
         """Returns the model properties as a dict"""

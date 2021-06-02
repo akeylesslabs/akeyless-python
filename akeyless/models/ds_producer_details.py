@@ -101,16 +101,16 @@ class DSProducerDetails(object):
         'gcp_token_scope': 'str',
         'gcp_token_type': 'str',
         'gke_cluster_ca_certificate': 'str',
-        'gke_cluster_compute_zone': 'str',
         'gke_cluster_endpoint': 'str',
         'gke_cluster_name': 'str',
-        'gke_project_id': 'str',
         'gke_service_account_key': 'str',
         'gke_service_account_name': 'str',
         'groups': 'str',
         'host_name': 'str',
         'host_port': 'str',
+        'item_targets_assoc': 'list[ItemTargetAssociation]',
         'last_admin_rotation': 'int',
+        'mongodb_atlas': 'bool',
         'mongodb_atlas_api_private_key': 'str',
         'mongodb_atlas_api_public_key': 'str',
         'mongodb_atlas_project_id': 'str',
@@ -138,6 +138,9 @@ class DSProducerDetails(object):
         'rabbitmq_user_write_permission': 'str',
         'revoke_sync_url': 'str',
         'rotate_sync_url': 'str',
+        'sf_account': 'str',
+        'sf_user_role': 'str',
+        'sf_warehouse_name': 'str',
         'should_stop': 'str',
         'timeout_seconds': 'int',
         'user_principal_name': 'str',
@@ -225,16 +228,16 @@ class DSProducerDetails(object):
         'gcp_token_scope': 'gcp_token_scope',
         'gcp_token_type': 'gcp_token_type',
         'gke_cluster_ca_certificate': 'gke_cluster_ca_certificate',
-        'gke_cluster_compute_zone': 'gke_cluster_compute_zone',
         'gke_cluster_endpoint': 'gke_cluster_endpoint',
         'gke_cluster_name': 'gke_cluster_name',
-        'gke_project_id': 'gke_project_id',
         'gke_service_account_key': 'gke_service_account_key',
         'gke_service_account_name': 'gke_service_account_name',
         'groups': 'groups',
         'host_name': 'host_name',
         'host_port': 'host_port',
+        'item_targets_assoc': 'item_targets_assoc',
         'last_admin_rotation': 'last_admin_rotation',
+        'mongodb_atlas': 'mongodb_atlas',
         'mongodb_atlas_api_private_key': 'mongodb_atlas_api_private_key',
         'mongodb_atlas_api_public_key': 'mongodb_atlas_api_public_key',
         'mongodb_atlas_project_id': 'mongodb_atlas_project_id',
@@ -262,6 +265,9 @@ class DSProducerDetails(object):
         'rabbitmq_user_write_permission': 'rabbitmq_user_write_permission',
         'revoke_sync_url': 'revoke_sync_url',
         'rotate_sync_url': 'rotate_sync_url',
+        'sf_account': 'sf_account',
+        'sf_user_role': 'sf_user_role',
+        'sf_warehouse_name': 'sf_warehouse_name',
         'should_stop': 'should_stop',
         'timeout_seconds': 'timeout_seconds',
         'user_principal_name': 'user_principal_name',
@@ -281,7 +287,7 @@ class DSProducerDetails(object):
         'venafi_zone': 'venafi_zone'
     }
 
-    def __init__(self, active=None, admin_name=None, admin_pwd=None, admin_rotation_interval_days=None, artifactory_admin_apikey=None, artifactory_admin_username=None, artifactory_base_url=None, artifactory_token_audience=None, artifactory_token_scope=None, aws_access_key_id=None, aws_access_mode=None, aws_region=None, aws_role_arns=None, aws_secret_access_key=None, aws_session_token=None, aws_user_console_access=None, aws_user_groups=None, aws_user_policies=None, aws_user_programmatic_access=None, azure_app_object_id=None, azure_client_id=None, azure_client_secret=None, azure_tenant_id=None, azure_user_groups_obj_id=None, azure_user_portal_access=None, azure_user_programmatic_access=None, azure_user_roles_template_id=None, chef_organizations=None, chef_server_access_mode=None, chef_server_host_name=None, chef_server_key=None, chef_server_port=None, chef_server_url=None, chef_server_username=None, chef_skip_ssl=None, create_sync_url=None, db_host_name=None, db_isolation_level=None, db_max_idle_conns=None, db_max_open_conns=None, db_name=None, db_port=None, db_pwd=None, db_server_certificates=None, db_server_name=None, db_user_name=None, dynamic_secret_id=None, dynamic_secret_key=None, dynamic_secret_name=None, dynamic_secret_type=None, eks_access_key_id=None, eks_assume_role=None, eks_cluster_ca_certificate=None, eks_cluster_endpoint=None, eks_cluster_name=None, eks_region=None, eks_secret_access_key=None, enable_admin_rotation=None, failure_message=None, fixed_user_only=None, gcp_key_algo=None, gcp_service_account_email=None, gcp_service_account_key=None, gcp_token_lifetime=None, gcp_token_scope=None, gcp_token_type=None, gke_cluster_ca_certificate=None, gke_cluster_compute_zone=None, gke_cluster_endpoint=None, gke_cluster_name=None, gke_project_id=None, gke_service_account_key=None, gke_service_account_name=None, groups=None, host_name=None, host_port=None, last_admin_rotation=None, mongodb_atlas_api_private_key=None, mongodb_atlas_api_public_key=None, mongodb_atlas_project_id=None, mongodb_db_name=None, mongodb_default_auth_db=None, mongodb_host_port=None, mongodb_is_atlas=None, mongodb_password=None, mongodb_roles=None, mongodb_uri_connection=None, mongodb_uri_options=None, mongodb_username=None, mssql_creation_statements=None, mssql_revocation_statements=None, mysql_creation_statements=None, payload=None, postgres_creation_statements=None, rabbitmq_server_password=None, rabbitmq_server_uri=None, rabbitmq_server_user=None, rabbitmq_user_conf_permission=None, rabbitmq_user_read_permission=None, rabbitmq_user_tags=None, rabbitmq_user_vhost=None, rabbitmq_user_write_permission=None, revoke_sync_url=None, rotate_sync_url=None, should_stop=None, timeout_seconds=None, user_principal_name=None, user_ttl=None, venafi_allow_subdomains=None, venafi_allowed_domains=None, venafi_api_key=None, venafi_auto_generated_folder=None, venafi_base_url=None, venafi_root_first_in_chain=None, venafi_sign_using_akeyless_pki=None, venafi_signer_key_name=None, venafi_store_private_key=None, venafi_tpp_password=None, venafi_tpp_username=None, venafi_use_tpp=None, venafi_zone=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, active=None, admin_name=None, admin_pwd=None, admin_rotation_interval_days=None, artifactory_admin_apikey=None, artifactory_admin_username=None, artifactory_base_url=None, artifactory_token_audience=None, artifactory_token_scope=None, aws_access_key_id=None, aws_access_mode=None, aws_region=None, aws_role_arns=None, aws_secret_access_key=None, aws_session_token=None, aws_user_console_access=None, aws_user_groups=None, aws_user_policies=None, aws_user_programmatic_access=None, azure_app_object_id=None, azure_client_id=None, azure_client_secret=None, azure_tenant_id=None, azure_user_groups_obj_id=None, azure_user_portal_access=None, azure_user_programmatic_access=None, azure_user_roles_template_id=None, chef_organizations=None, chef_server_access_mode=None, chef_server_host_name=None, chef_server_key=None, chef_server_port=None, chef_server_url=None, chef_server_username=None, chef_skip_ssl=None, create_sync_url=None, db_host_name=None, db_isolation_level=None, db_max_idle_conns=None, db_max_open_conns=None, db_name=None, db_port=None, db_pwd=None, db_server_certificates=None, db_server_name=None, db_user_name=None, dynamic_secret_id=None, dynamic_secret_key=None, dynamic_secret_name=None, dynamic_secret_type=None, eks_access_key_id=None, eks_assume_role=None, eks_cluster_ca_certificate=None, eks_cluster_endpoint=None, eks_cluster_name=None, eks_region=None, eks_secret_access_key=None, enable_admin_rotation=None, failure_message=None, fixed_user_only=None, gcp_key_algo=None, gcp_service_account_email=None, gcp_service_account_key=None, gcp_token_lifetime=None, gcp_token_scope=None, gcp_token_type=None, gke_cluster_ca_certificate=None, gke_cluster_endpoint=None, gke_cluster_name=None, gke_service_account_key=None, gke_service_account_name=None, groups=None, host_name=None, host_port=None, item_targets_assoc=None, last_admin_rotation=None, mongodb_atlas=None, mongodb_atlas_api_private_key=None, mongodb_atlas_api_public_key=None, mongodb_atlas_project_id=None, mongodb_db_name=None, mongodb_default_auth_db=None, mongodb_host_port=None, mongodb_is_atlas=None, mongodb_password=None, mongodb_roles=None, mongodb_uri_connection=None, mongodb_uri_options=None, mongodb_username=None, mssql_creation_statements=None, mssql_revocation_statements=None, mysql_creation_statements=None, payload=None, postgres_creation_statements=None, rabbitmq_server_password=None, rabbitmq_server_uri=None, rabbitmq_server_user=None, rabbitmq_user_conf_permission=None, rabbitmq_user_read_permission=None, rabbitmq_user_tags=None, rabbitmq_user_vhost=None, rabbitmq_user_write_permission=None, revoke_sync_url=None, rotate_sync_url=None, sf_account=None, sf_user_role=None, sf_warehouse_name=None, should_stop=None, timeout_seconds=None, user_principal_name=None, user_ttl=None, venafi_allow_subdomains=None, venafi_allowed_domains=None, venafi_api_key=None, venafi_auto_generated_folder=None, venafi_base_url=None, venafi_root_first_in_chain=None, venafi_sign_using_akeyless_pki=None, venafi_signer_key_name=None, venafi_store_private_key=None, venafi_tpp_password=None, venafi_tpp_username=None, venafi_use_tpp=None, venafi_zone=None, local_vars_configuration=None):  # noqa: E501
         """DSProducerDetails - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -354,16 +360,16 @@ class DSProducerDetails(object):
         self._gcp_token_scope = None
         self._gcp_token_type = None
         self._gke_cluster_ca_certificate = None
-        self._gke_cluster_compute_zone = None
         self._gke_cluster_endpoint = None
         self._gke_cluster_name = None
-        self._gke_project_id = None
         self._gke_service_account_key = None
         self._gke_service_account_name = None
         self._groups = None
         self._host_name = None
         self._host_port = None
+        self._item_targets_assoc = None
         self._last_admin_rotation = None
+        self._mongodb_atlas = None
         self._mongodb_atlas_api_private_key = None
         self._mongodb_atlas_api_public_key = None
         self._mongodb_atlas_project_id = None
@@ -391,6 +397,9 @@ class DSProducerDetails(object):
         self._rabbitmq_user_write_permission = None
         self._revoke_sync_url = None
         self._rotate_sync_url = None
+        self._sf_account = None
+        self._sf_user_role = None
+        self._sf_warehouse_name = None
         self._should_stop = None
         self._timeout_seconds = None
         self._user_principal_name = None
@@ -544,14 +553,10 @@ class DSProducerDetails(object):
             self.gcp_token_type = gcp_token_type
         if gke_cluster_ca_certificate is not None:
             self.gke_cluster_ca_certificate = gke_cluster_ca_certificate
-        if gke_cluster_compute_zone is not None:
-            self.gke_cluster_compute_zone = gke_cluster_compute_zone
         if gke_cluster_endpoint is not None:
             self.gke_cluster_endpoint = gke_cluster_endpoint
         if gke_cluster_name is not None:
             self.gke_cluster_name = gke_cluster_name
-        if gke_project_id is not None:
-            self.gke_project_id = gke_project_id
         if gke_service_account_key is not None:
             self.gke_service_account_key = gke_service_account_key
         if gke_service_account_name is not None:
@@ -562,8 +567,12 @@ class DSProducerDetails(object):
             self.host_name = host_name
         if host_port is not None:
             self.host_port = host_port
+        if item_targets_assoc is not None:
+            self.item_targets_assoc = item_targets_assoc
         if last_admin_rotation is not None:
             self.last_admin_rotation = last_admin_rotation
+        if mongodb_atlas is not None:
+            self.mongodb_atlas = mongodb_atlas
         if mongodb_atlas_api_private_key is not None:
             self.mongodb_atlas_api_private_key = mongodb_atlas_api_private_key
         if mongodb_atlas_api_public_key is not None:
@@ -618,6 +627,12 @@ class DSProducerDetails(object):
             self.revoke_sync_url = revoke_sync_url
         if rotate_sync_url is not None:
             self.rotate_sync_url = rotate_sync_url
+        if sf_account is not None:
+            self.sf_account = sf_account
+        if sf_user_role is not None:
+            self.sf_user_role = sf_user_role
+        if sf_warehouse_name is not None:
+            self.sf_warehouse_name = sf_warehouse_name
         if should_stop is not None:
             self.should_stop = should_stop
         if timeout_seconds is not None:
@@ -2065,27 +2080,6 @@ class DSProducerDetails(object):
         self._gke_cluster_ca_certificate = gke_cluster_ca_certificate
 
     @property
-    def gke_cluster_compute_zone(self):
-        """Gets the gke_cluster_compute_zone of this DSProducerDetails.  # noqa: E501
-
-
-        :return: The gke_cluster_compute_zone of this DSProducerDetails.  # noqa: E501
-        :rtype: str
-        """
-        return self._gke_cluster_compute_zone
-
-    @gke_cluster_compute_zone.setter
-    def gke_cluster_compute_zone(self, gke_cluster_compute_zone):
-        """Sets the gke_cluster_compute_zone of this DSProducerDetails.
-
-
-        :param gke_cluster_compute_zone: The gke_cluster_compute_zone of this DSProducerDetails.  # noqa: E501
-        :type: str
-        """
-
-        self._gke_cluster_compute_zone = gke_cluster_compute_zone
-
-    @property
     def gke_cluster_endpoint(self):
         """Gets the gke_cluster_endpoint of this DSProducerDetails.  # noqa: E501
 
@@ -2110,6 +2104,7 @@ class DSProducerDetails(object):
     def gke_cluster_name(self):
         """Gets the gke_cluster_name of this DSProducerDetails.  # noqa: E501
 
+        GKEProjectID            string `json:\"gke_project_id\"`  # noqa: E501
 
         :return: The gke_cluster_name of this DSProducerDetails.  # noqa: E501
         :rtype: str
@@ -2120,33 +2115,13 @@ class DSProducerDetails(object):
     def gke_cluster_name(self, gke_cluster_name):
         """Sets the gke_cluster_name of this DSProducerDetails.
 
+        GKEProjectID            string `json:\"gke_project_id\"`  # noqa: E501
 
         :param gke_cluster_name: The gke_cluster_name of this DSProducerDetails.  # noqa: E501
         :type: str
         """
 
         self._gke_cluster_name = gke_cluster_name
-
-    @property
-    def gke_project_id(self):
-        """Gets the gke_project_id of this DSProducerDetails.  # noqa: E501
-
-
-        :return: The gke_project_id of this DSProducerDetails.  # noqa: E501
-        :rtype: str
-        """
-        return self._gke_project_id
-
-    @gke_project_id.setter
-    def gke_project_id(self, gke_project_id):
-        """Sets the gke_project_id of this DSProducerDetails.
-
-
-        :param gke_project_id: The gke_project_id of this DSProducerDetails.  # noqa: E501
-        :type: str
-        """
-
-        self._gke_project_id = gke_project_id
 
     @property
     def gke_service_account_key(self):
@@ -2173,6 +2148,7 @@ class DSProducerDetails(object):
     def gke_service_account_name(self):
         """Gets the gke_service_account_name of this DSProducerDetails.  # noqa: E501
 
+        GKEClusterComputeZone   string `json:\"gke_cluster_compute_zone\"`  # noqa: E501
 
         :return: The gke_service_account_name of this DSProducerDetails.  # noqa: E501
         :rtype: str
@@ -2183,6 +2159,7 @@ class DSProducerDetails(object):
     def gke_service_account_name(self, gke_service_account_name):
         """Sets the gke_service_account_name of this DSProducerDetails.
 
+        GKEClusterComputeZone   string `json:\"gke_cluster_compute_zone\"`  # noqa: E501
 
         :param gke_service_account_name: The gke_service_account_name of this DSProducerDetails.  # noqa: E501
         :type: str
@@ -2254,6 +2231,27 @@ class DSProducerDetails(object):
         self._host_port = host_port
 
     @property
+    def item_targets_assoc(self):
+        """Gets the item_targets_assoc of this DSProducerDetails.  # noqa: E501
+
+
+        :return: The item_targets_assoc of this DSProducerDetails.  # noqa: E501
+        :rtype: list[ItemTargetAssociation]
+        """
+        return self._item_targets_assoc
+
+    @item_targets_assoc.setter
+    def item_targets_assoc(self, item_targets_assoc):
+        """Sets the item_targets_assoc of this DSProducerDetails.
+
+
+        :param item_targets_assoc: The item_targets_assoc of this DSProducerDetails.  # noqa: E501
+        :type: list[ItemTargetAssociation]
+        """
+
+        self._item_targets_assoc = item_targets_assoc
+
+    @property
     def last_admin_rotation(self):
         """Gets the last_admin_rotation of this DSProducerDetails.  # noqa: E501
 
@@ -2273,6 +2271,27 @@ class DSProducerDetails(object):
         """
 
         self._last_admin_rotation = last_admin_rotation
+
+    @property
+    def mongodb_atlas(self):
+        """Gets the mongodb_atlas of this DSProducerDetails.  # noqa: E501
+
+
+        :return: The mongodb_atlas of this DSProducerDetails.  # noqa: E501
+        :rtype: bool
+        """
+        return self._mongodb_atlas
+
+    @mongodb_atlas.setter
+    def mongodb_atlas(self, mongodb_atlas):
+        """Sets the mongodb_atlas of this DSProducerDetails.
+
+
+        :param mongodb_atlas: The mongodb_atlas of this DSProducerDetails.  # noqa: E501
+        :type: bool
+        """
+
+        self._mongodb_atlas = mongodb_atlas
 
     @property
     def mongodb_atlas_api_private_key(self):
@@ -2450,6 +2469,7 @@ class DSProducerDetails(object):
     def mongodb_roles(self):
         """Gets the mongodb_roles of this DSProducerDetails.  # noqa: E501
 
+        common fields  # noqa: E501
 
         :return: The mongodb_roles of this DSProducerDetails.  # noqa: E501
         :rtype: str
@@ -2460,6 +2480,7 @@ class DSProducerDetails(object):
     def mongodb_roles(self, mongodb_roles):
         """Sets the mongodb_roles of this DSProducerDetails.
 
+        common fields  # noqa: E501
 
         :param mongodb_roles: The mongodb_roles of this DSProducerDetails.  # noqa: E501
         :type: str
@@ -2846,6 +2867,71 @@ class DSProducerDetails(object):
         """
 
         self._rotate_sync_url = rotate_sync_url
+
+    @property
+    def sf_account(self):
+        """Gets the sf_account of this DSProducerDetails.  # noqa: E501
+
+
+        :return: The sf_account of this DSProducerDetails.  # noqa: E501
+        :rtype: str
+        """
+        return self._sf_account
+
+    @sf_account.setter
+    def sf_account(self, sf_account):
+        """Sets the sf_account of this DSProducerDetails.
+
+
+        :param sf_account: The sf_account of this DSProducerDetails.  # noqa: E501
+        :type: str
+        """
+
+        self._sf_account = sf_account
+
+    @property
+    def sf_user_role(self):
+        """Gets the sf_user_role of this DSProducerDetails.  # noqa: E501
+
+        generated  users info  # noqa: E501
+
+        :return: The sf_user_role of this DSProducerDetails.  # noqa: E501
+        :rtype: str
+        """
+        return self._sf_user_role
+
+    @sf_user_role.setter
+    def sf_user_role(self, sf_user_role):
+        """Sets the sf_user_role of this DSProducerDetails.
+
+        generated  users info  # noqa: E501
+
+        :param sf_user_role: The sf_user_role of this DSProducerDetails.  # noqa: E501
+        :type: str
+        """
+
+        self._sf_user_role = sf_user_role
+
+    @property
+    def sf_warehouse_name(self):
+        """Gets the sf_warehouse_name of this DSProducerDetails.  # noqa: E501
+
+
+        :return: The sf_warehouse_name of this DSProducerDetails.  # noqa: E501
+        :rtype: str
+        """
+        return self._sf_warehouse_name
+
+    @sf_warehouse_name.setter
+    def sf_warehouse_name(self, sf_warehouse_name):
+        """Sets the sf_warehouse_name of this DSProducerDetails.
+
+
+        :param sf_warehouse_name: The sf_warehouse_name of this DSProducerDetails.  # noqa: E501
+        :type: str
+        """
+
+        self._sf_warehouse_name = sf_warehouse_name
 
     @property
     def should_stop(self):

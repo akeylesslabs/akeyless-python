@@ -39,6 +39,7 @@ class GatewayCreateProducerAzure(object):
         'client_secret': 'str',
         'gateway_url': 'str',
         'name': 'str',
+        'password': 'str',
         'producer_encryption_key_name': 'str',
         'tenant_id': 'str',
         'token': 'str',
@@ -48,7 +49,8 @@ class GatewayCreateProducerAzure(object):
         'user_principal_name': 'str',
         'user_programmatic_access': 'bool',
         'user_role_template_id': 'str',
-        'user_ttl': 'str'
+        'user_ttl': 'str',
+        'username': 'str'
     }
 
     attribute_map = {
@@ -57,6 +59,7 @@ class GatewayCreateProducerAzure(object):
         'client_secret': 'client-secret',
         'gateway_url': 'gateway-url',
         'name': 'name',
+        'password': 'password',
         'producer_encryption_key_name': 'producer-encryption-key-name',
         'tenant_id': 'tenant-id',
         'token': 'token',
@@ -66,10 +69,11 @@ class GatewayCreateProducerAzure(object):
         'user_principal_name': 'user-principal-name',
         'user_programmatic_access': 'user-programmatic-access',
         'user_role_template_id': 'user-role-template-id',
-        'user_ttl': 'user-ttl'
+        'user_ttl': 'user-ttl',
+        'username': 'username'
     }
 
-    def __init__(self, app_obj_id=None, client_id=None, client_secret=None, gateway_url='http://localhost:8000', name=None, producer_encryption_key_name=None, tenant_id=None, token=None, uid_token=None, user_group_obj_id=None, user_portal_access=False, user_principal_name=None, user_programmatic_access=True, user_role_template_id=None, user_ttl='60m', local_vars_configuration=None):  # noqa: E501
+    def __init__(self, app_obj_id=None, client_id=None, client_secret=None, gateway_url='http://localhost:8000', name=None, password=None, producer_encryption_key_name=None, tenant_id=None, token=None, uid_token=None, user_group_obj_id=None, user_portal_access=False, user_principal_name=None, user_programmatic_access=True, user_role_template_id=None, user_ttl='60m', username=None, local_vars_configuration=None):  # noqa: E501
         """GatewayCreateProducerAzure - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -80,6 +84,7 @@ class GatewayCreateProducerAzure(object):
         self._client_secret = None
         self._gateway_url = None
         self._name = None
+        self._password = None
         self._producer_encryption_key_name = None
         self._tenant_id = None
         self._token = None
@@ -90,6 +95,7 @@ class GatewayCreateProducerAzure(object):
         self._user_programmatic_access = None
         self._user_role_template_id = None
         self._user_ttl = None
+        self._username = None
         self.discriminator = None
 
         if app_obj_id is not None:
@@ -99,6 +105,8 @@ class GatewayCreateProducerAzure(object):
         if gateway_url is not None:
             self.gateway_url = gateway_url
         self.name = name
+        if password is not None:
+            self.password = password
         if producer_encryption_key_name is not None:
             self.producer_encryption_key_name = producer_encryption_key_name
         self.tenant_id = tenant_id
@@ -118,6 +126,8 @@ class GatewayCreateProducerAzure(object):
             self.user_role_template_id = user_role_template_id
         if user_ttl is not None:
             self.user_ttl = user_ttl
+        if username is not None:
+            self.username = username
 
     @property
     def app_obj_id(self):
@@ -239,6 +249,29 @@ class GatewayCreateProducerAzure(object):
             raise ValueError("Invalid value for `name`, must not be `None`")  # noqa: E501
 
         self._name = name
+
+    @property
+    def password(self):
+        """Gets the password of this GatewayCreateProducerAzure.  # noqa: E501
+
+        Required only when the authentication process requires a username and password  # noqa: E501
+
+        :return: The password of this GatewayCreateProducerAzure.  # noqa: E501
+        :rtype: str
+        """
+        return self._password
+
+    @password.setter
+    def password(self, password):
+        """Sets the password of this GatewayCreateProducerAzure.
+
+        Required only when the authentication process requires a username and password  # noqa: E501
+
+        :param password: The password of this GatewayCreateProducerAzure.  # noqa: E501
+        :type: str
+        """
+
+        self._password = password
 
     @property
     def producer_encryption_key_name(self):
@@ -471,6 +504,29 @@ class GatewayCreateProducerAzure(object):
         """
 
         self._user_ttl = user_ttl
+
+    @property
+    def username(self):
+        """Gets the username of this GatewayCreateProducerAzure.  # noqa: E501
+
+        Required only when the authentication process requires a username and password  # noqa: E501
+
+        :return: The username of this GatewayCreateProducerAzure.  # noqa: E501
+        :rtype: str
+        """
+        return self._username
+
+    @username.setter
+    def username(self, username):
+        """Sets the username of this GatewayCreateProducerAzure.
+
+        Required only when the authentication process requires a username and password  # noqa: E501
+
+        :param username: The username of this GatewayCreateProducerAzure.  # noqa: E501
+        :type: str
+        """
+
+        self._username = username
 
     def to_dict(self):
         """Returns the model properties as a dict"""

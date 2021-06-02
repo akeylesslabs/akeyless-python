@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **azure_ad_access_rules** | [**AzureADAccessRules**](AzureADAccessRules.md) |  | [optional] 
 **cidr_whitelist** | **str** |  | [optional] 
 **email_pass_access_rules** | [**EmailPassAccessRules**](EmailPassAccessRules.md) |  | [optional] 
+**force_sub_claims** | **bool** | if true the role associated with this auth method must include sub claims | [optional] 
 **gcp_access_rules** | [**GCPAccessRules**](GCPAccessRules.md) |  | [optional] 
 **huawei_access_rules** | [**HuaweiAccessRules**](HuaweiAccessRules.md) |  | [optional] 
 **ldap_access_rules** | [**LDAPAccessRules**](LDAPAccessRules.md) |  | [optional] 

@@ -40,9 +40,11 @@ class UpdateRDPTargetDetails(object):
         'host_port': 'str',
         'name': 'str',
         'new_version': 'bool',
+        'password': 'str',
         'protection_key': 'str',
         'token': 'str',
-        'uid_token': 'str'
+        'uid_token': 'str',
+        'username': 'str'
     }
 
     attribute_map = {
@@ -52,12 +54,14 @@ class UpdateRDPTargetDetails(object):
         'host_port': 'host_port',
         'name': 'name',
         'new_version': 'new-version',
+        'password': 'password',
         'protection_key': 'protection_key',
         'token': 'token',
-        'uid_token': 'uid-token'
+        'uid_token': 'uid-token',
+        'username': 'username'
     }
 
-    def __init__(self, admin_name=None, admin_pwd=None, host_name=None, host_port=None, name=None, new_version=False, protection_key=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, admin_name=None, admin_pwd=None, host_name=None, host_port=None, name=None, new_version=False, password=None, protection_key=None, token=None, uid_token=None, username=None, local_vars_configuration=None):  # noqa: E501
         """UpdateRDPTargetDetails - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -69,9 +73,11 @@ class UpdateRDPTargetDetails(object):
         self._host_port = None
         self._name = None
         self._new_version = None
+        self._password = None
         self._protection_key = None
         self._token = None
         self._uid_token = None
+        self._username = None
         self.discriminator = None
 
         if admin_name is not None:
@@ -85,12 +91,16 @@ class UpdateRDPTargetDetails(object):
         self.name = name
         if new_version is not None:
             self.new_version = new_version
+        if password is not None:
+            self.password = password
         if protection_key is not None:
             self.protection_key = protection_key
         if token is not None:
             self.token = token
         if uid_token is not None:
             self.uid_token = uid_token
+        if username is not None:
+            self.username = username
 
     @property
     def admin_name(self):
@@ -225,6 +235,29 @@ class UpdateRDPTargetDetails(object):
         self._new_version = new_version
 
     @property
+    def password(self):
+        """Gets the password of this UpdateRDPTargetDetails.  # noqa: E501
+
+        Required only when the authentication process requires a username and password  # noqa: E501
+
+        :return: The password of this UpdateRDPTargetDetails.  # noqa: E501
+        :rtype: str
+        """
+        return self._password
+
+    @password.setter
+    def password(self, password):
+        """Sets the password of this UpdateRDPTargetDetails.
+
+        Required only when the authentication process requires a username and password  # noqa: E501
+
+        :param password: The password of this UpdateRDPTargetDetails.  # noqa: E501
+        :type: str
+        """
+
+        self._password = password
+
+    @property
     def protection_key(self):
         """Gets the protection_key of this UpdateRDPTargetDetails.  # noqa: E501
 
@@ -292,6 +325,29 @@ class UpdateRDPTargetDetails(object):
         """
 
         self._uid_token = uid_token
+
+    @property
+    def username(self):
+        """Gets the username of this UpdateRDPTargetDetails.  # noqa: E501
+
+        Required only when the authentication process requires a username and password  # noqa: E501
+
+        :return: The username of this UpdateRDPTargetDetails.  # noqa: E501
+        :rtype: str
+        """
+        return self._username
+
+    @username.setter
+    def username(self, username):
+        """Sets the username of this UpdateRDPTargetDetails.
+
+        Required only when the authentication process requires a username and password  # noqa: E501
+
+        :param username: The username of this UpdateRDPTargetDetails.  # noqa: E501
+        :type: str
+        """
+
+        self._username = username
 
     def to_dict(self):
         """Returns the model properties as a dict"""

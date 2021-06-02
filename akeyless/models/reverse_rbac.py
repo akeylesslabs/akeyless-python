@@ -34,37 +34,70 @@ class ReverseRBAC(object):
                             and the value is json key in definition.
     """
     openapi_types = {
+        'password': 'str',
         'path': 'str',
         'token': 'str',
         'type': 'str',
-        'uid_token': 'str'
+        'uid_token': 'str',
+        'username': 'str'
     }
 
     attribute_map = {
+        'password': 'password',
         'path': 'path',
         'token': 'token',
         'type': 'type',
-        'uid_token': 'uid-token'
+        'uid_token': 'uid-token',
+        'username': 'username'
     }
 
-    def __init__(self, path=None, token=None, type=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, password=None, path=None, token=None, type=None, uid_token=None, username=None, local_vars_configuration=None):  # noqa: E501
         """ReverseRBAC - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
+        self._password = None
         self._path = None
         self._token = None
         self._type = None
         self._uid_token = None
+        self._username = None
         self.discriminator = None
 
+        if password is not None:
+            self.password = password
         self.path = path
         if token is not None:
             self.token = token
         self.type = type
         if uid_token is not None:
             self.uid_token = uid_token
+        if username is not None:
+            self.username = username
+
+    @property
+    def password(self):
+        """Gets the password of this ReverseRBAC.  # noqa: E501
+
+        Required only when the authentication process requires a username and password  # noqa: E501
+
+        :return: The password of this ReverseRBAC.  # noqa: E501
+        :rtype: str
+        """
+        return self._password
+
+    @password.setter
+    def password(self, password):
+        """Sets the password of this ReverseRBAC.
+
+        Required only when the authentication process requires a username and password  # noqa: E501
+
+        :param password: The password of this ReverseRBAC.  # noqa: E501
+        :type: str
+        """
+
+        self._password = password
 
     @property
     def path(self):
@@ -161,6 +194,29 @@ class ReverseRBAC(object):
         """
 
         self._uid_token = uid_token
+
+    @property
+    def username(self):
+        """Gets the username of this ReverseRBAC.  # noqa: E501
+
+        Required only when the authentication process requires a username and password  # noqa: E501
+
+        :return: The username of this ReverseRBAC.  # noqa: E501
+        :rtype: str
+        """
+        return self._username
+
+    @username.setter
+    def username(self, username):
+        """Sets the username of this ReverseRBAC.
+
+        Required only when the authentication process requires a username and password  # noqa: E501
+
+        :param username: The username of this ReverseRBAC.  # noqa: E501
+        :type: str
+        """
+
+        self._username = username
 
     def to_dict(self):
         """Returns the model properties as a dict"""

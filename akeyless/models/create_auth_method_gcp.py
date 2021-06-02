@@ -42,11 +42,14 @@ class CreateAuthMethodGCP(object):
         'bound_regions': 'list[str]',
         'bound_service_accounts': 'list[str]',
         'bound_zones': 'list[str]',
+        'force_sub_claims': 'bool',
         'name': 'str',
+        'password': 'str',
         'service_account_creds_data': 'str',
         'token': 'str',
         'type': 'str',
-        'uid_token': 'str'
+        'uid_token': 'str',
+        'username': 'str'
     }
 
     attribute_map = {
@@ -58,14 +61,17 @@ class CreateAuthMethodGCP(object):
         'bound_regions': 'bound-regions',
         'bound_service_accounts': 'bound-service-accounts',
         'bound_zones': 'bound-zones',
+        'force_sub_claims': 'force-sub-claims',
         'name': 'name',
+        'password': 'password',
         'service_account_creds_data': 'service-account-creds-data',
         'token': 'token',
         'type': 'type',
-        'uid_token': 'uid-token'
+        'uid_token': 'uid-token',
+        'username': 'username'
     }
 
-    def __init__(self, access_expires=0, audience='akeyless.io', bound_ips=None, bound_labels=None, bound_projects=None, bound_regions=None, bound_service_accounts=None, bound_zones=None, name=None, service_account_creds_data=None, token=None, type=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, access_expires=0, audience='akeyless.io', bound_ips=None, bound_labels=None, bound_projects=None, bound_regions=None, bound_service_accounts=None, bound_zones=None, force_sub_claims=None, name=None, password=None, service_account_creds_data=None, token=None, type=None, uid_token=None, username=None, local_vars_configuration=None):  # noqa: E501
         """CreateAuthMethodGCP - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -79,11 +85,14 @@ class CreateAuthMethodGCP(object):
         self._bound_regions = None
         self._bound_service_accounts = None
         self._bound_zones = None
+        self._force_sub_claims = None
         self._name = None
+        self._password = None
         self._service_account_creds_data = None
         self._token = None
         self._type = None
         self._uid_token = None
+        self._username = None
         self.discriminator = None
 
         if access_expires is not None:
@@ -102,7 +111,11 @@ class CreateAuthMethodGCP(object):
             self.bound_service_accounts = bound_service_accounts
         if bound_zones is not None:
             self.bound_zones = bound_zones
+        if force_sub_claims is not None:
+            self.force_sub_claims = force_sub_claims
         self.name = name
+        if password is not None:
+            self.password = password
         if service_account_creds_data is not None:
             self.service_account_creds_data = service_account_creds_data
         if token is not None:
@@ -111,6 +124,8 @@ class CreateAuthMethodGCP(object):
             self.type = type
         if uid_token is not None:
             self.uid_token = uid_token
+        if username is not None:
+            self.username = username
 
     @property
     def access_expires(self):
@@ -297,6 +312,29 @@ class CreateAuthMethodGCP(object):
         self._bound_zones = bound_zones
 
     @property
+    def force_sub_claims(self):
+        """Gets the force_sub_claims of this CreateAuthMethodGCP.  # noqa: E501
+
+        if true: enforce role-association must include sub claims  # noqa: E501
+
+        :return: The force_sub_claims of this CreateAuthMethodGCP.  # noqa: E501
+        :rtype: bool
+        """
+        return self._force_sub_claims
+
+    @force_sub_claims.setter
+    def force_sub_claims(self, force_sub_claims):
+        """Sets the force_sub_claims of this CreateAuthMethodGCP.
+
+        if true: enforce role-association must include sub claims  # noqa: E501
+
+        :param force_sub_claims: The force_sub_claims of this CreateAuthMethodGCP.  # noqa: E501
+        :type: bool
+        """
+
+        self._force_sub_claims = force_sub_claims
+
+    @property
     def name(self):
         """Gets the name of this CreateAuthMethodGCP.  # noqa: E501
 
@@ -320,6 +358,29 @@ class CreateAuthMethodGCP(object):
             raise ValueError("Invalid value for `name`, must not be `None`")  # noqa: E501
 
         self._name = name
+
+    @property
+    def password(self):
+        """Gets the password of this CreateAuthMethodGCP.  # noqa: E501
+
+        Required only when the authentication process requires a username and password  # noqa: E501
+
+        :return: The password of this CreateAuthMethodGCP.  # noqa: E501
+        :rtype: str
+        """
+        return self._password
+
+    @password.setter
+    def password(self, password):
+        """Sets the password of this CreateAuthMethodGCP.
+
+        Required only when the authentication process requires a username and password  # noqa: E501
+
+        :param password: The password of this CreateAuthMethodGCP.  # noqa: E501
+        :type: str
+        """
+
+        self._password = password
 
     @property
     def service_account_creds_data(self):
@@ -412,6 +473,29 @@ class CreateAuthMethodGCP(object):
         """
 
         self._uid_token = uid_token
+
+    @property
+    def username(self):
+        """Gets the username of this CreateAuthMethodGCP.  # noqa: E501
+
+        Required only when the authentication process requires a username and password  # noqa: E501
+
+        :return: The username of this CreateAuthMethodGCP.  # noqa: E501
+        :rtype: str
+        """
+        return self._username
+
+    @username.setter
+    def username(self, username):
+        """Sets the username of this CreateAuthMethodGCP.
+
+        Required only when the authentication process requires a username and password  # noqa: E501
+
+        :param username: The username of this CreateAuthMethodGCP.  # noqa: E501
+        :type: str
+        """
+
+        self._username = username
 
     def to_dict(self):
         """Returns the model properties as a dict"""

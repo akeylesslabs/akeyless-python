@@ -35,77 +35,147 @@ class CreateDBTarget(object):
     """
     openapi_types = {
         'comment': 'str',
+        'db_name': 'str',
+        'db_server_certificates': 'str',
+        'db_server_name': 'str',
         'db_type': 'str',
-        'host_name': 'str',
-        'mongo_db_name': 'str',
-        'mongo_uri': 'str',
+        'host': 'str',
+        'key': 'str',
+        'mongodb_atlas': 'bool',
+        'mongodb_atlas_api_private_key': 'str',
+        'mongodb_atlas_api_public_key': 'str',
+        'mongodb_atlas_project_id': 'str',
+        'mongodb_default_auth_db': 'str',
+        'mongodb_host_port': 'str',
+        'mongodb_password': 'str',
+        'mongodb_server_uri': 'str',
+        'mongodb_uri_options': 'str',
+        'mongodb_username': 'str',
         'name': 'str',
+        'password': 'str',
         'port': 'str',
-        'protection_key': 'str',
         'pwd': 'str',
+        'snowflake_account': 'str',
         'token': 'str',
         'uid_token': 'str',
-        'user_name': 'str'
+        'user_name': 'str',
+        'username': 'str'
     }
 
     attribute_map = {
         'comment': 'comment',
-        'db_type': 'db_type',
-        'host_name': 'host_name',
-        'mongo_db_name': 'mongo_db_name',
-        'mongo_uri': 'mongo_uri',
+        'db_name': 'db-name',
+        'db_server_certificates': 'db-server-certificates',
+        'db_server_name': 'db-server-name',
+        'db_type': 'db-type',
+        'host': 'host',
+        'key': 'key',
+        'mongodb_atlas': 'mongodb-atlas',
+        'mongodb_atlas_api_private_key': 'mongodb-atlas-api-private-key',
+        'mongodb_atlas_api_public_key': 'mongodb-atlas-api-public-key',
+        'mongodb_atlas_project_id': 'mongodb-atlas-project-id',
+        'mongodb_default_auth_db': 'mongodb-default-auth-db',
+        'mongodb_host_port': 'mongodb-host-port',
+        'mongodb_password': 'mongodb-password',
+        'mongodb_server_uri': 'mongodb-server-uri',
+        'mongodb_uri_options': 'mongodb-uri-options',
+        'mongodb_username': 'mongodb-username',
         'name': 'name',
+        'password': 'password',
         'port': 'port',
-        'protection_key': 'protection_key',
         'pwd': 'pwd',
+        'snowflake_account': 'snowflake-account',
         'token': 'token',
         'uid_token': 'uid-token',
-        'user_name': 'user_name'
+        'user_name': 'user-name',
+        'username': 'username'
     }
 
-    def __init__(self, comment=None, db_type=None, host_name=None, mongo_db_name=None, mongo_uri=None, name=None, port=None, protection_key=None, pwd=None, token=None, uid_token=None, user_name=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, comment=None, db_name=None, db_server_certificates=None, db_server_name=None, db_type=None, host=None, key=None, mongodb_atlas=None, mongodb_atlas_api_private_key=None, mongodb_atlas_api_public_key=None, mongodb_atlas_project_id=None, mongodb_default_auth_db=None, mongodb_host_port=None, mongodb_password=None, mongodb_server_uri=None, mongodb_uri_options=None, mongodb_username=None, name=None, password=None, port=None, pwd=None, snowflake_account=None, token=None, uid_token=None, user_name=None, username=None, local_vars_configuration=None):  # noqa: E501
         """CreateDBTarget - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._comment = None
+        self._db_name = None
+        self._db_server_certificates = None
+        self._db_server_name = None
         self._db_type = None
-        self._host_name = None
-        self._mongo_db_name = None
-        self._mongo_uri = None
+        self._host = None
+        self._key = None
+        self._mongodb_atlas = None
+        self._mongodb_atlas_api_private_key = None
+        self._mongodb_atlas_api_public_key = None
+        self._mongodb_atlas_project_id = None
+        self._mongodb_default_auth_db = None
+        self._mongodb_host_port = None
+        self._mongodb_password = None
+        self._mongodb_server_uri = None
+        self._mongodb_uri_options = None
+        self._mongodb_username = None
         self._name = None
+        self._password = None
         self._port = None
-        self._protection_key = None
         self._pwd = None
+        self._snowflake_account = None
         self._token = None
         self._uid_token = None
         self._user_name = None
+        self._username = None
         self.discriminator = None
 
         if comment is not None:
             self.comment = comment
+        if db_name is not None:
+            self.db_name = db_name
+        if db_server_certificates is not None:
+            self.db_server_certificates = db_server_certificates
+        if db_server_name is not None:
+            self.db_server_name = db_server_name
         if db_type is not None:
             self.db_type = db_type
-        if host_name is not None:
-            self.host_name = host_name
-        if mongo_db_name is not None:
-            self.mongo_db_name = mongo_db_name
-        if mongo_uri is not None:
-            self.mongo_uri = mongo_uri
+        if host is not None:
+            self.host = host
+        if key is not None:
+            self.key = key
+        if mongodb_atlas is not None:
+            self.mongodb_atlas = mongodb_atlas
+        if mongodb_atlas_api_private_key is not None:
+            self.mongodb_atlas_api_private_key = mongodb_atlas_api_private_key
+        if mongodb_atlas_api_public_key is not None:
+            self.mongodb_atlas_api_public_key = mongodb_atlas_api_public_key
+        if mongodb_atlas_project_id is not None:
+            self.mongodb_atlas_project_id = mongodb_atlas_project_id
+        if mongodb_default_auth_db is not None:
+            self.mongodb_default_auth_db = mongodb_default_auth_db
+        if mongodb_host_port is not None:
+            self.mongodb_host_port = mongodb_host_port
+        if mongodb_password is not None:
+            self.mongodb_password = mongodb_password
+        if mongodb_server_uri is not None:
+            self.mongodb_server_uri = mongodb_server_uri
+        if mongodb_uri_options is not None:
+            self.mongodb_uri_options = mongodb_uri_options
+        if mongodb_username is not None:
+            self.mongodb_username = mongodb_username
         self.name = name
+        if password is not None:
+            self.password = password
         if port is not None:
             self.port = port
-        if protection_key is not None:
-            self.protection_key = protection_key
         if pwd is not None:
             self.pwd = pwd
+        if snowflake_account is not None:
+            self.snowflake_account = snowflake_account
         if token is not None:
             self.token = token
         if uid_token is not None:
             self.uid_token = uid_token
         if user_name is not None:
             self.user_name = user_name
+        if username is not None:
+            self.username = username
 
     @property
     def comment(self):
@@ -131,6 +201,73 @@ class CreateDBTarget(object):
         self._comment = comment
 
     @property
+    def db_name(self):
+        """Gets the db_name of this CreateDBTarget.  # noqa: E501
+
+
+        :return: The db_name of this CreateDBTarget.  # noqa: E501
+        :rtype: str
+        """
+        return self._db_name
+
+    @db_name.setter
+    def db_name(self, db_name):
+        """Sets the db_name of this CreateDBTarget.
+
+
+        :param db_name: The db_name of this CreateDBTarget.  # noqa: E501
+        :type: str
+        """
+
+        self._db_name = db_name
+
+    @property
+    def db_server_certificates(self):
+        """Gets the db_server_certificates of this CreateDBTarget.  # noqa: E501
+
+        (Optional) DB server certificates  # noqa: E501
+
+        :return: The db_server_certificates of this CreateDBTarget.  # noqa: E501
+        :rtype: str
+        """
+        return self._db_server_certificates
+
+    @db_server_certificates.setter
+    def db_server_certificates(self, db_server_certificates):
+        """Sets the db_server_certificates of this CreateDBTarget.
+
+        (Optional) DB server certificates  # noqa: E501
+
+        :param db_server_certificates: The db_server_certificates of this CreateDBTarget.  # noqa: E501
+        :type: str
+        """
+
+        self._db_server_certificates = db_server_certificates
+
+    @property
+    def db_server_name(self):
+        """Gets the db_server_name of this CreateDBTarget.  # noqa: E501
+
+        (Optional) Server name for certificate verification  # noqa: E501
+
+        :return: The db_server_name of this CreateDBTarget.  # noqa: E501
+        :rtype: str
+        """
+        return self._db_server_name
+
+    @db_server_name.setter
+    def db_server_name(self, db_server_name):
+        """Sets the db_server_name of this CreateDBTarget.
+
+        (Optional) Server name for certificate verification  # noqa: E501
+
+        :param db_server_name: The db_server_name of this CreateDBTarget.  # noqa: E501
+        :type: str
+        """
+
+        self._db_server_name = db_server_name
+
+    @property
     def db_type(self):
         """Gets the db_type of this CreateDBTarget.  # noqa: E501
 
@@ -152,67 +289,276 @@ class CreateDBTarget(object):
         self._db_type = db_type
 
     @property
-    def host_name(self):
-        """Gets the host_name of this CreateDBTarget.  # noqa: E501
+    def host(self):
+        """Gets the host of this CreateDBTarget.  # noqa: E501
 
 
-        :return: The host_name of this CreateDBTarget.  # noqa: E501
+        :return: The host of this CreateDBTarget.  # noqa: E501
         :rtype: str
         """
-        return self._host_name
+        return self._host
 
-    @host_name.setter
-    def host_name(self, host_name):
-        """Sets the host_name of this CreateDBTarget.
+    @host.setter
+    def host(self, host):
+        """Sets the host of this CreateDBTarget.
 
 
-        :param host_name: The host_name of this CreateDBTarget.  # noqa: E501
+        :param host: The host of this CreateDBTarget.  # noqa: E501
         :type: str
         """
 
-        self._host_name = host_name
+        self._host = host
 
     @property
-    def mongo_db_name(self):
-        """Gets the mongo_db_name of this CreateDBTarget.  # noqa: E501
+    def key(self):
+        """Gets the key of this CreateDBTarget.  # noqa: E501
 
+        The name of a key that used to encrypt the target secret value (if empty, the account default protectionKey key will be used)  # noqa: E501
 
-        :return: The mongo_db_name of this CreateDBTarget.  # noqa: E501
+        :return: The key of this CreateDBTarget.  # noqa: E501
         :rtype: str
         """
-        return self._mongo_db_name
+        return self._key
 
-    @mongo_db_name.setter
-    def mongo_db_name(self, mongo_db_name):
-        """Sets the mongo_db_name of this CreateDBTarget.
+    @key.setter
+    def key(self, key):
+        """Sets the key of this CreateDBTarget.
 
+        The name of a key that used to encrypt the target secret value (if empty, the account default protectionKey key will be used)  # noqa: E501
 
-        :param mongo_db_name: The mongo_db_name of this CreateDBTarget.  # noqa: E501
+        :param key: The key of this CreateDBTarget.  # noqa: E501
         :type: str
         """
 
-        self._mongo_db_name = mongo_db_name
+        self._key = key
 
     @property
-    def mongo_uri(self):
-        """Gets the mongo_uri of this CreateDBTarget.  # noqa: E501
+    def mongodb_atlas(self):
+        """Gets the mongodb_atlas of this CreateDBTarget.  # noqa: E501
 
 
-        :return: The mongo_uri of this CreateDBTarget.  # noqa: E501
+        :return: The mongodb_atlas of this CreateDBTarget.  # noqa: E501
+        :rtype: bool
+        """
+        return self._mongodb_atlas
+
+    @mongodb_atlas.setter
+    def mongodb_atlas(self, mongodb_atlas):
+        """Sets the mongodb_atlas of this CreateDBTarget.
+
+
+        :param mongodb_atlas: The mongodb_atlas of this CreateDBTarget.  # noqa: E501
+        :type: bool
+        """
+
+        self._mongodb_atlas = mongodb_atlas
+
+    @property
+    def mongodb_atlas_api_private_key(self):
+        """Gets the mongodb_atlas_api_private_key of this CreateDBTarget.  # noqa: E501
+
+        MongoDB Atlas private key  # noqa: E501
+
+        :return: The mongodb_atlas_api_private_key of this CreateDBTarget.  # noqa: E501
         :rtype: str
         """
-        return self._mongo_uri
+        return self._mongodb_atlas_api_private_key
 
-    @mongo_uri.setter
-    def mongo_uri(self, mongo_uri):
-        """Sets the mongo_uri of this CreateDBTarget.
+    @mongodb_atlas_api_private_key.setter
+    def mongodb_atlas_api_private_key(self, mongodb_atlas_api_private_key):
+        """Sets the mongodb_atlas_api_private_key of this CreateDBTarget.
 
+        MongoDB Atlas private key  # noqa: E501
 
-        :param mongo_uri: The mongo_uri of this CreateDBTarget.  # noqa: E501
+        :param mongodb_atlas_api_private_key: The mongodb_atlas_api_private_key of this CreateDBTarget.  # noqa: E501
         :type: str
         """
 
-        self._mongo_uri = mongo_uri
+        self._mongodb_atlas_api_private_key = mongodb_atlas_api_private_key
+
+    @property
+    def mongodb_atlas_api_public_key(self):
+        """Gets the mongodb_atlas_api_public_key of this CreateDBTarget.  # noqa: E501
+
+        MongoDB Atlas public key  # noqa: E501
+
+        :return: The mongodb_atlas_api_public_key of this CreateDBTarget.  # noqa: E501
+        :rtype: str
+        """
+        return self._mongodb_atlas_api_public_key
+
+    @mongodb_atlas_api_public_key.setter
+    def mongodb_atlas_api_public_key(self, mongodb_atlas_api_public_key):
+        """Sets the mongodb_atlas_api_public_key of this CreateDBTarget.
+
+        MongoDB Atlas public key  # noqa: E501
+
+        :param mongodb_atlas_api_public_key: The mongodb_atlas_api_public_key of this CreateDBTarget.  # noqa: E501
+        :type: str
+        """
+
+        self._mongodb_atlas_api_public_key = mongodb_atlas_api_public_key
+
+    @property
+    def mongodb_atlas_project_id(self):
+        """Gets the mongodb_atlas_project_id of this CreateDBTarget.  # noqa: E501
+
+        MongoDB Atlas project ID  # noqa: E501
+
+        :return: The mongodb_atlas_project_id of this CreateDBTarget.  # noqa: E501
+        :rtype: str
+        """
+        return self._mongodb_atlas_project_id
+
+    @mongodb_atlas_project_id.setter
+    def mongodb_atlas_project_id(self, mongodb_atlas_project_id):
+        """Sets the mongodb_atlas_project_id of this CreateDBTarget.
+
+        MongoDB Atlas project ID  # noqa: E501
+
+        :param mongodb_atlas_project_id: The mongodb_atlas_project_id of this CreateDBTarget.  # noqa: E501
+        :type: str
+        """
+
+        self._mongodb_atlas_project_id = mongodb_atlas_project_id
+
+    @property
+    def mongodb_default_auth_db(self):
+        """Gets the mongodb_default_auth_db of this CreateDBTarget.  # noqa: E501
+
+        MongoDB server default authentication database  # noqa: E501
+
+        :return: The mongodb_default_auth_db of this CreateDBTarget.  # noqa: E501
+        :rtype: str
+        """
+        return self._mongodb_default_auth_db
+
+    @mongodb_default_auth_db.setter
+    def mongodb_default_auth_db(self, mongodb_default_auth_db):
+        """Sets the mongodb_default_auth_db of this CreateDBTarget.
+
+        MongoDB server default authentication database  # noqa: E501
+
+        :param mongodb_default_auth_db: The mongodb_default_auth_db of this CreateDBTarget.  # noqa: E501
+        :type: str
+        """
+
+        self._mongodb_default_auth_db = mongodb_default_auth_db
+
+    @property
+    def mongodb_host_port(self):
+        """Gets the mongodb_host_port of this CreateDBTarget.  # noqa: E501
+
+        MongoDB server host and port  # noqa: E501
+
+        :return: The mongodb_host_port of this CreateDBTarget.  # noqa: E501
+        :rtype: str
+        """
+        return self._mongodb_host_port
+
+    @mongodb_host_port.setter
+    def mongodb_host_port(self, mongodb_host_port):
+        """Sets the mongodb_host_port of this CreateDBTarget.
+
+        MongoDB server host and port  # noqa: E501
+
+        :param mongodb_host_port: The mongodb_host_port of this CreateDBTarget.  # noqa: E501
+        :type: str
+        """
+
+        self._mongodb_host_port = mongodb_host_port
+
+    @property
+    def mongodb_password(self):
+        """Gets the mongodb_password of this CreateDBTarget.  # noqa: E501
+
+        MongoDB server password. You will prompted to provide a password if it will not appear in CLI parameters  # noqa: E501
+
+        :return: The mongodb_password of this CreateDBTarget.  # noqa: E501
+        :rtype: str
+        """
+        return self._mongodb_password
+
+    @mongodb_password.setter
+    def mongodb_password(self, mongodb_password):
+        """Sets the mongodb_password of this CreateDBTarget.
+
+        MongoDB server password. You will prompted to provide a password if it will not appear in CLI parameters  # noqa: E501
+
+        :param mongodb_password: The mongodb_password of this CreateDBTarget.  # noqa: E501
+        :type: str
+        """
+
+        self._mongodb_password = mongodb_password
+
+    @property
+    def mongodb_server_uri(self):
+        """Gets the mongodb_server_uri of this CreateDBTarget.  # noqa: E501
+
+        MongoDB server URI  # noqa: E501
+
+        :return: The mongodb_server_uri of this CreateDBTarget.  # noqa: E501
+        :rtype: str
+        """
+        return self._mongodb_server_uri
+
+    @mongodb_server_uri.setter
+    def mongodb_server_uri(self, mongodb_server_uri):
+        """Sets the mongodb_server_uri of this CreateDBTarget.
+
+        MongoDB server URI  # noqa: E501
+
+        :param mongodb_server_uri: The mongodb_server_uri of this CreateDBTarget.  # noqa: E501
+        :type: str
+        """
+
+        self._mongodb_server_uri = mongodb_server_uri
+
+    @property
+    def mongodb_uri_options(self):
+        """Gets the mongodb_uri_options of this CreateDBTarget.  # noqa: E501
+
+        MongoDB server URI options  # noqa: E501
+
+        :return: The mongodb_uri_options of this CreateDBTarget.  # noqa: E501
+        :rtype: str
+        """
+        return self._mongodb_uri_options
+
+    @mongodb_uri_options.setter
+    def mongodb_uri_options(self, mongodb_uri_options):
+        """Sets the mongodb_uri_options of this CreateDBTarget.
+
+        MongoDB server URI options  # noqa: E501
+
+        :param mongodb_uri_options: The mongodb_uri_options of this CreateDBTarget.  # noqa: E501
+        :type: str
+        """
+
+        self._mongodb_uri_options = mongodb_uri_options
+
+    @property
+    def mongodb_username(self):
+        """Gets the mongodb_username of this CreateDBTarget.  # noqa: E501
+
+        MongoDB server username  # noqa: E501
+
+        :return: The mongodb_username of this CreateDBTarget.  # noqa: E501
+        :rtype: str
+        """
+        return self._mongodb_username
+
+    @mongodb_username.setter
+    def mongodb_username(self, mongodb_username):
+        """Sets the mongodb_username of this CreateDBTarget.
+
+        MongoDB server username  # noqa: E501
+
+        :param mongodb_username: The mongodb_username of this CreateDBTarget.  # noqa: E501
+        :type: str
+        """
+
+        self._mongodb_username = mongodb_username
 
     @property
     def name(self):
@@ -240,6 +586,29 @@ class CreateDBTarget(object):
         self._name = name
 
     @property
+    def password(self):
+        """Gets the password of this CreateDBTarget.  # noqa: E501
+
+        Required only when the authentication process requires a username and password  # noqa: E501
+
+        :return: The password of this CreateDBTarget.  # noqa: E501
+        :rtype: str
+        """
+        return self._password
+
+    @password.setter
+    def password(self, password):
+        """Sets the password of this CreateDBTarget.
+
+        Required only when the authentication process requires a username and password  # noqa: E501
+
+        :param password: The password of this CreateDBTarget.  # noqa: E501
+        :type: str
+        """
+
+        self._password = password
+
+    @property
     def port(self):
         """Gets the port of this CreateDBTarget.  # noqa: E501
 
@@ -261,29 +630,6 @@ class CreateDBTarget(object):
         self._port = port
 
     @property
-    def protection_key(self):
-        """Gets the protection_key of this CreateDBTarget.  # noqa: E501
-
-        The name of a key that used to encrypt the target secret value (if empty, the account default protectionKey key will be used)  # noqa: E501
-
-        :return: The protection_key of this CreateDBTarget.  # noqa: E501
-        :rtype: str
-        """
-        return self._protection_key
-
-    @protection_key.setter
-    def protection_key(self, protection_key):
-        """Sets the protection_key of this CreateDBTarget.
-
-        The name of a key that used to encrypt the target secret value (if empty, the account default protectionKey key will be used)  # noqa: E501
-
-        :param protection_key: The protection_key of this CreateDBTarget.  # noqa: E501
-        :type: str
-        """
-
-        self._protection_key = protection_key
-
-    @property
     def pwd(self):
         """Gets the pwd of this CreateDBTarget.  # noqa: E501
 
@@ -303,6 +649,27 @@ class CreateDBTarget(object):
         """
 
         self._pwd = pwd
+
+    @property
+    def snowflake_account(self):
+        """Gets the snowflake_account of this CreateDBTarget.  # noqa: E501
+
+
+        :return: The snowflake_account of this CreateDBTarget.  # noqa: E501
+        :rtype: str
+        """
+        return self._snowflake_account
+
+    @snowflake_account.setter
+    def snowflake_account(self, snowflake_account):
+        """Sets the snowflake_account of this CreateDBTarget.
+
+
+        :param snowflake_account: The snowflake_account of this CreateDBTarget.  # noqa: E501
+        :type: str
+        """
+
+        self._snowflake_account = snowflake_account
 
     @property
     def token(self):
@@ -370,6 +737,29 @@ class CreateDBTarget(object):
         """
 
         self._user_name = user_name
+
+    @property
+    def username(self):
+        """Gets the username of this CreateDBTarget.  # noqa: E501
+
+        Required only when the authentication process requires a username and password  # noqa: E501
+
+        :return: The username of this CreateDBTarget.  # noqa: E501
+        :rtype: str
+        """
+        return self._username
+
+    @username.setter
+    def username(self, username):
+        """Sets the username of this CreateDBTarget.
+
+        Required only when the authentication process requires a username and password  # noqa: E501
+
+        :param username: The username of this CreateDBTarget.  # noqa: E501
+        :type: str
+        """
+
+        self._username = username
 
     def to_dict(self):
         """Returns the model properties as a dict"""

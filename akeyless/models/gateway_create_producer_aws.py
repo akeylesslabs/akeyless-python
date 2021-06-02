@@ -46,11 +46,13 @@ class GatewayCreateProducerAws(object):
         'enable_admin_rotation': 'bool',
         'gateway_url': 'str',
         'name': 'str',
+        'password': 'str',
         'producer_encryption_key_name': 'str',
         'region': 'str',
         'token': 'str',
         'uid_token': 'str',
-        'user_ttl': 'str'
+        'user_ttl': 'str',
+        'username': 'str'
     }
 
     attribute_map = {
@@ -66,14 +68,16 @@ class GatewayCreateProducerAws(object):
         'enable_admin_rotation': 'enable-admin-rotation',
         'gateway_url': 'gateway-url',
         'name': 'name',
+        'password': 'password',
         'producer_encryption_key_name': 'producer-encryption-key-name',
         'region': 'region',
         'token': 'token',
         'uid_token': 'uid-token',
-        'user_ttl': 'user-ttl'
+        'user_ttl': 'user-ttl',
+        'username': 'username'
     }
 
-    def __init__(self, access_key_id=None, access_mode=None, access_secret_key=None, admin_rotation_interval_days=0, aws_role_arns=None, aws_user_console_access=False, aws_user_groups=None, aws_user_policies=None, aws_user_programmatic_access=True, enable_admin_rotation=False, gateway_url='http://localhost:8000', name=None, producer_encryption_key_name=None, region='us-east-2', token=None, uid_token=None, user_ttl='60m', local_vars_configuration=None):  # noqa: E501
+    def __init__(self, access_key_id=None, access_mode=None, access_secret_key=None, admin_rotation_interval_days=0, aws_role_arns=None, aws_user_console_access=False, aws_user_groups=None, aws_user_policies=None, aws_user_programmatic_access=True, enable_admin_rotation=False, gateway_url='http://localhost:8000', name=None, password=None, producer_encryption_key_name=None, region='us-east-2', token=None, uid_token=None, user_ttl='60m', username=None, local_vars_configuration=None):  # noqa: E501
         """GatewayCreateProducerAws - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -91,11 +95,13 @@ class GatewayCreateProducerAws(object):
         self._enable_admin_rotation = None
         self._gateway_url = None
         self._name = None
+        self._password = None
         self._producer_encryption_key_name = None
         self._region = None
         self._token = None
         self._uid_token = None
         self._user_ttl = None
+        self._username = None
         self.discriminator = None
 
         self.access_key_id = access_key_id
@@ -119,6 +125,8 @@ class GatewayCreateProducerAws(object):
         if gateway_url is not None:
             self.gateway_url = gateway_url
         self.name = name
+        if password is not None:
+            self.password = password
         if producer_encryption_key_name is not None:
             self.producer_encryption_key_name = producer_encryption_key_name
         if region is not None:
@@ -129,6 +137,8 @@ class GatewayCreateProducerAws(object):
             self.uid_token = uid_token
         if user_ttl is not None:
             self.user_ttl = user_ttl
+        if username is not None:
+            self.username = username
 
     @property
     def access_key_id(self):
@@ -411,6 +421,29 @@ class GatewayCreateProducerAws(object):
         self._name = name
 
     @property
+    def password(self):
+        """Gets the password of this GatewayCreateProducerAws.  # noqa: E501
+
+        Required only when the authentication process requires a username and password  # noqa: E501
+
+        :return: The password of this GatewayCreateProducerAws.  # noqa: E501
+        :rtype: str
+        """
+        return self._password
+
+    @password.setter
+    def password(self, password):
+        """Sets the password of this GatewayCreateProducerAws.
+
+        Required only when the authentication process requires a username and password  # noqa: E501
+
+        :param password: The password of this GatewayCreateProducerAws.  # noqa: E501
+        :type: str
+        """
+
+        self._password = password
+
+    @property
     def producer_encryption_key_name(self):
         """Gets the producer_encryption_key_name of this GatewayCreateProducerAws.  # noqa: E501
 
@@ -524,6 +557,29 @@ class GatewayCreateProducerAws(object):
         """
 
         self._user_ttl = user_ttl
+
+    @property
+    def username(self):
+        """Gets the username of this GatewayCreateProducerAws.  # noqa: E501
+
+        Required only when the authentication process requires a username and password  # noqa: E501
+
+        :return: The username of this GatewayCreateProducerAws.  # noqa: E501
+        :rtype: str
+        """
+        return self._username
+
+    @username.setter
+    def username(self, username):
+        """Sets the username of this GatewayCreateProducerAws.
+
+        Required only when the authentication process requires a username and password  # noqa: E501
+
+        :param username: The username of this GatewayCreateProducerAws.  # noqa: E501
+        :type: str
+        """
+
+        self._username = username
 
     def to_dict(self):
         """Returns the model properties as a dict"""

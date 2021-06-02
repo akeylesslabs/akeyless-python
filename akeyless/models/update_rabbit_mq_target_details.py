@@ -36,26 +36,30 @@ class UpdateRabbitMQTargetDetails(object):
     openapi_types = {
         'name': 'str',
         'new_version': 'bool',
+        'password': 'str',
         'protection_key': 'str',
         'rabbitmq_server_password': 'str',
         'rabbitmq_server_uri': 'str',
         'rabbitmq_server_user': 'str',
         'token': 'str',
-        'uid_token': 'str'
+        'uid_token': 'str',
+        'username': 'str'
     }
 
     attribute_map = {
         'name': 'name',
         'new_version': 'new-version',
+        'password': 'password',
         'protection_key': 'protection_key',
         'rabbitmq_server_password': 'rabbitmq_server_password',
         'rabbitmq_server_uri': 'rabbitmq_server_uri',
         'rabbitmq_server_user': 'rabbitmq_server_user',
         'token': 'token',
-        'uid_token': 'uid-token'
+        'uid_token': 'uid-token',
+        'username': 'username'
     }
 
-    def __init__(self, name=None, new_version=False, protection_key=None, rabbitmq_server_password=None, rabbitmq_server_uri=None, rabbitmq_server_user=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, name=None, new_version=False, password=None, protection_key=None, rabbitmq_server_password=None, rabbitmq_server_uri=None, rabbitmq_server_user=None, token=None, uid_token=None, username=None, local_vars_configuration=None):  # noqa: E501
         """UpdateRabbitMQTargetDetails - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -63,17 +67,21 @@ class UpdateRabbitMQTargetDetails(object):
 
         self._name = None
         self._new_version = None
+        self._password = None
         self._protection_key = None
         self._rabbitmq_server_password = None
         self._rabbitmq_server_uri = None
         self._rabbitmq_server_user = None
         self._token = None
         self._uid_token = None
+        self._username = None
         self.discriminator = None
 
         self.name = name
         if new_version is not None:
             self.new_version = new_version
+        if password is not None:
+            self.password = password
         if protection_key is not None:
             self.protection_key = protection_key
         if rabbitmq_server_password is not None:
@@ -86,6 +94,8 @@ class UpdateRabbitMQTargetDetails(object):
             self.token = token
         if uid_token is not None:
             self.uid_token = uid_token
+        if username is not None:
+            self.username = username
 
     @property
     def name(self):
@@ -134,6 +144,29 @@ class UpdateRabbitMQTargetDetails(object):
         """
 
         self._new_version = new_version
+
+    @property
+    def password(self):
+        """Gets the password of this UpdateRabbitMQTargetDetails.  # noqa: E501
+
+        Required only when the authentication process requires a username and password  # noqa: E501
+
+        :return: The password of this UpdateRabbitMQTargetDetails.  # noqa: E501
+        :rtype: str
+        """
+        return self._password
+
+    @password.setter
+    def password(self, password):
+        """Sets the password of this UpdateRabbitMQTargetDetails.
+
+        Required only when the authentication process requires a username and password  # noqa: E501
+
+        :param password: The password of this UpdateRabbitMQTargetDetails.  # noqa: E501
+        :type: str
+        """
+
+        self._password = password
 
     @property
     def protection_key(self):
@@ -266,6 +299,29 @@ class UpdateRabbitMQTargetDetails(object):
         """
 
         self._uid_token = uid_token
+
+    @property
+    def username(self):
+        """Gets the username of this UpdateRabbitMQTargetDetails.  # noqa: E501
+
+        Required only when the authentication process requires a username and password  # noqa: E501
+
+        :return: The username of this UpdateRabbitMQTargetDetails.  # noqa: E501
+        :rtype: str
+        """
+        return self._username
+
+    @username.setter
+    def username(self, username):
+        """Sets the username of this UpdateRabbitMQTargetDetails.
+
+        Required only when the authentication process requires a username and password  # noqa: E501
+
+        :param username: The username of this UpdateRabbitMQTargetDetails.  # noqa: E501
+        :type: str
+        """
+
+        self._username = username
 
     def to_dict(self):
         """Returns the model properties as a dict"""

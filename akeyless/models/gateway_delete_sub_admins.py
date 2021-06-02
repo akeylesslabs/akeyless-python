@@ -35,37 +35,47 @@ class GatewayDeleteSubAdmins(object):
     """
     openapi_types = {
         'gateway_url': 'str',
-        'sub_admin': 'list[str]',
+        'password': 'str',
+        'sub_admin_id': 'str',
         'token': 'str',
-        'uid_token': 'str'
+        'uid_token': 'str',
+        'username': 'str'
     }
 
     attribute_map = {
         'gateway_url': 'gateway-url',
-        'sub_admin': 'sub-admin',
+        'password': 'password',
+        'sub_admin_id': 'sub-admin-id',
         'token': 'token',
-        'uid_token': 'uid-token'
+        'uid_token': 'uid-token',
+        'username': 'username'
     }
 
-    def __init__(self, gateway_url='http://localhost:8000', sub_admin=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, gateway_url='http://localhost:8000', password=None, sub_admin_id=None, token=None, uid_token=None, username=None, local_vars_configuration=None):  # noqa: E501
         """GatewayDeleteSubAdmins - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._gateway_url = None
-        self._sub_admin = None
+        self._password = None
+        self._sub_admin_id = None
         self._token = None
         self._uid_token = None
+        self._username = None
         self.discriminator = None
 
         if gateway_url is not None:
             self.gateway_url = gateway_url
-        self.sub_admin = sub_admin
+        if password is not None:
+            self.password = password
+        self.sub_admin_id = sub_admin_id
         if token is not None:
             self.token = token
         if uid_token is not None:
             self.uid_token = uid_token
+        if username is not None:
+            self.username = username
 
     @property
     def gateway_url(self):
@@ -91,29 +101,52 @@ class GatewayDeleteSubAdmins(object):
         self._gateway_url = gateway_url
 
     @property
-    def sub_admin(self):
-        """Gets the sub_admin of this GatewayDeleteSubAdmins.  # noqa: E501
+    def password(self):
+        """Gets the password of this GatewayDeleteSubAdmins.  # noqa: E501
 
-        SubAdmins to be removed  # noqa: E501
+        Required only when the authentication process requires a username and password  # noqa: E501
 
-        :return: The sub_admin of this GatewayDeleteSubAdmins.  # noqa: E501
-        :rtype: list[str]
+        :return: The password of this GatewayDeleteSubAdmins.  # noqa: E501
+        :rtype: str
         """
-        return self._sub_admin
+        return self._password
 
-    @sub_admin.setter
-    def sub_admin(self, sub_admin):
-        """Sets the sub_admin of this GatewayDeleteSubAdmins.
+    @password.setter
+    def password(self, password):
+        """Sets the password of this GatewayDeleteSubAdmins.
 
-        SubAdmins to be removed  # noqa: E501
+        Required only when the authentication process requires a username and password  # noqa: E501
 
-        :param sub_admin: The sub_admin of this GatewayDeleteSubAdmins.  # noqa: E501
-        :type: list[str]
+        :param password: The password of this GatewayDeleteSubAdmins.  # noqa: E501
+        :type: str
         """
-        if self.local_vars_configuration.client_side_validation and sub_admin is None:  # noqa: E501
-            raise ValueError("Invalid value for `sub_admin`, must not be `None`")  # noqa: E501
 
-        self._sub_admin = sub_admin
+        self._password = password
+
+    @property
+    def sub_admin_id(self):
+        """Gets the sub_admin_id of this GatewayDeleteSubAdmins.  # noqa: E501
+
+        SubAdminID to be removed  # noqa: E501
+
+        :return: The sub_admin_id of this GatewayDeleteSubAdmins.  # noqa: E501
+        :rtype: str
+        """
+        return self._sub_admin_id
+
+    @sub_admin_id.setter
+    def sub_admin_id(self, sub_admin_id):
+        """Sets the sub_admin_id of this GatewayDeleteSubAdmins.
+
+        SubAdminID to be removed  # noqa: E501
+
+        :param sub_admin_id: The sub_admin_id of this GatewayDeleteSubAdmins.  # noqa: E501
+        :type: str
+        """
+        if self.local_vars_configuration.client_side_validation and sub_admin_id is None:  # noqa: E501
+            raise ValueError("Invalid value for `sub_admin_id`, must not be `None`")  # noqa: E501
+
+        self._sub_admin_id = sub_admin_id
 
     @property
     def token(self):
@@ -160,6 +193,29 @@ class GatewayDeleteSubAdmins(object):
         """
 
         self._uid_token = uid_token
+
+    @property
+    def username(self):
+        """Gets the username of this GatewayDeleteSubAdmins.  # noqa: E501
+
+        Required only when the authentication process requires a username and password  # noqa: E501
+
+        :return: The username of this GatewayDeleteSubAdmins.  # noqa: E501
+        :rtype: str
+        """
+        return self._username
+
+    @username.setter
+    def username(self, username):
+        """Sets the username of this GatewayDeleteSubAdmins.
+
+        Required only when the authentication process requires a username and password  # noqa: E501
+
+        :param username: The username of this GatewayDeleteSubAdmins.  # noqa: E501
+        :type: str
+        """
+
+        self._username = username
 
     def to_dict(self):
         """Returns the model properties as a dict"""

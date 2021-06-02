@@ -3,6 +3,8 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**aws_s3_config** | [**AwsS3LogForwardingConfig**](AwsS3LogForwardingConfig.md) |  | [optional] 
+**azure_analytics_config** | [**AzureLogAnalyticsForwardingConfig**](AzureLogAnalyticsForwardingConfig.md) |  | [optional] 
 **elasticsearch_config** | [**ElasticsearchLogForwardingConfig**](ElasticsearchLogForwardingConfig.md) |  | [optional] 
 **logan_enable** | **bool** |  | [optional] 
 **logan_url** | **str** |  | [optional] 

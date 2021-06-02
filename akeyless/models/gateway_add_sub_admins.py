@@ -34,38 +34,105 @@ class GatewayAddSubAdmins(object):
                             and the value is json key in definition.
     """
     openapi_types = {
+        'allow_gw_api': 'bool',
+        'allow_gw_login': 'bool',
         'gateway_url': 'str',
-        'sub_admin': 'list[str]',
+        'password': 'str',
+        'sub_admin_access_id': 'str',
+        'sub_claims': 'dict(str, str)',
         'token': 'str',
-        'uid_token': 'str'
+        'uid_token': 'str',
+        'username': 'str'
     }
 
     attribute_map = {
+        'allow_gw_api': 'allow-gw-api',
+        'allow_gw_login': 'allow-gw-login',
         'gateway_url': 'gateway-url',
-        'sub_admin': 'sub-admin',
+        'password': 'password',
+        'sub_admin_access_id': 'sub-admin-access-id',
+        'sub_claims': 'sub-claims',
         'token': 'token',
-        'uid_token': 'uid-token'
+        'uid_token': 'uid-token',
+        'username': 'username'
     }
 
-    def __init__(self, gateway_url='http://localhost:8000', sub_admin=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, allow_gw_api=None, allow_gw_login=None, gateway_url='http://localhost:8000', password=None, sub_admin_access_id=None, sub_claims=None, token=None, uid_token=None, username=None, local_vars_configuration=None):  # noqa: E501
         """GatewayAddSubAdmins - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
+        self._allow_gw_api = None
+        self._allow_gw_login = None
         self._gateway_url = None
-        self._sub_admin = None
+        self._password = None
+        self._sub_admin_access_id = None
+        self._sub_claims = None
         self._token = None
         self._uid_token = None
+        self._username = None
         self.discriminator = None
 
+        if allow_gw_api is not None:
+            self.allow_gw_api = allow_gw_api
+        if allow_gw_login is not None:
+            self.allow_gw_login = allow_gw_login
         if gateway_url is not None:
             self.gateway_url = gateway_url
-        self.sub_admin = sub_admin
+        if password is not None:
+            self.password = password
+        self.sub_admin_access_id = sub_admin_access_id
+        if sub_claims is not None:
+            self.sub_claims = sub_claims
         if token is not None:
             self.token = token
         if uid_token is not None:
             self.uid_token = uid_token
+        if username is not None:
+            self.username = username
+
+    @property
+    def allow_gw_api(self):
+        """Gets the allow_gw_api of this GatewayAddSubAdmins.  # noqa: E501
+
+
+        :return: The allow_gw_api of this GatewayAddSubAdmins.  # noqa: E501
+        :rtype: bool
+        """
+        return self._allow_gw_api
+
+    @allow_gw_api.setter
+    def allow_gw_api(self, allow_gw_api):
+        """Sets the allow_gw_api of this GatewayAddSubAdmins.
+
+
+        :param allow_gw_api: The allow_gw_api of this GatewayAddSubAdmins.  # noqa: E501
+        :type: bool
+        """
+
+        self._allow_gw_api = allow_gw_api
+
+    @property
+    def allow_gw_login(self):
+        """Gets the allow_gw_login of this GatewayAddSubAdmins.  # noqa: E501
+
+
+        :return: The allow_gw_login of this GatewayAddSubAdmins.  # noqa: E501
+        :rtype: bool
+        """
+        return self._allow_gw_login
+
+    @allow_gw_login.setter
+    def allow_gw_login(self, allow_gw_login):
+        """Sets the allow_gw_login of this GatewayAddSubAdmins.
+
+
+        :param allow_gw_login: The allow_gw_login of this GatewayAddSubAdmins.  # noqa: E501
+        :type: bool
+        """
+
+        self._allow_gw_login = allow_gw_login
 
     @property
     def gateway_url(self):
@@ -91,29 +158,75 @@ class GatewayAddSubAdmins(object):
         self._gateway_url = gateway_url
 
     @property
-    def sub_admin(self):
-        """Gets the sub_admin of this GatewayAddSubAdmins.  # noqa: E501
+    def password(self):
+        """Gets the password of this GatewayAddSubAdmins.  # noqa: E501
+
+        Required only when the authentication process requires a username and password  # noqa: E501
+
+        :return: The password of this GatewayAddSubAdmins.  # noqa: E501
+        :rtype: str
+        """
+        return self._password
+
+    @password.setter
+    def password(self, password):
+        """Sets the password of this GatewayAddSubAdmins.
+
+        Required only when the authentication process requires a username and password  # noqa: E501
+
+        :param password: The password of this GatewayAddSubAdmins.  # noqa: E501
+        :type: str
+        """
+
+        self._password = password
+
+    @property
+    def sub_admin_access_id(self):
+        """Gets the sub_admin_access_id of this GatewayAddSubAdmins.  # noqa: E501
 
         SubAdmins to add  # noqa: E501
 
-        :return: The sub_admin of this GatewayAddSubAdmins.  # noqa: E501
-        :rtype: list[str]
+        :return: The sub_admin_access_id of this GatewayAddSubAdmins.  # noqa: E501
+        :rtype: str
         """
-        return self._sub_admin
+        return self._sub_admin_access_id
 
-    @sub_admin.setter
-    def sub_admin(self, sub_admin):
-        """Sets the sub_admin of this GatewayAddSubAdmins.
+    @sub_admin_access_id.setter
+    def sub_admin_access_id(self, sub_admin_access_id):
+        """Sets the sub_admin_access_id of this GatewayAddSubAdmins.
 
         SubAdmins to add  # noqa: E501
 
-        :param sub_admin: The sub_admin of this GatewayAddSubAdmins.  # noqa: E501
-        :type: list[str]
+        :param sub_admin_access_id: The sub_admin_access_id of this GatewayAddSubAdmins.  # noqa: E501
+        :type: str
         """
-        if self.local_vars_configuration.client_side_validation and sub_admin is None:  # noqa: E501
-            raise ValueError("Invalid value for `sub_admin`, must not be `None`")  # noqa: E501
+        if self.local_vars_configuration.client_side_validation and sub_admin_access_id is None:  # noqa: E501
+            raise ValueError("Invalid value for `sub_admin_access_id`, must not be `None`")  # noqa: E501
 
-        self._sub_admin = sub_admin
+        self._sub_admin_access_id = sub_admin_access_id
+
+    @property
+    def sub_claims(self):
+        """Gets the sub_claims of this GatewayAddSubAdmins.  # noqa: E501
+
+        key/val of sub claims, e.g group=admins,developers  # noqa: E501
+
+        :return: The sub_claims of this GatewayAddSubAdmins.  # noqa: E501
+        :rtype: dict(str, str)
+        """
+        return self._sub_claims
+
+    @sub_claims.setter
+    def sub_claims(self, sub_claims):
+        """Sets the sub_claims of this GatewayAddSubAdmins.
+
+        key/val of sub claims, e.g group=admins,developers  # noqa: E501
+
+        :param sub_claims: The sub_claims of this GatewayAddSubAdmins.  # noqa: E501
+        :type: dict(str, str)
+        """
+
+        self._sub_claims = sub_claims
 
     @property
     def token(self):
@@ -160,6 +273,29 @@ class GatewayAddSubAdmins(object):
         """
 
         self._uid_token = uid_token
+
+    @property
+    def username(self):
+        """Gets the username of this GatewayAddSubAdmins.  # noqa: E501
+
+        Required only when the authentication process requires a username and password  # noqa: E501
+
+        :return: The username of this GatewayAddSubAdmins.  # noqa: E501
+        :rtype: str
+        """
+        return self._username
+
+    @username.setter
+    def username(self, username):
+        """Sets the username of this GatewayAddSubAdmins.
+
+        Required only when the authentication process requires a username and password  # noqa: E501
+
+        :param username: The username of this GatewayAddSubAdmins.  # noqa: E501
+        :type: str
+        """
+
+        self._username = username
 
     def to_dict(self):
         """Returns the model properties as a dict"""

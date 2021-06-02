@@ -38,12 +38,15 @@ class CreateAuthMethodOAuth2(object):
         'audience': 'str',
         'bound_client_ids': 'list[str]',
         'bound_ips': 'list[str]',
+        'force_sub_claims': 'bool',
         'issuer': 'str',
         'jwks_uri': 'str',
         'name': 'str',
+        'password': 'str',
         'token': 'str',
         'uid_token': 'str',
-        'unique_identifier': 'str'
+        'unique_identifier': 'str',
+        'username': 'str'
     }
 
     attribute_map = {
@@ -51,15 +54,18 @@ class CreateAuthMethodOAuth2(object):
         'audience': 'audience',
         'bound_client_ids': 'bound-client-ids',
         'bound_ips': 'bound-ips',
+        'force_sub_claims': 'force-sub-claims',
         'issuer': 'issuer',
         'jwks_uri': 'jwks-uri',
         'name': 'name',
+        'password': 'password',
         'token': 'token',
         'uid_token': 'uid-token',
-        'unique_identifier': 'unique-identifier'
+        'unique_identifier': 'unique-identifier',
+        'username': 'username'
     }
 
-    def __init__(self, access_expires=0, audience=None, bound_client_ids=None, bound_ips=None, issuer=None, jwks_uri=None, name=None, token=None, uid_token=None, unique_identifier=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, access_expires=0, audience=None, bound_client_ids=None, bound_ips=None, force_sub_claims=None, issuer=None, jwks_uri=None, name=None, password=None, token=None, uid_token=None, unique_identifier=None, username=None, local_vars_configuration=None):  # noqa: E501
         """CreateAuthMethodOAuth2 - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -69,12 +75,15 @@ class CreateAuthMethodOAuth2(object):
         self._audience = None
         self._bound_client_ids = None
         self._bound_ips = None
+        self._force_sub_claims = None
         self._issuer = None
         self._jwks_uri = None
         self._name = None
+        self._password = None
         self._token = None
         self._uid_token = None
         self._unique_identifier = None
+        self._username = None
         self.discriminator = None
 
         if access_expires is not None:
@@ -85,15 +94,21 @@ class CreateAuthMethodOAuth2(object):
             self.bound_client_ids = bound_client_ids
         if bound_ips is not None:
             self.bound_ips = bound_ips
+        if force_sub_claims is not None:
+            self.force_sub_claims = force_sub_claims
         if issuer is not None:
             self.issuer = issuer
         self.jwks_uri = jwks_uri
         self.name = name
+        if password is not None:
+            self.password = password
         if token is not None:
             self.token = token
         if uid_token is not None:
             self.uid_token = uid_token
         self.unique_identifier = unique_identifier
+        if username is not None:
+            self.username = username
 
     @property
     def access_expires(self):
@@ -188,6 +203,29 @@ class CreateAuthMethodOAuth2(object):
         self._bound_ips = bound_ips
 
     @property
+    def force_sub_claims(self):
+        """Gets the force_sub_claims of this CreateAuthMethodOAuth2.  # noqa: E501
+
+        if true: enforce role-association must include sub claims  # noqa: E501
+
+        :return: The force_sub_claims of this CreateAuthMethodOAuth2.  # noqa: E501
+        :rtype: bool
+        """
+        return self._force_sub_claims
+
+    @force_sub_claims.setter
+    def force_sub_claims(self, force_sub_claims):
+        """Sets the force_sub_claims of this CreateAuthMethodOAuth2.
+
+        if true: enforce role-association must include sub claims  # noqa: E501
+
+        :param force_sub_claims: The force_sub_claims of this CreateAuthMethodOAuth2.  # noqa: E501
+        :type: bool
+        """
+
+        self._force_sub_claims = force_sub_claims
+
+    @property
     def issuer(self):
         """Gets the issuer of this CreateAuthMethodOAuth2.  # noqa: E501
 
@@ -261,6 +299,29 @@ class CreateAuthMethodOAuth2(object):
         self._name = name
 
     @property
+    def password(self):
+        """Gets the password of this CreateAuthMethodOAuth2.  # noqa: E501
+
+        Required only when the authentication process requires a username and password  # noqa: E501
+
+        :return: The password of this CreateAuthMethodOAuth2.  # noqa: E501
+        :rtype: str
+        """
+        return self._password
+
+    @password.setter
+    def password(self, password):
+        """Sets the password of this CreateAuthMethodOAuth2.
+
+        Required only when the authentication process requires a username and password  # noqa: E501
+
+        :param password: The password of this CreateAuthMethodOAuth2.  # noqa: E501
+        :type: str
+        """
+
+        self._password = password
+
+    @property
     def token(self):
         """Gets the token of this CreateAuthMethodOAuth2.  # noqa: E501
 
@@ -330,6 +391,29 @@ class CreateAuthMethodOAuth2(object):
             raise ValueError("Invalid value for `unique_identifier`, must not be `None`")  # noqa: E501
 
         self._unique_identifier = unique_identifier
+
+    @property
+    def username(self):
+        """Gets the username of this CreateAuthMethodOAuth2.  # noqa: E501
+
+        Required only when the authentication process requires a username and password  # noqa: E501
+
+        :return: The username of this CreateAuthMethodOAuth2.  # noqa: E501
+        :rtype: str
+        """
+        return self._username
+
+    @username.setter
+    def username(self, username):
+        """Sets the username of this CreateAuthMethodOAuth2.
+
+        Required only when the authentication process requires a username and password  # noqa: E501
+
+        :param username: The username of this CreateAuthMethodOAuth2.  # noqa: E501
+        :type: str
+        """
+
+        self._username = username
 
     def to_dict(self):
         """Returns the model properties as a dict"""

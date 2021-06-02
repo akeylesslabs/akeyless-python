@@ -41,10 +41,12 @@ class GatewayCreateProducerArtifactory(object):
         'base_url': 'str',
         'gateway_url': 'str',
         'name': 'str',
+        'password': 'str',
         'producer_encryption_key_name': 'str',
         'token': 'str',
         'uid_token': 'str',
-        'user_ttl': 'str'
+        'user_ttl': 'str',
+        'username': 'str'
     }
 
     attribute_map = {
@@ -55,13 +57,15 @@ class GatewayCreateProducerArtifactory(object):
         'base_url': 'base-url',
         'gateway_url': 'gateway-url',
         'name': 'name',
+        'password': 'password',
         'producer_encryption_key_name': 'producer-encryption-key-name',
         'token': 'token',
         'uid_token': 'uid-token',
-        'user_ttl': 'user-ttl'
+        'user_ttl': 'user-ttl',
+        'username': 'username'
     }
 
-    def __init__(self, artifactory_admin_name=None, artifactory_admin_pwd=None, artifactory_token_audience=None, artifactory_token_scope=None, base_url=None, gateway_url='http://localhost:8000', name=None, producer_encryption_key_name=None, token=None, uid_token=None, user_ttl='60m', local_vars_configuration=None):  # noqa: E501
+    def __init__(self, artifactory_admin_name=None, artifactory_admin_pwd=None, artifactory_token_audience=None, artifactory_token_scope=None, base_url=None, gateway_url='http://localhost:8000', name=None, password=None, producer_encryption_key_name=None, token=None, uid_token=None, user_ttl='60m', username=None, local_vars_configuration=None):  # noqa: E501
         """GatewayCreateProducerArtifactory - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -74,10 +78,12 @@ class GatewayCreateProducerArtifactory(object):
         self._base_url = None
         self._gateway_url = None
         self._name = None
+        self._password = None
         self._producer_encryption_key_name = None
         self._token = None
         self._uid_token = None
         self._user_ttl = None
+        self._username = None
         self.discriminator = None
 
         self.artifactory_admin_name = artifactory_admin_name
@@ -88,6 +94,8 @@ class GatewayCreateProducerArtifactory(object):
         if gateway_url is not None:
             self.gateway_url = gateway_url
         self.name = name
+        if password is not None:
+            self.password = password
         if producer_encryption_key_name is not None:
             self.producer_encryption_key_name = producer_encryption_key_name
         if token is not None:
@@ -96,6 +104,8 @@ class GatewayCreateProducerArtifactory(object):
             self.uid_token = uid_token
         if user_ttl is not None:
             self.user_ttl = user_ttl
+        if username is not None:
+            self.username = username
 
     @property
     def artifactory_admin_name(self):
@@ -271,6 +281,29 @@ class GatewayCreateProducerArtifactory(object):
         self._name = name
 
     @property
+    def password(self):
+        """Gets the password of this GatewayCreateProducerArtifactory.  # noqa: E501
+
+        Required only when the authentication process requires a username and password  # noqa: E501
+
+        :return: The password of this GatewayCreateProducerArtifactory.  # noqa: E501
+        :rtype: str
+        """
+        return self._password
+
+    @password.setter
+    def password(self, password):
+        """Sets the password of this GatewayCreateProducerArtifactory.
+
+        Required only when the authentication process requires a username and password  # noqa: E501
+
+        :param password: The password of this GatewayCreateProducerArtifactory.  # noqa: E501
+        :type: str
+        """
+
+        self._password = password
+
+    @property
     def producer_encryption_key_name(self):
         """Gets the producer_encryption_key_name of this GatewayCreateProducerArtifactory.  # noqa: E501
 
@@ -361,6 +394,29 @@ class GatewayCreateProducerArtifactory(object):
         """
 
         self._user_ttl = user_ttl
+
+    @property
+    def username(self):
+        """Gets the username of this GatewayCreateProducerArtifactory.  # noqa: E501
+
+        Required only when the authentication process requires a username and password  # noqa: E501
+
+        :return: The username of this GatewayCreateProducerArtifactory.  # noqa: E501
+        :rtype: str
+        """
+        return self._username
+
+    @username.setter
+    def username(self, username):
+        """Sets the username of this GatewayCreateProducerArtifactory.
+
+        Required only when the authentication process requires a username and password  # noqa: E501
+
+        :param username: The username of this GatewayCreateProducerArtifactory.  # noqa: E501
+        :type: str
+        """
+
+        self._username = username
 
     def to_dict(self):
         """Returns the model properties as a dict"""

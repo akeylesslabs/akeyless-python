@@ -36,20 +36,24 @@ class GetSSHCertificate(object):
     openapi_types = {
         'cert_issuer_name': 'str',
         'cert_username': 'str',
+        'password': 'str',
         'public_key_data': 'str',
         'token': 'str',
-        'uid_token': 'str'
+        'uid_token': 'str',
+        'username': 'str'
     }
 
     attribute_map = {
         'cert_issuer_name': 'cert-issuer-name',
         'cert_username': 'cert-username',
+        'password': 'password',
         'public_key_data': 'public-key-data',
         'token': 'token',
-        'uid_token': 'uid-token'
+        'uid_token': 'uid-token',
+        'username': 'username'
     }
 
-    def __init__(self, cert_issuer_name=None, cert_username=None, public_key_data=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, cert_issuer_name=None, cert_username=None, password=None, public_key_data=None, token=None, uid_token=None, username=None, local_vars_configuration=None):  # noqa: E501
         """GetSSHCertificate - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -57,19 +61,25 @@ class GetSSHCertificate(object):
 
         self._cert_issuer_name = None
         self._cert_username = None
+        self._password = None
         self._public_key_data = None
         self._token = None
         self._uid_token = None
+        self._username = None
         self.discriminator = None
 
         self.cert_issuer_name = cert_issuer_name
         self.cert_username = cert_username
+        if password is not None:
+            self.password = password
         if public_key_data is not None:
             self.public_key_data = public_key_data
         if token is not None:
             self.token = token
         if uid_token is not None:
             self.uid_token = uid_token
+        if username is not None:
+            self.username = username
 
     @property
     def cert_issuer_name(self):
@@ -120,6 +130,29 @@ class GetSSHCertificate(object):
             raise ValueError("Invalid value for `cert_username`, must not be `None`")  # noqa: E501
 
         self._cert_username = cert_username
+
+    @property
+    def password(self):
+        """Gets the password of this GetSSHCertificate.  # noqa: E501
+
+        Required only when the authentication process requires a username and password  # noqa: E501
+
+        :return: The password of this GetSSHCertificate.  # noqa: E501
+        :rtype: str
+        """
+        return self._password
+
+    @password.setter
+    def password(self, password):
+        """Sets the password of this GetSSHCertificate.
+
+        Required only when the authentication process requires a username and password  # noqa: E501
+
+        :param password: The password of this GetSSHCertificate.  # noqa: E501
+        :type: str
+        """
+
+        self._password = password
 
     @property
     def public_key_data(self):
@@ -189,6 +222,29 @@ class GetSSHCertificate(object):
         """
 
         self._uid_token = uid_token
+
+    @property
+    def username(self):
+        """Gets the username of this GetSSHCertificate.  # noqa: E501
+
+        Required only when the authentication process requires a username and password  # noqa: E501
+
+        :return: The username of this GetSSHCertificate.  # noqa: E501
+        :rtype: str
+        """
+        return self._username
+
+    @username.setter
+    def username(self, username):
+        """Sets the username of this GetSSHCertificate.
+
+        Required only when the authentication process requires a username and password  # noqa: E501
+
+        :param username: The username of this GetSSHCertificate.  # noqa: E501
+        :type: str
+        """
+
+        self._username = username
 
     def to_dict(self):
         """Returns the model properties as a dict"""

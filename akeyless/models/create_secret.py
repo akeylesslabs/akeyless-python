@@ -37,10 +37,12 @@ class CreateSecret(object):
         'metadata': 'str',
         'multiline_value': 'bool',
         'name': 'str',
+        'password': 'str',
         'protection_key': 'str',
         'tags': 'list[str]',
         'token': 'str',
         'uid_token': 'str',
+        'username': 'str',
         'value': 'str'
     }
 
@@ -48,14 +50,16 @@ class CreateSecret(object):
         'metadata': 'metadata',
         'multiline_value': 'multiline_value',
         'name': 'name',
+        'password': 'password',
         'protection_key': 'protection_key',
         'tags': 'tags',
         'token': 'token',
         'uid_token': 'uid-token',
+        'username': 'username',
         'value': 'value'
     }
 
-    def __init__(self, metadata=None, multiline_value=None, name=None, protection_key=None, tags=None, token=None, uid_token=None, value=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, metadata=None, multiline_value=None, name=None, password=None, protection_key=None, tags=None, token=None, uid_token=None, username=None, value=None, local_vars_configuration=None):  # noqa: E501
         """CreateSecret - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -64,10 +68,12 @@ class CreateSecret(object):
         self._metadata = None
         self._multiline_value = None
         self._name = None
+        self._password = None
         self._protection_key = None
         self._tags = None
         self._token = None
         self._uid_token = None
+        self._username = None
         self._value = None
         self.discriminator = None
 
@@ -76,6 +82,8 @@ class CreateSecret(object):
         if multiline_value is not None:
             self.multiline_value = multiline_value
         self.name = name
+        if password is not None:
+            self.password = password
         if protection_key is not None:
             self.protection_key = protection_key
         if tags is not None:
@@ -84,6 +92,8 @@ class CreateSecret(object):
             self.token = token
         if uid_token is not None:
             self.uid_token = uid_token
+        if username is not None:
+            self.username = username
         self.value = value
 
     @property
@@ -156,6 +166,29 @@ class CreateSecret(object):
             raise ValueError("Invalid value for `name`, must not be `None`")  # noqa: E501
 
         self._name = name
+
+    @property
+    def password(self):
+        """Gets the password of this CreateSecret.  # noqa: E501
+
+        Required only when the authentication process requires a username and password  # noqa: E501
+
+        :return: The password of this CreateSecret.  # noqa: E501
+        :rtype: str
+        """
+        return self._password
+
+    @password.setter
+    def password(self, password):
+        """Sets the password of this CreateSecret.
+
+        Required only when the authentication process requires a username and password  # noqa: E501
+
+        :param password: The password of this CreateSecret.  # noqa: E501
+        :type: str
+        """
+
+        self._password = password
 
     @property
     def protection_key(self):
@@ -248,6 +281,29 @@ class CreateSecret(object):
         """
 
         self._uid_token = uid_token
+
+    @property
+    def username(self):
+        """Gets the username of this CreateSecret.  # noqa: E501
+
+        Required only when the authentication process requires a username and password  # noqa: E501
+
+        :return: The username of this CreateSecret.  # noqa: E501
+        :rtype: str
+        """
+        return self._username
+
+    @username.setter
+    def username(self, username):
+        """Sets the username of this CreateSecret.
+
+        Required only when the authentication process requires a username and password  # noqa: E501
+
+        :param username: The username of this CreateSecret.  # noqa: E501
+        :type: str
+        """
+
+        self._username = username
 
     @property
     def value(self):

@@ -36,32 +36,36 @@ class CreateSSHTarget(object):
     openapi_types = {
         'comment': 'str',
         'host': 'str',
+        'key': 'str',
         'name': 'str',
+        'password': 'str',
         'port': 'str',
         'private_key': 'str',
         'private_key_password': 'str',
-        'protection_key': 'str',
         'ssh_password': 'str',
         'ssh_username': 'str',
         'token': 'str',
-        'uid_token': 'str'
+        'uid_token': 'str',
+        'username': 'str'
     }
 
     attribute_map = {
         'comment': 'comment',
         'host': 'host',
+        'key': 'key',
         'name': 'name',
+        'password': 'password',
         'port': 'port',
         'private_key': 'private-key',
         'private_key_password': 'private-key-password',
-        'protection_key': 'protection_key',
         'ssh_password': 'ssh-password',
         'ssh_username': 'ssh-username',
         'token': 'token',
-        'uid_token': 'uid-token'
+        'uid_token': 'uid-token',
+        'username': 'username'
     }
 
-    def __init__(self, comment=None, host=None, name=None, port=None, private_key=None, private_key_password=None, protection_key=None, ssh_password=None, ssh_username=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, comment=None, host=None, key=None, name=None, password=None, port=None, private_key=None, private_key_password=None, ssh_password=None, ssh_username=None, token=None, uid_token=None, username=None, local_vars_configuration=None):  # noqa: E501
         """CreateSSHTarget - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -69,30 +73,34 @@ class CreateSSHTarget(object):
 
         self._comment = None
         self._host = None
+        self._key = None
         self._name = None
+        self._password = None
         self._port = None
         self._private_key = None
         self._private_key_password = None
-        self._protection_key = None
         self._ssh_password = None
         self._ssh_username = None
         self._token = None
         self._uid_token = None
+        self._username = None
         self.discriminator = None
 
         if comment is not None:
             self.comment = comment
         if host is not None:
             self.host = host
+        if key is not None:
+            self.key = key
         self.name = name
+        if password is not None:
+            self.password = password
         if port is not None:
             self.port = port
         if private_key is not None:
             self.private_key = private_key
         if private_key_password is not None:
             self.private_key_password = private_key_password
-        if protection_key is not None:
-            self.protection_key = protection_key
         if ssh_password is not None:
             self.ssh_password = ssh_password
         if ssh_username is not None:
@@ -101,6 +109,8 @@ class CreateSSHTarget(object):
             self.token = token
         if uid_token is not None:
             self.uid_token = uid_token
+        if username is not None:
+            self.username = username
 
     @property
     def comment(self):
@@ -147,6 +157,29 @@ class CreateSSHTarget(object):
         self._host = host
 
     @property
+    def key(self):
+        """Gets the key of this CreateSSHTarget.  # noqa: E501
+
+        The name of a key that used to encrypt the target secret value (if empty, the account default protectionKey key will be used)  # noqa: E501
+
+        :return: The key of this CreateSSHTarget.  # noqa: E501
+        :rtype: str
+        """
+        return self._key
+
+    @key.setter
+    def key(self, key):
+        """Sets the key of this CreateSSHTarget.
+
+        The name of a key that used to encrypt the target secret value (if empty, the account default protectionKey key will be used)  # noqa: E501
+
+        :param key: The key of this CreateSSHTarget.  # noqa: E501
+        :type: str
+        """
+
+        self._key = key
+
+    @property
     def name(self):
         """Gets the name of this CreateSSHTarget.  # noqa: E501
 
@@ -170,6 +203,29 @@ class CreateSSHTarget(object):
             raise ValueError("Invalid value for `name`, must not be `None`")  # noqa: E501
 
         self._name = name
+
+    @property
+    def password(self):
+        """Gets the password of this CreateSSHTarget.  # noqa: E501
+
+        Required only when the authentication process requires a username and password  # noqa: E501
+
+        :return: The password of this CreateSSHTarget.  # noqa: E501
+        :rtype: str
+        """
+        return self._password
+
+    @password.setter
+    def password(self, password):
+        """Sets the password of this CreateSSHTarget.
+
+        Required only when the authentication process requires a username and password  # noqa: E501
+
+        :param password: The password of this CreateSSHTarget.  # noqa: E501
+        :type: str
+        """
+
+        self._password = password
 
     @property
     def port(self):
@@ -233,29 +289,6 @@ class CreateSSHTarget(object):
         """
 
         self._private_key_password = private_key_password
-
-    @property
-    def protection_key(self):
-        """Gets the protection_key of this CreateSSHTarget.  # noqa: E501
-
-        The name of a key that used to encrypt the target secret value (if empty, the account default protectionKey key will be used)  # noqa: E501
-
-        :return: The protection_key of this CreateSSHTarget.  # noqa: E501
-        :rtype: str
-        """
-        return self._protection_key
-
-    @protection_key.setter
-    def protection_key(self, protection_key):
-        """Sets the protection_key of this CreateSSHTarget.
-
-        The name of a key that used to encrypt the target secret value (if empty, the account default protectionKey key will be used)  # noqa: E501
-
-        :param protection_key: The protection_key of this CreateSSHTarget.  # noqa: E501
-        :type: str
-        """
-
-        self._protection_key = protection_key
 
     @property
     def ssh_password(self):
@@ -344,6 +377,29 @@ class CreateSSHTarget(object):
         """
 
         self._uid_token = uid_token
+
+    @property
+    def username(self):
+        """Gets the username of this CreateSSHTarget.  # noqa: E501
+
+        Required only when the authentication process requires a username and password  # noqa: E501
+
+        :return: The username of this CreateSSHTarget.  # noqa: E501
+        :rtype: str
+        """
+        return self._username
+
+    @username.setter
+    def username(self, username):
+        """Sets the username of this CreateSSHTarget.
+
+        Required only when the authentication process requires a username and password  # noqa: E501
+
+        :param username: The username of this CreateSSHTarget.  # noqa: E501
+        :type: str
+        """
+
+        self._username = username
 
     def to_dict(self):
         """Returns the model properties as a dict"""

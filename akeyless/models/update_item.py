@@ -38,9 +38,11 @@ class UpdateItem(object):
         'name': 'str',
         'new_metadata': 'str',
         'new_name': 'str',
+        'password': 'str',
         'rm_tag': 'list[str]',
         'token': 'str',
-        'uid_token': 'str'
+        'uid_token': 'str',
+        'username': 'str'
     }
 
     attribute_map = {
@@ -48,12 +50,14 @@ class UpdateItem(object):
         'name': 'name',
         'new_metadata': 'new-metadata',
         'new_name': 'new-name',
+        'password': 'password',
         'rm_tag': 'rm-tag',
         'token': 'token',
-        'uid_token': 'uid-token'
+        'uid_token': 'uid-token',
+        'username': 'username'
     }
 
-    def __init__(self, add_tag=None, name=None, new_metadata='default_metadata', new_name=None, rm_tag=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, add_tag=None, name=None, new_metadata='default_metadata', new_name=None, password=None, rm_tag=None, token=None, uid_token=None, username=None, local_vars_configuration=None):  # noqa: E501
         """UpdateItem - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -63,9 +67,11 @@ class UpdateItem(object):
         self._name = None
         self._new_metadata = None
         self._new_name = None
+        self._password = None
         self._rm_tag = None
         self._token = None
         self._uid_token = None
+        self._username = None
         self.discriminator = None
 
         if add_tag is not None:
@@ -75,12 +81,16 @@ class UpdateItem(object):
             self.new_metadata = new_metadata
         if new_name is not None:
             self.new_name = new_name
+        if password is not None:
+            self.password = password
         if rm_tag is not None:
             self.rm_tag = rm_tag
         if token is not None:
             self.token = token
         if uid_token is not None:
             self.uid_token = uid_token
+        if username is not None:
+            self.username = username
 
     @property
     def add_tag(self):
@@ -177,6 +187,29 @@ class UpdateItem(object):
         self._new_name = new_name
 
     @property
+    def password(self):
+        """Gets the password of this UpdateItem.  # noqa: E501
+
+        Required only when the authentication process requires a username and password  # noqa: E501
+
+        :return: The password of this UpdateItem.  # noqa: E501
+        :rtype: str
+        """
+        return self._password
+
+    @password.setter
+    def password(self, password):
+        """Sets the password of this UpdateItem.
+
+        Required only when the authentication process requires a username and password  # noqa: E501
+
+        :param password: The password of this UpdateItem.  # noqa: E501
+        :type: str
+        """
+
+        self._password = password
+
+    @property
     def rm_tag(self):
         """Gets the rm_tag of this UpdateItem.  # noqa: E501
 
@@ -244,6 +277,29 @@ class UpdateItem(object):
         """
 
         self._uid_token = uid_token
+
+    @property
+    def username(self):
+        """Gets the username of this UpdateItem.  # noqa: E501
+
+        Required only when the authentication process requires a username and password  # noqa: E501
+
+        :return: The username of this UpdateItem.  # noqa: E501
+        :rtype: str
+        """
+        return self._username
+
+    @username.setter
+    def username(self, username):
+        """Sets the username of this UpdateItem.
+
+        Required only when the authentication process requires a username and password  # noqa: E501
+
+        :param username: The username of this UpdateItem.  # noqa: E501
+        :type: str
+        """
+
+        self._username = username
 
     def to_dict(self):
         """Returns the model properties as a dict"""

@@ -41,6 +41,7 @@ class GatewayCreateProducerCertificateAutomation(object):
         'enable_admin_rotation': 'bool',
         'gateway_url': 'str',
         'name': 'str',
+        'password': 'str',
         'producer_encryption_key_name': 'str',
         'root_first_in_chain': 'bool',
         'sign_using_akeyless_pki': 'bool',
@@ -49,6 +50,7 @@ class GatewayCreateProducerCertificateAutomation(object):
         'token': 'str',
         'uid_token': 'str',
         'user_ttl': 'str',
+        'username': 'str',
         'venafi_api_key': 'str',
         'venafi_baseurl': 'str',
         'venafi_password': 'str',
@@ -65,6 +67,7 @@ class GatewayCreateProducerCertificateAutomation(object):
         'enable_admin_rotation': 'enable-admin-rotation',
         'gateway_url': 'gateway-url',
         'name': 'name',
+        'password': 'password',
         'producer_encryption_key_name': 'producer-encryption-key-name',
         'root_first_in_chain': 'root-first-in-chain',
         'sign_using_akeyless_pki': 'sign-using-akeyless-pki',
@@ -73,6 +76,7 @@ class GatewayCreateProducerCertificateAutomation(object):
         'token': 'token',
         'uid_token': 'uid-token',
         'user_ttl': 'user-ttl',
+        'username': 'username',
         'venafi_api_key': 'venafi-api-key',
         'venafi_baseurl': 'venafi-baseurl',
         'venafi_password': 'venafi-password',
@@ -81,7 +85,7 @@ class GatewayCreateProducerCertificateAutomation(object):
         'venafi_zone': 'venafi-zone'
     }
 
-    def __init__(self, admin_rotation_interval_days=0, allow_subdomains=None, allowed_domains=None, auto_generated_folder=None, enable_admin_rotation=False, gateway_url='http://localhost:8000', name=None, producer_encryption_key_name=None, root_first_in_chain=None, sign_using_akeyless_pki=None, signer_key_name=None, store_private_key=None, token=None, uid_token=None, user_ttl=None, venafi_api_key=None, venafi_baseurl=None, venafi_password=None, venafi_use_tpp=None, venafi_username=None, venafi_zone=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, admin_rotation_interval_days=0, allow_subdomains=None, allowed_domains=None, auto_generated_folder=None, enable_admin_rotation=False, gateway_url='http://localhost:8000', name=None, password=None, producer_encryption_key_name=None, root_first_in_chain=None, sign_using_akeyless_pki=None, signer_key_name=None, store_private_key=None, token=None, uid_token=None, user_ttl=None, username=None, venafi_api_key=None, venafi_baseurl=None, venafi_password=None, venafi_use_tpp=None, venafi_username=None, venafi_zone=None, local_vars_configuration=None):  # noqa: E501
         """GatewayCreateProducerCertificateAutomation - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -94,6 +98,7 @@ class GatewayCreateProducerCertificateAutomation(object):
         self._enable_admin_rotation = None
         self._gateway_url = None
         self._name = None
+        self._password = None
         self._producer_encryption_key_name = None
         self._root_first_in_chain = None
         self._sign_using_akeyless_pki = None
@@ -102,6 +107,7 @@ class GatewayCreateProducerCertificateAutomation(object):
         self._token = None
         self._uid_token = None
         self._user_ttl = None
+        self._username = None
         self._venafi_api_key = None
         self._venafi_baseurl = None
         self._venafi_password = None
@@ -123,6 +129,8 @@ class GatewayCreateProducerCertificateAutomation(object):
         if gateway_url is not None:
             self.gateway_url = gateway_url
         self.name = name
+        if password is not None:
+            self.password = password
         if producer_encryption_key_name is not None:
             self.producer_encryption_key_name = producer_encryption_key_name
         if root_first_in_chain is not None:
@@ -139,6 +147,8 @@ class GatewayCreateProducerCertificateAutomation(object):
             self.uid_token = uid_token
         if user_ttl is not None:
             self.user_ttl = user_ttl
+        if username is not None:
+            self.username = username
         if venafi_api_key is not None:
             self.venafi_api_key = venafi_api_key
         if venafi_baseurl is not None:
@@ -313,6 +323,29 @@ class GatewayCreateProducerCertificateAutomation(object):
             raise ValueError("Invalid value for `name`, must not be `None`")  # noqa: E501
 
         self._name = name
+
+    @property
+    def password(self):
+        """Gets the password of this GatewayCreateProducerCertificateAutomation.  # noqa: E501
+
+        Required only when the authentication process requires a username and password  # noqa: E501
+
+        :return: The password of this GatewayCreateProducerCertificateAutomation.  # noqa: E501
+        :rtype: str
+        """
+        return self._password
+
+    @password.setter
+    def password(self, password):
+        """Sets the password of this GatewayCreateProducerCertificateAutomation.
+
+        Required only when the authentication process requires a username and password  # noqa: E501
+
+        :param password: The password of this GatewayCreateProducerCertificateAutomation.  # noqa: E501
+        :type: str
+        """
+
+        self._password = password
 
     @property
     def producer_encryption_key_name(self):
@@ -497,6 +530,29 @@ class GatewayCreateProducerCertificateAutomation(object):
         """
 
         self._user_ttl = user_ttl
+
+    @property
+    def username(self):
+        """Gets the username of this GatewayCreateProducerCertificateAutomation.  # noqa: E501
+
+        Required only when the authentication process requires a username and password  # noqa: E501
+
+        :return: The username of this GatewayCreateProducerCertificateAutomation.  # noqa: E501
+        :rtype: str
+        """
+        return self._username
+
+    @username.setter
+    def username(self, username):
+        """Sets the username of this GatewayCreateProducerCertificateAutomation.
+
+        Required only when the authentication process requires a username and password  # noqa: E501
+
+        :param username: The username of this GatewayCreateProducerCertificateAutomation.  # noqa: E501
+        :type: str
+        """
+
+        self._username = username
 
     @property
     def venafi_api_key(self):

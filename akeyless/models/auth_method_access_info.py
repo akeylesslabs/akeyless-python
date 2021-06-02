@@ -41,6 +41,7 @@ class AuthMethodAccessInfo(object):
         'azure_ad_access_rules': 'AzureADAccessRules',
         'cidr_whitelist': 'str',
         'email_pass_access_rules': 'EmailPassAccessRules',
+        'force_sub_claims': 'bool',
         'gcp_access_rules': 'GCPAccessRules',
         'huawei_access_rules': 'HuaweiAccessRules',
         'ldap_access_rules': 'LDAPAccessRules',
@@ -58,6 +59,7 @@ class AuthMethodAccessInfo(object):
         'azure_ad_access_rules': 'azure_ad_access_rules',
         'cidr_whitelist': 'cidr_whitelist',
         'email_pass_access_rules': 'email_pass_access_rules',
+        'force_sub_claims': 'force_sub_claims',
         'gcp_access_rules': 'gcp_access_rules',
         'huawei_access_rules': 'huawei_access_rules',
         'ldap_access_rules': 'ldap_access_rules',
@@ -67,7 +69,7 @@ class AuthMethodAccessInfo(object):
         'universal_identity_access_rules': 'universal_identity_access_rules'
     }
 
-    def __init__(self, access_expires=None, access_id_alias=None, api_key_access_rules=None, aws_iam_access_rules=None, azure_ad_access_rules=None, cidr_whitelist=None, email_pass_access_rules=None, gcp_access_rules=None, huawei_access_rules=None, ldap_access_rules=None, oauth2_access_rules=None, rules_type=None, saml_access_rules=None, universal_identity_access_rules=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, access_expires=None, access_id_alias=None, api_key_access_rules=None, aws_iam_access_rules=None, azure_ad_access_rules=None, cidr_whitelist=None, email_pass_access_rules=None, force_sub_claims=None, gcp_access_rules=None, huawei_access_rules=None, ldap_access_rules=None, oauth2_access_rules=None, rules_type=None, saml_access_rules=None, universal_identity_access_rules=None, local_vars_configuration=None):  # noqa: E501
         """AuthMethodAccessInfo - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -80,6 +82,7 @@ class AuthMethodAccessInfo(object):
         self._azure_ad_access_rules = None
         self._cidr_whitelist = None
         self._email_pass_access_rules = None
+        self._force_sub_claims = None
         self._gcp_access_rules = None
         self._huawei_access_rules = None
         self._ldap_access_rules = None
@@ -103,6 +106,8 @@ class AuthMethodAccessInfo(object):
             self.cidr_whitelist = cidr_whitelist
         if email_pass_access_rules is not None:
             self.email_pass_access_rules = email_pass_access_rules
+        if force_sub_claims is not None:
+            self.force_sub_claims = force_sub_claims
         if gcp_access_rules is not None:
             self.gcp_access_rules = gcp_access_rules
         if huawei_access_rules is not None:
@@ -266,6 +271,29 @@ class AuthMethodAccessInfo(object):
         """
 
         self._email_pass_access_rules = email_pass_access_rules
+
+    @property
+    def force_sub_claims(self):
+        """Gets the force_sub_claims of this AuthMethodAccessInfo.  # noqa: E501
+
+        if true the role associated with this auth method must include sub claims  # noqa: E501
+
+        :return: The force_sub_claims of this AuthMethodAccessInfo.  # noqa: E501
+        :rtype: bool
+        """
+        return self._force_sub_claims
+
+    @force_sub_claims.setter
+    def force_sub_claims(self, force_sub_claims):
+        """Sets the force_sub_claims of this AuthMethodAccessInfo.
+
+        if true the role associated with this auth method must include sub claims  # noqa: E501
+
+        :param force_sub_claims: The force_sub_claims of this AuthMethodAccessInfo.  # noqa: E501
+        :type: bool
+        """
+
+        self._force_sub_claims = force_sub_claims
 
     @property
     def gcp_access_rules(self):

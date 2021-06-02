@@ -35,41 +35,51 @@ class MoveObjects(object):
     """
     openapi_types = {
         'objects_type': 'str',
+        'password': 'str',
         'source': 'str',
         'target': 'str',
         'token': 'str',
-        'uid_token': 'str'
+        'uid_token': 'str',
+        'username': 'str'
     }
 
     attribute_map = {
         'objects_type': 'objects-type',
+        'password': 'password',
         'source': 'source',
         'target': 'target',
         'token': 'token',
-        'uid_token': 'uid-token'
+        'uid_token': 'uid-token',
+        'username': 'username'
     }
 
-    def __init__(self, objects_type='item', source=None, target=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, objects_type='item', password=None, source=None, target=None, token=None, uid_token=None, username=None, local_vars_configuration=None):  # noqa: E501
         """MoveObjects - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._objects_type = None
+        self._password = None
         self._source = None
         self._target = None
         self._token = None
         self._uid_token = None
+        self._username = None
         self.discriminator = None
 
         if objects_type is not None:
             self.objects_type = objects_type
+        if password is not None:
+            self.password = password
         self.source = source
         self.target = target
         if token is not None:
             self.token = token
         if uid_token is not None:
             self.uid_token = uid_token
+        if username is not None:
+            self.username = username
 
     @property
     def objects_type(self):
@@ -93,6 +103,29 @@ class MoveObjects(object):
         """
 
         self._objects_type = objects_type
+
+    @property
+    def password(self):
+        """Gets the password of this MoveObjects.  # noqa: E501
+
+        Required only when the authentication process requires a username and password  # noqa: E501
+
+        :return: The password of this MoveObjects.  # noqa: E501
+        :rtype: str
+        """
+        return self._password
+
+    @password.setter
+    def password(self, password):
+        """Sets the password of this MoveObjects.
+
+        Required only when the authentication process requires a username and password  # noqa: E501
+
+        :param password: The password of this MoveObjects.  # noqa: E501
+        :type: str
+        """
+
+        self._password = password
 
     @property
     def source(self):
@@ -189,6 +222,29 @@ class MoveObjects(object):
         """
 
         self._uid_token = uid_token
+
+    @property
+    def username(self):
+        """Gets the username of this MoveObjects.  # noqa: E501
+
+        Required only when the authentication process requires a username and password  # noqa: E501
+
+        :return: The username of this MoveObjects.  # noqa: E501
+        :rtype: str
+        """
+        return self._username
+
+    @username.setter
+    def username(self, username):
+        """Sets the username of this MoveObjects.
+
+        Required only when the authentication process requires a username and password  # noqa: E501
+
+        :param username: The username of this MoveObjects.  # noqa: E501
+        :type: str
+        """
+
+        self._username = username
 
     def to_dict(self):
         """Returns the model properties as a dict"""

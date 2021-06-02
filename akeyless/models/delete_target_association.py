@@ -36,20 +36,24 @@ class DeleteTargetAssociation(object):
     openapi_types = {
         'assoc_id': 'str',
         'name': 'str',
+        'password': 'str',
         'target_name': 'str',
         'token': 'str',
-        'uid_token': 'str'
+        'uid_token': 'str',
+        'username': 'str'
     }
 
     attribute_map = {
         'assoc_id': 'assoc-id',
         'name': 'name',
+        'password': 'password',
         'target_name': 'target-name',
         'token': 'token',
-        'uid_token': 'uid-token'
+        'uid_token': 'uid-token',
+        'username': 'username'
     }
 
-    def __init__(self, assoc_id=None, name=None, target_name=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, assoc_id=None, name=None, password=None, target_name=None, token=None, uid_token=None, username=None, local_vars_configuration=None):  # noqa: E501
         """DeleteTargetAssociation - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -57,20 +61,26 @@ class DeleteTargetAssociation(object):
 
         self._assoc_id = None
         self._name = None
+        self._password = None
         self._target_name = None
         self._token = None
         self._uid_token = None
+        self._username = None
         self.discriminator = None
 
         if assoc_id is not None:
             self.assoc_id = assoc_id
         self.name = name
+        if password is not None:
+            self.password = password
         if target_name is not None:
             self.target_name = target_name
         if token is not None:
             self.token = token
         if uid_token is not None:
             self.uid_token = uid_token
+        if username is not None:
+            self.username = username
 
     @property
     def assoc_id(self):
@@ -119,6 +129,29 @@ class DeleteTargetAssociation(object):
             raise ValueError("Invalid value for `name`, must not be `None`")  # noqa: E501
 
         self._name = name
+
+    @property
+    def password(self):
+        """Gets the password of this DeleteTargetAssociation.  # noqa: E501
+
+        Required only when the authentication process requires a username and password  # noqa: E501
+
+        :return: The password of this DeleteTargetAssociation.  # noqa: E501
+        :rtype: str
+        """
+        return self._password
+
+    @password.setter
+    def password(self, password):
+        """Sets the password of this DeleteTargetAssociation.
+
+        Required only when the authentication process requires a username and password  # noqa: E501
+
+        :param password: The password of this DeleteTargetAssociation.  # noqa: E501
+        :type: str
+        """
+
+        self._password = password
 
     @property
     def target_name(self):
@@ -188,6 +221,29 @@ class DeleteTargetAssociation(object):
         """
 
         self._uid_token = uid_token
+
+    @property
+    def username(self):
+        """Gets the username of this DeleteTargetAssociation.  # noqa: E501
+
+        Required only when the authentication process requires a username and password  # noqa: E501
+
+        :return: The username of this DeleteTargetAssociation.  # noqa: E501
+        :rtype: str
+        """
+        return self._username
+
+    @username.setter
+    def username(self, username):
+        """Sets the username of this DeleteTargetAssociation.
+
+        Required only when the authentication process requires a username and password  # noqa: E501
+
+        :param username: The username of this DeleteTargetAssociation.  # noqa: E501
+        :type: str
+        """
+
+        self._username = username
 
     def to_dict(self):
         """Returns the model properties as a dict"""

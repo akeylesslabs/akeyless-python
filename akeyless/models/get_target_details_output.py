@@ -35,7 +35,7 @@ class GetTargetDetailsOutput(object):
     """
     openapi_types = {
         'target': 'Target',
-        'value': 'TargetTypeDetailesInput'
+        'value': 'TargetTypeDetailsInput'
     }
 
     attribute_map = {
@@ -85,7 +85,7 @@ class GetTargetDetailsOutput(object):
 
 
         :return: The value of this GetTargetDetailsOutput.  # noqa: E501
-        :rtype: TargetTypeDetailesInput
+        :rtype: TargetTypeDetailsInput
         """
         return self._value
 
@@ -95,7 +95,7 @@ class GetTargetDetailsOutput(object):
 
 
         :param value: The value of this GetTargetDetailsOutput.  # noqa: E501
-        :type: TargetTypeDetailesInput
+        :type: TargetTypeDetailsInput
         """
 
         self._value = value

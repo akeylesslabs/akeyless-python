@@ -40,12 +40,14 @@ class UpdateDBTargetDetails(object):
         'mongo_uri': 'str',
         'name': 'str',
         'new_version': 'bool',
+        'password': 'str',
         'port': 'str',
         'protection_key': 'str',
         'pwd': 'str',
         'token': 'str',
         'uid_token': 'str',
-        'user_name': 'str'
+        'user_name': 'str',
+        'username': 'str'
     }
 
     attribute_map = {
@@ -55,15 +57,17 @@ class UpdateDBTargetDetails(object):
         'mongo_uri': 'mongo_uri',
         'name': 'name',
         'new_version': 'new-version',
+        'password': 'password',
         'port': 'port',
         'protection_key': 'protection_key',
         'pwd': 'pwd',
         'token': 'token',
         'uid_token': 'uid-token',
-        'user_name': 'user_name'
+        'user_name': 'user_name',
+        'username': 'username'
     }
 
-    def __init__(self, db_type=None, host_name=None, mongo_db_name=None, mongo_uri=None, name=None, new_version=False, port=None, protection_key=None, pwd=None, token=None, uid_token=None, user_name=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, db_type=None, host_name=None, mongo_db_name=None, mongo_uri=None, name=None, new_version=False, password=None, port=None, protection_key=None, pwd=None, token=None, uid_token=None, user_name=None, username=None, local_vars_configuration=None):  # noqa: E501
         """UpdateDBTargetDetails - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -75,12 +79,14 @@ class UpdateDBTargetDetails(object):
         self._mongo_uri = None
         self._name = None
         self._new_version = None
+        self._password = None
         self._port = None
         self._protection_key = None
         self._pwd = None
         self._token = None
         self._uid_token = None
         self._user_name = None
+        self._username = None
         self.discriminator = None
 
         if db_type is not None:
@@ -94,6 +100,8 @@ class UpdateDBTargetDetails(object):
         self.name = name
         if new_version is not None:
             self.new_version = new_version
+        if password is not None:
+            self.password = password
         if port is not None:
             self.port = port
         if protection_key is not None:
@@ -106,6 +114,8 @@ class UpdateDBTargetDetails(object):
             self.uid_token = uid_token
         if user_name is not None:
             self.user_name = user_name
+        if username is not None:
+            self.username = username
 
     @property
     def db_type(self):
@@ -240,6 +250,29 @@ class UpdateDBTargetDetails(object):
         self._new_version = new_version
 
     @property
+    def password(self):
+        """Gets the password of this UpdateDBTargetDetails.  # noqa: E501
+
+        Required only when the authentication process requires a username and password  # noqa: E501
+
+        :return: The password of this UpdateDBTargetDetails.  # noqa: E501
+        :rtype: str
+        """
+        return self._password
+
+    @password.setter
+    def password(self, password):
+        """Sets the password of this UpdateDBTargetDetails.
+
+        Required only when the authentication process requires a username and password  # noqa: E501
+
+        :param password: The password of this UpdateDBTargetDetails.  # noqa: E501
+        :type: str
+        """
+
+        self._password = password
+
+    @property
     def port(self):
         """Gets the port of this UpdateDBTargetDetails.  # noqa: E501
 
@@ -370,6 +403,29 @@ class UpdateDBTargetDetails(object):
         """
 
         self._user_name = user_name
+
+    @property
+    def username(self):
+        """Gets the username of this UpdateDBTargetDetails.  # noqa: E501
+
+        Required only when the authentication process requires a username and password  # noqa: E501
+
+        :return: The username of this UpdateDBTargetDetails.  # noqa: E501
+        :rtype: str
+        """
+        return self._username
+
+    @username.setter
+    def username(self, username):
+        """Sets the username of this UpdateDBTargetDetails.
+
+        Required only when the authentication process requires a username and password  # noqa: E501
+
+        :param username: The username of this UpdateDBTargetDetails.  # noqa: E501
+        :type: str
+        """
+
+        self._username = username
 
     def to_dict(self):
         """Returns the model properties as a dict"""

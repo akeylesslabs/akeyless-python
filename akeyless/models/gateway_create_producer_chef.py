@@ -40,11 +40,13 @@ class GatewayCreateProducerChef(object):
         'chef_server_username': 'str',
         'gateway_url': 'str',
         'name': 'str',
+        'password': 'str',
         'producer_encryption_key_name': 'str',
         'skip_ssl': 'bool',
         'token': 'str',
         'uid_token': 'str',
-        'user_ttl': 'str'
+        'user_ttl': 'str',
+        'username': 'str'
     }
 
     attribute_map = {
@@ -54,14 +56,16 @@ class GatewayCreateProducerChef(object):
         'chef_server_username': 'chef-server-username',
         'gateway_url': 'gateway-url',
         'name': 'name',
+        'password': 'password',
         'producer_encryption_key_name': 'producer-encryption-key-name',
         'skip_ssl': 'skip-ssl',
         'token': 'token',
         'uid_token': 'uid-token',
-        'user_ttl': 'user-ttl'
+        'user_ttl': 'user-ttl',
+        'username': 'username'
     }
 
-    def __init__(self, chef_orgs=None, chef_server_key=None, chef_server_url=None, chef_server_username=None, gateway_url='http://localhost:8000', name=None, producer_encryption_key_name=None, skip_ssl=True, token=None, uid_token=None, user_ttl='60m', local_vars_configuration=None):  # noqa: E501
+    def __init__(self, chef_orgs=None, chef_server_key=None, chef_server_url=None, chef_server_username=None, gateway_url='http://localhost:8000', name=None, password=None, producer_encryption_key_name=None, skip_ssl=True, token=None, uid_token=None, user_ttl='60m', username=None, local_vars_configuration=None):  # noqa: E501
         """GatewayCreateProducerChef - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -73,11 +77,13 @@ class GatewayCreateProducerChef(object):
         self._chef_server_username = None
         self._gateway_url = None
         self._name = None
+        self._password = None
         self._producer_encryption_key_name = None
         self._skip_ssl = None
         self._token = None
         self._uid_token = None
         self._user_ttl = None
+        self._username = None
         self.discriminator = None
 
         self.chef_orgs = chef_orgs
@@ -87,6 +93,8 @@ class GatewayCreateProducerChef(object):
         if gateway_url is not None:
             self.gateway_url = gateway_url
         self.name = name
+        if password is not None:
+            self.password = password
         if producer_encryption_key_name is not None:
             self.producer_encryption_key_name = producer_encryption_key_name
         if skip_ssl is not None:
@@ -97,6 +105,8 @@ class GatewayCreateProducerChef(object):
             self.uid_token = uid_token
         if user_ttl is not None:
             self.user_ttl = user_ttl
+        if username is not None:
+            self.username = username
 
     @property
     def chef_orgs(self):
@@ -247,6 +257,29 @@ class GatewayCreateProducerChef(object):
         self._name = name
 
     @property
+    def password(self):
+        """Gets the password of this GatewayCreateProducerChef.  # noqa: E501
+
+        Required only when the authentication process requires a username and password  # noqa: E501
+
+        :return: The password of this GatewayCreateProducerChef.  # noqa: E501
+        :rtype: str
+        """
+        return self._password
+
+    @password.setter
+    def password(self, password):
+        """Sets the password of this GatewayCreateProducerChef.
+
+        Required only when the authentication process requires a username and password  # noqa: E501
+
+        :param password: The password of this GatewayCreateProducerChef.  # noqa: E501
+        :type: str
+        """
+
+        self._password = password
+
+    @property
     def producer_encryption_key_name(self):
         """Gets the producer_encryption_key_name of this GatewayCreateProducerChef.  # noqa: E501
 
@@ -360,6 +393,29 @@ class GatewayCreateProducerChef(object):
         """
 
         self._user_ttl = user_ttl
+
+    @property
+    def username(self):
+        """Gets the username of this GatewayCreateProducerChef.  # noqa: E501
+
+        Required only when the authentication process requires a username and password  # noqa: E501
+
+        :return: The username of this GatewayCreateProducerChef.  # noqa: E501
+        :rtype: str
+        """
+        return self._username
+
+    @username.setter
+    def username(self, username):
+        """Sets the username of this GatewayCreateProducerChef.
+
+        Required only when the authentication process requires a username and password  # noqa: E501
+
+        :param username: The username of this GatewayCreateProducerChef.  # noqa: E501
+        :type: str
+        """
+
+        self._username = username
 
     def to_dict(self):
         """Returns the model properties as a dict"""

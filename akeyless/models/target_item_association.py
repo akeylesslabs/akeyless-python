@@ -35,15 +35,17 @@ class TargetItemAssociation(object):
     """
     openapi_types = {
         'assoc_id': 'str',
-        'item_name': 'str'
+        'item_name': 'str',
+        'item_type': 'str'
     }
 
     attribute_map = {
         'assoc_id': 'assoc_id',
-        'item_name': 'item_name'
+        'item_name': 'item_name',
+        'item_type': 'item_type'
     }
 
-    def __init__(self, assoc_id=None, item_name=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, assoc_id=None, item_name=None, item_type=None, local_vars_configuration=None):  # noqa: E501
         """TargetItemAssociation - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -51,12 +53,15 @@ class TargetItemAssociation(object):
 
         self._assoc_id = None
         self._item_name = None
+        self._item_type = None
         self.discriminator = None
 
         if assoc_id is not None:
             self.assoc_id = assoc_id
         if item_name is not None:
             self.item_name = item_name
+        if item_type is not None:
+            self.item_type = item_type
 
     @property
     def assoc_id(self):
@@ -99,6 +104,27 @@ class TargetItemAssociation(object):
         """
 
         self._item_name = item_name
+
+    @property
+    def item_type(self):
+        """Gets the item_type of this TargetItemAssociation.  # noqa: E501
+
+
+        :return: The item_type of this TargetItemAssociation.  # noqa: E501
+        :rtype: str
+        """
+        return self._item_type
+
+    @item_type.setter
+    def item_type(self, item_type):
+        """Sets the item_type of this TargetItemAssociation.
+
+
+        :param item_type: The item_type of this TargetItemAssociation.  # noqa: E501
+        :type: str
+        """
+
+        self._item_type = item_type
 
     def to_dict(self):
         """Returns the model properties as a dict"""

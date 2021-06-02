@@ -39,12 +39,13 @@ class GatewayCreateProducerGke(object):
         'gke_cluster_endpoint': 'str',
         'gke_cluster_name': 'str',
         'gke_service_account_email': 'str',
-        'gke_service_account_key_file_path': 'str',
         'name': 'str',
+        'password': 'str',
         'producer_encryption_key_name': 'str',
         'token': 'str',
         'uid_token': 'str',
-        'user_ttl': 'str'
+        'user_ttl': 'str',
+        'username': 'str'
     }
 
     attribute_map = {
@@ -53,15 +54,16 @@ class GatewayCreateProducerGke(object):
         'gke_cluster_endpoint': 'gke-cluster-endpoint',
         'gke_cluster_name': 'gke-cluster-name',
         'gke_service_account_email': 'gke-service-account-email',
-        'gke_service_account_key_file_path': 'gke-service-account-key-file-path',
         'name': 'name',
+        'password': 'password',
         'producer_encryption_key_name': 'producer-encryption-key-name',
         'token': 'token',
         'uid_token': 'uid-token',
-        'user_ttl': 'user-ttl'
+        'user_ttl': 'user-ttl',
+        'username': 'username'
     }
 
-    def __init__(self, gateway_url='http://localhost:8000', gke_cluster_cert=None, gke_cluster_endpoint=None, gke_cluster_name=None, gke_service_account_email=None, gke_service_account_key_file_path=None, name=None, producer_encryption_key_name=None, token=None, uid_token=None, user_ttl='60m', local_vars_configuration=None):  # noqa: E501
+    def __init__(self, gateway_url='http://localhost:8000', gke_cluster_cert=None, gke_cluster_endpoint=None, gke_cluster_name=None, gke_service_account_email=None, name=None, password=None, producer_encryption_key_name=None, token=None, uid_token=None, user_ttl='60m', username=None, local_vars_configuration=None):  # noqa: E501
         """GatewayCreateProducerGke - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -72,12 +74,13 @@ class GatewayCreateProducerGke(object):
         self._gke_cluster_endpoint = None
         self._gke_cluster_name = None
         self._gke_service_account_email = None
-        self._gke_service_account_key_file_path = None
         self._name = None
+        self._password = None
         self._producer_encryption_key_name = None
         self._token = None
         self._uid_token = None
         self._user_ttl = None
+        self._username = None
         self.discriminator = None
 
         if gateway_url is not None:
@@ -86,8 +89,9 @@ class GatewayCreateProducerGke(object):
         self.gke_cluster_endpoint = gke_cluster_endpoint
         self.gke_cluster_name = gke_cluster_name
         self.gke_service_account_email = gke_service_account_email
-        self.gke_service_account_key_file_path = gke_service_account_key_file_path
         self.name = name
+        if password is not None:
+            self.password = password
         if producer_encryption_key_name is not None:
             self.producer_encryption_key_name = producer_encryption_key_name
         if token is not None:
@@ -96,6 +100,8 @@ class GatewayCreateProducerGke(object):
             self.uid_token = uid_token
         if user_ttl is not None:
             self.user_ttl = user_ttl
+        if username is not None:
+            self.username = username
 
     @property
     def gateway_url(self):
@@ -221,31 +227,6 @@ class GatewayCreateProducerGke(object):
         self._gke_service_account_email = gke_service_account_email
 
     @property
-    def gke_service_account_key_file_path(self):
-        """Gets the gke_service_account_key_file_path of this GatewayCreateProducerGke.  # noqa: E501
-
-        GKE Service Account key faile path  # noqa: E501
-
-        :return: The gke_service_account_key_file_path of this GatewayCreateProducerGke.  # noqa: E501
-        :rtype: str
-        """
-        return self._gke_service_account_key_file_path
-
-    @gke_service_account_key_file_path.setter
-    def gke_service_account_key_file_path(self, gke_service_account_key_file_path):
-        """Sets the gke_service_account_key_file_path of this GatewayCreateProducerGke.
-
-        GKE Service Account key faile path  # noqa: E501
-
-        :param gke_service_account_key_file_path: The gke_service_account_key_file_path of this GatewayCreateProducerGke.  # noqa: E501
-        :type: str
-        """
-        if self.local_vars_configuration.client_side_validation and gke_service_account_key_file_path is None:  # noqa: E501
-            raise ValueError("Invalid value for `gke_service_account_key_file_path`, must not be `None`")  # noqa: E501
-
-        self._gke_service_account_key_file_path = gke_service_account_key_file_path
-
-    @property
     def name(self):
         """Gets the name of this GatewayCreateProducerGke.  # noqa: E501
 
@@ -269,6 +250,29 @@ class GatewayCreateProducerGke(object):
             raise ValueError("Invalid value for `name`, must not be `None`")  # noqa: E501
 
         self._name = name
+
+    @property
+    def password(self):
+        """Gets the password of this GatewayCreateProducerGke.  # noqa: E501
+
+        Required only when the authentication process requires a username and password  # noqa: E501
+
+        :return: The password of this GatewayCreateProducerGke.  # noqa: E501
+        :rtype: str
+        """
+        return self._password
+
+    @password.setter
+    def password(self, password):
+        """Sets the password of this GatewayCreateProducerGke.
+
+        Required only when the authentication process requires a username and password  # noqa: E501
+
+        :param password: The password of this GatewayCreateProducerGke.  # noqa: E501
+        :type: str
+        """
+
+        self._password = password
 
     @property
     def producer_encryption_key_name(self):
@@ -361,6 +365,29 @@ class GatewayCreateProducerGke(object):
         """
 
         self._user_ttl = user_ttl
+
+    @property
+    def username(self):
+        """Gets the username of this GatewayCreateProducerGke.  # noqa: E501
+
+        Required only when the authentication process requires a username and password  # noqa: E501
+
+        :return: The username of this GatewayCreateProducerGke.  # noqa: E501
+        :rtype: str
+        """
+        return self._username
+
+    @username.setter
+    def username(self, username):
+        """Sets the username of this GatewayCreateProducerGke.
+
+        Required only when the authentication process requires a username and password  # noqa: E501
+
+        :param username: The username of this GatewayCreateProducerGke.  # noqa: E501
+        :type: str
+        """
+
+        self._username = username
 
     def to_dict(self):
         """Returns the model properties as a dict"""

@@ -49,6 +49,7 @@ class CreatePKICertIssuer(object):
         'not_require_cn': 'bool',
         'organizational_units': 'str',
         'organizations': 'str',
+        'password': 'str',
         'postal_code': 'str',
         'province': 'str',
         'server_flag': 'bool',
@@ -56,7 +57,8 @@ class CreatePKICertIssuer(object):
         'street_address': 'str',
         'token': 'str',
         'ttl': 'int',
-        'uid_token': 'str'
+        'uid_token': 'str',
+        'username': 'str'
     }
 
     attribute_map = {
@@ -75,6 +77,7 @@ class CreatePKICertIssuer(object):
         'not_require_cn': 'not-require-cn',
         'organizational_units': 'organizational-units',
         'organizations': 'organizations',
+        'password': 'password',
         'postal_code': 'postal-code',
         'province': 'province',
         'server_flag': 'server-flag',
@@ -82,10 +85,11 @@ class CreatePKICertIssuer(object):
         'street_address': 'street-address',
         'token': 'token',
         'ttl': 'ttl',
-        'uid_token': 'uid-token'
+        'uid_token': 'uid-token',
+        'username': 'username'
     }
 
-    def __init__(self, allow_any_name=None, allow_subdomains=None, allowed_domains=None, allowed_uri_sans=None, client_flag=None, code_signing_flag=None, country=None, key_usage='DigitalSignature,KeyAgreement,KeyEncipherment', locality=None, metadata=None, name=None, not_enforce_hostnames=None, not_require_cn=None, organizational_units=None, organizations=None, postal_code=None, province=None, server_flag=None, signer_key_name=None, street_address=None, token=None, ttl=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, allow_any_name=None, allow_subdomains=None, allowed_domains=None, allowed_uri_sans=None, client_flag=None, code_signing_flag=None, country=None, key_usage='DigitalSignature,KeyAgreement,KeyEncipherment', locality=None, metadata=None, name=None, not_enforce_hostnames=None, not_require_cn=None, organizational_units=None, organizations=None, password=None, postal_code=None, province=None, server_flag=None, signer_key_name=None, street_address=None, token=None, ttl=None, uid_token=None, username=None, local_vars_configuration=None):  # noqa: E501
         """CreatePKICertIssuer - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -106,6 +110,7 @@ class CreatePKICertIssuer(object):
         self._not_require_cn = None
         self._organizational_units = None
         self._organizations = None
+        self._password = None
         self._postal_code = None
         self._province = None
         self._server_flag = None
@@ -114,6 +119,7 @@ class CreatePKICertIssuer(object):
         self._token = None
         self._ttl = None
         self._uid_token = None
+        self._username = None
         self.discriminator = None
 
         if allow_any_name is not None:
@@ -145,6 +151,8 @@ class CreatePKICertIssuer(object):
             self.organizational_units = organizational_units
         if organizations is not None:
             self.organizations = organizations
+        if password is not None:
+            self.password = password
         if postal_code is not None:
             self.postal_code = postal_code
         if province is not None:
@@ -159,6 +167,8 @@ class CreatePKICertIssuer(object):
         self.ttl = ttl
         if uid_token is not None:
             self.uid_token = uid_token
+        if username is not None:
+            self.username = username
 
     @property
     def allow_any_name(self):
@@ -508,6 +518,29 @@ class CreatePKICertIssuer(object):
         self._organizations = organizations
 
     @property
+    def password(self):
+        """Gets the password of this CreatePKICertIssuer.  # noqa: E501
+
+        Required only when the authentication process requires a username and password  # noqa: E501
+
+        :return: The password of this CreatePKICertIssuer.  # noqa: E501
+        :rtype: str
+        """
+        return self._password
+
+    @password.setter
+    def password(self, password):
+        """Sets the password of this CreatePKICertIssuer.
+
+        Required only when the authentication process requires a username and password  # noqa: E501
+
+        :param password: The password of this CreatePKICertIssuer.  # noqa: E501
+        :type: str
+        """
+
+        self._password = password
+
+    @property
     def postal_code(self):
         """Gets the postal_code of this CreatePKICertIssuer.  # noqa: E501
 
@@ -694,6 +727,29 @@ class CreatePKICertIssuer(object):
         """
 
         self._uid_token = uid_token
+
+    @property
+    def username(self):
+        """Gets the username of this CreatePKICertIssuer.  # noqa: E501
+
+        Required only when the authentication process requires a username and password  # noqa: E501
+
+        :return: The username of this CreatePKICertIssuer.  # noqa: E501
+        :rtype: str
+        """
+        return self._username
+
+    @username.setter
+    def username(self, username):
+        """Sets the username of this CreatePKICertIssuer.
+
+        Required only when the authentication process requires a username and password  # noqa: E501
+
+        :param username: The username of this CreatePKICertIssuer.  # noqa: E501
+        :type: str
+        """
+
+        self._username = username
 
     def to_dict(self):
         """Returns the model properties as a dict"""

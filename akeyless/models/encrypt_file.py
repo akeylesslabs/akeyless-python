@@ -38,8 +38,10 @@ class EncryptFile(object):
         '_in': 'str',
         'key_name': 'str',
         'out': 'str',
+        'password': 'str',
         'token': 'str',
-        'uid_token': 'str'
+        'uid_token': 'str',
+        'username': 'str'
     }
 
     attribute_map = {
@@ -47,11 +49,13 @@ class EncryptFile(object):
         '_in': 'in',
         'key_name': 'key-name',
         'out': 'out',
+        'password': 'password',
         'token': 'token',
-        'uid_token': 'uid-token'
+        'uid_token': 'uid-token',
+        'username': 'username'
     }
 
-    def __init__(self, encryption_context=None, _in=None, key_name=None, out=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, encryption_context=None, _in=None, key_name=None, out=None, password=None, token=None, uid_token=None, username=None, local_vars_configuration=None):  # noqa: E501
         """EncryptFile - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -61,8 +65,10 @@ class EncryptFile(object):
         self.__in = None
         self._key_name = None
         self._out = None
+        self._password = None
         self._token = None
         self._uid_token = None
+        self._username = None
         self.discriminator = None
 
         if encryption_context is not None:
@@ -71,10 +77,14 @@ class EncryptFile(object):
         self.key_name = key_name
         if out is not None:
             self.out = out
+        if password is not None:
+            self.password = password
         if token is not None:
             self.token = token
         if uid_token is not None:
             self.uid_token = uid_token
+        if username is not None:
+            self.username = username
 
     @property
     def encryption_context(self):
@@ -173,6 +183,29 @@ class EncryptFile(object):
         self._out = out
 
     @property
+    def password(self):
+        """Gets the password of this EncryptFile.  # noqa: E501
+
+        Required only when the authentication process requires a username and password  # noqa: E501
+
+        :return: The password of this EncryptFile.  # noqa: E501
+        :rtype: str
+        """
+        return self._password
+
+    @password.setter
+    def password(self, password):
+        """Sets the password of this EncryptFile.
+
+        Required only when the authentication process requires a username and password  # noqa: E501
+
+        :param password: The password of this EncryptFile.  # noqa: E501
+        :type: str
+        """
+
+        self._password = password
+
+    @property
     def token(self):
         """Gets the token of this EncryptFile.  # noqa: E501
 
@@ -217,6 +250,29 @@ class EncryptFile(object):
         """
 
         self._uid_token = uid_token
+
+    @property
+    def username(self):
+        """Gets the username of this EncryptFile.  # noqa: E501
+
+        Required only when the authentication process requires a username and password  # noqa: E501
+
+        :return: The username of this EncryptFile.  # noqa: E501
+        :rtype: str
+        """
+        return self._username
+
+    @username.setter
+    def username(self, username):
+        """Sets the username of this EncryptFile.
+
+        Required only when the authentication process requires a username and password  # noqa: E501
+
+        :param username: The username of this EncryptFile.  # noqa: E501
+        :type: str
+        """
+
+        self._username = username
 
     def to_dict(self):
         """Returns the model properties as a dict"""

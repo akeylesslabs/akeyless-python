@@ -34,6 +34,8 @@ class LogForwardingConfigPart(object):
                             and the value is json key in definition.
     """
     openapi_types = {
+        'aws_s3_config': 'AwsS3LogForwardingConfig',
+        'azure_analytics_config': 'AzureLogAnalyticsForwardingConfig',
         'elasticsearch_config': 'ElasticsearchLogForwardingConfig',
         'logan_enable': 'bool',
         'logan_url': 'str',
@@ -46,6 +48,8 @@ class LogForwardingConfigPart(object):
     }
 
     attribute_map = {
+        'aws_s3_config': 'aws_s3_config',
+        'azure_analytics_config': 'azure_analytics_config',
         'elasticsearch_config': 'elasticsearch_config',
         'logan_enable': 'logan_enable',
         'logan_url': 'logan_url',
@@ -57,12 +61,14 @@ class LogForwardingConfigPart(object):
         'target_log_type': 'target_log_type'
     }
 
-    def __init__(self, elasticsearch_config=None, logan_enable=None, logan_url=None, logstash_config=None, logz_io_config=None, pull_interval_sec=None, splunk_config=None, syslog_config=None, target_log_type=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, aws_s3_config=None, azure_analytics_config=None, elasticsearch_config=None, logan_enable=None, logan_url=None, logstash_config=None, logz_io_config=None, pull_interval_sec=None, splunk_config=None, syslog_config=None, target_log_type=None, local_vars_configuration=None):  # noqa: E501
         """LogForwardingConfigPart - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
+        self._aws_s3_config = None
+        self._azure_analytics_config = None
         self._elasticsearch_config = None
         self._logan_enable = None
         self._logan_url = None
@@ -74,6 +80,10 @@ class LogForwardingConfigPart(object):
         self._target_log_type = None
         self.discriminator = None
 
+        if aws_s3_config is not None:
+            self.aws_s3_config = aws_s3_config
+        if azure_analytics_config is not None:
+            self.azure_analytics_config = azure_analytics_config
         if elasticsearch_config is not None:
             self.elasticsearch_config = elasticsearch_config
         if logan_enable is not None:
@@ -92,6 +102,48 @@ class LogForwardingConfigPart(object):
             self.syslog_config = syslog_config
         if target_log_type is not None:
             self.target_log_type = target_log_type
+
+    @property
+    def aws_s3_config(self):
+        """Gets the aws_s3_config of this LogForwardingConfigPart.  # noqa: E501
+
+
+        :return: The aws_s3_config of this LogForwardingConfigPart.  # noqa: E501
+        :rtype: AwsS3LogForwardingConfig
+        """
+        return self._aws_s3_config
+
+    @aws_s3_config.setter
+    def aws_s3_config(self, aws_s3_config):
+        """Sets the aws_s3_config of this LogForwardingConfigPart.
+
+
+        :param aws_s3_config: The aws_s3_config of this LogForwardingConfigPart.  # noqa: E501
+        :type: AwsS3LogForwardingConfig
+        """
+
+        self._aws_s3_config = aws_s3_config
+
+    @property
+    def azure_analytics_config(self):
+        """Gets the azure_analytics_config of this LogForwardingConfigPart.  # noqa: E501
+
+
+        :return: The azure_analytics_config of this LogForwardingConfigPart.  # noqa: E501
+        :rtype: AzureLogAnalyticsForwardingConfig
+        """
+        return self._azure_analytics_config
+
+    @azure_analytics_config.setter
+    def azure_analytics_config(self, azure_analytics_config):
+        """Sets the azure_analytics_config of this LogForwardingConfigPart.
+
+
+        :param azure_analytics_config: The azure_analytics_config of this LogForwardingConfigPart.  # noqa: E501
+        :type: AzureLogAnalyticsForwardingConfig
+        """
+
+        self._azure_analytics_config = azure_analytics_config
 
     @property
     def elasticsearch_config(self):

@@ -34,45 +34,45 @@ class GetSubAdminsListReplyObj(object):
                             and the value is json key in definition.
     """
     openapi_types = {
-        'sub_admins': 'list[str]'
+        'allowed_access': 'dict(str, AllowedAccess)'
     }
 
     attribute_map = {
-        'sub_admins': 'sub_admins'
+        'allowed_access': 'allowed_access'
     }
 
-    def __init__(self, sub_admins=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, allowed_access=None, local_vars_configuration=None):  # noqa: E501
         """GetSubAdminsListReplyObj - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
-        self._sub_admins = None
+        self._allowed_access = None
         self.discriminator = None
 
-        if sub_admins is not None:
-            self.sub_admins = sub_admins
+        if allowed_access is not None:
+            self.allowed_access = allowed_access
 
     @property
-    def sub_admins(self):
-        """Gets the sub_admins of this GetSubAdminsListReplyObj.  # noqa: E501
+    def allowed_access(self):
+        """Gets the allowed_access of this GetSubAdminsListReplyObj.  # noqa: E501
 
 
-        :return: The sub_admins of this GetSubAdminsListReplyObj.  # noqa: E501
-        :rtype: list[str]
+        :return: The allowed_access of this GetSubAdminsListReplyObj.  # noqa: E501
+        :rtype: dict(str, AllowedAccess)
         """
-        return self._sub_admins
+        return self._allowed_access
 
-    @sub_admins.setter
-    def sub_admins(self, sub_admins):
-        """Sets the sub_admins of this GetSubAdminsListReplyObj.
+    @allowed_access.setter
+    def allowed_access(self, allowed_access):
+        """Sets the allowed_access of this GetSubAdminsListReplyObj.
 
 
-        :param sub_admins: The sub_admins of this GetSubAdminsListReplyObj.  # noqa: E501
-        :type: list[str]
+        :param allowed_access: The allowed_access of this GetSubAdminsListReplyObj.  # noqa: E501
+        :type: dict(str, AllowedAccess)
         """
 
-        self._sub_admins = sub_admins
+        self._allowed_access = allowed_access
 
     def to_dict(self):
         """Returns the model properties as a dict"""

@@ -38,9 +38,11 @@ class GetKubeExecCreds(object):
         'cert_issuer_name': 'str',
         'common_name': 'str',
         'key_data_base64': 'str',
+        'password': 'str',
         'token': 'str',
         'uid_token': 'str',
-        'uri_sans': 'str'
+        'uri_sans': 'str',
+        'username': 'str'
     }
 
     attribute_map = {
@@ -48,12 +50,14 @@ class GetKubeExecCreds(object):
         'cert_issuer_name': 'cert-issuer-name',
         'common_name': 'common-name',
         'key_data_base64': 'key-data-base64',
+        'password': 'password',
         'token': 'token',
         'uid_token': 'uid-token',
-        'uri_sans': 'uri-sans'
+        'uri_sans': 'uri-sans',
+        'username': 'username'
     }
 
-    def __init__(self, alt_names=None, cert_issuer_name=None, common_name=None, key_data_base64=None, token=None, uid_token=None, uri_sans=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, alt_names=None, cert_issuer_name=None, common_name=None, key_data_base64=None, password=None, token=None, uid_token=None, uri_sans=None, username=None, local_vars_configuration=None):  # noqa: E501
         """GetKubeExecCreds - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -63,9 +67,11 @@ class GetKubeExecCreds(object):
         self._cert_issuer_name = None
         self._common_name = None
         self._key_data_base64 = None
+        self._password = None
         self._token = None
         self._uid_token = None
         self._uri_sans = None
+        self._username = None
         self.discriminator = None
 
         if alt_names is not None:
@@ -75,12 +81,16 @@ class GetKubeExecCreds(object):
             self.common_name = common_name
         if key_data_base64 is not None:
             self.key_data_base64 = key_data_base64
+        if password is not None:
+            self.password = password
         if token is not None:
             self.token = token
         if uid_token is not None:
             self.uid_token = uid_token
         if uri_sans is not None:
             self.uri_sans = uri_sans
+        if username is not None:
+            self.username = username
 
     @property
     def alt_names(self):
@@ -177,6 +187,29 @@ class GetKubeExecCreds(object):
         self._key_data_base64 = key_data_base64
 
     @property
+    def password(self):
+        """Gets the password of this GetKubeExecCreds.  # noqa: E501
+
+        Required only when the authentication process requires a username and password  # noqa: E501
+
+        :return: The password of this GetKubeExecCreds.  # noqa: E501
+        :rtype: str
+        """
+        return self._password
+
+    @password.setter
+    def password(self, password):
+        """Sets the password of this GetKubeExecCreds.
+
+        Required only when the authentication process requires a username and password  # noqa: E501
+
+        :param password: The password of this GetKubeExecCreds.  # noqa: E501
+        :type: str
+        """
+
+        self._password = password
+
+    @property
     def token(self):
         """Gets the token of this GetKubeExecCreds.  # noqa: E501
 
@@ -244,6 +277,29 @@ class GetKubeExecCreds(object):
         """
 
         self._uri_sans = uri_sans
+
+    @property
+    def username(self):
+        """Gets the username of this GetKubeExecCreds.  # noqa: E501
+
+        Required only when the authentication process requires a username and password  # noqa: E501
+
+        :return: The username of this GetKubeExecCreds.  # noqa: E501
+        :rtype: str
+        """
+        return self._username
+
+    @username.setter
+    def username(self, username):
+        """Sets the username of this GetKubeExecCreds.
+
+        Required only when the authentication process requires a username and password  # noqa: E501
+
+        :param username: The username of this GetKubeExecCreds.  # noqa: E501
+        :type: str
+        """
+
+        self._username = username
 
     def to_dict(self):
         """Returns the model properties as a dict"""

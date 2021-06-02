@@ -36,11 +36,12 @@ class CreateRotatedSecret(object):
     openapi_types = {
         'auto_rotate': 'str',
         'gateway_url': 'str',
+        'key': 'str',
         'metadata': 'str',
         'name': 'str',
-        'protection_key': 'str',
-        'rotation_interval': 'str',
+        'password': 'str',
         'rotation_hour': 'int',
+        'rotation_interval': 'str',
         'rotator_creds_type': 'str',
         'rotator_type': 'str',
         'ssh_password': 'str',
@@ -48,28 +49,31 @@ class CreateRotatedSecret(object):
         'tags': 'list[str]',
         'target_name': 'str',
         'token': 'str',
-        'uid_token': 'str'
+        'uid_token': 'str',
+        'username': 'str'
     }
 
     attribute_map = {
         'auto_rotate': 'auto-rotate',
         'gateway_url': 'gateway-url',
+        'key': 'key',
         'metadata': 'metadata',
         'name': 'name',
-        'protection_key': 'protection_key',
+        'password': 'password',
+        'rotation_hour': 'rotation-hour',
         'rotation_interval': 'rotation-interval',
-        'rotation_hour': 'rotation_hour',
-        'rotator_creds_type': 'rotator_creds_type',
-        'rotator_type': 'rotator_type',
+        'rotator_creds_type': 'rotator-creds-type',
+        'rotator_type': 'rotator-type',
         'ssh_password': 'ssh-password',
         'ssh_username': 'ssh-username',
         'tags': 'tags',
         'target_name': 'target-name',
         'token': 'token',
-        'uid_token': 'uid-token'
+        'uid_token': 'uid-token',
+        'username': 'username'
     }
 
-    def __init__(self, auto_rotate=None, gateway_url='http://localhost:8000', metadata=None, name=None, protection_key=None, rotation_interval=None, rotation_hour=None, rotator_creds_type=None, rotator_type=None, ssh_password=None, ssh_username=None, tags=None, target_name=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, auto_rotate=None, gateway_url='http://localhost:8000', key=None, metadata=None, name=None, password=None, rotation_hour=None, rotation_interval=None, rotator_creds_type=None, rotator_type=None, ssh_password=None, ssh_username=None, tags=None, target_name=None, token=None, uid_token=None, username=None, local_vars_configuration=None):  # noqa: E501
         """CreateRotatedSecret - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -77,11 +81,12 @@ class CreateRotatedSecret(object):
 
         self._auto_rotate = None
         self._gateway_url = None
+        self._key = None
         self._metadata = None
         self._name = None
-        self._protection_key = None
-        self._rotation_interval = None
+        self._password = None
         self._rotation_hour = None
+        self._rotation_interval = None
         self._rotator_creds_type = None
         self._rotator_type = None
         self._ssh_password = None
@@ -90,21 +95,24 @@ class CreateRotatedSecret(object):
         self._target_name = None
         self._token = None
         self._uid_token = None
+        self._username = None
         self.discriminator = None
 
         if auto_rotate is not None:
             self.auto_rotate = auto_rotate
         if gateway_url is not None:
             self.gateway_url = gateway_url
+        if key is not None:
+            self.key = key
         if metadata is not None:
             self.metadata = metadata
         self.name = name
-        if protection_key is not None:
-            self.protection_key = protection_key
-        if rotation_interval is not None:
-            self.rotation_interval = rotation_interval
+        if password is not None:
+            self.password = password
         if rotation_hour is not None:
             self.rotation_hour = rotation_hour
+        if rotation_interval is not None:
+            self.rotation_interval = rotation_interval
         if rotator_creds_type is not None:
             self.rotator_creds_type = rotator_creds_type
         if rotator_type is not None:
@@ -121,6 +129,8 @@ class CreateRotatedSecret(object):
             self.token = token
         if uid_token is not None:
             self.uid_token = uid_token
+        if username is not None:
+            self.username = username
 
     @property
     def auto_rotate(self):
@@ -167,6 +177,29 @@ class CreateRotatedSecret(object):
         """
 
         self._gateway_url = gateway_url
+
+    @property
+    def key(self):
+        """Gets the key of this CreateRotatedSecret.  # noqa: E501
+
+        The name of a key that used to encrypt the secret value (if empty, the account default protectionKey key will be used)  # noqa: E501
+
+        :return: The key of this CreateRotatedSecret.  # noqa: E501
+        :rtype: str
+        """
+        return self._key
+
+    @key.setter
+    def key(self, key):
+        """Sets the key of this CreateRotatedSecret.
+
+        The name of a key that used to encrypt the secret value (if empty, the account default protectionKey key will be used)  # noqa: E501
+
+        :param key: The key of this CreateRotatedSecret.  # noqa: E501
+        :type: str
+        """
+
+        self._key = key
 
     @property
     def metadata(self):
@@ -217,27 +250,48 @@ class CreateRotatedSecret(object):
         self._name = name
 
     @property
-    def protection_key(self):
-        """Gets the protection_key of this CreateRotatedSecret.  # noqa: E501
+    def password(self):
+        """Gets the password of this CreateRotatedSecret.  # noqa: E501
 
-        The name of a key that used to encrypt the secret value (if empty, the account default protectionKey key will be used)  # noqa: E501
+        Required only when the authentication process requires a username and password  # noqa: E501
 
-        :return: The protection_key of this CreateRotatedSecret.  # noqa: E501
+        :return: The password of this CreateRotatedSecret.  # noqa: E501
         :rtype: str
         """
-        return self._protection_key
+        return self._password
 
-    @protection_key.setter
-    def protection_key(self, protection_key):
-        """Sets the protection_key of this CreateRotatedSecret.
+    @password.setter
+    def password(self, password):
+        """Sets the password of this CreateRotatedSecret.
 
-        The name of a key that used to encrypt the secret value (if empty, the account default protectionKey key will be used)  # noqa: E501
+        Required only when the authentication process requires a username and password  # noqa: E501
 
-        :param protection_key: The protection_key of this CreateRotatedSecret.  # noqa: E501
+        :param password: The password of this CreateRotatedSecret.  # noqa: E501
         :type: str
         """
 
-        self._protection_key = protection_key
+        self._password = password
+
+    @property
+    def rotation_hour(self):
+        """Gets the rotation_hour of this CreateRotatedSecret.  # noqa: E501
+
+
+        :return: The rotation_hour of this CreateRotatedSecret.  # noqa: E501
+        :rtype: int
+        """
+        return self._rotation_hour
+
+    @rotation_hour.setter
+    def rotation_hour(self, rotation_hour):
+        """Sets the rotation_hour of this CreateRotatedSecret.
+
+
+        :param rotation_hour: The rotation_hour of this CreateRotatedSecret.  # noqa: E501
+        :type: int
+        """
+
+        self._rotation_hour = rotation_hour
 
     @property
     def rotation_interval(self):
@@ -261,27 +315,6 @@ class CreateRotatedSecret(object):
         """
 
         self._rotation_interval = rotation_interval
-
-    @property
-    def rotation_hour(self):
-        """Gets the rotation_hour of this CreateRotatedSecret.  # noqa: E501
-
-
-        :return: The rotation_hour of this CreateRotatedSecret.  # noqa: E501
-        :rtype: int
-        """
-        return self._rotation_hour
-
-    @rotation_hour.setter
-    def rotation_hour(self, rotation_hour):
-        """Sets the rotation_hour of this CreateRotatedSecret.
-
-
-        :param rotation_hour: The rotation_hour of this CreateRotatedSecret.  # noqa: E501
-        :type: int
-        """
-
-        self._rotation_hour = rotation_hour
 
     @property
     def rotator_creds_type(self):
@@ -456,6 +489,29 @@ class CreateRotatedSecret(object):
         """
 
         self._uid_token = uid_token
+
+    @property
+    def username(self):
+        """Gets the username of this CreateRotatedSecret.  # noqa: E501
+
+        Required only when the authentication process requires a username and password  # noqa: E501
+
+        :return: The username of this CreateRotatedSecret.  # noqa: E501
+        :rtype: str
+        """
+        return self._username
+
+    @username.setter
+    def username(self, username):
+        """Sets the username of this CreateRotatedSecret.
+
+        Required only when the authentication process requires a username and password  # noqa: E501
+
+        :param username: The username of this CreateRotatedSecret.  # noqa: E501
+        :type: str
+        """
+
+        self._username = username
 
     def to_dict(self):
         """Returns the model properties as a dict"""
