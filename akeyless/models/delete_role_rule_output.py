@@ -34,24 +34,50 @@ class DeleteRoleRuleOutput(object):
                             and the value is json key in definition.
     """
     openapi_types = {
+        'deleted': 'bool',
         'result': 'str'
     }
 
     attribute_map = {
+        'deleted': 'deleted',
         'result': 'result'
     }
 
-    def __init__(self, result=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, deleted=None, result=None, local_vars_configuration=None):  # noqa: E501
         """DeleteRoleRuleOutput - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
+        self._deleted = None
         self._result = None
         self.discriminator = None
 
+        if deleted is not None:
+            self.deleted = deleted
         if result is not None:
             self.result = result
+
+    @property
+    def deleted(self):
+        """Gets the deleted of this DeleteRoleRuleOutput.  # noqa: E501
+
+
+        :return: The deleted of this DeleteRoleRuleOutput.  # noqa: E501
+        :rtype: bool
+        """
+        return self._deleted
+
+    @deleted.setter
+    def deleted(self, deleted):
+        """Sets the deleted of this DeleteRoleRuleOutput.
+
+
+        :param deleted: The deleted of this DeleteRoleRuleOutput.  # noqa: E501
+        :type: bool
+        """
+
+        self._deleted = deleted
 
     @property
     def result(self):

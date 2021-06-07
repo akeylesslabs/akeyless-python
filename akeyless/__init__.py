@@ -15,7 +15,7 @@
 
 from __future__ import absolute_import
 
-__version__ = "2.4.2"
+__version__ = "2.4.3"
 
 # import apis into sdk package
 from akeyless.api.v2_api import V2Api
@@ -153,7 +153,7 @@ from akeyless.models.encrypt_pkcs1 import EncryptPKCS1
 from akeyless.models.encrypt_pkcs1_output import EncryptPKCS1Output
 from akeyless.models.external_kms_key_id import ExternalKMSKeyId
 from akeyless.models.gcp_access_rules import GCPAccessRules
-from akeyless.models.gateway_add_sub_admins import GatewayAddSubAdmins
+from akeyless.models.gateway_add_allowed_management_access import GatewayAddAllowedManagementAccess
 from akeyless.models.gateway_create_producer_artifactory import GatewayCreateProducerArtifactory
 from akeyless.models.gateway_create_producer_artifactory_output import GatewayCreateProducerArtifactoryOutput
 from akeyless.models.gateway_create_producer_aws import GatewayCreateProducerAws
@@ -186,14 +186,14 @@ from akeyless.models.gateway_create_producer_rdp import GatewayCreateProducerRdp
 from akeyless.models.gateway_create_producer_rdp_output import GatewayCreateProducerRdpOutput
 from akeyless.models.gateway_create_producer_snowflake import GatewayCreateProducerSnowflake
 from akeyless.models.gateway_create_producer_snowflake_output import GatewayCreateProducerSnowflakeOutput
+from akeyless.models.gateway_delete_allowed_management_access import GatewayDeleteAllowedManagementAccess
 from akeyless.models.gateway_delete_producer import GatewayDeleteProducer
 from akeyless.models.gateway_delete_producer_output import GatewayDeleteProducerOutput
-from akeyless.models.gateway_delete_sub_admins import GatewayDeleteSubAdmins
 from akeyless.models.gateway_get_config import GatewayGetConfig
 from akeyless.models.gateway_get_producer import GatewayGetProducer
 from akeyless.models.gateway_get_tmp_users import GatewayGetTmpUsers
+from akeyless.models.gateway_list_allowed_management_access import GatewayListAllowedManagementAccess
 from akeyless.models.gateway_list_producers import GatewayListProducers
-from akeyless.models.gateway_list_sub_admins import GatewayListSubAdmins
 from akeyless.models.gateway_revoke_tmp_users import GatewayRevokeTmpUsers
 from akeyless.models.gateway_start_producer import GatewayStartProducer
 from akeyless.models.gateway_start_producer_output import GatewayStartProducerOutput

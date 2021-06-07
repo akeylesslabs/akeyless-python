@@ -1,14 +1,15 @@
-# UpdateRole
+# GatewayAddAllowedManagementAccess
 
+gatewayAddAllowedManagementAccess is a command that adds sub-admins
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**analytics_access** | **str** | Allow this role to view analytics. Currently only &#39;none&#39;, &#39;own&#39;, &#39;all&#39; values are supported, allowing associated auth methods to view reports produced by the same auth methods. | [optional] 
-**audit_access** | **str** | Allow this role to view audit logs. Currently only &#39;none&#39;, &#39;own&#39; and &#39;all&#39; values are supported, allowing associated auth methods to view audit logs produced by the same auth methods. | [optional] 
-**name** | **str** | Role name | 
-**new_comment** | **str** | New comment about the role | [optional] [default to 'default_comment']
-**new_name** | **str** | New Role name | [optional] 
+**allow_gw_api** | **bool** |  | [optional] 
+**allow_gw_login** | **bool** |  | [optional] 
+**gateway_url** | **str** | Gateway url | [optional] [default to 'http://localhost:8000']
 **password** | **str** | Required only when the authentication process requires a username and password | [optional] 
+**sub_admin_access_id** | **str** | SubAdmins to add | 
+**sub_claims** | **dict(str, str)** | key/val of sub claims, e.g group&#x3D;admins,developers | [optional] 
 **token** | **str** | Authentication token (see &#x60;/auth&#x60; and &#x60;/configure&#x60;) | [optional] 
 **uid_token** | **str** | The universal identity token, Required only for universal_identity authentication | [optional] 
 **username** | **str** | Required only when the authentication process requires a username and password | [optional] 

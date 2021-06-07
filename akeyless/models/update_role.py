@@ -96,7 +96,7 @@ class UpdateRole(object):
     def analytics_access(self):
         """Gets the analytics_access of this UpdateRole.  # noqa: E501
 
-        Allow this role to view analytics. Currently only 'none' and 'self' values are supported, allowing associated auth methods to view reports produced by the same auth methods.  # noqa: E501
+        Allow this role to view analytics. Currently only 'none', 'own', 'all' values are supported, allowing associated auth methods to view reports produced by the same auth methods.  # noqa: E501
 
         :return: The analytics_access of this UpdateRole.  # noqa: E501
         :rtype: str
@@ -107,7 +107,7 @@ class UpdateRole(object):
     def analytics_access(self, analytics_access):
         """Sets the analytics_access of this UpdateRole.
 
-        Allow this role to view analytics. Currently only 'none' and 'self' values are supported, allowing associated auth methods to view reports produced by the same auth methods.  # noqa: E501
+        Allow this role to view analytics. Currently only 'none', 'own', 'all' values are supported, allowing associated auth methods to view reports produced by the same auth methods.  # noqa: E501
 
         :param analytics_access: The analytics_access of this UpdateRole.  # noqa: E501
         :type: str
@@ -119,7 +119,7 @@ class UpdateRole(object):
     def audit_access(self):
         """Gets the audit_access of this UpdateRole.  # noqa: E501
 
-        Allow this role to view audit logs. Currently only 'none' and 'self' values are supported, allowing associated auth methods to view audit logs produced by the same auth methods.  # noqa: E501
+        Allow this role to view audit logs. Currently only 'none', 'own' and 'all' values are supported, allowing associated auth methods to view audit logs produced by the same auth methods.  # noqa: E501
 
         :return: The audit_access of this UpdateRole.  # noqa: E501
         :rtype: str
@@ -130,7 +130,7 @@ class UpdateRole(object):
     def audit_access(self, audit_access):
         """Sets the audit_access of this UpdateRole.
 
-        Allow this role to view audit logs. Currently only 'none' and 'self' values are supported, allowing associated auth methods to view audit logs produced by the same auth methods.  # noqa: E501
+        Allow this role to view audit logs. Currently only 'none', 'own' and 'all' values are supported, allowing associated auth methods to view audit logs produced by the same auth methods.  # noqa: E501
 
         :param audit_access: The audit_access of this UpdateRole.  # noqa: E501
         :type: str

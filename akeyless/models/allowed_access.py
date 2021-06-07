@@ -39,6 +39,7 @@ class AllowedAccess(object):
         'allowed_api': 'bool',
         'alloweds_login': 'bool',
         'err_msg': 'str',
+        'hash': 'str',
         'is_valid': 'bool',
         'name': 'str',
         'sub_claims': 'dict(str, list[str])'
@@ -50,12 +51,13 @@ class AllowedAccess(object):
         'allowed_api': 'allowed_api',
         'alloweds_login': 'alloweds_login',
         'err_msg': 'err_msg',
+        'hash': 'hash',
         'is_valid': 'is_valid',
         'name': 'name',
         'sub_claims': 'sub_claims'
     }
 
-    def __init__(self, acc_id=None, access_rules_type=None, allowed_api=None, alloweds_login=None, err_msg=None, is_valid=None, name=None, sub_claims=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, acc_id=None, access_rules_type=None, allowed_api=None, alloweds_login=None, err_msg=None, hash=None, is_valid=None, name=None, sub_claims=None, local_vars_configuration=None):  # noqa: E501
         """AllowedAccess - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -66,6 +68,7 @@ class AllowedAccess(object):
         self._allowed_api = None
         self._alloweds_login = None
         self._err_msg = None
+        self._hash = None
         self._is_valid = None
         self._name = None
         self._sub_claims = None
@@ -81,6 +84,8 @@ class AllowedAccess(object):
             self.alloweds_login = alloweds_login
         if err_msg is not None:
             self.err_msg = err_msg
+        if hash is not None:
+            self.hash = hash
         if is_valid is not None:
             self.is_valid = is_valid
         if name is not None:
@@ -192,6 +197,27 @@ class AllowedAccess(object):
         """
 
         self._err_msg = err_msg
+
+    @property
+    def hash(self):
+        """Gets the hash of this AllowedAccess.  # noqa: E501
+
+
+        :return: The hash of this AllowedAccess.  # noqa: E501
+        :rtype: str
+        """
+        return self._hash
+
+    @hash.setter
+    def hash(self, hash):
+        """Sets the hash of this AllowedAccess.
+
+
+        :param hash: The hash of this AllowedAccess.  # noqa: E501
+        :type: str
+        """
+
+        self._hash = hash
 
     @property
     def is_valid(self):

@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **allowed_api** | **bool** |  | [optional] 
 **alloweds_login** | **bool** |  | [optional] 
 **err_msg** | **str** |  | [optional] 
+**hash** | **str** |  | [optional] 
 **is_valid** | **bool** |  | [optional] 
 **name** | **str** |  | [optional] 
 **sub_claims** | **dict(str, list[str])** |  | [optional] 
