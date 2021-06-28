@@ -4,7 +4,6 @@ gatewayCreateProducerMSSQL is a command that creates mssql producer
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**gateway_url** | **str** | Gateway url | [optional] [default to 'http://localhost:8000']
 **mssql_create_statements** | **str** | MSSQL Creation statements | [optional] 
 **mssql_dbname** | **str** | MSSQL Name | 
 **mssql_host** | **str** | MSSQL Host | [optional] [default to '127.0.0.1']

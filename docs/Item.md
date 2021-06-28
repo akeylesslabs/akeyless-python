@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **certificates** | **str** |  | [optional] 
 **client_permissions** | **list[str]** |  | [optional] 
 **deletion_date** | **datetime** |  | [optional] 
+**display_id** | **str** |  | [optional] 
 **is_enabled** | **bool** |  | [optional] 
 **item_general_info** | [**ItemGeneralInfo**](ItemGeneralInfo.md) |  | [optional] 
 **item_id** | **int** |  | [optional] 

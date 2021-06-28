@@ -39,7 +39,6 @@ class GatewayCreateProducerCertificateAutomation(object):
         'allowed_domains': 'list[str]',
         'auto_generated_folder': 'str',
         'enable_admin_rotation': 'bool',
-        'gateway_url': 'str',
         'name': 'str',
         'password': 'str',
         'producer_encryption_key_name': 'str',
@@ -65,7 +64,6 @@ class GatewayCreateProducerCertificateAutomation(object):
         'allowed_domains': 'allowed-domains',
         'auto_generated_folder': 'auto-generated-folder',
         'enable_admin_rotation': 'enable-admin-rotation',
-        'gateway_url': 'gateway-url',
         'name': 'name',
         'password': 'password',
         'producer_encryption_key_name': 'producer-encryption-key-name',
@@ -85,7 +83,7 @@ class GatewayCreateProducerCertificateAutomation(object):
         'venafi_zone': 'venafi-zone'
     }
 
-    def __init__(self, admin_rotation_interval_days=0, allow_subdomains=None, allowed_domains=None, auto_generated_folder=None, enable_admin_rotation=False, gateway_url='http://localhost:8000', name=None, password=None, producer_encryption_key_name=None, root_first_in_chain=None, sign_using_akeyless_pki=None, signer_key_name=None, store_private_key=None, token=None, uid_token=None, user_ttl=None, username=None, venafi_api_key=None, venafi_baseurl=None, venafi_password=None, venafi_use_tpp=None, venafi_username=None, venafi_zone=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, admin_rotation_interval_days=0, allow_subdomains=None, allowed_domains=None, auto_generated_folder=None, enable_admin_rotation=False, name=None, password=None, producer_encryption_key_name=None, root_first_in_chain=None, sign_using_akeyless_pki=None, signer_key_name=None, store_private_key=None, token=None, uid_token=None, user_ttl=None, username=None, venafi_api_key=None, venafi_baseurl=None, venafi_password=None, venafi_use_tpp=None, venafi_username=None, venafi_zone=None, local_vars_configuration=None):  # noqa: E501
         """GatewayCreateProducerCertificateAutomation - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -96,7 +94,6 @@ class GatewayCreateProducerCertificateAutomation(object):
         self._allowed_domains = None
         self._auto_generated_folder = None
         self._enable_admin_rotation = None
-        self._gateway_url = None
         self._name = None
         self._password = None
         self._producer_encryption_key_name = None
@@ -126,8 +123,6 @@ class GatewayCreateProducerCertificateAutomation(object):
             self.auto_generated_folder = auto_generated_folder
         if enable_admin_rotation is not None:
             self.enable_admin_rotation = enable_admin_rotation
-        if gateway_url is not None:
-            self.gateway_url = gateway_url
         self.name = name
         if password is not None:
             self.password = password
@@ -275,29 +270,6 @@ class GatewayCreateProducerCertificateAutomation(object):
         """
 
         self._enable_admin_rotation = enable_admin_rotation
-
-    @property
-    def gateway_url(self):
-        """Gets the gateway_url of this GatewayCreateProducerCertificateAutomation.  # noqa: E501
-
-        Gateway url  # noqa: E501
-
-        :return: The gateway_url of this GatewayCreateProducerCertificateAutomation.  # noqa: E501
-        :rtype: str
-        """
-        return self._gateway_url
-
-    @gateway_url.setter
-    def gateway_url(self, gateway_url):
-        """Sets the gateway_url of this GatewayCreateProducerCertificateAutomation.
-
-        Gateway url  # noqa: E501
-
-        :param gateway_url: The gateway_url of this GatewayCreateProducerCertificateAutomation.  # noqa: E501
-        :type: str
-        """
-
-        self._gateway_url = gateway_url
 
     @property
     def name(self):

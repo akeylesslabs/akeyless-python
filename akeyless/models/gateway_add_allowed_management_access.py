@@ -36,7 +36,6 @@ class GatewayAddAllowedManagementAccess(object):
     openapi_types = {
         'allow_gw_api': 'bool',
         'allow_gw_login': 'bool',
-        'gateway_url': 'str',
         'password': 'str',
         'sub_admin_access_id': 'str',
         'sub_claims': 'dict(str, str)',
@@ -48,7 +47,6 @@ class GatewayAddAllowedManagementAccess(object):
     attribute_map = {
         'allow_gw_api': 'allow-gw-api',
         'allow_gw_login': 'allow-gw-login',
-        'gateway_url': 'gateway-url',
         'password': 'password',
         'sub_admin_access_id': 'sub-admin-access-id',
         'sub_claims': 'sub-claims',
@@ -57,7 +55,7 @@ class GatewayAddAllowedManagementAccess(object):
         'username': 'username'
     }
 
-    def __init__(self, allow_gw_api=None, allow_gw_login=None, gateway_url='http://localhost:8000', password=None, sub_admin_access_id=None, sub_claims=None, token=None, uid_token=None, username=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, allow_gw_api=None, allow_gw_login=None, password=None, sub_admin_access_id=None, sub_claims=None, token=None, uid_token=None, username=None, local_vars_configuration=None):  # noqa: E501
         """GatewayAddAllowedManagementAccess - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -65,7 +63,6 @@ class GatewayAddAllowedManagementAccess(object):
 
         self._allow_gw_api = None
         self._allow_gw_login = None
-        self._gateway_url = None
         self._password = None
         self._sub_admin_access_id = None
         self._sub_claims = None
@@ -78,8 +75,6 @@ class GatewayAddAllowedManagementAccess(object):
             self.allow_gw_api = allow_gw_api
         if allow_gw_login is not None:
             self.allow_gw_login = allow_gw_login
-        if gateway_url is not None:
-            self.gateway_url = gateway_url
         if password is not None:
             self.password = password
         self.sub_admin_access_id = sub_admin_access_id
@@ -133,29 +128,6 @@ class GatewayAddAllowedManagementAccess(object):
         """
 
         self._allow_gw_login = allow_gw_login
-
-    @property
-    def gateway_url(self):
-        """Gets the gateway_url of this GatewayAddAllowedManagementAccess.  # noqa: E501
-
-        Gateway url  # noqa: E501
-
-        :return: The gateway_url of this GatewayAddAllowedManagementAccess.  # noqa: E501
-        :rtype: str
-        """
-        return self._gateway_url
-
-    @gateway_url.setter
-    def gateway_url(self, gateway_url):
-        """Sets the gateway_url of this GatewayAddAllowedManagementAccess.
-
-        Gateway url  # noqa: E501
-
-        :param gateway_url: The gateway_url of this GatewayAddAllowedManagementAccess.  # noqa: E501
-        :type: str
-        """
-
-        self._gateway_url = gateway_url
 
     @property
     def password(self):

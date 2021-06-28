@@ -5,7 +5,6 @@ gatewayCreateProducerPostgreSQL is a command that creates postgresql producer
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **creation_statements** | **str** | PostgreSQL Creation statements | [optional] 
-**gateway_url** | **str** | Gateway url | [optional] [default to 'http://localhost:8000']
 **name** | **str** | Producer name | 
 **password** | **str** | Required only when the authentication process requires a username and password | [optional] 
 **postgresql_db_name** | **str** | PostgreSQL DB Name | 

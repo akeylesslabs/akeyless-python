@@ -35,6 +35,7 @@ class CreateGKETarget(object):
     """
     openapi_types = {
         'comment': 'str',
+        'gke_account_key': 'str',
         'gke_cluster_cert': 'str',
         'gke_cluster_endpoint': 'str',
         'gke_cluster_name': 'str',
@@ -49,6 +50,7 @@ class CreateGKETarget(object):
 
     attribute_map = {
         'comment': 'comment',
+        'gke_account_key': 'gke-account-key',
         'gke_cluster_cert': 'gke-cluster-cert',
         'gke_cluster_endpoint': 'gke-cluster-endpoint',
         'gke_cluster_name': 'gke-cluster-name',
@@ -61,13 +63,14 @@ class CreateGKETarget(object):
         'username': 'username'
     }
 
-    def __init__(self, comment=None, gke_cluster_cert=None, gke_cluster_endpoint=None, gke_cluster_name=None, gke_service_account_email=None, key=None, name=None, password=None, token=None, uid_token=None, username=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, comment=None, gke_account_key=None, gke_cluster_cert=None, gke_cluster_endpoint=None, gke_cluster_name=None, gke_service_account_email=None, key=None, name=None, password=None, token=None, uid_token=None, username=None, local_vars_configuration=None):  # noqa: E501
         """CreateGKETarget - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._comment = None
+        self._gke_account_key = None
         self._gke_cluster_cert = None
         self._gke_cluster_endpoint = None
         self._gke_cluster_name = None
@@ -82,6 +85,8 @@ class CreateGKETarget(object):
 
         if comment is not None:
             self.comment = comment
+        if gke_account_key is not None:
+            self.gke_account_key = gke_account_key
         self.gke_cluster_cert = gke_cluster_cert
         self.gke_cluster_endpoint = gke_cluster_endpoint
         self.gke_cluster_name = gke_cluster_name
@@ -120,6 +125,29 @@ class CreateGKETarget(object):
         """
 
         self._comment = comment
+
+    @property
+    def gke_account_key(self):
+        """Gets the gke_account_key of this CreateGKETarget.  # noqa: E501
+
+        GKE Service Account key file path  # noqa: E501
+
+        :return: The gke_account_key of this CreateGKETarget.  # noqa: E501
+        :rtype: str
+        """
+        return self._gke_account_key
+
+    @gke_account_key.setter
+    def gke_account_key(self, gke_account_key):
+        """Sets the gke_account_key of this CreateGKETarget.
+
+        GKE Service Account key file path  # noqa: E501
+
+        :param gke_account_key: The gke_account_key of this CreateGKETarget.  # noqa: E501
+        :type: str
+        """
+
+        self._gke_account_key = gke_account_key
 
     @property
     def gke_cluster_cert(self):

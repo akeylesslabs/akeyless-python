@@ -47,13 +47,13 @@ class CreateAzureTarget(object):
     }
 
     attribute_map = {
-        'client_id': 'client_id',
-        'client_secret': 'client_secret',
+        'client_id': 'client-id',
+        'client_secret': 'client-secret',
         'comment': 'comment',
         'key': 'key',
         'name': 'name',
         'password': 'password',
-        'tenant_id': 'tenant_id',
+        'tenant_id': 'tenant-id',
         'token': 'token',
         'uid_token': 'uid-token',
         'username': 'username'

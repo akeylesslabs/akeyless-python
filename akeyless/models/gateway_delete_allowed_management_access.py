@@ -34,7 +34,6 @@ class GatewayDeleteAllowedManagementAccess(object):
                             and the value is json key in definition.
     """
     openapi_types = {
-        'gateway_url': 'str',
         'password': 'str',
         'sub_admin_id': 'str',
         'token': 'str',
@@ -43,7 +42,6 @@ class GatewayDeleteAllowedManagementAccess(object):
     }
 
     attribute_map = {
-        'gateway_url': 'gateway-url',
         'password': 'password',
         'sub_admin_id': 'sub-admin-id',
         'token': 'token',
@@ -51,13 +49,12 @@ class GatewayDeleteAllowedManagementAccess(object):
         'username': 'username'
     }
 
-    def __init__(self, gateway_url='http://localhost:8000', password=None, sub_admin_id=None, token=None, uid_token=None, username=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, password=None, sub_admin_id=None, token=None, uid_token=None, username=None, local_vars_configuration=None):  # noqa: E501
         """GatewayDeleteAllowedManagementAccess - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
-        self._gateway_url = None
         self._password = None
         self._sub_admin_id = None
         self._token = None
@@ -65,8 +62,6 @@ class GatewayDeleteAllowedManagementAccess(object):
         self._username = None
         self.discriminator = None
 
-        if gateway_url is not None:
-            self.gateway_url = gateway_url
         if password is not None:
             self.password = password
         self.sub_admin_id = sub_admin_id
@@ -76,29 +71,6 @@ class GatewayDeleteAllowedManagementAccess(object):
             self.uid_token = uid_token
         if username is not None:
             self.username = username
-
-    @property
-    def gateway_url(self):
-        """Gets the gateway_url of this GatewayDeleteAllowedManagementAccess.  # noqa: E501
-
-        Gateway url  # noqa: E501
-
-        :return: The gateway_url of this GatewayDeleteAllowedManagementAccess.  # noqa: E501
-        :rtype: str
-        """
-        return self._gateway_url
-
-    @gateway_url.setter
-    def gateway_url(self, gateway_url):
-        """Sets the gateway_url of this GatewayDeleteAllowedManagementAccess.
-
-        Gateway url  # noqa: E501
-
-        :param gateway_url: The gateway_url of this GatewayDeleteAllowedManagementAccess.  # noqa: E501
-        :type: str
-        """
-
-        self._gateway_url = gateway_url
 
     @property
     def password(self):

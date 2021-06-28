@@ -34,7 +34,6 @@ class GatewayCreateProducerMongo(object):
                             and the value is json key in definition.
     """
     openapi_types = {
-        'gateway_url': 'str',
         'mongodb_atlas_api_private_key': 'str',
         'mongodb_atlas_api_public_key': 'str',
         'mongodb_atlas_project_id': 'str',
@@ -56,7 +55,6 @@ class GatewayCreateProducerMongo(object):
     }
 
     attribute_map = {
-        'gateway_url': 'gateway-url',
         'mongodb_atlas_api_private_key': 'mongodb-atlas-api-private-key',
         'mongodb_atlas_api_public_key': 'mongodb-atlas-api-public-key',
         'mongodb_atlas_project_id': 'mongodb-atlas-project-id',
@@ -77,13 +75,12 @@ class GatewayCreateProducerMongo(object):
         'username': 'username'
     }
 
-    def __init__(self, gateway_url='http://localhost:8000', mongodb_atlas_api_private_key=None, mongodb_atlas_api_public_key=None, mongodb_atlas_project_id=None, mongodb_default_auth_db=None, mongodb_host_port=None, mongodb_name=None, mongodb_password=None, mongodb_roles='[]', mongodb_server_uri=None, mongodb_uri_options=None, mongodb_username=None, name=None, password=None, producer_encryption_key_name=None, token=None, uid_token=None, user_ttl='60m', username=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, mongodb_atlas_api_private_key=None, mongodb_atlas_api_public_key=None, mongodb_atlas_project_id=None, mongodb_default_auth_db=None, mongodb_host_port=None, mongodb_name=None, mongodb_password=None, mongodb_roles='[]', mongodb_server_uri=None, mongodb_uri_options=None, mongodb_username=None, name=None, password=None, producer_encryption_key_name=None, token=None, uid_token=None, user_ttl='60m', username=None, local_vars_configuration=None):  # noqa: E501
         """GatewayCreateProducerMongo - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
-        self._gateway_url = None
         self._mongodb_atlas_api_private_key = None
         self._mongodb_atlas_api_public_key = None
         self._mongodb_atlas_project_id = None
@@ -104,8 +101,6 @@ class GatewayCreateProducerMongo(object):
         self._username = None
         self.discriminator = None
 
-        if gateway_url is not None:
-            self.gateway_url = gateway_url
         if mongodb_atlas_api_private_key is not None:
             self.mongodb_atlas_api_private_key = mongodb_atlas_api_private_key
         if mongodb_atlas_api_public_key is not None:
@@ -140,29 +135,6 @@ class GatewayCreateProducerMongo(object):
             self.user_ttl = user_ttl
         if username is not None:
             self.username = username
-
-    @property
-    def gateway_url(self):
-        """Gets the gateway_url of this GatewayCreateProducerMongo.  # noqa: E501
-
-        Gateway url  # noqa: E501
-
-        :return: The gateway_url of this GatewayCreateProducerMongo.  # noqa: E501
-        :rtype: str
-        """
-        return self._gateway_url
-
-    @gateway_url.setter
-    def gateway_url(self, gateway_url):
-        """Sets the gateway_url of this GatewayCreateProducerMongo.
-
-        Gateway url  # noqa: E501
-
-        :param gateway_url: The gateway_url of this GatewayCreateProducerMongo.  # noqa: E501
-        :type: str
-        """
-
-        self._gateway_url = gateway_url
 
     @property
     def mongodb_atlas_api_private_key(self):

@@ -40,6 +40,7 @@ class Item(object):
         'certificates': 'str',
         'client_permissions': 'list[str]',
         'deletion_date': 'datetime',
+        'display_id': 'str',
         'is_enabled': 'bool',
         'item_general_info': 'ItemGeneralInfo',
         'item_id': 'int',
@@ -66,6 +67,7 @@ class Item(object):
         'certificates': 'certificates',
         'client_permissions': 'client_permissions',
         'deletion_date': 'deletion_date',
+        'display_id': 'display_id',
         'is_enabled': 'is_enabled',
         'item_general_info': 'item_general_info',
         'item_id': 'item_id',
@@ -85,7 +87,7 @@ class Item(object):
         'with_customer_fragment': 'with_customer_fragment'
     }
 
-    def __init__(self, auto_rotate=None, cert_issuer_signer_key_name=None, certificate_issue_details=None, certificates=None, client_permissions=None, deletion_date=None, is_enabled=None, item_general_info=None, item_id=None, item_metadata=None, item_name=None, item_size=None, item_state=None, item_tags=None, item_targets_assoc=None, item_type=None, item_versions=None, last_version=None, next_rotation_date=None, protection_key_name=None, public_value=None, rotation_interval=None, with_customer_fragment=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, auto_rotate=None, cert_issuer_signer_key_name=None, certificate_issue_details=None, certificates=None, client_permissions=None, deletion_date=None, display_id=None, is_enabled=None, item_general_info=None, item_id=None, item_metadata=None, item_name=None, item_size=None, item_state=None, item_tags=None, item_targets_assoc=None, item_type=None, item_versions=None, last_version=None, next_rotation_date=None, protection_key_name=None, public_value=None, rotation_interval=None, with_customer_fragment=None, local_vars_configuration=None):  # noqa: E501
         """Item - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -97,6 +99,7 @@ class Item(object):
         self._certificates = None
         self._client_permissions = None
         self._deletion_date = None
+        self._display_id = None
         self._is_enabled = None
         self._item_general_info = None
         self._item_id = None
@@ -128,6 +131,8 @@ class Item(object):
             self.client_permissions = client_permissions
         if deletion_date is not None:
             self.deletion_date = deletion_date
+        if display_id is not None:
+            self.display_id = display_id
         if is_enabled is not None:
             self.is_enabled = is_enabled
         if item_general_info is not None:
@@ -288,6 +293,27 @@ class Item(object):
         """
 
         self._deletion_date = deletion_date
+
+    @property
+    def display_id(self):
+        """Gets the display_id of this Item.  # noqa: E501
+
+
+        :return: The display_id of this Item.  # noqa: E501
+        :rtype: str
+        """
+        return self._display_id
+
+    @display_id.setter
+    def display_id(self, display_id):
+        """Sets the display_id of this Item.
+
+
+        :param display_id: The display_id of this Item.  # noqa: E501
+        :type: str
+        """
+
+        self._display_id = display_id
 
     @property
     def is_enabled(self):

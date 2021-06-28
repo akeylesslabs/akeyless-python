@@ -34,8 +34,9 @@ class CreateRotatedSecret(object):
                             and the value is json key in definition.
     """
     openapi_types = {
+        'api_id': 'str',
+        'api_key': 'str',
         'auto_rotate': 'str',
-        'gateway_url': 'str',
         'key': 'str',
         'metadata': 'str',
         'name': 'str',
@@ -54,8 +55,9 @@ class CreateRotatedSecret(object):
     }
 
     attribute_map = {
+        'api_id': 'api-id',
+        'api_key': 'api-key',
         'auto_rotate': 'auto-rotate',
-        'gateway_url': 'gateway-url',
         'key': 'key',
         'metadata': 'metadata',
         'name': 'name',
@@ -73,14 +75,15 @@ class CreateRotatedSecret(object):
         'username': 'username'
     }
 
-    def __init__(self, auto_rotate=None, gateway_url='http://localhost:8000', key=None, metadata=None, name=None, password=None, rotation_hour=None, rotation_interval=None, rotator_creds_type=None, rotator_type=None, ssh_password=None, ssh_username=None, tags=None, target_name=None, token=None, uid_token=None, username=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, api_id=None, api_key=None, auto_rotate=None, key=None, metadata=None, name=None, password=None, rotation_hour=None, rotation_interval=None, rotator_creds_type=None, rotator_type=None, ssh_password=None, ssh_username=None, tags=None, target_name=None, token=None, uid_token=None, username=None, local_vars_configuration=None):  # noqa: E501
         """CreateRotatedSecret - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
+        self._api_id = None
+        self._api_key = None
         self._auto_rotate = None
-        self._gateway_url = None
         self._key = None
         self._metadata = None
         self._name = None
@@ -98,10 +101,12 @@ class CreateRotatedSecret(object):
         self._username = None
         self.discriminator = None
 
+        if api_id is not None:
+            self.api_id = api_id
+        if api_key is not None:
+            self.api_key = api_key
         if auto_rotate is not None:
             self.auto_rotate = auto_rotate
-        if gateway_url is not None:
-            self.gateway_url = gateway_url
         if key is not None:
             self.key = key
         if metadata is not None:
@@ -133,6 +138,48 @@ class CreateRotatedSecret(object):
             self.username = username
 
     @property
+    def api_id(self):
+        """Gets the api_id of this CreateRotatedSecret.  # noqa: E501
+
+
+        :return: The api_id of this CreateRotatedSecret.  # noqa: E501
+        :rtype: str
+        """
+        return self._api_id
+
+    @api_id.setter
+    def api_id(self, api_id):
+        """Sets the api_id of this CreateRotatedSecret.
+
+
+        :param api_id: The api_id of this CreateRotatedSecret.  # noqa: E501
+        :type: str
+        """
+
+        self._api_id = api_id
+
+    @property
+    def api_key(self):
+        """Gets the api_key of this CreateRotatedSecret.  # noqa: E501
+
+
+        :return: The api_key of this CreateRotatedSecret.  # noqa: E501
+        :rtype: str
+        """
+        return self._api_key
+
+    @api_key.setter
+    def api_key(self, api_key):
+        """Sets the api_key of this CreateRotatedSecret.
+
+
+        :param api_key: The api_key of this CreateRotatedSecret.  # noqa: E501
+        :type: str
+        """
+
+        self._api_key = api_key
+
+    @property
     def auto_rotate(self):
         """Gets the auto_rotate of this CreateRotatedSecret.  # noqa: E501
 
@@ -154,29 +201,6 @@ class CreateRotatedSecret(object):
         """
 
         self._auto_rotate = auto_rotate
-
-    @property
-    def gateway_url(self):
-        """Gets the gateway_url of this CreateRotatedSecret.  # noqa: E501
-
-        Gateway url  # noqa: E501
-
-        :return: The gateway_url of this CreateRotatedSecret.  # noqa: E501
-        :rtype: str
-        """
-        return self._gateway_url
-
-    @gateway_url.setter
-    def gateway_url(self, gateway_url):
-        """Sets the gateway_url of this CreateRotatedSecret.
-
-        Gateway url  # noqa: E501
-
-        :param gateway_url: The gateway_url of this CreateRotatedSecret.  # noqa: E501
-        :type: str
-        """
-
-        self._gateway_url = gateway_url
 
     @property
     def key(self):

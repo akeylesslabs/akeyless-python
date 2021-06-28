@@ -36,7 +36,6 @@ class CreateEKSTarget(object):
     openapi_types = {
         'comment': 'str',
         'eks_access_key_id': 'str',
-        'eks_assume_role': 'str',
         'eks_cluster_cert': 'str',
         'eks_cluster_endpoint': 'str',
         'eks_cluster_name': 'str',
@@ -53,7 +52,6 @@ class CreateEKSTarget(object):
     attribute_map = {
         'comment': 'comment',
         'eks_access_key_id': 'eks-access-key-id',
-        'eks_assume_role': 'eks-assume-role',
         'eks_cluster_cert': 'eks-cluster-cert',
         'eks_cluster_endpoint': 'eks-cluster-endpoint',
         'eks_cluster_name': 'eks-cluster-name',
@@ -67,7 +65,7 @@ class CreateEKSTarget(object):
         'username': 'username'
     }
 
-    def __init__(self, comment=None, eks_access_key_id=None, eks_assume_role=None, eks_cluster_cert=None, eks_cluster_endpoint=None, eks_cluster_name=None, eks_region='us-east-2', eks_secret_access_key=None, key=None, name=None, password=None, token=None, uid_token=None, username=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, comment=None, eks_access_key_id=None, eks_cluster_cert=None, eks_cluster_endpoint=None, eks_cluster_name=None, eks_region='us-east-2', eks_secret_access_key=None, key=None, name=None, password=None, token=None, uid_token=None, username=None, local_vars_configuration=None):  # noqa: E501
         """CreateEKSTarget - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -75,7 +73,6 @@ class CreateEKSTarget(object):
 
         self._comment = None
         self._eks_access_key_id = None
-        self._eks_assume_role = None
         self._eks_cluster_cert = None
         self._eks_cluster_endpoint = None
         self._eks_cluster_name = None
@@ -92,8 +89,6 @@ class CreateEKSTarget(object):
         if comment is not None:
             self.comment = comment
         self.eks_access_key_id = eks_access_key_id
-        if eks_assume_role is not None:
-            self.eks_assume_role = eks_assume_role
         self.eks_cluster_cert = eks_cluster_cert
         self.eks_cluster_endpoint = eks_cluster_endpoint
         self.eks_cluster_name = eks_cluster_name
@@ -159,29 +154,6 @@ class CreateEKSTarget(object):
             raise ValueError("Invalid value for `eks_access_key_id`, must not be `None`")  # noqa: E501
 
         self._eks_access_key_id = eks_access_key_id
-
-    @property
-    def eks_assume_role(self):
-        """Gets the eks_assume_role of this CreateEKSTarget.  # noqa: E501
-
-        IAM assume role  # noqa: E501
-
-        :return: The eks_assume_role of this CreateEKSTarget.  # noqa: E501
-        :rtype: str
-        """
-        return self._eks_assume_role
-
-    @eks_assume_role.setter
-    def eks_assume_role(self, eks_assume_role):
-        """Sets the eks_assume_role of this CreateEKSTarget.
-
-        IAM assume role  # noqa: E501
-
-        :param eks_assume_role: The eks_assume_role of this CreateEKSTarget.  # noqa: E501
-        :type: str
-        """
-
-        self._eks_assume_role = eks_assume_role
 
     @property
     def eks_cluster_cert(self):

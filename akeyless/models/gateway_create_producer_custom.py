@@ -35,7 +35,6 @@ class GatewayCreateProducerCustom(object):
     """
     openapi_types = {
         'create_sync_url': 'str',
-        'gateway_url': 'str',
         'name': 'str',
         'password': 'str',
         'payload': 'str',
@@ -51,7 +50,6 @@ class GatewayCreateProducerCustom(object):
 
     attribute_map = {
         'create_sync_url': 'create-sync-url',
-        'gateway_url': 'gateway-url',
         'name': 'name',
         'password': 'password',
         'payload': 'payload',
@@ -65,14 +63,13 @@ class GatewayCreateProducerCustom(object):
         'username': 'username'
     }
 
-    def __init__(self, create_sync_url=None, gateway_url='http://localhost:8000', name=None, password=None, payload=None, producer_encryption_key_name=None, revoke_sync_url=None, rotate_sync_url=None, timeout_sec=60, token=None, uid_token=None, user_ttl='60m', username=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, create_sync_url=None, name=None, password=None, payload=None, producer_encryption_key_name=None, revoke_sync_url=None, rotate_sync_url=None, timeout_sec=60, token=None, uid_token=None, user_ttl='60m', username=None, local_vars_configuration=None):  # noqa: E501
         """GatewayCreateProducerCustom - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._create_sync_url = None
-        self._gateway_url = None
         self._name = None
         self._password = None
         self._payload = None
@@ -87,8 +84,6 @@ class GatewayCreateProducerCustom(object):
         self.discriminator = None
 
         self.create_sync_url = create_sync_url
-        if gateway_url is not None:
-            self.gateway_url = gateway_url
         self.name = name
         if password is not None:
             self.password = password
@@ -134,29 +129,6 @@ class GatewayCreateProducerCustom(object):
             raise ValueError("Invalid value for `create_sync_url`, must not be `None`")  # noqa: E501
 
         self._create_sync_url = create_sync_url
-
-    @property
-    def gateway_url(self):
-        """Gets the gateway_url of this GatewayCreateProducerCustom.  # noqa: E501
-
-        Gateway url  # noqa: E501
-
-        :return: The gateway_url of this GatewayCreateProducerCustom.  # noqa: E501
-        :rtype: str
-        """
-        return self._gateway_url
-
-    @gateway_url.setter
-    def gateway_url(self, gateway_url):
-        """Sets the gateway_url of this GatewayCreateProducerCustom.
-
-        Gateway url  # noqa: E501
-
-        :param gateway_url: The gateway_url of this GatewayCreateProducerCustom.  # noqa: E501
-        :type: str
-        """
-
-        self._gateway_url = gateway_url
 
     @property
     def name(self):

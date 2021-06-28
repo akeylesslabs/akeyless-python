@@ -39,7 +39,6 @@ class GatewayCreateProducerArtifactory(object):
         'artifactory_token_audience': 'str',
         'artifactory_token_scope': 'str',
         'base_url': 'str',
-        'gateway_url': 'str',
         'name': 'str',
         'password': 'str',
         'producer_encryption_key_name': 'str',
@@ -55,7 +54,6 @@ class GatewayCreateProducerArtifactory(object):
         'artifactory_token_audience': 'artifactory-token-audience',
         'artifactory_token_scope': 'artifactory-token-scope',
         'base_url': 'base-url',
-        'gateway_url': 'gateway-url',
         'name': 'name',
         'password': 'password',
         'producer_encryption_key_name': 'producer-encryption-key-name',
@@ -65,7 +63,7 @@ class GatewayCreateProducerArtifactory(object):
         'username': 'username'
     }
 
-    def __init__(self, artifactory_admin_name=None, artifactory_admin_pwd=None, artifactory_token_audience=None, artifactory_token_scope=None, base_url=None, gateway_url='http://localhost:8000', name=None, password=None, producer_encryption_key_name=None, token=None, uid_token=None, user_ttl='60m', username=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, artifactory_admin_name=None, artifactory_admin_pwd=None, artifactory_token_audience=None, artifactory_token_scope=None, base_url=None, name=None, password=None, producer_encryption_key_name=None, token=None, uid_token=None, user_ttl='60m', username=None, local_vars_configuration=None):  # noqa: E501
         """GatewayCreateProducerArtifactory - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -76,7 +74,6 @@ class GatewayCreateProducerArtifactory(object):
         self._artifactory_token_audience = None
         self._artifactory_token_scope = None
         self._base_url = None
-        self._gateway_url = None
         self._name = None
         self._password = None
         self._producer_encryption_key_name = None
@@ -91,8 +88,6 @@ class GatewayCreateProducerArtifactory(object):
         self.artifactory_token_audience = artifactory_token_audience
         self.artifactory_token_scope = artifactory_token_scope
         self.base_url = base_url
-        if gateway_url is not None:
-            self.gateway_url = gateway_url
         self.name = name
         if password is not None:
             self.password = password
@@ -231,29 +226,6 @@ class GatewayCreateProducerArtifactory(object):
             raise ValueError("Invalid value for `base_url`, must not be `None`")  # noqa: E501
 
         self._base_url = base_url
-
-    @property
-    def gateway_url(self):
-        """Gets the gateway_url of this GatewayCreateProducerArtifactory.  # noqa: E501
-
-        Gateway url  # noqa: E501
-
-        :return: The gateway_url of this GatewayCreateProducerArtifactory.  # noqa: E501
-        :rtype: str
-        """
-        return self._gateway_url
-
-    @gateway_url.setter
-    def gateway_url(self, gateway_url):
-        """Sets the gateway_url of this GatewayCreateProducerArtifactory.
-
-        Gateway url  # noqa: E501
-
-        :param gateway_url: The gateway_url of this GatewayCreateProducerArtifactory.  # noqa: E501
-        :type: str
-        """
-
-        self._gateway_url = gateway_url
 
     @property
     def name(self):

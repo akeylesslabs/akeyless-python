@@ -35,8 +35,9 @@ class UpdateRotatedSecret(object):
     """
     openapi_types = {
         'add_tag': 'list[str]',
+        'api_id': 'str',
+        'api_key': 'str',
         'auto_rotate': 'str',
-        'gateway_url': 'str',
         'key': 'str',
         'name': 'str',
         'new_metadata': 'str',
@@ -56,8 +57,9 @@ class UpdateRotatedSecret(object):
 
     attribute_map = {
         'add_tag': 'add-tag',
+        'api_id': 'api-id',
+        'api_key': 'api-key',
         'auto_rotate': 'auto-rotate',
-        'gateway_url': 'gateway-url',
         'key': 'key',
         'name': 'name',
         'new_metadata': 'new-metadata',
@@ -75,15 +77,16 @@ class UpdateRotatedSecret(object):
         'username': 'username'
     }
 
-    def __init__(self, add_tag=None, auto_rotate=None, gateway_url='http://localhost:8000', key=None, name=None, new_metadata='default_metadata', new_name=None, new_version=False, password=None, rm_tag=None, rotation_hour=None, rotation_interval=None, rotator_creds_type=None, ssh_password=None, ssh_username=None, token=None, uid_token=None, username=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, add_tag=None, api_id=None, api_key=None, auto_rotate=None, key=None, name=None, new_metadata='default_metadata', new_name=None, new_version=False, password=None, rm_tag=None, rotation_hour=None, rotation_interval=None, rotator_creds_type=None, ssh_password=None, ssh_username=None, token=None, uid_token=None, username=None, local_vars_configuration=None):  # noqa: E501
         """UpdateRotatedSecret - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._add_tag = None
+        self._api_id = None
+        self._api_key = None
         self._auto_rotate = None
-        self._gateway_url = None
         self._key = None
         self._name = None
         self._new_metadata = None
@@ -103,10 +106,12 @@ class UpdateRotatedSecret(object):
 
         if add_tag is not None:
             self.add_tag = add_tag
+        if api_id is not None:
+            self.api_id = api_id
+        if api_key is not None:
+            self.api_key = api_key
         if auto_rotate is not None:
             self.auto_rotate = auto_rotate
-        if gateway_url is not None:
-            self.gateway_url = gateway_url
         if key is not None:
             self.key = key
         self.name = name
@@ -161,6 +166,48 @@ class UpdateRotatedSecret(object):
         self._add_tag = add_tag
 
     @property
+    def api_id(self):
+        """Gets the api_id of this UpdateRotatedSecret.  # noqa: E501
+
+
+        :return: The api_id of this UpdateRotatedSecret.  # noqa: E501
+        :rtype: str
+        """
+        return self._api_id
+
+    @api_id.setter
+    def api_id(self, api_id):
+        """Sets the api_id of this UpdateRotatedSecret.
+
+
+        :param api_id: The api_id of this UpdateRotatedSecret.  # noqa: E501
+        :type: str
+        """
+
+        self._api_id = api_id
+
+    @property
+    def api_key(self):
+        """Gets the api_key of this UpdateRotatedSecret.  # noqa: E501
+
+
+        :return: The api_key of this UpdateRotatedSecret.  # noqa: E501
+        :rtype: str
+        """
+        return self._api_key
+
+    @api_key.setter
+    def api_key(self, api_key):
+        """Sets the api_key of this UpdateRotatedSecret.
+
+
+        :param api_key: The api_key of this UpdateRotatedSecret.  # noqa: E501
+        :type: str
+        """
+
+        self._api_key = api_key
+
+    @property
     def auto_rotate(self):
         """Gets the auto_rotate of this UpdateRotatedSecret.  # noqa: E501
 
@@ -182,29 +229,6 @@ class UpdateRotatedSecret(object):
         """
 
         self._auto_rotate = auto_rotate
-
-    @property
-    def gateway_url(self):
-        """Gets the gateway_url of this UpdateRotatedSecret.  # noqa: E501
-
-        Gateway url  # noqa: E501
-
-        :return: The gateway_url of this UpdateRotatedSecret.  # noqa: E501
-        :rtype: str
-        """
-        return self._gateway_url
-
-    @gateway_url.setter
-    def gateway_url(self, gateway_url):
-        """Sets the gateway_url of this UpdateRotatedSecret.
-
-        Gateway url  # noqa: E501
-
-        :param gateway_url: The gateway_url of this UpdateRotatedSecret.  # noqa: E501
-        :type: str
-        """
-
-        self._gateway_url = gateway_url
 
     @property
     def key(self):

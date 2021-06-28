@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **cf** | [**CFConfigPart**](CFConfigPart.md) |  | [optional] 
 **config_protection_key_name** | **str** |  | [optional] 
 **general** | [**GeneralConfigPart**](GeneralConfigPart.md) |  | [optional] 
+**kmip_clients** | [**KMIPClientsConfigPart**](KMIPClientsConfigPart.md) |  | [optional] 
 **ldap** | [**LdapConfigPart**](LdapConfigPart.md) |  | [optional] 
 **leadership** | [**LeadershipConfigPart**](LeadershipConfigPart.md) |  | [optional] 
 **log_forwarding** | [**LogForwardingConfigPart**](LogForwardingConfigPart.md) |  | [optional] 

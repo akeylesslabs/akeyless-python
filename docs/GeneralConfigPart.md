@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **enable_tls_configure** | **bool** |  | [optional] 
 **enable_tls_curl** | **bool** |  | [optional] 
 **enable_tls_hvp** | **bool** |  | [optional] 
+**gw_cluster_url** | **str** |  | [optional] 
 **tcp_port** | **str** |  | [optional] 
 **tls_cert** | **str** |  | [optional] 
 **tls_key** | **str** |  | [optional] 

@@ -35,26 +35,31 @@ class ItemTargetAssociation(object):
     """
     openapi_types = {
         'assoc_id': 'str',
+        'target_id': 'int',
         'target_name': 'str'
     }
 
     attribute_map = {
         'assoc_id': 'assoc_id',
+        'target_id': 'target_id',
         'target_name': 'target_name'
     }
 
-    def __init__(self, assoc_id=None, target_name=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, assoc_id=None, target_id=None, target_name=None, local_vars_configuration=None):  # noqa: E501
         """ItemTargetAssociation - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._assoc_id = None
+        self._target_id = None
         self._target_name = None
         self.discriminator = None
 
         if assoc_id is not None:
             self.assoc_id = assoc_id
+        if target_id is not None:
+            self.target_id = target_id
         if target_name is not None:
             self.target_name = target_name
 
@@ -78,6 +83,27 @@ class ItemTargetAssociation(object):
         """
 
         self._assoc_id = assoc_id
+
+    @property
+    def target_id(self):
+        """Gets the target_id of this ItemTargetAssociation.  # noqa: E501
+
+
+        :return: The target_id of this ItemTargetAssociation.  # noqa: E501
+        :rtype: int
+        """
+        return self._target_id
+
+    @target_id.setter
+    def target_id(self, target_id):
+        """Sets the target_id of this ItemTargetAssociation.
+
+
+        :param target_id: The target_id of this ItemTargetAssociation.  # noqa: E501
+        :type: int
+        """
+
+        self._target_id = target_id
 
     @property
     def target_name(self):

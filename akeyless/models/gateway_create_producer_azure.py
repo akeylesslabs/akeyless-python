@@ -37,7 +37,6 @@ class GatewayCreateProducerAzure(object):
         'app_obj_id': 'str',
         'client_id': 'str',
         'client_secret': 'str',
-        'gateway_url': 'str',
         'name': 'str',
         'password': 'str',
         'producer_encryption_key_name': 'str',
@@ -57,7 +56,6 @@ class GatewayCreateProducerAzure(object):
         'app_obj_id': 'app-obj-id',
         'client_id': 'client-id',
         'client_secret': 'client-secret',
-        'gateway_url': 'gateway-url',
         'name': 'name',
         'password': 'password',
         'producer_encryption_key_name': 'producer-encryption-key-name',
@@ -73,7 +71,7 @@ class GatewayCreateProducerAzure(object):
         'username': 'username'
     }
 
-    def __init__(self, app_obj_id=None, client_id=None, client_secret=None, gateway_url='http://localhost:8000', name=None, password=None, producer_encryption_key_name=None, tenant_id=None, token=None, uid_token=None, user_group_obj_id=None, user_portal_access=False, user_principal_name=None, user_programmatic_access=True, user_role_template_id=None, user_ttl='60m', username=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, app_obj_id=None, client_id=None, client_secret=None, name=None, password=None, producer_encryption_key_name=None, tenant_id=None, token=None, uid_token=None, user_group_obj_id=None, user_portal_access=False, user_principal_name=None, user_programmatic_access=True, user_role_template_id=None, user_ttl='60m', username=None, local_vars_configuration=None):  # noqa: E501
         """GatewayCreateProducerAzure - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -82,7 +80,6 @@ class GatewayCreateProducerAzure(object):
         self._app_obj_id = None
         self._client_id = None
         self._client_secret = None
-        self._gateway_url = None
         self._name = None
         self._password = None
         self._producer_encryption_key_name = None
@@ -102,8 +99,6 @@ class GatewayCreateProducerAzure(object):
             self.app_obj_id = app_obj_id
         self.client_id = client_id
         self.client_secret = client_secret
-        if gateway_url is not None:
-            self.gateway_url = gateway_url
         self.name = name
         if password is not None:
             self.password = password
@@ -201,29 +196,6 @@ class GatewayCreateProducerAzure(object):
             raise ValueError("Invalid value for `client_secret`, must not be `None`")  # noqa: E501
 
         self._client_secret = client_secret
-
-    @property
-    def gateway_url(self):
-        """Gets the gateway_url of this GatewayCreateProducerAzure.  # noqa: E501
-
-        Gateway url  # noqa: E501
-
-        :return: The gateway_url of this GatewayCreateProducerAzure.  # noqa: E501
-        :rtype: str
-        """
-        return self._gateway_url
-
-    @gateway_url.setter
-    def gateway_url(self, gateway_url):
-        """Sets the gateway_url of this GatewayCreateProducerAzure.
-
-        Gateway url  # noqa: E501
-
-        :param gateway_url: The gateway_url of this GatewayCreateProducerAzure.  # noqa: E501
-        :type: str
-        """
-
-        self._gateway_url = gateway_url
 
     @property
     def name(self):

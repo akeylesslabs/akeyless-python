@@ -9,7 +9,6 @@ Name | Type | Description | Notes
 **allowed_domains** | **list[str]** | Allowed domains | [optional] 
 **auto_generated_folder** | **str** | Auto generated folder | [optional] 
 **enable_admin_rotation** | **bool** | Automatic admin credentials rotation | [optional] [default to False]
-**gateway_url** | **str** | Gateway url | [optional] [default to 'http://localhost:8000']
 **name** | **str** | Producer name | 
 **password** | **str** | Required only when the authentication process requires a username and password | [optional] 
 **producer_encryption_key_name** | **str** | Dynamic producer encryption key | [optional] 

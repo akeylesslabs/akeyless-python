@@ -58,7 +58,6 @@ class TargetTypeDetailsInput(object):
         'db_server_name': 'str',
         'db_user_name': 'str',
         'eks_access_key_id': 'str',
-        'eks_assume_role': 'str',
         'eks_cluster_ca_certificate': 'str',
         'eks_cluster_endpoint': 'str',
         'eks_cluster_name': 'str',
@@ -72,13 +71,16 @@ class TargetTypeDetailsInput(object):
         'gke_service_account_key': 'str',
         'gke_service_account_name': 'str',
         'host': 'str',
-        'mongodb_atlas': 'bool',
+        'k8s_bearer_token': 'str',
+        'k8s_cluster_ca_certificate': 'str',
+        'k8s_cluster_endpoint': 'str',
         'mongodb_atlas_api_private_key': 'str',
         'mongodb_atlas_api_public_key': 'str',
         'mongodb_atlas_project_id': 'str',
         'mongodb_db_name': 'str',
         'mongodb_default_auth_db': 'str',
         'mongodb_host_port': 'str',
+        'mongodb_is_atlas': 'bool',
         'mongodb_password': 'str',
         'mongodb_uri_connection': 'str',
         'mongodb_uri_options': 'str',
@@ -126,7 +128,6 @@ class TargetTypeDetailsInput(object):
         'db_server_name': 'db_server_name',
         'db_user_name': 'db_user_name',
         'eks_access_key_id': 'eks_access_key_id',
-        'eks_assume_role': 'eks_assume_role',
         'eks_cluster_ca_certificate': 'eks_cluster_ca_certificate',
         'eks_cluster_endpoint': 'eks_cluster_endpoint',
         'eks_cluster_name': 'eks_cluster_name',
@@ -140,13 +141,16 @@ class TargetTypeDetailsInput(object):
         'gke_service_account_key': 'gke_service_account_key',
         'gke_service_account_name': 'gke_service_account_name',
         'host': 'host',
-        'mongodb_atlas': 'mongodb_atlas',
+        'k8s_bearer_token': 'k8s_bearer_token',
+        'k8s_cluster_ca_certificate': 'k8s_cluster_ca_certificate',
+        'k8s_cluster_endpoint': 'k8s_cluster_endpoint',
         'mongodb_atlas_api_private_key': 'mongodb_atlas_api_private_key',
         'mongodb_atlas_api_public_key': 'mongodb_atlas_api_public_key',
         'mongodb_atlas_project_id': 'mongodb_atlas_project_id',
         'mongodb_db_name': 'mongodb_db_name',
         'mongodb_default_auth_db': 'mongodb_default_auth_db',
         'mongodb_host_port': 'mongodb_host_port',
+        'mongodb_is_atlas': 'mongodb_is_atlas',
         'mongodb_password': 'mongodb_password',
         'mongodb_uri_connection': 'mongodb_uri_connection',
         'mongodb_uri_options': 'mongodb_uri_options',
@@ -169,7 +173,7 @@ class TargetTypeDetailsInput(object):
         'venafi_zone': 'venafi_zone'
     }
 
-    def __init__(self, artifactory_admin_apikey=None, artifactory_admin_username=None, artifactory_base_url=None, aws_access_key_id=None, aws_region=None, aws_secret_access_key=None, aws_session_token=None, azure_client_id=None, azure_client_secret=None, azure_tenant_id=None, chef_server_host_name=None, chef_server_key=None, chef_server_port=None, chef_server_url=None, chef_server_username=None, chef_skip_ssl=None, db_host_name=None, db_name=None, db_port=None, db_pwd=None, db_server_certificates=None, db_server_name=None, db_user_name=None, eks_access_key_id=None, eks_assume_role=None, eks_cluster_ca_certificate=None, eks_cluster_endpoint=None, eks_cluster_name=None, eks_region=None, eks_secret_access_key=None, gcp_service_account_email=None, gcp_service_account_key=None, gke_cluster_ca_certificate=None, gke_cluster_endpoint=None, gke_cluster_name=None, gke_service_account_key=None, gke_service_account_name=None, host=None, mongodb_atlas=None, mongodb_atlas_api_private_key=None, mongodb_atlas_api_public_key=None, mongodb_atlas_project_id=None, mongodb_db_name=None, mongodb_default_auth_db=None, mongodb_host_port=None, mongodb_password=None, mongodb_uri_connection=None, mongodb_uri_options=None, mongodb_username=None, password=None, port=None, private_key=None, private_key_password=None, rabbitmq_server_password=None, rabbitmq_server_uri=None, rabbitmq_server_user=None, sf_account=None, url=None, username=None, venafi_api_key=None, venafi_base_url=None, venafi_tpp_password=None, venafi_tpp_username=None, venafi_use_tpp=None, venafi_zone=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, artifactory_admin_apikey=None, artifactory_admin_username=None, artifactory_base_url=None, aws_access_key_id=None, aws_region=None, aws_secret_access_key=None, aws_session_token=None, azure_client_id=None, azure_client_secret=None, azure_tenant_id=None, chef_server_host_name=None, chef_server_key=None, chef_server_port=None, chef_server_url=None, chef_server_username=None, chef_skip_ssl=None, db_host_name=None, db_name=None, db_port=None, db_pwd=None, db_server_certificates=None, db_server_name=None, db_user_name=None, eks_access_key_id=None, eks_cluster_ca_certificate=None, eks_cluster_endpoint=None, eks_cluster_name=None, eks_region=None, eks_secret_access_key=None, gcp_service_account_email=None, gcp_service_account_key=None, gke_cluster_ca_certificate=None, gke_cluster_endpoint=None, gke_cluster_name=None, gke_service_account_key=None, gke_service_account_name=None, host=None, k8s_bearer_token=None, k8s_cluster_ca_certificate=None, k8s_cluster_endpoint=None, mongodb_atlas_api_private_key=None, mongodb_atlas_api_public_key=None, mongodb_atlas_project_id=None, mongodb_db_name=None, mongodb_default_auth_db=None, mongodb_host_port=None, mongodb_is_atlas=None, mongodb_password=None, mongodb_uri_connection=None, mongodb_uri_options=None, mongodb_username=None, password=None, port=None, private_key=None, private_key_password=None, rabbitmq_server_password=None, rabbitmq_server_uri=None, rabbitmq_server_user=None, sf_account=None, url=None, username=None, venafi_api_key=None, venafi_base_url=None, venafi_tpp_password=None, venafi_tpp_username=None, venafi_use_tpp=None, venafi_zone=None, local_vars_configuration=None):  # noqa: E501
         """TargetTypeDetailsInput - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -199,7 +203,6 @@ class TargetTypeDetailsInput(object):
         self._db_server_name = None
         self._db_user_name = None
         self._eks_access_key_id = None
-        self._eks_assume_role = None
         self._eks_cluster_ca_certificate = None
         self._eks_cluster_endpoint = None
         self._eks_cluster_name = None
@@ -213,13 +216,16 @@ class TargetTypeDetailsInput(object):
         self._gke_service_account_key = None
         self._gke_service_account_name = None
         self._host = None
-        self._mongodb_atlas = None
+        self._k8s_bearer_token = None
+        self._k8s_cluster_ca_certificate = None
+        self._k8s_cluster_endpoint = None
         self._mongodb_atlas_api_private_key = None
         self._mongodb_atlas_api_public_key = None
         self._mongodb_atlas_project_id = None
         self._mongodb_db_name = None
         self._mongodb_default_auth_db = None
         self._mongodb_host_port = None
+        self._mongodb_is_atlas = None
         self._mongodb_password = None
         self._mongodb_uri_connection = None
         self._mongodb_uri_options = None
@@ -290,8 +296,6 @@ class TargetTypeDetailsInput(object):
             self.db_user_name = db_user_name
         if eks_access_key_id is not None:
             self.eks_access_key_id = eks_access_key_id
-        if eks_assume_role is not None:
-            self.eks_assume_role = eks_assume_role
         if eks_cluster_ca_certificate is not None:
             self.eks_cluster_ca_certificate = eks_cluster_ca_certificate
         if eks_cluster_endpoint is not None:
@@ -318,8 +322,12 @@ class TargetTypeDetailsInput(object):
             self.gke_service_account_name = gke_service_account_name
         if host is not None:
             self.host = host
-        if mongodb_atlas is not None:
-            self.mongodb_atlas = mongodb_atlas
+        if k8s_bearer_token is not None:
+            self.k8s_bearer_token = k8s_bearer_token
+        if k8s_cluster_ca_certificate is not None:
+            self.k8s_cluster_ca_certificate = k8s_cluster_ca_certificate
+        if k8s_cluster_endpoint is not None:
+            self.k8s_cluster_endpoint = k8s_cluster_endpoint
         if mongodb_atlas_api_private_key is not None:
             self.mongodb_atlas_api_private_key = mongodb_atlas_api_private_key
         if mongodb_atlas_api_public_key is not None:
@@ -332,6 +340,8 @@ class TargetTypeDetailsInput(object):
             self.mongodb_default_auth_db = mongodb_default_auth_db
         if mongodb_host_port is not None:
             self.mongodb_host_port = mongodb_host_port
+        if mongodb_is_atlas is not None:
+            self.mongodb_is_atlas = mongodb_is_atlas
         if mongodb_password is not None:
             self.mongodb_password = mongodb_password
         if mongodb_uri_connection is not None:
@@ -882,27 +892,6 @@ class TargetTypeDetailsInput(object):
         self._eks_access_key_id = eks_access_key_id
 
     @property
-    def eks_assume_role(self):
-        """Gets the eks_assume_role of this TargetTypeDetailsInput.  # noqa: E501
-
-
-        :return: The eks_assume_role of this TargetTypeDetailsInput.  # noqa: E501
-        :rtype: str
-        """
-        return self._eks_assume_role
-
-    @eks_assume_role.setter
-    def eks_assume_role(self, eks_assume_role):
-        """Sets the eks_assume_role of this TargetTypeDetailsInput.
-
-
-        :param eks_assume_role: The eks_assume_role of this TargetTypeDetailsInput.  # noqa: E501
-        :type: str
-        """
-
-        self._eks_assume_role = eks_assume_role
-
-    @property
     def eks_cluster_ca_certificate(self):
         """Gets the eks_cluster_ca_certificate of this TargetTypeDetailsInput.  # noqa: E501
 
@@ -1095,7 +1084,6 @@ class TargetTypeDetailsInput(object):
     def gke_cluster_name(self):
         """Gets the gke_cluster_name of this TargetTypeDetailsInput.  # noqa: E501
 
-        GKEProjectID            string `json:\"gke_project_id\"`  # noqa: E501
 
         :return: The gke_cluster_name of this TargetTypeDetailsInput.  # noqa: E501
         :rtype: str
@@ -1106,7 +1094,6 @@ class TargetTypeDetailsInput(object):
     def gke_cluster_name(self, gke_cluster_name):
         """Sets the gke_cluster_name of this TargetTypeDetailsInput.
 
-        GKEProjectID            string `json:\"gke_project_id\"`  # noqa: E501
 
         :param gke_cluster_name: The gke_cluster_name of this TargetTypeDetailsInput.  # noqa: E501
         :type: str
@@ -1139,7 +1126,6 @@ class TargetTypeDetailsInput(object):
     def gke_service_account_name(self):
         """Gets the gke_service_account_name of this TargetTypeDetailsInput.  # noqa: E501
 
-        GKEClusterComputeZone   string `json:\"gke_cluster_compute_zone\"`  # noqa: E501
 
         :return: The gke_service_account_name of this TargetTypeDetailsInput.  # noqa: E501
         :rtype: str
@@ -1150,7 +1136,6 @@ class TargetTypeDetailsInput(object):
     def gke_service_account_name(self, gke_service_account_name):
         """Sets the gke_service_account_name of this TargetTypeDetailsInput.
 
-        GKEClusterComputeZone   string `json:\"gke_cluster_compute_zone\"`  # noqa: E501
 
         :param gke_service_account_name: The gke_service_account_name of this TargetTypeDetailsInput.  # noqa: E501
         :type: str
@@ -1180,25 +1165,67 @@ class TargetTypeDetailsInput(object):
         self._host = host
 
     @property
-    def mongodb_atlas(self):
-        """Gets the mongodb_atlas of this TargetTypeDetailsInput.  # noqa: E501
+    def k8s_bearer_token(self):
+        """Gets the k8s_bearer_token of this TargetTypeDetailsInput.  # noqa: E501
 
 
-        :return: The mongodb_atlas of this TargetTypeDetailsInput.  # noqa: E501
-        :rtype: bool
+        :return: The k8s_bearer_token of this TargetTypeDetailsInput.  # noqa: E501
+        :rtype: str
         """
-        return self._mongodb_atlas
+        return self._k8s_bearer_token
 
-    @mongodb_atlas.setter
-    def mongodb_atlas(self, mongodb_atlas):
-        """Sets the mongodb_atlas of this TargetTypeDetailsInput.
+    @k8s_bearer_token.setter
+    def k8s_bearer_token(self, k8s_bearer_token):
+        """Sets the k8s_bearer_token of this TargetTypeDetailsInput.
 
 
-        :param mongodb_atlas: The mongodb_atlas of this TargetTypeDetailsInput.  # noqa: E501
-        :type: bool
+        :param k8s_bearer_token: The k8s_bearer_token of this TargetTypeDetailsInput.  # noqa: E501
+        :type: str
         """
 
-        self._mongodb_atlas = mongodb_atlas
+        self._k8s_bearer_token = k8s_bearer_token
+
+    @property
+    def k8s_cluster_ca_certificate(self):
+        """Gets the k8s_cluster_ca_certificate of this TargetTypeDetailsInput.  # noqa: E501
+
+
+        :return: The k8s_cluster_ca_certificate of this TargetTypeDetailsInput.  # noqa: E501
+        :rtype: str
+        """
+        return self._k8s_cluster_ca_certificate
+
+    @k8s_cluster_ca_certificate.setter
+    def k8s_cluster_ca_certificate(self, k8s_cluster_ca_certificate):
+        """Sets the k8s_cluster_ca_certificate of this TargetTypeDetailsInput.
+
+
+        :param k8s_cluster_ca_certificate: The k8s_cluster_ca_certificate of this TargetTypeDetailsInput.  # noqa: E501
+        :type: str
+        """
+
+        self._k8s_cluster_ca_certificate = k8s_cluster_ca_certificate
+
+    @property
+    def k8s_cluster_endpoint(self):
+        """Gets the k8s_cluster_endpoint of this TargetTypeDetailsInput.  # noqa: E501
+
+
+        :return: The k8s_cluster_endpoint of this TargetTypeDetailsInput.  # noqa: E501
+        :rtype: str
+        """
+        return self._k8s_cluster_endpoint
+
+    @k8s_cluster_endpoint.setter
+    def k8s_cluster_endpoint(self, k8s_cluster_endpoint):
+        """Sets the k8s_cluster_endpoint of this TargetTypeDetailsInput.
+
+
+        :param k8s_cluster_endpoint: The k8s_cluster_endpoint of this TargetTypeDetailsInput.  # noqa: E501
+        :type: str
+        """
+
+        self._k8s_cluster_endpoint = k8s_cluster_endpoint
 
     @property
     def mongodb_atlas_api_private_key(self):
@@ -1329,6 +1356,27 @@ class TargetTypeDetailsInput(object):
         """
 
         self._mongodb_host_port = mongodb_host_port
+
+    @property
+    def mongodb_is_atlas(self):
+        """Gets the mongodb_is_atlas of this TargetTypeDetailsInput.  # noqa: E501
+
+
+        :return: The mongodb_is_atlas of this TargetTypeDetailsInput.  # noqa: E501
+        :rtype: bool
+        """
+        return self._mongodb_is_atlas
+
+    @mongodb_is_atlas.setter
+    def mongodb_is_atlas(self, mongodb_is_atlas):
+        """Sets the mongodb_is_atlas of this TargetTypeDetailsInput.
+
+
+        :param mongodb_is_atlas: The mongodb_is_atlas of this TargetTypeDetailsInput.  # noqa: E501
+        :type: bool
+        """
+
+        self._mongodb_is_atlas = mongodb_is_atlas
 
     @property
     def mongodb_password(self):

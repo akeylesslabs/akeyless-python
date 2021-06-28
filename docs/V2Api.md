@@ -27,6 +27,7 @@ Method | HTTP request | Description
 [**create_gcp_target**](V2Api.md#create_gcp_target) | **POST** /create-gcp-target | 
 [**create_gke_target**](V2Api.md#create_gke_target) | **POST** /create-gke-target | 
 [**create_key**](V2Api.md#create_key) | **POST** /create-key | 
+[**create_native_k8_s_target**](V2Api.md#create_native_k8_s_target) | **POST** /create-k8s-target | 
 [**create_pki_cert_issuer**](V2Api.md#create_pki_cert_issuer) | **POST** /create-pki-cert-issuer | 
 [**create_rabbit_mq_target**](V2Api.md#create_rabbit_mq_target) | **POST** /create-rabbitmq-target | 
 [**create_role**](V2Api.md#create_role) | **POST** /create-role | 
@@ -63,6 +64,7 @@ Method | HTTP request | Description
 [**gateway_create_producer_mongo**](V2Api.md#gateway_create_producer_mongo) | **POST** /gateway-create-producer-mongo | 
 [**gateway_create_producer_mssql**](V2Api.md#gateway_create_producer_mssql) | **POST** /gateway-create-producer-mssql | 
 [**gateway_create_producer_my_sql**](V2Api.md#gateway_create_producer_my_sql) | **POST** /gateway-create-producer-mysql | 
+[**gateway_create_producer_native_k8_s**](V2Api.md#gateway_create_producer_native_k8_s) | **POST** /gateway-create-producer-k8s-native | 
 [**gateway_create_producer_postgre_sql**](V2Api.md#gateway_create_producer_postgre_sql) | **POST** /gateway-create-producer-postgresql | 
 [**gateway_create_producer_rabbit_mq**](V2Api.md#gateway_create_producer_rabbit_mq) | **POST** /gateway-create-producer-rabbitmq | 
 [**gateway_create_producer_rdp**](V2Api.md#gateway_create_producer_rdp) | **POST** /gateway-create-producer-rdp | 
@@ -110,18 +112,28 @@ Method | HTTP request | Description
 [**uid_revoke_token**](V2Api.md#uid_revoke_token) | **POST** /uid-revoke-token | 
 [**uid_rotate_token**](V2Api.md#uid_rotate_token) | **POST** /uid-rotate-token | 
 [**update_assoc**](V2Api.md#update_assoc) | **POST** /update-assoc | 
+[**update_aws_target**](V2Api.md#update_aws_target) | **PUT** /update-aws-target | 
 [**update_aws_target_details**](V2Api.md#update_aws_target_details) | **POST** /update-aws-target-details | 
+[**update_azure_target**](V2Api.md#update_azure_target) | **PUT** /update-azure-target | 
+[**update_db_target**](V2Api.md#update_db_target) | **POST** /update-db-target | 
 [**update_db_target_details**](V2Api.md#update_db_target_details) | **POST** /update-db-target-details | 
+[**update_eks_target**](V2Api.md#update_eks_target) | **PUT** /update-eks-target | 
+[**update_gcp_target**](V2Api.md#update_gcp_target) | **PUT** /update-gcp-target | 
+[**update_gke_target**](V2Api.md#update_gke_target) | **PUT** /update-gke-target | 
 [**update_item**](V2Api.md#update_item) | **POST** /update-item | 
+[**update_native_k8_s_target**](V2Api.md#update_native_k8_s_target) | **PUT** /update-k8s-target | 
+[**update_rabbit_mq_target**](V2Api.md#update_rabbit_mq_target) | **PUT** /update-rabbitmq-target | 
 [**update_rabbit_mq_target_details**](V2Api.md#update_rabbit_mq_target_details) | **POST** /update-rabbitmq-target-details | 
 [**update_rdp_target_details**](V2Api.md#update_rdp_target_details) | **POST** /update-rdp-target-details | 
 [**update_role**](V2Api.md#update_role) | **POST** /update-role | 
 [**update_rotated_secret**](V2Api.md#update_rotated_secret) | **POST** /update-rotated-secret | 
 [**update_rotation_settings**](V2Api.md#update_rotation_settings) | **POST** /update-rotation-settingsrotate-key | 
 [**update_secret_val**](V2Api.md#update_secret_val) | **POST** /update-secret-val | 
+[**update_ssh_target**](V2Api.md#update_ssh_target) | **POST** /update-ssh-target | 
 [**update_ssh_target_details**](V2Api.md#update_ssh_target_details) | **POST** /update-ssh-target-details | 
 [**update_target**](V2Api.md#update_target) | **POST** /update-target | 
 [**update_target_details**](V2Api.md#update_target_details) | **POST** /update-target-details | 
+[**update_web_target**](V2Api.md#update_web_target) | **POST** /update-web-target | 
 [**update_web_target_details**](V2Api.md#update_web_target_details) | **POST** /update-web-target-details | 
 [**upload_rsa**](V2Api.md#upload_rsa) | **POST** /upload-rsa | 
 [**verify_pkcs1**](V2Api.md#verify_pkcs1) | **POST** /verify-pkcs1 | 
@@ -1504,6 +1516,62 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | createKeyResponse wraps response body. |  -  |
+**0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **create_native_k8_s_target**
+> CreateNativeK8STarget create_native_k8_s_target()
+
+
+
+### Example
+
+```python
+from __future__ import print_function
+import time
+import akeyless
+from akeyless.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.akeyless.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = akeyless.Configuration(
+    host = "https://api.akeyless.io"
+)
+
+
+# Enter a context with an instance of the API client
+with akeyless.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = akeyless.V2Api(api_client)
+    
+    try:
+        api_response = api_instance.create_native_k8_s_target()
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling V2Api->create_native_k8_s_target: %s\n" % e)
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**CreateNativeK8STarget**](CreateNativeK8STarget.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | createNativeK8STarget |  -  |
 **0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -3664,6 +3732,62 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | gatewayCreateProducerMySQLResponse wraps response body. |  -  |
+**0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **gateway_create_producer_native_k8_s**
+> GatewayCreateProducerNativeK8SOutput gateway_create_producer_native_k8_s()
+
+
+
+### Example
+
+```python
+from __future__ import print_function
+import time
+import akeyless
+from akeyless.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.akeyless.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = akeyless.Configuration(
+    host = "https://api.akeyless.io"
+)
+
+
+# Enter a context with an instance of the API client
+with akeyless.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = akeyless.V2Api(api_client)
+    
+    try:
+        api_response = api_instance.gateway_create_producer_native_k8_s()
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling V2Api->gateway_create_producer_native_k8_s: %s\n" % e)
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**GatewayCreateProducerNativeK8SOutput**](GatewayCreateProducerNativeK8SOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**201** | gatewayCreateProducerNativeK8SResponse wraps response body. |  -  |
 **0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -6482,6 +6606,66 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **update_aws_target**
+> object update_aws_target(body)
+
+
+
+### Example
+
+```python
+from __future__ import print_function
+import time
+import akeyless
+from akeyless.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.akeyless.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = akeyless.Configuration(
+    host = "https://api.akeyless.io"
+)
+
+
+# Enter a context with an instance of the API client
+with akeyless.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = akeyless.V2Api(api_client)
+    body = akeyless.UpdateAWSTarget() # UpdateAWSTarget | 
+
+    try:
+        api_response = api_instance.update_aws_target(body)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling V2Api->update_aws_target: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**UpdateAWSTarget**](UpdateAWSTarget.md)|  | 
+
+### Return type
+
+**object**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | updateAWSTargetResponse wraps response body. |  -  |
+**0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **update_aws_target_details**
 > UpdateTargetOutput update_aws_target_details(body)
 
@@ -6538,6 +6722,126 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | updateTargetResponse wraps response body. |  -  |
+**0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **update_azure_target**
+> UpdateAzureTargetOutput update_azure_target(body)
+
+
+
+### Example
+
+```python
+from __future__ import print_function
+import time
+import akeyless
+from akeyless.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.akeyless.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = akeyless.Configuration(
+    host = "https://api.akeyless.io"
+)
+
+
+# Enter a context with an instance of the API client
+with akeyless.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = akeyless.V2Api(api_client)
+    body = akeyless.UpdateAzureTarget() # UpdateAzureTarget | 
+
+    try:
+        api_response = api_instance.update_azure_target(body)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling V2Api->update_azure_target: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**UpdateAzureTarget**](UpdateAzureTarget.md)|  | 
+
+### Return type
+
+[**UpdateAzureTargetOutput**](UpdateAzureTargetOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | updateAzureTargetResponse wraps response body. |  -  |
+**0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **update_db_target**
+> UpdateDBTargetOutput update_db_target(body)
+
+
+
+### Example
+
+```python
+from __future__ import print_function
+import time
+import akeyless
+from akeyless.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.akeyless.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = akeyless.Configuration(
+    host = "https://api.akeyless.io"
+)
+
+
+# Enter a context with an instance of the API client
+with akeyless.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = akeyless.V2Api(api_client)
+    body = akeyless.UpdateDBTarget() # UpdateDBTarget | 
+
+    try:
+        api_response = api_instance.update_db_target(body)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling V2Api->update_db_target: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**UpdateDBTarget**](UpdateDBTarget.md)|  | 
+
+### Return type
+
+[**UpdateDBTargetOutput**](UpdateDBTargetOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | updateDBTargetResponse wraps response body. |  -  |
 **0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -6602,6 +6906,186 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **update_eks_target**
+> UpdateEKSTargetOutput update_eks_target(body)
+
+
+
+### Example
+
+```python
+from __future__ import print_function
+import time
+import akeyless
+from akeyless.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.akeyless.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = akeyless.Configuration(
+    host = "https://api.akeyless.io"
+)
+
+
+# Enter a context with an instance of the API client
+with akeyless.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = akeyless.V2Api(api_client)
+    body = akeyless.UpdateEKSTarget() # UpdateEKSTarget | 
+
+    try:
+        api_response = api_instance.update_eks_target(body)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling V2Api->update_eks_target: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**UpdateEKSTarget**](UpdateEKSTarget.md)|  | 
+
+### Return type
+
+[**UpdateEKSTargetOutput**](UpdateEKSTargetOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | updateEKSTargetResponse wraps response body. |  -  |
+**0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **update_gcp_target**
+> UpdateGcpTargetOutput update_gcp_target(body)
+
+
+
+### Example
+
+```python
+from __future__ import print_function
+import time
+import akeyless
+from akeyless.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.akeyless.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = akeyless.Configuration(
+    host = "https://api.akeyless.io"
+)
+
+
+# Enter a context with an instance of the API client
+with akeyless.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = akeyless.V2Api(api_client)
+    body = akeyless.UpdateGcpTarget() # UpdateGcpTarget | 
+
+    try:
+        api_response = api_instance.update_gcp_target(body)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling V2Api->update_gcp_target: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**UpdateGcpTarget**](UpdateGcpTarget.md)|  | 
+
+### Return type
+
+[**UpdateGcpTargetOutput**](UpdateGcpTargetOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | updateGcpTargetResponse wraps response body. |  -  |
+**0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **update_gke_target**
+> UpdateGKETargetOutput update_gke_target(body)
+
+
+
+### Example
+
+```python
+from __future__ import print_function
+import time
+import akeyless
+from akeyless.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.akeyless.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = akeyless.Configuration(
+    host = "https://api.akeyless.io"
+)
+
+
+# Enter a context with an instance of the API client
+with akeyless.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = akeyless.V2Api(api_client)
+    body = akeyless.UpdateGKETarget() # UpdateGKETarget | 
+
+    try:
+        api_response = api_instance.update_gke_target(body)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling V2Api->update_gke_target: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**UpdateGKETarget**](UpdateGKETarget.md)|  | 
+
+### Return type
+
+[**UpdateGKETargetOutput**](UpdateGKETargetOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | updateGKETargetResponse wraps response body. |  -  |
+**0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **update_item**
 > UpdateItemOutput update_item(body)
 
@@ -6658,6 +7142,126 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | updateItemResponse wraps response body. |  -  |
+**0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **update_native_k8_s_target**
+> UpdateNativeK8STarget update_native_k8_s_target(body)
+
+
+
+### Example
+
+```python
+from __future__ import print_function
+import time
+import akeyless
+from akeyless.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.akeyless.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = akeyless.Configuration(
+    host = "https://api.akeyless.io"
+)
+
+
+# Enter a context with an instance of the API client
+with akeyless.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = akeyless.V2Api(api_client)
+    body = akeyless.UpdateNativeK8STarget() # UpdateNativeK8STarget | 
+
+    try:
+        api_response = api_instance.update_native_k8_s_target(body)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling V2Api->update_native_k8_s_target: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**UpdateNativeK8STarget**](UpdateNativeK8STarget.md)|  | 
+
+### Return type
+
+[**UpdateNativeK8STarget**](UpdateNativeK8STarget.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | updateNativeK8STarget |  -  |
+**0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **update_rabbit_mq_target**
+> UpdateRabbitMQTargetOutput update_rabbit_mq_target(body)
+
+
+
+### Example
+
+```python
+from __future__ import print_function
+import time
+import akeyless
+from akeyless.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.akeyless.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = akeyless.Configuration(
+    host = "https://api.akeyless.io"
+)
+
+
+# Enter a context with an instance of the API client
+with akeyless.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = akeyless.V2Api(api_client)
+    body = akeyless.UpdateRabbitMQTarget() # UpdateRabbitMQTarget | 
+
+    try:
+        api_response = api_instance.update_rabbit_mq_target(body)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling V2Api->update_rabbit_mq_target: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**UpdateRabbitMQTarget**](UpdateRabbitMQTarget.md)|  | 
+
+### Return type
+
+[**UpdateRabbitMQTargetOutput**](UpdateRabbitMQTargetOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | updateRabbitMQTargetResponse wraps response body. |  -  |
 **0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -7018,6 +7622,66 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **update_ssh_target**
+> UpdateSSHTargetOutput update_ssh_target(body)
+
+
+
+### Example
+
+```python
+from __future__ import print_function
+import time
+import akeyless
+from akeyless.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.akeyless.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = akeyless.Configuration(
+    host = "https://api.akeyless.io"
+)
+
+
+# Enter a context with an instance of the API client
+with akeyless.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = akeyless.V2Api(api_client)
+    body = akeyless.UpdateSSHTarget() # UpdateSSHTarget | 
+
+    try:
+        api_response = api_instance.update_ssh_target(body)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling V2Api->update_ssh_target: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**UpdateSSHTarget**](UpdateSSHTarget.md)|  | 
+
+### Return type
+
+[**UpdateSSHTargetOutput**](UpdateSSHTargetOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | updateSSHTargetResponse wraps response body. |  -  |
+**0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **update_ssh_target_details**
 > UpdateTargetOutput update_ssh_target_details(body)
 
@@ -7194,6 +7858,66 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | updateTargetResponse wraps response body. |  -  |
+**0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **update_web_target**
+> UpdateWebTargetOutput update_web_target(body)
+
+
+
+### Example
+
+```python
+from __future__ import print_function
+import time
+import akeyless
+from akeyless.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.akeyless.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = akeyless.Configuration(
+    host = "https://api.akeyless.io"
+)
+
+
+# Enter a context with an instance of the API client
+with akeyless.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = akeyless.V2Api(api_client)
+    body = akeyless.UpdateWebTarget() # UpdateWebTarget | 
+
+    try:
+        api_response = api_instance.update_web_target(body)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling V2Api->update_web_target: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**UpdateWebTarget**](UpdateWebTarget.md)|  | 
+
+### Return type
+
+[**UpdateWebTargetOutput**](UpdateWebTargetOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | updateWebTargetResponse wraps response body. |  -  |
 **0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

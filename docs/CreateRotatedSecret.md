@@ -3,8 +3,9 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**api_id** | **str** |  | [optional] 
+**api_key** | **str** |  | [optional] 
 **auto_rotate** | **str** | Whether to automatically rotate every --rotation-interval days, or disable existing automatic rotation | [optional] 
-**gateway_url** | **str** | Gateway url | [optional] [default to 'http://localhost:8000']
 **key** | **str** | The name of a key that used to encrypt the secret value (if empty, the account default protectionKey key will be used) | [optional] 
 **metadata** | **str** | Metadata about the secret | [optional] 
 **name** | **str** | Secret name | 

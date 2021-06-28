@@ -35,26 +35,31 @@ class GetPKICertificateOutput(object):
     """
     openapi_types = {
         'data': 'str',
+        'parent_cert': 'str',
         'path': 'str'
     }
 
     attribute_map = {
         'data': 'data',
+        'parent_cert': 'parent_cert',
         'path': 'path'
     }
 
-    def __init__(self, data=None, path=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, data=None, parent_cert=None, path=None, local_vars_configuration=None):  # noqa: E501
         """GetPKICertificateOutput - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._data = None
+        self._parent_cert = None
         self._path = None
         self.discriminator = None
 
         if data is not None:
             self.data = data
+        if parent_cert is not None:
+            self.parent_cert = parent_cert
         if path is not None:
             self.path = path
 
@@ -78,6 +83,27 @@ class GetPKICertificateOutput(object):
         """
 
         self._data = data
+
+    @property
+    def parent_cert(self):
+        """Gets the parent_cert of this GetPKICertificateOutput.  # noqa: E501
+
+
+        :return: The parent_cert of this GetPKICertificateOutput.  # noqa: E501
+        :rtype: str
+        """
+        return self._parent_cert
+
+    @parent_cert.setter
+    def parent_cert(self, parent_cert):
+        """Sets the parent_cert of this GetPKICertificateOutput.
+
+
+        :param parent_cert: The parent_cert of this GetPKICertificateOutput.  # noqa: E501
+        :type: str
+        """
+
+        self._parent_cert = parent_cert
 
     @property
     def path(self):

@@ -34,7 +34,6 @@ class GatewayCreateProducerGcp(object):
                             and the value is json key in definition.
     """
     openapi_types = {
-        'gateway_url': 'str',
         'gcp_cred_type': 'str',
         'gcp_key': 'str',
         'gcp_key_algo': 'str',
@@ -50,7 +49,6 @@ class GatewayCreateProducerGcp(object):
     }
 
     attribute_map = {
-        'gateway_url': 'gateway-url',
         'gcp_cred_type': 'gcp-cred-type',
         'gcp_key': 'gcp-key',
         'gcp_key_algo': 'gcp-key-algo',
@@ -65,13 +63,12 @@ class GatewayCreateProducerGcp(object):
         'username': 'username'
     }
 
-    def __init__(self, gateway_url='http://localhost:8000', gcp_cred_type=None, gcp_key=None, gcp_key_algo=None, gcp_sa_email=None, gcp_token_scopes=None, name=None, password=None, producer_encryption_key_name=None, token=None, uid_token=None, user_ttl='60m', username=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, gcp_cred_type=None, gcp_key=None, gcp_key_algo=None, gcp_sa_email=None, gcp_token_scopes=None, name=None, password=None, producer_encryption_key_name=None, token=None, uid_token=None, user_ttl='60m', username=None, local_vars_configuration=None):  # noqa: E501
         """GatewayCreateProducerGcp - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
-        self._gateway_url = None
         self._gcp_cred_type = None
         self._gcp_key = None
         self._gcp_key_algo = None
@@ -86,8 +83,6 @@ class GatewayCreateProducerGcp(object):
         self._username = None
         self.discriminator = None
 
-        if gateway_url is not None:
-            self.gateway_url = gateway_url
         self.gcp_cred_type = gcp_cred_type
         if gcp_key is not None:
             self.gcp_key = gcp_key
@@ -109,29 +104,6 @@ class GatewayCreateProducerGcp(object):
             self.user_ttl = user_ttl
         if username is not None:
             self.username = username
-
-    @property
-    def gateway_url(self):
-        """Gets the gateway_url of this GatewayCreateProducerGcp.  # noqa: E501
-
-        Gateway url  # noqa: E501
-
-        :return: The gateway_url of this GatewayCreateProducerGcp.  # noqa: E501
-        :rtype: str
-        """
-        return self._gateway_url
-
-    @gateway_url.setter
-    def gateway_url(self, gateway_url):
-        """Sets the gateway_url of this GatewayCreateProducerGcp.
-
-        Gateway url  # noqa: E501
-
-        :param gateway_url: The gateway_url of this GatewayCreateProducerGcp.  # noqa: E501
-        :type: str
-        """
-
-        self._gateway_url = gateway_url
 
     @property
     def gcp_cred_type(self):

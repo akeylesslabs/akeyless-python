@@ -44,7 +44,6 @@ class GatewayCreateProducerAws(object):
         'aws_user_policies': 'str',
         'aws_user_programmatic_access': 'bool',
         'enable_admin_rotation': 'bool',
-        'gateway_url': 'str',
         'name': 'str',
         'password': 'str',
         'producer_encryption_key_name': 'str',
@@ -66,7 +65,6 @@ class GatewayCreateProducerAws(object):
         'aws_user_policies': 'aws-user-policies',
         'aws_user_programmatic_access': 'aws-user-programmatic-access',
         'enable_admin_rotation': 'enable-admin-rotation',
-        'gateway_url': 'gateway-url',
         'name': 'name',
         'password': 'password',
         'producer_encryption_key_name': 'producer-encryption-key-name',
@@ -77,7 +75,7 @@ class GatewayCreateProducerAws(object):
         'username': 'username'
     }
 
-    def __init__(self, access_key_id=None, access_mode=None, access_secret_key=None, admin_rotation_interval_days=0, aws_role_arns=None, aws_user_console_access=False, aws_user_groups=None, aws_user_policies=None, aws_user_programmatic_access=True, enable_admin_rotation=False, gateway_url='http://localhost:8000', name=None, password=None, producer_encryption_key_name=None, region='us-east-2', token=None, uid_token=None, user_ttl='60m', username=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, access_key_id=None, access_mode=None, access_secret_key=None, admin_rotation_interval_days=0, aws_role_arns=None, aws_user_console_access=False, aws_user_groups=None, aws_user_policies=None, aws_user_programmatic_access=True, enable_admin_rotation=False, name=None, password=None, producer_encryption_key_name=None, region='us-east-2', token=None, uid_token=None, user_ttl='60m', username=None, local_vars_configuration=None):  # noqa: E501
         """GatewayCreateProducerAws - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -93,7 +91,6 @@ class GatewayCreateProducerAws(object):
         self._aws_user_policies = None
         self._aws_user_programmatic_access = None
         self._enable_admin_rotation = None
-        self._gateway_url = None
         self._name = None
         self._password = None
         self._producer_encryption_key_name = None
@@ -122,8 +119,6 @@ class GatewayCreateProducerAws(object):
             self.aws_user_programmatic_access = aws_user_programmatic_access
         if enable_admin_rotation is not None:
             self.enable_admin_rotation = enable_admin_rotation
-        if gateway_url is not None:
-            self.gateway_url = gateway_url
         self.name = name
         if password is not None:
             self.password = password
@@ -371,29 +366,6 @@ class GatewayCreateProducerAws(object):
         """
 
         self._enable_admin_rotation = enable_admin_rotation
-
-    @property
-    def gateway_url(self):
-        """Gets the gateway_url of this GatewayCreateProducerAws.  # noqa: E501
-
-        Gateway url  # noqa: E501
-
-        :return: The gateway_url of this GatewayCreateProducerAws.  # noqa: E501
-        :rtype: str
-        """
-        return self._gateway_url
-
-    @gateway_url.setter
-    def gateway_url(self, gateway_url):
-        """Sets the gateway_url of this GatewayCreateProducerAws.
-
-        Gateway url  # noqa: E501
-
-        :param gateway_url: The gateway_url of this GatewayCreateProducerAws.  # noqa: E501
-        :type: str
-        """
-
-        self._gateway_url = gateway_url
 
     @property
     def name(self):

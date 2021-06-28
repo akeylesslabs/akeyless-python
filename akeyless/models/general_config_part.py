@@ -40,6 +40,7 @@ class GeneralConfigPart(object):
         'enable_tls_configure': 'bool',
         'enable_tls_curl': 'bool',
         'enable_tls_hvp': 'bool',
+        'gw_cluster_url': 'str',
         'tcp_port': 'str',
         'tls_cert': 'str',
         'tls_key': 'str'
@@ -52,12 +53,13 @@ class GeneralConfigPart(object):
         'enable_tls_configure': 'enable_tls_configure',
         'enable_tls_curl': 'enable_tls_curl',
         'enable_tls_hvp': 'enable_tls_hvp',
+        'gw_cluster_url': 'gw_cluster_url',
         'tcp_port': 'tcp_port',
         'tls_cert': 'tls_cert',
         'tls_key': 'tls_key'
     }
 
-    def __init__(self, akeyless_url=None, api_token_ttl=None, enable_tls=None, enable_tls_configure=None, enable_tls_curl=None, enable_tls_hvp=None, tcp_port=None, tls_cert=None, tls_key=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, akeyless_url=None, api_token_ttl=None, enable_tls=None, enable_tls_configure=None, enable_tls_curl=None, enable_tls_hvp=None, gw_cluster_url=None, tcp_port=None, tls_cert=None, tls_key=None, local_vars_configuration=None):  # noqa: E501
         """GeneralConfigPart - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -69,6 +71,7 @@ class GeneralConfigPart(object):
         self._enable_tls_configure = None
         self._enable_tls_curl = None
         self._enable_tls_hvp = None
+        self._gw_cluster_url = None
         self._tcp_port = None
         self._tls_cert = None
         self._tls_key = None
@@ -86,6 +89,8 @@ class GeneralConfigPart(object):
             self.enable_tls_curl = enable_tls_curl
         if enable_tls_hvp is not None:
             self.enable_tls_hvp = enable_tls_hvp
+        if gw_cluster_url is not None:
+            self.gw_cluster_url = gw_cluster_url
         if tcp_port is not None:
             self.tcp_port = tcp_port
         if tls_cert is not None:
@@ -218,6 +223,27 @@ class GeneralConfigPart(object):
         """
 
         self._enable_tls_hvp = enable_tls_hvp
+
+    @property
+    def gw_cluster_url(self):
+        """Gets the gw_cluster_url of this GeneralConfigPart.  # noqa: E501
+
+
+        :return: The gw_cluster_url of this GeneralConfigPart.  # noqa: E501
+        :rtype: str
+        """
+        return self._gw_cluster_url
+
+    @gw_cluster_url.setter
+    def gw_cluster_url(self, gw_cluster_url):
+        """Sets the gw_cluster_url of this GeneralConfigPart.
+
+
+        :param gw_cluster_url: The gw_cluster_url of this GeneralConfigPart.  # noqa: E501
+        :type: str
+        """
+
+        self._gw_cluster_url = gw_cluster_url
 
     @property
     def tcp_port(self):

@@ -36,7 +36,6 @@ class GatewayCreateProducerSnowflake(object):
     openapi_types = {
         'account': 'str',
         'db_name': 'str',
-        'gateway_url': 'str',
         'name': 'str',
         'password': 'str',
         'role': 'str',
@@ -50,7 +49,6 @@ class GatewayCreateProducerSnowflake(object):
     attribute_map = {
         'account': 'account',
         'db_name': 'db-name',
-        'gateway_url': 'gateway-url',
         'name': 'name',
         'password': 'password',
         'role': 'role',
@@ -61,7 +59,7 @@ class GatewayCreateProducerSnowflake(object):
         'warehouse': 'warehouse'
     }
 
-    def __init__(self, account=None, db_name=None, gateway_url='http://localhost:8000', name=None, password=None, role=None, token=None, uid_token=None, user_ttl='24h', username=None, warehouse=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, account=None, db_name=None, name=None, password=None, role=None, token=None, uid_token=None, user_ttl='24h', username=None, warehouse=None, local_vars_configuration=None):  # noqa: E501
         """GatewayCreateProducerSnowflake - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -69,7 +67,6 @@ class GatewayCreateProducerSnowflake(object):
 
         self._account = None
         self._db_name = None
-        self._gateway_url = None
         self._name = None
         self._password = None
         self._role = None
@@ -82,8 +79,6 @@ class GatewayCreateProducerSnowflake(object):
 
         self.account = account
         self.db_name = db_name
-        if gateway_url is not None:
-            self.gateway_url = gateway_url
         self.name = name
         if password is not None:
             self.password = password
@@ -149,29 +144,6 @@ class GatewayCreateProducerSnowflake(object):
             raise ValueError("Invalid value for `db_name`, must not be `None`")  # noqa: E501
 
         self._db_name = db_name
-
-    @property
-    def gateway_url(self):
-        """Gets the gateway_url of this GatewayCreateProducerSnowflake.  # noqa: E501
-
-        Gateway url  # noqa: E501
-
-        :return: The gateway_url of this GatewayCreateProducerSnowflake.  # noqa: E501
-        :rtype: str
-        """
-        return self._gateway_url
-
-    @gateway_url.setter
-    def gateway_url(self, gateway_url):
-        """Sets the gateway_url of this GatewayCreateProducerSnowflake.
-
-        Gateway url  # noqa: E501
-
-        :param gateway_url: The gateway_url of this GatewayCreateProducerSnowflake.  # noqa: E501
-        :type: str
-        """
-
-        self._gateway_url = gateway_url
 
     @property
     def name(self):

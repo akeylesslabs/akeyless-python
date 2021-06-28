@@ -6,7 +6,6 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **allow_gw_api** | **bool** |  | [optional] 
 **allow_gw_login** | **bool** |  | [optional] 
-**gateway_url** | **str** | Gateway url | [optional] [default to 'http://localhost:8000']
 **password** | **str** | Required only when the authentication process requires a username and password | [optional] 
 **sub_admin_access_id** | **str** | SubAdmins to add | 
 **sub_claims** | **dict(str, str)** | key/val of sub claims, e.g group&#x3D;admins,developers | [optional] 

@@ -6,7 +6,6 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **account** | **str** | Account name | 
 **db_name** | **str** | Database name | 
-**gateway_url** | **str** | Gateway url | [optional] [default to 'http://localhost:8000']
 **name** | **str** | Producer name | 
 **password** | **str** | Required only when the authentication process requires a username and password | [optional] 
 **role** | **str** | User role | [optional] 

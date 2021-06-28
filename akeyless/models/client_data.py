@@ -35,15 +35,17 @@ class ClientData(object):
     """
     openapi_types = {
         'client_certificate_data': 'str',
-        'client_key_data': 'str'
+        'client_key_data': 'str',
+        'parent_certificate_data': 'str'
     }
 
     attribute_map = {
         'client_certificate_data': 'clientCertificateData',
-        'client_key_data': 'clientKeyData'
+        'client_key_data': 'clientKeyData',
+        'parent_certificate_data': 'parentCertificateData'
     }
 
-    def __init__(self, client_certificate_data=None, client_key_data=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, client_certificate_data=None, client_key_data=None, parent_certificate_data=None, local_vars_configuration=None):  # noqa: E501
         """ClientData - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -51,12 +53,15 @@ class ClientData(object):
 
         self._client_certificate_data = None
         self._client_key_data = None
+        self._parent_certificate_data = None
         self.discriminator = None
 
         if client_certificate_data is not None:
             self.client_certificate_data = client_certificate_data
         if client_key_data is not None:
             self.client_key_data = client_key_data
+        if parent_certificate_data is not None:
+            self.parent_certificate_data = parent_certificate_data
 
     @property
     def client_certificate_data(self):
@@ -99,6 +104,27 @@ class ClientData(object):
         """
 
         self._client_key_data = client_key_data
+
+    @property
+    def parent_certificate_data(self):
+        """Gets the parent_certificate_data of this ClientData.  # noqa: E501
+
+
+        :return: The parent_certificate_data of this ClientData.  # noqa: E501
+        :rtype: str
+        """
+        return self._parent_certificate_data
+
+    @parent_certificate_data.setter
+    def parent_certificate_data(self, parent_certificate_data):
+        """Sets the parent_certificate_data of this ClientData.
+
+
+        :param parent_certificate_data: The parent_certificate_data of this ClientData.  # noqa: E501
+        :type: str
+        """
+
+        self._parent_certificate_data = parent_certificate_data
 
     def to_dict(self):
         """Returns the model properties as a dict"""

@@ -35,7 +35,6 @@ class GatewayCreateProducerPostgreSQL(object):
     """
     openapi_types = {
         'creation_statements': 'str',
-        'gateway_url': 'str',
         'name': 'str',
         'password': 'str',
         'postgresql_db_name': 'str',
@@ -52,7 +51,6 @@ class GatewayCreateProducerPostgreSQL(object):
 
     attribute_map = {
         'creation_statements': 'creation-statements',
-        'gateway_url': 'gateway-url',
         'name': 'name',
         'password': 'password',
         'postgresql_db_name': 'postgresql-db-name',
@@ -67,14 +65,13 @@ class GatewayCreateProducerPostgreSQL(object):
         'username': 'username'
     }
 
-    def __init__(self, creation_statements=None, gateway_url='http://localhost:8000', name=None, password=None, postgresql_db_name=None, postgresql_host='127.0.0.1', postgresql_password=None, postgresql_port='5432', postgresql_username=None, producer_encryption_key=None, token=None, uid_token=None, user_ttl='60m', username=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, creation_statements=None, name=None, password=None, postgresql_db_name=None, postgresql_host='127.0.0.1', postgresql_password=None, postgresql_port='5432', postgresql_username=None, producer_encryption_key=None, token=None, uid_token=None, user_ttl='60m', username=None, local_vars_configuration=None):  # noqa: E501
         """GatewayCreateProducerPostgreSQL - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._creation_statements = None
-        self._gateway_url = None
         self._name = None
         self._password = None
         self._postgresql_db_name = None
@@ -91,8 +88,6 @@ class GatewayCreateProducerPostgreSQL(object):
 
         if creation_statements is not None:
             self.creation_statements = creation_statements
-        if gateway_url is not None:
-            self.gateway_url = gateway_url
         self.name = name
         if password is not None:
             self.password = password
@@ -136,29 +131,6 @@ class GatewayCreateProducerPostgreSQL(object):
         """
 
         self._creation_statements = creation_statements
-
-    @property
-    def gateway_url(self):
-        """Gets the gateway_url of this GatewayCreateProducerPostgreSQL.  # noqa: E501
-
-        Gateway url  # noqa: E501
-
-        :return: The gateway_url of this GatewayCreateProducerPostgreSQL.  # noqa: E501
-        :rtype: str
-        """
-        return self._gateway_url
-
-    @gateway_url.setter
-    def gateway_url(self, gateway_url):
-        """Sets the gateway_url of this GatewayCreateProducerPostgreSQL.
-
-        Gateway url  # noqa: E501
-
-        :param gateway_url: The gateway_url of this GatewayCreateProducerPostgreSQL.  # noqa: E501
-        :type: str
-        """
-
-        self._gateway_url = gateway_url
 
     @property
     def name(self):

@@ -15,7 +15,7 @@
 
 from __future__ import absolute_import
 
-__version__ = "2.4.3"
+__version__ = "2.4.4"
 
 # import apis into sdk package
 from akeyless.api.v2_api import V2Api
@@ -96,6 +96,8 @@ from akeyless.models.create_gcp_target import CreateGcpTarget
 from akeyless.models.create_gcp_target_output import CreateGcpTargetOutput
 from akeyless.models.create_key import CreateKey
 from akeyless.models.create_key_output import CreateKeyOutput
+from akeyless.models.create_native_k8_s_target import CreateNativeK8STarget
+from akeyless.models.create_native_k8_s_target_output import CreateNativeK8STargetOutput
 from akeyless.models.create_pki_cert_issuer import CreatePKICertIssuer
 from akeyless.models.create_pki_cert_issuer_output import CreatePKICertIssuerOutput
 from akeyless.models.create_rabbit_mq_target import CreateRabbitMQTarget
@@ -178,6 +180,8 @@ from akeyless.models.gateway_create_producer_mongo import GatewayCreateProducerM
 from akeyless.models.gateway_create_producer_mongo_output import GatewayCreateProducerMongoOutput
 from akeyless.models.gateway_create_producer_my_sql import GatewayCreateProducerMySQL
 from akeyless.models.gateway_create_producer_my_sql_output import GatewayCreateProducerMySQLOutput
+from akeyless.models.gateway_create_producer_native_k8_s import GatewayCreateProducerNativeK8S
+from akeyless.models.gateway_create_producer_native_k8_s_output import GatewayCreateProducerNativeK8SOutput
 from akeyless.models.gateway_create_producer_postgre_sql import GatewayCreateProducerPostgreSQL
 from akeyless.models.gateway_create_producer_postgre_sql_output import GatewayCreateProducerPostgreSQLOutput
 from akeyless.models.gateway_create_producer_rabbit_mq import GatewayCreateProducerRabbitMQ
@@ -233,6 +237,8 @@ from akeyless.models.item_version import ItemVersion
 from akeyless.models.json_error import JSONError
 from akeyless.models.k8_s_migration import K8SMigration
 from akeyless.models.k8_s_payload import K8SPayload
+from akeyless.models.kmip_client import KMIPClient
+from akeyless.models.kmip_clients_config_part import KMIPClientsConfigPart
 from akeyless.models.ldap_access_rules import LDAPAccessRules
 from akeyless.models.ldap_config_part import LdapConfigPart
 from akeyless.models.leadership_config_part import LeadershipConfigPart
@@ -301,26 +307,45 @@ from akeyless.models.uid_rotate_token_output import UidRotateTokenOutput
 from akeyless.models.unconfigure import Unconfigure
 from akeyless.models.universal_identity_access_rules import UniversalIdentityAccessRules
 from akeyless.models.universal_identity_details import UniversalIdentityDetails
+from akeyless.models.update_aws_target import UpdateAWSTarget
 from akeyless.models.update_aws_target_details import UpdateAWSTargetDetails
 from akeyless.models.update_assoc import UpdateAssoc
+from akeyless.models.update_azure_target import UpdateAzureTarget
+from akeyless.models.update_azure_target_output import UpdateAzureTargetOutput
+from akeyless.models.update_db_target import UpdateDBTarget
 from akeyless.models.update_db_target_details import UpdateDBTargetDetails
+from akeyless.models.update_db_target_output import UpdateDBTargetOutput
+from akeyless.models.update_eks_target import UpdateEKSTarget
+from akeyless.models.update_eks_target_output import UpdateEKSTargetOutput
+from akeyless.models.update_gke_target import UpdateGKETarget
+from akeyless.models.update_gke_target_output import UpdateGKETargetOutput
+from akeyless.models.update_gcp_target import UpdateGcpTarget
+from akeyless.models.update_gcp_target_output import UpdateGcpTargetOutput
 from akeyless.models.update_item import UpdateItem
 from akeyless.models.update_item_output import UpdateItemOutput
+from akeyless.models.update_native_k8_s_target import UpdateNativeK8STarget
+from akeyless.models.update_native_k8_s_target_output import UpdateNativeK8STargetOutput
 from akeyless.models.update_output import UpdateOutput
 from akeyless.models.update_rdp_target_details import UpdateRDPTargetDetails
+from akeyless.models.update_rabbit_mq_target import UpdateRabbitMQTarget
 from akeyless.models.update_rabbit_mq_target_details import UpdateRabbitMQTargetDetails
+from akeyless.models.update_rabbit_mq_target_output import UpdateRabbitMQTargetOutput
 from akeyless.models.update_role import UpdateRole
 from akeyless.models.update_role_output import UpdateRoleOutput
 from akeyless.models.update_rotated_secret import UpdateRotatedSecret
 from akeyless.models.update_rotated_secret_output import UpdateRotatedSecretOutput
 from akeyless.models.update_rotation_settings import UpdateRotationSettings
+from akeyless.models.update_ssh_target import UpdateSSHTarget
 from akeyless.models.update_ssh_target_details import UpdateSSHTargetDetails
+from akeyless.models.update_ssh_target_output import UpdateSSHTargetOutput
 from akeyless.models.update_secret_val import UpdateSecretVal
 from akeyless.models.update_secret_val_output import UpdateSecretValOutput
 from akeyless.models.update_target import UpdateTarget
 from akeyless.models.update_target_details_output import UpdateTargetDetailsOutput
 from akeyless.models.update_target_output import UpdateTargetOutput
+from akeyless.models.update_web_target import UpdateWebTarget
 from akeyless.models.update_web_target_details import UpdateWebTargetDetails
+from akeyless.models.update_web_target_output import UpdateWebTargetOutput
 from akeyless.models.upload_pkcs12 import UploadPKCS12
 from akeyless.models.upload_rsa import UploadRSA
 from akeyless.models.verify_pkcs1 import VerifyPKCS1

@@ -41,7 +41,6 @@ class GatewayCreateProducerEks(object):
         'eks_cluster_name': 'str',
         'eks_region': 'str',
         'eks_secret_access_key': 'str',
-        'gateway_url': 'str',
         'name': 'str',
         'password': 'str',
         'producer_encryption_key_name': 'str',
@@ -59,7 +58,6 @@ class GatewayCreateProducerEks(object):
         'eks_cluster_name': 'eks-cluster-name',
         'eks_region': 'eks-region',
         'eks_secret_access_key': 'eks-secret-access-key',
-        'gateway_url': 'gateway-url',
         'name': 'name',
         'password': 'password',
         'producer_encryption_key_name': 'producer-encryption-key-name',
@@ -69,7 +67,7 @@ class GatewayCreateProducerEks(object):
         'username': 'username'
     }
 
-    def __init__(self, eks_access_key_id=None, eks_assume_role=None, eks_cluster_cert=None, eks_cluster_endpoint=None, eks_cluster_name=None, eks_region='us-east-2', eks_secret_access_key=None, gateway_url='http://localhost:8000', name=None, password=None, producer_encryption_key_name=None, token=None, uid_token=None, user_ttl='60m', username=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, eks_access_key_id=None, eks_assume_role=None, eks_cluster_cert=None, eks_cluster_endpoint=None, eks_cluster_name=None, eks_region='us-east-2', eks_secret_access_key=None, name=None, password=None, producer_encryption_key_name=None, token=None, uid_token=None, user_ttl='60m', username=None, local_vars_configuration=None):  # noqa: E501
         """GatewayCreateProducerEks - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -82,7 +80,6 @@ class GatewayCreateProducerEks(object):
         self._eks_cluster_name = None
         self._eks_region = None
         self._eks_secret_access_key = None
-        self._gateway_url = None
         self._name = None
         self._password = None
         self._producer_encryption_key_name = None
@@ -101,8 +98,6 @@ class GatewayCreateProducerEks(object):
         if eks_region is not None:
             self.eks_region = eks_region
         self.eks_secret_access_key = eks_secret_access_key
-        if gateway_url is not None:
-            self.gateway_url = gateway_url
         self.name = name
         if password is not None:
             self.password = password
@@ -287,29 +282,6 @@ class GatewayCreateProducerEks(object):
             raise ValueError("Invalid value for `eks_secret_access_key`, must not be `None`")  # noqa: E501
 
         self._eks_secret_access_key = eks_secret_access_key
-
-    @property
-    def gateway_url(self):
-        """Gets the gateway_url of this GatewayCreateProducerEks.  # noqa: E501
-
-        Gateway url  # noqa: E501
-
-        :return: The gateway_url of this GatewayCreateProducerEks.  # noqa: E501
-        :rtype: str
-        """
-        return self._gateway_url
-
-    @gateway_url.setter
-    def gateway_url(self, gateway_url):
-        """Sets the gateway_url of this GatewayCreateProducerEks.
-
-        Gateway url  # noqa: E501
-
-        :param gateway_url: The gateway_url of this GatewayCreateProducerEks.  # noqa: E501
-        :type: str
-        """
-
-        self._gateway_url = gateway_url
 
     @property
     def name(self):

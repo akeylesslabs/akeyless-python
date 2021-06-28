@@ -4,7 +4,6 @@ gatewayCreateProducerGcp is a command that creates a GCP producer
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**gateway_url** | **str** | Gateway url | [optional] [default to 'http://localhost:8000']
 **gcp_cred_type** | **str** |  | 
 **gcp_key** | **str** | Base64-encoded service account private key text | [optional] 
 **gcp_key_algo** | **str** | Service account key algorithm, e.g. KEY_ALG_RSA_1024 | [optional] 

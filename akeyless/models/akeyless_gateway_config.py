@@ -39,6 +39,7 @@ class AkeylessGatewayConfig(object):
         'cf': 'CFConfigPart',
         'config_protection_key_name': 'str',
         'general': 'GeneralConfigPart',
+        'kmip_clients': 'KMIPClientsConfigPart',
         'ldap': 'LdapConfigPart',
         'leadership': 'LeadershipConfigPart',
         'log_forwarding': 'LogForwardingConfigPart',
@@ -56,6 +57,7 @@ class AkeylessGatewayConfig(object):
         'cf': 'cf',
         'config_protection_key_name': 'config_protection_key_name',
         'general': 'general',
+        'kmip_clients': 'kmip_clients',
         'ldap': 'ldap',
         'leadership': 'leadership',
         'log_forwarding': 'log_forwarding',
@@ -67,7 +69,7 @@ class AkeylessGatewayConfig(object):
         'version': 'version'
     }
 
-    def __init__(self, admins=None, cache=None, cf=None, config_protection_key_name=None, general=None, ldap=None, leadership=None, log_forwarding=None, migrations=None, producers=None, rotators=None, saml=None, uidentity=None, version=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, admins=None, cache=None, cf=None, config_protection_key_name=None, general=None, kmip_clients=None, ldap=None, leadership=None, log_forwarding=None, migrations=None, producers=None, rotators=None, saml=None, uidentity=None, version=None, local_vars_configuration=None):  # noqa: E501
         """AkeylessGatewayConfig - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -78,6 +80,7 @@ class AkeylessGatewayConfig(object):
         self._cf = None
         self._config_protection_key_name = None
         self._general = None
+        self._kmip_clients = None
         self._ldap = None
         self._leadership = None
         self._log_forwarding = None
@@ -99,6 +102,8 @@ class AkeylessGatewayConfig(object):
             self.config_protection_key_name = config_protection_key_name
         if general is not None:
             self.general = general
+        if kmip_clients is not None:
+            self.kmip_clients = kmip_clients
         if ldap is not None:
             self.ldap = ldap
         if leadership is not None:
@@ -222,6 +227,27 @@ class AkeylessGatewayConfig(object):
         """
 
         self._general = general
+
+    @property
+    def kmip_clients(self):
+        """Gets the kmip_clients of this AkeylessGatewayConfig.  # noqa: E501
+
+
+        :return: The kmip_clients of this AkeylessGatewayConfig.  # noqa: E501
+        :rtype: KMIPClientsConfigPart
+        """
+        return self._kmip_clients
+
+    @kmip_clients.setter
+    def kmip_clients(self, kmip_clients):
+        """Sets the kmip_clients of this AkeylessGatewayConfig.
+
+
+        :param kmip_clients: The kmip_clients of this AkeylessGatewayConfig.  # noqa: E501
+        :type: KMIPClientsConfigPart
+        """
+
+        self._kmip_clients = kmip_clients
 
     @property
     def ldap(self):

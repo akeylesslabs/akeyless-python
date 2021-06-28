@@ -34,7 +34,6 @@ class GatewayRevokeTmpUsers(object):
                             and the value is json key in definition.
     """
     openapi_types = {
-        'gateway_url': 'str',
         'host': 'str',
         'name': 'str',
         'password': 'str',
@@ -46,7 +45,6 @@ class GatewayRevokeTmpUsers(object):
     }
 
     attribute_map = {
-        'gateway_url': 'gateway-url',
         'host': 'host',
         'name': 'name',
         'password': 'password',
@@ -57,13 +55,12 @@ class GatewayRevokeTmpUsers(object):
         'username': 'username'
     }
 
-    def __init__(self, gateway_url=None, host=None, name=None, password=None, soft_delete=None, tmp_creds_id=None, token=None, uid_token=None, username=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, host=None, name=None, password=None, soft_delete=None, tmp_creds_id=None, token=None, uid_token=None, username=None, local_vars_configuration=None):  # noqa: E501
         """GatewayRevokeTmpUsers - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
-        self._gateway_url = None
         self._host = None
         self._name = None
         self._password = None
@@ -74,8 +71,6 @@ class GatewayRevokeTmpUsers(object):
         self._username = None
         self.discriminator = None
 
-        if gateway_url is not None:
-            self.gateway_url = gateway_url
         if host is not None:
             self.host = host
         self.name = name
@@ -90,29 +85,6 @@ class GatewayRevokeTmpUsers(object):
             self.uid_token = uid_token
         if username is not None:
             self.username = username
-
-    @property
-    def gateway_url(self):
-        """Gets the gateway_url of this GatewayRevokeTmpUsers.  # noqa: E501
-
-        Gateway url  # noqa: E501
-
-        :return: The gateway_url of this GatewayRevokeTmpUsers.  # noqa: E501
-        :rtype: str
-        """
-        return self._gateway_url
-
-    @gateway_url.setter
-    def gateway_url(self, gateway_url):
-        """Sets the gateway_url of this GatewayRevokeTmpUsers.
-
-        Gateway url  # noqa: E501
-
-        :param gateway_url: The gateway_url of this GatewayRevokeTmpUsers.  # noqa: E501
-        :type: str
-        """
-
-        self._gateway_url = gateway_url
 
     @property
     def host(self):

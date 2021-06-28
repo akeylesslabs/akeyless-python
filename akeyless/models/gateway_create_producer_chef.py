@@ -38,7 +38,6 @@ class GatewayCreateProducerChef(object):
         'chef_server_key': 'str',
         'chef_server_url': 'str',
         'chef_server_username': 'str',
-        'gateway_url': 'str',
         'name': 'str',
         'password': 'str',
         'producer_encryption_key_name': 'str',
@@ -54,7 +53,6 @@ class GatewayCreateProducerChef(object):
         'chef_server_key': 'chef-server-key',
         'chef_server_url': 'chef-server-url',
         'chef_server_username': 'chef-server-username',
-        'gateway_url': 'gateway-url',
         'name': 'name',
         'password': 'password',
         'producer_encryption_key_name': 'producer-encryption-key-name',
@@ -65,7 +63,7 @@ class GatewayCreateProducerChef(object):
         'username': 'username'
     }
 
-    def __init__(self, chef_orgs=None, chef_server_key=None, chef_server_url=None, chef_server_username=None, gateway_url='http://localhost:8000', name=None, password=None, producer_encryption_key_name=None, skip_ssl=True, token=None, uid_token=None, user_ttl='60m', username=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, chef_orgs=None, chef_server_key=None, chef_server_url=None, chef_server_username=None, name=None, password=None, producer_encryption_key_name=None, skip_ssl=True, token=None, uid_token=None, user_ttl='60m', username=None, local_vars_configuration=None):  # noqa: E501
         """GatewayCreateProducerChef - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -75,7 +73,6 @@ class GatewayCreateProducerChef(object):
         self._chef_server_key = None
         self._chef_server_url = None
         self._chef_server_username = None
-        self._gateway_url = None
         self._name = None
         self._password = None
         self._producer_encryption_key_name = None
@@ -90,8 +87,6 @@ class GatewayCreateProducerChef(object):
         self.chef_server_key = chef_server_key
         self.chef_server_url = chef_server_url
         self.chef_server_username = chef_server_username
-        if gateway_url is not None:
-            self.gateway_url = gateway_url
         self.name = name
         if password is not None:
             self.password = password
@@ -207,29 +202,6 @@ class GatewayCreateProducerChef(object):
             raise ValueError("Invalid value for `chef_server_username`, must not be `None`")  # noqa: E501
 
         self._chef_server_username = chef_server_username
-
-    @property
-    def gateway_url(self):
-        """Gets the gateway_url of this GatewayCreateProducerChef.  # noqa: E501
-
-        Gateway url  # noqa: E501
-
-        :return: The gateway_url of this GatewayCreateProducerChef.  # noqa: E501
-        :rtype: str
-        """
-        return self._gateway_url
-
-    @gateway_url.setter
-    def gateway_url(self, gateway_url):
-        """Sets the gateway_url of this GatewayCreateProducerChef.
-
-        Gateway url  # noqa: E501
-
-        :param gateway_url: The gateway_url of this GatewayCreateProducerChef.  # noqa: E501
-        :type: str
-        """
-
-        self._gateway_url = gateway_url
 
     @property
     def name(self):

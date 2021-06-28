@@ -4,7 +4,6 @@ gatewayRevokeTmpUsers is a command that revoke producer tmp user
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**gateway_url** | **str** | Gateway url | [optional] 
 **host** | **str** | Host | [optional] 
 **name** | **str** | Producer Name | 
 **password** | **str** | Required only when the authentication process requires a username and password | [optional] 

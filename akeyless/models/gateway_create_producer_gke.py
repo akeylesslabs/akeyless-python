@@ -34,7 +34,7 @@ class GatewayCreateProducerGke(object):
                             and the value is json key in definition.
     """
     openapi_types = {
-        'gateway_url': 'str',
+        'gke_account_key': 'str',
         'gke_cluster_cert': 'str',
         'gke_cluster_endpoint': 'str',
         'gke_cluster_name': 'str',
@@ -49,7 +49,7 @@ class GatewayCreateProducerGke(object):
     }
 
     attribute_map = {
-        'gateway_url': 'gateway-url',
+        'gke_account_key': 'gke-account-key',
         'gke_cluster_cert': 'gke-cluster-cert',
         'gke_cluster_endpoint': 'gke-cluster-endpoint',
         'gke_cluster_name': 'gke-cluster-name',
@@ -63,13 +63,13 @@ class GatewayCreateProducerGke(object):
         'username': 'username'
     }
 
-    def __init__(self, gateway_url='http://localhost:8000', gke_cluster_cert=None, gke_cluster_endpoint=None, gke_cluster_name=None, gke_service_account_email=None, name=None, password=None, producer_encryption_key_name=None, token=None, uid_token=None, user_ttl='60m', username=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, gke_account_key=None, gke_cluster_cert=None, gke_cluster_endpoint=None, gke_cluster_name=None, gke_service_account_email=None, name=None, password=None, producer_encryption_key_name=None, token=None, uid_token=None, user_ttl='60m', username=None, local_vars_configuration=None):  # noqa: E501
         """GatewayCreateProducerGke - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
-        self._gateway_url = None
+        self._gke_account_key = None
         self._gke_cluster_cert = None
         self._gke_cluster_endpoint = None
         self._gke_cluster_name = None
@@ -83,8 +83,8 @@ class GatewayCreateProducerGke(object):
         self._username = None
         self.discriminator = None
 
-        if gateway_url is not None:
-            self.gateway_url = gateway_url
+        if gke_account_key is not None:
+            self.gke_account_key = gke_account_key
         self.gke_cluster_cert = gke_cluster_cert
         self.gke_cluster_endpoint = gke_cluster_endpoint
         self.gke_cluster_name = gke_cluster_name
@@ -104,27 +104,27 @@ class GatewayCreateProducerGke(object):
             self.username = username
 
     @property
-    def gateway_url(self):
-        """Gets the gateway_url of this GatewayCreateProducerGke.  # noqa: E501
+    def gke_account_key(self):
+        """Gets the gke_account_key of this GatewayCreateProducerGke.  # noqa: E501
 
-        Gateway url  # noqa: E501
+        GKE Service Account key file path  # noqa: E501
 
-        :return: The gateway_url of this GatewayCreateProducerGke.  # noqa: E501
+        :return: The gke_account_key of this GatewayCreateProducerGke.  # noqa: E501
         :rtype: str
         """
-        return self._gateway_url
+        return self._gke_account_key
 
-    @gateway_url.setter
-    def gateway_url(self, gateway_url):
-        """Sets the gateway_url of this GatewayCreateProducerGke.
+    @gke_account_key.setter
+    def gke_account_key(self, gke_account_key):
+        """Sets the gke_account_key of this GatewayCreateProducerGke.
 
-        Gateway url  # noqa: E501
+        GKE Service Account key file path  # noqa: E501
 
-        :param gateway_url: The gateway_url of this GatewayCreateProducerGke.  # noqa: E501
+        :param gke_account_key: The gke_account_key of this GatewayCreateProducerGke.  # noqa: E501
         :type: str
         """
 
-        self._gateway_url = gateway_url
+        self._gke_account_key = gke_account_key
 
     @property
     def gke_cluster_cert(self):

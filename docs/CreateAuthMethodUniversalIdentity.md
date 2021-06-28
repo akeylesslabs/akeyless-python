@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **name** | **str** | Auth Method name | 
 **password** | **str** | Required only when the authentication process requires a username and password | [optional] 
 **token** | **str** | Authentication token (see &#x60;/auth&#x60; and &#x60;/configure&#x60;) | [optional] 
-**ttl** | **int** | Token ttl | [optional] 
+**ttl** | **int** | Token ttl | [optional] [default to 60]
 **uid_token** | **str** | The universal identity token, Required only for universal_identity authentication | [optional] 
 **username** | **str** | Required only when the authentication process requires a username and password | [optional] 
 

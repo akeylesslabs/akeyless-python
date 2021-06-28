@@ -34,7 +34,6 @@ class GatewayUpdateTmpUsers(object):
                             and the value is json key in definition.
     """
     openapi_types = {
-        'gateway_url': 'str',
         'name': 'str',
         'new_ttl_min': 'int',
         'password': 'str',
@@ -45,7 +44,6 @@ class GatewayUpdateTmpUsers(object):
     }
 
     attribute_map = {
-        'gateway_url': 'gateway-url',
         'name': 'name',
         'new_ttl_min': 'new-ttl-min',
         'password': 'password',
@@ -55,13 +53,12 @@ class GatewayUpdateTmpUsers(object):
         'username': 'username'
     }
 
-    def __init__(self, gateway_url=None, name=None, new_ttl_min=None, password=None, tmp_creds_id=None, token=None, uid_token=None, username=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, name=None, new_ttl_min=None, password=None, tmp_creds_id=None, token=None, uid_token=None, username=None, local_vars_configuration=None):  # noqa: E501
         """GatewayUpdateTmpUsers - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
-        self._gateway_url = None
         self._name = None
         self._new_ttl_min = None
         self._password = None
@@ -71,8 +68,6 @@ class GatewayUpdateTmpUsers(object):
         self._username = None
         self.discriminator = None
 
-        if gateway_url is not None:
-            self.gateway_url = gateway_url
         self.name = name
         self.new_ttl_min = new_ttl_min
         if password is not None:
@@ -84,29 +79,6 @@ class GatewayUpdateTmpUsers(object):
             self.uid_token = uid_token
         if username is not None:
             self.username = username
-
-    @property
-    def gateway_url(self):
-        """Gets the gateway_url of this GatewayUpdateTmpUsers.  # noqa: E501
-
-        Gateway url  # noqa: E501
-
-        :return: The gateway_url of this GatewayUpdateTmpUsers.  # noqa: E501
-        :rtype: str
-        """
-        return self._gateway_url
-
-    @gateway_url.setter
-    def gateway_url(self, gateway_url):
-        """Sets the gateway_url of this GatewayUpdateTmpUsers.
-
-        Gateway url  # noqa: E501
-
-        :param gateway_url: The gateway_url of this GatewayUpdateTmpUsers.  # noqa: E501
-        :type: str
-        """
-
-        self._gateway_url = gateway_url
 
     @property
     def name(self):
