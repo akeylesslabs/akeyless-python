@@ -35,12 +35,12 @@ class GatewayCreateProducerAzure(object):
     """
     openapi_types = {
         'app_obj_id': 'str',
-        'client_id': 'str',
-        'client_secret': 'str',
+        'azure_client_id': 'str',
+        'azure_client_secret': 'str',
+        'azure_tenant_id': 'str',
         'name': 'str',
         'password': 'str',
         'producer_encryption_key_name': 'str',
-        'tenant_id': 'str',
         'token': 'str',
         'uid_token': 'str',
         'user_group_obj_id': 'str',
@@ -54,12 +54,12 @@ class GatewayCreateProducerAzure(object):
 
     attribute_map = {
         'app_obj_id': 'app-obj-id',
-        'client_id': 'client-id',
-        'client_secret': 'client-secret',
+        'azure_client_id': 'azure-client-id',
+        'azure_client_secret': 'azure-client-secret',
+        'azure_tenant_id': 'azure-tenant-id',
         'name': 'name',
         'password': 'password',
         'producer_encryption_key_name': 'producer-encryption-key-name',
-        'tenant_id': 'tenant-id',
         'token': 'token',
         'uid_token': 'uid-token',
         'user_group_obj_id': 'user-group-obj-id',
@@ -71,19 +71,19 @@ class GatewayCreateProducerAzure(object):
         'username': 'username'
     }
 
-    def __init__(self, app_obj_id=None, client_id=None, client_secret=None, name=None, password=None, producer_encryption_key_name=None, tenant_id=None, token=None, uid_token=None, user_group_obj_id=None, user_portal_access=False, user_principal_name=None, user_programmatic_access=True, user_role_template_id=None, user_ttl='60m', username=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, app_obj_id=None, azure_client_id=None, azure_client_secret=None, azure_tenant_id=None, name=None, password=None, producer_encryption_key_name=None, token=None, uid_token=None, user_group_obj_id=None, user_portal_access=False, user_principal_name=None, user_programmatic_access=True, user_role_template_id=None, user_ttl='60m', username=None, local_vars_configuration=None):  # noqa: E501
         """GatewayCreateProducerAzure - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._app_obj_id = None
-        self._client_id = None
-        self._client_secret = None
+        self._azure_client_id = None
+        self._azure_client_secret = None
+        self._azure_tenant_id = None
         self._name = None
         self._password = None
         self._producer_encryption_key_name = None
-        self._tenant_id = None
         self._token = None
         self._uid_token = None
         self._user_group_obj_id = None
@@ -97,14 +97,14 @@ class GatewayCreateProducerAzure(object):
 
         if app_obj_id is not None:
             self.app_obj_id = app_obj_id
-        self.client_id = client_id
-        self.client_secret = client_secret
+        self.azure_client_id = azure_client_id
+        self.azure_client_secret = azure_client_secret
+        self.azure_tenant_id = azure_tenant_id
         self.name = name
         if password is not None:
             self.password = password
         if producer_encryption_key_name is not None:
             self.producer_encryption_key_name = producer_encryption_key_name
-        self.tenant_id = tenant_id
         if token is not None:
             self.token = token
         if uid_token is not None:
@@ -148,54 +148,79 @@ class GatewayCreateProducerAzure(object):
         self._app_obj_id = app_obj_id
 
     @property
-    def client_id(self):
-        """Gets the client_id of this GatewayCreateProducerAzure.  # noqa: E501
+    def azure_client_id(self):
+        """Gets the azure_client_id of this GatewayCreateProducerAzure.  # noqa: E501
 
         Azure Client ID  # noqa: E501
 
-        :return: The client_id of this GatewayCreateProducerAzure.  # noqa: E501
+        :return: The azure_client_id of this GatewayCreateProducerAzure.  # noqa: E501
         :rtype: str
         """
-        return self._client_id
+        return self._azure_client_id
 
-    @client_id.setter
-    def client_id(self, client_id):
-        """Sets the client_id of this GatewayCreateProducerAzure.
+    @azure_client_id.setter
+    def azure_client_id(self, azure_client_id):
+        """Sets the azure_client_id of this GatewayCreateProducerAzure.
 
         Azure Client ID  # noqa: E501
 
-        :param client_id: The client_id of this GatewayCreateProducerAzure.  # noqa: E501
+        :param azure_client_id: The azure_client_id of this GatewayCreateProducerAzure.  # noqa: E501
         :type: str
         """
-        if self.local_vars_configuration.client_side_validation and client_id is None:  # noqa: E501
-            raise ValueError("Invalid value for `client_id`, must not be `None`")  # noqa: E501
+        if self.local_vars_configuration.client_side_validation and azure_client_id is None:  # noqa: E501
+            raise ValueError("Invalid value for `azure_client_id`, must not be `None`")  # noqa: E501
 
-        self._client_id = client_id
+        self._azure_client_id = azure_client_id
 
     @property
-    def client_secret(self):
-        """Gets the client_secret of this GatewayCreateProducerAzure.  # noqa: E501
+    def azure_client_secret(self):
+        """Gets the azure_client_secret of this GatewayCreateProducerAzure.  # noqa: E501
 
         Azure Client Secret  # noqa: E501
 
-        :return: The client_secret of this GatewayCreateProducerAzure.  # noqa: E501
+        :return: The azure_client_secret of this GatewayCreateProducerAzure.  # noqa: E501
         :rtype: str
         """
-        return self._client_secret
+        return self._azure_client_secret
 
-    @client_secret.setter
-    def client_secret(self, client_secret):
-        """Sets the client_secret of this GatewayCreateProducerAzure.
+    @azure_client_secret.setter
+    def azure_client_secret(self, azure_client_secret):
+        """Sets the azure_client_secret of this GatewayCreateProducerAzure.
 
         Azure Client Secret  # noqa: E501
 
-        :param client_secret: The client_secret of this GatewayCreateProducerAzure.  # noqa: E501
+        :param azure_client_secret: The azure_client_secret of this GatewayCreateProducerAzure.  # noqa: E501
         :type: str
         """
-        if self.local_vars_configuration.client_side_validation and client_secret is None:  # noqa: E501
-            raise ValueError("Invalid value for `client_secret`, must not be `None`")  # noqa: E501
+        if self.local_vars_configuration.client_side_validation and azure_client_secret is None:  # noqa: E501
+            raise ValueError("Invalid value for `azure_client_secret`, must not be `None`")  # noqa: E501
 
-        self._client_secret = client_secret
+        self._azure_client_secret = azure_client_secret
+
+    @property
+    def azure_tenant_id(self):
+        """Gets the azure_tenant_id of this GatewayCreateProducerAzure.  # noqa: E501
+
+        Azure Tenant ID  # noqa: E501
+
+        :return: The azure_tenant_id of this GatewayCreateProducerAzure.  # noqa: E501
+        :rtype: str
+        """
+        return self._azure_tenant_id
+
+    @azure_tenant_id.setter
+    def azure_tenant_id(self, azure_tenant_id):
+        """Sets the azure_tenant_id of this GatewayCreateProducerAzure.
+
+        Azure Tenant ID  # noqa: E501
+
+        :param azure_tenant_id: The azure_tenant_id of this GatewayCreateProducerAzure.  # noqa: E501
+        :type: str
+        """
+        if self.local_vars_configuration.client_side_validation and azure_tenant_id is None:  # noqa: E501
+            raise ValueError("Invalid value for `azure_tenant_id`, must not be `None`")  # noqa: E501
+
+        self._azure_tenant_id = azure_tenant_id
 
     @property
     def name(self):
@@ -267,31 +292,6 @@ class GatewayCreateProducerAzure(object):
         """
 
         self._producer_encryption_key_name = producer_encryption_key_name
-
-    @property
-    def tenant_id(self):
-        """Gets the tenant_id of this GatewayCreateProducerAzure.  # noqa: E501
-
-        Azure Tenant ID  # noqa: E501
-
-        :return: The tenant_id of this GatewayCreateProducerAzure.  # noqa: E501
-        :rtype: str
-        """
-        return self._tenant_id
-
-    @tenant_id.setter
-    def tenant_id(self, tenant_id):
-        """Sets the tenant_id of this GatewayCreateProducerAzure.
-
-        Azure Tenant ID  # noqa: E501
-
-        :param tenant_id: The tenant_id of this GatewayCreateProducerAzure.  # noqa: E501
-        :type: str
-        """
-        if self.local_vars_configuration.client_side_validation and tenant_id is None:  # noqa: E501
-            raise ValueError("Invalid value for `tenant_id`, must not be `None`")  # noqa: E501
-
-        self._tenant_id = tenant_id
 
     @property
     def token(self):

@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**classic_key_id** | **int** |  | [optional] 
+**classic_key_id** | **str** |  | [optional] 
 **classic_key_name** | **str** |  | [optional] 
 **classic_key_type** | **str** |  | [optional] 
 

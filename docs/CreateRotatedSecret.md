@@ -17,7 +17,7 @@ Name | Type | Description | Notes
 **ssh_password** | **str** |  | [optional] 
 **ssh_username** | **str** |  | [optional] 
 **tags** | **list[str]** | List of the tags attached to this secret | [optional] 
-**target_name** | **str** |  | [optional] 
+**target_name** | **str** | Target name | 
 **token** | **str** | Authentication token (see &#x60;/auth&#x60; and &#x60;/configure&#x60;) | [optional] 
 **uid_token** | **str** | The universal identity token, Required only for universal_identity authentication | [optional] 
 **username** | **str** | Required only when the authentication process requires a username and password | [optional] 

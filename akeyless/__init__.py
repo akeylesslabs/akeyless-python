@@ -15,7 +15,7 @@
 
 from __future__ import absolute_import
 
-__version__ = "2.4.5"
+__version__ = "2.5.0"
 
 # import apis into sdk package
 from akeyless.api.v2_api import V2Api
@@ -124,6 +124,8 @@ from akeyless.models.decrypt_file_output import DecryptFileOutput
 from akeyless.models.decrypt_output import DecryptOutput
 from akeyless.models.decrypt_pkcs1 import DecryptPKCS1
 from akeyless.models.decrypt_pkcs1_output import DecryptPKCS1Output
+from akeyless.models.decrypt_with_classic_key import DecryptWithClassicKey
+from akeyless.models.decrypt_with_classic_key_output import DecryptWithClassicKeyOutput
 from akeyless.models.default_config_part import DefaultConfigPart
 from akeyless.models.delete_auth_method import DeleteAuthMethod
 from akeyless.models.delete_auth_method_output import DeleteAuthMethodOutput
@@ -153,6 +155,8 @@ from akeyless.models.encrypt_file_output import EncryptFileOutput
 from akeyless.models.encrypt_output import EncryptOutput
 from akeyless.models.encrypt_pkcs1 import EncryptPKCS1
 from akeyless.models.encrypt_pkcs1_output import EncryptPKCS1Output
+from akeyless.models.encrypt_with_classic_key import EncryptWithClassicKey
+from akeyless.models.encrypt_with_classic_key_output import EncryptWithClassicKeyOutput
 from akeyless.models.external_kms_key_id import ExternalKMSKeyId
 from akeyless.models.gcp_access_rules import GCPAccessRules
 from akeyless.models.gateway_add_allowed_management_access import GatewayAddAllowedManagementAccess
@@ -283,8 +287,12 @@ from akeyless.models.saml_attribute import SAMLAttribute
 from akeyless.models.ssh_certificate_issue_details import SSHCertificateIssueDetails
 from akeyless.models.set_item_state import SetItemState
 from akeyless.models.set_role_rule import SetRoleRule
+from akeyless.models.sign_jwt_output import SignJWTOutput
+from akeyless.models.sign_jwt_with_classic_key import SignJWTWithClassicKey
 from akeyless.models.sign_pkcs1 import SignPKCS1
 from akeyless.models.sign_pkcs1_output import SignPKCS1Output
+from akeyless.models.sign_pki_cert_output import SignPKICertOutput
+from akeyless.models.sign_pki_cert_with_classic_key import SignPKICertWithClassicKey
 from akeyless.models.splunk_log_forwarding_config import SplunkLogForwardingConfig
 from akeyless.models.static_creds_auth import StaticCredsAuth
 from akeyless.models.static_creds_auth_output import StaticCredsAuthOutput
@@ -348,5 +356,9 @@ from akeyless.models.update_web_target_details import UpdateWebTargetDetails
 from akeyless.models.update_web_target_output import UpdateWebTargetOutput
 from akeyless.models.upload_pkcs12 import UploadPKCS12
 from akeyless.models.upload_rsa import UploadRSA
+from akeyless.models.verify_jwt_output import VerifyJWTOutput
+from akeyless.models.verify_jwt_with_classic_key import VerifyJWTWithClassicKey
 from akeyless.models.verify_pkcs1 import VerifyPKCS1
+from akeyless.models.verify_pki_cert_output import VerifyPKICertOutput
+from akeyless.models.verify_pki_cert_with_classic_key import VerifyPKICertWithClassicKey
 

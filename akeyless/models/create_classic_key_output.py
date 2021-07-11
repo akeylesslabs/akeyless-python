@@ -34,7 +34,7 @@ class CreateClassicKeyOutput(object):
                             and the value is json key in definition.
     """
     openapi_types = {
-        'classic_key_id': 'int',
+        'classic_key_id': 'str',
         'classic_key_name': 'str',
         'classic_key_type': 'str'
     }
@@ -69,7 +69,7 @@ class CreateClassicKeyOutput(object):
 
 
         :return: The classic_key_id of this CreateClassicKeyOutput.  # noqa: E501
-        :rtype: int
+        :rtype: str
         """
         return self._classic_key_id
 
@@ -79,7 +79,7 @@ class CreateClassicKeyOutput(object):
 
 
         :param classic_key_id: The classic_key_id of this CreateClassicKeyOutput.  # noqa: E501
-        :type: int
+        :type: str
         """
 
         self._classic_key_id = classic_key_id

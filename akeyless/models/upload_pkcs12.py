@@ -34,7 +34,6 @@ class UploadPKCS12(object):
                             and the value is json key in definition.
     """
     openapi_types = {
-        'cert': 'str',
         'customer_frg_id': 'str',
         '_in': 'str',
         'metadata': 'str',
@@ -49,7 +48,6 @@ class UploadPKCS12(object):
     }
 
     attribute_map = {
-        'cert': 'cert',
         'customer_frg_id': 'customer-frg-id',
         '_in': 'in',
         'metadata': 'metadata',
@@ -63,13 +61,12 @@ class UploadPKCS12(object):
         'username': 'username'
     }
 
-    def __init__(self, cert=None, customer_frg_id=None, _in=None, metadata=None, name=None, passphrase=None, password=None, split_level=2, tag=None, token=None, uid_token=None, username=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, customer_frg_id=None, _in=None, metadata=None, name=None, passphrase=None, password=None, split_level=2, tag=None, token=None, uid_token=None, username=None, local_vars_configuration=None):  # noqa: E501
         """UploadPKCS12 - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
-        self._cert = None
         self._customer_frg_id = None
         self.__in = None
         self._metadata = None
@@ -83,8 +80,6 @@ class UploadPKCS12(object):
         self._username = None
         self.discriminator = None
 
-        if cert is not None:
-            self.cert = cert
         if customer_frg_id is not None:
             self.customer_frg_id = customer_frg_id
         self._in = _in
@@ -104,29 +99,6 @@ class UploadPKCS12(object):
             self.uid_token = uid_token
         if username is not None:
             self.username = username
-
-    @property
-    def cert(self):
-        """Gets the cert of this UploadPKCS12.  # noqa: E501
-
-        Path to a file that contain the certificate in a PEM format. If this parameter is not empty, the certificate will be taken from here and not from the PKCS#12 input file  # noqa: E501
-
-        :return: The cert of this UploadPKCS12.  # noqa: E501
-        :rtype: str
-        """
-        return self._cert
-
-    @cert.setter
-    def cert(self, cert):
-        """Sets the cert of this UploadPKCS12.
-
-        Path to a file that contain the certificate in a PEM format. If this parameter is not empty, the certificate will be taken from here and not from the PKCS#12 input file  # noqa: E501
-
-        :param cert: The cert of this UploadPKCS12.  # noqa: E501
-        :type: str
-        """
-
-        self._cert = cert
 
     @property
     def customer_frg_id(self):

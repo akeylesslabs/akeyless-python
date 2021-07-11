@@ -5,7 +5,7 @@ createAuthMethodGCP is a command that creates a new auth method that will be abl
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **access_expires** | **int** | Access expiration date in Unix timestamp (select 0 for access without expiry date) | [optional] [default to 0]
-**audience** | **str** | The audience to verify in the JWT received by the client | [optional] [default to 'akeyless.io']
+**audience** | **str** | The audience to verify in the JWT received by the client | [default to 'akeyless.io']
 **bound_ips** | **list[str]** | A CIDR whitelist of the IPs that the access is restricted to | [optional] 
 **bound_labels** | **list[str]** | A comma-separated list of GCP labels formatted as \&quot;key:value\&quot; strings that must be set on authorized GCE instances. TODO: Because GCP labels are not currently ACL&#39;d .... | [optional] 
 **bound_projects** | **list[str]** | &#x3D;&#x3D;&#x3D; Human and Machine authentication section &#x3D;&#x3D;&#x3D; Array of GCP project IDs. Only entities belonging to any of the provided projects can authenticate. | [optional] 
@@ -17,7 +17,7 @@ Name | Type | Description | Notes
 **password** | **str** | Required only when the authentication process requires a username and password | [optional] 
 **service_account_creds_data** | **str** | ServiceAccount credentials data instead of giving a file path, base64 encoded | [optional] 
 **token** | **str** | Authentication token (see &#x60;/auth&#x60; and &#x60;/configure&#x60;) | [optional] 
-**type** | **str** | Type of the GCP Access Rules | [optional] 
+**type** | **str** | Type of the GCP Access Rules | 
 **uid_token** | **str** | The universal identity token, Required only for universal_identity authentication | [optional] 
 **username** | **str** | Required only when the authentication process requires a username and password | [optional] 
 

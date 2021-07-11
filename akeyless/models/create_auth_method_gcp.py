@@ -97,8 +97,7 @@ class CreateAuthMethodGCP(object):
 
         if access_expires is not None:
             self.access_expires = access_expires
-        if audience is not None:
-            self.audience = audience
+        self.audience = audience
         if bound_ips is not None:
             self.bound_ips = bound_ips
         if bound_labels is not None:
@@ -120,8 +119,7 @@ class CreateAuthMethodGCP(object):
             self.service_account_creds_data = service_account_creds_data
         if token is not None:
             self.token = token
-        if type is not None:
-            self.type = type
+        self.type = type
         if uid_token is not None:
             self.uid_token = uid_token
         if username is not None:
@@ -170,6 +168,8 @@ class CreateAuthMethodGCP(object):
         :param audience: The audience of this CreateAuthMethodGCP.  # noqa: E501
         :type: str
         """
+        if self.local_vars_configuration.client_side_validation and audience is None:  # noqa: E501
+            raise ValueError("Invalid value for `audience`, must not be `None`")  # noqa: E501
 
         self._audience = audience
 
@@ -448,6 +448,8 @@ class CreateAuthMethodGCP(object):
         :param type: The type of this CreateAuthMethodGCP.  # noqa: E501
         :type: str
         """
+        if self.local_vars_configuration.client_side_validation and type is None:  # noqa: E501
+            raise ValueError("Invalid value for `type`, must not be `None`")  # noqa: E501
 
         self._type = type
 

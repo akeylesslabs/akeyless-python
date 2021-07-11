@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **db_name** | **str** |  | [optional] 
 **db_server_certificates** | **str** | (Optional) DB server certificates | [optional] 
 **db_server_name** | **str** | (Optional) Server name for certificate verification | [optional] 
-**db_type** | **str** |  | [optional] 
+**db_type** | **str** |  | 
 **host** | **str** |  | [optional] 
 **key** | **str** | The name of a key that used to encrypt the target secret value (if empty, the account default protectionKey key will be used) | [optional] 
 **mongodb_atlas** | **bool** |  | [optional] 

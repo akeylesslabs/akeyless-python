@@ -35,6 +35,7 @@ class CreateClassicKey(object):
     """
     openapi_types = {
         'alg': 'str',
+        'cert_file_data': 'str',
         'key': 'str',
         'key_data': 'str',
         'metadata': 'str',
@@ -49,6 +50,7 @@ class CreateClassicKey(object):
 
     attribute_map = {
         'alg': 'alg',
+        'cert_file_data': 'cert-file-data',
         'key': 'key',
         'key_data': 'key-data',
         'metadata': 'metadata',
@@ -61,13 +63,14 @@ class CreateClassicKey(object):
         'username': 'username'
     }
 
-    def __init__(self, alg=None, key=None, key_data=None, metadata=None, name=None, password=None, tags=None, target_name=None, token=None, uid_token=None, username=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, alg=None, cert_file_data=None, key=None, key_data=None, metadata=None, name=None, password=None, tags=None, target_name=None, token=None, uid_token=None, username=None, local_vars_configuration=None):  # noqa: E501
         """CreateClassicKey - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._alg = None
+        self._cert_file_data = None
         self._key = None
         self._key_data = None
         self._metadata = None
@@ -81,6 +84,8 @@ class CreateClassicKey(object):
         self.discriminator = None
 
         self.alg = alg
+        if cert_file_data is not None:
+            self.cert_file_data = cert_file_data
         if key is not None:
             self.key = key
         if key_data is not None:
@@ -105,7 +110,7 @@ class CreateClassicKey(object):
     def alg(self):
         """Gets the alg of this CreateClassicKey.  # noqa: E501
 
-        Classic Key type; options: [AES256GCM, RSA2048]  # noqa: E501
+        Classic Key type; options: [AES128GCM, AES256GCM, AES128SIV, AES256SIV, RSA1024, RSA2048, RSA3072, RSA4096, EC256, EC384]  # noqa: E501
 
         :return: The alg of this CreateClassicKey.  # noqa: E501
         :rtype: str
@@ -116,7 +121,7 @@ class CreateClassicKey(object):
     def alg(self, alg):
         """Sets the alg of this CreateClassicKey.
 
-        Classic Key type; options: [AES256GCM, RSA2048]  # noqa: E501
+        Classic Key type; options: [AES128GCM, AES256GCM, AES128SIV, AES256SIV, RSA1024, RSA2048, RSA3072, RSA4096, EC256, EC384]  # noqa: E501
 
         :param alg: The alg of this CreateClassicKey.  # noqa: E501
         :type: str
@@ -125,6 +130,29 @@ class CreateClassicKey(object):
             raise ValueError("Invalid value for `alg`, must not be `None`")  # noqa: E501
 
         self._alg = alg
+
+    @property
+    def cert_file_data(self):
+        """Gets the cert_file_data of this CreateClassicKey.  # noqa: E501
+
+        Certificate in a PEM format.  # noqa: E501
+
+        :return: The cert_file_data of this CreateClassicKey.  # noqa: E501
+        :rtype: str
+        """
+        return self._cert_file_data
+
+    @cert_file_data.setter
+    def cert_file_data(self, cert_file_data):
+        """Sets the cert_file_data of this CreateClassicKey.
+
+        Certificate in a PEM format.  # noqa: E501
+
+        :param cert_file_data: The cert_file_data of this CreateClassicKey.  # noqa: E501
+        :type: str
+        """
+
+        self._cert_file_data = cert_file_data
 
     @property
     def key(self):

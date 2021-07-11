@@ -36,7 +36,7 @@ class CreateEKSTarget(object):
     openapi_types = {
         'comment': 'str',
         'eks_access_key_id': 'str',
-        'eks_cluster_cert': 'str',
+        'eks_cluster_ca_cert': 'str',
         'eks_cluster_endpoint': 'str',
         'eks_cluster_name': 'str',
         'eks_region': 'str',
@@ -52,7 +52,7 @@ class CreateEKSTarget(object):
     attribute_map = {
         'comment': 'comment',
         'eks_access_key_id': 'eks-access-key-id',
-        'eks_cluster_cert': 'eks-cluster-cert',
+        'eks_cluster_ca_cert': 'eks-cluster-ca-cert',
         'eks_cluster_endpoint': 'eks-cluster-endpoint',
         'eks_cluster_name': 'eks-cluster-name',
         'eks_region': 'eks-region',
@@ -65,7 +65,7 @@ class CreateEKSTarget(object):
         'username': 'username'
     }
 
-    def __init__(self, comment=None, eks_access_key_id=None, eks_cluster_cert=None, eks_cluster_endpoint=None, eks_cluster_name=None, eks_region='us-east-2', eks_secret_access_key=None, key=None, name=None, password=None, token=None, uid_token=None, username=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, comment=None, eks_access_key_id=None, eks_cluster_ca_cert=None, eks_cluster_endpoint=None, eks_cluster_name=None, eks_region='us-east-2', eks_secret_access_key=None, key=None, name=None, password=None, token=None, uid_token=None, username=None, local_vars_configuration=None):  # noqa: E501
         """CreateEKSTarget - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -73,7 +73,7 @@ class CreateEKSTarget(object):
 
         self._comment = None
         self._eks_access_key_id = None
-        self._eks_cluster_cert = None
+        self._eks_cluster_ca_cert = None
         self._eks_cluster_endpoint = None
         self._eks_cluster_name = None
         self._eks_region = None
@@ -89,7 +89,7 @@ class CreateEKSTarget(object):
         if comment is not None:
             self.comment = comment
         self.eks_access_key_id = eks_access_key_id
-        self.eks_cluster_cert = eks_cluster_cert
+        self.eks_cluster_ca_cert = eks_cluster_ca_cert
         self.eks_cluster_endpoint = eks_cluster_endpoint
         self.eks_cluster_name = eks_cluster_name
         if eks_region is not None:
@@ -156,29 +156,29 @@ class CreateEKSTarget(object):
         self._eks_access_key_id = eks_access_key_id
 
     @property
-    def eks_cluster_cert(self):
-        """Gets the eks_cluster_cert of this CreateEKSTarget.  # noqa: E501
+    def eks_cluster_ca_cert(self):
+        """Gets the eks_cluster_ca_cert of this CreateEKSTarget.  # noqa: E501
 
         EKS cluster CA certificate  # noqa: E501
 
-        :return: The eks_cluster_cert of this CreateEKSTarget.  # noqa: E501
+        :return: The eks_cluster_ca_cert of this CreateEKSTarget.  # noqa: E501
         :rtype: str
         """
-        return self._eks_cluster_cert
+        return self._eks_cluster_ca_cert
 
-    @eks_cluster_cert.setter
-    def eks_cluster_cert(self, eks_cluster_cert):
-        """Sets the eks_cluster_cert of this CreateEKSTarget.
+    @eks_cluster_ca_cert.setter
+    def eks_cluster_ca_cert(self, eks_cluster_ca_cert):
+        """Sets the eks_cluster_ca_cert of this CreateEKSTarget.
 
         EKS cluster CA certificate  # noqa: E501
 
-        :param eks_cluster_cert: The eks_cluster_cert of this CreateEKSTarget.  # noqa: E501
+        :param eks_cluster_ca_cert: The eks_cluster_ca_cert of this CreateEKSTarget.  # noqa: E501
         :type: str
         """
-        if self.local_vars_configuration.client_side_validation and eks_cluster_cert is None:  # noqa: E501
-            raise ValueError("Invalid value for `eks_cluster_cert`, must not be `None`")  # noqa: E501
+        if self.local_vars_configuration.client_side_validation and eks_cluster_ca_cert is None:  # noqa: E501
+            raise ValueError("Invalid value for `eks_cluster_ca_cert`, must not be `None`")  # noqa: E501
 
-        self._eks_cluster_cert = eks_cluster_cert
+        self._eks_cluster_ca_cert = eks_cluster_ca_cert
 
     @property
     def eks_cluster_endpoint(self):

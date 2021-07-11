@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **host** | **str** |  | [optional] 
 **key** | **str** | The name of a key that used to encrypt the target secret value (if empty, the account default protectionKey key will be used) | [optional] 
 **name** | **str** | Target name | 
-**new_name** | **str** | New target name | 
+**new_name** | **str** | New target name | [optional] 
 **password** | **str** | Required only when the authentication process requires a username and password | [optional] 
 **port** | **str** |  | [optional] 
 **private_key** | **str** |  | [optional] 

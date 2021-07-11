@@ -128,8 +128,7 @@ class CreateRotatedSecret(object):
             self.ssh_username = ssh_username
         if tags is not None:
             self.tags = tags
-        if target_name is not None:
-            self.target_name = target_name
+        self.target_name = target_name
         if token is not None:
             self.token = token
         if uid_token is not None:
@@ -451,6 +450,7 @@ class CreateRotatedSecret(object):
     def target_name(self):
         """Gets the target_name of this CreateRotatedSecret.  # noqa: E501
 
+        Target name  # noqa: E501
 
         :return: The target_name of this CreateRotatedSecret.  # noqa: E501
         :rtype: str
@@ -461,10 +461,13 @@ class CreateRotatedSecret(object):
     def target_name(self, target_name):
         """Sets the target_name of this CreateRotatedSecret.
 
+        Target name  # noqa: E501
 
         :param target_name: The target_name of this CreateRotatedSecret.  # noqa: E501
         :type: str
         """
+        if self.local_vars_configuration.client_side_validation and target_name is None:  # noqa: E501
+            raise ValueError("Invalid value for `target_name`, must not be `None`")  # noqa: E501
 
         self._target_name = target_name
 

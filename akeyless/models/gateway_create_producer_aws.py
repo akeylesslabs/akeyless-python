@@ -34,10 +34,10 @@ class GatewayCreateProducerAws(object):
                             and the value is json key in definition.
     """
     openapi_types = {
-        'access_key_id': 'str',
         'access_mode': 'str',
-        'access_secret_key': 'str',
         'admin_rotation_interval_days': 'int',
+        'aws_access_key_id': 'str',
+        'aws_access_secret_key': 'str',
         'aws_role_arns': 'str',
         'aws_user_console_access': 'bool',
         'aws_user_groups': 'str',
@@ -55,10 +55,10 @@ class GatewayCreateProducerAws(object):
     }
 
     attribute_map = {
-        'access_key_id': 'access-key-id',
         'access_mode': 'access-mode',
-        'access_secret_key': 'access-secret-key',
         'admin_rotation_interval_days': 'admin-rotation-interval-days',
+        'aws_access_key_id': 'aws-access-key-id',
+        'aws_access_secret_key': 'aws-access-secret-key',
         'aws_role_arns': 'aws-role-arns',
         'aws_user_console_access': 'aws-user-console-access',
         'aws_user_groups': 'aws-user-groups',
@@ -75,16 +75,16 @@ class GatewayCreateProducerAws(object):
         'username': 'username'
     }
 
-    def __init__(self, access_key_id=None, access_mode=None, access_secret_key=None, admin_rotation_interval_days=0, aws_role_arns=None, aws_user_console_access=False, aws_user_groups=None, aws_user_policies=None, aws_user_programmatic_access=True, enable_admin_rotation=False, name=None, password=None, producer_encryption_key_name=None, region='us-east-2', token=None, uid_token=None, user_ttl='60m', username=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, access_mode=None, admin_rotation_interval_days=0, aws_access_key_id=None, aws_access_secret_key=None, aws_role_arns=None, aws_user_console_access=False, aws_user_groups=None, aws_user_policies=None, aws_user_programmatic_access=True, enable_admin_rotation=False, name=None, password=None, producer_encryption_key_name=None, region='us-east-2', token=None, uid_token=None, user_ttl='60m', username=None, local_vars_configuration=None):  # noqa: E501
         """GatewayCreateProducerAws - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
-        self._access_key_id = None
         self._access_mode = None
-        self._access_secret_key = None
         self._admin_rotation_interval_days = None
+        self._aws_access_key_id = None
+        self._aws_access_secret_key = None
         self._aws_role_arns = None
         self._aws_user_console_access = None
         self._aws_user_groups = None
@@ -101,12 +101,12 @@ class GatewayCreateProducerAws(object):
         self._username = None
         self.discriminator = None
 
-        self.access_key_id = access_key_id
         if access_mode is not None:
             self.access_mode = access_mode
-        self.access_secret_key = access_secret_key
         if admin_rotation_interval_days is not None:
             self.admin_rotation_interval_days = admin_rotation_interval_days
+        self.aws_access_key_id = aws_access_key_id
+        self.aws_access_secret_key = aws_access_secret_key
         if aws_role_arns is not None:
             self.aws_role_arns = aws_role_arns
         if aws_user_console_access is not None:
@@ -136,31 +136,6 @@ class GatewayCreateProducerAws(object):
             self.username = username
 
     @property
-    def access_key_id(self):
-        """Gets the access_key_id of this GatewayCreateProducerAws.  # noqa: E501
-
-        Access Key ID  # noqa: E501
-
-        :return: The access_key_id of this GatewayCreateProducerAws.  # noqa: E501
-        :rtype: str
-        """
-        return self._access_key_id
-
-    @access_key_id.setter
-    def access_key_id(self, access_key_id):
-        """Sets the access_key_id of this GatewayCreateProducerAws.
-
-        Access Key ID  # noqa: E501
-
-        :param access_key_id: The access_key_id of this GatewayCreateProducerAws.  # noqa: E501
-        :type: str
-        """
-        if self.local_vars_configuration.client_side_validation and access_key_id is None:  # noqa: E501
-            raise ValueError("Invalid value for `access_key_id`, must not be `None`")  # noqa: E501
-
-        self._access_key_id = access_key_id
-
-    @property
     def access_mode(self):
         """Gets the access_mode of this GatewayCreateProducerAws.  # noqa: E501
 
@@ -180,31 +155,6 @@ class GatewayCreateProducerAws(object):
         """
 
         self._access_mode = access_mode
-
-    @property
-    def access_secret_key(self):
-        """Gets the access_secret_key of this GatewayCreateProducerAws.  # noqa: E501
-
-        Secret Access Key  # noqa: E501
-
-        :return: The access_secret_key of this GatewayCreateProducerAws.  # noqa: E501
-        :rtype: str
-        """
-        return self._access_secret_key
-
-    @access_secret_key.setter
-    def access_secret_key(self, access_secret_key):
-        """Sets the access_secret_key of this GatewayCreateProducerAws.
-
-        Secret Access Key  # noqa: E501
-
-        :param access_secret_key: The access_secret_key of this GatewayCreateProducerAws.  # noqa: E501
-        :type: str
-        """
-        if self.local_vars_configuration.client_side_validation and access_secret_key is None:  # noqa: E501
-            raise ValueError("Invalid value for `access_secret_key`, must not be `None`")  # noqa: E501
-
-        self._access_secret_key = access_secret_key
 
     @property
     def admin_rotation_interval_days(self):
@@ -228,6 +178,56 @@ class GatewayCreateProducerAws(object):
         """
 
         self._admin_rotation_interval_days = admin_rotation_interval_days
+
+    @property
+    def aws_access_key_id(self):
+        """Gets the aws_access_key_id of this GatewayCreateProducerAws.  # noqa: E501
+
+        Access Key ID  # noqa: E501
+
+        :return: The aws_access_key_id of this GatewayCreateProducerAws.  # noqa: E501
+        :rtype: str
+        """
+        return self._aws_access_key_id
+
+    @aws_access_key_id.setter
+    def aws_access_key_id(self, aws_access_key_id):
+        """Sets the aws_access_key_id of this GatewayCreateProducerAws.
+
+        Access Key ID  # noqa: E501
+
+        :param aws_access_key_id: The aws_access_key_id of this GatewayCreateProducerAws.  # noqa: E501
+        :type: str
+        """
+        if self.local_vars_configuration.client_side_validation and aws_access_key_id is None:  # noqa: E501
+            raise ValueError("Invalid value for `aws_access_key_id`, must not be `None`")  # noqa: E501
+
+        self._aws_access_key_id = aws_access_key_id
+
+    @property
+    def aws_access_secret_key(self):
+        """Gets the aws_access_secret_key of this GatewayCreateProducerAws.  # noqa: E501
+
+        Secret Access Key  # noqa: E501
+
+        :return: The aws_access_secret_key of this GatewayCreateProducerAws.  # noqa: E501
+        :rtype: str
+        """
+        return self._aws_access_secret_key
+
+    @aws_access_secret_key.setter
+    def aws_access_secret_key(self, aws_access_secret_key):
+        """Sets the aws_access_secret_key of this GatewayCreateProducerAws.
+
+        Secret Access Key  # noqa: E501
+
+        :param aws_access_secret_key: The aws_access_secret_key of this GatewayCreateProducerAws.  # noqa: E501
+        :type: str
+        """
+        if self.local_vars_configuration.client_side_validation and aws_access_secret_key is None:  # noqa: E501
+            raise ValueError("Invalid value for `aws_access_secret_key`, must not be `None`")  # noqa: E501
+
+        self._aws_access_secret_key = aws_access_secret_key
 
     @property
     def aws_role_arns(self):

@@ -133,8 +133,7 @@ class CreateDBTarget(object):
             self.db_server_certificates = db_server_certificates
         if db_server_name is not None:
             self.db_server_name = db_server_name
-        if db_type is not None:
-            self.db_type = db_type
+        self.db_type = db_type
         if host is not None:
             self.host = host
         if key is not None:
@@ -285,6 +284,8 @@ class CreateDBTarget(object):
         :param db_type: The db_type of this CreateDBTarget.  # noqa: E501
         :type: str
         """
+        if self.local_vars_configuration.client_side_validation and db_type is None:  # noqa: E501
+            raise ValueError("Invalid value for `db_type`, must not be `None`")  # noqa: E501
 
         self._db_type = db_type
 

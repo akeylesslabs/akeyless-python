@@ -43,6 +43,7 @@ class LogForwardingConfigPart(object):
         'logz_io_config': 'LogzIoLogForwardingConfig',
         'pull_interval_sec': 'str',
         'splunk_config': 'SplunkLogForwardingConfig',
+        'std_out': 'bool',
         'syslog_config': 'SyslogLogForwardingConfig',
         'target_log_type': 'str'
     }
@@ -57,11 +58,12 @@ class LogForwardingConfigPart(object):
         'logz_io_config': 'logz_io_config',
         'pull_interval_sec': 'pull_interval_sec',
         'splunk_config': 'splunk_config',
+        'std_out': 'std_out',
         'syslog_config': 'syslog_config',
         'target_log_type': 'target_log_type'
     }
 
-    def __init__(self, aws_s3_config=None, azure_analytics_config=None, elasticsearch_config=None, logan_enable=None, logan_url=None, logstash_config=None, logz_io_config=None, pull_interval_sec=None, splunk_config=None, syslog_config=None, target_log_type=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, aws_s3_config=None, azure_analytics_config=None, elasticsearch_config=None, logan_enable=None, logan_url=None, logstash_config=None, logz_io_config=None, pull_interval_sec=None, splunk_config=None, std_out=None, syslog_config=None, target_log_type=None, local_vars_configuration=None):  # noqa: E501
         """LogForwardingConfigPart - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -76,6 +78,7 @@ class LogForwardingConfigPart(object):
         self._logz_io_config = None
         self._pull_interval_sec = None
         self._splunk_config = None
+        self._std_out = None
         self._syslog_config = None
         self._target_log_type = None
         self.discriminator = None
@@ -98,6 +101,8 @@ class LogForwardingConfigPart(object):
             self.pull_interval_sec = pull_interval_sec
         if splunk_config is not None:
             self.splunk_config = splunk_config
+        if std_out is not None:
+            self.std_out = std_out
         if syslog_config is not None:
             self.syslog_config = syslog_config
         if target_log_type is not None:
@@ -291,6 +296,27 @@ class LogForwardingConfigPart(object):
         """
 
         self._splunk_config = splunk_config
+
+    @property
+    def std_out(self):
+        """Gets the std_out of this LogForwardingConfigPart.  # noqa: E501
+
+
+        :return: The std_out of this LogForwardingConfigPart.  # noqa: E501
+        :rtype: bool
+        """
+        return self._std_out
+
+    @std_out.setter
+    def std_out(self, std_out):
+        """Sets the std_out of this LogForwardingConfigPart.
+
+
+        :param std_out: The std_out of this LogForwardingConfigPart.  # noqa: E501
+        :type: bool
+        """
+
+        self._std_out = std_out
 
     @property
     def syslog_config(self):

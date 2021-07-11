@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **logz_io_config** | [**LogzIoLogForwardingConfig**](LogzIoLogForwardingConfig.md) |  | [optional] 
 **pull_interval_sec** | **str** |  | [optional] 
 **splunk_config** | [**SplunkLogForwardingConfig**](SplunkLogForwardingConfig.md) |  | [optional] 
+**std_out** | **bool** |  | [optional] 
 **syslog_config** | [**SyslogLogForwardingConfig**](SyslogLogForwardingConfig.md) |  | [optional] 
 **target_log_type** | **str** |  | [optional] 
 

@@ -5,7 +5,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **comment** | **str** | Comment about the target | [optional] 
 **eks_access_key_id** | **str** | Access Key ID | 
-**eks_cluster_cert** | **str** | EKS cluster CA certificate | 
+**eks_cluster_ca_cert** | **str** | EKS cluster CA certificate | 
 **eks_cluster_endpoint** | **str** | EKS cluster URL endpoint | 
 **eks_cluster_name** | **str** | EKS cluster name | 
 **eks_region** | **str** | Region | [optional] [default to 'us-east-2']

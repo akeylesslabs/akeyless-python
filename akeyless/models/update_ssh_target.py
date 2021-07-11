@@ -99,7 +99,8 @@ class UpdateSSHTarget(object):
         if key is not None:
             self.key = key
         self.name = name
-        self.new_name = new_name
+        if new_name is not None:
+            self.new_name = new_name
         if password is not None:
             self.password = password
         if port is not None:
@@ -233,8 +234,6 @@ class UpdateSSHTarget(object):
         :param new_name: The new_name of this UpdateSSHTarget.  # noqa: E501
         :type: str
         """
-        if self.local_vars_configuration.client_side_validation and new_name is None:  # noqa: E501
-            raise ValueError("Invalid value for `new_name`, must not be `None`")  # noqa: E501
 
         self._new_name = new_name
 

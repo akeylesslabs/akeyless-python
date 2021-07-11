@@ -139,8 +139,7 @@ class UpdateDBTarget(object):
             self.db_server_certificates = db_server_certificates
         if db_server_name is not None:
             self.db_server_name = db_server_name
-        if db_type is not None:
-            self.db_type = db_type
+        self.db_type = db_type
         if host is not None:
             self.host = host
         if key is not None:
@@ -166,7 +165,8 @@ class UpdateDBTarget(object):
         if mongodb_username is not None:
             self.mongodb_username = mongodb_username
         self.name = name
-        self.new_name = new_name
+        if new_name is not None:
+            self.new_name = new_name
         if password is not None:
             self.password = password
         if port is not None:
@@ -294,6 +294,8 @@ class UpdateDBTarget(object):
         :param db_type: The db_type of this UpdateDBTarget.  # noqa: E501
         :type: str
         """
+        if self.local_vars_configuration.client_side_validation and db_type is None:  # noqa: E501
+            raise ValueError("Invalid value for `db_type`, must not be `None`")  # noqa: E501
 
         self._db_type = db_type
 
@@ -614,8 +616,6 @@ class UpdateDBTarget(object):
         :param new_name: The new_name of this UpdateDBTarget.  # noqa: E501
         :type: str
         """
-        if self.local_vars_configuration.client_side_validation and new_name is None:  # noqa: E501
-            raise ValueError("Invalid value for `new_name`, must not be `None`")  # noqa: E501
 
         self._new_name = new_name
 

@@ -35,7 +35,6 @@ class UploadRSA(object):
     """
     openapi_types = {
         'alg': 'str',
-        'cert': 'str',
         'cert_file_data': 'str',
         'customer_frg_id': 'str',
         'metadata': 'str',
@@ -51,7 +50,6 @@ class UploadRSA(object):
 
     attribute_map = {
         'alg': 'alg',
-        'cert': 'cert',
         'cert_file_data': 'cert-file-data',
         'customer_frg_id': 'customer-frg-id',
         'metadata': 'metadata',
@@ -65,14 +63,13 @@ class UploadRSA(object):
         'username': 'username'
     }
 
-    def __init__(self, alg=None, cert=None, cert_file_data=None, customer_frg_id=None, metadata=None, name=None, password=None, rsa_file_data=None, split_level=2, tag=None, token=None, uid_token=None, username=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, alg=None, cert_file_data=None, customer_frg_id=None, metadata=None, name=None, password=None, rsa_file_data=None, split_level=2, tag=None, token=None, uid_token=None, username=None, local_vars_configuration=None):  # noqa: E501
         """UploadRSA - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._alg = None
-        self._cert = None
         self._cert_file_data = None
         self._customer_frg_id = None
         self._metadata = None
@@ -87,8 +84,6 @@ class UploadRSA(object):
         self.discriminator = None
 
         self.alg = alg
-        if cert is not None:
-            self.cert = cert
         if cert_file_data is not None:
             self.cert_file_data = cert_file_data
         if customer_frg_id is not None:
@@ -135,29 +130,6 @@ class UploadRSA(object):
             raise ValueError("Invalid value for `alg`, must not be `None`")  # noqa: E501
 
         self._alg = alg
-
-    @property
-    def cert(self):
-        """Gets the cert of this UploadRSA.  # noqa: E501
-
-        Path to a file that contain the certificate in a PEM format.  # noqa: E501
-
-        :return: The cert of this UploadRSA.  # noqa: E501
-        :rtype: str
-        """
-        return self._cert
-
-    @cert.setter
-    def cert(self, cert):
-        """Sets the cert of this UploadRSA.
-
-        Path to a file that contain the certificate in a PEM format.  # noqa: E501
-
-        :param cert: The cert of this UploadRSA.  # noqa: E501
-        :type: str
-        """
-
-        self._cert = cert
 
     @property
     def cert_file_data(self):

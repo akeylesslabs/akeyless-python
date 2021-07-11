@@ -38,6 +38,7 @@ Method | HTTP request | Description
 [**create_web_target**](V2Api.md#create_web_target) | **POST** /create-web-target | 
 [**decrypt**](V2Api.md#decrypt) | **POST** /decrypt | 
 [**decrypt_pkcs1**](V2Api.md#decrypt_pkcs1) | **POST** /decrypt-pkcs1 | 
+[**decrypt_with_classic_key**](V2Api.md#decrypt_with_classic_key) | **POST** /decrypt-with-classic-key | 
 [**delete_auth_method**](V2Api.md#delete_auth_method) | **POST** /delete-auth-method | 
 [**delete_auth_methods**](V2Api.md#delete_auth_methods) | **POST** /delete-auth-methods | 
 [**delete_item**](V2Api.md#delete_item) | **POST** /delete-item | 
@@ -53,6 +54,7 @@ Method | HTTP request | Description
 [**describe_permissions**](V2Api.md#describe_permissions) | **POST** /describe-permissions | 
 [**encrypt**](V2Api.md#encrypt) | **POST** /encrypt | 
 [**encrypt_pkcs1**](V2Api.md#encrypt_pkcs1) | **POST** /encrypt-pkcs1 | 
+[**encrypt_with_classic_key**](V2Api.md#encrypt_with_classic_key) | **POST** /encrypt-with-classic-key | 
 [**gateway_create_producer_artifactory**](V2Api.md#gateway_create_producer_artifactory) | **POST** /gateway-create-producer-artifactory | 
 [**gateway_create_producer_aws**](V2Api.md#gateway_create_producer_aws) | **POST** /gateway-create-producer-aws | 
 [**gateway_create_producer_azure**](V2Api.md#gateway_create_producer_azure) | **POST** /gateway-create-producer-azure | 
@@ -104,7 +106,9 @@ Method | HTTP request | Description
 [**rotate_key**](V2Api.md#rotate_key) | **POST** /rotate-key | 
 [**set_item_state**](V2Api.md#set_item_state) | **POST** /set-item-state | 
 [**set_role_rule**](V2Api.md#set_role_rule) | **POST** /set-role-rule | 
+[**sign_jwt_with_classic_key**](V2Api.md#sign_jwt_with_classic_key) | **POST** /sign-jwt-with-classic-key | 
 [**sign_pkcs1**](V2Api.md#sign_pkcs1) | **POST** /sign-pkcs1 | 
+[**sign_pki_cert_with_classic_key**](V2Api.md#sign_pki_cert_with_classic_key) | **POST** /sign-pki-cert-with-classic-key | 
 [**static_creds_auth**](V2Api.md#static_creds_auth) | **POST** /static-creds-auth | 
 [**uid_create_child_token**](V2Api.md#uid_create_child_token) | **POST** /uid-create-child-token | 
 [**uid_generate_token**](V2Api.md#uid_generate_token) | **POST** /uid-generate-token | 
@@ -136,7 +140,9 @@ Method | HTTP request | Description
 [**update_web_target**](V2Api.md#update_web_target) | **POST** /update-web-target | 
 [**update_web_target_details**](V2Api.md#update_web_target_details) | **POST** /update-web-target-details | 
 [**upload_rsa**](V2Api.md#upload_rsa) | **POST** /upload-rsa | 
+[**verify_jwt_with_classic_key**](V2Api.md#verify_jwt_with_classic_key) | **POST** /verify-jwt-with-classic-key | 
 [**verify_pkcs1**](V2Api.md#verify_pkcs1) | **POST** /verify-pkcs1 | 
+[**verify_pki_cert_with_classic_key**](V2Api.md#verify_pki_cert_with_classic_key) | **POST** /verify-pki-cert-with-classic-key | 
 
 
 # **assoc_role_auth_method**
@@ -2176,6 +2182,66 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **decrypt_with_classic_key**
+> DecryptWithClassicKeyOutput decrypt_with_classic_key(body)
+
+
+
+### Example
+
+```python
+from __future__ import print_function
+import time
+import akeyless
+from akeyless.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.akeyless.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = akeyless.Configuration(
+    host = "https://api.akeyless.io"
+)
+
+
+# Enter a context with an instance of the API client
+with akeyless.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = akeyless.V2Api(api_client)
+    body = akeyless.DecryptWithClassicKey() # DecryptWithClassicKey | 
+
+    try:
+        api_response = api_instance.decrypt_with_classic_key(body)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling V2Api->decrypt_with_classic_key: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**DecryptWithClassicKey**](DecryptWithClassicKey.md)|  | 
+
+### Return type
+
+[**DecryptWithClassicKeyOutput**](DecryptWithClassicKeyOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | decryptWithClassicKeyResponse wraps response body. |  -  |
+**0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **delete_auth_method**
 > DeleteAuthMethodOutput delete_auth_method(body)
 
@@ -3072,6 +3138,66 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | encryptPKCS1Response wraps response body. |  -  |
+**0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **encrypt_with_classic_key**
+> EncryptOutput encrypt_with_classic_key(body)
+
+
+
+### Example
+
+```python
+from __future__ import print_function
+import time
+import akeyless
+from akeyless.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.akeyless.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = akeyless.Configuration(
+    host = "https://api.akeyless.io"
+)
+
+
+# Enter a context with an instance of the API client
+with akeyless.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = akeyless.V2Api(api_client)
+    body = akeyless.EncryptWithClassicKey() # EncryptWithClassicKey | 
+
+    try:
+        api_response = api_instance.encrypt_with_classic_key(body)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling V2Api->encrypt_with_classic_key: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**EncryptWithClassicKey**](EncryptWithClassicKey.md)|  | 
+
+### Return type
+
+[**EncryptOutput**](EncryptOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | encryptResponse wraps response body. |  -  |
 **0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -6126,6 +6252,65 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **sign_jwt_with_classic_key**
+> sign_jwt_with_classic_key(body)
+
+
+
+### Example
+
+```python
+from __future__ import print_function
+import time
+import akeyless
+from akeyless.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.akeyless.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = akeyless.Configuration(
+    host = "https://api.akeyless.io"
+)
+
+
+# Enter a context with an instance of the API client
+with akeyless.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = akeyless.V2Api(api_client)
+    body = akeyless.SignJWTWithClassicKey() # SignJWTWithClassicKey | 
+
+    try:
+        api_instance.sign_jwt_with_classic_key(body)
+    except ApiException as e:
+        print("Exception when calling V2Api->sign_jwt_with_classic_key: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**SignJWTWithClassicKey**](SignJWTWithClassicKey.md)|  | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+**0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **sign_pkcs1**
 > SignPKCS1Output sign_pkcs1(body)
 
@@ -6182,6 +6367,65 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | signPKCS1Response wraps response body. |  -  |
+**0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **sign_pki_cert_with_classic_key**
+> sign_pki_cert_with_classic_key(body)
+
+
+
+### Example
+
+```python
+from __future__ import print_function
+import time
+import akeyless
+from akeyless.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.akeyless.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = akeyless.Configuration(
+    host = "https://api.akeyless.io"
+)
+
+
+# Enter a context with an instance of the API client
+with akeyless.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = akeyless.V2Api(api_client)
+    body = akeyless.SignPKICertWithClassicKey() # SignPKICertWithClassicKey | 
+
+    try:
+        api_instance.sign_pki_cert_with_classic_key(body)
+    except ApiException as e:
+        print("Exception when calling V2Api->sign_pki_cert_with_classic_key: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**SignPKICertWithClassicKey**](SignPKICertWithClassicKey.md)|  | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
 **0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -8042,6 +8286,65 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **verify_jwt_with_classic_key**
+> verify_jwt_with_classic_key(body)
+
+
+
+### Example
+
+```python
+from __future__ import print_function
+import time
+import akeyless
+from akeyless.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.akeyless.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = akeyless.Configuration(
+    host = "https://api.akeyless.io"
+)
+
+
+# Enter a context with an instance of the API client
+with akeyless.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = akeyless.V2Api(api_client)
+    body = akeyless.VerifyJWTWithClassicKey() # VerifyJWTWithClassicKey | 
+
+    try:
+        api_instance.verify_jwt_with_classic_key(body)
+    except ApiException as e:
+        print("Exception when calling V2Api->verify_jwt_with_classic_key: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**VerifyJWTWithClassicKey**](VerifyJWTWithClassicKey.md)|  | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+**0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **verify_pkcs1**
 > object verify_pkcs1(body)
 
@@ -8098,6 +8401,65 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | verifyPKCS1Response wraps response body. |  -  |
+**0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **verify_pki_cert_with_classic_key**
+> verify_pki_cert_with_classic_key(body)
+
+
+
+### Example
+
+```python
+from __future__ import print_function
+import time
+import akeyless
+from akeyless.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.akeyless.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = akeyless.Configuration(
+    host = "https://api.akeyless.io"
+)
+
+
+# Enter a context with an instance of the API client
+with akeyless.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = akeyless.V2Api(api_client)
+    body = akeyless.VerifyPKICertWithClassicKey() # VerifyPKICertWithClassicKey | 
+
+    try:
+        api_instance.verify_pki_cert_with_classic_key(body)
+    except ApiException as e:
+        print("Exception when calling V2Api->verify_pki_cert_with_classic_key: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**VerifyPKICertWithClassicKey**](VerifyPKICertWithClassicKey.md)|  | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
 **0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
