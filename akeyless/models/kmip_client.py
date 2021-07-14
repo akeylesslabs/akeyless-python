@@ -34,29 +34,81 @@ class KMIPClient(object):
                             and the value is json key in definition.
     """
     openapi_types = {
+        'environment': 'str',
+        'id': 'str',
         'name': 'str',
         'rules': 'list[PathRule]'
     }
 
     attribute_map = {
+        'environment': 'environment',
+        'id': 'id',
         'name': 'name',
         'rules': 'rules'
     }
 
-    def __init__(self, name=None, rules=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, environment=None, id=None, name=None, rules=None, local_vars_configuration=None):  # noqa: E501
         """KMIPClient - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
+        self._environment = None
+        self._id = None
         self._name = None
         self._rules = None
         self.discriminator = None
 
+        if environment is not None:
+            self.environment = environment
+        if id is not None:
+            self.id = id
         if name is not None:
             self.name = name
         if rules is not None:
             self.rules = rules
+
+    @property
+    def environment(self):
+        """Gets the environment of this KMIPClient.  # noqa: E501
+
+
+        :return: The environment of this KMIPClient.  # noqa: E501
+        :rtype: str
+        """
+        return self._environment
+
+    @environment.setter
+    def environment(self, environment):
+        """Sets the environment of this KMIPClient.
+
+
+        :param environment: The environment of this KMIPClient.  # noqa: E501
+        :type: str
+        """
+
+        self._environment = environment
+
+    @property
+    def id(self):
+        """Gets the id of this KMIPClient.  # noqa: E501
+
+
+        :return: The id of this KMIPClient.  # noqa: E501
+        :rtype: str
+        """
+        return self._id
+
+    @id.setter
+    def id(self, id):
+        """Sets the id of this KMIPClient.
+
+
+        :param id: The id of this KMIPClient.  # noqa: E501
+        :type: str
+        """
+
+        self._id = id
 
     @property
     def name(self):

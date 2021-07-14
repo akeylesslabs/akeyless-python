@@ -34,24 +34,29 @@ class KMIPClientsConfigPart(object):
                             and the value is json key in definition.
     """
     openapi_types = {
-        'clients': 'dict(str, KMIPClient)'
+        'clients': 'dict(str, KMIPClient)',
+        'environments': 'list[str]'
     }
 
     attribute_map = {
-        'clients': 'clients'
+        'clients': 'clients',
+        'environments': 'environments'
     }
 
-    def __init__(self, clients=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, clients=None, environments=None, local_vars_configuration=None):  # noqa: E501
         """KMIPClientsConfigPart - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._clients = None
+        self._environments = None
         self.discriminator = None
 
         if clients is not None:
             self.clients = clients
+        if environments is not None:
+            self.environments = environments
 
     @property
     def clients(self):
@@ -73,6 +78,27 @@ class KMIPClientsConfigPart(object):
         """
 
         self._clients = clients
+
+    @property
+    def environments(self):
+        """Gets the environments of this KMIPClientsConfigPart.  # noqa: E501
+
+
+        :return: The environments of this KMIPClientsConfigPart.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._environments
+
+    @environments.setter
+    def environments(self, environments):
+        """Sets the environments of this KMIPClientsConfigPart.
+
+
+        :param environments: The environments of this KMIPClientsConfigPart.  # noqa: E501
+        :type: list[str]
+        """
+
+        self._environments = environments
 
     def to_dict(self):
         """Returns the model properties as a dict"""

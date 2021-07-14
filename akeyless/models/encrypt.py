@@ -34,6 +34,7 @@ class Encrypt(object):
                             and the value is json key in definition.
     """
     openapi_types = {
+        'display_id': 'str',
         'encryption_context': 'dict(str, str)',
         'key_name': 'str',
         'password': 'str',
@@ -44,6 +45,7 @@ class Encrypt(object):
     }
 
     attribute_map = {
+        'display_id': 'display-id',
         'encryption_context': 'encryption-context',
         'key_name': 'key-name',
         'password': 'password',
@@ -53,12 +55,13 @@ class Encrypt(object):
         'username': 'username'
     }
 
-    def __init__(self, encryption_context=None, key_name=None, password=None, plaintext=None, token=None, uid_token=None, username=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, display_id=None, encryption_context=None, key_name=None, password=None, plaintext=None, token=None, uid_token=None, username=None, local_vars_configuration=None):  # noqa: E501
         """Encrypt - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
+        self._display_id = None
         self._encryption_context = None
         self._key_name = None
         self._password = None
@@ -68,9 +71,12 @@ class Encrypt(object):
         self._username = None
         self.discriminator = None
 
+        if display_id is not None:
+            self.display_id = display_id
         if encryption_context is not None:
             self.encryption_context = encryption_context
-        self.key_name = key_name
+        if key_name is not None:
+            self.key_name = key_name
         if password is not None:
             self.password = password
         self.plaintext = plaintext
@@ -80,6 +86,29 @@ class Encrypt(object):
             self.uid_token = uid_token
         if username is not None:
             self.username = username
+
+    @property
+    def display_id(self):
+        """Gets the display_id of this Encrypt.  # noqa: E501
+
+        The display id of the key to use in the encryption process  # noqa: E501
+
+        :return: The display_id of this Encrypt.  # noqa: E501
+        :rtype: str
+        """
+        return self._display_id
+
+    @display_id.setter
+    def display_id(self, display_id):
+        """Sets the display_id of this Encrypt.
+
+        The display id of the key to use in the encryption process  # noqa: E501
+
+        :param display_id: The display_id of this Encrypt.  # noqa: E501
+        :type: str
+        """
+
+        self._display_id = display_id
 
     @property
     def encryption_context(self):
@@ -124,8 +153,6 @@ class Encrypt(object):
         :param key_name: The key_name of this Encrypt.  # noqa: E501
         :type: str
         """
-        if self.local_vars_configuration.client_side_validation and key_name is None:  # noqa: E501
-            raise ValueError("Invalid value for `key_name`, must not be `None`")  # noqa: E501
 
         self._key_name = key_name
 

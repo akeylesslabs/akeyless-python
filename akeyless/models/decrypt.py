@@ -35,6 +35,7 @@ class Decrypt(object):
     """
     openapi_types = {
         'ciphertext': 'str',
+        'display_id': 'str',
         'encryption_context': 'dict(str, str)',
         'key_name': 'str',
         'password': 'str',
@@ -45,6 +46,7 @@ class Decrypt(object):
 
     attribute_map = {
         'ciphertext': 'ciphertext',
+        'display_id': 'display-id',
         'encryption_context': 'encryption-context',
         'key_name': 'key-name',
         'password': 'password',
@@ -53,13 +55,14 @@ class Decrypt(object):
         'username': 'username'
     }
 
-    def __init__(self, ciphertext=None, encryption_context=None, key_name=None, password=None, token=None, uid_token=None, username=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, ciphertext=None, display_id=None, encryption_context=None, key_name=None, password=None, token=None, uid_token=None, username=None, local_vars_configuration=None):  # noqa: E501
         """Decrypt - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._ciphertext = None
+        self._display_id = None
         self._encryption_context = None
         self._key_name = None
         self._password = None
@@ -69,9 +72,12 @@ class Decrypt(object):
         self.discriminator = None
 
         self.ciphertext = ciphertext
+        if display_id is not None:
+            self.display_id = display_id
         if encryption_context is not None:
             self.encryption_context = encryption_context
-        self.key_name = key_name
+        if key_name is not None:
+            self.key_name = key_name
         if password is not None:
             self.password = password
         if token is not None:
@@ -105,6 +111,29 @@ class Decrypt(object):
             raise ValueError("Invalid value for `ciphertext`, must not be `None`")  # noqa: E501
 
         self._ciphertext = ciphertext
+
+    @property
+    def display_id(self):
+        """Gets the display_id of this Decrypt.  # noqa: E501
+
+        The display id of the key to use in the decryption process  # noqa: E501
+
+        :return: The display_id of this Decrypt.  # noqa: E501
+        :rtype: str
+        """
+        return self._display_id
+
+    @display_id.setter
+    def display_id(self, display_id):
+        """Sets the display_id of this Decrypt.
+
+        The display id of the key to use in the decryption process  # noqa: E501
+
+        :param display_id: The display_id of this Decrypt.  # noqa: E501
+        :type: str
+        """
+
+        self._display_id = display_id
 
     @property
     def encryption_context(self):
@@ -149,8 +178,6 @@ class Decrypt(object):
         :param key_name: The key_name of this Decrypt.  # noqa: E501
         :type: str
         """
-        if self.local_vars_configuration.client_side_validation and key_name is None:  # noqa: E501
-            raise ValueError("Invalid value for `key_name`, must not be `None`")  # noqa: E501
 
         self._key_name = key_name
 
