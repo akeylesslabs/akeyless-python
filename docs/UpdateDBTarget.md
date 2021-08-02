@@ -22,6 +22,7 @@ Name | Type | Description | Notes
 **mongodb_username** | **str** | MongoDB server username | [optional] 
 **name** | **str** | Target name | 
 **new_name** | **str** | New target name | [optional] 
+**oracle_service_name** | **str** |  | [optional] 
 **password** | **str** | Required only when the authentication process requires a username and password | [optional] 
 **port** | **str** |  | [optional] 
 **pwd** | **str** |  | [optional] 

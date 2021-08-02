@@ -35,6 +35,7 @@ class DynamicSecretProducerInfo(object):
     """
     openapi_types = {
         'gw_cluster_id': 'int',
+        'producer_last_keep_alive': 'str',
         'producer_metadata': 'str',
         'producer_status': 'str',
         'producer_type': 'str'
@@ -42,18 +43,20 @@ class DynamicSecretProducerInfo(object):
 
     attribute_map = {
         'gw_cluster_id': 'gw_cluster_id',
+        'producer_last_keep_alive': 'producer_last_keep_alive',
         'producer_metadata': 'producer_metadata',
         'producer_status': 'producer_status',
         'producer_type': 'producer_type'
     }
 
-    def __init__(self, gw_cluster_id=None, producer_metadata=None, producer_status=None, producer_type=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, gw_cluster_id=None, producer_last_keep_alive=None, producer_metadata=None, producer_status=None, producer_type=None, local_vars_configuration=None):  # noqa: E501
         """DynamicSecretProducerInfo - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._gw_cluster_id = None
+        self._producer_last_keep_alive = None
         self._producer_metadata = None
         self._producer_status = None
         self._producer_type = None
@@ -61,6 +64,8 @@ class DynamicSecretProducerInfo(object):
 
         if gw_cluster_id is not None:
             self.gw_cluster_id = gw_cluster_id
+        if producer_last_keep_alive is not None:
+            self.producer_last_keep_alive = producer_last_keep_alive
         if producer_metadata is not None:
             self.producer_metadata = producer_metadata
         if producer_status is not None:
@@ -88,6 +93,27 @@ class DynamicSecretProducerInfo(object):
         """
 
         self._gw_cluster_id = gw_cluster_id
+
+    @property
+    def producer_last_keep_alive(self):
+        """Gets the producer_last_keep_alive of this DynamicSecretProducerInfo.  # noqa: E501
+
+
+        :return: The producer_last_keep_alive of this DynamicSecretProducerInfo.  # noqa: E501
+        :rtype: str
+        """
+        return self._producer_last_keep_alive
+
+    @producer_last_keep_alive.setter
+    def producer_last_keep_alive(self, producer_last_keep_alive):
+        """Sets the producer_last_keep_alive of this DynamicSecretProducerInfo.
+
+
+        :param producer_last_keep_alive: The producer_last_keep_alive of this DynamicSecretProducerInfo.  # noqa: E501
+        :type: str
+        """
+
+        self._producer_last_keep_alive = producer_last_keep_alive
 
     @property
     def producer_metadata(self):

@@ -8,6 +8,12 @@ Name | Type | Description | Notes
 **name** | **str** | Secret name | 
 **password** | **str** | Required only when the authentication process requires a username and password | [optional] 
 **protection_key** | **str** | The name of a key that used to encrypt the secret value (if empty, the account default protectionKey key will be used) | [optional] 
+**secure_access_bastion_issuer** | **str** |  | [optional] 
+**secure_access_enable** | **str** |  | [optional] 
+**secure_access_host** | **list[str]** |  | [optional] 
+**secure_access_ssh_creds** | **str** |  | [optional] 
+**secure_access_url** | **str** |  | [optional] 
+**secure_access_web_browsing** | **bool** |  | [optional] 
 **tags** | **list[str]** | List of the tags attached to this secret | [optional] 
 **token** | **str** | Authentication token (see &#x60;/auth&#x60; and &#x60;/configure&#x60;) | [optional] 
 **uid_token** | **str** | The universal identity token, Required only for universal_identity authentication | [optional] 

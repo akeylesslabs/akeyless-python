@@ -53,6 +53,7 @@ class UpdateDBTarget(object):
         'mongodb_username': 'str',
         'name': 'str',
         'new_name': 'str',
+        'oracle_service_name': 'str',
         'password': 'str',
         'port': 'str',
         'pwd': 'str',
@@ -84,6 +85,7 @@ class UpdateDBTarget(object):
         'mongodb_username': 'mongodb-username',
         'name': 'name',
         'new_name': 'new-name',
+        'oracle_service_name': 'oracle-service-name',
         'password': 'password',
         'port': 'port',
         'pwd': 'pwd',
@@ -95,7 +97,7 @@ class UpdateDBTarget(object):
         'username': 'username'
     }
 
-    def __init__(self, comment=None, db_name=None, db_server_certificates=None, db_server_name=None, db_type=None, host=None, key=None, mongodb_atlas=None, mongodb_atlas_api_private_key=None, mongodb_atlas_api_public_key=None, mongodb_atlas_project_id=None, mongodb_default_auth_db=None, mongodb_host_port=None, mongodb_password=None, mongodb_server_uri=None, mongodb_uri_options=None, mongodb_username=None, name=None, new_name=None, password=None, port=None, pwd=None, snowflake_account=None, token=None, uid_token=None, update_version=False, user_name=None, username=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, comment=None, db_name=None, db_server_certificates=None, db_server_name=None, db_type=None, host=None, key=None, mongodb_atlas=None, mongodb_atlas_api_private_key=None, mongodb_atlas_api_public_key=None, mongodb_atlas_project_id=None, mongodb_default_auth_db=None, mongodb_host_port=None, mongodb_password=None, mongodb_server_uri=None, mongodb_uri_options=None, mongodb_username=None, name=None, new_name=None, oracle_service_name=None, password=None, port=None, pwd=None, snowflake_account=None, token=None, uid_token=None, update_version=False, user_name=None, username=None, local_vars_configuration=None):  # noqa: E501
         """UpdateDBTarget - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -120,6 +122,7 @@ class UpdateDBTarget(object):
         self._mongodb_username = None
         self._name = None
         self._new_name = None
+        self._oracle_service_name = None
         self._password = None
         self._port = None
         self._pwd = None
@@ -167,6 +170,8 @@ class UpdateDBTarget(object):
         self.name = name
         if new_name is not None:
             self.new_name = new_name
+        if oracle_service_name is not None:
+            self.oracle_service_name = oracle_service_name
         if password is not None:
             self.password = password
         if port is not None:
@@ -618,6 +623,27 @@ class UpdateDBTarget(object):
         """
 
         self._new_name = new_name
+
+    @property
+    def oracle_service_name(self):
+        """Gets the oracle_service_name of this UpdateDBTarget.  # noqa: E501
+
+
+        :return: The oracle_service_name of this UpdateDBTarget.  # noqa: E501
+        :rtype: str
+        """
+        return self._oracle_service_name
+
+    @oracle_service_name.setter
+    def oracle_service_name(self, oracle_service_name):
+        """Sets the oracle_service_name of this UpdateDBTarget.
+
+
+        :param oracle_service_name: The oracle_service_name of this UpdateDBTarget.  # noqa: E501
+        :type: str
+        """
+
+        self._oracle_service_name = oracle_service_name
 
     @property
     def password(self):

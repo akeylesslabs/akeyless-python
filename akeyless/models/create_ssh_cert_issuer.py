@@ -40,6 +40,11 @@ class CreateSSHCertIssuer(object):
         'name': 'str',
         'password': 'str',
         'principals': 'str',
+        'secure_access_bastion_api': 'str',
+        'secure_access_bastion_ssh': 'str',
+        'secure_access_enable': 'str',
+        'secure_access_host': 'list[str]',
+        'secure_access_ssh_creds_user': 'str',
         'signer_key_name': 'str',
         'token': 'str',
         'ttl': 'int',
@@ -54,6 +59,11 @@ class CreateSSHCertIssuer(object):
         'name': 'name',
         'password': 'password',
         'principals': 'principals',
+        'secure_access_bastion_api': 'secure-access-bastion-api',
+        'secure_access_bastion_ssh': 'secure-access-bastion-ssh',
+        'secure_access_enable': 'secure-access-enable',
+        'secure_access_host': 'secure-access-host',
+        'secure_access_ssh_creds_user': 'secure-access-ssh-creds-user',
         'signer_key_name': 'signer-key-name',
         'token': 'token',
         'ttl': 'ttl',
@@ -61,7 +71,7 @@ class CreateSSHCertIssuer(object):
         'username': 'username'
     }
 
-    def __init__(self, allowed_users=None, extensions=None, metadata=None, name=None, password=None, principals=None, signer_key_name=None, token=None, ttl=None, uid_token=None, username=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, allowed_users=None, extensions=None, metadata=None, name=None, password=None, principals=None, secure_access_bastion_api=None, secure_access_bastion_ssh=None, secure_access_enable=None, secure_access_host=None, secure_access_ssh_creds_user=None, signer_key_name=None, token=None, ttl=None, uid_token=None, username=None, local_vars_configuration=None):  # noqa: E501
         """CreateSSHCertIssuer - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -73,6 +83,11 @@ class CreateSSHCertIssuer(object):
         self._name = None
         self._password = None
         self._principals = None
+        self._secure_access_bastion_api = None
+        self._secure_access_bastion_ssh = None
+        self._secure_access_enable = None
+        self._secure_access_host = None
+        self._secure_access_ssh_creds_user = None
         self._signer_key_name = None
         self._token = None
         self._ttl = None
@@ -90,6 +105,16 @@ class CreateSSHCertIssuer(object):
             self.password = password
         if principals is not None:
             self.principals = principals
+        if secure_access_bastion_api is not None:
+            self.secure_access_bastion_api = secure_access_bastion_api
+        if secure_access_bastion_ssh is not None:
+            self.secure_access_bastion_ssh = secure_access_bastion_ssh
+        if secure_access_enable is not None:
+            self.secure_access_enable = secure_access_enable
+        if secure_access_host is not None:
+            self.secure_access_host = secure_access_host
+        if secure_access_ssh_creds_user is not None:
+            self.secure_access_ssh_creds_user = secure_access_ssh_creds_user
         self.signer_key_name = signer_key_name
         if token is not None:
             self.token = token
@@ -240,6 +265,111 @@ class CreateSSHCertIssuer(object):
         """
 
         self._principals = principals
+
+    @property
+    def secure_access_bastion_api(self):
+        """Gets the secure_access_bastion_api of this CreateSSHCertIssuer.  # noqa: E501
+
+
+        :return: The secure_access_bastion_api of this CreateSSHCertIssuer.  # noqa: E501
+        :rtype: str
+        """
+        return self._secure_access_bastion_api
+
+    @secure_access_bastion_api.setter
+    def secure_access_bastion_api(self, secure_access_bastion_api):
+        """Sets the secure_access_bastion_api of this CreateSSHCertIssuer.
+
+
+        :param secure_access_bastion_api: The secure_access_bastion_api of this CreateSSHCertIssuer.  # noqa: E501
+        :type: str
+        """
+
+        self._secure_access_bastion_api = secure_access_bastion_api
+
+    @property
+    def secure_access_bastion_ssh(self):
+        """Gets the secure_access_bastion_ssh of this CreateSSHCertIssuer.  # noqa: E501
+
+
+        :return: The secure_access_bastion_ssh of this CreateSSHCertIssuer.  # noqa: E501
+        :rtype: str
+        """
+        return self._secure_access_bastion_ssh
+
+    @secure_access_bastion_ssh.setter
+    def secure_access_bastion_ssh(self, secure_access_bastion_ssh):
+        """Sets the secure_access_bastion_ssh of this CreateSSHCertIssuer.
+
+
+        :param secure_access_bastion_ssh: The secure_access_bastion_ssh of this CreateSSHCertIssuer.  # noqa: E501
+        :type: str
+        """
+
+        self._secure_access_bastion_ssh = secure_access_bastion_ssh
+
+    @property
+    def secure_access_enable(self):
+        """Gets the secure_access_enable of this CreateSSHCertIssuer.  # noqa: E501
+
+
+        :return: The secure_access_enable of this CreateSSHCertIssuer.  # noqa: E501
+        :rtype: str
+        """
+        return self._secure_access_enable
+
+    @secure_access_enable.setter
+    def secure_access_enable(self, secure_access_enable):
+        """Sets the secure_access_enable of this CreateSSHCertIssuer.
+
+
+        :param secure_access_enable: The secure_access_enable of this CreateSSHCertIssuer.  # noqa: E501
+        :type: str
+        """
+
+        self._secure_access_enable = secure_access_enable
+
+    @property
+    def secure_access_host(self):
+        """Gets the secure_access_host of this CreateSSHCertIssuer.  # noqa: E501
+
+
+        :return: The secure_access_host of this CreateSSHCertIssuer.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._secure_access_host
+
+    @secure_access_host.setter
+    def secure_access_host(self, secure_access_host):
+        """Sets the secure_access_host of this CreateSSHCertIssuer.
+
+
+        :param secure_access_host: The secure_access_host of this CreateSSHCertIssuer.  # noqa: E501
+        :type: list[str]
+        """
+
+        self._secure_access_host = secure_access_host
+
+    @property
+    def secure_access_ssh_creds_user(self):
+        """Gets the secure_access_ssh_creds_user of this CreateSSHCertIssuer.  # noqa: E501
+
+
+        :return: The secure_access_ssh_creds_user of this CreateSSHCertIssuer.  # noqa: E501
+        :rtype: str
+        """
+        return self._secure_access_ssh_creds_user
+
+    @secure_access_ssh_creds_user.setter
+    def secure_access_ssh_creds_user(self, secure_access_ssh_creds_user):
+        """Sets the secure_access_ssh_creds_user of this CreateSSHCertIssuer.
+
+
+        :param secure_access_ssh_creds_user: The secure_access_ssh_creds_user of this CreateSSHCertIssuer.  # noqa: E501
+        :type: str
+        """
+
+        self._secure_access_ssh_creds_user = secure_access_ssh_creds_user
 
     @property
     def signer_key_name(self):

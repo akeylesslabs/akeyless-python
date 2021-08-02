@@ -39,7 +39,7 @@ class AkeylessGatewayConfig(object):
         'cf': 'CFConfigPart',
         'config_protection_key_name': 'str',
         'general': 'GeneralConfigPart',
-        'kmip_clients': 'KMIPClientsConfigPart',
+        'kmip_clients': 'KMIPConfigPart',
         'ldap': 'LdapConfigPart',
         'leadership': 'LeadershipConfigPart',
         'log_forwarding': 'LogForwardingConfigPart',
@@ -234,7 +234,7 @@ class AkeylessGatewayConfig(object):
 
 
         :return: The kmip_clients of this AkeylessGatewayConfig.  # noqa: E501
-        :rtype: KMIPClientsConfigPart
+        :rtype: KMIPConfigPart
         """
         return self._kmip_clients
 
@@ -244,7 +244,7 @@ class AkeylessGatewayConfig(object):
 
 
         :param kmip_clients: The kmip_clients of this AkeylessGatewayConfig.  # noqa: E501
-        :type: KMIPClientsConfigPart
+        :type: KMIPConfigPart
         """
 
         self._kmip_clients = kmip_clients

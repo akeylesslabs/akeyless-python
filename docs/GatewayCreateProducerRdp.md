@@ -13,6 +13,9 @@ Name | Type | Description | Notes
 **rdp_host_name** | **str** | Hostname | 
 **rdp_host_port** | **str** | Port | [optional] [default to '22']
 **rdp_user_groups** | **str** | Groups | 
+**secure_access_enable** | **str** |  | [optional] 
+**secure_access_host** | **list[str]** |  | [optional] 
+**secure_access_rdp_domain** | **str** |  | [optional] 
 **token** | **str** | Authentication token (see &#x60;/auth&#x60; and &#x60;/configure&#x60;) | [optional] 
 **uid_token** | **str** | The universal identity token, Required only for universal_identity authentication | [optional] 
 **user_ttl** | **str** | User TTL | [optional] [default to '60m']

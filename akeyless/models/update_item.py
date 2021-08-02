@@ -40,6 +40,24 @@ class UpdateItem(object):
         'new_name': 'str',
         'password': 'str',
         'rm_tag': 'list[str]',
+        'secure_access_allow_port_forwading': 'bool',
+        'secure_access_aws_account_id': 'str',
+        'secure_access_aws_native_cli': 'bool',
+        'secure_access_aws_region': 'str',
+        'secure_access_bastion_api': 'str',
+        'secure_access_bastion_issuer': 'str',
+        'secure_access_bastion_ssh': 'str',
+        'secure_access_cluster_endpoint': 'str',
+        'secure_access_dashboard_url': 'str',
+        'secure_access_db_name': 'str',
+        'secure_access_db_schema': 'str',
+        'secure_access_enable': 'str',
+        'secure_access_host': 'list[str]',
+        'secure_access_rdp_domain': 'str',
+        'secure_access_ssh_creds': 'str',
+        'secure_access_ssh_creds_user': 'str',
+        'secure_access_url': 'str',
+        'secure_access_web_browsing': 'bool',
         'token': 'str',
         'uid_token': 'str',
         'username': 'str'
@@ -52,12 +70,30 @@ class UpdateItem(object):
         'new_name': 'new-name',
         'password': 'password',
         'rm_tag': 'rm-tag',
+        'secure_access_allow_port_forwading': 'secure-access-allow-port-forwading',
+        'secure_access_aws_account_id': 'secure-access-aws-account-id',
+        'secure_access_aws_native_cli': 'secure-access-aws-native-cli',
+        'secure_access_aws_region': 'secure-access-aws-region',
+        'secure_access_bastion_api': 'secure-access-bastion-api',
+        'secure_access_bastion_issuer': 'secure-access-bastion-issuer',
+        'secure_access_bastion_ssh': 'secure-access-bastion-ssh',
+        'secure_access_cluster_endpoint': 'secure-access-cluster-endpoint',
+        'secure_access_dashboard_url': 'secure-access-dashboard-url',
+        'secure_access_db_name': 'secure-access-db-name',
+        'secure_access_db_schema': 'secure-access-db-schema',
+        'secure_access_enable': 'secure-access-enable',
+        'secure_access_host': 'secure-access-host',
+        'secure_access_rdp_domain': 'secure-access-rdp-domain',
+        'secure_access_ssh_creds': 'secure-access-ssh-creds',
+        'secure_access_ssh_creds_user': 'secure-access-ssh-creds-user',
+        'secure_access_url': 'secure-access-url',
+        'secure_access_web_browsing': 'secure-access-web-browsing',
         'token': 'token',
         'uid_token': 'uid-token',
         'username': 'username'
     }
 
-    def __init__(self, add_tag=None, name=None, new_metadata='default_metadata', new_name=None, password=None, rm_tag=None, token=None, uid_token=None, username=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, add_tag=None, name=None, new_metadata='default_metadata', new_name=None, password=None, rm_tag=None, secure_access_allow_port_forwading=None, secure_access_aws_account_id=None, secure_access_aws_native_cli=None, secure_access_aws_region=None, secure_access_bastion_api=None, secure_access_bastion_issuer=None, secure_access_bastion_ssh=None, secure_access_cluster_endpoint=None, secure_access_dashboard_url=None, secure_access_db_name=None, secure_access_db_schema=None, secure_access_enable=None, secure_access_host=None, secure_access_rdp_domain=None, secure_access_ssh_creds=None, secure_access_ssh_creds_user=None, secure_access_url=None, secure_access_web_browsing=None, token=None, uid_token=None, username=None, local_vars_configuration=None):  # noqa: E501
         """UpdateItem - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -69,6 +105,24 @@ class UpdateItem(object):
         self._new_name = None
         self._password = None
         self._rm_tag = None
+        self._secure_access_allow_port_forwading = None
+        self._secure_access_aws_account_id = None
+        self._secure_access_aws_native_cli = None
+        self._secure_access_aws_region = None
+        self._secure_access_bastion_api = None
+        self._secure_access_bastion_issuer = None
+        self._secure_access_bastion_ssh = None
+        self._secure_access_cluster_endpoint = None
+        self._secure_access_dashboard_url = None
+        self._secure_access_db_name = None
+        self._secure_access_db_schema = None
+        self._secure_access_enable = None
+        self._secure_access_host = None
+        self._secure_access_rdp_domain = None
+        self._secure_access_ssh_creds = None
+        self._secure_access_ssh_creds_user = None
+        self._secure_access_url = None
+        self._secure_access_web_browsing = None
         self._token = None
         self._uid_token = None
         self._username = None
@@ -85,6 +139,42 @@ class UpdateItem(object):
             self.password = password
         if rm_tag is not None:
             self.rm_tag = rm_tag
+        if secure_access_allow_port_forwading is not None:
+            self.secure_access_allow_port_forwading = secure_access_allow_port_forwading
+        if secure_access_aws_account_id is not None:
+            self.secure_access_aws_account_id = secure_access_aws_account_id
+        if secure_access_aws_native_cli is not None:
+            self.secure_access_aws_native_cli = secure_access_aws_native_cli
+        if secure_access_aws_region is not None:
+            self.secure_access_aws_region = secure_access_aws_region
+        if secure_access_bastion_api is not None:
+            self.secure_access_bastion_api = secure_access_bastion_api
+        if secure_access_bastion_issuer is not None:
+            self.secure_access_bastion_issuer = secure_access_bastion_issuer
+        if secure_access_bastion_ssh is not None:
+            self.secure_access_bastion_ssh = secure_access_bastion_ssh
+        if secure_access_cluster_endpoint is not None:
+            self.secure_access_cluster_endpoint = secure_access_cluster_endpoint
+        if secure_access_dashboard_url is not None:
+            self.secure_access_dashboard_url = secure_access_dashboard_url
+        if secure_access_db_name is not None:
+            self.secure_access_db_name = secure_access_db_name
+        if secure_access_db_schema is not None:
+            self.secure_access_db_schema = secure_access_db_schema
+        if secure_access_enable is not None:
+            self.secure_access_enable = secure_access_enable
+        if secure_access_host is not None:
+            self.secure_access_host = secure_access_host
+        if secure_access_rdp_domain is not None:
+            self.secure_access_rdp_domain = secure_access_rdp_domain
+        if secure_access_ssh_creds is not None:
+            self.secure_access_ssh_creds = secure_access_ssh_creds
+        if secure_access_ssh_creds_user is not None:
+            self.secure_access_ssh_creds_user = secure_access_ssh_creds_user
+        if secure_access_url is not None:
+            self.secure_access_url = secure_access_url
+        if secure_access_web_browsing is not None:
+            self.secure_access_web_browsing = secure_access_web_browsing
         if token is not None:
             self.token = token
         if uid_token is not None:
@@ -231,6 +321,384 @@ class UpdateItem(object):
         """
 
         self._rm_tag = rm_tag
+
+    @property
+    def secure_access_allow_port_forwading(self):
+        """Gets the secure_access_allow_port_forwading of this UpdateItem.  # noqa: E501
+
+
+        :return: The secure_access_allow_port_forwading of this UpdateItem.  # noqa: E501
+        :rtype: bool
+        """
+        return self._secure_access_allow_port_forwading
+
+    @secure_access_allow_port_forwading.setter
+    def secure_access_allow_port_forwading(self, secure_access_allow_port_forwading):
+        """Sets the secure_access_allow_port_forwading of this UpdateItem.
+
+
+        :param secure_access_allow_port_forwading: The secure_access_allow_port_forwading of this UpdateItem.  # noqa: E501
+        :type: bool
+        """
+
+        self._secure_access_allow_port_forwading = secure_access_allow_port_forwading
+
+    @property
+    def secure_access_aws_account_id(self):
+        """Gets the secure_access_aws_account_id of this UpdateItem.  # noqa: E501
+
+
+        :return: The secure_access_aws_account_id of this UpdateItem.  # noqa: E501
+        :rtype: str
+        """
+        return self._secure_access_aws_account_id
+
+    @secure_access_aws_account_id.setter
+    def secure_access_aws_account_id(self, secure_access_aws_account_id):
+        """Sets the secure_access_aws_account_id of this UpdateItem.
+
+
+        :param secure_access_aws_account_id: The secure_access_aws_account_id of this UpdateItem.  # noqa: E501
+        :type: str
+        """
+
+        self._secure_access_aws_account_id = secure_access_aws_account_id
+
+    @property
+    def secure_access_aws_native_cli(self):
+        """Gets the secure_access_aws_native_cli of this UpdateItem.  # noqa: E501
+
+
+        :return: The secure_access_aws_native_cli of this UpdateItem.  # noqa: E501
+        :rtype: bool
+        """
+        return self._secure_access_aws_native_cli
+
+    @secure_access_aws_native_cli.setter
+    def secure_access_aws_native_cli(self, secure_access_aws_native_cli):
+        """Sets the secure_access_aws_native_cli of this UpdateItem.
+
+
+        :param secure_access_aws_native_cli: The secure_access_aws_native_cli of this UpdateItem.  # noqa: E501
+        :type: bool
+        """
+
+        self._secure_access_aws_native_cli = secure_access_aws_native_cli
+
+    @property
+    def secure_access_aws_region(self):
+        """Gets the secure_access_aws_region of this UpdateItem.  # noqa: E501
+
+
+        :return: The secure_access_aws_region of this UpdateItem.  # noqa: E501
+        :rtype: str
+        """
+        return self._secure_access_aws_region
+
+    @secure_access_aws_region.setter
+    def secure_access_aws_region(self, secure_access_aws_region):
+        """Sets the secure_access_aws_region of this UpdateItem.
+
+
+        :param secure_access_aws_region: The secure_access_aws_region of this UpdateItem.  # noqa: E501
+        :type: str
+        """
+
+        self._secure_access_aws_region = secure_access_aws_region
+
+    @property
+    def secure_access_bastion_api(self):
+        """Gets the secure_access_bastion_api of this UpdateItem.  # noqa: E501
+
+
+        :return: The secure_access_bastion_api of this UpdateItem.  # noqa: E501
+        :rtype: str
+        """
+        return self._secure_access_bastion_api
+
+    @secure_access_bastion_api.setter
+    def secure_access_bastion_api(self, secure_access_bastion_api):
+        """Sets the secure_access_bastion_api of this UpdateItem.
+
+
+        :param secure_access_bastion_api: The secure_access_bastion_api of this UpdateItem.  # noqa: E501
+        :type: str
+        """
+
+        self._secure_access_bastion_api = secure_access_bastion_api
+
+    @property
+    def secure_access_bastion_issuer(self):
+        """Gets the secure_access_bastion_issuer of this UpdateItem.  # noqa: E501
+
+
+        :return: The secure_access_bastion_issuer of this UpdateItem.  # noqa: E501
+        :rtype: str
+        """
+        return self._secure_access_bastion_issuer
+
+    @secure_access_bastion_issuer.setter
+    def secure_access_bastion_issuer(self, secure_access_bastion_issuer):
+        """Sets the secure_access_bastion_issuer of this UpdateItem.
+
+
+        :param secure_access_bastion_issuer: The secure_access_bastion_issuer of this UpdateItem.  # noqa: E501
+        :type: str
+        """
+
+        self._secure_access_bastion_issuer = secure_access_bastion_issuer
+
+    @property
+    def secure_access_bastion_ssh(self):
+        """Gets the secure_access_bastion_ssh of this UpdateItem.  # noqa: E501
+
+
+        :return: The secure_access_bastion_ssh of this UpdateItem.  # noqa: E501
+        :rtype: str
+        """
+        return self._secure_access_bastion_ssh
+
+    @secure_access_bastion_ssh.setter
+    def secure_access_bastion_ssh(self, secure_access_bastion_ssh):
+        """Sets the secure_access_bastion_ssh of this UpdateItem.
+
+
+        :param secure_access_bastion_ssh: The secure_access_bastion_ssh of this UpdateItem.  # noqa: E501
+        :type: str
+        """
+
+        self._secure_access_bastion_ssh = secure_access_bastion_ssh
+
+    @property
+    def secure_access_cluster_endpoint(self):
+        """Gets the secure_access_cluster_endpoint of this UpdateItem.  # noqa: E501
+
+
+        :return: The secure_access_cluster_endpoint of this UpdateItem.  # noqa: E501
+        :rtype: str
+        """
+        return self._secure_access_cluster_endpoint
+
+    @secure_access_cluster_endpoint.setter
+    def secure_access_cluster_endpoint(self, secure_access_cluster_endpoint):
+        """Sets the secure_access_cluster_endpoint of this UpdateItem.
+
+
+        :param secure_access_cluster_endpoint: The secure_access_cluster_endpoint of this UpdateItem.  # noqa: E501
+        :type: str
+        """
+
+        self._secure_access_cluster_endpoint = secure_access_cluster_endpoint
+
+    @property
+    def secure_access_dashboard_url(self):
+        """Gets the secure_access_dashboard_url of this UpdateItem.  # noqa: E501
+
+
+        :return: The secure_access_dashboard_url of this UpdateItem.  # noqa: E501
+        :rtype: str
+        """
+        return self._secure_access_dashboard_url
+
+    @secure_access_dashboard_url.setter
+    def secure_access_dashboard_url(self, secure_access_dashboard_url):
+        """Sets the secure_access_dashboard_url of this UpdateItem.
+
+
+        :param secure_access_dashboard_url: The secure_access_dashboard_url of this UpdateItem.  # noqa: E501
+        :type: str
+        """
+
+        self._secure_access_dashboard_url = secure_access_dashboard_url
+
+    @property
+    def secure_access_db_name(self):
+        """Gets the secure_access_db_name of this UpdateItem.  # noqa: E501
+
+
+        :return: The secure_access_db_name of this UpdateItem.  # noqa: E501
+        :rtype: str
+        """
+        return self._secure_access_db_name
+
+    @secure_access_db_name.setter
+    def secure_access_db_name(self, secure_access_db_name):
+        """Sets the secure_access_db_name of this UpdateItem.
+
+
+        :param secure_access_db_name: The secure_access_db_name of this UpdateItem.  # noqa: E501
+        :type: str
+        """
+
+        self._secure_access_db_name = secure_access_db_name
+
+    @property
+    def secure_access_db_schema(self):
+        """Gets the secure_access_db_schema of this UpdateItem.  # noqa: E501
+
+
+        :return: The secure_access_db_schema of this UpdateItem.  # noqa: E501
+        :rtype: str
+        """
+        return self._secure_access_db_schema
+
+    @secure_access_db_schema.setter
+    def secure_access_db_schema(self, secure_access_db_schema):
+        """Sets the secure_access_db_schema of this UpdateItem.
+
+
+        :param secure_access_db_schema: The secure_access_db_schema of this UpdateItem.  # noqa: E501
+        :type: str
+        """
+
+        self._secure_access_db_schema = secure_access_db_schema
+
+    @property
+    def secure_access_enable(self):
+        """Gets the secure_access_enable of this UpdateItem.  # noqa: E501
+
+
+        :return: The secure_access_enable of this UpdateItem.  # noqa: E501
+        :rtype: str
+        """
+        return self._secure_access_enable
+
+    @secure_access_enable.setter
+    def secure_access_enable(self, secure_access_enable):
+        """Sets the secure_access_enable of this UpdateItem.
+
+
+        :param secure_access_enable: The secure_access_enable of this UpdateItem.  # noqa: E501
+        :type: str
+        """
+
+        self._secure_access_enable = secure_access_enable
+
+    @property
+    def secure_access_host(self):
+        """Gets the secure_access_host of this UpdateItem.  # noqa: E501
+
+
+        :return: The secure_access_host of this UpdateItem.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._secure_access_host
+
+    @secure_access_host.setter
+    def secure_access_host(self, secure_access_host):
+        """Sets the secure_access_host of this UpdateItem.
+
+
+        :param secure_access_host: The secure_access_host of this UpdateItem.  # noqa: E501
+        :type: list[str]
+        """
+
+        self._secure_access_host = secure_access_host
+
+    @property
+    def secure_access_rdp_domain(self):
+        """Gets the secure_access_rdp_domain of this UpdateItem.  # noqa: E501
+
+
+        :return: The secure_access_rdp_domain of this UpdateItem.  # noqa: E501
+        :rtype: str
+        """
+        return self._secure_access_rdp_domain
+
+    @secure_access_rdp_domain.setter
+    def secure_access_rdp_domain(self, secure_access_rdp_domain):
+        """Sets the secure_access_rdp_domain of this UpdateItem.
+
+
+        :param secure_access_rdp_domain: The secure_access_rdp_domain of this UpdateItem.  # noqa: E501
+        :type: str
+        """
+
+        self._secure_access_rdp_domain = secure_access_rdp_domain
+
+    @property
+    def secure_access_ssh_creds(self):
+        """Gets the secure_access_ssh_creds of this UpdateItem.  # noqa: E501
+
+
+        :return: The secure_access_ssh_creds of this UpdateItem.  # noqa: E501
+        :rtype: str
+        """
+        return self._secure_access_ssh_creds
+
+    @secure_access_ssh_creds.setter
+    def secure_access_ssh_creds(self, secure_access_ssh_creds):
+        """Sets the secure_access_ssh_creds of this UpdateItem.
+
+
+        :param secure_access_ssh_creds: The secure_access_ssh_creds of this UpdateItem.  # noqa: E501
+        :type: str
+        """
+
+        self._secure_access_ssh_creds = secure_access_ssh_creds
+
+    @property
+    def secure_access_ssh_creds_user(self):
+        """Gets the secure_access_ssh_creds_user of this UpdateItem.  # noqa: E501
+
+
+        :return: The secure_access_ssh_creds_user of this UpdateItem.  # noqa: E501
+        :rtype: str
+        """
+        return self._secure_access_ssh_creds_user
+
+    @secure_access_ssh_creds_user.setter
+    def secure_access_ssh_creds_user(self, secure_access_ssh_creds_user):
+        """Sets the secure_access_ssh_creds_user of this UpdateItem.
+
+
+        :param secure_access_ssh_creds_user: The secure_access_ssh_creds_user of this UpdateItem.  # noqa: E501
+        :type: str
+        """
+
+        self._secure_access_ssh_creds_user = secure_access_ssh_creds_user
+
+    @property
+    def secure_access_url(self):
+        """Gets the secure_access_url of this UpdateItem.  # noqa: E501
+
+
+        :return: The secure_access_url of this UpdateItem.  # noqa: E501
+        :rtype: str
+        """
+        return self._secure_access_url
+
+    @secure_access_url.setter
+    def secure_access_url(self, secure_access_url):
+        """Sets the secure_access_url of this UpdateItem.
+
+
+        :param secure_access_url: The secure_access_url of this UpdateItem.  # noqa: E501
+        :type: str
+        """
+
+        self._secure_access_url = secure_access_url
+
+    @property
+    def secure_access_web_browsing(self):
+        """Gets the secure_access_web_browsing of this UpdateItem.  # noqa: E501
+
+
+        :return: The secure_access_web_browsing of this UpdateItem.  # noqa: E501
+        :rtype: bool
+        """
+        return self._secure_access_web_browsing
+
+    @secure_access_web_browsing.setter
+    def secure_access_web_browsing(self, secure_access_web_browsing):
+        """Sets the secure_access_web_browsing of this UpdateItem.
+
+
+        :param secure_access_web_browsing: The secure_access_web_browsing of this UpdateItem.  # noqa: E501
+        :type: bool
+        """
+
+        self._secure_access_web_browsing = secure_access_web_browsing
 
     @property
     def token(self):

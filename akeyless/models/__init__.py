@@ -172,6 +172,8 @@ from akeyless.models.gateway_create_producer_my_sql import GatewayCreateProducer
 from akeyless.models.gateway_create_producer_my_sql_output import GatewayCreateProducerMySQLOutput
 from akeyless.models.gateway_create_producer_native_k8_s import GatewayCreateProducerNativeK8S
 from akeyless.models.gateway_create_producer_native_k8_s_output import GatewayCreateProducerNativeK8SOutput
+from akeyless.models.gateway_create_producer_oracle_db import GatewayCreateProducerOracleDb
+from akeyless.models.gateway_create_producer_oracle_db_output import GatewayCreateProducerOracleDbOutput
 from akeyless.models.gateway_create_producer_postgre_sql import GatewayCreateProducerPostgreSQL
 from akeyless.models.gateway_create_producer_postgre_sql_output import GatewayCreateProducerPostgreSQLOutput
 from akeyless.models.gateway_create_producer_rabbit_mq import GatewayCreateProducerRabbitMQ
@@ -228,7 +230,7 @@ from akeyless.models.json_error import JSONError
 from akeyless.models.k8_s_migration import K8SMigration
 from akeyless.models.k8_s_payload import K8SPayload
 from akeyless.models.kmip_client import KMIPClient
-from akeyless.models.kmip_clients_config_part import KMIPClientsConfigPart
+from akeyless.models.kmip_config_part import KMIPConfigPart
 from akeyless.models.ldap_access_rules import LDAPAccessRules
 from akeyless.models.ldap_config_part import LdapConfigPart
 from akeyless.models.leadership_config_part import LeadershipConfigPart
@@ -271,6 +273,7 @@ from akeyless.models.rules import Rules
 from akeyless.models.saml_access_rules import SAMLAccessRules
 from akeyless.models.saml_attribute import SAMLAttribute
 from akeyless.models.ssh_certificate_issue_details import SSHCertificateIssueDetails
+from akeyless.models.secure_remote_access import SecureRemoteAccess
 from akeyless.models.set_item_state import SetItemState
 from akeyless.models.set_role_rule import SetRoleRule
 from akeyless.models.sign_jwt_output import SignJWTOutput

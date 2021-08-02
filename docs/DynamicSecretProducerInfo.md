@@ -5,6 +5,7 @@ DynamicSecretProducerInfo The dynamic secret producer info This parameter releva
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **gw_cluster_id** | **int** |  | [optional] 
+**producer_last_keep_alive** | **str** |  | [optional] 
 **producer_metadata** | **str** |  | [optional] 
 **producer_status** | **str** | RotationStatus defines types of rotation Status | [optional] 
 **producer_type** | **str** |  | [optional] 

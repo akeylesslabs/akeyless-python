@@ -1,0 +1,32 @@
+# SecureRemoteAccess
+
+## Properties
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**account_id** | **str** |  | [optional] 
+**allow_port_forwarding** | **bool** |  | [optional] 
+**bastion_api** | **str** |  | [optional] 
+**bastion_issuer** | **str** |  | [optional] 
+**bastion_issuer_id** | **int** |  | [optional] 
+**bastion_ssh** | **str** |  | [optional] 
+**category** | **str** |  | [optional] 
+**dashboard_url** | **str** |  | [optional] 
+**db_name** | **str** |  | [optional] 
+**domain** | **str** |  | [optional] 
+**enable** | **bool** |  | [optional] 
+**endpoint** | **str** |  | [optional] 
+**host** | **list[str]** |  | [optional] 
+**is_cli** | **bool** |  | [optional] 
+**is_web** | **bool** |  | [optional] 
+**isolated** | **bool** |  | [optional] 
+**native** | **bool** |  | [optional] 
+**region** | **str** |  | [optional] 
+**schema** | **str** |  | [optional] 
+**ssh_password** | **bool** |  | [optional] 
+**ssh_private_key** | **bool** |  | [optional] 
+**ssh_user** | **str** |  | [optional] 
+**url** | **str** |  | [optional] 
+
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+
+

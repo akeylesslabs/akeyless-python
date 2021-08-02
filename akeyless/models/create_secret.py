@@ -39,6 +39,12 @@ class CreateSecret(object):
         'name': 'str',
         'password': 'str',
         'protection_key': 'str',
+        'secure_access_bastion_issuer': 'str',
+        'secure_access_enable': 'str',
+        'secure_access_host': 'list[str]',
+        'secure_access_ssh_creds': 'str',
+        'secure_access_url': 'str',
+        'secure_access_web_browsing': 'bool',
         'tags': 'list[str]',
         'token': 'str',
         'uid_token': 'str',
@@ -52,6 +58,12 @@ class CreateSecret(object):
         'name': 'name',
         'password': 'password',
         'protection_key': 'protection_key',
+        'secure_access_bastion_issuer': 'secure-access-bastion-issuer',
+        'secure_access_enable': 'secure-access-enable',
+        'secure_access_host': 'secure-access-host',
+        'secure_access_ssh_creds': 'secure-access-ssh-creds',
+        'secure_access_url': 'secure-access-url',
+        'secure_access_web_browsing': 'secure-access-web-browsing',
         'tags': 'tags',
         'token': 'token',
         'uid_token': 'uid-token',
@@ -59,7 +71,7 @@ class CreateSecret(object):
         'value': 'value'
     }
 
-    def __init__(self, metadata=None, multiline_value=None, name=None, password=None, protection_key=None, tags=None, token=None, uid_token=None, username=None, value=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, metadata=None, multiline_value=None, name=None, password=None, protection_key=None, secure_access_bastion_issuer=None, secure_access_enable=None, secure_access_host=None, secure_access_ssh_creds=None, secure_access_url=None, secure_access_web_browsing=None, tags=None, token=None, uid_token=None, username=None, value=None, local_vars_configuration=None):  # noqa: E501
         """CreateSecret - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -70,6 +82,12 @@ class CreateSecret(object):
         self._name = None
         self._password = None
         self._protection_key = None
+        self._secure_access_bastion_issuer = None
+        self._secure_access_enable = None
+        self._secure_access_host = None
+        self._secure_access_ssh_creds = None
+        self._secure_access_url = None
+        self._secure_access_web_browsing = None
         self._tags = None
         self._token = None
         self._uid_token = None
@@ -86,6 +104,18 @@ class CreateSecret(object):
             self.password = password
         if protection_key is not None:
             self.protection_key = protection_key
+        if secure_access_bastion_issuer is not None:
+            self.secure_access_bastion_issuer = secure_access_bastion_issuer
+        if secure_access_enable is not None:
+            self.secure_access_enable = secure_access_enable
+        if secure_access_host is not None:
+            self.secure_access_host = secure_access_host
+        if secure_access_ssh_creds is not None:
+            self.secure_access_ssh_creds = secure_access_ssh_creds
+        if secure_access_url is not None:
+            self.secure_access_url = secure_access_url
+        if secure_access_web_browsing is not None:
+            self.secure_access_web_browsing = secure_access_web_browsing
         if tags is not None:
             self.tags = tags
         if token is not None:
@@ -212,6 +242,132 @@ class CreateSecret(object):
         """
 
         self._protection_key = protection_key
+
+    @property
+    def secure_access_bastion_issuer(self):
+        """Gets the secure_access_bastion_issuer of this CreateSecret.  # noqa: E501
+
+
+        :return: The secure_access_bastion_issuer of this CreateSecret.  # noqa: E501
+        :rtype: str
+        """
+        return self._secure_access_bastion_issuer
+
+    @secure_access_bastion_issuer.setter
+    def secure_access_bastion_issuer(self, secure_access_bastion_issuer):
+        """Sets the secure_access_bastion_issuer of this CreateSecret.
+
+
+        :param secure_access_bastion_issuer: The secure_access_bastion_issuer of this CreateSecret.  # noqa: E501
+        :type: str
+        """
+
+        self._secure_access_bastion_issuer = secure_access_bastion_issuer
+
+    @property
+    def secure_access_enable(self):
+        """Gets the secure_access_enable of this CreateSecret.  # noqa: E501
+
+
+        :return: The secure_access_enable of this CreateSecret.  # noqa: E501
+        :rtype: str
+        """
+        return self._secure_access_enable
+
+    @secure_access_enable.setter
+    def secure_access_enable(self, secure_access_enable):
+        """Sets the secure_access_enable of this CreateSecret.
+
+
+        :param secure_access_enable: The secure_access_enable of this CreateSecret.  # noqa: E501
+        :type: str
+        """
+
+        self._secure_access_enable = secure_access_enable
+
+    @property
+    def secure_access_host(self):
+        """Gets the secure_access_host of this CreateSecret.  # noqa: E501
+
+
+        :return: The secure_access_host of this CreateSecret.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._secure_access_host
+
+    @secure_access_host.setter
+    def secure_access_host(self, secure_access_host):
+        """Sets the secure_access_host of this CreateSecret.
+
+
+        :param secure_access_host: The secure_access_host of this CreateSecret.  # noqa: E501
+        :type: list[str]
+        """
+
+        self._secure_access_host = secure_access_host
+
+    @property
+    def secure_access_ssh_creds(self):
+        """Gets the secure_access_ssh_creds of this CreateSecret.  # noqa: E501
+
+
+        :return: The secure_access_ssh_creds of this CreateSecret.  # noqa: E501
+        :rtype: str
+        """
+        return self._secure_access_ssh_creds
+
+    @secure_access_ssh_creds.setter
+    def secure_access_ssh_creds(self, secure_access_ssh_creds):
+        """Sets the secure_access_ssh_creds of this CreateSecret.
+
+
+        :param secure_access_ssh_creds: The secure_access_ssh_creds of this CreateSecret.  # noqa: E501
+        :type: str
+        """
+
+        self._secure_access_ssh_creds = secure_access_ssh_creds
+
+    @property
+    def secure_access_url(self):
+        """Gets the secure_access_url of this CreateSecret.  # noqa: E501
+
+
+        :return: The secure_access_url of this CreateSecret.  # noqa: E501
+        :rtype: str
+        """
+        return self._secure_access_url
+
+    @secure_access_url.setter
+    def secure_access_url(self, secure_access_url):
+        """Sets the secure_access_url of this CreateSecret.
+
+
+        :param secure_access_url: The secure_access_url of this CreateSecret.  # noqa: E501
+        :type: str
+        """
+
+        self._secure_access_url = secure_access_url
+
+    @property
+    def secure_access_web_browsing(self):
+        """Gets the secure_access_web_browsing of this CreateSecret.  # noqa: E501
+
+
+        :return: The secure_access_web_browsing of this CreateSecret.  # noqa: E501
+        :rtype: bool
+        """
+        return self._secure_access_web_browsing
+
+    @secure_access_web_browsing.setter
+    def secure_access_web_browsing(self, secure_access_web_browsing):
+        """Sets the secure_access_web_browsing of this CreateSecret.
+
+
+        :param secure_access_web_browsing: The secure_access_web_browsing of this CreateSecret.  # noqa: E501
+        :type: bool
+        """
+
+        self._secure_access_web_browsing = secure_access_web_browsing
 
     @property
     def tags(self):

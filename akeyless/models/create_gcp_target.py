@@ -36,6 +36,7 @@ class CreateGcpTarget(object):
     openapi_types = {
         'comment': 'str',
         'gcp_key': 'str',
+        'gcp_sa_email': 'str',
         'key': 'str',
         'name': 'str',
         'password': 'str',
@@ -47,6 +48,7 @@ class CreateGcpTarget(object):
     attribute_map = {
         'comment': 'comment',
         'gcp_key': 'gcp-key',
+        'gcp_sa_email': 'gcp-sa-email',
         'key': 'key',
         'name': 'name',
         'password': 'password',
@@ -55,7 +57,7 @@ class CreateGcpTarget(object):
         'username': 'username'
     }
 
-    def __init__(self, comment=None, gcp_key=None, key=None, name=None, password=None, token=None, uid_token=None, username=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, comment=None, gcp_key=None, gcp_sa_email=None, key=None, name=None, password=None, token=None, uid_token=None, username=None, local_vars_configuration=None):  # noqa: E501
         """CreateGcpTarget - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -63,6 +65,7 @@ class CreateGcpTarget(object):
 
         self._comment = None
         self._gcp_key = None
+        self._gcp_sa_email = None
         self._key = None
         self._name = None
         self._password = None
@@ -75,6 +78,7 @@ class CreateGcpTarget(object):
             self.comment = comment
         if gcp_key is not None:
             self.gcp_key = gcp_key
+        self.gcp_sa_email = gcp_sa_email
         if key is not None:
             self.key = key
         self.name = name
@@ -132,6 +136,31 @@ class CreateGcpTarget(object):
         """
 
         self._gcp_key = gcp_key
+
+    @property
+    def gcp_sa_email(self):
+        """Gets the gcp_sa_email of this CreateGcpTarget.  # noqa: E501
+
+        GCP service account email  # noqa: E501
+
+        :return: The gcp_sa_email of this CreateGcpTarget.  # noqa: E501
+        :rtype: str
+        """
+        return self._gcp_sa_email
+
+    @gcp_sa_email.setter
+    def gcp_sa_email(self, gcp_sa_email):
+        """Sets the gcp_sa_email of this CreateGcpTarget.
+
+        GCP service account email  # noqa: E501
+
+        :param gcp_sa_email: The gcp_sa_email of this CreateGcpTarget.  # noqa: E501
+        :type: str
+        """
+        if self.local_vars_configuration.client_side_validation and gcp_sa_email is None:  # noqa: E501
+            raise ValueError("Invalid value for `gcp_sa_email`, must not be `None`")  # noqa: E501
+
+        self._gcp_sa_email = gcp_sa_email
 
     @property
     def key(self):

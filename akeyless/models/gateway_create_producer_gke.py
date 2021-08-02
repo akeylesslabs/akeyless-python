@@ -42,6 +42,10 @@ class GatewayCreateProducerGke(object):
         'name': 'str',
         'password': 'str',
         'producer_encryption_key_name': 'str',
+        'secure_access_allow_port_forwading': 'bool',
+        'secure_access_bastion_issuer': 'str',
+        'secure_access_cluster_endpoint': 'str',
+        'secure_access_enable': 'str',
         'token': 'str',
         'uid_token': 'str',
         'user_ttl': 'str',
@@ -57,13 +61,17 @@ class GatewayCreateProducerGke(object):
         'name': 'name',
         'password': 'password',
         'producer_encryption_key_name': 'producer-encryption-key-name',
+        'secure_access_allow_port_forwading': 'secure-access-allow-port-forwading',
+        'secure_access_bastion_issuer': 'secure-access-bastion-issuer',
+        'secure_access_cluster_endpoint': 'secure-access-cluster-endpoint',
+        'secure_access_enable': 'secure-access-enable',
         'token': 'token',
         'uid_token': 'uid-token',
         'user_ttl': 'user-ttl',
         'username': 'username'
     }
 
-    def __init__(self, gke_account_key=None, gke_cluster_cert=None, gke_cluster_endpoint=None, gke_cluster_name=None, gke_service_account_email=None, name=None, password=None, producer_encryption_key_name=None, token=None, uid_token=None, user_ttl='60m', username=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, gke_account_key=None, gke_cluster_cert=None, gke_cluster_endpoint=None, gke_cluster_name=None, gke_service_account_email=None, name=None, password=None, producer_encryption_key_name=None, secure_access_allow_port_forwading=None, secure_access_bastion_issuer=None, secure_access_cluster_endpoint=None, secure_access_enable=None, token=None, uid_token=None, user_ttl='60m', username=None, local_vars_configuration=None):  # noqa: E501
         """GatewayCreateProducerGke - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -77,6 +85,10 @@ class GatewayCreateProducerGke(object):
         self._name = None
         self._password = None
         self._producer_encryption_key_name = None
+        self._secure_access_allow_port_forwading = None
+        self._secure_access_bastion_issuer = None
+        self._secure_access_cluster_endpoint = None
+        self._secure_access_enable = None
         self._token = None
         self._uid_token = None
         self._user_ttl = None
@@ -94,6 +106,14 @@ class GatewayCreateProducerGke(object):
             self.password = password
         if producer_encryption_key_name is not None:
             self.producer_encryption_key_name = producer_encryption_key_name
+        if secure_access_allow_port_forwading is not None:
+            self.secure_access_allow_port_forwading = secure_access_allow_port_forwading
+        if secure_access_bastion_issuer is not None:
+            self.secure_access_bastion_issuer = secure_access_bastion_issuer
+        if secure_access_cluster_endpoint is not None:
+            self.secure_access_cluster_endpoint = secure_access_cluster_endpoint
+        if secure_access_enable is not None:
+            self.secure_access_enable = secure_access_enable
         if token is not None:
             self.token = token
         if uid_token is not None:
@@ -296,6 +316,90 @@ class GatewayCreateProducerGke(object):
         """
 
         self._producer_encryption_key_name = producer_encryption_key_name
+
+    @property
+    def secure_access_allow_port_forwading(self):
+        """Gets the secure_access_allow_port_forwading of this GatewayCreateProducerGke.  # noqa: E501
+
+
+        :return: The secure_access_allow_port_forwading of this GatewayCreateProducerGke.  # noqa: E501
+        :rtype: bool
+        """
+        return self._secure_access_allow_port_forwading
+
+    @secure_access_allow_port_forwading.setter
+    def secure_access_allow_port_forwading(self, secure_access_allow_port_forwading):
+        """Sets the secure_access_allow_port_forwading of this GatewayCreateProducerGke.
+
+
+        :param secure_access_allow_port_forwading: The secure_access_allow_port_forwading of this GatewayCreateProducerGke.  # noqa: E501
+        :type: bool
+        """
+
+        self._secure_access_allow_port_forwading = secure_access_allow_port_forwading
+
+    @property
+    def secure_access_bastion_issuer(self):
+        """Gets the secure_access_bastion_issuer of this GatewayCreateProducerGke.  # noqa: E501
+
+
+        :return: The secure_access_bastion_issuer of this GatewayCreateProducerGke.  # noqa: E501
+        :rtype: str
+        """
+        return self._secure_access_bastion_issuer
+
+    @secure_access_bastion_issuer.setter
+    def secure_access_bastion_issuer(self, secure_access_bastion_issuer):
+        """Sets the secure_access_bastion_issuer of this GatewayCreateProducerGke.
+
+
+        :param secure_access_bastion_issuer: The secure_access_bastion_issuer of this GatewayCreateProducerGke.  # noqa: E501
+        :type: str
+        """
+
+        self._secure_access_bastion_issuer = secure_access_bastion_issuer
+
+    @property
+    def secure_access_cluster_endpoint(self):
+        """Gets the secure_access_cluster_endpoint of this GatewayCreateProducerGke.  # noqa: E501
+
+
+        :return: The secure_access_cluster_endpoint of this GatewayCreateProducerGke.  # noqa: E501
+        :rtype: str
+        """
+        return self._secure_access_cluster_endpoint
+
+    @secure_access_cluster_endpoint.setter
+    def secure_access_cluster_endpoint(self, secure_access_cluster_endpoint):
+        """Sets the secure_access_cluster_endpoint of this GatewayCreateProducerGke.
+
+
+        :param secure_access_cluster_endpoint: The secure_access_cluster_endpoint of this GatewayCreateProducerGke.  # noqa: E501
+        :type: str
+        """
+
+        self._secure_access_cluster_endpoint = secure_access_cluster_endpoint
+
+    @property
+    def secure_access_enable(self):
+        """Gets the secure_access_enable of this GatewayCreateProducerGke.  # noqa: E501
+
+
+        :return: The secure_access_enable of this GatewayCreateProducerGke.  # noqa: E501
+        :rtype: str
+        """
+        return self._secure_access_enable
+
+    @secure_access_enable.setter
+    def secure_access_enable(self, secure_access_enable):
+        """Sets the secure_access_enable of this GatewayCreateProducerGke.
+
+
+        :param secure_access_enable: The secure_access_enable of this GatewayCreateProducerGke.  # noqa: E501
+        :type: str
+        """
+
+        self._secure_access_enable = secure_access_enable
 
     @property
     def token(self):

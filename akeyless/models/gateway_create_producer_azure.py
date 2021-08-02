@@ -41,6 +41,8 @@ class GatewayCreateProducerAzure(object):
         'name': 'str',
         'password': 'str',
         'producer_encryption_key_name': 'str',
+        'secure_access_enable': 'str',
+        'secure_access_web_browsing': 'bool',
         'token': 'str',
         'uid_token': 'str',
         'user_group_obj_id': 'str',
@@ -60,6 +62,8 @@ class GatewayCreateProducerAzure(object):
         'name': 'name',
         'password': 'password',
         'producer_encryption_key_name': 'producer-encryption-key-name',
+        'secure_access_enable': 'secure-access-enable',
+        'secure_access_web_browsing': 'secure-access-web-browsing',
         'token': 'token',
         'uid_token': 'uid-token',
         'user_group_obj_id': 'user-group-obj-id',
@@ -71,7 +75,7 @@ class GatewayCreateProducerAzure(object):
         'username': 'username'
     }
 
-    def __init__(self, app_obj_id=None, azure_client_id=None, azure_client_secret=None, azure_tenant_id=None, name=None, password=None, producer_encryption_key_name=None, token=None, uid_token=None, user_group_obj_id=None, user_portal_access=False, user_principal_name=None, user_programmatic_access=True, user_role_template_id=None, user_ttl='60m', username=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, app_obj_id=None, azure_client_id=None, azure_client_secret=None, azure_tenant_id=None, name=None, password=None, producer_encryption_key_name=None, secure_access_enable=None, secure_access_web_browsing=None, token=None, uid_token=None, user_group_obj_id=None, user_portal_access=False, user_principal_name=None, user_programmatic_access=True, user_role_template_id=None, user_ttl='60m', username=None, local_vars_configuration=None):  # noqa: E501
         """GatewayCreateProducerAzure - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -84,6 +88,8 @@ class GatewayCreateProducerAzure(object):
         self._name = None
         self._password = None
         self._producer_encryption_key_name = None
+        self._secure_access_enable = None
+        self._secure_access_web_browsing = None
         self._token = None
         self._uid_token = None
         self._user_group_obj_id = None
@@ -105,6 +111,10 @@ class GatewayCreateProducerAzure(object):
             self.password = password
         if producer_encryption_key_name is not None:
             self.producer_encryption_key_name = producer_encryption_key_name
+        if secure_access_enable is not None:
+            self.secure_access_enable = secure_access_enable
+        if secure_access_web_browsing is not None:
+            self.secure_access_web_browsing = secure_access_web_browsing
         if token is not None:
             self.token = token
         if uid_token is not None:
@@ -292,6 +302,48 @@ class GatewayCreateProducerAzure(object):
         """
 
         self._producer_encryption_key_name = producer_encryption_key_name
+
+    @property
+    def secure_access_enable(self):
+        """Gets the secure_access_enable of this GatewayCreateProducerAzure.  # noqa: E501
+
+
+        :return: The secure_access_enable of this GatewayCreateProducerAzure.  # noqa: E501
+        :rtype: str
+        """
+        return self._secure_access_enable
+
+    @secure_access_enable.setter
+    def secure_access_enable(self, secure_access_enable):
+        """Sets the secure_access_enable of this GatewayCreateProducerAzure.
+
+
+        :param secure_access_enable: The secure_access_enable of this GatewayCreateProducerAzure.  # noqa: E501
+        :type: str
+        """
+
+        self._secure_access_enable = secure_access_enable
+
+    @property
+    def secure_access_web_browsing(self):
+        """Gets the secure_access_web_browsing of this GatewayCreateProducerAzure.  # noqa: E501
+
+
+        :return: The secure_access_web_browsing of this GatewayCreateProducerAzure.  # noqa: E501
+        :rtype: bool
+        """
+        return self._secure_access_web_browsing
+
+    @secure_access_web_browsing.setter
+    def secure_access_web_browsing(self, secure_access_web_browsing):
+        """Sets the secure_access_web_browsing of this GatewayCreateProducerAzure.
+
+
+        :param secure_access_web_browsing: The secure_access_web_browsing of this GatewayCreateProducerAzure.  # noqa: E501
+        :type: bool
+        """
+
+        self._secure_access_web_browsing = secure_access_web_browsing
 
     @property
     def token(self):

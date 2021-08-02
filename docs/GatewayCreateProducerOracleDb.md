@@ -1,25 +1,22 @@
-# GatewayCreateProducerAzure
+# GatewayCreateProducerOracleDb
 
-gatewayCreateProducerAzure is a command that creates azure producer
+gatewayCreateProducerOracleDb is a command that creates oracle db producer
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**app_obj_id** | **str** | Azure App Object Id | [optional] 
-**azure_client_id** | **str** | Azure Client ID | 
-**azure_client_secret** | **str** | Azure Client Secret | 
-**azure_tenant_id** | **str** | Azure Tenant ID | 
+**db_server_certificates** | **str** | (Optional) DB server certificates | [optional] 
+**db_server_name** | **str** | (Optional) Server name for certificate verification | [optional] 
 **name** | **str** | Producer name | 
+**oracle_host** | **str** | Oracle Host | [optional] [default to '127.0.0.1']
+**oracle_password** | **str** | Oracle Password | 
+**oracle_port** | **str** | Oracle Port | [optional] [default to '1521']
+**oracle_screation_statements** | **str** | Oracle Creation statements | [optional] 
+**oracle_service_name** | **str** | Oracle DB Name | 
+**oracle_username** | **str** | Oracle Username | 
 **password** | **str** | Required only when the authentication process requires a username and password | [optional] 
 **producer_encryption_key_name** | **str** | Dynamic producer encryption key | [optional] 
-**secure_access_enable** | **str** |  | [optional] 
-**secure_access_web_browsing** | **bool** |  | [optional] 
 **token** | **str** | Authentication token (see &#x60;/auth&#x60; and &#x60;/configure&#x60;) | [optional] 
 **uid_token** | **str** | The universal identity token, Required only for universal_identity authentication | [optional] 
-**user_group_obj_id** | **str** | User Group Object Id | [optional] 
-**user_portal_access** | **bool** | Azure User portal access | [optional] [default to False]
-**user_principal_name** | **str** | User Principal Name | [optional] 
-**user_programmatic_access** | **bool** | Azure User programmatic access | [optional] [default to True]
-**user_role_template_id** | **str** | User Role Template Id | [optional] 
 **user_ttl** | **str** | User TTL | [optional] [default to '60m']
 **username** | **str** | Required only when the authentication process requires a username and password | [optional] 
 

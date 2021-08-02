@@ -37,17 +37,19 @@ class ItemGeneralInfo(object):
         'cert_issue_details': 'CertificateIssueInfo',
         'classic_key_details': 'ClassicKeyDetailsInfo',
         'dynamic_secret_producer_details': 'DynamicSecretProducerInfo',
-        'rotated_secret_details': 'RotatedSecretDetailsInfo'
+        'rotated_secret_details': 'RotatedSecretDetailsInfo',
+        'secure_remote_access_details': 'SecureRemoteAccess'
     }
 
     attribute_map = {
         'cert_issue_details': 'cert_issue_details',
         'classic_key_details': 'classic_key_details',
         'dynamic_secret_producer_details': 'dynamic_secret_producer_details',
-        'rotated_secret_details': 'rotated_secret_details'
+        'rotated_secret_details': 'rotated_secret_details',
+        'secure_remote_access_details': 'secure_remote_access_details'
     }
 
-    def __init__(self, cert_issue_details=None, classic_key_details=None, dynamic_secret_producer_details=None, rotated_secret_details=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, cert_issue_details=None, classic_key_details=None, dynamic_secret_producer_details=None, rotated_secret_details=None, secure_remote_access_details=None, local_vars_configuration=None):  # noqa: E501
         """ItemGeneralInfo - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -57,6 +59,7 @@ class ItemGeneralInfo(object):
         self._classic_key_details = None
         self._dynamic_secret_producer_details = None
         self._rotated_secret_details = None
+        self._secure_remote_access_details = None
         self.discriminator = None
 
         if cert_issue_details is not None:
@@ -67,6 +70,8 @@ class ItemGeneralInfo(object):
             self.dynamic_secret_producer_details = dynamic_secret_producer_details
         if rotated_secret_details is not None:
             self.rotated_secret_details = rotated_secret_details
+        if secure_remote_access_details is not None:
+            self.secure_remote_access_details = secure_remote_access_details
 
     @property
     def cert_issue_details(self):
@@ -151,6 +156,27 @@ class ItemGeneralInfo(object):
         """
 
         self._rotated_secret_details = rotated_secret_details
+
+    @property
+    def secure_remote_access_details(self):
+        """Gets the secure_remote_access_details of this ItemGeneralInfo.  # noqa: E501
+
+
+        :return: The secure_remote_access_details of this ItemGeneralInfo.  # noqa: E501
+        :rtype: SecureRemoteAccess
+        """
+        return self._secure_remote_access_details
+
+    @secure_remote_access_details.setter
+    def secure_remote_access_details(self, secure_remote_access_details):
+        """Sets the secure_remote_access_details of this ItemGeneralInfo.
+
+
+        :param secure_remote_access_details: The secure_remote_access_details of this ItemGeneralInfo.  # noqa: E501
+        :type: SecureRemoteAccess
+        """
+
+        self._secure_remote_access_details = secure_remote_access_details
 
     def to_dict(self):
         """Returns the model properties as a dict"""

@@ -45,6 +45,9 @@ class GatewayCreateProducerRabbitMQ(object):
         'rabbitmq_user_tags': 'str',
         'rabbitmq_user_vhost': 'str',
         'rabbitmq_user_write_permission': 'str',
+        'secure_access_enable': 'str',
+        'secure_access_url': 'str',
+        'secure_access_web_browsing': 'bool',
         'token': 'str',
         'uid_token': 'str',
         'user_ttl': 'str',
@@ -63,13 +66,16 @@ class GatewayCreateProducerRabbitMQ(object):
         'rabbitmq_user_tags': 'rabbitmq-user-tags',
         'rabbitmq_user_vhost': 'rabbitmq-user-vhost',
         'rabbitmq_user_write_permission': 'rabbitmq-user-write-permission',
+        'secure_access_enable': 'secure-access-enable',
+        'secure_access_url': 'secure-access-url',
+        'secure_access_web_browsing': 'secure-access-web-browsing',
         'token': 'token',
         'uid_token': 'uid-token',
         'user_ttl': 'user-ttl',
         'username': 'username'
     }
 
-    def __init__(self, name=None, password=None, producer_encryption_key_name=None, rabbitmq_admin_pwd=None, rabbitmq_admin_user=None, rabbitmq_server_uri=None, rabbitmq_user_conf_permission=None, rabbitmq_user_read_permission=None, rabbitmq_user_tags=None, rabbitmq_user_vhost=None, rabbitmq_user_write_permission=None, token=None, uid_token=None, user_ttl='60m', username=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, name=None, password=None, producer_encryption_key_name=None, rabbitmq_admin_pwd=None, rabbitmq_admin_user=None, rabbitmq_server_uri=None, rabbitmq_user_conf_permission=None, rabbitmq_user_read_permission=None, rabbitmq_user_tags=None, rabbitmq_user_vhost=None, rabbitmq_user_write_permission=None, secure_access_enable=None, secure_access_url=None, secure_access_web_browsing=None, token=None, uid_token=None, user_ttl='60m', username=None, local_vars_configuration=None):  # noqa: E501
         """GatewayCreateProducerRabbitMQ - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -86,6 +92,9 @@ class GatewayCreateProducerRabbitMQ(object):
         self._rabbitmq_user_tags = None
         self._rabbitmq_user_vhost = None
         self._rabbitmq_user_write_permission = None
+        self._secure_access_enable = None
+        self._secure_access_url = None
+        self._secure_access_web_browsing = None
         self._token = None
         self._uid_token = None
         self._user_ttl = None
@@ -107,6 +116,12 @@ class GatewayCreateProducerRabbitMQ(object):
         if rabbitmq_user_vhost is not None:
             self.rabbitmq_user_vhost = rabbitmq_user_vhost
         self.rabbitmq_user_write_permission = rabbitmq_user_write_permission
+        if secure_access_enable is not None:
+            self.secure_access_enable = secure_access_enable
+        if secure_access_url is not None:
+            self.secure_access_url = secure_access_url
+        if secure_access_web_browsing is not None:
+            self.secure_access_web_browsing = secure_access_web_browsing
         if token is not None:
             self.token = token
         if uid_token is not None:
@@ -382,6 +397,69 @@ class GatewayCreateProducerRabbitMQ(object):
             raise ValueError("Invalid value for `rabbitmq_user_write_permission`, must not be `None`")  # noqa: E501
 
         self._rabbitmq_user_write_permission = rabbitmq_user_write_permission
+
+    @property
+    def secure_access_enable(self):
+        """Gets the secure_access_enable of this GatewayCreateProducerRabbitMQ.  # noqa: E501
+
+
+        :return: The secure_access_enable of this GatewayCreateProducerRabbitMQ.  # noqa: E501
+        :rtype: str
+        """
+        return self._secure_access_enable
+
+    @secure_access_enable.setter
+    def secure_access_enable(self, secure_access_enable):
+        """Sets the secure_access_enable of this GatewayCreateProducerRabbitMQ.
+
+
+        :param secure_access_enable: The secure_access_enable of this GatewayCreateProducerRabbitMQ.  # noqa: E501
+        :type: str
+        """
+
+        self._secure_access_enable = secure_access_enable
+
+    @property
+    def secure_access_url(self):
+        """Gets the secure_access_url of this GatewayCreateProducerRabbitMQ.  # noqa: E501
+
+
+        :return: The secure_access_url of this GatewayCreateProducerRabbitMQ.  # noqa: E501
+        :rtype: str
+        """
+        return self._secure_access_url
+
+    @secure_access_url.setter
+    def secure_access_url(self, secure_access_url):
+        """Sets the secure_access_url of this GatewayCreateProducerRabbitMQ.
+
+
+        :param secure_access_url: The secure_access_url of this GatewayCreateProducerRabbitMQ.  # noqa: E501
+        :type: str
+        """
+
+        self._secure_access_url = secure_access_url
+
+    @property
+    def secure_access_web_browsing(self):
+        """Gets the secure_access_web_browsing of this GatewayCreateProducerRabbitMQ.  # noqa: E501
+
+
+        :return: The secure_access_web_browsing of this GatewayCreateProducerRabbitMQ.  # noqa: E501
+        :rtype: bool
+        """
+        return self._secure_access_web_browsing
+
+    @secure_access_web_browsing.setter
+    def secure_access_web_browsing(self, secure_access_web_browsing):
+        """Sets the secure_access_web_browsing of this GatewayCreateProducerRabbitMQ.
+
+
+        :param secure_access_web_browsing: The secure_access_web_browsing of this GatewayCreateProducerRabbitMQ.  # noqa: E501
+        :type: bool
+        """
+
+        self._secure_access_web_browsing = secure_access_web_browsing
 
     @property
     def token(self):

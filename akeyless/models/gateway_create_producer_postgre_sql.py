@@ -43,6 +43,10 @@ class GatewayCreateProducerPostgreSQL(object):
         'postgresql_port': 'str',
         'postgresql_username': 'str',
         'producer_encryption_key': 'str',
+        'secure_access_bastion_issuer': 'str',
+        'secure_access_db_schema': 'str',
+        'secure_access_enable': 'str',
+        'secure_access_host': 'list[str]',
         'token': 'str',
         'uid_token': 'str',
         'user_ttl': 'str',
@@ -59,13 +63,17 @@ class GatewayCreateProducerPostgreSQL(object):
         'postgresql_port': 'postgresql-port',
         'postgresql_username': 'postgresql-username',
         'producer_encryption_key': 'producer-encryption-key',
+        'secure_access_bastion_issuer': 'secure-access-bastion-issuer',
+        'secure_access_db_schema': 'secure-access-db-schema',
+        'secure_access_enable': 'secure-access-enable',
+        'secure_access_host': 'secure-access-host',
         'token': 'token',
         'uid_token': 'uid-token',
         'user_ttl': 'user-ttl',
         'username': 'username'
     }
 
-    def __init__(self, creation_statements=None, name=None, password=None, postgresql_db_name=None, postgresql_host='127.0.0.1', postgresql_password=None, postgresql_port='5432', postgresql_username=None, producer_encryption_key=None, token=None, uid_token=None, user_ttl='60m', username=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, creation_statements=None, name=None, password=None, postgresql_db_name=None, postgresql_host='127.0.0.1', postgresql_password=None, postgresql_port='5432', postgresql_username=None, producer_encryption_key=None, secure_access_bastion_issuer=None, secure_access_db_schema=None, secure_access_enable=None, secure_access_host=None, token=None, uid_token=None, user_ttl='60m', username=None, local_vars_configuration=None):  # noqa: E501
         """GatewayCreateProducerPostgreSQL - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -80,6 +88,10 @@ class GatewayCreateProducerPostgreSQL(object):
         self._postgresql_port = None
         self._postgresql_username = None
         self._producer_encryption_key = None
+        self._secure_access_bastion_issuer = None
+        self._secure_access_db_schema = None
+        self._secure_access_enable = None
+        self._secure_access_host = None
         self._token = None
         self._uid_token = None
         self._user_ttl = None
@@ -100,6 +112,14 @@ class GatewayCreateProducerPostgreSQL(object):
         self.postgresql_username = postgresql_username
         if producer_encryption_key is not None:
             self.producer_encryption_key = producer_encryption_key
+        if secure_access_bastion_issuer is not None:
+            self.secure_access_bastion_issuer = secure_access_bastion_issuer
+        if secure_access_db_schema is not None:
+            self.secure_access_db_schema = secure_access_db_schema
+        if secure_access_enable is not None:
+            self.secure_access_enable = secure_access_enable
+        if secure_access_host is not None:
+            self.secure_access_host = secure_access_host
         if token is not None:
             self.token = token
         if uid_token is not None:
@@ -323,6 +343,90 @@ class GatewayCreateProducerPostgreSQL(object):
         """
 
         self._producer_encryption_key = producer_encryption_key
+
+    @property
+    def secure_access_bastion_issuer(self):
+        """Gets the secure_access_bastion_issuer of this GatewayCreateProducerPostgreSQL.  # noqa: E501
+
+
+        :return: The secure_access_bastion_issuer of this GatewayCreateProducerPostgreSQL.  # noqa: E501
+        :rtype: str
+        """
+        return self._secure_access_bastion_issuer
+
+    @secure_access_bastion_issuer.setter
+    def secure_access_bastion_issuer(self, secure_access_bastion_issuer):
+        """Sets the secure_access_bastion_issuer of this GatewayCreateProducerPostgreSQL.
+
+
+        :param secure_access_bastion_issuer: The secure_access_bastion_issuer of this GatewayCreateProducerPostgreSQL.  # noqa: E501
+        :type: str
+        """
+
+        self._secure_access_bastion_issuer = secure_access_bastion_issuer
+
+    @property
+    def secure_access_db_schema(self):
+        """Gets the secure_access_db_schema of this GatewayCreateProducerPostgreSQL.  # noqa: E501
+
+
+        :return: The secure_access_db_schema of this GatewayCreateProducerPostgreSQL.  # noqa: E501
+        :rtype: str
+        """
+        return self._secure_access_db_schema
+
+    @secure_access_db_schema.setter
+    def secure_access_db_schema(self, secure_access_db_schema):
+        """Sets the secure_access_db_schema of this GatewayCreateProducerPostgreSQL.
+
+
+        :param secure_access_db_schema: The secure_access_db_schema of this GatewayCreateProducerPostgreSQL.  # noqa: E501
+        :type: str
+        """
+
+        self._secure_access_db_schema = secure_access_db_schema
+
+    @property
+    def secure_access_enable(self):
+        """Gets the secure_access_enable of this GatewayCreateProducerPostgreSQL.  # noqa: E501
+
+
+        :return: The secure_access_enable of this GatewayCreateProducerPostgreSQL.  # noqa: E501
+        :rtype: str
+        """
+        return self._secure_access_enable
+
+    @secure_access_enable.setter
+    def secure_access_enable(self, secure_access_enable):
+        """Sets the secure_access_enable of this GatewayCreateProducerPostgreSQL.
+
+
+        :param secure_access_enable: The secure_access_enable of this GatewayCreateProducerPostgreSQL.  # noqa: E501
+        :type: str
+        """
+
+        self._secure_access_enable = secure_access_enable
+
+    @property
+    def secure_access_host(self):
+        """Gets the secure_access_host of this GatewayCreateProducerPostgreSQL.  # noqa: E501
+
+
+        :return: The secure_access_host of this GatewayCreateProducerPostgreSQL.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._secure_access_host
+
+    @secure_access_host.setter
+    def secure_access_host(self, secure_access_host):
+        """Sets the secure_access_host of this GatewayCreateProducerPostgreSQL.
+
+
+        :param secure_access_host: The secure_access_host of this GatewayCreateProducerPostgreSQL.  # noqa: E501
+        :type: list[str]
+        """
+
+        self._secure_access_host = secure_access_host
 
     @property
     def token(self):

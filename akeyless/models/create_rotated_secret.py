@@ -41,6 +41,8 @@ class CreateRotatedSecret(object):
         'metadata': 'str',
         'name': 'str',
         'password': 'str',
+        'rotated_password': 'str',
+        'rotated_username': 'str',
         'rotation_hour': 'int',
         'rotation_interval': 'str',
         'rotator_creds_type': 'str',
@@ -62,6 +64,8 @@ class CreateRotatedSecret(object):
         'metadata': 'metadata',
         'name': 'name',
         'password': 'password',
+        'rotated_password': 'rotated-password',
+        'rotated_username': 'rotated-username',
         'rotation_hour': 'rotation-hour',
         'rotation_interval': 'rotation-interval',
         'rotator_creds_type': 'rotator-creds-type',
@@ -75,7 +79,7 @@ class CreateRotatedSecret(object):
         'username': 'username'
     }
 
-    def __init__(self, api_id=None, api_key=None, auto_rotate=None, key=None, metadata=None, name=None, password=None, rotation_hour=None, rotation_interval=None, rotator_creds_type=None, rotator_type=None, ssh_password=None, ssh_username=None, tags=None, target_name=None, token=None, uid_token=None, username=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, api_id=None, api_key=None, auto_rotate=None, key=None, metadata=None, name=None, password=None, rotated_password=None, rotated_username=None, rotation_hour=None, rotation_interval=None, rotator_creds_type=None, rotator_type=None, ssh_password=None, ssh_username=None, tags=None, target_name=None, token=None, uid_token=None, username=None, local_vars_configuration=None):  # noqa: E501
         """CreateRotatedSecret - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -88,6 +92,8 @@ class CreateRotatedSecret(object):
         self._metadata = None
         self._name = None
         self._password = None
+        self._rotated_password = None
+        self._rotated_username = None
         self._rotation_hour = None
         self._rotation_interval = None
         self._rotator_creds_type = None
@@ -114,6 +120,10 @@ class CreateRotatedSecret(object):
         self.name = name
         if password is not None:
             self.password = password
+        if rotated_password is not None:
+            self.rotated_password = rotated_password
+        if rotated_username is not None:
+            self.rotated_username = rotated_username
         if rotation_hour is not None:
             self.rotation_hour = rotation_hour
         if rotation_interval is not None:
@@ -296,6 +306,48 @@ class CreateRotatedSecret(object):
         self._password = password
 
     @property
+    def rotated_password(self):
+        """Gets the rotated_password of this CreateRotatedSecret.  # noqa: E501
+
+
+        :return: The rotated_password of this CreateRotatedSecret.  # noqa: E501
+        :rtype: str
+        """
+        return self._rotated_password
+
+    @rotated_password.setter
+    def rotated_password(self, rotated_password):
+        """Sets the rotated_password of this CreateRotatedSecret.
+
+
+        :param rotated_password: The rotated_password of this CreateRotatedSecret.  # noqa: E501
+        :type: str
+        """
+
+        self._rotated_password = rotated_password
+
+    @property
+    def rotated_username(self):
+        """Gets the rotated_username of this CreateRotatedSecret.  # noqa: E501
+
+
+        :return: The rotated_username of this CreateRotatedSecret.  # noqa: E501
+        :rtype: str
+        """
+        return self._rotated_username
+
+    @rotated_username.setter
+    def rotated_username(self, rotated_username):
+        """Sets the rotated_username of this CreateRotatedSecret.
+
+
+        :param rotated_username: The rotated_username of this CreateRotatedSecret.  # noqa: E501
+        :type: str
+        """
+
+        self._rotated_username = rotated_username
+
+    @property
     def rotation_hour(self):
         """Gets the rotation_hour of this CreateRotatedSecret.  # noqa: E501
 
@@ -385,6 +437,7 @@ class CreateRotatedSecret(object):
     def ssh_password(self):
         """Gets the ssh_password of this CreateRotatedSecret.  # noqa: E501
 
+        Deprecated: use RotatedPassword  # noqa: E501
 
         :return: The ssh_password of this CreateRotatedSecret.  # noqa: E501
         :rtype: str
@@ -395,6 +448,7 @@ class CreateRotatedSecret(object):
     def ssh_password(self, ssh_password):
         """Sets the ssh_password of this CreateRotatedSecret.
 
+        Deprecated: use RotatedPassword  # noqa: E501
 
         :param ssh_password: The ssh_password of this CreateRotatedSecret.  # noqa: E501
         :type: str
@@ -406,6 +460,7 @@ class CreateRotatedSecret(object):
     def ssh_username(self):
         """Gets the ssh_username of this CreateRotatedSecret.  # noqa: E501
 
+        Deprecated: use RotatedUser  # noqa: E501
 
         :return: The ssh_username of this CreateRotatedSecret.  # noqa: E501
         :rtype: str
@@ -416,6 +471,7 @@ class CreateRotatedSecret(object):
     def ssh_username(self, ssh_username):
         """Sets the ssh_username of this CreateRotatedSecret.
 
+        Deprecated: use RotatedUser  # noqa: E501
 
         :param ssh_username: The ssh_username of this CreateRotatedSecret.  # noqa: E501
         :type: str

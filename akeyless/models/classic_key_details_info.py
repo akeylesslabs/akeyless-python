@@ -34,6 +34,7 @@ class ClassicKeyDetailsInfo(object):
                             and the value is json key in definition.
     """
     openapi_types = {
+        'classic_key_attributes': 'dict(str, list[str])',
         'classic_key_id': 'str',
         'is_provided_by_user': 'bool',
         'is_unexportable': 'bool',
@@ -46,6 +47,7 @@ class ClassicKeyDetailsInfo(object):
     }
 
     attribute_map = {
+        'classic_key_attributes': 'classic_key_attributes',
         'classic_key_id': 'classic_key_id',
         'is_provided_by_user': 'is_provided_by_user',
         'is_unexportable': 'is_unexportable',
@@ -57,12 +59,13 @@ class ClassicKeyDetailsInfo(object):
         'targets': 'targets'
     }
 
-    def __init__(self, classic_key_id=None, is_provided_by_user=None, is_unexportable=None, key_state=None, key_type=None, last_error=None, target_alias_helper=None, target_types=None, targets=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, classic_key_attributes=None, classic_key_id=None, is_provided_by_user=None, is_unexportable=None, key_state=None, key_type=None, last_error=None, target_alias_helper=None, target_types=None, targets=None, local_vars_configuration=None):  # noqa: E501
         """ClassicKeyDetailsInfo - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
+        self._classic_key_attributes = None
         self._classic_key_id = None
         self._is_provided_by_user = None
         self._is_unexportable = None
@@ -74,6 +77,8 @@ class ClassicKeyDetailsInfo(object):
         self._targets = None
         self.discriminator = None
 
+        if classic_key_attributes is not None:
+            self.classic_key_attributes = classic_key_attributes
         if classic_key_id is not None:
             self.classic_key_id = classic_key_id
         if is_provided_by_user is not None:
@@ -92,6 +97,27 @@ class ClassicKeyDetailsInfo(object):
             self.target_types = target_types
         if targets is not None:
             self.targets = targets
+
+    @property
+    def classic_key_attributes(self):
+        """Gets the classic_key_attributes of this ClassicKeyDetailsInfo.  # noqa: E501
+
+
+        :return: The classic_key_attributes of this ClassicKeyDetailsInfo.  # noqa: E501
+        :rtype: dict(str, list[str])
+        """
+        return self._classic_key_attributes
+
+    @classic_key_attributes.setter
+    def classic_key_attributes(self, classic_key_attributes):
+        """Sets the classic_key_attributes of this ClassicKeyDetailsInfo.
+
+
+        :param classic_key_attributes: The classic_key_attributes of this ClassicKeyDetailsInfo.  # noqa: E501
+        :type: dict(str, list[str])
+        """
+
+        self._classic_key_attributes = classic_key_attributes
 
     @property
     def classic_key_id(self):

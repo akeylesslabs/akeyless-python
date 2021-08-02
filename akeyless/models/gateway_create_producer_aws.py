@@ -48,6 +48,11 @@ class GatewayCreateProducerAws(object):
         'password': 'str',
         'producer_encryption_key_name': 'str',
         'region': 'str',
+        'secure_access_aws_account_id': 'str',
+        'secure_access_aws_native_cli': 'bool',
+        'secure_access_bastion_issuer': 'str',
+        'secure_access_enable': 'str',
+        'secure_access_web_browsing': 'bool',
         'token': 'str',
         'uid_token': 'str',
         'user_ttl': 'str',
@@ -69,13 +74,18 @@ class GatewayCreateProducerAws(object):
         'password': 'password',
         'producer_encryption_key_name': 'producer-encryption-key-name',
         'region': 'region',
+        'secure_access_aws_account_id': 'secure-access-aws-account-id',
+        'secure_access_aws_native_cli': 'secure-access-aws-native-cli',
+        'secure_access_bastion_issuer': 'secure-access-bastion-issuer',
+        'secure_access_enable': 'secure-access-enable',
+        'secure_access_web_browsing': 'secure-access-web-browsing',
         'token': 'token',
         'uid_token': 'uid-token',
         'user_ttl': 'user-ttl',
         'username': 'username'
     }
 
-    def __init__(self, access_mode=None, admin_rotation_interval_days=0, aws_access_key_id=None, aws_access_secret_key=None, aws_role_arns=None, aws_user_console_access=False, aws_user_groups=None, aws_user_policies=None, aws_user_programmatic_access=True, enable_admin_rotation=False, name=None, password=None, producer_encryption_key_name=None, region='us-east-2', token=None, uid_token=None, user_ttl='60m', username=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, access_mode=None, admin_rotation_interval_days=0, aws_access_key_id=None, aws_access_secret_key=None, aws_role_arns=None, aws_user_console_access=False, aws_user_groups=None, aws_user_policies=None, aws_user_programmatic_access=True, enable_admin_rotation=False, name=None, password=None, producer_encryption_key_name=None, region='us-east-2', secure_access_aws_account_id=None, secure_access_aws_native_cli=None, secure_access_bastion_issuer=None, secure_access_enable=None, secure_access_web_browsing=None, token=None, uid_token=None, user_ttl='60m', username=None, local_vars_configuration=None):  # noqa: E501
         """GatewayCreateProducerAws - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -95,6 +105,11 @@ class GatewayCreateProducerAws(object):
         self._password = None
         self._producer_encryption_key_name = None
         self._region = None
+        self._secure_access_aws_account_id = None
+        self._secure_access_aws_native_cli = None
+        self._secure_access_bastion_issuer = None
+        self._secure_access_enable = None
+        self._secure_access_web_browsing = None
         self._token = None
         self._uid_token = None
         self._user_ttl = None
@@ -126,6 +141,16 @@ class GatewayCreateProducerAws(object):
             self.producer_encryption_key_name = producer_encryption_key_name
         if region is not None:
             self.region = region
+        if secure_access_aws_account_id is not None:
+            self.secure_access_aws_account_id = secure_access_aws_account_id
+        if secure_access_aws_native_cli is not None:
+            self.secure_access_aws_native_cli = secure_access_aws_native_cli
+        if secure_access_bastion_issuer is not None:
+            self.secure_access_bastion_issuer = secure_access_bastion_issuer
+        if secure_access_enable is not None:
+            self.secure_access_enable = secure_access_enable
+        if secure_access_web_browsing is not None:
+            self.secure_access_web_browsing = secure_access_web_browsing
         if token is not None:
             self.token = token
         if uid_token is not None:
@@ -460,6 +485,111 @@ class GatewayCreateProducerAws(object):
         """
 
         self._region = region
+
+    @property
+    def secure_access_aws_account_id(self):
+        """Gets the secure_access_aws_account_id of this GatewayCreateProducerAws.  # noqa: E501
+
+
+        :return: The secure_access_aws_account_id of this GatewayCreateProducerAws.  # noqa: E501
+        :rtype: str
+        """
+        return self._secure_access_aws_account_id
+
+    @secure_access_aws_account_id.setter
+    def secure_access_aws_account_id(self, secure_access_aws_account_id):
+        """Sets the secure_access_aws_account_id of this GatewayCreateProducerAws.
+
+
+        :param secure_access_aws_account_id: The secure_access_aws_account_id of this GatewayCreateProducerAws.  # noqa: E501
+        :type: str
+        """
+
+        self._secure_access_aws_account_id = secure_access_aws_account_id
+
+    @property
+    def secure_access_aws_native_cli(self):
+        """Gets the secure_access_aws_native_cli of this GatewayCreateProducerAws.  # noqa: E501
+
+
+        :return: The secure_access_aws_native_cli of this GatewayCreateProducerAws.  # noqa: E501
+        :rtype: bool
+        """
+        return self._secure_access_aws_native_cli
+
+    @secure_access_aws_native_cli.setter
+    def secure_access_aws_native_cli(self, secure_access_aws_native_cli):
+        """Sets the secure_access_aws_native_cli of this GatewayCreateProducerAws.
+
+
+        :param secure_access_aws_native_cli: The secure_access_aws_native_cli of this GatewayCreateProducerAws.  # noqa: E501
+        :type: bool
+        """
+
+        self._secure_access_aws_native_cli = secure_access_aws_native_cli
+
+    @property
+    def secure_access_bastion_issuer(self):
+        """Gets the secure_access_bastion_issuer of this GatewayCreateProducerAws.  # noqa: E501
+
+
+        :return: The secure_access_bastion_issuer of this GatewayCreateProducerAws.  # noqa: E501
+        :rtype: str
+        """
+        return self._secure_access_bastion_issuer
+
+    @secure_access_bastion_issuer.setter
+    def secure_access_bastion_issuer(self, secure_access_bastion_issuer):
+        """Sets the secure_access_bastion_issuer of this GatewayCreateProducerAws.
+
+
+        :param secure_access_bastion_issuer: The secure_access_bastion_issuer of this GatewayCreateProducerAws.  # noqa: E501
+        :type: str
+        """
+
+        self._secure_access_bastion_issuer = secure_access_bastion_issuer
+
+    @property
+    def secure_access_enable(self):
+        """Gets the secure_access_enable of this GatewayCreateProducerAws.  # noqa: E501
+
+
+        :return: The secure_access_enable of this GatewayCreateProducerAws.  # noqa: E501
+        :rtype: str
+        """
+        return self._secure_access_enable
+
+    @secure_access_enable.setter
+    def secure_access_enable(self, secure_access_enable):
+        """Sets the secure_access_enable of this GatewayCreateProducerAws.
+
+
+        :param secure_access_enable: The secure_access_enable of this GatewayCreateProducerAws.  # noqa: E501
+        :type: str
+        """
+
+        self._secure_access_enable = secure_access_enable
+
+    @property
+    def secure_access_web_browsing(self):
+        """Gets the secure_access_web_browsing of this GatewayCreateProducerAws.  # noqa: E501
+
+
+        :return: The secure_access_web_browsing of this GatewayCreateProducerAws.  # noqa: E501
+        :rtype: bool
+        """
+        return self._secure_access_web_browsing
+
+    @secure_access_web_browsing.setter
+    def secure_access_web_browsing(self, secure_access_web_browsing):
+        """Sets the secure_access_web_browsing of this GatewayCreateProducerAws.
+
+
+        :param secure_access_web_browsing: The secure_access_web_browsing of this GatewayCreateProducerAws.  # noqa: E501
+        :type: bool
+        """
+
+        self._secure_access_web_browsing = secure_access_web_browsing
 
     @property
     def token(self):

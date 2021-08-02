@@ -67,6 +67,7 @@ Method | HTTP request | Description
 [**gateway_create_producer_mssql**](V2Api.md#gateway_create_producer_mssql) | **POST** /gateway-create-producer-mssql | 
 [**gateway_create_producer_my_sql**](V2Api.md#gateway_create_producer_my_sql) | **POST** /gateway-create-producer-mysql | 
 [**gateway_create_producer_native_k8_s**](V2Api.md#gateway_create_producer_native_k8_s) | **POST** /gateway-create-producer-k8s-native | 
+[**gateway_create_producer_oracle_db**](V2Api.md#gateway_create_producer_oracle_db) | **POST** /gateway-create-producer-oracle | 
 [**gateway_create_producer_postgre_sql**](V2Api.md#gateway_create_producer_postgre_sql) | **POST** /gateway-create-producer-postgresql | 
 [**gateway_create_producer_rabbit_mq**](V2Api.md#gateway_create_producer_rabbit_mq) | **POST** /gateway-create-producer-rabbitmq | 
 [**gateway_create_producer_rdp**](V2Api.md#gateway_create_producer_rdp) | **POST** /gateway-create-producer-rdp | 
@@ -3914,6 +3915,66 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | gatewayCreateProducerNativeK8SResponse wraps response body. |  -  |
+**0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **gateway_create_producer_oracle_db**
+> GatewayCreateProducerOracleDbOutput gateway_create_producer_oracle_db(body)
+
+
+
+### Example
+
+```python
+from __future__ import print_function
+import time
+import akeyless
+from akeyless.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.akeyless.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = akeyless.Configuration(
+    host = "https://api.akeyless.io"
+)
+
+
+# Enter a context with an instance of the API client
+with akeyless.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = akeyless.V2Api(api_client)
+    body = akeyless.GatewayCreateProducerOracleDb() # GatewayCreateProducerOracleDb | 
+
+    try:
+        api_response = api_instance.gateway_create_producer_oracle_db(body)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling V2Api->gateway_create_producer_oracle_db: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**GatewayCreateProducerOracleDb**](GatewayCreateProducerOracleDb.md)|  | 
+
+### Return type
+
+[**GatewayCreateProducerOracleDbOutput**](GatewayCreateProducerOracleDbOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**201** | gatewayCreateProducerOracleDbResponse wraps response body. |  -  |
 **0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

@@ -15,6 +15,9 @@ Name | Type | Description | Notes
 **name** | **str** | Producer name | 
 **password** | **str** | Required only when the authentication process requires a username and password | [optional] 
 **producer_encryption_key_name** | **str** | Dynamic producer encryption key | [optional] 
+**secure_access_bastion_issuer** | **str** |  | [optional] 
+**secure_access_enable** | **str** |  | [optional] 
+**secure_access_host** | **list[str]** |  | [optional] 
 **token** | **str** | Authentication token (see &#x60;/auth&#x60; and &#x60;/configure&#x60;) | [optional] 
 **uid_token** | **str** | The universal identity token, Required only for universal_identity authentication | [optional] 
 **user_ttl** | **str** | User TTL | [optional] [default to '60m']

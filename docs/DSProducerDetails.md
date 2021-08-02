@@ -99,6 +99,7 @@ Name | Type | Description | Notes
 **mssql_creation_statements** | **str** |  | [optional] 
 **mssql_revocation_statements** | **str** |  | [optional] 
 **mysql_creation_statements** | **str** |  | [optional] 
+**oracle_creation_statements** | **str** |  | [optional] 
 **payload** | **str** |  | [optional] 
 **postgres_creation_statements** | **str** |  | [optional] 
 **rabbitmq_server_password** | **str** |  | [optional] 

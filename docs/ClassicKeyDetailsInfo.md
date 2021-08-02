@@ -3,6 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**classic_key_attributes** | **dict(str, list[str])** |  | [optional] 
 **classic_key_id** | **str** |  | [optional] 
 **is_provided_by_user** | **bool** |  | [optional] 
 **is_unexportable** | **bool** |  | [optional] 

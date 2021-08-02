@@ -114,7 +114,7 @@ class ClassicKeyStatusInfo(object):
     def last_status(self):
         """Gets the last_status of this ClassicKeyStatusInfo.  # noqa: E501
 
-        ClassicKeyTargetStatus defines status of managed key target  # noqa: E501
+        ClassicKeyTargetStatus defines status of classic key target  # noqa: E501
 
         :return: The last_status of this ClassicKeyStatusInfo.  # noqa: E501
         :rtype: str
@@ -125,7 +125,7 @@ class ClassicKeyStatusInfo(object):
     def last_status(self, last_status):
         """Sets the last_status of this ClassicKeyStatusInfo.
 
-        ClassicKeyTargetStatus defines status of managed key target  # noqa: E501
+        ClassicKeyTargetStatus defines status of classic key target  # noqa: E501
 
         :param last_status: The last_status of this ClassicKeyStatusInfo.  # noqa: E501
         :type: str
