@@ -5,12 +5,12 @@ gatewayCreateProducerMSSQL is a command that creates mssql producer
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **mssql_create_statements** | **str** | MSSQL Creation statements | [optional] 
-**mssql_dbname** | **str** | MSSQL Name | 
+**mssql_dbname** | **str** | MSSQL Name | [optional] 
 **mssql_host** | **str** | MSSQL Host | [optional] [default to '127.0.0.1']
-**mssql_password** | **str** | MSSQL Password | 
+**mssql_password** | **str** | MSSQL Password | [optional] 
 **mssql_port** | **str** | MSSQL Port | [optional] [default to '1433']
 **mssql_revocation_statements** | **str** | MSSQL Revocation statements | [optional] 
-**mssql_username** | **str** | MSSQL Username | 
+**mssql_username** | **str** | MSSQL Username | [optional] 
 **name** | **str** | Producer name | 
 **password** | **str** | Required only when the authentication process requires a username and password | [optional] 
 **producer_encryption_key_name** | **str** | Dynamic producer encryption key | [optional] 
@@ -18,6 +18,7 @@ Name | Type | Description | Notes
 **secure_access_db_schema** | **str** |  | [optional] 
 **secure_access_enable** | **str** |  | [optional] 
 **secure_access_host** | **list[str]** |  | [optional] 
+**target_name** | **str** | Target name | [optional] 
 **token** | **str** | Authentication token (see &#x60;/auth&#x60; and &#x60;/configure&#x60;) | [optional] 
 **uid_token** | **str** | The universal identity token, Required only for universal_identity authentication | [optional] 
 **user_ttl** | **str** | User TTL | [optional] [default to '60m']

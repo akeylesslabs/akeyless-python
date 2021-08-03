@@ -16,6 +16,7 @@ Name | Type | Description | Notes
 **sign_using_akeyless_pki** | **bool** | Use Akeyless PKI issuer or Venafi issuer | [optional] 
 **signer_key_name** | **str** | Signer key name | [optional] 
 **store_private_key** | **bool** | Store private key | [optional] 
+**target_name** | **str** | Target name | [optional] 
 **token** | **str** | Authentication token (see &#x60;/auth&#x60; and &#x60;/configure&#x60;) | [optional] 
 **uid_token** | **str** | The universal identity token, Required only for universal_identity authentication | [optional] 
 **user_ttl** | **str** | User TTL in time.Duration format (2160h / 129600m / etc...). When using sign-using-akeyless-pki certificates created will have this validity period, otherwise the user-ttl is taken from the Validity Period field of the Zone&#39;s&#39; Issuing Template. When using cert-manager it is advised to have a TTL of above 60 days (1440h). For more information - https://cert-manager.io/docs/usage/certificate/ | [optional] 
@@ -25,7 +26,7 @@ Name | Type | Description | Notes
 **venafi_password** | **str** | Venafi Password | [optional] 
 **venafi_use_tpp** | **bool** | Venafi using TPP | [optional] 
 **venafi_username** | **str** | Venafi Username | [optional] 
-**venafi_zone** | **str** | Venafi Zone | 
+**venafi_zone** | **str** | Venafi Zone | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -39,6 +39,7 @@ class GatewayCreateProducerSnowflake(object):
         'name': 'str',
         'password': 'str',
         'role': 'str',
+        'target_name': 'str',
         'token': 'str',
         'uid_token': 'str',
         'user_ttl': 'str',
@@ -52,6 +53,7 @@ class GatewayCreateProducerSnowflake(object):
         'name': 'name',
         'password': 'password',
         'role': 'role',
+        'target_name': 'target-name',
         'token': 'token',
         'uid_token': 'uid-token',
         'user_ttl': 'user-ttl',
@@ -59,7 +61,7 @@ class GatewayCreateProducerSnowflake(object):
         'warehouse': 'warehouse'
     }
 
-    def __init__(self, account=None, db_name=None, name=None, password=None, role=None, token=None, uid_token=None, user_ttl='24h', username=None, warehouse=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, account=None, db_name=None, name=None, password=None, role=None, target_name=None, token=None, uid_token=None, user_ttl='24h', username=None, warehouse=None, local_vars_configuration=None):  # noqa: E501
         """GatewayCreateProducerSnowflake - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -70,6 +72,7 @@ class GatewayCreateProducerSnowflake(object):
         self._name = None
         self._password = None
         self._role = None
+        self._target_name = None
         self._token = None
         self._uid_token = None
         self._user_ttl = None
@@ -77,13 +80,17 @@ class GatewayCreateProducerSnowflake(object):
         self._warehouse = None
         self.discriminator = None
 
-        self.account = account
-        self.db_name = db_name
+        if account is not None:
+            self.account = account
+        if db_name is not None:
+            self.db_name = db_name
         self.name = name
         if password is not None:
             self.password = password
         if role is not None:
             self.role = role
+        if target_name is not None:
+            self.target_name = target_name
         if token is not None:
             self.token = token
         if uid_token is not None:
@@ -115,8 +122,6 @@ class GatewayCreateProducerSnowflake(object):
         :param account: The account of this GatewayCreateProducerSnowflake.  # noqa: E501
         :type: str
         """
-        if self.local_vars_configuration.client_side_validation and account is None:  # noqa: E501
-            raise ValueError("Invalid value for `account`, must not be `None`")  # noqa: E501
 
         self._account = account
 
@@ -140,8 +145,6 @@ class GatewayCreateProducerSnowflake(object):
         :param db_name: The db_name of this GatewayCreateProducerSnowflake.  # noqa: E501
         :type: str
         """
-        if self.local_vars_configuration.client_side_validation and db_name is None:  # noqa: E501
-            raise ValueError("Invalid value for `db_name`, must not be `None`")  # noqa: E501
 
         self._db_name = db_name
 
@@ -215,6 +218,29 @@ class GatewayCreateProducerSnowflake(object):
         """
 
         self._role = role
+
+    @property
+    def target_name(self):
+        """Gets the target_name of this GatewayCreateProducerSnowflake.  # noqa: E501
+
+        Target name  # noqa: E501
+
+        :return: The target_name of this GatewayCreateProducerSnowflake.  # noqa: E501
+        :rtype: str
+        """
+        return self._target_name
+
+    @target_name.setter
+    def target_name(self, target_name):
+        """Sets the target_name of this GatewayCreateProducerSnowflake.
+
+        Target name  # noqa: E501
+
+        :param target_name: The target_name of this GatewayCreateProducerSnowflake.  # noqa: E501
+        :type: str
+        """
+
+        self._target_name = target_name
 
     @property
     def token(self):

@@ -46,6 +46,7 @@ class GatewayCreateProducerCertificateAutomation(object):
         'sign_using_akeyless_pki': 'bool',
         'signer_key_name': 'str',
         'store_private_key': 'bool',
+        'target_name': 'str',
         'token': 'str',
         'uid_token': 'str',
         'user_ttl': 'str',
@@ -71,6 +72,7 @@ class GatewayCreateProducerCertificateAutomation(object):
         'sign_using_akeyless_pki': 'sign-using-akeyless-pki',
         'signer_key_name': 'signer-key-name',
         'store_private_key': 'store-private-key',
+        'target_name': 'target-name',
         'token': 'token',
         'uid_token': 'uid-token',
         'user_ttl': 'user-ttl',
@@ -83,7 +85,7 @@ class GatewayCreateProducerCertificateAutomation(object):
         'venafi_zone': 'venafi-zone'
     }
 
-    def __init__(self, admin_rotation_interval_days=0, allow_subdomains=None, allowed_domains=None, auto_generated_folder=None, enable_admin_rotation=False, name=None, password=None, producer_encryption_key_name=None, root_first_in_chain=None, sign_using_akeyless_pki=None, signer_key_name=None, store_private_key=None, token=None, uid_token=None, user_ttl=None, username=None, venafi_api_key=None, venafi_baseurl=None, venafi_password=None, venafi_use_tpp=None, venafi_username=None, venafi_zone=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, admin_rotation_interval_days=0, allow_subdomains=None, allowed_domains=None, auto_generated_folder=None, enable_admin_rotation=False, name=None, password=None, producer_encryption_key_name=None, root_first_in_chain=None, sign_using_akeyless_pki=None, signer_key_name=None, store_private_key=None, target_name=None, token=None, uid_token=None, user_ttl=None, username=None, venafi_api_key=None, venafi_baseurl=None, venafi_password=None, venafi_use_tpp=None, venafi_username=None, venafi_zone=None, local_vars_configuration=None):  # noqa: E501
         """GatewayCreateProducerCertificateAutomation - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -101,6 +103,7 @@ class GatewayCreateProducerCertificateAutomation(object):
         self._sign_using_akeyless_pki = None
         self._signer_key_name = None
         self._store_private_key = None
+        self._target_name = None
         self._token = None
         self._uid_token = None
         self._user_ttl = None
@@ -136,6 +139,8 @@ class GatewayCreateProducerCertificateAutomation(object):
             self.signer_key_name = signer_key_name
         if store_private_key is not None:
             self.store_private_key = store_private_key
+        if target_name is not None:
+            self.target_name = target_name
         if token is not None:
             self.token = token
         if uid_token is not None:
@@ -154,7 +159,8 @@ class GatewayCreateProducerCertificateAutomation(object):
             self.venafi_use_tpp = venafi_use_tpp
         if venafi_username is not None:
             self.venafi_username = venafi_username
-        self.venafi_zone = venafi_zone
+        if venafi_zone is not None:
+            self.venafi_zone = venafi_zone
 
     @property
     def admin_rotation_interval_days(self):
@@ -435,6 +441,29 @@ class GatewayCreateProducerCertificateAutomation(object):
         self._store_private_key = store_private_key
 
     @property
+    def target_name(self):
+        """Gets the target_name of this GatewayCreateProducerCertificateAutomation.  # noqa: E501
+
+        Target name  # noqa: E501
+
+        :return: The target_name of this GatewayCreateProducerCertificateAutomation.  # noqa: E501
+        :rtype: str
+        """
+        return self._target_name
+
+    @target_name.setter
+    def target_name(self, target_name):
+        """Sets the target_name of this GatewayCreateProducerCertificateAutomation.
+
+        Target name  # noqa: E501
+
+        :param target_name: The target_name of this GatewayCreateProducerCertificateAutomation.  # noqa: E501
+        :type: str
+        """
+
+        self._target_name = target_name
+
+    @property
     def token(self):
         """Gets the token of this GatewayCreateProducerCertificateAutomation.  # noqa: E501
 
@@ -661,8 +690,6 @@ class GatewayCreateProducerCertificateAutomation(object):
         :param venafi_zone: The venafi_zone of this GatewayCreateProducerCertificateAutomation.  # noqa: E501
         :type: str
         """
-        if self.local_vars_configuration.client_side_validation and venafi_zone is None:  # noqa: E501
-            raise ValueError("Invalid value for `venafi_zone`, must not be `None`")  # noqa: E501
 
         self._venafi_zone = venafi_zone
 

@@ -5,10 +5,10 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **comment** | **str** | Comment about the target | [optional] 
 **gke_account_key** | **str** | GKE Service Account key file path | [optional] 
-**gke_cluster_cert** | **str** | GKE cluster CA certificate | 
-**gke_cluster_endpoint** | **str** | GKE cluster URL endpoint | 
+**gke_cluster_cert** | **str** | GKE cluster CA certificate | [optional] 
+**gke_cluster_endpoint** | **str** | GKE cluster URL endpoint | [optional] 
 **gke_cluster_name** | **str** | GKE cluster name | 
-**gke_service_account_email** | **str** | GKE service account email | 
+**gke_service_account_email** | **str** | GKE service account email | [optional] 
 **key** | **str** | The name of a key that used to encrypt the target secret value (if empty, the account default protectionKey key will be used) | [optional] 
 **name** | **str** | Target name | 
 **new_name** | **str** | New target name | [optional] 

@@ -48,6 +48,7 @@ class GatewayCreateProducerNativeK8S(object):
         'secure_access_dashboard_url': 'str',
         'secure_access_enable': 'str',
         'secure_access_web_browsing': 'bool',
+        'target_name': 'str',
         'token': 'str',
         'uid_token': 'str',
         'user_ttl': 'str',
@@ -69,13 +70,14 @@ class GatewayCreateProducerNativeK8S(object):
         'secure_access_dashboard_url': 'secure-access-dashboard-url',
         'secure_access_enable': 'secure-access-enable',
         'secure_access_web_browsing': 'secure-access-web-browsing',
+        'target_name': 'target-name',
         'token': 'token',
         'uid_token': 'uid-token',
         'user_ttl': 'user-ttl',
         'username': 'username'
     }
 
-    def __init__(self, k8s_cluster_ca_cert=None, k8s_cluster_endpoint=None, k8s_cluster_token=None, k8s_namespace=None, k8s_service_account=None, name=None, password=None, producer_encryption_key_name=None, secure_access_allow_port_forwading=None, secure_access_bastion_issuer=None, secure_access_cluster_endpoint=None, secure_access_dashboard_url=None, secure_access_enable=None, secure_access_web_browsing=None, token=None, uid_token=None, user_ttl='60m', username=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, k8s_cluster_ca_cert=None, k8s_cluster_endpoint=None, k8s_cluster_token=None, k8s_namespace=None, k8s_service_account=None, name=None, password=None, producer_encryption_key_name=None, secure_access_allow_port_forwading=None, secure_access_bastion_issuer=None, secure_access_cluster_endpoint=None, secure_access_dashboard_url=None, secure_access_enable=None, secure_access_web_browsing=None, target_name=None, token=None, uid_token=None, user_ttl='60m', username=None, local_vars_configuration=None):  # noqa: E501
         """GatewayCreateProducerNativeK8S - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -95,18 +97,22 @@ class GatewayCreateProducerNativeK8S(object):
         self._secure_access_dashboard_url = None
         self._secure_access_enable = None
         self._secure_access_web_browsing = None
+        self._target_name = None
         self._token = None
         self._uid_token = None
         self._user_ttl = None
         self._username = None
         self.discriminator = None
 
-        self.k8s_cluster_ca_cert = k8s_cluster_ca_cert
-        self.k8s_cluster_endpoint = k8s_cluster_endpoint
+        if k8s_cluster_ca_cert is not None:
+            self.k8s_cluster_ca_cert = k8s_cluster_ca_cert
+        if k8s_cluster_endpoint is not None:
+            self.k8s_cluster_endpoint = k8s_cluster_endpoint
         self.k8s_cluster_token = k8s_cluster_token
         if k8s_namespace is not None:
             self.k8s_namespace = k8s_namespace
-        self.k8s_service_account = k8s_service_account
+        if k8s_service_account is not None:
+            self.k8s_service_account = k8s_service_account
         self.name = name
         if password is not None:
             self.password = password
@@ -124,6 +130,8 @@ class GatewayCreateProducerNativeK8S(object):
             self.secure_access_enable = secure_access_enable
         if secure_access_web_browsing is not None:
             self.secure_access_web_browsing = secure_access_web_browsing
+        if target_name is not None:
+            self.target_name = target_name
         if token is not None:
             self.token = token
         if uid_token is not None:
@@ -153,8 +161,6 @@ class GatewayCreateProducerNativeK8S(object):
         :param k8s_cluster_ca_cert: The k8s_cluster_ca_cert of this GatewayCreateProducerNativeK8S.  # noqa: E501
         :type: str
         """
-        if self.local_vars_configuration.client_side_validation and k8s_cluster_ca_cert is None:  # noqa: E501
-            raise ValueError("Invalid value for `k8s_cluster_ca_cert`, must not be `None`")  # noqa: E501
 
         self._k8s_cluster_ca_cert = k8s_cluster_ca_cert
 
@@ -178,8 +184,6 @@ class GatewayCreateProducerNativeK8S(object):
         :param k8s_cluster_endpoint: The k8s_cluster_endpoint of this GatewayCreateProducerNativeK8S.  # noqa: E501
         :type: str
         """
-        if self.local_vars_configuration.client_side_validation and k8s_cluster_endpoint is None:  # noqa: E501
-            raise ValueError("Invalid value for `k8s_cluster_endpoint`, must not be `None`")  # noqa: E501
 
         self._k8s_cluster_endpoint = k8s_cluster_endpoint
 
@@ -251,8 +255,6 @@ class GatewayCreateProducerNativeK8S(object):
         :param k8s_service_account: The k8s_service_account of this GatewayCreateProducerNativeK8S.  # noqa: E501
         :type: str
         """
-        if self.local_vars_configuration.client_side_validation and k8s_service_account is None:  # noqa: E501
-            raise ValueError("Invalid value for `k8s_service_account`, must not be `None`")  # noqa: E501
 
         self._k8s_service_account = k8s_service_account
 
@@ -452,6 +454,29 @@ class GatewayCreateProducerNativeK8S(object):
         """
 
         self._secure_access_web_browsing = secure_access_web_browsing
+
+    @property
+    def target_name(self):
+        """Gets the target_name of this GatewayCreateProducerNativeK8S.  # noqa: E501
+
+        Target name  # noqa: E501
+
+        :return: The target_name of this GatewayCreateProducerNativeK8S.  # noqa: E501
+        :rtype: str
+        """
+        return self._target_name
+
+    @target_name.setter
+    def target_name(self, target_name):
+        """Sets the target_name of this GatewayCreateProducerNativeK8S.
+
+        Target name  # noqa: E501
+
+        :param target_name: The target_name of this GatewayCreateProducerNativeK8S.  # noqa: E501
+        :type: str
+        """
+
+        self._target_name = target_name
 
     @property
     def token(self):

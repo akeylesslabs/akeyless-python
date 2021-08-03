@@ -46,6 +46,7 @@ class GatewayCreateProducerGke(object):
         'secure_access_bastion_issuer': 'str',
         'secure_access_cluster_endpoint': 'str',
         'secure_access_enable': 'str',
+        'target_name': 'str',
         'token': 'str',
         'uid_token': 'str',
         'user_ttl': 'str',
@@ -65,13 +66,14 @@ class GatewayCreateProducerGke(object):
         'secure_access_bastion_issuer': 'secure-access-bastion-issuer',
         'secure_access_cluster_endpoint': 'secure-access-cluster-endpoint',
         'secure_access_enable': 'secure-access-enable',
+        'target_name': 'target-name',
         'token': 'token',
         'uid_token': 'uid-token',
         'user_ttl': 'user-ttl',
         'username': 'username'
     }
 
-    def __init__(self, gke_account_key=None, gke_cluster_cert=None, gke_cluster_endpoint=None, gke_cluster_name=None, gke_service_account_email=None, name=None, password=None, producer_encryption_key_name=None, secure_access_allow_port_forwading=None, secure_access_bastion_issuer=None, secure_access_cluster_endpoint=None, secure_access_enable=None, token=None, uid_token=None, user_ttl='60m', username=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, gke_account_key=None, gke_cluster_cert=None, gke_cluster_endpoint=None, gke_cluster_name=None, gke_service_account_email=None, name=None, password=None, producer_encryption_key_name=None, secure_access_allow_port_forwading=None, secure_access_bastion_issuer=None, secure_access_cluster_endpoint=None, secure_access_enable=None, target_name=None, token=None, uid_token=None, user_ttl='60m', username=None, local_vars_configuration=None):  # noqa: E501
         """GatewayCreateProducerGke - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -89,6 +91,7 @@ class GatewayCreateProducerGke(object):
         self._secure_access_bastion_issuer = None
         self._secure_access_cluster_endpoint = None
         self._secure_access_enable = None
+        self._target_name = None
         self._token = None
         self._uid_token = None
         self._user_ttl = None
@@ -97,10 +100,13 @@ class GatewayCreateProducerGke(object):
 
         if gke_account_key is not None:
             self.gke_account_key = gke_account_key
-        self.gke_cluster_cert = gke_cluster_cert
-        self.gke_cluster_endpoint = gke_cluster_endpoint
+        if gke_cluster_cert is not None:
+            self.gke_cluster_cert = gke_cluster_cert
+        if gke_cluster_endpoint is not None:
+            self.gke_cluster_endpoint = gke_cluster_endpoint
         self.gke_cluster_name = gke_cluster_name
-        self.gke_service_account_email = gke_service_account_email
+        if gke_service_account_email is not None:
+            self.gke_service_account_email = gke_service_account_email
         self.name = name
         if password is not None:
             self.password = password
@@ -114,6 +120,8 @@ class GatewayCreateProducerGke(object):
             self.secure_access_cluster_endpoint = secure_access_cluster_endpoint
         if secure_access_enable is not None:
             self.secure_access_enable = secure_access_enable
+        if target_name is not None:
+            self.target_name = target_name
         if token is not None:
             self.token = token
         if uid_token is not None:
@@ -166,8 +174,6 @@ class GatewayCreateProducerGke(object):
         :param gke_cluster_cert: The gke_cluster_cert of this GatewayCreateProducerGke.  # noqa: E501
         :type: str
         """
-        if self.local_vars_configuration.client_side_validation and gke_cluster_cert is None:  # noqa: E501
-            raise ValueError("Invalid value for `gke_cluster_cert`, must not be `None`")  # noqa: E501
 
         self._gke_cluster_cert = gke_cluster_cert
 
@@ -191,8 +197,6 @@ class GatewayCreateProducerGke(object):
         :param gke_cluster_endpoint: The gke_cluster_endpoint of this GatewayCreateProducerGke.  # noqa: E501
         :type: str
         """
-        if self.local_vars_configuration.client_side_validation and gke_cluster_endpoint is None:  # noqa: E501
-            raise ValueError("Invalid value for `gke_cluster_endpoint`, must not be `None`")  # noqa: E501
 
         self._gke_cluster_endpoint = gke_cluster_endpoint
 
@@ -241,8 +245,6 @@ class GatewayCreateProducerGke(object):
         :param gke_service_account_email: The gke_service_account_email of this GatewayCreateProducerGke.  # noqa: E501
         :type: str
         """
-        if self.local_vars_configuration.client_side_validation and gke_service_account_email is None:  # noqa: E501
-            raise ValueError("Invalid value for `gke_service_account_email`, must not be `None`")  # noqa: E501
 
         self._gke_service_account_email = gke_service_account_email
 
@@ -400,6 +402,29 @@ class GatewayCreateProducerGke(object):
         """
 
         self._secure_access_enable = secure_access_enable
+
+    @property
+    def target_name(self):
+        """Gets the target_name of this GatewayCreateProducerGke.  # noqa: E501
+
+        Target name  # noqa: E501
+
+        :return: The target_name of this GatewayCreateProducerGke.  # noqa: E501
+        :rtype: str
+        """
+        return self._target_name
+
+    @target_name.setter
+    def target_name(self, target_name):
+        """Sets the target_name of this GatewayCreateProducerGke.
+
+        Target name  # noqa: E501
+
+        :param target_name: The target_name of this GatewayCreateProducerGke.  # noqa: E501
+        :type: str
+        """
+
+        self._target_name = target_name
 
     @property
     def token(self):

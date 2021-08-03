@@ -43,6 +43,7 @@ class GatewayCreateProducerAzure(object):
         'producer_encryption_key_name': 'str',
         'secure_access_enable': 'str',
         'secure_access_web_browsing': 'bool',
+        'target_name': 'str',
         'token': 'str',
         'uid_token': 'str',
         'user_group_obj_id': 'str',
@@ -64,6 +65,7 @@ class GatewayCreateProducerAzure(object):
         'producer_encryption_key_name': 'producer-encryption-key-name',
         'secure_access_enable': 'secure-access-enable',
         'secure_access_web_browsing': 'secure-access-web-browsing',
+        'target_name': 'target-name',
         'token': 'token',
         'uid_token': 'uid-token',
         'user_group_obj_id': 'user-group-obj-id',
@@ -75,7 +77,7 @@ class GatewayCreateProducerAzure(object):
         'username': 'username'
     }
 
-    def __init__(self, app_obj_id=None, azure_client_id=None, azure_client_secret=None, azure_tenant_id=None, name=None, password=None, producer_encryption_key_name=None, secure_access_enable=None, secure_access_web_browsing=None, token=None, uid_token=None, user_group_obj_id=None, user_portal_access=False, user_principal_name=None, user_programmatic_access=True, user_role_template_id=None, user_ttl='60m', username=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, app_obj_id=None, azure_client_id=None, azure_client_secret=None, azure_tenant_id=None, name=None, password=None, producer_encryption_key_name=None, secure_access_enable=None, secure_access_web_browsing=None, target_name=None, token=None, uid_token=None, user_group_obj_id=None, user_portal_access=False, user_principal_name=None, user_programmatic_access=True, user_role_template_id=None, user_ttl='60m', username=None, local_vars_configuration=None):  # noqa: E501
         """GatewayCreateProducerAzure - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -90,6 +92,7 @@ class GatewayCreateProducerAzure(object):
         self._producer_encryption_key_name = None
         self._secure_access_enable = None
         self._secure_access_web_browsing = None
+        self._target_name = None
         self._token = None
         self._uid_token = None
         self._user_group_obj_id = None
@@ -103,9 +106,12 @@ class GatewayCreateProducerAzure(object):
 
         if app_obj_id is not None:
             self.app_obj_id = app_obj_id
-        self.azure_client_id = azure_client_id
-        self.azure_client_secret = azure_client_secret
-        self.azure_tenant_id = azure_tenant_id
+        if azure_client_id is not None:
+            self.azure_client_id = azure_client_id
+        if azure_client_secret is not None:
+            self.azure_client_secret = azure_client_secret
+        if azure_tenant_id is not None:
+            self.azure_tenant_id = azure_tenant_id
         self.name = name
         if password is not None:
             self.password = password
@@ -115,6 +121,8 @@ class GatewayCreateProducerAzure(object):
             self.secure_access_enable = secure_access_enable
         if secure_access_web_browsing is not None:
             self.secure_access_web_browsing = secure_access_web_browsing
+        if target_name is not None:
+            self.target_name = target_name
         if token is not None:
             self.token = token
         if uid_token is not None:
@@ -177,8 +185,6 @@ class GatewayCreateProducerAzure(object):
         :param azure_client_id: The azure_client_id of this GatewayCreateProducerAzure.  # noqa: E501
         :type: str
         """
-        if self.local_vars_configuration.client_side_validation and azure_client_id is None:  # noqa: E501
-            raise ValueError("Invalid value for `azure_client_id`, must not be `None`")  # noqa: E501
 
         self._azure_client_id = azure_client_id
 
@@ -202,8 +208,6 @@ class GatewayCreateProducerAzure(object):
         :param azure_client_secret: The azure_client_secret of this GatewayCreateProducerAzure.  # noqa: E501
         :type: str
         """
-        if self.local_vars_configuration.client_side_validation and azure_client_secret is None:  # noqa: E501
-            raise ValueError("Invalid value for `azure_client_secret`, must not be `None`")  # noqa: E501
 
         self._azure_client_secret = azure_client_secret
 
@@ -227,8 +231,6 @@ class GatewayCreateProducerAzure(object):
         :param azure_tenant_id: The azure_tenant_id of this GatewayCreateProducerAzure.  # noqa: E501
         :type: str
         """
-        if self.local_vars_configuration.client_side_validation and azure_tenant_id is None:  # noqa: E501
-            raise ValueError("Invalid value for `azure_tenant_id`, must not be `None`")  # noqa: E501
 
         self._azure_tenant_id = azure_tenant_id
 
@@ -344,6 +346,29 @@ class GatewayCreateProducerAzure(object):
         """
 
         self._secure_access_web_browsing = secure_access_web_browsing
+
+    @property
+    def target_name(self):
+        """Gets the target_name of this GatewayCreateProducerAzure.  # noqa: E501
+
+        Target name  # noqa: E501
+
+        :return: The target_name of this GatewayCreateProducerAzure.  # noqa: E501
+        :rtype: str
+        """
+        return self._target_name
+
+    @target_name.setter
+    def target_name(self, target_name):
+        """Sets the target_name of this GatewayCreateProducerAzure.
+
+        Target name  # noqa: E501
+
+        :param target_name: The target_name of this GatewayCreateProducerAzure.  # noqa: E501
+        :type: str
+        """
+
+        self._target_name = target_name
 
     @property
     def token(self):

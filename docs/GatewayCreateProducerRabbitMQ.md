@@ -7,17 +7,18 @@ Name | Type | Description | Notes
 **name** | **str** | Producer name | 
 **password** | **str** | Required only when the authentication process requires a username and password | [optional] 
 **producer_encryption_key_name** | **str** | Dynamic producer encryption key | [optional] 
-**rabbitmq_admin_pwd** | **str** | RabbitMQ Admin password | 
-**rabbitmq_admin_user** | **str** | RabbitMQ Admin User | 
-**rabbitmq_server_uri** | **str** | Server URI | 
-**rabbitmq_user_conf_permission** | **str** | User configuration permission | 
-**rabbitmq_user_read_permission** | **str** | User read permission | 
+**rabbitmq_admin_pwd** | **str** | RabbitMQ Admin password | [optional] 
+**rabbitmq_admin_user** | **str** | RabbitMQ Admin User | [optional] 
+**rabbitmq_server_uri** | **str** | Server URI | [optional] 
+**rabbitmq_user_conf_permission** | **str** | User configuration permission | [optional] 
+**rabbitmq_user_read_permission** | **str** | User read permission | [optional] 
 **rabbitmq_user_tags** | **str** | User Tags | [optional] 
 **rabbitmq_user_vhost** | **str** | User Virtual Host | [optional] 
-**rabbitmq_user_write_permission** | **str** | User write permission | 
+**rabbitmq_user_write_permission** | **str** | User write permission | [optional] 
 **secure_access_enable** | **str** |  | [optional] 
 **secure_access_url** | **str** |  | [optional] 
 **secure_access_web_browsing** | **bool** |  | [optional] 
+**target_name** | **str** | Target name | [optional] 
 **token** | **str** | Authentication token (see &#x60;/auth&#x60; and &#x60;/configure&#x60;) | [optional] 
 **uid_token** | **str** | The universal identity token, Required only for universal_identity authentication | [optional] 
 **user_ttl** | **str** | User TTL | [optional] [default to '60m']

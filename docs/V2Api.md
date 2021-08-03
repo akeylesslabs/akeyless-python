@@ -6314,7 +6314,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **sign_jwt_with_classic_key**
-> sign_jwt_with_classic_key(body)
+> SignJWTOutput sign_jwt_with_classic_key(body)
 
 
 
@@ -6340,7 +6340,8 @@ with akeyless.ApiClient() as api_client:
     body = akeyless.SignJWTWithClassicKey() # SignJWTWithClassicKey | 
 
     try:
-        api_instance.sign_jwt_with_classic_key(body)
+        api_response = api_instance.sign_jwt_with_classic_key(body)
+        pprint(api_response)
     except ApiException as e:
         print("Exception when calling V2Api->sign_jwt_with_classic_key: %s\n" % e)
 ```
@@ -6353,7 +6354,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+[**SignJWTOutput**](SignJWTOutput.md)
 
 ### Authorization
 
@@ -6367,7 +6368,7 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** |  |  -  |
+**200** | signJWTWithClassicKeyResponse wraps response body. |  -  |
 **0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -6433,7 +6434,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **sign_pki_cert_with_classic_key**
-> sign_pki_cert_with_classic_key(body)
+> SignPKICertOutput sign_pki_cert_with_classic_key(body)
 
 
 
@@ -6459,7 +6460,8 @@ with akeyless.ApiClient() as api_client:
     body = akeyless.SignPKICertWithClassicKey() # SignPKICertWithClassicKey | 
 
     try:
-        api_instance.sign_pki_cert_with_classic_key(body)
+        api_response = api_instance.sign_pki_cert_with_classic_key(body)
+        pprint(api_response)
     except ApiException as e:
         print("Exception when calling V2Api->sign_pki_cert_with_classic_key: %s\n" % e)
 ```
@@ -6472,7 +6474,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+[**SignPKICertOutput**](SignPKICertOutput.md)
 
 ### Authorization
 
@@ -6486,7 +6488,7 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** |  |  -  |
+**200** | signPKICertWithClassicKeyResponse wraps response body. |  -  |
 **0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -8348,7 +8350,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **verify_jwt_with_classic_key**
-> verify_jwt_with_classic_key(body)
+> VerifyJWTOutput verify_jwt_with_classic_key(body)
 
 
 
@@ -8374,7 +8376,8 @@ with akeyless.ApiClient() as api_client:
     body = akeyless.VerifyJWTWithClassicKey() # VerifyJWTWithClassicKey | 
 
     try:
-        api_instance.verify_jwt_with_classic_key(body)
+        api_response = api_instance.verify_jwt_with_classic_key(body)
+        pprint(api_response)
     except ApiException as e:
         print("Exception when calling V2Api->verify_jwt_with_classic_key: %s\n" % e)
 ```
@@ -8387,7 +8390,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+[**VerifyJWTOutput**](VerifyJWTOutput.md)
 
 ### Authorization
 
@@ -8401,7 +8404,7 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** |  |  -  |
+**200** | verifyJWTWithClassicKeyResponse wraps response body. |  -  |
 **0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -8467,7 +8470,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **verify_pki_cert_with_classic_key**
-> verify_pki_cert_with_classic_key(body)
+> VerifyPKICertOutput verify_pki_cert_with_classic_key(body)
 
 
 
@@ -8493,7 +8496,8 @@ with akeyless.ApiClient() as api_client:
     body = akeyless.VerifyPKICertWithClassicKey() # VerifyPKICertWithClassicKey | 
 
     try:
-        api_instance.verify_pki_cert_with_classic_key(body)
+        api_response = api_instance.verify_pki_cert_with_classic_key(body)
+        pprint(api_response)
     except ApiException as e:
         print("Exception when calling V2Api->verify_pki_cert_with_classic_key: %s\n" % e)
 ```
@@ -8506,7 +8510,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+[**VerifyPKICertOutput**](VerifyPKICertOutput.md)
 
 ### Authorization
 
@@ -8520,7 +8524,7 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** |  |  -  |
+**200** | verifyPKICertWithClassicKeyResponse wraps response body. |  -  |
 **0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

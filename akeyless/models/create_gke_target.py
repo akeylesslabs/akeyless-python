@@ -87,10 +87,13 @@ class CreateGKETarget(object):
             self.comment = comment
         if gke_account_key is not None:
             self.gke_account_key = gke_account_key
-        self.gke_cluster_cert = gke_cluster_cert
-        self.gke_cluster_endpoint = gke_cluster_endpoint
+        if gke_cluster_cert is not None:
+            self.gke_cluster_cert = gke_cluster_cert
+        if gke_cluster_endpoint is not None:
+            self.gke_cluster_endpoint = gke_cluster_endpoint
         self.gke_cluster_name = gke_cluster_name
-        self.gke_service_account_email = gke_service_account_email
+        if gke_service_account_email is not None:
+            self.gke_service_account_email = gke_service_account_email
         if key is not None:
             self.key = key
         self.name = name
@@ -169,8 +172,6 @@ class CreateGKETarget(object):
         :param gke_cluster_cert: The gke_cluster_cert of this CreateGKETarget.  # noqa: E501
         :type: str
         """
-        if self.local_vars_configuration.client_side_validation and gke_cluster_cert is None:  # noqa: E501
-            raise ValueError("Invalid value for `gke_cluster_cert`, must not be `None`")  # noqa: E501
 
         self._gke_cluster_cert = gke_cluster_cert
 
@@ -194,8 +195,6 @@ class CreateGKETarget(object):
         :param gke_cluster_endpoint: The gke_cluster_endpoint of this CreateGKETarget.  # noqa: E501
         :type: str
         """
-        if self.local_vars_configuration.client_side_validation and gke_cluster_endpoint is None:  # noqa: E501
-            raise ValueError("Invalid value for `gke_cluster_endpoint`, must not be `None`")  # noqa: E501
 
         self._gke_cluster_endpoint = gke_cluster_endpoint
 
@@ -244,8 +243,6 @@ class CreateGKETarget(object):
         :param gke_service_account_email: The gke_service_account_email of this CreateGKETarget.  # noqa: E501
         :type: str
         """
-        if self.local_vars_configuration.client_side_validation and gke_service_account_email is None:  # noqa: E501
-            raise ValueError("Invalid value for `gke_service_account_email`, must not be `None`")  # noqa: E501
 
         self._gke_service_account_email = gke_service_account_email
 

@@ -48,6 +48,7 @@ class GatewayCreateProducerMSSQL(object):
         'secure_access_db_schema': 'str',
         'secure_access_enable': 'str',
         'secure_access_host': 'list[str]',
+        'target_name': 'str',
         'token': 'str',
         'uid_token': 'str',
         'user_ttl': 'str',
@@ -69,13 +70,14 @@ class GatewayCreateProducerMSSQL(object):
         'secure_access_db_schema': 'secure-access-db-schema',
         'secure_access_enable': 'secure-access-enable',
         'secure_access_host': 'secure-access-host',
+        'target_name': 'target-name',
         'token': 'token',
         'uid_token': 'uid-token',
         'user_ttl': 'user-ttl',
         'username': 'username'
     }
 
-    def __init__(self, mssql_create_statements=None, mssql_dbname=None, mssql_host='127.0.0.1', mssql_password=None, mssql_port='1433', mssql_revocation_statements=None, mssql_username=None, name=None, password=None, producer_encryption_key_name=None, secure_access_bastion_issuer=None, secure_access_db_schema=None, secure_access_enable=None, secure_access_host=None, token=None, uid_token=None, user_ttl='60m', username=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, mssql_create_statements=None, mssql_dbname=None, mssql_host='127.0.0.1', mssql_password=None, mssql_port='1433', mssql_revocation_statements=None, mssql_username=None, name=None, password=None, producer_encryption_key_name=None, secure_access_bastion_issuer=None, secure_access_db_schema=None, secure_access_enable=None, secure_access_host=None, target_name=None, token=None, uid_token=None, user_ttl='60m', username=None, local_vars_configuration=None):  # noqa: E501
         """GatewayCreateProducerMSSQL - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -95,6 +97,7 @@ class GatewayCreateProducerMSSQL(object):
         self._secure_access_db_schema = None
         self._secure_access_enable = None
         self._secure_access_host = None
+        self._target_name = None
         self._token = None
         self._uid_token = None
         self._user_ttl = None
@@ -103,15 +106,18 @@ class GatewayCreateProducerMSSQL(object):
 
         if mssql_create_statements is not None:
             self.mssql_create_statements = mssql_create_statements
-        self.mssql_dbname = mssql_dbname
+        if mssql_dbname is not None:
+            self.mssql_dbname = mssql_dbname
         if mssql_host is not None:
             self.mssql_host = mssql_host
-        self.mssql_password = mssql_password
+        if mssql_password is not None:
+            self.mssql_password = mssql_password
         if mssql_port is not None:
             self.mssql_port = mssql_port
         if mssql_revocation_statements is not None:
             self.mssql_revocation_statements = mssql_revocation_statements
-        self.mssql_username = mssql_username
+        if mssql_username is not None:
+            self.mssql_username = mssql_username
         self.name = name
         if password is not None:
             self.password = password
@@ -125,6 +131,8 @@ class GatewayCreateProducerMSSQL(object):
             self.secure_access_enable = secure_access_enable
         if secure_access_host is not None:
             self.secure_access_host = secure_access_host
+        if target_name is not None:
+            self.target_name = target_name
         if token is not None:
             self.token = token
         if uid_token is not None:
@@ -177,8 +185,6 @@ class GatewayCreateProducerMSSQL(object):
         :param mssql_dbname: The mssql_dbname of this GatewayCreateProducerMSSQL.  # noqa: E501
         :type: str
         """
-        if self.local_vars_configuration.client_side_validation and mssql_dbname is None:  # noqa: E501
-            raise ValueError("Invalid value for `mssql_dbname`, must not be `None`")  # noqa: E501
 
         self._mssql_dbname = mssql_dbname
 
@@ -225,8 +231,6 @@ class GatewayCreateProducerMSSQL(object):
         :param mssql_password: The mssql_password of this GatewayCreateProducerMSSQL.  # noqa: E501
         :type: str
         """
-        if self.local_vars_configuration.client_side_validation and mssql_password is None:  # noqa: E501
-            raise ValueError("Invalid value for `mssql_password`, must not be `None`")  # noqa: E501
 
         self._mssql_password = mssql_password
 
@@ -296,8 +300,6 @@ class GatewayCreateProducerMSSQL(object):
         :param mssql_username: The mssql_username of this GatewayCreateProducerMSSQL.  # noqa: E501
         :type: str
         """
-        if self.local_vars_configuration.client_side_validation and mssql_username is None:  # noqa: E501
-            raise ValueError("Invalid value for `mssql_username`, must not be `None`")  # noqa: E501
 
         self._mssql_username = mssql_username
 
@@ -455,6 +457,29 @@ class GatewayCreateProducerMSSQL(object):
         """
 
         self._secure_access_host = secure_access_host
+
+    @property
+    def target_name(self):
+        """Gets the target_name of this GatewayCreateProducerMSSQL.  # noqa: E501
+
+        Target name  # noqa: E501
+
+        :return: The target_name of this GatewayCreateProducerMSSQL.  # noqa: E501
+        :rtype: str
+        """
+        return self._target_name
+
+    @target_name.setter
+    def target_name(self, target_name):
+        """Sets the target_name of this GatewayCreateProducerMSSQL.
+
+        Target name  # noqa: E501
+
+        :param target_name: The target_name of this GatewayCreateProducerMSSQL.  # noqa: E501
+        :type: str
+        """
+
+        self._target_name = target_name
 
     @property
     def token(self):

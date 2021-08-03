@@ -42,6 +42,7 @@ class GatewayCreateProducerArtifactory(object):
         'name': 'str',
         'password': 'str',
         'producer_encryption_key_name': 'str',
+        'target_name': 'str',
         'token': 'str',
         'uid_token': 'str',
         'user_ttl': 'str',
@@ -57,13 +58,14 @@ class GatewayCreateProducerArtifactory(object):
         'name': 'name',
         'password': 'password',
         'producer_encryption_key_name': 'producer-encryption-key-name',
+        'target_name': 'target-name',
         'token': 'token',
         'uid_token': 'uid-token',
         'user_ttl': 'user-ttl',
         'username': 'username'
     }
 
-    def __init__(self, artifactory_admin_name=None, artifactory_admin_pwd=None, artifactory_token_audience=None, artifactory_token_scope=None, base_url=None, name=None, password=None, producer_encryption_key_name=None, token=None, uid_token=None, user_ttl='60m', username=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, artifactory_admin_name=None, artifactory_admin_pwd=None, artifactory_token_audience=None, artifactory_token_scope=None, base_url=None, name=None, password=None, producer_encryption_key_name=None, target_name=None, token=None, uid_token=None, user_ttl='60m', username=None, local_vars_configuration=None):  # noqa: E501
         """GatewayCreateProducerArtifactory - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -77,22 +79,28 @@ class GatewayCreateProducerArtifactory(object):
         self._name = None
         self._password = None
         self._producer_encryption_key_name = None
+        self._target_name = None
         self._token = None
         self._uid_token = None
         self._user_ttl = None
         self._username = None
         self.discriminator = None
 
-        self.artifactory_admin_name = artifactory_admin_name
-        self.artifactory_admin_pwd = artifactory_admin_pwd
+        if artifactory_admin_name is not None:
+            self.artifactory_admin_name = artifactory_admin_name
+        if artifactory_admin_pwd is not None:
+            self.artifactory_admin_pwd = artifactory_admin_pwd
         self.artifactory_token_audience = artifactory_token_audience
         self.artifactory_token_scope = artifactory_token_scope
-        self.base_url = base_url
+        if base_url is not None:
+            self.base_url = base_url
         self.name = name
         if password is not None:
             self.password = password
         if producer_encryption_key_name is not None:
             self.producer_encryption_key_name = producer_encryption_key_name
+        if target_name is not None:
+            self.target_name = target_name
         if token is not None:
             self.token = token
         if uid_token is not None:
@@ -122,8 +130,6 @@ class GatewayCreateProducerArtifactory(object):
         :param artifactory_admin_name: The artifactory_admin_name of this GatewayCreateProducerArtifactory.  # noqa: E501
         :type: str
         """
-        if self.local_vars_configuration.client_side_validation and artifactory_admin_name is None:  # noqa: E501
-            raise ValueError("Invalid value for `artifactory_admin_name`, must not be `None`")  # noqa: E501
 
         self._artifactory_admin_name = artifactory_admin_name
 
@@ -147,8 +153,6 @@ class GatewayCreateProducerArtifactory(object):
         :param artifactory_admin_pwd: The artifactory_admin_pwd of this GatewayCreateProducerArtifactory.  # noqa: E501
         :type: str
         """
-        if self.local_vars_configuration.client_side_validation and artifactory_admin_pwd is None:  # noqa: E501
-            raise ValueError("Invalid value for `artifactory_admin_pwd`, must not be `None`")  # noqa: E501
 
         self._artifactory_admin_pwd = artifactory_admin_pwd
 
@@ -222,8 +226,6 @@ class GatewayCreateProducerArtifactory(object):
         :param base_url: The base_url of this GatewayCreateProducerArtifactory.  # noqa: E501
         :type: str
         """
-        if self.local_vars_configuration.client_side_validation and base_url is None:  # noqa: E501
-            raise ValueError("Invalid value for `base_url`, must not be `None`")  # noqa: E501
 
         self._base_url = base_url
 
@@ -297,6 +299,29 @@ class GatewayCreateProducerArtifactory(object):
         """
 
         self._producer_encryption_key_name = producer_encryption_key_name
+
+    @property
+    def target_name(self):
+        """Gets the target_name of this GatewayCreateProducerArtifactory.  # noqa: E501
+
+        Target name  # noqa: E501
+
+        :return: The target_name of this GatewayCreateProducerArtifactory.  # noqa: E501
+        :rtype: str
+        """
+        return self._target_name
+
+    @target_name.setter
+    def target_name(self, target_name):
+        """Sets the target_name of this GatewayCreateProducerArtifactory.
+
+        Target name  # noqa: E501
+
+        :param target_name: The target_name of this GatewayCreateProducerArtifactory.  # noqa: E501
+        :type: str
+        """
+
+        self._target_name = target_name
 
     @property
     def token(self):

@@ -45,6 +45,7 @@ class GatewayCreateProducerOracleDb(object):
         'oracle_username': 'str',
         'password': 'str',
         'producer_encryption_key_name': 'str',
+        'target_name': 'str',
         'token': 'str',
         'uid_token': 'str',
         'user_ttl': 'str',
@@ -63,13 +64,14 @@ class GatewayCreateProducerOracleDb(object):
         'oracle_username': 'oracle-username',
         'password': 'password',
         'producer_encryption_key_name': 'producer-encryption-key-name',
+        'target_name': 'target-name',
         'token': 'token',
         'uid_token': 'uid-token',
         'user_ttl': 'user-ttl',
         'username': 'username'
     }
 
-    def __init__(self, db_server_certificates=None, db_server_name=None, name=None, oracle_host='127.0.0.1', oracle_password=None, oracle_port='1521', oracle_screation_statements=None, oracle_service_name=None, oracle_username=None, password=None, producer_encryption_key_name=None, token=None, uid_token=None, user_ttl='60m', username=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, db_server_certificates=None, db_server_name=None, name=None, oracle_host='127.0.0.1', oracle_password=None, oracle_port='1521', oracle_screation_statements=None, oracle_service_name=None, oracle_username=None, password=None, producer_encryption_key_name=None, target_name=None, token=None, uid_token=None, user_ttl='60m', username=None, local_vars_configuration=None):  # noqa: E501
         """GatewayCreateProducerOracleDb - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -86,6 +88,7 @@ class GatewayCreateProducerOracleDb(object):
         self._oracle_username = None
         self._password = None
         self._producer_encryption_key_name = None
+        self._target_name = None
         self._token = None
         self._uid_token = None
         self._user_ttl = None
@@ -99,17 +102,22 @@ class GatewayCreateProducerOracleDb(object):
         self.name = name
         if oracle_host is not None:
             self.oracle_host = oracle_host
-        self.oracle_password = oracle_password
+        if oracle_password is not None:
+            self.oracle_password = oracle_password
         if oracle_port is not None:
             self.oracle_port = oracle_port
         if oracle_screation_statements is not None:
             self.oracle_screation_statements = oracle_screation_statements
-        self.oracle_service_name = oracle_service_name
-        self.oracle_username = oracle_username
+        if oracle_service_name is not None:
+            self.oracle_service_name = oracle_service_name
+        if oracle_username is not None:
+            self.oracle_username = oracle_username
         if password is not None:
             self.password = password
         if producer_encryption_key_name is not None:
             self.producer_encryption_key_name = producer_encryption_key_name
+        if target_name is not None:
+            self.target_name = target_name
         if token is not None:
             self.token = token
         if uid_token is not None:
@@ -233,8 +241,6 @@ class GatewayCreateProducerOracleDb(object):
         :param oracle_password: The oracle_password of this GatewayCreateProducerOracleDb.  # noqa: E501
         :type: str
         """
-        if self.local_vars_configuration.client_side_validation and oracle_password is None:  # noqa: E501
-            raise ValueError("Invalid value for `oracle_password`, must not be `None`")  # noqa: E501
 
         self._oracle_password = oracle_password
 
@@ -304,8 +310,6 @@ class GatewayCreateProducerOracleDb(object):
         :param oracle_service_name: The oracle_service_name of this GatewayCreateProducerOracleDb.  # noqa: E501
         :type: str
         """
-        if self.local_vars_configuration.client_side_validation and oracle_service_name is None:  # noqa: E501
-            raise ValueError("Invalid value for `oracle_service_name`, must not be `None`")  # noqa: E501
 
         self._oracle_service_name = oracle_service_name
 
@@ -329,8 +333,6 @@ class GatewayCreateProducerOracleDb(object):
         :param oracle_username: The oracle_username of this GatewayCreateProducerOracleDb.  # noqa: E501
         :type: str
         """
-        if self.local_vars_configuration.client_side_validation and oracle_username is None:  # noqa: E501
-            raise ValueError("Invalid value for `oracle_username`, must not be `None`")  # noqa: E501
 
         self._oracle_username = oracle_username
 
@@ -379,6 +381,29 @@ class GatewayCreateProducerOracleDb(object):
         """
 
         self._producer_encryption_key_name = producer_encryption_key_name
+
+    @property
+    def target_name(self):
+        """Gets the target_name of this GatewayCreateProducerOracleDb.  # noqa: E501
+
+        Target name  # noqa: E501
+
+        :return: The target_name of this GatewayCreateProducerOracleDb.  # noqa: E501
+        :rtype: str
+        """
+        return self._target_name
+
+    @target_name.setter
+    def target_name(self, target_name):
+        """Sets the target_name of this GatewayCreateProducerOracleDb.
+
+        Target name  # noqa: E501
+
+        :param target_name: The target_name of this GatewayCreateProducerOracleDb.  # noqa: E501
+        :type: str
+        """
+
+        self._target_name = target_name
 
     @property
     def token(self):

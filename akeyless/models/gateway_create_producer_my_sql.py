@@ -48,6 +48,7 @@ class GatewayCreateProducerMySQL(object):
         'secure_access_bastion_issuer': 'str',
         'secure_access_enable': 'str',
         'secure_access_host': 'list[str]',
+        'target_name': 'str',
         'token': 'str',
         'uid_token': 'str',
         'user_ttl': 'str',
@@ -69,13 +70,14 @@ class GatewayCreateProducerMySQL(object):
         'secure_access_bastion_issuer': 'secure-access-bastion-issuer',
         'secure_access_enable': 'secure-access-enable',
         'secure_access_host': 'secure-access-host',
+        'target_name': 'target-name',
         'token': 'token',
         'uid_token': 'uid-token',
         'user_ttl': 'user-ttl',
         'username': 'username'
     }
 
-    def __init__(self, db_server_certificates=None, db_server_name=None, mysql_dbname=None, mysql_host='127.0.0.1', mysql_password=None, mysql_port='3306', mysql_screation_statements=None, mysql_username=None, name=None, password=None, producer_encryption_key_name=None, secure_access_bastion_issuer=None, secure_access_enable=None, secure_access_host=None, token=None, uid_token=None, user_ttl='60m', username=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, db_server_certificates=None, db_server_name=None, mysql_dbname=None, mysql_host='127.0.0.1', mysql_password=None, mysql_port='3306', mysql_screation_statements=None, mysql_username=None, name=None, password=None, producer_encryption_key_name=None, secure_access_bastion_issuer=None, secure_access_enable=None, secure_access_host=None, target_name=None, token=None, uid_token=None, user_ttl='60m', username=None, local_vars_configuration=None):  # noqa: E501
         """GatewayCreateProducerMySQL - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -95,6 +97,7 @@ class GatewayCreateProducerMySQL(object):
         self._secure_access_bastion_issuer = None
         self._secure_access_enable = None
         self._secure_access_host = None
+        self._target_name = None
         self._token = None
         self._uid_token = None
         self._user_ttl = None
@@ -105,15 +108,18 @@ class GatewayCreateProducerMySQL(object):
             self.db_server_certificates = db_server_certificates
         if db_server_name is not None:
             self.db_server_name = db_server_name
-        self.mysql_dbname = mysql_dbname
+        if mysql_dbname is not None:
+            self.mysql_dbname = mysql_dbname
         if mysql_host is not None:
             self.mysql_host = mysql_host
-        self.mysql_password = mysql_password
+        if mysql_password is not None:
+            self.mysql_password = mysql_password
         if mysql_port is not None:
             self.mysql_port = mysql_port
         if mysql_screation_statements is not None:
             self.mysql_screation_statements = mysql_screation_statements
-        self.mysql_username = mysql_username
+        if mysql_username is not None:
+            self.mysql_username = mysql_username
         self.name = name
         if password is not None:
             self.password = password
@@ -125,6 +131,8 @@ class GatewayCreateProducerMySQL(object):
             self.secure_access_enable = secure_access_enable
         if secure_access_host is not None:
             self.secure_access_host = secure_access_host
+        if target_name is not None:
+            self.target_name = target_name
         if token is not None:
             self.token = token
         if uid_token is not None:
@@ -200,8 +208,6 @@ class GatewayCreateProducerMySQL(object):
         :param mysql_dbname: The mysql_dbname of this GatewayCreateProducerMySQL.  # noqa: E501
         :type: str
         """
-        if self.local_vars_configuration.client_side_validation and mysql_dbname is None:  # noqa: E501
-            raise ValueError("Invalid value for `mysql_dbname`, must not be `None`")  # noqa: E501
 
         self._mysql_dbname = mysql_dbname
 
@@ -248,8 +254,6 @@ class GatewayCreateProducerMySQL(object):
         :param mysql_password: The mysql_password of this GatewayCreateProducerMySQL.  # noqa: E501
         :type: str
         """
-        if self.local_vars_configuration.client_side_validation and mysql_password is None:  # noqa: E501
-            raise ValueError("Invalid value for `mysql_password`, must not be `None`")  # noqa: E501
 
         self._mysql_password = mysql_password
 
@@ -319,8 +323,6 @@ class GatewayCreateProducerMySQL(object):
         :param mysql_username: The mysql_username of this GatewayCreateProducerMySQL.  # noqa: E501
         :type: str
         """
-        if self.local_vars_configuration.client_side_validation and mysql_username is None:  # noqa: E501
-            raise ValueError("Invalid value for `mysql_username`, must not be `None`")  # noqa: E501
 
         self._mysql_username = mysql_username
 
@@ -457,6 +459,29 @@ class GatewayCreateProducerMySQL(object):
         """
 
         self._secure_access_host = secure_access_host
+
+    @property
+    def target_name(self):
+        """Gets the target_name of this GatewayCreateProducerMySQL.  # noqa: E501
+
+        Target name  # noqa: E501
+
+        :return: The target_name of this GatewayCreateProducerMySQL.  # noqa: E501
+        :rtype: str
+        """
+        return self._target_name
+
+    @target_name.setter
+    def target_name(self, target_name):
+        """Sets the target_name of this GatewayCreateProducerMySQL.
+
+        Target name  # noqa: E501
+
+        :param target_name: The target_name of this GatewayCreateProducerMySQL.  # noqa: E501
+        :type: str
+        """
+
+        self._target_name = target_name
 
     @property
     def token(self):

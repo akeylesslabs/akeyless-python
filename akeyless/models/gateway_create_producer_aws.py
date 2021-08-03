@@ -53,6 +53,7 @@ class GatewayCreateProducerAws(object):
         'secure_access_bastion_issuer': 'str',
         'secure_access_enable': 'str',
         'secure_access_web_browsing': 'bool',
+        'target_name': 'str',
         'token': 'str',
         'uid_token': 'str',
         'user_ttl': 'str',
@@ -79,13 +80,14 @@ class GatewayCreateProducerAws(object):
         'secure_access_bastion_issuer': 'secure-access-bastion-issuer',
         'secure_access_enable': 'secure-access-enable',
         'secure_access_web_browsing': 'secure-access-web-browsing',
+        'target_name': 'target-name',
         'token': 'token',
         'uid_token': 'uid-token',
         'user_ttl': 'user-ttl',
         'username': 'username'
     }
 
-    def __init__(self, access_mode=None, admin_rotation_interval_days=0, aws_access_key_id=None, aws_access_secret_key=None, aws_role_arns=None, aws_user_console_access=False, aws_user_groups=None, aws_user_policies=None, aws_user_programmatic_access=True, enable_admin_rotation=False, name=None, password=None, producer_encryption_key_name=None, region='us-east-2', secure_access_aws_account_id=None, secure_access_aws_native_cli=None, secure_access_bastion_issuer=None, secure_access_enable=None, secure_access_web_browsing=None, token=None, uid_token=None, user_ttl='60m', username=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, access_mode=None, admin_rotation_interval_days=0, aws_access_key_id=None, aws_access_secret_key=None, aws_role_arns=None, aws_user_console_access=False, aws_user_groups=None, aws_user_policies=None, aws_user_programmatic_access=True, enable_admin_rotation=False, name=None, password=None, producer_encryption_key_name=None, region='us-east-2', secure_access_aws_account_id=None, secure_access_aws_native_cli=None, secure_access_bastion_issuer=None, secure_access_enable=None, secure_access_web_browsing=None, target_name=None, token=None, uid_token=None, user_ttl='60m', username=None, local_vars_configuration=None):  # noqa: E501
         """GatewayCreateProducerAws - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -110,6 +112,7 @@ class GatewayCreateProducerAws(object):
         self._secure_access_bastion_issuer = None
         self._secure_access_enable = None
         self._secure_access_web_browsing = None
+        self._target_name = None
         self._token = None
         self._uid_token = None
         self._user_ttl = None
@@ -120,8 +123,10 @@ class GatewayCreateProducerAws(object):
             self.access_mode = access_mode
         if admin_rotation_interval_days is not None:
             self.admin_rotation_interval_days = admin_rotation_interval_days
-        self.aws_access_key_id = aws_access_key_id
-        self.aws_access_secret_key = aws_access_secret_key
+        if aws_access_key_id is not None:
+            self.aws_access_key_id = aws_access_key_id
+        if aws_access_secret_key is not None:
+            self.aws_access_secret_key = aws_access_secret_key
         if aws_role_arns is not None:
             self.aws_role_arns = aws_role_arns
         if aws_user_console_access is not None:
@@ -151,6 +156,8 @@ class GatewayCreateProducerAws(object):
             self.secure_access_enable = secure_access_enable
         if secure_access_web_browsing is not None:
             self.secure_access_web_browsing = secure_access_web_browsing
+        if target_name is not None:
+            self.target_name = target_name
         if token is not None:
             self.token = token
         if uid_token is not None:
@@ -224,8 +231,6 @@ class GatewayCreateProducerAws(object):
         :param aws_access_key_id: The aws_access_key_id of this GatewayCreateProducerAws.  # noqa: E501
         :type: str
         """
-        if self.local_vars_configuration.client_side_validation and aws_access_key_id is None:  # noqa: E501
-            raise ValueError("Invalid value for `aws_access_key_id`, must not be `None`")  # noqa: E501
 
         self._aws_access_key_id = aws_access_key_id
 
@@ -249,8 +254,6 @@ class GatewayCreateProducerAws(object):
         :param aws_access_secret_key: The aws_access_secret_key of this GatewayCreateProducerAws.  # noqa: E501
         :type: str
         """
-        if self.local_vars_configuration.client_side_validation and aws_access_secret_key is None:  # noqa: E501
-            raise ValueError("Invalid value for `aws_access_secret_key`, must not be `None`")  # noqa: E501
 
         self._aws_access_secret_key = aws_access_secret_key
 
@@ -590,6 +593,29 @@ class GatewayCreateProducerAws(object):
         """
 
         self._secure_access_web_browsing = secure_access_web_browsing
+
+    @property
+    def target_name(self):
+        """Gets the target_name of this GatewayCreateProducerAws.  # noqa: E501
+
+        Target name  # noqa: E501
+
+        :return: The target_name of this GatewayCreateProducerAws.  # noqa: E501
+        :rtype: str
+        """
+        return self._target_name
+
+    @target_name.setter
+    def target_name(self, target_name):
+        """Sets the target_name of this GatewayCreateProducerAws.
+
+        Target name  # noqa: E501
+
+        :param target_name: The target_name of this GatewayCreateProducerAws.  # noqa: E501
+        :type: str
+        """
+
+        self._target_name = target_name
 
     @property
     def token(self):

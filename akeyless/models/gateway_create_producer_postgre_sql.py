@@ -47,6 +47,7 @@ class GatewayCreateProducerPostgreSQL(object):
         'secure_access_db_schema': 'str',
         'secure_access_enable': 'str',
         'secure_access_host': 'list[str]',
+        'target_name': 'str',
         'token': 'str',
         'uid_token': 'str',
         'user_ttl': 'str',
@@ -67,13 +68,14 @@ class GatewayCreateProducerPostgreSQL(object):
         'secure_access_db_schema': 'secure-access-db-schema',
         'secure_access_enable': 'secure-access-enable',
         'secure_access_host': 'secure-access-host',
+        'target_name': 'target-name',
         'token': 'token',
         'uid_token': 'uid-token',
         'user_ttl': 'user-ttl',
         'username': 'username'
     }
 
-    def __init__(self, creation_statements=None, name=None, password=None, postgresql_db_name=None, postgresql_host='127.0.0.1', postgresql_password=None, postgresql_port='5432', postgresql_username=None, producer_encryption_key=None, secure_access_bastion_issuer=None, secure_access_db_schema=None, secure_access_enable=None, secure_access_host=None, token=None, uid_token=None, user_ttl='60m', username=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, creation_statements=None, name=None, password=None, postgresql_db_name=None, postgresql_host='127.0.0.1', postgresql_password=None, postgresql_port='5432', postgresql_username=None, producer_encryption_key=None, secure_access_bastion_issuer=None, secure_access_db_schema=None, secure_access_enable=None, secure_access_host=None, target_name=None, token=None, uid_token=None, user_ttl='60m', username=None, local_vars_configuration=None):  # noqa: E501
         """GatewayCreateProducerPostgreSQL - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -92,6 +94,7 @@ class GatewayCreateProducerPostgreSQL(object):
         self._secure_access_db_schema = None
         self._secure_access_enable = None
         self._secure_access_host = None
+        self._target_name = None
         self._token = None
         self._uid_token = None
         self._user_ttl = None
@@ -103,13 +106,16 @@ class GatewayCreateProducerPostgreSQL(object):
         self.name = name
         if password is not None:
             self.password = password
-        self.postgresql_db_name = postgresql_db_name
+        if postgresql_db_name is not None:
+            self.postgresql_db_name = postgresql_db_name
         if postgresql_host is not None:
             self.postgresql_host = postgresql_host
-        self.postgresql_password = postgresql_password
+        if postgresql_password is not None:
+            self.postgresql_password = postgresql_password
         if postgresql_port is not None:
             self.postgresql_port = postgresql_port
-        self.postgresql_username = postgresql_username
+        if postgresql_username is not None:
+            self.postgresql_username = postgresql_username
         if producer_encryption_key is not None:
             self.producer_encryption_key = producer_encryption_key
         if secure_access_bastion_issuer is not None:
@@ -120,6 +126,8 @@ class GatewayCreateProducerPostgreSQL(object):
             self.secure_access_enable = secure_access_enable
         if secure_access_host is not None:
             self.secure_access_host = secure_access_host
+        if target_name is not None:
+            self.target_name = target_name
         if token is not None:
             self.token = token
         if uid_token is not None:
@@ -220,8 +228,6 @@ class GatewayCreateProducerPostgreSQL(object):
         :param postgresql_db_name: The postgresql_db_name of this GatewayCreateProducerPostgreSQL.  # noqa: E501
         :type: str
         """
-        if self.local_vars_configuration.client_side_validation and postgresql_db_name is None:  # noqa: E501
-            raise ValueError("Invalid value for `postgresql_db_name`, must not be `None`")  # noqa: E501
 
         self._postgresql_db_name = postgresql_db_name
 
@@ -268,8 +274,6 @@ class GatewayCreateProducerPostgreSQL(object):
         :param postgresql_password: The postgresql_password of this GatewayCreateProducerPostgreSQL.  # noqa: E501
         :type: str
         """
-        if self.local_vars_configuration.client_side_validation and postgresql_password is None:  # noqa: E501
-            raise ValueError("Invalid value for `postgresql_password`, must not be `None`")  # noqa: E501
 
         self._postgresql_password = postgresql_password
 
@@ -316,8 +320,6 @@ class GatewayCreateProducerPostgreSQL(object):
         :param postgresql_username: The postgresql_username of this GatewayCreateProducerPostgreSQL.  # noqa: E501
         :type: str
         """
-        if self.local_vars_configuration.client_side_validation and postgresql_username is None:  # noqa: E501
-            raise ValueError("Invalid value for `postgresql_username`, must not be `None`")  # noqa: E501
 
         self._postgresql_username = postgresql_username
 
@@ -427,6 +429,29 @@ class GatewayCreateProducerPostgreSQL(object):
         """
 
         self._secure_access_host = secure_access_host
+
+    @property
+    def target_name(self):
+        """Gets the target_name of this GatewayCreateProducerPostgreSQL.  # noqa: E501
+
+        Target name  # noqa: E501
+
+        :return: The target_name of this GatewayCreateProducerPostgreSQL.  # noqa: E501
+        :rtype: str
+        """
+        return self._target_name
+
+    @target_name.setter
+    def target_name(self, target_name):
+        """Sets the target_name of this GatewayCreateProducerPostgreSQL.
+
+        Target name  # noqa: E501
+
+        :param target_name: The target_name of this GatewayCreateProducerPostgreSQL.  # noqa: E501
+        :type: str
+        """
+
+        self._target_name = target_name
 
     @property
     def token(self):

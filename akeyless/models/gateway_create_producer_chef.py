@@ -42,6 +42,7 @@ class GatewayCreateProducerChef(object):
         'password': 'str',
         'producer_encryption_key_name': 'str',
         'skip_ssl': 'bool',
+        'target_name': 'str',
         'token': 'str',
         'uid_token': 'str',
         'user_ttl': 'str',
@@ -57,13 +58,14 @@ class GatewayCreateProducerChef(object):
         'password': 'password',
         'producer_encryption_key_name': 'producer-encryption-key-name',
         'skip_ssl': 'skip-ssl',
+        'target_name': 'target-name',
         'token': 'token',
         'uid_token': 'uid-token',
         'user_ttl': 'user-ttl',
         'username': 'username'
     }
 
-    def __init__(self, chef_orgs=None, chef_server_key=None, chef_server_url=None, chef_server_username=None, name=None, password=None, producer_encryption_key_name=None, skip_ssl=True, token=None, uid_token=None, user_ttl='60m', username=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, chef_orgs=None, chef_server_key=None, chef_server_url=None, chef_server_username=None, name=None, password=None, producer_encryption_key_name=None, skip_ssl=True, target_name=None, token=None, uid_token=None, user_ttl='60m', username=None, local_vars_configuration=None):  # noqa: E501
         """GatewayCreateProducerChef - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -77,16 +79,21 @@ class GatewayCreateProducerChef(object):
         self._password = None
         self._producer_encryption_key_name = None
         self._skip_ssl = None
+        self._target_name = None
         self._token = None
         self._uid_token = None
         self._user_ttl = None
         self._username = None
         self.discriminator = None
 
-        self.chef_orgs = chef_orgs
-        self.chef_server_key = chef_server_key
-        self.chef_server_url = chef_server_url
-        self.chef_server_username = chef_server_username
+        if chef_orgs is not None:
+            self.chef_orgs = chef_orgs
+        if chef_server_key is not None:
+            self.chef_server_key = chef_server_key
+        if chef_server_url is not None:
+            self.chef_server_url = chef_server_url
+        if chef_server_username is not None:
+            self.chef_server_username = chef_server_username
         self.name = name
         if password is not None:
             self.password = password
@@ -94,6 +101,8 @@ class GatewayCreateProducerChef(object):
             self.producer_encryption_key_name = producer_encryption_key_name
         if skip_ssl is not None:
             self.skip_ssl = skip_ssl
+        if target_name is not None:
+            self.target_name = target_name
         if token is not None:
             self.token = token
         if uid_token is not None:
@@ -123,8 +132,6 @@ class GatewayCreateProducerChef(object):
         :param chef_orgs: The chef_orgs of this GatewayCreateProducerChef.  # noqa: E501
         :type: str
         """
-        if self.local_vars_configuration.client_side_validation and chef_orgs is None:  # noqa: E501
-            raise ValueError("Invalid value for `chef_orgs`, must not be `None`")  # noqa: E501
 
         self._chef_orgs = chef_orgs
 
@@ -148,8 +155,6 @@ class GatewayCreateProducerChef(object):
         :param chef_server_key: The chef_server_key of this GatewayCreateProducerChef.  # noqa: E501
         :type: str
         """
-        if self.local_vars_configuration.client_side_validation and chef_server_key is None:  # noqa: E501
-            raise ValueError("Invalid value for `chef_server_key`, must not be `None`")  # noqa: E501
 
         self._chef_server_key = chef_server_key
 
@@ -173,8 +178,6 @@ class GatewayCreateProducerChef(object):
         :param chef_server_url: The chef_server_url of this GatewayCreateProducerChef.  # noqa: E501
         :type: str
         """
-        if self.local_vars_configuration.client_side_validation and chef_server_url is None:  # noqa: E501
-            raise ValueError("Invalid value for `chef_server_url`, must not be `None`")  # noqa: E501
 
         self._chef_server_url = chef_server_url
 
@@ -198,8 +201,6 @@ class GatewayCreateProducerChef(object):
         :param chef_server_username: The chef_server_username of this GatewayCreateProducerChef.  # noqa: E501
         :type: str
         """
-        if self.local_vars_configuration.client_side_validation and chef_server_username is None:  # noqa: E501
-            raise ValueError("Invalid value for `chef_server_username`, must not be `None`")  # noqa: E501
 
         self._chef_server_username = chef_server_username
 
@@ -296,6 +297,29 @@ class GatewayCreateProducerChef(object):
         """
 
         self._skip_ssl = skip_ssl
+
+    @property
+    def target_name(self):
+        """Gets the target_name of this GatewayCreateProducerChef.  # noqa: E501
+
+        Target name  # noqa: E501
+
+        :return: The target_name of this GatewayCreateProducerChef.  # noqa: E501
+        :rtype: str
+        """
+        return self._target_name
+
+    @target_name.setter
+    def target_name(self, target_name):
+        """Sets the target_name of this GatewayCreateProducerChef.
+
+        Target name  # noqa: E501
+
+        :param target_name: The target_name of this GatewayCreateProducerChef.  # noqa: E501
+        :type: str
+        """
+
+        self._target_name = target_name
 
     @property
     def token(self):

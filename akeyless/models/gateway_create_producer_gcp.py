@@ -42,6 +42,7 @@ class GatewayCreateProducerGcp(object):
         'name': 'str',
         'password': 'str',
         'producer_encryption_key_name': 'str',
+        'target_name': 'str',
         'token': 'str',
         'uid_token': 'str',
         'user_ttl': 'str',
@@ -57,13 +58,14 @@ class GatewayCreateProducerGcp(object):
         'name': 'name',
         'password': 'password',
         'producer_encryption_key_name': 'producer-encryption-key-name',
+        'target_name': 'target-name',
         'token': 'token',
         'uid_token': 'uid-token',
         'user_ttl': 'user-ttl',
         'username': 'username'
     }
 
-    def __init__(self, gcp_cred_type=None, gcp_key=None, gcp_key_algo=None, gcp_sa_email=None, gcp_token_scopes=None, name=None, password=None, producer_encryption_key_name=None, token=None, uid_token=None, user_ttl='60m', username=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, gcp_cred_type=None, gcp_key=None, gcp_key_algo=None, gcp_sa_email=None, gcp_token_scopes=None, name=None, password=None, producer_encryption_key_name=None, target_name=None, token=None, uid_token=None, user_ttl='60m', username=None, local_vars_configuration=None):  # noqa: E501
         """GatewayCreateProducerGcp - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -77,18 +79,21 @@ class GatewayCreateProducerGcp(object):
         self._name = None
         self._password = None
         self._producer_encryption_key_name = None
+        self._target_name = None
         self._token = None
         self._uid_token = None
         self._user_ttl = None
         self._username = None
         self.discriminator = None
 
-        self.gcp_cred_type = gcp_cred_type
+        if gcp_cred_type is not None:
+            self.gcp_cred_type = gcp_cred_type
         if gcp_key is not None:
             self.gcp_key = gcp_key
         if gcp_key_algo is not None:
             self.gcp_key_algo = gcp_key_algo
-        self.gcp_sa_email = gcp_sa_email
+        if gcp_sa_email is not None:
+            self.gcp_sa_email = gcp_sa_email
         if gcp_token_scopes is not None:
             self.gcp_token_scopes = gcp_token_scopes
         self.name = name
@@ -96,6 +101,8 @@ class GatewayCreateProducerGcp(object):
             self.password = password
         if producer_encryption_key_name is not None:
             self.producer_encryption_key_name = producer_encryption_key_name
+        if target_name is not None:
+            self.target_name = target_name
         if token is not None:
             self.token = token
         if uid_token is not None:
@@ -123,8 +130,6 @@ class GatewayCreateProducerGcp(object):
         :param gcp_cred_type: The gcp_cred_type of this GatewayCreateProducerGcp.  # noqa: E501
         :type: str
         """
-        if self.local_vars_configuration.client_side_validation and gcp_cred_type is None:  # noqa: E501
-            raise ValueError("Invalid value for `gcp_cred_type`, must not be `None`")  # noqa: E501
 
         self._gcp_cred_type = gcp_cred_type
 
@@ -194,8 +199,6 @@ class GatewayCreateProducerGcp(object):
         :param gcp_sa_email: The gcp_sa_email of this GatewayCreateProducerGcp.  # noqa: E501
         :type: str
         """
-        if self.local_vars_configuration.client_side_validation and gcp_sa_email is None:  # noqa: E501
-            raise ValueError("Invalid value for `gcp_sa_email`, must not be `None`")  # noqa: E501
 
         self._gcp_sa_email = gcp_sa_email
 
@@ -292,6 +295,29 @@ class GatewayCreateProducerGcp(object):
         """
 
         self._producer_encryption_key_name = producer_encryption_key_name
+
+    @property
+    def target_name(self):
+        """Gets the target_name of this GatewayCreateProducerGcp.  # noqa: E501
+
+        Target name  # noqa: E501
+
+        :return: The target_name of this GatewayCreateProducerGcp.  # noqa: E501
+        :rtype: str
+        """
+        return self._target_name
+
+    @target_name.setter
+    def target_name(self, target_name):
+        """Sets the target_name of this GatewayCreateProducerGcp.
+
+        Target name  # noqa: E501
+
+        :param target_name: The target_name of this GatewayCreateProducerGcp.  # noqa: E501
+        :type: str
+        """
+
+        self._target_name = target_name
 
     @property
     def token(self):

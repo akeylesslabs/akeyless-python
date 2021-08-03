@@ -6,8 +6,8 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **access_mode** | **str** |  | [optional] 
 **admin_rotation_interval_days** | **int** | Admin credentials rotation interval (days) | [optional] [default to 0]
-**aws_access_key_id** | **str** | Access Key ID | 
-**aws_access_secret_key** | **str** | Secret Access Key | 
+**aws_access_key_id** | **str** | Access Key ID | [optional] 
+**aws_access_secret_key** | **str** | Secret Access Key | [optional] 
 **aws_role_arns** | **str** | AWS Role ARNs to be used in the Assume Role operation (relevant only for assume_role mode) | [optional] 
 **aws_user_console_access** | **bool** | AWS User console access | [optional] [default to False]
 **aws_user_groups** | **str** | AWS User groups | [optional] 
@@ -23,6 +23,7 @@ Name | Type | Description | Notes
 **secure_access_bastion_issuer** | **str** |  | [optional] 
 **secure_access_enable** | **str** |  | [optional] 
 **secure_access_web_browsing** | **bool** |  | [optional] 
+**target_name** | **str** | Target name | [optional] 
 **token** | **str** | Authentication token (see &#x60;/auth&#x60; and &#x60;/configure&#x60;) | [optional] 
 **uid_token** | **str** | The universal identity token, Required only for universal_identity authentication | [optional] 
 **user_ttl** | **str** | User TTL | [optional] [default to '60m']
