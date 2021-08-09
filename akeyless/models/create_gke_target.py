@@ -91,7 +91,8 @@ class CreateGKETarget(object):
             self.gke_cluster_cert = gke_cluster_cert
         if gke_cluster_endpoint is not None:
             self.gke_cluster_endpoint = gke_cluster_endpoint
-        self.gke_cluster_name = gke_cluster_name
+        if gke_cluster_name is not None:
+            self.gke_cluster_name = gke_cluster_name
         if gke_service_account_email is not None:
             self.gke_service_account_email = gke_service_account_email
         if key is not None:
@@ -218,8 +219,6 @@ class CreateGKETarget(object):
         :param gke_cluster_name: The gke_cluster_name of this CreateGKETarget.  # noqa: E501
         :type: str
         """
-        if self.local_vars_configuration.client_side_validation and gke_cluster_name is None:  # noqa: E501
-            raise ValueError("Invalid value for `gke_cluster_name`, must not be `None`")  # noqa: E501
 
         self._gke_cluster_name = gke_cluster_name
 

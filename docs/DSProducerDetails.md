@@ -30,6 +30,7 @@ Name | Type | Description | Notes
 **azure_user_portal_access** | **bool** |  | [optional] 
 **azure_user_programmatic_access** | **bool** |  | [optional] 
 **azure_user_roles_template_id** | **str** |  | [optional] 
+**cassandra_creation_statements** | **str** |  | [optional] 
 **chef_organizations** | **str** |  | [optional] 
 **chef_server_access_mode** | **str** |  | [optional] 
 **chef_server_host_name** | **str** |  | [optional] 

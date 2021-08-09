@@ -108,7 +108,8 @@ class GatewayCreateProducerNativeK8S(object):
             self.k8s_cluster_ca_cert = k8s_cluster_ca_cert
         if k8s_cluster_endpoint is not None:
             self.k8s_cluster_endpoint = k8s_cluster_endpoint
-        self.k8s_cluster_token = k8s_cluster_token
+        if k8s_cluster_token is not None:
+            self.k8s_cluster_token = k8s_cluster_token
         if k8s_namespace is not None:
             self.k8s_namespace = k8s_namespace
         if k8s_service_account is not None:
@@ -207,8 +208,6 @@ class GatewayCreateProducerNativeK8S(object):
         :param k8s_cluster_token: The k8s_cluster_token of this GatewayCreateProducerNativeK8S.  # noqa: E501
         :type: str
         """
-        if self.local_vars_configuration.client_side_validation and k8s_cluster_token is None:  # noqa: E501
-            raise ValueError("Invalid value for `k8s_cluster_token`, must not be `None`")  # noqa: E501
 
         self._k8s_cluster_token = k8s_cluster_token
 

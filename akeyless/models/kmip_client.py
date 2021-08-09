@@ -34,34 +34,60 @@ class KMIPClient(object):
                             and the value is json key in definition.
     """
     openapi_types = {
+        'certificate_issue_date': 'datetime',
         'id': 'str',
         'name': 'str',
         'rules': 'list[PathRule]'
     }
 
     attribute_map = {
+        'certificate_issue_date': 'certificate_issue_date',
         'id': 'id',
         'name': 'name',
         'rules': 'rules'
     }
 
-    def __init__(self, id=None, name=None, rules=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, certificate_issue_date=None, id=None, name=None, rules=None, local_vars_configuration=None):  # noqa: E501
         """KMIPClient - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
+        self._certificate_issue_date = None
         self._id = None
         self._name = None
         self._rules = None
         self.discriminator = None
 
+        if certificate_issue_date is not None:
+            self.certificate_issue_date = certificate_issue_date
         if id is not None:
             self.id = id
         if name is not None:
             self.name = name
         if rules is not None:
             self.rules = rules
+
+    @property
+    def certificate_issue_date(self):
+        """Gets the certificate_issue_date of this KMIPClient.  # noqa: E501
+
+
+        :return: The certificate_issue_date of this KMIPClient.  # noqa: E501
+        :rtype: datetime
+        """
+        return self._certificate_issue_date
+
+    @certificate_issue_date.setter
+    def certificate_issue_date(self, certificate_issue_date):
+        """Sets the certificate_issue_date of this KMIPClient.
+
+
+        :param certificate_issue_date: The certificate_issue_date of this KMIPClient.  # noqa: E501
+        :type: datetime
+        """
+
+        self._certificate_issue_date = certificate_issue_date
 
     @property
     def id(self):

@@ -8,8 +8,8 @@ Name | Type | Description | Notes
 **name** | **str** | Producer name | 
 **password** | **str** | Required only when the authentication process requires a username and password | [optional] 
 **producer_encryption_key_name** | **str** | Dynamic producer encryption key | [optional] 
-**rdp_admin_name** | **str** | RDP Admin Name | 
-**rdp_admin_pwd** | **str** | RDP Admin password | 
+**rdp_admin_name** | **str** | RDP Admin Name | [optional] 
+**rdp_admin_pwd** | **str** | RDP Admin password | [optional] 
 **rdp_host_name** | **str** | Hostname | [optional] 
 **rdp_host_port** | **str** | Port | [optional] [default to '22']
 **rdp_user_groups** | **str** | Groups | [optional] 

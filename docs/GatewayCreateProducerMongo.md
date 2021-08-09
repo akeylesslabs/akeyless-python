@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **mongodb_atlas_project_id** | **str** | MongoDB Atlas project ID | [optional] 
 **mongodb_default_auth_db** | **str** | MongoDB server default authentication database | [optional] 
 **mongodb_host_port** | **str** | MongoDB server host and port | [optional] 
-**mongodb_name** | **str** | MongoDB Name | 
+**mongodb_name** | **str** | MongoDB Name | [optional] 
 **mongodb_password** | **str** | MongoDB server password. You will prompted to provide a password if it will not appear in CLI parameters | [optional] 
 **mongodb_roles** | **str** | MongoDB Roles | [optional] [default to '[]']
 **mongodb_server_uri** | **str** | MongoDB server URI | [optional] 

@@ -105,8 +105,10 @@ class GatewayCreateProducerRdp(object):
             self.password = password
         if producer_encryption_key_name is not None:
             self.producer_encryption_key_name = producer_encryption_key_name
-        self.rdp_admin_name = rdp_admin_name
-        self.rdp_admin_pwd = rdp_admin_pwd
+        if rdp_admin_name is not None:
+            self.rdp_admin_name = rdp_admin_name
+        if rdp_admin_pwd is not None:
+            self.rdp_admin_pwd = rdp_admin_pwd
         if rdp_host_name is not None:
             self.rdp_host_name = rdp_host_name
         if rdp_host_port is not None:
@@ -244,8 +246,6 @@ class GatewayCreateProducerRdp(object):
         :param rdp_admin_name: The rdp_admin_name of this GatewayCreateProducerRdp.  # noqa: E501
         :type: str
         """
-        if self.local_vars_configuration.client_side_validation and rdp_admin_name is None:  # noqa: E501
-            raise ValueError("Invalid value for `rdp_admin_name`, must not be `None`")  # noqa: E501
 
         self._rdp_admin_name = rdp_admin_name
 
@@ -269,8 +269,6 @@ class GatewayCreateProducerRdp(object):
         :param rdp_admin_pwd: The rdp_admin_pwd of this GatewayCreateProducerRdp.  # noqa: E501
         :type: str
         """
-        if self.local_vars_configuration.client_side_validation and rdp_admin_pwd is None:  # noqa: E501
-            raise ValueError("Invalid value for `rdp_admin_pwd`, must not be `None`")  # noqa: E501
 
         self._rdp_admin_pwd = rdp_admin_pwd
 

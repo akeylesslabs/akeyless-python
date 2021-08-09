@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **k8s_cluster_ca_cert** | **str** | K8S cluster CA certificate | [optional] 
 **k8s_cluster_endpoint** | **str** | K8S cluster URL endpoint | [optional] 
-**k8s_cluster_token** | **str** | K8S cluster Bearer token | 
+**k8s_cluster_token** | **str** | K8S cluster Bearer token | [optional] 
 **k8s_namespace** | **str** | K8S namespace | [optional] 
 **k8s_service_account** | **str** | K8S service account | [optional] 
 **name** | **str** | Producer name | 

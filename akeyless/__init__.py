@@ -15,7 +15,7 @@
 
 from __future__ import absolute_import
 
-__version__ = "2.5.6"
+__version__ = "2.5.7"
 
 # import apis into sdk package
 from akeyless.api.v2_api import V2Api
@@ -57,6 +57,7 @@ from akeyless.models.classic_key_target_info import ClassicKeyTargetInfo
 from akeyless.models.client_data import ClientData
 from akeyless.models.configure import Configure
 from akeyless.models.configure_output import ConfigureOutput
+from akeyless.models.connect import Connect
 from akeyless.models.create_aws_target import CreateAWSTarget
 from akeyless.models.create_aws_target_output import CreateAWSTargetOutput
 from akeyless.models.create_artifactory_target import CreateArtifactoryTarget
@@ -166,6 +167,8 @@ from akeyless.models.gateway_create_producer_aws import GatewayCreateProducerAws
 from akeyless.models.gateway_create_producer_aws_output import GatewayCreateProducerAwsOutput
 from akeyless.models.gateway_create_producer_azure import GatewayCreateProducerAzure
 from akeyless.models.gateway_create_producer_azure_output import GatewayCreateProducerAzureOutput
+from akeyless.models.gateway_create_producer_cassandra import GatewayCreateProducerCassandra
+from akeyless.models.gateway_create_producer_cassandra_output import GatewayCreateProducerCassandraOutput
 from akeyless.models.gateway_create_producer_certificate_automation import GatewayCreateProducerCertificateAutomation
 from akeyless.models.gateway_create_producer_certificate_automation_output import GatewayCreateProducerCertificateAutomationOutput
 from akeyless.models.gateway_create_producer_chef import GatewayCreateProducerChef
@@ -244,7 +247,27 @@ from akeyless.models.json_error import JSONError
 from akeyless.models.k8_s_migration import K8SMigration
 from akeyless.models.k8_s_payload import K8SPayload
 from akeyless.models.kmip_client import KMIPClient
+from akeyless.models.kmip_client_get_response import KMIPClientGetResponse
+from akeyless.models.kmip_client_list_response import KMIPClientListResponse
+from akeyless.models.kmip_client_update_response import KMIPClientUpdateResponse
 from akeyless.models.kmip_config_part import KMIPConfigPart
+from akeyless.models.kmip_environment_create_response import KMIPEnvironmentCreateResponse
+from akeyless.models.kmip_client_delete_rule import KmipClientDeleteRule
+from akeyless.models.kmip_client_set_rule import KmipClientSetRule
+from akeyless.models.kmip_create_client import KmipCreateClient
+from akeyless.models.kmip_create_client_output import KmipCreateClientOutput
+from akeyless.models.kmip_delete_client import KmipDeleteClient
+from akeyless.models.kmip_describe_client import KmipDescribeClient
+from akeyless.models.kmip_describe_server import KmipDescribeServer
+from akeyless.models.kmip_describe_server_output import KmipDescribeServerOutput
+from akeyless.models.kmip_list_clients import KmipListClients
+from akeyless.models.kmip_renew_client_certificate import KmipRenewClientCertificate
+from akeyless.models.kmip_renew_client_certificate_output import KmipRenewClientCertificateOutput
+from akeyless.models.kmip_renew_server_certificate import KmipRenewServerCertificate
+from akeyless.models.kmip_renew_server_certificate_output import KmipRenewServerCertificateOutput
+from akeyless.models.kmip_server_setup import KmipServerSetup
+from akeyless.models.kmip_set_server_state import KmipSetServerState
+from akeyless.models.kmip_set_server_state_output import KmipSetServerStateOutput
 from akeyless.models.ldap_access_rules import LDAPAccessRules
 from akeyless.models.ldap_config_part import LdapConfigPart
 from akeyless.models.leadership_config_part import LeadershipConfigPart

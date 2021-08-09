@@ -123,7 +123,8 @@ class GatewayCreateProducerMongo(object):
             self.mongodb_default_auth_db = mongodb_default_auth_db
         if mongodb_host_port is not None:
             self.mongodb_host_port = mongodb_host_port
-        self.mongodb_name = mongodb_name
+        if mongodb_name is not None:
+            self.mongodb_name = mongodb_name
         if mongodb_password is not None:
             self.mongodb_password = mongodb_password
         if mongodb_roles is not None:
@@ -291,8 +292,6 @@ class GatewayCreateProducerMongo(object):
         :param mongodb_name: The mongodb_name of this GatewayCreateProducerMongo.  # noqa: E501
         :type: str
         """
-        if self.local_vars_configuration.client_side_validation and mongodb_name is None:  # noqa: E501
-            raise ValueError("Invalid value for `mongodb_name`, must not be `None`")  # noqa: E501
 
         self._mongodb_name = mongodb_name
 
