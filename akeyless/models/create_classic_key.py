@@ -36,11 +36,11 @@ class CreateClassicKey(object):
     openapi_types = {
         'alg': 'str',
         'cert_file_data': 'str',
-        'key': 'str',
         'key_data': 'str',
         'metadata': 'str',
         'name': 'str',
         'password': 'str',
+        'protection_key_name': 'str',
         'tags': 'list[str]',
         'target_name': 'str',
         'token': 'str',
@@ -51,11 +51,11 @@ class CreateClassicKey(object):
     attribute_map = {
         'alg': 'alg',
         'cert_file_data': 'cert-file-data',
-        'key': 'key',
         'key_data': 'key-data',
         'metadata': 'metadata',
         'name': 'name',
         'password': 'password',
+        'protection_key_name': 'protection-key-name',
         'tags': 'tags',
         'target_name': 'target-name',
         'token': 'token',
@@ -63,7 +63,7 @@ class CreateClassicKey(object):
         'username': 'username'
     }
 
-    def __init__(self, alg=None, cert_file_data=None, key=None, key_data=None, metadata=None, name=None, password=None, tags=None, target_name=None, token=None, uid_token=None, username=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, alg=None, cert_file_data=None, key_data=None, metadata=None, name=None, password=None, protection_key_name=None, tags=None, target_name=None, token=None, uid_token=None, username=None, local_vars_configuration=None):  # noqa: E501
         """CreateClassicKey - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -71,11 +71,11 @@ class CreateClassicKey(object):
 
         self._alg = None
         self._cert_file_data = None
-        self._key = None
         self._key_data = None
         self._metadata = None
         self._name = None
         self._password = None
+        self._protection_key_name = None
         self._tags = None
         self._target_name = None
         self._token = None
@@ -86,8 +86,6 @@ class CreateClassicKey(object):
         self.alg = alg
         if cert_file_data is not None:
             self.cert_file_data = cert_file_data
-        if key is not None:
-            self.key = key
         if key_data is not None:
             self.key_data = key_data
         if metadata is not None:
@@ -95,6 +93,8 @@ class CreateClassicKey(object):
         self.name = name
         if password is not None:
             self.password = password
+        if protection_key_name is not None:
+            self.protection_key_name = protection_key_name
         if tags is not None:
             self.tags = tags
         if target_name is not None:
@@ -153,29 +153,6 @@ class CreateClassicKey(object):
         """
 
         self._cert_file_data = cert_file_data
-
-    @property
-    def key(self):
-        """Gets the key of this CreateClassicKey.  # noqa: E501
-
-        The name of a key that used to encrypt the secret value (if empty, the account default protectionKey key will be used)  # noqa: E501
-
-        :return: The key of this CreateClassicKey.  # noqa: E501
-        :rtype: str
-        """
-        return self._key
-
-    @key.setter
-    def key(self, key):
-        """Sets the key of this CreateClassicKey.
-
-        The name of a key that used to encrypt the secret value (if empty, the account default protectionKey key will be used)  # noqa: E501
-
-        :param key: The key of this CreateClassicKey.  # noqa: E501
-        :type: str
-        """
-
-        self._key = key
 
     @property
     def key_data(self):
@@ -270,6 +247,29 @@ class CreateClassicKey(object):
         """
 
         self._password = password
+
+    @property
+    def protection_key_name(self):
+        """Gets the protection_key_name of this CreateClassicKey.  # noqa: E501
+
+        The name of a key that used to encrypt the secret value (if empty, the account default protectionKey key will be used)  # noqa: E501
+
+        :return: The protection_key_name of this CreateClassicKey.  # noqa: E501
+        :rtype: str
+        """
+        return self._protection_key_name
+
+    @protection_key_name.setter
+    def protection_key_name(self, protection_key_name):
+        """Sets the protection_key_name of this CreateClassicKey.
+
+        The name of a key that used to encrypt the secret value (if empty, the account default protectionKey key will be used)  # noqa: E501
+
+        :param protection_key_name: The protection_key_name of this CreateClassicKey.  # noqa: E501
+        :type: str
+        """
+
+        self._protection_key_name = protection_key_name
 
     @property
     def tags(self):

@@ -35,9 +35,9 @@ class VerifyJWTWithClassicKey(object):
     """
     openapi_types = {
         'display_id': 'str',
-        'jwt_claims': 'str',
+        'jwt': 'str',
         'password': 'str',
-        'signature': 'str',
+        'required_claims': 'str',
         'token': 'str',
         'uid_token': 'str',
         'username': 'str',
@@ -46,25 +46,25 @@ class VerifyJWTWithClassicKey(object):
 
     attribute_map = {
         'display_id': 'display-id',
-        'jwt_claims': 'jwt-claims',
+        'jwt': 'jwt',
         'password': 'password',
-        'signature': 'signature',
+        'required_claims': 'required-claims',
         'token': 'token',
         'uid_token': 'uid-token',
         'username': 'username',
         'version': 'version'
     }
 
-    def __init__(self, display_id=None, jwt_claims=None, password=None, signature=None, token=None, uid_token=None, username=None, version=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, display_id=None, jwt=None, password=None, required_claims=None, token=None, uid_token=None, username=None, version=None, local_vars_configuration=None):  # noqa: E501
         """VerifyJWTWithClassicKey - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._display_id = None
-        self._jwt_claims = None
+        self._jwt = None
         self._password = None
-        self._signature = None
+        self._required_claims = None
         self._token = None
         self._uid_token = None
         self._username = None
@@ -72,10 +72,10 @@ class VerifyJWTWithClassicKey(object):
         self.discriminator = None
 
         self.display_id = display_id
-        self.jwt_claims = jwt_claims
+        self.jwt = jwt
         if password is not None:
             self.password = password
-        self.signature = signature
+        self.required_claims = required_claims
         if token is not None:
             self.token = token
         if uid_token is not None:
@@ -110,29 +110,29 @@ class VerifyJWTWithClassicKey(object):
         self._display_id = display_id
 
     @property
-    def jwt_claims(self):
-        """Gets the jwt_claims of this VerifyJWTWithClassicKey.  # noqa: E501
+    def jwt(self):
+        """Gets the jwt of this VerifyJWTWithClassicKey.  # noqa: E501
 
-        JWTClaims  # noqa: E501
+        JWT  # noqa: E501
 
-        :return: The jwt_claims of this VerifyJWTWithClassicKey.  # noqa: E501
+        :return: The jwt of this VerifyJWTWithClassicKey.  # noqa: E501
         :rtype: str
         """
-        return self._jwt_claims
+        return self._jwt
 
-    @jwt_claims.setter
-    def jwt_claims(self, jwt_claims):
-        """Sets the jwt_claims of this VerifyJWTWithClassicKey.
+    @jwt.setter
+    def jwt(self, jwt):
+        """Sets the jwt of this VerifyJWTWithClassicKey.
 
-        JWTClaims  # noqa: E501
+        JWT  # noqa: E501
 
-        :param jwt_claims: The jwt_claims of this VerifyJWTWithClassicKey.  # noqa: E501
+        :param jwt: The jwt of this VerifyJWTWithClassicKey.  # noqa: E501
         :type: str
         """
-        if self.local_vars_configuration.client_side_validation and jwt_claims is None:  # noqa: E501
-            raise ValueError("Invalid value for `jwt_claims`, must not be `None`")  # noqa: E501
+        if self.local_vars_configuration.client_side_validation and jwt is None:  # noqa: E501
+            raise ValueError("Invalid value for `jwt`, must not be `None`")  # noqa: E501
 
-        self._jwt_claims = jwt_claims
+        self._jwt = jwt
 
     @property
     def password(self):
@@ -158,29 +158,29 @@ class VerifyJWTWithClassicKey(object):
         self._password = password
 
     @property
-    def signature(self):
-        """Gets the signature of this VerifyJWTWithClassicKey.  # noqa: E501
+    def required_claims(self):
+        """Gets the required_claims of this VerifyJWTWithClassicKey.  # noqa: E501
 
-        Signature  # noqa: E501
+        RequiredClaims  # noqa: E501
 
-        :return: The signature of this VerifyJWTWithClassicKey.  # noqa: E501
+        :return: The required_claims of this VerifyJWTWithClassicKey.  # noqa: E501
         :rtype: str
         """
-        return self._signature
+        return self._required_claims
 
-    @signature.setter
-    def signature(self, signature):
-        """Sets the signature of this VerifyJWTWithClassicKey.
+    @required_claims.setter
+    def required_claims(self, required_claims):
+        """Sets the required_claims of this VerifyJWTWithClassicKey.
 
-        Signature  # noqa: E501
+        RequiredClaims  # noqa: E501
 
-        :param signature: The signature of this VerifyJWTWithClassicKey.  # noqa: E501
+        :param required_claims: The required_claims of this VerifyJWTWithClassicKey.  # noqa: E501
         :type: str
         """
-        if self.local_vars_configuration.client_side_validation and signature is None:  # noqa: E501
-            raise ValueError("Invalid value for `signature`, must not be `None`")  # noqa: E501
+        if self.local_vars_configuration.client_side_validation and required_claims is None:  # noqa: E501
+            raise ValueError("Invalid value for `required_claims`, must not be `None`")  # noqa: E501
 
-        self._signature = signature
+        self._required_claims = required_claims
 
     @property
     def token(self):
