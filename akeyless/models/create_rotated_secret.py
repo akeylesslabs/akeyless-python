@@ -46,6 +46,7 @@ class CreateRotatedSecret(object):
         'rotation_hour': 'int',
         'rotation_interval': 'str',
         'rotator_creds_type': 'str',
+        'rotator_custom_cmd': 'str',
         'rotator_type': 'str',
         'ssh_password': 'str',
         'ssh_username': 'str',
@@ -69,6 +70,7 @@ class CreateRotatedSecret(object):
         'rotation_hour': 'rotation-hour',
         'rotation_interval': 'rotation-interval',
         'rotator_creds_type': 'rotator-creds-type',
+        'rotator_custom_cmd': 'rotator-custom-cmd',
         'rotator_type': 'rotator-type',
         'ssh_password': 'ssh-password',
         'ssh_username': 'ssh-username',
@@ -79,7 +81,7 @@ class CreateRotatedSecret(object):
         'username': 'username'
     }
 
-    def __init__(self, api_id=None, api_key=None, auto_rotate=None, key=None, metadata=None, name=None, password=None, rotated_password=None, rotated_username=None, rotation_hour=None, rotation_interval=None, rotator_creds_type=None, rotator_type=None, ssh_password=None, ssh_username=None, tags=None, target_name=None, token=None, uid_token=None, username=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, api_id=None, api_key=None, auto_rotate=None, key=None, metadata=None, name=None, password=None, rotated_password=None, rotated_username=None, rotation_hour=None, rotation_interval=None, rotator_creds_type=None, rotator_custom_cmd=None, rotator_type=None, ssh_password=None, ssh_username=None, tags=None, target_name=None, token=None, uid_token=None, username=None, local_vars_configuration=None):  # noqa: E501
         """CreateRotatedSecret - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -97,6 +99,7 @@ class CreateRotatedSecret(object):
         self._rotation_hour = None
         self._rotation_interval = None
         self._rotator_creds_type = None
+        self._rotator_custom_cmd = None
         self._rotator_type = None
         self._ssh_password = None
         self._ssh_username = None
@@ -130,6 +133,8 @@ class CreateRotatedSecret(object):
             self.rotation_interval = rotation_interval
         if rotator_creds_type is not None:
             self.rotator_creds_type = rotator_creds_type
+        if rotator_custom_cmd is not None:
+            self.rotator_custom_cmd = rotator_custom_cmd
         if rotator_type is not None:
             self.rotator_type = rotator_type
         if ssh_password is not None:
@@ -411,6 +416,27 @@ class CreateRotatedSecret(object):
         """
 
         self._rotator_creds_type = rotator_creds_type
+
+    @property
+    def rotator_custom_cmd(self):
+        """Gets the rotator_custom_cmd of this CreateRotatedSecret.  # noqa: E501
+
+
+        :return: The rotator_custom_cmd of this CreateRotatedSecret.  # noqa: E501
+        :rtype: str
+        """
+        return self._rotator_custom_cmd
+
+    @rotator_custom_cmd.setter
+    def rotator_custom_cmd(self, rotator_custom_cmd):
+        """Sets the rotator_custom_cmd of this CreateRotatedSecret.
+
+
+        :param rotator_custom_cmd: The rotator_custom_cmd of this CreateRotatedSecret.  # noqa: E501
+        :type: str
+        """
+
+        self._rotator_custom_cmd = rotator_custom_cmd
 
     @property
     def rotator_type(self):
