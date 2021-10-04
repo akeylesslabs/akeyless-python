@@ -61,6 +61,8 @@ from akeyless.models.create_auth_method_ldap import CreateAuthMethodLDAP
 from akeyless.models.create_auth_method_ldap_output import CreateAuthMethodLDAPOutput
 from akeyless.models.create_auth_method_o_auth2 import CreateAuthMethodOAuth2
 from akeyless.models.create_auth_method_o_auth2_output import CreateAuthMethodOAuth2Output
+from akeyless.models.create_auth_method_oidc import CreateAuthMethodOIDC
+from akeyless.models.create_auth_method_oidc_output import CreateAuthMethodOIDCOutput
 from akeyless.models.create_auth_method_output import CreateAuthMethodOutput
 from akeyless.models.create_auth_method_saml import CreateAuthMethodSAML
 from akeyless.models.create_auth_method_saml_output import CreateAuthMethodSAMLOutput
@@ -83,6 +85,8 @@ from akeyless.models.create_gcp_target import CreateGcpTarget
 from akeyless.models.create_gcp_target_output import CreateGcpTargetOutput
 from akeyless.models.create_key import CreateKey
 from akeyless.models.create_key_output import CreateKeyOutput
+from akeyless.models.create_ldap_target import CreateLdapTarget
+from akeyless.models.create_ldap_target_output import CreateLdapTargetOutput
 from akeyless.models.create_native_k8_s_target import CreateNativeK8STarget
 from akeyless.models.create_native_k8_s_target_output import CreateNativeK8STargetOutput
 from akeyless.models.create_pki_cert_issuer import CreatePKICertIssuer
@@ -183,6 +187,8 @@ from akeyless.models.gateway_create_producer_rabbit_mq import GatewayCreateProdu
 from akeyless.models.gateway_create_producer_rabbit_mq_output import GatewayCreateProducerRabbitMQOutput
 from akeyless.models.gateway_create_producer_rdp import GatewayCreateProducerRdp
 from akeyless.models.gateway_create_producer_rdp_output import GatewayCreateProducerRdpOutput
+from akeyless.models.gateway_create_producer_redshift import GatewayCreateProducerRedshift
+from akeyless.models.gateway_create_producer_redshift_output import GatewayCreateProducerRedshiftOutput
 from akeyless.models.gateway_create_producer_snowflake import GatewayCreateProducerSnowflake
 from akeyless.models.gateway_create_producer_snowflake_output import GatewayCreateProducerSnowflakeOutput
 from akeyless.models.gateway_delete_allowed_management_access import GatewayDeleteAllowedManagementAccess
@@ -273,6 +279,8 @@ from akeyless.models.migrations_config_part import MigrationsConfigPart
 from akeyless.models.move_objects import MoveObjects
 from akeyless.models.o_auth2_access_rules import OAuth2AccessRules
 from akeyless.models.o_auth2_custom_claim import OAuth2CustomClaim
+from akeyless.models.oidc_access_rules import OIDCAccessRules
+from akeyless.models.oidc_custom_claim import OIDCCustomClaim
 from akeyless.models.pki_certificate_issue_details import PKICertificateIssueDetails
 from akeyless.models.path_rule import PathRule
 from akeyless.models.producer import Producer

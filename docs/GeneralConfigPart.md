@@ -5,6 +5,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **akeyless_url** | **str** |  | [optional] 
 **api_token_ttl** | **str** |  | [optional] 
+**display_name** | **str** |  | [optional] 
 **enable_tls** | **bool** |  | [optional] 
 **enable_tls_configure** | **bool** |  | [optional] 
 **enable_tls_curl** | **bool** |  | [optional] 

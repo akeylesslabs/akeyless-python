@@ -684,7 +684,7 @@ class CreatePKICertIssuer(object):
     def ttl(self):
         """Gets the ttl of this CreatePKICertIssuer.  # noqa: E501
 
-        The requested Time To Live for the certificate, use second units  # noqa: E501
+        he requested Time To Live for the certificate, in seconds  # noqa: E501
 
         :return: The ttl of this CreatePKICertIssuer.  # noqa: E501
         :rtype: int
@@ -695,7 +695,7 @@ class CreatePKICertIssuer(object):
     def ttl(self, ttl):
         """Sets the ttl of this CreatePKICertIssuer.
 
-        The requested Time To Live for the certificate, use second units  # noqa: E501
+        he requested Time To Live for the certificate, in seconds  # noqa: E501
 
         :param ttl: The ttl of this CreatePKICertIssuer.  # noqa: E501
         :type: int

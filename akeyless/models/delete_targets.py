@@ -34,7 +34,7 @@ class DeleteTargets(object):
                             and the value is json key in definition.
     """
     openapi_types = {
-        'enforce_deletion': 'bool',
+        'force_deletion': 'bool',
         'password': 'str',
         'path': 'str',
         'token': 'str',
@@ -43,7 +43,7 @@ class DeleteTargets(object):
     }
 
     attribute_map = {
-        'enforce_deletion': 'enforce-deletion',
+        'force_deletion': 'force-deletion',
         'password': 'password',
         'path': 'path',
         'token': 'token',
@@ -51,13 +51,13 @@ class DeleteTargets(object):
         'username': 'username'
     }
 
-    def __init__(self, enforce_deletion=False, password=None, path=None, token=None, uid_token=None, username=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, force_deletion=False, password=None, path=None, token=None, uid_token=None, username=None, local_vars_configuration=None):  # noqa: E501
         """DeleteTargets - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
-        self._enforce_deletion = None
+        self._force_deletion = None
         self._password = None
         self._path = None
         self._token = None
@@ -65,8 +65,8 @@ class DeleteTargets(object):
         self._username = None
         self.discriminator = None
 
-        if enforce_deletion is not None:
-            self.enforce_deletion = enforce_deletion
+        if force_deletion is not None:
+            self.force_deletion = force_deletion
         if password is not None:
             self.password = password
         self.path = path
@@ -78,27 +78,27 @@ class DeleteTargets(object):
             self.username = username
 
     @property
-    def enforce_deletion(self):
-        """Gets the enforce_deletion of this DeleteTargets.  # noqa: E501
+    def force_deletion(self):
+        """Gets the force_deletion of this DeleteTargets.  # noqa: E501
 
         Enforce deletion  # noqa: E501
 
-        :return: The enforce_deletion of this DeleteTargets.  # noqa: E501
+        :return: The force_deletion of this DeleteTargets.  # noqa: E501
         :rtype: bool
         """
-        return self._enforce_deletion
+        return self._force_deletion
 
-    @enforce_deletion.setter
-    def enforce_deletion(self, enforce_deletion):
-        """Sets the enforce_deletion of this DeleteTargets.
+    @force_deletion.setter
+    def force_deletion(self, force_deletion):
+        """Sets the force_deletion of this DeleteTargets.
 
         Enforce deletion  # noqa: E501
 
-        :param enforce_deletion: The enforce_deletion of this DeleteTargets.  # noqa: E501
+        :param force_deletion: The force_deletion of this DeleteTargets.  # noqa: E501
         :type: bool
         """
 
-        self._enforce_deletion = enforce_deletion
+        self._force_deletion = force_deletion
 
     @property
     def password(self):

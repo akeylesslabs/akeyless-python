@@ -45,6 +45,7 @@ class UpdateAzureTarget(object):
         'token': 'str',
         'uid_token': 'str',
         'update_version': 'bool',
+        'use_gw_cloud_identity': 'bool',
         'username': 'str'
     }
 
@@ -60,10 +61,11 @@ class UpdateAzureTarget(object):
         'token': 'token',
         'uid_token': 'uid-token',
         'update_version': 'update-version',
+        'use_gw_cloud_identity': 'use-gw-cloud-identity',
         'username': 'username'
     }
 
-    def __init__(self, client_id=None, client_secret=None, comment=None, key=None, name=None, new_name=None, password=None, tenant_id=None, token=None, uid_token=None, update_version=False, username=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, client_id=None, client_secret=None, comment=None, key=None, name=None, new_name=None, password=None, tenant_id=None, token=None, uid_token=None, update_version=False, use_gw_cloud_identity=None, username=None, local_vars_configuration=None):  # noqa: E501
         """UpdateAzureTarget - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -80,6 +82,7 @@ class UpdateAzureTarget(object):
         self._token = None
         self._uid_token = None
         self._update_version = None
+        self._use_gw_cloud_identity = None
         self._username = None
         self.discriminator = None
 
@@ -104,6 +107,8 @@ class UpdateAzureTarget(object):
             self.uid_token = uid_token
         if update_version is not None:
             self.update_version = update_version
+        if use_gw_cloud_identity is not None:
+            self.use_gw_cloud_identity = use_gw_cloud_identity
         if username is not None:
             self.username = username
 
@@ -355,6 +360,27 @@ class UpdateAzureTarget(object):
         """
 
         self._update_version = update_version
+
+    @property
+    def use_gw_cloud_identity(self):
+        """Gets the use_gw_cloud_identity of this UpdateAzureTarget.  # noqa: E501
+
+
+        :return: The use_gw_cloud_identity of this UpdateAzureTarget.  # noqa: E501
+        :rtype: bool
+        """
+        return self._use_gw_cloud_identity
+
+    @use_gw_cloud_identity.setter
+    def use_gw_cloud_identity(self, use_gw_cloud_identity):
+        """Sets the use_gw_cloud_identity of this UpdateAzureTarget.
+
+
+        :param use_gw_cloud_identity: The use_gw_cloud_identity of this UpdateAzureTarget.  # noqa: E501
+        :type: bool
+        """
+
+        self._use_gw_cloud_identity = use_gw_cloud_identity
 
     @property
     def username(self):

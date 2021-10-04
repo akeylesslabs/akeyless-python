@@ -14,9 +14,10 @@ Name | Type | Description | Notes
 **secure_access_enable** | **str** |  | [optional] 
 **secure_access_host** | **list[str]** |  | [optional] 
 **secure_access_ssh_creds_user** | **str** |  | [optional] 
+**secure_access_use_internal_bastion** | **bool** |  | [optional] 
 **signer_key_name** | **str** | A key to sign the certificate with | 
 **token** | **str** | Authentication token (see &#x60;/auth&#x60; and &#x60;/configure&#x60;) | [optional] 
-**ttl** | **int** | The requested Time To Live for the certificate, use second units | 
+**ttl** | **int** | he requested Time To Live for the certificate, in seconds | 
 **uid_token** | **str** | The universal identity token, Required only for universal_identity authentication | [optional] 
 **username** | **str** | Required only when the authentication process requires a username and password | [optional] 
 

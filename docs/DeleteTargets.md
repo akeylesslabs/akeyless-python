@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**enforce_deletion** | **bool** | Enforce deletion | [optional] [default to False]
+**force_deletion** | **bool** | Enforce deletion | [optional] [default to False]
 **password** | **str** | Required only when the authentication process requires a username and password | [optional] 
 **path** | **str** | Path to delete the targets from | 
 **token** | **str** | Authentication token (see &#x60;/auth&#x60; and &#x60;/configure&#x60;) | [optional] 

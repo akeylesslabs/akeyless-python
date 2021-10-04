@@ -57,6 +57,7 @@ class UpdateItem(object):
         'secure_access_ssh_creds': 'str',
         'secure_access_ssh_creds_user': 'str',
         'secure_access_url': 'str',
+        'secure_access_use_internal_bastion': 'bool',
         'secure_access_web_browsing': 'bool',
         'token': 'str',
         'uid_token': 'str',
@@ -87,13 +88,14 @@ class UpdateItem(object):
         'secure_access_ssh_creds': 'secure-access-ssh-creds',
         'secure_access_ssh_creds_user': 'secure-access-ssh-creds-user',
         'secure_access_url': 'secure-access-url',
+        'secure_access_use_internal_bastion': 'secure-access-use-internal-bastion',
         'secure_access_web_browsing': 'secure-access-web-browsing',
         'token': 'token',
         'uid_token': 'uid-token',
         'username': 'username'
     }
 
-    def __init__(self, add_tag=None, name=None, new_metadata='default_metadata', new_name=None, password=None, rm_tag=None, secure_access_allow_port_forwading=None, secure_access_aws_account_id=None, secure_access_aws_native_cli=None, secure_access_aws_region=None, secure_access_bastion_api=None, secure_access_bastion_issuer=None, secure_access_bastion_ssh=None, secure_access_cluster_endpoint=None, secure_access_dashboard_url=None, secure_access_db_name=None, secure_access_db_schema=None, secure_access_enable=None, secure_access_host=None, secure_access_rdp_domain=None, secure_access_ssh_creds=None, secure_access_ssh_creds_user=None, secure_access_url=None, secure_access_web_browsing=None, token=None, uid_token=None, username=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, add_tag=None, name=None, new_metadata='default_metadata', new_name=None, password=None, rm_tag=None, secure_access_allow_port_forwading=None, secure_access_aws_account_id=None, secure_access_aws_native_cli=None, secure_access_aws_region=None, secure_access_bastion_api=None, secure_access_bastion_issuer=None, secure_access_bastion_ssh=None, secure_access_cluster_endpoint=None, secure_access_dashboard_url=None, secure_access_db_name=None, secure_access_db_schema=None, secure_access_enable=None, secure_access_host=None, secure_access_rdp_domain=None, secure_access_ssh_creds=None, secure_access_ssh_creds_user=None, secure_access_url=None, secure_access_use_internal_bastion=None, secure_access_web_browsing=None, token=None, uid_token=None, username=None, local_vars_configuration=None):  # noqa: E501
         """UpdateItem - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -122,6 +124,7 @@ class UpdateItem(object):
         self._secure_access_ssh_creds = None
         self._secure_access_ssh_creds_user = None
         self._secure_access_url = None
+        self._secure_access_use_internal_bastion = None
         self._secure_access_web_browsing = None
         self._token = None
         self._uid_token = None
@@ -173,6 +176,8 @@ class UpdateItem(object):
             self.secure_access_ssh_creds_user = secure_access_ssh_creds_user
         if secure_access_url is not None:
             self.secure_access_url = secure_access_url
+        if secure_access_use_internal_bastion is not None:
+            self.secure_access_use_internal_bastion = secure_access_use_internal_bastion
         if secure_access_web_browsing is not None:
             self.secure_access_web_browsing = secure_access_web_browsing
         if token is not None:
@@ -678,6 +683,27 @@ class UpdateItem(object):
         """
 
         self._secure_access_url = secure_access_url
+
+    @property
+    def secure_access_use_internal_bastion(self):
+        """Gets the secure_access_use_internal_bastion of this UpdateItem.  # noqa: E501
+
+
+        :return: The secure_access_use_internal_bastion of this UpdateItem.  # noqa: E501
+        :rtype: bool
+        """
+        return self._secure_access_use_internal_bastion
+
+    @secure_access_use_internal_bastion.setter
+    def secure_access_use_internal_bastion(self, secure_access_use_internal_bastion):
+        """Sets the secure_access_use_internal_bastion of this UpdateItem.
+
+
+        :param secure_access_use_internal_bastion: The secure_access_use_internal_bastion of this UpdateItem.  # noqa: E501
+        :type: bool
+        """
+
+        self._secure_access_use_internal_bastion = secure_access_use_internal_bastion
 
     @property
     def secure_access_web_browsing(self):

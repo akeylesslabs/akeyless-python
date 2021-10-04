@@ -45,6 +45,7 @@ class CreateSSHCertIssuer(object):
         'secure_access_enable': 'str',
         'secure_access_host': 'list[str]',
         'secure_access_ssh_creds_user': 'str',
+        'secure_access_use_internal_bastion': 'bool',
         'signer_key_name': 'str',
         'token': 'str',
         'ttl': 'int',
@@ -64,6 +65,7 @@ class CreateSSHCertIssuer(object):
         'secure_access_enable': 'secure-access-enable',
         'secure_access_host': 'secure-access-host',
         'secure_access_ssh_creds_user': 'secure-access-ssh-creds-user',
+        'secure_access_use_internal_bastion': 'secure-access-use-internal-bastion',
         'signer_key_name': 'signer-key-name',
         'token': 'token',
         'ttl': 'ttl',
@@ -71,7 +73,7 @@ class CreateSSHCertIssuer(object):
         'username': 'username'
     }
 
-    def __init__(self, allowed_users=None, extensions=None, metadata=None, name=None, password=None, principals=None, secure_access_bastion_api=None, secure_access_bastion_ssh=None, secure_access_enable=None, secure_access_host=None, secure_access_ssh_creds_user=None, signer_key_name=None, token=None, ttl=None, uid_token=None, username=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, allowed_users=None, extensions=None, metadata=None, name=None, password=None, principals=None, secure_access_bastion_api=None, secure_access_bastion_ssh=None, secure_access_enable=None, secure_access_host=None, secure_access_ssh_creds_user=None, secure_access_use_internal_bastion=None, signer_key_name=None, token=None, ttl=None, uid_token=None, username=None, local_vars_configuration=None):  # noqa: E501
         """CreateSSHCertIssuer - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -88,6 +90,7 @@ class CreateSSHCertIssuer(object):
         self._secure_access_enable = None
         self._secure_access_host = None
         self._secure_access_ssh_creds_user = None
+        self._secure_access_use_internal_bastion = None
         self._signer_key_name = None
         self._token = None
         self._ttl = None
@@ -115,6 +118,8 @@ class CreateSSHCertIssuer(object):
             self.secure_access_host = secure_access_host
         if secure_access_ssh_creds_user is not None:
             self.secure_access_ssh_creds_user = secure_access_ssh_creds_user
+        if secure_access_use_internal_bastion is not None:
+            self.secure_access_use_internal_bastion = secure_access_use_internal_bastion
         self.signer_key_name = signer_key_name
         if token is not None:
             self.token = token
@@ -372,6 +377,27 @@ class CreateSSHCertIssuer(object):
         self._secure_access_ssh_creds_user = secure_access_ssh_creds_user
 
     @property
+    def secure_access_use_internal_bastion(self):
+        """Gets the secure_access_use_internal_bastion of this CreateSSHCertIssuer.  # noqa: E501
+
+
+        :return: The secure_access_use_internal_bastion of this CreateSSHCertIssuer.  # noqa: E501
+        :rtype: bool
+        """
+        return self._secure_access_use_internal_bastion
+
+    @secure_access_use_internal_bastion.setter
+    def secure_access_use_internal_bastion(self, secure_access_use_internal_bastion):
+        """Sets the secure_access_use_internal_bastion of this CreateSSHCertIssuer.
+
+
+        :param secure_access_use_internal_bastion: The secure_access_use_internal_bastion of this CreateSSHCertIssuer.  # noqa: E501
+        :type: bool
+        """
+
+        self._secure_access_use_internal_bastion = secure_access_use_internal_bastion
+
+    @property
     def signer_key_name(self):
         """Gets the signer_key_name of this CreateSSHCertIssuer.  # noqa: E501
 
@@ -423,7 +449,7 @@ class CreateSSHCertIssuer(object):
     def ttl(self):
         """Gets the ttl of this CreateSSHCertIssuer.  # noqa: E501
 
-        The requested Time To Live for the certificate, use second units  # noqa: E501
+        he requested Time To Live for the certificate, in seconds  # noqa: E501
 
         :return: The ttl of this CreateSSHCertIssuer.  # noqa: E501
         :rtype: int
@@ -434,7 +460,7 @@ class CreateSSHCertIssuer(object):
     def ttl(self, ttl):
         """Sets the ttl of this CreateSSHCertIssuer.
 
-        The requested Time To Live for the certificate, use second units  # noqa: E501
+        he requested Time To Live for the certificate, in seconds  # noqa: E501
 
         :param ttl: The ttl of this CreateSSHCertIssuer.  # noqa: E501
         :type: int

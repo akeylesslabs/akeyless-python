@@ -18,7 +18,7 @@ Name | Type | Description | Notes
 **signing_method** | **str** | SigningMethod | 
 **street_address** | **str** | A comma-separated list of the street address that will be set in the issued certificate | [optional] 
 **token** | **str** | Authentication token (see &#x60;/auth&#x60; and &#x60;/configure&#x60;) | [optional] 
-**ttl** | **int** | The requested Time To Live for the certificate, use second units | 
+**ttl** | **int** | he requested Time To Live for the certificate, in seconds | 
 **uid_token** | **str** | The universal identity token, Required only for universal_identity authentication | [optional] 
 **uri_sans** | **str** | The URI Subject Alternative Names to be included in the PKI certificate (in a comma-delimited list) | [optional] 
 **username** | **str** | Required only when the authentication process requires a username and password | [optional] 

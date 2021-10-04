@@ -56,7 +56,8 @@ class SecureRemoteAccess(object):
         'ssh_password': 'bool',
         'ssh_private_key': 'bool',
         'ssh_user': 'str',
-        'url': 'str'
+        'url': 'str',
+        'use_internal_bastion': 'bool'
     }
 
     attribute_map = {
@@ -82,10 +83,11 @@ class SecureRemoteAccess(object):
         'ssh_password': 'ssh_password',
         'ssh_private_key': 'ssh_private_key',
         'ssh_user': 'ssh_user',
-        'url': 'url'
+        'url': 'url',
+        'use_internal_bastion': 'use_internal_bastion'
     }
 
-    def __init__(self, account_id=None, allow_port_forwarding=None, bastion_api=None, bastion_issuer=None, bastion_issuer_id=None, bastion_ssh=None, category=None, dashboard_url=None, db_name=None, domain=None, enable=None, endpoint=None, host=None, is_cli=None, is_web=None, isolated=None, native=None, region=None, schema=None, ssh_password=None, ssh_private_key=None, ssh_user=None, url=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, account_id=None, allow_port_forwarding=None, bastion_api=None, bastion_issuer=None, bastion_issuer_id=None, bastion_ssh=None, category=None, dashboard_url=None, db_name=None, domain=None, enable=None, endpoint=None, host=None, is_cli=None, is_web=None, isolated=None, native=None, region=None, schema=None, ssh_password=None, ssh_private_key=None, ssh_user=None, url=None, use_internal_bastion=None, local_vars_configuration=None):  # noqa: E501
         """SecureRemoteAccess - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -114,6 +116,7 @@ class SecureRemoteAccess(object):
         self._ssh_private_key = None
         self._ssh_user = None
         self._url = None
+        self._use_internal_bastion = None
         self.discriminator = None
 
         if account_id is not None:
@@ -162,6 +165,8 @@ class SecureRemoteAccess(object):
             self.ssh_user = ssh_user
         if url is not None:
             self.url = url
+        if use_internal_bastion is not None:
+            self.use_internal_bastion = use_internal_bastion
 
     @property
     def account_id(self):
@@ -645,6 +650,27 @@ class SecureRemoteAccess(object):
         """
 
         self._url = url
+
+    @property
+    def use_internal_bastion(self):
+        """Gets the use_internal_bastion of this SecureRemoteAccess.  # noqa: E501
+
+
+        :return: The use_internal_bastion of this SecureRemoteAccess.  # noqa: E501
+        :rtype: bool
+        """
+        return self._use_internal_bastion
+
+    @use_internal_bastion.setter
+    def use_internal_bastion(self, use_internal_bastion):
+        """Sets the use_internal_bastion of this SecureRemoteAccess.
+
+
+        :param use_internal_bastion: The use_internal_bastion of this SecureRemoteAccess.  # noqa: E501
+        :type: bool
+        """
+
+        self._use_internal_bastion = use_internal_bastion
 
     def to_dict(self):
         """Returns the model properties as a dict"""

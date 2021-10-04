@@ -42,6 +42,7 @@ class GatewayCreateProducerAzure(object):
         'password': 'str',
         'producer_encryption_key_name': 'str',
         'secure_access_enable': 'str',
+        'secure_access_web': 'bool',
         'secure_access_web_browsing': 'bool',
         'target_name': 'str',
         'token': 'str',
@@ -64,6 +65,7 @@ class GatewayCreateProducerAzure(object):
         'password': 'password',
         'producer_encryption_key_name': 'producer-encryption-key-name',
         'secure_access_enable': 'secure-access-enable',
+        'secure_access_web': 'secure-access-web',
         'secure_access_web_browsing': 'secure-access-web-browsing',
         'target_name': 'target-name',
         'token': 'token',
@@ -77,7 +79,7 @@ class GatewayCreateProducerAzure(object):
         'username': 'username'
     }
 
-    def __init__(self, app_obj_id=None, azure_client_id=None, azure_client_secret=None, azure_tenant_id=None, name=None, password=None, producer_encryption_key_name=None, secure_access_enable=None, secure_access_web_browsing=None, target_name=None, token=None, uid_token=None, user_group_obj_id=None, user_portal_access=False, user_principal_name=None, user_programmatic_access=True, user_role_template_id=None, user_ttl='60m', username=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, app_obj_id=None, azure_client_id=None, azure_client_secret=None, azure_tenant_id=None, name=None, password=None, producer_encryption_key_name=None, secure_access_enable=None, secure_access_web=None, secure_access_web_browsing=None, target_name=None, token=None, uid_token=None, user_group_obj_id=None, user_portal_access=False, user_principal_name=None, user_programmatic_access=True, user_role_template_id=None, user_ttl='60m', username=None, local_vars_configuration=None):  # noqa: E501
         """GatewayCreateProducerAzure - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -91,6 +93,7 @@ class GatewayCreateProducerAzure(object):
         self._password = None
         self._producer_encryption_key_name = None
         self._secure_access_enable = None
+        self._secure_access_web = None
         self._secure_access_web_browsing = None
         self._target_name = None
         self._token = None
@@ -119,6 +122,8 @@ class GatewayCreateProducerAzure(object):
             self.producer_encryption_key_name = producer_encryption_key_name
         if secure_access_enable is not None:
             self.secure_access_enable = secure_access_enable
+        if secure_access_web is not None:
+            self.secure_access_web = secure_access_web
         if secure_access_web_browsing is not None:
             self.secure_access_web_browsing = secure_access_web_browsing
         if target_name is not None:
@@ -325,6 +330,27 @@ class GatewayCreateProducerAzure(object):
         """
 
         self._secure_access_enable = secure_access_enable
+
+    @property
+    def secure_access_web(self):
+        """Gets the secure_access_web of this GatewayCreateProducerAzure.  # noqa: E501
+
+
+        :return: The secure_access_web of this GatewayCreateProducerAzure.  # noqa: E501
+        :rtype: bool
+        """
+        return self._secure_access_web
+
+    @secure_access_web.setter
+    def secure_access_web(self, secure_access_web):
+        """Sets the secure_access_web of this GatewayCreateProducerAzure.
+
+
+        :param secure_access_web: The secure_access_web of this GatewayCreateProducerAzure.  # noqa: E501
+        :type: bool
+        """
+
+        self._secure_access_web = secure_access_web
 
     @property
     def secure_access_web_browsing(self):

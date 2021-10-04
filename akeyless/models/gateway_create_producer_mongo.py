@@ -51,6 +51,7 @@ class GatewayCreateProducerMongo(object):
         'secure_access_bastion_issuer': 'str',
         'secure_access_enable': 'str',
         'secure_access_host': 'list[str]',
+        'secure_access_web': 'bool',
         'target_name': 'str',
         'token': 'str',
         'uid_token': 'str',
@@ -76,6 +77,7 @@ class GatewayCreateProducerMongo(object):
         'secure_access_bastion_issuer': 'secure-access-bastion-issuer',
         'secure_access_enable': 'secure-access-enable',
         'secure_access_host': 'secure-access-host',
+        'secure_access_web': 'secure-access-web',
         'target_name': 'target-name',
         'token': 'token',
         'uid_token': 'uid-token',
@@ -83,7 +85,7 @@ class GatewayCreateProducerMongo(object):
         'username': 'username'
     }
 
-    def __init__(self, mongodb_atlas_api_private_key=None, mongodb_atlas_api_public_key=None, mongodb_atlas_project_id=None, mongodb_default_auth_db=None, mongodb_host_port=None, mongodb_name=None, mongodb_password=None, mongodb_roles='[]', mongodb_server_uri=None, mongodb_uri_options=None, mongodb_username=None, name=None, password=None, producer_encryption_key_name=None, secure_access_bastion_issuer=None, secure_access_enable=None, secure_access_host=None, target_name=None, token=None, uid_token=None, user_ttl='60m', username=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, mongodb_atlas_api_private_key=None, mongodb_atlas_api_public_key=None, mongodb_atlas_project_id=None, mongodb_default_auth_db=None, mongodb_host_port=None, mongodb_name=None, mongodb_password=None, mongodb_roles='[]', mongodb_server_uri=None, mongodb_uri_options=None, mongodb_username=None, name=None, password=None, producer_encryption_key_name=None, secure_access_bastion_issuer=None, secure_access_enable=None, secure_access_host=None, secure_access_web=None, target_name=None, token=None, uid_token=None, user_ttl='60m', username=None, local_vars_configuration=None):  # noqa: E501
         """GatewayCreateProducerMongo - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -106,6 +108,7 @@ class GatewayCreateProducerMongo(object):
         self._secure_access_bastion_issuer = None
         self._secure_access_enable = None
         self._secure_access_host = None
+        self._secure_access_web = None
         self._target_name = None
         self._token = None
         self._uid_token = None
@@ -146,6 +149,8 @@ class GatewayCreateProducerMongo(object):
             self.secure_access_enable = secure_access_enable
         if secure_access_host is not None:
             self.secure_access_host = secure_access_host
+        if secure_access_web is not None:
+            self.secure_access_web = secure_access_web
         if target_name is not None:
             self.target_name = target_name
         if token is not None:
@@ -543,6 +548,27 @@ class GatewayCreateProducerMongo(object):
         """
 
         self._secure_access_host = secure_access_host
+
+    @property
+    def secure_access_web(self):
+        """Gets the secure_access_web of this GatewayCreateProducerMongo.  # noqa: E501
+
+
+        :return: The secure_access_web of this GatewayCreateProducerMongo.  # noqa: E501
+        :rtype: bool
+        """
+        return self._secure_access_web
+
+    @secure_access_web.setter
+    def secure_access_web(self, secure_access_web):
+        """Sets the secure_access_web of this GatewayCreateProducerMongo.
+
+
+        :param secure_access_web: The secure_access_web of this GatewayCreateProducerMongo.  # noqa: E501
+        :type: bool
+        """
+
+        self._secure_access_web = secure_access_web
 
     @property
     def target_name(self):

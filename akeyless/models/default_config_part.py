@@ -36,18 +36,18 @@ class DefaultConfigPart(object):
     openapi_types = {
         'default_protection_key_id': 'int',
         'default_secret_location': 'str',
-        'open_id_connect_access_id': 'str',
+        'oidc_access_id': 'str',
         'saml_access_id': 'str'
     }
 
     attribute_map = {
         'default_protection_key_id': 'default_protection_key_id',
         'default_secret_location': 'default_secret_location',
-        'open_id_connect_access_id': 'open_id_connect_access_id',
+        'oidc_access_id': 'oidc_access_id',
         'saml_access_id': 'saml_access_id'
     }
 
-    def __init__(self, default_protection_key_id=None, default_secret_location=None, open_id_connect_access_id=None, saml_access_id=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, default_protection_key_id=None, default_secret_location=None, oidc_access_id=None, saml_access_id=None, local_vars_configuration=None):  # noqa: E501
         """DefaultConfigPart - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -55,7 +55,7 @@ class DefaultConfigPart(object):
 
         self._default_protection_key_id = None
         self._default_secret_location = None
-        self._open_id_connect_access_id = None
+        self._oidc_access_id = None
         self._saml_access_id = None
         self.discriminator = None
 
@@ -63,8 +63,8 @@ class DefaultConfigPart(object):
             self.default_protection_key_id = default_protection_key_id
         if default_secret_location is not None:
             self.default_secret_location = default_secret_location
-        if open_id_connect_access_id is not None:
-            self.open_id_connect_access_id = open_id_connect_access_id
+        if oidc_access_id is not None:
+            self.oidc_access_id = oidc_access_id
         if saml_access_id is not None:
             self.saml_access_id = saml_access_id
 
@@ -111,25 +111,25 @@ class DefaultConfigPart(object):
         self._default_secret_location = default_secret_location
 
     @property
-    def open_id_connect_access_id(self):
-        """Gets the open_id_connect_access_id of this DefaultConfigPart.  # noqa: E501
+    def oidc_access_id(self):
+        """Gets the oidc_access_id of this DefaultConfigPart.  # noqa: E501
 
 
-        :return: The open_id_connect_access_id of this DefaultConfigPart.  # noqa: E501
+        :return: The oidc_access_id of this DefaultConfigPart.  # noqa: E501
         :rtype: str
         """
-        return self._open_id_connect_access_id
+        return self._oidc_access_id
 
-    @open_id_connect_access_id.setter
-    def open_id_connect_access_id(self, open_id_connect_access_id):
-        """Sets the open_id_connect_access_id of this DefaultConfigPart.
+    @oidc_access_id.setter
+    def oidc_access_id(self, oidc_access_id):
+        """Sets the oidc_access_id of this DefaultConfigPart.
 
 
-        :param open_id_connect_access_id: The open_id_connect_access_id of this DefaultConfigPart.  # noqa: E501
+        :param oidc_access_id: The oidc_access_id of this DefaultConfigPart.  # noqa: E501
         :type: str
         """
 
-        self._open_id_connect_access_id = open_id_connect_access_id
+        self._oidc_access_id = oidc_access_id
 
     @property
     def saml_access_id(self):

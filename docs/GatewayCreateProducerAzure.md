@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **password** | **str** | Required only when the authentication process requires a username and password | [optional] 
 **producer_encryption_key_name** | **str** | Dynamic producer encryption key | [optional] 
 **secure_access_enable** | **str** |  | [optional] 
+**secure_access_web** | **bool** |  | [optional] 
 **secure_access_web_browsing** | **bool** |  | [optional] 
 **target_name** | **str** | Target name | [optional] 
 **token** | **str** | Authentication token (see &#x60;/auth&#x60; and &#x60;/configure&#x60;) | [optional] 

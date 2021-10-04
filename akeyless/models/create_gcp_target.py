@@ -42,6 +42,7 @@ class CreateGcpTarget(object):
         'password': 'str',
         'token': 'str',
         'uid_token': 'str',
+        'use_gw_cloud_identity': 'bool',
         'username': 'str'
     }
 
@@ -54,10 +55,11 @@ class CreateGcpTarget(object):
         'password': 'password',
         'token': 'token',
         'uid_token': 'uid-token',
+        'use_gw_cloud_identity': 'use-gw-cloud-identity',
         'username': 'username'
     }
 
-    def __init__(self, comment=None, gcp_key=None, gcp_sa_email=None, key=None, name=None, password=None, token=None, uid_token=None, username=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, comment=None, gcp_key=None, gcp_sa_email=None, key=None, name=None, password=None, token=None, uid_token=None, use_gw_cloud_identity=None, username=None, local_vars_configuration=None):  # noqa: E501
         """CreateGcpTarget - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -71,6 +73,7 @@ class CreateGcpTarget(object):
         self._password = None
         self._token = None
         self._uid_token = None
+        self._use_gw_cloud_identity = None
         self._username = None
         self.discriminator = None
 
@@ -78,7 +81,8 @@ class CreateGcpTarget(object):
             self.comment = comment
         if gcp_key is not None:
             self.gcp_key = gcp_key
-        self.gcp_sa_email = gcp_sa_email
+        if gcp_sa_email is not None:
+            self.gcp_sa_email = gcp_sa_email
         if key is not None:
             self.key = key
         self.name = name
@@ -88,6 +92,8 @@ class CreateGcpTarget(object):
             self.token = token
         if uid_token is not None:
             self.uid_token = uid_token
+        if use_gw_cloud_identity is not None:
+            self.use_gw_cloud_identity = use_gw_cloud_identity
         if username is not None:
             self.username = username
 
@@ -157,8 +163,6 @@ class CreateGcpTarget(object):
         :param gcp_sa_email: The gcp_sa_email of this CreateGcpTarget.  # noqa: E501
         :type: str
         """
-        if self.local_vars_configuration.client_side_validation and gcp_sa_email is None:  # noqa: E501
-            raise ValueError("Invalid value for `gcp_sa_email`, must not be `None`")  # noqa: E501
 
         self._gcp_sa_email = gcp_sa_email
 
@@ -278,6 +282,27 @@ class CreateGcpTarget(object):
         """
 
         self._uid_token = uid_token
+
+    @property
+    def use_gw_cloud_identity(self):
+        """Gets the use_gw_cloud_identity of this CreateGcpTarget.  # noqa: E501
+
+
+        :return: The use_gw_cloud_identity of this CreateGcpTarget.  # noqa: E501
+        :rtype: bool
+        """
+        return self._use_gw_cloud_identity
+
+    @use_gw_cloud_identity.setter
+    def use_gw_cloud_identity(self, use_gw_cloud_identity):
+        """Sets the use_gw_cloud_identity of this CreateGcpTarget.
+
+
+        :param use_gw_cloud_identity: The use_gw_cloud_identity of this CreateGcpTarget.  # noqa: E501
+        :type: bool
+        """
+
+        self._use_gw_cloud_identity = use_gw_cloud_identity
 
     @property
     def username(self):

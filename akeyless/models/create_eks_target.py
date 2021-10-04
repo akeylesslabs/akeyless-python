@@ -46,6 +46,7 @@ class CreateEKSTarget(object):
         'password': 'str',
         'token': 'str',
         'uid_token': 'str',
+        'use_gw_cloud_identity': 'bool',
         'username': 'str'
     }
 
@@ -62,10 +63,11 @@ class CreateEKSTarget(object):
         'password': 'password',
         'token': 'token',
         'uid_token': 'uid-token',
+        'use_gw_cloud_identity': 'use-gw-cloud-identity',
         'username': 'username'
     }
 
-    def __init__(self, comment=None, eks_access_key_id=None, eks_cluster_ca_cert=None, eks_cluster_endpoint=None, eks_cluster_name=None, eks_region='us-east-2', eks_secret_access_key=None, key=None, name=None, password=None, token=None, uid_token=None, username=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, comment=None, eks_access_key_id=None, eks_cluster_ca_cert=None, eks_cluster_endpoint=None, eks_cluster_name=None, eks_region='us-east-2', eks_secret_access_key=None, key=None, name=None, password=None, token=None, uid_token=None, use_gw_cloud_identity=None, username=None, local_vars_configuration=None):  # noqa: E501
         """CreateEKSTarget - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -83,6 +85,7 @@ class CreateEKSTarget(object):
         self._password = None
         self._token = None
         self._uid_token = None
+        self._use_gw_cloud_identity = None
         self._username = None
         self.discriminator = None
 
@@ -104,6 +107,8 @@ class CreateEKSTarget(object):
             self.token = token
         if uid_token is not None:
             self.uid_token = uid_token
+        if use_gw_cloud_identity is not None:
+            self.use_gw_cloud_identity = use_gw_cloud_identity
         if username is not None:
             self.username = username
 
@@ -394,6 +399,27 @@ class CreateEKSTarget(object):
         """
 
         self._uid_token = uid_token
+
+    @property
+    def use_gw_cloud_identity(self):
+        """Gets the use_gw_cloud_identity of this CreateEKSTarget.  # noqa: E501
+
+
+        :return: The use_gw_cloud_identity of this CreateEKSTarget.  # noqa: E501
+        :rtype: bool
+        """
+        return self._use_gw_cloud_identity
+
+    @use_gw_cloud_identity.setter
+    def use_gw_cloud_identity(self, use_gw_cloud_identity):
+        """Sets the use_gw_cloud_identity of this CreateEKSTarget.
+
+
+        :param use_gw_cloud_identity: The use_gw_cloud_identity of this CreateEKSTarget.  # noqa: E501
+        :type: bool
+        """
+
+        self._use_gw_cloud_identity = use_gw_cloud_identity
 
     @property
     def username(self):

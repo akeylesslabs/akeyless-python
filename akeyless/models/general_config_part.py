@@ -36,6 +36,7 @@ class GeneralConfigPart(object):
     openapi_types = {
         'akeyless_url': 'str',
         'api_token_ttl': 'str',
+        'display_name': 'str',
         'enable_tls': 'bool',
         'enable_tls_configure': 'bool',
         'enable_tls_curl': 'bool',
@@ -49,6 +50,7 @@ class GeneralConfigPart(object):
     attribute_map = {
         'akeyless_url': 'akeyless_url',
         'api_token_ttl': 'api_token_ttl',
+        'display_name': 'display_name',
         'enable_tls': 'enable_tls',
         'enable_tls_configure': 'enable_tls_configure',
         'enable_tls_curl': 'enable_tls_curl',
@@ -59,7 +61,7 @@ class GeneralConfigPart(object):
         'tls_key': 'tls_key'
     }
 
-    def __init__(self, akeyless_url=None, api_token_ttl=None, enable_tls=None, enable_tls_configure=None, enable_tls_curl=None, enable_tls_hvp=None, gw_cluster_url=None, tcp_port=None, tls_cert=None, tls_key=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, akeyless_url=None, api_token_ttl=None, display_name=None, enable_tls=None, enable_tls_configure=None, enable_tls_curl=None, enable_tls_hvp=None, gw_cluster_url=None, tcp_port=None, tls_cert=None, tls_key=None, local_vars_configuration=None):  # noqa: E501
         """GeneralConfigPart - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -67,6 +69,7 @@ class GeneralConfigPart(object):
 
         self._akeyless_url = None
         self._api_token_ttl = None
+        self._display_name = None
         self._enable_tls = None
         self._enable_tls_configure = None
         self._enable_tls_curl = None
@@ -81,6 +84,8 @@ class GeneralConfigPart(object):
             self.akeyless_url = akeyless_url
         if api_token_ttl is not None:
             self.api_token_ttl = api_token_ttl
+        if display_name is not None:
+            self.display_name = display_name
         if enable_tls is not None:
             self.enable_tls = enable_tls
         if enable_tls_configure is not None:
@@ -139,6 +144,27 @@ class GeneralConfigPart(object):
         """
 
         self._api_token_ttl = api_token_ttl
+
+    @property
+    def display_name(self):
+        """Gets the display_name of this GeneralConfigPart.  # noqa: E501
+
+
+        :return: The display_name of this GeneralConfigPart.  # noqa: E501
+        :rtype: str
+        """
+        return self._display_name
+
+    @display_name.setter
+    def display_name(self, display_name):
+        """Sets the display_name of this GeneralConfigPart.
+
+
+        :param display_name: The display_name of this GeneralConfigPart.  # noqa: E501
+        :type: str
+        """
+
+        self._display_name = display_name
 
     @property
     def enable_tls(self):

@@ -15,11 +15,7 @@ Name | Type | Description | Notes
 **mongodb_atlas_api_public_key** | **str** | MongoDB Atlas public key | [optional] 
 **mongodb_atlas_project_id** | **str** | MongoDB Atlas project ID | [optional] 
 **mongodb_default_auth_db** | **str** | MongoDB server default authentication database | [optional] 
-**mongodb_host_port** | **str** | MongoDB server host and port | [optional] 
-**mongodb_password** | **str** | MongoDB server password. You will prompted to provide a password if it will not appear in CLI parameters | [optional] 
-**mongodb_server_uri** | **str** | MongoDB server URI | [optional] 
 **mongodb_uri_options** | **str** | MongoDB server URI options | [optional] 
-**mongodb_username** | **str** | MongoDB server username | [optional] 
 **name** | **str** | Target name | 
 **new_name** | **str** | New target name | [optional] 
 **oracle_service_name** | **str** |  | [optional] 

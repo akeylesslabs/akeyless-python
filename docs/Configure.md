@@ -5,7 +5,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **access_id** | **str** | Access ID | [optional] 
 **access_key** | **str** | Access Key | [optional] 
-**access_type** | **str** | Access Type (access_key/password/azure_ad/saml/ldap/aws_iam) | [optional] [default to 'access_key']
+**access_type** | **str** | Access Type (access_key/password/azure_ad/saml/oidc/ldap/aws_iam) | [optional] [default to 'access_key']
 **admin_email** | **str** | Email (relevant only for access-type&#x3D;password) | [optional] 
 **admin_password** | **str** | Password (relevant only for access-type&#x3D;password) | [optional] 
 **azure_ad_object_id** | **str** | Azure Active Directory ObjectId (relevant only for access-type&#x3D;azure_ad) | [optional] 

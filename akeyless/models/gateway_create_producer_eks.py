@@ -48,6 +48,7 @@ class GatewayCreateProducerEks(object):
         'secure_access_bastion_issuer': 'str',
         'secure_access_cluster_endpoint': 'str',
         'secure_access_enable': 'str',
+        'secure_access_web': 'bool',
         'target_name': 'str',
         'token': 'str',
         'uid_token': 'str',
@@ -70,6 +71,7 @@ class GatewayCreateProducerEks(object):
         'secure_access_bastion_issuer': 'secure-access-bastion-issuer',
         'secure_access_cluster_endpoint': 'secure-access-cluster-endpoint',
         'secure_access_enable': 'secure-access-enable',
+        'secure_access_web': 'secure-access-web',
         'target_name': 'target-name',
         'token': 'token',
         'uid_token': 'uid-token',
@@ -77,7 +79,7 @@ class GatewayCreateProducerEks(object):
         'username': 'username'
     }
 
-    def __init__(self, eks_access_key_id=None, eks_assume_role=None, eks_cluster_ca_cert=None, eks_cluster_endpoint=None, eks_cluster_name=None, eks_region='us-east-2', eks_secret_access_key=None, name=None, password=None, producer_encryption_key_name=None, secure_access_allow_port_forwading=None, secure_access_bastion_issuer=None, secure_access_cluster_endpoint=None, secure_access_enable=None, target_name=None, token=None, uid_token=None, user_ttl='60m', username=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, eks_access_key_id=None, eks_assume_role=None, eks_cluster_ca_cert=None, eks_cluster_endpoint=None, eks_cluster_name=None, eks_region='us-east-2', eks_secret_access_key=None, name=None, password=None, producer_encryption_key_name=None, secure_access_allow_port_forwading=None, secure_access_bastion_issuer=None, secure_access_cluster_endpoint=None, secure_access_enable=None, secure_access_web=None, target_name=None, token=None, uid_token=None, user_ttl='60m', username=None, local_vars_configuration=None):  # noqa: E501
         """GatewayCreateProducerEks - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -97,6 +99,7 @@ class GatewayCreateProducerEks(object):
         self._secure_access_bastion_issuer = None
         self._secure_access_cluster_endpoint = None
         self._secure_access_enable = None
+        self._secure_access_web = None
         self._target_name = None
         self._token = None
         self._uid_token = None
@@ -131,6 +134,8 @@ class GatewayCreateProducerEks(object):
             self.secure_access_cluster_endpoint = secure_access_cluster_endpoint
         if secure_access_enable is not None:
             self.secure_access_enable = secure_access_enable
+        if secure_access_web is not None:
+            self.secure_access_web = secure_access_web
         if target_name is not None:
             self.target_name = target_name
         if token is not None:
@@ -457,6 +462,27 @@ class GatewayCreateProducerEks(object):
         """
 
         self._secure_access_enable = secure_access_enable
+
+    @property
+    def secure_access_web(self):
+        """Gets the secure_access_web of this GatewayCreateProducerEks.  # noqa: E501
+
+
+        :return: The secure_access_web of this GatewayCreateProducerEks.  # noqa: E501
+        :rtype: bool
+        """
+        return self._secure_access_web
+
+    @secure_access_web.setter
+    def secure_access_web(self, secure_access_web):
+        """Sets the secure_access_web of this GatewayCreateProducerEks.
+
+
+        :param secure_access_web: The secure_access_web of this GatewayCreateProducerEks.  # noqa: E501
+        :type: bool
+        """
+
+        self._secure_access_web = secure_access_web
 
     @property
     def target_name(self):

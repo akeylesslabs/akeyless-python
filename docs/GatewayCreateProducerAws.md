@@ -22,6 +22,7 @@ Name | Type | Description | Notes
 **secure_access_aws_native_cli** | **bool** |  | [optional] 
 **secure_access_bastion_issuer** | **str** |  | [optional] 
 **secure_access_enable** | **str** |  | [optional] 
+**secure_access_web** | **bool** |  | [optional] 
 **secure_access_web_browsing** | **bool** |  | [optional] 
 **target_name** | **str** | Target name | [optional] 
 **token** | **str** | Authentication token (see &#x60;/auth&#x60; and &#x60;/configure&#x60;) | [optional] 

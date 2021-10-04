@@ -52,6 +52,7 @@ class GatewayCreateProducerAws(object):
         'secure_access_aws_native_cli': 'bool',
         'secure_access_bastion_issuer': 'str',
         'secure_access_enable': 'str',
+        'secure_access_web': 'bool',
         'secure_access_web_browsing': 'bool',
         'target_name': 'str',
         'token': 'str',
@@ -79,6 +80,7 @@ class GatewayCreateProducerAws(object):
         'secure_access_aws_native_cli': 'secure-access-aws-native-cli',
         'secure_access_bastion_issuer': 'secure-access-bastion-issuer',
         'secure_access_enable': 'secure-access-enable',
+        'secure_access_web': 'secure-access-web',
         'secure_access_web_browsing': 'secure-access-web-browsing',
         'target_name': 'target-name',
         'token': 'token',
@@ -87,7 +89,7 @@ class GatewayCreateProducerAws(object):
         'username': 'username'
     }
 
-    def __init__(self, access_mode=None, admin_rotation_interval_days=0, aws_access_key_id=None, aws_access_secret_key=None, aws_role_arns=None, aws_user_console_access=False, aws_user_groups=None, aws_user_policies=None, aws_user_programmatic_access=True, enable_admin_rotation=False, name=None, password=None, producer_encryption_key_name=None, region='us-east-2', secure_access_aws_account_id=None, secure_access_aws_native_cli=None, secure_access_bastion_issuer=None, secure_access_enable=None, secure_access_web_browsing=None, target_name=None, token=None, uid_token=None, user_ttl='60m', username=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, access_mode=None, admin_rotation_interval_days=0, aws_access_key_id=None, aws_access_secret_key=None, aws_role_arns=None, aws_user_console_access=False, aws_user_groups=None, aws_user_policies=None, aws_user_programmatic_access=True, enable_admin_rotation=False, name=None, password=None, producer_encryption_key_name=None, region='us-east-2', secure_access_aws_account_id=None, secure_access_aws_native_cli=None, secure_access_bastion_issuer=None, secure_access_enable=None, secure_access_web=None, secure_access_web_browsing=None, target_name=None, token=None, uid_token=None, user_ttl='60m', username=None, local_vars_configuration=None):  # noqa: E501
         """GatewayCreateProducerAws - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -111,6 +113,7 @@ class GatewayCreateProducerAws(object):
         self._secure_access_aws_native_cli = None
         self._secure_access_bastion_issuer = None
         self._secure_access_enable = None
+        self._secure_access_web = None
         self._secure_access_web_browsing = None
         self._target_name = None
         self._token = None
@@ -154,6 +157,8 @@ class GatewayCreateProducerAws(object):
             self.secure_access_bastion_issuer = secure_access_bastion_issuer
         if secure_access_enable is not None:
             self.secure_access_enable = secure_access_enable
+        if secure_access_web is not None:
+            self.secure_access_web = secure_access_web
         if secure_access_web_browsing is not None:
             self.secure_access_web_browsing = secure_access_web_browsing
         if target_name is not None:
@@ -572,6 +577,27 @@ class GatewayCreateProducerAws(object):
         """
 
         self._secure_access_enable = secure_access_enable
+
+    @property
+    def secure_access_web(self):
+        """Gets the secure_access_web of this GatewayCreateProducerAws.  # noqa: E501
+
+
+        :return: The secure_access_web of this GatewayCreateProducerAws.  # noqa: E501
+        :rtype: bool
+        """
+        return self._secure_access_web
+
+    @secure_access_web.setter
+    def secure_access_web(self, secure_access_web):
+        """Sets the secure_access_web of this GatewayCreateProducerAws.
+
+
+        :param secure_access_web: The secure_access_web of this GatewayCreateProducerAws.  # noqa: E501
+        :type: bool
+        """
+
+        self._secure_access_web = secure_access_web
 
     @property
     def secure_access_web_browsing(self):

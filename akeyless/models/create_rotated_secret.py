@@ -135,8 +135,7 @@ class CreateRotatedSecret(object):
             self.rotator_creds_type = rotator_creds_type
         if rotator_custom_cmd is not None:
             self.rotator_custom_cmd = rotator_custom_cmd
-        if rotator_type is not None:
-            self.rotator_type = rotator_type
+        self.rotator_type = rotator_type
         if ssh_password is not None:
             self.ssh_password = ssh_password
         if ssh_username is not None:
@@ -442,6 +441,7 @@ class CreateRotatedSecret(object):
     def rotator_type(self):
         """Gets the rotator_type of this CreateRotatedSecret.  # noqa: E501
 
+        Rotator Type  # noqa: E501
 
         :return: The rotator_type of this CreateRotatedSecret.  # noqa: E501
         :rtype: str
@@ -452,10 +452,13 @@ class CreateRotatedSecret(object):
     def rotator_type(self, rotator_type):
         """Sets the rotator_type of this CreateRotatedSecret.
 
+        Rotator Type  # noqa: E501
 
         :param rotator_type: The rotator_type of this CreateRotatedSecret.  # noqa: E501
         :type: str
         """
+        if self.local_vars_configuration.client_side_validation and rotator_type is None:  # noqa: E501
+            raise ValueError("Invalid value for `rotator_type`, must not be `None`")  # noqa: E501
 
         self._rotator_type = rotator_type
 

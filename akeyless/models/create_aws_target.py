@@ -44,6 +44,7 @@ class CreateAWSTarget(object):
         'session_token': 'str',
         'token': 'str',
         'uid_token': 'str',
+        'use_gw_cloud_identity': 'bool',
         'username': 'str'
     }
 
@@ -58,10 +59,11 @@ class CreateAWSTarget(object):
         'session_token': 'session-token',
         'token': 'token',
         'uid_token': 'uid-token',
+        'use_gw_cloud_identity': 'use-gw-cloud-identity',
         'username': 'username'
     }
 
-    def __init__(self, access_key=None, access_key_id=None, comment=None, key=None, name=None, password=None, region=None, session_token=None, token=None, uid_token=None, username=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, access_key=None, access_key_id=None, comment=None, key=None, name=None, password=None, region=None, session_token=None, token=None, uid_token=None, use_gw_cloud_identity=None, username=None, local_vars_configuration=None):  # noqa: E501
         """CreateAWSTarget - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -77,6 +79,7 @@ class CreateAWSTarget(object):
         self._session_token = None
         self._token = None
         self._uid_token = None
+        self._use_gw_cloud_identity = None
         self._username = None
         self.discriminator = None
 
@@ -99,6 +102,8 @@ class CreateAWSTarget(object):
             self.token = token
         if uid_token is not None:
             self.uid_token = uid_token
+        if use_gw_cloud_identity is not None:
+            self.use_gw_cloud_identity = use_gw_cloud_identity
         if username is not None:
             self.username = username
 
@@ -325,6 +330,27 @@ class CreateAWSTarget(object):
         """
 
         self._uid_token = uid_token
+
+    @property
+    def use_gw_cloud_identity(self):
+        """Gets the use_gw_cloud_identity of this CreateAWSTarget.  # noqa: E501
+
+
+        :return: The use_gw_cloud_identity of this CreateAWSTarget.  # noqa: E501
+        :rtype: bool
+        """
+        return self._use_gw_cloud_identity
+
+    @use_gw_cloud_identity.setter
+    def use_gw_cloud_identity(self, use_gw_cloud_identity):
+        """Sets the use_gw_cloud_identity of this CreateAWSTarget.
+
+
+        :param use_gw_cloud_identity: The use_gw_cloud_identity of this CreateAWSTarget.  # noqa: E501
+        :type: bool
+        """
+
+        self._use_gw_cloud_identity = use_gw_cloud_identity
 
     @property
     def username(self):

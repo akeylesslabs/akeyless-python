@@ -497,7 +497,7 @@ class SignPKICertWithClassicKey(object):
     def ttl(self):
         """Gets the ttl of this SignPKICertWithClassicKey.  # noqa: E501
 
-        The requested Time To Live for the certificate, use second units  # noqa: E501
+        he requested Time To Live for the certificate, in seconds  # noqa: E501
 
         :return: The ttl of this SignPKICertWithClassicKey.  # noqa: E501
         :rtype: int
@@ -508,7 +508,7 @@ class SignPKICertWithClassicKey(object):
     def ttl(self, ttl):
         """Sets the ttl of this SignPKICertWithClassicKey.
 
-        The requested Time To Live for the certificate, use second units  # noqa: E501
+        he requested Time To Live for the certificate, in seconds  # noqa: E501
 
         :param ttl: The ttl of this SignPKICertWithClassicKey.  # noqa: E501
         :type: int

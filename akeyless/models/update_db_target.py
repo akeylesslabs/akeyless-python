@@ -46,11 +46,7 @@ class UpdateDBTarget(object):
         'mongodb_atlas_api_public_key': 'str',
         'mongodb_atlas_project_id': 'str',
         'mongodb_default_auth_db': 'str',
-        'mongodb_host_port': 'str',
-        'mongodb_password': 'str',
-        'mongodb_server_uri': 'str',
         'mongodb_uri_options': 'str',
-        'mongodb_username': 'str',
         'name': 'str',
         'new_name': 'str',
         'oracle_service_name': 'str',
@@ -78,11 +74,7 @@ class UpdateDBTarget(object):
         'mongodb_atlas_api_public_key': 'mongodb-atlas-api-public-key',
         'mongodb_atlas_project_id': 'mongodb-atlas-project-id',
         'mongodb_default_auth_db': 'mongodb-default-auth-db',
-        'mongodb_host_port': 'mongodb-host-port',
-        'mongodb_password': 'mongodb-password',
-        'mongodb_server_uri': 'mongodb-server-uri',
         'mongodb_uri_options': 'mongodb-uri-options',
-        'mongodb_username': 'mongodb-username',
         'name': 'name',
         'new_name': 'new-name',
         'oracle_service_name': 'oracle-service-name',
@@ -97,7 +89,7 @@ class UpdateDBTarget(object):
         'username': 'username'
     }
 
-    def __init__(self, comment=None, db_name=None, db_server_certificates=None, db_server_name=None, db_type=None, host=None, key=None, mongodb_atlas=None, mongodb_atlas_api_private_key=None, mongodb_atlas_api_public_key=None, mongodb_atlas_project_id=None, mongodb_default_auth_db=None, mongodb_host_port=None, mongodb_password=None, mongodb_server_uri=None, mongodb_uri_options=None, mongodb_username=None, name=None, new_name=None, oracle_service_name=None, password=None, port=None, pwd=None, snowflake_account=None, token=None, uid_token=None, update_version=False, user_name=None, username=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, comment=None, db_name=None, db_server_certificates=None, db_server_name=None, db_type=None, host=None, key=None, mongodb_atlas=None, mongodb_atlas_api_private_key=None, mongodb_atlas_api_public_key=None, mongodb_atlas_project_id=None, mongodb_default_auth_db=None, mongodb_uri_options=None, name=None, new_name=None, oracle_service_name=None, password=None, port=None, pwd=None, snowflake_account=None, token=None, uid_token=None, update_version=False, user_name=None, username=None, local_vars_configuration=None):  # noqa: E501
         """UpdateDBTarget - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -115,11 +107,7 @@ class UpdateDBTarget(object):
         self._mongodb_atlas_api_public_key = None
         self._mongodb_atlas_project_id = None
         self._mongodb_default_auth_db = None
-        self._mongodb_host_port = None
-        self._mongodb_password = None
-        self._mongodb_server_uri = None
         self._mongodb_uri_options = None
-        self._mongodb_username = None
         self._name = None
         self._new_name = None
         self._oracle_service_name = None
@@ -157,16 +145,8 @@ class UpdateDBTarget(object):
             self.mongodb_atlas_project_id = mongodb_atlas_project_id
         if mongodb_default_auth_db is not None:
             self.mongodb_default_auth_db = mongodb_default_auth_db
-        if mongodb_host_port is not None:
-            self.mongodb_host_port = mongodb_host_port
-        if mongodb_password is not None:
-            self.mongodb_password = mongodb_password
-        if mongodb_server_uri is not None:
-            self.mongodb_server_uri = mongodb_server_uri
         if mongodb_uri_options is not None:
             self.mongodb_uri_options = mongodb_uri_options
-        if mongodb_username is not None:
-            self.mongodb_username = mongodb_username
         self.name = name
         if new_name is not None:
             self.new_name = new_name
@@ -462,75 +442,6 @@ class UpdateDBTarget(object):
         self._mongodb_default_auth_db = mongodb_default_auth_db
 
     @property
-    def mongodb_host_port(self):
-        """Gets the mongodb_host_port of this UpdateDBTarget.  # noqa: E501
-
-        MongoDB server host and port  # noqa: E501
-
-        :return: The mongodb_host_port of this UpdateDBTarget.  # noqa: E501
-        :rtype: str
-        """
-        return self._mongodb_host_port
-
-    @mongodb_host_port.setter
-    def mongodb_host_port(self, mongodb_host_port):
-        """Sets the mongodb_host_port of this UpdateDBTarget.
-
-        MongoDB server host and port  # noqa: E501
-
-        :param mongodb_host_port: The mongodb_host_port of this UpdateDBTarget.  # noqa: E501
-        :type: str
-        """
-
-        self._mongodb_host_port = mongodb_host_port
-
-    @property
-    def mongodb_password(self):
-        """Gets the mongodb_password of this UpdateDBTarget.  # noqa: E501
-
-        MongoDB server password. You will prompted to provide a password if it will not appear in CLI parameters  # noqa: E501
-
-        :return: The mongodb_password of this UpdateDBTarget.  # noqa: E501
-        :rtype: str
-        """
-        return self._mongodb_password
-
-    @mongodb_password.setter
-    def mongodb_password(self, mongodb_password):
-        """Sets the mongodb_password of this UpdateDBTarget.
-
-        MongoDB server password. You will prompted to provide a password if it will not appear in CLI parameters  # noqa: E501
-
-        :param mongodb_password: The mongodb_password of this UpdateDBTarget.  # noqa: E501
-        :type: str
-        """
-
-        self._mongodb_password = mongodb_password
-
-    @property
-    def mongodb_server_uri(self):
-        """Gets the mongodb_server_uri of this UpdateDBTarget.  # noqa: E501
-
-        MongoDB server URI  # noqa: E501
-
-        :return: The mongodb_server_uri of this UpdateDBTarget.  # noqa: E501
-        :rtype: str
-        """
-        return self._mongodb_server_uri
-
-    @mongodb_server_uri.setter
-    def mongodb_server_uri(self, mongodb_server_uri):
-        """Sets the mongodb_server_uri of this UpdateDBTarget.
-
-        MongoDB server URI  # noqa: E501
-
-        :param mongodb_server_uri: The mongodb_server_uri of this UpdateDBTarget.  # noqa: E501
-        :type: str
-        """
-
-        self._mongodb_server_uri = mongodb_server_uri
-
-    @property
     def mongodb_uri_options(self):
         """Gets the mongodb_uri_options of this UpdateDBTarget.  # noqa: E501
 
@@ -552,29 +463,6 @@ class UpdateDBTarget(object):
         """
 
         self._mongodb_uri_options = mongodb_uri_options
-
-    @property
-    def mongodb_username(self):
-        """Gets the mongodb_username of this UpdateDBTarget.  # noqa: E501
-
-        MongoDB server username  # noqa: E501
-
-        :return: The mongodb_username of this UpdateDBTarget.  # noqa: E501
-        :rtype: str
-        """
-        return self._mongodb_username
-
-    @mongodb_username.setter
-    def mongodb_username(self, mongodb_username):
-        """Sets the mongodb_username of this UpdateDBTarget.
-
-        MongoDB server username  # noqa: E501
-
-        :param mongodb_username: The mongodb_username of this UpdateDBTarget.  # noqa: E501
-        :type: str
-        """
-
-        self._mongodb_username = mongodb_username
 
     @property
     def name(self):
