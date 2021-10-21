@@ -42,6 +42,8 @@ class Auth(object):
         'cloud_id': 'str',
         'gcp_audience': 'str',
         'jwt': 'str',
+        'k8s_auth_config_name': 'str',
+        'k8s_service_account_token': 'str',
         'ldap_password': 'str',
         'ldap_username': 'str',
         'uid_token': 'str'
@@ -56,12 +58,14 @@ class Auth(object):
         'cloud_id': 'cloud-id',
         'gcp_audience': 'gcp-audience',
         'jwt': 'jwt',
+        'k8s_auth_config_name': 'k8s-auth-config-name',
+        'k8s_service_account_token': 'k8s-service-account-token',
         'ldap_password': 'ldap_password',
         'ldap_username': 'ldap_username',
         'uid_token': 'uid_token'
     }
 
-    def __init__(self, access_id=None, access_key=None, access_type='access_key', admin_email=None, admin_password=None, cloud_id=None, gcp_audience=None, jwt=None, ldap_password=None, ldap_username=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, access_id=None, access_key=None, access_type='access_key', admin_email=None, admin_password=None, cloud_id=None, gcp_audience=None, jwt=None, k8s_auth_config_name=None, k8s_service_account_token=None, ldap_password=None, ldap_username=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """Auth - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -75,6 +79,8 @@ class Auth(object):
         self._cloud_id = None
         self._gcp_audience = None
         self._jwt = None
+        self._k8s_auth_config_name = None
+        self._k8s_service_account_token = None
         self._ldap_password = None
         self._ldap_username = None
         self._uid_token = None
@@ -96,6 +102,10 @@ class Auth(object):
             self.gcp_audience = gcp_audience
         if jwt is not None:
             self.jwt = jwt
+        if k8s_auth_config_name is not None:
+            self.k8s_auth_config_name = k8s_auth_config_name
+        if k8s_service_account_token is not None:
+            self.k8s_service_account_token = k8s_service_account_token
         if ldap_password is not None:
             self.ldap_password = ldap_password
         if ldap_username is not None:
@@ -153,7 +163,7 @@ class Auth(object):
     def access_type(self):
         """Gets the access_type of this Auth.  # noqa: E501
 
-        Access Type (access_key/password/saml/ldap/azure_ad/aws_iam/universal_identity/jwt/gcp)  # noqa: E501
+        Access Type (access_key/password/saml/ldap/k8s/azure_ad/aws_iam/universal_identity/jwt/gcp)  # noqa: E501
 
         :return: The access_type of this Auth.  # noqa: E501
         :rtype: str
@@ -164,7 +174,7 @@ class Auth(object):
     def access_type(self, access_type):
         """Sets the access_type of this Auth.
 
-        Access Type (access_key/password/saml/ldap/azure_ad/aws_iam/universal_identity/jwt/gcp)  # noqa: E501
+        Access Type (access_key/password/saml/ldap/k8s/azure_ad/aws_iam/universal_identity/jwt/gcp)  # noqa: E501
 
         :param access_type: The access_type of this Auth.  # noqa: E501
         :type: str
@@ -286,6 +296,52 @@ class Auth(object):
         """
 
         self._jwt = jwt
+
+    @property
+    def k8s_auth_config_name(self):
+        """Gets the k8s_auth_config_name of this Auth.  # noqa: E501
+
+        The K8S Auth config name (relevant only for access-type=k8s)  # noqa: E501
+
+        :return: The k8s_auth_config_name of this Auth.  # noqa: E501
+        :rtype: str
+        """
+        return self._k8s_auth_config_name
+
+    @k8s_auth_config_name.setter
+    def k8s_auth_config_name(self, k8s_auth_config_name):
+        """Sets the k8s_auth_config_name of this Auth.
+
+        The K8S Auth config name (relevant only for access-type=k8s)  # noqa: E501
+
+        :param k8s_auth_config_name: The k8s_auth_config_name of this Auth.  # noqa: E501
+        :type: str
+        """
+
+        self._k8s_auth_config_name = k8s_auth_config_name
+
+    @property
+    def k8s_service_account_token(self):
+        """Gets the k8s_service_account_token of this Auth.  # noqa: E501
+
+        The K8S service account token. (relevant only for access-type=k8s)  # noqa: E501
+
+        :return: The k8s_service_account_token of this Auth.  # noqa: E501
+        :rtype: str
+        """
+        return self._k8s_service_account_token
+
+    @k8s_service_account_token.setter
+    def k8s_service_account_token(self, k8s_service_account_token):
+        """Sets the k8s_service_account_token of this Auth.
+
+        The K8S service account token. (relevant only for access-type=k8s)  # noqa: E501
+
+        :param k8s_service_account_token: The k8s_service_account_token of this Auth.  # noqa: E501
+        :type: str
+        """
+
+        self._k8s_service_account_token = k8s_service_account_token
 
     @property
     def ldap_password(self):

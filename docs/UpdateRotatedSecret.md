@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **api_id** | **str** |  | [optional] 
 **api_key** | **str** |  | [optional] 
 **auto_rotate** | **str** | Whether to automatically rotate every --rotation-interval days, or disable existing automatic rotation | [optional] 
+**custom_payload** | **str** |  | [optional] 
 **key** | **str** | The name of a key that used to encrypt the secret value (if empty, the account default protectionKey key will be used) | [optional] 
 **name** | **str** | Secret name | 
 **new_metadata** | **str** | New item metadata | [optional] [default to 'default_metadata']

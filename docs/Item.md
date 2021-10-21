@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **certificate_issue_details** | [**CertificateIssueInfo**](CertificateIssueInfo.md) |  | [optional] 
 **certificates** | **str** |  | [optional] 
 **client_permissions** | **list[str]** |  | [optional] 
+**customer_fragment_id** | **str** |  | [optional] 
 **deletion_date** | **datetime** |  | [optional] 
 **display_id** | **str** |  | [optional] 
 **is_enabled** | **bool** |  | [optional] 

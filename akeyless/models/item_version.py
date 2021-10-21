@@ -35,6 +35,7 @@ class ItemVersion(object):
     """
     openapi_types = {
         'creation_date': 'datetime',
+        'customer_fragment_id': 'str',
         'deletion_date': 'datetime',
         'item_version_state': 'str',
         'protection_key_name': 'str',
@@ -44,6 +45,7 @@ class ItemVersion(object):
 
     attribute_map = {
         'creation_date': 'creation_date',
+        'customer_fragment_id': 'customer_fragment_id',
         'deletion_date': 'deletion_date',
         'item_version_state': 'item_version_state',
         'protection_key_name': 'protection_key_name',
@@ -51,13 +53,14 @@ class ItemVersion(object):
         'with_customer_fragment': 'with_customer_fragment'
     }
 
-    def __init__(self, creation_date=None, deletion_date=None, item_version_state=None, protection_key_name=None, version=None, with_customer_fragment=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, creation_date=None, customer_fragment_id=None, deletion_date=None, item_version_state=None, protection_key_name=None, version=None, with_customer_fragment=None, local_vars_configuration=None):  # noqa: E501
         """ItemVersion - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._creation_date = None
+        self._customer_fragment_id = None
         self._deletion_date = None
         self._item_version_state = None
         self._protection_key_name = None
@@ -67,6 +70,8 @@ class ItemVersion(object):
 
         if creation_date is not None:
             self.creation_date = creation_date
+        if customer_fragment_id is not None:
+            self.customer_fragment_id = customer_fragment_id
         if deletion_date is not None:
             self.deletion_date = deletion_date
         if item_version_state is not None:
@@ -98,6 +103,27 @@ class ItemVersion(object):
         """
 
         self._creation_date = creation_date
+
+    @property
+    def customer_fragment_id(self):
+        """Gets the customer_fragment_id of this ItemVersion.  # noqa: E501
+
+
+        :return: The customer_fragment_id of this ItemVersion.  # noqa: E501
+        :rtype: str
+        """
+        return self._customer_fragment_id
+
+    @customer_fragment_id.setter
+    def customer_fragment_id(self, customer_fragment_id):
+        """Sets the customer_fragment_id of this ItemVersion.
+
+
+        :param customer_fragment_id: The customer_fragment_id of this ItemVersion.  # noqa: E501
+        :type: str
+        """
+
+        self._customer_fragment_id = customer_fragment_id
 
     @property
     def deletion_date(self):

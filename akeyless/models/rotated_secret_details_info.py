@@ -39,6 +39,7 @@ class RotatedSecretDetailsInfo(object):
         'last_rotation_error': 'str',
         'number_of_versions_to_save': 'int',
         'rotation_hour': 'int',
+        'rotation_interval_min': 'bool',
         'rotation_statement': 'str',
         'rotator_creds_type': 'str',
         'rotator_status': 'str',
@@ -51,13 +52,14 @@ class RotatedSecretDetailsInfo(object):
         'last_rotation_error': 'last_rotation_error',
         'number_of_versions_to_save': 'number_of_versions_to_save',
         'rotation_hour': 'rotation_hour',
+        'rotation_interval_min': 'rotation_interval_min',
         'rotation_statement': 'rotation_statement',
         'rotator_creds_type': 'rotator_creds_type',
         'rotator_status': 'rotator_status',
         'rotator_type': 'rotator_type'
     }
 
-    def __init__(self, delete_previous_version_in_days=None, gw_cluster_id=None, last_rotation_error=None, number_of_versions_to_save=None, rotation_hour=None, rotation_statement=None, rotator_creds_type=None, rotator_status=None, rotator_type=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, delete_previous_version_in_days=None, gw_cluster_id=None, last_rotation_error=None, number_of_versions_to_save=None, rotation_hour=None, rotation_interval_min=None, rotation_statement=None, rotator_creds_type=None, rotator_status=None, rotator_type=None, local_vars_configuration=None):  # noqa: E501
         """RotatedSecretDetailsInfo - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -68,6 +70,7 @@ class RotatedSecretDetailsInfo(object):
         self._last_rotation_error = None
         self._number_of_versions_to_save = None
         self._rotation_hour = None
+        self._rotation_interval_min = None
         self._rotation_statement = None
         self._rotator_creds_type = None
         self._rotator_status = None
@@ -84,6 +87,8 @@ class RotatedSecretDetailsInfo(object):
             self.number_of_versions_to_save = number_of_versions_to_save
         if rotation_hour is not None:
             self.rotation_hour = rotation_hour
+        if rotation_interval_min is not None:
+            self.rotation_interval_min = rotation_interval_min
         if rotation_statement is not None:
             self.rotation_statement = rotation_statement
         if rotator_creds_type is not None:
@@ -197,6 +202,27 @@ class RotatedSecretDetailsInfo(object):
         """
 
         self._rotation_hour = rotation_hour
+
+    @property
+    def rotation_interval_min(self):
+        """Gets the rotation_interval_min of this RotatedSecretDetailsInfo.  # noqa: E501
+
+
+        :return: The rotation_interval_min of this RotatedSecretDetailsInfo.  # noqa: E501
+        :rtype: bool
+        """
+        return self._rotation_interval_min
+
+    @rotation_interval_min.setter
+    def rotation_interval_min(self, rotation_interval_min):
+        """Sets the rotation_interval_min of this RotatedSecretDetailsInfo.
+
+
+        :param rotation_interval_min: The rotation_interval_min of this RotatedSecretDetailsInfo.  # noqa: E501
+        :type: bool
+        """
+
+        self._rotation_interval_min = rotation_interval_min
 
     @property
     def rotation_statement(self):

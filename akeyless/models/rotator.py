@@ -37,6 +37,7 @@ class Rotator(object):
         'id': 'int',
         'last_error': 'str',
         'name': 'str',
+        'rotation_interval': 'int',
         'type': 'str'
     }
 
@@ -44,10 +45,11 @@ class Rotator(object):
         'id': 'id',
         'last_error': 'last_error',
         'name': 'name',
+        'rotation_interval': 'rotation_interval',
         'type': 'type'
     }
 
-    def __init__(self, id=None, last_error=None, name=None, type=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, id=None, last_error=None, name=None, rotation_interval=None, type=None, local_vars_configuration=None):  # noqa: E501
         """Rotator - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -56,6 +58,7 @@ class Rotator(object):
         self._id = None
         self._last_error = None
         self._name = None
+        self._rotation_interval = None
         self._type = None
         self.discriminator = None
 
@@ -65,6 +68,8 @@ class Rotator(object):
             self.last_error = last_error
         if name is not None:
             self.name = name
+        if rotation_interval is not None:
+            self.rotation_interval = rotation_interval
         if type is not None:
             self.type = type
 
@@ -130,6 +135,27 @@ class Rotator(object):
         """
 
         self._name = name
+
+    @property
+    def rotation_interval(self):
+        """Gets the rotation_interval of this Rotator.  # noqa: E501
+
+
+        :return: The rotation_interval of this Rotator.  # noqa: E501
+        :rtype: int
+        """
+        return self._rotation_interval
+
+    @rotation_interval.setter
+    def rotation_interval(self, rotation_interval):
+        """Sets the rotation_interval of this Rotator.
+
+
+        :param rotation_interval: The rotation_interval of this Rotator.  # noqa: E501
+        :type: int
+        """
+
+        self._rotation_interval = rotation_interval
 
     @property
     def type(self):

@@ -4,6 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **creation_date** | **datetime** |  | [optional] 
+**customer_fragment_id** | **str** |  | [optional] 
 **deletion_date** | **datetime** |  | [optional] 
 **item_version_state** | **str** | ItemState defines the different states an Item can be in | [optional] 
 **protection_key_name** | **str** |  | [optional] 

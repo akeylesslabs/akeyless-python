@@ -35,6 +35,7 @@ class CreateAuthMethodSAML(object):
     """
     openapi_types = {
         'access_expires': 'int',
+        'allowed_redirect_uri': 'list[str]',
         'bound_ips': 'list[str]',
         'force_sub_claims': 'bool',
         'idp_metadata_url': 'str',
@@ -48,6 +49,7 @@ class CreateAuthMethodSAML(object):
 
     attribute_map = {
         'access_expires': 'access-expires',
+        'allowed_redirect_uri': 'allowed-redirect-uri',
         'bound_ips': 'bound-ips',
         'force_sub_claims': 'force-sub-claims',
         'idp_metadata_url': 'idp-metadata-url',
@@ -59,13 +61,14 @@ class CreateAuthMethodSAML(object):
         'username': 'username'
     }
 
-    def __init__(self, access_expires=0, bound_ips=None, force_sub_claims=None, idp_metadata_url=None, name=None, password=None, token=None, uid_token=None, unique_identifier=None, username=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, access_expires=0, allowed_redirect_uri=None, bound_ips=None, force_sub_claims=None, idp_metadata_url=None, name=None, password=None, token=None, uid_token=None, unique_identifier=None, username=None, local_vars_configuration=None):  # noqa: E501
         """CreateAuthMethodSAML - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._access_expires = None
+        self._allowed_redirect_uri = None
         self._bound_ips = None
         self._force_sub_claims = None
         self._idp_metadata_url = None
@@ -79,6 +82,8 @@ class CreateAuthMethodSAML(object):
 
         if access_expires is not None:
             self.access_expires = access_expires
+        if allowed_redirect_uri is not None:
+            self.allowed_redirect_uri = allowed_redirect_uri
         if bound_ips is not None:
             self.bound_ips = bound_ips
         if force_sub_claims is not None:
@@ -118,6 +123,29 @@ class CreateAuthMethodSAML(object):
         """
 
         self._access_expires = access_expires
+
+    @property
+    def allowed_redirect_uri(self):
+        """Gets the allowed_redirect_uri of this CreateAuthMethodSAML.  # noqa: E501
+
+        Allowed redirect URIs after the authentication  # noqa: E501
+
+        :return: The allowed_redirect_uri of this CreateAuthMethodSAML.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._allowed_redirect_uri
+
+    @allowed_redirect_uri.setter
+    def allowed_redirect_uri(self, allowed_redirect_uri):
+        """Sets the allowed_redirect_uri of this CreateAuthMethodSAML.
+
+        Allowed redirect URIs after the authentication  # noqa: E501
+
+        :param allowed_redirect_uri: The allowed_redirect_uri of this CreateAuthMethodSAML.  # noqa: E501
+        :type: list[str]
+        """
+
+        self._allowed_redirect_uri = allowed_redirect_uri
 
     @property
     def bound_ips(self):

@@ -3,6 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**allowed_redirect_ur_is** | **list[str]** | Allowed redirect URIs after the authentication | [optional] 
 **bound_attributes** | [**list[SAMLAttribute]**](SAMLAttribute.md) | The attributes that login is restricted to. | [optional] 
 **idp_metadata_url** | **str** | IDP metadata url | [optional] 
 **idp_metadata_xml** | **str** | IDP metadata XML | [optional] 

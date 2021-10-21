@@ -41,6 +41,8 @@ from akeyless.models.classic_key_details_info import ClassicKeyDetailsInfo
 from akeyless.models.classic_key_status_info import ClassicKeyStatusInfo
 from akeyless.models.classic_key_target_info import ClassicKeyTargetInfo
 from akeyless.models.client_data import ClientData
+from akeyless.models.config_change import ConfigChange
+from akeyless.models.config_hash import ConfigHash
 from akeyless.models.configure import Configure
 from akeyless.models.configure_output import ConfigureOutput
 from akeyless.models.connect import Connect
@@ -57,6 +59,8 @@ from akeyless.models.create_auth_method_gcp import CreateAuthMethodGCP
 from akeyless.models.create_auth_method_gcp_output import CreateAuthMethodGCPOutput
 from akeyless.models.create_auth_method_huawei import CreateAuthMethodHuawei
 from akeyless.models.create_auth_method_huawei_output import CreateAuthMethodHuaweiOutput
+from akeyless.models.create_auth_method_k8_s import CreateAuthMethodK8S
+from akeyless.models.create_auth_method_k8_s_output import CreateAuthMethodK8SOutput
 from akeyless.models.create_auth_method_ldap import CreateAuthMethodLDAP
 from akeyless.models.create_auth_method_ldap_output import CreateAuthMethodLDAPOutput
 from akeyless.models.create_auth_method_o_auth2 import CreateAuthMethodOAuth2
@@ -151,6 +155,8 @@ from akeyless.models.encrypt_with_classic_key_output import EncryptWithClassicKe
 from akeyless.models.external_kms_key_id import ExternalKMSKeyId
 from akeyless.models.gcp_access_rules import GCPAccessRules
 from akeyless.models.gateway_add_allowed_management_access import GatewayAddAllowedManagementAccess
+from akeyless.models.gateway_create_k8_s_auth_config import GatewayCreateK8SAuthConfig
+from akeyless.models.gateway_create_k8_s_auth_config_output import GatewayCreateK8SAuthConfigOutput
 from akeyless.models.gateway_create_producer_artifactory import GatewayCreateProducerArtifactory
 from akeyless.models.gateway_create_producer_artifactory_output import GatewayCreateProducerArtifactoryOutput
 from akeyless.models.gateway_create_producer_aws import GatewayCreateProducerAws
@@ -171,6 +177,8 @@ from akeyless.models.gateway_create_producer_gcp import GatewayCreateProducerGcp
 from akeyless.models.gateway_create_producer_gcp_output import GatewayCreateProducerGcpOutput
 from akeyless.models.gateway_create_producer_gke import GatewayCreateProducerGke
 from akeyless.models.gateway_create_producer_gke_output import GatewayCreateProducerGkeOutput
+from akeyless.models.gateway_create_producer_ldap import GatewayCreateProducerLdap
+from akeyless.models.gateway_create_producer_ldap_output import GatewayCreateProducerLdapOutput
 from akeyless.models.gateway_create_producer_mssql import GatewayCreateProducerMSSQL
 from akeyless.models.gateway_create_producer_mssql_output import GatewayCreateProducerMSSQLOutput
 from akeyless.models.gateway_create_producer_mongo import GatewayCreateProducerMongo
@@ -192,9 +200,13 @@ from akeyless.models.gateway_create_producer_redshift_output import GatewayCreat
 from akeyless.models.gateway_create_producer_snowflake import GatewayCreateProducerSnowflake
 from akeyless.models.gateway_create_producer_snowflake_output import GatewayCreateProducerSnowflakeOutput
 from akeyless.models.gateway_delete_allowed_management_access import GatewayDeleteAllowedManagementAccess
+from akeyless.models.gateway_delete_k8_s_auth_config import GatewayDeleteK8SAuthConfig
+from akeyless.models.gateway_delete_k8_s_auth_config_output import GatewayDeleteK8SAuthConfigOutput
 from akeyless.models.gateway_delete_producer import GatewayDeleteProducer
 from akeyless.models.gateway_delete_producer_output import GatewayDeleteProducerOutput
 from akeyless.models.gateway_get_config import GatewayGetConfig
+from akeyless.models.gateway_get_k8_s_auth_config import GatewayGetK8SAuthConfig
+from akeyless.models.gateway_get_k8_s_auth_config_output import GatewayGetK8SAuthConfigOutput
 from akeyless.models.gateway_get_producer import GatewayGetProducer
 from akeyless.models.gateway_get_tmp_users import GatewayGetTmpUsers
 from akeyless.models.gateway_list_allowed_management_access import GatewayListAllowedManagementAccess
@@ -236,6 +248,9 @@ from akeyless.models.item_general_info import ItemGeneralInfo
 from akeyless.models.item_target_association import ItemTargetAssociation
 from akeyless.models.item_version import ItemVersion
 from akeyless.models.json_error import JSONError
+from akeyless.models.k8_s_auth import K8SAuth
+from akeyless.models.k8_s_auths_config_last_change import K8SAuthsConfigLastChange
+from akeyless.models.k8_s_auths_config_part import K8SAuthsConfigPart
 from akeyless.models.k8_s_migration import K8SMigration
 from akeyless.models.k8_s_payload import K8SPayload
 from akeyless.models.kmip_client import KMIPClient
@@ -260,7 +275,10 @@ from akeyless.models.kmip_renew_server_certificate_output import KmipRenewServer
 from akeyless.models.kmip_server_setup import KmipServerSetup
 from akeyless.models.kmip_set_server_state import KmipSetServerState
 from akeyless.models.kmip_set_server_state_output import KmipSetServerStateOutput
+from akeyless.models.kubernetes_access_rules import KubernetesAccessRules
 from akeyless.models.ldap_access_rules import LDAPAccessRules
+from akeyless.models.last_config_change import LastConfigChange
+from akeyless.models.last_status_info import LastStatusInfo
 from akeyless.models.ldap_config_part import LdapConfigPart
 from akeyless.models.leadership_config_part import LeadershipConfigPart
 from akeyless.models.list_auth_methods import ListAuthMethods
@@ -275,6 +293,8 @@ from akeyless.models.log_forwarding_config_part import LogForwardingConfigPart
 from akeyless.models.logstash_log_forwarding_config import LogstashLogForwardingConfig
 from akeyless.models.logz_io_log_forwarding_config import LogzIoLogForwardingConfig
 from akeyless.models.migration_general import MigrationGeneral
+from akeyless.models.migration_status import MigrationStatus
+from akeyless.models.migrations_config_last_change import MigrationsConfigLastChange
 from akeyless.models.migrations_config_part import MigrationsConfigPart
 from akeyless.models.move_objects import MoveObjects
 from akeyless.models.o_auth2_access_rules import OAuth2AccessRules
@@ -288,6 +308,7 @@ from akeyless.models.producers_config_part import ProducersConfigPart
 from akeyless.models.raw_creds import RawCreds
 from akeyless.models.refresh_key import RefreshKey
 from akeyless.models.refresh_key_output import RefreshKeyOutput
+from akeyless.models.required_activity import RequiredActivity
 from akeyless.models.reverse_rbac import ReverseRBAC
 from akeyless.models.reverse_rbac_client import ReverseRBACClient
 from akeyless.models.reverse_rbac_output import ReverseRBACOutput

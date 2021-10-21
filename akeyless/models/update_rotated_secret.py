@@ -38,6 +38,7 @@ class UpdateRotatedSecret(object):
         'api_id': 'str',
         'api_key': 'str',
         'auto_rotate': 'str',
+        'custom_payload': 'str',
         'key': 'str',
         'name': 'str',
         'new_metadata': 'str',
@@ -63,6 +64,7 @@ class UpdateRotatedSecret(object):
         'api_id': 'api-id',
         'api_key': 'api-key',
         'auto_rotate': 'auto-rotate',
+        'custom_payload': 'custom-payload',
         'key': 'key',
         'name': 'name',
         'new_metadata': 'new-metadata',
@@ -83,7 +85,7 @@ class UpdateRotatedSecret(object):
         'username': 'username'
     }
 
-    def __init__(self, add_tag=None, api_id=None, api_key=None, auto_rotate=None, key=None, name=None, new_metadata='default_metadata', new_name=None, new_version=False, password=None, rm_tag=None, rotated_password=None, rotated_username=None, rotation_hour=None, rotation_interval=None, rotator_creds_type=None, rotator_custom_cmd=None, ssh_password=None, ssh_username=None, token=None, uid_token=None, username=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, add_tag=None, api_id=None, api_key=None, auto_rotate=None, custom_payload=None, key=None, name=None, new_metadata='default_metadata', new_name=None, new_version=False, password=None, rm_tag=None, rotated_password=None, rotated_username=None, rotation_hour=None, rotation_interval=None, rotator_creds_type=None, rotator_custom_cmd=None, ssh_password=None, ssh_username=None, token=None, uid_token=None, username=None, local_vars_configuration=None):  # noqa: E501
         """UpdateRotatedSecret - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -93,6 +95,7 @@ class UpdateRotatedSecret(object):
         self._api_id = None
         self._api_key = None
         self._auto_rotate = None
+        self._custom_payload = None
         self._key = None
         self._name = None
         self._new_metadata = None
@@ -121,6 +124,8 @@ class UpdateRotatedSecret(object):
             self.api_key = api_key
         if auto_rotate is not None:
             self.auto_rotate = auto_rotate
+        if custom_payload is not None:
+            self.custom_payload = custom_payload
         if key is not None:
             self.key = key
         self.name = name
@@ -244,6 +249,27 @@ class UpdateRotatedSecret(object):
         """
 
         self._auto_rotate = auto_rotate
+
+    @property
+    def custom_payload(self):
+        """Gets the custom_payload of this UpdateRotatedSecret.  # noqa: E501
+
+
+        :return: The custom_payload of this UpdateRotatedSecret.  # noqa: E501
+        :rtype: str
+        """
+        return self._custom_payload
+
+    @custom_payload.setter
+    def custom_payload(self, custom_payload):
+        """Sets the custom_payload of this UpdateRotatedSecret.
+
+
+        :param custom_payload: The custom_payload of this UpdateRotatedSecret.  # noqa: E501
+        :type: str
+        """
+
+        self._custom_payload = custom_payload
 
     @property
     def key(self):

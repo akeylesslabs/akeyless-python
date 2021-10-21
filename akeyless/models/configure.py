@@ -40,7 +40,8 @@ class Configure(object):
         'admin_email': 'str',
         'admin_password': 'str',
         'azure_ad_object_id': 'str',
-        'gcp_audience': 'str'
+        'gcp_audience': 'str',
+        'k8s_auth_config_name': 'str'
     }
 
     attribute_map = {
@@ -50,10 +51,11 @@ class Configure(object):
         'admin_email': 'admin-email',
         'admin_password': 'admin-password',
         'azure_ad_object_id': 'azure_ad_object_id',
-        'gcp_audience': 'gcp-audience'
+        'gcp_audience': 'gcp-audience',
+        'k8s_auth_config_name': 'k8s-auth-config-name'
     }
 
-    def __init__(self, access_id=None, access_key=None, access_type='access_key', admin_email=None, admin_password=None, azure_ad_object_id=None, gcp_audience=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, access_id=None, access_key=None, access_type='access_key', admin_email=None, admin_password=None, azure_ad_object_id=None, gcp_audience=None, k8s_auth_config_name=None, local_vars_configuration=None):  # noqa: E501
         """Configure - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -66,6 +68,7 @@ class Configure(object):
         self._admin_password = None
         self._azure_ad_object_id = None
         self._gcp_audience = None
+        self._k8s_auth_config_name = None
         self.discriminator = None
 
         if access_id is not None:
@@ -82,6 +85,8 @@ class Configure(object):
             self.azure_ad_object_id = azure_ad_object_id
         if gcp_audience is not None:
             self.gcp_audience = gcp_audience
+        if k8s_auth_config_name is not None:
+            self.k8s_auth_config_name = k8s_auth_config_name
 
     @property
     def access_id(self):
@@ -133,7 +138,7 @@ class Configure(object):
     def access_type(self):
         """Gets the access_type of this Configure.  # noqa: E501
 
-        Access Type (access_key/password/azure_ad/saml/oidc/ldap/aws_iam)  # noqa: E501
+        Access Type (access_key/password/azure_ad/saml/oidc/ldap/aws_iam/k8s)  # noqa: E501
 
         :return: The access_type of this Configure.  # noqa: E501
         :rtype: str
@@ -144,7 +149,7 @@ class Configure(object):
     def access_type(self, access_type):
         """Sets the access_type of this Configure.
 
-        Access Type (access_key/password/azure_ad/saml/oidc/ldap/aws_iam)  # noqa: E501
+        Access Type (access_key/password/azure_ad/saml/oidc/ldap/aws_iam/k8s)  # noqa: E501
 
         :param access_type: The access_type of this Configure.  # noqa: E501
         :type: str
@@ -243,6 +248,29 @@ class Configure(object):
         """
 
         self._gcp_audience = gcp_audience
+
+    @property
+    def k8s_auth_config_name(self):
+        """Gets the k8s_auth_config_name of this Configure.  # noqa: E501
+
+        The K8S Auth config name (relevant only for access-type=k8s)  # noqa: E501
+
+        :return: The k8s_auth_config_name of this Configure.  # noqa: E501
+        :rtype: str
+        """
+        return self._k8s_auth_config_name
+
+    @k8s_auth_config_name.setter
+    def k8s_auth_config_name(self, k8s_auth_config_name):
+        """Sets the k8s_auth_config_name of this Configure.
+
+        The K8S Auth config name (relevant only for access-type=k8s)  # noqa: E501
+
+        :param k8s_auth_config_name: The k8s_auth_config_name of this Configure.  # noqa: E501
+        :type: str
+        """
+
+        self._k8s_auth_config_name = k8s_auth_config_name
 
     def to_dict(self):
         """Returns the model properties as a dict"""

@@ -34,6 +34,7 @@ class OIDCAccessRules(object):
                             and the value is json key in definition.
     """
     openapi_types = {
+        'allowed_redirect_ur_is': 'list[str]',
         'bound_claims': 'list[OIDCCustomClaim]',
         'client_id': 'str',
         'client_secret': 'str',
@@ -42,6 +43,7 @@ class OIDCAccessRules(object):
     }
 
     attribute_map = {
+        'allowed_redirect_ur_is': 'allowed_redirect_URIs',
         'bound_claims': 'bound_claims',
         'client_id': 'client_id',
         'client_secret': 'client_secret',
@@ -49,12 +51,13 @@ class OIDCAccessRules(object):
         'unique_identifier': 'unique_identifier'
     }
 
-    def __init__(self, bound_claims=None, client_id=None, client_secret=None, issuer=None, unique_identifier=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, allowed_redirect_ur_is=None, bound_claims=None, client_id=None, client_secret=None, issuer=None, unique_identifier=None, local_vars_configuration=None):  # noqa: E501
         """OIDCAccessRules - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
+        self._allowed_redirect_ur_is = None
         self._bound_claims = None
         self._client_id = None
         self._client_secret = None
@@ -62,6 +65,8 @@ class OIDCAccessRules(object):
         self._unique_identifier = None
         self.discriminator = None
 
+        if allowed_redirect_ur_is is not None:
+            self.allowed_redirect_ur_is = allowed_redirect_ur_is
         if bound_claims is not None:
             self.bound_claims = bound_claims
         if client_id is not None:
@@ -72,6 +77,29 @@ class OIDCAccessRules(object):
             self.issuer = issuer
         if unique_identifier is not None:
             self.unique_identifier = unique_identifier
+
+    @property
+    def allowed_redirect_ur_is(self):
+        """Gets the allowed_redirect_ur_is of this OIDCAccessRules.  # noqa: E501
+
+        Allowed redirect URIs after the authentication  # noqa: E501
+
+        :return: The allowed_redirect_ur_is of this OIDCAccessRules.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._allowed_redirect_ur_is
+
+    @allowed_redirect_ur_is.setter
+    def allowed_redirect_ur_is(self, allowed_redirect_ur_is):
+        """Sets the allowed_redirect_ur_is of this OIDCAccessRules.
+
+        Allowed redirect URIs after the authentication  # noqa: E501
+
+        :param allowed_redirect_ur_is: The allowed_redirect_ur_is of this OIDCAccessRules.  # noqa: E501
+        :type: list[str]
+        """
+
+        self._allowed_redirect_ur_is = allowed_redirect_ur_is
 
     @property
     def bound_claims(self):

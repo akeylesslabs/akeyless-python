@@ -80,14 +80,9 @@ class TargetTypeDetailsInput(object):
         'ldap_bind_dn': 'str',
         'ldap_bind_password': 'str',
         'ldap_certificate': 'str',
-        'ldap_group_attr': 'str',
-        'ldap_group_dn': 'str',
-        'ldap_group_filter': 'str',
         'ldap_private_key': 'str',
         'ldap_token_expiration': 'str',
         'ldap_url': 'str',
-        'ldap_user_attr': 'str',
-        'ldap_user_dn': 'str',
         'mongodb_atlas_api_private_key': 'str',
         'mongodb_atlas_api_public_key': 'str',
         'mongodb_atlas_project_id': 'str',
@@ -100,6 +95,7 @@ class TargetTypeDetailsInput(object):
         'mongodb_uri_options': 'str',
         'mongodb_username': 'str',
         'password': 'str',
+        'payload': 'str',
         'port': 'str',
         'private_key': 'str',
         'private_key_password': 'str',
@@ -165,14 +161,9 @@ class TargetTypeDetailsInput(object):
         'ldap_bind_dn': 'ldap_bind_dn',
         'ldap_bind_password': 'ldap_bind_password',
         'ldap_certificate': 'ldap_certificate',
-        'ldap_group_attr': 'ldap_group_attr',
-        'ldap_group_dn': 'ldap_group_dn',
-        'ldap_group_filter': 'ldap_group_filter',
         'ldap_private_key': 'ldap_private_key',
         'ldap_token_expiration': 'ldap_token_expiration',
         'ldap_url': 'ldap_url',
-        'ldap_user_attr': 'ldap_user_attr',
-        'ldap_user_dn': 'ldap_user_dn',
         'mongodb_atlas_api_private_key': 'mongodb_atlas_api_private_key',
         'mongodb_atlas_api_public_key': 'mongodb_atlas_api_public_key',
         'mongodb_atlas_project_id': 'mongodb_atlas_project_id',
@@ -185,6 +176,7 @@ class TargetTypeDetailsInput(object):
         'mongodb_uri_options': 'mongodb_uri_options',
         'mongodb_username': 'mongodb_username',
         'password': 'password',
+        'payload': 'payload',
         'port': 'port',
         'private_key': 'private_key',
         'private_key_password': 'private_key_password',
@@ -203,7 +195,7 @@ class TargetTypeDetailsInput(object):
         'venafi_zone': 'venafi_zone'
     }
 
-    def __init__(self, artifactory_admin_apikey=None, artifactory_admin_username=None, artifactory_base_url=None, aws_access_key_id=None, aws_region=None, aws_secret_access_key=None, aws_session_token=None, azure_client_id=None, azure_client_secret=None, azure_tenant_id=None, chef_server_host_name=None, chef_server_key=None, chef_server_port=None, chef_server_url=None, chef_server_username=None, chef_skip_ssl=None, db_host_name=None, db_name=None, db_port=None, db_pwd=None, db_server_certificates=None, db_server_name=None, db_user_name=None, eks_access_key_id=None, eks_cluster_ca_certificate=None, eks_cluster_endpoint=None, eks_cluster_name=None, eks_region=None, eks_secret_access_key=None, gcp_service_account_email=None, gcp_service_account_key=None, gke_cluster_ca_certificate=None, gke_cluster_endpoint=None, gke_cluster_name=None, gke_service_account_key=None, gke_service_account_name=None, host=None, k8s_bearer_token=None, k8s_cluster_ca_certificate=None, k8s_cluster_endpoint=None, ldap_access_id=None, ldap_anonymous_search=None, ldap_audience=None, ldap_bind_dn=None, ldap_bind_password=None, ldap_certificate=None, ldap_group_attr=None, ldap_group_dn=None, ldap_group_filter=None, ldap_private_key=None, ldap_token_expiration=None, ldap_url=None, ldap_user_attr=None, ldap_user_dn=None, mongodb_atlas_api_private_key=None, mongodb_atlas_api_public_key=None, mongodb_atlas_project_id=None, mongodb_db_name=None, mongodb_default_auth_db=None, mongodb_host_port=None, mongodb_is_atlas=None, mongodb_password=None, mongodb_uri_connection=None, mongodb_uri_options=None, mongodb_username=None, password=None, port=None, private_key=None, private_key_password=None, rabbitmq_server_password=None, rabbitmq_server_uri=None, rabbitmq_server_user=None, sf_account=None, url=None, use_gw_cloud_identity=None, username=None, venafi_api_key=None, venafi_base_url=None, venafi_tpp_password=None, venafi_tpp_username=None, venafi_use_tpp=None, venafi_zone=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, artifactory_admin_apikey=None, artifactory_admin_username=None, artifactory_base_url=None, aws_access_key_id=None, aws_region=None, aws_secret_access_key=None, aws_session_token=None, azure_client_id=None, azure_client_secret=None, azure_tenant_id=None, chef_server_host_name=None, chef_server_key=None, chef_server_port=None, chef_server_url=None, chef_server_username=None, chef_skip_ssl=None, db_host_name=None, db_name=None, db_port=None, db_pwd=None, db_server_certificates=None, db_server_name=None, db_user_name=None, eks_access_key_id=None, eks_cluster_ca_certificate=None, eks_cluster_endpoint=None, eks_cluster_name=None, eks_region=None, eks_secret_access_key=None, gcp_service_account_email=None, gcp_service_account_key=None, gke_cluster_ca_certificate=None, gke_cluster_endpoint=None, gke_cluster_name=None, gke_service_account_key=None, gke_service_account_name=None, host=None, k8s_bearer_token=None, k8s_cluster_ca_certificate=None, k8s_cluster_endpoint=None, ldap_access_id=None, ldap_anonymous_search=None, ldap_audience=None, ldap_bind_dn=None, ldap_bind_password=None, ldap_certificate=None, ldap_private_key=None, ldap_token_expiration=None, ldap_url=None, mongodb_atlas_api_private_key=None, mongodb_atlas_api_public_key=None, mongodb_atlas_project_id=None, mongodb_db_name=None, mongodb_default_auth_db=None, mongodb_host_port=None, mongodb_is_atlas=None, mongodb_password=None, mongodb_uri_connection=None, mongodb_uri_options=None, mongodb_username=None, password=None, payload=None, port=None, private_key=None, private_key_password=None, rabbitmq_server_password=None, rabbitmq_server_uri=None, rabbitmq_server_user=None, sf_account=None, url=None, use_gw_cloud_identity=None, username=None, venafi_api_key=None, venafi_base_url=None, venafi_tpp_password=None, venafi_tpp_username=None, venafi_use_tpp=None, venafi_zone=None, local_vars_configuration=None):  # noqa: E501
         """TargetTypeDetailsInput - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -255,14 +247,9 @@ class TargetTypeDetailsInput(object):
         self._ldap_bind_dn = None
         self._ldap_bind_password = None
         self._ldap_certificate = None
-        self._ldap_group_attr = None
-        self._ldap_group_dn = None
-        self._ldap_group_filter = None
         self._ldap_private_key = None
         self._ldap_token_expiration = None
         self._ldap_url = None
-        self._ldap_user_attr = None
-        self._ldap_user_dn = None
         self._mongodb_atlas_api_private_key = None
         self._mongodb_atlas_api_public_key = None
         self._mongodb_atlas_project_id = None
@@ -275,6 +262,7 @@ class TargetTypeDetailsInput(object):
         self._mongodb_uri_options = None
         self._mongodb_username = None
         self._password = None
+        self._payload = None
         self._port = None
         self._private_key = None
         self._private_key_password = None
@@ -385,22 +373,12 @@ class TargetTypeDetailsInput(object):
             self.ldap_bind_password = ldap_bind_password
         if ldap_certificate is not None:
             self.ldap_certificate = ldap_certificate
-        if ldap_group_attr is not None:
-            self.ldap_group_attr = ldap_group_attr
-        if ldap_group_dn is not None:
-            self.ldap_group_dn = ldap_group_dn
-        if ldap_group_filter is not None:
-            self.ldap_group_filter = ldap_group_filter
         if ldap_private_key is not None:
             self.ldap_private_key = ldap_private_key
         if ldap_token_expiration is not None:
             self.ldap_token_expiration = ldap_token_expiration
         if ldap_url is not None:
             self.ldap_url = ldap_url
-        if ldap_user_attr is not None:
-            self.ldap_user_attr = ldap_user_attr
-        if ldap_user_dn is not None:
-            self.ldap_user_dn = ldap_user_dn
         if mongodb_atlas_api_private_key is not None:
             self.mongodb_atlas_api_private_key = mongodb_atlas_api_private_key
         if mongodb_atlas_api_public_key is not None:
@@ -425,6 +403,8 @@ class TargetTypeDetailsInput(object):
             self.mongodb_username = mongodb_username
         if password is not None:
             self.password = password
+        if payload is not None:
+            self.payload = payload
         if port is not None:
             self.port = port
         if private_key is not None:
@@ -1429,69 +1409,6 @@ class TargetTypeDetailsInput(object):
         self._ldap_certificate = ldap_certificate
 
     @property
-    def ldap_group_attr(self):
-        """Gets the ldap_group_attr of this TargetTypeDetailsInput.  # noqa: E501
-
-
-        :return: The ldap_group_attr of this TargetTypeDetailsInput.  # noqa: E501
-        :rtype: str
-        """
-        return self._ldap_group_attr
-
-    @ldap_group_attr.setter
-    def ldap_group_attr(self, ldap_group_attr):
-        """Sets the ldap_group_attr of this TargetTypeDetailsInput.
-
-
-        :param ldap_group_attr: The ldap_group_attr of this TargetTypeDetailsInput.  # noqa: E501
-        :type: str
-        """
-
-        self._ldap_group_attr = ldap_group_attr
-
-    @property
-    def ldap_group_dn(self):
-        """Gets the ldap_group_dn of this TargetTypeDetailsInput.  # noqa: E501
-
-
-        :return: The ldap_group_dn of this TargetTypeDetailsInput.  # noqa: E501
-        :rtype: str
-        """
-        return self._ldap_group_dn
-
-    @ldap_group_dn.setter
-    def ldap_group_dn(self, ldap_group_dn):
-        """Sets the ldap_group_dn of this TargetTypeDetailsInput.
-
-
-        :param ldap_group_dn: The ldap_group_dn of this TargetTypeDetailsInput.  # noqa: E501
-        :type: str
-        """
-
-        self._ldap_group_dn = ldap_group_dn
-
-    @property
-    def ldap_group_filter(self):
-        """Gets the ldap_group_filter of this TargetTypeDetailsInput.  # noqa: E501
-
-
-        :return: The ldap_group_filter of this TargetTypeDetailsInput.  # noqa: E501
-        :rtype: str
-        """
-        return self._ldap_group_filter
-
-    @ldap_group_filter.setter
-    def ldap_group_filter(self, ldap_group_filter):
-        """Sets the ldap_group_filter of this TargetTypeDetailsInput.
-
-
-        :param ldap_group_filter: The ldap_group_filter of this TargetTypeDetailsInput.  # noqa: E501
-        :type: str
-        """
-
-        self._ldap_group_filter = ldap_group_filter
-
-    @property
     def ldap_private_key(self):
         """Gets the ldap_private_key of this TargetTypeDetailsInput.  # noqa: E501
 
@@ -1553,48 +1470,6 @@ class TargetTypeDetailsInput(object):
         """
 
         self._ldap_url = ldap_url
-
-    @property
-    def ldap_user_attr(self):
-        """Gets the ldap_user_attr of this TargetTypeDetailsInput.  # noqa: E501
-
-
-        :return: The ldap_user_attr of this TargetTypeDetailsInput.  # noqa: E501
-        :rtype: str
-        """
-        return self._ldap_user_attr
-
-    @ldap_user_attr.setter
-    def ldap_user_attr(self, ldap_user_attr):
-        """Sets the ldap_user_attr of this TargetTypeDetailsInput.
-
-
-        :param ldap_user_attr: The ldap_user_attr of this TargetTypeDetailsInput.  # noqa: E501
-        :type: str
-        """
-
-        self._ldap_user_attr = ldap_user_attr
-
-    @property
-    def ldap_user_dn(self):
-        """Gets the ldap_user_dn of this TargetTypeDetailsInput.  # noqa: E501
-
-
-        :return: The ldap_user_dn of this TargetTypeDetailsInput.  # noqa: E501
-        :rtype: str
-        """
-        return self._ldap_user_dn
-
-    @ldap_user_dn.setter
-    def ldap_user_dn(self, ldap_user_dn):
-        """Sets the ldap_user_dn of this TargetTypeDetailsInput.
-
-
-        :param ldap_user_dn: The ldap_user_dn of this TargetTypeDetailsInput.  # noqa: E501
-        :type: str
-        """
-
-        self._ldap_user_dn = ldap_user_dn
 
     @property
     def mongodb_atlas_api_private_key(self):
@@ -1853,6 +1728,27 @@ class TargetTypeDetailsInput(object):
         """
 
         self._password = password
+
+    @property
+    def payload(self):
+        """Gets the payload of this TargetTypeDetailsInput.  # noqa: E501
+
+
+        :return: The payload of this TargetTypeDetailsInput.  # noqa: E501
+        :rtype: str
+        """
+        return self._payload
+
+    @payload.setter
+    def payload(self, payload):
+        """Sets the payload of this TargetTypeDetailsInput.
+
+
+        :param payload: The payload of this TargetTypeDetailsInput.  # noqa: E501
+        :type: str
+        """
+
+        self._payload = payload
 
     @property
     def port(self):

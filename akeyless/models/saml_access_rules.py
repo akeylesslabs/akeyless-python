@@ -34,6 +34,7 @@ class SAMLAccessRules(object):
                             and the value is json key in definition.
     """
     openapi_types = {
+        'allowed_redirect_ur_is': 'list[str]',
         'bound_attributes': 'list[SAMLAttribute]',
         'idp_metadata_url': 'str',
         'idp_metadata_xml': 'str',
@@ -41,24 +42,28 @@ class SAMLAccessRules(object):
     }
 
     attribute_map = {
+        'allowed_redirect_ur_is': 'allowed_redirect_URIs',
         'bound_attributes': 'bound_attributes',
         'idp_metadata_url': 'idp_metadata_url',
         'idp_metadata_xml': 'idp_metadata_xml',
         'unique_identifier': 'unique_identifier'
     }
 
-    def __init__(self, bound_attributes=None, idp_metadata_url=None, idp_metadata_xml=None, unique_identifier=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, allowed_redirect_ur_is=None, bound_attributes=None, idp_metadata_url=None, idp_metadata_xml=None, unique_identifier=None, local_vars_configuration=None):  # noqa: E501
         """SAMLAccessRules - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
+        self._allowed_redirect_ur_is = None
         self._bound_attributes = None
         self._idp_metadata_url = None
         self._idp_metadata_xml = None
         self._unique_identifier = None
         self.discriminator = None
 
+        if allowed_redirect_ur_is is not None:
+            self.allowed_redirect_ur_is = allowed_redirect_ur_is
         if bound_attributes is not None:
             self.bound_attributes = bound_attributes
         if idp_metadata_url is not None:
@@ -67,6 +72,29 @@ class SAMLAccessRules(object):
             self.idp_metadata_xml = idp_metadata_xml
         if unique_identifier is not None:
             self.unique_identifier = unique_identifier
+
+    @property
+    def allowed_redirect_ur_is(self):
+        """Gets the allowed_redirect_ur_is of this SAMLAccessRules.  # noqa: E501
+
+        Allowed redirect URIs after the authentication  # noqa: E501
+
+        :return: The allowed_redirect_ur_is of this SAMLAccessRules.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._allowed_redirect_ur_is
+
+    @allowed_redirect_ur_is.setter
+    def allowed_redirect_ur_is(self, allowed_redirect_ur_is):
+        """Sets the allowed_redirect_ur_is of this SAMLAccessRules.
+
+        Allowed redirect URIs after the authentication  # noqa: E501
+
+        :param allowed_redirect_ur_is: The allowed_redirect_ur_is of this SAMLAccessRules.  # noqa: E501
+        :type: list[str]
+        """
+
+        self._allowed_redirect_ur_is = allowed_redirect_ur_is
 
     @property
     def bound_attributes(self):

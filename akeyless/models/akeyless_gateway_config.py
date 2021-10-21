@@ -39,6 +39,7 @@ class AkeylessGatewayConfig(object):
         'cf': 'CFConfigPart',
         'config_protection_key_name': 'str',
         'general': 'GeneralConfigPart',
+        'k8s_auths': 'K8SAuthsConfigPart',
         'kmip_clients': 'KMIPConfigPart',
         'ldap': 'LdapConfigPart',
         'leadership': 'LeadershipConfigPart',
@@ -57,6 +58,7 @@ class AkeylessGatewayConfig(object):
         'cf': 'cf',
         'config_protection_key_name': 'config_protection_key_name',
         'general': 'general',
+        'k8s_auths': 'k8s_auths',
         'kmip_clients': 'kmip_clients',
         'ldap': 'ldap',
         'leadership': 'leadership',
@@ -69,7 +71,7 @@ class AkeylessGatewayConfig(object):
         'version': 'version'
     }
 
-    def __init__(self, admins=None, cache=None, cf=None, config_protection_key_name=None, general=None, kmip_clients=None, ldap=None, leadership=None, log_forwarding=None, migrations=None, producers=None, rotators=None, saml=None, uidentity=None, version=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, admins=None, cache=None, cf=None, config_protection_key_name=None, general=None, k8s_auths=None, kmip_clients=None, ldap=None, leadership=None, log_forwarding=None, migrations=None, producers=None, rotators=None, saml=None, uidentity=None, version=None, local_vars_configuration=None):  # noqa: E501
         """AkeylessGatewayConfig - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -80,6 +82,7 @@ class AkeylessGatewayConfig(object):
         self._cf = None
         self._config_protection_key_name = None
         self._general = None
+        self._k8s_auths = None
         self._kmip_clients = None
         self._ldap = None
         self._leadership = None
@@ -102,6 +105,8 @@ class AkeylessGatewayConfig(object):
             self.config_protection_key_name = config_protection_key_name
         if general is not None:
             self.general = general
+        if k8s_auths is not None:
+            self.k8s_auths = k8s_auths
         if kmip_clients is not None:
             self.kmip_clients = kmip_clients
         if ldap is not None:
@@ -227,6 +232,27 @@ class AkeylessGatewayConfig(object):
         """
 
         self._general = general
+
+    @property
+    def k8s_auths(self):
+        """Gets the k8s_auths of this AkeylessGatewayConfig.  # noqa: E501
+
+
+        :return: The k8s_auths of this AkeylessGatewayConfig.  # noqa: E501
+        :rtype: K8SAuthsConfigPart
+        """
+        return self._k8s_auths
+
+    @k8s_auths.setter
+    def k8s_auths(self, k8s_auths):
+        """Sets the k8s_auths of this AkeylessGatewayConfig.
+
+
+        :param k8s_auths: The k8s_auths of this AkeylessGatewayConfig.  # noqa: E501
+        :type: K8SAuthsConfigPart
+        """
+
+        self._k8s_auths = k8s_auths
 
     @property
     def kmip_clients(self):

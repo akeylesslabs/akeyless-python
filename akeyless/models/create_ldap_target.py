@@ -39,9 +39,6 @@ class CreateLdapTarget(object):
         'bind_dn_password': 'str',
         'comment': 'str',
         'enable_anonym_search': 'bool',
-        'group_attribute': 'str',
-        'group_dn': 'str',
-        'group_filter': 'str',
         'key': 'str',
         'ldap_ca_cert': 'str',
         'ldap_url': 'str',
@@ -51,8 +48,6 @@ class CreateLdapTarget(object):
         'token': 'str',
         'token_expiration': 'str',
         'uid_token': 'str',
-        'user_attribute': 'str',
-        'user_dn': 'str',
         'username': 'str'
     }
 
@@ -62,9 +57,6 @@ class CreateLdapTarget(object):
         'bind_dn_password': 'bind-dn-password',
         'comment': 'comment',
         'enable_anonym_search': 'enable-anonym-search',
-        'group_attribute': 'group-attribute',
-        'group_dn': 'group-dn',
-        'group_filter': 'group-filter',
         'key': 'key',
         'ldap_ca_cert': 'ldap-ca-cert',
         'ldap_url': 'ldap-url',
@@ -74,12 +66,10 @@ class CreateLdapTarget(object):
         'token': 'token',
         'token_expiration': 'token-expiration',
         'uid_token': 'uid-token',
-        'user_attribute': 'user-attribute',
-        'user_dn': 'user-dn',
         'username': 'username'
     }
 
-    def __init__(self, access_id=None, bind_dn=None, bind_dn_password=None, comment=None, enable_anonym_search=None, group_attribute=None, group_dn=None, group_filter=None, key=None, ldap_ca_cert=None, ldap_url=None, name=None, password=None, private_key=None, token=None, token_expiration=None, uid_token=None, user_attribute=None, user_dn=None, username=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, access_id=None, bind_dn=None, bind_dn_password=None, comment=None, enable_anonym_search=None, key=None, ldap_ca_cert=None, ldap_url=None, name=None, password=None, private_key=None, token=None, token_expiration=None, uid_token=None, username=None, local_vars_configuration=None):  # noqa: E501
         """CreateLdapTarget - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -90,9 +80,6 @@ class CreateLdapTarget(object):
         self._bind_dn_password = None
         self._comment = None
         self._enable_anonym_search = None
-        self._group_attribute = None
-        self._group_dn = None
-        self._group_filter = None
         self._key = None
         self._ldap_ca_cert = None
         self._ldap_url = None
@@ -102,26 +89,16 @@ class CreateLdapTarget(object):
         self._token = None
         self._token_expiration = None
         self._uid_token = None
-        self._user_attribute = None
-        self._user_dn = None
         self._username = None
         self.discriminator = None
 
         self.access_id = access_id
-        if bind_dn is not None:
-            self.bind_dn = bind_dn
-        if bind_dn_password is not None:
-            self.bind_dn_password = bind_dn_password
+        self.bind_dn = bind_dn
+        self.bind_dn_password = bind_dn_password
         if comment is not None:
             self.comment = comment
         if enable_anonym_search is not None:
             self.enable_anonym_search = enable_anonym_search
-        if group_attribute is not None:
-            self.group_attribute = group_attribute
-        if group_dn is not None:
-            self.group_dn = group_dn
-        if group_filter is not None:
-            self.group_filter = group_filter
         if key is not None:
             self.key = key
         if ldap_ca_cert is not None:
@@ -138,9 +115,6 @@ class CreateLdapTarget(object):
             self.token_expiration = token_expiration
         if uid_token is not None:
             self.uid_token = uid_token
-        if user_attribute is not None:
-            self.user_attribute = user_attribute
-        self.user_dn = user_dn
         if username is not None:
             self.username = username
 
@@ -189,6 +163,8 @@ class CreateLdapTarget(object):
         :param bind_dn: The bind_dn of this CreateLdapTarget.  # noqa: E501
         :type: str
         """
+        if self.local_vars_configuration.client_side_validation and bind_dn is None:  # noqa: E501
+            raise ValueError("Invalid value for `bind_dn`, must not be `None`")  # noqa: E501
 
         self._bind_dn = bind_dn
 
@@ -212,6 +188,8 @@ class CreateLdapTarget(object):
         :param bind_dn_password: The bind_dn_password of this CreateLdapTarget.  # noqa: E501
         :type: str
         """
+        if self.local_vars_configuration.client_side_validation and bind_dn_password is None:  # noqa: E501
+            raise ValueError("Invalid value for `bind_dn_password`, must not be `None`")  # noqa: E501
 
         self._bind_dn_password = bind_dn_password
 
@@ -260,75 +238,6 @@ class CreateLdapTarget(object):
         """
 
         self._enable_anonym_search = enable_anonym_search
-
-    @property
-    def group_attribute(self):
-        """Gets the group_attribute of this CreateLdapTarget.  # noqa: E501
-
-        Group attribute  # noqa: E501
-
-        :return: The group_attribute of this CreateLdapTarget.  # noqa: E501
-        :rtype: str
-        """
-        return self._group_attribute
-
-    @group_attribute.setter
-    def group_attribute(self, group_attribute):
-        """Sets the group_attribute of this CreateLdapTarget.
-
-        Group attribute  # noqa: E501
-
-        :param group_attribute: The group_attribute of this CreateLdapTarget.  # noqa: E501
-        :type: str
-        """
-
-        self._group_attribute = group_attribute
-
-    @property
-    def group_dn(self):
-        """Gets the group_dn of this CreateLdapTarget.  # noqa: E501
-
-        Group DN  # noqa: E501
-
-        :return: The group_dn of this CreateLdapTarget.  # noqa: E501
-        :rtype: str
-        """
-        return self._group_dn
-
-    @group_dn.setter
-    def group_dn(self, group_dn):
-        """Sets the group_dn of this CreateLdapTarget.
-
-        Group DN  # noqa: E501
-
-        :param group_dn: The group_dn of this CreateLdapTarget.  # noqa: E501
-        :type: str
-        """
-
-        self._group_dn = group_dn
-
-    @property
-    def group_filter(self):
-        """Gets the group_filter of this CreateLdapTarget.  # noqa: E501
-
-        Group attribute  # noqa: E501
-
-        :return: The group_filter of this CreateLdapTarget.  # noqa: E501
-        :rtype: str
-        """
-        return self._group_filter
-
-    @group_filter.setter
-    def group_filter(self, group_filter):
-        """Sets the group_filter of this CreateLdapTarget.
-
-        Group attribute  # noqa: E501
-
-        :param group_filter: The group_filter of this CreateLdapTarget.  # noqa: E501
-        :type: str
-        """
-
-        self._group_filter = group_filter
 
     @property
     def key(self):
@@ -540,54 +449,6 @@ class CreateLdapTarget(object):
         """
 
         self._uid_token = uid_token
-
-    @property
-    def user_attribute(self):
-        """Gets the user_attribute of this CreateLdapTarget.  # noqa: E501
-
-        User Attribute  # noqa: E501
-
-        :return: The user_attribute of this CreateLdapTarget.  # noqa: E501
-        :rtype: str
-        """
-        return self._user_attribute
-
-    @user_attribute.setter
-    def user_attribute(self, user_attribute):
-        """Sets the user_attribute of this CreateLdapTarget.
-
-        User Attribute  # noqa: E501
-
-        :param user_attribute: The user_attribute of this CreateLdapTarget.  # noqa: E501
-        :type: str
-        """
-
-        self._user_attribute = user_attribute
-
-    @property
-    def user_dn(self):
-        """Gets the user_dn of this CreateLdapTarget.  # noqa: E501
-
-        User DN  # noqa: E501
-
-        :return: The user_dn of this CreateLdapTarget.  # noqa: E501
-        :rtype: str
-        """
-        return self._user_dn
-
-    @user_dn.setter
-    def user_dn(self, user_dn):
-        """Sets the user_dn of this CreateLdapTarget.
-
-        User DN  # noqa: E501
-
-        :param user_dn: The user_dn of this CreateLdapTarget.  # noqa: E501
-        :type: str
-        """
-        if self.local_vars_configuration.client_side_validation and user_dn is None:  # noqa: E501
-            raise ValueError("Invalid value for `user_dn`, must not be `None`")  # noqa: E501
-
-        self._user_dn = user_dn
 
     @property
     def username(self):

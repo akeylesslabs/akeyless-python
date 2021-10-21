@@ -5,6 +5,7 @@ createAuthMethodOIDC is a command that creates a new auth method that will be av
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **access_expires** | **int** | Access expiration date in Unix timestamp (select 0 for access without expiry date) | [optional] [default to 0]
+**allowed_redirect_uri** | **list[str]** | Allowed redirect URIs after the authentication | [optional] 
 **bound_ips** | **list[str]** | A CIDR whitelist of the IPs that the access is restricted to | [optional] 
 **client_id** | **str** | Client ID | [optional] 
 **client_secret** | **str** | Client Secret | [optional] 

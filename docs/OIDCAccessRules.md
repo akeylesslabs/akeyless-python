@@ -4,6 +4,7 @@ OIDCAccessRules contains access rules specific to Open Id Connect authentication
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**allowed_redirect_ur_is** | **list[str]** | Allowed redirect URIs after the authentication | [optional] 
 **bound_claims** | [**list[OIDCCustomClaim]**](OIDCCustomClaim.md) | The claims that login is restricted to. | [optional] 
 **client_id** | **str** | Client ID | [optional] 
 **client_secret** | **str** | Client Secret | [optional] 

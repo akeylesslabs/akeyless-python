@@ -44,6 +44,7 @@ class AuthMethodAccessInfo(object):
         'force_sub_claims': 'bool',
         'gcp_access_rules': 'GCPAccessRules',
         'huawei_access_rules': 'HuaweiAccessRules',
+        'k8s_access_rules': 'KubernetesAccessRules',
         'ldap_access_rules': 'LDAPAccessRules',
         'oauth2_access_rules': 'OAuth2AccessRules',
         'oidc_access_rules': 'OIDCAccessRules',
@@ -63,6 +64,7 @@ class AuthMethodAccessInfo(object):
         'force_sub_claims': 'force_sub_claims',
         'gcp_access_rules': 'gcp_access_rules',
         'huawei_access_rules': 'huawei_access_rules',
+        'k8s_access_rules': 'k8s_access_rules',
         'ldap_access_rules': 'ldap_access_rules',
         'oauth2_access_rules': 'oauth2_access_rules',
         'oidc_access_rules': 'oidc_access_rules',
@@ -71,7 +73,7 @@ class AuthMethodAccessInfo(object):
         'universal_identity_access_rules': 'universal_identity_access_rules'
     }
 
-    def __init__(self, access_expires=None, access_id_alias=None, api_key_access_rules=None, aws_iam_access_rules=None, azure_ad_access_rules=None, cidr_whitelist=None, email_pass_access_rules=None, force_sub_claims=None, gcp_access_rules=None, huawei_access_rules=None, ldap_access_rules=None, oauth2_access_rules=None, oidc_access_rules=None, rules_type=None, saml_access_rules=None, universal_identity_access_rules=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, access_expires=None, access_id_alias=None, api_key_access_rules=None, aws_iam_access_rules=None, azure_ad_access_rules=None, cidr_whitelist=None, email_pass_access_rules=None, force_sub_claims=None, gcp_access_rules=None, huawei_access_rules=None, k8s_access_rules=None, ldap_access_rules=None, oauth2_access_rules=None, oidc_access_rules=None, rules_type=None, saml_access_rules=None, universal_identity_access_rules=None, local_vars_configuration=None):  # noqa: E501
         """AuthMethodAccessInfo - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -87,6 +89,7 @@ class AuthMethodAccessInfo(object):
         self._force_sub_claims = None
         self._gcp_access_rules = None
         self._huawei_access_rules = None
+        self._k8s_access_rules = None
         self._ldap_access_rules = None
         self._oauth2_access_rules = None
         self._oidc_access_rules = None
@@ -115,6 +118,8 @@ class AuthMethodAccessInfo(object):
             self.gcp_access_rules = gcp_access_rules
         if huawei_access_rules is not None:
             self.huawei_access_rules = huawei_access_rules
+        if k8s_access_rules is not None:
+            self.k8s_access_rules = k8s_access_rules
         if ldap_access_rules is not None:
             self.ldap_access_rules = ldap_access_rules
         if oauth2_access_rules is not None:
@@ -341,6 +346,27 @@ class AuthMethodAccessInfo(object):
         """
 
         self._huawei_access_rules = huawei_access_rules
+
+    @property
+    def k8s_access_rules(self):
+        """Gets the k8s_access_rules of this AuthMethodAccessInfo.  # noqa: E501
+
+
+        :return: The k8s_access_rules of this AuthMethodAccessInfo.  # noqa: E501
+        :rtype: KubernetesAccessRules
+        """
+        return self._k8s_access_rules
+
+    @k8s_access_rules.setter
+    def k8s_access_rules(self, k8s_access_rules):
+        """Sets the k8s_access_rules of this AuthMethodAccessInfo.
+
+
+        :param k8s_access_rules: The k8s_access_rules of this AuthMethodAccessInfo.  # noqa: E501
+        :type: KubernetesAccessRules
+        """
+
+        self._k8s_access_rules = k8s_access_rules
 
     @property
     def ldap_access_rules(self):
