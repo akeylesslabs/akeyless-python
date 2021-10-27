@@ -43,6 +43,7 @@ class CreateSecret(object):
         'secure_access_enable': 'str',
         'secure_access_host': 'list[str]',
         'secure_access_ssh_creds': 'str',
+        'secure_access_ssh_user': 'str',
         'secure_access_url': 'str',
         'secure_access_web_browsing': 'bool',
         'tags': 'list[str]',
@@ -62,6 +63,7 @@ class CreateSecret(object):
         'secure_access_enable': 'secure-access-enable',
         'secure_access_host': 'secure-access-host',
         'secure_access_ssh_creds': 'secure-access-ssh-creds',
+        'secure_access_ssh_user': 'secure-access-ssh-user',
         'secure_access_url': 'secure-access-url',
         'secure_access_web_browsing': 'secure-access-web-browsing',
         'tags': 'tags',
@@ -71,7 +73,7 @@ class CreateSecret(object):
         'value': 'value'
     }
 
-    def __init__(self, metadata=None, multiline_value=None, name=None, password=None, protection_key=None, secure_access_bastion_issuer=None, secure_access_enable=None, secure_access_host=None, secure_access_ssh_creds=None, secure_access_url=None, secure_access_web_browsing=None, tags=None, token=None, uid_token=None, username=None, value=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, metadata=None, multiline_value=None, name=None, password=None, protection_key=None, secure_access_bastion_issuer=None, secure_access_enable=None, secure_access_host=None, secure_access_ssh_creds=None, secure_access_ssh_user=None, secure_access_url=None, secure_access_web_browsing=None, tags=None, token=None, uid_token=None, username=None, value=None, local_vars_configuration=None):  # noqa: E501
         """CreateSecret - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -86,6 +88,7 @@ class CreateSecret(object):
         self._secure_access_enable = None
         self._secure_access_host = None
         self._secure_access_ssh_creds = None
+        self._secure_access_ssh_user = None
         self._secure_access_url = None
         self._secure_access_web_browsing = None
         self._tags = None
@@ -112,6 +115,8 @@ class CreateSecret(object):
             self.secure_access_host = secure_access_host
         if secure_access_ssh_creds is not None:
             self.secure_access_ssh_creds = secure_access_ssh_creds
+        if secure_access_ssh_user is not None:
+            self.secure_access_ssh_user = secure_access_ssh_user
         if secure_access_url is not None:
             self.secure_access_url = secure_access_url
         if secure_access_web_browsing is not None:
@@ -326,6 +331,27 @@ class CreateSecret(object):
         """
 
         self._secure_access_ssh_creds = secure_access_ssh_creds
+
+    @property
+    def secure_access_ssh_user(self):
+        """Gets the secure_access_ssh_user of this CreateSecret.  # noqa: E501
+
+
+        :return: The secure_access_ssh_user of this CreateSecret.  # noqa: E501
+        :rtype: str
+        """
+        return self._secure_access_ssh_user
+
+    @secure_access_ssh_user.setter
+    def secure_access_ssh_user(self, secure_access_ssh_user):
+        """Sets the secure_access_ssh_user of this CreateSecret.
+
+
+        :param secure_access_ssh_user: The secure_access_ssh_user of this CreateSecret.  # noqa: E501
+        :type: str
+        """
+
+        self._secure_access_ssh_user = secure_access_ssh_user
 
     @property
     def secure_access_url(self):

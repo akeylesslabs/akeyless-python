@@ -62,6 +62,7 @@ Name | Type | Description | Notes
 **eks_region** | **str** |  | [optional] 
 **eks_secret_access_key** | **str** |  | [optional] 
 **enable_admin_rotation** | **bool** |  | [optional] 
+**externally_provided_user** | **str** |  | [optional] 
 **failure_message** | **str** |  | [optional] 
 **fixed_user_only** | **str** |  | [optional] 
 **gcp_key_algo** | **str** |  | [optional] 

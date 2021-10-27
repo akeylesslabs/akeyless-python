@@ -15,7 +15,7 @@
 
 from __future__ import absolute_import
 
-__version__ = "2.5.10"
+__version__ = "2.5.11"
 
 # import apis into sdk package
 from akeyless.api.v2_api import V2Api
@@ -224,12 +224,17 @@ from akeyless.models.gateway_get_k8_s_auth_config_output import GatewayGetK8SAut
 from akeyless.models.gateway_get_producer import GatewayGetProducer
 from akeyless.models.gateway_get_tmp_users import GatewayGetTmpUsers
 from akeyless.models.gateway_list_allowed_management_access import GatewayListAllowedManagementAccess
+from akeyless.models.gateway_list_migration import GatewayListMigration
 from akeyless.models.gateway_list_producers import GatewayListProducers
+from akeyless.models.gateway_message_queue_info import GatewayMessageQueueInfo
+from akeyless.models.gateway_migration_list_output import GatewayMigrationListOutput
+from akeyless.models.gateway_migration_sync_output import GatewayMigrationSyncOutput
 from akeyless.models.gateway_revoke_tmp_users import GatewayRevokeTmpUsers
 from akeyless.models.gateway_start_producer import GatewayStartProducer
 from akeyless.models.gateway_start_producer_output import GatewayStartProducerOutput
 from akeyless.models.gateway_stop_producer import GatewayStopProducer
 from akeyless.models.gateway_stop_producer_output import GatewayStopProducerOutput
+from akeyless.models.gateway_sync_migration import GatewaySyncMigration
 from akeyless.models.gateway_update_item_output import GatewayUpdateItemOutput
 from akeyless.models.gateway_update_tmp_users import GatewayUpdateTmpUsers
 from akeyless.models.gen_customer_fragment import GenCustomerFragment

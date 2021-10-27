@@ -44,6 +44,7 @@ class AkeylessGatewayConfig(object):
         'ldap': 'LdapConfigPart',
         'leadership': 'LeadershipConfigPart',
         'log_forwarding': 'LogForwardingConfigPart',
+        'message_queue_info': 'GatewayMessageQueueInfo',
         'migrations': 'MigrationsConfigPart',
         'producers': 'ProducersConfigPart',
         'rotators': 'RotatorsConfigPart',
@@ -63,6 +64,7 @@ class AkeylessGatewayConfig(object):
         'ldap': 'ldap',
         'leadership': 'leadership',
         'log_forwarding': 'log_forwarding',
+        'message_queue_info': 'message_queue_info',
         'migrations': 'migrations',
         'producers': 'producers',
         'rotators': 'rotators',
@@ -71,7 +73,7 @@ class AkeylessGatewayConfig(object):
         'version': 'version'
     }
 
-    def __init__(self, admins=None, cache=None, cf=None, config_protection_key_name=None, general=None, k8s_auths=None, kmip_clients=None, ldap=None, leadership=None, log_forwarding=None, migrations=None, producers=None, rotators=None, saml=None, uidentity=None, version=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, admins=None, cache=None, cf=None, config_protection_key_name=None, general=None, k8s_auths=None, kmip_clients=None, ldap=None, leadership=None, log_forwarding=None, message_queue_info=None, migrations=None, producers=None, rotators=None, saml=None, uidentity=None, version=None, local_vars_configuration=None):  # noqa: E501
         """AkeylessGatewayConfig - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -87,6 +89,7 @@ class AkeylessGatewayConfig(object):
         self._ldap = None
         self._leadership = None
         self._log_forwarding = None
+        self._message_queue_info = None
         self._migrations = None
         self._producers = None
         self._rotators = None
@@ -115,6 +118,8 @@ class AkeylessGatewayConfig(object):
             self.leadership = leadership
         if log_forwarding is not None:
             self.log_forwarding = log_forwarding
+        if message_queue_info is not None:
+            self.message_queue_info = message_queue_info
         if migrations is not None:
             self.migrations = migrations
         if producers is not None:
@@ -337,6 +342,27 @@ class AkeylessGatewayConfig(object):
         """
 
         self._log_forwarding = log_forwarding
+
+    @property
+    def message_queue_info(self):
+        """Gets the message_queue_info of this AkeylessGatewayConfig.  # noqa: E501
+
+
+        :return: The message_queue_info of this AkeylessGatewayConfig.  # noqa: E501
+        :rtype: GatewayMessageQueueInfo
+        """
+        return self._message_queue_info
+
+    @message_queue_info.setter
+    def message_queue_info(self, message_queue_info):
+        """Sets the message_queue_info of this AkeylessGatewayConfig.
+
+
+        :param message_queue_info: The message_queue_info of this AkeylessGatewayConfig.  # noqa: E501
+        :type: GatewayMessageQueueInfo
+        """
+
+        self._message_queue_info = message_queue_info
 
     @property
     def migrations(self):

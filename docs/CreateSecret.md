@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **secure_access_enable** | **str** |  | [optional] 
 **secure_access_host** | **list[str]** |  | [optional] 
 **secure_access_ssh_creds** | **str** |  | [optional] 
+**secure_access_ssh_user** | **str** |  | [optional] 
 **secure_access_url** | **str** |  | [optional] 
 **secure_access_web_browsing** | **bool** |  | [optional] 
 **tags** | **list[str]** | List of the tags attached to this secret | [optional] 

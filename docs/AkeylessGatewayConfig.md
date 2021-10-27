@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **ldap** | [**LdapConfigPart**](LdapConfigPart.md) |  | [optional] 
 **leadership** | [**LeadershipConfigPart**](LeadershipConfigPart.md) |  | [optional] 
 **log_forwarding** | [**LogForwardingConfigPart**](LogForwardingConfigPart.md) |  | [optional] 
+**message_queue_info** | [**GatewayMessageQueueInfo**](GatewayMessageQueueInfo.md) |  | [optional] 
 **migrations** | [**MigrationsConfigPart**](MigrationsConfigPart.md) |  | [optional] 
 **producers** | [**ProducersConfigPart**](ProducersConfigPart.md) |  | [optional] 
 **rotators** | [**RotatorsConfigPart**](RotatorsConfigPart.md) |  | [optional] 

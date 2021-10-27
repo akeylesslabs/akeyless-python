@@ -46,6 +46,7 @@ class GatewayCreateProducerRdp(object):
         'secure_access_enable': 'str',
         'secure_access_host': 'list[str]',
         'secure_access_rdp_domain': 'str',
+        'secure_access_rdp_user': 'str',
         'target_name': 'str',
         'token': 'str',
         'uid_token': 'str',
@@ -66,6 +67,7 @@ class GatewayCreateProducerRdp(object):
         'secure_access_enable': 'secure-access-enable',
         'secure_access_host': 'secure-access-host',
         'secure_access_rdp_domain': 'secure-access-rdp-domain',
+        'secure_access_rdp_user': 'secure-access-rdp-user',
         'target_name': 'target-name',
         'token': 'token',
         'uid_token': 'uid-token',
@@ -73,7 +75,7 @@ class GatewayCreateProducerRdp(object):
         'username': 'username'
     }
 
-    def __init__(self, fixed_user_only='false', name=None, password=None, producer_encryption_key_name=None, rdp_admin_name=None, rdp_admin_pwd=None, rdp_host_name=None, rdp_host_port='22', rdp_user_groups=None, secure_access_enable=None, secure_access_host=None, secure_access_rdp_domain=None, target_name=None, token=None, uid_token=None, user_ttl='60m', username=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, fixed_user_only='false', name=None, password=None, producer_encryption_key_name=None, rdp_admin_name=None, rdp_admin_pwd=None, rdp_host_name=None, rdp_host_port='22', rdp_user_groups=None, secure_access_enable=None, secure_access_host=None, secure_access_rdp_domain=None, secure_access_rdp_user=None, target_name=None, token=None, uid_token=None, user_ttl='60m', username=None, local_vars_configuration=None):  # noqa: E501
         """GatewayCreateProducerRdp - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -91,6 +93,7 @@ class GatewayCreateProducerRdp(object):
         self._secure_access_enable = None
         self._secure_access_host = None
         self._secure_access_rdp_domain = None
+        self._secure_access_rdp_user = None
         self._target_name = None
         self._token = None
         self._uid_token = None
@@ -121,6 +124,8 @@ class GatewayCreateProducerRdp(object):
             self.secure_access_host = secure_access_host
         if secure_access_rdp_domain is not None:
             self.secure_access_rdp_domain = secure_access_rdp_domain
+        if secure_access_rdp_user is not None:
+            self.secure_access_rdp_user = secure_access_rdp_user
         if target_name is not None:
             self.target_name = target_name
         if token is not None:
@@ -403,6 +408,27 @@ class GatewayCreateProducerRdp(object):
         """
 
         self._secure_access_rdp_domain = secure_access_rdp_domain
+
+    @property
+    def secure_access_rdp_user(self):
+        """Gets the secure_access_rdp_user of this GatewayCreateProducerRdp.  # noqa: E501
+
+
+        :return: The secure_access_rdp_user of this GatewayCreateProducerRdp.  # noqa: E501
+        :rtype: str
+        """
+        return self._secure_access_rdp_user
+
+    @secure_access_rdp_user.setter
+    def secure_access_rdp_user(self, secure_access_rdp_user):
+        """Sets the secure_access_rdp_user of this GatewayCreateProducerRdp.
+
+
+        :param secure_access_rdp_user: The secure_access_rdp_user of this GatewayCreateProducerRdp.  # noqa: E501
+        :type: str
+        """
+
+        self._secure_access_rdp_user = secure_access_rdp_user
 
     @property
     def target_name(self):

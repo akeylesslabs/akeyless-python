@@ -43,6 +43,7 @@ class ConfigHash(object):
         'ldap': 'str',
         'leadership': 'str',
         'log_forwarding': 'str',
+        'm_queue': 'str',
         'migrations': 'str',
         'producers': 'object',
         'rotators': 'object',
@@ -60,6 +61,7 @@ class ConfigHash(object):
         'ldap': 'ldap',
         'leadership': 'leadership',
         'log_forwarding': 'log_forwarding',
+        'm_queue': 'm_queue',
         'migrations': 'migrations',
         'producers': 'producers',
         'rotators': 'rotators',
@@ -67,7 +69,7 @@ class ConfigHash(object):
         'universal_identity': 'universal_identity'
     }
 
-    def __init__(self, admins=None, cache=None, customer_fragements=None, general=None, k8s_auths=None, kmip=None, ldap=None, leadership=None, log_forwarding=None, migrations=None, producers=None, rotators=None, saml=None, universal_identity=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, admins=None, cache=None, customer_fragements=None, general=None, k8s_auths=None, kmip=None, ldap=None, leadership=None, log_forwarding=None, m_queue=None, migrations=None, producers=None, rotators=None, saml=None, universal_identity=None, local_vars_configuration=None):  # noqa: E501
         """ConfigHash - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -82,6 +84,7 @@ class ConfigHash(object):
         self._ldap = None
         self._leadership = None
         self._log_forwarding = None
+        self._m_queue = None
         self._migrations = None
         self._producers = None
         self._rotators = None
@@ -107,6 +110,8 @@ class ConfigHash(object):
             self.leadership = leadership
         if log_forwarding is not None:
             self.log_forwarding = log_forwarding
+        if m_queue is not None:
+            self.m_queue = m_queue
         if migrations is not None:
             self.migrations = migrations
         if producers is not None:
@@ -306,6 +311,27 @@ class ConfigHash(object):
         """
 
         self._log_forwarding = log_forwarding
+
+    @property
+    def m_queue(self):
+        """Gets the m_queue of this ConfigHash.  # noqa: E501
+
+
+        :return: The m_queue of this ConfigHash.  # noqa: E501
+        :rtype: str
+        """
+        return self._m_queue
+
+    @m_queue.setter
+    def m_queue(self, m_queue):
+        """Sets the m_queue of this ConfigHash.
+
+
+        :param m_queue: The m_queue of this ConfigHash.  # noqa: E501
+        :type: str
+        """
+
+        self._m_queue = m_queue
 
     @property
     def migrations(self):

@@ -36,6 +36,7 @@ class SecureRemoteAccess(object):
     openapi_types = {
         'account_id': 'str',
         'allow_port_forwarding': 'bool',
+        'allow_providing_external_username': 'bool',
         'bastion_api': 'str',
         'bastion_issuer': 'str',
         'bastion_issuer_id': 'int',
@@ -51,6 +52,7 @@ class SecureRemoteAccess(object):
         'is_web': 'bool',
         'isolated': 'bool',
         'native': 'bool',
+        'rdp_user': 'str',
         'region': 'str',
         'schema': 'str',
         'ssh_password': 'bool',
@@ -63,6 +65,7 @@ class SecureRemoteAccess(object):
     attribute_map = {
         'account_id': 'account_id',
         'allow_port_forwarding': 'allow_port_forwarding',
+        'allow_providing_external_username': 'allow_providing_external_username',
         'bastion_api': 'bastion_api',
         'bastion_issuer': 'bastion_issuer',
         'bastion_issuer_id': 'bastion_issuer_id',
@@ -78,6 +81,7 @@ class SecureRemoteAccess(object):
         'is_web': 'is_web',
         'isolated': 'isolated',
         'native': 'native',
+        'rdp_user': 'rdp_user',
         'region': 'region',
         'schema': 'schema',
         'ssh_password': 'ssh_password',
@@ -87,7 +91,7 @@ class SecureRemoteAccess(object):
         'use_internal_bastion': 'use_internal_bastion'
     }
 
-    def __init__(self, account_id=None, allow_port_forwarding=None, bastion_api=None, bastion_issuer=None, bastion_issuer_id=None, bastion_ssh=None, category=None, dashboard_url=None, db_name=None, domain=None, enable=None, endpoint=None, host=None, is_cli=None, is_web=None, isolated=None, native=None, region=None, schema=None, ssh_password=None, ssh_private_key=None, ssh_user=None, url=None, use_internal_bastion=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, account_id=None, allow_port_forwarding=None, allow_providing_external_username=None, bastion_api=None, bastion_issuer=None, bastion_issuer_id=None, bastion_ssh=None, category=None, dashboard_url=None, db_name=None, domain=None, enable=None, endpoint=None, host=None, is_cli=None, is_web=None, isolated=None, native=None, rdp_user=None, region=None, schema=None, ssh_password=None, ssh_private_key=None, ssh_user=None, url=None, use_internal_bastion=None, local_vars_configuration=None):  # noqa: E501
         """SecureRemoteAccess - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -95,6 +99,7 @@ class SecureRemoteAccess(object):
 
         self._account_id = None
         self._allow_port_forwarding = None
+        self._allow_providing_external_username = None
         self._bastion_api = None
         self._bastion_issuer = None
         self._bastion_issuer_id = None
@@ -110,6 +115,7 @@ class SecureRemoteAccess(object):
         self._is_web = None
         self._isolated = None
         self._native = None
+        self._rdp_user = None
         self._region = None
         self._schema = None
         self._ssh_password = None
@@ -123,6 +129,8 @@ class SecureRemoteAccess(object):
             self.account_id = account_id
         if allow_port_forwarding is not None:
             self.allow_port_forwarding = allow_port_forwarding
+        if allow_providing_external_username is not None:
+            self.allow_providing_external_username = allow_providing_external_username
         if bastion_api is not None:
             self.bastion_api = bastion_api
         if bastion_issuer is not None:
@@ -153,6 +161,8 @@ class SecureRemoteAccess(object):
             self.isolated = isolated
         if native is not None:
             self.native = native
+        if rdp_user is not None:
+            self.rdp_user = rdp_user
         if region is not None:
             self.region = region
         if schema is not None:
@@ -209,6 +219,27 @@ class SecureRemoteAccess(object):
         """
 
         self._allow_port_forwarding = allow_port_forwarding
+
+    @property
+    def allow_providing_external_username(self):
+        """Gets the allow_providing_external_username of this SecureRemoteAccess.  # noqa: E501
+
+
+        :return: The allow_providing_external_username of this SecureRemoteAccess.  # noqa: E501
+        :rtype: bool
+        """
+        return self._allow_providing_external_username
+
+    @allow_providing_external_username.setter
+    def allow_providing_external_username(self, allow_providing_external_username):
+        """Sets the allow_providing_external_username of this SecureRemoteAccess.
+
+
+        :param allow_providing_external_username: The allow_providing_external_username of this SecureRemoteAccess.  # noqa: E501
+        :type: bool
+        """
+
+        self._allow_providing_external_username = allow_providing_external_username
 
     @property
     def bastion_api(self):
@@ -524,6 +555,27 @@ class SecureRemoteAccess(object):
         """
 
         self._native = native
+
+    @property
+    def rdp_user(self):
+        """Gets the rdp_user of this SecureRemoteAccess.  # noqa: E501
+
+
+        :return: The rdp_user of this SecureRemoteAccess.  # noqa: E501
+        :rtype: str
+        """
+        return self._rdp_user
+
+    @rdp_user.setter
+    def rdp_user(self, rdp_user):
+        """Sets the rdp_user of this SecureRemoteAccess.
+
+
+        :param rdp_user: The rdp_user of this SecureRemoteAccess.  # noqa: E501
+        :type: str
+        """
+
+        self._rdp_user = rdp_user
 
     @property
     def region(self):

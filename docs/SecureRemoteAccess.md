@@ -5,6 +5,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **account_id** | **str** |  | [optional] 
 **allow_port_forwarding** | **bool** |  | [optional] 
+**allow_providing_external_username** | **bool** |  | [optional] 
 **bastion_api** | **str** |  | [optional] 
 **bastion_issuer** | **str** |  | [optional] 
 **bastion_issuer_id** | **int** |  | [optional] 
@@ -20,6 +21,7 @@ Name | Type | Description | Notes
 **is_web** | **bool** |  | [optional] 
 **isolated** | **bool** |  | [optional] 
 **native** | **bool** |  | [optional] 
+**rdp_user** | **str** |  | [optional] 
 **region** | **str** |  | [optional] 
 **schema** | **str** |  | [optional] 
 **ssh_password** | **bool** |  | [optional] 
