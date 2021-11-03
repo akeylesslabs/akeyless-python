@@ -74,13 +74,10 @@ class TargetTypeDetailsInput(object):
         'k8s_bearer_token': 'str',
         'k8s_cluster_ca_certificate': 'str',
         'k8s_cluster_endpoint': 'str',
-        'ldap_access_id': 'str',
-        'ldap_anonymous_search': 'bool',
         'ldap_audience': 'str',
         'ldap_bind_dn': 'str',
         'ldap_bind_password': 'str',
         'ldap_certificate': 'str',
-        'ldap_private_key': 'str',
         'ldap_token_expiration': 'str',
         'ldap_url': 'str',
         'mongodb_atlas_api_private_key': 'str',
@@ -155,13 +152,10 @@ class TargetTypeDetailsInput(object):
         'k8s_bearer_token': 'k8s_bearer_token',
         'k8s_cluster_ca_certificate': 'k8s_cluster_ca_certificate',
         'k8s_cluster_endpoint': 'k8s_cluster_endpoint',
-        'ldap_access_id': 'ldap_access_id',
-        'ldap_anonymous_search': 'ldap_anonymous_search',
         'ldap_audience': 'ldap_audience',
         'ldap_bind_dn': 'ldap_bind_dn',
         'ldap_bind_password': 'ldap_bind_password',
         'ldap_certificate': 'ldap_certificate',
-        'ldap_private_key': 'ldap_private_key',
         'ldap_token_expiration': 'ldap_token_expiration',
         'ldap_url': 'ldap_url',
         'mongodb_atlas_api_private_key': 'mongodb_atlas_api_private_key',
@@ -195,7 +189,7 @@ class TargetTypeDetailsInput(object):
         'venafi_zone': 'venafi_zone'
     }
 
-    def __init__(self, artifactory_admin_apikey=None, artifactory_admin_username=None, artifactory_base_url=None, aws_access_key_id=None, aws_region=None, aws_secret_access_key=None, aws_session_token=None, azure_client_id=None, azure_client_secret=None, azure_tenant_id=None, chef_server_host_name=None, chef_server_key=None, chef_server_port=None, chef_server_url=None, chef_server_username=None, chef_skip_ssl=None, db_host_name=None, db_name=None, db_port=None, db_pwd=None, db_server_certificates=None, db_server_name=None, db_user_name=None, eks_access_key_id=None, eks_cluster_ca_certificate=None, eks_cluster_endpoint=None, eks_cluster_name=None, eks_region=None, eks_secret_access_key=None, gcp_service_account_email=None, gcp_service_account_key=None, gke_cluster_ca_certificate=None, gke_cluster_endpoint=None, gke_cluster_name=None, gke_service_account_key=None, gke_service_account_name=None, host=None, k8s_bearer_token=None, k8s_cluster_ca_certificate=None, k8s_cluster_endpoint=None, ldap_access_id=None, ldap_anonymous_search=None, ldap_audience=None, ldap_bind_dn=None, ldap_bind_password=None, ldap_certificate=None, ldap_private_key=None, ldap_token_expiration=None, ldap_url=None, mongodb_atlas_api_private_key=None, mongodb_atlas_api_public_key=None, mongodb_atlas_project_id=None, mongodb_db_name=None, mongodb_default_auth_db=None, mongodb_host_port=None, mongodb_is_atlas=None, mongodb_password=None, mongodb_uri_connection=None, mongodb_uri_options=None, mongodb_username=None, password=None, payload=None, port=None, private_key=None, private_key_password=None, rabbitmq_server_password=None, rabbitmq_server_uri=None, rabbitmq_server_user=None, sf_account=None, url=None, use_gw_cloud_identity=None, username=None, venafi_api_key=None, venafi_base_url=None, venafi_tpp_password=None, venafi_tpp_username=None, venafi_use_tpp=None, venafi_zone=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, artifactory_admin_apikey=None, artifactory_admin_username=None, artifactory_base_url=None, aws_access_key_id=None, aws_region=None, aws_secret_access_key=None, aws_session_token=None, azure_client_id=None, azure_client_secret=None, azure_tenant_id=None, chef_server_host_name=None, chef_server_key=None, chef_server_port=None, chef_server_url=None, chef_server_username=None, chef_skip_ssl=None, db_host_name=None, db_name=None, db_port=None, db_pwd=None, db_server_certificates=None, db_server_name=None, db_user_name=None, eks_access_key_id=None, eks_cluster_ca_certificate=None, eks_cluster_endpoint=None, eks_cluster_name=None, eks_region=None, eks_secret_access_key=None, gcp_service_account_email=None, gcp_service_account_key=None, gke_cluster_ca_certificate=None, gke_cluster_endpoint=None, gke_cluster_name=None, gke_service_account_key=None, gke_service_account_name=None, host=None, k8s_bearer_token=None, k8s_cluster_ca_certificate=None, k8s_cluster_endpoint=None, ldap_audience=None, ldap_bind_dn=None, ldap_bind_password=None, ldap_certificate=None, ldap_token_expiration=None, ldap_url=None, mongodb_atlas_api_private_key=None, mongodb_atlas_api_public_key=None, mongodb_atlas_project_id=None, mongodb_db_name=None, mongodb_default_auth_db=None, mongodb_host_port=None, mongodb_is_atlas=None, mongodb_password=None, mongodb_uri_connection=None, mongodb_uri_options=None, mongodb_username=None, password=None, payload=None, port=None, private_key=None, private_key_password=None, rabbitmq_server_password=None, rabbitmq_server_uri=None, rabbitmq_server_user=None, sf_account=None, url=None, use_gw_cloud_identity=None, username=None, venafi_api_key=None, venafi_base_url=None, venafi_tpp_password=None, venafi_tpp_username=None, venafi_use_tpp=None, venafi_zone=None, local_vars_configuration=None):  # noqa: E501
         """TargetTypeDetailsInput - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -241,13 +235,10 @@ class TargetTypeDetailsInput(object):
         self._k8s_bearer_token = None
         self._k8s_cluster_ca_certificate = None
         self._k8s_cluster_endpoint = None
-        self._ldap_access_id = None
-        self._ldap_anonymous_search = None
         self._ldap_audience = None
         self._ldap_bind_dn = None
         self._ldap_bind_password = None
         self._ldap_certificate = None
-        self._ldap_private_key = None
         self._ldap_token_expiration = None
         self._ldap_url = None
         self._mongodb_atlas_api_private_key = None
@@ -361,10 +352,6 @@ class TargetTypeDetailsInput(object):
             self.k8s_cluster_ca_certificate = k8s_cluster_ca_certificate
         if k8s_cluster_endpoint is not None:
             self.k8s_cluster_endpoint = k8s_cluster_endpoint
-        if ldap_access_id is not None:
-            self.ldap_access_id = ldap_access_id
-        if ldap_anonymous_search is not None:
-            self.ldap_anonymous_search = ldap_anonymous_search
         if ldap_audience is not None:
             self.ldap_audience = ldap_audience
         if ldap_bind_dn is not None:
@@ -373,8 +360,6 @@ class TargetTypeDetailsInput(object):
             self.ldap_bind_password = ldap_bind_password
         if ldap_certificate is not None:
             self.ldap_certificate = ldap_certificate
-        if ldap_private_key is not None:
-            self.ldap_private_key = ldap_private_key
         if ldap_token_expiration is not None:
             self.ldap_token_expiration = ldap_token_expiration
         if ldap_url is not None:
@@ -1283,48 +1268,6 @@ class TargetTypeDetailsInput(object):
         self._k8s_cluster_endpoint = k8s_cluster_endpoint
 
     @property
-    def ldap_access_id(self):
-        """Gets the ldap_access_id of this TargetTypeDetailsInput.  # noqa: E501
-
-
-        :return: The ldap_access_id of this TargetTypeDetailsInput.  # noqa: E501
-        :rtype: str
-        """
-        return self._ldap_access_id
-
-    @ldap_access_id.setter
-    def ldap_access_id(self, ldap_access_id):
-        """Sets the ldap_access_id of this TargetTypeDetailsInput.
-
-
-        :param ldap_access_id: The ldap_access_id of this TargetTypeDetailsInput.  # noqa: E501
-        :type: str
-        """
-
-        self._ldap_access_id = ldap_access_id
-
-    @property
-    def ldap_anonymous_search(self):
-        """Gets the ldap_anonymous_search of this TargetTypeDetailsInput.  # noqa: E501
-
-
-        :return: The ldap_anonymous_search of this TargetTypeDetailsInput.  # noqa: E501
-        :rtype: bool
-        """
-        return self._ldap_anonymous_search
-
-    @ldap_anonymous_search.setter
-    def ldap_anonymous_search(self, ldap_anonymous_search):
-        """Sets the ldap_anonymous_search of this TargetTypeDetailsInput.
-
-
-        :param ldap_anonymous_search: The ldap_anonymous_search of this TargetTypeDetailsInput.  # noqa: E501
-        :type: bool
-        """
-
-        self._ldap_anonymous_search = ldap_anonymous_search
-
-    @property
     def ldap_audience(self):
         """Gets the ldap_audience of this TargetTypeDetailsInput.  # noqa: E501
 
@@ -1407,27 +1350,6 @@ class TargetTypeDetailsInput(object):
         """
 
         self._ldap_certificate = ldap_certificate
-
-    @property
-    def ldap_private_key(self):
-        """Gets the ldap_private_key of this TargetTypeDetailsInput.  # noqa: E501
-
-
-        :return: The ldap_private_key of this TargetTypeDetailsInput.  # noqa: E501
-        :rtype: str
-        """
-        return self._ldap_private_key
-
-    @ldap_private_key.setter
-    def ldap_private_key(self, ldap_private_key):
-        """Sets the ldap_private_key of this TargetTypeDetailsInput.
-
-
-        :param ldap_private_key: The ldap_private_key of this TargetTypeDetailsInput.  # noqa: E501
-        :type: str
-        """
-
-        self._ldap_private_key = ldap_private_key
 
     @property
     def ldap_token_expiration(self):

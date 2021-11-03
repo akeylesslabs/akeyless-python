@@ -34,19 +34,13 @@ class GatewayCreateProducerLdap(object):
                             and the value is json key in definition.
     """
     openapi_types = {
-        'access_id': 'str',
         'bind_dn': 'str',
         'bind_dn_password': 'str',
-        'enable_anonym_search': 'bool',
-        'fixed_user_only': 'str',
-        'group_attribute': 'str',
-        'group_dn': 'str',
-        'group_filter': 'str',
+        'external_username': 'str',
         'ldap_ca_cert': 'str',
         'ldap_url': 'str',
         'name': 'str',
         'password': 'str',
-        'private_key': 'str',
         'producer_encryption_key_name': 'str',
         'target_name': 'str',
         'token': 'str',
@@ -59,19 +53,13 @@ class GatewayCreateProducerLdap(object):
     }
 
     attribute_map = {
-        'access_id': 'access-id',
         'bind_dn': 'bind-dn',
         'bind_dn_password': 'bind-dn-password',
-        'enable_anonym_search': 'enable-anonym-search',
-        'fixed_user_only': 'fixed-user-only',
-        'group_attribute': 'group-attribute',
-        'group_dn': 'group-dn',
-        'group_filter': 'group-filter',
+        'external_username': 'external-username',
         'ldap_ca_cert': 'ldap-ca-cert',
         'ldap_url': 'ldap-url',
         'name': 'name',
         'password': 'password',
-        'private_key': 'private-key',
         'producer_encryption_key_name': 'producer-encryption-key-name',
         'target_name': 'target-name',
         'token': 'token',
@@ -83,25 +71,19 @@ class GatewayCreateProducerLdap(object):
         'username': 'username'
     }
 
-    def __init__(self, access_id=None, bind_dn=None, bind_dn_password=None, enable_anonym_search=None, fixed_user_only='false', group_attribute=None, group_dn=None, group_filter=None, ldap_ca_cert=None, ldap_url=None, name=None, password=None, private_key=None, producer_encryption_key_name=None, target_name=None, token=None, token_expiration=None, uid_token=None, user_attribute=None, user_dn=None, user_ttl='60m', username=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, bind_dn=None, bind_dn_password=None, external_username='false', ldap_ca_cert=None, ldap_url=None, name=None, password=None, producer_encryption_key_name=None, target_name=None, token=None, token_expiration=None, uid_token=None, user_attribute=None, user_dn=None, user_ttl='60m', username=None, local_vars_configuration=None):  # noqa: E501
         """GatewayCreateProducerLdap - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
-        self._access_id = None
         self._bind_dn = None
         self._bind_dn_password = None
-        self._enable_anonym_search = None
-        self._fixed_user_only = None
-        self._group_attribute = None
-        self._group_dn = None
-        self._group_filter = None
+        self._external_username = None
         self._ldap_ca_cert = None
         self._ldap_url = None
         self._name = None
         self._password = None
-        self._private_key = None
         self._producer_encryption_key_name = None
         self._target_name = None
         self._token = None
@@ -113,22 +95,12 @@ class GatewayCreateProducerLdap(object):
         self._username = None
         self.discriminator = None
 
-        if access_id is not None:
-            self.access_id = access_id
         if bind_dn is not None:
             self.bind_dn = bind_dn
         if bind_dn_password is not None:
             self.bind_dn_password = bind_dn_password
-        if enable_anonym_search is not None:
-            self.enable_anonym_search = enable_anonym_search
-        if fixed_user_only is not None:
-            self.fixed_user_only = fixed_user_only
-        if group_attribute is not None:
-            self.group_attribute = group_attribute
-        if group_dn is not None:
-            self.group_dn = group_dn
-        if group_filter is not None:
-            self.group_filter = group_filter
+        if external_username is not None:
+            self.external_username = external_username
         if ldap_ca_cert is not None:
             self.ldap_ca_cert = ldap_ca_cert
         if ldap_url is not None:
@@ -136,8 +108,6 @@ class GatewayCreateProducerLdap(object):
         self.name = name
         if password is not None:
             self.password = password
-        if private_key is not None:
-            self.private_key = private_key
         if producer_encryption_key_name is not None:
             self.producer_encryption_key_name = producer_encryption_key_name
         if target_name is not None:
@@ -156,29 +126,6 @@ class GatewayCreateProducerLdap(object):
             self.user_ttl = user_ttl
         if username is not None:
             self.username = username
-
-    @property
-    def access_id(self):
-        """Gets the access_id of this GatewayCreateProducerLdap.  # noqa: E501
-
-        Access ID  # noqa: E501
-
-        :return: The access_id of this GatewayCreateProducerLdap.  # noqa: E501
-        :rtype: str
-        """
-        return self._access_id
-
-    @access_id.setter
-    def access_id(self, access_id):
-        """Sets the access_id of this GatewayCreateProducerLdap.
-
-        Access ID  # noqa: E501
-
-        :param access_id: The access_id of this GatewayCreateProducerLdap.  # noqa: E501
-        :type: str
-        """
-
-        self._access_id = access_id
 
     @property
     def bind_dn(self):
@@ -227,119 +174,27 @@ class GatewayCreateProducerLdap(object):
         self._bind_dn_password = bind_dn_password
 
     @property
-    def enable_anonym_search(self):
-        """Gets the enable_anonym_search of this GatewayCreateProducerLdap.  # noqa: E501
-
-        EnableAnonymousSearch  # noqa: E501
-
-        :return: The enable_anonym_search of this GatewayCreateProducerLdap.  # noqa: E501
-        :rtype: bool
-        """
-        return self._enable_anonym_search
-
-    @enable_anonym_search.setter
-    def enable_anonym_search(self, enable_anonym_search):
-        """Sets the enable_anonym_search of this GatewayCreateProducerLdap.
-
-        EnableAnonymousSearch  # noqa: E501
-
-        :param enable_anonym_search: The enable_anonym_search of this GatewayCreateProducerLdap.  # noqa: E501
-        :type: bool
-        """
-
-        self._enable_anonym_search = enable_anonym_search
-
-    @property
-    def fixed_user_only(self):
-        """Gets the fixed_user_only of this GatewayCreateProducerLdap.  # noqa: E501
+    def external_username(self):
+        """Gets the external_username of this GatewayCreateProducerLdap.  # noqa: E501
 
         Fixed user  # noqa: E501
 
-        :return: The fixed_user_only of this GatewayCreateProducerLdap.  # noqa: E501
+        :return: The external_username of this GatewayCreateProducerLdap.  # noqa: E501
         :rtype: str
         """
-        return self._fixed_user_only
+        return self._external_username
 
-    @fixed_user_only.setter
-    def fixed_user_only(self, fixed_user_only):
-        """Sets the fixed_user_only of this GatewayCreateProducerLdap.
+    @external_username.setter
+    def external_username(self, external_username):
+        """Sets the external_username of this GatewayCreateProducerLdap.
 
         Fixed user  # noqa: E501
 
-        :param fixed_user_only: The fixed_user_only of this GatewayCreateProducerLdap.  # noqa: E501
+        :param external_username: The external_username of this GatewayCreateProducerLdap.  # noqa: E501
         :type: str
         """
 
-        self._fixed_user_only = fixed_user_only
-
-    @property
-    def group_attribute(self):
-        """Gets the group_attribute of this GatewayCreateProducerLdap.  # noqa: E501
-
-        Group attribute  # noqa: E501
-
-        :return: The group_attribute of this GatewayCreateProducerLdap.  # noqa: E501
-        :rtype: str
-        """
-        return self._group_attribute
-
-    @group_attribute.setter
-    def group_attribute(self, group_attribute):
-        """Sets the group_attribute of this GatewayCreateProducerLdap.
-
-        Group attribute  # noqa: E501
-
-        :param group_attribute: The group_attribute of this GatewayCreateProducerLdap.  # noqa: E501
-        :type: str
-        """
-
-        self._group_attribute = group_attribute
-
-    @property
-    def group_dn(self):
-        """Gets the group_dn of this GatewayCreateProducerLdap.  # noqa: E501
-
-        Group DN  # noqa: E501
-
-        :return: The group_dn of this GatewayCreateProducerLdap.  # noqa: E501
-        :rtype: str
-        """
-        return self._group_dn
-
-    @group_dn.setter
-    def group_dn(self, group_dn):
-        """Sets the group_dn of this GatewayCreateProducerLdap.
-
-        Group DN  # noqa: E501
-
-        :param group_dn: The group_dn of this GatewayCreateProducerLdap.  # noqa: E501
-        :type: str
-        """
-
-        self._group_dn = group_dn
-
-    @property
-    def group_filter(self):
-        """Gets the group_filter of this GatewayCreateProducerLdap.  # noqa: E501
-
-        Group attribute  # noqa: E501
-
-        :return: The group_filter of this GatewayCreateProducerLdap.  # noqa: E501
-        :rtype: str
-        """
-        return self._group_filter
-
-    @group_filter.setter
-    def group_filter(self, group_filter):
-        """Sets the group_filter of this GatewayCreateProducerLdap.
-
-        Group attribute  # noqa: E501
-
-        :param group_filter: The group_filter of this GatewayCreateProducerLdap.  # noqa: E501
-        :type: str
-        """
-
-        self._group_filter = group_filter
+        self._external_username = external_username
 
     @property
     def ldap_ca_cert(self):
@@ -434,29 +289,6 @@ class GatewayCreateProducerLdap(object):
         """
 
         self._password = password
-
-    @property
-    def private_key(self):
-        """Gets the private_key of this GatewayCreateProducerLdap.  # noqa: E501
-
-        Base64-encoded ldap private key text  # noqa: E501
-
-        :return: The private_key of this GatewayCreateProducerLdap.  # noqa: E501
-        :rtype: str
-        """
-        return self._private_key
-
-    @private_key.setter
-    def private_key(self, private_key):
-        """Sets the private_key of this GatewayCreateProducerLdap.
-
-        Base64-encoded ldap private key text  # noqa: E501
-
-        :param private_key: The private_key of this GatewayCreateProducerLdap.  # noqa: E501
-        :type: str
-        """
-
-        self._private_key = private_key
 
     @property
     def producer_encryption_key_name(self):

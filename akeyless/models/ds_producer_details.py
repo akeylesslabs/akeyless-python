@@ -118,16 +118,10 @@ class DSProducerDetails(object):
         'k8s_namespace': 'str',
         'k8s_service_account': 'str',
         'last_admin_rotation': 'int',
-        'ldap_access_id': 'str',
-        'ldap_anonymous_search': 'bool',
         'ldap_audience': 'str',
         'ldap_bind_dn': 'str',
         'ldap_bind_password': 'str',
         'ldap_certificate': 'str',
-        'ldap_group_attr': 'str',
-        'ldap_group_dn': 'str',
-        'ldap_group_filter': 'str',
-        'ldap_private_key': 'str',
         'ldap_token_expiration': 'str',
         'ldap_url': 'str',
         'ldap_user_attr': 'str',
@@ -270,16 +264,10 @@ class DSProducerDetails(object):
         'k8s_namespace': 'k8s_namespace',
         'k8s_service_account': 'k8s_service_account',
         'last_admin_rotation': 'last_admin_rotation',
-        'ldap_access_id': 'ldap_access_id',
-        'ldap_anonymous_search': 'ldap_anonymous_search',
         'ldap_audience': 'ldap_audience',
         'ldap_bind_dn': 'ldap_bind_dn',
         'ldap_bind_password': 'ldap_bind_password',
         'ldap_certificate': 'ldap_certificate',
-        'ldap_group_attr': 'ldap_group_attr',
-        'ldap_group_dn': 'ldap_group_dn',
-        'ldap_group_filter': 'ldap_group_filter',
-        'ldap_private_key': 'ldap_private_key',
         'ldap_token_expiration': 'ldap_token_expiration',
         'ldap_url': 'ldap_url',
         'ldap_user_attr': 'ldap_user_attr',
@@ -337,7 +325,7 @@ class DSProducerDetails(object):
         'venafi_zone': 'venafi_zone'
     }
 
-    def __init__(self, active=None, admin_name=None, admin_pwd=None, admin_rotation_interval_days=None, artifactory_admin_apikey=None, artifactory_admin_username=None, artifactory_base_url=None, artifactory_token_audience=None, artifactory_token_scope=None, aws_access_key_id=None, aws_access_mode=None, aws_region=None, aws_role_arns=None, aws_secret_access_key=None, aws_session_token=None, aws_user_console_access=None, aws_user_groups=None, aws_user_policies=None, aws_user_programmatic_access=None, azure_app_object_id=None, azure_client_id=None, azure_client_secret=None, azure_tenant_id=None, azure_user_groups_obj_id=None, azure_user_portal_access=None, azure_user_programmatic_access=None, azure_user_roles_template_id=None, cassandra_creation_statements=None, chef_organizations=None, chef_server_access_mode=None, chef_server_host_name=None, chef_server_key=None, chef_server_port=None, chef_server_url=None, chef_server_username=None, chef_skip_ssl=None, create_sync_url=None, db_host_name=None, db_isolation_level=None, db_max_idle_conns=None, db_max_open_conns=None, db_name=None, db_port=None, db_pwd=None, db_server_certificates=None, db_server_name=None, db_user_name=None, dynamic_secret_id=None, dynamic_secret_key=None, dynamic_secret_name=None, dynamic_secret_type=None, eks_access_key_id=None, eks_assume_role=None, eks_cluster_ca_certificate=None, eks_cluster_endpoint=None, eks_cluster_name=None, eks_region=None, eks_secret_access_key=None, enable_admin_rotation=None, externally_provided_user=None, failure_message=None, fixed_user_only=None, gcp_key_algo=None, gcp_service_account_email=None, gcp_service_account_key=None, gcp_token_lifetime=None, gcp_token_scope=None, gcp_token_type=None, gke_cluster_ca_certificate=None, gke_cluster_endpoint=None, gke_cluster_name=None, gke_service_account_key=None, gke_service_account_name=None, groups=None, host_name=None, host_port=None, is_fixed_user=None, item_targets_assoc=None, k8s_bearer_token=None, k8s_cluster_ca_certificate=None, k8s_cluster_endpoint=None, k8s_namespace=None, k8s_service_account=None, last_admin_rotation=None, ldap_access_id=None, ldap_anonymous_search=None, ldap_audience=None, ldap_bind_dn=None, ldap_bind_password=None, ldap_certificate=None, ldap_group_attr=None, ldap_group_dn=None, ldap_group_filter=None, ldap_private_key=None, ldap_token_expiration=None, ldap_url=None, ldap_user_attr=None, ldap_user_dn=None, mongodb_atlas_api_private_key=None, mongodb_atlas_api_public_key=None, mongodb_atlas_project_id=None, mongodb_db_name=None, mongodb_default_auth_db=None, mongodb_host_port=None, mongodb_is_atlas=None, mongodb_password=None, mongodb_roles=None, mongodb_uri_connection=None, mongodb_uri_options=None, mongodb_username=None, mssql_creation_statements=None, mssql_revocation_statements=None, mysql_creation_statements=None, oracle_creation_statements=None, payload=None, postgres_creation_statements=None, rabbitmq_server_password=None, rabbitmq_server_uri=None, rabbitmq_server_user=None, rabbitmq_user_conf_permission=None, rabbitmq_user_read_permission=None, rabbitmq_user_tags=None, rabbitmq_user_vhost=None, rabbitmq_user_write_permission=None, redshift_creation_statements=None, revoke_sync_url=None, rotate_sync_url=None, secure_remote_access_details=None, sf_account=None, sf_user_role=None, sf_warehouse_name=None, should_stop=None, timeout_seconds=None, use_gw_cloud_identity=None, user_principal_name=None, user_ttl=None, venafi_allow_subdomains=None, venafi_allowed_domains=None, venafi_api_key=None, venafi_auto_generated_folder=None, venafi_base_url=None, venafi_root_first_in_chain=None, venafi_sign_using_akeyless_pki=None, venafi_signer_key_name=None, venafi_store_private_key=None, venafi_tpp_password=None, venafi_tpp_username=None, venafi_use_tpp=None, venafi_zone=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, active=None, admin_name=None, admin_pwd=None, admin_rotation_interval_days=None, artifactory_admin_apikey=None, artifactory_admin_username=None, artifactory_base_url=None, artifactory_token_audience=None, artifactory_token_scope=None, aws_access_key_id=None, aws_access_mode=None, aws_region=None, aws_role_arns=None, aws_secret_access_key=None, aws_session_token=None, aws_user_console_access=None, aws_user_groups=None, aws_user_policies=None, aws_user_programmatic_access=None, azure_app_object_id=None, azure_client_id=None, azure_client_secret=None, azure_tenant_id=None, azure_user_groups_obj_id=None, azure_user_portal_access=None, azure_user_programmatic_access=None, azure_user_roles_template_id=None, cassandra_creation_statements=None, chef_organizations=None, chef_server_access_mode=None, chef_server_host_name=None, chef_server_key=None, chef_server_port=None, chef_server_url=None, chef_server_username=None, chef_skip_ssl=None, create_sync_url=None, db_host_name=None, db_isolation_level=None, db_max_idle_conns=None, db_max_open_conns=None, db_name=None, db_port=None, db_pwd=None, db_server_certificates=None, db_server_name=None, db_user_name=None, dynamic_secret_id=None, dynamic_secret_key=None, dynamic_secret_name=None, dynamic_secret_type=None, eks_access_key_id=None, eks_assume_role=None, eks_cluster_ca_certificate=None, eks_cluster_endpoint=None, eks_cluster_name=None, eks_region=None, eks_secret_access_key=None, enable_admin_rotation=None, externally_provided_user=None, failure_message=None, fixed_user_only=None, gcp_key_algo=None, gcp_service_account_email=None, gcp_service_account_key=None, gcp_token_lifetime=None, gcp_token_scope=None, gcp_token_type=None, gke_cluster_ca_certificate=None, gke_cluster_endpoint=None, gke_cluster_name=None, gke_service_account_key=None, gke_service_account_name=None, groups=None, host_name=None, host_port=None, is_fixed_user=None, item_targets_assoc=None, k8s_bearer_token=None, k8s_cluster_ca_certificate=None, k8s_cluster_endpoint=None, k8s_namespace=None, k8s_service_account=None, last_admin_rotation=None, ldap_audience=None, ldap_bind_dn=None, ldap_bind_password=None, ldap_certificate=None, ldap_token_expiration=None, ldap_url=None, ldap_user_attr=None, ldap_user_dn=None, mongodb_atlas_api_private_key=None, mongodb_atlas_api_public_key=None, mongodb_atlas_project_id=None, mongodb_db_name=None, mongodb_default_auth_db=None, mongodb_host_port=None, mongodb_is_atlas=None, mongodb_password=None, mongodb_roles=None, mongodb_uri_connection=None, mongodb_uri_options=None, mongodb_username=None, mssql_creation_statements=None, mssql_revocation_statements=None, mysql_creation_statements=None, oracle_creation_statements=None, payload=None, postgres_creation_statements=None, rabbitmq_server_password=None, rabbitmq_server_uri=None, rabbitmq_server_user=None, rabbitmq_user_conf_permission=None, rabbitmq_user_read_permission=None, rabbitmq_user_tags=None, rabbitmq_user_vhost=None, rabbitmq_user_write_permission=None, redshift_creation_statements=None, revoke_sync_url=None, rotate_sync_url=None, secure_remote_access_details=None, sf_account=None, sf_user_role=None, sf_warehouse_name=None, should_stop=None, timeout_seconds=None, use_gw_cloud_identity=None, user_principal_name=None, user_ttl=None, venafi_allow_subdomains=None, venafi_allowed_domains=None, venafi_api_key=None, venafi_auto_generated_folder=None, venafi_base_url=None, venafi_root_first_in_chain=None, venafi_sign_using_akeyless_pki=None, venafi_signer_key_name=None, venafi_store_private_key=None, venafi_tpp_password=None, venafi_tpp_username=None, venafi_use_tpp=None, venafi_zone=None, local_vars_configuration=None):  # noqa: E501
         """DSProducerDetails - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -427,16 +415,10 @@ class DSProducerDetails(object):
         self._k8s_namespace = None
         self._k8s_service_account = None
         self._last_admin_rotation = None
-        self._ldap_access_id = None
-        self._ldap_anonymous_search = None
         self._ldap_audience = None
         self._ldap_bind_dn = None
         self._ldap_bind_password = None
         self._ldap_certificate = None
-        self._ldap_group_attr = None
-        self._ldap_group_dn = None
-        self._ldap_group_filter = None
-        self._ldap_private_key = None
         self._ldap_token_expiration = None
         self._ldap_url = None
         self._ldap_user_attr = None
@@ -662,10 +644,6 @@ class DSProducerDetails(object):
             self.k8s_service_account = k8s_service_account
         if last_admin_rotation is not None:
             self.last_admin_rotation = last_admin_rotation
-        if ldap_access_id is not None:
-            self.ldap_access_id = ldap_access_id
-        if ldap_anonymous_search is not None:
-            self.ldap_anonymous_search = ldap_anonymous_search
         if ldap_audience is not None:
             self.ldap_audience = ldap_audience
         if ldap_bind_dn is not None:
@@ -674,14 +652,6 @@ class DSProducerDetails(object):
             self.ldap_bind_password = ldap_bind_password
         if ldap_certificate is not None:
             self.ldap_certificate = ldap_certificate
-        if ldap_group_attr is not None:
-            self.ldap_group_attr = ldap_group_attr
-        if ldap_group_dn is not None:
-            self.ldap_group_dn = ldap_group_dn
-        if ldap_group_filter is not None:
-            self.ldap_group_filter = ldap_group_filter
-        if ldap_private_key is not None:
-            self.ldap_private_key = ldap_private_key
         if ldap_token_expiration is not None:
             self.ldap_token_expiration = ldap_token_expiration
         if ldap_url is not None:
@@ -2562,48 +2532,6 @@ class DSProducerDetails(object):
         self._last_admin_rotation = last_admin_rotation
 
     @property
-    def ldap_access_id(self):
-        """Gets the ldap_access_id of this DSProducerDetails.  # noqa: E501
-
-
-        :return: The ldap_access_id of this DSProducerDetails.  # noqa: E501
-        :rtype: str
-        """
-        return self._ldap_access_id
-
-    @ldap_access_id.setter
-    def ldap_access_id(self, ldap_access_id):
-        """Sets the ldap_access_id of this DSProducerDetails.
-
-
-        :param ldap_access_id: The ldap_access_id of this DSProducerDetails.  # noqa: E501
-        :type: str
-        """
-
-        self._ldap_access_id = ldap_access_id
-
-    @property
-    def ldap_anonymous_search(self):
-        """Gets the ldap_anonymous_search of this DSProducerDetails.  # noqa: E501
-
-
-        :return: The ldap_anonymous_search of this DSProducerDetails.  # noqa: E501
-        :rtype: bool
-        """
-        return self._ldap_anonymous_search
-
-    @ldap_anonymous_search.setter
-    def ldap_anonymous_search(self, ldap_anonymous_search):
-        """Sets the ldap_anonymous_search of this DSProducerDetails.
-
-
-        :param ldap_anonymous_search: The ldap_anonymous_search of this DSProducerDetails.  # noqa: E501
-        :type: bool
-        """
-
-        self._ldap_anonymous_search = ldap_anonymous_search
-
-    @property
     def ldap_audience(self):
         """Gets the ldap_audience of this DSProducerDetails.  # noqa: E501
 
@@ -2686,90 +2614,6 @@ class DSProducerDetails(object):
         """
 
         self._ldap_certificate = ldap_certificate
-
-    @property
-    def ldap_group_attr(self):
-        """Gets the ldap_group_attr of this DSProducerDetails.  # noqa: E501
-
-
-        :return: The ldap_group_attr of this DSProducerDetails.  # noqa: E501
-        :rtype: str
-        """
-        return self._ldap_group_attr
-
-    @ldap_group_attr.setter
-    def ldap_group_attr(self, ldap_group_attr):
-        """Sets the ldap_group_attr of this DSProducerDetails.
-
-
-        :param ldap_group_attr: The ldap_group_attr of this DSProducerDetails.  # noqa: E501
-        :type: str
-        """
-
-        self._ldap_group_attr = ldap_group_attr
-
-    @property
-    def ldap_group_dn(self):
-        """Gets the ldap_group_dn of this DSProducerDetails.  # noqa: E501
-
-
-        :return: The ldap_group_dn of this DSProducerDetails.  # noqa: E501
-        :rtype: str
-        """
-        return self._ldap_group_dn
-
-    @ldap_group_dn.setter
-    def ldap_group_dn(self, ldap_group_dn):
-        """Sets the ldap_group_dn of this DSProducerDetails.
-
-
-        :param ldap_group_dn: The ldap_group_dn of this DSProducerDetails.  # noqa: E501
-        :type: str
-        """
-
-        self._ldap_group_dn = ldap_group_dn
-
-    @property
-    def ldap_group_filter(self):
-        """Gets the ldap_group_filter of this DSProducerDetails.  # noqa: E501
-
-
-        :return: The ldap_group_filter of this DSProducerDetails.  # noqa: E501
-        :rtype: str
-        """
-        return self._ldap_group_filter
-
-    @ldap_group_filter.setter
-    def ldap_group_filter(self, ldap_group_filter):
-        """Sets the ldap_group_filter of this DSProducerDetails.
-
-
-        :param ldap_group_filter: The ldap_group_filter of this DSProducerDetails.  # noqa: E501
-        :type: str
-        """
-
-        self._ldap_group_filter = ldap_group_filter
-
-    @property
-    def ldap_private_key(self):
-        """Gets the ldap_private_key of this DSProducerDetails.  # noqa: E501
-
-
-        :return: The ldap_private_key of this DSProducerDetails.  # noqa: E501
-        :rtype: str
-        """
-        return self._ldap_private_key
-
-    @ldap_private_key.setter
-    def ldap_private_key(self, ldap_private_key):
-        """Sets the ldap_private_key of this DSProducerDetails.
-
-
-        :param ldap_private_key: The ldap_private_key of this DSProducerDetails.  # noqa: E501
-        :type: str
-        """
-
-        self._ldap_private_key = ldap_private_key
 
     @property
     def ldap_token_expiration(self):

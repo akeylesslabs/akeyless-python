@@ -34,17 +34,14 @@ class CreateLdapTarget(object):
                             and the value is json key in definition.
     """
     openapi_types = {
-        'access_id': 'str',
         'bind_dn': 'str',
         'bind_dn_password': 'str',
         'comment': 'str',
-        'enable_anonym_search': 'bool',
         'key': 'str',
         'ldap_ca_cert': 'str',
         'ldap_url': 'str',
         'name': 'str',
         'password': 'str',
-        'private_key': 'str',
         'token': 'str',
         'token_expiration': 'str',
         'uid_token': 'str',
@@ -52,53 +49,44 @@ class CreateLdapTarget(object):
     }
 
     attribute_map = {
-        'access_id': 'access-id',
         'bind_dn': 'bind-dn',
         'bind_dn_password': 'bind-dn-password',
         'comment': 'comment',
-        'enable_anonym_search': 'enable-anonym-search',
         'key': 'key',
         'ldap_ca_cert': 'ldap-ca-cert',
         'ldap_url': 'ldap-url',
         'name': 'name',
         'password': 'password',
-        'private_key': 'private-key',
         'token': 'token',
         'token_expiration': 'token-expiration',
         'uid_token': 'uid-token',
         'username': 'username'
     }
 
-    def __init__(self, access_id=None, bind_dn=None, bind_dn_password=None, comment=None, enable_anonym_search=None, key=None, ldap_ca_cert=None, ldap_url=None, name=None, password=None, private_key=None, token=None, token_expiration=None, uid_token=None, username=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, bind_dn=None, bind_dn_password=None, comment=None, key=None, ldap_ca_cert=None, ldap_url=None, name=None, password=None, token=None, token_expiration=None, uid_token=None, username=None, local_vars_configuration=None):  # noqa: E501
         """CreateLdapTarget - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
-        self._access_id = None
         self._bind_dn = None
         self._bind_dn_password = None
         self._comment = None
-        self._enable_anonym_search = None
         self._key = None
         self._ldap_ca_cert = None
         self._ldap_url = None
         self._name = None
         self._password = None
-        self._private_key = None
         self._token = None
         self._token_expiration = None
         self._uid_token = None
         self._username = None
         self.discriminator = None
 
-        self.access_id = access_id
         self.bind_dn = bind_dn
         self.bind_dn_password = bind_dn_password
         if comment is not None:
             self.comment = comment
-        if enable_anonym_search is not None:
-            self.enable_anonym_search = enable_anonym_search
         if key is not None:
             self.key = key
         if ldap_ca_cert is not None:
@@ -107,8 +95,6 @@ class CreateLdapTarget(object):
         self.name = name
         if password is not None:
             self.password = password
-        if private_key is not None:
-            self.private_key = private_key
         if token is not None:
             self.token = token
         if token_expiration is not None:
@@ -117,31 +103,6 @@ class CreateLdapTarget(object):
             self.uid_token = uid_token
         if username is not None:
             self.username = username
-
-    @property
-    def access_id(self):
-        """Gets the access_id of this CreateLdapTarget.  # noqa: E501
-
-        Access ID  # noqa: E501
-
-        :return: The access_id of this CreateLdapTarget.  # noqa: E501
-        :rtype: str
-        """
-        return self._access_id
-
-    @access_id.setter
-    def access_id(self, access_id):
-        """Sets the access_id of this CreateLdapTarget.
-
-        Access ID  # noqa: E501
-
-        :param access_id: The access_id of this CreateLdapTarget.  # noqa: E501
-        :type: str
-        """
-        if self.local_vars_configuration.client_side_validation and access_id is None:  # noqa: E501
-            raise ValueError("Invalid value for `access_id`, must not be `None`")  # noqa: E501
-
-        self._access_id = access_id
 
     @property
     def bind_dn(self):
@@ -215,29 +176,6 @@ class CreateLdapTarget(object):
         """
 
         self._comment = comment
-
-    @property
-    def enable_anonym_search(self):
-        """Gets the enable_anonym_search of this CreateLdapTarget.  # noqa: E501
-
-        EnableAnonymousSearch  # noqa: E501
-
-        :return: The enable_anonym_search of this CreateLdapTarget.  # noqa: E501
-        :rtype: bool
-        """
-        return self._enable_anonym_search
-
-    @enable_anonym_search.setter
-    def enable_anonym_search(self, enable_anonym_search):
-        """Sets the enable_anonym_search of this CreateLdapTarget.
-
-        EnableAnonymousSearch  # noqa: E501
-
-        :param enable_anonym_search: The enable_anonym_search of this CreateLdapTarget.  # noqa: E501
-        :type: bool
-        """
-
-        self._enable_anonym_search = enable_anonym_search
 
     @property
     def key(self):
@@ -357,29 +295,6 @@ class CreateLdapTarget(object):
         """
 
         self._password = password
-
-    @property
-    def private_key(self):
-        """Gets the private_key of this CreateLdapTarget.  # noqa: E501
-
-        Base64-encoded ldap private key text  # noqa: E501
-
-        :return: The private_key of this CreateLdapTarget.  # noqa: E501
-        :rtype: str
-        """
-        return self._private_key
-
-    @private_key.setter
-    def private_key(self, private_key):
-        """Sets the private_key of this CreateLdapTarget.
-
-        Base64-encoded ldap private key text  # noqa: E501
-
-        :param private_key: The private_key of this CreateLdapTarget.  # noqa: E501
-        :type: str
-        """
-
-        self._private_key = private_key
 
     @property
     def token(self):

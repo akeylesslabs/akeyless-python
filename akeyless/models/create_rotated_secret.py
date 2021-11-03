@@ -38,9 +38,6 @@ class CreateRotatedSecret(object):
         'api_key': 'str',
         'auto_rotate': 'str',
         'custom_payload': 'str',
-        'group_attribute': 'str',
-        'group_dn': 'str',
-        'group_filter': 'str',
         'key': 'str',
         'metadata': 'str',
         'name': 'str',
@@ -68,9 +65,6 @@ class CreateRotatedSecret(object):
         'api_key': 'api-key',
         'auto_rotate': 'auto-rotate',
         'custom_payload': 'custom-payload',
-        'group_attribute': 'group-attribute',
-        'group_dn': 'group-dn',
-        'group_filter': 'group-filter',
         'key': 'key',
         'metadata': 'metadata',
         'name': 'name',
@@ -93,7 +87,7 @@ class CreateRotatedSecret(object):
         'username': 'username'
     }
 
-    def __init__(self, api_id=None, api_key=None, auto_rotate=None, custom_payload=None, group_attribute=None, group_dn=None, group_filter=None, key=None, metadata=None, name=None, password=None, rotated_password=None, rotated_username=None, rotation_hour=None, rotation_interval=None, rotator_creds_type=None, rotator_custom_cmd=None, rotator_type=None, ssh_password=None, ssh_username=None, tags=None, target_name=None, token=None, uid_token=None, user_attribute=None, user_dn=None, username=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, api_id=None, api_key=None, auto_rotate=None, custom_payload=None, key=None, metadata=None, name=None, password=None, rotated_password=None, rotated_username=None, rotation_hour=None, rotation_interval=None, rotator_creds_type=None, rotator_custom_cmd=None, rotator_type=None, ssh_password=None, ssh_username=None, tags=None, target_name=None, token=None, uid_token=None, user_attribute=None, user_dn=None, username=None, local_vars_configuration=None):  # noqa: E501
         """CreateRotatedSecret - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -103,9 +97,6 @@ class CreateRotatedSecret(object):
         self._api_key = None
         self._auto_rotate = None
         self._custom_payload = None
-        self._group_attribute = None
-        self._group_dn = None
-        self._group_filter = None
         self._key = None
         self._metadata = None
         self._name = None
@@ -136,12 +127,6 @@ class CreateRotatedSecret(object):
             self.auto_rotate = auto_rotate
         if custom_payload is not None:
             self.custom_payload = custom_payload
-        if group_attribute is not None:
-            self.group_attribute = group_attribute
-        if group_dn is not None:
-            self.group_dn = group_dn
-        if group_filter is not None:
-            self.group_filter = group_filter
         if key is not None:
             self.key = key
         if metadata is not None:
@@ -265,75 +250,6 @@ class CreateRotatedSecret(object):
         """
 
         self._custom_payload = custom_payload
-
-    @property
-    def group_attribute(self):
-        """Gets the group_attribute of this CreateRotatedSecret.  # noqa: E501
-
-        Group attribute  # noqa: E501
-
-        :return: The group_attribute of this CreateRotatedSecret.  # noqa: E501
-        :rtype: str
-        """
-        return self._group_attribute
-
-    @group_attribute.setter
-    def group_attribute(self, group_attribute):
-        """Sets the group_attribute of this CreateRotatedSecret.
-
-        Group attribute  # noqa: E501
-
-        :param group_attribute: The group_attribute of this CreateRotatedSecret.  # noqa: E501
-        :type: str
-        """
-
-        self._group_attribute = group_attribute
-
-    @property
-    def group_dn(self):
-        """Gets the group_dn of this CreateRotatedSecret.  # noqa: E501
-
-        Group DN  # noqa: E501
-
-        :return: The group_dn of this CreateRotatedSecret.  # noqa: E501
-        :rtype: str
-        """
-        return self._group_dn
-
-    @group_dn.setter
-    def group_dn(self, group_dn):
-        """Sets the group_dn of this CreateRotatedSecret.
-
-        Group DN  # noqa: E501
-
-        :param group_dn: The group_dn of this CreateRotatedSecret.  # noqa: E501
-        :type: str
-        """
-
-        self._group_dn = group_dn
-
-    @property
-    def group_filter(self):
-        """Gets the group_filter of this CreateRotatedSecret.  # noqa: E501
-
-        Group attribute  # noqa: E501
-
-        :return: The group_filter of this CreateRotatedSecret.  # noqa: E501
-        :rtype: str
-        """
-        return self._group_filter
-
-    @group_filter.setter
-    def group_filter(self, group_filter):
-        """Sets the group_filter of this CreateRotatedSecret.
-
-        Group attribute  # noqa: E501
-
-        :param group_filter: The group_filter of this CreateRotatedSecret.  # noqa: E501
-        :type: str
-        """
-
-        self._group_filter = group_filter
 
     @property
     def key(self):
