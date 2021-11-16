@@ -1,23 +1,18 @@
-# GatewayCreateProducerRdp
+# GatewayUpdateProducerGcp
 
-gatewayCreateProducerRdp is a command that creates rdp producer
+gatewayUpdateProducerGcp is a command that updates a GCP producer
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**fixed_user_only** | **str** | Fixed user | [optional] [default to 'false']
+**gcp_cred_type** | **str** |  | [optional] 
+**gcp_key** | **str** | Base64-encoded service account private key text | [optional] 
+**gcp_key_algo** | **str** | Service account key algorithm, e.g. KEY_ALG_RSA_1024 | [optional] 
+**gcp_sa_email** | **str** | GCP service account email | [optional] 
+**gcp_token_scopes** | **str** | Access token scopes list, e.g. scope1,scope2 | [optional] 
 **name** | **str** | Producer name | 
+**new_name** | **str** | Producer name | [optional] 
 **password** | **str** | Required only when the authentication process requires a username and password | [optional] 
 **producer_encryption_key_name** | **str** | Dynamic producer encryption key | [optional] 
-**rdp_admin_name** | **str** | RDP Admin Name | [optional] 
-**rdp_admin_pwd** | **str** | RDP Admin password | [optional] 
-**rdp_host_name** | **str** | Hostname | [optional] 
-**rdp_host_port** | **str** | Port | [optional] [default to '22']
-**rdp_user_groups** | **str** | Groups | [optional] 
-**secure_access_allow_external_user** | **bool** |  | [optional] 
-**secure_access_enable** | **str** |  | [optional] 
-**secure_access_host** | **list[str]** |  | [optional] 
-**secure_access_rdp_domain** | **str** |  | [optional] 
-**secure_access_rdp_user** | **str** |  | [optional] 
 **target_name** | **str** | Target name | [optional] 
 **token** | **str** | Authentication token (see &#x60;/auth&#x60; and &#x60;/configure&#x60;) | [optional] 
 **uid_token** | **str** | The universal identity token, Required only for universal_identity authentication | [optional] 

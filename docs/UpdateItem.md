@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **password** | **str** | Required only when the authentication process requires a username and password | [optional] 
 **rm_tag** | **list[str]** | List of the existent tags that will be removed from this item | [optional] 
 **secure_access_add_host** | **list[str]** |  | [optional] 
+**secure_access_allow_external_user** | **str** |  | [optional] 
 **secure_access_allow_port_forwading** | **bool** |  | [optional] 
 **secure_access_aws_account_id** | **str** |  | [optional] 
 **secure_access_aws_native_cli** | **bool** |  | [optional] 

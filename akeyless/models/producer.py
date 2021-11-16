@@ -36,6 +36,7 @@ class Producer(object):
     openapi_types = {
         'active': 'bool',
         'id': 'int',
+        'init': 'bool',
         'name': 'str',
         'type': 'str'
     }
@@ -43,11 +44,12 @@ class Producer(object):
     attribute_map = {
         'active': 'active',
         'id': 'id',
+        'init': 'init',
         'name': 'name',
         'type': 'type'
     }
 
-    def __init__(self, active=None, id=None, name=None, type=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, active=None, id=None, init=None, name=None, type=None, local_vars_configuration=None):  # noqa: E501
         """Producer - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -55,6 +57,7 @@ class Producer(object):
 
         self._active = None
         self._id = None
+        self._init = None
         self._name = None
         self._type = None
         self.discriminator = None
@@ -63,6 +66,8 @@ class Producer(object):
             self.active = active
         if id is not None:
             self.id = id
+        if init is not None:
+            self.init = init
         if name is not None:
             self.name = name
         if type is not None:
@@ -109,6 +114,27 @@ class Producer(object):
         """
 
         self._id = id
+
+    @property
+    def init(self):
+        """Gets the init of this Producer.  # noqa: E501
+
+
+        :return: The init of this Producer.  # noqa: E501
+        :rtype: bool
+        """
+        return self._init
+
+    @init.setter
+    def init(self, init):
+        """Sets the init of this Producer.
+
+
+        :param init: The init of this Producer.  # noqa: E501
+        :type: bool
+        """
+
+        self._init = init
 
     @property
     def name(self):

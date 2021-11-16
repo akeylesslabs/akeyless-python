@@ -15,7 +15,7 @@
 
 from __future__ import absolute_import
 
-__version__ = "2.5.13"
+__version__ = "2.5.14"
 
 # import apis into sdk package
 from akeyless.api.v2_api import V2Api
@@ -236,6 +236,18 @@ from akeyless.models.gateway_stop_producer import GatewayStopProducer
 from akeyless.models.gateway_stop_producer_output import GatewayStopProducerOutput
 from akeyless.models.gateway_sync_migration import GatewaySyncMigration
 from akeyless.models.gateway_update_item_output import GatewayUpdateItemOutput
+from akeyless.models.gateway_update_producer_aws import GatewayUpdateProducerAws
+from akeyless.models.gateway_update_producer_aws_output import GatewayUpdateProducerAwsOutput
+from akeyless.models.gateway_update_producer_gcp import GatewayUpdateProducerGcp
+from akeyless.models.gateway_update_producer_gcp_output import GatewayUpdateProducerGcpOutput
+from akeyless.models.gateway_update_producer_mssql import GatewayUpdateProducerMSSQL
+from akeyless.models.gateway_update_producer_mssql_output import GatewayUpdateProducerMSSQLOutput
+from akeyless.models.gateway_update_producer_mongo import GatewayUpdateProducerMongo
+from akeyless.models.gateway_update_producer_mongo_output import GatewayUpdateProducerMongoOutput
+from akeyless.models.gateway_update_producer_my_sql import GatewayUpdateProducerMySQL
+from akeyless.models.gateway_update_producer_my_sql_output import GatewayUpdateProducerMySQLOutput
+from akeyless.models.gateway_update_producer_rdp import GatewayUpdateProducerRdp
+from akeyless.models.gateway_update_producer_rdp_output import GatewayUpdateProducerRdpOutput
 from akeyless.models.gateway_update_tmp_users import GatewayUpdateTmpUsers
 from akeyless.models.gen_customer_fragment import GenCustomerFragment
 from akeyless.models.general_config_part import GeneralConfigPart

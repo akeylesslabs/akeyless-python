@@ -93,6 +93,12 @@ Method | HTTP request | Description
 [**gateway_start_producer**](V2Api.md#gateway_start_producer) | **POST** /gateway-start-producer | 
 [**gateway_stop_producer**](V2Api.md#gateway_stop_producer) | **POST** /gateway-stop-producer | 
 [**gateway_sync_migration**](V2Api.md#gateway_sync_migration) | **POST** /gateway-sync-migration | 
+[**gateway_update_producer_aws**](V2Api.md#gateway_update_producer_aws) | **POST** /gateway-update-producer-aws | 
+[**gateway_update_producer_gcp**](V2Api.md#gateway_update_producer_gcp) | **POST** /gateway-update-producer-gcp | 
+[**gateway_update_producer_mongo**](V2Api.md#gateway_update_producer_mongo) | **POST** /gateway-update-producer-mongo | 
+[**gateway_update_producer_mssql**](V2Api.md#gateway_update_producer_mssql) | **POST** /gateway-update-producer-mssql | 
+[**gateway_update_producer_my_sql**](V2Api.md#gateway_update_producer_my_sql) | **POST** /gateway-update-producer-mysql | 
+[**gateway_update_producer_rdp**](V2Api.md#gateway_update_producer_rdp) | **POST** /gateway-update-producer-rdp | 
 [**gateway_update_tmp_users**](V2Api.md#gateway_update_tmp_users) | **POST** /gateway-update-producer-tmp-creds | 
 [**get_account_logo**](V2Api.md#get_account_logo) | **POST** /get-account-logo | 
 [**get_auth_method**](V2Api.md#get_auth_method) | **POST** /get-auth-method | 
@@ -5500,6 +5506,366 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | gatewayMigrationSyncResponse wraps response body. |  -  |
+**0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **gateway_update_producer_aws**
+> GatewayUpdateProducerAwsOutput gateway_update_producer_aws(body)
+
+
+
+### Example
+
+```python
+from __future__ import print_function
+import time
+import akeyless
+from akeyless.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.akeyless.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = akeyless.Configuration(
+    host = "https://api.akeyless.io"
+)
+
+
+# Enter a context with an instance of the API client
+with akeyless.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = akeyless.V2Api(api_client)
+    body = akeyless.GatewayUpdateProducerAws() # GatewayUpdateProducerAws | 
+
+    try:
+        api_response = api_instance.gateway_update_producer_aws(body)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling V2Api->gateway_update_producer_aws: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**GatewayUpdateProducerAws**](GatewayUpdateProducerAws.md)|  | 
+
+### Return type
+
+[**GatewayUpdateProducerAwsOutput**](GatewayUpdateProducerAwsOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | gatewayUpdateProducerAwsResponse wraps response body. |  -  |
+**0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **gateway_update_producer_gcp**
+> GatewayUpdateProducerGcpOutput gateway_update_producer_gcp(body)
+
+
+
+### Example
+
+```python
+from __future__ import print_function
+import time
+import akeyless
+from akeyless.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.akeyless.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = akeyless.Configuration(
+    host = "https://api.akeyless.io"
+)
+
+
+# Enter a context with an instance of the API client
+with akeyless.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = akeyless.V2Api(api_client)
+    body = akeyless.GatewayUpdateProducerGcp() # GatewayUpdateProducerGcp | 
+
+    try:
+        api_response = api_instance.gateway_update_producer_gcp(body)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling V2Api->gateway_update_producer_gcp: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**GatewayUpdateProducerGcp**](GatewayUpdateProducerGcp.md)|  | 
+
+### Return type
+
+[**GatewayUpdateProducerGcpOutput**](GatewayUpdateProducerGcpOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**201** | gatewayUpdateProducerGcpResponse wraps response body. |  -  |
+**0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **gateway_update_producer_mongo**
+> GatewayUpdateProducerMongoOutput gateway_update_producer_mongo(body)
+
+
+
+### Example
+
+```python
+from __future__ import print_function
+import time
+import akeyless
+from akeyless.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.akeyless.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = akeyless.Configuration(
+    host = "https://api.akeyless.io"
+)
+
+
+# Enter a context with an instance of the API client
+with akeyless.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = akeyless.V2Api(api_client)
+    body = akeyless.GatewayUpdateProducerMongo() # GatewayUpdateProducerMongo | 
+
+    try:
+        api_response = api_instance.gateway_update_producer_mongo(body)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling V2Api->gateway_update_producer_mongo: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**GatewayUpdateProducerMongo**](GatewayUpdateProducerMongo.md)|  | 
+
+### Return type
+
+[**GatewayUpdateProducerMongoOutput**](GatewayUpdateProducerMongoOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**201** | gatewayUpdateProducerMongoResponse wraps response body. |  -  |
+**0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **gateway_update_producer_mssql**
+> GatewayUpdateProducerMSSQLOutput gateway_update_producer_mssql(body)
+
+
+
+### Example
+
+```python
+from __future__ import print_function
+import time
+import akeyless
+from akeyless.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.akeyless.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = akeyless.Configuration(
+    host = "https://api.akeyless.io"
+)
+
+
+# Enter a context with an instance of the API client
+with akeyless.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = akeyless.V2Api(api_client)
+    body = akeyless.GatewayUpdateProducerMSSQL() # GatewayUpdateProducerMSSQL | 
+
+    try:
+        api_response = api_instance.gateway_update_producer_mssql(body)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling V2Api->gateway_update_producer_mssql: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**GatewayUpdateProducerMSSQL**](GatewayUpdateProducerMSSQL.md)|  | 
+
+### Return type
+
+[**GatewayUpdateProducerMSSQLOutput**](GatewayUpdateProducerMSSQLOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**201** | gatewayUpdateProducerMSSQLResponse wraps response body. |  -  |
+**0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **gateway_update_producer_my_sql**
+> GatewayUpdateProducerMySQLOutput gateway_update_producer_my_sql(body)
+
+
+
+### Example
+
+```python
+from __future__ import print_function
+import time
+import akeyless
+from akeyless.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.akeyless.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = akeyless.Configuration(
+    host = "https://api.akeyless.io"
+)
+
+
+# Enter a context with an instance of the API client
+with akeyless.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = akeyless.V2Api(api_client)
+    body = akeyless.GatewayUpdateProducerMySQL() # GatewayUpdateProducerMySQL | 
+
+    try:
+        api_response = api_instance.gateway_update_producer_my_sql(body)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling V2Api->gateway_update_producer_my_sql: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**GatewayUpdateProducerMySQL**](GatewayUpdateProducerMySQL.md)|  | 
+
+### Return type
+
+[**GatewayUpdateProducerMySQLOutput**](GatewayUpdateProducerMySQLOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**201** | gatewayUpdateProducerMySQLResponse wraps response body. |  -  |
+**0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **gateway_update_producer_rdp**
+> GatewayUpdateProducerRdpOutput gateway_update_producer_rdp(body)
+
+
+
+### Example
+
+```python
+from __future__ import print_function
+import time
+import akeyless
+from akeyless.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.akeyless.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = akeyless.Configuration(
+    host = "https://api.akeyless.io"
+)
+
+
+# Enter a context with an instance of the API client
+with akeyless.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = akeyless.V2Api(api_client)
+    body = akeyless.GatewayUpdateProducerRdp() # GatewayUpdateProducerRdp | 
+
+    try:
+        api_response = api_instance.gateway_update_producer_rdp(body)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling V2Api->gateway_update_producer_rdp: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**GatewayUpdateProducerRdp**](GatewayUpdateProducerRdp.md)|  | 
+
+### Return type
+
+[**GatewayUpdateProducerRdpOutput**](GatewayUpdateProducerRdpOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**201** | gatewayUpdateProducerRdpResponse wraps response body. |  -  |
 **0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

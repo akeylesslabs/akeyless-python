@@ -1,11 +1,12 @@
-# GatewayCreateProducerRdp
+# GatewayUpdateProducerRdp
 
-gatewayCreateProducerRdp is a command that creates rdp producer
+gatewayUpdateProducerRdp is a command that updates rdp producer
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **fixed_user_only** | **str** | Fixed user | [optional] [default to 'false']
 **name** | **str** | Producer name | 
+**new_name** | **str** | Producer name | [optional] 
 **password** | **str** | Required only when the authentication process requires a username and password | [optional] 
 **producer_encryption_key_name** | **str** | Dynamic producer encryption key | [optional] 
 **rdp_admin_name** | **str** | RDP Admin Name | [optional] 

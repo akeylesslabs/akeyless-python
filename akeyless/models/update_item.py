@@ -41,6 +41,7 @@ class UpdateItem(object):
         'password': 'str',
         'rm_tag': 'list[str]',
         'secure_access_add_host': 'list[str]',
+        'secure_access_allow_external_user': 'str',
         'secure_access_allow_port_forwading': 'bool',
         'secure_access_aws_account_id': 'str',
         'secure_access_aws_native_cli': 'bool',
@@ -75,6 +76,7 @@ class UpdateItem(object):
         'password': 'password',
         'rm_tag': 'rm-tag',
         'secure_access_add_host': 'secure-access-add-host',
+        'secure_access_allow_external_user': 'secure-access-allow-external-user',
         'secure_access_allow_port_forwading': 'secure-access-allow-port-forwading',
         'secure_access_aws_account_id': 'secure-access-aws-account-id',
         'secure_access_aws_native_cli': 'secure-access-aws-native-cli',
@@ -101,7 +103,7 @@ class UpdateItem(object):
         'username': 'username'
     }
 
-    def __init__(self, add_tag=None, name=None, new_metadata='default_metadata', new_name=None, password=None, rm_tag=None, secure_access_add_host=None, secure_access_allow_port_forwading=None, secure_access_aws_account_id=None, secure_access_aws_native_cli=None, secure_access_aws_region=None, secure_access_bastion_api=None, secure_access_bastion_issuer=None, secure_access_bastion_ssh=None, secure_access_cluster_endpoint=None, secure_access_dashboard_url=None, secure_access_db_name=None, secure_access_db_schema=None, secure_access_enable=None, secure_access_host=None, secure_access_rdp_domain=None, secure_access_rdp_user=None, secure_access_rm_host=None, secure_access_ssh_creds=None, secure_access_ssh_creds_user=None, secure_access_url=None, secure_access_use_internal_bastion=None, secure_access_web_browsing=None, token=None, uid_token=None, username=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, add_tag=None, name=None, new_metadata='default_metadata', new_name=None, password=None, rm_tag=None, secure_access_add_host=None, secure_access_allow_external_user=None, secure_access_allow_port_forwading=None, secure_access_aws_account_id=None, secure_access_aws_native_cli=None, secure_access_aws_region=None, secure_access_bastion_api=None, secure_access_bastion_issuer=None, secure_access_bastion_ssh=None, secure_access_cluster_endpoint=None, secure_access_dashboard_url=None, secure_access_db_name=None, secure_access_db_schema=None, secure_access_enable=None, secure_access_host=None, secure_access_rdp_domain=None, secure_access_rdp_user=None, secure_access_rm_host=None, secure_access_ssh_creds=None, secure_access_ssh_creds_user=None, secure_access_url=None, secure_access_use_internal_bastion=None, secure_access_web_browsing=None, token=None, uid_token=None, username=None, local_vars_configuration=None):  # noqa: E501
         """UpdateItem - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -114,6 +116,7 @@ class UpdateItem(object):
         self._password = None
         self._rm_tag = None
         self._secure_access_add_host = None
+        self._secure_access_allow_external_user = None
         self._secure_access_allow_port_forwading = None
         self._secure_access_aws_account_id = None
         self._secure_access_aws_native_cli = None
@@ -153,6 +156,8 @@ class UpdateItem(object):
             self.rm_tag = rm_tag
         if secure_access_add_host is not None:
             self.secure_access_add_host = secure_access_add_host
+        if secure_access_allow_external_user is not None:
+            self.secure_access_allow_external_user = secure_access_allow_external_user
         if secure_access_allow_port_forwading is not None:
             self.secure_access_allow_port_forwading = secure_access_allow_port_forwading
         if secure_access_aws_account_id is not None:
@@ -362,6 +367,27 @@ class UpdateItem(object):
         """
 
         self._secure_access_add_host = secure_access_add_host
+
+    @property
+    def secure_access_allow_external_user(self):
+        """Gets the secure_access_allow_external_user of this UpdateItem.  # noqa: E501
+
+
+        :return: The secure_access_allow_external_user of this UpdateItem.  # noqa: E501
+        :rtype: str
+        """
+        return self._secure_access_allow_external_user
+
+    @secure_access_allow_external_user.setter
+    def secure_access_allow_external_user(self, secure_access_allow_external_user):
+        """Sets the secure_access_allow_external_user of this UpdateItem.
+
+
+        :param secure_access_allow_external_user: The secure_access_allow_external_user of this UpdateItem.  # noqa: E501
+        :type: str
+        """
+
+        self._secure_access_allow_external_user = secure_access_allow_external_user
 
     @property
     def secure_access_allow_port_forwading(self):
