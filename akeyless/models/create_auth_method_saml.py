@@ -151,7 +151,7 @@ class CreateAuthMethodSAML(object):
     def bound_ips(self):
         """Gets the bound_ips of this CreateAuthMethodSAML.  # noqa: E501
 
-        A CIDR whitelist of the IPs that the access is restricted to  # noqa: E501
+        A CIDR whitelist with the IPs that the access is restricted to  # noqa: E501
 
         :return: The bound_ips of this CreateAuthMethodSAML.  # noqa: E501
         :rtype: list[str]
@@ -162,7 +162,7 @@ class CreateAuthMethodSAML(object):
     def bound_ips(self, bound_ips):
         """Sets the bound_ips of this CreateAuthMethodSAML.
 
-        A CIDR whitelist of the IPs that the access is restricted to  # noqa: E501
+        A CIDR whitelist with the IPs that the access is restricted to  # noqa: E501
 
         :param bound_ips: The bound_ips of this CreateAuthMethodSAML.  # noqa: E501
         :type: list[str]

@@ -47,6 +47,7 @@ class CreateSSHCertIssuer(object):
         'secure_access_ssh_creds_user': 'str',
         'secure_access_use_internal_bastion': 'bool',
         'signer_key_name': 'str',
+        'tag': 'list[str]',
         'token': 'str',
         'ttl': 'int',
         'uid_token': 'str',
@@ -67,13 +68,14 @@ class CreateSSHCertIssuer(object):
         'secure_access_ssh_creds_user': 'secure-access-ssh-creds-user',
         'secure_access_use_internal_bastion': 'secure-access-use-internal-bastion',
         'signer_key_name': 'signer-key-name',
+        'tag': 'tag',
         'token': 'token',
         'ttl': 'ttl',
         'uid_token': 'uid-token',
         'username': 'username'
     }
 
-    def __init__(self, allowed_users=None, extensions=None, metadata=None, name=None, password=None, principals=None, secure_access_bastion_api=None, secure_access_bastion_ssh=None, secure_access_enable=None, secure_access_host=None, secure_access_ssh_creds_user=None, secure_access_use_internal_bastion=None, signer_key_name=None, token=None, ttl=None, uid_token=None, username=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, allowed_users=None, extensions=None, metadata=None, name=None, password=None, principals=None, secure_access_bastion_api=None, secure_access_bastion_ssh=None, secure_access_enable=None, secure_access_host=None, secure_access_ssh_creds_user=None, secure_access_use_internal_bastion=None, signer_key_name=None, tag=None, token=None, ttl=None, uid_token=None, username=None, local_vars_configuration=None):  # noqa: E501
         """CreateSSHCertIssuer - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -92,6 +94,7 @@ class CreateSSHCertIssuer(object):
         self._secure_access_ssh_creds_user = None
         self._secure_access_use_internal_bastion = None
         self._signer_key_name = None
+        self._tag = None
         self._token = None
         self._ttl = None
         self._uid_token = None
@@ -121,6 +124,8 @@ class CreateSSHCertIssuer(object):
         if secure_access_use_internal_bastion is not None:
             self.secure_access_use_internal_bastion = secure_access_use_internal_bastion
         self.signer_key_name = signer_key_name
+        if tag is not None:
+            self.tag = tag
         if token is not None:
             self.token = token
         self.ttl = ttl
@@ -421,6 +426,29 @@ class CreateSSHCertIssuer(object):
             raise ValueError("Invalid value for `signer_key_name`, must not be `None`")  # noqa: E501
 
         self._signer_key_name = signer_key_name
+
+    @property
+    def tag(self):
+        """Gets the tag of this CreateSSHCertIssuer.  # noqa: E501
+
+        List of the tags attached to this key  # noqa: E501
+
+        :return: The tag of this CreateSSHCertIssuer.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._tag
+
+    @tag.setter
+    def tag(self, tag):
+        """Sets the tag of this CreateSSHCertIssuer.
+
+        List of the tags attached to this key  # noqa: E501
+
+        :param tag: The tag of this CreateSSHCertIssuer.  # noqa: E501
+        :type: list[str]
+        """
+
+        self._tag = tag
 
     @property
     def token(self):

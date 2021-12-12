@@ -177,7 +177,7 @@ class CreateAuthMethodGCP(object):
     def bound_ips(self):
         """Gets the bound_ips of this CreateAuthMethodGCP.  # noqa: E501
 
-        A CIDR whitelist of the IPs that the access is restricted to  # noqa: E501
+        A CIDR whitelist with the IPs that the access is restricted to  # noqa: E501
 
         :return: The bound_ips of this CreateAuthMethodGCP.  # noqa: E501
         :rtype: list[str]
@@ -188,7 +188,7 @@ class CreateAuthMethodGCP(object):
     def bound_ips(self, bound_ips):
         """Sets the bound_ips of this CreateAuthMethodGCP.
 
-        A CIDR whitelist of the IPs that the access is restricted to  # noqa: E501
+        A CIDR whitelist with the IPs that the access is restricted to  # noqa: E501
 
         :param bound_ips: The bound_ips of this CreateAuthMethodGCP.  # noqa: E501
         :type: list[str]
@@ -269,7 +269,7 @@ class CreateAuthMethodGCP(object):
     def bound_service_accounts(self):
         """Gets the bound_service_accounts of this CreateAuthMethodGCP.  # noqa: E501
 
-        === Human authentication section === List of service accounts the service account must be part of in order to be authenticated.  # noqa: E501
+        List of service accounts the service account must be part of in order to be authenticated.  # noqa: E501
 
         :return: The bound_service_accounts of this CreateAuthMethodGCP.  # noqa: E501
         :rtype: list[str]
@@ -280,7 +280,7 @@ class CreateAuthMethodGCP(object):
     def bound_service_accounts(self, bound_service_accounts):
         """Sets the bound_service_accounts of this CreateAuthMethodGCP.
 
-        === Human authentication section === List of service accounts the service account must be part of in order to be authenticated.  # noqa: E501
+        List of service accounts the service account must be part of in order to be authenticated.  # noqa: E501
 
         :param bound_service_accounts: The bound_service_accounts of this CreateAuthMethodGCP.  # noqa: E501
         :type: list[str]

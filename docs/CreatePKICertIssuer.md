@@ -24,6 +24,7 @@ Name | Type | Description | Notes
 **server_flag** | **bool** | If set, certificates will be flagged for server auth use | [optional] 
 **signer_key_name** | **str** | A key to sign the certificate with | 
 **street_address** | **str** | A comma-separated list of the street address that will be set in the issued certificate | [optional] 
+**tag** | **list[str]** | List of the tags attached to this key | [optional] 
 **token** | **str** | Authentication token (see &#x60;/auth&#x60; and &#x60;/configure&#x60;) | [optional] 
 **ttl** | **int** | he requested Time To Live for the certificate, in seconds | 
 **uid_token** | **str** | The universal identity token, Required only for universal_identity authentication | [optional] 

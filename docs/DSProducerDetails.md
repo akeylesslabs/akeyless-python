@@ -129,6 +129,7 @@ Name | Type | Description | Notes
 **sf_user_role** | **str** | generated  users info | [optional] 
 **sf_warehouse_name** | **str** |  | [optional] 
 **should_stop** | **str** | TODO delete this after migration | [optional] 
+**tags** | **list[str]** |  | [optional] 
 **timeout_seconds** | **int** |  | [optional] 
 **use_gw_cloud_identity** | **bool** |  | [optional] 
 **user_principal_name** | **str** |  | [optional] 

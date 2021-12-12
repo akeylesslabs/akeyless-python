@@ -44,6 +44,7 @@ class CreateAuthMethodK8S(object):
         'gen_key': 'str',
         'name': 'str',
         'password': 'str',
+        'public_key': 'str',
         'token': 'str',
         'uid_token': 'str',
         'username': 'str'
@@ -60,12 +61,13 @@ class CreateAuthMethodK8S(object):
         'gen_key': 'gen-key',
         'name': 'name',
         'password': 'password',
+        'public_key': 'public-key',
         'token': 'token',
         'uid_token': 'uid-token',
         'username': 'username'
     }
 
-    def __init__(self, access_expires=0, audience=None, bound_ips=None, bound_namespaces=None, bound_pod_names=None, bound_sa_names=None, force_sub_claims=None, gen_key='true', name=None, password=None, token=None, uid_token=None, username=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, access_expires=0, audience=None, bound_ips=None, bound_namespaces=None, bound_pod_names=None, bound_sa_names=None, force_sub_claims=None, gen_key='true', name=None, password=None, public_key=None, token=None, uid_token=None, username=None, local_vars_configuration=None):  # noqa: E501
         """CreateAuthMethodK8S - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -81,6 +83,7 @@ class CreateAuthMethodK8S(object):
         self._gen_key = None
         self._name = None
         self._password = None
+        self._public_key = None
         self._token = None
         self._uid_token = None
         self._username = None
@@ -105,6 +108,8 @@ class CreateAuthMethodK8S(object):
         self.name = name
         if password is not None:
             self.password = password
+        if public_key is not None:
+            self.public_key = public_key
         if token is not None:
             self.token = token
         if uid_token is not None:
@@ -162,7 +167,7 @@ class CreateAuthMethodK8S(object):
     def bound_ips(self):
         """Gets the bound_ips of this CreateAuthMethodK8S.  # noqa: E501
 
-        A CIDR whitelist of the IPs that the access is restricted to  # noqa: E501
+        A CIDR whitelist with the IPs that the access is restricted to  # noqa: E501
 
         :return: The bound_ips of this CreateAuthMethodK8S.  # noqa: E501
         :rtype: list[str]
@@ -173,7 +178,7 @@ class CreateAuthMethodK8S(object):
     def bound_ips(self, bound_ips):
         """Sets the bound_ips of this CreateAuthMethodK8S.
 
-        A CIDR whitelist of the IPs that the access is restricted to  # noqa: E501
+        A CIDR whitelist with the IPs that the access is restricted to  # noqa: E501
 
         :param bound_ips: The bound_ips of this CreateAuthMethodK8S.  # noqa: E501
         :type: list[str]
@@ -343,6 +348,29 @@ class CreateAuthMethodK8S(object):
         """
 
         self._password = password
+
+    @property
+    def public_key(self):
+        """Gets the public_key of this CreateAuthMethodK8S.  # noqa: E501
+
+        Base64-encoded public key text for K8S authentication method is required [RSA2048]  # noqa: E501
+
+        :return: The public_key of this CreateAuthMethodK8S.  # noqa: E501
+        :rtype: str
+        """
+        return self._public_key
+
+    @public_key.setter
+    def public_key(self, public_key):
+        """Sets the public_key of this CreateAuthMethodK8S.
+
+        Base64-encoded public key text for K8S authentication method is required [RSA2048]  # noqa: E501
+
+        :param public_key: The public_key of this CreateAuthMethodK8S.  # noqa: E501
+        :type: str
+        """
+
+        self._public_key = public_key
 
     @property
     def token(self):

@@ -42,6 +42,7 @@ class GatewayCreateProducerGcp(object):
         'name': 'str',
         'password': 'str',
         'producer_encryption_key_name': 'str',
+        'tags': 'list[str]',
         'target_name': 'str',
         'token': 'str',
         'uid_token': 'str',
@@ -58,6 +59,7 @@ class GatewayCreateProducerGcp(object):
         'name': 'name',
         'password': 'password',
         'producer_encryption_key_name': 'producer-encryption-key-name',
+        'tags': 'tags',
         'target_name': 'target-name',
         'token': 'token',
         'uid_token': 'uid-token',
@@ -65,7 +67,7 @@ class GatewayCreateProducerGcp(object):
         'username': 'username'
     }
 
-    def __init__(self, gcp_cred_type=None, gcp_key=None, gcp_key_algo=None, gcp_sa_email=None, gcp_token_scopes=None, name=None, password=None, producer_encryption_key_name=None, target_name=None, token=None, uid_token=None, user_ttl='60m', username=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, gcp_cred_type=None, gcp_key=None, gcp_key_algo=None, gcp_sa_email=None, gcp_token_scopes=None, name=None, password=None, producer_encryption_key_name=None, tags=None, target_name=None, token=None, uid_token=None, user_ttl='60m', username=None, local_vars_configuration=None):  # noqa: E501
         """GatewayCreateProducerGcp - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -79,6 +81,7 @@ class GatewayCreateProducerGcp(object):
         self._name = None
         self._password = None
         self._producer_encryption_key_name = None
+        self._tags = None
         self._target_name = None
         self._token = None
         self._uid_token = None
@@ -101,6 +104,8 @@ class GatewayCreateProducerGcp(object):
             self.password = password
         if producer_encryption_key_name is not None:
             self.producer_encryption_key_name = producer_encryption_key_name
+        if tags is not None:
+            self.tags = tags
         if target_name is not None:
             self.target_name = target_name
         if token is not None:
@@ -295,6 +300,29 @@ class GatewayCreateProducerGcp(object):
         """
 
         self._producer_encryption_key_name = producer_encryption_key_name
+
+    @property
+    def tags(self):
+        """Gets the tags of this GatewayCreateProducerGcp.  # noqa: E501
+
+        List of the tags attached to this secret  # noqa: E501
+
+        :return: The tags of this GatewayCreateProducerGcp.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._tags
+
+    @tags.setter
+    def tags(self, tags):
+        """Sets the tags of this GatewayCreateProducerGcp.
+
+        List of the tags attached to this secret  # noqa: E501
+
+        :param tags: The tags of this GatewayCreateProducerGcp.  # noqa: E501
+        :type: list[str]
+        """
+
+        self._tags = tags
 
     @property
     def target_name(self):

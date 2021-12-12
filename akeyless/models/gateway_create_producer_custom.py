@@ -41,6 +41,7 @@ class GatewayCreateProducerCustom(object):
         'producer_encryption_key_name': 'str',
         'revoke_sync_url': 'str',
         'rotate_sync_url': 'str',
+        'tags': 'list[str]',
         'timeout_sec': 'int',
         'token': 'str',
         'uid_token': 'str',
@@ -56,6 +57,7 @@ class GatewayCreateProducerCustom(object):
         'producer_encryption_key_name': 'producer-encryption-key-name',
         'revoke_sync_url': 'revoke-sync-url',
         'rotate_sync_url': 'rotate-sync-url',
+        'tags': 'tags',
         'timeout_sec': 'timeout-sec',
         'token': 'token',
         'uid_token': 'uid-token',
@@ -63,7 +65,7 @@ class GatewayCreateProducerCustom(object):
         'username': 'username'
     }
 
-    def __init__(self, create_sync_url=None, name=None, password=None, payload=None, producer_encryption_key_name=None, revoke_sync_url=None, rotate_sync_url=None, timeout_sec=60, token=None, uid_token=None, user_ttl='60m', username=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, create_sync_url=None, name=None, password=None, payload=None, producer_encryption_key_name=None, revoke_sync_url=None, rotate_sync_url=None, tags=None, timeout_sec=60, token=None, uid_token=None, user_ttl='60m', username=None, local_vars_configuration=None):  # noqa: E501
         """GatewayCreateProducerCustom - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -76,6 +78,7 @@ class GatewayCreateProducerCustom(object):
         self._producer_encryption_key_name = None
         self._revoke_sync_url = None
         self._rotate_sync_url = None
+        self._tags = None
         self._timeout_sec = None
         self._token = None
         self._uid_token = None
@@ -94,6 +97,8 @@ class GatewayCreateProducerCustom(object):
         self.revoke_sync_url = revoke_sync_url
         if rotate_sync_url is not None:
             self.rotate_sync_url = rotate_sync_url
+        if tags is not None:
+            self.tags = tags
         if timeout_sec is not None:
             self.timeout_sec = timeout_sec
         if token is not None:
@@ -271,6 +276,29 @@ class GatewayCreateProducerCustom(object):
         """
 
         self._rotate_sync_url = rotate_sync_url
+
+    @property
+    def tags(self):
+        """Gets the tags of this GatewayCreateProducerCustom.  # noqa: E501
+
+        List of the tags attached to this secret  # noqa: E501
+
+        :return: The tags of this GatewayCreateProducerCustom.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._tags
+
+    @tags.setter
+    def tags(self, tags):
+        """Sets the tags of this GatewayCreateProducerCustom.
+
+        List of the tags attached to this secret  # noqa: E501
+
+        :param tags: The tags of this GatewayCreateProducerCustom.  # noqa: E501
+        :type: list[str]
+        """
+
+        self._tags = tags
 
     @property
     def timeout_sec(self):

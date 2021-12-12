@@ -55,6 +55,7 @@ class CreatePKICertIssuer(object):
         'server_flag': 'bool',
         'signer_key_name': 'str',
         'street_address': 'str',
+        'tag': 'list[str]',
         'token': 'str',
         'ttl': 'int',
         'uid_token': 'str',
@@ -83,13 +84,14 @@ class CreatePKICertIssuer(object):
         'server_flag': 'server-flag',
         'signer_key_name': 'signer-key-name',
         'street_address': 'street-address',
+        'tag': 'tag',
         'token': 'token',
         'ttl': 'ttl',
         'uid_token': 'uid-token',
         'username': 'username'
     }
 
-    def __init__(self, allow_any_name=None, allow_subdomains=None, allowed_domains=None, allowed_uri_sans=None, client_flag=None, code_signing_flag=None, country=None, key_usage='DigitalSignature,KeyAgreement,KeyEncipherment', locality=None, metadata=None, name=None, not_enforce_hostnames=None, not_require_cn=None, organizational_units=None, organizations=None, password=None, postal_code=None, province=None, server_flag=None, signer_key_name=None, street_address=None, token=None, ttl=None, uid_token=None, username=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, allow_any_name=None, allow_subdomains=None, allowed_domains=None, allowed_uri_sans=None, client_flag=None, code_signing_flag=None, country=None, key_usage='DigitalSignature,KeyAgreement,KeyEncipherment', locality=None, metadata=None, name=None, not_enforce_hostnames=None, not_require_cn=None, organizational_units=None, organizations=None, password=None, postal_code=None, province=None, server_flag=None, signer_key_name=None, street_address=None, tag=None, token=None, ttl=None, uid_token=None, username=None, local_vars_configuration=None):  # noqa: E501
         """CreatePKICertIssuer - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -116,6 +118,7 @@ class CreatePKICertIssuer(object):
         self._server_flag = None
         self._signer_key_name = None
         self._street_address = None
+        self._tag = None
         self._token = None
         self._ttl = None
         self._uid_token = None
@@ -162,6 +165,8 @@ class CreatePKICertIssuer(object):
         self.signer_key_name = signer_key_name
         if street_address is not None:
             self.street_address = street_address
+        if tag is not None:
+            self.tag = tag
         if token is not None:
             self.token = token
         self.ttl = ttl
@@ -656,6 +661,29 @@ class CreatePKICertIssuer(object):
         """
 
         self._street_address = street_address
+
+    @property
+    def tag(self):
+        """Gets the tag of this CreatePKICertIssuer.  # noqa: E501
+
+        List of the tags attached to this key  # noqa: E501
+
+        :return: The tag of this CreatePKICertIssuer.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._tag
+
+    @tag.setter
+    def tag(self, tag):
+        """Sets the tag of this CreatePKICertIssuer.
+
+        List of the tags attached to this key  # noqa: E501
+
+        :param tag: The tag of this CreatePKICertIssuer.  # noqa: E501
+        :type: list[str]
+        """
+
+        self._tag = tag
 
     @property
     def token(self):

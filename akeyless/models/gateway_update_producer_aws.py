@@ -55,6 +55,7 @@ class GatewayUpdateProducerAws(object):
         'secure_access_enable': 'str',
         'secure_access_web': 'bool',
         'secure_access_web_browsing': 'bool',
+        'tags': 'list[str]',
         'target_name': 'str',
         'token': 'str',
         'uid_token': 'str',
@@ -84,6 +85,7 @@ class GatewayUpdateProducerAws(object):
         'secure_access_enable': 'secure-access-enable',
         'secure_access_web': 'secure-access-web',
         'secure_access_web_browsing': 'secure-access-web-browsing',
+        'tags': 'tags',
         'target_name': 'target-name',
         'token': 'token',
         'uid_token': 'uid-token',
@@ -91,7 +93,7 @@ class GatewayUpdateProducerAws(object):
         'username': 'username'
     }
 
-    def __init__(self, access_mode=None, admin_rotation_interval_days=0, aws_access_key_id=None, aws_access_secret_key=None, aws_role_arns=None, aws_user_console_access=False, aws_user_groups=None, aws_user_policies=None, aws_user_programmatic_access=True, enable_admin_rotation=False, name=None, new_name=None, password=None, producer_encryption_key_name=None, region='us-east-2', secure_access_aws_account_id=None, secure_access_aws_native_cli=None, secure_access_bastion_issuer=None, secure_access_enable=None, secure_access_web=None, secure_access_web_browsing=None, target_name=None, token=None, uid_token=None, user_ttl='60m', username=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, access_mode=None, admin_rotation_interval_days=0, aws_access_key_id=None, aws_access_secret_key=None, aws_role_arns=None, aws_user_console_access=False, aws_user_groups=None, aws_user_policies=None, aws_user_programmatic_access=True, enable_admin_rotation=False, name=None, new_name=None, password=None, producer_encryption_key_name=None, region='us-east-2', secure_access_aws_account_id=None, secure_access_aws_native_cli=None, secure_access_bastion_issuer=None, secure_access_enable=None, secure_access_web=None, secure_access_web_browsing=None, tags=None, target_name=None, token=None, uid_token=None, user_ttl='60m', username=None, local_vars_configuration=None):  # noqa: E501
         """GatewayUpdateProducerAws - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -118,6 +120,7 @@ class GatewayUpdateProducerAws(object):
         self._secure_access_enable = None
         self._secure_access_web = None
         self._secure_access_web_browsing = None
+        self._tags = None
         self._target_name = None
         self._token = None
         self._uid_token = None
@@ -166,6 +169,8 @@ class GatewayUpdateProducerAws(object):
             self.secure_access_web = secure_access_web
         if secure_access_web_browsing is not None:
             self.secure_access_web_browsing = secure_access_web_browsing
+        if tags is not None:
+            self.tags = tags
         if target_name is not None:
             self.target_name = target_name
         if token is not None:
@@ -647,6 +652,29 @@ class GatewayUpdateProducerAws(object):
         """
 
         self._secure_access_web_browsing = secure_access_web_browsing
+
+    @property
+    def tags(self):
+        """Gets the tags of this GatewayUpdateProducerAws.  # noqa: E501
+
+        List of the tags attached to this secret  # noqa: E501
+
+        :return: The tags of this GatewayUpdateProducerAws.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._tags
+
+    @tags.setter
+    def tags(self, tags):
+        """Sets the tags of this GatewayUpdateProducerAws.
+
+        List of the tags attached to this secret  # noqa: E501
+
+        :param tags: The tags of this GatewayUpdateProducerAws.  # noqa: E501
+        :type: list[str]
+        """
+
+        self._tags = tags
 
     @property
     def target_name(self):

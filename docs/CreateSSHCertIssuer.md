@@ -16,6 +16,7 @@ Name | Type | Description | Notes
 **secure_access_ssh_creds_user** | **str** |  | [optional] 
 **secure_access_use_internal_bastion** | **bool** |  | [optional] 
 **signer_key_name** | **str** | A key to sign the certificate with | 
+**tag** | **list[str]** | List of the tags attached to this key | [optional] 
 **token** | **str** | Authentication token (see &#x60;/auth&#x60; and &#x60;/configure&#x60;) | [optional] 
 **ttl** | **int** | he requested Time To Live for the certificate, in seconds | 
 **uid_token** | **str** | The universal identity token, Required only for universal_identity authentication | [optional] 

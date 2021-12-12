@@ -22,6 +22,7 @@ Name | Type | Description | Notes
 **secure_access_enable** | **str** |  | [optional] 
 **secure_access_host** | **list[str]** |  | [optional] 
 **secure_access_web** | **bool** |  | [optional] 
+**tags** | **list[str]** | List of the tags attached to this secret | [optional] 
 **target_name** | **str** | Target name | [optional] 
 **token** | **str** | Authentication token (see &#x60;/auth&#x60; and &#x60;/configure&#x60;) | [optional] 
 **uid_token** | **str** | The universal identity token, Required only for universal_identity authentication | [optional] 

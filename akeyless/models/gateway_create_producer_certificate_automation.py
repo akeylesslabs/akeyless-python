@@ -46,6 +46,7 @@ class GatewayCreateProducerCertificateAutomation(object):
         'sign_using_akeyless_pki': 'bool',
         'signer_key_name': 'str',
         'store_private_key': 'bool',
+        'tags': 'list[str]',
         'target_name': 'str',
         'token': 'str',
         'uid_token': 'str',
@@ -72,6 +73,7 @@ class GatewayCreateProducerCertificateAutomation(object):
         'sign_using_akeyless_pki': 'sign-using-akeyless-pki',
         'signer_key_name': 'signer-key-name',
         'store_private_key': 'store-private-key',
+        'tags': 'tags',
         'target_name': 'target-name',
         'token': 'token',
         'uid_token': 'uid-token',
@@ -85,7 +87,7 @@ class GatewayCreateProducerCertificateAutomation(object):
         'venafi_zone': 'venafi-zone'
     }
 
-    def __init__(self, admin_rotation_interval_days=0, allow_subdomains=None, allowed_domains=None, auto_generated_folder=None, enable_admin_rotation=False, name=None, password=None, producer_encryption_key_name=None, root_first_in_chain=None, sign_using_akeyless_pki=None, signer_key_name=None, store_private_key=None, target_name=None, token=None, uid_token=None, user_ttl=None, username=None, venafi_api_key=None, venafi_baseurl=None, venafi_password=None, venafi_use_tpp=None, venafi_username=None, venafi_zone=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, admin_rotation_interval_days=0, allow_subdomains=None, allowed_domains=None, auto_generated_folder=None, enable_admin_rotation=False, name=None, password=None, producer_encryption_key_name=None, root_first_in_chain=None, sign_using_akeyless_pki=None, signer_key_name=None, store_private_key=None, tags=None, target_name=None, token=None, uid_token=None, user_ttl=None, username=None, venafi_api_key=None, venafi_baseurl=None, venafi_password=None, venafi_use_tpp=None, venafi_username=None, venafi_zone=None, local_vars_configuration=None):  # noqa: E501
         """GatewayCreateProducerCertificateAutomation - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -103,6 +105,7 @@ class GatewayCreateProducerCertificateAutomation(object):
         self._sign_using_akeyless_pki = None
         self._signer_key_name = None
         self._store_private_key = None
+        self._tags = None
         self._target_name = None
         self._token = None
         self._uid_token = None
@@ -139,6 +142,8 @@ class GatewayCreateProducerCertificateAutomation(object):
             self.signer_key_name = signer_key_name
         if store_private_key is not None:
             self.store_private_key = store_private_key
+        if tags is not None:
+            self.tags = tags
         if target_name is not None:
             self.target_name = target_name
         if token is not None:
@@ -439,6 +444,29 @@ class GatewayCreateProducerCertificateAutomation(object):
         """
 
         self._store_private_key = store_private_key
+
+    @property
+    def tags(self):
+        """Gets the tags of this GatewayCreateProducerCertificateAutomation.  # noqa: E501
+
+        List of the tags attached to this secret  # noqa: E501
+
+        :return: The tags of this GatewayCreateProducerCertificateAutomation.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._tags
+
+    @tags.setter
+    def tags(self, tags):
+        """Sets the tags of this GatewayCreateProducerCertificateAutomation.
+
+        List of the tags attached to this secret  # noqa: E501
+
+        :param tags: The tags of this GatewayCreateProducerCertificateAutomation.  # noqa: E501
+        :type: list[str]
+        """
+
+        self._tags = tags
 
     @property
     def target_name(self):

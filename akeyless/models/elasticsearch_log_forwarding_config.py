@@ -34,55 +34,122 @@ class ElasticsearchLogForwardingConfig(object):
                             and the value is json key in definition.
     """
     openapi_types = {
-        'elasticsearch_host': 'str',
+        'elasticsearch_api_key': 'str',
+        'elasticsearch_auth_type': 'str',
+        'elasticsearch_cloud_id': 'str',
         'elasticsearch_index': 'str',
-        'elasticsearch_nodes': 'str'
+        'elasticsearch_nodes': 'str',
+        'elasticsearch_password': 'str',
+        'elasticsearch_server_type': 'str',
+        'elasticsearch_user_name': 'str'
     }
 
     attribute_map = {
-        'elasticsearch_host': 'elasticsearch_host',
+        'elasticsearch_api_key': 'elasticsearch_api_key',
+        'elasticsearch_auth_type': 'elasticsearch_auth_type',
+        'elasticsearch_cloud_id': 'elasticsearch_cloud_id',
         'elasticsearch_index': 'elasticsearch_index',
-        'elasticsearch_nodes': 'elasticsearch_nodes'
+        'elasticsearch_nodes': 'elasticsearch_nodes',
+        'elasticsearch_password': 'elasticsearch_password',
+        'elasticsearch_server_type': 'elasticsearch_server_type',
+        'elasticsearch_user_name': 'elasticsearch_user_name'
     }
 
-    def __init__(self, elasticsearch_host=None, elasticsearch_index=None, elasticsearch_nodes=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, elasticsearch_api_key=None, elasticsearch_auth_type=None, elasticsearch_cloud_id=None, elasticsearch_index=None, elasticsearch_nodes=None, elasticsearch_password=None, elasticsearch_server_type=None, elasticsearch_user_name=None, local_vars_configuration=None):  # noqa: E501
         """ElasticsearchLogForwardingConfig - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
-        self._elasticsearch_host = None
+        self._elasticsearch_api_key = None
+        self._elasticsearch_auth_type = None
+        self._elasticsearch_cloud_id = None
         self._elasticsearch_index = None
         self._elasticsearch_nodes = None
+        self._elasticsearch_password = None
+        self._elasticsearch_server_type = None
+        self._elasticsearch_user_name = None
         self.discriminator = None
 
-        if elasticsearch_host is not None:
-            self.elasticsearch_host = elasticsearch_host
+        if elasticsearch_api_key is not None:
+            self.elasticsearch_api_key = elasticsearch_api_key
+        if elasticsearch_auth_type is not None:
+            self.elasticsearch_auth_type = elasticsearch_auth_type
+        if elasticsearch_cloud_id is not None:
+            self.elasticsearch_cloud_id = elasticsearch_cloud_id
         if elasticsearch_index is not None:
             self.elasticsearch_index = elasticsearch_index
         if elasticsearch_nodes is not None:
             self.elasticsearch_nodes = elasticsearch_nodes
+        if elasticsearch_password is not None:
+            self.elasticsearch_password = elasticsearch_password
+        if elasticsearch_server_type is not None:
+            self.elasticsearch_server_type = elasticsearch_server_type
+        if elasticsearch_user_name is not None:
+            self.elasticsearch_user_name = elasticsearch_user_name
 
     @property
-    def elasticsearch_host(self):
-        """Gets the elasticsearch_host of this ElasticsearchLogForwardingConfig.  # noqa: E501
+    def elasticsearch_api_key(self):
+        """Gets the elasticsearch_api_key of this ElasticsearchLogForwardingConfig.  # noqa: E501
 
 
-        :return: The elasticsearch_host of this ElasticsearchLogForwardingConfig.  # noqa: E501
+        :return: The elasticsearch_api_key of this ElasticsearchLogForwardingConfig.  # noqa: E501
         :rtype: str
         """
-        return self._elasticsearch_host
+        return self._elasticsearch_api_key
 
-    @elasticsearch_host.setter
-    def elasticsearch_host(self, elasticsearch_host):
-        """Sets the elasticsearch_host of this ElasticsearchLogForwardingConfig.
+    @elasticsearch_api_key.setter
+    def elasticsearch_api_key(self, elasticsearch_api_key):
+        """Sets the elasticsearch_api_key of this ElasticsearchLogForwardingConfig.
 
 
-        :param elasticsearch_host: The elasticsearch_host of this ElasticsearchLogForwardingConfig.  # noqa: E501
+        :param elasticsearch_api_key: The elasticsearch_api_key of this ElasticsearchLogForwardingConfig.  # noqa: E501
         :type: str
         """
 
-        self._elasticsearch_host = elasticsearch_host
+        self._elasticsearch_api_key = elasticsearch_api_key
+
+    @property
+    def elasticsearch_auth_type(self):
+        """Gets the elasticsearch_auth_type of this ElasticsearchLogForwardingConfig.  # noqa: E501
+
+
+        :return: The elasticsearch_auth_type of this ElasticsearchLogForwardingConfig.  # noqa: E501
+        :rtype: str
+        """
+        return self._elasticsearch_auth_type
+
+    @elasticsearch_auth_type.setter
+    def elasticsearch_auth_type(self, elasticsearch_auth_type):
+        """Sets the elasticsearch_auth_type of this ElasticsearchLogForwardingConfig.
+
+
+        :param elasticsearch_auth_type: The elasticsearch_auth_type of this ElasticsearchLogForwardingConfig.  # noqa: E501
+        :type: str
+        """
+
+        self._elasticsearch_auth_type = elasticsearch_auth_type
+
+    @property
+    def elasticsearch_cloud_id(self):
+        """Gets the elasticsearch_cloud_id of this ElasticsearchLogForwardingConfig.  # noqa: E501
+
+
+        :return: The elasticsearch_cloud_id of this ElasticsearchLogForwardingConfig.  # noqa: E501
+        :rtype: str
+        """
+        return self._elasticsearch_cloud_id
+
+    @elasticsearch_cloud_id.setter
+    def elasticsearch_cloud_id(self, elasticsearch_cloud_id):
+        """Sets the elasticsearch_cloud_id of this ElasticsearchLogForwardingConfig.
+
+
+        :param elasticsearch_cloud_id: The elasticsearch_cloud_id of this ElasticsearchLogForwardingConfig.  # noqa: E501
+        :type: str
+        """
+
+        self._elasticsearch_cloud_id = elasticsearch_cloud_id
 
     @property
     def elasticsearch_index(self):
@@ -125,6 +192,69 @@ class ElasticsearchLogForwardingConfig(object):
         """
 
         self._elasticsearch_nodes = elasticsearch_nodes
+
+    @property
+    def elasticsearch_password(self):
+        """Gets the elasticsearch_password of this ElasticsearchLogForwardingConfig.  # noqa: E501
+
+
+        :return: The elasticsearch_password of this ElasticsearchLogForwardingConfig.  # noqa: E501
+        :rtype: str
+        """
+        return self._elasticsearch_password
+
+    @elasticsearch_password.setter
+    def elasticsearch_password(self, elasticsearch_password):
+        """Sets the elasticsearch_password of this ElasticsearchLogForwardingConfig.
+
+
+        :param elasticsearch_password: The elasticsearch_password of this ElasticsearchLogForwardingConfig.  # noqa: E501
+        :type: str
+        """
+
+        self._elasticsearch_password = elasticsearch_password
+
+    @property
+    def elasticsearch_server_type(self):
+        """Gets the elasticsearch_server_type of this ElasticsearchLogForwardingConfig.  # noqa: E501
+
+
+        :return: The elasticsearch_server_type of this ElasticsearchLogForwardingConfig.  # noqa: E501
+        :rtype: str
+        """
+        return self._elasticsearch_server_type
+
+    @elasticsearch_server_type.setter
+    def elasticsearch_server_type(self, elasticsearch_server_type):
+        """Sets the elasticsearch_server_type of this ElasticsearchLogForwardingConfig.
+
+
+        :param elasticsearch_server_type: The elasticsearch_server_type of this ElasticsearchLogForwardingConfig.  # noqa: E501
+        :type: str
+        """
+
+        self._elasticsearch_server_type = elasticsearch_server_type
+
+    @property
+    def elasticsearch_user_name(self):
+        """Gets the elasticsearch_user_name of this ElasticsearchLogForwardingConfig.  # noqa: E501
+
+
+        :return: The elasticsearch_user_name of this ElasticsearchLogForwardingConfig.  # noqa: E501
+        :rtype: str
+        """
+        return self._elasticsearch_user_name
+
+    @elasticsearch_user_name.setter
+    def elasticsearch_user_name(self, elasticsearch_user_name):
+        """Sets the elasticsearch_user_name of this ElasticsearchLogForwardingConfig.
+
+
+        :param elasticsearch_user_name: The elasticsearch_user_name of this ElasticsearchLogForwardingConfig.  # noqa: E501
+        :type: str
+        """
+
+        self._elasticsearch_user_name = elasticsearch_user_name
 
     def to_dict(self):
         """Returns the model properties as a dict"""

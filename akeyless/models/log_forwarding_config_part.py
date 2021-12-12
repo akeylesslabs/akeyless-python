@@ -36,6 +36,7 @@ class LogForwardingConfigPart(object):
     openapi_types = {
         'aws_s3_config': 'AwsS3LogForwardingConfig',
         'azure_analytics_config': 'AzureLogAnalyticsForwardingConfig',
+        'datadog_config': 'DatadogForwardingConfig',
         'elasticsearch_config': 'ElasticsearchLogForwardingConfig',
         'logan_enable': 'bool',
         'logan_url': 'str',
@@ -51,6 +52,7 @@ class LogForwardingConfigPart(object):
     attribute_map = {
         'aws_s3_config': 'aws_s3_config',
         'azure_analytics_config': 'azure_analytics_config',
+        'datadog_config': 'datadog_config',
         'elasticsearch_config': 'elasticsearch_config',
         'logan_enable': 'logan_enable',
         'logan_url': 'logan_url',
@@ -63,7 +65,7 @@ class LogForwardingConfigPart(object):
         'target_log_type': 'target_log_type'
     }
 
-    def __init__(self, aws_s3_config=None, azure_analytics_config=None, elasticsearch_config=None, logan_enable=None, logan_url=None, logstash_config=None, logz_io_config=None, pull_interval_sec=None, splunk_config=None, std_out=None, syslog_config=None, target_log_type=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, aws_s3_config=None, azure_analytics_config=None, datadog_config=None, elasticsearch_config=None, logan_enable=None, logan_url=None, logstash_config=None, logz_io_config=None, pull_interval_sec=None, splunk_config=None, std_out=None, syslog_config=None, target_log_type=None, local_vars_configuration=None):  # noqa: E501
         """LogForwardingConfigPart - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -71,6 +73,7 @@ class LogForwardingConfigPart(object):
 
         self._aws_s3_config = None
         self._azure_analytics_config = None
+        self._datadog_config = None
         self._elasticsearch_config = None
         self._logan_enable = None
         self._logan_url = None
@@ -87,6 +90,8 @@ class LogForwardingConfigPart(object):
             self.aws_s3_config = aws_s3_config
         if azure_analytics_config is not None:
             self.azure_analytics_config = azure_analytics_config
+        if datadog_config is not None:
+            self.datadog_config = datadog_config
         if elasticsearch_config is not None:
             self.elasticsearch_config = elasticsearch_config
         if logan_enable is not None:
@@ -149,6 +154,27 @@ class LogForwardingConfigPart(object):
         """
 
         self._azure_analytics_config = azure_analytics_config
+
+    @property
+    def datadog_config(self):
+        """Gets the datadog_config of this LogForwardingConfigPart.  # noqa: E501
+
+
+        :return: The datadog_config of this LogForwardingConfigPart.  # noqa: E501
+        :rtype: DatadogForwardingConfig
+        """
+        return self._datadog_config
+
+    @datadog_config.setter
+    def datadog_config(self, datadog_config):
+        """Sets the datadog_config of this LogForwardingConfigPart.
+
+
+        :param datadog_config: The datadog_config of this LogForwardingConfigPart.  # noqa: E501
+        :type: DatadogForwardingConfig
+        """
+
+        self._datadog_config = datadog_config
 
     @property
     def elasticsearch_config(self):

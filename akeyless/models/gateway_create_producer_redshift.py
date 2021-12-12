@@ -43,6 +43,9 @@ class GatewayCreateProducerRedshift(object):
         'redshift_password': 'str',
         'redshift_port': 'str',
         'redshift_username': 'str',
+        'secure_access_enable': 'str',
+        'secure_access_host': 'list[str]',
+        'tags': 'list[str]',
         'target_name': 'str',
         'token': 'str',
         'uid_token': 'str',
@@ -60,6 +63,9 @@ class GatewayCreateProducerRedshift(object):
         'redshift_password': 'redshift-password',
         'redshift_port': 'redshift-port',
         'redshift_username': 'redshift-username',
+        'secure_access_enable': 'secure-access-enable',
+        'secure_access_host': 'secure-access-host',
+        'tags': 'tags',
         'target_name': 'target-name',
         'token': 'token',
         'uid_token': 'uid-token',
@@ -67,7 +73,7 @@ class GatewayCreateProducerRedshift(object):
         'username': 'username'
     }
 
-    def __init__(self, creation_statements=None, name=None, password=None, producer_encryption_key=None, redshift_db_name=None, redshift_host='127.0.0.1', redshift_password=None, redshift_port='5439', redshift_username=None, target_name=None, token=None, uid_token=None, user_ttl='60m', username=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, creation_statements=None, name=None, password=None, producer_encryption_key=None, redshift_db_name=None, redshift_host='127.0.0.1', redshift_password=None, redshift_port='5439', redshift_username=None, secure_access_enable=None, secure_access_host=None, tags=None, target_name=None, token=None, uid_token=None, user_ttl='60m', username=None, local_vars_configuration=None):  # noqa: E501
         """GatewayCreateProducerRedshift - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -82,6 +88,9 @@ class GatewayCreateProducerRedshift(object):
         self._redshift_password = None
         self._redshift_port = None
         self._redshift_username = None
+        self._secure_access_enable = None
+        self._secure_access_host = None
+        self._tags = None
         self._target_name = None
         self._token = None
         self._uid_token = None
@@ -106,6 +115,12 @@ class GatewayCreateProducerRedshift(object):
             self.redshift_port = redshift_port
         if redshift_username is not None:
             self.redshift_username = redshift_username
+        if secure_access_enable is not None:
+            self.secure_access_enable = secure_access_enable
+        if secure_access_host is not None:
+            self.secure_access_host = secure_access_host
+        if tags is not None:
+            self.tags = tags
         if target_name is not None:
             self.target_name = target_name
         if token is not None:
@@ -325,6 +340,71 @@ class GatewayCreateProducerRedshift(object):
         """
 
         self._redshift_username = redshift_username
+
+    @property
+    def secure_access_enable(self):
+        """Gets the secure_access_enable of this GatewayCreateProducerRedshift.  # noqa: E501
+
+
+        :return: The secure_access_enable of this GatewayCreateProducerRedshift.  # noqa: E501
+        :rtype: str
+        """
+        return self._secure_access_enable
+
+    @secure_access_enable.setter
+    def secure_access_enable(self, secure_access_enable):
+        """Sets the secure_access_enable of this GatewayCreateProducerRedshift.
+
+
+        :param secure_access_enable: The secure_access_enable of this GatewayCreateProducerRedshift.  # noqa: E501
+        :type: str
+        """
+
+        self._secure_access_enable = secure_access_enable
+
+    @property
+    def secure_access_host(self):
+        """Gets the secure_access_host of this GatewayCreateProducerRedshift.  # noqa: E501
+
+
+        :return: The secure_access_host of this GatewayCreateProducerRedshift.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._secure_access_host
+
+    @secure_access_host.setter
+    def secure_access_host(self, secure_access_host):
+        """Sets the secure_access_host of this GatewayCreateProducerRedshift.
+
+
+        :param secure_access_host: The secure_access_host of this GatewayCreateProducerRedshift.  # noqa: E501
+        :type: list[str]
+        """
+
+        self._secure_access_host = secure_access_host
+
+    @property
+    def tags(self):
+        """Gets the tags of this GatewayCreateProducerRedshift.  # noqa: E501
+
+        List of the tags attached to this secret  # noqa: E501
+
+        :return: The tags of this GatewayCreateProducerRedshift.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._tags
+
+    @tags.setter
+    def tags(self, tags):
+        """Sets the tags of this GatewayCreateProducerRedshift.
+
+        List of the tags attached to this secret  # noqa: E501
+
+        :param tags: The tags of this GatewayCreateProducerRedshift.  # noqa: E501
+        :type: list[str]
+        """
+
+        self._tags = tags
 
     @property
     def target_name(self):

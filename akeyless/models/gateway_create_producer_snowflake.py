@@ -39,6 +39,7 @@ class GatewayCreateProducerSnowflake(object):
         'name': 'str',
         'password': 'str',
         'role': 'str',
+        'tags': 'list[str]',
         'target_name': 'str',
         'token': 'str',
         'uid_token': 'str',
@@ -53,6 +54,7 @@ class GatewayCreateProducerSnowflake(object):
         'name': 'name',
         'password': 'password',
         'role': 'role',
+        'tags': 'tags',
         'target_name': 'target-name',
         'token': 'token',
         'uid_token': 'uid-token',
@@ -61,7 +63,7 @@ class GatewayCreateProducerSnowflake(object):
         'warehouse': 'warehouse'
     }
 
-    def __init__(self, account=None, db_name=None, name=None, password=None, role=None, target_name=None, token=None, uid_token=None, user_ttl='24h', username=None, warehouse=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, account=None, db_name=None, name=None, password=None, role=None, tags=None, target_name=None, token=None, uid_token=None, user_ttl='24h', username=None, warehouse=None, local_vars_configuration=None):  # noqa: E501
         """GatewayCreateProducerSnowflake - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -72,6 +74,7 @@ class GatewayCreateProducerSnowflake(object):
         self._name = None
         self._password = None
         self._role = None
+        self._tags = None
         self._target_name = None
         self._token = None
         self._uid_token = None
@@ -89,6 +92,8 @@ class GatewayCreateProducerSnowflake(object):
             self.password = password
         if role is not None:
             self.role = role
+        if tags is not None:
+            self.tags = tags
         if target_name is not None:
             self.target_name = target_name
         if token is not None:
@@ -218,6 +223,29 @@ class GatewayCreateProducerSnowflake(object):
         """
 
         self._role = role
+
+    @property
+    def tags(self):
+        """Gets the tags of this GatewayCreateProducerSnowflake.  # noqa: E501
+
+        List of the tags attached to this secret  # noqa: E501
+
+        :return: The tags of this GatewayCreateProducerSnowflake.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._tags
+
+    @tags.setter
+    def tags(self, tags):
+        """Sets the tags of this GatewayCreateProducerSnowflake.
+
+        List of the tags attached to this secret  # noqa: E501
+
+        :param tags: The tags of this GatewayCreateProducerSnowflake.  # noqa: E501
+        :type: list[str]
+        """
+
+        self._tags = tags
 
     @property
     def target_name(self):

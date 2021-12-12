@@ -183,7 +183,7 @@ class CreateAuthMethodOAuth2(object):
     def bound_ips(self):
         """Gets the bound_ips of this CreateAuthMethodOAuth2.  # noqa: E501
 
-        A CIDR whitelist of the IPs that the access is restricted to  # noqa: E501
+        A CIDR whitelist with the IPs that the access is restricted to  # noqa: E501
 
         :return: The bound_ips of this CreateAuthMethodOAuth2.  # noqa: E501
         :rtype: list[str]
@@ -194,7 +194,7 @@ class CreateAuthMethodOAuth2(object):
     def bound_ips(self, bound_ips):
         """Sets the bound_ips of this CreateAuthMethodOAuth2.
 
-        A CIDR whitelist of the IPs that the access is restricted to  # noqa: E501
+        A CIDR whitelist with the IPs that the access is restricted to  # noqa: E501
 
         :param bound_ips: The bound_ips of this CreateAuthMethodOAuth2.  # noqa: E501
         :type: list[str]

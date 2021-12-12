@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **access_expires** | **int** | Access expiration date in Unix timestamp (select 0 for access without expiry date) | [optional] [default to 0]
 **audience** | **str** | The audience in the JWT | [optional] 
 **bound_client_ids** | **list[str]** | The clients ids that the access is restricted to | [optional] 
-**bound_ips** | **list[str]** | A CIDR whitelist of the IPs that the access is restricted to | [optional] 
+**bound_ips** | **list[str]** | A CIDR whitelist with the IPs that the access is restricted to | [optional] 
 **force_sub_claims** | **bool** | if true: enforce role-association must include sub claims | [optional] 
 **issuer** | **str** | Issuer URL | [optional] 
 **jwks_uri** | **str** | The URL to the JSON Web Key Set (JWKS) that containing the public keys that should be used to verify any JSON Web Token (JWT) issued by the authorization server. | 

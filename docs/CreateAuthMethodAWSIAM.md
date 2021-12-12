@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **access_expires** | **int** | Access expiration date in Unix timestamp (select 0 for access without expiry date) | [optional] [default to 0]
 **bound_arn** | **list[str]** | A list of full arns that the access is restricted to | [optional] 
 **bound_aws_account_id** | **list[str]** | A list of AWS account-IDs that the access is restricted to | 
-**bound_ips** | **list[str]** | A CIDR whitelist of the IPs that the access is restricted to | [optional] 
+**bound_ips** | **list[str]** | A CIDR whitelist with the IPs that the access is restricted to | [optional] 
 **bound_resource_id** | **list[str]** | A list of full resource ids that the access is restricted to | [optional] 
 **bound_role_id** | **list[str]** | A list of full role ids that the access is restricted to | [optional] 
 **bound_role_name** | **list[str]** | A list of full role-name that the access is restricted to | [optional] 

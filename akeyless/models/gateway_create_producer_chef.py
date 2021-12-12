@@ -42,6 +42,7 @@ class GatewayCreateProducerChef(object):
         'password': 'str',
         'producer_encryption_key_name': 'str',
         'skip_ssl': 'bool',
+        'tags': 'list[str]',
         'target_name': 'str',
         'token': 'str',
         'uid_token': 'str',
@@ -58,6 +59,7 @@ class GatewayCreateProducerChef(object):
         'password': 'password',
         'producer_encryption_key_name': 'producer-encryption-key-name',
         'skip_ssl': 'skip-ssl',
+        'tags': 'tags',
         'target_name': 'target-name',
         'token': 'token',
         'uid_token': 'uid-token',
@@ -65,7 +67,7 @@ class GatewayCreateProducerChef(object):
         'username': 'username'
     }
 
-    def __init__(self, chef_orgs=None, chef_server_key=None, chef_server_url=None, chef_server_username=None, name=None, password=None, producer_encryption_key_name=None, skip_ssl=True, target_name=None, token=None, uid_token=None, user_ttl='60m', username=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, chef_orgs=None, chef_server_key=None, chef_server_url=None, chef_server_username=None, name=None, password=None, producer_encryption_key_name=None, skip_ssl=True, tags=None, target_name=None, token=None, uid_token=None, user_ttl='60m', username=None, local_vars_configuration=None):  # noqa: E501
         """GatewayCreateProducerChef - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -79,6 +81,7 @@ class GatewayCreateProducerChef(object):
         self._password = None
         self._producer_encryption_key_name = None
         self._skip_ssl = None
+        self._tags = None
         self._target_name = None
         self._token = None
         self._uid_token = None
@@ -101,6 +104,8 @@ class GatewayCreateProducerChef(object):
             self.producer_encryption_key_name = producer_encryption_key_name
         if skip_ssl is not None:
             self.skip_ssl = skip_ssl
+        if tags is not None:
+            self.tags = tags
         if target_name is not None:
             self.target_name = target_name
         if token is not None:
@@ -297,6 +302,29 @@ class GatewayCreateProducerChef(object):
         """
 
         self._skip_ssl = skip_ssl
+
+    @property
+    def tags(self):
+        """Gets the tags of this GatewayCreateProducerChef.  # noqa: E501
+
+        List of the tags attached to this secret  # noqa: E501
+
+        :return: The tags of this GatewayCreateProducerChef.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._tags
+
+    @tags.setter
+    def tags(self, tags):
+        """Sets the tags of this GatewayCreateProducerChef.
+
+        List of the tags attached to this secret  # noqa: E501
+
+        :param tags: The tags of this GatewayCreateProducerChef.  # noqa: E501
+        :type: list[str]
+        """
+
+        self._tags = tags
 
     @property
     def target_name(self):
