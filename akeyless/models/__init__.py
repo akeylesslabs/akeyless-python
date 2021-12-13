@@ -459,6 +459,8 @@ from akeyless.models.update_web_target_details import UpdateWebTargetDetails
 from akeyless.models.update_web_target_output import UpdateWebTargetOutput
 from akeyless.models.upload_pkcs12 import UploadPKCS12
 from akeyless.models.upload_rsa import UploadRSA
+from akeyless.models.validate_token import ValidateToken
+from akeyless.models.validate_token_output import ValidateTokenOutput
 from akeyless.models.verify_jwt_output import VerifyJWTOutput
 from akeyless.models.verify_jwt_with_classic_key import VerifyJWTWithClassicKey
 from akeyless.models.verify_pkcs1 import VerifyPKCS1
