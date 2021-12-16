@@ -5,6 +5,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **classic_key_attributes** | **dict(str, list[str])** |  | [optional] 
 **classic_key_id** | **str** |  | [optional] 
+**gw_cluster_id** | **int** |  | [optional] 
 **is_provided_by_user** | **bool** |  | [optional] 
 **is_unexportable** | **bool** |  | [optional] 
 **key_state** | **str** | ItemState defines the different states an Item can be in | [optional] 

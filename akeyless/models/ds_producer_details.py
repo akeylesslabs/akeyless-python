@@ -98,7 +98,7 @@ class DSProducerDetails(object):
         'fixed_user_only': 'str',
         'gcp_key_algo': 'str',
         'gcp_service_account_email': 'str',
-        'gcp_service_account_key': 'list[int]',
+        'gcp_service_account_key': 'str',
         'gcp_token_lifetime': 'str',
         'gcp_token_scope': 'str',
         'gcp_token_type': 'str',
@@ -2122,7 +2122,7 @@ class DSProducerDetails(object):
 
 
         :return: The gcp_service_account_key of this DSProducerDetails.  # noqa: E501
-        :rtype: list[int]
+        :rtype: str
         """
         return self._gcp_service_account_key
 
@@ -2132,7 +2132,7 @@ class DSProducerDetails(object):
 
 
         :param gcp_service_account_key: The gcp_service_account_key of this DSProducerDetails.  # noqa: E501
-        :type: list[int]
+        :type: str
         """
 
         self._gcp_service_account_key = gcp_service_account_key

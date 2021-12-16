@@ -36,6 +36,7 @@ class ClassicKeyDetailsInfo(object):
     openapi_types = {
         'classic_key_attributes': 'dict(str, list[str])',
         'classic_key_id': 'str',
+        'gw_cluster_id': 'int',
         'is_provided_by_user': 'bool',
         'is_unexportable': 'bool',
         'key_state': 'str',
@@ -49,6 +50,7 @@ class ClassicKeyDetailsInfo(object):
     attribute_map = {
         'classic_key_attributes': 'classic_key_attributes',
         'classic_key_id': 'classic_key_id',
+        'gw_cluster_id': 'gw_cluster_id',
         'is_provided_by_user': 'is_provided_by_user',
         'is_unexportable': 'is_unexportable',
         'key_state': 'key_state',
@@ -59,7 +61,7 @@ class ClassicKeyDetailsInfo(object):
         'targets': 'targets'
     }
 
-    def __init__(self, classic_key_attributes=None, classic_key_id=None, is_provided_by_user=None, is_unexportable=None, key_state=None, key_type=None, last_error=None, target_alias_helper=None, target_types=None, targets=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, classic_key_attributes=None, classic_key_id=None, gw_cluster_id=None, is_provided_by_user=None, is_unexportable=None, key_state=None, key_type=None, last_error=None, target_alias_helper=None, target_types=None, targets=None, local_vars_configuration=None):  # noqa: E501
         """ClassicKeyDetailsInfo - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -67,6 +69,7 @@ class ClassicKeyDetailsInfo(object):
 
         self._classic_key_attributes = None
         self._classic_key_id = None
+        self._gw_cluster_id = None
         self._is_provided_by_user = None
         self._is_unexportable = None
         self._key_state = None
@@ -81,6 +84,8 @@ class ClassicKeyDetailsInfo(object):
             self.classic_key_attributes = classic_key_attributes
         if classic_key_id is not None:
             self.classic_key_id = classic_key_id
+        if gw_cluster_id is not None:
+            self.gw_cluster_id = gw_cluster_id
         if is_provided_by_user is not None:
             self.is_provided_by_user = is_provided_by_user
         if is_unexportable is not None:
@@ -139,6 +144,27 @@ class ClassicKeyDetailsInfo(object):
         """
 
         self._classic_key_id = classic_key_id
+
+    @property
+    def gw_cluster_id(self):
+        """Gets the gw_cluster_id of this ClassicKeyDetailsInfo.  # noqa: E501
+
+
+        :return: The gw_cluster_id of this ClassicKeyDetailsInfo.  # noqa: E501
+        :rtype: int
+        """
+        return self._gw_cluster_id
+
+    @gw_cluster_id.setter
+    def gw_cluster_id(self, gw_cluster_id):
+        """Sets the gw_cluster_id of this ClassicKeyDetailsInfo.
+
+
+        :param gw_cluster_id: The gw_cluster_id of this ClassicKeyDetailsInfo.  # noqa: E501
+        :type: int
+        """
+
+        self._gw_cluster_id = gw_cluster_id
 
     @property
     def is_provided_by_user(self):

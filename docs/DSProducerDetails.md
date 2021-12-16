@@ -67,7 +67,7 @@ Name | Type | Description | Notes
 **fixed_user_only** | **str** |  | [optional] 
 **gcp_key_algo** | **str** |  | [optional] 
 **gcp_service_account_email** | **str** |  | [optional] 
-**gcp_service_account_key** | **list[int]** |  | [optional] 
+**gcp_service_account_key** | **str** |  | [optional] 
 **gcp_token_lifetime** | **str** |  | [optional] 
 **gcp_token_scope** | **str** |  | [optional] 
 **gcp_token_type** | **str** |  | [optional] 

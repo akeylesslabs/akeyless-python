@@ -64,7 +64,7 @@ class TargetTypeDetailsInput(object):
         'eks_region': 'str',
         'eks_secret_access_key': 'str',
         'gcp_service_account_email': 'str',
-        'gcp_service_account_key': 'list[int]',
+        'gcp_service_account_key': 'str',
         'gke_cluster_ca_certificate': 'str',
         'gke_cluster_endpoint': 'str',
         'gke_cluster_name': 'str',
@@ -1063,7 +1063,7 @@ class TargetTypeDetailsInput(object):
 
 
         :return: The gcp_service_account_key of this TargetTypeDetailsInput.  # noqa: E501
-        :rtype: list[int]
+        :rtype: str
         """
         return self._gcp_service_account_key
 
@@ -1073,7 +1073,7 @@ class TargetTypeDetailsInput(object):
 
 
         :param gcp_service_account_key: The gcp_service_account_key of this TargetTypeDetailsInput.  # noqa: E501
-        :type: list[int]
+        :type: str
         """
 
         self._gcp_service_account_key = gcp_service_account_key

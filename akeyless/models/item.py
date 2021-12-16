@@ -58,6 +58,7 @@ class Item(object):
         'protection_key_name': 'str',
         'public_value': 'str',
         'rotation_interval': 'int',
+        'target_versions': 'list[TargetItemVersion]',
         'with_customer_fragment': 'bool'
     }
 
@@ -86,10 +87,11 @@ class Item(object):
         'protection_key_name': 'protection_key_name',
         'public_value': 'public_value',
         'rotation_interval': 'rotation_interval',
+        'target_versions': 'target_versions',
         'with_customer_fragment': 'with_customer_fragment'
     }
 
-    def __init__(self, auto_rotate=None, cert_issuer_signer_key_name=None, certificate_issue_details=None, certificates=None, client_permissions=None, customer_fragment_id=None, deletion_date=None, display_id=None, is_enabled=None, item_general_info=None, item_id=None, item_metadata=None, item_name=None, item_size=None, item_state=None, item_tags=None, item_targets_assoc=None, item_type=None, item_versions=None, last_version=None, next_rotation_date=None, protection_key_name=None, public_value=None, rotation_interval=None, with_customer_fragment=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, auto_rotate=None, cert_issuer_signer_key_name=None, certificate_issue_details=None, certificates=None, client_permissions=None, customer_fragment_id=None, deletion_date=None, display_id=None, is_enabled=None, item_general_info=None, item_id=None, item_metadata=None, item_name=None, item_size=None, item_state=None, item_tags=None, item_targets_assoc=None, item_type=None, item_versions=None, last_version=None, next_rotation_date=None, protection_key_name=None, public_value=None, rotation_interval=None, target_versions=None, with_customer_fragment=None, local_vars_configuration=None):  # noqa: E501
         """Item - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -119,6 +121,7 @@ class Item(object):
         self._protection_key_name = None
         self._public_value = None
         self._rotation_interval = None
+        self._target_versions = None
         self._with_customer_fragment = None
         self.discriminator = None
 
@@ -170,6 +173,8 @@ class Item(object):
             self.public_value = public_value
         if rotation_interval is not None:
             self.rotation_interval = rotation_interval
+        if target_versions is not None:
+            self.target_versions = target_versions
         if with_customer_fragment is not None:
             self.with_customer_fragment = with_customer_fragment
 
@@ -678,6 +683,27 @@ class Item(object):
         """
 
         self._rotation_interval = rotation_interval
+
+    @property
+    def target_versions(self):
+        """Gets the target_versions of this Item.  # noqa: E501
+
+
+        :return: The target_versions of this Item.  # noqa: E501
+        :rtype: list[TargetItemVersion]
+        """
+        return self._target_versions
+
+    @target_versions.setter
+    def target_versions(self, target_versions):
+        """Sets the target_versions of this Item.
+
+
+        :param target_versions: The target_versions of this Item.  # noqa: E501
+        :type: list[TargetItemVersion]
+        """
+
+        self._target_versions = target_versions
 
     @property
     def with_customer_fragment(self):
