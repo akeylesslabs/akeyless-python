@@ -142,6 +142,8 @@ class DSProducerDetails(object):
         'mssql_revocation_statements': 'str',
         'mysql_creation_statements': 'str',
         'oracle_creation_statements': 'str',
+        'password_length': 'int',
+        'password_policy': 'str',
         'payload': 'str',
         'postgres_creation_statements': 'str',
         'rabbitmq_server_password': 'str',
@@ -165,6 +167,8 @@ class DSProducerDetails(object):
         'use_gw_cloud_identity': 'bool',
         'user_principal_name': 'str',
         'user_ttl': 'str',
+        'username_length': 'int',
+        'username_policy': 'str',
         'venafi_allow_subdomains': 'bool',
         'venafi_allowed_domains': 'list[str]',
         'venafi_api_key': 'str',
@@ -289,6 +293,8 @@ class DSProducerDetails(object):
         'mssql_revocation_statements': 'mssql_revocation_statements',
         'mysql_creation_statements': 'mysql_creation_statements',
         'oracle_creation_statements': 'oracle_creation_statements',
+        'password_length': 'password_length',
+        'password_policy': 'password_policy',
         'payload': 'payload',
         'postgres_creation_statements': 'postgres_creation_statements',
         'rabbitmq_server_password': 'rabbitmq_server_password',
@@ -312,6 +318,8 @@ class DSProducerDetails(object):
         'use_gw_cloud_identity': 'use_gw_cloud_identity',
         'user_principal_name': 'user_principal_name',
         'user_ttl': 'user_ttl',
+        'username_length': 'username_length',
+        'username_policy': 'username_policy',
         'venafi_allow_subdomains': 'venafi_allow_subdomains',
         'venafi_allowed_domains': 'venafi_allowed_domains',
         'venafi_api_key': 'venafi_api_key',
@@ -327,7 +335,7 @@ class DSProducerDetails(object):
         'venafi_zone': 'venafi_zone'
     }
 
-    def __init__(self, active=None, admin_name=None, admin_pwd=None, admin_rotation_interval_days=None, artifactory_admin_apikey=None, artifactory_admin_username=None, artifactory_base_url=None, artifactory_token_audience=None, artifactory_token_scope=None, aws_access_key_id=None, aws_access_mode=None, aws_region=None, aws_role_arns=None, aws_secret_access_key=None, aws_session_token=None, aws_user_console_access=None, aws_user_groups=None, aws_user_policies=None, aws_user_programmatic_access=None, azure_app_object_id=None, azure_client_id=None, azure_client_secret=None, azure_tenant_id=None, azure_user_groups_obj_id=None, azure_user_portal_access=None, azure_user_programmatic_access=None, azure_user_roles_template_id=None, cassandra_creation_statements=None, chef_organizations=None, chef_server_access_mode=None, chef_server_host_name=None, chef_server_key=None, chef_server_port=None, chef_server_url=None, chef_server_username=None, chef_skip_ssl=None, create_sync_url=None, db_host_name=None, db_isolation_level=None, db_max_idle_conns=None, db_max_open_conns=None, db_name=None, db_port=None, db_pwd=None, db_server_certificates=None, db_server_name=None, db_user_name=None, dynamic_secret_id=None, dynamic_secret_key=None, dynamic_secret_name=None, dynamic_secret_type=None, eks_access_key_id=None, eks_assume_role=None, eks_cluster_ca_certificate=None, eks_cluster_endpoint=None, eks_cluster_name=None, eks_region=None, eks_secret_access_key=None, enable_admin_rotation=None, externally_provided_user=None, failure_message=None, fixed_user_only=None, gcp_key_algo=None, gcp_service_account_email=None, gcp_service_account_key=None, gcp_token_lifetime=None, gcp_token_scope=None, gcp_token_type=None, gke_cluster_ca_certificate=None, gke_cluster_endpoint=None, gke_cluster_name=None, gke_service_account_key=None, gke_service_account_name=None, groups=None, host_name=None, host_port=None, is_fixed_user=None, item_targets_assoc=None, k8s_bearer_token=None, k8s_cluster_ca_certificate=None, k8s_cluster_endpoint=None, k8s_namespace=None, k8s_service_account=None, last_admin_rotation=None, ldap_audience=None, ldap_bind_dn=None, ldap_bind_password=None, ldap_certificate=None, ldap_token_expiration=None, ldap_url=None, ldap_user_attr=None, ldap_user_dn=None, mongodb_atlas_api_private_key=None, mongodb_atlas_api_public_key=None, mongodb_atlas_project_id=None, mongodb_db_name=None, mongodb_default_auth_db=None, mongodb_host_port=None, mongodb_is_atlas=None, mongodb_password=None, mongodb_roles=None, mongodb_uri_connection=None, mongodb_uri_options=None, mongodb_username=None, mssql_creation_statements=None, mssql_revocation_statements=None, mysql_creation_statements=None, oracle_creation_statements=None, payload=None, postgres_creation_statements=None, rabbitmq_server_password=None, rabbitmq_server_uri=None, rabbitmq_server_user=None, rabbitmq_user_conf_permission=None, rabbitmq_user_read_permission=None, rabbitmq_user_tags=None, rabbitmq_user_vhost=None, rabbitmq_user_write_permission=None, redshift_creation_statements=None, revoke_sync_url=None, rotate_sync_url=None, secure_remote_access_details=None, sf_account=None, sf_user_role=None, sf_warehouse_name=None, should_stop=None, tags=None, timeout_seconds=None, use_gw_cloud_identity=None, user_principal_name=None, user_ttl=None, venafi_allow_subdomains=None, venafi_allowed_domains=None, venafi_api_key=None, venafi_auto_generated_folder=None, venafi_base_url=None, venafi_root_first_in_chain=None, venafi_sign_using_akeyless_pki=None, venafi_signer_key_name=None, venafi_store_private_key=None, venafi_tpp_password=None, venafi_tpp_username=None, venafi_use_tpp=None, venafi_zone=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, active=None, admin_name=None, admin_pwd=None, admin_rotation_interval_days=None, artifactory_admin_apikey=None, artifactory_admin_username=None, artifactory_base_url=None, artifactory_token_audience=None, artifactory_token_scope=None, aws_access_key_id=None, aws_access_mode=None, aws_region=None, aws_role_arns=None, aws_secret_access_key=None, aws_session_token=None, aws_user_console_access=None, aws_user_groups=None, aws_user_policies=None, aws_user_programmatic_access=None, azure_app_object_id=None, azure_client_id=None, azure_client_secret=None, azure_tenant_id=None, azure_user_groups_obj_id=None, azure_user_portal_access=None, azure_user_programmatic_access=None, azure_user_roles_template_id=None, cassandra_creation_statements=None, chef_organizations=None, chef_server_access_mode=None, chef_server_host_name=None, chef_server_key=None, chef_server_port=None, chef_server_url=None, chef_server_username=None, chef_skip_ssl=None, create_sync_url=None, db_host_name=None, db_isolation_level=None, db_max_idle_conns=None, db_max_open_conns=None, db_name=None, db_port=None, db_pwd=None, db_server_certificates=None, db_server_name=None, db_user_name=None, dynamic_secret_id=None, dynamic_secret_key=None, dynamic_secret_name=None, dynamic_secret_type=None, eks_access_key_id=None, eks_assume_role=None, eks_cluster_ca_certificate=None, eks_cluster_endpoint=None, eks_cluster_name=None, eks_region=None, eks_secret_access_key=None, enable_admin_rotation=None, externally_provided_user=None, failure_message=None, fixed_user_only=None, gcp_key_algo=None, gcp_service_account_email=None, gcp_service_account_key=None, gcp_token_lifetime=None, gcp_token_scope=None, gcp_token_type=None, gke_cluster_ca_certificate=None, gke_cluster_endpoint=None, gke_cluster_name=None, gke_service_account_key=None, gke_service_account_name=None, groups=None, host_name=None, host_port=None, is_fixed_user=None, item_targets_assoc=None, k8s_bearer_token=None, k8s_cluster_ca_certificate=None, k8s_cluster_endpoint=None, k8s_namespace=None, k8s_service_account=None, last_admin_rotation=None, ldap_audience=None, ldap_bind_dn=None, ldap_bind_password=None, ldap_certificate=None, ldap_token_expiration=None, ldap_url=None, ldap_user_attr=None, ldap_user_dn=None, mongodb_atlas_api_private_key=None, mongodb_atlas_api_public_key=None, mongodb_atlas_project_id=None, mongodb_db_name=None, mongodb_default_auth_db=None, mongodb_host_port=None, mongodb_is_atlas=None, mongodb_password=None, mongodb_roles=None, mongodb_uri_connection=None, mongodb_uri_options=None, mongodb_username=None, mssql_creation_statements=None, mssql_revocation_statements=None, mysql_creation_statements=None, oracle_creation_statements=None, password_length=None, password_policy=None, payload=None, postgres_creation_statements=None, rabbitmq_server_password=None, rabbitmq_server_uri=None, rabbitmq_server_user=None, rabbitmq_user_conf_permission=None, rabbitmq_user_read_permission=None, rabbitmq_user_tags=None, rabbitmq_user_vhost=None, rabbitmq_user_write_permission=None, redshift_creation_statements=None, revoke_sync_url=None, rotate_sync_url=None, secure_remote_access_details=None, sf_account=None, sf_user_role=None, sf_warehouse_name=None, should_stop=None, tags=None, timeout_seconds=None, use_gw_cloud_identity=None, user_principal_name=None, user_ttl=None, username_length=None, username_policy=None, venafi_allow_subdomains=None, venafi_allowed_domains=None, venafi_api_key=None, venafi_auto_generated_folder=None, venafi_base_url=None, venafi_root_first_in_chain=None, venafi_sign_using_akeyless_pki=None, venafi_signer_key_name=None, venafi_store_private_key=None, venafi_tpp_password=None, venafi_tpp_username=None, venafi_use_tpp=None, venafi_zone=None, local_vars_configuration=None):  # noqa: E501
         """DSProducerDetails - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -441,6 +449,8 @@ class DSProducerDetails(object):
         self._mssql_revocation_statements = None
         self._mysql_creation_statements = None
         self._oracle_creation_statements = None
+        self._password_length = None
+        self._password_policy = None
         self._payload = None
         self._postgres_creation_statements = None
         self._rabbitmq_server_password = None
@@ -464,6 +474,8 @@ class DSProducerDetails(object):
         self._use_gw_cloud_identity = None
         self._user_principal_name = None
         self._user_ttl = None
+        self._username_length = None
+        self._username_policy = None
         self._venafi_allow_subdomains = None
         self._venafi_allowed_domains = None
         self._venafi_api_key = None
@@ -695,6 +707,10 @@ class DSProducerDetails(object):
             self.mysql_creation_statements = mysql_creation_statements
         if oracle_creation_statements is not None:
             self.oracle_creation_statements = oracle_creation_statements
+        if password_length is not None:
+            self.password_length = password_length
+        if password_policy is not None:
+            self.password_policy = password_policy
         if payload is not None:
             self.payload = payload
         if postgres_creation_statements is not None:
@@ -741,6 +757,10 @@ class DSProducerDetails(object):
             self.user_principal_name = user_principal_name
         if user_ttl is not None:
             self.user_ttl = user_ttl
+        if username_length is not None:
+            self.username_length = username_length
+        if username_policy is not None:
+            self.username_policy = username_policy
         if venafi_allow_subdomains is not None:
             self.venafi_allow_subdomains = venafi_allow_subdomains
         if venafi_allowed_domains is not None:
@@ -3049,6 +3069,48 @@ class DSProducerDetails(object):
         self._oracle_creation_statements = oracle_creation_statements
 
     @property
+    def password_length(self):
+        """Gets the password_length of this DSProducerDetails.  # noqa: E501
+
+
+        :return: The password_length of this DSProducerDetails.  # noqa: E501
+        :rtype: int
+        """
+        return self._password_length
+
+    @password_length.setter
+    def password_length(self, password_length):
+        """Sets the password_length of this DSProducerDetails.
+
+
+        :param password_length: The password_length of this DSProducerDetails.  # noqa: E501
+        :type: int
+        """
+
+        self._password_length = password_length
+
+    @property
+    def password_policy(self):
+        """Gets the password_policy of this DSProducerDetails.  # noqa: E501
+
+
+        :return: The password_policy of this DSProducerDetails.  # noqa: E501
+        :rtype: str
+        """
+        return self._password_policy
+
+    @password_policy.setter
+    def password_policy(self, password_policy):
+        """Sets the password_policy of this DSProducerDetails.
+
+
+        :param password_policy: The password_policy of this DSProducerDetails.  # noqa: E501
+        :type: str
+        """
+
+        self._password_policy = password_policy
+
+    @property
     def payload(self):
         """Gets the payload of this DSProducerDetails.  # noqa: E501
 
@@ -3534,6 +3596,48 @@ class DSProducerDetails(object):
         """
 
         self._user_ttl = user_ttl
+
+    @property
+    def username_length(self):
+        """Gets the username_length of this DSProducerDetails.  # noqa: E501
+
+
+        :return: The username_length of this DSProducerDetails.  # noqa: E501
+        :rtype: int
+        """
+        return self._username_length
+
+    @username_length.setter
+    def username_length(self, username_length):
+        """Sets the username_length of this DSProducerDetails.
+
+
+        :param username_length: The username_length of this DSProducerDetails.  # noqa: E501
+        :type: int
+        """
+
+        self._username_length = username_length
+
+    @property
+    def username_policy(self):
+        """Gets the username_policy of this DSProducerDetails.  # noqa: E501
+
+
+        :return: The username_policy of this DSProducerDetails.  # noqa: E501
+        :rtype: str
+        """
+        return self._username_policy
+
+    @username_policy.setter
+    def username_policy(self, username_policy):
+        """Sets the username_policy of this DSProducerDetails.
+
+
+        :param username_policy: The username_policy of this DSProducerDetails.  # noqa: E501
+        :type: str
+        """
+
+        self._username_policy = username_policy
 
     @property
     def venafi_allow_subdomains(self):
