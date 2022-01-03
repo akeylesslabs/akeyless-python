@@ -38,6 +38,7 @@ class TargetItemVersion(object):
         'customer_fragment_id': 'str',
         'deletion_date': 'datetime',
         'item_version_state': 'str',
+        'latest_version': 'bool',
         'protection_key_name': 'str',
         'target_name': 'str',
         'version': 'int',
@@ -49,13 +50,14 @@ class TargetItemVersion(object):
         'customer_fragment_id': 'customer_fragment_id',
         'deletion_date': 'deletion_date',
         'item_version_state': 'item_version_state',
+        'latest_version': 'latest_version',
         'protection_key_name': 'protection_key_name',
         'target_name': 'target_name',
         'version': 'version',
         'with_customer_fragment': 'with_customer_fragment'
     }
 
-    def __init__(self, creation_date=None, customer_fragment_id=None, deletion_date=None, item_version_state=None, protection_key_name=None, target_name=None, version=None, with_customer_fragment=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, creation_date=None, customer_fragment_id=None, deletion_date=None, item_version_state=None, latest_version=None, protection_key_name=None, target_name=None, version=None, with_customer_fragment=None, local_vars_configuration=None):  # noqa: E501
         """TargetItemVersion - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -65,6 +67,7 @@ class TargetItemVersion(object):
         self._customer_fragment_id = None
         self._deletion_date = None
         self._item_version_state = None
+        self._latest_version = None
         self._protection_key_name = None
         self._target_name = None
         self._version = None
@@ -79,6 +82,8 @@ class TargetItemVersion(object):
             self.deletion_date = deletion_date
         if item_version_state is not None:
             self.item_version_state = item_version_state
+        if latest_version is not None:
+            self.latest_version = latest_version
         if protection_key_name is not None:
             self.protection_key_name = protection_key_name
         if target_name is not None:
@@ -173,6 +178,27 @@ class TargetItemVersion(object):
         """
 
         self._item_version_state = item_version_state
+
+    @property
+    def latest_version(self):
+        """Gets the latest_version of this TargetItemVersion.  # noqa: E501
+
+
+        :return: The latest_version of this TargetItemVersion.  # noqa: E501
+        :rtype: bool
+        """
+        return self._latest_version
+
+    @latest_version.setter
+    def latest_version(self, latest_version):
+        """Sets the latest_version of this TargetItemVersion.
+
+
+        :param latest_version: The latest_version of this TargetItemVersion.  # noqa: E501
+        :type: bool
+        """
+
+        self._latest_version = latest_version
 
     @property
     def protection_key_name(self):

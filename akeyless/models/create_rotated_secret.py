@@ -36,6 +36,7 @@ class CreateRotatedSecret(object):
     openapi_types = {
         'api_id': 'str',
         'api_key': 'str',
+        'authentication_credentials': 'str',
         'auto_rotate': 'str',
         'custom_payload': 'str',
         'key': 'str',
@@ -63,6 +64,7 @@ class CreateRotatedSecret(object):
     attribute_map = {
         'api_id': 'api-id',
         'api_key': 'api-key',
+        'authentication_credentials': 'authentication-credentials',
         'auto_rotate': 'auto-rotate',
         'custom_payload': 'custom-payload',
         'key': 'key',
@@ -87,7 +89,7 @@ class CreateRotatedSecret(object):
         'username': 'username'
     }
 
-    def __init__(self, api_id=None, api_key=None, auto_rotate=None, custom_payload=None, key=None, metadata=None, name=None, password=None, rotated_password=None, rotated_username=None, rotation_hour=None, rotation_interval=None, rotator_creds_type=None, rotator_custom_cmd=None, rotator_type=None, ssh_password=None, ssh_username=None, tags=None, target_name=None, token=None, uid_token=None, user_attribute=None, user_dn=None, username=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, api_id=None, api_key=None, authentication_credentials=None, auto_rotate=None, custom_payload=None, key=None, metadata=None, name=None, password=None, rotated_password=None, rotated_username=None, rotation_hour=None, rotation_interval=None, rotator_creds_type=None, rotator_custom_cmd=None, rotator_type=None, ssh_password=None, ssh_username=None, tags=None, target_name=None, token=None, uid_token=None, user_attribute=None, user_dn=None, username=None, local_vars_configuration=None):  # noqa: E501
         """CreateRotatedSecret - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -95,6 +97,7 @@ class CreateRotatedSecret(object):
 
         self._api_id = None
         self._api_key = None
+        self._authentication_credentials = None
         self._auto_rotate = None
         self._custom_payload = None
         self._key = None
@@ -123,6 +126,8 @@ class CreateRotatedSecret(object):
             self.api_id = api_id
         if api_key is not None:
             self.api_key = api_key
+        if authentication_credentials is not None:
+            self.authentication_credentials = authentication_credentials
         if auto_rotate is not None:
             self.auto_rotate = auto_rotate
         if custom_payload is not None:
@@ -206,6 +211,27 @@ class CreateRotatedSecret(object):
         """
 
         self._api_key = api_key
+
+    @property
+    def authentication_credentials(self):
+        """Gets the authentication_credentials of this CreateRotatedSecret.  # noqa: E501
+
+
+        :return: The authentication_credentials of this CreateRotatedSecret.  # noqa: E501
+        :rtype: str
+        """
+        return self._authentication_credentials
+
+    @authentication_credentials.setter
+    def authentication_credentials(self, authentication_credentials):
+        """Sets the authentication_credentials of this CreateRotatedSecret.
+
+
+        :param authentication_credentials: The authentication_credentials of this CreateRotatedSecret.  # noqa: E501
+        :type: str
+        """
+
+        self._authentication_credentials = authentication_credentials
 
     @property
     def auto_rotate(self):
