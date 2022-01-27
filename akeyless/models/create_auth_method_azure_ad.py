@@ -49,6 +49,7 @@ class CreateAuthMethodAzureAD(object):
         'force_sub_claims': 'bool',
         'issuer': 'str',
         'jwks_uri': 'str',
+        'jwt_ttl': 'int',
         'name': 'str',
         'password': 'str',
         'token': 'str',
@@ -72,6 +73,7 @@ class CreateAuthMethodAzureAD(object):
         'force_sub_claims': 'force-sub-claims',
         'issuer': 'issuer',
         'jwks_uri': 'jwks-uri',
+        'jwt_ttl': 'jwt-ttl',
         'name': 'name',
         'password': 'password',
         'token': 'token',
@@ -79,7 +81,7 @@ class CreateAuthMethodAzureAD(object):
         'username': 'username'
     }
 
-    def __init__(self, access_expires=0, audience='https://management.azure.com/', bound_group_id=None, bound_ips=None, bound_providers=None, bound_resource_id=None, bound_resource_names=None, bound_resource_types=None, bound_rg_id=None, bound_spid=None, bound_sub_id=None, bound_tenant_id=None, force_sub_claims=None, issuer='https://sts.windows.net/---bound_tenant_id---', jwks_uri='https://login.microsoftonline.com/common/discovery/keys', name=None, password=None, token=None, uid_token=None, username=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, access_expires=0, audience='https://management.azure.com/', bound_group_id=None, bound_ips=None, bound_providers=None, bound_resource_id=None, bound_resource_names=None, bound_resource_types=None, bound_rg_id=None, bound_spid=None, bound_sub_id=None, bound_tenant_id=None, force_sub_claims=None, issuer='https://sts.windows.net/---bound_tenant_id---', jwks_uri='https://login.microsoftonline.com/common/discovery/keys', jwt_ttl=0, name=None, password=None, token=None, uid_token=None, username=None, local_vars_configuration=None):  # noqa: E501
         """CreateAuthMethodAzureAD - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -100,6 +102,7 @@ class CreateAuthMethodAzureAD(object):
         self._force_sub_claims = None
         self._issuer = None
         self._jwks_uri = None
+        self._jwt_ttl = None
         self._name = None
         self._password = None
         self._token = None
@@ -136,6 +139,8 @@ class CreateAuthMethodAzureAD(object):
             self.issuer = issuer
         if jwks_uri is not None:
             self.jwks_uri = jwks_uri
+        if jwt_ttl is not None:
+            self.jwt_ttl = jwt_ttl
         self.name = name
         if password is not None:
             self.password = password
@@ -492,6 +497,29 @@ class CreateAuthMethodAzureAD(object):
         """
 
         self._jwks_uri = jwks_uri
+
+    @property
+    def jwt_ttl(self):
+        """Gets the jwt_ttl of this CreateAuthMethodAzureAD.  # noqa: E501
+
+        Jwt TTL  # noqa: E501
+
+        :return: The jwt_ttl of this CreateAuthMethodAzureAD.  # noqa: E501
+        :rtype: int
+        """
+        return self._jwt_ttl
+
+    @jwt_ttl.setter
+    def jwt_ttl(self, jwt_ttl):
+        """Sets the jwt_ttl of this CreateAuthMethodAzureAD.
+
+        Jwt TTL  # noqa: E501
+
+        :param jwt_ttl: The jwt_ttl of this CreateAuthMethodAzureAD.  # noqa: E501
+        :type: int
+        """
+
+        self._jwt_ttl = jwt_ttl
 
     @property
     def name(self):

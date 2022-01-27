@@ -39,6 +39,7 @@ class CreateAuthMethodSAML(object):
         'bound_ips': 'list[str]',
         'force_sub_claims': 'bool',
         'idp_metadata_url': 'str',
+        'jwt_ttl': 'int',
         'name': 'str',
         'password': 'str',
         'token': 'str',
@@ -53,6 +54,7 @@ class CreateAuthMethodSAML(object):
         'bound_ips': 'bound-ips',
         'force_sub_claims': 'force-sub-claims',
         'idp_metadata_url': 'idp-metadata-url',
+        'jwt_ttl': 'jwt-ttl',
         'name': 'name',
         'password': 'password',
         'token': 'token',
@@ -61,7 +63,7 @@ class CreateAuthMethodSAML(object):
         'username': 'username'
     }
 
-    def __init__(self, access_expires=0, allowed_redirect_uri=None, bound_ips=None, force_sub_claims=None, idp_metadata_url=None, name=None, password=None, token=None, uid_token=None, unique_identifier=None, username=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, access_expires=0, allowed_redirect_uri=None, bound_ips=None, force_sub_claims=None, idp_metadata_url=None, jwt_ttl=0, name=None, password=None, token=None, uid_token=None, unique_identifier=None, username=None, local_vars_configuration=None):  # noqa: E501
         """CreateAuthMethodSAML - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -72,6 +74,7 @@ class CreateAuthMethodSAML(object):
         self._bound_ips = None
         self._force_sub_claims = None
         self._idp_metadata_url = None
+        self._jwt_ttl = None
         self._name = None
         self._password = None
         self._token = None
@@ -90,6 +93,8 @@ class CreateAuthMethodSAML(object):
             self.force_sub_claims = force_sub_claims
         if idp_metadata_url is not None:
             self.idp_metadata_url = idp_metadata_url
+        if jwt_ttl is not None:
+            self.jwt_ttl = jwt_ttl
         self.name = name
         if password is not None:
             self.password = password
@@ -215,6 +220,29 @@ class CreateAuthMethodSAML(object):
         """
 
         self._idp_metadata_url = idp_metadata_url
+
+    @property
+    def jwt_ttl(self):
+        """Gets the jwt_ttl of this CreateAuthMethodSAML.  # noqa: E501
+
+        Jwt TTL  # noqa: E501
+
+        :return: The jwt_ttl of this CreateAuthMethodSAML.  # noqa: E501
+        :rtype: int
+        """
+        return self._jwt_ttl
+
+    @jwt_ttl.setter
+    def jwt_ttl(self, jwt_ttl):
+        """Sets the jwt_ttl of this CreateAuthMethodSAML.
+
+        Jwt TTL  # noqa: E501
+
+        :param jwt_ttl: The jwt_ttl of this CreateAuthMethodSAML.  # noqa: E501
+        :type: int
+        """
+
+        self._jwt_ttl = jwt_ttl
 
     @property
     def name(self):

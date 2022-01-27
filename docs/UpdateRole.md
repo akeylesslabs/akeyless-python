@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **new_comment** | **str** | New comment about the role | [optional] [default to 'default_comment']
 **new_name** | **str** | New Role name | [optional] 
 **password** | **str** | Required only when the authentication process requires a username and password | [optional] 
+**sra_reports_access** | **str** | Allow this role to view SRA Clusters. Currently only &#39;none&#39;, &#39;own&#39;, &#39;all&#39; values are supported. | [optional] 
 **token** | **str** | Authentication token (see &#x60;/auth&#x60; and &#x60;/configure&#x60;) | [optional] 
 **uid_token** | **str** | The universal identity token, Required only for universal_identity authentication | [optional] 
 **username** | **str** | Required only when the authentication process requires a username and password | [optional] 

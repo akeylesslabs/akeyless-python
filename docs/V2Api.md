@@ -96,6 +96,7 @@ Method | HTTP request | Description
 [**gateway_stop_producer**](V2Api.md#gateway_stop_producer) | **POST** /gateway-stop-producer | 
 [**gateway_sync_migration**](V2Api.md#gateway_sync_migration) | **POST** /gateway-sync-migration | 
 [**gateway_update_item**](V2Api.md#gateway_update_item) | **POST** /gateway-update-item | 
+[**gateway_update_k8_s_auth_config**](V2Api.md#gateway_update_k8_s_auth_config) | **POST** /gateway-update-k8s-auth-config | 
 [**gateway_update_producer_artifactory**](V2Api.md#gateway_update_producer_artifactory) | **POST** /gateway-update-producer-artifactory | 
 [**gateway_update_producer_aws**](V2Api.md#gateway_update_producer_aws) | **POST** /gateway-update-producer-aws | 
 [**gateway_update_producer_azure**](V2Api.md#gateway_update_producer_azure) | **POST** /gateway-update-producer-azure | 
@@ -118,6 +119,7 @@ Method | HTTP request | Description
 [**gateway_update_producer_snowflake**](V2Api.md#gateway_update_producer_snowflake) | **POST** /gateway-update-producer-snowflake | 
 [**gateway_update_tmp_users**](V2Api.md#gateway_update_tmp_users) | **POST** /gateway-update-producer-tmp-creds | 
 [**get_account_logo**](V2Api.md#get_account_logo) | **POST** /get-account-logo | 
+[**get_account_settings**](V2Api.md#get_account_settings) | **POST** /get-account-settings | 
 [**get_auth_method**](V2Api.md#get_auth_method) | **POST** /get-auth-method | 
 [**get_dynamic_secret_value**](V2Api.md#get_dynamic_secret_value) | **POST** /get-dynamic-secret-value | 
 [**get_kube_exec_creds**](V2Api.md#get_kube_exec_creds) | **POST** /get-kube-exec-creds | 
@@ -149,6 +151,7 @@ Method | HTTP request | Description
 [**raw_creds**](V2Api.md#raw_creds) | **POST** /raw-creds | 
 [**refresh_key**](V2Api.md#refresh_key) | **POST** /refresh-key | 
 [**reverse_rbac**](V2Api.md#reverse_rbac) | **POST** /reverse-rbac | 
+[**revoke_creds**](V2Api.md#revoke_creds) | **POST** /revoke-creds | 
 [**rollback_secret**](V2Api.md#rollback_secret) | **POST** /rollback-secret | 
 [**rotate_key**](V2Api.md#rotate_key) | **POST** /rotate-key | 
 [**set_item_state**](V2Api.md#set_item_state) | **POST** /set-item-state | 
@@ -162,6 +165,7 @@ Method | HTTP request | Description
 [**uid_list_children**](V2Api.md#uid_list_children) | **POST** /uid-list-children | 
 [**uid_revoke_token**](V2Api.md#uid_revoke_token) | **POST** /uid-revoke-token | 
 [**uid_rotate_token**](V2Api.md#uid_rotate_token) | **POST** /uid-rotate-token | 
+[**update_account_settings**](V2Api.md#update_account_settings) | **POST** /update-account-settings | 
 [**update_artifactory_target**](V2Api.md#update_artifactory_target) | **POST** /update-artifactory-target | 
 [**update_assoc**](V2Api.md#update_assoc) | **POST** /update-assoc | 
 [**update_auth_method**](V2Api.md#update_auth_method) | **POST** /update-auth-method | 
@@ -5726,6 +5730,66 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **gateway_update_k8_s_auth_config**
+> GatewayUpdateK8SAuthConfigOutput gateway_update_k8_s_auth_config(body)
+
+
+
+### Example
+
+```python
+from __future__ import print_function
+import time
+import akeyless
+from akeyless.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.akeyless.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = akeyless.Configuration(
+    host = "https://api.akeyless.io"
+)
+
+
+# Enter a context with an instance of the API client
+with akeyless.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = akeyless.V2Api(api_client)
+    body = akeyless.GatewayUpdateK8SAuthConfig() # GatewayUpdateK8SAuthConfig | 
+
+    try:
+        api_response = api_instance.gateway_update_k8_s_auth_config(body)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling V2Api->gateway_update_k8_s_auth_config: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**GatewayUpdateK8SAuthConfig**](GatewayUpdateK8SAuthConfig.md)|  | 
+
+### Return type
+
+[**GatewayUpdateK8SAuthConfigOutput**](GatewayUpdateK8SAuthConfigOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**201** | gatewayUpdateK8SAuthConfigResponse wraps response body. |  -  |
+**0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **gateway_update_producer_artifactory**
 > GatewayUpdateProducerArtifactoryOutput gateway_update_producer_artifactory(body)
 
@@ -7037,6 +7101,66 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | getAccountLogoResponse wraps response body. |  -  |
+**0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_account_settings**
+> GetAccountSettingsCommandOutput get_account_settings(body)
+
+
+
+### Example
+
+```python
+from __future__ import print_function
+import time
+import akeyless
+from akeyless.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.akeyless.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = akeyless.Configuration(
+    host = "https://api.akeyless.io"
+)
+
+
+# Enter a context with an instance of the API client
+with akeyless.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = akeyless.V2Api(api_client)
+    body = akeyless.GetAccountSettings() # GetAccountSettings | 
+
+    try:
+        api_response = api_instance.get_account_settings(body)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling V2Api->get_account_settings: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**GetAccountSettings**](GetAccountSettings.md)|  | 
+
+### Return type
+
+[**GetAccountSettingsCommandOutput**](GetAccountSettingsCommandOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | getAccountSettingsResponse wraps response body. |  -  |
 **0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -8901,6 +9025,62 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **revoke_creds**
+> object revoke_creds()
+
+
+
+### Example
+
+```python
+from __future__ import print_function
+import time
+import akeyless
+from akeyless.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.akeyless.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = akeyless.Configuration(
+    host = "https://api.akeyless.io"
+)
+
+
+# Enter a context with an instance of the API client
+with akeyless.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = akeyless.V2Api(api_client)
+    
+    try:
+        api_response = api_instance.revoke_creds()
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling V2Api->revoke_creds: %s\n" % e)
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+**object**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | revokeCredsResponse wraps response body. |  -  |
+**0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **rollback_secret**
 > RollbackSecretOutput rollback_secret(body)
 
@@ -9677,6 +9857,66 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | uidRotateTokenResponse wraps response body. |  -  |
+**0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **update_account_settings**
+> UpdateAccountSettingsOutput update_account_settings(body)
+
+
+
+### Example
+
+```python
+from __future__ import print_function
+import time
+import akeyless
+from akeyless.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.akeyless.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = akeyless.Configuration(
+    host = "https://api.akeyless.io"
+)
+
+
+# Enter a context with an instance of the API client
+with akeyless.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = akeyless.V2Api(api_client)
+    body = akeyless.UpdateAccountSettings() # UpdateAccountSettings | 
+
+    try:
+        api_response = api_instance.update_account_settings(body)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling V2Api->update_account_settings: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**UpdateAccountSettings**](UpdateAccountSettings.md)|  | 
+
+### Return type
+
+[**UpdateAccountSettingsOutput**](UpdateAccountSettingsOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | updateAccountSettingsResponse wraps response body. |  -  |
 **0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

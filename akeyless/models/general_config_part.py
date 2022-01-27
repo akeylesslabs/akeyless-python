@@ -107,6 +107,7 @@ class GeneralConfigPart(object):
     def akeyless_url(self):
         """Gets the akeyless_url of this GeneralConfigPart.  # noqa: E501
 
+        AkeylessUrl is here for BC only. Gator will still return it if it exists in the configuration, but new clients (>=2.34.0) will ignore it and override it with what exists in their local file. It will no longer be sent to Gator for update, so new clusters will only have the default value saved in the DB.  # noqa: E501
 
         :return: The akeyless_url of this GeneralConfigPart.  # noqa: E501
         :rtype: str
@@ -117,6 +118,7 @@ class GeneralConfigPart(object):
     def akeyless_url(self, akeyless_url):
         """Sets the akeyless_url of this GeneralConfigPart.
 
+        AkeylessUrl is here for BC only. Gator will still return it if it exists in the configuration, but new clients (>=2.34.0) will ignore it and override it with what exists in their local file. It will no longer be sent to Gator for update, so new clusters will only have the default value saved in the DB.  # noqa: E501
 
         :param akeyless_url: The akeyless_url of this GeneralConfigPart.  # noqa: E501
         :type: str

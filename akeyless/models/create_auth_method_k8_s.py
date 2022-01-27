@@ -42,6 +42,7 @@ class CreateAuthMethodK8S(object):
         'bound_sa_names': 'list[str]',
         'force_sub_claims': 'bool',
         'gen_key': 'str',
+        'jwt_ttl': 'int',
         'name': 'str',
         'password': 'str',
         'public_key': 'str',
@@ -59,6 +60,7 @@ class CreateAuthMethodK8S(object):
         'bound_sa_names': 'bound-sa-names',
         'force_sub_claims': 'force-sub-claims',
         'gen_key': 'gen-key',
+        'jwt_ttl': 'jwt-ttl',
         'name': 'name',
         'password': 'password',
         'public_key': 'public-key',
@@ -67,7 +69,7 @@ class CreateAuthMethodK8S(object):
         'username': 'username'
     }
 
-    def __init__(self, access_expires=0, audience=None, bound_ips=None, bound_namespaces=None, bound_pod_names=None, bound_sa_names=None, force_sub_claims=None, gen_key='true', name=None, password=None, public_key=None, token=None, uid_token=None, username=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, access_expires=0, audience=None, bound_ips=None, bound_namespaces=None, bound_pod_names=None, bound_sa_names=None, force_sub_claims=None, gen_key='true', jwt_ttl=0, name=None, password=None, public_key=None, token=None, uid_token=None, username=None, local_vars_configuration=None):  # noqa: E501
         """CreateAuthMethodK8S - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -81,6 +83,7 @@ class CreateAuthMethodK8S(object):
         self._bound_sa_names = None
         self._force_sub_claims = None
         self._gen_key = None
+        self._jwt_ttl = None
         self._name = None
         self._password = None
         self._public_key = None
@@ -105,6 +108,8 @@ class CreateAuthMethodK8S(object):
             self.force_sub_claims = force_sub_claims
         if gen_key is not None:
             self.gen_key = gen_key
+        if jwt_ttl is not None:
+            self.jwt_ttl = jwt_ttl
         self.name = name
         if password is not None:
             self.password = password
@@ -300,6 +305,29 @@ class CreateAuthMethodK8S(object):
         """
 
         self._gen_key = gen_key
+
+    @property
+    def jwt_ttl(self):
+        """Gets the jwt_ttl of this CreateAuthMethodK8S.  # noqa: E501
+
+        Jwt TTL  # noqa: E501
+
+        :return: The jwt_ttl of this CreateAuthMethodK8S.  # noqa: E501
+        :rtype: int
+        """
+        return self._jwt_ttl
+
+    @jwt_ttl.setter
+    def jwt_ttl(self, jwt_ttl):
+        """Sets the jwt_ttl of this CreateAuthMethodK8S.
+
+        Jwt TTL  # noqa: E501
+
+        :param jwt_ttl: The jwt_ttl of this CreateAuthMethodK8S.  # noqa: E501
+        :type: int
+        """
+
+        self._jwt_ttl = jwt_ttl
 
     @property
     def name(self):

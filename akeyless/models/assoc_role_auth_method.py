@@ -35,6 +35,7 @@ class AssocRoleAuthMethod(object):
     """
     openapi_types = {
         'am_name': 'str',
+        'case_sensitive': 'str',
         'password': 'str',
         'role_name': 'str',
         'sub_claims': 'dict(str, str)',
@@ -45,6 +46,7 @@ class AssocRoleAuthMethod(object):
 
     attribute_map = {
         'am_name': 'am-name',
+        'case_sensitive': 'case-sensitive',
         'password': 'password',
         'role_name': 'role-name',
         'sub_claims': 'sub-claims',
@@ -53,13 +55,14 @@ class AssocRoleAuthMethod(object):
         'username': 'username'
     }
 
-    def __init__(self, am_name=None, password=None, role_name=None, sub_claims=None, token=None, uid_token=None, username=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, am_name=None, case_sensitive=None, password=None, role_name=None, sub_claims=None, token=None, uid_token=None, username=None, local_vars_configuration=None):  # noqa: E501
         """AssocRoleAuthMethod - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._am_name = None
+        self._case_sensitive = None
         self._password = None
         self._role_name = None
         self._sub_claims = None
@@ -69,6 +72,8 @@ class AssocRoleAuthMethod(object):
         self.discriminator = None
 
         self.am_name = am_name
+        if case_sensitive is not None:
+            self.case_sensitive = case_sensitive
         if password is not None:
             self.password = password
         self.role_name = role_name
@@ -105,6 +110,27 @@ class AssocRoleAuthMethod(object):
             raise ValueError("Invalid value for `am_name`, must not be `None`")  # noqa: E501
 
         self._am_name = am_name
+
+    @property
+    def case_sensitive(self):
+        """Gets the case_sensitive of this AssocRoleAuthMethod.  # noqa: E501
+
+
+        :return: The case_sensitive of this AssocRoleAuthMethod.  # noqa: E501
+        :rtype: str
+        """
+        return self._case_sensitive
+
+    @case_sensitive.setter
+    def case_sensitive(self, case_sensitive):
+        """Sets the case_sensitive of this AssocRoleAuthMethod.
+
+
+        :param case_sensitive: The case_sensitive of this AssocRoleAuthMethod.  # noqa: E501
+        :type: str
+        """
+
+        self._case_sensitive = case_sensitive
 
     @property
     def password(self):

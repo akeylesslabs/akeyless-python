@@ -43,6 +43,7 @@ class UpdateAuthMethodGCP(object):
         'bound_service_accounts': 'list[str]',
         'bound_zones': 'list[str]',
         'force_sub_claims': 'bool',
+        'jwt_ttl': 'int',
         'name': 'str',
         'new_name': 'str',
         'password': 'str',
@@ -63,6 +64,7 @@ class UpdateAuthMethodGCP(object):
         'bound_service_accounts': 'bound-service-accounts',
         'bound_zones': 'bound-zones',
         'force_sub_claims': 'force-sub-claims',
+        'jwt_ttl': 'jwt-ttl',
         'name': 'name',
         'new_name': 'new-name',
         'password': 'password',
@@ -73,7 +75,7 @@ class UpdateAuthMethodGCP(object):
         'username': 'username'
     }
 
-    def __init__(self, access_expires=0, audience='akeyless.io', bound_ips=None, bound_labels=None, bound_projects=None, bound_regions=None, bound_service_accounts=None, bound_zones=None, force_sub_claims=None, name=None, new_name=None, password=None, service_account_creds_data=None, token=None, type=None, uid_token=None, username=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, access_expires=0, audience='akeyless.io', bound_ips=None, bound_labels=None, bound_projects=None, bound_regions=None, bound_service_accounts=None, bound_zones=None, force_sub_claims=None, jwt_ttl=0, name=None, new_name=None, password=None, service_account_creds_data=None, token=None, type=None, uid_token=None, username=None, local_vars_configuration=None):  # noqa: E501
         """UpdateAuthMethodGCP - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -88,6 +90,7 @@ class UpdateAuthMethodGCP(object):
         self._bound_service_accounts = None
         self._bound_zones = None
         self._force_sub_claims = None
+        self._jwt_ttl = None
         self._name = None
         self._new_name = None
         self._password = None
@@ -115,6 +118,8 @@ class UpdateAuthMethodGCP(object):
             self.bound_zones = bound_zones
         if force_sub_claims is not None:
             self.force_sub_claims = force_sub_claims
+        if jwt_ttl is not None:
+            self.jwt_ttl = jwt_ttl
         self.name = name
         if new_name is not None:
             self.new_name = new_name
@@ -338,6 +343,29 @@ class UpdateAuthMethodGCP(object):
         """
 
         self._force_sub_claims = force_sub_claims
+
+    @property
+    def jwt_ttl(self):
+        """Gets the jwt_ttl of this UpdateAuthMethodGCP.  # noqa: E501
+
+        Jwt TTL  # noqa: E501
+
+        :return: The jwt_ttl of this UpdateAuthMethodGCP.  # noqa: E501
+        :rtype: int
+        """
+        return self._jwt_ttl
+
+    @jwt_ttl.setter
+    def jwt_ttl(self, jwt_ttl):
+        """Sets the jwt_ttl of this UpdateAuthMethodGCP.
+
+        Jwt TTL  # noqa: E501
+
+        :param jwt_ttl: The jwt_ttl of this UpdateAuthMethodGCP.  # noqa: E501
+        :type: int
+        """
+
+        self._jwt_ttl = jwt_ttl
 
     @property
     def name(self):

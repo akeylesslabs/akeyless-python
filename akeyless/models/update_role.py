@@ -41,6 +41,7 @@ class UpdateRole(object):
         'new_comment': 'str',
         'new_name': 'str',
         'password': 'str',
+        'sra_reports_access': 'str',
         'token': 'str',
         'uid_token': 'str',
         'username': 'str'
@@ -54,12 +55,13 @@ class UpdateRole(object):
         'new_comment': 'new-comment',
         'new_name': 'new-name',
         'password': 'password',
+        'sra_reports_access': 'sra-reports-access',
         'token': 'token',
         'uid_token': 'uid-token',
         'username': 'username'
     }
 
-    def __init__(self, analytics_access=None, audit_access=None, gw_analytics_access=None, name=None, new_comment='default_comment', new_name=None, password=None, token=None, uid_token=None, username=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, analytics_access=None, audit_access=None, gw_analytics_access=None, name=None, new_comment='default_comment', new_name=None, password=None, sra_reports_access=None, token=None, uid_token=None, username=None, local_vars_configuration=None):  # noqa: E501
         """UpdateRole - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -72,6 +74,7 @@ class UpdateRole(object):
         self._new_comment = None
         self._new_name = None
         self._password = None
+        self._sra_reports_access = None
         self._token = None
         self._uid_token = None
         self._username = None
@@ -90,6 +93,8 @@ class UpdateRole(object):
             self.new_name = new_name
         if password is not None:
             self.password = password
+        if sra_reports_access is not None:
+            self.sra_reports_access = sra_reports_access
         if token is not None:
             self.token = token
         if uid_token is not None:
@@ -259,6 +264,29 @@ class UpdateRole(object):
         """
 
         self._password = password
+
+    @property
+    def sra_reports_access(self):
+        """Gets the sra_reports_access of this UpdateRole.  # noqa: E501
+
+        Allow this role to view SRA Clusters. Currently only 'none', 'own', 'all' values are supported.  # noqa: E501
+
+        :return: The sra_reports_access of this UpdateRole.  # noqa: E501
+        :rtype: str
+        """
+        return self._sra_reports_access
+
+    @sra_reports_access.setter
+    def sra_reports_access(self, sra_reports_access):
+        """Sets the sra_reports_access of this UpdateRole.
+
+        Allow this role to view SRA Clusters. Currently only 'none', 'own', 'all' values are supported.  # noqa: E501
+
+        :param sra_reports_access: The sra_reports_access of this UpdateRole.  # noqa: E501
+        :type: str
+        """
+
+        self._sra_reports_access = sra_reports_access
 
     @property
     def token(self):

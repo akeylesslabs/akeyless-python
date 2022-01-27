@@ -41,6 +41,7 @@ class UpdateAuthMethodOIDC(object):
         'client_secret': 'str',
         'force_sub_claims': 'bool',
         'issuer': 'str',
+        'jwt_ttl': 'int',
         'name': 'str',
         'new_name': 'str',
         'password': 'str',
@@ -58,6 +59,7 @@ class UpdateAuthMethodOIDC(object):
         'client_secret': 'client-secret',
         'force_sub_claims': 'force-sub-claims',
         'issuer': 'issuer',
+        'jwt_ttl': 'jwt-ttl',
         'name': 'name',
         'new_name': 'new-name',
         'password': 'password',
@@ -67,7 +69,7 @@ class UpdateAuthMethodOIDC(object):
         'username': 'username'
     }
 
-    def __init__(self, access_expires=0, allowed_redirect_uri=None, bound_ips=None, client_id=None, client_secret=None, force_sub_claims=None, issuer=None, name=None, new_name=None, password=None, token=None, uid_token=None, unique_identifier=None, username=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, access_expires=0, allowed_redirect_uri=None, bound_ips=None, client_id=None, client_secret=None, force_sub_claims=None, issuer=None, jwt_ttl=0, name=None, new_name=None, password=None, token=None, uid_token=None, unique_identifier=None, username=None, local_vars_configuration=None):  # noqa: E501
         """UpdateAuthMethodOIDC - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -80,6 +82,7 @@ class UpdateAuthMethodOIDC(object):
         self._client_secret = None
         self._force_sub_claims = None
         self._issuer = None
+        self._jwt_ttl = None
         self._name = None
         self._new_name = None
         self._password = None
@@ -103,6 +106,8 @@ class UpdateAuthMethodOIDC(object):
             self.force_sub_claims = force_sub_claims
         if issuer is not None:
             self.issuer = issuer
+        if jwt_ttl is not None:
+            self.jwt_ttl = jwt_ttl
         self.name = name
         if new_name is not None:
             self.new_name = new_name
@@ -276,6 +281,29 @@ class UpdateAuthMethodOIDC(object):
         """
 
         self._issuer = issuer
+
+    @property
+    def jwt_ttl(self):
+        """Gets the jwt_ttl of this UpdateAuthMethodOIDC.  # noqa: E501
+
+        Jwt TTL  # noqa: E501
+
+        :return: The jwt_ttl of this UpdateAuthMethodOIDC.  # noqa: E501
+        :rtype: int
+        """
+        return self._jwt_ttl
+
+    @jwt_ttl.setter
+    def jwt_ttl(self, jwt_ttl):
+        """Sets the jwt_ttl of this UpdateAuthMethodOIDC.
+
+        Jwt TTL  # noqa: E501
+
+        :param jwt_ttl: The jwt_ttl of this UpdateAuthMethodOIDC.  # noqa: E501
+        :type: int
+        """
+
+        self._jwt_ttl = jwt_ttl
 
     @property
     def name(self):

@@ -5,6 +5,7 @@ assocRoleAuthMethod is a command that creates an association between role and au
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **am_name** | **str** | The auth method to associate | 
+**case_sensitive** | **str** |  | [optional] 
 **password** | **str** | Required only when the authentication process requires a username and password | [optional] 
 **role_name** | **str** | The role to associate | 
 **sub_claims** | **dict(str, str)** | key/val of sub claims, e.g group&#x3D;admins,developers | [optional] 
