@@ -49,6 +49,8 @@ class GatewayCreateProducerMySQL(object):
         'secure_access_enable': 'str',
         'secure_access_host': 'list[str]',
         'secure_access_web': 'bool',
+        'ssl': 'bool',
+        'ssl_certificate': 'str',
         'tags': 'list[str]',
         'target_name': 'str',
         'token': 'str',
@@ -73,6 +75,8 @@ class GatewayCreateProducerMySQL(object):
         'secure_access_enable': 'secure-access-enable',
         'secure_access_host': 'secure-access-host',
         'secure_access_web': 'secure-access-web',
+        'ssl': 'ssl',
+        'ssl_certificate': 'ssl-certificate',
         'tags': 'tags',
         'target_name': 'target-name',
         'token': 'token',
@@ -81,7 +85,7 @@ class GatewayCreateProducerMySQL(object):
         'username': 'username'
     }
 
-    def __init__(self, db_server_certificates=None, db_server_name=None, mysql_dbname=None, mysql_host='127.0.0.1', mysql_password=None, mysql_port='3306', mysql_screation_statements=None, mysql_username=None, name=None, password=None, producer_encryption_key_name=None, secure_access_bastion_issuer=None, secure_access_enable=None, secure_access_host=None, secure_access_web=None, tags=None, target_name=None, token=None, uid_token=None, user_ttl='60m', username=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, db_server_certificates=None, db_server_name=None, mysql_dbname=None, mysql_host='127.0.0.1', mysql_password=None, mysql_port='3306', mysql_screation_statements=None, mysql_username=None, name=None, password=None, producer_encryption_key_name=None, secure_access_bastion_issuer=None, secure_access_enable=None, secure_access_host=None, secure_access_web=None, ssl=None, ssl_certificate=None, tags=None, target_name=None, token=None, uid_token=None, user_ttl='60m', username=None, local_vars_configuration=None):  # noqa: E501
         """GatewayCreateProducerMySQL - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -102,6 +106,8 @@ class GatewayCreateProducerMySQL(object):
         self._secure_access_enable = None
         self._secure_access_host = None
         self._secure_access_web = None
+        self._ssl = None
+        self._ssl_certificate = None
         self._tags = None
         self._target_name = None
         self._token = None
@@ -139,6 +145,10 @@ class GatewayCreateProducerMySQL(object):
             self.secure_access_host = secure_access_host
         if secure_access_web is not None:
             self.secure_access_web = secure_access_web
+        if ssl is not None:
+            self.ssl = ssl
+        if ssl_certificate is not None:
+            self.ssl_certificate = ssl_certificate
         if tags is not None:
             self.tags = tags
         if target_name is not None:
@@ -490,6 +500,52 @@ class GatewayCreateProducerMySQL(object):
         """
 
         self._secure_access_web = secure_access_web
+
+    @property
+    def ssl(self):
+        """Gets the ssl of this GatewayCreateProducerMySQL.  # noqa: E501
+
+        SSL connection mode  # noqa: E501
+
+        :return: The ssl of this GatewayCreateProducerMySQL.  # noqa: E501
+        :rtype: bool
+        """
+        return self._ssl
+
+    @ssl.setter
+    def ssl(self, ssl):
+        """Sets the ssl of this GatewayCreateProducerMySQL.
+
+        SSL connection mode  # noqa: E501
+
+        :param ssl: The ssl of this GatewayCreateProducerMySQL.  # noqa: E501
+        :type: bool
+        """
+
+        self._ssl = ssl
+
+    @property
+    def ssl_certificate(self):
+        """Gets the ssl_certificate of this GatewayCreateProducerMySQL.  # noqa: E501
+
+        SSL connection certificate  # noqa: E501
+
+        :return: The ssl_certificate of this GatewayCreateProducerMySQL.  # noqa: E501
+        :rtype: str
+        """
+        return self._ssl_certificate
+
+    @ssl_certificate.setter
+    def ssl_certificate(self, ssl_certificate):
+        """Sets the ssl_certificate of this GatewayCreateProducerMySQL.
+
+        SSL connection certificate  # noqa: E501
+
+        :param ssl_certificate: The ssl_certificate of this GatewayCreateProducerMySQL.  # noqa: E501
+        :type: str
+        """
+
+        self._ssl_certificate = ssl_certificate
 
     @property
     def tags(self):

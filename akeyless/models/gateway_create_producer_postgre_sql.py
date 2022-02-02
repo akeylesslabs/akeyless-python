@@ -43,11 +43,13 @@ class GatewayCreateProducerPostgreSQL(object):
         'postgresql_port': 'str',
         'postgresql_username': 'str',
         'producer_encryption_key': 'str',
+        'revocation_statement': 'str',
         'secure_access_bastion_issuer': 'str',
         'secure_access_db_schema': 'str',
         'secure_access_enable': 'str',
         'secure_access_host': 'list[str]',
         'secure_access_web': 'bool',
+        'ssl': 'bool',
         'tags': 'list[str]',
         'target_name': 'str',
         'token': 'str',
@@ -66,11 +68,13 @@ class GatewayCreateProducerPostgreSQL(object):
         'postgresql_port': 'postgresql-port',
         'postgresql_username': 'postgresql-username',
         'producer_encryption_key': 'producer-encryption-key',
+        'revocation_statement': 'revocation-statement',
         'secure_access_bastion_issuer': 'secure-access-bastion-issuer',
         'secure_access_db_schema': 'secure-access-db-schema',
         'secure_access_enable': 'secure-access-enable',
         'secure_access_host': 'secure-access-host',
         'secure_access_web': 'secure-access-web',
+        'ssl': 'ssl',
         'tags': 'tags',
         'target_name': 'target-name',
         'token': 'token',
@@ -79,7 +83,7 @@ class GatewayCreateProducerPostgreSQL(object):
         'username': 'username'
     }
 
-    def __init__(self, creation_statements=None, name=None, password=None, postgresql_db_name=None, postgresql_host='127.0.0.1', postgresql_password=None, postgresql_port='5432', postgresql_username=None, producer_encryption_key=None, secure_access_bastion_issuer=None, secure_access_db_schema=None, secure_access_enable=None, secure_access_host=None, secure_access_web=None, tags=None, target_name=None, token=None, uid_token=None, user_ttl='60m', username=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, creation_statements=None, name=None, password=None, postgresql_db_name=None, postgresql_host='127.0.0.1', postgresql_password=None, postgresql_port='5432', postgresql_username=None, producer_encryption_key=None, revocation_statement=None, secure_access_bastion_issuer=None, secure_access_db_schema=None, secure_access_enable=None, secure_access_host=None, secure_access_web=None, ssl=None, tags=None, target_name=None, token=None, uid_token=None, user_ttl='60m', username=None, local_vars_configuration=None):  # noqa: E501
         """GatewayCreateProducerPostgreSQL - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -94,11 +98,13 @@ class GatewayCreateProducerPostgreSQL(object):
         self._postgresql_port = None
         self._postgresql_username = None
         self._producer_encryption_key = None
+        self._revocation_statement = None
         self._secure_access_bastion_issuer = None
         self._secure_access_db_schema = None
         self._secure_access_enable = None
         self._secure_access_host = None
         self._secure_access_web = None
+        self._ssl = None
         self._tags = None
         self._target_name = None
         self._token = None
@@ -124,6 +130,8 @@ class GatewayCreateProducerPostgreSQL(object):
             self.postgresql_username = postgresql_username
         if producer_encryption_key is not None:
             self.producer_encryption_key = producer_encryption_key
+        if revocation_statement is not None:
+            self.revocation_statement = revocation_statement
         if secure_access_bastion_issuer is not None:
             self.secure_access_bastion_issuer = secure_access_bastion_issuer
         if secure_access_db_schema is not None:
@@ -134,6 +142,8 @@ class GatewayCreateProducerPostgreSQL(object):
             self.secure_access_host = secure_access_host
         if secure_access_web is not None:
             self.secure_access_web = secure_access_web
+        if ssl is not None:
+            self.ssl = ssl
         if tags is not None:
             self.tags = tags
         if target_name is not None:
@@ -357,6 +367,29 @@ class GatewayCreateProducerPostgreSQL(object):
         self._producer_encryption_key = producer_encryption_key
 
     @property
+    def revocation_statement(self):
+        """Gets the revocation_statement of this GatewayCreateProducerPostgreSQL.  # noqa: E501
+
+        PostgreSQL Revocation statements  # noqa: E501
+
+        :return: The revocation_statement of this GatewayCreateProducerPostgreSQL.  # noqa: E501
+        :rtype: str
+        """
+        return self._revocation_statement
+
+    @revocation_statement.setter
+    def revocation_statement(self, revocation_statement):
+        """Sets the revocation_statement of this GatewayCreateProducerPostgreSQL.
+
+        PostgreSQL Revocation statements  # noqa: E501
+
+        :param revocation_statement: The revocation_statement of this GatewayCreateProducerPostgreSQL.  # noqa: E501
+        :type: str
+        """
+
+        self._revocation_statement = revocation_statement
+
+    @property
     def secure_access_bastion_issuer(self):
         """Gets the secure_access_bastion_issuer of this GatewayCreateProducerPostgreSQL.  # noqa: E501
 
@@ -460,6 +493,29 @@ class GatewayCreateProducerPostgreSQL(object):
         """
 
         self._secure_access_web = secure_access_web
+
+    @property
+    def ssl(self):
+        """Gets the ssl of this GatewayCreateProducerPostgreSQL.  # noqa: E501
+
+        SSL connection mode  # noqa: E501
+
+        :return: The ssl of this GatewayCreateProducerPostgreSQL.  # noqa: E501
+        :rtype: bool
+        """
+        return self._ssl
+
+    @ssl.setter
+    def ssl(self, ssl):
+        """Sets the ssl of this GatewayCreateProducerPostgreSQL.
+
+        SSL connection mode  # noqa: E501
+
+        :param ssl: The ssl of this GatewayCreateProducerPostgreSQL.  # noqa: E501
+        :type: bool
+        """
+
+        self._ssl = ssl
 
     @property
     def tags(self):

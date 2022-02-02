@@ -22,6 +22,8 @@ Name | Type | Description | Notes
 **port** | **str** |  | [optional] 
 **pwd** | **str** |  | [optional] 
 **snowflake_account** | **str** |  | [optional] 
+**ssl** | **bool** | SSL connection mode | [optional] 
+**ssl_certificate** | **str** | SSL connection certificate | [optional] 
 **token** | **str** | Authentication token (see &#x60;/auth&#x60; and &#x60;/configure&#x60;) | [optional] 
 **uid_token** | **str** | The universal identity token, Required only for universal_identity authentication | [optional] 
 **user_name** | **str** |  | [optional] 

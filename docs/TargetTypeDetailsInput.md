@@ -69,6 +69,8 @@ Name | Type | Description | Notes
 **rabbitmq_server_uri** | **str** |  | [optional] 
 **rabbitmq_server_user** | **str** |  | [optional] 
 **sf_account** | **str** |  | [optional] 
+**ssl_connection_certificate** | **str** | (Optional) SSLConnectionCertificate defines the certificate for SSL connection. Must be base64 certificate loaded by UI using file loader field | [optional] 
+**ssl_connection_mode** | **bool** | (Optional) SSLConnectionMode defines if SSL mode will be used to connect to DB | [optional] 
 **url** | **str** |  | [optional] 
 **use_gw_cloud_identity** | **bool** |  | [optional] 
 **username** | **str** |  | [optional] 

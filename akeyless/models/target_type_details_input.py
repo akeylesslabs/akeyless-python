@@ -100,6 +100,8 @@ class TargetTypeDetailsInput(object):
         'rabbitmq_server_uri': 'str',
         'rabbitmq_server_user': 'str',
         'sf_account': 'str',
+        'ssl_connection_certificate': 'str',
+        'ssl_connection_mode': 'bool',
         'url': 'str',
         'use_gw_cloud_identity': 'bool',
         'username': 'str',
@@ -178,6 +180,8 @@ class TargetTypeDetailsInput(object):
         'rabbitmq_server_uri': 'rabbitmq_server_uri',
         'rabbitmq_server_user': 'rabbitmq_server_user',
         'sf_account': 'sf_account',
+        'ssl_connection_certificate': 'ssl_connection_certificate',
+        'ssl_connection_mode': 'ssl_connection_mode',
         'url': 'url',
         'use_gw_cloud_identity': 'use_gw_cloud_identity',
         'username': 'username',
@@ -189,7 +193,7 @@ class TargetTypeDetailsInput(object):
         'venafi_zone': 'venafi_zone'
     }
 
-    def __init__(self, artifactory_admin_apikey=None, artifactory_admin_username=None, artifactory_base_url=None, aws_access_key_id=None, aws_region=None, aws_secret_access_key=None, aws_session_token=None, azure_client_id=None, azure_client_secret=None, azure_tenant_id=None, chef_server_host_name=None, chef_server_key=None, chef_server_port=None, chef_server_url=None, chef_server_username=None, chef_skip_ssl=None, db_host_name=None, db_name=None, db_port=None, db_pwd=None, db_server_certificates=None, db_server_name=None, db_user_name=None, eks_access_key_id=None, eks_cluster_ca_certificate=None, eks_cluster_endpoint=None, eks_cluster_name=None, eks_region=None, eks_secret_access_key=None, gcp_service_account_email=None, gcp_service_account_key=None, gke_cluster_ca_certificate=None, gke_cluster_endpoint=None, gke_cluster_name=None, gke_service_account_key=None, gke_service_account_name=None, host=None, k8s_bearer_token=None, k8s_cluster_ca_certificate=None, k8s_cluster_endpoint=None, ldap_audience=None, ldap_bind_dn=None, ldap_bind_password=None, ldap_certificate=None, ldap_token_expiration=None, ldap_url=None, mongodb_atlas_api_private_key=None, mongodb_atlas_api_public_key=None, mongodb_atlas_project_id=None, mongodb_db_name=None, mongodb_default_auth_db=None, mongodb_host_port=None, mongodb_is_atlas=None, mongodb_password=None, mongodb_uri_connection=None, mongodb_uri_options=None, mongodb_username=None, password=None, payload=None, port=None, private_key=None, private_key_password=None, rabbitmq_server_password=None, rabbitmq_server_uri=None, rabbitmq_server_user=None, sf_account=None, url=None, use_gw_cloud_identity=None, username=None, venafi_api_key=None, venafi_base_url=None, venafi_tpp_password=None, venafi_tpp_username=None, venafi_use_tpp=None, venafi_zone=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, artifactory_admin_apikey=None, artifactory_admin_username=None, artifactory_base_url=None, aws_access_key_id=None, aws_region=None, aws_secret_access_key=None, aws_session_token=None, azure_client_id=None, azure_client_secret=None, azure_tenant_id=None, chef_server_host_name=None, chef_server_key=None, chef_server_port=None, chef_server_url=None, chef_server_username=None, chef_skip_ssl=None, db_host_name=None, db_name=None, db_port=None, db_pwd=None, db_server_certificates=None, db_server_name=None, db_user_name=None, eks_access_key_id=None, eks_cluster_ca_certificate=None, eks_cluster_endpoint=None, eks_cluster_name=None, eks_region=None, eks_secret_access_key=None, gcp_service_account_email=None, gcp_service_account_key=None, gke_cluster_ca_certificate=None, gke_cluster_endpoint=None, gke_cluster_name=None, gke_service_account_key=None, gke_service_account_name=None, host=None, k8s_bearer_token=None, k8s_cluster_ca_certificate=None, k8s_cluster_endpoint=None, ldap_audience=None, ldap_bind_dn=None, ldap_bind_password=None, ldap_certificate=None, ldap_token_expiration=None, ldap_url=None, mongodb_atlas_api_private_key=None, mongodb_atlas_api_public_key=None, mongodb_atlas_project_id=None, mongodb_db_name=None, mongodb_default_auth_db=None, mongodb_host_port=None, mongodb_is_atlas=None, mongodb_password=None, mongodb_uri_connection=None, mongodb_uri_options=None, mongodb_username=None, password=None, payload=None, port=None, private_key=None, private_key_password=None, rabbitmq_server_password=None, rabbitmq_server_uri=None, rabbitmq_server_user=None, sf_account=None, ssl_connection_certificate=None, ssl_connection_mode=None, url=None, use_gw_cloud_identity=None, username=None, venafi_api_key=None, venafi_base_url=None, venafi_tpp_password=None, venafi_tpp_username=None, venafi_use_tpp=None, venafi_zone=None, local_vars_configuration=None):  # noqa: E501
         """TargetTypeDetailsInput - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -261,6 +265,8 @@ class TargetTypeDetailsInput(object):
         self._rabbitmq_server_uri = None
         self._rabbitmq_server_user = None
         self._sf_account = None
+        self._ssl_connection_certificate = None
+        self._ssl_connection_mode = None
         self._url = None
         self._use_gw_cloud_identity = None
         self._username = None
@@ -404,6 +410,10 @@ class TargetTypeDetailsInput(object):
             self.rabbitmq_server_user = rabbitmq_server_user
         if sf_account is not None:
             self.sf_account = sf_account
+        if ssl_connection_certificate is not None:
+            self.ssl_connection_certificate = ssl_connection_certificate
+        if ssl_connection_mode is not None:
+            self.ssl_connection_mode = ssl_connection_mode
         if url is not None:
             self.url = url
         if use_gw_cloud_identity is not None:
@@ -1818,6 +1828,52 @@ class TargetTypeDetailsInput(object):
         """
 
         self._sf_account = sf_account
+
+    @property
+    def ssl_connection_certificate(self):
+        """Gets the ssl_connection_certificate of this TargetTypeDetailsInput.  # noqa: E501
+
+        (Optional) SSLConnectionCertificate defines the certificate for SSL connection. Must be base64 certificate loaded by UI using file loader field  # noqa: E501
+
+        :return: The ssl_connection_certificate of this TargetTypeDetailsInput.  # noqa: E501
+        :rtype: str
+        """
+        return self._ssl_connection_certificate
+
+    @ssl_connection_certificate.setter
+    def ssl_connection_certificate(self, ssl_connection_certificate):
+        """Sets the ssl_connection_certificate of this TargetTypeDetailsInput.
+
+        (Optional) SSLConnectionCertificate defines the certificate for SSL connection. Must be base64 certificate loaded by UI using file loader field  # noqa: E501
+
+        :param ssl_connection_certificate: The ssl_connection_certificate of this TargetTypeDetailsInput.  # noqa: E501
+        :type: str
+        """
+
+        self._ssl_connection_certificate = ssl_connection_certificate
+
+    @property
+    def ssl_connection_mode(self):
+        """Gets the ssl_connection_mode of this TargetTypeDetailsInput.  # noqa: E501
+
+        (Optional) SSLConnectionMode defines if SSL mode will be used to connect to DB  # noqa: E501
+
+        :return: The ssl_connection_mode of this TargetTypeDetailsInput.  # noqa: E501
+        :rtype: bool
+        """
+        return self._ssl_connection_mode
+
+    @ssl_connection_mode.setter
+    def ssl_connection_mode(self, ssl_connection_mode):
+        """Sets the ssl_connection_mode of this TargetTypeDetailsInput.
+
+        (Optional) SSLConnectionMode defines if SSL mode will be used to connect to DB  # noqa: E501
+
+        :param ssl_connection_mode: The ssl_connection_mode of this TargetTypeDetailsInput.  # noqa: E501
+        :type: bool
+        """
+
+        self._ssl_connection_mode = ssl_connection_mode
 
     @property
     def url(self):

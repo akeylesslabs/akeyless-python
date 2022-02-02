@@ -146,6 +146,7 @@ class DSProducerDetails(object):
         'password_policy': 'str',
         'payload': 'str',
         'postgres_creation_statements': 'str',
+        'postgres_revocation_statements': 'str',
         'rabbitmq_server_password': 'str',
         'rabbitmq_server_uri': 'str',
         'rabbitmq_server_user': 'str',
@@ -162,6 +163,8 @@ class DSProducerDetails(object):
         'sf_user_role': 'str',
         'sf_warehouse_name': 'str',
         'should_stop': 'str',
+        'ssl_connection_certificate': 'str',
+        'ssl_connection_mode': 'bool',
         'tags': 'list[str]',
         'timeout_seconds': 'int',
         'use_gw_cloud_identity': 'bool',
@@ -297,6 +300,7 @@ class DSProducerDetails(object):
         'password_policy': 'password_policy',
         'payload': 'payload',
         'postgres_creation_statements': 'postgres_creation_statements',
+        'postgres_revocation_statements': 'postgres_revocation_statements',
         'rabbitmq_server_password': 'rabbitmq_server_password',
         'rabbitmq_server_uri': 'rabbitmq_server_uri',
         'rabbitmq_server_user': 'rabbitmq_server_user',
@@ -313,6 +317,8 @@ class DSProducerDetails(object):
         'sf_user_role': 'sf_user_role',
         'sf_warehouse_name': 'sf_warehouse_name',
         'should_stop': 'should_stop',
+        'ssl_connection_certificate': 'ssl_connection_certificate',
+        'ssl_connection_mode': 'ssl_connection_mode',
         'tags': 'tags',
         'timeout_seconds': 'timeout_seconds',
         'use_gw_cloud_identity': 'use_gw_cloud_identity',
@@ -335,7 +341,7 @@ class DSProducerDetails(object):
         'venafi_zone': 'venafi_zone'
     }
 
-    def __init__(self, active=None, admin_name=None, admin_pwd=None, admin_rotation_interval_days=None, artifactory_admin_apikey=None, artifactory_admin_username=None, artifactory_base_url=None, artifactory_token_audience=None, artifactory_token_scope=None, aws_access_key_id=None, aws_access_mode=None, aws_region=None, aws_role_arns=None, aws_secret_access_key=None, aws_session_token=None, aws_user_console_access=None, aws_user_groups=None, aws_user_policies=None, aws_user_programmatic_access=None, azure_app_object_id=None, azure_client_id=None, azure_client_secret=None, azure_tenant_id=None, azure_user_groups_obj_id=None, azure_user_portal_access=None, azure_user_programmatic_access=None, azure_user_roles_template_id=None, cassandra_creation_statements=None, chef_organizations=None, chef_server_access_mode=None, chef_server_host_name=None, chef_server_key=None, chef_server_port=None, chef_server_url=None, chef_server_username=None, chef_skip_ssl=None, create_sync_url=None, db_host_name=None, db_isolation_level=None, db_max_idle_conns=None, db_max_open_conns=None, db_name=None, db_port=None, db_pwd=None, db_server_certificates=None, db_server_name=None, db_user_name=None, dynamic_secret_id=None, dynamic_secret_key=None, dynamic_secret_name=None, dynamic_secret_type=None, eks_access_key_id=None, eks_assume_role=None, eks_cluster_ca_certificate=None, eks_cluster_endpoint=None, eks_cluster_name=None, eks_region=None, eks_secret_access_key=None, enable_admin_rotation=None, externally_provided_user=None, failure_message=None, fixed_user_only=None, gcp_key_algo=None, gcp_service_account_email=None, gcp_service_account_key=None, gcp_token_lifetime=None, gcp_token_scope=None, gcp_token_type=None, gke_cluster_ca_certificate=None, gke_cluster_endpoint=None, gke_cluster_name=None, gke_service_account_key=None, gke_service_account_name=None, groups=None, host_name=None, host_port=None, is_fixed_user=None, item_targets_assoc=None, k8s_bearer_token=None, k8s_cluster_ca_certificate=None, k8s_cluster_endpoint=None, k8s_namespace=None, k8s_service_account=None, last_admin_rotation=None, ldap_audience=None, ldap_bind_dn=None, ldap_bind_password=None, ldap_certificate=None, ldap_token_expiration=None, ldap_url=None, ldap_user_attr=None, ldap_user_dn=None, mongodb_atlas_api_private_key=None, mongodb_atlas_api_public_key=None, mongodb_atlas_project_id=None, mongodb_db_name=None, mongodb_default_auth_db=None, mongodb_host_port=None, mongodb_is_atlas=None, mongodb_password=None, mongodb_roles=None, mongodb_uri_connection=None, mongodb_uri_options=None, mongodb_username=None, mssql_creation_statements=None, mssql_revocation_statements=None, mysql_creation_statements=None, oracle_creation_statements=None, password_length=None, password_policy=None, payload=None, postgres_creation_statements=None, rabbitmq_server_password=None, rabbitmq_server_uri=None, rabbitmq_server_user=None, rabbitmq_user_conf_permission=None, rabbitmq_user_read_permission=None, rabbitmq_user_tags=None, rabbitmq_user_vhost=None, rabbitmq_user_write_permission=None, redshift_creation_statements=None, revoke_sync_url=None, rotate_sync_url=None, secure_remote_access_details=None, sf_account=None, sf_user_role=None, sf_warehouse_name=None, should_stop=None, tags=None, timeout_seconds=None, use_gw_cloud_identity=None, user_principal_name=None, user_ttl=None, username_length=None, username_policy=None, venafi_allow_subdomains=None, venafi_allowed_domains=None, venafi_api_key=None, venafi_auto_generated_folder=None, venafi_base_url=None, venafi_root_first_in_chain=None, venafi_sign_using_akeyless_pki=None, venafi_signer_key_name=None, venafi_store_private_key=None, venafi_tpp_password=None, venafi_tpp_username=None, venafi_use_tpp=None, venafi_zone=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, active=None, admin_name=None, admin_pwd=None, admin_rotation_interval_days=None, artifactory_admin_apikey=None, artifactory_admin_username=None, artifactory_base_url=None, artifactory_token_audience=None, artifactory_token_scope=None, aws_access_key_id=None, aws_access_mode=None, aws_region=None, aws_role_arns=None, aws_secret_access_key=None, aws_session_token=None, aws_user_console_access=None, aws_user_groups=None, aws_user_policies=None, aws_user_programmatic_access=None, azure_app_object_id=None, azure_client_id=None, azure_client_secret=None, azure_tenant_id=None, azure_user_groups_obj_id=None, azure_user_portal_access=None, azure_user_programmatic_access=None, azure_user_roles_template_id=None, cassandra_creation_statements=None, chef_organizations=None, chef_server_access_mode=None, chef_server_host_name=None, chef_server_key=None, chef_server_port=None, chef_server_url=None, chef_server_username=None, chef_skip_ssl=None, create_sync_url=None, db_host_name=None, db_isolation_level=None, db_max_idle_conns=None, db_max_open_conns=None, db_name=None, db_port=None, db_pwd=None, db_server_certificates=None, db_server_name=None, db_user_name=None, dynamic_secret_id=None, dynamic_secret_key=None, dynamic_secret_name=None, dynamic_secret_type=None, eks_access_key_id=None, eks_assume_role=None, eks_cluster_ca_certificate=None, eks_cluster_endpoint=None, eks_cluster_name=None, eks_region=None, eks_secret_access_key=None, enable_admin_rotation=None, externally_provided_user=None, failure_message=None, fixed_user_only=None, gcp_key_algo=None, gcp_service_account_email=None, gcp_service_account_key=None, gcp_token_lifetime=None, gcp_token_scope=None, gcp_token_type=None, gke_cluster_ca_certificate=None, gke_cluster_endpoint=None, gke_cluster_name=None, gke_service_account_key=None, gke_service_account_name=None, groups=None, host_name=None, host_port=None, is_fixed_user=None, item_targets_assoc=None, k8s_bearer_token=None, k8s_cluster_ca_certificate=None, k8s_cluster_endpoint=None, k8s_namespace=None, k8s_service_account=None, last_admin_rotation=None, ldap_audience=None, ldap_bind_dn=None, ldap_bind_password=None, ldap_certificate=None, ldap_token_expiration=None, ldap_url=None, ldap_user_attr=None, ldap_user_dn=None, mongodb_atlas_api_private_key=None, mongodb_atlas_api_public_key=None, mongodb_atlas_project_id=None, mongodb_db_name=None, mongodb_default_auth_db=None, mongodb_host_port=None, mongodb_is_atlas=None, mongodb_password=None, mongodb_roles=None, mongodb_uri_connection=None, mongodb_uri_options=None, mongodb_username=None, mssql_creation_statements=None, mssql_revocation_statements=None, mysql_creation_statements=None, oracle_creation_statements=None, password_length=None, password_policy=None, payload=None, postgres_creation_statements=None, postgres_revocation_statements=None, rabbitmq_server_password=None, rabbitmq_server_uri=None, rabbitmq_server_user=None, rabbitmq_user_conf_permission=None, rabbitmq_user_read_permission=None, rabbitmq_user_tags=None, rabbitmq_user_vhost=None, rabbitmq_user_write_permission=None, redshift_creation_statements=None, revoke_sync_url=None, rotate_sync_url=None, secure_remote_access_details=None, sf_account=None, sf_user_role=None, sf_warehouse_name=None, should_stop=None, ssl_connection_certificate=None, ssl_connection_mode=None, tags=None, timeout_seconds=None, use_gw_cloud_identity=None, user_principal_name=None, user_ttl=None, username_length=None, username_policy=None, venafi_allow_subdomains=None, venafi_allowed_domains=None, venafi_api_key=None, venafi_auto_generated_folder=None, venafi_base_url=None, venafi_root_first_in_chain=None, venafi_sign_using_akeyless_pki=None, venafi_signer_key_name=None, venafi_store_private_key=None, venafi_tpp_password=None, venafi_tpp_username=None, venafi_use_tpp=None, venafi_zone=None, local_vars_configuration=None):  # noqa: E501
         """DSProducerDetails - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -453,6 +459,7 @@ class DSProducerDetails(object):
         self._password_policy = None
         self._payload = None
         self._postgres_creation_statements = None
+        self._postgres_revocation_statements = None
         self._rabbitmq_server_password = None
         self._rabbitmq_server_uri = None
         self._rabbitmq_server_user = None
@@ -469,6 +476,8 @@ class DSProducerDetails(object):
         self._sf_user_role = None
         self._sf_warehouse_name = None
         self._should_stop = None
+        self._ssl_connection_certificate = None
+        self._ssl_connection_mode = None
         self._tags = None
         self._timeout_seconds = None
         self._use_gw_cloud_identity = None
@@ -715,6 +724,8 @@ class DSProducerDetails(object):
             self.payload = payload
         if postgres_creation_statements is not None:
             self.postgres_creation_statements = postgres_creation_statements
+        if postgres_revocation_statements is not None:
+            self.postgres_revocation_statements = postgres_revocation_statements
         if rabbitmq_server_password is not None:
             self.rabbitmq_server_password = rabbitmq_server_password
         if rabbitmq_server_uri is not None:
@@ -747,6 +758,10 @@ class DSProducerDetails(object):
             self.sf_warehouse_name = sf_warehouse_name
         if should_stop is not None:
             self.should_stop = should_stop
+        if ssl_connection_certificate is not None:
+            self.ssl_connection_certificate = ssl_connection_certificate
+        if ssl_connection_mode is not None:
+            self.ssl_connection_mode = ssl_connection_mode
         if tags is not None:
             self.tags = tags
         if timeout_seconds is not None:
@@ -3153,6 +3168,27 @@ class DSProducerDetails(object):
         self._postgres_creation_statements = postgres_creation_statements
 
     @property
+    def postgres_revocation_statements(self):
+        """Gets the postgres_revocation_statements of this DSProducerDetails.  # noqa: E501
+
+
+        :return: The postgres_revocation_statements of this DSProducerDetails.  # noqa: E501
+        :rtype: str
+        """
+        return self._postgres_revocation_statements
+
+    @postgres_revocation_statements.setter
+    def postgres_revocation_statements(self, postgres_revocation_statements):
+        """Sets the postgres_revocation_statements of this DSProducerDetails.
+
+
+        :param postgres_revocation_statements: The postgres_revocation_statements of this DSProducerDetails.  # noqa: E501
+        :type: str
+        """
+
+        self._postgres_revocation_statements = postgres_revocation_statements
+
+    @property
     def rabbitmq_server_password(self):
         """Gets the rabbitmq_server_password of this DSProducerDetails.  # noqa: E501
 
@@ -3491,6 +3527,52 @@ class DSProducerDetails(object):
         """
 
         self._should_stop = should_stop
+
+    @property
+    def ssl_connection_certificate(self):
+        """Gets the ssl_connection_certificate of this DSProducerDetails.  # noqa: E501
+
+        (Optional) SSLConnectionCertificate defines the certificate for SSL connection. Must be base64 certificate loaded by UI using file loader field  # noqa: E501
+
+        :return: The ssl_connection_certificate of this DSProducerDetails.  # noqa: E501
+        :rtype: str
+        """
+        return self._ssl_connection_certificate
+
+    @ssl_connection_certificate.setter
+    def ssl_connection_certificate(self, ssl_connection_certificate):
+        """Sets the ssl_connection_certificate of this DSProducerDetails.
+
+        (Optional) SSLConnectionCertificate defines the certificate for SSL connection. Must be base64 certificate loaded by UI using file loader field  # noqa: E501
+
+        :param ssl_connection_certificate: The ssl_connection_certificate of this DSProducerDetails.  # noqa: E501
+        :type: str
+        """
+
+        self._ssl_connection_certificate = ssl_connection_certificate
+
+    @property
+    def ssl_connection_mode(self):
+        """Gets the ssl_connection_mode of this DSProducerDetails.  # noqa: E501
+
+        (Optional) SSLConnectionMode defines if SSL mode will be used to connect to DB  # noqa: E501
+
+        :return: The ssl_connection_mode of this DSProducerDetails.  # noqa: E501
+        :rtype: bool
+        """
+        return self._ssl_connection_mode
+
+    @ssl_connection_mode.setter
+    def ssl_connection_mode(self, ssl_connection_mode):
+        """Sets the ssl_connection_mode of this DSProducerDetails.
+
+        (Optional) SSLConnectionMode defines if SSL mode will be used to connect to DB  # noqa: E501
+
+        :param ssl_connection_mode: The ssl_connection_mode of this DSProducerDetails.  # noqa: E501
+        :type: bool
+        """
+
+        self._ssl_connection_mode = ssl_connection_mode
 
     @property
     def tags(self):
