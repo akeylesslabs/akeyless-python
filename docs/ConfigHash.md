@@ -15,6 +15,7 @@ Name | Type | Description | Notes
 **m_queue** | **str** |  | [optional] 
 **migrations** | **str** |  | [optional] 
 **producers** | [**object**](.md) |  | [optional] 
+**producers_status** | **str** |  | [optional] 
 **rotators** | [**object**](.md) |  | [optional] 
 **saml** | **str** |  | [optional] 
 **universal_identity** | **str** |  | [optional] 

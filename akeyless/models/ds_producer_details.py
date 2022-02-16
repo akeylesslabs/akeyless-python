@@ -102,6 +102,14 @@ class DSProducerDetails(object):
         'gcp_token_lifetime': 'str',
         'gcp_token_scope': 'str',
         'gcp_token_type': 'str',
+        'github_app_id': 'int',
+        'github_app_private_key': 'str',
+        'github_base_url': 'str',
+        'github_installation_id': 'int',
+        'github_installation_token_permissions': 'dict(str, str)',
+        'github_installation_token_repositories': 'list[str]',
+        'github_installation_token_repositories_ids': 'list[int]',
+        'github_repository_path': 'str',
         'gke_cluster_ca_certificate': 'str',
         'gke_cluster_endpoint': 'str',
         'gke_cluster_name': 'str',
@@ -256,6 +264,14 @@ class DSProducerDetails(object):
         'gcp_token_lifetime': 'gcp_token_lifetime',
         'gcp_token_scope': 'gcp_token_scope',
         'gcp_token_type': 'gcp_token_type',
+        'github_app_id': 'github_app_id',
+        'github_app_private_key': 'github_app_private_key',
+        'github_base_url': 'github_base_url',
+        'github_installation_id': 'github_installation_id',
+        'github_installation_token_permissions': 'github_installation_token_permissions',
+        'github_installation_token_repositories': 'github_installation_token_repositories',
+        'github_installation_token_repositories_ids': 'github_installation_token_repositories_ids',
+        'github_repository_path': 'github_repository_path',
         'gke_cluster_ca_certificate': 'gke_cluster_ca_certificate',
         'gke_cluster_endpoint': 'gke_cluster_endpoint',
         'gke_cluster_name': 'gke_cluster_name',
@@ -341,7 +357,7 @@ class DSProducerDetails(object):
         'venafi_zone': 'venafi_zone'
     }
 
-    def __init__(self, active=None, admin_name=None, admin_pwd=None, admin_rotation_interval_days=None, artifactory_admin_apikey=None, artifactory_admin_username=None, artifactory_base_url=None, artifactory_token_audience=None, artifactory_token_scope=None, aws_access_key_id=None, aws_access_mode=None, aws_region=None, aws_role_arns=None, aws_secret_access_key=None, aws_session_token=None, aws_user_console_access=None, aws_user_groups=None, aws_user_policies=None, aws_user_programmatic_access=None, azure_app_object_id=None, azure_client_id=None, azure_client_secret=None, azure_tenant_id=None, azure_user_groups_obj_id=None, azure_user_portal_access=None, azure_user_programmatic_access=None, azure_user_roles_template_id=None, cassandra_creation_statements=None, chef_organizations=None, chef_server_access_mode=None, chef_server_host_name=None, chef_server_key=None, chef_server_port=None, chef_server_url=None, chef_server_username=None, chef_skip_ssl=None, create_sync_url=None, db_host_name=None, db_isolation_level=None, db_max_idle_conns=None, db_max_open_conns=None, db_name=None, db_port=None, db_pwd=None, db_server_certificates=None, db_server_name=None, db_user_name=None, dynamic_secret_id=None, dynamic_secret_key=None, dynamic_secret_name=None, dynamic_secret_type=None, eks_access_key_id=None, eks_assume_role=None, eks_cluster_ca_certificate=None, eks_cluster_endpoint=None, eks_cluster_name=None, eks_region=None, eks_secret_access_key=None, enable_admin_rotation=None, externally_provided_user=None, failure_message=None, fixed_user_only=None, gcp_key_algo=None, gcp_service_account_email=None, gcp_service_account_key=None, gcp_token_lifetime=None, gcp_token_scope=None, gcp_token_type=None, gke_cluster_ca_certificate=None, gke_cluster_endpoint=None, gke_cluster_name=None, gke_service_account_key=None, gke_service_account_name=None, groups=None, host_name=None, host_port=None, is_fixed_user=None, item_targets_assoc=None, k8s_bearer_token=None, k8s_cluster_ca_certificate=None, k8s_cluster_endpoint=None, k8s_namespace=None, k8s_service_account=None, last_admin_rotation=None, ldap_audience=None, ldap_bind_dn=None, ldap_bind_password=None, ldap_certificate=None, ldap_token_expiration=None, ldap_url=None, ldap_user_attr=None, ldap_user_dn=None, mongodb_atlas_api_private_key=None, mongodb_atlas_api_public_key=None, mongodb_atlas_project_id=None, mongodb_db_name=None, mongodb_default_auth_db=None, mongodb_host_port=None, mongodb_is_atlas=None, mongodb_password=None, mongodb_roles=None, mongodb_uri_connection=None, mongodb_uri_options=None, mongodb_username=None, mssql_creation_statements=None, mssql_revocation_statements=None, mysql_creation_statements=None, oracle_creation_statements=None, password_length=None, password_policy=None, payload=None, postgres_creation_statements=None, postgres_revocation_statements=None, rabbitmq_server_password=None, rabbitmq_server_uri=None, rabbitmq_server_user=None, rabbitmq_user_conf_permission=None, rabbitmq_user_read_permission=None, rabbitmq_user_tags=None, rabbitmq_user_vhost=None, rabbitmq_user_write_permission=None, redshift_creation_statements=None, revoke_sync_url=None, rotate_sync_url=None, secure_remote_access_details=None, sf_account=None, sf_user_role=None, sf_warehouse_name=None, should_stop=None, ssl_connection_certificate=None, ssl_connection_mode=None, tags=None, timeout_seconds=None, use_gw_cloud_identity=None, user_principal_name=None, user_ttl=None, username_length=None, username_policy=None, venafi_allow_subdomains=None, venafi_allowed_domains=None, venafi_api_key=None, venafi_auto_generated_folder=None, venafi_base_url=None, venafi_root_first_in_chain=None, venafi_sign_using_akeyless_pki=None, venafi_signer_key_name=None, venafi_store_private_key=None, venafi_tpp_password=None, venafi_tpp_username=None, venafi_use_tpp=None, venafi_zone=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, active=None, admin_name=None, admin_pwd=None, admin_rotation_interval_days=None, artifactory_admin_apikey=None, artifactory_admin_username=None, artifactory_base_url=None, artifactory_token_audience=None, artifactory_token_scope=None, aws_access_key_id=None, aws_access_mode=None, aws_region=None, aws_role_arns=None, aws_secret_access_key=None, aws_session_token=None, aws_user_console_access=None, aws_user_groups=None, aws_user_policies=None, aws_user_programmatic_access=None, azure_app_object_id=None, azure_client_id=None, azure_client_secret=None, azure_tenant_id=None, azure_user_groups_obj_id=None, azure_user_portal_access=None, azure_user_programmatic_access=None, azure_user_roles_template_id=None, cassandra_creation_statements=None, chef_organizations=None, chef_server_access_mode=None, chef_server_host_name=None, chef_server_key=None, chef_server_port=None, chef_server_url=None, chef_server_username=None, chef_skip_ssl=None, create_sync_url=None, db_host_name=None, db_isolation_level=None, db_max_idle_conns=None, db_max_open_conns=None, db_name=None, db_port=None, db_pwd=None, db_server_certificates=None, db_server_name=None, db_user_name=None, dynamic_secret_id=None, dynamic_secret_key=None, dynamic_secret_name=None, dynamic_secret_type=None, eks_access_key_id=None, eks_assume_role=None, eks_cluster_ca_certificate=None, eks_cluster_endpoint=None, eks_cluster_name=None, eks_region=None, eks_secret_access_key=None, enable_admin_rotation=None, externally_provided_user=None, failure_message=None, fixed_user_only=None, gcp_key_algo=None, gcp_service_account_email=None, gcp_service_account_key=None, gcp_token_lifetime=None, gcp_token_scope=None, gcp_token_type=None, github_app_id=None, github_app_private_key=None, github_base_url=None, github_installation_id=None, github_installation_token_permissions=None, github_installation_token_repositories=None, github_installation_token_repositories_ids=None, github_repository_path=None, gke_cluster_ca_certificate=None, gke_cluster_endpoint=None, gke_cluster_name=None, gke_service_account_key=None, gke_service_account_name=None, groups=None, host_name=None, host_port=None, is_fixed_user=None, item_targets_assoc=None, k8s_bearer_token=None, k8s_cluster_ca_certificate=None, k8s_cluster_endpoint=None, k8s_namespace=None, k8s_service_account=None, last_admin_rotation=None, ldap_audience=None, ldap_bind_dn=None, ldap_bind_password=None, ldap_certificate=None, ldap_token_expiration=None, ldap_url=None, ldap_user_attr=None, ldap_user_dn=None, mongodb_atlas_api_private_key=None, mongodb_atlas_api_public_key=None, mongodb_atlas_project_id=None, mongodb_db_name=None, mongodb_default_auth_db=None, mongodb_host_port=None, mongodb_is_atlas=None, mongodb_password=None, mongodb_roles=None, mongodb_uri_connection=None, mongodb_uri_options=None, mongodb_username=None, mssql_creation_statements=None, mssql_revocation_statements=None, mysql_creation_statements=None, oracle_creation_statements=None, password_length=None, password_policy=None, payload=None, postgres_creation_statements=None, postgres_revocation_statements=None, rabbitmq_server_password=None, rabbitmq_server_uri=None, rabbitmq_server_user=None, rabbitmq_user_conf_permission=None, rabbitmq_user_read_permission=None, rabbitmq_user_tags=None, rabbitmq_user_vhost=None, rabbitmq_user_write_permission=None, redshift_creation_statements=None, revoke_sync_url=None, rotate_sync_url=None, secure_remote_access_details=None, sf_account=None, sf_user_role=None, sf_warehouse_name=None, should_stop=None, ssl_connection_certificate=None, ssl_connection_mode=None, tags=None, timeout_seconds=None, use_gw_cloud_identity=None, user_principal_name=None, user_ttl=None, username_length=None, username_policy=None, venafi_allow_subdomains=None, venafi_allowed_domains=None, venafi_api_key=None, venafi_auto_generated_folder=None, venafi_base_url=None, venafi_root_first_in_chain=None, venafi_sign_using_akeyless_pki=None, venafi_signer_key_name=None, venafi_store_private_key=None, venafi_tpp_password=None, venafi_tpp_username=None, venafi_use_tpp=None, venafi_zone=None, local_vars_configuration=None):  # noqa: E501
         """DSProducerDetails - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -415,6 +431,14 @@ class DSProducerDetails(object):
         self._gcp_token_lifetime = None
         self._gcp_token_scope = None
         self._gcp_token_type = None
+        self._github_app_id = None
+        self._github_app_private_key = None
+        self._github_base_url = None
+        self._github_installation_id = None
+        self._github_installation_token_permissions = None
+        self._github_installation_token_repositories = None
+        self._github_installation_token_repositories_ids = None
+        self._github_repository_path = None
         self._gke_cluster_ca_certificate = None
         self._gke_cluster_endpoint = None
         self._gke_cluster_name = None
@@ -636,6 +660,22 @@ class DSProducerDetails(object):
             self.gcp_token_scope = gcp_token_scope
         if gcp_token_type is not None:
             self.gcp_token_type = gcp_token_type
+        if github_app_id is not None:
+            self.github_app_id = github_app_id
+        if github_app_private_key is not None:
+            self.github_app_private_key = github_app_private_key
+        if github_base_url is not None:
+            self.github_base_url = github_base_url
+        if github_installation_id is not None:
+            self.github_installation_id = github_installation_id
+        if github_installation_token_permissions is not None:
+            self.github_installation_token_permissions = github_installation_token_permissions
+        if github_installation_token_repositories is not None:
+            self.github_installation_token_repositories = github_installation_token_repositories
+        if github_installation_token_repositories_ids is not None:
+            self.github_installation_token_repositories_ids = github_installation_token_repositories_ids
+        if github_repository_path is not None:
+            self.github_repository_path = github_repository_path
         if gke_cluster_ca_certificate is not None:
             self.gke_cluster_ca_certificate = gke_cluster_ca_certificate
         if gke_cluster_endpoint is not None:
@@ -2234,6 +2274,174 @@ class DSProducerDetails(object):
         """
 
         self._gcp_token_type = gcp_token_type
+
+    @property
+    def github_app_id(self):
+        """Gets the github_app_id of this DSProducerDetails.  # noqa: E501
+
+
+        :return: The github_app_id of this DSProducerDetails.  # noqa: E501
+        :rtype: int
+        """
+        return self._github_app_id
+
+    @github_app_id.setter
+    def github_app_id(self, github_app_id):
+        """Sets the github_app_id of this DSProducerDetails.
+
+
+        :param github_app_id: The github_app_id of this DSProducerDetails.  # noqa: E501
+        :type: int
+        """
+
+        self._github_app_id = github_app_id
+
+    @property
+    def github_app_private_key(self):
+        """Gets the github_app_private_key of this DSProducerDetails.  # noqa: E501
+
+
+        :return: The github_app_private_key of this DSProducerDetails.  # noqa: E501
+        :rtype: str
+        """
+        return self._github_app_private_key
+
+    @github_app_private_key.setter
+    def github_app_private_key(self, github_app_private_key):
+        """Sets the github_app_private_key of this DSProducerDetails.
+
+
+        :param github_app_private_key: The github_app_private_key of this DSProducerDetails.  # noqa: E501
+        :type: str
+        """
+
+        self._github_app_private_key = github_app_private_key
+
+    @property
+    def github_base_url(self):
+        """Gets the github_base_url of this DSProducerDetails.  # noqa: E501
+
+
+        :return: The github_base_url of this DSProducerDetails.  # noqa: E501
+        :rtype: str
+        """
+        return self._github_base_url
+
+    @github_base_url.setter
+    def github_base_url(self, github_base_url):
+        """Sets the github_base_url of this DSProducerDetails.
+
+
+        :param github_base_url: The github_base_url of this DSProducerDetails.  # noqa: E501
+        :type: str
+        """
+
+        self._github_base_url = github_base_url
+
+    @property
+    def github_installation_id(self):
+        """Gets the github_installation_id of this DSProducerDetails.  # noqa: E501
+
+
+        :return: The github_installation_id of this DSProducerDetails.  # noqa: E501
+        :rtype: int
+        """
+        return self._github_installation_id
+
+    @github_installation_id.setter
+    def github_installation_id(self, github_installation_id):
+        """Sets the github_installation_id of this DSProducerDetails.
+
+
+        :param github_installation_id: The github_installation_id of this DSProducerDetails.  # noqa: E501
+        :type: int
+        """
+
+        self._github_installation_id = github_installation_id
+
+    @property
+    def github_installation_token_permissions(self):
+        """Gets the github_installation_token_permissions of this DSProducerDetails.  # noqa: E501
+
+
+        :return: The github_installation_token_permissions of this DSProducerDetails.  # noqa: E501
+        :rtype: dict(str, str)
+        """
+        return self._github_installation_token_permissions
+
+    @github_installation_token_permissions.setter
+    def github_installation_token_permissions(self, github_installation_token_permissions):
+        """Sets the github_installation_token_permissions of this DSProducerDetails.
+
+
+        :param github_installation_token_permissions: The github_installation_token_permissions of this DSProducerDetails.  # noqa: E501
+        :type: dict(str, str)
+        """
+
+        self._github_installation_token_permissions = github_installation_token_permissions
+
+    @property
+    def github_installation_token_repositories(self):
+        """Gets the github_installation_token_repositories of this DSProducerDetails.  # noqa: E501
+
+
+        :return: The github_installation_token_repositories of this DSProducerDetails.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._github_installation_token_repositories
+
+    @github_installation_token_repositories.setter
+    def github_installation_token_repositories(self, github_installation_token_repositories):
+        """Sets the github_installation_token_repositories of this DSProducerDetails.
+
+
+        :param github_installation_token_repositories: The github_installation_token_repositories of this DSProducerDetails.  # noqa: E501
+        :type: list[str]
+        """
+
+        self._github_installation_token_repositories = github_installation_token_repositories
+
+    @property
+    def github_installation_token_repositories_ids(self):
+        """Gets the github_installation_token_repositories_ids of this DSProducerDetails.  # noqa: E501
+
+
+        :return: The github_installation_token_repositories_ids of this DSProducerDetails.  # noqa: E501
+        :rtype: list[int]
+        """
+        return self._github_installation_token_repositories_ids
+
+    @github_installation_token_repositories_ids.setter
+    def github_installation_token_repositories_ids(self, github_installation_token_repositories_ids):
+        """Sets the github_installation_token_repositories_ids of this DSProducerDetails.
+
+
+        :param github_installation_token_repositories_ids: The github_installation_token_repositories_ids of this DSProducerDetails.  # noqa: E501
+        :type: list[int]
+        """
+
+        self._github_installation_token_repositories_ids = github_installation_token_repositories_ids
+
+    @property
+    def github_repository_path(self):
+        """Gets the github_repository_path of this DSProducerDetails.  # noqa: E501
+
+
+        :return: The github_repository_path of this DSProducerDetails.  # noqa: E501
+        :rtype: str
+        """
+        return self._github_repository_path
+
+    @github_repository_path.setter
+    def github_repository_path(self, github_repository_path):
+        """Sets the github_repository_path of this DSProducerDetails.
+
+
+        :param github_repository_path: The github_repository_path of this DSProducerDetails.  # noqa: E501
+        :type: str
+        """
+
+        self._github_repository_path = github_repository_path
 
     @property
     def gke_cluster_ca_certificate(self):

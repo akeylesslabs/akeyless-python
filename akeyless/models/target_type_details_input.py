@@ -65,6 +65,9 @@ class TargetTypeDetailsInput(object):
         'eks_secret_access_key': 'str',
         'gcp_service_account_email': 'str',
         'gcp_service_account_key': 'str',
+        'github_app_id': 'int',
+        'github_app_private_key': 'str',
+        'github_base_url': 'str',
         'gke_cluster_ca_certificate': 'str',
         'gke_cluster_endpoint': 'str',
         'gke_cluster_name': 'str',
@@ -145,6 +148,9 @@ class TargetTypeDetailsInput(object):
         'eks_secret_access_key': 'eks_secret_access_key',
         'gcp_service_account_email': 'gcp_service_account_email',
         'gcp_service_account_key': 'gcp_service_account_key',
+        'github_app_id': 'github_app_id',
+        'github_app_private_key': 'github_app_private_key',
+        'github_base_url': 'github_base_url',
         'gke_cluster_ca_certificate': 'gke_cluster_ca_certificate',
         'gke_cluster_endpoint': 'gke_cluster_endpoint',
         'gke_cluster_name': 'gke_cluster_name',
@@ -193,7 +199,7 @@ class TargetTypeDetailsInput(object):
         'venafi_zone': 'venafi_zone'
     }
 
-    def __init__(self, artifactory_admin_apikey=None, artifactory_admin_username=None, artifactory_base_url=None, aws_access_key_id=None, aws_region=None, aws_secret_access_key=None, aws_session_token=None, azure_client_id=None, azure_client_secret=None, azure_tenant_id=None, chef_server_host_name=None, chef_server_key=None, chef_server_port=None, chef_server_url=None, chef_server_username=None, chef_skip_ssl=None, db_host_name=None, db_name=None, db_port=None, db_pwd=None, db_server_certificates=None, db_server_name=None, db_user_name=None, eks_access_key_id=None, eks_cluster_ca_certificate=None, eks_cluster_endpoint=None, eks_cluster_name=None, eks_region=None, eks_secret_access_key=None, gcp_service_account_email=None, gcp_service_account_key=None, gke_cluster_ca_certificate=None, gke_cluster_endpoint=None, gke_cluster_name=None, gke_service_account_key=None, gke_service_account_name=None, host=None, k8s_bearer_token=None, k8s_cluster_ca_certificate=None, k8s_cluster_endpoint=None, ldap_audience=None, ldap_bind_dn=None, ldap_bind_password=None, ldap_certificate=None, ldap_token_expiration=None, ldap_url=None, mongodb_atlas_api_private_key=None, mongodb_atlas_api_public_key=None, mongodb_atlas_project_id=None, mongodb_db_name=None, mongodb_default_auth_db=None, mongodb_host_port=None, mongodb_is_atlas=None, mongodb_password=None, mongodb_uri_connection=None, mongodb_uri_options=None, mongodb_username=None, password=None, payload=None, port=None, private_key=None, private_key_password=None, rabbitmq_server_password=None, rabbitmq_server_uri=None, rabbitmq_server_user=None, sf_account=None, ssl_connection_certificate=None, ssl_connection_mode=None, url=None, use_gw_cloud_identity=None, username=None, venafi_api_key=None, venafi_base_url=None, venafi_tpp_password=None, venafi_tpp_username=None, venafi_use_tpp=None, venafi_zone=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, artifactory_admin_apikey=None, artifactory_admin_username=None, artifactory_base_url=None, aws_access_key_id=None, aws_region=None, aws_secret_access_key=None, aws_session_token=None, azure_client_id=None, azure_client_secret=None, azure_tenant_id=None, chef_server_host_name=None, chef_server_key=None, chef_server_port=None, chef_server_url=None, chef_server_username=None, chef_skip_ssl=None, db_host_name=None, db_name=None, db_port=None, db_pwd=None, db_server_certificates=None, db_server_name=None, db_user_name=None, eks_access_key_id=None, eks_cluster_ca_certificate=None, eks_cluster_endpoint=None, eks_cluster_name=None, eks_region=None, eks_secret_access_key=None, gcp_service_account_email=None, gcp_service_account_key=None, github_app_id=None, github_app_private_key=None, github_base_url=None, gke_cluster_ca_certificate=None, gke_cluster_endpoint=None, gke_cluster_name=None, gke_service_account_key=None, gke_service_account_name=None, host=None, k8s_bearer_token=None, k8s_cluster_ca_certificate=None, k8s_cluster_endpoint=None, ldap_audience=None, ldap_bind_dn=None, ldap_bind_password=None, ldap_certificate=None, ldap_token_expiration=None, ldap_url=None, mongodb_atlas_api_private_key=None, mongodb_atlas_api_public_key=None, mongodb_atlas_project_id=None, mongodb_db_name=None, mongodb_default_auth_db=None, mongodb_host_port=None, mongodb_is_atlas=None, mongodb_password=None, mongodb_uri_connection=None, mongodb_uri_options=None, mongodb_username=None, password=None, payload=None, port=None, private_key=None, private_key_password=None, rabbitmq_server_password=None, rabbitmq_server_uri=None, rabbitmq_server_user=None, sf_account=None, ssl_connection_certificate=None, ssl_connection_mode=None, url=None, use_gw_cloud_identity=None, username=None, venafi_api_key=None, venafi_base_url=None, venafi_tpp_password=None, venafi_tpp_username=None, venafi_use_tpp=None, venafi_zone=None, local_vars_configuration=None):  # noqa: E501
         """TargetTypeDetailsInput - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -230,6 +236,9 @@ class TargetTypeDetailsInput(object):
         self._eks_secret_access_key = None
         self._gcp_service_account_email = None
         self._gcp_service_account_key = None
+        self._github_app_id = None
+        self._github_app_private_key = None
+        self._github_base_url = None
         self._gke_cluster_ca_certificate = None
         self._gke_cluster_endpoint = None
         self._gke_cluster_name = None
@@ -340,6 +349,12 @@ class TargetTypeDetailsInput(object):
             self.gcp_service_account_email = gcp_service_account_email
         if gcp_service_account_key is not None:
             self.gcp_service_account_key = gcp_service_account_key
+        if github_app_id is not None:
+            self.github_app_id = github_app_id
+        if github_app_private_key is not None:
+            self.github_app_private_key = github_app_private_key
+        if github_base_url is not None:
+            self.github_base_url = github_base_url
         if gke_cluster_ca_certificate is not None:
             self.gke_cluster_ca_certificate = gke_cluster_ca_certificate
         if gke_cluster_endpoint is not None:
@@ -1087,6 +1102,69 @@ class TargetTypeDetailsInput(object):
         """
 
         self._gcp_service_account_key = gcp_service_account_key
+
+    @property
+    def github_app_id(self):
+        """Gets the github_app_id of this TargetTypeDetailsInput.  # noqa: E501
+
+
+        :return: The github_app_id of this TargetTypeDetailsInput.  # noqa: E501
+        :rtype: int
+        """
+        return self._github_app_id
+
+    @github_app_id.setter
+    def github_app_id(self, github_app_id):
+        """Sets the github_app_id of this TargetTypeDetailsInput.
+
+
+        :param github_app_id: The github_app_id of this TargetTypeDetailsInput.  # noqa: E501
+        :type: int
+        """
+
+        self._github_app_id = github_app_id
+
+    @property
+    def github_app_private_key(self):
+        """Gets the github_app_private_key of this TargetTypeDetailsInput.  # noqa: E501
+
+
+        :return: The github_app_private_key of this TargetTypeDetailsInput.  # noqa: E501
+        :rtype: str
+        """
+        return self._github_app_private_key
+
+    @github_app_private_key.setter
+    def github_app_private_key(self, github_app_private_key):
+        """Sets the github_app_private_key of this TargetTypeDetailsInput.
+
+
+        :param github_app_private_key: The github_app_private_key of this TargetTypeDetailsInput.  # noqa: E501
+        :type: str
+        """
+
+        self._github_app_private_key = github_app_private_key
+
+    @property
+    def github_base_url(self):
+        """Gets the github_base_url of this TargetTypeDetailsInput.  # noqa: E501
+
+
+        :return: The github_base_url of this TargetTypeDetailsInput.  # noqa: E501
+        :rtype: str
+        """
+        return self._github_base_url
+
+    @github_base_url.setter
+    def github_base_url(self, github_base_url):
+        """Sets the github_base_url of this TargetTypeDetailsInput.
+
+
+        :param github_base_url: The github_base_url of this TargetTypeDetailsInput.  # noqa: E501
+        :type: str
+        """
+
+        self._github_base_url = github_base_url
 
     @property
     def gke_cluster_ca_certificate(self):

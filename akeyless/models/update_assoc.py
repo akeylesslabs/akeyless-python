@@ -35,6 +35,7 @@ class UpdateAssoc(object):
     """
     openapi_types = {
         'assoc_id': 'str',
+        'case_sensitive': 'str',
         'password': 'str',
         'sub_claims': 'dict(str, str)',
         'token': 'str',
@@ -44,6 +45,7 @@ class UpdateAssoc(object):
 
     attribute_map = {
         'assoc_id': 'assoc-id',
+        'case_sensitive': 'case-sensitive',
         'password': 'password',
         'sub_claims': 'sub-claims',
         'token': 'token',
@@ -51,13 +53,14 @@ class UpdateAssoc(object):
         'username': 'username'
     }
 
-    def __init__(self, assoc_id=None, password=None, sub_claims=None, token=None, uid_token=None, username=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, assoc_id=None, case_sensitive=None, password=None, sub_claims=None, token=None, uid_token=None, username=None, local_vars_configuration=None):  # noqa: E501
         """UpdateAssoc - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._assoc_id = None
+        self._case_sensitive = None
         self._password = None
         self._sub_claims = None
         self._token = None
@@ -66,6 +69,8 @@ class UpdateAssoc(object):
         self.discriminator = None
 
         self.assoc_id = assoc_id
+        if case_sensitive is not None:
+            self.case_sensitive = case_sensitive
         if password is not None:
             self.password = password
         if sub_claims is not None:
@@ -101,6 +106,27 @@ class UpdateAssoc(object):
             raise ValueError("Invalid value for `assoc_id`, must not be `None`")  # noqa: E501
 
         self._assoc_id = assoc_id
+
+    @property
+    def case_sensitive(self):
+        """Gets the case_sensitive of this UpdateAssoc.  # noqa: E501
+
+
+        :return: The case_sensitive of this UpdateAssoc.  # noqa: E501
+        :rtype: str
+        """
+        return self._case_sensitive
+
+    @case_sensitive.setter
+    def case_sensitive(self, case_sensitive):
+        """Sets the case_sensitive of this UpdateAssoc.
+
+
+        :param case_sensitive: The case_sensitive of this UpdateAssoc.  # noqa: E501
+        :type: str
+        """
+
+        self._case_sensitive = case_sensitive
 
     @property
     def password(self):

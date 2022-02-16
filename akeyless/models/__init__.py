@@ -87,6 +87,8 @@ from akeyless.models.create_gke_target import CreateGKETarget
 from akeyless.models.create_gke_target_output import CreateGKETargetOutput
 from akeyless.models.create_gcp_target import CreateGcpTarget
 from akeyless.models.create_gcp_target_output import CreateGcpTargetOutput
+from akeyless.models.create_github_target import CreateGithubTarget
+from akeyless.models.create_github_target_output import CreateGithubTargetOutput
 from akeyless.models.create_key import CreateKey
 from akeyless.models.create_key_output import CreateKeyOutput
 from akeyless.models.create_ldap_target import CreateLdapTarget
@@ -177,6 +179,8 @@ from akeyless.models.gateway_create_producer_eks import GatewayCreateProducerEks
 from akeyless.models.gateway_create_producer_eks_output import GatewayCreateProducerEksOutput
 from akeyless.models.gateway_create_producer_gcp import GatewayCreateProducerGcp
 from akeyless.models.gateway_create_producer_gcp_output import GatewayCreateProducerGcpOutput
+from akeyless.models.gateway_create_producer_github import GatewayCreateProducerGithub
+from akeyless.models.gateway_create_producer_github_output import GatewayCreateProducerGithubOutput
 from akeyless.models.gateway_create_producer_gke import GatewayCreateProducerGke
 from akeyless.models.gateway_create_producer_gke_output import GatewayCreateProducerGkeOutput
 from akeyless.models.gateway_create_producer_ldap import GatewayCreateProducerLdap
@@ -245,6 +249,8 @@ from akeyless.models.gateway_update_producer_eks import GatewayUpdateProducerEks
 from akeyless.models.gateway_update_producer_eks_output import GatewayUpdateProducerEksOutput
 from akeyless.models.gateway_update_producer_gcp import GatewayUpdateProducerGcp
 from akeyless.models.gateway_update_producer_gcp_output import GatewayUpdateProducerGcpOutput
+from akeyless.models.gateway_update_producer_github import GatewayUpdateProducerGithub
+from akeyless.models.gateway_update_producer_github_output import GatewayUpdateProducerGithubOutput
 from akeyless.models.gateway_update_producer_gke import GatewayUpdateProducerGke
 from akeyless.models.gateway_update_producer_gke_output import GatewayUpdateProducerGkeOutput
 from akeyless.models.gateway_update_producer_ldap import GatewayUpdateProducerLdap
@@ -446,6 +452,8 @@ from akeyless.models.update_gke_target import UpdateGKETarget
 from akeyless.models.update_gke_target_output import UpdateGKETargetOutput
 from akeyless.models.update_gcp_target import UpdateGcpTarget
 from akeyless.models.update_gcp_target_output import UpdateGcpTargetOutput
+from akeyless.models.update_github_target import UpdateGithubTarget
+from akeyless.models.update_github_target_output import UpdateGithubTargetOutput
 from akeyless.models.update_item import UpdateItem
 from akeyless.models.update_item_output import UpdateItemOutput
 from akeyless.models.update_native_k8_s_target import UpdateNativeK8STarget

@@ -34,6 +34,7 @@ class Connect(object):
                             and the value is json key in definition.
     """
     openapi_types = {
+        'rc_file_override': 'str',
         'bastion_ctrl_path': 'str',
         'bastion_ctrl_port': 'str',
         'bastion_ctrl_proto': 'str',
@@ -51,6 +52,7 @@ class Connect(object):
     }
 
     attribute_map = {
+        'rc_file_override': 'RcFileOverride',
         'bastion_ctrl_path': 'bastion-ctrl-path',
         'bastion_ctrl_port': 'bastion-ctrl-port',
         'bastion_ctrl_proto': 'bastion-ctrl-proto',
@@ -67,12 +69,13 @@ class Connect(object):
         'via_bastion': 'via-bastion'
     }
 
-    def __init__(self, bastion_ctrl_path=None, bastion_ctrl_port='9900', bastion_ctrl_proto='http', bastion_ctrl_subdomain=None, cert_issuer_name=None, identity_file=None, name=None, password=None, ssh_extra_args=None, target=None, token=None, uid_token=None, username=None, via_bastion=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, rc_file_override=None, bastion_ctrl_path=None, bastion_ctrl_port='9900', bastion_ctrl_proto='http', bastion_ctrl_subdomain=None, cert_issuer_name=None, identity_file=None, name=None, password=None, ssh_extra_args=None, target=None, token=None, uid_token=None, username=None, via_bastion=None, local_vars_configuration=None):  # noqa: E501
         """Connect - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
+        self._rc_file_override = None
         self._bastion_ctrl_path = None
         self._bastion_ctrl_port = None
         self._bastion_ctrl_proto = None
@@ -89,6 +92,8 @@ class Connect(object):
         self._via_bastion = None
         self.discriminator = None
 
+        if rc_file_override is not None:
+            self.rc_file_override = rc_file_override
         if bastion_ctrl_path is not None:
             self.bastion_ctrl_path = bastion_ctrl_path
         if bastion_ctrl_port is not None:
@@ -117,6 +122,29 @@ class Connect(object):
             self.username = username
         if via_bastion is not None:
             self.via_bastion = via_bastion
+
+    @property
+    def rc_file_override(self):
+        """Gets the rc_file_override of this Connect.  # noqa: E501
+
+        used to override .akeyless-connect.rc in tests  # noqa: E501
+
+        :return: The rc_file_override of this Connect.  # noqa: E501
+        :rtype: str
+        """
+        return self._rc_file_override
+
+    @rc_file_override.setter
+    def rc_file_override(self, rc_file_override):
+        """Sets the rc_file_override of this Connect.
+
+        used to override .akeyless-connect.rc in tests  # noqa: E501
+
+        :param rc_file_override: The rc_file_override of this Connect.  # noqa: E501
+        :type: str
+        """
+
+        self._rc_file_override = rc_file_override
 
     @property
     def bastion_ctrl_path(self):

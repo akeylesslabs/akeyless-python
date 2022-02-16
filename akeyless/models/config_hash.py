@@ -46,6 +46,7 @@ class ConfigHash(object):
         'm_queue': 'str',
         'migrations': 'str',
         'producers': 'object',
+        'producers_status': 'str',
         'rotators': 'object',
         'saml': 'str',
         'universal_identity': 'str'
@@ -64,12 +65,13 @@ class ConfigHash(object):
         'm_queue': 'm_queue',
         'migrations': 'migrations',
         'producers': 'producers',
+        'producers_status': 'producers_status',
         'rotators': 'rotators',
         'saml': 'saml',
         'universal_identity': 'universal_identity'
     }
 
-    def __init__(self, admins=None, cache=None, customer_fragements=None, general=None, k8s_auths=None, kmip=None, ldap=None, leadership=None, log_forwarding=None, m_queue=None, migrations=None, producers=None, rotators=None, saml=None, universal_identity=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, admins=None, cache=None, customer_fragements=None, general=None, k8s_auths=None, kmip=None, ldap=None, leadership=None, log_forwarding=None, m_queue=None, migrations=None, producers=None, producers_status=None, rotators=None, saml=None, universal_identity=None, local_vars_configuration=None):  # noqa: E501
         """ConfigHash - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -87,6 +89,7 @@ class ConfigHash(object):
         self._m_queue = None
         self._migrations = None
         self._producers = None
+        self._producers_status = None
         self._rotators = None
         self._saml = None
         self._universal_identity = None
@@ -116,6 +119,8 @@ class ConfigHash(object):
             self.migrations = migrations
         if producers is not None:
             self.producers = producers
+        if producers_status is not None:
+            self.producers_status = producers_status
         if rotators is not None:
             self.rotators = rotators
         if saml is not None:
@@ -374,6 +379,27 @@ class ConfigHash(object):
         """
 
         self._producers = producers
+
+    @property
+    def producers_status(self):
+        """Gets the producers_status of this ConfigHash.  # noqa: E501
+
+
+        :return: The producers_status of this ConfigHash.  # noqa: E501
+        :rtype: str
+        """
+        return self._producers_status
+
+    @producers_status.setter
+    def producers_status(self, producers_status):
+        """Sets the producers_status of this ConfigHash.
+
+
+        :param producers_status: The producers_status of this ConfigHash.  # noqa: E501
+        :type: str
+        """
+
+        self._producers_status = producers_status
 
     @property
     def rotators(self):

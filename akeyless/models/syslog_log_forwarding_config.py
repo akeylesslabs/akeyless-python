@@ -34,34 +34,60 @@ class SyslogLogForwardingConfig(object):
                             and the value is json key in definition.
     """
     openapi_types = {
+        'syslog_formatter': 'str',
         'syslog_host': 'str',
         'syslog_network': 'str',
         'syslog_target_tag': 'str'
     }
 
     attribute_map = {
+        'syslog_formatter': 'syslog_formatter',
         'syslog_host': 'syslog_host',
         'syslog_network': 'syslog_network',
         'syslog_target_tag': 'syslog_target_tag'
     }
 
-    def __init__(self, syslog_host=None, syslog_network=None, syslog_target_tag=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, syslog_formatter=None, syslog_host=None, syslog_network=None, syslog_target_tag=None, local_vars_configuration=None):  # noqa: E501
         """SyslogLogForwardingConfig - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
+        self._syslog_formatter = None
         self._syslog_host = None
         self._syslog_network = None
         self._syslog_target_tag = None
         self.discriminator = None
 
+        if syslog_formatter is not None:
+            self.syslog_formatter = syslog_formatter
         if syslog_host is not None:
             self.syslog_host = syslog_host
         if syslog_network is not None:
             self.syslog_network = syslog_network
         if syslog_target_tag is not None:
             self.syslog_target_tag = syslog_target_tag
+
+    @property
+    def syslog_formatter(self):
+        """Gets the syslog_formatter of this SyslogLogForwardingConfig.  # noqa: E501
+
+
+        :return: The syslog_formatter of this SyslogLogForwardingConfig.  # noqa: E501
+        :rtype: str
+        """
+        return self._syslog_formatter
+
+    @syslog_formatter.setter
+    def syslog_formatter(self, syslog_formatter):
+        """Sets the syslog_formatter of this SyslogLogForwardingConfig.
+
+
+        :param syslog_formatter: The syslog_formatter of this SyslogLogForwardingConfig.  # noqa: E501
+        :type: str
+        """
+
+        self._syslog_formatter = syslog_formatter
 
     @property
     def syslog_host(self):
