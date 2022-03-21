@@ -40,7 +40,6 @@ class GatewayCreateProducerLdap(object):
         'ldap_ca_cert': 'str',
         'ldap_url': 'str',
         'name': 'str',
-        'password': 'str',
         'producer_encryption_key_name': 'str',
         'tags': 'list[str]',
         'target_name': 'str',
@@ -49,8 +48,7 @@ class GatewayCreateProducerLdap(object):
         'uid_token': 'str',
         'user_attribute': 'str',
         'user_dn': 'str',
-        'user_ttl': 'str',
-        'username': 'str'
+        'user_ttl': 'str'
     }
 
     attribute_map = {
@@ -60,7 +58,6 @@ class GatewayCreateProducerLdap(object):
         'ldap_ca_cert': 'ldap-ca-cert',
         'ldap_url': 'ldap-url',
         'name': 'name',
-        'password': 'password',
         'producer_encryption_key_name': 'producer-encryption-key-name',
         'tags': 'tags',
         'target_name': 'target-name',
@@ -69,11 +66,10 @@ class GatewayCreateProducerLdap(object):
         'uid_token': 'uid-token',
         'user_attribute': 'user-attribute',
         'user_dn': 'user-dn',
-        'user_ttl': 'user-ttl',
-        'username': 'username'
+        'user_ttl': 'user-ttl'
     }
 
-    def __init__(self, bind_dn=None, bind_dn_password=None, external_username='false', ldap_ca_cert=None, ldap_url=None, name=None, password=None, producer_encryption_key_name=None, tags=None, target_name=None, token=None, token_expiration=None, uid_token=None, user_attribute=None, user_dn=None, user_ttl='60m', username=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, bind_dn=None, bind_dn_password=None, external_username='false', ldap_ca_cert=None, ldap_url=None, name=None, producer_encryption_key_name=None, tags=None, target_name=None, token=None, token_expiration=None, uid_token=None, user_attribute=None, user_dn=None, user_ttl='60m', local_vars_configuration=None):  # noqa: E501
         """GatewayCreateProducerLdap - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -85,7 +81,6 @@ class GatewayCreateProducerLdap(object):
         self._ldap_ca_cert = None
         self._ldap_url = None
         self._name = None
-        self._password = None
         self._producer_encryption_key_name = None
         self._tags = None
         self._target_name = None
@@ -95,7 +90,6 @@ class GatewayCreateProducerLdap(object):
         self._user_attribute = None
         self._user_dn = None
         self._user_ttl = None
-        self._username = None
         self.discriminator = None
 
         if bind_dn is not None:
@@ -109,8 +103,6 @@ class GatewayCreateProducerLdap(object):
         if ldap_url is not None:
             self.ldap_url = ldap_url
         self.name = name
-        if password is not None:
-            self.password = password
         if producer_encryption_key_name is not None:
             self.producer_encryption_key_name = producer_encryption_key_name
         if tags is not None:
@@ -129,8 +121,6 @@ class GatewayCreateProducerLdap(object):
             self.user_dn = user_dn
         if user_ttl is not None:
             self.user_ttl = user_ttl
-        if username is not None:
-            self.username = username
 
     @property
     def bind_dn(self):
@@ -271,29 +261,6 @@ class GatewayCreateProducerLdap(object):
             raise ValueError("Invalid value for `name`, must not be `None`")  # noqa: E501
 
         self._name = name
-
-    @property
-    def password(self):
-        """Gets the password of this GatewayCreateProducerLdap.  # noqa: E501
-
-        Required only when the authentication process requires a username and password  # noqa: E501
-
-        :return: The password of this GatewayCreateProducerLdap.  # noqa: E501
-        :rtype: str
-        """
-        return self._password
-
-    @password.setter
-    def password(self, password):
-        """Sets the password of this GatewayCreateProducerLdap.
-
-        Required only when the authentication process requires a username and password  # noqa: E501
-
-        :param password: The password of this GatewayCreateProducerLdap.  # noqa: E501
-        :type: str
-        """
-
-        self._password = password
 
     @property
     def producer_encryption_key_name(self):
@@ -501,29 +468,6 @@ class GatewayCreateProducerLdap(object):
         """
 
         self._user_ttl = user_ttl
-
-    @property
-    def username(self):
-        """Gets the username of this GatewayCreateProducerLdap.  # noqa: E501
-
-        Required only when the authentication process requires a username and password  # noqa: E501
-
-        :return: The username of this GatewayCreateProducerLdap.  # noqa: E501
-        :rtype: str
-        """
-        return self._username
-
-    @username.setter
-    def username(self, username):
-        """Sets the username of this GatewayCreateProducerLdap.
-
-        Required only when the authentication process requires a username and password  # noqa: E501
-
-        :param username: The username of this GatewayCreateProducerLdap.  # noqa: E501
-        :type: str
-        """
-
-        self._username = username
 
     def to_dict(self):
         """Returns the model properties as a dict"""

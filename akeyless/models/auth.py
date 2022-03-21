@@ -40,6 +40,7 @@ class Auth(object):
         'admin_email': 'str',
         'admin_password': 'str',
         'cloud_id': 'str',
+        'debug': 'bool',
         'gcp_audience': 'str',
         'jwt': 'str',
         'k8s_auth_config_name': 'str',
@@ -56,6 +57,7 @@ class Auth(object):
         'admin_email': 'admin-email',
         'admin_password': 'admin-password',
         'cloud_id': 'cloud-id',
+        'debug': 'debug',
         'gcp_audience': 'gcp-audience',
         'jwt': 'jwt',
         'k8s_auth_config_name': 'k8s-auth-config-name',
@@ -65,7 +67,7 @@ class Auth(object):
         'uid_token': 'uid_token'
     }
 
-    def __init__(self, access_id=None, access_key=None, access_type='access_key', admin_email=None, admin_password=None, cloud_id=None, gcp_audience=None, jwt=None, k8s_auth_config_name=None, k8s_service_account_token=None, ldap_password=None, ldap_username=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, access_id=None, access_key=None, access_type='access_key', admin_email=None, admin_password=None, cloud_id=None, debug=None, gcp_audience=None, jwt=None, k8s_auth_config_name=None, k8s_service_account_token=None, ldap_password=None, ldap_username=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """Auth - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -77,6 +79,7 @@ class Auth(object):
         self._admin_email = None
         self._admin_password = None
         self._cloud_id = None
+        self._debug = None
         self._gcp_audience = None
         self._jwt = None
         self._k8s_auth_config_name = None
@@ -98,6 +101,8 @@ class Auth(object):
             self.admin_password = admin_password
         if cloud_id is not None:
             self.cloud_id = cloud_id
+        if debug is not None:
+            self.debug = debug
         if gcp_audience is not None:
             self.gcp_audience = gcp_audience
         if jwt is not None:
@@ -250,6 +255,27 @@ class Auth(object):
         """
 
         self._cloud_id = cloud_id
+
+    @property
+    def debug(self):
+        """Gets the debug of this Auth.  # noqa: E501
+
+
+        :return: The debug of this Auth.  # noqa: E501
+        :rtype: bool
+        """
+        return self._debug
+
+    @debug.setter
+    def debug(self, debug):
+        """Sets the debug of this Auth.
+
+
+        :param debug: The debug of this Auth.  # noqa: E501
+        :type: bool
+        """
+
+        self._debug = debug
 
     @property
     def gcp_audience(self):

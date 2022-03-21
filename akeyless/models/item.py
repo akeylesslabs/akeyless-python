@@ -49,6 +49,7 @@ class Item(object):
         'item_name': 'str',
         'item_size': 'int',
         'item_state': 'str',
+        'item_sub_type': 'str',
         'item_tags': 'list[str]',
         'item_targets_assoc': 'list[ItemTargetAssociation]',
         'item_type': 'str',
@@ -78,6 +79,7 @@ class Item(object):
         'item_name': 'item_name',
         'item_size': 'item_size',
         'item_state': 'item_state',
+        'item_sub_type': 'item_sub_type',
         'item_tags': 'item_tags',
         'item_targets_assoc': 'item_targets_assoc',
         'item_type': 'item_type',
@@ -91,7 +93,7 @@ class Item(object):
         'with_customer_fragment': 'with_customer_fragment'
     }
 
-    def __init__(self, auto_rotate=None, cert_issuer_signer_key_name=None, certificate_issue_details=None, certificates=None, client_permissions=None, customer_fragment_id=None, deletion_date=None, display_id=None, is_enabled=None, item_general_info=None, item_id=None, item_metadata=None, item_name=None, item_size=None, item_state=None, item_tags=None, item_targets_assoc=None, item_type=None, item_versions=None, last_version=None, next_rotation_date=None, protection_key_name=None, public_value=None, rotation_interval=None, target_versions=None, with_customer_fragment=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, auto_rotate=None, cert_issuer_signer_key_name=None, certificate_issue_details=None, certificates=None, client_permissions=None, customer_fragment_id=None, deletion_date=None, display_id=None, is_enabled=None, item_general_info=None, item_id=None, item_metadata=None, item_name=None, item_size=None, item_state=None, item_sub_type=None, item_tags=None, item_targets_assoc=None, item_type=None, item_versions=None, last_version=None, next_rotation_date=None, protection_key_name=None, public_value=None, rotation_interval=None, target_versions=None, with_customer_fragment=None, local_vars_configuration=None):  # noqa: E501
         """Item - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -112,6 +114,7 @@ class Item(object):
         self._item_name = None
         self._item_size = None
         self._item_state = None
+        self._item_sub_type = None
         self._item_tags = None
         self._item_targets_assoc = None
         self._item_type = None
@@ -155,6 +158,8 @@ class Item(object):
             self.item_size = item_size
         if item_state is not None:
             self.item_state = item_state
+        if item_sub_type is not None:
+            self.item_sub_type = item_sub_type
         if item_tags is not None:
             self.item_tags = item_tags
         if item_targets_assoc is not None:
@@ -494,6 +499,27 @@ class Item(object):
         """
 
         self._item_state = item_state
+
+    @property
+    def item_sub_type(self):
+        """Gets the item_sub_type of this Item.  # noqa: E501
+
+
+        :return: The item_sub_type of this Item.  # noqa: E501
+        :rtype: str
+        """
+        return self._item_sub_type
+
+    @item_sub_type.setter
+    def item_sub_type(self, item_sub_type):
+        """Sets the item_sub_type of this Item.
+
+
+        :param item_sub_type: The item_sub_type of this Item.  # noqa: E501
+        :type: str
+        """
+
+        self._item_sub_type = item_sub_type
 
     @property
     def item_tags(self):

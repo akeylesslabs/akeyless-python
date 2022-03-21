@@ -40,13 +40,11 @@ class GatewayCreateK8SAuthConfig(object):
         'k8s_host': 'str',
         'k8s_issuer': 'str',
         'name': 'str',
-        'password': 'str',
         'signing_key': 'str',
         'token': 'str',
         'token_exp': 'int',
         'token_reviewer_jwt': 'str',
-        'uid_token': 'str',
-        'username': 'str'
+        'uid_token': 'str'
     }
 
     attribute_map = {
@@ -56,16 +54,14 @@ class GatewayCreateK8SAuthConfig(object):
         'k8s_host': 'k8s-host',
         'k8s_issuer': 'k8s-issuer',
         'name': 'name',
-        'password': 'password',
         'signing_key': 'signing-key',
         'token': 'token',
         'token_exp': 'token-exp',
         'token_reviewer_jwt': 'token-reviewer-jwt',
-        'uid_token': 'uid-token',
-        'username': 'username'
+        'uid_token': 'uid-token'
     }
 
-    def __init__(self, access_id=None, config_encryption_key_name=None, k8s_ca_cert=None, k8s_host=None, k8s_issuer=None, name=None, password=None, signing_key=None, token=None, token_exp=None, token_reviewer_jwt=None, uid_token=None, username=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, access_id=None, config_encryption_key_name=None, k8s_ca_cert=None, k8s_host=None, k8s_issuer=None, name=None, signing_key=None, token=None, token_exp=None, token_reviewer_jwt=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """GatewayCreateK8SAuthConfig - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -77,13 +73,11 @@ class GatewayCreateK8SAuthConfig(object):
         self._k8s_host = None
         self._k8s_issuer = None
         self._name = None
-        self._password = None
         self._signing_key = None
         self._token = None
         self._token_exp = None
         self._token_reviewer_jwt = None
         self._uid_token = None
-        self._username = None
         self.discriminator = None
 
         self.access_id = access_id
@@ -95,8 +89,6 @@ class GatewayCreateK8SAuthConfig(object):
         if k8s_issuer is not None:
             self.k8s_issuer = k8s_issuer
         self.name = name
-        if password is not None:
-            self.password = password
         self.signing_key = signing_key
         if token is not None:
             self.token = token
@@ -106,8 +98,6 @@ class GatewayCreateK8SAuthConfig(object):
             self.token_reviewer_jwt = token_reviewer_jwt
         if uid_token is not None:
             self.uid_token = uid_token
-        if username is not None:
-            self.username = username
 
     @property
     def access_id(self):
@@ -254,29 +244,6 @@ class GatewayCreateK8SAuthConfig(object):
         self._name = name
 
     @property
-    def password(self):
-        """Gets the password of this GatewayCreateK8SAuthConfig.  # noqa: E501
-
-        Required only when the authentication process requires a username and password  # noqa: E501
-
-        :return: The password of this GatewayCreateK8SAuthConfig.  # noqa: E501
-        :rtype: str
-        """
-        return self._password
-
-    @password.setter
-    def password(self, password):
-        """Sets the password of this GatewayCreateK8SAuthConfig.
-
-        Required only when the authentication process requires a username and password  # noqa: E501
-
-        :param password: The password of this GatewayCreateK8SAuthConfig.  # noqa: E501
-        :type: str
-        """
-
-        self._password = password
-
-    @property
     def signing_key(self):
         """Gets the signing_key of this GatewayCreateK8SAuthConfig.  # noqa: E501
 
@@ -392,29 +359,6 @@ class GatewayCreateK8SAuthConfig(object):
         """
 
         self._uid_token = uid_token
-
-    @property
-    def username(self):
-        """Gets the username of this GatewayCreateK8SAuthConfig.  # noqa: E501
-
-        Required only when the authentication process requires a username and password  # noqa: E501
-
-        :return: The username of this GatewayCreateK8SAuthConfig.  # noqa: E501
-        :rtype: str
-        """
-        return self._username
-
-    @username.setter
-    def username(self, username):
-        """Sets the username of this GatewayCreateK8SAuthConfig.
-
-        Required only when the authentication process requires a username and password  # noqa: E501
-
-        :param username: The username of this GatewayCreateK8SAuthConfig.  # noqa: E501
-        :type: str
-        """
-
-        self._username = username
 
     def to_dict(self):
         """Returns the model properties as a dict"""

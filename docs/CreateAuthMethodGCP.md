@@ -15,12 +15,10 @@ Name | Type | Description | Notes
 **force_sub_claims** | **bool** | if true: enforce role-association must include sub claims | [optional] 
 **jwt_ttl** | **int** | Jwt TTL | [optional] [default to 0]
 **name** | **str** | Auth Method name | 
-**password** | **str** | Required only when the authentication process requires a username and password | [optional] 
 **service_account_creds_data** | **str** | ServiceAccount credentials data instead of giving a file path, base64 encoded | [optional] 
 **token** | **str** | Authentication token (see &#x60;/auth&#x60; and &#x60;/configure&#x60;) | [optional] 
 **type** | **str** | Type of the GCP Access Rules | 
 **uid_token** | **str** | The universal identity token, Required only for universal_identity authentication | [optional] 
-**username** | **str** | Required only when the authentication process requires a username and password | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

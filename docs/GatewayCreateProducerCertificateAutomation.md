@@ -10,7 +10,6 @@ Name | Type | Description | Notes
 **auto_generated_folder** | **str** | Auto generated folder | [optional] 
 **enable_admin_rotation** | **bool** | Automatic admin credentials rotation | [optional] [default to False]
 **name** | **str** | Producer name | 
-**password** | **str** | Required only when the authentication process requires a username and password | [optional] 
 **producer_encryption_key_name** | **str** | Dynamic producer encryption key | [optional] 
 **root_first_in_chain** | **bool** | Root first in chain | [optional] 
 **sign_using_akeyless_pki** | **bool** | Use Akeyless PKI issuer or Venafi issuer | [optional] 
@@ -21,7 +20,6 @@ Name | Type | Description | Notes
 **token** | **str** | Authentication token (see &#x60;/auth&#x60; and &#x60;/configure&#x60;) | [optional] 
 **uid_token** | **str** | The universal identity token, Required only for universal_identity authentication | [optional] 
 **user_ttl** | **str** | User TTL in time.Duration format (2160h / 129600m / etc...). When using sign-using-akeyless-pki certificates created will have this validity period, otherwise the user-ttl is taken from the Validity Period field of the Zone&#39;s&#39; Issuing Template. When using cert-manager it is advised to have a TTL of above 60 days (1440h). For more information - https://cert-manager.io/docs/usage/certificate/ | [optional] 
-**username** | **str** | Required only when the authentication process requires a username and password | [optional] 
 **venafi_api_key** | **str** | Venafi API key | [optional] 
 **venafi_baseurl** | **str** | Venafi Baseurl | [optional] 
 **venafi_password** | **str** | Venafi Password | [optional] 

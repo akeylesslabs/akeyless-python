@@ -37,19 +37,23 @@ class ItemGeneralInfo(object):
         'cert_issue_details': 'CertificateIssueInfo',
         'classic_key_details': 'ClassicKeyDetailsInfo',
         'dynamic_secret_producer_details': 'DynamicSecretProducerInfo',
+        'password_policy': 'PasswordPolicyInfo',
         'rotated_secret_details': 'RotatedSecretDetailsInfo',
-        'secure_remote_access_details': 'SecureRemoteAccess'
+        'secure_remote_access_details': 'SecureRemoteAccess',
+        'static_secret_info': 'StaticSecretDetailsInfo'
     }
 
     attribute_map = {
         'cert_issue_details': 'cert_issue_details',
         'classic_key_details': 'classic_key_details',
         'dynamic_secret_producer_details': 'dynamic_secret_producer_details',
+        'password_policy': 'password_policy',
         'rotated_secret_details': 'rotated_secret_details',
-        'secure_remote_access_details': 'secure_remote_access_details'
+        'secure_remote_access_details': 'secure_remote_access_details',
+        'static_secret_info': 'static_secret_info'
     }
 
-    def __init__(self, cert_issue_details=None, classic_key_details=None, dynamic_secret_producer_details=None, rotated_secret_details=None, secure_remote_access_details=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, cert_issue_details=None, classic_key_details=None, dynamic_secret_producer_details=None, password_policy=None, rotated_secret_details=None, secure_remote_access_details=None, static_secret_info=None, local_vars_configuration=None):  # noqa: E501
         """ItemGeneralInfo - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -58,8 +62,10 @@ class ItemGeneralInfo(object):
         self._cert_issue_details = None
         self._classic_key_details = None
         self._dynamic_secret_producer_details = None
+        self._password_policy = None
         self._rotated_secret_details = None
         self._secure_remote_access_details = None
+        self._static_secret_info = None
         self.discriminator = None
 
         if cert_issue_details is not None:
@@ -68,10 +74,14 @@ class ItemGeneralInfo(object):
             self.classic_key_details = classic_key_details
         if dynamic_secret_producer_details is not None:
             self.dynamic_secret_producer_details = dynamic_secret_producer_details
+        if password_policy is not None:
+            self.password_policy = password_policy
         if rotated_secret_details is not None:
             self.rotated_secret_details = rotated_secret_details
         if secure_remote_access_details is not None:
             self.secure_remote_access_details = secure_remote_access_details
+        if static_secret_info is not None:
+            self.static_secret_info = static_secret_info
 
     @property
     def cert_issue_details(self):
@@ -137,6 +147,27 @@ class ItemGeneralInfo(object):
         self._dynamic_secret_producer_details = dynamic_secret_producer_details
 
     @property
+    def password_policy(self):
+        """Gets the password_policy of this ItemGeneralInfo.  # noqa: E501
+
+
+        :return: The password_policy of this ItemGeneralInfo.  # noqa: E501
+        :rtype: PasswordPolicyInfo
+        """
+        return self._password_policy
+
+    @password_policy.setter
+    def password_policy(self, password_policy):
+        """Sets the password_policy of this ItemGeneralInfo.
+
+
+        :param password_policy: The password_policy of this ItemGeneralInfo.  # noqa: E501
+        :type: PasswordPolicyInfo
+        """
+
+        self._password_policy = password_policy
+
+    @property
     def rotated_secret_details(self):
         """Gets the rotated_secret_details of this ItemGeneralInfo.  # noqa: E501
 
@@ -177,6 +208,27 @@ class ItemGeneralInfo(object):
         """
 
         self._secure_remote_access_details = secure_remote_access_details
+
+    @property
+    def static_secret_info(self):
+        """Gets the static_secret_info of this ItemGeneralInfo.  # noqa: E501
+
+
+        :return: The static_secret_info of this ItemGeneralInfo.  # noqa: E501
+        :rtype: StaticSecretDetailsInfo
+        """
+        return self._static_secret_info
+
+    @static_secret_info.setter
+    def static_secret_info(self, static_secret_info):
+        """Sets the static_secret_info of this ItemGeneralInfo.
+
+
+        :param static_secret_info: The static_secret_info of this ItemGeneralInfo.  # noqa: E501
+        :type: StaticSecretDetailsInfo
+        """
+
+        self._static_secret_info = static_secret_info
 
     def to_dict(self):
         """Returns the model properties as a dict"""

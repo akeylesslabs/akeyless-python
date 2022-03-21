@@ -26,6 +26,7 @@ Method | HTTP request | Description
 [**create_classic_key**](V2Api.md#create_classic_key) | **POST** /create-classic-key | 
 [**create_db_target**](V2Api.md#create_db_target) | **POST** /create-db-target | 
 [**create_dfc_key**](V2Api.md#create_dfc_key) | **POST** /create-dfc-key | 
+[**create_dockerhub_target**](V2Api.md#create_dockerhub_target) | **POST** /create-dockerhub-target | 
 [**create_dynamic_secret**](V2Api.md#create_dynamic_secret) | **POST** /create-dynamic-secret | 
 [**create_eks_target**](V2Api.md#create_eks_target) | **POST** /create-eks-target | 
 [**create_gcp_target**](V2Api.md#create_gcp_target) | **POST** /create-gcp-target | 
@@ -68,6 +69,7 @@ Method | HTTP request | Description
 [**gateway_create_producer_cassandra**](V2Api.md#gateway_create_producer_cassandra) | **POST** /gateway-create-producer-cassandra | 
 [**gateway_create_producer_certificate_automation**](V2Api.md#gateway_create_producer_certificate_automation) | **POST** /gateway-create-producer-certificate-automation | 
 [**gateway_create_producer_custom**](V2Api.md#gateway_create_producer_custom) | **POST** /gateway-create-producer-custom | 
+[**gateway_create_producer_dockerhub**](V2Api.md#gateway_create_producer_dockerhub) | **POST** /gateway-create-producer-dockerhub | 
 [**gateway_create_producer_eks**](V2Api.md#gateway_create_producer_eks) | **POST** /gateway-create-producer-eks | 
 [**gateway_create_producer_gcp**](V2Api.md#gateway_create_producer_gcp) | **POST** /gateway-create-producer-gcp | 
 [**gateway_create_producer_github**](V2Api.md#gateway_create_producer_github) | **POST** /gateway-create-producer-github | 
@@ -105,6 +107,7 @@ Method | HTTP request | Description
 [**gateway_update_producer_cassandra**](V2Api.md#gateway_update_producer_cassandra) | **POST** /gateway-update-producer-cassandra | 
 [**gateway_update_producer_certificate_automation**](V2Api.md#gateway_update_producer_certificate_automation) | **POST** /gateway-update-producer-certificate-automation | 
 [**gateway_update_producer_custom**](V2Api.md#gateway_update_producer_custom) | **POST** /gateway-update-producer-custom | 
+[**gateway_update_producer_dockerhub**](V2Api.md#gateway_update_producer_dockerhub) | **POST** /gateway-update-producer-dockerhub | 
 [**gateway_update_producer_eks**](V2Api.md#gateway_update_producer_eks) | **POST** /gateway-update-producer-eks | 
 [**gateway_update_producer_gcp**](V2Api.md#gateway_update_producer_gcp) | **POST** /gateway-update-producer-gcp | 
 [**gateway_update_producer_github**](V2Api.md#gateway_update_producer_github) | **POST** /gateway-update-producer-github | 
@@ -186,6 +189,7 @@ Method | HTTP request | Description
 [**update_azure_target**](V2Api.md#update_azure_target) | **POST** /update-azure-target | 
 [**update_db_target**](V2Api.md#update_db_target) | **POST** /update-db-target | 
 [**update_db_target_details**](V2Api.md#update_db_target_details) | **POST** /update-db-target-details | 
+[**update_dockerhub_target**](V2Api.md#update_dockerhub_target) | **POST** /update-dockerhub-target | 
 [**update_eks_target**](V2Api.md#update_eks_target) | **POST** /update-eks-target | 
 [**update_gcp_target**](V2Api.md#update_gcp_target) | **POST** /update-gcp-target | 
 [**update_github_target**](V2Api.md#update_github_target) | **POST** /update-github-target | 
@@ -1531,6 +1535,66 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | createDFCKeyResponse wraps response body. |  -  |
+**0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **create_dockerhub_target**
+> CreateDockerhubTargetOutput create_dockerhub_target(body)
+
+
+
+### Example
+
+```python
+from __future__ import print_function
+import time
+import akeyless
+from akeyless.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.akeyless.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = akeyless.Configuration(
+    host = "https://api.akeyless.io"
+)
+
+
+# Enter a context with an instance of the API client
+with akeyless.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = akeyless.V2Api(api_client)
+    body = akeyless.CreateDockerhubTarget() # CreateDockerhubTarget | 
+
+    try:
+        api_response = api_instance.create_dockerhub_target(body)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling V2Api->create_dockerhub_target: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**CreateDockerhubTarget**](CreateDockerhubTarget.md)|  | 
+
+### Return type
+
+[**CreateDockerhubTargetOutput**](CreateDockerhubTargetOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | createDockerhubTargetResponse wraps response body. |  -  |
 **0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -4055,6 +4119,66 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **gateway_create_producer_dockerhub**
+> GatewayCreateProducerDockerhubOutput gateway_create_producer_dockerhub(body)
+
+
+
+### Example
+
+```python
+from __future__ import print_function
+import time
+import akeyless
+from akeyless.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.akeyless.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = akeyless.Configuration(
+    host = "https://api.akeyless.io"
+)
+
+
+# Enter a context with an instance of the API client
+with akeyless.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = akeyless.V2Api(api_client)
+    body = akeyless.GatewayCreateProducerDockerhub() # GatewayCreateProducerDockerhub | 
+
+    try:
+        api_response = api_instance.gateway_create_producer_dockerhub(body)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling V2Api->gateway_create_producer_dockerhub: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**GatewayCreateProducerDockerhub**](GatewayCreateProducerDockerhub.md)|  | 
+
+### Return type
+
+[**GatewayCreateProducerDockerhubOutput**](GatewayCreateProducerDockerhubOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**201** | gatewayCreateProducerDockerhubResponse wraps response body. |  -  |
+**0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **gateway_create_producer_eks**
 > GatewayCreateProducerEksOutput gateway_create_producer_eks(body)
 
@@ -6270,6 +6394,66 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | gatewayUpdateProducerCustomResponse wraps response body. |  -  |
+**0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **gateway_update_producer_dockerhub**
+> GatewayUpdateProducerDockerhubOutput gateway_update_producer_dockerhub(body)
+
+
+
+### Example
+
+```python
+from __future__ import print_function
+import time
+import akeyless
+from akeyless.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.akeyless.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = akeyless.Configuration(
+    host = "https://api.akeyless.io"
+)
+
+
+# Enter a context with an instance of the API client
+with akeyless.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = akeyless.V2Api(api_client)
+    body = akeyless.GatewayUpdateProducerDockerhub() # GatewayUpdateProducerDockerhub | 
+
+    try:
+        api_response = api_instance.gateway_update_producer_dockerhub(body)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling V2Api->gateway_update_producer_dockerhub: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**GatewayUpdateProducerDockerhub**](GatewayUpdateProducerDockerhub.md)|  | 
+
+### Return type
+
+[**GatewayUpdateProducerDockerhubOutput**](GatewayUpdateProducerDockerhubOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**201** | gatewayUpdateProducerDockerhubResponse wraps response body. |  -  |
 **0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -11121,6 +11305,66 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | updateTargetResponse wraps response body. |  -  |
+**0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **update_dockerhub_target**
+> UpdateDockerhubTargetOutput update_dockerhub_target(body)
+
+
+
+### Example
+
+```python
+from __future__ import print_function
+import time
+import akeyless
+from akeyless.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.akeyless.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = akeyless.Configuration(
+    host = "https://api.akeyless.io"
+)
+
+
+# Enter a context with an instance of the API client
+with akeyless.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = akeyless.V2Api(api_client)
+    body = akeyless.UpdateDockerhubTarget() # UpdateDockerhubTarget | 
+
+    try:
+        api_response = api_instance.update_dockerhub_target(body)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling V2Api->update_dockerhub_target: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**UpdateDockerhubTarget**](UpdateDockerhubTarget.md)|  | 
+
+### Return type
+
+[**UpdateDockerhubTargetOutput**](UpdateDockerhubTargetOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | updateDockerhubTargetResponse wraps response body. |  -  |
 **0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

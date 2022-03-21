@@ -37,25 +37,21 @@ class CreateWebTarget(object):
         'comment': 'str',
         'key': 'str',
         'name': 'str',
-        'password': 'str',
         'token': 'str',
         'uid_token': 'str',
-        'url': 'str',
-        'username': 'str'
+        'url': 'str'
     }
 
     attribute_map = {
         'comment': 'comment',
         'key': 'key',
         'name': 'name',
-        'password': 'password',
         'token': 'token',
         'uid_token': 'uid-token',
-        'url': 'url',
-        'username': 'username'
+        'url': 'url'
     }
 
-    def __init__(self, comment=None, key=None, name=None, password=None, token=None, uid_token=None, url=None, username=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, comment=None, key=None, name=None, token=None, uid_token=None, url=None, local_vars_configuration=None):  # noqa: E501
         """CreateWebTarget - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -64,11 +60,9 @@ class CreateWebTarget(object):
         self._comment = None
         self._key = None
         self._name = None
-        self._password = None
         self._token = None
         self._uid_token = None
         self._url = None
-        self._username = None
         self.discriminator = None
 
         if comment is not None:
@@ -76,16 +70,12 @@ class CreateWebTarget(object):
         if key is not None:
             self.key = key
         self.name = name
-        if password is not None:
-            self.password = password
         if token is not None:
             self.token = token
         if uid_token is not None:
             self.uid_token = uid_token
         if url is not None:
             self.url = url
-        if username is not None:
-            self.username = username
 
     @property
     def comment(self):
@@ -159,29 +149,6 @@ class CreateWebTarget(object):
         self._name = name
 
     @property
-    def password(self):
-        """Gets the password of this CreateWebTarget.  # noqa: E501
-
-        Required only when the authentication process requires a username and password  # noqa: E501
-
-        :return: The password of this CreateWebTarget.  # noqa: E501
-        :rtype: str
-        """
-        return self._password
-
-    @password.setter
-    def password(self, password):
-        """Sets the password of this CreateWebTarget.
-
-        Required only when the authentication process requires a username and password  # noqa: E501
-
-        :param password: The password of this CreateWebTarget.  # noqa: E501
-        :type: str
-        """
-
-        self._password = password
-
-    @property
     def token(self):
         """Gets the token of this CreateWebTarget.  # noqa: E501
 
@@ -249,29 +216,6 @@ class CreateWebTarget(object):
         """
 
         self._url = url
-
-    @property
-    def username(self):
-        """Gets the username of this CreateWebTarget.  # noqa: E501
-
-        Required only when the authentication process requires a username and password  # noqa: E501
-
-        :return: The username of this CreateWebTarget.  # noqa: E501
-        :rtype: str
-        """
-        return self._username
-
-    @username.setter
-    def username(self, username):
-        """Sets the username of this CreateWebTarget.
-
-        Required only when the authentication process requires a username and password  # noqa: E501
-
-        :param username: The username of this CreateWebTarget.  # noqa: E501
-        :type: str
-        """
-
-        self._username = username
 
     def to_dict(self):
         """Returns the model properties as a dict"""

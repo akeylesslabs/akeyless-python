@@ -34,46 +34,45 @@ class UpdateSecretVal(object):
                             and the value is json key in definition.
     """
     openapi_types = {
+        'keep_prev_version': 'str',
         'key': 'str',
         'multiline': 'bool',
         'name': 'str',
         'new_version': 'bool',
-        'password': 'str',
         'token': 'str',
         'uid_token': 'str',
-        'username': 'str',
         'value': 'str'
     }
 
     attribute_map = {
+        'keep_prev_version': 'keep-prev-version',
         'key': 'key',
         'multiline': 'multiline',
         'name': 'name',
         'new_version': 'new-version',
-        'password': 'password',
         'token': 'token',
         'uid_token': 'uid-token',
-        'username': 'username',
         'value': 'value'
     }
 
-    def __init__(self, key=None, multiline=None, name=None, new_version=False, password=None, token=None, uid_token=None, username=None, value=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, keep_prev_version=None, key=None, multiline=None, name=None, new_version=None, token=None, uid_token=None, value=None, local_vars_configuration=None):  # noqa: E501
         """UpdateSecretVal - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
+        self._keep_prev_version = None
         self._key = None
         self._multiline = None
         self._name = None
         self._new_version = None
-        self._password = None
         self._token = None
         self._uid_token = None
-        self._username = None
         self._value = None
         self.discriminator = None
 
+        if keep_prev_version is not None:
+            self.keep_prev_version = keep_prev_version
         if key is not None:
             self.key = key
         if multiline is not None:
@@ -81,15 +80,32 @@ class UpdateSecretVal(object):
         self.name = name
         if new_version is not None:
             self.new_version = new_version
-        if password is not None:
-            self.password = password
         if token is not None:
             self.token = token
         if uid_token is not None:
             self.uid_token = uid_token
-        if username is not None:
-            self.username = username
         self.value = value
+
+    @property
+    def keep_prev_version(self):
+        """Gets the keep_prev_version of this UpdateSecretVal.  # noqa: E501
+
+
+        :return: The keep_prev_version of this UpdateSecretVal.  # noqa: E501
+        :rtype: str
+        """
+        return self._keep_prev_version
+
+    @keep_prev_version.setter
+    def keep_prev_version(self, keep_prev_version):
+        """Sets the keep_prev_version of this UpdateSecretVal.
+
+
+        :param keep_prev_version: The keep_prev_version of this UpdateSecretVal.  # noqa: E501
+        :type: str
+        """
+
+        self._keep_prev_version = keep_prev_version
 
     @property
     def key(self):
@@ -166,7 +182,7 @@ class UpdateSecretVal(object):
     def new_version(self):
         """Gets the new_version of this UpdateSecretVal.  # noqa: E501
 
-        Whether to create a new version of not  # noqa: E501
+        Deprecated  # noqa: E501
 
         :return: The new_version of this UpdateSecretVal.  # noqa: E501
         :rtype: bool
@@ -177,36 +193,13 @@ class UpdateSecretVal(object):
     def new_version(self, new_version):
         """Sets the new_version of this UpdateSecretVal.
 
-        Whether to create a new version of not  # noqa: E501
+        Deprecated  # noqa: E501
 
         :param new_version: The new_version of this UpdateSecretVal.  # noqa: E501
         :type: bool
         """
 
         self._new_version = new_version
-
-    @property
-    def password(self):
-        """Gets the password of this UpdateSecretVal.  # noqa: E501
-
-        Required only when the authentication process requires a username and password  # noqa: E501
-
-        :return: The password of this UpdateSecretVal.  # noqa: E501
-        :rtype: str
-        """
-        return self._password
-
-    @password.setter
-    def password(self, password):
-        """Sets the password of this UpdateSecretVal.
-
-        Required only when the authentication process requires a username and password  # noqa: E501
-
-        :param password: The password of this UpdateSecretVal.  # noqa: E501
-        :type: str
-        """
-
-        self._password = password
 
     @property
     def token(self):
@@ -253,29 +246,6 @@ class UpdateSecretVal(object):
         """
 
         self._uid_token = uid_token
-
-    @property
-    def username(self):
-        """Gets the username of this UpdateSecretVal.  # noqa: E501
-
-        Required only when the authentication process requires a username and password  # noqa: E501
-
-        :return: The username of this UpdateSecretVal.  # noqa: E501
-        :rtype: str
-        """
-        return self._username
-
-    @username.setter
-    def username(self, username):
-        """Sets the username of this UpdateSecretVal.
-
-        Required only when the authentication process requires a username and password  # noqa: E501
-
-        :param username: The username of this UpdateSecretVal.  # noqa: E501
-        :type: str
-        """
-
-        self._username = username
 
     @property
     def value(self):

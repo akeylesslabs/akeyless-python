@@ -36,26 +36,22 @@ class GatewayAddAllowedManagementAccess(object):
     openapi_types = {
         'allow_gw_api': 'bool',
         'allow_gw_login': 'bool',
-        'password': 'str',
         'sub_admin_access_id': 'str',
         'sub_claims': 'dict(str, str)',
         'token': 'str',
-        'uid_token': 'str',
-        'username': 'str'
+        'uid_token': 'str'
     }
 
     attribute_map = {
         'allow_gw_api': 'allow-gw-api',
         'allow_gw_login': 'allow-gw-login',
-        'password': 'password',
         'sub_admin_access_id': 'sub-admin-access-id',
         'sub_claims': 'sub-claims',
         'token': 'token',
-        'uid_token': 'uid-token',
-        'username': 'username'
+        'uid_token': 'uid-token'
     }
 
-    def __init__(self, allow_gw_api=None, allow_gw_login=None, password=None, sub_admin_access_id=None, sub_claims=None, token=None, uid_token=None, username=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, allow_gw_api=None, allow_gw_login=None, sub_admin_access_id=None, sub_claims=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """GatewayAddAllowedManagementAccess - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -63,20 +59,16 @@ class GatewayAddAllowedManagementAccess(object):
 
         self._allow_gw_api = None
         self._allow_gw_login = None
-        self._password = None
         self._sub_admin_access_id = None
         self._sub_claims = None
         self._token = None
         self._uid_token = None
-        self._username = None
         self.discriminator = None
 
         if allow_gw_api is not None:
             self.allow_gw_api = allow_gw_api
         if allow_gw_login is not None:
             self.allow_gw_login = allow_gw_login
-        if password is not None:
-            self.password = password
         self.sub_admin_access_id = sub_admin_access_id
         if sub_claims is not None:
             self.sub_claims = sub_claims
@@ -84,8 +76,6 @@ class GatewayAddAllowedManagementAccess(object):
             self.token = token
         if uid_token is not None:
             self.uid_token = uid_token
-        if username is not None:
-            self.username = username
 
     @property
     def allow_gw_api(self):
@@ -128,29 +118,6 @@ class GatewayAddAllowedManagementAccess(object):
         """
 
         self._allow_gw_login = allow_gw_login
-
-    @property
-    def password(self):
-        """Gets the password of this GatewayAddAllowedManagementAccess.  # noqa: E501
-
-        Required only when the authentication process requires a username and password  # noqa: E501
-
-        :return: The password of this GatewayAddAllowedManagementAccess.  # noqa: E501
-        :rtype: str
-        """
-        return self._password
-
-    @password.setter
-    def password(self, password):
-        """Sets the password of this GatewayAddAllowedManagementAccess.
-
-        Required only when the authentication process requires a username and password  # noqa: E501
-
-        :param password: The password of this GatewayAddAllowedManagementAccess.  # noqa: E501
-        :type: str
-        """
-
-        self._password = password
 
     @property
     def sub_admin_access_id(self):
@@ -245,29 +212,6 @@ class GatewayAddAllowedManagementAccess(object):
         """
 
         self._uid_token = uid_token
-
-    @property
-    def username(self):
-        """Gets the username of this GatewayAddAllowedManagementAccess.  # noqa: E501
-
-        Required only when the authentication process requires a username and password  # noqa: E501
-
-        :return: The username of this GatewayAddAllowedManagementAccess.  # noqa: E501
-        :rtype: str
-        """
-        return self._username
-
-    @username.setter
-    def username(self, username):
-        """Sets the username of this GatewayAddAllowedManagementAccess.
-
-        Required only when the authentication process requires a username and password  # noqa: E501
-
-        :param username: The username of this GatewayAddAllowedManagementAccess.  # noqa: E501
-        :type: str
-        """
-
-        self._username = username
 
     def to_dict(self):
         """Returns the model properties as a dict"""

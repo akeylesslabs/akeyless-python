@@ -15,7 +15,7 @@
 
 from __future__ import absolute_import
 
-__version__ = "2.15.27"
+__version__ = "2.15.28"
 
 # import apis into sdk package
 from akeyless.api.v2_api import V2Api
@@ -33,6 +33,7 @@ from akeyless.models.api_key_access_rules import APIKeyAccessRules
 from akeyless.models.awsiam_access_rules import AWSIAMAccessRules
 from akeyless.models.aws_payload import AWSPayload
 from akeyless.models.aws_secrets_migration import AWSSecretsMigration
+from akeyless.models.account_object_version_settings_output import AccountObjectVersionSettingsOutput
 from akeyless.models.admins_config_part import AdminsConfigPart
 from akeyless.models.akeyless_gateway_config import AkeylessGatewayConfig
 from akeyless.models.allowed_access import AllowedAccess
@@ -94,6 +95,8 @@ from akeyless.models.create_db_target import CreateDBTarget
 from akeyless.models.create_db_target_output import CreateDBTargetOutput
 from akeyless.models.create_dfc_key import CreateDFCKey
 from akeyless.models.create_dfc_key_output import CreateDFCKeyOutput
+from akeyless.models.create_dockerhub_target import CreateDockerhubTarget
+from akeyless.models.create_dockerhub_target_output import CreateDockerhubTargetOutput
 from akeyless.models.create_dynamic_secret import CreateDynamicSecret
 from akeyless.models.create_eks_target import CreateEKSTarget
 from akeyless.models.create_eks_target_output import CreateEKSTargetOutput
@@ -189,6 +192,8 @@ from akeyless.models.gateway_create_producer_chef import GatewayCreateProducerCh
 from akeyless.models.gateway_create_producer_chef_output import GatewayCreateProducerChefOutput
 from akeyless.models.gateway_create_producer_custom import GatewayCreateProducerCustom
 from akeyless.models.gateway_create_producer_custom_output import GatewayCreateProducerCustomOutput
+from akeyless.models.gateway_create_producer_dockerhub import GatewayCreateProducerDockerhub
+from akeyless.models.gateway_create_producer_dockerhub_output import GatewayCreateProducerDockerhubOutput
 from akeyless.models.gateway_create_producer_eks import GatewayCreateProducerEks
 from akeyless.models.gateway_create_producer_eks_output import GatewayCreateProducerEksOutput
 from akeyless.models.gateway_create_producer_gcp import GatewayCreateProducerGcp
@@ -259,6 +264,8 @@ from akeyless.models.gateway_update_producer_chef import GatewayUpdateProducerCh
 from akeyless.models.gateway_update_producer_chef_output import GatewayUpdateProducerChefOutput
 from akeyless.models.gateway_update_producer_custom import GatewayUpdateProducerCustom
 from akeyless.models.gateway_update_producer_custom_output import GatewayUpdateProducerCustomOutput
+from akeyless.models.gateway_update_producer_dockerhub import GatewayUpdateProducerDockerhub
+from akeyless.models.gateway_update_producer_dockerhub_output import GatewayUpdateProducerDockerhubOutput
 from akeyless.models.gateway_update_producer_eks import GatewayUpdateProducerEks
 from akeyless.models.gateway_update_producer_eks_output import GatewayUpdateProducerEksOutput
 from akeyless.models.gateway_update_producer_gcp import GatewayUpdateProducerGcp
@@ -376,7 +383,9 @@ from akeyless.models.o_auth2_access_rules import OAuth2AccessRules
 from akeyless.models.o_auth2_custom_claim import OAuth2CustomClaim
 from akeyless.models.oidc_access_rules import OIDCAccessRules
 from akeyless.models.oidc_custom_claim import OIDCCustomClaim
+from akeyless.models.object_version_settings_output import ObjectVersionSettingsOutput
 from akeyless.models.pki_certificate_issue_details import PKICertificateIssueDetails
+from akeyless.models.password_policy_info import PasswordPolicyInfo
 from akeyless.models.path_rule import PathRule
 from akeyless.models.producer import Producer
 from akeyless.models.producers_config_part import ProducersConfigPart
@@ -415,6 +424,7 @@ from akeyless.models.splunk_log_forwarding_config import SplunkLogForwardingConf
 from akeyless.models.sra_info import SraInfo
 from akeyless.models.static_creds_auth import StaticCredsAuth
 from akeyless.models.static_creds_auth_output import StaticCredsAuthOutput
+from akeyless.models.static_secret_details_info import StaticSecretDetailsInfo
 from akeyless.models.syslog_log_forwarding_config import SyslogLogForwardingConfig
 from akeyless.models.system_access_credentials_reply_obj import SystemAccessCredentialsReplyObj
 from akeyless.models.system_access_creds_settings import SystemAccessCredsSettings
@@ -424,7 +434,6 @@ from akeyless.models.target_item_version import TargetItemVersion
 from akeyless.models.target_type_details_input import TargetTypeDetailsInput
 from akeyless.models.tmp_user_data import TmpUserData
 from akeyless.models.uid_token_details import UIDTokenDetails
-from akeyless.models.u_identity_config_part import UIdentityConfigPart
 from akeyless.models.uid_create_child_token import UidCreateChildToken
 from akeyless.models.uid_create_child_token_output import UidCreateChildTokenOutput
 from akeyless.models.uid_generate_token import UidGenerateToken
@@ -436,6 +445,7 @@ from akeyless.models.uid_rotate_token_output import UidRotateTokenOutput
 from akeyless.models.unconfigure import Unconfigure
 from akeyless.models.universal_identity_access_rules import UniversalIdentityAccessRules
 from akeyless.models.universal_identity_details import UniversalIdentityDetails
+from akeyless.models.update import Update
 from akeyless.models.update_aws_target import UpdateAWSTarget
 from akeyless.models.update_aws_target_details import UpdateAWSTargetDetails
 from akeyless.models.update_account_settings import UpdateAccountSettings
@@ -460,6 +470,8 @@ from akeyless.models.update_azure_target_output import UpdateAzureTargetOutput
 from akeyless.models.update_db_target import UpdateDBTarget
 from akeyless.models.update_db_target_details import UpdateDBTargetDetails
 from akeyless.models.update_db_target_output import UpdateDBTargetOutput
+from akeyless.models.update_dockerhub_target import UpdateDockerhubTarget
+from akeyless.models.update_dockerhub_target_output import UpdateDockerhubTargetOutput
 from akeyless.models.update_eks_target import UpdateEKSTarget
 from akeyless.models.update_eks_target_output import UpdateEKSTargetOutput
 from akeyless.models.update_gke_target import UpdateGKETarget

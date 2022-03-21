@@ -36,26 +36,22 @@ class SignJWTWithClassicKey(object):
     openapi_types = {
         'display_id': 'str',
         'jwt_claims': 'str',
-        'password': 'str',
         'signing_method': 'str',
         'token': 'str',
         'uid_token': 'str',
-        'username': 'str',
         'version': 'int'
     }
 
     attribute_map = {
         'display_id': 'display-id',
         'jwt_claims': 'jwt-claims',
-        'password': 'password',
         'signing_method': 'signing-method',
         'token': 'token',
         'uid_token': 'uid-token',
-        'username': 'username',
         'version': 'version'
     }
 
-    def __init__(self, display_id=None, jwt_claims=None, password=None, signing_method=None, token=None, uid_token=None, username=None, version=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, display_id=None, jwt_claims=None, signing_method=None, token=None, uid_token=None, version=None, local_vars_configuration=None):  # noqa: E501
         """SignJWTWithClassicKey - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -63,25 +59,19 @@ class SignJWTWithClassicKey(object):
 
         self._display_id = None
         self._jwt_claims = None
-        self._password = None
         self._signing_method = None
         self._token = None
         self._uid_token = None
-        self._username = None
         self._version = None
         self.discriminator = None
 
         self.display_id = display_id
         self.jwt_claims = jwt_claims
-        if password is not None:
-            self.password = password
         self.signing_method = signing_method
         if token is not None:
             self.token = token
         if uid_token is not None:
             self.uid_token = uid_token
-        if username is not None:
-            self.username = username
         self.version = version
 
     @property
@@ -133,29 +123,6 @@ class SignJWTWithClassicKey(object):
             raise ValueError("Invalid value for `jwt_claims`, must not be `None`")  # noqa: E501
 
         self._jwt_claims = jwt_claims
-
-    @property
-    def password(self):
-        """Gets the password of this SignJWTWithClassicKey.  # noqa: E501
-
-        Required only when the authentication process requires a username and password  # noqa: E501
-
-        :return: The password of this SignJWTWithClassicKey.  # noqa: E501
-        :rtype: str
-        """
-        return self._password
-
-    @password.setter
-    def password(self, password):
-        """Sets the password of this SignJWTWithClassicKey.
-
-        Required only when the authentication process requires a username and password  # noqa: E501
-
-        :param password: The password of this SignJWTWithClassicKey.  # noqa: E501
-        :type: str
-        """
-
-        self._password = password
 
     @property
     def signing_method(self):
@@ -227,29 +194,6 @@ class SignJWTWithClassicKey(object):
         """
 
         self._uid_token = uid_token
-
-    @property
-    def username(self):
-        """Gets the username of this SignJWTWithClassicKey.  # noqa: E501
-
-        Required only when the authentication process requires a username and password  # noqa: E501
-
-        :return: The username of this SignJWTWithClassicKey.  # noqa: E501
-        :rtype: str
-        """
-        return self._username
-
-    @username.setter
-    def username(self, username):
-        """Sets the username of this SignJWTWithClassicKey.
-
-        Required only when the authentication process requires a username and password  # noqa: E501
-
-        :param username: The username of this SignJWTWithClassicKey.  # noqa: E501
-        :type: str
-        """
-
-        self._username = username
 
     @property
     def version(self):

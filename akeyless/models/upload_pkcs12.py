@@ -39,12 +39,10 @@ class UploadPKCS12(object):
         'metadata': 'str',
         'name': 'str',
         'passphrase': 'str',
-        'password': 'str',
         'split_level': 'int',
         'tag': 'list[str]',
         'token': 'str',
-        'uid_token': 'str',
-        'username': 'str'
+        'uid_token': 'str'
     }
 
     attribute_map = {
@@ -53,15 +51,13 @@ class UploadPKCS12(object):
         'metadata': 'metadata',
         'name': 'name',
         'passphrase': 'passphrase',
-        'password': 'password',
         'split_level': 'split-level',
         'tag': 'tag',
         'token': 'token',
-        'uid_token': 'uid-token',
-        'username': 'username'
+        'uid_token': 'uid-token'
     }
 
-    def __init__(self, customer_frg_id=None, _in=None, metadata=None, name=None, passphrase=None, password=None, split_level=2, tag=None, token=None, uid_token=None, username=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, customer_frg_id=None, _in=None, metadata=None, name=None, passphrase=None, split_level=2, tag=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """UploadPKCS12 - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -72,12 +68,10 @@ class UploadPKCS12(object):
         self._metadata = None
         self._name = None
         self._passphrase = None
-        self._password = None
         self._split_level = None
         self._tag = None
         self._token = None
         self._uid_token = None
-        self._username = None
         self.discriminator = None
 
         if customer_frg_id is not None:
@@ -87,8 +81,6 @@ class UploadPKCS12(object):
             self.metadata = metadata
         self.name = name
         self.passphrase = passphrase
-        if password is not None:
-            self.password = password
         if split_level is not None:
             self.split_level = split_level
         if tag is not None:
@@ -97,8 +89,6 @@ class UploadPKCS12(object):
             self.token = token
         if uid_token is not None:
             self.uid_token = uid_token
-        if username is not None:
-            self.username = username
 
     @property
     def customer_frg_id(self):
@@ -222,29 +212,6 @@ class UploadPKCS12(object):
         self._passphrase = passphrase
 
     @property
-    def password(self):
-        """Gets the password of this UploadPKCS12.  # noqa: E501
-
-        Required only when the authentication process requires a username and password  # noqa: E501
-
-        :return: The password of this UploadPKCS12.  # noqa: E501
-        :rtype: str
-        """
-        return self._password
-
-    @password.setter
-    def password(self, password):
-        """Sets the password of this UploadPKCS12.
-
-        Required only when the authentication process requires a username and password  # noqa: E501
-
-        :param password: The password of this UploadPKCS12.  # noqa: E501
-        :type: str
-        """
-
-        self._password = password
-
-    @property
     def split_level(self):
         """Gets the split_level of this UploadPKCS12.  # noqa: E501
 
@@ -335,29 +302,6 @@ class UploadPKCS12(object):
         """
 
         self._uid_token = uid_token
-
-    @property
-    def username(self):
-        """Gets the username of this UploadPKCS12.  # noqa: E501
-
-        Required only when the authentication process requires a username and password  # noqa: E501
-
-        :return: The username of this UploadPKCS12.  # noqa: E501
-        :rtype: str
-        """
-        return self._username
-
-    @username.setter
-    def username(self, username):
-        """Sets the username of this UploadPKCS12.
-
-        Required only when the authentication process requires a username and password  # noqa: E501
-
-        :param username: The username of this UploadPKCS12.  # noqa: E501
-        :type: str
-        """
-
-        self._username = username
 
     def to_dict(self):
         """Returns the model properties as a dict"""

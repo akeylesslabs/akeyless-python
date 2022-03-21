@@ -37,37 +37,35 @@ class UpdateAWSTarget(object):
         'access_key': 'str',
         'access_key_id': 'str',
         'comment': 'str',
+        'keep_prev_version': 'str',
         'key': 'str',
         'name': 'str',
         'new_name': 'str',
-        'password': 'str',
         'region': 'str',
         'session_token': 'str',
         'token': 'str',
         'uid_token': 'str',
         'update_version': 'bool',
-        'use_gw_cloud_identity': 'bool',
-        'username': 'str'
+        'use_gw_cloud_identity': 'bool'
     }
 
     attribute_map = {
         'access_key': 'access-key',
         'access_key_id': 'access-key-id',
         'comment': 'comment',
+        'keep_prev_version': 'keep-prev-version',
         'key': 'key',
         'name': 'name',
         'new_name': 'new-name',
-        'password': 'password',
         'region': 'region',
         'session_token': 'session-token',
         'token': 'token',
         'uid_token': 'uid-token',
         'update_version': 'update-version',
-        'use_gw_cloud_identity': 'use-gw-cloud-identity',
-        'username': 'username'
+        'use_gw_cloud_identity': 'use-gw-cloud-identity'
     }
 
-    def __init__(self, access_key=None, access_key_id=None, comment=None, key=None, name=None, new_name=None, password=None, region=None, session_token=None, token=None, uid_token=None, update_version=False, use_gw_cloud_identity=None, username=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, access_key=None, access_key_id=None, comment=None, keep_prev_version=None, key=None, name=None, new_name=None, region=None, session_token=None, token=None, uid_token=None, update_version=None, use_gw_cloud_identity=None, local_vars_configuration=None):  # noqa: E501
         """UpdateAWSTarget - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -76,17 +74,16 @@ class UpdateAWSTarget(object):
         self._access_key = None
         self._access_key_id = None
         self._comment = None
+        self._keep_prev_version = None
         self._key = None
         self._name = None
         self._new_name = None
-        self._password = None
         self._region = None
         self._session_token = None
         self._token = None
         self._uid_token = None
         self._update_version = None
         self._use_gw_cloud_identity = None
-        self._username = None
         self.discriminator = None
 
         if access_key is not None:
@@ -95,13 +92,13 @@ class UpdateAWSTarget(object):
             self.access_key_id = access_key_id
         if comment is not None:
             self.comment = comment
+        if keep_prev_version is not None:
+            self.keep_prev_version = keep_prev_version
         if key is not None:
             self.key = key
         self.name = name
         if new_name is not None:
             self.new_name = new_name
-        if password is not None:
-            self.password = password
         if region is not None:
             self.region = region
         if session_token is not None:
@@ -114,8 +111,6 @@ class UpdateAWSTarget(object):
             self.update_version = update_version
         if use_gw_cloud_identity is not None:
             self.use_gw_cloud_identity = use_gw_cloud_identity
-        if username is not None:
-            self.username = username
 
     @property
     def access_key(self):
@@ -181,6 +176,27 @@ class UpdateAWSTarget(object):
         """
 
         self._comment = comment
+
+    @property
+    def keep_prev_version(self):
+        """Gets the keep_prev_version of this UpdateAWSTarget.  # noqa: E501
+
+
+        :return: The keep_prev_version of this UpdateAWSTarget.  # noqa: E501
+        :rtype: str
+        """
+        return self._keep_prev_version
+
+    @keep_prev_version.setter
+    def keep_prev_version(self, keep_prev_version):
+        """Sets the keep_prev_version of this UpdateAWSTarget.
+
+
+        :param keep_prev_version: The keep_prev_version of this UpdateAWSTarget.  # noqa: E501
+        :type: str
+        """
+
+        self._keep_prev_version = keep_prev_version
 
     @property
     def key(self):
@@ -252,29 +268,6 @@ class UpdateAWSTarget(object):
         """
 
         self._new_name = new_name
-
-    @property
-    def password(self):
-        """Gets the password of this UpdateAWSTarget.  # noqa: E501
-
-        Required only when the authentication process requires a username and password  # noqa: E501
-
-        :return: The password of this UpdateAWSTarget.  # noqa: E501
-        :rtype: str
-        """
-        return self._password
-
-    @password.setter
-    def password(self, password):
-        """Sets the password of this UpdateAWSTarget.
-
-        Required only when the authentication process requires a username and password  # noqa: E501
-
-        :param password: The password of this UpdateAWSTarget.  # noqa: E501
-        :type: str
-        """
-
-        self._password = password
 
     @property
     def region(self):
@@ -368,7 +361,7 @@ class UpdateAWSTarget(object):
     def update_version(self):
         """Gets the update_version of this UpdateAWSTarget.  # noqa: E501
 
-        Create new version for the target  # noqa: E501
+        Deprecated  # noqa: E501
 
         :return: The update_version of this UpdateAWSTarget.  # noqa: E501
         :rtype: bool
@@ -379,7 +372,7 @@ class UpdateAWSTarget(object):
     def update_version(self, update_version):
         """Sets the update_version of this UpdateAWSTarget.
 
-        Create new version for the target  # noqa: E501
+        Deprecated  # noqa: E501
 
         :param update_version: The update_version of this UpdateAWSTarget.  # noqa: E501
         :type: bool
@@ -407,29 +400,6 @@ class UpdateAWSTarget(object):
         """
 
         self._use_gw_cloud_identity = use_gw_cloud_identity
-
-    @property
-    def username(self):
-        """Gets the username of this UpdateAWSTarget.  # noqa: E501
-
-        Required only when the authentication process requires a username and password  # noqa: E501
-
-        :return: The username of this UpdateAWSTarget.  # noqa: E501
-        :rtype: str
-        """
-        return self._username
-
-    @username.setter
-    def username(self, username):
-        """Sets the username of this UpdateAWSTarget.
-
-        Required only when the authentication process requires a username and password  # noqa: E501
-
-        :param username: The username of this UpdateAWSTarget.  # noqa: E501
-        :type: str
-        """
-
-        self._username = username
 
     def to_dict(self):
         """Returns the model properties as a dict"""

@@ -59,7 +59,8 @@ class SecureRemoteAccess(object):
         'ssh_private_key': 'bool',
         'ssh_user': 'str',
         'url': 'str',
-        'use_internal_bastion': 'bool'
+        'use_internal_bastion': 'bool',
+        'web_proxy': 'bool'
     }
 
     attribute_map = {
@@ -88,10 +89,11 @@ class SecureRemoteAccess(object):
         'ssh_private_key': 'ssh_private_key',
         'ssh_user': 'ssh_user',
         'url': 'url',
-        'use_internal_bastion': 'use_internal_bastion'
+        'use_internal_bastion': 'use_internal_bastion',
+        'web_proxy': 'web_proxy'
     }
 
-    def __init__(self, account_id=None, allow_port_forwarding=None, allow_providing_external_username=None, bastion_api=None, bastion_issuer=None, bastion_issuer_id=None, bastion_ssh=None, category=None, dashboard_url=None, db_name=None, domain=None, enable=None, endpoint=None, host=None, is_cli=None, is_web=None, isolated=None, native=None, rdp_user=None, region=None, schema=None, ssh_password=None, ssh_private_key=None, ssh_user=None, url=None, use_internal_bastion=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, account_id=None, allow_port_forwarding=None, allow_providing_external_username=None, bastion_api=None, bastion_issuer=None, bastion_issuer_id=None, bastion_ssh=None, category=None, dashboard_url=None, db_name=None, domain=None, enable=None, endpoint=None, host=None, is_cli=None, is_web=None, isolated=None, native=None, rdp_user=None, region=None, schema=None, ssh_password=None, ssh_private_key=None, ssh_user=None, url=None, use_internal_bastion=None, web_proxy=None, local_vars_configuration=None):  # noqa: E501
         """SecureRemoteAccess - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -123,6 +125,7 @@ class SecureRemoteAccess(object):
         self._ssh_user = None
         self._url = None
         self._use_internal_bastion = None
+        self._web_proxy = None
         self.discriminator = None
 
         if account_id is not None:
@@ -177,6 +180,8 @@ class SecureRemoteAccess(object):
             self.url = url
         if use_internal_bastion is not None:
             self.use_internal_bastion = use_internal_bastion
+        if web_proxy is not None:
+            self.web_proxy = web_proxy
 
     @property
     def account_id(self):
@@ -723,6 +728,27 @@ class SecureRemoteAccess(object):
         """
 
         self._use_internal_bastion = use_internal_bastion
+
+    @property
+    def web_proxy(self):
+        """Gets the web_proxy of this SecureRemoteAccess.  # noqa: E501
+
+
+        :return: The web_proxy of this SecureRemoteAccess.  # noqa: E501
+        :rtype: bool
+        """
+        return self._web_proxy
+
+    @web_proxy.setter
+    def web_proxy(self, web_proxy):
+        """Sets the web_proxy of this SecureRemoteAccess.
+
+
+        :param web_proxy: The web_proxy of this SecureRemoteAccess.  # noqa: E501
+        :type: bool
+        """
+
+        self._web_proxy = web_proxy
 
     def to_dict(self):
         """Returns the model properties as a dict"""

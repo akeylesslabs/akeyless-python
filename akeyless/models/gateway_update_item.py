@@ -39,12 +39,12 @@ class GatewayUpdateItem(object):
         'api_key': 'str',
         'auto_rotate': 'str',
         'custom_payload': 'str',
+        'keep_prev_version': 'str',
         'key': 'str',
         'name': 'str',
         'new_metadata': 'str',
         'new_name': 'str',
         'new_version': 'bool',
-        'password': 'str',
         'rm_tag': 'list[str]',
         'rotated_password': 'str',
         'rotated_username': 'str',
@@ -53,8 +53,7 @@ class GatewayUpdateItem(object):
         'rotator_creds_type': 'str',
         'token': 'str',
         'type': 'str',
-        'uid_token': 'str',
-        'username': 'str'
+        'uid_token': 'str'
     }
 
     attribute_map = {
@@ -63,12 +62,12 @@ class GatewayUpdateItem(object):
         'api_key': 'api-key',
         'auto_rotate': 'auto-rotate',
         'custom_payload': 'custom-payload',
+        'keep_prev_version': 'keep-prev-version',
         'key': 'key',
         'name': 'name',
         'new_metadata': 'new-metadata',
         'new_name': 'new-name',
         'new_version': 'new-version',
-        'password': 'password',
         'rm_tag': 'rm-tag',
         'rotated_password': 'rotated-password',
         'rotated_username': 'rotated-username',
@@ -77,11 +76,10 @@ class GatewayUpdateItem(object):
         'rotator_creds_type': 'rotator-creds-type',
         'token': 'token',
         'type': 'type',
-        'uid_token': 'uid-token',
-        'username': 'username'
+        'uid_token': 'uid-token'
     }
 
-    def __init__(self, add_tag=None, api_id=None, api_key=None, auto_rotate=None, custom_payload=None, key=None, name=None, new_metadata='default_metadata', new_name=None, new_version=False, password=None, rm_tag=None, rotated_password=None, rotated_username=None, rotation_hour=0, rotation_interval=None, rotator_creds_type=None, token=None, type=None, uid_token=None, username=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, add_tag=None, api_id=None, api_key=None, auto_rotate=None, custom_payload=None, keep_prev_version=None, key=None, name=None, new_metadata='default_metadata', new_name=None, new_version=None, rm_tag=None, rotated_password=None, rotated_username=None, rotation_hour=0, rotation_interval=None, rotator_creds_type=None, token=None, type=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """GatewayUpdateItem - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -92,12 +90,12 @@ class GatewayUpdateItem(object):
         self._api_key = None
         self._auto_rotate = None
         self._custom_payload = None
+        self._keep_prev_version = None
         self._key = None
         self._name = None
         self._new_metadata = None
         self._new_name = None
         self._new_version = None
-        self._password = None
         self._rm_tag = None
         self._rotated_password = None
         self._rotated_username = None
@@ -107,7 +105,6 @@ class GatewayUpdateItem(object):
         self._token = None
         self._type = None
         self._uid_token = None
-        self._username = None
         self.discriminator = None
 
         if add_tag is not None:
@@ -120,6 +117,8 @@ class GatewayUpdateItem(object):
             self.auto_rotate = auto_rotate
         if custom_payload is not None:
             self.custom_payload = custom_payload
+        if keep_prev_version is not None:
+            self.keep_prev_version = keep_prev_version
         if key is not None:
             self.key = key
         self.name = name
@@ -129,8 +128,6 @@ class GatewayUpdateItem(object):
             self.new_name = new_name
         if new_version is not None:
             self.new_version = new_version
-        if password is not None:
-            self.password = password
         if rm_tag is not None:
             self.rm_tag = rm_tag
         if rotated_password is not None:
@@ -148,8 +145,6 @@ class GatewayUpdateItem(object):
         self.type = type
         if uid_token is not None:
             self.uid_token = uid_token
-        if username is not None:
-            self.username = username
 
     @property
     def add_tag(self):
@@ -261,6 +256,27 @@ class GatewayUpdateItem(object):
         self._custom_payload = custom_payload
 
     @property
+    def keep_prev_version(self):
+        """Gets the keep_prev_version of this GatewayUpdateItem.  # noqa: E501
+
+
+        :return: The keep_prev_version of this GatewayUpdateItem.  # noqa: E501
+        :rtype: str
+        """
+        return self._keep_prev_version
+
+    @keep_prev_version.setter
+    def keep_prev_version(self, keep_prev_version):
+        """Sets the keep_prev_version of this GatewayUpdateItem.
+
+
+        :param keep_prev_version: The keep_prev_version of this GatewayUpdateItem.  # noqa: E501
+        :type: str
+        """
+
+        self._keep_prev_version = keep_prev_version
+
+    @property
     def key(self):
         """Gets the key of this GatewayUpdateItem.  # noqa: E501
 
@@ -358,7 +374,7 @@ class GatewayUpdateItem(object):
     def new_version(self):
         """Gets the new_version of this GatewayUpdateItem.  # noqa: E501
 
-        Whether to create a new version of not  # noqa: E501
+        Deprecated  # noqa: E501
 
         :return: The new_version of this GatewayUpdateItem.  # noqa: E501
         :rtype: bool
@@ -369,36 +385,13 @@ class GatewayUpdateItem(object):
     def new_version(self, new_version):
         """Sets the new_version of this GatewayUpdateItem.
 
-        Whether to create a new version of not  # noqa: E501
+        Deprecated  # noqa: E501
 
         :param new_version: The new_version of this GatewayUpdateItem.  # noqa: E501
         :type: bool
         """
 
         self._new_version = new_version
-
-    @property
-    def password(self):
-        """Gets the password of this GatewayUpdateItem.  # noqa: E501
-
-        Required only when the authentication process requires a username and password  # noqa: E501
-
-        :return: The password of this GatewayUpdateItem.  # noqa: E501
-        :rtype: str
-        """
-        return self._password
-
-    @password.setter
-    def password(self, password):
-        """Sets the password of this GatewayUpdateItem.
-
-        Required only when the authentication process requires a username and password  # noqa: E501
-
-        :param password: The password of this GatewayUpdateItem.  # noqa: E501
-        :type: str
-        """
-
-        self._password = password
 
     @property
     def rm_tag(self):
@@ -604,29 +597,6 @@ class GatewayUpdateItem(object):
         """
 
         self._uid_token = uid_token
-
-    @property
-    def username(self):
-        """Gets the username of this GatewayUpdateItem.  # noqa: E501
-
-        Required only when the authentication process requires a username and password  # noqa: E501
-
-        :return: The username of this GatewayUpdateItem.  # noqa: E501
-        :rtype: str
-        """
-        return self._username
-
-    @username.setter
-    def username(self, username):
-        """Sets the username of this GatewayUpdateItem.
-
-        Required only when the authentication process requires a username and password  # noqa: E501
-
-        :param username: The username of this GatewayUpdateItem.  # noqa: E501
-        :type: str
-        """
-
-        self._username = username
 
     def to_dict(self):
         """Returns the model properties as a dict"""

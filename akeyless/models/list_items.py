@@ -36,28 +36,24 @@ class ListItems(object):
     openapi_types = {
         'filter': 'str',
         'pagination_token': 'str',
-        'password': 'str',
         'path': 'str',
         'tag': 'str',
         'token': 'str',
         'type': 'list[str]',
-        'uid_token': 'str',
-        'username': 'str'
+        'uid_token': 'str'
     }
 
     attribute_map = {
         'filter': 'filter',
         'pagination_token': 'pagination-token',
-        'password': 'password',
         'path': 'path',
         'tag': 'tag',
         'token': 'token',
         'type': 'type',
-        'uid_token': 'uid-token',
-        'username': 'username'
+        'uid_token': 'uid-token'
     }
 
-    def __init__(self, filter=None, pagination_token=None, password=None, path=None, tag=None, token=None, type=None, uid_token=None, username=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, filter=None, pagination_token=None, path=None, tag=None, token=None, type=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """ListItems - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -65,21 +61,17 @@ class ListItems(object):
 
         self._filter = None
         self._pagination_token = None
-        self._password = None
         self._path = None
         self._tag = None
         self._token = None
         self._type = None
         self._uid_token = None
-        self._username = None
         self.discriminator = None
 
         if filter is not None:
             self.filter = filter
         if pagination_token is not None:
             self.pagination_token = pagination_token
-        if password is not None:
-            self.password = password
         if path is not None:
             self.path = path
         if tag is not None:
@@ -90,8 +82,6 @@ class ListItems(object):
             self.type = type
         if uid_token is not None:
             self.uid_token = uid_token
-        if username is not None:
-            self.username = username
 
     @property
     def filter(self):
@@ -138,29 +128,6 @@ class ListItems(object):
         """
 
         self._pagination_token = pagination_token
-
-    @property
-    def password(self):
-        """Gets the password of this ListItems.  # noqa: E501
-
-        Required only when the authentication process requires a username and password  # noqa: E501
-
-        :return: The password of this ListItems.  # noqa: E501
-        :rtype: str
-        """
-        return self._password
-
-    @password.setter
-    def password(self, password):
-        """Sets the password of this ListItems.
-
-        Required only when the authentication process requires a username and password  # noqa: E501
-
-        :param password: The password of this ListItems.  # noqa: E501
-        :type: str
-        """
-
-        self._password = password
 
     @property
     def path(self):
@@ -276,29 +243,6 @@ class ListItems(object):
         """
 
         self._uid_token = uid_token
-
-    @property
-    def username(self):
-        """Gets the username of this ListItems.  # noqa: E501
-
-        Required only when the authentication process requires a username and password  # noqa: E501
-
-        :return: The username of this ListItems.  # noqa: E501
-        :rtype: str
-        """
-        return self._username
-
-    @username.setter
-    def username(self, username):
-        """Sets the username of this ListItems.
-
-        Required only when the authentication process requires a username and password  # noqa: E501
-
-        :param username: The username of this ListItems.  # noqa: E501
-        :type: str
-        """
-
-        self._username = username
 
     def to_dict(self):
         """Returns the model properties as a dict"""

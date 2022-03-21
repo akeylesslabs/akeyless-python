@@ -38,7 +38,6 @@ class UpdateItem(object):
         'name': 'str',
         'new_metadata': 'str',
         'new_name': 'str',
-        'password': 'str',
         'rm_tag': 'list[str]',
         'secure_access_add_host': 'list[str]',
         'secure_access_allow_external_user': 'str',
@@ -63,9 +62,9 @@ class UpdateItem(object):
         'secure_access_url': 'str',
         'secure_access_use_internal_bastion': 'bool',
         'secure_access_web_browsing': 'bool',
+        'secure_access_web_proxy': 'bool',
         'token': 'str',
-        'uid_token': 'str',
-        'username': 'str'
+        'uid_token': 'str'
     }
 
     attribute_map = {
@@ -73,7 +72,6 @@ class UpdateItem(object):
         'name': 'name',
         'new_metadata': 'new-metadata',
         'new_name': 'new-name',
-        'password': 'password',
         'rm_tag': 'rm-tag',
         'secure_access_add_host': 'secure-access-add-host',
         'secure_access_allow_external_user': 'secure-access-allow-external-user',
@@ -98,12 +96,12 @@ class UpdateItem(object):
         'secure_access_url': 'secure-access-url',
         'secure_access_use_internal_bastion': 'secure-access-use-internal-bastion',
         'secure_access_web_browsing': 'secure-access-web-browsing',
+        'secure_access_web_proxy': 'secure-access-web-proxy',
         'token': 'token',
-        'uid_token': 'uid-token',
-        'username': 'username'
+        'uid_token': 'uid-token'
     }
 
-    def __init__(self, add_tag=None, name=None, new_metadata='default_metadata', new_name=None, password=None, rm_tag=None, secure_access_add_host=None, secure_access_allow_external_user=None, secure_access_allow_port_forwading=None, secure_access_aws_account_id=None, secure_access_aws_native_cli=None, secure_access_aws_region=None, secure_access_bastion_api=None, secure_access_bastion_issuer=None, secure_access_bastion_ssh=None, secure_access_cluster_endpoint=None, secure_access_dashboard_url=None, secure_access_db_name=None, secure_access_db_schema=None, secure_access_enable=None, secure_access_host=None, secure_access_rdp_domain=None, secure_access_rdp_user=None, secure_access_rm_host=None, secure_access_ssh_creds=None, secure_access_ssh_creds_user=None, secure_access_url=None, secure_access_use_internal_bastion=None, secure_access_web_browsing=None, token=None, uid_token=None, username=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, add_tag=None, name=None, new_metadata='default_metadata', new_name=None, rm_tag=None, secure_access_add_host=None, secure_access_allow_external_user=None, secure_access_allow_port_forwading=None, secure_access_aws_account_id=None, secure_access_aws_native_cli=None, secure_access_aws_region=None, secure_access_bastion_api=None, secure_access_bastion_issuer=None, secure_access_bastion_ssh=None, secure_access_cluster_endpoint=None, secure_access_dashboard_url=None, secure_access_db_name=None, secure_access_db_schema=None, secure_access_enable=None, secure_access_host=None, secure_access_rdp_domain=None, secure_access_rdp_user=None, secure_access_rm_host=None, secure_access_ssh_creds=None, secure_access_ssh_creds_user=None, secure_access_url=None, secure_access_use_internal_bastion=None, secure_access_web_browsing=None, secure_access_web_proxy=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """UpdateItem - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -113,7 +111,6 @@ class UpdateItem(object):
         self._name = None
         self._new_metadata = None
         self._new_name = None
-        self._password = None
         self._rm_tag = None
         self._secure_access_add_host = None
         self._secure_access_allow_external_user = None
@@ -138,9 +135,9 @@ class UpdateItem(object):
         self._secure_access_url = None
         self._secure_access_use_internal_bastion = None
         self._secure_access_web_browsing = None
+        self._secure_access_web_proxy = None
         self._token = None
         self._uid_token = None
-        self._username = None
         self.discriminator = None
 
         if add_tag is not None:
@@ -150,8 +147,6 @@ class UpdateItem(object):
             self.new_metadata = new_metadata
         if new_name is not None:
             self.new_name = new_name
-        if password is not None:
-            self.password = password
         if rm_tag is not None:
             self.rm_tag = rm_tag
         if secure_access_add_host is not None:
@@ -200,12 +195,12 @@ class UpdateItem(object):
             self.secure_access_use_internal_bastion = secure_access_use_internal_bastion
         if secure_access_web_browsing is not None:
             self.secure_access_web_browsing = secure_access_web_browsing
+        if secure_access_web_proxy is not None:
+            self.secure_access_web_proxy = secure_access_web_proxy
         if token is not None:
             self.token = token
         if uid_token is not None:
             self.uid_token = uid_token
-        if username is not None:
-            self.username = username
 
     @property
     def add_tag(self):
@@ -300,29 +295,6 @@ class UpdateItem(object):
         """
 
         self._new_name = new_name
-
-    @property
-    def password(self):
-        """Gets the password of this UpdateItem.  # noqa: E501
-
-        Required only when the authentication process requires a username and password  # noqa: E501
-
-        :return: The password of this UpdateItem.  # noqa: E501
-        :rtype: str
-        """
-        return self._password
-
-    @password.setter
-    def password(self, password):
-        """Sets the password of this UpdateItem.
-
-        Required only when the authentication process requires a username and password  # noqa: E501
-
-        :param password: The password of this UpdateItem.  # noqa: E501
-        :type: str
-        """
-
-        self._password = password
 
     @property
     def rm_tag(self):
@@ -831,6 +803,27 @@ class UpdateItem(object):
         self._secure_access_web_browsing = secure_access_web_browsing
 
     @property
+    def secure_access_web_proxy(self):
+        """Gets the secure_access_web_proxy of this UpdateItem.  # noqa: E501
+
+
+        :return: The secure_access_web_proxy of this UpdateItem.  # noqa: E501
+        :rtype: bool
+        """
+        return self._secure_access_web_proxy
+
+    @secure_access_web_proxy.setter
+    def secure_access_web_proxy(self, secure_access_web_proxy):
+        """Sets the secure_access_web_proxy of this UpdateItem.
+
+
+        :param secure_access_web_proxy: The secure_access_web_proxy of this UpdateItem.  # noqa: E501
+        :type: bool
+        """
+
+        self._secure_access_web_proxy = secure_access_web_proxy
+
+    @property
     def token(self):
         """Gets the token of this UpdateItem.  # noqa: E501
 
@@ -875,29 +868,6 @@ class UpdateItem(object):
         """
 
         self._uid_token = uid_token
-
-    @property
-    def username(self):
-        """Gets the username of this UpdateItem.  # noqa: E501
-
-        Required only when the authentication process requires a username and password  # noqa: E501
-
-        :return: The username of this UpdateItem.  # noqa: E501
-        :rtype: str
-        """
-        return self._username
-
-    @username.setter
-    def username(self, username):
-        """Sets the username of this UpdateItem.
-
-        Required only when the authentication process requires a username and password  # noqa: E501
-
-        :param username: The username of this UpdateItem.  # noqa: E501
-        :type: str
-        """
-
-        self._username = username
 
     def to_dict(self):
         """Returns the model properties as a dict"""

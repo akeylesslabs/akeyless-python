@@ -39,13 +39,12 @@ class CreateAuthMethodSAML(object):
         'bound_ips': 'list[str]',
         'force_sub_claims': 'bool',
         'idp_metadata_url': 'str',
+        'idp_metadata_xml_data': 'str',
         'jwt_ttl': 'int',
         'name': 'str',
-        'password': 'str',
         'token': 'str',
         'uid_token': 'str',
-        'unique_identifier': 'str',
-        'username': 'str'
+        'unique_identifier': 'str'
     }
 
     attribute_map = {
@@ -54,16 +53,15 @@ class CreateAuthMethodSAML(object):
         'bound_ips': 'bound-ips',
         'force_sub_claims': 'force-sub-claims',
         'idp_metadata_url': 'idp-metadata-url',
+        'idp_metadata_xml_data': 'idp-metadata-xml-data',
         'jwt_ttl': 'jwt-ttl',
         'name': 'name',
-        'password': 'password',
         'token': 'token',
         'uid_token': 'uid-token',
-        'unique_identifier': 'unique-identifier',
-        'username': 'username'
+        'unique_identifier': 'unique-identifier'
     }
 
-    def __init__(self, access_expires=0, allowed_redirect_uri=None, bound_ips=None, force_sub_claims=None, idp_metadata_url=None, jwt_ttl=0, name=None, password=None, token=None, uid_token=None, unique_identifier=None, username=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, access_expires=0, allowed_redirect_uri=None, bound_ips=None, force_sub_claims=None, idp_metadata_url=None, idp_metadata_xml_data=None, jwt_ttl=0, name=None, token=None, uid_token=None, unique_identifier=None, local_vars_configuration=None):  # noqa: E501
         """CreateAuthMethodSAML - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -74,13 +72,12 @@ class CreateAuthMethodSAML(object):
         self._bound_ips = None
         self._force_sub_claims = None
         self._idp_metadata_url = None
+        self._idp_metadata_xml_data = None
         self._jwt_ttl = None
         self._name = None
-        self._password = None
         self._token = None
         self._uid_token = None
         self._unique_identifier = None
-        self._username = None
         self.discriminator = None
 
         if access_expires is not None:
@@ -93,18 +90,16 @@ class CreateAuthMethodSAML(object):
             self.force_sub_claims = force_sub_claims
         if idp_metadata_url is not None:
             self.idp_metadata_url = idp_metadata_url
+        if idp_metadata_xml_data is not None:
+            self.idp_metadata_xml_data = idp_metadata_xml_data
         if jwt_ttl is not None:
             self.jwt_ttl = jwt_ttl
         self.name = name
-        if password is not None:
-            self.password = password
         if token is not None:
             self.token = token
         if uid_token is not None:
             self.uid_token = uid_token
         self.unique_identifier = unique_identifier
-        if username is not None:
-            self.username = username
 
     @property
     def access_expires(self):
@@ -222,6 +217,29 @@ class CreateAuthMethodSAML(object):
         self._idp_metadata_url = idp_metadata_url
 
     @property
+    def idp_metadata_xml_data(self):
+        """Gets the idp_metadata_xml_data of this CreateAuthMethodSAML.  # noqa: E501
+
+        IDP metadata xml data  # noqa: E501
+
+        :return: The idp_metadata_xml_data of this CreateAuthMethodSAML.  # noqa: E501
+        :rtype: str
+        """
+        return self._idp_metadata_xml_data
+
+    @idp_metadata_xml_data.setter
+    def idp_metadata_xml_data(self, idp_metadata_xml_data):
+        """Sets the idp_metadata_xml_data of this CreateAuthMethodSAML.
+
+        IDP metadata xml data  # noqa: E501
+
+        :param idp_metadata_xml_data: The idp_metadata_xml_data of this CreateAuthMethodSAML.  # noqa: E501
+        :type: str
+        """
+
+        self._idp_metadata_xml_data = idp_metadata_xml_data
+
+    @property
     def jwt_ttl(self):
         """Gets the jwt_ttl of this CreateAuthMethodSAML.  # noqa: E501
 
@@ -268,29 +286,6 @@ class CreateAuthMethodSAML(object):
             raise ValueError("Invalid value for `name`, must not be `None`")  # noqa: E501
 
         self._name = name
-
-    @property
-    def password(self):
-        """Gets the password of this CreateAuthMethodSAML.  # noqa: E501
-
-        Required only when the authentication process requires a username and password  # noqa: E501
-
-        :return: The password of this CreateAuthMethodSAML.  # noqa: E501
-        :rtype: str
-        """
-        return self._password
-
-    @password.setter
-    def password(self, password):
-        """Sets the password of this CreateAuthMethodSAML.
-
-        Required only when the authentication process requires a username and password  # noqa: E501
-
-        :param password: The password of this CreateAuthMethodSAML.  # noqa: E501
-        :type: str
-        """
-
-        self._password = password
 
     @property
     def token(self):
@@ -362,29 +357,6 @@ class CreateAuthMethodSAML(object):
             raise ValueError("Invalid value for `unique_identifier`, must not be `None`")  # noqa: E501
 
         self._unique_identifier = unique_identifier
-
-    @property
-    def username(self):
-        """Gets the username of this CreateAuthMethodSAML.  # noqa: E501
-
-        Required only when the authentication process requires a username and password  # noqa: E501
-
-        :return: The username of this CreateAuthMethodSAML.  # noqa: E501
-        :rtype: str
-        """
-        return self._username
-
-    @username.setter
-    def username(self, username):
-        """Sets the username of this CreateAuthMethodSAML.
-
-        Required only when the authentication process requires a username and password  # noqa: E501
-
-        :param username: The username of this CreateAuthMethodSAML.  # noqa: E501
-        :type: str
-        """
-
-        self._username = username
 
     def to_dict(self):
         """Returns the model properties as a dict"""

@@ -45,12 +45,10 @@ class CreateAuthMethodGCP(object):
         'force_sub_claims': 'bool',
         'jwt_ttl': 'int',
         'name': 'str',
-        'password': 'str',
         'service_account_creds_data': 'str',
         'token': 'str',
         'type': 'str',
-        'uid_token': 'str',
-        'username': 'str'
+        'uid_token': 'str'
     }
 
     attribute_map = {
@@ -65,15 +63,13 @@ class CreateAuthMethodGCP(object):
         'force_sub_claims': 'force-sub-claims',
         'jwt_ttl': 'jwt-ttl',
         'name': 'name',
-        'password': 'password',
         'service_account_creds_data': 'service-account-creds-data',
         'token': 'token',
         'type': 'type',
-        'uid_token': 'uid-token',
-        'username': 'username'
+        'uid_token': 'uid-token'
     }
 
-    def __init__(self, access_expires=0, audience='akeyless.io', bound_ips=None, bound_labels=None, bound_projects=None, bound_regions=None, bound_service_accounts=None, bound_zones=None, force_sub_claims=None, jwt_ttl=0, name=None, password=None, service_account_creds_data=None, token=None, type=None, uid_token=None, username=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, access_expires=0, audience='akeyless.io', bound_ips=None, bound_labels=None, bound_projects=None, bound_regions=None, bound_service_accounts=None, bound_zones=None, force_sub_claims=None, jwt_ttl=0, name=None, service_account_creds_data=None, token=None, type=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """CreateAuthMethodGCP - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -90,12 +86,10 @@ class CreateAuthMethodGCP(object):
         self._force_sub_claims = None
         self._jwt_ttl = None
         self._name = None
-        self._password = None
         self._service_account_creds_data = None
         self._token = None
         self._type = None
         self._uid_token = None
-        self._username = None
         self.discriminator = None
 
         if access_expires is not None:
@@ -118,8 +112,6 @@ class CreateAuthMethodGCP(object):
         if jwt_ttl is not None:
             self.jwt_ttl = jwt_ttl
         self.name = name
-        if password is not None:
-            self.password = password
         if service_account_creds_data is not None:
             self.service_account_creds_data = service_account_creds_data
         if token is not None:
@@ -127,8 +119,6 @@ class CreateAuthMethodGCP(object):
         self.type = type
         if uid_token is not None:
             self.uid_token = uid_token
-        if username is not None:
-            self.username = username
 
     @property
     def access_expires(self):
@@ -388,29 +378,6 @@ class CreateAuthMethodGCP(object):
         self._name = name
 
     @property
-    def password(self):
-        """Gets the password of this CreateAuthMethodGCP.  # noqa: E501
-
-        Required only when the authentication process requires a username and password  # noqa: E501
-
-        :return: The password of this CreateAuthMethodGCP.  # noqa: E501
-        :rtype: str
-        """
-        return self._password
-
-    @password.setter
-    def password(self, password):
-        """Sets the password of this CreateAuthMethodGCP.
-
-        Required only when the authentication process requires a username and password  # noqa: E501
-
-        :param password: The password of this CreateAuthMethodGCP.  # noqa: E501
-        :type: str
-        """
-
-        self._password = password
-
-    @property
     def service_account_creds_data(self):
         """Gets the service_account_creds_data of this CreateAuthMethodGCP.  # noqa: E501
 
@@ -503,29 +470,6 @@ class CreateAuthMethodGCP(object):
         """
 
         self._uid_token = uid_token
-
-    @property
-    def username(self):
-        """Gets the username of this CreateAuthMethodGCP.  # noqa: E501
-
-        Required only when the authentication process requires a username and password  # noqa: E501
-
-        :return: The username of this CreateAuthMethodGCP.  # noqa: E501
-        :rtype: str
-        """
-        return self._username
-
-    @username.setter
-    def username(self, username):
-        """Sets the username of this CreateAuthMethodGCP.
-
-        Required only when the authentication process requires a username and password  # noqa: E501
-
-        :param username: The username of this CreateAuthMethodGCP.  # noqa: E501
-        :type: str
-        """
-
-        self._username = username
 
     def to_dict(self):
         """Returns the model properties as a dict"""

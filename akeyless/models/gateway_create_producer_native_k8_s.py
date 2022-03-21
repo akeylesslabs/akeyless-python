@@ -40,7 +40,6 @@ class GatewayCreateProducerNativeK8S(object):
         'k8s_namespace': 'str',
         'k8s_service_account': 'str',
         'name': 'str',
-        'password': 'str',
         'producer_encryption_key_name': 'str',
         'secure_access_allow_port_forwading': 'bool',
         'secure_access_bastion_issuer': 'str',
@@ -49,12 +48,12 @@ class GatewayCreateProducerNativeK8S(object):
         'secure_access_enable': 'str',
         'secure_access_web': 'bool',
         'secure_access_web_browsing': 'bool',
+        'secure_access_web_proxy': 'bool',
         'tags': 'list[str]',
         'target_name': 'str',
         'token': 'str',
         'uid_token': 'str',
-        'user_ttl': 'str',
-        'username': 'str'
+        'user_ttl': 'str'
     }
 
     attribute_map = {
@@ -64,7 +63,6 @@ class GatewayCreateProducerNativeK8S(object):
         'k8s_namespace': 'k8s-namespace',
         'k8s_service_account': 'k8s-service-account',
         'name': 'name',
-        'password': 'password',
         'producer_encryption_key_name': 'producer-encryption-key-name',
         'secure_access_allow_port_forwading': 'secure-access-allow-port-forwading',
         'secure_access_bastion_issuer': 'secure-access-bastion-issuer',
@@ -73,15 +71,15 @@ class GatewayCreateProducerNativeK8S(object):
         'secure_access_enable': 'secure-access-enable',
         'secure_access_web': 'secure-access-web',
         'secure_access_web_browsing': 'secure-access-web-browsing',
+        'secure_access_web_proxy': 'secure-access-web-proxy',
         'tags': 'tags',
         'target_name': 'target-name',
         'token': 'token',
         'uid_token': 'uid-token',
-        'user_ttl': 'user-ttl',
-        'username': 'username'
+        'user_ttl': 'user-ttl'
     }
 
-    def __init__(self, k8s_cluster_ca_cert=None, k8s_cluster_endpoint=None, k8s_cluster_token=None, k8s_namespace=None, k8s_service_account=None, name=None, password=None, producer_encryption_key_name=None, secure_access_allow_port_forwading=None, secure_access_bastion_issuer=None, secure_access_cluster_endpoint=None, secure_access_dashboard_url=None, secure_access_enable=None, secure_access_web=None, secure_access_web_browsing=None, tags=None, target_name=None, token=None, uid_token=None, user_ttl='60m', username=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, k8s_cluster_ca_cert=None, k8s_cluster_endpoint=None, k8s_cluster_token=None, k8s_namespace=None, k8s_service_account=None, name=None, producer_encryption_key_name=None, secure_access_allow_port_forwading=None, secure_access_bastion_issuer=None, secure_access_cluster_endpoint=None, secure_access_dashboard_url=None, secure_access_enable=None, secure_access_web=None, secure_access_web_browsing=None, secure_access_web_proxy=None, tags=None, target_name=None, token=None, uid_token=None, user_ttl='60m', local_vars_configuration=None):  # noqa: E501
         """GatewayCreateProducerNativeK8S - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -93,7 +91,6 @@ class GatewayCreateProducerNativeK8S(object):
         self._k8s_namespace = None
         self._k8s_service_account = None
         self._name = None
-        self._password = None
         self._producer_encryption_key_name = None
         self._secure_access_allow_port_forwading = None
         self._secure_access_bastion_issuer = None
@@ -102,12 +99,12 @@ class GatewayCreateProducerNativeK8S(object):
         self._secure_access_enable = None
         self._secure_access_web = None
         self._secure_access_web_browsing = None
+        self._secure_access_web_proxy = None
         self._tags = None
         self._target_name = None
         self._token = None
         self._uid_token = None
         self._user_ttl = None
-        self._username = None
         self.discriminator = None
 
         if k8s_cluster_ca_cert is not None:
@@ -121,8 +118,6 @@ class GatewayCreateProducerNativeK8S(object):
         if k8s_service_account is not None:
             self.k8s_service_account = k8s_service_account
         self.name = name
-        if password is not None:
-            self.password = password
         if producer_encryption_key_name is not None:
             self.producer_encryption_key_name = producer_encryption_key_name
         if secure_access_allow_port_forwading is not None:
@@ -139,6 +134,8 @@ class GatewayCreateProducerNativeK8S(object):
             self.secure_access_web = secure_access_web
         if secure_access_web_browsing is not None:
             self.secure_access_web_browsing = secure_access_web_browsing
+        if secure_access_web_proxy is not None:
+            self.secure_access_web_proxy = secure_access_web_proxy
         if tags is not None:
             self.tags = tags
         if target_name is not None:
@@ -149,8 +146,6 @@ class GatewayCreateProducerNativeK8S(object):
             self.uid_token = uid_token
         if user_ttl is not None:
             self.user_ttl = user_ttl
-        if username is not None:
-            self.username = username
 
     @property
     def k8s_cluster_ca_cert(self):
@@ -291,29 +286,6 @@ class GatewayCreateProducerNativeK8S(object):
             raise ValueError("Invalid value for `name`, must not be `None`")  # noqa: E501
 
         self._name = name
-
-    @property
-    def password(self):
-        """Gets the password of this GatewayCreateProducerNativeK8S.  # noqa: E501
-
-        Required only when the authentication process requires a username and password  # noqa: E501
-
-        :return: The password of this GatewayCreateProducerNativeK8S.  # noqa: E501
-        :rtype: str
-        """
-        return self._password
-
-    @password.setter
-    def password(self, password):
-        """Sets the password of this GatewayCreateProducerNativeK8S.
-
-        Required only when the authentication process requires a username and password  # noqa: E501
-
-        :param password: The password of this GatewayCreateProducerNativeK8S.  # noqa: E501
-        :type: str
-        """
-
-        self._password = password
 
     @property
     def producer_encryption_key_name(self):
@@ -486,6 +458,27 @@ class GatewayCreateProducerNativeK8S(object):
         self._secure_access_web_browsing = secure_access_web_browsing
 
     @property
+    def secure_access_web_proxy(self):
+        """Gets the secure_access_web_proxy of this GatewayCreateProducerNativeK8S.  # noqa: E501
+
+
+        :return: The secure_access_web_proxy of this GatewayCreateProducerNativeK8S.  # noqa: E501
+        :rtype: bool
+        """
+        return self._secure_access_web_proxy
+
+    @secure_access_web_proxy.setter
+    def secure_access_web_proxy(self, secure_access_web_proxy):
+        """Sets the secure_access_web_proxy of this GatewayCreateProducerNativeK8S.
+
+
+        :param secure_access_web_proxy: The secure_access_web_proxy of this GatewayCreateProducerNativeK8S.  # noqa: E501
+        :type: bool
+        """
+
+        self._secure_access_web_proxy = secure_access_web_proxy
+
+    @property
     def tags(self):
         """Gets the tags of this GatewayCreateProducerNativeK8S.  # noqa: E501
 
@@ -599,29 +592,6 @@ class GatewayCreateProducerNativeK8S(object):
         """
 
         self._user_ttl = user_ttl
-
-    @property
-    def username(self):
-        """Gets the username of this GatewayCreateProducerNativeK8S.  # noqa: E501
-
-        Required only when the authentication process requires a username and password  # noqa: E501
-
-        :return: The username of this GatewayCreateProducerNativeK8S.  # noqa: E501
-        :rtype: str
-        """
-        return self._username
-
-    @username.setter
-    def username(self, username):
-        """Sets the username of this GatewayCreateProducerNativeK8S.
-
-        Required only when the authentication process requires a username and password  # noqa: E501
-
-        :param username: The username of this GatewayCreateProducerNativeK8S.  # noqa: E501
-        :type: str
-        """
-
-        self._username = username
 
     def to_dict(self):
         """Returns the model properties as a dict"""

@@ -40,7 +40,6 @@ class UpdateSSHCertIssuer(object):
         'metadata': 'str',
         'name': 'str',
         'new_name': 'str',
-        'password': 'str',
         'principals': 'str',
         'rm_tag': 'list[str]',
         'secure_access_bastion_api': 'str',
@@ -52,8 +51,7 @@ class UpdateSSHCertIssuer(object):
         'signer_key_name': 'str',
         'token': 'str',
         'ttl': 'int',
-        'uid_token': 'str',
-        'username': 'str'
+        'uid_token': 'str'
     }
 
     attribute_map = {
@@ -63,7 +61,6 @@ class UpdateSSHCertIssuer(object):
         'metadata': 'metadata',
         'name': 'name',
         'new_name': 'new-name',
-        'password': 'password',
         'principals': 'principals',
         'rm_tag': 'rm-tag',
         'secure_access_bastion_api': 'secure-access-bastion-api',
@@ -75,11 +72,10 @@ class UpdateSSHCertIssuer(object):
         'signer_key_name': 'signer-key-name',
         'token': 'token',
         'ttl': 'ttl',
-        'uid_token': 'uid-token',
-        'username': 'username'
+        'uid_token': 'uid-token'
     }
 
-    def __init__(self, add_tag=None, allowed_users=None, extensions=None, metadata=None, name=None, new_name=None, password=None, principals=None, rm_tag=None, secure_access_bastion_api=None, secure_access_bastion_ssh=None, secure_access_enable=None, secure_access_host=None, secure_access_ssh_creds_user=None, secure_access_use_internal_bastion=None, signer_key_name=None, token=None, ttl=None, uid_token=None, username=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, add_tag=None, allowed_users=None, extensions=None, metadata=None, name=None, new_name=None, principals=None, rm_tag=None, secure_access_bastion_api=None, secure_access_bastion_ssh=None, secure_access_enable=None, secure_access_host=None, secure_access_ssh_creds_user=None, secure_access_use_internal_bastion=None, signer_key_name=None, token=None, ttl=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """UpdateSSHCertIssuer - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -91,7 +87,6 @@ class UpdateSSHCertIssuer(object):
         self._metadata = None
         self._name = None
         self._new_name = None
-        self._password = None
         self._principals = None
         self._rm_tag = None
         self._secure_access_bastion_api = None
@@ -104,7 +99,6 @@ class UpdateSSHCertIssuer(object):
         self._token = None
         self._ttl = None
         self._uid_token = None
-        self._username = None
         self.discriminator = None
 
         if add_tag is not None:
@@ -117,8 +111,6 @@ class UpdateSSHCertIssuer(object):
         self.name = name
         if new_name is not None:
             self.new_name = new_name
-        if password is not None:
-            self.password = password
         if principals is not None:
             self.principals = principals
         if rm_tag is not None:
@@ -141,8 +133,6 @@ class UpdateSSHCertIssuer(object):
         self.ttl = ttl
         if uid_token is not None:
             self.uid_token = uid_token
-        if username is not None:
-            self.username = username
 
     @property
     def add_tag(self):
@@ -285,29 +275,6 @@ class UpdateSSHCertIssuer(object):
         """
 
         self._new_name = new_name
-
-    @property
-    def password(self):
-        """Gets the password of this UpdateSSHCertIssuer.  # noqa: E501
-
-        Required only when the authentication process requires a username and password  # noqa: E501
-
-        :return: The password of this UpdateSSHCertIssuer.  # noqa: E501
-        :rtype: str
-        """
-        return self._password
-
-    @password.setter
-    def password(self, password):
-        """Sets the password of this UpdateSSHCertIssuer.
-
-        Required only when the authentication process requires a username and password  # noqa: E501
-
-        :param password: The password of this UpdateSSHCertIssuer.  # noqa: E501
-        :type: str
-        """
-
-        self._password = password
 
     @property
     def principals(self):
@@ -576,29 +543,6 @@ class UpdateSSHCertIssuer(object):
         """
 
         self._uid_token = uid_token
-
-    @property
-    def username(self):
-        """Gets the username of this UpdateSSHCertIssuer.  # noqa: E501
-
-        Required only when the authentication process requires a username and password  # noqa: E501
-
-        :return: The username of this UpdateSSHCertIssuer.  # noqa: E501
-        :rtype: str
-        """
-        return self._username
-
-    @username.setter
-    def username(self, username):
-        """Sets the username of this UpdateSSHCertIssuer.
-
-        Required only when the authentication process requires a username and password  # noqa: E501
-
-        :param username: The username of this UpdateSSHCertIssuer.  # noqa: E501
-        :type: str
-        """
-
-        self._username = username
 
     def to_dict(self):
         """Returns the model properties as a dict"""

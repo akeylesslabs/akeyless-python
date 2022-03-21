@@ -38,14 +38,13 @@ class UpdateGithubTarget(object):
         'github_app_id': 'int',
         'github_app_private_key': 'str',
         'github_base_url': 'str',
+        'keep_prev_version': 'str',
         'key': 'str',
         'name': 'str',
         'new_name': 'str',
-        'password': 'str',
         'token': 'str',
         'uid_token': 'str',
-        'update_version': 'bool',
-        'username': 'str'
+        'update_version': 'bool'
     }
 
     attribute_map = {
@@ -53,17 +52,16 @@ class UpdateGithubTarget(object):
         'github_app_id': 'github-app-id',
         'github_app_private_key': 'github-app-private-key',
         'github_base_url': 'github-base-url',
+        'keep_prev_version': 'keep-prev-version',
         'key': 'key',
         'name': 'name',
         'new_name': 'new-name',
-        'password': 'password',
         'token': 'token',
         'uid_token': 'uid-token',
-        'update_version': 'update-version',
-        'username': 'username'
+        'update_version': 'update-version'
     }
 
-    def __init__(self, comment=None, github_app_id=None, github_app_private_key=None, github_base_url=None, key=None, name=None, new_name=None, password=None, token=None, uid_token=None, update_version=False, username=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, comment=None, github_app_id=None, github_app_private_key=None, github_base_url=None, keep_prev_version=None, key=None, name=None, new_name=None, token=None, uid_token=None, update_version=None, local_vars_configuration=None):  # noqa: E501
         """UpdateGithubTarget - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -73,14 +71,13 @@ class UpdateGithubTarget(object):
         self._github_app_id = None
         self._github_app_private_key = None
         self._github_base_url = None
+        self._keep_prev_version = None
         self._key = None
         self._name = None
         self._new_name = None
-        self._password = None
         self._token = None
         self._uid_token = None
         self._update_version = None
-        self._username = None
         self.discriminator = None
 
         if comment is not None:
@@ -91,21 +88,19 @@ class UpdateGithubTarget(object):
             self.github_app_private_key = github_app_private_key
         if github_base_url is not None:
             self.github_base_url = github_base_url
+        if keep_prev_version is not None:
+            self.keep_prev_version = keep_prev_version
         if key is not None:
             self.key = key
         self.name = name
         if new_name is not None:
             self.new_name = new_name
-        if password is not None:
-            self.password = password
         if token is not None:
             self.token = token
         if uid_token is not None:
             self.uid_token = uid_token
         if update_version is not None:
             self.update_version = update_version
-        if username is not None:
-            self.username = username
 
     @property
     def comment(self):
@@ -200,6 +195,27 @@ class UpdateGithubTarget(object):
         self._github_base_url = github_base_url
 
     @property
+    def keep_prev_version(self):
+        """Gets the keep_prev_version of this UpdateGithubTarget.  # noqa: E501
+
+
+        :return: The keep_prev_version of this UpdateGithubTarget.  # noqa: E501
+        :rtype: str
+        """
+        return self._keep_prev_version
+
+    @keep_prev_version.setter
+    def keep_prev_version(self, keep_prev_version):
+        """Sets the keep_prev_version of this UpdateGithubTarget.
+
+
+        :param keep_prev_version: The keep_prev_version of this UpdateGithubTarget.  # noqa: E501
+        :type: str
+        """
+
+        self._keep_prev_version = keep_prev_version
+
+    @property
     def key(self):
         """Gets the key of this UpdateGithubTarget.  # noqa: E501
 
@@ -271,29 +287,6 @@ class UpdateGithubTarget(object):
         self._new_name = new_name
 
     @property
-    def password(self):
-        """Gets the password of this UpdateGithubTarget.  # noqa: E501
-
-        Required only when the authentication process requires a username and password  # noqa: E501
-
-        :return: The password of this UpdateGithubTarget.  # noqa: E501
-        :rtype: str
-        """
-        return self._password
-
-    @password.setter
-    def password(self, password):
-        """Sets the password of this UpdateGithubTarget.
-
-        Required only when the authentication process requires a username and password  # noqa: E501
-
-        :param password: The password of this UpdateGithubTarget.  # noqa: E501
-        :type: str
-        """
-
-        self._password = password
-
-    @property
     def token(self):
         """Gets the token of this UpdateGithubTarget.  # noqa: E501
 
@@ -343,7 +336,7 @@ class UpdateGithubTarget(object):
     def update_version(self):
         """Gets the update_version of this UpdateGithubTarget.  # noqa: E501
 
-        Create new version for the target  # noqa: E501
+        Deprecated  # noqa: E501
 
         :return: The update_version of this UpdateGithubTarget.  # noqa: E501
         :rtype: bool
@@ -354,36 +347,13 @@ class UpdateGithubTarget(object):
     def update_version(self, update_version):
         """Sets the update_version of this UpdateGithubTarget.
 
-        Create new version for the target  # noqa: E501
+        Deprecated  # noqa: E501
 
         :param update_version: The update_version of this UpdateGithubTarget.  # noqa: E501
         :type: bool
         """
 
         self._update_version = update_version
-
-    @property
-    def username(self):
-        """Gets the username of this UpdateGithubTarget.  # noqa: E501
-
-        Required only when the authentication process requires a username and password  # noqa: E501
-
-        :return: The username of this UpdateGithubTarget.  # noqa: E501
-        :rtype: str
-        """
-        return self._username
-
-    @username.setter
-    def username(self, username):
-        """Sets the username of this UpdateGithubTarget.
-
-        Required only when the authentication process requires a username and password  # noqa: E501
-
-        :param username: The username of this UpdateGithubTarget.  # noqa: E501
-        :type: str
-        """
-
-        self._username = username
 
     def to_dict(self):
         """Returns the model properties as a dict"""

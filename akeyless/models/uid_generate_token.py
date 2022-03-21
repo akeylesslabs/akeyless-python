@@ -35,42 +35,32 @@ class UidGenerateToken(object):
     """
     openapi_types = {
         'auth_method_name': 'str',
-        'password': 'str',
         'token': 'str',
-        'uid_token': 'str',
-        'username': 'str'
+        'uid_token': 'str'
     }
 
     attribute_map = {
         'auth_method_name': 'auth-method-name',
-        'password': 'password',
         'token': 'token',
-        'uid_token': 'uid-token',
-        'username': 'username'
+        'uid_token': 'uid-token'
     }
 
-    def __init__(self, auth_method_name=None, password=None, token=None, uid_token=None, username=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, auth_method_name=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """UidGenerateToken - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._auth_method_name = None
-        self._password = None
         self._token = None
         self._uid_token = None
-        self._username = None
         self.discriminator = None
 
         self.auth_method_name = auth_method_name
-        if password is not None:
-            self.password = password
         if token is not None:
             self.token = token
         if uid_token is not None:
             self.uid_token = uid_token
-        if username is not None:
-            self.username = username
 
     @property
     def auth_method_name(self):
@@ -96,29 +86,6 @@ class UidGenerateToken(object):
             raise ValueError("Invalid value for `auth_method_name`, must not be `None`")  # noqa: E501
 
         self._auth_method_name = auth_method_name
-
-    @property
-    def password(self):
-        """Gets the password of this UidGenerateToken.  # noqa: E501
-
-        Required only when the authentication process requires a username and password  # noqa: E501
-
-        :return: The password of this UidGenerateToken.  # noqa: E501
-        :rtype: str
-        """
-        return self._password
-
-    @password.setter
-    def password(self, password):
-        """Sets the password of this UidGenerateToken.
-
-        Required only when the authentication process requires a username and password  # noqa: E501
-
-        :param password: The password of this UidGenerateToken.  # noqa: E501
-        :type: str
-        """
-
-        self._password = password
 
     @property
     def token(self):
@@ -165,29 +132,6 @@ class UidGenerateToken(object):
         """
 
         self._uid_token = uid_token
-
-    @property
-    def username(self):
-        """Gets the username of this UidGenerateToken.  # noqa: E501
-
-        Required only when the authentication process requires a username and password  # noqa: E501
-
-        :return: The username of this UidGenerateToken.  # noqa: E501
-        :rtype: str
-        """
-        return self._username
-
-    @username.setter
-    def username(self, username):
-        """Sets the username of this UidGenerateToken.
-
-        Required only when the authentication process requires a username and password  # noqa: E501
-
-        :param username: The username of this UidGenerateToken.  # noqa: E501
-        :type: str
-        """
-
-        self._username = username
 
     def to_dict(self):
         """Returns the model properties as a dict"""

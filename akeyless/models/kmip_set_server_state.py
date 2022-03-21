@@ -34,66 +34,33 @@ class KmipSetServerState(object):
                             and the value is json key in definition.
     """
     openapi_types = {
-        'password': 'str',
         'state': 'str',
         'token': 'str',
-        'uid_token': 'str',
-        'username': 'str'
+        'uid_token': 'str'
     }
 
     attribute_map = {
-        'password': 'password',
         'state': 'state',
         'token': 'token',
-        'uid_token': 'uid-token',
-        'username': 'username'
+        'uid_token': 'uid-token'
     }
 
-    def __init__(self, password=None, state=None, token=None, uid_token=None, username=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, state=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """KmipSetServerState - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
-        self._password = None
         self._state = None
         self._token = None
         self._uid_token = None
-        self._username = None
         self.discriminator = None
 
-        if password is not None:
-            self.password = password
         self.state = state
         if token is not None:
             self.token = token
         if uid_token is not None:
             self.uid_token = uid_token
-        if username is not None:
-            self.username = username
-
-    @property
-    def password(self):
-        """Gets the password of this KmipSetServerState.  # noqa: E501
-
-        Required only when the authentication process requires a username and password  # noqa: E501
-
-        :return: The password of this KmipSetServerState.  # noqa: E501
-        :rtype: str
-        """
-        return self._password
-
-    @password.setter
-    def password(self, password):
-        """Sets the password of this KmipSetServerState.
-
-        Required only when the authentication process requires a username and password  # noqa: E501
-
-        :param password: The password of this KmipSetServerState.  # noqa: E501
-        :type: str
-        """
-
-        self._password = password
 
     @property
     def state(self):
@@ -163,29 +130,6 @@ class KmipSetServerState(object):
         """
 
         self._uid_token = uid_token
-
-    @property
-    def username(self):
-        """Gets the username of this KmipSetServerState.  # noqa: E501
-
-        Required only when the authentication process requires a username and password  # noqa: E501
-
-        :return: The username of this KmipSetServerState.  # noqa: E501
-        :rtype: str
-        """
-        return self._username
-
-    @username.setter
-    def username(self, username):
-        """Sets the username of this KmipSetServerState.
-
-        Required only when the authentication process requires a username and password  # noqa: E501
-
-        :param username: The username of this KmipSetServerState.  # noqa: E501
-        :type: str
-        """
-
-        self._username = username
 
     def to_dict(self):
         """Returns the model properties as a dict"""

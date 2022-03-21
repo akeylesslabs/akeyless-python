@@ -39,13 +39,11 @@ class CreateAWSTarget(object):
         'comment': 'str',
         'key': 'str',
         'name': 'str',
-        'password': 'str',
         'region': 'str',
         'session_token': 'str',
         'token': 'str',
         'uid_token': 'str',
-        'use_gw_cloud_identity': 'bool',
-        'username': 'str'
+        'use_gw_cloud_identity': 'bool'
     }
 
     attribute_map = {
@@ -54,16 +52,14 @@ class CreateAWSTarget(object):
         'comment': 'comment',
         'key': 'key',
         'name': 'name',
-        'password': 'password',
         'region': 'region',
         'session_token': 'session-token',
         'token': 'token',
         'uid_token': 'uid-token',
-        'use_gw_cloud_identity': 'use-gw-cloud-identity',
-        'username': 'username'
+        'use_gw_cloud_identity': 'use-gw-cloud-identity'
     }
 
-    def __init__(self, access_key=None, access_key_id=None, comment=None, key=None, name=None, password=None, region=None, session_token=None, token=None, uid_token=None, use_gw_cloud_identity=None, username=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, access_key=None, access_key_id=None, comment=None, key=None, name=None, region=None, session_token=None, token=None, uid_token=None, use_gw_cloud_identity=None, local_vars_configuration=None):  # noqa: E501
         """CreateAWSTarget - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -74,13 +70,11 @@ class CreateAWSTarget(object):
         self._comment = None
         self._key = None
         self._name = None
-        self._password = None
         self._region = None
         self._session_token = None
         self._token = None
         self._uid_token = None
         self._use_gw_cloud_identity = None
-        self._username = None
         self.discriminator = None
 
         if access_key is not None:
@@ -92,8 +86,6 @@ class CreateAWSTarget(object):
         if key is not None:
             self.key = key
         self.name = name
-        if password is not None:
-            self.password = password
         if region is not None:
             self.region = region
         if session_token is not None:
@@ -104,8 +96,6 @@ class CreateAWSTarget(object):
             self.uid_token = uid_token
         if use_gw_cloud_identity is not None:
             self.use_gw_cloud_identity = use_gw_cloud_identity
-        if username is not None:
-            self.username = username
 
     @property
     def access_key(self):
@@ -221,29 +211,6 @@ class CreateAWSTarget(object):
         self._name = name
 
     @property
-    def password(self):
-        """Gets the password of this CreateAWSTarget.  # noqa: E501
-
-        Required only when the authentication process requires a username and password  # noqa: E501
-
-        :return: The password of this CreateAWSTarget.  # noqa: E501
-        :rtype: str
-        """
-        return self._password
-
-    @password.setter
-    def password(self, password):
-        """Sets the password of this CreateAWSTarget.
-
-        Required only when the authentication process requires a username and password  # noqa: E501
-
-        :param password: The password of this CreateAWSTarget.  # noqa: E501
-        :type: str
-        """
-
-        self._password = password
-
-    @property
     def region(self):
         """Gets the region of this CreateAWSTarget.  # noqa: E501
 
@@ -351,29 +318,6 @@ class CreateAWSTarget(object):
         """
 
         self._use_gw_cloud_identity = use_gw_cloud_identity
-
-    @property
-    def username(self):
-        """Gets the username of this CreateAWSTarget.  # noqa: E501
-
-        Required only when the authentication process requires a username and password  # noqa: E501
-
-        :return: The username of this CreateAWSTarget.  # noqa: E501
-        :rtype: str
-        """
-        return self._username
-
-    @username.setter
-    def username(self, username):
-        """Sets the username of this CreateAWSTarget.
-
-        Required only when the authentication process requires a username and password  # noqa: E501
-
-        :param username: The username of this CreateAWSTarget.  # noqa: E501
-        :type: str
-        """
-
-        self._username = username
 
     def to_dict(self):
         """Returns the model properties as a dict"""

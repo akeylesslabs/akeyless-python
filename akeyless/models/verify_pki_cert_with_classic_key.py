@@ -35,49 +35,39 @@ class VerifyPKICertWithClassicKey(object):
     """
     openapi_types = {
         'display_id': 'str',
-        'password': 'str',
         'pki_cert': 'str',
         'token': 'str',
         'uid_token': 'str',
-        'username': 'str',
         'version': 'int'
     }
 
     attribute_map = {
         'display_id': 'display-id',
-        'password': 'password',
         'pki_cert': 'pki-cert',
         'token': 'token',
         'uid_token': 'uid-token',
-        'username': 'username',
         'version': 'version'
     }
 
-    def __init__(self, display_id=None, password=None, pki_cert=None, token=None, uid_token=None, username=None, version=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, display_id=None, pki_cert=None, token=None, uid_token=None, version=None, local_vars_configuration=None):  # noqa: E501
         """VerifyPKICertWithClassicKey - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._display_id = None
-        self._password = None
         self._pki_cert = None
         self._token = None
         self._uid_token = None
-        self._username = None
         self._version = None
         self.discriminator = None
 
         self.display_id = display_id
-        if password is not None:
-            self.password = password
         self.pki_cert = pki_cert
         if token is not None:
             self.token = token
         if uid_token is not None:
             self.uid_token = uid_token
-        if username is not None:
-            self.username = username
         self.version = version
 
     @property
@@ -104,29 +94,6 @@ class VerifyPKICertWithClassicKey(object):
             raise ValueError("Invalid value for `display_id`, must not be `None`")  # noqa: E501
 
         self._display_id = display_id
-
-    @property
-    def password(self):
-        """Gets the password of this VerifyPKICertWithClassicKey.  # noqa: E501
-
-        Required only when the authentication process requires a username and password  # noqa: E501
-
-        :return: The password of this VerifyPKICertWithClassicKey.  # noqa: E501
-        :rtype: str
-        """
-        return self._password
-
-    @password.setter
-    def password(self, password):
-        """Sets the password of this VerifyPKICertWithClassicKey.
-
-        Required only when the authentication process requires a username and password  # noqa: E501
-
-        :param password: The password of this VerifyPKICertWithClassicKey.  # noqa: E501
-        :type: str
-        """
-
-        self._password = password
 
     @property
     def pki_cert(self):
@@ -198,29 +165,6 @@ class VerifyPKICertWithClassicKey(object):
         """
 
         self._uid_token = uid_token
-
-    @property
-    def username(self):
-        """Gets the username of this VerifyPKICertWithClassicKey.  # noqa: E501
-
-        Required only when the authentication process requires a username and password  # noqa: E501
-
-        :return: The username of this VerifyPKICertWithClassicKey.  # noqa: E501
-        :rtype: str
-        """
-        return self._username
-
-    @username.setter
-    def username(self, username):
-        """Sets the username of this VerifyPKICertWithClassicKey.
-
-        Required only when the authentication process requires a username and password  # noqa: E501
-
-        :param username: The username of this VerifyPKICertWithClassicKey.  # noqa: E501
-        :type: str
-        """
-
-        self._username = username
 
     @property
     def version(self):

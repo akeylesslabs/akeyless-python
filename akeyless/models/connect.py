@@ -34,6 +34,7 @@ class Connect(object):
                             and the value is json key in definition.
     """
     openapi_types = {
+        'helper': 'object',
         'rc_file_override': 'str',
         'bastion_ctrl_path': 'str',
         'bastion_ctrl_port': 'str',
@@ -42,16 +43,15 @@ class Connect(object):
         'cert_issuer_name': 'str',
         'identity_file': 'str',
         'name': 'str',
-        'password': 'str',
         'ssh_extra_args': 'str',
         'target': 'str',
         'token': 'str',
         'uid_token': 'str',
-        'username': 'str',
         'via_bastion': 'str'
     }
 
     attribute_map = {
+        'helper': 'Helper',
         'rc_file_override': 'RcFileOverride',
         'bastion_ctrl_path': 'bastion-ctrl-path',
         'bastion_ctrl_port': 'bastion-ctrl-port',
@@ -60,21 +60,20 @@ class Connect(object):
         'cert_issuer_name': 'cert-issuer-name',
         'identity_file': 'identity-file',
         'name': 'name',
-        'password': 'password',
         'ssh_extra_args': 'ssh-extra-args',
         'target': 'target',
         'token': 'token',
         'uid_token': 'uid-token',
-        'username': 'username',
         'via_bastion': 'via-bastion'
     }
 
-    def __init__(self, rc_file_override=None, bastion_ctrl_path=None, bastion_ctrl_port='9900', bastion_ctrl_proto='http', bastion_ctrl_subdomain=None, cert_issuer_name=None, identity_file=None, name=None, password=None, ssh_extra_args=None, target=None, token=None, uid_token=None, username=None, via_bastion=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, helper=None, rc_file_override=None, bastion_ctrl_path=None, bastion_ctrl_port='9900', bastion_ctrl_proto='http', bastion_ctrl_subdomain=None, cert_issuer_name=None, identity_file=None, name=None, ssh_extra_args=None, target=None, token=None, uid_token=None, via_bastion=None, local_vars_configuration=None):  # noqa: E501
         """Connect - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
+        self._helper = None
         self._rc_file_override = None
         self._bastion_ctrl_path = None
         self._bastion_ctrl_port = None
@@ -83,15 +82,15 @@ class Connect(object):
         self._cert_issuer_name = None
         self._identity_file = None
         self._name = None
-        self._password = None
         self._ssh_extra_args = None
         self._target = None
         self._token = None
         self._uid_token = None
-        self._username = None
         self._via_bastion = None
         self.discriminator = None
 
+        if helper is not None:
+            self.helper = helper
         if rc_file_override is not None:
             self.rc_file_override = rc_file_override
         if bastion_ctrl_path is not None:
@@ -108,8 +107,6 @@ class Connect(object):
             self.identity_file = identity_file
         if name is not None:
             self.name = name
-        if password is not None:
-            self.password = password
         if ssh_extra_args is not None:
             self.ssh_extra_args = ssh_extra_args
         if target is not None:
@@ -118,10 +115,29 @@ class Connect(object):
             self.token = token
         if uid_token is not None:
             self.uid_token = uid_token
-        if username is not None:
-            self.username = username
         if via_bastion is not None:
             self.via_bastion = via_bastion
+
+    @property
+    def helper(self):
+        """Gets the helper of this Connect.  # noqa: E501
+
+
+        :return: The helper of this Connect.  # noqa: E501
+        :rtype: object
+        """
+        return self._helper
+
+    @helper.setter
+    def helper(self, helper):
+        """Sets the helper of this Connect.
+
+
+        :param helper: The helper of this Connect.  # noqa: E501
+        :type: object
+        """
+
+        self._helper = helper
 
     @property
     def rc_file_override(self):
@@ -308,29 +324,6 @@ class Connect(object):
         self._name = name
 
     @property
-    def password(self):
-        """Gets the password of this Connect.  # noqa: E501
-
-        Required only when the authentication process requires a username and password  # noqa: E501
-
-        :return: The password of this Connect.  # noqa: E501
-        :rtype: str
-        """
-        return self._password
-
-    @password.setter
-    def password(self, password):
-        """Sets the password of this Connect.
-
-        Required only when the authentication process requires a username and password  # noqa: E501
-
-        :param password: The password of this Connect.  # noqa: E501
-        :type: str
-        """
-
-        self._password = password
-
-    @property
     def ssh_extra_args(self):
         """Gets the ssh_extra_args of this Connect.  # noqa: E501
 
@@ -421,29 +414,6 @@ class Connect(object):
         """
 
         self._uid_token = uid_token
-
-    @property
-    def username(self):
-        """Gets the username of this Connect.  # noqa: E501
-
-        Required only when the authentication process requires a username and password  # noqa: E501
-
-        :return: The username of this Connect.  # noqa: E501
-        :rtype: str
-        """
-        return self._username
-
-    @username.setter
-    def username(self, username):
-        """Sets the username of this Connect.
-
-        Required only when the authentication process requires a username and password  # noqa: E501
-
-        :param username: The username of this Connect.  # noqa: E501
-        :type: str
-        """
-
-        self._username = username
 
     @property
     def via_bastion(self):

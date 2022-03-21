@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **address** | [**CustomerFullAddress**](CustomerFullAddress.md) |  | [optional] 
 **company_name** | **str** |  | [optional] 
 **email** | **str** |  | [optional] 
+**object_version_settings** | [**AccountObjectVersionSettingsOutput**](AccountObjectVersionSettingsOutput.md) |  | [optional] 
 **phone** | **str** |  | [optional] 
 **secret_management** | [**SmInfo**](SmInfo.md) |  | [optional] 
 **secure_remote_access** | [**SraInfo**](SraInfo.md) |  | [optional] 

@@ -9,7 +9,6 @@ Name | Type | Description | Notes
 **metadata** | **str** | A metadata about the issuer | [optional] 
 **name** | **str** | SSH certificate issuer name | 
 **new_name** | **str** | New item name | [optional] 
-**password** | **str** | Required only when the authentication process requires a username and password | [optional] 
 **principals** | **str** | Signed certificates with principal, e.g example_role1,example_role2 | [optional] 
 **rm_tag** | **list[str]** | List of the existent tags that will be removed from this item | [optional] 
 **secure_access_bastion_api** | **str** |  | [optional] 
@@ -22,7 +21,6 @@ Name | Type | Description | Notes
 **token** | **str** | Authentication token (see &#x60;/auth&#x60; and &#x60;/configure&#x60;) | [optional] 
 **ttl** | **int** | he requested Time To Live for the certificate, in seconds | 
 **uid_token** | **str** | The universal identity token, Required only for universal_identity authentication | [optional] 
-**username** | **str** | Required only when the authentication process requires a username and password | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

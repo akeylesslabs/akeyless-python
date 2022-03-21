@@ -35,47 +35,37 @@ class GatewaySyncMigration(object):
     """
     openapi_types = {
         'name': 'str',
-        'password': 'str',
         'start_sync': 'bool',
         'token': 'str',
-        'uid_token': 'str',
-        'username': 'str'
+        'uid_token': 'str'
     }
 
     attribute_map = {
         'name': 'name',
-        'password': 'password',
         'start_sync': 'start-sync',
         'token': 'token',
-        'uid_token': 'uid-token',
-        'username': 'username'
+        'uid_token': 'uid-token'
     }
 
-    def __init__(self, name=None, password=None, start_sync=None, token=None, uid_token=None, username=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, name=None, start_sync=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """GatewaySyncMigration - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._name = None
-        self._password = None
         self._start_sync = None
         self._token = None
         self._uid_token = None
-        self._username = None
         self.discriminator = None
 
         self.name = name
-        if password is not None:
-            self.password = password
         if start_sync is not None:
             self.start_sync = start_sync
         if token is not None:
             self.token = token
         if uid_token is not None:
             self.uid_token = uid_token
-        if username is not None:
-            self.username = username
 
     @property
     def name(self):
@@ -101,29 +91,6 @@ class GatewaySyncMigration(object):
             raise ValueError("Invalid value for `name`, must not be `None`")  # noqa: E501
 
         self._name = name
-
-    @property
-    def password(self):
-        """Gets the password of this GatewaySyncMigration.  # noqa: E501
-
-        Required only when the authentication process requires a username and password  # noqa: E501
-
-        :return: The password of this GatewaySyncMigration.  # noqa: E501
-        :rtype: str
-        """
-        return self._password
-
-    @password.setter
-    def password(self, password):
-        """Sets the password of this GatewaySyncMigration.
-
-        Required only when the authentication process requires a username and password  # noqa: E501
-
-        :param password: The password of this GatewaySyncMigration.  # noqa: E501
-        :type: str
-        """
-
-        self._password = password
 
     @property
     def start_sync(self):
@@ -191,29 +158,6 @@ class GatewaySyncMigration(object):
         """
 
         self._uid_token = uid_token
-
-    @property
-    def username(self):
-        """Gets the username of this GatewaySyncMigration.  # noqa: E501
-
-        Required only when the authentication process requires a username and password  # noqa: E501
-
-        :return: The username of this GatewaySyncMigration.  # noqa: E501
-        :rtype: str
-        """
-        return self._username
-
-    @username.setter
-    def username(self, username):
-        """Sets the username of this GatewaySyncMigration.
-
-        Required only when the authentication process requires a username and password  # noqa: E501
-
-        :param username: The username of this GatewaySyncMigration.  # noqa: E501
-        :type: str
-        """
-
-        self._username = username
 
     def to_dict(self):
         """Returns the model properties as a dict"""

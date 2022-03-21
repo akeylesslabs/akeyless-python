@@ -36,24 +36,20 @@ class GatewayUpdateTmpUsers(object):
     openapi_types = {
         'name': 'str',
         'new_ttl_min': 'int',
-        'password': 'str',
         'tmp_creds_id': 'str',
         'token': 'str',
-        'uid_token': 'str',
-        'username': 'str'
+        'uid_token': 'str'
     }
 
     attribute_map = {
         'name': 'name',
         'new_ttl_min': 'new-ttl-min',
-        'password': 'password',
         'tmp_creds_id': 'tmp-creds-id',
         'token': 'token',
-        'uid_token': 'uid-token',
-        'username': 'username'
+        'uid_token': 'uid-token'
     }
 
-    def __init__(self, name=None, new_ttl_min=None, password=None, tmp_creds_id=None, token=None, uid_token=None, username=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, name=None, new_ttl_min=None, tmp_creds_id=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """GatewayUpdateTmpUsers - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -61,24 +57,18 @@ class GatewayUpdateTmpUsers(object):
 
         self._name = None
         self._new_ttl_min = None
-        self._password = None
         self._tmp_creds_id = None
         self._token = None
         self._uid_token = None
-        self._username = None
         self.discriminator = None
 
         self.name = name
         self.new_ttl_min = new_ttl_min
-        if password is not None:
-            self.password = password
         self.tmp_creds_id = tmp_creds_id
         if token is not None:
             self.token = token
         if uid_token is not None:
             self.uid_token = uid_token
-        if username is not None:
-            self.username = username
 
     @property
     def name(self):
@@ -129,29 +119,6 @@ class GatewayUpdateTmpUsers(object):
             raise ValueError("Invalid value for `new_ttl_min`, must not be `None`")  # noqa: E501
 
         self._new_ttl_min = new_ttl_min
-
-    @property
-    def password(self):
-        """Gets the password of this GatewayUpdateTmpUsers.  # noqa: E501
-
-        Required only when the authentication process requires a username and password  # noqa: E501
-
-        :return: The password of this GatewayUpdateTmpUsers.  # noqa: E501
-        :rtype: str
-        """
-        return self._password
-
-    @password.setter
-    def password(self, password):
-        """Sets the password of this GatewayUpdateTmpUsers.
-
-        Required only when the authentication process requires a username and password  # noqa: E501
-
-        :param password: The password of this GatewayUpdateTmpUsers.  # noqa: E501
-        :type: str
-        """
-
-        self._password = password
 
     @property
     def tmp_creds_id(self):
@@ -223,29 +190,6 @@ class GatewayUpdateTmpUsers(object):
         """
 
         self._uid_token = uid_token
-
-    @property
-    def username(self):
-        """Gets the username of this GatewayUpdateTmpUsers.  # noqa: E501
-
-        Required only when the authentication process requires a username and password  # noqa: E501
-
-        :return: The username of this GatewayUpdateTmpUsers.  # noqa: E501
-        :rtype: str
-        """
-        return self._username
-
-    @username.setter
-    def username(self, username):
-        """Sets the username of this GatewayUpdateTmpUsers.
-
-        Required only when the authentication process requires a username and password  # noqa: E501
-
-        :param username: The username of this GatewayUpdateTmpUsers.  # noqa: E501
-        :type: str
-        """
-
-        self._username = username
 
     def to_dict(self):
         """Returns the model properties as a dict"""

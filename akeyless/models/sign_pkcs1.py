@@ -36,22 +36,18 @@ class SignPKCS1(object):
     openapi_types = {
         'key_name': 'str',
         'message': 'str',
-        'password': 'str',
         'token': 'str',
-        'uid_token': 'str',
-        'username': 'str'
+        'uid_token': 'str'
     }
 
     attribute_map = {
         'key_name': 'key-name',
         'message': 'message',
-        'password': 'password',
         'token': 'token',
-        'uid_token': 'uid-token',
-        'username': 'username'
+        'uid_token': 'uid-token'
     }
 
-    def __init__(self, key_name=None, message=None, password=None, token=None, uid_token=None, username=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, key_name=None, message=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """SignPKCS1 - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -59,22 +55,16 @@ class SignPKCS1(object):
 
         self._key_name = None
         self._message = None
-        self._password = None
         self._token = None
         self._uid_token = None
-        self._username = None
         self.discriminator = None
 
         self.key_name = key_name
         self.message = message
-        if password is not None:
-            self.password = password
         if token is not None:
             self.token = token
         if uid_token is not None:
             self.uid_token = uid_token
-        if username is not None:
-            self.username = username
 
     @property
     def key_name(self):
@@ -127,29 +117,6 @@ class SignPKCS1(object):
         self._message = message
 
     @property
-    def password(self):
-        """Gets the password of this SignPKCS1.  # noqa: E501
-
-        Required only when the authentication process requires a username and password  # noqa: E501
-
-        :return: The password of this SignPKCS1.  # noqa: E501
-        :rtype: str
-        """
-        return self._password
-
-    @password.setter
-    def password(self, password):
-        """Sets the password of this SignPKCS1.
-
-        Required only when the authentication process requires a username and password  # noqa: E501
-
-        :param password: The password of this SignPKCS1.  # noqa: E501
-        :type: str
-        """
-
-        self._password = password
-
-    @property
     def token(self):
         """Gets the token of this SignPKCS1.  # noqa: E501
 
@@ -194,29 +161,6 @@ class SignPKCS1(object):
         """
 
         self._uid_token = uid_token
-
-    @property
-    def username(self):
-        """Gets the username of this SignPKCS1.  # noqa: E501
-
-        Required only when the authentication process requires a username and password  # noqa: E501
-
-        :return: The username of this SignPKCS1.  # noqa: E501
-        :rtype: str
-        """
-        return self._username
-
-    @username.setter
-    def username(self, username):
-        """Sets the username of this SignPKCS1.
-
-        Required only when the authentication process requires a username and password  # noqa: E501
-
-        :param username: The username of this SignPKCS1.  # noqa: E501
-        :type: str
-        """
-
-        self._username = username
 
     def to_dict(self):
         """Returns the model properties as a dict"""

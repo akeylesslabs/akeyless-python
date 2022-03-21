@@ -34,24 +34,50 @@ class AuthOutput(object):
                             and the value is json key in definition.
     """
     openapi_types = {
+        'creds': 'SystemAccessCredentialsReplyObj',
         'token': 'str'
     }
 
     attribute_map = {
+        'creds': 'creds',
         'token': 'token'
     }
 
-    def __init__(self, token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, creds=None, token=None, local_vars_configuration=None):  # noqa: E501
         """AuthOutput - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
+        self._creds = None
         self._token = None
         self.discriminator = None
 
+        if creds is not None:
+            self.creds = creds
         if token is not None:
             self.token = token
+
+    @property
+    def creds(self):
+        """Gets the creds of this AuthOutput.  # noqa: E501
+
+
+        :return: The creds of this AuthOutput.  # noqa: E501
+        :rtype: SystemAccessCredentialsReplyObj
+        """
+        return self._creds
+
+    @creds.setter
+    def creds(self, creds):
+        """Sets the creds of this AuthOutput.
+
+
+        :param creds: The creds of this AuthOutput.  # noqa: E501
+        :type: SystemAccessCredentialsReplyObj
+        """
+
+        self._creds = creds
 
     @property
     def token(self):

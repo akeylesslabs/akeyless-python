@@ -35,9 +35,9 @@ class UpdateSSHTargetDetails(object):
     """
     openapi_types = {
         'host': 'str',
+        'keep_prev_version': 'str',
         'name': 'str',
         'new_version': 'bool',
-        'password': 'str',
         'port': 'str',
         'private_key': 'str',
         'private_key_password': 'str',
@@ -45,15 +45,14 @@ class UpdateSSHTargetDetails(object):
         'ssh_password': 'str',
         'ssh_username': 'str',
         'token': 'str',
-        'uid_token': 'str',
-        'username': 'str'
+        'uid_token': 'str'
     }
 
     attribute_map = {
         'host': 'host',
+        'keep_prev_version': 'keep-prev-version',
         'name': 'name',
         'new_version': 'new-version',
-        'password': 'password',
         'port': 'port',
         'private_key': 'private-key',
         'private_key_password': 'private-key-password',
@@ -61,20 +60,19 @@ class UpdateSSHTargetDetails(object):
         'ssh_password': 'ssh-password',
         'ssh_username': 'ssh-username',
         'token': 'token',
-        'uid_token': 'uid-token',
-        'username': 'username'
+        'uid_token': 'uid-token'
     }
 
-    def __init__(self, host=None, name=None, new_version=False, password=None, port=None, private_key=None, private_key_password=None, protection_key=None, ssh_password=None, ssh_username=None, token=None, uid_token=None, username=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, host=None, keep_prev_version=None, name=None, new_version=None, port=None, private_key=None, private_key_password=None, protection_key=None, ssh_password=None, ssh_username=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """UpdateSSHTargetDetails - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._host = None
+        self._keep_prev_version = None
         self._name = None
         self._new_version = None
-        self._password = None
         self._port = None
         self._private_key = None
         self._private_key_password = None
@@ -83,16 +81,15 @@ class UpdateSSHTargetDetails(object):
         self._ssh_username = None
         self._token = None
         self._uid_token = None
-        self._username = None
         self.discriminator = None
 
         if host is not None:
             self.host = host
+        if keep_prev_version is not None:
+            self.keep_prev_version = keep_prev_version
         self.name = name
         if new_version is not None:
             self.new_version = new_version
-        if password is not None:
-            self.password = password
         if port is not None:
             self.port = port
         if private_key is not None:
@@ -109,8 +106,6 @@ class UpdateSSHTargetDetails(object):
             self.token = token
         if uid_token is not None:
             self.uid_token = uid_token
-        if username is not None:
-            self.username = username
 
     @property
     def host(self):
@@ -132,6 +127,27 @@ class UpdateSSHTargetDetails(object):
         """
 
         self._host = host
+
+    @property
+    def keep_prev_version(self):
+        """Gets the keep_prev_version of this UpdateSSHTargetDetails.  # noqa: E501
+
+
+        :return: The keep_prev_version of this UpdateSSHTargetDetails.  # noqa: E501
+        :rtype: str
+        """
+        return self._keep_prev_version
+
+    @keep_prev_version.setter
+    def keep_prev_version(self, keep_prev_version):
+        """Sets the keep_prev_version of this UpdateSSHTargetDetails.
+
+
+        :param keep_prev_version: The keep_prev_version of this UpdateSSHTargetDetails.  # noqa: E501
+        :type: str
+        """
+
+        self._keep_prev_version = keep_prev_version
 
     @property
     def name(self):
@@ -162,7 +178,7 @@ class UpdateSSHTargetDetails(object):
     def new_version(self):
         """Gets the new_version of this UpdateSSHTargetDetails.  # noqa: E501
 
-        Whether to create a new version of not  # noqa: E501
+        Deprecated  # noqa: E501
 
         :return: The new_version of this UpdateSSHTargetDetails.  # noqa: E501
         :rtype: bool
@@ -173,36 +189,13 @@ class UpdateSSHTargetDetails(object):
     def new_version(self, new_version):
         """Sets the new_version of this UpdateSSHTargetDetails.
 
-        Whether to create a new version of not  # noqa: E501
+        Deprecated  # noqa: E501
 
         :param new_version: The new_version of this UpdateSSHTargetDetails.  # noqa: E501
         :type: bool
         """
 
         self._new_version = new_version
-
-    @property
-    def password(self):
-        """Gets the password of this UpdateSSHTargetDetails.  # noqa: E501
-
-        Required only when the authentication process requires a username and password  # noqa: E501
-
-        :return: The password of this UpdateSSHTargetDetails.  # noqa: E501
-        :rtype: str
-        """
-        return self._password
-
-    @password.setter
-    def password(self, password):
-        """Sets the password of this UpdateSSHTargetDetails.
-
-        Required only when the authentication process requires a username and password  # noqa: E501
-
-        :param password: The password of this UpdateSSHTargetDetails.  # noqa: E501
-        :type: str
-        """
-
-        self._password = password
 
     @property
     def port(self):
@@ -377,29 +370,6 @@ class UpdateSSHTargetDetails(object):
         """
 
         self._uid_token = uid_token
-
-    @property
-    def username(self):
-        """Gets the username of this UpdateSSHTargetDetails.  # noqa: E501
-
-        Required only when the authentication process requires a username and password  # noqa: E501
-
-        :return: The username of this UpdateSSHTargetDetails.  # noqa: E501
-        :rtype: str
-        """
-        return self._username
-
-    @username.setter
-    def username(self, username):
-        """Sets the username of this UpdateSSHTargetDetails.
-
-        Required only when the authentication process requires a username and password  # noqa: E501
-
-        :param username: The username of this UpdateSSHTargetDetails.  # noqa: E501
-        :type: str
-        """
-
-        self._username = username
 
     def to_dict(self):
         """Returns the model properties as a dict"""

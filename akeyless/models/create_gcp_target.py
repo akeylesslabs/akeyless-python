@@ -39,11 +39,9 @@ class CreateGcpTarget(object):
         'gcp_sa_email': 'str',
         'key': 'str',
         'name': 'str',
-        'password': 'str',
         'token': 'str',
         'uid_token': 'str',
-        'use_gw_cloud_identity': 'bool',
-        'username': 'str'
+        'use_gw_cloud_identity': 'bool'
     }
 
     attribute_map = {
@@ -52,14 +50,12 @@ class CreateGcpTarget(object):
         'gcp_sa_email': 'gcp-sa-email',
         'key': 'key',
         'name': 'name',
-        'password': 'password',
         'token': 'token',
         'uid_token': 'uid-token',
-        'use_gw_cloud_identity': 'use-gw-cloud-identity',
-        'username': 'username'
+        'use_gw_cloud_identity': 'use-gw-cloud-identity'
     }
 
-    def __init__(self, comment=None, gcp_key=None, gcp_sa_email=None, key=None, name=None, password=None, token=None, uid_token=None, use_gw_cloud_identity=None, username=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, comment=None, gcp_key=None, gcp_sa_email=None, key=None, name=None, token=None, uid_token=None, use_gw_cloud_identity=None, local_vars_configuration=None):  # noqa: E501
         """CreateGcpTarget - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -70,11 +66,9 @@ class CreateGcpTarget(object):
         self._gcp_sa_email = None
         self._key = None
         self._name = None
-        self._password = None
         self._token = None
         self._uid_token = None
         self._use_gw_cloud_identity = None
-        self._username = None
         self.discriminator = None
 
         if comment is not None:
@@ -86,16 +80,12 @@ class CreateGcpTarget(object):
         if key is not None:
             self.key = key
         self.name = name
-        if password is not None:
-            self.password = password
         if token is not None:
             self.token = token
         if uid_token is not None:
             self.uid_token = uid_token
         if use_gw_cloud_identity is not None:
             self.use_gw_cloud_identity = use_gw_cloud_identity
-        if username is not None:
-            self.username = username
 
     @property
     def comment(self):
@@ -215,29 +205,6 @@ class CreateGcpTarget(object):
         self._name = name
 
     @property
-    def password(self):
-        """Gets the password of this CreateGcpTarget.  # noqa: E501
-
-        Required only when the authentication process requires a username and password  # noqa: E501
-
-        :return: The password of this CreateGcpTarget.  # noqa: E501
-        :rtype: str
-        """
-        return self._password
-
-    @password.setter
-    def password(self, password):
-        """Sets the password of this CreateGcpTarget.
-
-        Required only when the authentication process requires a username and password  # noqa: E501
-
-        :param password: The password of this CreateGcpTarget.  # noqa: E501
-        :type: str
-        """
-
-        self._password = password
-
-    @property
     def token(self):
         """Gets the token of this CreateGcpTarget.  # noqa: E501
 
@@ -303,29 +270,6 @@ class CreateGcpTarget(object):
         """
 
         self._use_gw_cloud_identity = use_gw_cloud_identity
-
-    @property
-    def username(self):
-        """Gets the username of this CreateGcpTarget.  # noqa: E501
-
-        Required only when the authentication process requires a username and password  # noqa: E501
-
-        :return: The username of this CreateGcpTarget.  # noqa: E501
-        :rtype: str
-        """
-        return self._username
-
-    @username.setter
-    def username(self, username):
-        """Sets the username of this CreateGcpTarget.
-
-        Required only when the authentication process requires a username and password  # noqa: E501
-
-        :param username: The username of this CreateGcpTarget.  # noqa: E501
-        :type: str
-        """
-
-        self._username = username
 
     def to_dict(self):
         """Returns the model properties as a dict"""

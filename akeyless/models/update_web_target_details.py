@@ -34,48 +34,45 @@ class UpdateWebTargetDetails(object):
                             and the value is json key in definition.
     """
     openapi_types = {
+        'keep_prev_version': 'str',
         'name': 'str',
         'new_version': 'bool',
-        'password': 'str',
         'protection_key': 'str',
         'token': 'str',
         'uid_token': 'str',
-        'url': 'str',
-        'username': 'str'
+        'url': 'str'
     }
 
     attribute_map = {
+        'keep_prev_version': 'keep-prev-version',
         'name': 'name',
         'new_version': 'new-version',
-        'password': 'password',
         'protection_key': 'protection_key',
         'token': 'token',
         'uid_token': 'uid-token',
-        'url': 'url',
-        'username': 'username'
+        'url': 'url'
     }
 
-    def __init__(self, name=None, new_version=False, password=None, protection_key=None, token=None, uid_token=None, url=None, username=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, keep_prev_version=None, name=None, new_version=None, protection_key=None, token=None, uid_token=None, url=None, local_vars_configuration=None):  # noqa: E501
         """UpdateWebTargetDetails - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
+        self._keep_prev_version = None
         self._name = None
         self._new_version = None
-        self._password = None
         self._protection_key = None
         self._token = None
         self._uid_token = None
         self._url = None
-        self._username = None
         self.discriminator = None
 
+        if keep_prev_version is not None:
+            self.keep_prev_version = keep_prev_version
         self.name = name
         if new_version is not None:
             self.new_version = new_version
-        if password is not None:
-            self.password = password
         if protection_key is not None:
             self.protection_key = protection_key
         if token is not None:
@@ -84,8 +81,27 @@ class UpdateWebTargetDetails(object):
             self.uid_token = uid_token
         if url is not None:
             self.url = url
-        if username is not None:
-            self.username = username
+
+    @property
+    def keep_prev_version(self):
+        """Gets the keep_prev_version of this UpdateWebTargetDetails.  # noqa: E501
+
+
+        :return: The keep_prev_version of this UpdateWebTargetDetails.  # noqa: E501
+        :rtype: str
+        """
+        return self._keep_prev_version
+
+    @keep_prev_version.setter
+    def keep_prev_version(self, keep_prev_version):
+        """Sets the keep_prev_version of this UpdateWebTargetDetails.
+
+
+        :param keep_prev_version: The keep_prev_version of this UpdateWebTargetDetails.  # noqa: E501
+        :type: str
+        """
+
+        self._keep_prev_version = keep_prev_version
 
     @property
     def name(self):
@@ -116,7 +132,7 @@ class UpdateWebTargetDetails(object):
     def new_version(self):
         """Gets the new_version of this UpdateWebTargetDetails.  # noqa: E501
 
-        Whether to create a new version of not  # noqa: E501
+        Deprecated  # noqa: E501
 
         :return: The new_version of this UpdateWebTargetDetails.  # noqa: E501
         :rtype: bool
@@ -127,36 +143,13 @@ class UpdateWebTargetDetails(object):
     def new_version(self, new_version):
         """Sets the new_version of this UpdateWebTargetDetails.
 
-        Whether to create a new version of not  # noqa: E501
+        Deprecated  # noqa: E501
 
         :param new_version: The new_version of this UpdateWebTargetDetails.  # noqa: E501
         :type: bool
         """
 
         self._new_version = new_version
-
-    @property
-    def password(self):
-        """Gets the password of this UpdateWebTargetDetails.  # noqa: E501
-
-        Required only when the authentication process requires a username and password  # noqa: E501
-
-        :return: The password of this UpdateWebTargetDetails.  # noqa: E501
-        :rtype: str
-        """
-        return self._password
-
-    @password.setter
-    def password(self, password):
-        """Sets the password of this UpdateWebTargetDetails.
-
-        Required only when the authentication process requires a username and password  # noqa: E501
-
-        :param password: The password of this UpdateWebTargetDetails.  # noqa: E501
-        :type: str
-        """
-
-        self._password = password
 
     @property
     def protection_key(self):
@@ -247,29 +240,6 @@ class UpdateWebTargetDetails(object):
         """
 
         self._url = url
-
-    @property
-    def username(self):
-        """Gets the username of this UpdateWebTargetDetails.  # noqa: E501
-
-        Required only when the authentication process requires a username and password  # noqa: E501
-
-        :return: The username of this UpdateWebTargetDetails.  # noqa: E501
-        :rtype: str
-        """
-        return self._username
-
-    @username.setter
-    def username(self, username):
-        """Sets the username of this UpdateWebTargetDetails.
-
-        Required only when the authentication process requires a username and password  # noqa: E501
-
-        :param username: The username of this UpdateWebTargetDetails.  # noqa: E501
-        :type: str
-        """
-
-        self._username = username
 
     def to_dict(self):
         """Returns the model properties as a dict"""

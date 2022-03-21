@@ -38,12 +38,14 @@ class GatewayCreateProducerAzure(object):
         'azure_client_id': 'str',
         'azure_client_secret': 'str',
         'azure_tenant_id': 'str',
+        'fixed_user_claim_keyname': 'str',
+        'fixed_user_only': 'bool',
         'name': 'str',
-        'password': 'str',
         'producer_encryption_key_name': 'str',
         'secure_access_enable': 'str',
         'secure_access_web': 'bool',
         'secure_access_web_browsing': 'bool',
+        'secure_access_web_proxy': 'bool',
         'tags': 'list[str]',
         'target_name': 'str',
         'token': 'str',
@@ -53,8 +55,7 @@ class GatewayCreateProducerAzure(object):
         'user_principal_name': 'str',
         'user_programmatic_access': 'bool',
         'user_role_template_id': 'str',
-        'user_ttl': 'str',
-        'username': 'str'
+        'user_ttl': 'str'
     }
 
     attribute_map = {
@@ -62,12 +63,14 @@ class GatewayCreateProducerAzure(object):
         'azure_client_id': 'azure-client-id',
         'azure_client_secret': 'azure-client-secret',
         'azure_tenant_id': 'azure-tenant-id',
+        'fixed_user_claim_keyname': 'fixed-user-claim-keyname',
+        'fixed_user_only': 'fixed-user-only',
         'name': 'name',
-        'password': 'password',
         'producer_encryption_key_name': 'producer-encryption-key-name',
         'secure_access_enable': 'secure-access-enable',
         'secure_access_web': 'secure-access-web',
         'secure_access_web_browsing': 'secure-access-web-browsing',
+        'secure_access_web_proxy': 'secure-access-web-proxy',
         'tags': 'tags',
         'target_name': 'target-name',
         'token': 'token',
@@ -77,11 +80,10 @@ class GatewayCreateProducerAzure(object):
         'user_principal_name': 'user-principal-name',
         'user_programmatic_access': 'user-programmatic-access',
         'user_role_template_id': 'user-role-template-id',
-        'user_ttl': 'user-ttl',
-        'username': 'username'
+        'user_ttl': 'user-ttl'
     }
 
-    def __init__(self, app_obj_id=None, azure_client_id=None, azure_client_secret=None, azure_tenant_id=None, name=None, password=None, producer_encryption_key_name=None, secure_access_enable=None, secure_access_web=None, secure_access_web_browsing=None, tags=None, target_name=None, token=None, uid_token=None, user_group_obj_id=None, user_portal_access=False, user_principal_name=None, user_programmatic_access=True, user_role_template_id=None, user_ttl='60m', username=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, app_obj_id=None, azure_client_id=None, azure_client_secret=None, azure_tenant_id=None, fixed_user_claim_keyname='false', fixed_user_only=False, name=None, producer_encryption_key_name=None, secure_access_enable=None, secure_access_web=None, secure_access_web_browsing=None, secure_access_web_proxy=None, tags=None, target_name=None, token=None, uid_token=None, user_group_obj_id=None, user_portal_access=False, user_principal_name=None, user_programmatic_access=False, user_role_template_id=None, user_ttl='60m', local_vars_configuration=None):  # noqa: E501
         """GatewayCreateProducerAzure - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -91,12 +93,14 @@ class GatewayCreateProducerAzure(object):
         self._azure_client_id = None
         self._azure_client_secret = None
         self._azure_tenant_id = None
+        self._fixed_user_claim_keyname = None
+        self._fixed_user_only = None
         self._name = None
-        self._password = None
         self._producer_encryption_key_name = None
         self._secure_access_enable = None
         self._secure_access_web = None
         self._secure_access_web_browsing = None
+        self._secure_access_web_proxy = None
         self._tags = None
         self._target_name = None
         self._token = None
@@ -107,7 +111,6 @@ class GatewayCreateProducerAzure(object):
         self._user_programmatic_access = None
         self._user_role_template_id = None
         self._user_ttl = None
-        self._username = None
         self.discriminator = None
 
         if app_obj_id is not None:
@@ -118,9 +121,11 @@ class GatewayCreateProducerAzure(object):
             self.azure_client_secret = azure_client_secret
         if azure_tenant_id is not None:
             self.azure_tenant_id = azure_tenant_id
+        if fixed_user_claim_keyname is not None:
+            self.fixed_user_claim_keyname = fixed_user_claim_keyname
+        if fixed_user_only is not None:
+            self.fixed_user_only = fixed_user_only
         self.name = name
-        if password is not None:
-            self.password = password
         if producer_encryption_key_name is not None:
             self.producer_encryption_key_name = producer_encryption_key_name
         if secure_access_enable is not None:
@@ -129,6 +134,8 @@ class GatewayCreateProducerAzure(object):
             self.secure_access_web = secure_access_web
         if secure_access_web_browsing is not None:
             self.secure_access_web_browsing = secure_access_web_browsing
+        if secure_access_web_proxy is not None:
+            self.secure_access_web_proxy = secure_access_web_proxy
         if tags is not None:
             self.tags = tags
         if target_name is not None:
@@ -149,8 +156,6 @@ class GatewayCreateProducerAzure(object):
             self.user_role_template_id = user_role_template_id
         if user_ttl is not None:
             self.user_ttl = user_ttl
-        if username is not None:
-            self.username = username
 
     @property
     def app_obj_id(self):
@@ -245,6 +250,52 @@ class GatewayCreateProducerAzure(object):
         self._azure_tenant_id = azure_tenant_id
 
     @property
+    def fixed_user_claim_keyname(self):
+        """Gets the fixed_user_claim_keyname of this GatewayCreateProducerAzure.  # noqa: E501
+
+        FixedUserClaimKeyname  # noqa: E501
+
+        :return: The fixed_user_claim_keyname of this GatewayCreateProducerAzure.  # noqa: E501
+        :rtype: str
+        """
+        return self._fixed_user_claim_keyname
+
+    @fixed_user_claim_keyname.setter
+    def fixed_user_claim_keyname(self, fixed_user_claim_keyname):
+        """Sets the fixed_user_claim_keyname of this GatewayCreateProducerAzure.
+
+        FixedUserClaimKeyname  # noqa: E501
+
+        :param fixed_user_claim_keyname: The fixed_user_claim_keyname of this GatewayCreateProducerAzure.  # noqa: E501
+        :type: str
+        """
+
+        self._fixed_user_claim_keyname = fixed_user_claim_keyname
+
+    @property
+    def fixed_user_only(self):
+        """Gets the fixed_user_only of this GatewayCreateProducerAzure.  # noqa: E501
+
+        Fixed user  # noqa: E501
+
+        :return: The fixed_user_only of this GatewayCreateProducerAzure.  # noqa: E501
+        :rtype: bool
+        """
+        return self._fixed_user_only
+
+    @fixed_user_only.setter
+    def fixed_user_only(self, fixed_user_only):
+        """Sets the fixed_user_only of this GatewayCreateProducerAzure.
+
+        Fixed user  # noqa: E501
+
+        :param fixed_user_only: The fixed_user_only of this GatewayCreateProducerAzure.  # noqa: E501
+        :type: bool
+        """
+
+        self._fixed_user_only = fixed_user_only
+
+    @property
     def name(self):
         """Gets the name of this GatewayCreateProducerAzure.  # noqa: E501
 
@@ -268,29 +319,6 @@ class GatewayCreateProducerAzure(object):
             raise ValueError("Invalid value for `name`, must not be `None`")  # noqa: E501
 
         self._name = name
-
-    @property
-    def password(self):
-        """Gets the password of this GatewayCreateProducerAzure.  # noqa: E501
-
-        Required only when the authentication process requires a username and password  # noqa: E501
-
-        :return: The password of this GatewayCreateProducerAzure.  # noqa: E501
-        :rtype: str
-        """
-        return self._password
-
-    @password.setter
-    def password(self, password):
-        """Sets the password of this GatewayCreateProducerAzure.
-
-        Required only when the authentication process requires a username and password  # noqa: E501
-
-        :param password: The password of this GatewayCreateProducerAzure.  # noqa: E501
-        :type: str
-        """
-
-        self._password = password
 
     @property
     def producer_encryption_key_name(self):
@@ -377,6 +405,27 @@ class GatewayCreateProducerAzure(object):
         """
 
         self._secure_access_web_browsing = secure_access_web_browsing
+
+    @property
+    def secure_access_web_proxy(self):
+        """Gets the secure_access_web_proxy of this GatewayCreateProducerAzure.  # noqa: E501
+
+
+        :return: The secure_access_web_proxy of this GatewayCreateProducerAzure.  # noqa: E501
+        :rtype: bool
+        """
+        return self._secure_access_web_proxy
+
+    @secure_access_web_proxy.setter
+    def secure_access_web_proxy(self, secure_access_web_proxy):
+        """Sets the secure_access_web_proxy of this GatewayCreateProducerAzure.
+
+
+        :param secure_access_web_proxy: The secure_access_web_proxy of this GatewayCreateProducerAzure.  # noqa: E501
+        :type: bool
+        """
+
+        self._secure_access_web_proxy = secure_access_web_proxy
 
     @property
     def tags(self):
@@ -607,29 +656,6 @@ class GatewayCreateProducerAzure(object):
         """
 
         self._user_ttl = user_ttl
-
-    @property
-    def username(self):
-        """Gets the username of this GatewayCreateProducerAzure.  # noqa: E501
-
-        Required only when the authentication process requires a username and password  # noqa: E501
-
-        :return: The username of this GatewayCreateProducerAzure.  # noqa: E501
-        :rtype: str
-        """
-        return self._username
-
-    @username.setter
-    def username(self, username):
-        """Sets the username of this GatewayCreateProducerAzure.
-
-        Required only when the authentication process requires a username and password  # noqa: E501
-
-        :param username: The username of this GatewayCreateProducerAzure.  # noqa: E501
-        :type: str
-        """
-
-        self._username = username
 
     def to_dict(self):
         """Returns the model properties as a dict"""

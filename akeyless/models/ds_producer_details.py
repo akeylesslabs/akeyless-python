@@ -56,6 +56,8 @@ class DSProducerDetails(object):
         'azure_app_object_id': 'str',
         'azure_client_id': 'str',
         'azure_client_secret': 'str',
+        'azure_fixed_user_name_sub_claim_key': 'str',
+        'azure_fixed_user_only': 'bool',
         'azure_tenant_id': 'str',
         'azure_user_groups_obj_id': 'str',
         'azure_user_portal_access': 'bool',
@@ -150,6 +152,7 @@ class DSProducerDetails(object):
         'mssql_revocation_statements': 'str',
         'mysql_creation_statements': 'str',
         'oracle_creation_statements': 'str',
+        'password': 'str',
         'password_length': 'int',
         'password_policy': 'str',
         'payload': 'str',
@@ -166,6 +169,7 @@ class DSProducerDetails(object):
         'redshift_creation_statements': 'str',
         'revoke_sync_url': 'str',
         'rotate_sync_url': 'str',
+        'scopes': 'list[str]',
         'secure_remote_access_details': 'SecureRemoteAccess',
         'sf_account': 'str',
         'sf_user_role': 'str',
@@ -176,6 +180,7 @@ class DSProducerDetails(object):
         'tags': 'list[str]',
         'timeout_seconds': 'int',
         'use_gw_cloud_identity': 'bool',
+        'user_name': 'str',
         'user_principal_name': 'str',
         'user_ttl': 'str',
         'username_length': 'int',
@@ -192,7 +197,8 @@ class DSProducerDetails(object):
         'venafi_tpp_password': 'str',
         'venafi_tpp_username': 'str',
         'venafi_use_tpp': 'bool',
-        'venafi_zone': 'str'
+        'venafi_zone': 'str',
+        'warn_before_user_expiration_min': 'int'
     }
 
     attribute_map = {
@@ -218,6 +224,8 @@ class DSProducerDetails(object):
         'azure_app_object_id': 'azure_app_object_id',
         'azure_client_id': 'azure_client_id',
         'azure_client_secret': 'azure_client_secret',
+        'azure_fixed_user_name_sub_claim_key': 'azure_fixed_user_name_sub_claim_key',
+        'azure_fixed_user_only': 'azure_fixed_user_only',
         'azure_tenant_id': 'azure_tenant_id',
         'azure_user_groups_obj_id': 'azure_user_groups_obj_id',
         'azure_user_portal_access': 'azure_user_portal_access',
@@ -312,6 +320,7 @@ class DSProducerDetails(object):
         'mssql_revocation_statements': 'mssql_revocation_statements',
         'mysql_creation_statements': 'mysql_creation_statements',
         'oracle_creation_statements': 'oracle_creation_statements',
+        'password': 'password',
         'password_length': 'password_length',
         'password_policy': 'password_policy',
         'payload': 'payload',
@@ -328,6 +337,7 @@ class DSProducerDetails(object):
         'redshift_creation_statements': 'redshift_creation_statements',
         'revoke_sync_url': 'revoke_sync_url',
         'rotate_sync_url': 'rotate_sync_url',
+        'scopes': 'scopes',
         'secure_remote_access_details': 'secure_remote_access_details',
         'sf_account': 'sf_account',
         'sf_user_role': 'sf_user_role',
@@ -338,6 +348,7 @@ class DSProducerDetails(object):
         'tags': 'tags',
         'timeout_seconds': 'timeout_seconds',
         'use_gw_cloud_identity': 'use_gw_cloud_identity',
+        'user_name': 'user_name',
         'user_principal_name': 'user_principal_name',
         'user_ttl': 'user_ttl',
         'username_length': 'username_length',
@@ -354,10 +365,11 @@ class DSProducerDetails(object):
         'venafi_tpp_password': 'venafi_tpp_password',
         'venafi_tpp_username': 'venafi_tpp_username',
         'venafi_use_tpp': 'venafi_use_tpp',
-        'venafi_zone': 'venafi_zone'
+        'venafi_zone': 'venafi_zone',
+        'warn_before_user_expiration_min': 'warn_before_user_expiration_min'
     }
 
-    def __init__(self, active=None, admin_name=None, admin_pwd=None, admin_rotation_interval_days=None, artifactory_admin_apikey=None, artifactory_admin_username=None, artifactory_base_url=None, artifactory_token_audience=None, artifactory_token_scope=None, aws_access_key_id=None, aws_access_mode=None, aws_region=None, aws_role_arns=None, aws_secret_access_key=None, aws_session_token=None, aws_user_console_access=None, aws_user_groups=None, aws_user_policies=None, aws_user_programmatic_access=None, azure_app_object_id=None, azure_client_id=None, azure_client_secret=None, azure_tenant_id=None, azure_user_groups_obj_id=None, azure_user_portal_access=None, azure_user_programmatic_access=None, azure_user_roles_template_id=None, cassandra_creation_statements=None, chef_organizations=None, chef_server_access_mode=None, chef_server_host_name=None, chef_server_key=None, chef_server_port=None, chef_server_url=None, chef_server_username=None, chef_skip_ssl=None, create_sync_url=None, db_host_name=None, db_isolation_level=None, db_max_idle_conns=None, db_max_open_conns=None, db_name=None, db_port=None, db_pwd=None, db_server_certificates=None, db_server_name=None, db_user_name=None, dynamic_secret_id=None, dynamic_secret_key=None, dynamic_secret_name=None, dynamic_secret_type=None, eks_access_key_id=None, eks_assume_role=None, eks_cluster_ca_certificate=None, eks_cluster_endpoint=None, eks_cluster_name=None, eks_region=None, eks_secret_access_key=None, enable_admin_rotation=None, externally_provided_user=None, failure_message=None, fixed_user_only=None, gcp_key_algo=None, gcp_service_account_email=None, gcp_service_account_key=None, gcp_token_lifetime=None, gcp_token_scope=None, gcp_token_type=None, github_app_id=None, github_app_private_key=None, github_base_url=None, github_installation_id=None, github_installation_token_permissions=None, github_installation_token_repositories=None, github_installation_token_repositories_ids=None, github_repository_path=None, gke_cluster_ca_certificate=None, gke_cluster_endpoint=None, gke_cluster_name=None, gke_service_account_key=None, gke_service_account_name=None, groups=None, host_name=None, host_port=None, is_fixed_user=None, item_targets_assoc=None, k8s_bearer_token=None, k8s_cluster_ca_certificate=None, k8s_cluster_endpoint=None, k8s_namespace=None, k8s_service_account=None, last_admin_rotation=None, ldap_audience=None, ldap_bind_dn=None, ldap_bind_password=None, ldap_certificate=None, ldap_token_expiration=None, ldap_url=None, ldap_user_attr=None, ldap_user_dn=None, mongodb_atlas_api_private_key=None, mongodb_atlas_api_public_key=None, mongodb_atlas_project_id=None, mongodb_db_name=None, mongodb_default_auth_db=None, mongodb_host_port=None, mongodb_is_atlas=None, mongodb_password=None, mongodb_roles=None, mongodb_uri_connection=None, mongodb_uri_options=None, mongodb_username=None, mssql_creation_statements=None, mssql_revocation_statements=None, mysql_creation_statements=None, oracle_creation_statements=None, password_length=None, password_policy=None, payload=None, postgres_creation_statements=None, postgres_revocation_statements=None, rabbitmq_server_password=None, rabbitmq_server_uri=None, rabbitmq_server_user=None, rabbitmq_user_conf_permission=None, rabbitmq_user_read_permission=None, rabbitmq_user_tags=None, rabbitmq_user_vhost=None, rabbitmq_user_write_permission=None, redshift_creation_statements=None, revoke_sync_url=None, rotate_sync_url=None, secure_remote_access_details=None, sf_account=None, sf_user_role=None, sf_warehouse_name=None, should_stop=None, ssl_connection_certificate=None, ssl_connection_mode=None, tags=None, timeout_seconds=None, use_gw_cloud_identity=None, user_principal_name=None, user_ttl=None, username_length=None, username_policy=None, venafi_allow_subdomains=None, venafi_allowed_domains=None, venafi_api_key=None, venafi_auto_generated_folder=None, venafi_base_url=None, venafi_root_first_in_chain=None, venafi_sign_using_akeyless_pki=None, venafi_signer_key_name=None, venafi_store_private_key=None, venafi_tpp_password=None, venafi_tpp_username=None, venafi_use_tpp=None, venafi_zone=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, active=None, admin_name=None, admin_pwd=None, admin_rotation_interval_days=None, artifactory_admin_apikey=None, artifactory_admin_username=None, artifactory_base_url=None, artifactory_token_audience=None, artifactory_token_scope=None, aws_access_key_id=None, aws_access_mode=None, aws_region=None, aws_role_arns=None, aws_secret_access_key=None, aws_session_token=None, aws_user_console_access=None, aws_user_groups=None, aws_user_policies=None, aws_user_programmatic_access=None, azure_app_object_id=None, azure_client_id=None, azure_client_secret=None, azure_fixed_user_name_sub_claim_key=None, azure_fixed_user_only=None, azure_tenant_id=None, azure_user_groups_obj_id=None, azure_user_portal_access=None, azure_user_programmatic_access=None, azure_user_roles_template_id=None, cassandra_creation_statements=None, chef_organizations=None, chef_server_access_mode=None, chef_server_host_name=None, chef_server_key=None, chef_server_port=None, chef_server_url=None, chef_server_username=None, chef_skip_ssl=None, create_sync_url=None, db_host_name=None, db_isolation_level=None, db_max_idle_conns=None, db_max_open_conns=None, db_name=None, db_port=None, db_pwd=None, db_server_certificates=None, db_server_name=None, db_user_name=None, dynamic_secret_id=None, dynamic_secret_key=None, dynamic_secret_name=None, dynamic_secret_type=None, eks_access_key_id=None, eks_assume_role=None, eks_cluster_ca_certificate=None, eks_cluster_endpoint=None, eks_cluster_name=None, eks_region=None, eks_secret_access_key=None, enable_admin_rotation=None, externally_provided_user=None, failure_message=None, fixed_user_only=None, gcp_key_algo=None, gcp_service_account_email=None, gcp_service_account_key=None, gcp_token_lifetime=None, gcp_token_scope=None, gcp_token_type=None, github_app_id=None, github_app_private_key=None, github_base_url=None, github_installation_id=None, github_installation_token_permissions=None, github_installation_token_repositories=None, github_installation_token_repositories_ids=None, github_repository_path=None, gke_cluster_ca_certificate=None, gke_cluster_endpoint=None, gke_cluster_name=None, gke_service_account_key=None, gke_service_account_name=None, groups=None, host_name=None, host_port=None, is_fixed_user=None, item_targets_assoc=None, k8s_bearer_token=None, k8s_cluster_ca_certificate=None, k8s_cluster_endpoint=None, k8s_namespace=None, k8s_service_account=None, last_admin_rotation=None, ldap_audience=None, ldap_bind_dn=None, ldap_bind_password=None, ldap_certificate=None, ldap_token_expiration=None, ldap_url=None, ldap_user_attr=None, ldap_user_dn=None, mongodb_atlas_api_private_key=None, mongodb_atlas_api_public_key=None, mongodb_atlas_project_id=None, mongodb_db_name=None, mongodb_default_auth_db=None, mongodb_host_port=None, mongodb_is_atlas=None, mongodb_password=None, mongodb_roles=None, mongodb_uri_connection=None, mongodb_uri_options=None, mongodb_username=None, mssql_creation_statements=None, mssql_revocation_statements=None, mysql_creation_statements=None, oracle_creation_statements=None, password=None, password_length=None, password_policy=None, payload=None, postgres_creation_statements=None, postgres_revocation_statements=None, rabbitmq_server_password=None, rabbitmq_server_uri=None, rabbitmq_server_user=None, rabbitmq_user_conf_permission=None, rabbitmq_user_read_permission=None, rabbitmq_user_tags=None, rabbitmq_user_vhost=None, rabbitmq_user_write_permission=None, redshift_creation_statements=None, revoke_sync_url=None, rotate_sync_url=None, scopes=None, secure_remote_access_details=None, sf_account=None, sf_user_role=None, sf_warehouse_name=None, should_stop=None, ssl_connection_certificate=None, ssl_connection_mode=None, tags=None, timeout_seconds=None, use_gw_cloud_identity=None, user_name=None, user_principal_name=None, user_ttl=None, username_length=None, username_policy=None, venafi_allow_subdomains=None, venafi_allowed_domains=None, venafi_api_key=None, venafi_auto_generated_folder=None, venafi_base_url=None, venafi_root_first_in_chain=None, venafi_sign_using_akeyless_pki=None, venafi_signer_key_name=None, venafi_store_private_key=None, venafi_tpp_password=None, venafi_tpp_username=None, venafi_use_tpp=None, venafi_zone=None, warn_before_user_expiration_min=None, local_vars_configuration=None):  # noqa: E501
         """DSProducerDetails - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -385,6 +397,8 @@ class DSProducerDetails(object):
         self._azure_app_object_id = None
         self._azure_client_id = None
         self._azure_client_secret = None
+        self._azure_fixed_user_name_sub_claim_key = None
+        self._azure_fixed_user_only = None
         self._azure_tenant_id = None
         self._azure_user_groups_obj_id = None
         self._azure_user_portal_access = None
@@ -479,6 +493,7 @@ class DSProducerDetails(object):
         self._mssql_revocation_statements = None
         self._mysql_creation_statements = None
         self._oracle_creation_statements = None
+        self._password = None
         self._password_length = None
         self._password_policy = None
         self._payload = None
@@ -495,6 +510,7 @@ class DSProducerDetails(object):
         self._redshift_creation_statements = None
         self._revoke_sync_url = None
         self._rotate_sync_url = None
+        self._scopes = None
         self._secure_remote_access_details = None
         self._sf_account = None
         self._sf_user_role = None
@@ -505,6 +521,7 @@ class DSProducerDetails(object):
         self._tags = None
         self._timeout_seconds = None
         self._use_gw_cloud_identity = None
+        self._user_name = None
         self._user_principal_name = None
         self._user_ttl = None
         self._username_length = None
@@ -522,6 +539,7 @@ class DSProducerDetails(object):
         self._venafi_tpp_username = None
         self._venafi_use_tpp = None
         self._venafi_zone = None
+        self._warn_before_user_expiration_min = None
         self.discriminator = None
 
         if active is not None:
@@ -568,6 +586,10 @@ class DSProducerDetails(object):
             self.azure_client_id = azure_client_id
         if azure_client_secret is not None:
             self.azure_client_secret = azure_client_secret
+        if azure_fixed_user_name_sub_claim_key is not None:
+            self.azure_fixed_user_name_sub_claim_key = azure_fixed_user_name_sub_claim_key
+        if azure_fixed_user_only is not None:
+            self.azure_fixed_user_only = azure_fixed_user_only
         if azure_tenant_id is not None:
             self.azure_tenant_id = azure_tenant_id
         if azure_user_groups_obj_id is not None:
@@ -756,6 +778,8 @@ class DSProducerDetails(object):
             self.mysql_creation_statements = mysql_creation_statements
         if oracle_creation_statements is not None:
             self.oracle_creation_statements = oracle_creation_statements
+        if password is not None:
+            self.password = password
         if password_length is not None:
             self.password_length = password_length
         if password_policy is not None:
@@ -788,6 +812,8 @@ class DSProducerDetails(object):
             self.revoke_sync_url = revoke_sync_url
         if rotate_sync_url is not None:
             self.rotate_sync_url = rotate_sync_url
+        if scopes is not None:
+            self.scopes = scopes
         if secure_remote_access_details is not None:
             self.secure_remote_access_details = secure_remote_access_details
         if sf_account is not None:
@@ -808,6 +834,8 @@ class DSProducerDetails(object):
             self.timeout_seconds = timeout_seconds
         if use_gw_cloud_identity is not None:
             self.use_gw_cloud_identity = use_gw_cloud_identity
+        if user_name is not None:
+            self.user_name = user_name
         if user_principal_name is not None:
             self.user_principal_name = user_principal_name
         if user_ttl is not None:
@@ -842,6 +870,8 @@ class DSProducerDetails(object):
             self.venafi_use_tpp = venafi_use_tpp
         if venafi_zone is not None:
             self.venafi_zone = venafi_zone
+        if warn_before_user_expiration_min is not None:
+            self.warn_before_user_expiration_min = warn_before_user_expiration_min
 
     @property
     def active(self):
@@ -1304,6 +1334,48 @@ class DSProducerDetails(object):
         """
 
         self._azure_client_secret = azure_client_secret
+
+    @property
+    def azure_fixed_user_name_sub_claim_key(self):
+        """Gets the azure_fixed_user_name_sub_claim_key of this DSProducerDetails.  # noqa: E501
+
+
+        :return: The azure_fixed_user_name_sub_claim_key of this DSProducerDetails.  # noqa: E501
+        :rtype: str
+        """
+        return self._azure_fixed_user_name_sub_claim_key
+
+    @azure_fixed_user_name_sub_claim_key.setter
+    def azure_fixed_user_name_sub_claim_key(self, azure_fixed_user_name_sub_claim_key):
+        """Sets the azure_fixed_user_name_sub_claim_key of this DSProducerDetails.
+
+
+        :param azure_fixed_user_name_sub_claim_key: The azure_fixed_user_name_sub_claim_key of this DSProducerDetails.  # noqa: E501
+        :type: str
+        """
+
+        self._azure_fixed_user_name_sub_claim_key = azure_fixed_user_name_sub_claim_key
+
+    @property
+    def azure_fixed_user_only(self):
+        """Gets the azure_fixed_user_only of this DSProducerDetails.  # noqa: E501
+
+
+        :return: The azure_fixed_user_only of this DSProducerDetails.  # noqa: E501
+        :rtype: bool
+        """
+        return self._azure_fixed_user_only
+
+    @azure_fixed_user_only.setter
+    def azure_fixed_user_only(self, azure_fixed_user_only):
+        """Sets the azure_fixed_user_only of this DSProducerDetails.
+
+
+        :param azure_fixed_user_only: The azure_fixed_user_only of this DSProducerDetails.  # noqa: E501
+        :type: bool
+        """
+
+        self._azure_fixed_user_only = azure_fixed_user_only
 
     @property
     def azure_tenant_id(self):
@@ -3292,6 +3364,27 @@ class DSProducerDetails(object):
         self._oracle_creation_statements = oracle_creation_statements
 
     @property
+    def password(self):
+        """Gets the password of this DSProducerDetails.  # noqa: E501
+
+
+        :return: The password of this DSProducerDetails.  # noqa: E501
+        :rtype: str
+        """
+        return self._password
+
+    @password.setter
+    def password(self, password):
+        """Sets the password of this DSProducerDetails.
+
+
+        :param password: The password of this DSProducerDetails.  # noqa: E501
+        :type: str
+        """
+
+        self._password = password
+
+    @property
     def password_length(self):
         """Gets the password_length of this DSProducerDetails.  # noqa: E501
 
@@ -3628,6 +3721,27 @@ class DSProducerDetails(object):
         self._rotate_sync_url = rotate_sync_url
 
     @property
+    def scopes(self):
+        """Gets the scopes of this DSProducerDetails.  # noqa: E501
+
+
+        :return: The scopes of this DSProducerDetails.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._scopes
+
+    @scopes.setter
+    def scopes(self, scopes):
+        """Sets the scopes of this DSProducerDetails.
+
+
+        :param scopes: The scopes of this DSProducerDetails.  # noqa: E501
+        :type: list[str]
+        """
+
+        self._scopes = scopes
+
+    @property
     def secure_remote_access_details(self):
         """Gets the secure_remote_access_details of this DSProducerDetails.  # noqa: E501
 
@@ -3844,6 +3958,27 @@ class DSProducerDetails(object):
         """
 
         self._use_gw_cloud_identity = use_gw_cloud_identity
+
+    @property
+    def user_name(self):
+        """Gets the user_name of this DSProducerDetails.  # noqa: E501
+
+
+        :return: The user_name of this DSProducerDetails.  # noqa: E501
+        :rtype: str
+        """
+        return self._user_name
+
+    @user_name.setter
+    def user_name(self, user_name):
+        """Sets the user_name of this DSProducerDetails.
+
+
+        :param user_name: The user_name of this DSProducerDetails.  # noqa: E501
+        :type: str
+        """
+
+        self._user_name = user_name
 
     @property
     def user_principal_name(self):
@@ -4201,6 +4336,27 @@ class DSProducerDetails(object):
         """
 
         self._venafi_zone = venafi_zone
+
+    @property
+    def warn_before_user_expiration_min(self):
+        """Gets the warn_before_user_expiration_min of this DSProducerDetails.  # noqa: E501
+
+
+        :return: The warn_before_user_expiration_min of this DSProducerDetails.  # noqa: E501
+        :rtype: int
+        """
+        return self._warn_before_user_expiration_min
+
+    @warn_before_user_expiration_min.setter
+    def warn_before_user_expiration_min(self, warn_before_user_expiration_min):
+        """Sets the warn_before_user_expiration_min of this DSProducerDetails.
+
+
+        :param warn_before_user_expiration_min: The warn_before_user_expiration_min of this DSProducerDetails.  # noqa: E501
+        :type: int
+        """
+
+        self._warn_before_user_expiration_min = warn_before_user_expiration_min
 
     def to_dict(self):
         """Returns the model properties as a dict"""

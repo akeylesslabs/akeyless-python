@@ -37,7 +37,6 @@ class GatewayUpdateProducerPostgreSQL(object):
         'creation_statements': 'str',
         'name': 'str',
         'new_name': 'str',
-        'password': 'str',
         'postgresql_db_name': 'str',
         'postgresql_host': 'str',
         'postgresql_password': 'str',
@@ -55,15 +54,13 @@ class GatewayUpdateProducerPostgreSQL(object):
         'target_name': 'str',
         'token': 'str',
         'uid_token': 'str',
-        'user_ttl': 'str',
-        'username': 'str'
+        'user_ttl': 'str'
     }
 
     attribute_map = {
         'creation_statements': 'creation-statements',
         'name': 'name',
         'new_name': 'new-name',
-        'password': 'password',
         'postgresql_db_name': 'postgresql-db-name',
         'postgresql_host': 'postgresql-host',
         'postgresql_password': 'postgresql-password',
@@ -81,11 +78,10 @@ class GatewayUpdateProducerPostgreSQL(object):
         'target_name': 'target-name',
         'token': 'token',
         'uid_token': 'uid-token',
-        'user_ttl': 'user-ttl',
-        'username': 'username'
+        'user_ttl': 'user-ttl'
     }
 
-    def __init__(self, creation_statements=None, name=None, new_name=None, password=None, postgresql_db_name=None, postgresql_host='127.0.0.1', postgresql_password=None, postgresql_port='5432', postgresql_username=None, producer_encryption_key=None, revocation_statement=None, secure_access_bastion_issuer=None, secure_access_db_schema=None, secure_access_enable=None, secure_access_host=None, secure_access_web=None, ssl=None, tags=None, target_name=None, token=None, uid_token=None, user_ttl='60m', username=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, creation_statements=None, name=None, new_name=None, postgresql_db_name=None, postgresql_host='127.0.0.1', postgresql_password=None, postgresql_port='5432', postgresql_username=None, producer_encryption_key=None, revocation_statement=None, secure_access_bastion_issuer=None, secure_access_db_schema=None, secure_access_enable=None, secure_access_host=None, secure_access_web=None, ssl=None, tags=None, target_name=None, token=None, uid_token=None, user_ttl='60m', local_vars_configuration=None):  # noqa: E501
         """GatewayUpdateProducerPostgreSQL - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -94,7 +90,6 @@ class GatewayUpdateProducerPostgreSQL(object):
         self._creation_statements = None
         self._name = None
         self._new_name = None
-        self._password = None
         self._postgresql_db_name = None
         self._postgresql_host = None
         self._postgresql_password = None
@@ -113,7 +108,6 @@ class GatewayUpdateProducerPostgreSQL(object):
         self._token = None
         self._uid_token = None
         self._user_ttl = None
-        self._username = None
         self.discriminator = None
 
         if creation_statements is not None:
@@ -121,8 +115,6 @@ class GatewayUpdateProducerPostgreSQL(object):
         self.name = name
         if new_name is not None:
             self.new_name = new_name
-        if password is not None:
-            self.password = password
         if postgresql_db_name is not None:
             self.postgresql_db_name = postgresql_db_name
         if postgresql_host is not None:
@@ -159,8 +151,6 @@ class GatewayUpdateProducerPostgreSQL(object):
             self.uid_token = uid_token
         if user_ttl is not None:
             self.user_ttl = user_ttl
-        if username is not None:
-            self.username = username
 
     @property
     def creation_statements(self):
@@ -232,29 +222,6 @@ class GatewayUpdateProducerPostgreSQL(object):
         """
 
         self._new_name = new_name
-
-    @property
-    def password(self):
-        """Gets the password of this GatewayUpdateProducerPostgreSQL.  # noqa: E501
-
-        Required only when the authentication process requires a username and password  # noqa: E501
-
-        :return: The password of this GatewayUpdateProducerPostgreSQL.  # noqa: E501
-        :rtype: str
-        """
-        return self._password
-
-    @password.setter
-    def password(self, password):
-        """Sets the password of this GatewayUpdateProducerPostgreSQL.
-
-        Required only when the authentication process requires a username and password  # noqa: E501
-
-        :param password: The password of this GatewayUpdateProducerPostgreSQL.  # noqa: E501
-        :type: str
-        """
-
-        self._password = password
 
     @property
     def postgresql_db_name(self):
@@ -659,29 +626,6 @@ class GatewayUpdateProducerPostgreSQL(object):
         """
 
         self._user_ttl = user_ttl
-
-    @property
-    def username(self):
-        """Gets the username of this GatewayUpdateProducerPostgreSQL.  # noqa: E501
-
-        Required only when the authentication process requires a username and password  # noqa: E501
-
-        :return: The username of this GatewayUpdateProducerPostgreSQL.  # noqa: E501
-        :rtype: str
-        """
-        return self._username
-
-    @username.setter
-    def username(self, username):
-        """Sets the username of this GatewayUpdateProducerPostgreSQL.
-
-        Required only when the authentication process requires a username and password  # noqa: E501
-
-        :param username: The username of this GatewayUpdateProducerPostgreSQL.  # noqa: E501
-        :type: str
-        """
-
-        self._username = username
 
     def to_dict(self):
         """Returns the model properties as a dict"""

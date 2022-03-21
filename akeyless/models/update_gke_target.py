@@ -40,15 +40,14 @@ class UpdateGKETarget(object):
         'gke_cluster_endpoint': 'str',
         'gke_cluster_name': 'str',
         'gke_service_account_email': 'str',
+        'keep_prev_version': 'str',
         'key': 'str',
         'name': 'str',
         'new_name': 'str',
-        'password': 'str',
         'token': 'str',
         'uid_token': 'str',
         'update_version': 'bool',
-        'use_gw_cloud_identity': 'bool',
-        'username': 'str'
+        'use_gw_cloud_identity': 'bool'
     }
 
     attribute_map = {
@@ -58,18 +57,17 @@ class UpdateGKETarget(object):
         'gke_cluster_endpoint': 'gke-cluster-endpoint',
         'gke_cluster_name': 'gke-cluster-name',
         'gke_service_account_email': 'gke-service-account-email',
+        'keep_prev_version': 'keep-prev-version',
         'key': 'key',
         'name': 'name',
         'new_name': 'new-name',
-        'password': 'password',
         'token': 'token',
         'uid_token': 'uid-token',
         'update_version': 'update-version',
-        'use_gw_cloud_identity': 'use-gw-cloud-identity',
-        'username': 'username'
+        'use_gw_cloud_identity': 'use-gw-cloud-identity'
     }
 
-    def __init__(self, comment=None, gke_account_key=None, gke_cluster_cert=None, gke_cluster_endpoint=None, gke_cluster_name=None, gke_service_account_email=None, key=None, name=None, new_name=None, password=None, token=None, uid_token=None, update_version=False, use_gw_cloud_identity=None, username=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, comment=None, gke_account_key=None, gke_cluster_cert=None, gke_cluster_endpoint=None, gke_cluster_name=None, gke_service_account_email=None, keep_prev_version=None, key=None, name=None, new_name=None, token=None, uid_token=None, update_version=None, use_gw_cloud_identity=None, local_vars_configuration=None):  # noqa: E501
         """UpdateGKETarget - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -81,15 +79,14 @@ class UpdateGKETarget(object):
         self._gke_cluster_endpoint = None
         self._gke_cluster_name = None
         self._gke_service_account_email = None
+        self._keep_prev_version = None
         self._key = None
         self._name = None
         self._new_name = None
-        self._password = None
         self._token = None
         self._uid_token = None
         self._update_version = None
         self._use_gw_cloud_identity = None
-        self._username = None
         self.discriminator = None
 
         if comment is not None:
@@ -104,13 +101,13 @@ class UpdateGKETarget(object):
             self.gke_cluster_name = gke_cluster_name
         if gke_service_account_email is not None:
             self.gke_service_account_email = gke_service_account_email
+        if keep_prev_version is not None:
+            self.keep_prev_version = keep_prev_version
         if key is not None:
             self.key = key
         self.name = name
         if new_name is not None:
             self.new_name = new_name
-        if password is not None:
-            self.password = password
         if token is not None:
             self.token = token
         if uid_token is not None:
@@ -119,8 +116,6 @@ class UpdateGKETarget(object):
             self.update_version = update_version
         if use_gw_cloud_identity is not None:
             self.use_gw_cloud_identity = use_gw_cloud_identity
-        if username is not None:
-            self.username = username
 
     @property
     def comment(self):
@@ -261,6 +256,27 @@ class UpdateGKETarget(object):
         self._gke_service_account_email = gke_service_account_email
 
     @property
+    def keep_prev_version(self):
+        """Gets the keep_prev_version of this UpdateGKETarget.  # noqa: E501
+
+
+        :return: The keep_prev_version of this UpdateGKETarget.  # noqa: E501
+        :rtype: str
+        """
+        return self._keep_prev_version
+
+    @keep_prev_version.setter
+    def keep_prev_version(self, keep_prev_version):
+        """Sets the keep_prev_version of this UpdateGKETarget.
+
+
+        :param keep_prev_version: The keep_prev_version of this UpdateGKETarget.  # noqa: E501
+        :type: str
+        """
+
+        self._keep_prev_version = keep_prev_version
+
+    @property
     def key(self):
         """Gets the key of this UpdateGKETarget.  # noqa: E501
 
@@ -332,29 +348,6 @@ class UpdateGKETarget(object):
         self._new_name = new_name
 
     @property
-    def password(self):
-        """Gets the password of this UpdateGKETarget.  # noqa: E501
-
-        Required only when the authentication process requires a username and password  # noqa: E501
-
-        :return: The password of this UpdateGKETarget.  # noqa: E501
-        :rtype: str
-        """
-        return self._password
-
-    @password.setter
-    def password(self, password):
-        """Sets the password of this UpdateGKETarget.
-
-        Required only when the authentication process requires a username and password  # noqa: E501
-
-        :param password: The password of this UpdateGKETarget.  # noqa: E501
-        :type: str
-        """
-
-        self._password = password
-
-    @property
     def token(self):
         """Gets the token of this UpdateGKETarget.  # noqa: E501
 
@@ -404,7 +397,7 @@ class UpdateGKETarget(object):
     def update_version(self):
         """Gets the update_version of this UpdateGKETarget.  # noqa: E501
 
-        Create new version for the target  # noqa: E501
+        Deprecated  # noqa: E501
 
         :return: The update_version of this UpdateGKETarget.  # noqa: E501
         :rtype: bool
@@ -415,7 +408,7 @@ class UpdateGKETarget(object):
     def update_version(self, update_version):
         """Sets the update_version of this UpdateGKETarget.
 
-        Create new version for the target  # noqa: E501
+        Deprecated  # noqa: E501
 
         :param update_version: The update_version of this UpdateGKETarget.  # noqa: E501
         :type: bool
@@ -443,29 +436,6 @@ class UpdateGKETarget(object):
         """
 
         self._use_gw_cloud_identity = use_gw_cloud_identity
-
-    @property
-    def username(self):
-        """Gets the username of this UpdateGKETarget.  # noqa: E501
-
-        Required only when the authentication process requires a username and password  # noqa: E501
-
-        :return: The username of this UpdateGKETarget.  # noqa: E501
-        :rtype: str
-        """
-        return self._username
-
-    @username.setter
-    def username(self, username):
-        """Sets the username of this UpdateGKETarget.
-
-        Required only when the authentication process requires a username and password  # noqa: E501
-
-        :param username: The username of this UpdateGKETarget.  # noqa: E501
-        :type: str
-        """
-
-        self._username = username
 
     def to_dict(self):
         """Returns the model properties as a dict"""

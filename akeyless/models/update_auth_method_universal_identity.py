@@ -42,11 +42,9 @@ class UpdateAuthMethodUniversalIdentity(object):
         'jwt_ttl': 'int',
         'name': 'str',
         'new_name': 'str',
-        'password': 'str',
         'token': 'str',
         'ttl': 'int',
-        'uid_token': 'str',
-        'username': 'str'
+        'uid_token': 'str'
     }
 
     attribute_map = {
@@ -58,14 +56,12 @@ class UpdateAuthMethodUniversalIdentity(object):
         'jwt_ttl': 'jwt-ttl',
         'name': 'name',
         'new_name': 'new-name',
-        'password': 'password',
         'token': 'token',
         'ttl': 'ttl',
-        'uid_token': 'uid-token',
-        'username': 'username'
+        'uid_token': 'uid-token'
     }
 
-    def __init__(self, access_expires=0, bound_ips=None, deny_inheritance=None, deny_rotate=None, force_sub_claims=None, jwt_ttl=0, name=None, new_name=None, password=None, token=None, ttl=60, uid_token=None, username=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, access_expires=0, bound_ips=None, deny_inheritance=None, deny_rotate=None, force_sub_claims=None, jwt_ttl=0, name=None, new_name=None, token=None, ttl=60, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """UpdateAuthMethodUniversalIdentity - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -79,11 +75,9 @@ class UpdateAuthMethodUniversalIdentity(object):
         self._jwt_ttl = None
         self._name = None
         self._new_name = None
-        self._password = None
         self._token = None
         self._ttl = None
         self._uid_token = None
-        self._username = None
         self.discriminator = None
 
         if access_expires is not None:
@@ -101,16 +95,12 @@ class UpdateAuthMethodUniversalIdentity(object):
         self.name = name
         if new_name is not None:
             self.new_name = new_name
-        if password is not None:
-            self.password = password
         if token is not None:
             self.token = token
         if ttl is not None:
             self.ttl = ttl
         if uid_token is not None:
             self.uid_token = uid_token
-        if username is not None:
-            self.username = username
 
     @property
     def access_expires(self):
@@ -299,29 +289,6 @@ class UpdateAuthMethodUniversalIdentity(object):
         self._new_name = new_name
 
     @property
-    def password(self):
-        """Gets the password of this UpdateAuthMethodUniversalIdentity.  # noqa: E501
-
-        Required only when the authentication process requires a username and password  # noqa: E501
-
-        :return: The password of this UpdateAuthMethodUniversalIdentity.  # noqa: E501
-        :rtype: str
-        """
-        return self._password
-
-    @password.setter
-    def password(self, password):
-        """Sets the password of this UpdateAuthMethodUniversalIdentity.
-
-        Required only when the authentication process requires a username and password  # noqa: E501
-
-        :param password: The password of this UpdateAuthMethodUniversalIdentity.  # noqa: E501
-        :type: str
-        """
-
-        self._password = password
-
-    @property
     def token(self):
         """Gets the token of this UpdateAuthMethodUniversalIdentity.  # noqa: E501
 
@@ -389,29 +356,6 @@ class UpdateAuthMethodUniversalIdentity(object):
         """
 
         self._uid_token = uid_token
-
-    @property
-    def username(self):
-        """Gets the username of this UpdateAuthMethodUniversalIdentity.  # noqa: E501
-
-        Required only when the authentication process requires a username and password  # noqa: E501
-
-        :return: The username of this UpdateAuthMethodUniversalIdentity.  # noqa: E501
-        :rtype: str
-        """
-        return self._username
-
-    @username.setter
-    def username(self, username):
-        """Sets the username of this UpdateAuthMethodUniversalIdentity.
-
-        Required only when the authentication process requires a username and password  # noqa: E501
-
-        :param username: The username of this UpdateAuthMethodUniversalIdentity.  # noqa: E501
-        :type: str
-        """
-
-        self._username = username
 
     def to_dict(self):
         """Returns the model properties as a dict"""

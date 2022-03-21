@@ -39,14 +39,12 @@ class GatewayCreateProducerSnowflake(object):
         'account_username': 'str',
         'db_name': 'str',
         'name': 'str',
-        'password': 'str',
         'role': 'str',
         'tags': 'list[str]',
         'target_name': 'str',
         'token': 'str',
         'uid_token': 'str',
         'user_ttl': 'str',
-        'username': 'str',
         'warehouse': 'str'
     }
 
@@ -56,18 +54,16 @@ class GatewayCreateProducerSnowflake(object):
         'account_username': 'account-username',
         'db_name': 'db-name',
         'name': 'name',
-        'password': 'password',
         'role': 'role',
         'tags': 'tags',
         'target_name': 'target-name',
         'token': 'token',
         'uid_token': 'uid-token',
         'user_ttl': 'user-ttl',
-        'username': 'username',
         'warehouse': 'warehouse'
     }
 
-    def __init__(self, account=None, account_password=None, account_username=None, db_name=None, name=None, password=None, role=None, tags=None, target_name=None, token=None, uid_token=None, user_ttl='24h', username=None, warehouse=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, account=None, account_password=None, account_username=None, db_name=None, name=None, role=None, tags=None, target_name=None, token=None, uid_token=None, user_ttl='24h', warehouse=None, local_vars_configuration=None):  # noqa: E501
         """GatewayCreateProducerSnowflake - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -78,14 +74,12 @@ class GatewayCreateProducerSnowflake(object):
         self._account_username = None
         self._db_name = None
         self._name = None
-        self._password = None
         self._role = None
         self._tags = None
         self._target_name = None
         self._token = None
         self._uid_token = None
         self._user_ttl = None
-        self._username = None
         self._warehouse = None
         self.discriminator = None
 
@@ -98,8 +92,6 @@ class GatewayCreateProducerSnowflake(object):
         if db_name is not None:
             self.db_name = db_name
         self.name = name
-        if password is not None:
-            self.password = password
         if role is not None:
             self.role = role
         if tags is not None:
@@ -112,8 +104,6 @@ class GatewayCreateProducerSnowflake(object):
             self.uid_token = uid_token
         if user_ttl is not None:
             self.user_ttl = user_ttl
-        if username is not None:
-            self.username = username
         if warehouse is not None:
             self.warehouse = warehouse
 
@@ -233,29 +223,6 @@ class GatewayCreateProducerSnowflake(object):
             raise ValueError("Invalid value for `name`, must not be `None`")  # noqa: E501
 
         self._name = name
-
-    @property
-    def password(self):
-        """Gets the password of this GatewayCreateProducerSnowflake.  # noqa: E501
-
-        Required only when the authentication process requires a username and password  # noqa: E501
-
-        :return: The password of this GatewayCreateProducerSnowflake.  # noqa: E501
-        :rtype: str
-        """
-        return self._password
-
-    @password.setter
-    def password(self, password):
-        """Sets the password of this GatewayCreateProducerSnowflake.
-
-        Required only when the authentication process requires a username and password  # noqa: E501
-
-        :param password: The password of this GatewayCreateProducerSnowflake.  # noqa: E501
-        :type: str
-        """
-
-        self._password = password
 
     @property
     def role(self):
@@ -394,29 +361,6 @@ class GatewayCreateProducerSnowflake(object):
         """
 
         self._user_ttl = user_ttl
-
-    @property
-    def username(self):
-        """Gets the username of this GatewayCreateProducerSnowflake.  # noqa: E501
-
-        Required only when the authentication process requires a username and password  # noqa: E501
-
-        :return: The username of this GatewayCreateProducerSnowflake.  # noqa: E501
-        :rtype: str
-        """
-        return self._username
-
-    @username.setter
-    def username(self, username):
-        """Sets the username of this GatewayCreateProducerSnowflake.
-
-        Required only when the authentication process requires a username and password  # noqa: E501
-
-        :param username: The username of this GatewayCreateProducerSnowflake.  # noqa: E501
-        :type: str
-        """
-
-        self._username = username
 
     @property
     def warehouse(self):

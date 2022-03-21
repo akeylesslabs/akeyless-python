@@ -40,10 +40,9 @@ class UpdateAuthMethodLDAP(object):
         'jwt_ttl': 'int',
         'name': 'str',
         'new_name': 'str',
-        'password': 'str',
+        'public_key_data': 'str',
         'token': 'str',
-        'uid_token': 'str',
-        'username': 'str'
+        'uid_token': 'str'
     }
 
     attribute_map = {
@@ -53,13 +52,12 @@ class UpdateAuthMethodLDAP(object):
         'jwt_ttl': 'jwt-ttl',
         'name': 'name',
         'new_name': 'new-name',
-        'password': 'password',
+        'public_key_data': 'public-key-data',
         'token': 'token',
-        'uid_token': 'uid-token',
-        'username': 'username'
+        'uid_token': 'uid-token'
     }
 
-    def __init__(self, access_expires=0, bound_ips=None, force_sub_claims=None, jwt_ttl=0, name=None, new_name=None, password=None, token=None, uid_token=None, username=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, access_expires=0, bound_ips=None, force_sub_claims=None, jwt_ttl=0, name=None, new_name=None, public_key_data=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """UpdateAuthMethodLDAP - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -71,10 +69,9 @@ class UpdateAuthMethodLDAP(object):
         self._jwt_ttl = None
         self._name = None
         self._new_name = None
-        self._password = None
+        self._public_key_data = None
         self._token = None
         self._uid_token = None
-        self._username = None
         self.discriminator = None
 
         if access_expires is not None:
@@ -88,14 +85,12 @@ class UpdateAuthMethodLDAP(object):
         self.name = name
         if new_name is not None:
             self.new_name = new_name
-        if password is not None:
-            self.password = password
+        if public_key_data is not None:
+            self.public_key_data = public_key_data
         if token is not None:
             self.token = token
         if uid_token is not None:
             self.uid_token = uid_token
-        if username is not None:
-            self.username = username
 
     @property
     def access_expires(self):
@@ -238,27 +233,27 @@ class UpdateAuthMethodLDAP(object):
         self._new_name = new_name
 
     @property
-    def password(self):
-        """Gets the password of this UpdateAuthMethodLDAP.  # noqa: E501
+    def public_key_data(self):
+        """Gets the public_key_data of this UpdateAuthMethodLDAP.  # noqa: E501
 
-        Required only when the authentication process requires a username and password  # noqa: E501
+        A public key generated for LDAP authentication method on Akeyless in base64 format [RSA2048]  # noqa: E501
 
-        :return: The password of this UpdateAuthMethodLDAP.  # noqa: E501
+        :return: The public_key_data of this UpdateAuthMethodLDAP.  # noqa: E501
         :rtype: str
         """
-        return self._password
+        return self._public_key_data
 
-    @password.setter
-    def password(self, password):
-        """Sets the password of this UpdateAuthMethodLDAP.
+    @public_key_data.setter
+    def public_key_data(self, public_key_data):
+        """Sets the public_key_data of this UpdateAuthMethodLDAP.
 
-        Required only when the authentication process requires a username and password  # noqa: E501
+        A public key generated for LDAP authentication method on Akeyless in base64 format [RSA2048]  # noqa: E501
 
-        :param password: The password of this UpdateAuthMethodLDAP.  # noqa: E501
+        :param public_key_data: The public_key_data of this UpdateAuthMethodLDAP.  # noqa: E501
         :type: str
         """
 
-        self._password = password
+        self._public_key_data = public_key_data
 
     @property
     def token(self):
@@ -305,29 +300,6 @@ class UpdateAuthMethodLDAP(object):
         """
 
         self._uid_token = uid_token
-
-    @property
-    def username(self):
-        """Gets the username of this UpdateAuthMethodLDAP.  # noqa: E501
-
-        Required only when the authentication process requires a username and password  # noqa: E501
-
-        :return: The username of this UpdateAuthMethodLDAP.  # noqa: E501
-        :rtype: str
-        """
-        return self._username
-
-    @username.setter
-    def username(self, username):
-        """Sets the username of this UpdateAuthMethodLDAP.
-
-        Required only when the authentication process requires a username and password  # noqa: E501
-
-        :param username: The username of this UpdateAuthMethodLDAP.  # noqa: E501
-        :type: str
-        """
-
-        self._username = username
 
     def to_dict(self):
         """Returns the model properties as a dict"""

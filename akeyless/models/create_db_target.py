@@ -49,7 +49,6 @@ class CreateDBTarget(object):
         'mongodb_uri_options': 'str',
         'name': 'str',
         'oracle_service_name': 'str',
-        'password': 'str',
         'port': 'str',
         'pwd': 'str',
         'snowflake_account': 'str',
@@ -57,8 +56,7 @@ class CreateDBTarget(object):
         'ssl_certificate': 'str',
         'token': 'str',
         'uid_token': 'str',
-        'user_name': 'str',
-        'username': 'str'
+        'user_name': 'str'
     }
 
     attribute_map = {
@@ -77,7 +75,6 @@ class CreateDBTarget(object):
         'mongodb_uri_options': 'mongodb-uri-options',
         'name': 'name',
         'oracle_service_name': 'oracle-service-name',
-        'password': 'password',
         'port': 'port',
         'pwd': 'pwd',
         'snowflake_account': 'snowflake-account',
@@ -85,11 +82,10 @@ class CreateDBTarget(object):
         'ssl_certificate': 'ssl-certificate',
         'token': 'token',
         'uid_token': 'uid-token',
-        'user_name': 'user-name',
-        'username': 'username'
+        'user_name': 'user-name'
     }
 
-    def __init__(self, comment=None, db_name=None, db_server_certificates=None, db_server_name=None, db_type=None, host=None, key=None, mongodb_atlas=None, mongodb_atlas_api_private_key=None, mongodb_atlas_api_public_key=None, mongodb_atlas_project_id=None, mongodb_default_auth_db=None, mongodb_uri_options=None, name=None, oracle_service_name=None, password=None, port=None, pwd=None, snowflake_account=None, ssl=None, ssl_certificate=None, token=None, uid_token=None, user_name=None, username=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, comment=None, db_name=None, db_server_certificates=None, db_server_name=None, db_type=None, host=None, key=None, mongodb_atlas=None, mongodb_atlas_api_private_key=None, mongodb_atlas_api_public_key=None, mongodb_atlas_project_id=None, mongodb_default_auth_db=None, mongodb_uri_options=None, name=None, oracle_service_name=None, port=None, pwd=None, snowflake_account=None, ssl=None, ssl_certificate=None, token=None, uid_token=None, user_name=None, local_vars_configuration=None):  # noqa: E501
         """CreateDBTarget - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -110,7 +106,6 @@ class CreateDBTarget(object):
         self._mongodb_uri_options = None
         self._name = None
         self._oracle_service_name = None
-        self._password = None
         self._port = None
         self._pwd = None
         self._snowflake_account = None
@@ -119,7 +114,6 @@ class CreateDBTarget(object):
         self._token = None
         self._uid_token = None
         self._user_name = None
-        self._username = None
         self.discriminator = None
 
         if comment is not None:
@@ -150,8 +144,6 @@ class CreateDBTarget(object):
         self.name = name
         if oracle_service_name is not None:
             self.oracle_service_name = oracle_service_name
-        if password is not None:
-            self.password = password
         if port is not None:
             self.port = port
         if pwd is not None:
@@ -168,8 +160,6 @@ class CreateDBTarget(object):
             self.uid_token = uid_token
         if user_name is not None:
             self.user_name = user_name
-        if username is not None:
-            self.username = username
 
     @property
     def comment(self):
@@ -511,29 +501,6 @@ class CreateDBTarget(object):
         self._oracle_service_name = oracle_service_name
 
     @property
-    def password(self):
-        """Gets the password of this CreateDBTarget.  # noqa: E501
-
-        Required only when the authentication process requires a username and password  # noqa: E501
-
-        :return: The password of this CreateDBTarget.  # noqa: E501
-        :rtype: str
-        """
-        return self._password
-
-    @password.setter
-    def password(self, password):
-        """Sets the password of this CreateDBTarget.
-
-        Required only when the authentication process requires a username and password  # noqa: E501
-
-        :param password: The password of this CreateDBTarget.  # noqa: E501
-        :type: str
-        """
-
-        self._password = password
-
-    @property
     def port(self):
         """Gets the port of this CreateDBTarget.  # noqa: E501
 
@@ -708,29 +675,6 @@ class CreateDBTarget(object):
         """
 
         self._user_name = user_name
-
-    @property
-    def username(self):
-        """Gets the username of this CreateDBTarget.  # noqa: E501
-
-        Required only when the authentication process requires a username and password  # noqa: E501
-
-        :return: The username of this CreateDBTarget.  # noqa: E501
-        :rtype: str
-        """
-        return self._username
-
-    @username.setter
-    def username(self, username):
-        """Sets the username of this CreateDBTarget.
-
-        Required only when the authentication process requires a username and password  # noqa: E501
-
-        :param username: The username of this CreateDBTarget.  # noqa: E501
-        :type: str
-        """
-
-        self._username = username
 
     def to_dict(self):
         """Returns the model properties as a dict"""

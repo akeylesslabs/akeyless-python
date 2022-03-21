@@ -76,6 +76,7 @@ Name | Type | Description | Notes
 **ssl_connection_mode** | **bool** | (Optional) SSLConnectionMode defines if SSL mode will be used to connect to DB | [optional] 
 **url** | **str** |  | [optional] 
 **use_gw_cloud_identity** | **bool** |  | [optional] 
+**user_name** | **str** |  | [optional] 
 **username** | **str** |  | [optional] 
 **venafi_api_key** | **str** |  | [optional] 
 **venafi_base_url** | **str** |  | [optional] 

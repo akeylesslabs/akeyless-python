@@ -40,6 +40,7 @@ class UpdateDBTarget(object):
         'db_server_name': 'str',
         'db_type': 'str',
         'host': 'str',
+        'keep_prev_version': 'str',
         'key': 'str',
         'mongodb_atlas': 'bool',
         'mongodb_atlas_api_private_key': 'str',
@@ -50,15 +51,13 @@ class UpdateDBTarget(object):
         'name': 'str',
         'new_name': 'str',
         'oracle_service_name': 'str',
-        'password': 'str',
         'port': 'str',
         'pwd': 'str',
         'snowflake_account': 'str',
         'token': 'str',
         'uid_token': 'str',
         'update_version': 'bool',
-        'user_name': 'str',
-        'username': 'str'
+        'user_name': 'str'
     }
 
     attribute_map = {
@@ -68,6 +67,7 @@ class UpdateDBTarget(object):
         'db_server_name': 'db-server-name',
         'db_type': 'db-type',
         'host': 'host',
+        'keep_prev_version': 'keep-prev-version',
         'key': 'key',
         'mongodb_atlas': 'mongodb-atlas',
         'mongodb_atlas_api_private_key': 'mongodb-atlas-api-private-key',
@@ -78,18 +78,16 @@ class UpdateDBTarget(object):
         'name': 'name',
         'new_name': 'new-name',
         'oracle_service_name': 'oracle-service-name',
-        'password': 'password',
         'port': 'port',
         'pwd': 'pwd',
         'snowflake_account': 'snowflake-account',
         'token': 'token',
         'uid_token': 'uid-token',
         'update_version': 'update-version',
-        'user_name': 'user-name',
-        'username': 'username'
+        'user_name': 'user-name'
     }
 
-    def __init__(self, comment=None, db_name=None, db_server_certificates=None, db_server_name=None, db_type=None, host=None, key=None, mongodb_atlas=None, mongodb_atlas_api_private_key=None, mongodb_atlas_api_public_key=None, mongodb_atlas_project_id=None, mongodb_default_auth_db=None, mongodb_uri_options=None, name=None, new_name=None, oracle_service_name=None, password=None, port=None, pwd=None, snowflake_account=None, token=None, uid_token=None, update_version=False, user_name=None, username=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, comment=None, db_name=None, db_server_certificates=None, db_server_name=None, db_type=None, host=None, keep_prev_version=None, key=None, mongodb_atlas=None, mongodb_atlas_api_private_key=None, mongodb_atlas_api_public_key=None, mongodb_atlas_project_id=None, mongodb_default_auth_db=None, mongodb_uri_options=None, name=None, new_name=None, oracle_service_name=None, port=None, pwd=None, snowflake_account=None, token=None, uid_token=None, update_version=None, user_name=None, local_vars_configuration=None):  # noqa: E501
         """UpdateDBTarget - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -101,6 +99,7 @@ class UpdateDBTarget(object):
         self._db_server_name = None
         self._db_type = None
         self._host = None
+        self._keep_prev_version = None
         self._key = None
         self._mongodb_atlas = None
         self._mongodb_atlas_api_private_key = None
@@ -111,7 +110,6 @@ class UpdateDBTarget(object):
         self._name = None
         self._new_name = None
         self._oracle_service_name = None
-        self._password = None
         self._port = None
         self._pwd = None
         self._snowflake_account = None
@@ -119,7 +117,6 @@ class UpdateDBTarget(object):
         self._uid_token = None
         self._update_version = None
         self._user_name = None
-        self._username = None
         self.discriminator = None
 
         if comment is not None:
@@ -133,6 +130,8 @@ class UpdateDBTarget(object):
         self.db_type = db_type
         if host is not None:
             self.host = host
+        if keep_prev_version is not None:
+            self.keep_prev_version = keep_prev_version
         if key is not None:
             self.key = key
         if mongodb_atlas is not None:
@@ -152,8 +151,6 @@ class UpdateDBTarget(object):
             self.new_name = new_name
         if oracle_service_name is not None:
             self.oracle_service_name = oracle_service_name
-        if password is not None:
-            self.password = password
         if port is not None:
             self.port = port
         if pwd is not None:
@@ -168,8 +165,6 @@ class UpdateDBTarget(object):
             self.update_version = update_version
         if user_name is not None:
             self.user_name = user_name
-        if username is not None:
-            self.username = username
 
     @property
     def comment(self):
@@ -304,6 +299,27 @@ class UpdateDBTarget(object):
         """
 
         self._host = host
+
+    @property
+    def keep_prev_version(self):
+        """Gets the keep_prev_version of this UpdateDBTarget.  # noqa: E501
+
+
+        :return: The keep_prev_version of this UpdateDBTarget.  # noqa: E501
+        :rtype: str
+        """
+        return self._keep_prev_version
+
+    @keep_prev_version.setter
+    def keep_prev_version(self, keep_prev_version):
+        """Sets the keep_prev_version of this UpdateDBTarget.
+
+
+        :param keep_prev_version: The keep_prev_version of this UpdateDBTarget.  # noqa: E501
+        :type: str
+        """
+
+        self._keep_prev_version = keep_prev_version
 
     @property
     def key(self):
@@ -534,29 +550,6 @@ class UpdateDBTarget(object):
         self._oracle_service_name = oracle_service_name
 
     @property
-    def password(self):
-        """Gets the password of this UpdateDBTarget.  # noqa: E501
-
-        Required only when the authentication process requires a username and password  # noqa: E501
-
-        :return: The password of this UpdateDBTarget.  # noqa: E501
-        :rtype: str
-        """
-        return self._password
-
-    @password.setter
-    def password(self, password):
-        """Sets the password of this UpdateDBTarget.
-
-        Required only when the authentication process requires a username and password  # noqa: E501
-
-        :param password: The password of this UpdateDBTarget.  # noqa: E501
-        :type: str
-        """
-
-        self._password = password
-
-    @property
     def port(self):
         """Gets the port of this UpdateDBTarget.  # noqa: E501
 
@@ -669,7 +662,7 @@ class UpdateDBTarget(object):
     def update_version(self):
         """Gets the update_version of this UpdateDBTarget.  # noqa: E501
 
-        Create new version for the target  # noqa: E501
+        Deprecated  # noqa: E501
 
         :return: The update_version of this UpdateDBTarget.  # noqa: E501
         :rtype: bool
@@ -680,7 +673,7 @@ class UpdateDBTarget(object):
     def update_version(self, update_version):
         """Sets the update_version of this UpdateDBTarget.
 
-        Create new version for the target  # noqa: E501
+        Deprecated  # noqa: E501
 
         :param update_version: The update_version of this UpdateDBTarget.  # noqa: E501
         :type: bool
@@ -708,29 +701,6 @@ class UpdateDBTarget(object):
         """
 
         self._user_name = user_name
-
-    @property
-    def username(self):
-        """Gets the username of this UpdateDBTarget.  # noqa: E501
-
-        Required only when the authentication process requires a username and password  # noqa: E501
-
-        :return: The username of this UpdateDBTarget.  # noqa: E501
-        :rtype: str
-        """
-        return self._username
-
-    @username.setter
-    def username(self, username):
-        """Sets the username of this UpdateDBTarget.
-
-        Required only when the authentication process requires a username and password  # noqa: E501
-
-        :param username: The username of this UpdateDBTarget.  # noqa: E501
-        :type: str
-        """
-
-        self._username = username
 
     def to_dict(self):
         """Returns the model properties as a dict"""

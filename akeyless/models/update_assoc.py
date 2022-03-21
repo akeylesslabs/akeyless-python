@@ -36,24 +36,20 @@ class UpdateAssoc(object):
     openapi_types = {
         'assoc_id': 'str',
         'case_sensitive': 'str',
-        'password': 'str',
         'sub_claims': 'dict(str, str)',
         'token': 'str',
-        'uid_token': 'str',
-        'username': 'str'
+        'uid_token': 'str'
     }
 
     attribute_map = {
         'assoc_id': 'assoc-id',
         'case_sensitive': 'case-sensitive',
-        'password': 'password',
         'sub_claims': 'sub-claims',
         'token': 'token',
-        'uid_token': 'uid-token',
-        'username': 'username'
+        'uid_token': 'uid-token'
     }
 
-    def __init__(self, assoc_id=None, case_sensitive=None, password=None, sub_claims=None, token=None, uid_token=None, username=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, assoc_id=None, case_sensitive=None, sub_claims=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """UpdateAssoc - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -61,26 +57,20 @@ class UpdateAssoc(object):
 
         self._assoc_id = None
         self._case_sensitive = None
-        self._password = None
         self._sub_claims = None
         self._token = None
         self._uid_token = None
-        self._username = None
         self.discriminator = None
 
         self.assoc_id = assoc_id
         if case_sensitive is not None:
             self.case_sensitive = case_sensitive
-        if password is not None:
-            self.password = password
         if sub_claims is not None:
             self.sub_claims = sub_claims
         if token is not None:
             self.token = token
         if uid_token is not None:
             self.uid_token = uid_token
-        if username is not None:
-            self.username = username
 
     @property
     def assoc_id(self):
@@ -127,29 +117,6 @@ class UpdateAssoc(object):
         """
 
         self._case_sensitive = case_sensitive
-
-    @property
-    def password(self):
-        """Gets the password of this UpdateAssoc.  # noqa: E501
-
-        Required only when the authentication process requires a username and password  # noqa: E501
-
-        :return: The password of this UpdateAssoc.  # noqa: E501
-        :rtype: str
-        """
-        return self._password
-
-    @password.setter
-    def password(self, password):
-        """Sets the password of this UpdateAssoc.
-
-        Required only when the authentication process requires a username and password  # noqa: E501
-
-        :param password: The password of this UpdateAssoc.  # noqa: E501
-        :type: str
-        """
-
-        self._password = password
 
     @property
     def sub_claims(self):
@@ -219,29 +186,6 @@ class UpdateAssoc(object):
         """
 
         self._uid_token = uid_token
-
-    @property
-    def username(self):
-        """Gets the username of this UpdateAssoc.  # noqa: E501
-
-        Required only when the authentication process requires a username and password  # noqa: E501
-
-        :return: The username of this UpdateAssoc.  # noqa: E501
-        :rtype: str
-        """
-        return self._username
-
-    @username.setter
-    def username(self, username):
-        """Sets the username of this UpdateAssoc.
-
-        Required only when the authentication process requires a username and password  # noqa: E501
-
-        :param username: The username of this UpdateAssoc.  # noqa: E501
-        :type: str
-        """
-
-        self._username = username
 
     def to_dict(self):
         """Returns the model properties as a dict"""

@@ -35,7 +35,6 @@ class GatewayCreateProducerRabbitMQ(object):
     """
     openapi_types = {
         'name': 'str',
-        'password': 'str',
         'producer_encryption_key_name': 'str',
         'rabbitmq_admin_pwd': 'str',
         'rabbitmq_admin_user': 'str',
@@ -48,17 +47,16 @@ class GatewayCreateProducerRabbitMQ(object):
         'secure_access_enable': 'str',
         'secure_access_url': 'str',
         'secure_access_web_browsing': 'bool',
+        'secure_access_web_proxy': 'bool',
         'tags': 'list[str]',
         'target_name': 'str',
         'token': 'str',
         'uid_token': 'str',
-        'user_ttl': 'str',
-        'username': 'str'
+        'user_ttl': 'str'
     }
 
     attribute_map = {
         'name': 'name',
-        'password': 'password',
         'producer_encryption_key_name': 'producer-encryption-key-name',
         'rabbitmq_admin_pwd': 'rabbitmq-admin-pwd',
         'rabbitmq_admin_user': 'rabbitmq-admin-user',
@@ -71,22 +69,21 @@ class GatewayCreateProducerRabbitMQ(object):
         'secure_access_enable': 'secure-access-enable',
         'secure_access_url': 'secure-access-url',
         'secure_access_web_browsing': 'secure-access-web-browsing',
+        'secure_access_web_proxy': 'secure-access-web-proxy',
         'tags': 'tags',
         'target_name': 'target-name',
         'token': 'token',
         'uid_token': 'uid-token',
-        'user_ttl': 'user-ttl',
-        'username': 'username'
+        'user_ttl': 'user-ttl'
     }
 
-    def __init__(self, name=None, password=None, producer_encryption_key_name=None, rabbitmq_admin_pwd=None, rabbitmq_admin_user=None, rabbitmq_server_uri=None, rabbitmq_user_conf_permission=None, rabbitmq_user_read_permission=None, rabbitmq_user_tags=None, rabbitmq_user_vhost=None, rabbitmq_user_write_permission=None, secure_access_enable=None, secure_access_url=None, secure_access_web_browsing=None, tags=None, target_name=None, token=None, uid_token=None, user_ttl='60m', username=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, name=None, producer_encryption_key_name=None, rabbitmq_admin_pwd=None, rabbitmq_admin_user=None, rabbitmq_server_uri=None, rabbitmq_user_conf_permission=None, rabbitmq_user_read_permission=None, rabbitmq_user_tags=None, rabbitmq_user_vhost=None, rabbitmq_user_write_permission=None, secure_access_enable=None, secure_access_url=None, secure_access_web_browsing=None, secure_access_web_proxy=None, tags=None, target_name=None, token=None, uid_token=None, user_ttl='60m', local_vars_configuration=None):  # noqa: E501
         """GatewayCreateProducerRabbitMQ - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._name = None
-        self._password = None
         self._producer_encryption_key_name = None
         self._rabbitmq_admin_pwd = None
         self._rabbitmq_admin_user = None
@@ -99,17 +96,15 @@ class GatewayCreateProducerRabbitMQ(object):
         self._secure_access_enable = None
         self._secure_access_url = None
         self._secure_access_web_browsing = None
+        self._secure_access_web_proxy = None
         self._tags = None
         self._target_name = None
         self._token = None
         self._uid_token = None
         self._user_ttl = None
-        self._username = None
         self.discriminator = None
 
         self.name = name
-        if password is not None:
-            self.password = password
         if producer_encryption_key_name is not None:
             self.producer_encryption_key_name = producer_encryption_key_name
         if rabbitmq_admin_pwd is not None:
@@ -134,6 +129,8 @@ class GatewayCreateProducerRabbitMQ(object):
             self.secure_access_url = secure_access_url
         if secure_access_web_browsing is not None:
             self.secure_access_web_browsing = secure_access_web_browsing
+        if secure_access_web_proxy is not None:
+            self.secure_access_web_proxy = secure_access_web_proxy
         if tags is not None:
             self.tags = tags
         if target_name is not None:
@@ -144,8 +141,6 @@ class GatewayCreateProducerRabbitMQ(object):
             self.uid_token = uid_token
         if user_ttl is not None:
             self.user_ttl = user_ttl
-        if username is not None:
-            self.username = username
 
     @property
     def name(self):
@@ -171,29 +166,6 @@ class GatewayCreateProducerRabbitMQ(object):
             raise ValueError("Invalid value for `name`, must not be `None`")  # noqa: E501
 
         self._name = name
-
-    @property
-    def password(self):
-        """Gets the password of this GatewayCreateProducerRabbitMQ.  # noqa: E501
-
-        Required only when the authentication process requires a username and password  # noqa: E501
-
-        :return: The password of this GatewayCreateProducerRabbitMQ.  # noqa: E501
-        :rtype: str
-        """
-        return self._password
-
-    @password.setter
-    def password(self, password):
-        """Sets the password of this GatewayCreateProducerRabbitMQ.
-
-        Required only when the authentication process requires a username and password  # noqa: E501
-
-        :param password: The password of this GatewayCreateProducerRabbitMQ.  # noqa: E501
-        :type: str
-        """
-
-        self._password = password
 
     @property
     def producer_encryption_key_name(self):
@@ -466,6 +438,27 @@ class GatewayCreateProducerRabbitMQ(object):
         self._secure_access_web_browsing = secure_access_web_browsing
 
     @property
+    def secure_access_web_proxy(self):
+        """Gets the secure_access_web_proxy of this GatewayCreateProducerRabbitMQ.  # noqa: E501
+
+
+        :return: The secure_access_web_proxy of this GatewayCreateProducerRabbitMQ.  # noqa: E501
+        :rtype: bool
+        """
+        return self._secure_access_web_proxy
+
+    @secure_access_web_proxy.setter
+    def secure_access_web_proxy(self, secure_access_web_proxy):
+        """Sets the secure_access_web_proxy of this GatewayCreateProducerRabbitMQ.
+
+
+        :param secure_access_web_proxy: The secure_access_web_proxy of this GatewayCreateProducerRabbitMQ.  # noqa: E501
+        :type: bool
+        """
+
+        self._secure_access_web_proxy = secure_access_web_proxy
+
+    @property
     def tags(self):
         """Gets the tags of this GatewayCreateProducerRabbitMQ.  # noqa: E501
 
@@ -579,29 +572,6 @@ class GatewayCreateProducerRabbitMQ(object):
         """
 
         self._user_ttl = user_ttl
-
-    @property
-    def username(self):
-        """Gets the username of this GatewayCreateProducerRabbitMQ.  # noqa: E501
-
-        Required only when the authentication process requires a username and password  # noqa: E501
-
-        :return: The username of this GatewayCreateProducerRabbitMQ.  # noqa: E501
-        :rtype: str
-        """
-        return self._username
-
-    @username.setter
-    def username(self, username):
-        """Sets the username of this GatewayCreateProducerRabbitMQ.
-
-        Required only when the authentication process requires a username and password  # noqa: E501
-
-        :param username: The username of this GatewayCreateProducerRabbitMQ.  # noqa: E501
-        :type: str
-        """
-
-        self._username = username
 
     def to_dict(self):
         """Returns the model properties as a dict"""

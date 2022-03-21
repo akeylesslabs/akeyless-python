@@ -29,6 +29,7 @@ Name | Type | Description | Notes
 **ssh_user** | **str** |  | [optional] 
 **url** | **str** |  | [optional] 
 **use_internal_bastion** | **bool** |  | [optional] 
+**web_proxy** | **bool** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -7,7 +7,6 @@ Name | Type | Description | Notes
 **name** | **str** | Current item name | 
 **new_metadata** | **str** | New item metadata | [optional] [default to 'default_metadata']
 **new_name** | **str** | New item name | [optional] 
-**password** | **str** | Required only when the authentication process requires a username and password | [optional] 
 **rm_tag** | **list[str]** | List of the existent tags that will be removed from this item | [optional] 
 **secure_access_add_host** | **list[str]** |  | [optional] 
 **secure_access_allow_external_user** | **str** |  | [optional] 
@@ -32,9 +31,9 @@ Name | Type | Description | Notes
 **secure_access_url** | **str** |  | [optional] 
 **secure_access_use_internal_bastion** | **bool** |  | [optional] 
 **secure_access_web_browsing** | **bool** |  | [optional] 
+**secure_access_web_proxy** | **bool** |  | [optional] 
 **token** | **str** | Authentication token (see &#x60;/auth&#x60; and &#x60;/configure&#x60;) | [optional] 
 **uid_token** | **str** | The universal identity token, Required only for universal_identity authentication | [optional] 
-**username** | **str** | Required only when the authentication process requires a username and password | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

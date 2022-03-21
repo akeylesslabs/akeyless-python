@@ -43,7 +43,6 @@ class GatewayUpdateProducerMSSQL(object):
         'mssql_username': 'str',
         'name': 'str',
         'new_name': 'str',
-        'password': 'str',
         'producer_encryption_key_name': 'str',
         'secure_access_bastion_issuer': 'str',
         'secure_access_db_schema': 'str',
@@ -54,8 +53,7 @@ class GatewayUpdateProducerMSSQL(object):
         'target_name': 'str',
         'token': 'str',
         'uid_token': 'str',
-        'user_ttl': 'str',
-        'username': 'str'
+        'user_ttl': 'str'
     }
 
     attribute_map = {
@@ -68,7 +66,6 @@ class GatewayUpdateProducerMSSQL(object):
         'mssql_username': 'mssql-username',
         'name': 'name',
         'new_name': 'new-name',
-        'password': 'password',
         'producer_encryption_key_name': 'producer-encryption-key-name',
         'secure_access_bastion_issuer': 'secure-access-bastion-issuer',
         'secure_access_db_schema': 'secure-access-db-schema',
@@ -79,11 +76,10 @@ class GatewayUpdateProducerMSSQL(object):
         'target_name': 'target-name',
         'token': 'token',
         'uid_token': 'uid-token',
-        'user_ttl': 'user-ttl',
-        'username': 'username'
+        'user_ttl': 'user-ttl'
     }
 
-    def __init__(self, mssql_create_statements=None, mssql_dbname=None, mssql_host='127.0.0.1', mssql_password=None, mssql_port='1433', mssql_revocation_statements=None, mssql_username=None, name=None, new_name=None, password=None, producer_encryption_key_name=None, secure_access_bastion_issuer=None, secure_access_db_schema=None, secure_access_enable=None, secure_access_host=None, secure_access_web=None, tags=None, target_name=None, token=None, uid_token=None, user_ttl='60m', username=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, mssql_create_statements=None, mssql_dbname=None, mssql_host='127.0.0.1', mssql_password=None, mssql_port='1433', mssql_revocation_statements=None, mssql_username=None, name=None, new_name=None, producer_encryption_key_name=None, secure_access_bastion_issuer=None, secure_access_db_schema=None, secure_access_enable=None, secure_access_host=None, secure_access_web=None, tags=None, target_name=None, token=None, uid_token=None, user_ttl='60m', local_vars_configuration=None):  # noqa: E501
         """GatewayUpdateProducerMSSQL - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -98,7 +94,6 @@ class GatewayUpdateProducerMSSQL(object):
         self._mssql_username = None
         self._name = None
         self._new_name = None
-        self._password = None
         self._producer_encryption_key_name = None
         self._secure_access_bastion_issuer = None
         self._secure_access_db_schema = None
@@ -110,7 +105,6 @@ class GatewayUpdateProducerMSSQL(object):
         self._token = None
         self._uid_token = None
         self._user_ttl = None
-        self._username = None
         self.discriminator = None
 
         if mssql_create_statements is not None:
@@ -130,8 +124,6 @@ class GatewayUpdateProducerMSSQL(object):
         self.name = name
         if new_name is not None:
             self.new_name = new_name
-        if password is not None:
-            self.password = password
         if producer_encryption_key_name is not None:
             self.producer_encryption_key_name = producer_encryption_key_name
         if secure_access_bastion_issuer is not None:
@@ -154,8 +146,6 @@ class GatewayUpdateProducerMSSQL(object):
             self.uid_token = uid_token
         if user_ttl is not None:
             self.user_ttl = user_ttl
-        if username is not None:
-            self.username = username
 
     @property
     def mssql_create_statements(self):
@@ -365,29 +355,6 @@ class GatewayUpdateProducerMSSQL(object):
         """
 
         self._new_name = new_name
-
-    @property
-    def password(self):
-        """Gets the password of this GatewayUpdateProducerMSSQL.  # noqa: E501
-
-        Required only when the authentication process requires a username and password  # noqa: E501
-
-        :return: The password of this GatewayUpdateProducerMSSQL.  # noqa: E501
-        :rtype: str
-        """
-        return self._password
-
-    @password.setter
-    def password(self, password):
-        """Sets the password of this GatewayUpdateProducerMSSQL.
-
-        Required only when the authentication process requires a username and password  # noqa: E501
-
-        :param password: The password of this GatewayUpdateProducerMSSQL.  # noqa: E501
-        :type: str
-        """
-
-        self._password = password
 
     @property
     def producer_encryption_key_name(self):
@@ -631,29 +598,6 @@ class GatewayUpdateProducerMSSQL(object):
         """
 
         self._user_ttl = user_ttl
-
-    @property
-    def username(self):
-        """Gets the username of this GatewayUpdateProducerMSSQL.  # noqa: E501
-
-        Required only when the authentication process requires a username and password  # noqa: E501
-
-        :return: The username of this GatewayUpdateProducerMSSQL.  # noqa: E501
-        :rtype: str
-        """
-        return self._username
-
-    @username.setter
-    def username(self, username):
-        """Sets the username of this GatewayUpdateProducerMSSQL.
-
-        Required only when the authentication process requires a username and password  # noqa: E501
-
-        :param username: The username of this GatewayUpdateProducerMSSQL.  # noqa: E501
-        :type: str
-        """
-
-        self._username = username
 
     def to_dict(self):
         """Returns the model properties as a dict"""

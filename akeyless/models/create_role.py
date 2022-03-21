@@ -34,48 +34,104 @@ class CreateRole(object):
                             and the value is json key in definition.
     """
     openapi_types = {
+        'analytics_access': 'str',
+        'audit_access': 'str',
         'comment': 'str',
+        'gw_analytics_access': 'str',
         'name': 'str',
-        'password': 'str',
+        'sra_reports_access': 'str',
         'token': 'str',
-        'uid_token': 'str',
-        'username': 'str'
+        'uid_token': 'str'
     }
 
     attribute_map = {
+        'analytics_access': 'analytics-access',
+        'audit_access': 'audit-access',
         'comment': 'comment',
+        'gw_analytics_access': 'gw-analytics-access',
         'name': 'name',
-        'password': 'password',
+        'sra_reports_access': 'sra-reports-access',
         'token': 'token',
-        'uid_token': 'uid-token',
-        'username': 'username'
+        'uid_token': 'uid-token'
     }
 
-    def __init__(self, comment=None, name=None, password=None, token=None, uid_token=None, username=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, analytics_access=None, audit_access=None, comment=None, gw_analytics_access=None, name=None, sra_reports_access=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """CreateRole - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
+        self._analytics_access = None
+        self._audit_access = None
         self._comment = None
+        self._gw_analytics_access = None
         self._name = None
-        self._password = None
+        self._sra_reports_access = None
         self._token = None
         self._uid_token = None
-        self._username = None
         self.discriminator = None
 
+        if analytics_access is not None:
+            self.analytics_access = analytics_access
+        if audit_access is not None:
+            self.audit_access = audit_access
         if comment is not None:
             self.comment = comment
+        if gw_analytics_access is not None:
+            self.gw_analytics_access = gw_analytics_access
         self.name = name
-        if password is not None:
-            self.password = password
+        if sra_reports_access is not None:
+            self.sra_reports_access = sra_reports_access
         if token is not None:
             self.token = token
         if uid_token is not None:
             self.uid_token = uid_token
-        if username is not None:
-            self.username = username
+
+    @property
+    def analytics_access(self):
+        """Gets the analytics_access of this CreateRole.  # noqa: E501
+
+        Allow this role to view analytics. Currently only 'none', 'own', 'all' values are supported, allowing associated auth methods to view reports produced by the same auth methods.  # noqa: E501
+
+        :return: The analytics_access of this CreateRole.  # noqa: E501
+        :rtype: str
+        """
+        return self._analytics_access
+
+    @analytics_access.setter
+    def analytics_access(self, analytics_access):
+        """Sets the analytics_access of this CreateRole.
+
+        Allow this role to view analytics. Currently only 'none', 'own', 'all' values are supported, allowing associated auth methods to view reports produced by the same auth methods.  # noqa: E501
+
+        :param analytics_access: The analytics_access of this CreateRole.  # noqa: E501
+        :type: str
+        """
+
+        self._analytics_access = analytics_access
+
+    @property
+    def audit_access(self):
+        """Gets the audit_access of this CreateRole.  # noqa: E501
+
+        Allow this role to view audit logs. Currently only 'none', 'own' and 'all' values are supported, allowing associated auth methods to view audit logs produced by the same auth methods.  # noqa: E501
+
+        :return: The audit_access of this CreateRole.  # noqa: E501
+        :rtype: str
+        """
+        return self._audit_access
+
+    @audit_access.setter
+    def audit_access(self, audit_access):
+        """Sets the audit_access of this CreateRole.
+
+        Allow this role to view audit logs. Currently only 'none', 'own' and 'all' values are supported, allowing associated auth methods to view audit logs produced by the same auth methods.  # noqa: E501
+
+        :param audit_access: The audit_access of this CreateRole.  # noqa: E501
+        :type: str
+        """
+
+        self._audit_access = audit_access
 
     @property
     def comment(self):
@@ -99,6 +155,29 @@ class CreateRole(object):
         """
 
         self._comment = comment
+
+    @property
+    def gw_analytics_access(self):
+        """Gets the gw_analytics_access of this CreateRole.  # noqa: E501
+
+        Allow this role to view gw analytics. Currently only 'none', 'own', 'all' values are supported, allowing associated auth methods to view reports produced by the same auth methods.  # noqa: E501
+
+        :return: The gw_analytics_access of this CreateRole.  # noqa: E501
+        :rtype: str
+        """
+        return self._gw_analytics_access
+
+    @gw_analytics_access.setter
+    def gw_analytics_access(self, gw_analytics_access):
+        """Sets the gw_analytics_access of this CreateRole.
+
+        Allow this role to view gw analytics. Currently only 'none', 'own', 'all' values are supported, allowing associated auth methods to view reports produced by the same auth methods.  # noqa: E501
+
+        :param gw_analytics_access: The gw_analytics_access of this CreateRole.  # noqa: E501
+        :type: str
+        """
+
+        self._gw_analytics_access = gw_analytics_access
 
     @property
     def name(self):
@@ -126,27 +205,27 @@ class CreateRole(object):
         self._name = name
 
     @property
-    def password(self):
-        """Gets the password of this CreateRole.  # noqa: E501
+    def sra_reports_access(self):
+        """Gets the sra_reports_access of this CreateRole.  # noqa: E501
 
-        Required only when the authentication process requires a username and password  # noqa: E501
+        Allow this role to view SRA Clusters. Currently only 'none', 'own', 'all' values are supported.  # noqa: E501
 
-        :return: The password of this CreateRole.  # noqa: E501
+        :return: The sra_reports_access of this CreateRole.  # noqa: E501
         :rtype: str
         """
-        return self._password
+        return self._sra_reports_access
 
-    @password.setter
-    def password(self, password):
-        """Sets the password of this CreateRole.
+    @sra_reports_access.setter
+    def sra_reports_access(self, sra_reports_access):
+        """Sets the sra_reports_access of this CreateRole.
 
-        Required only when the authentication process requires a username and password  # noqa: E501
+        Allow this role to view SRA Clusters. Currently only 'none', 'own', 'all' values are supported.  # noqa: E501
 
-        :param password: The password of this CreateRole.  # noqa: E501
+        :param sra_reports_access: The sra_reports_access of this CreateRole.  # noqa: E501
         :type: str
         """
 
-        self._password = password
+        self._sra_reports_access = sra_reports_access
 
     @property
     def token(self):
@@ -193,29 +272,6 @@ class CreateRole(object):
         """
 
         self._uid_token = uid_token
-
-    @property
-    def username(self):
-        """Gets the username of this CreateRole.  # noqa: E501
-
-        Required only when the authentication process requires a username and password  # noqa: E501
-
-        :return: The username of this CreateRole.  # noqa: E501
-        :rtype: str
-        """
-        return self._username
-
-    @username.setter
-    def username(self, username):
-        """Sets the username of this CreateRole.
-
-        Required only when the authentication process requires a username and password  # noqa: E501
-
-        :param username: The username of this CreateRole.  # noqa: E501
-        :type: str
-        """
-
-        self._username = username
 
     def to_dict(self):
         """Returns the model properties as a dict"""

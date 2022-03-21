@@ -37,35 +37,33 @@ class UpdateAzureTarget(object):
         'client_id': 'str',
         'client_secret': 'str',
         'comment': 'str',
+        'keep_prev_version': 'str',
         'key': 'str',
         'name': 'str',
         'new_name': 'str',
-        'password': 'str',
         'tenant_id': 'str',
         'token': 'str',
         'uid_token': 'str',
         'update_version': 'bool',
-        'use_gw_cloud_identity': 'bool',
-        'username': 'str'
+        'use_gw_cloud_identity': 'bool'
     }
 
     attribute_map = {
         'client_id': 'client-id',
         'client_secret': 'client-secret',
         'comment': 'comment',
+        'keep_prev_version': 'keep-prev-version',
         'key': 'key',
         'name': 'name',
         'new_name': 'new-name',
-        'password': 'password',
         'tenant_id': 'tenant-id',
         'token': 'token',
         'uid_token': 'uid-token',
         'update_version': 'update-version',
-        'use_gw_cloud_identity': 'use-gw-cloud-identity',
-        'username': 'username'
+        'use_gw_cloud_identity': 'use-gw-cloud-identity'
     }
 
-    def __init__(self, client_id=None, client_secret=None, comment=None, key=None, name=None, new_name=None, password=None, tenant_id=None, token=None, uid_token=None, update_version=False, use_gw_cloud_identity=None, username=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, client_id=None, client_secret=None, comment=None, keep_prev_version=None, key=None, name=None, new_name=None, tenant_id=None, token=None, uid_token=None, update_version=None, use_gw_cloud_identity=None, local_vars_configuration=None):  # noqa: E501
         """UpdateAzureTarget - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -74,16 +72,15 @@ class UpdateAzureTarget(object):
         self._client_id = None
         self._client_secret = None
         self._comment = None
+        self._keep_prev_version = None
         self._key = None
         self._name = None
         self._new_name = None
-        self._password = None
         self._tenant_id = None
         self._token = None
         self._uid_token = None
         self._update_version = None
         self._use_gw_cloud_identity = None
-        self._username = None
         self.discriminator = None
 
         if client_id is not None:
@@ -92,13 +89,13 @@ class UpdateAzureTarget(object):
             self.client_secret = client_secret
         if comment is not None:
             self.comment = comment
+        if keep_prev_version is not None:
+            self.keep_prev_version = keep_prev_version
         if key is not None:
             self.key = key
         self.name = name
         if new_name is not None:
             self.new_name = new_name
-        if password is not None:
-            self.password = password
         if tenant_id is not None:
             self.tenant_id = tenant_id
         if token is not None:
@@ -109,8 +106,6 @@ class UpdateAzureTarget(object):
             self.update_version = update_version
         if use_gw_cloud_identity is not None:
             self.use_gw_cloud_identity = use_gw_cloud_identity
-        if username is not None:
-            self.username = username
 
     @property
     def client_id(self):
@@ -176,6 +171,27 @@ class UpdateAzureTarget(object):
         """
 
         self._comment = comment
+
+    @property
+    def keep_prev_version(self):
+        """Gets the keep_prev_version of this UpdateAzureTarget.  # noqa: E501
+
+
+        :return: The keep_prev_version of this UpdateAzureTarget.  # noqa: E501
+        :rtype: str
+        """
+        return self._keep_prev_version
+
+    @keep_prev_version.setter
+    def keep_prev_version(self, keep_prev_version):
+        """Sets the keep_prev_version of this UpdateAzureTarget.
+
+
+        :param keep_prev_version: The keep_prev_version of this UpdateAzureTarget.  # noqa: E501
+        :type: str
+        """
+
+        self._keep_prev_version = keep_prev_version
 
     @property
     def key(self):
@@ -249,29 +265,6 @@ class UpdateAzureTarget(object):
         self._new_name = new_name
 
     @property
-    def password(self):
-        """Gets the password of this UpdateAzureTarget.  # noqa: E501
-
-        Required only when the authentication process requires a username and password  # noqa: E501
-
-        :return: The password of this UpdateAzureTarget.  # noqa: E501
-        :rtype: str
-        """
-        return self._password
-
-    @password.setter
-    def password(self, password):
-        """Sets the password of this UpdateAzureTarget.
-
-        Required only when the authentication process requires a username and password  # noqa: E501
-
-        :param password: The password of this UpdateAzureTarget.  # noqa: E501
-        :type: str
-        """
-
-        self._password = password
-
-    @property
     def tenant_id(self):
         """Gets the tenant_id of this UpdateAzureTarget.  # noqa: E501
 
@@ -342,7 +335,7 @@ class UpdateAzureTarget(object):
     def update_version(self):
         """Gets the update_version of this UpdateAzureTarget.  # noqa: E501
 
-        Create new version for the target  # noqa: E501
+        Deprecated  # noqa: E501
 
         :return: The update_version of this UpdateAzureTarget.  # noqa: E501
         :rtype: bool
@@ -353,7 +346,7 @@ class UpdateAzureTarget(object):
     def update_version(self, update_version):
         """Sets the update_version of this UpdateAzureTarget.
 
-        Create new version for the target  # noqa: E501
+        Deprecated  # noqa: E501
 
         :param update_version: The update_version of this UpdateAzureTarget.  # noqa: E501
         :type: bool
@@ -381,29 +374,6 @@ class UpdateAzureTarget(object):
         """
 
         self._use_gw_cloud_identity = use_gw_cloud_identity
-
-    @property
-    def username(self):
-        """Gets the username of this UpdateAzureTarget.  # noqa: E501
-
-        Required only when the authentication process requires a username and password  # noqa: E501
-
-        :return: The username of this UpdateAzureTarget.  # noqa: E501
-        :rtype: str
-        """
-        return self._username
-
-    @username.setter
-    def username(self, username):
-        """Sets the username of this UpdateAzureTarget.
-
-        Required only when the authentication process requires a username and password  # noqa: E501
-
-        :param username: The username of this UpdateAzureTarget.  # noqa: E501
-        :type: str
-        """
-
-        self._username = username
 
     def to_dict(self):
         """Returns the model properties as a dict"""

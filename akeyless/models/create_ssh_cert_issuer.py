@@ -38,7 +38,6 @@ class CreateSSHCertIssuer(object):
         'extensions': 'dict(str, str)',
         'metadata': 'str',
         'name': 'str',
-        'password': 'str',
         'principals': 'str',
         'secure_access_bastion_api': 'str',
         'secure_access_bastion_ssh': 'str',
@@ -50,8 +49,7 @@ class CreateSSHCertIssuer(object):
         'tag': 'list[str]',
         'token': 'str',
         'ttl': 'int',
-        'uid_token': 'str',
-        'username': 'str'
+        'uid_token': 'str'
     }
 
     attribute_map = {
@@ -59,7 +57,6 @@ class CreateSSHCertIssuer(object):
         'extensions': 'extensions',
         'metadata': 'metadata',
         'name': 'name',
-        'password': 'password',
         'principals': 'principals',
         'secure_access_bastion_api': 'secure-access-bastion-api',
         'secure_access_bastion_ssh': 'secure-access-bastion-ssh',
@@ -71,11 +68,10 @@ class CreateSSHCertIssuer(object):
         'tag': 'tag',
         'token': 'token',
         'ttl': 'ttl',
-        'uid_token': 'uid-token',
-        'username': 'username'
+        'uid_token': 'uid-token'
     }
 
-    def __init__(self, allowed_users=None, extensions=None, metadata=None, name=None, password=None, principals=None, secure_access_bastion_api=None, secure_access_bastion_ssh=None, secure_access_enable=None, secure_access_host=None, secure_access_ssh_creds_user=None, secure_access_use_internal_bastion=None, signer_key_name=None, tag=None, token=None, ttl=None, uid_token=None, username=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, allowed_users=None, extensions=None, metadata=None, name=None, principals=None, secure_access_bastion_api=None, secure_access_bastion_ssh=None, secure_access_enable=None, secure_access_host=None, secure_access_ssh_creds_user=None, secure_access_use_internal_bastion=None, signer_key_name=None, tag=None, token=None, ttl=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """CreateSSHCertIssuer - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -85,7 +81,6 @@ class CreateSSHCertIssuer(object):
         self._extensions = None
         self._metadata = None
         self._name = None
-        self._password = None
         self._principals = None
         self._secure_access_bastion_api = None
         self._secure_access_bastion_ssh = None
@@ -98,7 +93,6 @@ class CreateSSHCertIssuer(object):
         self._token = None
         self._ttl = None
         self._uid_token = None
-        self._username = None
         self.discriminator = None
 
         self.allowed_users = allowed_users
@@ -107,8 +101,6 @@ class CreateSSHCertIssuer(object):
         if metadata is not None:
             self.metadata = metadata
         self.name = name
-        if password is not None:
-            self.password = password
         if principals is not None:
             self.principals = principals
         if secure_access_bastion_api is not None:
@@ -131,8 +123,6 @@ class CreateSSHCertIssuer(object):
         self.ttl = ttl
         if uid_token is not None:
             self.uid_token = uid_token
-        if username is not None:
-            self.username = username
 
     @property
     def allowed_users(self):
@@ -229,29 +219,6 @@ class CreateSSHCertIssuer(object):
             raise ValueError("Invalid value for `name`, must not be `None`")  # noqa: E501
 
         self._name = name
-
-    @property
-    def password(self):
-        """Gets the password of this CreateSSHCertIssuer.  # noqa: E501
-
-        Required only when the authentication process requires a username and password  # noqa: E501
-
-        :return: The password of this CreateSSHCertIssuer.  # noqa: E501
-        :rtype: str
-        """
-        return self._password
-
-    @password.setter
-    def password(self, password):
-        """Sets the password of this CreateSSHCertIssuer.
-
-        Required only when the authentication process requires a username and password  # noqa: E501
-
-        :param password: The password of this CreateSSHCertIssuer.  # noqa: E501
-        :type: str
-        """
-
-        self._password = password
 
     @property
     def principals(self):
@@ -520,29 +487,6 @@ class CreateSSHCertIssuer(object):
         """
 
         self._uid_token = uid_token
-
-    @property
-    def username(self):
-        """Gets the username of this CreateSSHCertIssuer.  # noqa: E501
-
-        Required only when the authentication process requires a username and password  # noqa: E501
-
-        :return: The username of this CreateSSHCertIssuer.  # noqa: E501
-        :rtype: str
-        """
-        return self._username
-
-    @username.setter
-    def username(self, username):
-        """Sets the username of this CreateSSHCertIssuer.
-
-        Required only when the authentication process requires a username and password  # noqa: E501
-
-        :param username: The username of this CreateSSHCertIssuer.  # noqa: E501
-        :type: str
-        """
-
-        self._username = username
 
     def to_dict(self):
         """Returns the model properties as a dict"""

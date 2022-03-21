@@ -41,13 +41,11 @@ class GatewayUpdateProducerGithub(object):
         'installation_repository': 'str',
         'name': 'str',
         'new_name': 'str',
-        'password': 'str',
         'target_name': 'str',
         'token': 'str',
         'token_permissions': 'list[str]',
         'token_repositories': 'list[str]',
-        'uid_token': 'str',
-        'username': 'str'
+        'uid_token': 'str'
     }
 
     attribute_map = {
@@ -58,16 +56,14 @@ class GatewayUpdateProducerGithub(object):
         'installation_repository': 'installation-repository',
         'name': 'name',
         'new_name': 'new-name',
-        'password': 'password',
         'target_name': 'target-name',
         'token': 'token',
         'token_permissions': 'token-permissions',
         'token_repositories': 'token-repositories',
-        'uid_token': 'uid-token',
-        'username': 'username'
+        'uid_token': 'uid-token'
     }
 
-    def __init__(self, github_app_id=None, github_app_private_key=None, github_base_url=None, installation_id=None, installation_repository=None, name=None, new_name=None, password=None, target_name=None, token=None, token_permissions=None, token_repositories=None, uid_token=None, username=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, github_app_id=None, github_app_private_key=None, github_base_url=None, installation_id=None, installation_repository=None, name=None, new_name=None, target_name=None, token=None, token_permissions=None, token_repositories=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """GatewayUpdateProducerGithub - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -80,13 +76,11 @@ class GatewayUpdateProducerGithub(object):
         self._installation_repository = None
         self._name = None
         self._new_name = None
-        self._password = None
         self._target_name = None
         self._token = None
         self._token_permissions = None
         self._token_repositories = None
         self._uid_token = None
-        self._username = None
         self.discriminator = None
 
         if github_app_id is not None:
@@ -102,8 +96,6 @@ class GatewayUpdateProducerGithub(object):
         self.name = name
         if new_name is not None:
             self.new_name = new_name
-        if password is not None:
-            self.password = password
         if target_name is not None:
             self.target_name = target_name
         if token is not None:
@@ -114,8 +106,6 @@ class GatewayUpdateProducerGithub(object):
             self.token_repositories = token_repositories
         if uid_token is not None:
             self.uid_token = uid_token
-        if username is not None:
-            self.username = username
 
     @property
     def github_app_id(self):
@@ -281,29 +271,6 @@ class GatewayUpdateProducerGithub(object):
         self._new_name = new_name
 
     @property
-    def password(self):
-        """Gets the password of this GatewayUpdateProducerGithub.  # noqa: E501
-
-        Required only when the authentication process requires a username and password  # noqa: E501
-
-        :return: The password of this GatewayUpdateProducerGithub.  # noqa: E501
-        :rtype: str
-        """
-        return self._password
-
-    @password.setter
-    def password(self, password):
-        """Sets the password of this GatewayUpdateProducerGithub.
-
-        Required only when the authentication process requires a username and password  # noqa: E501
-
-        :param password: The password of this GatewayUpdateProducerGithub.  # noqa: E501
-        :type: str
-        """
-
-        self._password = password
-
-    @property
     def target_name(self):
         """Gets the target_name of this GatewayUpdateProducerGithub.  # noqa: E501
 
@@ -417,29 +384,6 @@ class GatewayUpdateProducerGithub(object):
         """
 
         self._uid_token = uid_token
-
-    @property
-    def username(self):
-        """Gets the username of this GatewayUpdateProducerGithub.  # noqa: E501
-
-        Required only when the authentication process requires a username and password  # noqa: E501
-
-        :return: The username of this GatewayUpdateProducerGithub.  # noqa: E501
-        :rtype: str
-        """
-        return self._username
-
-    @username.setter
-    def username(self, username):
-        """Sets the username of this GatewayUpdateProducerGithub.
-
-        Required only when the authentication process requires a username and password  # noqa: E501
-
-        :param username: The username of this GatewayUpdateProducerGithub.  # noqa: E501
-        :type: str
-        """
-
-        self._username = username
 
     def to_dict(self):
         """Returns the model properties as a dict"""

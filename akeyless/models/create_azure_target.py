@@ -39,12 +39,10 @@ class CreateAzureTarget(object):
         'comment': 'str',
         'key': 'str',
         'name': 'str',
-        'password': 'str',
         'tenant_id': 'str',
         'token': 'str',
         'uid_token': 'str',
-        'use_gw_cloud_identity': 'bool',
-        'username': 'str'
+        'use_gw_cloud_identity': 'bool'
     }
 
     attribute_map = {
@@ -53,15 +51,13 @@ class CreateAzureTarget(object):
         'comment': 'comment',
         'key': 'key',
         'name': 'name',
-        'password': 'password',
         'tenant_id': 'tenant-id',
         'token': 'token',
         'uid_token': 'uid-token',
-        'use_gw_cloud_identity': 'use-gw-cloud-identity',
-        'username': 'username'
+        'use_gw_cloud_identity': 'use-gw-cloud-identity'
     }
 
-    def __init__(self, client_id=None, client_secret=None, comment=None, key=None, name=None, password=None, tenant_id=None, token=None, uid_token=None, use_gw_cloud_identity=None, username=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, client_id=None, client_secret=None, comment=None, key=None, name=None, tenant_id=None, token=None, uid_token=None, use_gw_cloud_identity=None, local_vars_configuration=None):  # noqa: E501
         """CreateAzureTarget - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -72,12 +68,10 @@ class CreateAzureTarget(object):
         self._comment = None
         self._key = None
         self._name = None
-        self._password = None
         self._tenant_id = None
         self._token = None
         self._uid_token = None
         self._use_gw_cloud_identity = None
-        self._username = None
         self.discriminator = None
 
         if client_id is not None:
@@ -89,8 +83,6 @@ class CreateAzureTarget(object):
         if key is not None:
             self.key = key
         self.name = name
-        if password is not None:
-            self.password = password
         if tenant_id is not None:
             self.tenant_id = tenant_id
         if token is not None:
@@ -99,8 +91,6 @@ class CreateAzureTarget(object):
             self.uid_token = uid_token
         if use_gw_cloud_identity is not None:
             self.use_gw_cloud_identity = use_gw_cloud_identity
-        if username is not None:
-            self.username = username
 
     @property
     def client_id(self):
@@ -216,29 +206,6 @@ class CreateAzureTarget(object):
         self._name = name
 
     @property
-    def password(self):
-        """Gets the password of this CreateAzureTarget.  # noqa: E501
-
-        Required only when the authentication process requires a username and password  # noqa: E501
-
-        :return: The password of this CreateAzureTarget.  # noqa: E501
-        :rtype: str
-        """
-        return self._password
-
-    @password.setter
-    def password(self, password):
-        """Sets the password of this CreateAzureTarget.
-
-        Required only when the authentication process requires a username and password  # noqa: E501
-
-        :param password: The password of this CreateAzureTarget.  # noqa: E501
-        :type: str
-        """
-
-        self._password = password
-
-    @property
     def tenant_id(self):
         """Gets the tenant_id of this CreateAzureTarget.  # noqa: E501
 
@@ -325,29 +292,6 @@ class CreateAzureTarget(object):
         """
 
         self._use_gw_cloud_identity = use_gw_cloud_identity
-
-    @property
-    def username(self):
-        """Gets the username of this CreateAzureTarget.  # noqa: E501
-
-        Required only when the authentication process requires a username and password  # noqa: E501
-
-        :return: The username of this CreateAzureTarget.  # noqa: E501
-        :rtype: str
-        """
-        return self._username
-
-    @username.setter
-    def username(self, username):
-        """Sets the username of this CreateAzureTarget.
-
-        Required only when the authentication process requires a username and password  # noqa: E501
-
-        :param username: The username of this CreateAzureTarget.  # noqa: E501
-        :type: str
-        """
-
-        self._username = username
 
     def to_dict(self):
         """Returns the model properties as a dict"""

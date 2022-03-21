@@ -38,15 +38,16 @@ class UpdateAccountSettings(object):
         'city': 'str',
         'company_name': 'str',
         'country': 'str',
+        'default_versioning': 'str',
+        'item_type': 'str',
         'jwt_ttl_default': 'int',
         'jwt_ttl_max': 'int',
         'jwt_ttl_min': 'int',
-        'password': 'str',
+        'max_versions': 'str',
         'phone': 'str',
         'postal_code': 'str',
         'token': 'str',
-        'uid_token': 'str',
-        'username': 'str'
+        'uid_token': 'str'
     }
 
     attribute_map = {
@@ -54,18 +55,19 @@ class UpdateAccountSettings(object):
         'city': 'city',
         'company_name': 'company-name',
         'country': 'country',
+        'default_versioning': 'default-versioning',
+        'item_type': 'item-type',
         'jwt_ttl_default': 'jwt-ttl-default',
         'jwt_ttl_max': 'jwt-ttl-max',
         'jwt_ttl_min': 'jwt-ttl-min',
-        'password': 'password',
+        'max_versions': 'max-versions',
         'phone': 'phone',
         'postal_code': 'postal-code',
         'token': 'token',
-        'uid_token': 'uid-token',
-        'username': 'username'
+        'uid_token': 'uid-token'
     }
 
-    def __init__(self, address=None, city=None, company_name=None, country=None, jwt_ttl_default=None, jwt_ttl_max=None, jwt_ttl_min=None, password=None, phone=None, postal_code=None, token=None, uid_token=None, username=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, address=None, city=None, company_name=None, country=None, default_versioning=None, item_type=None, jwt_ttl_default=None, jwt_ttl_max=None, jwt_ttl_min=None, max_versions=None, phone=None, postal_code=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """UpdateAccountSettings - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -75,15 +77,16 @@ class UpdateAccountSettings(object):
         self._city = None
         self._company_name = None
         self._country = None
+        self._default_versioning = None
+        self._item_type = None
         self._jwt_ttl_default = None
         self._jwt_ttl_max = None
         self._jwt_ttl_min = None
-        self._password = None
+        self._max_versions = None
         self._phone = None
         self._postal_code = None
         self._token = None
         self._uid_token = None
-        self._username = None
         self.discriminator = None
 
         if address is not None:
@@ -94,14 +97,18 @@ class UpdateAccountSettings(object):
             self.company_name = company_name
         if country is not None:
             self.country = country
+        if default_versioning is not None:
+            self.default_versioning = default_versioning
+        if item_type is not None:
+            self.item_type = item_type
         if jwt_ttl_default is not None:
             self.jwt_ttl_default = jwt_ttl_default
         if jwt_ttl_max is not None:
             self.jwt_ttl_max = jwt_ttl_max
         if jwt_ttl_min is not None:
             self.jwt_ttl_min = jwt_ttl_min
-        if password is not None:
-            self.password = password
+        if max_versions is not None:
+            self.max_versions = max_versions
         if phone is not None:
             self.phone = phone
         if postal_code is not None:
@@ -110,8 +117,6 @@ class UpdateAccountSettings(object):
             self.token = token
         if uid_token is not None:
             self.uid_token = uid_token
-        if username is not None:
-            self.username = username
 
     @property
     def address(self):
@@ -206,6 +211,52 @@ class UpdateAccountSettings(object):
         self._country = country
 
     @property
+    def default_versioning(self):
+        """Gets the default_versioning of this UpdateAccountSettings.  # noqa: E501
+
+        Should create version by default  # noqa: E501
+
+        :return: The default_versioning of this UpdateAccountSettings.  # noqa: E501
+        :rtype: str
+        """
+        return self._default_versioning
+
+    @default_versioning.setter
+    def default_versioning(self, default_versioning):
+        """Sets the default_versioning of this UpdateAccountSettings.
+
+        Should create version by default  # noqa: E501
+
+        :param default_versioning: The default_versioning of this UpdateAccountSettings.  # noqa: E501
+        :type: str
+        """
+
+        self._default_versioning = default_versioning
+
+    @property
+    def item_type(self):
+        """Gets the item_type of this UpdateAccountSettings.  # noqa: E501
+
+        VersionSettingsObjectType defines object types for account version settings  # noqa: E501
+
+        :return: The item_type of this UpdateAccountSettings.  # noqa: E501
+        :rtype: str
+        """
+        return self._item_type
+
+    @item_type.setter
+    def item_type(self, item_type):
+        """Sets the item_type of this UpdateAccountSettings.
+
+        VersionSettingsObjectType defines object types for account version settings  # noqa: E501
+
+        :param item_type: The item_type of this UpdateAccountSettings.  # noqa: E501
+        :type: str
+        """
+
+        self._item_type = item_type
+
+    @property
     def jwt_ttl_default(self):
         """Gets the jwt_ttl_default of this UpdateAccountSettings.  # noqa: E501
 
@@ -275,27 +326,27 @@ class UpdateAccountSettings(object):
         self._jwt_ttl_min = jwt_ttl_min
 
     @property
-    def password(self):
-        """Gets the password of this UpdateAccountSettings.  # noqa: E501
+    def max_versions(self):
+        """Gets the max_versions of this UpdateAccountSettings.  # noqa: E501
 
-        Required only when the authentication process requires a username and password  # noqa: E501
+        Max versions  # noqa: E501
 
-        :return: The password of this UpdateAccountSettings.  # noqa: E501
+        :return: The max_versions of this UpdateAccountSettings.  # noqa: E501
         :rtype: str
         """
-        return self._password
+        return self._max_versions
 
-    @password.setter
-    def password(self, password):
-        """Sets the password of this UpdateAccountSettings.
+    @max_versions.setter
+    def max_versions(self, max_versions):
+        """Sets the max_versions of this UpdateAccountSettings.
 
-        Required only when the authentication process requires a username and password  # noqa: E501
+        Max versions  # noqa: E501
 
-        :param password: The password of this UpdateAccountSettings.  # noqa: E501
+        :param max_versions: The max_versions of this UpdateAccountSettings.  # noqa: E501
         :type: str
         """
 
-        self._password = password
+        self._max_versions = max_versions
 
     @property
     def phone(self):
@@ -388,29 +439,6 @@ class UpdateAccountSettings(object):
         """
 
         self._uid_token = uid_token
-
-    @property
-    def username(self):
-        """Gets the username of this UpdateAccountSettings.  # noqa: E501
-
-        Required only when the authentication process requires a username and password  # noqa: E501
-
-        :return: The username of this UpdateAccountSettings.  # noqa: E501
-        :rtype: str
-        """
-        return self._username
-
-    @username.setter
-    def username(self, username):
-        """Sets the username of this UpdateAccountSettings.
-
-        Required only when the authentication process requires a username and password  # noqa: E501
-
-        :param username: The username of this UpdateAccountSettings.  # noqa: E501
-        :type: str
-        """
-
-        self._username = username
 
     def to_dict(self):
         """Returns the model properties as a dict"""

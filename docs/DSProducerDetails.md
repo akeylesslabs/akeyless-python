@@ -25,6 +25,8 @@ Name | Type | Description | Notes
 **azure_app_object_id** | **str** |  | [optional] 
 **azure_client_id** | **str** |  | [optional] 
 **azure_client_secret** | **str** |  | [optional] 
+**azure_fixed_user_name_sub_claim_key** | **str** |  | [optional] 
+**azure_fixed_user_only** | **bool** |  | [optional] 
 **azure_tenant_id** | **str** |  | [optional] 
 **azure_user_groups_obj_id** | **str** |  | [optional] 
 **azure_user_portal_access** | **bool** |  | [optional] 
@@ -119,6 +121,7 @@ Name | Type | Description | Notes
 **mssql_revocation_statements** | **str** |  | [optional] 
 **mysql_creation_statements** | **str** |  | [optional] 
 **oracle_creation_statements** | **str** |  | [optional] 
+**password** | **str** |  | [optional] 
 **password_length** | **int** |  | [optional] 
 **password_policy** | **str** |  | [optional] 
 **payload** | **str** |  | [optional] 
@@ -135,6 +138,7 @@ Name | Type | Description | Notes
 **redshift_creation_statements** | **str** |  | [optional] 
 **revoke_sync_url** | **str** |  | [optional] 
 **rotate_sync_url** | **str** |  | [optional] 
+**scopes** | **list[str]** |  | [optional] 
 **secure_remote_access_details** | [**SecureRemoteAccess**](SecureRemoteAccess.md) |  | [optional] 
 **sf_account** | **str** |  | [optional] 
 **sf_user_role** | **str** | generated  users info | [optional] 
@@ -145,6 +149,7 @@ Name | Type | Description | Notes
 **tags** | **list[str]** |  | [optional] 
 **timeout_seconds** | **int** |  | [optional] 
 **use_gw_cloud_identity** | **bool** |  | [optional] 
+**user_name** | **str** |  | [optional] 
 **user_principal_name** | **str** |  | [optional] 
 **user_ttl** | **str** |  | [optional] 
 **username_length** | **int** |  | [optional] 
@@ -162,6 +167,7 @@ Name | Type | Description | Notes
 **venafi_tpp_username** | **str** |  | [optional] 
 **venafi_use_tpp** | **bool** |  | [optional] 
 **venafi_zone** | **str** |  | [optional] 
+**warn_before_user_expiration_min** | **int** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

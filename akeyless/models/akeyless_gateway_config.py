@@ -49,7 +49,6 @@ class AkeylessGatewayConfig(object):
         'producers': 'ProducersConfigPart',
         'rotators': 'RotatorsConfigPart',
         'saml': 'DefaultConfigPart',
-        'uidentity': 'UIdentityConfigPart',
         'version': 'int'
     }
 
@@ -69,11 +68,10 @@ class AkeylessGatewayConfig(object):
         'producers': 'producers',
         'rotators': 'rotators',
         'saml': 'saml',
-        'uidentity': 'uidentity',
         'version': 'version'
     }
 
-    def __init__(self, admins=None, cache=None, cf=None, config_protection_key_name=None, general=None, k8s_auths=None, kmip_clients=None, ldap=None, leadership=None, log_forwarding=None, message_queue_info=None, migrations=None, producers=None, rotators=None, saml=None, uidentity=None, version=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, admins=None, cache=None, cf=None, config_protection_key_name=None, general=None, k8s_auths=None, kmip_clients=None, ldap=None, leadership=None, log_forwarding=None, message_queue_info=None, migrations=None, producers=None, rotators=None, saml=None, version=None, local_vars_configuration=None):  # noqa: E501
         """AkeylessGatewayConfig - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -94,7 +92,6 @@ class AkeylessGatewayConfig(object):
         self._producers = None
         self._rotators = None
         self._saml = None
-        self._uidentity = None
         self._version = None
         self.discriminator = None
 
@@ -128,8 +125,6 @@ class AkeylessGatewayConfig(object):
             self.rotators = rotators
         if saml is not None:
             self.saml = saml
-        if uidentity is not None:
-            self.uidentity = uidentity
         if version is not None:
             self.version = version
 
@@ -447,27 +442,6 @@ class AkeylessGatewayConfig(object):
         """
 
         self._saml = saml
-
-    @property
-    def uidentity(self):
-        """Gets the uidentity of this AkeylessGatewayConfig.  # noqa: E501
-
-
-        :return: The uidentity of this AkeylessGatewayConfig.  # noqa: E501
-        :rtype: UIdentityConfigPart
-        """
-        return self._uidentity
-
-    @uidentity.setter
-    def uidentity(self, uidentity):
-        """Sets the uidentity of this AkeylessGatewayConfig.
-
-
-        :param uidentity: The uidentity of this AkeylessGatewayConfig.  # noqa: E501
-        :type: UIdentityConfigPart
-        """
-
-        self._uidentity = uidentity
 
     @property
     def version(self):

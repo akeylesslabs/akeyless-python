@@ -37,7 +37,6 @@ class CreateSecret(object):
         'metadata': 'str',
         'multiline_value': 'bool',
         'name': 'str',
-        'password': 'str',
         'protection_key': 'str',
         'secure_access_bastion_issuer': 'str',
         'secure_access_enable': 'str',
@@ -46,10 +45,10 @@ class CreateSecret(object):
         'secure_access_ssh_user': 'str',
         'secure_access_url': 'str',
         'secure_access_web_browsing': 'bool',
+        'secure_access_web_proxy': 'bool',
         'tags': 'list[str]',
         'token': 'str',
         'uid_token': 'str',
-        'username': 'str',
         'value': 'str'
     }
 
@@ -57,7 +56,6 @@ class CreateSecret(object):
         'metadata': 'metadata',
         'multiline_value': 'multiline_value',
         'name': 'name',
-        'password': 'password',
         'protection_key': 'protection_key',
         'secure_access_bastion_issuer': 'secure-access-bastion-issuer',
         'secure_access_enable': 'secure-access-enable',
@@ -66,14 +64,14 @@ class CreateSecret(object):
         'secure_access_ssh_user': 'secure-access-ssh-user',
         'secure_access_url': 'secure-access-url',
         'secure_access_web_browsing': 'secure-access-web-browsing',
+        'secure_access_web_proxy': 'secure-access-web-proxy',
         'tags': 'tags',
         'token': 'token',
         'uid_token': 'uid-token',
-        'username': 'username',
         'value': 'value'
     }
 
-    def __init__(self, metadata=None, multiline_value=None, name=None, password=None, protection_key=None, secure_access_bastion_issuer=None, secure_access_enable=None, secure_access_host=None, secure_access_ssh_creds=None, secure_access_ssh_user=None, secure_access_url=None, secure_access_web_browsing=None, tags=None, token=None, uid_token=None, username=None, value=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, metadata=None, multiline_value=None, name=None, protection_key=None, secure_access_bastion_issuer=None, secure_access_enable=None, secure_access_host=None, secure_access_ssh_creds=None, secure_access_ssh_user=None, secure_access_url=None, secure_access_web_browsing=None, secure_access_web_proxy=None, tags=None, token=None, uid_token=None, value=None, local_vars_configuration=None):  # noqa: E501
         """CreateSecret - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -82,7 +80,6 @@ class CreateSecret(object):
         self._metadata = None
         self._multiline_value = None
         self._name = None
-        self._password = None
         self._protection_key = None
         self._secure_access_bastion_issuer = None
         self._secure_access_enable = None
@@ -91,10 +88,10 @@ class CreateSecret(object):
         self._secure_access_ssh_user = None
         self._secure_access_url = None
         self._secure_access_web_browsing = None
+        self._secure_access_web_proxy = None
         self._tags = None
         self._token = None
         self._uid_token = None
-        self._username = None
         self._value = None
         self.discriminator = None
 
@@ -103,8 +100,6 @@ class CreateSecret(object):
         if multiline_value is not None:
             self.multiline_value = multiline_value
         self.name = name
-        if password is not None:
-            self.password = password
         if protection_key is not None:
             self.protection_key = protection_key
         if secure_access_bastion_issuer is not None:
@@ -121,14 +116,14 @@ class CreateSecret(object):
             self.secure_access_url = secure_access_url
         if secure_access_web_browsing is not None:
             self.secure_access_web_browsing = secure_access_web_browsing
+        if secure_access_web_proxy is not None:
+            self.secure_access_web_proxy = secure_access_web_proxy
         if tags is not None:
             self.tags = tags
         if token is not None:
             self.token = token
         if uid_token is not None:
             self.uid_token = uid_token
-        if username is not None:
-            self.username = username
         self.value = value
 
     @property
@@ -201,29 +196,6 @@ class CreateSecret(object):
             raise ValueError("Invalid value for `name`, must not be `None`")  # noqa: E501
 
         self._name = name
-
-    @property
-    def password(self):
-        """Gets the password of this CreateSecret.  # noqa: E501
-
-        Required only when the authentication process requires a username and password  # noqa: E501
-
-        :return: The password of this CreateSecret.  # noqa: E501
-        :rtype: str
-        """
-        return self._password
-
-    @password.setter
-    def password(self, password):
-        """Sets the password of this CreateSecret.
-
-        Required only when the authentication process requires a username and password  # noqa: E501
-
-        :param password: The password of this CreateSecret.  # noqa: E501
-        :type: str
-        """
-
-        self._password = password
 
     @property
     def protection_key(self):
@@ -396,6 +368,27 @@ class CreateSecret(object):
         self._secure_access_web_browsing = secure_access_web_browsing
 
     @property
+    def secure_access_web_proxy(self):
+        """Gets the secure_access_web_proxy of this CreateSecret.  # noqa: E501
+
+
+        :return: The secure_access_web_proxy of this CreateSecret.  # noqa: E501
+        :rtype: bool
+        """
+        return self._secure_access_web_proxy
+
+    @secure_access_web_proxy.setter
+    def secure_access_web_proxy(self, secure_access_web_proxy):
+        """Sets the secure_access_web_proxy of this CreateSecret.
+
+
+        :param secure_access_web_proxy: The secure_access_web_proxy of this CreateSecret.  # noqa: E501
+        :type: bool
+        """
+
+        self._secure_access_web_proxy = secure_access_web_proxy
+
+    @property
     def tags(self):
         """Gets the tags of this CreateSecret.  # noqa: E501
 
@@ -463,29 +456,6 @@ class CreateSecret(object):
         """
 
         self._uid_token = uid_token
-
-    @property
-    def username(self):
-        """Gets the username of this CreateSecret.  # noqa: E501
-
-        Required only when the authentication process requires a username and password  # noqa: E501
-
-        :return: The username of this CreateSecret.  # noqa: E501
-        :rtype: str
-        """
-        return self._username
-
-    @username.setter
-    def username(self, username):
-        """Sets the username of this CreateSecret.
-
-        Required only when the authentication process requires a username and password  # noqa: E501
-
-        :param username: The username of this CreateSecret.  # noqa: E501
-        :type: str
-        """
-
-        self._username = username
 
     @property
     def value(self):

@@ -38,6 +38,7 @@ class GetAccountSettingsCommandOutput(object):
         'address': 'CustomerFullAddress',
         'company_name': 'str',
         'email': 'str',
+        'object_version_settings': 'AccountObjectVersionSettingsOutput',
         'phone': 'str',
         'secret_management': 'SmInfo',
         'secure_remote_access': 'SraInfo',
@@ -49,13 +50,14 @@ class GetAccountSettingsCommandOutput(object):
         'address': 'address',
         'company_name': 'company_name',
         'email': 'email',
+        'object_version_settings': 'object_version_settings',
         'phone': 'phone',
         'secret_management': 'secret_management',
         'secure_remote_access': 'secure_remote_access',
         'system_access_creds_settings': 'system_access_creds_settings'
     }
 
-    def __init__(self, account_id=None, address=None, company_name=None, email=None, phone=None, secret_management=None, secure_remote_access=None, system_access_creds_settings=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, account_id=None, address=None, company_name=None, email=None, object_version_settings=None, phone=None, secret_management=None, secure_remote_access=None, system_access_creds_settings=None, local_vars_configuration=None):  # noqa: E501
         """GetAccountSettingsCommandOutput - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -65,6 +67,7 @@ class GetAccountSettingsCommandOutput(object):
         self._address = None
         self._company_name = None
         self._email = None
+        self._object_version_settings = None
         self._phone = None
         self._secret_management = None
         self._secure_remote_access = None
@@ -79,6 +82,8 @@ class GetAccountSettingsCommandOutput(object):
             self.company_name = company_name
         if email is not None:
             self.email = email
+        if object_version_settings is not None:
+            self.object_version_settings = object_version_settings
         if phone is not None:
             self.phone = phone
         if secret_management is not None:
@@ -171,6 +176,27 @@ class GetAccountSettingsCommandOutput(object):
         """
 
         self._email = email
+
+    @property
+    def object_version_settings(self):
+        """Gets the object_version_settings of this GetAccountSettingsCommandOutput.  # noqa: E501
+
+
+        :return: The object_version_settings of this GetAccountSettingsCommandOutput.  # noqa: E501
+        :rtype: AccountObjectVersionSettingsOutput
+        """
+        return self._object_version_settings
+
+    @object_version_settings.setter
+    def object_version_settings(self, object_version_settings):
+        """Sets the object_version_settings of this GetAccountSettingsCommandOutput.
+
+
+        :param object_version_settings: The object_version_settings of this GetAccountSettingsCommandOutput.  # noqa: E501
+        :type: AccountObjectVersionSettingsOutput
+        """
+
+        self._object_version_settings = object_version_settings
 
     @property
     def phone(self):

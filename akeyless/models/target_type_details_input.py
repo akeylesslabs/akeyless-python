@@ -107,6 +107,7 @@ class TargetTypeDetailsInput(object):
         'ssl_connection_mode': 'bool',
         'url': 'str',
         'use_gw_cloud_identity': 'bool',
+        'user_name': 'str',
         'username': 'str',
         'venafi_api_key': 'str',
         'venafi_base_url': 'str',
@@ -190,6 +191,7 @@ class TargetTypeDetailsInput(object):
         'ssl_connection_mode': 'ssl_connection_mode',
         'url': 'url',
         'use_gw_cloud_identity': 'use_gw_cloud_identity',
+        'user_name': 'user_name',
         'username': 'username',
         'venafi_api_key': 'venafi_api_key',
         'venafi_base_url': 'venafi_base_url',
@@ -199,7 +201,7 @@ class TargetTypeDetailsInput(object):
         'venafi_zone': 'venafi_zone'
     }
 
-    def __init__(self, artifactory_admin_apikey=None, artifactory_admin_username=None, artifactory_base_url=None, aws_access_key_id=None, aws_region=None, aws_secret_access_key=None, aws_session_token=None, azure_client_id=None, azure_client_secret=None, azure_tenant_id=None, chef_server_host_name=None, chef_server_key=None, chef_server_port=None, chef_server_url=None, chef_server_username=None, chef_skip_ssl=None, db_host_name=None, db_name=None, db_port=None, db_pwd=None, db_server_certificates=None, db_server_name=None, db_user_name=None, eks_access_key_id=None, eks_cluster_ca_certificate=None, eks_cluster_endpoint=None, eks_cluster_name=None, eks_region=None, eks_secret_access_key=None, gcp_service_account_email=None, gcp_service_account_key=None, github_app_id=None, github_app_private_key=None, github_base_url=None, gke_cluster_ca_certificate=None, gke_cluster_endpoint=None, gke_cluster_name=None, gke_service_account_key=None, gke_service_account_name=None, host=None, k8s_bearer_token=None, k8s_cluster_ca_certificate=None, k8s_cluster_endpoint=None, ldap_audience=None, ldap_bind_dn=None, ldap_bind_password=None, ldap_certificate=None, ldap_token_expiration=None, ldap_url=None, mongodb_atlas_api_private_key=None, mongodb_atlas_api_public_key=None, mongodb_atlas_project_id=None, mongodb_db_name=None, mongodb_default_auth_db=None, mongodb_host_port=None, mongodb_is_atlas=None, mongodb_password=None, mongodb_uri_connection=None, mongodb_uri_options=None, mongodb_username=None, password=None, payload=None, port=None, private_key=None, private_key_password=None, rabbitmq_server_password=None, rabbitmq_server_uri=None, rabbitmq_server_user=None, sf_account=None, ssl_connection_certificate=None, ssl_connection_mode=None, url=None, use_gw_cloud_identity=None, username=None, venafi_api_key=None, venafi_base_url=None, venafi_tpp_password=None, venafi_tpp_username=None, venafi_use_tpp=None, venafi_zone=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, artifactory_admin_apikey=None, artifactory_admin_username=None, artifactory_base_url=None, aws_access_key_id=None, aws_region=None, aws_secret_access_key=None, aws_session_token=None, azure_client_id=None, azure_client_secret=None, azure_tenant_id=None, chef_server_host_name=None, chef_server_key=None, chef_server_port=None, chef_server_url=None, chef_server_username=None, chef_skip_ssl=None, db_host_name=None, db_name=None, db_port=None, db_pwd=None, db_server_certificates=None, db_server_name=None, db_user_name=None, eks_access_key_id=None, eks_cluster_ca_certificate=None, eks_cluster_endpoint=None, eks_cluster_name=None, eks_region=None, eks_secret_access_key=None, gcp_service_account_email=None, gcp_service_account_key=None, github_app_id=None, github_app_private_key=None, github_base_url=None, gke_cluster_ca_certificate=None, gke_cluster_endpoint=None, gke_cluster_name=None, gke_service_account_key=None, gke_service_account_name=None, host=None, k8s_bearer_token=None, k8s_cluster_ca_certificate=None, k8s_cluster_endpoint=None, ldap_audience=None, ldap_bind_dn=None, ldap_bind_password=None, ldap_certificate=None, ldap_token_expiration=None, ldap_url=None, mongodb_atlas_api_private_key=None, mongodb_atlas_api_public_key=None, mongodb_atlas_project_id=None, mongodb_db_name=None, mongodb_default_auth_db=None, mongodb_host_port=None, mongodb_is_atlas=None, mongodb_password=None, mongodb_uri_connection=None, mongodb_uri_options=None, mongodb_username=None, password=None, payload=None, port=None, private_key=None, private_key_password=None, rabbitmq_server_password=None, rabbitmq_server_uri=None, rabbitmq_server_user=None, sf_account=None, ssl_connection_certificate=None, ssl_connection_mode=None, url=None, use_gw_cloud_identity=None, user_name=None, username=None, venafi_api_key=None, venafi_base_url=None, venafi_tpp_password=None, venafi_tpp_username=None, venafi_use_tpp=None, venafi_zone=None, local_vars_configuration=None):  # noqa: E501
         """TargetTypeDetailsInput - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -278,6 +280,7 @@ class TargetTypeDetailsInput(object):
         self._ssl_connection_mode = None
         self._url = None
         self._use_gw_cloud_identity = None
+        self._user_name = None
         self._username = None
         self._venafi_api_key = None
         self._venafi_base_url = None
@@ -433,6 +436,8 @@ class TargetTypeDetailsInput(object):
             self.url = url
         if use_gw_cloud_identity is not None:
             self.use_gw_cloud_identity = use_gw_cloud_identity
+        if user_name is not None:
+            self.user_name = user_name
         if username is not None:
             self.username = username
         if venafi_api_key is not None:
@@ -1994,6 +1999,27 @@ class TargetTypeDetailsInput(object):
         """
 
         self._use_gw_cloud_identity = use_gw_cloud_identity
+
+    @property
+    def user_name(self):
+        """Gets the user_name of this TargetTypeDetailsInput.  # noqa: E501
+
+
+        :return: The user_name of this TargetTypeDetailsInput.  # noqa: E501
+        :rtype: str
+        """
+        return self._user_name
+
+    @user_name.setter
+    def user_name(self, user_name):
+        """Sets the user_name of this TargetTypeDetailsInput.
+
+
+        :param user_name: The user_name of this TargetTypeDetailsInput.  # noqa: E501
+        :type: str
+        """
+
+        self._user_name = user_name
 
     @property
     def username(self):

@@ -47,11 +47,9 @@ class UpdateAuthMethodAWSIAM(object):
         'jwt_ttl': 'int',
         'name': 'str',
         'new_name': 'str',
-        'password': 'str',
         'sts_url': 'str',
         'token': 'str',
-        'uid_token': 'str',
-        'username': 'str'
+        'uid_token': 'str'
     }
 
     attribute_map = {
@@ -68,14 +66,12 @@ class UpdateAuthMethodAWSIAM(object):
         'jwt_ttl': 'jwt-ttl',
         'name': 'name',
         'new_name': 'new-name',
-        'password': 'password',
         'sts_url': 'sts-url',
         'token': 'token',
-        'uid_token': 'uid-token',
-        'username': 'username'
+        'uid_token': 'uid-token'
     }
 
-    def __init__(self, access_expires=0, bound_arn=None, bound_aws_account_id=None, bound_ips=None, bound_resource_id=None, bound_role_id=None, bound_role_name=None, bound_user_id=None, bound_user_name=None, force_sub_claims=None, jwt_ttl=0, name=None, new_name=None, password=None, sts_url='https://sts.amazonaws.com', token=None, uid_token=None, username=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, access_expires=0, bound_arn=None, bound_aws_account_id=None, bound_ips=None, bound_resource_id=None, bound_role_id=None, bound_role_name=None, bound_user_id=None, bound_user_name=None, force_sub_claims=None, jwt_ttl=0, name=None, new_name=None, sts_url='https://sts.amazonaws.com', token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """UpdateAuthMethodAWSIAM - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -94,11 +90,9 @@ class UpdateAuthMethodAWSIAM(object):
         self._jwt_ttl = None
         self._name = None
         self._new_name = None
-        self._password = None
         self._sts_url = None
         self._token = None
         self._uid_token = None
-        self._username = None
         self.discriminator = None
 
         if access_expires is not None:
@@ -125,16 +119,12 @@ class UpdateAuthMethodAWSIAM(object):
         self.name = name
         if new_name is not None:
             self.new_name = new_name
-        if password is not None:
-            self.password = password
         if sts_url is not None:
             self.sts_url = sts_url
         if token is not None:
             self.token = token
         if uid_token is not None:
             self.uid_token = uid_token
-        if username is not None:
-            self.username = username
 
     @property
     def access_expires(self):
@@ -440,29 +430,6 @@ class UpdateAuthMethodAWSIAM(object):
         self._new_name = new_name
 
     @property
-    def password(self):
-        """Gets the password of this UpdateAuthMethodAWSIAM.  # noqa: E501
-
-        Required only when the authentication process requires a username and password  # noqa: E501
-
-        :return: The password of this UpdateAuthMethodAWSIAM.  # noqa: E501
-        :rtype: str
-        """
-        return self._password
-
-    @password.setter
-    def password(self, password):
-        """Sets the password of this UpdateAuthMethodAWSIAM.
-
-        Required only when the authentication process requires a username and password  # noqa: E501
-
-        :param password: The password of this UpdateAuthMethodAWSIAM.  # noqa: E501
-        :type: str
-        """
-
-        self._password = password
-
-    @property
     def sts_url(self):
         """Gets the sts_url of this UpdateAuthMethodAWSIAM.  # noqa: E501
 
@@ -530,29 +497,6 @@ class UpdateAuthMethodAWSIAM(object):
         """
 
         self._uid_token = uid_token
-
-    @property
-    def username(self):
-        """Gets the username of this UpdateAuthMethodAWSIAM.  # noqa: E501
-
-        Required only when the authentication process requires a username and password  # noqa: E501
-
-        :return: The username of this UpdateAuthMethodAWSIAM.  # noqa: E501
-        :rtype: str
-        """
-        return self._username
-
-    @username.setter
-    def username(self, username):
-        """Sets the username of this UpdateAuthMethodAWSIAM.
-
-        Required only when the authentication process requires a username and password  # noqa: E501
-
-        :param username: The username of this UpdateAuthMethodAWSIAM.  # noqa: E501
-        :type: str
-        """
-
-        self._username = username
 
     def to_dict(self):
         """Returns the model properties as a dict"""

@@ -37,25 +37,21 @@ class KmipClientSetRule(object):
         'capability': 'list[str]',
         'client_id': 'str',
         'name': 'str',
-        'password': 'str',
         'path': 'str',
         'token': 'str',
-        'uid_token': 'str',
-        'username': 'str'
+        'uid_token': 'str'
     }
 
     attribute_map = {
         'capability': 'capability',
         'client_id': 'client-id',
         'name': 'name',
-        'password': 'password',
         'path': 'path',
         'token': 'token',
-        'uid_token': 'uid-token',
-        'username': 'username'
+        'uid_token': 'uid-token'
     }
 
-    def __init__(self, capability=None, client_id=None, name=None, password=None, path=None, token=None, uid_token=None, username=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, capability=None, client_id=None, name=None, path=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """KmipClientSetRule - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -64,11 +60,9 @@ class KmipClientSetRule(object):
         self._capability = None
         self._client_id = None
         self._name = None
-        self._password = None
         self._path = None
         self._token = None
         self._uid_token = None
-        self._username = None
         self.discriminator = None
 
         self.capability = capability
@@ -76,15 +70,11 @@ class KmipClientSetRule(object):
             self.client_id = client_id
         if name is not None:
             self.name = name
-        if password is not None:
-            self.password = password
         self.path = path
         if token is not None:
             self.token = token
         if uid_token is not None:
             self.uid_token = uid_token
-        if username is not None:
-            self.username = username
 
     @property
     def capability(self):
@@ -152,29 +142,6 @@ class KmipClientSetRule(object):
         """
 
         self._name = name
-
-    @property
-    def password(self):
-        """Gets the password of this KmipClientSetRule.  # noqa: E501
-
-        Required only when the authentication process requires a username and password  # noqa: E501
-
-        :return: The password of this KmipClientSetRule.  # noqa: E501
-        :rtype: str
-        """
-        return self._password
-
-    @password.setter
-    def password(self, password):
-        """Sets the password of this KmipClientSetRule.
-
-        Required only when the authentication process requires a username and password  # noqa: E501
-
-        :param password: The password of this KmipClientSetRule.  # noqa: E501
-        :type: str
-        """
-
-        self._password = password
 
     @property
     def path(self):
@@ -246,29 +213,6 @@ class KmipClientSetRule(object):
         """
 
         self._uid_token = uid_token
-
-    @property
-    def username(self):
-        """Gets the username of this KmipClientSetRule.  # noqa: E501
-
-        Required only when the authentication process requires a username and password  # noqa: E501
-
-        :return: The username of this KmipClientSetRule.  # noqa: E501
-        :rtype: str
-        """
-        return self._username
-
-    @username.setter
-    def username(self, username):
-        """Sets the username of this KmipClientSetRule.
-
-        Required only when the authentication process requires a username and password  # noqa: E501
-
-        :param username: The username of this KmipClientSetRule.  # noqa: E501
-        :type: str
-        """
-
-        self._username = username
 
     def to_dict(self):
         """Returns the model properties as a dict"""

@@ -34,75 +34,47 @@ class Update(object):
                             and the value is json key in definition.
     """
     openapi_types = {
-        'token': 'str',
-        'uid_token': 'str'
+        'version': 'str'
     }
 
     attribute_map = {
-        'token': 'token',
-        'uid_token': 'uid-token'
+        'version': 'version'
     }
 
-    def __init__(self, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, version=None, local_vars_configuration=None):  # noqa: E501
         """Update - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
-        self._token = None
-        self._uid_token = None
+        self._version = None
         self.discriminator = None
 
-        if token is not None:
-            self.token = token
-        if uid_token is not None:
-            self.uid_token = uid_token
+        if version is not None:
+            self.version = version
 
     @property
-    def token(self):
-        """Gets the token of this Update.  # noqa: E501
+    def version(self):
+        """Gets the version of this Update.  # noqa: E501
 
-        Authentication token (see `/auth` and `/configure`)  # noqa: E501
+        Version  # noqa: E501
 
-        :return: The token of this Update.  # noqa: E501
+        :return: The version of this Update.  # noqa: E501
         :rtype: str
         """
-        return self._token
+        return self._version
 
-    @token.setter
-    def token(self, token):
-        """Sets the token of this Update.
+    @version.setter
+    def version(self, version):
+        """Sets the version of this Update.
 
-        Authentication token (see `/auth` and `/configure`)  # noqa: E501
+        Version  # noqa: E501
 
-        :param token: The token of this Update.  # noqa: E501
+        :param version: The version of this Update.  # noqa: E501
         :type: str
         """
 
-        self._token = token
-
-    @property
-    def uid_token(self):
-        """Gets the uid_token of this Update.  # noqa: E501
-
-        The universal identity token, Required only for universal_identity authentication  # noqa: E501
-
-        :return: The uid_token of this Update.  # noqa: E501
-        :rtype: str
-        """
-        return self._uid_token
-
-    @uid_token.setter
-    def uid_token(self, uid_token):
-        """Sets the uid_token of this Update.
-
-        The universal identity token, Required only for universal_identity authentication  # noqa: E501
-
-        :param uid_token: The uid_token of this Update.  # noqa: E501
-        :type: str
-        """
-
-        self._uid_token = uid_token
+        self._version = version
 
     def to_dict(self):
         """Returns the model properties as a dict"""

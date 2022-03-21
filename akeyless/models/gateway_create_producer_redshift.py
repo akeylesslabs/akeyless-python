@@ -36,7 +36,6 @@ class GatewayCreateProducerRedshift(object):
     openapi_types = {
         'creation_statements': 'str',
         'name': 'str',
-        'password': 'str',
         'producer_encryption_key': 'str',
         'redshift_db_name': 'str',
         'redshift_host': 'str',
@@ -49,14 +48,12 @@ class GatewayCreateProducerRedshift(object):
         'target_name': 'str',
         'token': 'str',
         'uid_token': 'str',
-        'user_ttl': 'str',
-        'username': 'str'
+        'user_ttl': 'str'
     }
 
     attribute_map = {
         'creation_statements': 'creation-statements',
         'name': 'name',
-        'password': 'password',
         'producer_encryption_key': 'producer-encryption-key',
         'redshift_db_name': 'redshift-db-name',
         'redshift_host': 'redshift-host',
@@ -69,11 +66,10 @@ class GatewayCreateProducerRedshift(object):
         'target_name': 'target-name',
         'token': 'token',
         'uid_token': 'uid-token',
-        'user_ttl': 'user-ttl',
-        'username': 'username'
+        'user_ttl': 'user-ttl'
     }
 
-    def __init__(self, creation_statements=None, name=None, password=None, producer_encryption_key=None, redshift_db_name=None, redshift_host='127.0.0.1', redshift_password=None, redshift_port='5439', redshift_username=None, secure_access_enable=None, secure_access_host=None, tags=None, target_name=None, token=None, uid_token=None, user_ttl='60m', username=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, creation_statements=None, name=None, producer_encryption_key=None, redshift_db_name=None, redshift_host='127.0.0.1', redshift_password=None, redshift_port='5439', redshift_username=None, secure_access_enable=None, secure_access_host=None, tags=None, target_name=None, token=None, uid_token=None, user_ttl='60m', local_vars_configuration=None):  # noqa: E501
         """GatewayCreateProducerRedshift - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -81,7 +77,6 @@ class GatewayCreateProducerRedshift(object):
 
         self._creation_statements = None
         self._name = None
-        self._password = None
         self._producer_encryption_key = None
         self._redshift_db_name = None
         self._redshift_host = None
@@ -95,14 +90,11 @@ class GatewayCreateProducerRedshift(object):
         self._token = None
         self._uid_token = None
         self._user_ttl = None
-        self._username = None
         self.discriminator = None
 
         if creation_statements is not None:
             self.creation_statements = creation_statements
         self.name = name
-        if password is not None:
-            self.password = password
         if producer_encryption_key is not None:
             self.producer_encryption_key = producer_encryption_key
         if redshift_db_name is not None:
@@ -129,8 +121,6 @@ class GatewayCreateProducerRedshift(object):
             self.uid_token = uid_token
         if user_ttl is not None:
             self.user_ttl = user_ttl
-        if username is not None:
-            self.username = username
 
     @property
     def creation_statements(self):
@@ -179,29 +169,6 @@ class GatewayCreateProducerRedshift(object):
             raise ValueError("Invalid value for `name`, must not be `None`")  # noqa: E501
 
         self._name = name
-
-    @property
-    def password(self):
-        """Gets the password of this GatewayCreateProducerRedshift.  # noqa: E501
-
-        Required only when the authentication process requires a username and password  # noqa: E501
-
-        :return: The password of this GatewayCreateProducerRedshift.  # noqa: E501
-        :rtype: str
-        """
-        return self._password
-
-    @password.setter
-    def password(self, password):
-        """Sets the password of this GatewayCreateProducerRedshift.
-
-        Required only when the authentication process requires a username and password  # noqa: E501
-
-        :param password: The password of this GatewayCreateProducerRedshift.  # noqa: E501
-        :type: str
-        """
-
-        self._password = password
 
     @property
     def producer_encryption_key(self):
@@ -497,29 +464,6 @@ class GatewayCreateProducerRedshift(object):
         """
 
         self._user_ttl = user_ttl
-
-    @property
-    def username(self):
-        """Gets the username of this GatewayCreateProducerRedshift.  # noqa: E501
-
-        Required only when the authentication process requires a username and password  # noqa: E501
-
-        :return: The username of this GatewayCreateProducerRedshift.  # noqa: E501
-        :rtype: str
-        """
-        return self._username
-
-    @username.setter
-    def username(self, username):
-        """Sets the username of this GatewayCreateProducerRedshift.
-
-        Required only when the authentication process requires a username and password  # noqa: E501
-
-        :param username: The username of this GatewayCreateProducerRedshift.  # noqa: E501
-        :type: str
-        """
-
-        self._username = username
 
     def to_dict(self):
         """Returns the model properties as a dict"""

@@ -43,7 +43,6 @@ class GatewayUpdateProducerEks(object):
         'eks_secret_access_key': 'str',
         'name': 'str',
         'new_name': 'str',
-        'password': 'str',
         'producer_encryption_key_name': 'str',
         'secure_access_allow_port_forwading': 'bool',
         'secure_access_bastion_issuer': 'str',
@@ -54,8 +53,7 @@ class GatewayUpdateProducerEks(object):
         'target_name': 'str',
         'token': 'str',
         'uid_token': 'str',
-        'user_ttl': 'str',
-        'username': 'str'
+        'user_ttl': 'str'
     }
 
     attribute_map = {
@@ -68,7 +66,6 @@ class GatewayUpdateProducerEks(object):
         'eks_secret_access_key': 'eks-secret-access-key',
         'name': 'name',
         'new_name': 'new-name',
-        'password': 'password',
         'producer_encryption_key_name': 'producer-encryption-key-name',
         'secure_access_allow_port_forwading': 'secure-access-allow-port-forwading',
         'secure_access_bastion_issuer': 'secure-access-bastion-issuer',
@@ -79,11 +76,10 @@ class GatewayUpdateProducerEks(object):
         'target_name': 'target-name',
         'token': 'token',
         'uid_token': 'uid-token',
-        'user_ttl': 'user-ttl',
-        'username': 'username'
+        'user_ttl': 'user-ttl'
     }
 
-    def __init__(self, eks_access_key_id=None, eks_assume_role=None, eks_cluster_ca_cert=None, eks_cluster_endpoint=None, eks_cluster_name=None, eks_region='us-east-2', eks_secret_access_key=None, name=None, new_name=None, password=None, producer_encryption_key_name=None, secure_access_allow_port_forwading=None, secure_access_bastion_issuer=None, secure_access_cluster_endpoint=None, secure_access_enable=None, secure_access_web=None, tags=None, target_name=None, token=None, uid_token=None, user_ttl='60m', username=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, eks_access_key_id=None, eks_assume_role=None, eks_cluster_ca_cert=None, eks_cluster_endpoint=None, eks_cluster_name=None, eks_region='us-east-2', eks_secret_access_key=None, name=None, new_name=None, producer_encryption_key_name=None, secure_access_allow_port_forwading=None, secure_access_bastion_issuer=None, secure_access_cluster_endpoint=None, secure_access_enable=None, secure_access_web=None, tags=None, target_name=None, token=None, uid_token=None, user_ttl='60m', local_vars_configuration=None):  # noqa: E501
         """GatewayUpdateProducerEks - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -98,7 +94,6 @@ class GatewayUpdateProducerEks(object):
         self._eks_secret_access_key = None
         self._name = None
         self._new_name = None
-        self._password = None
         self._producer_encryption_key_name = None
         self._secure_access_allow_port_forwading = None
         self._secure_access_bastion_issuer = None
@@ -110,7 +105,6 @@ class GatewayUpdateProducerEks(object):
         self._token = None
         self._uid_token = None
         self._user_ttl = None
-        self._username = None
         self.discriminator = None
 
         if eks_access_key_id is not None:
@@ -130,8 +124,6 @@ class GatewayUpdateProducerEks(object):
         self.name = name
         if new_name is not None:
             self.new_name = new_name
-        if password is not None:
-            self.password = password
         if producer_encryption_key_name is not None:
             self.producer_encryption_key_name = producer_encryption_key_name
         if secure_access_allow_port_forwading is not None:
@@ -154,8 +146,6 @@ class GatewayUpdateProducerEks(object):
             self.uid_token = uid_token
         if user_ttl is not None:
             self.user_ttl = user_ttl
-        if username is not None:
-            self.username = username
 
     @property
     def eks_access_key_id(self):
@@ -365,29 +355,6 @@ class GatewayUpdateProducerEks(object):
         """
 
         self._new_name = new_name
-
-    @property
-    def password(self):
-        """Gets the password of this GatewayUpdateProducerEks.  # noqa: E501
-
-        Required only when the authentication process requires a username and password  # noqa: E501
-
-        :return: The password of this GatewayUpdateProducerEks.  # noqa: E501
-        :rtype: str
-        """
-        return self._password
-
-    @password.setter
-    def password(self, password):
-        """Sets the password of this GatewayUpdateProducerEks.
-
-        Required only when the authentication process requires a username and password  # noqa: E501
-
-        :param password: The password of this GatewayUpdateProducerEks.  # noqa: E501
-        :type: str
-        """
-
-        self._password = password
 
     @property
     def producer_encryption_key_name(self):
@@ -631,29 +598,6 @@ class GatewayUpdateProducerEks(object):
         """
 
         self._user_ttl = user_ttl
-
-    @property
-    def username(self):
-        """Gets the username of this GatewayUpdateProducerEks.  # noqa: E501
-
-        Required only when the authentication process requires a username and password  # noqa: E501
-
-        :return: The username of this GatewayUpdateProducerEks.  # noqa: E501
-        :rtype: str
-        """
-        return self._username
-
-    @username.setter
-    def username(self, username):
-        """Sets the username of this GatewayUpdateProducerEks.
-
-        Required only when the authentication process requires a username and password  # noqa: E501
-
-        :param username: The username of this GatewayUpdateProducerEks.  # noqa: E501
-        :type: str
-        """
-
-        self._username = username
 
     def to_dict(self):
         """Returns the model properties as a dict"""

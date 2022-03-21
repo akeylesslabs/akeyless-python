@@ -38,6 +38,7 @@ class OIDCAccessRules(object):
         'bound_claims': 'list[OIDCCustomClaim]',
         'client_id': 'str',
         'client_secret': 'str',
+        'is_internal': 'bool',
         'issuer': 'str',
         'unique_identifier': 'str'
     }
@@ -47,11 +48,12 @@ class OIDCAccessRules(object):
         'bound_claims': 'bound_claims',
         'client_id': 'client_id',
         'client_secret': 'client_secret',
+        'is_internal': 'is_internal',
         'issuer': 'issuer',
         'unique_identifier': 'unique_identifier'
     }
 
-    def __init__(self, allowed_redirect_ur_is=None, bound_claims=None, client_id=None, client_secret=None, issuer=None, unique_identifier=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, allowed_redirect_ur_is=None, bound_claims=None, client_id=None, client_secret=None, is_internal=None, issuer=None, unique_identifier=None, local_vars_configuration=None):  # noqa: E501
         """OIDCAccessRules - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -61,6 +63,7 @@ class OIDCAccessRules(object):
         self._bound_claims = None
         self._client_id = None
         self._client_secret = None
+        self._is_internal = None
         self._issuer = None
         self._unique_identifier = None
         self.discriminator = None
@@ -73,6 +76,8 @@ class OIDCAccessRules(object):
             self.client_id = client_id
         if client_secret is not None:
             self.client_secret = client_secret
+        if is_internal is not None:
+            self.is_internal = is_internal
         if issuer is not None:
             self.issuer = issuer
         if unique_identifier is not None:
@@ -169,6 +174,29 @@ class OIDCAccessRules(object):
         """
 
         self._client_secret = client_secret
+
+    @property
+    def is_internal(self):
+        """Gets the is_internal of this OIDCAccessRules.  # noqa: E501
+
+        IsInternal indicates whether this is an internal Auth Method where the client has no control over it, or it was created by the client e.g - Sign In with Google will create an OIDC Auth Method with IsInternal=true  # noqa: E501
+
+        :return: The is_internal of this OIDCAccessRules.  # noqa: E501
+        :rtype: bool
+        """
+        return self._is_internal
+
+    @is_internal.setter
+    def is_internal(self, is_internal):
+        """Sets the is_internal of this OIDCAccessRules.
+
+        IsInternal indicates whether this is an internal Auth Method where the client has no control over it, or it was created by the client e.g - Sign In with Google will create an OIDC Auth Method with IsInternal=true  # noqa: E501
+
+        :param is_internal: The is_internal of this OIDCAccessRules.  # noqa: E501
+        :type: bool
+        """
+
+        self._is_internal = is_internal
 
     @property
     def issuer(self):

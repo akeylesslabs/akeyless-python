@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **bound_claims** | [**list[OIDCCustomClaim]**](OIDCCustomClaim.md) | The claims that login is restricted to. | [optional] 
 **client_id** | **str** | Client ID | [optional] 
 **client_secret** | **str** | Client Secret | [optional] 
+**is_internal** | **bool** | IsInternal indicates whether this is an internal Auth Method where the client has no control over it, or it was created by the client e.g - Sign In with Google will create an OIDC Auth Method with IsInternal&#x3D;true | [optional] 
 **issuer** | **str** | Issuer URL | [optional] 
 **unique_identifier** | **str** | A unique identifier to distinguish different users | [optional] 
 

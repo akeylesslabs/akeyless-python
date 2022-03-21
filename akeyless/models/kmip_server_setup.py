@@ -36,24 +36,20 @@ class KmipServerSetup(object):
     openapi_types = {
         'certificate_ttl': 'int',
         'hostname': 'str',
-        'password': 'str',
         'root': 'str',
         'token': 'str',
-        'uid_token': 'str',
-        'username': 'str'
+        'uid_token': 'str'
     }
 
     attribute_map = {
         'certificate_ttl': 'certificate-ttl',
         'hostname': 'hostname',
-        'password': 'password',
         'root': 'root',
         'token': 'token',
-        'uid_token': 'uid-token',
-        'username': 'username'
+        'uid_token': 'uid-token'
     }
 
-    def __init__(self, certificate_ttl=None, hostname=None, password=None, root=None, token=None, uid_token=None, username=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, certificate_ttl=None, hostname=None, root=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """KmipServerSetup - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -61,26 +57,20 @@ class KmipServerSetup(object):
 
         self._certificate_ttl = None
         self._hostname = None
-        self._password = None
         self._root = None
         self._token = None
         self._uid_token = None
-        self._username = None
         self.discriminator = None
 
         if certificate_ttl is not None:
             self.certificate_ttl = certificate_ttl
         self.hostname = hostname
-        if password is not None:
-            self.password = password
         if root is not None:
             self.root = root
         if token is not None:
             self.token = token
         if uid_token is not None:
             self.uid_token = uid_token
-        if username is not None:
-            self.username = username
 
     @property
     def certificate_ttl(self):
@@ -127,29 +117,6 @@ class KmipServerSetup(object):
             raise ValueError("Invalid value for `hostname`, must not be `None`")  # noqa: E501
 
         self._hostname = hostname
-
-    @property
-    def password(self):
-        """Gets the password of this KmipServerSetup.  # noqa: E501
-
-        Required only when the authentication process requires a username and password  # noqa: E501
-
-        :return: The password of this KmipServerSetup.  # noqa: E501
-        :rtype: str
-        """
-        return self._password
-
-    @password.setter
-    def password(self, password):
-        """Sets the password of this KmipServerSetup.
-
-        Required only when the authentication process requires a username and password  # noqa: E501
-
-        :param password: The password of this KmipServerSetup.  # noqa: E501
-        :type: str
-        """
-
-        self._password = password
 
     @property
     def root(self):
@@ -217,29 +184,6 @@ class KmipServerSetup(object):
         """
 
         self._uid_token = uid_token
-
-    @property
-    def username(self):
-        """Gets the username of this KmipServerSetup.  # noqa: E501
-
-        Required only when the authentication process requires a username and password  # noqa: E501
-
-        :return: The username of this KmipServerSetup.  # noqa: E501
-        :rtype: str
-        """
-        return self._username
-
-    @username.setter
-    def username(self, username):
-        """Sets the username of this KmipServerSetup.
-
-        Required only when the authentication process requires a username and password  # noqa: E501
-
-        :param username: The username of this KmipServerSetup.  # noqa: E501
-        :type: str
-        """
-
-        self._username = username
 
     def to_dict(self):
         """Returns the model properties as a dict"""

@@ -11,7 +11,6 @@ Name | Type | Description | Notes
 **ldap_url** | **str** | LDAP Server URL | [optional] 
 **name** | **str** | Producer name | 
 **new_name** | **str** | Producer name | [optional] 
-**password** | **str** | Required only when the authentication process requires a username and password | [optional] 
 **producer_encryption_key_name** | **str** | Dynamic producer encryption key | [optional] 
 **tags** | **list[str]** | List of the tags attached to this secret | [optional] 
 **target_name** | **str** | Target name | [optional] 
@@ -21,7 +20,6 @@ Name | Type | Description | Notes
 **user_attribute** | **str** | User Attribute | [optional] 
 **user_dn** | **str** | User DN | [optional] 
 **user_ttl** | **str** | User TTL | [optional] [default to '60m']
-**username** | **str** | Required only when the authentication process requires a username and password | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

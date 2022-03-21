@@ -42,7 +42,6 @@ class SignPKICertWithClassicKey(object):
         'locality': 'str',
         'organizational_units': 'str',
         'organizations': 'str',
-        'password': 'str',
         'postal_code': 'str',
         'province': 'str',
         'public_key_pem_data': 'str',
@@ -52,7 +51,6 @@ class SignPKICertWithClassicKey(object):
         'ttl': 'int',
         'uid_token': 'str',
         'uri_sans': 'str',
-        'username': 'str',
         'version': 'int'
     }
 
@@ -65,7 +63,6 @@ class SignPKICertWithClassicKey(object):
         'locality': 'locality',
         'organizational_units': 'organizational-units',
         'organizations': 'organizations',
-        'password': 'password',
         'postal_code': 'postal-code',
         'province': 'province',
         'public_key_pem_data': 'public-key-pem-data',
@@ -75,11 +72,10 @@ class SignPKICertWithClassicKey(object):
         'ttl': 'ttl',
         'uid_token': 'uid-token',
         'uri_sans': 'uri-sans',
-        'username': 'username',
         'version': 'version'
     }
 
-    def __init__(self, common_name=None, country=None, display_id=None, dns_names=None, key_usage='DigitalSignature,KeyAgreement,KeyEncipherment', locality=None, organizational_units=None, organizations=None, password=None, postal_code=None, province=None, public_key_pem_data=None, signing_method=None, street_address=None, token=None, ttl=None, uid_token=None, uri_sans=None, username=None, version=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, common_name=None, country=None, display_id=None, dns_names=None, key_usage='DigitalSignature,KeyAgreement,KeyEncipherment', locality=None, organizational_units=None, organizations=None, postal_code=None, province=None, public_key_pem_data=None, signing_method=None, street_address=None, token=None, ttl=None, uid_token=None, uri_sans=None, version=None, local_vars_configuration=None):  # noqa: E501
         """SignPKICertWithClassicKey - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -93,7 +89,6 @@ class SignPKICertWithClassicKey(object):
         self._locality = None
         self._organizational_units = None
         self._organizations = None
-        self._password = None
         self._postal_code = None
         self._province = None
         self._public_key_pem_data = None
@@ -103,7 +98,6 @@ class SignPKICertWithClassicKey(object):
         self._ttl = None
         self._uid_token = None
         self._uri_sans = None
-        self._username = None
         self._version = None
         self.discriminator = None
 
@@ -122,8 +116,6 @@ class SignPKICertWithClassicKey(object):
             self.organizational_units = organizational_units
         if organizations is not None:
             self.organizations = organizations
-        if password is not None:
-            self.password = password
         if postal_code is not None:
             self.postal_code = postal_code
         if province is not None:
@@ -140,8 +132,6 @@ class SignPKICertWithClassicKey(object):
             self.uid_token = uid_token
         if uri_sans is not None:
             self.uri_sans = uri_sans
-        if username is not None:
-            self.username = username
         self.version = version
 
     @property
@@ -329,29 +319,6 @@ class SignPKICertWithClassicKey(object):
         """
 
         self._organizations = organizations
-
-    @property
-    def password(self):
-        """Gets the password of this SignPKICertWithClassicKey.  # noqa: E501
-
-        Required only when the authentication process requires a username and password  # noqa: E501
-
-        :return: The password of this SignPKICertWithClassicKey.  # noqa: E501
-        :rtype: str
-        """
-        return self._password
-
-    @password.setter
-    def password(self, password):
-        """Sets the password of this SignPKICertWithClassicKey.
-
-        Required only when the authentication process requires a username and password  # noqa: E501
-
-        :param password: The password of this SignPKICertWithClassicKey.  # noqa: E501
-        :type: str
-        """
-
-        self._password = password
 
     @property
     def postal_code(self):
@@ -563,29 +530,6 @@ class SignPKICertWithClassicKey(object):
         """
 
         self._uri_sans = uri_sans
-
-    @property
-    def username(self):
-        """Gets the username of this SignPKICertWithClassicKey.  # noqa: E501
-
-        Required only when the authentication process requires a username and password  # noqa: E501
-
-        :return: The username of this SignPKICertWithClassicKey.  # noqa: E501
-        :rtype: str
-        """
-        return self._username
-
-    @username.setter
-    def username(self, username):
-        """Sets the username of this SignPKICertWithClassicKey.
-
-        Required only when the authentication process requires a username and password  # noqa: E501
-
-        :param username: The username of this SignPKICertWithClassicKey.  # noqa: E501
-        :type: str
-        """
-
-        self._username = username
 
     @property
     def version(self):
