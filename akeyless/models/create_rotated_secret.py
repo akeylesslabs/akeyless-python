@@ -123,7 +123,8 @@ class CreateRotatedSecret(object):
             self.api_id = api_id
         if api_key is not None:
             self.api_key = api_key
-        self.application_id = application_id
+        if application_id is not None:
+            self.application_id = application_id
         if authentication_credentials is not None:
             self.authentication_credentials = authentication_credentials
         if auto_rotate is not None:
@@ -226,8 +227,6 @@ class CreateRotatedSecret(object):
         :param application_id: The application_id of this CreateRotatedSecret.  # noqa: E501
         :type: str
         """
-        if self.local_vars_configuration.client_side_validation and application_id is None:  # noqa: E501
-            raise ValueError("Invalid value for `application_id`, must not be `None`")  # noqa: E501
 
         self._application_id = application_id
 

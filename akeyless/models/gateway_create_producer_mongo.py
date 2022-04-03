@@ -37,6 +37,7 @@ class GatewayCreateProducerMongo(object):
         'mongodb_atlas_api_private_key': 'str',
         'mongodb_atlas_api_public_key': 'str',
         'mongodb_atlas_project_id': 'str',
+        'mongodb_custom_data': 'str',
         'mongodb_default_auth_db': 'str',
         'mongodb_host_port': 'str',
         'mongodb_name': 'str',
@@ -62,6 +63,7 @@ class GatewayCreateProducerMongo(object):
         'mongodb_atlas_api_private_key': 'mongodb-atlas-api-private-key',
         'mongodb_atlas_api_public_key': 'mongodb-atlas-api-public-key',
         'mongodb_atlas_project_id': 'mongodb-atlas-project-id',
+        'mongodb_custom_data': 'mongodb-custom-data',
         'mongodb_default_auth_db': 'mongodb-default-auth-db',
         'mongodb_host_port': 'mongodb-host-port',
         'mongodb_name': 'mongodb-name',
@@ -83,7 +85,7 @@ class GatewayCreateProducerMongo(object):
         'user_ttl': 'user-ttl'
     }
 
-    def __init__(self, mongodb_atlas_api_private_key=None, mongodb_atlas_api_public_key=None, mongodb_atlas_project_id=None, mongodb_default_auth_db=None, mongodb_host_port=None, mongodb_name=None, mongodb_password=None, mongodb_roles='[]', mongodb_server_uri=None, mongodb_uri_options=None, mongodb_username=None, name=None, producer_encryption_key_name=None, secure_access_bastion_issuer=None, secure_access_enable=None, secure_access_host=None, secure_access_web=None, tags=None, target_name=None, token=None, uid_token=None, user_ttl='60m', local_vars_configuration=None):  # noqa: E501
+    def __init__(self, mongodb_atlas_api_private_key=None, mongodb_atlas_api_public_key=None, mongodb_atlas_project_id=None, mongodb_custom_data=None, mongodb_default_auth_db=None, mongodb_host_port=None, mongodb_name=None, mongodb_password=None, mongodb_roles='[]', mongodb_server_uri=None, mongodb_uri_options=None, mongodb_username=None, name=None, producer_encryption_key_name=None, secure_access_bastion_issuer=None, secure_access_enable=None, secure_access_host=None, secure_access_web=None, tags=None, target_name=None, token=None, uid_token=None, user_ttl='60m', local_vars_configuration=None):  # noqa: E501
         """GatewayCreateProducerMongo - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -92,6 +94,7 @@ class GatewayCreateProducerMongo(object):
         self._mongodb_atlas_api_private_key = None
         self._mongodb_atlas_api_public_key = None
         self._mongodb_atlas_project_id = None
+        self._mongodb_custom_data = None
         self._mongodb_default_auth_db = None
         self._mongodb_host_port = None
         self._mongodb_name = None
@@ -119,6 +122,8 @@ class GatewayCreateProducerMongo(object):
             self.mongodb_atlas_api_public_key = mongodb_atlas_api_public_key
         if mongodb_atlas_project_id is not None:
             self.mongodb_atlas_project_id = mongodb_atlas_project_id
+        if mongodb_custom_data is not None:
+            self.mongodb_custom_data = mongodb_custom_data
         if mongodb_default_auth_db is not None:
             self.mongodb_default_auth_db = mongodb_default_auth_db
         if mongodb_host_port is not None:
@@ -225,6 +230,29 @@ class GatewayCreateProducerMongo(object):
         """
 
         self._mongodb_atlas_project_id = mongodb_atlas_project_id
+
+    @property
+    def mongodb_custom_data(self):
+        """Gets the mongodb_custom_data of this GatewayCreateProducerMongo.  # noqa: E501
+
+        MongoDB custom data  # noqa: E501
+
+        :return: The mongodb_custom_data of this GatewayCreateProducerMongo.  # noqa: E501
+        :rtype: str
+        """
+        return self._mongodb_custom_data
+
+    @mongodb_custom_data.setter
+    def mongodb_custom_data(self, mongodb_custom_data):
+        """Sets the mongodb_custom_data of this GatewayCreateProducerMongo.
+
+        MongoDB custom data  # noqa: E501
+
+        :param mongodb_custom_data: The mongodb_custom_data of this GatewayCreateProducerMongo.  # noqa: E501
+        :type: str
+        """
+
+        self._mongodb_custom_data = mongodb_custom_data
 
     @property
     def mongodb_default_auth_db(self):

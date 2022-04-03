@@ -5,7 +5,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **api_id** | **str** |  | [optional] 
 **api_key** | **str** |  | [optional] 
-**application_id** | **str** | ApplicationId (used in azure) | 
+**application_id** | **str** | ApplicationId (used in azure) | [optional] 
 **authentication_credentials** | **str** |  | [optional] 
 **auto_rotate** | **str** | Whether to automatically rotate every --rotation-interval days, or disable existing automatic rotation | [optional] 
 **custom_payload** | **str** |  | [optional] 

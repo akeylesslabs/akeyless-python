@@ -34,6 +34,7 @@ class GatewayUpdateProducerRdp(object):
                             and the value is json key in definition.
     """
     openapi_types = {
+        'allow_user_extend_session': 'int',
         'fixed_user_only': 'str',
         'name': 'str',
         'new_name': 'str',
@@ -52,10 +53,12 @@ class GatewayUpdateProducerRdp(object):
         'target_name': 'str',
         'token': 'str',
         'uid_token': 'str',
-        'user_ttl': 'str'
+        'user_ttl': 'str',
+        'warn_user_before_expiration': 'int'
     }
 
     attribute_map = {
+        'allow_user_extend_session': 'allow-user-extend-session',
         'fixed_user_only': 'fixed-user-only',
         'name': 'name',
         'new_name': 'new-name',
@@ -74,15 +77,17 @@ class GatewayUpdateProducerRdp(object):
         'target_name': 'target-name',
         'token': 'token',
         'uid_token': 'uid-token',
-        'user_ttl': 'user-ttl'
+        'user_ttl': 'user-ttl',
+        'warn_user_before_expiration': 'warn-user-before-expiration'
     }
 
-    def __init__(self, fixed_user_only='false', name=None, new_name=None, producer_encryption_key_name=None, rdp_admin_name=None, rdp_admin_pwd=None, rdp_host_name=None, rdp_host_port='22', rdp_user_groups=None, secure_access_allow_external_user=None, secure_access_enable=None, secure_access_host=None, secure_access_rdp_domain=None, secure_access_rdp_user=None, tags=None, target_name=None, token=None, uid_token=None, user_ttl='60m', local_vars_configuration=None):  # noqa: E501
+    def __init__(self, allow_user_extend_session=None, fixed_user_only='false', name=None, new_name=None, producer_encryption_key_name=None, rdp_admin_name=None, rdp_admin_pwd=None, rdp_host_name=None, rdp_host_port='22', rdp_user_groups=None, secure_access_allow_external_user=None, secure_access_enable=None, secure_access_host=None, secure_access_rdp_domain=None, secure_access_rdp_user=None, tags=None, target_name=None, token=None, uid_token=None, user_ttl='60m', warn_user_before_expiration=None, local_vars_configuration=None):  # noqa: E501
         """GatewayUpdateProducerRdp - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
+        self._allow_user_extend_session = None
         self._fixed_user_only = None
         self._name = None
         self._new_name = None
@@ -102,8 +107,11 @@ class GatewayUpdateProducerRdp(object):
         self._token = None
         self._uid_token = None
         self._user_ttl = None
+        self._warn_user_before_expiration = None
         self.discriminator = None
 
+        if allow_user_extend_session is not None:
+            self.allow_user_extend_session = allow_user_extend_session
         if fixed_user_only is not None:
             self.fixed_user_only = fixed_user_only
         self.name = name
@@ -141,6 +149,31 @@ class GatewayUpdateProducerRdp(object):
             self.uid_token = uid_token
         if user_ttl is not None:
             self.user_ttl = user_ttl
+        if warn_user_before_expiration is not None:
+            self.warn_user_before_expiration = warn_user_before_expiration
+
+    @property
+    def allow_user_extend_session(self):
+        """Gets the allow_user_extend_session of this GatewayUpdateProducerRdp.  # noqa: E501
+
+        AllowUserExtendSession  # noqa: E501
+
+        :return: The allow_user_extend_session of this GatewayUpdateProducerRdp.  # noqa: E501
+        :rtype: int
+        """
+        return self._allow_user_extend_session
+
+    @allow_user_extend_session.setter
+    def allow_user_extend_session(self, allow_user_extend_session):
+        """Sets the allow_user_extend_session of this GatewayUpdateProducerRdp.
+
+        AllowUserExtendSession  # noqa: E501
+
+        :param allow_user_extend_session: The allow_user_extend_session of this GatewayUpdateProducerRdp.  # noqa: E501
+        :type: int
+        """
+
+        self._allow_user_extend_session = allow_user_extend_session
 
     @property
     def fixed_user_only(self):
@@ -570,6 +603,29 @@ class GatewayUpdateProducerRdp(object):
         """
 
         self._user_ttl = user_ttl
+
+    @property
+    def warn_user_before_expiration(self):
+        """Gets the warn_user_before_expiration of this GatewayUpdateProducerRdp.  # noqa: E501
+
+        WarnBeforeUserExpiration  # noqa: E501
+
+        :return: The warn_user_before_expiration of this GatewayUpdateProducerRdp.  # noqa: E501
+        :rtype: int
+        """
+        return self._warn_user_before_expiration
+
+    @warn_user_before_expiration.setter
+    def warn_user_before_expiration(self, warn_user_before_expiration):
+        """Sets the warn_user_before_expiration of this GatewayUpdateProducerRdp.
+
+        WarnBeforeUserExpiration  # noqa: E501
+
+        :param warn_user_before_expiration: The warn_user_before_expiration of this GatewayUpdateProducerRdp.  # noqa: E501
+        :type: int
+        """
+
+        self._warn_user_before_expiration = warn_user_before_expiration
 
     def to_dict(self):
         """Returns the model properties as a dict"""
