@@ -168,7 +168,7 @@ class Auth(object):
     def access_type(self):
         """Gets the access_type of this Auth.  # noqa: E501
 
-        Access Type (access_key/password/saml/ldap/k8s/azure_ad/aws_iam/universal_identity/jwt/gcp/k8s)  # noqa: E501
+        Access Type (access_key/password/saml/ldap/k8s/azure_ad/oidc/aws_iam/universal_identity/jwt/gcp/k8s)  # noqa: E501
 
         :return: The access_type of this Auth.  # noqa: E501
         :rtype: str
@@ -179,7 +179,7 @@ class Auth(object):
     def access_type(self, access_type):
         """Sets the access_type of this Auth.
 
-        Access Type (access_key/password/saml/ldap/k8s/azure_ad/aws_iam/universal_identity/jwt/gcp/k8s)  # noqa: E501
+        Access Type (access_key/password/saml/ldap/k8s/azure_ad/oidc/aws_iam/universal_identity/jwt/gcp/k8s)  # noqa: E501
 
         :param access_type: The access_type of this Auth.  # noqa: E501
         :type: str

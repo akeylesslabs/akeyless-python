@@ -44,6 +44,7 @@ class ConfigHash(object):
         'leadership': 'str',
         'log_forwarding': 'str',
         'm_queue': 'str',
+        'migration_status': 'str',
         'migrations': 'str',
         'producers': 'object',
         'producers_status': 'str',
@@ -63,6 +64,7 @@ class ConfigHash(object):
         'leadership': 'leadership',
         'log_forwarding': 'log_forwarding',
         'm_queue': 'm_queue',
+        'migration_status': 'migration_status',
         'migrations': 'migrations',
         'producers': 'producers',
         'producers_status': 'producers_status',
@@ -71,7 +73,7 @@ class ConfigHash(object):
         'universal_identity': 'universal_identity'
     }
 
-    def __init__(self, admins=None, cache=None, customer_fragements=None, general=None, k8s_auths=None, kmip=None, ldap=None, leadership=None, log_forwarding=None, m_queue=None, migrations=None, producers=None, producers_status=None, rotators=None, saml=None, universal_identity=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, admins=None, cache=None, customer_fragements=None, general=None, k8s_auths=None, kmip=None, ldap=None, leadership=None, log_forwarding=None, m_queue=None, migration_status=None, migrations=None, producers=None, producers_status=None, rotators=None, saml=None, universal_identity=None, local_vars_configuration=None):  # noqa: E501
         """ConfigHash - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -87,6 +89,7 @@ class ConfigHash(object):
         self._leadership = None
         self._log_forwarding = None
         self._m_queue = None
+        self._migration_status = None
         self._migrations = None
         self._producers = None
         self._producers_status = None
@@ -115,6 +118,8 @@ class ConfigHash(object):
             self.log_forwarding = log_forwarding
         if m_queue is not None:
             self.m_queue = m_queue
+        if migration_status is not None:
+            self.migration_status = migration_status
         if migrations is not None:
             self.migrations = migrations
         if producers is not None:
@@ -337,6 +342,27 @@ class ConfigHash(object):
         """
 
         self._m_queue = m_queue
+
+    @property
+    def migration_status(self):
+        """Gets the migration_status of this ConfigHash.  # noqa: E501
+
+
+        :return: The migration_status of this ConfigHash.  # noqa: E501
+        :rtype: str
+        """
+        return self._migration_status
+
+    @migration_status.setter
+    def migration_status(self, migration_status):
+        """Sets the migration_status of this ConfigHash.
+
+
+        :param migration_status: The migration_status of this ConfigHash.  # noqa: E501
+        :type: str
+        """
+
+        self._migration_status = migration_status
 
     @property
     def migrations(self):

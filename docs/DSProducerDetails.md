@@ -87,6 +87,8 @@ Name | Type | Description | Notes
 **gke_service_account_key** | **str** |  | [optional] 
 **gke_service_account_name** | **str** |  | [optional] 
 **groups** | **str** |  | [optional] 
+**hanadb_creation_statements** | **str** |  | [optional] 
+**hanadb_revocation_statements** | **str** |  | [optional] 
 **host_name** | **str** |  | [optional] 
 **host_port** | **str** |  | [optional] 
 **is_fixed_user** | **str** |  | [optional] 

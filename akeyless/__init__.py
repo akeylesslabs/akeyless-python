@@ -15,7 +15,7 @@
 
 from __future__ import absolute_import
 
-__version__ = "2.15.29"
+__version__ = "2.15.30"
 
 # import apis into sdk package
 from akeyless.api.v2_api import V2Api
@@ -202,6 +202,8 @@ from akeyless.models.gateway_create_producer_github import GatewayCreateProducer
 from akeyless.models.gateway_create_producer_github_output import GatewayCreateProducerGithubOutput
 from akeyless.models.gateway_create_producer_gke import GatewayCreateProducerGke
 from akeyless.models.gateway_create_producer_gke_output import GatewayCreateProducerGkeOutput
+from akeyless.models.gateway_create_producer_hana_db import GatewayCreateProducerHanaDb
+from akeyless.models.gateway_create_producer_hana_db_output import GatewayCreateProducerHanaDbOutput
 from akeyless.models.gateway_create_producer_ldap import GatewayCreateProducerLdap
 from akeyless.models.gateway_create_producer_ldap_output import GatewayCreateProducerLdapOutput
 from akeyless.models.gateway_create_producer_mssql import GatewayCreateProducerMSSQL
@@ -274,6 +276,8 @@ from akeyless.models.gateway_update_producer_github import GatewayUpdateProducer
 from akeyless.models.gateway_update_producer_github_output import GatewayUpdateProducerGithubOutput
 from akeyless.models.gateway_update_producer_gke import GatewayUpdateProducerGke
 from akeyless.models.gateway_update_producer_gke_output import GatewayUpdateProducerGkeOutput
+from akeyless.models.gateway_update_producer_hana_db import GatewayUpdateProducerHanaDb
+from akeyless.models.gateway_update_producer_hana_db_output import GatewayUpdateProducerHanaDbOutput
 from akeyless.models.gateway_update_producer_ldap import GatewayUpdateProducerLdap
 from akeyless.models.gateway_update_producer_ldap_output import GatewayUpdateProducerLdapOutput
 from akeyless.models.gateway_update_producer_mssql import GatewayUpdateProducerMSSQL
@@ -341,6 +345,7 @@ from akeyless.models.kmip_client_list_response import KMIPClientListResponse
 from akeyless.models.kmip_client_update_response import KMIPClientUpdateResponse
 from akeyless.models.kmip_config_part import KMIPConfigPart
 from akeyless.models.kmip_environment_create_response import KMIPEnvironmentCreateResponse
+from akeyless.models.kmip_server import KMIPServer
 from akeyless.models.kmip_client_delete_rule import KmipClientDeleteRule
 from akeyless.models.kmip_client_set_rule import KmipClientSetRule
 from akeyless.models.kmip_create_client import KmipCreateClient

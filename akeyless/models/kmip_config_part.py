@@ -35,26 +35,36 @@ class KMIPConfigPart(object):
     """
     openapi_types = {
         'clients': 'dict(str, KMIPClient)',
+        'key_enc': 'list[int]',
+        'server': 'KMIPServer',
         'server_enc': 'list[int]'
     }
 
     attribute_map = {
         'clients': 'clients',
+        'key_enc': 'key_enc',
+        'server': 'server',
         'server_enc': 'server_enc'
     }
 
-    def __init__(self, clients=None, server_enc=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, clients=None, key_enc=None, server=None, server_enc=None, local_vars_configuration=None):  # noqa: E501
         """KMIPConfigPart - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._clients = None
+        self._key_enc = None
+        self._server = None
         self._server_enc = None
         self.discriminator = None
 
         if clients is not None:
             self.clients = clients
+        if key_enc is not None:
+            self.key_enc = key_enc
+        if server is not None:
+            self.server = server
         if server_enc is not None:
             self.server_enc = server_enc
 
@@ -80,9 +90,54 @@ class KMIPConfigPart(object):
         self._clients = clients
 
     @property
+    def key_enc(self):
+        """Gets the key_enc of this KMIPConfigPart.  # noqa: E501
+
+        Saves the private key of the cert issuer in encypted form  # noqa: E501
+
+        :return: The key_enc of this KMIPConfigPart.  # noqa: E501
+        :rtype: list[int]
+        """
+        return self._key_enc
+
+    @key_enc.setter
+    def key_enc(self, key_enc):
+        """Sets the key_enc of this KMIPConfigPart.
+
+        Saves the private key of the cert issuer in encypted form  # noqa: E501
+
+        :param key_enc: The key_enc of this KMIPConfigPart.  # noqa: E501
+        :type: list[int]
+        """
+
+        self._key_enc = key_enc
+
+    @property
+    def server(self):
+        """Gets the server of this KMIPConfigPart.  # noqa: E501
+
+
+        :return: The server of this KMIPConfigPart.  # noqa: E501
+        :rtype: KMIPServer
+        """
+        return self._server
+
+    @server.setter
+    def server(self, server):
+        """Sets the server of this KMIPConfigPart.
+
+
+        :param server: The server of this KMIPConfigPart.  # noqa: E501
+        :type: KMIPServer
+        """
+
+        self._server = server
+
+    @property
     def server_enc(self):
         """Gets the server_enc of this KMIPConfigPart.  # noqa: E501
 
+        Saved for backward compatibility TODO: remove this after all clients upgrade  # noqa: E501
 
         :return: The server_enc of this KMIPConfigPart.  # noqa: E501
         :rtype: list[int]
@@ -93,6 +148,7 @@ class KMIPConfigPart(object):
     def server_enc(self, server_enc):
         """Sets the server_enc of this KMIPConfigPart.
 
+        Saved for backward compatibility TODO: remove this after all clients upgrade  # noqa: E501
 
         :param server_enc: The server_enc of this KMIPConfigPart.  # noqa: E501
         :type: list[int]

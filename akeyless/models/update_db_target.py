@@ -54,6 +54,8 @@ class UpdateDBTarget(object):
         'port': 'str',
         'pwd': 'str',
         'snowflake_account': 'str',
+        'ssl': 'bool',
+        'ssl_certificate': 'str',
         'token': 'str',
         'uid_token': 'str',
         'update_version': 'bool',
@@ -81,13 +83,15 @@ class UpdateDBTarget(object):
         'port': 'port',
         'pwd': 'pwd',
         'snowflake_account': 'snowflake-account',
+        'ssl': 'ssl',
+        'ssl_certificate': 'ssl-certificate',
         'token': 'token',
         'uid_token': 'uid-token',
         'update_version': 'update-version',
         'user_name': 'user-name'
     }
 
-    def __init__(self, comment=None, db_name=None, db_server_certificates=None, db_server_name=None, db_type=None, host=None, keep_prev_version=None, key=None, mongodb_atlas=None, mongodb_atlas_api_private_key=None, mongodb_atlas_api_public_key=None, mongodb_atlas_project_id=None, mongodb_default_auth_db=None, mongodb_uri_options=None, name=None, new_name=None, oracle_service_name=None, port=None, pwd=None, snowflake_account=None, token=None, uid_token=None, update_version=None, user_name=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, comment=None, db_name=None, db_server_certificates=None, db_server_name=None, db_type=None, host=None, keep_prev_version=None, key=None, mongodb_atlas=None, mongodb_atlas_api_private_key=None, mongodb_atlas_api_public_key=None, mongodb_atlas_project_id=None, mongodb_default_auth_db=None, mongodb_uri_options=None, name=None, new_name=None, oracle_service_name=None, port=None, pwd=None, snowflake_account=None, ssl=None, ssl_certificate=None, token=None, uid_token=None, update_version=None, user_name=None, local_vars_configuration=None):  # noqa: E501
         """UpdateDBTarget - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -113,6 +117,8 @@ class UpdateDBTarget(object):
         self._port = None
         self._pwd = None
         self._snowflake_account = None
+        self._ssl = None
+        self._ssl_certificate = None
         self._token = None
         self._uid_token = None
         self._update_version = None
@@ -157,6 +163,10 @@ class UpdateDBTarget(object):
             self.pwd = pwd
         if snowflake_account is not None:
             self.snowflake_account = snowflake_account
+        if ssl is not None:
+            self.ssl = ssl
+        if ssl_certificate is not None:
+            self.ssl_certificate = ssl_certificate
         if token is not None:
             self.token = token
         if uid_token is not None:
@@ -611,6 +621,52 @@ class UpdateDBTarget(object):
         """
 
         self._snowflake_account = snowflake_account
+
+    @property
+    def ssl(self):
+        """Gets the ssl of this UpdateDBTarget.  # noqa: E501
+
+        SSL connection mode  # noqa: E501
+
+        :return: The ssl of this UpdateDBTarget.  # noqa: E501
+        :rtype: bool
+        """
+        return self._ssl
+
+    @ssl.setter
+    def ssl(self, ssl):
+        """Sets the ssl of this UpdateDBTarget.
+
+        SSL connection mode  # noqa: E501
+
+        :param ssl: The ssl of this UpdateDBTarget.  # noqa: E501
+        :type: bool
+        """
+
+        self._ssl = ssl
+
+    @property
+    def ssl_certificate(self):
+        """Gets the ssl_certificate of this UpdateDBTarget.  # noqa: E501
+
+        SSL connection certificate  # noqa: E501
+
+        :return: The ssl_certificate of this UpdateDBTarget.  # noqa: E501
+        :rtype: str
+        """
+        return self._ssl_certificate
+
+    @ssl_certificate.setter
+    def ssl_certificate(self, ssl_certificate):
+        """Sets the ssl_certificate of this UpdateDBTarget.
+
+        SSL connection certificate  # noqa: E501
+
+        :param ssl_certificate: The ssl_certificate of this UpdateDBTarget.  # noqa: E501
+        :type: str
+        """
+
+        self._ssl_certificate = ssl_certificate
 
     @property
     def token(self):

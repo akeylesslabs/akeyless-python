@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **leadership** | **str** |  | [optional] 
 **log_forwarding** | **str** |  | [optional] 
 **m_queue** | **str** |  | [optional] 
+**migration_status** | **str** |  | [optional] 
 **migrations** | **str** |  | [optional] 
 **producers** | [**object**](.md) |  | [optional] 
 **producers_status** | **str** |  | [optional] 

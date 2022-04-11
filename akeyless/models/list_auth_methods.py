@@ -36,16 +36,18 @@ class ListAuthMethods(object):
     openapi_types = {
         'pagination_token': 'str',
         'token': 'str',
+        'type': 'list[str]',
         'uid_token': 'str'
     }
 
     attribute_map = {
         'pagination_token': 'pagination-token',
         'token': 'token',
+        'type': 'type',
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, pagination_token=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, pagination_token=None, token=None, type=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """ListAuthMethods - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -53,6 +55,7 @@ class ListAuthMethods(object):
 
         self._pagination_token = None
         self._token = None
+        self._type = None
         self._uid_token = None
         self.discriminator = None
 
@@ -60,6 +63,8 @@ class ListAuthMethods(object):
             self.pagination_token = pagination_token
         if token is not None:
             self.token = token
+        if type is not None:
+            self.type = type
         if uid_token is not None:
             self.uid_token = uid_token
 
@@ -108,6 +113,29 @@ class ListAuthMethods(object):
         """
 
         self._token = token
+
+    @property
+    def type(self):
+        """Gets the type of this ListAuthMethods.  # noqa: E501
+
+        The Auth method types list of the requested method. In case it is empty, all types of auth methods will be returned. options: [api_key, azure_ad, oauth2/jwt, saml2, ldap, aws_iam, oidc, universal_identity, gcp, k8s]  # noqa: E501
+
+        :return: The type of this ListAuthMethods.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._type
+
+    @type.setter
+    def type(self, type):
+        """Sets the type of this ListAuthMethods.
+
+        The Auth method types list of the requested method. In case it is empty, all types of auth methods will be returned. options: [api_key, azure_ad, oauth2/jwt, saml2, ldap, aws_iam, oidc, universal_identity, gcp, k8s]  # noqa: E501
+
+        :param type: The type of this ListAuthMethods.  # noqa: E501
+        :type: list[str]
+        """
+
+        self._type = type
 
     @property
     def uid_token(self):
