@@ -44,6 +44,8 @@ class UpdateAuthMethodOIDC(object):
         'jwt_ttl': 'int',
         'name': 'str',
         'new_name': 'str',
+        'required_scopes': 'list[str]',
+        'required_scopes_prefix': 'str',
         'token': 'str',
         'uid_token': 'str',
         'unique_identifier': 'str'
@@ -60,12 +62,14 @@ class UpdateAuthMethodOIDC(object):
         'jwt_ttl': 'jwt-ttl',
         'name': 'name',
         'new_name': 'new-name',
+        'required_scopes': 'required-scopes',
+        'required_scopes_prefix': 'required-scopes-prefix',
         'token': 'token',
         'uid_token': 'uid-token',
         'unique_identifier': 'unique-identifier'
     }
 
-    def __init__(self, access_expires=0, allowed_redirect_uri=None, bound_ips=None, client_id=None, client_secret=None, force_sub_claims=None, issuer=None, jwt_ttl=0, name=None, new_name=None, token=None, uid_token=None, unique_identifier=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, access_expires=0, allowed_redirect_uri=None, bound_ips=None, client_id=None, client_secret=None, force_sub_claims=None, issuer=None, jwt_ttl=0, name=None, new_name=None, required_scopes=None, required_scopes_prefix=None, token=None, uid_token=None, unique_identifier=None, local_vars_configuration=None):  # noqa: E501
         """UpdateAuthMethodOIDC - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -81,6 +85,8 @@ class UpdateAuthMethodOIDC(object):
         self._jwt_ttl = None
         self._name = None
         self._new_name = None
+        self._required_scopes = None
+        self._required_scopes_prefix = None
         self._token = None
         self._uid_token = None
         self._unique_identifier = None
@@ -105,6 +111,10 @@ class UpdateAuthMethodOIDC(object):
         self.name = name
         if new_name is not None:
             self.new_name = new_name
+        if required_scopes is not None:
+            self.required_scopes = required_scopes
+        if required_scopes_prefix is not None:
+            self.required_scopes_prefix = required_scopes_prefix
         if token is not None:
             self.token = token
         if uid_token is not None:
@@ -342,6 +352,52 @@ class UpdateAuthMethodOIDC(object):
         """
 
         self._new_name = new_name
+
+    @property
+    def required_scopes(self):
+        """Gets the required_scopes of this UpdateAuthMethodOIDC.  # noqa: E501
+
+        RequiredScopes is a list of required scopes that the oidc method will request from the oidc provider and the user must approve  # noqa: E501
+
+        :return: The required_scopes of this UpdateAuthMethodOIDC.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._required_scopes
+
+    @required_scopes.setter
+    def required_scopes(self, required_scopes):
+        """Sets the required_scopes of this UpdateAuthMethodOIDC.
+
+        RequiredScopes is a list of required scopes that the oidc method will request from the oidc provider and the user must approve  # noqa: E501
+
+        :param required_scopes: The required_scopes of this UpdateAuthMethodOIDC.  # noqa: E501
+        :type: list[str]
+        """
+
+        self._required_scopes = required_scopes
+
+    @property
+    def required_scopes_prefix(self):
+        """Gets the required_scopes_prefix of this UpdateAuthMethodOIDC.  # noqa: E501
+
+        RequiredScopesPrefix is a a prefix to add to all required-scopes when requesting them from the oidc server (for example, azures' Application ID URI)  # noqa: E501
+
+        :return: The required_scopes_prefix of this UpdateAuthMethodOIDC.  # noqa: E501
+        :rtype: str
+        """
+        return self._required_scopes_prefix
+
+    @required_scopes_prefix.setter
+    def required_scopes_prefix(self, required_scopes_prefix):
+        """Sets the required_scopes_prefix of this UpdateAuthMethodOIDC.
+
+        RequiredScopesPrefix is a a prefix to add to all required-scopes when requesting them from the oidc server (for example, azures' Application ID URI)  # noqa: E501
+
+        :param required_scopes_prefix: The required_scopes_prefix of this UpdateAuthMethodOIDC.  # noqa: E501
+        :type: str
+        """
+
+        self._required_scopes_prefix = required_scopes_prefix
 
     @property
     def token(self):

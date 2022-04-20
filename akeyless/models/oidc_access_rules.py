@@ -40,6 +40,8 @@ class OIDCAccessRules(object):
         'client_secret': 'str',
         'is_internal': 'bool',
         'issuer': 'str',
+        'required_scopes': 'list[str]',
+        'required_scopes_prefix': 'str',
         'unique_identifier': 'str'
     }
 
@@ -50,10 +52,12 @@ class OIDCAccessRules(object):
         'client_secret': 'client_secret',
         'is_internal': 'is_internal',
         'issuer': 'issuer',
+        'required_scopes': 'required_scopes',
+        'required_scopes_prefix': 'required_scopes_prefix',
         'unique_identifier': 'unique_identifier'
     }
 
-    def __init__(self, allowed_redirect_ur_is=None, bound_claims=None, client_id=None, client_secret=None, is_internal=None, issuer=None, unique_identifier=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, allowed_redirect_ur_is=None, bound_claims=None, client_id=None, client_secret=None, is_internal=None, issuer=None, required_scopes=None, required_scopes_prefix=None, unique_identifier=None, local_vars_configuration=None):  # noqa: E501
         """OIDCAccessRules - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -65,6 +69,8 @@ class OIDCAccessRules(object):
         self._client_secret = None
         self._is_internal = None
         self._issuer = None
+        self._required_scopes = None
+        self._required_scopes_prefix = None
         self._unique_identifier = None
         self.discriminator = None
 
@@ -80,6 +86,10 @@ class OIDCAccessRules(object):
             self.is_internal = is_internal
         if issuer is not None:
             self.issuer = issuer
+        if required_scopes is not None:
+            self.required_scopes = required_scopes
+        if required_scopes_prefix is not None:
+            self.required_scopes_prefix = required_scopes_prefix
         if unique_identifier is not None:
             self.unique_identifier = unique_identifier
 
@@ -220,6 +230,52 @@ class OIDCAccessRules(object):
         """
 
         self._issuer = issuer
+
+    @property
+    def required_scopes(self):
+        """Gets the required_scopes of this OIDCAccessRules.  # noqa: E501
+
+        A list of required scopes to request from the oidc provider, and to check on the token  # noqa: E501
+
+        :return: The required_scopes of this OIDCAccessRules.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._required_scopes
+
+    @required_scopes.setter
+    def required_scopes(self, required_scopes):
+        """Sets the required_scopes of this OIDCAccessRules.
+
+        A list of required scopes to request from the oidc provider, and to check on the token  # noqa: E501
+
+        :param required_scopes: The required_scopes of this OIDCAccessRules.  # noqa: E501
+        :type: list[str]
+        """
+
+        self._required_scopes = required_scopes
+
+    @property
+    def required_scopes_prefix(self):
+        """Gets the required_scopes_prefix of this OIDCAccessRules.  # noqa: E501
+
+        A prefix to add to the required scopes (for example, azures' Application ID URI)  # noqa: E501
+
+        :return: The required_scopes_prefix of this OIDCAccessRules.  # noqa: E501
+        :rtype: str
+        """
+        return self._required_scopes_prefix
+
+    @required_scopes_prefix.setter
+    def required_scopes_prefix(self, required_scopes_prefix):
+        """Sets the required_scopes_prefix of this OIDCAccessRules.
+
+        A prefix to add to the required scopes (for example, azures' Application ID URI)  # noqa: E501
+
+        :param required_scopes_prefix: The required_scopes_prefix of this OIDCAccessRules.  # noqa: E501
+        :type: str
+        """
+
+        self._required_scopes_prefix = required_scopes_prefix
 
     @property
     def unique_identifier(self):

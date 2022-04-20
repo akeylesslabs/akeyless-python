@@ -34,7 +34,9 @@ class GatewayCreateProducerCustom(object):
                             and the value is json key in definition.
     """
     openapi_types = {
+        'admin_rotation_interval_days': 'int',
         'create_sync_url': 'str',
+        'enable_admin_rotation': 'bool',
         'name': 'str',
         'payload': 'str',
         'producer_encryption_key_name': 'str',
@@ -48,7 +50,9 @@ class GatewayCreateProducerCustom(object):
     }
 
     attribute_map = {
+        'admin_rotation_interval_days': 'admin_rotation_interval_days',
         'create_sync_url': 'create-sync-url',
+        'enable_admin_rotation': 'enable_admin_rotation',
         'name': 'name',
         'payload': 'payload',
         'producer_encryption_key_name': 'producer-encryption-key-name',
@@ -61,13 +65,15 @@ class GatewayCreateProducerCustom(object):
         'user_ttl': 'user-ttl'
     }
 
-    def __init__(self, create_sync_url=None, name=None, payload=None, producer_encryption_key_name=None, revoke_sync_url=None, rotate_sync_url=None, tags=None, timeout_sec=60, token=None, uid_token=None, user_ttl='60m', local_vars_configuration=None):  # noqa: E501
+    def __init__(self, admin_rotation_interval_days=None, create_sync_url=None, enable_admin_rotation=False, name=None, payload=None, producer_encryption_key_name=None, revoke_sync_url=None, rotate_sync_url=None, tags=None, timeout_sec=60, token=None, uid_token=None, user_ttl='60m', local_vars_configuration=None):  # noqa: E501
         """GatewayCreateProducerCustom - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
+        self._admin_rotation_interval_days = None
         self._create_sync_url = None
+        self._enable_admin_rotation = None
         self._name = None
         self._payload = None
         self._producer_encryption_key_name = None
@@ -80,7 +86,11 @@ class GatewayCreateProducerCustom(object):
         self._user_ttl = None
         self.discriminator = None
 
+        if admin_rotation_interval_days is not None:
+            self.admin_rotation_interval_days = admin_rotation_interval_days
         self.create_sync_url = create_sync_url
+        if enable_admin_rotation is not None:
+            self.enable_admin_rotation = enable_admin_rotation
         self.name = name
         if payload is not None:
             self.payload = payload
@@ -99,6 +109,29 @@ class GatewayCreateProducerCustom(object):
             self.uid_token = uid_token
         if user_ttl is not None:
             self.user_ttl = user_ttl
+
+    @property
+    def admin_rotation_interval_days(self):
+        """Gets the admin_rotation_interval_days of this GatewayCreateProducerCustom.  # noqa: E501
+
+        Define rotation interval in days  # noqa: E501
+
+        :return: The admin_rotation_interval_days of this GatewayCreateProducerCustom.  # noqa: E501
+        :rtype: int
+        """
+        return self._admin_rotation_interval_days
+
+    @admin_rotation_interval_days.setter
+    def admin_rotation_interval_days(self, admin_rotation_interval_days):
+        """Sets the admin_rotation_interval_days of this GatewayCreateProducerCustom.
+
+        Define rotation interval in days  # noqa: E501
+
+        :param admin_rotation_interval_days: The admin_rotation_interval_days of this GatewayCreateProducerCustom.  # noqa: E501
+        :type: int
+        """
+
+        self._admin_rotation_interval_days = admin_rotation_interval_days
 
     @property
     def create_sync_url(self):
@@ -124,6 +157,29 @@ class GatewayCreateProducerCustom(object):
             raise ValueError("Invalid value for `create_sync_url`, must not be `None`")  # noqa: E501
 
         self._create_sync_url = create_sync_url
+
+    @property
+    def enable_admin_rotation(self):
+        """Gets the enable_admin_rotation of this GatewayCreateProducerCustom.  # noqa: E501
+
+        Should admin credentials be rotated  # noqa: E501
+
+        :return: The enable_admin_rotation of this GatewayCreateProducerCustom.  # noqa: E501
+        :rtype: bool
+        """
+        return self._enable_admin_rotation
+
+    @enable_admin_rotation.setter
+    def enable_admin_rotation(self, enable_admin_rotation):
+        """Sets the enable_admin_rotation of this GatewayCreateProducerCustom.
+
+        Should admin credentials be rotated  # noqa: E501
+
+        :param enable_admin_rotation: The enable_admin_rotation of this GatewayCreateProducerCustom.  # noqa: E501
+        :type: bool
+        """
+
+        self._enable_admin_rotation = enable_admin_rotation
 
     @property
     def name(self):

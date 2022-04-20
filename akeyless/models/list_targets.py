@@ -34,34 +34,62 @@ class ListTargets(object):
                             and the value is json key in definition.
     """
     openapi_types = {
+        'filter': 'str',
         'pagination_token': 'str',
         'token': 'str',
         'uid_token': 'str'
     }
 
     attribute_map = {
+        'filter': 'filter',
         'pagination_token': 'pagination-token',
         'token': 'token',
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, pagination_token=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, filter=None, pagination_token=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """ListTargets - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
+        self._filter = None
         self._pagination_token = None
         self._token = None
         self._uid_token = None
         self.discriminator = None
 
+        if filter is not None:
+            self.filter = filter
         if pagination_token is not None:
             self.pagination_token = pagination_token
         if token is not None:
             self.token = token
         if uid_token is not None:
             self.uid_token = uid_token
+
+    @property
+    def filter(self):
+        """Gets the filter of this ListTargets.  # noqa: E501
+
+        Filter by auth method name or part of it  # noqa: E501
+
+        :return: The filter of this ListTargets.  # noqa: E501
+        :rtype: str
+        """
+        return self._filter
+
+    @filter.setter
+    def filter(self, filter):
+        """Sets the filter of this ListTargets.
+
+        Filter by auth method name or part of it  # noqa: E501
+
+        :param filter: The filter of this ListTargets.  # noqa: E501
+        :type: str
+        """
+
+        self._filter = filter
 
     @property
     def pagination_token(self):

@@ -39,6 +39,7 @@ class AuthMethodAccessInfo(object):
         'api_key_access_rules': 'APIKeyAccessRules',
         'aws_iam_access_rules': 'AWSIAMAccessRules',
         'azure_ad_access_rules': 'AzureADAccessRules',
+        'cert_access_rules': 'CertAccessRules',
         'cidr_whitelist': 'str',
         'email_pass_access_rules': 'EmailPassAccessRules',
         'force_sub_claims': 'bool',
@@ -60,6 +61,7 @@ class AuthMethodAccessInfo(object):
         'api_key_access_rules': 'api_key_access_rules',
         'aws_iam_access_rules': 'aws_iam_access_rules',
         'azure_ad_access_rules': 'azure_ad_access_rules',
+        'cert_access_rules': 'cert_access_rules',
         'cidr_whitelist': 'cidr_whitelist',
         'email_pass_access_rules': 'email_pass_access_rules',
         'force_sub_claims': 'force_sub_claims',
@@ -75,7 +77,7 @@ class AuthMethodAccessInfo(object):
         'universal_identity_access_rules': 'universal_identity_access_rules'
     }
 
-    def __init__(self, access_expires=None, access_id_alias=None, api_key_access_rules=None, aws_iam_access_rules=None, azure_ad_access_rules=None, cidr_whitelist=None, email_pass_access_rules=None, force_sub_claims=None, gcp_access_rules=None, huawei_access_rules=None, jwt_ttl=None, k8s_access_rules=None, ldap_access_rules=None, oauth2_access_rules=None, oidc_access_rules=None, rules_type=None, saml_access_rules=None, universal_identity_access_rules=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, access_expires=None, access_id_alias=None, api_key_access_rules=None, aws_iam_access_rules=None, azure_ad_access_rules=None, cert_access_rules=None, cidr_whitelist=None, email_pass_access_rules=None, force_sub_claims=None, gcp_access_rules=None, huawei_access_rules=None, jwt_ttl=None, k8s_access_rules=None, ldap_access_rules=None, oauth2_access_rules=None, oidc_access_rules=None, rules_type=None, saml_access_rules=None, universal_identity_access_rules=None, local_vars_configuration=None):  # noqa: E501
         """AuthMethodAccessInfo - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -86,6 +88,7 @@ class AuthMethodAccessInfo(object):
         self._api_key_access_rules = None
         self._aws_iam_access_rules = None
         self._azure_ad_access_rules = None
+        self._cert_access_rules = None
         self._cidr_whitelist = None
         self._email_pass_access_rules = None
         self._force_sub_claims = None
@@ -111,6 +114,8 @@ class AuthMethodAccessInfo(object):
             self.aws_iam_access_rules = aws_iam_access_rules
         if azure_ad_access_rules is not None:
             self.azure_ad_access_rules = azure_ad_access_rules
+        if cert_access_rules is not None:
+            self.cert_access_rules = cert_access_rules
         if cidr_whitelist is not None:
             self.cidr_whitelist = cidr_whitelist
         if email_pass_access_rules is not None:
@@ -244,6 +249,27 @@ class AuthMethodAccessInfo(object):
         """
 
         self._azure_ad_access_rules = azure_ad_access_rules
+
+    @property
+    def cert_access_rules(self):
+        """Gets the cert_access_rules of this AuthMethodAccessInfo.  # noqa: E501
+
+
+        :return: The cert_access_rules of this AuthMethodAccessInfo.  # noqa: E501
+        :rtype: CertAccessRules
+        """
+        return self._cert_access_rules
+
+    @cert_access_rules.setter
+    def cert_access_rules(self, cert_access_rules):
+        """Sets the cert_access_rules of this AuthMethodAccessInfo.
+
+
+        :param cert_access_rules: The cert_access_rules of this AuthMethodAccessInfo.  # noqa: E501
+        :type: CertAccessRules
+        """
+
+        self._cert_access_rules = cert_access_rules
 
     @property
     def cidr_whitelist(self):

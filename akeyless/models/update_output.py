@@ -34,29 +34,55 @@ class UpdateOutput(object):
                             and the value is json key in definition.
     """
     openapi_types = {
+        'changelog': 'str',
         'latest': 'str',
         'updated': 'bool'
     }
 
     attribute_map = {
+        'changelog': 'changelog',
         'latest': 'latest',
         'updated': 'updated'
     }
 
-    def __init__(self, latest=None, updated=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, changelog=None, latest=None, updated=None, local_vars_configuration=None):  # noqa: E501
         """UpdateOutput - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
+        self._changelog = None
         self._latest = None
         self._updated = None
         self.discriminator = None
 
+        if changelog is not None:
+            self.changelog = changelog
         if latest is not None:
             self.latest = latest
         if updated is not None:
             self.updated = updated
+
+    @property
+    def changelog(self):
+        """Gets the changelog of this UpdateOutput.  # noqa: E501
+
+
+        :return: The changelog of this UpdateOutput.  # noqa: E501
+        :rtype: str
+        """
+        return self._changelog
+
+    @changelog.setter
+    def changelog(self, changelog):
+        """Sets the changelog of this UpdateOutput.
+
+
+        :param changelog: The changelog of this UpdateOutput.  # noqa: E501
+        :type: str
+        """
+
+        self._changelog = changelog
 
     @property
     def latest(self):

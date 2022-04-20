@@ -45,6 +45,10 @@ class GatewayUpdateProducerOracleDb(object):
         'oracle_service_name': 'str',
         'oracle_username': 'str',
         'producer_encryption_key_name': 'str',
+        'secure_access_bastion_issuer': 'str',
+        'secure_access_enable': 'str',
+        'secure_access_host': 'list[str]',
+        'secure_access_web': 'bool',
         'tags': 'list[str]',
         'target_name': 'str',
         'token': 'str',
@@ -64,6 +68,10 @@ class GatewayUpdateProducerOracleDb(object):
         'oracle_service_name': 'oracle-service-name',
         'oracle_username': 'oracle-username',
         'producer_encryption_key_name': 'producer-encryption-key-name',
+        'secure_access_bastion_issuer': 'secure-access-bastion-issuer',
+        'secure_access_enable': 'secure-access-enable',
+        'secure_access_host': 'secure-access-host',
+        'secure_access_web': 'secure-access-web',
         'tags': 'tags',
         'target_name': 'target-name',
         'token': 'token',
@@ -71,7 +79,7 @@ class GatewayUpdateProducerOracleDb(object):
         'user_ttl': 'user-ttl'
     }
 
-    def __init__(self, db_server_certificates=None, db_server_name=None, name=None, new_name=None, oracle_host='127.0.0.1', oracle_password=None, oracle_port='1521', oracle_screation_statements=None, oracle_service_name=None, oracle_username=None, producer_encryption_key_name=None, tags=None, target_name=None, token=None, uid_token=None, user_ttl='60m', local_vars_configuration=None):  # noqa: E501
+    def __init__(self, db_server_certificates=None, db_server_name=None, name=None, new_name=None, oracle_host='127.0.0.1', oracle_password=None, oracle_port='1521', oracle_screation_statements=None, oracle_service_name=None, oracle_username=None, producer_encryption_key_name=None, secure_access_bastion_issuer=None, secure_access_enable=None, secure_access_host=None, secure_access_web=None, tags=None, target_name=None, token=None, uid_token=None, user_ttl='60m', local_vars_configuration=None):  # noqa: E501
         """GatewayUpdateProducerOracleDb - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -88,6 +96,10 @@ class GatewayUpdateProducerOracleDb(object):
         self._oracle_service_name = None
         self._oracle_username = None
         self._producer_encryption_key_name = None
+        self._secure_access_bastion_issuer = None
+        self._secure_access_enable = None
+        self._secure_access_host = None
+        self._secure_access_web = None
         self._tags = None
         self._target_name = None
         self._token = None
@@ -116,6 +128,14 @@ class GatewayUpdateProducerOracleDb(object):
             self.oracle_username = oracle_username
         if producer_encryption_key_name is not None:
             self.producer_encryption_key_name = producer_encryption_key_name
+        if secure_access_bastion_issuer is not None:
+            self.secure_access_bastion_issuer = secure_access_bastion_issuer
+        if secure_access_enable is not None:
+            self.secure_access_enable = secure_access_enable
+        if secure_access_host is not None:
+            self.secure_access_host = secure_access_host
+        if secure_access_web is not None:
+            self.secure_access_web = secure_access_web
         if tags is not None:
             self.tags = tags
         if target_name is not None:
@@ -381,6 +401,90 @@ class GatewayUpdateProducerOracleDb(object):
         """
 
         self._producer_encryption_key_name = producer_encryption_key_name
+
+    @property
+    def secure_access_bastion_issuer(self):
+        """Gets the secure_access_bastion_issuer of this GatewayUpdateProducerOracleDb.  # noqa: E501
+
+
+        :return: The secure_access_bastion_issuer of this GatewayUpdateProducerOracleDb.  # noqa: E501
+        :rtype: str
+        """
+        return self._secure_access_bastion_issuer
+
+    @secure_access_bastion_issuer.setter
+    def secure_access_bastion_issuer(self, secure_access_bastion_issuer):
+        """Sets the secure_access_bastion_issuer of this GatewayUpdateProducerOracleDb.
+
+
+        :param secure_access_bastion_issuer: The secure_access_bastion_issuer of this GatewayUpdateProducerOracleDb.  # noqa: E501
+        :type: str
+        """
+
+        self._secure_access_bastion_issuer = secure_access_bastion_issuer
+
+    @property
+    def secure_access_enable(self):
+        """Gets the secure_access_enable of this GatewayUpdateProducerOracleDb.  # noqa: E501
+
+
+        :return: The secure_access_enable of this GatewayUpdateProducerOracleDb.  # noqa: E501
+        :rtype: str
+        """
+        return self._secure_access_enable
+
+    @secure_access_enable.setter
+    def secure_access_enable(self, secure_access_enable):
+        """Sets the secure_access_enable of this GatewayUpdateProducerOracleDb.
+
+
+        :param secure_access_enable: The secure_access_enable of this GatewayUpdateProducerOracleDb.  # noqa: E501
+        :type: str
+        """
+
+        self._secure_access_enable = secure_access_enable
+
+    @property
+    def secure_access_host(self):
+        """Gets the secure_access_host of this GatewayUpdateProducerOracleDb.  # noqa: E501
+
+
+        :return: The secure_access_host of this GatewayUpdateProducerOracleDb.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._secure_access_host
+
+    @secure_access_host.setter
+    def secure_access_host(self, secure_access_host):
+        """Sets the secure_access_host of this GatewayUpdateProducerOracleDb.
+
+
+        :param secure_access_host: The secure_access_host of this GatewayUpdateProducerOracleDb.  # noqa: E501
+        :type: list[str]
+        """
+
+        self._secure_access_host = secure_access_host
+
+    @property
+    def secure_access_web(self):
+        """Gets the secure_access_web of this GatewayUpdateProducerOracleDb.  # noqa: E501
+
+
+        :return: The secure_access_web of this GatewayUpdateProducerOracleDb.  # noqa: E501
+        :rtype: bool
+        """
+        return self._secure_access_web
+
+    @secure_access_web.setter
+    def secure_access_web(self, secure_access_web):
+        """Sets the secure_access_web of this GatewayUpdateProducerOracleDb.
+
+
+        :param secure_access_web: The secure_access_web of this GatewayUpdateProducerOracleDb.  # noqa: E501
+        :type: bool
+        """
+
+        self._secure_access_web = secure_access_web
 
     @property
     def tags(self):

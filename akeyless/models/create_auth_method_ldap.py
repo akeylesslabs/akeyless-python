@@ -41,7 +41,8 @@ class CreateAuthMethodLDAP(object):
         'name': 'str',
         'public_key_data': 'str',
         'token': 'str',
-        'uid_token': 'str'
+        'uid_token': 'str',
+        'unique_identifier': 'str'
     }
 
     attribute_map = {
@@ -52,10 +53,11 @@ class CreateAuthMethodLDAP(object):
         'name': 'name',
         'public_key_data': 'public-key-data',
         'token': 'token',
-        'uid_token': 'uid-token'
+        'uid_token': 'uid-token',
+        'unique_identifier': 'unique-identifier'
     }
 
-    def __init__(self, access_expires=0, bound_ips=None, force_sub_claims=None, jwt_ttl=0, name=None, public_key_data=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, access_expires=0, bound_ips=None, force_sub_claims=None, jwt_ttl=0, name=None, public_key_data=None, token=None, uid_token=None, unique_identifier=None, local_vars_configuration=None):  # noqa: E501
         """CreateAuthMethodLDAP - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -69,6 +71,7 @@ class CreateAuthMethodLDAP(object):
         self._public_key_data = None
         self._token = None
         self._uid_token = None
+        self._unique_identifier = None
         self.discriminator = None
 
         if access_expires is not None:
@@ -86,6 +89,8 @@ class CreateAuthMethodLDAP(object):
             self.token = token
         if uid_token is not None:
             self.uid_token = uid_token
+        if unique_identifier is not None:
+            self.unique_identifier = unique_identifier
 
     @property
     def access_expires(self):
@@ -272,6 +277,29 @@ class CreateAuthMethodLDAP(object):
         """
 
         self._uid_token = uid_token
+
+    @property
+    def unique_identifier(self):
+        """Gets the unique_identifier of this CreateAuthMethodLDAP.  # noqa: E501
+
+        A unique identifier (ID) value should be configured for OAuth2, LDAP and SAML authentication method types and is usually a value such as the email, username, or upn for example. Whenever a user logs in with a token, these authentication types issue a \"sub claim\" that contains details uniquely identifying that user. This sub claim includes a key containing the ID value that you configured, and is used to distinguish between different users from within the same organization.  # noqa: E501
+
+        :return: The unique_identifier of this CreateAuthMethodLDAP.  # noqa: E501
+        :rtype: str
+        """
+        return self._unique_identifier
+
+    @unique_identifier.setter
+    def unique_identifier(self, unique_identifier):
+        """Sets the unique_identifier of this CreateAuthMethodLDAP.
+
+        A unique identifier (ID) value should be configured for OAuth2, LDAP and SAML authentication method types and is usually a value such as the email, username, or upn for example. Whenever a user logs in with a token, these authentication types issue a \"sub claim\" that contains details uniquely identifying that user. This sub claim includes a key containing the ID value that you configured, and is used to distinguish between different users from within the same organization.  # noqa: E501
+
+        :param unique_identifier: The unique_identifier of this CreateAuthMethodLDAP.  # noqa: E501
+        :type: str
+        """
+
+        self._unique_identifier = unique_identifier
 
     def to_dict(self):
         """Returns the model properties as a dict"""

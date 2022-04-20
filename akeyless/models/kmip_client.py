@@ -35,6 +35,7 @@ class KMIPClient(object):
     """
     openapi_types = {
         'certificate_issue_date': 'datetime',
+        'certificate_ttl_in_seconds': 'int',
         'id': 'str',
         'name': 'str',
         'rules': 'list[PathRule]'
@@ -42,18 +43,20 @@ class KMIPClient(object):
 
     attribute_map = {
         'certificate_issue_date': 'certificate_issue_date',
+        'certificate_ttl_in_seconds': 'certificate_ttl_in_seconds',
         'id': 'id',
         'name': 'name',
         'rules': 'rules'
     }
 
-    def __init__(self, certificate_issue_date=None, id=None, name=None, rules=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, certificate_issue_date=None, certificate_ttl_in_seconds=None, id=None, name=None, rules=None, local_vars_configuration=None):  # noqa: E501
         """KMIPClient - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._certificate_issue_date = None
+        self._certificate_ttl_in_seconds = None
         self._id = None
         self._name = None
         self._rules = None
@@ -61,6 +64,8 @@ class KMIPClient(object):
 
         if certificate_issue_date is not None:
             self.certificate_issue_date = certificate_issue_date
+        if certificate_ttl_in_seconds is not None:
+            self.certificate_ttl_in_seconds = certificate_ttl_in_seconds
         if id is not None:
             self.id = id
         if name is not None:
@@ -88,6 +93,27 @@ class KMIPClient(object):
         """
 
         self._certificate_issue_date = certificate_issue_date
+
+    @property
+    def certificate_ttl_in_seconds(self):
+        """Gets the certificate_ttl_in_seconds of this KMIPClient.  # noqa: E501
+
+
+        :return: The certificate_ttl_in_seconds of this KMIPClient.  # noqa: E501
+        :rtype: int
+        """
+        return self._certificate_ttl_in_seconds
+
+    @certificate_ttl_in_seconds.setter
+    def certificate_ttl_in_seconds(self, certificate_ttl_in_seconds):
+        """Sets the certificate_ttl_in_seconds of this KMIPClient.
+
+
+        :param certificate_ttl_in_seconds: The certificate_ttl_in_seconds of this KMIPClient.  # noqa: E501
+        :type: int
+        """
+
+        self._certificate_ttl_in_seconds = certificate_ttl_in_seconds
 
     @property
     def id(self):

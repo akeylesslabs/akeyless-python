@@ -5,6 +5,8 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **active** | **bool** |  | [optional] 
 **ca_cert** | **list[int]** |  | [optional] 
+**certificate_issue_date** | **datetime** |  | [optional] 
+**certificate_ttl_in_seconds** | **int** |  | [optional] 
 **hostname** | **str** |  | [optional] 
 **root** | **str** |  | [optional] 
 

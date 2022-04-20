@@ -6,7 +6,6 @@ Name | Type | Description | Notes
 **mq_type** | **str** |  | [optional] 
 **queue_name** | **str** |  | [optional] 
 **queue_url** | **str** |  | [optional] 
-**use_new_queue** | **bool** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

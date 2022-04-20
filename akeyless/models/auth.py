@@ -39,12 +39,14 @@ class Auth(object):
         'access_type': 'str',
         'admin_email': 'str',
         'admin_password': 'str',
+        'cert_data': 'str',
         'cloud_id': 'str',
         'debug': 'bool',
         'gcp_audience': 'str',
         'jwt': 'str',
         'k8s_auth_config_name': 'str',
         'k8s_service_account_token': 'str',
+        'key_data': 'str',
         'ldap_password': 'str',
         'ldap_username': 'str',
         'uid_token': 'str'
@@ -56,18 +58,20 @@ class Auth(object):
         'access_type': 'access-type',
         'admin_email': 'admin-email',
         'admin_password': 'admin-password',
+        'cert_data': 'cert-data',
         'cloud_id': 'cloud-id',
         'debug': 'debug',
         'gcp_audience': 'gcp-audience',
         'jwt': 'jwt',
         'k8s_auth_config_name': 'k8s-auth-config-name',
         'k8s_service_account_token': 'k8s-service-account-token',
+        'key_data': 'key-data',
         'ldap_password': 'ldap_password',
         'ldap_username': 'ldap_username',
         'uid_token': 'uid_token'
     }
 
-    def __init__(self, access_id=None, access_key=None, access_type='access_key', admin_email=None, admin_password=None, cloud_id=None, debug=None, gcp_audience=None, jwt=None, k8s_auth_config_name=None, k8s_service_account_token=None, ldap_password=None, ldap_username=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, access_id=None, access_key=None, access_type='access_key', admin_email=None, admin_password=None, cert_data=None, cloud_id=None, debug=None, gcp_audience=None, jwt=None, k8s_auth_config_name=None, k8s_service_account_token=None, key_data=None, ldap_password=None, ldap_username=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """Auth - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -78,12 +82,14 @@ class Auth(object):
         self._access_type = None
         self._admin_email = None
         self._admin_password = None
+        self._cert_data = None
         self._cloud_id = None
         self._debug = None
         self._gcp_audience = None
         self._jwt = None
         self._k8s_auth_config_name = None
         self._k8s_service_account_token = None
+        self._key_data = None
         self._ldap_password = None
         self._ldap_username = None
         self._uid_token = None
@@ -99,6 +105,8 @@ class Auth(object):
             self.admin_email = admin_email
         if admin_password is not None:
             self.admin_password = admin_password
+        if cert_data is not None:
+            self.cert_data = cert_data
         if cloud_id is not None:
             self.cloud_id = cloud_id
         if debug is not None:
@@ -111,6 +119,8 @@ class Auth(object):
             self.k8s_auth_config_name = k8s_auth_config_name
         if k8s_service_account_token is not None:
             self.k8s_service_account_token = k8s_service_account_token
+        if key_data is not None:
+            self.key_data = key_data
         if ldap_password is not None:
             self.ldap_password = ldap_password
         if ldap_username is not None:
@@ -168,7 +178,7 @@ class Auth(object):
     def access_type(self):
         """Gets the access_type of this Auth.  # noqa: E501
 
-        Access Type (access_key/password/saml/ldap/k8s/azure_ad/oidc/aws_iam/universal_identity/jwt/gcp/k8s)  # noqa: E501
+        Access Type (access_key/password/saml/ldap/k8s/azure_ad/oidc/aws_iam/universal_identity/jwt/gcp/cert)  # noqa: E501
 
         :return: The access_type of this Auth.  # noqa: E501
         :rtype: str
@@ -179,7 +189,7 @@ class Auth(object):
     def access_type(self, access_type):
         """Sets the access_type of this Auth.
 
-        Access Type (access_key/password/saml/ldap/k8s/azure_ad/oidc/aws_iam/universal_identity/jwt/gcp/k8s)  # noqa: E501
+        Access Type (access_key/password/saml/ldap/k8s/azure_ad/oidc/aws_iam/universal_identity/jwt/gcp/cert)  # noqa: E501
 
         :param access_type: The access_type of this Auth.  # noqa: E501
         :type: str
@@ -232,6 +242,29 @@ class Auth(object):
         """
 
         self._admin_password = admin_password
+
+    @property
+    def cert_data(self):
+        """Gets the cert_data of this Auth.  # noqa: E501
+
+        Certificate data encoded in base64. Used if file was not provided. (relevant only for access-type=cert)  # noqa: E501
+
+        :return: The cert_data of this Auth.  # noqa: E501
+        :rtype: str
+        """
+        return self._cert_data
+
+    @cert_data.setter
+    def cert_data(self, cert_data):
+        """Sets the cert_data of this Auth.
+
+        Certificate data encoded in base64. Used if file was not provided. (relevant only for access-type=cert)  # noqa: E501
+
+        :param cert_data: The cert_data of this Auth.  # noqa: E501
+        :type: str
+        """
+
+        self._cert_data = cert_data
 
     @property
     def cloud_id(self):
@@ -368,6 +401,29 @@ class Auth(object):
         """
 
         self._k8s_service_account_token = k8s_service_account_token
+
+    @property
+    def key_data(self):
+        """Gets the key_data of this Auth.  # noqa: E501
+
+        Private key data encoded in base64. Used if file was not provided.(relevant only for access-type=cert)  # noqa: E501
+
+        :return: The key_data of this Auth.  # noqa: E501
+        :rtype: str
+        """
+        return self._key_data
+
+    @key_data.setter
+    def key_data(self, key_data):
+        """Sets the key_data of this Auth.
+
+        Private key data encoded in base64. Used if file was not provided.(relevant only for access-type=cert)  # noqa: E501
+
+        :param key_data: The key_data of this Auth.  # noqa: E501
+        :type: str
+        """
+
+        self._key_data = key_data
 
     @property
     def ldap_password(self):

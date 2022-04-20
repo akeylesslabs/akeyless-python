@@ -37,29 +37,33 @@ class CreateClassicKey(object):
         'alg': 'str',
         'cert_file_data': 'str',
         'key_data': 'str',
+        'key_operations': 'list[str]',
         'metadata': 'str',
         'name': 'str',
         'protection_key_name': 'str',
         'tags': 'list[str]',
         'target_name': 'str',
         'token': 'str',
-        'uid_token': 'str'
+        'uid_token': 'str',
+        'vault_name': 'str'
     }
 
     attribute_map = {
         'alg': 'alg',
         'cert_file_data': 'cert-file-data',
         'key_data': 'key-data',
+        'key_operations': 'key-operations',
         'metadata': 'metadata',
         'name': 'name',
         'protection_key_name': 'protection-key-name',
         'tags': 'tags',
         'target_name': 'target-name',
         'token': 'token',
-        'uid_token': 'uid-token'
+        'uid_token': 'uid-token',
+        'vault_name': 'vault-name'
     }
 
-    def __init__(self, alg=None, cert_file_data=None, key_data=None, metadata=None, name=None, protection_key_name=None, tags=None, target_name=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, alg=None, cert_file_data=None, key_data=None, key_operations=None, metadata=None, name=None, protection_key_name=None, tags=None, target_name=None, token=None, uid_token=None, vault_name=None, local_vars_configuration=None):  # noqa: E501
         """CreateClassicKey - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -68,6 +72,7 @@ class CreateClassicKey(object):
         self._alg = None
         self._cert_file_data = None
         self._key_data = None
+        self._key_operations = None
         self._metadata = None
         self._name = None
         self._protection_key_name = None
@@ -75,6 +80,7 @@ class CreateClassicKey(object):
         self._target_name = None
         self._token = None
         self._uid_token = None
+        self._vault_name = None
         self.discriminator = None
 
         self.alg = alg
@@ -82,6 +88,8 @@ class CreateClassicKey(object):
             self.cert_file_data = cert_file_data
         if key_data is not None:
             self.key_data = key_data
+        if key_operations is not None:
+            self.key_operations = key_operations
         if metadata is not None:
             self.metadata = metadata
         self.name = name
@@ -95,6 +103,8 @@ class CreateClassicKey(object):
             self.token = token
         if uid_token is not None:
             self.uid_token = uid_token
+        if vault_name is not None:
+            self.vault_name = vault_name
 
     @property
     def alg(self):
@@ -166,6 +176,29 @@ class CreateClassicKey(object):
         """
 
         self._key_data = key_data
+
+    @property
+    def key_operations(self):
+        """Gets the key_operations of this CreateClassicKey.  # noqa: E501
+
+        A list of allowed operations for the key (required for azure targets)  # noqa: E501
+
+        :return: The key_operations of this CreateClassicKey.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._key_operations
+
+    @key_operations.setter
+    def key_operations(self, key_operations):
+        """Sets the key_operations of this CreateClassicKey.
+
+        A list of allowed operations for the key (required for azure targets)  # noqa: E501
+
+        :param key_operations: The key_operations of this CreateClassicKey.  # noqa: E501
+        :type: list[str]
+        """
+
+        self._key_operations = key_operations
 
     @property
     def metadata(self):
@@ -329,6 +362,29 @@ class CreateClassicKey(object):
         """
 
         self._uid_token = uid_token
+
+    @property
+    def vault_name(self):
+        """Gets the vault_name of this CreateClassicKey.  # noqa: E501
+
+        Name of the vault used (required for azure targets)  # noqa: E501
+
+        :return: The vault_name of this CreateClassicKey.  # noqa: E501
+        :rtype: str
+        """
+        return self._vault_name
+
+    @vault_name.setter
+    def vault_name(self, vault_name):
+        """Sets the vault_name of this CreateClassicKey.
+
+        Name of the vault used (required for azure targets)  # noqa: E501
+
+        :param vault_name: The vault_name of this CreateClassicKey.  # noqa: E501
+        :type: str
+        """
+
+        self._vault_name = vault_name
 
     def to_dict(self):
         """Returns the model properties as a dict"""

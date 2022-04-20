@@ -13,6 +13,7 @@ Method | HTTP request | Description
 [**create_auth_method**](V2Api.md#create_auth_method) | **POST** /create-auth-method | 
 [**create_auth_method_awsiam**](V2Api.md#create_auth_method_awsiam) | **POST** /create-auth-method-aws-iam | 
 [**create_auth_method_azure_ad**](V2Api.md#create_auth_method_azure_ad) | **POST** /create-auth-method-azure-ad | 
+[**create_auth_method_cert**](V2Api.md#create_auth_method_cert) | **POST** /create-auth-method-cert | 
 [**create_auth_method_gcp**](V2Api.md#create_auth_method_gcp) | **POST** /create-auth-method-gcp | 
 [**create_auth_method_huawei**](V2Api.md#create_auth_method_huawei) | **POST** /create-auth-method-huawei | 
 [**create_auth_method_k8_s**](V2Api.md#create_auth_method_k8_s) | **POST** /create-auth-method-k8s | 
@@ -143,9 +144,11 @@ Method | HTTP request | Description
 [**kmip_client_set_rule**](V2Api.md#kmip_client_set_rule) | **POST** /kmip-client-set-rule | 
 [**kmip_create_client**](V2Api.md#kmip_create_client) | **POST** /kmip-create-client | 
 [**kmip_delete_client**](V2Api.md#kmip_delete_client) | **POST** /kmip-delete-client | 
+[**kmip_delete_server**](V2Api.md#kmip_delete_server) | **DELETE** /kmip-delete-environment | 
 [**kmip_describe_client**](V2Api.md#kmip_describe_client) | **POST** /kmip-get-client | 
 [**kmip_describe_server**](V2Api.md#kmip_describe_server) | **POST** /kmip-get-environment | 
 [**kmip_list_clients**](V2Api.md#kmip_list_clients) | **POST** /kmip-list-clients | 
+[**kmip_move_server**](V2Api.md#kmip_move_server) | **POST** /kmip-move-environment | 
 [**kmip_renew_client_certificate**](V2Api.md#kmip_renew_client_certificate) | **POST** /kmip-renew-client | 
 [**kmip_renew_server_certificate**](V2Api.md#kmip_renew_server_certificate) | **POST** /kmip-renew-environment | 
 [**kmip_server_setup**](V2Api.md#kmip_server_setup) | **POST** /kmip-create-environment | 
@@ -178,6 +181,7 @@ Method | HTTP request | Description
 [**update_auth_method**](V2Api.md#update_auth_method) | **POST** /update-auth-method | 
 [**update_auth_method_awsiam**](V2Api.md#update_auth_method_awsiam) | **POST** /update-auth-method-aws-iam | 
 [**update_auth_method_azure_ad**](V2Api.md#update_auth_method_azure_ad) | **POST** /update-auth-method-azure-ad | 
+[**update_auth_method_cert**](V2Api.md#update_auth_method_cert) | **POST** /update-auth-method-cert | 
 [**update_auth_method_gcp**](V2Api.md#update_auth_method_gcp) | **POST** /update-auth-method-gcp | 
 [**update_auth_method_k8_s**](V2Api.md#update_auth_method_k8_s) | **POST** /update-auth-method-k8s | 
 [**update_auth_method_ldap**](V2Api.md#update_auth_method_ldap) | **POST** /update-auth-method-ldap | 
@@ -756,6 +760,66 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | createAuthMethodAzureADResponse wraps response body. |  -  |
+**0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **create_auth_method_cert**
+> CreateAuthMethodCertOutput create_auth_method_cert(body)
+
+
+
+### Example
+
+```python
+from __future__ import print_function
+import time
+import akeyless
+from akeyless.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.akeyless.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = akeyless.Configuration(
+    host = "https://api.akeyless.io"
+)
+
+
+# Enter a context with an instance of the API client
+with akeyless.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = akeyless.V2Api(api_client)
+    body = akeyless.CreateAuthMethodCert() # CreateAuthMethodCert | 
+
+    try:
+        api_response = api_instance.create_auth_method_cert(body)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling V2Api->create_auth_method_cert: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**CreateAuthMethodCert**](CreateAuthMethodCert.md)|  | 
+
+### Return type
+
+[**CreateAuthMethodCertOutput**](CreateAuthMethodCertOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | createAuthMethodCertResponse wraps response body. |  -  |
 **0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -8554,6 +8618,66 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **kmip_delete_server**
+> object kmip_delete_server(body=body)
+
+
+
+### Example
+
+```python
+from __future__ import print_function
+import time
+import akeyless
+from akeyless.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.akeyless.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = akeyless.Configuration(
+    host = "https://api.akeyless.io"
+)
+
+
+# Enter a context with an instance of the API client
+with akeyless.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = akeyless.V2Api(api_client)
+    body = akeyless.KmipDeleteServer() # KmipDeleteServer |  (optional)
+
+    try:
+        api_response = api_instance.kmip_delete_server(body=body)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling V2Api->kmip_delete_server: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**KmipDeleteServer**](KmipDeleteServer.md)|  | [optional] 
+
+### Return type
+
+**object**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | kmipDeleteServerResponse wraps response body. |  -  |
+**0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **kmip_describe_client**
 > KMIPClientGetResponse kmip_describe_client(body=body)
 
@@ -8730,6 +8854,66 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | kmipListClientsResponse wraps response body. |  -  |
+**0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **kmip_move_server**
+> KmipMoveServerOutput kmip_move_server(body=body)
+
+
+
+### Example
+
+```python
+from __future__ import print_function
+import time
+import akeyless
+from akeyless.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.akeyless.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = akeyless.Configuration(
+    host = "https://api.akeyless.io"
+)
+
+
+# Enter a context with an instance of the API client
+with akeyless.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = akeyless.V2Api(api_client)
+    body = akeyless.KmipMoveServer() # KmipMoveServer |  (optional)
+
+    try:
+        api_response = api_instance.kmip_move_server(body=body)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling V2Api->kmip_move_server: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**KmipMoveServer**](KmipMoveServer.md)|  | [optional] 
+
+### Return type
+
+[**KmipMoveServerOutput**](KmipMoveServerOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | kmipMoveServerResponse wraps response body. |  -  |
 **0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -10646,6 +10830,66 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | updateAuthMethodAzureADResponse wraps response body. |  -  |
+**0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **update_auth_method_cert**
+> UpdateAuthMethodCertOutput update_auth_method_cert(body)
+
+
+
+### Example
+
+```python
+from __future__ import print_function
+import time
+import akeyless
+from akeyless.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.akeyless.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = akeyless.Configuration(
+    host = "https://api.akeyless.io"
+)
+
+
+# Enter a context with an instance of the API client
+with akeyless.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = akeyless.V2Api(api_client)
+    body = akeyless.UpdateAuthMethodCert() # UpdateAuthMethodCert | 
+
+    try:
+        api_response = api_instance.update_auth_method_cert(body)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling V2Api->update_auth_method_cert: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**UpdateAuthMethodCert**](UpdateAuthMethodCert.md)|  | 
+
+### Return type
+
+[**UpdateAuthMethodCertOutput**](UpdateAuthMethodCertOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | updateAuthMethodCertResponse wraps response body. |  -  |
 **0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

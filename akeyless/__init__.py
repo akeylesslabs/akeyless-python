@@ -15,7 +15,7 @@
 
 from __future__ import absolute_import
 
-__version__ = "2.15.32"
+__version__ = "2.16.0"
 
 # import apis into sdk package
 from akeyless.api.v2_api import V2Api
@@ -51,6 +51,7 @@ from akeyless.models.azure_log_analytics_forwarding_config import AzureLogAnalyt
 from akeyless.models.azure_payload import AzurePayload
 from akeyless.models.cf_config_part import CFConfigPart
 from akeyless.models.cache_config_part import CacheConfigPart
+from akeyless.models.cert_access_rules import CertAccessRules
 from akeyless.models.certificate_issue_info import CertificateIssueInfo
 from akeyless.models.classic_key_details_info import ClassicKeyDetailsInfo
 from akeyless.models.classic_key_status_info import ClassicKeyStatusInfo
@@ -70,6 +71,8 @@ from akeyless.models.create_auth_method_awsiam import CreateAuthMethodAWSIAM
 from akeyless.models.create_auth_method_awsiam_output import CreateAuthMethodAWSIAMOutput
 from akeyless.models.create_auth_method_azure_ad import CreateAuthMethodAzureAD
 from akeyless.models.create_auth_method_azure_ad_output import CreateAuthMethodAzureADOutput
+from akeyless.models.create_auth_method_cert import CreateAuthMethodCert
+from akeyless.models.create_auth_method_cert_output import CreateAuthMethodCertOutput
 from akeyless.models.create_auth_method_gcp import CreateAuthMethodGCP
 from akeyless.models.create_auth_method_gcp_output import CreateAuthMethodGCPOutput
 from akeyless.models.create_auth_method_huawei import CreateAuthMethodHuawei
@@ -351,10 +354,13 @@ from akeyless.models.kmip_client_set_rule import KmipClientSetRule
 from akeyless.models.kmip_create_client import KmipCreateClient
 from akeyless.models.kmip_create_client_output import KmipCreateClientOutput
 from akeyless.models.kmip_delete_client import KmipDeleteClient
+from akeyless.models.kmip_delete_server import KmipDeleteServer
 from akeyless.models.kmip_describe_client import KmipDescribeClient
 from akeyless.models.kmip_describe_server import KmipDescribeServer
 from akeyless.models.kmip_describe_server_output import KmipDescribeServerOutput
 from akeyless.models.kmip_list_clients import KmipListClients
+from akeyless.models.kmip_move_server import KmipMoveServer
+from akeyless.models.kmip_move_server_output import KmipMoveServerOutput
 from akeyless.models.kmip_renew_client_certificate import KmipRenewClientCertificate
 from akeyless.models.kmip_renew_client_certificate_output import KmipRenewClientCertificateOutput
 from akeyless.models.kmip_renew_server_certificate import KmipRenewServerCertificate
@@ -461,6 +467,8 @@ from akeyless.models.update_assoc import UpdateAssoc
 from akeyless.models.update_auth_method import UpdateAuthMethod
 from akeyless.models.update_auth_method_awsiam import UpdateAuthMethodAWSIAM
 from akeyless.models.update_auth_method_azure_ad import UpdateAuthMethodAzureAD
+from akeyless.models.update_auth_method_cert import UpdateAuthMethodCert
+from akeyless.models.update_auth_method_cert_output import UpdateAuthMethodCertOutput
 from akeyless.models.update_auth_method_gcp import UpdateAuthMethodGCP
 from akeyless.models.update_auth_method_k8_s import UpdateAuthMethodK8S
 from akeyless.models.update_auth_method_k8_s_output import UpdateAuthMethodK8SOutput

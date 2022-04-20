@@ -36,18 +36,16 @@ class GatewayMessageQueueInfo(object):
     openapi_types = {
         'mq_type': 'str',
         'queue_name': 'str',
-        'queue_url': 'str',
-        'use_new_queue': 'bool'
+        'queue_url': 'str'
     }
 
     attribute_map = {
         'mq_type': 'mq_type',
         'queue_name': 'queue_name',
-        'queue_url': 'queue_url',
-        'use_new_queue': 'use_new_queue'
+        'queue_url': 'queue_url'
     }
 
-    def __init__(self, mq_type=None, queue_name=None, queue_url=None, use_new_queue=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, mq_type=None, queue_name=None, queue_url=None, local_vars_configuration=None):  # noqa: E501
         """GatewayMessageQueueInfo - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -56,7 +54,6 @@ class GatewayMessageQueueInfo(object):
         self._mq_type = None
         self._queue_name = None
         self._queue_url = None
-        self._use_new_queue = None
         self.discriminator = None
 
         if mq_type is not None:
@@ -65,8 +62,6 @@ class GatewayMessageQueueInfo(object):
             self.queue_name = queue_name
         if queue_url is not None:
             self.queue_url = queue_url
-        if use_new_queue is not None:
-            self.use_new_queue = use_new_queue
 
     @property
     def mq_type(self):
@@ -130,27 +125,6 @@ class GatewayMessageQueueInfo(object):
         """
 
         self._queue_url = queue_url
-
-    @property
-    def use_new_queue(self):
-        """Gets the use_new_queue of this GatewayMessageQueueInfo.  # noqa: E501
-
-
-        :return: The use_new_queue of this GatewayMessageQueueInfo.  # noqa: E501
-        :rtype: bool
-        """
-        return self._use_new_queue
-
-    @use_new_queue.setter
-    def use_new_queue(self, use_new_queue):
-        """Sets the use_new_queue of this GatewayMessageQueueInfo.
-
-
-        :param use_new_queue: The use_new_queue of this GatewayMessageQueueInfo.  # noqa: E501
-        :type: bool
-        """
-
-        self._use_new_queue = use_new_queue
 
     def to_dict(self):
         """Returns the model properties as a dict"""

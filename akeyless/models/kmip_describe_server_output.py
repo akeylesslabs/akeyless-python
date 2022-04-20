@@ -36,6 +36,8 @@ class KmipDescribeServerOutput(object):
     openapi_types = {
         'active': 'bool',
         'ca_cert': 'list[int]',
+        'certificate_issue_date': 'datetime',
+        'certificate_ttl_in_seconds': 'int',
         'hostname': 'str',
         'root': 'str'
     }
@@ -43,11 +45,13 @@ class KmipDescribeServerOutput(object):
     attribute_map = {
         'active': 'active',
         'ca_cert': 'ca_cert',
+        'certificate_issue_date': 'certificate_issue_date',
+        'certificate_ttl_in_seconds': 'certificate_ttl_in_seconds',
         'hostname': 'hostname',
         'root': 'root'
     }
 
-    def __init__(self, active=None, ca_cert=None, hostname=None, root=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, active=None, ca_cert=None, certificate_issue_date=None, certificate_ttl_in_seconds=None, hostname=None, root=None, local_vars_configuration=None):  # noqa: E501
         """KmipDescribeServerOutput - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -55,6 +59,8 @@ class KmipDescribeServerOutput(object):
 
         self._active = None
         self._ca_cert = None
+        self._certificate_issue_date = None
+        self._certificate_ttl_in_seconds = None
         self._hostname = None
         self._root = None
         self.discriminator = None
@@ -63,6 +69,10 @@ class KmipDescribeServerOutput(object):
             self.active = active
         if ca_cert is not None:
             self.ca_cert = ca_cert
+        if certificate_issue_date is not None:
+            self.certificate_issue_date = certificate_issue_date
+        if certificate_ttl_in_seconds is not None:
+            self.certificate_ttl_in_seconds = certificate_ttl_in_seconds
         if hostname is not None:
             self.hostname = hostname
         if root is not None:
@@ -109,6 +119,48 @@ class KmipDescribeServerOutput(object):
         """
 
         self._ca_cert = ca_cert
+
+    @property
+    def certificate_issue_date(self):
+        """Gets the certificate_issue_date of this KmipDescribeServerOutput.  # noqa: E501
+
+
+        :return: The certificate_issue_date of this KmipDescribeServerOutput.  # noqa: E501
+        :rtype: datetime
+        """
+        return self._certificate_issue_date
+
+    @certificate_issue_date.setter
+    def certificate_issue_date(self, certificate_issue_date):
+        """Sets the certificate_issue_date of this KmipDescribeServerOutput.
+
+
+        :param certificate_issue_date: The certificate_issue_date of this KmipDescribeServerOutput.  # noqa: E501
+        :type: datetime
+        """
+
+        self._certificate_issue_date = certificate_issue_date
+
+    @property
+    def certificate_ttl_in_seconds(self):
+        """Gets the certificate_ttl_in_seconds of this KmipDescribeServerOutput.  # noqa: E501
+
+
+        :return: The certificate_ttl_in_seconds of this KmipDescribeServerOutput.  # noqa: E501
+        :rtype: int
+        """
+        return self._certificate_ttl_in_seconds
+
+    @certificate_ttl_in_seconds.setter
+    def certificate_ttl_in_seconds(self, certificate_ttl_in_seconds):
+        """Sets the certificate_ttl_in_seconds of this KmipDescribeServerOutput.
+
+
+        :param certificate_ttl_in_seconds: The certificate_ttl_in_seconds of this KmipDescribeServerOutput.  # noqa: E501
+        :type: int
+        """
+
+        self._certificate_ttl_in_seconds = certificate_ttl_in_seconds
 
     @property
     def hostname(self):

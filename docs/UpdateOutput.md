@@ -3,6 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**changelog** | **str** |  | [optional] 
 **latest** | **str** |  | [optional] 
 **updated** | **bool** |  | [optional] 
 

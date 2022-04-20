@@ -3,7 +3,9 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**admin_rotation_interval_days** | **int** | Define rotation interval in days | [optional] 
 **create_sync_url** | **str** | URL of an endpoint that implements /sync/create method, for example https://webhook.example.com/sync/create | 
+**enable_admin_rotation** | **bool** | Should admin credentials be rotated | [optional] [default to False]
 **name** | **str** | Producer name | 
 **payload** | **str** | Secret payload to be sent with each create/revoke webhook request | [optional] 
 **producer_encryption_key_name** | **str** | Dynamic producer encryption key | [optional] 
