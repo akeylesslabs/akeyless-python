@@ -63,7 +63,7 @@ class UpdateAuthMethodSAML(object):
         'unique_identifier': 'unique-identifier'
     }
 
-    def __init__(self, access_expires=0, allowed_redirect_uri=None, bound_ips=None, force_sub_claims=None, idp_metadata_url=None, idp_metadata_xml_data=None, jwt_ttl=0, name=None, new_name=None, token=None, uid_token=None, unique_identifier=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, access_expires=0, allowed_redirect_uri=None, bound_ips=None, force_sub_claims=None, idp_metadata_url=None, idp_metadata_xml_data=None, jwt_ttl=None, name=None, new_name=None, token=None, uid_token=None, unique_identifier=None, local_vars_configuration=None):  # noqa: E501
         """UpdateAuthMethodSAML - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()

@@ -44,12 +44,16 @@ class TargetTypeDetailsInput(object):
         'azure_client_id': 'str',
         'azure_client_secret': 'str',
         'azure_tenant_id': 'str',
+        'ca_cert_data': 'list[int]',
+        'ca_cert_name': 'str',
         'chef_server_host_name': 'str',
         'chef_server_key': 'str',
         'chef_server_port': 'str',
         'chef_server_url': 'str',
         'chef_server_username': 'str',
         'chef_skip_ssl': 'bool',
+        'client_id': 'str',
+        'client_secret': 'str',
         'db_host_name': 'str',
         'db_name': 'str',
         'db_port': 'str',
@@ -102,9 +106,11 @@ class TargetTypeDetailsInput(object):
         'rabbitmq_server_password': 'str',
         'rabbitmq_server_uri': 'str',
         'rabbitmq_server_user': 'str',
+        'security_token': 'str',
         'sf_account': 'str',
         'ssl_connection_certificate': 'str',
         'ssl_connection_mode': 'bool',
+        'tenant_url': 'str',
         'url': 'str',
         'use_gw_cloud_identity': 'bool',
         'user_name': 'str',
@@ -128,12 +134,16 @@ class TargetTypeDetailsInput(object):
         'azure_client_id': 'azure_client_id',
         'azure_client_secret': 'azure_client_secret',
         'azure_tenant_id': 'azure_tenant_id',
+        'ca_cert_data': 'ca_cert_data',
+        'ca_cert_name': 'ca_cert_name',
         'chef_server_host_name': 'chef_server_host_name',
         'chef_server_key': 'chef_server_key',
         'chef_server_port': 'chef_server_port',
         'chef_server_url': 'chef_server_url',
         'chef_server_username': 'chef_server_username',
         'chef_skip_ssl': 'chef_skip_ssl',
+        'client_id': 'client_id',
+        'client_secret': 'client_secret',
         'db_host_name': 'db_host_name',
         'db_name': 'db_name',
         'db_port': 'db_port',
@@ -186,9 +196,11 @@ class TargetTypeDetailsInput(object):
         'rabbitmq_server_password': 'rabbitmq_server_password',
         'rabbitmq_server_uri': 'rabbitmq_server_uri',
         'rabbitmq_server_user': 'rabbitmq_server_user',
+        'security_token': 'security_token',
         'sf_account': 'sf_account',
         'ssl_connection_certificate': 'ssl_connection_certificate',
         'ssl_connection_mode': 'ssl_connection_mode',
+        'tenant_url': 'tenant_url',
         'url': 'url',
         'use_gw_cloud_identity': 'use_gw_cloud_identity',
         'user_name': 'user_name',
@@ -201,7 +213,7 @@ class TargetTypeDetailsInput(object):
         'venafi_zone': 'venafi_zone'
     }
 
-    def __init__(self, artifactory_admin_apikey=None, artifactory_admin_username=None, artifactory_base_url=None, aws_access_key_id=None, aws_region=None, aws_secret_access_key=None, aws_session_token=None, azure_client_id=None, azure_client_secret=None, azure_tenant_id=None, chef_server_host_name=None, chef_server_key=None, chef_server_port=None, chef_server_url=None, chef_server_username=None, chef_skip_ssl=None, db_host_name=None, db_name=None, db_port=None, db_pwd=None, db_server_certificates=None, db_server_name=None, db_user_name=None, eks_access_key_id=None, eks_cluster_ca_certificate=None, eks_cluster_endpoint=None, eks_cluster_name=None, eks_region=None, eks_secret_access_key=None, gcp_service_account_email=None, gcp_service_account_key=None, github_app_id=None, github_app_private_key=None, github_base_url=None, gke_cluster_ca_certificate=None, gke_cluster_endpoint=None, gke_cluster_name=None, gke_service_account_key=None, gke_service_account_name=None, host=None, k8s_bearer_token=None, k8s_cluster_ca_certificate=None, k8s_cluster_endpoint=None, ldap_audience=None, ldap_bind_dn=None, ldap_bind_password=None, ldap_certificate=None, ldap_token_expiration=None, ldap_url=None, mongodb_atlas_api_private_key=None, mongodb_atlas_api_public_key=None, mongodb_atlas_project_id=None, mongodb_db_name=None, mongodb_default_auth_db=None, mongodb_host_port=None, mongodb_is_atlas=None, mongodb_password=None, mongodb_uri_connection=None, mongodb_uri_options=None, mongodb_username=None, password=None, payload=None, port=None, private_key=None, private_key_password=None, rabbitmq_server_password=None, rabbitmq_server_uri=None, rabbitmq_server_user=None, sf_account=None, ssl_connection_certificate=None, ssl_connection_mode=None, url=None, use_gw_cloud_identity=None, user_name=None, username=None, venafi_api_key=None, venafi_base_url=None, venafi_tpp_password=None, venafi_tpp_username=None, venafi_use_tpp=None, venafi_zone=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, artifactory_admin_apikey=None, artifactory_admin_username=None, artifactory_base_url=None, aws_access_key_id=None, aws_region=None, aws_secret_access_key=None, aws_session_token=None, azure_client_id=None, azure_client_secret=None, azure_tenant_id=None, ca_cert_data=None, ca_cert_name=None, chef_server_host_name=None, chef_server_key=None, chef_server_port=None, chef_server_url=None, chef_server_username=None, chef_skip_ssl=None, client_id=None, client_secret=None, db_host_name=None, db_name=None, db_port=None, db_pwd=None, db_server_certificates=None, db_server_name=None, db_user_name=None, eks_access_key_id=None, eks_cluster_ca_certificate=None, eks_cluster_endpoint=None, eks_cluster_name=None, eks_region=None, eks_secret_access_key=None, gcp_service_account_email=None, gcp_service_account_key=None, github_app_id=None, github_app_private_key=None, github_base_url=None, gke_cluster_ca_certificate=None, gke_cluster_endpoint=None, gke_cluster_name=None, gke_service_account_key=None, gke_service_account_name=None, host=None, k8s_bearer_token=None, k8s_cluster_ca_certificate=None, k8s_cluster_endpoint=None, ldap_audience=None, ldap_bind_dn=None, ldap_bind_password=None, ldap_certificate=None, ldap_token_expiration=None, ldap_url=None, mongodb_atlas_api_private_key=None, mongodb_atlas_api_public_key=None, mongodb_atlas_project_id=None, mongodb_db_name=None, mongodb_default_auth_db=None, mongodb_host_port=None, mongodb_is_atlas=None, mongodb_password=None, mongodb_uri_connection=None, mongodb_uri_options=None, mongodb_username=None, password=None, payload=None, port=None, private_key=None, private_key_password=None, rabbitmq_server_password=None, rabbitmq_server_uri=None, rabbitmq_server_user=None, security_token=None, sf_account=None, ssl_connection_certificate=None, ssl_connection_mode=None, tenant_url=None, url=None, use_gw_cloud_identity=None, user_name=None, username=None, venafi_api_key=None, venafi_base_url=None, venafi_tpp_password=None, venafi_tpp_username=None, venafi_use_tpp=None, venafi_zone=None, local_vars_configuration=None):  # noqa: E501
         """TargetTypeDetailsInput - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -217,12 +229,16 @@ class TargetTypeDetailsInput(object):
         self._azure_client_id = None
         self._azure_client_secret = None
         self._azure_tenant_id = None
+        self._ca_cert_data = None
+        self._ca_cert_name = None
         self._chef_server_host_name = None
         self._chef_server_key = None
         self._chef_server_port = None
         self._chef_server_url = None
         self._chef_server_username = None
         self._chef_skip_ssl = None
+        self._client_id = None
+        self._client_secret = None
         self._db_host_name = None
         self._db_name = None
         self._db_port = None
@@ -275,9 +291,11 @@ class TargetTypeDetailsInput(object):
         self._rabbitmq_server_password = None
         self._rabbitmq_server_uri = None
         self._rabbitmq_server_user = None
+        self._security_token = None
         self._sf_account = None
         self._ssl_connection_certificate = None
         self._ssl_connection_mode = None
+        self._tenant_url = None
         self._url = None
         self._use_gw_cloud_identity = None
         self._user_name = None
@@ -310,6 +328,10 @@ class TargetTypeDetailsInput(object):
             self.azure_client_secret = azure_client_secret
         if azure_tenant_id is not None:
             self.azure_tenant_id = azure_tenant_id
+        if ca_cert_data is not None:
+            self.ca_cert_data = ca_cert_data
+        if ca_cert_name is not None:
+            self.ca_cert_name = ca_cert_name
         if chef_server_host_name is not None:
             self.chef_server_host_name = chef_server_host_name
         if chef_server_key is not None:
@@ -322,6 +344,10 @@ class TargetTypeDetailsInput(object):
             self.chef_server_username = chef_server_username
         if chef_skip_ssl is not None:
             self.chef_skip_ssl = chef_skip_ssl
+        if client_id is not None:
+            self.client_id = client_id
+        if client_secret is not None:
+            self.client_secret = client_secret
         if db_host_name is not None:
             self.db_host_name = db_host_name
         if db_name is not None:
@@ -426,12 +452,16 @@ class TargetTypeDetailsInput(object):
             self.rabbitmq_server_uri = rabbitmq_server_uri
         if rabbitmq_server_user is not None:
             self.rabbitmq_server_user = rabbitmq_server_user
+        if security_token is not None:
+            self.security_token = security_token
         if sf_account is not None:
             self.sf_account = sf_account
         if ssl_connection_certificate is not None:
             self.ssl_connection_certificate = ssl_connection_certificate
         if ssl_connection_mode is not None:
             self.ssl_connection_mode = ssl_connection_mode
+        if tenant_url is not None:
+            self.tenant_url = tenant_url
         if url is not None:
             self.url = url
         if use_gw_cloud_identity is not None:
@@ -664,6 +694,52 @@ class TargetTypeDetailsInput(object):
         self._azure_tenant_id = azure_tenant_id
 
     @property
+    def ca_cert_data(self):
+        """Gets the ca_cert_data of this TargetTypeDetailsInput.  # noqa: E501
+
+        CACertData is the rsa 4096 certificate data in PEM format  # noqa: E501
+
+        :return: The ca_cert_data of this TargetTypeDetailsInput.  # noqa: E501
+        :rtype: list[int]
+        """
+        return self._ca_cert_data
+
+    @ca_cert_data.setter
+    def ca_cert_data(self, ca_cert_data):
+        """Sets the ca_cert_data of this TargetTypeDetailsInput.
+
+        CACertData is the rsa 4096 certificate data in PEM format  # noqa: E501
+
+        :param ca_cert_data: The ca_cert_data of this TargetTypeDetailsInput.  # noqa: E501
+        :type: list[int]
+        """
+
+        self._ca_cert_data = ca_cert_data
+
+    @property
+    def ca_cert_name(self):
+        """Gets the ca_cert_name of this TargetTypeDetailsInput.  # noqa: E501
+
+        CACertName is the name of the certificate in SalesForce tenant  # noqa: E501
+
+        :return: The ca_cert_name of this TargetTypeDetailsInput.  # noqa: E501
+        :rtype: str
+        """
+        return self._ca_cert_name
+
+    @ca_cert_name.setter
+    def ca_cert_name(self, ca_cert_name):
+        """Sets the ca_cert_name of this TargetTypeDetailsInput.
+
+        CACertName is the name of the certificate in SalesForce tenant  # noqa: E501
+
+        :param ca_cert_name: The ca_cert_name of this TargetTypeDetailsInput.  # noqa: E501
+        :type: str
+        """
+
+        self._ca_cert_name = ca_cert_name
+
+    @property
     def chef_server_host_name(self):
         """Gets the chef_server_host_name of this TargetTypeDetailsInput.  # noqa: E501
 
@@ -788,6 +864,48 @@ class TargetTypeDetailsInput(object):
         """
 
         self._chef_skip_ssl = chef_skip_ssl
+
+    @property
+    def client_id(self):
+        """Gets the client_id of this TargetTypeDetailsInput.  # noqa: E501
+
+
+        :return: The client_id of this TargetTypeDetailsInput.  # noqa: E501
+        :rtype: str
+        """
+        return self._client_id
+
+    @client_id.setter
+    def client_id(self, client_id):
+        """Sets the client_id of this TargetTypeDetailsInput.
+
+
+        :param client_id: The client_id of this TargetTypeDetailsInput.  # noqa: E501
+        :type: str
+        """
+
+        self._client_id = client_id
+
+    @property
+    def client_secret(self):
+        """Gets the client_secret of this TargetTypeDetailsInput.  # noqa: E501
+
+
+        :return: The client_secret of this TargetTypeDetailsInput.  # noqa: E501
+        :rtype: str
+        """
+        return self._client_secret
+
+    @client_secret.setter
+    def client_secret(self, client_secret):
+        """Sets the client_secret of this TargetTypeDetailsInput.
+
+
+        :param client_secret: The client_secret of this TargetTypeDetailsInput.  # noqa: E501
+        :type: str
+        """
+
+        self._client_secret = client_secret
 
     @property
     def db_host_name(self):
@@ -1892,6 +2010,27 @@ class TargetTypeDetailsInput(object):
         self._rabbitmq_server_user = rabbitmq_server_user
 
     @property
+    def security_token(self):
+        """Gets the security_token of this TargetTypeDetailsInput.  # noqa: E501
+
+
+        :return: The security_token of this TargetTypeDetailsInput.  # noqa: E501
+        :rtype: str
+        """
+        return self._security_token
+
+    @security_token.setter
+    def security_token(self, security_token):
+        """Sets the security_token of this TargetTypeDetailsInput.
+
+
+        :param security_token: The security_token of this TargetTypeDetailsInput.  # noqa: E501
+        :type: str
+        """
+
+        self._security_token = security_token
+
+    @property
     def sf_account(self):
         """Gets the sf_account of this TargetTypeDetailsInput.  # noqa: E501
 
@@ -1957,6 +2096,27 @@ class TargetTypeDetailsInput(object):
         """
 
         self._ssl_connection_mode = ssl_connection_mode
+
+    @property
+    def tenant_url(self):
+        """Gets the tenant_url of this TargetTypeDetailsInput.  # noqa: E501
+
+
+        :return: The tenant_url of this TargetTypeDetailsInput.  # noqa: E501
+        :rtype: str
+        """
+        return self._tenant_url
+
+    @tenant_url.setter
+    def tenant_url(self, tenant_url):
+        """Sets the tenant_url of this TargetTypeDetailsInput.
+
+
+        :param tenant_url: The tenant_url of this TargetTypeDetailsInput.  # noqa: E501
+        :type: str
+        """
+
+        self._tenant_url = tenant_url
 
     @property
     def url(self):

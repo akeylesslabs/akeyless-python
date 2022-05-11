@@ -73,7 +73,7 @@ class UpdateAuthMethodCert(object):
         'unique_identifier': 'unique-identifier'
     }
 
-    def __init__(self, access_expires=0, bound_common_names=None, bound_dns_sans=None, bound_email_sans=None, bound_extensions=None, bound_ips=None, bound_organizational_units=None, bound_uri_sans=None, certificate_data=None, force_sub_claims=None, jwt_ttl=0, name=None, new_name=None, revoked_cert_ids=None, token=None, uid_token=None, unique_identifier=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, access_expires=0, bound_common_names=None, bound_dns_sans=None, bound_email_sans=None, bound_extensions=None, bound_ips=None, bound_organizational_units=None, bound_uri_sans=None, certificate_data=None, force_sub_claims=None, jwt_ttl=None, name=None, new_name=None, revoked_cert_ids=None, token=None, uid_token=None, unique_identifier=None, local_vars_configuration=None):  # noqa: E501
         """UpdateAuthMethodCert - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()

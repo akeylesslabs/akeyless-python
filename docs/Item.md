@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **deletion_date** | **datetime** |  | [optional] 
 **display_id** | **str** |  | [optional] 
 **is_enabled** | **bool** |  | [optional] 
+**item_accessibility** | **int** |  | [optional] 
 **item_general_info** | [**ItemGeneralInfo**](ItemGeneralInfo.md) |  | [optional] 
 **item_id** | **int** |  | [optional] 
 **item_metadata** | **str** |  | [optional] 

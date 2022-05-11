@@ -67,7 +67,7 @@ class CreateAuthMethodHuawei(object):
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, access_expires=0, auth_url='https://iam.myhwclouds.com:443/v3', bound_domain_id=None, bound_domain_name=None, bound_ips=None, bound_tenant_id=None, bound_tenant_name=None, bound_user_id=None, bound_user_name=None, force_sub_claims=None, jwt_ttl=0, name=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, access_expires=0, auth_url='https://iam.myhwclouds.com:443/v3', bound_domain_id=None, bound_domain_name=None, bound_ips=None, bound_tenant_id=None, bound_tenant_name=None, bound_user_id=None, bound_user_name=None, force_sub_claims=None, jwt_ttl=None, name=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """CreateAuthMethodHuawei - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()

@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 **aws_access_id** | **str** |  | [optional] 
 **aws_access_key** | **str** |  | [optional] 
 **aws_region** | **str** |  | [optional] 
+**aws_use_gateway_cloud_identity** | **bool** |  | [optional] 
 **bucket_name** | **str** |  | [optional] 
 **log_folder** | **str** |  | [optional] 
 

@@ -35,6 +35,7 @@ class GetSecretValue(object):
     """
     openapi_types = {
         'names': 'list[str]',
+        'pretty_print': 'bool',
         'token': 'str',
         'uid_token': 'str',
         'version': 'int'
@@ -42,24 +43,28 @@ class GetSecretValue(object):
 
     attribute_map = {
         'names': 'names',
+        'pretty_print': 'pretty-print',
         'token': 'token',
         'uid_token': 'uid-token',
         'version': 'version'
     }
 
-    def __init__(self, names=None, token=None, uid_token=None, version=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, names=None, pretty_print=None, token=None, uid_token=None, version=None, local_vars_configuration=None):  # noqa: E501
         """GetSecretValue - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._names = None
+        self._pretty_print = None
         self._token = None
         self._uid_token = None
         self._version = None
         self.discriminator = None
 
         self.names = names
+        if pretty_print is not None:
+            self.pretty_print = pretty_print
         if token is not None:
             self.token = token
         if uid_token is not None:
@@ -91,6 +96,27 @@ class GetSecretValue(object):
             raise ValueError("Invalid value for `names`, must not be `None`")  # noqa: E501
 
         self._names = names
+
+    @property
+    def pretty_print(self):
+        """Gets the pretty_print of this GetSecretValue.  # noqa: E501
+
+
+        :return: The pretty_print of this GetSecretValue.  # noqa: E501
+        :rtype: bool
+        """
+        return self._pretty_print
+
+    @pretty_print.setter
+    def pretty_print(self, pretty_print):
+        """Sets the pretty_print of this GetSecretValue.
+
+
+        :param pretty_print: The pretty_print of this GetSecretValue.  # noqa: E501
+        :type: bool
+        """
+
+        self._pretty_print = pretty_print
 
     @property
     def token(self):

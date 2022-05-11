@@ -43,6 +43,7 @@ class Item(object):
         'deletion_date': 'datetime',
         'display_id': 'str',
         'is_enabled': 'bool',
+        'item_accessibility': 'int',
         'item_general_info': 'ItemGeneralInfo',
         'item_id': 'int',
         'item_metadata': 'str',
@@ -73,6 +74,7 @@ class Item(object):
         'deletion_date': 'deletion_date',
         'display_id': 'display_id',
         'is_enabled': 'is_enabled',
+        'item_accessibility': 'item_accessibility',
         'item_general_info': 'item_general_info',
         'item_id': 'item_id',
         'item_metadata': 'item_metadata',
@@ -93,7 +95,7 @@ class Item(object):
         'with_customer_fragment': 'with_customer_fragment'
     }
 
-    def __init__(self, auto_rotate=None, cert_issuer_signer_key_name=None, certificate_issue_details=None, certificates=None, client_permissions=None, customer_fragment_id=None, deletion_date=None, display_id=None, is_enabled=None, item_general_info=None, item_id=None, item_metadata=None, item_name=None, item_size=None, item_state=None, item_sub_type=None, item_tags=None, item_targets_assoc=None, item_type=None, item_versions=None, last_version=None, next_rotation_date=None, protection_key_name=None, public_value=None, rotation_interval=None, target_versions=None, with_customer_fragment=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, auto_rotate=None, cert_issuer_signer_key_name=None, certificate_issue_details=None, certificates=None, client_permissions=None, customer_fragment_id=None, deletion_date=None, display_id=None, is_enabled=None, item_accessibility=None, item_general_info=None, item_id=None, item_metadata=None, item_name=None, item_size=None, item_state=None, item_sub_type=None, item_tags=None, item_targets_assoc=None, item_type=None, item_versions=None, last_version=None, next_rotation_date=None, protection_key_name=None, public_value=None, rotation_interval=None, target_versions=None, with_customer_fragment=None, local_vars_configuration=None):  # noqa: E501
         """Item - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -108,6 +110,7 @@ class Item(object):
         self._deletion_date = None
         self._display_id = None
         self._is_enabled = None
+        self._item_accessibility = None
         self._item_general_info = None
         self._item_id = None
         self._item_metadata = None
@@ -146,6 +149,8 @@ class Item(object):
             self.display_id = display_id
         if is_enabled is not None:
             self.is_enabled = is_enabled
+        if item_accessibility is not None:
+            self.item_accessibility = item_accessibility
         if item_general_info is not None:
             self.item_general_info = item_general_info
         if item_id is not None:
@@ -371,6 +376,27 @@ class Item(object):
         """
 
         self._is_enabled = is_enabled
+
+    @property
+    def item_accessibility(self):
+        """Gets the item_accessibility of this Item.  # noqa: E501
+
+
+        :return: The item_accessibility of this Item.  # noqa: E501
+        :rtype: int
+        """
+        return self._item_accessibility
+
+    @item_accessibility.setter
+    def item_accessibility(self, item_accessibility):
+        """Sets the item_accessibility of this Item.
+
+
+        :param item_accessibility: The item_accessibility of this Item.  # noqa: E501
+        :type: int
+        """
+
+        self._item_accessibility = item_accessibility
 
     @property
     def item_general_info(self):

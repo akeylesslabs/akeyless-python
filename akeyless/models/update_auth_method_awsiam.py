@@ -71,7 +71,7 @@ class UpdateAuthMethodAWSIAM(object):
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, access_expires=0, bound_arn=None, bound_aws_account_id=None, bound_ips=None, bound_resource_id=None, bound_role_id=None, bound_role_name=None, bound_user_id=None, bound_user_name=None, force_sub_claims=None, jwt_ttl=0, name=None, new_name=None, sts_url='https://sts.amazonaws.com', token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, access_expires=0, bound_arn=None, bound_aws_account_id=None, bound_ips=None, bound_resource_id=None, bound_role_id=None, bound_role_name=None, bound_user_id=None, bound_user_name=None, force_sub_claims=None, jwt_ttl=None, name=None, new_name=None, sts_url='https://sts.amazonaws.com', token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """UpdateAuthMethodAWSIAM - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()

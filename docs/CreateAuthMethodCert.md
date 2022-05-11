@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 **bound_uri_sans** | **list[str]** | A list of URIs. At least one must exist in the SANs. Supports globbing. | [optional] 
 **certificate_data** | **str** | The certificate data in base64, if no file was provided | [optional] 
 **force_sub_claims** | **bool** | if true: enforce role-association must include sub claims | [optional] 
-**jwt_ttl** | **int** | Jwt TTL | [optional] [default to 0]
+**jwt_ttl** | **int** | Jwt TTL | [optional] 
 **name** | **str** | Auth Method name | 
 **revoked_cert_ids** | **list[str]** | A list of revoked cert ids | [optional] 
 **token** | **str** | Authentication token (see &#x60;/auth&#x60; and &#x60;/configure&#x60;) | [optional] 

@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **deny_inheritance** | **bool** | Deny from root to create children | [optional] 
 **deny_rotate** | **bool** | Deny from the token to rotate | [optional] 
 **force_sub_claims** | **bool** | if true: enforce role-association must include sub claims | [optional] 
-**jwt_ttl** | **int** | Jwt TTL | [optional] [default to 0]
+**jwt_ttl** | **int** | Jwt TTL | [optional] 
 **name** | **str** | Auth Method name | 
 **token** | **str** | Authentication token (see &#x60;/auth&#x60; and &#x60;/configure&#x60;) | [optional] 
 **ttl** | **int** | Token ttl | [optional] [default to 60]

@@ -34,34 +34,60 @@ class HashiPayload(object):
                             and the value is json key in definition.
     """
     openapi_types = {
+        'import_as_json': 'bool',
         'namespaces': 'list[str]',
         'token': 'str',
         'url': 'str'
     }
 
     attribute_map = {
+        'import_as_json': 'import_as_json',
         'namespaces': 'namespaces',
         'token': 'token',
         'url': 'url'
     }
 
-    def __init__(self, namespaces=None, token=None, url=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, import_as_json=None, namespaces=None, token=None, url=None, local_vars_configuration=None):  # noqa: E501
         """HashiPayload - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
+        self._import_as_json = None
         self._namespaces = None
         self._token = None
         self._url = None
         self.discriminator = None
 
+        if import_as_json is not None:
+            self.import_as_json = import_as_json
         if namespaces is not None:
             self.namespaces = namespaces
         if token is not None:
             self.token = token
         if url is not None:
             self.url = url
+
+    @property
+    def import_as_json(self):
+        """Gets the import_as_json of this HashiPayload.  # noqa: E501
+
+
+        :return: The import_as_json of this HashiPayload.  # noqa: E501
+        :rtype: bool
+        """
+        return self._import_as_json
+
+    @import_as_json.setter
+    def import_as_json(self, import_as_json):
+        """Sets the import_as_json of this HashiPayload.
+
+
+        :param import_as_json: The import_as_json of this HashiPayload.  # noqa: E501
+        :type: bool
+        """
+
+        self._import_as_json = import_as_json
 
     @property
     def namespaces(self):

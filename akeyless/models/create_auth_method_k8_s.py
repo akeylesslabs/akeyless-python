@@ -65,7 +65,7 @@ class CreateAuthMethodK8S(object):
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, access_expires=0, audience=None, bound_ips=None, bound_namespaces=None, bound_pod_names=None, bound_sa_names=None, force_sub_claims=None, gen_key='true', jwt_ttl=0, name=None, public_key=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, access_expires=0, audience=None, bound_ips=None, bound_namespaces=None, bound_pod_names=None, bound_sa_names=None, force_sub_claims=None, gen_key='true', jwt_ttl=None, name=None, public_key=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """CreateAuthMethodK8S - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()

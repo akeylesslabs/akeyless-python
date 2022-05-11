@@ -39,6 +39,7 @@ Method | HTTP request | Description
 [**create_rabbit_mq_target**](V2Api.md#create_rabbit_mq_target) | **POST** /create-rabbitmq-target | 
 [**create_role**](V2Api.md#create_role) | **POST** /create-role | 
 [**create_rotated_secret**](V2Api.md#create_rotated_secret) | **POST** /create-rotated-secret | 
+[**create_salesforce_target**](V2Api.md#create_salesforce_target) | **POST** /create-salesforce-target | 
 [**create_secret**](V2Api.md#create_secret) | **POST** /create-secret | 
 [**create_ssh_cert_issuer**](V2Api.md#create_ssh_cert_issuer) | **POST** /create-ssh-cert-issuer | 
 [**create_ssh_target**](V2Api.md#create_ssh_target) | **POST** /create-ssh-target | 
@@ -64,6 +65,7 @@ Method | HTTP request | Description
 [**encrypt_pkcs1**](V2Api.md#encrypt_pkcs1) | **POST** /encrypt-pkcs1 | 
 [**encrypt_with_classic_key**](V2Api.md#encrypt_with_classic_key) | **POST** /encrypt-with-classic-key | 
 [**gateway_create_k8_s_auth_config**](V2Api.md#gateway_create_k8_s_auth_config) | **POST** /gateway-create-k8s-auth-config | 
+[**gateway_create_migration**](V2Api.md#gateway_create_migration) | **POST** /gateway-create-migration | 
 [**gateway_create_producer_artifactory**](V2Api.md#gateway_create_producer_artifactory) | **POST** /gateway-create-producer-artifactory | 
 [**gateway_create_producer_aws**](V2Api.md#gateway_create_producer_aws) | **POST** /gateway-create-producer-aws | 
 [**gateway_create_producer_azure**](V2Api.md#gateway_create_producer_azure) | **POST** /gateway-create-producer-azure | 
@@ -89,9 +91,11 @@ Method | HTTP request | Description
 [**gateway_create_producer_snowflake**](V2Api.md#gateway_create_producer_snowflake) | **POST** /gateway-create-producer-snowflake | 
 [**gateway_delete_allowed_management_access**](V2Api.md#gateway_delete_allowed_management_access) | **POST** /gateway-delete-allowed-management-access | 
 [**gateway_delete_k8_s_auth_config**](V2Api.md#gateway_delete_k8_s_auth_config) | **POST** /gateway-delete-k8s-auth-config | 
+[**gateway_delete_migration**](V2Api.md#gateway_delete_migration) | **POST** /gateway-delete-migration | 
 [**gateway_delete_producer**](V2Api.md#gateway_delete_producer) | **POST** /gateway-delete-producer | 
 [**gateway_get_config**](V2Api.md#gateway_get_config) | **POST** /gateway-get-config | 
 [**gateway_get_k8_s_auth_config**](V2Api.md#gateway_get_k8_s_auth_config) | **POST** /gateway-get-k8s-auth-config | 
+[**gateway_get_migration**](V2Api.md#gateway_get_migration) | **POST** /gateway-get-migration | 
 [**gateway_get_producer**](V2Api.md#gateway_get_producer) | **POST** /gateway-get-producer | 
 [**gateway_get_tmp_users**](V2Api.md#gateway_get_tmp_users) | **POST** /gateway-get-producer-tmp-creds | 
 [**gateway_list_allowed_management_access**](V2Api.md#gateway_list_allowed_management_access) | **POST** /gateway-list-allowed-management-access | 
@@ -103,6 +107,7 @@ Method | HTTP request | Description
 [**gateway_sync_migration**](V2Api.md#gateway_sync_migration) | **POST** /gateway-sync-migration | 
 [**gateway_update_item**](V2Api.md#gateway_update_item) | **POST** /gateway-update-item | 
 [**gateway_update_k8_s_auth_config**](V2Api.md#gateway_update_k8_s_auth_config) | **POST** /gateway-update-k8s-auth-config | 
+[**gateway_update_migration**](V2Api.md#gateway_update_migration) | **POST** /gateway-update-migration | 
 [**gateway_update_producer_artifactory**](V2Api.md#gateway_update_producer_artifactory) | **POST** /gateway-update-producer-artifactory | 
 [**gateway_update_producer_aws**](V2Api.md#gateway_update_producer_aws) | **POST** /gateway-update-producer-aws | 
 [**gateway_update_producer_azure**](V2Api.md#gateway_update_producer_azure) | **POST** /gateway-update-producer-azure | 
@@ -114,6 +119,7 @@ Method | HTTP request | Description
 [**gateway_update_producer_gcp**](V2Api.md#gateway_update_producer_gcp) | **POST** /gateway-update-producer-gcp | 
 [**gateway_update_producer_github**](V2Api.md#gateway_update_producer_github) | **POST** /gateway-update-producer-github | 
 [**gateway_update_producer_gke**](V2Api.md#gateway_update_producer_gke) | **POST** /gateway-update-producer-gke | 
+[**gateway_update_producer_hana_db**](V2Api.md#gateway_update_producer_hana_db) | **POST** /gateway-update-producer-hana | 
 [**gateway_update_producer_ldap**](V2Api.md#gateway_update_producer_ldap) | **POST** /gateway-update-producer-ldap | 
 [**gateway_update_producer_mongo**](V2Api.md#gateway_update_producer_mongo) | **POST** /gateway-update-producer-mongo | 
 [**gateway_update_producer_mssql**](V2Api.md#gateway_update_producer_mssql) | **POST** /gateway-update-producer-mssql | 
@@ -208,6 +214,7 @@ Method | HTTP request | Description
 [**update_role**](V2Api.md#update_role) | **POST** /update-role | 
 [**update_rotated_secret**](V2Api.md#update_rotated_secret) | **POST** /update-rotated-secret | 
 [**update_rotation_settings**](V2Api.md#update_rotation_settings) | **POST** /update-rotation-settingsrotate-key | 
+[**update_salesforce_target**](V2Api.md#update_salesforce_target) | **POST** /update-salesforce-target | 
 [**update_secret_val**](V2Api.md#update_secret_val) | **POST** /update-secret-val | 
 [**update_ssh_cert_issuer**](V2Api.md#update_ssh_cert_issuer) | **POST** /update-ssh-cert-issuer | 
 [**update_ssh_target**](V2Api.md#update_ssh_target) | **POST** /update-ssh-target | 
@@ -2324,6 +2331,66 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **create_salesforce_target**
+> CreateSalesforceTargetOutput create_salesforce_target(body)
+
+
+
+### Example
+
+```python
+from __future__ import print_function
+import time
+import akeyless
+from akeyless.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.akeyless.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = akeyless.Configuration(
+    host = "https://api.akeyless.io"
+)
+
+
+# Enter a context with an instance of the API client
+with akeyless.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = akeyless.V2Api(api_client)
+    body = akeyless.CreateSalesforceTarget() # CreateSalesforceTarget | 
+
+    try:
+        api_response = api_instance.create_salesforce_target(body)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling V2Api->create_salesforce_target: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**CreateSalesforceTarget**](CreateSalesforceTarget.md)|  | 
+
+### Return type
+
+[**CreateSalesforceTargetOutput**](CreateSalesforceTargetOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | createSalesforceTargetResponse wraps response body. |  -  |
+**0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **create_secret**
 > CreateSecretOutput create_secret(body)
 
@@ -3820,6 +3887,66 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | gatewayCreateK8SAuthConfigResponse wraps response body. |  -  |
+**0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **gateway_create_migration**
+> GatewayMigrationCreateOutput gateway_create_migration(body)
+
+
+
+### Example
+
+```python
+from __future__ import print_function
+import time
+import akeyless
+from akeyless.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.akeyless.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = akeyless.Configuration(
+    host = "https://api.akeyless.io"
+)
+
+
+# Enter a context with an instance of the API client
+with akeyless.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = akeyless.V2Api(api_client)
+    body = akeyless.GatewayCreateMigration() # GatewayCreateMigration | 
+
+    try:
+        api_response = api_instance.gateway_create_migration(body)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling V2Api->gateway_create_migration: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**GatewayCreateMigration**](GatewayCreateMigration.md)|  | 
+
+### Return type
+
+[**GatewayMigrationCreateOutput**](GatewayMigrationCreateOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | gatewayMigrationCreateResponse wraps response body. |  -  |
 **0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -5324,6 +5451,66 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **gateway_delete_migration**
+> GatewayMigrationDeleteOutput gateway_delete_migration(body)
+
+
+
+### Example
+
+```python
+from __future__ import print_function
+import time
+import akeyless
+from akeyless.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.akeyless.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = akeyless.Configuration(
+    host = "https://api.akeyless.io"
+)
+
+
+# Enter a context with an instance of the API client
+with akeyless.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = akeyless.V2Api(api_client)
+    body = akeyless.GatewayDeleteMigration() # GatewayDeleteMigration | 
+
+    try:
+        api_response = api_instance.gateway_delete_migration(body)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling V2Api->gateway_delete_migration: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**GatewayDeleteMigration**](GatewayDeleteMigration.md)|  | 
+
+### Return type
+
+[**GatewayMigrationDeleteOutput**](GatewayMigrationDeleteOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | gatewayMigrationDeleteResponse wraps response body. |  -  |
+**0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **gateway_delete_producer**
 > GatewayDeleteProducerOutput gateway_delete_producer(body)
 
@@ -5500,6 +5687,66 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | gatewayGetK8SAuthConfigResponse wraps response body. |  -  |
+**0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **gateway_get_migration**
+> GatewayMigrationGetOutput gateway_get_migration(body)
+
+
+
+### Example
+
+```python
+from __future__ import print_function
+import time
+import akeyless
+from akeyless.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.akeyless.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = akeyless.Configuration(
+    host = "https://api.akeyless.io"
+)
+
+
+# Enter a context with an instance of the API client
+with akeyless.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = akeyless.V2Api(api_client)
+    body = akeyless.GatewayGetMigration() # GatewayGetMigration | 
+
+    try:
+        api_response = api_instance.gateway_get_migration(body)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling V2Api->gateway_get_migration: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**GatewayGetMigration**](GatewayGetMigration.md)|  | 
+
+### Return type
+
+[**GatewayMigrationGetOutput**](GatewayMigrationGetOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | gatewayMigrationGetResponse wraps response body. |  -  |
 **0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -6163,6 +6410,66 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **gateway_update_migration**
+> GatewayMigrationUpdateOutput gateway_update_migration(body)
+
+
+
+### Example
+
+```python
+from __future__ import print_function
+import time
+import akeyless
+from akeyless.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.akeyless.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = akeyless.Configuration(
+    host = "https://api.akeyless.io"
+)
+
+
+# Enter a context with an instance of the API client
+with akeyless.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = akeyless.V2Api(api_client)
+    body = akeyless.GatewayUpdateMigration() # GatewayUpdateMigration | 
+
+    try:
+        api_response = api_instance.gateway_update_migration(body)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling V2Api->gateway_update_migration: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**GatewayUpdateMigration**](GatewayUpdateMigration.md)|  | 
+
+### Return type
+
+[**GatewayMigrationUpdateOutput**](GatewayMigrationUpdateOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | gatewayMigrationUpdateResponse wraps response body. |  -  |
+**0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **gateway_update_producer_artifactory**
 > GatewayUpdateProducerArtifactoryOutput gateway_update_producer_artifactory(body)
 
@@ -6819,6 +7126,66 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | gatewayUpdateProducerGkeResponse wraps response body. |  -  |
+**0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **gateway_update_producer_hana_db**
+> GatewayUpdateProducerHanaDbOutput gateway_update_producer_hana_db(body)
+
+
+
+### Example
+
+```python
+from __future__ import print_function
+import time
+import akeyless
+from akeyless.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.akeyless.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = akeyless.Configuration(
+    host = "https://api.akeyless.io"
+)
+
+
+# Enter a context with an instance of the API client
+with akeyless.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = akeyless.V2Api(api_client)
+    body = akeyless.GatewayUpdateProducerHanaDb() # GatewayUpdateProducerHanaDb | 
+
+    try:
+        api_response = api_instance.gateway_update_producer_hana_db(body)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling V2Api->gateway_update_producer_hana_db: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**GatewayUpdateProducerHanaDb**](GatewayUpdateProducerHanaDb.md)|  | 
+
+### Return type
+
+[**GatewayUpdateProducerHanaDbOutput**](GatewayUpdateProducerHanaDbOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**201** | gatewayUpdateProducerHanaDbResponse wraps response body. |  -  |
 **0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -12446,6 +12813,66 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | rotateKeyResponse wraps response body. |  -  |
+**0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **update_salesforce_target**
+> UpdateSalesforceTargetOutput update_salesforce_target(body)
+
+
+
+### Example
+
+```python
+from __future__ import print_function
+import time
+import akeyless
+from akeyless.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.akeyless.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = akeyless.Configuration(
+    host = "https://api.akeyless.io"
+)
+
+
+# Enter a context with an instance of the API client
+with akeyless.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = akeyless.V2Api(api_client)
+    body = akeyless.UpdateSalesforceTarget() # UpdateSalesforceTarget | 
+
+    try:
+        api_response = api_instance.update_salesforce_target(body)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling V2Api->update_salesforce_target: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**UpdateSalesforceTarget**](UpdateSalesforceTarget.md)|  | 
+
+### Return type
+
+[**UpdateSalesforceTargetOutput**](UpdateSalesforceTargetOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | updateSalesforceTargetResponse wraps response body. |  -  |
 **0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

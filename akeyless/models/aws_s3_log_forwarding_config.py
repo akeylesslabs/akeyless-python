@@ -37,6 +37,7 @@ class AwsS3LogForwardingConfig(object):
         'aws_access_id': 'str',
         'aws_access_key': 'str',
         'aws_region': 'str',
+        'aws_use_gateway_cloud_identity': 'bool',
         'bucket_name': 'str',
         'log_folder': 'str'
     }
@@ -45,11 +46,12 @@ class AwsS3LogForwardingConfig(object):
         'aws_access_id': 'aws_access_id',
         'aws_access_key': 'aws_access_key',
         'aws_region': 'aws_region',
+        'aws_use_gateway_cloud_identity': 'aws_use_gateway_cloud_identity',
         'bucket_name': 'bucket_name',
         'log_folder': 'log_folder'
     }
 
-    def __init__(self, aws_access_id=None, aws_access_key=None, aws_region=None, bucket_name=None, log_folder=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, aws_access_id=None, aws_access_key=None, aws_region=None, aws_use_gateway_cloud_identity=None, bucket_name=None, log_folder=None, local_vars_configuration=None):  # noqa: E501
         """AwsS3LogForwardingConfig - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -58,6 +60,7 @@ class AwsS3LogForwardingConfig(object):
         self._aws_access_id = None
         self._aws_access_key = None
         self._aws_region = None
+        self._aws_use_gateway_cloud_identity = None
         self._bucket_name = None
         self._log_folder = None
         self.discriminator = None
@@ -68,6 +71,8 @@ class AwsS3LogForwardingConfig(object):
             self.aws_access_key = aws_access_key
         if aws_region is not None:
             self.aws_region = aws_region
+        if aws_use_gateway_cloud_identity is not None:
+            self.aws_use_gateway_cloud_identity = aws_use_gateway_cloud_identity
         if bucket_name is not None:
             self.bucket_name = bucket_name
         if log_folder is not None:
@@ -135,6 +140,27 @@ class AwsS3LogForwardingConfig(object):
         """
 
         self._aws_region = aws_region
+
+    @property
+    def aws_use_gateway_cloud_identity(self):
+        """Gets the aws_use_gateway_cloud_identity of this AwsS3LogForwardingConfig.  # noqa: E501
+
+
+        :return: The aws_use_gateway_cloud_identity of this AwsS3LogForwardingConfig.  # noqa: E501
+        :rtype: bool
+        """
+        return self._aws_use_gateway_cloud_identity
+
+    @aws_use_gateway_cloud_identity.setter
+    def aws_use_gateway_cloud_identity(self, aws_use_gateway_cloud_identity):
+        """Sets the aws_use_gateway_cloud_identity of this AwsS3LogForwardingConfig.
+
+
+        :param aws_use_gateway_cloud_identity: The aws_use_gateway_cloud_identity of this AwsS3LogForwardingConfig.  # noqa: E501
+        :type: bool
+        """
+
+        self._aws_use_gateway_cloud_identity = aws_use_gateway_cloud_identity
 
     @property
     def bucket_name(self):

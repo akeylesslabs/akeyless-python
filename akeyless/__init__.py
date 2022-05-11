@@ -15,7 +15,7 @@
 
 from __future__ import absolute_import
 
-__version__ = "2.16.4"
+__version__ = "2.16.5"
 
 # import apis into sdk package
 from akeyless.api.v2_api import V2Api
@@ -127,6 +127,8 @@ from akeyless.models.create_ssh_cert_issuer import CreateSSHCertIssuer
 from akeyless.models.create_ssh_cert_issuer_output import CreateSSHCertIssuerOutput
 from akeyless.models.create_ssh_target import CreateSSHTarget
 from akeyless.models.create_ssh_target_output import CreateSSHTargetOutput
+from akeyless.models.create_salesforce_target import CreateSalesforceTarget
+from akeyless.models.create_salesforce_target_output import CreateSalesforceTargetOutput
 from akeyless.models.create_secret import CreateSecret
 from akeyless.models.create_secret_output import CreateSecretOutput
 from akeyless.models.create_target_item_assoc_output import CreateTargetItemAssocOutput
@@ -181,6 +183,7 @@ from akeyless.models.gcp_access_rules import GCPAccessRules
 from akeyless.models.gateway_add_allowed_management_access import GatewayAddAllowedManagementAccess
 from akeyless.models.gateway_create_k8_s_auth_config import GatewayCreateK8SAuthConfig
 from akeyless.models.gateway_create_k8_s_auth_config_output import GatewayCreateK8SAuthConfigOutput
+from akeyless.models.gateway_create_migration import GatewayCreateMigration
 from akeyless.models.gateway_create_producer_artifactory import GatewayCreateProducerArtifactory
 from akeyless.models.gateway_create_producer_artifactory_output import GatewayCreateProducerArtifactoryOutput
 from akeyless.models.gateway_create_producer_aws import GatewayCreateProducerAws
@@ -232,19 +235,25 @@ from akeyless.models.gateway_create_producer_snowflake_output import GatewayCrea
 from akeyless.models.gateway_delete_allowed_management_access import GatewayDeleteAllowedManagementAccess
 from akeyless.models.gateway_delete_k8_s_auth_config import GatewayDeleteK8SAuthConfig
 from akeyless.models.gateway_delete_k8_s_auth_config_output import GatewayDeleteK8SAuthConfigOutput
+from akeyless.models.gateway_delete_migration import GatewayDeleteMigration
 from akeyless.models.gateway_delete_producer import GatewayDeleteProducer
 from akeyless.models.gateway_delete_producer_output import GatewayDeleteProducerOutput
 from akeyless.models.gateway_get_config import GatewayGetConfig
 from akeyless.models.gateway_get_k8_s_auth_config import GatewayGetK8SAuthConfig
 from akeyless.models.gateway_get_k8_s_auth_config_output import GatewayGetK8SAuthConfigOutput
+from akeyless.models.gateway_get_migration import GatewayGetMigration
 from akeyless.models.gateway_get_producer import GatewayGetProducer
 from akeyless.models.gateway_get_tmp_users import GatewayGetTmpUsers
 from akeyless.models.gateway_list_allowed_management_access import GatewayListAllowedManagementAccess
 from akeyless.models.gateway_list_migration import GatewayListMigration
 from akeyless.models.gateway_list_producers import GatewayListProducers
 from akeyless.models.gateway_message_queue_info import GatewayMessageQueueInfo
+from akeyless.models.gateway_migration_create_output import GatewayMigrationCreateOutput
+from akeyless.models.gateway_migration_delete_output import GatewayMigrationDeleteOutput
+from akeyless.models.gateway_migration_get_output import GatewayMigrationGetOutput
 from akeyless.models.gateway_migration_list_output import GatewayMigrationListOutput
 from akeyless.models.gateway_migration_sync_output import GatewayMigrationSyncOutput
+from akeyless.models.gateway_migration_update_output import GatewayMigrationUpdateOutput
 from akeyless.models.gateway_revoke_tmp_users import GatewayRevokeTmpUsers
 from akeyless.models.gateway_start_producer import GatewayStartProducer
 from akeyless.models.gateway_start_producer_output import GatewayStartProducerOutput
@@ -255,6 +264,7 @@ from akeyless.models.gateway_update_item import GatewayUpdateItem
 from akeyless.models.gateway_update_item_output import GatewayUpdateItemOutput
 from akeyless.models.gateway_update_k8_s_auth_config import GatewayUpdateK8SAuthConfig
 from akeyless.models.gateway_update_k8_s_auth_config_output import GatewayUpdateK8SAuthConfigOutput
+from akeyless.models.gateway_update_migration import GatewayUpdateMigration
 from akeyless.models.gateway_update_producer_artifactory import GatewayUpdateProducerArtifactory
 from akeyless.models.gateway_update_producer_artifactory_output import GatewayUpdateProducerArtifactoryOutput
 from akeyless.models.gateway_update_producer_aws import GatewayUpdateProducerAws
@@ -514,6 +524,8 @@ from akeyless.models.update_ssh_cert_issuer_output import UpdateSSHCertIssuerOut
 from akeyless.models.update_ssh_target import UpdateSSHTarget
 from akeyless.models.update_ssh_target_details import UpdateSSHTargetDetails
 from akeyless.models.update_ssh_target_output import UpdateSSHTargetOutput
+from akeyless.models.update_salesforce_target import UpdateSalesforceTarget
+from akeyless.models.update_salesforce_target_output import UpdateSalesforceTargetOutput
 from akeyless.models.update_secret_val import UpdateSecretVal
 from akeyless.models.update_secret_val_output import UpdateSecretValOutput
 from akeyless.models.update_target import UpdateTarget

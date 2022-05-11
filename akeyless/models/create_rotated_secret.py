@@ -39,6 +39,7 @@ class CreateRotatedSecret(object):
         'application_id': 'str',
         'authentication_credentials': 'str',
         'auto_rotate': 'str',
+        'aws_region': 'str',
         'custom_payload': 'str',
         'key': 'str',
         'metadata': 'str',
@@ -50,6 +51,19 @@ class CreateRotatedSecret(object):
         'rotator_creds_type': 'str',
         'rotator_custom_cmd': 'str',
         'rotator_type': 'str',
+        'secure_access_allow_external_user': 'bool',
+        'secure_access_aws_account_id': 'str',
+        'secure_access_aws_native_cli': 'bool',
+        'secure_access_bastion_issuer': 'str',
+        'secure_access_db_name': 'str',
+        'secure_access_db_schema': 'str',
+        'secure_access_enable': 'str',
+        'secure_access_host': 'list[str]',
+        'secure_access_rdp_domain': 'str',
+        'secure_access_rdp_user': 'str',
+        'secure_access_web': 'bool',
+        'secure_access_web_browsing': 'bool',
+        'secure_access_web_proxy': 'bool',
         'ssh_password': 'str',
         'ssh_username': 'str',
         'tags': 'list[str]',
@@ -66,6 +80,7 @@ class CreateRotatedSecret(object):
         'application_id': 'application-id',
         'authentication_credentials': 'authentication-credentials',
         'auto_rotate': 'auto-rotate',
+        'aws_region': 'aws-region',
         'custom_payload': 'custom-payload',
         'key': 'key',
         'metadata': 'metadata',
@@ -77,6 +92,19 @@ class CreateRotatedSecret(object):
         'rotator_creds_type': 'rotator-creds-type',
         'rotator_custom_cmd': 'rotator-custom-cmd',
         'rotator_type': 'rotator-type',
+        'secure_access_allow_external_user': 'secure-access-allow-external-user',
+        'secure_access_aws_account_id': 'secure-access-aws-account-id',
+        'secure_access_aws_native_cli': 'secure-access-aws-native-cli',
+        'secure_access_bastion_issuer': 'secure-access-bastion-issuer',
+        'secure_access_db_name': 'secure-access-db-name',
+        'secure_access_db_schema': 'secure-access-db-schema',
+        'secure_access_enable': 'secure-access-enable',
+        'secure_access_host': 'secure-access-host',
+        'secure_access_rdp_domain': 'secure-access-rdp-domain',
+        'secure_access_rdp_user': 'secure-access-rdp-user',
+        'secure_access_web': 'secure-access-web',
+        'secure_access_web_browsing': 'secure-access-web-browsing',
+        'secure_access_web_proxy': 'secure-access-web-proxy',
         'ssh_password': 'ssh-password',
         'ssh_username': 'ssh-username',
         'tags': 'tags',
@@ -87,7 +115,7 @@ class CreateRotatedSecret(object):
         'user_dn': 'user-dn'
     }
 
-    def __init__(self, api_id=None, api_key=None, application_id=None, authentication_credentials=None, auto_rotate=None, custom_payload=None, key=None, metadata=None, name=None, rotated_password=None, rotated_username=None, rotation_hour=None, rotation_interval=None, rotator_creds_type=None, rotator_custom_cmd=None, rotator_type=None, ssh_password=None, ssh_username=None, tags=None, target_name=None, token=None, uid_token=None, user_attribute=None, user_dn=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, api_id=None, api_key=None, application_id=None, authentication_credentials=None, auto_rotate=None, aws_region='us-east-2', custom_payload=None, key=None, metadata=None, name=None, rotated_password=None, rotated_username=None, rotation_hour=None, rotation_interval=None, rotator_creds_type=None, rotator_custom_cmd=None, rotator_type=None, secure_access_allow_external_user=False, secure_access_aws_account_id=None, secure_access_aws_native_cli=None, secure_access_bastion_issuer=None, secure_access_db_name=None, secure_access_db_schema=None, secure_access_enable=None, secure_access_host=None, secure_access_rdp_domain=None, secure_access_rdp_user=None, secure_access_web=False, secure_access_web_browsing=False, secure_access_web_proxy=False, ssh_password=None, ssh_username=None, tags=None, target_name=None, token=None, uid_token=None, user_attribute=None, user_dn=None, local_vars_configuration=None):  # noqa: E501
         """CreateRotatedSecret - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -98,6 +126,7 @@ class CreateRotatedSecret(object):
         self._application_id = None
         self._authentication_credentials = None
         self._auto_rotate = None
+        self._aws_region = None
         self._custom_payload = None
         self._key = None
         self._metadata = None
@@ -109,6 +138,19 @@ class CreateRotatedSecret(object):
         self._rotator_creds_type = None
         self._rotator_custom_cmd = None
         self._rotator_type = None
+        self._secure_access_allow_external_user = None
+        self._secure_access_aws_account_id = None
+        self._secure_access_aws_native_cli = None
+        self._secure_access_bastion_issuer = None
+        self._secure_access_db_name = None
+        self._secure_access_db_schema = None
+        self._secure_access_enable = None
+        self._secure_access_host = None
+        self._secure_access_rdp_domain = None
+        self._secure_access_rdp_user = None
+        self._secure_access_web = None
+        self._secure_access_web_browsing = None
+        self._secure_access_web_proxy = None
         self._ssh_password = None
         self._ssh_username = None
         self._tags = None
@@ -129,6 +171,8 @@ class CreateRotatedSecret(object):
             self.authentication_credentials = authentication_credentials
         if auto_rotate is not None:
             self.auto_rotate = auto_rotate
+        if aws_region is not None:
+            self.aws_region = aws_region
         if custom_payload is not None:
             self.custom_payload = custom_payload
         if key is not None:
@@ -149,6 +193,32 @@ class CreateRotatedSecret(object):
         if rotator_custom_cmd is not None:
             self.rotator_custom_cmd = rotator_custom_cmd
         self.rotator_type = rotator_type
+        if secure_access_allow_external_user is not None:
+            self.secure_access_allow_external_user = secure_access_allow_external_user
+        if secure_access_aws_account_id is not None:
+            self.secure_access_aws_account_id = secure_access_aws_account_id
+        if secure_access_aws_native_cli is not None:
+            self.secure_access_aws_native_cli = secure_access_aws_native_cli
+        if secure_access_bastion_issuer is not None:
+            self.secure_access_bastion_issuer = secure_access_bastion_issuer
+        if secure_access_db_name is not None:
+            self.secure_access_db_name = secure_access_db_name
+        if secure_access_db_schema is not None:
+            self.secure_access_db_schema = secure_access_db_schema
+        if secure_access_enable is not None:
+            self.secure_access_enable = secure_access_enable
+        if secure_access_host is not None:
+            self.secure_access_host = secure_access_host
+        if secure_access_rdp_domain is not None:
+            self.secure_access_rdp_domain = secure_access_rdp_domain
+        if secure_access_rdp_user is not None:
+            self.secure_access_rdp_user = secure_access_rdp_user
+        if secure_access_web is not None:
+            self.secure_access_web = secure_access_web
+        if secure_access_web_browsing is not None:
+            self.secure_access_web_browsing = secure_access_web_browsing
+        if secure_access_web_proxy is not None:
+            self.secure_access_web_proxy = secure_access_web_proxy
         if ssh_password is not None:
             self.ssh_password = ssh_password
         if ssh_username is not None:
@@ -273,6 +343,29 @@ class CreateRotatedSecret(object):
         """
 
         self._auto_rotate = auto_rotate
+
+    @property
+    def aws_region(self):
+        """Gets the aws_region of this CreateRotatedSecret.  # noqa: E501
+
+        Region (used in aws)  # noqa: E501
+
+        :return: The aws_region of this CreateRotatedSecret.  # noqa: E501
+        :rtype: str
+        """
+        return self._aws_region
+
+    @aws_region.setter
+    def aws_region(self, aws_region):
+        """Sets the aws_region of this CreateRotatedSecret.
+
+        Region (used in aws)  # noqa: E501
+
+        :param aws_region: The aws_region of this CreateRotatedSecret.  # noqa: E501
+        :type: str
+        """
+
+        self._aws_region = aws_region
 
     @property
     def custom_payload(self):
@@ -518,6 +611,305 @@ class CreateRotatedSecret(object):
             raise ValueError("Invalid value for `rotator_type`, must not be `None`")  # noqa: E501
 
         self._rotator_type = rotator_type
+
+    @property
+    def secure_access_allow_external_user(self):
+        """Gets the secure_access_allow_external_user of this CreateRotatedSecret.  # noqa: E501
+
+        Secure Access Allow Providing External User (used in ssh)  # noqa: E501
+
+        :return: The secure_access_allow_external_user of this CreateRotatedSecret.  # noqa: E501
+        :rtype: bool
+        """
+        return self._secure_access_allow_external_user
+
+    @secure_access_allow_external_user.setter
+    def secure_access_allow_external_user(self, secure_access_allow_external_user):
+        """Sets the secure_access_allow_external_user of this CreateRotatedSecret.
+
+        Secure Access Allow Providing External User (used in ssh)  # noqa: E501
+
+        :param secure_access_allow_external_user: The secure_access_allow_external_user of this CreateRotatedSecret.  # noqa: E501
+        :type: bool
+        """
+
+        self._secure_access_allow_external_user = secure_access_allow_external_user
+
+    @property
+    def secure_access_aws_account_id(self):
+        """Gets the secure_access_aws_account_id of this CreateRotatedSecret.  # noqa: E501
+
+        Secure Access Account Id (used in aws)  # noqa: E501
+
+        :return: The secure_access_aws_account_id of this CreateRotatedSecret.  # noqa: E501
+        :rtype: str
+        """
+        return self._secure_access_aws_account_id
+
+    @secure_access_aws_account_id.setter
+    def secure_access_aws_account_id(self, secure_access_aws_account_id):
+        """Sets the secure_access_aws_account_id of this CreateRotatedSecret.
+
+        Secure Access Account Id (used in aws)  # noqa: E501
+
+        :param secure_access_aws_account_id: The secure_access_aws_account_id of this CreateRotatedSecret.  # noqa: E501
+        :type: str
+        """
+
+        self._secure_access_aws_account_id = secure_access_aws_account_id
+
+    @property
+    def secure_access_aws_native_cli(self):
+        """Gets the secure_access_aws_native_cli of this CreateRotatedSecret.  # noqa: E501
+
+        Secure Access Aws Native Cli (used in aws)  # noqa: E501
+
+        :return: The secure_access_aws_native_cli of this CreateRotatedSecret.  # noqa: E501
+        :rtype: bool
+        """
+        return self._secure_access_aws_native_cli
+
+    @secure_access_aws_native_cli.setter
+    def secure_access_aws_native_cli(self, secure_access_aws_native_cli):
+        """Sets the secure_access_aws_native_cli of this CreateRotatedSecret.
+
+        Secure Access Aws Native Cli (used in aws)  # noqa: E501
+
+        :param secure_access_aws_native_cli: The secure_access_aws_native_cli of this CreateRotatedSecret.  # noqa: E501
+        :type: bool
+        """
+
+        self._secure_access_aws_native_cli = secure_access_aws_native_cli
+
+    @property
+    def secure_access_bastion_issuer(self):
+        """Gets the secure_access_bastion_issuer of this CreateRotatedSecret.  # noqa: E501
+
+        Secure Access Bastion Issuer  # noqa: E501
+
+        :return: The secure_access_bastion_issuer of this CreateRotatedSecret.  # noqa: E501
+        :rtype: str
+        """
+        return self._secure_access_bastion_issuer
+
+    @secure_access_bastion_issuer.setter
+    def secure_access_bastion_issuer(self, secure_access_bastion_issuer):
+        """Sets the secure_access_bastion_issuer of this CreateRotatedSecret.
+
+        Secure Access Bastion Issuer  # noqa: E501
+
+        :param secure_access_bastion_issuer: The secure_access_bastion_issuer of this CreateRotatedSecret.  # noqa: E501
+        :type: str
+        """
+
+        self._secure_access_bastion_issuer = secure_access_bastion_issuer
+
+    @property
+    def secure_access_db_name(self):
+        """Gets the secure_access_db_name of this CreateRotatedSecret.  # noqa: E501
+
+        Secure Access DB Name (used in data bases)  # noqa: E501
+
+        :return: The secure_access_db_name of this CreateRotatedSecret.  # noqa: E501
+        :rtype: str
+        """
+        return self._secure_access_db_name
+
+    @secure_access_db_name.setter
+    def secure_access_db_name(self, secure_access_db_name):
+        """Sets the secure_access_db_name of this CreateRotatedSecret.
+
+        Secure Access DB Name (used in data bases)  # noqa: E501
+
+        :param secure_access_db_name: The secure_access_db_name of this CreateRotatedSecret.  # noqa: E501
+        :type: str
+        """
+
+        self._secure_access_db_name = secure_access_db_name
+
+    @property
+    def secure_access_db_schema(self):
+        """Gets the secure_access_db_schema of this CreateRotatedSecret.  # noqa: E501
+
+        Secure Access Schema (used in mssql, postgresql)  # noqa: E501
+
+        :return: The secure_access_db_schema of this CreateRotatedSecret.  # noqa: E501
+        :rtype: str
+        """
+        return self._secure_access_db_schema
+
+    @secure_access_db_schema.setter
+    def secure_access_db_schema(self, secure_access_db_schema):
+        """Sets the secure_access_db_schema of this CreateRotatedSecret.
+
+        Secure Access Schema (used in mssql, postgresql)  # noqa: E501
+
+        :param secure_access_db_schema: The secure_access_db_schema of this CreateRotatedSecret.  # noqa: E501
+        :type: str
+        """
+
+        self._secure_access_db_schema = secure_access_db_schema
+
+    @property
+    def secure_access_enable(self):
+        """Gets the secure_access_enable of this CreateRotatedSecret.  # noqa: E501
+
+        Secure Access Enabled  # noqa: E501
+
+        :return: The secure_access_enable of this CreateRotatedSecret.  # noqa: E501
+        :rtype: str
+        """
+        return self._secure_access_enable
+
+    @secure_access_enable.setter
+    def secure_access_enable(self, secure_access_enable):
+        """Sets the secure_access_enable of this CreateRotatedSecret.
+
+        Secure Access Enabled  # noqa: E501
+
+        :param secure_access_enable: The secure_access_enable of this CreateRotatedSecret.  # noqa: E501
+        :type: str
+        """
+
+        self._secure_access_enable = secure_access_enable
+
+    @property
+    def secure_access_host(self):
+        """Gets the secure_access_host of this CreateRotatedSecret.  # noqa: E501
+
+        Secure Access Host  # noqa: E501
+
+        :return: The secure_access_host of this CreateRotatedSecret.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._secure_access_host
+
+    @secure_access_host.setter
+    def secure_access_host(self, secure_access_host):
+        """Sets the secure_access_host of this CreateRotatedSecret.
+
+        Secure Access Host  # noqa: E501
+
+        :param secure_access_host: The secure_access_host of this CreateRotatedSecret.  # noqa: E501
+        :type: list[str]
+        """
+
+        self._secure_access_host = secure_access_host
+
+    @property
+    def secure_access_rdp_domain(self):
+        """Gets the secure_access_rdp_domain of this CreateRotatedSecret.  # noqa: E501
+
+        Secure Access Domain (used in ssh)  # noqa: E501
+
+        :return: The secure_access_rdp_domain of this CreateRotatedSecret.  # noqa: E501
+        :rtype: str
+        """
+        return self._secure_access_rdp_domain
+
+    @secure_access_rdp_domain.setter
+    def secure_access_rdp_domain(self, secure_access_rdp_domain):
+        """Sets the secure_access_rdp_domain of this CreateRotatedSecret.
+
+        Secure Access Domain (used in ssh)  # noqa: E501
+
+        :param secure_access_rdp_domain: The secure_access_rdp_domain of this CreateRotatedSecret.  # noqa: E501
+        :type: str
+        """
+
+        self._secure_access_rdp_domain = secure_access_rdp_domain
+
+    @property
+    def secure_access_rdp_user(self):
+        """Gets the secure_access_rdp_user of this CreateRotatedSecret.  # noqa: E501
+
+        Secure Access Override User (used in ssh)  # noqa: E501
+
+        :return: The secure_access_rdp_user of this CreateRotatedSecret.  # noqa: E501
+        :rtype: str
+        """
+        return self._secure_access_rdp_user
+
+    @secure_access_rdp_user.setter
+    def secure_access_rdp_user(self, secure_access_rdp_user):
+        """Sets the secure_access_rdp_user of this CreateRotatedSecret.
+
+        Secure Access Override User (used in ssh)  # noqa: E501
+
+        :param secure_access_rdp_user: The secure_access_rdp_user of this CreateRotatedSecret.  # noqa: E501
+        :type: str
+        """
+
+        self._secure_access_rdp_user = secure_access_rdp_user
+
+    @property
+    def secure_access_web(self):
+        """Gets the secure_access_web of this CreateRotatedSecret.  # noqa: E501
+
+        Secure Access Web  # noqa: E501
+
+        :return: The secure_access_web of this CreateRotatedSecret.  # noqa: E501
+        :rtype: bool
+        """
+        return self._secure_access_web
+
+    @secure_access_web.setter
+    def secure_access_web(self, secure_access_web):
+        """Sets the secure_access_web of this CreateRotatedSecret.
+
+        Secure Access Web  # noqa: E501
+
+        :param secure_access_web: The secure_access_web of this CreateRotatedSecret.  # noqa: E501
+        :type: bool
+        """
+
+        self._secure_access_web = secure_access_web
+
+    @property
+    def secure_access_web_browsing(self):
+        """Gets the secure_access_web_browsing of this CreateRotatedSecret.  # noqa: E501
+
+        Secure Access Isolated (used in aws, azure)  # noqa: E501
+
+        :return: The secure_access_web_browsing of this CreateRotatedSecret.  # noqa: E501
+        :rtype: bool
+        """
+        return self._secure_access_web_browsing
+
+    @secure_access_web_browsing.setter
+    def secure_access_web_browsing(self, secure_access_web_browsing):
+        """Sets the secure_access_web_browsing of this CreateRotatedSecret.
+
+        Secure Access Isolated (used in aws, azure)  # noqa: E501
+
+        :param secure_access_web_browsing: The secure_access_web_browsing of this CreateRotatedSecret.  # noqa: E501
+        :type: bool
+        """
+
+        self._secure_access_web_browsing = secure_access_web_browsing
+
+    @property
+    def secure_access_web_proxy(self):
+        """Gets the secure_access_web_proxy of this CreateRotatedSecret.  # noqa: E501
+
+        Secure Access Web Proxy (used in aws, azure)  # noqa: E501
+
+        :return: The secure_access_web_proxy of this CreateRotatedSecret.  # noqa: E501
+        :rtype: bool
+        """
+        return self._secure_access_web_proxy
+
+    @secure_access_web_proxy.setter
+    def secure_access_web_proxy(self, secure_access_web_proxy):
+        """Sets the secure_access_web_proxy of this CreateRotatedSecret.
+
+        Secure Access Web Proxy (used in aws, azure)  # noqa: E501
+
+        :param secure_access_web_proxy: The secure_access_web_proxy of this CreateRotatedSecret.  # noqa: E501
+        :type: bool
+        """
+
+        self._secure_access_web_proxy = secure_access_web_proxy
 
     @property
     def ssh_password(self):
