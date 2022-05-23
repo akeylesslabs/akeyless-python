@@ -34,6 +34,7 @@ class DynamicSecretProducerInfo(object):
                             and the value is json key in definition.
     """
     openapi_types = {
+        'failure_message': 'str',
         'gw_cluster_id': 'int',
         'producer_last_keep_alive': 'str',
         'producer_metadata': 'str',
@@ -42,6 +43,7 @@ class DynamicSecretProducerInfo(object):
     }
 
     attribute_map = {
+        'failure_message': 'failure_message',
         'gw_cluster_id': 'gw_cluster_id',
         'producer_last_keep_alive': 'producer_last_keep_alive',
         'producer_metadata': 'producer_metadata',
@@ -49,12 +51,13 @@ class DynamicSecretProducerInfo(object):
         'producer_type': 'producer_type'
     }
 
-    def __init__(self, gw_cluster_id=None, producer_last_keep_alive=None, producer_metadata=None, producer_status=None, producer_type=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, failure_message=None, gw_cluster_id=None, producer_last_keep_alive=None, producer_metadata=None, producer_status=None, producer_type=None, local_vars_configuration=None):  # noqa: E501
         """DynamicSecretProducerInfo - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
+        self._failure_message = None
         self._gw_cluster_id = None
         self._producer_last_keep_alive = None
         self._producer_metadata = None
@@ -62,6 +65,8 @@ class DynamicSecretProducerInfo(object):
         self._producer_type = None
         self.discriminator = None
 
+        if failure_message is not None:
+            self.failure_message = failure_message
         if gw_cluster_id is not None:
             self.gw_cluster_id = gw_cluster_id
         if producer_last_keep_alive is not None:
@@ -72,6 +77,27 @@ class DynamicSecretProducerInfo(object):
             self.producer_status = producer_status
         if producer_type is not None:
             self.producer_type = producer_type
+
+    @property
+    def failure_message(self):
+        """Gets the failure_message of this DynamicSecretProducerInfo.  # noqa: E501
+
+
+        :return: The failure_message of this DynamicSecretProducerInfo.  # noqa: E501
+        :rtype: str
+        """
+        return self._failure_message
+
+    @failure_message.setter
+    def failure_message(self, failure_message):
+        """Sets the failure_message of this DynamicSecretProducerInfo.
+
+
+        :param failure_message: The failure_message of this DynamicSecretProducerInfo.  # noqa: E501
+        :type: str
+        """
+
+        self._failure_message = failure_message
 
     @property
     def gw_cluster_id(self):

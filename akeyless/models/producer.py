@@ -35,6 +35,7 @@ class Producer(object):
     """
     openapi_types = {
         'active': 'bool',
+        'failure_message': 'str',
         'id': 'int',
         'init': 'bool',
         'name': 'str',
@@ -43,19 +44,21 @@ class Producer(object):
 
     attribute_map = {
         'active': 'active',
+        'failure_message': 'failure_message',
         'id': 'id',
         'init': 'init',
         'name': 'name',
         'type': 'type'
     }
 
-    def __init__(self, active=None, id=None, init=None, name=None, type=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, active=None, failure_message=None, id=None, init=None, name=None, type=None, local_vars_configuration=None):  # noqa: E501
         """Producer - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._active = None
+        self._failure_message = None
         self._id = None
         self._init = None
         self._name = None
@@ -64,6 +67,8 @@ class Producer(object):
 
         if active is not None:
             self.active = active
+        if failure_message is not None:
+            self.failure_message = failure_message
         if id is not None:
             self.id = id
         if init is not None:
@@ -93,6 +98,27 @@ class Producer(object):
         """
 
         self._active = active
+
+    @property
+    def failure_message(self):
+        """Gets the failure_message of this Producer.  # noqa: E501
+
+
+        :return: The failure_message of this Producer.  # noqa: E501
+        :rtype: str
+        """
+        return self._failure_message
+
+    @failure_message.setter
+    def failure_message(self, failure_message):
+        """Sets the failure_message of this Producer.
+
+
+        :param failure_message: The failure_message of this Producer.  # noqa: E501
+        :type: str
+        """
+
+        self._failure_message = failure_message
 
     @property
     def id(self):

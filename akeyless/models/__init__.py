@@ -118,6 +118,8 @@ from akeyless.models.create_salesforce_target_output import CreateSalesforceTarg
 from akeyless.models.create_secret import CreateSecret
 from akeyless.models.create_secret_output import CreateSecretOutput
 from akeyless.models.create_target_item_assoc_output import CreateTargetItemAssocOutput
+from akeyless.models.create_tokenizer import CreateTokenizer
+from akeyless.models.create_tokenizer_output import CreateTokenizerOutput
 from akeyless.models.create_web_target import CreateWebTarget
 from akeyless.models.create_web_target_output import CreateWebTargetOutput
 from akeyless.models.customer_fragment import CustomerFragment
@@ -153,9 +155,12 @@ from akeyless.models.delete_targets import DeleteTargets
 from akeyless.models.describe_item import DescribeItem
 from akeyless.models.describe_permissions import DescribePermissions
 from akeyless.models.describe_permissions_output import DescribePermissionsOutput
+from akeyless.models.detokenize import Detokenize
+from akeyless.models.detokenize_output import DetokenizeOutput
 from akeyless.models.dynamic_secret_producer_info import DynamicSecretProducerInfo
 from akeyless.models.elasticsearch_log_forwarding_config import ElasticsearchLogForwardingConfig
 from akeyless.models.email_pass_access_rules import EmailPassAccessRules
+from akeyless.models.email_tokenizer_info import EmailTokenizerInfo
 from akeyless.models.encrypt import Encrypt
 from akeyless.models.encrypt_file import EncryptFile
 from akeyless.models.encrypt_file_output import EncryptFileOutput
@@ -399,6 +404,7 @@ from akeyless.models.producers_config_part import ProducersConfigPart
 from akeyless.models.raw_creds import RawCreds
 from akeyless.models.refresh_key import RefreshKey
 from akeyless.models.refresh_key_output import RefreshKeyOutput
+from akeyless.models.regexp_tokenizer_info import RegexpTokenizerInfo
 from akeyless.models.required_activity import RequiredActivity
 from akeyless.models.reverse_rbac import ReverseRBAC
 from akeyless.models.reverse_rbac_client import ReverseRBACClient
@@ -410,7 +416,9 @@ from akeyless.models.rollback_secret import RollbackSecret
 from akeyless.models.rollback_secret_output import RollbackSecretOutput
 from akeyless.models.rotate_key import RotateKey
 from akeyless.models.rotate_key_output import RotateKeyOutput
+from akeyless.models.rotate_secret import RotateSecret
 from akeyless.models.rotated_secret_details_info import RotatedSecretDetailsInfo
+from akeyless.models.rotated_secret_output import RotatedSecretOutput
 from akeyless.models.rotator import Rotator
 from akeyless.models.rotators_config_part import RotatorsConfigPart
 from akeyless.models.rules import Rules
@@ -440,6 +448,9 @@ from akeyless.models.target_item_association import TargetItemAssociation
 from akeyless.models.target_item_version import TargetItemVersion
 from akeyless.models.target_type_details_input import TargetTypeDetailsInput
 from akeyless.models.tmp_user_data import TmpUserData
+from akeyless.models.tokenize import Tokenize
+from akeyless.models.tokenize_output import TokenizeOutput
+from akeyless.models.tokenizer_info import TokenizerInfo
 from akeyless.models.uid_token_details import UIDTokenDetails
 from akeyless.models.uid_create_child_token import UidCreateChildToken
 from akeyless.models.uid_create_child_token_output import UidCreateChildTokenOutput
@@ -517,6 +528,8 @@ from akeyless.models.update_secret_val_output import UpdateSecretValOutput
 from akeyless.models.update_target import UpdateTarget
 from akeyless.models.update_target_details_output import UpdateTargetDetailsOutput
 from akeyless.models.update_target_output import UpdateTargetOutput
+from akeyless.models.update_tokenizer import UpdateTokenizer
+from akeyless.models.update_tokenizer_output import UpdateTokenizerOutput
 from akeyless.models.update_web_target import UpdateWebTarget
 from akeyless.models.update_web_target_details import UpdateWebTargetDetails
 from akeyless.models.update_web_target_output import UpdateWebTargetOutput
@@ -524,6 +537,7 @@ from akeyless.models.upload_pkcs12 import UploadPKCS12
 from akeyless.models.upload_rsa import UploadRSA
 from akeyless.models.validate_token import ValidateToken
 from akeyless.models.validate_token_output import ValidateTokenOutput
+from akeyless.models.vaultless_tokenizer_info import VaultlessTokenizerInfo
 from akeyless.models.verify_jwt_output import VerifyJWTOutput
 from akeyless.models.verify_jwt_with_classic_key import VerifyJWTWithClassicKey
 from akeyless.models.verify_pkcs1 import VerifyPKCS1

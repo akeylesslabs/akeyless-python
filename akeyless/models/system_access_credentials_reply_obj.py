@@ -37,6 +37,7 @@ class SystemAccessCredentialsReplyObj(object):
         'auth_creds': 'str',
         'expiry': 'int',
         'kfm_creds': 'str',
+        'token': 'str',
         'uam_creds': 'str'
     }
 
@@ -44,10 +45,11 @@ class SystemAccessCredentialsReplyObj(object):
         'auth_creds': 'auth_creds',
         'expiry': 'expiry',
         'kfm_creds': 'kfm_creds',
+        'token': 'token',
         'uam_creds': 'uam_creds'
     }
 
-    def __init__(self, auth_creds=None, expiry=None, kfm_creds=None, uam_creds=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, auth_creds=None, expiry=None, kfm_creds=None, token=None, uam_creds=None, local_vars_configuration=None):  # noqa: E501
         """SystemAccessCredentialsReplyObj - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -56,6 +58,7 @@ class SystemAccessCredentialsReplyObj(object):
         self._auth_creds = None
         self._expiry = None
         self._kfm_creds = None
+        self._token = None
         self._uam_creds = None
         self.discriminator = None
 
@@ -65,6 +68,8 @@ class SystemAccessCredentialsReplyObj(object):
             self.expiry = expiry
         if kfm_creds is not None:
             self.kfm_creds = kfm_creds
+        if token is not None:
+            self.token = token
         if uam_creds is not None:
             self.uam_creds = uam_creds
 
@@ -136,6 +141,29 @@ class SystemAccessCredentialsReplyObj(object):
         """
 
         self._kfm_creds = kfm_creds
+
+    @property
+    def token(self):
+        """Gets the token of this SystemAccessCredentialsReplyObj.  # noqa: E501
+
+        Credentials tmp token  # noqa: E501
+
+        :return: The token of this SystemAccessCredentialsReplyObj.  # noqa: E501
+        :rtype: str
+        """
+        return self._token
+
+    @token.setter
+    def token(self, token):
+        """Sets the token of this SystemAccessCredentialsReplyObj.
+
+        Credentials tmp token  # noqa: E501
+
+        :param token: The token of this SystemAccessCredentialsReplyObj.  # noqa: E501
+        :type: str
+        """
+
+        self._token = token
 
     @property
     def uam_creds(self):
