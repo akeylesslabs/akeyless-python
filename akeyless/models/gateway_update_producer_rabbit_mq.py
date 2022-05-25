@@ -47,6 +47,7 @@ class GatewayUpdateProducerRabbitMQ(object):
         'rabbitmq_user_write_permission': 'str',
         'secure_access_enable': 'str',
         'secure_access_url': 'str',
+        'secure_access_web': 'bool',
         'secure_access_web_browsing': 'bool',
         'secure_access_web_proxy': 'bool',
         'tags': 'list[str]',
@@ -70,6 +71,7 @@ class GatewayUpdateProducerRabbitMQ(object):
         'rabbitmq_user_write_permission': 'rabbitmq-user-write-permission',
         'secure_access_enable': 'secure-access-enable',
         'secure_access_url': 'secure-access-url',
+        'secure_access_web': 'secure-access-web',
         'secure_access_web_browsing': 'secure-access-web-browsing',
         'secure_access_web_proxy': 'secure-access-web-proxy',
         'tags': 'tags',
@@ -79,7 +81,7 @@ class GatewayUpdateProducerRabbitMQ(object):
         'user_ttl': 'user-ttl'
     }
 
-    def __init__(self, name=None, new_name=None, producer_encryption_key_name=None, rabbitmq_admin_pwd=None, rabbitmq_admin_user=None, rabbitmq_server_uri=None, rabbitmq_user_conf_permission=None, rabbitmq_user_read_permission=None, rabbitmq_user_tags=None, rabbitmq_user_vhost=None, rabbitmq_user_write_permission=None, secure_access_enable=None, secure_access_url=None, secure_access_web_browsing=None, secure_access_web_proxy=None, tags=None, target_name=None, token=None, uid_token=None, user_ttl='60m', local_vars_configuration=None):  # noqa: E501
+    def __init__(self, name=None, new_name=None, producer_encryption_key_name=None, rabbitmq_admin_pwd=None, rabbitmq_admin_user=None, rabbitmq_server_uri=None, rabbitmq_user_conf_permission=None, rabbitmq_user_read_permission=None, rabbitmq_user_tags=None, rabbitmq_user_vhost=None, rabbitmq_user_write_permission=None, secure_access_enable=None, secure_access_url=None, secure_access_web=True, secure_access_web_browsing=None, secure_access_web_proxy=None, tags=None, target_name=None, token=None, uid_token=None, user_ttl='60m', local_vars_configuration=None):  # noqa: E501
         """GatewayUpdateProducerRabbitMQ - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -98,6 +100,7 @@ class GatewayUpdateProducerRabbitMQ(object):
         self._rabbitmq_user_write_permission = None
         self._secure_access_enable = None
         self._secure_access_url = None
+        self._secure_access_web = None
         self._secure_access_web_browsing = None
         self._secure_access_web_proxy = None
         self._tags = None
@@ -132,6 +135,8 @@ class GatewayUpdateProducerRabbitMQ(object):
             self.secure_access_enable = secure_access_enable
         if secure_access_url is not None:
             self.secure_access_url = secure_access_url
+        if secure_access_web is not None:
+            self.secure_access_web = secure_access_web
         if secure_access_web_browsing is not None:
             self.secure_access_web_browsing = secure_access_web_browsing
         if secure_access_web_proxy is not None:
@@ -443,6 +448,29 @@ class GatewayUpdateProducerRabbitMQ(object):
         """
 
         self._secure_access_url = secure_access_url
+
+    @property
+    def secure_access_web(self):
+        """Gets the secure_access_web of this GatewayUpdateProducerRabbitMQ.  # noqa: E501
+
+        Secure Access Web Category  # noqa: E501
+
+        :return: The secure_access_web of this GatewayUpdateProducerRabbitMQ.  # noqa: E501
+        :rtype: bool
+        """
+        return self._secure_access_web
+
+    @secure_access_web.setter
+    def secure_access_web(self, secure_access_web):
+        """Sets the secure_access_web of this GatewayUpdateProducerRabbitMQ.
+
+        Secure Access Web Category  # noqa: E501
+
+        :param secure_access_web: The secure_access_web of this GatewayUpdateProducerRabbitMQ.  # noqa: E501
+        :type: bool
+        """
+
+        self._secure_access_web = secure_access_web
 
     @property
     def secure_access_web_browsing(self):

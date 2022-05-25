@@ -4,6 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **filter** | **str** | Filter by item name or part of it | [optional] 
+**minimal_view** | **bool** |  | [optional] 
 **pagination_token** | **str** | Next page reference | [optional] 
 **path** | **str** | Path to folder | [optional] 
 **tag** | **str** | Filter by item tag | [optional] 

@@ -154,7 +154,7 @@ class SetRoleRule(object):
     def rule_type(self):
         """Gets the rule_type of this SetRoleRule.  # noqa: E501
 
-        item-rule, target-rule, role-rule, auth-method-rule, search-rule or reports-rule  # noqa: E501
+        item-rule, target-rule, role-rule, auth-method-rule, search-rule, reports-rule, gw-reports-rule or sra-reports-rule  # noqa: E501
 
         :return: The rule_type of this SetRoleRule.  # noqa: E501
         :rtype: str
@@ -165,7 +165,7 @@ class SetRoleRule(object):
     def rule_type(self, rule_type):
         """Sets the rule_type of this SetRoleRule.
 
-        item-rule, target-rule, role-rule, auth-method-rule, search-rule or reports-rule  # noqa: E501
+        item-rule, target-rule, role-rule, auth-method-rule, search-rule, reports-rule, gw-reports-rule or sra-reports-rule  # noqa: E501
 
         :param rule_type: The rule_type of this SetRoleRule.  # noqa: E501
         :type: str

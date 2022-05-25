@@ -68,6 +68,7 @@ class UpdateRotatedSecret(object):
         'secure_access_web_proxy': 'bool',
         'ssh_password': 'str',
         'ssh_username': 'str',
+        'storage_account_key_name': 'str',
         'token': 'str',
         'uid_token': 'str'
     }
@@ -107,11 +108,12 @@ class UpdateRotatedSecret(object):
         'secure_access_web_proxy': 'secure-access-web-proxy',
         'ssh_password': 'ssh-password',
         'ssh_username': 'ssh-username',
+        'storage_account_key_name': 'storage-account-key-name',
         'token': 'token',
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, add_tag=None, api_id=None, api_key=None, auto_rotate=None, aws_region='us-east-2', custom_payload=None, keep_prev_version=None, key=None, name=None, new_metadata='default_metadata', new_name=None, new_version=None, rm_tag=None, rotated_password=None, rotated_username=None, rotation_hour=None, rotation_interval=None, rotator_creds_type=None, rotator_custom_cmd=None, secure_access_allow_external_user=False, secure_access_aws_account_id=None, secure_access_aws_native_cli=None, secure_access_bastion_issuer=None, secure_access_db_name=None, secure_access_db_schema=None, secure_access_enable=None, secure_access_host=None, secure_access_rdp_domain=None, secure_access_rdp_user=None, secure_access_web=False, secure_access_web_browsing=False, secure_access_web_proxy=False, ssh_password=None, ssh_username=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, add_tag=None, api_id=None, api_key=None, auto_rotate=None, aws_region='us-east-2', custom_payload=None, keep_prev_version=None, key=None, name=None, new_metadata='default_metadata', new_name=None, new_version=None, rm_tag=None, rotated_password=None, rotated_username=None, rotation_hour=None, rotation_interval=None, rotator_creds_type=None, rotator_custom_cmd=None, secure_access_allow_external_user=False, secure_access_aws_account_id=None, secure_access_aws_native_cli=None, secure_access_bastion_issuer=None, secure_access_db_name=None, secure_access_db_schema=None, secure_access_enable=None, secure_access_host=None, secure_access_rdp_domain=None, secure_access_rdp_user=None, secure_access_web=False, secure_access_web_browsing=False, secure_access_web_proxy=False, ssh_password=None, ssh_username=None, storage_account_key_name=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """UpdateRotatedSecret - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -151,6 +153,7 @@ class UpdateRotatedSecret(object):
         self._secure_access_web_proxy = None
         self._ssh_password = None
         self._ssh_username = None
+        self._storage_account_key_name = None
         self._token = None
         self._uid_token = None
         self.discriminator = None
@@ -222,6 +225,8 @@ class UpdateRotatedSecret(object):
             self.ssh_password = ssh_password
         if ssh_username is not None:
             self.ssh_username = ssh_username
+        if storage_account_key_name is not None:
+            self.storage_account_key_name = storage_account_key_name
         if token is not None:
             self.token = token
         if uid_token is not None:
@@ -992,6 +997,29 @@ class UpdateRotatedSecret(object):
         """
 
         self._ssh_username = ssh_username
+
+    @property
+    def storage_account_key_name(self):
+        """Gets the storage_account_key_name of this UpdateRotatedSecret.  # noqa: E501
+
+        The name of the storage account key to rotate [key1/key2/kerb1/kerb2]  # noqa: E501
+
+        :return: The storage_account_key_name of this UpdateRotatedSecret.  # noqa: E501
+        :rtype: str
+        """
+        return self._storage_account_key_name
+
+    @storage_account_key_name.setter
+    def storage_account_key_name(self, storage_account_key_name):
+        """Sets the storage_account_key_name of this UpdateRotatedSecret.
+
+        The name of the storage account key to rotate [key1/key2/kerb1/kerb2]  # noqa: E501
+
+        :param storage_account_key_name: The storage_account_key_name of this UpdateRotatedSecret.  # noqa: E501
+        :type: str
+        """
+
+        self._storage_account_key_name = storage_account_key_name
 
     @property
     def token(self):

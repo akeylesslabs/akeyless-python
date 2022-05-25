@@ -3,6 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**attributes** | **dict(str, object)** | this is not \&quot;omitempty\&quot; since an empty value causes no update while an empty map will clear the attributes | [optional] 
 **client_permissions** | **list[str]** |  | [optional] 
 **comment** | **str** |  | [optional] 
 **last_version** | **int** |  | [optional] 

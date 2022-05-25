@@ -35,6 +35,7 @@ class ListItems(object):
     """
     openapi_types = {
         'filter': 'str',
+        'minimal_view': 'bool',
         'pagination_token': 'str',
         'path': 'str',
         'tag': 'str',
@@ -45,6 +46,7 @@ class ListItems(object):
 
     attribute_map = {
         'filter': 'filter',
+        'minimal_view': 'minimal-view',
         'pagination_token': 'pagination-token',
         'path': 'path',
         'tag': 'tag',
@@ -53,13 +55,14 @@ class ListItems(object):
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, filter=None, pagination_token=None, path=None, tag=None, token=None, type=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, filter=None, minimal_view=None, pagination_token=None, path=None, tag=None, token=None, type=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """ListItems - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._filter = None
+        self._minimal_view = None
         self._pagination_token = None
         self._path = None
         self._tag = None
@@ -70,6 +73,8 @@ class ListItems(object):
 
         if filter is not None:
             self.filter = filter
+        if minimal_view is not None:
+            self.minimal_view = minimal_view
         if pagination_token is not None:
             self.pagination_token = pagination_token
         if path is not None:
@@ -105,6 +110,27 @@ class ListItems(object):
         """
 
         self._filter = filter
+
+    @property
+    def minimal_view(self):
+        """Gets the minimal_view of this ListItems.  # noqa: E501
+
+
+        :return: The minimal_view of this ListItems.  # noqa: E501
+        :rtype: bool
+        """
+        return self._minimal_view
+
+    @minimal_view.setter
+    def minimal_view(self, minimal_view):
+        """Sets the minimal_view of this ListItems.
+
+
+        :param minimal_view: The minimal_view of this ListItems.  # noqa: E501
+        :type: bool
+        """
+
+        self._minimal_view = minimal_view
 
     @property
     def pagination_token(self):

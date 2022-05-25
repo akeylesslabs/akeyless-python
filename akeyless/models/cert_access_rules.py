@@ -40,7 +40,7 @@ class CertAccessRules(object):
         'bound_extensions': 'list[str]',
         'bound_organizational_units': 'list[str]',
         'bound_uri_sans': 'list[str]',
-        'certificate': 'list[int]',
+        'certificate': 'str',
         'revoked_cert_ids': 'list[str]',
         'unique_identifier': 'str'
     }
@@ -238,7 +238,7 @@ class CertAccessRules(object):
         Base64 encdoed PEM certificate  # noqa: E501
 
         :return: The certificate of this CertAccessRules.  # noqa: E501
-        :rtype: list[int]
+        :rtype: str
         """
         return self._certificate
 
@@ -249,7 +249,7 @@ class CertAccessRules(object):
         Base64 encdoed PEM certificate  # noqa: E501
 
         :param certificate: The certificate of this CertAccessRules.  # noqa: E501
-        :type: list[int]
+        :type: str
         """
 
         self._certificate = certificate

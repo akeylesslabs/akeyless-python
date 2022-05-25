@@ -210,6 +210,8 @@ Method | HTTP request | Description
 [**update_github_target**](V2Api.md#update_github_target) | **POST** /update-github-target | 
 [**update_gke_target**](V2Api.md#update_gke_target) | **POST** /update-gke-target | 
 [**update_item**](V2Api.md#update_item) | **POST** /update-item | 
+[**update_ldap_target**](V2Api.md#update_ldap_target) | **POST** /update-ldap-target | 
+[**update_ldap_target_details**](V2Api.md#update_ldap_target_details) | **POST** /update-ldap-target-details | 
 [**update_native_k8_s_target**](V2Api.md#update_native_k8_s_target) | **POST** /update-k8s-target | 
 [**update_pki_cert_issuer**](V2Api.md#update_pki_cert_issuer) | **POST** /update-pki-cert-issuer | 
 [**update_rabbit_mq_target**](V2Api.md#update_rabbit_mq_target) | **POST** /update-rabbitmq-target | 
@@ -12582,6 +12584,126 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | updateItemResponse wraps response body. |  -  |
+**0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **update_ldap_target**
+> UpdateLdapTargetOutput update_ldap_target(body)
+
+
+
+### Example
+
+```python
+from __future__ import print_function
+import time
+import akeyless
+from akeyless.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.akeyless.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = akeyless.Configuration(
+    host = "https://api.akeyless.io"
+)
+
+
+# Enter a context with an instance of the API client
+with akeyless.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = akeyless.V2Api(api_client)
+    body = akeyless.UpdateLdapTarget() # UpdateLdapTarget | 
+
+    try:
+        api_response = api_instance.update_ldap_target(body)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling V2Api->update_ldap_target: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**UpdateLdapTarget**](UpdateLdapTarget.md)|  | 
+
+### Return type
+
+[**UpdateLdapTargetOutput**](UpdateLdapTargetOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | updateLdapTargetResponse wraps response body. |  -  |
+**0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **update_ldap_target_details**
+> UpdateTargetOutput update_ldap_target_details(body)
+
+
+
+### Example
+
+```python
+from __future__ import print_function
+import time
+import akeyless
+from akeyless.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.akeyless.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = akeyless.Configuration(
+    host = "https://api.akeyless.io"
+)
+
+
+# Enter a context with an instance of the API client
+with akeyless.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = akeyless.V2Api(api_client)
+    body = akeyless.UpdateLdapTargetDetails() # UpdateLdapTargetDetails | 
+
+    try:
+        api_response = api_instance.update_ldap_target_details(body)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling V2Api->update_ldap_target_details: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**UpdateLdapTargetDetails**](UpdateLdapTargetDetails.md)|  | 
+
+### Return type
+
+[**UpdateTargetOutput**](UpdateTargetOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | updateTargetResponse wraps response body. |  -  |
 **0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

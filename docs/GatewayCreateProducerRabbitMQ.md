@@ -16,6 +16,7 @@ Name | Type | Description | Notes
 **rabbitmq_user_write_permission** | **str** | User write permission | [optional] 
 **secure_access_enable** | **str** |  | [optional] 
 **secure_access_url** | **str** |  | [optional] 
+**secure_access_web** | **bool** | Secure Access Web Category | [optional] [default to True]
 **secure_access_web_browsing** | **bool** |  | [optional] 
 **secure_access_web_proxy** | **bool** |  | [optional] 
 **tags** | **list[str]** | List of the tags attached to this secret | [optional] 

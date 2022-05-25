@@ -35,6 +35,7 @@ Name | Type | Description | Notes
 **secure_access_web_proxy** | **bool** | Secure Access Web Proxy (used in aws, azure) | [optional] [default to False]
 **ssh_password** | **str** | Deprecated: use RotatedPassword | [optional] 
 **ssh_username** | **str** | Deprecated: use RotatedUser | [optional] 
+**storage_account_key_name** | **str** | The name of the storage account key to rotate [key1/key2/kerb1/kerb2] (relevat to azure-storage-account) | [optional] 
 **tags** | **list[str]** | List of the tags attached to this secret | [optional] 
 **target_name** | **str** | Target name | 
 **token** | **str** | Authentication token (see &#x60;/auth&#x60; and &#x60;/configure&#x60;) | [optional] 

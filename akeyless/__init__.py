@@ -15,7 +15,7 @@
 
 from __future__ import absolute_import
 
-__version__ = "2.16.6"
+__version__ = "2.16.7"
 
 # import apis into sdk package
 from akeyless.api.v2_api import V2Api
@@ -516,6 +516,9 @@ from akeyless.models.update_github_target import UpdateGithubTarget
 from akeyless.models.update_github_target_output import UpdateGithubTargetOutput
 from akeyless.models.update_item import UpdateItem
 from akeyless.models.update_item_output import UpdateItemOutput
+from akeyless.models.update_ldap_target import UpdateLdapTarget
+from akeyless.models.update_ldap_target_details import UpdateLdapTargetDetails
+from akeyless.models.update_ldap_target_output import UpdateLdapTargetOutput
 from akeyless.models.update_native_k8_s_target import UpdateNativeK8STarget
 from akeyless.models.update_native_k8_s_target_output import UpdateNativeK8STargetOutput
 from akeyless.models.update_output import UpdateOutput

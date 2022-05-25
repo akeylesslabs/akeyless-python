@@ -44,6 +44,7 @@ class GatewayCreateProducerRedshift(object):
         'redshift_username': 'str',
         'secure_access_enable': 'str',
         'secure_access_host': 'list[str]',
+        'ssl': 'bool',
         'tags': 'list[str]',
         'target_name': 'str',
         'token': 'str',
@@ -62,6 +63,7 @@ class GatewayCreateProducerRedshift(object):
         'redshift_username': 'redshift-username',
         'secure_access_enable': 'secure-access-enable',
         'secure_access_host': 'secure-access-host',
+        'ssl': 'ssl',
         'tags': 'tags',
         'target_name': 'target-name',
         'token': 'token',
@@ -69,7 +71,7 @@ class GatewayCreateProducerRedshift(object):
         'user_ttl': 'user-ttl'
     }
 
-    def __init__(self, creation_statements=None, name=None, producer_encryption_key=None, redshift_db_name=None, redshift_host='127.0.0.1', redshift_password=None, redshift_port='5439', redshift_username=None, secure_access_enable=None, secure_access_host=None, tags=None, target_name=None, token=None, uid_token=None, user_ttl='60m', local_vars_configuration=None):  # noqa: E501
+    def __init__(self, creation_statements=None, name=None, producer_encryption_key=None, redshift_db_name=None, redshift_host='127.0.0.1', redshift_password=None, redshift_port='5439', redshift_username=None, secure_access_enable=None, secure_access_host=None, ssl=None, tags=None, target_name=None, token=None, uid_token=None, user_ttl='60m', local_vars_configuration=None):  # noqa: E501
         """GatewayCreateProducerRedshift - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -85,6 +87,7 @@ class GatewayCreateProducerRedshift(object):
         self._redshift_username = None
         self._secure_access_enable = None
         self._secure_access_host = None
+        self._ssl = None
         self._tags = None
         self._target_name = None
         self._token = None
@@ -111,6 +114,8 @@ class GatewayCreateProducerRedshift(object):
             self.secure_access_enable = secure_access_enable
         if secure_access_host is not None:
             self.secure_access_host = secure_access_host
+        if ssl is not None:
+            self.ssl = ssl
         if tags is not None:
             self.tags = tags
         if target_name is not None:
@@ -349,6 +354,29 @@ class GatewayCreateProducerRedshift(object):
         """
 
         self._secure_access_host = secure_access_host
+
+    @property
+    def ssl(self):
+        """Gets the ssl of this GatewayCreateProducerRedshift.  # noqa: E501
+
+        SSL connection mode  # noqa: E501
+
+        :return: The ssl of this GatewayCreateProducerRedshift.  # noqa: E501
+        :rtype: bool
+        """
+        return self._ssl
+
+    @ssl.setter
+    def ssl(self, ssl):
+        """Sets the ssl of this GatewayCreateProducerRedshift.
+
+        SSL connection mode  # noqa: E501
+
+        :param ssl: The ssl of this GatewayCreateProducerRedshift.  # noqa: E501
+        :type: bool
+        """
+
+        self._ssl = ssl
 
     @property
     def tags(self):

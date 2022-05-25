@@ -8,6 +8,9 @@ Name | Type | Description | Notes
 **comment** | **str** | Comment about the target | [optional] 
 **key** | **str** | The name of a key that used to encrypt the target secret value (if empty, the account default protectionKey key will be used) | [optional] 
 **name** | **str** | Target name | 
+**resource_group_name** | **str** | The Resource Group name in your Azure subscription | [optional] 
+**resource_name** | **str** | The name of the relevant Resource | [optional] 
+**subscription_id** | **str** | Azure Subscription Id | [optional] 
 **tenant_id** | **str** |  | [optional] 
 **token** | **str** | Authentication token (see &#x60;/auth&#x60; and &#x60;/configure&#x60;) | [optional] 
 **uid_token** | **str** | The universal identity token, Required only for universal_identity authentication | [optional] 

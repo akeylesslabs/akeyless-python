@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **bound_extensions** | **list[str]** | A list of extensions formatted as \&quot;oid:value\&quot;. Expects the extension value to be some type of ASN1 encoded string. All values must match. Supports globbing on \&quot;value\&quot;. | [optional] 
 **bound_organizational_units** | **list[str]** | A list of Organizational Units names. At least one must exist in the OU field. | [optional] 
 **bound_uri_sans** | **list[str]** | A list of URIs. At least one must exist in the SANs. Supports globbing. | [optional] 
-**certificate** | **list[int]** | Base64 encdoed PEM certificate | [optional] 
+**certificate** | **str** | Base64 encdoed PEM certificate | [optional] 
 **revoked_cert_ids** | **list[str]** | A list of revoked cert ids | [optional] 
 **unique_identifier** | **str** | A unique identifier to distinguish different users | [optional] 
 

@@ -39,6 +39,9 @@ class CreateAzureTarget(object):
         'comment': 'str',
         'key': 'str',
         'name': 'str',
+        'resource_group_name': 'str',
+        'resource_name': 'str',
+        'subscription_id': 'str',
         'tenant_id': 'str',
         'token': 'str',
         'uid_token': 'str',
@@ -51,13 +54,16 @@ class CreateAzureTarget(object):
         'comment': 'comment',
         'key': 'key',
         'name': 'name',
+        'resource_group_name': 'resource-group-name',
+        'resource_name': 'resource-name',
+        'subscription_id': 'subscription-id',
         'tenant_id': 'tenant-id',
         'token': 'token',
         'uid_token': 'uid-token',
         'use_gw_cloud_identity': 'use-gw-cloud-identity'
     }
 
-    def __init__(self, client_id=None, client_secret=None, comment=None, key=None, name=None, tenant_id=None, token=None, uid_token=None, use_gw_cloud_identity=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, client_id=None, client_secret=None, comment=None, key=None, name=None, resource_group_name=None, resource_name=None, subscription_id=None, tenant_id=None, token=None, uid_token=None, use_gw_cloud_identity=None, local_vars_configuration=None):  # noqa: E501
         """CreateAzureTarget - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -68,6 +74,9 @@ class CreateAzureTarget(object):
         self._comment = None
         self._key = None
         self._name = None
+        self._resource_group_name = None
+        self._resource_name = None
+        self._subscription_id = None
         self._tenant_id = None
         self._token = None
         self._uid_token = None
@@ -83,6 +92,12 @@ class CreateAzureTarget(object):
         if key is not None:
             self.key = key
         self.name = name
+        if resource_group_name is not None:
+            self.resource_group_name = resource_group_name
+        if resource_name is not None:
+            self.resource_name = resource_name
+        if subscription_id is not None:
+            self.subscription_id = subscription_id
         if tenant_id is not None:
             self.tenant_id = tenant_id
         if token is not None:
@@ -204,6 +219,75 @@ class CreateAzureTarget(object):
             raise ValueError("Invalid value for `name`, must not be `None`")  # noqa: E501
 
         self._name = name
+
+    @property
+    def resource_group_name(self):
+        """Gets the resource_group_name of this CreateAzureTarget.  # noqa: E501
+
+        The Resource Group name in your Azure subscription  # noqa: E501
+
+        :return: The resource_group_name of this CreateAzureTarget.  # noqa: E501
+        :rtype: str
+        """
+        return self._resource_group_name
+
+    @resource_group_name.setter
+    def resource_group_name(self, resource_group_name):
+        """Sets the resource_group_name of this CreateAzureTarget.
+
+        The Resource Group name in your Azure subscription  # noqa: E501
+
+        :param resource_group_name: The resource_group_name of this CreateAzureTarget.  # noqa: E501
+        :type: str
+        """
+
+        self._resource_group_name = resource_group_name
+
+    @property
+    def resource_name(self):
+        """Gets the resource_name of this CreateAzureTarget.  # noqa: E501
+
+        The name of the relevant Resource  # noqa: E501
+
+        :return: The resource_name of this CreateAzureTarget.  # noqa: E501
+        :rtype: str
+        """
+        return self._resource_name
+
+    @resource_name.setter
+    def resource_name(self, resource_name):
+        """Sets the resource_name of this CreateAzureTarget.
+
+        The name of the relevant Resource  # noqa: E501
+
+        :param resource_name: The resource_name of this CreateAzureTarget.  # noqa: E501
+        :type: str
+        """
+
+        self._resource_name = resource_name
+
+    @property
+    def subscription_id(self):
+        """Gets the subscription_id of this CreateAzureTarget.  # noqa: E501
+
+        Azure Subscription Id  # noqa: E501
+
+        :return: The subscription_id of this CreateAzureTarget.  # noqa: E501
+        :rtype: str
+        """
+        return self._subscription_id
+
+    @subscription_id.setter
+    def subscription_id(self, subscription_id):
+        """Sets the subscription_id of this CreateAzureTarget.
+
+        Azure Subscription Id  # noqa: E501
+
+        :param subscription_id: The subscription_id of this CreateAzureTarget.  # noqa: E501
+        :type: str
+        """
+
+        self._subscription_id = subscription_id
 
     @property
     def tenant_id(self):

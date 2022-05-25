@@ -34,6 +34,7 @@ class Target(object):
                             and the value is json key in definition.
     """
     openapi_types = {
+        'attributes': 'dict(str, object)',
         'client_permissions': 'list[str]',
         'comment': 'str',
         'last_version': 'int',
@@ -47,6 +48,7 @@ class Target(object):
     }
 
     attribute_map = {
+        'attributes': 'attributes',
         'client_permissions': 'client_permissions',
         'comment': 'comment',
         'last_version': 'last_version',
@@ -59,12 +61,13 @@ class Target(object):
         'with_customer_fragment': 'with_customer_fragment'
     }
 
-    def __init__(self, client_permissions=None, comment=None, last_version=None, protection_key_name=None, target_id=None, target_items_assoc=None, target_name=None, target_type=None, target_versions=None, with_customer_fragment=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, attributes=None, client_permissions=None, comment=None, last_version=None, protection_key_name=None, target_id=None, target_items_assoc=None, target_name=None, target_type=None, target_versions=None, with_customer_fragment=None, local_vars_configuration=None):  # noqa: E501
         """Target - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
+        self._attributes = None
         self._client_permissions = None
         self._comment = None
         self._last_version = None
@@ -77,6 +80,8 @@ class Target(object):
         self._with_customer_fragment = None
         self.discriminator = None
 
+        if attributes is not None:
+            self.attributes = attributes
         if client_permissions is not None:
             self.client_permissions = client_permissions
         if comment is not None:
@@ -97,6 +102,29 @@ class Target(object):
             self.target_versions = target_versions
         if with_customer_fragment is not None:
             self.with_customer_fragment = with_customer_fragment
+
+    @property
+    def attributes(self):
+        """Gets the attributes of this Target.  # noqa: E501
+
+        this is not \"omitempty\" since an empty value causes no update while an empty map will clear the attributes  # noqa: E501
+
+        :return: The attributes of this Target.  # noqa: E501
+        :rtype: dict(str, object)
+        """
+        return self._attributes
+
+    @attributes.setter
+    def attributes(self, attributes):
+        """Sets the attributes of this Target.
+
+        this is not \"omitempty\" since an empty value causes no update while an empty map will clear the attributes  # noqa: E501
+
+        :param attributes: The attributes of this Target.  # noqa: E501
+        :type: dict(str, object)
+        """
+
+        self._attributes = attributes
 
     @property
     def client_permissions(self):

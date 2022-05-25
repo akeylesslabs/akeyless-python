@@ -15,6 +15,7 @@ Name | Type | Description | Notes
 **redshift_username** | **str** | Redshift Username | [optional] 
 **secure_access_enable** | **str** |  | [optional] 
 **secure_access_host** | **list[str]** |  | [optional] 
+**ssl** | **bool** | SSL connection mode | [optional] 
 **tags** | **list[str]** | List of the tags attached to this secret | [optional] 
 **target_name** | **str** | Target name | [optional] 
 **token** | **str** | Authentication token (see &#x60;/auth&#x60; and &#x60;/configure&#x60;) | [optional] 

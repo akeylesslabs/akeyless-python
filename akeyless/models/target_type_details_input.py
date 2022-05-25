@@ -43,6 +43,9 @@ class TargetTypeDetailsInput(object):
         'aws_session_token': 'str',
         'azure_client_id': 'str',
         'azure_client_secret': 'str',
+        'azure_resource_group_name': 'str',
+        'azure_resource_name': 'str',
+        'azure_subscription_id': 'str',
         'azure_tenant_id': 'str',
         'ca_cert_data': 'list[int]',
         'ca_cert_name': 'str',
@@ -133,6 +136,9 @@ class TargetTypeDetailsInput(object):
         'aws_session_token': 'aws_session_token',
         'azure_client_id': 'azure_client_id',
         'azure_client_secret': 'azure_client_secret',
+        'azure_resource_group_name': 'azure_resource_group_name',
+        'azure_resource_name': 'azure_resource_name',
+        'azure_subscription_id': 'azure_subscription_id',
         'azure_tenant_id': 'azure_tenant_id',
         'ca_cert_data': 'ca_cert_data',
         'ca_cert_name': 'ca_cert_name',
@@ -213,7 +219,7 @@ class TargetTypeDetailsInput(object):
         'venafi_zone': 'venafi_zone'
     }
 
-    def __init__(self, artifactory_admin_apikey=None, artifactory_admin_username=None, artifactory_base_url=None, aws_access_key_id=None, aws_region=None, aws_secret_access_key=None, aws_session_token=None, azure_client_id=None, azure_client_secret=None, azure_tenant_id=None, ca_cert_data=None, ca_cert_name=None, chef_server_host_name=None, chef_server_key=None, chef_server_port=None, chef_server_url=None, chef_server_username=None, chef_skip_ssl=None, client_id=None, client_secret=None, db_host_name=None, db_name=None, db_port=None, db_pwd=None, db_server_certificates=None, db_server_name=None, db_user_name=None, eks_access_key_id=None, eks_cluster_ca_certificate=None, eks_cluster_endpoint=None, eks_cluster_name=None, eks_region=None, eks_secret_access_key=None, gcp_service_account_email=None, gcp_service_account_key=None, github_app_id=None, github_app_private_key=None, github_base_url=None, gke_cluster_ca_certificate=None, gke_cluster_endpoint=None, gke_cluster_name=None, gke_service_account_key=None, gke_service_account_name=None, host=None, k8s_bearer_token=None, k8s_cluster_ca_certificate=None, k8s_cluster_endpoint=None, ldap_audience=None, ldap_bind_dn=None, ldap_bind_password=None, ldap_certificate=None, ldap_token_expiration=None, ldap_url=None, mongodb_atlas_api_private_key=None, mongodb_atlas_api_public_key=None, mongodb_atlas_project_id=None, mongodb_db_name=None, mongodb_default_auth_db=None, mongodb_host_port=None, mongodb_is_atlas=None, mongodb_password=None, mongodb_uri_connection=None, mongodb_uri_options=None, mongodb_username=None, password=None, payload=None, port=None, private_key=None, private_key_password=None, rabbitmq_server_password=None, rabbitmq_server_uri=None, rabbitmq_server_user=None, security_token=None, sf_account=None, ssl_connection_certificate=None, ssl_connection_mode=None, tenant_url=None, url=None, use_gw_cloud_identity=None, user_name=None, username=None, venafi_api_key=None, venafi_base_url=None, venafi_tpp_password=None, venafi_tpp_username=None, venafi_use_tpp=None, venafi_zone=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, artifactory_admin_apikey=None, artifactory_admin_username=None, artifactory_base_url=None, aws_access_key_id=None, aws_region=None, aws_secret_access_key=None, aws_session_token=None, azure_client_id=None, azure_client_secret=None, azure_resource_group_name=None, azure_resource_name=None, azure_subscription_id=None, azure_tenant_id=None, ca_cert_data=None, ca_cert_name=None, chef_server_host_name=None, chef_server_key=None, chef_server_port=None, chef_server_url=None, chef_server_username=None, chef_skip_ssl=None, client_id=None, client_secret=None, db_host_name=None, db_name=None, db_port=None, db_pwd=None, db_server_certificates=None, db_server_name=None, db_user_name=None, eks_access_key_id=None, eks_cluster_ca_certificate=None, eks_cluster_endpoint=None, eks_cluster_name=None, eks_region=None, eks_secret_access_key=None, gcp_service_account_email=None, gcp_service_account_key=None, github_app_id=None, github_app_private_key=None, github_base_url=None, gke_cluster_ca_certificate=None, gke_cluster_endpoint=None, gke_cluster_name=None, gke_service_account_key=None, gke_service_account_name=None, host=None, k8s_bearer_token=None, k8s_cluster_ca_certificate=None, k8s_cluster_endpoint=None, ldap_audience=None, ldap_bind_dn=None, ldap_bind_password=None, ldap_certificate=None, ldap_token_expiration=None, ldap_url=None, mongodb_atlas_api_private_key=None, mongodb_atlas_api_public_key=None, mongodb_atlas_project_id=None, mongodb_db_name=None, mongodb_default_auth_db=None, mongodb_host_port=None, mongodb_is_atlas=None, mongodb_password=None, mongodb_uri_connection=None, mongodb_uri_options=None, mongodb_username=None, password=None, payload=None, port=None, private_key=None, private_key_password=None, rabbitmq_server_password=None, rabbitmq_server_uri=None, rabbitmq_server_user=None, security_token=None, sf_account=None, ssl_connection_certificate=None, ssl_connection_mode=None, tenant_url=None, url=None, use_gw_cloud_identity=None, user_name=None, username=None, venafi_api_key=None, venafi_base_url=None, venafi_tpp_password=None, venafi_tpp_username=None, venafi_use_tpp=None, venafi_zone=None, local_vars_configuration=None):  # noqa: E501
         """TargetTypeDetailsInput - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -228,6 +234,9 @@ class TargetTypeDetailsInput(object):
         self._aws_session_token = None
         self._azure_client_id = None
         self._azure_client_secret = None
+        self._azure_resource_group_name = None
+        self._azure_resource_name = None
+        self._azure_subscription_id = None
         self._azure_tenant_id = None
         self._ca_cert_data = None
         self._ca_cert_name = None
@@ -326,6 +335,12 @@ class TargetTypeDetailsInput(object):
             self.azure_client_id = azure_client_id
         if azure_client_secret is not None:
             self.azure_client_secret = azure_client_secret
+        if azure_resource_group_name is not None:
+            self.azure_resource_group_name = azure_resource_group_name
+        if azure_resource_name is not None:
+            self.azure_resource_name = azure_resource_name
+        if azure_subscription_id is not None:
+            self.azure_subscription_id = azure_subscription_id
         if azure_tenant_id is not None:
             self.azure_tenant_id = azure_tenant_id
         if ca_cert_data is not None:
@@ -671,6 +686,69 @@ class TargetTypeDetailsInput(object):
         """
 
         self._azure_client_secret = azure_client_secret
+
+    @property
+    def azure_resource_group_name(self):
+        """Gets the azure_resource_group_name of this TargetTypeDetailsInput.  # noqa: E501
+
+
+        :return: The azure_resource_group_name of this TargetTypeDetailsInput.  # noqa: E501
+        :rtype: str
+        """
+        return self._azure_resource_group_name
+
+    @azure_resource_group_name.setter
+    def azure_resource_group_name(self, azure_resource_group_name):
+        """Sets the azure_resource_group_name of this TargetTypeDetailsInput.
+
+
+        :param azure_resource_group_name: The azure_resource_group_name of this TargetTypeDetailsInput.  # noqa: E501
+        :type: str
+        """
+
+        self._azure_resource_group_name = azure_resource_group_name
+
+    @property
+    def azure_resource_name(self):
+        """Gets the azure_resource_name of this TargetTypeDetailsInput.  # noqa: E501
+
+
+        :return: The azure_resource_name of this TargetTypeDetailsInput.  # noqa: E501
+        :rtype: str
+        """
+        return self._azure_resource_name
+
+    @azure_resource_name.setter
+    def azure_resource_name(self, azure_resource_name):
+        """Sets the azure_resource_name of this TargetTypeDetailsInput.
+
+
+        :param azure_resource_name: The azure_resource_name of this TargetTypeDetailsInput.  # noqa: E501
+        :type: str
+        """
+
+        self._azure_resource_name = azure_resource_name
+
+    @property
+    def azure_subscription_id(self):
+        """Gets the azure_subscription_id of this TargetTypeDetailsInput.  # noqa: E501
+
+
+        :return: The azure_subscription_id of this TargetTypeDetailsInput.  # noqa: E501
+        :rtype: str
+        """
+        return self._azure_subscription_id
+
+    @azure_subscription_id.setter
+    def azure_subscription_id(self, azure_subscription_id):
+        """Sets the azure_subscription_id of this TargetTypeDetailsInput.
+
+
+        :param azure_subscription_id: The azure_subscription_id of this TargetTypeDetailsInput.  # noqa: E501
+        :type: str
+        """
+
+        self._azure_subscription_id = azure_subscription_id
 
     @property
     def azure_tenant_id(self):
