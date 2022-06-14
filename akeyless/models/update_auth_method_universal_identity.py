@@ -39,6 +39,7 @@ class UpdateAuthMethodUniversalIdentity(object):
         'deny_inheritance': 'bool',
         'deny_rotate': 'bool',
         'force_sub_claims': 'bool',
+        'gw_bound_ips': 'list[str]',
         'jwt_ttl': 'int',
         'name': 'str',
         'new_name': 'str',
@@ -53,6 +54,7 @@ class UpdateAuthMethodUniversalIdentity(object):
         'deny_inheritance': 'deny-inheritance',
         'deny_rotate': 'deny-rotate',
         'force_sub_claims': 'force-sub-claims',
+        'gw_bound_ips': 'gw-bound-ips',
         'jwt_ttl': 'jwt-ttl',
         'name': 'name',
         'new_name': 'new-name',
@@ -61,7 +63,7 @@ class UpdateAuthMethodUniversalIdentity(object):
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, access_expires=0, bound_ips=None, deny_inheritance=None, deny_rotate=None, force_sub_claims=None, jwt_ttl=None, name=None, new_name=None, token=None, ttl=60, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, access_expires=0, bound_ips=None, deny_inheritance=None, deny_rotate=None, force_sub_claims=None, gw_bound_ips=None, jwt_ttl=None, name=None, new_name=None, token=None, ttl=60, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """UpdateAuthMethodUniversalIdentity - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -72,6 +74,7 @@ class UpdateAuthMethodUniversalIdentity(object):
         self._deny_inheritance = None
         self._deny_rotate = None
         self._force_sub_claims = None
+        self._gw_bound_ips = None
         self._jwt_ttl = None
         self._name = None
         self._new_name = None
@@ -90,6 +93,8 @@ class UpdateAuthMethodUniversalIdentity(object):
             self.deny_rotate = deny_rotate
         if force_sub_claims is not None:
             self.force_sub_claims = force_sub_claims
+        if gw_bound_ips is not None:
+            self.gw_bound_ips = gw_bound_ips
         if jwt_ttl is not None:
             self.jwt_ttl = jwt_ttl
         self.name = name
@@ -216,6 +221,29 @@ class UpdateAuthMethodUniversalIdentity(object):
         """
 
         self._force_sub_claims = force_sub_claims
+
+    @property
+    def gw_bound_ips(self):
+        """Gets the gw_bound_ips of this UpdateAuthMethodUniversalIdentity.  # noqa: E501
+
+        A CIDR whitelist with the GW IPs that the access is restricted to  # noqa: E501
+
+        :return: The gw_bound_ips of this UpdateAuthMethodUniversalIdentity.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._gw_bound_ips
+
+    @gw_bound_ips.setter
+    def gw_bound_ips(self, gw_bound_ips):
+        """Sets the gw_bound_ips of this UpdateAuthMethodUniversalIdentity.
+
+        A CIDR whitelist with the GW IPs that the access is restricted to  # noqa: E501
+
+        :param gw_bound_ips: The gw_bound_ips of this UpdateAuthMethodUniversalIdentity.  # noqa: E501
+        :type: list[str]
+        """
+
+        self._gw_bound_ips = gw_bound_ips
 
     @property
     def jwt_ttl(self):

@@ -34,66 +34,38 @@ class RotateKey(object):
                             and the value is json key in definition.
     """
     openapi_types = {
-        'auto_rotate': 'str',
         'name': 'str',
-        'rotation_interval': 'str',
+        'new_key_data': 'str',
         'token': 'str',
         'uid_token': 'str'
     }
 
     attribute_map = {
-        'auto_rotate': 'auto-rotate',
         'name': 'name',
-        'rotation_interval': 'rotation-interval',
+        'new_key_data': 'new-key-data',
         'token': 'token',
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, auto_rotate=None, name=None, rotation_interval=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, name=None, new_key_data=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """RotateKey - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
-        self._auto_rotate = None
         self._name = None
-        self._rotation_interval = None
+        self._new_key_data = None
         self._token = None
         self._uid_token = None
         self.discriminator = None
 
-        if auto_rotate is not None:
-            self.auto_rotate = auto_rotate
         self.name = name
-        if rotation_interval is not None:
-            self.rotation_interval = rotation_interval
+        if new_key_data is not None:
+            self.new_key_data = new_key_data
         if token is not None:
             self.token = token
         if uid_token is not None:
             self.uid_token = uid_token
-
-    @property
-    def auto_rotate(self):
-        """Gets the auto_rotate of this RotateKey.  # noqa: E501
-
-        Whether to automatically rotate every --rotation-interval days, or disable existing automatic rotation  # noqa: E501
-
-        :return: The auto_rotate of this RotateKey.  # noqa: E501
-        :rtype: str
-        """
-        return self._auto_rotate
-
-    @auto_rotate.setter
-    def auto_rotate(self, auto_rotate):
-        """Sets the auto_rotate of this RotateKey.
-
-        Whether to automatically rotate every --rotation-interval days, or disable existing automatic rotation  # noqa: E501
-
-        :param auto_rotate: The auto_rotate of this RotateKey.  # noqa: E501
-        :type: str
-        """
-
-        self._auto_rotate = auto_rotate
 
     @property
     def name(self):
@@ -121,27 +93,27 @@ class RotateKey(object):
         self._name = name
 
     @property
-    def rotation_interval(self):
-        """Gets the rotation_interval of this RotateKey.  # noqa: E501
+    def new_key_data(self):
+        """Gets the new_key_data of this RotateKey.  # noqa: E501
 
-        The number of days to wait between every automatic key rotation (7-365)  # noqa: E501
+        The new base64 encoded value for the classic key. relevant only for keys provided by user ('bring-your-own-key')  # noqa: E501
 
-        :return: The rotation_interval of this RotateKey.  # noqa: E501
+        :return: The new_key_data of this RotateKey.  # noqa: E501
         :rtype: str
         """
-        return self._rotation_interval
+        return self._new_key_data
 
-    @rotation_interval.setter
-    def rotation_interval(self, rotation_interval):
-        """Sets the rotation_interval of this RotateKey.
+    @new_key_data.setter
+    def new_key_data(self, new_key_data):
+        """Sets the new_key_data of this RotateKey.
 
-        The number of days to wait between every automatic key rotation (7-365)  # noqa: E501
+        The new base64 encoded value for the classic key. relevant only for keys provided by user ('bring-your-own-key')  # noqa: E501
 
-        :param rotation_interval: The rotation_interval of this RotateKey.  # noqa: E501
+        :param new_key_data: The new_key_data of this RotateKey.  # noqa: E501
         :type: str
         """
 
-        self._rotation_interval = rotation_interval
+        self._new_key_data = new_key_data
 
     @property
     def token(self):

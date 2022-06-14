@@ -40,6 +40,7 @@ class CreateAuthMethodOIDC(object):
         'client_id': 'str',
         'client_secret': 'str',
         'force_sub_claims': 'bool',
+        'gw_bound_ips': 'list[str]',
         'issuer': 'str',
         'jwt_ttl': 'int',
         'name': 'str',
@@ -57,6 +58,7 @@ class CreateAuthMethodOIDC(object):
         'client_id': 'client-id',
         'client_secret': 'client-secret',
         'force_sub_claims': 'force-sub-claims',
+        'gw_bound_ips': 'gw-bound-ips',
         'issuer': 'issuer',
         'jwt_ttl': 'jwt-ttl',
         'name': 'name',
@@ -67,7 +69,7 @@ class CreateAuthMethodOIDC(object):
         'unique_identifier': 'unique-identifier'
     }
 
-    def __init__(self, access_expires=0, allowed_redirect_uri=None, bound_ips=None, client_id=None, client_secret=None, force_sub_claims=None, issuer=None, jwt_ttl=None, name=None, required_scopes=None, required_scopes_prefix=None, token=None, uid_token=None, unique_identifier=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, access_expires=0, allowed_redirect_uri=None, bound_ips=None, client_id=None, client_secret=None, force_sub_claims=None, gw_bound_ips=None, issuer=None, jwt_ttl=None, name=None, required_scopes=None, required_scopes_prefix=None, token=None, uid_token=None, unique_identifier=None, local_vars_configuration=None):  # noqa: E501
         """CreateAuthMethodOIDC - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -79,6 +81,7 @@ class CreateAuthMethodOIDC(object):
         self._client_id = None
         self._client_secret = None
         self._force_sub_claims = None
+        self._gw_bound_ips = None
         self._issuer = None
         self._jwt_ttl = None
         self._name = None
@@ -101,6 +104,8 @@ class CreateAuthMethodOIDC(object):
             self.client_secret = client_secret
         if force_sub_claims is not None:
             self.force_sub_claims = force_sub_claims
+        if gw_bound_ips is not None:
+            self.gw_bound_ips = gw_bound_ips
         if issuer is not None:
             self.issuer = issuer
         if jwt_ttl is not None:
@@ -253,6 +258,29 @@ class CreateAuthMethodOIDC(object):
         """
 
         self._force_sub_claims = force_sub_claims
+
+    @property
+    def gw_bound_ips(self):
+        """Gets the gw_bound_ips of this CreateAuthMethodOIDC.  # noqa: E501
+
+        A CIDR whitelist with the GW IPs that the access is restricted to  # noqa: E501
+
+        :return: The gw_bound_ips of this CreateAuthMethodOIDC.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._gw_bound_ips
+
+    @gw_bound_ips.setter
+    def gw_bound_ips(self, gw_bound_ips):
+        """Sets the gw_bound_ips of this CreateAuthMethodOIDC.
+
+        A CIDR whitelist with the GW IPs that the access is restricted to  # noqa: E501
+
+        :param gw_bound_ips: The gw_bound_ips of this CreateAuthMethodOIDC.  # noqa: E501
+        :type: list[str]
+        """
+
+        self._gw_bound_ips = gw_bound_ips
 
     @property
     def issuer(self):

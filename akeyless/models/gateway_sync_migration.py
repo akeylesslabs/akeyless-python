@@ -96,6 +96,7 @@ class GatewaySyncMigration(object):
     def start_sync(self):
         """Gets the start_sync of this GatewaySyncMigration.  # noqa: E501
 
+        true, for starting synchronization, false for stopping  # noqa: E501
 
         :return: The start_sync of this GatewaySyncMigration.  # noqa: E501
         :rtype: bool
@@ -106,6 +107,7 @@ class GatewaySyncMigration(object):
     def start_sync(self, start_sync):
         """Sets the start_sync of this GatewaySyncMigration.
 
+        true, for starting synchronization, false for stopping  # noqa: E501
 
         :param start_sync: The start_sync of this GatewaySyncMigration.  # noqa: E501
         :type: bool

@@ -35,26 +35,31 @@ class MigrationStatus(object):
     """
     openapi_types = {
         'last_messages': 'dict(str, str)',
+        'last_reports': 'dict(str, str)',
         'last_statuses': 'dict(str, str)'
     }
 
     attribute_map = {
         'last_messages': 'last_messages',
+        'last_reports': 'last_reports',
         'last_statuses': 'last_statuses'
     }
 
-    def __init__(self, last_messages=None, last_statuses=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, last_messages=None, last_reports=None, last_statuses=None, local_vars_configuration=None):  # noqa: E501
         """MigrationStatus - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._last_messages = None
+        self._last_reports = None
         self._last_statuses = None
         self.discriminator = None
 
         if last_messages is not None:
             self.last_messages = last_messages
+        if last_reports is not None:
+            self.last_reports = last_reports
         if last_statuses is not None:
             self.last_statuses = last_statuses
 
@@ -78,6 +83,27 @@ class MigrationStatus(object):
         """
 
         self._last_messages = last_messages
+
+    @property
+    def last_reports(self):
+        """Gets the last_reports of this MigrationStatus.  # noqa: E501
+
+
+        :return: The last_reports of this MigrationStatus.  # noqa: E501
+        :rtype: dict(str, str)
+        """
+        return self._last_reports
+
+    @last_reports.setter
+    def last_reports(self, last_reports):
+        """Sets the last_reports of this MigrationStatus.
+
+
+        :param last_reports: The last_reports of this MigrationStatus.  # noqa: E501
+        :type: dict(str, str)
+        """
+
+        self._last_reports = last_reports
 
     @property
     def last_statuses(self):

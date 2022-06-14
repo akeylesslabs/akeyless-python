@@ -36,46 +36,30 @@ class CreateClassicKey(object):
     openapi_types = {
         'alg': 'str',
         'cert_file_data': 'str',
+        'delete_protection': 'str',
         'key_data': 'str',
-        'key_operations': 'list[str]',
-        'keyring_name': 'str',
-        'kms_algorithm': 'str',
-        'location_id': 'str',
         'metadata': 'str',
         'name': 'str',
-        'project_id': 'str',
         'protection_key_name': 'str',
-        'purpose': 'str',
         'tags': 'list[str]',
-        'target_name': 'str',
-        'tenant_secret_type': 'str',
         'token': 'str',
-        'uid_token': 'str',
-        'vault_name': 'str'
+        'uid_token': 'str'
     }
 
     attribute_map = {
         'alg': 'alg',
         'cert_file_data': 'cert-file-data',
+        'delete_protection': 'delete_protection',
         'key_data': 'key-data',
-        'key_operations': 'key-operations',
-        'keyring_name': 'keyring-name',
-        'kms_algorithm': 'kms-algorithm',
-        'location_id': 'location-id',
         'metadata': 'metadata',
         'name': 'name',
-        'project_id': 'project-id',
         'protection_key_name': 'protection-key-name',
-        'purpose': 'purpose',
         'tags': 'tags',
-        'target_name': 'target-name',
-        'tenant_secret_type': 'tenant-secret-type',
         'token': 'token',
-        'uid_token': 'uid-token',
-        'vault_name': 'vault-name'
+        'uid_token': 'uid-token'
     }
 
-    def __init__(self, alg=None, cert_file_data=None, key_data=None, key_operations=None, keyring_name=None, kms_algorithm=None, location_id=None, metadata=None, name=None, project_id=None, protection_key_name=None, purpose=None, tags=None, target_name=None, tenant_secret_type=None, token=None, uid_token=None, vault_name=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, alg=None, cert_file_data=None, delete_protection=None, key_data=None, metadata=None, name=None, protection_key_name=None, tags=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """CreateClassicKey - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -83,58 +67,34 @@ class CreateClassicKey(object):
 
         self._alg = None
         self._cert_file_data = None
+        self._delete_protection = None
         self._key_data = None
-        self._key_operations = None
-        self._keyring_name = None
-        self._kms_algorithm = None
-        self._location_id = None
         self._metadata = None
         self._name = None
-        self._project_id = None
         self._protection_key_name = None
-        self._purpose = None
         self._tags = None
-        self._target_name = None
-        self._tenant_secret_type = None
         self._token = None
         self._uid_token = None
-        self._vault_name = None
         self.discriminator = None
 
         self.alg = alg
         if cert_file_data is not None:
             self.cert_file_data = cert_file_data
+        if delete_protection is not None:
+            self.delete_protection = delete_protection
         if key_data is not None:
             self.key_data = key_data
-        if key_operations is not None:
-            self.key_operations = key_operations
-        if keyring_name is not None:
-            self.keyring_name = keyring_name
-        if kms_algorithm is not None:
-            self.kms_algorithm = kms_algorithm
-        if location_id is not None:
-            self.location_id = location_id
         if metadata is not None:
             self.metadata = metadata
         self.name = name
-        if project_id is not None:
-            self.project_id = project_id
         if protection_key_name is not None:
             self.protection_key_name = protection_key_name
-        if purpose is not None:
-            self.purpose = purpose
         if tags is not None:
             self.tags = tags
-        if target_name is not None:
-            self.target_name = target_name
-        if tenant_secret_type is not None:
-            self.tenant_secret_type = tenant_secret_type
         if token is not None:
             self.token = token
         if uid_token is not None:
             self.uid_token = uid_token
-        if vault_name is not None:
-            self.vault_name = vault_name
 
     @property
     def alg(self):
@@ -185,6 +145,29 @@ class CreateClassicKey(object):
         self._cert_file_data = cert_file_data
 
     @property
+    def delete_protection(self):
+        """Gets the delete_protection of this CreateClassicKey.  # noqa: E501
+
+        Protection from accidental deletion of this item  # noqa: E501
+
+        :return: The delete_protection of this CreateClassicKey.  # noqa: E501
+        :rtype: str
+        """
+        return self._delete_protection
+
+    @delete_protection.setter
+    def delete_protection(self, delete_protection):
+        """Sets the delete_protection of this CreateClassicKey.
+
+        Protection from accidental deletion of this item  # noqa: E501
+
+        :param delete_protection: The delete_protection of this CreateClassicKey.  # noqa: E501
+        :type: str
+        """
+
+        self._delete_protection = delete_protection
+
+    @property
     def key_data(self):
         """Gets the key_data of this CreateClassicKey.  # noqa: E501
 
@@ -206,98 +189,6 @@ class CreateClassicKey(object):
         """
 
         self._key_data = key_data
-
-    @property
-    def key_operations(self):
-        """Gets the key_operations of this CreateClassicKey.  # noqa: E501
-
-        A list of allowed operations for the key (required for azure targets)  # noqa: E501
-
-        :return: The key_operations of this CreateClassicKey.  # noqa: E501
-        :rtype: list[str]
-        """
-        return self._key_operations
-
-    @key_operations.setter
-    def key_operations(self, key_operations):
-        """Sets the key_operations of this CreateClassicKey.
-
-        A list of allowed operations for the key (required for azure targets)  # noqa: E501
-
-        :param key_operations: The key_operations of this CreateClassicKey.  # noqa: E501
-        :type: list[str]
-        """
-
-        self._key_operations = key_operations
-
-    @property
-    def keyring_name(self):
-        """Gets the keyring_name of this CreateClassicKey.  # noqa: E501
-
-        Keyring name of the GCP KMS (required for gcp targets)  # noqa: E501
-
-        :return: The keyring_name of this CreateClassicKey.  # noqa: E501
-        :rtype: str
-        """
-        return self._keyring_name
-
-    @keyring_name.setter
-    def keyring_name(self, keyring_name):
-        """Sets the keyring_name of this CreateClassicKey.
-
-        Keyring name of the GCP KMS (required for gcp targets)  # noqa: E501
-
-        :param keyring_name: The keyring_name of this CreateClassicKey.  # noqa: E501
-        :type: str
-        """
-
-        self._keyring_name = keyring_name
-
-    @property
-    def kms_algorithm(self):
-        """Gets the kms_algorithm of this CreateClassicKey.  # noqa: E501
-
-        Algorithm of the key in GCP KMS (required for gcp targets)  # noqa: E501
-
-        :return: The kms_algorithm of this CreateClassicKey.  # noqa: E501
-        :rtype: str
-        """
-        return self._kms_algorithm
-
-    @kms_algorithm.setter
-    def kms_algorithm(self, kms_algorithm):
-        """Sets the kms_algorithm of this CreateClassicKey.
-
-        Algorithm of the key in GCP KMS (required for gcp targets)  # noqa: E501
-
-        :param kms_algorithm: The kms_algorithm of this CreateClassicKey.  # noqa: E501
-        :type: str
-        """
-
-        self._kms_algorithm = kms_algorithm
-
-    @property
-    def location_id(self):
-        """Gets the location_id of this CreateClassicKey.  # noqa: E501
-
-        Location id of the GCP KMS (required for gcp targets)  # noqa: E501
-
-        :return: The location_id of this CreateClassicKey.  # noqa: E501
-        :rtype: str
-        """
-        return self._location_id
-
-    @location_id.setter
-    def location_id(self, location_id):
-        """Sets the location_id of this CreateClassicKey.
-
-        Location id of the GCP KMS (required for gcp targets)  # noqa: E501
-
-        :param location_id: The location_id of this CreateClassicKey.  # noqa: E501
-        :type: str
-        """
-
-        self._location_id = location_id
 
     @property
     def metadata(self):
@@ -348,29 +239,6 @@ class CreateClassicKey(object):
         self._name = name
 
     @property
-    def project_id(self):
-        """Gets the project_id of this CreateClassicKey.  # noqa: E501
-
-        Project id of the GCP KMS (required for gcp targets)  # noqa: E501
-
-        :return: The project_id of this CreateClassicKey.  # noqa: E501
-        :rtype: str
-        """
-        return self._project_id
-
-    @project_id.setter
-    def project_id(self, project_id):
-        """Sets the project_id of this CreateClassicKey.
-
-        Project id of the GCP KMS (required for gcp targets)  # noqa: E501
-
-        :param project_id: The project_id of this CreateClassicKey.  # noqa: E501
-        :type: str
-        """
-
-        self._project_id = project_id
-
-    @property
     def protection_key_name(self):
         """Gets the protection_key_name of this CreateClassicKey.  # noqa: E501
 
@@ -394,29 +262,6 @@ class CreateClassicKey(object):
         self._protection_key_name = protection_key_name
 
     @property
-    def purpose(self):
-        """Gets the purpose of this CreateClassicKey.  # noqa: E501
-
-        Purpose of the key in GCP KMS (required for gcp targets)  # noqa: E501
-
-        :return: The purpose of this CreateClassicKey.  # noqa: E501
-        :rtype: str
-        """
-        return self._purpose
-
-    @purpose.setter
-    def purpose(self, purpose):
-        """Sets the purpose of this CreateClassicKey.
-
-        Purpose of the key in GCP KMS (required for gcp targets)  # noqa: E501
-
-        :param purpose: The purpose of this CreateClassicKey.  # noqa: E501
-        :type: str
-        """
-
-        self._purpose = purpose
-
-    @property
     def tags(self):
         """Gets the tags of this CreateClassicKey.  # noqa: E501
 
@@ -438,52 +283,6 @@ class CreateClassicKey(object):
         """
 
         self._tags = tags
-
-    @property
-    def target_name(self):
-        """Gets the target_name of this CreateClassicKey.  # noqa: E501
-
-        Target name  # noqa: E501
-
-        :return: The target_name of this CreateClassicKey.  # noqa: E501
-        :rtype: str
-        """
-        return self._target_name
-
-    @target_name.setter
-    def target_name(self, target_name):
-        """Sets the target_name of this CreateClassicKey.
-
-        Target name  # noqa: E501
-
-        :param target_name: The target_name of this CreateClassicKey.  # noqa: E501
-        :type: str
-        """
-
-        self._target_name = target_name
-
-    @property
-    def tenant_secret_type(self):
-        """Gets the tenant_secret_type of this CreateClassicKey.  # noqa: E501
-
-        The tenant secret type [Data/SearchIndex/Analytics] (required for salesforce targets)  # noqa: E501
-
-        :return: The tenant_secret_type of this CreateClassicKey.  # noqa: E501
-        :rtype: str
-        """
-        return self._tenant_secret_type
-
-    @tenant_secret_type.setter
-    def tenant_secret_type(self, tenant_secret_type):
-        """Sets the tenant_secret_type of this CreateClassicKey.
-
-        The tenant secret type [Data/SearchIndex/Analytics] (required for salesforce targets)  # noqa: E501
-
-        :param tenant_secret_type: The tenant_secret_type of this CreateClassicKey.  # noqa: E501
-        :type: str
-        """
-
-        self._tenant_secret_type = tenant_secret_type
 
     @property
     def token(self):
@@ -530,29 +329,6 @@ class CreateClassicKey(object):
         """
 
         self._uid_token = uid_token
-
-    @property
-    def vault_name(self):
-        """Gets the vault_name of this CreateClassicKey.  # noqa: E501
-
-        Name of the vault used (required for azure targets)  # noqa: E501
-
-        :return: The vault_name of this CreateClassicKey.  # noqa: E501
-        :rtype: str
-        """
-        return self._vault_name
-
-    @vault_name.setter
-    def vault_name(self, vault_name):
-        """Sets the vault_name of this CreateClassicKey.
-
-        Name of the vault used (required for azure targets)  # noqa: E501
-
-        :param vault_name: The vault_name of this CreateClassicKey.  # noqa: E501
-        :type: str
-        """
-
-        self._vault_name = vault_name
 
     def to_dict(self):
         """Returns the model properties as a dict"""

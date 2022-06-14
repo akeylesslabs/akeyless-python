@@ -37,6 +37,7 @@ class UploadRSA(object):
         'alg': 'str',
         'cert_file_data': 'str',
         'customer_frg_id': 'str',
+        'delete_protection': 'str',
         'metadata': 'str',
         'name': 'str',
         'rsa_file_data': 'str',
@@ -50,6 +51,7 @@ class UploadRSA(object):
         'alg': 'alg',
         'cert_file_data': 'cert-file-data',
         'customer_frg_id': 'customer-frg-id',
+        'delete_protection': 'delete_protection',
         'metadata': 'metadata',
         'name': 'name',
         'rsa_file_data': 'rsa-file-data',
@@ -59,7 +61,7 @@ class UploadRSA(object):
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, alg=None, cert_file_data=None, customer_frg_id=None, metadata=None, name=None, rsa_file_data=None, split_level=2, tag=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, alg=None, cert_file_data=None, customer_frg_id=None, delete_protection=None, metadata=None, name=None, rsa_file_data=None, split_level=2, tag=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """UploadRSA - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -68,6 +70,7 @@ class UploadRSA(object):
         self._alg = None
         self._cert_file_data = None
         self._customer_frg_id = None
+        self._delete_protection = None
         self._metadata = None
         self._name = None
         self._rsa_file_data = None
@@ -82,6 +85,8 @@ class UploadRSA(object):
             self.cert_file_data = cert_file_data
         if customer_frg_id is not None:
             self.customer_frg_id = customer_frg_id
+        if delete_protection is not None:
+            self.delete_protection = delete_protection
         if metadata is not None:
             self.metadata = metadata
         self.name = name
@@ -166,6 +171,29 @@ class UploadRSA(object):
         """
 
         self._customer_frg_id = customer_frg_id
+
+    @property
+    def delete_protection(self):
+        """Gets the delete_protection of this UploadRSA.  # noqa: E501
+
+        Protection from accidental deletion of this item  # noqa: E501
+
+        :return: The delete_protection of this UploadRSA.  # noqa: E501
+        :rtype: str
+        """
+        return self._delete_protection
+
+    @delete_protection.setter
+    def delete_protection(self, delete_protection):
+        """Sets the delete_protection of this UploadRSA.
+
+        Protection from accidental deletion of this item  # noqa: E501
+
+        :param delete_protection: The delete_protection of this UploadRSA.  # noqa: E501
+        :type: str
+        """
+
+        self._delete_protection = delete_protection
 
     @property
     def metadata(self):

@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **bound_service_accounts** | **list[str]** | List of service accounts the service account must be part of in order to be authenticated. | [optional] 
 **bound_zones** | **list[str]** | &#x3D;&#x3D;&#x3D; Machine authentication section &#x3D;&#x3D;&#x3D; List of zones that a GCE instance must belong to in order to be authenticated. TODO: If bound_instance_groups is provided, it is assumed to be a zonal group and the group must belong to this zone. | [optional] 
 **force_sub_claims** | **bool** | if true: enforce role-association must include sub claims | [optional] 
+**gw_bound_ips** | **list[str]** | A CIDR whitelist with the GW IPs that the access is restricted to | [optional] 
 **jwt_ttl** | **int** | Jwt TTL | [optional] 
 **name** | **str** | Auth Method name | 
 **new_name** | **str** | Auth Method new name | [optional] 

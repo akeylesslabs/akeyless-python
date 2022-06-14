@@ -41,10 +41,20 @@ class GatewayCreateMigration(object):
         'azure_kv_name': 'str',
         'azure_secret': 'str',
         'azure_tenant_id': 'str',
+        'gcp_key': 'str',
         'hashi_json': 'str',
         'hashi_ns': 'list[str]',
         'hashi_token': 'str',
         'hashi_url': 'str',
+        'k8s_ca_certificate': 'list[int]',
+        'k8s_client_certificate': 'list[int]',
+        'k8s_client_key': 'list[int]',
+        'k8s_namespace': 'str',
+        'k8s_password': 'str',
+        'k8s_skip_system': 'bool',
+        'k8s_token': 'str',
+        'k8s_url': 'str',
+        'k8s_username': 'str',
         'name': 'str',
         'protection_key': 'str',
         'target_location': 'str',
@@ -61,10 +71,20 @@ class GatewayCreateMigration(object):
         'azure_kv_name': 'azure-kv-name',
         'azure_secret': 'azure-secret',
         'azure_tenant_id': 'azure-tenant-id',
+        'gcp_key': 'gcp-key',
         'hashi_json': 'hashi-json',
         'hashi_ns': 'hashi-ns',
         'hashi_token': 'hashi-token',
         'hashi_url': 'hashi-url',
+        'k8s_ca_certificate': 'k8s-ca-certificate',
+        'k8s_client_certificate': 'k8s-client-certificate',
+        'k8s_client_key': 'k8s-client-key',
+        'k8s_namespace': 'k8s-namespace',
+        'k8s_password': 'k8s-password',
+        'k8s_skip_system': 'k8s-skip-system',
+        'k8s_token': 'k8s-token',
+        'k8s_url': 'k8s-url',
+        'k8s_username': 'k8s-username',
         'name': 'name',
         'protection_key': 'protection-key',
         'target_location': 'target-location',
@@ -73,7 +93,7 @@ class GatewayCreateMigration(object):
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, aws_key=None, aws_key_id=None, aws_region=None, azure_client_id=None, azure_kv_name=None, azure_secret=None, azure_tenant_id=None, hashi_json=None, hashi_ns=None, hashi_token=None, hashi_url=None, name=None, protection_key=None, target_location=None, token=None, type=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, aws_key=None, aws_key_id=None, aws_region=None, azure_client_id=None, azure_kv_name=None, azure_secret=None, azure_tenant_id=None, gcp_key=None, hashi_json=None, hashi_ns=None, hashi_token=None, hashi_url=None, k8s_ca_certificate=None, k8s_client_certificate=None, k8s_client_key=None, k8s_namespace=None, k8s_password=None, k8s_skip_system=None, k8s_token=None, k8s_url=None, k8s_username=None, name=None, protection_key=None, target_location=None, token=None, type=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """GatewayCreateMigration - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -86,10 +106,20 @@ class GatewayCreateMigration(object):
         self._azure_kv_name = None
         self._azure_secret = None
         self._azure_tenant_id = None
+        self._gcp_key = None
         self._hashi_json = None
         self._hashi_ns = None
         self._hashi_token = None
         self._hashi_url = None
+        self._k8s_ca_certificate = None
+        self._k8s_client_certificate = None
+        self._k8s_client_key = None
+        self._k8s_namespace = None
+        self._k8s_password = None
+        self._k8s_skip_system = None
+        self._k8s_token = None
+        self._k8s_url = None
+        self._k8s_username = None
         self._name = None
         self._protection_key = None
         self._target_location = None
@@ -112,6 +142,8 @@ class GatewayCreateMigration(object):
             self.azure_secret = azure_secret
         if azure_tenant_id is not None:
             self.azure_tenant_id = azure_tenant_id
+        if gcp_key is not None:
+            self.gcp_key = gcp_key
         if hashi_json is not None:
             self.hashi_json = hashi_json
         if hashi_ns is not None:
@@ -120,6 +152,24 @@ class GatewayCreateMigration(object):
             self.hashi_token = hashi_token
         if hashi_url is not None:
             self.hashi_url = hashi_url
+        if k8s_ca_certificate is not None:
+            self.k8s_ca_certificate = k8s_ca_certificate
+        if k8s_client_certificate is not None:
+            self.k8s_client_certificate = k8s_client_certificate
+        if k8s_client_key is not None:
+            self.k8s_client_key = k8s_client_key
+        if k8s_namespace is not None:
+            self.k8s_namespace = k8s_namespace
+        if k8s_password is not None:
+            self.k8s_password = k8s_password
+        if k8s_skip_system is not None:
+            self.k8s_skip_system = k8s_skip_system
+        if k8s_token is not None:
+            self.k8s_token = k8s_token
+        if k8s_url is not None:
+            self.k8s_url = k8s_url
+        if k8s_username is not None:
+            self.k8s_username = k8s_username
         self.name = name
         if protection_key is not None:
             self.protection_key = protection_key
@@ -136,6 +186,7 @@ class GatewayCreateMigration(object):
     def aws_key(self):
         """Gets the aws_key of this GatewayCreateMigration.  # noqa: E501
 
+        AWS Secret Access Key  # noqa: E501
 
         :return: The aws_key of this GatewayCreateMigration.  # noqa: E501
         :rtype: str
@@ -146,6 +197,7 @@ class GatewayCreateMigration(object):
     def aws_key(self, aws_key):
         """Sets the aws_key of this GatewayCreateMigration.
 
+        AWS Secret Access Key  # noqa: E501
 
         :param aws_key: The aws_key of this GatewayCreateMigration.  # noqa: E501
         :type: str
@@ -157,6 +209,7 @@ class GatewayCreateMigration(object):
     def aws_key_id(self):
         """Gets the aws_key_id of this GatewayCreateMigration.  # noqa: E501
 
+        AWS Access Key ID  # noqa: E501
 
         :return: The aws_key_id of this GatewayCreateMigration.  # noqa: E501
         :rtype: str
@@ -167,6 +220,7 @@ class GatewayCreateMigration(object):
     def aws_key_id(self, aws_key_id):
         """Sets the aws_key_id of this GatewayCreateMigration.
 
+        AWS Access Key ID  # noqa: E501
 
         :param aws_key_id: The aws_key_id of this GatewayCreateMigration.  # noqa: E501
         :type: str
@@ -178,6 +232,7 @@ class GatewayCreateMigration(object):
     def aws_region(self):
         """Gets the aws_region of this GatewayCreateMigration.  # noqa: E501
 
+        AWS region  # noqa: E501
 
         :return: The aws_region of this GatewayCreateMigration.  # noqa: E501
         :rtype: str
@@ -188,6 +243,7 @@ class GatewayCreateMigration(object):
     def aws_region(self, aws_region):
         """Sets the aws_region of this GatewayCreateMigration.
 
+        AWS region  # noqa: E501
 
         :param aws_region: The aws_region of this GatewayCreateMigration.  # noqa: E501
         :type: str
@@ -199,6 +255,7 @@ class GatewayCreateMigration(object):
     def azure_client_id(self):
         """Gets the azure_client_id of this GatewayCreateMigration.  # noqa: E501
 
+        Azure KV Access client ID  # noqa: E501
 
         :return: The azure_client_id of this GatewayCreateMigration.  # noqa: E501
         :rtype: str
@@ -209,6 +266,7 @@ class GatewayCreateMigration(object):
     def azure_client_id(self, azure_client_id):
         """Sets the azure_client_id of this GatewayCreateMigration.
 
+        Azure KV Access client ID  # noqa: E501
 
         :param azure_client_id: The azure_client_id of this GatewayCreateMigration.  # noqa: E501
         :type: str
@@ -220,6 +278,7 @@ class GatewayCreateMigration(object):
     def azure_kv_name(self):
         """Gets the azure_kv_name of this GatewayCreateMigration.  # noqa: E501
 
+        Azure Key Vault Name  # noqa: E501
 
         :return: The azure_kv_name of this GatewayCreateMigration.  # noqa: E501
         :rtype: str
@@ -230,6 +289,7 @@ class GatewayCreateMigration(object):
     def azure_kv_name(self, azure_kv_name):
         """Sets the azure_kv_name of this GatewayCreateMigration.
 
+        Azure Key Vault Name  # noqa: E501
 
         :param azure_kv_name: The azure_kv_name of this GatewayCreateMigration.  # noqa: E501
         :type: str
@@ -241,6 +301,7 @@ class GatewayCreateMigration(object):
     def azure_secret(self):
         """Gets the azure_secret of this GatewayCreateMigration.  # noqa: E501
 
+        Azure KV secret  # noqa: E501
 
         :return: The azure_secret of this GatewayCreateMigration.  # noqa: E501
         :rtype: str
@@ -251,6 +312,7 @@ class GatewayCreateMigration(object):
     def azure_secret(self, azure_secret):
         """Sets the azure_secret of this GatewayCreateMigration.
 
+        Azure KV secret  # noqa: E501
 
         :param azure_secret: The azure_secret of this GatewayCreateMigration.  # noqa: E501
         :type: str
@@ -262,6 +324,7 @@ class GatewayCreateMigration(object):
     def azure_tenant_id(self):
         """Gets the azure_tenant_id of this GatewayCreateMigration.  # noqa: E501
 
+        Azure KV Access tenant ID  # noqa: E501
 
         :return: The azure_tenant_id of this GatewayCreateMigration.  # noqa: E501
         :rtype: str
@@ -272,6 +335,7 @@ class GatewayCreateMigration(object):
     def azure_tenant_id(self, azure_tenant_id):
         """Sets the azure_tenant_id of this GatewayCreateMigration.
 
+        Azure KV Access tenant ID  # noqa: E501
 
         :param azure_tenant_id: The azure_tenant_id of this GatewayCreateMigration.  # noqa: E501
         :type: str
@@ -280,9 +344,33 @@ class GatewayCreateMigration(object):
         self._azure_tenant_id = azure_tenant_id
 
     @property
+    def gcp_key(self):
+        """Gets the gcp_key of this GatewayCreateMigration.  # noqa: E501
+
+        Base64-encoded service account private key text  # noqa: E501
+
+        :return: The gcp_key of this GatewayCreateMigration.  # noqa: E501
+        :rtype: str
+        """
+        return self._gcp_key
+
+    @gcp_key.setter
+    def gcp_key(self, gcp_key):
+        """Sets the gcp_key of this GatewayCreateMigration.
+
+        Base64-encoded service account private key text  # noqa: E501
+
+        :param gcp_key: The gcp_key of this GatewayCreateMigration.  # noqa: E501
+        :type: str
+        """
+
+        self._gcp_key = gcp_key
+
+    @property
     def hashi_json(self):
         """Gets the hashi_json of this GatewayCreateMigration.  # noqa: E501
 
+        Import secret key as json value or independent secrets  # noqa: E501
 
         :return: The hashi_json of this GatewayCreateMigration.  # noqa: E501
         :rtype: str
@@ -293,6 +381,7 @@ class GatewayCreateMigration(object):
     def hashi_json(self, hashi_json):
         """Sets the hashi_json of this GatewayCreateMigration.
 
+        Import secret key as json value or independent secrets  # noqa: E501
 
         :param hashi_json: The hashi_json of this GatewayCreateMigration.  # noqa: E501
         :type: str
@@ -304,6 +393,7 @@ class GatewayCreateMigration(object):
     def hashi_ns(self):
         """Gets the hashi_ns of this GatewayCreateMigration.  # noqa: E501
 
+        Hashi namespaces  # noqa: E501
 
         :return: The hashi_ns of this GatewayCreateMigration.  # noqa: E501
         :rtype: list[str]
@@ -314,6 +404,7 @@ class GatewayCreateMigration(object):
     def hashi_ns(self, hashi_ns):
         """Sets the hashi_ns of this GatewayCreateMigration.
 
+        Hashi namespaces  # noqa: E501
 
         :param hashi_ns: The hashi_ns of this GatewayCreateMigration.  # noqa: E501
         :type: list[str]
@@ -325,6 +416,7 @@ class GatewayCreateMigration(object):
     def hashi_token(self):
         """Gets the hashi_token of this GatewayCreateMigration.  # noqa: E501
 
+        Hashi token  # noqa: E501
 
         :return: The hashi_token of this GatewayCreateMigration.  # noqa: E501
         :rtype: str
@@ -335,6 +427,7 @@ class GatewayCreateMigration(object):
     def hashi_token(self, hashi_token):
         """Sets the hashi_token of this GatewayCreateMigration.
 
+        Hashi token  # noqa: E501
 
         :param hashi_token: The hashi_token of this GatewayCreateMigration.  # noqa: E501
         :type: str
@@ -346,6 +439,7 @@ class GatewayCreateMigration(object):
     def hashi_url(self):
         """Gets the hashi_url of this GatewayCreateMigration.  # noqa: E501
 
+        Hashi url  # noqa: E501
 
         :return: The hashi_url of this GatewayCreateMigration.  # noqa: E501
         :rtype: str
@@ -356,12 +450,220 @@ class GatewayCreateMigration(object):
     def hashi_url(self, hashi_url):
         """Sets the hashi_url of this GatewayCreateMigration.
 
+        Hashi url  # noqa: E501
 
         :param hashi_url: The hashi_url of this GatewayCreateMigration.  # noqa: E501
         :type: str
         """
 
         self._hashi_url = hashi_url
+
+    @property
+    def k8s_ca_certificate(self):
+        """Gets the k8s_ca_certificate of this GatewayCreateMigration.  # noqa: E501
+
+        For Certificate Authentication method K8s Cluster CA certificate  # noqa: E501
+
+        :return: The k8s_ca_certificate of this GatewayCreateMigration.  # noqa: E501
+        :rtype: list[int]
+        """
+        return self._k8s_ca_certificate
+
+    @k8s_ca_certificate.setter
+    def k8s_ca_certificate(self, k8s_ca_certificate):
+        """Sets the k8s_ca_certificate of this GatewayCreateMigration.
+
+        For Certificate Authentication method K8s Cluster CA certificate  # noqa: E501
+
+        :param k8s_ca_certificate: The k8s_ca_certificate of this GatewayCreateMigration.  # noqa: E501
+        :type: list[int]
+        """
+
+        self._k8s_ca_certificate = k8s_ca_certificate
+
+    @property
+    def k8s_client_certificate(self):
+        """Gets the k8s_client_certificate of this GatewayCreateMigration.  # noqa: E501
+
+        K8s Client certificate  # noqa: E501
+
+        :return: The k8s_client_certificate of this GatewayCreateMigration.  # noqa: E501
+        :rtype: list[int]
+        """
+        return self._k8s_client_certificate
+
+    @k8s_client_certificate.setter
+    def k8s_client_certificate(self, k8s_client_certificate):
+        """Sets the k8s_client_certificate of this GatewayCreateMigration.
+
+        K8s Client certificate  # noqa: E501
+
+        :param k8s_client_certificate: The k8s_client_certificate of this GatewayCreateMigration.  # noqa: E501
+        :type: list[int]
+        """
+
+        self._k8s_client_certificate = k8s_client_certificate
+
+    @property
+    def k8s_client_key(self):
+        """Gets the k8s_client_key of this GatewayCreateMigration.  # noqa: E501
+
+        K8s Client key  # noqa: E501
+
+        :return: The k8s_client_key of this GatewayCreateMigration.  # noqa: E501
+        :rtype: list[int]
+        """
+        return self._k8s_client_key
+
+    @k8s_client_key.setter
+    def k8s_client_key(self, k8s_client_key):
+        """Sets the k8s_client_key of this GatewayCreateMigration.
+
+        K8s Client key  # noqa: E501
+
+        :param k8s_client_key: The k8s_client_key of this GatewayCreateMigration.  # noqa: E501
+        :type: list[int]
+        """
+
+        self._k8s_client_key = k8s_client_key
+
+    @property
+    def k8s_namespace(self):
+        """Gets the k8s_namespace of this GatewayCreateMigration.  # noqa: E501
+
+        K8s Namespace  # noqa: E501
+
+        :return: The k8s_namespace of this GatewayCreateMigration.  # noqa: E501
+        :rtype: str
+        """
+        return self._k8s_namespace
+
+    @k8s_namespace.setter
+    def k8s_namespace(self, k8s_namespace):
+        """Sets the k8s_namespace of this GatewayCreateMigration.
+
+        K8s Namespace  # noqa: E501
+
+        :param k8s_namespace: The k8s_namespace of this GatewayCreateMigration.  # noqa: E501
+        :type: str
+        """
+
+        self._k8s_namespace = k8s_namespace
+
+    @property
+    def k8s_password(self):
+        """Gets the k8s_password of this GatewayCreateMigration.  # noqa: E501
+
+        K8s client password  # noqa: E501
+
+        :return: The k8s_password of this GatewayCreateMigration.  # noqa: E501
+        :rtype: str
+        """
+        return self._k8s_password
+
+    @k8s_password.setter
+    def k8s_password(self, k8s_password):
+        """Sets the k8s_password of this GatewayCreateMigration.
+
+        K8s client password  # noqa: E501
+
+        :param k8s_password: The k8s_password of this GatewayCreateMigration.  # noqa: E501
+        :type: str
+        """
+
+        self._k8s_password = k8s_password
+
+    @property
+    def k8s_skip_system(self):
+        """Gets the k8s_skip_system of this GatewayCreateMigration.  # noqa: E501
+
+        K8s Skip Control Plane Secrets  # noqa: E501
+
+        :return: The k8s_skip_system of this GatewayCreateMigration.  # noqa: E501
+        :rtype: bool
+        """
+        return self._k8s_skip_system
+
+    @k8s_skip_system.setter
+    def k8s_skip_system(self, k8s_skip_system):
+        """Sets the k8s_skip_system of this GatewayCreateMigration.
+
+        K8s Skip Control Plane Secrets  # noqa: E501
+
+        :param k8s_skip_system: The k8s_skip_system of this GatewayCreateMigration.  # noqa: E501
+        :type: bool
+        """
+
+        self._k8s_skip_system = k8s_skip_system
+
+    @property
+    def k8s_token(self):
+        """Gets the k8s_token of this GatewayCreateMigration.  # noqa: E501
+
+        For Token Authentication method K8s Bearer Token  # noqa: E501
+
+        :return: The k8s_token of this GatewayCreateMigration.  # noqa: E501
+        :rtype: str
+        """
+        return self._k8s_token
+
+    @k8s_token.setter
+    def k8s_token(self, k8s_token):
+        """Sets the k8s_token of this GatewayCreateMigration.
+
+        For Token Authentication method K8s Bearer Token  # noqa: E501
+
+        :param k8s_token: The k8s_token of this GatewayCreateMigration.  # noqa: E501
+        :type: str
+        """
+
+        self._k8s_token = k8s_token
+
+    @property
+    def k8s_url(self):
+        """Gets the k8s_url of this GatewayCreateMigration.  # noqa: E501
+
+        K8s Endpoint URL  # noqa: E501
+
+        :return: The k8s_url of this GatewayCreateMigration.  # noqa: E501
+        :rtype: str
+        """
+        return self._k8s_url
+
+    @k8s_url.setter
+    def k8s_url(self, k8s_url):
+        """Sets the k8s_url of this GatewayCreateMigration.
+
+        K8s Endpoint URL  # noqa: E501
+
+        :param k8s_url: The k8s_url of this GatewayCreateMigration.  # noqa: E501
+        :type: str
+        """
+
+        self._k8s_url = k8s_url
+
+    @property
+    def k8s_username(self):
+        """Gets the k8s_username of this GatewayCreateMigration.  # noqa: E501
+
+        For Password Authentication method K8s client username  # noqa: E501
+
+        :return: The k8s_username of this GatewayCreateMigration.  # noqa: E501
+        :rtype: str
+        """
+        return self._k8s_username
+
+    @k8s_username.setter
+    def k8s_username(self, k8s_username):
+        """Sets the k8s_username of this GatewayCreateMigration.
+
+        For Password Authentication method K8s client username  # noqa: E501
+
+        :param k8s_username: The k8s_username of this GatewayCreateMigration.  # noqa: E501
+        :type: str
+        """
+
+        self._k8s_username = k8s_username
 
     @property
     def name(self):
@@ -392,6 +694,7 @@ class GatewayCreateMigration(object):
     def protection_key(self):
         """Gets the protection_key of this GatewayCreateMigration.  # noqa: E501
 
+        The name of the key that protects the classic key value (if empty, the account default key will be used)  # noqa: E501
 
         :return: The protection_key of this GatewayCreateMigration.  # noqa: E501
         :rtype: str
@@ -402,6 +705,7 @@ class GatewayCreateMigration(object):
     def protection_key(self, protection_key):
         """Sets the protection_key of this GatewayCreateMigration.
 
+        The name of the key that protects the classic key value (if empty, the account default key will be used)  # noqa: E501
 
         :param protection_key: The protection_key of this GatewayCreateMigration.  # noqa: E501
         :type: str
@@ -413,6 +717,7 @@ class GatewayCreateMigration(object):
     def target_location(self):
         """Gets the target_location of this GatewayCreateMigration.  # noqa: E501
 
+        Target location in Akeyless for imported secrets  # noqa: E501
 
         :return: The target_location of this GatewayCreateMigration.  # noqa: E501
         :rtype: str
@@ -423,6 +728,7 @@ class GatewayCreateMigration(object):
     def target_location(self, target_location):
         """Sets the target_location of this GatewayCreateMigration.
 
+        Target location in Akeyless for imported secrets  # noqa: E501
 
         :param target_location: The target_location of this GatewayCreateMigration.  # noqa: E501
         :type: str
@@ -457,6 +763,7 @@ class GatewayCreateMigration(object):
     def type(self):
         """Gets the type of this GatewayCreateMigration.  # noqa: E501
 
+        Migration type, can be: hashi/aws/gcp/k8s/azure_kv  # noqa: E501
 
         :return: The type of this GatewayCreateMigration.  # noqa: E501
         :rtype: str
@@ -467,6 +774,7 @@ class GatewayCreateMigration(object):
     def type(self, type):
         """Sets the type of this GatewayCreateMigration.
 
+        Migration type, can be: hashi/aws/gcp/k8s/azure_kv  # noqa: E501
 
         :param type: The type of this GatewayCreateMigration.  # noqa: E501
         :type: str

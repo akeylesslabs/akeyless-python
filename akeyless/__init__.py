@@ -15,7 +15,7 @@
 
 from __future__ import absolute_import
 
-__version__ = "2.16.7"
+__version__ = "2.16.8"
 
 # import apis into sdk package
 from akeyless.api.v2_api import V2Api
@@ -185,6 +185,8 @@ from akeyless.models.encrypt_with_classic_key import EncryptWithClassicKey
 from akeyless.models.encrypt_with_classic_key_output import EncryptWithClassicKeyOutput
 from akeyless.models.external_kms_key_id import ExternalKMSKeyId
 from akeyless.models.gcp_access_rules import GCPAccessRules
+from akeyless.models.gcp_payload import GCPPayload
+from akeyless.models.gcp_secrets_migration import GCPSecretsMigration
 from akeyless.models.gateway_add_allowed_management_access import GatewayAddAllowedManagementAccess
 from akeyless.models.gateway_create_k8_s_auth_config import GatewayCreateK8SAuthConfig
 from akeyless.models.gateway_create_k8_s_auth_config_output import GatewayCreateK8SAuthConfigOutput
@@ -246,6 +248,8 @@ from akeyless.models.gateway_delete_producer_output import GatewayDeleteProducer
 from akeyless.models.gateway_get_config import GatewayGetConfig
 from akeyless.models.gateway_get_k8_s_auth_config import GatewayGetK8SAuthConfig
 from akeyless.models.gateway_get_k8_s_auth_config_output import GatewayGetK8SAuthConfigOutput
+from akeyless.models.gateway_get_ldap_auth_config import GatewayGetLdapAuthConfig
+from akeyless.models.gateway_get_ldap_auth_config_output import GatewayGetLdapAuthConfigOutput
 from akeyless.models.gateway_get_migration import GatewayGetMigration
 from akeyless.models.gateway_get_producer import GatewayGetProducer
 from akeyless.models.gateway_get_tmp_users import GatewayGetTmpUsers
@@ -269,6 +273,8 @@ from akeyless.models.gateway_update_item import GatewayUpdateItem
 from akeyless.models.gateway_update_item_output import GatewayUpdateItemOutput
 from akeyless.models.gateway_update_k8_s_auth_config import GatewayUpdateK8SAuthConfig
 from akeyless.models.gateway_update_k8_s_auth_config_output import GatewayUpdateK8SAuthConfigOutput
+from akeyless.models.gateway_update_ldap_auth_config import GatewayUpdateLdapAuthConfig
+from akeyless.models.gateway_update_ldap_auth_config_output import GatewayUpdateLdapAuthConfigOutput
 from akeyless.models.gateway_update_migration import GatewayUpdateMigration
 from akeyless.models.gateway_update_producer_artifactory import GatewayUpdateProducerArtifactory
 from akeyless.models.gateway_update_producer_artifactory_output import GatewayUpdateProducerArtifactoryOutput

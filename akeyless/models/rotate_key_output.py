@@ -34,29 +34,81 @@ class RotateKeyOutput(object):
                             and the value is json key in definition.
     """
     openapi_types = {
+        'classic_key_gw_url': 'str',
+        'item_type': 'str',
         'new_item_version': 'int',
         'next_rotation_date': 'datetime'
     }
 
     attribute_map = {
+        'classic_key_gw_url': 'classic_key_gw_url',
+        'item_type': 'item_type',
         'new_item_version': 'new_item_version',
         'next_rotation_date': 'next_rotation_date'
     }
 
-    def __init__(self, new_item_version=None, next_rotation_date=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, classic_key_gw_url=None, item_type=None, new_item_version=None, next_rotation_date=None, local_vars_configuration=None):  # noqa: E501
         """RotateKeyOutput - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
+        self._classic_key_gw_url = None
+        self._item_type = None
         self._new_item_version = None
         self._next_rotation_date = None
         self.discriminator = None
 
+        if classic_key_gw_url is not None:
+            self.classic_key_gw_url = classic_key_gw_url
+        if item_type is not None:
+            self.item_type = item_type
         if new_item_version is not None:
             self.new_item_version = new_item_version
         if next_rotation_date is not None:
             self.next_rotation_date = next_rotation_date
+
+    @property
+    def classic_key_gw_url(self):
+        """Gets the classic_key_gw_url of this RotateKeyOutput.  # noqa: E501
+
+
+        :return: The classic_key_gw_url of this RotateKeyOutput.  # noqa: E501
+        :rtype: str
+        """
+        return self._classic_key_gw_url
+
+    @classic_key_gw_url.setter
+    def classic_key_gw_url(self, classic_key_gw_url):
+        """Sets the classic_key_gw_url of this RotateKeyOutput.
+
+
+        :param classic_key_gw_url: The classic_key_gw_url of this RotateKeyOutput.  # noqa: E501
+        :type: str
+        """
+
+        self._classic_key_gw_url = classic_key_gw_url
+
+    @property
+    def item_type(self):
+        """Gets the item_type of this RotateKeyOutput.  # noqa: E501
+
+
+        :return: The item_type of this RotateKeyOutput.  # noqa: E501
+        :rtype: str
+        """
+        return self._item_type
+
+    @item_type.setter
+    def item_type(self, item_type):
+        """Sets the item_type of this RotateKeyOutput.
+
+
+        :param item_type: The item_type of this RotateKeyOutput.  # noqa: E501
+        :type: str
+        """
+
+        self._item_type = item_type
 
     @property
     def new_item_version(self):

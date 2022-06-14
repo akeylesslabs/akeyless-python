@@ -4,6 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **add_tag** | **list[str]** | List of the new tags that will be attached to this item | [optional] 
+**delete_protection** | **str** |  | [optional] 
 **name** | **str** | Current item name | 
 **new_metadata** | **str** | New item metadata | [optional] [default to 'default_metadata']
 **new_name** | **str** | New item name | [optional] 

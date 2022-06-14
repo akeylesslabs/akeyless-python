@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **add_tag** | **list[str]** | List of the new tags that will be attached to this item | [optional] 
 **alphabet** | **str** | Alphabet to use in regexp vaultless tokenization | [optional] 
 **decryption_template** | **str** | The Decryption output template to use in regexp vaultless tokenization | [optional] 
+**delete_protection** | **str** |  | [optional] 
 **encryption_key_name** | **str** | AES key name to use in vaultless tokenization | [optional] 
 **encryption_template** | **str** | The Encryption output template to use in regexp vaultless tokenization | [optional] 
 **name** | **str** | Current item name | 

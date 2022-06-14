@@ -35,6 +35,7 @@ class UploadPKCS12(object):
     """
     openapi_types = {
         'customer_frg_id': 'str',
+        'delete_protection': 'str',
         '_in': 'str',
         'metadata': 'str',
         'name': 'str',
@@ -47,6 +48,7 @@ class UploadPKCS12(object):
 
     attribute_map = {
         'customer_frg_id': 'customer-frg-id',
+        'delete_protection': 'delete_protection',
         '_in': 'in',
         'metadata': 'metadata',
         'name': 'name',
@@ -57,13 +59,14 @@ class UploadPKCS12(object):
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, customer_frg_id=None, _in=None, metadata=None, name=None, passphrase=None, split_level=2, tag=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, customer_frg_id=None, delete_protection=None, _in=None, metadata=None, name=None, passphrase=None, split_level=2, tag=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """UploadPKCS12 - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._customer_frg_id = None
+        self._delete_protection = None
         self.__in = None
         self._metadata = None
         self._name = None
@@ -76,6 +79,8 @@ class UploadPKCS12(object):
 
         if customer_frg_id is not None:
             self.customer_frg_id = customer_frg_id
+        if delete_protection is not None:
+            self.delete_protection = delete_protection
         self._in = _in
         if metadata is not None:
             self.metadata = metadata
@@ -112,6 +117,29 @@ class UploadPKCS12(object):
         """
 
         self._customer_frg_id = customer_frg_id
+
+    @property
+    def delete_protection(self):
+        """Gets the delete_protection of this UploadPKCS12.  # noqa: E501
+
+        Protection from accidental deletion of this item  # noqa: E501
+
+        :return: The delete_protection of this UploadPKCS12.  # noqa: E501
+        :rtype: str
+        """
+        return self._delete_protection
+
+    @delete_protection.setter
+    def delete_protection(self, delete_protection):
+        """Sets the delete_protection of this UploadPKCS12.
+
+        Protection from accidental deletion of this item  # noqa: E501
+
+        :param delete_protection: The delete_protection of this UploadPKCS12.  # noqa: E501
+        :type: str
+        """
+
+        self._delete_protection = delete_protection
 
     @property
     def _in(self):

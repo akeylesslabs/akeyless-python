@@ -42,6 +42,7 @@ class UpdateAuthMethodK8S(object):
         'bound_sa_names': 'list[str]',
         'force_sub_claims': 'bool',
         'gen_key': 'str',
+        'gw_bound_ips': 'list[str]',
         'jwt_ttl': 'int',
         'name': 'str',
         'new_name': 'str',
@@ -59,6 +60,7 @@ class UpdateAuthMethodK8S(object):
         'bound_sa_names': 'bound-sa-names',
         'force_sub_claims': 'force-sub-claims',
         'gen_key': 'gen-key',
+        'gw_bound_ips': 'gw-bound-ips',
         'jwt_ttl': 'jwt-ttl',
         'name': 'name',
         'new_name': 'new-name',
@@ -67,7 +69,7 @@ class UpdateAuthMethodK8S(object):
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, access_expires=0, audience=None, bound_ips=None, bound_namespaces=None, bound_pod_names=None, bound_sa_names=None, force_sub_claims=None, gen_key='true', jwt_ttl=None, name=None, new_name=None, public_key=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, access_expires=0, audience=None, bound_ips=None, bound_namespaces=None, bound_pod_names=None, bound_sa_names=None, force_sub_claims=None, gen_key='true', gw_bound_ips=None, jwt_ttl=None, name=None, new_name=None, public_key=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """UpdateAuthMethodK8S - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -81,6 +83,7 @@ class UpdateAuthMethodK8S(object):
         self._bound_sa_names = None
         self._force_sub_claims = None
         self._gen_key = None
+        self._gw_bound_ips = None
         self._jwt_ttl = None
         self._name = None
         self._new_name = None
@@ -105,6 +108,8 @@ class UpdateAuthMethodK8S(object):
             self.force_sub_claims = force_sub_claims
         if gen_key is not None:
             self.gen_key = gen_key
+        if gw_bound_ips is not None:
+            self.gw_bound_ips = gw_bound_ips
         if jwt_ttl is not None:
             self.jwt_ttl = jwt_ttl
         self.name = name
@@ -300,6 +305,29 @@ class UpdateAuthMethodK8S(object):
         """
 
         self._gen_key = gen_key
+
+    @property
+    def gw_bound_ips(self):
+        """Gets the gw_bound_ips of this UpdateAuthMethodK8S.  # noqa: E501
+
+        A CIDR whitelist with the GW IPs that the access is restricted to  # noqa: E501
+
+        :return: The gw_bound_ips of this UpdateAuthMethodK8S.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._gw_bound_ips
+
+    @gw_bound_ips.setter
+    def gw_bound_ips(self, gw_bound_ips):
+        """Sets the gw_bound_ips of this UpdateAuthMethodK8S.
+
+        A CIDR whitelist with the GW IPs that the access is restricted to  # noqa: E501
+
+        :param gw_bound_ips: The gw_bound_ips of this UpdateAuthMethodK8S.  # noqa: E501
+        :type: list[str]
+        """
+
+        self._gw_bound_ips = gw_bound_ips
 
     @property
     def jwt_ttl(self):

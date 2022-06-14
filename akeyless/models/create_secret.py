@@ -34,6 +34,7 @@ class CreateSecret(object):
                             and the value is json key in definition.
     """
     openapi_types = {
+        'delete_protection': 'str',
         'metadata': 'str',
         'multiline_value': 'bool',
         'name': 'str',
@@ -53,6 +54,7 @@ class CreateSecret(object):
     }
 
     attribute_map = {
+        'delete_protection': 'delete_protection',
         'metadata': 'metadata',
         'multiline_value': 'multiline_value',
         'name': 'name',
@@ -71,12 +73,13 @@ class CreateSecret(object):
         'value': 'value'
     }
 
-    def __init__(self, metadata=None, multiline_value=None, name=None, protection_key=None, secure_access_bastion_issuer=None, secure_access_enable=None, secure_access_host=None, secure_access_ssh_creds=None, secure_access_ssh_user=None, secure_access_url=None, secure_access_web_browsing=None, secure_access_web_proxy=None, tags=None, token=None, uid_token=None, value=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, delete_protection=None, metadata=None, multiline_value=None, name=None, protection_key=None, secure_access_bastion_issuer=None, secure_access_enable=None, secure_access_host=None, secure_access_ssh_creds=None, secure_access_ssh_user=None, secure_access_url=None, secure_access_web_browsing=None, secure_access_web_proxy=None, tags=None, token=None, uid_token=None, value=None, local_vars_configuration=None):  # noqa: E501
         """CreateSecret - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
+        self._delete_protection = None
         self._metadata = None
         self._multiline_value = None
         self._name = None
@@ -95,6 +98,8 @@ class CreateSecret(object):
         self._value = None
         self.discriminator = None
 
+        if delete_protection is not None:
+            self.delete_protection = delete_protection
         if metadata is not None:
             self.metadata = metadata
         if multiline_value is not None:
@@ -125,6 +130,29 @@ class CreateSecret(object):
         if uid_token is not None:
             self.uid_token = uid_token
         self.value = value
+
+    @property
+    def delete_protection(self):
+        """Gets the delete_protection of this CreateSecret.  # noqa: E501
+
+        Protection from accidental deletion of this item  # noqa: E501
+
+        :return: The delete_protection of this CreateSecret.  # noqa: E501
+        :rtype: str
+        """
+        return self._delete_protection
+
+    @delete_protection.setter
+    def delete_protection(self, delete_protection):
+        """Sets the delete_protection of this CreateSecret.
+
+        Protection from accidental deletion of this item  # noqa: E501
+
+        :param delete_protection: The delete_protection of this CreateSecret.  # noqa: E501
+        :type: str
+        """
+
+        self._delete_protection = delete_protection
 
     @property
     def metadata(self):

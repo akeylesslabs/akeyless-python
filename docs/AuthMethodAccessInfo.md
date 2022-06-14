@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **email_pass_access_rules** | [**EmailPassAccessRules**](EmailPassAccessRules.md) |  | [optional] 
 **force_sub_claims** | **bool** | if true the role associated with this auth method must include sub claims | [optional] 
 **gcp_access_rules** | [**GCPAccessRules**](GCPAccessRules.md) |  | [optional] 
+**gw_cidr_whitelist** | **str** |  | [optional] 
 **huawei_access_rules** | [**HuaweiAccessRules**](HuaweiAccessRules.md) |  | [optional] 
 **jwt_ttl** | **int** |  | [optional] 
 **k8s_access_rules** | [**KubernetesAccessRules**](KubernetesAccessRules.md) |  | [optional] 

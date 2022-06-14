@@ -40,6 +40,7 @@ class Item(object):
         'certificates': 'str',
         'client_permissions': 'list[str]',
         'customer_fragment_id': 'str',
+        'delete_protection': 'bool',
         'deletion_date': 'datetime',
         'display_id': 'str',
         'is_enabled': 'bool',
@@ -71,6 +72,7 @@ class Item(object):
         'certificates': 'certificates',
         'client_permissions': 'client_permissions',
         'customer_fragment_id': 'customer_fragment_id',
+        'delete_protection': 'delete_protection',
         'deletion_date': 'deletion_date',
         'display_id': 'display_id',
         'is_enabled': 'is_enabled',
@@ -95,7 +97,7 @@ class Item(object):
         'with_customer_fragment': 'with_customer_fragment'
     }
 
-    def __init__(self, auto_rotate=None, cert_issuer_signer_key_name=None, certificate_issue_details=None, certificates=None, client_permissions=None, customer_fragment_id=None, deletion_date=None, display_id=None, is_enabled=None, item_accessibility=None, item_general_info=None, item_id=None, item_metadata=None, item_name=None, item_size=None, item_state=None, item_sub_type=None, item_tags=None, item_targets_assoc=None, item_type=None, item_versions=None, last_version=None, next_rotation_date=None, protection_key_name=None, public_value=None, rotation_interval=None, target_versions=None, with_customer_fragment=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, auto_rotate=None, cert_issuer_signer_key_name=None, certificate_issue_details=None, certificates=None, client_permissions=None, customer_fragment_id=None, delete_protection=None, deletion_date=None, display_id=None, is_enabled=None, item_accessibility=None, item_general_info=None, item_id=None, item_metadata=None, item_name=None, item_size=None, item_state=None, item_sub_type=None, item_tags=None, item_targets_assoc=None, item_type=None, item_versions=None, last_version=None, next_rotation_date=None, protection_key_name=None, public_value=None, rotation_interval=None, target_versions=None, with_customer_fragment=None, local_vars_configuration=None):  # noqa: E501
         """Item - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -107,6 +109,7 @@ class Item(object):
         self._certificates = None
         self._client_permissions = None
         self._customer_fragment_id = None
+        self._delete_protection = None
         self._deletion_date = None
         self._display_id = None
         self._is_enabled = None
@@ -143,6 +146,8 @@ class Item(object):
             self.client_permissions = client_permissions
         if customer_fragment_id is not None:
             self.customer_fragment_id = customer_fragment_id
+        if delete_protection is not None:
+            self.delete_protection = delete_protection
         if deletion_date is not None:
             self.deletion_date = deletion_date
         if display_id is not None:
@@ -313,6 +318,27 @@ class Item(object):
         """
 
         self._customer_fragment_id = customer_fragment_id
+
+    @property
+    def delete_protection(self):
+        """Gets the delete_protection of this Item.  # noqa: E501
+
+
+        :return: The delete_protection of this Item.  # noqa: E501
+        :rtype: bool
+        """
+        return self._delete_protection
+
+    @delete_protection.setter
+    def delete_protection(self, delete_protection):
+        """Sets the delete_protection of this Item.
+
+
+        :param delete_protection: The delete_protection of this Item.  # noqa: E501
+        :type: bool
+        """
+
+        self._delete_protection = delete_protection
 
     @property
     def deletion_date(self):

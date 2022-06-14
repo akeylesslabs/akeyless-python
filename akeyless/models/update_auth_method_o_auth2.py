@@ -39,6 +39,7 @@ class UpdateAuthMethodOAuth2(object):
         'bound_client_ids': 'list[str]',
         'bound_ips': 'list[str]',
         'force_sub_claims': 'bool',
+        'gw_bound_ips': 'list[str]',
         'issuer': 'str',
         'jwks_uri': 'str',
         'jwt_ttl': 'int',
@@ -55,6 +56,7 @@ class UpdateAuthMethodOAuth2(object):
         'bound_client_ids': 'bound-client-ids',
         'bound_ips': 'bound-ips',
         'force_sub_claims': 'force-sub-claims',
+        'gw_bound_ips': 'gw-bound-ips',
         'issuer': 'issuer',
         'jwks_uri': 'jwks-uri',
         'jwt_ttl': 'jwt-ttl',
@@ -65,7 +67,7 @@ class UpdateAuthMethodOAuth2(object):
         'unique_identifier': 'unique-identifier'
     }
 
-    def __init__(self, access_expires=0, audience=None, bound_client_ids=None, bound_ips=None, force_sub_claims=None, issuer=None, jwks_uri=None, jwt_ttl=None, name=None, new_name=None, token=None, uid_token=None, unique_identifier=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, access_expires=0, audience=None, bound_client_ids=None, bound_ips=None, force_sub_claims=None, gw_bound_ips=None, issuer=None, jwks_uri=None, jwt_ttl=None, name=None, new_name=None, token=None, uid_token=None, unique_identifier=None, local_vars_configuration=None):  # noqa: E501
         """UpdateAuthMethodOAuth2 - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -76,6 +78,7 @@ class UpdateAuthMethodOAuth2(object):
         self._bound_client_ids = None
         self._bound_ips = None
         self._force_sub_claims = None
+        self._gw_bound_ips = None
         self._issuer = None
         self._jwks_uri = None
         self._jwt_ttl = None
@@ -96,6 +99,8 @@ class UpdateAuthMethodOAuth2(object):
             self.bound_ips = bound_ips
         if force_sub_claims is not None:
             self.force_sub_claims = force_sub_claims
+        if gw_bound_ips is not None:
+            self.gw_bound_ips = gw_bound_ips
         if issuer is not None:
             self.issuer = issuer
         self.jwks_uri = jwks_uri
@@ -224,6 +229,29 @@ class UpdateAuthMethodOAuth2(object):
         """
 
         self._force_sub_claims = force_sub_claims
+
+    @property
+    def gw_bound_ips(self):
+        """Gets the gw_bound_ips of this UpdateAuthMethodOAuth2.  # noqa: E501
+
+        A CIDR whitelist with the GW IPs that the access is restricted to  # noqa: E501
+
+        :return: The gw_bound_ips of this UpdateAuthMethodOAuth2.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._gw_bound_ips
+
+    @gw_bound_ips.setter
+    def gw_bound_ips(self, gw_bound_ips):
+        """Sets the gw_bound_ips of this UpdateAuthMethodOAuth2.
+
+        A CIDR whitelist with the GW IPs that the access is restricted to  # noqa: E501
+
+        :param gw_bound_ips: The gw_bound_ips of this UpdateAuthMethodOAuth2.  # noqa: E501
+        :type: list[str]
+        """
+
+        self._gw_bound_ips = gw_bound_ips
 
     @property
     def issuer(self):

@@ -36,6 +36,7 @@ class CreateKey(object):
     openapi_types = {
         'alg': 'str',
         'customer_frg_id': 'str',
+        'delete_protection': 'str',
         'metadata': 'str',
         'name': 'str',
         'split_level': 'int',
@@ -47,6 +48,7 @@ class CreateKey(object):
     attribute_map = {
         'alg': 'alg',
         'customer_frg_id': 'customer-frg-id',
+        'delete_protection': 'delete_protection',
         'metadata': 'metadata',
         'name': 'name',
         'split_level': 'split-level',
@@ -55,7 +57,7 @@ class CreateKey(object):
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, alg=None, customer_frg_id=None, metadata=None, name=None, split_level=2, tag=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, alg=None, customer_frg_id=None, delete_protection=None, metadata=None, name=None, split_level=2, tag=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """CreateKey - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -63,6 +65,7 @@ class CreateKey(object):
 
         self._alg = None
         self._customer_frg_id = None
+        self._delete_protection = None
         self._metadata = None
         self._name = None
         self._split_level = None
@@ -74,6 +77,8 @@ class CreateKey(object):
         self.alg = alg
         if customer_frg_id is not None:
             self.customer_frg_id = customer_frg_id
+        if delete_protection is not None:
+            self.delete_protection = delete_protection
         if metadata is not None:
             self.metadata = metadata
         self.name = name
@@ -133,6 +138,29 @@ class CreateKey(object):
         """
 
         self._customer_frg_id = customer_frg_id
+
+    @property
+    def delete_protection(self):
+        """Gets the delete_protection of this CreateKey.  # noqa: E501
+
+        Protection from accidental deletion of this item  # noqa: E501
+
+        :return: The delete_protection of this CreateKey.  # noqa: E501
+        :rtype: str
+        """
+        return self._delete_protection
+
+    @delete_protection.setter
+    def delete_protection(self, delete_protection):
+        """Sets the delete_protection of this CreateKey.
+
+        Protection from accidental deletion of this item  # noqa: E501
+
+        :param delete_protection: The delete_protection of this CreateKey.  # noqa: E501
+        :type: str
+        """
+
+        self._delete_protection = delete_protection
 
     @property
     def metadata(self):

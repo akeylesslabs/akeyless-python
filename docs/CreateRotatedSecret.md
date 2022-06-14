@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **auto_rotate** | **str** | Whether to automatically rotate every --rotation-interval days, or disable existing automatic rotation | [optional] 
 **aws_region** | **str** | Region (used in aws) | [optional] [default to 'us-east-2']
 **custom_payload** | **str** |  | [optional] 
+**delete_protection** | **str** | Protection from accidental deletion of this item | [optional] 
 **key** | **str** | The name of a key that used to encrypt the secret value (if empty, the account default protectionKey key will be used) | [optional] 
 **metadata** | **str** | Metadata about the secret | [optional] 
 **name** | **str** | Secret name | 

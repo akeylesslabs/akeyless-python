@@ -35,6 +35,7 @@ class CreateSSHCertIssuer(object):
     """
     openapi_types = {
         'allowed_users': 'str',
+        'delete_protection': 'str',
         'extensions': 'dict(str, str)',
         'metadata': 'str',
         'name': 'str',
@@ -54,6 +55,7 @@ class CreateSSHCertIssuer(object):
 
     attribute_map = {
         'allowed_users': 'allowed-users',
+        'delete_protection': 'delete_protection',
         'extensions': 'extensions',
         'metadata': 'metadata',
         'name': 'name',
@@ -71,13 +73,14 @@ class CreateSSHCertIssuer(object):
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, allowed_users=None, extensions=None, metadata=None, name=None, principals=None, secure_access_bastion_api=None, secure_access_bastion_ssh=None, secure_access_enable=None, secure_access_host=None, secure_access_ssh_creds_user=None, secure_access_use_internal_bastion=None, signer_key_name=None, tag=None, token=None, ttl=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, allowed_users=None, delete_protection=None, extensions=None, metadata=None, name=None, principals=None, secure_access_bastion_api=None, secure_access_bastion_ssh=None, secure_access_enable=None, secure_access_host=None, secure_access_ssh_creds_user=None, secure_access_use_internal_bastion=None, signer_key_name=None, tag=None, token=None, ttl=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """CreateSSHCertIssuer - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._allowed_users = None
+        self._delete_protection = None
         self._extensions = None
         self._metadata = None
         self._name = None
@@ -96,6 +99,8 @@ class CreateSSHCertIssuer(object):
         self.discriminator = None
 
         self.allowed_users = allowed_users
+        if delete_protection is not None:
+            self.delete_protection = delete_protection
         if extensions is not None:
             self.extensions = extensions
         if metadata is not None:
@@ -148,6 +153,29 @@ class CreateSSHCertIssuer(object):
             raise ValueError("Invalid value for `allowed_users`, must not be `None`")  # noqa: E501
 
         self._allowed_users = allowed_users
+
+    @property
+    def delete_protection(self):
+        """Gets the delete_protection of this CreateSSHCertIssuer.  # noqa: E501
+
+        Protection from accidental deletion of this item  # noqa: E501
+
+        :return: The delete_protection of this CreateSSHCertIssuer.  # noqa: E501
+        :rtype: str
+        """
+        return self._delete_protection
+
+    @delete_protection.setter
+    def delete_protection(self, delete_protection):
+        """Sets the delete_protection of this CreateSSHCertIssuer.
+
+        Protection from accidental deletion of this item  # noqa: E501
+
+        :param delete_protection: The delete_protection of this CreateSSHCertIssuer.  # noqa: E501
+        :type: str
+        """
+
+        self._delete_protection = delete_protection
 
     @property
     def extensions(self):

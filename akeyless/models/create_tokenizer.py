@@ -36,6 +36,7 @@ class CreateTokenizer(object):
     openapi_types = {
         'alphabet': 'str',
         'decryption_template': 'str',
+        'delete_protection': 'str',
         'encryption_key_name': 'str',
         'encryption_template': 'str',
         'metadata': 'str',
@@ -52,6 +53,7 @@ class CreateTokenizer(object):
     attribute_map = {
         'alphabet': 'alphabet',
         'decryption_template': 'decryption-template',
+        'delete_protection': 'delete_protection',
         'encryption_key_name': 'encryption-key-name',
         'encryption_template': 'encryption-template',
         'metadata': 'metadata',
@@ -65,7 +67,7 @@ class CreateTokenizer(object):
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, alphabet=None, decryption_template=None, encryption_key_name=None, encryption_template=None, metadata=None, name=None, pattern=None, tag=None, template_type=None, token=None, tokenizer_type=None, tweak_type=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, alphabet=None, decryption_template=None, delete_protection=None, encryption_key_name=None, encryption_template=None, metadata=None, name=None, pattern=None, tag=None, template_type=None, token=None, tokenizer_type=None, tweak_type=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """CreateTokenizer - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -73,6 +75,7 @@ class CreateTokenizer(object):
 
         self._alphabet = None
         self._decryption_template = None
+        self._delete_protection = None
         self._encryption_key_name = None
         self._encryption_template = None
         self._metadata = None
@@ -90,6 +93,8 @@ class CreateTokenizer(object):
             self.alphabet = alphabet
         if decryption_template is not None:
             self.decryption_template = decryption_template
+        if delete_protection is not None:
+            self.delete_protection = delete_protection
         if encryption_key_name is not None:
             self.encryption_key_name = encryption_key_name
         if encryption_template is not None:
@@ -155,6 +160,29 @@ class CreateTokenizer(object):
         """
 
         self._decryption_template = decryption_template
+
+    @property
+    def delete_protection(self):
+        """Gets the delete_protection of this CreateTokenizer.  # noqa: E501
+
+        Protection from accidental deletion of this item  # noqa: E501
+
+        :return: The delete_protection of this CreateTokenizer.  # noqa: E501
+        :rtype: str
+        """
+        return self._delete_protection
+
+    @delete_protection.setter
+    def delete_protection(self, delete_protection):
+        """Sets the delete_protection of this CreateTokenizer.
+
+        Protection from accidental deletion of this item  # noqa: E501
+
+        :param delete_protection: The delete_protection of this CreateTokenizer.  # noqa: E501
+        :type: str
+        """
+
+        self._delete_protection = delete_protection
 
     @property
     def encryption_key_name(self):

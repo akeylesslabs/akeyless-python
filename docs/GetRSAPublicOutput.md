@@ -3,6 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**pem** | **str** |  | [optional] 
 **raw** | **str** |  | [optional] 
 **ssh** | **str** |  | [optional] 
 

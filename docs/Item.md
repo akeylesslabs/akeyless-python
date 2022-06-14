@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **certificates** | **str** |  | [optional] 
 **client_permissions** | **list[str]** |  | [optional] 
 **customer_fragment_id** | **str** |  | [optional] 
+**delete_protection** | **bool** |  | [optional] 
 **deletion_date** | **datetime** |  | [optional] 
 **display_id** | **str** |  | [optional] 
 **is_enabled** | **bool** |  | [optional] 

@@ -35,6 +35,7 @@ class UpdateItem(object):
     """
     openapi_types = {
         'add_tag': 'list[str]',
+        'delete_protection': 'str',
         'name': 'str',
         'new_metadata': 'str',
         'new_name': 'str',
@@ -69,6 +70,7 @@ class UpdateItem(object):
 
     attribute_map = {
         'add_tag': 'add-tag',
+        'delete_protection': 'delete_protection',
         'name': 'name',
         'new_metadata': 'new-metadata',
         'new_name': 'new-name',
@@ -101,13 +103,14 @@ class UpdateItem(object):
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, add_tag=None, name=None, new_metadata='default_metadata', new_name=None, rm_tag=None, secure_access_add_host=None, secure_access_allow_external_user=None, secure_access_allow_port_forwading=None, secure_access_aws_account_id=None, secure_access_aws_native_cli=None, secure_access_aws_region=None, secure_access_bastion_api=None, secure_access_bastion_issuer=None, secure_access_bastion_ssh=None, secure_access_cluster_endpoint=None, secure_access_dashboard_url=None, secure_access_db_name=None, secure_access_db_schema=None, secure_access_enable=None, secure_access_host=None, secure_access_rdp_domain=None, secure_access_rdp_user=None, secure_access_rm_host=None, secure_access_ssh_creds=None, secure_access_ssh_creds_user=None, secure_access_url=None, secure_access_use_internal_bastion=None, secure_access_web_browsing=None, secure_access_web_proxy=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, add_tag=None, delete_protection=None, name=None, new_metadata='default_metadata', new_name=None, rm_tag=None, secure_access_add_host=None, secure_access_allow_external_user=None, secure_access_allow_port_forwading=None, secure_access_aws_account_id=None, secure_access_aws_native_cli=None, secure_access_aws_region=None, secure_access_bastion_api=None, secure_access_bastion_issuer=None, secure_access_bastion_ssh=None, secure_access_cluster_endpoint=None, secure_access_dashboard_url=None, secure_access_db_name=None, secure_access_db_schema=None, secure_access_enable=None, secure_access_host=None, secure_access_rdp_domain=None, secure_access_rdp_user=None, secure_access_rm_host=None, secure_access_ssh_creds=None, secure_access_ssh_creds_user=None, secure_access_url=None, secure_access_use_internal_bastion=None, secure_access_web_browsing=None, secure_access_web_proxy=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """UpdateItem - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._add_tag = None
+        self._delete_protection = None
         self._name = None
         self._new_metadata = None
         self._new_name = None
@@ -142,6 +145,8 @@ class UpdateItem(object):
 
         if add_tag is not None:
             self.add_tag = add_tag
+        if delete_protection is not None:
+            self.delete_protection = delete_protection
         self.name = name
         if new_metadata is not None:
             self.new_metadata = new_metadata
@@ -224,6 +229,27 @@ class UpdateItem(object):
         """
 
         self._add_tag = add_tag
+
+    @property
+    def delete_protection(self):
+        """Gets the delete_protection of this UpdateItem.  # noqa: E501
+
+
+        :return: The delete_protection of this UpdateItem.  # noqa: E501
+        :rtype: str
+        """
+        return self._delete_protection
+
+    @delete_protection.setter
+    def delete_protection(self, delete_protection):
+        """Sets the delete_protection of this UpdateItem.
+
+
+        :param delete_protection: The delete_protection of this UpdateItem.  # noqa: E501
+        :type: str
+        """
+
+        self._delete_protection = delete_protection
 
     @property
     def name(self):

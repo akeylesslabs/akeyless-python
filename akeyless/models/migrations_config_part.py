@@ -36,6 +36,7 @@ class MigrationsConfigPart(object):
     openapi_types = {
         'aws_secrets_migrations': 'list[AWSSecretsMigration]',
         'azure_kv_migrations': 'list[AzureKeyVaultMigration]',
+        'gcp_secrets_migrations': 'list[GCPSecretsMigration]',
         'hashi_migrations': 'list[HashiMigration]',
         'k8s_migrations': 'list[K8SMigration]'
     }
@@ -43,11 +44,12 @@ class MigrationsConfigPart(object):
     attribute_map = {
         'aws_secrets_migrations': 'aws_secrets_migrations',
         'azure_kv_migrations': 'azure_kv_migrations',
+        'gcp_secrets_migrations': 'gcp_secrets_migrations',
         'hashi_migrations': 'hashi_migrations',
         'k8s_migrations': 'k8s_migrations'
     }
 
-    def __init__(self, aws_secrets_migrations=None, azure_kv_migrations=None, hashi_migrations=None, k8s_migrations=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, aws_secrets_migrations=None, azure_kv_migrations=None, gcp_secrets_migrations=None, hashi_migrations=None, k8s_migrations=None, local_vars_configuration=None):  # noqa: E501
         """MigrationsConfigPart - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -55,6 +57,7 @@ class MigrationsConfigPart(object):
 
         self._aws_secrets_migrations = None
         self._azure_kv_migrations = None
+        self._gcp_secrets_migrations = None
         self._hashi_migrations = None
         self._k8s_migrations = None
         self.discriminator = None
@@ -63,6 +66,8 @@ class MigrationsConfigPart(object):
             self.aws_secrets_migrations = aws_secrets_migrations
         if azure_kv_migrations is not None:
             self.azure_kv_migrations = azure_kv_migrations
+        if gcp_secrets_migrations is not None:
+            self.gcp_secrets_migrations = gcp_secrets_migrations
         if hashi_migrations is not None:
             self.hashi_migrations = hashi_migrations
         if k8s_migrations is not None:
@@ -109,6 +114,27 @@ class MigrationsConfigPart(object):
         """
 
         self._azure_kv_migrations = azure_kv_migrations
+
+    @property
+    def gcp_secrets_migrations(self):
+        """Gets the gcp_secrets_migrations of this MigrationsConfigPart.  # noqa: E501
+
+
+        :return: The gcp_secrets_migrations of this MigrationsConfigPart.  # noqa: E501
+        :rtype: list[GCPSecretsMigration]
+        """
+        return self._gcp_secrets_migrations
+
+    @gcp_secrets_migrations.setter
+    def gcp_secrets_migrations(self, gcp_secrets_migrations):
+        """Sets the gcp_secrets_migrations of this MigrationsConfigPart.
+
+
+        :param gcp_secrets_migrations: The gcp_secrets_migrations of this MigrationsConfigPart.  # noqa: E501
+        :type: list[GCPSecretsMigration]
+        """
+
+        self._gcp_secrets_migrations = gcp_secrets_migrations
 
     @property
     def hashi_migrations(self):

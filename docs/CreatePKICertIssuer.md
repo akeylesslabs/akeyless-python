@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **client_flag** | **bool** | If set, certificates will be flagged for client auth use | [optional] 
 **code_signing_flag** | **bool** | If set, certificates will be flagged for code signing use | [optional] 
 **country** | **str** | A comma-separated list of the country that will be set in the issued certificate | [optional] 
+**delete_protection** | **str** | Protection from accidental deletion of this item | [optional] 
 **key_usage** | **str** | key-usage | [optional] [default to 'DigitalSignature,KeyAgreement,KeyEncipherment']
 **locality** | **str** | A comma-separated list of the locality that will be set in the issued certificate | [optional] 
 **metadata** | **str** | A metadata about the issuer | [optional] 

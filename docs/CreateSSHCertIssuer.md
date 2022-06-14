@@ -4,6 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **allowed_users** | **str** | Users allowed to fetch the certificate, e.g root,ubuntu | 
+**delete_protection** | **str** | Protection from accidental deletion of this item | [optional] 
 **extensions** | **dict(str, str)** | Signed certificates with extensions, e.g permit-port-forwarding&#x3D;\\\&quot;\\\&quot; | [optional] 
 **metadata** | **str** | A metadata about the issuer | [optional] 
 **name** | **str** | SSH certificate issuer name | 
