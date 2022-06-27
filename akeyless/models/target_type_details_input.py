@@ -37,6 +37,7 @@ class TargetTypeDetailsInput(object):
         'artifactory_admin_apikey': 'str',
         'artifactory_admin_username': 'str',
         'artifactory_base_url': 'str',
+        'auth_flow': 'str',
         'aws_access_key_id': 'str',
         'aws_region': 'str',
         'aws_secret_access_key': 'str',
@@ -130,6 +131,7 @@ class TargetTypeDetailsInput(object):
         'artifactory_admin_apikey': 'artifactory_admin_apikey',
         'artifactory_admin_username': 'artifactory_admin_username',
         'artifactory_base_url': 'artifactory_base_url',
+        'auth_flow': 'auth_flow',
         'aws_access_key_id': 'aws_access_key_id',
         'aws_region': 'aws_region',
         'aws_secret_access_key': 'aws_secret_access_key',
@@ -219,7 +221,7 @@ class TargetTypeDetailsInput(object):
         'venafi_zone': 'venafi_zone'
     }
 
-    def __init__(self, artifactory_admin_apikey=None, artifactory_admin_username=None, artifactory_base_url=None, aws_access_key_id=None, aws_region=None, aws_secret_access_key=None, aws_session_token=None, azure_client_id=None, azure_client_secret=None, azure_resource_group_name=None, azure_resource_name=None, azure_subscription_id=None, azure_tenant_id=None, ca_cert_data=None, ca_cert_name=None, chef_server_host_name=None, chef_server_key=None, chef_server_port=None, chef_server_url=None, chef_server_username=None, chef_skip_ssl=None, client_id=None, client_secret=None, db_host_name=None, db_name=None, db_port=None, db_pwd=None, db_server_certificates=None, db_server_name=None, db_user_name=None, eks_access_key_id=None, eks_cluster_ca_certificate=None, eks_cluster_endpoint=None, eks_cluster_name=None, eks_region=None, eks_secret_access_key=None, gcp_service_account_email=None, gcp_service_account_key=None, github_app_id=None, github_app_private_key=None, github_base_url=None, gke_cluster_ca_certificate=None, gke_cluster_endpoint=None, gke_cluster_name=None, gke_service_account_key=None, gke_service_account_name=None, host=None, k8s_bearer_token=None, k8s_cluster_ca_certificate=None, k8s_cluster_endpoint=None, ldap_audience=None, ldap_bind_dn=None, ldap_bind_password=None, ldap_certificate=None, ldap_token_expiration=None, ldap_url=None, mongodb_atlas_api_private_key=None, mongodb_atlas_api_public_key=None, mongodb_atlas_project_id=None, mongodb_db_name=None, mongodb_default_auth_db=None, mongodb_host_port=None, mongodb_is_atlas=None, mongodb_password=None, mongodb_uri_connection=None, mongodb_uri_options=None, mongodb_username=None, password=None, payload=None, port=None, private_key=None, private_key_password=None, rabbitmq_server_password=None, rabbitmq_server_uri=None, rabbitmq_server_user=None, security_token=None, sf_account=None, ssl_connection_certificate=None, ssl_connection_mode=None, tenant_url=None, url=None, use_gw_cloud_identity=None, user_name=None, username=None, venafi_api_key=None, venafi_base_url=None, venafi_tpp_password=None, venafi_tpp_username=None, venafi_use_tpp=None, venafi_zone=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, artifactory_admin_apikey=None, artifactory_admin_username=None, artifactory_base_url=None, auth_flow=None, aws_access_key_id=None, aws_region=None, aws_secret_access_key=None, aws_session_token=None, azure_client_id=None, azure_client_secret=None, azure_resource_group_name=None, azure_resource_name=None, azure_subscription_id=None, azure_tenant_id=None, ca_cert_data=None, ca_cert_name=None, chef_server_host_name=None, chef_server_key=None, chef_server_port=None, chef_server_url=None, chef_server_username=None, chef_skip_ssl=None, client_id=None, client_secret=None, db_host_name=None, db_name=None, db_port=None, db_pwd=None, db_server_certificates=None, db_server_name=None, db_user_name=None, eks_access_key_id=None, eks_cluster_ca_certificate=None, eks_cluster_endpoint=None, eks_cluster_name=None, eks_region=None, eks_secret_access_key=None, gcp_service_account_email=None, gcp_service_account_key=None, github_app_id=None, github_app_private_key=None, github_base_url=None, gke_cluster_ca_certificate=None, gke_cluster_endpoint=None, gke_cluster_name=None, gke_service_account_key=None, gke_service_account_name=None, host=None, k8s_bearer_token=None, k8s_cluster_ca_certificate=None, k8s_cluster_endpoint=None, ldap_audience=None, ldap_bind_dn=None, ldap_bind_password=None, ldap_certificate=None, ldap_token_expiration=None, ldap_url=None, mongodb_atlas_api_private_key=None, mongodb_atlas_api_public_key=None, mongodb_atlas_project_id=None, mongodb_db_name=None, mongodb_default_auth_db=None, mongodb_host_port=None, mongodb_is_atlas=None, mongodb_password=None, mongodb_uri_connection=None, mongodb_uri_options=None, mongodb_username=None, password=None, payload=None, port=None, private_key=None, private_key_password=None, rabbitmq_server_password=None, rabbitmq_server_uri=None, rabbitmq_server_user=None, security_token=None, sf_account=None, ssl_connection_certificate=None, ssl_connection_mode=None, tenant_url=None, url=None, use_gw_cloud_identity=None, user_name=None, username=None, venafi_api_key=None, venafi_base_url=None, venafi_tpp_password=None, venafi_tpp_username=None, venafi_use_tpp=None, venafi_zone=None, local_vars_configuration=None):  # noqa: E501
         """TargetTypeDetailsInput - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -228,6 +230,7 @@ class TargetTypeDetailsInput(object):
         self._artifactory_admin_apikey = None
         self._artifactory_admin_username = None
         self._artifactory_base_url = None
+        self._auth_flow = None
         self._aws_access_key_id = None
         self._aws_region = None
         self._aws_secret_access_key = None
@@ -323,6 +326,8 @@ class TargetTypeDetailsInput(object):
             self.artifactory_admin_username = artifactory_admin_username
         if artifactory_base_url is not None:
             self.artifactory_base_url = artifactory_base_url
+        if auth_flow is not None:
+            self.auth_flow = auth_flow
         if aws_access_key_id is not None:
             self.aws_access_key_id = aws_access_key_id
         if aws_region is not None:
@@ -560,6 +565,27 @@ class TargetTypeDetailsInput(object):
         """
 
         self._artifactory_base_url = artifactory_base_url
+
+    @property
+    def auth_flow(self):
+        """Gets the auth_flow of this TargetTypeDetailsInput.  # noqa: E501
+
+
+        :return: The auth_flow of this TargetTypeDetailsInput.  # noqa: E501
+        :rtype: str
+        """
+        return self._auth_flow
+
+    @auth_flow.setter
+    def auth_flow(self, auth_flow):
+        """Sets the auth_flow of this TargetTypeDetailsInput.
+
+
+        :param auth_flow: The auth_flow of this TargetTypeDetailsInput.  # noqa: E501
+        :type: str
+        """
+
+        self._auth_flow = auth_flow
 
     @property
     def aws_access_key_id(self):

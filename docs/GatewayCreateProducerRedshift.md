@@ -5,6 +5,7 @@ gatewayCreateProducerRedshift is a command that creates redshift producer
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **creation_statements** | **str** | Redshift Creation statements | [optional] 
+**delete_protection** | **str** | Protection from accidental deletion of this item | [optional] 
 **name** | **str** | Producer name | 
 **producer_encryption_key** | **str** | Dynamic producer encryption key | [optional] 
 **redshift_db_name** | **str** | Redshift DB Name | [optional] 

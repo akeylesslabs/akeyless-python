@@ -252,6 +252,7 @@ from akeyless.models.gateway_migration_update_output import GatewayMigrationUpda
 from akeyless.models.gateway_revoke_tmp_users import GatewayRevokeTmpUsers
 from akeyless.models.gateway_start_producer import GatewayStartProducer
 from akeyless.models.gateway_start_producer_output import GatewayStartProducerOutput
+from akeyless.models.gateway_status_migration import GatewayStatusMigration
 from akeyless.models.gateway_stop_producer import GatewayStopProducer
 from akeyless.models.gateway_stop_producer_output import GatewayStopProducerOutput
 from akeyless.models.gateway_sync_migration import GatewaySyncMigration
@@ -393,7 +394,9 @@ from akeyless.models.log_forwarding_config_part import LogForwardingConfigPart
 from akeyless.models.logstash_log_forwarding_config import LogstashLogForwardingConfig
 from akeyless.models.logz_io_log_forwarding_config import LogzIoLogForwardingConfig
 from akeyless.models.migration_general import MigrationGeneral
+from akeyless.models.migration_items import MigrationItems
 from akeyless.models.migration_status import MigrationStatus
+from akeyless.models.migration_status_reply_obj import MigrationStatusReplyObj
 from akeyless.models.migrations_config_last_change import MigrationsConfigLastChange
 from akeyless.models.migrations_config_part import MigrationsConfigPart
 from akeyless.models.move_objects import MoveObjects

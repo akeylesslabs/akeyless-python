@@ -34,6 +34,7 @@ class GatewayCreateProducerDockerhub(object):
                             and the value is json key in definition.
     """
     openapi_types = {
+        'delete_protection': 'str',
         'dockerhub_password': 'str',
         'dockerhub_token_scopes': 'str',
         'dockerhub_username': 'str',
@@ -47,6 +48,7 @@ class GatewayCreateProducerDockerhub(object):
     }
 
     attribute_map = {
+        'delete_protection': 'delete_protection',
         'dockerhub_password': 'dockerhub-password',
         'dockerhub_token_scopes': 'dockerhub-token-scopes',
         'dockerhub_username': 'dockerhub-username',
@@ -59,12 +61,13 @@ class GatewayCreateProducerDockerhub(object):
         'user_ttl': 'user-ttl'
     }
 
-    def __init__(self, dockerhub_password=None, dockerhub_token_scopes=None, dockerhub_username=None, name=None, producer_encryption_key_name=None, tags=None, target_name=None, token=None, uid_token=None, user_ttl='60m', local_vars_configuration=None):  # noqa: E501
+    def __init__(self, delete_protection=None, dockerhub_password=None, dockerhub_token_scopes=None, dockerhub_username=None, name=None, producer_encryption_key_name=None, tags=None, target_name=None, token=None, uid_token=None, user_ttl='60m', local_vars_configuration=None):  # noqa: E501
         """GatewayCreateProducerDockerhub - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
+        self._delete_protection = None
         self._dockerhub_password = None
         self._dockerhub_token_scopes = None
         self._dockerhub_username = None
@@ -77,6 +80,8 @@ class GatewayCreateProducerDockerhub(object):
         self._user_ttl = None
         self.discriminator = None
 
+        if delete_protection is not None:
+            self.delete_protection = delete_protection
         if dockerhub_password is not None:
             self.dockerhub_password = dockerhub_password
         if dockerhub_token_scopes is not None:
@@ -96,6 +101,29 @@ class GatewayCreateProducerDockerhub(object):
             self.uid_token = uid_token
         if user_ttl is not None:
             self.user_ttl = user_ttl
+
+    @property
+    def delete_protection(self):
+        """Gets the delete_protection of this GatewayCreateProducerDockerhub.  # noqa: E501
+
+        Protection from accidental deletion of this item  # noqa: E501
+
+        :return: The delete_protection of this GatewayCreateProducerDockerhub.  # noqa: E501
+        :rtype: str
+        """
+        return self._delete_protection
+
+    @delete_protection.setter
+    def delete_protection(self, delete_protection):
+        """Sets the delete_protection of this GatewayCreateProducerDockerhub.
+
+        Protection from accidental deletion of this item  # noqa: E501
+
+        :param delete_protection: The delete_protection of this GatewayCreateProducerDockerhub.  # noqa: E501
+        :type: str
+        """
+
+        self._delete_protection = delete_protection
 
     @property
     def dockerhub_password(self):

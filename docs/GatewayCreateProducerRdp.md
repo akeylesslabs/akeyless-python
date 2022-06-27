@@ -5,6 +5,7 @@ gatewayCreateProducerRdp is a command that creates rdp producer
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **allow_user_extend_session** | **int** | AllowUserExtendSession | [optional] 
+**delete_protection** | **str** | Protection from accidental deletion of this item | [optional] 
 **fixed_user_only** | **str** | Fixed user | [optional] [default to 'false']
 **name** | **str** | Producer name | 
 **producer_encryption_key_name** | **str** | Dynamic producer encryption key | [optional] 

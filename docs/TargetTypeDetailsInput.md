@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 **artifactory_admin_apikey** | **str** |  | [optional] 
 **artifactory_admin_username** | **str** |  | [optional] 
 **artifactory_base_url** | **str** |  | [optional] 
+**auth_flow** | **str** |  | [optional] 
 **aws_access_key_id** | **str** |  | [optional] 
 **aws_region** | **str** |  | [optional] 
 **aws_secret_access_key** | **str** |  | [optional] 

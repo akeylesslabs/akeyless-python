@@ -5,6 +5,7 @@ gatewayCreateProducerPostgreSQL is a command that creates postgresql producer
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **creation_statements** | **str** | PostgreSQL Creation statements | [optional] 
+**delete_protection** | **str** | Protection from accidental deletion of this item | [optional] 
 **name** | **str** | Producer name | 
 **postgresql_db_name** | **str** | PostgreSQL DB Name | [optional] 
 **postgresql_host** | **str** | PostgreSQL Host | [optional] [default to '127.0.0.1']

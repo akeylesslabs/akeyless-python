@@ -38,6 +38,7 @@ class GatewayCreateProducerAzure(object):
         'azure_client_id': 'str',
         'azure_client_secret': 'str',
         'azure_tenant_id': 'str',
+        'delete_protection': 'str',
         'fixed_user_claim_keyname': 'str',
         'fixed_user_only': 'bool',
         'name': 'str',
@@ -63,6 +64,7 @@ class GatewayCreateProducerAzure(object):
         'azure_client_id': 'azure-client-id',
         'azure_client_secret': 'azure-client-secret',
         'azure_tenant_id': 'azure-tenant-id',
+        'delete_protection': 'delete_protection',
         'fixed_user_claim_keyname': 'fixed-user-claim-keyname',
         'fixed_user_only': 'fixed-user-only',
         'name': 'name',
@@ -83,7 +85,7 @@ class GatewayCreateProducerAzure(object):
         'user_ttl': 'user-ttl'
     }
 
-    def __init__(self, app_obj_id=None, azure_client_id=None, azure_client_secret=None, azure_tenant_id=None, fixed_user_claim_keyname='false', fixed_user_only=False, name=None, producer_encryption_key_name=None, secure_access_enable=None, secure_access_web=None, secure_access_web_browsing=None, secure_access_web_proxy=None, tags=None, target_name=None, token=None, uid_token=None, user_group_obj_id=None, user_portal_access=False, user_principal_name=None, user_programmatic_access=False, user_role_template_id=None, user_ttl='60m', local_vars_configuration=None):  # noqa: E501
+    def __init__(self, app_obj_id=None, azure_client_id=None, azure_client_secret=None, azure_tenant_id=None, delete_protection=None, fixed_user_claim_keyname='false', fixed_user_only=False, name=None, producer_encryption_key_name=None, secure_access_enable=None, secure_access_web=None, secure_access_web_browsing=None, secure_access_web_proxy=None, tags=None, target_name=None, token=None, uid_token=None, user_group_obj_id=None, user_portal_access=False, user_principal_name=None, user_programmatic_access=False, user_role_template_id=None, user_ttl='60m', local_vars_configuration=None):  # noqa: E501
         """GatewayCreateProducerAzure - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -93,6 +95,7 @@ class GatewayCreateProducerAzure(object):
         self._azure_client_id = None
         self._azure_client_secret = None
         self._azure_tenant_id = None
+        self._delete_protection = None
         self._fixed_user_claim_keyname = None
         self._fixed_user_only = None
         self._name = None
@@ -121,6 +124,8 @@ class GatewayCreateProducerAzure(object):
             self.azure_client_secret = azure_client_secret
         if azure_tenant_id is not None:
             self.azure_tenant_id = azure_tenant_id
+        if delete_protection is not None:
+            self.delete_protection = delete_protection
         if fixed_user_claim_keyname is not None:
             self.fixed_user_claim_keyname = fixed_user_claim_keyname
         if fixed_user_only is not None:
@@ -248,6 +253,29 @@ class GatewayCreateProducerAzure(object):
         """
 
         self._azure_tenant_id = azure_tenant_id
+
+    @property
+    def delete_protection(self):
+        """Gets the delete_protection of this GatewayCreateProducerAzure.  # noqa: E501
+
+        Protection from accidental deletion of this item  # noqa: E501
+
+        :return: The delete_protection of this GatewayCreateProducerAzure.  # noqa: E501
+        :rtype: str
+        """
+        return self._delete_protection
+
+    @delete_protection.setter
+    def delete_protection(self, delete_protection):
+        """Sets the delete_protection of this GatewayCreateProducerAzure.
+
+        Protection from accidental deletion of this item  # noqa: E501
+
+        :param delete_protection: The delete_protection of this GatewayCreateProducerAzure.  # noqa: E501
+        :type: str
+        """
+
+        self._delete_protection = delete_protection
 
     @property
     def fixed_user_claim_keyname(self):

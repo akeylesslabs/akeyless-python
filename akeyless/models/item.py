@@ -59,6 +59,7 @@ class Item(object):
         'last_version': 'int',
         'next_rotation_date': 'datetime',
         'protection_key_name': 'str',
+        'protection_key_type': 'str',
         'public_value': 'str',
         'rotation_interval': 'int',
         'target_versions': 'list[TargetItemVersion]',
@@ -91,13 +92,14 @@ class Item(object):
         'last_version': 'last_version',
         'next_rotation_date': 'next_rotation_date',
         'protection_key_name': 'protection_key_name',
+        'protection_key_type': 'protection_key_type',
         'public_value': 'public_value',
         'rotation_interval': 'rotation_interval',
         'target_versions': 'target_versions',
         'with_customer_fragment': 'with_customer_fragment'
     }
 
-    def __init__(self, auto_rotate=None, cert_issuer_signer_key_name=None, certificate_issue_details=None, certificates=None, client_permissions=None, customer_fragment_id=None, delete_protection=None, deletion_date=None, display_id=None, is_enabled=None, item_accessibility=None, item_general_info=None, item_id=None, item_metadata=None, item_name=None, item_size=None, item_state=None, item_sub_type=None, item_tags=None, item_targets_assoc=None, item_type=None, item_versions=None, last_version=None, next_rotation_date=None, protection_key_name=None, public_value=None, rotation_interval=None, target_versions=None, with_customer_fragment=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, auto_rotate=None, cert_issuer_signer_key_name=None, certificate_issue_details=None, certificates=None, client_permissions=None, customer_fragment_id=None, delete_protection=None, deletion_date=None, display_id=None, is_enabled=None, item_accessibility=None, item_general_info=None, item_id=None, item_metadata=None, item_name=None, item_size=None, item_state=None, item_sub_type=None, item_tags=None, item_targets_assoc=None, item_type=None, item_versions=None, last_version=None, next_rotation_date=None, protection_key_name=None, protection_key_type=None, public_value=None, rotation_interval=None, target_versions=None, with_customer_fragment=None, local_vars_configuration=None):  # noqa: E501
         """Item - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -128,6 +130,7 @@ class Item(object):
         self._last_version = None
         self._next_rotation_date = None
         self._protection_key_name = None
+        self._protection_key_type = None
         self._public_value = None
         self._rotation_interval = None
         self._target_versions = None
@@ -184,6 +187,8 @@ class Item(object):
             self.next_rotation_date = next_rotation_date
         if protection_key_name is not None:
             self.protection_key_name = protection_key_name
+        if protection_key_type is not None:
+            self.protection_key_type = protection_key_type
         if public_value is not None:
             self.public_value = public_value
         if rotation_interval is not None:
@@ -719,6 +724,27 @@ class Item(object):
         """
 
         self._protection_key_name = protection_key_name
+
+    @property
+    def protection_key_type(self):
+        """Gets the protection_key_type of this Item.  # noqa: E501
+
+
+        :return: The protection_key_type of this Item.  # noqa: E501
+        :rtype: str
+        """
+        return self._protection_key_type
+
+    @protection_key_type.setter
+    def protection_key_type(self, protection_key_type):
+        """Sets the protection_key_type of this Item.
+
+
+        :param protection_key_type: The protection_key_type of this Item.  # noqa: E501
+        :type: str
+        """
+
+        self._protection_key_type = protection_key_type
 
     @property
     def public_value(self):

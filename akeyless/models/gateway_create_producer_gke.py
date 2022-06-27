@@ -34,6 +34,7 @@ class GatewayCreateProducerGke(object):
                             and the value is json key in definition.
     """
     openapi_types = {
+        'delete_protection': 'str',
         'gke_account_key': 'str',
         'gke_cluster_cert': 'str',
         'gke_cluster_endpoint': 'str',
@@ -54,6 +55,7 @@ class GatewayCreateProducerGke(object):
     }
 
     attribute_map = {
+        'delete_protection': 'delete_protection',
         'gke_account_key': 'gke-account-key',
         'gke_cluster_cert': 'gke-cluster-cert',
         'gke_cluster_endpoint': 'gke-cluster-endpoint',
@@ -73,12 +75,13 @@ class GatewayCreateProducerGke(object):
         'user_ttl': 'user-ttl'
     }
 
-    def __init__(self, gke_account_key=None, gke_cluster_cert=None, gke_cluster_endpoint=None, gke_cluster_name=None, gke_service_account_email=None, name=None, producer_encryption_key_name=None, secure_access_allow_port_forwading=None, secure_access_bastion_issuer=None, secure_access_cluster_endpoint=None, secure_access_enable=None, secure_access_web=None, tags=None, target_name=None, token=None, uid_token=None, user_ttl='60m', local_vars_configuration=None):  # noqa: E501
+    def __init__(self, delete_protection=None, gke_account_key=None, gke_cluster_cert=None, gke_cluster_endpoint=None, gke_cluster_name=None, gke_service_account_email=None, name=None, producer_encryption_key_name=None, secure_access_allow_port_forwading=None, secure_access_bastion_issuer=None, secure_access_cluster_endpoint=None, secure_access_enable=None, secure_access_web=None, tags=None, target_name=None, token=None, uid_token=None, user_ttl='60m', local_vars_configuration=None):  # noqa: E501
         """GatewayCreateProducerGke - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
+        self._delete_protection = None
         self._gke_account_key = None
         self._gke_cluster_cert = None
         self._gke_cluster_endpoint = None
@@ -98,6 +101,8 @@ class GatewayCreateProducerGke(object):
         self._user_ttl = None
         self.discriminator = None
 
+        if delete_protection is not None:
+            self.delete_protection = delete_protection
         if gke_account_key is not None:
             self.gke_account_key = gke_account_key
         if gke_cluster_cert is not None:
@@ -131,6 +136,29 @@ class GatewayCreateProducerGke(object):
             self.uid_token = uid_token
         if user_ttl is not None:
             self.user_ttl = user_ttl
+
+    @property
+    def delete_protection(self):
+        """Gets the delete_protection of this GatewayCreateProducerGke.  # noqa: E501
+
+        Protection from accidental deletion of this item  # noqa: E501
+
+        :return: The delete_protection of this GatewayCreateProducerGke.  # noqa: E501
+        :rtype: str
+        """
+        return self._delete_protection
+
+    @delete_protection.setter
+    def delete_protection(self, delete_protection):
+        """Sets the delete_protection of this GatewayCreateProducerGke.
+
+        Protection from accidental deletion of this item  # noqa: E501
+
+        :param delete_protection: The delete_protection of this GatewayCreateProducerGke.  # noqa: E501
+        :type: str
+        """
+
+        self._delete_protection = delete_protection
 
     @property
     def gke_account_key(self):

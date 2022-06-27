@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **account_password** | **str** | Database Password | [optional] 
 **account_username** | **str** | Database Username | [optional] 
 **db_name** | **str** | Database name | [optional] 
+**delete_protection** | **str** | Protection from accidental deletion of this item | [optional] 
 **name** | **str** | Producer name | 
 **new_name** | **str** | Producer name | [optional] 
 **role** | **str** | User role | [optional] 

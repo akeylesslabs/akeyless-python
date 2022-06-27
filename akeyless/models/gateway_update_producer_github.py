@@ -34,6 +34,7 @@ class GatewayUpdateProducerGithub(object):
                             and the value is json key in definition.
     """
     openapi_types = {
+        'delete_protection': 'str',
         'github_app_id': 'int',
         'github_app_private_key': 'str',
         'github_base_url': 'str',
@@ -49,6 +50,7 @@ class GatewayUpdateProducerGithub(object):
     }
 
     attribute_map = {
+        'delete_protection': 'delete_protection',
         'github_app_id': 'github-app-id',
         'github_app_private_key': 'github-app-private-key',
         'github_base_url': 'github-base-url',
@@ -63,12 +65,13 @@ class GatewayUpdateProducerGithub(object):
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, github_app_id=None, github_app_private_key=None, github_base_url=None, installation_id=None, installation_repository=None, name=None, new_name=None, target_name=None, token=None, token_permissions=None, token_repositories=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, delete_protection=None, github_app_id=None, github_app_private_key=None, github_base_url=None, installation_id=None, installation_repository=None, name=None, new_name=None, target_name=None, token=None, token_permissions=None, token_repositories=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """GatewayUpdateProducerGithub - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
+        self._delete_protection = None
         self._github_app_id = None
         self._github_app_private_key = None
         self._github_base_url = None
@@ -83,6 +86,8 @@ class GatewayUpdateProducerGithub(object):
         self._uid_token = None
         self.discriminator = None
 
+        if delete_protection is not None:
+            self.delete_protection = delete_protection
         if github_app_id is not None:
             self.github_app_id = github_app_id
         if github_app_private_key is not None:
@@ -106,6 +111,29 @@ class GatewayUpdateProducerGithub(object):
             self.token_repositories = token_repositories
         if uid_token is not None:
             self.uid_token = uid_token
+
+    @property
+    def delete_protection(self):
+        """Gets the delete_protection of this GatewayUpdateProducerGithub.  # noqa: E501
+
+        Protection from accidental deletion of this item  # noqa: E501
+
+        :return: The delete_protection of this GatewayUpdateProducerGithub.  # noqa: E501
+        :rtype: str
+        """
+        return self._delete_protection
+
+    @delete_protection.setter
+    def delete_protection(self, delete_protection):
+        """Sets the delete_protection of this GatewayUpdateProducerGithub.
+
+        Protection from accidental deletion of this item  # noqa: E501
+
+        :param delete_protection: The delete_protection of this GatewayUpdateProducerGithub.  # noqa: E501
+        :type: str
+        """
+
+        self._delete_protection = delete_protection
 
     @property
     def github_app_id(self):

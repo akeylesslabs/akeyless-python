@@ -38,6 +38,7 @@ class GatewayUpdateProducerCertificateAutomation(object):
         'allow_subdomains': 'bool',
         'allowed_domains': 'list[str]',
         'auto_generated_folder': 'str',
+        'delete_protection': 'str',
         'enable_admin_rotation': 'bool',
         'name': 'str',
         'new_name': 'str',
@@ -64,6 +65,7 @@ class GatewayUpdateProducerCertificateAutomation(object):
         'allow_subdomains': 'allow-subdomains',
         'allowed_domains': 'allowed-domains',
         'auto_generated_folder': 'auto-generated-folder',
+        'delete_protection': 'delete_protection',
         'enable_admin_rotation': 'enable-admin-rotation',
         'name': 'name',
         'new_name': 'new-name',
@@ -85,7 +87,7 @@ class GatewayUpdateProducerCertificateAutomation(object):
         'venafi_zone': 'venafi-zone'
     }
 
-    def __init__(self, admin_rotation_interval_days=0, allow_subdomains=None, allowed_domains=None, auto_generated_folder=None, enable_admin_rotation=False, name=None, new_name=None, producer_encryption_key_name=None, root_first_in_chain=None, sign_using_akeyless_pki=None, signer_key_name=None, store_private_key=None, tags=None, target_name=None, token=None, uid_token=None, user_ttl=None, venafi_api_key=None, venafi_baseurl=None, venafi_password=None, venafi_use_tpp=None, venafi_username=None, venafi_zone=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, admin_rotation_interval_days=0, allow_subdomains=None, allowed_domains=None, auto_generated_folder=None, delete_protection=None, enable_admin_rotation=False, name=None, new_name=None, producer_encryption_key_name=None, root_first_in_chain=None, sign_using_akeyless_pki=None, signer_key_name=None, store_private_key=None, tags=None, target_name=None, token=None, uid_token=None, user_ttl=None, venafi_api_key=None, venafi_baseurl=None, venafi_password=None, venafi_use_tpp=None, venafi_username=None, venafi_zone=None, local_vars_configuration=None):  # noqa: E501
         """GatewayUpdateProducerCertificateAutomation - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -95,6 +97,7 @@ class GatewayUpdateProducerCertificateAutomation(object):
         self._allow_subdomains = None
         self._allowed_domains = None
         self._auto_generated_folder = None
+        self._delete_protection = None
         self._enable_admin_rotation = None
         self._name = None
         self._new_name = None
@@ -124,6 +127,8 @@ class GatewayUpdateProducerCertificateAutomation(object):
             self.allowed_domains = allowed_domains
         if auto_generated_folder is not None:
             self.auto_generated_folder = auto_generated_folder
+        if delete_protection is not None:
+            self.delete_protection = delete_protection
         if enable_admin_rotation is not None:
             self.enable_admin_rotation = enable_admin_rotation
         self.name = name
@@ -253,6 +258,29 @@ class GatewayUpdateProducerCertificateAutomation(object):
         """
 
         self._auto_generated_folder = auto_generated_folder
+
+    @property
+    def delete_protection(self):
+        """Gets the delete_protection of this GatewayUpdateProducerCertificateAutomation.  # noqa: E501
+
+        Protection from accidental deletion of this item  # noqa: E501
+
+        :return: The delete_protection of this GatewayUpdateProducerCertificateAutomation.  # noqa: E501
+        :rtype: str
+        """
+        return self._delete_protection
+
+    @delete_protection.setter
+    def delete_protection(self, delete_protection):
+        """Sets the delete_protection of this GatewayUpdateProducerCertificateAutomation.
+
+        Protection from accidental deletion of this item  # noqa: E501
+
+        :param delete_protection: The delete_protection of this GatewayUpdateProducerCertificateAutomation.  # noqa: E501
+        :type: str
+        """
+
+        self._delete_protection = delete_protection
 
     @property
     def enable_admin_rotation(self):

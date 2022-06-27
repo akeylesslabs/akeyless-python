@@ -5,6 +5,7 @@ gatewayUpdateProducerRedshift is a command that updates redshift producer
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **creation_statements** | **str** | Redshift Creation statements | [optional] 
+**delete_protection** | **str** | Protection from accidental deletion of this item | [optional] 
 **name** | **str** | Producer name | 
 **new_name** | **str** | Producer name | [optional] 
 **producer_encryption_key** | **str** | Dynamic producer encryption key | [optional] 

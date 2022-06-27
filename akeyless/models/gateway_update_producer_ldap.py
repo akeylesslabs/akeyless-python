@@ -36,6 +36,7 @@ class GatewayUpdateProducerLdap(object):
     openapi_types = {
         'bind_dn': 'str',
         'bind_dn_password': 'str',
+        'delete_protection': 'str',
         'external_username': 'str',
         'ldap_ca_cert': 'str',
         'ldap_url': 'str',
@@ -55,6 +56,7 @@ class GatewayUpdateProducerLdap(object):
     attribute_map = {
         'bind_dn': 'bind-dn',
         'bind_dn_password': 'bind-dn-password',
+        'delete_protection': 'delete_protection',
         'external_username': 'external-username',
         'ldap_ca_cert': 'ldap-ca-cert',
         'ldap_url': 'ldap-url',
@@ -71,7 +73,7 @@ class GatewayUpdateProducerLdap(object):
         'user_ttl': 'user-ttl'
     }
 
-    def __init__(self, bind_dn=None, bind_dn_password=None, external_username='false', ldap_ca_cert=None, ldap_url=None, name=None, new_name=None, producer_encryption_key_name=None, tags=None, target_name=None, token=None, token_expiration=None, uid_token=None, user_attribute=None, user_dn=None, user_ttl='60m', local_vars_configuration=None):  # noqa: E501
+    def __init__(self, bind_dn=None, bind_dn_password=None, delete_protection=None, external_username='false', ldap_ca_cert=None, ldap_url=None, name=None, new_name=None, producer_encryption_key_name=None, tags=None, target_name=None, token=None, token_expiration=None, uid_token=None, user_attribute=None, user_dn=None, user_ttl='60m', local_vars_configuration=None):  # noqa: E501
         """GatewayUpdateProducerLdap - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -79,6 +81,7 @@ class GatewayUpdateProducerLdap(object):
 
         self._bind_dn = None
         self._bind_dn_password = None
+        self._delete_protection = None
         self._external_username = None
         self._ldap_ca_cert = None
         self._ldap_url = None
@@ -99,6 +102,8 @@ class GatewayUpdateProducerLdap(object):
             self.bind_dn = bind_dn
         if bind_dn_password is not None:
             self.bind_dn_password = bind_dn_password
+        if delete_protection is not None:
+            self.delete_protection = delete_protection
         if external_username is not None:
             self.external_username = external_username
         if ldap_ca_cert is not None:
@@ -172,6 +177,29 @@ class GatewayUpdateProducerLdap(object):
         """
 
         self._bind_dn_password = bind_dn_password
+
+    @property
+    def delete_protection(self):
+        """Gets the delete_protection of this GatewayUpdateProducerLdap.  # noqa: E501
+
+        Protection from accidental deletion of this item  # noqa: E501
+
+        :return: The delete_protection of this GatewayUpdateProducerLdap.  # noqa: E501
+        :rtype: str
+        """
+        return self._delete_protection
+
+    @delete_protection.setter
+    def delete_protection(self, delete_protection):
+        """Sets the delete_protection of this GatewayUpdateProducerLdap.
+
+        Protection from accidental deletion of this item  # noqa: E501
+
+        :param delete_protection: The delete_protection of this GatewayUpdateProducerLdap.  # noqa: E501
+        :type: str
+        """
+
+        self._delete_protection = delete_protection
 
     @property
     def external_username(self):

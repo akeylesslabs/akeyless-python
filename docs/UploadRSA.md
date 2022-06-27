@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **delete_protection** | **str** | Protection from accidental deletion of this item | [optional] 
 **metadata** | **str** | A metadata about the key | [optional] 
 **name** | **str** | Name of key to be created | 
+**overwrite** | **str** | When the overwrite flag is set, this command will only update an existing key. [true, false] | [optional] 
 **rsa_file_data** | **str** | RSA private key data, base64 encoded | [optional] 
 **split_level** | **int** | The number of fragments that the item will be split into | [optional] [default to 2]
 **tag** | **list[str]** | List of the tags attached to this key | [optional] 

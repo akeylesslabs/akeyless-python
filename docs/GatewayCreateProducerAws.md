@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **aws_user_groups** | **str** | AWS User groups | [optional] 
 **aws_user_policies** | **str** | AWS User policies | [optional] 
 **aws_user_programmatic_access** | **bool** | AWS User programmatic access | [optional] [default to True]
+**delete_protection** | **str** | Protection from accidental deletion of this item | [optional] 
 **enable_admin_rotation** | **bool** | Automatic admin credentials rotation | [optional] [default to False]
 **name** | **str** | Producer name | 
 **producer_encryption_key_name** | **str** | Dynamic producer encryption key | [optional] 

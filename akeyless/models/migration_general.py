@@ -36,6 +36,7 @@ class MigrationGeneral(object):
     openapi_types = {
         'id': 'str',
         'name': 'str',
+        'new_name': 'str',
         'prefix': 'str',
         'protection_key': 'str'
     }
@@ -43,11 +44,12 @@ class MigrationGeneral(object):
     attribute_map = {
         'id': 'id',
         'name': 'name',
+        'new_name': 'new_name',
         'prefix': 'prefix',
         'protection_key': 'protection_key'
     }
 
-    def __init__(self, id=None, name=None, prefix=None, protection_key=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, id=None, name=None, new_name=None, prefix=None, protection_key=None, local_vars_configuration=None):  # noqa: E501
         """MigrationGeneral - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -55,6 +57,7 @@ class MigrationGeneral(object):
 
         self._id = None
         self._name = None
+        self._new_name = None
         self._prefix = None
         self._protection_key = None
         self.discriminator = None
@@ -63,6 +66,8 @@ class MigrationGeneral(object):
             self.id = id
         if name is not None:
             self.name = name
+        if new_name is not None:
+            self.new_name = new_name
         if prefix is not None:
             self.prefix = prefix
         if protection_key is not None:
@@ -109,6 +114,27 @@ class MigrationGeneral(object):
         """
 
         self._name = name
+
+    @property
+    def new_name(self):
+        """Gets the new_name of this MigrationGeneral.  # noqa: E501
+
+
+        :return: The new_name of this MigrationGeneral.  # noqa: E501
+        :rtype: str
+        """
+        return self._new_name
+
+    @new_name.setter
+    def new_name(self, new_name):
+        """Sets the new_name of this MigrationGeneral.
+
+
+        :param new_name: The new_name of this MigrationGeneral.  # noqa: E501
+        :type: str
+        """
+
+        self._new_name = new_name
 
     @property
     def prefix(self):

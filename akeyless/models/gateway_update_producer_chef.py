@@ -38,6 +38,7 @@ class GatewayUpdateProducerChef(object):
         'chef_server_key': 'str',
         'chef_server_url': 'str',
         'chef_server_username': 'str',
+        'delete_protection': 'str',
         'name': 'str',
         'new_name': 'str',
         'producer_encryption_key_name': 'str',
@@ -54,6 +55,7 @@ class GatewayUpdateProducerChef(object):
         'chef_server_key': 'chef-server-key',
         'chef_server_url': 'chef-server-url',
         'chef_server_username': 'chef-server-username',
+        'delete_protection': 'delete_protection',
         'name': 'name',
         'new_name': 'new-name',
         'producer_encryption_key_name': 'producer-encryption-key-name',
@@ -65,7 +67,7 @@ class GatewayUpdateProducerChef(object):
         'user_ttl': 'user-ttl'
     }
 
-    def __init__(self, chef_orgs=None, chef_server_key=None, chef_server_url=None, chef_server_username=None, name=None, new_name=None, producer_encryption_key_name=None, skip_ssl=True, tags=None, target_name=None, token=None, uid_token=None, user_ttl='60m', local_vars_configuration=None):  # noqa: E501
+    def __init__(self, chef_orgs=None, chef_server_key=None, chef_server_url=None, chef_server_username=None, delete_protection=None, name=None, new_name=None, producer_encryption_key_name=None, skip_ssl=True, tags=None, target_name=None, token=None, uid_token=None, user_ttl='60m', local_vars_configuration=None):  # noqa: E501
         """GatewayUpdateProducerChef - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -75,6 +77,7 @@ class GatewayUpdateProducerChef(object):
         self._chef_server_key = None
         self._chef_server_url = None
         self._chef_server_username = None
+        self._delete_protection = None
         self._name = None
         self._new_name = None
         self._producer_encryption_key_name = None
@@ -94,6 +97,8 @@ class GatewayUpdateProducerChef(object):
             self.chef_server_url = chef_server_url
         if chef_server_username is not None:
             self.chef_server_username = chef_server_username
+        if delete_protection is not None:
+            self.delete_protection = delete_protection
         self.name = name
         if new_name is not None:
             self.new_name = new_name
@@ -203,6 +208,29 @@ class GatewayUpdateProducerChef(object):
         """
 
         self._chef_server_username = chef_server_username
+
+    @property
+    def delete_protection(self):
+        """Gets the delete_protection of this GatewayUpdateProducerChef.  # noqa: E501
+
+        Protection from accidental deletion of this item  # noqa: E501
+
+        :return: The delete_protection of this GatewayUpdateProducerChef.  # noqa: E501
+        :rtype: str
+        """
+        return self._delete_protection
+
+    @delete_protection.setter
+    def delete_protection(self, delete_protection):
+        """Sets the delete_protection of this GatewayUpdateProducerChef.
+
+        Protection from accidental deletion of this item  # noqa: E501
+
+        :param delete_protection: The delete_protection of this GatewayUpdateProducerChef.  # noqa: E501
+        :type: str
+        """
+
+        self._delete_protection = delete_protection
 
     @property
     def name(self):

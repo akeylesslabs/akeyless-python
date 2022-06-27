@@ -66,7 +66,7 @@ class GatewayDeleteMigration(object):
     def id(self):
         """Gets the id of this GatewayDeleteMigration.  # noqa: E501
 
-        Migration name  # noqa: E501
+        Migration ID  # noqa: E501
 
         :return: The id of this GatewayDeleteMigration.  # noqa: E501
         :rtype: str
@@ -77,7 +77,7 @@ class GatewayDeleteMigration(object):
     def id(self, id):
         """Sets the id of this GatewayDeleteMigration.
 
-        Migration name  # noqa: E501
+        Migration ID  # noqa: E501
 
         :param id: The id of this GatewayDeleteMigration.  # noqa: E501
         :type: str

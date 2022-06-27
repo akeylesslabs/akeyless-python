@@ -4,6 +4,7 @@ gatewayUpdateProducerHanaDb is a command that updates hanadb producer
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**delete_protection** | **str** | Protection from accidental deletion of this item | [optional] 
 **hana_dbname** | **str** | HanaDb Name | [optional] 
 **hanadb_create_statements** | **str** | HanaDb Creation statements | [optional] 
 **hanadb_host** | **str** | HanaDb Host | [optional] [default to '127.0.0.1']

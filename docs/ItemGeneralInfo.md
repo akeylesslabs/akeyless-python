@@ -5,6 +5,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **cert_issue_details** | [**CertificateIssueInfo**](CertificateIssueInfo.md) |  | [optional] 
 **classic_key_details** | [**ClassicKeyDetailsInfo**](ClassicKeyDetailsInfo.md) |  | [optional] 
+**cluster_gw_url** | **str** |  | [optional] 
 **display_metadata** | **str** |  | [optional] 
 **dynamic_secret_producer_details** | [**DynamicSecretProducerInfo**](DynamicSecretProducerInfo.md) |  | [optional] 
 **password_policy** | [**PasswordPolicyInfo**](PasswordPolicyInfo.md) |  | [optional] 

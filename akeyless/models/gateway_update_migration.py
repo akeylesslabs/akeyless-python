@@ -57,10 +57,10 @@ class GatewayUpdateMigration(object):
         'k8s_url': 'str',
         'k8s_username': 'str',
         'name': 'str',
+        'new_name': 'str',
         'protection_key': 'str',
         'target_location': 'str',
         'token': 'str',
-        'type': 'str',
         'uid_token': 'str'
     }
 
@@ -88,14 +88,14 @@ class GatewayUpdateMigration(object):
         'k8s_url': 'k8s-url',
         'k8s_username': 'k8s-username',
         'name': 'name',
+        'new_name': 'new_name',
         'protection_key': 'protection-key',
         'target_location': 'target-location',
         'token': 'token',
-        'type': 'type',
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, aws_key=None, aws_key_id=None, aws_region=None, azure_client_id=None, azure_kv_name=None, azure_secret=None, azure_tenant_id=None, gcp_key=None, hashi_json=None, hashi_ns=None, hashi_token=None, hashi_url=None, id=None, k8s_ca_certificate=None, k8s_client_certificate=None, k8s_client_key=None, k8s_namespace=None, k8s_password=None, k8s_skip_system=None, k8s_token=None, k8s_url=None, k8s_username=None, name=None, protection_key=None, target_location=None, token=None, type=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, aws_key=None, aws_key_id=None, aws_region=None, azure_client_id=None, azure_kv_name=None, azure_secret=None, azure_tenant_id=None, gcp_key=None, hashi_json=None, hashi_ns=None, hashi_token=None, hashi_url=None, id=None, k8s_ca_certificate=None, k8s_client_certificate=None, k8s_client_key=None, k8s_namespace=None, k8s_password=None, k8s_skip_system=None, k8s_token=None, k8s_url=None, k8s_username=None, name=None, new_name=None, protection_key=None, target_location=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """GatewayUpdateMigration - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -124,10 +124,10 @@ class GatewayUpdateMigration(object):
         self._k8s_url = None
         self._k8s_username = None
         self._name = None
+        self._new_name = None
         self._protection_key = None
         self._target_location = None
         self._token = None
-        self._type = None
         self._uid_token = None
         self.discriminator = None
 
@@ -175,15 +175,16 @@ class GatewayUpdateMigration(object):
             self.k8s_url = k8s_url
         if k8s_username is not None:
             self.k8s_username = k8s_username
-        self.name = name
+        if name is not None:
+            self.name = name
+        if new_name is not None:
+            self.new_name = new_name
         if protection_key is not None:
             self.protection_key = protection_key
         if target_location is not None:
             self.target_location = target_location
         if token is not None:
             self.token = token
-        if type is not None:
-            self.type = type
         if uid_token is not None:
             self.uid_token = uid_token
 
@@ -191,7 +192,7 @@ class GatewayUpdateMigration(object):
     def aws_key(self):
         """Gets the aws_key of this GatewayUpdateMigration.  # noqa: E501
 
-        AWS Secret Access Key  # noqa: E501
+        AWS Secret Access Key (relevant only for AWS migration)  # noqa: E501
 
         :return: The aws_key of this GatewayUpdateMigration.  # noqa: E501
         :rtype: str
@@ -202,7 +203,7 @@ class GatewayUpdateMigration(object):
     def aws_key(self, aws_key):
         """Sets the aws_key of this GatewayUpdateMigration.
 
-        AWS Secret Access Key  # noqa: E501
+        AWS Secret Access Key (relevant only for AWS migration)  # noqa: E501
 
         :param aws_key: The aws_key of this GatewayUpdateMigration.  # noqa: E501
         :type: str
@@ -214,7 +215,7 @@ class GatewayUpdateMigration(object):
     def aws_key_id(self):
         """Gets the aws_key_id of this GatewayUpdateMigration.  # noqa: E501
 
-        AWS Access Key ID  # noqa: E501
+        AWS Access Key ID with sufficient permissions to get all secrets, e.g. 'arn:aws:secretsmanager:[Region]:[AccountId]:secret:[/path/to/secrets/*]' (relevant only for AWS migration)  # noqa: E501
 
         :return: The aws_key_id of this GatewayUpdateMigration.  # noqa: E501
         :rtype: str
@@ -225,7 +226,7 @@ class GatewayUpdateMigration(object):
     def aws_key_id(self, aws_key_id):
         """Sets the aws_key_id of this GatewayUpdateMigration.
 
-        AWS Access Key ID  # noqa: E501
+        AWS Access Key ID with sufficient permissions to get all secrets, e.g. 'arn:aws:secretsmanager:[Region]:[AccountId]:secret:[/path/to/secrets/*]' (relevant only for AWS migration)  # noqa: E501
 
         :param aws_key_id: The aws_key_id of this GatewayUpdateMigration.  # noqa: E501
         :type: str
@@ -237,7 +238,7 @@ class GatewayUpdateMigration(object):
     def aws_region(self):
         """Gets the aws_region of this GatewayUpdateMigration.  # noqa: E501
 
-        AWS region  # noqa: E501
+        AWS region of the required Secrets Manager (relevant only for AWS migration)  # noqa: E501
 
         :return: The aws_region of this GatewayUpdateMigration.  # noqa: E501
         :rtype: str
@@ -248,7 +249,7 @@ class GatewayUpdateMigration(object):
     def aws_region(self, aws_region):
         """Sets the aws_region of this GatewayUpdateMigration.
 
-        AWS region  # noqa: E501
+        AWS region of the required Secrets Manager (relevant only for AWS migration)  # noqa: E501
 
         :param aws_region: The aws_region of this GatewayUpdateMigration.  # noqa: E501
         :type: str
@@ -260,7 +261,7 @@ class GatewayUpdateMigration(object):
     def azure_client_id(self):
         """Gets the azure_client_id of this GatewayUpdateMigration.  # noqa: E501
 
-        Azure KV Access client ID  # noqa: E501
+        Azure Key Vault Access client ID, should be Azure AD App with a service principal (relevant only for Azure Key Vault migration)  # noqa: E501
 
         :return: The azure_client_id of this GatewayUpdateMigration.  # noqa: E501
         :rtype: str
@@ -271,7 +272,7 @@ class GatewayUpdateMigration(object):
     def azure_client_id(self, azure_client_id):
         """Sets the azure_client_id of this GatewayUpdateMigration.
 
-        Azure KV Access client ID  # noqa: E501
+        Azure Key Vault Access client ID, should be Azure AD App with a service principal (relevant only for Azure Key Vault migration)  # noqa: E501
 
         :param azure_client_id: The azure_client_id of this GatewayUpdateMigration.  # noqa: E501
         :type: str
@@ -283,7 +284,7 @@ class GatewayUpdateMigration(object):
     def azure_kv_name(self):
         """Gets the azure_kv_name of this GatewayUpdateMigration.  # noqa: E501
 
-        Azure Key Vault Name  # noqa: E501
+        Azure Key Vault Name (relevant only for Azure Key Vault migration)  # noqa: E501
 
         :return: The azure_kv_name of this GatewayUpdateMigration.  # noqa: E501
         :rtype: str
@@ -294,7 +295,7 @@ class GatewayUpdateMigration(object):
     def azure_kv_name(self, azure_kv_name):
         """Sets the azure_kv_name of this GatewayUpdateMigration.
 
-        Azure Key Vault Name  # noqa: E501
+        Azure Key Vault Name (relevant only for Azure Key Vault migration)  # noqa: E501
 
         :param azure_kv_name: The azure_kv_name of this GatewayUpdateMigration.  # noqa: E501
         :type: str
@@ -306,7 +307,7 @@ class GatewayUpdateMigration(object):
     def azure_secret(self):
         """Gets the azure_secret of this GatewayUpdateMigration.  # noqa: E501
 
-        Azure KV secret  # noqa: E501
+        Azure Key Vault secret (relevant only for Azure Key Vault migration)  # noqa: E501
 
         :return: The azure_secret of this GatewayUpdateMigration.  # noqa: E501
         :rtype: str
@@ -317,7 +318,7 @@ class GatewayUpdateMigration(object):
     def azure_secret(self, azure_secret):
         """Sets the azure_secret of this GatewayUpdateMigration.
 
-        Azure KV secret  # noqa: E501
+        Azure Key Vault secret (relevant only for Azure Key Vault migration)  # noqa: E501
 
         :param azure_secret: The azure_secret of this GatewayUpdateMigration.  # noqa: E501
         :type: str
@@ -329,7 +330,7 @@ class GatewayUpdateMigration(object):
     def azure_tenant_id(self):
         """Gets the azure_tenant_id of this GatewayUpdateMigration.  # noqa: E501
 
-        Azure KV Access tenant ID  # noqa: E501
+        Azure Key Vault Access tenant ID (relevant only for Azure Key Vault migration)  # noqa: E501
 
         :return: The azure_tenant_id of this GatewayUpdateMigration.  # noqa: E501
         :rtype: str
@@ -340,7 +341,7 @@ class GatewayUpdateMigration(object):
     def azure_tenant_id(self, azure_tenant_id):
         """Sets the azure_tenant_id of this GatewayUpdateMigration.
 
-        Azure KV Access tenant ID  # noqa: E501
+        Azure Key Vault Access tenant ID (relevant only for Azure Key Vault migration)  # noqa: E501
 
         :param azure_tenant_id: The azure_tenant_id of this GatewayUpdateMigration.  # noqa: E501
         :type: str
@@ -352,7 +353,7 @@ class GatewayUpdateMigration(object):
     def gcp_key(self):
         """Gets the gcp_key of this GatewayUpdateMigration.  # noqa: E501
 
-        Base64-encoded service account private key text  # noqa: E501
+        Base64-encoded GCP Service Account private key text with sufficient permissions to Secrets Manager, Minimum required permission is Secret Manager Secret Accessor, e.g. 'roles/secretmanager.secretAccessor' (relevant only for GCP migration)  # noqa: E501
 
         :return: The gcp_key of this GatewayUpdateMigration.  # noqa: E501
         :rtype: str
@@ -363,7 +364,7 @@ class GatewayUpdateMigration(object):
     def gcp_key(self, gcp_key):
         """Sets the gcp_key of this GatewayUpdateMigration.
 
-        Base64-encoded service account private key text  # noqa: E501
+        Base64-encoded GCP Service Account private key text with sufficient permissions to Secrets Manager, Minimum required permission is Secret Manager Secret Accessor, e.g. 'roles/secretmanager.secretAccessor' (relevant only for GCP migration)  # noqa: E501
 
         :param gcp_key: The gcp_key of this GatewayUpdateMigration.  # noqa: E501
         :type: str
@@ -375,7 +376,7 @@ class GatewayUpdateMigration(object):
     def hashi_json(self):
         """Gets the hashi_json of this GatewayUpdateMigration.  # noqa: E501
 
-        Import secret key as json value or independent secrets  # noqa: E501
+        Import secret key as json value or independent secrets (relevant only for HasiCorp Vault migration)  # noqa: E501
 
         :return: The hashi_json of this GatewayUpdateMigration.  # noqa: E501
         :rtype: str
@@ -386,7 +387,7 @@ class GatewayUpdateMigration(object):
     def hashi_json(self, hashi_json):
         """Sets the hashi_json of this GatewayUpdateMigration.
 
-        Import secret key as json value or independent secrets  # noqa: E501
+        Import secret key as json value or independent secrets (relevant only for HasiCorp Vault migration)  # noqa: E501
 
         :param hashi_json: The hashi_json of this GatewayUpdateMigration.  # noqa: E501
         :type: str
@@ -398,7 +399,7 @@ class GatewayUpdateMigration(object):
     def hashi_ns(self):
         """Gets the hashi_ns of this GatewayUpdateMigration.  # noqa: E501
 
-        Hashi namespaces  # noqa: E501
+        HashiCorp Vault Namespaces is a comma-separated list of namespaces which need to be imported into Akeyless Vault. For every provided namespace, all its child namespaces are imported as well, e.g. nmsp/subnmsp1/subnmsp2,nmsp/anothernmsp. By default, import all namespaces (relevant only for HasiCorp Vault migration)  # noqa: E501
 
         :return: The hashi_ns of this GatewayUpdateMigration.  # noqa: E501
         :rtype: list[str]
@@ -409,7 +410,7 @@ class GatewayUpdateMigration(object):
     def hashi_ns(self, hashi_ns):
         """Sets the hashi_ns of this GatewayUpdateMigration.
 
-        Hashi namespaces  # noqa: E501
+        HashiCorp Vault Namespaces is a comma-separated list of namespaces which need to be imported into Akeyless Vault. For every provided namespace, all its child namespaces are imported as well, e.g. nmsp/subnmsp1/subnmsp2,nmsp/anothernmsp. By default, import all namespaces (relevant only for HasiCorp Vault migration)  # noqa: E501
 
         :param hashi_ns: The hashi_ns of this GatewayUpdateMigration.  # noqa: E501
         :type: list[str]
@@ -421,7 +422,7 @@ class GatewayUpdateMigration(object):
     def hashi_token(self):
         """Gets the hashi_token of this GatewayUpdateMigration.  # noqa: E501
 
-        Hashi token  # noqa: E501
+        HashiCorp Vault access token with sufficient permissions to preform list & read operations on secrets objects (relevant only for HasiCorp Vault migration)  # noqa: E501
 
         :return: The hashi_token of this GatewayUpdateMigration.  # noqa: E501
         :rtype: str
@@ -432,7 +433,7 @@ class GatewayUpdateMigration(object):
     def hashi_token(self, hashi_token):
         """Sets the hashi_token of this GatewayUpdateMigration.
 
-        Hashi token  # noqa: E501
+        HashiCorp Vault access token with sufficient permissions to preform list & read operations on secrets objects (relevant only for HasiCorp Vault migration)  # noqa: E501
 
         :param hashi_token: The hashi_token of this GatewayUpdateMigration.  # noqa: E501
         :type: str
@@ -444,7 +445,7 @@ class GatewayUpdateMigration(object):
     def hashi_url(self):
         """Gets the hashi_url of this GatewayUpdateMigration.  # noqa: E501
 
-        Hashi url  # noqa: E501
+        HashiCorp Vault API URL, e.g. https://vault-mgr01:8200 (relevant only for HasiCorp Vault migration)  # noqa: E501
 
         :return: The hashi_url of this GatewayUpdateMigration.  # noqa: E501
         :rtype: str
@@ -455,7 +456,7 @@ class GatewayUpdateMigration(object):
     def hashi_url(self, hashi_url):
         """Sets the hashi_url of this GatewayUpdateMigration.
 
-        Hashi url  # noqa: E501
+        HashiCorp Vault API URL, e.g. https://vault-mgr01:8200 (relevant only for HasiCorp Vault migration)  # noqa: E501
 
         :param hashi_url: The hashi_url of this GatewayUpdateMigration.  # noqa: E501
         :type: str
@@ -467,7 +468,7 @@ class GatewayUpdateMigration(object):
     def id(self):
         """Gets the id of this GatewayUpdateMigration.  # noqa: E501
 
-        Migration ID  # noqa: E501
+        Migration ID (Can be retrieved with gateway-list-migration command)  # noqa: E501
 
         :return: The id of this GatewayUpdateMigration.  # noqa: E501
         :rtype: str
@@ -478,7 +479,7 @@ class GatewayUpdateMigration(object):
     def id(self, id):
         """Sets the id of this GatewayUpdateMigration.
 
-        Migration ID  # noqa: E501
+        Migration ID (Can be retrieved with gateway-list-migration command)  # noqa: E501
 
         :param id: The id of this GatewayUpdateMigration.  # noqa: E501
         :type: str
@@ -490,7 +491,7 @@ class GatewayUpdateMigration(object):
     def k8s_ca_certificate(self):
         """Gets the k8s_ca_certificate of this GatewayUpdateMigration.  # noqa: E501
 
-        For Certificate Authentication method K8s Cluster CA certificate  # noqa: E501
+        For Certificate Authentication method K8s Cluster CA certificate (relevant only for K8s migration with Certificate Authentication method)  # noqa: E501
 
         :return: The k8s_ca_certificate of this GatewayUpdateMigration.  # noqa: E501
         :rtype: list[int]
@@ -501,7 +502,7 @@ class GatewayUpdateMigration(object):
     def k8s_ca_certificate(self, k8s_ca_certificate):
         """Sets the k8s_ca_certificate of this GatewayUpdateMigration.
 
-        For Certificate Authentication method K8s Cluster CA certificate  # noqa: E501
+        For Certificate Authentication method K8s Cluster CA certificate (relevant only for K8s migration with Certificate Authentication method)  # noqa: E501
 
         :param k8s_ca_certificate: The k8s_ca_certificate of this GatewayUpdateMigration.  # noqa: E501
         :type: list[int]
@@ -513,7 +514,7 @@ class GatewayUpdateMigration(object):
     def k8s_client_certificate(self):
         """Gets the k8s_client_certificate of this GatewayUpdateMigration.  # noqa: E501
 
-        K8s Client certificate  # noqa: E501
+        K8s Client certificate with sufficient permission to list and get secrets in the namespace(s) you selected (relevant only for K8s migration with Certificate Authentication method)  # noqa: E501
 
         :return: The k8s_client_certificate of this GatewayUpdateMigration.  # noqa: E501
         :rtype: list[int]
@@ -524,7 +525,7 @@ class GatewayUpdateMigration(object):
     def k8s_client_certificate(self, k8s_client_certificate):
         """Sets the k8s_client_certificate of this GatewayUpdateMigration.
 
-        K8s Client certificate  # noqa: E501
+        K8s Client certificate with sufficient permission to list and get secrets in the namespace(s) you selected (relevant only for K8s migration with Certificate Authentication method)  # noqa: E501
 
         :param k8s_client_certificate: The k8s_client_certificate of this GatewayUpdateMigration.  # noqa: E501
         :type: list[int]
@@ -536,7 +537,7 @@ class GatewayUpdateMigration(object):
     def k8s_client_key(self):
         """Gets the k8s_client_key of this GatewayUpdateMigration.  # noqa: E501
 
-        K8s Client key  # noqa: E501
+        K8s Client key (relevant only for K8s migration with Certificate Authentication method)  # noqa: E501
 
         :return: The k8s_client_key of this GatewayUpdateMigration.  # noqa: E501
         :rtype: list[int]
@@ -547,7 +548,7 @@ class GatewayUpdateMigration(object):
     def k8s_client_key(self, k8s_client_key):
         """Sets the k8s_client_key of this GatewayUpdateMigration.
 
-        K8s Client key  # noqa: E501
+        K8s Client key (relevant only for K8s migration with Certificate Authentication method)  # noqa: E501
 
         :param k8s_client_key: The k8s_client_key of this GatewayUpdateMigration.  # noqa: E501
         :type: list[int]
@@ -559,7 +560,7 @@ class GatewayUpdateMigration(object):
     def k8s_namespace(self):
         """Gets the k8s_namespace of this GatewayUpdateMigration.  # noqa: E501
 
-        K8s Namespace  # noqa: E501
+        K8s Namespace, Use this field to import secrets from a particular namespace only. By default, the secrets are imported from all namespaces (relevant only for K8s migration)  # noqa: E501
 
         :return: The k8s_namespace of this GatewayUpdateMigration.  # noqa: E501
         :rtype: str
@@ -570,7 +571,7 @@ class GatewayUpdateMigration(object):
     def k8s_namespace(self, k8s_namespace):
         """Sets the k8s_namespace of this GatewayUpdateMigration.
 
-        K8s Namespace  # noqa: E501
+        K8s Namespace, Use this field to import secrets from a particular namespace only. By default, the secrets are imported from all namespaces (relevant only for K8s migration)  # noqa: E501
 
         :param k8s_namespace: The k8s_namespace of this GatewayUpdateMigration.  # noqa: E501
         :type: str
@@ -582,7 +583,7 @@ class GatewayUpdateMigration(object):
     def k8s_password(self):
         """Gets the k8s_password of this GatewayUpdateMigration.  # noqa: E501
 
-        K8s client password  # noqa: E501
+        K8s Client password (relevant only for K8s migration with Password Authentication method)  # noqa: E501
 
         :return: The k8s_password of this GatewayUpdateMigration.  # noqa: E501
         :rtype: str
@@ -593,7 +594,7 @@ class GatewayUpdateMigration(object):
     def k8s_password(self, k8s_password):
         """Sets the k8s_password of this GatewayUpdateMigration.
 
-        K8s client password  # noqa: E501
+        K8s Client password (relevant only for K8s migration with Password Authentication method)  # noqa: E501
 
         :param k8s_password: The k8s_password of this GatewayUpdateMigration.  # noqa: E501
         :type: str
@@ -605,7 +606,7 @@ class GatewayUpdateMigration(object):
     def k8s_skip_system(self):
         """Gets the k8s_skip_system of this GatewayUpdateMigration.  # noqa: E501
 
-        K8s Skip Control Plane Secrets  # noqa: E501
+        K8s Skip Control Plane Secrets, This option allows to avoid importing secrets from system namespaces (relevant only for K8s migration)  # noqa: E501
 
         :return: The k8s_skip_system of this GatewayUpdateMigration.  # noqa: E501
         :rtype: bool
@@ -616,7 +617,7 @@ class GatewayUpdateMigration(object):
     def k8s_skip_system(self, k8s_skip_system):
         """Sets the k8s_skip_system of this GatewayUpdateMigration.
 
-        K8s Skip Control Plane Secrets  # noqa: E501
+        K8s Skip Control Plane Secrets, This option allows to avoid importing secrets from system namespaces (relevant only for K8s migration)  # noqa: E501
 
         :param k8s_skip_system: The k8s_skip_system of this GatewayUpdateMigration.  # noqa: E501
         :type: bool
@@ -628,7 +629,7 @@ class GatewayUpdateMigration(object):
     def k8s_token(self):
         """Gets the k8s_token of this GatewayUpdateMigration.  # noqa: E501
 
-        For Token Authentication method K8s Bearer Token  # noqa: E501
+        For Token Authentication method K8s Bearer Token with sufficient permission to list and get secrets in the namespace(s) you selected (relevant only for K8s migration with Token Authentication method)  # noqa: E501
 
         :return: The k8s_token of this GatewayUpdateMigration.  # noqa: E501
         :rtype: str
@@ -639,7 +640,7 @@ class GatewayUpdateMigration(object):
     def k8s_token(self, k8s_token):
         """Sets the k8s_token of this GatewayUpdateMigration.
 
-        For Token Authentication method K8s Bearer Token  # noqa: E501
+        For Token Authentication method K8s Bearer Token with sufficient permission to list and get secrets in the namespace(s) you selected (relevant only for K8s migration with Token Authentication method)  # noqa: E501
 
         :param k8s_token: The k8s_token of this GatewayUpdateMigration.  # noqa: E501
         :type: str
@@ -651,7 +652,7 @@ class GatewayUpdateMigration(object):
     def k8s_url(self):
         """Gets the k8s_url of this GatewayUpdateMigration.  # noqa: E501
 
-        K8s Endpoint URL  # noqa: E501
+        K8s API Server URL, e.g. https://k8s-api.mycompany.com:6443 (relevant only for K8s migration)  # noqa: E501
 
         :return: The k8s_url of this GatewayUpdateMigration.  # noqa: E501
         :rtype: str
@@ -662,7 +663,7 @@ class GatewayUpdateMigration(object):
     def k8s_url(self, k8s_url):
         """Sets the k8s_url of this GatewayUpdateMigration.
 
-        K8s Endpoint URL  # noqa: E501
+        K8s API Server URL, e.g. https://k8s-api.mycompany.com:6443 (relevant only for K8s migration)  # noqa: E501
 
         :param k8s_url: The k8s_url of this GatewayUpdateMigration.  # noqa: E501
         :type: str
@@ -674,7 +675,7 @@ class GatewayUpdateMigration(object):
     def k8s_username(self):
         """Gets the k8s_username of this GatewayUpdateMigration.  # noqa: E501
 
-        For Password Authentication method K8s client username  # noqa: E501
+        For Password Authentication method K8s Client username with sufficient permission to list and get secrets in the namespace(s) you selected (relevant only for K8s migration with Password Authentication method)  # noqa: E501
 
         :return: The k8s_username of this GatewayUpdateMigration.  # noqa: E501
         :rtype: str
@@ -685,7 +686,7 @@ class GatewayUpdateMigration(object):
     def k8s_username(self, k8s_username):
         """Sets the k8s_username of this GatewayUpdateMigration.
 
-        For Password Authentication method K8s client username  # noqa: E501
+        For Password Authentication method K8s Client username with sufficient permission to list and get secrets in the namespace(s) you selected (relevant only for K8s migration with Password Authentication method)  # noqa: E501
 
         :param k8s_username: The k8s_username of this GatewayUpdateMigration.  # noqa: E501
         :type: str
@@ -713,10 +714,31 @@ class GatewayUpdateMigration(object):
         :param name: The name of this GatewayUpdateMigration.  # noqa: E501
         :type: str
         """
-        if self.local_vars_configuration.client_side_validation and name is None:  # noqa: E501
-            raise ValueError("Invalid value for `name`, must not be `None`")  # noqa: E501
 
         self._name = name
+
+    @property
+    def new_name(self):
+        """Gets the new_name of this GatewayUpdateMigration.  # noqa: E501
+
+        New migration name  # noqa: E501
+
+        :return: The new_name of this GatewayUpdateMigration.  # noqa: E501
+        :rtype: str
+        """
+        return self._new_name
+
+    @new_name.setter
+    def new_name(self, new_name):
+        """Sets the new_name of this GatewayUpdateMigration.
+
+        New migration name  # noqa: E501
+
+        :param new_name: The new_name of this GatewayUpdateMigration.  # noqa: E501
+        :type: str
+        """
+
+        self._new_name = new_name
 
     @property
     def protection_key(self):
@@ -786,29 +808,6 @@ class GatewayUpdateMigration(object):
         """
 
         self._token = token
-
-    @property
-    def type(self):
-        """Gets the type of this GatewayUpdateMigration.  # noqa: E501
-
-        Migration type, can be: hashi/aws/gcp/k8s/azure_kv  # noqa: E501
-
-        :return: The type of this GatewayUpdateMigration.  # noqa: E501
-        :rtype: str
-        """
-        return self._type
-
-    @type.setter
-    def type(self, type):
-        """Sets the type of this GatewayUpdateMigration.
-
-        Migration type, can be: hashi/aws/gcp/k8s/azure_kv  # noqa: E501
-
-        :param type: The type of this GatewayUpdateMigration.  # noqa: E501
-        :type: str
-        """
-
-        self._type = type
 
     @property
     def uid_token(self):

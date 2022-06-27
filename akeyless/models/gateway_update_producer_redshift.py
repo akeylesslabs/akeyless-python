@@ -35,6 +35,7 @@ class GatewayUpdateProducerRedshift(object):
     """
     openapi_types = {
         'creation_statements': 'str',
+        'delete_protection': 'str',
         'name': 'str',
         'new_name': 'str',
         'producer_encryption_key': 'str',
@@ -55,6 +56,7 @@ class GatewayUpdateProducerRedshift(object):
 
     attribute_map = {
         'creation_statements': 'creation-statements',
+        'delete_protection': 'delete_protection',
         'name': 'name',
         'new_name': 'new-name',
         'producer_encryption_key': 'producer-encryption-key',
@@ -73,13 +75,14 @@ class GatewayUpdateProducerRedshift(object):
         'user_ttl': 'user-ttl'
     }
 
-    def __init__(self, creation_statements=None, name=None, new_name=None, producer_encryption_key=None, redshift_db_name=None, redshift_host='127.0.0.1', redshift_password=None, redshift_port='5439', redshift_username=None, secure_access_enable=None, secure_access_host=None, ssl=None, tags=None, target_name=None, token=None, uid_token=None, user_ttl='60m', local_vars_configuration=None):  # noqa: E501
+    def __init__(self, creation_statements=None, delete_protection=None, name=None, new_name=None, producer_encryption_key=None, redshift_db_name=None, redshift_host='127.0.0.1', redshift_password=None, redshift_port='5439', redshift_username=None, secure_access_enable=None, secure_access_host=None, ssl=None, tags=None, target_name=None, token=None, uid_token=None, user_ttl='60m', local_vars_configuration=None):  # noqa: E501
         """GatewayUpdateProducerRedshift - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._creation_statements = None
+        self._delete_protection = None
         self._name = None
         self._new_name = None
         self._producer_encryption_key = None
@@ -100,6 +103,8 @@ class GatewayUpdateProducerRedshift(object):
 
         if creation_statements is not None:
             self.creation_statements = creation_statements
+        if delete_protection is not None:
+            self.delete_protection = delete_protection
         self.name = name
         if new_name is not None:
             self.new_name = new_name
@@ -154,6 +159,29 @@ class GatewayUpdateProducerRedshift(object):
         """
 
         self._creation_statements = creation_statements
+
+    @property
+    def delete_protection(self):
+        """Gets the delete_protection of this GatewayUpdateProducerRedshift.  # noqa: E501
+
+        Protection from accidental deletion of this item  # noqa: E501
+
+        :return: The delete_protection of this GatewayUpdateProducerRedshift.  # noqa: E501
+        :rtype: str
+        """
+        return self._delete_protection
+
+    @delete_protection.setter
+    def delete_protection(self, delete_protection):
+        """Sets the delete_protection of this GatewayUpdateProducerRedshift.
+
+        Protection from accidental deletion of this item  # noqa: E501
+
+        :param delete_protection: The delete_protection of this GatewayUpdateProducerRedshift.  # noqa: E501
+        :type: str
+        """
+
+        self._delete_protection = delete_protection
 
     @property
     def name(self):

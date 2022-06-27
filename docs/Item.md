@@ -28,6 +28,7 @@ Name | Type | Description | Notes
 **last_version** | **int** |  | [optional] 
 **next_rotation_date** | **datetime** |  | [optional] 
 **protection_key_name** | **str** |  | [optional] 
+**protection_key_type** | **str** |  | [optional] 
 **public_value** | **str** |  | [optional] 
 **rotation_interval** | **int** |  | [optional] 
 **target_versions** | [**list[TargetItemVersion]**](TargetItemVersion.md) |  | [optional] 

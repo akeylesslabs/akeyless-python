@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **api_key** | **str** |  | [optional] 
 **auto_rotate** | **str** | Whether to automatically rotate every --rotation-interval days, or disable existing automatic rotation | [optional] 
 **custom_payload** | **str** |  | [optional] 
+**delete_protection** | **str** | Protection from accidental deletion of this item | [optional] 
 **keep_prev_version** | **str** |  | [optional] 
 **key** | **str** | The name of a key that used to encrypt the secret value (if empty, the account default protectionKey key will be used) | [optional] 
 **name** | **str** | Item name | 

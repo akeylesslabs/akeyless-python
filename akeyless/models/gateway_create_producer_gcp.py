@@ -34,6 +34,7 @@ class GatewayCreateProducerGcp(object):
                             and the value is json key in definition.
     """
     openapi_types = {
+        'delete_protection': 'str',
         'gcp_cred_type': 'str',
         'gcp_key': 'str',
         'gcp_key_algo': 'str',
@@ -49,6 +50,7 @@ class GatewayCreateProducerGcp(object):
     }
 
     attribute_map = {
+        'delete_protection': 'delete_protection',
         'gcp_cred_type': 'gcp-cred-type',
         'gcp_key': 'gcp-key',
         'gcp_key_algo': 'gcp-key-algo',
@@ -63,12 +65,13 @@ class GatewayCreateProducerGcp(object):
         'user_ttl': 'user-ttl'
     }
 
-    def __init__(self, gcp_cred_type=None, gcp_key=None, gcp_key_algo=None, gcp_sa_email=None, gcp_token_scopes=None, name=None, producer_encryption_key_name=None, tags=None, target_name=None, token=None, uid_token=None, user_ttl='60m', local_vars_configuration=None):  # noqa: E501
+    def __init__(self, delete_protection=None, gcp_cred_type=None, gcp_key=None, gcp_key_algo=None, gcp_sa_email=None, gcp_token_scopes=None, name=None, producer_encryption_key_name=None, tags=None, target_name=None, token=None, uid_token=None, user_ttl='60m', local_vars_configuration=None):  # noqa: E501
         """GatewayCreateProducerGcp - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
+        self._delete_protection = None
         self._gcp_cred_type = None
         self._gcp_key = None
         self._gcp_key_algo = None
@@ -83,6 +86,8 @@ class GatewayCreateProducerGcp(object):
         self._user_ttl = None
         self.discriminator = None
 
+        if delete_protection is not None:
+            self.delete_protection = delete_protection
         if gcp_cred_type is not None:
             self.gcp_cred_type = gcp_cred_type
         if gcp_key is not None:
@@ -106,6 +111,29 @@ class GatewayCreateProducerGcp(object):
             self.uid_token = uid_token
         if user_ttl is not None:
             self.user_ttl = user_ttl
+
+    @property
+    def delete_protection(self):
+        """Gets the delete_protection of this GatewayCreateProducerGcp.  # noqa: E501
+
+        Protection from accidental deletion of this item  # noqa: E501
+
+        :return: The delete_protection of this GatewayCreateProducerGcp.  # noqa: E501
+        :rtype: str
+        """
+        return self._delete_protection
+
+    @delete_protection.setter
+    def delete_protection(self, delete_protection):
+        """Sets the delete_protection of this GatewayCreateProducerGcp.
+
+        Protection from accidental deletion of this item  # noqa: E501
+
+        :param delete_protection: The delete_protection of this GatewayCreateProducerGcp.  # noqa: E501
+        :type: str
+        """
+
+        self._delete_protection = delete_protection
 
     @property
     def gcp_cred_type(self):

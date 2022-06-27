@@ -36,6 +36,7 @@ class ItemGeneralInfo(object):
     openapi_types = {
         'cert_issue_details': 'CertificateIssueInfo',
         'classic_key_details': 'ClassicKeyDetailsInfo',
+        'cluster_gw_url': 'str',
         'display_metadata': 'str',
         'dynamic_secret_producer_details': 'DynamicSecretProducerInfo',
         'password_policy': 'PasswordPolicyInfo',
@@ -48,6 +49,7 @@ class ItemGeneralInfo(object):
     attribute_map = {
         'cert_issue_details': 'cert_issue_details',
         'classic_key_details': 'classic_key_details',
+        'cluster_gw_url': 'cluster_gw_url',
         'display_metadata': 'display_metadata',
         'dynamic_secret_producer_details': 'dynamic_secret_producer_details',
         'password_policy': 'password_policy',
@@ -57,7 +59,7 @@ class ItemGeneralInfo(object):
         'tokenizer_info': 'tokenizer_info'
     }
 
-    def __init__(self, cert_issue_details=None, classic_key_details=None, display_metadata=None, dynamic_secret_producer_details=None, password_policy=None, rotated_secret_details=None, secure_remote_access_details=None, static_secret_info=None, tokenizer_info=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, cert_issue_details=None, classic_key_details=None, cluster_gw_url=None, display_metadata=None, dynamic_secret_producer_details=None, password_policy=None, rotated_secret_details=None, secure_remote_access_details=None, static_secret_info=None, tokenizer_info=None, local_vars_configuration=None):  # noqa: E501
         """ItemGeneralInfo - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -65,6 +67,7 @@ class ItemGeneralInfo(object):
 
         self._cert_issue_details = None
         self._classic_key_details = None
+        self._cluster_gw_url = None
         self._display_metadata = None
         self._dynamic_secret_producer_details = None
         self._password_policy = None
@@ -78,6 +81,8 @@ class ItemGeneralInfo(object):
             self.cert_issue_details = cert_issue_details
         if classic_key_details is not None:
             self.classic_key_details = classic_key_details
+        if cluster_gw_url is not None:
+            self.cluster_gw_url = cluster_gw_url
         if display_metadata is not None:
             self.display_metadata = display_metadata
         if dynamic_secret_producer_details is not None:
@@ -134,6 +139,27 @@ class ItemGeneralInfo(object):
         """
 
         self._classic_key_details = classic_key_details
+
+    @property
+    def cluster_gw_url(self):
+        """Gets the cluster_gw_url of this ItemGeneralInfo.  # noqa: E501
+
+
+        :return: The cluster_gw_url of this ItemGeneralInfo.  # noqa: E501
+        :rtype: str
+        """
+        return self._cluster_gw_url
+
+    @cluster_gw_url.setter
+    def cluster_gw_url(self, cluster_gw_url):
+        """Sets the cluster_gw_url of this ItemGeneralInfo.
+
+
+        :param cluster_gw_url: The cluster_gw_url of this ItemGeneralInfo.  # noqa: E501
+        :type: str
+        """
+
+        self._cluster_gw_url = cluster_gw_url
 
     @property
     def display_metadata(self):

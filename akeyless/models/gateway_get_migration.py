@@ -67,6 +67,7 @@ class GatewayGetMigration(object):
     def name(self):
         """Gets the name of this GatewayGetMigration.  # noqa: E501
 
+        Migration name to display  # noqa: E501
 
         :return: The name of this GatewayGetMigration.  # noqa: E501
         :rtype: str
@@ -77,6 +78,7 @@ class GatewayGetMigration(object):
     def name(self, name):
         """Sets the name of this GatewayGetMigration.
 
+        Migration name to display  # noqa: E501
 
         :param name: The name of this GatewayGetMigration.  # noqa: E501
         :type: str

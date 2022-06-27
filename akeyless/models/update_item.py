@@ -35,6 +35,7 @@ class UpdateItem(object):
     """
     openapi_types = {
         'add_tag': 'list[str]',
+        'cert_file_data': 'str',
         'delete_protection': 'str',
         'name': 'str',
         'new_metadata': 'str',
@@ -70,6 +71,7 @@ class UpdateItem(object):
 
     attribute_map = {
         'add_tag': 'add-tag',
+        'cert_file_data': 'cert-file-data',
         'delete_protection': 'delete_protection',
         'name': 'name',
         'new_metadata': 'new-metadata',
@@ -103,13 +105,14 @@ class UpdateItem(object):
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, add_tag=None, delete_protection=None, name=None, new_metadata='default_metadata', new_name=None, rm_tag=None, secure_access_add_host=None, secure_access_allow_external_user=None, secure_access_allow_port_forwading=None, secure_access_aws_account_id=None, secure_access_aws_native_cli=None, secure_access_aws_region=None, secure_access_bastion_api=None, secure_access_bastion_issuer=None, secure_access_bastion_ssh=None, secure_access_cluster_endpoint=None, secure_access_dashboard_url=None, secure_access_db_name=None, secure_access_db_schema=None, secure_access_enable=None, secure_access_host=None, secure_access_rdp_domain=None, secure_access_rdp_user=None, secure_access_rm_host=None, secure_access_ssh_creds=None, secure_access_ssh_creds_user=None, secure_access_url=None, secure_access_use_internal_bastion=None, secure_access_web_browsing=None, secure_access_web_proxy=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, add_tag=None, cert_file_data=None, delete_protection=None, name=None, new_metadata='default_metadata', new_name=None, rm_tag=None, secure_access_add_host=None, secure_access_allow_external_user=None, secure_access_allow_port_forwading=None, secure_access_aws_account_id=None, secure_access_aws_native_cli=None, secure_access_aws_region=None, secure_access_bastion_api=None, secure_access_bastion_issuer=None, secure_access_bastion_ssh=None, secure_access_cluster_endpoint=None, secure_access_dashboard_url=None, secure_access_db_name=None, secure_access_db_schema=None, secure_access_enable=None, secure_access_host=None, secure_access_rdp_domain=None, secure_access_rdp_user=None, secure_access_rm_host=None, secure_access_ssh_creds=None, secure_access_ssh_creds_user=None, secure_access_url=None, secure_access_use_internal_bastion=None, secure_access_web_browsing=None, secure_access_web_proxy=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """UpdateItem - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._add_tag = None
+        self._cert_file_data = None
         self._delete_protection = None
         self._name = None
         self._new_metadata = None
@@ -145,6 +148,8 @@ class UpdateItem(object):
 
         if add_tag is not None:
             self.add_tag = add_tag
+        if cert_file_data is not None:
+            self.cert_file_data = cert_file_data
         if delete_protection is not None:
             self.delete_protection = delete_protection
         self.name = name
@@ -229,6 +234,29 @@ class UpdateItem(object):
         """
 
         self._add_tag = add_tag
+
+    @property
+    def cert_file_data(self):
+        """Gets the cert_file_data of this UpdateItem.  # noqa: E501
+
+        PEM Certificate in a Base64 format. Used for updating RSA keys' certificates.  # noqa: E501
+
+        :return: The cert_file_data of this UpdateItem.  # noqa: E501
+        :rtype: str
+        """
+        return self._cert_file_data
+
+    @cert_file_data.setter
+    def cert_file_data(self, cert_file_data):
+        """Sets the cert_file_data of this UpdateItem.
+
+        PEM Certificate in a Base64 format. Used for updating RSA keys' certificates.  # noqa: E501
+
+        :param cert_file_data: The cert_file_data of this UpdateItem.  # noqa: E501
+        :type: str
+        """
+
+        self._cert_file_data = cert_file_data
 
     @property
     def delete_protection(self):

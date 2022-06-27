@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **azure_client_id** | **str** | Azure Client ID | [optional] 
 **azure_client_secret** | **str** | Azure Client Secret | [optional] 
 **azure_tenant_id** | **str** | Azure Tenant ID | [optional] 
+**delete_protection** | **str** | Protection from accidental deletion of this item | [optional] 
 **fixed_user_claim_keyname** | **str** | FixedUserClaimKeyname | [optional] [default to 'false']
 **fixed_user_only** | **bool** | Fixed user | [optional] [default to False]
 **name** | **str** | Producer name | 

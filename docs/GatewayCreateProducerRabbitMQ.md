@@ -4,6 +4,7 @@ gatewayCreateProducerRabbitMQ is a command that creates rabbitmq producer
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**delete_protection** | **str** | Protection from accidental deletion of this item | [optional] 
 **name** | **str** | Producer name | 
 **producer_encryption_key_name** | **str** | Dynamic producer encryption key | [optional] 
 **rabbitmq_admin_pwd** | **str** | RabbitMQ Admin password | [optional] 

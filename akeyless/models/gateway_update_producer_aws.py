@@ -43,6 +43,7 @@ class GatewayUpdateProducerAws(object):
         'aws_user_groups': 'str',
         'aws_user_policies': 'str',
         'aws_user_programmatic_access': 'bool',
+        'delete_protection': 'str',
         'enable_admin_rotation': 'bool',
         'name': 'str',
         'new_name': 'str',
@@ -72,6 +73,7 @@ class GatewayUpdateProducerAws(object):
         'aws_user_groups': 'aws-user-groups',
         'aws_user_policies': 'aws-user-policies',
         'aws_user_programmatic_access': 'aws-user-programmatic-access',
+        'delete_protection': 'delete_protection',
         'enable_admin_rotation': 'enable-admin-rotation',
         'name': 'name',
         'new_name': 'new-name',
@@ -91,7 +93,7 @@ class GatewayUpdateProducerAws(object):
         'user_ttl': 'user-ttl'
     }
 
-    def __init__(self, access_mode=None, admin_rotation_interval_days=0, aws_access_key_id=None, aws_access_secret_key=None, aws_role_arns=None, aws_user_console_access=False, aws_user_groups=None, aws_user_policies=None, aws_user_programmatic_access=True, enable_admin_rotation=False, name=None, new_name=None, producer_encryption_key_name=None, region='us-east-2', secure_access_aws_account_id=None, secure_access_aws_native_cli=None, secure_access_bastion_issuer=None, secure_access_enable=None, secure_access_web=None, secure_access_web_browsing=None, secure_access_web_proxy=None, tags=None, target_name=None, token=None, uid_token=None, user_ttl='60m', local_vars_configuration=None):  # noqa: E501
+    def __init__(self, access_mode=None, admin_rotation_interval_days=0, aws_access_key_id=None, aws_access_secret_key=None, aws_role_arns=None, aws_user_console_access=False, aws_user_groups=None, aws_user_policies=None, aws_user_programmatic_access=True, delete_protection=None, enable_admin_rotation=False, name=None, new_name=None, producer_encryption_key_name=None, region='us-east-2', secure_access_aws_account_id=None, secure_access_aws_native_cli=None, secure_access_bastion_issuer=None, secure_access_enable=None, secure_access_web=None, secure_access_web_browsing=None, secure_access_web_proxy=None, tags=None, target_name=None, token=None, uid_token=None, user_ttl='60m', local_vars_configuration=None):  # noqa: E501
         """GatewayUpdateProducerAws - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -106,6 +108,7 @@ class GatewayUpdateProducerAws(object):
         self._aws_user_groups = None
         self._aws_user_policies = None
         self._aws_user_programmatic_access = None
+        self._delete_protection = None
         self._enable_admin_rotation = None
         self._name = None
         self._new_name = None
@@ -143,6 +146,8 @@ class GatewayUpdateProducerAws(object):
             self.aws_user_policies = aws_user_policies
         if aws_user_programmatic_access is not None:
             self.aws_user_programmatic_access = aws_user_programmatic_access
+        if delete_protection is not None:
+            self.delete_protection = delete_protection
         if enable_admin_rotation is not None:
             self.enable_admin_rotation = enable_admin_rotation
         self.name = name
@@ -381,6 +386,29 @@ class GatewayUpdateProducerAws(object):
         """
 
         self._aws_user_programmatic_access = aws_user_programmatic_access
+
+    @property
+    def delete_protection(self):
+        """Gets the delete_protection of this GatewayUpdateProducerAws.  # noqa: E501
+
+        Protection from accidental deletion of this item  # noqa: E501
+
+        :return: The delete_protection of this GatewayUpdateProducerAws.  # noqa: E501
+        :rtype: str
+        """
+        return self._delete_protection
+
+    @delete_protection.setter
+    def delete_protection(self, delete_protection):
+        """Sets the delete_protection of this GatewayUpdateProducerAws.
+
+        Protection from accidental deletion of this item  # noqa: E501
+
+        :param delete_protection: The delete_protection of this GatewayUpdateProducerAws.  # noqa: E501
+        :type: str
+        """
+
+        self._delete_protection = delete_protection
 
     @property
     def enable_admin_rotation(self):

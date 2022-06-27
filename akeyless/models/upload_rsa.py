@@ -40,6 +40,7 @@ class UploadRSA(object):
         'delete_protection': 'str',
         'metadata': 'str',
         'name': 'str',
+        'overwrite': 'str',
         'rsa_file_data': 'str',
         'split_level': 'int',
         'tag': 'list[str]',
@@ -54,6 +55,7 @@ class UploadRSA(object):
         'delete_protection': 'delete_protection',
         'metadata': 'metadata',
         'name': 'name',
+        'overwrite': 'overwrite',
         'rsa_file_data': 'rsa-file-data',
         'split_level': 'split-level',
         'tag': 'tag',
@@ -61,7 +63,7 @@ class UploadRSA(object):
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, alg=None, cert_file_data=None, customer_frg_id=None, delete_protection=None, metadata=None, name=None, rsa_file_data=None, split_level=2, tag=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, alg=None, cert_file_data=None, customer_frg_id=None, delete_protection=None, metadata=None, name=None, overwrite=None, rsa_file_data=None, split_level=2, tag=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """UploadRSA - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -73,6 +75,7 @@ class UploadRSA(object):
         self._delete_protection = None
         self._metadata = None
         self._name = None
+        self._overwrite = None
         self._rsa_file_data = None
         self._split_level = None
         self._tag = None
@@ -90,6 +93,8 @@ class UploadRSA(object):
         if metadata is not None:
             self.metadata = metadata
         self.name = name
+        if overwrite is not None:
+            self.overwrite = overwrite
         if rsa_file_data is not None:
             self.rsa_file_data = rsa_file_data
         if split_level is not None:
@@ -242,6 +247,29 @@ class UploadRSA(object):
             raise ValueError("Invalid value for `name`, must not be `None`")  # noqa: E501
 
         self._name = name
+
+    @property
+    def overwrite(self):
+        """Gets the overwrite of this UploadRSA.  # noqa: E501
+
+        When the overwrite flag is set, this command will only update an existing key. [true, false]  # noqa: E501
+
+        :return: The overwrite of this UploadRSA.  # noqa: E501
+        :rtype: str
+        """
+        return self._overwrite
+
+    @overwrite.setter
+    def overwrite(self, overwrite):
+        """Sets the overwrite of this UploadRSA.
+
+        When the overwrite flag is set, this command will only update an existing key. [true, false]  # noqa: E501
+
+        :param overwrite: The overwrite of this UploadRSA.  # noqa: E501
+        :type: str
+        """
+
+        self._overwrite = overwrite
 
     @property
     def rsa_file_data(self):

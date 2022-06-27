@@ -36,6 +36,7 @@ class GatewayCreateProducerMySQL(object):
     openapi_types = {
         'db_server_certificates': 'str',
         'db_server_name': 'str',
+        'delete_protection': 'str',
         'mysql_dbname': 'str',
         'mysql_host': 'str',
         'mysql_password': 'str',
@@ -60,6 +61,7 @@ class GatewayCreateProducerMySQL(object):
     attribute_map = {
         'db_server_certificates': 'db-server-certificates',
         'db_server_name': 'db-server-name',
+        'delete_protection': 'delete_protection',
         'mysql_dbname': 'mysql-dbname',
         'mysql_host': 'mysql-host',
         'mysql_password': 'mysql-password',
@@ -81,7 +83,7 @@ class GatewayCreateProducerMySQL(object):
         'user_ttl': 'user-ttl'
     }
 
-    def __init__(self, db_server_certificates=None, db_server_name=None, mysql_dbname=None, mysql_host='127.0.0.1', mysql_password=None, mysql_port='3306', mysql_screation_statements=None, mysql_username=None, name=None, producer_encryption_key_name=None, secure_access_bastion_issuer=None, secure_access_enable=None, secure_access_host=None, secure_access_web=None, ssl=None, ssl_certificate=None, tags=None, target_name=None, token=None, uid_token=None, user_ttl='60m', local_vars_configuration=None):  # noqa: E501
+    def __init__(self, db_server_certificates=None, db_server_name=None, delete_protection=None, mysql_dbname=None, mysql_host='127.0.0.1', mysql_password=None, mysql_port='3306', mysql_screation_statements=None, mysql_username=None, name=None, producer_encryption_key_name=None, secure_access_bastion_issuer=None, secure_access_enable=None, secure_access_host=None, secure_access_web=None, ssl=None, ssl_certificate=None, tags=None, target_name=None, token=None, uid_token=None, user_ttl='60m', local_vars_configuration=None):  # noqa: E501
         """GatewayCreateProducerMySQL - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -89,6 +91,7 @@ class GatewayCreateProducerMySQL(object):
 
         self._db_server_certificates = None
         self._db_server_name = None
+        self._delete_protection = None
         self._mysql_dbname = None
         self._mysql_host = None
         self._mysql_password = None
@@ -114,6 +117,8 @@ class GatewayCreateProducerMySQL(object):
             self.db_server_certificates = db_server_certificates
         if db_server_name is not None:
             self.db_server_name = db_server_name
+        if delete_protection is not None:
+            self.delete_protection = delete_protection
         if mysql_dbname is not None:
             self.mysql_dbname = mysql_dbname
         if mysql_host is not None:
@@ -197,6 +202,29 @@ class GatewayCreateProducerMySQL(object):
         """
 
         self._db_server_name = db_server_name
+
+    @property
+    def delete_protection(self):
+        """Gets the delete_protection of this GatewayCreateProducerMySQL.  # noqa: E501
+
+        Protection from accidental deletion of this item  # noqa: E501
+
+        :return: The delete_protection of this GatewayCreateProducerMySQL.  # noqa: E501
+        :rtype: str
+        """
+        return self._delete_protection
+
+    @delete_protection.setter
+    def delete_protection(self, delete_protection):
+        """Sets the delete_protection of this GatewayCreateProducerMySQL.
+
+        Protection from accidental deletion of this item  # noqa: E501
+
+        :param delete_protection: The delete_protection of this GatewayCreateProducerMySQL.  # noqa: E501
+        :type: str
+        """
+
+        self._delete_protection = delete_protection
 
     @property
     def mysql_dbname(self):

@@ -36,6 +36,7 @@ class GatewayCreateProducerCustom(object):
     openapi_types = {
         'admin_rotation_interval_days': 'int',
         'create_sync_url': 'str',
+        'delete_protection': 'str',
         'enable_admin_rotation': 'bool',
         'name': 'str',
         'payload': 'str',
@@ -52,6 +53,7 @@ class GatewayCreateProducerCustom(object):
     attribute_map = {
         'admin_rotation_interval_days': 'admin_rotation_interval_days',
         'create_sync_url': 'create-sync-url',
+        'delete_protection': 'delete_protection',
         'enable_admin_rotation': 'enable_admin_rotation',
         'name': 'name',
         'payload': 'payload',
@@ -65,7 +67,7 @@ class GatewayCreateProducerCustom(object):
         'user_ttl': 'user-ttl'
     }
 
-    def __init__(self, admin_rotation_interval_days=None, create_sync_url=None, enable_admin_rotation=False, name=None, payload=None, producer_encryption_key_name=None, revoke_sync_url=None, rotate_sync_url=None, tags=None, timeout_sec=60, token=None, uid_token=None, user_ttl='60m', local_vars_configuration=None):  # noqa: E501
+    def __init__(self, admin_rotation_interval_days=None, create_sync_url=None, delete_protection=None, enable_admin_rotation=False, name=None, payload=None, producer_encryption_key_name=None, revoke_sync_url=None, rotate_sync_url=None, tags=None, timeout_sec=60, token=None, uid_token=None, user_ttl='60m', local_vars_configuration=None):  # noqa: E501
         """GatewayCreateProducerCustom - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -73,6 +75,7 @@ class GatewayCreateProducerCustom(object):
 
         self._admin_rotation_interval_days = None
         self._create_sync_url = None
+        self._delete_protection = None
         self._enable_admin_rotation = None
         self._name = None
         self._payload = None
@@ -89,6 +92,8 @@ class GatewayCreateProducerCustom(object):
         if admin_rotation_interval_days is not None:
             self.admin_rotation_interval_days = admin_rotation_interval_days
         self.create_sync_url = create_sync_url
+        if delete_protection is not None:
+            self.delete_protection = delete_protection
         if enable_admin_rotation is not None:
             self.enable_admin_rotation = enable_admin_rotation
         self.name = name
@@ -157,6 +162,29 @@ class GatewayCreateProducerCustom(object):
             raise ValueError("Invalid value for `create_sync_url`, must not be `None`")  # noqa: E501
 
         self._create_sync_url = create_sync_url
+
+    @property
+    def delete_protection(self):
+        """Gets the delete_protection of this GatewayCreateProducerCustom.  # noqa: E501
+
+        Protection from accidental deletion of this item  # noqa: E501
+
+        :return: The delete_protection of this GatewayCreateProducerCustom.  # noqa: E501
+        :rtype: str
+        """
+        return self._delete_protection
+
+    @delete_protection.setter
+    def delete_protection(self, delete_protection):
+        """Sets the delete_protection of this GatewayCreateProducerCustom.
+
+        Protection from accidental deletion of this item  # noqa: E501
+
+        :param delete_protection: The delete_protection of this GatewayCreateProducerCustom.  # noqa: E501
+        :type: str
+        """
+
+        self._delete_protection = delete_protection
 
     @property
     def enable_admin_rotation(self):

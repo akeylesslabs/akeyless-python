@@ -35,6 +35,7 @@ class GatewayUpdateProducerPostgreSQL(object):
     """
     openapi_types = {
         'creation_statements': 'str',
+        'delete_protection': 'str',
         'name': 'str',
         'new_name': 'str',
         'postgresql_db_name': 'str',
@@ -59,6 +60,7 @@ class GatewayUpdateProducerPostgreSQL(object):
 
     attribute_map = {
         'creation_statements': 'creation-statements',
+        'delete_protection': 'delete_protection',
         'name': 'name',
         'new_name': 'new-name',
         'postgresql_db_name': 'postgresql-db-name',
@@ -81,13 +83,14 @@ class GatewayUpdateProducerPostgreSQL(object):
         'user_ttl': 'user-ttl'
     }
 
-    def __init__(self, creation_statements=None, name=None, new_name=None, postgresql_db_name=None, postgresql_host='127.0.0.1', postgresql_password=None, postgresql_port='5432', postgresql_username=None, producer_encryption_key=None, revocation_statement=None, secure_access_bastion_issuer=None, secure_access_db_schema=None, secure_access_enable=None, secure_access_host=None, secure_access_web=None, ssl=None, tags=None, target_name=None, token=None, uid_token=None, user_ttl='60m', local_vars_configuration=None):  # noqa: E501
+    def __init__(self, creation_statements=None, delete_protection=None, name=None, new_name=None, postgresql_db_name=None, postgresql_host='127.0.0.1', postgresql_password=None, postgresql_port='5432', postgresql_username=None, producer_encryption_key=None, revocation_statement=None, secure_access_bastion_issuer=None, secure_access_db_schema=None, secure_access_enable=None, secure_access_host=None, secure_access_web=None, ssl=None, tags=None, target_name=None, token=None, uid_token=None, user_ttl='60m', local_vars_configuration=None):  # noqa: E501
         """GatewayUpdateProducerPostgreSQL - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._creation_statements = None
+        self._delete_protection = None
         self._name = None
         self._new_name = None
         self._postgresql_db_name = None
@@ -112,6 +115,8 @@ class GatewayUpdateProducerPostgreSQL(object):
 
         if creation_statements is not None:
             self.creation_statements = creation_statements
+        if delete_protection is not None:
+            self.delete_protection = delete_protection
         self.name = name
         if new_name is not None:
             self.new_name = new_name
@@ -174,6 +179,29 @@ class GatewayUpdateProducerPostgreSQL(object):
         """
 
         self._creation_statements = creation_statements
+
+    @property
+    def delete_protection(self):
+        """Gets the delete_protection of this GatewayUpdateProducerPostgreSQL.  # noqa: E501
+
+        Protection from accidental deletion of this item  # noqa: E501
+
+        :return: The delete_protection of this GatewayUpdateProducerPostgreSQL.  # noqa: E501
+        :rtype: str
+        """
+        return self._delete_protection
+
+    @delete_protection.setter
+    def delete_protection(self, delete_protection):
+        """Sets the delete_protection of this GatewayUpdateProducerPostgreSQL.
+
+        Protection from accidental deletion of this item  # noqa: E501
+
+        :param delete_protection: The delete_protection of this GatewayUpdateProducerPostgreSQL.  # noqa: E501
+        :type: str
+        """
+
+        self._delete_protection = delete_protection
 
     @property
     def name(self):

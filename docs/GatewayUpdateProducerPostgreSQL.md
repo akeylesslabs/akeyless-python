@@ -5,6 +5,7 @@ gatewayUpdateProducerPostgreSQL is a command that updates postgresql producer
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **creation_statements** | **str** | PostgreSQL Creation statements | [optional] 
+**delete_protection** | **str** | Protection from accidental deletion of this item | [optional] 
 **name** | **str** | Producer name | 
 **new_name** | **str** | Producer name | [optional] 
 **postgresql_db_name** | **str** | PostgreSQL DB Name | [optional] 

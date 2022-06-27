@@ -35,6 +35,7 @@ class GatewayCreateProducerRdp(object):
     """
     openapi_types = {
         'allow_user_extend_session': 'int',
+        'delete_protection': 'str',
         'fixed_user_only': 'str',
         'name': 'str',
         'producer_encryption_key_name': 'str',
@@ -58,6 +59,7 @@ class GatewayCreateProducerRdp(object):
 
     attribute_map = {
         'allow_user_extend_session': 'allow-user-extend-session',
+        'delete_protection': 'delete_protection',
         'fixed_user_only': 'fixed-user-only',
         'name': 'name',
         'producer_encryption_key_name': 'producer-encryption-key-name',
@@ -79,13 +81,14 @@ class GatewayCreateProducerRdp(object):
         'warn_user_before_expiration': 'warn-user-before-expiration'
     }
 
-    def __init__(self, allow_user_extend_session=None, fixed_user_only='false', name=None, producer_encryption_key_name=None, rdp_admin_name=None, rdp_admin_pwd=None, rdp_host_name=None, rdp_host_port='22', rdp_user_groups=None, secure_access_allow_external_user=None, secure_access_enable=None, secure_access_host=None, secure_access_rdp_domain=None, secure_access_rdp_user=None, tags=None, target_name=None, token=None, uid_token=None, user_ttl='60m', warn_user_before_expiration=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, allow_user_extend_session=None, delete_protection=None, fixed_user_only='false', name=None, producer_encryption_key_name=None, rdp_admin_name=None, rdp_admin_pwd=None, rdp_host_name=None, rdp_host_port='22', rdp_user_groups=None, secure_access_allow_external_user=None, secure_access_enable=None, secure_access_host=None, secure_access_rdp_domain=None, secure_access_rdp_user=None, tags=None, target_name=None, token=None, uid_token=None, user_ttl='60m', warn_user_before_expiration=None, local_vars_configuration=None):  # noqa: E501
         """GatewayCreateProducerRdp - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._allow_user_extend_session = None
+        self._delete_protection = None
         self._fixed_user_only = None
         self._name = None
         self._producer_encryption_key_name = None
@@ -109,6 +112,8 @@ class GatewayCreateProducerRdp(object):
 
         if allow_user_extend_session is not None:
             self.allow_user_extend_session = allow_user_extend_session
+        if delete_protection is not None:
+            self.delete_protection = delete_protection
         if fixed_user_only is not None:
             self.fixed_user_only = fixed_user_only
         self.name = name
@@ -169,6 +174,29 @@ class GatewayCreateProducerRdp(object):
         """
 
         self._allow_user_extend_session = allow_user_extend_session
+
+    @property
+    def delete_protection(self):
+        """Gets the delete_protection of this GatewayCreateProducerRdp.  # noqa: E501
+
+        Protection from accidental deletion of this item  # noqa: E501
+
+        :return: The delete_protection of this GatewayCreateProducerRdp.  # noqa: E501
+        :rtype: str
+        """
+        return self._delete_protection
+
+    @delete_protection.setter
+    def delete_protection(self, delete_protection):
+        """Sets the delete_protection of this GatewayCreateProducerRdp.
+
+        Protection from accidental deletion of this item  # noqa: E501
+
+        :param delete_protection: The delete_protection of this GatewayCreateProducerRdp.  # noqa: E501
+        :type: str
+        """
+
+        self._delete_protection = delete_protection
 
     @property
     def fixed_user_only(self):

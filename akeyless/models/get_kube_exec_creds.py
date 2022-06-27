@@ -37,8 +37,10 @@ class GetKubeExecCreds(object):
         'alt_names': 'str',
         'cert_issuer_name': 'str',
         'common_name': 'str',
+        'extended_key_usage': 'str',
         'key_data_base64': 'str',
         'token': 'str',
+        'ttl': 'int',
         'uid_token': 'str',
         'uri_sans': 'str'
     }
@@ -47,13 +49,15 @@ class GetKubeExecCreds(object):
         'alt_names': 'alt-names',
         'cert_issuer_name': 'cert-issuer-name',
         'common_name': 'common-name',
+        'extended_key_usage': 'extended-key-usage',
         'key_data_base64': 'key-data-base64',
         'token': 'token',
+        'ttl': 'ttl',
         'uid_token': 'uid-token',
         'uri_sans': 'uri-sans'
     }
 
-    def __init__(self, alt_names=None, cert_issuer_name=None, common_name=None, key_data_base64=None, token=None, uid_token=None, uri_sans=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, alt_names=None, cert_issuer_name=None, common_name=None, extended_key_usage=None, key_data_base64=None, token=None, ttl=None, uid_token=None, uri_sans=None, local_vars_configuration=None):  # noqa: E501
         """GetKubeExecCreds - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -62,8 +66,10 @@ class GetKubeExecCreds(object):
         self._alt_names = None
         self._cert_issuer_name = None
         self._common_name = None
+        self._extended_key_usage = None
         self._key_data_base64 = None
         self._token = None
+        self._ttl = None
         self._uid_token = None
         self._uri_sans = None
         self.discriminator = None
@@ -73,10 +79,14 @@ class GetKubeExecCreds(object):
         self.cert_issuer_name = cert_issuer_name
         if common_name is not None:
             self.common_name = common_name
+        if extended_key_usage is not None:
+            self.extended_key_usage = extended_key_usage
         if key_data_base64 is not None:
             self.key_data_base64 = key_data_base64
         if token is not None:
             self.token = token
+        if ttl is not None:
+            self.ttl = ttl
         if uid_token is not None:
             self.uid_token = uid_token
         if uri_sans is not None:
@@ -154,6 +164,29 @@ class GetKubeExecCreds(object):
         self._common_name = common_name
 
     @property
+    def extended_key_usage(self):
+        """Gets the extended_key_usage of this GetKubeExecCreds.  # noqa: E501
+
+        A comma-separated list of extended key usage requests which will be used for certificate issuance. Supported values: 'clientauth', 'serverauth'.  # noqa: E501
+
+        :return: The extended_key_usage of this GetKubeExecCreds.  # noqa: E501
+        :rtype: str
+        """
+        return self._extended_key_usage
+
+    @extended_key_usage.setter
+    def extended_key_usage(self, extended_key_usage):
+        """Sets the extended_key_usage of this GetKubeExecCreds.
+
+        A comma-separated list of extended key usage requests which will be used for certificate issuance. Supported values: 'clientauth', 'serverauth'.  # noqa: E501
+
+        :param extended_key_usage: The extended_key_usage of this GetKubeExecCreds.  # noqa: E501
+        :type: str
+        """
+
+        self._extended_key_usage = extended_key_usage
+
+    @property
     def key_data_base64(self):
         """Gets the key_data_base64 of this GetKubeExecCreds.  # noqa: E501
 
@@ -198,6 +231,29 @@ class GetKubeExecCreds(object):
         """
 
         self._token = token
+
+    @property
+    def ttl(self):
+        """Gets the ttl of this GetKubeExecCreds.  # noqa: E501
+
+        Updated certificate lifetime in seconds (must be less than the Certificate Issuer default TTL)  # noqa: E501
+
+        :return: The ttl of this GetKubeExecCreds.  # noqa: E501
+        :rtype: int
+        """
+        return self._ttl
+
+    @ttl.setter
+    def ttl(self, ttl):
+        """Sets the ttl of this GetKubeExecCreds.
+
+        Updated certificate lifetime in seconds (must be less than the Certificate Issuer default TTL)  # noqa: E501
+
+        :param ttl: The ttl of this GetKubeExecCreds.  # noqa: E501
+        :type: int
+        """
+
+        self._ttl = ttl
 
     @property
     def uid_token(self):

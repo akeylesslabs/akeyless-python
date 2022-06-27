@@ -39,6 +39,7 @@ class GatewayUpdateItem(object):
         'api_key': 'str',
         'auto_rotate': 'str',
         'custom_payload': 'str',
+        'delete_protection': 'str',
         'keep_prev_version': 'str',
         'key': 'str',
         'name': 'str',
@@ -62,6 +63,7 @@ class GatewayUpdateItem(object):
         'api_key': 'api-key',
         'auto_rotate': 'auto-rotate',
         'custom_payload': 'custom-payload',
+        'delete_protection': 'delete_protection',
         'keep_prev_version': 'keep-prev-version',
         'key': 'key',
         'name': 'name',
@@ -79,7 +81,7 @@ class GatewayUpdateItem(object):
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, add_tag=None, api_id=None, api_key=None, auto_rotate=None, custom_payload=None, keep_prev_version=None, key=None, name=None, new_metadata='default_metadata', new_name=None, new_version=None, rm_tag=None, rotated_password=None, rotated_username=None, rotation_hour=0, rotation_interval=None, rotator_creds_type=None, token=None, type=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, add_tag=None, api_id=None, api_key=None, auto_rotate=None, custom_payload=None, delete_protection=None, keep_prev_version=None, key=None, name=None, new_metadata='default_metadata', new_name=None, new_version=None, rm_tag=None, rotated_password=None, rotated_username=None, rotation_hour=0, rotation_interval=None, rotator_creds_type=None, token=None, type=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """GatewayUpdateItem - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -90,6 +92,7 @@ class GatewayUpdateItem(object):
         self._api_key = None
         self._auto_rotate = None
         self._custom_payload = None
+        self._delete_protection = None
         self._keep_prev_version = None
         self._key = None
         self._name = None
@@ -117,6 +120,8 @@ class GatewayUpdateItem(object):
             self.auto_rotate = auto_rotate
         if custom_payload is not None:
             self.custom_payload = custom_payload
+        if delete_protection is not None:
+            self.delete_protection = delete_protection
         if keep_prev_version is not None:
             self.keep_prev_version = keep_prev_version
         if key is not None:
@@ -254,6 +259,29 @@ class GatewayUpdateItem(object):
         """
 
         self._custom_payload = custom_payload
+
+    @property
+    def delete_protection(self):
+        """Gets the delete_protection of this GatewayUpdateItem.  # noqa: E501
+
+        Protection from accidental deletion of this item  # noqa: E501
+
+        :return: The delete_protection of this GatewayUpdateItem.  # noqa: E501
+        :rtype: str
+        """
+        return self._delete_protection
+
+    @delete_protection.setter
+    def delete_protection(self, delete_protection):
+        """Sets the delete_protection of this GatewayUpdateItem.
+
+        Protection from accidental deletion of this item  # noqa: E501
+
+        :param delete_protection: The delete_protection of this GatewayUpdateItem.  # noqa: E501
+        :type: str
+        """
+
+        self._delete_protection = delete_protection
 
     @property
     def keep_prev_version(self):

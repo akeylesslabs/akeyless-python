@@ -36,20 +36,24 @@ class GetSSHCertificate(object):
     openapi_types = {
         'cert_issuer_name': 'str',
         'cert_username': 'str',
+        'legacy_signing_alg_name': 'bool',
         'public_key_data': 'str',
         'token': 'str',
+        'ttl': 'int',
         'uid_token': 'str'
     }
 
     attribute_map = {
         'cert_issuer_name': 'cert-issuer-name',
         'cert_username': 'cert-username',
+        'legacy_signing_alg_name': 'legacy-signing-alg-name',
         'public_key_data': 'public-key-data',
         'token': 'token',
+        'ttl': 'ttl',
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, cert_issuer_name=None, cert_username=None, public_key_data=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, cert_issuer_name=None, cert_username=None, legacy_signing_alg_name=None, public_key_data=None, token=None, ttl=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """GetSSHCertificate - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -57,17 +61,23 @@ class GetSSHCertificate(object):
 
         self._cert_issuer_name = None
         self._cert_username = None
+        self._legacy_signing_alg_name = None
         self._public_key_data = None
         self._token = None
+        self._ttl = None
         self._uid_token = None
         self.discriminator = None
 
         self.cert_issuer_name = cert_issuer_name
         self.cert_username = cert_username
+        if legacy_signing_alg_name is not None:
+            self.legacy_signing_alg_name = legacy_signing_alg_name
         if public_key_data is not None:
             self.public_key_data = public_key_data
         if token is not None:
             self.token = token
+        if ttl is not None:
+            self.ttl = ttl
         if uid_token is not None:
             self.uid_token = uid_token
 
@@ -122,6 +132,29 @@ class GetSSHCertificate(object):
         self._cert_username = cert_username
 
     @property
+    def legacy_signing_alg_name(self):
+        """Gets the legacy_signing_alg_name of this GetSSHCertificate.  # noqa: E501
+
+        Set this option to output legacy ('ssh-rsa-cert-v01@openssh.com') signing algorithm name in the certificate.  # noqa: E501
+
+        :return: The legacy_signing_alg_name of this GetSSHCertificate.  # noqa: E501
+        :rtype: bool
+        """
+        return self._legacy_signing_alg_name
+
+    @legacy_signing_alg_name.setter
+    def legacy_signing_alg_name(self, legacy_signing_alg_name):
+        """Sets the legacy_signing_alg_name of this GetSSHCertificate.
+
+        Set this option to output legacy ('ssh-rsa-cert-v01@openssh.com') signing algorithm name in the certificate.  # noqa: E501
+
+        :param legacy_signing_alg_name: The legacy_signing_alg_name of this GetSSHCertificate.  # noqa: E501
+        :type: bool
+        """
+
+        self._legacy_signing_alg_name = legacy_signing_alg_name
+
+    @property
     def public_key_data(self):
         """Gets the public_key_data of this GetSSHCertificate.  # noqa: E501
 
@@ -166,6 +199,29 @@ class GetSSHCertificate(object):
         """
 
         self._token = token
+
+    @property
+    def ttl(self):
+        """Gets the ttl of this GetSSHCertificate.  # noqa: E501
+
+        Updated certificate lifetime in seconds (must be less than the Certificate Issuer default TTL)  # noqa: E501
+
+        :return: The ttl of this GetSSHCertificate.  # noqa: E501
+        :rtype: int
+        """
+        return self._ttl
+
+    @ttl.setter
+    def ttl(self, ttl):
+        """Sets the ttl of this GetSSHCertificate.
+
+        Updated certificate lifetime in seconds (must be less than the Certificate Issuer default TTL)  # noqa: E501
+
+        :param ttl: The ttl of this GetSSHCertificate.  # noqa: E501
+        :type: int
+        """
+
+        self._ttl = ttl
 
     @property
     def uid_token(self):

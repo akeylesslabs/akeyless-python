@@ -38,6 +38,7 @@ class GatewayUpdateProducerSnowflake(object):
         'account_password': 'str',
         'account_username': 'str',
         'db_name': 'str',
+        'delete_protection': 'str',
         'name': 'str',
         'new_name': 'str',
         'role': 'str',
@@ -54,6 +55,7 @@ class GatewayUpdateProducerSnowflake(object):
         'account_password': 'account-password',
         'account_username': 'account-username',
         'db_name': 'db-name',
+        'delete_protection': 'delete_protection',
         'name': 'name',
         'new_name': 'new-name',
         'role': 'role',
@@ -65,7 +67,7 @@ class GatewayUpdateProducerSnowflake(object):
         'warehouse': 'warehouse'
     }
 
-    def __init__(self, account=None, account_password=None, account_username=None, db_name=None, name=None, new_name=None, role=None, tags=None, target_name=None, token=None, uid_token=None, user_ttl='24h', warehouse=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, account=None, account_password=None, account_username=None, db_name=None, delete_protection=None, name=None, new_name=None, role=None, tags=None, target_name=None, token=None, uid_token=None, user_ttl='24h', warehouse=None, local_vars_configuration=None):  # noqa: E501
         """GatewayUpdateProducerSnowflake - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -75,6 +77,7 @@ class GatewayUpdateProducerSnowflake(object):
         self._account_password = None
         self._account_username = None
         self._db_name = None
+        self._delete_protection = None
         self._name = None
         self._new_name = None
         self._role = None
@@ -94,6 +97,8 @@ class GatewayUpdateProducerSnowflake(object):
             self.account_username = account_username
         if db_name is not None:
             self.db_name = db_name
+        if delete_protection is not None:
+            self.delete_protection = delete_protection
         self.name = name
         if new_name is not None:
             self.new_name = new_name
@@ -203,6 +208,29 @@ class GatewayUpdateProducerSnowflake(object):
         """
 
         self._db_name = db_name
+
+    @property
+    def delete_protection(self):
+        """Gets the delete_protection of this GatewayUpdateProducerSnowflake.  # noqa: E501
+
+        Protection from accidental deletion of this item  # noqa: E501
+
+        :return: The delete_protection of this GatewayUpdateProducerSnowflake.  # noqa: E501
+        :rtype: str
+        """
+        return self._delete_protection
+
+    @delete_protection.setter
+    def delete_protection(self, delete_protection):
+        """Sets the delete_protection of this GatewayUpdateProducerSnowflake.
+
+        Protection from accidental deletion of this item  # noqa: E501
+
+        :param delete_protection: The delete_protection of this GatewayUpdateProducerSnowflake.  # noqa: E501
+        :type: str
+        """
+
+        self._delete_protection = delete_protection
 
     @property
     def name(self):

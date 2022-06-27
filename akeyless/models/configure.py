@@ -40,8 +40,10 @@ class Configure(object):
         'admin_email': 'str',
         'admin_password': 'str',
         'azure_ad_object_id': 'str',
+        'cert_data': 'str',
         'gcp_audience': 'str',
-        'k8s_auth_config_name': 'str'
+        'k8s_auth_config_name': 'str',
+        'key_data': 'str'
     }
 
     attribute_map = {
@@ -51,11 +53,13 @@ class Configure(object):
         'admin_email': 'admin-email',
         'admin_password': 'admin-password',
         'azure_ad_object_id': 'azure_ad_object_id',
+        'cert_data': 'cert-data',
         'gcp_audience': 'gcp-audience',
-        'k8s_auth_config_name': 'k8s-auth-config-name'
+        'k8s_auth_config_name': 'k8s-auth-config-name',
+        'key_data': 'key-data'
     }
 
-    def __init__(self, access_id=None, access_key=None, access_type='access_key', admin_email=None, admin_password=None, azure_ad_object_id=None, gcp_audience=None, k8s_auth_config_name=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, access_id=None, access_key=None, access_type='access_key', admin_email=None, admin_password=None, azure_ad_object_id=None, cert_data=None, gcp_audience=None, k8s_auth_config_name=None, key_data=None, local_vars_configuration=None):  # noqa: E501
         """Configure - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -67,8 +71,10 @@ class Configure(object):
         self._admin_email = None
         self._admin_password = None
         self._azure_ad_object_id = None
+        self._cert_data = None
         self._gcp_audience = None
         self._k8s_auth_config_name = None
+        self._key_data = None
         self.discriminator = None
 
         if access_id is not None:
@@ -83,10 +89,14 @@ class Configure(object):
             self.admin_password = admin_password
         if azure_ad_object_id is not None:
             self.azure_ad_object_id = azure_ad_object_id
+        if cert_data is not None:
+            self.cert_data = cert_data
         if gcp_audience is not None:
             self.gcp_audience = gcp_audience
         if k8s_auth_config_name is not None:
             self.k8s_auth_config_name = k8s_auth_config_name
+        if key_data is not None:
+            self.key_data = key_data
 
     @property
     def access_id(self):
@@ -227,6 +237,29 @@ class Configure(object):
         self._azure_ad_object_id = azure_ad_object_id
 
     @property
+    def cert_data(self):
+        """Gets the cert_data of this Configure.  # noqa: E501
+
+        Certificate data encoded in base64. Used if file was not provided. (relevant only for access-type=cert in Curl Context)  # noqa: E501
+
+        :return: The cert_data of this Configure.  # noqa: E501
+        :rtype: str
+        """
+        return self._cert_data
+
+    @cert_data.setter
+    def cert_data(self, cert_data):
+        """Sets the cert_data of this Configure.
+
+        Certificate data encoded in base64. Used if file was not provided. (relevant only for access-type=cert in Curl Context)  # noqa: E501
+
+        :param cert_data: The cert_data of this Configure.  # noqa: E501
+        :type: str
+        """
+
+        self._cert_data = cert_data
+
+    @property
     def gcp_audience(self):
         """Gets the gcp_audience of this Configure.  # noqa: E501
 
@@ -271,6 +304,29 @@ class Configure(object):
         """
 
         self._k8s_auth_config_name = k8s_auth_config_name
+
+    @property
+    def key_data(self):
+        """Gets the key_data of this Configure.  # noqa: E501
+
+        Private key data encoded in base64. Used if file was not provided.(relevant only for access-type=cert in Curl Context)  # noqa: E501
+
+        :return: The key_data of this Configure.  # noqa: E501
+        :rtype: str
+        """
+        return self._key_data
+
+    @key_data.setter
+    def key_data(self, key_data):
+        """Sets the key_data of this Configure.
+
+        Private key data encoded in base64. Used if file was not provided.(relevant only for access-type=cert in Curl Context)  # noqa: E501
+
+        :param key_data: The key_data of this Configure.  # noqa: E501
+        :type: str
+        """
+
+        self._key_data = key_data
 
     def to_dict(self):
         """Returns the model properties as a dict"""

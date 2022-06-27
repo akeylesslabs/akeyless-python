@@ -39,6 +39,7 @@ class GatewayUpdateProducerArtifactory(object):
         'artifactory_token_audience': 'str',
         'artifactory_token_scope': 'str',
         'base_url': 'str',
+        'delete_protection': 'str',
         'name': 'str',
         'new_name': 'str',
         'producer_encryption_key_name': 'str',
@@ -55,6 +56,7 @@ class GatewayUpdateProducerArtifactory(object):
         'artifactory_token_audience': 'artifactory-token-audience',
         'artifactory_token_scope': 'artifactory-token-scope',
         'base_url': 'base-url',
+        'delete_protection': 'delete_protection',
         'name': 'name',
         'new_name': 'new-name',
         'producer_encryption_key_name': 'producer-encryption-key-name',
@@ -65,7 +67,7 @@ class GatewayUpdateProducerArtifactory(object):
         'user_ttl': 'user-ttl'
     }
 
-    def __init__(self, artifactory_admin_name=None, artifactory_admin_pwd=None, artifactory_token_audience=None, artifactory_token_scope=None, base_url=None, name=None, new_name=None, producer_encryption_key_name=None, tags=None, target_name=None, token=None, uid_token=None, user_ttl='60m', local_vars_configuration=None):  # noqa: E501
+    def __init__(self, artifactory_admin_name=None, artifactory_admin_pwd=None, artifactory_token_audience=None, artifactory_token_scope=None, base_url=None, delete_protection=None, name=None, new_name=None, producer_encryption_key_name=None, tags=None, target_name=None, token=None, uid_token=None, user_ttl='60m', local_vars_configuration=None):  # noqa: E501
         """GatewayUpdateProducerArtifactory - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -76,6 +78,7 @@ class GatewayUpdateProducerArtifactory(object):
         self._artifactory_token_audience = None
         self._artifactory_token_scope = None
         self._base_url = None
+        self._delete_protection = None
         self._name = None
         self._new_name = None
         self._producer_encryption_key_name = None
@@ -94,6 +97,8 @@ class GatewayUpdateProducerArtifactory(object):
         self.artifactory_token_scope = artifactory_token_scope
         if base_url is not None:
             self.base_url = base_url
+        if delete_protection is not None:
+            self.delete_protection = delete_protection
         self.name = name
         if new_name is not None:
             self.new_name = new_name
@@ -228,6 +233,29 @@ class GatewayUpdateProducerArtifactory(object):
         """
 
         self._base_url = base_url
+
+    @property
+    def delete_protection(self):
+        """Gets the delete_protection of this GatewayUpdateProducerArtifactory.  # noqa: E501
+
+        Protection from accidental deletion of this item  # noqa: E501
+
+        :return: The delete_protection of this GatewayUpdateProducerArtifactory.  # noqa: E501
+        :rtype: str
+        """
+        return self._delete_protection
+
+    @delete_protection.setter
+    def delete_protection(self, delete_protection):
+        """Sets the delete_protection of this GatewayUpdateProducerArtifactory.
+
+        Protection from accidental deletion of this item  # noqa: E501
+
+        :param delete_protection: The delete_protection of this GatewayUpdateProducerArtifactory.  # noqa: E501
+        :type: str
+        """
+
+        self._delete_protection = delete_protection
 
     @property
     def name(self):

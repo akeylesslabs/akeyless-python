@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **bind_dn** | **str** | Bind DN | [optional] 
 **bind_dn_password** | **str** | Bind DN Password | [optional] 
+**delete_protection** | **str** | Protection from accidental deletion of this item | [optional] 
 **external_username** | **str** | Fixed user | [optional] [default to 'false']
 **ldap_ca_cert** | **str** | CA Certificate File Content | [optional] 
 **ldap_url** | **str** | LDAP Server URL | [optional] 

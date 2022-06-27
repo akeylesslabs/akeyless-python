@@ -34,6 +34,7 @@ class GatewayCreateProducerNativeK8S(object):
                             and the value is json key in definition.
     """
     openapi_types = {
+        'delete_protection': 'str',
         'k8s_cluster_ca_cert': 'str',
         'k8s_cluster_endpoint': 'str',
         'k8s_cluster_token': 'str',
@@ -57,6 +58,7 @@ class GatewayCreateProducerNativeK8S(object):
     }
 
     attribute_map = {
+        'delete_protection': 'delete_protection',
         'k8s_cluster_ca_cert': 'k8s-cluster-ca-cert',
         'k8s_cluster_endpoint': 'k8s-cluster-endpoint',
         'k8s_cluster_token': 'k8s-cluster-token',
@@ -79,12 +81,13 @@ class GatewayCreateProducerNativeK8S(object):
         'user_ttl': 'user-ttl'
     }
 
-    def __init__(self, k8s_cluster_ca_cert=None, k8s_cluster_endpoint=None, k8s_cluster_token=None, k8s_namespace=None, k8s_service_account=None, name=None, producer_encryption_key_name=None, secure_access_allow_port_forwading=None, secure_access_bastion_issuer=None, secure_access_cluster_endpoint=None, secure_access_dashboard_url=None, secure_access_enable=None, secure_access_web=None, secure_access_web_browsing=None, secure_access_web_proxy=None, tags=None, target_name=None, token=None, uid_token=None, user_ttl='60m', local_vars_configuration=None):  # noqa: E501
+    def __init__(self, delete_protection=None, k8s_cluster_ca_cert=None, k8s_cluster_endpoint=None, k8s_cluster_token=None, k8s_namespace=None, k8s_service_account=None, name=None, producer_encryption_key_name=None, secure_access_allow_port_forwading=None, secure_access_bastion_issuer=None, secure_access_cluster_endpoint=None, secure_access_dashboard_url=None, secure_access_enable=None, secure_access_web=None, secure_access_web_browsing=None, secure_access_web_proxy=None, tags=None, target_name=None, token=None, uid_token=None, user_ttl='60m', local_vars_configuration=None):  # noqa: E501
         """GatewayCreateProducerNativeK8S - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
+        self._delete_protection = None
         self._k8s_cluster_ca_cert = None
         self._k8s_cluster_endpoint = None
         self._k8s_cluster_token = None
@@ -107,6 +110,8 @@ class GatewayCreateProducerNativeK8S(object):
         self._user_ttl = None
         self.discriminator = None
 
+        if delete_protection is not None:
+            self.delete_protection = delete_protection
         if k8s_cluster_ca_cert is not None:
             self.k8s_cluster_ca_cert = k8s_cluster_ca_cert
         if k8s_cluster_endpoint is not None:
@@ -146,6 +151,29 @@ class GatewayCreateProducerNativeK8S(object):
             self.uid_token = uid_token
         if user_ttl is not None:
             self.user_ttl = user_ttl
+
+    @property
+    def delete_protection(self):
+        """Gets the delete_protection of this GatewayCreateProducerNativeK8S.  # noqa: E501
+
+        Protection from accidental deletion of this item  # noqa: E501
+
+        :return: The delete_protection of this GatewayCreateProducerNativeK8S.  # noqa: E501
+        :rtype: str
+        """
+        return self._delete_protection
+
+    @delete_protection.setter
+    def delete_protection(self, delete_protection):
+        """Sets the delete_protection of this GatewayCreateProducerNativeK8S.
+
+        Protection from accidental deletion of this item  # noqa: E501
+
+        :param delete_protection: The delete_protection of this GatewayCreateProducerNativeK8S.  # noqa: E501
+        :type: str
+        """
+
+        self._delete_protection = delete_protection
 
     @property
     def k8s_cluster_ca_cert(self):

@@ -39,6 +39,7 @@ class GatewayUpdateProducerCassandra(object):
         'cassandra_password': 'str',
         'cassandra_port': 'str',
         'cassandra_username': 'str',
+        'delete_protection': 'str',
         'name': 'str',
         'new_name': 'str',
         'producer_encryption_key_name': 'str',
@@ -55,6 +56,7 @@ class GatewayUpdateProducerCassandra(object):
         'cassandra_password': 'cassandra-password',
         'cassandra_port': 'cassandra-port',
         'cassandra_username': 'cassandra-username',
+        'delete_protection': 'delete_protection',
         'name': 'name',
         'new_name': 'new-name',
         'producer_encryption_key_name': 'producer-encryption-key-name',
@@ -65,7 +67,7 @@ class GatewayUpdateProducerCassandra(object):
         'user_ttl': 'user-ttl'
     }
 
-    def __init__(self, cassandra_creation_statements=None, cassandra_hosts=None, cassandra_password=None, cassandra_port='9042', cassandra_username=None, name=None, new_name=None, producer_encryption_key_name=None, tags=None, target_name=None, token=None, uid_token=None, user_ttl='60m', local_vars_configuration=None):  # noqa: E501
+    def __init__(self, cassandra_creation_statements=None, cassandra_hosts=None, cassandra_password=None, cassandra_port='9042', cassandra_username=None, delete_protection=None, name=None, new_name=None, producer_encryption_key_name=None, tags=None, target_name=None, token=None, uid_token=None, user_ttl='60m', local_vars_configuration=None):  # noqa: E501
         """GatewayUpdateProducerCassandra - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -76,6 +78,7 @@ class GatewayUpdateProducerCassandra(object):
         self._cassandra_password = None
         self._cassandra_port = None
         self._cassandra_username = None
+        self._delete_protection = None
         self._name = None
         self._new_name = None
         self._producer_encryption_key_name = None
@@ -96,6 +99,8 @@ class GatewayUpdateProducerCassandra(object):
             self.cassandra_port = cassandra_port
         if cassandra_username is not None:
             self.cassandra_username = cassandra_username
+        if delete_protection is not None:
+            self.delete_protection = delete_protection
         self.name = name
         if new_name is not None:
             self.new_name = new_name
@@ -226,6 +231,29 @@ class GatewayUpdateProducerCassandra(object):
         """
 
         self._cassandra_username = cassandra_username
+
+    @property
+    def delete_protection(self):
+        """Gets the delete_protection of this GatewayUpdateProducerCassandra.  # noqa: E501
+
+        Protection from accidental deletion of this item  # noqa: E501
+
+        :return: The delete_protection of this GatewayUpdateProducerCassandra.  # noqa: E501
+        :rtype: str
+        """
+        return self._delete_protection
+
+    @delete_protection.setter
+    def delete_protection(self, delete_protection):
+        """Sets the delete_protection of this GatewayUpdateProducerCassandra.
+
+        Protection from accidental deletion of this item  # noqa: E501
+
+        :param delete_protection: The delete_protection of this GatewayUpdateProducerCassandra.  # noqa: E501
+        :type: str
+        """
+
+        self._delete_protection = delete_protection
 
     @property
     def name(self):

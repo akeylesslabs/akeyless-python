@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **cassandra_password** | **str** | Cassandra superuser password | [optional] 
 **cassandra_port** | **str** | Cassandra port | [optional] [default to '9042']
 **cassandra_username** | **str** | Cassandra superuser username | [optional] 
+**delete_protection** | **str** | Protection from accidental deletion of this item | [optional] 
 **name** | **str** | Producer name | 
 **new_name** | **str** | Producer name | [optional] 
 **producer_encryption_key_name** | **str** | Dynamic producer encryption key | [optional] 
