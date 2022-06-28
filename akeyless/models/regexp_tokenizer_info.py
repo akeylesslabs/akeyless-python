@@ -35,36 +35,36 @@ class RegexpTokenizerInfo(object):
     """
     openapi_types = {
         'alphabet': 'str',
-        'decryption_template': 'str',
-        'encryption_template': 'str',
+        'decoding_template': 'str',
+        'encoding_template': 'str',
         'pattern': 'str'
     }
 
     attribute_map = {
         'alphabet': 'alphabet',
-        'decryption_template': 'decryption_template',
-        'encryption_template': 'encryption_template',
+        'decoding_template': 'decoding_template',
+        'encoding_template': 'encoding_template',
         'pattern': 'pattern'
     }
 
-    def __init__(self, alphabet=None, decryption_template=None, encryption_template=None, pattern=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, alphabet=None, decoding_template=None, encoding_template=None, pattern=None, local_vars_configuration=None):  # noqa: E501
         """RegexpTokenizerInfo - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._alphabet = None
-        self._decryption_template = None
-        self._encryption_template = None
+        self._decoding_template = None
+        self._encoding_template = None
         self._pattern = None
         self.discriminator = None
 
         if alphabet is not None:
             self.alphabet = alphabet
-        if decryption_template is not None:
-            self.decryption_template = decryption_template
-        if encryption_template is not None:
-            self.encryption_template = encryption_template
+        if decoding_template is not None:
+            self.decoding_template = decoding_template
+        if encoding_template is not None:
+            self.encoding_template = encoding_template
         if pattern is not None:
             self.pattern = pattern
 
@@ -92,50 +92,50 @@ class RegexpTokenizerInfo(object):
         self._alphabet = alphabet
 
     @property
-    def decryption_template(self):
-        """Gets the decryption_template of this RegexpTokenizerInfo.  # noqa: E501
+    def decoding_template(self):
+        """Gets the decoding_template of this RegexpTokenizerInfo.  # noqa: E501
 
         Transformation to perform on the decrypted data  # noqa: E501
 
-        :return: The decryption_template of this RegexpTokenizerInfo.  # noqa: E501
+        :return: The decoding_template of this RegexpTokenizerInfo.  # noqa: E501
         :rtype: str
         """
-        return self._decryption_template
+        return self._decoding_template
 
-    @decryption_template.setter
-    def decryption_template(self, decryption_template):
-        """Sets the decryption_template of this RegexpTokenizerInfo.
+    @decoding_template.setter
+    def decoding_template(self, decoding_template):
+        """Sets the decoding_template of this RegexpTokenizerInfo.
 
         Transformation to perform on the decrypted data  # noqa: E501
 
-        :param decryption_template: The decryption_template of this RegexpTokenizerInfo.  # noqa: E501
+        :param decoding_template: The decoding_template of this RegexpTokenizerInfo.  # noqa: E501
         :type: str
         """
 
-        self._decryption_template = decryption_template
+        self._decoding_template = decoding_template
 
     @property
-    def encryption_template(self):
-        """Gets the encryption_template of this RegexpTokenizerInfo.  # noqa: E501
+    def encoding_template(self):
+        """Gets the encoding_template of this RegexpTokenizerInfo.  # noqa: E501
 
         Transformation to perform on the encrypted data, if the required output template doesn't match the input string The output Should still be valid for the Pattern, otherwise the secret would be able to be decrypted.  # noqa: E501
 
-        :return: The encryption_template of this RegexpTokenizerInfo.  # noqa: E501
+        :return: The encoding_template of this RegexpTokenizerInfo.  # noqa: E501
         :rtype: str
         """
-        return self._encryption_template
+        return self._encoding_template
 
-    @encryption_template.setter
-    def encryption_template(self, encryption_template):
-        """Sets the encryption_template of this RegexpTokenizerInfo.
+    @encoding_template.setter
+    def encoding_template(self, encoding_template):
+        """Sets the encoding_template of this RegexpTokenizerInfo.
 
         Transformation to perform on the encrypted data, if the required output template doesn't match the input string The output Should still be valid for the Pattern, otherwise the secret would be able to be decrypted.  # noqa: E501
 
-        :param encryption_template: The encryption_template of this RegexpTokenizerInfo.  # noqa: E501
+        :param encoding_template: The encoding_template of this RegexpTokenizerInfo.  # noqa: E501
         :type: str
         """
 
-        self._encryption_template = encryption_template
+        self._encoding_template = encoding_template
 
     @property
     def pattern(self):

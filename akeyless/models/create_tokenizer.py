@@ -35,10 +35,10 @@ class CreateTokenizer(object):
     """
     openapi_types = {
         'alphabet': 'str',
-        'decryption_template': 'str',
+        'decoding_template': 'str',
         'delete_protection': 'str',
+        'encoding_template': 'str',
         'encryption_key_name': 'str',
-        'encryption_template': 'str',
         'metadata': 'str',
         'name': 'str',
         'pattern': 'str',
@@ -52,10 +52,10 @@ class CreateTokenizer(object):
 
     attribute_map = {
         'alphabet': 'alphabet',
-        'decryption_template': 'decryption-template',
+        'decoding_template': 'decoding-template',
         'delete_protection': 'delete_protection',
+        'encoding_template': 'encoding-template',
         'encryption_key_name': 'encryption-key-name',
-        'encryption_template': 'encryption-template',
         'metadata': 'metadata',
         'name': 'name',
         'pattern': 'pattern',
@@ -67,17 +67,17 @@ class CreateTokenizer(object):
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, alphabet=None, decryption_template=None, delete_protection=None, encryption_key_name=None, encryption_template=None, metadata=None, name=None, pattern=None, tag=None, template_type=None, token=None, tokenizer_type=None, tweak_type=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, alphabet=None, decoding_template=None, delete_protection=None, encoding_template=None, encryption_key_name=None, metadata=None, name=None, pattern=None, tag=None, template_type=None, token=None, tokenizer_type=None, tweak_type=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """CreateTokenizer - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._alphabet = None
-        self._decryption_template = None
+        self._decoding_template = None
         self._delete_protection = None
+        self._encoding_template = None
         self._encryption_key_name = None
-        self._encryption_template = None
         self._metadata = None
         self._name = None
         self._pattern = None
@@ -91,14 +91,14 @@ class CreateTokenizer(object):
 
         if alphabet is not None:
             self.alphabet = alphabet
-        if decryption_template is not None:
-            self.decryption_template = decryption_template
+        if decoding_template is not None:
+            self.decoding_template = decoding_template
         if delete_protection is not None:
             self.delete_protection = delete_protection
+        if encoding_template is not None:
+            self.encoding_template = encoding_template
         if encryption_key_name is not None:
             self.encryption_key_name = encryption_key_name
-        if encryption_template is not None:
-            self.encryption_template = encryption_template
         if metadata is not None:
             self.metadata = metadata
         self.name = name
@@ -139,27 +139,27 @@ class CreateTokenizer(object):
         self._alphabet = alphabet
 
     @property
-    def decryption_template(self):
-        """Gets the decryption_template of this CreateTokenizer.  # noqa: E501
+    def decoding_template(self):
+        """Gets the decoding_template of this CreateTokenizer.  # noqa: E501
 
-        The Decryption output template to use in regexp vaultless tokenization  # noqa: E501
+        The Decoding output template to use in regexp vaultless tokenization  # noqa: E501
 
-        :return: The decryption_template of this CreateTokenizer.  # noqa: E501
+        :return: The decoding_template of this CreateTokenizer.  # noqa: E501
         :rtype: str
         """
-        return self._decryption_template
+        return self._decoding_template
 
-    @decryption_template.setter
-    def decryption_template(self, decryption_template):
-        """Sets the decryption_template of this CreateTokenizer.
+    @decoding_template.setter
+    def decoding_template(self, decoding_template):
+        """Sets the decoding_template of this CreateTokenizer.
 
-        The Decryption output template to use in regexp vaultless tokenization  # noqa: E501
+        The Decoding output template to use in regexp vaultless tokenization  # noqa: E501
 
-        :param decryption_template: The decryption_template of this CreateTokenizer.  # noqa: E501
+        :param decoding_template: The decoding_template of this CreateTokenizer.  # noqa: E501
         :type: str
         """
 
-        self._decryption_template = decryption_template
+        self._decoding_template = decoding_template
 
     @property
     def delete_protection(self):
@@ -185,6 +185,29 @@ class CreateTokenizer(object):
         self._delete_protection = delete_protection
 
     @property
+    def encoding_template(self):
+        """Gets the encoding_template of this CreateTokenizer.  # noqa: E501
+
+        The Encoding output template to use in regexp vaultless tokenization  # noqa: E501
+
+        :return: The encoding_template of this CreateTokenizer.  # noqa: E501
+        :rtype: str
+        """
+        return self._encoding_template
+
+    @encoding_template.setter
+    def encoding_template(self, encoding_template):
+        """Sets the encoding_template of this CreateTokenizer.
+
+        The Encoding output template to use in regexp vaultless tokenization  # noqa: E501
+
+        :param encoding_template: The encoding_template of this CreateTokenizer.  # noqa: E501
+        :type: str
+        """
+
+        self._encoding_template = encoding_template
+
+    @property
     def encryption_key_name(self):
         """Gets the encryption_key_name of this CreateTokenizer.  # noqa: E501
 
@@ -206,29 +229,6 @@ class CreateTokenizer(object):
         """
 
         self._encryption_key_name = encryption_key_name
-
-    @property
-    def encryption_template(self):
-        """Gets the encryption_template of this CreateTokenizer.  # noqa: E501
-
-        The Encryption output template to use in regexp vaultless tokenization  # noqa: E501
-
-        :return: The encryption_template of this CreateTokenizer.  # noqa: E501
-        :rtype: str
-        """
-        return self._encryption_template
-
-    @encryption_template.setter
-    def encryption_template(self, encryption_template):
-        """Sets the encryption_template of this CreateTokenizer.
-
-        The Encryption output template to use in regexp vaultless tokenization  # noqa: E501
-
-        :param encryption_template: The encryption_template of this CreateTokenizer.  # noqa: E501
-        :type: str
-        """
-
-        self._encryption_template = encryption_template
 
     @property
     def metadata(self):
