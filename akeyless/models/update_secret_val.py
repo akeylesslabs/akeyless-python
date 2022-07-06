@@ -34,6 +34,8 @@ class UpdateSecretVal(object):
                             and the value is json key in definition.
     """
     openapi_types = {
+        'custom_fields': 'dict(str, str)',
+        'item_accessibility': 'str',
         'keep_prev_version': 'str',
         'key': 'str',
         'multiline': 'bool',
@@ -41,10 +43,14 @@ class UpdateSecretVal(object):
         'new_version': 'bool',
         'token': 'str',
         'uid_token': 'str',
-        'value': 'str'
+        'username': 'str',
+        'value': 'str',
+        'website': 'str'
     }
 
     attribute_map = {
+        'custom_fields': 'custom-fields',
+        'item_accessibility': 'item-accessibility',
         'keep_prev_version': 'keep-prev-version',
         'key': 'key',
         'multiline': 'multiline',
@@ -52,15 +58,19 @@ class UpdateSecretVal(object):
         'new_version': 'new-version',
         'token': 'token',
         'uid_token': 'uid-token',
-        'value': 'value'
+        'username': 'username',
+        'value': 'value',
+        'website': 'website'
     }
 
-    def __init__(self, keep_prev_version=None, key=None, multiline=None, name=None, new_version=None, token=None, uid_token=None, value=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, custom_fields=None, item_accessibility=None, keep_prev_version=None, key=None, multiline=None, name=None, new_version=None, token=None, uid_token=None, username=None, value=None, website=None, local_vars_configuration=None):  # noqa: E501
         """UpdateSecretVal - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
+        self._custom_fields = None
+        self._item_accessibility = None
         self._keep_prev_version = None
         self._key = None
         self._multiline = None
@@ -68,9 +78,15 @@ class UpdateSecretVal(object):
         self._new_version = None
         self._token = None
         self._uid_token = None
+        self._username = None
         self._value = None
+        self._website = None
         self.discriminator = None
 
+        if custom_fields is not None:
+            self.custom_fields = custom_fields
+        if item_accessibility is not None:
+            self.item_accessibility = item_accessibility
         if keep_prev_version is not None:
             self.keep_prev_version = keep_prev_version
         if key is not None:
@@ -84,7 +100,57 @@ class UpdateSecretVal(object):
             self.token = token
         if uid_token is not None:
             self.uid_token = uid_token
+        if username is not None:
+            self.username = username
         self.value = value
+        if website is not None:
+            self.website = website
+
+    @property
+    def custom_fields(self):
+        """Gets the custom_fields of this UpdateSecretVal.  # noqa: E501
+
+        For Password Management use, additional fields  # noqa: E501
+
+        :return: The custom_fields of this UpdateSecretVal.  # noqa: E501
+        :rtype: dict(str, str)
+        """
+        return self._custom_fields
+
+    @custom_fields.setter
+    def custom_fields(self, custom_fields):
+        """Sets the custom_fields of this UpdateSecretVal.
+
+        For Password Management use, additional fields  # noqa: E501
+
+        :param custom_fields: The custom_fields of this UpdateSecretVal.  # noqa: E501
+        :type: dict(str, str)
+        """
+
+        self._custom_fields = custom_fields
+
+    @property
+    def item_accessibility(self):
+        """Gets the item_accessibility of this UpdateSecretVal.  # noqa: E501
+
+        for personal password manager  # noqa: E501
+
+        :return: The item_accessibility of this UpdateSecretVal.  # noqa: E501
+        :rtype: str
+        """
+        return self._item_accessibility
+
+    @item_accessibility.setter
+    def item_accessibility(self, item_accessibility):
+        """Sets the item_accessibility of this UpdateSecretVal.
+
+        for personal password manager  # noqa: E501
+
+        :param item_accessibility: The item_accessibility of this UpdateSecretVal.  # noqa: E501
+        :type: str
+        """
+
+        self._item_accessibility = item_accessibility
 
     @property
     def keep_prev_version(self):
@@ -248,6 +314,29 @@ class UpdateSecretVal(object):
         self._uid_token = uid_token
 
     @property
+    def username(self):
+        """Gets the username of this UpdateSecretVal.  # noqa: E501
+
+        For Password Management use  # noqa: E501
+
+        :return: The username of this UpdateSecretVal.  # noqa: E501
+        :rtype: str
+        """
+        return self._username
+
+    @username.setter
+    def username(self, username):
+        """Sets the username of this UpdateSecretVal.
+
+        For Password Management use  # noqa: E501
+
+        :param username: The username of this UpdateSecretVal.  # noqa: E501
+        :type: str
+        """
+
+        self._username = username
+
+    @property
     def value(self):
         """Gets the value of this UpdateSecretVal.  # noqa: E501
 
@@ -271,6 +360,29 @@ class UpdateSecretVal(object):
             raise ValueError("Invalid value for `value`, must not be `None`")  # noqa: E501
 
         self._value = value
+
+    @property
+    def website(self):
+        """Gets the website of this UpdateSecretVal.  # noqa: E501
+
+        For Password Management use, reflect the website context  # noqa: E501
+
+        :return: The website of this UpdateSecretVal.  # noqa: E501
+        :rtype: str
+        """
+        return self._website
+
+    @website.setter
+    def website(self, website):
+        """Sets the website of this UpdateSecretVal.
+
+        For Password Management use, reflect the website context  # noqa: E501
+
+        :param website: The website of this UpdateSecretVal.  # noqa: E501
+        :type: str
+        """
+
+        self._website = website
 
     def to_dict(self):
         """Returns the model properties as a dict"""

@@ -34,10 +34,13 @@ class CreateSecret(object):
                             and the value is json key in definition.
     """
     openapi_types = {
+        'custom_fields': 'dict(str, str)',
         'delete_protection': 'str',
+        'item_accessibility': 'str',
         'metadata': 'str',
         'multiline_value': 'bool',
         'name': 'str',
+        'password_length': 'int',
         'protection_key': 'str',
         'secure_access_bastion_issuer': 'str',
         'secure_access_enable': 'str',
@@ -49,15 +52,25 @@ class CreateSecret(object):
         'secure_access_web_proxy': 'bool',
         'tags': 'list[str]',
         'token': 'str',
+        'type': 'str',
         'uid_token': 'str',
-        'value': 'str'
+        'use_lower_letters': 'str',
+        'use_numbers': 'str',
+        'use_special_characters': 'str',
+        'use_capital_letters': 'str',
+        'username': 'str',
+        'value': 'str',
+        'website': 'str'
     }
 
     attribute_map = {
+        'custom_fields': 'custom-fields',
         'delete_protection': 'delete_protection',
+        'item_accessibility': 'item-accessibility',
         'metadata': 'metadata',
         'multiline_value': 'multiline_value',
         'name': 'name',
+        'password_length': 'password-length',
         'protection_key': 'protection_key',
         'secure_access_bastion_issuer': 'secure-access-bastion-issuer',
         'secure_access_enable': 'secure-access-enable',
@@ -69,20 +82,30 @@ class CreateSecret(object):
         'secure_access_web_proxy': 'secure-access-web-proxy',
         'tags': 'tags',
         'token': 'token',
+        'type': 'type',
         'uid_token': 'uid-token',
-        'value': 'value'
+        'use_lower_letters': 'use-lower-letters',
+        'use_numbers': 'use-numbers',
+        'use_special_characters': 'use-special-characters',
+        'use_capital_letters': 'use_capital-letters',
+        'username': 'username',
+        'value': 'value',
+        'website': 'website'
     }
 
-    def __init__(self, delete_protection=None, metadata=None, multiline_value=None, name=None, protection_key=None, secure_access_bastion_issuer=None, secure_access_enable=None, secure_access_host=None, secure_access_ssh_creds=None, secure_access_ssh_user=None, secure_access_url=None, secure_access_web_browsing=None, secure_access_web_proxy=None, tags=None, token=None, uid_token=None, value=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, custom_fields=None, delete_protection=None, item_accessibility=None, metadata=None, multiline_value=None, name=None, password_length=None, protection_key=None, secure_access_bastion_issuer=None, secure_access_enable=None, secure_access_host=None, secure_access_ssh_creds=None, secure_access_ssh_user=None, secure_access_url=None, secure_access_web_browsing=None, secure_access_web_proxy=None, tags=None, token=None, type=None, uid_token=None, use_lower_letters=None, use_numbers=None, use_special_characters=None, use_capital_letters=None, username=None, value=None, website=None, local_vars_configuration=None):  # noqa: E501
         """CreateSecret - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
+        self._custom_fields = None
         self._delete_protection = None
+        self._item_accessibility = None
         self._metadata = None
         self._multiline_value = None
         self._name = None
+        self._password_length = None
         self._protection_key = None
         self._secure_access_bastion_issuer = None
         self._secure_access_enable = None
@@ -94,17 +117,30 @@ class CreateSecret(object):
         self._secure_access_web_proxy = None
         self._tags = None
         self._token = None
+        self._type = None
         self._uid_token = None
+        self._use_lower_letters = None
+        self._use_numbers = None
+        self._use_special_characters = None
+        self._use_capital_letters = None
+        self._username = None
         self._value = None
+        self._website = None
         self.discriminator = None
 
+        if custom_fields is not None:
+            self.custom_fields = custom_fields
         if delete_protection is not None:
             self.delete_protection = delete_protection
+        if item_accessibility is not None:
+            self.item_accessibility = item_accessibility
         if metadata is not None:
             self.metadata = metadata
         if multiline_value is not None:
             self.multiline_value = multiline_value
         self.name = name
+        if password_length is not None:
+            self.password_length = password_length
         if protection_key is not None:
             self.protection_key = protection_key
         if secure_access_bastion_issuer is not None:
@@ -127,9 +163,46 @@ class CreateSecret(object):
             self.tags = tags
         if token is not None:
             self.token = token
+        if type is not None:
+            self.type = type
         if uid_token is not None:
             self.uid_token = uid_token
+        if use_lower_letters is not None:
+            self.use_lower_letters = use_lower_letters
+        if use_numbers is not None:
+            self.use_numbers = use_numbers
+        if use_special_characters is not None:
+            self.use_special_characters = use_special_characters
+        if use_capital_letters is not None:
+            self.use_capital_letters = use_capital_letters
+        if username is not None:
+            self.username = username
         self.value = value
+        if website is not None:
+            self.website = website
+
+    @property
+    def custom_fields(self):
+        """Gets the custom_fields of this CreateSecret.  # noqa: E501
+
+        For Password Management use, additional fields  # noqa: E501
+
+        :return: The custom_fields of this CreateSecret.  # noqa: E501
+        :rtype: dict(str, str)
+        """
+        return self._custom_fields
+
+    @custom_fields.setter
+    def custom_fields(self, custom_fields):
+        """Sets the custom_fields of this CreateSecret.
+
+        For Password Management use, additional fields  # noqa: E501
+
+        :param custom_fields: The custom_fields of this CreateSecret.  # noqa: E501
+        :type: dict(str, str)
+        """
+
+        self._custom_fields = custom_fields
 
     @property
     def delete_protection(self):
@@ -153,6 +226,29 @@ class CreateSecret(object):
         """
 
         self._delete_protection = delete_protection
+
+    @property
+    def item_accessibility(self):
+        """Gets the item_accessibility of this CreateSecret.  # noqa: E501
+
+        for personal password manager  # noqa: E501
+
+        :return: The item_accessibility of this CreateSecret.  # noqa: E501
+        :rtype: str
+        """
+        return self._item_accessibility
+
+    @item_accessibility.setter
+    def item_accessibility(self, item_accessibility):
+        """Sets the item_accessibility of this CreateSecret.
+
+        for personal password manager  # noqa: E501
+
+        :param item_accessibility: The item_accessibility of this CreateSecret.  # noqa: E501
+        :type: str
+        """
+
+        self._item_accessibility = item_accessibility
 
     @property
     def metadata(self):
@@ -224,6 +320,29 @@ class CreateSecret(object):
             raise ValueError("Invalid value for `name`, must not be `None`")  # noqa: E501
 
         self._name = name
+
+    @property
+    def password_length(self):
+        """Gets the password_length of this CreateSecret.  # noqa: E501
+
+        For PasswordPolicy use  # noqa: E501
+
+        :return: The password_length of this CreateSecret.  # noqa: E501
+        :rtype: int
+        """
+        return self._password_length
+
+    @password_length.setter
+    def password_length(self, password_length):
+        """Sets the password_length of this CreateSecret.
+
+        For PasswordPolicy use  # noqa: E501
+
+        :param password_length: The password_length of this CreateSecret.  # noqa: E501
+        :type: int
+        """
+
+        self._password_length = password_length
 
     @property
     def protection_key(self):
@@ -463,6 +582,29 @@ class CreateSecret(object):
         self._token = token
 
     @property
+    def type(self):
+        """Gets the type of this CreateSecret.  # noqa: E501
+
+        For Password Management use, reflect the website context  # noqa: E501
+
+        :return: The type of this CreateSecret.  # noqa: E501
+        :rtype: str
+        """
+        return self._type
+
+    @type.setter
+    def type(self, type):
+        """Sets the type of this CreateSecret.
+
+        For Password Management use, reflect the website context  # noqa: E501
+
+        :param type: The type of this CreateSecret.  # noqa: E501
+        :type: str
+        """
+
+        self._type = type
+
+    @property
     def uid_token(self):
         """Gets the uid_token of this CreateSecret.  # noqa: E501
 
@@ -484,6 +626,121 @@ class CreateSecret(object):
         """
 
         self._uid_token = uid_token
+
+    @property
+    def use_lower_letters(self):
+        """Gets the use_lower_letters of this CreateSecret.  # noqa: E501
+
+        For PasswordPolicy use  # noqa: E501
+
+        :return: The use_lower_letters of this CreateSecret.  # noqa: E501
+        :rtype: str
+        """
+        return self._use_lower_letters
+
+    @use_lower_letters.setter
+    def use_lower_letters(self, use_lower_letters):
+        """Sets the use_lower_letters of this CreateSecret.
+
+        For PasswordPolicy use  # noqa: E501
+
+        :param use_lower_letters: The use_lower_letters of this CreateSecret.  # noqa: E501
+        :type: str
+        """
+
+        self._use_lower_letters = use_lower_letters
+
+    @property
+    def use_numbers(self):
+        """Gets the use_numbers of this CreateSecret.  # noqa: E501
+
+        For PasswordPolicy use  # noqa: E501
+
+        :return: The use_numbers of this CreateSecret.  # noqa: E501
+        :rtype: str
+        """
+        return self._use_numbers
+
+    @use_numbers.setter
+    def use_numbers(self, use_numbers):
+        """Sets the use_numbers of this CreateSecret.
+
+        For PasswordPolicy use  # noqa: E501
+
+        :param use_numbers: The use_numbers of this CreateSecret.  # noqa: E501
+        :type: str
+        """
+
+        self._use_numbers = use_numbers
+
+    @property
+    def use_special_characters(self):
+        """Gets the use_special_characters of this CreateSecret.  # noqa: E501
+
+        For PasswordPolicy use  # noqa: E501
+
+        :return: The use_special_characters of this CreateSecret.  # noqa: E501
+        :rtype: str
+        """
+        return self._use_special_characters
+
+    @use_special_characters.setter
+    def use_special_characters(self, use_special_characters):
+        """Sets the use_special_characters of this CreateSecret.
+
+        For PasswordPolicy use  # noqa: E501
+
+        :param use_special_characters: The use_special_characters of this CreateSecret.  # noqa: E501
+        :type: str
+        """
+
+        self._use_special_characters = use_special_characters
+
+    @property
+    def use_capital_letters(self):
+        """Gets the use_capital_letters of this CreateSecret.  # noqa: E501
+
+        For PasswordPolicy use  # noqa: E501
+
+        :return: The use_capital_letters of this CreateSecret.  # noqa: E501
+        :rtype: str
+        """
+        return self._use_capital_letters
+
+    @use_capital_letters.setter
+    def use_capital_letters(self, use_capital_letters):
+        """Sets the use_capital_letters of this CreateSecret.
+
+        For PasswordPolicy use  # noqa: E501
+
+        :param use_capital_letters: The use_capital_letters of this CreateSecret.  # noqa: E501
+        :type: str
+        """
+
+        self._use_capital_letters = use_capital_letters
+
+    @property
+    def username(self):
+        """Gets the username of this CreateSecret.  # noqa: E501
+
+        For Password Management use  # noqa: E501
+
+        :return: The username of this CreateSecret.  # noqa: E501
+        :rtype: str
+        """
+        return self._username
+
+    @username.setter
+    def username(self, username):
+        """Sets the username of this CreateSecret.
+
+        For Password Management use  # noqa: E501
+
+        :param username: The username of this CreateSecret.  # noqa: E501
+        :type: str
+        """
+
+        self._username = username
 
     @property
     def value(self):
@@ -509,6 +766,29 @@ class CreateSecret(object):
             raise ValueError("Invalid value for `value`, must not be `None`")  # noqa: E501
 
         self._value = value
+
+    @property
+    def website(self):
+        """Gets the website of this CreateSecret.  # noqa: E501
+
+        For Password Management use, reflect the website context  # noqa: E501
+
+        :return: The website of this CreateSecret.  # noqa: E501
+        :rtype: str
+        """
+        return self._website
+
+    @website.setter
+    def website(self, website):
+        """Sets the website of this CreateSecret.
+
+        For Password Management use, reflect the website context  # noqa: E501
+
+        :param website: The website of this CreateSecret.  # noqa: E501
+        :type: str
+        """
+
+        self._website = website
 
     def to_dict(self):
         """Returns the model properties as a dict"""

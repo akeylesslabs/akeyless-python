@@ -34,6 +34,7 @@ class GetSecretValue(object):
                             and the value is json key in definition.
     """
     openapi_types = {
+        'item_accessibility': 'str',
         'names': 'list[str]',
         'pretty_print': 'bool',
         'token': 'str',
@@ -42,6 +43,7 @@ class GetSecretValue(object):
     }
 
     attribute_map = {
+        'item_accessibility': 'item-accessibility',
         'names': 'names',
         'pretty_print': 'pretty-print',
         'token': 'token',
@@ -49,12 +51,13 @@ class GetSecretValue(object):
         'version': 'version'
     }
 
-    def __init__(self, names=None, pretty_print=None, token=None, uid_token=None, version=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, item_accessibility=None, names=None, pretty_print=None, token=None, uid_token=None, version=None, local_vars_configuration=None):  # noqa: E501
         """GetSecretValue - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
+        self._item_accessibility = None
         self._names = None
         self._pretty_print = None
         self._token = None
@@ -62,6 +65,8 @@ class GetSecretValue(object):
         self._version = None
         self.discriminator = None
 
+        if item_accessibility is not None:
+            self.item_accessibility = item_accessibility
         self.names = names
         if pretty_print is not None:
             self.pretty_print = pretty_print
@@ -71,6 +76,29 @@ class GetSecretValue(object):
             self.uid_token = uid_token
         if version is not None:
             self.version = version
+
+    @property
+    def item_accessibility(self):
+        """Gets the item_accessibility of this GetSecretValue.  # noqa: E501
+
+        for personal password manager  # noqa: E501
+
+        :return: The item_accessibility of this GetSecretValue.  # noqa: E501
+        :rtype: str
+        """
+        return self._item_accessibility
+
+    @item_accessibility.setter
+    def item_accessibility(self, item_accessibility):
+        """Sets the item_accessibility of this GetSecretValue.
+
+        for personal password manager  # noqa: E501
+
+        :param item_accessibility: The item_accessibility of this GetSecretValue.  # noqa: E501
+        :type: str
+        """
+
+        self._item_accessibility = item_accessibility
 
     @property
     def names(self):

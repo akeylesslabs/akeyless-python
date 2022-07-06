@@ -14,6 +14,7 @@ Name | Type | Description | Notes
 **identity_file** | **str** | The file from which the identity (private key) for public key authentication is read | [optional] 
 **name** | **str** | The Secret name (for database and AWS producers - producer name) | [optional] 
 **ssh_extra_args** | **str** | The Use to add offical SSH arguments (except -i) | [optional] 
+**ssh_legacy_signing_alg** | **bool** | Set this option to output legacy (&#39;ssh-rsa-cert-v01@openssh.com&#39;) signing algorithm name in the ssh certificate. | [optional] 
 **target** | **str** | The target | [optional] 
 **token** | **str** | Authentication token (see &#x60;/auth&#x60; and &#x60;/configure&#x60;) | [optional] 
 **uid_token** | **str** | The universal identity token, Required only for universal_identity authentication | [optional] 

@@ -41,8 +41,8 @@ Name | Type | Description | Notes
 **target_name** | **str** | Target name | 
 **token** | **str** | Authentication token (see &#x60;/auth&#x60; and &#x60;/configure&#x60;) | [optional] 
 **uid_token** | **str** | The universal identity token, Required only for universal_identity authentication | [optional] 
-**user_attribute** | **str** | User Attribute | [optional] 
-**user_dn** | **str** | User DN | [optional] 
+**user_attribute** | **str** | LDAP User Attribute, Default value \&quot;cn\&quot; | [optional] 
+**user_dn** | **str** | LDAP User Base DN | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

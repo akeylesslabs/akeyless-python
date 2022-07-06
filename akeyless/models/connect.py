@@ -44,6 +44,7 @@ class Connect(object):
         'identity_file': 'str',
         'name': 'str',
         'ssh_extra_args': 'str',
+        'ssh_legacy_signing_alg': 'bool',
         'target': 'str',
         'token': 'str',
         'uid_token': 'str',
@@ -61,13 +62,14 @@ class Connect(object):
         'identity_file': 'identity-file',
         'name': 'name',
         'ssh_extra_args': 'ssh-extra-args',
+        'ssh_legacy_signing_alg': 'ssh-legacy-signing-alg',
         'target': 'target',
         'token': 'token',
         'uid_token': 'uid-token',
         'via_bastion': 'via-bastion'
     }
 
-    def __init__(self, helper=None, rc_file_override=None, bastion_ctrl_path=None, bastion_ctrl_port='9900', bastion_ctrl_proto='http', bastion_ctrl_subdomain=None, cert_issuer_name=None, identity_file=None, name=None, ssh_extra_args=None, target=None, token=None, uid_token=None, via_bastion=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, helper=None, rc_file_override=None, bastion_ctrl_path=None, bastion_ctrl_port='9900', bastion_ctrl_proto='http', bastion_ctrl_subdomain=None, cert_issuer_name=None, identity_file=None, name=None, ssh_extra_args=None, ssh_legacy_signing_alg=None, target=None, token=None, uid_token=None, via_bastion=None, local_vars_configuration=None):  # noqa: E501
         """Connect - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -83,6 +85,7 @@ class Connect(object):
         self._identity_file = None
         self._name = None
         self._ssh_extra_args = None
+        self._ssh_legacy_signing_alg = None
         self._target = None
         self._token = None
         self._uid_token = None
@@ -109,6 +112,8 @@ class Connect(object):
             self.name = name
         if ssh_extra_args is not None:
             self.ssh_extra_args = ssh_extra_args
+        if ssh_legacy_signing_alg is not None:
+            self.ssh_legacy_signing_alg = ssh_legacy_signing_alg
         if target is not None:
             self.target = target
         if token is not None:
@@ -345,6 +350,29 @@ class Connect(object):
         """
 
         self._ssh_extra_args = ssh_extra_args
+
+    @property
+    def ssh_legacy_signing_alg(self):
+        """Gets the ssh_legacy_signing_alg of this Connect.  # noqa: E501
+
+        Set this option to output legacy ('ssh-rsa-cert-v01@openssh.com') signing algorithm name in the ssh certificate.  # noqa: E501
+
+        :return: The ssh_legacy_signing_alg of this Connect.  # noqa: E501
+        :rtype: bool
+        """
+        return self._ssh_legacy_signing_alg
+
+    @ssh_legacy_signing_alg.setter
+    def ssh_legacy_signing_alg(self, ssh_legacy_signing_alg):
+        """Sets the ssh_legacy_signing_alg of this Connect.
+
+        Set this option to output legacy ('ssh-rsa-cert-v01@openssh.com') signing algorithm name in the ssh certificate.  # noqa: E501
+
+        :param ssh_legacy_signing_alg: The ssh_legacy_signing_alg of this Connect.  # noqa: E501
+        :type: bool
+        """
+
+        self._ssh_legacy_signing_alg = ssh_legacy_signing_alg
 
     @property
     def target(self):

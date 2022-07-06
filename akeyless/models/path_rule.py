@@ -36,16 +36,18 @@ class PathRule(object):
     openapi_types = {
         'capabilities': 'list[str]',
         'path': 'str',
+        'ttl': 'int',
         'type': 'str'
     }
 
     attribute_map = {
         'capabilities': 'capabilities',
         'path': 'path',
+        'ttl': 'ttl',
         'type': 'type'
     }
 
-    def __init__(self, capabilities=None, path=None, type=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, capabilities=None, path=None, ttl=None, type=None, local_vars_configuration=None):  # noqa: E501
         """PathRule - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -53,6 +55,7 @@ class PathRule(object):
 
         self._capabilities = None
         self._path = None
+        self._ttl = None
         self._type = None
         self.discriminator = None
 
@@ -60,6 +63,8 @@ class PathRule(object):
             self.capabilities = capabilities
         if path is not None:
             self.path = path
+        if ttl is not None:
+            self.ttl = ttl
         if type is not None:
             self.type = type
 
@@ -108,6 +113,27 @@ class PathRule(object):
         """
 
         self._path = path
+
+    @property
+    def ttl(self):
+        """Gets the ttl of this PathRule.  # noqa: E501
+
+
+        :return: The ttl of this PathRule.  # noqa: E501
+        :rtype: int
+        """
+        return self._ttl
+
+    @ttl.setter
+    def ttl(self, ttl):
+        """Sets the ttl of this PathRule.
+
+
+        :param ttl: The ttl of this PathRule.  # noqa: E501
+        :type: int
+        """
+
+        self._ttl = ttl
 
     @property
     def type(self):

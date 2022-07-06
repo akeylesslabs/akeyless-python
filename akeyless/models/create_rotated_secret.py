@@ -1111,7 +1111,7 @@ class CreateRotatedSecret(object):
     def user_attribute(self):
         """Gets the user_attribute of this CreateRotatedSecret.  # noqa: E501
 
-        User Attribute  # noqa: E501
+        LDAP User Attribute, Default value \"cn\"  # noqa: E501
 
         :return: The user_attribute of this CreateRotatedSecret.  # noqa: E501
         :rtype: str
@@ -1122,7 +1122,7 @@ class CreateRotatedSecret(object):
     def user_attribute(self, user_attribute):
         """Sets the user_attribute of this CreateRotatedSecret.
 
-        User Attribute  # noqa: E501
+        LDAP User Attribute, Default value \"cn\"  # noqa: E501
 
         :param user_attribute: The user_attribute of this CreateRotatedSecret.  # noqa: E501
         :type: str
@@ -1134,7 +1134,7 @@ class CreateRotatedSecret(object):
     def user_dn(self):
         """Gets the user_dn of this CreateRotatedSecret.  # noqa: E501
 
-        User DN  # noqa: E501
+        LDAP User Base DN  # noqa: E501
 
         :return: The user_dn of this CreateRotatedSecret.  # noqa: E501
         :rtype: str
@@ -1145,7 +1145,7 @@ class CreateRotatedSecret(object):
     def user_dn(self, user_dn):
         """Sets the user_dn of this CreateRotatedSecret.
 
-        User DN  # noqa: E501
+        LDAP User Base DN  # noqa: E501
 
         :param user_dn: The user_dn of this CreateRotatedSecret.  # noqa: E501
         :type: str
