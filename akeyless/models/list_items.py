@@ -34,8 +34,8 @@ class ListItems(object):
                             and the value is json key in definition.
     """
     openapi_types = {
+        'accessibility': 'str',
         'filter': 'str',
-        'item_accessibility': 'str',
         'minimal_view': 'bool',
         'pagination_token': 'str',
         'path': 'str',
@@ -47,8 +47,8 @@ class ListItems(object):
     }
 
     attribute_map = {
+        'accessibility': 'accessibility',
         'filter': 'filter',
-        'item_accessibility': 'item-accessibility',
         'minimal_view': 'minimal-view',
         'pagination_token': 'pagination-token',
         'path': 'path',
@@ -59,14 +59,14 @@ class ListItems(object):
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, filter=None, item_accessibility=None, minimal_view=None, pagination_token=None, path=None, sub_types=None, tag=None, token=None, type=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, accessibility=None, filter=None, minimal_view=None, pagination_token=None, path=None, sub_types=None, tag=None, token=None, type=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """ListItems - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
+        self._accessibility = None
         self._filter = None
-        self._item_accessibility = None
         self._minimal_view = None
         self._pagination_token = None
         self._path = None
@@ -77,10 +77,10 @@ class ListItems(object):
         self._uid_token = None
         self.discriminator = None
 
+        if accessibility is not None:
+            self.accessibility = accessibility
         if filter is not None:
             self.filter = filter
-        if item_accessibility is not None:
-            self.item_accessibility = item_accessibility
         if minimal_view is not None:
             self.minimal_view = minimal_view
         if pagination_token is not None:
@@ -97,6 +97,29 @@ class ListItems(object):
             self.type = type
         if uid_token is not None:
             self.uid_token = uid_token
+
+    @property
+    def accessibility(self):
+        """Gets the accessibility of this ListItems.  # noqa: E501
+
+        for personal password manager  # noqa: E501
+
+        :return: The accessibility of this ListItems.  # noqa: E501
+        :rtype: str
+        """
+        return self._accessibility
+
+    @accessibility.setter
+    def accessibility(self, accessibility):
+        """Sets the accessibility of this ListItems.
+
+        for personal password manager  # noqa: E501
+
+        :param accessibility: The accessibility of this ListItems.  # noqa: E501
+        :type: str
+        """
+
+        self._accessibility = accessibility
 
     @property
     def filter(self):
@@ -120,29 +143,6 @@ class ListItems(object):
         """
 
         self._filter = filter
-
-    @property
-    def item_accessibility(self):
-        """Gets the item_accessibility of this ListItems.  # noqa: E501
-
-        for personal password manager  # noqa: E501
-
-        :return: The item_accessibility of this ListItems.  # noqa: E501
-        :rtype: str
-        """
-        return self._item_accessibility
-
-    @item_accessibility.setter
-    def item_accessibility(self, item_accessibility):
-        """Sets the item_accessibility of this ListItems.
-
-        for personal password manager  # noqa: E501
-
-        :param item_accessibility: The item_accessibility of this ListItems.  # noqa: E501
-        :type: str
-        """
-
-        self._item_accessibility = item_accessibility
 
     @property
     def minimal_view(self):

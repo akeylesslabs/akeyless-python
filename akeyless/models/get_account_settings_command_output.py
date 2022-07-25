@@ -38,6 +38,7 @@ class GetAccountSettingsCommandOutput(object):
         'address': 'CustomerFullAddress',
         'company_name': 'str',
         'email': 'str',
+        'general_settings': 'AccountGeneralSettings',
         'object_version_settings': 'AccountObjectVersionSettingsOutput',
         'phone': 'str',
         'secret_management': 'SmInfo',
@@ -50,6 +51,7 @@ class GetAccountSettingsCommandOutput(object):
         'address': 'address',
         'company_name': 'company_name',
         'email': 'email',
+        'general_settings': 'general_settings',
         'object_version_settings': 'object_version_settings',
         'phone': 'phone',
         'secret_management': 'secret_management',
@@ -57,7 +59,7 @@ class GetAccountSettingsCommandOutput(object):
         'system_access_creds_settings': 'system_access_creds_settings'
     }
 
-    def __init__(self, account_id=None, address=None, company_name=None, email=None, object_version_settings=None, phone=None, secret_management=None, secure_remote_access=None, system_access_creds_settings=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, account_id=None, address=None, company_name=None, email=None, general_settings=None, object_version_settings=None, phone=None, secret_management=None, secure_remote_access=None, system_access_creds_settings=None, local_vars_configuration=None):  # noqa: E501
         """GetAccountSettingsCommandOutput - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -67,6 +69,7 @@ class GetAccountSettingsCommandOutput(object):
         self._address = None
         self._company_name = None
         self._email = None
+        self._general_settings = None
         self._object_version_settings = None
         self._phone = None
         self._secret_management = None
@@ -82,6 +85,8 @@ class GetAccountSettingsCommandOutput(object):
             self.company_name = company_name
         if email is not None:
             self.email = email
+        if general_settings is not None:
+            self.general_settings = general_settings
         if object_version_settings is not None:
             self.object_version_settings = object_version_settings
         if phone is not None:
@@ -176,6 +181,27 @@ class GetAccountSettingsCommandOutput(object):
         """
 
         self._email = email
+
+    @property
+    def general_settings(self):
+        """Gets the general_settings of this GetAccountSettingsCommandOutput.  # noqa: E501
+
+
+        :return: The general_settings of this GetAccountSettingsCommandOutput.  # noqa: E501
+        :rtype: AccountGeneralSettings
+        """
+        return self._general_settings
+
+    @general_settings.setter
+    def general_settings(self, general_settings):
+        """Sets the general_settings of this GetAccountSettingsCommandOutput.
+
+
+        :param general_settings: The general_settings of this GetAccountSettingsCommandOutput.  # noqa: E501
+        :type: AccountGeneralSettings
+        """
+
+        self._general_settings = general_settings
 
     @property
     def object_version_settings(self):

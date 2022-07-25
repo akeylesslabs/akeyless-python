@@ -51,6 +51,7 @@ Name | Type | Description | Notes
 **gke_service_account_key** | **str** |  | [optional] 
 **gke_service_account_name** | **str** |  | [optional] 
 **host** | **str** |  | [optional] 
+**implementation_type** | **str** |  | [optional] 
 **k8s_bearer_token** | **str** |  | [optional] 
 **k8s_cluster_ca_certificate** | **str** |  | [optional] 
 **k8s_cluster_endpoint** | **str** |  | [optional] 

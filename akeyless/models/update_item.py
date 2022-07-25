@@ -34,10 +34,10 @@ class UpdateItem(object):
                             and the value is json key in definition.
     """
     openapi_types = {
+        'accessibility': 'str',
         'add_tag': 'list[str]',
         'cert_file_data': 'str',
         'delete_protection': 'str',
-        'item_accessibility': 'str',
         'name': 'str',
         'new_metadata': 'str',
         'new_name': 'str',
@@ -71,10 +71,10 @@ class UpdateItem(object):
     }
 
     attribute_map = {
+        'accessibility': 'accessibility',
         'add_tag': 'add-tag',
         'cert_file_data': 'cert-file-data',
         'delete_protection': 'delete_protection',
-        'item_accessibility': 'item-accessibility',
         'name': 'name',
         'new_metadata': 'new-metadata',
         'new_name': 'new-name',
@@ -107,16 +107,16 @@ class UpdateItem(object):
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, add_tag=None, cert_file_data=None, delete_protection=None, item_accessibility=None, name=None, new_metadata='default_metadata', new_name=None, rm_tag=None, secure_access_add_host=None, secure_access_allow_external_user=None, secure_access_allow_port_forwading=None, secure_access_aws_account_id=None, secure_access_aws_native_cli=None, secure_access_aws_region=None, secure_access_bastion_api=None, secure_access_bastion_issuer=None, secure_access_bastion_ssh=None, secure_access_cluster_endpoint=None, secure_access_dashboard_url=None, secure_access_db_name=None, secure_access_db_schema=None, secure_access_enable=None, secure_access_host=None, secure_access_rdp_domain=None, secure_access_rdp_user=None, secure_access_rm_host=None, secure_access_ssh_creds=None, secure_access_ssh_creds_user=None, secure_access_url=None, secure_access_use_internal_bastion=None, secure_access_web_browsing=None, secure_access_web_proxy=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, accessibility=None, add_tag=None, cert_file_data=None, delete_protection=None, name=None, new_metadata='default_metadata', new_name=None, rm_tag=None, secure_access_add_host=None, secure_access_allow_external_user=None, secure_access_allow_port_forwading=None, secure_access_aws_account_id=None, secure_access_aws_native_cli=None, secure_access_aws_region=None, secure_access_bastion_api=None, secure_access_bastion_issuer=None, secure_access_bastion_ssh=None, secure_access_cluster_endpoint=None, secure_access_dashboard_url=None, secure_access_db_name=None, secure_access_db_schema=None, secure_access_enable=None, secure_access_host=None, secure_access_rdp_domain=None, secure_access_rdp_user=None, secure_access_rm_host=None, secure_access_ssh_creds=None, secure_access_ssh_creds_user=None, secure_access_url=None, secure_access_use_internal_bastion=None, secure_access_web_browsing=None, secure_access_web_proxy=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """UpdateItem - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
+        self._accessibility = None
         self._add_tag = None
         self._cert_file_data = None
         self._delete_protection = None
-        self._item_accessibility = None
         self._name = None
         self._new_metadata = None
         self._new_name = None
@@ -149,14 +149,14 @@ class UpdateItem(object):
         self._uid_token = None
         self.discriminator = None
 
+        if accessibility is not None:
+            self.accessibility = accessibility
         if add_tag is not None:
             self.add_tag = add_tag
         if cert_file_data is not None:
             self.cert_file_data = cert_file_data
         if delete_protection is not None:
             self.delete_protection = delete_protection
-        if item_accessibility is not None:
-            self.item_accessibility = item_accessibility
         self.name = name
         if new_metadata is not None:
             self.new_metadata = new_metadata
@@ -216,6 +216,29 @@ class UpdateItem(object):
             self.token = token
         if uid_token is not None:
             self.uid_token = uid_token
+
+    @property
+    def accessibility(self):
+        """Gets the accessibility of this UpdateItem.  # noqa: E501
+
+        for personal password manager  # noqa: E501
+
+        :return: The accessibility of this UpdateItem.  # noqa: E501
+        :rtype: str
+        """
+        return self._accessibility
+
+    @accessibility.setter
+    def accessibility(self, accessibility):
+        """Sets the accessibility of this UpdateItem.
+
+        for personal password manager  # noqa: E501
+
+        :param accessibility: The accessibility of this UpdateItem.  # noqa: E501
+        :type: str
+        """
+
+        self._accessibility = accessibility
 
     @property
     def add_tag(self):
@@ -283,29 +306,6 @@ class UpdateItem(object):
         """
 
         self._delete_protection = delete_protection
-
-    @property
-    def item_accessibility(self):
-        """Gets the item_accessibility of this UpdateItem.  # noqa: E501
-
-        for personal password manager  # noqa: E501
-
-        :return: The item_accessibility of this UpdateItem.  # noqa: E501
-        :rtype: str
-        """
-        return self._item_accessibility
-
-    @item_accessibility.setter
-    def item_accessibility(self, item_accessibility):
-        """Sets the item_accessibility of this UpdateItem.
-
-        for personal password manager  # noqa: E501
-
-        :param item_accessibility: The item_accessibility of this UpdateItem.  # noqa: E501
-        :type: str
-        """
-
-        self._item_accessibility = item_accessibility
 
     @property
     def name(self):

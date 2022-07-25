@@ -19,6 +19,7 @@ from akeyless.models.api_key_access_rules import APIKeyAccessRules
 from akeyless.models.awsiam_access_rules import AWSIAMAccessRules
 from akeyless.models.aws_payload import AWSPayload
 from akeyless.models.aws_secrets_migration import AWSSecretsMigration
+from akeyless.models.account_general_settings import AccountGeneralSettings
 from akeyless.models.account_object_version_settings_output import AccountObjectVersionSettingsOutput
 from akeyless.models.admins_config_part import AdminsConfigPart
 from akeyless.models.akeyless_gateway_config import AkeylessGatewayConfig
@@ -126,6 +127,7 @@ from akeyless.models.customer_fragment import CustomerFragment
 from akeyless.models.customer_fragments_json import CustomerFragmentsJson
 from akeyless.models.customer_full_address import CustomerFullAddress
 from akeyless.models.ds_producer_details import DSProducerDetails
+from akeyless.models.data_protection_section import DataProtectionSection
 from akeyless.models.datadog_forwarding_config import DatadogForwardingConfig
 from akeyless.models.decrypt import Decrypt
 from akeyless.models.decrypt_file import DecryptFile

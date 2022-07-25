@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **azure_analytics_config** | [**AzureLogAnalyticsForwardingConfig**](AzureLogAnalyticsForwardingConfig.md) |  | [optional] 
 **datadog_config** | [**DatadogForwardingConfig**](DatadogForwardingConfig.md) |  | [optional] 
 **elasticsearch_config** | [**ElasticsearchLogForwardingConfig**](ElasticsearchLogForwardingConfig.md) |  | [optional] 
+**json_output** | **bool** |  | [optional] 
 **logan_enable** | **bool** |  | [optional] 
 **logan_url** | **str** |  | [optional] 
 **logstash_config** | [**LogstashLogForwardingConfig**](LogstashLogForwardingConfig.md) |  | [optional] 

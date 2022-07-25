@@ -95,6 +95,7 @@ Name | Type | Description | Notes
 **hanadb_revocation_statements** | **str** |  | [optional] 
 **host_name** | **str** |  | [optional] 
 **host_port** | **str** |  | [optional] 
+**implementation_type** | **str** |  | [optional] 
 **is_fixed_user** | **str** |  | [optional] 
 **item_targets_assoc** | [**list[ItemTargetAssociation]**](ItemTargetAssociation.md) |  | [optional] 
 **k8s_bearer_token** | **str** |  | [optional] 

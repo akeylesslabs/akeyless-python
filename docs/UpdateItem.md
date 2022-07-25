@@ -3,10 +3,10 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**accessibility** | **str** | for personal password manager | [optional] 
 **add_tag** | **list[str]** | List of the new tags that will be attached to this item | [optional] 
 **cert_file_data** | **str** | PEM Certificate in a Base64 format. Used for updating RSA keys&#39; certificates. | [optional] 
 **delete_protection** | **str** |  | [optional] 
-**item_accessibility** | **str** | for personal password manager | [optional] 
 **name** | **str** | Current item name | 
 **new_metadata** | **str** | New item metadata | [optional] [default to 'default_metadata']
 **new_name** | **str** | New item name | [optional] 

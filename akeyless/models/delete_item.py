@@ -34,9 +34,9 @@ class DeleteItem(object):
                             and the value is json key in definition.
     """
     openapi_types = {
+        'accessibility': 'str',
         'delete_immediately': 'bool',
         'delete_in_days': 'int',
-        'item_accessibility': 'str',
         'name': 'str',
         'token': 'str',
         'uid_token': 'str',
@@ -44,36 +44,36 @@ class DeleteItem(object):
     }
 
     attribute_map = {
+        'accessibility': 'accessibility',
         'delete_immediately': 'delete-immediately',
         'delete_in_days': 'delete-in-days',
-        'item_accessibility': 'item-accessibility',
         'name': 'name',
         'token': 'token',
         'uid_token': 'uid-token',
         'version': 'version'
     }
 
-    def __init__(self, delete_immediately=False, delete_in_days=7, item_accessibility=None, name=None, token=None, uid_token=None, version=-1, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, accessibility=None, delete_immediately=False, delete_in_days=7, name=None, token=None, uid_token=None, version=-1, local_vars_configuration=None):  # noqa: E501
         """DeleteItem - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
+        self._accessibility = None
         self._delete_immediately = None
         self._delete_in_days = None
-        self._item_accessibility = None
         self._name = None
         self._token = None
         self._uid_token = None
         self._version = None
         self.discriminator = None
 
+        if accessibility is not None:
+            self.accessibility = accessibility
         if delete_immediately is not None:
             self.delete_immediately = delete_immediately
         if delete_in_days is not None:
             self.delete_in_days = delete_in_days
-        if item_accessibility is not None:
-            self.item_accessibility = item_accessibility
         self.name = name
         if token is not None:
             self.token = token
@@ -81,6 +81,29 @@ class DeleteItem(object):
             self.uid_token = uid_token
         if version is not None:
             self.version = version
+
+    @property
+    def accessibility(self):
+        """Gets the accessibility of this DeleteItem.  # noqa: E501
+
+        for personal password manager  # noqa: E501
+
+        :return: The accessibility of this DeleteItem.  # noqa: E501
+        :rtype: str
+        """
+        return self._accessibility
+
+    @accessibility.setter
+    def accessibility(self, accessibility):
+        """Sets the accessibility of this DeleteItem.
+
+        for personal password manager  # noqa: E501
+
+        :param accessibility: The accessibility of this DeleteItem.  # noqa: E501
+        :type: str
+        """
+
+        self._accessibility = accessibility
 
     @property
     def delete_immediately(self):
@@ -127,29 +150,6 @@ class DeleteItem(object):
         """
 
         self._delete_in_days = delete_in_days
-
-    @property
-    def item_accessibility(self):
-        """Gets the item_accessibility of this DeleteItem.  # noqa: E501
-
-        for personal password manager  # noqa: E501
-
-        :return: The item_accessibility of this DeleteItem.  # noqa: E501
-        :rtype: str
-        """
-        return self._item_accessibility
-
-    @item_accessibility.setter
-    def item_accessibility(self, item_accessibility):
-        """Sets the item_accessibility of this DeleteItem.
-
-        for personal password manager  # noqa: E501
-
-        :param item_accessibility: The item_accessibility of this DeleteItem.  # noqa: E501
-        :type: str
-        """
-
-        self._item_accessibility = item_accessibility
 
     @property
     def name(self):

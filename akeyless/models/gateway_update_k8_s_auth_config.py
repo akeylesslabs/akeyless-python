@@ -63,7 +63,7 @@ class GatewayUpdateK8SAuthConfig(object):
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, access_id=None, config_encryption_key_name=None, k8s_ca_cert=None, k8s_host=None, k8s_issuer=None, name=None, new_name=None, signing_key=None, token=None, token_exp=None, token_reviewer_jwt=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, access_id=None, config_encryption_key_name=None, k8s_ca_cert=None, k8s_host=None, k8s_issuer=None, name=None, new_name=None, signing_key=None, token=None, token_exp=300, token_reviewer_jwt=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """GatewayUpdateK8SAuthConfig - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()

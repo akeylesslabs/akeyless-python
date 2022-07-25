@@ -82,6 +82,7 @@ class TargetTypeDetailsInput(object):
         'gke_service_account_key': 'str',
         'gke_service_account_name': 'str',
         'host': 'str',
+        'implementation_type': 'str',
         'k8s_bearer_token': 'str',
         'k8s_cluster_ca_certificate': 'str',
         'k8s_cluster_endpoint': 'str',
@@ -176,6 +177,7 @@ class TargetTypeDetailsInput(object):
         'gke_service_account_key': 'gke_service_account_key',
         'gke_service_account_name': 'gke_service_account_name',
         'host': 'host',
+        'implementation_type': 'implementation_type',
         'k8s_bearer_token': 'k8s_bearer_token',
         'k8s_cluster_ca_certificate': 'k8s_cluster_ca_certificate',
         'k8s_cluster_endpoint': 'k8s_cluster_endpoint',
@@ -221,7 +223,7 @@ class TargetTypeDetailsInput(object):
         'venafi_zone': 'venafi_zone'
     }
 
-    def __init__(self, artifactory_admin_apikey=None, artifactory_admin_username=None, artifactory_base_url=None, auth_flow=None, aws_access_key_id=None, aws_region=None, aws_secret_access_key=None, aws_session_token=None, azure_client_id=None, azure_client_secret=None, azure_resource_group_name=None, azure_resource_name=None, azure_subscription_id=None, azure_tenant_id=None, ca_cert_data=None, ca_cert_name=None, chef_server_host_name=None, chef_server_key=None, chef_server_port=None, chef_server_url=None, chef_server_username=None, chef_skip_ssl=None, client_id=None, client_secret=None, db_host_name=None, db_name=None, db_port=None, db_pwd=None, db_server_certificates=None, db_server_name=None, db_user_name=None, eks_access_key_id=None, eks_cluster_ca_certificate=None, eks_cluster_endpoint=None, eks_cluster_name=None, eks_region=None, eks_secret_access_key=None, gcp_service_account_email=None, gcp_service_account_key=None, github_app_id=None, github_app_private_key=None, github_base_url=None, gke_cluster_ca_certificate=None, gke_cluster_endpoint=None, gke_cluster_name=None, gke_service_account_key=None, gke_service_account_name=None, host=None, k8s_bearer_token=None, k8s_cluster_ca_certificate=None, k8s_cluster_endpoint=None, ldap_audience=None, ldap_bind_dn=None, ldap_bind_password=None, ldap_certificate=None, ldap_token_expiration=None, ldap_url=None, mongodb_atlas_api_private_key=None, mongodb_atlas_api_public_key=None, mongodb_atlas_project_id=None, mongodb_db_name=None, mongodb_default_auth_db=None, mongodb_host_port=None, mongodb_is_atlas=None, mongodb_password=None, mongodb_uri_connection=None, mongodb_uri_options=None, mongodb_username=None, password=None, payload=None, port=None, private_key=None, private_key_password=None, rabbitmq_server_password=None, rabbitmq_server_uri=None, rabbitmq_server_user=None, security_token=None, sf_account=None, ssl_connection_certificate=None, ssl_connection_mode=None, tenant_url=None, url=None, use_gw_cloud_identity=None, user_name=None, username=None, venafi_api_key=None, venafi_base_url=None, venafi_tpp_password=None, venafi_tpp_username=None, venafi_use_tpp=None, venafi_zone=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, artifactory_admin_apikey=None, artifactory_admin_username=None, artifactory_base_url=None, auth_flow=None, aws_access_key_id=None, aws_region=None, aws_secret_access_key=None, aws_session_token=None, azure_client_id=None, azure_client_secret=None, azure_resource_group_name=None, azure_resource_name=None, azure_subscription_id=None, azure_tenant_id=None, ca_cert_data=None, ca_cert_name=None, chef_server_host_name=None, chef_server_key=None, chef_server_port=None, chef_server_url=None, chef_server_username=None, chef_skip_ssl=None, client_id=None, client_secret=None, db_host_name=None, db_name=None, db_port=None, db_pwd=None, db_server_certificates=None, db_server_name=None, db_user_name=None, eks_access_key_id=None, eks_cluster_ca_certificate=None, eks_cluster_endpoint=None, eks_cluster_name=None, eks_region=None, eks_secret_access_key=None, gcp_service_account_email=None, gcp_service_account_key=None, github_app_id=None, github_app_private_key=None, github_base_url=None, gke_cluster_ca_certificate=None, gke_cluster_endpoint=None, gke_cluster_name=None, gke_service_account_key=None, gke_service_account_name=None, host=None, implementation_type=None, k8s_bearer_token=None, k8s_cluster_ca_certificate=None, k8s_cluster_endpoint=None, ldap_audience=None, ldap_bind_dn=None, ldap_bind_password=None, ldap_certificate=None, ldap_token_expiration=None, ldap_url=None, mongodb_atlas_api_private_key=None, mongodb_atlas_api_public_key=None, mongodb_atlas_project_id=None, mongodb_db_name=None, mongodb_default_auth_db=None, mongodb_host_port=None, mongodb_is_atlas=None, mongodb_password=None, mongodb_uri_connection=None, mongodb_uri_options=None, mongodb_username=None, password=None, payload=None, port=None, private_key=None, private_key_password=None, rabbitmq_server_password=None, rabbitmq_server_uri=None, rabbitmq_server_user=None, security_token=None, sf_account=None, ssl_connection_certificate=None, ssl_connection_mode=None, tenant_url=None, url=None, use_gw_cloud_identity=None, user_name=None, username=None, venafi_api_key=None, venafi_base_url=None, venafi_tpp_password=None, venafi_tpp_username=None, venafi_use_tpp=None, venafi_zone=None, local_vars_configuration=None):  # noqa: E501
         """TargetTypeDetailsInput - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -275,6 +277,7 @@ class TargetTypeDetailsInput(object):
         self._gke_service_account_key = None
         self._gke_service_account_name = None
         self._host = None
+        self._implementation_type = None
         self._k8s_bearer_token = None
         self._k8s_cluster_ca_certificate = None
         self._k8s_cluster_endpoint = None
@@ -416,6 +419,8 @@ class TargetTypeDetailsInput(object):
             self.gke_service_account_name = gke_service_account_name
         if host is not None:
             self.host = host
+        if implementation_type is not None:
+            self.implementation_type = implementation_type
         if k8s_bearer_token is not None:
             self.k8s_bearer_token = k8s_bearer_token
         if k8s_cluster_ca_certificate is not None:
@@ -1518,6 +1523,27 @@ class TargetTypeDetailsInput(object):
         """
 
         self._host = host
+
+    @property
+    def implementation_type(self):
+        """Gets the implementation_type of this TargetTypeDetailsInput.  # noqa: E501
+
+
+        :return: The implementation_type of this TargetTypeDetailsInput.  # noqa: E501
+        :rtype: str
+        """
+        return self._implementation_type
+
+    @implementation_type.setter
+    def implementation_type(self, implementation_type):
+        """Sets the implementation_type of this TargetTypeDetailsInput.
+
+
+        :param implementation_type: The implementation_type of this TargetTypeDetailsInput.  # noqa: E501
+        :type: str
+        """
+
+        self._implementation_type = implementation_type
 
     @property
     def k8s_bearer_token(self):
