@@ -62,6 +62,7 @@ Method | HTTP request | Description
 [**delete_targets**](V2Api.md#delete_targets) | **POST** /delete-targets | 
 [**describe_item**](V2Api.md#describe_item) | **POST** /describe-item | 
 [**describe_permissions**](V2Api.md#describe_permissions) | **POST** /describe-permissions | 
+[**describe_sub_claims**](V2Api.md#describe_sub_claims) | **POST** /describe-sub-claims | 
 [**detokenize**](V2Api.md#detokenize) | **POST** /detokenize | 
 [**encrypt**](V2Api.md#encrypt) | **POST** /encrypt | 
 [**encrypt_pkcs1**](V2Api.md#encrypt_pkcs1) | **POST** /encrypt-pkcs1 | 
@@ -84,7 +85,7 @@ Method | HTTP request | Description
 [**gateway_create_producer_mongo**](V2Api.md#gateway_create_producer_mongo) | **POST** /gateway-create-producer-mongo | 
 [**gateway_create_producer_mssql**](V2Api.md#gateway_create_producer_mssql) | **POST** /gateway-create-producer-mssql | 
 [**gateway_create_producer_my_sql**](V2Api.md#gateway_create_producer_my_sql) | **POST** /gateway-create-producer-mysql | 
-[**gateway_create_producer_native_k8_s**](V2Api.md#gateway_create_producer_native_k8_s) | **POST** /gateway-create-producer-k8s-native | 
+[**gateway_create_producer_native_k8_s**](V2Api.md#gateway_create_producer_native_k8_s) | **POST** /gateway-create-producer-k8s | 
 [**gateway_create_producer_oracle_db**](V2Api.md#gateway_create_producer_oracle_db) | **POST** /gateway-create-producer-oracle | 
 [**gateway_create_producer_postgre_sql**](V2Api.md#gateway_create_producer_postgre_sql) | **POST** /gateway-create-producer-postgresql | 
 [**gateway_create_producer_rabbit_mq**](V2Api.md#gateway_create_producer_rabbit_mq) | **POST** /gateway-create-producer-rabbitmq | 
@@ -230,7 +231,6 @@ Method | HTTP request | Description
 [**update_ssh_target_details**](V2Api.md#update_ssh_target_details) | **POST** /update-ssh-target-details | 
 [**update_target**](V2Api.md#update_target) | **POST** /update-target | 
 [**update_target_details**](V2Api.md#update_target_details) | **POST** /update-target-details | 
-[**update_tokenizer**](V2Api.md#update_tokenizer) | **POST** /update-tokenizer | 
 [**update_web_target**](V2Api.md#update_web_target) | **POST** /update-web-target | 
 [**update_web_target_details**](V2Api.md#update_web_target_details) | **POST** /update-web-target-details | 
 [**upload_rsa**](V2Api.md#upload_rsa) | **POST** /upload-rsa | 
@@ -3717,6 +3717,67 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | DescribePermissionsResponse wraps response body. |  -  |
+**0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **describe_sub_claims**
+> DescribeSubClaimsOutput describe_sub_claims(body)
+
+
+
+### Example
+
+```python
+from __future__ import print_function
+import time
+import akeyless
+from akeyless.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.akeyless.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = akeyless.Configuration(
+    host = "https://api.akeyless.io"
+)
+
+
+# Enter a context with an instance of the API client
+with akeyless.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = akeyless.V2Api(api_client)
+    body = akeyless.DescribeSubClaims() # DescribeSubClaims | 
+
+    try:
+        api_response = api_instance.describe_sub_claims(body)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling V2Api->describe_sub_claims: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**DescribeSubClaims**](DescribeSubClaims.md)|  | 
+
+### Return type
+
+[**DescribeSubClaimsOutput**](DescribeSubClaimsOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | describeSubClaimsResponse wraps response body. |  -  |
+**401** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
 **0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -13783,66 +13844,6 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | updateTargetResponse wraps response body. |  -  |
-**0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **update_tokenizer**
-> UpdateTokenizerOutput update_tokenizer(body)
-
-
-
-### Example
-
-```python
-from __future__ import print_function
-import time
-import akeyless
-from akeyless.rest import ApiException
-from pprint import pprint
-# Defining the host is optional and defaults to https://api.akeyless.io
-# See configuration.py for a list of all supported configuration parameters.
-configuration = akeyless.Configuration(
-    host = "https://api.akeyless.io"
-)
-
-
-# Enter a context with an instance of the API client
-with akeyless.ApiClient() as api_client:
-    # Create an instance of the API class
-    api_instance = akeyless.V2Api(api_client)
-    body = akeyless.UpdateTokenizer() # UpdateTokenizer | 
-
-    try:
-        api_response = api_instance.update_tokenizer(body)
-        pprint(api_response)
-    except ApiException as e:
-        print("Exception when calling V2Api->update_tokenizer: %s\n" % e)
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **body** | [**UpdateTokenizer**](UpdateTokenizer.md)|  | 
-
-### Return type
-
-[**UpdateTokenizerOutput**](UpdateTokenizerOutput.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | updateTokenizerResponse wraps response body. |  -  |
 **0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

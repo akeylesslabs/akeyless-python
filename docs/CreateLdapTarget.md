@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **ldap_ca_cert** | **str** | CA Certificate File Content | [optional] 
 **ldap_url** | **str** | LDAP Server URL | 
 **name** | **str** | Target name | 
+**server_type** | **str** | Set Ldap server type, Options:[OpenLDAP, ActiveDirectory]. Default is OpenLDAP | [optional] [default to 'OpenLDAP']
 **token** | **str** | Authentication token (see &#x60;/auth&#x60; and &#x60;/configure&#x60;) | [optional] 
 **token_expiration** | **str** | Token expiration | [optional] 
 **uid_token** | **str** | The universal identity token, Required only for universal_identity authentication | [optional] 

@@ -34,8 +34,10 @@ class EncryptFile(object):
                             and the value is json key in definition.
     """
     openapi_types = {
+        'display_id': 'str',
         'encryption_context': 'dict(str, str)',
         '_in': 'str',
+        'item_id': 'int',
         'key_name': 'str',
         'out': 'str',
         'token': 'str',
@@ -43,31 +45,39 @@ class EncryptFile(object):
     }
 
     attribute_map = {
+        'display_id': 'display-id',
         'encryption_context': 'encryption-context',
         '_in': 'in',
+        'item_id': 'item-id',
         'key_name': 'key-name',
         'out': 'out',
         'token': 'token',
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, encryption_context=None, _in=None, key_name=None, out=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, display_id=None, encryption_context=None, _in=None, item_id=None, key_name=None, out=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """EncryptFile - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
+        self._display_id = None
         self._encryption_context = None
         self.__in = None
+        self._item_id = None
         self._key_name = None
         self._out = None
         self._token = None
         self._uid_token = None
         self.discriminator = None
 
+        if display_id is not None:
+            self.display_id = display_id
         if encryption_context is not None:
             self.encryption_context = encryption_context
         self._in = _in
+        if item_id is not None:
+            self.item_id = item_id
         self.key_name = key_name
         if out is not None:
             self.out = out
@@ -75,6 +85,29 @@ class EncryptFile(object):
             self.token = token
         if uid_token is not None:
             self.uid_token = uid_token
+
+    @property
+    def display_id(self):
+        """Gets the display_id of this EncryptFile.  # noqa: E501
+
+        The display id of the key to use in the encryption process  # noqa: E501
+
+        :return: The display_id of this EncryptFile.  # noqa: E501
+        :rtype: str
+        """
+        return self._display_id
+
+    @display_id.setter
+    def display_id(self, display_id):
+        """Sets the display_id of this EncryptFile.
+
+        The display id of the key to use in the encryption process  # noqa: E501
+
+        :param display_id: The display_id of this EncryptFile.  # noqa: E501
+        :type: str
+        """
+
+        self._display_id = display_id
 
     @property
     def encryption_context(self):
@@ -123,6 +156,29 @@ class EncryptFile(object):
             raise ValueError("Invalid value for `_in`, must not be `None`")  # noqa: E501
 
         self.__in = _in
+
+    @property
+    def item_id(self):
+        """Gets the item_id of this EncryptFile.  # noqa: E501
+
+        The item id of the key to use in the encryption process  # noqa: E501
+
+        :return: The item_id of this EncryptFile.  # noqa: E501
+        :rtype: int
+        """
+        return self._item_id
+
+    @item_id.setter
+    def item_id(self, item_id):
+        """Sets the item_id of this EncryptFile.
+
+        The item id of the key to use in the encryption process  # noqa: E501
+
+        :param item_id: The item_id of this EncryptFile.  # noqa: E501
+        :type: int
+        """
+
+        self._item_id = item_id
 
     @property
     def key_name(self):

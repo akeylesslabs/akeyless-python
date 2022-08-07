@@ -34,6 +34,8 @@ class CreateSalesforceTarget(object):
                             and the value is json key in definition.
     """
     openapi_types = {
+        'app_private_key_data': 'str',
+        'auth_flow': 'str',
         'ca_cert_data': 'str',
         'ca_cert_name': 'str',
         'client_id': 'str',
@@ -50,6 +52,8 @@ class CreateSalesforceTarget(object):
     }
 
     attribute_map = {
+        'app_private_key_data': 'app-private-key-data',
+        'auth_flow': 'auth-flow',
         'ca_cert_data': 'ca-cert-data',
         'ca_cert_name': 'ca-cert-name',
         'client_id': 'client-id',
@@ -65,12 +69,14 @@ class CreateSalesforceTarget(object):
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, ca_cert_data=None, ca_cert_name=None, client_id=None, client_secret=None, comment=None, email=None, key=None, name=None, password=None, security_token=None, tenant_url=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, app_private_key_data=None, auth_flow=None, ca_cert_data=None, ca_cert_name=None, client_id=None, client_secret=None, comment=None, email=None, key=None, name=None, password=None, security_token=None, tenant_url=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """CreateSalesforceTarget - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
+        self._app_private_key_data = None
+        self._auth_flow = None
         self._ca_cert_data = None
         self._ca_cert_name = None
         self._client_id = None
@@ -86,25 +92,79 @@ class CreateSalesforceTarget(object):
         self._uid_token = None
         self.discriminator = None
 
+        if app_private_key_data is not None:
+            self.app_private_key_data = app_private_key_data
+        self.auth_flow = auth_flow
         if ca_cert_data is not None:
             self.ca_cert_data = ca_cert_data
         if ca_cert_name is not None:
             self.ca_cert_name = ca_cert_name
         self.client_id = client_id
-        self.client_secret = client_secret
+        if client_secret is not None:
+            self.client_secret = client_secret
         if comment is not None:
             self.comment = comment
         self.email = email
         if key is not None:
             self.key = key
         self.name = name
-        self.password = password
-        self.security_token = security_token
+        if password is not None:
+            self.password = password
+        if security_token is not None:
+            self.security_token = security_token
         self.tenant_url = tenant_url
         if token is not None:
             self.token = token
         if uid_token is not None:
             self.uid_token = uid_token
+
+    @property
+    def app_private_key_data(self):
+        """Gets the app_private_key_data of this CreateSalesforceTarget.  # noqa: E501
+
+        Base64 encoded PEM of the connected app private key (relevant for JWT auth only)  # noqa: E501
+
+        :return: The app_private_key_data of this CreateSalesforceTarget.  # noqa: E501
+        :rtype: str
+        """
+        return self._app_private_key_data
+
+    @app_private_key_data.setter
+    def app_private_key_data(self, app_private_key_data):
+        """Sets the app_private_key_data of this CreateSalesforceTarget.
+
+        Base64 encoded PEM of the connected app private key (relevant for JWT auth only)  # noqa: E501
+
+        :param app_private_key_data: The app_private_key_data of this CreateSalesforceTarget.  # noqa: E501
+        :type: str
+        """
+
+        self._app_private_key_data = app_private_key_data
+
+    @property
+    def auth_flow(self):
+        """Gets the auth_flow of this CreateSalesforceTarget.  # noqa: E501
+
+        type of the auth flow ('jwt' / 'user-password')  # noqa: E501
+
+        :return: The auth_flow of this CreateSalesforceTarget.  # noqa: E501
+        :rtype: str
+        """
+        return self._auth_flow
+
+    @auth_flow.setter
+    def auth_flow(self, auth_flow):
+        """Sets the auth_flow of this CreateSalesforceTarget.
+
+        type of the auth flow ('jwt' / 'user-password')  # noqa: E501
+
+        :param auth_flow: The auth_flow of this CreateSalesforceTarget.  # noqa: E501
+        :type: str
+        """
+        if self.local_vars_configuration.client_side_validation and auth_flow is None:  # noqa: E501
+            raise ValueError("Invalid value for `auth_flow`, must not be `None`")  # noqa: E501
+
+        self._auth_flow = auth_flow
 
     @property
     def ca_cert_data(self):
@@ -181,7 +241,7 @@ class CreateSalesforceTarget(object):
     def client_secret(self):
         """Gets the client_secret of this CreateSalesforceTarget.  # noqa: E501
 
-        Client secret of the oauth2 app to use for connecting to Salesforce  # noqa: E501
+        Client secret of the oauth2 app to use for connecting to Salesforce (required for password flow)  # noqa: E501
 
         :return: The client_secret of this CreateSalesforceTarget.  # noqa: E501
         :rtype: str
@@ -192,13 +252,11 @@ class CreateSalesforceTarget(object):
     def client_secret(self, client_secret):
         """Sets the client_secret of this CreateSalesforceTarget.
 
-        Client secret of the oauth2 app to use for connecting to Salesforce  # noqa: E501
+        Client secret of the oauth2 app to use for connecting to Salesforce (required for password flow)  # noqa: E501
 
         :param client_secret: The client_secret of this CreateSalesforceTarget.  # noqa: E501
         :type: str
         """
-        if self.local_vars_configuration.client_side_validation and client_secret is None:  # noqa: E501
-            raise ValueError("Invalid value for `client_secret`, must not be `None`")  # noqa: E501
 
         self._client_secret = client_secret
 
@@ -302,7 +360,7 @@ class CreateSalesforceTarget(object):
     def password(self):
         """Gets the password of this CreateSalesforceTarget.  # noqa: E501
 
-        The password of the user attached to the oauth2 app used for connecting to Salesforce  # noqa: E501
+        The password of the user attached to the oauth2 app used for connecting to Salesforce (required for user-password flow)  # noqa: E501
 
         :return: The password of this CreateSalesforceTarget.  # noqa: E501
         :rtype: str
@@ -313,13 +371,11 @@ class CreateSalesforceTarget(object):
     def password(self, password):
         """Sets the password of this CreateSalesforceTarget.
 
-        The password of the user attached to the oauth2 app used for connecting to Salesforce  # noqa: E501
+        The password of the user attached to the oauth2 app used for connecting to Salesforce (required for user-password flow)  # noqa: E501
 
         :param password: The password of this CreateSalesforceTarget.  # noqa: E501
         :type: str
         """
-        if self.local_vars_configuration.client_side_validation and password is None:  # noqa: E501
-            raise ValueError("Invalid value for `password`, must not be `None`")  # noqa: E501
 
         self._password = password
 
@@ -327,7 +383,7 @@ class CreateSalesforceTarget(object):
     def security_token(self):
         """Gets the security_token of this CreateSalesforceTarget.  # noqa: E501
 
-        The security token of the user attached to the oauth2 app used for connecting to Salesforce  # noqa: E501
+        The security token of the user attached to the oauth2 app used for connecting to Salesforce  (required for user-password flow)  # noqa: E501
 
         :return: The security_token of this CreateSalesforceTarget.  # noqa: E501
         :rtype: str
@@ -338,13 +394,11 @@ class CreateSalesforceTarget(object):
     def security_token(self, security_token):
         """Sets the security_token of this CreateSalesforceTarget.
 
-        The security token of the user attached to the oauth2 app used for connecting to Salesforce  # noqa: E501
+        The security token of the user attached to the oauth2 app used for connecting to Salesforce  (required for user-password flow)  # noqa: E501
 
         :param security_token: The security_token of this CreateSalesforceTarget.  # noqa: E501
         :type: str
         """
-        if self.local_vars_configuration.client_side_validation and security_token is None:  # noqa: E501
-            raise ValueError("Invalid value for `security_token`, must not be `None`")  # noqa: E501
 
         self._security_token = security_token
 

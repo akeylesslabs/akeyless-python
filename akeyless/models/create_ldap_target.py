@@ -41,6 +41,7 @@ class CreateLdapTarget(object):
         'ldap_ca_cert': 'str',
         'ldap_url': 'str',
         'name': 'str',
+        'server_type': 'str',
         'token': 'str',
         'token_expiration': 'str',
         'uid_token': 'str'
@@ -54,12 +55,13 @@ class CreateLdapTarget(object):
         'ldap_ca_cert': 'ldap-ca-cert',
         'ldap_url': 'ldap-url',
         'name': 'name',
+        'server_type': 'server-type',
         'token': 'token',
         'token_expiration': 'token-expiration',
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, bind_dn=None, bind_dn_password=None, comment=None, key=None, ldap_ca_cert=None, ldap_url=None, name=None, token=None, token_expiration=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, bind_dn=None, bind_dn_password=None, comment=None, key=None, ldap_ca_cert=None, ldap_url=None, name=None, server_type='OpenLDAP', token=None, token_expiration=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """CreateLdapTarget - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -72,6 +74,7 @@ class CreateLdapTarget(object):
         self._ldap_ca_cert = None
         self._ldap_url = None
         self._name = None
+        self._server_type = None
         self._token = None
         self._token_expiration = None
         self._uid_token = None
@@ -87,6 +90,8 @@ class CreateLdapTarget(object):
             self.ldap_ca_cert = ldap_ca_cert
         self.ldap_url = ldap_url
         self.name = name
+        if server_type is not None:
+            self.server_type = server_type
         if token is not None:
             self.token = token
         if token_expiration is not None:
@@ -262,6 +267,29 @@ class CreateLdapTarget(object):
             raise ValueError("Invalid value for `name`, must not be `None`")  # noqa: E501
 
         self._name = name
+
+    @property
+    def server_type(self):
+        """Gets the server_type of this CreateLdapTarget.  # noqa: E501
+
+        Set Ldap server type, Options:[OpenLDAP, ActiveDirectory]. Default is OpenLDAP  # noqa: E501
+
+        :return: The server_type of this CreateLdapTarget.  # noqa: E501
+        :rtype: str
+        """
+        return self._server_type
+
+    @server_type.setter
+    def server_type(self, server_type):
+        """Sets the server_type of this CreateLdapTarget.
+
+        Set Ldap server type, Options:[OpenLDAP, ActiveDirectory]. Default is OpenLDAP  # noqa: E501
+
+        :param server_type: The server_type of this CreateLdapTarget.  # noqa: E501
+        :type: str
+        """
+
+        self._server_type = server_type
 
     @property
     def token(self):

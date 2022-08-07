@@ -3,6 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**app_private_key** | **list[int]** | params needed for jwt auth AppPrivateKey is the rsa private key in PEM format | [optional] 
 **artifactory_admin_apikey** | **str** |  | [optional] 
 **artifactory_admin_username** | **str** |  | [optional] 
 **artifactory_base_url** | **str** |  | [optional] 
@@ -26,7 +27,7 @@ Name | Type | Description | Notes
 **chef_server_username** | **str** |  | [optional] 
 **chef_skip_ssl** | **bool** |  | [optional] 
 **client_id** | **str** |  | [optional] 
-**client_secret** | **str** |  | [optional] 
+**client_secret** | **str** | params needed for password auth | [optional] 
 **db_host_name** | **str** |  | [optional] 
 **db_name** | **str** |  | [optional] 
 **db_port** | **str** |  | [optional] 

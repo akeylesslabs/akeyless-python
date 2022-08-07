@@ -186,7 +186,7 @@ class CreateArtifactoryTarget(object):
     def key(self):
         """Gets the key of this CreateArtifactoryTarget.  # noqa: E501
 
-        The name of a key that used to encrypt the target secret value (if empty, the account default protectionKey key will be used)  # noqa: E501
+        The name of a key used to encrypt the target secret value (if empty, the account default protectionKey key will be used)  # noqa: E501
 
         :return: The key of this CreateArtifactoryTarget.  # noqa: E501
         :rtype: str
@@ -197,7 +197,7 @@ class CreateArtifactoryTarget(object):
     def key(self, key):
         """Sets the key of this CreateArtifactoryTarget.
 
-        The name of a key that used to encrypt the target secret value (if empty, the account default protectionKey key will be used)  # noqa: E501
+        The name of a key used to encrypt the target secret value (if empty, the account default protectionKey key will be used)  # noqa: E501
 
         :param key: The key of this CreateArtifactoryTarget.  # noqa: E501
         :type: str

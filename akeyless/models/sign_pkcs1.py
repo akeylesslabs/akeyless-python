@@ -34,6 +34,8 @@ class SignPKCS1(object):
                             and the value is json key in definition.
     """
     openapi_types = {
+        'display_id': 'str',
+        'item_id': 'int',
         'key_name': 'str',
         'message': 'str',
         'token': 'str',
@@ -41,30 +43,85 @@ class SignPKCS1(object):
     }
 
     attribute_map = {
+        'display_id': 'display-id',
+        'item_id': 'item-id',
         'key_name': 'key-name',
         'message': 'message',
         'token': 'token',
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, key_name=None, message=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, display_id=None, item_id=None, key_name=None, message=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """SignPKCS1 - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
+        self._display_id = None
+        self._item_id = None
         self._key_name = None
         self._message = None
         self._token = None
         self._uid_token = None
         self.discriminator = None
 
-        self.key_name = key_name
+        if display_id is not None:
+            self.display_id = display_id
+        if item_id is not None:
+            self.item_id = item_id
+        if key_name is not None:
+            self.key_name = key_name
         self.message = message
         if token is not None:
             self.token = token
         if uid_token is not None:
             self.uid_token = uid_token
+
+    @property
+    def display_id(self):
+        """Gets the display_id of this SignPKCS1.  # noqa: E501
+
+        The display id of the key to use in the signing process  # noqa: E501
+
+        :return: The display_id of this SignPKCS1.  # noqa: E501
+        :rtype: str
+        """
+        return self._display_id
+
+    @display_id.setter
+    def display_id(self, display_id):
+        """Sets the display_id of this SignPKCS1.
+
+        The display id of the key to use in the signing process  # noqa: E501
+
+        :param display_id: The display_id of this SignPKCS1.  # noqa: E501
+        :type: str
+        """
+
+        self._display_id = display_id
+
+    @property
+    def item_id(self):
+        """Gets the item_id of this SignPKCS1.  # noqa: E501
+
+        The item id of the key to use in the signing process  # noqa: E501
+
+        :return: The item_id of this SignPKCS1.  # noqa: E501
+        :rtype: int
+        """
+        return self._item_id
+
+    @item_id.setter
+    def item_id(self, item_id):
+        """Sets the item_id of this SignPKCS1.
+
+        The item id of the key to use in the signing process  # noqa: E501
+
+        :param item_id: The item_id of this SignPKCS1.  # noqa: E501
+        :type: int
+        """
+
+        self._item_id = item_id
 
     @property
     def key_name(self):
@@ -86,8 +143,6 @@ class SignPKCS1(object):
         :param key_name: The key_name of this SignPKCS1.  # noqa: E501
         :type: str
         """
-        if self.local_vars_configuration.client_side_validation and key_name is None:  # noqa: E501
-            raise ValueError("Invalid value for `key_name`, must not be `None`")  # noqa: E501
 
         self._key_name = key_name
 

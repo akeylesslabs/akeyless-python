@@ -35,6 +35,8 @@ class DecryptPKCS1(object):
     """
     openapi_types = {
         'ciphertext': 'str',
+        'display_id': 'str',
+        'item_id': 'int',
         'key_name': 'str',
         'token': 'str',
         'uid_token': 'str'
@@ -42,24 +44,32 @@ class DecryptPKCS1(object):
 
     attribute_map = {
         'ciphertext': 'ciphertext',
+        'display_id': 'display-id',
+        'item_id': 'item-id',
         'key_name': 'key-name',
         'token': 'token',
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, ciphertext=None, key_name=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, ciphertext=None, display_id=None, item_id=None, key_name=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """DecryptPKCS1 - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._ciphertext = None
+        self._display_id = None
+        self._item_id = None
         self._key_name = None
         self._token = None
         self._uid_token = None
         self.discriminator = None
 
         self.ciphertext = ciphertext
+        if display_id is not None:
+            self.display_id = display_id
+        if item_id is not None:
+            self.item_id = item_id
         self.key_name = key_name
         if token is not None:
             self.token = token
@@ -92,10 +102,56 @@ class DecryptPKCS1(object):
         self._ciphertext = ciphertext
 
     @property
+    def display_id(self):
+        """Gets the display_id of this DecryptPKCS1.  # noqa: E501
+
+        The display id of the key to use in the decryption process  # noqa: E501
+
+        :return: The display_id of this DecryptPKCS1.  # noqa: E501
+        :rtype: str
+        """
+        return self._display_id
+
+    @display_id.setter
+    def display_id(self, display_id):
+        """Sets the display_id of this DecryptPKCS1.
+
+        The display id of the key to use in the decryption process  # noqa: E501
+
+        :param display_id: The display_id of this DecryptPKCS1.  # noqa: E501
+        :type: str
+        """
+
+        self._display_id = display_id
+
+    @property
+    def item_id(self):
+        """Gets the item_id of this DecryptPKCS1.  # noqa: E501
+
+        The item id of the key to use in the decryption process  # noqa: E501
+
+        :return: The item_id of this DecryptPKCS1.  # noqa: E501
+        :rtype: int
+        """
+        return self._item_id
+
+    @item_id.setter
+    def item_id(self, item_id):
+        """Sets the item_id of this DecryptPKCS1.
+
+        The item id of the key to use in the decryption process  # noqa: E501
+
+        :param item_id: The item_id of this DecryptPKCS1.  # noqa: E501
+        :type: int
+        """
+
+        self._item_id = item_id
+
+    @property
     def key_name(self):
         """Gets the key_name of this DecryptPKCS1.  # noqa: E501
 
-        The name of the RSA key to use in the decryption process  # noqa: E501
+        The name of the key to use in the decryption process  # noqa: E501
 
         :return: The key_name of this DecryptPKCS1.  # noqa: E501
         :rtype: str
@@ -106,7 +162,7 @@ class DecryptPKCS1(object):
     def key_name(self, key_name):
         """Sets the key_name of this DecryptPKCS1.
 
-        The name of the RSA key to use in the decryption process  # noqa: E501
+        The name of the key to use in the decryption process  # noqa: E501
 
         :param key_name: The key_name of this DecryptPKCS1.  # noqa: E501
         :type: str

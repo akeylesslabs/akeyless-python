@@ -35,11 +35,14 @@ class GatewayCreateK8SAuthConfig(object):
     """
     openapi_types = {
         'access_id': 'str',
+        'cluster_api_type': 'str',
         'config_encryption_key_name': 'str',
         'k8s_ca_cert': 'str',
         'k8s_host': 'str',
         'k8s_issuer': 'str',
         'name': 'str',
+        'rancher_api_key': 'str',
+        'rancher_cluster_id': 'str',
         'signing_key': 'str',
         'token': 'str',
         'token_exp': 'int',
@@ -49,11 +52,14 @@ class GatewayCreateK8SAuthConfig(object):
 
     attribute_map = {
         'access_id': 'access-id',
+        'cluster_api_type': 'cluster-api-type',
         'config_encryption_key_name': 'config-encryption-key-name',
         'k8s_ca_cert': 'k8s-ca-cert',
         'k8s_host': 'k8s-host',
         'k8s_issuer': 'k8s-issuer',
         'name': 'name',
+        'rancher_api_key': 'rancher-api-key',
+        'rancher_cluster_id': 'rancher-cluster-id',
         'signing_key': 'signing-key',
         'token': 'token',
         'token_exp': 'token-exp',
@@ -61,18 +67,21 @@ class GatewayCreateK8SAuthConfig(object):
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, access_id=None, config_encryption_key_name=None, k8s_ca_cert=None, k8s_host=None, k8s_issuer=None, name=None, signing_key=None, token=None, token_exp=300, token_reviewer_jwt=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, access_id=None, cluster_api_type='native_k8s', config_encryption_key_name=None, k8s_ca_cert=None, k8s_host=None, k8s_issuer=None, name=None, rancher_api_key=None, rancher_cluster_id=None, signing_key=None, token=None, token_exp=300, token_reviewer_jwt=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """GatewayCreateK8SAuthConfig - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._access_id = None
+        self._cluster_api_type = None
         self._config_encryption_key_name = None
         self._k8s_ca_cert = None
         self._k8s_host = None
         self._k8s_issuer = None
         self._name = None
+        self._rancher_api_key = None
+        self._rancher_cluster_id = None
         self._signing_key = None
         self._token = None
         self._token_exp = None
@@ -81,6 +90,8 @@ class GatewayCreateK8SAuthConfig(object):
         self.discriminator = None
 
         self.access_id = access_id
+        if cluster_api_type is not None:
+            self.cluster_api_type = cluster_api_type
         if config_encryption_key_name is not None:
             self.config_encryption_key_name = config_encryption_key_name
         if k8s_ca_cert is not None:
@@ -89,6 +100,10 @@ class GatewayCreateK8SAuthConfig(object):
         if k8s_issuer is not None:
             self.k8s_issuer = k8s_issuer
         self.name = name
+        if rancher_api_key is not None:
+            self.rancher_api_key = rancher_api_key
+        if rancher_cluster_id is not None:
+            self.rancher_cluster_id = rancher_cluster_id
         self.signing_key = signing_key
         if token is not None:
             self.token = token
@@ -123,6 +138,29 @@ class GatewayCreateK8SAuthConfig(object):
             raise ValueError("Invalid value for `access_id`, must not be `None`")  # noqa: E501
 
         self._access_id = access_id
+
+    @property
+    def cluster_api_type(self):
+        """Gets the cluster_api_type of this GatewayCreateK8SAuthConfig.  # noqa: E501
+
+        Cluster access type. options: [native_k8s, rancher]  # noqa: E501
+
+        :return: The cluster_api_type of this GatewayCreateK8SAuthConfig.  # noqa: E501
+        :rtype: str
+        """
+        return self._cluster_api_type
+
+    @cluster_api_type.setter
+    def cluster_api_type(self, cluster_api_type):
+        """Sets the cluster_api_type of this GatewayCreateK8SAuthConfig.
+
+        Cluster access type. options: [native_k8s, rancher]  # noqa: E501
+
+        :param cluster_api_type: The cluster_api_type of this GatewayCreateK8SAuthConfig.  # noqa: E501
+        :type: str
+        """
+
+        self._cluster_api_type = cluster_api_type
 
     @property
     def config_encryption_key_name(self):
@@ -244,6 +282,52 @@ class GatewayCreateK8SAuthConfig(object):
         self._name = name
 
     @property
+    def rancher_api_key(self):
+        """Gets the rancher_api_key of this GatewayCreateK8SAuthConfig.  # noqa: E501
+
+        The api key used to access the TokenReview API to validate other JWTs (relevant for \"rancher\" only)  # noqa: E501
+
+        :return: The rancher_api_key of this GatewayCreateK8SAuthConfig.  # noqa: E501
+        :rtype: str
+        """
+        return self._rancher_api_key
+
+    @rancher_api_key.setter
+    def rancher_api_key(self, rancher_api_key):
+        """Sets the rancher_api_key of this GatewayCreateK8SAuthConfig.
+
+        The api key used to access the TokenReview API to validate other JWTs (relevant for \"rancher\" only)  # noqa: E501
+
+        :param rancher_api_key: The rancher_api_key of this GatewayCreateK8SAuthConfig.  # noqa: E501
+        :type: str
+        """
+
+        self._rancher_api_key = rancher_api_key
+
+    @property
+    def rancher_cluster_id(self):
+        """Gets the rancher_cluster_id of this GatewayCreateK8SAuthConfig.  # noqa: E501
+
+        The cluster id as define in rancher (relevant for \"rancher\" only)  # noqa: E501
+
+        :return: The rancher_cluster_id of this GatewayCreateK8SAuthConfig.  # noqa: E501
+        :rtype: str
+        """
+        return self._rancher_cluster_id
+
+    @rancher_cluster_id.setter
+    def rancher_cluster_id(self, rancher_cluster_id):
+        """Sets the rancher_cluster_id of this GatewayCreateK8SAuthConfig.
+
+        The cluster id as define in rancher (relevant for \"rancher\" only)  # noqa: E501
+
+        :param rancher_cluster_id: The rancher_cluster_id of this GatewayCreateK8SAuthConfig.  # noqa: E501
+        :type: str
+        """
+
+        self._rancher_cluster_id = rancher_cluster_id
+
+    @property
     def signing_key(self):
         """Gets the signing_key of this GatewayCreateK8SAuthConfig.  # noqa: E501
 
@@ -318,7 +402,7 @@ class GatewayCreateK8SAuthConfig(object):
     def token_reviewer_jwt(self):
         """Gets the token_reviewer_jwt of this GatewayCreateK8SAuthConfig.  # noqa: E501
 
-        A Kubernetes service account JWT used to access the TokenReview API to validate other JWTs. If not set, the JWT submitted in the authentication process will be used to access the Kubernetes TokenReview API.  # noqa: E501
+        A Kubernetes service account JWT used to access the TokenReview API to validate other JWTs (relevant for \"native_k8s\" only). If not set, the JWT submitted in the authentication process will be used to access the Kubernetes TokenReview API.  # noqa: E501
 
         :return: The token_reviewer_jwt of this GatewayCreateK8SAuthConfig.  # noqa: E501
         :rtype: str
@@ -329,7 +413,7 @@ class GatewayCreateK8SAuthConfig(object):
     def token_reviewer_jwt(self, token_reviewer_jwt):
         """Sets the token_reviewer_jwt of this GatewayCreateK8SAuthConfig.
 
-        A Kubernetes service account JWT used to access the TokenReview API to validate other JWTs. If not set, the JWT submitted in the authentication process will be used to access the Kubernetes TokenReview API.  # noqa: E501
+        A Kubernetes service account JWT used to access the TokenReview API to validate other JWTs (relevant for \"native_k8s\" only). If not set, the JWT submitted in the authentication process will be used to access the Kubernetes TokenReview API.  # noqa: E501
 
         :param token_reviewer_jwt: The token_reviewer_jwt of this GatewayCreateK8SAuthConfig.  # noqa: E501
         :type: str

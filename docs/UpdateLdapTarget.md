@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **ldap_url** | **str** |  | [optional] 
 **name** | **str** | Target name | 
 **new_name** | **str** | New target name | [optional] 
+**server_type** | **str** | Set Ldap server type, Options:[OpenLDAP, ActiveDirectory] | [optional] 
 **token** | **str** | Authentication token (see &#x60;/auth&#x60; and &#x60;/configure&#x60;) | [optional] 
 **token_expiration** | **str** |  | [optional] 
 **uid_token** | **str** | The universal identity token, Required only for universal_identity authentication | [optional] 

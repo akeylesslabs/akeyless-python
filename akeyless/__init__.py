@@ -15,7 +15,7 @@
 
 from __future__ import absolute_import
 
-__version__ = "2.16.12"
+__version__ = "2.17.0"
 
 # import apis into sdk package
 from akeyless.api.v2_api import V2Api
@@ -171,6 +171,8 @@ from akeyless.models.delete_targets import DeleteTargets
 from akeyless.models.describe_item import DescribeItem
 from akeyless.models.describe_permissions import DescribePermissions
 from akeyless.models.describe_permissions_output import DescribePermissionsOutput
+from akeyless.models.describe_sub_claims import DescribeSubClaims
+from akeyless.models.describe_sub_claims_output import DescribeSubClaimsOutput
 from akeyless.models.detokenize import Detokenize
 from akeyless.models.detokenize_output import DetokenizeOutput
 from akeyless.models.dynamic_secret_producer_info import DynamicSecretProducerInfo
@@ -556,8 +558,6 @@ from akeyless.models.update_secret_val_output import UpdateSecretValOutput
 from akeyless.models.update_target import UpdateTarget
 from akeyless.models.update_target_details_output import UpdateTargetDetailsOutput
 from akeyless.models.update_target_output import UpdateTargetOutput
-from akeyless.models.update_tokenizer import UpdateTokenizer
-from akeyless.models.update_tokenizer_output import UpdateTokenizerOutput
 from akeyless.models.update_web_target import UpdateWebTarget
 from akeyless.models.update_web_target_details import UpdateWebTargetDetails
 from akeyless.models.update_web_target_output import UpdateWebTargetOutput

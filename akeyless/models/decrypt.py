@@ -37,6 +37,7 @@ class Decrypt(object):
         'ciphertext': 'str',
         'display_id': 'str',
         'encryption_context': 'dict(str, str)',
+        'item_id': 'int',
         'key_name': 'str',
         'token': 'str',
         'uid_token': 'str'
@@ -46,12 +47,13 @@ class Decrypt(object):
         'ciphertext': 'ciphertext',
         'display_id': 'display-id',
         'encryption_context': 'encryption-context',
+        'item_id': 'item-id',
         'key_name': 'key-name',
         'token': 'token',
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, ciphertext=None, display_id=None, encryption_context=None, key_name=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, ciphertext=None, display_id=None, encryption_context=None, item_id=None, key_name=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """Decrypt - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -60,6 +62,7 @@ class Decrypt(object):
         self._ciphertext = None
         self._display_id = None
         self._encryption_context = None
+        self._item_id = None
         self._key_name = None
         self._token = None
         self._uid_token = None
@@ -71,8 +74,9 @@ class Decrypt(object):
             self.display_id = display_id
         if encryption_context is not None:
             self.encryption_context = encryption_context
-        if key_name is not None:
-            self.key_name = key_name
+        if item_id is not None:
+            self.item_id = item_id
+        self.key_name = key_name
         if token is not None:
             self.token = token
         if uid_token is not None:
@@ -148,6 +152,29 @@ class Decrypt(object):
         self._encryption_context = encryption_context
 
     @property
+    def item_id(self):
+        """Gets the item_id of this Decrypt.  # noqa: E501
+
+        The item id of the key to use in the decryption process  # noqa: E501
+
+        :return: The item_id of this Decrypt.  # noqa: E501
+        :rtype: int
+        """
+        return self._item_id
+
+    @item_id.setter
+    def item_id(self, item_id):
+        """Sets the item_id of this Decrypt.
+
+        The item id of the key to use in the decryption process  # noqa: E501
+
+        :param item_id: The item_id of this Decrypt.  # noqa: E501
+        :type: int
+        """
+
+        self._item_id = item_id
+
+    @property
     def key_name(self):
         """Gets the key_name of this Decrypt.  # noqa: E501
 
@@ -167,6 +194,8 @@ class Decrypt(object):
         :param key_name: The key_name of this Decrypt.  # noqa: E501
         :type: str
         """
+        if self.local_vars_configuration.client_side_validation and key_name is None:  # noqa: E501
+            raise ValueError("Invalid value for `key_name`, must not be `None`")  # noqa: E501
 
         self._key_name = key_name
 

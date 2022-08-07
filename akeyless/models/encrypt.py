@@ -36,6 +36,7 @@ class Encrypt(object):
     openapi_types = {
         'display_id': 'str',
         'encryption_context': 'dict(str, str)',
+        'item_id': 'int',
         'key_name': 'str',
         'plaintext': 'str',
         'token': 'str',
@@ -45,13 +46,14 @@ class Encrypt(object):
     attribute_map = {
         'display_id': 'display-id',
         'encryption_context': 'encryption-context',
+        'item_id': 'item-id',
         'key_name': 'key-name',
         'plaintext': 'plaintext',
         'token': 'token',
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, display_id=None, encryption_context=None, key_name=None, plaintext=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, display_id=None, encryption_context=None, item_id=None, key_name=None, plaintext=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """Encrypt - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -59,6 +61,7 @@ class Encrypt(object):
 
         self._display_id = None
         self._encryption_context = None
+        self._item_id = None
         self._key_name = None
         self._plaintext = None
         self._token = None
@@ -69,8 +72,9 @@ class Encrypt(object):
             self.display_id = display_id
         if encryption_context is not None:
             self.encryption_context = encryption_context
-        if key_name is not None:
-            self.key_name = key_name
+        if item_id is not None:
+            self.item_id = item_id
+        self.key_name = key_name
         if plaintext is not None:
             self.plaintext = plaintext
         if token is not None:
@@ -125,6 +129,29 @@ class Encrypt(object):
         self._encryption_context = encryption_context
 
     @property
+    def item_id(self):
+        """Gets the item_id of this Encrypt.  # noqa: E501
+
+        The item id of the key to use in the encryption process  # noqa: E501
+
+        :return: The item_id of this Encrypt.  # noqa: E501
+        :rtype: int
+        """
+        return self._item_id
+
+    @item_id.setter
+    def item_id(self, item_id):
+        """Sets the item_id of this Encrypt.
+
+        The item id of the key to use in the encryption process  # noqa: E501
+
+        :param item_id: The item_id of this Encrypt.  # noqa: E501
+        :type: int
+        """
+
+        self._item_id = item_id
+
+    @property
     def key_name(self):
         """Gets the key_name of this Encrypt.  # noqa: E501
 
@@ -144,6 +171,8 @@ class Encrypt(object):
         :param key_name: The key_name of this Encrypt.  # noqa: E501
         :type: str
         """
+        if self.local_vars_configuration.client_side_validation and key_name is None:  # noqa: E501
+            raise ValueError("Invalid value for `key_name`, must not be `None`")  # noqa: E501
 
         self._key_name = key_name
 

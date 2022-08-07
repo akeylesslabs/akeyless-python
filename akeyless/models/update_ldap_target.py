@@ -43,6 +43,7 @@ class UpdateLdapTarget(object):
         'ldap_url': 'str',
         'name': 'str',
         'new_name': 'str',
+        'server_type': 'str',
         'token': 'str',
         'token_expiration': 'str',
         'uid_token': 'str',
@@ -59,13 +60,14 @@ class UpdateLdapTarget(object):
         'ldap_url': 'ldap-url',
         'name': 'name',
         'new_name': 'new-name',
+        'server_type': 'server-type',
         'token': 'token',
         'token_expiration': 'token-expiration',
         'uid_token': 'uid-token',
         'update_version': 'update-version'
     }
 
-    def __init__(self, bind_dn=None, bind_dn_password=None, comment=None, keep_prev_version=None, key=None, ldap_ca_cert=None, ldap_url=None, name=None, new_name=None, token=None, token_expiration=None, uid_token=None, update_version=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, bind_dn=None, bind_dn_password=None, comment=None, keep_prev_version=None, key=None, ldap_ca_cert=None, ldap_url=None, name=None, new_name=None, server_type=None, token=None, token_expiration=None, uid_token=None, update_version=None, local_vars_configuration=None):  # noqa: E501
         """UpdateLdapTarget - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -80,6 +82,7 @@ class UpdateLdapTarget(object):
         self._ldap_url = None
         self._name = None
         self._new_name = None
+        self._server_type = None
         self._token = None
         self._token_expiration = None
         self._uid_token = None
@@ -103,6 +106,8 @@ class UpdateLdapTarget(object):
         self.name = name
         if new_name is not None:
             self.new_name = new_name
+        if server_type is not None:
+            self.server_type = server_type
         if token is not None:
             self.token = token
         if token_expiration is not None:
@@ -310,6 +315,29 @@ class UpdateLdapTarget(object):
         """
 
         self._new_name = new_name
+
+    @property
+    def server_type(self):
+        """Gets the server_type of this UpdateLdapTarget.  # noqa: E501
+
+        Set Ldap server type, Options:[OpenLDAP, ActiveDirectory]  # noqa: E501
+
+        :return: The server_type of this UpdateLdapTarget.  # noqa: E501
+        :rtype: str
+        """
+        return self._server_type
+
+    @server_type.setter
+    def server_type(self, server_type):
+        """Sets the server_type of this UpdateLdapTarget.
+
+        Set Ldap server type, Options:[OpenLDAP, ActiveDirectory]  # noqa: E501
+
+        :param server_type: The server_type of this UpdateLdapTarget.  # noqa: E501
+        :type: str
+        """
+
+        self._server_type = server_type
 
     @property
     def token(self):

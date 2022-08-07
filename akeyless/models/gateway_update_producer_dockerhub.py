@@ -157,7 +157,7 @@ class GatewayUpdateProducerDockerhub(object):
     def dockerhub_token_scopes(self):
         """Gets the dockerhub_token_scopes of this GatewayUpdateProducerDockerhub.  # noqa: E501
 
-        Access token scopes list (comma seperated) to give the dynamic secret valid options are in \"repo:admin\", \"repo:write\", \"repo:read\", \"repo:public_read\"  # noqa: E501
+        Access token scopes list (comma-separated) to give the dynamic secret valid options are in \"repo:admin\", \"repo:write\", \"repo:read\", \"repo:public_read\"  # noqa: E501
 
         :return: The dockerhub_token_scopes of this GatewayUpdateProducerDockerhub.  # noqa: E501
         :rtype: str
@@ -168,7 +168,7 @@ class GatewayUpdateProducerDockerhub(object):
     def dockerhub_token_scopes(self, dockerhub_token_scopes):
         """Sets the dockerhub_token_scopes of this GatewayUpdateProducerDockerhub.
 
-        Access token scopes list (comma seperated) to give the dynamic secret valid options are in \"repo:admin\", \"repo:write\", \"repo:read\", \"repo:public_read\"  # noqa: E501
+        Access token scopes list (comma-separated) to give the dynamic secret valid options are in \"repo:admin\", \"repo:write\", \"repo:read\", \"repo:public_read\"  # noqa: E501
 
         :param dockerhub_token_scopes: The dockerhub_token_scopes of this GatewayUpdateProducerDockerhub.  # noqa: E501
         :type: str
