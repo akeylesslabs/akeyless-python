@@ -312,7 +312,7 @@ class CreatePKICertIssuer(object):
     def country(self):
         """Gets the country of this CreatePKICertIssuer.  # noqa: E501
 
-        A comma-separated list of the country that will be set in the issued certificate  # noqa: E501
+        A comma-separated list of countries that will be set in the issued certificate  # noqa: E501
 
         :return: The country of this CreatePKICertIssuer.  # noqa: E501
         :rtype: str
@@ -323,7 +323,7 @@ class CreatePKICertIssuer(object):
     def country(self, country):
         """Sets the country of this CreatePKICertIssuer.
 
-        A comma-separated list of the country that will be set in the issued certificate  # noqa: E501
+        A comma-separated list of countries that will be set in the issued certificate  # noqa: E501
 
         :param country: The country of this CreatePKICertIssuer.  # noqa: E501
         :type: str
@@ -381,7 +381,7 @@ class CreatePKICertIssuer(object):
     def locality(self):
         """Gets the locality of this CreatePKICertIssuer.  # noqa: E501
 
-        A comma-separated list of the locality that will be set in the issued certificate  # noqa: E501
+        A comma-separated list of localities that will be set in the issued certificate  # noqa: E501
 
         :return: The locality of this CreatePKICertIssuer.  # noqa: E501
         :rtype: str
@@ -392,7 +392,7 @@ class CreatePKICertIssuer(object):
     def locality(self, locality):
         """Sets the locality of this CreatePKICertIssuer.
 
-        A comma-separated list of the locality that will be set in the issued certificate  # noqa: E501
+        A comma-separated list of localities that will be set in the issued certificate  # noqa: E501
 
         :param locality: The locality of this CreatePKICertIssuer.  # noqa: E501
         :type: str
@@ -544,7 +544,7 @@ class CreatePKICertIssuer(object):
     def postal_code(self):
         """Gets the postal_code of this CreatePKICertIssuer.  # noqa: E501
 
-        A comma-separated list of the postal code that will be set in the issued certificate  # noqa: E501
+        A comma-separated list of postal codes that will be set in the issued certificate  # noqa: E501
 
         :return: The postal_code of this CreatePKICertIssuer.  # noqa: E501
         :rtype: str
@@ -555,7 +555,7 @@ class CreatePKICertIssuer(object):
     def postal_code(self, postal_code):
         """Sets the postal_code of this CreatePKICertIssuer.
 
-        A comma-separated list of the postal code that will be set in the issued certificate  # noqa: E501
+        A comma-separated list of postal codes that will be set in the issued certificate  # noqa: E501
 
         :param postal_code: The postal_code of this CreatePKICertIssuer.  # noqa: E501
         :type: str
@@ -567,7 +567,7 @@ class CreatePKICertIssuer(object):
     def province(self):
         """Gets the province of this CreatePKICertIssuer.  # noqa: E501
 
-        A comma-separated list of the province that will be set in the issued certificate  # noqa: E501
+        A comma-separated list of provinces that will be set in the issued certificate  # noqa: E501
 
         :return: The province of this CreatePKICertIssuer.  # noqa: E501
         :rtype: str
@@ -578,7 +578,7 @@ class CreatePKICertIssuer(object):
     def province(self, province):
         """Sets the province of this CreatePKICertIssuer.
 
-        A comma-separated list of the province that will be set in the issued certificate  # noqa: E501
+        A comma-separated list of provinces that will be set in the issued certificate  # noqa: E501
 
         :param province: The province of this CreatePKICertIssuer.  # noqa: E501
         :type: str
@@ -638,7 +638,7 @@ class CreatePKICertIssuer(object):
     def street_address(self):
         """Gets the street_address of this CreatePKICertIssuer.  # noqa: E501
 
-        A comma-separated list of the street address that will be set in the issued certificate  # noqa: E501
+        A comma-separated list of street addresses that will be set in the issued certificate  # noqa: E501
 
         :return: The street_address of this CreatePKICertIssuer.  # noqa: E501
         :rtype: str
@@ -649,7 +649,7 @@ class CreatePKICertIssuer(object):
     def street_address(self, street_address):
         """Sets the street_address of this CreatePKICertIssuer.
 
-        A comma-separated list of the street address that will be set in the issued certificate  # noqa: E501
+        A comma-separated list of street addresses that will be set in the issued certificate  # noqa: E501
 
         :param street_address: The street_address of this CreatePKICertIssuer.  # noqa: E501
         :type: str

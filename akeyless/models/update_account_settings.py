@@ -45,10 +45,15 @@ class UpdateAccountSettings(object):
         'jwt_ttl_max': 'int',
         'jwt_ttl_min': 'int',
         'max_versions': 'str',
+        'password_length': 'int',
         'phone': 'str',
         'postal_code': 'str',
         'token': 'str',
-        'uid_token': 'str'
+        'uid_token': 'str',
+        'use_lower_letters': 'str',
+        'use_numbers': 'str',
+        'use_special_characters': 'str',
+        'use_capital_letters': 'str'
     }
 
     attribute_map = {
@@ -63,13 +68,18 @@ class UpdateAccountSettings(object):
         'jwt_ttl_max': 'jwt-ttl-max',
         'jwt_ttl_min': 'jwt-ttl-min',
         'max_versions': 'max-versions',
+        'password_length': 'password-length',
         'phone': 'phone',
         'postal_code': 'postal-code',
         'token': 'token',
-        'uid_token': 'uid-token'
+        'uid_token': 'uid-token',
+        'use_lower_letters': 'use-lower-letters',
+        'use_numbers': 'use-numbers',
+        'use_special_characters': 'use-special-characters',
+        'use_capital_letters': 'use_capital-letters'
     }
 
-    def __init__(self, address=None, city=None, company_name=None, country=None, default_versioning=None, dp_enable_classic_key_protection=None, item_type=None, jwt_ttl_default=None, jwt_ttl_max=None, jwt_ttl_min=None, max_versions=None, phone=None, postal_code=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, address=None, city=None, company_name=None, country=None, default_versioning=None, dp_enable_classic_key_protection=None, item_type=None, jwt_ttl_default=None, jwt_ttl_max=None, jwt_ttl_min=None, max_versions=None, password_length=None, phone=None, postal_code=None, token=None, uid_token=None, use_lower_letters=None, use_numbers=None, use_special_characters=None, use_capital_letters=None, local_vars_configuration=None):  # noqa: E501
         """UpdateAccountSettings - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -86,10 +96,15 @@ class UpdateAccountSettings(object):
         self._jwt_ttl_max = None
         self._jwt_ttl_min = None
         self._max_versions = None
+        self._password_length = None
         self._phone = None
         self._postal_code = None
         self._token = None
         self._uid_token = None
+        self._use_lower_letters = None
+        self._use_numbers = None
+        self._use_special_characters = None
+        self._use_capital_letters = None
         self.discriminator = None
 
         if address is not None:
@@ -114,6 +129,8 @@ class UpdateAccountSettings(object):
             self.jwt_ttl_min = jwt_ttl_min
         if max_versions is not None:
             self.max_versions = max_versions
+        if password_length is not None:
+            self.password_length = password_length
         if phone is not None:
             self.phone = phone
         if postal_code is not None:
@@ -122,6 +139,14 @@ class UpdateAccountSettings(object):
             self.token = token
         if uid_token is not None:
             self.uid_token = uid_token
+        if use_lower_letters is not None:
+            self.use_lower_letters = use_lower_letters
+        if use_numbers is not None:
+            self.use_numbers = use_numbers
+        if use_special_characters is not None:
+            self.use_special_characters = use_special_characters
+        if use_capital_letters is not None:
+            self.use_capital_letters = use_capital_letters
 
     @property
     def address(self):
@@ -377,6 +402,29 @@ class UpdateAccountSettings(object):
         self._max_versions = max_versions
 
     @property
+    def password_length(self):
+        """Gets the password_length of this UpdateAccountSettings.  # noqa: E501
+
+        For PasswordPolicy use  # noqa: E501
+
+        :return: The password_length of this UpdateAccountSettings.  # noqa: E501
+        :rtype: int
+        """
+        return self._password_length
+
+    @password_length.setter
+    def password_length(self, password_length):
+        """Sets the password_length of this UpdateAccountSettings.
+
+        For PasswordPolicy use  # noqa: E501
+
+        :param password_length: The password_length of this UpdateAccountSettings.  # noqa: E501
+        :type: int
+        """
+
+        self._password_length = password_length
+
+    @property
     def phone(self):
         """Gets the phone of this UpdateAccountSettings.  # noqa: E501
 
@@ -467,6 +515,98 @@ class UpdateAccountSettings(object):
         """
 
         self._uid_token = uid_token
+
+    @property
+    def use_lower_letters(self):
+        """Gets the use_lower_letters of this UpdateAccountSettings.  # noqa: E501
+
+        For PasswordPolicy use  # noqa: E501
+
+        :return: The use_lower_letters of this UpdateAccountSettings.  # noqa: E501
+        :rtype: str
+        """
+        return self._use_lower_letters
+
+    @use_lower_letters.setter
+    def use_lower_letters(self, use_lower_letters):
+        """Sets the use_lower_letters of this UpdateAccountSettings.
+
+        For PasswordPolicy use  # noqa: E501
+
+        :param use_lower_letters: The use_lower_letters of this UpdateAccountSettings.  # noqa: E501
+        :type: str
+        """
+
+        self._use_lower_letters = use_lower_letters
+
+    @property
+    def use_numbers(self):
+        """Gets the use_numbers of this UpdateAccountSettings.  # noqa: E501
+
+        For PasswordPolicy use  # noqa: E501
+
+        :return: The use_numbers of this UpdateAccountSettings.  # noqa: E501
+        :rtype: str
+        """
+        return self._use_numbers
+
+    @use_numbers.setter
+    def use_numbers(self, use_numbers):
+        """Sets the use_numbers of this UpdateAccountSettings.
+
+        For PasswordPolicy use  # noqa: E501
+
+        :param use_numbers: The use_numbers of this UpdateAccountSettings.  # noqa: E501
+        :type: str
+        """
+
+        self._use_numbers = use_numbers
+
+    @property
+    def use_special_characters(self):
+        """Gets the use_special_characters of this UpdateAccountSettings.  # noqa: E501
+
+        For PasswordPolicy use  # noqa: E501
+
+        :return: The use_special_characters of this UpdateAccountSettings.  # noqa: E501
+        :rtype: str
+        """
+        return self._use_special_characters
+
+    @use_special_characters.setter
+    def use_special_characters(self, use_special_characters):
+        """Sets the use_special_characters of this UpdateAccountSettings.
+
+        For PasswordPolicy use  # noqa: E501
+
+        :param use_special_characters: The use_special_characters of this UpdateAccountSettings.  # noqa: E501
+        :type: str
+        """
+
+        self._use_special_characters = use_special_characters
+
+    @property
+    def use_capital_letters(self):
+        """Gets the use_capital_letters of this UpdateAccountSettings.  # noqa: E501
+
+        For PasswordPolicy use  # noqa: E501
+
+        :return: The use_capital_letters of this UpdateAccountSettings.  # noqa: E501
+        :rtype: str
+        """
+        return self._use_capital_letters
+
+    @use_capital_letters.setter
+    def use_capital_letters(self, use_capital_letters):
+        """Sets the use_capital_letters of this UpdateAccountSettings.
+
+        For PasswordPolicy use  # noqa: E501
+
+        :param use_capital_letters: The use_capital_letters of this UpdateAccountSettings.  # noqa: E501
+        :type: str
+        """
+
+        self._use_capital_letters = use_capital_letters
 
     def to_dict(self):
         """Returns the model properties as a dict"""

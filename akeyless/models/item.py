@@ -62,6 +62,7 @@ class Item(object):
         'protection_key_type': 'str',
         'public_value': 'str',
         'rotation_interval': 'int',
+        'shared_by': 'RuleAssigner',
         'target_versions': 'list[TargetItemVersion]',
         'with_customer_fragment': 'bool'
     }
@@ -95,11 +96,12 @@ class Item(object):
         'protection_key_type': 'protection_key_type',
         'public_value': 'public_value',
         'rotation_interval': 'rotation_interval',
+        'shared_by': 'shared_by',
         'target_versions': 'target_versions',
         'with_customer_fragment': 'with_customer_fragment'
     }
 
-    def __init__(self, auto_rotate=None, cert_issuer_signer_key_name=None, certificate_issue_details=None, certificates=None, client_permissions=None, customer_fragment_id=None, delete_protection=None, deletion_date=None, display_id=None, is_enabled=None, item_accessibility=None, item_general_info=None, item_id=None, item_metadata=None, item_name=None, item_size=None, item_state=None, item_sub_type=None, item_tags=None, item_targets_assoc=None, item_type=None, item_versions=None, last_version=None, next_rotation_date=None, protection_key_name=None, protection_key_type=None, public_value=None, rotation_interval=None, target_versions=None, with_customer_fragment=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, auto_rotate=None, cert_issuer_signer_key_name=None, certificate_issue_details=None, certificates=None, client_permissions=None, customer_fragment_id=None, delete_protection=None, deletion_date=None, display_id=None, is_enabled=None, item_accessibility=None, item_general_info=None, item_id=None, item_metadata=None, item_name=None, item_size=None, item_state=None, item_sub_type=None, item_tags=None, item_targets_assoc=None, item_type=None, item_versions=None, last_version=None, next_rotation_date=None, protection_key_name=None, protection_key_type=None, public_value=None, rotation_interval=None, shared_by=None, target_versions=None, with_customer_fragment=None, local_vars_configuration=None):  # noqa: E501
         """Item - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -133,6 +135,7 @@ class Item(object):
         self._protection_key_type = None
         self._public_value = None
         self._rotation_interval = None
+        self._shared_by = None
         self._target_versions = None
         self._with_customer_fragment = None
         self.discriminator = None
@@ -193,6 +196,8 @@ class Item(object):
             self.public_value = public_value
         if rotation_interval is not None:
             self.rotation_interval = rotation_interval
+        if shared_by is not None:
+            self.shared_by = shared_by
         if target_versions is not None:
             self.target_versions = target_versions
         if with_customer_fragment is not None:
@@ -787,6 +792,27 @@ class Item(object):
         """
 
         self._rotation_interval = rotation_interval
+
+    @property
+    def shared_by(self):
+        """Gets the shared_by of this Item.  # noqa: E501
+
+
+        :return: The shared_by of this Item.  # noqa: E501
+        :rtype: RuleAssigner
+        """
+        return self._shared_by
+
+    @shared_by.setter
+    def shared_by(self, shared_by):
+        """Sets the shared_by of this Item.
+
+
+        :param shared_by: The shared_by of this Item.  # noqa: E501
+        :type: RuleAssigner
+        """
+
+        self._shared_by = shared_by
 
     @property
     def target_versions(self):

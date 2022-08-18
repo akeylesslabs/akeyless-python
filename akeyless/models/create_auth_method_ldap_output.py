@@ -34,24 +34,29 @@ class CreateAuthMethodLDAPOutput(object):
                             and the value is json key in definition.
     """
     openapi_types = {
-        'access_id': 'str'
+        'access_id': 'str',
+        'prv_key': 'str'
     }
 
     attribute_map = {
-        'access_id': 'access_id'
+        'access_id': 'access_id',
+        'prv_key': 'prv_key'
     }
 
-    def __init__(self, access_id=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, access_id=None, prv_key=None, local_vars_configuration=None):  # noqa: E501
         """CreateAuthMethodLDAPOutput - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._access_id = None
+        self._prv_key = None
         self.discriminator = None
 
         if access_id is not None:
             self.access_id = access_id
+        if prv_key is not None:
+            self.prv_key = prv_key
 
     @property
     def access_id(self):
@@ -73,6 +78,27 @@ class CreateAuthMethodLDAPOutput(object):
         """
 
         self._access_id = access_id
+
+    @property
+    def prv_key(self):
+        """Gets the prv_key of this CreateAuthMethodLDAPOutput.  # noqa: E501
+
+
+        :return: The prv_key of this CreateAuthMethodLDAPOutput.  # noqa: E501
+        :rtype: str
+        """
+        return self._prv_key
+
+    @prv_key.setter
+    def prv_key(self, prv_key):
+        """Sets the prv_key of this CreateAuthMethodLDAPOutput.
+
+
+        :param prv_key: The prv_key of this CreateAuthMethodLDAPOutput.  # noqa: E501
+        :type: str
+        """
+
+        self._prv_key = prv_key
 
     def to_dict(self):
         """Returns the model properties as a dict"""

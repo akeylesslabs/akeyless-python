@@ -39,6 +39,7 @@ class KubernetesAccessRules(object):
         'bound_namespaces': 'list[str]',
         'bound_pod_names': 'list[str]',
         'bound_service_account_names': 'list[str]',
+        'gen_key_pair': 'str',
         'pub_key': 'str'
     }
 
@@ -48,10 +49,11 @@ class KubernetesAccessRules(object):
         'bound_namespaces': 'bound_namespaces',
         'bound_pod_names': 'bound_pod_names',
         'bound_service_account_names': 'bound_service_account_names',
+        'gen_key_pair': 'gen_key_pair',
         'pub_key': 'pub_key'
     }
 
-    def __init__(self, alg=None, audience=None, bound_namespaces=None, bound_pod_names=None, bound_service_account_names=None, pub_key=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, alg=None, audience=None, bound_namespaces=None, bound_pod_names=None, bound_service_account_names=None, gen_key_pair=None, pub_key=None, local_vars_configuration=None):  # noqa: E501
         """KubernetesAccessRules - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -62,6 +64,7 @@ class KubernetesAccessRules(object):
         self._bound_namespaces = None
         self._bound_pod_names = None
         self._bound_service_account_names = None
+        self._gen_key_pair = None
         self._pub_key = None
         self.discriminator = None
 
@@ -75,6 +78,8 @@ class KubernetesAccessRules(object):
             self.bound_pod_names = bound_pod_names
         if bound_service_account_names is not None:
             self.bound_service_account_names = bound_service_account_names
+        if gen_key_pair is not None:
+            self.gen_key_pair = gen_key_pair
         if pub_key is not None:
             self.pub_key = pub_key
 
@@ -190,6 +195,29 @@ class KubernetesAccessRules(object):
         """
 
         self._bound_service_account_names = bound_service_account_names
+
+    @property
+    def gen_key_pair(self):
+        """Gets the gen_key_pair of this KubernetesAccessRules.  # noqa: E501
+
+        Generate public/private key (the private key is required for the K8S Auth Config in the Akeyless Gateway)  # noqa: E501
+
+        :return: The gen_key_pair of this KubernetesAccessRules.  # noqa: E501
+        :rtype: str
+        """
+        return self._gen_key_pair
+
+    @gen_key_pair.setter
+    def gen_key_pair(self, gen_key_pair):
+        """Sets the gen_key_pair of this KubernetesAccessRules.
+
+        Generate public/private key (the private key is required for the K8S Auth Config in the Akeyless Gateway)  # noqa: E501
+
+        :param gen_key_pair: The gen_key_pair of this KubernetesAccessRules.  # noqa: E501
+        :type: str
+        """
+
+        self._gen_key_pair = gen_key_pair
 
     @property
     def pub_key(self):

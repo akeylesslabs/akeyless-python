@@ -15,7 +15,7 @@
 
 from __future__ import absolute_import
 
-__version__ = "2.17.0"
+__version__ = "2.18.0"
 
 # import apis into sdk package
 from akeyless.api.v2_api import V2Api
@@ -183,8 +183,6 @@ from akeyless.models.encrypt import Encrypt
 from akeyless.models.encrypt_file import EncryptFile
 from akeyless.models.encrypt_file_output import EncryptFileOutput
 from akeyless.models.encrypt_output import EncryptOutput
-from akeyless.models.encrypt_pkcs1 import EncryptPKCS1
-from akeyless.models.encrypt_pkcs1_output import EncryptPKCS1Output
 from akeyless.models.encrypt_with_classic_key import EncryptWithClassicKey
 from akeyless.models.encrypt_with_classic_key_output import EncryptWithClassicKeyOutput
 from akeyless.models.external_kms_key_id import ExternalKMSKeyId
@@ -448,6 +446,7 @@ from akeyless.models.rotated_secret_details_info import RotatedSecretDetailsInfo
 from akeyless.models.rotated_secret_output import RotatedSecretOutput
 from akeyless.models.rotator import Rotator
 from akeyless.models.rotators_config_part import RotatorsConfigPart
+from akeyless.models.rule_assigner import RuleAssigner
 from akeyless.models.rules import Rules
 from akeyless.models.saml_access_rules import SAMLAccessRules
 from akeyless.models.saml_attribute import SAMLAttribute
@@ -507,6 +506,7 @@ from akeyless.models.update_auth_method_gcp import UpdateAuthMethodGCP
 from akeyless.models.update_auth_method_k8_s import UpdateAuthMethodK8S
 from akeyless.models.update_auth_method_k8_s_output import UpdateAuthMethodK8SOutput
 from akeyless.models.update_auth_method_ldap import UpdateAuthMethodLDAP
+from akeyless.models.update_auth_method_ldap_output import UpdateAuthMethodLDAPOutput
 from akeyless.models.update_auth_method_o_auth2 import UpdateAuthMethodOAuth2
 from akeyless.models.update_auth_method_oidc import UpdateAuthMethodOIDC
 from akeyless.models.update_auth_method_output import UpdateAuthMethodOutput

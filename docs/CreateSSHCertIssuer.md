@@ -18,7 +18,7 @@ Name | Type | Description | Notes
 **signer_key_name** | **str** | A key to sign the certificate with | 
 **tag** | **list[str]** | List of the tags attached to this key | [optional] 
 **token** | **str** | Authentication token (see &#x60;/auth&#x60; and &#x60;/configure&#x60;) | [optional] 
-**ttl** | **int** | he requested Time To Live for the certificate, in seconds | 
+**ttl** | **int** | The requested Time To Live for the certificate, in seconds | 
 **uid_token** | **str** | The universal identity token, Required only for universal_identity authentication | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

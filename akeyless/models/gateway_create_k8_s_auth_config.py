@@ -189,7 +189,7 @@ class GatewayCreateK8SAuthConfig(object):
     def k8s_ca_cert(self):
         """Gets the k8s_ca_cert of this GatewayCreateK8SAuthConfig.  # noqa: E501
 
-        The CA Cert (in PEM format) to use to call into the kubernetes API server  # noqa: E501
+        The CA Certificate (base64 encoded) to use to call into the kubernetes API server  # noqa: E501
 
         :return: The k8s_ca_cert of this GatewayCreateK8SAuthConfig.  # noqa: E501
         :rtype: str
@@ -200,7 +200,7 @@ class GatewayCreateK8SAuthConfig(object):
     def k8s_ca_cert(self, k8s_ca_cert):
         """Sets the k8s_ca_cert of this GatewayCreateK8SAuthConfig.
 
-        The CA Cert (in PEM format) to use to call into the kubernetes API server  # noqa: E501
+        The CA Certificate (base64 encoded) to use to call into the kubernetes API server  # noqa: E501
 
         :param k8s_ca_cert: The k8s_ca_cert of this GatewayCreateK8SAuthConfig.  # noqa: E501
         :type: str
@@ -331,7 +331,7 @@ class GatewayCreateK8SAuthConfig(object):
     def signing_key(self):
         """Gets the signing_key of this GatewayCreateK8SAuthConfig.  # noqa: E501
 
-        The private key (in base64 encoded of the PEM format) associated with the public key defined in the Kubernetes auth  # noqa: E501
+        The private key (base64 encoded) associated with the public key defined in the Kubernetes auth  # noqa: E501
 
         :return: The signing_key of this GatewayCreateK8SAuthConfig.  # noqa: E501
         :rtype: str
@@ -342,7 +342,7 @@ class GatewayCreateK8SAuthConfig(object):
     def signing_key(self, signing_key):
         """Sets the signing_key of this GatewayCreateK8SAuthConfig.
 
-        The private key (in base64 encoded of the PEM format) associated with the public key defined in the Kubernetes auth  # noqa: E501
+        The private key (base64 encoded) associated with the public key defined in the Kubernetes auth  # noqa: E501
 
         :param signing_key: The signing_key of this GatewayCreateK8SAuthConfig.  # noqa: E501
         :type: str

@@ -65,7 +65,6 @@ Method | HTTP request | Description
 [**describe_sub_claims**](V2Api.md#describe_sub_claims) | **POST** /describe-sub-claims | 
 [**detokenize**](V2Api.md#detokenize) | **POST** /detokenize | 
 [**encrypt**](V2Api.md#encrypt) | **POST** /encrypt | 
-[**encrypt_pkcs1**](V2Api.md#encrypt_pkcs1) | **POST** /encrypt-pkcs1 | 
 [**encrypt_with_classic_key**](V2Api.md#encrypt_with_classic_key) | **POST** /encrypt-with-classic-key | 
 [**gateway_create_k8_s_auth_config**](V2Api.md#gateway_create_k8_s_auth_config) | **POST** /gateway-create-k8s-auth-config | 
 [**gateway_create_migration**](V2Api.md#gateway_create_migration) | **POST** /gateway-create-migration | 
@@ -3898,66 +3897,6 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | encryptResponse wraps response body. |  -  |
-**0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **encrypt_pkcs1**
-> EncryptPKCS1Output encrypt_pkcs1(body)
-
-
-
-### Example
-
-```python
-from __future__ import print_function
-import time
-import akeyless
-from akeyless.rest import ApiException
-from pprint import pprint
-# Defining the host is optional and defaults to https://api.akeyless.io
-# See configuration.py for a list of all supported configuration parameters.
-configuration = akeyless.Configuration(
-    host = "https://api.akeyless.io"
-)
-
-
-# Enter a context with an instance of the API client
-with akeyless.ApiClient() as api_client:
-    # Create an instance of the API class
-    api_instance = akeyless.V2Api(api_client)
-    body = akeyless.EncryptPKCS1() # EncryptPKCS1 | 
-
-    try:
-        api_response = api_instance.encrypt_pkcs1(body)
-        pprint(api_response)
-    except ApiException as e:
-        print("Exception when calling V2Api->encrypt_pkcs1: %s\n" % e)
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **body** | [**EncryptPKCS1**](EncryptPKCS1.md)|  | 
-
-### Return type
-
-[**EncryptPKCS1Output**](EncryptPKCS1Output.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | encryptPKCS1Response wraps response body. |  -  |
 **0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -11873,7 +11812,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_auth_method_ldap**
-> object update_auth_method_ldap(body)
+> UpdateAuthMethodLDAPOutput update_auth_method_ldap(body)
 
 
 
@@ -11913,7 +11852,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**object**
+[**UpdateAuthMethodLDAPOutput**](UpdateAuthMethodLDAPOutput.md)
 
 ### Authorization
 

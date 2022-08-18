@@ -37,6 +37,7 @@ class UpdateAuthMethodLDAP(object):
         'access_expires': 'int',
         'bound_ips': 'list[str]',
         'force_sub_claims': 'bool',
+        'gen_key': 'str',
         'gw_bound_ips': 'list[str]',
         'jwt_ttl': 'int',
         'name': 'str',
@@ -51,6 +52,7 @@ class UpdateAuthMethodLDAP(object):
         'access_expires': 'access-expires',
         'bound_ips': 'bound-ips',
         'force_sub_claims': 'force-sub-claims',
+        'gen_key': 'gen-key',
         'gw_bound_ips': 'gw-bound-ips',
         'jwt_ttl': 'jwt-ttl',
         'name': 'name',
@@ -61,7 +63,7 @@ class UpdateAuthMethodLDAP(object):
         'unique_identifier': 'unique-identifier'
     }
 
-    def __init__(self, access_expires=0, bound_ips=None, force_sub_claims=None, gw_bound_ips=None, jwt_ttl=None, name=None, new_name=None, public_key_data=None, token=None, uid_token=None, unique_identifier=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, access_expires=0, bound_ips=None, force_sub_claims=None, gen_key=None, gw_bound_ips=None, jwt_ttl=None, name=None, new_name=None, public_key_data=None, token=None, uid_token=None, unique_identifier=None, local_vars_configuration=None):  # noqa: E501
         """UpdateAuthMethodLDAP - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -70,6 +72,7 @@ class UpdateAuthMethodLDAP(object):
         self._access_expires = None
         self._bound_ips = None
         self._force_sub_claims = None
+        self._gen_key = None
         self._gw_bound_ips = None
         self._jwt_ttl = None
         self._name = None
@@ -86,6 +89,8 @@ class UpdateAuthMethodLDAP(object):
             self.bound_ips = bound_ips
         if force_sub_claims is not None:
             self.force_sub_claims = force_sub_claims
+        if gen_key is not None:
+            self.gen_key = gen_key
         if gw_bound_ips is not None:
             self.gw_bound_ips = gw_bound_ips
         if jwt_ttl is not None:
@@ -170,6 +175,29 @@ class UpdateAuthMethodLDAP(object):
         """
 
         self._force_sub_claims = force_sub_claims
+
+    @property
+    def gen_key(self):
+        """Gets the gen_key of this UpdateAuthMethodLDAP.  # noqa: E501
+
+        Automatically generate key-pair for LDAP configuration. If set to false, a public key needs to be provided  # noqa: E501
+
+        :return: The gen_key of this UpdateAuthMethodLDAP.  # noqa: E501
+        :rtype: str
+        """
+        return self._gen_key
+
+    @gen_key.setter
+    def gen_key(self, gen_key):
+        """Sets the gen_key of this UpdateAuthMethodLDAP.
+
+        Automatically generate key-pair for LDAP configuration. If set to false, a public key needs to be provided  # noqa: E501
+
+        :param gen_key: The gen_key of this UpdateAuthMethodLDAP.  # noqa: E501
+        :type: str
+        """
+
+        self._gen_key = gen_key
 
     @property
     def gw_bound_ips(self):
@@ -269,7 +297,7 @@ class UpdateAuthMethodLDAP(object):
     def public_key_data(self):
         """Gets the public_key_data of this UpdateAuthMethodLDAP.  # noqa: E501
 
-        A public key generated for LDAP authentication method on Akeyless in base64 format [RSA2048]  # noqa: E501
+        A public key generated for LDAP authentication method on Akeyless in base64 or PEM format [RSA2048]  # noqa: E501
 
         :return: The public_key_data of this UpdateAuthMethodLDAP.  # noqa: E501
         :rtype: str
@@ -280,7 +308,7 @@ class UpdateAuthMethodLDAP(object):
     def public_key_data(self, public_key_data):
         """Sets the public_key_data of this UpdateAuthMethodLDAP.
 
-        A public key generated for LDAP authentication method on Akeyless in base64 format [RSA2048]  # noqa: E501
+        A public key generated for LDAP authentication method on Akeyless in base64 or PEM format [RSA2048]  # noqa: E501
 
         :param public_key_data: The public_key_data of this UpdateAuthMethodLDAP.  # noqa: E501
         :type: str

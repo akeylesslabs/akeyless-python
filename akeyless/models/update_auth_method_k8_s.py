@@ -69,7 +69,7 @@ class UpdateAuthMethodK8S(object):
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, access_expires=0, audience=None, bound_ips=None, bound_namespaces=None, bound_pod_names=None, bound_sa_names=None, force_sub_claims=None, gen_key='true', gw_bound_ips=None, jwt_ttl=None, name=None, new_name=None, public_key=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, access_expires=0, audience=None, bound_ips=None, bound_namespaces=None, bound_pod_names=None, bound_sa_names=None, force_sub_claims=None, gen_key=None, gw_bound_ips=None, jwt_ttl=None, name=None, new_name=None, public_key=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """UpdateAuthMethodK8S - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -287,7 +287,7 @@ class UpdateAuthMethodK8S(object):
     def gen_key(self):
         """Gets the gen_key of this UpdateAuthMethodK8S.  # noqa: E501
 
-        If this flag is set to true, there is no need to manually provide a public key for the Kubernetes Auth Method, and instead, a key pair, will be generated as part of the command and the private part of the key will be returned (the private key is required for the K8S Auth Config in the Akeyless Gateway)  # noqa: E501
+        Automatically generate key-pair for K8S configuration. If set to false, a public key needs to be provided  # noqa: E501
 
         :return: The gen_key of this UpdateAuthMethodK8S.  # noqa: E501
         :rtype: str
@@ -298,7 +298,7 @@ class UpdateAuthMethodK8S(object):
     def gen_key(self, gen_key):
         """Sets the gen_key of this UpdateAuthMethodK8S.
 
-        If this flag is set to true, there is no need to manually provide a public key for the Kubernetes Auth Method, and instead, a key pair, will be generated as part of the command and the private part of the key will be returned (the private key is required for the K8S Auth Config in the Akeyless Gateway)  # noqa: E501
+        Automatically generate key-pair for K8S configuration. If set to false, a public key needs to be provided  # noqa: E501
 
         :param gen_key: The gen_key of this UpdateAuthMethodK8S.  # noqa: E501
         :type: str
@@ -404,7 +404,7 @@ class UpdateAuthMethodK8S(object):
     def public_key(self):
         """Gets the public_key of this UpdateAuthMethodK8S.  # noqa: E501
 
-        Base64-encoded public key text for K8S authentication method is required [RSA2048]  # noqa: E501
+        Base64-encoded or PEM formatted public key data for K8S authentication method is required [RSA2048]  # noqa: E501
 
         :return: The public_key of this UpdateAuthMethodK8S.  # noqa: E501
         :rtype: str
@@ -415,7 +415,7 @@ class UpdateAuthMethodK8S(object):
     def public_key(self, public_key):
         """Sets the public_key of this UpdateAuthMethodK8S.
 
-        Base64-encoded public key text for K8S authentication method is required [RSA2048]  # noqa: E501
+        Base64-encoded or PEM formatted public key data for K8S authentication method is required [RSA2048]  # noqa: E501
 
         :param public_key: The public_key of this UpdateAuthMethodK8S.  # noqa: E501
         :type: str

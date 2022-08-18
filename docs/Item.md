@@ -31,6 +31,7 @@ Name | Type | Description | Notes
 **protection_key_type** | **str** |  | [optional] 
 **public_value** | **str** |  | [optional] 
 **rotation_interval** | **int** |  | [optional] 
+**shared_by** | [**RuleAssigner**](RuleAssigner.md) |  | [optional] 
 **target_versions** | [**list[TargetItemVersion]**](TargetItemVersion.md) |  | [optional] 
 **with_customer_fragment** | **bool** |  | [optional] 
 

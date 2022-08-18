@@ -14,10 +14,15 @@ Name | Type | Description | Notes
 **jwt_ttl_max** | **int** | Maximum ttl | [optional] 
 **jwt_ttl_min** | **int** | Minimum ttl | [optional] 
 **max_versions** | **str** | Max versions | [optional] 
+**password_length** | **int** | For PasswordPolicy use | [optional] 
 **phone** | **str** | Phone number | [optional] 
 **postal_code** | **str** | Postal code | [optional] 
 **token** | **str** | Authentication token (see &#x60;/auth&#x60; and &#x60;/configure&#x60;) | [optional] 
 **uid_token** | **str** | The universal identity token, Required only for universal_identity authentication | [optional] 
+**use_lower_letters** | **str** | For PasswordPolicy use | [optional] 
+**use_numbers** | **str** | For PasswordPolicy use | [optional] 
+**use_special_characters** | **str** | For PasswordPolicy use | [optional] 
+**use_capital_letters** | **str** | For PasswordPolicy use | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

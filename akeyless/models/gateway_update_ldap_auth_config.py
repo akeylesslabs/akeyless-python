@@ -265,7 +265,7 @@ class GatewayUpdateLdapAuthConfig(object):
     def ldap_ca_cert(self):
         """Gets the ldap_ca_cert of this GatewayUpdateLdapAuthConfig.  # noqa: E501
 
-        The CA Cert (in PEM format) to use to call into the ldap API server  # noqa: E501
+        LDAP CA Certificate (base64 encoded)  # noqa: E501
 
         :return: The ldap_ca_cert of this GatewayUpdateLdapAuthConfig.  # noqa: E501
         :rtype: str
@@ -276,7 +276,7 @@ class GatewayUpdateLdapAuthConfig(object):
     def ldap_ca_cert(self, ldap_ca_cert):
         """Sets the ldap_ca_cert of this GatewayUpdateLdapAuthConfig.
 
-        The CA Cert (in PEM format) to use to call into the ldap API server  # noqa: E501
+        LDAP CA Certificate (base64 encoded)  # noqa: E501
 
         :param ldap_ca_cert: The ldap_ca_cert of this GatewayUpdateLdapAuthConfig.  # noqa: E501
         :type: str
@@ -357,7 +357,7 @@ class GatewayUpdateLdapAuthConfig(object):
     def signing_key_data(self):
         """Gets the signing_key_data of this GatewayUpdateLdapAuthConfig.  # noqa: E501
 
-        The private key (in PEM format) associated with the public key defined in the Ldap auth  # noqa: E501
+        The private key (base64 encoded), associated with the public key defined in the Ldap auth  # noqa: E501
 
         :return: The signing_key_data of this GatewayUpdateLdapAuthConfig.  # noqa: E501
         :rtype: str
@@ -368,7 +368,7 @@ class GatewayUpdateLdapAuthConfig(object):
     def signing_key_data(self, signing_key_data):
         """Sets the signing_key_data of this GatewayUpdateLdapAuthConfig.
 
-        The private key (in PEM format) associated with the public key defined in the Ldap auth  # noqa: E501
+        The private key (base64 encoded), associated with the public key defined in the Ldap auth  # noqa: E501
 
         :param signing_key_data: The signing_key_data of this GatewayUpdateLdapAuthConfig.  # noqa: E501
         :type: str

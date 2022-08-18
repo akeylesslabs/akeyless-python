@@ -35,29 +35,34 @@ class LDAPAccessRules(object):
     """
     openapi_types = {
         'alg': 'str',
+        'gen_key_pair': 'str',
         'key': 'str',
         'unique_identifier': 'str'
     }
 
     attribute_map = {
         'alg': 'alg',
+        'gen_key_pair': 'gen_key_pair',
         'key': 'key',
         'unique_identifier': 'unique_identifier'
     }
 
-    def __init__(self, alg=None, key=None, unique_identifier=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, alg=None, gen_key_pair=None, key=None, unique_identifier=None, local_vars_configuration=None):  # noqa: E501
         """LDAPAccessRules - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._alg = None
+        self._gen_key_pair = None
         self._key = None
         self._unique_identifier = None
         self.discriminator = None
 
         if alg is not None:
             self.alg = alg
+        if gen_key_pair is not None:
+            self.gen_key_pair = gen_key_pair
         if key is not None:
             self.key = key
         if unique_identifier is not None:
@@ -83,6 +88,29 @@ class LDAPAccessRules(object):
         """
 
         self._alg = alg
+
+    @property
+    def gen_key_pair(self):
+        """Gets the gen_key_pair of this LDAPAccessRules.  # noqa: E501
+
+        Generate public/private key (the private key is required for the LDAP Auth Config in the Akeyless Gateway)  # noqa: E501
+
+        :return: The gen_key_pair of this LDAPAccessRules.  # noqa: E501
+        :rtype: str
+        """
+        return self._gen_key_pair
+
+    @gen_key_pair.setter
+    def gen_key_pair(self, gen_key_pair):
+        """Sets the gen_key_pair of this LDAPAccessRules.
+
+        Generate public/private key (the private key is required for the LDAP Auth Config in the Akeyless Gateway)  # noqa: E501
+
+        :param gen_key_pair: The gen_key_pair of this LDAPAccessRules.  # noqa: E501
+        :type: str
+        """
+
+        self._gen_key_pair = gen_key_pair
 
     @property
     def key(self):
