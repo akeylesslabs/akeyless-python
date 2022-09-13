@@ -34,24 +34,52 @@ class Unconfigure(object):
                             and the value is json key in definition.
     """
     openapi_types = {
+        'json': 'bool',
         'profile': 'str'
     }
 
     attribute_map = {
+        'json': 'json',
         'profile': 'profile'
     }
 
-    def __init__(self, profile='default', local_vars_configuration=None):  # noqa: E501
+    def __init__(self, json=None, profile='default', local_vars_configuration=None):  # noqa: E501
         """Unconfigure - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
+        self._json = None
         self._profile = None
         self.discriminator = None
 
+        if json is not None:
+            self.json = json
         if profile is not None:
             self.profile = profile
+
+    @property
+    def json(self):
+        """Gets the json of this Unconfigure.  # noqa: E501
+
+        Set output format to JSON  # noqa: E501
+
+        :return: The json of this Unconfigure.  # noqa: E501
+        :rtype: bool
+        """
+        return self._json
+
+    @json.setter
+    def json(self, json):
+        """Sets the json of this Unconfigure.
+
+        Set output format to JSON  # noqa: E501
+
+        :param json: The json of this Unconfigure.  # noqa: E501
+        :type: bool
+        """
+
+        self._json = json
 
     @property
     def profile(self):

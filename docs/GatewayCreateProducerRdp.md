@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **allow_user_extend_session** | **int** | AllowUserExtendSession | [optional] 
 **delete_protection** | **str** | Protection from accidental deletion of this item | [optional] 
 **fixed_user_only** | **str** | Fixed user | [optional] [default to 'false']
+**json** | **bool** | Set output format to JSON | [optional] 
 **name** | **str** | Producer name | 
 **producer_encryption_key_name** | **str** | Dynamic producer encryption key | [optional] 
 **rdp_admin_name** | **str** | RDP Admin Name | [optional] 

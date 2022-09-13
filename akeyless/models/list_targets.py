@@ -35,6 +35,7 @@ class ListTargets(object):
     """
     openapi_types = {
         'filter': 'str',
+        'json': 'bool',
         'pagination_token': 'str',
         'token': 'str',
         'type': 'list[str]',
@@ -43,19 +44,21 @@ class ListTargets(object):
 
     attribute_map = {
         'filter': 'filter',
+        'json': 'json',
         'pagination_token': 'pagination-token',
         'token': 'token',
         'type': 'type',
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, filter=None, pagination_token=None, token=None, type=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, filter=None, json=None, pagination_token=None, token=None, type=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """ListTargets - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._filter = None
+        self._json = None
         self._pagination_token = None
         self._token = None
         self._type = None
@@ -64,6 +67,8 @@ class ListTargets(object):
 
         if filter is not None:
             self.filter = filter
+        if json is not None:
+            self.json = json
         if pagination_token is not None:
             self.pagination_token = pagination_token
         if token is not None:
@@ -95,6 +100,29 @@ class ListTargets(object):
         """
 
         self._filter = filter
+
+    @property
+    def json(self):
+        """Gets the json of this ListTargets.  # noqa: E501
+
+        Set output format to JSON  # noqa: E501
+
+        :return: The json of this ListTargets.  # noqa: E501
+        :rtype: bool
+        """
+        return self._json
+
+    @json.setter
+    def json(self, json):
+        """Sets the json of this ListTargets.
+
+        Set output format to JSON  # noqa: E501
+
+        :param json: The json of this ListTargets.  # noqa: E501
+        :type: bool
+        """
+
+        self._json = json
 
     @property
     def pagination_token(self):

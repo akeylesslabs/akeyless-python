@@ -4,6 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **host** | **str** |  | [optional] 
+**json** | **bool** | Set output format to JSON | [optional] 
 **keep_prev_version** | **str** |  | [optional] 
 **name** | **str** | Target name | 
 **new_version** | **bool** | Deprecated | [optional] 

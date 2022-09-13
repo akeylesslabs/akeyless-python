@@ -38,7 +38,8 @@ class MigrationsConfigPart(object):
         'azure_kv_migrations': 'list[AzureKeyVaultMigration]',
         'gcp_secrets_migrations': 'list[GCPSecretsMigration]',
         'hashi_migrations': 'list[HashiMigration]',
-        'k8s_migrations': 'list[K8SMigration]'
+        'k8s_migrations': 'list[K8SMigration]',
+        'one_password_migrations': 'list[OnePasswordMigration]'
     }
 
     attribute_map = {
@@ -46,10 +47,11 @@ class MigrationsConfigPart(object):
         'azure_kv_migrations': 'azure_kv_migrations',
         'gcp_secrets_migrations': 'gcp_secrets_migrations',
         'hashi_migrations': 'hashi_migrations',
-        'k8s_migrations': 'k8s_migrations'
+        'k8s_migrations': 'k8s_migrations',
+        'one_password_migrations': 'one_password_migrations'
     }
 
-    def __init__(self, aws_secrets_migrations=None, azure_kv_migrations=None, gcp_secrets_migrations=None, hashi_migrations=None, k8s_migrations=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, aws_secrets_migrations=None, azure_kv_migrations=None, gcp_secrets_migrations=None, hashi_migrations=None, k8s_migrations=None, one_password_migrations=None, local_vars_configuration=None):  # noqa: E501
         """MigrationsConfigPart - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -60,6 +62,7 @@ class MigrationsConfigPart(object):
         self._gcp_secrets_migrations = None
         self._hashi_migrations = None
         self._k8s_migrations = None
+        self._one_password_migrations = None
         self.discriminator = None
 
         if aws_secrets_migrations is not None:
@@ -72,6 +75,8 @@ class MigrationsConfigPart(object):
             self.hashi_migrations = hashi_migrations
         if k8s_migrations is not None:
             self.k8s_migrations = k8s_migrations
+        if one_password_migrations is not None:
+            self.one_password_migrations = one_password_migrations
 
     @property
     def aws_secrets_migrations(self):
@@ -177,6 +182,27 @@ class MigrationsConfigPart(object):
         """
 
         self._k8s_migrations = k8s_migrations
+
+    @property
+    def one_password_migrations(self):
+        """Gets the one_password_migrations of this MigrationsConfigPart.  # noqa: E501
+
+
+        :return: The one_password_migrations of this MigrationsConfigPart.  # noqa: E501
+        :rtype: list[OnePasswordMigration]
+        """
+        return self._one_password_migrations
+
+    @one_password_migrations.setter
+    def one_password_migrations(self, one_password_migrations):
+        """Sets the one_password_migrations of this MigrationsConfigPart.
+
+
+        :param one_password_migrations: The one_password_migrations of this MigrationsConfigPart.  # noqa: E501
+        :type: list[OnePasswordMigration]
+        """
+
+        self._one_password_migrations = one_password_migrations
 
     def to_dict(self):
         """Returns the model properties as a dict"""

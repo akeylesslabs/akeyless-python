@@ -9,6 +9,9 @@ Name | Type | Description | Notes
 **auth_method_name** | **str** |  | [optional] 
 **auth_method_roles_assoc** | [**list[AuthMethodRoleAssociation]**](AuthMethodRoleAssociation.md) |  | [optional] 
 **client_permissions** | **list[str]** |  | [optional] 
+**creation_date** | **datetime** |  | [optional] 
+**modification_date** | **datetime** |  | [optional] 
+**usage_date** | **datetime** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

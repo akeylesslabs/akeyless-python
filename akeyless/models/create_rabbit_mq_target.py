@@ -35,6 +35,7 @@ class CreateRabbitMQTarget(object):
     """
     openapi_types = {
         'comment': 'str',
+        'json': 'bool',
         'key': 'str',
         'name': 'str',
         'rabbitmq_server_password': 'str',
@@ -46,6 +47,7 @@ class CreateRabbitMQTarget(object):
 
     attribute_map = {
         'comment': 'comment',
+        'json': 'json',
         'key': 'key',
         'name': 'name',
         'rabbitmq_server_password': 'rabbitmq-server-password',
@@ -55,13 +57,14 @@ class CreateRabbitMQTarget(object):
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, comment=None, key=None, name=None, rabbitmq_server_password=None, rabbitmq_server_uri=None, rabbitmq_server_user=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, comment=None, json=None, key=None, name=None, rabbitmq_server_password=None, rabbitmq_server_uri=None, rabbitmq_server_user=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """CreateRabbitMQTarget - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._comment = None
+        self._json = None
         self._key = None
         self._name = None
         self._rabbitmq_server_password = None
@@ -73,6 +76,8 @@ class CreateRabbitMQTarget(object):
 
         if comment is not None:
             self.comment = comment
+        if json is not None:
+            self.json = json
         if key is not None:
             self.key = key
         self.name = name
@@ -109,6 +114,29 @@ class CreateRabbitMQTarget(object):
         """
 
         self._comment = comment
+
+    @property
+    def json(self):
+        """Gets the json of this CreateRabbitMQTarget.  # noqa: E501
+
+        Set output format to JSON  # noqa: E501
+
+        :return: The json of this CreateRabbitMQTarget.  # noqa: E501
+        :rtype: bool
+        """
+        return self._json
+
+    @json.setter
+    def json(self, json):
+        """Sets the json of this CreateRabbitMQTarget.
+
+        Set output format to JSON  # noqa: E501
+
+        :param json: The json of this CreateRabbitMQTarget.  # noqa: E501
+        :type: bool
+        """
+
+        self._json = json
 
     @property
     def key(self):

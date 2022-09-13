@@ -35,6 +35,7 @@ class CreateWebTarget(object):
     """
     openapi_types = {
         'comment': 'str',
+        'json': 'bool',
         'key': 'str',
         'name': 'str',
         'token': 'str',
@@ -44,6 +45,7 @@ class CreateWebTarget(object):
 
     attribute_map = {
         'comment': 'comment',
+        'json': 'json',
         'key': 'key',
         'name': 'name',
         'token': 'token',
@@ -51,13 +53,14 @@ class CreateWebTarget(object):
         'url': 'url'
     }
 
-    def __init__(self, comment=None, key=None, name=None, token=None, uid_token=None, url=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, comment=None, json=None, key=None, name=None, token=None, uid_token=None, url=None, local_vars_configuration=None):  # noqa: E501
         """CreateWebTarget - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._comment = None
+        self._json = None
         self._key = None
         self._name = None
         self._token = None
@@ -67,6 +70,8 @@ class CreateWebTarget(object):
 
         if comment is not None:
             self.comment = comment
+        if json is not None:
+            self.json = json
         if key is not None:
             self.key = key
         self.name = name
@@ -99,6 +104,29 @@ class CreateWebTarget(object):
         """
 
         self._comment = comment
+
+    @property
+    def json(self):
+        """Gets the json of this CreateWebTarget.  # noqa: E501
+
+        Set output format to JSON  # noqa: E501
+
+        :return: The json of this CreateWebTarget.  # noqa: E501
+        :rtype: bool
+        """
+        return self._json
+
+    @json.setter
+    def json(self, json):
+        """Sets the json of this CreateWebTarget.
+
+        Set output format to JSON  # noqa: E501
+
+        :param json: The json of this CreateWebTarget.  # noqa: E501
+        :type: bool
+        """
+
+        self._json = json
 
     @property
     def key(self):

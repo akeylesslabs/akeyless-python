@@ -39,7 +39,10 @@ class AuthMethod(object):
         'auth_method_access_id': 'str',
         'auth_method_name': 'str',
         'auth_method_roles_assoc': 'list[AuthMethodRoleAssociation]',
-        'client_permissions': 'list[str]'
+        'client_permissions': 'list[str]',
+        'creation_date': 'datetime',
+        'modification_date': 'datetime',
+        'usage_date': 'datetime'
     }
 
     attribute_map = {
@@ -48,10 +51,13 @@ class AuthMethod(object):
         'auth_method_access_id': 'auth_method_access_id',
         'auth_method_name': 'auth_method_name',
         'auth_method_roles_assoc': 'auth_method_roles_assoc',
-        'client_permissions': 'client_permissions'
+        'client_permissions': 'client_permissions',
+        'creation_date': 'creation_date',
+        'modification_date': 'modification_date',
+        'usage_date': 'usage_date'
     }
 
-    def __init__(self, access_info=None, account_id=None, auth_method_access_id=None, auth_method_name=None, auth_method_roles_assoc=None, client_permissions=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, access_info=None, account_id=None, auth_method_access_id=None, auth_method_name=None, auth_method_roles_assoc=None, client_permissions=None, creation_date=None, modification_date=None, usage_date=None, local_vars_configuration=None):  # noqa: E501
         """AuthMethod - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -63,6 +69,9 @@ class AuthMethod(object):
         self._auth_method_name = None
         self._auth_method_roles_assoc = None
         self._client_permissions = None
+        self._creation_date = None
+        self._modification_date = None
+        self._usage_date = None
         self.discriminator = None
 
         if access_info is not None:
@@ -77,6 +86,12 @@ class AuthMethod(object):
             self.auth_method_roles_assoc = auth_method_roles_assoc
         if client_permissions is not None:
             self.client_permissions = client_permissions
+        if creation_date is not None:
+            self.creation_date = creation_date
+        if modification_date is not None:
+            self.modification_date = modification_date
+        if usage_date is not None:
+            self.usage_date = usage_date
 
     @property
     def access_info(self):
@@ -203,6 +218,69 @@ class AuthMethod(object):
         """
 
         self._client_permissions = client_permissions
+
+    @property
+    def creation_date(self):
+        """Gets the creation_date of this AuthMethod.  # noqa: E501
+
+
+        :return: The creation_date of this AuthMethod.  # noqa: E501
+        :rtype: datetime
+        """
+        return self._creation_date
+
+    @creation_date.setter
+    def creation_date(self, creation_date):
+        """Sets the creation_date of this AuthMethod.
+
+
+        :param creation_date: The creation_date of this AuthMethod.  # noqa: E501
+        :type: datetime
+        """
+
+        self._creation_date = creation_date
+
+    @property
+    def modification_date(self):
+        """Gets the modification_date of this AuthMethod.  # noqa: E501
+
+
+        :return: The modification_date of this AuthMethod.  # noqa: E501
+        :rtype: datetime
+        """
+        return self._modification_date
+
+    @modification_date.setter
+    def modification_date(self, modification_date):
+        """Sets the modification_date of this AuthMethod.
+
+
+        :param modification_date: The modification_date of this AuthMethod.  # noqa: E501
+        :type: datetime
+        """
+
+        self._modification_date = modification_date
+
+    @property
+    def usage_date(self):
+        """Gets the usage_date of this AuthMethod.  # noqa: E501
+
+
+        :return: The usage_date of this AuthMethod.  # noqa: E501
+        :rtype: datetime
+        """
+        return self._usage_date
+
+    @usage_date.setter
+    def usage_date(self, usage_date):
+        """Sets the usage_date of this AuthMethod.
+
+
+        :param usage_date: The usage_date of this AuthMethod.  # noqa: E501
+        :type: datetime
+        """
+
+        self._usage_date = usage_date
 
     def to_dict(self):
         """Returns the model properties as a dict"""

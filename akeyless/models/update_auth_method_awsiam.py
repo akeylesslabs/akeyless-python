@@ -45,6 +45,7 @@ class UpdateAuthMethodAWSIAM(object):
         'bound_user_name': 'list[str]',
         'force_sub_claims': 'bool',
         'gw_bound_ips': 'list[str]',
+        'json': 'bool',
         'jwt_ttl': 'int',
         'name': 'str',
         'new_name': 'str',
@@ -65,6 +66,7 @@ class UpdateAuthMethodAWSIAM(object):
         'bound_user_name': 'bound-user-name',
         'force_sub_claims': 'force-sub-claims',
         'gw_bound_ips': 'gw-bound-ips',
+        'json': 'json',
         'jwt_ttl': 'jwt-ttl',
         'name': 'name',
         'new_name': 'new-name',
@@ -73,7 +75,7 @@ class UpdateAuthMethodAWSIAM(object):
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, access_expires=0, bound_arn=None, bound_aws_account_id=None, bound_ips=None, bound_resource_id=None, bound_role_id=None, bound_role_name=None, bound_user_id=None, bound_user_name=None, force_sub_claims=None, gw_bound_ips=None, jwt_ttl=None, name=None, new_name=None, sts_url='https://sts.amazonaws.com', token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, access_expires=0, bound_arn=None, bound_aws_account_id=None, bound_ips=None, bound_resource_id=None, bound_role_id=None, bound_role_name=None, bound_user_id=None, bound_user_name=None, force_sub_claims=None, gw_bound_ips=None, json=None, jwt_ttl=None, name=None, new_name=None, sts_url='https://sts.amazonaws.com', token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """UpdateAuthMethodAWSIAM - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -90,6 +92,7 @@ class UpdateAuthMethodAWSIAM(object):
         self._bound_user_name = None
         self._force_sub_claims = None
         self._gw_bound_ips = None
+        self._json = None
         self._jwt_ttl = None
         self._name = None
         self._new_name = None
@@ -119,6 +122,8 @@ class UpdateAuthMethodAWSIAM(object):
             self.force_sub_claims = force_sub_claims
         if gw_bound_ips is not None:
             self.gw_bound_ips = gw_bound_ips
+        if json is not None:
+            self.json = json
         if jwt_ttl is not None:
             self.jwt_ttl = jwt_ttl
         self.name = name
@@ -385,6 +390,29 @@ class UpdateAuthMethodAWSIAM(object):
         """
 
         self._gw_bound_ips = gw_bound_ips
+
+    @property
+    def json(self):
+        """Gets the json of this UpdateAuthMethodAWSIAM.  # noqa: E501
+
+        Set output format to JSON  # noqa: E501
+
+        :return: The json of this UpdateAuthMethodAWSIAM.  # noqa: E501
+        :rtype: bool
+        """
+        return self._json
+
+    @json.setter
+    def json(self, json):
+        """Sets the json of this UpdateAuthMethodAWSIAM.
+
+        Set output format to JSON  # noqa: E501
+
+        :param json: The json of this UpdateAuthMethodAWSIAM.  # noqa: E501
+        :type: bool
+        """
+
+        self._json = json
 
     @property
     def jwt_ttl(self):

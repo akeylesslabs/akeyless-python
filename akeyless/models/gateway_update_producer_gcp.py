@@ -40,6 +40,7 @@ class GatewayUpdateProducerGcp(object):
         'gcp_key_algo': 'str',
         'gcp_sa_email': 'str',
         'gcp_token_scopes': 'str',
+        'json': 'bool',
         'name': 'str',
         'new_name': 'str',
         'producer_encryption_key_name': 'str',
@@ -57,6 +58,7 @@ class GatewayUpdateProducerGcp(object):
         'gcp_key_algo': 'gcp-key-algo',
         'gcp_sa_email': 'gcp-sa-email',
         'gcp_token_scopes': 'gcp-token-scopes',
+        'json': 'json',
         'name': 'name',
         'new_name': 'new-name',
         'producer_encryption_key_name': 'producer-encryption-key-name',
@@ -67,7 +69,7 @@ class GatewayUpdateProducerGcp(object):
         'user_ttl': 'user-ttl'
     }
 
-    def __init__(self, delete_protection=None, gcp_cred_type=None, gcp_key=None, gcp_key_algo=None, gcp_sa_email=None, gcp_token_scopes=None, name=None, new_name=None, producer_encryption_key_name=None, tags=None, target_name=None, token=None, uid_token=None, user_ttl='60m', local_vars_configuration=None):  # noqa: E501
+    def __init__(self, delete_protection=None, gcp_cred_type=None, gcp_key=None, gcp_key_algo=None, gcp_sa_email=None, gcp_token_scopes=None, json=None, name=None, new_name=None, producer_encryption_key_name=None, tags=None, target_name=None, token=None, uid_token=None, user_ttl='60m', local_vars_configuration=None):  # noqa: E501
         """GatewayUpdateProducerGcp - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -79,6 +81,7 @@ class GatewayUpdateProducerGcp(object):
         self._gcp_key_algo = None
         self._gcp_sa_email = None
         self._gcp_token_scopes = None
+        self._json = None
         self._name = None
         self._new_name = None
         self._producer_encryption_key_name = None
@@ -101,6 +104,8 @@ class GatewayUpdateProducerGcp(object):
             self.gcp_sa_email = gcp_sa_email
         if gcp_token_scopes is not None:
             self.gcp_token_scopes = gcp_token_scopes
+        if json is not None:
+            self.json = json
         self.name = name
         if new_name is not None:
             self.new_name = new_name
@@ -252,6 +257,29 @@ class GatewayUpdateProducerGcp(object):
         """
 
         self._gcp_token_scopes = gcp_token_scopes
+
+    @property
+    def json(self):
+        """Gets the json of this GatewayUpdateProducerGcp.  # noqa: E501
+
+        Set output format to JSON  # noqa: E501
+
+        :return: The json of this GatewayUpdateProducerGcp.  # noqa: E501
+        :rtype: bool
+        """
+        return self._json
+
+    @json.setter
+    def json(self, json):
+        """Sets the json of this GatewayUpdateProducerGcp.
+
+        Set output format to JSON  # noqa: E501
+
+        :param json: The json of this GatewayUpdateProducerGcp.  # noqa: E501
+        :type: bool
+        """
+
+        self._json = json
 
     @property
     def name(self):

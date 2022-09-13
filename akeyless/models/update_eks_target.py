@@ -41,6 +41,7 @@ class UpdateEKSTarget(object):
         'eks_cluster_name': 'str',
         'eks_region': 'str',
         'eks_secret_access_key': 'str',
+        'json': 'bool',
         'keep_prev_version': 'str',
         'key': 'str',
         'name': 'str',
@@ -59,6 +60,7 @@ class UpdateEKSTarget(object):
         'eks_cluster_name': 'eks-cluster-name',
         'eks_region': 'eks-region',
         'eks_secret_access_key': 'eks-secret-access-key',
+        'json': 'json',
         'keep_prev_version': 'keep-prev-version',
         'key': 'key',
         'name': 'name',
@@ -69,7 +71,7 @@ class UpdateEKSTarget(object):
         'use_gw_cloud_identity': 'use-gw-cloud-identity'
     }
 
-    def __init__(self, comment=None, eks_access_key_id=None, eks_cluster_ca_cert=None, eks_cluster_endpoint=None, eks_cluster_name=None, eks_region='us-east-2', eks_secret_access_key=None, keep_prev_version=None, key=None, name=None, new_name=None, token=None, uid_token=None, update_version=None, use_gw_cloud_identity=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, comment=None, eks_access_key_id=None, eks_cluster_ca_cert=None, eks_cluster_endpoint=None, eks_cluster_name=None, eks_region='us-east-2', eks_secret_access_key=None, json=None, keep_prev_version=None, key=None, name=None, new_name=None, token=None, uid_token=None, update_version=None, use_gw_cloud_identity=None, local_vars_configuration=None):  # noqa: E501
         """UpdateEKSTarget - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -82,6 +84,7 @@ class UpdateEKSTarget(object):
         self._eks_cluster_name = None
         self._eks_region = None
         self._eks_secret_access_key = None
+        self._json = None
         self._keep_prev_version = None
         self._key = None
         self._name = None
@@ -101,6 +104,8 @@ class UpdateEKSTarget(object):
         if eks_region is not None:
             self.eks_region = eks_region
         self.eks_secret_access_key = eks_secret_access_key
+        if json is not None:
+            self.json = json
         if keep_prev_version is not None:
             self.keep_prev_version = keep_prev_version
         if key is not None:
@@ -287,6 +292,29 @@ class UpdateEKSTarget(object):
             raise ValueError("Invalid value for `eks_secret_access_key`, must not be `None`")  # noqa: E501
 
         self._eks_secret_access_key = eks_secret_access_key
+
+    @property
+    def json(self):
+        """Gets the json of this UpdateEKSTarget.  # noqa: E501
+
+        Set output format to JSON  # noqa: E501
+
+        :return: The json of this UpdateEKSTarget.  # noqa: E501
+        :rtype: bool
+        """
+        return self._json
+
+    @json.setter
+    def json(self, json):
+        """Sets the json of this UpdateEKSTarget.
+
+        Set output format to JSON  # noqa: E501
+
+        :param json: The json of this UpdateEKSTarget.  # noqa: E501
+        :type: bool
+        """
+
+        self._json = json
 
     @property
     def keep_prev_version(self):

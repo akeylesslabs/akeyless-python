@@ -35,13 +35,14 @@ class UpdateSecretVal(object):
     """
     openapi_types = {
         'accessibility': 'str',
+        'json': 'bool',
         'keep_prev_version': 'str',
         'key': 'str',
         'multiline': 'bool',
         'name': 'str',
         'new_version': 'bool',
         'password_manager_custom_field': 'dict(str, str)',
-        'password_manager_inject_url': 'str',
+        'password_manager_inject_url': 'list[str]',
         'password_manager_password': 'str',
         'password_manager_username': 'str',
         'token': 'str',
@@ -51,6 +52,7 @@ class UpdateSecretVal(object):
 
     attribute_map = {
         'accessibility': 'accessibility',
+        'json': 'json',
         'keep_prev_version': 'keep-prev-version',
         'key': 'key',
         'multiline': 'multiline',
@@ -65,13 +67,14 @@ class UpdateSecretVal(object):
         'value': 'value'
     }
 
-    def __init__(self, accessibility=None, keep_prev_version=None, key=None, multiline=None, name=None, new_version=None, password_manager_custom_field=None, password_manager_inject_url=None, password_manager_password=None, password_manager_username=None, token=None, uid_token=None, value=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, accessibility=None, json=None, keep_prev_version=None, key=None, multiline=None, name=None, new_version=None, password_manager_custom_field=None, password_manager_inject_url=None, password_manager_password=None, password_manager_username=None, token=None, uid_token=None, value=None, local_vars_configuration=None):  # noqa: E501
         """UpdateSecretVal - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._accessibility = None
+        self._json = None
         self._keep_prev_version = None
         self._key = None
         self._multiline = None
@@ -88,6 +91,8 @@ class UpdateSecretVal(object):
 
         if accessibility is not None:
             self.accessibility = accessibility
+        if json is not None:
+            self.json = json
         if keep_prev_version is not None:
             self.keep_prev_version = keep_prev_version
         if key is not None:
@@ -133,6 +138,29 @@ class UpdateSecretVal(object):
         """
 
         self._accessibility = accessibility
+
+    @property
+    def json(self):
+        """Gets the json of this UpdateSecretVal.  # noqa: E501
+
+        Set output format to JSON  # noqa: E501
+
+        :return: The json of this UpdateSecretVal.  # noqa: E501
+        :rtype: bool
+        """
+        return self._json
+
+    @json.setter
+    def json(self, json):
+        """Sets the json of this UpdateSecretVal.
+
+        Set output format to JSON  # noqa: E501
+
+        :param json: The json of this UpdateSecretVal.  # noqa: E501
+        :type: bool
+        """
+
+        self._json = json
 
     @property
     def keep_prev_version(self):
@@ -279,7 +307,7 @@ class UpdateSecretVal(object):
         For Password Management use, reflect the website context  # noqa: E501
 
         :return: The password_manager_inject_url of this UpdateSecretVal.  # noqa: E501
-        :rtype: str
+        :rtype: list[str]
         """
         return self._password_manager_inject_url
 
@@ -290,7 +318,7 @@ class UpdateSecretVal(object):
         For Password Management use, reflect the website context  # noqa: E501
 
         :param password_manager_inject_url: The password_manager_inject_url of this UpdateSecretVal.  # noqa: E501
-        :type: str
+        :type: list[str]
         """
 
         self._password_manager_inject_url = password_manager_inject_url

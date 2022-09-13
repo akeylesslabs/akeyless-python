@@ -34,24 +34,29 @@ class GenCustomerFragment(object):
                             and the value is json key in definition.
     """
     openapi_types = {
-        'description': 'str'
+        'description': 'str',
+        'json': 'bool'
     }
 
     attribute_map = {
-        'description': 'description'
+        'description': 'description',
+        'json': 'json'
     }
 
-    def __init__(self, description=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, description=None, json=None, local_vars_configuration=None):  # noqa: E501
         """GenCustomerFragment - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._description = None
+        self._json = None
         self.discriminator = None
 
         if description is not None:
             self.description = description
+        if json is not None:
+            self.json = json
 
     @property
     def description(self):
@@ -75,6 +80,29 @@ class GenCustomerFragment(object):
         """
 
         self._description = description
+
+    @property
+    def json(self):
+        """Gets the json of this GenCustomerFragment.  # noqa: E501
+
+        Set output format to JSON  # noqa: E501
+
+        :return: The json of this GenCustomerFragment.  # noqa: E501
+        :rtype: bool
+        """
+        return self._json
+
+    @json.setter
+    def json(self, json):
+        """Sets the json of this GenCustomerFragment.
+
+        Set output format to JSON  # noqa: E501
+
+        :param json: The json of this GenCustomerFragment.  # noqa: E501
+        :type: bool
+        """
+
+        self._json = json
 
     def to_dict(self):
         """Returns the model properties as a dict"""

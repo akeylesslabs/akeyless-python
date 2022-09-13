@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 **bind_dn** | **str** | Bind DN | 
 **bind_dn_password** | **str** | Bind DN Password | 
 **comment** | **str** | Comment about the target | [optional] 
+**json** | **bool** | Set output format to JSON | [optional] 
 **key** | **str** | The name of a key that used to encrypt the target secret value (if empty, the account default protectionKey key will be used) | [optional] 
 **ldap_ca_cert** | **str** | CA Certificate File Content | [optional] 
 **ldap_url** | **str** | LDAP Server URL | 

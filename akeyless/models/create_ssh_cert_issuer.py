@@ -37,6 +37,7 @@ class CreateSSHCertIssuer(object):
         'allowed_users': 'str',
         'delete_protection': 'str',
         'extensions': 'dict(str, str)',
+        'json': 'bool',
         'metadata': 'str',
         'name': 'str',
         'principals': 'str',
@@ -57,6 +58,7 @@ class CreateSSHCertIssuer(object):
         'allowed_users': 'allowed-users',
         'delete_protection': 'delete_protection',
         'extensions': 'extensions',
+        'json': 'json',
         'metadata': 'metadata',
         'name': 'name',
         'principals': 'principals',
@@ -73,7 +75,7 @@ class CreateSSHCertIssuer(object):
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, allowed_users=None, delete_protection=None, extensions=None, metadata=None, name=None, principals=None, secure_access_bastion_api=None, secure_access_bastion_ssh=None, secure_access_enable=None, secure_access_host=None, secure_access_ssh_creds_user=None, secure_access_use_internal_bastion=None, signer_key_name=None, tag=None, token=None, ttl=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, allowed_users=None, delete_protection=None, extensions=None, json=None, metadata=None, name=None, principals=None, secure_access_bastion_api=None, secure_access_bastion_ssh=None, secure_access_enable=None, secure_access_host=None, secure_access_ssh_creds_user=None, secure_access_use_internal_bastion=None, signer_key_name=None, tag=None, token=None, ttl=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """CreateSSHCertIssuer - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -82,6 +84,7 @@ class CreateSSHCertIssuer(object):
         self._allowed_users = None
         self._delete_protection = None
         self._extensions = None
+        self._json = None
         self._metadata = None
         self._name = None
         self._principals = None
@@ -103,6 +106,8 @@ class CreateSSHCertIssuer(object):
             self.delete_protection = delete_protection
         if extensions is not None:
             self.extensions = extensions
+        if json is not None:
+            self.json = json
         if metadata is not None:
             self.metadata = metadata
         self.name = name
@@ -199,6 +204,29 @@ class CreateSSHCertIssuer(object):
         """
 
         self._extensions = extensions
+
+    @property
+    def json(self):
+        """Gets the json of this CreateSSHCertIssuer.  # noqa: E501
+
+        Set output format to JSON  # noqa: E501
+
+        :return: The json of this CreateSSHCertIssuer.  # noqa: E501
+        :rtype: bool
+        """
+        return self._json
+
+    @json.setter
+    def json(self, json):
+        """Sets the json of this CreateSSHCertIssuer.
+
+        Set output format to JSON  # noqa: E501
+
+        :param json: The json of this CreateSSHCertIssuer.  # noqa: E501
+        :type: bool
+        """
+
+        self._json = json
 
     @property
     def metadata(self):

@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **child_deny_rotate** | **bool** | Deny from new child to rotate | [optional] 
 **child_ttl** | **int** | New child token ttl | [optional] 
 **comment** | **str** | New Token comment | [optional] 
+**json** | **bool** | Set output format to JSON | [optional] 
 **token** | **str** | Authentication token (see &#x60;/auth&#x60; and &#x60;/configure&#x60;) | [optional] 
 **uid_token** | **str** | The universal identity token, Required only for universal_identity authentication | [optional] 
 **uid_token_id** | **str** | The ID of the uid-token, required only when uid-token is not provided | [optional] 

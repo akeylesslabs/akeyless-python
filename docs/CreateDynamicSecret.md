@@ -4,6 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **delete_protection** | **str** | Protection from accidental deletion of this item | [optional] 
+**json** | **bool** | Set output format to JSON | [optional] 
 **key** | **str** | The name of a key that used to encrypt the dynamic secret values (if empty, the account default protectionKey key will be used) | [optional] 
 **metadata** | **str** | Metadata about the dynamic secret | [optional] [default to 'None']
 **name** | **str** | Dynamic secret name | 

@@ -41,6 +41,7 @@ class CreateAuthMethodOAuth2(object):
         'force_sub_claims': 'bool',
         'gw_bound_ips': 'list[str]',
         'issuer': 'str',
+        'json': 'bool',
         'jwks_uri': 'str',
         'jwt_ttl': 'int',
         'name': 'str',
@@ -57,6 +58,7 @@ class CreateAuthMethodOAuth2(object):
         'force_sub_claims': 'force-sub-claims',
         'gw_bound_ips': 'gw-bound-ips',
         'issuer': 'issuer',
+        'json': 'json',
         'jwks_uri': 'jwks-uri',
         'jwt_ttl': 'jwt-ttl',
         'name': 'name',
@@ -65,7 +67,7 @@ class CreateAuthMethodOAuth2(object):
         'unique_identifier': 'unique-identifier'
     }
 
-    def __init__(self, access_expires=0, audience=None, bound_client_ids=None, bound_ips=None, force_sub_claims=None, gw_bound_ips=None, issuer=None, jwks_uri=None, jwt_ttl=None, name=None, token=None, uid_token=None, unique_identifier=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, access_expires=0, audience=None, bound_client_ids=None, bound_ips=None, force_sub_claims=None, gw_bound_ips=None, issuer=None, json=None, jwks_uri=None, jwt_ttl=None, name=None, token=None, uid_token=None, unique_identifier=None, local_vars_configuration=None):  # noqa: E501
         """CreateAuthMethodOAuth2 - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -78,6 +80,7 @@ class CreateAuthMethodOAuth2(object):
         self._force_sub_claims = None
         self._gw_bound_ips = None
         self._issuer = None
+        self._json = None
         self._jwks_uri = None
         self._jwt_ttl = None
         self._name = None
@@ -100,6 +103,8 @@ class CreateAuthMethodOAuth2(object):
             self.gw_bound_ips = gw_bound_ips
         if issuer is not None:
             self.issuer = issuer
+        if json is not None:
+            self.json = json
         self.jwks_uri = jwks_uri
         if jwt_ttl is not None:
             self.jwt_ttl = jwt_ttl
@@ -270,6 +275,29 @@ class CreateAuthMethodOAuth2(object):
         """
 
         self._issuer = issuer
+
+    @property
+    def json(self):
+        """Gets the json of this CreateAuthMethodOAuth2.  # noqa: E501
+
+        Set output format to JSON  # noqa: E501
+
+        :return: The json of this CreateAuthMethodOAuth2.  # noqa: E501
+        :rtype: bool
+        """
+        return self._json
+
+    @json.setter
+    def json(self, json):
+        """Sets the json of this CreateAuthMethodOAuth2.
+
+        Set output format to JSON  # noqa: E501
+
+        :param json: The json of this CreateAuthMethodOAuth2.  # noqa: E501
+        :type: bool
+        """
+
+        self._json = json
 
     @property
     def jwks_uri(self):

@@ -5,7 +5,9 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **display_id** | **str** | The display id of the key to use in the encryption process | [optional] 
 **encryption_context** | **dict(str, str)** | name-value pair that specifies the encryption context to be used for authenticated encryption. If used here, the same value must be supplied to the decrypt command or decryption will fail | [optional] 
+**input_format** | **str** | If specified, the plaintext input is assumed to be formatted accordingly. Current supported options: [base64] | [optional] 
 **item_id** | **int** | The item id of the key to use in the encryption process | [optional] 
+**json** | **bool** | Set output format to JSON | [optional] 
 **key_name** | **str** | The name of the key to use in the encryption process | 
 **plaintext** | **str** | Data to be encrypted | [optional] 
 **token** | **str** | Authentication token (see &#x60;/auth&#x60; and &#x60;/configure&#x60;) | [optional] 

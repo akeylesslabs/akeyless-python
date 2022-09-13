@@ -38,6 +38,7 @@ class CreateArtifactoryTarget(object):
         'artifactory_admin_pwd': 'str',
         'base_url': 'str',
         'comment': 'str',
+        'json': 'bool',
         'key': 'str',
         'name': 'str',
         'token': 'str',
@@ -49,13 +50,14 @@ class CreateArtifactoryTarget(object):
         'artifactory_admin_pwd': 'artifactory-admin-pwd',
         'base_url': 'base-url',
         'comment': 'comment',
+        'json': 'json',
         'key': 'key',
         'name': 'name',
         'token': 'token',
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, artifactory_admin_name=None, artifactory_admin_pwd=None, base_url=None, comment=None, key=None, name=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, artifactory_admin_name=None, artifactory_admin_pwd=None, base_url=None, comment=None, json=None, key=None, name=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """CreateArtifactoryTarget - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -65,6 +67,7 @@ class CreateArtifactoryTarget(object):
         self._artifactory_admin_pwd = None
         self._base_url = None
         self._comment = None
+        self._json = None
         self._key = None
         self._name = None
         self._token = None
@@ -76,6 +79,8 @@ class CreateArtifactoryTarget(object):
         self.base_url = base_url
         if comment is not None:
             self.comment = comment
+        if json is not None:
+            self.json = json
         if key is not None:
             self.key = key
         self.name = name
@@ -181,6 +186,29 @@ class CreateArtifactoryTarget(object):
         """
 
         self._comment = comment
+
+    @property
+    def json(self):
+        """Gets the json of this CreateArtifactoryTarget.  # noqa: E501
+
+        Set output format to JSON  # noqa: E501
+
+        :return: The json of this CreateArtifactoryTarget.  # noqa: E501
+        :rtype: bool
+        """
+        return self._json
+
+    @json.setter
+    def json(self, json):
+        """Sets the json of this CreateArtifactoryTarget.
+
+        Set output format to JSON  # noqa: E501
+
+        :param json: The json of this CreateArtifactoryTarget.  # noqa: E501
+        :type: bool
+        """
+
+        self._json = json
 
     @property
     def key(self):

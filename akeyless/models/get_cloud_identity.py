@@ -37,6 +37,7 @@ class GetCloudIdentity(object):
         'azure_ad_object_id': 'str',
         'debug': 'bool',
         'gcp_audience': 'str',
+        'json': 'bool',
         'url_safe': 'bool'
     }
 
@@ -44,10 +45,11 @@ class GetCloudIdentity(object):
         'azure_ad_object_id': 'azure_ad_object_id',
         'debug': 'debug',
         'gcp_audience': 'gcp-audience',
+        'json': 'json',
         'url_safe': 'url_safe'
     }
 
-    def __init__(self, azure_ad_object_id=None, debug=None, gcp_audience=None, url_safe=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, azure_ad_object_id=None, debug=None, gcp_audience=None, json=None, url_safe=None, local_vars_configuration=None):  # noqa: E501
         """GetCloudIdentity - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -56,6 +58,7 @@ class GetCloudIdentity(object):
         self._azure_ad_object_id = None
         self._debug = None
         self._gcp_audience = None
+        self._json = None
         self._url_safe = None
         self.discriminator = None
 
@@ -65,6 +68,8 @@ class GetCloudIdentity(object):
             self.debug = debug
         if gcp_audience is not None:
             self.gcp_audience = gcp_audience
+        if json is not None:
+            self.json = json
         if url_safe is not None:
             self.url_safe = url_safe
 
@@ -134,6 +139,29 @@ class GetCloudIdentity(object):
         """
 
         self._gcp_audience = gcp_audience
+
+    @property
+    def json(self):
+        """Gets the json of this GetCloudIdentity.  # noqa: E501
+
+        Set output format to JSON  # noqa: E501
+
+        :return: The json of this GetCloudIdentity.  # noqa: E501
+        :rtype: bool
+        """
+        return self._json
+
+    @json.setter
+    def json(self, json):
+        """Sets the json of this GetCloudIdentity.
+
+        Set output format to JSON  # noqa: E501
+
+        :param json: The json of this GetCloudIdentity.  # noqa: E501
+        :type: bool
+        """
+
+        self._json = json
 
     @property
     def url_safe(self):

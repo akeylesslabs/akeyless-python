@@ -37,6 +37,7 @@ class UpdateRole(object):
         'analytics_access': 'str',
         'audit_access': 'str',
         'gw_analytics_access': 'str',
+        'json': 'bool',
         'name': 'str',
         'new_comment': 'str',
         'new_name': 'str',
@@ -49,6 +50,7 @@ class UpdateRole(object):
         'analytics_access': 'analytics-access',
         'audit_access': 'audit-access',
         'gw_analytics_access': 'gw-analytics-access',
+        'json': 'json',
         'name': 'name',
         'new_comment': 'new-comment',
         'new_name': 'new-name',
@@ -57,7 +59,7 @@ class UpdateRole(object):
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, analytics_access=None, audit_access=None, gw_analytics_access=None, name=None, new_comment='default_comment', new_name=None, sra_reports_access=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, analytics_access=None, audit_access=None, gw_analytics_access=None, json=None, name=None, new_comment='default_comment', new_name=None, sra_reports_access=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """UpdateRole - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -66,6 +68,7 @@ class UpdateRole(object):
         self._analytics_access = None
         self._audit_access = None
         self._gw_analytics_access = None
+        self._json = None
         self._name = None
         self._new_comment = None
         self._new_name = None
@@ -80,6 +83,8 @@ class UpdateRole(object):
             self.audit_access = audit_access
         if gw_analytics_access is not None:
             self.gw_analytics_access = gw_analytics_access
+        if json is not None:
+            self.json = json
         self.name = name
         if new_comment is not None:
             self.new_comment = new_comment
@@ -160,6 +165,29 @@ class UpdateRole(object):
         """
 
         self._gw_analytics_access = gw_analytics_access
+
+    @property
+    def json(self):
+        """Gets the json of this UpdateRole.  # noqa: E501
+
+        Set output format to JSON  # noqa: E501
+
+        :return: The json of this UpdateRole.  # noqa: E501
+        :rtype: bool
+        """
+        return self._json
+
+    @json.setter
+    def json(self, json):
+        """Sets the json of this UpdateRole.
+
+        Set output format to JSON  # noqa: E501
+
+        :param json: The json of this UpdateRole.  # noqa: E501
+        :type: bool
+        """
+
+        self._json = json
 
     @property
     def name(self):

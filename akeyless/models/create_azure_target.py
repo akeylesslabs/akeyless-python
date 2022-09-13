@@ -37,6 +37,7 @@ class CreateAzureTarget(object):
         'client_id': 'str',
         'client_secret': 'str',
         'comment': 'str',
+        'json': 'bool',
         'key': 'str',
         'name': 'str',
         'resource_group_name': 'str',
@@ -52,6 +53,7 @@ class CreateAzureTarget(object):
         'client_id': 'client-id',
         'client_secret': 'client-secret',
         'comment': 'comment',
+        'json': 'json',
         'key': 'key',
         'name': 'name',
         'resource_group_name': 'resource-group-name',
@@ -63,7 +65,7 @@ class CreateAzureTarget(object):
         'use_gw_cloud_identity': 'use-gw-cloud-identity'
     }
 
-    def __init__(self, client_id=None, client_secret=None, comment=None, key=None, name=None, resource_group_name=None, resource_name=None, subscription_id=None, tenant_id=None, token=None, uid_token=None, use_gw_cloud_identity=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, client_id=None, client_secret=None, comment=None, json=None, key=None, name=None, resource_group_name=None, resource_name=None, subscription_id=None, tenant_id=None, token=None, uid_token=None, use_gw_cloud_identity=None, local_vars_configuration=None):  # noqa: E501
         """CreateAzureTarget - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -72,6 +74,7 @@ class CreateAzureTarget(object):
         self._client_id = None
         self._client_secret = None
         self._comment = None
+        self._json = None
         self._key = None
         self._name = None
         self._resource_group_name = None
@@ -89,6 +92,8 @@ class CreateAzureTarget(object):
             self.client_secret = client_secret
         if comment is not None:
             self.comment = comment
+        if json is not None:
+            self.json = json
         if key is not None:
             self.key = key
         self.name = name
@@ -171,6 +176,29 @@ class CreateAzureTarget(object):
         """
 
         self._comment = comment
+
+    @property
+    def json(self):
+        """Gets the json of this CreateAzureTarget.  # noqa: E501
+
+        Set output format to JSON  # noqa: E501
+
+        :return: The json of this CreateAzureTarget.  # noqa: E501
+        :rtype: bool
+        """
+        return self._json
+
+    @json.setter
+    def json(self, json):
+        """Sets the json of this CreateAzureTarget.
+
+        Set output format to JSON  # noqa: E501
+
+        :param json: The json of this CreateAzureTarget.  # noqa: E501
+        :type: bool
+        """
+
+        self._json = json
 
     @property
     def key(self):

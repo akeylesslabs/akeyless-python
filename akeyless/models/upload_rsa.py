@@ -38,6 +38,7 @@ class UploadRSA(object):
         'cert_file_data': 'str',
         'customer_frg_id': 'str',
         'delete_protection': 'str',
+        'json': 'bool',
         'metadata': 'str',
         'name': 'str',
         'overwrite': 'str',
@@ -53,6 +54,7 @@ class UploadRSA(object):
         'cert_file_data': 'cert-file-data',
         'customer_frg_id': 'customer-frg-id',
         'delete_protection': 'delete_protection',
+        'json': 'json',
         'metadata': 'metadata',
         'name': 'name',
         'overwrite': 'overwrite',
@@ -63,7 +65,7 @@ class UploadRSA(object):
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, alg=None, cert_file_data=None, customer_frg_id=None, delete_protection=None, metadata=None, name=None, overwrite=None, rsa_file_data=None, split_level=2, tag=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, alg=None, cert_file_data=None, customer_frg_id=None, delete_protection=None, json=None, metadata=None, name=None, overwrite=None, rsa_file_data=None, split_level=2, tag=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """UploadRSA - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -73,6 +75,7 @@ class UploadRSA(object):
         self._cert_file_data = None
         self._customer_frg_id = None
         self._delete_protection = None
+        self._json = None
         self._metadata = None
         self._name = None
         self._overwrite = None
@@ -90,6 +93,8 @@ class UploadRSA(object):
             self.customer_frg_id = customer_frg_id
         if delete_protection is not None:
             self.delete_protection = delete_protection
+        if json is not None:
+            self.json = json
         if metadata is not None:
             self.metadata = metadata
         self.name = name
@@ -199,6 +204,29 @@ class UploadRSA(object):
         """
 
         self._delete_protection = delete_protection
+
+    @property
+    def json(self):
+        """Gets the json of this UploadRSA.  # noqa: E501
+
+        Set output format to JSON  # noqa: E501
+
+        :return: The json of this UploadRSA.  # noqa: E501
+        :rtype: bool
+        """
+        return self._json
+
+    @json.setter
+    def json(self, json):
+        """Sets the json of this UploadRSA.
+
+        Set output format to JSON  # noqa: E501
+
+        :param json: The json of this UploadRSA.  # noqa: E501
+        :type: bool
+        """
+
+        self._json = json
 
     @property
     def metadata(self):

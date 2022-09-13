@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **github_base_url** | **str** | Base URL | [optional] 
 **installation_id** | **int** | Github app installation id | [optional] 
 **installation_repository** | **str** | Repository that the app installation has access to | [optional] 
+**json** | **bool** | Set output format to JSON | [optional] 
 **name** | **str** | Producer name | 
 **new_name** | **str** | Producer name | [optional] 
 **target_name** | **str** | Target name | [optional] 

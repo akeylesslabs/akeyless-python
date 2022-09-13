@@ -39,6 +39,7 @@ class CreateTokenizer(object):
         'delete_protection': 'str',
         'encoding_template': 'str',
         'encryption_key_name': 'str',
+        'json': 'bool',
         'metadata': 'str',
         'name': 'str',
         'pattern': 'str',
@@ -56,6 +57,7 @@ class CreateTokenizer(object):
         'delete_protection': 'delete_protection',
         'encoding_template': 'encoding-template',
         'encryption_key_name': 'encryption-key-name',
+        'json': 'json',
         'metadata': 'metadata',
         'name': 'name',
         'pattern': 'pattern',
@@ -67,7 +69,7 @@ class CreateTokenizer(object):
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, alphabet=None, decoding_template=None, delete_protection=None, encoding_template=None, encryption_key_name=None, metadata=None, name=None, pattern=None, tag=None, template_type=None, token=None, tokenizer_type=None, tweak_type=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, alphabet=None, decoding_template=None, delete_protection=None, encoding_template=None, encryption_key_name=None, json=None, metadata=None, name=None, pattern=None, tag=None, template_type=None, token=None, tokenizer_type=None, tweak_type=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """CreateTokenizer - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -78,6 +80,7 @@ class CreateTokenizer(object):
         self._delete_protection = None
         self._encoding_template = None
         self._encryption_key_name = None
+        self._json = None
         self._metadata = None
         self._name = None
         self._pattern = None
@@ -99,6 +102,8 @@ class CreateTokenizer(object):
             self.encoding_template = encoding_template
         if encryption_key_name is not None:
             self.encryption_key_name = encryption_key_name
+        if json is not None:
+            self.json = json
         if metadata is not None:
             self.metadata = metadata
         self.name = name
@@ -229,6 +234,29 @@ class CreateTokenizer(object):
         """
 
         self._encryption_key_name = encryption_key_name
+
+    @property
+    def json(self):
+        """Gets the json of this CreateTokenizer.  # noqa: E501
+
+        Set output format to JSON  # noqa: E501
+
+        :return: The json of this CreateTokenizer.  # noqa: E501
+        :rtype: bool
+        """
+        return self._json
+
+    @json.setter
+    def json(self, json):
+        """Sets the json of this CreateTokenizer.
+
+        Set output format to JSON  # noqa: E501
+
+        :param json: The json of this CreateTokenizer.  # noqa: E501
+        :type: bool
+        """
+
+        self._json = json
 
     @property
     def metadata(self):

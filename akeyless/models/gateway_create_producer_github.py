@@ -40,6 +40,7 @@ class GatewayCreateProducerGithub(object):
         'github_base_url': 'str',
         'installation_id': 'int',
         'installation_repository': 'str',
+        'json': 'bool',
         'name': 'str',
         'target_name': 'str',
         'token': 'str',
@@ -55,6 +56,7 @@ class GatewayCreateProducerGithub(object):
         'github_base_url': 'github-base-url',
         'installation_id': 'installation-id',
         'installation_repository': 'installation-repository',
+        'json': 'json',
         'name': 'name',
         'target_name': 'target-name',
         'token': 'token',
@@ -63,7 +65,7 @@ class GatewayCreateProducerGithub(object):
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, delete_protection=None, github_app_id=None, github_app_private_key=None, github_base_url=None, installation_id=None, installation_repository=None, name=None, target_name=None, token=None, token_permissions=None, token_repositories=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, delete_protection=None, github_app_id=None, github_app_private_key=None, github_base_url=None, installation_id=None, installation_repository=None, json=None, name=None, target_name=None, token=None, token_permissions=None, token_repositories=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """GatewayCreateProducerGithub - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -75,6 +77,7 @@ class GatewayCreateProducerGithub(object):
         self._github_base_url = None
         self._installation_id = None
         self._installation_repository = None
+        self._json = None
         self._name = None
         self._target_name = None
         self._token = None
@@ -95,6 +98,8 @@ class GatewayCreateProducerGithub(object):
             self.installation_id = installation_id
         if installation_repository is not None:
             self.installation_repository = installation_repository
+        if json is not None:
+            self.json = json
         self.name = name
         if target_name is not None:
             self.target_name = target_name
@@ -244,6 +249,29 @@ class GatewayCreateProducerGithub(object):
         """
 
         self._installation_repository = installation_repository
+
+    @property
+    def json(self):
+        """Gets the json of this GatewayCreateProducerGithub.  # noqa: E501
+
+        Set output format to JSON  # noqa: E501
+
+        :return: The json of this GatewayCreateProducerGithub.  # noqa: E501
+        :rtype: bool
+        """
+        return self._json
+
+    @json.setter
+    def json(self, json):
+        """Sets the json of this GatewayCreateProducerGithub.
+
+        Set output format to JSON  # noqa: E501
+
+        :param json: The json of this GatewayCreateProducerGithub.  # noqa: E501
+        :type: bool
+        """
+
+        self._json = json
 
     @property
     def name(self):

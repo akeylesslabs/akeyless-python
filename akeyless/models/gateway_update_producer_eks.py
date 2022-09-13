@@ -42,6 +42,7 @@ class GatewayUpdateProducerEks(object):
         'eks_cluster_name': 'str',
         'eks_region': 'str',
         'eks_secret_access_key': 'str',
+        'json': 'bool',
         'name': 'str',
         'new_name': 'str',
         'producer_encryption_key_name': 'str',
@@ -66,6 +67,7 @@ class GatewayUpdateProducerEks(object):
         'eks_cluster_name': 'eks-cluster-name',
         'eks_region': 'eks-region',
         'eks_secret_access_key': 'eks-secret-access-key',
+        'json': 'json',
         'name': 'name',
         'new_name': 'new-name',
         'producer_encryption_key_name': 'producer-encryption-key-name',
@@ -81,7 +83,7 @@ class GatewayUpdateProducerEks(object):
         'user_ttl': 'user-ttl'
     }
 
-    def __init__(self, delete_protection=None, eks_access_key_id=None, eks_assume_role=None, eks_cluster_ca_cert=None, eks_cluster_endpoint=None, eks_cluster_name=None, eks_region='us-east-2', eks_secret_access_key=None, name=None, new_name=None, producer_encryption_key_name=None, secure_access_allow_port_forwading=None, secure_access_bastion_issuer=None, secure_access_cluster_endpoint=None, secure_access_enable=None, secure_access_web=None, tags=None, target_name=None, token=None, uid_token=None, user_ttl='60m', local_vars_configuration=None):  # noqa: E501
+    def __init__(self, delete_protection=None, eks_access_key_id=None, eks_assume_role=None, eks_cluster_ca_cert=None, eks_cluster_endpoint=None, eks_cluster_name=None, eks_region='us-east-2', eks_secret_access_key=None, json=None, name=None, new_name=None, producer_encryption_key_name=None, secure_access_allow_port_forwading=None, secure_access_bastion_issuer=None, secure_access_cluster_endpoint=None, secure_access_enable=None, secure_access_web=None, tags=None, target_name=None, token=None, uid_token=None, user_ttl='60m', local_vars_configuration=None):  # noqa: E501
         """GatewayUpdateProducerEks - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -95,6 +97,7 @@ class GatewayUpdateProducerEks(object):
         self._eks_cluster_name = None
         self._eks_region = None
         self._eks_secret_access_key = None
+        self._json = None
         self._name = None
         self._new_name = None
         self._producer_encryption_key_name = None
@@ -126,6 +129,8 @@ class GatewayUpdateProducerEks(object):
             self.eks_region = eks_region
         if eks_secret_access_key is not None:
             self.eks_secret_access_key = eks_secret_access_key
+        if json is not None:
+            self.json = json
         self.name = name
         if new_name is not None:
             self.new_name = new_name
@@ -335,6 +340,29 @@ class GatewayUpdateProducerEks(object):
         """
 
         self._eks_secret_access_key = eks_secret_access_key
+
+    @property
+    def json(self):
+        """Gets the json of this GatewayUpdateProducerEks.  # noqa: E501
+
+        Set output format to JSON  # noqa: E501
+
+        :return: The json of this GatewayUpdateProducerEks.  # noqa: E501
+        :rtype: bool
+        """
+        return self._json
+
+    @json.setter
+    def json(self, json):
+        """Sets the json of this GatewayUpdateProducerEks.
+
+        Set output format to JSON  # noqa: E501
+
+        :param json: The json of this GatewayUpdateProducerEks.  # noqa: E501
+        :type: bool
+        """
+
+        self._json = json
 
     @property
     def name(self):

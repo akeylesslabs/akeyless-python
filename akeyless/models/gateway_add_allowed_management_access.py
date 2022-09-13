@@ -36,6 +36,7 @@ class GatewayAddAllowedManagementAccess(object):
     openapi_types = {
         'allow_gw_api': 'bool',
         'allow_gw_login': 'bool',
+        'json': 'bool',
         'sub_admin_access_id': 'str',
         'sub_claims': 'dict(str, str)',
         'token': 'str',
@@ -45,13 +46,14 @@ class GatewayAddAllowedManagementAccess(object):
     attribute_map = {
         'allow_gw_api': 'allow-gw-api',
         'allow_gw_login': 'allow-gw-login',
+        'json': 'json',
         'sub_admin_access_id': 'sub-admin-access-id',
         'sub_claims': 'sub-claims',
         'token': 'token',
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, allow_gw_api=None, allow_gw_login=None, sub_admin_access_id=None, sub_claims=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, allow_gw_api=None, allow_gw_login=None, json=None, sub_admin_access_id=None, sub_claims=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """GatewayAddAllowedManagementAccess - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -59,6 +61,7 @@ class GatewayAddAllowedManagementAccess(object):
 
         self._allow_gw_api = None
         self._allow_gw_login = None
+        self._json = None
         self._sub_admin_access_id = None
         self._sub_claims = None
         self._token = None
@@ -69,6 +72,8 @@ class GatewayAddAllowedManagementAccess(object):
             self.allow_gw_api = allow_gw_api
         if allow_gw_login is not None:
             self.allow_gw_login = allow_gw_login
+        if json is not None:
+            self.json = json
         self.sub_admin_access_id = sub_admin_access_id
         if sub_claims is not None:
             self.sub_claims = sub_claims
@@ -118,6 +123,29 @@ class GatewayAddAllowedManagementAccess(object):
         """
 
         self._allow_gw_login = allow_gw_login
+
+    @property
+    def json(self):
+        """Gets the json of this GatewayAddAllowedManagementAccess.  # noqa: E501
+
+        Set output format to JSON  # noqa: E501
+
+        :return: The json of this GatewayAddAllowedManagementAccess.  # noqa: E501
+        :rtype: bool
+        """
+        return self._json
+
+    @json.setter
+    def json(self, json):
+        """Sets the json of this GatewayAddAllowedManagementAccess.
+
+        Set output format to JSON  # noqa: E501
+
+        :param json: The json of this GatewayAddAllowedManagementAccess.  # noqa: E501
+        :type: bool
+        """
+
+        self._json = json
 
     @property
     def sub_admin_access_id(self):

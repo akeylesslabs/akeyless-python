@@ -5,11 +5,12 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **accessibility** | **str** | for personal password manager | [optional] 
 **delete_protection** | **str** | Protection from accidental deletion of this item | [optional] 
+**json** | **bool** | Set output format to JSON | [optional] 
 **metadata** | **str** | Metadata about the secret | [optional] 
 **multiline_value** | **bool** | The provided value is a multiline value (separated by &#39;\\n&#39;) | [optional] 
 **name** | **str** | Secret name | 
 **password_manager_custom_field** | **dict(str, str)** | For Password Management use, additional fields | [optional] 
-**password_manager_inject_url** | **str** | For Password Management use, reflect the website context | [optional] 
+**password_manager_inject_url** | **list[str]** | For Password Management use, reflect the website context | [optional] 
 **password_manager_password** | **str** | For Password Management use, additional fields | [optional] 
 **password_manager_username** | **str** | For Password Management use | [optional] 
 **protection_key** | **str** | The name of a key that used to encrypt the secret value (if empty, the account default protectionKey key will be used) | [optional] 

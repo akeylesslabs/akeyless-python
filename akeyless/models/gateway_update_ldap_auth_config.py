@@ -40,6 +40,7 @@ class GatewayUpdateLdapAuthConfig(object):
         'group_attr': 'str',
         'group_dn': 'str',
         'group_filter': 'str',
+        'json': 'bool',
         'ldap_ca_cert': 'str',
         'ldap_enable': 'str',
         'ldap_url': 'str',
@@ -58,6 +59,7 @@ class GatewayUpdateLdapAuthConfig(object):
         'group_attr': 'group-attr',
         'group_dn': 'group-dn',
         'group_filter': 'group-filter',
+        'json': 'json',
         'ldap_ca_cert': 'ldap-ca-cert',
         'ldap_enable': 'ldap-enable',
         'ldap_url': 'ldap-url',
@@ -69,7 +71,7 @@ class GatewayUpdateLdapAuthConfig(object):
         'user_dn': 'user-dn'
     }
 
-    def __init__(self, access_id=None, bind_dn=None, bind_dn_password=None, group_attr=None, group_dn=None, group_filter=None, ldap_ca_cert=None, ldap_enable=None, ldap_url=None, ldap_anonymous_search=None, signing_key_data=None, token=None, uid_token=None, user_attribute=None, user_dn=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, access_id=None, bind_dn=None, bind_dn_password=None, group_attr=None, group_dn=None, group_filter=None, json=None, ldap_ca_cert=None, ldap_enable=None, ldap_url=None, ldap_anonymous_search=None, signing_key_data=None, token=None, uid_token=None, user_attribute=None, user_dn=None, local_vars_configuration=None):  # noqa: E501
         """GatewayUpdateLdapAuthConfig - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -81,6 +83,7 @@ class GatewayUpdateLdapAuthConfig(object):
         self._group_attr = None
         self._group_dn = None
         self._group_filter = None
+        self._json = None
         self._ldap_ca_cert = None
         self._ldap_enable = None
         self._ldap_url = None
@@ -104,6 +107,8 @@ class GatewayUpdateLdapAuthConfig(object):
             self.group_dn = group_dn
         if group_filter is not None:
             self.group_filter = group_filter
+        if json is not None:
+            self.json = json
         if ldap_ca_cert is not None:
             self.ldap_ca_cert = ldap_ca_cert
         if ldap_enable is not None:
@@ -260,6 +265,29 @@ class GatewayUpdateLdapAuthConfig(object):
         """
 
         self._group_filter = group_filter
+
+    @property
+    def json(self):
+        """Gets the json of this GatewayUpdateLdapAuthConfig.  # noqa: E501
+
+        Set output format to JSON  # noqa: E501
+
+        :return: The json of this GatewayUpdateLdapAuthConfig.  # noqa: E501
+        :rtype: bool
+        """
+        return self._json
+
+    @json.setter
+    def json(self, json):
+        """Sets the json of this GatewayUpdateLdapAuthConfig.
+
+        Set output format to JSON  # noqa: E501
+
+        :param json: The json of this GatewayUpdateLdapAuthConfig.  # noqa: E501
+        :type: bool
+        """
+
+        self._json = json
 
     @property
     def ldap_ca_cert(self):

@@ -35,6 +35,7 @@ class KmipClientDeleteRule(object):
     """
     openapi_types = {
         'client_id': 'str',
+        'json': 'bool',
         'name': 'str',
         'path': 'str',
         'token': 'str',
@@ -43,19 +44,21 @@ class KmipClientDeleteRule(object):
 
     attribute_map = {
         'client_id': 'client-id',
+        'json': 'json',
         'name': 'name',
         'path': 'path',
         'token': 'token',
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, client_id=None, name=None, path=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, client_id=None, json=None, name=None, path=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """KmipClientDeleteRule - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._client_id = None
+        self._json = None
         self._name = None
         self._path = None
         self._token = None
@@ -64,6 +67,8 @@ class KmipClientDeleteRule(object):
 
         if client_id is not None:
             self.client_id = client_id
+        if json is not None:
+            self.json = json
         if name is not None:
             self.name = name
         self.path = path
@@ -92,6 +97,29 @@ class KmipClientDeleteRule(object):
         """
 
         self._client_id = client_id
+
+    @property
+    def json(self):
+        """Gets the json of this KmipClientDeleteRule.  # noqa: E501
+
+        Set output format to JSON  # noqa: E501
+
+        :return: The json of this KmipClientDeleteRule.  # noqa: E501
+        :rtype: bool
+        """
+        return self._json
+
+    @json.setter
+    def json(self, json):
+        """Sets the json of this KmipClientDeleteRule.
+
+        Set output format to JSON  # noqa: E501
+
+        :param json: The json of this KmipClientDeleteRule.  # noqa: E501
+        :type: bool
+        """
+
+        self._json = json
 
     @property
     def name(self):

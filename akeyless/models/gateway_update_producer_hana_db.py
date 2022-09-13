@@ -42,6 +42,7 @@ class GatewayUpdateProducerHanaDb(object):
         'hanadb_port': 'str',
         'hanadb_revocation_statements': 'str',
         'hanadb_username': 'str',
+        'json': 'bool',
         'name': 'str',
         'new_name': 'str',
         'producer_encryption_key_name': 'str',
@@ -66,6 +67,7 @@ class GatewayUpdateProducerHanaDb(object):
         'hanadb_port': 'hanadb-port',
         'hanadb_revocation_statements': 'hanadb-revocation-statements',
         'hanadb_username': 'hanadb-username',
+        'json': 'json',
         'name': 'name',
         'new_name': 'new-name',
         'producer_encryption_key_name': 'producer-encryption-key-name',
@@ -81,7 +83,7 @@ class GatewayUpdateProducerHanaDb(object):
         'user_ttl': 'user-ttl'
     }
 
-    def __init__(self, delete_protection=None, hana_dbname=None, hanadb_create_statements=None, hanadb_host='127.0.0.1', hanadb_password=None, hanadb_port='443', hanadb_revocation_statements=None, hanadb_username=None, name=None, new_name=None, producer_encryption_key_name=None, secure_access_bastion_issuer=None, secure_access_db_schema=None, secure_access_enable=None, secure_access_host=None, secure_access_web=None, tags=None, target_name=None, token=None, uid_token=None, user_ttl='60m', local_vars_configuration=None):  # noqa: E501
+    def __init__(self, delete_protection=None, hana_dbname=None, hanadb_create_statements=None, hanadb_host='127.0.0.1', hanadb_password=None, hanadb_port='443', hanadb_revocation_statements=None, hanadb_username=None, json=None, name=None, new_name=None, producer_encryption_key_name=None, secure_access_bastion_issuer=None, secure_access_db_schema=None, secure_access_enable=None, secure_access_host=None, secure_access_web=None, tags=None, target_name=None, token=None, uid_token=None, user_ttl='60m', local_vars_configuration=None):  # noqa: E501
         """GatewayUpdateProducerHanaDb - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -95,6 +97,7 @@ class GatewayUpdateProducerHanaDb(object):
         self._hanadb_port = None
         self._hanadb_revocation_statements = None
         self._hanadb_username = None
+        self._json = None
         self._name = None
         self._new_name = None
         self._producer_encryption_key_name = None
@@ -126,6 +129,8 @@ class GatewayUpdateProducerHanaDb(object):
             self.hanadb_revocation_statements = hanadb_revocation_statements
         if hanadb_username is not None:
             self.hanadb_username = hanadb_username
+        if json is not None:
+            self.json = json
         self.name = name
         if new_name is not None:
             self.new_name = new_name
@@ -335,6 +340,29 @@ class GatewayUpdateProducerHanaDb(object):
         """
 
         self._hanadb_username = hanadb_username
+
+    @property
+    def json(self):
+        """Gets the json of this GatewayUpdateProducerHanaDb.  # noqa: E501
+
+        Set output format to JSON  # noqa: E501
+
+        :return: The json of this GatewayUpdateProducerHanaDb.  # noqa: E501
+        :rtype: bool
+        """
+        return self._json
+
+    @json.setter
+    def json(self, json):
+        """Sets the json of this GatewayUpdateProducerHanaDb.
+
+        Set output format to JSON  # noqa: E501
+
+        :param json: The json of this GatewayUpdateProducerHanaDb.  # noqa: E501
+        :type: bool
+        """
+
+        self._json = json
 
     @property
     def name(self):

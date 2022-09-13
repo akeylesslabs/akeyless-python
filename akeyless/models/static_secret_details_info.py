@@ -35,15 +35,17 @@ class StaticSecretDetailsInfo(object):
     """
     openapi_types = {
         'username': 'str',
-        'website': 'str'
+        'website': 'str',
+        'websites': 'list[str]'
     }
 
     attribute_map = {
         'username': 'username',
-        'website': 'website'
+        'website': 'website',
+        'websites': 'websites'
     }
 
-    def __init__(self, username=None, website=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, username=None, website=None, websites=None, local_vars_configuration=None):  # noqa: E501
         """StaticSecretDetailsInfo - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -51,12 +53,15 @@ class StaticSecretDetailsInfo(object):
 
         self._username = None
         self._website = None
+        self._websites = None
         self.discriminator = None
 
         if username is not None:
             self.username = username
         if website is not None:
             self.website = website
+        if websites is not None:
+            self.websites = websites
 
     @property
     def username(self):
@@ -83,6 +88,7 @@ class StaticSecretDetailsInfo(object):
     def website(self):
         """Gets the website of this StaticSecretDetailsInfo.  # noqa: E501
 
+        deprecated  # noqa: E501
 
         :return: The website of this StaticSecretDetailsInfo.  # noqa: E501
         :rtype: str
@@ -93,12 +99,34 @@ class StaticSecretDetailsInfo(object):
     def website(self, website):
         """Sets the website of this StaticSecretDetailsInfo.
 
+        deprecated  # noqa: E501
 
         :param website: The website of this StaticSecretDetailsInfo.  # noqa: E501
         :type: str
         """
 
         self._website = website
+
+    @property
+    def websites(self):
+        """Gets the websites of this StaticSecretDetailsInfo.  # noqa: E501
+
+
+        :return: The websites of this StaticSecretDetailsInfo.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._websites
+
+    @websites.setter
+    def websites(self, websites):
+        """Sets the websites of this StaticSecretDetailsInfo.
+
+
+        :param websites: The websites of this StaticSecretDetailsInfo.  # noqa: E501
+        :type: list[str]
+        """
+
+        self._websites = websites
 
     def to_dict(self):
         """Returns the model properties as a dict"""

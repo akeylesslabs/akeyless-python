@@ -35,6 +35,7 @@ class GatewayCreateProducerMSSQL(object):
     """
     openapi_types = {
         'delete_protection': 'str',
+        'json': 'bool',
         'mssql_create_statements': 'str',
         'mssql_dbname': 'str',
         'mssql_host': 'str',
@@ -58,6 +59,7 @@ class GatewayCreateProducerMSSQL(object):
 
     attribute_map = {
         'delete_protection': 'delete_protection',
+        'json': 'json',
         'mssql_create_statements': 'mssql-create-statements',
         'mssql_dbname': 'mssql-dbname',
         'mssql_host': 'mssql-host',
@@ -79,13 +81,14 @@ class GatewayCreateProducerMSSQL(object):
         'user_ttl': 'user-ttl'
     }
 
-    def __init__(self, delete_protection=None, mssql_create_statements=None, mssql_dbname=None, mssql_host='127.0.0.1', mssql_password=None, mssql_port='1433', mssql_revocation_statements=None, mssql_username=None, name=None, producer_encryption_key_name=None, secure_access_bastion_issuer=None, secure_access_db_schema=None, secure_access_enable=None, secure_access_host=None, secure_access_web=None, tags=None, target_name=None, token=None, uid_token=None, user_ttl='60m', local_vars_configuration=None):  # noqa: E501
+    def __init__(self, delete_protection=None, json=None, mssql_create_statements=None, mssql_dbname=None, mssql_host='127.0.0.1', mssql_password=None, mssql_port='1433', mssql_revocation_statements=None, mssql_username=None, name=None, producer_encryption_key_name=None, secure_access_bastion_issuer=None, secure_access_db_schema=None, secure_access_enable=None, secure_access_host=None, secure_access_web=None, tags=None, target_name=None, token=None, uid_token=None, user_ttl='60m', local_vars_configuration=None):  # noqa: E501
         """GatewayCreateProducerMSSQL - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._delete_protection = None
+        self._json = None
         self._mssql_create_statements = None
         self._mssql_dbname = None
         self._mssql_host = None
@@ -109,6 +112,8 @@ class GatewayCreateProducerMSSQL(object):
 
         if delete_protection is not None:
             self.delete_protection = delete_protection
+        if json is not None:
+            self.json = json
         if mssql_create_statements is not None:
             self.mssql_create_statements = mssql_create_statements
         if mssql_dbname is not None:
@@ -169,6 +174,29 @@ class GatewayCreateProducerMSSQL(object):
         """
 
         self._delete_protection = delete_protection
+
+    @property
+    def json(self):
+        """Gets the json of this GatewayCreateProducerMSSQL.  # noqa: E501
+
+        Set output format to JSON  # noqa: E501
+
+        :return: The json of this GatewayCreateProducerMSSQL.  # noqa: E501
+        :rtype: bool
+        """
+        return self._json
+
+    @json.setter
+    def json(self, json):
+        """Sets the json of this GatewayCreateProducerMSSQL.
+
+        Set output format to JSON  # noqa: E501
+
+        :param json: The json of this GatewayCreateProducerMSSQL.  # noqa: E501
+        :type: bool
+        """
+
+        self._json = json
 
     @property
     def mssql_create_statements(self):

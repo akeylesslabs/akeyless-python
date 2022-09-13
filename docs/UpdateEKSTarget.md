@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **eks_cluster_name** | **str** | EKS cluster name | 
 **eks_region** | **str** | Region | [optional] [default to 'us-east-2']
 **eks_secret_access_key** | **str** | Secret Access Key | 
+**json** | **bool** | Set output format to JSON | [optional] 
 **keep_prev_version** | **str** |  | [optional] 
 **key** | **str** | The name of a key that used to encrypt the target secret value (if empty, the account default protectionKey key will be used) | [optional] 
 **name** | **str** | Target name | 

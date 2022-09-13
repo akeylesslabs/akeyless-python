@@ -36,6 +36,8 @@ from akeyless.models.azure_ad_access_rules import AzureADAccessRules
 from akeyless.models.azure_key_vault_migration import AzureKeyVaultMigration
 from akeyless.models.azure_log_analytics_forwarding_config import AzureLogAnalyticsForwardingConfig
 from akeyless.models.azure_payload import AzurePayload
+from akeyless.models.bastion_list_entry import BastionListEntry
+from akeyless.models.bastions_list import BastionsList
 from akeyless.models.cf_config_part import CFConfigPart
 from akeyless.models.cache_config_part import CacheConfigPart
 from akeyless.models.cert_access_rules import CertAccessRules
@@ -314,6 +316,7 @@ from akeyless.models.gateway_update_producer_redshift_output import GatewayUpdat
 from akeyless.models.gateway_update_producer_snowflake import GatewayUpdateProducerSnowflake
 from akeyless.models.gateway_update_producer_snowflake_output import GatewayUpdateProducerSnowflakeOutput
 from akeyless.models.gateway_update_tmp_users import GatewayUpdateTmpUsers
+from akeyless.models.gateways_list_response import GatewaysListResponse
 from akeyless.models.gen_customer_fragment import GenCustomerFragment
 from akeyless.models.general_config_part import GeneralConfigPart
 from akeyless.models.get_account_settings import GetAccountSettings
@@ -339,6 +342,7 @@ from akeyless.models.get_tags import GetTags
 from akeyless.models.get_target import GetTarget
 from akeyless.models.get_target_details import GetTargetDetails
 from akeyless.models.get_target_details_output import GetTargetDetailsOutput
+from akeyless.models.gw_cluster_identity import GwClusterIdentity
 from akeyless.models.hashi_migration import HashiMigration
 from akeyless.models.hashi_payload import HashiPayload
 from akeyless.models.huawei_access_rules import HuaweiAccessRules
@@ -386,10 +390,12 @@ from akeyless.models.ldap_config_part import LdapConfigPart
 from akeyless.models.leadership_config_part import LeadershipConfigPart
 from akeyless.models.list_auth_methods import ListAuthMethods
 from akeyless.models.list_auth_methods_output import ListAuthMethodsOutput
+from akeyless.models.list_gateways import ListGateways
 from akeyless.models.list_items import ListItems
 from akeyless.models.list_items_in_path_output import ListItemsInPathOutput
 from akeyless.models.list_roles import ListRoles
 from akeyless.models.list_roles_output import ListRolesOutput
+from akeyless.models.list_sra_bastions import ListSRABastions
 from akeyless.models.list_targets import ListTargets
 from akeyless.models.list_targets_output import ListTargetsOutput
 from akeyless.models.log_forwarding_config_part import LogForwardingConfigPart
@@ -407,6 +413,8 @@ from akeyless.models.o_auth2_custom_claim import OAuth2CustomClaim
 from akeyless.models.oidc_access_rules import OIDCAccessRules
 from akeyless.models.oidc_custom_claim import OIDCCustomClaim
 from akeyless.models.object_version_settings_output import ObjectVersionSettingsOutput
+from akeyless.models.one_password_migration import OnePasswordMigration
+from akeyless.models.one_password_payload import OnePasswordPayload
 from akeyless.models.pki_certificate_issue_details import PKICertificateIssueDetails
 from akeyless.models.password_policy_info import PasswordPolicyInfo
 from akeyless.models.path_rule import PathRule
@@ -458,6 +466,7 @@ from akeyless.models.system_access_creds_settings import SystemAccessCredsSettin
 from akeyless.models.target import Target
 from akeyless.models.target_item_association import TargetItemAssociation
 from akeyless.models.target_item_version import TargetItemVersion
+from akeyless.models.target_object_association import TargetObjectAssociation
 from akeyless.models.target_type_details_input import TargetTypeDetailsInput
 from akeyless.models.tmp_user_data import TmpUserData
 from akeyless.models.tokenize import Tokenize
@@ -542,6 +551,7 @@ from akeyless.models.update_salesforce_target_output import UpdateSalesforceTarg
 from akeyless.models.update_secret_val import UpdateSecretVal
 from akeyless.models.update_secret_val_output import UpdateSecretValOutput
 from akeyless.models.update_target import UpdateTarget
+from akeyless.models.update_target_details import UpdateTargetDetails
 from akeyless.models.update_target_details_output import UpdateTargetDetailsOutput
 from akeyless.models.update_target_output import UpdateTargetOutput
 from akeyless.models.update_web_target import UpdateWebTarget

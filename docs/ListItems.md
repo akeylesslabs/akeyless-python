@@ -5,6 +5,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **accessibility** | **str** | for personal password manager | [optional] 
 **filter** | **str** | Filter by item name or part of it | [optional] 
+**json** | **bool** | Set output format to JSON | [optional] 
 **minimal_view** | **bool** |  | [optional] 
 **pagination_token** | **str** | Next page reference | [optional] 
 **path** | **str** | Path to folder | [optional] 

@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **db_server_certificates** | **str** | (Optional) DB server certificates | [optional] 
 **db_server_name** | **str** | (Optional) Server name for certificate verification | [optional] 
 **delete_protection** | **str** | Protection from accidental deletion of this item | [optional] 
+**json** | **bool** | Set output format to JSON | [optional] 
 **name** | **str** | Producer name | 
 **new_name** | **str** | Producer name | [optional] 
 **oracle_host** | **str** | Oracle Host | [optional] [default to '127.0.0.1']

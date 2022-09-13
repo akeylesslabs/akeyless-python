@@ -3,6 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**json** | **bool** | Set output format to JSON | [optional] 
 **name** | **str** | Target name | 
 **show_versions** | **bool** | Include all target versions in reply | [optional] [default to False]
 **target_version** | **int** | Target version | [optional] 

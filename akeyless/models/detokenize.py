@@ -35,6 +35,7 @@ class Detokenize(object):
     """
     openapi_types = {
         'ciphertext': 'str',
+        'json': 'bool',
         'token': 'str',
         'tokenizer_name': 'str',
         'tweak': 'str',
@@ -43,19 +44,21 @@ class Detokenize(object):
 
     attribute_map = {
         'ciphertext': 'ciphertext',
+        'json': 'json',
         'token': 'token',
         'tokenizer_name': 'tokenizer-name',
         'tweak': 'tweak',
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, ciphertext=None, token=None, tokenizer_name=None, tweak=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, ciphertext=None, json=None, token=None, tokenizer_name=None, tweak=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """Detokenize - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._ciphertext = None
+        self._json = None
         self._token = None
         self._tokenizer_name = None
         self._tweak = None
@@ -63,6 +66,8 @@ class Detokenize(object):
         self.discriminator = None
 
         self.ciphertext = ciphertext
+        if json is not None:
+            self.json = json
         if token is not None:
             self.token = token
         self.tokenizer_name = tokenizer_name
@@ -95,6 +100,29 @@ class Detokenize(object):
             raise ValueError("Invalid value for `ciphertext`, must not be `None`")  # noqa: E501
 
         self._ciphertext = ciphertext
+
+    @property
+    def json(self):
+        """Gets the json of this Detokenize.  # noqa: E501
+
+        Set output format to JSON  # noqa: E501
+
+        :return: The json of this Detokenize.  # noqa: E501
+        :rtype: bool
+        """
+        return self._json
+
+    @json.setter
+    def json(self, json):
+        """Sets the json of this Detokenize.
+
+        Set output format to JSON  # noqa: E501
+
+        :param json: The json of this Detokenize.  # noqa: E501
+        :type: bool
+        """
+
+        self._json = json
 
     @property
     def token(self):

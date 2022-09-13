@@ -35,28 +35,33 @@ class GatewayDeleteMigration(object):
     """
     openapi_types = {
         'id': 'str',
+        'json': 'bool',
         'token': 'str',
         'uid_token': 'str'
     }
 
     attribute_map = {
         'id': 'id',
+        'json': 'json',
         'token': 'token',
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, id=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, id=None, json=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """GatewayDeleteMigration - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._id = None
+        self._json = None
         self._token = None
         self._uid_token = None
         self.discriminator = None
 
         self.id = id
+        if json is not None:
+            self.json = json
         if token is not None:
             self.token = token
         if uid_token is not None:
@@ -86,6 +91,29 @@ class GatewayDeleteMigration(object):
             raise ValueError("Invalid value for `id`, must not be `None`")  # noqa: E501
 
         self._id = id
+
+    @property
+    def json(self):
+        """Gets the json of this GatewayDeleteMigration.  # noqa: E501
+
+        Set output format to JSON  # noqa: E501
+
+        :return: The json of this GatewayDeleteMigration.  # noqa: E501
+        :rtype: bool
+        """
+        return self._json
+
+    @json.setter
+    def json(self, json):
+        """Sets the json of this GatewayDeleteMigration.
+
+        Set output format to JSON  # noqa: E501
+
+        :param json: The json of this GatewayDeleteMigration.  # noqa: E501
+        :type: bool
+        """
+
+        self._json = json
 
     @property
     def token(self):

@@ -37,6 +37,7 @@ class UpdateDockerhubTarget(object):
         'comment': 'str',
         'dockerhub_password': 'str',
         'dockerhub_username': 'str',
+        'json': 'bool',
         'keep_prev_version': 'str',
         'key': 'str',
         'name': 'str',
@@ -50,6 +51,7 @@ class UpdateDockerhubTarget(object):
         'comment': 'comment',
         'dockerhub_password': 'dockerhub-password',
         'dockerhub_username': 'dockerhub-username',
+        'json': 'json',
         'keep_prev_version': 'keep-prev-version',
         'key': 'key',
         'name': 'name',
@@ -59,7 +61,7 @@ class UpdateDockerhubTarget(object):
         'update_version': 'update-version'
     }
 
-    def __init__(self, comment=None, dockerhub_password=None, dockerhub_username=None, keep_prev_version=None, key=None, name=None, new_name=None, token=None, uid_token=None, update_version=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, comment=None, dockerhub_password=None, dockerhub_username=None, json=None, keep_prev_version=None, key=None, name=None, new_name=None, token=None, uid_token=None, update_version=None, local_vars_configuration=None):  # noqa: E501
         """UpdateDockerhubTarget - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -68,6 +70,7 @@ class UpdateDockerhubTarget(object):
         self._comment = None
         self._dockerhub_password = None
         self._dockerhub_username = None
+        self._json = None
         self._keep_prev_version = None
         self._key = None
         self._name = None
@@ -83,6 +86,8 @@ class UpdateDockerhubTarget(object):
             self.dockerhub_password = dockerhub_password
         if dockerhub_username is not None:
             self.dockerhub_username = dockerhub_username
+        if json is not None:
+            self.json = json
         if keep_prev_version is not None:
             self.keep_prev_version = keep_prev_version
         if key is not None:
@@ -161,6 +166,29 @@ class UpdateDockerhubTarget(object):
         """
 
         self._dockerhub_username = dockerhub_username
+
+    @property
+    def json(self):
+        """Gets the json of this UpdateDockerhubTarget.  # noqa: E501
+
+        Set output format to JSON  # noqa: E501
+
+        :return: The json of this UpdateDockerhubTarget.  # noqa: E501
+        :rtype: bool
+        """
+        return self._json
+
+    @json.setter
+    def json(self, json):
+        """Sets the json of this UpdateDockerhubTarget.
+
+        Set output format to JSON  # noqa: E501
+
+        :param json: The json of this UpdateDockerhubTarget.  # noqa: E501
+        :type: bool
+        """
+
+        self._json = json
 
     @property
     def keep_prev_version(self):

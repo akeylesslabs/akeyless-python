@@ -37,6 +37,7 @@ class CreateGcpTarget(object):
         'comment': 'str',
         'gcp_key': 'str',
         'gcp_sa_email': 'str',
+        'json': 'bool',
         'key': 'str',
         'name': 'str',
         'token': 'str',
@@ -48,6 +49,7 @@ class CreateGcpTarget(object):
         'comment': 'comment',
         'gcp_key': 'gcp-key',
         'gcp_sa_email': 'gcp-sa-email',
+        'json': 'json',
         'key': 'key',
         'name': 'name',
         'token': 'token',
@@ -55,7 +57,7 @@ class CreateGcpTarget(object):
         'use_gw_cloud_identity': 'use-gw-cloud-identity'
     }
 
-    def __init__(self, comment=None, gcp_key=None, gcp_sa_email=None, key=None, name=None, token=None, uid_token=None, use_gw_cloud_identity=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, comment=None, gcp_key=None, gcp_sa_email=None, json=None, key=None, name=None, token=None, uid_token=None, use_gw_cloud_identity=None, local_vars_configuration=None):  # noqa: E501
         """CreateGcpTarget - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -64,6 +66,7 @@ class CreateGcpTarget(object):
         self._comment = None
         self._gcp_key = None
         self._gcp_sa_email = None
+        self._json = None
         self._key = None
         self._name = None
         self._token = None
@@ -77,6 +80,8 @@ class CreateGcpTarget(object):
             self.gcp_key = gcp_key
         if gcp_sa_email is not None:
             self.gcp_sa_email = gcp_sa_email
+        if json is not None:
+            self.json = json
         if key is not None:
             self.key = key
         self.name = name
@@ -155,6 +160,29 @@ class CreateGcpTarget(object):
         """
 
         self._gcp_sa_email = gcp_sa_email
+
+    @property
+    def json(self):
+        """Gets the json of this CreateGcpTarget.  # noqa: E501
+
+        Set output format to JSON  # noqa: E501
+
+        :return: The json of this CreateGcpTarget.  # noqa: E501
+        :rtype: bool
+        """
+        return self._json
+
+    @json.setter
+    def json(self, json):
+        """Sets the json of this CreateGcpTarget.
+
+        Set output format to JSON  # noqa: E501
+
+        :param json: The json of this CreateGcpTarget.  # noqa: E501
+        :type: bool
+        """
+
+        self._json = json
 
     @property
     def key(self):

@@ -38,6 +38,7 @@ class GatewayUpdateProducerDockerhub(object):
         'dockerhub_password': 'str',
         'dockerhub_token_scopes': 'str',
         'dockerhub_username': 'str',
+        'json': 'bool',
         'name': 'str',
         'new_name': 'str',
         'producer_encryption_key_name': 'str',
@@ -53,6 +54,7 @@ class GatewayUpdateProducerDockerhub(object):
         'dockerhub_password': 'dockerhub-password',
         'dockerhub_token_scopes': 'dockerhub-token-scopes',
         'dockerhub_username': 'dockerhub-username',
+        'json': 'json',
         'name': 'name',
         'new_name': 'new-name',
         'producer_encryption_key_name': 'producer-encryption-key-name',
@@ -63,7 +65,7 @@ class GatewayUpdateProducerDockerhub(object):
         'user_ttl': 'user-ttl'
     }
 
-    def __init__(self, delete_protection=None, dockerhub_password=None, dockerhub_token_scopes=None, dockerhub_username=None, name=None, new_name=None, producer_encryption_key_name=None, tags=None, target_name=None, token=None, uid_token=None, user_ttl='60m', local_vars_configuration=None):  # noqa: E501
+    def __init__(self, delete_protection=None, dockerhub_password=None, dockerhub_token_scopes=None, dockerhub_username=None, json=None, name=None, new_name=None, producer_encryption_key_name=None, tags=None, target_name=None, token=None, uid_token=None, user_ttl='60m', local_vars_configuration=None):  # noqa: E501
         """GatewayUpdateProducerDockerhub - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -73,6 +75,7 @@ class GatewayUpdateProducerDockerhub(object):
         self._dockerhub_password = None
         self._dockerhub_token_scopes = None
         self._dockerhub_username = None
+        self._json = None
         self._name = None
         self._new_name = None
         self._producer_encryption_key_name = None
@@ -91,6 +94,8 @@ class GatewayUpdateProducerDockerhub(object):
             self.dockerhub_token_scopes = dockerhub_token_scopes
         if dockerhub_username is not None:
             self.dockerhub_username = dockerhub_username
+        if json is not None:
+            self.json = json
         self.name = name
         if new_name is not None:
             self.new_name = new_name
@@ -198,6 +203,29 @@ class GatewayUpdateProducerDockerhub(object):
         """
 
         self._dockerhub_username = dockerhub_username
+
+    @property
+    def json(self):
+        """Gets the json of this GatewayUpdateProducerDockerhub.  # noqa: E501
+
+        Set output format to JSON  # noqa: E501
+
+        :return: The json of this GatewayUpdateProducerDockerhub.  # noqa: E501
+        :rtype: bool
+        """
+        return self._json
+
+    @json.setter
+    def json(self, json):
+        """Sets the json of this GatewayUpdateProducerDockerhub.
+
+        Set output format to JSON  # noqa: E501
+
+        :param json: The json of this GatewayUpdateProducerDockerhub.  # noqa: E501
+        :type: bool
+        """
+
+        self._json = json
 
     @property
     def name(self):

@@ -40,6 +40,7 @@ class CreateGKETarget(object):
         'gke_cluster_endpoint': 'str',
         'gke_cluster_name': 'str',
         'gke_service_account_email': 'str',
+        'json': 'bool',
         'key': 'str',
         'name': 'str',
         'token': 'str',
@@ -54,6 +55,7 @@ class CreateGKETarget(object):
         'gke_cluster_endpoint': 'gke-cluster-endpoint',
         'gke_cluster_name': 'gke-cluster-name',
         'gke_service_account_email': 'gke-service-account-email',
+        'json': 'json',
         'key': 'key',
         'name': 'name',
         'token': 'token',
@@ -61,7 +63,7 @@ class CreateGKETarget(object):
         'use_gw_cloud_identity': 'use-gw-cloud-identity'
     }
 
-    def __init__(self, comment=None, gke_account_key=None, gke_cluster_cert=None, gke_cluster_endpoint=None, gke_cluster_name=None, gke_service_account_email=None, key=None, name=None, token=None, uid_token=None, use_gw_cloud_identity=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, comment=None, gke_account_key=None, gke_cluster_cert=None, gke_cluster_endpoint=None, gke_cluster_name=None, gke_service_account_email=None, json=None, key=None, name=None, token=None, uid_token=None, use_gw_cloud_identity=None, local_vars_configuration=None):  # noqa: E501
         """CreateGKETarget - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -73,6 +75,7 @@ class CreateGKETarget(object):
         self._gke_cluster_endpoint = None
         self._gke_cluster_name = None
         self._gke_service_account_email = None
+        self._json = None
         self._key = None
         self._name = None
         self._token = None
@@ -92,6 +95,8 @@ class CreateGKETarget(object):
             self.gke_cluster_name = gke_cluster_name
         if gke_service_account_email is not None:
             self.gke_service_account_email = gke_service_account_email
+        if json is not None:
+            self.json = json
         if key is not None:
             self.key = key
         self.name = name
@@ -239,6 +244,29 @@ class CreateGKETarget(object):
         """
 
         self._gke_service_account_email = gke_service_account_email
+
+    @property
+    def json(self):
+        """Gets the json of this CreateGKETarget.  # noqa: E501
+
+        Set output format to JSON  # noqa: E501
+
+        :return: The json of this CreateGKETarget.  # noqa: E501
+        :rtype: bool
+        """
+        return self._json
+
+    @json.setter
+    def json(self, json):
+        """Sets the json of this CreateGKETarget.
+
+        Set output format to JSON  # noqa: E501
+
+        :param json: The json of this CreateGKETarget.  # noqa: E501
+        :type: bool
+        """
+
+        self._json = json
 
     @property
     def key(self):

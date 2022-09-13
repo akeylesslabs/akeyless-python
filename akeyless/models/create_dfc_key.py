@@ -37,6 +37,7 @@ class CreateDFCKey(object):
         'alg': 'str',
         'customer_frg_id': 'str',
         'delete_protection': 'str',
+        'json': 'bool',
         'metadata': 'str',
         'name': 'str',
         'split_level': 'int',
@@ -49,6 +50,7 @@ class CreateDFCKey(object):
         'alg': 'alg',
         'customer_frg_id': 'customer-frg-id',
         'delete_protection': 'delete_protection',
+        'json': 'json',
         'metadata': 'metadata',
         'name': 'name',
         'split_level': 'split-level',
@@ -57,7 +59,7 @@ class CreateDFCKey(object):
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, alg=None, customer_frg_id=None, delete_protection=None, metadata=None, name=None, split_level=2, tag=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, alg=None, customer_frg_id=None, delete_protection=None, json=None, metadata=None, name=None, split_level=2, tag=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """CreateDFCKey - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -66,6 +68,7 @@ class CreateDFCKey(object):
         self._alg = None
         self._customer_frg_id = None
         self._delete_protection = None
+        self._json = None
         self._metadata = None
         self._name = None
         self._split_level = None
@@ -79,6 +82,8 @@ class CreateDFCKey(object):
             self.customer_frg_id = customer_frg_id
         if delete_protection is not None:
             self.delete_protection = delete_protection
+        if json is not None:
+            self.json = json
         if metadata is not None:
             self.metadata = metadata
         self.name = name
@@ -95,7 +100,7 @@ class CreateDFCKey(object):
     def alg(self):
         """Gets the alg of this CreateDFCKey.  # noqa: E501
 
-        DFCKey type; options: [AES128GCM, AES256GCM, AES128SIV, AES256SIV, RSA1024, RSA2048, RSA3072, RSA4096]  # noqa: E501
+        DFCKey type; options: [AES128GCM, AES256GCM, AES128SIV, AES256SIV, AES128CBC, AES256CBC, RSA1024, RSA2048, RSA3072, RSA4096]  # noqa: E501
 
         :return: The alg of this CreateDFCKey.  # noqa: E501
         :rtype: str
@@ -106,7 +111,7 @@ class CreateDFCKey(object):
     def alg(self, alg):
         """Sets the alg of this CreateDFCKey.
 
-        DFCKey type; options: [AES128GCM, AES256GCM, AES128SIV, AES256SIV, RSA1024, RSA2048, RSA3072, RSA4096]  # noqa: E501
+        DFCKey type; options: [AES128GCM, AES256GCM, AES128SIV, AES256SIV, AES128CBC, AES256CBC, RSA1024, RSA2048, RSA3072, RSA4096]  # noqa: E501
 
         :param alg: The alg of this CreateDFCKey.  # noqa: E501
         :type: str
@@ -161,6 +166,29 @@ class CreateDFCKey(object):
         """
 
         self._delete_protection = delete_protection
+
+    @property
+    def json(self):
+        """Gets the json of this CreateDFCKey.  # noqa: E501
+
+        Set output format to JSON  # noqa: E501
+
+        :return: The json of this CreateDFCKey.  # noqa: E501
+        :rtype: bool
+        """
+        return self._json
+
+    @json.setter
+    def json(self, json):
+        """Sets the json of this CreateDFCKey.
+
+        Set output format to JSON  # noqa: E501
+
+        :param json: The json of this CreateDFCKey.  # noqa: E501
+        :type: bool
+        """
+
+        self._json = json
 
     @property
     def metadata(self):

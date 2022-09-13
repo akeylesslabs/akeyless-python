@@ -35,28 +35,33 @@ class UidGenerateToken(object):
     """
     openapi_types = {
         'auth_method_name': 'str',
+        'json': 'bool',
         'token': 'str',
         'uid_token': 'str'
     }
 
     attribute_map = {
         'auth_method_name': 'auth-method-name',
+        'json': 'json',
         'token': 'token',
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, auth_method_name=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, auth_method_name=None, json=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """UidGenerateToken - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._auth_method_name = None
+        self._json = None
         self._token = None
         self._uid_token = None
         self.discriminator = None
 
         self.auth_method_name = auth_method_name
+        if json is not None:
+            self.json = json
         if token is not None:
             self.token = token
         if uid_token is not None:
@@ -86,6 +91,29 @@ class UidGenerateToken(object):
             raise ValueError("Invalid value for `auth_method_name`, must not be `None`")  # noqa: E501
 
         self._auth_method_name = auth_method_name
+
+    @property
+    def json(self):
+        """Gets the json of this UidGenerateToken.  # noqa: E501
+
+        Set output format to JSON  # noqa: E501
+
+        :return: The json of this UidGenerateToken.  # noqa: E501
+        :rtype: bool
+        """
+        return self._json
+
+    @json.setter
+    def json(self, json):
+        """Sets the json of this UidGenerateToken.
+
+        Set output format to JSON  # noqa: E501
+
+        :param json: The json of this UidGenerateToken.  # noqa: E501
+        :type: bool
+        """
+
+        self._json = json
 
     @property
     def token(self):

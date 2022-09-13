@@ -40,6 +40,7 @@ class GatewayCreateProducerArtifactory(object):
         'artifactory_token_scope': 'str',
         'base_url': 'str',
         'delete_protection': 'str',
+        'json': 'bool',
         'name': 'str',
         'producer_encryption_key_name': 'str',
         'tags': 'list[str]',
@@ -56,6 +57,7 @@ class GatewayCreateProducerArtifactory(object):
         'artifactory_token_scope': 'artifactory-token-scope',
         'base_url': 'base-url',
         'delete_protection': 'delete_protection',
+        'json': 'json',
         'name': 'name',
         'producer_encryption_key_name': 'producer-encryption-key-name',
         'tags': 'tags',
@@ -65,7 +67,7 @@ class GatewayCreateProducerArtifactory(object):
         'user_ttl': 'user-ttl'
     }
 
-    def __init__(self, artifactory_admin_name=None, artifactory_admin_pwd=None, artifactory_token_audience=None, artifactory_token_scope=None, base_url=None, delete_protection=None, name=None, producer_encryption_key_name=None, tags=None, target_name=None, token=None, uid_token=None, user_ttl='60m', local_vars_configuration=None):  # noqa: E501
+    def __init__(self, artifactory_admin_name=None, artifactory_admin_pwd=None, artifactory_token_audience=None, artifactory_token_scope=None, base_url=None, delete_protection=None, json=None, name=None, producer_encryption_key_name=None, tags=None, target_name=None, token=None, uid_token=None, user_ttl='60m', local_vars_configuration=None):  # noqa: E501
         """GatewayCreateProducerArtifactory - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -77,6 +79,7 @@ class GatewayCreateProducerArtifactory(object):
         self._artifactory_token_scope = None
         self._base_url = None
         self._delete_protection = None
+        self._json = None
         self._name = None
         self._producer_encryption_key_name = None
         self._tags = None
@@ -96,6 +99,8 @@ class GatewayCreateProducerArtifactory(object):
             self.base_url = base_url
         if delete_protection is not None:
             self.delete_protection = delete_protection
+        if json is not None:
+            self.json = json
         self.name = name
         if producer_encryption_key_name is not None:
             self.producer_encryption_key_name = producer_encryption_key_name
@@ -251,6 +256,29 @@ class GatewayCreateProducerArtifactory(object):
         """
 
         self._delete_protection = delete_protection
+
+    @property
+    def json(self):
+        """Gets the json of this GatewayCreateProducerArtifactory.  # noqa: E501
+
+        Set output format to JSON  # noqa: E501
+
+        :return: The json of this GatewayCreateProducerArtifactory.  # noqa: E501
+        :rtype: bool
+        """
+        return self._json
+
+    @json.setter
+    def json(self, json):
+        """Sets the json of this GatewayCreateProducerArtifactory.
+
+        Set output format to JSON  # noqa: E501
+
+        :param json: The json of this GatewayCreateProducerArtifactory.  # noqa: E501
+        :type: bool
+        """
+
+        self._json = json
 
     @property
     def name(self):

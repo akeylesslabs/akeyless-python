@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **github_app_id** | **int** | Github app id | [optional] 
 **github_app_private_key** | **str** | App private key | [optional] 
 **github_base_url** | **str** | Base URL | [optional] 
+**json** | **bool** | Set output format to JSON | [optional] 
 **keep_prev_version** | **str** |  | [optional] 
 **key** | **str** | The name of a key that used to encrypt the target secret value (if empty, the account default protectionKey key will be used) | [optional] 
 **name** | **str** | Target name | 

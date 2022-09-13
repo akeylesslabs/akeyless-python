@@ -34,6 +34,7 @@ class MoveObjects(object):
                             and the value is json key in definition.
     """
     openapi_types = {
+        'json': 'bool',
         'objects_type': 'str',
         'source': 'str',
         'target': 'str',
@@ -42,6 +43,7 @@ class MoveObjects(object):
     }
 
     attribute_map = {
+        'json': 'json',
         'objects_type': 'objects-type',
         'source': 'source',
         'target': 'target',
@@ -49,12 +51,13 @@ class MoveObjects(object):
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, objects_type='item', source=None, target=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, json=None, objects_type='item', source=None, target=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """MoveObjects - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
+        self._json = None
         self._objects_type = None
         self._source = None
         self._target = None
@@ -62,6 +65,8 @@ class MoveObjects(object):
         self._uid_token = None
         self.discriminator = None
 
+        if json is not None:
+            self.json = json
         if objects_type is not None:
             self.objects_type = objects_type
         self.source = source
@@ -70,6 +75,29 @@ class MoveObjects(object):
             self.token = token
         if uid_token is not None:
             self.uid_token = uid_token
+
+    @property
+    def json(self):
+        """Gets the json of this MoveObjects.  # noqa: E501
+
+        Set output format to JSON  # noqa: E501
+
+        :return: The json of this MoveObjects.  # noqa: E501
+        :rtype: bool
+        """
+        return self._json
+
+    @json.setter
+    def json(self, json):
+        """Sets the json of this MoveObjects.
+
+        Set output format to JSON  # noqa: E501
+
+        :param json: The json of this MoveObjects.  # noqa: E501
+        :type: bool
+        """
+
+        self._json = json
 
     @property
     def objects_type(self):

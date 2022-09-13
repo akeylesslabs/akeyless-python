@@ -35,6 +35,7 @@ class UidRotateToken(object):
     """
     openapi_types = {
         'fork': 'bool',
+        'json': 'bool',
         'send_manual_ack_token': 'str',
         'uid_token': 'str',
         'with_manual_ack': 'bool'
@@ -42,18 +43,20 @@ class UidRotateToken(object):
 
     attribute_map = {
         'fork': 'fork',
+        'json': 'json',
         'send_manual_ack_token': 'send-manual-ack-token',
         'uid_token': 'uid-token',
         'with_manual_ack': 'with-manual-ack'
     }
 
-    def __init__(self, fork=None, send_manual_ack_token=None, uid_token=None, with_manual_ack=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, fork=None, json=None, send_manual_ack_token=None, uid_token=None, with_manual_ack=None, local_vars_configuration=None):  # noqa: E501
         """UidRotateToken - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._fork = None
+        self._json = None
         self._send_manual_ack_token = None
         self._uid_token = None
         self._with_manual_ack = None
@@ -61,6 +64,8 @@ class UidRotateToken(object):
 
         if fork is not None:
             self.fork = fork
+        if json is not None:
+            self.json = json
         if send_manual_ack_token is not None:
             self.send_manual_ack_token = send_manual_ack_token
         if uid_token is not None:
@@ -90,6 +95,29 @@ class UidRotateToken(object):
         """
 
         self._fork = fork
+
+    @property
+    def json(self):
+        """Gets the json of this UidRotateToken.  # noqa: E501
+
+        Set output format to JSON  # noqa: E501
+
+        :return: The json of this UidRotateToken.  # noqa: E501
+        :rtype: bool
+        """
+        return self._json
+
+    @json.setter
+    def json(self, json):
+        """Sets the json of this UidRotateToken.
+
+        Set output format to JSON  # noqa: E501
+
+        :param json: The json of this UidRotateToken.  # noqa: E501
+        :type: bool
+        """
+
+        self._json = json
 
     @property
     def send_manual_ack_token(self):

@@ -35,6 +35,7 @@ class VerifyJWTWithClassicKey(object):
     """
     openapi_types = {
         'display_id': 'str',
+        'json': 'bool',
         'jwt': 'str',
         'required_claims': 'str',
         'token': 'str',
@@ -44,6 +45,7 @@ class VerifyJWTWithClassicKey(object):
 
     attribute_map = {
         'display_id': 'display-id',
+        'json': 'json',
         'jwt': 'jwt',
         'required_claims': 'required-claims',
         'token': 'token',
@@ -51,13 +53,14 @@ class VerifyJWTWithClassicKey(object):
         'version': 'version'
     }
 
-    def __init__(self, display_id=None, jwt=None, required_claims=None, token=None, uid_token=None, version=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, display_id=None, json=None, jwt=None, required_claims=None, token=None, uid_token=None, version=None, local_vars_configuration=None):  # noqa: E501
         """VerifyJWTWithClassicKey - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._display_id = None
+        self._json = None
         self._jwt = None
         self._required_claims = None
         self._token = None
@@ -66,6 +69,8 @@ class VerifyJWTWithClassicKey(object):
         self.discriminator = None
 
         self.display_id = display_id
+        if json is not None:
+            self.json = json
         self.jwt = jwt
         self.required_claims = required_claims
         if token is not None:
@@ -98,6 +103,29 @@ class VerifyJWTWithClassicKey(object):
             raise ValueError("Invalid value for `display_id`, must not be `None`")  # noqa: E501
 
         self._display_id = display_id
+
+    @property
+    def json(self):
+        """Gets the json of this VerifyJWTWithClassicKey.  # noqa: E501
+
+        Set output format to JSON  # noqa: E501
+
+        :return: The json of this VerifyJWTWithClassicKey.  # noqa: E501
+        :rtype: bool
+        """
+        return self._json
+
+    @json.setter
+    def json(self, json):
+        """Sets the json of this VerifyJWTWithClassicKey.
+
+        Set output format to JSON  # noqa: E501
+
+        :param json: The json of this VerifyJWTWithClassicKey.  # noqa: E501
+        :type: bool
+        """
+
+        self._json = json
 
     @property
     def jwt(self):

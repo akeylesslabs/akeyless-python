@@ -37,6 +37,7 @@ class GatewayCreateProducerOracleDb(object):
         'db_server_certificates': 'str',
         'db_server_name': 'str',
         'delete_protection': 'str',
+        'json': 'bool',
         'name': 'str',
         'oracle_host': 'str',
         'oracle_password': 'str',
@@ -60,6 +61,7 @@ class GatewayCreateProducerOracleDb(object):
         'db_server_certificates': 'db-server-certificates',
         'db_server_name': 'db-server-name',
         'delete_protection': 'delete_protection',
+        'json': 'json',
         'name': 'name',
         'oracle_host': 'oracle-host',
         'oracle_password': 'oracle-password',
@@ -79,7 +81,7 @@ class GatewayCreateProducerOracleDb(object):
         'user_ttl': 'user-ttl'
     }
 
-    def __init__(self, db_server_certificates=None, db_server_name=None, delete_protection=None, name=None, oracle_host='127.0.0.1', oracle_password=None, oracle_port='1521', oracle_screation_statements=None, oracle_service_name=None, oracle_username=None, producer_encryption_key_name=None, secure_access_bastion_issuer=None, secure_access_enable=None, secure_access_host=None, secure_access_web=None, tags=None, target_name=None, token=None, uid_token=None, user_ttl='60m', local_vars_configuration=None):  # noqa: E501
+    def __init__(self, db_server_certificates=None, db_server_name=None, delete_protection=None, json=None, name=None, oracle_host='127.0.0.1', oracle_password=None, oracle_port='1521', oracle_screation_statements=None, oracle_service_name=None, oracle_username=None, producer_encryption_key_name=None, secure_access_bastion_issuer=None, secure_access_enable=None, secure_access_host=None, secure_access_web=None, tags=None, target_name=None, token=None, uid_token=None, user_ttl='60m', local_vars_configuration=None):  # noqa: E501
         """GatewayCreateProducerOracleDb - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -88,6 +90,7 @@ class GatewayCreateProducerOracleDb(object):
         self._db_server_certificates = None
         self._db_server_name = None
         self._delete_protection = None
+        self._json = None
         self._name = None
         self._oracle_host = None
         self._oracle_password = None
@@ -113,6 +116,8 @@ class GatewayCreateProducerOracleDb(object):
             self.db_server_name = db_server_name
         if delete_protection is not None:
             self.delete_protection = delete_protection
+        if json is not None:
+            self.json = json
         self.name = name
         if oracle_host is not None:
             self.oracle_host = oracle_host
@@ -215,6 +220,29 @@ class GatewayCreateProducerOracleDb(object):
         """
 
         self._delete_protection = delete_protection
+
+    @property
+    def json(self):
+        """Gets the json of this GatewayCreateProducerOracleDb.  # noqa: E501
+
+        Set output format to JSON  # noqa: E501
+
+        :return: The json of this GatewayCreateProducerOracleDb.  # noqa: E501
+        :rtype: bool
+        """
+        return self._json
+
+    @json.setter
+    def json(self, json):
+        """Sets the json of this GatewayCreateProducerOracleDb.
+
+        Set output format to JSON  # noqa: E501
+
+        :param json: The json of this GatewayCreateProducerOracleDb.  # noqa: E501
+        :type: bool
+        """
+
+        self._json = json
 
     @property
     def name(self):

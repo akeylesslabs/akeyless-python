@@ -38,6 +38,7 @@ class SignPKICertWithClassicKey(object):
         'country': 'str',
         'display_id': 'str',
         'dns_names': 'str',
+        'json': 'bool',
         'key_usage': 'str',
         'locality': 'str',
         'organizational_units': 'str',
@@ -59,6 +60,7 @@ class SignPKICertWithClassicKey(object):
         'country': 'country',
         'display_id': 'display-id',
         'dns_names': 'dns-names',
+        'json': 'json',
         'key_usage': 'key-usage',
         'locality': 'locality',
         'organizational_units': 'organizational-units',
@@ -75,7 +77,7 @@ class SignPKICertWithClassicKey(object):
         'version': 'version'
     }
 
-    def __init__(self, common_name=None, country=None, display_id=None, dns_names=None, key_usage='DigitalSignature,KeyAgreement,KeyEncipherment', locality=None, organizational_units=None, organizations=None, postal_code=None, province=None, public_key_pem_data=None, signing_method=None, street_address=None, token=None, ttl=None, uid_token=None, uri_sans=None, version=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, common_name=None, country=None, display_id=None, dns_names=None, json=None, key_usage='DigitalSignature,KeyAgreement,KeyEncipherment', locality=None, organizational_units=None, organizations=None, postal_code=None, province=None, public_key_pem_data=None, signing_method=None, street_address=None, token=None, ttl=None, uid_token=None, uri_sans=None, version=None, local_vars_configuration=None):  # noqa: E501
         """SignPKICertWithClassicKey - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -85,6 +87,7 @@ class SignPKICertWithClassicKey(object):
         self._country = None
         self._display_id = None
         self._dns_names = None
+        self._json = None
         self._key_usage = None
         self._locality = None
         self._organizational_units = None
@@ -108,6 +111,8 @@ class SignPKICertWithClassicKey(object):
         self.display_id = display_id
         if dns_names is not None:
             self.dns_names = dns_names
+        if json is not None:
+            self.json = json
         if key_usage is not None:
             self.key_usage = key_usage
         if locality is not None:
@@ -227,6 +232,29 @@ class SignPKICertWithClassicKey(object):
         """
 
         self._dns_names = dns_names
+
+    @property
+    def json(self):
+        """Gets the json of this SignPKICertWithClassicKey.  # noqa: E501
+
+        Set output format to JSON  # noqa: E501
+
+        :return: The json of this SignPKICertWithClassicKey.  # noqa: E501
+        :rtype: bool
+        """
+        return self._json
+
+    @json.setter
+    def json(self, json):
+        """Sets the json of this SignPKICertWithClassicKey.
+
+        Set output format to JSON  # noqa: E501
+
+        :param json: The json of this SignPKICertWithClassicKey.  # noqa: E501
+        :type: bool
+        """
+
+        self._json = json
 
     @property
     def key_usage(self):

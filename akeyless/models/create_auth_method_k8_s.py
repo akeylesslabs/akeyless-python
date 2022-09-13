@@ -43,6 +43,7 @@ class CreateAuthMethodK8S(object):
         'force_sub_claims': 'bool',
         'gen_key': 'str',
         'gw_bound_ips': 'list[str]',
+        'json': 'bool',
         'jwt_ttl': 'int',
         'name': 'str',
         'public_key': 'str',
@@ -60,6 +61,7 @@ class CreateAuthMethodK8S(object):
         'force_sub_claims': 'force-sub-claims',
         'gen_key': 'gen-key',
         'gw_bound_ips': 'gw-bound-ips',
+        'json': 'json',
         'jwt_ttl': 'jwt-ttl',
         'name': 'name',
         'public_key': 'public-key',
@@ -67,7 +69,7 @@ class CreateAuthMethodK8S(object):
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, access_expires=0, audience=None, bound_ips=None, bound_namespaces=None, bound_pod_names=None, bound_sa_names=None, force_sub_claims=None, gen_key='true', gw_bound_ips=None, jwt_ttl=None, name=None, public_key=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, access_expires=0, audience=None, bound_ips=None, bound_namespaces=None, bound_pod_names=None, bound_sa_names=None, force_sub_claims=None, gen_key='true', gw_bound_ips=None, json=None, jwt_ttl=None, name=None, public_key=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """CreateAuthMethodK8S - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -82,6 +84,7 @@ class CreateAuthMethodK8S(object):
         self._force_sub_claims = None
         self._gen_key = None
         self._gw_bound_ips = None
+        self._json = None
         self._jwt_ttl = None
         self._name = None
         self._public_key = None
@@ -107,6 +110,8 @@ class CreateAuthMethodK8S(object):
             self.gen_key = gen_key
         if gw_bound_ips is not None:
             self.gw_bound_ips = gw_bound_ips
+        if json is not None:
+            self.json = json
         if jwt_ttl is not None:
             self.jwt_ttl = jwt_ttl
         self.name = name
@@ -323,6 +328,29 @@ class CreateAuthMethodK8S(object):
         """
 
         self._gw_bound_ips = gw_bound_ips
+
+    @property
+    def json(self):
+        """Gets the json of this CreateAuthMethodK8S.  # noqa: E501
+
+        Set output format to JSON  # noqa: E501
+
+        :return: The json of this CreateAuthMethodK8S.  # noqa: E501
+        :rtype: bool
+        """
+        return self._json
+
+    @json.setter
+    def json(self, json):
+        """Sets the json of this CreateAuthMethodK8S.
+
+        Set output format to JSON  # noqa: E501
+
+        :param json: The json of this CreateAuthMethodK8S.  # noqa: E501
+        :type: bool
+        """
+
+        self._json = json
 
     @property
     def jwt_ttl(self):

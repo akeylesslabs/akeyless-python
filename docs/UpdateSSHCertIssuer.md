@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 **add_tag** | **list[str]** | List of the new tags that will be attached to this item | [optional] 
 **allowed_users** | **str** | Users allowed to fetch the certificate, e.g root,ubuntu | 
 **extensions** | **dict(str, str)** | Signed certificates with extensions, e.g permit-port-forwarding&#x3D;\\\&quot;\\\&quot; | [optional] 
+**json** | **bool** | Set output format to JSON | [optional] 
 **metadata** | **str** | A metadata about the issuer | [optional] 
 **name** | **str** | SSH certificate issuer name | 
 **new_name** | **str** | New item name | [optional] 

@@ -35,6 +35,7 @@ class DeleteTargets(object):
     """
     openapi_types = {
         'force_deletion': 'bool',
+        'json': 'bool',
         'path': 'str',
         'token': 'str',
         'uid_token': 'str'
@@ -42,18 +43,20 @@ class DeleteTargets(object):
 
     attribute_map = {
         'force_deletion': 'force-deletion',
+        'json': 'json',
         'path': 'path',
         'token': 'token',
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, force_deletion=False, path=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, force_deletion=False, json=None, path=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """DeleteTargets - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._force_deletion = None
+        self._json = None
         self._path = None
         self._token = None
         self._uid_token = None
@@ -61,6 +64,8 @@ class DeleteTargets(object):
 
         if force_deletion is not None:
             self.force_deletion = force_deletion
+        if json is not None:
+            self.json = json
         self.path = path
         if token is not None:
             self.token = token
@@ -89,6 +94,29 @@ class DeleteTargets(object):
         """
 
         self._force_deletion = force_deletion
+
+    @property
+    def json(self):
+        """Gets the json of this DeleteTargets.  # noqa: E501
+
+        Set output format to JSON  # noqa: E501
+
+        :return: The json of this DeleteTargets.  # noqa: E501
+        :rtype: bool
+        """
+        return self._json
+
+    @json.setter
+    def json(self, json):
+        """Sets the json of this DeleteTargets.
+
+        Set output format to JSON  # noqa: E501
+
+        :param json: The json of this DeleteTargets.  # noqa: E501
+        :type: bool
+        """
+
+        self._json = json
 
     @property
     def path(self):

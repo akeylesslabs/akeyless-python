@@ -34,6 +34,7 @@ class GetTargetDetails(object):
                             and the value is json key in definition.
     """
     openapi_types = {
+        'json': 'bool',
         'name': 'str',
         'show_versions': 'bool',
         'target_version': 'int',
@@ -42,6 +43,7 @@ class GetTargetDetails(object):
     }
 
     attribute_map = {
+        'json': 'json',
         'name': 'name',
         'show_versions': 'show-versions',
         'target_version': 'target-version',
@@ -49,12 +51,13 @@ class GetTargetDetails(object):
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, name=None, show_versions=False, target_version=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, json=None, name=None, show_versions=False, target_version=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """GetTargetDetails - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
+        self._json = None
         self._name = None
         self._show_versions = None
         self._target_version = None
@@ -62,6 +65,8 @@ class GetTargetDetails(object):
         self._uid_token = None
         self.discriminator = None
 
+        if json is not None:
+            self.json = json
         self.name = name
         if show_versions is not None:
             self.show_versions = show_versions
@@ -71,6 +76,29 @@ class GetTargetDetails(object):
             self.token = token
         if uid_token is not None:
             self.uid_token = uid_token
+
+    @property
+    def json(self):
+        """Gets the json of this GetTargetDetails.  # noqa: E501
+
+        Set output format to JSON  # noqa: E501
+
+        :return: The json of this GetTargetDetails.  # noqa: E501
+        :rtype: bool
+        """
+        return self._json
+
+    @json.setter
+    def json(self, json):
+        """Sets the json of this GetTargetDetails.
+
+        Set output format to JSON  # noqa: E501
+
+        :param json: The json of this GetTargetDetails.  # noqa: E501
+        :type: bool
+        """
+
+        self._json = json
 
     @property
     def name(self):

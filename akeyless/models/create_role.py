@@ -38,6 +38,7 @@ class CreateRole(object):
         'audit_access': 'str',
         'comment': 'str',
         'gw_analytics_access': 'str',
+        'json': 'bool',
         'name': 'str',
         'sra_reports_access': 'str',
         'token': 'str',
@@ -49,13 +50,14 @@ class CreateRole(object):
         'audit_access': 'audit-access',
         'comment': 'comment',
         'gw_analytics_access': 'gw-analytics-access',
+        'json': 'json',
         'name': 'name',
         'sra_reports_access': 'sra-reports-access',
         'token': 'token',
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, analytics_access=None, audit_access=None, comment=None, gw_analytics_access=None, name=None, sra_reports_access=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, analytics_access=None, audit_access=None, comment=None, gw_analytics_access=None, json=None, name=None, sra_reports_access=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """CreateRole - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -65,6 +67,7 @@ class CreateRole(object):
         self._audit_access = None
         self._comment = None
         self._gw_analytics_access = None
+        self._json = None
         self._name = None
         self._sra_reports_access = None
         self._token = None
@@ -79,6 +82,8 @@ class CreateRole(object):
             self.comment = comment
         if gw_analytics_access is not None:
             self.gw_analytics_access = gw_analytics_access
+        if json is not None:
+            self.json = json
         self.name = name
         if sra_reports_access is not None:
             self.sra_reports_access = sra_reports_access
@@ -178,6 +183,29 @@ class CreateRole(object):
         """
 
         self._gw_analytics_access = gw_analytics_access
+
+    @property
+    def json(self):
+        """Gets the json of this CreateRole.  # noqa: E501
+
+        Set output format to JSON  # noqa: E501
+
+        :return: The json of this CreateRole.  # noqa: E501
+        :rtype: bool
+        """
+        return self._json
+
+    @json.setter
+    def json(self, json):
+        """Sets the json of this CreateRole.
+
+        Set output format to JSON  # noqa: E501
+
+        :param json: The json of this CreateRole.  # noqa: E501
+        :type: bool
+        """
+
+        self._json = json
 
     @property
     def name(self):

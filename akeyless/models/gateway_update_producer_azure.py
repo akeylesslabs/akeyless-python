@@ -41,6 +41,7 @@ class GatewayUpdateProducerAzure(object):
         'delete_protection': 'str',
         'fixed_user_claim_keyname': 'str',
         'fixed_user_only': 'bool',
+        'json': 'bool',
         'name': 'str',
         'new_name': 'str',
         'producer_encryption_key_name': 'str',
@@ -68,6 +69,7 @@ class GatewayUpdateProducerAzure(object):
         'delete_protection': 'delete_protection',
         'fixed_user_claim_keyname': 'fixed-user-claim-keyname',
         'fixed_user_only': 'fixed-user-only',
+        'json': 'json',
         'name': 'name',
         'new_name': 'new-name',
         'producer_encryption_key_name': 'producer-encryption-key-name',
@@ -87,7 +89,7 @@ class GatewayUpdateProducerAzure(object):
         'user_ttl': 'user-ttl'
     }
 
-    def __init__(self, app_obj_id=None, azure_client_id=None, azure_client_secret=None, azure_tenant_id=None, delete_protection=None, fixed_user_claim_keyname='false', fixed_user_only=False, name=None, new_name=None, producer_encryption_key_name=None, secure_access_enable=None, secure_access_web=None, secure_access_web_browsing=None, secure_access_web_proxy=None, tags=None, target_name=None, token=None, uid_token=None, user_group_obj_id=None, user_portal_access=False, user_principal_name=None, user_programmatic_access=False, user_role_template_id=None, user_ttl='60m', local_vars_configuration=None):  # noqa: E501
+    def __init__(self, app_obj_id=None, azure_client_id=None, azure_client_secret=None, azure_tenant_id=None, delete_protection=None, fixed_user_claim_keyname='false', fixed_user_only=False, json=None, name=None, new_name=None, producer_encryption_key_name=None, secure_access_enable=None, secure_access_web=None, secure_access_web_browsing=None, secure_access_web_proxy=None, tags=None, target_name=None, token=None, uid_token=None, user_group_obj_id=None, user_portal_access=False, user_principal_name=None, user_programmatic_access=False, user_role_template_id=None, user_ttl='60m', local_vars_configuration=None):  # noqa: E501
         """GatewayUpdateProducerAzure - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -100,6 +102,7 @@ class GatewayUpdateProducerAzure(object):
         self._delete_protection = None
         self._fixed_user_claim_keyname = None
         self._fixed_user_only = None
+        self._json = None
         self._name = None
         self._new_name = None
         self._producer_encryption_key_name = None
@@ -133,6 +136,8 @@ class GatewayUpdateProducerAzure(object):
             self.fixed_user_claim_keyname = fixed_user_claim_keyname
         if fixed_user_only is not None:
             self.fixed_user_only = fixed_user_only
+        if json is not None:
+            self.json = json
         self.name = name
         if new_name is not None:
             self.new_name = new_name
@@ -327,6 +332,29 @@ class GatewayUpdateProducerAzure(object):
         """
 
         self._fixed_user_only = fixed_user_only
+
+    @property
+    def json(self):
+        """Gets the json of this GatewayUpdateProducerAzure.  # noqa: E501
+
+        Set output format to JSON  # noqa: E501
+
+        :return: The json of this GatewayUpdateProducerAzure.  # noqa: E501
+        :rtype: bool
+        """
+        return self._json
+
+    @json.setter
+    def json(self, json):
+        """Sets the json of this GatewayUpdateProducerAzure.
+
+        Set output format to JSON  # noqa: E501
+
+        :param json: The json of this GatewayUpdateProducerAzure.  # noqa: E501
+        :type: bool
+        """
+
+        self._json = json
 
     @property
     def name(self):

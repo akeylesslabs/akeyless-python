@@ -35,6 +35,7 @@ class UpdateNativeK8STarget(object):
     """
     openapi_types = {
         'comment': 'str',
+        'json': 'bool',
         'k8s_cluster_ca_cert': 'str',
         'k8s_cluster_endpoint': 'str',
         'k8s_cluster_token': 'str',
@@ -49,6 +50,7 @@ class UpdateNativeK8STarget(object):
 
     attribute_map = {
         'comment': 'comment',
+        'json': 'json',
         'k8s_cluster_ca_cert': 'k8s-cluster-ca-cert',
         'k8s_cluster_endpoint': 'k8s-cluster-endpoint',
         'k8s_cluster_token': 'k8s-cluster-token',
@@ -61,13 +63,14 @@ class UpdateNativeK8STarget(object):
         'update_version': 'update-version'
     }
 
-    def __init__(self, comment=None, k8s_cluster_ca_cert=None, k8s_cluster_endpoint=None, k8s_cluster_token=None, keep_prev_version=None, key=None, name=None, new_name=None, token=None, uid_token=None, update_version=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, comment=None, json=None, k8s_cluster_ca_cert=None, k8s_cluster_endpoint=None, k8s_cluster_token=None, keep_prev_version=None, key=None, name=None, new_name=None, token=None, uid_token=None, update_version=None, local_vars_configuration=None):  # noqa: E501
         """UpdateNativeK8STarget - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._comment = None
+        self._json = None
         self._k8s_cluster_ca_cert = None
         self._k8s_cluster_endpoint = None
         self._k8s_cluster_token = None
@@ -82,6 +85,8 @@ class UpdateNativeK8STarget(object):
 
         if comment is not None:
             self.comment = comment
+        if json is not None:
+            self.json = json
         self.k8s_cluster_ca_cert = k8s_cluster_ca_cert
         self.k8s_cluster_endpoint = k8s_cluster_endpoint
         self.k8s_cluster_token = k8s_cluster_token
@@ -121,6 +126,29 @@ class UpdateNativeK8STarget(object):
         """
 
         self._comment = comment
+
+    @property
+    def json(self):
+        """Gets the json of this UpdateNativeK8STarget.  # noqa: E501
+
+        Set output format to JSON  # noqa: E501
+
+        :return: The json of this UpdateNativeK8STarget.  # noqa: E501
+        :rtype: bool
+        """
+        return self._json
+
+    @json.setter
+    def json(self, json):
+        """Sets the json of this UpdateNativeK8STarget.
+
+        Set output format to JSON  # noqa: E501
+
+        :param json: The json of this UpdateNativeK8STarget.  # noqa: E501
+        :type: bool
+        """
+
+        self._json = json
 
     @property
     def k8s_cluster_ca_cert(self):

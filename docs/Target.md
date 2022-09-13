@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **target_id** | **int** |  | [optional] 
 **target_items_assoc** | [**list[TargetItemAssociation]**](TargetItemAssociation.md) |  | [optional] 
 **target_name** | **str** |  | [optional] 
+**target_objects_assoc** | [**list[TargetObjectAssociation]**](TargetObjectAssociation.md) |  | [optional] 
 **target_type** | **str** |  | [optional] 
 **target_versions** | [**list[ItemVersion]**](ItemVersion.md) |  | [optional] 
 **with_customer_fragment** | **bool** |  | [optional] 

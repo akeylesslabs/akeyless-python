@@ -38,6 +38,7 @@ class GatewayUpdateProducerCustom(object):
         'create_sync_url': 'str',
         'delete_protection': 'str',
         'enable_admin_rotation': 'bool',
+        'json': 'bool',
         'name': 'str',
         'new_name': 'str',
         'payload': 'str',
@@ -56,6 +57,7 @@ class GatewayUpdateProducerCustom(object):
         'create_sync_url': 'create-sync-url',
         'delete_protection': 'delete_protection',
         'enable_admin_rotation': 'enable_admin_rotation',
+        'json': 'json',
         'name': 'name',
         'new_name': 'new-name',
         'payload': 'payload',
@@ -69,7 +71,7 @@ class GatewayUpdateProducerCustom(object):
         'user_ttl': 'user-ttl'
     }
 
-    def __init__(self, admin_rotation_interval_days=None, create_sync_url=None, delete_protection=None, enable_admin_rotation=False, name=None, new_name=None, payload=None, producer_encryption_key_name=None, revoke_sync_url=None, rotate_sync_url=None, tags=None, timeout_sec=60, token=None, uid_token=None, user_ttl='60m', local_vars_configuration=None):  # noqa: E501
+    def __init__(self, admin_rotation_interval_days=None, create_sync_url=None, delete_protection=None, enable_admin_rotation=False, json=None, name=None, new_name=None, payload=None, producer_encryption_key_name=None, revoke_sync_url=None, rotate_sync_url=None, tags=None, timeout_sec=60, token=None, uid_token=None, user_ttl='60m', local_vars_configuration=None):  # noqa: E501
         """GatewayUpdateProducerCustom - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -79,6 +81,7 @@ class GatewayUpdateProducerCustom(object):
         self._create_sync_url = None
         self._delete_protection = None
         self._enable_admin_rotation = None
+        self._json = None
         self._name = None
         self._new_name = None
         self._payload = None
@@ -99,6 +102,8 @@ class GatewayUpdateProducerCustom(object):
             self.delete_protection = delete_protection
         if enable_admin_rotation is not None:
             self.enable_admin_rotation = enable_admin_rotation
+        if json is not None:
+            self.json = json
         self.name = name
         if new_name is not None:
             self.new_name = new_name
@@ -213,6 +218,29 @@ class GatewayUpdateProducerCustom(object):
         """
 
         self._enable_admin_rotation = enable_admin_rotation
+
+    @property
+    def json(self):
+        """Gets the json of this GatewayUpdateProducerCustom.  # noqa: E501
+
+        Set output format to JSON  # noqa: E501
+
+        :return: The json of this GatewayUpdateProducerCustom.  # noqa: E501
+        :rtype: bool
+        """
+        return self._json
+
+    @json.setter
+    def json(self, json):
+        """Sets the json of this GatewayUpdateProducerCustom.
+
+        Set output format to JSON  # noqa: E501
+
+        :param json: The json of this GatewayUpdateProducerCustom.  # noqa: E501
+        :type: bool
+        """
+
+        self._json = json
 
     @property
     def name(self):

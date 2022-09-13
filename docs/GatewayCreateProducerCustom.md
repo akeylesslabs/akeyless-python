@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **create_sync_url** | **str** | URL of an endpoint that implements /sync/create method, for example https://webhook.example.com/sync/create | 
 **delete_protection** | **str** | Protection from accidental deletion of this item | [optional] 
 **enable_admin_rotation** | **bool** | Should admin credentials be rotated | [optional] [default to False]
+**json** | **bool** | Set output format to JSON | [optional] 
 **name** | **str** | Producer name | 
 **payload** | **str** | Secret payload to be sent with each create/revoke webhook request | [optional] 
 **producer_encryption_key_name** | **str** | Dynamic producer encryption key | [optional] 

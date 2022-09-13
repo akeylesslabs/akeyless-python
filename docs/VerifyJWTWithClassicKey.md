@@ -4,6 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **display_id** | **str** | The name of the key to use in the verify JWT process | 
+**json** | **bool** | Set output format to JSON | [optional] 
 **jwt** | **str** | JWT | 
 **required_claims** | **str** | RequiredClaims | 
 **token** | **str** | Authentication token (see &#x60;/auth&#x60; and &#x60;/configure&#x60;) | [optional] 

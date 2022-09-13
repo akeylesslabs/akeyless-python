@@ -36,6 +36,7 @@ class VerifyPKCS1(object):
     openapi_types = {
         'display_id': 'str',
         'item_id': 'int',
+        'json': 'bool',
         'key_name': 'str',
         'message': 'str',
         'signature': 'str',
@@ -46,6 +47,7 @@ class VerifyPKCS1(object):
     attribute_map = {
         'display_id': 'display-id',
         'item_id': 'item-id',
+        'json': 'json',
         'key_name': 'key-name',
         'message': 'message',
         'signature': 'signature',
@@ -53,7 +55,7 @@ class VerifyPKCS1(object):
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, display_id=None, item_id=None, key_name=None, message=None, signature=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, display_id=None, item_id=None, json=None, key_name=None, message=None, signature=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """VerifyPKCS1 - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -61,6 +63,7 @@ class VerifyPKCS1(object):
 
         self._display_id = None
         self._item_id = None
+        self._json = None
         self._key_name = None
         self._message = None
         self._signature = None
@@ -72,6 +75,8 @@ class VerifyPKCS1(object):
             self.display_id = display_id
         if item_id is not None:
             self.item_id = item_id
+        if json is not None:
+            self.json = json
         self.key_name = key_name
         self.message = message
         self.signature = signature
@@ -125,6 +130,29 @@ class VerifyPKCS1(object):
         """
 
         self._item_id = item_id
+
+    @property
+    def json(self):
+        """Gets the json of this VerifyPKCS1.  # noqa: E501
+
+        Set output format to JSON  # noqa: E501
+
+        :return: The json of this VerifyPKCS1.  # noqa: E501
+        :rtype: bool
+        """
+        return self._json
+
+    @json.setter
+    def json(self, json):
+        """Sets the json of this VerifyPKCS1.
+
+        Set output format to JSON  # noqa: E501
+
+        :param json: The json of this VerifyPKCS1.  # noqa: E501
+        :type: bool
+        """
+
+        self._json = json
 
     @property
     def key_name(self):

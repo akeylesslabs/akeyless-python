@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **gke_cluster_endpoint** | **str** | GKE cluster URL endpoint | [optional] 
 **gke_cluster_name** | **str** | GKE cluster name | [optional] 
 **gke_service_account_email** | **str** | GKE service account email | [optional] 
+**json** | **bool** | Set output format to JSON | [optional] 
 **name** | **str** | Producer name | 
 **producer_encryption_key_name** | **str** | Dynamic producer encryption key | [optional] 
 **secure_access_allow_port_forwading** | **bool** |  | [optional] 

@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **default_versioning** | **str** | Should create version by default | [optional] 
 **dp_enable_classic_key_protection** | **str** | Enable classic key protection [\&quot;true\&quot;/\&quot;false\&quot;] | [optional] 
 **item_type** | **str** | VersionSettingsObjectType defines object types for account version settings | [optional] 
+**json** | **bool** | Set output format to JSON | [optional] 
 **jwt_ttl_default** | **int** | Default ttl | [optional] 
 **jwt_ttl_max** | **int** | Maximum ttl | [optional] 
 **jwt_ttl_min** | **int** | Minimum ttl | [optional] 

@@ -37,6 +37,7 @@ class CreateLdapTarget(object):
         'bind_dn': 'str',
         'bind_dn_password': 'str',
         'comment': 'str',
+        'json': 'bool',
         'key': 'str',
         'ldap_ca_cert': 'str',
         'ldap_url': 'str',
@@ -51,6 +52,7 @@ class CreateLdapTarget(object):
         'bind_dn': 'bind-dn',
         'bind_dn_password': 'bind-dn-password',
         'comment': 'comment',
+        'json': 'json',
         'key': 'key',
         'ldap_ca_cert': 'ldap-ca-cert',
         'ldap_url': 'ldap-url',
@@ -61,7 +63,7 @@ class CreateLdapTarget(object):
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, bind_dn=None, bind_dn_password=None, comment=None, key=None, ldap_ca_cert=None, ldap_url=None, name=None, server_type='OpenLDAP', token=None, token_expiration=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, bind_dn=None, bind_dn_password=None, comment=None, json=None, key=None, ldap_ca_cert=None, ldap_url=None, name=None, server_type='OpenLDAP', token=None, token_expiration=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """CreateLdapTarget - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -70,6 +72,7 @@ class CreateLdapTarget(object):
         self._bind_dn = None
         self._bind_dn_password = None
         self._comment = None
+        self._json = None
         self._key = None
         self._ldap_ca_cert = None
         self._ldap_url = None
@@ -84,6 +87,8 @@ class CreateLdapTarget(object):
         self.bind_dn_password = bind_dn_password
         if comment is not None:
             self.comment = comment
+        if json is not None:
+            self.json = json
         if key is not None:
             self.key = key
         if ldap_ca_cert is not None:
@@ -171,6 +176,29 @@ class CreateLdapTarget(object):
         """
 
         self._comment = comment
+
+    @property
+    def json(self):
+        """Gets the json of this CreateLdapTarget.  # noqa: E501
+
+        Set output format to JSON  # noqa: E501
+
+        :return: The json of this CreateLdapTarget.  # noqa: E501
+        :rtype: bool
+        """
+        return self._json
+
+    @json.setter
+    def json(self, json):
+        """Sets the json of this CreateLdapTarget.
+
+        Set output format to JSON  # noqa: E501
+
+        :param json: The json of this CreateLdapTarget.  # noqa: E501
+        :type: bool
+        """
+
+        self._json = json
 
     @property
     def key(self):

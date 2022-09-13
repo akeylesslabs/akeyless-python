@@ -37,6 +37,7 @@ class UpdateAWSTarget(object):
         'access_key': 'str',
         'access_key_id': 'str',
         'comment': 'str',
+        'json': 'bool',
         'keep_prev_version': 'str',
         'key': 'str',
         'name': 'str',
@@ -53,6 +54,7 @@ class UpdateAWSTarget(object):
         'access_key': 'access-key',
         'access_key_id': 'access-key-id',
         'comment': 'comment',
+        'json': 'json',
         'keep_prev_version': 'keep-prev-version',
         'key': 'key',
         'name': 'name',
@@ -65,7 +67,7 @@ class UpdateAWSTarget(object):
         'use_gw_cloud_identity': 'use-gw-cloud-identity'
     }
 
-    def __init__(self, access_key=None, access_key_id=None, comment=None, keep_prev_version=None, key=None, name=None, new_name=None, region=None, session_token=None, token=None, uid_token=None, update_version=None, use_gw_cloud_identity=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, access_key=None, access_key_id=None, comment=None, json=None, keep_prev_version=None, key=None, name=None, new_name=None, region=None, session_token=None, token=None, uid_token=None, update_version=None, use_gw_cloud_identity=None, local_vars_configuration=None):  # noqa: E501
         """UpdateAWSTarget - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -74,6 +76,7 @@ class UpdateAWSTarget(object):
         self._access_key = None
         self._access_key_id = None
         self._comment = None
+        self._json = None
         self._keep_prev_version = None
         self._key = None
         self._name = None
@@ -92,6 +95,8 @@ class UpdateAWSTarget(object):
             self.access_key_id = access_key_id
         if comment is not None:
             self.comment = comment
+        if json is not None:
+            self.json = json
         if keep_prev_version is not None:
             self.keep_prev_version = keep_prev_version
         if key is not None:
@@ -176,6 +181,29 @@ class UpdateAWSTarget(object):
         """
 
         self._comment = comment
+
+    @property
+    def json(self):
+        """Gets the json of this UpdateAWSTarget.  # noqa: E501
+
+        Set output format to JSON  # noqa: E501
+
+        :return: The json of this UpdateAWSTarget.  # noqa: E501
+        :rtype: bool
+        """
+        return self._json
+
+    @json.setter
+    def json(self, json):
+        """Sets the json of this UpdateAWSTarget.
+
+        Set output format to JSON  # noqa: E501
+
+        :param json: The json of this UpdateAWSTarget.  # noqa: E501
+        :type: bool
+        """
+
+        self._json = json
 
     @property
     def keep_prev_version(self):

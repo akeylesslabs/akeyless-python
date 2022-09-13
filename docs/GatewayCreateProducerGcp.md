@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **gcp_key_algo** | **str** | Service account key algorithm, e.g. KEY_ALG_RSA_1024 | [optional] 
 **gcp_sa_email** | **str** | GCP service account email | [optional] 
 **gcp_token_scopes** | **str** | Access token scopes list, e.g. scope1,scope2 | [optional] 
+**json** | **bool** | Set output format to JSON | [optional] 
 **name** | **str** | Producer name | 
 **producer_encryption_key_name** | **str** | Dynamic producer encryption key | [optional] 
 **tags** | **list[str]** | List of the tags attached to this secret | [optional] 

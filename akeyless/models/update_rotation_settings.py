@@ -35,6 +35,7 @@ class UpdateRotationSettings(object):
     """
     openapi_types = {
         'auto_rotate': 'bool',
+        'json': 'bool',
         'name': 'str',
         'rotation_interval': 'int',
         'token': 'str',
@@ -43,19 +44,21 @@ class UpdateRotationSettings(object):
 
     attribute_map = {
         'auto_rotate': 'auto-rotate',
+        'json': 'json',
         'name': 'name',
         'rotation_interval': 'rotation-interval',
         'token': 'token',
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, auto_rotate=None, name=None, rotation_interval=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, auto_rotate=None, json=None, name=None, rotation_interval=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """UpdateRotationSettings - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._auto_rotate = None
+        self._json = None
         self._name = None
         self._rotation_interval = None
         self._token = None
@@ -63,6 +66,8 @@ class UpdateRotationSettings(object):
         self.discriminator = None
 
         self.auto_rotate = auto_rotate
+        if json is not None:
+            self.json = json
         self.name = name
         if rotation_interval is not None:
             self.rotation_interval = rotation_interval
@@ -95,6 +100,29 @@ class UpdateRotationSettings(object):
             raise ValueError("Invalid value for `auto_rotate`, must not be `None`")  # noqa: E501
 
         self._auto_rotate = auto_rotate
+
+    @property
+    def json(self):
+        """Gets the json of this UpdateRotationSettings.  # noqa: E501
+
+        Set output format to JSON  # noqa: E501
+
+        :return: The json of this UpdateRotationSettings.  # noqa: E501
+        :rtype: bool
+        """
+        return self._json
+
+    @json.setter
+    def json(self, json):
+        """Sets the json of this UpdateRotationSettings.
+
+        Set output format to JSON  # noqa: E501
+
+        :param json: The json of this UpdateRotationSettings.  # noqa: E501
+        :type: bool
+        """
+
+        self._json = json
 
     @property
     def name(self):

@@ -36,7 +36,9 @@ class Encrypt(object):
     openapi_types = {
         'display_id': 'str',
         'encryption_context': 'dict(str, str)',
+        'input_format': 'str',
         'item_id': 'int',
+        'json': 'bool',
         'key_name': 'str',
         'plaintext': 'str',
         'token': 'str',
@@ -46,14 +48,16 @@ class Encrypt(object):
     attribute_map = {
         'display_id': 'display-id',
         'encryption_context': 'encryption-context',
+        'input_format': 'input-format',
         'item_id': 'item-id',
+        'json': 'json',
         'key_name': 'key-name',
         'plaintext': 'plaintext',
         'token': 'token',
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, display_id=None, encryption_context=None, item_id=None, key_name=None, plaintext=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, display_id=None, encryption_context=None, input_format=None, item_id=None, json=None, key_name=None, plaintext=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """Encrypt - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -61,7 +65,9 @@ class Encrypt(object):
 
         self._display_id = None
         self._encryption_context = None
+        self._input_format = None
         self._item_id = None
+        self._json = None
         self._key_name = None
         self._plaintext = None
         self._token = None
@@ -72,8 +78,12 @@ class Encrypt(object):
             self.display_id = display_id
         if encryption_context is not None:
             self.encryption_context = encryption_context
+        if input_format is not None:
+            self.input_format = input_format
         if item_id is not None:
             self.item_id = item_id
+        if json is not None:
+            self.json = json
         self.key_name = key_name
         if plaintext is not None:
             self.plaintext = plaintext
@@ -129,6 +139,29 @@ class Encrypt(object):
         self._encryption_context = encryption_context
 
     @property
+    def input_format(self):
+        """Gets the input_format of this Encrypt.  # noqa: E501
+
+        If specified, the plaintext input is assumed to be formatted accordingly. Current supported options: [base64]  # noqa: E501
+
+        :return: The input_format of this Encrypt.  # noqa: E501
+        :rtype: str
+        """
+        return self._input_format
+
+    @input_format.setter
+    def input_format(self, input_format):
+        """Sets the input_format of this Encrypt.
+
+        If specified, the plaintext input is assumed to be formatted accordingly. Current supported options: [base64]  # noqa: E501
+
+        :param input_format: The input_format of this Encrypt.  # noqa: E501
+        :type: str
+        """
+
+        self._input_format = input_format
+
+    @property
     def item_id(self):
         """Gets the item_id of this Encrypt.  # noqa: E501
 
@@ -150,6 +183,29 @@ class Encrypt(object):
         """
 
         self._item_id = item_id
+
+    @property
+    def json(self):
+        """Gets the json of this Encrypt.  # noqa: E501
+
+        Set output format to JSON  # noqa: E501
+
+        :return: The json of this Encrypt.  # noqa: E501
+        :rtype: bool
+        """
+        return self._json
+
+    @json.setter
+    def json(self, json):
+        """Sets the json of this Encrypt.
+
+        Set output format to JSON  # noqa: E501
+
+        :param json: The json of this Encrypt.  # noqa: E501
+        :type: bool
+        """
+
+        self._json = json
 
     @property
     def key_name(self):

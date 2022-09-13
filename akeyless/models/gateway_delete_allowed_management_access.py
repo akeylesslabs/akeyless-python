@@ -34,33 +34,61 @@ class GatewayDeleteAllowedManagementAccess(object):
                             and the value is json key in definition.
     """
     openapi_types = {
+        'json': 'bool',
         'sub_admin_id': 'str',
         'token': 'str',
         'uid_token': 'str'
     }
 
     attribute_map = {
+        'json': 'json',
         'sub_admin_id': 'sub-admin-id',
         'token': 'token',
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, sub_admin_id=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, json=None, sub_admin_id=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """GatewayDeleteAllowedManagementAccess - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
+        self._json = None
         self._sub_admin_id = None
         self._token = None
         self._uid_token = None
         self.discriminator = None
 
+        if json is not None:
+            self.json = json
         self.sub_admin_id = sub_admin_id
         if token is not None:
             self.token = token
         if uid_token is not None:
             self.uid_token = uid_token
+
+    @property
+    def json(self):
+        """Gets the json of this GatewayDeleteAllowedManagementAccess.  # noqa: E501
+
+        Set output format to JSON  # noqa: E501
+
+        :return: The json of this GatewayDeleteAllowedManagementAccess.  # noqa: E501
+        :rtype: bool
+        """
+        return self._json
+
+    @json.setter
+    def json(self, json):
+        """Sets the json of this GatewayDeleteAllowedManagementAccess.
+
+        Set output format to JSON  # noqa: E501
+
+        :param json: The json of this GatewayDeleteAllowedManagementAccess.  # noqa: E501
+        :type: bool
+        """
+
+        self._json = json
 
     @property
     def sub_admin_id(self):

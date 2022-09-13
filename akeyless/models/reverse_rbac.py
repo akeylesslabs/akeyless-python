@@ -34,6 +34,7 @@ class ReverseRBAC(object):
                             and the value is json key in definition.
     """
     openapi_types = {
+        'json': 'bool',
         'path': 'str',
         'token': 'str',
         'type': 'str',
@@ -41,30 +42,57 @@ class ReverseRBAC(object):
     }
 
     attribute_map = {
+        'json': 'json',
         'path': 'path',
         'token': 'token',
         'type': 'type',
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, path=None, token=None, type=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, json=None, path=None, token=None, type=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """ReverseRBAC - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
+        self._json = None
         self._path = None
         self._token = None
         self._type = None
         self._uid_token = None
         self.discriminator = None
 
+        if json is not None:
+            self.json = json
         self.path = path
         if token is not None:
             self.token = token
         self.type = type
         if uid_token is not None:
             self.uid_token = uid_token
+
+    @property
+    def json(self):
+        """Gets the json of this ReverseRBAC.  # noqa: E501
+
+        Set output format to JSON  # noqa: E501
+
+        :return: The json of this ReverseRBAC.  # noqa: E501
+        :rtype: bool
+        """
+        return self._json
+
+    @json.setter
+    def json(self, json):
+        """Sets the json of this ReverseRBAC.
+
+        Set output format to JSON  # noqa: E501
+
+        :param json: The json of this ReverseRBAC.  # noqa: E501
+        :type: bool
+        """
+
+        self._json = json
 
     @property
     def path(self):

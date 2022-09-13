@@ -34,6 +34,7 @@ class GetRotatedSecretValue(object):
                             and the value is json key in definition.
     """
     openapi_types = {
+        'json': 'bool',
         'names': 'str',
         'token': 'str',
         'uid_token': 'str',
@@ -41,24 +42,28 @@ class GetRotatedSecretValue(object):
     }
 
     attribute_map = {
+        'json': 'json',
         'names': 'names',
         'token': 'token',
         'uid_token': 'uid-token',
         'version': 'version'
     }
 
-    def __init__(self, names=None, token=None, uid_token=None, version=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, json=None, names=None, token=None, uid_token=None, version=None, local_vars_configuration=None):  # noqa: E501
         """GetRotatedSecretValue - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
+        self._json = None
         self._names = None
         self._token = None
         self._uid_token = None
         self._version = None
         self.discriminator = None
 
+        if json is not None:
+            self.json = json
         self.names = names
         if token is not None:
             self.token = token
@@ -66,6 +71,29 @@ class GetRotatedSecretValue(object):
             self.uid_token = uid_token
         if version is not None:
             self.version = version
+
+    @property
+    def json(self):
+        """Gets the json of this GetRotatedSecretValue.  # noqa: E501
+
+        Set output format to JSON  # noqa: E501
+
+        :return: The json of this GetRotatedSecretValue.  # noqa: E501
+        :rtype: bool
+        """
+        return self._json
+
+    @json.setter
+    def json(self, json):
+        """Sets the json of this GetRotatedSecretValue.
+
+        Set output format to JSON  # noqa: E501
+
+        :param json: The json of this GetRotatedSecretValue.  # noqa: E501
+        :type: bool
+        """
+
+        self._json = json
 
     @property
     def names(self):

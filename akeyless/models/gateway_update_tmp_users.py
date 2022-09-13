@@ -34,6 +34,7 @@ class GatewayUpdateTmpUsers(object):
                             and the value is json key in definition.
     """
     openapi_types = {
+        'json': 'bool',
         'name': 'str',
         'new_ttl_min': 'int',
         'tmp_creds_id': 'str',
@@ -42,6 +43,7 @@ class GatewayUpdateTmpUsers(object):
     }
 
     attribute_map = {
+        'json': 'json',
         'name': 'name',
         'new_ttl_min': 'new-ttl-min',
         'tmp_creds_id': 'tmp-creds-id',
@@ -49,12 +51,13 @@ class GatewayUpdateTmpUsers(object):
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, name=None, new_ttl_min=None, tmp_creds_id=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, json=None, name=None, new_ttl_min=None, tmp_creds_id=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """GatewayUpdateTmpUsers - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
+        self._json = None
         self._name = None
         self._new_ttl_min = None
         self._tmp_creds_id = None
@@ -62,6 +65,8 @@ class GatewayUpdateTmpUsers(object):
         self._uid_token = None
         self.discriminator = None
 
+        if json is not None:
+            self.json = json
         self.name = name
         self.new_ttl_min = new_ttl_min
         self.tmp_creds_id = tmp_creds_id
@@ -69,6 +74,29 @@ class GatewayUpdateTmpUsers(object):
             self.token = token
         if uid_token is not None:
             self.uid_token = uid_token
+
+    @property
+    def json(self):
+        """Gets the json of this GatewayUpdateTmpUsers.  # noqa: E501
+
+        Set output format to JSON  # noqa: E501
+
+        :return: The json of this GatewayUpdateTmpUsers.  # noqa: E501
+        :rtype: bool
+        """
+        return self._json
+
+    @json.setter
+    def json(self, json):
+        """Sets the json of this GatewayUpdateTmpUsers.
+
+        Set output format to JSON  # noqa: E501
+
+        :param json: The json of this GatewayUpdateTmpUsers.  # noqa: E501
+        :type: bool
+        """
+
+        self._json = json
 
     @property
     def name(self):

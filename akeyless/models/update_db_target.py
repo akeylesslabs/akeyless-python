@@ -40,6 +40,7 @@ class UpdateDBTarget(object):
         'db_server_name': 'str',
         'db_type': 'str',
         'host': 'str',
+        'json': 'bool',
         'keep_prev_version': 'str',
         'key': 'str',
         'mongodb_atlas': 'bool',
@@ -69,6 +70,7 @@ class UpdateDBTarget(object):
         'db_server_name': 'db-server-name',
         'db_type': 'db-type',
         'host': 'host',
+        'json': 'json',
         'keep_prev_version': 'keep-prev-version',
         'key': 'key',
         'mongodb_atlas': 'mongodb-atlas',
@@ -91,7 +93,7 @@ class UpdateDBTarget(object):
         'user_name': 'user-name'
     }
 
-    def __init__(self, comment=None, db_name=None, db_server_certificates=None, db_server_name=None, db_type=None, host=None, keep_prev_version=None, key=None, mongodb_atlas=None, mongodb_atlas_api_private_key=None, mongodb_atlas_api_public_key=None, mongodb_atlas_project_id=None, mongodb_default_auth_db=None, mongodb_uri_options=None, name=None, new_name=None, oracle_service_name=None, port=None, pwd=None, snowflake_account=None, ssl=None, ssl_certificate=None, token=None, uid_token=None, update_version=None, user_name=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, comment=None, db_name=None, db_server_certificates=None, db_server_name=None, db_type=None, host=None, json=None, keep_prev_version=None, key=None, mongodb_atlas=None, mongodb_atlas_api_private_key=None, mongodb_atlas_api_public_key=None, mongodb_atlas_project_id=None, mongodb_default_auth_db=None, mongodb_uri_options=None, name=None, new_name=None, oracle_service_name=None, port=None, pwd=None, snowflake_account=None, ssl=None, ssl_certificate=None, token=None, uid_token=None, update_version=None, user_name=None, local_vars_configuration=None):  # noqa: E501
         """UpdateDBTarget - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -103,6 +105,7 @@ class UpdateDBTarget(object):
         self._db_server_name = None
         self._db_type = None
         self._host = None
+        self._json = None
         self._keep_prev_version = None
         self._key = None
         self._mongodb_atlas = None
@@ -136,6 +139,8 @@ class UpdateDBTarget(object):
         self.db_type = db_type
         if host is not None:
             self.host = host
+        if json is not None:
+            self.json = json
         if keep_prev_version is not None:
             self.keep_prev_version = keep_prev_version
         if key is not None:
@@ -309,6 +314,29 @@ class UpdateDBTarget(object):
         """
 
         self._host = host
+
+    @property
+    def json(self):
+        """Gets the json of this UpdateDBTarget.  # noqa: E501
+
+        Set output format to JSON  # noqa: E501
+
+        :return: The json of this UpdateDBTarget.  # noqa: E501
+        :rtype: bool
+        """
+        return self._json
+
+    @json.setter
+    def json(self, json):
+        """Sets the json of this UpdateDBTarget.
+
+        Set output format to JSON  # noqa: E501
+
+        :param json: The json of this UpdateDBTarget.  # noqa: E501
+        :type: bool
+        """
+
+        self._json = json
 
     @property
     def keep_prev_version(self):

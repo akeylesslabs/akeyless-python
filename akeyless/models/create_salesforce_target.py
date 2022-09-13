@@ -42,6 +42,7 @@ class CreateSalesforceTarget(object):
         'client_secret': 'str',
         'comment': 'str',
         'email': 'str',
+        'json': 'bool',
         'key': 'str',
         'name': 'str',
         'password': 'str',
@@ -60,6 +61,7 @@ class CreateSalesforceTarget(object):
         'client_secret': 'client-secret',
         'comment': 'comment',
         'email': 'email',
+        'json': 'json',
         'key': 'key',
         'name': 'name',
         'password': 'password',
@@ -69,7 +71,7 @@ class CreateSalesforceTarget(object):
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, app_private_key_data=None, auth_flow=None, ca_cert_data=None, ca_cert_name=None, client_id=None, client_secret=None, comment=None, email=None, key=None, name=None, password=None, security_token=None, tenant_url=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, app_private_key_data=None, auth_flow=None, ca_cert_data=None, ca_cert_name=None, client_id=None, client_secret=None, comment=None, email=None, json=None, key=None, name=None, password=None, security_token=None, tenant_url=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """CreateSalesforceTarget - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -83,6 +85,7 @@ class CreateSalesforceTarget(object):
         self._client_secret = None
         self._comment = None
         self._email = None
+        self._json = None
         self._key = None
         self._name = None
         self._password = None
@@ -105,6 +108,8 @@ class CreateSalesforceTarget(object):
         if comment is not None:
             self.comment = comment
         self.email = email
+        if json is not None:
+            self.json = json
         if key is not None:
             self.key = key
         self.name = name
@@ -307,6 +312,29 @@ class CreateSalesforceTarget(object):
             raise ValueError("Invalid value for `email`, must not be `None`")  # noqa: E501
 
         self._email = email
+
+    @property
+    def json(self):
+        """Gets the json of this CreateSalesforceTarget.  # noqa: E501
+
+        Set output format to JSON  # noqa: E501
+
+        :return: The json of this CreateSalesforceTarget.  # noqa: E501
+        :rtype: bool
+        """
+        return self._json
+
+    @json.setter
+    def json(self, json):
+        """Sets the json of this CreateSalesforceTarget.
+
+        Set output format to JSON  # noqa: E501
+
+        :param json: The json of this CreateSalesforceTarget.  # noqa: E501
+        :type: bool
+        """
+
+        self._json = json
 
     @property
     def key(self):

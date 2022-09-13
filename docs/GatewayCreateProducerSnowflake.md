@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **account_username** | **str** | Database Username | [optional] 
 **db_name** | **str** | Database name | [optional] 
 **delete_protection** | **str** | Protection from accidental deletion of this item | [optional] 
+**json** | **bool** | Set output format to JSON | [optional] 
 **name** | **str** | Producer name | 
 **role** | **str** | User role | [optional] 
 **tags** | **list[str]** | List of the tags attached to this secret | [optional] 

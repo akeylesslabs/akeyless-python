@@ -5,6 +5,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **bind_dn** | **str** |  | [optional] 
 **bind_dn_password** | **str** |  | [optional] 
+**json** | **bool** | Set output format to JSON | [optional] 
 **keep_prev_version** | **str** |  | [optional] 
 **key** | **str** |  | [optional] 
 **ldap_ca_cert** | **str** |  | [optional] 

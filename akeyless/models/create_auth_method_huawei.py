@@ -45,6 +45,7 @@ class CreateAuthMethodHuawei(object):
         'bound_user_name': 'list[str]',
         'force_sub_claims': 'bool',
         'gw_bound_ips': 'list[str]',
+        'json': 'bool',
         'jwt_ttl': 'int',
         'name': 'str',
         'token': 'str',
@@ -63,13 +64,14 @@ class CreateAuthMethodHuawei(object):
         'bound_user_name': 'bound-user-name',
         'force_sub_claims': 'force-sub-claims',
         'gw_bound_ips': 'gw-bound-ips',
+        'json': 'json',
         'jwt_ttl': 'jwt-ttl',
         'name': 'name',
         'token': 'token',
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, access_expires=0, auth_url='https://iam.myhwclouds.com:443/v3', bound_domain_id=None, bound_domain_name=None, bound_ips=None, bound_tenant_id=None, bound_tenant_name=None, bound_user_id=None, bound_user_name=None, force_sub_claims=None, gw_bound_ips=None, jwt_ttl=None, name=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, access_expires=0, auth_url='https://iam.myhwclouds.com:443/v3', bound_domain_id=None, bound_domain_name=None, bound_ips=None, bound_tenant_id=None, bound_tenant_name=None, bound_user_id=None, bound_user_name=None, force_sub_claims=None, gw_bound_ips=None, json=None, jwt_ttl=None, name=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """CreateAuthMethodHuawei - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -86,6 +88,7 @@ class CreateAuthMethodHuawei(object):
         self._bound_user_name = None
         self._force_sub_claims = None
         self._gw_bound_ips = None
+        self._json = None
         self._jwt_ttl = None
         self._name = None
         self._token = None
@@ -114,6 +117,8 @@ class CreateAuthMethodHuawei(object):
             self.force_sub_claims = force_sub_claims
         if gw_bound_ips is not None:
             self.gw_bound_ips = gw_bound_ips
+        if json is not None:
+            self.json = json
         if jwt_ttl is not None:
             self.jwt_ttl = jwt_ttl
         self.name = name
@@ -374,6 +379,29 @@ class CreateAuthMethodHuawei(object):
         """
 
         self._gw_bound_ips = gw_bound_ips
+
+    @property
+    def json(self):
+        """Gets the json of this CreateAuthMethodHuawei.  # noqa: E501
+
+        Set output format to JSON  # noqa: E501
+
+        :return: The json of this CreateAuthMethodHuawei.  # noqa: E501
+        :rtype: bool
+        """
+        return self._json
+
+    @json.setter
+    def json(self, json):
+        """Sets the json of this CreateAuthMethodHuawei.
+
+        Set output format to JSON  # noqa: E501
+
+        :param json: The json of this CreateAuthMethodHuawei.  # noqa: E501
+        :type: bool
+        """
+
+        self._json = json
 
     @property
     def jwt_ttl(self):

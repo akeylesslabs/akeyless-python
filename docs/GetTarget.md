@@ -3,6 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**json** | **bool** | Set output format to JSON | [optional] 
 **name** | **str** | Target name | 
 **show_versions** | **bool** | Include all target versions in reply | [optional] [default to False]
 **token** | **str** | Authentication token (see &#x60;/auth&#x60; and &#x60;/configure&#x60;) | [optional] 

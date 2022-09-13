@@ -35,6 +35,7 @@ class GatewayStatusMigration(object):
     """
     openapi_types = {
         'id': 'str',
+        'json': 'bool',
         'name': 'str',
         'token': 'str',
         'uid_token': 'str'
@@ -42,18 +43,20 @@ class GatewayStatusMigration(object):
 
     attribute_map = {
         'id': 'id',
+        'json': 'json',
         'name': 'name',
         'token': 'token',
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, id=None, name=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, id=None, json=None, name=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """GatewayStatusMigration - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._id = None
+        self._json = None
         self._name = None
         self._token = None
         self._uid_token = None
@@ -61,6 +64,8 @@ class GatewayStatusMigration(object):
 
         if id is not None:
             self.id = id
+        if json is not None:
+            self.json = json
         if name is not None:
             self.name = name
         if token is not None:
@@ -90,6 +95,29 @@ class GatewayStatusMigration(object):
         """
 
         self._id = id
+
+    @property
+    def json(self):
+        """Gets the json of this GatewayStatusMigration.  # noqa: E501
+
+        Set output format to JSON  # noqa: E501
+
+        :return: The json of this GatewayStatusMigration.  # noqa: E501
+        :rtype: bool
+        """
+        return self._json
+
+    @json.setter
+    def json(self, json):
+        """Sets the json of this GatewayStatusMigration.
+
+        Set output format to JSON  # noqa: E501
+
+        :param json: The json of this GatewayStatusMigration.  # noqa: E501
+        :type: bool
+        """
+
+        self._json = json
 
     @property
     def name(self):

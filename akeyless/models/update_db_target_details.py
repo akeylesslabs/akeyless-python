@@ -36,6 +36,7 @@ class UpdateDBTargetDetails(object):
     openapi_types = {
         'db_type': 'str',
         'host_name': 'str',
+        'json': 'bool',
         'keep_prev_version': 'str',
         'mongo_db_name': 'str',
         'mongo_uri': 'str',
@@ -52,6 +53,7 @@ class UpdateDBTargetDetails(object):
     attribute_map = {
         'db_type': 'db_type',
         'host_name': 'host_name',
+        'json': 'json',
         'keep_prev_version': 'keep-prev-version',
         'mongo_db_name': 'mongo_db_name',
         'mongo_uri': 'mongo_uri',
@@ -65,7 +67,7 @@ class UpdateDBTargetDetails(object):
         'user_name': 'user_name'
     }
 
-    def __init__(self, db_type=None, host_name=None, keep_prev_version=None, mongo_db_name=None, mongo_uri=None, name=None, new_version=None, port=None, protection_key=None, pwd=None, token=None, uid_token=None, user_name=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, db_type=None, host_name=None, json=None, keep_prev_version=None, mongo_db_name=None, mongo_uri=None, name=None, new_version=None, port=None, protection_key=None, pwd=None, token=None, uid_token=None, user_name=None, local_vars_configuration=None):  # noqa: E501
         """UpdateDBTargetDetails - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -73,6 +75,7 @@ class UpdateDBTargetDetails(object):
 
         self._db_type = None
         self._host_name = None
+        self._json = None
         self._keep_prev_version = None
         self._mongo_db_name = None
         self._mongo_uri = None
@@ -90,6 +93,8 @@ class UpdateDBTargetDetails(object):
             self.db_type = db_type
         if host_name is not None:
             self.host_name = host_name
+        if json is not None:
+            self.json = json
         if keep_prev_version is not None:
             self.keep_prev_version = keep_prev_version
         if mongo_db_name is not None:
@@ -153,6 +158,29 @@ class UpdateDBTargetDetails(object):
         """
 
         self._host_name = host_name
+
+    @property
+    def json(self):
+        """Gets the json of this UpdateDBTargetDetails.  # noqa: E501
+
+        Set output format to JSON  # noqa: E501
+
+        :return: The json of this UpdateDBTargetDetails.  # noqa: E501
+        :rtype: bool
+        """
+        return self._json
+
+    @json.setter
+    def json(self, json):
+        """Sets the json of this UpdateDBTargetDetails.
+
+        Set output format to JSON  # noqa: E501
+
+        :param json: The json of this UpdateDBTargetDetails.  # noqa: E501
+        :type: bool
+        """
+
+        self._json = json
 
     @property
     def keep_prev_version(self):

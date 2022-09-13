@@ -36,6 +36,7 @@ class GetSSHCertificate(object):
     openapi_types = {
         'cert_issuer_name': 'str',
         'cert_username': 'str',
+        'json': 'bool',
         'legacy_signing_alg_name': 'bool',
         'public_key_data': 'str',
         'token': 'str',
@@ -46,6 +47,7 @@ class GetSSHCertificate(object):
     attribute_map = {
         'cert_issuer_name': 'cert-issuer-name',
         'cert_username': 'cert-username',
+        'json': 'json',
         'legacy_signing_alg_name': 'legacy-signing-alg-name',
         'public_key_data': 'public-key-data',
         'token': 'token',
@@ -53,7 +55,7 @@ class GetSSHCertificate(object):
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, cert_issuer_name=None, cert_username=None, legacy_signing_alg_name=None, public_key_data=None, token=None, ttl=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, cert_issuer_name=None, cert_username=None, json=None, legacy_signing_alg_name=None, public_key_data=None, token=None, ttl=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """GetSSHCertificate - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -61,6 +63,7 @@ class GetSSHCertificate(object):
 
         self._cert_issuer_name = None
         self._cert_username = None
+        self._json = None
         self._legacy_signing_alg_name = None
         self._public_key_data = None
         self._token = None
@@ -70,6 +73,8 @@ class GetSSHCertificate(object):
 
         self.cert_issuer_name = cert_issuer_name
         self.cert_username = cert_username
+        if json is not None:
+            self.json = json
         if legacy_signing_alg_name is not None:
             self.legacy_signing_alg_name = legacy_signing_alg_name
         if public_key_data is not None:
@@ -130,6 +135,29 @@ class GetSSHCertificate(object):
             raise ValueError("Invalid value for `cert_username`, must not be `None`")  # noqa: E501
 
         self._cert_username = cert_username
+
+    @property
+    def json(self):
+        """Gets the json of this GetSSHCertificate.  # noqa: E501
+
+        Set output format to JSON  # noqa: E501
+
+        :return: The json of this GetSSHCertificate.  # noqa: E501
+        :rtype: bool
+        """
+        return self._json
+
+    @json.setter
+    def json(self, json):
+        """Sets the json of this GetSSHCertificate.
+
+        Set output format to JSON  # noqa: E501
+
+        :param json: The json of this GetSSHCertificate.  # noqa: E501
+        :type: bool
+        """
+
+        self._json = json
 
     @property
     def legacy_signing_alg_name(self):

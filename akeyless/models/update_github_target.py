@@ -38,6 +38,7 @@ class UpdateGithubTarget(object):
         'github_app_id': 'int',
         'github_app_private_key': 'str',
         'github_base_url': 'str',
+        'json': 'bool',
         'keep_prev_version': 'str',
         'key': 'str',
         'name': 'str',
@@ -52,6 +53,7 @@ class UpdateGithubTarget(object):
         'github_app_id': 'github-app-id',
         'github_app_private_key': 'github-app-private-key',
         'github_base_url': 'github-base-url',
+        'json': 'json',
         'keep_prev_version': 'keep-prev-version',
         'key': 'key',
         'name': 'name',
@@ -61,7 +63,7 @@ class UpdateGithubTarget(object):
         'update_version': 'update-version'
     }
 
-    def __init__(self, comment=None, github_app_id=None, github_app_private_key=None, github_base_url=None, keep_prev_version=None, key=None, name=None, new_name=None, token=None, uid_token=None, update_version=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, comment=None, github_app_id=None, github_app_private_key=None, github_base_url=None, json=None, keep_prev_version=None, key=None, name=None, new_name=None, token=None, uid_token=None, update_version=None, local_vars_configuration=None):  # noqa: E501
         """UpdateGithubTarget - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -71,6 +73,7 @@ class UpdateGithubTarget(object):
         self._github_app_id = None
         self._github_app_private_key = None
         self._github_base_url = None
+        self._json = None
         self._keep_prev_version = None
         self._key = None
         self._name = None
@@ -88,6 +91,8 @@ class UpdateGithubTarget(object):
             self.github_app_private_key = github_app_private_key
         if github_base_url is not None:
             self.github_base_url = github_base_url
+        if json is not None:
+            self.json = json
         if keep_prev_version is not None:
             self.keep_prev_version = keep_prev_version
         if key is not None:
@@ -193,6 +198,29 @@ class UpdateGithubTarget(object):
         """
 
         self._github_base_url = github_base_url
+
+    @property
+    def json(self):
+        """Gets the json of this UpdateGithubTarget.  # noqa: E501
+
+        Set output format to JSON  # noqa: E501
+
+        :return: The json of this UpdateGithubTarget.  # noqa: E501
+        :rtype: bool
+        """
+        return self._json
+
+    @json.setter
+    def json(self, json):
+        """Sets the json of this UpdateGithubTarget.
+
+        Set output format to JSON  # noqa: E501
+
+        :param json: The json of this UpdateGithubTarget.  # noqa: E501
+        :type: bool
+        """
+
+        self._json = json
 
     @property
     def keep_prev_version(self):

@@ -35,6 +35,7 @@ class CreateDynamicSecret(object):
     """
     openapi_types = {
         'delete_protection': 'str',
+        'json': 'bool',
         'key': 'str',
         'metadata': 'str',
         'name': 'str',
@@ -45,6 +46,7 @@ class CreateDynamicSecret(object):
 
     attribute_map = {
         'delete_protection': 'delete_protection',
+        'json': 'json',
         'key': 'key',
         'metadata': 'metadata',
         'name': 'name',
@@ -53,13 +55,14 @@ class CreateDynamicSecret(object):
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, delete_protection=None, key=None, metadata='None', name=None, tags=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, delete_protection=None, json=None, key=None, metadata='None', name=None, tags=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """CreateDynamicSecret - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._delete_protection = None
+        self._json = None
         self._key = None
         self._metadata = None
         self._name = None
@@ -70,6 +73,8 @@ class CreateDynamicSecret(object):
 
         if delete_protection is not None:
             self.delete_protection = delete_protection
+        if json is not None:
+            self.json = json
         if key is not None:
             self.key = key
         if metadata is not None:
@@ -104,6 +109,29 @@ class CreateDynamicSecret(object):
         """
 
         self._delete_protection = delete_protection
+
+    @property
+    def json(self):
+        """Gets the json of this CreateDynamicSecret.  # noqa: E501
+
+        Set output format to JSON  # noqa: E501
+
+        :return: The json of this CreateDynamicSecret.  # noqa: E501
+        :rtype: bool
+        """
+        return self._json
+
+    @json.setter
+    def json(self, json):
+        """Sets the json of this CreateDynamicSecret.
+
+        Set output format to JSON  # noqa: E501
+
+        :param json: The json of this CreateDynamicSecret.  # noqa: E501
+        :type: bool
+        """
+
+        self._json = json
 
     @property
     def key(self):

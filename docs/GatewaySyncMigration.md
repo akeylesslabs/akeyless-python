@@ -4,6 +4,7 @@ gatewaySyncMigration is a command that sync migration
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**json** | **bool** | Set output format to JSON | [optional] 
 **name** | **str** | Migration name | 
 **start_sync** | **bool** | true, for starting synchronization, false for stopping | [optional] 
 **token** | **str** | Authentication token (see &#x60;/auth&#x60; and &#x60;/configure&#x60;) | [optional] 

@@ -42,6 +42,7 @@ class CreatePKICertIssuer(object):
         'code_signing_flag': 'bool',
         'country': 'str',
         'delete_protection': 'str',
+        'json': 'bool',
         'key_usage': 'str',
         'locality': 'str',
         'metadata': 'str',
@@ -70,6 +71,7 @@ class CreatePKICertIssuer(object):
         'code_signing_flag': 'code-signing-flag',
         'country': 'country',
         'delete_protection': 'delete_protection',
+        'json': 'json',
         'key_usage': 'key-usage',
         'locality': 'locality',
         'metadata': 'metadata',
@@ -89,7 +91,7 @@ class CreatePKICertIssuer(object):
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, allow_any_name=None, allow_subdomains=None, allowed_domains=None, allowed_uri_sans=None, client_flag=None, code_signing_flag=None, country=None, delete_protection=None, key_usage='DigitalSignature,KeyAgreement,KeyEncipherment', locality=None, metadata=None, name=None, not_enforce_hostnames=None, not_require_cn=None, organizational_units=None, organizations=None, postal_code=None, province=None, server_flag=None, signer_key_name=None, street_address=None, tag=None, token=None, ttl=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, allow_any_name=None, allow_subdomains=None, allowed_domains=None, allowed_uri_sans=None, client_flag=None, code_signing_flag=None, country=None, delete_protection=None, json=None, key_usage='DigitalSignature,KeyAgreement,KeyEncipherment', locality=None, metadata=None, name=None, not_enforce_hostnames=None, not_require_cn=None, organizational_units=None, organizations=None, postal_code=None, province=None, server_flag=None, signer_key_name=None, street_address=None, tag=None, token=None, ttl=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """CreatePKICertIssuer - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -103,6 +105,7 @@ class CreatePKICertIssuer(object):
         self._code_signing_flag = None
         self._country = None
         self._delete_protection = None
+        self._json = None
         self._key_usage = None
         self._locality = None
         self._metadata = None
@@ -138,6 +141,8 @@ class CreatePKICertIssuer(object):
             self.country = country
         if delete_protection is not None:
             self.delete_protection = delete_protection
+        if json is not None:
+            self.json = json
         if key_usage is not None:
             self.key_usage = key_usage
         if locality is not None:
@@ -353,6 +358,29 @@ class CreatePKICertIssuer(object):
         """
 
         self._delete_protection = delete_protection
+
+    @property
+    def json(self):
+        """Gets the json of this CreatePKICertIssuer.  # noqa: E501
+
+        Set output format to JSON  # noqa: E501
+
+        :return: The json of this CreatePKICertIssuer.  # noqa: E501
+        :rtype: bool
+        """
+        return self._json
+
+    @json.setter
+    def json(self, json):
+        """Sets the json of this CreatePKICertIssuer.
+
+        Set output format to JSON  # noqa: E501
+
+        :param json: The json of this CreatePKICertIssuer.  # noqa: E501
+        :type: bool
+        """
+
+        self._json = json
 
     @property
     def key_usage(self):

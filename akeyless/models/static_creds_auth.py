@@ -36,16 +36,18 @@ class StaticCredsAuth(object):
     openapi_types = {
         'access_id': 'str',
         'admin_email': 'str',
-        'creds': 'str'
+        'creds': 'str',
+        'json': 'bool'
     }
 
     attribute_map = {
         'access_id': 'access-id',
         'admin_email': 'admin-email',
-        'creds': 'creds'
+        'creds': 'creds',
+        'json': 'json'
     }
 
-    def __init__(self, access_id=None, admin_email=None, creds=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, access_id=None, admin_email=None, creds=None, json=None, local_vars_configuration=None):  # noqa: E501
         """StaticCredsAuth - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -54,6 +56,7 @@ class StaticCredsAuth(object):
         self._access_id = None
         self._admin_email = None
         self._creds = None
+        self._json = None
         self.discriminator = None
 
         if access_id is not None:
@@ -62,6 +65,8 @@ class StaticCredsAuth(object):
             self.admin_email = admin_email
         if creds is not None:
             self.creds = creds
+        if json is not None:
+            self.json = json
 
     @property
     def access_id(self):
@@ -131,6 +136,29 @@ class StaticCredsAuth(object):
         """
 
         self._creds = creds
+
+    @property
+    def json(self):
+        """Gets the json of this StaticCredsAuth.  # noqa: E501
+
+        Set output format to JSON  # noqa: E501
+
+        :return: The json of this StaticCredsAuth.  # noqa: E501
+        :rtype: bool
+        """
+        return self._json
+
+    @json.setter
+    def json(self, json):
+        """Sets the json of this StaticCredsAuth.
+
+        Set output format to JSON  # noqa: E501
+
+        :param json: The json of this StaticCredsAuth.  # noqa: E501
+        :type: bool
+        """
+
+        self._json = json
 
     def to_dict(self):
         """Returns the model properties as a dict"""

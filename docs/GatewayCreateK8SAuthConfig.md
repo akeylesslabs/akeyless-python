@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **access_id** | **str** | The access ID of the Kubernetes auth method | 
 **cluster_api_type** | **str** | Cluster access type. options: [native_k8s, rancher] | [optional] [default to 'native_k8s']
 **config_encryption_key_name** | **str** | Config encryption key | [optional] 
+**json** | **bool** | Set output format to JSON | [optional] 
 **k8s_ca_cert** | **str** | The CA Certificate (base64 encoded) to use to call into the kubernetes API server | [optional] 
 **k8s_host** | **str** | The URL of the kubernetes API server | 
 **k8s_issuer** | **str** | The Kubernetes JWT issuer name. If not set, kubernetes/serviceaccount will use as an issuer. | [optional] 

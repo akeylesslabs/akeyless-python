@@ -34,6 +34,7 @@ class AssocTargetItem(object):
                             and the value is json key in definition.
     """
     openapi_types = {
+        'json': 'bool',
         'key_operations': 'list[str]',
         'keyring_name': 'str',
         'kms_algorithm': 'str',
@@ -49,6 +50,7 @@ class AssocTargetItem(object):
     }
 
     attribute_map = {
+        'json': 'json',
         'key_operations': 'key-operations',
         'keyring_name': 'keyring-name',
         'kms_algorithm': 'kms-algorithm',
@@ -63,12 +65,13 @@ class AssocTargetItem(object):
         'vault_name': 'vault-name'
     }
 
-    def __init__(self, key_operations=None, keyring_name=None, kms_algorithm=None, location_id=None, name=None, project_id=None, purpose=None, target_name=None, tenant_secret_type=None, token=None, uid_token=None, vault_name=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, json=None, key_operations=None, keyring_name=None, kms_algorithm=None, location_id=None, name=None, project_id=None, purpose=None, target_name=None, tenant_secret_type=None, token=None, uid_token=None, vault_name=None, local_vars_configuration=None):  # noqa: E501
         """AssocTargetItem - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
+        self._json = None
         self._key_operations = None
         self._keyring_name = None
         self._kms_algorithm = None
@@ -83,6 +86,8 @@ class AssocTargetItem(object):
         self._vault_name = None
         self.discriminator = None
 
+        if json is not None:
+            self.json = json
         if key_operations is not None:
             self.key_operations = key_operations
         if keyring_name is not None:
@@ -105,6 +110,29 @@ class AssocTargetItem(object):
             self.uid_token = uid_token
         if vault_name is not None:
             self.vault_name = vault_name
+
+    @property
+    def json(self):
+        """Gets the json of this AssocTargetItem.  # noqa: E501
+
+        Set output format to JSON  # noqa: E501
+
+        :return: The json of this AssocTargetItem.  # noqa: E501
+        :rtype: bool
+        """
+        return self._json
+
+    @json.setter
+    def json(self, json):
+        """Sets the json of this AssocTargetItem.
+
+        Set output format to JSON  # noqa: E501
+
+        :param json: The json of this AssocTargetItem.  # noqa: E501
+        :type: bool
+        """
+
+        self._json = json
 
     @property
     def key_operations(self):

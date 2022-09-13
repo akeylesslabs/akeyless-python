@@ -3,6 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**json** | **bool** | Set output format to JSON | [optional] 
 **name** | **str** | Target name | 
 **new_comment** | **str** | New comment about the target | [optional] [default to 'default_comment']
 **new_name** | **str** | New Target name | [optional] 

@@ -36,6 +36,7 @@ class DecryptWithClassicKey(object):
     openapi_types = {
         'ciphertext': 'str',
         'display_id': 'str',
+        'json': 'bool',
         'token': 'str',
         'uid_token': 'str',
         'version': 'int'
@@ -44,12 +45,13 @@ class DecryptWithClassicKey(object):
     attribute_map = {
         'ciphertext': 'ciphertext',
         'display_id': 'display-id',
+        'json': 'json',
         'token': 'token',
         'uid_token': 'uid-token',
         'version': 'version'
     }
 
-    def __init__(self, ciphertext=None, display_id=None, token=None, uid_token=None, version=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, ciphertext=None, display_id=None, json=None, token=None, uid_token=None, version=None, local_vars_configuration=None):  # noqa: E501
         """DecryptWithClassicKey - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -57,6 +59,7 @@ class DecryptWithClassicKey(object):
 
         self._ciphertext = None
         self._display_id = None
+        self._json = None
         self._token = None
         self._uid_token = None
         self._version = None
@@ -64,6 +67,8 @@ class DecryptWithClassicKey(object):
 
         self.ciphertext = ciphertext
         self.display_id = display_id
+        if json is not None:
+            self.json = json
         if token is not None:
             self.token = token
         if uid_token is not None:
@@ -119,6 +124,29 @@ class DecryptWithClassicKey(object):
             raise ValueError("Invalid value for `display_id`, must not be `None`")  # noqa: E501
 
         self._display_id = display_id
+
+    @property
+    def json(self):
+        """Gets the json of this DecryptWithClassicKey.  # noqa: E501
+
+        Set output format to JSON  # noqa: E501
+
+        :return: The json of this DecryptWithClassicKey.  # noqa: E501
+        :rtype: bool
+        """
+        return self._json
+
+    @json.setter
+    def json(self, json):
+        """Sets the json of this DecryptWithClassicKey.
+
+        Set output format to JSON  # noqa: E501
+
+        :param json: The json of this DecryptWithClassicKey.  # noqa: E501
+        :type: bool
+        """
+
+        self._json = json
 
     @property
     def token(self):

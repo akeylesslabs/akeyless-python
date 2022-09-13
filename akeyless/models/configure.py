@@ -42,6 +42,7 @@ class Configure(object):
         'azure_ad_object_id': 'str',
         'cert_data': 'str',
         'gcp_audience': 'str',
+        'json': 'bool',
         'k8s_auth_config_name': 'str',
         'key_data': 'str'
     }
@@ -55,11 +56,12 @@ class Configure(object):
         'azure_ad_object_id': 'azure_ad_object_id',
         'cert_data': 'cert-data',
         'gcp_audience': 'gcp-audience',
+        'json': 'json',
         'k8s_auth_config_name': 'k8s-auth-config-name',
         'key_data': 'key-data'
     }
 
-    def __init__(self, access_id=None, access_key=None, access_type='access_key', admin_email=None, admin_password=None, azure_ad_object_id=None, cert_data=None, gcp_audience=None, k8s_auth_config_name=None, key_data=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, access_id=None, access_key=None, access_type='access_key', admin_email=None, admin_password=None, azure_ad_object_id=None, cert_data=None, gcp_audience=None, json=None, k8s_auth_config_name=None, key_data=None, local_vars_configuration=None):  # noqa: E501
         """Configure - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -73,6 +75,7 @@ class Configure(object):
         self._azure_ad_object_id = None
         self._cert_data = None
         self._gcp_audience = None
+        self._json = None
         self._k8s_auth_config_name = None
         self._key_data = None
         self.discriminator = None
@@ -93,6 +96,8 @@ class Configure(object):
             self.cert_data = cert_data
         if gcp_audience is not None:
             self.gcp_audience = gcp_audience
+        if json is not None:
+            self.json = json
         if k8s_auth_config_name is not None:
             self.k8s_auth_config_name = k8s_auth_config_name
         if key_data is not None:
@@ -281,6 +286,29 @@ class Configure(object):
         """
 
         self._gcp_audience = gcp_audience
+
+    @property
+    def json(self):
+        """Gets the json of this Configure.  # noqa: E501
+
+        Set output format to JSON  # noqa: E501
+
+        :return: The json of this Configure.  # noqa: E501
+        :rtype: bool
+        """
+        return self._json
+
+    @json.setter
+    def json(self, json):
+        """Sets the json of this Configure.
+
+        Set output format to JSON  # noqa: E501
+
+        :param json: The json of this Configure.  # noqa: E501
+        :type: bool
+        """
+
+        self._json = json
 
     @property
     def k8s_auth_config_name(self):

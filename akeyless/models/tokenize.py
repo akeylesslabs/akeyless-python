@@ -34,6 +34,7 @@ class Tokenize(object):
                             and the value is json key in definition.
     """
     openapi_types = {
+        'json': 'bool',
         'plaintext': 'str',
         'token': 'str',
         'tokenizer_name': 'str',
@@ -42,6 +43,7 @@ class Tokenize(object):
     }
 
     attribute_map = {
+        'json': 'json',
         'plaintext': 'plaintext',
         'token': 'token',
         'tokenizer_name': 'tokenizer-name',
@@ -49,12 +51,13 @@ class Tokenize(object):
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, plaintext=None, token=None, tokenizer_name=None, tweak=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, json=None, plaintext=None, token=None, tokenizer_name=None, tweak=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """Tokenize - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
+        self._json = None
         self._plaintext = None
         self._token = None
         self._tokenizer_name = None
@@ -62,6 +65,8 @@ class Tokenize(object):
         self._uid_token = None
         self.discriminator = None
 
+        if json is not None:
+            self.json = json
         self.plaintext = plaintext
         if token is not None:
             self.token = token
@@ -70,6 +75,29 @@ class Tokenize(object):
             self.tweak = tweak
         if uid_token is not None:
             self.uid_token = uid_token
+
+    @property
+    def json(self):
+        """Gets the json of this Tokenize.  # noqa: E501
+
+        Set output format to JSON  # noqa: E501
+
+        :return: The json of this Tokenize.  # noqa: E501
+        :rtype: bool
+        """
+        return self._json
+
+    @json.setter
+    def json(self, json):
+        """Sets the json of this Tokenize.
+
+        Set output format to JSON  # noqa: E501
+
+        :param json: The json of this Tokenize.  # noqa: E501
+        :type: bool
+        """
+
+        self._json = json
 
     @property
     def plaintext(self):

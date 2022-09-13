@@ -37,6 +37,7 @@ class GatewayUpdateK8SAuthConfig(object):
         'access_id': 'str',
         'cluster_api_type': 'str',
         'config_encryption_key_name': 'str',
+        'json': 'bool',
         'k8s_ca_cert': 'str',
         'k8s_host': 'str',
         'k8s_issuer': 'str',
@@ -55,6 +56,7 @@ class GatewayUpdateK8SAuthConfig(object):
         'access_id': 'access-id',
         'cluster_api_type': 'cluster-api-type',
         'config_encryption_key_name': 'config-encryption-key-name',
+        'json': 'json',
         'k8s_ca_cert': 'k8s-ca-cert',
         'k8s_host': 'k8s-host',
         'k8s_issuer': 'k8s-issuer',
@@ -69,7 +71,7 @@ class GatewayUpdateK8SAuthConfig(object):
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, access_id=None, cluster_api_type='native_k8s', config_encryption_key_name=None, k8s_ca_cert=None, k8s_host=None, k8s_issuer=None, name=None, new_name=None, rancher_api_key=None, rancher_cluster_id=None, signing_key=None, token=None, token_exp=300, token_reviewer_jwt=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, access_id=None, cluster_api_type='native_k8s', config_encryption_key_name=None, json=None, k8s_ca_cert=None, k8s_host=None, k8s_issuer=None, name=None, new_name=None, rancher_api_key=None, rancher_cluster_id=None, signing_key=None, token=None, token_exp=300, token_reviewer_jwt=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """GatewayUpdateK8SAuthConfig - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -78,6 +80,7 @@ class GatewayUpdateK8SAuthConfig(object):
         self._access_id = None
         self._cluster_api_type = None
         self._config_encryption_key_name = None
+        self._json = None
         self._k8s_ca_cert = None
         self._k8s_host = None
         self._k8s_issuer = None
@@ -97,6 +100,8 @@ class GatewayUpdateK8SAuthConfig(object):
             self.cluster_api_type = cluster_api_type
         if config_encryption_key_name is not None:
             self.config_encryption_key_name = config_encryption_key_name
+        if json is not None:
+            self.json = json
         if k8s_ca_cert is not None:
             self.k8s_ca_cert = k8s_ca_cert
         self.k8s_host = k8s_host
@@ -188,6 +193,29 @@ class GatewayUpdateK8SAuthConfig(object):
         """
 
         self._config_encryption_key_name = config_encryption_key_name
+
+    @property
+    def json(self):
+        """Gets the json of this GatewayUpdateK8SAuthConfig.  # noqa: E501
+
+        Set output format to JSON  # noqa: E501
+
+        :return: The json of this GatewayUpdateK8SAuthConfig.  # noqa: E501
+        :rtype: bool
+        """
+        return self._json
+
+    @json.setter
+    def json(self, json):
+        """Sets the json of this GatewayUpdateK8SAuthConfig.
+
+        Set output format to JSON  # noqa: E501
+
+        :param json: The json of this GatewayUpdateK8SAuthConfig.  # noqa: E501
+        :type: bool
+        """
+
+        self._json = json
 
     @property
     def k8s_ca_cert(self):

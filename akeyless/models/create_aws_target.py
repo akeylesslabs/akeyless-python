@@ -37,6 +37,7 @@ class CreateAWSTarget(object):
         'access_key': 'str',
         'access_key_id': 'str',
         'comment': 'str',
+        'json': 'bool',
         'key': 'str',
         'name': 'str',
         'region': 'str',
@@ -50,6 +51,7 @@ class CreateAWSTarget(object):
         'access_key': 'access-key',
         'access_key_id': 'access-key-id',
         'comment': 'comment',
+        'json': 'json',
         'key': 'key',
         'name': 'name',
         'region': 'region',
@@ -59,7 +61,7 @@ class CreateAWSTarget(object):
         'use_gw_cloud_identity': 'use-gw-cloud-identity'
     }
 
-    def __init__(self, access_key=None, access_key_id=None, comment=None, key=None, name=None, region=None, session_token=None, token=None, uid_token=None, use_gw_cloud_identity=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, access_key=None, access_key_id=None, comment=None, json=None, key=None, name=None, region=None, session_token=None, token=None, uid_token=None, use_gw_cloud_identity=None, local_vars_configuration=None):  # noqa: E501
         """CreateAWSTarget - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -68,6 +70,7 @@ class CreateAWSTarget(object):
         self._access_key = None
         self._access_key_id = None
         self._comment = None
+        self._json = None
         self._key = None
         self._name = None
         self._region = None
@@ -83,6 +86,8 @@ class CreateAWSTarget(object):
             self.access_key_id = access_key_id
         if comment is not None:
             self.comment = comment
+        if json is not None:
+            self.json = json
         if key is not None:
             self.key = key
         self.name = name
@@ -161,6 +166,29 @@ class CreateAWSTarget(object):
         """
 
         self._comment = comment
+
+    @property
+    def json(self):
+        """Gets the json of this CreateAWSTarget.  # noqa: E501
+
+        Set output format to JSON  # noqa: E501
+
+        :return: The json of this CreateAWSTarget.  # noqa: E501
+        :rtype: bool
+        """
+        return self._json
+
+    @json.setter
+    def json(self, json):
+        """Sets the json of this CreateAWSTarget.
+
+        Set output format to JSON  # noqa: E501
+
+        :param json: The json of this CreateAWSTarget.  # noqa: E501
+        :type: bool
+        """
+
+        self._json = json
 
     @property
     def key(self):

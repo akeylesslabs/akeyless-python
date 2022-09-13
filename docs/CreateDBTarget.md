@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **db_server_name** | **str** | (Optional) Server name for certificate verification | [optional] 
 **db_type** | **str** |  | 
 **host** | **str** |  | [optional] 
+**json** | **bool** | Set output format to JSON | [optional] 
 **key** | **str** | The name of a key that used to encrypt the target secret value (if empty, the account default protectionKey key will be used) | [optional] 
 **mongodb_atlas** | **bool** |  | [optional] 
 **mongodb_atlas_api_private_key** | **str** | MongoDB Atlas private key | [optional] 

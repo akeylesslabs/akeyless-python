@@ -36,11 +36,12 @@ class CreateSecret(object):
     openapi_types = {
         'accessibility': 'str',
         'delete_protection': 'str',
+        'json': 'bool',
         'metadata': 'str',
         'multiline_value': 'bool',
         'name': 'str',
         'password_manager_custom_field': 'dict(str, str)',
-        'password_manager_inject_url': 'str',
+        'password_manager_inject_url': 'list[str]',
         'password_manager_password': 'str',
         'password_manager_username': 'str',
         'protection_key': 'str',
@@ -62,6 +63,7 @@ class CreateSecret(object):
     attribute_map = {
         'accessibility': 'accessibility',
         'delete_protection': 'delete_protection',
+        'json': 'json',
         'metadata': 'metadata',
         'multiline_value': 'multiline_value',
         'name': 'name',
@@ -85,7 +87,7 @@ class CreateSecret(object):
         'value': 'value'
     }
 
-    def __init__(self, accessibility=None, delete_protection=None, metadata=None, multiline_value=None, name=None, password_manager_custom_field=None, password_manager_inject_url=None, password_manager_password=None, password_manager_username=None, protection_key=None, secure_access_bastion_issuer=None, secure_access_enable=None, secure_access_host=None, secure_access_ssh_creds=None, secure_access_ssh_user=None, secure_access_url=None, secure_access_web_browsing=None, secure_access_web_proxy=None, tags=None, token=None, type=None, uid_token=None, value=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, accessibility=None, delete_protection=None, json=None, metadata=None, multiline_value=None, name=None, password_manager_custom_field=None, password_manager_inject_url=None, password_manager_password=None, password_manager_username=None, protection_key=None, secure_access_bastion_issuer=None, secure_access_enable=None, secure_access_host=None, secure_access_ssh_creds=None, secure_access_ssh_user=None, secure_access_url=None, secure_access_web_browsing=None, secure_access_web_proxy=None, tags=None, token=None, type=None, uid_token=None, value=None, local_vars_configuration=None):  # noqa: E501
         """CreateSecret - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -93,6 +95,7 @@ class CreateSecret(object):
 
         self._accessibility = None
         self._delete_protection = None
+        self._json = None
         self._metadata = None
         self._multiline_value = None
         self._name = None
@@ -120,6 +123,8 @@ class CreateSecret(object):
             self.accessibility = accessibility
         if delete_protection is not None:
             self.delete_protection = delete_protection
+        if json is not None:
+            self.json = json
         if metadata is not None:
             self.metadata = metadata
         if multiline_value is not None:
@@ -206,6 +211,29 @@ class CreateSecret(object):
         """
 
         self._delete_protection = delete_protection
+
+    @property
+    def json(self):
+        """Gets the json of this CreateSecret.  # noqa: E501
+
+        Set output format to JSON  # noqa: E501
+
+        :return: The json of this CreateSecret.  # noqa: E501
+        :rtype: bool
+        """
+        return self._json
+
+    @json.setter
+    def json(self, json):
+        """Sets the json of this CreateSecret.
+
+        Set output format to JSON  # noqa: E501
+
+        :param json: The json of this CreateSecret.  # noqa: E501
+        :type: bool
+        """
+
+        self._json = json
 
     @property
     def metadata(self):
@@ -308,7 +336,7 @@ class CreateSecret(object):
         For Password Management use, reflect the website context  # noqa: E501
 
         :return: The password_manager_inject_url of this CreateSecret.  # noqa: E501
-        :rtype: str
+        :rtype: list[str]
         """
         return self._password_manager_inject_url
 
@@ -319,7 +347,7 @@ class CreateSecret(object):
         For Password Management use, reflect the website context  # noqa: E501
 
         :param password_manager_inject_url: The password_manager_inject_url of this CreateSecret.  # noqa: E501
-        :type: str
+        :type: list[str]
         """
 
         self._password_manager_inject_url = password_manager_inject_url

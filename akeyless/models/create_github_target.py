@@ -38,6 +38,7 @@ class CreateGithubTarget(object):
         'github_app_id': 'int',
         'github_app_private_key': 'str',
         'github_base_url': 'str',
+        'json': 'bool',
         'key': 'str',
         'name': 'str',
         'token': 'str',
@@ -49,13 +50,14 @@ class CreateGithubTarget(object):
         'github_app_id': 'github-app-id',
         'github_app_private_key': 'github-app-private-key',
         'github_base_url': 'github-base-url',
+        'json': 'json',
         'key': 'key',
         'name': 'name',
         'token': 'token',
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, comment=None, github_app_id=None, github_app_private_key=None, github_base_url=None, key=None, name=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, comment=None, github_app_id=None, github_app_private_key=None, github_base_url=None, json=None, key=None, name=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """CreateGithubTarget - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -65,6 +67,7 @@ class CreateGithubTarget(object):
         self._github_app_id = None
         self._github_app_private_key = None
         self._github_base_url = None
+        self._json = None
         self._key = None
         self._name = None
         self._token = None
@@ -79,6 +82,8 @@ class CreateGithubTarget(object):
             self.github_app_private_key = github_app_private_key
         if github_base_url is not None:
             self.github_base_url = github_base_url
+        if json is not None:
+            self.json = json
         if key is not None:
             self.key = key
         self.name = name
@@ -178,6 +183,29 @@ class CreateGithubTarget(object):
         """
 
         self._github_base_url = github_base_url
+
+    @property
+    def json(self):
+        """Gets the json of this CreateGithubTarget.  # noqa: E501
+
+        Set output format to JSON  # noqa: E501
+
+        :return: The json of this CreateGithubTarget.  # noqa: E501
+        :rtype: bool
+        """
+        return self._json
+
+    @json.setter
+    def json(self, json):
+        """Sets the json of this CreateGithubTarget.
+
+        Set output format to JSON  # noqa: E501
+
+        :param json: The json of this CreateGithubTarget.  # noqa: E501
+        :type: bool
+        """
+
+        self._json = json
 
     @property
     def key(self):

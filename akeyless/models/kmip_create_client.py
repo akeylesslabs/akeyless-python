@@ -35,6 +35,7 @@ class KmipCreateClient(object):
     """
     openapi_types = {
         'certificate_ttl': 'int',
+        'json': 'bool',
         'name': 'str',
         'token': 'str',
         'uid_token': 'str'
@@ -42,18 +43,20 @@ class KmipCreateClient(object):
 
     attribute_map = {
         'certificate_ttl': 'certificate-ttl',
+        'json': 'json',
         'name': 'name',
         'token': 'token',
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, certificate_ttl=None, name=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, certificate_ttl=None, json=None, name=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """KmipCreateClient - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._certificate_ttl = None
+        self._json = None
         self._name = None
         self._token = None
         self._uid_token = None
@@ -61,6 +64,8 @@ class KmipCreateClient(object):
 
         if certificate_ttl is not None:
             self.certificate_ttl = certificate_ttl
+        if json is not None:
+            self.json = json
         self.name = name
         if token is not None:
             self.token = token
@@ -87,6 +92,29 @@ class KmipCreateClient(object):
         """
 
         self._certificate_ttl = certificate_ttl
+
+    @property
+    def json(self):
+        """Gets the json of this KmipCreateClient.  # noqa: E501
+
+        Set output format to JSON  # noqa: E501
+
+        :return: The json of this KmipCreateClient.  # noqa: E501
+        :rtype: bool
+        """
+        return self._json
+
+    @json.setter
+    def json(self, json):
+        """Sets the json of this KmipCreateClient.
+
+        Set output format to JSON  # noqa: E501
+
+        :param json: The json of this KmipCreateClient.  # noqa: E501
+        :type: bool
+        """
+
+        self._json = json
 
     @property
     def name(self):

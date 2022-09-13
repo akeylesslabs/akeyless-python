@@ -38,7 +38,9 @@ class Decrypt(object):
         'display_id': 'str',
         'encryption_context': 'dict(str, str)',
         'item_id': 'int',
+        'json': 'bool',
         'key_name': 'str',
+        'output_format': 'str',
         'token': 'str',
         'uid_token': 'str'
     }
@@ -48,12 +50,14 @@ class Decrypt(object):
         'display_id': 'display-id',
         'encryption_context': 'encryption-context',
         'item_id': 'item-id',
+        'json': 'json',
         'key_name': 'key-name',
+        'output_format': 'output-format',
         'token': 'token',
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, ciphertext=None, display_id=None, encryption_context=None, item_id=None, key_name=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, ciphertext=None, display_id=None, encryption_context=None, item_id=None, json=None, key_name=None, output_format=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """Decrypt - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -63,7 +67,9 @@ class Decrypt(object):
         self._display_id = None
         self._encryption_context = None
         self._item_id = None
+        self._json = None
         self._key_name = None
+        self._output_format = None
         self._token = None
         self._uid_token = None
         self.discriminator = None
@@ -76,7 +82,11 @@ class Decrypt(object):
             self.encryption_context = encryption_context
         if item_id is not None:
             self.item_id = item_id
+        if json is not None:
+            self.json = json
         self.key_name = key_name
+        if output_format is not None:
+            self.output_format = output_format
         if token is not None:
             self.token = token
         if uid_token is not None:
@@ -175,6 +185,29 @@ class Decrypt(object):
         self._item_id = item_id
 
     @property
+    def json(self):
+        """Gets the json of this Decrypt.  # noqa: E501
+
+        Set output format to JSON  # noqa: E501
+
+        :return: The json of this Decrypt.  # noqa: E501
+        :rtype: bool
+        """
+        return self._json
+
+    @json.setter
+    def json(self, json):
+        """Sets the json of this Decrypt.
+
+        Set output format to JSON  # noqa: E501
+
+        :param json: The json of this Decrypt.  # noqa: E501
+        :type: bool
+        """
+
+        self._json = json
+
+    @property
     def key_name(self):
         """Gets the key_name of this Decrypt.  # noqa: E501
 
@@ -198,6 +231,29 @@ class Decrypt(object):
             raise ValueError("Invalid value for `key_name`, must not be `None`")  # noqa: E501
 
         self._key_name = key_name
+
+    @property
+    def output_format(self):
+        """Gets the output_format of this Decrypt.  # noqa: E501
+
+        If specified, the output will be formatted accordingly. options: [base64]  # noqa: E501
+
+        :return: The output_format of this Decrypt.  # noqa: E501
+        :rtype: str
+        """
+        return self._output_format
+
+    @output_format.setter
+    def output_format(self, output_format):
+        """Sets the output_format of this Decrypt.
+
+        If specified, the output will be formatted accordingly. options: [base64]  # noqa: E501
+
+        :param output_format: The output_format of this Decrypt.  # noqa: E501
+        :type: str
+        """
+
+        self._output_format = output_format
 
     @property
     def token(self):

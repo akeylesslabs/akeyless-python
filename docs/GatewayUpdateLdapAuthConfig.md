@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **group_attr** | **str** | Group Attr | [optional] 
 **group_dn** | **str** | Group Dn | [optional] 
 **group_filter** | **str** | Group Filter | [optional] 
+**json** | **bool** | Set output format to JSON | [optional] 
 **ldap_ca_cert** | **str** | LDAP CA Certificate (base64 encoded) | [optional] 
 **ldap_enable** | **str** | Enable Ldap | [optional] 
 **ldap_url** | **str** | LDAP Server URL, e.g. ldap://planetexpress.com:389 | [optional] 

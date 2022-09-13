@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **cloud_id** | **str** | The cloud identity (relevant only for access-type&#x3D;azure_ad,aws_iam,gcp) | [optional] 
 **debug** | **bool** |  | [optional] 
 **gcp_audience** | **str** | GCP JWT audience | [optional] 
+**json** | **bool** | Set output format to JSON | [optional] 
 **jwt** | **str** | The Json Web Token (relevant only for access-type&#x3D;jwt/oidc) | [optional] 
 **k8s_auth_config_name** | **str** | The K8S Auth config name (relevant only for access-type&#x3D;k8s) | [optional] 
 **k8s_service_account_token** | **str** | The K8S service account token. (relevant only for access-type&#x3D;k8s) | [optional] 

@@ -40,6 +40,7 @@ class CreateDBTarget(object):
         'db_server_name': 'str',
         'db_type': 'str',
         'host': 'str',
+        'json': 'bool',
         'key': 'str',
         'mongodb_atlas': 'bool',
         'mongodb_atlas_api_private_key': 'str',
@@ -66,6 +67,7 @@ class CreateDBTarget(object):
         'db_server_name': 'db-server-name',
         'db_type': 'db-type',
         'host': 'host',
+        'json': 'json',
         'key': 'key',
         'mongodb_atlas': 'mongodb-atlas',
         'mongodb_atlas_api_private_key': 'mongodb-atlas-api-private-key',
@@ -85,7 +87,7 @@ class CreateDBTarget(object):
         'user_name': 'user-name'
     }
 
-    def __init__(self, comment=None, db_name=None, db_server_certificates=None, db_server_name=None, db_type=None, host=None, key=None, mongodb_atlas=None, mongodb_atlas_api_private_key=None, mongodb_atlas_api_public_key=None, mongodb_atlas_project_id=None, mongodb_default_auth_db=None, mongodb_uri_options=None, name=None, oracle_service_name=None, port=None, pwd=None, snowflake_account=None, ssl=None, ssl_certificate=None, token=None, uid_token=None, user_name=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, comment=None, db_name=None, db_server_certificates=None, db_server_name=None, db_type=None, host=None, json=None, key=None, mongodb_atlas=None, mongodb_atlas_api_private_key=None, mongodb_atlas_api_public_key=None, mongodb_atlas_project_id=None, mongodb_default_auth_db=None, mongodb_uri_options=None, name=None, oracle_service_name=None, port=None, pwd=None, snowflake_account=None, ssl=None, ssl_certificate=None, token=None, uid_token=None, user_name=None, local_vars_configuration=None):  # noqa: E501
         """CreateDBTarget - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -97,6 +99,7 @@ class CreateDBTarget(object):
         self._db_server_name = None
         self._db_type = None
         self._host = None
+        self._json = None
         self._key = None
         self._mongodb_atlas = None
         self._mongodb_atlas_api_private_key = None
@@ -127,6 +130,8 @@ class CreateDBTarget(object):
         self.db_type = db_type
         if host is not None:
             self.host = host
+        if json is not None:
+            self.json = json
         if key is not None:
             self.key = key
         if mongodb_atlas is not None:
@@ -294,6 +299,29 @@ class CreateDBTarget(object):
         """
 
         self._host = host
+
+    @property
+    def json(self):
+        """Gets the json of this CreateDBTarget.  # noqa: E501
+
+        Set output format to JSON  # noqa: E501
+
+        :return: The json of this CreateDBTarget.  # noqa: E501
+        :rtype: bool
+        """
+        return self._json
+
+    @json.setter
+    def json(self, json):
+        """Sets the json of this CreateDBTarget.
+
+        Set output format to JSON  # noqa: E501
+
+        :param json: The json of this CreateDBTarget.  # noqa: E501
+        :type: bool
+        """
+
+        self._json = json
 
     @property
     def key(self):

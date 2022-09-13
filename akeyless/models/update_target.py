@@ -34,6 +34,7 @@ class UpdateTarget(object):
                             and the value is json key in definition.
     """
     openapi_types = {
+        'json': 'bool',
         'name': 'str',
         'new_comment': 'str',
         'new_name': 'str',
@@ -42,6 +43,7 @@ class UpdateTarget(object):
     }
 
     attribute_map = {
+        'json': 'json',
         'name': 'name',
         'new_comment': 'new-comment',
         'new_name': 'new-name',
@@ -49,12 +51,13 @@ class UpdateTarget(object):
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, name=None, new_comment='default_comment', new_name=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, json=None, name=None, new_comment='default_comment', new_name=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """UpdateTarget - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
+        self._json = None
         self._name = None
         self._new_comment = None
         self._new_name = None
@@ -62,6 +65,8 @@ class UpdateTarget(object):
         self._uid_token = None
         self.discriminator = None
 
+        if json is not None:
+            self.json = json
         self.name = name
         if new_comment is not None:
             self.new_comment = new_comment
@@ -71,6 +76,29 @@ class UpdateTarget(object):
             self.token = token
         if uid_token is not None:
             self.uid_token = uid_token
+
+    @property
+    def json(self):
+        """Gets the json of this UpdateTarget.  # noqa: E501
+
+        Set output format to JSON  # noqa: E501
+
+        :return: The json of this UpdateTarget.  # noqa: E501
+        :rtype: bool
+        """
+        return self._json
+
+    @json.setter
+    def json(self, json):
+        """Sets the json of this UpdateTarget.
+
+        Set output format to JSON  # noqa: E501
+
+        :param json: The json of this UpdateTarget.  # noqa: E501
+        :type: bool
+        """
+
+        self._json = json
 
     @property
     def name(self):

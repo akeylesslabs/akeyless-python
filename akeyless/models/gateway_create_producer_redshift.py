@@ -36,6 +36,7 @@ class GatewayCreateProducerRedshift(object):
     openapi_types = {
         'creation_statements': 'str',
         'delete_protection': 'str',
+        'json': 'bool',
         'name': 'str',
         'producer_encryption_key': 'str',
         'redshift_db_name': 'str',
@@ -56,6 +57,7 @@ class GatewayCreateProducerRedshift(object):
     attribute_map = {
         'creation_statements': 'creation-statements',
         'delete_protection': 'delete_protection',
+        'json': 'json',
         'name': 'name',
         'producer_encryption_key': 'producer-encryption-key',
         'redshift_db_name': 'redshift-db-name',
@@ -73,7 +75,7 @@ class GatewayCreateProducerRedshift(object):
         'user_ttl': 'user-ttl'
     }
 
-    def __init__(self, creation_statements=None, delete_protection=None, name=None, producer_encryption_key=None, redshift_db_name=None, redshift_host='127.0.0.1', redshift_password=None, redshift_port='5439', redshift_username=None, secure_access_enable=None, secure_access_host=None, ssl=None, tags=None, target_name=None, token=None, uid_token=None, user_ttl='60m', local_vars_configuration=None):  # noqa: E501
+    def __init__(self, creation_statements=None, delete_protection=None, json=None, name=None, producer_encryption_key=None, redshift_db_name=None, redshift_host='127.0.0.1', redshift_password=None, redshift_port='5439', redshift_username=None, secure_access_enable=None, secure_access_host=None, ssl=None, tags=None, target_name=None, token=None, uid_token=None, user_ttl='60m', local_vars_configuration=None):  # noqa: E501
         """GatewayCreateProducerRedshift - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -81,6 +83,7 @@ class GatewayCreateProducerRedshift(object):
 
         self._creation_statements = None
         self._delete_protection = None
+        self._json = None
         self._name = None
         self._producer_encryption_key = None
         self._redshift_db_name = None
@@ -102,6 +105,8 @@ class GatewayCreateProducerRedshift(object):
             self.creation_statements = creation_statements
         if delete_protection is not None:
             self.delete_protection = delete_protection
+        if json is not None:
+            self.json = json
         self.name = name
         if producer_encryption_key is not None:
             self.producer_encryption_key = producer_encryption_key
@@ -177,6 +182,29 @@ class GatewayCreateProducerRedshift(object):
         """
 
         self._delete_protection = delete_protection
+
+    @property
+    def json(self):
+        """Gets the json of this GatewayCreateProducerRedshift.  # noqa: E501
+
+        Set output format to JSON  # noqa: E501
+
+        :return: The json of this GatewayCreateProducerRedshift.  # noqa: E501
+        :rtype: bool
+        """
+        return self._json
+
+    @json.setter
+    def json(self, json):
+        """Sets the json of this GatewayCreateProducerRedshift.
+
+        Set output format to JSON  # noqa: E501
+
+        :param json: The json of this GatewayCreateProducerRedshift.  # noqa: E501
+        :type: bool
+        """
+
+        self._json = json
 
     @property
     def name(self):

@@ -35,6 +35,7 @@ class GetSecretValue(object):
     """
     openapi_types = {
         'accessibility': 'str',
+        'json': 'bool',
         'names': 'list[str]',
         'pretty_print': 'bool',
         'token': 'str',
@@ -44,6 +45,7 @@ class GetSecretValue(object):
 
     attribute_map = {
         'accessibility': 'accessibility',
+        'json': 'json',
         'names': 'names',
         'pretty_print': 'pretty-print',
         'token': 'token',
@@ -51,13 +53,14 @@ class GetSecretValue(object):
         'version': 'version'
     }
 
-    def __init__(self, accessibility=None, names=None, pretty_print=None, token=None, uid_token=None, version=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, accessibility=None, json=None, names=None, pretty_print=None, token=None, uid_token=None, version=None, local_vars_configuration=None):  # noqa: E501
         """GetSecretValue - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._accessibility = None
+        self._json = None
         self._names = None
         self._pretty_print = None
         self._token = None
@@ -67,6 +70,8 @@ class GetSecretValue(object):
 
         if accessibility is not None:
             self.accessibility = accessibility
+        if json is not None:
+            self.json = json
         self.names = names
         if pretty_print is not None:
             self.pretty_print = pretty_print
@@ -99,6 +104,29 @@ class GetSecretValue(object):
         """
 
         self._accessibility = accessibility
+
+    @property
+    def json(self):
+        """Gets the json of this GetSecretValue.  # noqa: E501
+
+        Set output format to JSON  # noqa: E501
+
+        :return: The json of this GetSecretValue.  # noqa: E501
+        :rtype: bool
+        """
+        return self._json
+
+    @json.setter
+    def json(self, json):
+        """Sets the json of this GetSecretValue.
+
+        Set output format to JSON  # noqa: E501
+
+        :param json: The json of this GetSecretValue.  # noqa: E501
+        :type: bool
+        """
+
+        self._json = json
 
     @property
     def names(self):

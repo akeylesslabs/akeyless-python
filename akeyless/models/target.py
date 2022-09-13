@@ -42,6 +42,7 @@ class Target(object):
         'target_id': 'int',
         'target_items_assoc': 'list[TargetItemAssociation]',
         'target_name': 'str',
+        'target_objects_assoc': 'list[TargetObjectAssociation]',
         'target_type': 'str',
         'target_versions': 'list[ItemVersion]',
         'with_customer_fragment': 'bool'
@@ -56,12 +57,13 @@ class Target(object):
         'target_id': 'target_id',
         'target_items_assoc': 'target_items_assoc',
         'target_name': 'target_name',
+        'target_objects_assoc': 'target_objects_assoc',
         'target_type': 'target_type',
         'target_versions': 'target_versions',
         'with_customer_fragment': 'with_customer_fragment'
     }
 
-    def __init__(self, attributes=None, client_permissions=None, comment=None, last_version=None, protection_key_name=None, target_id=None, target_items_assoc=None, target_name=None, target_type=None, target_versions=None, with_customer_fragment=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, attributes=None, client_permissions=None, comment=None, last_version=None, protection_key_name=None, target_id=None, target_items_assoc=None, target_name=None, target_objects_assoc=None, target_type=None, target_versions=None, with_customer_fragment=None, local_vars_configuration=None):  # noqa: E501
         """Target - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -75,6 +77,7 @@ class Target(object):
         self._target_id = None
         self._target_items_assoc = None
         self._target_name = None
+        self._target_objects_assoc = None
         self._target_type = None
         self._target_versions = None
         self._with_customer_fragment = None
@@ -96,6 +99,8 @@ class Target(object):
             self.target_items_assoc = target_items_assoc
         if target_name is not None:
             self.target_name = target_name
+        if target_objects_assoc is not None:
+            self.target_objects_assoc = target_objects_assoc
         if target_type is not None:
             self.target_type = target_type
         if target_versions is not None:
@@ -272,6 +277,27 @@ class Target(object):
         """
 
         self._target_name = target_name
+
+    @property
+    def target_objects_assoc(self):
+        """Gets the target_objects_assoc of this Target.  # noqa: E501
+
+
+        :return: The target_objects_assoc of this Target.  # noqa: E501
+        :rtype: list[TargetObjectAssociation]
+        """
+        return self._target_objects_assoc
+
+    @target_objects_assoc.setter
+    def target_objects_assoc(self, target_objects_assoc):
+        """Sets the target_objects_assoc of this Target.
+
+
+        :param target_objects_assoc: The target_objects_assoc of this Target.  # noqa: E501
+        :type: list[TargetObjectAssociation]
+        """
+
+        self._target_objects_assoc = target_objects_assoc
 
     @property
     def target_type(self):

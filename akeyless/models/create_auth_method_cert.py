@@ -45,6 +45,7 @@ class CreateAuthMethodCert(object):
         'certificate_data': 'str',
         'force_sub_claims': 'bool',
         'gw_bound_ips': 'list[str]',
+        'json': 'bool',
         'jwt_ttl': 'int',
         'name': 'str',
         'revoked_cert_ids': 'list[str]',
@@ -65,6 +66,7 @@ class CreateAuthMethodCert(object):
         'certificate_data': 'certificate-data',
         'force_sub_claims': 'force-sub-claims',
         'gw_bound_ips': 'gw-bound-ips',
+        'json': 'json',
         'jwt_ttl': 'jwt-ttl',
         'name': 'name',
         'revoked_cert_ids': 'revoked-cert-ids',
@@ -73,7 +75,7 @@ class CreateAuthMethodCert(object):
         'unique_identifier': 'unique-identifier'
     }
 
-    def __init__(self, access_expires=0, bound_common_names=None, bound_dns_sans=None, bound_email_sans=None, bound_extensions=None, bound_ips=None, bound_organizational_units=None, bound_uri_sans=None, certificate_data=None, force_sub_claims=None, gw_bound_ips=None, jwt_ttl=None, name=None, revoked_cert_ids=None, token=None, uid_token=None, unique_identifier=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, access_expires=0, bound_common_names=None, bound_dns_sans=None, bound_email_sans=None, bound_extensions=None, bound_ips=None, bound_organizational_units=None, bound_uri_sans=None, certificate_data=None, force_sub_claims=None, gw_bound_ips=None, json=None, jwt_ttl=None, name=None, revoked_cert_ids=None, token=None, uid_token=None, unique_identifier=None, local_vars_configuration=None):  # noqa: E501
         """CreateAuthMethodCert - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -90,6 +92,7 @@ class CreateAuthMethodCert(object):
         self._certificate_data = None
         self._force_sub_claims = None
         self._gw_bound_ips = None
+        self._json = None
         self._jwt_ttl = None
         self._name = None
         self._revoked_cert_ids = None
@@ -120,6 +123,8 @@ class CreateAuthMethodCert(object):
             self.force_sub_claims = force_sub_claims
         if gw_bound_ips is not None:
             self.gw_bound_ips = gw_bound_ips
+        if json is not None:
+            self.json = json
         if jwt_ttl is not None:
             self.jwt_ttl = jwt_ttl
         self.name = name
@@ -383,6 +388,29 @@ class CreateAuthMethodCert(object):
         """
 
         self._gw_bound_ips = gw_bound_ips
+
+    @property
+    def json(self):
+        """Gets the json of this CreateAuthMethodCert.  # noqa: E501
+
+        Set output format to JSON  # noqa: E501
+
+        :return: The json of this CreateAuthMethodCert.  # noqa: E501
+        :rtype: bool
+        """
+        return self._json
+
+    @json.setter
+    def json(self, json):
+        """Sets the json of this CreateAuthMethodCert.
+
+        Set output format to JSON  # noqa: E501
+
+        :param json: The json of this CreateAuthMethodCert.  # noqa: E501
+        :type: bool
+        """
+
+        self._json = json
 
     @property
     def jwt_ttl(self):

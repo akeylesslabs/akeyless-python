@@ -43,6 +43,7 @@ class Auth(object):
         'cloud_id': 'str',
         'debug': 'bool',
         'gcp_audience': 'str',
+        'json': 'bool',
         'jwt': 'str',
         'k8s_auth_config_name': 'str',
         'k8s_service_account_token': 'str',
@@ -62,6 +63,7 @@ class Auth(object):
         'cloud_id': 'cloud-id',
         'debug': 'debug',
         'gcp_audience': 'gcp-audience',
+        'json': 'json',
         'jwt': 'jwt',
         'k8s_auth_config_name': 'k8s-auth-config-name',
         'k8s_service_account_token': 'k8s-service-account-token',
@@ -71,7 +73,7 @@ class Auth(object):
         'uid_token': 'uid_token'
     }
 
-    def __init__(self, access_id=None, access_key=None, access_type='access_key', admin_email=None, admin_password=None, cert_data=None, cloud_id=None, debug=None, gcp_audience=None, jwt=None, k8s_auth_config_name=None, k8s_service_account_token=None, key_data=None, ldap_password=None, ldap_username=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, access_id=None, access_key=None, access_type='access_key', admin_email=None, admin_password=None, cert_data=None, cloud_id=None, debug=None, gcp_audience=None, json=None, jwt=None, k8s_auth_config_name=None, k8s_service_account_token=None, key_data=None, ldap_password=None, ldap_username=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """Auth - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -86,6 +88,7 @@ class Auth(object):
         self._cloud_id = None
         self._debug = None
         self._gcp_audience = None
+        self._json = None
         self._jwt = None
         self._k8s_auth_config_name = None
         self._k8s_service_account_token = None
@@ -113,6 +116,8 @@ class Auth(object):
             self.debug = debug
         if gcp_audience is not None:
             self.gcp_audience = gcp_audience
+        if json is not None:
+            self.json = json
         if jwt is not None:
             self.jwt = jwt
         if k8s_auth_config_name is not None:
@@ -332,6 +337,29 @@ class Auth(object):
         """
 
         self._gcp_audience = gcp_audience
+
+    @property
+    def json(self):
+        """Gets the json of this Auth.  # noqa: E501
+
+        Set output format to JSON  # noqa: E501
+
+        :return: The json of this Auth.  # noqa: E501
+        :rtype: bool
+        """
+        return self._json
+
+    @json.setter
+    def json(self, json):
+        """Sets the json of this Auth.
+
+        Set output format to JSON  # noqa: E501
+
+        :param json: The json of this Auth.  # noqa: E501
+        :type: bool
+        """
+
+        self._json = json
 
     @property
     def jwt(self):

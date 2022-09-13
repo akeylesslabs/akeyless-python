@@ -35,6 +35,7 @@ class SignJWTWithClassicKey(object):
     """
     openapi_types = {
         'display_id': 'str',
+        'json': 'bool',
         'jwt_claims': 'str',
         'signing_method': 'str',
         'token': 'str',
@@ -44,6 +45,7 @@ class SignJWTWithClassicKey(object):
 
     attribute_map = {
         'display_id': 'display-id',
+        'json': 'json',
         'jwt_claims': 'jwt-claims',
         'signing_method': 'signing-method',
         'token': 'token',
@@ -51,13 +53,14 @@ class SignJWTWithClassicKey(object):
         'version': 'version'
     }
 
-    def __init__(self, display_id=None, jwt_claims=None, signing_method=None, token=None, uid_token=None, version=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, display_id=None, json=None, jwt_claims=None, signing_method=None, token=None, uid_token=None, version=None, local_vars_configuration=None):  # noqa: E501
         """SignJWTWithClassicKey - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._display_id = None
+        self._json = None
         self._jwt_claims = None
         self._signing_method = None
         self._token = None
@@ -66,6 +69,8 @@ class SignJWTWithClassicKey(object):
         self.discriminator = None
 
         self.display_id = display_id
+        if json is not None:
+            self.json = json
         self.jwt_claims = jwt_claims
         self.signing_method = signing_method
         if token is not None:
@@ -98,6 +103,29 @@ class SignJWTWithClassicKey(object):
             raise ValueError("Invalid value for `display_id`, must not be `None`")  # noqa: E501
 
         self._display_id = display_id
+
+    @property
+    def json(self):
+        """Gets the json of this SignJWTWithClassicKey.  # noqa: E501
+
+        Set output format to JSON  # noqa: E501
+
+        :return: The json of this SignJWTWithClassicKey.  # noqa: E501
+        :rtype: bool
+        """
+        return self._json
+
+    @json.setter
+    def json(self, json):
+        """Sets the json of this SignJWTWithClassicKey.
+
+        Set output format to JSON  # noqa: E501
+
+        :param json: The json of this SignJWTWithClassicKey.  # noqa: E501
+        :type: bool
+        """
+
+        self._json = json
 
     @property
     def jwt_claims(self):

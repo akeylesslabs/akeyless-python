@@ -36,6 +36,7 @@ class ListItems(object):
     openapi_types = {
         'accessibility': 'str',
         'filter': 'str',
+        'json': 'bool',
         'minimal_view': 'bool',
         'pagination_token': 'str',
         'path': 'str',
@@ -49,6 +50,7 @@ class ListItems(object):
     attribute_map = {
         'accessibility': 'accessibility',
         'filter': 'filter',
+        'json': 'json',
         'minimal_view': 'minimal-view',
         'pagination_token': 'pagination-token',
         'path': 'path',
@@ -59,7 +61,7 @@ class ListItems(object):
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, accessibility=None, filter=None, minimal_view=None, pagination_token=None, path=None, sub_types=None, tag=None, token=None, type=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, accessibility=None, filter=None, json=None, minimal_view=None, pagination_token=None, path=None, sub_types=None, tag=None, token=None, type=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """ListItems - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -67,6 +69,7 @@ class ListItems(object):
 
         self._accessibility = None
         self._filter = None
+        self._json = None
         self._minimal_view = None
         self._pagination_token = None
         self._path = None
@@ -81,6 +84,8 @@ class ListItems(object):
             self.accessibility = accessibility
         if filter is not None:
             self.filter = filter
+        if json is not None:
+            self.json = json
         if minimal_view is not None:
             self.minimal_view = minimal_view
         if pagination_token is not None:
@@ -143,6 +148,29 @@ class ListItems(object):
         """
 
         self._filter = filter
+
+    @property
+    def json(self):
+        """Gets the json of this ListItems.  # noqa: E501
+
+        Set output format to JSON  # noqa: E501
+
+        :return: The json of this ListItems.  # noqa: E501
+        :rtype: bool
+        """
+        return self._json
+
+    @json.setter
+    def json(self, json):
+        """Sets the json of this ListItems.
+
+        Set output format to JSON  # noqa: E501
+
+        :param json: The json of this ListItems.  # noqa: E501
+        :type: bool
+        """
+
+        self._json = json
 
     @property
     def minimal_view(self):

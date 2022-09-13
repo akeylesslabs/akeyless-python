@@ -42,6 +42,7 @@ class CreateRotatedSecret(object):
         'aws_region': 'str',
         'custom_payload': 'str',
         'delete_protection': 'str',
+        'json': 'bool',
         'key': 'str',
         'metadata': 'str',
         'name': 'str',
@@ -85,6 +86,7 @@ class CreateRotatedSecret(object):
         'aws_region': 'aws-region',
         'custom_payload': 'custom-payload',
         'delete_protection': 'delete_protection',
+        'json': 'json',
         'key': 'key',
         'metadata': 'metadata',
         'name': 'name',
@@ -119,7 +121,7 @@ class CreateRotatedSecret(object):
         'user_dn': 'user-dn'
     }
 
-    def __init__(self, api_id=None, api_key=None, application_id=None, authentication_credentials=None, auto_rotate=None, aws_region='us-east-2', custom_payload=None, delete_protection=None, key=None, metadata=None, name=None, rotated_password=None, rotated_username=None, rotation_hour=None, rotation_interval=None, rotator_creds_type=None, rotator_custom_cmd=None, rotator_type=None, secure_access_allow_external_user=False, secure_access_aws_account_id=None, secure_access_aws_native_cli=None, secure_access_bastion_issuer=None, secure_access_db_name=None, secure_access_db_schema=None, secure_access_enable=None, secure_access_host=None, secure_access_rdp_domain=None, secure_access_rdp_user=None, secure_access_web=False, secure_access_web_browsing=False, secure_access_web_proxy=False, ssh_password=None, ssh_username=None, storage_account_key_name=None, tags=None, target_name=None, token=None, uid_token=None, user_attribute=None, user_dn=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, api_id=None, api_key=None, application_id=None, authentication_credentials=None, auto_rotate=None, aws_region='us-east-2', custom_payload=None, delete_protection=None, json=None, key=None, metadata=None, name=None, rotated_password=None, rotated_username=None, rotation_hour=None, rotation_interval=None, rotator_creds_type=None, rotator_custom_cmd=None, rotator_type=None, secure_access_allow_external_user=False, secure_access_aws_account_id=None, secure_access_aws_native_cli=None, secure_access_bastion_issuer=None, secure_access_db_name=None, secure_access_db_schema=None, secure_access_enable=None, secure_access_host=None, secure_access_rdp_domain=None, secure_access_rdp_user=None, secure_access_web=False, secure_access_web_browsing=False, secure_access_web_proxy=False, ssh_password=None, ssh_username=None, storage_account_key_name=None, tags=None, target_name=None, token=None, uid_token=None, user_attribute=None, user_dn=None, local_vars_configuration=None):  # noqa: E501
         """CreateRotatedSecret - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -133,6 +135,7 @@ class CreateRotatedSecret(object):
         self._aws_region = None
         self._custom_payload = None
         self._delete_protection = None
+        self._json = None
         self._key = None
         self._metadata = None
         self._name = None
@@ -183,6 +186,8 @@ class CreateRotatedSecret(object):
             self.custom_payload = custom_payload
         if delete_protection is not None:
             self.delete_protection = delete_protection
+        if json is not None:
+            self.json = json
         if key is not None:
             self.key = key
         if metadata is not None:
@@ -420,6 +425,29 @@ class CreateRotatedSecret(object):
         """
 
         self._delete_protection = delete_protection
+
+    @property
+    def json(self):
+        """Gets the json of this CreateRotatedSecret.  # noqa: E501
+
+        Set output format to JSON  # noqa: E501
+
+        :return: The json of this CreateRotatedSecret.  # noqa: E501
+        :rtype: bool
+        """
+        return self._json
+
+    @json.setter
+    def json(self, json):
+        """Sets the json of this CreateRotatedSecret.
+
+        Set output format to JSON  # noqa: E501
+
+        :param json: The json of this CreateRotatedSecret.  # noqa: E501
+        :type: bool
+        """
+
+        self._json = json
 
     @property
     def key(self):

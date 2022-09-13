@@ -41,6 +41,7 @@ class CreateEKSTarget(object):
         'eks_cluster_name': 'str',
         'eks_region': 'str',
         'eks_secret_access_key': 'str',
+        'json': 'bool',
         'key': 'str',
         'name': 'str',
         'token': 'str',
@@ -56,6 +57,7 @@ class CreateEKSTarget(object):
         'eks_cluster_name': 'eks-cluster-name',
         'eks_region': 'eks-region',
         'eks_secret_access_key': 'eks-secret-access-key',
+        'json': 'json',
         'key': 'key',
         'name': 'name',
         'token': 'token',
@@ -63,7 +65,7 @@ class CreateEKSTarget(object):
         'use_gw_cloud_identity': 'use-gw-cloud-identity'
     }
 
-    def __init__(self, comment=None, eks_access_key_id=None, eks_cluster_ca_cert=None, eks_cluster_endpoint=None, eks_cluster_name=None, eks_region='us-east-2', eks_secret_access_key=None, key=None, name=None, token=None, uid_token=None, use_gw_cloud_identity=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, comment=None, eks_access_key_id=None, eks_cluster_ca_cert=None, eks_cluster_endpoint=None, eks_cluster_name=None, eks_region='us-east-2', eks_secret_access_key=None, json=None, key=None, name=None, token=None, uid_token=None, use_gw_cloud_identity=None, local_vars_configuration=None):  # noqa: E501
         """CreateEKSTarget - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -76,6 +78,7 @@ class CreateEKSTarget(object):
         self._eks_cluster_name = None
         self._eks_region = None
         self._eks_secret_access_key = None
+        self._json = None
         self._key = None
         self._name = None
         self._token = None
@@ -92,6 +95,8 @@ class CreateEKSTarget(object):
         if eks_region is not None:
             self.eks_region = eks_region
         self.eks_secret_access_key = eks_secret_access_key
+        if json is not None:
+            self.json = json
         if key is not None:
             self.key = key
         self.name = name
@@ -272,6 +277,29 @@ class CreateEKSTarget(object):
             raise ValueError("Invalid value for `eks_secret_access_key`, must not be `None`")  # noqa: E501
 
         self._eks_secret_access_key = eks_secret_access_key
+
+    @property
+    def json(self):
+        """Gets the json of this CreateEKSTarget.  # noqa: E501
+
+        Set output format to JSON  # noqa: E501
+
+        :return: The json of this CreateEKSTarget.  # noqa: E501
+        :rtype: bool
+        """
+        return self._json
+
+    @json.setter
+    def json(self, json):
+        """Sets the json of this CreateEKSTarget.
+
+        Set output format to JSON  # noqa: E501
+
+        :param json: The json of this CreateEKSTarget.  # noqa: E501
+        :type: bool
+        """
+
+        self._json = json
 
     @property
     def key(self):

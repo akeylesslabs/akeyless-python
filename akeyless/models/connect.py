@@ -42,6 +42,7 @@ class Connect(object):
         'bastion_ctrl_subdomain': 'str',
         'cert_issuer_name': 'str',
         'identity_file': 'str',
+        'json': 'bool',
         'name': 'str',
         'ssh_extra_args': 'str',
         'ssh_legacy_signing_alg': 'bool',
@@ -60,6 +61,7 @@ class Connect(object):
         'bastion_ctrl_subdomain': 'bastion-ctrl-subdomain',
         'cert_issuer_name': 'cert-issuer-name',
         'identity_file': 'identity-file',
+        'json': 'json',
         'name': 'name',
         'ssh_extra_args': 'ssh-extra-args',
         'ssh_legacy_signing_alg': 'ssh-legacy-signing-alg',
@@ -69,7 +71,7 @@ class Connect(object):
         'via_bastion': 'via-bastion'
     }
 
-    def __init__(self, helper=None, rc_file_override=None, bastion_ctrl_path=None, bastion_ctrl_port='9900', bastion_ctrl_proto='http', bastion_ctrl_subdomain=None, cert_issuer_name=None, identity_file=None, name=None, ssh_extra_args=None, ssh_legacy_signing_alg=None, target=None, token=None, uid_token=None, via_bastion=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, helper=None, rc_file_override=None, bastion_ctrl_path=None, bastion_ctrl_port='9900', bastion_ctrl_proto='http', bastion_ctrl_subdomain=None, cert_issuer_name=None, identity_file=None, json=None, name=None, ssh_extra_args=None, ssh_legacy_signing_alg=None, target=None, token=None, uid_token=None, via_bastion=None, local_vars_configuration=None):  # noqa: E501
         """Connect - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -83,6 +85,7 @@ class Connect(object):
         self._bastion_ctrl_subdomain = None
         self._cert_issuer_name = None
         self._identity_file = None
+        self._json = None
         self._name = None
         self._ssh_extra_args = None
         self._ssh_legacy_signing_alg = None
@@ -108,6 +111,8 @@ class Connect(object):
             self.cert_issuer_name = cert_issuer_name
         if identity_file is not None:
             self.identity_file = identity_file
+        if json is not None:
+            self.json = json
         if name is not None:
             self.name = name
         if ssh_extra_args is not None:
@@ -304,6 +309,29 @@ class Connect(object):
         """
 
         self._identity_file = identity_file
+
+    @property
+    def json(self):
+        """Gets the json of this Connect.  # noqa: E501
+
+        Set output format to JSON  # noqa: E501
+
+        :return: The json of this Connect.  # noqa: E501
+        :rtype: bool
+        """
+        return self._json
+
+    @json.setter
+    def json(self, json):
+        """Sets the json of this Connect.
+
+        Set output format to JSON  # noqa: E501
+
+        :param json: The json of this Connect.  # noqa: E501
+        :type: bool
+        """
+
+        self._json = json
 
     @property
     def name(self):

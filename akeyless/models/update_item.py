@@ -38,6 +38,7 @@ class UpdateItem(object):
         'add_tag': 'list[str]',
         'cert_file_data': 'str',
         'delete_protection': 'str',
+        'json': 'bool',
         'name': 'str',
         'new_metadata': 'str',
         'new_name': 'str',
@@ -75,6 +76,7 @@ class UpdateItem(object):
         'add_tag': 'add-tag',
         'cert_file_data': 'cert-file-data',
         'delete_protection': 'delete_protection',
+        'json': 'json',
         'name': 'name',
         'new_metadata': 'new-metadata',
         'new_name': 'new-name',
@@ -107,7 +109,7 @@ class UpdateItem(object):
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, accessibility=None, add_tag=None, cert_file_data=None, delete_protection=None, name=None, new_metadata='default_metadata', new_name=None, rm_tag=None, secure_access_add_host=None, secure_access_allow_external_user=None, secure_access_allow_port_forwading=None, secure_access_aws_account_id=None, secure_access_aws_native_cli=None, secure_access_aws_region=None, secure_access_bastion_api=None, secure_access_bastion_issuer=None, secure_access_bastion_ssh=None, secure_access_cluster_endpoint=None, secure_access_dashboard_url=None, secure_access_db_name=None, secure_access_db_schema=None, secure_access_enable=None, secure_access_host=None, secure_access_rdp_domain=None, secure_access_rdp_user=None, secure_access_rm_host=None, secure_access_ssh_creds=None, secure_access_ssh_creds_user=None, secure_access_url=None, secure_access_use_internal_bastion=None, secure_access_web_browsing=None, secure_access_web_proxy=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, accessibility=None, add_tag=None, cert_file_data=None, delete_protection=None, json=None, name=None, new_metadata='default_metadata', new_name=None, rm_tag=None, secure_access_add_host=None, secure_access_allow_external_user=None, secure_access_allow_port_forwading=None, secure_access_aws_account_id=None, secure_access_aws_native_cli=None, secure_access_aws_region=None, secure_access_bastion_api=None, secure_access_bastion_issuer=None, secure_access_bastion_ssh=None, secure_access_cluster_endpoint=None, secure_access_dashboard_url=None, secure_access_db_name=None, secure_access_db_schema=None, secure_access_enable=None, secure_access_host=None, secure_access_rdp_domain=None, secure_access_rdp_user=None, secure_access_rm_host=None, secure_access_ssh_creds=None, secure_access_ssh_creds_user=None, secure_access_url=None, secure_access_use_internal_bastion=None, secure_access_web_browsing=None, secure_access_web_proxy=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """UpdateItem - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -117,6 +119,7 @@ class UpdateItem(object):
         self._add_tag = None
         self._cert_file_data = None
         self._delete_protection = None
+        self._json = None
         self._name = None
         self._new_metadata = None
         self._new_name = None
@@ -157,6 +160,8 @@ class UpdateItem(object):
             self.cert_file_data = cert_file_data
         if delete_protection is not None:
             self.delete_protection = delete_protection
+        if json is not None:
+            self.json = json
         self.name = name
         if new_metadata is not None:
             self.new_metadata = new_metadata
@@ -306,6 +311,29 @@ class UpdateItem(object):
         """
 
         self._delete_protection = delete_protection
+
+    @property
+    def json(self):
+        """Gets the json of this UpdateItem.  # noqa: E501
+
+        Set output format to JSON  # noqa: E501
+
+        :return: The json of this UpdateItem.  # noqa: E501
+        :rtype: bool
+        """
+        return self._json
+
+    @json.setter
+    def json(self, json):
+        """Sets the json of this UpdateItem.
+
+        Set output format to JSON  # noqa: E501
+
+        :param json: The json of this UpdateItem.  # noqa: E501
+        :type: bool
+        """
+
+        self._json = json
 
     @property
     def name(self):

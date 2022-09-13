@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **cassandra_port** | **str** | Cassandra port | [optional] [default to '9042']
 **cassandra_username** | **str** | Cassandra superuser username | [optional] 
 **delete_protection** | **str** | Protection from accidental deletion of this item | [optional] 
+**json** | **bool** | Set output format to JSON | [optional] 
 **name** | **str** | Producer name | 
 **producer_encryption_key_name** | **str** | Dynamic producer encryption key | [optional] 
 **tags** | **list[str]** | List of the tags attached to this secret | [optional] 

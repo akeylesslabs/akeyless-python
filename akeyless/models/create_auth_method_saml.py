@@ -41,6 +41,7 @@ class CreateAuthMethodSAML(object):
         'gw_bound_ips': 'list[str]',
         'idp_metadata_url': 'str',
         'idp_metadata_xml_data': 'str',
+        'json': 'bool',
         'jwt_ttl': 'int',
         'name': 'str',
         'token': 'str',
@@ -56,6 +57,7 @@ class CreateAuthMethodSAML(object):
         'gw_bound_ips': 'gw-bound-ips',
         'idp_metadata_url': 'idp-metadata-url',
         'idp_metadata_xml_data': 'idp-metadata-xml-data',
+        'json': 'json',
         'jwt_ttl': 'jwt-ttl',
         'name': 'name',
         'token': 'token',
@@ -63,7 +65,7 @@ class CreateAuthMethodSAML(object):
         'unique_identifier': 'unique-identifier'
     }
 
-    def __init__(self, access_expires=0, allowed_redirect_uri=None, bound_ips=None, force_sub_claims=None, gw_bound_ips=None, idp_metadata_url=None, idp_metadata_xml_data=None, jwt_ttl=None, name=None, token=None, uid_token=None, unique_identifier=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, access_expires=0, allowed_redirect_uri=None, bound_ips=None, force_sub_claims=None, gw_bound_ips=None, idp_metadata_url=None, idp_metadata_xml_data=None, json=None, jwt_ttl=None, name=None, token=None, uid_token=None, unique_identifier=None, local_vars_configuration=None):  # noqa: E501
         """CreateAuthMethodSAML - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -76,6 +78,7 @@ class CreateAuthMethodSAML(object):
         self._gw_bound_ips = None
         self._idp_metadata_url = None
         self._idp_metadata_xml_data = None
+        self._json = None
         self._jwt_ttl = None
         self._name = None
         self._token = None
@@ -97,6 +100,8 @@ class CreateAuthMethodSAML(object):
             self.idp_metadata_url = idp_metadata_url
         if idp_metadata_xml_data is not None:
             self.idp_metadata_xml_data = idp_metadata_xml_data
+        if json is not None:
+            self.json = json
         if jwt_ttl is not None:
             self.jwt_ttl = jwt_ttl
         self.name = name
@@ -266,6 +271,29 @@ class CreateAuthMethodSAML(object):
         """
 
         self._idp_metadata_xml_data = idp_metadata_xml_data
+
+    @property
+    def json(self):
+        """Gets the json of this CreateAuthMethodSAML.  # noqa: E501
+
+        Set output format to JSON  # noqa: E501
+
+        :return: The json of this CreateAuthMethodSAML.  # noqa: E501
+        :rtype: bool
+        """
+        return self._json
+
+    @json.setter
+    def json(self, json):
+        """Sets the json of this CreateAuthMethodSAML.
+
+        Set output format to JSON  # noqa: E501
+
+        :param json: The json of this CreateAuthMethodSAML.  # noqa: E501
+        :type: bool
+        """
+
+        self._json = json
 
     @property
     def jwt_ttl(self):

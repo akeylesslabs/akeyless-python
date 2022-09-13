@@ -36,6 +36,7 @@ class UpdateLdapTargetDetails(object):
     openapi_types = {
         'bind_dn': 'str',
         'bind_dn_password': 'str',
+        'json': 'bool',
         'keep_prev_version': 'str',
         'key': 'str',
         'ldap_ca_cert': 'str',
@@ -51,6 +52,7 @@ class UpdateLdapTargetDetails(object):
     attribute_map = {
         'bind_dn': 'bind-dn',
         'bind_dn_password': 'bind-dn-password',
+        'json': 'json',
         'keep_prev_version': 'keep-prev-version',
         'key': 'key',
         'ldap_ca_cert': 'ldap-ca-cert',
@@ -63,7 +65,7 @@ class UpdateLdapTargetDetails(object):
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, bind_dn=None, bind_dn_password=None, keep_prev_version=None, key=None, ldap_ca_cert=None, ldap_url=None, name=None, new_version=None, protection_key=None, token=None, token_expiration=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, bind_dn=None, bind_dn_password=None, json=None, keep_prev_version=None, key=None, ldap_ca_cert=None, ldap_url=None, name=None, new_version=None, protection_key=None, token=None, token_expiration=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """UpdateLdapTargetDetails - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -71,6 +73,7 @@ class UpdateLdapTargetDetails(object):
 
         self._bind_dn = None
         self._bind_dn_password = None
+        self._json = None
         self._keep_prev_version = None
         self._key = None
         self._ldap_ca_cert = None
@@ -87,6 +90,8 @@ class UpdateLdapTargetDetails(object):
             self.bind_dn = bind_dn
         if bind_dn_password is not None:
             self.bind_dn_password = bind_dn_password
+        if json is not None:
+            self.json = json
         if keep_prev_version is not None:
             self.keep_prev_version = keep_prev_version
         if key is not None:
@@ -148,6 +153,29 @@ class UpdateLdapTargetDetails(object):
         """
 
         self._bind_dn_password = bind_dn_password
+
+    @property
+    def json(self):
+        """Gets the json of this UpdateLdapTargetDetails.  # noqa: E501
+
+        Set output format to JSON  # noqa: E501
+
+        :return: The json of this UpdateLdapTargetDetails.  # noqa: E501
+        :rtype: bool
+        """
+        return self._json
+
+    @json.setter
+    def json(self, json):
+        """Sets the json of this UpdateLdapTargetDetails.
+
+        Set output format to JSON  # noqa: E501
+
+        :param json: The json of this UpdateLdapTargetDetails.  # noqa: E501
+        :type: bool
+        """
+
+        self._json = json
 
     @property
     def keep_prev_version(self):

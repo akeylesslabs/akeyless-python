@@ -35,6 +35,7 @@ class DeleteTarget(object):
     """
     openapi_types = {
         'force_deletion': 'bool',
+        'json': 'bool',
         'name': 'str',
         'target_version': 'int',
         'token': 'str',
@@ -43,19 +44,21 @@ class DeleteTarget(object):
 
     attribute_map = {
         'force_deletion': 'force-deletion',
+        'json': 'json',
         'name': 'name',
         'target_version': 'target-version',
         'token': 'token',
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, force_deletion=False, name=None, target_version=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, force_deletion=False, json=None, name=None, target_version=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """DeleteTarget - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._force_deletion = None
+        self._json = None
         self._name = None
         self._target_version = None
         self._token = None
@@ -64,6 +67,8 @@ class DeleteTarget(object):
 
         if force_deletion is not None:
             self.force_deletion = force_deletion
+        if json is not None:
+            self.json = json
         self.name = name
         if target_version is not None:
             self.target_version = target_version
@@ -94,6 +99,29 @@ class DeleteTarget(object):
         """
 
         self._force_deletion = force_deletion
+
+    @property
+    def json(self):
+        """Gets the json of this DeleteTarget.  # noqa: E501
+
+        Set output format to JSON  # noqa: E501
+
+        :return: The json of this DeleteTarget.  # noqa: E501
+        :rtype: bool
+        """
+        return self._json
+
+    @json.setter
+    def json(self, json):
+        """Sets the json of this DeleteTarget.
+
+        Set output format to JSON  # noqa: E501
+
+        :param json: The json of this DeleteTarget.  # noqa: E501
+        :type: bool
+        """
+
+        self._json = json
 
     @property
     def name(self):

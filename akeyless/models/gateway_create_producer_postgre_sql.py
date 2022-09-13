@@ -36,6 +36,7 @@ class GatewayCreateProducerPostgreSQL(object):
     openapi_types = {
         'creation_statements': 'str',
         'delete_protection': 'str',
+        'json': 'bool',
         'name': 'str',
         'postgresql_db_name': 'str',
         'postgresql_host': 'str',
@@ -60,6 +61,7 @@ class GatewayCreateProducerPostgreSQL(object):
     attribute_map = {
         'creation_statements': 'creation-statements',
         'delete_protection': 'delete_protection',
+        'json': 'json',
         'name': 'name',
         'postgresql_db_name': 'postgresql-db-name',
         'postgresql_host': 'postgresql-host',
@@ -81,7 +83,7 @@ class GatewayCreateProducerPostgreSQL(object):
         'user_ttl': 'user-ttl'
     }
 
-    def __init__(self, creation_statements=None, delete_protection=None, name=None, postgresql_db_name=None, postgresql_host='127.0.0.1', postgresql_password=None, postgresql_port='5432', postgresql_username=None, producer_encryption_key=None, revocation_statement=None, secure_access_bastion_issuer=None, secure_access_db_schema=None, secure_access_enable=None, secure_access_host=None, secure_access_web=None, ssl=None, tags=None, target_name=None, token=None, uid_token=None, user_ttl='60m', local_vars_configuration=None):  # noqa: E501
+    def __init__(self, creation_statements=None, delete_protection=None, json=None, name=None, postgresql_db_name=None, postgresql_host='127.0.0.1', postgresql_password=None, postgresql_port='5432', postgresql_username=None, producer_encryption_key=None, revocation_statement=None, secure_access_bastion_issuer=None, secure_access_db_schema=None, secure_access_enable=None, secure_access_host=None, secure_access_web=None, ssl=None, tags=None, target_name=None, token=None, uid_token=None, user_ttl='60m', local_vars_configuration=None):  # noqa: E501
         """GatewayCreateProducerPostgreSQL - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -89,6 +91,7 @@ class GatewayCreateProducerPostgreSQL(object):
 
         self._creation_statements = None
         self._delete_protection = None
+        self._json = None
         self._name = None
         self._postgresql_db_name = None
         self._postgresql_host = None
@@ -114,6 +117,8 @@ class GatewayCreateProducerPostgreSQL(object):
             self.creation_statements = creation_statements
         if delete_protection is not None:
             self.delete_protection = delete_protection
+        if json is not None:
+            self.json = json
         self.name = name
         if postgresql_db_name is not None:
             self.postgresql_db_name = postgresql_db_name
@@ -197,6 +202,29 @@ class GatewayCreateProducerPostgreSQL(object):
         """
 
         self._delete_protection = delete_protection
+
+    @property
+    def json(self):
+        """Gets the json of this GatewayCreateProducerPostgreSQL.  # noqa: E501
+
+        Set output format to JSON  # noqa: E501
+
+        :return: The json of this GatewayCreateProducerPostgreSQL.  # noqa: E501
+        :rtype: bool
+        """
+        return self._json
+
+    @json.setter
+    def json(self, json):
+        """Sets the json of this GatewayCreateProducerPostgreSQL.
+
+        Set output format to JSON  # noqa: E501
+
+        :param json: The json of this GatewayCreateProducerPostgreSQL.  # noqa: E501
+        :type: bool
+        """
+
+        self._json = json
 
     @property
     def name(self):

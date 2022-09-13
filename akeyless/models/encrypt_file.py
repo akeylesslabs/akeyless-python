@@ -38,6 +38,7 @@ class EncryptFile(object):
         'encryption_context': 'dict(str, str)',
         '_in': 'str',
         'item_id': 'int',
+        'json': 'bool',
         'key_name': 'str',
         'out': 'str',
         'token': 'str',
@@ -49,13 +50,14 @@ class EncryptFile(object):
         'encryption_context': 'encryption-context',
         '_in': 'in',
         'item_id': 'item-id',
+        'json': 'json',
         'key_name': 'key-name',
         'out': 'out',
         'token': 'token',
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, display_id=None, encryption_context=None, _in=None, item_id=None, key_name=None, out=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, display_id=None, encryption_context=None, _in=None, item_id=None, json=None, key_name=None, out=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """EncryptFile - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -65,6 +67,7 @@ class EncryptFile(object):
         self._encryption_context = None
         self.__in = None
         self._item_id = None
+        self._json = None
         self._key_name = None
         self._out = None
         self._token = None
@@ -78,6 +81,8 @@ class EncryptFile(object):
         self._in = _in
         if item_id is not None:
             self.item_id = item_id
+        if json is not None:
+            self.json = json
         self.key_name = key_name
         if out is not None:
             self.out = out
@@ -179,6 +184,29 @@ class EncryptFile(object):
         """
 
         self._item_id = item_id
+
+    @property
+    def json(self):
+        """Gets the json of this EncryptFile.  # noqa: E501
+
+        Set output format to JSON  # noqa: E501
+
+        :return: The json of this EncryptFile.  # noqa: E501
+        :rtype: bool
+        """
+        return self._json
+
+    @json.setter
+    def json(self, json):
+        """Sets the json of this EncryptFile.
+
+        Set output format to JSON  # noqa: E501
+
+        :param json: The json of this EncryptFile.  # noqa: E501
+        :type: bool
+        """
+
+        self._json = json
 
     @property
     def key_name(self):

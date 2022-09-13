@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **delete_protection** | **str** | Protection from accidental deletion of this item | [optional] 
 **encoding_template** | **str** | The Encoding output template to use in regexp vaultless tokenization | [optional] 
 **encryption_key_name** | **str** | AES key name to use in vaultless tokenization | [optional] 
+**json** | **bool** | Set output format to JSON | [optional] 
 **metadata** | **str** | A metadata about the tokenizer | [optional] 
 **name** | **str** | Tokenizer name | 
 **pattern** | **str** | Pattern to use in regexp vaultless tokenization | [optional] 

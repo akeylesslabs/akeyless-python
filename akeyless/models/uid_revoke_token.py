@@ -35,6 +35,7 @@ class UidRevokeToken(object):
     """
     openapi_types = {
         'auth_method_name': 'str',
+        'json': 'bool',
         'revoke_token': 'str',
         'revoke_type': 'str',
         'token': 'str',
@@ -43,19 +44,21 @@ class UidRevokeToken(object):
 
     attribute_map = {
         'auth_method_name': 'auth-method-name',
+        'json': 'json',
         'revoke_token': 'revoke-token',
         'revoke_type': 'revoke-type',
         'token': 'token',
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, auth_method_name=None, revoke_token=None, revoke_type=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, auth_method_name=None, json=None, revoke_token=None, revoke_type=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """UidRevokeToken - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._auth_method_name = None
+        self._json = None
         self._revoke_token = None
         self._revoke_type = None
         self._token = None
@@ -64,6 +67,8 @@ class UidRevokeToken(object):
 
         if auth_method_name is not None:
             self.auth_method_name = auth_method_name
+        if json is not None:
+            self.json = json
         self.revoke_token = revoke_token
         self.revoke_type = revoke_type
         if token is not None:
@@ -93,6 +98,29 @@ class UidRevokeToken(object):
         """
 
         self._auth_method_name = auth_method_name
+
+    @property
+    def json(self):
+        """Gets the json of this UidRevokeToken.  # noqa: E501
+
+        Set output format to JSON  # noqa: E501
+
+        :return: The json of this UidRevokeToken.  # noqa: E501
+        :rtype: bool
+        """
+        return self._json
+
+    @json.setter
+    def json(self, json):
+        """Sets the json of this UidRevokeToken.
+
+        Set output format to JSON  # noqa: E501
+
+        :param json: The json of this UidRevokeToken.  # noqa: E501
+        :type: bool
+        """
+
+        self._json = json
 
     @property
     def revoke_token(self):

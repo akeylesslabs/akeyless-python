@@ -39,6 +39,7 @@ class GatewayCreateProducerChef(object):
         'chef_server_url': 'str',
         'chef_server_username': 'str',
         'delete_protection': 'str',
+        'json': 'bool',
         'name': 'str',
         'producer_encryption_key_name': 'str',
         'skip_ssl': 'bool',
@@ -55,6 +56,7 @@ class GatewayCreateProducerChef(object):
         'chef_server_url': 'chef-server-url',
         'chef_server_username': 'chef-server-username',
         'delete_protection': 'delete_protection',
+        'json': 'json',
         'name': 'name',
         'producer_encryption_key_name': 'producer-encryption-key-name',
         'skip_ssl': 'skip-ssl',
@@ -65,7 +67,7 @@ class GatewayCreateProducerChef(object):
         'user_ttl': 'user-ttl'
     }
 
-    def __init__(self, chef_orgs=None, chef_server_key=None, chef_server_url=None, chef_server_username=None, delete_protection=None, name=None, producer_encryption_key_name=None, skip_ssl=True, tags=None, target_name=None, token=None, uid_token=None, user_ttl='60m', local_vars_configuration=None):  # noqa: E501
+    def __init__(self, chef_orgs=None, chef_server_key=None, chef_server_url=None, chef_server_username=None, delete_protection=None, json=None, name=None, producer_encryption_key_name=None, skip_ssl=True, tags=None, target_name=None, token=None, uid_token=None, user_ttl='60m', local_vars_configuration=None):  # noqa: E501
         """GatewayCreateProducerChef - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -76,6 +78,7 @@ class GatewayCreateProducerChef(object):
         self._chef_server_url = None
         self._chef_server_username = None
         self._delete_protection = None
+        self._json = None
         self._name = None
         self._producer_encryption_key_name = None
         self._skip_ssl = None
@@ -96,6 +99,8 @@ class GatewayCreateProducerChef(object):
             self.chef_server_username = chef_server_username
         if delete_protection is not None:
             self.delete_protection = delete_protection
+        if json is not None:
+            self.json = json
         self.name = name
         if producer_encryption_key_name is not None:
             self.producer_encryption_key_name = producer_encryption_key_name
@@ -226,6 +231,29 @@ class GatewayCreateProducerChef(object):
         """
 
         self._delete_protection = delete_protection
+
+    @property
+    def json(self):
+        """Gets the json of this GatewayCreateProducerChef.  # noqa: E501
+
+        Set output format to JSON  # noqa: E501
+
+        :return: The json of this GatewayCreateProducerChef.  # noqa: E501
+        :rtype: bool
+        """
+        return self._json
+
+    @json.setter
+    def json(self, json):
+        """Sets the json of this GatewayCreateProducerChef.
+
+        Set output format to JSON  # noqa: E501
+
+        :param json: The json of this GatewayCreateProducerChef.  # noqa: E501
+        :type: bool
+        """
+
+        self._json = json
 
     @property
     def name(self):

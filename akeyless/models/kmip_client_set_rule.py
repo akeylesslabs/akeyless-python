@@ -36,6 +36,7 @@ class KmipClientSetRule(object):
     openapi_types = {
         'capability': 'list[str]',
         'client_id': 'str',
+        'json': 'bool',
         'name': 'str',
         'path': 'str',
         'token': 'str',
@@ -45,13 +46,14 @@ class KmipClientSetRule(object):
     attribute_map = {
         'capability': 'capability',
         'client_id': 'client-id',
+        'json': 'json',
         'name': 'name',
         'path': 'path',
         'token': 'token',
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, capability=None, client_id=None, name=None, path=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, capability=None, client_id=None, json=None, name=None, path=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """KmipClientSetRule - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -59,6 +61,7 @@ class KmipClientSetRule(object):
 
         self._capability = None
         self._client_id = None
+        self._json = None
         self._name = None
         self._path = None
         self._token = None
@@ -68,6 +71,8 @@ class KmipClientSetRule(object):
         self.capability = capability
         if client_id is not None:
             self.client_id = client_id
+        if json is not None:
+            self.json = json
         if name is not None:
             self.name = name
         self.path = path
@@ -121,6 +126,29 @@ class KmipClientSetRule(object):
         """
 
         self._client_id = client_id
+
+    @property
+    def json(self):
+        """Gets the json of this KmipClientSetRule.  # noqa: E501
+
+        Set output format to JSON  # noqa: E501
+
+        :return: The json of this KmipClientSetRule.  # noqa: E501
+        :rtype: bool
+        """
+        return self._json
+
+    @json.setter
+    def json(self, json):
+        """Sets the json of this KmipClientSetRule.
+
+        Set output format to JSON  # noqa: E501
+
+        :param json: The json of this KmipClientSetRule.  # noqa: E501
+        :type: bool
+        """
+
+        self._json = json
 
     @property
     def name(self):

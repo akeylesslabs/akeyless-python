@@ -35,6 +35,7 @@ class GatewayRevokeTmpUsers(object):
     """
     openapi_types = {
         'host': 'str',
+        'json': 'bool',
         'name': 'str',
         'revoke_all': 'bool',
         'soft_delete': 'bool',
@@ -45,6 +46,7 @@ class GatewayRevokeTmpUsers(object):
 
     attribute_map = {
         'host': 'host',
+        'json': 'json',
         'name': 'name',
         'revoke_all': 'revoke-all',
         'soft_delete': 'soft-delete',
@@ -53,13 +55,14 @@ class GatewayRevokeTmpUsers(object):
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, host=None, name=None, revoke_all=None, soft_delete=None, tmp_creds_id='demo_default_tmp_creds_id_for_sdk_bc', token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, host=None, json=None, name=None, revoke_all=None, soft_delete=None, tmp_creds_id='demo_default_tmp_creds_id_for_sdk_bc', token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """GatewayRevokeTmpUsers - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._host = None
+        self._json = None
         self._name = None
         self._revoke_all = None
         self._soft_delete = None
@@ -70,6 +73,8 @@ class GatewayRevokeTmpUsers(object):
 
         if host is not None:
             self.host = host
+        if json is not None:
+            self.json = json
         self.name = name
         if revoke_all is not None:
             self.revoke_all = revoke_all
@@ -103,6 +108,29 @@ class GatewayRevokeTmpUsers(object):
         """
 
         self._host = host
+
+    @property
+    def json(self):
+        """Gets the json of this GatewayRevokeTmpUsers.  # noqa: E501
+
+        Set output format to JSON  # noqa: E501
+
+        :return: The json of this GatewayRevokeTmpUsers.  # noqa: E501
+        :rtype: bool
+        """
+        return self._json
+
+    @json.setter
+    def json(self, json):
+        """Sets the json of this GatewayRevokeTmpUsers.
+
+        Set output format to JSON  # noqa: E501
+
+        :param json: The json of this GatewayRevokeTmpUsers.  # noqa: E501
+        :type: bool
+        """
+
+        self._json = json
 
     @property
     def name(self):

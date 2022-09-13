@@ -38,6 +38,7 @@ class UpdateRDPTargetDetails(object):
         'admin_pwd': 'str',
         'host_name': 'str',
         'host_port': 'str',
+        'json': 'bool',
         'keep_prev_version': 'str',
         'name': 'str',
         'new_version': 'bool',
@@ -51,6 +52,7 @@ class UpdateRDPTargetDetails(object):
         'admin_pwd': 'admin_pwd',
         'host_name': 'host_name',
         'host_port': 'host_port',
+        'json': 'json',
         'keep_prev_version': 'keep-prev-version',
         'name': 'name',
         'new_version': 'new-version',
@@ -59,7 +61,7 @@ class UpdateRDPTargetDetails(object):
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, admin_name=None, admin_pwd=None, host_name=None, host_port=None, keep_prev_version=None, name=None, new_version=None, protection_key=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, admin_name=None, admin_pwd=None, host_name=None, host_port=None, json=None, keep_prev_version=None, name=None, new_version=None, protection_key=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """UpdateRDPTargetDetails - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -69,6 +71,7 @@ class UpdateRDPTargetDetails(object):
         self._admin_pwd = None
         self._host_name = None
         self._host_port = None
+        self._json = None
         self._keep_prev_version = None
         self._name = None
         self._new_version = None
@@ -85,6 +88,8 @@ class UpdateRDPTargetDetails(object):
             self.host_name = host_name
         if host_port is not None:
             self.host_port = host_port
+        if json is not None:
+            self.json = json
         if keep_prev_version is not None:
             self.keep_prev_version = keep_prev_version
         self.name = name
@@ -180,6 +185,29 @@ class UpdateRDPTargetDetails(object):
         """
 
         self._host_port = host_port
+
+    @property
+    def json(self):
+        """Gets the json of this UpdateRDPTargetDetails.  # noqa: E501
+
+        Set output format to JSON  # noqa: E501
+
+        :return: The json of this UpdateRDPTargetDetails.  # noqa: E501
+        :rtype: bool
+        """
+        return self._json
+
+    @json.setter
+    def json(self, json):
+        """Sets the json of this UpdateRDPTargetDetails.
+
+        Set output format to JSON  # noqa: E501
+
+        :param json: The json of this UpdateRDPTargetDetails.  # noqa: E501
+        :type: bool
+        """
+
+        self._json = json
 
     @property
     def keep_prev_version(self):

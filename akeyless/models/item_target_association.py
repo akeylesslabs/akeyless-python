@@ -36,16 +36,18 @@ class ItemTargetAssociation(object):
     openapi_types = {
         'assoc_id': 'str',
         'target_id': 'int',
-        'target_name': 'str'
+        'target_name': 'str',
+        'target_type': 'str'
     }
 
     attribute_map = {
         'assoc_id': 'assoc_id',
         'target_id': 'target_id',
-        'target_name': 'target_name'
+        'target_name': 'target_name',
+        'target_type': 'target_type'
     }
 
-    def __init__(self, assoc_id=None, target_id=None, target_name=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, assoc_id=None, target_id=None, target_name=None, target_type=None, local_vars_configuration=None):  # noqa: E501
         """ItemTargetAssociation - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -54,6 +56,7 @@ class ItemTargetAssociation(object):
         self._assoc_id = None
         self._target_id = None
         self._target_name = None
+        self._target_type = None
         self.discriminator = None
 
         if assoc_id is not None:
@@ -62,6 +65,8 @@ class ItemTargetAssociation(object):
             self.target_id = target_id
         if target_name is not None:
             self.target_name = target_name
+        if target_type is not None:
+            self.target_type = target_type
 
     @property
     def assoc_id(self):
@@ -125,6 +130,27 @@ class ItemTargetAssociation(object):
         """
 
         self._target_name = target_name
+
+    @property
+    def target_type(self):
+        """Gets the target_type of this ItemTargetAssociation.  # noqa: E501
+
+
+        :return: The target_type of this ItemTargetAssociation.  # noqa: E501
+        :rtype: str
+        """
+        return self._target_type
+
+    @target_type.setter
+    def target_type(self, target_type):
+        """Sets the target_type of this ItemTargetAssociation.
+
+
+        :param target_type: The target_type of this ItemTargetAssociation.  # noqa: E501
+        :type: str
+        """
+
+        self._target_type = target_type
 
     def to_dict(self):
         """Returns the model properties as a dict"""

@@ -36,6 +36,7 @@ class UpdateAssoc(object):
     openapi_types = {
         'assoc_id': 'str',
         'case_sensitive': 'str',
+        'json': 'bool',
         'sub_claims': 'dict(str, str)',
         'token': 'str',
         'uid_token': 'str'
@@ -44,12 +45,13 @@ class UpdateAssoc(object):
     attribute_map = {
         'assoc_id': 'assoc-id',
         'case_sensitive': 'case-sensitive',
+        'json': 'json',
         'sub_claims': 'sub-claims',
         'token': 'token',
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, assoc_id=None, case_sensitive=None, sub_claims=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, assoc_id=None, case_sensitive=None, json=None, sub_claims=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """UpdateAssoc - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -57,6 +59,7 @@ class UpdateAssoc(object):
 
         self._assoc_id = None
         self._case_sensitive = None
+        self._json = None
         self._sub_claims = None
         self._token = None
         self._uid_token = None
@@ -65,6 +68,8 @@ class UpdateAssoc(object):
         self.assoc_id = assoc_id
         if case_sensitive is not None:
             self.case_sensitive = case_sensitive
+        if json is not None:
+            self.json = json
         if sub_claims is not None:
             self.sub_claims = sub_claims
         if token is not None:
@@ -117,6 +122,29 @@ class UpdateAssoc(object):
         """
 
         self._case_sensitive = case_sensitive
+
+    @property
+    def json(self):
+        """Gets the json of this UpdateAssoc.  # noqa: E501
+
+        Set output format to JSON  # noqa: E501
+
+        :return: The json of this UpdateAssoc.  # noqa: E501
+        :rtype: bool
+        """
+        return self._json
+
+    @json.setter
+    def json(self, json):
+        """Sets the json of this UpdateAssoc.
+
+        Set output format to JSON  # noqa: E501
+
+        :param json: The json of this UpdateAssoc.  # noqa: E501
+        :type: bool
+        """
+
+        self._json = json
 
     @property
     def sub_claims(self):

@@ -36,6 +36,7 @@ class KmipServerSetup(object):
     openapi_types = {
         'certificate_ttl': 'int',
         'hostname': 'str',
+        'json': 'bool',
         'root': 'str',
         'token': 'str',
         'uid_token': 'str'
@@ -44,12 +45,13 @@ class KmipServerSetup(object):
     attribute_map = {
         'certificate_ttl': 'certificate-ttl',
         'hostname': 'hostname',
+        'json': 'json',
         'root': 'root',
         'token': 'token',
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, certificate_ttl=None, hostname=None, root=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, certificate_ttl=None, hostname=None, json=None, root=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """KmipServerSetup - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -57,6 +59,7 @@ class KmipServerSetup(object):
 
         self._certificate_ttl = None
         self._hostname = None
+        self._json = None
         self._root = None
         self._token = None
         self._uid_token = None
@@ -65,6 +68,8 @@ class KmipServerSetup(object):
         if certificate_ttl is not None:
             self.certificate_ttl = certificate_ttl
         self.hostname = hostname
+        if json is not None:
+            self.json = json
         if root is not None:
             self.root = root
         if token is not None:
@@ -117,6 +122,29 @@ class KmipServerSetup(object):
             raise ValueError("Invalid value for `hostname`, must not be `None`")  # noqa: E501
 
         self._hostname = hostname
+
+    @property
+    def json(self):
+        """Gets the json of this KmipServerSetup.  # noqa: E501
+
+        Set output format to JSON  # noqa: E501
+
+        :return: The json of this KmipServerSetup.  # noqa: E501
+        :rtype: bool
+        """
+        return self._json
+
+    @json.setter
+    def json(self, json):
+        """Sets the json of this KmipServerSetup.
+
+        Set output format to JSON  # noqa: E501
+
+        :param json: The json of this KmipServerSetup.  # noqa: E501
+        :type: bool
+        """
+
+        self._json = json
 
     @property
     def root(self):

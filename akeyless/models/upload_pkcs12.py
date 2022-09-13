@@ -37,6 +37,7 @@ class UploadPKCS12(object):
         'customer_frg_id': 'str',
         'delete_protection': 'str',
         '_in': 'str',
+        'json': 'bool',
         'metadata': 'str',
         'name': 'str',
         'passphrase': 'str',
@@ -50,6 +51,7 @@ class UploadPKCS12(object):
         'customer_frg_id': 'customer-frg-id',
         'delete_protection': 'delete_protection',
         '_in': 'in',
+        'json': 'json',
         'metadata': 'metadata',
         'name': 'name',
         'passphrase': 'passphrase',
@@ -59,7 +61,7 @@ class UploadPKCS12(object):
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, customer_frg_id=None, delete_protection=None, _in=None, metadata=None, name=None, passphrase=None, split_level=2, tag=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, customer_frg_id=None, delete_protection=None, _in=None, json=None, metadata=None, name=None, passphrase=None, split_level=2, tag=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """UploadPKCS12 - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -68,6 +70,7 @@ class UploadPKCS12(object):
         self._customer_frg_id = None
         self._delete_protection = None
         self.__in = None
+        self._json = None
         self._metadata = None
         self._name = None
         self._passphrase = None
@@ -82,6 +85,8 @@ class UploadPKCS12(object):
         if delete_protection is not None:
             self.delete_protection = delete_protection
         self._in = _in
+        if json is not None:
+            self.json = json
         if metadata is not None:
             self.metadata = metadata
         self.name = name
@@ -165,6 +170,29 @@ class UploadPKCS12(object):
             raise ValueError("Invalid value for `_in`, must not be `None`")  # noqa: E501
 
         self.__in = _in
+
+    @property
+    def json(self):
+        """Gets the json of this UploadPKCS12.  # noqa: E501
+
+        Set output format to JSON  # noqa: E501
+
+        :return: The json of this UploadPKCS12.  # noqa: E501
+        :rtype: bool
+        """
+        return self._json
+
+    @json.setter
+    def json(self, json):
+        """Sets the json of this UploadPKCS12.
+
+        Set output format to JSON  # noqa: E501
+
+        :param json: The json of this UploadPKCS12.  # noqa: E501
+        :type: bool
+        """
+
+        self._json = json
 
     @property
     def metadata(self):

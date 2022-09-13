@@ -36,6 +36,7 @@ class CreateSSHTarget(object):
     openapi_types = {
         'comment': 'str',
         'host': 'str',
+        'json': 'bool',
         'key': 'str',
         'name': 'str',
         'port': 'str',
@@ -50,6 +51,7 @@ class CreateSSHTarget(object):
     attribute_map = {
         'comment': 'comment',
         'host': 'host',
+        'json': 'json',
         'key': 'key',
         'name': 'name',
         'port': 'port',
@@ -61,7 +63,7 @@ class CreateSSHTarget(object):
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, comment=None, host=None, key=None, name=None, port=None, private_key=None, private_key_password=None, ssh_password=None, ssh_username=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, comment=None, host=None, json=None, key=None, name=None, port=None, private_key=None, private_key_password=None, ssh_password=None, ssh_username=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """CreateSSHTarget - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -69,6 +71,7 @@ class CreateSSHTarget(object):
 
         self._comment = None
         self._host = None
+        self._json = None
         self._key = None
         self._name = None
         self._port = None
@@ -84,6 +87,8 @@ class CreateSSHTarget(object):
             self.comment = comment
         if host is not None:
             self.host = host
+        if json is not None:
+            self.json = json
         if key is not None:
             self.key = key
         self.name = name
@@ -145,6 +150,29 @@ class CreateSSHTarget(object):
         """
 
         self._host = host
+
+    @property
+    def json(self):
+        """Gets the json of this CreateSSHTarget.  # noqa: E501
+
+        Set output format to JSON  # noqa: E501
+
+        :return: The json of this CreateSSHTarget.  # noqa: E501
+        :rtype: bool
+        """
+        return self._json
+
+    @json.setter
+    def json(self, json):
+        """Sets the json of this CreateSSHTarget.
+
+        Set output format to JSON  # noqa: E501
+
+        :param json: The json of this CreateSSHTarget.  # noqa: E501
+        :type: bool
+        """
+
+        self._json = json
 
     @property
     def key(self):

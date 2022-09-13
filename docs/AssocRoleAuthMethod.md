@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **am_name** | **str** | The auth method to associate | 
 **case_sensitive** | **str** |  | [optional] 
+**json** | **bool** | Set output format to JSON | [optional] 
 **role_name** | **str** | The role to associate | 
 **sub_claims** | **dict(str, str)** | key/val of sub claims, e.g group&#x3D;admins,developers | [optional] 
 **token** | **str** | Authentication token (see &#x60;/auth&#x60; and &#x60;/configure&#x60;) | [optional] 

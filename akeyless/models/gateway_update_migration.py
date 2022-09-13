@@ -47,6 +47,7 @@ class GatewayUpdateMigration(object):
         'hashi_token': 'str',
         'hashi_url': 'str',
         'id': 'str',
+        'json': 'bool',
         'k8s_ca_certificate': 'list[int]',
         'k8s_client_certificate': 'list[int]',
         'k8s_client_key': 'list[int]',
@@ -58,6 +59,11 @@ class GatewayUpdateMigration(object):
         'k8s_username': 'str',
         'name': 'str',
         'new_name': 'str',
+        'op_email': 'str',
+        'op_password': 'str',
+        'op_secret_key': 'str',
+        'op_url': 'str',
+        'op_vaults': 'list[str]',
         'protection_key': 'str',
         'target_location': 'str',
         'token': 'str',
@@ -78,6 +84,7 @@ class GatewayUpdateMigration(object):
         'hashi_token': 'hashi-token',
         'hashi_url': 'hashi-url',
         'id': 'id',
+        'json': 'json',
         'k8s_ca_certificate': 'k8s-ca-certificate',
         'k8s_client_certificate': 'k8s-client-certificate',
         'k8s_client_key': 'k8s-client-key',
@@ -89,13 +96,18 @@ class GatewayUpdateMigration(object):
         'k8s_username': 'k8s-username',
         'name': 'name',
         'new_name': 'new_name',
+        'op_email': 'op-email',
+        'op_password': 'op-password',
+        'op_secret_key': 'op-secret-key',
+        'op_url': 'op-url',
+        'op_vaults': 'op-vaults',
         'protection_key': 'protection-key',
         'target_location': 'target-location',
         'token': 'token',
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, aws_key=None, aws_key_id=None, aws_region=None, azure_client_id=None, azure_kv_name=None, azure_secret=None, azure_tenant_id=None, gcp_key=None, hashi_json=None, hashi_ns=None, hashi_token=None, hashi_url=None, id=None, k8s_ca_certificate=None, k8s_client_certificate=None, k8s_client_key=None, k8s_namespace=None, k8s_password=None, k8s_skip_system=None, k8s_token=None, k8s_url=None, k8s_username=None, name=None, new_name=None, protection_key=None, target_location=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, aws_key=None, aws_key_id=None, aws_region=None, azure_client_id=None, azure_kv_name=None, azure_secret=None, azure_tenant_id=None, gcp_key=None, hashi_json=None, hashi_ns=None, hashi_token=None, hashi_url=None, id=None, json=None, k8s_ca_certificate=None, k8s_client_certificate=None, k8s_client_key=None, k8s_namespace=None, k8s_password=None, k8s_skip_system=None, k8s_token=None, k8s_url=None, k8s_username=None, name=None, new_name=None, op_email=None, op_password=None, op_secret_key=None, op_url=None, op_vaults=None, protection_key=None, target_location=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """GatewayUpdateMigration - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -114,6 +126,7 @@ class GatewayUpdateMigration(object):
         self._hashi_token = None
         self._hashi_url = None
         self._id = None
+        self._json = None
         self._k8s_ca_certificate = None
         self._k8s_client_certificate = None
         self._k8s_client_key = None
@@ -125,6 +138,11 @@ class GatewayUpdateMigration(object):
         self._k8s_username = None
         self._name = None
         self._new_name = None
+        self._op_email = None
+        self._op_password = None
+        self._op_secret_key = None
+        self._op_url = None
+        self._op_vaults = None
         self._protection_key = None
         self._target_location = None
         self._token = None
@@ -157,6 +175,8 @@ class GatewayUpdateMigration(object):
             self.hashi_url = hashi_url
         if id is not None:
             self.id = id
+        if json is not None:
+            self.json = json
         if k8s_ca_certificate is not None:
             self.k8s_ca_certificate = k8s_ca_certificate
         if k8s_client_certificate is not None:
@@ -179,6 +199,16 @@ class GatewayUpdateMigration(object):
             self.name = name
         if new_name is not None:
             self.new_name = new_name
+        if op_email is not None:
+            self.op_email = op_email
+        if op_password is not None:
+            self.op_password = op_password
+        if op_secret_key is not None:
+            self.op_secret_key = op_secret_key
+        if op_url is not None:
+            self.op_url = op_url
+        if op_vaults is not None:
+            self.op_vaults = op_vaults
         if protection_key is not None:
             self.protection_key = protection_key
         if target_location is not None:
@@ -488,6 +518,29 @@ class GatewayUpdateMigration(object):
         self._id = id
 
     @property
+    def json(self):
+        """Gets the json of this GatewayUpdateMigration.  # noqa: E501
+
+        Set output format to JSON  # noqa: E501
+
+        :return: The json of this GatewayUpdateMigration.  # noqa: E501
+        :rtype: bool
+        """
+        return self._json
+
+    @json.setter
+    def json(self, json):
+        """Sets the json of this GatewayUpdateMigration.
+
+        Set output format to JSON  # noqa: E501
+
+        :param json: The json of this GatewayUpdateMigration.  # noqa: E501
+        :type: bool
+        """
+
+        self._json = json
+
+    @property
     def k8s_ca_certificate(self):
         """Gets the k8s_ca_certificate of this GatewayUpdateMigration.  # noqa: E501
 
@@ -739,6 +792,121 @@ class GatewayUpdateMigration(object):
         """
 
         self._new_name = new_name
+
+    @property
+    def op_email(self):
+        """Gets the op_email of this GatewayUpdateMigration.  # noqa: E501
+
+        1Password user email to connect to the API  # noqa: E501
+
+        :return: The op_email of this GatewayUpdateMigration.  # noqa: E501
+        :rtype: str
+        """
+        return self._op_email
+
+    @op_email.setter
+    def op_email(self, op_email):
+        """Sets the op_email of this GatewayUpdateMigration.
+
+        1Password user email to connect to the API  # noqa: E501
+
+        :param op_email: The op_email of this GatewayUpdateMigration.  # noqa: E501
+        :type: str
+        """
+
+        self._op_email = op_email
+
+    @property
+    def op_password(self):
+        """Gets the op_password of this GatewayUpdateMigration.  # noqa: E501
+
+        1Password user password to connect to the API  # noqa: E501
+
+        :return: The op_password of this GatewayUpdateMigration.  # noqa: E501
+        :rtype: str
+        """
+        return self._op_password
+
+    @op_password.setter
+    def op_password(self, op_password):
+        """Sets the op_password of this GatewayUpdateMigration.
+
+        1Password user password to connect to the API  # noqa: E501
+
+        :param op_password: The op_password of this GatewayUpdateMigration.  # noqa: E501
+        :type: str
+        """
+
+        self._op_password = op_password
+
+    @property
+    def op_secret_key(self):
+        """Gets the op_secret_key of this GatewayUpdateMigration.  # noqa: E501
+
+        1Password user secret key to connect to the API  # noqa: E501
+
+        :return: The op_secret_key of this GatewayUpdateMigration.  # noqa: E501
+        :rtype: str
+        """
+        return self._op_secret_key
+
+    @op_secret_key.setter
+    def op_secret_key(self, op_secret_key):
+        """Sets the op_secret_key of this GatewayUpdateMigration.
+
+        1Password user secret key to connect to the API  # noqa: E501
+
+        :param op_secret_key: The op_secret_key of this GatewayUpdateMigration.  # noqa: E501
+        :type: str
+        """
+
+        self._op_secret_key = op_secret_key
+
+    @property
+    def op_url(self):
+        """Gets the op_url of this GatewayUpdateMigration.  # noqa: E501
+
+        1Password api container url  # noqa: E501
+
+        :return: The op_url of this GatewayUpdateMigration.  # noqa: E501
+        :rtype: str
+        """
+        return self._op_url
+
+    @op_url.setter
+    def op_url(self, op_url):
+        """Sets the op_url of this GatewayUpdateMigration.
+
+        1Password api container url  # noqa: E501
+
+        :param op_url: The op_url of this GatewayUpdateMigration.  # noqa: E501
+        :type: str
+        """
+
+        self._op_url = op_url
+
+    @property
+    def op_vaults(self):
+        """Gets the op_vaults of this GatewayUpdateMigration.  # noqa: E501
+
+        1Password list of vault to get the items from  # noqa: E501
+
+        :return: The op_vaults of this GatewayUpdateMigration.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._op_vaults
+
+    @op_vaults.setter
+    def op_vaults(self, op_vaults):
+        """Sets the op_vaults of this GatewayUpdateMigration.
+
+        1Password list of vault to get the items from  # noqa: E501
+
+        :param op_vaults: The op_vaults of this GatewayUpdateMigration.  # noqa: E501
+        :type: list[str]
+        """
+
+        self._op_vaults = op_vaults
 
     @property
     def protection_key(self):

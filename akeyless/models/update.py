@@ -34,24 +34,52 @@ class Update(object):
                             and the value is json key in definition.
     """
     openapi_types = {
+        'json': 'bool',
         'version': 'str'
     }
 
     attribute_map = {
+        'json': 'json',
         'version': 'version'
     }
 
-    def __init__(self, version=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, json=None, version=None, local_vars_configuration=None):  # noqa: E501
         """Update - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
+        self._json = None
         self._version = None
         self.discriminator = None
 
+        if json is not None:
+            self.json = json
         if version is not None:
             self.version = version
+
+    @property
+    def json(self):
+        """Gets the json of this Update.  # noqa: E501
+
+        Set output format to JSON  # noqa: E501
+
+        :return: The json of this Update.  # noqa: E501
+        :rtype: bool
+        """
+        return self._json
+
+    @json.setter
+    def json(self, json):
+        """Sets the json of this Update.
+
+        Set output format to JSON  # noqa: E501
+
+        :param json: The json of this Update.  # noqa: E501
+        :type: bool
+        """
+
+        self._json = json
 
     @property
     def version(self):

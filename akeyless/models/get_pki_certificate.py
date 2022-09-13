@@ -38,6 +38,7 @@ class GetPKICertificate(object):
         'cert_issuer_name': 'str',
         'common_name': 'str',
         'extended_key_usage': 'str',
+        'json': 'bool',
         'key_data_base64': 'str',
         'token': 'str',
         'ttl': 'int',
@@ -50,6 +51,7 @@ class GetPKICertificate(object):
         'cert_issuer_name': 'cert-issuer-name',
         'common_name': 'common-name',
         'extended_key_usage': 'extended-key-usage',
+        'json': 'json',
         'key_data_base64': 'key-data-base64',
         'token': 'token',
         'ttl': 'ttl',
@@ -57,7 +59,7 @@ class GetPKICertificate(object):
         'uri_sans': 'uri-sans'
     }
 
-    def __init__(self, alt_names=None, cert_issuer_name=None, common_name=None, extended_key_usage=None, key_data_base64=None, token=None, ttl=None, uid_token=None, uri_sans=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, alt_names=None, cert_issuer_name=None, common_name=None, extended_key_usage=None, json=None, key_data_base64=None, token=None, ttl=None, uid_token=None, uri_sans=None, local_vars_configuration=None):  # noqa: E501
         """GetPKICertificate - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -67,6 +69,7 @@ class GetPKICertificate(object):
         self._cert_issuer_name = None
         self._common_name = None
         self._extended_key_usage = None
+        self._json = None
         self._key_data_base64 = None
         self._token = None
         self._ttl = None
@@ -81,6 +84,8 @@ class GetPKICertificate(object):
             self.common_name = common_name
         if extended_key_usage is not None:
             self.extended_key_usage = extended_key_usage
+        if json is not None:
+            self.json = json
         if key_data_base64 is not None:
             self.key_data_base64 = key_data_base64
         if token is not None:
@@ -185,6 +190,29 @@ class GetPKICertificate(object):
         """
 
         self._extended_key_usage = extended_key_usage
+
+    @property
+    def json(self):
+        """Gets the json of this GetPKICertificate.  # noqa: E501
+
+        Set output format to JSON  # noqa: E501
+
+        :return: The json of this GetPKICertificate.  # noqa: E501
+        :rtype: bool
+        """
+        return self._json
+
+    @json.setter
+    def json(self, json):
+        """Sets the json of this GetPKICertificate.
+
+        Set output format to JSON  # noqa: E501
+
+        :param json: The json of this GetPKICertificate.  # noqa: E501
+        :type: bool
+        """
+
+        self._json = json
 
     @property
     def key_data_base64(self):

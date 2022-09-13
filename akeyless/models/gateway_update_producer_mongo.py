@@ -35,6 +35,7 @@ class GatewayUpdateProducerMongo(object):
     """
     openapi_types = {
         'delete_protection': 'str',
+        'json': 'bool',
         'mongodb_atlas_api_private_key': 'str',
         'mongodb_atlas_api_public_key': 'str',
         'mongodb_atlas_project_id': 'str',
@@ -63,6 +64,7 @@ class GatewayUpdateProducerMongo(object):
 
     attribute_map = {
         'delete_protection': 'delete_protection',
+        'json': 'json',
         'mongodb_atlas_api_private_key': 'mongodb-atlas-api-private-key',
         'mongodb_atlas_api_public_key': 'mongodb-atlas-api-public-key',
         'mongodb_atlas_project_id': 'mongodb-atlas-project-id',
@@ -89,13 +91,14 @@ class GatewayUpdateProducerMongo(object):
         'user_ttl': 'user-ttl'
     }
 
-    def __init__(self, delete_protection=None, mongodb_atlas_api_private_key=None, mongodb_atlas_api_public_key=None, mongodb_atlas_project_id=None, mongodb_custom_data=None, mongodb_default_auth_db=None, mongodb_host_port=None, mongodb_name=None, mongodb_password=None, mongodb_roles='[]', mongodb_server_uri=None, mongodb_uri_options=None, mongodb_username=None, name=None, new_name=None, producer_encryption_key_name=None, secure_access_bastion_issuer=None, secure_access_enable=None, secure_access_host=None, secure_access_web=None, tags=None, target_name=None, token=None, uid_token=None, user_ttl='60m', local_vars_configuration=None):  # noqa: E501
+    def __init__(self, delete_protection=None, json=None, mongodb_atlas_api_private_key=None, mongodb_atlas_api_public_key=None, mongodb_atlas_project_id=None, mongodb_custom_data=None, mongodb_default_auth_db=None, mongodb_host_port=None, mongodb_name=None, mongodb_password=None, mongodb_roles='[]', mongodb_server_uri=None, mongodb_uri_options=None, mongodb_username=None, name=None, new_name=None, producer_encryption_key_name=None, secure_access_bastion_issuer=None, secure_access_enable=None, secure_access_host=None, secure_access_web=None, tags=None, target_name=None, token=None, uid_token=None, user_ttl='60m', local_vars_configuration=None):  # noqa: E501
         """GatewayUpdateProducerMongo - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._delete_protection = None
+        self._json = None
         self._mongodb_atlas_api_private_key = None
         self._mongodb_atlas_api_public_key = None
         self._mongodb_atlas_project_id = None
@@ -124,6 +127,8 @@ class GatewayUpdateProducerMongo(object):
 
         if delete_protection is not None:
             self.delete_protection = delete_protection
+        if json is not None:
+            self.json = json
         if mongodb_atlas_api_private_key is not None:
             self.mongodb_atlas_api_private_key = mongodb_atlas_api_private_key
         if mongodb_atlas_api_public_key is not None:
@@ -194,6 +199,29 @@ class GatewayUpdateProducerMongo(object):
         """
 
         self._delete_protection = delete_protection
+
+    @property
+    def json(self):
+        """Gets the json of this GatewayUpdateProducerMongo.  # noqa: E501
+
+        Set output format to JSON  # noqa: E501
+
+        :return: The json of this GatewayUpdateProducerMongo.  # noqa: E501
+        :rtype: bool
+        """
+        return self._json
+
+    @json.setter
+    def json(self, json):
+        """Sets the json of this GatewayUpdateProducerMongo.
+
+        Set output format to JSON  # noqa: E501
+
+        :param json: The json of this GatewayUpdateProducerMongo.  # noqa: E501
+        :type: bool
+        """
+
+        self._json = json
 
     @property
     def mongodb_atlas_api_private_key(self):

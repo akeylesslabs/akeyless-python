@@ -34,33 +34,61 @@ class GatewayGetK8SAuthConfig(object):
                             and the value is json key in definition.
     """
     openapi_types = {
+        'json': 'bool',
         'name': 'str',
         'token': 'str',
         'uid_token': 'str'
     }
 
     attribute_map = {
+        'json': 'json',
         'name': 'name',
         'token': 'token',
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, name=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, json=None, name=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """GatewayGetK8SAuthConfig - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
+        self._json = None
         self._name = None
         self._token = None
         self._uid_token = None
         self.discriminator = None
 
+        if json is not None:
+            self.json = json
         self.name = name
         if token is not None:
             self.token = token
         if uid_token is not None:
             self.uid_token = uid_token
+
+    @property
+    def json(self):
+        """Gets the json of this GatewayGetK8SAuthConfig.  # noqa: E501
+
+        Set output format to JSON  # noqa: E501
+
+        :return: The json of this GatewayGetK8SAuthConfig.  # noqa: E501
+        :rtype: bool
+        """
+        return self._json
+
+    @json.setter
+    def json(self, json):
+        """Sets the json of this GatewayGetK8SAuthConfig.
+
+        Set output format to JSON  # noqa: E501
+
+        :param json: The json of this GatewayGetK8SAuthConfig.  # noqa: E501
+        :type: bool
+        """
+
+        self._json = json
 
     @property
     def name(self):

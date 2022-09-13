@@ -37,6 +37,7 @@ class CreateClassicKey(object):
         'alg': 'str',
         'cert_file_data': 'str',
         'delete_protection': 'str',
+        'json': 'bool',
         'key_data': 'str',
         'metadata': 'str',
         'name': 'str',
@@ -50,6 +51,7 @@ class CreateClassicKey(object):
         'alg': 'alg',
         'cert_file_data': 'cert-file-data',
         'delete_protection': 'delete_protection',
+        'json': 'json',
         'key_data': 'key-data',
         'metadata': 'metadata',
         'name': 'name',
@@ -59,7 +61,7 @@ class CreateClassicKey(object):
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, alg=None, cert_file_data=None, delete_protection=None, key_data=None, metadata=None, name=None, protection_key_name=None, tags=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, alg=None, cert_file_data=None, delete_protection=None, json=None, key_data=None, metadata=None, name=None, protection_key_name=None, tags=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """CreateClassicKey - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -68,6 +70,7 @@ class CreateClassicKey(object):
         self._alg = None
         self._cert_file_data = None
         self._delete_protection = None
+        self._json = None
         self._key_data = None
         self._metadata = None
         self._name = None
@@ -82,6 +85,8 @@ class CreateClassicKey(object):
             self.cert_file_data = cert_file_data
         if delete_protection is not None:
             self.delete_protection = delete_protection
+        if json is not None:
+            self.json = json
         if key_data is not None:
             self.key_data = key_data
         if metadata is not None:
@@ -166,6 +171,29 @@ class CreateClassicKey(object):
         """
 
         self._delete_protection = delete_protection
+
+    @property
+    def json(self):
+        """Gets the json of this CreateClassicKey.  # noqa: E501
+
+        Set output format to JSON  # noqa: E501
+
+        :return: The json of this CreateClassicKey.  # noqa: E501
+        :rtype: bool
+        """
+        return self._json
+
+    @json.setter
+    def json(self, json):
+        """Sets the json of this CreateClassicKey.
+
+        Set output format to JSON  # noqa: E501
+
+        :param json: The json of this CreateClassicKey.  # noqa: E501
+        :type: bool
+        """
+
+        self._json = json
 
     @property
     def key_data(self):

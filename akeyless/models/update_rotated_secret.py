@@ -40,6 +40,7 @@ class UpdateRotatedSecret(object):
         'auto_rotate': 'str',
         'aws_region': 'str',
         'custom_payload': 'str',
+        'json': 'bool',
         'keep_prev_version': 'str',
         'key': 'str',
         'name': 'str',
@@ -80,6 +81,7 @@ class UpdateRotatedSecret(object):
         'auto_rotate': 'auto-rotate',
         'aws_region': 'aws-region',
         'custom_payload': 'custom-payload',
+        'json': 'json',
         'keep_prev_version': 'keep-prev-version',
         'key': 'key',
         'name': 'name',
@@ -113,7 +115,7 @@ class UpdateRotatedSecret(object):
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, add_tag=None, api_id=None, api_key=None, auto_rotate=None, aws_region='us-east-2', custom_payload=None, keep_prev_version=None, key=None, name=None, new_metadata='default_metadata', new_name=None, new_version=None, rm_tag=None, rotated_password=None, rotated_username=None, rotation_hour=None, rotation_interval=None, rotator_creds_type=None, rotator_custom_cmd=None, secure_access_allow_external_user=False, secure_access_aws_account_id=None, secure_access_aws_native_cli=None, secure_access_bastion_issuer=None, secure_access_db_name=None, secure_access_db_schema=None, secure_access_enable=None, secure_access_host=None, secure_access_rdp_domain=None, secure_access_rdp_user=None, secure_access_web=False, secure_access_web_browsing=False, secure_access_web_proxy=False, ssh_password=None, ssh_username=None, storage_account_key_name=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, add_tag=None, api_id=None, api_key=None, auto_rotate=None, aws_region='us-east-2', custom_payload=None, json=None, keep_prev_version=None, key=None, name=None, new_metadata='default_metadata', new_name=None, new_version=None, rm_tag=None, rotated_password=None, rotated_username=None, rotation_hour=None, rotation_interval=None, rotator_creds_type=None, rotator_custom_cmd=None, secure_access_allow_external_user=False, secure_access_aws_account_id=None, secure_access_aws_native_cli=None, secure_access_bastion_issuer=None, secure_access_db_name=None, secure_access_db_schema=None, secure_access_enable=None, secure_access_host=None, secure_access_rdp_domain=None, secure_access_rdp_user=None, secure_access_web=False, secure_access_web_browsing=False, secure_access_web_proxy=False, ssh_password=None, ssh_username=None, storage_account_key_name=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """UpdateRotatedSecret - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -125,6 +127,7 @@ class UpdateRotatedSecret(object):
         self._auto_rotate = None
         self._aws_region = None
         self._custom_payload = None
+        self._json = None
         self._keep_prev_version = None
         self._key = None
         self._name = None
@@ -170,6 +173,8 @@ class UpdateRotatedSecret(object):
             self.aws_region = aws_region
         if custom_payload is not None:
             self.custom_payload = custom_payload
+        if json is not None:
+            self.json = json
         if keep_prev_version is not None:
             self.keep_prev_version = keep_prev_version
         if key is not None:
@@ -363,6 +368,29 @@ class UpdateRotatedSecret(object):
         """
 
         self._custom_payload = custom_payload
+
+    @property
+    def json(self):
+        """Gets the json of this UpdateRotatedSecret.  # noqa: E501
+
+        Set output format to JSON  # noqa: E501
+
+        :return: The json of this UpdateRotatedSecret.  # noqa: E501
+        :rtype: bool
+        """
+        return self._json
+
+    @json.setter
+    def json(self, json):
+        """Sets the json of this UpdateRotatedSecret.
+
+        Set output format to JSON  # noqa: E501
+
+        :param json: The json of this UpdateRotatedSecret.  # noqa: E501
+        :type: bool
+        """
+
+        self._json = json
 
     @property
     def keep_prev_version(self):

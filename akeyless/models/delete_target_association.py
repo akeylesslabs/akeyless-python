@@ -35,6 +35,7 @@ class DeleteTargetAssociation(object):
     """
     openapi_types = {
         'assoc_id': 'str',
+        'json': 'bool',
         'name': 'str',
         'target_name': 'str',
         'token': 'str',
@@ -43,19 +44,21 @@ class DeleteTargetAssociation(object):
 
     attribute_map = {
         'assoc_id': 'assoc-id',
+        'json': 'json',
         'name': 'name',
         'target_name': 'target-name',
         'token': 'token',
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, assoc_id=None, name=None, target_name=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, assoc_id=None, json=None, name=None, target_name=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """DeleteTargetAssociation - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._assoc_id = None
+        self._json = None
         self._name = None
         self._target_name = None
         self._token = None
@@ -64,6 +67,8 @@ class DeleteTargetAssociation(object):
 
         if assoc_id is not None:
             self.assoc_id = assoc_id
+        if json is not None:
+            self.json = json
         self.name = name
         if target_name is not None:
             self.target_name = target_name
@@ -94,6 +99,29 @@ class DeleteTargetAssociation(object):
         """
 
         self._assoc_id = assoc_id
+
+    @property
+    def json(self):
+        """Gets the json of this DeleteTargetAssociation.  # noqa: E501
+
+        Set output format to JSON  # noqa: E501
+
+        :return: The json of this DeleteTargetAssociation.  # noqa: E501
+        :rtype: bool
+        """
+        return self._json
+
+    @json.setter
+    def json(self, json):
+        """Sets the json of this DeleteTargetAssociation.
+
+        Set output format to JSON  # noqa: E501
+
+        :param json: The json of this DeleteTargetAssociation.  # noqa: E501
+        :type: bool
+        """
+
+        self._json = json
 
     @property
     def name(self):

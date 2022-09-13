@@ -36,6 +36,7 @@ class GetDynamicSecretValue(object):
     openapi_types = {
         'args': 'list[str]',
         'host': 'str',
+        'json': 'bool',
         'name': 'str',
         'target': 'str',
         'timeout': 'int',
@@ -46,6 +47,7 @@ class GetDynamicSecretValue(object):
     attribute_map = {
         'args': 'args',
         'host': 'host',
+        'json': 'json',
         'name': 'name',
         'target': 'target',
         'timeout': 'timeout',
@@ -53,7 +55,7 @@ class GetDynamicSecretValue(object):
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, args=None, host=None, name=None, target=None, timeout=15, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, args=None, host=None, json=None, name=None, target=None, timeout=15, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """GetDynamicSecretValue - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -61,6 +63,7 @@ class GetDynamicSecretValue(object):
 
         self._args = None
         self._host = None
+        self._json = None
         self._name = None
         self._target = None
         self._timeout = None
@@ -72,6 +75,8 @@ class GetDynamicSecretValue(object):
             self.args = args
         if host is not None:
             self.host = host
+        if json is not None:
+            self.json = json
         self.name = name
         if target is not None:
             self.target = target
@@ -127,6 +132,29 @@ class GetDynamicSecretValue(object):
         """
 
         self._host = host
+
+    @property
+    def json(self):
+        """Gets the json of this GetDynamicSecretValue.  # noqa: E501
+
+        Set output format to JSON  # noqa: E501
+
+        :return: The json of this GetDynamicSecretValue.  # noqa: E501
+        :rtype: bool
+        """
+        return self._json
+
+    @json.setter
+    def json(self, json):
+        """Sets the json of this GetDynamicSecretValue.
+
+        Set output format to JSON  # noqa: E501
+
+        :param json: The json of this GetDynamicSecretValue.  # noqa: E501
+        :type: bool
+        """
+
+        self._json = json
 
     @property
     def name(self):

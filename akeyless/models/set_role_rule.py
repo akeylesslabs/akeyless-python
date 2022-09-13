@@ -35,6 +35,7 @@ class SetRoleRule(object):
     """
     openapi_types = {
         'capability': 'list[str]',
+        'json': 'bool',
         'path': 'str',
         'role_name': 'str',
         'rule_type': 'str',
@@ -44,6 +45,7 @@ class SetRoleRule(object):
 
     attribute_map = {
         'capability': 'capability',
+        'json': 'json',
         'path': 'path',
         'role_name': 'role-name',
         'rule_type': 'rule-type',
@@ -51,13 +53,14 @@ class SetRoleRule(object):
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, capability=None, path=None, role_name=None, rule_type='item-rule', token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, capability=None, json=None, path=None, role_name=None, rule_type='item-rule', token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """SetRoleRule - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._capability = None
+        self._json = None
         self._path = None
         self._role_name = None
         self._rule_type = None
@@ -66,6 +69,8 @@ class SetRoleRule(object):
         self.discriminator = None
 
         self.capability = capability
+        if json is not None:
+            self.json = json
         self.path = path
         self.role_name = role_name
         if rule_type is not None:
@@ -99,6 +104,29 @@ class SetRoleRule(object):
             raise ValueError("Invalid value for `capability`, must not be `None`")  # noqa: E501
 
         self._capability = capability
+
+    @property
+    def json(self):
+        """Gets the json of this SetRoleRule.  # noqa: E501
+
+        Set output format to JSON  # noqa: E501
+
+        :return: The json of this SetRoleRule.  # noqa: E501
+        :rtype: bool
+        """
+        return self._json
+
+    @json.setter
+    def json(self, json):
+        """Sets the json of this SetRoleRule.
+
+        Set output format to JSON  # noqa: E501
+
+        :param json: The json of this SetRoleRule.  # noqa: E501
+        :type: bool
+        """
+
+        self._json = json
 
     @property
     def path(self):
