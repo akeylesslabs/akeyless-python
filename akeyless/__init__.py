@@ -15,7 +15,7 @@
 
 from __future__ import absolute_import
 
-__version__ = "2.19.0"
+__version__ = "2.20.0"
 
 # import apis into sdk package
 from akeyless.api.v2_api import V2Api
@@ -35,6 +35,8 @@ from akeyless.models.aws_payload import AWSPayload
 from akeyless.models.aws_secrets_migration import AWSSecretsMigration
 from akeyless.models.account_general_settings import AccountGeneralSettings
 from akeyless.models.account_object_version_settings_output import AccountObjectVersionSettingsOutput
+from akeyless.models.active_directory_migration import ActiveDirectoryMigration
+from akeyless.models.active_directory_payload import ActiveDirectoryPayload
 from akeyless.models.admins_config_part import AdminsConfigPart
 from akeyless.models.akeyless_gateway_config import AkeylessGatewayConfig
 from akeyless.models.allowed_access import AllowedAccess
@@ -261,6 +263,8 @@ from akeyless.models.gateway_list_allowed_management_access import GatewayListAl
 from akeyless.models.gateway_list_migration import GatewayListMigration
 from akeyless.models.gateway_list_producers import GatewayListProducers
 from akeyless.models.gateway_message_queue_info import GatewayMessageQueueInfo
+from akeyless.models.gateway_migrate_personal_items import GatewayMigratePersonalItems
+from akeyless.models.gateway_migrate_personal_items_output import GatewayMigratePersonalItemsOutput
 from akeyless.models.gateway_migration_create_output import GatewayMigrationCreateOutput
 from akeyless.models.gateway_migration_delete_output import GatewayMigrationDeleteOutput
 from akeyless.models.gateway_migration_get_output import GatewayMigrationGetOutput
@@ -480,7 +484,6 @@ from akeyless.models.system_access_creds_settings import SystemAccessCredsSettin
 from akeyless.models.target import Target
 from akeyless.models.target_item_association import TargetItemAssociation
 from akeyless.models.target_item_version import TargetItemVersion
-from akeyless.models.target_object_association import TargetObjectAssociation
 from akeyless.models.target_type_details_input import TargetTypeDetailsInput
 from akeyless.models.tmp_user_data import TmpUserData
 from akeyless.models.tokenize import Tokenize

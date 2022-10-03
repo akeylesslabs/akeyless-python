@@ -34,6 +34,30 @@ class GatewayCreateMigration(object):
                             and the value is json key in definition.
     """
     openapi_types = {
+        '_1password_email': 'str',
+        '_1password_password': 'str',
+        '_1password_secret_key': 'str',
+        '_1password_url': 'str',
+        '_1password_vaults': 'list[str]',
+        'ad_auto_rotate_boolean': 'bool',
+        'ad_discover_local_users_boolean': 'bool',
+        'ad_local_users_ignore_list': 'dict(str, bool)',
+        'ad_sra_enable_rdp_boolean': 'bool',
+        'ad_auto_rotate': 'str',
+        'ad_computer_base_dn': 'str',
+        'ad_discover_local_users': 'str',
+        'ad_domain_name': 'str',
+        'ad_domain_users_path_template': 'str',
+        'ad_local_users_ignore': 'str',
+        'ad_local_users_path_template': 'str',
+        'ad_rotation_hour': 'int',
+        'ad_rotation_interval': 'int',
+        'ad_sra_enable_rdp': 'str',
+        'ad_target_name': 'str',
+        'ad_targets_path_template': 'str',
+        'ad_user_base_dn': 'str',
+        'ad_user_groups': 'str',
+        'as_ssh_port': 'str',
         'aws_key': 'str',
         'aws_key_id': 'str',
         'aws_region': 'str',
@@ -57,11 +81,6 @@ class GatewayCreateMigration(object):
         'k8s_url': 'str',
         'k8s_username': 'str',
         'name': 'str',
-        'op_email': 'str',
-        'op_password': 'str',
-        'op_secret_key': 'str',
-        'op_url': 'str',
-        'op_vaults': 'list[str]',
         'protection_key': 'str',
         'target_location': 'str',
         'token': 'str',
@@ -70,6 +89,30 @@ class GatewayCreateMigration(object):
     }
 
     attribute_map = {
+        '_1password_email': '1password-email',
+        '_1password_password': '1password-password',
+        '_1password_secret_key': '1password-secret-key',
+        '_1password_url': '1password-url',
+        '_1password_vaults': '1password-vaults',
+        'ad_auto_rotate_boolean': 'AdAutoRotateBoolean',
+        'ad_discover_local_users_boolean': 'AdDiscoverLocalUsersBoolean',
+        'ad_local_users_ignore_list': 'AdLocalUsersIgnoreList',
+        'ad_sra_enable_rdp_boolean': 'AdSRAEnableRDPBoolean',
+        'ad_auto_rotate': 'ad_auto_rotate',
+        'ad_computer_base_dn': 'ad_computer_base_dn',
+        'ad_discover_local_users': 'ad_discover_local_users',
+        'ad_domain_name': 'ad_domain_name',
+        'ad_domain_users_path_template': 'ad_domain_users_path_template',
+        'ad_local_users_ignore': 'ad_local_users_ignore',
+        'ad_local_users_path_template': 'ad_local_users_path_template',
+        'ad_rotation_hour': 'ad_rotation_hour',
+        'ad_rotation_interval': 'ad_rotation_interval',
+        'ad_sra_enable_rdp': 'ad_sra_enable_rdp',
+        'ad_target_name': 'ad_target_name',
+        'ad_targets_path_template': 'ad_targets_path_template',
+        'ad_user_base_dn': 'ad_user_base_dn',
+        'ad_user_groups': 'ad_user_groups',
+        'as_ssh_port': 'as_ssh_port',
         'aws_key': 'aws-key',
         'aws_key_id': 'aws-key-id',
         'aws_region': 'aws-region',
@@ -93,11 +136,6 @@ class GatewayCreateMigration(object):
         'k8s_url': 'k8s-url',
         'k8s_username': 'k8s-username',
         'name': 'name',
-        'op_email': 'op-email',
-        'op_password': 'op-password',
-        'op_secret_key': 'op-secret-key',
-        'op_url': 'op-url',
-        'op_vaults': 'op-vaults',
         'protection_key': 'protection-key',
         'target_location': 'target-location',
         'token': 'token',
@@ -105,12 +143,36 @@ class GatewayCreateMigration(object):
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, aws_key=None, aws_key_id=None, aws_region=None, azure_client_id=None, azure_kv_name=None, azure_secret=None, azure_tenant_id=None, gcp_key=None, hashi_json=None, hashi_ns=None, hashi_token=None, hashi_url=None, json=None, k8s_ca_certificate=None, k8s_client_certificate=None, k8s_client_key=None, k8s_namespace=None, k8s_password=None, k8s_skip_system=None, k8s_token=None, k8s_url=None, k8s_username=None, name=None, op_email=None, op_password=None, op_secret_key=None, op_url=None, op_vaults=None, protection_key=None, target_location=None, token=None, type=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, _1password_email=None, _1password_password=None, _1password_secret_key=None, _1password_url=None, _1password_vaults=None, ad_auto_rotate_boolean=None, ad_discover_local_users_boolean=None, ad_local_users_ignore_list=None, ad_sra_enable_rdp_boolean=None, ad_auto_rotate=None, ad_computer_base_dn=None, ad_discover_local_users=None, ad_domain_name=None, ad_domain_users_path_template=None, ad_local_users_ignore=None, ad_local_users_path_template=None, ad_rotation_hour=None, ad_rotation_interval=None, ad_sra_enable_rdp=None, ad_target_name=None, ad_targets_path_template=None, ad_user_base_dn=None, ad_user_groups=None, as_ssh_port=None, aws_key=None, aws_key_id=None, aws_region=None, azure_client_id=None, azure_kv_name=None, azure_secret=None, azure_tenant_id=None, gcp_key=None, hashi_json=None, hashi_ns=None, hashi_token=None, hashi_url=None, json=None, k8s_ca_certificate=None, k8s_client_certificate=None, k8s_client_key=None, k8s_namespace=None, k8s_password=None, k8s_skip_system=None, k8s_token=None, k8s_url=None, k8s_username=None, name=None, protection_key=None, target_location=None, token=None, type=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """GatewayCreateMigration - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
+        self.__1password_email = None
+        self.__1password_password = None
+        self.__1password_secret_key = None
+        self.__1password_url = None
+        self.__1password_vaults = None
+        self._ad_auto_rotate_boolean = None
+        self._ad_discover_local_users_boolean = None
+        self._ad_local_users_ignore_list = None
+        self._ad_sra_enable_rdp_boolean = None
+        self._ad_auto_rotate = None
+        self._ad_computer_base_dn = None
+        self._ad_discover_local_users = None
+        self._ad_domain_name = None
+        self._ad_domain_users_path_template = None
+        self._ad_local_users_ignore = None
+        self._ad_local_users_path_template = None
+        self._ad_rotation_hour = None
+        self._ad_rotation_interval = None
+        self._ad_sra_enable_rdp = None
+        self._ad_target_name = None
+        self._ad_targets_path_template = None
+        self._ad_user_base_dn = None
+        self._ad_user_groups = None
+        self._as_ssh_port = None
         self._aws_key = None
         self._aws_key_id = None
         self._aws_region = None
@@ -134,11 +196,6 @@ class GatewayCreateMigration(object):
         self._k8s_url = None
         self._k8s_username = None
         self._name = None
-        self._op_email = None
-        self._op_password = None
-        self._op_secret_key = None
-        self._op_url = None
-        self._op_vaults = None
         self._protection_key = None
         self._target_location = None
         self._token = None
@@ -146,6 +203,54 @@ class GatewayCreateMigration(object):
         self._uid_token = None
         self.discriminator = None
 
+        if _1password_email is not None:
+            self._1password_email = _1password_email
+        if _1password_password is not None:
+            self._1password_password = _1password_password
+        if _1password_secret_key is not None:
+            self._1password_secret_key = _1password_secret_key
+        if _1password_url is not None:
+            self._1password_url = _1password_url
+        if _1password_vaults is not None:
+            self._1password_vaults = _1password_vaults
+        if ad_auto_rotate_boolean is not None:
+            self.ad_auto_rotate_boolean = ad_auto_rotate_boolean
+        if ad_discover_local_users_boolean is not None:
+            self.ad_discover_local_users_boolean = ad_discover_local_users_boolean
+        if ad_local_users_ignore_list is not None:
+            self.ad_local_users_ignore_list = ad_local_users_ignore_list
+        if ad_sra_enable_rdp_boolean is not None:
+            self.ad_sra_enable_rdp_boolean = ad_sra_enable_rdp_boolean
+        if ad_auto_rotate is not None:
+            self.ad_auto_rotate = ad_auto_rotate
+        if ad_computer_base_dn is not None:
+            self.ad_computer_base_dn = ad_computer_base_dn
+        if ad_discover_local_users is not None:
+            self.ad_discover_local_users = ad_discover_local_users
+        if ad_domain_name is not None:
+            self.ad_domain_name = ad_domain_name
+        if ad_domain_users_path_template is not None:
+            self.ad_domain_users_path_template = ad_domain_users_path_template
+        if ad_local_users_ignore is not None:
+            self.ad_local_users_ignore = ad_local_users_ignore
+        if ad_local_users_path_template is not None:
+            self.ad_local_users_path_template = ad_local_users_path_template
+        if ad_rotation_hour is not None:
+            self.ad_rotation_hour = ad_rotation_hour
+        if ad_rotation_interval is not None:
+            self.ad_rotation_interval = ad_rotation_interval
+        if ad_sra_enable_rdp is not None:
+            self.ad_sra_enable_rdp = ad_sra_enable_rdp
+        if ad_target_name is not None:
+            self.ad_target_name = ad_target_name
+        if ad_targets_path_template is not None:
+            self.ad_targets_path_template = ad_targets_path_template
+        if ad_user_base_dn is not None:
+            self.ad_user_base_dn = ad_user_base_dn
+        if ad_user_groups is not None:
+            self.ad_user_groups = ad_user_groups
+        if as_ssh_port is not None:
+            self.as_ssh_port = as_ssh_port
         if aws_key is not None:
             self.aws_key = aws_key
         if aws_key_id is not None:
@@ -191,26 +296,559 @@ class GatewayCreateMigration(object):
         if k8s_username is not None:
             self.k8s_username = k8s_username
         self.name = name
-        if op_email is not None:
-            self.op_email = op_email
-        if op_password is not None:
-            self.op_password = op_password
-        if op_secret_key is not None:
-            self.op_secret_key = op_secret_key
-        if op_url is not None:
-            self.op_url = op_url
-        if op_vaults is not None:
-            self.op_vaults = op_vaults
         if protection_key is not None:
             self.protection_key = protection_key
-        if target_location is not None:
-            self.target_location = target_location
+        self.target_location = target_location
         if token is not None:
             self.token = token
         if type is not None:
             self.type = type
         if uid_token is not None:
             self.uid_token = uid_token
+
+    @property
+    def _1password_email(self):
+        """Gets the _1password_email of this GatewayCreateMigration.  # noqa: E501
+
+        1Password user email to connect to the API  # noqa: E501
+
+        :return: The _1password_email of this GatewayCreateMigration.  # noqa: E501
+        :rtype: str
+        """
+        return self.__1password_email
+
+    @_1password_email.setter
+    def _1password_email(self, _1password_email):
+        """Sets the _1password_email of this GatewayCreateMigration.
+
+        1Password user email to connect to the API  # noqa: E501
+
+        :param _1password_email: The _1password_email of this GatewayCreateMigration.  # noqa: E501
+        :type: str
+        """
+
+        self.__1password_email = _1password_email
+
+    @property
+    def _1password_password(self):
+        """Gets the _1password_password of this GatewayCreateMigration.  # noqa: E501
+
+        1Password user password to connect to the API  # noqa: E501
+
+        :return: The _1password_password of this GatewayCreateMigration.  # noqa: E501
+        :rtype: str
+        """
+        return self.__1password_password
+
+    @_1password_password.setter
+    def _1password_password(self, _1password_password):
+        """Sets the _1password_password of this GatewayCreateMigration.
+
+        1Password user password to connect to the API  # noqa: E501
+
+        :param _1password_password: The _1password_password of this GatewayCreateMigration.  # noqa: E501
+        :type: str
+        """
+
+        self.__1password_password = _1password_password
+
+    @property
+    def _1password_secret_key(self):
+        """Gets the _1password_secret_key of this GatewayCreateMigration.  # noqa: E501
+
+        1Password user secret key to connect to the API  # noqa: E501
+
+        :return: The _1password_secret_key of this GatewayCreateMigration.  # noqa: E501
+        :rtype: str
+        """
+        return self.__1password_secret_key
+
+    @_1password_secret_key.setter
+    def _1password_secret_key(self, _1password_secret_key):
+        """Sets the _1password_secret_key of this GatewayCreateMigration.
+
+        1Password user secret key to connect to the API  # noqa: E501
+
+        :param _1password_secret_key: The _1password_secret_key of this GatewayCreateMigration.  # noqa: E501
+        :type: str
+        """
+
+        self.__1password_secret_key = _1password_secret_key
+
+    @property
+    def _1password_url(self):
+        """Gets the _1password_url of this GatewayCreateMigration.  # noqa: E501
+
+        1Password api container url  # noqa: E501
+
+        :return: The _1password_url of this GatewayCreateMigration.  # noqa: E501
+        :rtype: str
+        """
+        return self.__1password_url
+
+    @_1password_url.setter
+    def _1password_url(self, _1password_url):
+        """Sets the _1password_url of this GatewayCreateMigration.
+
+        1Password api container url  # noqa: E501
+
+        :param _1password_url: The _1password_url of this GatewayCreateMigration.  # noqa: E501
+        :type: str
+        """
+
+        self.__1password_url = _1password_url
+
+    @property
+    def _1password_vaults(self):
+        """Gets the _1password_vaults of this GatewayCreateMigration.  # noqa: E501
+
+        1Password list of vault to get the items from  # noqa: E501
+
+        :return: The _1password_vaults of this GatewayCreateMigration.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self.__1password_vaults
+
+    @_1password_vaults.setter
+    def _1password_vaults(self, _1password_vaults):
+        """Sets the _1password_vaults of this GatewayCreateMigration.
+
+        1Password list of vault to get the items from  # noqa: E501
+
+        :param _1password_vaults: The _1password_vaults of this GatewayCreateMigration.  # noqa: E501
+        :type: list[str]
+        """
+
+        self.__1password_vaults = _1password_vaults
+
+    @property
+    def ad_auto_rotate_boolean(self):
+        """Gets the ad_auto_rotate_boolean of this GatewayCreateMigration.  # noqa: E501
+
+
+        :return: The ad_auto_rotate_boolean of this GatewayCreateMigration.  # noqa: E501
+        :rtype: bool
+        """
+        return self._ad_auto_rotate_boolean
+
+    @ad_auto_rotate_boolean.setter
+    def ad_auto_rotate_boolean(self, ad_auto_rotate_boolean):
+        """Sets the ad_auto_rotate_boolean of this GatewayCreateMigration.
+
+
+        :param ad_auto_rotate_boolean: The ad_auto_rotate_boolean of this GatewayCreateMigration.  # noqa: E501
+        :type: bool
+        """
+
+        self._ad_auto_rotate_boolean = ad_auto_rotate_boolean
+
+    @property
+    def ad_discover_local_users_boolean(self):
+        """Gets the ad_discover_local_users_boolean of this GatewayCreateMigration.  # noqa: E501
+
+
+        :return: The ad_discover_local_users_boolean of this GatewayCreateMigration.  # noqa: E501
+        :rtype: bool
+        """
+        return self._ad_discover_local_users_boolean
+
+    @ad_discover_local_users_boolean.setter
+    def ad_discover_local_users_boolean(self, ad_discover_local_users_boolean):
+        """Sets the ad_discover_local_users_boolean of this GatewayCreateMigration.
+
+
+        :param ad_discover_local_users_boolean: The ad_discover_local_users_boolean of this GatewayCreateMigration.  # noqa: E501
+        :type: bool
+        """
+
+        self._ad_discover_local_users_boolean = ad_discover_local_users_boolean
+
+    @property
+    def ad_local_users_ignore_list(self):
+        """Gets the ad_local_users_ignore_list of this GatewayCreateMigration.  # noqa: E501
+
+
+        :return: The ad_local_users_ignore_list of this GatewayCreateMigration.  # noqa: E501
+        :rtype: dict(str, bool)
+        """
+        return self._ad_local_users_ignore_list
+
+    @ad_local_users_ignore_list.setter
+    def ad_local_users_ignore_list(self, ad_local_users_ignore_list):
+        """Sets the ad_local_users_ignore_list of this GatewayCreateMigration.
+
+
+        :param ad_local_users_ignore_list: The ad_local_users_ignore_list of this GatewayCreateMigration.  # noqa: E501
+        :type: dict(str, bool)
+        """
+
+        self._ad_local_users_ignore_list = ad_local_users_ignore_list
+
+    @property
+    def ad_sra_enable_rdp_boolean(self):
+        """Gets the ad_sra_enable_rdp_boolean of this GatewayCreateMigration.  # noqa: E501
+
+
+        :return: The ad_sra_enable_rdp_boolean of this GatewayCreateMigration.  # noqa: E501
+        :rtype: bool
+        """
+        return self._ad_sra_enable_rdp_boolean
+
+    @ad_sra_enable_rdp_boolean.setter
+    def ad_sra_enable_rdp_boolean(self, ad_sra_enable_rdp_boolean):
+        """Sets the ad_sra_enable_rdp_boolean of this GatewayCreateMigration.
+
+
+        :param ad_sra_enable_rdp_boolean: The ad_sra_enable_rdp_boolean of this GatewayCreateMigration.  # noqa: E501
+        :type: bool
+        """
+
+        self._ad_sra_enable_rdp_boolean = ad_sra_enable_rdp_boolean
+
+    @property
+    def ad_auto_rotate(self):
+        """Gets the ad_auto_rotate of this GatewayCreateMigration.  # noqa: E501
+
+        Enable/Disable automatic/recurrent rotation for migrated secrets. Default is false: only manual rotation is allowed for migrated secrets. If set to true, this command should be combined with --ad-rotation-interval and --ad-rotation-hour parameters (Relevant only for Active Directory migration)  # noqa: E501
+
+        :return: The ad_auto_rotate of this GatewayCreateMigration.  # noqa: E501
+        :rtype: str
+        """
+        return self._ad_auto_rotate
+
+    @ad_auto_rotate.setter
+    def ad_auto_rotate(self, ad_auto_rotate):
+        """Sets the ad_auto_rotate of this GatewayCreateMigration.
+
+        Enable/Disable automatic/recurrent rotation for migrated secrets. Default is false: only manual rotation is allowed for migrated secrets. If set to true, this command should be combined with --ad-rotation-interval and --ad-rotation-hour parameters (Relevant only for Active Directory migration)  # noqa: E501
+
+        :param ad_auto_rotate: The ad_auto_rotate of this GatewayCreateMigration.  # noqa: E501
+        :type: str
+        """
+
+        self._ad_auto_rotate = ad_auto_rotate
+
+    @property
+    def ad_computer_base_dn(self):
+        """Gets the ad_computer_base_dn of this GatewayCreateMigration.  # noqa: E501
+
+        Distinguished Name of Computer objects (servers) to search in Active Directory e.g.: CN=Computers,DC=example,DC=com (Relevant only for Active Directory migration)  # noqa: E501
+
+        :return: The ad_computer_base_dn of this GatewayCreateMigration.  # noqa: E501
+        :rtype: str
+        """
+        return self._ad_computer_base_dn
+
+    @ad_computer_base_dn.setter
+    def ad_computer_base_dn(self, ad_computer_base_dn):
+        """Sets the ad_computer_base_dn of this GatewayCreateMigration.
+
+        Distinguished Name of Computer objects (servers) to search in Active Directory e.g.: CN=Computers,DC=example,DC=com (Relevant only for Active Directory migration)  # noqa: E501
+
+        :param ad_computer_base_dn: The ad_computer_base_dn of this GatewayCreateMigration.  # noqa: E501
+        :type: str
+        """
+
+        self._ad_computer_base_dn = ad_computer_base_dn
+
+    @property
+    def ad_discover_local_users(self):
+        """Gets the ad_discover_local_users of this GatewayCreateMigration.  # noqa: E501
+
+        Enable/Disable discovery of local users from each domain server and migrate them as SSH Rotated Secrets. Default is false: only domain users will be migrated. Discovery of local users might require further installation of SSH on the servers, based on the supplied computer base DN. This will be implemented automatically as part of the migration process (Relevant only for Active Directory migration)  # noqa: E501
+
+        :return: The ad_discover_local_users of this GatewayCreateMigration.  # noqa: E501
+        :rtype: str
+        """
+        return self._ad_discover_local_users
+
+    @ad_discover_local_users.setter
+    def ad_discover_local_users(self, ad_discover_local_users):
+        """Sets the ad_discover_local_users of this GatewayCreateMigration.
+
+        Enable/Disable discovery of local users from each domain server and migrate them as SSH Rotated Secrets. Default is false: only domain users will be migrated. Discovery of local users might require further installation of SSH on the servers, based on the supplied computer base DN. This will be implemented automatically as part of the migration process (Relevant only for Active Directory migration)  # noqa: E501
+
+        :param ad_discover_local_users: The ad_discover_local_users of this GatewayCreateMigration.  # noqa: E501
+        :type: str
+        """
+
+        self._ad_discover_local_users = ad_discover_local_users
+
+    @property
+    def ad_domain_name(self):
+        """Gets the ad_domain_name of this GatewayCreateMigration.  # noqa: E501
+
+        Active Directory Domain Name (Relevant only for Active Directory migration)  # noqa: E501
+
+        :return: The ad_domain_name of this GatewayCreateMigration.  # noqa: E501
+        :rtype: str
+        """
+        return self._ad_domain_name
+
+    @ad_domain_name.setter
+    def ad_domain_name(self, ad_domain_name):
+        """Sets the ad_domain_name of this GatewayCreateMigration.
+
+        Active Directory Domain Name (Relevant only for Active Directory migration)  # noqa: E501
+
+        :param ad_domain_name: The ad_domain_name of this GatewayCreateMigration.  # noqa: E501
+        :type: str
+        """
+
+        self._ad_domain_name = ad_domain_name
+
+    @property
+    def ad_domain_users_path_template(self):
+        """Gets the ad_domain_users_path_template of this GatewayCreateMigration.  # noqa: E501
+
+        Path location template for migrating domain users as Rotated Secrets e.g.: .../DomainUsers/{{USERNAME}} (Relevant only for Active Directory migration)  # noqa: E501
+
+        :return: The ad_domain_users_path_template of this GatewayCreateMigration.  # noqa: E501
+        :rtype: str
+        """
+        return self._ad_domain_users_path_template
+
+    @ad_domain_users_path_template.setter
+    def ad_domain_users_path_template(self, ad_domain_users_path_template):
+        """Sets the ad_domain_users_path_template of this GatewayCreateMigration.
+
+        Path location template for migrating domain users as Rotated Secrets e.g.: .../DomainUsers/{{USERNAME}} (Relevant only for Active Directory migration)  # noqa: E501
+
+        :param ad_domain_users_path_template: The ad_domain_users_path_template of this GatewayCreateMigration.  # noqa: E501
+        :type: str
+        """
+
+        self._ad_domain_users_path_template = ad_domain_users_path_template
+
+    @property
+    def ad_local_users_ignore(self):
+        """Gets the ad_local_users_ignore of this GatewayCreateMigration.  # noqa: E501
+
+        Comma-separated list of Local Users which should not be migrated (Relevant only for Active Directory migration)  # noqa: E501
+
+        :return: The ad_local_users_ignore of this GatewayCreateMigration.  # noqa: E501
+        :rtype: str
+        """
+        return self._ad_local_users_ignore
+
+    @ad_local_users_ignore.setter
+    def ad_local_users_ignore(self, ad_local_users_ignore):
+        """Sets the ad_local_users_ignore of this GatewayCreateMigration.
+
+        Comma-separated list of Local Users which should not be migrated (Relevant only for Active Directory migration)  # noqa: E501
+
+        :param ad_local_users_ignore: The ad_local_users_ignore of this GatewayCreateMigration.  # noqa: E501
+        :type: str
+        """
+
+        self._ad_local_users_ignore = ad_local_users_ignore
+
+    @property
+    def ad_local_users_path_template(self):
+        """Gets the ad_local_users_path_template of this GatewayCreateMigration.  # noqa: E501
+
+        Path location template for migrating domain users as Rotated Secrets e.g.: .../LocalUsers/{{COMPUTER_NAME}}/{{USERNAME}} (Relevant only for Active Directory migration)  # noqa: E501
+
+        :return: The ad_local_users_path_template of this GatewayCreateMigration.  # noqa: E501
+        :rtype: str
+        """
+        return self._ad_local_users_path_template
+
+    @ad_local_users_path_template.setter
+    def ad_local_users_path_template(self, ad_local_users_path_template):
+        """Sets the ad_local_users_path_template of this GatewayCreateMigration.
+
+        Path location template for migrating domain users as Rotated Secrets e.g.: .../LocalUsers/{{COMPUTER_NAME}}/{{USERNAME}} (Relevant only for Active Directory migration)  # noqa: E501
+
+        :param ad_local_users_path_template: The ad_local_users_path_template of this GatewayCreateMigration.  # noqa: E501
+        :type: str
+        """
+
+        self._ad_local_users_path_template = ad_local_users_path_template
+
+    @property
+    def ad_rotation_hour(self):
+        """Gets the ad_rotation_hour of this GatewayCreateMigration.  # noqa: E501
+
+        The hour of the scheduled rotation in UTC (Relevant only for Active Directory migration)  # noqa: E501
+
+        :return: The ad_rotation_hour of this GatewayCreateMigration.  # noqa: E501
+        :rtype: int
+        """
+        return self._ad_rotation_hour
+
+    @ad_rotation_hour.setter
+    def ad_rotation_hour(self, ad_rotation_hour):
+        """Sets the ad_rotation_hour of this GatewayCreateMigration.
+
+        The hour of the scheduled rotation in UTC (Relevant only for Active Directory migration)  # noqa: E501
+
+        :param ad_rotation_hour: The ad_rotation_hour of this GatewayCreateMigration.  # noqa: E501
+        :type: int
+        """
+
+        self._ad_rotation_hour = ad_rotation_hour
+
+    @property
+    def ad_rotation_interval(self):
+        """Gets the ad_rotation_interval of this GatewayCreateMigration.  # noqa: E501
+
+        The number of days to wait between every automatic rotation [1-365] (Relevant only for Active Directory migration)  # noqa: E501
+
+        :return: The ad_rotation_interval of this GatewayCreateMigration.  # noqa: E501
+        :rtype: int
+        """
+        return self._ad_rotation_interval
+
+    @ad_rotation_interval.setter
+    def ad_rotation_interval(self, ad_rotation_interval):
+        """Sets the ad_rotation_interval of this GatewayCreateMigration.
+
+        The number of days to wait between every automatic rotation [1-365] (Relevant only for Active Directory migration)  # noqa: E501
+
+        :param ad_rotation_interval: The ad_rotation_interval of this GatewayCreateMigration.  # noqa: E501
+        :type: int
+        """
+
+        self._ad_rotation_interval = ad_rotation_interval
+
+    @property
+    def ad_sra_enable_rdp(self):
+        """Gets the ad_sra_enable_rdp of this GatewayCreateMigration.  # noqa: E501
+
+        Enable/Disable RDP Secure Remote Access for the migrated local users rotated secrets. Default is false: rotated secrets will not be created with SRA (Relevant only for Active Directory migration)  # noqa: E501
+
+        :return: The ad_sra_enable_rdp of this GatewayCreateMigration.  # noqa: E501
+        :rtype: str
+        """
+        return self._ad_sra_enable_rdp
+
+    @ad_sra_enable_rdp.setter
+    def ad_sra_enable_rdp(self, ad_sra_enable_rdp):
+        """Sets the ad_sra_enable_rdp of this GatewayCreateMigration.
+
+        Enable/Disable RDP Secure Remote Access for the migrated local users rotated secrets. Default is false: rotated secrets will not be created with SRA (Relevant only for Active Directory migration)  # noqa: E501
+
+        :param ad_sra_enable_rdp: The ad_sra_enable_rdp of this GatewayCreateMigration.  # noqa: E501
+        :type: str
+        """
+
+        self._ad_sra_enable_rdp = ad_sra_enable_rdp
+
+    @property
+    def ad_target_name(self):
+        """Gets the ad_target_name of this GatewayCreateMigration.  # noqa: E501
+
+        Active Directory LDAP Target Name. Server type should be Active Directory (Relevant only for Active Directory migration)  # noqa: E501
+
+        :return: The ad_target_name of this GatewayCreateMigration.  # noqa: E501
+        :rtype: str
+        """
+        return self._ad_target_name
+
+    @ad_target_name.setter
+    def ad_target_name(self, ad_target_name):
+        """Sets the ad_target_name of this GatewayCreateMigration.
+
+        Active Directory LDAP Target Name. Server type should be Active Directory (Relevant only for Active Directory migration)  # noqa: E501
+
+        :param ad_target_name: The ad_target_name of this GatewayCreateMigration.  # noqa: E501
+        :type: str
+        """
+
+        self._ad_target_name = ad_target_name
+
+    @property
+    def ad_targets_path_template(self):
+        """Gets the ad_targets_path_template of this GatewayCreateMigration.  # noqa: E501
+
+        Path location template for migrating domain servers as SSH Targets e.g.: .../Servers/{{COMPUTER_NAME}} (Relevant only for Active Directory migration)  # noqa: E501
+
+        :return: The ad_targets_path_template of this GatewayCreateMigration.  # noqa: E501
+        :rtype: str
+        """
+        return self._ad_targets_path_template
+
+    @ad_targets_path_template.setter
+    def ad_targets_path_template(self, ad_targets_path_template):
+        """Sets the ad_targets_path_template of this GatewayCreateMigration.
+
+        Path location template for migrating domain servers as SSH Targets e.g.: .../Servers/{{COMPUTER_NAME}} (Relevant only for Active Directory migration)  # noqa: E501
+
+        :param ad_targets_path_template: The ad_targets_path_template of this GatewayCreateMigration.  # noqa: E501
+        :type: str
+        """
+
+        self._ad_targets_path_template = ad_targets_path_template
+
+    @property
+    def ad_user_base_dn(self):
+        """Gets the ad_user_base_dn of this GatewayCreateMigration.  # noqa: E501
+
+        Distinguished Name of User objects to search in Active Directory, e.g.: CN=Users,DC=example,DC=com (Relevant only for Active Directory migration)  # noqa: E501
+
+        :return: The ad_user_base_dn of this GatewayCreateMigration.  # noqa: E501
+        :rtype: str
+        """
+        return self._ad_user_base_dn
+
+    @ad_user_base_dn.setter
+    def ad_user_base_dn(self, ad_user_base_dn):
+        """Sets the ad_user_base_dn of this GatewayCreateMigration.
+
+        Distinguished Name of User objects to search in Active Directory, e.g.: CN=Users,DC=example,DC=com (Relevant only for Active Directory migration)  # noqa: E501
+
+        :param ad_user_base_dn: The ad_user_base_dn of this GatewayCreateMigration.  # noqa: E501
+        :type: str
+        """
+
+        self._ad_user_base_dn = ad_user_base_dn
+
+    @property
+    def ad_user_groups(self):
+        """Gets the ad_user_groups of this GatewayCreateMigration.  # noqa: E501
+
+        Comma-separated list of domain groups from which privileged domain users will be migrated (Relevant only for Active Directory migration)  # noqa: E501
+
+        :return: The ad_user_groups of this GatewayCreateMigration.  # noqa: E501
+        :rtype: str
+        """
+        return self._ad_user_groups
+
+    @ad_user_groups.setter
+    def ad_user_groups(self, ad_user_groups):
+        """Sets the ad_user_groups of this GatewayCreateMigration.
+
+        Comma-separated list of domain groups from which privileged domain users will be migrated (Relevant only for Active Directory migration)  # noqa: E501
+
+        :param ad_user_groups: The ad_user_groups of this GatewayCreateMigration.  # noqa: E501
+        :type: str
+        """
+
+        self._ad_user_groups = ad_user_groups
+
+    @property
+    def as_ssh_port(self):
+        """Gets the as_ssh_port of this GatewayCreateMigration.  # noqa: E501
+
+        Set the SSH Port for further connection to the domain servers. Default is port 22 (Relevant only for Active Directory migration)  # noqa: E501
+
+        :return: The as_ssh_port of this GatewayCreateMigration.  # noqa: E501
+        :rtype: str
+        """
+        return self._as_ssh_port
+
+    @as_ssh_port.setter
+    def as_ssh_port(self, as_ssh_port):
+        """Sets the as_ssh_port of this GatewayCreateMigration.
+
+        Set the SSH Port for further connection to the domain servers. Default is port 22 (Relevant only for Active Directory migration)  # noqa: E501
+
+        :param as_ssh_port: The as_ssh_port of this GatewayCreateMigration.  # noqa: E501
+        :type: str
+        """
+
+        self._as_ssh_port = as_ssh_port
 
     @property
     def aws_key(self):
@@ -744,121 +1382,6 @@ class GatewayCreateMigration(object):
         self._name = name
 
     @property
-    def op_email(self):
-        """Gets the op_email of this GatewayCreateMigration.  # noqa: E501
-
-        1Password user email to connect to the API  # noqa: E501
-
-        :return: The op_email of this GatewayCreateMigration.  # noqa: E501
-        :rtype: str
-        """
-        return self._op_email
-
-    @op_email.setter
-    def op_email(self, op_email):
-        """Sets the op_email of this GatewayCreateMigration.
-
-        1Password user email to connect to the API  # noqa: E501
-
-        :param op_email: The op_email of this GatewayCreateMigration.  # noqa: E501
-        :type: str
-        """
-
-        self._op_email = op_email
-
-    @property
-    def op_password(self):
-        """Gets the op_password of this GatewayCreateMigration.  # noqa: E501
-
-        1Password user password to connect to the API  # noqa: E501
-
-        :return: The op_password of this GatewayCreateMigration.  # noqa: E501
-        :rtype: str
-        """
-        return self._op_password
-
-    @op_password.setter
-    def op_password(self, op_password):
-        """Sets the op_password of this GatewayCreateMigration.
-
-        1Password user password to connect to the API  # noqa: E501
-
-        :param op_password: The op_password of this GatewayCreateMigration.  # noqa: E501
-        :type: str
-        """
-
-        self._op_password = op_password
-
-    @property
-    def op_secret_key(self):
-        """Gets the op_secret_key of this GatewayCreateMigration.  # noqa: E501
-
-        1Password user secret key to connect to the API  # noqa: E501
-
-        :return: The op_secret_key of this GatewayCreateMigration.  # noqa: E501
-        :rtype: str
-        """
-        return self._op_secret_key
-
-    @op_secret_key.setter
-    def op_secret_key(self, op_secret_key):
-        """Sets the op_secret_key of this GatewayCreateMigration.
-
-        1Password user secret key to connect to the API  # noqa: E501
-
-        :param op_secret_key: The op_secret_key of this GatewayCreateMigration.  # noqa: E501
-        :type: str
-        """
-
-        self._op_secret_key = op_secret_key
-
-    @property
-    def op_url(self):
-        """Gets the op_url of this GatewayCreateMigration.  # noqa: E501
-
-        1Password api container url  # noqa: E501
-
-        :return: The op_url of this GatewayCreateMigration.  # noqa: E501
-        :rtype: str
-        """
-        return self._op_url
-
-    @op_url.setter
-    def op_url(self, op_url):
-        """Sets the op_url of this GatewayCreateMigration.
-
-        1Password api container url  # noqa: E501
-
-        :param op_url: The op_url of this GatewayCreateMigration.  # noqa: E501
-        :type: str
-        """
-
-        self._op_url = op_url
-
-    @property
-    def op_vaults(self):
-        """Gets the op_vaults of this GatewayCreateMigration.  # noqa: E501
-
-        1Password list of vault to get the items from  # noqa: E501
-
-        :return: The op_vaults of this GatewayCreateMigration.  # noqa: E501
-        :rtype: list[str]
-        """
-        return self._op_vaults
-
-    @op_vaults.setter
-    def op_vaults(self, op_vaults):
-        """Sets the op_vaults of this GatewayCreateMigration.
-
-        1Password list of vault to get the items from  # noqa: E501
-
-        :param op_vaults: The op_vaults of this GatewayCreateMigration.  # noqa: E501
-        :type: list[str]
-        """
-
-        self._op_vaults = op_vaults
-
-    @property
     def protection_key(self):
         """Gets the protection_key of this GatewayCreateMigration.  # noqa: E501
 
@@ -901,6 +1424,8 @@ class GatewayCreateMigration(object):
         :param target_location: The target_location of this GatewayCreateMigration.  # noqa: E501
         :type: str
         """
+        if self.local_vars_configuration.client_side_validation and target_location is None:  # noqa: E501
+            raise ValueError("Invalid value for `target_location`, must not be `None`")  # noqa: E501
 
         self._target_location = target_location
 
@@ -931,7 +1456,7 @@ class GatewayCreateMigration(object):
     def type(self):
         """Gets the type of this GatewayCreateMigration.  # noqa: E501
 
-        Migration type (hashi/aws/gcp/k8s/azure_kv/1password)  # noqa: E501
+        Migration type (hashi/aws/gcp/k8s/azure_kv/1password/active_directory)  # noqa: E501
 
         :return: The type of this GatewayCreateMigration.  # noqa: E501
         :rtype: str
@@ -942,7 +1467,7 @@ class GatewayCreateMigration(object):
     def type(self, type):
         """Sets the type of this GatewayCreateMigration.
 
-        Migration type (hashi/aws/gcp/k8s/azure_kv/1password)  # noqa: E501
+        Migration type (hashi/aws/gcp/k8s/azure_kv/1password/active_directory)  # noqa: E501
 
         :param type: The type of this GatewayCreateMigration.  # noqa: E501
         :type: str

@@ -105,6 +105,7 @@ Method | HTTP request | Description
 [**gateway_list_allowed_management_access**](V2Api.md#gateway_list_allowed_management_access) | **POST** /gateway-list-allowed-management-access | 
 [**gateway_list_migration**](V2Api.md#gateway_list_migration) | **POST** /gateway-list-migration | 
 [**gateway_list_producers**](V2Api.md#gateway_list_producers) | **POST** /gateway-list-producers | 
+[**gateway_migrate_personal_items**](V2Api.md#gateway_migrate_personal_items) | **POST** /gateway-migrate-personal-items | 
 [**gateway_revoke_tmp_users**](V2Api.md#gateway_revoke_tmp_users) | **POST** /gateway-revoke-producer-tmp-creds | 
 [**gateway_start_producer**](V2Api.md#gateway_start_producer) | **POST** /gateway-start-producer | 
 [**gateway_status_migration**](V2Api.md#gateway_status_migration) | **POST** /gateway-migration-status | 
@@ -6300,6 +6301,66 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | gatewayListProducersResponse wraps response body. |  -  |
+**0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **gateway_migrate_personal_items**
+> GatewayMigratePersonalItemsOutput gateway_migrate_personal_items(body=body)
+
+
+
+### Example
+
+```python
+from __future__ import print_function
+import time
+import akeyless
+from akeyless.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.akeyless.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = akeyless.Configuration(
+    host = "https://api.akeyless.io"
+)
+
+
+# Enter a context with an instance of the API client
+with akeyless.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = akeyless.V2Api(api_client)
+    body = akeyless.GatewayMigratePersonalItems() # GatewayMigratePersonalItems |  (optional)
+
+    try:
+        api_response = api_instance.gateway_migrate_personal_items(body=body)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling V2Api->gateway_migrate_personal_items: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**GatewayMigratePersonalItems**](GatewayMigratePersonalItems.md)|  | [optional] 
+
+### Return type
+
+[**GatewayMigratePersonalItemsOutput**](GatewayMigratePersonalItemsOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | gatewayMigratePersonalItemsResponse wraps response body. |  -  |
 **0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

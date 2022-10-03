@@ -3,15 +3,18 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**access_date** | **datetime** |  | [optional] 
 **attributes** | **dict(str, object)** | this is not \&quot;omitempty\&quot; since an empty value causes no update while an empty map will clear the attributes | [optional] 
 **client_permissions** | **list[str]** |  | [optional] 
 **comment** | **str** |  | [optional] 
+**creation_date** | **datetime** |  | [optional] 
+**credentials_less** | **bool** |  | [optional] 
 **last_version** | **int** |  | [optional] 
+**modification_date** | **datetime** |  | [optional] 
 **protection_key_name** | **str** |  | [optional] 
 **target_id** | **int** |  | [optional] 
 **target_items_assoc** | [**list[TargetItemAssociation]**](TargetItemAssociation.md) |  | [optional] 
 **target_name** | **str** |  | [optional] 
-**target_objects_assoc** | [**list[TargetObjectAssociation]**](TargetObjectAssociation.md) |  | [optional] 
 **target_type** | **str** |  | [optional] 
 **target_versions** | [**list[ItemVersion]**](ItemVersion.md) |  | [optional] 
 **with_customer_fragment** | **bool** |  | [optional] 

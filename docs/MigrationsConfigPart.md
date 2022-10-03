@@ -3,6 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**active_directory_migrations** | [**list[ActiveDirectoryMigration]**](ActiveDirectoryMigration.md) |  | [optional] 
 **aws_secrets_migrations** | [**list[AWSSecretsMigration]**](AWSSecretsMigration.md) |  | [optional] 
 **azure_kv_migrations** | [**list[AzureKeyVaultMigration]**](AzureKeyVaultMigration.md) |  | [optional] 
 **gcp_secrets_migrations** | [**list[GCPSecretsMigration]**](GCPSecretsMigration.md) |  | [optional] 

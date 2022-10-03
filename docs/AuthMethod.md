@@ -3,6 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**access_date** | **datetime** |  | [optional] 
 **access_info** | [**AuthMethodAccessInfo**](AuthMethodAccessInfo.md) |  | [optional] 
 **account_id** | **str** |  | [optional] 
 **auth_method_access_id** | **str** |  | [optional] 
@@ -11,7 +12,6 @@ Name | Type | Description | Notes
 **client_permissions** | **list[str]** |  | [optional] 
 **creation_date** | **datetime** |  | [optional] 
 **modification_date** | **datetime** |  | [optional] 
-**usage_date** | **datetime** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -37,6 +37,7 @@ class GatewayUpdateK8SAuthConfig(object):
         'access_id': 'str',
         'cluster_api_type': 'str',
         'config_encryption_key_name': 'str',
+        'disable_issuer_validation': 'str',
         'json': 'bool',
         'k8s_ca_cert': 'str',
         'k8s_host': 'str',
@@ -56,6 +57,7 @@ class GatewayUpdateK8SAuthConfig(object):
         'access_id': 'access-id',
         'cluster_api_type': 'cluster-api-type',
         'config_encryption_key_name': 'config-encryption-key-name',
+        'disable_issuer_validation': 'disable-issuer-validation',
         'json': 'json',
         'k8s_ca_cert': 'k8s-ca-cert',
         'k8s_host': 'k8s-host',
@@ -71,7 +73,7 @@ class GatewayUpdateK8SAuthConfig(object):
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, access_id=None, cluster_api_type='native_k8s', config_encryption_key_name=None, json=None, k8s_ca_cert=None, k8s_host=None, k8s_issuer=None, name=None, new_name=None, rancher_api_key=None, rancher_cluster_id=None, signing_key=None, token=None, token_exp=300, token_reviewer_jwt=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, access_id=None, cluster_api_type='native_k8s', config_encryption_key_name=None, disable_issuer_validation=None, json=None, k8s_ca_cert=None, k8s_host=None, k8s_issuer=None, name=None, new_name=None, rancher_api_key=None, rancher_cluster_id=None, signing_key=None, token=None, token_exp=300, token_reviewer_jwt=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """GatewayUpdateK8SAuthConfig - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -80,6 +82,7 @@ class GatewayUpdateK8SAuthConfig(object):
         self._access_id = None
         self._cluster_api_type = None
         self._config_encryption_key_name = None
+        self._disable_issuer_validation = None
         self._json = None
         self._k8s_ca_cert = None
         self._k8s_host = None
@@ -100,6 +103,8 @@ class GatewayUpdateK8SAuthConfig(object):
             self.cluster_api_type = cluster_api_type
         if config_encryption_key_name is not None:
             self.config_encryption_key_name = config_encryption_key_name
+        if disable_issuer_validation is not None:
+            self.disable_issuer_validation = disable_issuer_validation
         if json is not None:
             self.json = json
         if k8s_ca_cert is not None:
@@ -193,6 +198,29 @@ class GatewayUpdateK8SAuthConfig(object):
         """
 
         self._config_encryption_key_name = config_encryption_key_name
+
+    @property
+    def disable_issuer_validation(self):
+        """Gets the disable_issuer_validation of this GatewayUpdateK8SAuthConfig.  # noqa: E501
+
+        Disable issuer validation  # noqa: E501
+
+        :return: The disable_issuer_validation of this GatewayUpdateK8SAuthConfig.  # noqa: E501
+        :rtype: str
+        """
+        return self._disable_issuer_validation
+
+    @disable_issuer_validation.setter
+    def disable_issuer_validation(self, disable_issuer_validation):
+        """Sets the disable_issuer_validation of this GatewayUpdateK8SAuthConfig.
+
+        Disable issuer validation  # noqa: E501
+
+        :param disable_issuer_validation: The disable_issuer_validation of this GatewayUpdateK8SAuthConfig.  # noqa: E501
+        :type: str
+        """
+
+        self._disable_issuer_validation = disable_issuer_validation
 
     @property
     def json(self):

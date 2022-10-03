@@ -34,6 +34,7 @@ class AuthMethod(object):
                             and the value is json key in definition.
     """
     openapi_types = {
+        'access_date': 'datetime',
         'access_info': 'AuthMethodAccessInfo',
         'account_id': 'str',
         'auth_method_access_id': 'str',
@@ -41,11 +42,11 @@ class AuthMethod(object):
         'auth_method_roles_assoc': 'list[AuthMethodRoleAssociation]',
         'client_permissions': 'list[str]',
         'creation_date': 'datetime',
-        'modification_date': 'datetime',
-        'usage_date': 'datetime'
+        'modification_date': 'datetime'
     }
 
     attribute_map = {
+        'access_date': 'access_date',
         'access_info': 'access_info',
         'account_id': 'account_id',
         'auth_method_access_id': 'auth_method_access_id',
@@ -53,16 +54,16 @@ class AuthMethod(object):
         'auth_method_roles_assoc': 'auth_method_roles_assoc',
         'client_permissions': 'client_permissions',
         'creation_date': 'creation_date',
-        'modification_date': 'modification_date',
-        'usage_date': 'usage_date'
+        'modification_date': 'modification_date'
     }
 
-    def __init__(self, access_info=None, account_id=None, auth_method_access_id=None, auth_method_name=None, auth_method_roles_assoc=None, client_permissions=None, creation_date=None, modification_date=None, usage_date=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, access_date=None, access_info=None, account_id=None, auth_method_access_id=None, auth_method_name=None, auth_method_roles_assoc=None, client_permissions=None, creation_date=None, modification_date=None, local_vars_configuration=None):  # noqa: E501
         """AuthMethod - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
+        self._access_date = None
         self._access_info = None
         self._account_id = None
         self._auth_method_access_id = None
@@ -71,9 +72,10 @@ class AuthMethod(object):
         self._client_permissions = None
         self._creation_date = None
         self._modification_date = None
-        self._usage_date = None
         self.discriminator = None
 
+        if access_date is not None:
+            self.access_date = access_date
         if access_info is not None:
             self.access_info = access_info
         if account_id is not None:
@@ -90,8 +92,27 @@ class AuthMethod(object):
             self.creation_date = creation_date
         if modification_date is not None:
             self.modification_date = modification_date
-        if usage_date is not None:
-            self.usage_date = usage_date
+
+    @property
+    def access_date(self):
+        """Gets the access_date of this AuthMethod.  # noqa: E501
+
+
+        :return: The access_date of this AuthMethod.  # noqa: E501
+        :rtype: datetime
+        """
+        return self._access_date
+
+    @access_date.setter
+    def access_date(self, access_date):
+        """Sets the access_date of this AuthMethod.
+
+
+        :param access_date: The access_date of this AuthMethod.  # noqa: E501
+        :type: datetime
+        """
+
+        self._access_date = access_date
 
     @property
     def access_info(self):
@@ -260,27 +281,6 @@ class AuthMethod(object):
         """
 
         self._modification_date = modification_date
-
-    @property
-    def usage_date(self):
-        """Gets the usage_date of this AuthMethod.  # noqa: E501
-
-
-        :return: The usage_date of this AuthMethod.  # noqa: E501
-        :rtype: datetime
-        """
-        return self._usage_date
-
-    @usage_date.setter
-    def usage_date(self, usage_date):
-        """Sets the usage_date of this AuthMethod.
-
-
-        :param usage_date: The usage_date of this AuthMethod.  # noqa: E501
-        :type: datetime
-        """
-
-        self._usage_date = usage_date
 
     def to_dict(self):
         """Returns the model properties as a dict"""

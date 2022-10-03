@@ -35,38 +35,48 @@ class TargetItemAssociation(object):
     """
     openapi_types = {
         'assoc_id': 'str',
+        'attributes': 'dict(str, str)',
         'cluster_id': 'int',
         'item_name': 'str',
-        'item_type': 'str'
+        'item_type': 'str',
+        'relationship': 'str'
     }
 
     attribute_map = {
         'assoc_id': 'assoc_id',
+        'attributes': 'attributes',
         'cluster_id': 'cluster_id',
         'item_name': 'item_name',
-        'item_type': 'item_type'
+        'item_type': 'item_type',
+        'relationship': 'relationship'
     }
 
-    def __init__(self, assoc_id=None, cluster_id=None, item_name=None, item_type=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, assoc_id=None, attributes=None, cluster_id=None, item_name=None, item_type=None, relationship=None, local_vars_configuration=None):  # noqa: E501
         """TargetItemAssociation - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._assoc_id = None
+        self._attributes = None
         self._cluster_id = None
         self._item_name = None
         self._item_type = None
+        self._relationship = None
         self.discriminator = None
 
         if assoc_id is not None:
             self.assoc_id = assoc_id
+        if attributes is not None:
+            self.attributes = attributes
         if cluster_id is not None:
             self.cluster_id = cluster_id
         if item_name is not None:
             self.item_name = item_name
         if item_type is not None:
             self.item_type = item_type
+        if relationship is not None:
+            self.relationship = relationship
 
     @property
     def assoc_id(self):
@@ -88,6 +98,27 @@ class TargetItemAssociation(object):
         """
 
         self._assoc_id = assoc_id
+
+    @property
+    def attributes(self):
+        """Gets the attributes of this TargetItemAssociation.  # noqa: E501
+
+
+        :return: The attributes of this TargetItemAssociation.  # noqa: E501
+        :rtype: dict(str, str)
+        """
+        return self._attributes
+
+    @attributes.setter
+    def attributes(self, attributes):
+        """Sets the attributes of this TargetItemAssociation.
+
+
+        :param attributes: The attributes of this TargetItemAssociation.  # noqa: E501
+        :type: dict(str, str)
+        """
+
+        self._attributes = attributes
 
     @property
     def cluster_id(self):
@@ -151,6 +182,27 @@ class TargetItemAssociation(object):
         """
 
         self._item_type = item_type
+
+    @property
+    def relationship(self):
+        """Gets the relationship of this TargetItemAssociation.  # noqa: E501
+
+
+        :return: The relationship of this TargetItemAssociation.  # noqa: E501
+        :rtype: str
+        """
+        return self._relationship
+
+    @relationship.setter
+    def relationship(self, relationship):
+        """Sets the relationship of this TargetItemAssociation.
+
+
+        :param relationship: The relationship of this TargetItemAssociation.  # noqa: E501
+        :type: str
+        """
+
+        self._relationship = relationship
 
     def to_dict(self):
         """Returns the model properties as a dict"""

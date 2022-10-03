@@ -34,63 +34,80 @@ class Target(object):
                             and the value is json key in definition.
     """
     openapi_types = {
+        'access_date': 'datetime',
         'attributes': 'dict(str, object)',
         'client_permissions': 'list[str]',
         'comment': 'str',
+        'creation_date': 'datetime',
+        'credentials_less': 'bool',
         'last_version': 'int',
+        'modification_date': 'datetime',
         'protection_key_name': 'str',
         'target_id': 'int',
         'target_items_assoc': 'list[TargetItemAssociation]',
         'target_name': 'str',
-        'target_objects_assoc': 'list[TargetObjectAssociation]',
         'target_type': 'str',
         'target_versions': 'list[ItemVersion]',
         'with_customer_fragment': 'bool'
     }
 
     attribute_map = {
+        'access_date': 'access_date',
         'attributes': 'attributes',
         'client_permissions': 'client_permissions',
         'comment': 'comment',
+        'creation_date': 'creation_date',
+        'credentials_less': 'credentials_less',
         'last_version': 'last_version',
+        'modification_date': 'modification_date',
         'protection_key_name': 'protection_key_name',
         'target_id': 'target_id',
         'target_items_assoc': 'target_items_assoc',
         'target_name': 'target_name',
-        'target_objects_assoc': 'target_objects_assoc',
         'target_type': 'target_type',
         'target_versions': 'target_versions',
         'with_customer_fragment': 'with_customer_fragment'
     }
 
-    def __init__(self, attributes=None, client_permissions=None, comment=None, last_version=None, protection_key_name=None, target_id=None, target_items_assoc=None, target_name=None, target_objects_assoc=None, target_type=None, target_versions=None, with_customer_fragment=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, access_date=None, attributes=None, client_permissions=None, comment=None, creation_date=None, credentials_less=None, last_version=None, modification_date=None, protection_key_name=None, target_id=None, target_items_assoc=None, target_name=None, target_type=None, target_versions=None, with_customer_fragment=None, local_vars_configuration=None):  # noqa: E501
         """Target - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
+        self._access_date = None
         self._attributes = None
         self._client_permissions = None
         self._comment = None
+        self._creation_date = None
+        self._credentials_less = None
         self._last_version = None
+        self._modification_date = None
         self._protection_key_name = None
         self._target_id = None
         self._target_items_assoc = None
         self._target_name = None
-        self._target_objects_assoc = None
         self._target_type = None
         self._target_versions = None
         self._with_customer_fragment = None
         self.discriminator = None
 
+        if access_date is not None:
+            self.access_date = access_date
         if attributes is not None:
             self.attributes = attributes
         if client_permissions is not None:
             self.client_permissions = client_permissions
         if comment is not None:
             self.comment = comment
+        if creation_date is not None:
+            self.creation_date = creation_date
+        if credentials_less is not None:
+            self.credentials_less = credentials_less
         if last_version is not None:
             self.last_version = last_version
+        if modification_date is not None:
+            self.modification_date = modification_date
         if protection_key_name is not None:
             self.protection_key_name = protection_key_name
         if target_id is not None:
@@ -99,14 +116,33 @@ class Target(object):
             self.target_items_assoc = target_items_assoc
         if target_name is not None:
             self.target_name = target_name
-        if target_objects_assoc is not None:
-            self.target_objects_assoc = target_objects_assoc
         if target_type is not None:
             self.target_type = target_type
         if target_versions is not None:
             self.target_versions = target_versions
         if with_customer_fragment is not None:
             self.with_customer_fragment = with_customer_fragment
+
+    @property
+    def access_date(self):
+        """Gets the access_date of this Target.  # noqa: E501
+
+
+        :return: The access_date of this Target.  # noqa: E501
+        :rtype: datetime
+        """
+        return self._access_date
+
+    @access_date.setter
+    def access_date(self, access_date):
+        """Sets the access_date of this Target.
+
+
+        :param access_date: The access_date of this Target.  # noqa: E501
+        :type: datetime
+        """
+
+        self._access_date = access_date
 
     @property
     def attributes(self):
@@ -174,6 +210,48 @@ class Target(object):
         self._comment = comment
 
     @property
+    def creation_date(self):
+        """Gets the creation_date of this Target.  # noqa: E501
+
+
+        :return: The creation_date of this Target.  # noqa: E501
+        :rtype: datetime
+        """
+        return self._creation_date
+
+    @creation_date.setter
+    def creation_date(self, creation_date):
+        """Sets the creation_date of this Target.
+
+
+        :param creation_date: The creation_date of this Target.  # noqa: E501
+        :type: datetime
+        """
+
+        self._creation_date = creation_date
+
+    @property
+    def credentials_less(self):
+        """Gets the credentials_less of this Target.  # noqa: E501
+
+
+        :return: The credentials_less of this Target.  # noqa: E501
+        :rtype: bool
+        """
+        return self._credentials_less
+
+    @credentials_less.setter
+    def credentials_less(self, credentials_less):
+        """Sets the credentials_less of this Target.
+
+
+        :param credentials_less: The credentials_less of this Target.  # noqa: E501
+        :type: bool
+        """
+
+        self._credentials_less = credentials_less
+
+    @property
     def last_version(self):
         """Gets the last_version of this Target.  # noqa: E501
 
@@ -193,6 +271,27 @@ class Target(object):
         """
 
         self._last_version = last_version
+
+    @property
+    def modification_date(self):
+        """Gets the modification_date of this Target.  # noqa: E501
+
+
+        :return: The modification_date of this Target.  # noqa: E501
+        :rtype: datetime
+        """
+        return self._modification_date
+
+    @modification_date.setter
+    def modification_date(self, modification_date):
+        """Sets the modification_date of this Target.
+
+
+        :param modification_date: The modification_date of this Target.  # noqa: E501
+        :type: datetime
+        """
+
+        self._modification_date = modification_date
 
     @property
     def protection_key_name(self):
@@ -277,27 +376,6 @@ class Target(object):
         """
 
         self._target_name = target_name
-
-    @property
-    def target_objects_assoc(self):
-        """Gets the target_objects_assoc of this Target.  # noqa: E501
-
-
-        :return: The target_objects_assoc of this Target.  # noqa: E501
-        :rtype: list[TargetObjectAssociation]
-        """
-        return self._target_objects_assoc
-
-    @target_objects_assoc.setter
-    def target_objects_assoc(self, target_objects_assoc):
-        """Sets the target_objects_assoc of this Target.
-
-
-        :param target_objects_assoc: The target_objects_assoc of this Target.  # noqa: E501
-        :type: list[TargetObjectAssociation]
-        """
-
-        self._target_objects_assoc = target_objects_assoc
 
     @property
     def target_type(self):

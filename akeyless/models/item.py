@@ -34,6 +34,7 @@ class Item(object):
                             and the value is json key in definition.
     """
     openapi_types = {
+        'access_date': 'datetime',
         'auto_rotate': 'bool',
         'cert_issuer_signer_key_name': 'str',
         'certificate_issue_details': 'CertificateIssueInfo',
@@ -66,11 +67,11 @@ class Item(object):
         'rotation_interval': 'int',
         'shared_by': 'RuleAssigner',
         'target_versions': 'list[TargetItemVersion]',
-        'usage_date': 'datetime',
         'with_customer_fragment': 'bool'
     }
 
     attribute_map = {
+        'access_date': 'access_date',
         'auto_rotate': 'auto_rotate',
         'cert_issuer_signer_key_name': 'cert_issuer_signer_key_name',
         'certificate_issue_details': 'certificate_issue_details',
@@ -103,16 +104,16 @@ class Item(object):
         'rotation_interval': 'rotation_interval',
         'shared_by': 'shared_by',
         'target_versions': 'target_versions',
-        'usage_date': 'usage_date',
         'with_customer_fragment': 'with_customer_fragment'
     }
 
-    def __init__(self, auto_rotate=None, cert_issuer_signer_key_name=None, certificate_issue_details=None, certificates=None, client_permissions=None, creation_date=None, customer_fragment_id=None, delete_protection=None, deletion_date=None, display_id=None, is_enabled=None, item_accessibility=None, item_general_info=None, item_id=None, item_metadata=None, item_name=None, item_size=None, item_state=None, item_sub_type=None, item_tags=None, item_targets_assoc=None, item_type=None, item_versions=None, last_version=None, modification_date=None, next_rotation_date=None, protection_key_name=None, protection_key_type=None, public_value=None, rotation_interval=None, shared_by=None, target_versions=None, usage_date=None, with_customer_fragment=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, access_date=None, auto_rotate=None, cert_issuer_signer_key_name=None, certificate_issue_details=None, certificates=None, client_permissions=None, creation_date=None, customer_fragment_id=None, delete_protection=None, deletion_date=None, display_id=None, is_enabled=None, item_accessibility=None, item_general_info=None, item_id=None, item_metadata=None, item_name=None, item_size=None, item_state=None, item_sub_type=None, item_tags=None, item_targets_assoc=None, item_type=None, item_versions=None, last_version=None, modification_date=None, next_rotation_date=None, protection_key_name=None, protection_key_type=None, public_value=None, rotation_interval=None, shared_by=None, target_versions=None, with_customer_fragment=None, local_vars_configuration=None):  # noqa: E501
         """Item - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
+        self._access_date = None
         self._auto_rotate = None
         self._cert_issuer_signer_key_name = None
         self._certificate_issue_details = None
@@ -145,10 +146,11 @@ class Item(object):
         self._rotation_interval = None
         self._shared_by = None
         self._target_versions = None
-        self._usage_date = None
         self._with_customer_fragment = None
         self.discriminator = None
 
+        if access_date is not None:
+            self.access_date = access_date
         if auto_rotate is not None:
             self.auto_rotate = auto_rotate
         if cert_issuer_signer_key_name is not None:
@@ -213,10 +215,29 @@ class Item(object):
             self.shared_by = shared_by
         if target_versions is not None:
             self.target_versions = target_versions
-        if usage_date is not None:
-            self.usage_date = usage_date
         if with_customer_fragment is not None:
             self.with_customer_fragment = with_customer_fragment
+
+    @property
+    def access_date(self):
+        """Gets the access_date of this Item.  # noqa: E501
+
+
+        :return: The access_date of this Item.  # noqa: E501
+        :rtype: datetime
+        """
+        return self._access_date
+
+    @access_date.setter
+    def access_date(self, access_date):
+        """Sets the access_date of this Item.
+
+
+        :param access_date: The access_date of this Item.  # noqa: E501
+        :type: datetime
+        """
+
+        self._access_date = access_date
 
     @property
     def auto_rotate(self):
@@ -891,27 +912,6 @@ class Item(object):
         """
 
         self._target_versions = target_versions
-
-    @property
-    def usage_date(self):
-        """Gets the usage_date of this Item.  # noqa: E501
-
-
-        :return: The usage_date of this Item.  # noqa: E501
-        :rtype: datetime
-        """
-        return self._usage_date
-
-    @usage_date.setter
-    def usage_date(self, usage_date):
-        """Sets the usage_date of this Item.
-
-
-        :param usage_date: The usage_date of this Item.  # noqa: E501
-        :type: datetime
-        """
-
-        self._usage_date = usage_date
 
     @property
     def with_customer_fragment(self):

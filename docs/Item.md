@@ -3,6 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**access_date** | **datetime** |  | [optional] 
 **auto_rotate** | **bool** |  | [optional] 
 **cert_issuer_signer_key_name** | **str** |  | [optional] 
 **certificate_issue_details** | [**CertificateIssueInfo**](CertificateIssueInfo.md) |  | [optional] 
@@ -35,7 +36,6 @@ Name | Type | Description | Notes
 **rotation_interval** | **int** |  | [optional] 
 **shared_by** | [**RuleAssigner**](RuleAssigner.md) |  | [optional] 
 **target_versions** | [**list[TargetItemVersion]**](TargetItemVersion.md) |  | [optional] 
-**usage_date** | **datetime** |  | [optional] 
 **with_customer_fragment** | **bool** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

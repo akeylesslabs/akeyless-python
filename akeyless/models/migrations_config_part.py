@@ -34,6 +34,7 @@ class MigrationsConfigPart(object):
                             and the value is json key in definition.
     """
     openapi_types = {
+        'active_directory_migrations': 'list[ActiveDirectoryMigration]',
         'aws_secrets_migrations': 'list[AWSSecretsMigration]',
         'azure_kv_migrations': 'list[AzureKeyVaultMigration]',
         'gcp_secrets_migrations': 'list[GCPSecretsMigration]',
@@ -43,6 +44,7 @@ class MigrationsConfigPart(object):
     }
 
     attribute_map = {
+        'active_directory_migrations': 'active_directory_migrations',
         'aws_secrets_migrations': 'aws_secrets_migrations',
         'azure_kv_migrations': 'azure_kv_migrations',
         'gcp_secrets_migrations': 'gcp_secrets_migrations',
@@ -51,12 +53,13 @@ class MigrationsConfigPart(object):
         'one_password_migrations': 'one_password_migrations'
     }
 
-    def __init__(self, aws_secrets_migrations=None, azure_kv_migrations=None, gcp_secrets_migrations=None, hashi_migrations=None, k8s_migrations=None, one_password_migrations=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, active_directory_migrations=None, aws_secrets_migrations=None, azure_kv_migrations=None, gcp_secrets_migrations=None, hashi_migrations=None, k8s_migrations=None, one_password_migrations=None, local_vars_configuration=None):  # noqa: E501
         """MigrationsConfigPart - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
+        self._active_directory_migrations = None
         self._aws_secrets_migrations = None
         self._azure_kv_migrations = None
         self._gcp_secrets_migrations = None
@@ -65,6 +68,8 @@ class MigrationsConfigPart(object):
         self._one_password_migrations = None
         self.discriminator = None
 
+        if active_directory_migrations is not None:
+            self.active_directory_migrations = active_directory_migrations
         if aws_secrets_migrations is not None:
             self.aws_secrets_migrations = aws_secrets_migrations
         if azure_kv_migrations is not None:
@@ -77,6 +82,27 @@ class MigrationsConfigPart(object):
             self.k8s_migrations = k8s_migrations
         if one_password_migrations is not None:
             self.one_password_migrations = one_password_migrations
+
+    @property
+    def active_directory_migrations(self):
+        """Gets the active_directory_migrations of this MigrationsConfigPart.  # noqa: E501
+
+
+        :return: The active_directory_migrations of this MigrationsConfigPart.  # noqa: E501
+        :rtype: list[ActiveDirectoryMigration]
+        """
+        return self._active_directory_migrations
+
+    @active_directory_migrations.setter
+    def active_directory_migrations(self, active_directory_migrations):
+        """Sets the active_directory_migrations of this MigrationsConfigPart.
+
+
+        :param active_directory_migrations: The active_directory_migrations of this MigrationsConfigPart.  # noqa: E501
+        :type: list[ActiveDirectoryMigration]
+        """
+
+        self._active_directory_migrations = active_directory_migrations
 
     @property
     def aws_secrets_migrations(self):
