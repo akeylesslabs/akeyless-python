@@ -34,6 +34,7 @@ class KmipCreateClient(object):
                             and the value is json key in definition.
     """
     openapi_types = {
+        'activate_keys_on_creation': 'str',
         'certificate_ttl': 'int',
         'json': 'bool',
         'name': 'str',
@@ -42,6 +43,7 @@ class KmipCreateClient(object):
     }
 
     attribute_map = {
+        'activate_keys_on_creation': 'activate-keys-on-creation',
         'certificate_ttl': 'certificate-ttl',
         'json': 'json',
         'name': 'name',
@@ -49,12 +51,13 @@ class KmipCreateClient(object):
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, certificate_ttl=None, json=None, name=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, activate_keys_on_creation=None, certificate_ttl=None, json=None, name=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """KmipCreateClient - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
+        self._activate_keys_on_creation = None
         self._certificate_ttl = None
         self._json = None
         self._name = None
@@ -62,6 +65,8 @@ class KmipCreateClient(object):
         self._uid_token = None
         self.discriminator = None
 
+        if activate_keys_on_creation is not None:
+            self.activate_keys_on_creation = activate_keys_on_creation
         if certificate_ttl is not None:
             self.certificate_ttl = certificate_ttl
         if json is not None:
@@ -71,6 +76,27 @@ class KmipCreateClient(object):
             self.token = token
         if uid_token is not None:
             self.uid_token = uid_token
+
+    @property
+    def activate_keys_on_creation(self):
+        """Gets the activate_keys_on_creation of this KmipCreateClient.  # noqa: E501
+
+
+        :return: The activate_keys_on_creation of this KmipCreateClient.  # noqa: E501
+        :rtype: str
+        """
+        return self._activate_keys_on_creation
+
+    @activate_keys_on_creation.setter
+    def activate_keys_on_creation(self, activate_keys_on_creation):
+        """Sets the activate_keys_on_creation of this KmipCreateClient.
+
+
+        :param activate_keys_on_creation: The activate_keys_on_creation of this KmipCreateClient.  # noqa: E501
+        :type: str
+        """
+
+        self._activate_keys_on_creation = activate_keys_on_creation
 
     @property
     def certificate_ttl(self):

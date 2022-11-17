@@ -3,11 +3,13 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**access_date** | **datetime** |  | [optional] 
 **creation_date** | **datetime** |  | [optional] 
 **customer_fragment_id** | **str** |  | [optional] 
 **deletion_date** | **datetime** |  | [optional] 
 **item_version_state** | **str** | ItemState defines the different states an Item can be in | [optional] 
 **latest_version** | **bool** |  | [optional] 
+**modification_date** | **datetime** |  | [optional] 
 **protection_key_name** | **str** |  | [optional] 
 **target_name** | **str** |  | [optional] 
 **version** | **int** |  | [optional] 

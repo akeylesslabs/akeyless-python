@@ -1,14 +1,10 @@
-# MigrationGeneral
+# MockMigration
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **str** |  | [optional] 
-**name** | **str** |  | [optional] 
-**new_name** | **str** |  | [optional] 
-**prefix** | **str** |  | [optional] 
-**protection_key** | **str** |  | [optional] 
-**status** | **str** |  | [optional] 
+**general** | [**MigrationGeneral**](MigrationGeneral.md) |  | [optional] 
+**payload** | [**MockPayload**](MockPayload.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

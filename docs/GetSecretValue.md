@@ -3,10 +3,12 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**ignore_cache_boolean** | **bool** |  | [optional] 
 **accessibility** | **str** | for personal password manager | [optional] 
+**ignore_cache** | **str** | Ignore Cache Retrieve the Secret value without checking the Gateway&#39;s cache. This flag is only relevant when using the RestAPI | [optional] 
 **json** | **bool** | Set output format to JSON | [optional] 
 **names** | **list[str]** | Secret name | 
-**pretty_print** | **bool** |  | [optional] 
+**pretty_print** | **bool** | Print the secret value with json-pretty-print (not relevent to SDK) | [optional] 
 **token** | **str** | Authentication token (see &#x60;/auth&#x60; and &#x60;/configure&#x60;) | [optional] 
 **uid_token** | **str** | The universal identity token, Required only for universal_identity authentication | [optional] 
 **version** | **int** | Secret version | [optional] 

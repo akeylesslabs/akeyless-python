@@ -59,7 +59,7 @@ class CreateDFCKey(object):
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, alg=None, customer_frg_id=None, delete_protection=None, json=None, metadata=None, name=None, split_level=2, tag=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, alg=None, customer_frg_id=None, delete_protection=None, json=None, metadata=None, name=None, split_level=3, tag=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """CreateDFCKey - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()

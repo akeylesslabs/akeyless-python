@@ -43,6 +43,8 @@ class GatewayCreateProducerGcp(object):
         'json': 'bool',
         'name': 'str',
         'producer_encryption_key_name': 'str',
+        'role_binding': 'str',
+        'service_account_type': 'str',
         'tags': 'list[str]',
         'target_name': 'str',
         'token': 'str',
@@ -60,6 +62,8 @@ class GatewayCreateProducerGcp(object):
         'json': 'json',
         'name': 'name',
         'producer_encryption_key_name': 'producer-encryption-key-name',
+        'role_binding': 'role-binding',
+        'service_account_type': 'service-account-type',
         'tags': 'tags',
         'target_name': 'target-name',
         'token': 'token',
@@ -67,7 +71,7 @@ class GatewayCreateProducerGcp(object):
         'user_ttl': 'user-ttl'
     }
 
-    def __init__(self, delete_protection=None, gcp_cred_type=None, gcp_key=None, gcp_key_algo=None, gcp_sa_email=None, gcp_token_scopes=None, json=None, name=None, producer_encryption_key_name=None, tags=None, target_name=None, token=None, uid_token=None, user_ttl='60m', local_vars_configuration=None):  # noqa: E501
+    def __init__(self, delete_protection=None, gcp_cred_type=None, gcp_key=None, gcp_key_algo=None, gcp_sa_email=None, gcp_token_scopes=None, json=None, name=None, producer_encryption_key_name=None, role_binding=None, service_account_type='fixed', tags=None, target_name=None, token=None, uid_token=None, user_ttl='60m', local_vars_configuration=None):  # noqa: E501
         """GatewayCreateProducerGcp - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -82,6 +86,8 @@ class GatewayCreateProducerGcp(object):
         self._json = None
         self._name = None
         self._producer_encryption_key_name = None
+        self._role_binding = None
+        self._service_account_type = None
         self._tags = None
         self._target_name = None
         self._token = None
@@ -106,6 +112,9 @@ class GatewayCreateProducerGcp(object):
         self.name = name
         if producer_encryption_key_name is not None:
             self.producer_encryption_key_name = producer_encryption_key_name
+        if role_binding is not None:
+            self.role_binding = role_binding
+        self.service_account_type = service_account_type
         if tags is not None:
             self.tags = tags
         if target_name is not None:
@@ -211,7 +220,7 @@ class GatewayCreateProducerGcp(object):
     def gcp_sa_email(self):
         """Gets the gcp_sa_email of this GatewayCreateProducerGcp.  # noqa: E501
 
-        GCP service account email  # noqa: E501
+        The email of the fixed service acocunt to generate keys or tokens for. (revelant for service-account-type=fixed)  # noqa: E501
 
         :return: The gcp_sa_email of this GatewayCreateProducerGcp.  # noqa: E501
         :rtype: str
@@ -222,7 +231,7 @@ class GatewayCreateProducerGcp(object):
     def gcp_sa_email(self, gcp_sa_email):
         """Sets the gcp_sa_email of this GatewayCreateProducerGcp.
 
-        GCP service account email  # noqa: E501
+        The email of the fixed service acocunt to generate keys or tokens for. (revelant for service-account-type=fixed)  # noqa: E501
 
         :param gcp_sa_email: The gcp_sa_email of this GatewayCreateProducerGcp.  # noqa: E501
         :type: str
@@ -323,6 +332,54 @@ class GatewayCreateProducerGcp(object):
         """
 
         self._producer_encryption_key_name = producer_encryption_key_name
+
+    @property
+    def role_binding(self):
+        """Gets the role_binding of this GatewayCreateProducerGcp.  # noqa: E501
+
+        Role binding definitions in json format  # noqa: E501
+
+        :return: The role_binding of this GatewayCreateProducerGcp.  # noqa: E501
+        :rtype: str
+        """
+        return self._role_binding
+
+    @role_binding.setter
+    def role_binding(self, role_binding):
+        """Sets the role_binding of this GatewayCreateProducerGcp.
+
+        Role binding definitions in json format  # noqa: E501
+
+        :param role_binding: The role_binding of this GatewayCreateProducerGcp.  # noqa: E501
+        :type: str
+        """
+
+        self._role_binding = role_binding
+
+    @property
+    def service_account_type(self):
+        """Gets the service_account_type of this GatewayCreateProducerGcp.  # noqa: E501
+
+        The type of the gcp dynamic secret. Options[fixed, dynamic]  # noqa: E501
+
+        :return: The service_account_type of this GatewayCreateProducerGcp.  # noqa: E501
+        :rtype: str
+        """
+        return self._service_account_type
+
+    @service_account_type.setter
+    def service_account_type(self, service_account_type):
+        """Sets the service_account_type of this GatewayCreateProducerGcp.
+
+        The type of the gcp dynamic secret. Options[fixed, dynamic]  # noqa: E501
+
+        :param service_account_type: The service_account_type of this GatewayCreateProducerGcp.  # noqa: E501
+        :type: str
+        """
+        if self.local_vars_configuration.client_side_validation and service_account_type is None:  # noqa: E501
+            raise ValueError("Invalid value for `service_account_type`, must not be `None`")  # noqa: E501
+
+        self._service_account_type = service_account_type
 
     @property
     def tags(self):

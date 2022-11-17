@@ -37,6 +37,7 @@ class BastionListEntry(object):
         'access_id': 'str',
         'allowed_access_ids': 'list[str]',
         'allowed_urls': 'list[str]',
+        'allowed_urls_per_instance': 'dict(str, list[str])',
         'cluster_name': 'str',
         'display_name': 'str',
         'last_report': 'datetime'
@@ -46,12 +47,13 @@ class BastionListEntry(object):
         'access_id': 'access_id',
         'allowed_access_ids': 'allowed_access_ids',
         'allowed_urls': 'allowed_urls',
+        'allowed_urls_per_instance': 'allowed_urls_per_instance',
         'cluster_name': 'cluster_name',
         'display_name': 'display_name',
         'last_report': 'last_report'
     }
 
-    def __init__(self, access_id=None, allowed_access_ids=None, allowed_urls=None, cluster_name=None, display_name=None, last_report=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, access_id=None, allowed_access_ids=None, allowed_urls=None, allowed_urls_per_instance=None, cluster_name=None, display_name=None, last_report=None, local_vars_configuration=None):  # noqa: E501
         """BastionListEntry - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -60,6 +62,7 @@ class BastionListEntry(object):
         self._access_id = None
         self._allowed_access_ids = None
         self._allowed_urls = None
+        self._allowed_urls_per_instance = None
         self._cluster_name = None
         self._display_name = None
         self._last_report = None
@@ -71,6 +74,8 @@ class BastionListEntry(object):
             self.allowed_access_ids = allowed_access_ids
         if allowed_urls is not None:
             self.allowed_urls = allowed_urls
+        if allowed_urls_per_instance is not None:
+            self.allowed_urls_per_instance = allowed_urls_per_instance
         if cluster_name is not None:
             self.cluster_name = cluster_name
         if display_name is not None:
@@ -140,6 +145,27 @@ class BastionListEntry(object):
         """
 
         self._allowed_urls = allowed_urls
+
+    @property
+    def allowed_urls_per_instance(self):
+        """Gets the allowed_urls_per_instance of this BastionListEntry.  # noqa: E501
+
+
+        :return: The allowed_urls_per_instance of this BastionListEntry.  # noqa: E501
+        :rtype: dict(str, list[str])
+        """
+        return self._allowed_urls_per_instance
+
+    @allowed_urls_per_instance.setter
+    def allowed_urls_per_instance(self, allowed_urls_per_instance):
+        """Sets the allowed_urls_per_instance of this BastionListEntry.
+
+
+        :param allowed_urls_per_instance: The allowed_urls_per_instance of this BastionListEntry.  # noqa: E501
+        :type: dict(str, list[str])
+        """
+
+        self._allowed_urls_per_instance = allowed_urls_per_instance
 
     @property
     def cluster_name(self):

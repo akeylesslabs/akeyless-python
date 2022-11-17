@@ -38,7 +38,8 @@ class MigrationGeneral(object):
         'name': 'str',
         'new_name': 'str',
         'prefix': 'str',
-        'protection_key': 'str'
+        'protection_key': 'str',
+        'status': 'str'
     }
 
     attribute_map = {
@@ -46,10 +47,11 @@ class MigrationGeneral(object):
         'name': 'name',
         'new_name': 'new_name',
         'prefix': 'prefix',
-        'protection_key': 'protection_key'
+        'protection_key': 'protection_key',
+        'status': 'status'
     }
 
-    def __init__(self, id=None, name=None, new_name=None, prefix=None, protection_key=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, id=None, name=None, new_name=None, prefix=None, protection_key=None, status=None, local_vars_configuration=None):  # noqa: E501
         """MigrationGeneral - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -60,6 +62,7 @@ class MigrationGeneral(object):
         self._new_name = None
         self._prefix = None
         self._protection_key = None
+        self._status = None
         self.discriminator = None
 
         if id is not None:
@@ -72,6 +75,8 @@ class MigrationGeneral(object):
             self.prefix = prefix
         if protection_key is not None:
             self.protection_key = protection_key
+        if status is not None:
+            self.status = status
 
     @property
     def id(self):
@@ -177,6 +182,27 @@ class MigrationGeneral(object):
         """
 
         self._protection_key = protection_key
+
+    @property
+    def status(self):
+        """Gets the status of this MigrationGeneral.  # noqa: E501
+
+
+        :return: The status of this MigrationGeneral.  # noqa: E501
+        :rtype: str
+        """
+        return self._status
+
+    @status.setter
+    def status(self, status):
+        """Sets the status of this MigrationGeneral.
+
+
+        :param status: The status of this MigrationGeneral.  # noqa: E501
+        :type: str
+        """
+
+        self._status = status
 
     def to_dict(self):
         """Returns the model properties as a dict"""

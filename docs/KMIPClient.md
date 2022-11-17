@@ -3,6 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**activate_keys_on_creation** | **bool** |  | [optional] 
 **certificate_issue_date** | **datetime** |  | [optional] 
 **certificate_ttl_in_seconds** | **int** |  | [optional] 
 **id** | **str** |  | [optional] 

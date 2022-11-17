@@ -34,7 +34,9 @@ class GetSecretValue(object):
                             and the value is json key in definition.
     """
     openapi_types = {
+        'ignore_cache_boolean': 'bool',
         'accessibility': 'str',
+        'ignore_cache': 'str',
         'json': 'bool',
         'names': 'list[str]',
         'pretty_print': 'bool',
@@ -44,7 +46,9 @@ class GetSecretValue(object):
     }
 
     attribute_map = {
+        'ignore_cache_boolean': 'IgnoreCacheBoolean',
         'accessibility': 'accessibility',
+        'ignore_cache': 'ignore-cache',
         'json': 'json',
         'names': 'names',
         'pretty_print': 'pretty-print',
@@ -53,13 +57,15 @@ class GetSecretValue(object):
         'version': 'version'
     }
 
-    def __init__(self, accessibility=None, json=None, names=None, pretty_print=None, token=None, uid_token=None, version=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, ignore_cache_boolean=None, accessibility=None, ignore_cache=None, json=None, names=None, pretty_print=None, token=None, uid_token=None, version=None, local_vars_configuration=None):  # noqa: E501
         """GetSecretValue - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
+        self._ignore_cache_boolean = None
         self._accessibility = None
+        self._ignore_cache = None
         self._json = None
         self._names = None
         self._pretty_print = None
@@ -68,8 +74,12 @@ class GetSecretValue(object):
         self._version = None
         self.discriminator = None
 
+        if ignore_cache_boolean is not None:
+            self.ignore_cache_boolean = ignore_cache_boolean
         if accessibility is not None:
             self.accessibility = accessibility
+        if ignore_cache is not None:
+            self.ignore_cache = ignore_cache
         if json is not None:
             self.json = json
         self.names = names
@@ -81,6 +91,27 @@ class GetSecretValue(object):
             self.uid_token = uid_token
         if version is not None:
             self.version = version
+
+    @property
+    def ignore_cache_boolean(self):
+        """Gets the ignore_cache_boolean of this GetSecretValue.  # noqa: E501
+
+
+        :return: The ignore_cache_boolean of this GetSecretValue.  # noqa: E501
+        :rtype: bool
+        """
+        return self._ignore_cache_boolean
+
+    @ignore_cache_boolean.setter
+    def ignore_cache_boolean(self, ignore_cache_boolean):
+        """Sets the ignore_cache_boolean of this GetSecretValue.
+
+
+        :param ignore_cache_boolean: The ignore_cache_boolean of this GetSecretValue.  # noqa: E501
+        :type: bool
+        """
+
+        self._ignore_cache_boolean = ignore_cache_boolean
 
     @property
     def accessibility(self):
@@ -104,6 +135,29 @@ class GetSecretValue(object):
         """
 
         self._accessibility = accessibility
+
+    @property
+    def ignore_cache(self):
+        """Gets the ignore_cache of this GetSecretValue.  # noqa: E501
+
+        Ignore Cache Retrieve the Secret value without checking the Gateway's cache. This flag is only relevant when using the RestAPI  # noqa: E501
+
+        :return: The ignore_cache of this GetSecretValue.  # noqa: E501
+        :rtype: str
+        """
+        return self._ignore_cache
+
+    @ignore_cache.setter
+    def ignore_cache(self, ignore_cache):
+        """Sets the ignore_cache of this GetSecretValue.
+
+        Ignore Cache Retrieve the Secret value without checking the Gateway's cache. This flag is only relevant when using the RestAPI  # noqa: E501
+
+        :param ignore_cache: The ignore_cache of this GetSecretValue.  # noqa: E501
+        :type: str
+        """
+
+        self._ignore_cache = ignore_cache
 
     @property
     def json(self):
@@ -157,6 +211,7 @@ class GetSecretValue(object):
     def pretty_print(self):
         """Gets the pretty_print of this GetSecretValue.  # noqa: E501
 
+        Print the secret value with json-pretty-print (not relevent to SDK)  # noqa: E501
 
         :return: The pretty_print of this GetSecretValue.  # noqa: E501
         :rtype: bool
@@ -167,6 +222,7 @@ class GetSecretValue(object):
     def pretty_print(self, pretty_print):
         """Sets the pretty_print of this GetSecretValue.
 
+        Print the secret value with json-pretty-print (not relevent to SDK)  # noqa: E501
 
         :param pretty_print: The pretty_print of this GetSecretValue.  # noqa: E501
         :type: bool

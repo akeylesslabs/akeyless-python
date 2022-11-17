@@ -14858,7 +14858,7 @@ class V2Api(object):
         auth_settings = []  # noqa: E501
 
         return self.api_client.call_api(
-            '/gateway-update-producer-k8s-native', 'POST',
+            '/gateway-update-producer-k8s', 'POST',
             path_params,
             query_params,
             header_params,

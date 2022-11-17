@@ -34,39 +34,85 @@ class PathRule(object):
                             and the value is json key in definition.
     """
     openapi_types = {
+        'assigners': 'list[RuleAssigner]',
         'capabilities': 'list[str]',
+        'is_limit_access': 'bool',
+        'number_of_access_used': 'int',
+        'number_of_allowed_access': 'int',
         'path': 'str',
+        'start_time': 'int',
         'ttl': 'int',
         'type': 'str'
     }
 
     attribute_map = {
+        'assigners': 'assigners',
         'capabilities': 'capabilities',
+        'is_limit_access': 'is_limit_access',
+        'number_of_access_used': 'number_of_access_used',
+        'number_of_allowed_access': 'number_of_allowed_access',
         'path': 'path',
+        'start_time': 'start_time',
         'ttl': 'ttl',
         'type': 'type'
     }
 
-    def __init__(self, capabilities=None, path=None, ttl=None, type=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, assigners=None, capabilities=None, is_limit_access=None, number_of_access_used=None, number_of_allowed_access=None, path=None, start_time=None, ttl=None, type=None, local_vars_configuration=None):  # noqa: E501
         """PathRule - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
+        self._assigners = None
         self._capabilities = None
+        self._is_limit_access = None
+        self._number_of_access_used = None
+        self._number_of_allowed_access = None
         self._path = None
+        self._start_time = None
         self._ttl = None
         self._type = None
         self.discriminator = None
 
+        if assigners is not None:
+            self.assigners = assigners
         if capabilities is not None:
             self.capabilities = capabilities
+        if is_limit_access is not None:
+            self.is_limit_access = is_limit_access
+        if number_of_access_used is not None:
+            self.number_of_access_used = number_of_access_used
+        if number_of_allowed_access is not None:
+            self.number_of_allowed_access = number_of_allowed_access
         if path is not None:
             self.path = path
+        if start_time is not None:
+            self.start_time = start_time
         if ttl is not None:
             self.ttl = ttl
         if type is not None:
             self.type = type
+
+    @property
+    def assigners(self):
+        """Gets the assigners of this PathRule.  # noqa: E501
+
+
+        :return: The assigners of this PathRule.  # noqa: E501
+        :rtype: list[RuleAssigner]
+        """
+        return self._assigners
+
+    @assigners.setter
+    def assigners(self, assigners):
+        """Sets the assigners of this PathRule.
+
+
+        :param assigners: The assigners of this PathRule.  # noqa: E501
+        :type: list[RuleAssigner]
+        """
+
+        self._assigners = assigners
 
     @property
     def capabilities(self):
@@ -92,6 +138,71 @@ class PathRule(object):
         self._capabilities = capabilities
 
     @property
+    def is_limit_access(self):
+        """Gets the is_limit_access of this PathRule.  # noqa: E501
+
+        flag that indicate that this rule is allowed to be access RemainingAccess of times.  # noqa: E501
+
+        :return: The is_limit_access of this PathRule.  # noqa: E501
+        :rtype: bool
+        """
+        return self._is_limit_access
+
+    @is_limit_access.setter
+    def is_limit_access(self, is_limit_access):
+        """Sets the is_limit_access of this PathRule.
+
+        flag that indicate that this rule is allowed to be access RemainingAccess of times.  # noqa: E501
+
+        :param is_limit_access: The is_limit_access of this PathRule.  # noqa: E501
+        :type: bool
+        """
+
+        self._is_limit_access = is_limit_access
+
+    @property
+    def number_of_access_used(self):
+        """Gets the number_of_access_used of this PathRule.  # noqa: E501
+
+
+        :return: The number_of_access_used of this PathRule.  # noqa: E501
+        :rtype: int
+        """
+        return self._number_of_access_used
+
+    @number_of_access_used.setter
+    def number_of_access_used(self, number_of_access_used):
+        """Sets the number_of_access_used of this PathRule.
+
+
+        :param number_of_access_used: The number_of_access_used of this PathRule.  # noqa: E501
+        :type: int
+        """
+
+        self._number_of_access_used = number_of_access_used
+
+    @property
+    def number_of_allowed_access(self):
+        """Gets the number_of_allowed_access of this PathRule.  # noqa: E501
+
+
+        :return: The number_of_allowed_access of this PathRule.  # noqa: E501
+        :rtype: int
+        """
+        return self._number_of_allowed_access
+
+    @number_of_allowed_access.setter
+    def number_of_allowed_access(self, number_of_allowed_access):
+        """Sets the number_of_allowed_access of this PathRule.
+
+
+        :param number_of_allowed_access: The number_of_allowed_access of this PathRule.  # noqa: E501
+        :type: int
+        """
+
+        self._number_of_allowed_access = number_of_allowed_access
+
+    @property
     def path(self):
         """Gets the path of this PathRule.  # noqa: E501
 
@@ -113,6 +224,27 @@ class PathRule(object):
         """
 
         self._path = path
+
+    @property
+    def start_time(self):
+        """Gets the start_time of this PathRule.  # noqa: E501
+
+
+        :return: The start_time of this PathRule.  # noqa: E501
+        :rtype: int
+        """
+        return self._start_time
+
+    @start_time.setter
+    def start_time(self, start_time):
+        """Sets the start_time of this PathRule.
+
+
+        :param start_time: The start_time of this PathRule.  # noqa: E501
+        :type: int
+        """
+
+        self._start_time = start_time
 
     @property
     def ttl(self):

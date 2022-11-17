@@ -34,6 +34,7 @@ class KMIPClient(object):
                             and the value is json key in definition.
     """
     openapi_types = {
+        'activate_keys_on_creation': 'bool',
         'certificate_issue_date': 'datetime',
         'certificate_ttl_in_seconds': 'int',
         'id': 'str',
@@ -42,6 +43,7 @@ class KMIPClient(object):
     }
 
     attribute_map = {
+        'activate_keys_on_creation': 'activate_keys_on_creation',
         'certificate_issue_date': 'certificate_issue_date',
         'certificate_ttl_in_seconds': 'certificate_ttl_in_seconds',
         'id': 'id',
@@ -49,12 +51,13 @@ class KMIPClient(object):
         'rules': 'rules'
     }
 
-    def __init__(self, certificate_issue_date=None, certificate_ttl_in_seconds=None, id=None, name=None, rules=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, activate_keys_on_creation=None, certificate_issue_date=None, certificate_ttl_in_seconds=None, id=None, name=None, rules=None, local_vars_configuration=None):  # noqa: E501
         """KMIPClient - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
+        self._activate_keys_on_creation = None
         self._certificate_issue_date = None
         self._certificate_ttl_in_seconds = None
         self._id = None
@@ -62,6 +65,8 @@ class KMIPClient(object):
         self._rules = None
         self.discriminator = None
 
+        if activate_keys_on_creation is not None:
+            self.activate_keys_on_creation = activate_keys_on_creation
         if certificate_issue_date is not None:
             self.certificate_issue_date = certificate_issue_date
         if certificate_ttl_in_seconds is not None:
@@ -72,6 +77,27 @@ class KMIPClient(object):
             self.name = name
         if rules is not None:
             self.rules = rules
+
+    @property
+    def activate_keys_on_creation(self):
+        """Gets the activate_keys_on_creation of this KMIPClient.  # noqa: E501
+
+
+        :return: The activate_keys_on_creation of this KMIPClient.  # noqa: E501
+        :rtype: bool
+        """
+        return self._activate_keys_on_creation
+
+    @activate_keys_on_creation.setter
+    def activate_keys_on_creation(self, activate_keys_on_creation):
+        """Sets the activate_keys_on_creation of this KMIPClient.
+
+
+        :param activate_keys_on_creation: The activate_keys_on_creation of this KMIPClient.  # noqa: E501
+        :type: bool
+        """
+
+        self._activate_keys_on_creation = activate_keys_on_creation
 
     @property
     def certificate_issue_date(self):

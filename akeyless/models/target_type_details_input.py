@@ -1327,6 +1327,7 @@ class TargetTypeDetailsInput(object):
     def gcp_service_account_email(self):
         """Gets the gcp_service_account_email of this TargetTypeDetailsInput.  # noqa: E501
 
+        deprecated  # noqa: E501
 
         :return: The gcp_service_account_email of this TargetTypeDetailsInput.  # noqa: E501
         :rtype: str
@@ -1337,6 +1338,7 @@ class TargetTypeDetailsInput(object):
     def gcp_service_account_email(self, gcp_service_account_email):
         """Sets the gcp_service_account_email of this TargetTypeDetailsInput.
 
+        deprecated  # noqa: E501
 
         :param gcp_service_account_email: The gcp_service_account_email of this TargetTypeDetailsInput.  # noqa: E501
         :type: str

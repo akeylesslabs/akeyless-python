@@ -35,26 +35,31 @@ class AccountGeneralSettings(object):
     """
     openapi_types = {
         'data_protection_section': 'DataProtectionSection',
+        'enable_request_for_access': 'bool',
         'password_policy': 'PasswordPolicyInfo'
     }
 
     attribute_map = {
         'data_protection_section': 'data_protection_section',
+        'enable_request_for_access': 'enable_request_for_access',
         'password_policy': 'password_policy'
     }
 
-    def __init__(self, data_protection_section=None, password_policy=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, data_protection_section=None, enable_request_for_access=None, password_policy=None, local_vars_configuration=None):  # noqa: E501
         """AccountGeneralSettings - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._data_protection_section = None
+        self._enable_request_for_access = None
         self._password_policy = None
         self.discriminator = None
 
         if data_protection_section is not None:
             self.data_protection_section = data_protection_section
+        if enable_request_for_access is not None:
+            self.enable_request_for_access = enable_request_for_access
         if password_policy is not None:
             self.password_policy = password_policy
 
@@ -78,6 +83,27 @@ class AccountGeneralSettings(object):
         """
 
         self._data_protection_section = data_protection_section
+
+    @property
+    def enable_request_for_access(self):
+        """Gets the enable_request_for_access of this AccountGeneralSettings.  # noqa: E501
+
+
+        :return: The enable_request_for_access of this AccountGeneralSettings.  # noqa: E501
+        :rtype: bool
+        """
+        return self._enable_request_for_access
+
+    @enable_request_for_access.setter
+    def enable_request_for_access(self, enable_request_for_access):
+        """Sets the enable_request_for_access of this AccountGeneralSettings.
+
+
+        :param enable_request_for_access: The enable_request_for_access of this AccountGeneralSettings.  # noqa: E501
+        :type: bool
+        """
+
+        self._enable_request_for_access = enable_request_for_access
 
     @property
     def password_policy(self):

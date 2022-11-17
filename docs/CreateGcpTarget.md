@@ -5,7 +5,6 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **comment** | **str** | Comment about the target | [optional] 
 **gcp_key** | **str** | Base64-encoded service account private key text | [optional] 
-**gcp_sa_email** | **str** | GCP service account email | [optional] 
 **json** | **bool** | Set output format to JSON | [optional] 
 **key** | **str** | The name of a key that used to encrypt the target secret value (if empty, the account default protectionKey key will be used) | [optional] 
 **name** | **str** | Target name | 

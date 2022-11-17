@@ -35,6 +35,7 @@ class ItemTargetAssociation(object):
     """
     openapi_types = {
         'assoc_id': 'str',
+        'attributes': 'dict(str, str)',
         'target_id': 'int',
         'target_name': 'str',
         'target_type': 'str'
@@ -42,18 +43,20 @@ class ItemTargetAssociation(object):
 
     attribute_map = {
         'assoc_id': 'assoc_id',
+        'attributes': 'attributes',
         'target_id': 'target_id',
         'target_name': 'target_name',
         'target_type': 'target_type'
     }
 
-    def __init__(self, assoc_id=None, target_id=None, target_name=None, target_type=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, assoc_id=None, attributes=None, target_id=None, target_name=None, target_type=None, local_vars_configuration=None):  # noqa: E501
         """ItemTargetAssociation - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._assoc_id = None
+        self._attributes = None
         self._target_id = None
         self._target_name = None
         self._target_type = None
@@ -61,6 +64,8 @@ class ItemTargetAssociation(object):
 
         if assoc_id is not None:
             self.assoc_id = assoc_id
+        if attributes is not None:
+            self.attributes = attributes
         if target_id is not None:
             self.target_id = target_id
         if target_name is not None:
@@ -88,6 +93,27 @@ class ItemTargetAssociation(object):
         """
 
         self._assoc_id = assoc_id
+
+    @property
+    def attributes(self):
+        """Gets the attributes of this ItemTargetAssociation.  # noqa: E501
+
+
+        :return: The attributes of this ItemTargetAssociation.  # noqa: E501
+        :rtype: dict(str, str)
+        """
+        return self._attributes
+
+    @attributes.setter
+    def attributes(self, attributes):
+        """Sets the attributes of this ItemTargetAssociation.
+
+
+        :param attributes: The attributes of this ItemTargetAssociation.  # noqa: E501
+        :type: dict(str, str)
+        """
+
+        self._attributes = attributes
 
     @property
     def target_id(self):

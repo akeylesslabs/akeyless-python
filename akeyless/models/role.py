@@ -34,44 +34,80 @@ class Role(object):
                             and the value is json key in definition.
     """
     openapi_types = {
+        'access_date': 'datetime',
         'client_permissions': 'list[str]',
         'comment': 'str',
+        'creation_date': 'datetime',
+        'modification_date': 'datetime',
         'role_auth_methods_assoc': 'list[RoleAuthMethodAssociation]',
         'role_name': 'str',
         'rules': 'Rules'
     }
 
     attribute_map = {
+        'access_date': 'access_date',
         'client_permissions': 'client_permissions',
         'comment': 'comment',
+        'creation_date': 'creation_date',
+        'modification_date': 'modification_date',
         'role_auth_methods_assoc': 'role_auth_methods_assoc',
         'role_name': 'role_name',
         'rules': 'rules'
     }
 
-    def __init__(self, client_permissions=None, comment=None, role_auth_methods_assoc=None, role_name=None, rules=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, access_date=None, client_permissions=None, comment=None, creation_date=None, modification_date=None, role_auth_methods_assoc=None, role_name=None, rules=None, local_vars_configuration=None):  # noqa: E501
         """Role - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
+        self._access_date = None
         self._client_permissions = None
         self._comment = None
+        self._creation_date = None
+        self._modification_date = None
         self._role_auth_methods_assoc = None
         self._role_name = None
         self._rules = None
         self.discriminator = None
 
+        if access_date is not None:
+            self.access_date = access_date
         if client_permissions is not None:
             self.client_permissions = client_permissions
         if comment is not None:
             self.comment = comment
+        if creation_date is not None:
+            self.creation_date = creation_date
+        if modification_date is not None:
+            self.modification_date = modification_date
         if role_auth_methods_assoc is not None:
             self.role_auth_methods_assoc = role_auth_methods_assoc
         if role_name is not None:
             self.role_name = role_name
         if rules is not None:
             self.rules = rules
+
+    @property
+    def access_date(self):
+        """Gets the access_date of this Role.  # noqa: E501
+
+
+        :return: The access_date of this Role.  # noqa: E501
+        :rtype: datetime
+        """
+        return self._access_date
+
+    @access_date.setter
+    def access_date(self, access_date):
+        """Sets the access_date of this Role.
+
+
+        :param access_date: The access_date of this Role.  # noqa: E501
+        :type: datetime
+        """
+
+        self._access_date = access_date
 
     @property
     def client_permissions(self):
@@ -114,6 +150,48 @@ class Role(object):
         """
 
         self._comment = comment
+
+    @property
+    def creation_date(self):
+        """Gets the creation_date of this Role.  # noqa: E501
+
+
+        :return: The creation_date of this Role.  # noqa: E501
+        :rtype: datetime
+        """
+        return self._creation_date
+
+    @creation_date.setter
+    def creation_date(self, creation_date):
+        """Sets the creation_date of this Role.
+
+
+        :param creation_date: The creation_date of this Role.  # noqa: E501
+        :type: datetime
+        """
+
+        self._creation_date = creation_date
+
+    @property
+    def modification_date(self):
+        """Gets the modification_date of this Role.  # noqa: E501
+
+
+        :return: The modification_date of this Role.  # noqa: E501
+        :rtype: datetime
+        """
+        return self._modification_date
+
+    @modification_date.setter
+    def modification_date(self, modification_date):
+        """Sets the modification_date of this Role.
+
+
+        :param modification_date: The modification_date of this Role.  # noqa: E501
+        :type: datetime
+        """
+
+        self._modification_date = modification_date
 
     @property
     def role_auth_methods_assoc(self):

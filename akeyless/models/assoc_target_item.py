@@ -39,9 +39,11 @@ class AssocTargetItem(object):
         'keyring_name': 'str',
         'kms_algorithm': 'str',
         'location_id': 'str',
+        'multi_region': 'str',
         'name': 'str',
         'project_id': 'str',
         'purpose': 'str',
+        'regions': 'list[str]',
         'target_name': 'str',
         'tenant_secret_type': 'str',
         'token': 'str',
@@ -55,9 +57,11 @@ class AssocTargetItem(object):
         'keyring_name': 'keyring-name',
         'kms_algorithm': 'kms-algorithm',
         'location_id': 'location-id',
+        'multi_region': 'multi-region',
         'name': 'name',
         'project_id': 'project-id',
         'purpose': 'purpose',
+        'regions': 'regions',
         'target_name': 'target-name',
         'tenant_secret_type': 'tenant-secret-type',
         'token': 'token',
@@ -65,7 +69,7 @@ class AssocTargetItem(object):
         'vault_name': 'vault-name'
     }
 
-    def __init__(self, json=None, key_operations=None, keyring_name=None, kms_algorithm=None, location_id=None, name=None, project_id=None, purpose=None, target_name=None, tenant_secret_type=None, token=None, uid_token=None, vault_name=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, json=None, key_operations=None, keyring_name=None, kms_algorithm=None, location_id=None, multi_region='false', name=None, project_id=None, purpose=None, regions=None, target_name=None, tenant_secret_type=None, token=None, uid_token=None, vault_name=None, local_vars_configuration=None):  # noqa: E501
         """AssocTargetItem - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -76,9 +80,11 @@ class AssocTargetItem(object):
         self._keyring_name = None
         self._kms_algorithm = None
         self._location_id = None
+        self._multi_region = None
         self._name = None
         self._project_id = None
         self._purpose = None
+        self._regions = None
         self._target_name = None
         self._tenant_secret_type = None
         self._token = None
@@ -96,11 +102,15 @@ class AssocTargetItem(object):
             self.kms_algorithm = kms_algorithm
         if location_id is not None:
             self.location_id = location_id
+        if multi_region is not None:
+            self.multi_region = multi_region
         self.name = name
         if project_id is not None:
             self.project_id = project_id
         if purpose is not None:
             self.purpose = purpose
+        if regions is not None:
+            self.regions = regions
         self.target_name = target_name
         if tenant_secret_type is not None:
             self.tenant_secret_type = tenant_secret_type
@@ -227,6 +237,29 @@ class AssocTargetItem(object):
         self._location_id = location_id
 
     @property
+    def multi_region(self):
+        """Gets the multi_region of this AssocTargetItem.  # noqa: E501
+
+        Set to 'true' to create a multi region managed key (relevant for aws targets)  # noqa: E501
+
+        :return: The multi_region of this AssocTargetItem.  # noqa: E501
+        :rtype: str
+        """
+        return self._multi_region
+
+    @multi_region.setter
+    def multi_region(self, multi_region):
+        """Sets the multi_region of this AssocTargetItem.
+
+        Set to 'true' to create a multi region managed key (relevant for aws targets)  # noqa: E501
+
+        :param multi_region: The multi_region of this AssocTargetItem.  # noqa: E501
+        :type: str
+        """
+
+        self._multi_region = multi_region
+
+    @property
     def name(self):
         """Gets the name of this AssocTargetItem.  # noqa: E501
 
@@ -296,6 +329,29 @@ class AssocTargetItem(object):
         """
 
         self._purpose = purpose
+
+    @property
+    def regions(self):
+        """Gets the regions of this AssocTargetItem.  # noqa: E501
+
+        The list of regions to create a copy of the key in (relevant for aws targets)  # noqa: E501
+
+        :return: The regions of this AssocTargetItem.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._regions
+
+    @regions.setter
+    def regions(self, regions):
+        """Sets the regions of this AssocTargetItem.
+
+        The list of regions to create a copy of the key in (relevant for aws targets)  # noqa: E501
+
+        :param regions: The regions of this AssocTargetItem.  # noqa: E501
+        :type: list[str]
+        """
+
+        self._regions = regions
 
     @property
     def target_name(self):

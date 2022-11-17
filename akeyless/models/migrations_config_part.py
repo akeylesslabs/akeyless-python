@@ -40,6 +40,7 @@ class MigrationsConfigPart(object):
         'gcp_secrets_migrations': 'list[GCPSecretsMigration]',
         'hashi_migrations': 'list[HashiMigration]',
         'k8s_migrations': 'list[K8SMigration]',
+        'mock_migrations': 'list[MockMigration]',
         'one_password_migrations': 'list[OnePasswordMigration]'
     }
 
@@ -50,10 +51,11 @@ class MigrationsConfigPart(object):
         'gcp_secrets_migrations': 'gcp_secrets_migrations',
         'hashi_migrations': 'hashi_migrations',
         'k8s_migrations': 'k8s_migrations',
+        'mock_migrations': 'mock_migrations',
         'one_password_migrations': 'one_password_migrations'
     }
 
-    def __init__(self, active_directory_migrations=None, aws_secrets_migrations=None, azure_kv_migrations=None, gcp_secrets_migrations=None, hashi_migrations=None, k8s_migrations=None, one_password_migrations=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, active_directory_migrations=None, aws_secrets_migrations=None, azure_kv_migrations=None, gcp_secrets_migrations=None, hashi_migrations=None, k8s_migrations=None, mock_migrations=None, one_password_migrations=None, local_vars_configuration=None):  # noqa: E501
         """MigrationsConfigPart - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -65,6 +67,7 @@ class MigrationsConfigPart(object):
         self._gcp_secrets_migrations = None
         self._hashi_migrations = None
         self._k8s_migrations = None
+        self._mock_migrations = None
         self._one_password_migrations = None
         self.discriminator = None
 
@@ -80,6 +83,8 @@ class MigrationsConfigPart(object):
             self.hashi_migrations = hashi_migrations
         if k8s_migrations is not None:
             self.k8s_migrations = k8s_migrations
+        if mock_migrations is not None:
+            self.mock_migrations = mock_migrations
         if one_password_migrations is not None:
             self.one_password_migrations = one_password_migrations
 
@@ -208,6 +213,27 @@ class MigrationsConfigPart(object):
         """
 
         self._k8s_migrations = k8s_migrations
+
+    @property
+    def mock_migrations(self):
+        """Gets the mock_migrations of this MigrationsConfigPart.  # noqa: E501
+
+
+        :return: The mock_migrations of this MigrationsConfigPart.  # noqa: E501
+        :rtype: list[MockMigration]
+        """
+        return self._mock_migrations
+
+    @mock_migrations.setter
+    def mock_migrations(self, mock_migrations):
+        """Sets the mock_migrations of this MigrationsConfigPart.
+
+
+        :param mock_migrations: The mock_migrations of this MigrationsConfigPart.  # noqa: E501
+        :type: list[MockMigration]
+        """
+
+        self._mock_migrations = mock_migrations
 
     @property
     def one_password_migrations(self):

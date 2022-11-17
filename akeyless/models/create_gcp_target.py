@@ -36,7 +36,6 @@ class CreateGcpTarget(object):
     openapi_types = {
         'comment': 'str',
         'gcp_key': 'str',
-        'gcp_sa_email': 'str',
         'json': 'bool',
         'key': 'str',
         'name': 'str',
@@ -48,7 +47,6 @@ class CreateGcpTarget(object):
     attribute_map = {
         'comment': 'comment',
         'gcp_key': 'gcp-key',
-        'gcp_sa_email': 'gcp-sa-email',
         'json': 'json',
         'key': 'key',
         'name': 'name',
@@ -57,7 +55,7 @@ class CreateGcpTarget(object):
         'use_gw_cloud_identity': 'use-gw-cloud-identity'
     }
 
-    def __init__(self, comment=None, gcp_key=None, gcp_sa_email=None, json=None, key=None, name=None, token=None, uid_token=None, use_gw_cloud_identity=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, comment=None, gcp_key=None, json=None, key=None, name=None, token=None, uid_token=None, use_gw_cloud_identity=None, local_vars_configuration=None):  # noqa: E501
         """CreateGcpTarget - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -65,7 +63,6 @@ class CreateGcpTarget(object):
 
         self._comment = None
         self._gcp_key = None
-        self._gcp_sa_email = None
         self._json = None
         self._key = None
         self._name = None
@@ -78,8 +75,6 @@ class CreateGcpTarget(object):
             self.comment = comment
         if gcp_key is not None:
             self.gcp_key = gcp_key
-        if gcp_sa_email is not None:
-            self.gcp_sa_email = gcp_sa_email
         if json is not None:
             self.json = json
         if key is not None:
@@ -137,29 +132,6 @@ class CreateGcpTarget(object):
         """
 
         self._gcp_key = gcp_key
-
-    @property
-    def gcp_sa_email(self):
-        """Gets the gcp_sa_email of this CreateGcpTarget.  # noqa: E501
-
-        GCP service account email  # noqa: E501
-
-        :return: The gcp_sa_email of this CreateGcpTarget.  # noqa: E501
-        :rtype: str
-        """
-        return self._gcp_sa_email
-
-    @gcp_sa_email.setter
-    def gcp_sa_email(self, gcp_sa_email):
-        """Sets the gcp_sa_email of this CreateGcpTarget.
-
-        GCP service account email  # noqa: E501
-
-        :param gcp_sa_email: The gcp_sa_email of this CreateGcpTarget.  # noqa: E501
-        :type: str
-        """
-
-        self._gcp_sa_email = gcp_sa_email
 
     @property
     def json(self):

@@ -3,6 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**activate_keys_on_creation** | **str** |  | [optional] 
 **certificate_ttl** | **int** |  | [optional] 
 **json** | **bool** | Set output format to JSON | [optional] 
 **name** | **str** | Client name | 

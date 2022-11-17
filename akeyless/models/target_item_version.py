@@ -34,11 +34,13 @@ class TargetItemVersion(object):
                             and the value is json key in definition.
     """
     openapi_types = {
+        'access_date': 'datetime',
         'creation_date': 'datetime',
         'customer_fragment_id': 'str',
         'deletion_date': 'datetime',
         'item_version_state': 'str',
         'latest_version': 'bool',
+        'modification_date': 'datetime',
         'protection_key_name': 'str',
         'target_name': 'str',
         'version': 'int',
@@ -46,34 +48,40 @@ class TargetItemVersion(object):
     }
 
     attribute_map = {
+        'access_date': 'access_date',
         'creation_date': 'creation_date',
         'customer_fragment_id': 'customer_fragment_id',
         'deletion_date': 'deletion_date',
         'item_version_state': 'item_version_state',
         'latest_version': 'latest_version',
+        'modification_date': 'modification_date',
         'protection_key_name': 'protection_key_name',
         'target_name': 'target_name',
         'version': 'version',
         'with_customer_fragment': 'with_customer_fragment'
     }
 
-    def __init__(self, creation_date=None, customer_fragment_id=None, deletion_date=None, item_version_state=None, latest_version=None, protection_key_name=None, target_name=None, version=None, with_customer_fragment=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, access_date=None, creation_date=None, customer_fragment_id=None, deletion_date=None, item_version_state=None, latest_version=None, modification_date=None, protection_key_name=None, target_name=None, version=None, with_customer_fragment=None, local_vars_configuration=None):  # noqa: E501
         """TargetItemVersion - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
+        self._access_date = None
         self._creation_date = None
         self._customer_fragment_id = None
         self._deletion_date = None
         self._item_version_state = None
         self._latest_version = None
+        self._modification_date = None
         self._protection_key_name = None
         self._target_name = None
         self._version = None
         self._with_customer_fragment = None
         self.discriminator = None
 
+        if access_date is not None:
+            self.access_date = access_date
         if creation_date is not None:
             self.creation_date = creation_date
         if customer_fragment_id is not None:
@@ -84,6 +92,8 @@ class TargetItemVersion(object):
             self.item_version_state = item_version_state
         if latest_version is not None:
             self.latest_version = latest_version
+        if modification_date is not None:
+            self.modification_date = modification_date
         if protection_key_name is not None:
             self.protection_key_name = protection_key_name
         if target_name is not None:
@@ -92,6 +102,27 @@ class TargetItemVersion(object):
             self.version = version
         if with_customer_fragment is not None:
             self.with_customer_fragment = with_customer_fragment
+
+    @property
+    def access_date(self):
+        """Gets the access_date of this TargetItemVersion.  # noqa: E501
+
+
+        :return: The access_date of this TargetItemVersion.  # noqa: E501
+        :rtype: datetime
+        """
+        return self._access_date
+
+    @access_date.setter
+    def access_date(self, access_date):
+        """Sets the access_date of this TargetItemVersion.
+
+
+        :param access_date: The access_date of this TargetItemVersion.  # noqa: E501
+        :type: datetime
+        """
+
+        self._access_date = access_date
 
     @property
     def creation_date(self):
@@ -199,6 +230,27 @@ class TargetItemVersion(object):
         """
 
         self._latest_version = latest_version
+
+    @property
+    def modification_date(self):
+        """Gets the modification_date of this TargetItemVersion.  # noqa: E501
+
+
+        :return: The modification_date of this TargetItemVersion.  # noqa: E501
+        :rtype: datetime
+        """
+        return self._modification_date
+
+    @modification_date.setter
+    def modification_date(self, modification_date):
+        """Sets the modification_date of this TargetItemVersion.
+
+
+        :param modification_date: The modification_date of this TargetItemVersion.  # noqa: E501
+        :type: datetime
+        """
+
+        self._modification_date = modification_date
 
     @property
     def protection_key_name(self):

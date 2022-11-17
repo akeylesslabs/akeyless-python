@@ -103,8 +103,11 @@ class DSProducerDetails(object):
         'failure_message': 'str',
         'fixed_user_only': 'str',
         'gcp_key_algo': 'str',
+        'gcp_role_bindings': 'dict(str, list[str])',
         'gcp_service_account_email': 'str',
         'gcp_service_account_key': 'str',
+        'gcp_service_account_type': 'str',
+        'gcp_tmp_service_account_name': 'str',
         'gcp_token_lifetime': 'str',
         'gcp_token_scope': 'str',
         'gcp_token_type': 'str',
@@ -281,8 +284,11 @@ class DSProducerDetails(object):
         'failure_message': 'failure_message',
         'fixed_user_only': 'fixed_user_only',
         'gcp_key_algo': 'gcp_key_algo',
+        'gcp_role_bindings': 'gcp_role_bindings',
         'gcp_service_account_email': 'gcp_service_account_email',
         'gcp_service_account_key': 'gcp_service_account_key',
+        'gcp_service_account_type': 'gcp_service_account_type',
+        'gcp_tmp_service_account_name': 'gcp_tmp_service_account_name',
         'gcp_token_lifetime': 'gcp_token_lifetime',
         'gcp_token_scope': 'gcp_token_scope',
         'gcp_token_type': 'gcp_token_type',
@@ -389,7 +395,7 @@ class DSProducerDetails(object):
         'warn_before_user_expiration_min': 'warn_before_user_expiration_min'
     }
 
-    def __init__(self, active=None, admin_name=None, admin_pwd=None, admin_rotation_interval_days=None, artifactory_admin_apikey=None, artifactory_admin_username=None, artifactory_base_url=None, artifactory_token_audience=None, artifactory_token_scope=None, aws_access_key_id=None, aws_access_mode=None, aws_region=None, aws_role_arns=None, aws_secret_access_key=None, aws_session_token=None, aws_user_console_access=None, aws_user_groups=None, aws_user_policies=None, aws_user_programmatic_access=None, azure_app_object_id=None, azure_client_id=None, azure_client_secret=None, azure_fixed_user_name_sub_claim_key=None, azure_fixed_user_only=None, azure_resource_group_name=None, azure_resource_name=None, azure_subscription_id=None, azure_tenant_id=None, azure_user_groups_obj_id=None, azure_user_portal_access=None, azure_user_programmatic_access=None, azure_user_roles_template_id=None, cassandra_creation_statements=None, chef_organizations=None, chef_server_access_mode=None, chef_server_host_name=None, chef_server_key=None, chef_server_port=None, chef_server_url=None, chef_server_username=None, chef_skip_ssl=None, create_sync_url=None, db_host_name=None, db_isolation_level=None, db_max_idle_conns=None, db_max_open_conns=None, db_name=None, db_port=None, db_pwd=None, db_server_certificates=None, db_server_name=None, db_user_name=None, delete_protection=None, dynamic_secret_id=None, dynamic_secret_key=None, dynamic_secret_name=None, dynamic_secret_type=None, eks_access_key_id=None, eks_assume_role=None, eks_cluster_ca_certificate=None, eks_cluster_endpoint=None, eks_cluster_name=None, eks_region=None, eks_secret_access_key=None, enable_admin_rotation=None, externally_provided_user=None, failure_message=None, fixed_user_only=None, gcp_key_algo=None, gcp_service_account_email=None, gcp_service_account_key=None, gcp_token_lifetime=None, gcp_token_scope=None, gcp_token_type=None, github_app_id=None, github_app_private_key=None, github_base_url=None, github_installation_id=None, github_installation_token_permissions=None, github_installation_token_repositories=None, github_installation_token_repositories_ids=None, github_repository_path=None, gke_cluster_ca_certificate=None, gke_cluster_endpoint=None, gke_cluster_name=None, gke_service_account_key=None, gke_service_account_name=None, groups=None, hanadb_creation_statements=None, hanadb_revocation_statements=None, host_name=None, host_port=None, implementation_type=None, is_fixed_user=None, item_targets_assoc=None, k8s_bearer_token=None, k8s_cluster_ca_certificate=None, k8s_cluster_endpoint=None, k8s_namespace=None, k8s_service_account=None, last_admin_rotation=None, ldap_audience=None, ldap_bind_dn=None, ldap_bind_password=None, ldap_certificate=None, ldap_token_expiration=None, ldap_url=None, ldap_user_attr=None, ldap_user_dn=None, metadata=None, mongodb_atlas_api_private_key=None, mongodb_atlas_api_public_key=None, mongodb_atlas_project_id=None, mongodb_custom_data=None, mongodb_db_name=None, mongodb_default_auth_db=None, mongodb_host_port=None, mongodb_is_atlas=None, mongodb_password=None, mongodb_roles=None, mongodb_uri_connection=None, mongodb_uri_options=None, mongodb_username=None, mssql_creation_statements=None, mssql_revocation_statements=None, mysql_creation_statements=None, oracle_creation_statements=None, password=None, password_length=None, password_policy=None, payload=None, postgres_creation_statements=None, postgres_revocation_statements=None, rabbitmq_server_password=None, rabbitmq_server_uri=None, rabbitmq_server_user=None, rabbitmq_user_conf_permission=None, rabbitmq_user_read_permission=None, rabbitmq_user_tags=None, rabbitmq_user_vhost=None, rabbitmq_user_write_permission=None, redshift_creation_statements=None, revoke_sync_url=None, rotate_sync_url=None, scopes=None, secure_remote_access_details=None, session_extension_warn_interval_min=None, sf_account=None, sf_user_role=None, sf_warehouse_name=None, should_stop=None, ssl_connection_certificate=None, ssl_connection_mode=None, tags=None, timeout_seconds=None, use_gw_cloud_identity=None, user_name=None, user_principal_name=None, user_ttl=None, username_length=None, username_policy=None, venafi_allow_subdomains=None, venafi_allowed_domains=None, venafi_api_key=None, venafi_auto_generated_folder=None, venafi_base_url=None, venafi_root_first_in_chain=None, venafi_sign_using_akeyless_pki=None, venafi_signer_key_name=None, venafi_store_private_key=None, venafi_tpp_password=None, venafi_tpp_username=None, venafi_use_tpp=None, venafi_zone=None, warn_before_user_expiration_min=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, active=None, admin_name=None, admin_pwd=None, admin_rotation_interval_days=None, artifactory_admin_apikey=None, artifactory_admin_username=None, artifactory_base_url=None, artifactory_token_audience=None, artifactory_token_scope=None, aws_access_key_id=None, aws_access_mode=None, aws_region=None, aws_role_arns=None, aws_secret_access_key=None, aws_session_token=None, aws_user_console_access=None, aws_user_groups=None, aws_user_policies=None, aws_user_programmatic_access=None, azure_app_object_id=None, azure_client_id=None, azure_client_secret=None, azure_fixed_user_name_sub_claim_key=None, azure_fixed_user_only=None, azure_resource_group_name=None, azure_resource_name=None, azure_subscription_id=None, azure_tenant_id=None, azure_user_groups_obj_id=None, azure_user_portal_access=None, azure_user_programmatic_access=None, azure_user_roles_template_id=None, cassandra_creation_statements=None, chef_organizations=None, chef_server_access_mode=None, chef_server_host_name=None, chef_server_key=None, chef_server_port=None, chef_server_url=None, chef_server_username=None, chef_skip_ssl=None, create_sync_url=None, db_host_name=None, db_isolation_level=None, db_max_idle_conns=None, db_max_open_conns=None, db_name=None, db_port=None, db_pwd=None, db_server_certificates=None, db_server_name=None, db_user_name=None, delete_protection=None, dynamic_secret_id=None, dynamic_secret_key=None, dynamic_secret_name=None, dynamic_secret_type=None, eks_access_key_id=None, eks_assume_role=None, eks_cluster_ca_certificate=None, eks_cluster_endpoint=None, eks_cluster_name=None, eks_region=None, eks_secret_access_key=None, enable_admin_rotation=None, externally_provided_user=None, failure_message=None, fixed_user_only=None, gcp_key_algo=None, gcp_role_bindings=None, gcp_service_account_email=None, gcp_service_account_key=None, gcp_service_account_type=None, gcp_tmp_service_account_name=None, gcp_token_lifetime=None, gcp_token_scope=None, gcp_token_type=None, github_app_id=None, github_app_private_key=None, github_base_url=None, github_installation_id=None, github_installation_token_permissions=None, github_installation_token_repositories=None, github_installation_token_repositories_ids=None, github_repository_path=None, gke_cluster_ca_certificate=None, gke_cluster_endpoint=None, gke_cluster_name=None, gke_service_account_key=None, gke_service_account_name=None, groups=None, hanadb_creation_statements=None, hanadb_revocation_statements=None, host_name=None, host_port=None, implementation_type=None, is_fixed_user=None, item_targets_assoc=None, k8s_bearer_token=None, k8s_cluster_ca_certificate=None, k8s_cluster_endpoint=None, k8s_namespace=None, k8s_service_account=None, last_admin_rotation=None, ldap_audience=None, ldap_bind_dn=None, ldap_bind_password=None, ldap_certificate=None, ldap_token_expiration=None, ldap_url=None, ldap_user_attr=None, ldap_user_dn=None, metadata=None, mongodb_atlas_api_private_key=None, mongodb_atlas_api_public_key=None, mongodb_atlas_project_id=None, mongodb_custom_data=None, mongodb_db_name=None, mongodb_default_auth_db=None, mongodb_host_port=None, mongodb_is_atlas=None, mongodb_password=None, mongodb_roles=None, mongodb_uri_connection=None, mongodb_uri_options=None, mongodb_username=None, mssql_creation_statements=None, mssql_revocation_statements=None, mysql_creation_statements=None, oracle_creation_statements=None, password=None, password_length=None, password_policy=None, payload=None, postgres_creation_statements=None, postgres_revocation_statements=None, rabbitmq_server_password=None, rabbitmq_server_uri=None, rabbitmq_server_user=None, rabbitmq_user_conf_permission=None, rabbitmq_user_read_permission=None, rabbitmq_user_tags=None, rabbitmq_user_vhost=None, rabbitmq_user_write_permission=None, redshift_creation_statements=None, revoke_sync_url=None, rotate_sync_url=None, scopes=None, secure_remote_access_details=None, session_extension_warn_interval_min=None, sf_account=None, sf_user_role=None, sf_warehouse_name=None, should_stop=None, ssl_connection_certificate=None, ssl_connection_mode=None, tags=None, timeout_seconds=None, use_gw_cloud_identity=None, user_name=None, user_principal_name=None, user_ttl=None, username_length=None, username_policy=None, venafi_allow_subdomains=None, venafi_allowed_domains=None, venafi_api_key=None, venafi_auto_generated_folder=None, venafi_base_url=None, venafi_root_first_in_chain=None, venafi_sign_using_akeyless_pki=None, venafi_signer_key_name=None, venafi_store_private_key=None, venafi_tpp_password=None, venafi_tpp_username=None, venafi_use_tpp=None, venafi_zone=None, warn_before_user_expiration_min=None, local_vars_configuration=None):  # noqa: E501
         """DSProducerDetails - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -464,8 +470,11 @@ class DSProducerDetails(object):
         self._failure_message = None
         self._fixed_user_only = None
         self._gcp_key_algo = None
+        self._gcp_role_bindings = None
         self._gcp_service_account_email = None
         self._gcp_service_account_key = None
+        self._gcp_service_account_type = None
+        self._gcp_tmp_service_account_name = None
         self._gcp_token_lifetime = None
         self._gcp_token_scope = None
         self._gcp_token_type = None
@@ -710,10 +719,16 @@ class DSProducerDetails(object):
             self.fixed_user_only = fixed_user_only
         if gcp_key_algo is not None:
             self.gcp_key_algo = gcp_key_algo
+        if gcp_role_bindings is not None:
+            self.gcp_role_bindings = gcp_role_bindings
         if gcp_service_account_email is not None:
             self.gcp_service_account_email = gcp_service_account_email
         if gcp_service_account_key is not None:
             self.gcp_service_account_key = gcp_service_account_key
+        if gcp_service_account_type is not None:
+            self.gcp_service_account_type = gcp_service_account_type
+        if gcp_tmp_service_account_name is not None:
+            self.gcp_tmp_service_account_name = gcp_tmp_service_account_name
         if gcp_token_lifetime is not None:
             self.gcp_token_lifetime = gcp_token_lifetime
         if gcp_token_scope is not None:
@@ -2377,9 +2392,31 @@ class DSProducerDetails(object):
         self._gcp_key_algo = gcp_key_algo
 
     @property
+    def gcp_role_bindings(self):
+        """Gets the gcp_role_bindings of this DSProducerDetails.  # noqa: E501
+
+
+        :return: The gcp_role_bindings of this DSProducerDetails.  # noqa: E501
+        :rtype: dict(str, list[str])
+        """
+        return self._gcp_role_bindings
+
+    @gcp_role_bindings.setter
+    def gcp_role_bindings(self, gcp_role_bindings):
+        """Sets the gcp_role_bindings of this DSProducerDetails.
+
+
+        :param gcp_role_bindings: The gcp_role_bindings of this DSProducerDetails.  # noqa: E501
+        :type: dict(str, list[str])
+        """
+
+        self._gcp_role_bindings = gcp_role_bindings
+
+    @property
     def gcp_service_account_email(self):
         """Gets the gcp_service_account_email of this DSProducerDetails.  # noqa: E501
 
+        GCPServiceAccountEmail overrides the deprecated field from the target  # noqa: E501
 
         :return: The gcp_service_account_email of this DSProducerDetails.  # noqa: E501
         :rtype: str
@@ -2390,6 +2427,7 @@ class DSProducerDetails(object):
     def gcp_service_account_email(self, gcp_service_account_email):
         """Sets the gcp_service_account_email of this DSProducerDetails.
 
+        GCPServiceAccountEmail overrides the deprecated field from the target  # noqa: E501
 
         :param gcp_service_account_email: The gcp_service_account_email of this DSProducerDetails.  # noqa: E501
         :type: str
@@ -2417,6 +2455,48 @@ class DSProducerDetails(object):
         """
 
         self._gcp_service_account_key = gcp_service_account_key
+
+    @property
+    def gcp_service_account_type(self):
+        """Gets the gcp_service_account_type of this DSProducerDetails.  # noqa: E501
+
+
+        :return: The gcp_service_account_type of this DSProducerDetails.  # noqa: E501
+        :rtype: str
+        """
+        return self._gcp_service_account_type
+
+    @gcp_service_account_type.setter
+    def gcp_service_account_type(self, gcp_service_account_type):
+        """Sets the gcp_service_account_type of this DSProducerDetails.
+
+
+        :param gcp_service_account_type: The gcp_service_account_type of this DSProducerDetails.  # noqa: E501
+        :type: str
+        """
+
+        self._gcp_service_account_type = gcp_service_account_type
+
+    @property
+    def gcp_tmp_service_account_name(self):
+        """Gets the gcp_tmp_service_account_name of this DSProducerDetails.  # noqa: E501
+
+
+        :return: The gcp_tmp_service_account_name of this DSProducerDetails.  # noqa: E501
+        :rtype: str
+        """
+        return self._gcp_tmp_service_account_name
+
+    @gcp_tmp_service_account_name.setter
+    def gcp_tmp_service_account_name(self, gcp_tmp_service_account_name):
+        """Sets the gcp_tmp_service_account_name of this DSProducerDetails.
+
+
+        :param gcp_tmp_service_account_name: The gcp_tmp_service_account_name of this DSProducerDetails.  # noqa: E501
+        :type: str
+        """
+
+        self._gcp_tmp_service_account_name = gcp_tmp_service_account_name
 
     @property
     def gcp_token_lifetime(self):

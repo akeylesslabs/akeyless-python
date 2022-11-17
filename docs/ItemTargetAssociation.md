@@ -5,6 +5,7 @@ ItemTargetAssociation includes details of an association between an item and a t
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **assoc_id** | **str** |  | [optional] 
+**attributes** | **dict(str, str)** |  | [optional] 
 **target_id** | **int** |  | [optional] 
 **target_name** | **str** |  | [optional] 
 **target_type** | **str** |  | [optional] 

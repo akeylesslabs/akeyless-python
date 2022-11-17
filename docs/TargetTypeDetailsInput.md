@@ -41,7 +41,7 @@ Name | Type | Description | Notes
 **eks_cluster_name** | **str** |  | [optional] 
 **eks_region** | **str** |  | [optional] 
 **eks_secret_access_key** | **str** |  | [optional] 
-**gcp_service_account_email** | **str** |  | [optional] 
+**gcp_service_account_email** | **str** | deprecated | [optional] 
 **gcp_service_account_key** | **str** |  | [optional] 
 **github_app_id** | **int** |  | [optional] 
 **github_app_private_key** | **str** |  | [optional] 

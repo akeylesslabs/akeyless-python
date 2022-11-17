@@ -42,6 +42,7 @@ class Auth(object):
         'cert_data': 'str',
         'cloud_id': 'str',
         'debug': 'bool',
+        'gateway_url': 'str',
         'gcp_audience': 'str',
         'json': 'bool',
         'jwt': 'str',
@@ -62,6 +63,7 @@ class Auth(object):
         'cert_data': 'cert-data',
         'cloud_id': 'cloud-id',
         'debug': 'debug',
+        'gateway_url': 'gateway-url',
         'gcp_audience': 'gcp-audience',
         'json': 'json',
         'jwt': 'jwt',
@@ -73,7 +75,7 @@ class Auth(object):
         'uid_token': 'uid_token'
     }
 
-    def __init__(self, access_id=None, access_key=None, access_type='access_key', admin_email=None, admin_password=None, cert_data=None, cloud_id=None, debug=None, gcp_audience=None, json=None, jwt=None, k8s_auth_config_name=None, k8s_service_account_token=None, key_data=None, ldap_password=None, ldap_username=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, access_id=None, access_key=None, access_type='access_key', admin_email=None, admin_password=None, cert_data=None, cloud_id=None, debug=None, gateway_url=None, gcp_audience=None, json=None, jwt=None, k8s_auth_config_name=None, k8s_service_account_token=None, key_data=None, ldap_password=None, ldap_username=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """Auth - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -87,6 +89,7 @@ class Auth(object):
         self._cert_data = None
         self._cloud_id = None
         self._debug = None
+        self._gateway_url = None
         self._gcp_audience = None
         self._json = None
         self._jwt = None
@@ -114,6 +117,8 @@ class Auth(object):
             self.cloud_id = cloud_id
         if debug is not None:
             self.debug = debug
+        if gateway_url is not None:
+            self.gateway_url = gateway_url
         if gcp_audience is not None:
             self.gcp_audience = gcp_audience
         if json is not None:
@@ -314,6 +319,29 @@ class Auth(object):
         """
 
         self._debug = debug
+
+    @property
+    def gateway_url(self):
+        """Gets the gateway_url of this Auth.  # noqa: E501
+
+        Gateway URL for the K8S authenticated (relevant only for access-type=k8s)  # noqa: E501
+
+        :return: The gateway_url of this Auth.  # noqa: E501
+        :rtype: str
+        """
+        return self._gateway_url
+
+    @gateway_url.setter
+    def gateway_url(self, gateway_url):
+        """Sets the gateway_url of this Auth.
+
+        Gateway URL for the K8S authenticated (relevant only for access-type=k8s)  # noqa: E501
+
+        :param gateway_url: The gateway_url of this Auth.  # noqa: E501
+        :type: str
+        """
+
+        self._gateway_url = gateway_url
 
     @property
     def gcp_audience(self):

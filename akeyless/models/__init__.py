@@ -411,6 +411,8 @@ from akeyless.models.migration_status import MigrationStatus
 from akeyless.models.migration_status_reply_obj import MigrationStatusReplyObj
 from akeyless.models.migrations_config_last_change import MigrationsConfigLastChange
 from akeyless.models.migrations_config_part import MigrationsConfigPart
+from akeyless.models.mock_migration import MockMigration
+from akeyless.models.mock_payload import MockPayload
 from akeyless.models.move_objects import MoveObjects
 from akeyless.models.o_auth2_access_rules import OAuth2AccessRules
 from akeyless.models.o_auth2_custom_claim import OAuth2CustomClaim
