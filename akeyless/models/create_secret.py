@@ -87,7 +87,7 @@ class CreateSecret(object):
         'value': 'value'
     }
 
-    def __init__(self, accessibility=None, delete_protection=None, json=None, metadata=None, multiline_value=None, name=None, password_manager_custom_field=None, password_manager_inject_url=None, password_manager_password=None, password_manager_username=None, protection_key=None, secure_access_bastion_issuer=None, secure_access_enable=None, secure_access_host=None, secure_access_ssh_creds=None, secure_access_ssh_user=None, secure_access_url=None, secure_access_web_browsing=None, secure_access_web_proxy=None, tags=None, token=None, type=None, uid_token=None, value=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, accessibility='regular', delete_protection=None, json=None, metadata=None, multiline_value=None, name=None, password_manager_custom_field=None, password_manager_inject_url=None, password_manager_password=None, password_manager_username=None, protection_key=None, secure_access_bastion_issuer=None, secure_access_enable=None, secure_access_host=None, secure_access_ssh_creds=None, secure_access_ssh_user=None, secure_access_url=None, secure_access_web_browsing=None, secure_access_web_proxy=None, tags=None, token=None, type=None, uid_token=None, value=None, local_vars_configuration=None):  # noqa: E501
         """CreateSecret - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()

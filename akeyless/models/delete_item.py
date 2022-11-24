@@ -55,7 +55,7 @@ class DeleteItem(object):
         'version': 'version'
     }
 
-    def __init__(self, accessibility=None, delete_immediately=False, delete_in_days=7, json=None, name=None, token=None, uid_token=None, version=-1, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, accessibility='regular', delete_immediately=False, delete_in_days=7, json=None, name=None, token=None, uid_token=None, version=-1, local_vars_configuration=None):  # noqa: E501
         """DeleteItem - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()

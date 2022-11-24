@@ -39,10 +39,6 @@ class GatewayUpdateMigration(object):
         '_1password_secret_key': 'str',
         '_1password_url': 'str',
         '_1password_vaults': 'list[str]',
-        'ad_auto_rotate_boolean': 'bool',
-        'ad_discover_local_users_boolean': 'bool',
-        'ad_local_users_ignore_list': 'dict(str, bool)',
-        'ad_sra_enable_rdp_boolean': 'bool',
         'ad_auto_rotate': 'str',
         'ad_computer_base_dn': 'str',
         'ad_discover_local_users': 'str',
@@ -95,10 +91,6 @@ class GatewayUpdateMigration(object):
         '_1password_secret_key': '1password-secret-key',
         '_1password_url': '1password-url',
         '_1password_vaults': '1password-vaults',
-        'ad_auto_rotate_boolean': 'AdAutoRotateBoolean',
-        'ad_discover_local_users_boolean': 'AdDiscoverLocalUsersBoolean',
-        'ad_local_users_ignore_list': 'AdLocalUsersIgnoreList',
-        'ad_sra_enable_rdp_boolean': 'AdSRAEnableRDPBoolean',
         'ad_auto_rotate': 'ad_auto_rotate',
         'ad_computer_base_dn': 'ad_computer_base_dn',
         'ad_discover_local_users': 'ad_discover_local_users',
@@ -145,7 +137,7 @@ class GatewayUpdateMigration(object):
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, _1password_email=None, _1password_password=None, _1password_secret_key=None, _1password_url=None, _1password_vaults=None, ad_auto_rotate_boolean=None, ad_discover_local_users_boolean=None, ad_local_users_ignore_list=None, ad_sra_enable_rdp_boolean=None, ad_auto_rotate=None, ad_computer_base_dn=None, ad_discover_local_users=None, ad_domain_name=None, ad_domain_users_path_template=None, ad_local_users_ignore=None, ad_local_users_path_template=None, ad_rotation_hour=None, ad_rotation_interval=None, ad_sra_enable_rdp=None, ad_target_name=None, ad_targets_path_template=None, ad_user_base_dn=None, ad_user_groups=None, as_ssh_port=None, aws_key=None, aws_key_id=None, aws_region=None, azure_client_id=None, azure_kv_name=None, azure_secret=None, azure_tenant_id=None, gcp_key=None, hashi_json=None, hashi_ns=None, hashi_token=None, hashi_url=None, id=None, json=None, k8s_ca_certificate=None, k8s_client_certificate=None, k8s_client_key=None, k8s_namespace=None, k8s_password=None, k8s_skip_system=None, k8s_token=None, k8s_url=None, k8s_username=None, name=None, new_name=None, protection_key=None, target_location=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, _1password_email=None, _1password_password=None, _1password_secret_key=None, _1password_url=None, _1password_vaults=None, ad_auto_rotate=None, ad_computer_base_dn=None, ad_discover_local_users=None, ad_domain_name=None, ad_domain_users_path_template=None, ad_local_users_ignore=None, ad_local_users_path_template=None, ad_rotation_hour=None, ad_rotation_interval=None, ad_sra_enable_rdp=None, ad_target_name=None, ad_targets_path_template=None, ad_user_base_dn=None, ad_user_groups=None, as_ssh_port=None, aws_key=None, aws_key_id=None, aws_region=None, azure_client_id=None, azure_kv_name=None, azure_secret=None, azure_tenant_id=None, gcp_key=None, hashi_json=None, hashi_ns=None, hashi_token=None, hashi_url=None, id=None, json=None, k8s_ca_certificate=None, k8s_client_certificate=None, k8s_client_key=None, k8s_namespace=None, k8s_password=None, k8s_skip_system=None, k8s_token=None, k8s_url=None, k8s_username=None, name=None, new_name=None, protection_key=None, target_location=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """GatewayUpdateMigration - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -156,10 +148,6 @@ class GatewayUpdateMigration(object):
         self.__1password_secret_key = None
         self.__1password_url = None
         self.__1password_vaults = None
-        self._ad_auto_rotate_boolean = None
-        self._ad_discover_local_users_boolean = None
-        self._ad_local_users_ignore_list = None
-        self._ad_sra_enable_rdp_boolean = None
         self._ad_auto_rotate = None
         self._ad_computer_base_dn = None
         self._ad_discover_local_users = None
@@ -216,14 +204,6 @@ class GatewayUpdateMigration(object):
             self._1password_url = _1password_url
         if _1password_vaults is not None:
             self._1password_vaults = _1password_vaults
-        if ad_auto_rotate_boolean is not None:
-            self.ad_auto_rotate_boolean = ad_auto_rotate_boolean
-        if ad_discover_local_users_boolean is not None:
-            self.ad_discover_local_users_boolean = ad_discover_local_users_boolean
-        if ad_local_users_ignore_list is not None:
-            self.ad_local_users_ignore_list = ad_local_users_ignore_list
-        if ad_sra_enable_rdp_boolean is not None:
-            self.ad_sra_enable_rdp_boolean = ad_sra_enable_rdp_boolean
         if ad_auto_rotate is not None:
             self.ad_auto_rotate = ad_auto_rotate
         if ad_computer_base_dn is not None:
@@ -426,90 +406,6 @@ class GatewayUpdateMigration(object):
         """
 
         self.__1password_vaults = _1password_vaults
-
-    @property
-    def ad_auto_rotate_boolean(self):
-        """Gets the ad_auto_rotate_boolean of this GatewayUpdateMigration.  # noqa: E501
-
-
-        :return: The ad_auto_rotate_boolean of this GatewayUpdateMigration.  # noqa: E501
-        :rtype: bool
-        """
-        return self._ad_auto_rotate_boolean
-
-    @ad_auto_rotate_boolean.setter
-    def ad_auto_rotate_boolean(self, ad_auto_rotate_boolean):
-        """Sets the ad_auto_rotate_boolean of this GatewayUpdateMigration.
-
-
-        :param ad_auto_rotate_boolean: The ad_auto_rotate_boolean of this GatewayUpdateMigration.  # noqa: E501
-        :type: bool
-        """
-
-        self._ad_auto_rotate_boolean = ad_auto_rotate_boolean
-
-    @property
-    def ad_discover_local_users_boolean(self):
-        """Gets the ad_discover_local_users_boolean of this GatewayUpdateMigration.  # noqa: E501
-
-
-        :return: The ad_discover_local_users_boolean of this GatewayUpdateMigration.  # noqa: E501
-        :rtype: bool
-        """
-        return self._ad_discover_local_users_boolean
-
-    @ad_discover_local_users_boolean.setter
-    def ad_discover_local_users_boolean(self, ad_discover_local_users_boolean):
-        """Sets the ad_discover_local_users_boolean of this GatewayUpdateMigration.
-
-
-        :param ad_discover_local_users_boolean: The ad_discover_local_users_boolean of this GatewayUpdateMigration.  # noqa: E501
-        :type: bool
-        """
-
-        self._ad_discover_local_users_boolean = ad_discover_local_users_boolean
-
-    @property
-    def ad_local_users_ignore_list(self):
-        """Gets the ad_local_users_ignore_list of this GatewayUpdateMigration.  # noqa: E501
-
-
-        :return: The ad_local_users_ignore_list of this GatewayUpdateMigration.  # noqa: E501
-        :rtype: dict(str, bool)
-        """
-        return self._ad_local_users_ignore_list
-
-    @ad_local_users_ignore_list.setter
-    def ad_local_users_ignore_list(self, ad_local_users_ignore_list):
-        """Sets the ad_local_users_ignore_list of this GatewayUpdateMigration.
-
-
-        :param ad_local_users_ignore_list: The ad_local_users_ignore_list of this GatewayUpdateMigration.  # noqa: E501
-        :type: dict(str, bool)
-        """
-
-        self._ad_local_users_ignore_list = ad_local_users_ignore_list
-
-    @property
-    def ad_sra_enable_rdp_boolean(self):
-        """Gets the ad_sra_enable_rdp_boolean of this GatewayUpdateMigration.  # noqa: E501
-
-
-        :return: The ad_sra_enable_rdp_boolean of this GatewayUpdateMigration.  # noqa: E501
-        :rtype: bool
-        """
-        return self._ad_sra_enable_rdp_boolean
-
-    @ad_sra_enable_rdp_boolean.setter
-    def ad_sra_enable_rdp_boolean(self, ad_sra_enable_rdp_boolean):
-        """Sets the ad_sra_enable_rdp_boolean of this GatewayUpdateMigration.
-
-
-        :param ad_sra_enable_rdp_boolean: The ad_sra_enable_rdp_boolean of this GatewayUpdateMigration.  # noqa: E501
-        :type: bool
-        """
-
-        self._ad_sra_enable_rdp_boolean = ad_sra_enable_rdp_boolean
 
     @property
     def ad_auto_rotate(self):

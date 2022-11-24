@@ -34,6 +34,7 @@ class AuthMethodRoleAssociation(object):
                             and the value is json key in definition.
     """
     openapi_types = {
+        'allowed_ops': 'list[str]',
         'assoc_id': 'str',
         'auth_method_sub_claims': 'dict(str, list[str])',
         'role_name': 'str',
@@ -41,24 +42,28 @@ class AuthMethodRoleAssociation(object):
     }
 
     attribute_map = {
+        'allowed_ops': 'allowed_ops',
         'assoc_id': 'assoc_id',
         'auth_method_sub_claims': 'auth_method_sub_claims',
         'role_name': 'role_name',
         'rules': 'rules'
     }
 
-    def __init__(self, assoc_id=None, auth_method_sub_claims=None, role_name=None, rules=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, allowed_ops=None, assoc_id=None, auth_method_sub_claims=None, role_name=None, rules=None, local_vars_configuration=None):  # noqa: E501
         """AuthMethodRoleAssociation - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
+        self._allowed_ops = None
         self._assoc_id = None
         self._auth_method_sub_claims = None
         self._role_name = None
         self._rules = None
         self.discriminator = None
 
+        if allowed_ops is not None:
+            self.allowed_ops = allowed_ops
         if assoc_id is not None:
             self.assoc_id = assoc_id
         if auth_method_sub_claims is not None:
@@ -67,6 +72,27 @@ class AuthMethodRoleAssociation(object):
             self.role_name = role_name
         if rules is not None:
             self.rules = rules
+
+    @property
+    def allowed_ops(self):
+        """Gets the allowed_ops of this AuthMethodRoleAssociation.  # noqa: E501
+
+
+        :return: The allowed_ops of this AuthMethodRoleAssociation.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._allowed_ops
+
+    @allowed_ops.setter
+    def allowed_ops(self, allowed_ops):
+        """Sets the allowed_ops of this AuthMethodRoleAssociation.
+
+
+        :param allowed_ops: The allowed_ops of this AuthMethodRoleAssociation.  # noqa: E501
+        :type: list[str]
+        """
+
+        self._allowed_ops = allowed_ops
 
     @property
     def assoc_id(self):

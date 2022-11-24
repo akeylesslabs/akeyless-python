@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**accessibility** | **str** | for personal password manager | [optional] 
+**accessibility** | **str** | for personal password manager | [optional] [default to 'regular']
 **delete_protection** | **str** | Protection from accidental deletion of this item | [optional] 
 **json** | **bool** | Set output format to JSON | [optional] 
 **metadata** | **str** | Metadata about the secret | [optional] 

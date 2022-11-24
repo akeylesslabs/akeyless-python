@@ -39,7 +39,8 @@ class MigrationGeneral(object):
         'new_name': 'str',
         'prefix': 'str',
         'protection_key': 'str',
-        'status': 'str'
+        'status': 'str',
+        'type': 'str'
     }
 
     attribute_map = {
@@ -48,10 +49,11 @@ class MigrationGeneral(object):
         'new_name': 'new_name',
         'prefix': 'prefix',
         'protection_key': 'protection_key',
-        'status': 'status'
+        'status': 'status',
+        'type': 'type'
     }
 
-    def __init__(self, id=None, name=None, new_name=None, prefix=None, protection_key=None, status=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, id=None, name=None, new_name=None, prefix=None, protection_key=None, status=None, type=None, local_vars_configuration=None):  # noqa: E501
         """MigrationGeneral - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -63,6 +65,7 @@ class MigrationGeneral(object):
         self._prefix = None
         self._protection_key = None
         self._status = None
+        self._type = None
         self.discriminator = None
 
         if id is not None:
@@ -77,6 +80,8 @@ class MigrationGeneral(object):
             self.protection_key = protection_key
         if status is not None:
             self.status = status
+        if type is not None:
+            self.type = type
 
     @property
     def id(self):
@@ -203,6 +208,27 @@ class MigrationGeneral(object):
         """
 
         self._status = status
+
+    @property
+    def type(self):
+        """Gets the type of this MigrationGeneral.  # noqa: E501
+
+
+        :return: The type of this MigrationGeneral.  # noqa: E501
+        :rtype: str
+        """
+        return self._type
+
+    @type.setter
+    def type(self, type):
+        """Sets the type of this MigrationGeneral.
+
+
+        :param type: The type of this MigrationGeneral.  # noqa: E501
+        :type: str
+        """
+
+        self._type = type
 
     def to_dict(self):
         """Returns the model properties as a dict"""

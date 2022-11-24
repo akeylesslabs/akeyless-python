@@ -175,6 +175,8 @@ from akeyless.models.encrypt_file_output import EncryptFileOutput
 from akeyless.models.encrypt_output import EncryptOutput
 from akeyless.models.encrypt_with_classic_key import EncryptWithClassicKey
 from akeyless.models.encrypt_with_classic_key_output import EncryptWithClassicKeyOutput
+from akeyless.models.export_classic_key import ExportClassicKey
+from akeyless.models.export_classic_key_output import ExportClassicKeyOutput
 from akeyless.models.external_kms_key_id import ExternalKMSKeyId
 from akeyless.models.gcp_access_rules import GCPAccessRules
 from akeyless.models.gcp_payload import GCPPayload
@@ -326,8 +328,6 @@ from akeyless.models.general_config_part import GeneralConfigPart
 from akeyless.models.get_account_settings import GetAccountSettings
 from akeyless.models.get_account_settings_command_output import GetAccountSettingsCommandOutput
 from akeyless.models.get_auth_method import GetAuthMethod
-from akeyless.models.get_cloud_identity import GetCloudIdentity
-from akeyless.models.get_cloud_identity_output import GetCloudIdentityOutput
 from akeyless.models.get_dynamic_secret_value import GetDynamicSecretValue
 from akeyless.models.get_kube_exec_creds import GetKubeExecCreds
 from akeyless.models.get_kube_exec_creds_output import GetKubeExecCredsOutput
@@ -454,6 +454,7 @@ from akeyless.models.ssh_certificate_issue_details import SSHCertificateIssueDet
 from akeyless.models.secure_remote_access import SecureRemoteAccess
 from akeyless.models.set_item_state import SetItemState
 from akeyless.models.set_role_rule import SetRoleRule
+from akeyless.models.share_item import ShareItem
 from akeyless.models.sign_jwt_output import SignJWTOutput
 from akeyless.models.sign_jwt_with_classic_key import SignJWTWithClassicKey
 from akeyless.models.sign_pkcs1 import SignPKCS1

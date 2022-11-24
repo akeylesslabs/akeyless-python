@@ -67,7 +67,7 @@ class UpdateSecretVal(object):
         'value': 'value'
     }
 
-    def __init__(self, accessibility=None, json=None, keep_prev_version=None, key=None, multiline=None, name=None, new_version=None, password_manager_custom_field=None, password_manager_inject_url=None, password_manager_password=None, password_manager_username=None, token=None, uid_token=None, value=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, accessibility='regular', json=None, keep_prev_version=None, key=None, multiline=None, name=None, new_version=None, password_manager_custom_field=None, password_manager_inject_url=None, password_manager_password=None, password_manager_username=None, token=None, uid_token=None, value=None, local_vars_configuration=None):  # noqa: E501
         """UpdateSecretVal - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()

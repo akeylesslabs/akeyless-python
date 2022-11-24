@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**accessibility** | **str** | for personal password manager | [optional] 
+**accessibility** | **str** | for personal password manager | [optional] [default to 'regular']
 **add_tag** | **list[str]** | List of the new tags that will be attached to this item | [optional] 
 **cert_file_data** | **str** | PEM Certificate in a Base64 format. Used for updating RSA keys&#39; certificates. | [optional] 
 **delete_protection** | **str** |  | [optional] 

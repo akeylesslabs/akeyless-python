@@ -36,6 +36,7 @@ class UpdateAuthMethodOIDC(object):
     openapi_types = {
         'access_expires': 'int',
         'allowed_redirect_uri': 'list[str]',
+        'audience': 'str',
         'bound_ips': 'list[str]',
         'client_id': 'str',
         'client_secret': 'str',
@@ -56,6 +57,7 @@ class UpdateAuthMethodOIDC(object):
     attribute_map = {
         'access_expires': 'access-expires',
         'allowed_redirect_uri': 'allowed-redirect-uri',
+        'audience': 'audience',
         'bound_ips': 'bound-ips',
         'client_id': 'client-id',
         'client_secret': 'client-secret',
@@ -73,7 +75,7 @@ class UpdateAuthMethodOIDC(object):
         'unique_identifier': 'unique-identifier'
     }
 
-    def __init__(self, access_expires=0, allowed_redirect_uri=None, bound_ips=None, client_id=None, client_secret=None, force_sub_claims=None, gw_bound_ips=None, issuer=None, json=None, jwt_ttl=None, name=None, new_name=None, required_scopes=None, required_scopes_prefix=None, token=None, uid_token=None, unique_identifier=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, access_expires=0, allowed_redirect_uri=None, audience=None, bound_ips=None, client_id=None, client_secret=None, force_sub_claims=None, gw_bound_ips=None, issuer=None, json=None, jwt_ttl=None, name=None, new_name=None, required_scopes=None, required_scopes_prefix=None, token=None, uid_token=None, unique_identifier=None, local_vars_configuration=None):  # noqa: E501
         """UpdateAuthMethodOIDC - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -81,6 +83,7 @@ class UpdateAuthMethodOIDC(object):
 
         self._access_expires = None
         self._allowed_redirect_uri = None
+        self._audience = None
         self._bound_ips = None
         self._client_id = None
         self._client_secret = None
@@ -102,6 +105,8 @@ class UpdateAuthMethodOIDC(object):
             self.access_expires = access_expires
         if allowed_redirect_uri is not None:
             self.allowed_redirect_uri = allowed_redirect_uri
+        if audience is not None:
+            self.audience = audience
         if bound_ips is not None:
             self.bound_ips = bound_ips
         if client_id is not None:
@@ -176,6 +181,29 @@ class UpdateAuthMethodOIDC(object):
         """
 
         self._allowed_redirect_uri = allowed_redirect_uri
+
+    @property
+    def audience(self):
+        """Gets the audience of this UpdateAuthMethodOIDC.  # noqa: E501
+
+        Audience claim to be used as part of the authentication flow. In case set, it must match the one configured on the Identity Provider's Application  # noqa: E501
+
+        :return: The audience of this UpdateAuthMethodOIDC.  # noqa: E501
+        :rtype: str
+        """
+        return self._audience
+
+    @audience.setter
+    def audience(self, audience):
+        """Sets the audience of this UpdateAuthMethodOIDC.
+
+        Audience claim to be used as part of the authentication flow. In case set, it must match the one configured on the Identity Provider's Application  # noqa: E501
+
+        :param audience: The audience of this UpdateAuthMethodOIDC.  # noqa: E501
+        :type: str
+        """
+
+        self._audience = audience
 
     @property
     def bound_ips(self):

@@ -34,7 +34,6 @@ class GetSecretValue(object):
                             and the value is json key in definition.
     """
     openapi_types = {
-        'ignore_cache_boolean': 'bool',
         'accessibility': 'str',
         'ignore_cache': 'str',
         'json': 'bool',
@@ -46,7 +45,6 @@ class GetSecretValue(object):
     }
 
     attribute_map = {
-        'ignore_cache_boolean': 'IgnoreCacheBoolean',
         'accessibility': 'accessibility',
         'ignore_cache': 'ignore-cache',
         'json': 'json',
@@ -57,13 +55,12 @@ class GetSecretValue(object):
         'version': 'version'
     }
 
-    def __init__(self, ignore_cache_boolean=None, accessibility=None, ignore_cache=None, json=None, names=None, pretty_print=None, token=None, uid_token=None, version=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, accessibility='regular', ignore_cache=None, json=None, names=None, pretty_print=None, token=None, uid_token=None, version=None, local_vars_configuration=None):  # noqa: E501
         """GetSecretValue - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
-        self._ignore_cache_boolean = None
         self._accessibility = None
         self._ignore_cache = None
         self._json = None
@@ -74,8 +71,6 @@ class GetSecretValue(object):
         self._version = None
         self.discriminator = None
 
-        if ignore_cache_boolean is not None:
-            self.ignore_cache_boolean = ignore_cache_boolean
         if accessibility is not None:
             self.accessibility = accessibility
         if ignore_cache is not None:
@@ -91,27 +86,6 @@ class GetSecretValue(object):
             self.uid_token = uid_token
         if version is not None:
             self.version = version
-
-    @property
-    def ignore_cache_boolean(self):
-        """Gets the ignore_cache_boolean of this GetSecretValue.  # noqa: E501
-
-
-        :return: The ignore_cache_boolean of this GetSecretValue.  # noqa: E501
-        :rtype: bool
-        """
-        return self._ignore_cache_boolean
-
-    @ignore_cache_boolean.setter
-    def ignore_cache_boolean(self, ignore_cache_boolean):
-        """Sets the ignore_cache_boolean of this GetSecretValue.
-
-
-        :param ignore_cache_boolean: The ignore_cache_boolean of this GetSecretValue.  # noqa: E501
-        :type: bool
-        """
-
-        self._ignore_cache_boolean = ignore_cache_boolean
 
     @property
     def accessibility(self):

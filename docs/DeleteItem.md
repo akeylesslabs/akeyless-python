@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**accessibility** | **str** | for personal password manager | [optional] 
+**accessibility** | **str** | for personal password manager | [optional] [default to 'regular']
 **delete_immediately** | **bool** | When delete-in-days&#x3D;-1, must be set | [optional] [default to False]
 **delete_in_days** | **int** | The number of days to wait before deleting the item (relevant for keys only) | [optional] [default to 7]
 **json** | **bool** | Set output format to JSON | [optional] 

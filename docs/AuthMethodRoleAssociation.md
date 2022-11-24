@@ -4,6 +4,7 @@ AuthMethodRoleAssociation includes details of an association between an auth met
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**allowed_ops** | **list[str]** |  | [optional] 
 **assoc_id** | **str** |  | [optional] 
 **auth_method_sub_claims** | **dict(str, list[str])** |  | [optional] 
 **role_name** | **str** |  | [optional] 

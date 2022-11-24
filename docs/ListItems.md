@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**accessibility** | **str** | for personal password manager | [optional] 
+**accessibility** | **str** | for personal password manager | [optional] [default to 'regular']
 **filter** | **str** | Filter by item name or part of it | [optional] 
 **json** | **bool** | Set output format to JSON | [optional] 
 **minimal_view** | **bool** |  | [optional] 

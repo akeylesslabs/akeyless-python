@@ -35,6 +35,7 @@ class OIDCAccessRules(object):
     """
     openapi_types = {
         'allowed_redirect_ur_is': 'list[str]',
+        'audience': 'str',
         'bound_claims': 'list[OIDCCustomClaim]',
         'client_id': 'str',
         'client_secret': 'str',
@@ -47,6 +48,7 @@ class OIDCAccessRules(object):
 
     attribute_map = {
         'allowed_redirect_ur_is': 'allowed_redirect_URIs',
+        'audience': 'audience',
         'bound_claims': 'bound_claims',
         'client_id': 'client_id',
         'client_secret': 'client_secret',
@@ -57,13 +59,14 @@ class OIDCAccessRules(object):
         'unique_identifier': 'unique_identifier'
     }
 
-    def __init__(self, allowed_redirect_ur_is=None, bound_claims=None, client_id=None, client_secret=None, is_internal=None, issuer=None, required_scopes=None, required_scopes_prefix=None, unique_identifier=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, allowed_redirect_ur_is=None, audience=None, bound_claims=None, client_id=None, client_secret=None, is_internal=None, issuer=None, required_scopes=None, required_scopes_prefix=None, unique_identifier=None, local_vars_configuration=None):  # noqa: E501
         """OIDCAccessRules - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._allowed_redirect_ur_is = None
+        self._audience = None
         self._bound_claims = None
         self._client_id = None
         self._client_secret = None
@@ -76,6 +79,8 @@ class OIDCAccessRules(object):
 
         if allowed_redirect_ur_is is not None:
             self.allowed_redirect_ur_is = allowed_redirect_ur_is
+        if audience is not None:
+            self.audience = audience
         if bound_claims is not None:
             self.bound_claims = bound_claims
         if client_id is not None:
@@ -115,6 +120,29 @@ class OIDCAccessRules(object):
         """
 
         self._allowed_redirect_ur_is = allowed_redirect_ur_is
+
+    @property
+    def audience(self):
+        """Gets the audience of this OIDCAccessRules.  # noqa: E501
+
+        Audience claim to be used as part of the authentication flow. In case set, it must match the one configured on the Identity Provider's Application  # noqa: E501
+
+        :return: The audience of this OIDCAccessRules.  # noqa: E501
+        :rtype: str
+        """
+        return self._audience
+
+    @audience.setter
+    def audience(self, audience):
+        """Sets the audience of this OIDCAccessRules.
+
+        Audience claim to be used as part of the authentication flow. In case set, it must match the one configured on the Identity Provider's Application  # noqa: E501
+
+        :param audience: The audience of this OIDCAccessRules.  # noqa: E501
+        :type: str
+        """
+
+        self._audience = audience
 
     @property
     def bound_claims(self):

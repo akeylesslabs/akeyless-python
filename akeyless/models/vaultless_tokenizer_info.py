@@ -38,7 +38,7 @@ class VaultlessTokenizerInfo(object):
         'key_name': 'str',
         'regexp_tokenizer_info': 'RegexpTokenizerInfo',
         'template_type': 'str',
-        'tweak': 'list[int]',
+        'tweak': 'str',
         'tweak_type': 'str'
     }
 
@@ -169,7 +169,7 @@ class VaultlessTokenizerInfo(object):
         Tweak used in the case of internal tweak type  # noqa: E501
 
         :return: The tweak of this VaultlessTokenizerInfo.  # noqa: E501
-        :rtype: list[int]
+        :rtype: str
         """
         return self._tweak
 
@@ -180,7 +180,7 @@ class VaultlessTokenizerInfo(object):
         Tweak used in the case of internal tweak type  # noqa: E501
 
         :param tweak: The tweak of this VaultlessTokenizerInfo.  # noqa: E501
-        :type: list[int]
+        :type: str
         """
 
         self._tweak = tweak

@@ -34,55 +34,56 @@ class SmInfo(object):
                             and the value is json key in definition.
     """
     openapi_types = {
-        'package': 'str',
+        'sla': 'str',
         'tier': 'str'
     }
 
     attribute_map = {
-        'package': 'package',
+        'sla': 'sla',
         'tier': 'tier'
     }
 
-    def __init__(self, package=None, tier=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, sla=None, tier=None, local_vars_configuration=None):  # noqa: E501
         """SmInfo - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
-        self._package = None
+        self._sla = None
         self._tier = None
         self.discriminator = None
 
-        if package is not None:
-            self.package = package
+        if sla is not None:
+            self.sla = sla
         if tier is not None:
             self.tier = tier
 
     @property
-    def package(self):
-        """Gets the package of this SmInfo.  # noqa: E501
+    def sla(self):
+        """Gets the sla of this SmInfo.  # noqa: E501
 
 
-        :return: The package of this SmInfo.  # noqa: E501
+        :return: The sla of this SmInfo.  # noqa: E501
         :rtype: str
         """
-        return self._package
+        return self._sla
 
-    @package.setter
-    def package(self, package):
-        """Sets the package of this SmInfo.
+    @sla.setter
+    def sla(self, sla):
+        """Sets the sla of this SmInfo.
 
 
-        :param package: The package of this SmInfo.  # noqa: E501
+        :param sla: The sla of this SmInfo.  # noqa: E501
         :type: str
         """
 
-        self._package = package
+        self._sla = sla
 
     @property
     def tier(self):
         """Gets the tier of this SmInfo.  # noqa: E501
 
+        Tier represents a level of extensibility the account will have, defined by various limits for different resources of Akeyless e.g - A StarterTier may have a limit of 3 Client resources and 50 Secret resources  # noqa: E501
 
         :return: The tier of this SmInfo.  # noqa: E501
         :rtype: str
@@ -93,6 +94,7 @@ class SmInfo(object):
     def tier(self, tier):
         """Sets the tier of this SmInfo.
 
+        Tier represents a level of extensibility the account will have, defined by various limits for different resources of Akeyless e.g - A StarterTier may have a limit of 3 Client resources and 50 Secret resources  # noqa: E501
 
         :param tier: The tier of this SmInfo.  # noqa: E501
         :type: str

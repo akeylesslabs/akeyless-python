@@ -34,55 +34,29 @@ class ReverseRBACClient(object):
                             and the value is json key in definition.
     """
     openapi_types = {
-        'allowed_ops': 'list[str]',
         'assocs': 'list[AuthMethodRoleAssociation]',
         'auth_method_name': 'str'
     }
 
     attribute_map = {
-        'allowed_ops': 'allowed_ops',
         'assocs': 'assocs',
         'auth_method_name': 'auth_method_name'
     }
 
-    def __init__(self, allowed_ops=None, assocs=None, auth_method_name=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, assocs=None, auth_method_name=None, local_vars_configuration=None):  # noqa: E501
         """ReverseRBACClient - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
-        self._allowed_ops = None
         self._assocs = None
         self._auth_method_name = None
         self.discriminator = None
 
-        if allowed_ops is not None:
-            self.allowed_ops = allowed_ops
         if assocs is not None:
             self.assocs = assocs
         if auth_method_name is not None:
             self.auth_method_name = auth_method_name
-
-    @property
-    def allowed_ops(self):
-        """Gets the allowed_ops of this ReverseRBACClient.  # noqa: E501
-
-
-        :return: The allowed_ops of this ReverseRBACClient.  # noqa: E501
-        :rtype: list[str]
-        """
-        return self._allowed_ops
-
-    @allowed_ops.setter
-    def allowed_ops(self, allowed_ops):
-        """Sets the allowed_ops of this ReverseRBACClient.
-
-
-        :param allowed_ops: The allowed_ops of this ReverseRBACClient.  # noqa: E501
-        :type: list[str]
-        """
-
-        self._allowed_ops = allowed_ops
 
     @property
     def assocs(self):
