@@ -114,7 +114,7 @@ class GetSecretValue(object):
     def ignore_cache(self):
         """Gets the ignore_cache of this GetSecretValue.  # noqa: E501
 
-        Ignore Cache Retrieve the Secret value without checking the Gateway's cache. This flag is only relevant when using the RestAPI  # noqa: E501
+        Ignore Cache Retrieve the Secret value without checking the Gateway's cache [true/false]. This flag is only relevant when using the RestAPI  # noqa: E501
 
         :return: The ignore_cache of this GetSecretValue.  # noqa: E501
         :rtype: str
@@ -125,7 +125,7 @@ class GetSecretValue(object):
     def ignore_cache(self, ignore_cache):
         """Sets the ignore_cache of this GetSecretValue.
 
-        Ignore Cache Retrieve the Secret value without checking the Gateway's cache. This flag is only relevant when using the RestAPI  # noqa: E501
+        Ignore Cache Retrieve the Secret value without checking the Gateway's cache [true/false]. This flag is only relevant when using the RestAPI  # noqa: E501
 
         :param ignore_cache: The ignore_cache of this GetSecretValue.  # noqa: E501
         :type: str

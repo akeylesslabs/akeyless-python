@@ -310,7 +310,7 @@ class ListItems(object):
     def type(self):
         """Gets the type of this ListItems.  # noqa: E501
 
-        The item types list of the requested items. In case it is empty, all types of items will be returned. options: [key, static-secret, dynamic-secret]  # noqa: E501
+        The item types list of the requested items. In case it is empty, all types of items will be returned. options: [key, static-secret, dynamic-secret, classic-key]  # noqa: E501
 
         :return: The type of this ListItems.  # noqa: E501
         :rtype: list[str]
@@ -321,7 +321,7 @@ class ListItems(object):
     def type(self, type):
         """Sets the type of this ListItems.
 
-        The item types list of the requested items. In case it is empty, all types of items will be returned. options: [key, static-secret, dynamic-secret]  # noqa: E501
+        The item types list of the requested items. In case it is empty, all types of items will be returned. options: [key, static-secret, dynamic-secret, classic-key]  # noqa: E501
 
         :param type: The type of this ListItems.  # noqa: E501
         :type: list[str]

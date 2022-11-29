@@ -34,6 +34,7 @@ class ExportClassicKey(object):
                             and the value is json key in definition.
     """
     openapi_types = {
+        'ignore_cache': 'str',
         'json': 'bool',
         'name': 'str',
         'token': 'str',
@@ -42,6 +43,7 @@ class ExportClassicKey(object):
     }
 
     attribute_map = {
+        'ignore_cache': 'ignore-cache',
         'json': 'json',
         'name': 'name',
         'token': 'token',
@@ -49,12 +51,13 @@ class ExportClassicKey(object):
         'version': 'version'
     }
 
-    def __init__(self, json=None, name=None, token=None, uid_token=None, version=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, ignore_cache='false', json=None, name=None, token=None, uid_token=None, version=None, local_vars_configuration=None):  # noqa: E501
         """ExportClassicKey - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
+        self._ignore_cache = None
         self._json = None
         self._name = None
         self._token = None
@@ -62,6 +65,8 @@ class ExportClassicKey(object):
         self._version = None
         self.discriminator = None
 
+        if ignore_cache is not None:
+            self.ignore_cache = ignore_cache
         if json is not None:
             self.json = json
         self.name = name
@@ -71,6 +76,29 @@ class ExportClassicKey(object):
             self.uid_token = uid_token
         if version is not None:
             self.version = version
+
+    @property
+    def ignore_cache(self):
+        """Gets the ignore_cache of this ExportClassicKey.  # noqa: E501
+
+        Ignore Cache Retrieve the Secret value without checking the Gateway's cache. This flag is only relevant when using the RestAPI  # noqa: E501
+
+        :return: The ignore_cache of this ExportClassicKey.  # noqa: E501
+        :rtype: str
+        """
+        return self._ignore_cache
+
+    @ignore_cache.setter
+    def ignore_cache(self, ignore_cache):
+        """Sets the ignore_cache of this ExportClassicKey.
+
+        Ignore Cache Retrieve the Secret value without checking the Gateway's cache. This flag is only relevant when using the RestAPI  # noqa: E501
+
+        :param ignore_cache: The ignore_cache of this ExportClassicKey.  # noqa: E501
+        :type: str
+        """
+
+        self._ignore_cache = ignore_cache
 
     @property
     def json(self):
