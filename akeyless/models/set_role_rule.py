@@ -40,6 +40,7 @@ class SetRoleRule(object):
         'role_name': 'str',
         'rule_type': 'str',
         'token': 'str',
+        'ttl': 'int',
         'uid_token': 'str'
     }
 
@@ -50,10 +51,11 @@ class SetRoleRule(object):
         'role_name': 'role-name',
         'rule_type': 'rule-type',
         'token': 'token',
+        'ttl': 'ttl',
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, capability=None, json=None, path=None, role_name=None, rule_type='item-rule', token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, capability=None, json=None, path=None, role_name=None, rule_type='item-rule', token=None, ttl=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """SetRoleRule - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -65,6 +67,7 @@ class SetRoleRule(object):
         self._role_name = None
         self._rule_type = None
         self._token = None
+        self._ttl = None
         self._uid_token = None
         self.discriminator = None
 
@@ -77,6 +80,8 @@ class SetRoleRule(object):
             self.rule_type = rule_type
         if token is not None:
             self.token = token
+        if ttl is not None:
+            self.ttl = ttl
         if uid_token is not None:
             self.uid_token = uid_token
 
@@ -223,6 +228,29 @@ class SetRoleRule(object):
         """
 
         self._token = token
+
+    @property
+    def ttl(self):
+        """Gets the ttl of this SetRoleRule.  # noqa: E501
+
+        RoleRule ttl  # noqa: E501
+
+        :return: The ttl of this SetRoleRule.  # noqa: E501
+        :rtype: int
+        """
+        return self._ttl
+
+    @ttl.setter
+    def ttl(self, ttl):
+        """Sets the ttl of this SetRoleRule.
+
+        RoleRule ttl  # noqa: E501
+
+        :param ttl: The ttl of this SetRoleRule.  # noqa: E501
+        :type: int
+        """
+
+        self._ttl = ttl
 
     @property
     def uid_token(self):

@@ -268,7 +268,7 @@ class GatewayMigratePersonalItems(object):
     def target_location(self):
         """Gets the target_location of this GatewayMigratePersonalItems.  # noqa: E501
 
-        Target location in Akeyless for migrated secrets  # noqa: E501
+        Target location in your Akeyless personal folder for migrated secrets  # noqa: E501
 
         :return: The target_location of this GatewayMigratePersonalItems.  # noqa: E501
         :rtype: str
@@ -279,7 +279,7 @@ class GatewayMigratePersonalItems(object):
     def target_location(self, target_location):
         """Sets the target_location of this GatewayMigratePersonalItems.
 
-        Target location in Akeyless for migrated secrets  # noqa: E501
+        Target location in your Akeyless personal folder for migrated secrets  # noqa: E501
 
         :param target_location: The target_location of this GatewayMigratePersonalItems.  # noqa: E501
         :type: str
