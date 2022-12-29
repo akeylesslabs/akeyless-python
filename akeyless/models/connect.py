@@ -44,6 +44,7 @@ class Connect(object):
         'identity_file': 'str',
         'json': 'bool',
         'name': 'str',
+        'ssh_command': 'str',
         'ssh_extra_args': 'str',
         'ssh_legacy_signing_alg': 'bool',
         'target': 'str',
@@ -63,6 +64,7 @@ class Connect(object):
         'identity_file': 'identity-file',
         'json': 'json',
         'name': 'name',
+        'ssh_command': 'ssh-command',
         'ssh_extra_args': 'ssh-extra-args',
         'ssh_legacy_signing_alg': 'ssh-legacy-signing-alg',
         'target': 'target',
@@ -71,7 +73,7 @@ class Connect(object):
         'via_bastion': 'via-bastion'
     }
 
-    def __init__(self, helper=None, rc_file_override=None, bastion_ctrl_path=None, bastion_ctrl_port='9900', bastion_ctrl_proto='http', bastion_ctrl_subdomain=None, cert_issuer_name=None, identity_file=None, json=None, name=None, ssh_extra_args=None, ssh_legacy_signing_alg=None, target=None, token=None, uid_token=None, via_bastion=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, helper=None, rc_file_override=None, bastion_ctrl_path=None, bastion_ctrl_port='9900', bastion_ctrl_proto='http', bastion_ctrl_subdomain=None, cert_issuer_name=None, identity_file=None, json=None, name=None, ssh_command=None, ssh_extra_args=None, ssh_legacy_signing_alg=None, target=None, token=None, uid_token=None, via_bastion=None, local_vars_configuration=None):  # noqa: E501
         """Connect - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -87,6 +89,7 @@ class Connect(object):
         self._identity_file = None
         self._json = None
         self._name = None
+        self._ssh_command = None
         self._ssh_extra_args = None
         self._ssh_legacy_signing_alg = None
         self._target = None
@@ -115,6 +118,8 @@ class Connect(object):
             self.json = json
         if name is not None:
             self.name = name
+        if ssh_command is not None:
+            self.ssh_command = ssh_command
         if ssh_extra_args is not None:
             self.ssh_extra_args = ssh_extra_args
         if ssh_legacy_signing_alg is not None:
@@ -355,6 +360,29 @@ class Connect(object):
         """
 
         self._name = name
+
+    @property
+    def ssh_command(self):
+        """Gets the ssh_command of this Connect.  # noqa: E501
+
+        Path to SSH executable. e.g. /usr/bin/ssh  # noqa: E501
+
+        :return: The ssh_command of this Connect.  # noqa: E501
+        :rtype: str
+        """
+        return self._ssh_command
+
+    @ssh_command.setter
+    def ssh_command(self, ssh_command):
+        """Sets the ssh_command of this Connect.
+
+        Path to SSH executable. e.g. /usr/bin/ssh  # noqa: E501
+
+        :param ssh_command: The ssh_command of this Connect.  # noqa: E501
+        :type: str
+        """
+
+        self._ssh_command = ssh_command
 
     @property
     def ssh_extra_args(self):

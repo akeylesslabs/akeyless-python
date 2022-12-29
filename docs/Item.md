@@ -4,6 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **access_date** | **datetime** |  | [optional] 
+**access_request_status** | **str** |  | [optional] 
 **auto_rotate** | **bool** |  | [optional] 
 **cert_issuer_signer_key_name** | **str** |  | [optional] 
 **certificate_issue_details** | [**CertificateIssueInfo**](CertificateIssueInfo.md) |  | [optional] 
@@ -14,6 +15,7 @@ Name | Type | Description | Notes
 **delete_protection** | **bool** |  | [optional] 
 **deletion_date** | **datetime** |  | [optional] 
 **display_id** | **str** |  | [optional] 
+**is_access_request_enabled** | **bool** |  | [optional] 
 **is_enabled** | **bool** |  | [optional] 
 **item_accessibility** | **int** |  | [optional] 
 **item_general_info** | [**ItemGeneralInfo**](ItemGeneralInfo.md) |  | [optional] 

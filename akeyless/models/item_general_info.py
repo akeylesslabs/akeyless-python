@@ -35,6 +35,7 @@ class ItemGeneralInfo(object):
     """
     openapi_types = {
         'cert_issue_details': 'CertificateIssueInfo',
+        'certificate_chain_info': 'CertificateChainInfo',
         'classic_key_details': 'ClassicKeyDetailsInfo',
         'cluster_gw_url': 'str',
         'display_metadata': 'str',
@@ -48,6 +49,7 @@ class ItemGeneralInfo(object):
 
     attribute_map = {
         'cert_issue_details': 'cert_issue_details',
+        'certificate_chain_info': 'certificate_chain_info',
         'classic_key_details': 'classic_key_details',
         'cluster_gw_url': 'cluster_gw_url',
         'display_metadata': 'display_metadata',
@@ -59,13 +61,14 @@ class ItemGeneralInfo(object):
         'tokenizer_info': 'tokenizer_info'
     }
 
-    def __init__(self, cert_issue_details=None, classic_key_details=None, cluster_gw_url=None, display_metadata=None, dynamic_secret_producer_details=None, password_policy=None, rotated_secret_details=None, secure_remote_access_details=None, static_secret_info=None, tokenizer_info=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, cert_issue_details=None, certificate_chain_info=None, classic_key_details=None, cluster_gw_url=None, display_metadata=None, dynamic_secret_producer_details=None, password_policy=None, rotated_secret_details=None, secure_remote_access_details=None, static_secret_info=None, tokenizer_info=None, local_vars_configuration=None):  # noqa: E501
         """ItemGeneralInfo - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._cert_issue_details = None
+        self._certificate_chain_info = None
         self._classic_key_details = None
         self._cluster_gw_url = None
         self._display_metadata = None
@@ -79,6 +82,8 @@ class ItemGeneralInfo(object):
 
         if cert_issue_details is not None:
             self.cert_issue_details = cert_issue_details
+        if certificate_chain_info is not None:
+            self.certificate_chain_info = certificate_chain_info
         if classic_key_details is not None:
             self.classic_key_details = classic_key_details
         if cluster_gw_url is not None:
@@ -118,6 +123,27 @@ class ItemGeneralInfo(object):
         """
 
         self._cert_issue_details = cert_issue_details
+
+    @property
+    def certificate_chain_info(self):
+        """Gets the certificate_chain_info of this ItemGeneralInfo.  # noqa: E501
+
+
+        :return: The certificate_chain_info of this ItemGeneralInfo.  # noqa: E501
+        :rtype: CertificateChainInfo
+        """
+        return self._certificate_chain_info
+
+    @certificate_chain_info.setter
+    def certificate_chain_info(self, certificate_chain_info):
+        """Sets the certificate_chain_info of this ItemGeneralInfo.
+
+
+        :param certificate_chain_info: The certificate_chain_info of this ItemGeneralInfo.  # noqa: E501
+        :type: CertificateChainInfo
+        """
+
+        self._certificate_chain_info = certificate_chain_info
 
     @property
     def classic_key_details(self):

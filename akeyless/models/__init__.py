@@ -28,6 +28,7 @@ from akeyless.models.akeyless_gateway_config import AkeylessGatewayConfig
 from akeyless.models.allowed_access import AllowedAccess
 from akeyless.models.assoc_role_auth_method import AssocRoleAuthMethod
 from akeyless.models.assoc_target_item import AssocTargetItem
+from akeyless.models.attribute_type_and_value import AttributeTypeAndValue
 from akeyless.models.auth import Auth
 from akeyless.models.auth_method import AuthMethod
 from akeyless.models.auth_method_access_info import AuthMethodAccessInfo
@@ -43,6 +44,9 @@ from akeyless.models.bastions_list import BastionsList
 from akeyless.models.cf_config_part import CFConfigPart
 from akeyless.models.cache_config_part import CacheConfigPart
 from akeyless.models.cert_access_rules import CertAccessRules
+from akeyless.models.certificate_chain_info import CertificateChainInfo
+from akeyless.models.certificate_expiration_event import CertificateExpirationEvent
+from akeyless.models.certificate_info import CertificateInfo
 from akeyless.models.certificate_issue_info import CertificateIssueInfo
 from akeyless.models.classic_key_details_info import ClassicKeyDetailsInfo
 from akeyless.models.classic_key_status_info import ClassicKeyStatusInfo
@@ -94,6 +98,8 @@ from akeyless.models.create_dockerhub_target_output import CreateDockerhubTarget
 from akeyless.models.create_dynamic_secret import CreateDynamicSecret
 from akeyless.models.create_eks_target import CreateEKSTarget
 from akeyless.models.create_eks_target_output import CreateEKSTargetOutput
+from akeyless.models.create_event_forwarder import CreateEventForwarder
+from akeyless.models.create_event_forwarder_output import CreateEventForwarderOutput
 from akeyless.models.create_gke_target import CreateGKETarget
 from akeyless.models.create_gke_target_output import CreateGKETargetOutput
 from akeyless.models.create_gcp_target import CreateGcpTarget
@@ -146,6 +152,7 @@ from akeyless.models.delete_auth_method import DeleteAuthMethod
 from akeyless.models.delete_auth_method_output import DeleteAuthMethodOutput
 from akeyless.models.delete_auth_methods import DeleteAuthMethods
 from akeyless.models.delete_auth_methods_output import DeleteAuthMethodsOutput
+from akeyless.models.delete_event_forwarder import DeleteEventForwarder
 from akeyless.models.delete_item import DeleteItem
 from akeyless.models.delete_item_output import DeleteItemOutput
 from akeyless.models.delete_items import DeleteItems
@@ -167,6 +174,7 @@ from akeyless.models.detokenize import Detokenize
 from akeyless.models.detokenize_output import DetokenizeOutput
 from akeyless.models.dynamic_secret_producer_info import DynamicSecretProducerInfo
 from akeyless.models.elasticsearch_log_forwarding_config import ElasticsearchLogForwardingConfig
+from akeyless.models.email_entry import EmailEntry
 from akeyless.models.email_pass_access_rules import EmailPassAccessRules
 from akeyless.models.email_tokenizer_info import EmailTokenizerInfo
 from akeyless.models.encrypt import Encrypt
@@ -177,11 +185,11 @@ from akeyless.models.encrypt_with_classic_key import EncryptWithClassicKey
 from akeyless.models.encrypt_with_classic_key_output import EncryptWithClassicKeyOutput
 from akeyless.models.export_classic_key import ExportClassicKey
 from akeyless.models.export_classic_key_output import ExportClassicKeyOutput
+from akeyless.models.extension import Extension
 from akeyless.models.external_kms_key_id import ExternalKMSKeyId
 from akeyless.models.gcp_access_rules import GCPAccessRules
 from akeyless.models.gcp_payload import GCPPayload
 from akeyless.models.gcp_secrets_migration import GCPSecretsMigration
-from akeyless.models.gateway_add_allowed_management_access import GatewayAddAllowedManagementAccess
 from akeyless.models.gateway_create_k8_s_auth_config import GatewayCreateK8SAuthConfig
 from akeyless.models.gateway_create_k8_s_auth_config_output import GatewayCreateK8SAuthConfigOutput
 from akeyless.models.gateway_create_migration import GatewayCreateMigration
@@ -329,6 +337,8 @@ from akeyless.models.get_account_settings import GetAccountSettings
 from akeyless.models.get_account_settings_command_output import GetAccountSettingsCommandOutput
 from akeyless.models.get_auth_method import GetAuthMethod
 from akeyless.models.get_dynamic_secret_value import GetDynamicSecretValue
+from akeyless.models.get_event_forwarder import GetEventForwarder
+from akeyless.models.get_event_forwarder_output import GetEventForwarderOutput
 from akeyless.models.get_kube_exec_creds import GetKubeExecCreds
 from akeyless.models.get_kube_exec_creds_output import GetKubeExecCredsOutput
 from akeyless.models.get_pki_certificate import GetPKICertificate
@@ -400,6 +410,7 @@ from akeyless.models.list_items_in_path_output import ListItemsInPathOutput
 from akeyless.models.list_roles import ListRoles
 from akeyless.models.list_roles_output import ListRolesOutput
 from akeyless.models.list_sra_bastions import ListSRABastions
+from akeyless.models.list_shared_items import ListSharedItems
 from akeyless.models.list_targets import ListTargets
 from akeyless.models.list_targets_output import ListTargetsOutput
 from akeyless.models.log_forwarding_config_part import LogForwardingConfigPart
@@ -414,6 +425,8 @@ from akeyless.models.migrations_config_part import MigrationsConfigPart
 from akeyless.models.mock_migration import MockMigration
 from akeyless.models.mock_payload import MockPayload
 from akeyless.models.move_objects import MoveObjects
+from akeyless.models.name import Name
+from akeyless.models.noti_forwarder import NotiForwarder
 from akeyless.models.o_auth2_access_rules import OAuth2AccessRules
 from akeyless.models.o_auth2_custom_claim import OAuth2CustomClaim
 from akeyless.models.oidc_access_rules import OIDCAccessRules
@@ -430,6 +443,8 @@ from akeyless.models.raw_creds import RawCreds
 from akeyless.models.refresh_key import RefreshKey
 from akeyless.models.refresh_key_output import RefreshKeyOutput
 from akeyless.models.regexp_tokenizer_info import RegexpTokenizerInfo
+from akeyless.models.request_access import RequestAccess
+from akeyless.models.request_access_output import RequestAccessOutput
 from akeyless.models.required_activity import RequiredActivity
 from akeyless.models.reverse_rbac import ReverseRBAC
 from akeyless.models.reverse_rbac_client import ReverseRBACClient
@@ -522,6 +537,7 @@ from akeyless.models.update_dockerhub_target import UpdateDockerhubTarget
 from akeyless.models.update_dockerhub_target_output import UpdateDockerhubTargetOutput
 from akeyless.models.update_eks_target import UpdateEKSTarget
 from akeyless.models.update_eks_target_output import UpdateEKSTargetOutput
+from akeyless.models.update_event_forwarder import UpdateEventForwarder
 from akeyless.models.update_gke_target import UpdateGKETarget
 from akeyless.models.update_gke_target_output import UpdateGKETargetOutput
 from akeyless.models.update_gcp_target import UpdateGcpTarget

@@ -35,11 +35,13 @@ class Target(object):
     """
     openapi_types = {
         'access_date': 'datetime',
+        'access_request_status': 'str',
         'attributes': 'dict(str, object)',
         'client_permissions': 'list[str]',
         'comment': 'str',
         'creation_date': 'datetime',
         'credentials_less': 'bool',
+        'is_access_request_enabled': 'bool',
         'last_version': 'int',
         'modification_date': 'datetime',
         'protection_key_name': 'str',
@@ -53,11 +55,13 @@ class Target(object):
 
     attribute_map = {
         'access_date': 'access_date',
+        'access_request_status': 'access_request_status',
         'attributes': 'attributes',
         'client_permissions': 'client_permissions',
         'comment': 'comment',
         'creation_date': 'creation_date',
         'credentials_less': 'credentials_less',
+        'is_access_request_enabled': 'is_access_request_enabled',
         'last_version': 'last_version',
         'modification_date': 'modification_date',
         'protection_key_name': 'protection_key_name',
@@ -69,18 +73,20 @@ class Target(object):
         'with_customer_fragment': 'with_customer_fragment'
     }
 
-    def __init__(self, access_date=None, attributes=None, client_permissions=None, comment=None, creation_date=None, credentials_less=None, last_version=None, modification_date=None, protection_key_name=None, target_id=None, target_items_assoc=None, target_name=None, target_type=None, target_versions=None, with_customer_fragment=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, access_date=None, access_request_status=None, attributes=None, client_permissions=None, comment=None, creation_date=None, credentials_less=None, is_access_request_enabled=None, last_version=None, modification_date=None, protection_key_name=None, target_id=None, target_items_assoc=None, target_name=None, target_type=None, target_versions=None, with_customer_fragment=None, local_vars_configuration=None):  # noqa: E501
         """Target - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._access_date = None
+        self._access_request_status = None
         self._attributes = None
         self._client_permissions = None
         self._comment = None
         self._creation_date = None
         self._credentials_less = None
+        self._is_access_request_enabled = None
         self._last_version = None
         self._modification_date = None
         self._protection_key_name = None
@@ -94,6 +100,8 @@ class Target(object):
 
         if access_date is not None:
             self.access_date = access_date
+        if access_request_status is not None:
+            self.access_request_status = access_request_status
         if attributes is not None:
             self.attributes = attributes
         if client_permissions is not None:
@@ -104,6 +112,8 @@ class Target(object):
             self.creation_date = creation_date
         if credentials_less is not None:
             self.credentials_less = credentials_less
+        if is_access_request_enabled is not None:
+            self.is_access_request_enabled = is_access_request_enabled
         if last_version is not None:
             self.last_version = last_version
         if modification_date is not None:
@@ -143,6 +153,27 @@ class Target(object):
         """
 
         self._access_date = access_date
+
+    @property
+    def access_request_status(self):
+        """Gets the access_request_status of this Target.  # noqa: E501
+
+
+        :return: The access_request_status of this Target.  # noqa: E501
+        :rtype: str
+        """
+        return self._access_request_status
+
+    @access_request_status.setter
+    def access_request_status(self, access_request_status):
+        """Sets the access_request_status of this Target.
+
+
+        :param access_request_status: The access_request_status of this Target.  # noqa: E501
+        :type: str
+        """
+
+        self._access_request_status = access_request_status
 
     @property
     def attributes(self):
@@ -250,6 +281,27 @@ class Target(object):
         """
 
         self._credentials_less = credentials_less
+
+    @property
+    def is_access_request_enabled(self):
+        """Gets the is_access_request_enabled of this Target.  # noqa: E501
+
+
+        :return: The is_access_request_enabled of this Target.  # noqa: E501
+        :rtype: bool
+        """
+        return self._is_access_request_enabled
+
+    @is_access_request_enabled.setter
+    def is_access_request_enabled(self, is_access_request_enabled):
+        """Sets the is_access_request_enabled of this Target.
+
+
+        :param is_access_request_enabled: The is_access_request_enabled of this Target.  # noqa: E501
+        :type: bool
+        """
+
+        self._is_access_request_enabled = is_access_request_enabled
 
     @property
     def last_version(self):

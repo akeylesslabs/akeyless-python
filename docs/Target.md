@@ -4,11 +4,13 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **access_date** | **datetime** |  | [optional] 
+**access_request_status** | **str** |  | [optional] 
 **attributes** | **dict(str, object)** | this is not \&quot;omitempty\&quot; since an empty value causes no update while an empty map will clear the attributes | [optional] 
 **client_permissions** | **list[str]** |  | [optional] 
 **comment** | **str** |  | [optional] 
 **creation_date** | **datetime** |  | [optional] 
 **credentials_less** | **bool** |  | [optional] 
+**is_access_request_enabled** | **bool** |  | [optional] 
 **last_version** | **int** |  | [optional] 
 **modification_date** | **datetime** |  | [optional] 
 **protection_key_name** | **str** |  | [optional] 

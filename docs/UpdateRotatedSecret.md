@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **auto_rotate** | **str** | Whether to automatically rotate every --rotation-interval days, or disable existing automatic rotation | [optional] 
 **aws_region** | **str** | Region (used in aws) | [optional] [default to 'us-east-2']
 **custom_payload** | **str** |  | [optional] 
+**gcp_key** | **str** | Base64-encoded service account private key text | [optional] 
 **json** | **bool** | Set output format to JSON | [optional] 
 **keep_prev_version** | **str** |  | [optional] 
 **key** | **str** | The name of a key that used to encrypt the secret value (if empty, the account default protectionKey key will be used) | [optional] 

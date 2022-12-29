@@ -35,6 +35,7 @@ class Item(object):
     """
     openapi_types = {
         'access_date': 'datetime',
+        'access_request_status': 'str',
         'auto_rotate': 'bool',
         'cert_issuer_signer_key_name': 'str',
         'certificate_issue_details': 'CertificateIssueInfo',
@@ -45,6 +46,7 @@ class Item(object):
         'delete_protection': 'bool',
         'deletion_date': 'datetime',
         'display_id': 'str',
+        'is_access_request_enabled': 'bool',
         'is_enabled': 'bool',
         'item_accessibility': 'int',
         'item_general_info': 'ItemGeneralInfo',
@@ -72,6 +74,7 @@ class Item(object):
 
     attribute_map = {
         'access_date': 'access_date',
+        'access_request_status': 'access_request_status',
         'auto_rotate': 'auto_rotate',
         'cert_issuer_signer_key_name': 'cert_issuer_signer_key_name',
         'certificate_issue_details': 'certificate_issue_details',
@@ -82,6 +85,7 @@ class Item(object):
         'delete_protection': 'delete_protection',
         'deletion_date': 'deletion_date',
         'display_id': 'display_id',
+        'is_access_request_enabled': 'is_access_request_enabled',
         'is_enabled': 'is_enabled',
         'item_accessibility': 'item_accessibility',
         'item_general_info': 'item_general_info',
@@ -107,13 +111,14 @@ class Item(object):
         'with_customer_fragment': 'with_customer_fragment'
     }
 
-    def __init__(self, access_date=None, auto_rotate=None, cert_issuer_signer_key_name=None, certificate_issue_details=None, certificates=None, client_permissions=None, creation_date=None, customer_fragment_id=None, delete_protection=None, deletion_date=None, display_id=None, is_enabled=None, item_accessibility=None, item_general_info=None, item_id=None, item_metadata=None, item_name=None, item_size=None, item_state=None, item_sub_type=None, item_tags=None, item_targets_assoc=None, item_type=None, item_versions=None, last_version=None, modification_date=None, next_rotation_date=None, protection_key_name=None, protection_key_type=None, public_value=None, rotation_interval=None, shared_by=None, target_versions=None, with_customer_fragment=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, access_date=None, access_request_status=None, auto_rotate=None, cert_issuer_signer_key_name=None, certificate_issue_details=None, certificates=None, client_permissions=None, creation_date=None, customer_fragment_id=None, delete_protection=None, deletion_date=None, display_id=None, is_access_request_enabled=None, is_enabled=None, item_accessibility=None, item_general_info=None, item_id=None, item_metadata=None, item_name=None, item_size=None, item_state=None, item_sub_type=None, item_tags=None, item_targets_assoc=None, item_type=None, item_versions=None, last_version=None, modification_date=None, next_rotation_date=None, protection_key_name=None, protection_key_type=None, public_value=None, rotation_interval=None, shared_by=None, target_versions=None, with_customer_fragment=None, local_vars_configuration=None):  # noqa: E501
         """Item - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._access_date = None
+        self._access_request_status = None
         self._auto_rotate = None
         self._cert_issuer_signer_key_name = None
         self._certificate_issue_details = None
@@ -124,6 +129,7 @@ class Item(object):
         self._delete_protection = None
         self._deletion_date = None
         self._display_id = None
+        self._is_access_request_enabled = None
         self._is_enabled = None
         self._item_accessibility = None
         self._item_general_info = None
@@ -151,6 +157,8 @@ class Item(object):
 
         if access_date is not None:
             self.access_date = access_date
+        if access_request_status is not None:
+            self.access_request_status = access_request_status
         if auto_rotate is not None:
             self.auto_rotate = auto_rotate
         if cert_issuer_signer_key_name is not None:
@@ -171,6 +179,8 @@ class Item(object):
             self.deletion_date = deletion_date
         if display_id is not None:
             self.display_id = display_id
+        if is_access_request_enabled is not None:
+            self.is_access_request_enabled = is_access_request_enabled
         if is_enabled is not None:
             self.is_enabled = is_enabled
         if item_accessibility is not None:
@@ -238,6 +248,27 @@ class Item(object):
         """
 
         self._access_date = access_date
+
+    @property
+    def access_request_status(self):
+        """Gets the access_request_status of this Item.  # noqa: E501
+
+
+        :return: The access_request_status of this Item.  # noqa: E501
+        :rtype: str
+        """
+        return self._access_request_status
+
+    @access_request_status.setter
+    def access_request_status(self, access_request_status):
+        """Sets the access_request_status of this Item.
+
+
+        :param access_request_status: The access_request_status of this Item.  # noqa: E501
+        :type: str
+        """
+
+        self._access_request_status = access_request_status
 
     @property
     def auto_rotate(self):
@@ -448,6 +479,27 @@ class Item(object):
         """
 
         self._display_id = display_id
+
+    @property
+    def is_access_request_enabled(self):
+        """Gets the is_access_request_enabled of this Item.  # noqa: E501
+
+
+        :return: The is_access_request_enabled of this Item.  # noqa: E501
+        :rtype: bool
+        """
+        return self._is_access_request_enabled
+
+    @is_access_request_enabled.setter
+    def is_access_request_enabled(self, is_access_request_enabled):
+        """Sets the is_access_request_enabled of this Item.
+
+
+        :param is_access_request_enabled: The is_access_request_enabled of this Item.  # noqa: E501
+        :type: bool
+        """
+
+        self._is_access_request_enabled = is_access_request_enabled
 
     @property
     def is_enabled(self):

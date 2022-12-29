@@ -40,6 +40,7 @@ class GatewayUpdateItem(object):
         'auto_rotate': 'str',
         'custom_payload': 'str',
         'delete_protection': 'str',
+        'gcp_key': 'str',
         'json': 'bool',
         'keep_prev_version': 'str',
         'key': 'str',
@@ -65,6 +66,7 @@ class GatewayUpdateItem(object):
         'auto_rotate': 'auto-rotate',
         'custom_payload': 'custom-payload',
         'delete_protection': 'delete_protection',
+        'gcp_key': 'gcp-key',
         'json': 'json',
         'keep_prev_version': 'keep-prev-version',
         'key': 'key',
@@ -83,7 +85,7 @@ class GatewayUpdateItem(object):
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, add_tag=None, api_id=None, api_key=None, auto_rotate=None, custom_payload=None, delete_protection=None, json=None, keep_prev_version=None, key=None, name=None, new_metadata='default_metadata', new_name=None, new_version=None, rm_tag=None, rotated_password=None, rotated_username=None, rotation_hour=0, rotation_interval=None, rotator_creds_type=None, token=None, type=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, add_tag=None, api_id=None, api_key=None, auto_rotate=None, custom_payload=None, delete_protection=None, gcp_key=None, json=None, keep_prev_version=None, key=None, name=None, new_metadata='default_metadata', new_name=None, new_version=None, rm_tag=None, rotated_password=None, rotated_username=None, rotation_hour=0, rotation_interval=None, rotator_creds_type=None, token=None, type=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """GatewayUpdateItem - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -95,6 +97,7 @@ class GatewayUpdateItem(object):
         self._auto_rotate = None
         self._custom_payload = None
         self._delete_protection = None
+        self._gcp_key = None
         self._json = None
         self._keep_prev_version = None
         self._key = None
@@ -125,6 +128,8 @@ class GatewayUpdateItem(object):
             self.custom_payload = custom_payload
         if delete_protection is not None:
             self.delete_protection = delete_protection
+        if gcp_key is not None:
+            self.gcp_key = gcp_key
         if json is not None:
             self.json = json
         if keep_prev_version is not None:
@@ -287,6 +292,29 @@ class GatewayUpdateItem(object):
         """
 
         self._delete_protection = delete_protection
+
+    @property
+    def gcp_key(self):
+        """Gets the gcp_key of this GatewayUpdateItem.  # noqa: E501
+
+        Base64-encoded service account private key text  # noqa: E501
+
+        :return: The gcp_key of this GatewayUpdateItem.  # noqa: E501
+        :rtype: str
+        """
+        return self._gcp_key
+
+    @gcp_key.setter
+    def gcp_key(self, gcp_key):
+        """Sets the gcp_key of this GatewayUpdateItem.
+
+        Base64-encoded service account private key text  # noqa: E501
+
+        :param gcp_key: The gcp_key of this GatewayUpdateItem.  # noqa: E501
+        :type: str
+        """
+
+        self._gcp_key = gcp_key
 
     @property
     def json(self):
