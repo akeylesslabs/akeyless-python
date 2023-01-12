@@ -87,6 +87,8 @@ from akeyless.models.create_auth_method_universal_identity import CreateAuthMeth
 from akeyless.models.create_auth_method_universal_identity_output import CreateAuthMethodUniversalIdentityOutput
 from akeyless.models.create_azure_target import CreateAzureTarget
 from akeyless.models.create_azure_target_output import CreateAzureTargetOutput
+from akeyless.models.create_certificate import CreateCertificate
+from akeyless.models.create_certificate_output import CreateCertificateOutput
 from akeyless.models.create_classic_key import CreateClassicKey
 from akeyless.models.create_classic_key_output import CreateClassicKeyOutput
 from akeyless.models.create_db_target import CreateDBTarget
@@ -329,6 +331,8 @@ from akeyless.models.gateway_update_producer_redshift import GatewayUpdateProduc
 from akeyless.models.gateway_update_producer_redshift_output import GatewayUpdateProducerRedshiftOutput
 from akeyless.models.gateway_update_producer_snowflake import GatewayUpdateProducerSnowflake
 from akeyless.models.gateway_update_producer_snowflake_output import GatewayUpdateProducerSnowflakeOutput
+from akeyless.models.gateway_update_tls_cert import GatewayUpdateTlsCert
+from akeyless.models.gateway_update_tls_cert_output import GatewayUpdateTlsCertOutput
 from akeyless.models.gateway_update_tmp_users import GatewayUpdateTmpUsers
 from akeyless.models.gateways_list_response import GatewaysListResponse
 from akeyless.models.gen_customer_fragment import GenCustomerFragment
@@ -336,6 +340,8 @@ from akeyless.models.general_config_part import GeneralConfigPart
 from akeyless.models.get_account_settings import GetAccountSettings
 from akeyless.models.get_account_settings_command_output import GetAccountSettingsCommandOutput
 from akeyless.models.get_auth_method import GetAuthMethod
+from akeyless.models.get_certificate_value import GetCertificateValue
+from akeyless.models.get_certificate_value_output import GetCertificateValueOutput
 from akeyless.models.get_dynamic_secret_value import GetDynamicSecretValue
 from akeyless.models.get_event_forwarder import GetEventForwarder
 from akeyless.models.get_event_forwarder_output import GetEventForwarderOutput
@@ -530,6 +536,8 @@ from akeyless.models.update_auth_method_saml import UpdateAuthMethodSAML
 from akeyless.models.update_auth_method_universal_identity import UpdateAuthMethodUniversalIdentity
 from akeyless.models.update_azure_target import UpdateAzureTarget
 from akeyless.models.update_azure_target_output import UpdateAzureTargetOutput
+from akeyless.models.update_certificate_output import UpdateCertificateOutput
+from akeyless.models.update_certificate_value import UpdateCertificateValue
 from akeyless.models.update_db_target import UpdateDBTarget
 from akeyless.models.update_db_target_details import UpdateDBTargetDetails
 from akeyless.models.update_db_target_output import UpdateDBTargetOutput
