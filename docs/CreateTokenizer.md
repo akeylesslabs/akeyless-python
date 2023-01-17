@@ -7,10 +7,11 @@ Name | Type | Description | Notes
 **alphabet** | **str** | Alphabet to use in regexp vaultless tokenization | [optional] 
 **decoding_template** | **str** | The Decoding output template to use in regexp vaultless tokenization | [optional] 
 **delete_protection** | **str** | Protection from accidental deletion of this item | [optional] 
+**description** | **str** | Description of the object | [optional] 
 **encoding_template** | **str** | The Encoding output template to use in regexp vaultless tokenization | [optional] 
 **encryption_key_name** | **str** | AES key name to use in vaultless tokenization | [optional] 
 **json** | **bool** | Set output format to JSON | [optional] 
-**metadata** | **str** | A metadata about the tokenizer | [optional] 
+**metadata** | **str** | Deprecated - use description | [optional] 
 **name** | **str** | Tokenizer name | 
 **pattern** | **str** | Pattern to use in regexp vaultless tokenization | [optional] 
 **tag** | **list[str]** | List of the tags attached to this key | [optional] 

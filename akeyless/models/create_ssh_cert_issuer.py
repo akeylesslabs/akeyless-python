@@ -36,6 +36,7 @@ class CreateSSHCertIssuer(object):
     openapi_types = {
         'allowed_users': 'str',
         'delete_protection': 'str',
+        'description': 'str',
         'extensions': 'dict(str, str)',
         'json': 'bool',
         'metadata': 'str',
@@ -57,6 +58,7 @@ class CreateSSHCertIssuer(object):
     attribute_map = {
         'allowed_users': 'allowed-users',
         'delete_protection': 'delete_protection',
+        'description': 'description',
         'extensions': 'extensions',
         'json': 'json',
         'metadata': 'metadata',
@@ -75,7 +77,7 @@ class CreateSSHCertIssuer(object):
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, allowed_users=None, delete_protection=None, extensions=None, json=None, metadata=None, name=None, principals=None, secure_access_bastion_api=None, secure_access_bastion_ssh=None, secure_access_enable=None, secure_access_host=None, secure_access_ssh_creds_user=None, secure_access_use_internal_bastion=None, signer_key_name=None, tag=None, token=None, ttl=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, allowed_users=None, delete_protection=None, description=None, extensions=None, json=None, metadata=None, name=None, principals=None, secure_access_bastion_api=None, secure_access_bastion_ssh=None, secure_access_enable=None, secure_access_host=None, secure_access_ssh_creds_user=None, secure_access_use_internal_bastion=None, signer_key_name=None, tag=None, token=None, ttl=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """CreateSSHCertIssuer - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -83,6 +85,7 @@ class CreateSSHCertIssuer(object):
 
         self._allowed_users = None
         self._delete_protection = None
+        self._description = None
         self._extensions = None
         self._json = None
         self._metadata = None
@@ -104,6 +107,8 @@ class CreateSSHCertIssuer(object):
         self.allowed_users = allowed_users
         if delete_protection is not None:
             self.delete_protection = delete_protection
+        if description is not None:
+            self.description = description
         if extensions is not None:
             self.extensions = extensions
         if json is not None:
@@ -183,6 +188,29 @@ class CreateSSHCertIssuer(object):
         self._delete_protection = delete_protection
 
     @property
+    def description(self):
+        """Gets the description of this CreateSSHCertIssuer.  # noqa: E501
+
+        Description of the object  # noqa: E501
+
+        :return: The description of this CreateSSHCertIssuer.  # noqa: E501
+        :rtype: str
+        """
+        return self._description
+
+    @description.setter
+    def description(self, description):
+        """Sets the description of this CreateSSHCertIssuer.
+
+        Description of the object  # noqa: E501
+
+        :param description: The description of this CreateSSHCertIssuer.  # noqa: E501
+        :type: str
+        """
+
+        self._description = description
+
+    @property
     def extensions(self):
         """Gets the extensions of this CreateSSHCertIssuer.  # noqa: E501
 
@@ -232,7 +260,7 @@ class CreateSSHCertIssuer(object):
     def metadata(self):
         """Gets the metadata of this CreateSSHCertIssuer.  # noqa: E501
 
-        A metadata about the issuer  # noqa: E501
+        Deprecated - use description  # noqa: E501
 
         :return: The metadata of this CreateSSHCertIssuer.  # noqa: E501
         :rtype: str
@@ -243,7 +271,7 @@ class CreateSSHCertIssuer(object):
     def metadata(self, metadata):
         """Sets the metadata of this CreateSSHCertIssuer.
 
-        A metadata about the issuer  # noqa: E501
+        Deprecated - use description  # noqa: E501
 
         :param metadata: The metadata of this CreateSSHCertIssuer.  # noqa: E501
         :type: str

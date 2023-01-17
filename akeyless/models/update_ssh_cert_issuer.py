@@ -36,6 +36,7 @@ class UpdateSSHCertIssuer(object):
     openapi_types = {
         'add_tag': 'list[str]',
         'allowed_users': 'str',
+        'description': 'str',
         'extensions': 'dict(str, str)',
         'json': 'bool',
         'metadata': 'str',
@@ -58,6 +59,7 @@ class UpdateSSHCertIssuer(object):
     attribute_map = {
         'add_tag': 'add-tag',
         'allowed_users': 'allowed-users',
+        'description': 'description',
         'extensions': 'extensions',
         'json': 'json',
         'metadata': 'metadata',
@@ -77,7 +79,7 @@ class UpdateSSHCertIssuer(object):
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, add_tag=None, allowed_users=None, extensions=None, json=None, metadata=None, name=None, new_name=None, principals=None, rm_tag=None, secure_access_bastion_api=None, secure_access_bastion_ssh=None, secure_access_enable=None, secure_access_host=None, secure_access_ssh_creds_user=None, secure_access_use_internal_bastion=None, signer_key_name=None, token=None, ttl=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, add_tag=None, allowed_users=None, description=None, extensions=None, json=None, metadata=None, name=None, new_name=None, principals=None, rm_tag=None, secure_access_bastion_api=None, secure_access_bastion_ssh=None, secure_access_enable=None, secure_access_host=None, secure_access_ssh_creds_user=None, secure_access_use_internal_bastion=None, signer_key_name=None, token=None, ttl=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """UpdateSSHCertIssuer - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -85,6 +87,7 @@ class UpdateSSHCertIssuer(object):
 
         self._add_tag = None
         self._allowed_users = None
+        self._description = None
         self._extensions = None
         self._json = None
         self._metadata = None
@@ -107,6 +110,8 @@ class UpdateSSHCertIssuer(object):
         if add_tag is not None:
             self.add_tag = add_tag
         self.allowed_users = allowed_users
+        if description is not None:
+            self.description = description
         if extensions is not None:
             self.extensions = extensions
         if json is not None:
@@ -188,6 +193,29 @@ class UpdateSSHCertIssuer(object):
         self._allowed_users = allowed_users
 
     @property
+    def description(self):
+        """Gets the description of this UpdateSSHCertIssuer.  # noqa: E501
+
+        Description of the object  # noqa: E501
+
+        :return: The description of this UpdateSSHCertIssuer.  # noqa: E501
+        :rtype: str
+        """
+        return self._description
+
+    @description.setter
+    def description(self, description):
+        """Sets the description of this UpdateSSHCertIssuer.
+
+        Description of the object  # noqa: E501
+
+        :param description: The description of this UpdateSSHCertIssuer.  # noqa: E501
+        :type: str
+        """
+
+        self._description = description
+
+    @property
     def extensions(self):
         """Gets the extensions of this UpdateSSHCertIssuer.  # noqa: E501
 
@@ -237,7 +265,7 @@ class UpdateSSHCertIssuer(object):
     def metadata(self):
         """Gets the metadata of this UpdateSSHCertIssuer.  # noqa: E501
 
-        A metadata about the issuer  # noqa: E501
+        Deprecated - use description  # noqa: E501
 
         :return: The metadata of this UpdateSSHCertIssuer.  # noqa: E501
         :rtype: str
@@ -248,7 +276,7 @@ class UpdateSSHCertIssuer(object):
     def metadata(self, metadata):
         """Sets the metadata of this UpdateSSHCertIssuer.
 
-        A metadata about the issuer  # noqa: E501
+        Deprecated - use description  # noqa: E501
 
         :param metadata: The metadata of this UpdateSSHCertIssuer.  # noqa: E501
         :type: str

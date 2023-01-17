@@ -11,10 +11,11 @@ Name | Type | Description | Notes
 **aws_region** | **str** | Region (used in aws) | [optional] [default to 'us-east-2']
 **custom_payload** | **str** |  | [optional] 
 **delete_protection** | **str** | Protection from accidental deletion of this item | [optional] 
+**description** | **str** | Description of the object | [optional] 
 **gcp_key** | **str** | Base64-encoded service account private key text | [optional] 
 **json** | **bool** | Set output format to JSON | [optional] 
 **key** | **str** | The name of a key that used to encrypt the secret value (if empty, the account default protectionKey key will be used) | [optional] 
-**metadata** | **str** | Metadata about the secret | [optional] 
+**metadata** | **str** | Deprecated - use description | [optional] 
 **name** | **str** | Secret name | 
 **rotated_password** | **str** |  | [optional] 
 **rotated_username** | **str** |  | [optional] 

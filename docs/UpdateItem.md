@@ -7,9 +7,10 @@ Name | Type | Description | Notes
 **add_tag** | **list[str]** | List of the new tags that will be attached to this item | [optional] 
 **cert_file_data** | **str** | PEM Certificate in a Base64 format. Used for updating RSA keys&#39; certificates. | [optional] 
 **delete_protection** | **str** |  | [optional] 
+**description** | **str** | Description of the object | [optional] [default to 'default_metadata']
 **json** | **bool** | Set output format to JSON | [optional] 
 **name** | **str** | Current item name | 
-**new_metadata** | **str** | New item metadata | [optional] [default to 'default_metadata']
+**new_metadata** | **str** | Deprecated - use description | [optional] [default to 'default_metadata']
 **new_name** | **str** | New item name | [optional] 
 **rm_tag** | **list[str]** | List of the existent tags that will be removed from this item | [optional] 
 **secure_access_add_host** | **list[str]** |  | [optional] 

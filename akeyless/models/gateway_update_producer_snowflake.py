@@ -42,6 +42,8 @@ class GatewayUpdateProducerSnowflake(object):
         'json': 'bool',
         'name': 'str',
         'new_name': 'str',
+        'private_key': 'str',
+        'private_key_passphrase': 'str',
         'role': 'str',
         'tags': 'list[str]',
         'target_name': 'str',
@@ -60,6 +62,8 @@ class GatewayUpdateProducerSnowflake(object):
         'json': 'json',
         'name': 'name',
         'new_name': 'new-name',
+        'private_key': 'private-key',
+        'private_key_passphrase': 'private-key-passphrase',
         'role': 'role',
         'tags': 'tags',
         'target_name': 'target-name',
@@ -69,7 +73,7 @@ class GatewayUpdateProducerSnowflake(object):
         'warehouse': 'warehouse'
     }
 
-    def __init__(self, account=None, account_password=None, account_username=None, db_name=None, delete_protection=None, json=None, name=None, new_name=None, role=None, tags=None, target_name=None, token=None, uid_token=None, user_ttl='24h', warehouse=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, account=None, account_password=None, account_username=None, db_name=None, delete_protection=None, json=None, name=None, new_name=None, private_key=None, private_key_passphrase=None, role=None, tags=None, target_name=None, token=None, uid_token=None, user_ttl='24h', warehouse=None, local_vars_configuration=None):  # noqa: E501
         """GatewayUpdateProducerSnowflake - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -83,6 +87,8 @@ class GatewayUpdateProducerSnowflake(object):
         self._json = None
         self._name = None
         self._new_name = None
+        self._private_key = None
+        self._private_key_passphrase = None
         self._role = None
         self._tags = None
         self._target_name = None
@@ -107,6 +113,10 @@ class GatewayUpdateProducerSnowflake(object):
         self.name = name
         if new_name is not None:
             self.new_name = new_name
+        if private_key is not None:
+            self.private_key = private_key
+        if private_key_passphrase is not None:
+            self.private_key_passphrase = private_key_passphrase
         if role is not None:
             self.role = role
         if tags is not None:
@@ -307,6 +317,52 @@ class GatewayUpdateProducerSnowflake(object):
         """
 
         self._new_name = new_name
+
+    @property
+    def private_key(self):
+        """Gets the private_key of this GatewayUpdateProducerSnowflake.  # noqa: E501
+
+        RSA Private key (base64 encoded)  # noqa: E501
+
+        :return: The private_key of this GatewayUpdateProducerSnowflake.  # noqa: E501
+        :rtype: str
+        """
+        return self._private_key
+
+    @private_key.setter
+    def private_key(self, private_key):
+        """Sets the private_key of this GatewayUpdateProducerSnowflake.
+
+        RSA Private key (base64 encoded)  # noqa: E501
+
+        :param private_key: The private_key of this GatewayUpdateProducerSnowflake.  # noqa: E501
+        :type: str
+        """
+
+        self._private_key = private_key
+
+    @property
+    def private_key_passphrase(self):
+        """Gets the private_key_passphrase of this GatewayUpdateProducerSnowflake.  # noqa: E501
+
+        The Private key passphrase  # noqa: E501
+
+        :return: The private_key_passphrase of this GatewayUpdateProducerSnowflake.  # noqa: E501
+        :rtype: str
+        """
+        return self._private_key_passphrase
+
+    @private_key_passphrase.setter
+    def private_key_passphrase(self, private_key_passphrase):
+        """Sets the private_key_passphrase of this GatewayUpdateProducerSnowflake.
+
+        The Private key passphrase  # noqa: E501
+
+        :param private_key_passphrase: The private_key_passphrase of this GatewayUpdateProducerSnowflake.  # noqa: E501
+        :type: str
+        """
+
+        self._private_key_passphrase = private_key_passphrase
 
     @property
     def role(self):

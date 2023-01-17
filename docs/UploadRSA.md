@@ -7,8 +7,9 @@ Name | Type | Description | Notes
 **cert_file_data** | **str** | Certificate in a PEM format. | [optional] 
 **customer_frg_id** | **str** | The customer fragment ID that will be used to split the key (if empty, the key will be created independently of a customer fragment) | [optional] 
 **delete_protection** | **str** | Protection from accidental deletion of this item | [optional] 
+**description** | **str** | Description of the object | [optional] 
 **json** | **bool** | Set output format to JSON | [optional] 
-**metadata** | **str** | A metadata about the key | [optional] 
+**metadata** | **str** | Deprecated - use description | [optional] 
 **name** | **str** | Name of key to be created | 
 **overwrite** | **str** | When the overwrite flag is set, this command will only update an existing key. [true, false] | [optional] 
 **rsa_file_data** | **str** | RSA private key data, base64 encoded | [optional] 

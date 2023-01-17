@@ -15,7 +15,7 @@
 
 from __future__ import absolute_import
 
-__version__ = "3.1.1"
+__version__ = "3.1.2"
 
 # import apis into sdk package
 from akeyless.api.v2_api import V2Api
@@ -158,6 +158,8 @@ from akeyless.models.datadog_forwarding_config import DatadogForwardingConfig
 from akeyless.models.decrypt import Decrypt
 from akeyless.models.decrypt_file import DecryptFile
 from akeyless.models.decrypt_file_output import DecryptFileOutput
+from akeyless.models.decrypt_gpg import DecryptGPG
+from akeyless.models.decrypt_gpg_output import DecryptGPGOutput
 from akeyless.models.decrypt_output import DecryptOutput
 from akeyless.models.decrypt_pkcs1 import DecryptPKCS1
 from akeyless.models.decrypt_pkcs1_output import DecryptPKCS1Output
@@ -196,6 +198,8 @@ from akeyless.models.email_tokenizer_info import EmailTokenizerInfo
 from akeyless.models.encrypt import Encrypt
 from akeyless.models.encrypt_file import EncryptFile
 from akeyless.models.encrypt_file_output import EncryptFileOutput
+from akeyless.models.encrypt_gpg import EncryptGPG
+from akeyless.models.encrypt_gpg_output import EncryptGPGOutput
 from akeyless.models.encrypt_output import EncryptOutput
 from akeyless.models.encrypt_with_classic_key import EncryptWithClassicKey
 from akeyless.models.encrypt_with_classic_key_output import EncryptWithClassicKeyOutput
@@ -490,6 +494,8 @@ from akeyless.models.secure_remote_access import SecureRemoteAccess
 from akeyless.models.set_item_state import SetItemState
 from akeyless.models.set_role_rule import SetRoleRule
 from akeyless.models.share_item import ShareItem
+from akeyless.models.sign_gpg import SignGPG
+from akeyless.models.sign_gpg_output import SignGPGOutput
 from akeyless.models.sign_jwt_output import SignJWTOutput
 from akeyless.models.sign_jwt_with_classic_key import SignJWTWithClassicKey
 from akeyless.models.sign_pkcs1 import SignPKCS1
@@ -606,6 +612,7 @@ from akeyless.models.upload_rsa import UploadRSA
 from akeyless.models.validate_token import ValidateToken
 from akeyless.models.validate_token_output import ValidateTokenOutput
 from akeyless.models.vaultless_tokenizer_info import VaultlessTokenizerInfo
+from akeyless.models.verify_gpg import VerifyGPG
 from akeyless.models.verify_jwt_output import VerifyJWTOutput
 from akeyless.models.verify_jwt_with_classic_key import VerifyJWTWithClassicKey
 from akeyless.models.verify_pkcs1 import VerifyPKCS1

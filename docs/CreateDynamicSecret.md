@@ -4,9 +4,10 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **delete_protection** | **str** | Protection from accidental deletion of this item | [optional] 
+**description** | **str** | Description of the object | [optional] 
 **json** | **bool** | Set output format to JSON | [optional] 
 **key** | **str** | The name of a key that used to encrypt the dynamic secret values (if empty, the account default protectionKey key will be used) | [optional] 
-**metadata** | **str** | Metadata about the dynamic secret | [optional] [default to 'None']
+**metadata** | **str** | Deprecated - use description | [optional] 
 **name** | **str** | Dynamic secret name | 
 **tags** | **list[str]** | List of the tags attached to this secret | [optional] 
 **token** | **str** | Authentication token (see &#x60;/auth&#x60; and &#x60;/configure&#x60;) | [optional] 

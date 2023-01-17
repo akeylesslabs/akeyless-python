@@ -42,6 +42,7 @@ class CreatePKICertIssuer(object):
         'code_signing_flag': 'bool',
         'country': 'str',
         'delete_protection': 'str',
+        'description': 'str',
         'json': 'bool',
         'key_usage': 'str',
         'locality': 'str',
@@ -71,6 +72,7 @@ class CreatePKICertIssuer(object):
         'code_signing_flag': 'code-signing-flag',
         'country': 'country',
         'delete_protection': 'delete_protection',
+        'description': 'description',
         'json': 'json',
         'key_usage': 'key-usage',
         'locality': 'locality',
@@ -91,7 +93,7 @@ class CreatePKICertIssuer(object):
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, allow_any_name=None, allow_subdomains=None, allowed_domains=None, allowed_uri_sans=None, client_flag=None, code_signing_flag=None, country=None, delete_protection=None, json=None, key_usage='DigitalSignature,KeyAgreement,KeyEncipherment', locality=None, metadata=None, name=None, not_enforce_hostnames=None, not_require_cn=None, organizational_units=None, organizations=None, postal_code=None, province=None, server_flag=None, signer_key_name=None, street_address=None, tag=None, token=None, ttl=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, allow_any_name=None, allow_subdomains=None, allowed_domains=None, allowed_uri_sans=None, client_flag=None, code_signing_flag=None, country=None, delete_protection=None, description=None, json=None, key_usage='DigitalSignature,KeyAgreement,KeyEncipherment', locality=None, metadata=None, name=None, not_enforce_hostnames=None, not_require_cn=None, organizational_units=None, organizations=None, postal_code=None, province=None, server_flag=None, signer_key_name=None, street_address=None, tag=None, token=None, ttl=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """CreatePKICertIssuer - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -105,6 +107,7 @@ class CreatePKICertIssuer(object):
         self._code_signing_flag = None
         self._country = None
         self._delete_protection = None
+        self._description = None
         self._json = None
         self._key_usage = None
         self._locality = None
@@ -141,6 +144,8 @@ class CreatePKICertIssuer(object):
             self.country = country
         if delete_protection is not None:
             self.delete_protection = delete_protection
+        if description is not None:
+            self.description = description
         if json is not None:
             self.json = json
         if key_usage is not None:
@@ -360,6 +365,29 @@ class CreatePKICertIssuer(object):
         self._delete_protection = delete_protection
 
     @property
+    def description(self):
+        """Gets the description of this CreatePKICertIssuer.  # noqa: E501
+
+        Description of the object  # noqa: E501
+
+        :return: The description of this CreatePKICertIssuer.  # noqa: E501
+        :rtype: str
+        """
+        return self._description
+
+    @description.setter
+    def description(self, description):
+        """Sets the description of this CreatePKICertIssuer.
+
+        Description of the object  # noqa: E501
+
+        :param description: The description of this CreatePKICertIssuer.  # noqa: E501
+        :type: str
+        """
+
+        self._description = description
+
+    @property
     def json(self):
         """Gets the json of this CreatePKICertIssuer.  # noqa: E501
 
@@ -432,7 +460,7 @@ class CreatePKICertIssuer(object):
     def metadata(self):
         """Gets the metadata of this CreatePKICertIssuer.  # noqa: E501
 
-        A metadata about the issuer  # noqa: E501
+        Deprecated - use description  # noqa: E501
 
         :return: The metadata of this CreatePKICertIssuer.  # noqa: E501
         :rtype: str
@@ -443,7 +471,7 @@ class CreatePKICertIssuer(object):
     def metadata(self, metadata):
         """Sets the metadata of this CreatePKICertIssuer.
 
-        A metadata about the issuer  # noqa: E501
+        Deprecated - use description  # noqa: E501
 
         :param metadata: The metadata of this CreatePKICertIssuer.  # noqa: E501
         :type: str

@@ -38,6 +38,7 @@ class UpdateItem(object):
         'add_tag': 'list[str]',
         'cert_file_data': 'str',
         'delete_protection': 'str',
+        'description': 'str',
         'json': 'bool',
         'name': 'str',
         'new_metadata': 'str',
@@ -76,6 +77,7 @@ class UpdateItem(object):
         'add_tag': 'add-tag',
         'cert_file_data': 'cert-file-data',
         'delete_protection': 'delete_protection',
+        'description': 'description',
         'json': 'json',
         'name': 'name',
         'new_metadata': 'new-metadata',
@@ -109,7 +111,7 @@ class UpdateItem(object):
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, accessibility='regular', add_tag=None, cert_file_data=None, delete_protection=None, json=None, name=None, new_metadata='default_metadata', new_name=None, rm_tag=None, secure_access_add_host=None, secure_access_allow_external_user=None, secure_access_allow_port_forwading=None, secure_access_aws_account_id=None, secure_access_aws_native_cli=None, secure_access_aws_region=None, secure_access_bastion_api=None, secure_access_bastion_issuer=None, secure_access_bastion_ssh=None, secure_access_cluster_endpoint=None, secure_access_dashboard_url=None, secure_access_db_name=None, secure_access_db_schema=None, secure_access_enable=None, secure_access_host=None, secure_access_rdp_domain=None, secure_access_rdp_user=None, secure_access_rm_host=None, secure_access_ssh_creds=None, secure_access_ssh_creds_user=None, secure_access_url=None, secure_access_use_internal_bastion=None, secure_access_web_browsing=None, secure_access_web_proxy=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, accessibility='regular', add_tag=None, cert_file_data=None, delete_protection=None, description='default_metadata', json=None, name=None, new_metadata='default_metadata', new_name=None, rm_tag=None, secure_access_add_host=None, secure_access_allow_external_user=None, secure_access_allow_port_forwading=None, secure_access_aws_account_id=None, secure_access_aws_native_cli=None, secure_access_aws_region=None, secure_access_bastion_api=None, secure_access_bastion_issuer=None, secure_access_bastion_ssh=None, secure_access_cluster_endpoint=None, secure_access_dashboard_url=None, secure_access_db_name=None, secure_access_db_schema=None, secure_access_enable=None, secure_access_host=None, secure_access_rdp_domain=None, secure_access_rdp_user=None, secure_access_rm_host=None, secure_access_ssh_creds=None, secure_access_ssh_creds_user=None, secure_access_url=None, secure_access_use_internal_bastion=None, secure_access_web_browsing=None, secure_access_web_proxy=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """UpdateItem - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -119,6 +121,7 @@ class UpdateItem(object):
         self._add_tag = None
         self._cert_file_data = None
         self._delete_protection = None
+        self._description = None
         self._json = None
         self._name = None
         self._new_metadata = None
@@ -160,6 +163,8 @@ class UpdateItem(object):
             self.cert_file_data = cert_file_data
         if delete_protection is not None:
             self.delete_protection = delete_protection
+        if description is not None:
+            self.description = description
         if json is not None:
             self.json = json
         self.name = name
@@ -313,6 +318,29 @@ class UpdateItem(object):
         self._delete_protection = delete_protection
 
     @property
+    def description(self):
+        """Gets the description of this UpdateItem.  # noqa: E501
+
+        Description of the object  # noqa: E501
+
+        :return: The description of this UpdateItem.  # noqa: E501
+        :rtype: str
+        """
+        return self._description
+
+    @description.setter
+    def description(self, description):
+        """Sets the description of this UpdateItem.
+
+        Description of the object  # noqa: E501
+
+        :param description: The description of this UpdateItem.  # noqa: E501
+        :type: str
+        """
+
+        self._description = description
+
+    @property
     def json(self):
         """Gets the json of this UpdateItem.  # noqa: E501
 
@@ -364,7 +392,7 @@ class UpdateItem(object):
     def new_metadata(self):
         """Gets the new_metadata of this UpdateItem.  # noqa: E501
 
-        New item metadata  # noqa: E501
+        Deprecated - use description  # noqa: E501
 
         :return: The new_metadata of this UpdateItem.  # noqa: E501
         :rtype: str
@@ -375,7 +403,7 @@ class UpdateItem(object):
     def new_metadata(self, new_metadata):
         """Sets the new_metadata of this UpdateItem.
 
-        New item metadata  # noqa: E501
+        Deprecated - use description  # noqa: E501
 
         :param new_metadata: The new_metadata of this UpdateItem.  # noqa: E501
         :type: str

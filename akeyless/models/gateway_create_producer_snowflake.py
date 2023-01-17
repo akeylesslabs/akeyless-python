@@ -41,6 +41,8 @@ class GatewayCreateProducerSnowflake(object):
         'delete_protection': 'str',
         'json': 'bool',
         'name': 'str',
+        'private_key': 'str',
+        'private_key_passphrase': 'str',
         'role': 'str',
         'tags': 'list[str]',
         'target_name': 'str',
@@ -58,6 +60,8 @@ class GatewayCreateProducerSnowflake(object):
         'delete_protection': 'delete_protection',
         'json': 'json',
         'name': 'name',
+        'private_key': 'private-key',
+        'private_key_passphrase': 'private-key-passphrase',
         'role': 'role',
         'tags': 'tags',
         'target_name': 'target-name',
@@ -67,7 +71,7 @@ class GatewayCreateProducerSnowflake(object):
         'warehouse': 'warehouse'
     }
 
-    def __init__(self, account=None, account_password=None, account_username=None, db_name=None, delete_protection=None, json=None, name=None, role=None, tags=None, target_name=None, token=None, uid_token=None, user_ttl='24h', warehouse=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, account=None, account_password=None, account_username=None, db_name=None, delete_protection=None, json=None, name=None, private_key=None, private_key_passphrase=None, role=None, tags=None, target_name=None, token=None, uid_token=None, user_ttl='24h', warehouse=None, local_vars_configuration=None):  # noqa: E501
         """GatewayCreateProducerSnowflake - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -80,6 +84,8 @@ class GatewayCreateProducerSnowflake(object):
         self._delete_protection = None
         self._json = None
         self._name = None
+        self._private_key = None
+        self._private_key_passphrase = None
         self._role = None
         self._tags = None
         self._target_name = None
@@ -102,6 +108,10 @@ class GatewayCreateProducerSnowflake(object):
         if json is not None:
             self.json = json
         self.name = name
+        if private_key is not None:
+            self.private_key = private_key
+        if private_key_passphrase is not None:
+            self.private_key_passphrase = private_key_passphrase
         if role is not None:
             self.role = role
         if tags is not None:
@@ -279,6 +289,52 @@ class GatewayCreateProducerSnowflake(object):
             raise ValueError("Invalid value for `name`, must not be `None`")  # noqa: E501
 
         self._name = name
+
+    @property
+    def private_key(self):
+        """Gets the private_key of this GatewayCreateProducerSnowflake.  # noqa: E501
+
+        RSA Private key (base64 encoded)  # noqa: E501
+
+        :return: The private_key of this GatewayCreateProducerSnowflake.  # noqa: E501
+        :rtype: str
+        """
+        return self._private_key
+
+    @private_key.setter
+    def private_key(self, private_key):
+        """Sets the private_key of this GatewayCreateProducerSnowflake.
+
+        RSA Private key (base64 encoded)  # noqa: E501
+
+        :param private_key: The private_key of this GatewayCreateProducerSnowflake.  # noqa: E501
+        :type: str
+        """
+
+        self._private_key = private_key
+
+    @property
+    def private_key_passphrase(self):
+        """Gets the private_key_passphrase of this GatewayCreateProducerSnowflake.  # noqa: E501
+
+        The Private key passphrase  # noqa: E501
+
+        :return: The private_key_passphrase of this GatewayCreateProducerSnowflake.  # noqa: E501
+        :rtype: str
+        """
+        return self._private_key_passphrase
+
+    @private_key_passphrase.setter
+    def private_key_passphrase(self, private_key_passphrase):
+        """Sets the private_key_passphrase of this GatewayCreateProducerSnowflake.
+
+        The Private key passphrase  # noqa: E501
+
+        :param private_key_passphrase: The private_key_passphrase of this GatewayCreateProducerSnowflake.  # noqa: E501
+        :type: str
+        """
+
+        self._private_key_passphrase = private_key_passphrase
 
     @property
     def role(self):

@@ -5,9 +5,10 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **allowed_users** | **str** | Users allowed to fetch the certificate, e.g root,ubuntu | 
 **delete_protection** | **str** | Protection from accidental deletion of this item | [optional] 
+**description** | **str** | Description of the object | [optional] 
 **extensions** | **dict(str, str)** | Signed certificates with extensions, e.g permit-port-forwarding&#x3D;\\\&quot;\\\&quot; | [optional] 
 **json** | **bool** | Set output format to JSON | [optional] 
-**metadata** | **str** | A metadata about the issuer | [optional] 
+**metadata** | **str** | Deprecated - use description | [optional] 
 **name** | **str** | SSH certificate issuer name | 
 **principals** | **str** | Signed certificates with principal, e.g example_role1,example_role2 | [optional] 
 **secure_access_bastion_api** | **str** |  | [optional] 

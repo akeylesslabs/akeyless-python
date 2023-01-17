@@ -40,6 +40,7 @@ class GatewayUpdateItem(object):
         'auto_rotate': 'str',
         'custom_payload': 'str',
         'delete_protection': 'str',
+        'description': 'str',
         'gcp_key': 'str',
         'json': 'bool',
         'keep_prev_version': 'str',
@@ -66,6 +67,7 @@ class GatewayUpdateItem(object):
         'auto_rotate': 'auto-rotate',
         'custom_payload': 'custom-payload',
         'delete_protection': 'delete_protection',
+        'description': 'description',
         'gcp_key': 'gcp-key',
         'json': 'json',
         'keep_prev_version': 'keep-prev-version',
@@ -85,7 +87,7 @@ class GatewayUpdateItem(object):
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, add_tag=None, api_id=None, api_key=None, auto_rotate=None, custom_payload=None, delete_protection=None, gcp_key=None, json=None, keep_prev_version=None, key=None, name=None, new_metadata='default_metadata', new_name=None, new_version=None, rm_tag=None, rotated_password=None, rotated_username=None, rotation_hour=0, rotation_interval=None, rotator_creds_type=None, token=None, type=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, add_tag=None, api_id=None, api_key=None, auto_rotate=None, custom_payload=None, delete_protection=None, description='default_metadata', gcp_key=None, json=None, keep_prev_version=None, key=None, name=None, new_metadata='default_metadata', new_name=None, new_version=None, rm_tag=None, rotated_password=None, rotated_username=None, rotation_hour=0, rotation_interval=None, rotator_creds_type=None, token=None, type=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """GatewayUpdateItem - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -97,6 +99,7 @@ class GatewayUpdateItem(object):
         self._auto_rotate = None
         self._custom_payload = None
         self._delete_protection = None
+        self._description = None
         self._gcp_key = None
         self._json = None
         self._keep_prev_version = None
@@ -128,6 +131,8 @@ class GatewayUpdateItem(object):
             self.custom_payload = custom_payload
         if delete_protection is not None:
             self.delete_protection = delete_protection
+        if description is not None:
+            self.description = description
         if gcp_key is not None:
             self.gcp_key = gcp_key
         if json is not None:
@@ -294,6 +299,29 @@ class GatewayUpdateItem(object):
         self._delete_protection = delete_protection
 
     @property
+    def description(self):
+        """Gets the description of this GatewayUpdateItem.  # noqa: E501
+
+        Description of the object  # noqa: E501
+
+        :return: The description of this GatewayUpdateItem.  # noqa: E501
+        :rtype: str
+        """
+        return self._description
+
+    @description.setter
+    def description(self, description):
+        """Sets the description of this GatewayUpdateItem.
+
+        Description of the object  # noqa: E501
+
+        :param description: The description of this GatewayUpdateItem.  # noqa: E501
+        :type: str
+        """
+
+        self._description = description
+
+    @property
     def gcp_key(self):
         """Gets the gcp_key of this GatewayUpdateItem.  # noqa: E501
 
@@ -412,7 +440,7 @@ class GatewayUpdateItem(object):
     def new_metadata(self):
         """Gets the new_metadata of this GatewayUpdateItem.  # noqa: E501
 
-        New item metadata  # noqa: E501
+        Deprecated - use description  # noqa: E501
 
         :return: The new_metadata of this GatewayUpdateItem.  # noqa: E501
         :rtype: str
@@ -423,7 +451,7 @@ class GatewayUpdateItem(object):
     def new_metadata(self, new_metadata):
         """Sets the new_metadata of this GatewayUpdateItem.
 
-        New item metadata  # noqa: E501
+        Deprecated - use description  # noqa: E501
 
         :param new_metadata: The new_metadata of this GatewayUpdateItem.  # noqa: E501
         :type: str

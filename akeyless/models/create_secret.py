@@ -36,6 +36,7 @@ class CreateSecret(object):
     openapi_types = {
         'accessibility': 'str',
         'delete_protection': 'str',
+        'description': 'str',
         'json': 'bool',
         'metadata': 'str',
         'multiline_value': 'bool',
@@ -63,6 +64,7 @@ class CreateSecret(object):
     attribute_map = {
         'accessibility': 'accessibility',
         'delete_protection': 'delete_protection',
+        'description': 'description',
         'json': 'json',
         'metadata': 'metadata',
         'multiline_value': 'multiline_value',
@@ -87,7 +89,7 @@ class CreateSecret(object):
         'value': 'value'
     }
 
-    def __init__(self, accessibility='regular', delete_protection=None, json=None, metadata=None, multiline_value=None, name=None, password_manager_custom_field=None, password_manager_inject_url=None, password_manager_password=None, password_manager_username=None, protection_key=None, secure_access_bastion_issuer=None, secure_access_enable=None, secure_access_host=None, secure_access_ssh_creds=None, secure_access_ssh_user=None, secure_access_url=None, secure_access_web_browsing=None, secure_access_web_proxy=None, tags=None, token=None, type=None, uid_token=None, value=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, accessibility='regular', delete_protection=None, description=None, json=None, metadata=None, multiline_value=None, name=None, password_manager_custom_field=None, password_manager_inject_url=None, password_manager_password=None, password_manager_username=None, protection_key=None, secure_access_bastion_issuer=None, secure_access_enable=None, secure_access_host=None, secure_access_ssh_creds=None, secure_access_ssh_user=None, secure_access_url=None, secure_access_web_browsing=None, secure_access_web_proxy=None, tags=None, token=None, type=None, uid_token=None, value=None, local_vars_configuration=None):  # noqa: E501
         """CreateSecret - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -95,6 +97,7 @@ class CreateSecret(object):
 
         self._accessibility = None
         self._delete_protection = None
+        self._description = None
         self._json = None
         self._metadata = None
         self._multiline_value = None
@@ -123,6 +126,8 @@ class CreateSecret(object):
             self.accessibility = accessibility
         if delete_protection is not None:
             self.delete_protection = delete_protection
+        if description is not None:
+            self.description = description
         if json is not None:
             self.json = json
         if metadata is not None:
@@ -213,6 +218,29 @@ class CreateSecret(object):
         self._delete_protection = delete_protection
 
     @property
+    def description(self):
+        """Gets the description of this CreateSecret.  # noqa: E501
+
+        Description of the object  # noqa: E501
+
+        :return: The description of this CreateSecret.  # noqa: E501
+        :rtype: str
+        """
+        return self._description
+
+    @description.setter
+    def description(self, description):
+        """Sets the description of this CreateSecret.
+
+        Description of the object  # noqa: E501
+
+        :param description: The description of this CreateSecret.  # noqa: E501
+        :type: str
+        """
+
+        self._description = description
+
+    @property
     def json(self):
         """Gets the json of this CreateSecret.  # noqa: E501
 
@@ -239,7 +267,7 @@ class CreateSecret(object):
     def metadata(self):
         """Gets the metadata of this CreateSecret.  # noqa: E501
 
-        Metadata about the secret  # noqa: E501
+        Deprecated - use description  # noqa: E501
 
         :return: The metadata of this CreateSecret.  # noqa: E501
         :rtype: str
@@ -250,7 +278,7 @@ class CreateSecret(object):
     def metadata(self, metadata):
         """Sets the metadata of this CreateSecret.
 
-        Metadata about the secret  # noqa: E501
+        Deprecated - use description  # noqa: E501
 
         :param metadata: The metadata of this CreateSecret.  # noqa: E501
         :type: str

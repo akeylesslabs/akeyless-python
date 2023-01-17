@@ -53,6 +53,8 @@ class CreateDBTarget(object):
         'port': 'str',
         'pwd': 'str',
         'snowflake_account': 'str',
+        'snowflake_api_private_key': 'str',
+        'snowflake_api_private_key_password': 'str',
         'ssl': 'bool',
         'ssl_certificate': 'str',
         'token': 'str',
@@ -80,6 +82,8 @@ class CreateDBTarget(object):
         'port': 'port',
         'pwd': 'pwd',
         'snowflake_account': 'snowflake-account',
+        'snowflake_api_private_key': 'snowflake-api-private-key',
+        'snowflake_api_private_key_password': 'snowflake-api-private-key-password',
         'ssl': 'ssl',
         'ssl_certificate': 'ssl-certificate',
         'token': 'token',
@@ -87,7 +91,7 @@ class CreateDBTarget(object):
         'user_name': 'user-name'
     }
 
-    def __init__(self, comment=None, db_name=None, db_server_certificates=None, db_server_name=None, db_type=None, host=None, json=None, key=None, mongodb_atlas=None, mongodb_atlas_api_private_key=None, mongodb_atlas_api_public_key=None, mongodb_atlas_project_id=None, mongodb_default_auth_db=None, mongodb_uri_options=None, name=None, oracle_service_name=None, port=None, pwd=None, snowflake_account=None, ssl=None, ssl_certificate=None, token=None, uid_token=None, user_name=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, comment=None, db_name=None, db_server_certificates=None, db_server_name=None, db_type=None, host=None, json=None, key=None, mongodb_atlas=None, mongodb_atlas_api_private_key=None, mongodb_atlas_api_public_key=None, mongodb_atlas_project_id=None, mongodb_default_auth_db=None, mongodb_uri_options=None, name=None, oracle_service_name=None, port=None, pwd=None, snowflake_account=None, snowflake_api_private_key=None, snowflake_api_private_key_password=None, ssl=None, ssl_certificate=None, token=None, uid_token=None, user_name=None, local_vars_configuration=None):  # noqa: E501
         """CreateDBTarget - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -112,6 +116,8 @@ class CreateDBTarget(object):
         self._port = None
         self._pwd = None
         self._snowflake_account = None
+        self._snowflake_api_private_key = None
+        self._snowflake_api_private_key_password = None
         self._ssl = None
         self._ssl_certificate = None
         self._token = None
@@ -155,6 +161,10 @@ class CreateDBTarget(object):
             self.pwd = pwd
         if snowflake_account is not None:
             self.snowflake_account = snowflake_account
+        if snowflake_api_private_key is not None:
+            self.snowflake_api_private_key = snowflake_api_private_key
+        if snowflake_api_private_key_password is not None:
+            self.snowflake_api_private_key_password = snowflake_api_private_key_password
         if ssl is not None:
             self.ssl = ssl
         if ssl_certificate is not None:
@@ -590,6 +600,52 @@ class CreateDBTarget(object):
         """
 
         self._snowflake_account = snowflake_account
+
+    @property
+    def snowflake_api_private_key(self):
+        """Gets the snowflake_api_private_key of this CreateDBTarget.  # noqa: E501
+
+        RSA Private key (base64 encoded)  # noqa: E501
+
+        :return: The snowflake_api_private_key of this CreateDBTarget.  # noqa: E501
+        :rtype: str
+        """
+        return self._snowflake_api_private_key
+
+    @snowflake_api_private_key.setter
+    def snowflake_api_private_key(self, snowflake_api_private_key):
+        """Sets the snowflake_api_private_key of this CreateDBTarget.
+
+        RSA Private key (base64 encoded)  # noqa: E501
+
+        :param snowflake_api_private_key: The snowflake_api_private_key of this CreateDBTarget.  # noqa: E501
+        :type: str
+        """
+
+        self._snowflake_api_private_key = snowflake_api_private_key
+
+    @property
+    def snowflake_api_private_key_password(self):
+        """Gets the snowflake_api_private_key_password of this CreateDBTarget.  # noqa: E501
+
+        The Private key passphrase  # noqa: E501
+
+        :return: The snowflake_api_private_key_password of this CreateDBTarget.  # noqa: E501
+        :rtype: str
+        """
+        return self._snowflake_api_private_key_password
+
+    @snowflake_api_private_key_password.setter
+    def snowflake_api_private_key_password(self, snowflake_api_private_key_password):
+        """Sets the snowflake_api_private_key_password of this CreateDBTarget.
+
+        The Private key passphrase  # noqa: E501
+
+        :param snowflake_api_private_key_password: The snowflake_api_private_key_password of this CreateDBTarget.  # noqa: E501
+        :type: str
+        """
+
+        self._snowflake_api_private_key_password = snowflake_api_private_key_password
 
     @property
     def ssl(self):

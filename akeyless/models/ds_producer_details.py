@@ -82,6 +82,8 @@ class DSProducerDetails(object):
         'db_max_open_conns': 'str',
         'db_name': 'str',
         'db_port': 'str',
+        'db_private_key': 'str',
+        'db_private_key_passphrase': 'str',
         'db_pwd': 'str',
         'db_server_certificates': 'str',
         'db_server_name': 'str',
@@ -132,9 +134,11 @@ class DSProducerDetails(object):
         'implementation_type': 'str',
         'is_fixed_user': 'str',
         'item_targets_assoc': 'list[ItemTargetAssociation]',
+        'k8s_allowed_namespaces': 'str',
         'k8s_bearer_token': 'str',
         'k8s_cluster_ca_certificate': 'str',
         'k8s_cluster_endpoint': 'str',
+        'k8s_dynamic_mode': 'bool',
         'k8s_namespace': 'str',
         'k8s_service_account': 'str',
         'last_admin_rotation': 'int',
@@ -263,6 +267,8 @@ class DSProducerDetails(object):
         'db_max_open_conns': 'db_max_open_conns',
         'db_name': 'db_name',
         'db_port': 'db_port',
+        'db_private_key': 'db_private_key',
+        'db_private_key_passphrase': 'db_private_key_passphrase',
         'db_pwd': 'db_pwd',
         'db_server_certificates': 'db_server_certificates',
         'db_server_name': 'db_server_name',
@@ -313,9 +319,11 @@ class DSProducerDetails(object):
         'implementation_type': 'implementation_type',
         'is_fixed_user': 'is_fixed_user',
         'item_targets_assoc': 'item_targets_assoc',
+        'k8s_allowed_namespaces': 'k8s_allowed_namespaces',
         'k8s_bearer_token': 'k8s_bearer_token',
         'k8s_cluster_ca_certificate': 'k8s_cluster_ca_certificate',
         'k8s_cluster_endpoint': 'k8s_cluster_endpoint',
+        'k8s_dynamic_mode': 'k8s_dynamic_mode',
         'k8s_namespace': 'k8s_namespace',
         'k8s_service_account': 'k8s_service_account',
         'last_admin_rotation': 'last_admin_rotation',
@@ -395,7 +403,7 @@ class DSProducerDetails(object):
         'warn_before_user_expiration_min': 'warn_before_user_expiration_min'
     }
 
-    def __init__(self, active=None, admin_name=None, admin_pwd=None, admin_rotation_interval_days=None, artifactory_admin_apikey=None, artifactory_admin_username=None, artifactory_base_url=None, artifactory_token_audience=None, artifactory_token_scope=None, aws_access_key_id=None, aws_access_mode=None, aws_region=None, aws_role_arns=None, aws_secret_access_key=None, aws_session_token=None, aws_user_console_access=None, aws_user_groups=None, aws_user_policies=None, aws_user_programmatic_access=None, azure_app_object_id=None, azure_client_id=None, azure_client_secret=None, azure_fixed_user_name_sub_claim_key=None, azure_fixed_user_only=None, azure_resource_group_name=None, azure_resource_name=None, azure_subscription_id=None, azure_tenant_id=None, azure_user_groups_obj_id=None, azure_user_portal_access=None, azure_user_programmatic_access=None, azure_user_roles_template_id=None, cassandra_creation_statements=None, chef_organizations=None, chef_server_access_mode=None, chef_server_host_name=None, chef_server_key=None, chef_server_port=None, chef_server_url=None, chef_server_username=None, chef_skip_ssl=None, create_sync_url=None, db_host_name=None, db_isolation_level=None, db_max_idle_conns=None, db_max_open_conns=None, db_name=None, db_port=None, db_pwd=None, db_server_certificates=None, db_server_name=None, db_user_name=None, delete_protection=None, dynamic_secret_id=None, dynamic_secret_key=None, dynamic_secret_name=None, dynamic_secret_type=None, eks_access_key_id=None, eks_assume_role=None, eks_cluster_ca_certificate=None, eks_cluster_endpoint=None, eks_cluster_name=None, eks_region=None, eks_secret_access_key=None, enable_admin_rotation=None, externally_provided_user=None, failure_message=None, fixed_user_only=None, gcp_key_algo=None, gcp_role_bindings=None, gcp_service_account_email=None, gcp_service_account_key=None, gcp_service_account_type=None, gcp_tmp_service_account_name=None, gcp_token_lifetime=None, gcp_token_scope=None, gcp_token_type=None, github_app_id=None, github_app_private_key=None, github_base_url=None, github_installation_id=None, github_installation_token_permissions=None, github_installation_token_repositories=None, github_installation_token_repositories_ids=None, github_repository_path=None, gke_cluster_ca_certificate=None, gke_cluster_endpoint=None, gke_cluster_name=None, gke_service_account_key=None, gke_service_account_name=None, groups=None, hanadb_creation_statements=None, hanadb_revocation_statements=None, host_name=None, host_port=None, implementation_type=None, is_fixed_user=None, item_targets_assoc=None, k8s_bearer_token=None, k8s_cluster_ca_certificate=None, k8s_cluster_endpoint=None, k8s_namespace=None, k8s_service_account=None, last_admin_rotation=None, ldap_audience=None, ldap_bind_dn=None, ldap_bind_password=None, ldap_certificate=None, ldap_token_expiration=None, ldap_url=None, ldap_user_attr=None, ldap_user_dn=None, metadata=None, mongodb_atlas_api_private_key=None, mongodb_atlas_api_public_key=None, mongodb_atlas_project_id=None, mongodb_custom_data=None, mongodb_db_name=None, mongodb_default_auth_db=None, mongodb_host_port=None, mongodb_is_atlas=None, mongodb_password=None, mongodb_roles=None, mongodb_uri_connection=None, mongodb_uri_options=None, mongodb_username=None, mssql_creation_statements=None, mssql_revocation_statements=None, mysql_creation_statements=None, oracle_creation_statements=None, password=None, password_length=None, password_policy=None, payload=None, postgres_creation_statements=None, postgres_revocation_statements=None, rabbitmq_server_password=None, rabbitmq_server_uri=None, rabbitmq_server_user=None, rabbitmq_user_conf_permission=None, rabbitmq_user_read_permission=None, rabbitmq_user_tags=None, rabbitmq_user_vhost=None, rabbitmq_user_write_permission=None, redshift_creation_statements=None, revoke_sync_url=None, rotate_sync_url=None, scopes=None, secure_remote_access_details=None, session_extension_warn_interval_min=None, sf_account=None, sf_user_role=None, sf_warehouse_name=None, should_stop=None, ssl_connection_certificate=None, ssl_connection_mode=None, tags=None, timeout_seconds=None, use_gw_cloud_identity=None, user_name=None, user_principal_name=None, user_ttl=None, username_length=None, username_policy=None, venafi_allow_subdomains=None, venafi_allowed_domains=None, venafi_api_key=None, venafi_auto_generated_folder=None, venafi_base_url=None, venafi_root_first_in_chain=None, venafi_sign_using_akeyless_pki=None, venafi_signer_key_name=None, venafi_store_private_key=None, venafi_tpp_password=None, venafi_tpp_username=None, venafi_use_tpp=None, venafi_zone=None, warn_before_user_expiration_min=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, active=None, admin_name=None, admin_pwd=None, admin_rotation_interval_days=None, artifactory_admin_apikey=None, artifactory_admin_username=None, artifactory_base_url=None, artifactory_token_audience=None, artifactory_token_scope=None, aws_access_key_id=None, aws_access_mode=None, aws_region=None, aws_role_arns=None, aws_secret_access_key=None, aws_session_token=None, aws_user_console_access=None, aws_user_groups=None, aws_user_policies=None, aws_user_programmatic_access=None, azure_app_object_id=None, azure_client_id=None, azure_client_secret=None, azure_fixed_user_name_sub_claim_key=None, azure_fixed_user_only=None, azure_resource_group_name=None, azure_resource_name=None, azure_subscription_id=None, azure_tenant_id=None, azure_user_groups_obj_id=None, azure_user_portal_access=None, azure_user_programmatic_access=None, azure_user_roles_template_id=None, cassandra_creation_statements=None, chef_organizations=None, chef_server_access_mode=None, chef_server_host_name=None, chef_server_key=None, chef_server_port=None, chef_server_url=None, chef_server_username=None, chef_skip_ssl=None, create_sync_url=None, db_host_name=None, db_isolation_level=None, db_max_idle_conns=None, db_max_open_conns=None, db_name=None, db_port=None, db_private_key=None, db_private_key_passphrase=None, db_pwd=None, db_server_certificates=None, db_server_name=None, db_user_name=None, delete_protection=None, dynamic_secret_id=None, dynamic_secret_key=None, dynamic_secret_name=None, dynamic_secret_type=None, eks_access_key_id=None, eks_assume_role=None, eks_cluster_ca_certificate=None, eks_cluster_endpoint=None, eks_cluster_name=None, eks_region=None, eks_secret_access_key=None, enable_admin_rotation=None, externally_provided_user=None, failure_message=None, fixed_user_only=None, gcp_key_algo=None, gcp_role_bindings=None, gcp_service_account_email=None, gcp_service_account_key=None, gcp_service_account_type=None, gcp_tmp_service_account_name=None, gcp_token_lifetime=None, gcp_token_scope=None, gcp_token_type=None, github_app_id=None, github_app_private_key=None, github_base_url=None, github_installation_id=None, github_installation_token_permissions=None, github_installation_token_repositories=None, github_installation_token_repositories_ids=None, github_repository_path=None, gke_cluster_ca_certificate=None, gke_cluster_endpoint=None, gke_cluster_name=None, gke_service_account_key=None, gke_service_account_name=None, groups=None, hanadb_creation_statements=None, hanadb_revocation_statements=None, host_name=None, host_port=None, implementation_type=None, is_fixed_user=None, item_targets_assoc=None, k8s_allowed_namespaces=None, k8s_bearer_token=None, k8s_cluster_ca_certificate=None, k8s_cluster_endpoint=None, k8s_dynamic_mode=None, k8s_namespace=None, k8s_service_account=None, last_admin_rotation=None, ldap_audience=None, ldap_bind_dn=None, ldap_bind_password=None, ldap_certificate=None, ldap_token_expiration=None, ldap_url=None, ldap_user_attr=None, ldap_user_dn=None, metadata=None, mongodb_atlas_api_private_key=None, mongodb_atlas_api_public_key=None, mongodb_atlas_project_id=None, mongodb_custom_data=None, mongodb_db_name=None, mongodb_default_auth_db=None, mongodb_host_port=None, mongodb_is_atlas=None, mongodb_password=None, mongodb_roles=None, mongodb_uri_connection=None, mongodb_uri_options=None, mongodb_username=None, mssql_creation_statements=None, mssql_revocation_statements=None, mysql_creation_statements=None, oracle_creation_statements=None, password=None, password_length=None, password_policy=None, payload=None, postgres_creation_statements=None, postgres_revocation_statements=None, rabbitmq_server_password=None, rabbitmq_server_uri=None, rabbitmq_server_user=None, rabbitmq_user_conf_permission=None, rabbitmq_user_read_permission=None, rabbitmq_user_tags=None, rabbitmq_user_vhost=None, rabbitmq_user_write_permission=None, redshift_creation_statements=None, revoke_sync_url=None, rotate_sync_url=None, scopes=None, secure_remote_access_details=None, session_extension_warn_interval_min=None, sf_account=None, sf_user_role=None, sf_warehouse_name=None, should_stop=None, ssl_connection_certificate=None, ssl_connection_mode=None, tags=None, timeout_seconds=None, use_gw_cloud_identity=None, user_name=None, user_principal_name=None, user_ttl=None, username_length=None, username_policy=None, venafi_allow_subdomains=None, venafi_allowed_domains=None, venafi_api_key=None, venafi_auto_generated_folder=None, venafi_base_url=None, venafi_root_first_in_chain=None, venafi_sign_using_akeyless_pki=None, venafi_signer_key_name=None, venafi_store_private_key=None, venafi_tpp_password=None, venafi_tpp_username=None, venafi_use_tpp=None, venafi_zone=None, warn_before_user_expiration_min=None, local_vars_configuration=None):  # noqa: E501
         """DSProducerDetails - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -449,6 +457,8 @@ class DSProducerDetails(object):
         self._db_max_open_conns = None
         self._db_name = None
         self._db_port = None
+        self._db_private_key = None
+        self._db_private_key_passphrase = None
         self._db_pwd = None
         self._db_server_certificates = None
         self._db_server_name = None
@@ -499,9 +509,11 @@ class DSProducerDetails(object):
         self._implementation_type = None
         self._is_fixed_user = None
         self._item_targets_assoc = None
+        self._k8s_allowed_namespaces = None
         self._k8s_bearer_token = None
         self._k8s_cluster_ca_certificate = None
         self._k8s_cluster_endpoint = None
+        self._k8s_dynamic_mode = None
         self._k8s_namespace = None
         self._k8s_service_account = None
         self._last_admin_rotation = None
@@ -677,6 +689,10 @@ class DSProducerDetails(object):
             self.db_name = db_name
         if db_port is not None:
             self.db_port = db_port
+        if db_private_key is not None:
+            self.db_private_key = db_private_key
+        if db_private_key_passphrase is not None:
+            self.db_private_key_passphrase = db_private_key_passphrase
         if db_pwd is not None:
             self.db_pwd = db_pwd
         if db_server_certificates is not None:
@@ -777,12 +793,16 @@ class DSProducerDetails(object):
             self.is_fixed_user = is_fixed_user
         if item_targets_assoc is not None:
             self.item_targets_assoc = item_targets_assoc
+        if k8s_allowed_namespaces is not None:
+            self.k8s_allowed_namespaces = k8s_allowed_namespaces
         if k8s_bearer_token is not None:
             self.k8s_bearer_token = k8s_bearer_token
         if k8s_cluster_ca_certificate is not None:
             self.k8s_cluster_ca_certificate = k8s_cluster_ca_certificate
         if k8s_cluster_endpoint is not None:
             self.k8s_cluster_endpoint = k8s_cluster_endpoint
+        if k8s_dynamic_mode is not None:
+            self.k8s_dynamic_mode = k8s_dynamic_mode
         if k8s_namespace is not None:
             self.k8s_namespace = k8s_namespace
         if k8s_service_account is not None:
@@ -1947,6 +1967,50 @@ class DSProducerDetails(object):
         self._db_port = db_port
 
     @property
+    def db_private_key(self):
+        """Gets the db_private_key of this DSProducerDetails.  # noqa: E501
+
+        (Optional) Private Key in PEM format  # noqa: E501
+
+        :return: The db_private_key of this DSProducerDetails.  # noqa: E501
+        :rtype: str
+        """
+        return self._db_private_key
+
+    @db_private_key.setter
+    def db_private_key(self, db_private_key):
+        """Sets the db_private_key of this DSProducerDetails.
+
+        (Optional) Private Key in PEM format  # noqa: E501
+
+        :param db_private_key: The db_private_key of this DSProducerDetails.  # noqa: E501
+        :type: str
+        """
+
+        self._db_private_key = db_private_key
+
+    @property
+    def db_private_key_passphrase(self):
+        """Gets the db_private_key_passphrase of this DSProducerDetails.  # noqa: E501
+
+
+        :return: The db_private_key_passphrase of this DSProducerDetails.  # noqa: E501
+        :rtype: str
+        """
+        return self._db_private_key_passphrase
+
+    @db_private_key_passphrase.setter
+    def db_private_key_passphrase(self, db_private_key_passphrase):
+        """Sets the db_private_key_passphrase of this DSProducerDetails.
+
+
+        :param db_private_key_passphrase: The db_private_key_passphrase of this DSProducerDetails.  # noqa: E501
+        :type: str
+        """
+
+        self._db_private_key_passphrase = db_private_key_passphrase
+
+    @property
     def db_pwd(self):
         """Gets the db_pwd of this DSProducerDetails.  # noqa: E501
 
@@ -3003,6 +3067,29 @@ class DSProducerDetails(object):
         self._item_targets_assoc = item_targets_assoc
 
     @property
+    def k8s_allowed_namespaces(self):
+        """Gets the k8s_allowed_namespaces of this DSProducerDetails.  # noqa: E501
+
+        comma-separated list of allowed namespaces. Can hold just * which signifies that any namespace is allowed  # noqa: E501
+
+        :return: The k8s_allowed_namespaces of this DSProducerDetails.  # noqa: E501
+        :rtype: str
+        """
+        return self._k8s_allowed_namespaces
+
+    @k8s_allowed_namespaces.setter
+    def k8s_allowed_namespaces(self, k8s_allowed_namespaces):
+        """Sets the k8s_allowed_namespaces of this DSProducerDetails.
+
+        comma-separated list of allowed namespaces. Can hold just * which signifies that any namespace is allowed  # noqa: E501
+
+        :param k8s_allowed_namespaces: The k8s_allowed_namespaces of this DSProducerDetails.  # noqa: E501
+        :type: str
+        """
+
+        self._k8s_allowed_namespaces = k8s_allowed_namespaces
+
+    @property
     def k8s_bearer_token(self):
         """Gets the k8s_bearer_token of this DSProducerDetails.  # noqa: E501
 
@@ -3064,6 +3151,29 @@ class DSProducerDetails(object):
         """
 
         self._k8s_cluster_endpoint = k8s_cluster_endpoint
+
+    @property
+    def k8s_dynamic_mode(self):
+        """Gets the k8s_dynamic_mode of this DSProducerDetails.  # noqa: E501
+
+        when native k8s is in dynamic mode, user can define allowed namespaces, K8sServiceAccount doesn't exist from the start and will only be created at time of getting dynamic secret value By default dynamic mode is false and producer behaves like it did before  # noqa: E501
+
+        :return: The k8s_dynamic_mode of this DSProducerDetails.  # noqa: E501
+        :rtype: bool
+        """
+        return self._k8s_dynamic_mode
+
+    @k8s_dynamic_mode.setter
+    def k8s_dynamic_mode(self, k8s_dynamic_mode):
+        """Sets the k8s_dynamic_mode of this DSProducerDetails.
+
+        when native k8s is in dynamic mode, user can define allowed namespaces, K8sServiceAccount doesn't exist from the start and will only be created at time of getting dynamic secret value By default dynamic mode is false and producer behaves like it did before  # noqa: E501
+
+        :param k8s_dynamic_mode: The k8s_dynamic_mode of this DSProducerDetails.  # noqa: E501
+        :type: bool
+        """
+
+        self._k8s_dynamic_mode = k8s_dynamic_mode
 
     @property
     def k8s_namespace(self):

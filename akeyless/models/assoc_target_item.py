@@ -34,6 +34,7 @@ class AssocTargetItem(object):
                             and the value is json key in definition.
     """
     openapi_types = {
+        'disable_previous_key_version': 'bool',
         'json': 'bool',
         'key_operations': 'list[str]',
         'keyring_name': 'str',
@@ -52,6 +53,7 @@ class AssocTargetItem(object):
     }
 
     attribute_map = {
+        'disable_previous_key_version': 'disable-previous-key-version',
         'json': 'json',
         'key_operations': 'key-operations',
         'keyring_name': 'keyring-name',
@@ -69,12 +71,13 @@ class AssocTargetItem(object):
         'vault_name': 'vault-name'
     }
 
-    def __init__(self, json=None, key_operations=None, keyring_name=None, kms_algorithm=None, location_id=None, multi_region='false', name=None, project_id=None, purpose=None, regions=None, target_name=None, tenant_secret_type=None, token=None, uid_token=None, vault_name=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, disable_previous_key_version=None, json=None, key_operations=None, keyring_name=None, kms_algorithm=None, location_id=None, multi_region='false', name=None, project_id=None, purpose=None, regions=None, target_name=None, tenant_secret_type=None, token=None, uid_token=None, vault_name=None, local_vars_configuration=None):  # noqa: E501
         """AssocTargetItem - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
+        self._disable_previous_key_version = None
         self._json = None
         self._key_operations = None
         self._keyring_name = None
@@ -92,6 +95,8 @@ class AssocTargetItem(object):
         self._vault_name = None
         self.discriminator = None
 
+        if disable_previous_key_version is not None:
+            self.disable_previous_key_version = disable_previous_key_version
         if json is not None:
             self.json = json
         if key_operations is not None:
@@ -120,6 +125,29 @@ class AssocTargetItem(object):
             self.uid_token = uid_token
         if vault_name is not None:
             self.vault_name = vault_name
+
+    @property
+    def disable_previous_key_version(self):
+        """Gets the disable_previous_key_version of this AssocTargetItem.  # noqa: E501
+
+        Automatically disable previous key version (required for azure targets)  # noqa: E501
+
+        :return: The disable_previous_key_version of this AssocTargetItem.  # noqa: E501
+        :rtype: bool
+        """
+        return self._disable_previous_key_version
+
+    @disable_previous_key_version.setter
+    def disable_previous_key_version(self, disable_previous_key_version):
+        """Sets the disable_previous_key_version of this AssocTargetItem.
+
+        Automatically disable previous key version (required for azure targets)  # noqa: E501
+
+        :param disable_previous_key_version: The disable_previous_key_version of this AssocTargetItem.  # noqa: E501
+        :type: bool
+        """
+
+        self._disable_previous_key_version = disable_previous_key_version
 
     @property
     def json(self):

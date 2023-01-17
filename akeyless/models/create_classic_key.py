@@ -37,6 +37,8 @@ class CreateClassicKey(object):
         'alg': 'str',
         'cert_file_data': 'str',
         'delete_protection': 'str',
+        'description': 'str',
+        'gpg_alg': 'str',
         'json': 'bool',
         'key_data': 'str',
         'metadata': 'str',
@@ -51,6 +53,8 @@ class CreateClassicKey(object):
         'alg': 'alg',
         'cert_file_data': 'cert-file-data',
         'delete_protection': 'delete_protection',
+        'description': 'description',
+        'gpg_alg': 'gpg-alg',
         'json': 'json',
         'key_data': 'key-data',
         'metadata': 'metadata',
@@ -61,7 +65,7 @@ class CreateClassicKey(object):
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, alg=None, cert_file_data=None, delete_protection=None, json=None, key_data=None, metadata=None, name=None, protection_key_name=None, tags=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, alg=None, cert_file_data=None, delete_protection=None, description=None, gpg_alg=None, json=None, key_data=None, metadata=None, name=None, protection_key_name=None, tags=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """CreateClassicKey - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -70,6 +74,8 @@ class CreateClassicKey(object):
         self._alg = None
         self._cert_file_data = None
         self._delete_protection = None
+        self._description = None
+        self._gpg_alg = None
         self._json = None
         self._key_data = None
         self._metadata = None
@@ -85,6 +91,10 @@ class CreateClassicKey(object):
             self.cert_file_data = cert_file_data
         if delete_protection is not None:
             self.delete_protection = delete_protection
+        if description is not None:
+            self.description = description
+        if gpg_alg is not None:
+            self.gpg_alg = gpg_alg
         if json is not None:
             self.json = json
         if key_data is not None:
@@ -105,7 +115,7 @@ class CreateClassicKey(object):
     def alg(self):
         """Gets the alg of this CreateClassicKey.  # noqa: E501
 
-        Classic Key type; options: [AES128GCM, AES256GCM, AES128SIV, AES256SIV, RSA1024, RSA2048, RSA3072, RSA4096, EC256, EC384]  # noqa: E501
+        Classic Key type; options: [AES128GCM, AES256GCM, AES128SIV, AES256SIV, RSA1024, RSA2048, RSA3072, RSA4096, EC256, EC384, GPG]  # noqa: E501
 
         :return: The alg of this CreateClassicKey.  # noqa: E501
         :rtype: str
@@ -116,7 +126,7 @@ class CreateClassicKey(object):
     def alg(self, alg):
         """Sets the alg of this CreateClassicKey.
 
-        Classic Key type; options: [AES128GCM, AES256GCM, AES128SIV, AES256SIV, RSA1024, RSA2048, RSA3072, RSA4096, EC256, EC384]  # noqa: E501
+        Classic Key type; options: [AES128GCM, AES256GCM, AES128SIV, AES256SIV, RSA1024, RSA2048, RSA3072, RSA4096, EC256, EC384, GPG]  # noqa: E501
 
         :param alg: The alg of this CreateClassicKey.  # noqa: E501
         :type: str
@@ -173,6 +183,52 @@ class CreateClassicKey(object):
         self._delete_protection = delete_protection
 
     @property
+    def description(self):
+        """Gets the description of this CreateClassicKey.  # noqa: E501
+
+        Description of the object  # noqa: E501
+
+        :return: The description of this CreateClassicKey.  # noqa: E501
+        :rtype: str
+        """
+        return self._description
+
+    @description.setter
+    def description(self, description):
+        """Sets the description of this CreateClassicKey.
+
+        Description of the object  # noqa: E501
+
+        :param description: The description of this CreateClassicKey.  # noqa: E501
+        :type: str
+        """
+
+        self._description = description
+
+    @property
+    def gpg_alg(self):
+        """Gets the gpg_alg of this CreateClassicKey.  # noqa: E501
+
+        gpg alg: Relevant only if GPG key type selected; options: [RSA1024, RSA2048, RSA3072, RSA4096, Ed25519]  # noqa: E501
+
+        :return: The gpg_alg of this CreateClassicKey.  # noqa: E501
+        :rtype: str
+        """
+        return self._gpg_alg
+
+    @gpg_alg.setter
+    def gpg_alg(self, gpg_alg):
+        """Sets the gpg_alg of this CreateClassicKey.
+
+        gpg alg: Relevant only if GPG key type selected; options: [RSA1024, RSA2048, RSA3072, RSA4096, Ed25519]  # noqa: E501
+
+        :param gpg_alg: The gpg_alg of this CreateClassicKey.  # noqa: E501
+        :type: str
+        """
+
+        self._gpg_alg = gpg_alg
+
+    @property
     def json(self):
         """Gets the json of this CreateClassicKey.  # noqa: E501
 
@@ -222,7 +278,7 @@ class CreateClassicKey(object):
     def metadata(self):
         """Gets the metadata of this CreateClassicKey.  # noqa: E501
 
-        Metadata about the classic key  # noqa: E501
+        Deprecated - use description  # noqa: E501
 
         :return: The metadata of this CreateClassicKey.  # noqa: E501
         :rtype: str
@@ -233,7 +289,7 @@ class CreateClassicKey(object):
     def metadata(self, metadata):
         """Sets the metadata of this CreateClassicKey.
 
-        Metadata about the classic key  # noqa: E501
+        Deprecated - use description  # noqa: E501
 
         :param metadata: The metadata of this CreateClassicKey.  # noqa: E501
         :type: str

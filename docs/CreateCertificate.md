@@ -5,11 +5,12 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **certificate_data** | **str** | Content of the certificate PEM in a Base64 format. | [optional] 
 **delete_protection** | **str** | Protection from accidental deletion of this item | [optional] 
+**description** | **str** | Description of the object | [optional] 
 **expiration_event_in** | **list[str]** | How many days before the expiration of the certificate would you like to be notified. | [optional] 
 **json** | **bool** | Set output format to JSON | [optional] 
 **key** | **str** | The name of a key to use to encrypt the certificate&#39;s key (if empty, the account default protectionKey key will be used) | [optional] 
 **key_data** | **str** | Content of the certificate&#39;s private key PEM in a Base64 format. | [optional] 
-**metadata** | **str** | Metadata about the certificate | [optional] 
+**metadata** | **str** | Deprecated - use description | [optional] 
 **name** | **str** | Certificate name | 
 **tags** | **list[str]** | List of the tags attached to this certificate | [optional] 
 **token** | **str** | Authentication token (see &#x60;/auth&#x60; and &#x60;/configure&#x60;) | [optional] 

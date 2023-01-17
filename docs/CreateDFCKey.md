@@ -6,8 +6,9 @@ Name | Type | Description | Notes
 **alg** | **str** | DFCKey type; options: [AES128GCM, AES256GCM, AES128SIV, AES256SIV, AES128CBC, AES256CBC, RSA1024, RSA2048, RSA3072, RSA4096] | 
 **customer_frg_id** | **str** | The customer fragment ID that will be used to create the DFC key (if empty, the key will be created independently of a customer fragment) | [optional] 
 **delete_protection** | **str** | Protection from accidental deletion of this item | [optional] 
+**description** | **str** | Description of the object | [optional] 
 **json** | **bool** | Set output format to JSON | [optional] 
-**metadata** | **str** | Metadata about the DFC key | [optional] 
+**metadata** | **str** | Deprecated - use description | [optional] 
 **name** | **str** | DFCKey name | 
 **split_level** | **int** | The number of fragments that the item will be split into (not includes customer fragment) | [optional] [default to 3]
 **tag** | **list[str]** | List of the tags attached to this DFC key | [optional] 

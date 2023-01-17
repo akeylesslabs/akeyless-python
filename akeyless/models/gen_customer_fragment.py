@@ -35,15 +35,17 @@ class GenCustomerFragment(object):
     """
     openapi_types = {
         'description': 'str',
-        'json': 'bool'
+        'json': 'bool',
+        'metadata': 'str'
     }
 
     attribute_map = {
         'description': 'description',
-        'json': 'json'
+        'json': 'json',
+        'metadata': 'metadata'
     }
 
-    def __init__(self, description=None, json=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, description=None, json=None, metadata=None, local_vars_configuration=None):  # noqa: E501
         """GenCustomerFragment - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -51,18 +53,21 @@ class GenCustomerFragment(object):
 
         self._description = None
         self._json = None
+        self._metadata = None
         self.discriminator = None
 
         if description is not None:
             self.description = description
         if json is not None:
             self.json = json
+        if metadata is not None:
+            self.metadata = metadata
 
     @property
     def description(self):
         """Gets the description of this GenCustomerFragment.  # noqa: E501
 
-        The Customer Fragment Description  # noqa: E501
+        Description of the object  # noqa: E501
 
         :return: The description of this GenCustomerFragment.  # noqa: E501
         :rtype: str
@@ -73,7 +78,7 @@ class GenCustomerFragment(object):
     def description(self, description):
         """Sets the description of this GenCustomerFragment.
 
-        The Customer Fragment Description  # noqa: E501
+        Description of the object  # noqa: E501
 
         :param description: The description of this GenCustomerFragment.  # noqa: E501
         :type: str
@@ -103,6 +108,29 @@ class GenCustomerFragment(object):
         """
 
         self._json = json
+
+    @property
+    def metadata(self):
+        """Gets the metadata of this GenCustomerFragment.  # noqa: E501
+
+        Deprecated - use description  # noqa: E501
+
+        :return: The metadata of this GenCustomerFragment.  # noqa: E501
+        :rtype: str
+        """
+        return self._metadata
+
+    @metadata.setter
+    def metadata(self, metadata):
+        """Sets the metadata of this GenCustomerFragment.
+
+        Deprecated - use description  # noqa: E501
+
+        :param metadata: The metadata of this GenCustomerFragment.  # noqa: E501
+        :type: str
+        """
+
+        self._metadata = metadata
 
     def to_dict(self):
         """Returns the model properties as a dict"""

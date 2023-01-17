@@ -49,6 +49,7 @@ Method | HTTP request | Description
 [**create_web_target**](V2Api.md#create_web_target) | **POST** /create-web-target | 
 [**createldap_target**](V2Api.md#createldap_target) | **POST** /create-ldap-target | 
 [**decrypt**](V2Api.md#decrypt) | **POST** /decrypt | 
+[**decrypt_gpg**](V2Api.md#decrypt_gpg) | **POST** /decrypt-gpg | 
 [**decrypt_pkcs1**](V2Api.md#decrypt_pkcs1) | **POST** /decrypt-pkcs1 | 
 [**decrypt_with_classic_key**](V2Api.md#decrypt_with_classic_key) | **POST** /decrypt-with-classic-key | 
 [**delete_auth_method**](V2Api.md#delete_auth_method) | **POST** /delete-auth-method | 
@@ -68,6 +69,7 @@ Method | HTTP request | Description
 [**describe_sub_claims**](V2Api.md#describe_sub_claims) | **POST** /describe-sub-claims | 
 [**detokenize**](V2Api.md#detokenize) | **POST** /detokenize | 
 [**encrypt**](V2Api.md#encrypt) | **POST** /encrypt | 
+[**encrypt_gpg**](V2Api.md#encrypt_gpg) | **POST** /encrypt-gpg | 
 [**encrypt_with_classic_key**](V2Api.md#encrypt_with_classic_key) | **POST** /encrypt-with-classic-key | 
 [**export_classic_key**](V2Api.md#export_classic_key) | **POST** /export-classic-key | 
 [**gateway_create_k8_s_auth_config**](V2Api.md#gateway_create_k8_s_auth_config) | **POST** /gateway-create-k8s-auth-config | 
@@ -191,6 +193,7 @@ Method | HTTP request | Description
 [**set_item_state**](V2Api.md#set_item_state) | **POST** /set-item-state | 
 [**set_role_rule**](V2Api.md#set_role_rule) | **POST** /set-role-rule | 
 [**share_item**](V2Api.md#share_item) | **POST** /share-item | 
+[**sign_gpg**](V2Api.md#sign_gpg) | **POST** /sign-gpg | 
 [**sign_jwt_with_classic_key**](V2Api.md#sign_jwt_with_classic_key) | **POST** /sign-jwt-with-classic-key | 
 [**sign_pkcs1**](V2Api.md#sign_pkcs1) | **POST** /sign-pkcs1 | 
 [**sign_pki_cert_with_classic_key**](V2Api.md#sign_pki_cert_with_classic_key) | **POST** /sign-pki-cert-with-classic-key | 
@@ -249,6 +252,7 @@ Method | HTTP request | Description
 [**update_web_target_details**](V2Api.md#update_web_target_details) | **POST** /update-web-target-details | 
 [**upload_rsa**](V2Api.md#upload_rsa) | **POST** /upload-rsa | 
 [**validate_token**](V2Api.md#validate_token) | **POST** /validate-token | 
+[**verify_gpg**](V2Api.md#verify_gpg) | **POST** /verify-gpg | 
 [**verify_jwt_with_classic_key**](V2Api.md#verify_jwt_with_classic_key) | **POST** /verify-jwt-with-classic-key | 
 [**verify_pkcs1**](V2Api.md#verify_pkcs1) | **POST** /verify-pkcs1 | 
 [**verify_pki_cert_with_classic_key**](V2Api.md#verify_pki_cert_with_classic_key) | **POST** /verify-pki-cert-with-classic-key | 
@@ -2955,6 +2959,66 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **decrypt_gpg**
+> DecryptGPGOutput decrypt_gpg(body)
+
+
+
+### Example
+
+```python
+from __future__ import print_function
+import time
+import akeyless
+from akeyless.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.akeyless.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = akeyless.Configuration(
+    host = "https://api.akeyless.io"
+)
+
+
+# Enter a context with an instance of the API client
+with akeyless.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = akeyless.V2Api(api_client)
+    body = akeyless.DecryptGPG() # DecryptGPG | 
+
+    try:
+        api_response = api_instance.decrypt_gpg(body)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling V2Api->decrypt_gpg: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**DecryptGPG**](DecryptGPG.md)|  | 
+
+### Return type
+
+[**DecryptGPGOutput**](DecryptGPGOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | decryptGPGResponse wraps response body. |  -  |
+**0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **decrypt_pkcs1**
 > DecryptPKCS1Output decrypt_pkcs1(body)
 
@@ -4092,6 +4156,66 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | encryptResponse wraps response body. |  -  |
+**0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **encrypt_gpg**
+> EncryptGPGOutput encrypt_gpg(body)
+
+
+
+### Example
+
+```python
+from __future__ import print_function
+import time
+import akeyless
+from akeyless.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.akeyless.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = akeyless.Configuration(
+    host = "https://api.akeyless.io"
+)
+
+
+# Enter a context with an instance of the API client
+with akeyless.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = akeyless.V2Api(api_client)
+    body = akeyless.EncryptGPG() # EncryptGPG | 
+
+    try:
+        api_response = api_instance.encrypt_gpg(body)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling V2Api->encrypt_gpg: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**EncryptGPG**](EncryptGPG.md)|  | 
+
+### Return type
+
+[**EncryptGPGOutput**](EncryptGPGOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | encryptGPGResponse wraps response body. |  -  |
 **0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -11464,6 +11588,66 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **sign_gpg**
+> SignGPGOutput sign_gpg(body)
+
+
+
+### Example
+
+```python
+from __future__ import print_function
+import time
+import akeyless
+from akeyless.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.akeyless.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = akeyless.Configuration(
+    host = "https://api.akeyless.io"
+)
+
+
+# Enter a context with an instance of the API client
+with akeyless.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = akeyless.V2Api(api_client)
+    body = akeyless.SignGPG() # SignGPG | 
+
+    try:
+        api_response = api_instance.sign_gpg(body)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling V2Api->sign_gpg: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**SignGPG**](SignGPG.md)|  | 
+
+### Return type
+
+[**SignGPGOutput**](SignGPGOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | signGPGResponse wraps response body. |  -  |
+**0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **sign_jwt_with_classic_key**
 > SignJWTOutput sign_jwt_with_classic_key(body)
 
@@ -14937,6 +15121,66 @@ No authorization required
 |-------------|-------------|------------------|
 **200** | validateTokenResponse wraps response body. |  -  |
 **401** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
+**0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **verify_gpg**
+> object verify_gpg(body)
+
+
+
+### Example
+
+```python
+from __future__ import print_function
+import time
+import akeyless
+from akeyless.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.akeyless.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = akeyless.Configuration(
+    host = "https://api.akeyless.io"
+)
+
+
+# Enter a context with an instance of the API client
+with akeyless.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = akeyless.V2Api(api_client)
+    body = akeyless.VerifyGPG() # VerifyGPG | 
+
+    try:
+        api_response = api_instance.verify_gpg(body)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling V2Api->verify_gpg: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**VerifyGPG**](VerifyGPG.md)|  | 
+
+### Return type
+
+**object**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | verifyGPGResponse wraps response body. |  -  |
 **0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

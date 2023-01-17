@@ -37,6 +37,7 @@ class CreateTokenizer(object):
         'alphabet': 'str',
         'decoding_template': 'str',
         'delete_protection': 'str',
+        'description': 'str',
         'encoding_template': 'str',
         'encryption_key_name': 'str',
         'json': 'bool',
@@ -55,6 +56,7 @@ class CreateTokenizer(object):
         'alphabet': 'alphabet',
         'decoding_template': 'decoding-template',
         'delete_protection': 'delete_protection',
+        'description': 'description',
         'encoding_template': 'encoding-template',
         'encryption_key_name': 'encryption-key-name',
         'json': 'json',
@@ -69,7 +71,7 @@ class CreateTokenizer(object):
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, alphabet=None, decoding_template=None, delete_protection=None, encoding_template=None, encryption_key_name=None, json=None, metadata=None, name=None, pattern=None, tag=None, template_type=None, token=None, tokenizer_type=None, tweak_type=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, alphabet=None, decoding_template=None, delete_protection=None, description=None, encoding_template=None, encryption_key_name=None, json=None, metadata=None, name=None, pattern=None, tag=None, template_type=None, token=None, tokenizer_type=None, tweak_type=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """CreateTokenizer - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -78,6 +80,7 @@ class CreateTokenizer(object):
         self._alphabet = None
         self._decoding_template = None
         self._delete_protection = None
+        self._description = None
         self._encoding_template = None
         self._encryption_key_name = None
         self._json = None
@@ -98,6 +101,8 @@ class CreateTokenizer(object):
             self.decoding_template = decoding_template
         if delete_protection is not None:
             self.delete_protection = delete_protection
+        if description is not None:
+            self.description = description
         if encoding_template is not None:
             self.encoding_template = encoding_template
         if encryption_key_name is not None:
@@ -190,6 +195,29 @@ class CreateTokenizer(object):
         self._delete_protection = delete_protection
 
     @property
+    def description(self):
+        """Gets the description of this CreateTokenizer.  # noqa: E501
+
+        Description of the object  # noqa: E501
+
+        :return: The description of this CreateTokenizer.  # noqa: E501
+        :rtype: str
+        """
+        return self._description
+
+    @description.setter
+    def description(self, description):
+        """Sets the description of this CreateTokenizer.
+
+        Description of the object  # noqa: E501
+
+        :param description: The description of this CreateTokenizer.  # noqa: E501
+        :type: str
+        """
+
+        self._description = description
+
+    @property
     def encoding_template(self):
         """Gets the encoding_template of this CreateTokenizer.  # noqa: E501
 
@@ -262,7 +290,7 @@ class CreateTokenizer(object):
     def metadata(self):
         """Gets the metadata of this CreateTokenizer.  # noqa: E501
 
-        A metadata about the tokenizer  # noqa: E501
+        Deprecated - use description  # noqa: E501
 
         :return: The metadata of this CreateTokenizer.  # noqa: E501
         :rtype: str
@@ -273,7 +301,7 @@ class CreateTokenizer(object):
     def metadata(self, metadata):
         """Sets the metadata of this CreateTokenizer.
 
-        A metadata about the tokenizer  # noqa: E501
+        Deprecated - use description  # noqa: E501
 
         :param metadata: The metadata of this CreateTokenizer.  # noqa: E501
         :type: str

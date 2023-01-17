@@ -11,10 +11,11 @@ Name | Type | Description | Notes
 **client_flag** | **bool** | If set, certificates will be flagged for client auth use | [optional] 
 **code_signing_flag** | **bool** | If set, certificates will be flagged for code signing use | [optional] 
 **country** | **str** | A comma-separated list of the country that will be set in the issued certificate | [optional] 
+**description** | **str** | Description of the object | [optional] 
 **json** | **bool** | Set output format to JSON | [optional] 
 **key_usage** | **str** | key-usage | [optional] [default to 'DigitalSignature,KeyAgreement,KeyEncipherment']
 **locality** | **str** | A comma-separated list of the locality that will be set in the issued certificate | [optional] 
-**metadata** | **str** | A metadata about the issuer | [optional] 
+**metadata** | **str** | Deprecated - use description | [optional] 
 **name** | **str** | PKI certificate issuer name | 
 **new_name** | **str** | New item name | [optional] 
 **not_enforce_hostnames** | **bool** | If set, any names are allowed for CN and SANs in the certificate and not only a valid host name | [optional] 

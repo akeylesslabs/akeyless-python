@@ -36,6 +36,7 @@ class CreateCertificate(object):
     openapi_types = {
         'certificate_data': 'str',
         'delete_protection': 'str',
+        'description': 'str',
         'expiration_event_in': 'list[str]',
         'json': 'bool',
         'key': 'str',
@@ -50,6 +51,7 @@ class CreateCertificate(object):
     attribute_map = {
         'certificate_data': 'certificate-data',
         'delete_protection': 'delete_protection',
+        'description': 'description',
         'expiration_event_in': 'expiration-event-in',
         'json': 'json',
         'key': 'key',
@@ -61,7 +63,7 @@ class CreateCertificate(object):
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, certificate_data=None, delete_protection=None, expiration_event_in=None, json=None, key=None, key_data=None, metadata=None, name=None, tags=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, certificate_data=None, delete_protection=None, description=None, expiration_event_in=None, json=None, key=None, key_data=None, metadata=None, name=None, tags=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """CreateCertificate - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -69,6 +71,7 @@ class CreateCertificate(object):
 
         self._certificate_data = None
         self._delete_protection = None
+        self._description = None
         self._expiration_event_in = None
         self._json = None
         self._key = None
@@ -84,6 +87,8 @@ class CreateCertificate(object):
             self.certificate_data = certificate_data
         if delete_protection is not None:
             self.delete_protection = delete_protection
+        if description is not None:
+            self.description = description
         if expiration_event_in is not None:
             self.expiration_event_in = expiration_event_in
         if json is not None:
@@ -147,6 +152,29 @@ class CreateCertificate(object):
         """
 
         self._delete_protection = delete_protection
+
+    @property
+    def description(self):
+        """Gets the description of this CreateCertificate.  # noqa: E501
+
+        Description of the object  # noqa: E501
+
+        :return: The description of this CreateCertificate.  # noqa: E501
+        :rtype: str
+        """
+        return self._description
+
+    @description.setter
+    def description(self, description):
+        """Sets the description of this CreateCertificate.
+
+        Description of the object  # noqa: E501
+
+        :param description: The description of this CreateCertificate.  # noqa: E501
+        :type: str
+        """
+
+        self._description = description
 
     @property
     def expiration_event_in(self):
@@ -244,7 +272,7 @@ class CreateCertificate(object):
     def metadata(self):
         """Gets the metadata of this CreateCertificate.  # noqa: E501
 
-        Metadata about the certificate  # noqa: E501
+        Deprecated - use description  # noqa: E501
 
         :return: The metadata of this CreateCertificate.  # noqa: E501
         :rtype: str
@@ -255,7 +283,7 @@ class CreateCertificate(object):
     def metadata(self, metadata):
         """Sets the metadata of this CreateCertificate.
 
-        Metadata about the certificate  # noqa: E501
+        Deprecated - use description  # noqa: E501
 
         :param metadata: The metadata of this CreateCertificate.  # noqa: E501
         :type: str

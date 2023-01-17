@@ -36,6 +36,7 @@ class UploadPKCS12(object):
     openapi_types = {
         'customer_frg_id': 'str',
         'delete_protection': 'str',
+        'description': 'str',
         '_in': 'str',
         'json': 'bool',
         'metadata': 'str',
@@ -50,6 +51,7 @@ class UploadPKCS12(object):
     attribute_map = {
         'customer_frg_id': 'customer-frg-id',
         'delete_protection': 'delete_protection',
+        'description': 'description',
         '_in': 'in',
         'json': 'json',
         'metadata': 'metadata',
@@ -61,7 +63,7 @@ class UploadPKCS12(object):
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, customer_frg_id=None, delete_protection=None, _in=None, json=None, metadata=None, name=None, passphrase=None, split_level=2, tag=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, customer_frg_id=None, delete_protection=None, description=None, _in=None, json=None, metadata=None, name=None, passphrase=None, split_level=2, tag=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """UploadPKCS12 - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -69,6 +71,7 @@ class UploadPKCS12(object):
 
         self._customer_frg_id = None
         self._delete_protection = None
+        self._description = None
         self.__in = None
         self._json = None
         self._metadata = None
@@ -84,6 +87,8 @@ class UploadPKCS12(object):
             self.customer_frg_id = customer_frg_id
         if delete_protection is not None:
             self.delete_protection = delete_protection
+        if description is not None:
+            self.description = description
         self._in = _in
         if json is not None:
             self.json = json
@@ -147,6 +152,29 @@ class UploadPKCS12(object):
         self._delete_protection = delete_protection
 
     @property
+    def description(self):
+        """Gets the description of this UploadPKCS12.  # noqa: E501
+
+        Description of the object  # noqa: E501
+
+        :return: The description of this UploadPKCS12.  # noqa: E501
+        :rtype: str
+        """
+        return self._description
+
+    @description.setter
+    def description(self, description):
+        """Sets the description of this UploadPKCS12.
+
+        Description of the object  # noqa: E501
+
+        :param description: The description of this UploadPKCS12.  # noqa: E501
+        :type: str
+        """
+
+        self._description = description
+
+    @property
     def _in(self):
         """Gets the _in of this UploadPKCS12.  # noqa: E501
 
@@ -198,7 +226,7 @@ class UploadPKCS12(object):
     def metadata(self):
         """Gets the metadata of this UploadPKCS12.  # noqa: E501
 
-        A metadata about the key  # noqa: E501
+        Deprecated - use description  # noqa: E501
 
         :return: The metadata of this UploadPKCS12.  # noqa: E501
         :rtype: str
@@ -209,7 +237,7 @@ class UploadPKCS12(object):
     def metadata(self, metadata):
         """Sets the metadata of this UploadPKCS12.
 
-        A metadata about the key  # noqa: E501
+        Deprecated - use description  # noqa: E501
 
         :param metadata: The metadata of this UploadPKCS12.  # noqa: E501
         :type: str

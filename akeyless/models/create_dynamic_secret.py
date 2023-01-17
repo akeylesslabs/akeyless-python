@@ -35,6 +35,7 @@ class CreateDynamicSecret(object):
     """
     openapi_types = {
         'delete_protection': 'str',
+        'description': 'str',
         'json': 'bool',
         'key': 'str',
         'metadata': 'str',
@@ -46,6 +47,7 @@ class CreateDynamicSecret(object):
 
     attribute_map = {
         'delete_protection': 'delete_protection',
+        'description': 'description',
         'json': 'json',
         'key': 'key',
         'metadata': 'metadata',
@@ -55,13 +57,14 @@ class CreateDynamicSecret(object):
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, delete_protection=None, json=None, key=None, metadata='None', name=None, tags=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, delete_protection=None, description=None, json=None, key=None, metadata=None, name=None, tags=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """CreateDynamicSecret - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._delete_protection = None
+        self._description = None
         self._json = None
         self._key = None
         self._metadata = None
@@ -73,6 +76,8 @@ class CreateDynamicSecret(object):
 
         if delete_protection is not None:
             self.delete_protection = delete_protection
+        if description is not None:
+            self.description = description
         if json is not None:
             self.json = json
         if key is not None:
@@ -109,6 +114,29 @@ class CreateDynamicSecret(object):
         """
 
         self._delete_protection = delete_protection
+
+    @property
+    def description(self):
+        """Gets the description of this CreateDynamicSecret.  # noqa: E501
+
+        Description of the object  # noqa: E501
+
+        :return: The description of this CreateDynamicSecret.  # noqa: E501
+        :rtype: str
+        """
+        return self._description
+
+    @description.setter
+    def description(self, description):
+        """Sets the description of this CreateDynamicSecret.
+
+        Description of the object  # noqa: E501
+
+        :param description: The description of this CreateDynamicSecret.  # noqa: E501
+        :type: str
+        """
+
+        self._description = description
 
     @property
     def json(self):
@@ -160,7 +188,7 @@ class CreateDynamicSecret(object):
     def metadata(self):
         """Gets the metadata of this CreateDynamicSecret.  # noqa: E501
 
-        Metadata about the dynamic secret  # noqa: E501
+        Deprecated - use description  # noqa: E501
 
         :return: The metadata of this CreateDynamicSecret.  # noqa: E501
         :rtype: str
@@ -171,7 +199,7 @@ class CreateDynamicSecret(object):
     def metadata(self, metadata):
         """Sets the metadata of this CreateDynamicSecret.
 
-        Metadata about the dynamic secret  # noqa: E501
+        Deprecated - use description  # noqa: E501
 
         :param metadata: The metadata of this CreateDynamicSecret.  # noqa: E501
         :type: str

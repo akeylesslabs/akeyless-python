@@ -37,6 +37,7 @@ class CreateKey(object):
         'alg': 'str',
         'customer_frg_id': 'str',
         'delete_protection': 'str',
+        'description': 'str',
         'json': 'bool',
         'metadata': 'str',
         'name': 'str',
@@ -50,6 +51,7 @@ class CreateKey(object):
         'alg': 'alg',
         'customer_frg_id': 'customer-frg-id',
         'delete_protection': 'delete_protection',
+        'description': 'description',
         'json': 'json',
         'metadata': 'metadata',
         'name': 'name',
@@ -59,7 +61,7 @@ class CreateKey(object):
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, alg=None, customer_frg_id=None, delete_protection=None, json=None, metadata=None, name=None, split_level=2, tag=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, alg=None, customer_frg_id=None, delete_protection=None, description=None, json=None, metadata=None, name=None, split_level=2, tag=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """CreateKey - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -68,6 +70,7 @@ class CreateKey(object):
         self._alg = None
         self._customer_frg_id = None
         self._delete_protection = None
+        self._description = None
         self._json = None
         self._metadata = None
         self._name = None
@@ -82,6 +85,8 @@ class CreateKey(object):
             self.customer_frg_id = customer_frg_id
         if delete_protection is not None:
             self.delete_protection = delete_protection
+        if description is not None:
+            self.description = description
         if json is not None:
             self.json = json
         if metadata is not None:
@@ -168,6 +173,29 @@ class CreateKey(object):
         self._delete_protection = delete_protection
 
     @property
+    def description(self):
+        """Gets the description of this CreateKey.  # noqa: E501
+
+        Description of the object  # noqa: E501
+
+        :return: The description of this CreateKey.  # noqa: E501
+        :rtype: str
+        """
+        return self._description
+
+    @description.setter
+    def description(self, description):
+        """Sets the description of this CreateKey.
+
+        Description of the object  # noqa: E501
+
+        :param description: The description of this CreateKey.  # noqa: E501
+        :type: str
+        """
+
+        self._description = description
+
+    @property
     def json(self):
         """Gets the json of this CreateKey.  # noqa: E501
 
@@ -194,7 +222,7 @@ class CreateKey(object):
     def metadata(self):
         """Gets the metadata of this CreateKey.  # noqa: E501
 
-        Metadata about the key  # noqa: E501
+        Deprecated - use description  # noqa: E501
 
         :return: The metadata of this CreateKey.  # noqa: E501
         :rtype: str
@@ -205,7 +233,7 @@ class CreateKey(object):
     def metadata(self, metadata):
         """Sets the metadata of this CreateKey.
 
-        Metadata about the key  # noqa: E501
+        Deprecated - use description  # noqa: E501
 
         :param metadata: The metadata of this CreateKey.  # noqa: E501
         :type: str
