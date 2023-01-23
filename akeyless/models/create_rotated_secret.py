@@ -48,6 +48,7 @@ class CreateRotatedSecret(object):
         'key': 'str',
         'metadata': 'str',
         'name': 'str',
+        'rotate_after_disconnect': 'str',
         'rotated_password': 'str',
         'rotated_username': 'str',
         'rotation_hour': 'int',
@@ -94,6 +95,7 @@ class CreateRotatedSecret(object):
         'key': 'key',
         'metadata': 'metadata',
         'name': 'name',
+        'rotate_after_disconnect': 'rotate-after-disconnect',
         'rotated_password': 'rotated-password',
         'rotated_username': 'rotated-username',
         'rotation_hour': 'rotation-hour',
@@ -125,7 +127,7 @@ class CreateRotatedSecret(object):
         'user_dn': 'user-dn'
     }
 
-    def __init__(self, api_id=None, api_key=None, application_id=None, authentication_credentials=None, auto_rotate=None, aws_region='us-east-2', custom_payload=None, delete_protection=None, description=None, gcp_key=None, json=None, key=None, metadata=None, name=None, rotated_password=None, rotated_username=None, rotation_hour=None, rotation_interval=None, rotator_creds_type=None, rotator_custom_cmd=None, rotator_type=None, secure_access_allow_external_user=False, secure_access_aws_account_id=None, secure_access_aws_native_cli=None, secure_access_bastion_issuer=None, secure_access_db_name=None, secure_access_db_schema=None, secure_access_enable=None, secure_access_host=None, secure_access_rdp_domain=None, secure_access_rdp_user=None, secure_access_web=False, secure_access_web_browsing=False, secure_access_web_proxy=False, ssh_password=None, ssh_username=None, storage_account_key_name=None, tags=None, target_name=None, token=None, uid_token=None, user_attribute=None, user_dn=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, api_id=None, api_key=None, application_id=None, authentication_credentials=None, auto_rotate=None, aws_region='us-east-2', custom_payload=None, delete_protection=None, description=None, gcp_key=None, json=None, key=None, metadata=None, name=None, rotate_after_disconnect='false', rotated_password=None, rotated_username=None, rotation_hour=None, rotation_interval=None, rotator_creds_type=None, rotator_custom_cmd=None, rotator_type=None, secure_access_allow_external_user=False, secure_access_aws_account_id=None, secure_access_aws_native_cli=None, secure_access_bastion_issuer=None, secure_access_db_name=None, secure_access_db_schema=None, secure_access_enable=None, secure_access_host=None, secure_access_rdp_domain=None, secure_access_rdp_user=None, secure_access_web=False, secure_access_web_browsing=False, secure_access_web_proxy=False, ssh_password=None, ssh_username=None, storage_account_key_name=None, tags=None, target_name=None, token=None, uid_token=None, user_attribute=None, user_dn=None, local_vars_configuration=None):  # noqa: E501
         """CreateRotatedSecret - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -145,6 +147,7 @@ class CreateRotatedSecret(object):
         self._key = None
         self._metadata = None
         self._name = None
+        self._rotate_after_disconnect = None
         self._rotated_password = None
         self._rotated_username = None
         self._rotation_hour = None
@@ -203,6 +206,8 @@ class CreateRotatedSecret(object):
         if metadata is not None:
             self.metadata = metadata
         self.name = name
+        if rotate_after_disconnect is not None:
+            self.rotate_after_disconnect = rotate_after_disconnect
         if rotated_password is not None:
             self.rotated_password = rotated_password
         if rotated_username is not None:
@@ -575,6 +580,29 @@ class CreateRotatedSecret(object):
             raise ValueError("Invalid value for `name`, must not be `None`")  # noqa: E501
 
         self._name = name
+
+    @property
+    def rotate_after_disconnect(self):
+        """Gets the rotate_after_disconnect of this CreateRotatedSecret.  # noqa: E501
+
+        Rotate the value of the secret after SRA session ends  # noqa: E501
+
+        :return: The rotate_after_disconnect of this CreateRotatedSecret.  # noqa: E501
+        :rtype: str
+        """
+        return self._rotate_after_disconnect
+
+    @rotate_after_disconnect.setter
+    def rotate_after_disconnect(self, rotate_after_disconnect):
+        """Sets the rotate_after_disconnect of this CreateRotatedSecret.
+
+        Rotate the value of the secret after SRA session ends  # noqa: E501
+
+        :param rotate_after_disconnect: The rotate_after_disconnect of this CreateRotatedSecret.  # noqa: E501
+        :type: str
+        """
+
+        self._rotate_after_disconnect = rotate_after_disconnect
 
     @property
     def rotated_password(self):

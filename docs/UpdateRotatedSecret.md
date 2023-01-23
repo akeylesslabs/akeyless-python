@@ -20,6 +20,7 @@ Name | Type | Description | Notes
 **new_name** | **str** | New item name | [optional] 
 **new_version** | **bool** | Deprecated | [optional] 
 **rm_tag** | **list[str]** | List of the existent tags that will be removed from this item | [optional] 
+**rotate_after_disconnect** | **str** | Rotate the value of the secret after SRA session ends | [optional] [default to 'false']
 **rotated_password** | **str** |  | [optional] 
 **rotated_username** | **str** |  | [optional] 
 **rotation_hour** | **int** |  | [optional] 

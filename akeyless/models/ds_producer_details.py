@@ -34,15 +34,18 @@ class DSProducerDetails(object):
                             and the value is json key in definition.
     """
     openapi_types = {
+        'access_token_manager_id': 'str',
         'active': 'bool',
         'admin_name': 'str',
         'admin_pwd': 'str',
         'admin_rotation_interval_days': 'int',
+        'administrative_port': 'str',
         'artifactory_admin_apikey': 'str',
         'artifactory_admin_username': 'str',
         'artifactory_base_url': 'str',
         'artifactory_token_audience': 'str',
         'artifactory_token_scope': 'str',
+        'authorization_port': 'str',
         'aws_access_key_id': 'str',
         'aws_access_mode': 'str',
         'aws_region': 'str',
@@ -75,6 +78,7 @@ class DSProducerDetails(object):
         'chef_server_url': 'str',
         'chef_server_username': 'str',
         'chef_skip_ssl': 'bool',
+        'client_authentication_type': 'str',
         'create_sync_url': 'str',
         'db_host_name': 'str',
         'db_isolation_level': 'str',
@@ -101,6 +105,7 @@ class DSProducerDetails(object):
         'eks_region': 'str',
         'eks_secret_access_key': 'str',
         'enable_admin_rotation': 'bool',
+        'enforce_replay_prevention': 'bool',
         'externally_provided_user': 'str',
         'failure_message': 'str',
         'fixed_user_only': 'str',
@@ -126,6 +131,7 @@ class DSProducerDetails(object):
         'gke_cluster_name': 'str',
         'gke_service_account_key': 'str',
         'gke_service_account_name': 'str',
+        'grant_types': 'list[str]',
         'groups': 'str',
         'hanadb_creation_statements': 'str',
         'hanadb_revocation_statements': 'str',
@@ -133,14 +139,21 @@ class DSProducerDetails(object):
         'host_port': 'str',
         'implementation_type': 'str',
         'is_fixed_user': 'str',
+        'issuer': 'str',
         'item_targets_assoc': 'list[ItemTargetAssociation]',
+        'jwks': 'str',
+        'jwks_url': 'str',
         'k8s_allowed_namespaces': 'str',
         'k8s_bearer_token': 'str',
         'k8s_cluster_ca_certificate': 'str',
         'k8s_cluster_endpoint': 'str',
         'k8s_dynamic_mode': 'bool',
         'k8s_namespace': 'str',
+        'k8s_role_name': 'str',
+        'k8s_role_type': 'str',
         'k8s_service_account': 'str',
+        'k8s_temp_role_binding_definition': 'list[int]',
+        'k8s_temp_role_definition': 'list[int]',
         'last_admin_rotation': 'int',
         'ldap_audience': 'str',
         'ldap_bind_dn': 'str',
@@ -172,8 +185,10 @@ class DSProducerDetails(object):
         'password_length': 'int',
         'password_policy': 'str',
         'payload': 'str',
+        'ping_url': 'str',
         'postgres_creation_statements': 'str',
         'postgres_revocation_statements': 'str',
+        'privileged_user': 'str',
         'rabbitmq_server_password': 'str',
         'rabbitmq_server_uri': 'str',
         'rabbitmq_server_user': 'str',
@@ -182,7 +197,9 @@ class DSProducerDetails(object):
         'rabbitmq_user_tags': 'str',
         'rabbitmq_user_vhost': 'str',
         'rabbitmq_user_write_permission': 'str',
+        'redirect_uris': 'list[str]',
         'redshift_creation_statements': 'str',
+        'restricted_scopes': 'list[str]',
         'revoke_sync_url': 'str',
         'rotate_sync_url': 'str',
         'scopes': 'list[str]',
@@ -192,12 +209,15 @@ class DSProducerDetails(object):
         'sf_user_role': 'str',
         'sf_warehouse_name': 'str',
         'should_stop': 'str',
+        'signing_algorithm': 'str',
         'ssl_connection_certificate': 'str',
         'ssl_connection_mode': 'bool',
+        'subject_dn': 'str',
         'tags': 'list[str]',
         'timeout_seconds': 'int',
         'use_gw_cloud_identity': 'bool',
         'user_name': 'str',
+        'user_password': 'str',
         'user_principal_name': 'str',
         'user_ttl': 'str',
         'username_length': 'int',
@@ -219,15 +239,18 @@ class DSProducerDetails(object):
     }
 
     attribute_map = {
+        'access_token_manager_id': 'access_token_manager_id',
         'active': 'active',
         'admin_name': 'admin_name',
         'admin_pwd': 'admin_pwd',
         'admin_rotation_interval_days': 'admin_rotation_interval_days',
+        'administrative_port': 'administrative_port',
         'artifactory_admin_apikey': 'artifactory_admin_apikey',
         'artifactory_admin_username': 'artifactory_admin_username',
         'artifactory_base_url': 'artifactory_base_url',
         'artifactory_token_audience': 'artifactory_token_audience',
         'artifactory_token_scope': 'artifactory_token_scope',
+        'authorization_port': 'authorization_port',
         'aws_access_key_id': 'aws_access_key_id',
         'aws_access_mode': 'aws_access_mode',
         'aws_region': 'aws_region',
@@ -260,6 +283,7 @@ class DSProducerDetails(object):
         'chef_server_url': 'chef_server_url',
         'chef_server_username': 'chef_server_username',
         'chef_skip_ssl': 'chef_skip_ssl',
+        'client_authentication_type': 'client_authentication_type',
         'create_sync_url': 'create_sync_url',
         'db_host_name': 'db_host_name',
         'db_isolation_level': 'db_isolation_level',
@@ -286,6 +310,7 @@ class DSProducerDetails(object):
         'eks_region': 'eks_region',
         'eks_secret_access_key': 'eks_secret_access_key',
         'enable_admin_rotation': 'enable_admin_rotation',
+        'enforce_replay_prevention': 'enforce_replay_prevention',
         'externally_provided_user': 'externally_provided_user',
         'failure_message': 'failure_message',
         'fixed_user_only': 'fixed_user_only',
@@ -311,6 +336,7 @@ class DSProducerDetails(object):
         'gke_cluster_name': 'gke_cluster_name',
         'gke_service_account_key': 'gke_service_account_key',
         'gke_service_account_name': 'gke_service_account_name',
+        'grant_types': 'grant_types',
         'groups': 'groups',
         'hanadb_creation_statements': 'hanadb_creation_statements',
         'hanadb_revocation_statements': 'hanadb_revocation_statements',
@@ -318,14 +344,21 @@ class DSProducerDetails(object):
         'host_port': 'host_port',
         'implementation_type': 'implementation_type',
         'is_fixed_user': 'is_fixed_user',
+        'issuer': 'issuer',
         'item_targets_assoc': 'item_targets_assoc',
+        'jwks': 'jwks',
+        'jwks_url': 'jwks_url',
         'k8s_allowed_namespaces': 'k8s_allowed_namespaces',
         'k8s_bearer_token': 'k8s_bearer_token',
         'k8s_cluster_ca_certificate': 'k8s_cluster_ca_certificate',
         'k8s_cluster_endpoint': 'k8s_cluster_endpoint',
         'k8s_dynamic_mode': 'k8s_dynamic_mode',
         'k8s_namespace': 'k8s_namespace',
+        'k8s_role_name': 'k8s_role_name',
+        'k8s_role_type': 'k8s_role_type',
         'k8s_service_account': 'k8s_service_account',
+        'k8s_temp_role_binding_definition': 'k8s_temp_role_binding_definition',
+        'k8s_temp_role_definition': 'k8s_temp_role_definition',
         'last_admin_rotation': 'last_admin_rotation',
         'ldap_audience': 'ldap_audience',
         'ldap_bind_dn': 'ldap_bind_dn',
@@ -357,8 +390,10 @@ class DSProducerDetails(object):
         'password_length': 'password_length',
         'password_policy': 'password_policy',
         'payload': 'payload',
+        'ping_url': 'ping_url',
         'postgres_creation_statements': 'postgres_creation_statements',
         'postgres_revocation_statements': 'postgres_revocation_statements',
+        'privileged_user': 'privileged_user',
         'rabbitmq_server_password': 'rabbitmq_server_password',
         'rabbitmq_server_uri': 'rabbitmq_server_uri',
         'rabbitmq_server_user': 'rabbitmq_server_user',
@@ -367,7 +402,9 @@ class DSProducerDetails(object):
         'rabbitmq_user_tags': 'rabbitmq_user_tags',
         'rabbitmq_user_vhost': 'rabbitmq_user_vhost',
         'rabbitmq_user_write_permission': 'rabbitmq_user_write_permission',
+        'redirect_uris': 'redirect_uris',
         'redshift_creation_statements': 'redshift_creation_statements',
+        'restricted_scopes': 'restricted_scopes',
         'revoke_sync_url': 'revoke_sync_url',
         'rotate_sync_url': 'rotate_sync_url',
         'scopes': 'scopes',
@@ -377,12 +414,15 @@ class DSProducerDetails(object):
         'sf_user_role': 'sf_user_role',
         'sf_warehouse_name': 'sf_warehouse_name',
         'should_stop': 'should_stop',
+        'signing_algorithm': 'signing_algorithm',
         'ssl_connection_certificate': 'ssl_connection_certificate',
         'ssl_connection_mode': 'ssl_connection_mode',
+        'subject_dn': 'subject_dn',
         'tags': 'tags',
         'timeout_seconds': 'timeout_seconds',
         'use_gw_cloud_identity': 'use_gw_cloud_identity',
         'user_name': 'user_name',
+        'user_password': 'user_password',
         'user_principal_name': 'user_principal_name',
         'user_ttl': 'user_ttl',
         'username_length': 'username_length',
@@ -403,21 +443,24 @@ class DSProducerDetails(object):
         'warn_before_user_expiration_min': 'warn_before_user_expiration_min'
     }
 
-    def __init__(self, active=None, admin_name=None, admin_pwd=None, admin_rotation_interval_days=None, artifactory_admin_apikey=None, artifactory_admin_username=None, artifactory_base_url=None, artifactory_token_audience=None, artifactory_token_scope=None, aws_access_key_id=None, aws_access_mode=None, aws_region=None, aws_role_arns=None, aws_secret_access_key=None, aws_session_token=None, aws_user_console_access=None, aws_user_groups=None, aws_user_policies=None, aws_user_programmatic_access=None, azure_app_object_id=None, azure_client_id=None, azure_client_secret=None, azure_fixed_user_name_sub_claim_key=None, azure_fixed_user_only=None, azure_resource_group_name=None, azure_resource_name=None, azure_subscription_id=None, azure_tenant_id=None, azure_user_groups_obj_id=None, azure_user_portal_access=None, azure_user_programmatic_access=None, azure_user_roles_template_id=None, cassandra_creation_statements=None, chef_organizations=None, chef_server_access_mode=None, chef_server_host_name=None, chef_server_key=None, chef_server_port=None, chef_server_url=None, chef_server_username=None, chef_skip_ssl=None, create_sync_url=None, db_host_name=None, db_isolation_level=None, db_max_idle_conns=None, db_max_open_conns=None, db_name=None, db_port=None, db_private_key=None, db_private_key_passphrase=None, db_pwd=None, db_server_certificates=None, db_server_name=None, db_user_name=None, delete_protection=None, dynamic_secret_id=None, dynamic_secret_key=None, dynamic_secret_name=None, dynamic_secret_type=None, eks_access_key_id=None, eks_assume_role=None, eks_cluster_ca_certificate=None, eks_cluster_endpoint=None, eks_cluster_name=None, eks_region=None, eks_secret_access_key=None, enable_admin_rotation=None, externally_provided_user=None, failure_message=None, fixed_user_only=None, gcp_key_algo=None, gcp_role_bindings=None, gcp_service_account_email=None, gcp_service_account_key=None, gcp_service_account_type=None, gcp_tmp_service_account_name=None, gcp_token_lifetime=None, gcp_token_scope=None, gcp_token_type=None, github_app_id=None, github_app_private_key=None, github_base_url=None, github_installation_id=None, github_installation_token_permissions=None, github_installation_token_repositories=None, github_installation_token_repositories_ids=None, github_repository_path=None, gke_cluster_ca_certificate=None, gke_cluster_endpoint=None, gke_cluster_name=None, gke_service_account_key=None, gke_service_account_name=None, groups=None, hanadb_creation_statements=None, hanadb_revocation_statements=None, host_name=None, host_port=None, implementation_type=None, is_fixed_user=None, item_targets_assoc=None, k8s_allowed_namespaces=None, k8s_bearer_token=None, k8s_cluster_ca_certificate=None, k8s_cluster_endpoint=None, k8s_dynamic_mode=None, k8s_namespace=None, k8s_service_account=None, last_admin_rotation=None, ldap_audience=None, ldap_bind_dn=None, ldap_bind_password=None, ldap_certificate=None, ldap_token_expiration=None, ldap_url=None, ldap_user_attr=None, ldap_user_dn=None, metadata=None, mongodb_atlas_api_private_key=None, mongodb_atlas_api_public_key=None, mongodb_atlas_project_id=None, mongodb_custom_data=None, mongodb_db_name=None, mongodb_default_auth_db=None, mongodb_host_port=None, mongodb_is_atlas=None, mongodb_password=None, mongodb_roles=None, mongodb_uri_connection=None, mongodb_uri_options=None, mongodb_username=None, mssql_creation_statements=None, mssql_revocation_statements=None, mysql_creation_statements=None, oracle_creation_statements=None, password=None, password_length=None, password_policy=None, payload=None, postgres_creation_statements=None, postgres_revocation_statements=None, rabbitmq_server_password=None, rabbitmq_server_uri=None, rabbitmq_server_user=None, rabbitmq_user_conf_permission=None, rabbitmq_user_read_permission=None, rabbitmq_user_tags=None, rabbitmq_user_vhost=None, rabbitmq_user_write_permission=None, redshift_creation_statements=None, revoke_sync_url=None, rotate_sync_url=None, scopes=None, secure_remote_access_details=None, session_extension_warn_interval_min=None, sf_account=None, sf_user_role=None, sf_warehouse_name=None, should_stop=None, ssl_connection_certificate=None, ssl_connection_mode=None, tags=None, timeout_seconds=None, use_gw_cloud_identity=None, user_name=None, user_principal_name=None, user_ttl=None, username_length=None, username_policy=None, venafi_allow_subdomains=None, venafi_allowed_domains=None, venafi_api_key=None, venafi_auto_generated_folder=None, venafi_base_url=None, venafi_root_first_in_chain=None, venafi_sign_using_akeyless_pki=None, venafi_signer_key_name=None, venafi_store_private_key=None, venafi_tpp_password=None, venafi_tpp_username=None, venafi_use_tpp=None, venafi_zone=None, warn_before_user_expiration_min=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, access_token_manager_id=None, active=None, admin_name=None, admin_pwd=None, admin_rotation_interval_days=None, administrative_port=None, artifactory_admin_apikey=None, artifactory_admin_username=None, artifactory_base_url=None, artifactory_token_audience=None, artifactory_token_scope=None, authorization_port=None, aws_access_key_id=None, aws_access_mode=None, aws_region=None, aws_role_arns=None, aws_secret_access_key=None, aws_session_token=None, aws_user_console_access=None, aws_user_groups=None, aws_user_policies=None, aws_user_programmatic_access=None, azure_app_object_id=None, azure_client_id=None, azure_client_secret=None, azure_fixed_user_name_sub_claim_key=None, azure_fixed_user_only=None, azure_resource_group_name=None, azure_resource_name=None, azure_subscription_id=None, azure_tenant_id=None, azure_user_groups_obj_id=None, azure_user_portal_access=None, azure_user_programmatic_access=None, azure_user_roles_template_id=None, cassandra_creation_statements=None, chef_organizations=None, chef_server_access_mode=None, chef_server_host_name=None, chef_server_key=None, chef_server_port=None, chef_server_url=None, chef_server_username=None, chef_skip_ssl=None, client_authentication_type=None, create_sync_url=None, db_host_name=None, db_isolation_level=None, db_max_idle_conns=None, db_max_open_conns=None, db_name=None, db_port=None, db_private_key=None, db_private_key_passphrase=None, db_pwd=None, db_server_certificates=None, db_server_name=None, db_user_name=None, delete_protection=None, dynamic_secret_id=None, dynamic_secret_key=None, dynamic_secret_name=None, dynamic_secret_type=None, eks_access_key_id=None, eks_assume_role=None, eks_cluster_ca_certificate=None, eks_cluster_endpoint=None, eks_cluster_name=None, eks_region=None, eks_secret_access_key=None, enable_admin_rotation=None, enforce_replay_prevention=None, externally_provided_user=None, failure_message=None, fixed_user_only=None, gcp_key_algo=None, gcp_role_bindings=None, gcp_service_account_email=None, gcp_service_account_key=None, gcp_service_account_type=None, gcp_tmp_service_account_name=None, gcp_token_lifetime=None, gcp_token_scope=None, gcp_token_type=None, github_app_id=None, github_app_private_key=None, github_base_url=None, github_installation_id=None, github_installation_token_permissions=None, github_installation_token_repositories=None, github_installation_token_repositories_ids=None, github_repository_path=None, gke_cluster_ca_certificate=None, gke_cluster_endpoint=None, gke_cluster_name=None, gke_service_account_key=None, gke_service_account_name=None, grant_types=None, groups=None, hanadb_creation_statements=None, hanadb_revocation_statements=None, host_name=None, host_port=None, implementation_type=None, is_fixed_user=None, issuer=None, item_targets_assoc=None, jwks=None, jwks_url=None, k8s_allowed_namespaces=None, k8s_bearer_token=None, k8s_cluster_ca_certificate=None, k8s_cluster_endpoint=None, k8s_dynamic_mode=None, k8s_namespace=None, k8s_role_name=None, k8s_role_type=None, k8s_service_account=None, k8s_temp_role_binding_definition=None, k8s_temp_role_definition=None, last_admin_rotation=None, ldap_audience=None, ldap_bind_dn=None, ldap_bind_password=None, ldap_certificate=None, ldap_token_expiration=None, ldap_url=None, ldap_user_attr=None, ldap_user_dn=None, metadata=None, mongodb_atlas_api_private_key=None, mongodb_atlas_api_public_key=None, mongodb_atlas_project_id=None, mongodb_custom_data=None, mongodb_db_name=None, mongodb_default_auth_db=None, mongodb_host_port=None, mongodb_is_atlas=None, mongodb_password=None, mongodb_roles=None, mongodb_uri_connection=None, mongodb_uri_options=None, mongodb_username=None, mssql_creation_statements=None, mssql_revocation_statements=None, mysql_creation_statements=None, oracle_creation_statements=None, password=None, password_length=None, password_policy=None, payload=None, ping_url=None, postgres_creation_statements=None, postgres_revocation_statements=None, privileged_user=None, rabbitmq_server_password=None, rabbitmq_server_uri=None, rabbitmq_server_user=None, rabbitmq_user_conf_permission=None, rabbitmq_user_read_permission=None, rabbitmq_user_tags=None, rabbitmq_user_vhost=None, rabbitmq_user_write_permission=None, redirect_uris=None, redshift_creation_statements=None, restricted_scopes=None, revoke_sync_url=None, rotate_sync_url=None, scopes=None, secure_remote_access_details=None, session_extension_warn_interval_min=None, sf_account=None, sf_user_role=None, sf_warehouse_name=None, should_stop=None, signing_algorithm=None, ssl_connection_certificate=None, ssl_connection_mode=None, subject_dn=None, tags=None, timeout_seconds=None, use_gw_cloud_identity=None, user_name=None, user_password=None, user_principal_name=None, user_ttl=None, username_length=None, username_policy=None, venafi_allow_subdomains=None, venafi_allowed_domains=None, venafi_api_key=None, venafi_auto_generated_folder=None, venafi_base_url=None, venafi_root_first_in_chain=None, venafi_sign_using_akeyless_pki=None, venafi_signer_key_name=None, venafi_store_private_key=None, venafi_tpp_password=None, venafi_tpp_username=None, venafi_use_tpp=None, venafi_zone=None, warn_before_user_expiration_min=None, local_vars_configuration=None):  # noqa: E501
         """DSProducerDetails - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
+        self._access_token_manager_id = None
         self._active = None
         self._admin_name = None
         self._admin_pwd = None
         self._admin_rotation_interval_days = None
+        self._administrative_port = None
         self._artifactory_admin_apikey = None
         self._artifactory_admin_username = None
         self._artifactory_base_url = None
         self._artifactory_token_audience = None
         self._artifactory_token_scope = None
+        self._authorization_port = None
         self._aws_access_key_id = None
         self._aws_access_mode = None
         self._aws_region = None
@@ -450,6 +493,7 @@ class DSProducerDetails(object):
         self._chef_server_url = None
         self._chef_server_username = None
         self._chef_skip_ssl = None
+        self._client_authentication_type = None
         self._create_sync_url = None
         self._db_host_name = None
         self._db_isolation_level = None
@@ -476,6 +520,7 @@ class DSProducerDetails(object):
         self._eks_region = None
         self._eks_secret_access_key = None
         self._enable_admin_rotation = None
+        self._enforce_replay_prevention = None
         self._externally_provided_user = None
         self._failure_message = None
         self._fixed_user_only = None
@@ -501,6 +546,7 @@ class DSProducerDetails(object):
         self._gke_cluster_name = None
         self._gke_service_account_key = None
         self._gke_service_account_name = None
+        self._grant_types = None
         self._groups = None
         self._hanadb_creation_statements = None
         self._hanadb_revocation_statements = None
@@ -508,14 +554,21 @@ class DSProducerDetails(object):
         self._host_port = None
         self._implementation_type = None
         self._is_fixed_user = None
+        self._issuer = None
         self._item_targets_assoc = None
+        self._jwks = None
+        self._jwks_url = None
         self._k8s_allowed_namespaces = None
         self._k8s_bearer_token = None
         self._k8s_cluster_ca_certificate = None
         self._k8s_cluster_endpoint = None
         self._k8s_dynamic_mode = None
         self._k8s_namespace = None
+        self._k8s_role_name = None
+        self._k8s_role_type = None
         self._k8s_service_account = None
+        self._k8s_temp_role_binding_definition = None
+        self._k8s_temp_role_definition = None
         self._last_admin_rotation = None
         self._ldap_audience = None
         self._ldap_bind_dn = None
@@ -547,8 +600,10 @@ class DSProducerDetails(object):
         self._password_length = None
         self._password_policy = None
         self._payload = None
+        self._ping_url = None
         self._postgres_creation_statements = None
         self._postgres_revocation_statements = None
+        self._privileged_user = None
         self._rabbitmq_server_password = None
         self._rabbitmq_server_uri = None
         self._rabbitmq_server_user = None
@@ -557,7 +612,9 @@ class DSProducerDetails(object):
         self._rabbitmq_user_tags = None
         self._rabbitmq_user_vhost = None
         self._rabbitmq_user_write_permission = None
+        self._redirect_uris = None
         self._redshift_creation_statements = None
+        self._restricted_scopes = None
         self._revoke_sync_url = None
         self._rotate_sync_url = None
         self._scopes = None
@@ -567,12 +624,15 @@ class DSProducerDetails(object):
         self._sf_user_role = None
         self._sf_warehouse_name = None
         self._should_stop = None
+        self._signing_algorithm = None
         self._ssl_connection_certificate = None
         self._ssl_connection_mode = None
+        self._subject_dn = None
         self._tags = None
         self._timeout_seconds = None
         self._use_gw_cloud_identity = None
         self._user_name = None
+        self._user_password = None
         self._user_principal_name = None
         self._user_ttl = None
         self._username_length = None
@@ -593,6 +653,8 @@ class DSProducerDetails(object):
         self._warn_before_user_expiration_min = None
         self.discriminator = None
 
+        if access_token_manager_id is not None:
+            self.access_token_manager_id = access_token_manager_id
         if active is not None:
             self.active = active
         if admin_name is not None:
@@ -601,6 +663,8 @@ class DSProducerDetails(object):
             self.admin_pwd = admin_pwd
         if admin_rotation_interval_days is not None:
             self.admin_rotation_interval_days = admin_rotation_interval_days
+        if administrative_port is not None:
+            self.administrative_port = administrative_port
         if artifactory_admin_apikey is not None:
             self.artifactory_admin_apikey = artifactory_admin_apikey
         if artifactory_admin_username is not None:
@@ -611,6 +675,8 @@ class DSProducerDetails(object):
             self.artifactory_token_audience = artifactory_token_audience
         if artifactory_token_scope is not None:
             self.artifactory_token_scope = artifactory_token_scope
+        if authorization_port is not None:
+            self.authorization_port = authorization_port
         if aws_access_key_id is not None:
             self.aws_access_key_id = aws_access_key_id
         if aws_access_mode is not None:
@@ -675,6 +741,8 @@ class DSProducerDetails(object):
             self.chef_server_username = chef_server_username
         if chef_skip_ssl is not None:
             self.chef_skip_ssl = chef_skip_ssl
+        if client_authentication_type is not None:
+            self.client_authentication_type = client_authentication_type
         if create_sync_url is not None:
             self.create_sync_url = create_sync_url
         if db_host_name is not None:
@@ -727,6 +795,8 @@ class DSProducerDetails(object):
             self.eks_secret_access_key = eks_secret_access_key
         if enable_admin_rotation is not None:
             self.enable_admin_rotation = enable_admin_rotation
+        if enforce_replay_prevention is not None:
+            self.enforce_replay_prevention = enforce_replay_prevention
         if externally_provided_user is not None:
             self.externally_provided_user = externally_provided_user
         if failure_message is not None:
@@ -777,6 +847,8 @@ class DSProducerDetails(object):
             self.gke_service_account_key = gke_service_account_key
         if gke_service_account_name is not None:
             self.gke_service_account_name = gke_service_account_name
+        if grant_types is not None:
+            self.grant_types = grant_types
         if groups is not None:
             self.groups = groups
         if hanadb_creation_statements is not None:
@@ -791,8 +863,14 @@ class DSProducerDetails(object):
             self.implementation_type = implementation_type
         if is_fixed_user is not None:
             self.is_fixed_user = is_fixed_user
+        if issuer is not None:
+            self.issuer = issuer
         if item_targets_assoc is not None:
             self.item_targets_assoc = item_targets_assoc
+        if jwks is not None:
+            self.jwks = jwks
+        if jwks_url is not None:
+            self.jwks_url = jwks_url
         if k8s_allowed_namespaces is not None:
             self.k8s_allowed_namespaces = k8s_allowed_namespaces
         if k8s_bearer_token is not None:
@@ -805,8 +883,16 @@ class DSProducerDetails(object):
             self.k8s_dynamic_mode = k8s_dynamic_mode
         if k8s_namespace is not None:
             self.k8s_namespace = k8s_namespace
+        if k8s_role_name is not None:
+            self.k8s_role_name = k8s_role_name
+        if k8s_role_type is not None:
+            self.k8s_role_type = k8s_role_type
         if k8s_service_account is not None:
             self.k8s_service_account = k8s_service_account
+        if k8s_temp_role_binding_definition is not None:
+            self.k8s_temp_role_binding_definition = k8s_temp_role_binding_definition
+        if k8s_temp_role_definition is not None:
+            self.k8s_temp_role_definition = k8s_temp_role_definition
         if last_admin_rotation is not None:
             self.last_admin_rotation = last_admin_rotation
         if ldap_audience is not None:
@@ -869,10 +955,14 @@ class DSProducerDetails(object):
             self.password_policy = password_policy
         if payload is not None:
             self.payload = payload
+        if ping_url is not None:
+            self.ping_url = ping_url
         if postgres_creation_statements is not None:
             self.postgres_creation_statements = postgres_creation_statements
         if postgres_revocation_statements is not None:
             self.postgres_revocation_statements = postgres_revocation_statements
+        if privileged_user is not None:
+            self.privileged_user = privileged_user
         if rabbitmq_server_password is not None:
             self.rabbitmq_server_password = rabbitmq_server_password
         if rabbitmq_server_uri is not None:
@@ -889,8 +979,12 @@ class DSProducerDetails(object):
             self.rabbitmq_user_vhost = rabbitmq_user_vhost
         if rabbitmq_user_write_permission is not None:
             self.rabbitmq_user_write_permission = rabbitmq_user_write_permission
+        if redirect_uris is not None:
+            self.redirect_uris = redirect_uris
         if redshift_creation_statements is not None:
             self.redshift_creation_statements = redshift_creation_statements
+        if restricted_scopes is not None:
+            self.restricted_scopes = restricted_scopes
         if revoke_sync_url is not None:
             self.revoke_sync_url = revoke_sync_url
         if rotate_sync_url is not None:
@@ -909,10 +1003,14 @@ class DSProducerDetails(object):
             self.sf_warehouse_name = sf_warehouse_name
         if should_stop is not None:
             self.should_stop = should_stop
+        if signing_algorithm is not None:
+            self.signing_algorithm = signing_algorithm
         if ssl_connection_certificate is not None:
             self.ssl_connection_certificate = ssl_connection_certificate
         if ssl_connection_mode is not None:
             self.ssl_connection_mode = ssl_connection_mode
+        if subject_dn is not None:
+            self.subject_dn = subject_dn
         if tags is not None:
             self.tags = tags
         if timeout_seconds is not None:
@@ -921,6 +1019,8 @@ class DSProducerDetails(object):
             self.use_gw_cloud_identity = use_gw_cloud_identity
         if user_name is not None:
             self.user_name = user_name
+        if user_password is not None:
+            self.user_password = user_password
         if user_principal_name is not None:
             self.user_principal_name = user_principal_name
         if user_ttl is not None:
@@ -957,6 +1057,27 @@ class DSProducerDetails(object):
             self.venafi_zone = venafi_zone
         if warn_before_user_expiration_min is not None:
             self.warn_before_user_expiration_min = warn_before_user_expiration_min
+
+    @property
+    def access_token_manager_id(self):
+        """Gets the access_token_manager_id of this DSProducerDetails.  # noqa: E501
+
+
+        :return: The access_token_manager_id of this DSProducerDetails.  # noqa: E501
+        :rtype: str
+        """
+        return self._access_token_manager_id
+
+    @access_token_manager_id.setter
+    def access_token_manager_id(self, access_token_manager_id):
+        """Sets the access_token_manager_id of this DSProducerDetails.
+
+
+        :param access_token_manager_id: The access_token_manager_id of this DSProducerDetails.  # noqa: E501
+        :type: str
+        """
+
+        self._access_token_manager_id = access_token_manager_id
 
     @property
     def active(self):
@@ -1041,6 +1162,27 @@ class DSProducerDetails(object):
         """
 
         self._admin_rotation_interval_days = admin_rotation_interval_days
+
+    @property
+    def administrative_port(self):
+        """Gets the administrative_port of this DSProducerDetails.  # noqa: E501
+
+
+        :return: The administrative_port of this DSProducerDetails.  # noqa: E501
+        :rtype: str
+        """
+        return self._administrative_port
+
+    @administrative_port.setter
+    def administrative_port(self, administrative_port):
+        """Sets the administrative_port of this DSProducerDetails.
+
+
+        :param administrative_port: The administrative_port of this DSProducerDetails.  # noqa: E501
+        :type: str
+        """
+
+        self._administrative_port = administrative_port
 
     @property
     def artifactory_admin_apikey(self):
@@ -1146,6 +1288,27 @@ class DSProducerDetails(object):
         """
 
         self._artifactory_token_scope = artifactory_token_scope
+
+    @property
+    def authorization_port(self):
+        """Gets the authorization_port of this DSProducerDetails.  # noqa: E501
+
+
+        :return: The authorization_port of this DSProducerDetails.  # noqa: E501
+        :rtype: str
+        """
+        return self._authorization_port
+
+    @authorization_port.setter
+    def authorization_port(self, authorization_port):
+        """Sets the authorization_port of this DSProducerDetails.
+
+
+        :param authorization_port: The authorization_port of this DSProducerDetails.  # noqa: E501
+        :type: str
+        """
+
+        self._authorization_port = authorization_port
 
     @property
     def aws_access_key_id(self):
@@ -1820,6 +1983,27 @@ class DSProducerDetails(object):
         self._chef_skip_ssl = chef_skip_ssl
 
     @property
+    def client_authentication_type(self):
+        """Gets the client_authentication_type of this DSProducerDetails.  # noqa: E501
+
+
+        :return: The client_authentication_type of this DSProducerDetails.  # noqa: E501
+        :rtype: str
+        """
+        return self._client_authentication_type
+
+    @client_authentication_type.setter
+    def client_authentication_type(self, client_authentication_type):
+        """Sets the client_authentication_type of this DSProducerDetails.
+
+
+        :param client_authentication_type: The client_authentication_type of this DSProducerDetails.  # noqa: E501
+        :type: str
+        """
+
+        self._client_authentication_type = client_authentication_type
+
+    @property
     def create_sync_url(self):
         """Gets the create_sync_url of this DSProducerDetails.  # noqa: E501
 
@@ -2372,6 +2556,29 @@ class DSProducerDetails(object):
         self._enable_admin_rotation = enable_admin_rotation
 
     @property
+    def enforce_replay_prevention(self):
+        """Gets the enforce_replay_prevention of this DSProducerDetails.  # noqa: E501
+
+        relevant for PRIVATE_KEY_JWT client authentication type  # noqa: E501
+
+        :return: The enforce_replay_prevention of this DSProducerDetails.  # noqa: E501
+        :rtype: bool
+        """
+        return self._enforce_replay_prevention
+
+    @enforce_replay_prevention.setter
+    def enforce_replay_prevention(self, enforce_replay_prevention):
+        """Sets the enforce_replay_prevention of this DSProducerDetails.
+
+        relevant for PRIVATE_KEY_JWT client authentication type  # noqa: E501
+
+        :param enforce_replay_prevention: The enforce_replay_prevention of this DSProducerDetails.  # noqa: E501
+        :type: bool
+        """
+
+        self._enforce_replay_prevention = enforce_replay_prevention
+
+    @property
     def externally_provided_user(self):
         """Gets the externally_provided_user of this DSProducerDetails.  # noqa: E501
 
@@ -2899,6 +3106,27 @@ class DSProducerDetails(object):
         self._gke_service_account_name = gke_service_account_name
 
     @property
+    def grant_types(self):
+        """Gets the grant_types of this DSProducerDetails.  # noqa: E501
+
+
+        :return: The grant_types of this DSProducerDetails.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._grant_types
+
+    @grant_types.setter
+    def grant_types(self, grant_types):
+        """Sets the grant_types of this DSProducerDetails.
+
+
+        :param grant_types: The grant_types of this DSProducerDetails.  # noqa: E501
+        :type: list[str]
+        """
+
+        self._grant_types = grant_types
+
+    @property
     def groups(self):
         """Gets the groups of this DSProducerDetails.  # noqa: E501
 
@@ -3046,6 +3274,29 @@ class DSProducerDetails(object):
         self._is_fixed_user = is_fixed_user
 
     @property
+    def issuer(self):
+        """Gets the issuer of this DSProducerDetails.  # noqa: E501
+
+        relevant for CLIENT_TLS_CERTIFICATE client authentication type  # noqa: E501
+
+        :return: The issuer of this DSProducerDetails.  # noqa: E501
+        :rtype: str
+        """
+        return self._issuer
+
+    @issuer.setter
+    def issuer(self, issuer):
+        """Sets the issuer of this DSProducerDetails.
+
+        relevant for CLIENT_TLS_CERTIFICATE client authentication type  # noqa: E501
+
+        :param issuer: The issuer of this DSProducerDetails.  # noqa: E501
+        :type: str
+        """
+
+        self._issuer = issuer
+
+    @property
     def item_targets_assoc(self):
         """Gets the item_targets_assoc of this DSProducerDetails.  # noqa: E501
 
@@ -3065,6 +3316,48 @@ class DSProducerDetails(object):
         """
 
         self._item_targets_assoc = item_targets_assoc
+
+    @property
+    def jwks(self):
+        """Gets the jwks of this DSProducerDetails.  # noqa: E501
+
+
+        :return: The jwks of this DSProducerDetails.  # noqa: E501
+        :rtype: str
+        """
+        return self._jwks
+
+    @jwks.setter
+    def jwks(self, jwks):
+        """Sets the jwks of this DSProducerDetails.
+
+
+        :param jwks: The jwks of this DSProducerDetails.  # noqa: E501
+        :type: str
+        """
+
+        self._jwks = jwks
+
+    @property
+    def jwks_url(self):
+        """Gets the jwks_url of this DSProducerDetails.  # noqa: E501
+
+
+        :return: The jwks_url of this DSProducerDetails.  # noqa: E501
+        :rtype: str
+        """
+        return self._jwks_url
+
+    @jwks_url.setter
+    def jwks_url(self, jwks_url):
+        """Sets the jwks_url of this DSProducerDetails.
+
+
+        :param jwks_url: The jwks_url of this DSProducerDetails.  # noqa: E501
+        :type: str
+        """
+
+        self._jwks_url = jwks_url
 
     @property
     def k8s_allowed_namespaces(self):
@@ -3197,6 +3490,50 @@ class DSProducerDetails(object):
         self._k8s_namespace = k8s_namespace
 
     @property
+    def k8s_role_name(self):
+        """Gets the k8s_role_name of this DSProducerDetails.  # noqa: E501
+
+        Name of the pre-existing Role or ClusterRole to bind a generated service account to.  # noqa: E501
+
+        :return: The k8s_role_name of this DSProducerDetails.  # noqa: E501
+        :rtype: str
+        """
+        return self._k8s_role_name
+
+    @k8s_role_name.setter
+    def k8s_role_name(self, k8s_role_name):
+        """Sets the k8s_role_name of this DSProducerDetails.
+
+        Name of the pre-existing Role or ClusterRole to bind a generated service account to.  # noqa: E501
+
+        :param k8s_role_name: The k8s_role_name of this DSProducerDetails.  # noqa: E501
+        :type: str
+        """
+
+        self._k8s_role_name = k8s_role_name
+
+    @property
+    def k8s_role_type(self):
+        """Gets the k8s_role_type of this DSProducerDetails.  # noqa: E501
+
+
+        :return: The k8s_role_type of this DSProducerDetails.  # noqa: E501
+        :rtype: str
+        """
+        return self._k8s_role_type
+
+    @k8s_role_type.setter
+    def k8s_role_type(self, k8s_role_type):
+        """Sets the k8s_role_type of this DSProducerDetails.
+
+
+        :param k8s_role_type: The k8s_role_type of this DSProducerDetails.  # noqa: E501
+        :type: str
+        """
+
+        self._k8s_role_type = k8s_role_type
+
+    @property
     def k8s_service_account(self):
         """Gets the k8s_service_account of this DSProducerDetails.  # noqa: E501
 
@@ -3216,6 +3553,52 @@ class DSProducerDetails(object):
         """
 
         self._k8s_service_account = k8s_service_account
+
+    @property
+    def k8s_temp_role_binding_definition(self):
+        """Gets the k8s_temp_role_binding_definition of this DSProducerDetails.  # noqa: E501
+
+        Yaml/Json definition of temporary role binding that will be created and deleted when TTL is due. Must have as subject name of Service Account specified in K8sServiceAccount field  # noqa: E501
+
+        :return: The k8s_temp_role_binding_definition of this DSProducerDetails.  # noqa: E501
+        :rtype: list[int]
+        """
+        return self._k8s_temp_role_binding_definition
+
+    @k8s_temp_role_binding_definition.setter
+    def k8s_temp_role_binding_definition(self, k8s_temp_role_binding_definition):
+        """Sets the k8s_temp_role_binding_definition of this DSProducerDetails.
+
+        Yaml/Json definition of temporary role binding that will be created and deleted when TTL is due. Must have as subject name of Service Account specified in K8sServiceAccount field  # noqa: E501
+
+        :param k8s_temp_role_binding_definition: The k8s_temp_role_binding_definition of this DSProducerDetails.  # noqa: E501
+        :type: list[int]
+        """
+
+        self._k8s_temp_role_binding_definition = k8s_temp_role_binding_definition
+
+    @property
+    def k8s_temp_role_definition(self):
+        """Gets the k8s_temp_role_definition of this DSProducerDetails.  # noqa: E501
+
+        Yaml/Json definition of temporary role that will be created and deleted when TTL is due  # noqa: E501
+
+        :return: The k8s_temp_role_definition of this DSProducerDetails.  # noqa: E501
+        :rtype: list[int]
+        """
+        return self._k8s_temp_role_definition
+
+    @k8s_temp_role_definition.setter
+    def k8s_temp_role_definition(self, k8s_temp_role_definition):
+        """Sets the k8s_temp_role_definition of this DSProducerDetails.
+
+        Yaml/Json definition of temporary role that will be created and deleted when TTL is due  # noqa: E501
+
+        :param k8s_temp_role_definition: The k8s_temp_role_definition of this DSProducerDetails.  # noqa: E501
+        :type: list[int]
+        """
+
+        self._k8s_temp_role_definition = k8s_temp_role_definition
 
     @property
     def last_admin_rotation(self):
@@ -3877,6 +4260,27 @@ class DSProducerDetails(object):
         self._payload = payload
 
     @property
+    def ping_url(self):
+        """Gets the ping_url of this DSProducerDetails.  # noqa: E501
+
+
+        :return: The ping_url of this DSProducerDetails.  # noqa: E501
+        :rtype: str
+        """
+        return self._ping_url
+
+    @ping_url.setter
+    def ping_url(self, ping_url):
+        """Sets the ping_url of this DSProducerDetails.
+
+
+        :param ping_url: The ping_url of this DSProducerDetails.  # noqa: E501
+        :type: str
+        """
+
+        self._ping_url = ping_url
+
+    @property
     def postgres_creation_statements(self):
         """Gets the postgres_creation_statements of this DSProducerDetails.  # noqa: E501
 
@@ -3917,6 +4321,27 @@ class DSProducerDetails(object):
         """
 
         self._postgres_revocation_statements = postgres_revocation_statements
+
+    @property
+    def privileged_user(self):
+        """Gets the privileged_user of this DSProducerDetails.  # noqa: E501
+
+
+        :return: The privileged_user of this DSProducerDetails.  # noqa: E501
+        :rtype: str
+        """
+        return self._privileged_user
+
+    @privileged_user.setter
+    def privileged_user(self, privileged_user):
+        """Sets the privileged_user of this DSProducerDetails.
+
+
+        :param privileged_user: The privileged_user of this DSProducerDetails.  # noqa: E501
+        :type: str
+        """
+
+        self._privileged_user = privileged_user
 
     @property
     def rabbitmq_server_password(self):
@@ -4087,6 +4512,27 @@ class DSProducerDetails(object):
         self._rabbitmq_user_write_permission = rabbitmq_user_write_permission
 
     @property
+    def redirect_uris(self):
+        """Gets the redirect_uris of this DSProducerDetails.  # noqa: E501
+
+
+        :return: The redirect_uris of this DSProducerDetails.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._redirect_uris
+
+    @redirect_uris.setter
+    def redirect_uris(self, redirect_uris):
+        """Sets the redirect_uris of this DSProducerDetails.
+
+
+        :param redirect_uris: The redirect_uris of this DSProducerDetails.  # noqa: E501
+        :type: list[str]
+        """
+
+        self._redirect_uris = redirect_uris
+
+    @property
     def redshift_creation_statements(self):
         """Gets the redshift_creation_statements of this DSProducerDetails.  # noqa: E501
 
@@ -4106,6 +4552,27 @@ class DSProducerDetails(object):
         """
 
         self._redshift_creation_statements = redshift_creation_statements
+
+    @property
+    def restricted_scopes(self):
+        """Gets the restricted_scopes of this DSProducerDetails.  # noqa: E501
+
+
+        :return: The restricted_scopes of this DSProducerDetails.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._restricted_scopes
+
+    @restricted_scopes.setter
+    def restricted_scopes(self, restricted_scopes):
+        """Sets the restricted_scopes of this DSProducerDetails.
+
+
+        :param restricted_scopes: The restricted_scopes of this DSProducerDetails.  # noqa: E501
+        :type: list[str]
+        """
+
+        self._restricted_scopes = restricted_scopes
 
     @property
     def revoke_sync_url(self):
@@ -4301,6 +4768,27 @@ class DSProducerDetails(object):
         self._should_stop = should_stop
 
     @property
+    def signing_algorithm(self):
+        """Gets the signing_algorithm of this DSProducerDetails.  # noqa: E501
+
+
+        :return: The signing_algorithm of this DSProducerDetails.  # noqa: E501
+        :rtype: str
+        """
+        return self._signing_algorithm
+
+    @signing_algorithm.setter
+    def signing_algorithm(self, signing_algorithm):
+        """Sets the signing_algorithm of this DSProducerDetails.
+
+
+        :param signing_algorithm: The signing_algorithm of this DSProducerDetails.  # noqa: E501
+        :type: str
+        """
+
+        self._signing_algorithm = signing_algorithm
+
+    @property
     def ssl_connection_certificate(self):
         """Gets the ssl_connection_certificate of this DSProducerDetails.  # noqa: E501
 
@@ -4345,6 +4833,27 @@ class DSProducerDetails(object):
         """
 
         self._ssl_connection_mode = ssl_connection_mode
+
+    @property
+    def subject_dn(self):
+        """Gets the subject_dn of this DSProducerDetails.  # noqa: E501
+
+
+        :return: The subject_dn of this DSProducerDetails.  # noqa: E501
+        :rtype: str
+        """
+        return self._subject_dn
+
+    @subject_dn.setter
+    def subject_dn(self, subject_dn):
+        """Sets the subject_dn of this DSProducerDetails.
+
+
+        :param subject_dn: The subject_dn of this DSProducerDetails.  # noqa: E501
+        :type: str
+        """
+
+        self._subject_dn = subject_dn
 
     @property
     def tags(self):
@@ -4429,6 +4938,27 @@ class DSProducerDetails(object):
         """
 
         self._user_name = user_name
+
+    @property
+    def user_password(self):
+        """Gets the user_password of this DSProducerDetails.  # noqa: E501
+
+
+        :return: The user_password of this DSProducerDetails.  # noqa: E501
+        :rtype: str
+        """
+        return self._user_password
+
+    @user_password.setter
+    def user_password(self, user_password):
+        """Sets the user_password of this DSProducerDetails.
+
+
+        :param user_password: The user_password of this DSProducerDetails.  # noqa: E501
+        :type: str
+        """
+
+        self._user_password = user_password
 
     @property
     def user_principal_name(self):

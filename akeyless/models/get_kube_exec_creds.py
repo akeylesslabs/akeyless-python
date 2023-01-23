@@ -37,6 +37,7 @@ class GetKubeExecCreds(object):
         'alt_names': 'str',
         'cert_issuer_name': 'str',
         'common_name': 'str',
+        'csr_data_base64': 'str',
         'extended_key_usage': 'str',
         'json': 'bool',
         'key_data_base64': 'str',
@@ -50,6 +51,7 @@ class GetKubeExecCreds(object):
         'alt_names': 'alt-names',
         'cert_issuer_name': 'cert-issuer-name',
         'common_name': 'common-name',
+        'csr_data_base64': 'csr-data-base64',
         'extended_key_usage': 'extended-key-usage',
         'json': 'json',
         'key_data_base64': 'key-data-base64',
@@ -59,7 +61,7 @@ class GetKubeExecCreds(object):
         'uri_sans': 'uri-sans'
     }
 
-    def __init__(self, alt_names=None, cert_issuer_name=None, common_name=None, extended_key_usage=None, json=None, key_data_base64=None, token=None, ttl=None, uid_token=None, uri_sans=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, alt_names=None, cert_issuer_name=None, common_name=None, csr_data_base64=None, extended_key_usage=None, json=None, key_data_base64=None, token=None, ttl=None, uid_token=None, uri_sans=None, local_vars_configuration=None):  # noqa: E501
         """GetKubeExecCreds - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -68,6 +70,7 @@ class GetKubeExecCreds(object):
         self._alt_names = None
         self._cert_issuer_name = None
         self._common_name = None
+        self._csr_data_base64 = None
         self._extended_key_usage = None
         self._json = None
         self._key_data_base64 = None
@@ -82,6 +85,8 @@ class GetKubeExecCreds(object):
         self.cert_issuer_name = cert_issuer_name
         if common_name is not None:
             self.common_name = common_name
+        if csr_data_base64 is not None:
+            self.csr_data_base64 = csr_data_base64
         if extended_key_usage is not None:
             self.extended_key_usage = extended_key_usage
         if json is not None:
@@ -101,7 +106,7 @@ class GetKubeExecCreds(object):
     def alt_names(self):
         """Gets the alt_names of this GetKubeExecCreds.  # noqa: E501
 
-        The Subject Alternative Names to be included in the PKI certificate (in a comma-delimited list)  # noqa: E501
+        The Subject Alternative Names to be included in the PKI certificate (in a comma-separated list) (if CSR is supplied this flag is ignored and any DNS.* names are taken from it)  # noqa: E501
 
         :return: The alt_names of this GetKubeExecCreds.  # noqa: E501
         :rtype: str
@@ -112,7 +117,7 @@ class GetKubeExecCreds(object):
     def alt_names(self, alt_names):
         """Sets the alt_names of this GetKubeExecCreds.
 
-        The Subject Alternative Names to be included in the PKI certificate (in a comma-delimited list)  # noqa: E501
+        The Subject Alternative Names to be included in the PKI certificate (in a comma-separated list) (if CSR is supplied this flag is ignored and any DNS.* names are taken from it)  # noqa: E501
 
         :param alt_names: The alt_names of this GetKubeExecCreds.  # noqa: E501
         :type: str
@@ -149,7 +154,7 @@ class GetKubeExecCreds(object):
     def common_name(self):
         """Gets the common_name of this GetKubeExecCreds.  # noqa: E501
 
-        The common name to be included in the PKI certificate  # noqa: E501
+        The common name to be included in the PKI certificate (if CSR is supplied this flag is ignored and the CSR subject CN is taken)  # noqa: E501
 
         :return: The common_name of this GetKubeExecCreds.  # noqa: E501
         :rtype: str
@@ -160,13 +165,36 @@ class GetKubeExecCreds(object):
     def common_name(self, common_name):
         """Sets the common_name of this GetKubeExecCreds.
 
-        The common name to be included in the PKI certificate  # noqa: E501
+        The common name to be included in the PKI certificate (if CSR is supplied this flag is ignored and the CSR subject CN is taken)  # noqa: E501
 
         :param common_name: The common_name of this GetKubeExecCreds.  # noqa: E501
         :type: str
         """
 
         self._common_name = common_name
+
+    @property
+    def csr_data_base64(self):
+        """Gets the csr_data_base64 of this GetKubeExecCreds.  # noqa: E501
+
+        Certificate Signing Request contents encoded in base64 to generate the certificate with  # noqa: E501
+
+        :return: The csr_data_base64 of this GetKubeExecCreds.  # noqa: E501
+        :rtype: str
+        """
+        return self._csr_data_base64
+
+    @csr_data_base64.setter
+    def csr_data_base64(self, csr_data_base64):
+        """Sets the csr_data_base64 of this GetKubeExecCreds.
+
+        Certificate Signing Request contents encoded in base64 to generate the certificate with  # noqa: E501
+
+        :param csr_data_base64: The csr_data_base64 of this GetKubeExecCreds.  # noqa: E501
+        :type: str
+        """
+
+        self._csr_data_base64 = csr_data_base64
 
     @property
     def extended_key_usage(self):
@@ -310,7 +338,7 @@ class GetKubeExecCreds(object):
     def uri_sans(self):
         """Gets the uri_sans of this GetKubeExecCreds.  # noqa: E501
 
-        The URI Subject Alternative Names to be included in the PKI certificate (in a comma-delimited list)  # noqa: E501
+        The URI Subject Alternative Names to be included in the PKI certificate (in a comma-separated list) (if CSR is supplied this flag is ignored and any URI.* names are taken from it)  # noqa: E501
 
         :return: The uri_sans of this GetKubeExecCreds.  # noqa: E501
         :rtype: str
@@ -321,7 +349,7 @@ class GetKubeExecCreds(object):
     def uri_sans(self, uri_sans):
         """Sets the uri_sans of this GetKubeExecCreds.
 
-        The URI Subject Alternative Names to be included in the PKI certificate (in a comma-delimited list)  # noqa: E501
+        The URI Subject Alternative Names to be included in the PKI certificate (in a comma-separated list) (if CSR is supplied this flag is ignored and any URI.* names are taken from it)  # noqa: E501
 
         :param uri_sans: The uri_sans of this GetKubeExecCreds.  # noqa: E501
         :type: str

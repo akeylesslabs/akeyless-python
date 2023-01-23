@@ -54,6 +54,7 @@ class SecureRemoteAccess(object):
         'native': 'bool',
         'rdp_user': 'str',
         'region': 'str',
+        'rotate_after_disconnect': 'bool',
         'schema': 'str',
         'ssh_password': 'bool',
         'ssh_private_key': 'bool',
@@ -84,6 +85,7 @@ class SecureRemoteAccess(object):
         'native': 'native',
         'rdp_user': 'rdp_user',
         'region': 'region',
+        'rotate_after_disconnect': 'rotate_after_disconnect',
         'schema': 'schema',
         'ssh_password': 'ssh_password',
         'ssh_private_key': 'ssh_private_key',
@@ -93,7 +95,7 @@ class SecureRemoteAccess(object):
         'web_proxy': 'web_proxy'
     }
 
-    def __init__(self, account_id=None, allow_port_forwarding=None, allow_providing_external_username=None, bastion_api=None, bastion_issuer=None, bastion_issuer_id=None, bastion_ssh=None, category=None, dashboard_url=None, db_name=None, domain=None, enable=None, endpoint=None, host=None, is_cli=None, is_web=None, isolated=None, native=None, rdp_user=None, region=None, schema=None, ssh_password=None, ssh_private_key=None, ssh_user=None, url=None, use_internal_bastion=None, web_proxy=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, account_id=None, allow_port_forwarding=None, allow_providing_external_username=None, bastion_api=None, bastion_issuer=None, bastion_issuer_id=None, bastion_ssh=None, category=None, dashboard_url=None, db_name=None, domain=None, enable=None, endpoint=None, host=None, is_cli=None, is_web=None, isolated=None, native=None, rdp_user=None, region=None, rotate_after_disconnect=None, schema=None, ssh_password=None, ssh_private_key=None, ssh_user=None, url=None, use_internal_bastion=None, web_proxy=None, local_vars_configuration=None):  # noqa: E501
         """SecureRemoteAccess - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -119,6 +121,7 @@ class SecureRemoteAccess(object):
         self._native = None
         self._rdp_user = None
         self._region = None
+        self._rotate_after_disconnect = None
         self._schema = None
         self._ssh_password = None
         self._ssh_private_key = None
@@ -168,6 +171,8 @@ class SecureRemoteAccess(object):
             self.rdp_user = rdp_user
         if region is not None:
             self.region = region
+        if rotate_after_disconnect is not None:
+            self.rotate_after_disconnect = rotate_after_disconnect
         if schema is not None:
             self.schema = schema
         if ssh_password is not None:
@@ -602,6 +607,27 @@ class SecureRemoteAccess(object):
         """
 
         self._region = region
+
+    @property
+    def rotate_after_disconnect(self):
+        """Gets the rotate_after_disconnect of this SecureRemoteAccess.  # noqa: E501
+
+
+        :return: The rotate_after_disconnect of this SecureRemoteAccess.  # noqa: E501
+        :rtype: bool
+        """
+        return self._rotate_after_disconnect
+
+    @rotate_after_disconnect.setter
+    def rotate_after_disconnect(self, rotate_after_disconnect):
+        """Sets the rotate_after_disconnect of this SecureRemoteAccess.
+
+
+        :param rotate_after_disconnect: The rotate_after_disconnect of this SecureRemoteAccess.  # noqa: E501
+        :type: bool
+        """
+
+        self._rotate_after_disconnect = rotate_after_disconnect
 
     @property
     def schema(self):

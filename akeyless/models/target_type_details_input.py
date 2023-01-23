@@ -34,11 +34,13 @@ class TargetTypeDetailsInput(object):
                             and the value is json key in definition.
     """
     openapi_types = {
+        'administrative_port': 'str',
         'app_private_key': 'list[int]',
         'artifactory_admin_apikey': 'str',
         'artifactory_admin_username': 'str',
         'artifactory_base_url': 'str',
         'auth_flow': 'str',
+        'authorization_port': 'str',
         'aws_access_key_id': 'str',
         'aws_region': 'str',
         'aws_secret_access_key': 'str',
@@ -108,9 +110,11 @@ class TargetTypeDetailsInput(object):
         'mongodb_username': 'str',
         'password': 'str',
         'payload': 'str',
+        'ping_url': 'str',
         'port': 'str',
         'private_key': 'str',
         'private_key_password': 'str',
+        'privileged_user': 'str',
         'rabbitmq_server_password': 'str',
         'rabbitmq_server_uri': 'str',
         'rabbitmq_server_user': 'str',
@@ -122,6 +126,7 @@ class TargetTypeDetailsInput(object):
         'url': 'str',
         'use_gw_cloud_identity': 'bool',
         'user_name': 'str',
+        'user_password': 'str',
         'username': 'str',
         'venafi_api_key': 'str',
         'venafi_base_url': 'str',
@@ -132,11 +137,13 @@ class TargetTypeDetailsInput(object):
     }
 
     attribute_map = {
+        'administrative_port': 'administrative_port',
         'app_private_key': 'app_private_key',
         'artifactory_admin_apikey': 'artifactory_admin_apikey',
         'artifactory_admin_username': 'artifactory_admin_username',
         'artifactory_base_url': 'artifactory_base_url',
         'auth_flow': 'auth_flow',
+        'authorization_port': 'authorization_port',
         'aws_access_key_id': 'aws_access_key_id',
         'aws_region': 'aws_region',
         'aws_secret_access_key': 'aws_secret_access_key',
@@ -206,9 +213,11 @@ class TargetTypeDetailsInput(object):
         'mongodb_username': 'mongodb_username',
         'password': 'password',
         'payload': 'payload',
+        'ping_url': 'ping_url',
         'port': 'port',
         'private_key': 'private_key',
         'private_key_password': 'private_key_password',
+        'privileged_user': 'privileged_user',
         'rabbitmq_server_password': 'rabbitmq_server_password',
         'rabbitmq_server_uri': 'rabbitmq_server_uri',
         'rabbitmq_server_user': 'rabbitmq_server_user',
@@ -220,6 +229,7 @@ class TargetTypeDetailsInput(object):
         'url': 'url',
         'use_gw_cloud_identity': 'use_gw_cloud_identity',
         'user_name': 'user_name',
+        'user_password': 'user_password',
         'username': 'username',
         'venafi_api_key': 'venafi_api_key',
         'venafi_base_url': 'venafi_base_url',
@@ -229,17 +239,19 @@ class TargetTypeDetailsInput(object):
         'venafi_zone': 'venafi_zone'
     }
 
-    def __init__(self, app_private_key=None, artifactory_admin_apikey=None, artifactory_admin_username=None, artifactory_base_url=None, auth_flow=None, aws_access_key_id=None, aws_region=None, aws_secret_access_key=None, aws_session_token=None, azure_client_id=None, azure_client_secret=None, azure_resource_group_name=None, azure_resource_name=None, azure_subscription_id=None, azure_tenant_id=None, ca_cert_data=None, ca_cert_name=None, chef_server_host_name=None, chef_server_key=None, chef_server_port=None, chef_server_url=None, chef_server_username=None, chef_skip_ssl=None, client_id=None, client_secret=None, db_host_name=None, db_name=None, db_port=None, db_private_key=None, db_private_key_passphrase=None, db_pwd=None, db_server_certificates=None, db_server_name=None, db_user_name=None, eks_access_key_id=None, eks_cluster_ca_certificate=None, eks_cluster_endpoint=None, eks_cluster_name=None, eks_region=None, eks_secret_access_key=None, gcp_service_account_email=None, gcp_service_account_key=None, github_app_id=None, github_app_private_key=None, github_base_url=None, gke_cluster_ca_certificate=None, gke_cluster_endpoint=None, gke_cluster_name=None, gke_service_account_key=None, gke_service_account_name=None, host=None, implementation_type=None, k8s_bearer_token=None, k8s_cluster_ca_certificate=None, k8s_cluster_endpoint=None, ldap_audience=None, ldap_bind_dn=None, ldap_bind_password=None, ldap_certificate=None, ldap_token_expiration=None, ldap_url=None, mongodb_atlas_api_private_key=None, mongodb_atlas_api_public_key=None, mongodb_atlas_project_id=None, mongodb_db_name=None, mongodb_default_auth_db=None, mongodb_host_port=None, mongodb_is_atlas=None, mongodb_password=None, mongodb_uri_connection=None, mongodb_uri_options=None, mongodb_username=None, password=None, payload=None, port=None, private_key=None, private_key_password=None, rabbitmq_server_password=None, rabbitmq_server_uri=None, rabbitmq_server_user=None, security_token=None, sf_account=None, ssl_connection_certificate=None, ssl_connection_mode=None, tenant_url=None, url=None, use_gw_cloud_identity=None, user_name=None, username=None, venafi_api_key=None, venafi_base_url=None, venafi_tpp_password=None, venafi_tpp_username=None, venafi_use_tpp=None, venafi_zone=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, administrative_port=None, app_private_key=None, artifactory_admin_apikey=None, artifactory_admin_username=None, artifactory_base_url=None, auth_flow=None, authorization_port=None, aws_access_key_id=None, aws_region=None, aws_secret_access_key=None, aws_session_token=None, azure_client_id=None, azure_client_secret=None, azure_resource_group_name=None, azure_resource_name=None, azure_subscription_id=None, azure_tenant_id=None, ca_cert_data=None, ca_cert_name=None, chef_server_host_name=None, chef_server_key=None, chef_server_port=None, chef_server_url=None, chef_server_username=None, chef_skip_ssl=None, client_id=None, client_secret=None, db_host_name=None, db_name=None, db_port=None, db_private_key=None, db_private_key_passphrase=None, db_pwd=None, db_server_certificates=None, db_server_name=None, db_user_name=None, eks_access_key_id=None, eks_cluster_ca_certificate=None, eks_cluster_endpoint=None, eks_cluster_name=None, eks_region=None, eks_secret_access_key=None, gcp_service_account_email=None, gcp_service_account_key=None, github_app_id=None, github_app_private_key=None, github_base_url=None, gke_cluster_ca_certificate=None, gke_cluster_endpoint=None, gke_cluster_name=None, gke_service_account_key=None, gke_service_account_name=None, host=None, implementation_type=None, k8s_bearer_token=None, k8s_cluster_ca_certificate=None, k8s_cluster_endpoint=None, ldap_audience=None, ldap_bind_dn=None, ldap_bind_password=None, ldap_certificate=None, ldap_token_expiration=None, ldap_url=None, mongodb_atlas_api_private_key=None, mongodb_atlas_api_public_key=None, mongodb_atlas_project_id=None, mongodb_db_name=None, mongodb_default_auth_db=None, mongodb_host_port=None, mongodb_is_atlas=None, mongodb_password=None, mongodb_uri_connection=None, mongodb_uri_options=None, mongodb_username=None, password=None, payload=None, ping_url=None, port=None, private_key=None, private_key_password=None, privileged_user=None, rabbitmq_server_password=None, rabbitmq_server_uri=None, rabbitmq_server_user=None, security_token=None, sf_account=None, ssl_connection_certificate=None, ssl_connection_mode=None, tenant_url=None, url=None, use_gw_cloud_identity=None, user_name=None, user_password=None, username=None, venafi_api_key=None, venafi_base_url=None, venafi_tpp_password=None, venafi_tpp_username=None, venafi_use_tpp=None, venafi_zone=None, local_vars_configuration=None):  # noqa: E501
         """TargetTypeDetailsInput - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
+        self._administrative_port = None
         self._app_private_key = None
         self._artifactory_admin_apikey = None
         self._artifactory_admin_username = None
         self._artifactory_base_url = None
         self._auth_flow = None
+        self._authorization_port = None
         self._aws_access_key_id = None
         self._aws_region = None
         self._aws_secret_access_key = None
@@ -309,9 +321,11 @@ class TargetTypeDetailsInput(object):
         self._mongodb_username = None
         self._password = None
         self._payload = None
+        self._ping_url = None
         self._port = None
         self._private_key = None
         self._private_key_password = None
+        self._privileged_user = None
         self._rabbitmq_server_password = None
         self._rabbitmq_server_uri = None
         self._rabbitmq_server_user = None
@@ -323,6 +337,7 @@ class TargetTypeDetailsInput(object):
         self._url = None
         self._use_gw_cloud_identity = None
         self._user_name = None
+        self._user_password = None
         self._username = None
         self._venafi_api_key = None
         self._venafi_base_url = None
@@ -332,6 +347,8 @@ class TargetTypeDetailsInput(object):
         self._venafi_zone = None
         self.discriminator = None
 
+        if administrative_port is not None:
+            self.administrative_port = administrative_port
         if app_private_key is not None:
             self.app_private_key = app_private_key
         if artifactory_admin_apikey is not None:
@@ -342,6 +359,8 @@ class TargetTypeDetailsInput(object):
             self.artifactory_base_url = artifactory_base_url
         if auth_flow is not None:
             self.auth_flow = auth_flow
+        if authorization_port is not None:
+            self.authorization_port = authorization_port
         if aws_access_key_id is not None:
             self.aws_access_key_id = aws_access_key_id
         if aws_region is not None:
@@ -480,12 +499,16 @@ class TargetTypeDetailsInput(object):
             self.password = password
         if payload is not None:
             self.payload = payload
+        if ping_url is not None:
+            self.ping_url = ping_url
         if port is not None:
             self.port = port
         if private_key is not None:
             self.private_key = private_key
         if private_key_password is not None:
             self.private_key_password = private_key_password
+        if privileged_user is not None:
+            self.privileged_user = privileged_user
         if rabbitmq_server_password is not None:
             self.rabbitmq_server_password = rabbitmq_server_password
         if rabbitmq_server_uri is not None:
@@ -508,6 +531,8 @@ class TargetTypeDetailsInput(object):
             self.use_gw_cloud_identity = use_gw_cloud_identity
         if user_name is not None:
             self.user_name = user_name
+        if user_password is not None:
+            self.user_password = user_password
         if username is not None:
             self.username = username
         if venafi_api_key is not None:
@@ -522,6 +547,27 @@ class TargetTypeDetailsInput(object):
             self.venafi_use_tpp = venafi_use_tpp
         if venafi_zone is not None:
             self.venafi_zone = venafi_zone
+
+    @property
+    def administrative_port(self):
+        """Gets the administrative_port of this TargetTypeDetailsInput.  # noqa: E501
+
+
+        :return: The administrative_port of this TargetTypeDetailsInput.  # noqa: E501
+        :rtype: str
+        """
+        return self._administrative_port
+
+    @administrative_port.setter
+    def administrative_port(self, administrative_port):
+        """Sets the administrative_port of this TargetTypeDetailsInput.
+
+
+        :param administrative_port: The administrative_port of this TargetTypeDetailsInput.  # noqa: E501
+        :type: str
+        """
+
+        self._administrative_port = administrative_port
 
     @property
     def app_private_key(self):
@@ -629,6 +675,27 @@ class TargetTypeDetailsInput(object):
         """
 
         self._auth_flow = auth_flow
+
+    @property
+    def authorization_port(self):
+        """Gets the authorization_port of this TargetTypeDetailsInput.  # noqa: E501
+
+
+        :return: The authorization_port of this TargetTypeDetailsInput.  # noqa: E501
+        :rtype: str
+        """
+        return self._authorization_port
+
+    @authorization_port.setter
+    def authorization_port(self, authorization_port):
+        """Sets the authorization_port of this TargetTypeDetailsInput.
+
+
+        :param authorization_port: The authorization_port of this TargetTypeDetailsInput.  # noqa: E501
+        :type: str
+        """
+
+        self._authorization_port = authorization_port
 
     @property
     def aws_access_key_id(self):
@@ -2100,6 +2167,27 @@ class TargetTypeDetailsInput(object):
         self._payload = payload
 
     @property
+    def ping_url(self):
+        """Gets the ping_url of this TargetTypeDetailsInput.  # noqa: E501
+
+
+        :return: The ping_url of this TargetTypeDetailsInput.  # noqa: E501
+        :rtype: str
+        """
+        return self._ping_url
+
+    @ping_url.setter
+    def ping_url(self, ping_url):
+        """Sets the ping_url of this TargetTypeDetailsInput.
+
+
+        :param ping_url: The ping_url of this TargetTypeDetailsInput.  # noqa: E501
+        :type: str
+        """
+
+        self._ping_url = ping_url
+
+    @property
     def port(self):
         """Gets the port of this TargetTypeDetailsInput.  # noqa: E501
 
@@ -2161,6 +2249,27 @@ class TargetTypeDetailsInput(object):
         """
 
         self._private_key_password = private_key_password
+
+    @property
+    def privileged_user(self):
+        """Gets the privileged_user of this TargetTypeDetailsInput.  # noqa: E501
+
+
+        :return: The privileged_user of this TargetTypeDetailsInput.  # noqa: E501
+        :rtype: str
+        """
+        return self._privileged_user
+
+    @privileged_user.setter
+    def privileged_user(self, privileged_user):
+        """Sets the privileged_user of this TargetTypeDetailsInput.
+
+
+        :param privileged_user: The privileged_user of this TargetTypeDetailsInput.  # noqa: E501
+        :type: str
+        """
+
+        self._privileged_user = privileged_user
 
     @property
     def rabbitmq_server_password(self):
@@ -2396,6 +2505,27 @@ class TargetTypeDetailsInput(object):
         """
 
         self._user_name = user_name
+
+    @property
+    def user_password(self):
+        """Gets the user_password of this TargetTypeDetailsInput.  # noqa: E501
+
+
+        :return: The user_password of this TargetTypeDetailsInput.  # noqa: E501
+        :rtype: str
+        """
+        return self._user_password
+
+    @user_password.setter
+    def user_password(self, user_password):
+        """Sets the user_password of this TargetTypeDetailsInput.
+
+
+        :param user_password: The user_password of this TargetTypeDetailsInput.  # noqa: E501
+        :type: str
+        """
+
+        self._user_password = user_password
 
     @property
     def username(self):

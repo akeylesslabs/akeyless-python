@@ -15,7 +15,7 @@
 
 from __future__ import absolute_import
 
-__version__ = "3.1.2"
+__version__ = "3.2.0"
 
 # import apis into sdk package
 from akeyless.api.v2_api import V2Api
@@ -130,6 +130,8 @@ from akeyless.models.create_native_k8_s_target import CreateNativeK8STarget
 from akeyless.models.create_native_k8_s_target_output import CreateNativeK8STargetOutput
 from akeyless.models.create_pki_cert_issuer import CreatePKICertIssuer
 from akeyless.models.create_pki_cert_issuer_output import CreatePKICertIssuerOutput
+from akeyless.models.create_ping_target import CreatePingTarget
+from akeyless.models.create_ping_target_output import CreatePingTargetOutput
 from akeyless.models.create_rabbit_mq_target import CreateRabbitMQTarget
 from akeyless.models.create_rabbit_mq_target_output import CreateRabbitMQTargetOutput
 from akeyless.models.create_role import CreateRole
@@ -251,6 +253,8 @@ from akeyless.models.gateway_create_producer_native_k8_s import GatewayCreatePro
 from akeyless.models.gateway_create_producer_native_k8_s_output import GatewayCreateProducerNativeK8SOutput
 from akeyless.models.gateway_create_producer_oracle_db import GatewayCreateProducerOracleDb
 from akeyless.models.gateway_create_producer_oracle_db_output import GatewayCreateProducerOracleDbOutput
+from akeyless.models.gateway_create_producer_ping import GatewayCreateProducerPing
+from akeyless.models.gateway_create_producer_ping_output import GatewayCreateProducerPingOutput
 from akeyless.models.gateway_create_producer_postgre_sql import GatewayCreateProducerPostgreSQL
 from akeyless.models.gateway_create_producer_postgre_sql_output import GatewayCreateProducerPostgreSQLOutput
 from akeyless.models.gateway_create_producer_rabbit_mq import GatewayCreateProducerRabbitMQ
@@ -339,6 +343,8 @@ from akeyless.models.gateway_update_producer_native_k8_s import GatewayUpdatePro
 from akeyless.models.gateway_update_producer_native_k8_s_output import GatewayUpdateProducerNativeK8SOutput
 from akeyless.models.gateway_update_producer_oracle_db import GatewayUpdateProducerOracleDb
 from akeyless.models.gateway_update_producer_oracle_db_output import GatewayUpdateProducerOracleDbOutput
+from akeyless.models.gateway_update_producer_ping import GatewayUpdateProducerPing
+from akeyless.models.gateway_update_producer_ping_output import GatewayUpdateProducerPingOutput
 from akeyless.models.gateway_update_producer_postgre_sql import GatewayUpdateProducerPostgreSQL
 from akeyless.models.gateway_update_producer_postgre_sql_output import GatewayUpdateProducerPostgreSQLOutput
 from akeyless.models.gateway_update_producer_rabbit_mq import GatewayUpdateProducerRabbitMQ
@@ -582,6 +588,7 @@ from akeyless.models.update_native_k8_s_target_output import UpdateNativeK8STarg
 from akeyless.models.update_output import UpdateOutput
 from akeyless.models.update_pki_cert_issuer import UpdatePKICertIssuer
 from akeyless.models.update_pki_cert_issuer_output import UpdatePKICertIssuerOutput
+from akeyless.models.update_ping_target import UpdatePingTarget
 from akeyless.models.update_rdp_target_details import UpdateRDPTargetDetails
 from akeyless.models.update_rabbit_mq_target import UpdateRabbitMQTarget
 from akeyless.models.update_rabbit_mq_target_details import UpdateRabbitMQTargetDetails
