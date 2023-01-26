@@ -3,7 +3,8 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**comment** | **str** | Comment about the target | [optional] 
+**comment** | **str** | Deprecated - use description | [optional] 
+**description** | **str** | Description of the object | [optional] 
 **dockerhub_password** | **str** |  | [optional] 
 **dockerhub_username** | **str** |  | [optional] 
 **json** | **bool** | Set output format to JSON | [optional] 

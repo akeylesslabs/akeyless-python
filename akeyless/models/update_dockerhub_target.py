@@ -35,6 +35,7 @@ class UpdateDockerhubTarget(object):
     """
     openapi_types = {
         'comment': 'str',
+        'description': 'str',
         'dockerhub_password': 'str',
         'dockerhub_username': 'str',
         'json': 'bool',
@@ -49,6 +50,7 @@ class UpdateDockerhubTarget(object):
 
     attribute_map = {
         'comment': 'comment',
+        'description': 'description',
         'dockerhub_password': 'dockerhub-password',
         'dockerhub_username': 'dockerhub-username',
         'json': 'json',
@@ -61,13 +63,14 @@ class UpdateDockerhubTarget(object):
         'update_version': 'update-version'
     }
 
-    def __init__(self, comment=None, dockerhub_password=None, dockerhub_username=None, json=None, keep_prev_version=None, key=None, name=None, new_name=None, token=None, uid_token=None, update_version=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, comment=None, description=None, dockerhub_password=None, dockerhub_username=None, json=None, keep_prev_version=None, key=None, name=None, new_name=None, token=None, uid_token=None, update_version=None, local_vars_configuration=None):  # noqa: E501
         """UpdateDockerhubTarget - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._comment = None
+        self._description = None
         self._dockerhub_password = None
         self._dockerhub_username = None
         self._json = None
@@ -82,6 +85,8 @@ class UpdateDockerhubTarget(object):
 
         if comment is not None:
             self.comment = comment
+        if description is not None:
+            self.description = description
         if dockerhub_password is not None:
             self.dockerhub_password = dockerhub_password
         if dockerhub_username is not None:
@@ -106,7 +111,7 @@ class UpdateDockerhubTarget(object):
     def comment(self):
         """Gets the comment of this UpdateDockerhubTarget.  # noqa: E501
 
-        Comment about the target  # noqa: E501
+        Deprecated - use description  # noqa: E501
 
         :return: The comment of this UpdateDockerhubTarget.  # noqa: E501
         :rtype: str
@@ -117,13 +122,36 @@ class UpdateDockerhubTarget(object):
     def comment(self, comment):
         """Sets the comment of this UpdateDockerhubTarget.
 
-        Comment about the target  # noqa: E501
+        Deprecated - use description  # noqa: E501
 
         :param comment: The comment of this UpdateDockerhubTarget.  # noqa: E501
         :type: str
         """
 
         self._comment = comment
+
+    @property
+    def description(self):
+        """Gets the description of this UpdateDockerhubTarget.  # noqa: E501
+
+        Description of the object  # noqa: E501
+
+        :return: The description of this UpdateDockerhubTarget.  # noqa: E501
+        :rtype: str
+        """
+        return self._description
+
+    @description.setter
+    def description(self, description):
+        """Sets the description of this UpdateDockerhubTarget.
+
+        Description of the object  # noqa: E501
+
+        :param description: The description of this UpdateDockerhubTarget.  # noqa: E501
+        :type: str
+        """
+
+        self._description = description
 
     @property
     def dockerhub_password(self):

@@ -3,7 +3,8 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**comment** | **str** | Comment about the target | [optional] 
+**comment** | **str** | Deprecated - use description | [optional] 
+**description** | **str** | Description of the object | [optional] 
 **gcp_key** | **str** | Base64-encoded service account private key text | [optional] 
 **json** | **bool** | Set output format to JSON | [optional] 
 **keep_prev_version** | **str** |  | [optional] 

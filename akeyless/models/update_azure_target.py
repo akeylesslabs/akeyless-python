@@ -37,6 +37,7 @@ class UpdateAzureTarget(object):
         'client_id': 'str',
         'client_secret': 'str',
         'comment': 'str',
+        'description': 'str',
         'json': 'bool',
         'keep_prev_version': 'str',
         'key': 'str',
@@ -56,6 +57,7 @@ class UpdateAzureTarget(object):
         'client_id': 'client-id',
         'client_secret': 'client-secret',
         'comment': 'comment',
+        'description': 'description',
         'json': 'json',
         'keep_prev_version': 'keep-prev-version',
         'key': 'key',
@@ -71,7 +73,7 @@ class UpdateAzureTarget(object):
         'use_gw_cloud_identity': 'use-gw-cloud-identity'
     }
 
-    def __init__(self, client_id=None, client_secret=None, comment=None, json=None, keep_prev_version=None, key=None, name=None, new_name=None, resource_group_name=None, resource_name=None, subscription_id=None, tenant_id=None, token=None, uid_token=None, update_version=None, use_gw_cloud_identity=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, client_id=None, client_secret=None, comment=None, description=None, json=None, keep_prev_version=None, key=None, name=None, new_name=None, resource_group_name=None, resource_name=None, subscription_id=None, tenant_id=None, token=None, uid_token=None, update_version=None, use_gw_cloud_identity=None, local_vars_configuration=None):  # noqa: E501
         """UpdateAzureTarget - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -80,6 +82,7 @@ class UpdateAzureTarget(object):
         self._client_id = None
         self._client_secret = None
         self._comment = None
+        self._description = None
         self._json = None
         self._keep_prev_version = None
         self._key = None
@@ -101,6 +104,8 @@ class UpdateAzureTarget(object):
             self.client_secret = client_secret
         if comment is not None:
             self.comment = comment
+        if description is not None:
+            self.description = description
         if json is not None:
             self.json = json
         if keep_prev_version is not None:
@@ -173,7 +178,7 @@ class UpdateAzureTarget(object):
     def comment(self):
         """Gets the comment of this UpdateAzureTarget.  # noqa: E501
 
-        Comment about the target  # noqa: E501
+        Deprecated - use description  # noqa: E501
 
         :return: The comment of this UpdateAzureTarget.  # noqa: E501
         :rtype: str
@@ -184,13 +189,36 @@ class UpdateAzureTarget(object):
     def comment(self, comment):
         """Sets the comment of this UpdateAzureTarget.
 
-        Comment about the target  # noqa: E501
+        Deprecated - use description  # noqa: E501
 
         :param comment: The comment of this UpdateAzureTarget.  # noqa: E501
         :type: str
         """
 
         self._comment = comment
+
+    @property
+    def description(self):
+        """Gets the description of this UpdateAzureTarget.  # noqa: E501
+
+        Description of the object  # noqa: E501
+
+        :return: The description of this UpdateAzureTarget.  # noqa: E501
+        :rtype: str
+        """
+        return self._description
+
+    @description.setter
+    def description(self, description):
+        """Sets the description of this UpdateAzureTarget.
+
+        Description of the object  # noqa: E501
+
+        :param description: The description of this UpdateAzureTarget.  # noqa: E501
+        :type: str
+        """
+
+        self._description = description
 
     @property
     def json(self):

@@ -3,7 +3,8 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**comment** | **str** | Comment about the target | [optional] 
+**comment** | **str** | Deprecated - use description | [optional] 
+**description** | **str** | Description of the object | [optional] 
 **host** | **str** |  | [optional] 
 **json** | **bool** | Set output format to JSON | [optional] 
 **keep_prev_version** | **str** |  | [optional] 

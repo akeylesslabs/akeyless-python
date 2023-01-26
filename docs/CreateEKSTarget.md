@@ -3,7 +3,8 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**comment** | **str** | Comment about the target | [optional] 
+**comment** | **str** | Deprecated - use description | [optional] 
+**description** | **str** | Description of the object | [optional] 
 **eks_access_key_id** | **str** | Access Key ID | 
 **eks_cluster_ca_cert** | **str** | EKS cluster CA certificate | 
 **eks_cluster_endpoint** | **str** | EKS cluster URL endpoint | 

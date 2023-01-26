@@ -39,6 +39,7 @@ class UpdateDBTarget(object):
         'db_server_certificates': 'str',
         'db_server_name': 'str',
         'db_type': 'str',
+        'description': 'str',
         'host': 'str',
         'json': 'bool',
         'keep_prev_version': 'str',
@@ -71,6 +72,7 @@ class UpdateDBTarget(object):
         'db_server_certificates': 'db-server-certificates',
         'db_server_name': 'db-server-name',
         'db_type': 'db-type',
+        'description': 'description',
         'host': 'host',
         'json': 'json',
         'keep_prev_version': 'keep-prev-version',
@@ -97,7 +99,7 @@ class UpdateDBTarget(object):
         'user_name': 'user-name'
     }
 
-    def __init__(self, comment=None, db_name=None, db_server_certificates=None, db_server_name=None, db_type=None, host=None, json=None, keep_prev_version=None, key=None, mongodb_atlas=None, mongodb_atlas_api_private_key=None, mongodb_atlas_api_public_key=None, mongodb_atlas_project_id=None, mongodb_default_auth_db=None, mongodb_uri_options=None, name=None, new_name=None, oracle_service_name=None, port=None, pwd=None, snowflake_account=None, snowflake_api_private_key=None, snowflake_api_private_key_password=None, ssl=None, ssl_certificate=None, token=None, uid_token=None, update_version=None, user_name=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, comment=None, db_name=None, db_server_certificates=None, db_server_name=None, db_type=None, description=None, host=None, json=None, keep_prev_version=None, key=None, mongodb_atlas=None, mongodb_atlas_api_private_key=None, mongodb_atlas_api_public_key=None, mongodb_atlas_project_id=None, mongodb_default_auth_db=None, mongodb_uri_options=None, name=None, new_name=None, oracle_service_name=None, port=None, pwd=None, snowflake_account=None, snowflake_api_private_key=None, snowflake_api_private_key_password=None, ssl=None, ssl_certificate=None, token=None, uid_token=None, update_version=None, user_name=None, local_vars_configuration=None):  # noqa: E501
         """UpdateDBTarget - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -108,6 +110,7 @@ class UpdateDBTarget(object):
         self._db_server_certificates = None
         self._db_server_name = None
         self._db_type = None
+        self._description = None
         self._host = None
         self._json = None
         self._keep_prev_version = None
@@ -143,6 +146,8 @@ class UpdateDBTarget(object):
         if db_server_name is not None:
             self.db_server_name = db_server_name
         self.db_type = db_type
+        if description is not None:
+            self.description = description
         if host is not None:
             self.host = host
         if json is not None:
@@ -195,7 +200,7 @@ class UpdateDBTarget(object):
     def comment(self):
         """Gets the comment of this UpdateDBTarget.  # noqa: E501
 
-        Comment about the target  # noqa: E501
+        Deprecated - use description  # noqa: E501
 
         :return: The comment of this UpdateDBTarget.  # noqa: E501
         :rtype: str
@@ -206,7 +211,7 @@ class UpdateDBTarget(object):
     def comment(self, comment):
         """Sets the comment of this UpdateDBTarget.
 
-        Comment about the target  # noqa: E501
+        Deprecated - use description  # noqa: E501
 
         :param comment: The comment of this UpdateDBTarget.  # noqa: E501
         :type: str
@@ -303,6 +308,29 @@ class UpdateDBTarget(object):
             raise ValueError("Invalid value for `db_type`, must not be `None`")  # noqa: E501
 
         self._db_type = db_type
+
+    @property
+    def description(self):
+        """Gets the description of this UpdateDBTarget.  # noqa: E501
+
+        Description of the object  # noqa: E501
+
+        :return: The description of this UpdateDBTarget.  # noqa: E501
+        :rtype: str
+        """
+        return self._description
+
+    @description.setter
+    def description(self, description):
+        """Sets the description of this UpdateDBTarget.
+
+        Description of the object  # noqa: E501
+
+        :param description: The description of this UpdateDBTarget.  # noqa: E501
+        :type: str
+        """
+
+        self._description = description
 
     @property
     def host(self):

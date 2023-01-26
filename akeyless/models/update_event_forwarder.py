@@ -35,6 +35,7 @@ class UpdateEventForwarder(object):
     """
     openapi_types = {
         'admin_name': 'str',
+        'description': 'str',
         'email_to': 'str',
         'enable': 'str',
         'event_source_locations': 'list[str]',
@@ -50,6 +51,7 @@ class UpdateEventForwarder(object):
 
     attribute_map = {
         'admin_name': 'admin-name',
+        'description': 'description',
         'email_to': 'email-to',
         'enable': 'enable',
         'event_source_locations': 'event-source-locations',
@@ -63,13 +65,14 @@ class UpdateEventForwarder(object):
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, admin_name=None, email_to=None, enable=None, event_source_locations=None, event_types=None, host=None, json=None, name=None, new_comment='default_comment', new_name=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, admin_name=None, description='default_comment', email_to=None, enable=None, event_source_locations=None, event_types=None, host=None, json=None, name=None, new_comment='default_comment', new_name=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """UpdateEventForwarder - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._admin_name = None
+        self._description = None
         self._email_to = None
         self._enable = None
         self._event_source_locations = None
@@ -85,6 +88,8 @@ class UpdateEventForwarder(object):
 
         if admin_name is not None:
             self.admin_name = admin_name
+        if description is not None:
+            self.description = description
         if email_to is not None:
             self.email_to = email_to
         if enable is not None:
@@ -129,6 +134,29 @@ class UpdateEventForwarder(object):
         """
 
         self._admin_name = admin_name
+
+    @property
+    def description(self):
+        """Gets the description of this UpdateEventForwarder.  # noqa: E501
+
+        Description of the object  # noqa: E501
+
+        :return: The description of this UpdateEventForwarder.  # noqa: E501
+        :rtype: str
+        """
+        return self._description
+
+    @description.setter
+    def description(self, description):
+        """Sets the description of this UpdateEventForwarder.
+
+        Description of the object  # noqa: E501
+
+        :param description: The description of this UpdateEventForwarder.  # noqa: E501
+        :type: str
+        """
+
+        self._description = description
 
     @property
     def email_to(self):
@@ -297,7 +325,7 @@ class UpdateEventForwarder(object):
     def new_comment(self):
         """Gets the new_comment of this UpdateEventForwarder.  # noqa: E501
 
-        New comment about the Event Forwarder  # noqa: E501
+        Deprecated - use description  # noqa: E501
 
         :return: The new_comment of this UpdateEventForwarder.  # noqa: E501
         :rtype: str
@@ -308,7 +336,7 @@ class UpdateEventForwarder(object):
     def new_comment(self, new_comment):
         """Sets the new_comment of this UpdateEventForwarder.
 
-        New comment about the Event Forwarder  # noqa: E501
+        Deprecated - use description  # noqa: E501
 
         :param new_comment: The new_comment of this UpdateEventForwarder.  # noqa: E501
         :type: str

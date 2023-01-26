@@ -37,6 +37,7 @@ class UpdateLdapTarget(object):
         'bind_dn': 'str',
         'bind_dn_password': 'str',
         'comment': 'str',
+        'description': 'str',
         'json': 'bool',
         'keep_prev_version': 'str',
         'key': 'str',
@@ -55,6 +56,7 @@ class UpdateLdapTarget(object):
         'bind_dn': 'bind-dn',
         'bind_dn_password': 'bind-dn-password',
         'comment': 'comment',
+        'description': 'description',
         'json': 'json',
         'keep_prev_version': 'keep-prev-version',
         'key': 'key',
@@ -69,7 +71,7 @@ class UpdateLdapTarget(object):
         'update_version': 'update-version'
     }
 
-    def __init__(self, bind_dn=None, bind_dn_password=None, comment=None, json=None, keep_prev_version=None, key=None, ldap_ca_cert=None, ldap_url=None, name=None, new_name=None, server_type=None, token=None, token_expiration=None, uid_token=None, update_version=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, bind_dn=None, bind_dn_password=None, comment=None, description=None, json=None, keep_prev_version=None, key=None, ldap_ca_cert=None, ldap_url=None, name=None, new_name=None, server_type=None, token=None, token_expiration=None, uid_token=None, update_version=None, local_vars_configuration=None):  # noqa: E501
         """UpdateLdapTarget - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -78,6 +80,7 @@ class UpdateLdapTarget(object):
         self._bind_dn = None
         self._bind_dn_password = None
         self._comment = None
+        self._description = None
         self._json = None
         self._keep_prev_version = None
         self._key = None
@@ -98,6 +101,8 @@ class UpdateLdapTarget(object):
             self.bind_dn_password = bind_dn_password
         if comment is not None:
             self.comment = comment
+        if description is not None:
+            self.description = description
         if json is not None:
             self.json = json
         if keep_prev_version is not None:
@@ -168,7 +173,7 @@ class UpdateLdapTarget(object):
     def comment(self):
         """Gets the comment of this UpdateLdapTarget.  # noqa: E501
 
-        Comment about the target  # noqa: E501
+        Deprecated - use description  # noqa: E501
 
         :return: The comment of this UpdateLdapTarget.  # noqa: E501
         :rtype: str
@@ -179,13 +184,36 @@ class UpdateLdapTarget(object):
     def comment(self, comment):
         """Sets the comment of this UpdateLdapTarget.
 
-        Comment about the target  # noqa: E501
+        Deprecated - use description  # noqa: E501
 
         :param comment: The comment of this UpdateLdapTarget.  # noqa: E501
         :type: str
         """
 
         self._comment = comment
+
+    @property
+    def description(self):
+        """Gets the description of this UpdateLdapTarget.  # noqa: E501
+
+        Description of the object  # noqa: E501
+
+        :return: The description of this UpdateLdapTarget.  # noqa: E501
+        :rtype: str
+        """
+        return self._description
+
+    @description.setter
+    def description(self, description):
+        """Sets the description of this UpdateLdapTarget.
+
+        Description of the object  # noqa: E501
+
+        :param description: The description of this UpdateLdapTarget.  # noqa: E501
+        :type: str
+        """
+
+        self._description = description
 
     @property
     def json(self):

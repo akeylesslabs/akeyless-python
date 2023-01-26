@@ -35,6 +35,7 @@ class UpdateGithubTarget(object):
     """
     openapi_types = {
         'comment': 'str',
+        'description': 'str',
         'github_app_id': 'int',
         'github_app_private_key': 'str',
         'github_base_url': 'str',
@@ -50,6 +51,7 @@ class UpdateGithubTarget(object):
 
     attribute_map = {
         'comment': 'comment',
+        'description': 'description',
         'github_app_id': 'github-app-id',
         'github_app_private_key': 'github-app-private-key',
         'github_base_url': 'github-base-url',
@@ -63,13 +65,14 @@ class UpdateGithubTarget(object):
         'update_version': 'update-version'
     }
 
-    def __init__(self, comment=None, github_app_id=None, github_app_private_key=None, github_base_url=None, json=None, keep_prev_version=None, key=None, name=None, new_name=None, token=None, uid_token=None, update_version=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, comment=None, description=None, github_app_id=None, github_app_private_key=None, github_base_url=None, json=None, keep_prev_version=None, key=None, name=None, new_name=None, token=None, uid_token=None, update_version=None, local_vars_configuration=None):  # noqa: E501
         """UpdateGithubTarget - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._comment = None
+        self._description = None
         self._github_app_id = None
         self._github_app_private_key = None
         self._github_base_url = None
@@ -85,6 +88,8 @@ class UpdateGithubTarget(object):
 
         if comment is not None:
             self.comment = comment
+        if description is not None:
+            self.description = description
         if github_app_id is not None:
             self.github_app_id = github_app_id
         if github_app_private_key is not None:
@@ -111,7 +116,7 @@ class UpdateGithubTarget(object):
     def comment(self):
         """Gets the comment of this UpdateGithubTarget.  # noqa: E501
 
-        Comment about the target  # noqa: E501
+        Deprecated - use description  # noqa: E501
 
         :return: The comment of this UpdateGithubTarget.  # noqa: E501
         :rtype: str
@@ -122,13 +127,36 @@ class UpdateGithubTarget(object):
     def comment(self, comment):
         """Sets the comment of this UpdateGithubTarget.
 
-        Comment about the target  # noqa: E501
+        Deprecated - use description  # noqa: E501
 
         :param comment: The comment of this UpdateGithubTarget.  # noqa: E501
         :type: str
         """
 
         self._comment = comment
+
+    @property
+    def description(self):
+        """Gets the description of this UpdateGithubTarget.  # noqa: E501
+
+        Description of the object  # noqa: E501
+
+        :return: The description of this UpdateGithubTarget.  # noqa: E501
+        :rtype: str
+        """
+        return self._description
+
+    @description.setter
+    def description(self, description):
+        """Sets the description of this UpdateGithubTarget.
+
+        Description of the object  # noqa: E501
+
+        :param description: The description of this UpdateGithubTarget.  # noqa: E501
+        :type: str
+        """
+
+        self._description = description
 
     @property
     def github_app_id(self):

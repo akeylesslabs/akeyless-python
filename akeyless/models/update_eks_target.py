@@ -35,6 +35,7 @@ class UpdateEKSTarget(object):
     """
     openapi_types = {
         'comment': 'str',
+        'description': 'str',
         'eks_access_key_id': 'str',
         'eks_cluster_ca_cert': 'str',
         'eks_cluster_endpoint': 'str',
@@ -54,6 +55,7 @@ class UpdateEKSTarget(object):
 
     attribute_map = {
         'comment': 'comment',
+        'description': 'description',
         'eks_access_key_id': 'eks-access-key-id',
         'eks_cluster_ca_cert': 'eks-cluster-ca-cert',
         'eks_cluster_endpoint': 'eks-cluster-endpoint',
@@ -71,13 +73,14 @@ class UpdateEKSTarget(object):
         'use_gw_cloud_identity': 'use-gw-cloud-identity'
     }
 
-    def __init__(self, comment=None, eks_access_key_id=None, eks_cluster_ca_cert=None, eks_cluster_endpoint=None, eks_cluster_name=None, eks_region='us-east-2', eks_secret_access_key=None, json=None, keep_prev_version=None, key=None, name=None, new_name=None, token=None, uid_token=None, update_version=None, use_gw_cloud_identity=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, comment=None, description=None, eks_access_key_id=None, eks_cluster_ca_cert=None, eks_cluster_endpoint=None, eks_cluster_name=None, eks_region='us-east-2', eks_secret_access_key=None, json=None, keep_prev_version=None, key=None, name=None, new_name=None, token=None, uid_token=None, update_version=None, use_gw_cloud_identity=None, local_vars_configuration=None):  # noqa: E501
         """UpdateEKSTarget - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._comment = None
+        self._description = None
         self._eks_access_key_id = None
         self._eks_cluster_ca_cert = None
         self._eks_cluster_endpoint = None
@@ -97,6 +100,8 @@ class UpdateEKSTarget(object):
 
         if comment is not None:
             self.comment = comment
+        if description is not None:
+            self.description = description
         self.eks_access_key_id = eks_access_key_id
         self.eks_cluster_ca_cert = eks_cluster_ca_cert
         self.eks_cluster_endpoint = eks_cluster_endpoint
@@ -126,7 +131,7 @@ class UpdateEKSTarget(object):
     def comment(self):
         """Gets the comment of this UpdateEKSTarget.  # noqa: E501
 
-        Comment about the target  # noqa: E501
+        Deprecated - use description  # noqa: E501
 
         :return: The comment of this UpdateEKSTarget.  # noqa: E501
         :rtype: str
@@ -137,13 +142,36 @@ class UpdateEKSTarget(object):
     def comment(self, comment):
         """Sets the comment of this UpdateEKSTarget.
 
-        Comment about the target  # noqa: E501
+        Deprecated - use description  # noqa: E501
 
         :param comment: The comment of this UpdateEKSTarget.  # noqa: E501
         :type: str
         """
 
         self._comment = comment
+
+    @property
+    def description(self):
+        """Gets the description of this UpdateEKSTarget.  # noqa: E501
+
+        Description of the object  # noqa: E501
+
+        :return: The description of this UpdateEKSTarget.  # noqa: E501
+        :rtype: str
+        """
+        return self._description
+
+    @description.setter
+    def description(self, description):
+        """Sets the description of this UpdateEKSTarget.
+
+        Description of the object  # noqa: E501
+
+        :param description: The description of this UpdateEKSTarget.  # noqa: E501
+        :type: str
+        """
+
+        self._description = description
 
     @property
     def eks_access_key_id(self):

@@ -376,6 +376,7 @@ from akeyless.models.gw_cluster_identity import GwClusterIdentity
 from akeyless.models.hashi_migration import HashiMigration
 from akeyless.models.hashi_payload import HashiPayload
 from akeyless.models.huawei_access_rules import HuaweiAccessRules
+from akeyless.models.importer_info import ImporterInfo
 from akeyless.models.item import Item
 from akeyless.models.item_general_info import ItemGeneralInfo
 from akeyless.models.item_target_association import ItemTargetAssociation

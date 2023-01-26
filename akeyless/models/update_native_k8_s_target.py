@@ -35,6 +35,7 @@ class UpdateNativeK8STarget(object):
     """
     openapi_types = {
         'comment': 'str',
+        'description': 'str',
         'json': 'bool',
         'k8s_cluster_ca_cert': 'str',
         'k8s_cluster_endpoint': 'str',
@@ -50,6 +51,7 @@ class UpdateNativeK8STarget(object):
 
     attribute_map = {
         'comment': 'comment',
+        'description': 'description',
         'json': 'json',
         'k8s_cluster_ca_cert': 'k8s-cluster-ca-cert',
         'k8s_cluster_endpoint': 'k8s-cluster-endpoint',
@@ -63,13 +65,14 @@ class UpdateNativeK8STarget(object):
         'update_version': 'update-version'
     }
 
-    def __init__(self, comment=None, json=None, k8s_cluster_ca_cert=None, k8s_cluster_endpoint=None, k8s_cluster_token=None, keep_prev_version=None, key=None, name=None, new_name=None, token=None, uid_token=None, update_version=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, comment=None, description=None, json=None, k8s_cluster_ca_cert=None, k8s_cluster_endpoint=None, k8s_cluster_token=None, keep_prev_version=None, key=None, name=None, new_name=None, token=None, uid_token=None, update_version=None, local_vars_configuration=None):  # noqa: E501
         """UpdateNativeK8STarget - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._comment = None
+        self._description = None
         self._json = None
         self._k8s_cluster_ca_cert = None
         self._k8s_cluster_endpoint = None
@@ -85,6 +88,8 @@ class UpdateNativeK8STarget(object):
 
         if comment is not None:
             self.comment = comment
+        if description is not None:
+            self.description = description
         if json is not None:
             self.json = json
         self.k8s_cluster_ca_cert = k8s_cluster_ca_cert
@@ -108,7 +113,7 @@ class UpdateNativeK8STarget(object):
     def comment(self):
         """Gets the comment of this UpdateNativeK8STarget.  # noqa: E501
 
-        Comment about the target  # noqa: E501
+        Deprecated - use description  # noqa: E501
 
         :return: The comment of this UpdateNativeK8STarget.  # noqa: E501
         :rtype: str
@@ -119,13 +124,36 @@ class UpdateNativeK8STarget(object):
     def comment(self, comment):
         """Sets the comment of this UpdateNativeK8STarget.
 
-        Comment about the target  # noqa: E501
+        Deprecated - use description  # noqa: E501
 
         :param comment: The comment of this UpdateNativeK8STarget.  # noqa: E501
         :type: str
         """
 
         self._comment = comment
+
+    @property
+    def description(self):
+        """Gets the description of this UpdateNativeK8STarget.  # noqa: E501
+
+        Description of the object  # noqa: E501
+
+        :return: The description of this UpdateNativeK8STarget.  # noqa: E501
+        :rtype: str
+        """
+        return self._description
+
+    @description.setter
+    def description(self, description):
+        """Sets the description of this UpdateNativeK8STarget.
+
+        Description of the object  # noqa: E501
+
+        :param description: The description of this UpdateNativeK8STarget.  # noqa: E501
+        :type: str
+        """
+
+        self._description = description
 
     @property
     def json(self):

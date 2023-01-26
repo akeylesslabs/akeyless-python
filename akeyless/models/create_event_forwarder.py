@@ -37,6 +37,7 @@ class CreateEventForwarder(object):
         'admin_name': 'str',
         'admin_pwd': 'str',
         'comment': 'str',
+        'description': 'str',
         'email_to': 'str',
         'event_source_locations': 'list[str]',
         'event_source_type': 'str',
@@ -56,6 +57,7 @@ class CreateEventForwarder(object):
         'admin_name': 'admin-name',
         'admin_pwd': 'admin-pwd',
         'comment': 'comment',
+        'description': 'description',
         'email_to': 'email-to',
         'event_source_locations': 'event-source-locations',
         'event_source_type': 'event-source-type',
@@ -71,7 +73,7 @@ class CreateEventForwarder(object):
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, admin_name=None, admin_pwd=None, comment=None, email_to=None, event_source_locations=None, event_source_type='item', event_types=None, every=None, forwarder_type=None, host=None, json=None, key=None, name=None, runner_type=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, admin_name=None, admin_pwd=None, comment=None, description=None, email_to=None, event_source_locations=None, event_source_type='item', event_types=None, every=None, forwarder_type=None, host=None, json=None, key=None, name=None, runner_type=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """CreateEventForwarder - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -80,6 +82,7 @@ class CreateEventForwarder(object):
         self._admin_name = None
         self._admin_pwd = None
         self._comment = None
+        self._description = None
         self._email_to = None
         self._event_source_locations = None
         self._event_source_type = None
@@ -101,6 +104,8 @@ class CreateEventForwarder(object):
             self.admin_pwd = admin_pwd
         if comment is not None:
             self.comment = comment
+        if description is not None:
+            self.description = description
         if email_to is not None:
             self.email_to = email_to
         self.event_source_locations = event_source_locations
@@ -174,7 +179,7 @@ class CreateEventForwarder(object):
     def comment(self):
         """Gets the comment of this CreateEventForwarder.  # noqa: E501
 
-        Comment about the EventForwarder  # noqa: E501
+        Deprecated - use description  # noqa: E501
 
         :return: The comment of this CreateEventForwarder.  # noqa: E501
         :rtype: str
@@ -185,13 +190,36 @@ class CreateEventForwarder(object):
     def comment(self, comment):
         """Sets the comment of this CreateEventForwarder.
 
-        Comment about the EventForwarder  # noqa: E501
+        Deprecated - use description  # noqa: E501
 
         :param comment: The comment of this CreateEventForwarder.  # noqa: E501
         :type: str
         """
 
         self._comment = comment
+
+    @property
+    def description(self):
+        """Gets the description of this CreateEventForwarder.  # noqa: E501
+
+        Description of the object  # noqa: E501
+
+        :return: The description of this CreateEventForwarder.  # noqa: E501
+        :rtype: str
+        """
+        return self._description
+
+    @description.setter
+    def description(self, description):
+        """Sets the description of this CreateEventForwarder.
+
+        Description of the object  # noqa: E501
+
+        :param description: The description of this CreateEventForwarder.  # noqa: E501
+        :type: str
+        """
+
+        self._description = description
 
     @property
     def email_to(self):

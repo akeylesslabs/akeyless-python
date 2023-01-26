@@ -41,6 +41,7 @@ class CreateSalesforceTarget(object):
         'client_id': 'str',
         'client_secret': 'str',
         'comment': 'str',
+        'description': 'str',
         'email': 'str',
         'json': 'bool',
         'key': 'str',
@@ -60,6 +61,7 @@ class CreateSalesforceTarget(object):
         'client_id': 'client-id',
         'client_secret': 'client-secret',
         'comment': 'comment',
+        'description': 'description',
         'email': 'email',
         'json': 'json',
         'key': 'key',
@@ -71,7 +73,7 @@ class CreateSalesforceTarget(object):
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, app_private_key_data=None, auth_flow=None, ca_cert_data=None, ca_cert_name=None, client_id=None, client_secret=None, comment=None, email=None, json=None, key=None, name=None, password=None, security_token=None, tenant_url=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, app_private_key_data=None, auth_flow=None, ca_cert_data=None, ca_cert_name=None, client_id=None, client_secret=None, comment=None, description=None, email=None, json=None, key=None, name=None, password=None, security_token=None, tenant_url=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """CreateSalesforceTarget - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -84,6 +86,7 @@ class CreateSalesforceTarget(object):
         self._client_id = None
         self._client_secret = None
         self._comment = None
+        self._description = None
         self._email = None
         self._json = None
         self._key = None
@@ -107,6 +110,8 @@ class CreateSalesforceTarget(object):
             self.client_secret = client_secret
         if comment is not None:
             self.comment = comment
+        if description is not None:
+            self.description = description
         self.email = email
         if json is not None:
             self.json = json
@@ -269,7 +274,7 @@ class CreateSalesforceTarget(object):
     def comment(self):
         """Gets the comment of this CreateSalesforceTarget.  # noqa: E501
 
-        Comment about the target  # noqa: E501
+        Deprecated - use description  # noqa: E501
 
         :return: The comment of this CreateSalesforceTarget.  # noqa: E501
         :rtype: str
@@ -280,13 +285,36 @@ class CreateSalesforceTarget(object):
     def comment(self, comment):
         """Sets the comment of this CreateSalesforceTarget.
 
-        Comment about the target  # noqa: E501
+        Deprecated - use description  # noqa: E501
 
         :param comment: The comment of this CreateSalesforceTarget.  # noqa: E501
         :type: str
         """
 
         self._comment = comment
+
+    @property
+    def description(self):
+        """Gets the description of this CreateSalesforceTarget.  # noqa: E501
+
+        Description of the object  # noqa: E501
+
+        :return: The description of this CreateSalesforceTarget.  # noqa: E501
+        :rtype: str
+        """
+        return self._description
+
+    @description.setter
+    def description(self, description):
+        """Sets the description of this CreateSalesforceTarget.
+
+        Description of the object  # noqa: E501
+
+        :param description: The description of this CreateSalesforceTarget.  # noqa: E501
+        :type: str
+        """
+
+        self._description = description
 
     @property
     def email(self):

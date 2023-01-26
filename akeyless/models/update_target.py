@@ -34,6 +34,7 @@ class UpdateTarget(object):
                             and the value is json key in definition.
     """
     openapi_types = {
+        'description': 'str',
         'json': 'bool',
         'name': 'str',
         'new_comment': 'str',
@@ -43,6 +44,7 @@ class UpdateTarget(object):
     }
 
     attribute_map = {
+        'description': 'description',
         'json': 'json',
         'name': 'name',
         'new_comment': 'new-comment',
@@ -51,12 +53,13 @@ class UpdateTarget(object):
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, json=None, name=None, new_comment='default_comment', new_name=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, description='default_comment', json=None, name=None, new_comment='default_comment', new_name=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """UpdateTarget - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
+        self._description = None
         self._json = None
         self._name = None
         self._new_comment = None
@@ -65,6 +68,8 @@ class UpdateTarget(object):
         self._uid_token = None
         self.discriminator = None
 
+        if description is not None:
+            self.description = description
         if json is not None:
             self.json = json
         self.name = name
@@ -76,6 +81,29 @@ class UpdateTarget(object):
             self.token = token
         if uid_token is not None:
             self.uid_token = uid_token
+
+    @property
+    def description(self):
+        """Gets the description of this UpdateTarget.  # noqa: E501
+
+        Description of the object  # noqa: E501
+
+        :return: The description of this UpdateTarget.  # noqa: E501
+        :rtype: str
+        """
+        return self._description
+
+    @description.setter
+    def description(self, description):
+        """Sets the description of this UpdateTarget.
+
+        Description of the object  # noqa: E501
+
+        :param description: The description of this UpdateTarget.  # noqa: E501
+        :type: str
+        """
+
+        self._description = description
 
     @property
     def json(self):
@@ -129,7 +157,7 @@ class UpdateTarget(object):
     def new_comment(self):
         """Gets the new_comment of this UpdateTarget.  # noqa: E501
 
-        New comment about the target  # noqa: E501
+        Deprecated - use description  # noqa: E501
 
         :return: The new_comment of this UpdateTarget.  # noqa: E501
         :rtype: str
@@ -140,7 +168,7 @@ class UpdateTarget(object):
     def new_comment(self, new_comment):
         """Sets the new_comment of this UpdateTarget.
 
-        New comment about the target  # noqa: E501
+        Deprecated - use description  # noqa: E501
 
         :param new_comment: The new_comment of this UpdateTarget.  # noqa: E501
         :type: str

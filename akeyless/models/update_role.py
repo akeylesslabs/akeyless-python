@@ -36,6 +36,7 @@ class UpdateRole(object):
     openapi_types = {
         'analytics_access': 'str',
         'audit_access': 'str',
+        'description': 'str',
         'gw_analytics_access': 'str',
         'json': 'bool',
         'name': 'str',
@@ -49,6 +50,7 @@ class UpdateRole(object):
     attribute_map = {
         'analytics_access': 'analytics-access',
         'audit_access': 'audit-access',
+        'description': 'description',
         'gw_analytics_access': 'gw-analytics-access',
         'json': 'json',
         'name': 'name',
@@ -59,7 +61,7 @@ class UpdateRole(object):
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, analytics_access=None, audit_access=None, gw_analytics_access=None, json=None, name=None, new_comment='default_comment', new_name=None, sra_reports_access=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, analytics_access=None, audit_access=None, description='default_comment', gw_analytics_access=None, json=None, name=None, new_comment='default_comment', new_name=None, sra_reports_access=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """UpdateRole - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -67,6 +69,7 @@ class UpdateRole(object):
 
         self._analytics_access = None
         self._audit_access = None
+        self._description = None
         self._gw_analytics_access = None
         self._json = None
         self._name = None
@@ -81,6 +84,8 @@ class UpdateRole(object):
             self.analytics_access = analytics_access
         if audit_access is not None:
             self.audit_access = audit_access
+        if description is not None:
+            self.description = description
         if gw_analytics_access is not None:
             self.gw_analytics_access = gw_analytics_access
         if json is not None:
@@ -142,6 +147,29 @@ class UpdateRole(object):
         """
 
         self._audit_access = audit_access
+
+    @property
+    def description(self):
+        """Gets the description of this UpdateRole.  # noqa: E501
+
+        Description of the object  # noqa: E501
+
+        :return: The description of this UpdateRole.  # noqa: E501
+        :rtype: str
+        """
+        return self._description
+
+    @description.setter
+    def description(self, description):
+        """Sets the description of this UpdateRole.
+
+        Description of the object  # noqa: E501
+
+        :param description: The description of this UpdateRole.  # noqa: E501
+        :type: str
+        """
+
+        self._description = description
 
     @property
     def gw_analytics_access(self):
@@ -218,7 +246,7 @@ class UpdateRole(object):
     def new_comment(self):
         """Gets the new_comment of this UpdateRole.  # noqa: E501
 
-        New comment about the role  # noqa: E501
+        Deprecated - use description  # noqa: E501
 
         :return: The new_comment of this UpdateRole.  # noqa: E501
         :rtype: str
@@ -229,7 +257,7 @@ class UpdateRole(object):
     def new_comment(self, new_comment):
         """Sets the new_comment of this UpdateRole.
 
-        New comment about the role  # noqa: E501
+        Deprecated - use description  # noqa: E501
 
         :param new_comment: The new_comment of this UpdateRole.  # noqa: E501
         :type: str

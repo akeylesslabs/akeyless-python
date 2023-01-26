@@ -37,6 +37,7 @@ class CreateLdapTarget(object):
         'bind_dn': 'str',
         'bind_dn_password': 'str',
         'comment': 'str',
+        'description': 'str',
         'json': 'bool',
         'key': 'str',
         'ldap_ca_cert': 'str',
@@ -52,6 +53,7 @@ class CreateLdapTarget(object):
         'bind_dn': 'bind-dn',
         'bind_dn_password': 'bind-dn-password',
         'comment': 'comment',
+        'description': 'description',
         'json': 'json',
         'key': 'key',
         'ldap_ca_cert': 'ldap-ca-cert',
@@ -63,7 +65,7 @@ class CreateLdapTarget(object):
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, bind_dn=None, bind_dn_password=None, comment=None, json=None, key=None, ldap_ca_cert=None, ldap_url=None, name=None, server_type='OpenLDAP', token=None, token_expiration=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, bind_dn=None, bind_dn_password=None, comment=None, description=None, json=None, key=None, ldap_ca_cert=None, ldap_url=None, name=None, server_type='OpenLDAP', token=None, token_expiration=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """CreateLdapTarget - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -72,6 +74,7 @@ class CreateLdapTarget(object):
         self._bind_dn = None
         self._bind_dn_password = None
         self._comment = None
+        self._description = None
         self._json = None
         self._key = None
         self._ldap_ca_cert = None
@@ -87,6 +90,8 @@ class CreateLdapTarget(object):
         self.bind_dn_password = bind_dn_password
         if comment is not None:
             self.comment = comment
+        if description is not None:
+            self.description = description
         if json is not None:
             self.json = json
         if key is not None:
@@ -158,7 +163,7 @@ class CreateLdapTarget(object):
     def comment(self):
         """Gets the comment of this CreateLdapTarget.  # noqa: E501
 
-        Comment about the target  # noqa: E501
+        Deprecated - use description  # noqa: E501
 
         :return: The comment of this CreateLdapTarget.  # noqa: E501
         :rtype: str
@@ -169,13 +174,36 @@ class CreateLdapTarget(object):
     def comment(self, comment):
         """Sets the comment of this CreateLdapTarget.
 
-        Comment about the target  # noqa: E501
+        Deprecated - use description  # noqa: E501
 
         :param comment: The comment of this CreateLdapTarget.  # noqa: E501
         :type: str
         """
 
         self._comment = comment
+
+    @property
+    def description(self):
+        """Gets the description of this CreateLdapTarget.  # noqa: E501
+
+        Description of the object  # noqa: E501
+
+        :return: The description of this CreateLdapTarget.  # noqa: E501
+        :rtype: str
+        """
+        return self._description
+
+    @description.setter
+    def description(self, description):
+        """Sets the description of this CreateLdapTarget.
+
+        Description of the object  # noqa: E501
+
+        :param description: The description of this CreateLdapTarget.  # noqa: E501
+        :type: str
+        """
+
+        self._description = description
 
     @property
     def json(self):

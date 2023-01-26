@@ -37,6 +37,7 @@ class CreateAWSTarget(object):
         'access_key': 'str',
         'access_key_id': 'str',
         'comment': 'str',
+        'description': 'str',
         'json': 'bool',
         'key': 'str',
         'name': 'str',
@@ -51,6 +52,7 @@ class CreateAWSTarget(object):
         'access_key': 'access-key',
         'access_key_id': 'access-key-id',
         'comment': 'comment',
+        'description': 'description',
         'json': 'json',
         'key': 'key',
         'name': 'name',
@@ -61,7 +63,7 @@ class CreateAWSTarget(object):
         'use_gw_cloud_identity': 'use-gw-cloud-identity'
     }
 
-    def __init__(self, access_key=None, access_key_id=None, comment=None, json=None, key=None, name=None, region=None, session_token=None, token=None, uid_token=None, use_gw_cloud_identity=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, access_key=None, access_key_id=None, comment=None, description=None, json=None, key=None, name=None, region=None, session_token=None, token=None, uid_token=None, use_gw_cloud_identity=None, local_vars_configuration=None):  # noqa: E501
         """CreateAWSTarget - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -70,6 +72,7 @@ class CreateAWSTarget(object):
         self._access_key = None
         self._access_key_id = None
         self._comment = None
+        self._description = None
         self._json = None
         self._key = None
         self._name = None
@@ -86,6 +89,8 @@ class CreateAWSTarget(object):
             self.access_key_id = access_key_id
         if comment is not None:
             self.comment = comment
+        if description is not None:
+            self.description = description
         if json is not None:
             self.json = json
         if key is not None:
@@ -148,7 +153,7 @@ class CreateAWSTarget(object):
     def comment(self):
         """Gets the comment of this CreateAWSTarget.  # noqa: E501
 
-        Comment about the target  # noqa: E501
+        Deprecated - use description  # noqa: E501
 
         :return: The comment of this CreateAWSTarget.  # noqa: E501
         :rtype: str
@@ -159,13 +164,36 @@ class CreateAWSTarget(object):
     def comment(self, comment):
         """Sets the comment of this CreateAWSTarget.
 
-        Comment about the target  # noqa: E501
+        Deprecated - use description  # noqa: E501
 
         :param comment: The comment of this CreateAWSTarget.  # noqa: E501
         :type: str
         """
 
         self._comment = comment
+
+    @property
+    def description(self):
+        """Gets the description of this CreateAWSTarget.  # noqa: E501
+
+        Description of the object  # noqa: E501
+
+        :return: The description of this CreateAWSTarget.  # noqa: E501
+        :rtype: str
+        """
+        return self._description
+
+    @description.setter
+    def description(self, description):
+        """Sets the description of this CreateAWSTarget.
+
+        Description of the object  # noqa: E501
+
+        :param description: The description of this CreateAWSTarget.  # noqa: E501
+        :type: str
+        """
+
+        self._description = description
 
     @property
     def json(self):

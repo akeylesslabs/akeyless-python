@@ -37,6 +37,7 @@ class CreateRole(object):
         'analytics_access': 'str',
         'audit_access': 'str',
         'comment': 'str',
+        'description': 'str',
         'gw_analytics_access': 'str',
         'json': 'bool',
         'name': 'str',
@@ -49,6 +50,7 @@ class CreateRole(object):
         'analytics_access': 'analytics-access',
         'audit_access': 'audit-access',
         'comment': 'comment',
+        'description': 'description',
         'gw_analytics_access': 'gw-analytics-access',
         'json': 'json',
         'name': 'name',
@@ -57,7 +59,7 @@ class CreateRole(object):
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, analytics_access=None, audit_access=None, comment=None, gw_analytics_access=None, json=None, name=None, sra_reports_access=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, analytics_access=None, audit_access=None, comment=None, description=None, gw_analytics_access=None, json=None, name=None, sra_reports_access=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """CreateRole - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -66,6 +68,7 @@ class CreateRole(object):
         self._analytics_access = None
         self._audit_access = None
         self._comment = None
+        self._description = None
         self._gw_analytics_access = None
         self._json = None
         self._name = None
@@ -80,6 +83,8 @@ class CreateRole(object):
             self.audit_access = audit_access
         if comment is not None:
             self.comment = comment
+        if description is not None:
+            self.description = description
         if gw_analytics_access is not None:
             self.gw_analytics_access = gw_analytics_access
         if json is not None:
@@ -142,7 +147,7 @@ class CreateRole(object):
     def comment(self):
         """Gets the comment of this CreateRole.  # noqa: E501
 
-        Comment about the role  # noqa: E501
+        Deprecated - use description  # noqa: E501
 
         :return: The comment of this CreateRole.  # noqa: E501
         :rtype: str
@@ -153,13 +158,36 @@ class CreateRole(object):
     def comment(self, comment):
         """Sets the comment of this CreateRole.
 
-        Comment about the role  # noqa: E501
+        Deprecated - use description  # noqa: E501
 
         :param comment: The comment of this CreateRole.  # noqa: E501
         :type: str
         """
 
         self._comment = comment
+
+    @property
+    def description(self):
+        """Gets the description of this CreateRole.  # noqa: E501
+
+        Description of the object  # noqa: E501
+
+        :return: The description of this CreateRole.  # noqa: E501
+        :rtype: str
+        """
+        return self._description
+
+    @description.setter
+    def description(self, description):
+        """Sets the description of this CreateRole.
+
+        Description of the object  # noqa: E501
+
+        :param description: The description of this CreateRole.  # noqa: E501
+        :type: str
+        """
+
+        self._description = description
 
     @property
     def gw_analytics_access(self):

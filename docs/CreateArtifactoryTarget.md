@@ -6,7 +6,8 @@ Name | Type | Description | Notes
 **artifactory_admin_name** | **str** | Artifactory Admin Name | 
 **artifactory_admin_pwd** | **str** | Artifactory Admin password | 
 **base_url** | **str** | Base URL | 
-**comment** | **str** | Comment about the target | [optional] 
+**comment** | **str** | Deprecated - use description | [optional] 
+**description** | **str** | Description of the object | [optional] 
 **json** | **bool** | Set output format to JSON | [optional] 
 **key** | **str** | The name of a key used to encrypt the target secret value (if empty, the account default protectionKey key will be used) | [optional] 
 **name** | **str** | Target name | 

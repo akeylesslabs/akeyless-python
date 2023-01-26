@@ -35,6 +35,7 @@ class CreateGKETarget(object):
     """
     openapi_types = {
         'comment': 'str',
+        'description': 'str',
         'gke_account_key': 'str',
         'gke_cluster_cert': 'str',
         'gke_cluster_endpoint': 'str',
@@ -50,6 +51,7 @@ class CreateGKETarget(object):
 
     attribute_map = {
         'comment': 'comment',
+        'description': 'description',
         'gke_account_key': 'gke-account-key',
         'gke_cluster_cert': 'gke-cluster-cert',
         'gke_cluster_endpoint': 'gke-cluster-endpoint',
@@ -63,13 +65,14 @@ class CreateGKETarget(object):
         'use_gw_cloud_identity': 'use-gw-cloud-identity'
     }
 
-    def __init__(self, comment=None, gke_account_key=None, gke_cluster_cert=None, gke_cluster_endpoint=None, gke_cluster_name=None, gke_service_account_email=None, json=None, key=None, name=None, token=None, uid_token=None, use_gw_cloud_identity=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, comment=None, description=None, gke_account_key=None, gke_cluster_cert=None, gke_cluster_endpoint=None, gke_cluster_name=None, gke_service_account_email=None, json=None, key=None, name=None, token=None, uid_token=None, use_gw_cloud_identity=None, local_vars_configuration=None):  # noqa: E501
         """CreateGKETarget - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._comment = None
+        self._description = None
         self._gke_account_key = None
         self._gke_cluster_cert = None
         self._gke_cluster_endpoint = None
@@ -85,6 +88,8 @@ class CreateGKETarget(object):
 
         if comment is not None:
             self.comment = comment
+        if description is not None:
+            self.description = description
         if gke_account_key is not None:
             self.gke_account_key = gke_account_key
         if gke_cluster_cert is not None:
@@ -111,7 +116,7 @@ class CreateGKETarget(object):
     def comment(self):
         """Gets the comment of this CreateGKETarget.  # noqa: E501
 
-        Comment about the target  # noqa: E501
+        Deprecated - use description  # noqa: E501
 
         :return: The comment of this CreateGKETarget.  # noqa: E501
         :rtype: str
@@ -122,13 +127,36 @@ class CreateGKETarget(object):
     def comment(self, comment):
         """Sets the comment of this CreateGKETarget.
 
-        Comment about the target  # noqa: E501
+        Deprecated - use description  # noqa: E501
 
         :param comment: The comment of this CreateGKETarget.  # noqa: E501
         :type: str
         """
 
         self._comment = comment
+
+    @property
+    def description(self):
+        """Gets the description of this CreateGKETarget.  # noqa: E501
+
+        Description of the object  # noqa: E501
+
+        :return: The description of this CreateGKETarget.  # noqa: E501
+        :rtype: str
+        """
+        return self._description
+
+    @description.setter
+    def description(self, description):
+        """Sets the description of this CreateGKETarget.
+
+        Description of the object  # noqa: E501
+
+        :param description: The description of this CreateGKETarget.  # noqa: E501
+        :type: str
+        """
+
+        self._description = description
 
     @property
     def gke_account_key(self):

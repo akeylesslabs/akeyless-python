@@ -37,6 +37,7 @@ class CreateAzureTarget(object):
         'client_id': 'str',
         'client_secret': 'str',
         'comment': 'str',
+        'description': 'str',
         'json': 'bool',
         'key': 'str',
         'name': 'str',
@@ -53,6 +54,7 @@ class CreateAzureTarget(object):
         'client_id': 'client-id',
         'client_secret': 'client-secret',
         'comment': 'comment',
+        'description': 'description',
         'json': 'json',
         'key': 'key',
         'name': 'name',
@@ -65,7 +67,7 @@ class CreateAzureTarget(object):
         'use_gw_cloud_identity': 'use-gw-cloud-identity'
     }
 
-    def __init__(self, client_id=None, client_secret=None, comment=None, json=None, key=None, name=None, resource_group_name=None, resource_name=None, subscription_id=None, tenant_id=None, token=None, uid_token=None, use_gw_cloud_identity=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, client_id=None, client_secret=None, comment=None, description=None, json=None, key=None, name=None, resource_group_name=None, resource_name=None, subscription_id=None, tenant_id=None, token=None, uid_token=None, use_gw_cloud_identity=None, local_vars_configuration=None):  # noqa: E501
         """CreateAzureTarget - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -74,6 +76,7 @@ class CreateAzureTarget(object):
         self._client_id = None
         self._client_secret = None
         self._comment = None
+        self._description = None
         self._json = None
         self._key = None
         self._name = None
@@ -92,6 +95,8 @@ class CreateAzureTarget(object):
             self.client_secret = client_secret
         if comment is not None:
             self.comment = comment
+        if description is not None:
+            self.description = description
         if json is not None:
             self.json = json
         if key is not None:
@@ -158,7 +163,7 @@ class CreateAzureTarget(object):
     def comment(self):
         """Gets the comment of this CreateAzureTarget.  # noqa: E501
 
-        Comment about the target  # noqa: E501
+        Deprecated - use description  # noqa: E501
 
         :return: The comment of this CreateAzureTarget.  # noqa: E501
         :rtype: str
@@ -169,13 +174,36 @@ class CreateAzureTarget(object):
     def comment(self, comment):
         """Sets the comment of this CreateAzureTarget.
 
-        Comment about the target  # noqa: E501
+        Deprecated - use description  # noqa: E501
 
         :param comment: The comment of this CreateAzureTarget.  # noqa: E501
         :type: str
         """
 
         self._comment = comment
+
+    @property
+    def description(self):
+        """Gets the description of this CreateAzureTarget.  # noqa: E501
+
+        Description of the object  # noqa: E501
+
+        :return: The description of this CreateAzureTarget.  # noqa: E501
+        :rtype: str
+        """
+        return self._description
+
+    @description.setter
+    def description(self, description):
+        """Sets the description of this CreateAzureTarget.
+
+        Description of the object  # noqa: E501
+
+        :param description: The description of this CreateAzureTarget.  # noqa: E501
+        :type: str
+        """
+
+        self._description = description
 
     @property
     def json(self):

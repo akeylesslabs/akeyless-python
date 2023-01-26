@@ -38,6 +38,7 @@ class UpdateArtifactoryTarget(object):
         'artifactory_admin_pwd': 'str',
         'base_url': 'str',
         'comment': 'str',
+        'description': 'str',
         'json': 'bool',
         'keep_prev_version': 'str',
         'key': 'str',
@@ -53,6 +54,7 @@ class UpdateArtifactoryTarget(object):
         'artifactory_admin_pwd': 'artifactory-admin-pwd',
         'base_url': 'base-url',
         'comment': 'comment',
+        'description': 'description',
         'json': 'json',
         'keep_prev_version': 'keep-prev-version',
         'key': 'key',
@@ -63,7 +65,7 @@ class UpdateArtifactoryTarget(object):
         'update_version': 'update-version'
     }
 
-    def __init__(self, artifactory_admin_name=None, artifactory_admin_pwd=None, base_url=None, comment=None, json=None, keep_prev_version=None, key=None, name=None, new_name=None, token=None, uid_token=None, update_version=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, artifactory_admin_name=None, artifactory_admin_pwd=None, base_url=None, comment=None, description=None, json=None, keep_prev_version=None, key=None, name=None, new_name=None, token=None, uid_token=None, update_version=None, local_vars_configuration=None):  # noqa: E501
         """UpdateArtifactoryTarget - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -73,6 +75,7 @@ class UpdateArtifactoryTarget(object):
         self._artifactory_admin_pwd = None
         self._base_url = None
         self._comment = None
+        self._description = None
         self._json = None
         self._keep_prev_version = None
         self._key = None
@@ -88,6 +91,8 @@ class UpdateArtifactoryTarget(object):
         self.base_url = base_url
         if comment is not None:
             self.comment = comment
+        if description is not None:
+            self.description = description
         if json is not None:
             self.json = json
         if keep_prev_version is not None:
@@ -183,7 +188,7 @@ class UpdateArtifactoryTarget(object):
     def comment(self):
         """Gets the comment of this UpdateArtifactoryTarget.  # noqa: E501
 
-        Comment about the target  # noqa: E501
+        Deprecated - use description  # noqa: E501
 
         :return: The comment of this UpdateArtifactoryTarget.  # noqa: E501
         :rtype: str
@@ -194,13 +199,36 @@ class UpdateArtifactoryTarget(object):
     def comment(self, comment):
         """Sets the comment of this UpdateArtifactoryTarget.
 
-        Comment about the target  # noqa: E501
+        Deprecated - use description  # noqa: E501
 
         :param comment: The comment of this UpdateArtifactoryTarget.  # noqa: E501
         :type: str
         """
 
         self._comment = comment
+
+    @property
+    def description(self):
+        """Gets the description of this UpdateArtifactoryTarget.  # noqa: E501
+
+        Description of the object  # noqa: E501
+
+        :return: The description of this UpdateArtifactoryTarget.  # noqa: E501
+        :rtype: str
+        """
+        return self._description
+
+    @description.setter
+    def description(self, description):
+        """Sets the description of this UpdateArtifactoryTarget.
+
+        Description of the object  # noqa: E501
+
+        :param description: The description of this UpdateArtifactoryTarget.  # noqa: E501
+        :type: str
+        """
+
+        self._description = description
 
     @property
     def json(self):

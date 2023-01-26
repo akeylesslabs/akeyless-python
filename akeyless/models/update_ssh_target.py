@@ -35,6 +35,7 @@ class UpdateSSHTarget(object):
     """
     openapi_types = {
         'comment': 'str',
+        'description': 'str',
         'host': 'str',
         'json': 'bool',
         'keep_prev_version': 'str',
@@ -53,6 +54,7 @@ class UpdateSSHTarget(object):
 
     attribute_map = {
         'comment': 'comment',
+        'description': 'description',
         'host': 'host',
         'json': 'json',
         'keep_prev_version': 'keep-prev-version',
@@ -69,13 +71,14 @@ class UpdateSSHTarget(object):
         'update_version': 'update-version'
     }
 
-    def __init__(self, comment=None, host=None, json=None, keep_prev_version=None, key=None, name=None, new_name=None, port=None, private_key=None, private_key_password=None, ssh_password=None, ssh_username=None, token=None, uid_token=None, update_version=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, comment=None, description=None, host=None, json=None, keep_prev_version=None, key=None, name=None, new_name=None, port=None, private_key=None, private_key_password=None, ssh_password=None, ssh_username=None, token=None, uid_token=None, update_version=None, local_vars_configuration=None):  # noqa: E501
         """UpdateSSHTarget - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._comment = None
+        self._description = None
         self._host = None
         self._json = None
         self._keep_prev_version = None
@@ -94,6 +97,8 @@ class UpdateSSHTarget(object):
 
         if comment is not None:
             self.comment = comment
+        if description is not None:
+            self.description = description
         if host is not None:
             self.host = host
         if json is not None:
@@ -126,7 +131,7 @@ class UpdateSSHTarget(object):
     def comment(self):
         """Gets the comment of this UpdateSSHTarget.  # noqa: E501
 
-        Comment about the target  # noqa: E501
+        Deprecated - use description  # noqa: E501
 
         :return: The comment of this UpdateSSHTarget.  # noqa: E501
         :rtype: str
@@ -137,13 +142,36 @@ class UpdateSSHTarget(object):
     def comment(self, comment):
         """Sets the comment of this UpdateSSHTarget.
 
-        Comment about the target  # noqa: E501
+        Deprecated - use description  # noqa: E501
 
         :param comment: The comment of this UpdateSSHTarget.  # noqa: E501
         :type: str
         """
 
         self._comment = comment
+
+    @property
+    def description(self):
+        """Gets the description of this UpdateSSHTarget.  # noqa: E501
+
+        Description of the object  # noqa: E501
+
+        :return: The description of this UpdateSSHTarget.  # noqa: E501
+        :rtype: str
+        """
+        return self._description
+
+    @description.setter
+    def description(self, description):
+        """Sets the description of this UpdateSSHTarget.
+
+        Description of the object  # noqa: E501
+
+        :param description: The description of this UpdateSSHTarget.  # noqa: E501
+        :type: str
+        """
+
+        self._description = description
 
     @property
     def host(self):

@@ -3,7 +3,8 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**comment** | **str** | Comment about the target | [optional] 
+**comment** | **str** | Deprecated - use description | [optional] 
+**description** | **str** | Description of the object | [optional] 
 **json** | **bool** | Set output format to JSON | [optional] 
 **k8s_cluster_ca_cert** | **str** | K8S cluster CA certificate | 
 **k8s_cluster_endpoint** | **str** | K8S cluster URL endpoint | 

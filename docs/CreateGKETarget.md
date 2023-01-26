@@ -3,7 +3,8 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**comment** | **str** | Comment about the target | [optional] 
+**comment** | **str** | Deprecated - use description | [optional] 
+**description** | **str** | Description of the object | [optional] 
 **gke_account_key** | **str** | GKE Service Account key file path | [optional] 
 **gke_cluster_cert** | **str** | GKE cluster CA certificate | [optional] 
 **gke_cluster_endpoint** | **str** | GKE cluster URL endpoint | [optional] 

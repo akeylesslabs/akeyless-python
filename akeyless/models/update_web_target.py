@@ -35,6 +35,7 @@ class UpdateWebTarget(object):
     """
     openapi_types = {
         'comment': 'str',
+        'description': 'str',
         'json': 'bool',
         'keep_prev_version': 'str',
         'key': 'str',
@@ -48,6 +49,7 @@ class UpdateWebTarget(object):
 
     attribute_map = {
         'comment': 'comment',
+        'description': 'description',
         'json': 'json',
         'keep_prev_version': 'keep-prev-version',
         'key': 'key',
@@ -59,13 +61,14 @@ class UpdateWebTarget(object):
         'url': 'url'
     }
 
-    def __init__(self, comment=None, json=None, keep_prev_version=None, key=None, name=None, new_name=None, token=None, uid_token=None, update_version=None, url=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, comment=None, description=None, json=None, keep_prev_version=None, key=None, name=None, new_name=None, token=None, uid_token=None, update_version=None, url=None, local_vars_configuration=None):  # noqa: E501
         """UpdateWebTarget - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._comment = None
+        self._description = None
         self._json = None
         self._keep_prev_version = None
         self._key = None
@@ -79,6 +82,8 @@ class UpdateWebTarget(object):
 
         if comment is not None:
             self.comment = comment
+        if description is not None:
+            self.description = description
         if json is not None:
             self.json = json
         if keep_prev_version is not None:
@@ -101,7 +106,7 @@ class UpdateWebTarget(object):
     def comment(self):
         """Gets the comment of this UpdateWebTarget.  # noqa: E501
 
-        Comment about the target  # noqa: E501
+        Deprecated - use description  # noqa: E501
 
         :return: The comment of this UpdateWebTarget.  # noqa: E501
         :rtype: str
@@ -112,13 +117,36 @@ class UpdateWebTarget(object):
     def comment(self, comment):
         """Sets the comment of this UpdateWebTarget.
 
-        Comment about the target  # noqa: E501
+        Deprecated - use description  # noqa: E501
 
         :param comment: The comment of this UpdateWebTarget.  # noqa: E501
         :type: str
         """
 
         self._comment = comment
+
+    @property
+    def description(self):
+        """Gets the description of this UpdateWebTarget.  # noqa: E501
+
+        Description of the object  # noqa: E501
+
+        :return: The description of this UpdateWebTarget.  # noqa: E501
+        :rtype: str
+        """
+        return self._description
+
+    @description.setter
+    def description(self, description):
+        """Sets the description of this UpdateWebTarget.
+
+        Description of the object  # noqa: E501
+
+        :param description: The description of this UpdateWebTarget.  # noqa: E501
+        :type: str
+        """
+
+        self._description = description
 
     @property
     def json(self):

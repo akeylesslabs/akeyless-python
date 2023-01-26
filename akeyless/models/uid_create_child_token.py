@@ -39,6 +39,7 @@ class UidCreateChildToken(object):
         'child_deny_rotate': 'bool',
         'child_ttl': 'int',
         'comment': 'str',
+        'description': 'str',
         'json': 'bool',
         'token': 'str',
         'uid_token': 'str',
@@ -51,13 +52,14 @@ class UidCreateChildToken(object):
         'child_deny_rotate': 'child-deny-rotate',
         'child_ttl': 'child-ttl',
         'comment': 'comment',
+        'description': 'description',
         'json': 'json',
         'token': 'token',
         'uid_token': 'uid-token',
         'uid_token_id': 'uid-token-id'
     }
 
-    def __init__(self, auth_method_name=None, child_deny_inheritance=None, child_deny_rotate=None, child_ttl=None, comment=None, json=None, token=None, uid_token=None, uid_token_id=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, auth_method_name=None, child_deny_inheritance=None, child_deny_rotate=None, child_ttl=None, comment=None, description=None, json=None, token=None, uid_token=None, uid_token_id=None, local_vars_configuration=None):  # noqa: E501
         """UidCreateChildToken - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -68,6 +70,7 @@ class UidCreateChildToken(object):
         self._child_deny_rotate = None
         self._child_ttl = None
         self._comment = None
+        self._description = None
         self._json = None
         self._token = None
         self._uid_token = None
@@ -84,6 +87,8 @@ class UidCreateChildToken(object):
             self.child_ttl = child_ttl
         if comment is not None:
             self.comment = comment
+        if description is not None:
+            self.description = description
         if json is not None:
             self.json = json
         if token is not None:
@@ -189,7 +194,7 @@ class UidCreateChildToken(object):
     def comment(self):
         """Gets the comment of this UidCreateChildToken.  # noqa: E501
 
-        New Token comment  # noqa: E501
+        Deprecated - use description  # noqa: E501
 
         :return: The comment of this UidCreateChildToken.  # noqa: E501
         :rtype: str
@@ -200,13 +205,36 @@ class UidCreateChildToken(object):
     def comment(self, comment):
         """Sets the comment of this UidCreateChildToken.
 
-        New Token comment  # noqa: E501
+        Deprecated - use description  # noqa: E501
 
         :param comment: The comment of this UidCreateChildToken.  # noqa: E501
         :type: str
         """
 
         self._comment = comment
+
+    @property
+    def description(self):
+        """Gets the description of this UidCreateChildToken.  # noqa: E501
+
+        Description of the object  # noqa: E501
+
+        :return: The description of this UidCreateChildToken.  # noqa: E501
+        :rtype: str
+        """
+        return self._description
+
+    @description.setter
+    def description(self, description):
+        """Sets the description of this UidCreateChildToken.
+
+        Description of the object  # noqa: E501
+
+        :param description: The description of this UidCreateChildToken.  # noqa: E501
+        :type: str
+        """
+
+        self._description = description
 
     @property
     def json(self):

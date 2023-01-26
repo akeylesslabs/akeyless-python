@@ -40,6 +40,7 @@ class ItemGeneralInfo(object):
         'cluster_gw_url': 'str',
         'display_metadata': 'str',
         'dynamic_secret_producer_details': 'DynamicSecretProducerInfo',
+        'importer_info': 'ImporterInfo',
         'password_policy': 'PasswordPolicyInfo',
         'rotated_secret_details': 'RotatedSecretDetailsInfo',
         'secure_remote_access_details': 'SecureRemoteAccess',
@@ -54,6 +55,7 @@ class ItemGeneralInfo(object):
         'cluster_gw_url': 'cluster_gw_url',
         'display_metadata': 'display_metadata',
         'dynamic_secret_producer_details': 'dynamic_secret_producer_details',
+        'importer_info': 'importer_info',
         'password_policy': 'password_policy',
         'rotated_secret_details': 'rotated_secret_details',
         'secure_remote_access_details': 'secure_remote_access_details',
@@ -61,7 +63,7 @@ class ItemGeneralInfo(object):
         'tokenizer_info': 'tokenizer_info'
     }
 
-    def __init__(self, cert_issue_details=None, certificate_chain_info=None, classic_key_details=None, cluster_gw_url=None, display_metadata=None, dynamic_secret_producer_details=None, password_policy=None, rotated_secret_details=None, secure_remote_access_details=None, static_secret_info=None, tokenizer_info=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, cert_issue_details=None, certificate_chain_info=None, classic_key_details=None, cluster_gw_url=None, display_metadata=None, dynamic_secret_producer_details=None, importer_info=None, password_policy=None, rotated_secret_details=None, secure_remote_access_details=None, static_secret_info=None, tokenizer_info=None, local_vars_configuration=None):  # noqa: E501
         """ItemGeneralInfo - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -73,6 +75,7 @@ class ItemGeneralInfo(object):
         self._cluster_gw_url = None
         self._display_metadata = None
         self._dynamic_secret_producer_details = None
+        self._importer_info = None
         self._password_policy = None
         self._rotated_secret_details = None
         self._secure_remote_access_details = None
@@ -92,6 +95,8 @@ class ItemGeneralInfo(object):
             self.display_metadata = display_metadata
         if dynamic_secret_producer_details is not None:
             self.dynamic_secret_producer_details = dynamic_secret_producer_details
+        if importer_info is not None:
+            self.importer_info = importer_info
         if password_policy is not None:
             self.password_policy = password_policy
         if rotated_secret_details is not None:
@@ -228,6 +233,27 @@ class ItemGeneralInfo(object):
         """
 
         self._dynamic_secret_producer_details = dynamic_secret_producer_details
+
+    @property
+    def importer_info(self):
+        """Gets the importer_info of this ItemGeneralInfo.  # noqa: E501
+
+
+        :return: The importer_info of this ItemGeneralInfo.  # noqa: E501
+        :rtype: ImporterInfo
+        """
+        return self._importer_info
+
+    @importer_info.setter
+    def importer_info(self, importer_info):
+        """Sets the importer_info of this ItemGeneralInfo.
+
+
+        :param importer_info: The importer_info of this ItemGeneralInfo.  # noqa: E501
+        :type: ImporterInfo
+        """
+
+        self._importer_info = importer_info
 
     @property
     def password_policy(self):

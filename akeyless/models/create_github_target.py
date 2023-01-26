@@ -35,6 +35,7 @@ class CreateGithubTarget(object):
     """
     openapi_types = {
         'comment': 'str',
+        'description': 'str',
         'github_app_id': 'int',
         'github_app_private_key': 'str',
         'github_base_url': 'str',
@@ -47,6 +48,7 @@ class CreateGithubTarget(object):
 
     attribute_map = {
         'comment': 'comment',
+        'description': 'description',
         'github_app_id': 'github-app-id',
         'github_app_private_key': 'github-app-private-key',
         'github_base_url': 'github-base-url',
@@ -57,13 +59,14 @@ class CreateGithubTarget(object):
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, comment=None, github_app_id=None, github_app_private_key=None, github_base_url=None, json=None, key=None, name=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, comment=None, description=None, github_app_id=None, github_app_private_key=None, github_base_url=None, json=None, key=None, name=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """CreateGithubTarget - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._comment = None
+        self._description = None
         self._github_app_id = None
         self._github_app_private_key = None
         self._github_base_url = None
@@ -76,6 +79,8 @@ class CreateGithubTarget(object):
 
         if comment is not None:
             self.comment = comment
+        if description is not None:
+            self.description = description
         if github_app_id is not None:
             self.github_app_id = github_app_id
         if github_app_private_key is not None:
@@ -96,7 +101,7 @@ class CreateGithubTarget(object):
     def comment(self):
         """Gets the comment of this CreateGithubTarget.  # noqa: E501
 
-        Comment about the target  # noqa: E501
+        Deprecated - use description  # noqa: E501
 
         :return: The comment of this CreateGithubTarget.  # noqa: E501
         :rtype: str
@@ -107,13 +112,36 @@ class CreateGithubTarget(object):
     def comment(self, comment):
         """Sets the comment of this CreateGithubTarget.
 
-        Comment about the target  # noqa: E501
+        Deprecated - use description  # noqa: E501
 
         :param comment: The comment of this CreateGithubTarget.  # noqa: E501
         :type: str
         """
 
         self._comment = comment
+
+    @property
+    def description(self):
+        """Gets the description of this CreateGithubTarget.  # noqa: E501
+
+        Description of the object  # noqa: E501
+
+        :return: The description of this CreateGithubTarget.  # noqa: E501
+        :rtype: str
+        """
+        return self._description
+
+    @description.setter
+    def description(self, description):
+        """Sets the description of this CreateGithubTarget.
+
+        Description of the object  # noqa: E501
+
+        :param description: The description of this CreateGithubTarget.  # noqa: E501
+        :type: str
+        """
+
+        self._description = description
 
     @property
     def github_app_id(self):
