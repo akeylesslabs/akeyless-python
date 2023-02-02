@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **access_rules_type** | **str** |  | [optional] 
 **allowed_api** | **bool** |  | [optional] 
 **alloweds_login** | **bool** |  | [optional] 
+**editable** | **bool** |  | [optional] 
 **err_msg** | **str** |  | [optional] 
 **hash** | **str** |  | [optional] 
 **is_valid** | **bool** |  | [optional] 

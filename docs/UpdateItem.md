@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **new_metadata** | **str** | Deprecated - use description | [optional] [default to 'default_metadata']
 **new_name** | **str** | New item name | [optional] 
 **rm_tag** | **list[str]** | List of the existent tags that will be removed from this item | [optional] 
+**rotate_after_disconnect** | **str** | Rotate the value of the secret after SRA session ends | [optional] [default to 'false']
 **secure_access_add_host** | **list[str]** |  | [optional] 
 **secure_access_allow_external_user** | **str** |  | [optional] 
 **secure_access_allow_port_forwading** | **bool** |  | [optional] 

@@ -5,6 +5,7 @@ getKubeExecCreds is a command that gets credentials for authentication with Kube
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **alt_names** | **str** | The Subject Alternative Names to be included in the PKI certificate (in a comma-separated list) (if CSR is supplied this flag is ignored and any DNS.* names are taken from it) | [optional] 
+**api_version** | **str** | Client authentication API version | [optional] [default to 'v1']
 **cert_issuer_name** | **str** | The name of the PKI certificate issuer | 
 **common_name** | **str** | The common name to be included in the PKI certificate (if CSR is supplied this flag is ignored and the CSR subject CN is taken) | [optional] 
 **csr_data_base64** | **str** | Certificate Signing Request contents encoded in base64 to generate the certificate with | [optional] 
