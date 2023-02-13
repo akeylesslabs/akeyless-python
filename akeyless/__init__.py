@@ -15,7 +15,7 @@
 
 from __future__ import absolute_import
 
-__version__ = "3.2.3"
+__version__ = "3.2.4"
 
 # import apis into sdk package
 from akeyless.api.v2_api import V2Api
@@ -37,6 +37,7 @@ from akeyless.models.account_general_settings import AccountGeneralSettings
 from akeyless.models.account_object_version_settings_output import AccountObjectVersionSettingsOutput
 from akeyless.models.active_directory_migration import ActiveDirectoryMigration
 from akeyless.models.active_directory_payload import ActiveDirectoryPayload
+from akeyless.models.add_gateway_allowed_access_id import AddGatewayAllowedAccessId
 from akeyless.models.admins_config_part import AdminsConfigPart
 from akeyless.models.akeyless_gateway_config import AkeylessGatewayConfig
 from akeyless.models.allowed_access import AllowedAccess
@@ -126,6 +127,8 @@ from akeyless.models.create_key import CreateKey
 from akeyless.models.create_key_output import CreateKeyOutput
 from akeyless.models.create_ldap_target import CreateLdapTarget
 from akeyless.models.create_ldap_target_output import CreateLdapTargetOutput
+from akeyless.models.create_linked_target import CreateLinkedTarget
+from akeyless.models.create_linked_target_output import CreateLinkedTargetOutput
 from akeyless.models.create_native_k8_s_target import CreateNativeK8STarget
 from akeyless.models.create_native_k8_s_target_output import CreateNativeK8STargetOutput
 from akeyless.models.create_pki_cert_issuer import CreatePKICertIssuer
@@ -151,6 +154,8 @@ from akeyless.models.create_tokenizer import CreateTokenizer
 from akeyless.models.create_tokenizer_output import CreateTokenizerOutput
 from akeyless.models.create_web_target import CreateWebTarget
 from akeyless.models.create_web_target_output import CreateWebTargetOutput
+from akeyless.models.create_windows_target import CreateWindowsTarget
+from akeyless.models.create_windows_target_output import CreateWindowsTargetOutput
 from akeyless.models.customer_fragment import CustomerFragment
 from akeyless.models.customer_fragments_json import CustomerFragmentsJson
 from akeyless.models.customer_full_address import CustomerFullAddress
@@ -173,6 +178,7 @@ from akeyless.models.delete_auth_method_output import DeleteAuthMethodOutput
 from akeyless.models.delete_auth_methods import DeleteAuthMethods
 from akeyless.models.delete_auth_methods_output import DeleteAuthMethodsOutput
 from akeyless.models.delete_event_forwarder import DeleteEventForwarder
+from akeyless.models.delete_gateway_allowed_access_id import DeleteGatewayAllowedAccessId
 from akeyless.models.delete_item import DeleteItem
 from akeyless.models.delete_item_output import DeleteItemOutput
 from akeyless.models.delete_items import DeleteItems
@@ -501,6 +507,7 @@ from akeyless.models.secure_remote_access import SecureRemoteAccess
 from akeyless.models.set_item_state import SetItemState
 from akeyless.models.set_role_rule import SetRoleRule
 from akeyless.models.share_item import ShareItem
+from akeyless.models.sharing_policy_info import SharingPolicyInfo
 from akeyless.models.sign_gpg import SignGPG
 from akeyless.models.sign_gpg_output import SignGPGOutput
 from akeyless.models.sign_jwt_output import SignJWTOutput
@@ -584,6 +591,7 @@ from akeyless.models.update_item_output import UpdateItemOutput
 from akeyless.models.update_ldap_target import UpdateLdapTarget
 from akeyless.models.update_ldap_target_details import UpdateLdapTargetDetails
 from akeyless.models.update_ldap_target_output import UpdateLdapTargetOutput
+from akeyless.models.update_linked_target import UpdateLinkedTarget
 from akeyless.models.update_native_k8_s_target import UpdateNativeK8STarget
 from akeyless.models.update_native_k8_s_target_output import UpdateNativeK8STargetOutput
 from akeyless.models.update_output import UpdateOutput
@@ -615,6 +623,7 @@ from akeyless.models.update_target_output import UpdateTargetOutput
 from akeyless.models.update_web_target import UpdateWebTarget
 from akeyless.models.update_web_target_details import UpdateWebTargetDetails
 from akeyless.models.update_web_target_output import UpdateWebTargetOutput
+from akeyless.models.update_windows_target import UpdateWindowsTarget
 from akeyless.models.upload_pkcs12 import UploadPKCS12
 from akeyless.models.upload_rsa import UploadRSA
 from akeyless.models.validate_token import ValidateToken

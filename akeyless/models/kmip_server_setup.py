@@ -51,7 +51,7 @@ class KmipServerSetup(object):
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, certificate_ttl=None, hostname=None, json=None, root=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, certificate_ttl=90, hostname=None, json=False, root=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """KmipServerSetup - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -70,8 +70,7 @@ class KmipServerSetup(object):
         self.hostname = hostname
         if json is not None:
             self.json = json
-        if root is not None:
-            self.root = root
+        self.root = root
         if token is not None:
             self.token = token
         if uid_token is not None:
@@ -81,6 +80,7 @@ class KmipServerSetup(object):
     def certificate_ttl(self):
         """Gets the certificate_ttl of this KmipServerSetup.  # noqa: E501
 
+        Server certificate TTL in days  # noqa: E501
 
         :return: The certificate_ttl of this KmipServerSetup.  # noqa: E501
         :rtype: int
@@ -91,6 +91,7 @@ class KmipServerSetup(object):
     def certificate_ttl(self, certificate_ttl):
         """Sets the certificate_ttl of this KmipServerSetup.
 
+        Server certificate TTL in days  # noqa: E501
 
         :param certificate_ttl: The certificate_ttl of this KmipServerSetup.  # noqa: E501
         :type: int
@@ -150,6 +151,7 @@ class KmipServerSetup(object):
     def root(self):
         """Gets the root of this KmipServerSetup.  # noqa: E501
 
+        Root path of KMIP Resources  # noqa: E501
 
         :return: The root of this KmipServerSetup.  # noqa: E501
         :rtype: str
@@ -160,10 +162,13 @@ class KmipServerSetup(object):
     def root(self, root):
         """Sets the root of this KmipServerSetup.
 
+        Root path of KMIP Resources  # noqa: E501
 
         :param root: The root of this KmipServerSetup.  # noqa: E501
         :type: str
         """
+        if self.local_vars_configuration.client_side_validation and root is None:  # noqa: E501
+            raise ValueError("Invalid value for `root`, must not be `None`")  # noqa: E501
 
         self._root = root
 

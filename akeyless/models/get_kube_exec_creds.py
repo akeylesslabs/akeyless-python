@@ -35,6 +35,7 @@ class GetKubeExecCreds(object):
     """
     openapi_types = {
         'alt_names': 'str',
+        'api_version': 'str',
         'cert_issuer_name': 'str',
         'common_name': 'str',
         'csr_data_base64': 'str',
@@ -49,6 +50,7 @@ class GetKubeExecCreds(object):
 
     attribute_map = {
         'alt_names': 'alt-names',
+        'api_version': 'api-version',
         'cert_issuer_name': 'cert-issuer-name',
         'common_name': 'common-name',
         'csr_data_base64': 'csr-data-base64',
@@ -61,13 +63,14 @@ class GetKubeExecCreds(object):
         'uri_sans': 'uri-sans'
     }
 
-    def __init__(self, alt_names=None, cert_issuer_name=None, common_name=None, csr_data_base64=None, extended_key_usage=None, json=None, key_data_base64=None, token=None, ttl=None, uid_token=None, uri_sans=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, alt_names=None, api_version='v1', cert_issuer_name=None, common_name=None, csr_data_base64=None, extended_key_usage=None, json=False, key_data_base64=None, token=None, ttl=None, uid_token=None, uri_sans=None, local_vars_configuration=None):  # noqa: E501
         """GetKubeExecCreds - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._alt_names = None
+        self._api_version = None
         self._cert_issuer_name = None
         self._common_name = None
         self._csr_data_base64 = None
@@ -82,6 +85,8 @@ class GetKubeExecCreds(object):
 
         if alt_names is not None:
             self.alt_names = alt_names
+        if api_version is not None:
+            self.api_version = api_version
         self.cert_issuer_name = cert_issuer_name
         if common_name is not None:
             self.common_name = common_name
@@ -124,6 +129,29 @@ class GetKubeExecCreds(object):
         """
 
         self._alt_names = alt_names
+
+    @property
+    def api_version(self):
+        """Gets the api_version of this GetKubeExecCreds.  # noqa: E501
+
+        Client authentication API version  # noqa: E501
+
+        :return: The api_version of this GetKubeExecCreds.  # noqa: E501
+        :rtype: str
+        """
+        return self._api_version
+
+    @api_version.setter
+    def api_version(self, api_version):
+        """Sets the api_version of this GetKubeExecCreds.
+
+        Client authentication API version  # noqa: E501
+
+        :param api_version: The api_version of this GetKubeExecCreds.  # noqa: E501
+        :type: str
+        """
+
+        self._api_version = api_version
 
     @property
     def cert_issuer_name(self):

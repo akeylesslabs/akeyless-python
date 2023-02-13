@@ -53,7 +53,7 @@ class SignJWTWithClassicKey(object):
         'version': 'version'
     }
 
-    def __init__(self, display_id=None, json=None, jwt_claims=None, signing_method=None, token=None, uid_token=None, version=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, display_id=None, json=False, jwt_claims=None, signing_method=None, token=None, uid_token=None, version=None, local_vars_configuration=None):  # noqa: E501
         """SignJWTWithClassicKey - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()

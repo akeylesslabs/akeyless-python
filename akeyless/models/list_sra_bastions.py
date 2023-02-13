@@ -47,7 +47,7 @@ class ListSRABastions(object):
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, allowed_urls_only=None, json=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, allowed_urls_only=False, json=False, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """ListSRABastions - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -72,6 +72,7 @@ class ListSRABastions(object):
     def allowed_urls_only(self):
         """Gets the allowed_urls_only of this ListSRABastions.  # noqa: E501
 
+        Filter the response to show only bastions allowed URLs  # noqa: E501
 
         :return: The allowed_urls_only of this ListSRABastions.  # noqa: E501
         :rtype: bool
@@ -82,6 +83,7 @@ class ListSRABastions(object):
     def allowed_urls_only(self, allowed_urls_only):
         """Sets the allowed_urls_only of this ListSRABastions.
 
+        Filter the response to show only bastions allowed URLs  # noqa: E501
 
         :param allowed_urls_only: The allowed_urls_only of this ListSRABastions.  # noqa: E501
         :type: bool

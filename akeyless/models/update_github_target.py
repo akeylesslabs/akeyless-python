@@ -65,7 +65,7 @@ class UpdateGithubTarget(object):
         'update_version': 'update-version'
     }
 
-    def __init__(self, comment=None, description=None, github_app_id=None, github_app_private_key=None, github_base_url=None, json=None, keep_prev_version=None, key=None, name=None, new_name=None, token=None, uid_token=None, update_version=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, comment=None, description=None, github_app_id=None, github_app_private_key=None, github_base_url='https://api.github.com/', json=False, keep_prev_version=None, key=None, name=None, new_name=None, token=None, uid_token=None, update_version=None, local_vars_configuration=None):  # noqa: E501
         """UpdateGithubTarget - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -254,6 +254,7 @@ class UpdateGithubTarget(object):
     def keep_prev_version(self):
         """Gets the keep_prev_version of this UpdateGithubTarget.  # noqa: E501
 
+        Whether to keep previous version [true/false]. If not set, use default according to account settings  # noqa: E501
 
         :return: The keep_prev_version of this UpdateGithubTarget.  # noqa: E501
         :rtype: str
@@ -264,6 +265,7 @@ class UpdateGithubTarget(object):
     def keep_prev_version(self, keep_prev_version):
         """Sets the keep_prev_version of this UpdateGithubTarget.
 
+        Whether to keep previous version [true/false]. If not set, use default according to account settings  # noqa: E501
 
         :param keep_prev_version: The keep_prev_version of this UpdateGithubTarget.  # noqa: E501
         :type: str

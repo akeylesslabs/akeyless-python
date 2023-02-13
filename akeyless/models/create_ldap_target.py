@@ -65,7 +65,7 @@ class CreateLdapTarget(object):
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, bind_dn=None, bind_dn_password=None, comment=None, description=None, json=None, key=None, ldap_ca_cert=None, ldap_url=None, name=None, server_type='OpenLDAP', token=None, token_expiration=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, bind_dn=None, bind_dn_password=None, comment=None, description=None, json=False, key=None, ldap_ca_cert=None, ldap_url=None, name=None, server_type='OpenLDAP', token=None, token_expiration=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """CreateLdapTarget - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()

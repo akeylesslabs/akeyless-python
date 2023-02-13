@@ -38,6 +38,7 @@ class UpdateAccountSettings(object):
         'city': 'str',
         'company_name': 'str',
         'country': 'str',
+        'default_share_link_ttl_minutes': 'str',
         'default_versioning': 'str',
         'dp_enable_classic_key_protection': 'str',
         'item_type': 'str',
@@ -62,6 +63,7 @@ class UpdateAccountSettings(object):
         'city': 'city',
         'company_name': 'company-name',
         'country': 'country',
+        'default_share_link_ttl_minutes': 'default-share-link-ttl-minutes',
         'default_versioning': 'default-versioning',
         'dp_enable_classic_key_protection': 'dp-enable-classic-key-protection',
         'item_type': 'item-type',
@@ -81,7 +83,7 @@ class UpdateAccountSettings(object):
         'use_capital_letters': 'use_capital-letters'
     }
 
-    def __init__(self, address=None, city=None, company_name=None, country=None, default_versioning=None, dp_enable_classic_key_protection=None, item_type=None, json=None, jwt_ttl_default=None, jwt_ttl_max=None, jwt_ttl_min=None, max_versions=None, password_length=None, phone=None, postal_code=None, token=None, uid_token=None, use_lower_letters=None, use_numbers=None, use_special_characters=None, use_capital_letters=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, address=None, city=None, company_name=None, country=None, default_share_link_ttl_minutes=None, default_versioning=None, dp_enable_classic_key_protection=None, item_type=None, json=False, jwt_ttl_default=None, jwt_ttl_max=None, jwt_ttl_min=None, max_versions=None, password_length=None, phone=None, postal_code=None, token=None, uid_token=None, use_lower_letters=None, use_numbers=None, use_special_characters=None, use_capital_letters=None, local_vars_configuration=None):  # noqa: E501
         """UpdateAccountSettings - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -91,6 +93,7 @@ class UpdateAccountSettings(object):
         self._city = None
         self._company_name = None
         self._country = None
+        self._default_share_link_ttl_minutes = None
         self._default_versioning = None
         self._dp_enable_classic_key_protection = None
         self._item_type = None
@@ -118,6 +121,8 @@ class UpdateAccountSettings(object):
             self.company_name = company_name
         if country is not None:
             self.country = country
+        if default_share_link_ttl_minutes is not None:
+            self.default_share_link_ttl_minutes = default_share_link_ttl_minutes
         if default_versioning is not None:
             self.default_versioning = default_versioning
         if dp_enable_classic_key_protection is not None:
@@ -246,10 +251,33 @@ class UpdateAccountSettings(object):
         self._country = country
 
     @property
+    def default_share_link_ttl_minutes(self):
+        """Gets the default_share_link_ttl_minutes of this UpdateAccountSettings.  # noqa: E501
+
+        Set the default ttl in minutes for sharing item number between 60 and 43200  # noqa: E501
+
+        :return: The default_share_link_ttl_minutes of this UpdateAccountSettings.  # noqa: E501
+        :rtype: str
+        """
+        return self._default_share_link_ttl_minutes
+
+    @default_share_link_ttl_minutes.setter
+    def default_share_link_ttl_minutes(self, default_share_link_ttl_minutes):
+        """Sets the default_share_link_ttl_minutes of this UpdateAccountSettings.
+
+        Set the default ttl in minutes for sharing item number between 60 and 43200  # noqa: E501
+
+        :param default_share_link_ttl_minutes: The default_share_link_ttl_minutes of this UpdateAccountSettings.  # noqa: E501
+        :type: str
+        """
+
+        self._default_share_link_ttl_minutes = default_share_link_ttl_minutes
+
+    @property
     def default_versioning(self):
         """Gets the default_versioning of this UpdateAccountSettings.  # noqa: E501
 
-        Should create version by default  # noqa: E501
+        If set to true, new item version will be created on each update [true/false]  # noqa: E501
 
         :return: The default_versioning of this UpdateAccountSettings.  # noqa: E501
         :rtype: str
@@ -260,7 +288,7 @@ class UpdateAccountSettings(object):
     def default_versioning(self, default_versioning):
         """Sets the default_versioning of this UpdateAccountSettings.
 
-        Should create version by default  # noqa: E501
+        If set to true, new item version will be created on each update [true/false]  # noqa: E501
 
         :param default_versioning: The default_versioning of this UpdateAccountSettings.  # noqa: E501
         :type: str
@@ -272,7 +300,7 @@ class UpdateAccountSettings(object):
     def dp_enable_classic_key_protection(self):
         """Gets the dp_enable_classic_key_protection of this UpdateAccountSettings.  # noqa: E501
 
-        Enable classic key protection [\"true\"/\"false\"]  # noqa: E501
+        Set to update protection with classic keys state [true/false]  # noqa: E501
 
         :return: The dp_enable_classic_key_protection of this UpdateAccountSettings.  # noqa: E501
         :rtype: str
@@ -283,7 +311,7 @@ class UpdateAccountSettings(object):
     def dp_enable_classic_key_protection(self, dp_enable_classic_key_protection):
         """Sets the dp_enable_classic_key_protection of this UpdateAccountSettings.
 
-        Enable classic key protection [\"true\"/\"false\"]  # noqa: E501
+        Set to update protection with classic keys state [true/false]  # noqa: E501
 
         :param dp_enable_classic_key_protection: The dp_enable_classic_key_protection of this UpdateAccountSettings.  # noqa: E501
         :type: str
@@ -433,7 +461,7 @@ class UpdateAccountSettings(object):
     def password_length(self):
         """Gets the password_length of this UpdateAccountSettings.  # noqa: E501
 
-        For PasswordPolicy use  # noqa: E501
+        Password length between 5 - to 50 characters  # noqa: E501
 
         :return: The password_length of this UpdateAccountSettings.  # noqa: E501
         :rtype: int
@@ -444,7 +472,7 @@ class UpdateAccountSettings(object):
     def password_length(self, password_length):
         """Sets the password_length of this UpdateAccountSettings.
 
-        For PasswordPolicy use  # noqa: E501
+        Password length between 5 - to 50 characters  # noqa: E501
 
         :param password_length: The password_length of this UpdateAccountSettings.  # noqa: E501
         :type: int
@@ -548,7 +576,7 @@ class UpdateAccountSettings(object):
     def use_lower_letters(self):
         """Gets the use_lower_letters of this UpdateAccountSettings.  # noqa: E501
 
-        For PasswordPolicy use  # noqa: E501
+        Password must contain lower case letters [true/false]  # noqa: E501
 
         :return: The use_lower_letters of this UpdateAccountSettings.  # noqa: E501
         :rtype: str
@@ -559,7 +587,7 @@ class UpdateAccountSettings(object):
     def use_lower_letters(self, use_lower_letters):
         """Sets the use_lower_letters of this UpdateAccountSettings.
 
-        For PasswordPolicy use  # noqa: E501
+        Password must contain lower case letters [true/false]  # noqa: E501
 
         :param use_lower_letters: The use_lower_letters of this UpdateAccountSettings.  # noqa: E501
         :type: str
@@ -571,7 +599,7 @@ class UpdateAccountSettings(object):
     def use_numbers(self):
         """Gets the use_numbers of this UpdateAccountSettings.  # noqa: E501
 
-        For PasswordPolicy use  # noqa: E501
+        Password must contain numbers [true/false]  # noqa: E501
 
         :return: The use_numbers of this UpdateAccountSettings.  # noqa: E501
         :rtype: str
@@ -582,7 +610,7 @@ class UpdateAccountSettings(object):
     def use_numbers(self, use_numbers):
         """Sets the use_numbers of this UpdateAccountSettings.
 
-        For PasswordPolicy use  # noqa: E501
+        Password must contain numbers [true/false]  # noqa: E501
 
         :param use_numbers: The use_numbers of this UpdateAccountSettings.  # noqa: E501
         :type: str
@@ -594,7 +622,7 @@ class UpdateAccountSettings(object):
     def use_special_characters(self):
         """Gets the use_special_characters of this UpdateAccountSettings.  # noqa: E501
 
-        For PasswordPolicy use  # noqa: E501
+        Password must contain special characters [true/false]  # noqa: E501
 
         :return: The use_special_characters of this UpdateAccountSettings.  # noqa: E501
         :rtype: str
@@ -605,7 +633,7 @@ class UpdateAccountSettings(object):
     def use_special_characters(self, use_special_characters):
         """Sets the use_special_characters of this UpdateAccountSettings.
 
-        For PasswordPolicy use  # noqa: E501
+        Password must contain special characters [true/false]  # noqa: E501
 
         :param use_special_characters: The use_special_characters of this UpdateAccountSettings.  # noqa: E501
         :type: str
@@ -617,7 +645,7 @@ class UpdateAccountSettings(object):
     def use_capital_letters(self):
         """Gets the use_capital_letters of this UpdateAccountSettings.  # noqa: E501
 
-        For PasswordPolicy use  # noqa: E501
+        Password must contain capital letters [true/false]  # noqa: E501
 
         :return: The use_capital_letters of this UpdateAccountSettings.  # noqa: E501
         :rtype: str
@@ -628,7 +656,7 @@ class UpdateAccountSettings(object):
     def use_capital_letters(self, use_capital_letters):
         """Sets the use_capital_letters of this UpdateAccountSettings.
 
-        For PasswordPolicy use  # noqa: E501
+        Password must contain capital letters [true/false]  # noqa: E501
 
         :param use_capital_letters: The use_capital_letters of this UpdateAccountSettings.  # noqa: E501
         :type: str

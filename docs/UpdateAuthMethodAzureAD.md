@@ -19,9 +19,9 @@ Name | Type | Description | Notes
 **force_sub_claims** | **bool** | if true: enforce role-association must include sub claims | [optional] 
 **gw_bound_ips** | **list[str]** | A CIDR whitelist with the GW IPs that the access is restricted to | [optional] 
 **issuer** | **str** | Issuer URL | [optional] [default to 'https://sts.windows.net/---bound_tenant_id---']
-**json** | **bool** | Set output format to JSON | [optional] 
+**json** | **bool** | Set output format to JSON | [optional] [default to False]
 **jwks_uri** | **str** | The URL to the JSON Web Key Set (JWKS) that containing the public keys that should be used to verify any JSON Web Token (JWT) issued by the authorization server. | [optional] [default to 'https://login.microsoftonline.com/common/discovery/keys']
-**jwt_ttl** | **int** | Jwt TTL | [optional] 
+**jwt_ttl** | **int** | Jwt TTL | [optional] [default to 0]
 **name** | **str** | Auth Method name | 
 **new_name** | **str** | Auth Method new name | [optional] 
 **token** | **str** | Authentication token (see &#x60;/auth&#x60; and &#x60;/configure&#x60;) | [optional] 

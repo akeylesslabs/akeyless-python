@@ -49,7 +49,7 @@ class DeleteTargets(object):
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, force_deletion=False, json=None, path=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, force_deletion=False, json=False, path=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """DeleteTargets - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()

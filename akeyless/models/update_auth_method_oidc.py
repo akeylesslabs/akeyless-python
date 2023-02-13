@@ -75,7 +75,7 @@ class UpdateAuthMethodOIDC(object):
         'unique_identifier': 'unique-identifier'
     }
 
-    def __init__(self, access_expires=0, allowed_redirect_uri=None, audience=None, bound_ips=None, client_id=None, client_secret=None, force_sub_claims=None, gw_bound_ips=None, issuer=None, json=None, jwt_ttl=None, name=None, new_name=None, required_scopes=None, required_scopes_prefix=None, token=None, uid_token=None, unique_identifier=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, access_expires=0, allowed_redirect_uri=None, audience=None, bound_ips=None, client_id=None, client_secret=None, force_sub_claims=None, gw_bound_ips=None, issuer=None, json=False, jwt_ttl=0, name=None, new_name=None, required_scopes=None, required_scopes_prefix=None, token=None, uid_token=None, unique_identifier=None, local_vars_configuration=None):  # noqa: E501
         """UpdateAuthMethodOIDC - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()

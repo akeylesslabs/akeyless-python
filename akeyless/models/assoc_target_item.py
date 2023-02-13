@@ -71,7 +71,7 @@ class AssocTargetItem(object):
         'vault_name': 'vault-name'
     }
 
-    def __init__(self, disable_previous_key_version=None, json=None, key_operations=None, keyring_name=None, kms_algorithm=None, location_id=None, multi_region='false', name=None, project_id=None, purpose=None, regions=None, target_name=None, tenant_secret_type=None, token=None, uid_token=None, vault_name=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, disable_previous_key_version=False, json=False, key_operations=None, keyring_name=None, kms_algorithm=None, location_id=None, multi_region='false', name=None, project_id=None, purpose=None, regions=None, target_name=None, tenant_secret_type=None, token=None, uid_token=None, vault_name=None, local_vars_configuration=None):  # noqa: E501
         """AssocTargetItem - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -268,7 +268,7 @@ class AssocTargetItem(object):
     def multi_region(self):
         """Gets the multi_region of this AssocTargetItem.  # noqa: E501
 
-        Set to 'true' to create a multi region managed key (relevant for aws targets)  # noqa: E501
+        Set to 'true' to create a multi-region managed key. (Relevant only for Classic Key AWS targets)  # noqa: E501
 
         :return: The multi_region of this AssocTargetItem.  # noqa: E501
         :rtype: str
@@ -279,7 +279,7 @@ class AssocTargetItem(object):
     def multi_region(self, multi_region):
         """Sets the multi_region of this AssocTargetItem.
 
-        Set to 'true' to create a multi region managed key (relevant for aws targets)  # noqa: E501
+        Set to 'true' to create a multi-region managed key. (Relevant only for Classic Key AWS targets)  # noqa: E501
 
         :param multi_region: The multi_region of this AssocTargetItem.  # noqa: E501
         :type: str

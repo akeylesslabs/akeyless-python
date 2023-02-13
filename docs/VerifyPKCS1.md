@@ -5,7 +5,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **display_id** | **str** | The display id of the key to use in the verification process | [optional] 
 **item_id** | **int** | The item id of the key to use in the verification process | [optional] 
-**json** | **bool** | Set output format to JSON | [optional] 
+**json** | **bool** | Set output format to JSON | [optional] [default to False]
 **key_name** | **str** | The name of the RSA key to use in the verification process | 
 **message** | **str** | The message to be verified | 
 **signature** | **str** | The message&#39;s signature | 

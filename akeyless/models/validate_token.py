@@ -43,7 +43,7 @@ class ValidateToken(object):
         'token': 'token'
     }
 
-    def __init__(self, json=None, token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, json=False, token=None, local_vars_configuration=None):  # noqa: E501
         """ValidateToken - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()

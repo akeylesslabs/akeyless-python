@@ -71,7 +71,7 @@ class CreateTokenizer(object):
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, alphabet=None, decoding_template=None, delete_protection=None, description=None, encoding_template=None, encryption_key_name=None, json=None, metadata=None, name=None, pattern=None, tag=None, template_type=None, token=None, tokenizer_type=None, tweak_type=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, alphabet=None, decoding_template=None, delete_protection=None, description=None, encoding_template=None, encryption_key_name=None, json=False, metadata=None, name=None, pattern=None, tag=None, template_type=None, token=None, tokenizer_type='vaultless', tweak_type=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """CreateTokenizer - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -175,7 +175,7 @@ class CreateTokenizer(object):
     def delete_protection(self):
         """Gets the delete_protection of this CreateTokenizer.  # noqa: E501
 
-        Protection from accidental deletion of this item  # noqa: E501
+        Protection from accidental deletion of this item [true/false]  # noqa: E501
 
         :return: The delete_protection of this CreateTokenizer.  # noqa: E501
         :rtype: str
@@ -186,7 +186,7 @@ class CreateTokenizer(object):
     def delete_protection(self, delete_protection):
         """Sets the delete_protection of this CreateTokenizer.
 
-        Protection from accidental deletion of this item  # noqa: E501
+        Protection from accidental deletion of this item [true/false]  # noqa: E501
 
         :param delete_protection: The delete_protection of this CreateTokenizer.  # noqa: E501
         :type: str

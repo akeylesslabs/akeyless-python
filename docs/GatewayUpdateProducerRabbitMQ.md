@@ -4,8 +4,8 @@ gatewayUpdateProducerRabbitMQ is a command that updates rabbitmq producer
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**delete_protection** | **str** | Protection from accidental deletion of this item | [optional] 
-**json** | **bool** | Set output format to JSON | [optional] 
+**delete_protection** | **str** | Protection from accidental deletion of this item [true/false] | [optional] 
+**json** | **bool** | Set output format to JSON | [optional] [default to False]
 **name** | **str** | Producer name | 
 **new_name** | **str** | Producer name | [optional] 
 **producer_encryption_key_name** | **str** | Dynamic producer encryption key | [optional] 
@@ -17,11 +17,11 @@ Name | Type | Description | Notes
 **rabbitmq_user_tags** | **str** | User Tags | [optional] 
 **rabbitmq_user_vhost** | **str** | User Virtual Host | [optional] 
 **rabbitmq_user_write_permission** | **str** | User write permission | [optional] 
-**secure_access_enable** | **str** |  | [optional] 
-**secure_access_url** | **str** |  | [optional] 
-**secure_access_web** | **bool** | Secure Access Web Category | [optional] [default to True]
-**secure_access_web_browsing** | **bool** |  | [optional] 
-**secure_access_web_proxy** | **bool** |  | [optional] 
+**secure_access_enable** | **str** | Enable/Disable secure remote access [true/false] | [optional] 
+**secure_access_url** | **str** | Destination URL to inject secrets | [optional] 
+**secure_access_web** | **bool** | Enable Web Secure Remote Access | [optional] [default to True]
+**secure_access_web_browsing** | **bool** | Secure browser via Akeyless Web Access Bastion | [optional] [default to False]
+**secure_access_web_proxy** | **bool** | Web-Proxy via Akeyless Web Access Bastion | [optional] [default to False]
 **tags** | **list[str]** | List of the tags attached to this secret | [optional] 
 **target_name** | **str** | Target name | [optional] 
 **token** | **str** | Authentication token (see &#x60;/auth&#x60; and &#x60;/configure&#x60;) | [optional] 

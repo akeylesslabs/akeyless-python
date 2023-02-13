@@ -55,7 +55,7 @@ class SetRoleRule(object):
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, capability=None, json=None, path=None, role_name=None, rule_type='item-rule', token=None, ttl=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, capability=None, json=False, path=None, role_name=None, rule_type='item-rule', token=None, ttl=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """SetRoleRule - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()

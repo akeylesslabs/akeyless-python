@@ -73,7 +73,7 @@ class Connect(object):
         'via_bastion': 'via-bastion'
     }
 
-    def __init__(self, helper=None, rc_file_override=None, bastion_ctrl_path=None, bastion_ctrl_port='9900', bastion_ctrl_proto='http', bastion_ctrl_subdomain=None, cert_issuer_name=None, identity_file=None, json=None, name=None, ssh_command=None, ssh_extra_args=None, ssh_legacy_signing_alg=None, target=None, token=None, uid_token=None, via_bastion=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, helper=None, rc_file_override=None, bastion_ctrl_path=None, bastion_ctrl_port='9900', bastion_ctrl_proto='http', bastion_ctrl_subdomain=None, cert_issuer_name=None, identity_file=None, json=False, name=None, ssh_command=None, ssh_extra_args=None, ssh_legacy_signing_alg=False, target=None, token=None, uid_token=None, via_bastion=None, local_vars_configuration=None):  # noqa: E501
         """Connect - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()

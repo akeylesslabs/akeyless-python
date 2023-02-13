@@ -83,7 +83,7 @@ class GatewayUpdateProducerHanaDb(object):
         'user_ttl': 'user-ttl'
     }
 
-    def __init__(self, delete_protection=None, hana_dbname=None, hanadb_create_statements=None, hanadb_host='127.0.0.1', hanadb_password=None, hanadb_port='443', hanadb_revocation_statements=None, hanadb_username=None, json=None, name=None, new_name=None, producer_encryption_key_name=None, secure_access_bastion_issuer=None, secure_access_db_schema=None, secure_access_enable=None, secure_access_host=None, secure_access_web=None, tags=None, target_name=None, token=None, uid_token=None, user_ttl='60m', local_vars_configuration=None):  # noqa: E501
+    def __init__(self, delete_protection=None, hana_dbname=None, hanadb_create_statements=None, hanadb_host='127.0.0.1', hanadb_password=None, hanadb_port='443', hanadb_revocation_statements=None, hanadb_username=None, json=False, name=None, new_name=None, producer_encryption_key_name=None, secure_access_bastion_issuer=None, secure_access_db_schema=None, secure_access_enable=None, secure_access_host=None, secure_access_web=False, tags=None, target_name=None, token=None, uid_token=None, user_ttl='60m', local_vars_configuration=None):  # noqa: E501
         """GatewayUpdateProducerHanaDb - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -161,7 +161,7 @@ class GatewayUpdateProducerHanaDb(object):
     def delete_protection(self):
         """Gets the delete_protection of this GatewayUpdateProducerHanaDb.  # noqa: E501
 
-        Protection from accidental deletion of this item  # noqa: E501
+        Protection from accidental deletion of this item [true/false]  # noqa: E501
 
         :return: The delete_protection of this GatewayUpdateProducerHanaDb.  # noqa: E501
         :rtype: str
@@ -172,7 +172,7 @@ class GatewayUpdateProducerHanaDb(object):
     def delete_protection(self, delete_protection):
         """Sets the delete_protection of this GatewayUpdateProducerHanaDb.
 
-        Protection from accidental deletion of this item  # noqa: E501
+        Protection from accidental deletion of this item [true/false]  # noqa: E501
 
         :param delete_protection: The delete_protection of this GatewayUpdateProducerHanaDb.  # noqa: E501
         :type: str
@@ -439,6 +439,7 @@ class GatewayUpdateProducerHanaDb(object):
     def secure_access_bastion_issuer(self):
         """Gets the secure_access_bastion_issuer of this GatewayUpdateProducerHanaDb.  # noqa: E501
 
+        Path to the SSH Certificate Issuer for your Akeyless Bastion  # noqa: E501
 
         :return: The secure_access_bastion_issuer of this GatewayUpdateProducerHanaDb.  # noqa: E501
         :rtype: str
@@ -449,6 +450,7 @@ class GatewayUpdateProducerHanaDb(object):
     def secure_access_bastion_issuer(self, secure_access_bastion_issuer):
         """Sets the secure_access_bastion_issuer of this GatewayUpdateProducerHanaDb.
 
+        Path to the SSH Certificate Issuer for your Akeyless Bastion  # noqa: E501
 
         :param secure_access_bastion_issuer: The secure_access_bastion_issuer of this GatewayUpdateProducerHanaDb.  # noqa: E501
         :type: str
@@ -460,6 +462,7 @@ class GatewayUpdateProducerHanaDb(object):
     def secure_access_db_schema(self):
         """Gets the secure_access_db_schema of this GatewayUpdateProducerHanaDb.  # noqa: E501
 
+        The DB schema  # noqa: E501
 
         :return: The secure_access_db_schema of this GatewayUpdateProducerHanaDb.  # noqa: E501
         :rtype: str
@@ -470,6 +473,7 @@ class GatewayUpdateProducerHanaDb(object):
     def secure_access_db_schema(self, secure_access_db_schema):
         """Sets the secure_access_db_schema of this GatewayUpdateProducerHanaDb.
 
+        The DB schema  # noqa: E501
 
         :param secure_access_db_schema: The secure_access_db_schema of this GatewayUpdateProducerHanaDb.  # noqa: E501
         :type: str
@@ -481,6 +485,7 @@ class GatewayUpdateProducerHanaDb(object):
     def secure_access_enable(self):
         """Gets the secure_access_enable of this GatewayUpdateProducerHanaDb.  # noqa: E501
 
+        Enable/Disable secure remote access [true/false]  # noqa: E501
 
         :return: The secure_access_enable of this GatewayUpdateProducerHanaDb.  # noqa: E501
         :rtype: str
@@ -491,6 +496,7 @@ class GatewayUpdateProducerHanaDb(object):
     def secure_access_enable(self, secure_access_enable):
         """Sets the secure_access_enable of this GatewayUpdateProducerHanaDb.
 
+        Enable/Disable secure remote access [true/false]  # noqa: E501
 
         :param secure_access_enable: The secure_access_enable of this GatewayUpdateProducerHanaDb.  # noqa: E501
         :type: str
@@ -502,6 +508,7 @@ class GatewayUpdateProducerHanaDb(object):
     def secure_access_host(self):
         """Gets the secure_access_host of this GatewayUpdateProducerHanaDb.  # noqa: E501
 
+        Target DB servers for connections  # noqa: E501
 
         :return: The secure_access_host of this GatewayUpdateProducerHanaDb.  # noqa: E501
         :rtype: list[str]
@@ -512,6 +519,7 @@ class GatewayUpdateProducerHanaDb(object):
     def secure_access_host(self, secure_access_host):
         """Sets the secure_access_host of this GatewayUpdateProducerHanaDb.
 
+        Target DB servers for connections  # noqa: E501
 
         :param secure_access_host: The secure_access_host of this GatewayUpdateProducerHanaDb.  # noqa: E501
         :type: list[str]
@@ -523,6 +531,7 @@ class GatewayUpdateProducerHanaDb(object):
     def secure_access_web(self):
         """Gets the secure_access_web of this GatewayUpdateProducerHanaDb.  # noqa: E501
 
+        Enable Web Secure Remote Access  # noqa: E501
 
         :return: The secure_access_web of this GatewayUpdateProducerHanaDb.  # noqa: E501
         :rtype: bool
@@ -533,6 +542,7 @@ class GatewayUpdateProducerHanaDb(object):
     def secure_access_web(self, secure_access_web):
         """Sets the secure_access_web of this GatewayUpdateProducerHanaDb.
 
+        Enable Web Secure Remote Access  # noqa: E501
 
         :param secure_access_web: The secure_access_web of this GatewayUpdateProducerHanaDb.  # noqa: E501
         :type: bool

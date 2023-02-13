@@ -4,7 +4,7 @@ describePermissions is a command that shows which permissions your have to a par
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**json** | **bool** | Set output format to JSON | [optional] 
+**json** | **bool** | Set output format to JSON | [optional] [default to False]
 **path** | **str** | Path to an object | 
 **token** | **str** | Authentication token (see &#x60;/auth&#x60; and &#x60;/configure&#x60;) | [optional] 
 **type** | **str** | Type of object (item, am, role, target) | 

@@ -67,7 +67,7 @@ class CreateAzureTarget(object):
         'use_gw_cloud_identity': 'use-gw-cloud-identity'
     }
 
-    def __init__(self, client_id=None, client_secret=None, comment=None, description=None, json=None, key=None, name=None, resource_group_name=None, resource_name=None, subscription_id=None, tenant_id=None, token=None, uid_token=None, use_gw_cloud_identity=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, client_id=None, client_secret=None, comment=None, description=None, json=False, key=None, name=None, resource_group_name=None, resource_name=None, subscription_id=None, tenant_id=None, token=None, uid_token=None, use_gw_cloud_identity=None, local_vars_configuration=None):  # noqa: E501
         """CreateAzureTarget - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()

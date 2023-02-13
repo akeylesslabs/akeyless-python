@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 **ciphertext** | **str** | Ciphertext to be decrypted in base64 encoded format | 
 **display_id** | **str** | The display id of the key to use in the decryption process | [optional] 
 **item_id** | **int** | The item id of the key to use in the decryption process | [optional] 
-**json** | **bool** | Set output format to JSON | [optional] 
+**json** | **bool** | Set output format to JSON | [optional] [default to False]
 **key_name** | **str** | The name of the key to use in the decryption process | 
 **output_format** | **str** | If specified, the output will be formatted accordingly. options: [base64] | [optional] 
 **passphrase** | **str** | Passphrase that was used to generate the key | [optional] 

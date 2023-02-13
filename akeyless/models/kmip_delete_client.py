@@ -49,7 +49,7 @@ class KmipDeleteClient(object):
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, client_id=None, json=None, name=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, client_id=None, json=False, name=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """KmipDeleteClient - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()

@@ -75,7 +75,7 @@ class GatewayCreateProducerRedshift(object):
         'user_ttl': 'user-ttl'
     }
 
-    def __init__(self, creation_statements=None, delete_protection=None, json=None, name=None, producer_encryption_key=None, redshift_db_name=None, redshift_host='127.0.0.1', redshift_password=None, redshift_port='5439', redshift_username=None, secure_access_enable=None, secure_access_host=None, ssl=None, tags=None, target_name=None, token=None, uid_token=None, user_ttl='60m', local_vars_configuration=None):  # noqa: E501
+    def __init__(self, creation_statements=None, delete_protection=None, json=False, name=None, producer_encryption_key=None, redshift_db_name=None, redshift_host='127.0.0.1', redshift_password=None, redshift_port='5439', redshift_username=None, secure_access_enable=None, secure_access_host=None, ssl=False, tags=None, target_name=None, token=None, uid_token=None, user_ttl='60m', local_vars_configuration=None):  # noqa: E501
         """GatewayCreateProducerRedshift - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -164,7 +164,7 @@ class GatewayCreateProducerRedshift(object):
     def delete_protection(self):
         """Gets the delete_protection of this GatewayCreateProducerRedshift.  # noqa: E501
 
-        Protection from accidental deletion of this item  # noqa: E501
+        Protection from accidental deletion of this item [true/false]  # noqa: E501
 
         :return: The delete_protection of this GatewayCreateProducerRedshift.  # noqa: E501
         :rtype: str
@@ -175,7 +175,7 @@ class GatewayCreateProducerRedshift(object):
     def delete_protection(self, delete_protection):
         """Sets the delete_protection of this GatewayCreateProducerRedshift.
 
-        Protection from accidental deletion of this item  # noqa: E501
+        Protection from accidental deletion of this item [true/false]  # noqa: E501
 
         :param delete_protection: The delete_protection of this GatewayCreateProducerRedshift.  # noqa: E501
         :type: str
@@ -373,6 +373,7 @@ class GatewayCreateProducerRedshift(object):
     def secure_access_enable(self):
         """Gets the secure_access_enable of this GatewayCreateProducerRedshift.  # noqa: E501
 
+        Enable/Disable secure remote access [true/false]  # noqa: E501
 
         :return: The secure_access_enable of this GatewayCreateProducerRedshift.  # noqa: E501
         :rtype: str
@@ -383,6 +384,7 @@ class GatewayCreateProducerRedshift(object):
     def secure_access_enable(self, secure_access_enable):
         """Sets the secure_access_enable of this GatewayCreateProducerRedshift.
 
+        Enable/Disable secure remote access [true/false]  # noqa: E501
 
         :param secure_access_enable: The secure_access_enable of this GatewayCreateProducerRedshift.  # noqa: E501
         :type: str
@@ -394,6 +396,7 @@ class GatewayCreateProducerRedshift(object):
     def secure_access_host(self):
         """Gets the secure_access_host of this GatewayCreateProducerRedshift.  # noqa: E501
 
+        Target DB servers for connections  # noqa: E501
 
         :return: The secure_access_host of this GatewayCreateProducerRedshift.  # noqa: E501
         :rtype: list[str]
@@ -404,6 +407,7 @@ class GatewayCreateProducerRedshift(object):
     def secure_access_host(self, secure_access_host):
         """Sets the secure_access_host of this GatewayCreateProducerRedshift.
 
+        Target DB servers for connections  # noqa: E501
 
         :param secure_access_host: The secure_access_host of this GatewayCreateProducerRedshift.  # noqa: E501
         :type: list[str]
@@ -415,7 +419,7 @@ class GatewayCreateProducerRedshift(object):
     def ssl(self):
         """Gets the ssl of this GatewayCreateProducerRedshift.  # noqa: E501
 
-        SSL connection mode  # noqa: E501
+        Enable/Disable SSL [true/false]  # noqa: E501
 
         :return: The ssl of this GatewayCreateProducerRedshift.  # noqa: E501
         :rtype: bool
@@ -426,7 +430,7 @@ class GatewayCreateProducerRedshift(object):
     def ssl(self, ssl):
         """Sets the ssl of this GatewayCreateProducerRedshift.
 
-        SSL connection mode  # noqa: E501
+        Enable/Disable SSL [true/false]  # noqa: E501
 
         :param ssl: The ssl of this GatewayCreateProducerRedshift.  # noqa: E501
         :type: bool

@@ -47,7 +47,7 @@ class DeleteRoleAssociation(object):
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, assoc_id=None, json=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, assoc_id=None, json=False, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """DeleteRoleAssociation - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()

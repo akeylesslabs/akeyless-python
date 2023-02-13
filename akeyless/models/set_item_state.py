@@ -51,7 +51,7 @@ class SetItemState(object):
         'version': 'version'
     }
 
-    def __init__(self, desired_state=None, json=None, name=None, token=None, uid_token=None, version=0, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, desired_state=None, json=False, name=None, token=None, uid_token=None, version=0, local_vars_configuration=None):  # noqa: E501
         """SetItemState - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()

@@ -49,7 +49,7 @@ class GatewaySyncMigration(object):
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, json=None, name=None, start_sync=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, json=False, name=None, start_sync=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """GatewaySyncMigration - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()

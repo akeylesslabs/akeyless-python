@@ -51,7 +51,7 @@ class UpdateAssoc(object):
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, assoc_id=None, case_sensitive=None, json=None, sub_claims=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, assoc_id=None, case_sensitive='true', json=False, sub_claims=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """UpdateAssoc - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -106,6 +106,7 @@ class UpdateAssoc(object):
     def case_sensitive(self):
         """Gets the case_sensitive of this UpdateAssoc.  # noqa: E501
 
+        Treat sub claims as case-sensitive [true/false]  # noqa: E501
 
         :return: The case_sensitive of this UpdateAssoc.  # noqa: E501
         :rtype: str
@@ -116,6 +117,7 @@ class UpdateAssoc(object):
     def case_sensitive(self, case_sensitive):
         """Sets the case_sensitive of this UpdateAssoc.
 
+        Treat sub claims as case-sensitive [true/false]  # noqa: E501
 
         :param case_sensitive: The case_sensitive of this UpdateAssoc.  # noqa: E501
         :type: str

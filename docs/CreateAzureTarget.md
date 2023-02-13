@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **client_secret** | **str** |  | [optional] 
 **comment** | **str** | Deprecated - use description | [optional] 
 **description** | **str** | Description of the object | [optional] 
-**json** | **bool** | Set output format to JSON | [optional] 
+**json** | **bool** | Set output format to JSON | [optional] [default to False]
 **key** | **str** | The name of a key that used to encrypt the target secret value (if empty, the account default protectionKey key will be used) | [optional] 
 **name** | **str** | Target name | 
 **resource_group_name** | **str** | The Resource Group name in your Azure subscription | [optional] 

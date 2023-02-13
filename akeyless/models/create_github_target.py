@@ -59,7 +59,7 @@ class CreateGithubTarget(object):
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, comment=None, description=None, github_app_id=None, github_app_private_key=None, github_base_url=None, json=None, key=None, name=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, comment=None, description=None, github_app_id=None, github_app_private_key=None, github_base_url='https://api.github.com/', json=False, key=None, name=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """CreateGithubTarget - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()

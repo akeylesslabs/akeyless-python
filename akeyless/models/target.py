@@ -45,6 +45,7 @@ class Target(object):
         'last_version': 'int',
         'modification_date': 'datetime',
         'protection_key_name': 'str',
+        'target_details': 'str',
         'target_id': 'int',
         'target_items_assoc': 'list[TargetItemAssociation]',
         'target_name': 'str',
@@ -65,6 +66,7 @@ class Target(object):
         'last_version': 'last_version',
         'modification_date': 'modification_date',
         'protection_key_name': 'protection_key_name',
+        'target_details': 'target_details',
         'target_id': 'target_id',
         'target_items_assoc': 'target_items_assoc',
         'target_name': 'target_name',
@@ -73,7 +75,7 @@ class Target(object):
         'with_customer_fragment': 'with_customer_fragment'
     }
 
-    def __init__(self, access_date=None, access_request_status=None, attributes=None, client_permissions=None, comment=None, creation_date=None, credentials_less=None, is_access_request_enabled=None, last_version=None, modification_date=None, protection_key_name=None, target_id=None, target_items_assoc=None, target_name=None, target_type=None, target_versions=None, with_customer_fragment=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, access_date=None, access_request_status=None, attributes=None, client_permissions=None, comment=None, creation_date=None, credentials_less=None, is_access_request_enabled=None, last_version=None, modification_date=None, protection_key_name=None, target_details=None, target_id=None, target_items_assoc=None, target_name=None, target_type=None, target_versions=None, with_customer_fragment=None, local_vars_configuration=None):  # noqa: E501
         """Target - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -90,6 +92,7 @@ class Target(object):
         self._last_version = None
         self._modification_date = None
         self._protection_key_name = None
+        self._target_details = None
         self._target_id = None
         self._target_items_assoc = None
         self._target_name = None
@@ -120,6 +123,8 @@ class Target(object):
             self.modification_date = modification_date
         if protection_key_name is not None:
             self.protection_key_name = protection_key_name
+        if target_details is not None:
+            self.target_details = target_details
         if target_id is not None:
             self.target_id = target_id
         if target_items_assoc is not None:
@@ -365,6 +370,27 @@ class Target(object):
         """
 
         self._protection_key_name = protection_key_name
+
+    @property
+    def target_details(self):
+        """Gets the target_details of this Target.  # noqa: E501
+
+
+        :return: The target_details of this Target.  # noqa: E501
+        :rtype: str
+        """
+        return self._target_details
+
+    @target_details.setter
+    def target_details(self, target_details):
+        """Sets the target_details of this Target.
+
+
+        :param target_details: The target_details of this Target.  # noqa: E501
+        :type: str
+        """
+
+        self._target_details = target_details
 
     @property
     def target_id(self):

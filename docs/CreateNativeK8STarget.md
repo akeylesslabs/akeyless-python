@@ -5,7 +5,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **comment** | **str** | Deprecated - use description | [optional] 
 **description** | **str** | Description of the object | [optional] 
-**json** | **bool** | Set output format to JSON | [optional] 
+**json** | **bool** | Set output format to JSON | [optional] [default to False]
 **k8s_cluster_ca_cert** | **str** | K8S cluster CA certificate | 
 **k8s_cluster_endpoint** | **str** | K8S cluster URL endpoint | 
 **k8s_cluster_token** | **str** | K8S cluster Bearer token | 

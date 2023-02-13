@@ -73,7 +73,7 @@ class UpdateAzureTarget(object):
         'use_gw_cloud_identity': 'use-gw-cloud-identity'
     }
 
-    def __init__(self, client_id=None, client_secret=None, comment=None, description=None, json=None, keep_prev_version=None, key=None, name=None, new_name=None, resource_group_name=None, resource_name=None, subscription_id=None, tenant_id=None, token=None, uid_token=None, update_version=None, use_gw_cloud_identity=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, client_id=None, client_secret=None, comment=None, description=None, json=False, keep_prev_version=None, key=None, name=None, new_name=None, resource_group_name=None, resource_name=None, subscription_id=None, tenant_id=None, token=None, uid_token=None, update_version=None, use_gw_cloud_identity=None, local_vars_configuration=None):  # noqa: E501
         """UpdateAzureTarget - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -247,6 +247,7 @@ class UpdateAzureTarget(object):
     def keep_prev_version(self):
         """Gets the keep_prev_version of this UpdateAzureTarget.  # noqa: E501
 
+        Whether to keep previous version [true/false]. If not set, use default according to account settings  # noqa: E501
 
         :return: The keep_prev_version of this UpdateAzureTarget.  # noqa: E501
         :rtype: str
@@ -257,6 +258,7 @@ class UpdateAzureTarget(object):
     def keep_prev_version(self, keep_prev_version):
         """Sets the keep_prev_version of this UpdateAzureTarget.
 
+        Whether to keep previous version [true/false]. If not set, use default according to account settings  # noqa: E501
 
         :param keep_prev_version: The keep_prev_version of this UpdateAzureTarget.  # noqa: E501
         :type: str

@@ -57,7 +57,7 @@ class CreateDockerhubTarget(object):
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, comment=None, description=None, dockerhub_password=None, dockerhub_username=None, json=None, key=None, name=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, comment=None, description=None, dockerhub_password=None, dockerhub_username=None, json=False, key=None, name=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """CreateDockerhubTarget - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()

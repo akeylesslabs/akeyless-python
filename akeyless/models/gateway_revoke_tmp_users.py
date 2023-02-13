@@ -55,7 +55,7 @@ class GatewayRevokeTmpUsers(object):
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, host=None, json=None, name=None, revoke_all=None, soft_delete=None, tmp_creds_id='demo_default_tmp_creds_id_for_sdk_bc', token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, host=None, json=False, name=None, revoke_all=None, soft_delete=None, tmp_creds_id='demo_default_tmp_creds_id_for_sdk_bc', token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """GatewayRevokeTmpUsers - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()

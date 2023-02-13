@@ -61,7 +61,7 @@ class ListItems(object):
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, accessibility='regular', filter=None, json=None, minimal_view=None, pagination_token=None, path=None, sub_types=None, tag=None, token=None, type=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, accessibility='regular', filter=None, json=False, minimal_view=None, pagination_token=None, path=None, sub_types=None, tag=None, token=None, type=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """ListItems - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()

@@ -4,7 +4,7 @@ of it.
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**json** | **bool** | Set output format to JSON | [optional] 
+**json** | **bool** | Set output format to JSON | [optional] [default to False]
 **name** | **str** | Key name | 
 **new_cert_pem_data** | **str** | The new pem encoded certificate for the classic key. relevant only for keys provided by user (&#39;bring-your-own-key&#39;) | [optional] 
 **new_key_data** | **str** | The new base64 encoded value for the classic key. relevant only for keys provided by user (&#39;bring-your-own-key&#39;) | [optional] 

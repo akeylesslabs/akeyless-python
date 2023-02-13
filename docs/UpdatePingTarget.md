@@ -7,8 +7,8 @@ Name | Type | Description | Notes
 **authorization_port** | **str** | Ping Federate authorization port | [optional] [default to '9031']
 **comment** | **str** | Deprecated - use description | [optional] 
 **description** | **str** | Description of the object | [optional] 
-**json** | **bool** | Set output format to JSON | [optional] 
-**keep_prev_version** | **str** |  | [optional] 
+**json** | **bool** | Set output format to JSON | [optional] [default to False]
+**keep_prev_version** | **str** | Whether to keep previous version [true/false]. If not set, use default according to account settings | [optional] 
 **key** | **str** | The name of a key that used to encrypt the target secret value (if empty, the account default protectionKey key will be used) | [optional] 
 **name** | **str** | Target name | 
 **new_name** | **str** | New target name | [optional] 

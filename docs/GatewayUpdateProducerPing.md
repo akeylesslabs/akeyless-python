@@ -4,8 +4,8 @@ gatewayUpdateProducerPing is a command that updates Ping producer
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**delete_protection** | **str** | Protection from accidental deletion of this item | [optional] 
-**json** | **bool** | Set output format to JSON | [optional] 
+**delete_protection** | **str** | Protection from accidental deletion of this item [true/false] | [optional] 
+**json** | **bool** | Set output format to JSON | [optional] [default to False]
 **name** | **str** | Producer name | 
 **new_name** | **str** | Producer New name | [optional] 
 **ping_administrative_port** | **str** | Ping Federate administrative port | [optional] [default to '9999']
@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 **ping_authorization_port** | **str** | Ping Federate authorization port | [optional] [default to '9031']
 **ping_cert_subject_dn** | **str** | The subject DN of the client certificate. If no explicit value is given, the producer will create CA certificate and matched client certificate and return it as value. Used in conjunction with ping-issuer-dn (relevant for CLIENT_TLS_CERTIFICATE authentication method) | [optional] 
 **ping_client_authentication_type** | **str** | OAuth Client Authentication Type [CLIENT_SECRET, PRIVATE_KEY_JWT, CLIENT_TLS_CERTIFICATE] | [optional] [default to 'CLIENT_SECRET']
-**ping_enforce_replay_prevention** | **str** | Determines whether PingFederate requires a unique signed JWT from the client for each action (relevant for PRIVATE_KEY_JWT authentication method) | [optional] 
+**ping_enforce_replay_prevention** | **str** | Determines whether PingFederate requires a unique signed JWT from the client for each action (relevant for PRIVATE_KEY_JWT authentication method) [true/false] | [optional] [default to 'false']
 **ping_grant_types** | **list[str]** | List of OAuth client grant types [IMPLICIT, AUTHORIZATION_CODE, CLIENT_CREDENTIALS, TOKEN_EXCHANGE, REFRESH_TOKEN, ASSERTION_GRANTS, PASSWORD, RESOURCE_OWNER_CREDENTIALS]. If no explicit value is given, AUTHORIZATION_CODE will be selected as default. | [optional] 
 **ping_issuer_dn** | **str** | Issuer DN of trusted CA certificate that imported into Ping Federate server. You may select \\\&quot;Trust Any\\\&quot; to trust all the existing issuers in Ping Federate server. Used in conjunction with ping-cert-subject-dn (relevant for CLIENT_TLS_CERTIFICATE authentication method) | [optional] 
 **ping_jwks** | **str** | Base64-encoded JSON Web Key Set (JWKS). If no explicit value is given, the producer will create JWKs and matched signed JWT (Sign Algo: RS256) and return it as value (relevant for PRIVATE_KEY_JWT authentication method) | [optional] 

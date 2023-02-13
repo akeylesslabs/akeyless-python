@@ -75,7 +75,7 @@ class GatewayUpdateProducerLdap(object):
         'user_ttl': 'user-ttl'
     }
 
-    def __init__(self, bind_dn=None, bind_dn_password=None, delete_protection=None, external_username='false', json=None, ldap_ca_cert=None, ldap_url=None, name=None, new_name=None, producer_encryption_key_name=None, tags=None, target_name=None, token=None, token_expiration=None, uid_token=None, user_attribute=None, user_dn=None, user_ttl='60m', local_vars_configuration=None):  # noqa: E501
+    def __init__(self, bind_dn=None, bind_dn_password=None, delete_protection=None, external_username='false', json=False, ldap_ca_cert=None, ldap_url=None, name=None, new_name=None, producer_encryption_key_name=None, tags=None, target_name=None, token=None, token_expiration=None, uid_token=None, user_attribute=None, user_dn=None, user_ttl='60m', local_vars_configuration=None):  # noqa: E501
         """GatewayUpdateProducerLdap - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -187,7 +187,7 @@ class GatewayUpdateProducerLdap(object):
     def delete_protection(self):
         """Gets the delete_protection of this GatewayUpdateProducerLdap.  # noqa: E501
 
-        Protection from accidental deletion of this item  # noqa: E501
+        Protection from accidental deletion of this item [true/false]  # noqa: E501
 
         :return: The delete_protection of this GatewayUpdateProducerLdap.  # noqa: E501
         :rtype: str
@@ -198,7 +198,7 @@ class GatewayUpdateProducerLdap(object):
     def delete_protection(self, delete_protection):
         """Sets the delete_protection of this GatewayUpdateProducerLdap.
 
-        Protection from accidental deletion of this item  # noqa: E501
+        Protection from accidental deletion of this item [true/false]  # noqa: E501
 
         :param delete_protection: The delete_protection of this GatewayUpdateProducerLdap.  # noqa: E501
         :type: str
@@ -210,7 +210,7 @@ class GatewayUpdateProducerLdap(object):
     def external_username(self):
         """Gets the external_username of this GatewayUpdateProducerLdap.  # noqa: E501
 
-        Fixed user  # noqa: E501
+        Externally provided username [true/false]  # noqa: E501
 
         :return: The external_username of this GatewayUpdateProducerLdap.  # noqa: E501
         :rtype: str
@@ -221,7 +221,7 @@ class GatewayUpdateProducerLdap(object):
     def external_username(self, external_username):
         """Sets the external_username of this GatewayUpdateProducerLdap.
 
-        Fixed user  # noqa: E501
+        Externally provided username [true/false]  # noqa: E501
 
         :param external_username: The external_username of this GatewayUpdateProducerLdap.  # noqa: E501
         :type: str

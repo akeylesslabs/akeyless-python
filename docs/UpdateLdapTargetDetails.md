@@ -5,8 +5,8 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **bind_dn** | **str** |  | [optional] 
 **bind_dn_password** | **str** |  | [optional] 
-**json** | **bool** | Set output format to JSON | [optional] 
-**keep_prev_version** | **str** |  | [optional] 
+**json** | **bool** | Set output format to JSON | [optional] [default to False]
+**keep_prev_version** | **str** | Whether to keep previous version [true/false]. If not set, use default according to account settings | [optional] 
 **key** | **str** |  | [optional] 
 **ldap_ca_cert** | **str** |  | [optional] 
 **ldap_url** | **str** |  | [optional] 

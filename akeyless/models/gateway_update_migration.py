@@ -137,7 +137,7 @@ class GatewayUpdateMigration(object):
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, _1password_email=None, _1password_password=None, _1password_secret_key=None, _1password_url=None, _1password_vaults=None, ad_auto_rotate=None, ad_computer_base_dn=None, ad_discover_local_users=None, ad_domain_name=None, ad_domain_users_path_template=None, ad_local_users_ignore=None, ad_local_users_path_template=None, ad_rotation_hour=None, ad_rotation_interval=None, ad_sra_enable_rdp=None, ad_target_name=None, ad_targets_path_template=None, ad_user_base_dn=None, ad_user_groups=None, as_ssh_port=None, aws_key=None, aws_key_id=None, aws_region=None, azure_client_id=None, azure_kv_name=None, azure_secret=None, azure_tenant_id=None, gcp_key=None, hashi_json=None, hashi_ns=None, hashi_token=None, hashi_url=None, id=None, json=None, k8s_ca_certificate=None, k8s_client_certificate=None, k8s_client_key=None, k8s_namespace=None, k8s_password=None, k8s_skip_system=None, k8s_token=None, k8s_url=None, k8s_username=None, name=None, new_name=None, protection_key=None, target_location=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, _1password_email=None, _1password_password=None, _1password_secret_key=None, _1password_url=None, _1password_vaults=None, ad_auto_rotate=None, ad_computer_base_dn=None, ad_discover_local_users=None, ad_domain_name=None, ad_domain_users_path_template=None, ad_local_users_ignore=None, ad_local_users_path_template=None, ad_rotation_hour=None, ad_rotation_interval=None, ad_sra_enable_rdp=None, ad_target_name=None, ad_targets_path_template=None, ad_user_base_dn=None, ad_user_groups=None, as_ssh_port='22', aws_key=None, aws_key_id=None, aws_region='us-east-2', azure_client_id=None, azure_kv_name=None, azure_secret=None, azure_tenant_id=None, gcp_key=None, hashi_json='true', hashi_ns=None, hashi_token=None, hashi_url=None, id=None, json=False, k8s_ca_certificate=None, k8s_client_certificate=None, k8s_client_key=None, k8s_namespace=None, k8s_password=None, k8s_skip_system=None, k8s_token=None, k8s_url=None, k8s_username=None, name=None, new_name=None, protection_key=None, target_location=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """GatewayUpdateMigration - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -940,7 +940,7 @@ class GatewayUpdateMigration(object):
     def hashi_json(self):
         """Gets the hashi_json of this GatewayUpdateMigration.  # noqa: E501
 
-        Import secret key as json value or independent secrets (relevant only for HasiCorp Vault migration)  # noqa: E501
+        Import secret key as json value or independent secrets (relevant only for HasiCorp Vault migration) [true/false]  # noqa: E501
 
         :return: The hashi_json of this GatewayUpdateMigration.  # noqa: E501
         :rtype: str
@@ -951,7 +951,7 @@ class GatewayUpdateMigration(object):
     def hashi_json(self, hashi_json):
         """Sets the hashi_json of this GatewayUpdateMigration.
 
-        Import secret key as json value or independent secrets (relevant only for HasiCorp Vault migration)  # noqa: E501
+        Import secret key as json value or independent secrets (relevant only for HasiCorp Vault migration) [true/false]  # noqa: E501
 
         :param hashi_json: The hashi_json of this GatewayUpdateMigration.  # noqa: E501
         :type: str

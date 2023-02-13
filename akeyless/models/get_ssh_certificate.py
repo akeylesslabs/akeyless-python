@@ -55,7 +55,7 @@ class GetSSHCertificate(object):
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, cert_issuer_name=None, cert_username=None, json=None, legacy_signing_alg_name=None, public_key_data=None, token=None, ttl=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, cert_issuer_name=None, cert_username=None, json=False, legacy_signing_alg_name=False, public_key_data=None, token=None, ttl=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """GetSSHCertificate - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()

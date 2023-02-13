@@ -9,8 +9,8 @@ Name | Type | Description | Notes
 **artifactory_token_audience** | **str** | Token Audience | 
 **artifactory_token_scope** | **str** | Token Scope | 
 **base_url** | **str** | Base URL | [optional] 
-**delete_protection** | **str** | Protection from accidental deletion of this item | [optional] 
-**json** | **bool** | Set output format to JSON | [optional] 
+**delete_protection** | **str** | Protection from accidental deletion of this item [true/false] | [optional] 
+**json** | **bool** | Set output format to JSON | [optional] [default to False]
 **name** | **str** | Producer name | 
 **new_name** | **str** | Producer name | [optional] 
 **producer_encryption_key_name** | **str** | Dynamic producer encryption key | [optional] 

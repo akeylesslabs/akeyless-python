@@ -87,7 +87,7 @@ class GatewayUpdateItem(object):
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, add_tag=None, api_id=None, api_key=None, auto_rotate=None, custom_payload=None, delete_protection=None, description='default_metadata', gcp_key=None, json=None, keep_prev_version=None, key=None, name=None, new_metadata='default_metadata', new_name=None, new_version=None, rm_tag=None, rotated_password=None, rotated_username=None, rotation_hour=0, rotation_interval=None, rotator_creds_type=None, token=None, type=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, add_tag=None, api_id=None, api_key=None, auto_rotate=None, custom_payload=None, delete_protection=None, description='default_metadata', gcp_key=None, json=False, keep_prev_version=None, key=None, name=None, new_metadata='default_metadata', new_name=None, new_version=None, rm_tag=None, rotated_password=None, rotated_username=None, rotation_hour=0, rotation_interval=None, rotator_creds_type='use-self-creds', token=None, type=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """GatewayUpdateItem - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -193,6 +193,7 @@ class GatewayUpdateItem(object):
     def api_id(self):
         """Gets the api_id of this GatewayUpdateItem.  # noqa: E501
 
+        API ID to rotate (relevant only for rotator-type=api-key)  # noqa: E501
 
         :return: The api_id of this GatewayUpdateItem.  # noqa: E501
         :rtype: str
@@ -203,6 +204,7 @@ class GatewayUpdateItem(object):
     def api_id(self, api_id):
         """Sets the api_id of this GatewayUpdateItem.
 
+        API ID to rotate (relevant only for rotator-type=api-key)  # noqa: E501
 
         :param api_id: The api_id of this GatewayUpdateItem.  # noqa: E501
         :type: str
@@ -214,6 +216,7 @@ class GatewayUpdateItem(object):
     def api_key(self):
         """Gets the api_key of this GatewayUpdateItem.  # noqa: E501
 
+        API key to rotate (relevant only for rotator-type=api-key)  # noqa: E501
 
         :return: The api_key of this GatewayUpdateItem.  # noqa: E501
         :rtype: str
@@ -224,6 +227,7 @@ class GatewayUpdateItem(object):
     def api_key(self, api_key):
         """Sets the api_key of this GatewayUpdateItem.
 
+        API key to rotate (relevant only for rotator-type=api-key)  # noqa: E501
 
         :param api_key: The api_key of this GatewayUpdateItem.  # noqa: E501
         :type: str
@@ -235,7 +239,7 @@ class GatewayUpdateItem(object):
     def auto_rotate(self):
         """Gets the auto_rotate of this GatewayUpdateItem.  # noqa: E501
 
-        Whether to automatically rotate every --rotation-interval days, or disable existing automatic rotation  # noqa: E501
+        Whether to automatically rotate every --rotation-interval days, or disable existing automatic rotation [true/false]  # noqa: E501
 
         :return: The auto_rotate of this GatewayUpdateItem.  # noqa: E501
         :rtype: str
@@ -246,7 +250,7 @@ class GatewayUpdateItem(object):
     def auto_rotate(self, auto_rotate):
         """Sets the auto_rotate of this GatewayUpdateItem.
 
-        Whether to automatically rotate every --rotation-interval days, or disable existing automatic rotation  # noqa: E501
+        Whether to automatically rotate every --rotation-interval days, or disable existing automatic rotation [true/false]  # noqa: E501
 
         :param auto_rotate: The auto_rotate of this GatewayUpdateItem.  # noqa: E501
         :type: str
@@ -258,6 +262,7 @@ class GatewayUpdateItem(object):
     def custom_payload(self):
         """Gets the custom_payload of this GatewayUpdateItem.  # noqa: E501
 
+        Secret payload to be sent with rotation request (relevant only for rotator-type=custom)  # noqa: E501
 
         :return: The custom_payload of this GatewayUpdateItem.  # noqa: E501
         :rtype: str
@@ -268,6 +273,7 @@ class GatewayUpdateItem(object):
     def custom_payload(self, custom_payload):
         """Sets the custom_payload of this GatewayUpdateItem.
 
+        Secret payload to be sent with rotation request (relevant only for rotator-type=custom)  # noqa: E501
 
         :param custom_payload: The custom_payload of this GatewayUpdateItem.  # noqa: E501
         :type: str
@@ -279,7 +285,7 @@ class GatewayUpdateItem(object):
     def delete_protection(self):
         """Gets the delete_protection of this GatewayUpdateItem.  # noqa: E501
 
-        Protection from accidental deletion of this item  # noqa: E501
+        Protection from accidental deletion of this item [true/false]  # noqa: E501
 
         :return: The delete_protection of this GatewayUpdateItem.  # noqa: E501
         :rtype: str
@@ -290,7 +296,7 @@ class GatewayUpdateItem(object):
     def delete_protection(self, delete_protection):
         """Sets the delete_protection of this GatewayUpdateItem.
 
-        Protection from accidental deletion of this item  # noqa: E501
+        Protection from accidental deletion of this item [true/false]  # noqa: E501
 
         :param delete_protection: The delete_protection of this GatewayUpdateItem.  # noqa: E501
         :type: str
@@ -371,6 +377,7 @@ class GatewayUpdateItem(object):
     def keep_prev_version(self):
         """Gets the keep_prev_version of this GatewayUpdateItem.  # noqa: E501
 
+        Whether to keep previous version [true/false]. (relevant only for --type=rotated-secret). If not set, use default according to account settings  # noqa: E501
 
         :return: The keep_prev_version of this GatewayUpdateItem.  # noqa: E501
         :rtype: str
@@ -381,6 +388,7 @@ class GatewayUpdateItem(object):
     def keep_prev_version(self, keep_prev_version):
         """Sets the keep_prev_version of this GatewayUpdateItem.
 
+        Whether to keep previous version [true/false]. (relevant only for --type=rotated-secret). If not set, use default according to account settings  # noqa: E501
 
         :param keep_prev_version: The keep_prev_version of this GatewayUpdateItem.  # noqa: E501
         :type: str
@@ -532,6 +540,7 @@ class GatewayUpdateItem(object):
     def rotated_password(self):
         """Gets the rotated_password of this GatewayUpdateItem.  # noqa: E501
 
+        rotated-username password (relevant only for rotator-type=password)  # noqa: E501
 
         :return: The rotated_password of this GatewayUpdateItem.  # noqa: E501
         :rtype: str
@@ -542,6 +551,7 @@ class GatewayUpdateItem(object):
     def rotated_password(self, rotated_password):
         """Sets the rotated_password of this GatewayUpdateItem.
 
+        rotated-username password (relevant only for rotator-type=password)  # noqa: E501
 
         :param rotated_password: The rotated_password of this GatewayUpdateItem.  # noqa: E501
         :type: str
@@ -553,6 +563,7 @@ class GatewayUpdateItem(object):
     def rotated_username(self):
         """Gets the rotated_username of this GatewayUpdateItem.  # noqa: E501
 
+        username to be rotated, if selected \\\"use-self-creds\\\" at rotator-creds-type, this username will try to rotate it's own password, if \\\"use-target-creds\\\" is selected, target credentials will be use to rotate the rotated-password (relevant only for rotator-type=password)  # noqa: E501
 
         :return: The rotated_username of this GatewayUpdateItem.  # noqa: E501
         :rtype: str
@@ -563,6 +574,7 @@ class GatewayUpdateItem(object):
     def rotated_username(self, rotated_username):
         """Sets the rotated_username of this GatewayUpdateItem.
 
+        username to be rotated, if selected \\\"use-self-creds\\\" at rotator-creds-type, this username will try to rotate it's own password, if \\\"use-target-creds\\\" is selected, target credentials will be use to rotate the rotated-password (relevant only for rotator-type=password)  # noqa: E501
 
         :param rotated_username: The rotated_username of this GatewayUpdateItem.  # noqa: E501
         :type: str

@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **authorization_port** | **str** | Ping Federate authorization port | [optional] [default to '9031']
 **comment** | **str** | Deprecated - use description | [optional] 
 **description** | **str** | Description of the object | [optional] 
-**json** | **bool** | Set output format to JSON | [optional] 
+**json** | **bool** | Set output format to JSON | [optional] [default to False]
 **key** | **str** | The name of a key that used to encrypt the target secret value (if empty, the account default protectionKey key will be used) | [optional] 
 **name** | **str** | Target name | 
 **password** | **str** | Ping Federate privileged user password | [optional] 

@@ -61,7 +61,7 @@ class Configure(object):
         'key_data': 'key-data'
     }
 
-    def __init__(self, access_id=None, access_key=None, access_type='access_key', admin_email=None, admin_password=None, azure_ad_object_id=None, cert_data=None, gcp_audience=None, json=None, k8s_auth_config_name=None, key_data=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, access_id=None, access_key=None, access_type='access_key', admin_email=None, admin_password=None, azure_ad_object_id=None, cert_data=None, gcp_audience='akeyless.io', json=False, k8s_auth_config_name=None, key_data=None, local_vars_configuration=None):  # noqa: E501
         """Configure - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()

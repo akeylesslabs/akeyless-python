@@ -71,7 +71,7 @@ class GatewayCreateProducerSnowflake(object):
         'warehouse': 'warehouse'
     }
 
-    def __init__(self, account=None, account_password=None, account_username=None, db_name=None, delete_protection=None, json=None, name=None, private_key=None, private_key_passphrase=None, role=None, tags=None, target_name=None, token=None, uid_token=None, user_ttl='24h', warehouse=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, account=None, account_password=None, account_username=None, db_name=None, delete_protection=None, json=False, name=None, private_key=None, private_key_passphrase=None, role=None, tags=None, target_name=None, token=None, uid_token=None, user_ttl='24h', warehouse=None, local_vars_configuration=None):  # noqa: E501
         """GatewayCreateProducerSnowflake - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -223,7 +223,7 @@ class GatewayCreateProducerSnowflake(object):
     def delete_protection(self):
         """Gets the delete_protection of this GatewayCreateProducerSnowflake.  # noqa: E501
 
-        Protection from accidental deletion of this item  # noqa: E501
+        Protection from accidental deletion of this item [true/false]  # noqa: E501
 
         :return: The delete_protection of this GatewayCreateProducerSnowflake.  # noqa: E501
         :rtype: str
@@ -234,7 +234,7 @@ class GatewayCreateProducerSnowflake(object):
     def delete_protection(self, delete_protection):
         """Sets the delete_protection of this GatewayCreateProducerSnowflake.
 
-        Protection from accidental deletion of this item  # noqa: E501
+        Protection from accidental deletion of this item [true/false]  # noqa: E501
 
         :param delete_protection: The delete_protection of this GatewayCreateProducerSnowflake.  # noqa: E501
         :type: str

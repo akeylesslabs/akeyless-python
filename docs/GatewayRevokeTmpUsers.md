@@ -5,7 +5,7 @@ gatewayRevokeTmpUsers is a command that revoke producer tmp user
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **host** | **str** | Deprecated: has no effect | [optional] 
-**json** | **bool** | Set output format to JSON | [optional] 
+**json** | **bool** | Set output format to JSON | [optional] [default to False]
 **name** | **str** | Producer Name | 
 **revoke_all** | **bool** | Revoke All Temp Creds | [optional] 
 **soft_delete** | **bool** | Soft Delete | [optional] 

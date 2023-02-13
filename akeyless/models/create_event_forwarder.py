@@ -73,7 +73,7 @@ class CreateEventForwarder(object):
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, admin_name=None, admin_pwd=None, comment=None, description=None, email_to=None, event_source_locations=None, event_source_type='item', event_types=None, every=None, forwarder_type=None, host=None, json=None, key=None, name=None, runner_type=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, admin_name=None, admin_pwd=None, comment=None, description=None, email_to=None, event_source_locations=None, event_source_type='item', event_types=None, every=None, forwarder_type=None, host=None, json=False, key=None, name=None, runner_type=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """CreateEventForwarder - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()

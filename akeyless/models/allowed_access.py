@@ -38,6 +38,7 @@ class AllowedAccess(object):
         'access_rules_type': 'str',
         'allowed_api': 'bool',
         'alloweds_login': 'bool',
+        'editable': 'bool',
         'err_msg': 'str',
         'hash': 'str',
         'is_valid': 'bool',
@@ -50,6 +51,7 @@ class AllowedAccess(object):
         'access_rules_type': 'access_rules_type',
         'allowed_api': 'allowed_api',
         'alloweds_login': 'alloweds_login',
+        'editable': 'editable',
         'err_msg': 'err_msg',
         'hash': 'hash',
         'is_valid': 'is_valid',
@@ -57,7 +59,7 @@ class AllowedAccess(object):
         'sub_claims': 'sub_claims'
     }
 
-    def __init__(self, acc_id=None, access_rules_type=None, allowed_api=None, alloweds_login=None, err_msg=None, hash=None, is_valid=None, name=None, sub_claims=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, acc_id=None, access_rules_type=None, allowed_api=None, alloweds_login=None, editable=None, err_msg=None, hash=None, is_valid=None, name=None, sub_claims=None, local_vars_configuration=None):  # noqa: E501
         """AllowedAccess - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -67,6 +69,7 @@ class AllowedAccess(object):
         self._access_rules_type = None
         self._allowed_api = None
         self._alloweds_login = None
+        self._editable = None
         self._err_msg = None
         self._hash = None
         self._is_valid = None
@@ -82,6 +85,8 @@ class AllowedAccess(object):
             self.allowed_api = allowed_api
         if alloweds_login is not None:
             self.alloweds_login = alloweds_login
+        if editable is not None:
+            self.editable = editable
         if err_msg is not None:
             self.err_msg = err_msg
         if hash is not None:
@@ -176,6 +181,27 @@ class AllowedAccess(object):
         """
 
         self._alloweds_login = alloweds_login
+
+    @property
+    def editable(self):
+        """Gets the editable of this AllowedAccess.  # noqa: E501
+
+
+        :return: The editable of this AllowedAccess.  # noqa: E501
+        :rtype: bool
+        """
+        return self._editable
+
+    @editable.setter
+    def editable(self, editable):
+        """Sets the editable of this AllowedAccess.
+
+
+        :param editable: The editable of this AllowedAccess.  # noqa: E501
+        :type: bool
+        """
+
+        self._editable = editable
 
     @property
     def err_msg(self):

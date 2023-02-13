@@ -53,7 +53,7 @@ class AssocRoleAuthMethod(object):
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, am_name=None, case_sensitive=None, json=None, role_name=None, sub_claims=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, am_name=None, case_sensitive='true', json=False, role_name=None, sub_claims=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """AssocRoleAuthMethod - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -110,6 +110,7 @@ class AssocRoleAuthMethod(object):
     def case_sensitive(self):
         """Gets the case_sensitive of this AssocRoleAuthMethod.  # noqa: E501
 
+        Treat sub claims as case-sensitive [true/false]  # noqa: E501
 
         :return: The case_sensitive of this AssocRoleAuthMethod.  # noqa: E501
         :rtype: str
@@ -120,6 +121,7 @@ class AssocRoleAuthMethod(object):
     def case_sensitive(self, case_sensitive):
         """Sets the case_sensitive of this AssocRoleAuthMethod.
 
+        Treat sub claims as case-sensitive [true/false]  # noqa: E501
 
         :param case_sensitive: The case_sensitive of this AssocRoleAuthMethod.  # noqa: E501
         :type: str

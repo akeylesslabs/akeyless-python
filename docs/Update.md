@@ -3,8 +3,8 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**json** | **bool** | Set output format to JSON | [optional] 
-**version** | **str** | Version | [optional] 
+**json** | **bool** | Set output format to JSON | [optional] [default to False]
+**version** | **str** | Version | [optional] [default to 'latest']
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

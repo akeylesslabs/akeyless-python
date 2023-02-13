@@ -15,8 +15,8 @@ Name | Type | Description | Notes
 **certificate_data** | **str** | The certificate data in base64, if no file was provided | [optional] 
 **force_sub_claims** | **bool** | if true: enforce role-association must include sub claims | [optional] 
 **gw_bound_ips** | **list[str]** | A CIDR whitelist with the GW IPs that the access is restricted to | [optional] 
-**json** | **bool** | Set output format to JSON | [optional] 
-**jwt_ttl** | **int** | Jwt TTL | [optional] 
+**json** | **bool** | Set output format to JSON | [optional] [default to False]
+**jwt_ttl** | **int** | Jwt TTL | [optional] [default to 0]
 **name** | **str** | Auth Method name | 
 **new_name** | **str** | Auth Method new name | [optional] 
 **revoked_cert_ids** | **list[str]** | A list of revoked cert ids | [optional] 

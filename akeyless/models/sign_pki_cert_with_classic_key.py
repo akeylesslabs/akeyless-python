@@ -77,7 +77,7 @@ class SignPKICertWithClassicKey(object):
         'version': 'version'
     }
 
-    def __init__(self, common_name=None, country=None, display_id=None, dns_names=None, json=None, key_usage='DigitalSignature,KeyAgreement,KeyEncipherment', locality=None, organizational_units=None, organizations=None, postal_code=None, province=None, public_key_pem_data=None, signing_method=None, street_address=None, token=None, ttl=None, uid_token=None, uri_sans=None, version=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, common_name=None, country=None, display_id=None, dns_names=None, json=False, key_usage='DigitalSignature,KeyAgreement,KeyEncipherment', locality=None, organizational_units=None, organizations=None, postal_code=None, province=None, public_key_pem_data=None, signing_method=None, street_address=None, token=None, ttl=None, uid_token=None, uri_sans=None, version=None, local_vars_configuration=None):  # noqa: E501
         """SignPKICertWithClassicKey - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()

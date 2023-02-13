@@ -91,7 +91,7 @@ class GatewayUpdateProducerPing(object):
         'user_ttl': 'user-ttl'
     }
 
-    def __init__(self, delete_protection=None, json=None, name=None, new_name=None, ping_administrative_port='9999', ping_atm_id=None, ping_authorization_port='9031', ping_cert_subject_dn=None, ping_client_authentication_type='CLIENT_SECRET', ping_enforce_replay_prevention=None, ping_grant_types=None, ping_issuer_dn=None, ping_jwks=None, ping_jwks_url=None, ping_password=None, ping_privileged_user=None, ping_redirect_uris=None, ping_restricted_scopes=None, ping_signing_algo=None, ping_url=None, producer_encryption_key_name=None, tags=None, target_name=None, token=None, uid_token=None, user_ttl='60m', local_vars_configuration=None):  # noqa: E501
+    def __init__(self, delete_protection=None, json=False, name=None, new_name=None, ping_administrative_port='9999', ping_atm_id=None, ping_authorization_port='9031', ping_cert_subject_dn=None, ping_client_authentication_type='CLIENT_SECRET', ping_enforce_replay_prevention='false', ping_grant_types=None, ping_issuer_dn=None, ping_jwks=None, ping_jwks_url=None, ping_password=None, ping_privileged_user=None, ping_redirect_uris=None, ping_restricted_scopes=None, ping_signing_algo=None, ping_url=None, producer_encryption_key_name=None, tags=None, target_name=None, token=None, uid_token=None, user_ttl='60m', local_vars_configuration=None):  # noqa: E501
         """GatewayUpdateProducerPing - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -181,7 +181,7 @@ class GatewayUpdateProducerPing(object):
     def delete_protection(self):
         """Gets the delete_protection of this GatewayUpdateProducerPing.  # noqa: E501
 
-        Protection from accidental deletion of this item  # noqa: E501
+        Protection from accidental deletion of this item [true/false]  # noqa: E501
 
         :return: The delete_protection of this GatewayUpdateProducerPing.  # noqa: E501
         :rtype: str
@@ -192,7 +192,7 @@ class GatewayUpdateProducerPing(object):
     def delete_protection(self, delete_protection):
         """Sets the delete_protection of this GatewayUpdateProducerPing.
 
-        Protection from accidental deletion of this item  # noqa: E501
+        Protection from accidental deletion of this item [true/false]  # noqa: E501
 
         :param delete_protection: The delete_protection of this GatewayUpdateProducerPing.  # noqa: E501
         :type: str
@@ -390,7 +390,7 @@ class GatewayUpdateProducerPing(object):
     def ping_enforce_replay_prevention(self):
         """Gets the ping_enforce_replay_prevention of this GatewayUpdateProducerPing.  # noqa: E501
 
-        Determines whether PingFederate requires a unique signed JWT from the client for each action (relevant for PRIVATE_KEY_JWT authentication method)  # noqa: E501
+        Determines whether PingFederate requires a unique signed JWT from the client for each action (relevant for PRIVATE_KEY_JWT authentication method) [true/false]  # noqa: E501
 
         :return: The ping_enforce_replay_prevention of this GatewayUpdateProducerPing.  # noqa: E501
         :rtype: str
@@ -401,7 +401,7 @@ class GatewayUpdateProducerPing(object):
     def ping_enforce_replay_prevention(self, ping_enforce_replay_prevention):
         """Sets the ping_enforce_replay_prevention of this GatewayUpdateProducerPing.
 
-        Determines whether PingFederate requires a unique signed JWT from the client for each action (relevant for PRIVATE_KEY_JWT authentication method)  # noqa: E501
+        Determines whether PingFederate requires a unique signed JWT from the client for each action (relevant for PRIVATE_KEY_JWT authentication method) [true/false]  # noqa: E501
 
         :param ping_enforce_replay_prevention: The ping_enforce_replay_prevention of this GatewayUpdateProducerPing.  # noqa: E501
         :type: str

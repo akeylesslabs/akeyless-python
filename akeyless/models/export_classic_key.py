@@ -51,7 +51,7 @@ class ExportClassicKey(object):
         'version': 'version'
     }
 
-    def __init__(self, ignore_cache='false', json=None, name=None, token=None, uid_token=None, version=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, ignore_cache='false', json=False, name=None, token=None, uid_token=None, version=None, local_vars_configuration=None):  # noqa: E501
         """ExportClassicKey - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -81,7 +81,7 @@ class ExportClassicKey(object):
     def ignore_cache(self):
         """Gets the ignore_cache of this ExportClassicKey.  # noqa: E501
 
-        Ignore Cache Retrieve the Secret value without checking the Gateway's cache. This flag is only relevant when using the RestAPI  # noqa: E501
+        Retrieve the Secret value without checking the Gateway's cache [true/false]. This flag is only relevant when using the RestAPI  # noqa: E501
 
         :return: The ignore_cache of this ExportClassicKey.  # noqa: E501
         :rtype: str
@@ -92,7 +92,7 @@ class ExportClassicKey(object):
     def ignore_cache(self, ignore_cache):
         """Sets the ignore_cache of this ExportClassicKey.
 
-        Ignore Cache Retrieve the Secret value without checking the Gateway's cache. This flag is only relevant when using the RestAPI  # noqa: E501
+        Retrieve the Secret value without checking the Gateway's cache [true/false]. This flag is only relevant when using the RestAPI  # noqa: E501
 
         :param ignore_cache: The ignore_cache of this ExportClassicKey.  # noqa: E501
         :type: str

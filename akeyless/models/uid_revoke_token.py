@@ -51,7 +51,7 @@ class UidRevokeToken(object):
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, auth_method_name=None, json=None, revoke_token=None, revoke_type=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, auth_method_name=None, json=False, revoke_token=None, revoke_type=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """UidRevokeToken - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()

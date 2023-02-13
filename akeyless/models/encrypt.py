@@ -57,7 +57,7 @@ class Encrypt(object):
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, display_id=None, encryption_context=None, input_format=None, item_id=None, json=None, key_name=None, plaintext=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, display_id=None, encryption_context=None, input_format=None, item_id=None, json=False, key_name=None, plaintext=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """Encrypt - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()

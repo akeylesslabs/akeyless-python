@@ -45,7 +45,7 @@ class GenCustomerFragment(object):
         'metadata': 'metadata'
     }
 
-    def __init__(self, description=None, json=None, metadata=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, description=None, json=False, metadata=None, local_vars_configuration=None):  # noqa: E501
         """GenCustomerFragment - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()

@@ -95,7 +95,7 @@ class UpdatePKICertIssuer(object):
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, add_tag=None, allow_any_name=None, allow_subdomains=None, allowed_domains=None, allowed_uri_sans=None, client_flag=None, code_signing_flag=None, country=None, description=None, json=None, key_usage='DigitalSignature,KeyAgreement,KeyEncipherment', locality=None, metadata=None, name=None, new_name=None, not_enforce_hostnames=None, not_require_cn=None, organizational_units=None, organizations=None, postal_code=None, province=None, rm_tag=None, server_flag=None, signer_key_name=None, street_address=None, token=None, ttl=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, add_tag=None, allow_any_name=None, allow_subdomains=None, allowed_domains=None, allowed_uri_sans=None, client_flag=None, code_signing_flag=None, country=None, description=None, json=False, key_usage='DigitalSignature,KeyAgreement,KeyEncipherment', locality=None, metadata=None, name=None, new_name=None, not_enforce_hostnames=None, not_require_cn=None, organizational_units=None, organizations=None, postal_code=None, province=None, rm_tag=None, server_flag=None, signer_key_name=None, street_address=None, token=None, ttl=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """UpdatePKICertIssuer - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()

@@ -73,7 +73,7 @@ class GatewayUpdateK8SAuthConfig(object):
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, access_id=None, cluster_api_type='native_k8s', config_encryption_key_name=None, disable_issuer_validation=None, json=None, k8s_ca_cert=None, k8s_host=None, k8s_issuer=None, name=None, new_name=None, rancher_api_key=None, rancher_cluster_id=None, signing_key=None, token=None, token_exp=300, token_reviewer_jwt=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, access_id=None, cluster_api_type='native_k8s', config_encryption_key_name=None, disable_issuer_validation=None, json=False, k8s_ca_cert=None, k8s_host=None, k8s_issuer='kubernetes/serviceaccount', name=None, new_name=None, rancher_api_key=None, rancher_cluster_id=None, signing_key=None, token=None, token_exp=300, token_reviewer_jwt=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """GatewayUpdateK8SAuthConfig - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -203,7 +203,7 @@ class GatewayUpdateK8SAuthConfig(object):
     def disable_issuer_validation(self):
         """Gets the disable_issuer_validation of this GatewayUpdateK8SAuthConfig.  # noqa: E501
 
-        Disable issuer validation  # noqa: E501
+        Disable issuer validation [true/false]  # noqa: E501
 
         :return: The disable_issuer_validation of this GatewayUpdateK8SAuthConfig.  # noqa: E501
         :rtype: str
@@ -214,7 +214,7 @@ class GatewayUpdateK8SAuthConfig(object):
     def disable_issuer_validation(self, disable_issuer_validation):
         """Sets the disable_issuer_validation of this GatewayUpdateK8SAuthConfig.
 
-        Disable issuer validation  # noqa: E501
+        Disable issuer validation [true/false]  # noqa: E501
 
         :param disable_issuer_validation: The disable_issuer_validation of this GatewayUpdateK8SAuthConfig.  # noqa: E501
         :type: str
@@ -297,7 +297,7 @@ class GatewayUpdateK8SAuthConfig(object):
     def k8s_issuer(self):
         """Gets the k8s_issuer of this GatewayUpdateK8SAuthConfig.  # noqa: E501
 
-        The Kubernetes JWT issuer name. If not set, kubernetes/serviceaccount will use as an issuer.  # noqa: E501
+        The Kubernetes JWT issuer name. K8SIssuer is the claim that specifies who issued the Kubernetes token  # noqa: E501
 
         :return: The k8s_issuer of this GatewayUpdateK8SAuthConfig.  # noqa: E501
         :rtype: str
@@ -308,7 +308,7 @@ class GatewayUpdateK8SAuthConfig(object):
     def k8s_issuer(self, k8s_issuer):
         """Sets the k8s_issuer of this GatewayUpdateK8SAuthConfig.
 
-        The Kubernetes JWT issuer name. If not set, kubernetes/serviceaccount will use as an issuer.  # noqa: E501
+        The Kubernetes JWT issuer name. K8SIssuer is the claim that specifies who issued the Kubernetes token  # noqa: E501
 
         :param k8s_issuer: The k8s_issuer of this GatewayUpdateK8SAuthConfig.  # noqa: E501
         :type: str

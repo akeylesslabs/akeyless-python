@@ -69,7 +69,7 @@ class GatewayUpdateProducerCassandra(object):
         'user_ttl': 'user-ttl'
     }
 
-    def __init__(self, cassandra_creation_statements=None, cassandra_hosts=None, cassandra_password=None, cassandra_port='9042', cassandra_username=None, delete_protection=None, json=None, name=None, new_name=None, producer_encryption_key_name=None, tags=None, target_name=None, token=None, uid_token=None, user_ttl='60m', local_vars_configuration=None):  # noqa: E501
+    def __init__(self, cassandra_creation_statements=None, cassandra_hosts=None, cassandra_password=None, cassandra_port='9042', cassandra_username=None, delete_protection=None, json=False, name=None, new_name=None, producer_encryption_key_name=None, tags=None, target_name=None, token=None, uid_token=None, user_ttl='60m', local_vars_configuration=None):  # noqa: E501
         """GatewayUpdateProducerCassandra - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -241,7 +241,7 @@ class GatewayUpdateProducerCassandra(object):
     def delete_protection(self):
         """Gets the delete_protection of this GatewayUpdateProducerCassandra.  # noqa: E501
 
-        Protection from accidental deletion of this item  # noqa: E501
+        Protection from accidental deletion of this item [true/false]  # noqa: E501
 
         :return: The delete_protection of this GatewayUpdateProducerCassandra.  # noqa: E501
         :rtype: str
@@ -252,7 +252,7 @@ class GatewayUpdateProducerCassandra(object):
     def delete_protection(self, delete_protection):
         """Sets the delete_protection of this GatewayUpdateProducerCassandra.
 
-        Protection from accidental deletion of this item  # noqa: E501
+        Protection from accidental deletion of this item [true/false]  # noqa: E501
 
         :param delete_protection: The delete_protection of this GatewayUpdateProducerCassandra.  # noqa: E501
         :type: str

@@ -89,7 +89,7 @@ class GatewayUpdateProducerAzure(object):
         'user_ttl': 'user-ttl'
     }
 
-    def __init__(self, app_obj_id=None, azure_client_id=None, azure_client_secret=None, azure_tenant_id=None, delete_protection=None, fixed_user_claim_keyname='false', fixed_user_only=False, json=None, name=None, new_name=None, producer_encryption_key_name=None, secure_access_enable=None, secure_access_web=None, secure_access_web_browsing=None, secure_access_web_proxy=None, tags=None, target_name=None, token=None, uid_token=None, user_group_obj_id=None, user_portal_access=False, user_principal_name=None, user_programmatic_access=False, user_role_template_id=None, user_ttl='60m', local_vars_configuration=None):  # noqa: E501
+    def __init__(self, app_obj_id=None, azure_client_id=None, azure_client_secret=None, azure_tenant_id=None, delete_protection=None, fixed_user_claim_keyname='false', fixed_user_only=False, json=False, name=None, new_name=None, producer_encryption_key_name=None, secure_access_enable=None, secure_access_web=True, secure_access_web_browsing=False, secure_access_web_proxy=False, tags=None, target_name=None, token=None, uid_token=None, user_group_obj_id=None, user_portal_access=False, user_principal_name=None, user_programmatic_access=False, user_role_template_id=None, user_ttl='60m', local_vars_configuration=None):  # noqa: E501
         """GatewayUpdateProducerAzure - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -268,7 +268,7 @@ class GatewayUpdateProducerAzure(object):
     def delete_protection(self):
         """Gets the delete_protection of this GatewayUpdateProducerAzure.  # noqa: E501
 
-        Protection from accidental deletion of this item  # noqa: E501
+        Protection from accidental deletion of this item [true/false]  # noqa: E501
 
         :return: The delete_protection of this GatewayUpdateProducerAzure.  # noqa: E501
         :rtype: str
@@ -279,7 +279,7 @@ class GatewayUpdateProducerAzure(object):
     def delete_protection(self, delete_protection):
         """Sets the delete_protection of this GatewayUpdateProducerAzure.
 
-        Protection from accidental deletion of this item  # noqa: E501
+        Protection from accidental deletion of this item [true/false]  # noqa: E501
 
         :param delete_protection: The delete_protection of this GatewayUpdateProducerAzure.  # noqa: E501
         :type: str
@@ -431,6 +431,7 @@ class GatewayUpdateProducerAzure(object):
     def secure_access_enable(self):
         """Gets the secure_access_enable of this GatewayUpdateProducerAzure.  # noqa: E501
 
+        Enable/Disable secure remote access [true/false]  # noqa: E501
 
         :return: The secure_access_enable of this GatewayUpdateProducerAzure.  # noqa: E501
         :rtype: str
@@ -441,6 +442,7 @@ class GatewayUpdateProducerAzure(object):
     def secure_access_enable(self, secure_access_enable):
         """Sets the secure_access_enable of this GatewayUpdateProducerAzure.
 
+        Enable/Disable secure remote access [true/false]  # noqa: E501
 
         :param secure_access_enable: The secure_access_enable of this GatewayUpdateProducerAzure.  # noqa: E501
         :type: str
@@ -452,6 +454,7 @@ class GatewayUpdateProducerAzure(object):
     def secure_access_web(self):
         """Gets the secure_access_web of this GatewayUpdateProducerAzure.  # noqa: E501
 
+        Enable Web Secure Remote Access  # noqa: E501
 
         :return: The secure_access_web of this GatewayUpdateProducerAzure.  # noqa: E501
         :rtype: bool
@@ -462,6 +465,7 @@ class GatewayUpdateProducerAzure(object):
     def secure_access_web(self, secure_access_web):
         """Sets the secure_access_web of this GatewayUpdateProducerAzure.
 
+        Enable Web Secure Remote Access  # noqa: E501
 
         :param secure_access_web: The secure_access_web of this GatewayUpdateProducerAzure.  # noqa: E501
         :type: bool
@@ -473,6 +477,7 @@ class GatewayUpdateProducerAzure(object):
     def secure_access_web_browsing(self):
         """Gets the secure_access_web_browsing of this GatewayUpdateProducerAzure.  # noqa: E501
 
+        Secure browser via Akeyless Web Access Bastion  # noqa: E501
 
         :return: The secure_access_web_browsing of this GatewayUpdateProducerAzure.  # noqa: E501
         :rtype: bool
@@ -483,6 +488,7 @@ class GatewayUpdateProducerAzure(object):
     def secure_access_web_browsing(self, secure_access_web_browsing):
         """Sets the secure_access_web_browsing of this GatewayUpdateProducerAzure.
 
+        Secure browser via Akeyless Web Access Bastion  # noqa: E501
 
         :param secure_access_web_browsing: The secure_access_web_browsing of this GatewayUpdateProducerAzure.  # noqa: E501
         :type: bool
@@ -494,6 +500,7 @@ class GatewayUpdateProducerAzure(object):
     def secure_access_web_proxy(self):
         """Gets the secure_access_web_proxy of this GatewayUpdateProducerAzure.  # noqa: E501
 
+        Web-Proxy via Akeyless Web Access Bastion  # noqa: E501
 
         :return: The secure_access_web_proxy of this GatewayUpdateProducerAzure.  # noqa: E501
         :rtype: bool
@@ -504,6 +511,7 @@ class GatewayUpdateProducerAzure(object):
     def secure_access_web_proxy(self, secure_access_web_proxy):
         """Sets the secure_access_web_proxy of this GatewayUpdateProducerAzure.
 
+        Web-Proxy via Akeyless Web Access Bastion  # noqa: E501
 
         :param secure_access_web_proxy: The secure_access_web_proxy of this GatewayUpdateProducerAzure.  # noqa: E501
         :type: bool

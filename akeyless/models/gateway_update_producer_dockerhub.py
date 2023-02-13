@@ -65,7 +65,7 @@ class GatewayUpdateProducerDockerhub(object):
         'user_ttl': 'user-ttl'
     }
 
-    def __init__(self, delete_protection=None, dockerhub_password=None, dockerhub_token_scopes=None, dockerhub_username=None, json=None, name=None, new_name=None, producer_encryption_key_name=None, tags=None, target_name=None, token=None, uid_token=None, user_ttl='60m', local_vars_configuration=None):  # noqa: E501
+    def __init__(self, delete_protection=None, dockerhub_password=None, dockerhub_token_scopes=None, dockerhub_username=None, json=False, name=None, new_name=None, producer_encryption_key_name=None, tags=None, target_name=None, token=None, uid_token=None, user_ttl='60m', local_vars_configuration=None):  # noqa: E501
         """GatewayUpdateProducerDockerhub - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -116,7 +116,7 @@ class GatewayUpdateProducerDockerhub(object):
     def delete_protection(self):
         """Gets the delete_protection of this GatewayUpdateProducerDockerhub.  # noqa: E501
 
-        Protection from accidental deletion of this item  # noqa: E501
+        Protection from accidental deletion of this item [true/false]  # noqa: E501
 
         :return: The delete_protection of this GatewayUpdateProducerDockerhub.  # noqa: E501
         :rtype: str
@@ -127,7 +127,7 @@ class GatewayUpdateProducerDockerhub(object):
     def delete_protection(self, delete_protection):
         """Sets the delete_protection of this GatewayUpdateProducerDockerhub.
 
-        Protection from accidental deletion of this item  # noqa: E501
+        Protection from accidental deletion of this item [true/false]  # noqa: E501
 
         :param delete_protection: The delete_protection of this GatewayUpdateProducerDockerhub.  # noqa: E501
         :type: str

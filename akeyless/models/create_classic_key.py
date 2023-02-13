@@ -65,7 +65,7 @@ class CreateClassicKey(object):
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, alg=None, cert_file_data=None, delete_protection=None, description=None, gpg_alg=None, json=None, key_data=None, metadata=None, name=None, protection_key_name=None, tags=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, alg=None, cert_file_data=None, delete_protection=None, description=None, gpg_alg=None, json=False, key_data=None, metadata=None, name=None, protection_key_name=None, tags=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """CreateClassicKey - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -163,7 +163,7 @@ class CreateClassicKey(object):
     def delete_protection(self):
         """Gets the delete_protection of this CreateClassicKey.  # noqa: E501
 
-        Protection from accidental deletion of this item  # noqa: E501
+        Protection from accidental deletion of this item [true/false]  # noqa: E501
 
         :return: The delete_protection of this CreateClassicKey.  # noqa: E501
         :rtype: str
@@ -174,7 +174,7 @@ class CreateClassicKey(object):
     def delete_protection(self, delete_protection):
         """Sets the delete_protection of this CreateClassicKey.
 
-        Protection from accidental deletion of this item  # noqa: E501
+        Protection from accidental deletion of this item [true/false]  # noqa: E501
 
         :param delete_protection: The delete_protection of this CreateClassicKey.  # noqa: E501
         :type: str

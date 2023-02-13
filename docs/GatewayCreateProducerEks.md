@@ -4,7 +4,7 @@ gatewayCreateProducerEks is a command that creates eks producer
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**delete_protection** | **str** | Protection from accidental deletion of this item | [optional] 
+**delete_protection** | **str** | Protection from accidental deletion of this item [true/false] | [optional] 
 **eks_access_key_id** | **str** | Access Key ID | [optional] 
 **eks_assume_role** | **str** | IAM assume role | [optional] 
 **eks_cluster_ca_cert** | **str** | EKS cluster CA certificate | [optional] 
@@ -12,14 +12,14 @@ Name | Type | Description | Notes
 **eks_cluster_name** | **str** | EKS cluster name | [optional] 
 **eks_region** | **str** | Region | [optional] [default to 'us-east-2']
 **eks_secret_access_key** | **str** | Secret Access Key | [optional] 
-**json** | **bool** | Set output format to JSON | [optional] 
+**json** | **bool** | Set output format to JSON | [optional] [default to False]
 **name** | **str** | Producer name | 
 **producer_encryption_key_name** | **str** | Dynamic producer encryption key | [optional] 
-**secure_access_allow_port_forwading** | **bool** |  | [optional] 
-**secure_access_bastion_issuer** | **str** |  | [optional] 
-**secure_access_cluster_endpoint** | **str** |  | [optional] 
-**secure_access_enable** | **str** |  | [optional] 
-**secure_access_web** | **bool** |  | [optional] 
+**secure_access_allow_port_forwading** | **bool** | Enable Port forwarding while using CLI access | [optional] 
+**secure_access_bastion_issuer** | **str** | Path to the SSH Certificate Issuer for your Akeyless Bastion | [optional] 
+**secure_access_cluster_endpoint** | **str** | The K8s cluster endpoint URL | [optional] 
+**secure_access_enable** | **str** | Enable/Disable secure remote access [true/false] | [optional] 
+**secure_access_web** | **bool** | Enable Web Secure Remote Access | [optional] [default to False]
 **tags** | **list[str]** | List of the tags attached to this secret | [optional] 
 **target_name** | **str** | Target name | [optional] 
 **token** | **str** | Authentication token (see &#x60;/auth&#x60; and &#x60;/configure&#x60;) | [optional] 

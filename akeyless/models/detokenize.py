@@ -51,7 +51,7 @@ class Detokenize(object):
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, ciphertext=None, json=None, token=None, tokenizer_name=None, tweak=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, ciphertext=None, json=False, token=None, tokenizer_name=None, tweak=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """Detokenize - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()

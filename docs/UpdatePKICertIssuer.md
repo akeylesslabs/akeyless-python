@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **code_signing_flag** | **bool** | If set, certificates will be flagged for code signing use | [optional] 
 **country** | **str** | A comma-separated list of the country that will be set in the issued certificate | [optional] 
 **description** | **str** | Description of the object | [optional] 
-**json** | **bool** | Set output format to JSON | [optional] 
+**json** | **bool** | Set output format to JSON | [optional] [default to False]
 **key_usage** | **str** | key-usage | [optional] [default to 'DigitalSignature,KeyAgreement,KeyEncipherment']
 **locality** | **str** | A comma-separated list of the locality that will be set in the issued certificate | [optional] 
 **metadata** | **str** | Deprecated - use description | [optional] 

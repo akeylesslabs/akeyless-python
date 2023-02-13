@@ -77,7 +77,7 @@ class CreateSSHCertIssuer(object):
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, allowed_users=None, delete_protection=None, description=None, extensions=None, json=None, metadata=None, name=None, principals=None, secure_access_bastion_api=None, secure_access_bastion_ssh=None, secure_access_enable=None, secure_access_host=None, secure_access_ssh_creds_user=None, secure_access_use_internal_bastion=None, signer_key_name=None, tag=None, token=None, ttl=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, allowed_users=None, delete_protection=None, description=None, extensions=None, json=False, metadata=None, name=None, principals=None, secure_access_bastion_api=None, secure_access_bastion_ssh=None, secure_access_enable=None, secure_access_host=None, secure_access_ssh_creds_user=None, secure_access_use_internal_bastion=None, signer_key_name=None, tag=None, token=None, ttl=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """CreateSSHCertIssuer - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -168,7 +168,7 @@ class CreateSSHCertIssuer(object):
     def delete_protection(self):
         """Gets the delete_protection of this CreateSSHCertIssuer.  # noqa: E501
 
-        Protection from accidental deletion of this item  # noqa: E501
+        Protection from accidental deletion of this item [true/false]  # noqa: E501
 
         :return: The delete_protection of this CreateSSHCertIssuer.  # noqa: E501
         :rtype: str
@@ -179,7 +179,7 @@ class CreateSSHCertIssuer(object):
     def delete_protection(self, delete_protection):
         """Sets the delete_protection of this CreateSSHCertIssuer.
 
-        Protection from accidental deletion of this item  # noqa: E501
+        Protection from accidental deletion of this item [true/false]  # noqa: E501
 
         :param delete_protection: The delete_protection of this CreateSSHCertIssuer.  # noqa: E501
         :type: str
@@ -331,6 +331,7 @@ class CreateSSHCertIssuer(object):
     def secure_access_bastion_api(self):
         """Gets the secure_access_bastion_api of this CreateSSHCertIssuer.  # noqa: E501
 
+        Bastion's SSH control API endpoint. E.g. https://my.bastion:9900  # noqa: E501
 
         :return: The secure_access_bastion_api of this CreateSSHCertIssuer.  # noqa: E501
         :rtype: str
@@ -341,6 +342,7 @@ class CreateSSHCertIssuer(object):
     def secure_access_bastion_api(self, secure_access_bastion_api):
         """Sets the secure_access_bastion_api of this CreateSSHCertIssuer.
 
+        Bastion's SSH control API endpoint. E.g. https://my.bastion:9900  # noqa: E501
 
         :param secure_access_bastion_api: The secure_access_bastion_api of this CreateSSHCertIssuer.  # noqa: E501
         :type: str
@@ -352,6 +354,7 @@ class CreateSSHCertIssuer(object):
     def secure_access_bastion_ssh(self):
         """Gets the secure_access_bastion_ssh of this CreateSSHCertIssuer.  # noqa: E501
 
+        Bastion's SSH server. E.g. my.bastion:22  # noqa: E501
 
         :return: The secure_access_bastion_ssh of this CreateSSHCertIssuer.  # noqa: E501
         :rtype: str
@@ -362,6 +365,7 @@ class CreateSSHCertIssuer(object):
     def secure_access_bastion_ssh(self, secure_access_bastion_ssh):
         """Sets the secure_access_bastion_ssh of this CreateSSHCertIssuer.
 
+        Bastion's SSH server. E.g. my.bastion:22  # noqa: E501
 
         :param secure_access_bastion_ssh: The secure_access_bastion_ssh of this CreateSSHCertIssuer.  # noqa: E501
         :type: str
@@ -373,6 +377,7 @@ class CreateSSHCertIssuer(object):
     def secure_access_enable(self):
         """Gets the secure_access_enable of this CreateSSHCertIssuer.  # noqa: E501
 
+        Enable/Disable secure remote access [true/false]  # noqa: E501
 
         :return: The secure_access_enable of this CreateSSHCertIssuer.  # noqa: E501
         :rtype: str
@@ -383,6 +388,7 @@ class CreateSSHCertIssuer(object):
     def secure_access_enable(self, secure_access_enable):
         """Sets the secure_access_enable of this CreateSSHCertIssuer.
 
+        Enable/Disable secure remote access [true/false]  # noqa: E501
 
         :param secure_access_enable: The secure_access_enable of this CreateSSHCertIssuer.  # noqa: E501
         :type: str
@@ -394,6 +400,7 @@ class CreateSSHCertIssuer(object):
     def secure_access_host(self):
         """Gets the secure_access_host of this CreateSSHCertIssuer.  # noqa: E501
 
+        Target servers for connections  # noqa: E501
 
         :return: The secure_access_host of this CreateSSHCertIssuer.  # noqa: E501
         :rtype: list[str]
@@ -404,6 +411,7 @@ class CreateSSHCertIssuer(object):
     def secure_access_host(self, secure_access_host):
         """Sets the secure_access_host of this CreateSSHCertIssuer.
 
+        Target servers for connections  # noqa: E501
 
         :param secure_access_host: The secure_access_host of this CreateSSHCertIssuer.  # noqa: E501
         :type: list[str]
@@ -415,6 +423,7 @@ class CreateSSHCertIssuer(object):
     def secure_access_ssh_creds_user(self):
         """Gets the secure_access_ssh_creds_user of this CreateSSHCertIssuer.  # noqa: E501
 
+        SSH username to connect to target server, must be in 'Allowed Users' list  # noqa: E501
 
         :return: The secure_access_ssh_creds_user of this CreateSSHCertIssuer.  # noqa: E501
         :rtype: str
@@ -425,6 +434,7 @@ class CreateSSHCertIssuer(object):
     def secure_access_ssh_creds_user(self, secure_access_ssh_creds_user):
         """Sets the secure_access_ssh_creds_user of this CreateSSHCertIssuer.
 
+        SSH username to connect to target server, must be in 'Allowed Users' list  # noqa: E501
 
         :param secure_access_ssh_creds_user: The secure_access_ssh_creds_user of this CreateSSHCertIssuer.  # noqa: E501
         :type: str
@@ -436,6 +446,7 @@ class CreateSSHCertIssuer(object):
     def secure_access_use_internal_bastion(self):
         """Gets the secure_access_use_internal_bastion of this CreateSSHCertIssuer.  # noqa: E501
 
+        Use internal SSH Bastion  # noqa: E501
 
         :return: The secure_access_use_internal_bastion of this CreateSSHCertIssuer.  # noqa: E501
         :rtype: bool
@@ -446,6 +457,7 @@ class CreateSSHCertIssuer(object):
     def secure_access_use_internal_bastion(self, secure_access_use_internal_bastion):
         """Sets the secure_access_use_internal_bastion of this CreateSSHCertIssuer.
 
+        Use internal SSH Bastion  # noqa: E501
 
         :param secure_access_use_internal_bastion: The secure_access_use_internal_bastion of this CreateSSHCertIssuer.  # noqa: E501
         :type: bool

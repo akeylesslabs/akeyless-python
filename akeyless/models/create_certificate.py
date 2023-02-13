@@ -63,7 +63,7 @@ class CreateCertificate(object):
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, certificate_data=None, delete_protection=None, description=None, expiration_event_in=None, json=None, key=None, key_data=None, metadata=None, name=None, tags=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, certificate_data=None, delete_protection=None, description=None, expiration_event_in=None, json=False, key=None, key_data=None, metadata=None, name=None, tags=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """CreateCertificate - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -134,7 +134,7 @@ class CreateCertificate(object):
     def delete_protection(self):
         """Gets the delete_protection of this CreateCertificate.  # noqa: E501
 
-        Protection from accidental deletion of this item  # noqa: E501
+        Protection from accidental deletion of this item [true/false]  # noqa: E501
 
         :return: The delete_protection of this CreateCertificate.  # noqa: E501
         :rtype: str
@@ -145,7 +145,7 @@ class CreateCertificate(object):
     def delete_protection(self, delete_protection):
         """Sets the delete_protection of this CreateCertificate.
 
-        Protection from accidental deletion of this item  # noqa: E501
+        Protection from accidental deletion of this item [true/false]  # noqa: E501
 
         :param delete_protection: The delete_protection of this CreateCertificate.  # noqa: E501
         :type: str

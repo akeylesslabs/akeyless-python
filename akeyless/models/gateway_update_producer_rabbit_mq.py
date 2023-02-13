@@ -85,7 +85,7 @@ class GatewayUpdateProducerRabbitMQ(object):
         'user_ttl': 'user-ttl'
     }
 
-    def __init__(self, delete_protection=None, json=None, name=None, new_name=None, producer_encryption_key_name=None, rabbitmq_admin_pwd=None, rabbitmq_admin_user=None, rabbitmq_server_uri=None, rabbitmq_user_conf_permission=None, rabbitmq_user_read_permission=None, rabbitmq_user_tags=None, rabbitmq_user_vhost=None, rabbitmq_user_write_permission=None, secure_access_enable=None, secure_access_url=None, secure_access_web=True, secure_access_web_browsing=None, secure_access_web_proxy=None, tags=None, target_name=None, token=None, uid_token=None, user_ttl='60m', local_vars_configuration=None):  # noqa: E501
+    def __init__(self, delete_protection=None, json=False, name=None, new_name=None, producer_encryption_key_name=None, rabbitmq_admin_pwd=None, rabbitmq_admin_user=None, rabbitmq_server_uri=None, rabbitmq_user_conf_permission=None, rabbitmq_user_read_permission=None, rabbitmq_user_tags=None, rabbitmq_user_vhost=None, rabbitmq_user_write_permission=None, secure_access_enable=None, secure_access_url=None, secure_access_web=True, secure_access_web_browsing=False, secure_access_web_proxy=False, tags=None, target_name=None, token=None, uid_token=None, user_ttl='60m', local_vars_configuration=None):  # noqa: E501
         """GatewayUpdateProducerRabbitMQ - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -166,7 +166,7 @@ class GatewayUpdateProducerRabbitMQ(object):
     def delete_protection(self):
         """Gets the delete_protection of this GatewayUpdateProducerRabbitMQ.  # noqa: E501
 
-        Protection from accidental deletion of this item  # noqa: E501
+        Protection from accidental deletion of this item [true/false]  # noqa: E501
 
         :return: The delete_protection of this GatewayUpdateProducerRabbitMQ.  # noqa: E501
         :rtype: str
@@ -177,7 +177,7 @@ class GatewayUpdateProducerRabbitMQ(object):
     def delete_protection(self, delete_protection):
         """Sets the delete_protection of this GatewayUpdateProducerRabbitMQ.
 
-        Protection from accidental deletion of this item  # noqa: E501
+        Protection from accidental deletion of this item [true/false]  # noqa: E501
 
         :param delete_protection: The delete_protection of this GatewayUpdateProducerRabbitMQ.  # noqa: E501
         :type: str
@@ -467,6 +467,7 @@ class GatewayUpdateProducerRabbitMQ(object):
     def secure_access_enable(self):
         """Gets the secure_access_enable of this GatewayUpdateProducerRabbitMQ.  # noqa: E501
 
+        Enable/Disable secure remote access [true/false]  # noqa: E501
 
         :return: The secure_access_enable of this GatewayUpdateProducerRabbitMQ.  # noqa: E501
         :rtype: str
@@ -477,6 +478,7 @@ class GatewayUpdateProducerRabbitMQ(object):
     def secure_access_enable(self, secure_access_enable):
         """Sets the secure_access_enable of this GatewayUpdateProducerRabbitMQ.
 
+        Enable/Disable secure remote access [true/false]  # noqa: E501
 
         :param secure_access_enable: The secure_access_enable of this GatewayUpdateProducerRabbitMQ.  # noqa: E501
         :type: str
@@ -488,6 +490,7 @@ class GatewayUpdateProducerRabbitMQ(object):
     def secure_access_url(self):
         """Gets the secure_access_url of this GatewayUpdateProducerRabbitMQ.  # noqa: E501
 
+        Destination URL to inject secrets  # noqa: E501
 
         :return: The secure_access_url of this GatewayUpdateProducerRabbitMQ.  # noqa: E501
         :rtype: str
@@ -498,6 +501,7 @@ class GatewayUpdateProducerRabbitMQ(object):
     def secure_access_url(self, secure_access_url):
         """Sets the secure_access_url of this GatewayUpdateProducerRabbitMQ.
 
+        Destination URL to inject secrets  # noqa: E501
 
         :param secure_access_url: The secure_access_url of this GatewayUpdateProducerRabbitMQ.  # noqa: E501
         :type: str
@@ -509,7 +513,7 @@ class GatewayUpdateProducerRabbitMQ(object):
     def secure_access_web(self):
         """Gets the secure_access_web of this GatewayUpdateProducerRabbitMQ.  # noqa: E501
 
-        Secure Access Web Category  # noqa: E501
+        Enable Web Secure Remote Access  # noqa: E501
 
         :return: The secure_access_web of this GatewayUpdateProducerRabbitMQ.  # noqa: E501
         :rtype: bool
@@ -520,7 +524,7 @@ class GatewayUpdateProducerRabbitMQ(object):
     def secure_access_web(self, secure_access_web):
         """Sets the secure_access_web of this GatewayUpdateProducerRabbitMQ.
 
-        Secure Access Web Category  # noqa: E501
+        Enable Web Secure Remote Access  # noqa: E501
 
         :param secure_access_web: The secure_access_web of this GatewayUpdateProducerRabbitMQ.  # noqa: E501
         :type: bool
@@ -532,6 +536,7 @@ class GatewayUpdateProducerRabbitMQ(object):
     def secure_access_web_browsing(self):
         """Gets the secure_access_web_browsing of this GatewayUpdateProducerRabbitMQ.  # noqa: E501
 
+        Secure browser via Akeyless Web Access Bastion  # noqa: E501
 
         :return: The secure_access_web_browsing of this GatewayUpdateProducerRabbitMQ.  # noqa: E501
         :rtype: bool
@@ -542,6 +547,7 @@ class GatewayUpdateProducerRabbitMQ(object):
     def secure_access_web_browsing(self, secure_access_web_browsing):
         """Sets the secure_access_web_browsing of this GatewayUpdateProducerRabbitMQ.
 
+        Secure browser via Akeyless Web Access Bastion  # noqa: E501
 
         :param secure_access_web_browsing: The secure_access_web_browsing of this GatewayUpdateProducerRabbitMQ.  # noqa: E501
         :type: bool
@@ -553,6 +559,7 @@ class GatewayUpdateProducerRabbitMQ(object):
     def secure_access_web_proxy(self):
         """Gets the secure_access_web_proxy of this GatewayUpdateProducerRabbitMQ.  # noqa: E501
 
+        Web-Proxy via Akeyless Web Access Bastion  # noqa: E501
 
         :return: The secure_access_web_proxy of this GatewayUpdateProducerRabbitMQ.  # noqa: E501
         :rtype: bool
@@ -563,6 +570,7 @@ class GatewayUpdateProducerRabbitMQ(object):
     def secure_access_web_proxy(self, secure_access_web_proxy):
         """Sets the secure_access_web_proxy of this GatewayUpdateProducerRabbitMQ.
 
+        Web-Proxy via Akeyless Web Access Bastion  # noqa: E501
 
         :param secure_access_web_proxy: The secure_access_web_proxy of this GatewayUpdateProducerRabbitMQ.  # noqa: E501
         :type: bool

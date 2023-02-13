@@ -36,16 +36,18 @@ class AccountGeneralSettings(object):
     openapi_types = {
         'data_protection_section': 'DataProtectionSection',
         'enable_request_for_access': 'bool',
-        'password_policy': 'PasswordPolicyInfo'
+        'password_policy': 'PasswordPolicyInfo',
+        'sharing_policy': 'SharingPolicyInfo'
     }
 
     attribute_map = {
         'data_protection_section': 'data_protection_section',
         'enable_request_for_access': 'enable_request_for_access',
-        'password_policy': 'password_policy'
+        'password_policy': 'password_policy',
+        'sharing_policy': 'sharing_policy'
     }
 
-    def __init__(self, data_protection_section=None, enable_request_for_access=None, password_policy=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, data_protection_section=None, enable_request_for_access=None, password_policy=None, sharing_policy=None, local_vars_configuration=None):  # noqa: E501
         """AccountGeneralSettings - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -54,6 +56,7 @@ class AccountGeneralSettings(object):
         self._data_protection_section = None
         self._enable_request_for_access = None
         self._password_policy = None
+        self._sharing_policy = None
         self.discriminator = None
 
         if data_protection_section is not None:
@@ -62,6 +65,8 @@ class AccountGeneralSettings(object):
             self.enable_request_for_access = enable_request_for_access
         if password_policy is not None:
             self.password_policy = password_policy
+        if sharing_policy is not None:
+            self.sharing_policy = sharing_policy
 
     @property
     def data_protection_section(self):
@@ -125,6 +130,27 @@ class AccountGeneralSettings(object):
         """
 
         self._password_policy = password_policy
+
+    @property
+    def sharing_policy(self):
+        """Gets the sharing_policy of this AccountGeneralSettings.  # noqa: E501
+
+
+        :return: The sharing_policy of this AccountGeneralSettings.  # noqa: E501
+        :rtype: SharingPolicyInfo
+        """
+        return self._sharing_policy
+
+    @sharing_policy.setter
+    def sharing_policy(self, sharing_policy):
+        """Sets the sharing_policy of this AccountGeneralSettings.
+
+
+        :param sharing_policy: The sharing_policy of this AccountGeneralSettings.  # noqa: E501
+        :type: SharingPolicyInfo
+        """
+
+        self._sharing_policy = sharing_policy
 
     def to_dict(self):
         """Returns the model properties as a dict"""

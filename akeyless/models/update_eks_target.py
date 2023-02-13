@@ -73,7 +73,7 @@ class UpdateEKSTarget(object):
         'use_gw_cloud_identity': 'use-gw-cloud-identity'
     }
 
-    def __init__(self, comment=None, description=None, eks_access_key_id=None, eks_cluster_ca_cert=None, eks_cluster_endpoint=None, eks_cluster_name=None, eks_region='us-east-2', eks_secret_access_key=None, json=None, keep_prev_version=None, key=None, name=None, new_name=None, token=None, uid_token=None, update_version=None, use_gw_cloud_identity=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, comment=None, description=None, eks_access_key_id=None, eks_cluster_ca_cert=None, eks_cluster_endpoint=None, eks_cluster_name=None, eks_region='us-east-2', eks_secret_access_key=None, json=False, keep_prev_version=None, key=None, name=None, new_name=None, token=None, uid_token=None, update_version=None, use_gw_cloud_identity=None, local_vars_configuration=None):  # noqa: E501
         """UpdateEKSTarget - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -348,6 +348,7 @@ class UpdateEKSTarget(object):
     def keep_prev_version(self):
         """Gets the keep_prev_version of this UpdateEKSTarget.  # noqa: E501
 
+        Whether to keep previous version [true/false]. If not set, use default according to account settings  # noqa: E501
 
         :return: The keep_prev_version of this UpdateEKSTarget.  # noqa: E501
         :rtype: str
@@ -358,6 +359,7 @@ class UpdateEKSTarget(object):
     def keep_prev_version(self, keep_prev_version):
         """Sets the keep_prev_version of this UpdateEKSTarget.
 
+        Whether to keep previous version [true/false]. If not set, use default according to account settings  # noqa: E501
 
         :param keep_prev_version: The keep_prev_version of this UpdateEKSTarget.  # noqa: E501
         :type: str

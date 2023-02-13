@@ -69,7 +69,7 @@ class UpdateAWSTarget(object):
         'use_gw_cloud_identity': 'use-gw-cloud-identity'
     }
 
-    def __init__(self, access_key=None, access_key_id=None, comment=None, description=None, json=None, keep_prev_version=None, key=None, name=None, new_name=None, region=None, session_token=None, token=None, uid_token=None, update_version=None, use_gw_cloud_identity=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, access_key=None, access_key_id=None, comment=None, description=None, json=False, keep_prev_version=None, key=None, name=None, new_name=None, region='us-east-2', session_token=None, token=None, uid_token=None, update_version=None, use_gw_cloud_identity=None, local_vars_configuration=None):  # noqa: E501
         """UpdateAWSTarget - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -92,10 +92,8 @@ class UpdateAWSTarget(object):
         self._use_gw_cloud_identity = None
         self.discriminator = None
 
-        if access_key is not None:
-            self.access_key = access_key
-        if access_key_id is not None:
-            self.access_key_id = access_key_id
+        self.access_key = access_key
+        self.access_key_id = access_key_id
         if comment is not None:
             self.comment = comment
         if description is not None:
@@ -126,6 +124,7 @@ class UpdateAWSTarget(object):
     def access_key(self):
         """Gets the access_key of this UpdateAWSTarget.  # noqa: E501
 
+        AWS secret access key  # noqa: E501
 
         :return: The access_key of this UpdateAWSTarget.  # noqa: E501
         :rtype: str
@@ -136,10 +135,13 @@ class UpdateAWSTarget(object):
     def access_key(self, access_key):
         """Sets the access_key of this UpdateAWSTarget.
 
+        AWS secret access key  # noqa: E501
 
         :param access_key: The access_key of this UpdateAWSTarget.  # noqa: E501
         :type: str
         """
+        if self.local_vars_configuration.client_side_validation and access_key is None:  # noqa: E501
+            raise ValueError("Invalid value for `access_key`, must not be `None`")  # noqa: E501
 
         self._access_key = access_key
 
@@ -147,6 +149,7 @@ class UpdateAWSTarget(object):
     def access_key_id(self):
         """Gets the access_key_id of this UpdateAWSTarget.  # noqa: E501
 
+        AWS access key ID  # noqa: E501
 
         :return: The access_key_id of this UpdateAWSTarget.  # noqa: E501
         :rtype: str
@@ -157,10 +160,13 @@ class UpdateAWSTarget(object):
     def access_key_id(self, access_key_id):
         """Sets the access_key_id of this UpdateAWSTarget.
 
+        AWS access key ID  # noqa: E501
 
         :param access_key_id: The access_key_id of this UpdateAWSTarget.  # noqa: E501
         :type: str
         """
+        if self.local_vars_configuration.client_side_validation and access_key_id is None:  # noqa: E501
+            raise ValueError("Invalid value for `access_key_id`, must not be `None`")  # noqa: E501
 
         self._access_key_id = access_key_id
 
@@ -237,6 +243,7 @@ class UpdateAWSTarget(object):
     def keep_prev_version(self):
         """Gets the keep_prev_version of this UpdateAWSTarget.  # noqa: E501
 
+        Whether to keep previous version [true/false]. If not set, use default according to account settings  # noqa: E501
 
         :return: The keep_prev_version of this UpdateAWSTarget.  # noqa: E501
         :rtype: str
@@ -247,6 +254,7 @@ class UpdateAWSTarget(object):
     def keep_prev_version(self, keep_prev_version):
         """Sets the keep_prev_version of this UpdateAWSTarget.
 
+        Whether to keep previous version [true/false]. If not set, use default according to account settings  # noqa: E501
 
         :param keep_prev_version: The keep_prev_version of this UpdateAWSTarget.  # noqa: E501
         :type: str
@@ -329,6 +337,7 @@ class UpdateAWSTarget(object):
     def region(self):
         """Gets the region of this UpdateAWSTarget.  # noqa: E501
 
+        AWS region  # noqa: E501
 
         :return: The region of this UpdateAWSTarget.  # noqa: E501
         :rtype: str
@@ -339,6 +348,7 @@ class UpdateAWSTarget(object):
     def region(self, region):
         """Sets the region of this UpdateAWSTarget.
 
+        AWS region  # noqa: E501
 
         :param region: The region of this UpdateAWSTarget.  # noqa: E501
         :type: str
@@ -350,6 +360,7 @@ class UpdateAWSTarget(object):
     def session_token(self):
         """Gets the session_token of this UpdateAWSTarget.  # noqa: E501
 
+        Required only for temporary security credentials retrieved using STS  # noqa: E501
 
         :return: The session_token of this UpdateAWSTarget.  # noqa: E501
         :rtype: str
@@ -360,6 +371,7 @@ class UpdateAWSTarget(object):
     def session_token(self, session_token):
         """Sets the session_token of this UpdateAWSTarget.
 
+        Required only for temporary security credentials retrieved using STS  # noqa: E501
 
         :param session_token: The session_token of this UpdateAWSTarget.  # noqa: E501
         :type: str
@@ -440,6 +452,7 @@ class UpdateAWSTarget(object):
     def use_gw_cloud_identity(self):
         """Gets the use_gw_cloud_identity of this UpdateAWSTarget.  # noqa: E501
 
+        Use the GW's Cloud IAM  # noqa: E501
 
         :return: The use_gw_cloud_identity of this UpdateAWSTarget.  # noqa: E501
         :rtype: bool
@@ -450,6 +463,7 @@ class UpdateAWSTarget(object):
     def use_gw_cloud_identity(self, use_gw_cloud_identity):
         """Sets the use_gw_cloud_identity of this UpdateAWSTarget.
 
+        Use the GW's Cloud IAM  # noqa: E501
 
         :param use_gw_cloud_identity: The use_gw_cloud_identity of this UpdateAWSTarget.  # noqa: E501
         :type: bool

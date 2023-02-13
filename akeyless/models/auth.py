@@ -75,7 +75,7 @@ class Auth(object):
         'uid_token': 'uid_token'
     }
 
-    def __init__(self, access_id=None, access_key=None, access_type='access_key', admin_email=None, admin_password=None, cert_data=None, cloud_id=None, debug=None, gateway_url=None, gcp_audience=None, json=None, jwt=None, k8s_auth_config_name=None, k8s_service_account_token=None, key_data=None, ldap_password=None, ldap_username=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, access_id=None, access_key=None, access_type='access_key', admin_email=None, admin_password=None, cert_data=None, cloud_id=None, debug=None, gateway_url=None, gcp_audience='akeyless.io', json=False, jwt=None, k8s_auth_config_name=None, k8s_service_account_token=None, key_data=None, ldap_password=None, ldap_username=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """Auth - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()

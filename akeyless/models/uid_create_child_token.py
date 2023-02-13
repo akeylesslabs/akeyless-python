@@ -59,7 +59,7 @@ class UidCreateChildToken(object):
         'uid_token_id': 'uid-token-id'
     }
 
-    def __init__(self, auth_method_name=None, child_deny_inheritance=None, child_deny_rotate=None, child_ttl=None, comment=None, description=None, json=None, token=None, uid_token=None, uid_token_id=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, auth_method_name=None, child_deny_inheritance=None, child_deny_rotate=None, child_ttl=None, comment=None, description=None, json=False, token=None, uid_token=None, uid_token_id=None, local_vars_configuration=None):  # noqa: E501
         """UidCreateChildToken - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()

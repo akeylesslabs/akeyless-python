@@ -93,7 +93,7 @@ class CreateDBTarget(object):
         'user_name': 'user-name'
     }
 
-    def __init__(self, comment=None, db_name=None, db_server_certificates=None, db_server_name=None, db_type=None, description=None, host=None, json=None, key=None, mongodb_atlas=None, mongodb_atlas_api_private_key=None, mongodb_atlas_api_public_key=None, mongodb_atlas_project_id=None, mongodb_default_auth_db=None, mongodb_uri_options=None, name=None, oracle_service_name=None, port=None, pwd=None, snowflake_account=None, snowflake_api_private_key=None, snowflake_api_private_key_password=None, ssl=None, ssl_certificate=None, token=None, uid_token=None, user_name=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, comment=None, db_name=None, db_server_certificates=None, db_server_name=None, db_type=None, description=None, host=None, json=False, key=None, mongodb_atlas=None, mongodb_atlas_api_private_key=None, mongodb_atlas_api_public_key=None, mongodb_atlas_project_id=None, mongodb_default_auth_db=None, mongodb_uri_options=None, name=None, oracle_service_name=None, port=None, pwd=None, snowflake_account=None, snowflake_api_private_key=None, snowflake_api_private_key_password=None, ssl=False, ssl_certificate=None, token=None, uid_token=None, user_name=None, local_vars_configuration=None):  # noqa: E501
         """CreateDBTarget - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -679,7 +679,7 @@ class CreateDBTarget(object):
     def ssl(self):
         """Gets the ssl of this CreateDBTarget.  # noqa: E501
 
-        SSL connection mode  # noqa: E501
+        Enable/Disable SSL [true/false]  # noqa: E501
 
         :return: The ssl of this CreateDBTarget.  # noqa: E501
         :rtype: bool
@@ -690,7 +690,7 @@ class CreateDBTarget(object):
     def ssl(self, ssl):
         """Sets the ssl of this CreateDBTarget.
 
-        SSL connection mode  # noqa: E501
+        Enable/Disable SSL [true/false]  # noqa: E501
 
         :param ssl: The ssl of this CreateDBTarget.  # noqa: E501
         :type: bool

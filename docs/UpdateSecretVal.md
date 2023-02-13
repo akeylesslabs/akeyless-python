@@ -4,8 +4,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **accessibility** | **str** | for personal password manager | [optional] [default to 'regular']
-**json** | **bool** | Set output format to JSON | [optional] 
-**keep_prev_version** | **str** |  | [optional] 
+**json** | **bool** | Set output format to JSON | [optional] [default to False]
+**keep_prev_version** | **str** | Whether to keep previous version [true/false]. If not set, use default according to account settings | [optional] 
 **key** | **str** | The name of a key that used to encrypt the secret value (if empty, the account default protectionKey key will be used) | [optional] 
 **multiline** | **bool** | The provided value is a multiline value (separated by &#39;\\n&#39;) | [optional] 
 **name** | **str** | Secret name | 

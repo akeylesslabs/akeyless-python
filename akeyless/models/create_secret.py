@@ -89,7 +89,7 @@ class CreateSecret(object):
         'value': 'value'
     }
 
-    def __init__(self, accessibility='regular', delete_protection=None, description=None, json=None, metadata=None, multiline_value=None, name=None, password_manager_custom_field=None, password_manager_inject_url=None, password_manager_password=None, password_manager_username=None, protection_key=None, secure_access_bastion_issuer=None, secure_access_enable=None, secure_access_host=None, secure_access_ssh_creds=None, secure_access_ssh_user=None, secure_access_url=None, secure_access_web_browsing=None, secure_access_web_proxy=None, tags=None, token=None, type=None, uid_token=None, value=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, accessibility='regular', delete_protection=None, description=None, json=False, metadata=None, multiline_value=None, name=None, password_manager_custom_field=None, password_manager_inject_url=None, password_manager_password=None, password_manager_username=None, protection_key=None, secure_access_bastion_issuer=None, secure_access_enable=None, secure_access_host=None, secure_access_ssh_creds=None, secure_access_ssh_user=None, secure_access_url=None, secure_access_web_browsing=False, secure_access_web_proxy=False, tags=None, token=None, type='generic', uid_token=None, value=None, local_vars_configuration=None):  # noqa: E501
         """CreateSecret - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -198,7 +198,7 @@ class CreateSecret(object):
     def delete_protection(self):
         """Gets the delete_protection of this CreateSecret.  # noqa: E501
 
-        Protection from accidental deletion of this item  # noqa: E501
+        Protection from accidental deletion of this item [true/false]  # noqa: E501
 
         :return: The delete_protection of this CreateSecret.  # noqa: E501
         :rtype: str
@@ -209,7 +209,7 @@ class CreateSecret(object):
     def delete_protection(self, delete_protection):
         """Sets the delete_protection of this CreateSecret.
 
-        Protection from accidental deletion of this item  # noqa: E501
+        Protection from accidental deletion of this item [true/false]  # noqa: E501
 
         :param delete_protection: The delete_protection of this CreateSecret.  # noqa: E501
         :type: str
@@ -453,6 +453,7 @@ class CreateSecret(object):
     def secure_access_bastion_issuer(self):
         """Gets the secure_access_bastion_issuer of this CreateSecret.  # noqa: E501
 
+        Path to the SSH Certificate Issuer for your Akeyless Bastion  # noqa: E501
 
         :return: The secure_access_bastion_issuer of this CreateSecret.  # noqa: E501
         :rtype: str
@@ -463,6 +464,7 @@ class CreateSecret(object):
     def secure_access_bastion_issuer(self, secure_access_bastion_issuer):
         """Sets the secure_access_bastion_issuer of this CreateSecret.
 
+        Path to the SSH Certificate Issuer for your Akeyless Bastion  # noqa: E501
 
         :param secure_access_bastion_issuer: The secure_access_bastion_issuer of this CreateSecret.  # noqa: E501
         :type: str
@@ -474,6 +476,7 @@ class CreateSecret(object):
     def secure_access_enable(self):
         """Gets the secure_access_enable of this CreateSecret.  # noqa: E501
 
+        Enable/Disable secure remote access [true/false]  # noqa: E501
 
         :return: The secure_access_enable of this CreateSecret.  # noqa: E501
         :rtype: str
@@ -484,6 +487,7 @@ class CreateSecret(object):
     def secure_access_enable(self, secure_access_enable):
         """Sets the secure_access_enable of this CreateSecret.
 
+        Enable/Disable secure remote access [true/false]  # noqa: E501
 
         :param secure_access_enable: The secure_access_enable of this CreateSecret.  # noqa: E501
         :type: str
@@ -495,6 +499,7 @@ class CreateSecret(object):
     def secure_access_host(self):
         """Gets the secure_access_host of this CreateSecret.  # noqa: E501
 
+        Target servers for connections  # noqa: E501
 
         :return: The secure_access_host of this CreateSecret.  # noqa: E501
         :rtype: list[str]
@@ -505,6 +510,7 @@ class CreateSecret(object):
     def secure_access_host(self, secure_access_host):
         """Sets the secure_access_host of this CreateSecret.
 
+        Target servers for connections  # noqa: E501
 
         :param secure_access_host: The secure_access_host of this CreateSecret.  # noqa: E501
         :type: list[str]
@@ -516,6 +522,7 @@ class CreateSecret(object):
     def secure_access_ssh_creds(self):
         """Gets the secure_access_ssh_creds of this CreateSecret.  # noqa: E501
 
+        Static-Secret values contains SSH Credentials, either Private Key or Password [password/private-key]  # noqa: E501
 
         :return: The secure_access_ssh_creds of this CreateSecret.  # noqa: E501
         :rtype: str
@@ -526,6 +533,7 @@ class CreateSecret(object):
     def secure_access_ssh_creds(self, secure_access_ssh_creds):
         """Sets the secure_access_ssh_creds of this CreateSecret.
 
+        Static-Secret values contains SSH Credentials, either Private Key or Password [password/private-key]  # noqa: E501
 
         :param secure_access_ssh_creds: The secure_access_ssh_creds of this CreateSecret.  # noqa: E501
         :type: str
@@ -537,6 +545,7 @@ class CreateSecret(object):
     def secure_access_ssh_user(self):
         """Gets the secure_access_ssh_user of this CreateSecret.  # noqa: E501
 
+        Override the SSH username as indicated in SSH Certificate Issuer  # noqa: E501
 
         :return: The secure_access_ssh_user of this CreateSecret.  # noqa: E501
         :rtype: str
@@ -547,6 +556,7 @@ class CreateSecret(object):
     def secure_access_ssh_user(self, secure_access_ssh_user):
         """Sets the secure_access_ssh_user of this CreateSecret.
 
+        Override the SSH username as indicated in SSH Certificate Issuer  # noqa: E501
 
         :param secure_access_ssh_user: The secure_access_ssh_user of this CreateSecret.  # noqa: E501
         :type: str
@@ -558,6 +568,7 @@ class CreateSecret(object):
     def secure_access_url(self):
         """Gets the secure_access_url of this CreateSecret.  # noqa: E501
 
+        Destination URL to inject secrets  # noqa: E501
 
         :return: The secure_access_url of this CreateSecret.  # noqa: E501
         :rtype: str
@@ -568,6 +579,7 @@ class CreateSecret(object):
     def secure_access_url(self, secure_access_url):
         """Sets the secure_access_url of this CreateSecret.
 
+        Destination URL to inject secrets  # noqa: E501
 
         :param secure_access_url: The secure_access_url of this CreateSecret.  # noqa: E501
         :type: str
@@ -579,6 +591,7 @@ class CreateSecret(object):
     def secure_access_web_browsing(self):
         """Gets the secure_access_web_browsing of this CreateSecret.  # noqa: E501
 
+        Secure browser via Akeyless Web Access Bastion  # noqa: E501
 
         :return: The secure_access_web_browsing of this CreateSecret.  # noqa: E501
         :rtype: bool
@@ -589,6 +602,7 @@ class CreateSecret(object):
     def secure_access_web_browsing(self, secure_access_web_browsing):
         """Sets the secure_access_web_browsing of this CreateSecret.
 
+        Secure browser via Akeyless Web Access Bastion  # noqa: E501
 
         :param secure_access_web_browsing: The secure_access_web_browsing of this CreateSecret.  # noqa: E501
         :type: bool
@@ -600,6 +614,7 @@ class CreateSecret(object):
     def secure_access_web_proxy(self):
         """Gets the secure_access_web_proxy of this CreateSecret.  # noqa: E501
 
+        Web-Proxy via Akeyless Web Access Bastion  # noqa: E501
 
         :return: The secure_access_web_proxy of this CreateSecret.  # noqa: E501
         :rtype: bool
@@ -610,6 +625,7 @@ class CreateSecret(object):
     def secure_access_web_proxy(self, secure_access_web_proxy):
         """Sets the secure_access_web_proxy of this CreateSecret.
 
+        Web-Proxy via Akeyless Web Access Bastion  # noqa: E501
 
         :param secure_access_web_proxy: The secure_access_web_proxy of this CreateSecret.  # noqa: E501
         :type: bool
@@ -667,7 +683,7 @@ class CreateSecret(object):
     def type(self):
         """Gets the type of this CreateSecret.  # noqa: E501
 
-        For Password Management use, reflect the website context  # noqa: E501
+        The secret sub type [generic/password]  # noqa: E501
 
         :return: The type of this CreateSecret.  # noqa: E501
         :rtype: str
@@ -678,7 +694,7 @@ class CreateSecret(object):
     def type(self, type):
         """Sets the type of this CreateSecret.
 
-        For Password Management use, reflect the website context  # noqa: E501
+        The secret sub type [generic/password]  # noqa: E501
 
         :param type: The type of this CreateSecret.  # noqa: E501
         :type: str

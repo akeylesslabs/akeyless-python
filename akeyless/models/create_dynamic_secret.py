@@ -57,7 +57,7 @@ class CreateDynamicSecret(object):
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, delete_protection=None, description=None, json=None, key=None, metadata=None, name=None, tags=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, delete_protection=None, description=None, json=False, key=None, metadata=None, name=None, tags=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """CreateDynamicSecret - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -96,7 +96,7 @@ class CreateDynamicSecret(object):
     def delete_protection(self):
         """Gets the delete_protection of this CreateDynamicSecret.  # noqa: E501
 
-        Protection from accidental deletion of this item  # noqa: E501
+        Protection from accidental deletion of this item [true/false]  # noqa: E501
 
         :return: The delete_protection of this CreateDynamicSecret.  # noqa: E501
         :rtype: str
@@ -107,7 +107,7 @@ class CreateDynamicSecret(object):
     def delete_protection(self, delete_protection):
         """Sets the delete_protection of this CreateDynamicSecret.
 
-        Protection from accidental deletion of this item  # noqa: E501
+        Protection from accidental deletion of this item [true/false]  # noqa: E501
 
         :param delete_protection: The delete_protection of this CreateDynamicSecret.  # noqa: E501
         :type: str

@@ -93,7 +93,7 @@ class GatewayCreateProducerAws(object):
         'user_ttl': 'user-ttl'
     }
 
-    def __init__(self, access_mode=None, admin_rotation_interval_days=0, aws_access_key_id=None, aws_access_secret_key=None, aws_role_arns=None, aws_user_console_access=False, aws_user_groups=None, aws_user_policies=None, aws_user_programmatic_access=True, delete_protection=None, enable_admin_rotation=False, json=None, name=None, producer_encryption_key_name=None, region='us-east-2', secure_access_aws_account_id=None, secure_access_aws_native_cli=None, secure_access_bastion_issuer=None, secure_access_enable=None, secure_access_web=None, secure_access_web_browsing=None, secure_access_web_proxy=None, tags=None, target_name=None, token=None, uid_token=None, user_ttl='60m', local_vars_configuration=None):  # noqa: E501
+    def __init__(self, access_mode=None, admin_rotation_interval_days=0, aws_access_key_id=None, aws_access_secret_key=None, aws_role_arns=None, aws_user_console_access=False, aws_user_groups=None, aws_user_policies=None, aws_user_programmatic_access=True, delete_protection=None, enable_admin_rotation=False, json=False, name=None, producer_encryption_key_name=None, region='us-east-2', secure_access_aws_account_id=None, secure_access_aws_native_cli=None, secure_access_bastion_issuer=None, secure_access_enable=None, secure_access_web=True, secure_access_web_browsing=False, secure_access_web_proxy=False, tags=None, target_name=None, token=None, uid_token=None, user_ttl='60m', local_vars_configuration=None):  # noqa: E501
         """GatewayCreateProducerAws - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -368,7 +368,7 @@ class GatewayCreateProducerAws(object):
     def aws_user_programmatic_access(self):
         """Gets the aws_user_programmatic_access of this GatewayCreateProducerAws.  # noqa: E501
 
-        AWS User programmatic access  # noqa: E501
+        Enable AWS User programmatic access  # noqa: E501
 
         :return: The aws_user_programmatic_access of this GatewayCreateProducerAws.  # noqa: E501
         :rtype: bool
@@ -379,7 +379,7 @@ class GatewayCreateProducerAws(object):
     def aws_user_programmatic_access(self, aws_user_programmatic_access):
         """Sets the aws_user_programmatic_access of this GatewayCreateProducerAws.
 
-        AWS User programmatic access  # noqa: E501
+        Enable AWS User programmatic access  # noqa: E501
 
         :param aws_user_programmatic_access: The aws_user_programmatic_access of this GatewayCreateProducerAws.  # noqa: E501
         :type: bool
@@ -391,7 +391,7 @@ class GatewayCreateProducerAws(object):
     def delete_protection(self):
         """Gets the delete_protection of this GatewayCreateProducerAws.  # noqa: E501
 
-        Protection from accidental deletion of this item  # noqa: E501
+        Protection from accidental deletion of this item [true/false]  # noqa: E501
 
         :return: The delete_protection of this GatewayCreateProducerAws.  # noqa: E501
         :rtype: str
@@ -402,7 +402,7 @@ class GatewayCreateProducerAws(object):
     def delete_protection(self, delete_protection):
         """Sets the delete_protection of this GatewayCreateProducerAws.
 
-        Protection from accidental deletion of this item  # noqa: E501
+        Protection from accidental deletion of this item [true/false]  # noqa: E501
 
         :param delete_protection: The delete_protection of this GatewayCreateProducerAws.  # noqa: E501
         :type: str
@@ -531,6 +531,7 @@ class GatewayCreateProducerAws(object):
     def secure_access_aws_account_id(self):
         """Gets the secure_access_aws_account_id of this GatewayCreateProducerAws.  # noqa: E501
 
+        The AWS account id  # noqa: E501
 
         :return: The secure_access_aws_account_id of this GatewayCreateProducerAws.  # noqa: E501
         :rtype: str
@@ -541,6 +542,7 @@ class GatewayCreateProducerAws(object):
     def secure_access_aws_account_id(self, secure_access_aws_account_id):
         """Sets the secure_access_aws_account_id of this GatewayCreateProducerAws.
 
+        The AWS account id  # noqa: E501
 
         :param secure_access_aws_account_id: The secure_access_aws_account_id of this GatewayCreateProducerAws.  # noqa: E501
         :type: str
@@ -552,6 +554,7 @@ class GatewayCreateProducerAws(object):
     def secure_access_aws_native_cli(self):
         """Gets the secure_access_aws_native_cli of this GatewayCreateProducerAws.  # noqa: E501
 
+        The AWS native cli  # noqa: E501
 
         :return: The secure_access_aws_native_cli of this GatewayCreateProducerAws.  # noqa: E501
         :rtype: bool
@@ -562,6 +565,7 @@ class GatewayCreateProducerAws(object):
     def secure_access_aws_native_cli(self, secure_access_aws_native_cli):
         """Sets the secure_access_aws_native_cli of this GatewayCreateProducerAws.
 
+        The AWS native cli  # noqa: E501
 
         :param secure_access_aws_native_cli: The secure_access_aws_native_cli of this GatewayCreateProducerAws.  # noqa: E501
         :type: bool
@@ -573,6 +577,7 @@ class GatewayCreateProducerAws(object):
     def secure_access_bastion_issuer(self):
         """Gets the secure_access_bastion_issuer of this GatewayCreateProducerAws.  # noqa: E501
 
+        Path to the SSH Certificate Issuer for your Akeyless Bastion  # noqa: E501
 
         :return: The secure_access_bastion_issuer of this GatewayCreateProducerAws.  # noqa: E501
         :rtype: str
@@ -583,6 +588,7 @@ class GatewayCreateProducerAws(object):
     def secure_access_bastion_issuer(self, secure_access_bastion_issuer):
         """Sets the secure_access_bastion_issuer of this GatewayCreateProducerAws.
 
+        Path to the SSH Certificate Issuer for your Akeyless Bastion  # noqa: E501
 
         :param secure_access_bastion_issuer: The secure_access_bastion_issuer of this GatewayCreateProducerAws.  # noqa: E501
         :type: str
@@ -594,6 +600,7 @@ class GatewayCreateProducerAws(object):
     def secure_access_enable(self):
         """Gets the secure_access_enable of this GatewayCreateProducerAws.  # noqa: E501
 
+        Enable/Disable secure remote access [true/false]  # noqa: E501
 
         :return: The secure_access_enable of this GatewayCreateProducerAws.  # noqa: E501
         :rtype: str
@@ -604,6 +611,7 @@ class GatewayCreateProducerAws(object):
     def secure_access_enable(self, secure_access_enable):
         """Sets the secure_access_enable of this GatewayCreateProducerAws.
 
+        Enable/Disable secure remote access [true/false]  # noqa: E501
 
         :param secure_access_enable: The secure_access_enable of this GatewayCreateProducerAws.  # noqa: E501
         :type: str
@@ -615,6 +623,7 @@ class GatewayCreateProducerAws(object):
     def secure_access_web(self):
         """Gets the secure_access_web of this GatewayCreateProducerAws.  # noqa: E501
 
+        Enable Web Secure Remote Access  # noqa: E501
 
         :return: The secure_access_web of this GatewayCreateProducerAws.  # noqa: E501
         :rtype: bool
@@ -625,6 +634,7 @@ class GatewayCreateProducerAws(object):
     def secure_access_web(self, secure_access_web):
         """Sets the secure_access_web of this GatewayCreateProducerAws.
 
+        Enable Web Secure Remote Access  # noqa: E501
 
         :param secure_access_web: The secure_access_web of this GatewayCreateProducerAws.  # noqa: E501
         :type: bool
@@ -636,6 +646,7 @@ class GatewayCreateProducerAws(object):
     def secure_access_web_browsing(self):
         """Gets the secure_access_web_browsing of this GatewayCreateProducerAws.  # noqa: E501
 
+        Secure browser via Akeyless Web Access Bastion  # noqa: E501
 
         :return: The secure_access_web_browsing of this GatewayCreateProducerAws.  # noqa: E501
         :rtype: bool
@@ -646,6 +657,7 @@ class GatewayCreateProducerAws(object):
     def secure_access_web_browsing(self, secure_access_web_browsing):
         """Sets the secure_access_web_browsing of this GatewayCreateProducerAws.
 
+        Secure browser via Akeyless Web Access Bastion  # noqa: E501
 
         :param secure_access_web_browsing: The secure_access_web_browsing of this GatewayCreateProducerAws.  # noqa: E501
         :type: bool
@@ -657,6 +669,7 @@ class GatewayCreateProducerAws(object):
     def secure_access_web_proxy(self):
         """Gets the secure_access_web_proxy of this GatewayCreateProducerAws.  # noqa: E501
 
+        Web-Proxy via Akeyless Web Access Bastion  # noqa: E501
 
         :return: The secure_access_web_proxy of this GatewayCreateProducerAws.  # noqa: E501
         :rtype: bool
@@ -667,6 +680,7 @@ class GatewayCreateProducerAws(object):
     def secure_access_web_proxy(self, secure_access_web_proxy):
         """Sets the secure_access_web_proxy of this GatewayCreateProducerAws.
 
+        Web-Proxy via Akeyless Web Access Bastion  # noqa: E501
 
         :param secure_access_web_proxy: The secure_access_web_proxy of this GatewayCreateProducerAws.  # noqa: E501
         :type: bool

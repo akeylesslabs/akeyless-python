@@ -65,7 +65,7 @@ class CreateSSHTarget(object):
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, comment=None, description=None, host=None, json=None, key=None, name=None, port=None, private_key=None, private_key_password=None, ssh_password=None, ssh_username=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, comment=None, description=None, host=None, json=False, key=None, name=None, port='22', private_key=None, private_key_password=None, ssh_password=None, ssh_username=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """CreateSSHTarget - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -162,6 +162,7 @@ class CreateSSHTarget(object):
     def host(self):
         """Gets the host of this CreateSSHTarget.  # noqa: E501
 
+        SSH host name  # noqa: E501
 
         :return: The host of this CreateSSHTarget.  # noqa: E501
         :rtype: str
@@ -172,6 +173,7 @@ class CreateSSHTarget(object):
     def host(self, host):
         """Sets the host of this CreateSSHTarget.
 
+        SSH host name  # noqa: E501
 
         :param host: The host of this CreateSSHTarget.  # noqa: E501
         :type: str
@@ -254,6 +256,7 @@ class CreateSSHTarget(object):
     def port(self):
         """Gets the port of this CreateSSHTarget.  # noqa: E501
 
+        SSH port  # noqa: E501
 
         :return: The port of this CreateSSHTarget.  # noqa: E501
         :rtype: str
@@ -264,6 +267,7 @@ class CreateSSHTarget(object):
     def port(self, port):
         """Sets the port of this CreateSSHTarget.
 
+        SSH port  # noqa: E501
 
         :param port: The port of this CreateSSHTarget.  # noqa: E501
         :type: str
@@ -275,6 +279,7 @@ class CreateSSHTarget(object):
     def private_key(self):
         """Gets the private_key of this CreateSSHTarget.  # noqa: E501
 
+        SSH private key  # noqa: E501
 
         :return: The private_key of this CreateSSHTarget.  # noqa: E501
         :rtype: str
@@ -285,6 +290,7 @@ class CreateSSHTarget(object):
     def private_key(self, private_key):
         """Sets the private_key of this CreateSSHTarget.
 
+        SSH private key  # noqa: E501
 
         :param private_key: The private_key of this CreateSSHTarget.  # noqa: E501
         :type: str
@@ -296,6 +302,7 @@ class CreateSSHTarget(object):
     def private_key_password(self):
         """Gets the private_key_password of this CreateSSHTarget.  # noqa: E501
 
+        SSH private key password  # noqa: E501
 
         :return: The private_key_password of this CreateSSHTarget.  # noqa: E501
         :rtype: str
@@ -306,6 +313,7 @@ class CreateSSHTarget(object):
     def private_key_password(self, private_key_password):
         """Sets the private_key_password of this CreateSSHTarget.
 
+        SSH private key password  # noqa: E501
 
         :param private_key_password: The private_key_password of this CreateSSHTarget.  # noqa: E501
         :type: str
@@ -317,6 +325,7 @@ class CreateSSHTarget(object):
     def ssh_password(self):
         """Gets the ssh_password of this CreateSSHTarget.  # noqa: E501
 
+        SSH password to rotate  # noqa: E501
 
         :return: The ssh_password of this CreateSSHTarget.  # noqa: E501
         :rtype: str
@@ -327,6 +336,7 @@ class CreateSSHTarget(object):
     def ssh_password(self, ssh_password):
         """Sets the ssh_password of this CreateSSHTarget.
 
+        SSH password to rotate  # noqa: E501
 
         :param ssh_password: The ssh_password of this CreateSSHTarget.  # noqa: E501
         :type: str
@@ -338,6 +348,7 @@ class CreateSSHTarget(object):
     def ssh_username(self):
         """Gets the ssh_username of this CreateSSHTarget.  # noqa: E501
 
+        SSH username  # noqa: E501
 
         :return: The ssh_username of this CreateSSHTarget.  # noqa: E501
         :rtype: str
@@ -348,6 +359,7 @@ class CreateSSHTarget(object):
     def ssh_username(self, ssh_username):
         """Sets the ssh_username of this CreateSSHTarget.
 
+        SSH username  # noqa: E501
 
         :param ssh_username: The ssh_username of this CreateSSHTarget.  # noqa: E501
         :type: str

@@ -61,7 +61,7 @@ class UpdateRDPTargetDetails(object):
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, admin_name=None, admin_pwd=None, host_name=None, host_port=None, json=None, keep_prev_version=None, name=None, new_version=None, protection_key=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, admin_name=None, admin_pwd=None, host_name=None, host_port='22', json=False, keep_prev_version=None, name=None, new_version=None, protection_key=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """UpdateRDPTargetDetails - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -106,6 +106,7 @@ class UpdateRDPTargetDetails(object):
     def admin_name(self):
         """Gets the admin_name of this UpdateRDPTargetDetails.  # noqa: E501
 
+        The admin name  # noqa: E501
 
         :return: The admin_name of this UpdateRDPTargetDetails.  # noqa: E501
         :rtype: str
@@ -116,6 +117,7 @@ class UpdateRDPTargetDetails(object):
     def admin_name(self, admin_name):
         """Sets the admin_name of this UpdateRDPTargetDetails.
 
+        The admin name  # noqa: E501
 
         :param admin_name: The admin_name of this UpdateRDPTargetDetails.  # noqa: E501
         :type: str
@@ -127,6 +129,7 @@ class UpdateRDPTargetDetails(object):
     def admin_pwd(self):
         """Gets the admin_pwd of this UpdateRDPTargetDetails.  # noqa: E501
 
+        The admin password  # noqa: E501
 
         :return: The admin_pwd of this UpdateRDPTargetDetails.  # noqa: E501
         :rtype: str
@@ -137,6 +140,7 @@ class UpdateRDPTargetDetails(object):
     def admin_pwd(self, admin_pwd):
         """Sets the admin_pwd of this UpdateRDPTargetDetails.
 
+        The admin password  # noqa: E501
 
         :param admin_pwd: The admin_pwd of this UpdateRDPTargetDetails.  # noqa: E501
         :type: str
@@ -148,6 +152,7 @@ class UpdateRDPTargetDetails(object):
     def host_name(self):
         """Gets the host_name of this UpdateRDPTargetDetails.  # noqa: E501
 
+        The rdp host name  # noqa: E501
 
         :return: The host_name of this UpdateRDPTargetDetails.  # noqa: E501
         :rtype: str
@@ -158,6 +163,7 @@ class UpdateRDPTargetDetails(object):
     def host_name(self, host_name):
         """Sets the host_name of this UpdateRDPTargetDetails.
 
+        The rdp host name  # noqa: E501
 
         :param host_name: The host_name of this UpdateRDPTargetDetails.  # noqa: E501
         :type: str
@@ -169,6 +175,7 @@ class UpdateRDPTargetDetails(object):
     def host_port(self):
         """Gets the host_port of this UpdateRDPTargetDetails.  # noqa: E501
 
+        The rdp port  # noqa: E501
 
         :return: The host_port of this UpdateRDPTargetDetails.  # noqa: E501
         :rtype: str
@@ -179,6 +186,7 @@ class UpdateRDPTargetDetails(object):
     def host_port(self, host_port):
         """Sets the host_port of this UpdateRDPTargetDetails.
 
+        The rdp port  # noqa: E501
 
         :param host_port: The host_port of this UpdateRDPTargetDetails.  # noqa: E501
         :type: str
@@ -213,6 +221,7 @@ class UpdateRDPTargetDetails(object):
     def keep_prev_version(self):
         """Gets the keep_prev_version of this UpdateRDPTargetDetails.  # noqa: E501
 
+        Whether to keep previous version [true/false]. If not set, use default according to account settings  # noqa: E501
 
         :return: The keep_prev_version of this UpdateRDPTargetDetails.  # noqa: E501
         :rtype: str
@@ -223,6 +232,7 @@ class UpdateRDPTargetDetails(object):
     def keep_prev_version(self, keep_prev_version):
         """Sets the keep_prev_version of this UpdateRDPTargetDetails.
 
+        Whether to keep previous version [true/false]. If not set, use default according to account settings  # noqa: E501
 
         :param keep_prev_version: The keep_prev_version of this UpdateRDPTargetDetails.  # noqa: E501
         :type: str

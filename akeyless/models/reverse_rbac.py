@@ -49,7 +49,7 @@ class ReverseRBAC(object):
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, json=None, path=None, token=None, type=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, json=False, path=None, token=None, type=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """ReverseRBAC - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()

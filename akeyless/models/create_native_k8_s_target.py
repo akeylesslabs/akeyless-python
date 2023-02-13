@@ -59,7 +59,7 @@ class CreateNativeK8STarget(object):
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, comment=None, description=None, json=None, k8s_cluster_ca_cert=None, k8s_cluster_endpoint=None, k8s_cluster_token=None, key=None, name=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, comment=None, description=None, json=False, k8s_cluster_ca_cert=None, k8s_cluster_endpoint=None, k8s_cluster_token=None, key=None, name=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """CreateNativeK8STarget - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()

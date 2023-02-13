@@ -4,7 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **description** | **str** | Description of the object | [optional] [default to 'default_comment']
-**json** | **bool** | Set output format to JSON | [optional] 
+**json** | **bool** | Set output format to JSON | [optional] [default to False]
 **name** | **str** | Target name | 
 **new_comment** | **str** | Deprecated - use description | [optional] [default to 'default_comment']
 **new_name** | **str** | New Target name | [optional] 

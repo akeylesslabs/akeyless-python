@@ -4,10 +4,10 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **customer_frg_id** | **str** | The customer fragment ID that will be used to split the key (if empty, the key will be created independently of a customer fragment) | [optional] 
-**delete_protection** | **str** | Protection from accidental deletion of this item | [optional] 
+**delete_protection** | **str** | Protection from accidental deletion of this item [true/false] | [optional] 
 **description** | **str** | Description of the object | [optional] 
 **_in** | **str** | PKCS#12 input file (private key and certificate only) | 
-**json** | **bool** | Set output format to JSON | [optional] 
+**json** | **bool** | Set output format to JSON | [optional] [default to False]
 **metadata** | **str** | Deprecated - use description | [optional] 
 **name** | **str** | Name of key to be created | 
 **passphrase** | **str** | Passphrase to unlock the pkcs#12 bundle | 

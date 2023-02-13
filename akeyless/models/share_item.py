@@ -57,7 +57,7 @@ class ShareItem(object):
         'view_once': 'view-once'
     }
 
-    def __init__(self, accessibility='regular', action=None, emails=None, item_name=None, json=None, token=None, ttl=None, uid_token=None, view_once=False, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, accessibility='regular', action=None, emails=None, item_name=None, json=False, token=None, ttl=None, uid_token=None, view_once=False, local_vars_configuration=None):  # noqa: E501
         """ShareItem - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()

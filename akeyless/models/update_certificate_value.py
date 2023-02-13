@@ -55,7 +55,7 @@ class UpdateCertificateValue(object):
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, certificate_data=None, expiration_event_in=None, json=None, key=None, key_data=None, name=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, certificate_data=None, expiration_event_in=None, json=False, key=None, key_data=None, name=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """UpdateCertificateValue - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()

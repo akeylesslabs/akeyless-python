@@ -67,7 +67,7 @@ class GatewayCreateProducerChef(object):
         'user_ttl': 'user-ttl'
     }
 
-    def __init__(self, chef_orgs=None, chef_server_key=None, chef_server_url=None, chef_server_username=None, delete_protection=None, json=None, name=None, producer_encryption_key_name=None, skip_ssl=True, tags=None, target_name=None, token=None, uid_token=None, user_ttl='60m', local_vars_configuration=None):  # noqa: E501
+    def __init__(self, chef_orgs=None, chef_server_key=None, chef_server_url=None, chef_server_username=None, delete_protection=None, json=False, name=None, producer_encryption_key_name=None, skip_ssl=True, tags=None, target_name=None, token=None, uid_token=None, user_ttl='60m', local_vars_configuration=None):  # noqa: E501
         """GatewayCreateProducerChef - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -213,7 +213,7 @@ class GatewayCreateProducerChef(object):
     def delete_protection(self):
         """Gets the delete_protection of this GatewayCreateProducerChef.  # noqa: E501
 
-        Protection from accidental deletion of this item  # noqa: E501
+        Protection from accidental deletion of this item [true/false]  # noqa: E501
 
         :return: The delete_protection of this GatewayCreateProducerChef.  # noqa: E501
         :rtype: str
@@ -224,7 +224,7 @@ class GatewayCreateProducerChef(object):
     def delete_protection(self, delete_protection):
         """Sets the delete_protection of this GatewayCreateProducerChef.
 
-        Protection from accidental deletion of this item  # noqa: E501
+        Protection from accidental deletion of this item [true/false]  # noqa: E501
 
         :param delete_protection: The delete_protection of this GatewayCreateProducerChef.  # noqa: E501
         :type: str

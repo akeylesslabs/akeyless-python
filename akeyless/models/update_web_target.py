@@ -61,7 +61,7 @@ class UpdateWebTarget(object):
         'url': 'url'
     }
 
-    def __init__(self, comment=None, description=None, json=None, keep_prev_version=None, key=None, name=None, new_name=None, token=None, uid_token=None, update_version=None, url=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, comment=None, description=None, json=False, keep_prev_version=None, key=None, name=None, new_name=None, token=None, uid_token=None, update_version=None, url=None, local_vars_configuration=None):  # noqa: E501
         """UpdateWebTarget - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -175,6 +175,7 @@ class UpdateWebTarget(object):
     def keep_prev_version(self):
         """Gets the keep_prev_version of this UpdateWebTarget.  # noqa: E501
 
+        Whether to keep previous version [true/false]. If not set, use default according to account settings  # noqa: E501
 
         :return: The keep_prev_version of this UpdateWebTarget.  # noqa: E501
         :rtype: str
@@ -185,6 +186,7 @@ class UpdateWebTarget(object):
     def keep_prev_version(self, keep_prev_version):
         """Sets the keep_prev_version of this UpdateWebTarget.
 
+        Whether to keep previous version [true/false]. If not set, use default according to account settings  # noqa: E501
 
         :param keep_prev_version: The keep_prev_version of this UpdateWebTarget.  # noqa: E501
         :type: str

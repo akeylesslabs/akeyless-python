@@ -85,7 +85,7 @@ class GatewayUpdateProducerRdp(object):
         'warn_user_before_expiration': 'warn-user-before-expiration'
     }
 
-    def __init__(self, allow_user_extend_session=None, delete_protection=None, fixed_user_only='false', json=None, name=None, new_name=None, producer_encryption_key_name=None, rdp_admin_name=None, rdp_admin_pwd=None, rdp_host_name=None, rdp_host_port='22', rdp_user_groups=None, secure_access_allow_external_user=None, secure_access_enable=None, secure_access_host=None, secure_access_rdp_domain=None, secure_access_rdp_user=None, tags=None, target_name=None, token=None, uid_token=None, user_ttl='60m', warn_user_before_expiration=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, allow_user_extend_session=None, delete_protection=None, fixed_user_only='false', json=False, name=None, new_name=None, producer_encryption_key_name=None, rdp_admin_name=None, rdp_admin_pwd=None, rdp_host_name=None, rdp_host_port='22', rdp_user_groups=None, secure_access_allow_external_user=False, secure_access_enable=None, secure_access_host=None, secure_access_rdp_domain=None, secure_access_rdp_user=None, tags=None, target_name=None, token=None, uid_token=None, user_ttl='60m', warn_user_before_expiration=None, local_vars_configuration=None):  # noqa: E501
         """GatewayUpdateProducerRdp - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -189,7 +189,7 @@ class GatewayUpdateProducerRdp(object):
     def delete_protection(self):
         """Gets the delete_protection of this GatewayUpdateProducerRdp.  # noqa: E501
 
-        Protection from accidental deletion of this item  # noqa: E501
+        Protection from accidental deletion of this item [true/false]  # noqa: E501
 
         :return: The delete_protection of this GatewayUpdateProducerRdp.  # noqa: E501
         :rtype: str
@@ -200,7 +200,7 @@ class GatewayUpdateProducerRdp(object):
     def delete_protection(self, delete_protection):
         """Sets the delete_protection of this GatewayUpdateProducerRdp.
 
-        Protection from accidental deletion of this item  # noqa: E501
+        Protection from accidental deletion of this item [true/false]  # noqa: E501
 
         :param delete_protection: The delete_protection of this GatewayUpdateProducerRdp.  # noqa: E501
         :type: str
@@ -212,7 +212,7 @@ class GatewayUpdateProducerRdp(object):
     def fixed_user_only(self):
         """Gets the fixed_user_only of this GatewayUpdateProducerRdp.  # noqa: E501
 
-        Fixed user  # noqa: E501
+        Allow access using externally (IdP) provided username [true/false]  # noqa: E501
 
         :return: The fixed_user_only of this GatewayUpdateProducerRdp.  # noqa: E501
         :rtype: str
@@ -223,7 +223,7 @@ class GatewayUpdateProducerRdp(object):
     def fixed_user_only(self, fixed_user_only):
         """Sets the fixed_user_only of this GatewayUpdateProducerRdp.
 
-        Fixed user  # noqa: E501
+        Allow access using externally (IdP) provided username [true/false]  # noqa: E501
 
         :param fixed_user_only: The fixed_user_only of this GatewayUpdateProducerRdp.  # noqa: E501
         :type: str
@@ -444,6 +444,7 @@ class GatewayUpdateProducerRdp(object):
     def secure_access_allow_external_user(self):
         """Gets the secure_access_allow_external_user of this GatewayUpdateProducerRdp.  # noqa: E501
 
+        Allow providing external user for a domain users  # noqa: E501
 
         :return: The secure_access_allow_external_user of this GatewayUpdateProducerRdp.  # noqa: E501
         :rtype: bool
@@ -454,6 +455,7 @@ class GatewayUpdateProducerRdp(object):
     def secure_access_allow_external_user(self, secure_access_allow_external_user):
         """Sets the secure_access_allow_external_user of this GatewayUpdateProducerRdp.
 
+        Allow providing external user for a domain users  # noqa: E501
 
         :param secure_access_allow_external_user: The secure_access_allow_external_user of this GatewayUpdateProducerRdp.  # noqa: E501
         :type: bool
@@ -465,6 +467,7 @@ class GatewayUpdateProducerRdp(object):
     def secure_access_enable(self):
         """Gets the secure_access_enable of this GatewayUpdateProducerRdp.  # noqa: E501
 
+        Enable/Disable secure remote access [true/false]  # noqa: E501
 
         :return: The secure_access_enable of this GatewayUpdateProducerRdp.  # noqa: E501
         :rtype: str
@@ -475,6 +478,7 @@ class GatewayUpdateProducerRdp(object):
     def secure_access_enable(self, secure_access_enable):
         """Sets the secure_access_enable of this GatewayUpdateProducerRdp.
 
+        Enable/Disable secure remote access [true/false]  # noqa: E501
 
         :param secure_access_enable: The secure_access_enable of this GatewayUpdateProducerRdp.  # noqa: E501
         :type: str
@@ -486,6 +490,7 @@ class GatewayUpdateProducerRdp(object):
     def secure_access_host(self):
         """Gets the secure_access_host of this GatewayUpdateProducerRdp.  # noqa: E501
 
+        Target servers for connections  # noqa: E501
 
         :return: The secure_access_host of this GatewayUpdateProducerRdp.  # noqa: E501
         :rtype: list[str]
@@ -496,6 +501,7 @@ class GatewayUpdateProducerRdp(object):
     def secure_access_host(self, secure_access_host):
         """Sets the secure_access_host of this GatewayUpdateProducerRdp.
 
+        Target servers for connections  # noqa: E501
 
         :param secure_access_host: The secure_access_host of this GatewayUpdateProducerRdp.  # noqa: E501
         :type: list[str]
@@ -507,6 +513,7 @@ class GatewayUpdateProducerRdp(object):
     def secure_access_rdp_domain(self):
         """Gets the secure_access_rdp_domain of this GatewayUpdateProducerRdp.  # noqa: E501
 
+        Required when the Dynamic Secret is used for a domain user  # noqa: E501
 
         :return: The secure_access_rdp_domain of this GatewayUpdateProducerRdp.  # noqa: E501
         :rtype: str
@@ -517,6 +524,7 @@ class GatewayUpdateProducerRdp(object):
     def secure_access_rdp_domain(self, secure_access_rdp_domain):
         """Sets the secure_access_rdp_domain of this GatewayUpdateProducerRdp.
 
+        Required when the Dynamic Secret is used for a domain user  # noqa: E501
 
         :param secure_access_rdp_domain: The secure_access_rdp_domain of this GatewayUpdateProducerRdp.  # noqa: E501
         :type: str
@@ -528,6 +536,7 @@ class GatewayUpdateProducerRdp(object):
     def secure_access_rdp_user(self):
         """Gets the secure_access_rdp_user of this GatewayUpdateProducerRdp.  # noqa: E501
 
+        Override the RDP Domain username  # noqa: E501
 
         :return: The secure_access_rdp_user of this GatewayUpdateProducerRdp.  # noqa: E501
         :rtype: str
@@ -538,6 +547,7 @@ class GatewayUpdateProducerRdp(object):
     def secure_access_rdp_user(self, secure_access_rdp_user):
         """Sets the secure_access_rdp_user of this GatewayUpdateProducerRdp.
 
+        Override the RDP Domain username  # noqa: E501
 
         :param secure_access_rdp_user: The secure_access_rdp_user of this GatewayUpdateProducerRdp.  # noqa: E501
         :type: str

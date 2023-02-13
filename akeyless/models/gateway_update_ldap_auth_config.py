@@ -71,7 +71,7 @@ class GatewayUpdateLdapAuthConfig(object):
         'user_dn': 'user-dn'
     }
 
-    def __init__(self, access_id=None, bind_dn=None, bind_dn_password=None, group_attr=None, group_dn=None, group_filter=None, json=None, ldap_ca_cert=None, ldap_enable=None, ldap_url=None, ldap_anonymous_search=None, signing_key_data=None, token=None, uid_token=None, user_attribute=None, user_dn=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, access_id=None, bind_dn=None, bind_dn_password=None, group_attr=None, group_dn=None, group_filter=None, json=False, ldap_ca_cert=None, ldap_enable=None, ldap_url=None, ldap_anonymous_search=None, signing_key_data=None, token=None, uid_token=None, user_attribute=None, user_dn=None, local_vars_configuration=None):  # noqa: E501
         """GatewayUpdateLdapAuthConfig - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -316,7 +316,7 @@ class GatewayUpdateLdapAuthConfig(object):
     def ldap_enable(self):
         """Gets the ldap_enable of this GatewayUpdateLdapAuthConfig.  # noqa: E501
 
-        Enable Ldap  # noqa: E501
+        Enable Ldap [true/false]  # noqa: E501
 
         :return: The ldap_enable of this GatewayUpdateLdapAuthConfig.  # noqa: E501
         :rtype: str
@@ -327,7 +327,7 @@ class GatewayUpdateLdapAuthConfig(object):
     def ldap_enable(self, ldap_enable):
         """Sets the ldap_enable of this GatewayUpdateLdapAuthConfig.
 
-        Enable Ldap  # noqa: E501
+        Enable Ldap [true/false]  # noqa: E501
 
         :param ldap_enable: The ldap_enable of this GatewayUpdateLdapAuthConfig.  # noqa: E501
         :type: str

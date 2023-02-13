@@ -41,7 +41,7 @@ class UpdateTargetDetails(object):
         'json': 'json'
     }
 
-    def __init__(self, json=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, json=False, local_vars_configuration=None):  # noqa: E501
         """UpdateTargetDetails - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()

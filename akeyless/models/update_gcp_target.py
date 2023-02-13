@@ -63,7 +63,7 @@ class UpdateGcpTarget(object):
         'use_gw_cloud_identity': 'use-gw-cloud-identity'
     }
 
-    def __init__(self, comment=None, description=None, gcp_key=None, json=None, keep_prev_version=None, key=None, name=None, new_name=None, token=None, uid_token=None, update_version=None, use_gw_cloud_identity=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, comment=None, description=None, gcp_key=None, json=False, keep_prev_version=None, key=None, name=None, new_name=None, token=None, uid_token=None, update_version=None, use_gw_cloud_identity=None, local_vars_configuration=None):  # noqa: E501
         """UpdateGcpTarget - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -203,6 +203,7 @@ class UpdateGcpTarget(object):
     def keep_prev_version(self):
         """Gets the keep_prev_version of this UpdateGcpTarget.  # noqa: E501
 
+        Whether to keep previous version [true/false]. If not set, use default according to account settings  # noqa: E501
 
         :return: The keep_prev_version of this UpdateGcpTarget.  # noqa: E501
         :rtype: str
@@ -213,6 +214,7 @@ class UpdateGcpTarget(object):
     def keep_prev_version(self, keep_prev_version):
         """Sets the keep_prev_version of this UpdateGcpTarget.
 
+        Whether to keep previous version [true/false]. If not set, use default according to account settings  # noqa: E501
 
         :param keep_prev_version: The keep_prev_version of this UpdateGcpTarget.  # noqa: E501
         :type: str

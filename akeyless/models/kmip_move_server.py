@@ -47,7 +47,7 @@ class KmipMoveServer(object):
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, json=None, new_root=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, json=False, new_root=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """KmipMoveServer - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -61,8 +61,7 @@ class KmipMoveServer(object):
 
         if json is not None:
             self.json = json
-        if new_root is not None:
-            self.new_root = new_root
+        self.new_root = new_root
         if token is not None:
             self.token = token
         if uid_token is not None:
@@ -95,6 +94,7 @@ class KmipMoveServer(object):
     def new_root(self):
         """Gets the new_root of this KmipMoveServer.  # noqa: E501
 
+        New root for the kmip server  # noqa: E501
 
         :return: The new_root of this KmipMoveServer.  # noqa: E501
         :rtype: str
@@ -105,10 +105,13 @@ class KmipMoveServer(object):
     def new_root(self, new_root):
         """Sets the new_root of this KmipMoveServer.
 
+        New root for the kmip server  # noqa: E501
 
         :param new_root: The new_root of this KmipMoveServer.  # noqa: E501
         :type: str
         """
+        if self.local_vars_configuration.client_side_validation and new_root is None:  # noqa: E501
+            raise ValueError("Invalid value for `new_root`, must not be `None`")  # noqa: E501
 
         self._new_root = new_root
 

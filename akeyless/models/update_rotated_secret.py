@@ -121,7 +121,7 @@ class UpdateRotatedSecret(object):
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, add_tag=None, api_id=None, api_key=None, auto_rotate=None, aws_region='us-east-2', custom_payload=None, description='default_metadata', gcp_key=None, json=None, keep_prev_version=None, key=None, name=None, new_metadata='default_metadata', new_name=None, new_version=None, rm_tag=None, rotate_after_disconnect='false', rotated_password=None, rotated_username=None, rotation_hour=None, rotation_interval=None, rotator_creds_type=None, rotator_custom_cmd=None, secure_access_allow_external_user=False, secure_access_aws_account_id=None, secure_access_aws_native_cli=None, secure_access_bastion_issuer=None, secure_access_db_name=None, secure_access_db_schema=None, secure_access_enable=None, secure_access_host=None, secure_access_rdp_domain=None, secure_access_rdp_user=None, secure_access_web=False, secure_access_web_browsing=False, secure_access_web_proxy=False, ssh_password=None, ssh_username=None, storage_account_key_name=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, add_tag=None, api_id=None, api_key=None, auto_rotate=None, aws_region='us-east-2', custom_payload=None, description='default_metadata', gcp_key=None, json=False, keep_prev_version=None, key=None, name=None, new_metadata='default_metadata', new_name=None, new_version=None, rm_tag=None, rotate_after_disconnect='false', rotated_password=None, rotated_username=None, rotation_hour=None, rotation_interval=None, rotator_creds_type='use-self-creds', rotator_custom_cmd=None, secure_access_allow_external_user=False, secure_access_aws_account_id=None, secure_access_aws_native_cli=None, secure_access_bastion_issuer=None, secure_access_db_name=None, secure_access_db_schema=None, secure_access_enable=None, secure_access_host=None, secure_access_rdp_domain=None, secure_access_rdp_user=None, secure_access_web=False, secure_access_web_browsing=False, secure_access_web_proxy=False, ssh_password=None, ssh_username=None, storage_account_key_name=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """UpdateRotatedSecret - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -279,6 +279,7 @@ class UpdateRotatedSecret(object):
     def api_id(self):
         """Gets the api_id of this UpdateRotatedSecret.  # noqa: E501
 
+        API ID to rotate  # noqa: E501
 
         :return: The api_id of this UpdateRotatedSecret.  # noqa: E501
         :rtype: str
@@ -289,6 +290,7 @@ class UpdateRotatedSecret(object):
     def api_id(self, api_id):
         """Sets the api_id of this UpdateRotatedSecret.
 
+        API ID to rotate  # noqa: E501
 
         :param api_id: The api_id of this UpdateRotatedSecret.  # noqa: E501
         :type: str
@@ -300,6 +302,7 @@ class UpdateRotatedSecret(object):
     def api_key(self):
         """Gets the api_key of this UpdateRotatedSecret.  # noqa: E501
 
+        API key to rotate  # noqa: E501
 
         :return: The api_key of this UpdateRotatedSecret.  # noqa: E501
         :rtype: str
@@ -310,6 +313,7 @@ class UpdateRotatedSecret(object):
     def api_key(self, api_key):
         """Sets the api_key of this UpdateRotatedSecret.
 
+        API key to rotate  # noqa: E501
 
         :param api_key: The api_key of this UpdateRotatedSecret.  # noqa: E501
         :type: str
@@ -321,7 +325,7 @@ class UpdateRotatedSecret(object):
     def auto_rotate(self):
         """Gets the auto_rotate of this UpdateRotatedSecret.  # noqa: E501
 
-        Whether to automatically rotate every --rotation-interval days, or disable existing automatic rotation  # noqa: E501
+        Whether to automatically rotate every --rotation-interval days, or disable existing automatic rotation [true/false]  # noqa: E501
 
         :return: The auto_rotate of this UpdateRotatedSecret.  # noqa: E501
         :rtype: str
@@ -332,7 +336,7 @@ class UpdateRotatedSecret(object):
     def auto_rotate(self, auto_rotate):
         """Sets the auto_rotate of this UpdateRotatedSecret.
 
-        Whether to automatically rotate every --rotation-interval days, or disable existing automatic rotation  # noqa: E501
+        Whether to automatically rotate every --rotation-interval days, or disable existing automatic rotation [true/false]  # noqa: E501
 
         :param auto_rotate: The auto_rotate of this UpdateRotatedSecret.  # noqa: E501
         :type: str
@@ -367,6 +371,7 @@ class UpdateRotatedSecret(object):
     def custom_payload(self):
         """Gets the custom_payload of this UpdateRotatedSecret.  # noqa: E501
 
+        Secret payload to be sent with rotation request (relevant only for rotator-type=custom)  # noqa: E501
 
         :return: The custom_payload of this UpdateRotatedSecret.  # noqa: E501
         :rtype: str
@@ -377,6 +382,7 @@ class UpdateRotatedSecret(object):
     def custom_payload(self, custom_payload):
         """Sets the custom_payload of this UpdateRotatedSecret.
 
+        Secret payload to be sent with rotation request (relevant only for rotator-type=custom)  # noqa: E501
 
         :param custom_payload: The custom_payload of this UpdateRotatedSecret.  # noqa: E501
         :type: str
@@ -457,6 +463,7 @@ class UpdateRotatedSecret(object):
     def keep_prev_version(self):
         """Gets the keep_prev_version of this UpdateRotatedSecret.  # noqa: E501
 
+        Whether to keep previous version [true/false]. If not set, use default according to account settings  # noqa: E501
 
         :return: The keep_prev_version of this UpdateRotatedSecret.  # noqa: E501
         :rtype: str
@@ -467,6 +474,7 @@ class UpdateRotatedSecret(object):
     def keep_prev_version(self, keep_prev_version):
         """Sets the keep_prev_version of this UpdateRotatedSecret.
 
+        Whether to keep previous version [true/false]. If not set, use default according to account settings  # noqa: E501
 
         :param keep_prev_version: The keep_prev_version of this UpdateRotatedSecret.  # noqa: E501
         :type: str
@@ -618,7 +626,7 @@ class UpdateRotatedSecret(object):
     def rotate_after_disconnect(self):
         """Gets the rotate_after_disconnect of this UpdateRotatedSecret.  # noqa: E501
 
-        Rotate the value of the secret after SRA session ends  # noqa: E501
+        Rotate the value of the secret after SRA session ends [true/false]  # noqa: E501
 
         :return: The rotate_after_disconnect of this UpdateRotatedSecret.  # noqa: E501
         :rtype: str
@@ -629,7 +637,7 @@ class UpdateRotatedSecret(object):
     def rotate_after_disconnect(self, rotate_after_disconnect):
         """Sets the rotate_after_disconnect of this UpdateRotatedSecret.
 
-        Rotate the value of the secret after SRA session ends  # noqa: E501
+        Rotate the value of the secret after SRA session ends [true/false]  # noqa: E501
 
         :param rotate_after_disconnect: The rotate_after_disconnect of this UpdateRotatedSecret.  # noqa: E501
         :type: str
@@ -641,6 +649,7 @@ class UpdateRotatedSecret(object):
     def rotated_password(self):
         """Gets the rotated_password of this UpdateRotatedSecret.  # noqa: E501
 
+        rotated-username password  # noqa: E501
 
         :return: The rotated_password of this UpdateRotatedSecret.  # noqa: E501
         :rtype: str
@@ -651,6 +660,7 @@ class UpdateRotatedSecret(object):
     def rotated_password(self, rotated_password):
         """Sets the rotated_password of this UpdateRotatedSecret.
 
+        rotated-username password  # noqa: E501
 
         :param rotated_password: The rotated_password of this UpdateRotatedSecret.  # noqa: E501
         :type: str
@@ -662,6 +672,7 @@ class UpdateRotatedSecret(object):
     def rotated_username(self):
         """Gets the rotated_username of this UpdateRotatedSecret.  # noqa: E501
 
+        username to be rotated, if selected use-self-creds at rotator-creds-type, this username will try to rotate it's own password, if use-target-creds is selected, target credentials will be use to rotate the rotated-password  # noqa: E501
 
         :return: The rotated_username of this UpdateRotatedSecret.  # noqa: E501
         :rtype: str
@@ -672,6 +683,7 @@ class UpdateRotatedSecret(object):
     def rotated_username(self, rotated_username):
         """Sets the rotated_username of this UpdateRotatedSecret.
 
+        username to be rotated, if selected use-self-creds at rotator-creds-type, this username will try to rotate it's own password, if use-target-creds is selected, target credentials will be use to rotate the rotated-password  # noqa: E501
 
         :param rotated_username: The rotated_username of this UpdateRotatedSecret.  # noqa: E501
         :type: str
@@ -683,6 +695,7 @@ class UpdateRotatedSecret(object):
     def rotation_hour(self):
         """Gets the rotation_hour of this UpdateRotatedSecret.  # noqa: E501
 
+        The Hour of the rotation in UTC  # noqa: E501
 
         :return: The rotation_hour of this UpdateRotatedSecret.  # noqa: E501
         :rtype: int
@@ -693,6 +706,7 @@ class UpdateRotatedSecret(object):
     def rotation_hour(self, rotation_hour):
         """Sets the rotation_hour of this UpdateRotatedSecret.
 
+        The Hour of the rotation in UTC  # noqa: E501
 
         :param rotation_hour: The rotation_hour of this UpdateRotatedSecret.  # noqa: E501
         :type: int
@@ -727,6 +741,7 @@ class UpdateRotatedSecret(object):
     def rotator_creds_type(self):
         """Gets the rotator_creds_type of this UpdateRotatedSecret.  # noqa: E501
 
+        The credentials to connect with use-self-creds/use-target-creds  # noqa: E501
 
         :return: The rotator_creds_type of this UpdateRotatedSecret.  # noqa: E501
         :rtype: str
@@ -737,6 +752,7 @@ class UpdateRotatedSecret(object):
     def rotator_creds_type(self, rotator_creds_type):
         """Sets the rotator_creds_type of this UpdateRotatedSecret.
 
+        The credentials to connect with use-self-creds/use-target-creds  # noqa: E501
 
         :param rotator_creds_type: The rotator_creds_type of this UpdateRotatedSecret.  # noqa: E501
         :type: str
@@ -748,6 +764,7 @@ class UpdateRotatedSecret(object):
     def rotator_custom_cmd(self):
         """Gets the rotator_custom_cmd of this UpdateRotatedSecret.  # noqa: E501
 
+        \"Custom rotation command (relevant only for ssh target)  # noqa: E501
 
         :return: The rotator_custom_cmd of this UpdateRotatedSecret.  # noqa: E501
         :rtype: str
@@ -758,6 +775,7 @@ class UpdateRotatedSecret(object):
     def rotator_custom_cmd(self, rotator_custom_cmd):
         """Sets the rotator_custom_cmd of this UpdateRotatedSecret.
 
+        \"Custom rotation command (relevant only for ssh target)  # noqa: E501
 
         :param rotator_custom_cmd: The rotator_custom_cmd of this UpdateRotatedSecret.  # noqa: E501
         :type: str
@@ -769,7 +787,7 @@ class UpdateRotatedSecret(object):
     def secure_access_allow_external_user(self):
         """Gets the secure_access_allow_external_user of this UpdateRotatedSecret.  # noqa: E501
 
-        Secure Access Allow Providing External User (used in ssh)  # noqa: E501
+        Allow providing external user for a domain users (relevant only for rdp)  # noqa: E501
 
         :return: The secure_access_allow_external_user of this UpdateRotatedSecret.  # noqa: E501
         :rtype: bool
@@ -780,7 +798,7 @@ class UpdateRotatedSecret(object):
     def secure_access_allow_external_user(self, secure_access_allow_external_user):
         """Sets the secure_access_allow_external_user of this UpdateRotatedSecret.
 
-        Secure Access Allow Providing External User (used in ssh)  # noqa: E501
+        Allow providing external user for a domain users (relevant only for rdp)  # noqa: E501
 
         :param secure_access_allow_external_user: The secure_access_allow_external_user of this UpdateRotatedSecret.  # noqa: E501
         :type: bool
@@ -792,7 +810,7 @@ class UpdateRotatedSecret(object):
     def secure_access_aws_account_id(self):
         """Gets the secure_access_aws_account_id of this UpdateRotatedSecret.  # noqa: E501
 
-        Secure Access Account Id (used in aws)  # noqa: E501
+        The AWS account id (relevant only for aws)  # noqa: E501
 
         :return: The secure_access_aws_account_id of this UpdateRotatedSecret.  # noqa: E501
         :rtype: str
@@ -803,7 +821,7 @@ class UpdateRotatedSecret(object):
     def secure_access_aws_account_id(self, secure_access_aws_account_id):
         """Sets the secure_access_aws_account_id of this UpdateRotatedSecret.
 
-        Secure Access Account Id (used in aws)  # noqa: E501
+        The AWS account id (relevant only for aws)  # noqa: E501
 
         :param secure_access_aws_account_id: The secure_access_aws_account_id of this UpdateRotatedSecret.  # noqa: E501
         :type: str
@@ -815,7 +833,7 @@ class UpdateRotatedSecret(object):
     def secure_access_aws_native_cli(self):
         """Gets the secure_access_aws_native_cli of this UpdateRotatedSecret.  # noqa: E501
 
-        Secure Access Aws Native Cli (used in aws)  # noqa: E501
+        The AWS native cli  # noqa: E501
 
         :return: The secure_access_aws_native_cli of this UpdateRotatedSecret.  # noqa: E501
         :rtype: bool
@@ -826,7 +844,7 @@ class UpdateRotatedSecret(object):
     def secure_access_aws_native_cli(self, secure_access_aws_native_cli):
         """Sets the secure_access_aws_native_cli of this UpdateRotatedSecret.
 
-        Secure Access Aws Native Cli (used in aws)  # noqa: E501
+        The AWS native cli  # noqa: E501
 
         :param secure_access_aws_native_cli: The secure_access_aws_native_cli of this UpdateRotatedSecret.  # noqa: E501
         :type: bool
@@ -838,7 +856,7 @@ class UpdateRotatedSecret(object):
     def secure_access_bastion_issuer(self):
         """Gets the secure_access_bastion_issuer of this UpdateRotatedSecret.  # noqa: E501
 
-        Secure Access Bastion Issuer  # noqa: E501
+        Path to the SSH Certificate Issuer for your Akeyless Bastion  # noqa: E501
 
         :return: The secure_access_bastion_issuer of this UpdateRotatedSecret.  # noqa: E501
         :rtype: str
@@ -849,7 +867,7 @@ class UpdateRotatedSecret(object):
     def secure_access_bastion_issuer(self, secure_access_bastion_issuer):
         """Sets the secure_access_bastion_issuer of this UpdateRotatedSecret.
 
-        Secure Access Bastion Issuer  # noqa: E501
+        Path to the SSH Certificate Issuer for your Akeyless Bastion  # noqa: E501
 
         :param secure_access_bastion_issuer: The secure_access_bastion_issuer of this UpdateRotatedSecret.  # noqa: E501
         :type: str
@@ -861,7 +879,7 @@ class UpdateRotatedSecret(object):
     def secure_access_db_name(self):
         """Gets the secure_access_db_name of this UpdateRotatedSecret.  # noqa: E501
 
-        Secure Access DB Name (used in data bases)  # noqa: E501
+        The DB name (relevant only for DB Dynamic-Secret)  # noqa: E501
 
         :return: The secure_access_db_name of this UpdateRotatedSecret.  # noqa: E501
         :rtype: str
@@ -872,7 +890,7 @@ class UpdateRotatedSecret(object):
     def secure_access_db_name(self, secure_access_db_name):
         """Sets the secure_access_db_name of this UpdateRotatedSecret.
 
-        Secure Access DB Name (used in data bases)  # noqa: E501
+        The DB name (relevant only for DB Dynamic-Secret)  # noqa: E501
 
         :param secure_access_db_name: The secure_access_db_name of this UpdateRotatedSecret.  # noqa: E501
         :type: str
@@ -884,7 +902,7 @@ class UpdateRotatedSecret(object):
     def secure_access_db_schema(self):
         """Gets the secure_access_db_schema of this UpdateRotatedSecret.  # noqa: E501
 
-        Secure Access Schema (used in mssql, postgresql)  # noqa: E501
+        The db schema (relevant only for mssql or postgresql)  # noqa: E501
 
         :return: The secure_access_db_schema of this UpdateRotatedSecret.  # noqa: E501
         :rtype: str
@@ -895,7 +913,7 @@ class UpdateRotatedSecret(object):
     def secure_access_db_schema(self, secure_access_db_schema):
         """Sets the secure_access_db_schema of this UpdateRotatedSecret.
 
-        Secure Access Schema (used in mssql, postgresql)  # noqa: E501
+        The db schema (relevant only for mssql or postgresql)  # noqa: E501
 
         :param secure_access_db_schema: The secure_access_db_schema of this UpdateRotatedSecret.  # noqa: E501
         :type: str
@@ -907,7 +925,7 @@ class UpdateRotatedSecret(object):
     def secure_access_enable(self):
         """Gets the secure_access_enable of this UpdateRotatedSecret.  # noqa: E501
 
-        Secure Access Enabled  # noqa: E501
+        Enable/Disable secure remote access [true/false]  # noqa: E501
 
         :return: The secure_access_enable of this UpdateRotatedSecret.  # noqa: E501
         :rtype: str
@@ -918,7 +936,7 @@ class UpdateRotatedSecret(object):
     def secure_access_enable(self, secure_access_enable):
         """Sets the secure_access_enable of this UpdateRotatedSecret.
 
-        Secure Access Enabled  # noqa: E501
+        Enable/Disable secure remote access [true/false]  # noqa: E501
 
         :param secure_access_enable: The secure_access_enable of this UpdateRotatedSecret.  # noqa: E501
         :type: str
@@ -930,7 +948,7 @@ class UpdateRotatedSecret(object):
     def secure_access_host(self):
         """Gets the secure_access_host of this UpdateRotatedSecret.  # noqa: E501
 
-        Secure Access Host  # noqa: E501
+        Target servers for connections  # noqa: E501
 
         :return: The secure_access_host of this UpdateRotatedSecret.  # noqa: E501
         :rtype: list[str]
@@ -941,7 +959,7 @@ class UpdateRotatedSecret(object):
     def secure_access_host(self, secure_access_host):
         """Sets the secure_access_host of this UpdateRotatedSecret.
 
-        Secure Access Host  # noqa: E501
+        Target servers for connections  # noqa: E501
 
         :param secure_access_host: The secure_access_host of this UpdateRotatedSecret.  # noqa: E501
         :type: list[str]
@@ -953,7 +971,7 @@ class UpdateRotatedSecret(object):
     def secure_access_rdp_domain(self):
         """Gets the secure_access_rdp_domain of this UpdateRotatedSecret.  # noqa: E501
 
-        Secure Access Domain (used in ssh)  # noqa: E501
+        Required when the Dynamic Secret is used for a domain user (relevant only for RDP Dynamic-Secret)  # noqa: E501
 
         :return: The secure_access_rdp_domain of this UpdateRotatedSecret.  # noqa: E501
         :rtype: str
@@ -964,7 +982,7 @@ class UpdateRotatedSecret(object):
     def secure_access_rdp_domain(self, secure_access_rdp_domain):
         """Sets the secure_access_rdp_domain of this UpdateRotatedSecret.
 
-        Secure Access Domain (used in ssh)  # noqa: E501
+        Required when the Dynamic Secret is used for a domain user (relevant only for RDP Dynamic-Secret)  # noqa: E501
 
         :param secure_access_rdp_domain: The secure_access_rdp_domain of this UpdateRotatedSecret.  # noqa: E501
         :type: str
@@ -976,7 +994,7 @@ class UpdateRotatedSecret(object):
     def secure_access_rdp_user(self):
         """Gets the secure_access_rdp_user of this UpdateRotatedSecret.  # noqa: E501
 
-        Secure Access Override User (used in ssh)  # noqa: E501
+        Override the RDP Domain username (relevant only for rdp)  # noqa: E501
 
         :return: The secure_access_rdp_user of this UpdateRotatedSecret.  # noqa: E501
         :rtype: str
@@ -987,7 +1005,7 @@ class UpdateRotatedSecret(object):
     def secure_access_rdp_user(self, secure_access_rdp_user):
         """Sets the secure_access_rdp_user of this UpdateRotatedSecret.
 
-        Secure Access Override User (used in ssh)  # noqa: E501
+        Override the RDP Domain username (relevant only for rdp)  # noqa: E501
 
         :param secure_access_rdp_user: The secure_access_rdp_user of this UpdateRotatedSecret.  # noqa: E501
         :type: str
@@ -999,7 +1017,7 @@ class UpdateRotatedSecret(object):
     def secure_access_web(self):
         """Gets the secure_access_web of this UpdateRotatedSecret.  # noqa: E501
 
-        Secure Access Web  # noqa: E501
+        Enable Web Secure Remote Access  # noqa: E501
 
         :return: The secure_access_web of this UpdateRotatedSecret.  # noqa: E501
         :rtype: bool
@@ -1010,7 +1028,7 @@ class UpdateRotatedSecret(object):
     def secure_access_web(self, secure_access_web):
         """Sets the secure_access_web of this UpdateRotatedSecret.
 
-        Secure Access Web  # noqa: E501
+        Enable Web Secure Remote Access  # noqa: E501
 
         :param secure_access_web: The secure_access_web of this UpdateRotatedSecret.  # noqa: E501
         :type: bool
@@ -1022,7 +1040,7 @@ class UpdateRotatedSecret(object):
     def secure_access_web_browsing(self):
         """Gets the secure_access_web_browsing of this UpdateRotatedSecret.  # noqa: E501
 
-        Secure Access Isolated (used in aws, azure)  # noqa: E501
+        Secure browser via Akeyless Web Access Bastion (relevant only for aws or azure)  # noqa: E501
 
         :return: The secure_access_web_browsing of this UpdateRotatedSecret.  # noqa: E501
         :rtype: bool
@@ -1033,7 +1051,7 @@ class UpdateRotatedSecret(object):
     def secure_access_web_browsing(self, secure_access_web_browsing):
         """Sets the secure_access_web_browsing of this UpdateRotatedSecret.
 
-        Secure Access Isolated (used in aws, azure)  # noqa: E501
+        Secure browser via Akeyless Web Access Bastion (relevant only for aws or azure)  # noqa: E501
 
         :param secure_access_web_browsing: The secure_access_web_browsing of this UpdateRotatedSecret.  # noqa: E501
         :type: bool
@@ -1045,7 +1063,7 @@ class UpdateRotatedSecret(object):
     def secure_access_web_proxy(self):
         """Gets the secure_access_web_proxy of this UpdateRotatedSecret.  # noqa: E501
 
-        Secure Access Web Proxy (used in aws, azure)  # noqa: E501
+        Web-Proxy via Akeyless Web Access Bastion (relevant only for aws or azure)  # noqa: E501
 
         :return: The secure_access_web_proxy of this UpdateRotatedSecret.  # noqa: E501
         :rtype: bool
@@ -1056,7 +1074,7 @@ class UpdateRotatedSecret(object):
     def secure_access_web_proxy(self, secure_access_web_proxy):
         """Sets the secure_access_web_proxy of this UpdateRotatedSecret.
 
-        Secure Access Web Proxy (used in aws, azure)  # noqa: E501
+        Web-Proxy via Akeyless Web Access Bastion (relevant only for aws or azure)  # noqa: E501
 
         :param secure_access_web_proxy: The secure_access_web_proxy of this UpdateRotatedSecret.  # noqa: E501
         :type: bool

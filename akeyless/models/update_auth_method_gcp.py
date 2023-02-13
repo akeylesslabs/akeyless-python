@@ -75,7 +75,7 @@ class UpdateAuthMethodGCP(object):
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, access_expires=0, audience='akeyless.io', bound_ips=None, bound_labels=None, bound_projects=None, bound_regions=None, bound_service_accounts=None, bound_zones=None, force_sub_claims=None, gw_bound_ips=None, json=None, jwt_ttl=None, name=None, new_name=None, service_account_creds_data=None, token=None, type=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, access_expires=0, audience='akeyless.io', bound_ips=None, bound_labels=None, bound_projects=None, bound_regions=None, bound_service_accounts=None, bound_zones=None, force_sub_claims=None, gw_bound_ips=None, json=False, jwt_ttl=0, name=None, new_name=None, service_account_creds_data=None, token=None, type=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """UpdateAuthMethodGCP - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()

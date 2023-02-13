@@ -57,7 +57,7 @@ class CreateAuthMethod(object):
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, access_expires=0, bound_ips=None, force_sub_claims=None, gw_bound_ips=None, json=None, jwt_ttl=None, name=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, access_expires=0, bound_ips=None, force_sub_claims=None, gw_bound_ips=None, json=False, jwt_ttl=0, name=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """CreateAuthMethod - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()

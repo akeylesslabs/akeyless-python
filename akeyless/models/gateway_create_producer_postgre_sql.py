@@ -83,7 +83,7 @@ class GatewayCreateProducerPostgreSQL(object):
         'user_ttl': 'user-ttl'
     }
 
-    def __init__(self, creation_statements=None, delete_protection=None, json=None, name=None, postgresql_db_name=None, postgresql_host='127.0.0.1', postgresql_password=None, postgresql_port='5432', postgresql_username=None, producer_encryption_key=None, revocation_statement=None, secure_access_bastion_issuer=None, secure_access_db_schema=None, secure_access_enable=None, secure_access_host=None, secure_access_web=None, ssl=None, tags=None, target_name=None, token=None, uid_token=None, user_ttl='60m', local_vars_configuration=None):  # noqa: E501
+    def __init__(self, creation_statements=None, delete_protection=None, json=False, name=None, postgresql_db_name=None, postgresql_host='127.0.0.1', postgresql_password=None, postgresql_port='5432', postgresql_username=None, producer_encryption_key=None, revocation_statement=None, secure_access_bastion_issuer=None, secure_access_db_schema=None, secure_access_enable=None, secure_access_host=None, secure_access_web=False, ssl=False, tags=None, target_name=None, token=None, uid_token=None, user_ttl='60m', local_vars_configuration=None):  # noqa: E501
         """GatewayCreateProducerPostgreSQL - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -184,7 +184,7 @@ class GatewayCreateProducerPostgreSQL(object):
     def delete_protection(self):
         """Gets the delete_protection of this GatewayCreateProducerPostgreSQL.  # noqa: E501
 
-        Protection from accidental deletion of this item  # noqa: E501
+        Protection from accidental deletion of this item [true/false]  # noqa: E501
 
         :return: The delete_protection of this GatewayCreateProducerPostgreSQL.  # noqa: E501
         :rtype: str
@@ -195,7 +195,7 @@ class GatewayCreateProducerPostgreSQL(object):
     def delete_protection(self, delete_protection):
         """Sets the delete_protection of this GatewayCreateProducerPostgreSQL.
 
-        Protection from accidental deletion of this item  # noqa: E501
+        Protection from accidental deletion of this item [true/false]  # noqa: E501
 
         :param delete_protection: The delete_protection of this GatewayCreateProducerPostgreSQL.  # noqa: E501
         :type: str
@@ -416,6 +416,7 @@ class GatewayCreateProducerPostgreSQL(object):
     def secure_access_bastion_issuer(self):
         """Gets the secure_access_bastion_issuer of this GatewayCreateProducerPostgreSQL.  # noqa: E501
 
+        Path to the SSH Certificate Issuer for your Akeyless Bastion  # noqa: E501
 
         :return: The secure_access_bastion_issuer of this GatewayCreateProducerPostgreSQL.  # noqa: E501
         :rtype: str
@@ -426,6 +427,7 @@ class GatewayCreateProducerPostgreSQL(object):
     def secure_access_bastion_issuer(self, secure_access_bastion_issuer):
         """Sets the secure_access_bastion_issuer of this GatewayCreateProducerPostgreSQL.
 
+        Path to the SSH Certificate Issuer for your Akeyless Bastion  # noqa: E501
 
         :param secure_access_bastion_issuer: The secure_access_bastion_issuer of this GatewayCreateProducerPostgreSQL.  # noqa: E501
         :type: str
@@ -437,6 +439,7 @@ class GatewayCreateProducerPostgreSQL(object):
     def secure_access_db_schema(self):
         """Gets the secure_access_db_schema of this GatewayCreateProducerPostgreSQL.  # noqa: E501
 
+        The DB schema  # noqa: E501
 
         :return: The secure_access_db_schema of this GatewayCreateProducerPostgreSQL.  # noqa: E501
         :rtype: str
@@ -447,6 +450,7 @@ class GatewayCreateProducerPostgreSQL(object):
     def secure_access_db_schema(self, secure_access_db_schema):
         """Sets the secure_access_db_schema of this GatewayCreateProducerPostgreSQL.
 
+        The DB schema  # noqa: E501
 
         :param secure_access_db_schema: The secure_access_db_schema of this GatewayCreateProducerPostgreSQL.  # noqa: E501
         :type: str
@@ -458,6 +462,7 @@ class GatewayCreateProducerPostgreSQL(object):
     def secure_access_enable(self):
         """Gets the secure_access_enable of this GatewayCreateProducerPostgreSQL.  # noqa: E501
 
+        Enable/Disable secure remote access [true/false]  # noqa: E501
 
         :return: The secure_access_enable of this GatewayCreateProducerPostgreSQL.  # noqa: E501
         :rtype: str
@@ -468,6 +473,7 @@ class GatewayCreateProducerPostgreSQL(object):
     def secure_access_enable(self, secure_access_enable):
         """Sets the secure_access_enable of this GatewayCreateProducerPostgreSQL.
 
+        Enable/Disable secure remote access [true/false]  # noqa: E501
 
         :param secure_access_enable: The secure_access_enable of this GatewayCreateProducerPostgreSQL.  # noqa: E501
         :type: str
@@ -479,6 +485,7 @@ class GatewayCreateProducerPostgreSQL(object):
     def secure_access_host(self):
         """Gets the secure_access_host of this GatewayCreateProducerPostgreSQL.  # noqa: E501
 
+        Target DB servers for connections  # noqa: E501
 
         :return: The secure_access_host of this GatewayCreateProducerPostgreSQL.  # noqa: E501
         :rtype: list[str]
@@ -489,6 +496,7 @@ class GatewayCreateProducerPostgreSQL(object):
     def secure_access_host(self, secure_access_host):
         """Sets the secure_access_host of this GatewayCreateProducerPostgreSQL.
 
+        Target DB servers for connections  # noqa: E501
 
         :param secure_access_host: The secure_access_host of this GatewayCreateProducerPostgreSQL.  # noqa: E501
         :type: list[str]
@@ -500,6 +508,7 @@ class GatewayCreateProducerPostgreSQL(object):
     def secure_access_web(self):
         """Gets the secure_access_web of this GatewayCreateProducerPostgreSQL.  # noqa: E501
 
+        Enable Web Secure Remote Access  # noqa: E501
 
         :return: The secure_access_web of this GatewayCreateProducerPostgreSQL.  # noqa: E501
         :rtype: bool
@@ -510,6 +519,7 @@ class GatewayCreateProducerPostgreSQL(object):
     def secure_access_web(self, secure_access_web):
         """Sets the secure_access_web of this GatewayCreateProducerPostgreSQL.
 
+        Enable Web Secure Remote Access  # noqa: E501
 
         :param secure_access_web: The secure_access_web of this GatewayCreateProducerPostgreSQL.  # noqa: E501
         :type: bool
@@ -521,7 +531,7 @@ class GatewayCreateProducerPostgreSQL(object):
     def ssl(self):
         """Gets the ssl of this GatewayCreateProducerPostgreSQL.  # noqa: E501
 
-        SSL connection mode  # noqa: E501
+        Enable/Disable SSL [true/false]  # noqa: E501
 
         :return: The ssl of this GatewayCreateProducerPostgreSQL.  # noqa: E501
         :rtype: bool
@@ -532,7 +542,7 @@ class GatewayCreateProducerPostgreSQL(object):
     def ssl(self, ssl):
         """Sets the ssl of this GatewayCreateProducerPostgreSQL.
 
-        SSL connection mode  # noqa: E501
+        Enable/Disable SSL [true/false]  # noqa: E501
 
         :param ssl: The ssl of this GatewayCreateProducerPostgreSQL.  # noqa: E501
         :type: bool

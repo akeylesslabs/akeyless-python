@@ -4,13 +4,13 @@ gatewayUpdateProducerGcp is a command that updates a GCP producer
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**delete_protection** | **str** | Protection from accidental deletion of this item | [optional] 
+**delete_protection** | **str** | Protection from accidental deletion of this item [true/false] | [optional] 
 **gcp_cred_type** | **str** |  | [optional] 
 **gcp_key** | **str** | Base64-encoded service account private key text | [optional] 
 **gcp_key_algo** | **str** | Service account key algorithm, e.g. KEY_ALG_RSA_1024 | [optional] 
 **gcp_sa_email** | **str** | The email of the fixed service acocunt to generate keys or tokens for. (revelant for service-account-type&#x3D;fixed) | [optional] 
 **gcp_token_scopes** | **str** | Access token scopes list, e.g. scope1,scope2 | [optional] 
-**json** | **bool** | Set output format to JSON | [optional] 
+**json** | **bool** | Set output format to JSON | [optional] [default to False]
 **name** | **str** | Producer name | 
 **new_name** | **str** | Producer name | [optional] 
 **producer_encryption_key_name** | **str** | Dynamic producer encryption key | [optional] 

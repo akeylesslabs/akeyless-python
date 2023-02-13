@@ -93,7 +93,7 @@ class CreatePKICertIssuer(object):
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, allow_any_name=None, allow_subdomains=None, allowed_domains=None, allowed_uri_sans=None, client_flag=None, code_signing_flag=None, country=None, delete_protection=None, description=None, json=None, key_usage='DigitalSignature,KeyAgreement,KeyEncipherment', locality=None, metadata=None, name=None, not_enforce_hostnames=None, not_require_cn=None, organizational_units=None, organizations=None, postal_code=None, province=None, server_flag=None, signer_key_name=None, street_address=None, tag=None, token=None, ttl=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, allow_any_name=None, allow_subdomains=None, allowed_domains=None, allowed_uri_sans=None, client_flag=None, code_signing_flag=None, country=None, delete_protection=None, description=None, json=False, key_usage='DigitalSignature,KeyAgreement,KeyEncipherment', locality=None, metadata=None, name=None, not_enforce_hostnames=None, not_require_cn=None, organizational_units=None, organizations=None, postal_code=None, province=None, server_flag=None, signer_key_name=None, street_address=None, tag=None, token=None, ttl=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """CreatePKICertIssuer - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -345,7 +345,7 @@ class CreatePKICertIssuer(object):
     def delete_protection(self):
         """Gets the delete_protection of this CreatePKICertIssuer.  # noqa: E501
 
-        Protection from accidental deletion of this item  # noqa: E501
+        Protection from accidental deletion of this item [true/false]  # noqa: E501
 
         :return: The delete_protection of this CreatePKICertIssuer.  # noqa: E501
         :rtype: str
@@ -356,7 +356,7 @@ class CreatePKICertIssuer(object):
     def delete_protection(self, delete_protection):
         """Sets the delete_protection of this CreatePKICertIssuer.
 
-        Protection from accidental deletion of this item  # noqa: E501
+        Protection from accidental deletion of this item [true/false]  # noqa: E501
 
         :param delete_protection: The delete_protection of this CreatePKICertIssuer.  # noqa: E501
         :type: str

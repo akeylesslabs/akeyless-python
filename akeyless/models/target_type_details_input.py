@@ -78,6 +78,7 @@ class TargetTypeDetailsInput(object):
         'eks_secret_access_key': 'str',
         'gcp_service_account_email': 'str',
         'gcp_service_account_key': 'str',
+        'gcp_service_account_key_base64': 'str',
         'github_app_id': 'int',
         'github_app_private_key': 'str',
         'github_base_url': 'str',
@@ -87,6 +88,8 @@ class TargetTypeDetailsInput(object):
         'gke_service_account_key': 'str',
         'gke_service_account_name': 'str',
         'host': 'str',
+        'hostname': 'str',
+        'hosts': 'list[str]',
         'implementation_type': 'str',
         'k8s_bearer_token': 'str',
         'k8s_cluster_ca_certificate': 'str',
@@ -118,6 +121,7 @@ class TargetTypeDetailsInput(object):
         'rabbitmq_server_password': 'str',
         'rabbitmq_server_uri': 'str',
         'rabbitmq_server_user': 'str',
+        'rdp_port': 'str',
         'security_token': 'str',
         'sf_account': 'str',
         'ssl_connection_certificate': 'str',
@@ -181,6 +185,7 @@ class TargetTypeDetailsInput(object):
         'eks_secret_access_key': 'eks_secret_access_key',
         'gcp_service_account_email': 'gcp_service_account_email',
         'gcp_service_account_key': 'gcp_service_account_key',
+        'gcp_service_account_key_base64': 'gcp_service_account_key_base64',
         'github_app_id': 'github_app_id',
         'github_app_private_key': 'github_app_private_key',
         'github_base_url': 'github_base_url',
@@ -190,6 +195,8 @@ class TargetTypeDetailsInput(object):
         'gke_service_account_key': 'gke_service_account_key',
         'gke_service_account_name': 'gke_service_account_name',
         'host': 'host',
+        'hostname': 'hostname',
+        'hosts': 'hosts',
         'implementation_type': 'implementation_type',
         'k8s_bearer_token': 'k8s_bearer_token',
         'k8s_cluster_ca_certificate': 'k8s_cluster_ca_certificate',
@@ -221,6 +228,7 @@ class TargetTypeDetailsInput(object):
         'rabbitmq_server_password': 'rabbitmq_server_password',
         'rabbitmq_server_uri': 'rabbitmq_server_uri',
         'rabbitmq_server_user': 'rabbitmq_server_user',
+        'rdp_port': 'rdp_port',
         'security_token': 'security_token',
         'sf_account': 'sf_account',
         'ssl_connection_certificate': 'ssl_connection_certificate',
@@ -239,7 +247,7 @@ class TargetTypeDetailsInput(object):
         'venafi_zone': 'venafi_zone'
     }
 
-    def __init__(self, administrative_port=None, app_private_key=None, artifactory_admin_apikey=None, artifactory_admin_username=None, artifactory_base_url=None, auth_flow=None, authorization_port=None, aws_access_key_id=None, aws_region=None, aws_secret_access_key=None, aws_session_token=None, azure_client_id=None, azure_client_secret=None, azure_resource_group_name=None, azure_resource_name=None, azure_subscription_id=None, azure_tenant_id=None, ca_cert_data=None, ca_cert_name=None, chef_server_host_name=None, chef_server_key=None, chef_server_port=None, chef_server_url=None, chef_server_username=None, chef_skip_ssl=None, client_id=None, client_secret=None, db_host_name=None, db_name=None, db_port=None, db_private_key=None, db_private_key_passphrase=None, db_pwd=None, db_server_certificates=None, db_server_name=None, db_user_name=None, eks_access_key_id=None, eks_cluster_ca_certificate=None, eks_cluster_endpoint=None, eks_cluster_name=None, eks_region=None, eks_secret_access_key=None, gcp_service_account_email=None, gcp_service_account_key=None, github_app_id=None, github_app_private_key=None, github_base_url=None, gke_cluster_ca_certificate=None, gke_cluster_endpoint=None, gke_cluster_name=None, gke_service_account_key=None, gke_service_account_name=None, host=None, implementation_type=None, k8s_bearer_token=None, k8s_cluster_ca_certificate=None, k8s_cluster_endpoint=None, ldap_audience=None, ldap_bind_dn=None, ldap_bind_password=None, ldap_certificate=None, ldap_token_expiration=None, ldap_url=None, mongodb_atlas_api_private_key=None, mongodb_atlas_api_public_key=None, mongodb_atlas_project_id=None, mongodb_db_name=None, mongodb_default_auth_db=None, mongodb_host_port=None, mongodb_is_atlas=None, mongodb_password=None, mongodb_uri_connection=None, mongodb_uri_options=None, mongodb_username=None, password=None, payload=None, ping_url=None, port=None, private_key=None, private_key_password=None, privileged_user=None, rabbitmq_server_password=None, rabbitmq_server_uri=None, rabbitmq_server_user=None, security_token=None, sf_account=None, ssl_connection_certificate=None, ssl_connection_mode=None, tenant_url=None, url=None, use_gw_cloud_identity=None, user_name=None, user_password=None, username=None, venafi_api_key=None, venafi_base_url=None, venafi_tpp_password=None, venafi_tpp_username=None, venafi_use_tpp=None, venafi_zone=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, administrative_port=None, app_private_key=None, artifactory_admin_apikey=None, artifactory_admin_username=None, artifactory_base_url=None, auth_flow=None, authorization_port=None, aws_access_key_id=None, aws_region=None, aws_secret_access_key=None, aws_session_token=None, azure_client_id=None, azure_client_secret=None, azure_resource_group_name=None, azure_resource_name=None, azure_subscription_id=None, azure_tenant_id=None, ca_cert_data=None, ca_cert_name=None, chef_server_host_name=None, chef_server_key=None, chef_server_port=None, chef_server_url=None, chef_server_username=None, chef_skip_ssl=None, client_id=None, client_secret=None, db_host_name=None, db_name=None, db_port=None, db_private_key=None, db_private_key_passphrase=None, db_pwd=None, db_server_certificates=None, db_server_name=None, db_user_name=None, eks_access_key_id=None, eks_cluster_ca_certificate=None, eks_cluster_endpoint=None, eks_cluster_name=None, eks_region=None, eks_secret_access_key=None, gcp_service_account_email=None, gcp_service_account_key=None, gcp_service_account_key_base64=None, github_app_id=None, github_app_private_key=None, github_base_url=None, gke_cluster_ca_certificate=None, gke_cluster_endpoint=None, gke_cluster_name=None, gke_service_account_key=None, gke_service_account_name=None, host=None, hostname=None, hosts=None, implementation_type=None, k8s_bearer_token=None, k8s_cluster_ca_certificate=None, k8s_cluster_endpoint=None, ldap_audience=None, ldap_bind_dn=None, ldap_bind_password=None, ldap_certificate=None, ldap_token_expiration=None, ldap_url=None, mongodb_atlas_api_private_key=None, mongodb_atlas_api_public_key=None, mongodb_atlas_project_id=None, mongodb_db_name=None, mongodb_default_auth_db=None, mongodb_host_port=None, mongodb_is_atlas=None, mongodb_password=None, mongodb_uri_connection=None, mongodb_uri_options=None, mongodb_username=None, password=None, payload=None, ping_url=None, port=None, private_key=None, private_key_password=None, privileged_user=None, rabbitmq_server_password=None, rabbitmq_server_uri=None, rabbitmq_server_user=None, rdp_port=None, security_token=None, sf_account=None, ssl_connection_certificate=None, ssl_connection_mode=None, tenant_url=None, url=None, use_gw_cloud_identity=None, user_name=None, user_password=None, username=None, venafi_api_key=None, venafi_base_url=None, venafi_tpp_password=None, venafi_tpp_username=None, venafi_use_tpp=None, venafi_zone=None, local_vars_configuration=None):  # noqa: E501
         """TargetTypeDetailsInput - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -289,6 +297,7 @@ class TargetTypeDetailsInput(object):
         self._eks_secret_access_key = None
         self._gcp_service_account_email = None
         self._gcp_service_account_key = None
+        self._gcp_service_account_key_base64 = None
         self._github_app_id = None
         self._github_app_private_key = None
         self._github_base_url = None
@@ -298,6 +307,8 @@ class TargetTypeDetailsInput(object):
         self._gke_service_account_key = None
         self._gke_service_account_name = None
         self._host = None
+        self._hostname = None
+        self._hosts = None
         self._implementation_type = None
         self._k8s_bearer_token = None
         self._k8s_cluster_ca_certificate = None
@@ -329,6 +340,7 @@ class TargetTypeDetailsInput(object):
         self._rabbitmq_server_password = None
         self._rabbitmq_server_uri = None
         self._rabbitmq_server_user = None
+        self._rdp_port = None
         self._security_token = None
         self._sf_account = None
         self._ssl_connection_certificate = None
@@ -435,6 +447,8 @@ class TargetTypeDetailsInput(object):
             self.gcp_service_account_email = gcp_service_account_email
         if gcp_service_account_key is not None:
             self.gcp_service_account_key = gcp_service_account_key
+        if gcp_service_account_key_base64 is not None:
+            self.gcp_service_account_key_base64 = gcp_service_account_key_base64
         if github_app_id is not None:
             self.github_app_id = github_app_id
         if github_app_private_key is not None:
@@ -453,6 +467,10 @@ class TargetTypeDetailsInput(object):
             self.gke_service_account_name = gke_service_account_name
         if host is not None:
             self.host = host
+        if hostname is not None:
+            self.hostname = hostname
+        if hosts is not None:
+            self.hosts = hosts
         if implementation_type is not None:
             self.implementation_type = implementation_type
         if k8s_bearer_token is not None:
@@ -515,6 +533,8 @@ class TargetTypeDetailsInput(object):
             self.rabbitmq_server_uri = rabbitmq_server_uri
         if rabbitmq_server_user is not None:
             self.rabbitmq_server_user = rabbitmq_server_user
+        if rdp_port is not None:
+            self.rdp_port = rdp_port
         if security_token is not None:
             self.security_token = security_token
         if sf_account is not None:
@@ -1489,6 +1509,27 @@ class TargetTypeDetailsInput(object):
         self._gcp_service_account_key = gcp_service_account_key
 
     @property
+    def gcp_service_account_key_base64(self):
+        """Gets the gcp_service_account_key_base64 of this TargetTypeDetailsInput.  # noqa: E501
+
+
+        :return: The gcp_service_account_key_base64 of this TargetTypeDetailsInput.  # noqa: E501
+        :rtype: str
+        """
+        return self._gcp_service_account_key_base64
+
+    @gcp_service_account_key_base64.setter
+    def gcp_service_account_key_base64(self, gcp_service_account_key_base64):
+        """Sets the gcp_service_account_key_base64 of this TargetTypeDetailsInput.
+
+
+        :param gcp_service_account_key_base64: The gcp_service_account_key_base64 of this TargetTypeDetailsInput.  # noqa: E501
+        :type: str
+        """
+
+        self._gcp_service_account_key_base64 = gcp_service_account_key_base64
+
+    @property
     def github_app_id(self):
         """Gets the github_app_id of this TargetTypeDetailsInput.  # noqa: E501
 
@@ -1676,6 +1717,48 @@ class TargetTypeDetailsInput(object):
         """
 
         self._host = host
+
+    @property
+    def hostname(self):
+        """Gets the hostname of this TargetTypeDetailsInput.  # noqa: E501
+
+
+        :return: The hostname of this TargetTypeDetailsInput.  # noqa: E501
+        :rtype: str
+        """
+        return self._hostname
+
+    @hostname.setter
+    def hostname(self, hostname):
+        """Sets the hostname of this TargetTypeDetailsInput.
+
+
+        :param hostname: The hostname of this TargetTypeDetailsInput.  # noqa: E501
+        :type: str
+        """
+
+        self._hostname = hostname
+
+    @property
+    def hosts(self):
+        """Gets the hosts of this TargetTypeDetailsInput.  # noqa: E501
+
+
+        :return: The hosts of this TargetTypeDetailsInput.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._hosts
+
+    @hosts.setter
+    def hosts(self, hosts):
+        """Sets the hosts of this TargetTypeDetailsInput.
+
+
+        :param hosts: The hosts of this TargetTypeDetailsInput.  # noqa: E501
+        :type: list[str]
+        """
+
+        self._hosts = hosts
 
     @property
     def implementation_type(self):
@@ -2333,6 +2416,27 @@ class TargetTypeDetailsInput(object):
         """
 
         self._rabbitmq_server_user = rabbitmq_server_user
+
+    @property
+    def rdp_port(self):
+        """Gets the rdp_port of this TargetTypeDetailsInput.  # noqa: E501
+
+
+        :return: The rdp_port of this TargetTypeDetailsInput.  # noqa: E501
+        :rtype: str
+        """
+        return self._rdp_port
+
+    @rdp_port.setter
+    def rdp_port(self, rdp_port):
+        """Sets the rdp_port of this TargetTypeDetailsInput.
+
+
+        :param rdp_port: The rdp_port of this TargetTypeDetailsInput.  # noqa: E501
+        :type: str
+        """
+
+        self._rdp_port = rdp_port
 
     @property
     def security_token(self):

@@ -61,7 +61,7 @@ class GetPKICertificate(object):
         'uri_sans': 'uri-sans'
     }
 
-    def __init__(self, alt_names=None, cert_issuer_name=None, common_name=None, csr_data_base64=None, extended_key_usage=None, json=None, key_data_base64=None, token=None, ttl=None, uid_token=None, uri_sans=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, alt_names=None, cert_issuer_name=None, common_name=None, csr_data_base64=None, extended_key_usage=None, json=False, key_data_base64=None, token=None, ttl=None, uid_token=None, uri_sans=None, local_vars_configuration=None):  # noqa: E501
         """GetPKICertificate - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()

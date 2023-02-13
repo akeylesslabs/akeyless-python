@@ -51,7 +51,7 @@ class UpdateRotationSettings(object):
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, auto_rotate=None, json=None, name=None, rotation_interval=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, auto_rotate=None, json=False, name=None, rotation_interval=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """UpdateRotationSettings - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()

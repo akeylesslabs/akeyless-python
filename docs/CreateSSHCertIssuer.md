@@ -4,19 +4,19 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **allowed_users** | **str** | Users allowed to fetch the certificate, e.g root,ubuntu | 
-**delete_protection** | **str** | Protection from accidental deletion of this item | [optional] 
+**delete_protection** | **str** | Protection from accidental deletion of this item [true/false] | [optional] 
 **description** | **str** | Description of the object | [optional] 
 **extensions** | **dict(str, str)** | Signed certificates with extensions, e.g permit-port-forwarding&#x3D;\\\&quot;\\\&quot; | [optional] 
-**json** | **bool** | Set output format to JSON | [optional] 
+**json** | **bool** | Set output format to JSON | [optional] [default to False]
 **metadata** | **str** | Deprecated - use description | [optional] 
 **name** | **str** | SSH certificate issuer name | 
 **principals** | **str** | Signed certificates with principal, e.g example_role1,example_role2 | [optional] 
-**secure_access_bastion_api** | **str** |  | [optional] 
-**secure_access_bastion_ssh** | **str** |  | [optional] 
-**secure_access_enable** | **str** |  | [optional] 
-**secure_access_host** | **list[str]** |  | [optional] 
-**secure_access_ssh_creds_user** | **str** |  | [optional] 
-**secure_access_use_internal_bastion** | **bool** |  | [optional] 
+**secure_access_bastion_api** | **str** | Bastion&#39;s SSH control API endpoint. E.g. https://my.bastion:9900 | [optional] 
+**secure_access_bastion_ssh** | **str** | Bastion&#39;s SSH server. E.g. my.bastion:22 | [optional] 
+**secure_access_enable** | **str** | Enable/Disable secure remote access [true/false] | [optional] 
+**secure_access_host** | **list[str]** | Target servers for connections | [optional] 
+**secure_access_ssh_creds_user** | **str** | SSH username to connect to target server, must be in &#39;Allowed Users&#39; list | [optional] 
+**secure_access_use_internal_bastion** | **bool** | Use internal SSH Bastion | [optional] 
 **signer_key_name** | **str** | A key to sign the certificate with | 
 **tag** | **list[str]** | List of the tags attached to this key | [optional] 
 **token** | **str** | Authentication token (see &#x60;/auth&#x60; and &#x60;/configure&#x60;) | [optional] 

@@ -8,8 +8,8 @@ Name | Type | Description | Notes
 **chef_server_key** | **str** | Server key | [optional] 
 **chef_server_url** | **str** | Server URL | [optional] 
 **chef_server_username** | **str** | Server username | [optional] 
-**delete_protection** | **str** | Protection from accidental deletion of this item | [optional] 
-**json** | **bool** | Set output format to JSON | [optional] 
+**delete_protection** | **str** | Protection from accidental deletion of this item [true/false] | [optional] 
+**json** | **bool** | Set output format to JSON | [optional] [default to False]
 **name** | **str** | Producer name | 
 **new_name** | **str** | Producer name | [optional] 
 **producer_encryption_key_name** | **str** | Dynamic producer encryption key | [optional] 

@@ -89,7 +89,7 @@ class GatewayUpdateProducerCertificateAutomation(object):
         'venafi_zone': 'venafi-zone'
     }
 
-    def __init__(self, admin_rotation_interval_days=0, allow_subdomains=None, allowed_domains=None, auto_generated_folder=None, delete_protection=None, enable_admin_rotation=False, json=None, name=None, new_name=None, producer_encryption_key_name=None, root_first_in_chain=None, sign_using_akeyless_pki=None, signer_key_name=None, store_private_key=None, tags=None, target_name=None, token=None, uid_token=None, user_ttl=None, venafi_api_key=None, venafi_baseurl=None, venafi_password=None, venafi_use_tpp=None, venafi_username=None, venafi_zone=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, admin_rotation_interval_days=0, allow_subdomains=None, allowed_domains=None, auto_generated_folder=None, delete_protection=None, enable_admin_rotation=False, json=False, name=None, new_name=None, producer_encryption_key_name=None, root_first_in_chain=None, sign_using_akeyless_pki=None, signer_key_name=None, store_private_key=None, tags=None, target_name=None, token=None, uid_token=None, user_ttl='2160h', venafi_api_key=None, venafi_baseurl=None, venafi_password=None, venafi_use_tpp=None, venafi_username=None, venafi_zone=None, local_vars_configuration=None):  # noqa: E501
         """GatewayUpdateProducerCertificateAutomation - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -268,7 +268,7 @@ class GatewayUpdateProducerCertificateAutomation(object):
     def delete_protection(self):
         """Gets the delete_protection of this GatewayUpdateProducerCertificateAutomation.  # noqa: E501
 
-        Protection from accidental deletion of this item  # noqa: E501
+        Protection from accidental deletion of this item [true/false]  # noqa: E501
 
         :return: The delete_protection of this GatewayUpdateProducerCertificateAutomation.  # noqa: E501
         :rtype: str
@@ -279,7 +279,7 @@ class GatewayUpdateProducerCertificateAutomation(object):
     def delete_protection(self, delete_protection):
         """Sets the delete_protection of this GatewayUpdateProducerCertificateAutomation.
 
-        Protection from accidental deletion of this item  # noqa: E501
+        Protection from accidental deletion of this item [true/false]  # noqa: E501
 
         :param delete_protection: The delete_protection of this GatewayUpdateProducerCertificateAutomation.  # noqa: E501
         :type: str

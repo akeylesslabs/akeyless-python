@@ -63,7 +63,7 @@ class CreateAuthMethodLDAP(object):
         'unique_identifier': 'unique-identifier'
     }
 
-    def __init__(self, access_expires=0, bound_ips=None, force_sub_claims=None, gen_key='true', gw_bound_ips=None, json=None, jwt_ttl=None, name=None, public_key_data=None, token=None, uid_token=None, unique_identifier=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, access_expires=0, bound_ips=None, force_sub_claims=None, gen_key='true', gw_bound_ips=None, json=False, jwt_ttl=0, name=None, public_key_data=None, token=None, uid_token=None, unique_identifier='users', local_vars_configuration=None):  # noqa: E501
         """CreateAuthMethodLDAP - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -180,7 +180,7 @@ class CreateAuthMethodLDAP(object):
     def gen_key(self):
         """Gets the gen_key of this CreateAuthMethodLDAP.  # noqa: E501
 
-        Automatically generate key-pair for LDAP configuration. If set to false, a public key needs to be provided  # noqa: E501
+        Automatically generate key-pair for LDAP configuration. If set to false, a public key needs to be provided [true/false]  # noqa: E501
 
         :return: The gen_key of this CreateAuthMethodLDAP.  # noqa: E501
         :rtype: str
@@ -191,7 +191,7 @@ class CreateAuthMethodLDAP(object):
     def gen_key(self, gen_key):
         """Sets the gen_key of this CreateAuthMethodLDAP.
 
-        Automatically generate key-pair for LDAP configuration. If set to false, a public key needs to be provided  # noqa: E501
+        Automatically generate key-pair for LDAP configuration. If set to false, a public key needs to be provided [true/false]  # noqa: E501
 
         :param gen_key: The gen_key of this CreateAuthMethodLDAP.  # noqa: E501
         :type: str

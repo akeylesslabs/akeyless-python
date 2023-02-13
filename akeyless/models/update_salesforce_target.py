@@ -79,7 +79,7 @@ class UpdateSalesforceTarget(object):
         'update_version': 'update-version'
     }
 
-    def __init__(self, app_private_key_data=None, auth_flow=None, ca_cert_data=None, ca_cert_name=None, client_id=None, client_secret=None, comment=None, description=None, email=None, json=None, keep_prev_version=None, key=None, name=None, new_name=None, password=None, security_token=None, tenant_url=None, token=None, uid_token=None, update_version=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, app_private_key_data=None, auth_flow=None, ca_cert_data=None, ca_cert_name=None, client_id=None, client_secret=None, comment=None, description=None, email=None, json=False, keep_prev_version=None, key=None, name=None, new_name=None, password=None, security_token=None, tenant_url=None, token=None, uid_token=None, update_version=None, local_vars_configuration=None):  # noqa: E501
         """UpdateSalesforceTarget - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -383,6 +383,7 @@ class UpdateSalesforceTarget(object):
     def keep_prev_version(self):
         """Gets the keep_prev_version of this UpdateSalesforceTarget.  # noqa: E501
 
+        Whether to keep previous version [true/false]. If not set, use default according to account settings  # noqa: E501
 
         :return: The keep_prev_version of this UpdateSalesforceTarget.  # noqa: E501
         :rtype: str
@@ -393,6 +394,7 @@ class UpdateSalesforceTarget(object):
     def keep_prev_version(self, keep_prev_version):
         """Sets the keep_prev_version of this UpdateSalesforceTarget.
 
+        Whether to keep previous version [true/false]. If not set, use default according to account settings  # noqa: E501
 
         :param keep_prev_version: The keep_prev_version of this UpdateSalesforceTarget.  # noqa: E501
         :type: str

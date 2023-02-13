@@ -61,7 +61,7 @@ class GatewayMigratePersonalItems(object):
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, _1password_email=None, _1password_password=None, _1password_secret_key=None, _1password_url=None, _1password_vaults=None, json=None, protection_key=None, target_location=None, token=None, type='1password', uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, _1password_email=None, _1password_password=None, _1password_secret_key=None, _1password_url=None, _1password_vaults=None, json=False, protection_key=None, target_location=None, token=None, type='1password', uid_token=None, local_vars_configuration=None):  # noqa: E501
         """GatewayMigratePersonalItems - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()

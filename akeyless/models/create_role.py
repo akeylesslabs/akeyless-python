@@ -59,7 +59,7 @@ class CreateRole(object):
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, analytics_access=None, audit_access=None, comment=None, description=None, gw_analytics_access=None, json=None, name=None, sra_reports_access=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, analytics_access=None, audit_access=None, comment=None, description=None, gw_analytics_access=None, json=False, name=None, sra_reports_access=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """CreateRole - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()

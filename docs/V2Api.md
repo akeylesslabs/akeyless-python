@@ -36,6 +36,7 @@ Method | HTTP request | Description
 [**create_github_target**](V2Api.md#create_github_target) | **POST** /create-github-target | 
 [**create_gke_target**](V2Api.md#create_gke_target) | **POST** /create-gke-target | 
 [**create_key**](V2Api.md#create_key) | **POST** /create-key | 
+[**create_linked_target**](V2Api.md#create_linked_target) | **POST** /create-linked-target | 
 [**create_native_k8_s_target**](V2Api.md#create_native_k8_s_target) | **POST** /create-k8s-target | 
 [**create_ping_target**](V2Api.md#create_ping_target) | **POST** /create-ping-target | 
 [**create_pki_cert_issuer**](V2Api.md#create_pki_cert_issuer) | **POST** /create-pki-cert-issuer | 
@@ -48,6 +49,7 @@ Method | HTTP request | Description
 [**create_ssh_target**](V2Api.md#create_ssh_target) | **POST** /create-ssh-target | 
 [**create_tokenizer**](V2Api.md#create_tokenizer) | **POST** /create-tokenizer | 
 [**create_web_target**](V2Api.md#create_web_target) | **POST** /create-web-target | 
+[**create_windows_target**](V2Api.md#create_windows_target) | **POST** /create-windows-target | 
 [**createldap_target**](V2Api.md#createldap_target) | **POST** /create-ldap-target | 
 [**decrypt**](V2Api.md#decrypt) | **POST** /decrypt | 
 [**decrypt_gpg**](V2Api.md#decrypt_gpg) | **POST** /decrypt-gpg | 
@@ -236,6 +238,7 @@ Method | HTTP request | Description
 [**update_item**](V2Api.md#update_item) | **POST** /update-item | 
 [**update_ldap_target**](V2Api.md#update_ldap_target) | **POST** /update-ldap-target | 
 [**update_ldap_target_details**](V2Api.md#update_ldap_target_details) | **POST** /update-ldap-target-details | 
+[**update_linked_target**](V2Api.md#update_linked_target) | **POST** /update-linked-target | 
 [**update_native_k8_s_target**](V2Api.md#update_native_k8_s_target) | **POST** /update-k8s-target | 
 [**update_ping_target**](V2Api.md#update_ping_target) | **POST** /update-ping-target | 
 [**update_pki_cert_issuer**](V2Api.md#update_pki_cert_issuer) | **POST** /update-pki-cert-issuer | 
@@ -254,6 +257,7 @@ Method | HTTP request | Description
 [**update_target_details**](V2Api.md#update_target_details) | **POST** /update-target-details | 
 [**update_web_target**](V2Api.md#update_web_target) | **POST** /update-web-target | 
 [**update_web_target_details**](V2Api.md#update_web_target_details) | **POST** /update-web-target-details | 
+[**update_windows_target**](V2Api.md#update_windows_target) | **POST** /update-windows-target | 
 [**upload_rsa**](V2Api.md#upload_rsa) | **POST** /upload-rsa | 
 [**validate_token**](V2Api.md#validate_token) | **POST** /validate-token | 
 [**verify_gpg**](V2Api.md#verify_gpg) | **POST** /verify-gpg | 
@@ -2183,6 +2187,66 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **create_linked_target**
+> CreateLinkedTargetOutput create_linked_target(body)
+
+
+
+### Example
+
+```python
+from __future__ import print_function
+import time
+import akeyless
+from akeyless.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.akeyless.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = akeyless.Configuration(
+    host = "https://api.akeyless.io"
+)
+
+
+# Enter a context with an instance of the API client
+with akeyless.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = akeyless.V2Api(api_client)
+    body = akeyless.CreateLinkedTarget() # CreateLinkedTarget | 
+
+    try:
+        api_response = api_instance.create_linked_target(body)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling V2Api->create_linked_target: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**CreateLinkedTarget**](CreateLinkedTarget.md)|  | 
+
+### Return type
+
+[**CreateLinkedTargetOutput**](CreateLinkedTargetOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | createLinkedTargetResponse wraps response body. |  -  |
+**0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **create_native_k8_s_target**
 > CreateNativeK8STargetOutput create_native_k8_s_target(body)
 
@@ -2899,6 +2963,66 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | createWebTargetResponse wraps response body. |  -  |
+**0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **create_windows_target**
+> CreateWindowsTargetOutput create_windows_target(body)
+
+
+
+### Example
+
+```python
+from __future__ import print_function
+import time
+import akeyless
+from akeyless.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.akeyless.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = akeyless.Configuration(
+    host = "https://api.akeyless.io"
+)
+
+
+# Enter a context with an instance of the API client
+with akeyless.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = akeyless.V2Api(api_client)
+    body = akeyless.CreateWindowsTarget() # CreateWindowsTarget | 
+
+    try:
+        api_response = api_instance.create_windows_target(body)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling V2Api->create_windows_target: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**CreateWindowsTarget**](CreateWindowsTarget.md)|  | 
+
+### Return type
+
+[**CreateWindowsTargetOutput**](CreateWindowsTargetOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | createWindowsTargetResponse wraps response body. |  -  |
 **0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -14172,6 +14296,66 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **update_linked_target**
+> object update_linked_target(body)
+
+
+
+### Example
+
+```python
+from __future__ import print_function
+import time
+import akeyless
+from akeyless.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.akeyless.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = akeyless.Configuration(
+    host = "https://api.akeyless.io"
+)
+
+
+# Enter a context with an instance of the API client
+with akeyless.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = akeyless.V2Api(api_client)
+    body = akeyless.UpdateLinkedTarget() # UpdateLinkedTarget | 
+
+    try:
+        api_response = api_instance.update_linked_target(body)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling V2Api->update_linked_target: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**UpdateLinkedTarget**](UpdateLinkedTarget.md)|  | 
+
+### Return type
+
+**object**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | updateLinkedTargetResponse wraps response body. |  -  |
+**0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **update_native_k8_s_target**
 > UpdateNativeK8STargetOutput update_native_k8_s_target(body)
 
@@ -15244,6 +15428,66 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | updateTargetResponse wraps response body. |  -  |
+**0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **update_windows_target**
+> object update_windows_target(body)
+
+
+
+### Example
+
+```python
+from __future__ import print_function
+import time
+import akeyless
+from akeyless.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.akeyless.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = akeyless.Configuration(
+    host = "https://api.akeyless.io"
+)
+
+
+# Enter a context with an instance of the API client
+with akeyless.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = akeyless.V2Api(api_client)
+    body = akeyless.UpdateWindowsTarget() # UpdateWindowsTarget | 
+
+    try:
+        api_response = api_instance.update_windows_target(body)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling V2Api->update_windows_target: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**UpdateWindowsTarget**](UpdateWindowsTarget.md)|  | 
+
+### Return type
+
+**object**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | updateWindowsTargetResponse wraps response body. |  -  |
 **0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

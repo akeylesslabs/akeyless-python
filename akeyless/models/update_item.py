@@ -113,7 +113,7 @@ class UpdateItem(object):
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, accessibility='regular', add_tag=None, cert_file_data=None, delete_protection=None, description='default_metadata', json=None, name=None, new_metadata='default_metadata', new_name=None, rm_tag=None, rotate_after_disconnect='false', secure_access_add_host=None, secure_access_allow_external_user=None, secure_access_allow_port_forwading=None, secure_access_aws_account_id=None, secure_access_aws_native_cli=None, secure_access_aws_region=None, secure_access_bastion_api=None, secure_access_bastion_issuer=None, secure_access_bastion_ssh=None, secure_access_cluster_endpoint=None, secure_access_dashboard_url=None, secure_access_db_name=None, secure_access_db_schema=None, secure_access_enable=None, secure_access_host=None, secure_access_rdp_domain=None, secure_access_rdp_user=None, secure_access_rm_host=None, secure_access_ssh_creds=None, secure_access_ssh_creds_user=None, secure_access_url=None, secure_access_use_internal_bastion=None, secure_access_web_browsing=None, secure_access_web_proxy=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, accessibility='regular', add_tag=None, cert_file_data=None, delete_protection=None, description='default_metadata', json=False, name=None, new_metadata='default_metadata', new_name=None, rm_tag=None, rotate_after_disconnect='false', secure_access_add_host=None, secure_access_allow_external_user=None, secure_access_allow_port_forwading=None, secure_access_aws_account_id=None, secure_access_aws_native_cli=None, secure_access_aws_region=None, secure_access_bastion_api=None, secure_access_bastion_issuer=None, secure_access_bastion_ssh=None, secure_access_cluster_endpoint=None, secure_access_dashboard_url=None, secure_access_db_name=None, secure_access_db_schema=None, secure_access_enable=None, secure_access_host=None, secure_access_rdp_domain=None, secure_access_rdp_user=None, secure_access_rm_host=None, secure_access_ssh_creds=None, secure_access_ssh_creds_user=None, secure_access_url=None, secure_access_use_internal_bastion=None, secure_access_web_browsing=False, secure_access_web_proxy=False, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """UpdateItem - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -305,6 +305,7 @@ class UpdateItem(object):
     def delete_protection(self):
         """Gets the delete_protection of this UpdateItem.  # noqa: E501
 
+        Protection from accidental deletion of this item [true/false]  # noqa: E501
 
         :return: The delete_protection of this UpdateItem.  # noqa: E501
         :rtype: str
@@ -315,6 +316,7 @@ class UpdateItem(object):
     def delete_protection(self, delete_protection):
         """Sets the delete_protection of this UpdateItem.
 
+        Protection from accidental deletion of this item [true/false]  # noqa: E501
 
         :param delete_protection: The delete_protection of this UpdateItem.  # noqa: E501
         :type: str
@@ -466,7 +468,7 @@ class UpdateItem(object):
     def rotate_after_disconnect(self):
         """Gets the rotate_after_disconnect of this UpdateItem.  # noqa: E501
 
-        Rotate the value of the secret after SRA session ends  # noqa: E501
+        Rotate the value of the secret after SRA session ends [true/false] (relevant only for Rotated-secret)  # noqa: E501
 
         :return: The rotate_after_disconnect of this UpdateItem.  # noqa: E501
         :rtype: str
@@ -477,7 +479,7 @@ class UpdateItem(object):
     def rotate_after_disconnect(self, rotate_after_disconnect):
         """Sets the rotate_after_disconnect of this UpdateItem.
 
-        Rotate the value of the secret after SRA session ends  # noqa: E501
+        Rotate the value of the secret after SRA session ends [true/false] (relevant only for Rotated-secret)  # noqa: E501
 
         :param rotate_after_disconnect: The rotate_after_disconnect of this UpdateItem.  # noqa: E501
         :type: str
@@ -489,6 +491,7 @@ class UpdateItem(object):
     def secure_access_add_host(self):
         """Gets the secure_access_add_host of this UpdateItem.  # noqa: E501
 
+        List of the new hosts that will be attached to SRA servers host  # noqa: E501
 
         :return: The secure_access_add_host of this UpdateItem.  # noqa: E501
         :rtype: list[str]
@@ -499,6 +502,7 @@ class UpdateItem(object):
     def secure_access_add_host(self, secure_access_add_host):
         """Sets the secure_access_add_host of this UpdateItem.
 
+        List of the new hosts that will be attached to SRA servers host  # noqa: E501
 
         :param secure_access_add_host: The secure_access_add_host of this UpdateItem.  # noqa: E501
         :type: list[str]
@@ -510,6 +514,7 @@ class UpdateItem(object):
     def secure_access_allow_external_user(self):
         """Gets the secure_access_allow_external_user of this UpdateItem.  # noqa: E501
 
+        Allow providing external user for a domain users [true/false]  # noqa: E501
 
         :return: The secure_access_allow_external_user of this UpdateItem.  # noqa: E501
         :rtype: str
@@ -520,6 +525,7 @@ class UpdateItem(object):
     def secure_access_allow_external_user(self, secure_access_allow_external_user):
         """Sets the secure_access_allow_external_user of this UpdateItem.
 
+        Allow providing external user for a domain users [true/false]  # noqa: E501
 
         :param secure_access_allow_external_user: The secure_access_allow_external_user of this UpdateItem.  # noqa: E501
         :type: str
@@ -531,6 +537,7 @@ class UpdateItem(object):
     def secure_access_allow_port_forwading(self):
         """Gets the secure_access_allow_port_forwading of this UpdateItem.  # noqa: E501
 
+        Enable Port forwarding while using CLI access (relevant only for EKS/GKE/K8s Dynamic-Secret)  # noqa: E501
 
         :return: The secure_access_allow_port_forwading of this UpdateItem.  # noqa: E501
         :rtype: bool
@@ -541,6 +548,7 @@ class UpdateItem(object):
     def secure_access_allow_port_forwading(self, secure_access_allow_port_forwading):
         """Sets the secure_access_allow_port_forwading of this UpdateItem.
 
+        Enable Port forwarding while using CLI access (relevant only for EKS/GKE/K8s Dynamic-Secret)  # noqa: E501
 
         :param secure_access_allow_port_forwading: The secure_access_allow_port_forwading of this UpdateItem.  # noqa: E501
         :type: bool
@@ -552,6 +560,7 @@ class UpdateItem(object):
     def secure_access_aws_account_id(self):
         """Gets the secure_access_aws_account_id of this UpdateItem.  # noqa: E501
 
+        The AWS account id (relevant only for aws)  # noqa: E501
 
         :return: The secure_access_aws_account_id of this UpdateItem.  # noqa: E501
         :rtype: str
@@ -562,6 +571,7 @@ class UpdateItem(object):
     def secure_access_aws_account_id(self, secure_access_aws_account_id):
         """Sets the secure_access_aws_account_id of this UpdateItem.
 
+        The AWS account id (relevant only for aws)  # noqa: E501
 
         :param secure_access_aws_account_id: The secure_access_aws_account_id of this UpdateItem.  # noqa: E501
         :type: str
@@ -573,6 +583,7 @@ class UpdateItem(object):
     def secure_access_aws_native_cli(self):
         """Gets the secure_access_aws_native_cli of this UpdateItem.  # noqa: E501
 
+        The AWS native cli (relevant only for aws)  # noqa: E501
 
         :return: The secure_access_aws_native_cli of this UpdateItem.  # noqa: E501
         :rtype: bool
@@ -583,6 +594,7 @@ class UpdateItem(object):
     def secure_access_aws_native_cli(self, secure_access_aws_native_cli):
         """Sets the secure_access_aws_native_cli of this UpdateItem.
 
+        The AWS native cli (relevant only for aws)  # noqa: E501
 
         :param secure_access_aws_native_cli: The secure_access_aws_native_cli of this UpdateItem.  # noqa: E501
         :type: bool
@@ -594,6 +606,7 @@ class UpdateItem(object):
     def secure_access_aws_region(self):
         """Gets the secure_access_aws_region of this UpdateItem.  # noqa: E501
 
+        The AWS region (relevant only for aws)  # noqa: E501
 
         :return: The secure_access_aws_region of this UpdateItem.  # noqa: E501
         :rtype: str
@@ -604,6 +617,7 @@ class UpdateItem(object):
     def secure_access_aws_region(self, secure_access_aws_region):
         """Sets the secure_access_aws_region of this UpdateItem.
 
+        The AWS region (relevant only for aws)  # noqa: E501
 
         :param secure_access_aws_region: The secure_access_aws_region of this UpdateItem.  # noqa: E501
         :type: str
@@ -615,6 +629,7 @@ class UpdateItem(object):
     def secure_access_bastion_api(self):
         """Gets the secure_access_bastion_api of this UpdateItem.  # noqa: E501
 
+        Bastion's SSH control API endpoint. E.g. https://my.bastion:9900 (relevant only for ssh cert issuer)  # noqa: E501
 
         :return: The secure_access_bastion_api of this UpdateItem.  # noqa: E501
         :rtype: str
@@ -625,6 +640,7 @@ class UpdateItem(object):
     def secure_access_bastion_api(self, secure_access_bastion_api):
         """Sets the secure_access_bastion_api of this UpdateItem.
 
+        Bastion's SSH control API endpoint. E.g. https://my.bastion:9900 (relevant only for ssh cert issuer)  # noqa: E501
 
         :param secure_access_bastion_api: The secure_access_bastion_api of this UpdateItem.  # noqa: E501
         :type: str
@@ -636,6 +652,7 @@ class UpdateItem(object):
     def secure_access_bastion_issuer(self):
         """Gets the secure_access_bastion_issuer of this UpdateItem.  # noqa: E501
 
+        Path to the SSH Certificate Issuer for your Akeyless Bastion  # noqa: E501
 
         :return: The secure_access_bastion_issuer of this UpdateItem.  # noqa: E501
         :rtype: str
@@ -646,6 +663,7 @@ class UpdateItem(object):
     def secure_access_bastion_issuer(self, secure_access_bastion_issuer):
         """Sets the secure_access_bastion_issuer of this UpdateItem.
 
+        Path to the SSH Certificate Issuer for your Akeyless Bastion  # noqa: E501
 
         :param secure_access_bastion_issuer: The secure_access_bastion_issuer of this UpdateItem.  # noqa: E501
         :type: str
@@ -657,6 +675,7 @@ class UpdateItem(object):
     def secure_access_bastion_ssh(self):
         """Gets the secure_access_bastion_ssh of this UpdateItem.  # noqa: E501
 
+        Bastion's SSH server. E.g. my.bastion:22 (relevant only for ssh cert issuer)  # noqa: E501
 
         :return: The secure_access_bastion_ssh of this UpdateItem.  # noqa: E501
         :rtype: str
@@ -667,6 +686,7 @@ class UpdateItem(object):
     def secure_access_bastion_ssh(self, secure_access_bastion_ssh):
         """Sets the secure_access_bastion_ssh of this UpdateItem.
 
+        Bastion's SSH server. E.g. my.bastion:22 (relevant only for ssh cert issuer)  # noqa: E501
 
         :param secure_access_bastion_ssh: The secure_access_bastion_ssh of this UpdateItem.  # noqa: E501
         :type: str
@@ -678,6 +698,7 @@ class UpdateItem(object):
     def secure_access_cluster_endpoint(self):
         """Gets the secure_access_cluster_endpoint of this UpdateItem.  # noqa: E501
 
+        The K8s cluster endpoint URL (relevant only for EKS/GKE/K8s Dynamic-Secret)  # noqa: E501
 
         :return: The secure_access_cluster_endpoint of this UpdateItem.  # noqa: E501
         :rtype: str
@@ -688,6 +709,7 @@ class UpdateItem(object):
     def secure_access_cluster_endpoint(self, secure_access_cluster_endpoint):
         """Sets the secure_access_cluster_endpoint of this UpdateItem.
 
+        The K8s cluster endpoint URL (relevant only for EKS/GKE/K8s Dynamic-Secret)  # noqa: E501
 
         :param secure_access_cluster_endpoint: The secure_access_cluster_endpoint of this UpdateItem.  # noqa: E501
         :type: str
@@ -699,6 +721,7 @@ class UpdateItem(object):
     def secure_access_dashboard_url(self):
         """Gets the secure_access_dashboard_url of this UpdateItem.  # noqa: E501
 
+        The K8s dashboard url (relevant only for k8s)  # noqa: E501
 
         :return: The secure_access_dashboard_url of this UpdateItem.  # noqa: E501
         :rtype: str
@@ -709,6 +732,7 @@ class UpdateItem(object):
     def secure_access_dashboard_url(self, secure_access_dashboard_url):
         """Sets the secure_access_dashboard_url of this UpdateItem.
 
+        The K8s dashboard url (relevant only for k8s)  # noqa: E501
 
         :param secure_access_dashboard_url: The secure_access_dashboard_url of this UpdateItem.  # noqa: E501
         :type: str
@@ -720,6 +744,7 @@ class UpdateItem(object):
     def secure_access_db_name(self):
         """Gets the secure_access_db_name of this UpdateItem.  # noqa: E501
 
+        The DB name (relevant only for DB Dynamic-Secret)  # noqa: E501
 
         :return: The secure_access_db_name of this UpdateItem.  # noqa: E501
         :rtype: str
@@ -730,6 +755,7 @@ class UpdateItem(object):
     def secure_access_db_name(self, secure_access_db_name):
         """Sets the secure_access_db_name of this UpdateItem.
 
+        The DB name (relevant only for DB Dynamic-Secret)  # noqa: E501
 
         :param secure_access_db_name: The secure_access_db_name of this UpdateItem.  # noqa: E501
         :type: str
@@ -741,6 +767,7 @@ class UpdateItem(object):
     def secure_access_db_schema(self):
         """Gets the secure_access_db_schema of this UpdateItem.  # noqa: E501
 
+        The DB schema (relevant only for DB Dynamic-Secret)  # noqa: E501
 
         :return: The secure_access_db_schema of this UpdateItem.  # noqa: E501
         :rtype: str
@@ -751,6 +778,7 @@ class UpdateItem(object):
     def secure_access_db_schema(self, secure_access_db_schema):
         """Sets the secure_access_db_schema of this UpdateItem.
 
+        The DB schema (relevant only for DB Dynamic-Secret)  # noqa: E501
 
         :param secure_access_db_schema: The secure_access_db_schema of this UpdateItem.  # noqa: E501
         :type: str
@@ -762,6 +790,7 @@ class UpdateItem(object):
     def secure_access_enable(self):
         """Gets the secure_access_enable of this UpdateItem.  # noqa: E501
 
+        Enable/Disable secure remote access [true/false]  # noqa: E501
 
         :return: The secure_access_enable of this UpdateItem.  # noqa: E501
         :rtype: str
@@ -772,6 +801,7 @@ class UpdateItem(object):
     def secure_access_enable(self, secure_access_enable):
         """Sets the secure_access_enable of this UpdateItem.
 
+        Enable/Disable secure remote access [true/false]  # noqa: E501
 
         :param secure_access_enable: The secure_access_enable of this UpdateItem.  # noqa: E501
         :type: str
@@ -783,6 +813,7 @@ class UpdateItem(object):
     def secure_access_host(self):
         """Gets the secure_access_host of this UpdateItem.  # noqa: E501
 
+        Target servers for connections  # noqa: E501
 
         :return: The secure_access_host of this UpdateItem.  # noqa: E501
         :rtype: list[str]
@@ -793,6 +824,7 @@ class UpdateItem(object):
     def secure_access_host(self, secure_access_host):
         """Sets the secure_access_host of this UpdateItem.
 
+        Target servers for connections  # noqa: E501
 
         :param secure_access_host: The secure_access_host of this UpdateItem.  # noqa: E501
         :type: list[str]
@@ -804,6 +836,7 @@ class UpdateItem(object):
     def secure_access_rdp_domain(self):
         """Gets the secure_access_rdp_domain of this UpdateItem.  # noqa: E501
 
+        Required when the Dynamic Secret is used for a domain user (relevant only for RDP Dynamic-Secret)  # noqa: E501
 
         :return: The secure_access_rdp_domain of this UpdateItem.  # noqa: E501
         :rtype: str
@@ -814,6 +847,7 @@ class UpdateItem(object):
     def secure_access_rdp_domain(self, secure_access_rdp_domain):
         """Sets the secure_access_rdp_domain of this UpdateItem.
 
+        Required when the Dynamic Secret is used for a domain user (relevant only for RDP Dynamic-Secret)  # noqa: E501
 
         :param secure_access_rdp_domain: The secure_access_rdp_domain of this UpdateItem.  # noqa: E501
         :type: str
@@ -825,6 +859,7 @@ class UpdateItem(object):
     def secure_access_rdp_user(self):
         """Gets the secure_access_rdp_user of this UpdateItem.  # noqa: E501
 
+        Override the RDP Domain username  # noqa: E501
 
         :return: The secure_access_rdp_user of this UpdateItem.  # noqa: E501
         :rtype: str
@@ -835,6 +870,7 @@ class UpdateItem(object):
     def secure_access_rdp_user(self, secure_access_rdp_user):
         """Sets the secure_access_rdp_user of this UpdateItem.
 
+        Override the RDP Domain username  # noqa: E501
 
         :param secure_access_rdp_user: The secure_access_rdp_user of this UpdateItem.  # noqa: E501
         :type: str
@@ -846,6 +882,7 @@ class UpdateItem(object):
     def secure_access_rm_host(self):
         """Gets the secure_access_rm_host of this UpdateItem.  # noqa: E501
 
+        List of the existent hosts that will be removed from SRA servers host  # noqa: E501
 
         :return: The secure_access_rm_host of this UpdateItem.  # noqa: E501
         :rtype: list[str]
@@ -856,6 +893,7 @@ class UpdateItem(object):
     def secure_access_rm_host(self, secure_access_rm_host):
         """Sets the secure_access_rm_host of this UpdateItem.
 
+        List of the existent hosts that will be removed from SRA servers host  # noqa: E501
 
         :param secure_access_rm_host: The secure_access_rm_host of this UpdateItem.  # noqa: E501
         :type: list[str]
@@ -867,6 +905,7 @@ class UpdateItem(object):
     def secure_access_ssh_creds(self):
         """Gets the secure_access_ssh_creds of this UpdateItem.  # noqa: E501
 
+        Secret values contains SSH Credentials, either Private Key or Password [password/private-key] (relevant only for Static-Secret or Rotated-secret)  # noqa: E501
 
         :return: The secure_access_ssh_creds of this UpdateItem.  # noqa: E501
         :rtype: str
@@ -877,6 +916,7 @@ class UpdateItem(object):
     def secure_access_ssh_creds(self, secure_access_ssh_creds):
         """Sets the secure_access_ssh_creds of this UpdateItem.
 
+        Secret values contains SSH Credentials, either Private Key or Password [password/private-key] (relevant only for Static-Secret or Rotated-secret)  # noqa: E501
 
         :param secure_access_ssh_creds: The secure_access_ssh_creds of this UpdateItem.  # noqa: E501
         :type: str
@@ -888,6 +928,7 @@ class UpdateItem(object):
     def secure_access_ssh_creds_user(self):
         """Gets the secure_access_ssh_creds_user of this UpdateItem.  # noqa: E501
 
+        SSH username to connect to target server, must be in 'Allowed Users' list (relevant only for ssh cert issuer)  # noqa: E501
 
         :return: The secure_access_ssh_creds_user of this UpdateItem.  # noqa: E501
         :rtype: str
@@ -898,6 +939,7 @@ class UpdateItem(object):
     def secure_access_ssh_creds_user(self, secure_access_ssh_creds_user):
         """Sets the secure_access_ssh_creds_user of this UpdateItem.
 
+        SSH username to connect to target server, must be in 'Allowed Users' list (relevant only for ssh cert issuer)  # noqa: E501
 
         :param secure_access_ssh_creds_user: The secure_access_ssh_creds_user of this UpdateItem.  # noqa: E501
         :type: str
@@ -909,6 +951,7 @@ class UpdateItem(object):
     def secure_access_url(self):
         """Gets the secure_access_url of this UpdateItem.  # noqa: E501
 
+        Destination URL to inject secrets  # noqa: E501
 
         :return: The secure_access_url of this UpdateItem.  # noqa: E501
         :rtype: str
@@ -919,6 +962,7 @@ class UpdateItem(object):
     def secure_access_url(self, secure_access_url):
         """Sets the secure_access_url of this UpdateItem.
 
+        Destination URL to inject secrets  # noqa: E501
 
         :param secure_access_url: The secure_access_url of this UpdateItem.  # noqa: E501
         :type: str
@@ -930,6 +974,7 @@ class UpdateItem(object):
     def secure_access_use_internal_bastion(self):
         """Gets the secure_access_use_internal_bastion of this UpdateItem.  # noqa: E501
 
+        Use internal SSH Bastion  # noqa: E501
 
         :return: The secure_access_use_internal_bastion of this UpdateItem.  # noqa: E501
         :rtype: bool
@@ -940,6 +985,7 @@ class UpdateItem(object):
     def secure_access_use_internal_bastion(self, secure_access_use_internal_bastion):
         """Sets the secure_access_use_internal_bastion of this UpdateItem.
 
+        Use internal SSH Bastion  # noqa: E501
 
         :param secure_access_use_internal_bastion: The secure_access_use_internal_bastion of this UpdateItem.  # noqa: E501
         :type: bool
@@ -951,6 +997,7 @@ class UpdateItem(object):
     def secure_access_web_browsing(self):
         """Gets the secure_access_web_browsing of this UpdateItem.  # noqa: E501
 
+        Secure browser via Akeyless Web Access Bastion  # noqa: E501
 
         :return: The secure_access_web_browsing of this UpdateItem.  # noqa: E501
         :rtype: bool
@@ -961,6 +1008,7 @@ class UpdateItem(object):
     def secure_access_web_browsing(self, secure_access_web_browsing):
         """Sets the secure_access_web_browsing of this UpdateItem.
 
+        Secure browser via Akeyless Web Access Bastion  # noqa: E501
 
         :param secure_access_web_browsing: The secure_access_web_browsing of this UpdateItem.  # noqa: E501
         :type: bool
@@ -972,6 +1020,7 @@ class UpdateItem(object):
     def secure_access_web_proxy(self):
         """Gets the secure_access_web_proxy of this UpdateItem.  # noqa: E501
 
+        Web-Proxy via Akeyless Web Access Bastion  # noqa: E501
 
         :return: The secure_access_web_proxy of this UpdateItem.  # noqa: E501
         :rtype: bool
@@ -982,6 +1031,7 @@ class UpdateItem(object):
     def secure_access_web_proxy(self, secure_access_web_proxy):
         """Sets the secure_access_web_proxy of this UpdateItem.
 
+        Web-Proxy via Akeyless Web Access Bastion  # noqa: E501
 
         :param secure_access_web_proxy: The secure_access_web_proxy of this UpdateItem.  # noqa: E501
         :type: bool

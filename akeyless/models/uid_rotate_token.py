@@ -49,7 +49,7 @@ class UidRotateToken(object):
         'with_manual_ack': 'with-manual-ack'
     }
 
-    def __init__(self, fork=None, json=None, send_manual_ack_token=None, uid_token=None, with_manual_ack=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, fork=None, json=False, send_manual_ack_token=None, uid_token=None, with_manual_ack=None, local_vars_configuration=None):  # noqa: E501
         """UidRotateToken - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()

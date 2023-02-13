@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **action** | **str** | Action to be performed on the item [start/stop/describe] | 
 **emails** | **list[str]** | For Password Management use, reflect the website context | [optional] 
 **item_name** | **str** | Item name | 
-**json** | **bool** | Set output format to JSON | [optional] 
+**json** | **bool** | Set output format to JSON | [optional] [default to False]
 **token** | **str** | Authentication token (see &#x60;/auth&#x60; and &#x60;/configure&#x60;) | [optional] 
 **ttl** | **int** | TTL of the Availability of the shared secret in seconds | [optional] 
 **uid_token** | **str** | The universal identity token, Required only for universal_identity authentication | [optional] 

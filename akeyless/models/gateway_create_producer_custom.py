@@ -69,7 +69,7 @@ class GatewayCreateProducerCustom(object):
         'user_ttl': 'user-ttl'
     }
 
-    def __init__(self, admin_rotation_interval_days=None, create_sync_url=None, delete_protection=None, enable_admin_rotation=False, json=None, name=None, payload=None, producer_encryption_key_name=None, revoke_sync_url=None, rotate_sync_url=None, tags=None, timeout_sec=60, token=None, uid_token=None, user_ttl='60m', local_vars_configuration=None):  # noqa: E501
+    def __init__(self, admin_rotation_interval_days=None, create_sync_url=None, delete_protection=None, enable_admin_rotation=False, json=False, name=None, payload=None, producer_encryption_key_name=None, revoke_sync_url=None, rotate_sync_url=None, tags=None, timeout_sec=60, token=None, uid_token=None, user_ttl='60m', local_vars_configuration=None):  # noqa: E501
         """GatewayCreateProducerCustom - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -172,7 +172,7 @@ class GatewayCreateProducerCustom(object):
     def delete_protection(self):
         """Gets the delete_protection of this GatewayCreateProducerCustom.  # noqa: E501
 
-        Protection from accidental deletion of this item  # noqa: E501
+        Protection from accidental deletion of this item [true/false]  # noqa: E501
 
         :return: The delete_protection of this GatewayCreateProducerCustom.  # noqa: E501
         :rtype: str
@@ -183,7 +183,7 @@ class GatewayCreateProducerCustom(object):
     def delete_protection(self, delete_protection):
         """Sets the delete_protection of this GatewayCreateProducerCustom.
 
-        Protection from accidental deletion of this item  # noqa: E501
+        Protection from accidental deletion of this item [true/false]  # noqa: E501
 
         :param delete_protection: The delete_protection of this GatewayCreateProducerCustom.  # noqa: E501
         :type: str

@@ -51,7 +51,7 @@ class ListTargets(object):
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, filter=None, json=None, pagination_token=None, token=None, type=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, filter=None, json=False, pagination_token=None, token=None, type=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """ListTargets - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()

@@ -65,7 +65,7 @@ class UpdateEventForwarder(object):
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, admin_name=None, description='default_comment', email_to=None, enable=None, event_source_locations=None, event_types=None, host=None, json=None, name=None, new_comment='default_comment', new_name=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, admin_name=None, description='default_comment', email_to=None, enable='true', event_source_locations=None, event_types=None, host=None, json=False, name=None, new_comment='default_comment', new_name=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """UpdateEventForwarder - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -185,7 +185,7 @@ class UpdateEventForwarder(object):
     def enable(self):
         """Gets the enable of this UpdateEventForwarder.  # noqa: E501
 
-        Enable  # noqa: E501
+        Enable/Disable Event Forwarder [true/false]  # noqa: E501
 
         :return: The enable of this UpdateEventForwarder.  # noqa: E501
         :rtype: str
@@ -196,7 +196,7 @@ class UpdateEventForwarder(object):
     def enable(self, enable):
         """Sets the enable of this UpdateEventForwarder.
 
-        Enable  # noqa: E501
+        Enable/Disable Event Forwarder [true/false]  # noqa: E501
 
         :param enable: The enable of this UpdateEventForwarder.  # noqa: E501
         :type: str

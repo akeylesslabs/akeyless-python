@@ -71,7 +71,7 @@ class UpdateSSHTarget(object):
         'update_version': 'update-version'
     }
 
-    def __init__(self, comment=None, description=None, host=None, json=None, keep_prev_version=None, key=None, name=None, new_name=None, port=None, private_key=None, private_key_password=None, ssh_password=None, ssh_username=None, token=None, uid_token=None, update_version=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, comment=None, description=None, host=None, json=False, keep_prev_version=None, key=None, name=None, new_name=None, port='22', private_key=None, private_key_password=None, ssh_password=None, ssh_username=None, token=None, uid_token=None, update_version=None, local_vars_configuration=None):  # noqa: E501
         """UpdateSSHTarget - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -177,6 +177,7 @@ class UpdateSSHTarget(object):
     def host(self):
         """Gets the host of this UpdateSSHTarget.  # noqa: E501
 
+        SSH host name  # noqa: E501
 
         :return: The host of this UpdateSSHTarget.  # noqa: E501
         :rtype: str
@@ -187,6 +188,7 @@ class UpdateSSHTarget(object):
     def host(self, host):
         """Sets the host of this UpdateSSHTarget.
 
+        SSH host name  # noqa: E501
 
         :param host: The host of this UpdateSSHTarget.  # noqa: E501
         :type: str
@@ -221,6 +223,7 @@ class UpdateSSHTarget(object):
     def keep_prev_version(self):
         """Gets the keep_prev_version of this UpdateSSHTarget.  # noqa: E501
 
+        Whether to keep previous version [true/false]. If not set, use default according to account settings  # noqa: E501
 
         :return: The keep_prev_version of this UpdateSSHTarget.  # noqa: E501
         :rtype: str
@@ -231,6 +234,7 @@ class UpdateSSHTarget(object):
     def keep_prev_version(self, keep_prev_version):
         """Sets the keep_prev_version of this UpdateSSHTarget.
 
+        Whether to keep previous version [true/false]. If not set, use default according to account settings  # noqa: E501
 
         :param keep_prev_version: The keep_prev_version of this UpdateSSHTarget.  # noqa: E501
         :type: str
@@ -313,6 +317,7 @@ class UpdateSSHTarget(object):
     def port(self):
         """Gets the port of this UpdateSSHTarget.  # noqa: E501
 
+        SSH port  # noqa: E501
 
         :return: The port of this UpdateSSHTarget.  # noqa: E501
         :rtype: str
@@ -323,6 +328,7 @@ class UpdateSSHTarget(object):
     def port(self, port):
         """Sets the port of this UpdateSSHTarget.
 
+        SSH port  # noqa: E501
 
         :param port: The port of this UpdateSSHTarget.  # noqa: E501
         :type: str
@@ -334,6 +340,7 @@ class UpdateSSHTarget(object):
     def private_key(self):
         """Gets the private_key of this UpdateSSHTarget.  # noqa: E501
 
+        SSH private key  # noqa: E501
 
         :return: The private_key of this UpdateSSHTarget.  # noqa: E501
         :rtype: str
@@ -344,6 +351,7 @@ class UpdateSSHTarget(object):
     def private_key(self, private_key):
         """Sets the private_key of this UpdateSSHTarget.
 
+        SSH private key  # noqa: E501
 
         :param private_key: The private_key of this UpdateSSHTarget.  # noqa: E501
         :type: str
@@ -355,6 +363,7 @@ class UpdateSSHTarget(object):
     def private_key_password(self):
         """Gets the private_key_password of this UpdateSSHTarget.  # noqa: E501
 
+        SSH private key password  # noqa: E501
 
         :return: The private_key_password of this UpdateSSHTarget.  # noqa: E501
         :rtype: str
@@ -365,6 +374,7 @@ class UpdateSSHTarget(object):
     def private_key_password(self, private_key_password):
         """Sets the private_key_password of this UpdateSSHTarget.
 
+        SSH private key password  # noqa: E501
 
         :param private_key_password: The private_key_password of this UpdateSSHTarget.  # noqa: E501
         :type: str
@@ -376,6 +386,7 @@ class UpdateSSHTarget(object):
     def ssh_password(self):
         """Gets the ssh_password of this UpdateSSHTarget.  # noqa: E501
 
+        SSH password to rotate  # noqa: E501
 
         :return: The ssh_password of this UpdateSSHTarget.  # noqa: E501
         :rtype: str
@@ -386,6 +397,7 @@ class UpdateSSHTarget(object):
     def ssh_password(self, ssh_password):
         """Sets the ssh_password of this UpdateSSHTarget.
 
+        SSH password to rotate  # noqa: E501
 
         :param ssh_password: The ssh_password of this UpdateSSHTarget.  # noqa: E501
         :type: str
@@ -397,6 +409,7 @@ class UpdateSSHTarget(object):
     def ssh_username(self):
         """Gets the ssh_username of this UpdateSSHTarget.  # noqa: E501
 
+        SSH username  # noqa: E501
 
         :return: The ssh_username of this UpdateSSHTarget.  # noqa: E501
         :rtype: str
@@ -407,6 +420,7 @@ class UpdateSSHTarget(object):
     def ssh_username(self, ssh_username):
         """Sets the ssh_username of this UpdateSSHTarget.
 
+        SSH username  # noqa: E501
 
         :param ssh_username: The ssh_username of this UpdateSSHTarget.  # noqa: E501
         :type: str

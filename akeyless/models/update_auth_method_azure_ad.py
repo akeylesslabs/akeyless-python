@@ -83,7 +83,7 @@ class UpdateAuthMethodAzureAD(object):
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, access_expires=0, audience='https://management.azure.com/', bound_group_id=None, bound_ips=None, bound_providers=None, bound_resource_id=None, bound_resource_names=None, bound_resource_types=None, bound_rg_id=None, bound_spid=None, bound_sub_id=None, bound_tenant_id=None, force_sub_claims=None, gw_bound_ips=None, issuer='https://sts.windows.net/---bound_tenant_id---', json=None, jwks_uri='https://login.microsoftonline.com/common/discovery/keys', jwt_ttl=None, name=None, new_name=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, access_expires=0, audience='https://management.azure.com/', bound_group_id=None, bound_ips=None, bound_providers=None, bound_resource_id=None, bound_resource_names=None, bound_resource_types=None, bound_rg_id=None, bound_spid=None, bound_sub_id=None, bound_tenant_id=None, force_sub_claims=None, gw_bound_ips=None, issuer='https://sts.windows.net/---bound_tenant_id---', json=False, jwks_uri='https://login.microsoftonline.com/common/discovery/keys', jwt_ttl=0, name=None, new_name=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """UpdateAuthMethodAzureAD - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()

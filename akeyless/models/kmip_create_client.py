@@ -51,7 +51,7 @@ class KmipCreateClient(object):
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, activate_keys_on_creation=None, certificate_ttl=None, json=None, name=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, activate_keys_on_creation='false', certificate_ttl=90, json=False, name=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """KmipCreateClient - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -81,6 +81,7 @@ class KmipCreateClient(object):
     def activate_keys_on_creation(self):
         """Gets the activate_keys_on_creation of this KmipCreateClient.  # noqa: E501
 
+        If set to 'true', newly created keys on the client will be set to an 'active' state  # noqa: E501
 
         :return: The activate_keys_on_creation of this KmipCreateClient.  # noqa: E501
         :rtype: str
@@ -91,6 +92,7 @@ class KmipCreateClient(object):
     def activate_keys_on_creation(self, activate_keys_on_creation):
         """Sets the activate_keys_on_creation of this KmipCreateClient.
 
+        If set to 'true', newly created keys on the client will be set to an 'active' state  # noqa: E501
 
         :param activate_keys_on_creation: The activate_keys_on_creation of this KmipCreateClient.  # noqa: E501
         :type: str
@@ -102,6 +104,7 @@ class KmipCreateClient(object):
     def certificate_ttl(self):
         """Gets the certificate_ttl of this KmipCreateClient.  # noqa: E501
 
+        Client certificate TTL in days  # noqa: E501
 
         :return: The certificate_ttl of this KmipCreateClient.  # noqa: E501
         :rtype: int
@@ -112,6 +115,7 @@ class KmipCreateClient(object):
     def certificate_ttl(self, certificate_ttl):
         """Sets the certificate_ttl of this KmipCreateClient.
 
+        Client certificate TTL in days  # noqa: E501
 
         :param certificate_ttl: The certificate_ttl of this KmipCreateClient.  # noqa: E501
         :type: int

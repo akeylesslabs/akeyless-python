@@ -5,7 +5,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **display_id** | **str** | The display id of the key to use in the encryption process | [optional] 
 **item_id** | **int** | The item id of the key to use in the encryption process | [optional] 
-**json** | **bool** | Set output format to JSON | [optional] 
+**json** | **bool** | Set output format to JSON | [optional] [default to False]
 **key_name** | **str** | The name of the key to use in the encryption process | 
 **message** | **str** | The message to be signed in base64 format | 
 **passphrase** | **str** | Passphrase that was used to generate the key | [optional] 

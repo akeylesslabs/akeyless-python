@@ -79,7 +79,7 @@ class GatewayUpdateProducerGke(object):
         'user_ttl': 'user-ttl'
     }
 
-    def __init__(self, delete_protection=None, gke_account_key=None, gke_cluster_cert=None, gke_cluster_endpoint=None, gke_cluster_name=None, gke_service_account_email=None, json=None, name=None, new_name=None, producer_encryption_key_name=None, secure_access_allow_port_forwading=None, secure_access_bastion_issuer=None, secure_access_cluster_endpoint=None, secure_access_enable=None, secure_access_web=None, tags=None, target_name=None, token=None, uid_token=None, user_ttl='60m', local_vars_configuration=None):  # noqa: E501
+    def __init__(self, delete_protection=None, gke_account_key=None, gke_cluster_cert=None, gke_cluster_endpoint=None, gke_cluster_name=None, gke_service_account_email=None, json=False, name=None, new_name=None, producer_encryption_key_name=None, secure_access_allow_port_forwading=None, secure_access_bastion_issuer=None, secure_access_cluster_endpoint=None, secure_access_enable=None, secure_access_web=False, tags=None, target_name=None, token=None, uid_token=None, user_ttl='60m', local_vars_configuration=None):  # noqa: E501
         """GatewayUpdateProducerGke - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -151,7 +151,7 @@ class GatewayUpdateProducerGke(object):
     def delete_protection(self):
         """Gets the delete_protection of this GatewayUpdateProducerGke.  # noqa: E501
 
-        Protection from accidental deletion of this item  # noqa: E501
+        Protection from accidental deletion of this item [true/false]  # noqa: E501
 
         :return: The delete_protection of this GatewayUpdateProducerGke.  # noqa: E501
         :rtype: str
@@ -162,7 +162,7 @@ class GatewayUpdateProducerGke(object):
     def delete_protection(self, delete_protection):
         """Sets the delete_protection of this GatewayUpdateProducerGke.
 
-        Protection from accidental deletion of this item  # noqa: E501
+        Protection from accidental deletion of this item [true/false]  # noqa: E501
 
         :param delete_protection: The delete_protection of this GatewayUpdateProducerGke.  # noqa: E501
         :type: str
@@ -383,6 +383,7 @@ class GatewayUpdateProducerGke(object):
     def secure_access_allow_port_forwading(self):
         """Gets the secure_access_allow_port_forwading of this GatewayUpdateProducerGke.  # noqa: E501
 
+        Enable Port forwarding while using CLI access  # noqa: E501
 
         :return: The secure_access_allow_port_forwading of this GatewayUpdateProducerGke.  # noqa: E501
         :rtype: bool
@@ -393,6 +394,7 @@ class GatewayUpdateProducerGke(object):
     def secure_access_allow_port_forwading(self, secure_access_allow_port_forwading):
         """Sets the secure_access_allow_port_forwading of this GatewayUpdateProducerGke.
 
+        Enable Port forwarding while using CLI access  # noqa: E501
 
         :param secure_access_allow_port_forwading: The secure_access_allow_port_forwading of this GatewayUpdateProducerGke.  # noqa: E501
         :type: bool
@@ -404,6 +406,7 @@ class GatewayUpdateProducerGke(object):
     def secure_access_bastion_issuer(self):
         """Gets the secure_access_bastion_issuer of this GatewayUpdateProducerGke.  # noqa: E501
 
+        Path to the SSH Certificate Issuer for your Akeyless Bastion  # noqa: E501
 
         :return: The secure_access_bastion_issuer of this GatewayUpdateProducerGke.  # noqa: E501
         :rtype: str
@@ -414,6 +417,7 @@ class GatewayUpdateProducerGke(object):
     def secure_access_bastion_issuer(self, secure_access_bastion_issuer):
         """Sets the secure_access_bastion_issuer of this GatewayUpdateProducerGke.
 
+        Path to the SSH Certificate Issuer for your Akeyless Bastion  # noqa: E501
 
         :param secure_access_bastion_issuer: The secure_access_bastion_issuer of this GatewayUpdateProducerGke.  # noqa: E501
         :type: str
@@ -425,6 +429,7 @@ class GatewayUpdateProducerGke(object):
     def secure_access_cluster_endpoint(self):
         """Gets the secure_access_cluster_endpoint of this GatewayUpdateProducerGke.  # noqa: E501
 
+        The K8s cluster endpoint URL  # noqa: E501
 
         :return: The secure_access_cluster_endpoint of this GatewayUpdateProducerGke.  # noqa: E501
         :rtype: str
@@ -435,6 +440,7 @@ class GatewayUpdateProducerGke(object):
     def secure_access_cluster_endpoint(self, secure_access_cluster_endpoint):
         """Sets the secure_access_cluster_endpoint of this GatewayUpdateProducerGke.
 
+        The K8s cluster endpoint URL  # noqa: E501
 
         :param secure_access_cluster_endpoint: The secure_access_cluster_endpoint of this GatewayUpdateProducerGke.  # noqa: E501
         :type: str
@@ -446,6 +452,7 @@ class GatewayUpdateProducerGke(object):
     def secure_access_enable(self):
         """Gets the secure_access_enable of this GatewayUpdateProducerGke.  # noqa: E501
 
+        Enable/Disable secure remote access [true/false]  # noqa: E501
 
         :return: The secure_access_enable of this GatewayUpdateProducerGke.  # noqa: E501
         :rtype: str
@@ -456,6 +463,7 @@ class GatewayUpdateProducerGke(object):
     def secure_access_enable(self, secure_access_enable):
         """Sets the secure_access_enable of this GatewayUpdateProducerGke.
 
+        Enable/Disable secure remote access [true/false]  # noqa: E501
 
         :param secure_access_enable: The secure_access_enable of this GatewayUpdateProducerGke.  # noqa: E501
         :type: str
@@ -467,6 +475,7 @@ class GatewayUpdateProducerGke(object):
     def secure_access_web(self):
         """Gets the secure_access_web of this GatewayUpdateProducerGke.  # noqa: E501
 
+        Enable Web Secure Remote Access  # noqa: E501
 
         :return: The secure_access_web of this GatewayUpdateProducerGke.  # noqa: E501
         :rtype: bool
@@ -477,6 +486,7 @@ class GatewayUpdateProducerGke(object):
     def secure_access_web(self, secure_access_web):
         """Sets the secure_access_web of this GatewayUpdateProducerGke.
 
+        Enable Web Secure Remote Access  # noqa: E501
 
         :param secure_access_web: The secure_access_web of this GatewayUpdateProducerGke.  # noqa: E501
         :type: bool

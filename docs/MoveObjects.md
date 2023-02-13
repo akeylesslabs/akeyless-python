@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**json** | **bool** | Set output format to JSON | [optional] 
+**json** | **bool** | Set output format to JSON | [optional] [default to False]
 **objects_type** | **str** | The objects type to move (item/auth_method/role) | [optional] [default to 'item']
 **source** | **str** | Source path to move the objects from | 
 **target** | **str** | Target path to move the objects to | 

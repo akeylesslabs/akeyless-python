@@ -11,10 +11,10 @@ Name | Type | Description | Notes
 **bound_pod_names** | **list[str]** | A list of pod names that the access is restricted to | [optional] 
 **bound_sa_names** | **list[str]** | A list of service account names that the access is restricted to | [optional] 
 **force_sub_claims** | **bool** | if true: enforce role-association must include sub claims | [optional] 
-**gen_key** | **str** | Automatically generate key-pair for K8S configuration. If set to false, a public key needs to be provided | [optional] 
+**gen_key** | **str** | Automatically generate key-pair for K8S configuration. If set to false, a public key needs to be provided [true/false] | [optional] 
 **gw_bound_ips** | **list[str]** | A CIDR whitelist with the GW IPs that the access is restricted to | [optional] 
-**json** | **bool** | Set output format to JSON | [optional] 
-**jwt_ttl** | **int** | Jwt TTL | [optional] 
+**json** | **bool** | Set output format to JSON | [optional] [default to False]
+**jwt_ttl** | **int** | Jwt TTL | [optional] [default to 0]
 **name** | **str** | Auth Method name | 
 **new_name** | **str** | Auth Method new name | [optional] 
 **public_key** | **str** | Base64-encoded or PEM formatted public key data for K8S authentication method is required [RSA2048] | [optional] 

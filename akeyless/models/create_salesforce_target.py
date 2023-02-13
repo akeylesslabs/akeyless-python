@@ -73,7 +73,7 @@ class CreateSalesforceTarget(object):
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, app_private_key_data=None, auth_flow=None, ca_cert_data=None, ca_cert_name=None, client_id=None, client_secret=None, comment=None, description=None, email=None, json=None, key=None, name=None, password=None, security_token=None, tenant_url=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, app_private_key_data=None, auth_flow=None, ca_cert_data=None, ca_cert_name=None, client_id=None, client_secret=None, comment=None, description=None, email=None, json=False, key=None, name=None, password=None, security_token=None, tenant_url=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """CreateSalesforceTarget - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
