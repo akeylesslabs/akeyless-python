@@ -9,8 +9,8 @@ Name | Type | Description | Notes
 **k8s_cluster_ca_cert** | **str** | K8S cluster CA certificate | [optional] 
 **k8s_cluster_endpoint** | **str** | K8S cluster URL endpoint | [optional] 
 **k8s_cluster_token** | **str** | K8S cluster Bearer token | [optional] 
-**k8s_namespace** | **str** | K8S namespace | [optional] [default to 'default']
-**k8s_service_account** | **str** | K8S service account | [optional] 
+**k8s_namespace** | **str** | K8S Namespace where the ServiceAccount exists. | [optional] 
+**k8s_service_account** | **str** | K8S ServiceAccount to extract token from. | [optional] 
 **name** | **str** | Producer name | 
 **new_name** | **str** | Producer name | [optional] 
 **producer_encryption_key_name** | **str** | Dynamic producer encryption key | [optional] 

@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 **access_id** | **str** | Access ID | [optional] 
 **access_key** | **str** | Access Key | [optional] 
 **access_type** | **str** | Access Type (access_key/password/azure_ad/saml/oidc/aws_iam/gcp/k8s) | [optional] [default to 'access_key']
+**account_id** | **str** | Account id (relevant only for access-type&#x3D;password where the email address is associated with more than one account) | [optional] 
 **admin_email** | **str** | Email (relevant only for access-type&#x3D;password) | [optional] 
 **admin_password** | **str** | Password (relevant only for access-type&#x3D;password) | [optional] 
 **azure_ad_object_id** | **str** | Azure Active Directory ObjectId (relevant only for access-type&#x3D;azure_ad) | [optional] 

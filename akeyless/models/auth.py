@@ -37,6 +37,7 @@ class Auth(object):
         'access_id': 'str',
         'access_key': 'str',
         'access_type': 'str',
+        'account_id': 'str',
         'admin_email': 'str',
         'admin_password': 'str',
         'cert_data': 'str',
@@ -58,6 +59,7 @@ class Auth(object):
         'access_id': 'access-id',
         'access_key': 'access-key',
         'access_type': 'access-type',
+        'account_id': 'account-id',
         'admin_email': 'admin-email',
         'admin_password': 'admin-password',
         'cert_data': 'cert-data',
@@ -75,7 +77,7 @@ class Auth(object):
         'uid_token': 'uid_token'
     }
 
-    def __init__(self, access_id=None, access_key=None, access_type='access_key', admin_email=None, admin_password=None, cert_data=None, cloud_id=None, debug=None, gateway_url=None, gcp_audience='akeyless.io', json=False, jwt=None, k8s_auth_config_name=None, k8s_service_account_token=None, key_data=None, ldap_password=None, ldap_username=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, access_id=None, access_key=None, access_type='access_key', account_id=None, admin_email=None, admin_password=None, cert_data=None, cloud_id=None, debug=None, gateway_url=None, gcp_audience='akeyless.io', json=False, jwt=None, k8s_auth_config_name=None, k8s_service_account_token=None, key_data=None, ldap_password=None, ldap_username=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """Auth - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -84,6 +86,7 @@ class Auth(object):
         self._access_id = None
         self._access_key = None
         self._access_type = None
+        self._account_id = None
         self._admin_email = None
         self._admin_password = None
         self._cert_data = None
@@ -107,6 +110,8 @@ class Auth(object):
             self.access_key = access_key
         if access_type is not None:
             self.access_type = access_type
+        if account_id is not None:
+            self.account_id = account_id
         if admin_email is not None:
             self.admin_email = admin_email
         if admin_password is not None:
@@ -206,6 +211,29 @@ class Auth(object):
         """
 
         self._access_type = access_type
+
+    @property
+    def account_id(self):
+        """Gets the account_id of this Auth.  # noqa: E501
+
+        Account id (relevant only for access-type=password where the email address is associated with more than one account)  # noqa: E501
+
+        :return: The account_id of this Auth.  # noqa: E501
+        :rtype: str
+        """
+        return self._account_id
+
+    @account_id.setter
+    def account_id(self, account_id):
+        """Sets the account_id of this Auth.
+
+        Account id (relevant only for access-type=password where the email address is associated with more than one account)  # noqa: E501
+
+        :param account_id: The account_id of this Auth.  # noqa: E501
+        :type: str
+        """
+
+        self._account_id = account_id
 
     @property
     def admin_email(self):

@@ -83,7 +83,7 @@ class GatewayCreateProducerNativeK8S(object):
         'user_ttl': 'user-ttl'
     }
 
-    def __init__(self, delete_protection=None, json=False, k8s_cluster_ca_cert=None, k8s_cluster_endpoint=None, k8s_cluster_token=None, k8s_namespace='default', k8s_service_account=None, name=None, producer_encryption_key_name=None, secure_access_allow_port_forwading=None, secure_access_bastion_issuer=None, secure_access_cluster_endpoint=None, secure_access_dashboard_url=None, secure_access_enable=None, secure_access_web=False, secure_access_web_browsing=False, secure_access_web_proxy=False, tags=None, target_name=None, token=None, uid_token=None, user_ttl='60m', local_vars_configuration=None):  # noqa: E501
+    def __init__(self, delete_protection=None, json=False, k8s_cluster_ca_cert=None, k8s_cluster_endpoint=None, k8s_cluster_token=None, k8s_namespace=None, k8s_service_account=None, name=None, producer_encryption_key_name=None, secure_access_allow_port_forwading=None, secure_access_bastion_issuer=None, secure_access_cluster_endpoint=None, secure_access_dashboard_url=None, secure_access_enable=None, secure_access_web=False, secure_access_web_browsing=False, secure_access_web_proxy=False, tags=None, target_name=None, token=None, uid_token=None, user_ttl='60m', local_vars_configuration=None):  # noqa: E501
         """GatewayCreateProducerNativeK8S - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -276,7 +276,7 @@ class GatewayCreateProducerNativeK8S(object):
     def k8s_namespace(self):
         """Gets the k8s_namespace of this GatewayCreateProducerNativeK8S.  # noqa: E501
 
-        K8S namespace  # noqa: E501
+        K8S Namespace where the ServiceAccount exists.  # noqa: E501
 
         :return: The k8s_namespace of this GatewayCreateProducerNativeK8S.  # noqa: E501
         :rtype: str
@@ -287,7 +287,7 @@ class GatewayCreateProducerNativeK8S(object):
     def k8s_namespace(self, k8s_namespace):
         """Sets the k8s_namespace of this GatewayCreateProducerNativeK8S.
 
-        K8S namespace  # noqa: E501
+        K8S Namespace where the ServiceAccount exists.  # noqa: E501
 
         :param k8s_namespace: The k8s_namespace of this GatewayCreateProducerNativeK8S.  # noqa: E501
         :type: str
@@ -299,7 +299,7 @@ class GatewayCreateProducerNativeK8S(object):
     def k8s_service_account(self):
         """Gets the k8s_service_account of this GatewayCreateProducerNativeK8S.  # noqa: E501
 
-        K8S service account  # noqa: E501
+        K8S ServiceAccount to extract token from.  # noqa: E501
 
         :return: The k8s_service_account of this GatewayCreateProducerNativeK8S.  # noqa: E501
         :rtype: str
@@ -310,7 +310,7 @@ class GatewayCreateProducerNativeK8S(object):
     def k8s_service_account(self, k8s_service_account):
         """Sets the k8s_service_account of this GatewayCreateProducerNativeK8S.
 
-        K8S service account  # noqa: E501
+        K8S ServiceAccount to extract token from.  # noqa: E501
 
         :param k8s_service_account: The k8s_service_account of this GatewayCreateProducerNativeK8S.  # noqa: E501
         :type: str

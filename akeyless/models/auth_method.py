@@ -42,6 +42,7 @@ class AuthMethod(object):
         'auth_method_roles_assoc': 'list[AuthMethodRoleAssociation]',
         'client_permissions': 'list[str]',
         'creation_date': 'datetime',
+        'is_approved': 'bool',
         'modification_date': 'datetime'
     }
 
@@ -54,10 +55,11 @@ class AuthMethod(object):
         'auth_method_roles_assoc': 'auth_method_roles_assoc',
         'client_permissions': 'client_permissions',
         'creation_date': 'creation_date',
+        'is_approved': 'is_approved',
         'modification_date': 'modification_date'
     }
 
-    def __init__(self, access_date=None, access_info=None, account_id=None, auth_method_access_id=None, auth_method_name=None, auth_method_roles_assoc=None, client_permissions=None, creation_date=None, modification_date=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, access_date=None, access_info=None, account_id=None, auth_method_access_id=None, auth_method_name=None, auth_method_roles_assoc=None, client_permissions=None, creation_date=None, is_approved=None, modification_date=None, local_vars_configuration=None):  # noqa: E501
         """AuthMethod - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -71,6 +73,7 @@ class AuthMethod(object):
         self._auth_method_roles_assoc = None
         self._client_permissions = None
         self._creation_date = None
+        self._is_approved = None
         self._modification_date = None
         self.discriminator = None
 
@@ -90,6 +93,8 @@ class AuthMethod(object):
             self.client_permissions = client_permissions
         if creation_date is not None:
             self.creation_date = creation_date
+        if is_approved is not None:
+            self.is_approved = is_approved
         if modification_date is not None:
             self.modification_date = modification_date
 
@@ -260,6 +265,27 @@ class AuthMethod(object):
         """
 
         self._creation_date = creation_date
+
+    @property
+    def is_approved(self):
+        """Gets the is_approved of this AuthMethod.  # noqa: E501
+
+
+        :return: The is_approved of this AuthMethod.  # noqa: E501
+        :rtype: bool
+        """
+        return self._is_approved
+
+    @is_approved.setter
+    def is_approved(self, is_approved):
+        """Sets the is_approved of this AuthMethod.
+
+
+        :param is_approved: The is_approved of this AuthMethod.  # noqa: E501
+        :type: bool
+        """
+
+        self._is_approved = is_approved
 
     @property
     def modification_date(self):

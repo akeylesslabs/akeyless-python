@@ -149,6 +149,7 @@ Name | Type | Description | Notes
 **mssql_creation_statements** | **str** |  | [optional] 
 **mssql_revocation_statements** | **str** |  | [optional] 
 **mysql_creation_statements** | **str** |  | [optional] 
+**mysql_revocation_statements** | **str** |  | [optional] 
 **oracle_creation_statements** | **str** |  | [optional] 
 **password** | **str** |  | [optional] 
 **password_length** | **int** |  | [optional] 

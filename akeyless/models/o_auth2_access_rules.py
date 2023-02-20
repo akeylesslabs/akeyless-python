@@ -38,6 +38,7 @@ class OAuth2AccessRules(object):
         'bound_claims': 'list[OAuth2CustomClaim]',
         'bound_clients_id': 'list[str]',
         'issuer': 'str',
+        'jwks_json_data': 'str',
         'jwks_uri': 'str',
         'unique_identifier': 'str'
     }
@@ -47,11 +48,12 @@ class OAuth2AccessRules(object):
         'bound_claims': 'bound_claims',
         'bound_clients_id': 'bound_clients_id',
         'issuer': 'issuer',
+        'jwks_json_data': 'jwks_json_data',
         'jwks_uri': 'jwks_uri',
         'unique_identifier': 'unique_identifier'
     }
 
-    def __init__(self, audience=None, bound_claims=None, bound_clients_id=None, issuer=None, jwks_uri=None, unique_identifier=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, audience=None, bound_claims=None, bound_clients_id=None, issuer=None, jwks_json_data=None, jwks_uri=None, unique_identifier=None, local_vars_configuration=None):  # noqa: E501
         """OAuth2AccessRules - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -61,6 +63,7 @@ class OAuth2AccessRules(object):
         self._bound_claims = None
         self._bound_clients_id = None
         self._issuer = None
+        self._jwks_json_data = None
         self._jwks_uri = None
         self._unique_identifier = None
         self.discriminator = None
@@ -73,6 +76,8 @@ class OAuth2AccessRules(object):
             self.bound_clients_id = bound_clients_id
         if issuer is not None:
             self.issuer = issuer
+        if jwks_json_data is not None:
+            self.jwks_json_data = jwks_json_data
         if jwks_uri is not None:
             self.jwks_uri = jwks_uri
         if unique_identifier is not None:
@@ -169,6 +174,29 @@ class OAuth2AccessRules(object):
         """
 
         self._issuer = issuer
+
+    @property
+    def jwks_json_data(self):
+        """Gets the jwks_json_data of this OAuth2AccessRules.  # noqa: E501
+
+        The JSON Web Key Set (JWKS) that containing the public keys that should be used to verify any JSON Web Token (JWT) issued by the authorization server. base64 encoded string  # noqa: E501
+
+        :return: The jwks_json_data of this OAuth2AccessRules.  # noqa: E501
+        :rtype: str
+        """
+        return self._jwks_json_data
+
+    @jwks_json_data.setter
+    def jwks_json_data(self, jwks_json_data):
+        """Sets the jwks_json_data of this OAuth2AccessRules.
+
+        The JSON Web Key Set (JWKS) that containing the public keys that should be used to verify any JSON Web Token (JWT) issued by the authorization server. base64 encoded string  # noqa: E501
+
+        :param jwks_json_data: The jwks_json_data of this OAuth2AccessRules.  # noqa: E501
+        :type: str
+        """
+
+        self._jwks_json_data = jwks_json_data
 
     @property
     def jwks_uri(self):

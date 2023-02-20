@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 **access_id** | **str** | Access ID | [optional] 
 **access_key** | **str** | Access key (relevant only for access-type&#x3D;access_key) | [optional] 
 **access_type** | **str** | Access Type (access_key/password/saml/ldap/k8s/azure_ad/oidc/aws_iam/universal_identity/jwt/gcp/cert) | [optional] [default to 'access_key']
+**account_id** | **str** | Account id (relevant only for access-type&#x3D;password where the email address is associated with more than one account) | [optional] 
 **admin_email** | **str** | Email (relevant only for access-type&#x3D;password) | [optional] 
 **admin_password** | **str** | Password (relevant only for access-type&#x3D;password) | [optional] 
 **cert_data** | **str** | Certificate data encoded in base64. Used if file was not provided. (relevant only for access-type&#x3D;cert) | [optional] 

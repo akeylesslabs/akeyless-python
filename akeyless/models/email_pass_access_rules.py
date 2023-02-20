@@ -36,16 +36,18 @@ class EmailPassAccessRules(object):
     openapi_types = {
         'alg': 'str',
         'email': 'str',
+        'enc_email_with_shared_key': 'str',
         'hash_pass': 'str'
     }
 
     attribute_map = {
         'alg': 'alg',
         'email': 'email',
+        'enc_email_with_shared_key': 'enc_email_with_shared_key',
         'hash_pass': 'hash_pass'
     }
 
-    def __init__(self, alg=None, email=None, hash_pass=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, alg=None, email=None, enc_email_with_shared_key=None, hash_pass=None, local_vars_configuration=None):  # noqa: E501
         """EmailPassAccessRules - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -53,6 +55,7 @@ class EmailPassAccessRules(object):
 
         self._alg = None
         self._email = None
+        self._enc_email_with_shared_key = None
         self._hash_pass = None
         self.discriminator = None
 
@@ -60,6 +63,8 @@ class EmailPassAccessRules(object):
             self.alg = alg
         if email is not None:
             self.email = email
+        if enc_email_with_shared_key is not None:
+            self.enc_email_with_shared_key = enc_email_with_shared_key
         if hash_pass is not None:
             self.hash_pass = hash_pass
 
@@ -106,6 +111,29 @@ class EmailPassAccessRules(object):
         """
 
         self._email = email
+
+    @property
+    def enc_email_with_shared_key(self):
+        """Gets the enc_email_with_shared_key of this EmailPassAccessRules.  # noqa: E501
+
+        EncEmailWithSharedKey is the email of this auth method, encrypted with the shared auth/uam key (for use in uam)  # noqa: E501
+
+        :return: The enc_email_with_shared_key of this EmailPassAccessRules.  # noqa: E501
+        :rtype: str
+        """
+        return self._enc_email_with_shared_key
+
+    @enc_email_with_shared_key.setter
+    def enc_email_with_shared_key(self, enc_email_with_shared_key):
+        """Sets the enc_email_with_shared_key of this EmailPassAccessRules.
+
+        EncEmailWithSharedKey is the email of this auth method, encrypted with the shared auth/uam key (for use in uam)  # noqa: E501
+
+        :param enc_email_with_shared_key: The enc_email_with_shared_key of this EmailPassAccessRules.  # noqa: E501
+        :type: str
+        """
+
+        self._enc_email_with_shared_key = enc_email_with_shared_key
 
     @property
     def hash_pass(self):

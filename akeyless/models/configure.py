@@ -37,6 +37,7 @@ class Configure(object):
         'access_id': 'str',
         'access_key': 'str',
         'access_type': 'str',
+        'account_id': 'str',
         'admin_email': 'str',
         'admin_password': 'str',
         'azure_ad_object_id': 'str',
@@ -51,6 +52,7 @@ class Configure(object):
         'access_id': 'access-id',
         'access_key': 'access-key',
         'access_type': 'access-type',
+        'account_id': 'account-id',
         'admin_email': 'admin-email',
         'admin_password': 'admin-password',
         'azure_ad_object_id': 'azure_ad_object_id',
@@ -61,7 +63,7 @@ class Configure(object):
         'key_data': 'key-data'
     }
 
-    def __init__(self, access_id=None, access_key=None, access_type='access_key', admin_email=None, admin_password=None, azure_ad_object_id=None, cert_data=None, gcp_audience='akeyless.io', json=False, k8s_auth_config_name=None, key_data=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, access_id=None, access_key=None, access_type='access_key', account_id=None, admin_email=None, admin_password=None, azure_ad_object_id=None, cert_data=None, gcp_audience='akeyless.io', json=False, k8s_auth_config_name=None, key_data=None, local_vars_configuration=None):  # noqa: E501
         """Configure - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -70,6 +72,7 @@ class Configure(object):
         self._access_id = None
         self._access_key = None
         self._access_type = None
+        self._account_id = None
         self._admin_email = None
         self._admin_password = None
         self._azure_ad_object_id = None
@@ -86,6 +89,8 @@ class Configure(object):
             self.access_key = access_key
         if access_type is not None:
             self.access_type = access_type
+        if account_id is not None:
+            self.account_id = account_id
         if admin_email is not None:
             self.admin_email = admin_email
         if admin_password is not None:
@@ -171,6 +176,29 @@ class Configure(object):
         """
 
         self._access_type = access_type
+
+    @property
+    def account_id(self):
+        """Gets the account_id of this Configure.  # noqa: E501
+
+        Account id (relevant only for access-type=password where the email address is associated with more than one account)  # noqa: E501
+
+        :return: The account_id of this Configure.  # noqa: E501
+        :rtype: str
+        """
+        return self._account_id
+
+    @account_id.setter
+    def account_id(self, account_id):
+        """Sets the account_id of this Configure.
+
+        Account id (relevant only for access-type=password where the email address is associated with more than one account)  # noqa: E501
+
+        :param account_id: The account_id of this Configure.  # noqa: E501
+        :type: str
+        """
+
+        self._account_id = account_id
 
     @property
     def admin_email(self):

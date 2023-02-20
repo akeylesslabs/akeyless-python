@@ -42,6 +42,7 @@ class GatewayUpdateProducerMySQL(object):
         'mysql_host': 'str',
         'mysql_password': 'str',
         'mysql_port': 'str',
+        'mysql_revocation_statements': 'str',
         'mysql_screation_statements': 'str',
         'mysql_username': 'str',
         'name': 'str',
@@ -69,6 +70,7 @@ class GatewayUpdateProducerMySQL(object):
         'mysql_host': 'mysql-host',
         'mysql_password': 'mysql-password',
         'mysql_port': 'mysql-port',
+        'mysql_revocation_statements': 'mysql-revocation-statements',
         'mysql_screation_statements': 'mysql-screation-statements',
         'mysql_username': 'mysql-username',
         'name': 'name',
@@ -87,7 +89,7 @@ class GatewayUpdateProducerMySQL(object):
         'user_ttl': 'user-ttl'
     }
 
-    def __init__(self, db_server_certificates=None, db_server_name=None, delete_protection=None, json=False, mysql_dbname=None, mysql_host='127.0.0.1', mysql_password=None, mysql_port='3306', mysql_screation_statements=None, mysql_username=None, name=None, new_name=None, producer_encryption_key_name=None, secure_access_bastion_issuer=None, secure_access_enable=None, secure_access_host=None, secure_access_web=False, ssl=False, ssl_certificate=None, tags=None, target_name=None, token=None, uid_token=None, user_ttl='60m', local_vars_configuration=None):  # noqa: E501
+    def __init__(self, db_server_certificates=None, db_server_name=None, delete_protection=None, json=False, mysql_dbname=None, mysql_host='127.0.0.1', mysql_password=None, mysql_port='3306', mysql_revocation_statements=None, mysql_screation_statements=None, mysql_username=None, name=None, new_name=None, producer_encryption_key_name=None, secure_access_bastion_issuer=None, secure_access_enable=None, secure_access_host=None, secure_access_web=False, ssl=False, ssl_certificate=None, tags=None, target_name=None, token=None, uid_token=None, user_ttl='60m', local_vars_configuration=None):  # noqa: E501
         """GatewayUpdateProducerMySQL - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -101,6 +103,7 @@ class GatewayUpdateProducerMySQL(object):
         self._mysql_host = None
         self._mysql_password = None
         self._mysql_port = None
+        self._mysql_revocation_statements = None
         self._mysql_screation_statements = None
         self._mysql_username = None
         self._name = None
@@ -135,6 +138,8 @@ class GatewayUpdateProducerMySQL(object):
             self.mysql_password = mysql_password
         if mysql_port is not None:
             self.mysql_port = mysql_port
+        if mysql_revocation_statements is not None:
+            self.mysql_revocation_statements = mysql_revocation_statements
         if mysql_screation_statements is not None:
             self.mysql_screation_statements = mysql_screation_statements
         if mysql_username is not None:
@@ -350,6 +355,29 @@ class GatewayUpdateProducerMySQL(object):
         """
 
         self._mysql_port = mysql_port
+
+    @property
+    def mysql_revocation_statements(self):
+        """Gets the mysql_revocation_statements of this GatewayUpdateProducerMySQL.  # noqa: E501
+
+        MySQL Revocation statements  # noqa: E501
+
+        :return: The mysql_revocation_statements of this GatewayUpdateProducerMySQL.  # noqa: E501
+        :rtype: str
+        """
+        return self._mysql_revocation_statements
+
+    @mysql_revocation_statements.setter
+    def mysql_revocation_statements(self, mysql_revocation_statements):
+        """Sets the mysql_revocation_statements of this GatewayUpdateProducerMySQL.
+
+        MySQL Revocation statements  # noqa: E501
+
+        :param mysql_revocation_statements: The mysql_revocation_statements of this GatewayUpdateProducerMySQL.  # noqa: E501
+        :type: str
+        """
+
+        self._mysql_revocation_statements = mysql_revocation_statements
 
     @property
     def mysql_screation_statements(self):
