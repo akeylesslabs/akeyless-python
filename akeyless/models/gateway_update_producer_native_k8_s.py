@@ -36,11 +36,16 @@ class GatewayUpdateProducerNativeK8S(object):
     openapi_types = {
         'delete_protection': 'str',
         'json': 'bool',
+        'k8s_allowed_namespaces': 'str',
         'k8s_cluster_ca_cert': 'str',
         'k8s_cluster_endpoint': 'str',
         'k8s_cluster_token': 'str',
         'k8s_namespace': 'str',
+        'k8s_predefined_role_name': 'str',
+        'k8s_predefined_role_type': 'str',
+        'k8s_rolebinding_yaml_def': 'str',
         'k8s_service_account': 'str',
+        'k8s_service_account_type': 'str',
         'name': 'str',
         'new_name': 'str',
         'producer_encryption_key_name': 'str',
@@ -62,11 +67,16 @@ class GatewayUpdateProducerNativeK8S(object):
     attribute_map = {
         'delete_protection': 'delete_protection',
         'json': 'json',
+        'k8s_allowed_namespaces': 'k8s-allowed-namespaces',
         'k8s_cluster_ca_cert': 'k8s-cluster-ca-cert',
         'k8s_cluster_endpoint': 'k8s-cluster-endpoint',
         'k8s_cluster_token': 'k8s-cluster-token',
         'k8s_namespace': 'k8s-namespace',
+        'k8s_predefined_role_name': 'k8s-predefined-role-name',
+        'k8s_predefined_role_type': 'k8s-predefined-role-type',
+        'k8s_rolebinding_yaml_def': 'k8s-rolebinding-yaml-def',
         'k8s_service_account': 'k8s-service-account',
+        'k8s_service_account_type': 'k8s-service-account-type',
         'name': 'name',
         'new_name': 'new-name',
         'producer_encryption_key_name': 'producer-encryption-key-name',
@@ -85,7 +95,7 @@ class GatewayUpdateProducerNativeK8S(object):
         'user_ttl': 'user-ttl'
     }
 
-    def __init__(self, delete_protection=None, json=False, k8s_cluster_ca_cert=None, k8s_cluster_endpoint=None, k8s_cluster_token=None, k8s_namespace=None, k8s_service_account=None, name=None, new_name=None, producer_encryption_key_name=None, secure_access_allow_port_forwading=None, secure_access_bastion_issuer=None, secure_access_cluster_endpoint=None, secure_access_dashboard_url=None, secure_access_enable=None, secure_access_web=False, secure_access_web_browsing=False, secure_access_web_proxy=False, tags=None, target_name=None, token=None, uid_token=None, user_ttl='60m', local_vars_configuration=None):  # noqa: E501
+    def __init__(self, delete_protection=None, json=False, k8s_allowed_namespaces=None, k8s_cluster_ca_cert=None, k8s_cluster_endpoint=None, k8s_cluster_token=None, k8s_namespace=None, k8s_predefined_role_name=None, k8s_predefined_role_type=None, k8s_rolebinding_yaml_def=None, k8s_service_account=None, k8s_service_account_type=None, name=None, new_name=None, producer_encryption_key_name=None, secure_access_allow_port_forwading=None, secure_access_bastion_issuer=None, secure_access_cluster_endpoint=None, secure_access_dashboard_url=None, secure_access_enable=None, secure_access_web=False, secure_access_web_browsing=False, secure_access_web_proxy=False, tags=None, target_name=None, token=None, uid_token=None, user_ttl='60m', local_vars_configuration=None):  # noqa: E501
         """GatewayUpdateProducerNativeK8S - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -93,11 +103,16 @@ class GatewayUpdateProducerNativeK8S(object):
 
         self._delete_protection = None
         self._json = None
+        self._k8s_allowed_namespaces = None
         self._k8s_cluster_ca_cert = None
         self._k8s_cluster_endpoint = None
         self._k8s_cluster_token = None
         self._k8s_namespace = None
+        self._k8s_predefined_role_name = None
+        self._k8s_predefined_role_type = None
+        self._k8s_rolebinding_yaml_def = None
         self._k8s_service_account = None
+        self._k8s_service_account_type = None
         self._name = None
         self._new_name = None
         self._producer_encryption_key_name = None
@@ -120,6 +135,8 @@ class GatewayUpdateProducerNativeK8S(object):
             self.delete_protection = delete_protection
         if json is not None:
             self.json = json
+        if k8s_allowed_namespaces is not None:
+            self.k8s_allowed_namespaces = k8s_allowed_namespaces
         if k8s_cluster_ca_cert is not None:
             self.k8s_cluster_ca_cert = k8s_cluster_ca_cert
         if k8s_cluster_endpoint is not None:
@@ -128,8 +145,16 @@ class GatewayUpdateProducerNativeK8S(object):
             self.k8s_cluster_token = k8s_cluster_token
         if k8s_namespace is not None:
             self.k8s_namespace = k8s_namespace
+        if k8s_predefined_role_name is not None:
+            self.k8s_predefined_role_name = k8s_predefined_role_name
+        if k8s_predefined_role_type is not None:
+            self.k8s_predefined_role_type = k8s_predefined_role_type
+        if k8s_rolebinding_yaml_def is not None:
+            self.k8s_rolebinding_yaml_def = k8s_rolebinding_yaml_def
         if k8s_service_account is not None:
             self.k8s_service_account = k8s_service_account
+        if k8s_service_account_type is not None:
+            self.k8s_service_account_type = k8s_service_account_type
         self.name = name
         if new_name is not None:
             self.new_name = new_name
@@ -207,6 +232,29 @@ class GatewayUpdateProducerNativeK8S(object):
         """
 
         self._json = json
+
+    @property
+    def k8s_allowed_namespaces(self):
+        """Gets the k8s_allowed_namespaces of this GatewayUpdateProducerNativeK8S.  # noqa: E501
+
+        Comma-separated list of allowed K8S namespaces for the generated ServiceAccount (relevant only for k8s-service-account-type=dynamic)  # noqa: E501
+
+        :return: The k8s_allowed_namespaces of this GatewayUpdateProducerNativeK8S.  # noqa: E501
+        :rtype: str
+        """
+        return self._k8s_allowed_namespaces
+
+    @k8s_allowed_namespaces.setter
+    def k8s_allowed_namespaces(self, k8s_allowed_namespaces):
+        """Sets the k8s_allowed_namespaces of this GatewayUpdateProducerNativeK8S.
+
+        Comma-separated list of allowed K8S namespaces for the generated ServiceAccount (relevant only for k8s-service-account-type=dynamic)  # noqa: E501
+
+        :param k8s_allowed_namespaces: The k8s_allowed_namespaces of this GatewayUpdateProducerNativeK8S.  # noqa: E501
+        :type: str
+        """
+
+        self._k8s_allowed_namespaces = k8s_allowed_namespaces
 
     @property
     def k8s_cluster_ca_cert(self):
@@ -301,6 +349,75 @@ class GatewayUpdateProducerNativeK8S(object):
         self._k8s_namespace = k8s_namespace
 
     @property
+    def k8s_predefined_role_name(self):
+        """Gets the k8s_predefined_role_name of this GatewayUpdateProducerNativeK8S.  # noqa: E501
+
+        The pre-existing Role or ClusterRole name to bind the generated ServiceAccount to (relevant only for k8s-service-account-type=dynamic)  # noqa: E501
+
+        :return: The k8s_predefined_role_name of this GatewayUpdateProducerNativeK8S.  # noqa: E501
+        :rtype: str
+        """
+        return self._k8s_predefined_role_name
+
+    @k8s_predefined_role_name.setter
+    def k8s_predefined_role_name(self, k8s_predefined_role_name):
+        """Sets the k8s_predefined_role_name of this GatewayUpdateProducerNativeK8S.
+
+        The pre-existing Role or ClusterRole name to bind the generated ServiceAccount to (relevant only for k8s-service-account-type=dynamic)  # noqa: E501
+
+        :param k8s_predefined_role_name: The k8s_predefined_role_name of this GatewayUpdateProducerNativeK8S.  # noqa: E501
+        :type: str
+        """
+
+        self._k8s_predefined_role_name = k8s_predefined_role_name
+
+    @property
+    def k8s_predefined_role_type(self):
+        """Gets the k8s_predefined_role_type of this GatewayUpdateProducerNativeK8S.  # noqa: E501
+
+        Specifies the type of the pre-existing K8S role [Role, ClusterRole] (relevant only for k8s-service-account-type=dynamic)  # noqa: E501
+
+        :return: The k8s_predefined_role_type of this GatewayUpdateProducerNativeK8S.  # noqa: E501
+        :rtype: str
+        """
+        return self._k8s_predefined_role_type
+
+    @k8s_predefined_role_type.setter
+    def k8s_predefined_role_type(self, k8s_predefined_role_type):
+        """Sets the k8s_predefined_role_type of this GatewayUpdateProducerNativeK8S.
+
+        Specifies the type of the pre-existing K8S role [Role, ClusterRole] (relevant only for k8s-service-account-type=dynamic)  # noqa: E501
+
+        :param k8s_predefined_role_type: The k8s_predefined_role_type of this GatewayUpdateProducerNativeK8S.  # noqa: E501
+        :type: str
+        """
+
+        self._k8s_predefined_role_type = k8s_predefined_role_type
+
+    @property
+    def k8s_rolebinding_yaml_def(self):
+        """Gets the k8s_rolebinding_yaml_def of this GatewayUpdateProducerNativeK8S.  # noqa: E501
+
+        Path to yaml file that contains definitions of K8S role and role binding (relevant only for k8s-service-account-type=dynamic)  # noqa: E501
+
+        :return: The k8s_rolebinding_yaml_def of this GatewayUpdateProducerNativeK8S.  # noqa: E501
+        :rtype: str
+        """
+        return self._k8s_rolebinding_yaml_def
+
+    @k8s_rolebinding_yaml_def.setter
+    def k8s_rolebinding_yaml_def(self, k8s_rolebinding_yaml_def):
+        """Sets the k8s_rolebinding_yaml_def of this GatewayUpdateProducerNativeK8S.
+
+        Path to yaml file that contains definitions of K8S role and role binding (relevant only for k8s-service-account-type=dynamic)  # noqa: E501
+
+        :param k8s_rolebinding_yaml_def: The k8s_rolebinding_yaml_def of this GatewayUpdateProducerNativeK8S.  # noqa: E501
+        :type: str
+        """
+
+        self._k8s_rolebinding_yaml_def = k8s_rolebinding_yaml_def
+
+    @property
     def k8s_service_account(self):
         """Gets the k8s_service_account of this GatewayUpdateProducerNativeK8S.  # noqa: E501
 
@@ -322,6 +439,29 @@ class GatewayUpdateProducerNativeK8S(object):
         """
 
         self._k8s_service_account = k8s_service_account
+
+    @property
+    def k8s_service_account_type(self):
+        """Gets the k8s_service_account_type of this GatewayUpdateProducerNativeK8S.  # noqa: E501
+
+        K8S ServiceAccount type [fixed, dynamic].  # noqa: E501
+
+        :return: The k8s_service_account_type of this GatewayUpdateProducerNativeK8S.  # noqa: E501
+        :rtype: str
+        """
+        return self._k8s_service_account_type
+
+    @k8s_service_account_type.setter
+    def k8s_service_account_type(self, k8s_service_account_type):
+        """Sets the k8s_service_account_type of this GatewayUpdateProducerNativeK8S.
+
+        K8S ServiceAccount type [fixed, dynamic].  # noqa: E501
+
+        :param k8s_service_account_type: The k8s_service_account_type of this GatewayUpdateProducerNativeK8S.  # noqa: E501
+        :type: str
+        """
+
+        self._k8s_service_account_type = k8s_service_account_type
 
     @property
     def name(self):

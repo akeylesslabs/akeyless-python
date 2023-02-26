@@ -46,6 +46,7 @@ class Item(object):
         'delete_protection': 'bool',
         'deletion_date': 'datetime',
         'display_id': 'str',
+        'gateway_details': 'list[GatewayBasicInfo]',
         'is_access_request_enabled': 'bool',
         'is_enabled': 'bool',
         'item_accessibility': 'int',
@@ -85,6 +86,7 @@ class Item(object):
         'delete_protection': 'delete_protection',
         'deletion_date': 'deletion_date',
         'display_id': 'display_id',
+        'gateway_details': 'gateway_details',
         'is_access_request_enabled': 'is_access_request_enabled',
         'is_enabled': 'is_enabled',
         'item_accessibility': 'item_accessibility',
@@ -111,7 +113,7 @@ class Item(object):
         'with_customer_fragment': 'with_customer_fragment'
     }
 
-    def __init__(self, access_date=None, access_request_status=None, auto_rotate=None, cert_issuer_signer_key_name=None, certificate_issue_details=None, certificates=None, client_permissions=None, creation_date=None, customer_fragment_id=None, delete_protection=None, deletion_date=None, display_id=None, is_access_request_enabled=None, is_enabled=None, item_accessibility=None, item_general_info=None, item_id=None, item_metadata=None, item_name=None, item_size=None, item_state=None, item_sub_type=None, item_tags=None, item_targets_assoc=None, item_type=None, item_versions=None, last_version=None, modification_date=None, next_rotation_date=None, protection_key_name=None, protection_key_type=None, public_value=None, rotation_interval=None, shared_by=None, target_versions=None, with_customer_fragment=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, access_date=None, access_request_status=None, auto_rotate=None, cert_issuer_signer_key_name=None, certificate_issue_details=None, certificates=None, client_permissions=None, creation_date=None, customer_fragment_id=None, delete_protection=None, deletion_date=None, display_id=None, gateway_details=None, is_access_request_enabled=None, is_enabled=None, item_accessibility=None, item_general_info=None, item_id=None, item_metadata=None, item_name=None, item_size=None, item_state=None, item_sub_type=None, item_tags=None, item_targets_assoc=None, item_type=None, item_versions=None, last_version=None, modification_date=None, next_rotation_date=None, protection_key_name=None, protection_key_type=None, public_value=None, rotation_interval=None, shared_by=None, target_versions=None, with_customer_fragment=None, local_vars_configuration=None):  # noqa: E501
         """Item - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -129,6 +131,7 @@ class Item(object):
         self._delete_protection = None
         self._deletion_date = None
         self._display_id = None
+        self._gateway_details = None
         self._is_access_request_enabled = None
         self._is_enabled = None
         self._item_accessibility = None
@@ -179,6 +182,8 @@ class Item(object):
             self.deletion_date = deletion_date
         if display_id is not None:
             self.display_id = display_id
+        if gateway_details is not None:
+            self.gateway_details = gateway_details
         if is_access_request_enabled is not None:
             self.is_access_request_enabled = is_access_request_enabled
         if is_enabled is not None:
@@ -479,6 +484,27 @@ class Item(object):
         """
 
         self._display_id = display_id
+
+    @property
+    def gateway_details(self):
+        """Gets the gateway_details of this Item.  # noqa: E501
+
+
+        :return: The gateway_details of this Item.  # noqa: E501
+        :rtype: list[GatewayBasicInfo]
+        """
+        return self._gateway_details
+
+    @gateway_details.setter
+    def gateway_details(self, gateway_details):
+        """Sets the gateway_details of this Item.
+
+
+        :param gateway_details: The gateway_details of this Item.  # noqa: E501
+        :type: list[GatewayBasicInfo]
+        """
+
+        self._gateway_details = gateway_details
 
     @property
     def is_access_request_enabled(self):

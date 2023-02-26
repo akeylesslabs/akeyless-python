@@ -15,6 +15,7 @@ Name | Type | Description | Notes
 **delete_protection** | **bool** |  | [optional] 
 **deletion_date** | **datetime** |  | [optional] 
 **display_id** | **str** |  | [optional] 
+**gateway_details** | [**list[GatewayBasicInfo]**](GatewayBasicInfo.md) |  | [optional] 
 **is_access_request_enabled** | **bool** |  | [optional] 
 **is_enabled** | **bool** |  | [optional] 
 **item_accessibility** | **int** |  | [optional] 

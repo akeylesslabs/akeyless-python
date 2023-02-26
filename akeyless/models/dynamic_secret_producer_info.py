@@ -36,6 +36,8 @@ class DynamicSecretProducerInfo(object):
     openapi_types = {
         'failure_message': 'str',
         'gw_cluster_id': 'int',
+        'k8s_allowed_namespaces': 'str',
+        'k8s_dynamic_mode': 'bool',
         'producer_last_keep_alive': 'str',
         'producer_metadata': 'str',
         'producer_status': 'str',
@@ -45,13 +47,15 @@ class DynamicSecretProducerInfo(object):
     attribute_map = {
         'failure_message': 'failure_message',
         'gw_cluster_id': 'gw_cluster_id',
+        'k8s_allowed_namespaces': 'k8s_allowed_namespaces',
+        'k8s_dynamic_mode': 'k8s_dynamic_mode',
         'producer_last_keep_alive': 'producer_last_keep_alive',
         'producer_metadata': 'producer_metadata',
         'producer_status': 'producer_status',
         'producer_type': 'producer_type'
     }
 
-    def __init__(self, failure_message=None, gw_cluster_id=None, producer_last_keep_alive=None, producer_metadata=None, producer_status=None, producer_type=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, failure_message=None, gw_cluster_id=None, k8s_allowed_namespaces=None, k8s_dynamic_mode=None, producer_last_keep_alive=None, producer_metadata=None, producer_status=None, producer_type=None, local_vars_configuration=None):  # noqa: E501
         """DynamicSecretProducerInfo - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -59,6 +63,8 @@ class DynamicSecretProducerInfo(object):
 
         self._failure_message = None
         self._gw_cluster_id = None
+        self._k8s_allowed_namespaces = None
+        self._k8s_dynamic_mode = None
         self._producer_last_keep_alive = None
         self._producer_metadata = None
         self._producer_status = None
@@ -69,6 +75,10 @@ class DynamicSecretProducerInfo(object):
             self.failure_message = failure_message
         if gw_cluster_id is not None:
             self.gw_cluster_id = gw_cluster_id
+        if k8s_allowed_namespaces is not None:
+            self.k8s_allowed_namespaces = k8s_allowed_namespaces
+        if k8s_dynamic_mode is not None:
+            self.k8s_dynamic_mode = k8s_dynamic_mode
         if producer_last_keep_alive is not None:
             self.producer_last_keep_alive = producer_last_keep_alive
         if producer_metadata is not None:
@@ -119,6 +129,52 @@ class DynamicSecretProducerInfo(object):
         """
 
         self._gw_cluster_id = gw_cluster_id
+
+    @property
+    def k8s_allowed_namespaces(self):
+        """Gets the k8s_allowed_namespaces of this DynamicSecretProducerInfo.  # noqa: E501
+
+        Relevant only for generic k8s producer  # noqa: E501
+
+        :return: The k8s_allowed_namespaces of this DynamicSecretProducerInfo.  # noqa: E501
+        :rtype: str
+        """
+        return self._k8s_allowed_namespaces
+
+    @k8s_allowed_namespaces.setter
+    def k8s_allowed_namespaces(self, k8s_allowed_namespaces):
+        """Sets the k8s_allowed_namespaces of this DynamicSecretProducerInfo.
+
+        Relevant only for generic k8s producer  # noqa: E501
+
+        :param k8s_allowed_namespaces: The k8s_allowed_namespaces of this DynamicSecretProducerInfo.  # noqa: E501
+        :type: str
+        """
+
+        self._k8s_allowed_namespaces = k8s_allowed_namespaces
+
+    @property
+    def k8s_dynamic_mode(self):
+        """Gets the k8s_dynamic_mode of this DynamicSecretProducerInfo.  # noqa: E501
+
+        Relevant only for generic k8s producer  # noqa: E501
+
+        :return: The k8s_dynamic_mode of this DynamicSecretProducerInfo.  # noqa: E501
+        :rtype: bool
+        """
+        return self._k8s_dynamic_mode
+
+    @k8s_dynamic_mode.setter
+    def k8s_dynamic_mode(self, k8s_dynamic_mode):
+        """Sets the k8s_dynamic_mode of this DynamicSecretProducerInfo.
+
+        Relevant only for generic k8s producer  # noqa: E501
+
+        :param k8s_dynamic_mode: The k8s_dynamic_mode of this DynamicSecretProducerInfo.  # noqa: E501
+        :type: bool
+        """
+
+        self._k8s_dynamic_mode = k8s_dynamic_mode
 
     @property
     def producer_last_keep_alive(self):

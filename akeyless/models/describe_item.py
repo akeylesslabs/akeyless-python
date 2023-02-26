@@ -35,6 +35,7 @@ class DescribeItem(object):
     """
     openapi_types = {
         'display_id': 'str',
+        'gateway_details': 'bool',
         'item_id': 'int',
         'json': 'bool',
         'name': 'str',
@@ -45,6 +46,7 @@ class DescribeItem(object):
 
     attribute_map = {
         'display_id': 'display-id',
+        'gateway_details': 'gateway-details',
         'item_id': 'item-id',
         'json': 'json',
         'name': 'name',
@@ -53,13 +55,14 @@ class DescribeItem(object):
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, display_id=None, item_id=None, json=False, name=None, show_versions=False, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, display_id=None, gateway_details=False, item_id=None, json=False, name=None, show_versions=False, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """DescribeItem - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._display_id = None
+        self._gateway_details = None
         self._item_id = None
         self._json = None
         self._name = None
@@ -70,6 +73,8 @@ class DescribeItem(object):
 
         if display_id is not None:
             self.display_id = display_id
+        if gateway_details is not None:
+            self.gateway_details = gateway_details
         if item_id is not None:
             self.item_id = item_id
         if json is not None:
@@ -104,6 +109,29 @@ class DescribeItem(object):
         """
 
         self._display_id = display_id
+
+    @property
+    def gateway_details(self):
+        """Gets the gateway_details of this DescribeItem.  # noqa: E501
+
+        Indicate if the item should return with clusters details (url, etc)  # noqa: E501
+
+        :return: The gateway_details of this DescribeItem.  # noqa: E501
+        :rtype: bool
+        """
+        return self._gateway_details
+
+    @gateway_details.setter
+    def gateway_details(self, gateway_details):
+        """Sets the gateway_details of this DescribeItem.
+
+        Indicate if the item should return with clusters details (url, etc)  # noqa: E501
+
+        :param gateway_details: The gateway_details of this DescribeItem.  # noqa: E501
+        :type: bool
+        """
+
+        self._gateway_details = gateway_details
 
     @property
     def item_id(self):

@@ -204,6 +204,7 @@ from akeyless.models.external_kms_key_id import ExternalKMSKeyId
 from akeyless.models.gcp_access_rules import GCPAccessRules
 from akeyless.models.gcp_payload import GCPPayload
 from akeyless.models.gcp_secrets_migration import GCPSecretsMigration
+from akeyless.models.gateway_basic_info import GatewayBasicInfo
 from akeyless.models.gateway_create_k8_s_auth_config import GatewayCreateK8SAuthConfig
 from akeyless.models.gateway_create_k8_s_auth_config_output import GatewayCreateK8SAuthConfigOutput
 from akeyless.models.gateway_create_migration import GatewayCreateMigration

@@ -6,11 +6,16 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **delete_protection** | **str** | Protection from accidental deletion of this item [true/false] | [optional] 
 **json** | **bool** | Set output format to JSON | [optional] [default to False]
+**k8s_allowed_namespaces** | **str** | Comma-separated list of allowed K8S namespaces for the generated ServiceAccount (relevant only for k8s-service-account-type&#x3D;dynamic) | [optional] 
 **k8s_cluster_ca_cert** | **str** | K8S cluster CA certificate | [optional] 
 **k8s_cluster_endpoint** | **str** | K8S cluster URL endpoint | [optional] 
 **k8s_cluster_token** | **str** | K8S cluster Bearer token | [optional] 
 **k8s_namespace** | **str** | K8S Namespace where the ServiceAccount exists. | [optional] 
+**k8s_predefined_role_name** | **str** | The pre-existing Role or ClusterRole name to bind the generated ServiceAccount to (relevant only for k8s-service-account-type&#x3D;dynamic) | [optional] 
+**k8s_predefined_role_type** | **str** | Specifies the type of the pre-existing K8S role [Role, ClusterRole] (relevant only for k8s-service-account-type&#x3D;dynamic) | [optional] 
+**k8s_rolebinding_yaml_def** | **str** | Path to yaml file that contains definitions of K8S role and role binding (relevant only for k8s-service-account-type&#x3D;dynamic) | [optional] 
 **k8s_service_account** | **str** | K8S ServiceAccount to extract token from. | [optional] 
+**k8s_service_account_type** | **str** | K8S ServiceAccount type [fixed, dynamic]. | [optional] 
 **name** | **str** | Producer name | 
 **new_name** | **str** | Producer name | [optional] 
 **producer_encryption_key_name** | **str** | Dynamic producer encryption key | [optional] 

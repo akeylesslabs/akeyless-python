@@ -4,6 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **display_id** | **str** | The display id of the item | [optional] 
+**gateway_details** | **bool** | Indicate if the item should return with clusters details (url, etc) | [optional] [default to False]
 **item_id** | **int** | Item id of the item | [optional] 
 **json** | **bool** | Set output format to JSON | [optional] [default to False]
 **name** | **str** | Item name | 
