@@ -3,9 +3,8 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**comment** | **str** | Deprecated - use description | [optional] 
 **description** | **str** | Description of the object | [optional] 
-**hosts** | **str** | A comma seperated list of server hosts. | 
+**hosts** | **str** | A comma seperated list of server hosts and server descriptions joined by semicolon &#39;;&#39; (i.e. &#39;server-dev.com;My Dev server,server-prod.com;My Prod server description&#39;) | [optional] 
 **json** | **bool** | Set output format to JSON | [optional] [default to False]
 **name** | **str** | Target name | 
 **parent_target_name** | **str** | The parent Target name | [optional] 

@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 **private_key** | **str** | RSA Private key (base64 encoded) | [optional] 
 **private_key_passphrase** | **str** | The Private key passphrase | [optional] 
 **role** | **str** | User role | [optional] 
-**tags** | **list[str]** | List of the tags attached to this secret | [optional] 
+**tags** | **list[str]** | Add tags attached to this object | [optional] 
 **target_name** | **str** | Target name | [optional] 
 **token** | **str** | Authentication token (see &#x60;/auth&#x60; and &#x60;/configure&#x60;) | [optional] 
 **uid_token** | **str** | The universal identity token, Required only for universal_identity authentication | [optional] 

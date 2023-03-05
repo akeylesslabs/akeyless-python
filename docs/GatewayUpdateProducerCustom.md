@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 **producer_encryption_key_name** | **str** | Dynamic producer encryption key | [optional] 
 **revoke_sync_url** | **str** | URL of an endpoint that implements /sync/revoke method, for example https://webhook.example.com/sync/revoke | 
 **rotate_sync_url** | **str** | URL of an endpoint that implements /sync/rotate method, for example https://webhook.example.com/sync/rotate | [optional] 
-**tags** | **list[str]** | List of the tags attached to this secret | [optional] 
+**tags** | **list[str]** | Add tags attached to this object | [optional] 
 **timeout_sec** | **int** | Maximum allowed time in seconds for the webhook to return the results | [optional] [default to 60]
 **token** | **str** | Authentication token (see &#x60;/auth&#x60; and &#x60;/configure&#x60;) | [optional] 
 **uid_token** | **str** | The universal identity token, Required only for universal_identity authentication | [optional] 

@@ -41,7 +41,7 @@ Name | Type | Description | Notes
 **ssh_password** | **str** | Deprecated: use RotatedPassword | [optional] 
 **ssh_username** | **str** | Deprecated: use RotatedUser | [optional] 
 **storage_account_key_name** | **str** | The name of the storage account key to rotate [key1/key2/kerb1/kerb2] (relevat to azure-storage-account) | [optional] 
-**tags** | **list[str]** | List of the tags attached to this secret | [optional] 
+**tags** | **list[str]** | Add tags attached to this object | [optional] 
 **target_name** | **str** | Target name | 
 **token** | **str** | Authentication token (see &#x60;/auth&#x60; and &#x60;/configure&#x60;) | [optional] 
 **uid_token** | **str** | The universal identity token, Required only for universal_identity authentication | [optional] 

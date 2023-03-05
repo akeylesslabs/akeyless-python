@@ -638,7 +638,7 @@ class GatewayCreateProducerPing(object):
     def tags(self):
         """Gets the tags of this GatewayCreateProducerPing.  # noqa: E501
 
-        List of the tags attached to this secret  # noqa: E501
+        Add tags attached to this object  # noqa: E501
 
         :return: The tags of this GatewayCreateProducerPing.  # noqa: E501
         :rtype: list[str]
@@ -649,7 +649,7 @@ class GatewayCreateProducerPing(object):
     def tags(self, tags):
         """Sets the tags of this GatewayCreateProducerPing.
 
-        List of the tags attached to this secret  # noqa: E501
+        Add tags attached to this object  # noqa: E501
 
         :param tags: The tags of this GatewayCreateProducerPing.  # noqa: E501
         :type: list[str]

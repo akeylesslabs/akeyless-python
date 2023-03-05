@@ -23,7 +23,7 @@ Name | Type | Description | Notes
 **secure_access_url** | **str** | Destination URL to inject secrets | [optional] 
 **secure_access_web_browsing** | **bool** | Secure browser via Akeyless Web Access Bastion | [optional] [default to False]
 **secure_access_web_proxy** | **bool** | Web-Proxy via Akeyless Web Access Bastion | [optional] [default to False]
-**tags** | **list[str]** | List of the tags attached to this secret | [optional] 
+**tags** | **list[str]** | Add tags attached to this object | [optional] 
 **token** | **str** | Authentication token (see &#x60;/auth&#x60; and &#x60;/configure&#x60;) | [optional] 
 **type** | **str** | The secret sub type [generic/password] | [optional] [default to 'generic']
 **uid_token** | **str** | The universal identity token, Required only for universal_identity authentication | [optional] 

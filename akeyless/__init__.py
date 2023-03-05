@@ -15,7 +15,7 @@
 
 from __future__ import absolute_import
 
-__version__ = "3.2.6"
+__version__ = "3.2.7"
 
 # import apis into sdk package
 from akeyless.api.v2_api import V2Api
@@ -191,6 +191,7 @@ from akeyless.models.delete_roles import DeleteRoles
 from akeyless.models.delete_target import DeleteTarget
 from akeyless.models.delete_target_association import DeleteTargetAssociation
 from akeyless.models.delete_targets import DeleteTargets
+from akeyless.models.describe_assoc import DescribeAssoc
 from akeyless.models.describe_item import DescribeItem
 from akeyless.models.describe_permissions import DescribePermissions
 from akeyless.models.describe_permissions_output import DescribePermissionsOutput
@@ -278,6 +279,8 @@ from akeyless.models.gateway_delete_k8_s_auth_config_output import GatewayDelete
 from akeyless.models.gateway_delete_migration import GatewayDeleteMigration
 from akeyless.models.gateway_delete_producer import GatewayDeleteProducer
 from akeyless.models.gateway_delete_producer_output import GatewayDeleteProducerOutput
+from akeyless.models.gateway_download_customer_fragments import GatewayDownloadCustomerFragments
+from akeyless.models.gateway_download_customer_fragments_output import GatewayDownloadCustomerFragmentsOutput
 from akeyless.models.gateway_get_config import GatewayGetConfig
 from akeyless.models.gateway_get_k8_s_auth_config import GatewayGetK8SAuthConfig
 from akeyless.models.gateway_get_k8_s_auth_config_output import GatewayGetK8SAuthConfigOutput
@@ -397,6 +400,8 @@ from akeyless.models.gw_cluster_identity import GwClusterIdentity
 from akeyless.models.hashi_migration import HashiMigration
 from akeyless.models.hashi_payload import HashiPayload
 from akeyless.models.huawei_access_rules import HuaweiAccessRules
+from akeyless.models.import_passwords import ImportPasswords
+from akeyless.models.import_passwords_output import ImportPasswordsOutput
 from akeyless.models.importer_info import ImporterInfo
 from akeyless.models.item import Item
 from akeyless.models.item_general_info import ItemGeneralInfo
@@ -440,6 +445,7 @@ from akeyless.models.last_config_change import LastConfigChange
 from akeyless.models.last_status_info import LastStatusInfo
 from akeyless.models.ldap_config_part import LdapConfigPart
 from akeyless.models.leadership_config_part import LeadershipConfigPart
+from akeyless.models.linked_details import LinkedDetails
 from akeyless.models.list_auth_methods import ListAuthMethods
 from akeyless.models.list_auth_methods_output import ListAuthMethodsOutput
 from akeyless.models.list_gateways import ListGateways
@@ -489,6 +495,7 @@ from akeyless.models.reverse_rbac_client import ReverseRBACClient
 from akeyless.models.reverse_rbac_output import ReverseRBACOutput
 from akeyless.models.revoke_creds import RevokeCreds
 from akeyless.models.role import Role
+from akeyless.models.role_association_details import RoleAssociationDetails
 from akeyless.models.role_auth_method_association import RoleAuthMethodAssociation
 from akeyless.models.rollback_secret import RollbackSecret
 from akeyless.models.rollback_secret_output import RollbackSecretOutput

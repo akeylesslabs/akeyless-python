@@ -23,7 +23,7 @@ Name | Type | Description | Notes
 **secure_access_web** | **bool** | Enable Web Secure Remote Access | [optional] [default to False]
 **ssl** | **bool** | Enable/Disable SSL [true/false] | [optional] [default to False]
 **ssl_certificate** | **str** | SSL connection certificate | [optional] 
-**tags** | **list[str]** | List of the tags attached to this secret | [optional] 
+**tags** | **list[str]** | Add tags attached to this object | [optional] 
 **target_name** | **str** | Target name | [optional] 
 **token** | **str** | Authentication token (see &#x60;/auth&#x60; and &#x60;/configure&#x60;) | [optional] 
 **uid_token** | **str** | The universal identity token, Required only for universal_identity authentication | [optional] 

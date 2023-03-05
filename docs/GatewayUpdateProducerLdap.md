@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 **name** | **str** | Producer name | 
 **new_name** | **str** | Producer name | [optional] 
 **producer_encryption_key_name** | **str** | Dynamic producer encryption key | [optional] 
-**tags** | **list[str]** | List of the tags attached to this secret | [optional] 
+**tags** | **list[str]** | Add tags attached to this object | [optional] 
 **target_name** | **str** | Target name | [optional] 
 **token** | **str** | Authentication token (see &#x60;/auth&#x60; and &#x60;/configure&#x60;) | [optional] 
 **token_expiration** | **str** | Token expiration | [optional] 

@@ -62,6 +62,7 @@ class Item(object):
         'item_type': 'str',
         'item_versions': 'list[ItemVersion]',
         'last_version': 'int',
+        'linked_details': 'LinkedDetails',
         'modification_date': 'datetime',
         'next_rotation_date': 'datetime',
         'protection_key_name': 'str',
@@ -102,6 +103,7 @@ class Item(object):
         'item_type': 'item_type',
         'item_versions': 'item_versions',
         'last_version': 'last_version',
+        'linked_details': 'linked_details',
         'modification_date': 'modification_date',
         'next_rotation_date': 'next_rotation_date',
         'protection_key_name': 'protection_key_name',
@@ -113,7 +115,7 @@ class Item(object):
         'with_customer_fragment': 'with_customer_fragment'
     }
 
-    def __init__(self, access_date=None, access_request_status=None, auto_rotate=None, cert_issuer_signer_key_name=None, certificate_issue_details=None, certificates=None, client_permissions=None, creation_date=None, customer_fragment_id=None, delete_protection=None, deletion_date=None, display_id=None, gateway_details=None, is_access_request_enabled=None, is_enabled=None, item_accessibility=None, item_general_info=None, item_id=None, item_metadata=None, item_name=None, item_size=None, item_state=None, item_sub_type=None, item_tags=None, item_targets_assoc=None, item_type=None, item_versions=None, last_version=None, modification_date=None, next_rotation_date=None, protection_key_name=None, protection_key_type=None, public_value=None, rotation_interval=None, shared_by=None, target_versions=None, with_customer_fragment=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, access_date=None, access_request_status=None, auto_rotate=None, cert_issuer_signer_key_name=None, certificate_issue_details=None, certificates=None, client_permissions=None, creation_date=None, customer_fragment_id=None, delete_protection=None, deletion_date=None, display_id=None, gateway_details=None, is_access_request_enabled=None, is_enabled=None, item_accessibility=None, item_general_info=None, item_id=None, item_metadata=None, item_name=None, item_size=None, item_state=None, item_sub_type=None, item_tags=None, item_targets_assoc=None, item_type=None, item_versions=None, last_version=None, linked_details=None, modification_date=None, next_rotation_date=None, protection_key_name=None, protection_key_type=None, public_value=None, rotation_interval=None, shared_by=None, target_versions=None, with_customer_fragment=None, local_vars_configuration=None):  # noqa: E501
         """Item - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -147,6 +149,7 @@ class Item(object):
         self._item_type = None
         self._item_versions = None
         self._last_version = None
+        self._linked_details = None
         self._modification_date = None
         self._next_rotation_date = None
         self._protection_key_name = None
@@ -214,6 +217,8 @@ class Item(object):
             self.item_versions = item_versions
         if last_version is not None:
             self.last_version = last_version
+        if linked_details is not None:
+            self.linked_details = linked_details
         if modification_date is not None:
             self.modification_date = modification_date
         if next_rotation_date is not None:
@@ -822,6 +827,27 @@ class Item(object):
         """
 
         self._last_version = last_version
+
+    @property
+    def linked_details(self):
+        """Gets the linked_details of this Item.  # noqa: E501
+
+
+        :return: The linked_details of this Item.  # noqa: E501
+        :rtype: LinkedDetails
+        """
+        return self._linked_details
+
+    @linked_details.setter
+    def linked_details(self, linked_details):
+        """Sets the linked_details of this Item.
+
+
+        :param linked_details: The linked_details of this Item.  # noqa: E501
+        :type: LinkedDetails
+        """
+
+        self._linked_details = linked_details
 
     @property
     def modification_date(self):

@@ -34,7 +34,6 @@ class CreateLinkedTarget(object):
                             and the value is json key in definition.
     """
     openapi_types = {
-        'comment': 'str',
         'description': 'str',
         'hosts': 'str',
         'json': 'bool',
@@ -45,7 +44,6 @@ class CreateLinkedTarget(object):
     }
 
     attribute_map = {
-        'comment': 'comment',
         'description': 'description',
         'hosts': 'hosts',
         'json': 'json',
@@ -55,13 +53,12 @@ class CreateLinkedTarget(object):
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, comment=None, description=None, hosts=None, json=False, name=None, parent_target_name=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, description=None, hosts=None, json=False, name=None, parent_target_name=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """CreateLinkedTarget - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
-        self._comment = None
         self._description = None
         self._hosts = None
         self._json = None
@@ -71,11 +68,10 @@ class CreateLinkedTarget(object):
         self._uid_token = None
         self.discriminator = None
 
-        if comment is not None:
-            self.comment = comment
         if description is not None:
             self.description = description
-        self.hosts = hosts
+        if hosts is not None:
+            self.hosts = hosts
         if json is not None:
             self.json = json
         self.name = name
@@ -85,29 +81,6 @@ class CreateLinkedTarget(object):
             self.token = token
         if uid_token is not None:
             self.uid_token = uid_token
-
-    @property
-    def comment(self):
-        """Gets the comment of this CreateLinkedTarget.  # noqa: E501
-
-        Deprecated - use description  # noqa: E501
-
-        :return: The comment of this CreateLinkedTarget.  # noqa: E501
-        :rtype: str
-        """
-        return self._comment
-
-    @comment.setter
-    def comment(self, comment):
-        """Sets the comment of this CreateLinkedTarget.
-
-        Deprecated - use description  # noqa: E501
-
-        :param comment: The comment of this CreateLinkedTarget.  # noqa: E501
-        :type: str
-        """
-
-        self._comment = comment
 
     @property
     def description(self):
@@ -136,7 +109,7 @@ class CreateLinkedTarget(object):
     def hosts(self):
         """Gets the hosts of this CreateLinkedTarget.  # noqa: E501
 
-        A comma seperated list of server hosts.  # noqa: E501
+        A comma seperated list of server hosts and server descriptions joined by semicolon ';' (i.e. 'server-dev.com;My Dev server,server-prod.com;My Prod server description')  # noqa: E501
 
         :return: The hosts of this CreateLinkedTarget.  # noqa: E501
         :rtype: str
@@ -147,13 +120,11 @@ class CreateLinkedTarget(object):
     def hosts(self, hosts):
         """Sets the hosts of this CreateLinkedTarget.
 
-        A comma seperated list of server hosts.  # noqa: E501
+        A comma seperated list of server hosts and server descriptions joined by semicolon ';' (i.e. 'server-dev.com;My Dev server,server-prod.com;My Prod server description')  # noqa: E501
 
         :param hosts: The hosts of this CreateLinkedTarget.  # noqa: E501
         :type: str
         """
-        if self.local_vars_configuration.client_side_validation and hosts is None:  # noqa: E501
-            raise ValueError("Invalid value for `hosts`, must not be `None`")  # noqa: E501
 
         self._hosts = hosts
 

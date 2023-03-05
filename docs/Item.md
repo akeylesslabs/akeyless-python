@@ -31,6 +31,7 @@ Name | Type | Description | Notes
 **item_type** | **str** |  | [optional] 
 **item_versions** | [**list[ItemVersion]**](ItemVersion.md) |  | [optional] 
 **last_version** | **int** |  | [optional] 
+**linked_details** | [**LinkedDetails**](LinkedDetails.md) |  | [optional] 
 **modification_date** | **datetime** |  | [optional] 
 **next_rotation_date** | **datetime** |  | [optional] 
 **protection_key_name** | **str** |  | [optional] 

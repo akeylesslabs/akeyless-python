@@ -4,7 +4,6 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **display_id** | **str** | The display id of the key to use in the encryption process | [optional] 
-**encryption_context** | **dict(str, str)** | name-value pair that specifies the encryption context to be used for authenticated encryption. If used here, the same value must be supplied to the decrypt command or decryption will fail | [optional] 
 **_in** | **str** | Path to the file to be encrypted. If not provided, the content will be taken from stdin | 
 **item_id** | **int** | The item id of the key to use in the encryption process | [optional] 
 **json** | **bool** | Set output format to JSON | [optional] [default to False]

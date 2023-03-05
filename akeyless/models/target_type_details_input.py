@@ -89,7 +89,7 @@ class TargetTypeDetailsInput(object):
         'gke_service_account_name': 'str',
         'host': 'str',
         'hostname': 'str',
-        'hosts': 'list[str]',
+        'hosts': 'dict(str, str)',
         'implementation_type': 'str',
         'k8s_bearer_token': 'str',
         'k8s_cluster_ca_certificate': 'str',
@@ -121,7 +121,6 @@ class TargetTypeDetailsInput(object):
         'rabbitmq_server_password': 'str',
         'rabbitmq_server_uri': 'str',
         'rabbitmq_server_user': 'str',
-        'rdp_port': 'str',
         'security_token': 'str',
         'sf_account': 'str',
         'ssl_connection_certificate': 'str',
@@ -228,7 +227,6 @@ class TargetTypeDetailsInput(object):
         'rabbitmq_server_password': 'rabbitmq_server_password',
         'rabbitmq_server_uri': 'rabbitmq_server_uri',
         'rabbitmq_server_user': 'rabbitmq_server_user',
-        'rdp_port': 'rdp_port',
         'security_token': 'security_token',
         'sf_account': 'sf_account',
         'ssl_connection_certificate': 'ssl_connection_certificate',
@@ -247,7 +245,7 @@ class TargetTypeDetailsInput(object):
         'venafi_zone': 'venafi_zone'
     }
 
-    def __init__(self, administrative_port=None, app_private_key=None, artifactory_admin_apikey=None, artifactory_admin_username=None, artifactory_base_url=None, auth_flow=None, authorization_port=None, aws_access_key_id=None, aws_region=None, aws_secret_access_key=None, aws_session_token=None, azure_client_id=None, azure_client_secret=None, azure_resource_group_name=None, azure_resource_name=None, azure_subscription_id=None, azure_tenant_id=None, ca_cert_data=None, ca_cert_name=None, chef_server_host_name=None, chef_server_key=None, chef_server_port=None, chef_server_url=None, chef_server_username=None, chef_skip_ssl=None, client_id=None, client_secret=None, db_host_name=None, db_name=None, db_port=None, db_private_key=None, db_private_key_passphrase=None, db_pwd=None, db_server_certificates=None, db_server_name=None, db_user_name=None, eks_access_key_id=None, eks_cluster_ca_certificate=None, eks_cluster_endpoint=None, eks_cluster_name=None, eks_region=None, eks_secret_access_key=None, gcp_service_account_email=None, gcp_service_account_key=None, gcp_service_account_key_base64=None, github_app_id=None, github_app_private_key=None, github_base_url=None, gke_cluster_ca_certificate=None, gke_cluster_endpoint=None, gke_cluster_name=None, gke_service_account_key=None, gke_service_account_name=None, host=None, hostname=None, hosts=None, implementation_type=None, k8s_bearer_token=None, k8s_cluster_ca_certificate=None, k8s_cluster_endpoint=None, ldap_audience=None, ldap_bind_dn=None, ldap_bind_password=None, ldap_certificate=None, ldap_token_expiration=None, ldap_url=None, mongodb_atlas_api_private_key=None, mongodb_atlas_api_public_key=None, mongodb_atlas_project_id=None, mongodb_db_name=None, mongodb_default_auth_db=None, mongodb_host_port=None, mongodb_is_atlas=None, mongodb_password=None, mongodb_uri_connection=None, mongodb_uri_options=None, mongodb_username=None, password=None, payload=None, ping_url=None, port=None, private_key=None, private_key_password=None, privileged_user=None, rabbitmq_server_password=None, rabbitmq_server_uri=None, rabbitmq_server_user=None, rdp_port=None, security_token=None, sf_account=None, ssl_connection_certificate=None, ssl_connection_mode=None, tenant_url=None, url=None, use_gw_cloud_identity=None, user_name=None, user_password=None, username=None, venafi_api_key=None, venafi_base_url=None, venafi_tpp_password=None, venafi_tpp_username=None, venafi_use_tpp=None, venafi_zone=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, administrative_port=None, app_private_key=None, artifactory_admin_apikey=None, artifactory_admin_username=None, artifactory_base_url=None, auth_flow=None, authorization_port=None, aws_access_key_id=None, aws_region=None, aws_secret_access_key=None, aws_session_token=None, azure_client_id=None, azure_client_secret=None, azure_resource_group_name=None, azure_resource_name=None, azure_subscription_id=None, azure_tenant_id=None, ca_cert_data=None, ca_cert_name=None, chef_server_host_name=None, chef_server_key=None, chef_server_port=None, chef_server_url=None, chef_server_username=None, chef_skip_ssl=None, client_id=None, client_secret=None, db_host_name=None, db_name=None, db_port=None, db_private_key=None, db_private_key_passphrase=None, db_pwd=None, db_server_certificates=None, db_server_name=None, db_user_name=None, eks_access_key_id=None, eks_cluster_ca_certificate=None, eks_cluster_endpoint=None, eks_cluster_name=None, eks_region=None, eks_secret_access_key=None, gcp_service_account_email=None, gcp_service_account_key=None, gcp_service_account_key_base64=None, github_app_id=None, github_app_private_key=None, github_base_url=None, gke_cluster_ca_certificate=None, gke_cluster_endpoint=None, gke_cluster_name=None, gke_service_account_key=None, gke_service_account_name=None, host=None, hostname=None, hosts=None, implementation_type=None, k8s_bearer_token=None, k8s_cluster_ca_certificate=None, k8s_cluster_endpoint=None, ldap_audience=None, ldap_bind_dn=None, ldap_bind_password=None, ldap_certificate=None, ldap_token_expiration=None, ldap_url=None, mongodb_atlas_api_private_key=None, mongodb_atlas_api_public_key=None, mongodb_atlas_project_id=None, mongodb_db_name=None, mongodb_default_auth_db=None, mongodb_host_port=None, mongodb_is_atlas=None, mongodb_password=None, mongodb_uri_connection=None, mongodb_uri_options=None, mongodb_username=None, password=None, payload=None, ping_url=None, port=None, private_key=None, private_key_password=None, privileged_user=None, rabbitmq_server_password=None, rabbitmq_server_uri=None, rabbitmq_server_user=None, security_token=None, sf_account=None, ssl_connection_certificate=None, ssl_connection_mode=None, tenant_url=None, url=None, use_gw_cloud_identity=None, user_name=None, user_password=None, username=None, venafi_api_key=None, venafi_base_url=None, venafi_tpp_password=None, venafi_tpp_username=None, venafi_use_tpp=None, venafi_zone=None, local_vars_configuration=None):  # noqa: E501
         """TargetTypeDetailsInput - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -340,7 +338,6 @@ class TargetTypeDetailsInput(object):
         self._rabbitmq_server_password = None
         self._rabbitmq_server_uri = None
         self._rabbitmq_server_user = None
-        self._rdp_port = None
         self._security_token = None
         self._sf_account = None
         self._ssl_connection_certificate = None
@@ -533,8 +530,6 @@ class TargetTypeDetailsInput(object):
             self.rabbitmq_server_uri = rabbitmq_server_uri
         if rabbitmq_server_user is not None:
             self.rabbitmq_server_user = rabbitmq_server_user
-        if rdp_port is not None:
-            self.rdp_port = rdp_port
         if security_token is not None:
             self.security_token = security_token
         if sf_account is not None:
@@ -1745,7 +1740,7 @@ class TargetTypeDetailsInput(object):
 
 
         :return: The hosts of this TargetTypeDetailsInput.  # noqa: E501
-        :rtype: list[str]
+        :rtype: dict(str, str)
         """
         return self._hosts
 
@@ -1755,7 +1750,7 @@ class TargetTypeDetailsInput(object):
 
 
         :param hosts: The hosts of this TargetTypeDetailsInput.  # noqa: E501
-        :type: list[str]
+        :type: dict(str, str)
         """
 
         self._hosts = hosts
@@ -2416,27 +2411,6 @@ class TargetTypeDetailsInput(object):
         """
 
         self._rabbitmq_server_user = rabbitmq_server_user
-
-    @property
-    def rdp_port(self):
-        """Gets the rdp_port of this TargetTypeDetailsInput.  # noqa: E501
-
-
-        :return: The rdp_port of this TargetTypeDetailsInput.  # noqa: E501
-        :rtype: str
-        """
-        return self._rdp_port
-
-    @rdp_port.setter
-    def rdp_port(self, rdp_port):
-        """Sets the rdp_port of this TargetTypeDetailsInput.
-
-
-        :param rdp_port: The rdp_port of this TargetTypeDetailsInput.  # noqa: E501
-        :type: str
-        """
-
-        self._rdp_port = rdp_port
 
     @property
     def security_token(self):

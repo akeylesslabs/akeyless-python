@@ -35,7 +35,6 @@ class UpdateLinkedTarget(object):
     """
     openapi_types = {
         'add_hosts': 'str',
-        'comment': 'str',
         'description': 'str',
         'hosts': 'str',
         'json': 'bool',
@@ -50,7 +49,6 @@ class UpdateLinkedTarget(object):
 
     attribute_map = {
         'add_hosts': 'add-hosts',
-        'comment': 'comment',
         'description': 'description',
         'hosts': 'hosts',
         'json': 'json',
@@ -63,14 +61,13 @@ class UpdateLinkedTarget(object):
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, add_hosts=None, comment=None, description=None, hosts=None, json=False, keep_prev_version=None, name=None, new_name=None, parent_target_name=None, rm_hosts=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, add_hosts=None, description=None, hosts=None, json=False, keep_prev_version=None, name=None, new_name=None, parent_target_name=None, rm_hosts=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """UpdateLinkedTarget - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._add_hosts = None
-        self._comment = None
         self._description = None
         self._hosts = None
         self._json = None
@@ -85,11 +82,10 @@ class UpdateLinkedTarget(object):
 
         if add_hosts is not None:
             self.add_hosts = add_hosts
-        if comment is not None:
-            self.comment = comment
         if description is not None:
             self.description = description
-        self.hosts = hosts
+        if hosts is not None:
+            self.hosts = hosts
         if json is not None:
             self.json = json
         if keep_prev_version is not None:
@@ -110,7 +106,7 @@ class UpdateLinkedTarget(object):
     def add_hosts(self):
         """Gets the add_hosts of this UpdateLinkedTarget.  # noqa: E501
 
-        Comma separated list of new hosts that will be added to the Linked Target hosts.  # noqa: E501
+        A comma seperated list of new server hosts and server descriptions joined by semicolon ';' that will be added to the Linked Target hosts.  # noqa: E501
 
         :return: The add_hosts of this UpdateLinkedTarget.  # noqa: E501
         :rtype: str
@@ -121,36 +117,13 @@ class UpdateLinkedTarget(object):
     def add_hosts(self, add_hosts):
         """Sets the add_hosts of this UpdateLinkedTarget.
 
-        Comma separated list of new hosts that will be added to the Linked Target hosts.  # noqa: E501
+        A comma seperated list of new server hosts and server descriptions joined by semicolon ';' that will be added to the Linked Target hosts.  # noqa: E501
 
         :param add_hosts: The add_hosts of this UpdateLinkedTarget.  # noqa: E501
         :type: str
         """
 
         self._add_hosts = add_hosts
-
-    @property
-    def comment(self):
-        """Gets the comment of this UpdateLinkedTarget.  # noqa: E501
-
-        Deprecated - use description  # noqa: E501
-
-        :return: The comment of this UpdateLinkedTarget.  # noqa: E501
-        :rtype: str
-        """
-        return self._comment
-
-    @comment.setter
-    def comment(self, comment):
-        """Sets the comment of this UpdateLinkedTarget.
-
-        Deprecated - use description  # noqa: E501
-
-        :param comment: The comment of this UpdateLinkedTarget.  # noqa: E501
-        :type: str
-        """
-
-        self._comment = comment
 
     @property
     def description(self):
@@ -179,7 +152,7 @@ class UpdateLinkedTarget(object):
     def hosts(self):
         """Gets the hosts of this UpdateLinkedTarget.  # noqa: E501
 
-        A comma seperated list of server hosts.  # noqa: E501
+        A comma seperated list of server hosts and server descriptions joined by semicolon ';' (i.e. 'server-dev.com;My Dev server,server-prod.com;My Prod server description')  # noqa: E501
 
         :return: The hosts of this UpdateLinkedTarget.  # noqa: E501
         :rtype: str
@@ -190,13 +163,11 @@ class UpdateLinkedTarget(object):
     def hosts(self, hosts):
         """Sets the hosts of this UpdateLinkedTarget.
 
-        A comma seperated list of server hosts.  # noqa: E501
+        A comma seperated list of server hosts and server descriptions joined by semicolon ';' (i.e. 'server-dev.com;My Dev server,server-prod.com;My Prod server description')  # noqa: E501
 
         :param hosts: The hosts of this UpdateLinkedTarget.  # noqa: E501
         :type: str
         """
-        if self.local_vars_configuration.client_side_validation and hosts is None:  # noqa: E501
-            raise ValueError("Invalid value for `hosts`, must not be `None`")  # noqa: E501
 
         self._hosts = hosts
 

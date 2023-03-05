@@ -34,7 +34,6 @@ class UpdateWindowsTarget(object):
                             and the value is json key in definition.
     """
     openapi_types = {
-        'comment': 'str',
         'description': 'str',
         'hostname': 'str',
         'json': 'bool',
@@ -43,7 +42,7 @@ class UpdateWindowsTarget(object):
         'name': 'str',
         'new_name': 'str',
         'password': 'str',
-        'rdp_port': 'str',
+        'port': 'str',
         'token': 'str',
         'uid_token': 'str',
         'update_version': 'bool',
@@ -51,7 +50,6 @@ class UpdateWindowsTarget(object):
     }
 
     attribute_map = {
-        'comment': 'comment',
         'description': 'description',
         'hostname': 'hostname',
         'json': 'json',
@@ -60,20 +58,19 @@ class UpdateWindowsTarget(object):
         'name': 'name',
         'new_name': 'new-name',
         'password': 'password',
-        'rdp_port': 'rdp-port',
+        'port': 'port',
         'token': 'token',
         'uid_token': 'uid-token',
         'update_version': 'update-version',
         'username': 'username'
     }
 
-    def __init__(self, comment=None, description=None, hostname=None, json=False, keep_prev_version=None, key=None, name=None, new_name=None, password=None, rdp_port='3389', token=None, uid_token=None, update_version=None, username=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, description=None, hostname=None, json=False, keep_prev_version=None, key=None, name=None, new_name=None, password=None, port='5986', token=None, uid_token=None, update_version=None, username=None, local_vars_configuration=None):  # noqa: E501
         """UpdateWindowsTarget - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
-        self._comment = None
         self._description = None
         self._hostname = None
         self._json = None
@@ -82,15 +79,13 @@ class UpdateWindowsTarget(object):
         self._name = None
         self._new_name = None
         self._password = None
-        self._rdp_port = None
+        self._port = None
         self._token = None
         self._uid_token = None
         self._update_version = None
         self._username = None
         self.discriminator = None
 
-        if comment is not None:
-            self.comment = comment
         if description is not None:
             self.description = description
         if hostname is not None:
@@ -106,8 +101,8 @@ class UpdateWindowsTarget(object):
             self.new_name = new_name
         if password is not None:
             self.password = password
-        if rdp_port is not None:
-            self.rdp_port = rdp_port
+        if port is not None:
+            self.port = port
         if token is not None:
             self.token = token
         if uid_token is not None:
@@ -116,29 +111,6 @@ class UpdateWindowsTarget(object):
             self.update_version = update_version
         if username is not None:
             self.username = username
-
-    @property
-    def comment(self):
-        """Gets the comment of this UpdateWindowsTarget.  # noqa: E501
-
-        Deprecated - use description  # noqa: E501
-
-        :return: The comment of this UpdateWindowsTarget.  # noqa: E501
-        :rtype: str
-        """
-        return self._comment
-
-    @comment.setter
-    def comment(self, comment):
-        """Sets the comment of this UpdateWindowsTarget.
-
-        Deprecated - use description  # noqa: E501
-
-        :param comment: The comment of this UpdateWindowsTarget.  # noqa: E501
-        :type: str
-        """
-
-        self._comment = comment
 
     @property
     def description(self):
@@ -327,27 +299,27 @@ class UpdateWindowsTarget(object):
         self._password = password
 
     @property
-    def rdp_port(self):
-        """Gets the rdp_port of this UpdateWindowsTarget.  # noqa: E501
+    def port(self):
+        """Gets the port of this UpdateWindowsTarget.  # noqa: E501
 
-        Server port for RDP (Remote Desktop Protocol)  # noqa: E501
+        Server WinRM HTTPS port  # noqa: E501
 
-        :return: The rdp_port of this UpdateWindowsTarget.  # noqa: E501
+        :return: The port of this UpdateWindowsTarget.  # noqa: E501
         :rtype: str
         """
-        return self._rdp_port
+        return self._port
 
-    @rdp_port.setter
-    def rdp_port(self, rdp_port):
-        """Sets the rdp_port of this UpdateWindowsTarget.
+    @port.setter
+    def port(self, port):
+        """Sets the port of this UpdateWindowsTarget.
 
-        Server port for RDP (Remote Desktop Protocol)  # noqa: E501
+        Server WinRM HTTPS port  # noqa: E501
 
-        :param rdp_port: The rdp_port of this UpdateWindowsTarget.  # noqa: E501
+        :param port: The port of this UpdateWindowsTarget.  # noqa: E501
         :type: str
         """
 
-        self._rdp_port = rdp_port
+        self._port = port
 
     @property
     def token(self):

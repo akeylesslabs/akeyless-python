@@ -35,6 +35,7 @@ class UpdateAuthMethodCert(object):
     """
     openapi_types = {
         'access_expires': 'int',
+        'allowed_cors': 'str',
         'bound_common_names': 'list[str]',
         'bound_dns_sans': 'list[str]',
         'bound_email_sans': 'list[str]',
@@ -57,6 +58,7 @@ class UpdateAuthMethodCert(object):
 
     attribute_map = {
         'access_expires': 'access-expires',
+        'allowed_cors': 'allowed-cors',
         'bound_common_names': 'bound-common-names',
         'bound_dns_sans': 'bound-dns-sans',
         'bound_email_sans': 'bound-email-sans',
@@ -77,13 +79,14 @@ class UpdateAuthMethodCert(object):
         'unique_identifier': 'unique-identifier'
     }
 
-    def __init__(self, access_expires=0, bound_common_names=None, bound_dns_sans=None, bound_email_sans=None, bound_extensions=None, bound_ips=None, bound_organizational_units=None, bound_uri_sans=None, certificate_data=None, force_sub_claims=None, gw_bound_ips=None, json=False, jwt_ttl=0, name=None, new_name=None, revoked_cert_ids=None, token=None, uid_token=None, unique_identifier=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, access_expires=0, allowed_cors=None, bound_common_names=None, bound_dns_sans=None, bound_email_sans=None, bound_extensions=None, bound_ips=None, bound_organizational_units=None, bound_uri_sans=None, certificate_data=None, force_sub_claims=None, gw_bound_ips=None, json=False, jwt_ttl=0, name=None, new_name=None, revoked_cert_ids=None, token=None, uid_token=None, unique_identifier=None, local_vars_configuration=None):  # noqa: E501
         """UpdateAuthMethodCert - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._access_expires = None
+        self._allowed_cors = None
         self._bound_common_names = None
         self._bound_dns_sans = None
         self._bound_email_sans = None
@@ -106,6 +109,8 @@ class UpdateAuthMethodCert(object):
 
         if access_expires is not None:
             self.access_expires = access_expires
+        if allowed_cors is not None:
+            self.allowed_cors = allowed_cors
         if bound_common_names is not None:
             self.bound_common_names = bound_common_names
         if bound_dns_sans is not None:
@@ -163,6 +168,29 @@ class UpdateAuthMethodCert(object):
         """
 
         self._access_expires = access_expires
+
+    @property
+    def allowed_cors(self):
+        """Gets the allowed_cors of this UpdateAuthMethodCert.  # noqa: E501
+
+        Comma separated list of allowed CORS domains to be validated as part of the authentication flow.  # noqa: E501
+
+        :return: The allowed_cors of this UpdateAuthMethodCert.  # noqa: E501
+        :rtype: str
+        """
+        return self._allowed_cors
+
+    @allowed_cors.setter
+    def allowed_cors(self, allowed_cors):
+        """Sets the allowed_cors of this UpdateAuthMethodCert.
+
+        Comma separated list of allowed CORS domains to be validated as part of the authentication flow.  # noqa: E501
+
+        :param allowed_cors: The allowed_cors of this UpdateAuthMethodCert.  # noqa: E501
+        :type: str
+        """
+
+        self._allowed_cors = allowed_cors
 
     @property
     def bound_common_names(self):

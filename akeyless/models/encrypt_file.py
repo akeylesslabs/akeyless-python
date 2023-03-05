@@ -35,7 +35,6 @@ class EncryptFile(object):
     """
     openapi_types = {
         'display_id': 'str',
-        'encryption_context': 'dict(str, str)',
         '_in': 'str',
         'item_id': 'int',
         'json': 'bool',
@@ -47,7 +46,6 @@ class EncryptFile(object):
 
     attribute_map = {
         'display_id': 'display-id',
-        'encryption_context': 'encryption-context',
         '_in': 'in',
         'item_id': 'item-id',
         'json': 'json',
@@ -57,14 +55,13 @@ class EncryptFile(object):
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, display_id=None, encryption_context=None, _in=None, item_id=None, json=False, key_name=None, out=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, display_id=None, _in=None, item_id=None, json=False, key_name=None, out=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """EncryptFile - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._display_id = None
-        self._encryption_context = None
         self.__in = None
         self._item_id = None
         self._json = None
@@ -76,8 +73,6 @@ class EncryptFile(object):
 
         if display_id is not None:
             self.display_id = display_id
-        if encryption_context is not None:
-            self.encryption_context = encryption_context
         self._in = _in
         if item_id is not None:
             self.item_id = item_id
@@ -113,29 +108,6 @@ class EncryptFile(object):
         """
 
         self._display_id = display_id
-
-    @property
-    def encryption_context(self):
-        """Gets the encryption_context of this EncryptFile.  # noqa: E501
-
-        name-value pair that specifies the encryption context to be used for authenticated encryption. If used here, the same value must be supplied to the decrypt command or decryption will fail  # noqa: E501
-
-        :return: The encryption_context of this EncryptFile.  # noqa: E501
-        :rtype: dict(str, str)
-        """
-        return self._encryption_context
-
-    @encryption_context.setter
-    def encryption_context(self, encryption_context):
-        """Sets the encryption_context of this EncryptFile.
-
-        name-value pair that specifies the encryption context to be used for authenticated encryption. If used here, the same value must be supplied to the decrypt command or decryption will fail  # noqa: E501
-
-        :param encryption_context: The encryption_context of this EncryptFile.  # noqa: E501
-        :type: dict(str, str)
-        """
-
-        self._encryption_context = encryption_context
 
     @property
     def _in(self):

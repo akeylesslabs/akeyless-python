@@ -67,6 +67,7 @@ Method | HTTP request | Description
 [**delete_target**](V2Api.md#delete_target) | **POST** /delete-target | 
 [**delete_target_association**](V2Api.md#delete_target_association) | **POST** /delete-assoc-target-item | 
 [**delete_targets**](V2Api.md#delete_targets) | **POST** /delete-targets | 
+[**describe_assoc**](V2Api.md#describe_assoc) | **POST** /describe-role-am-assoc | 
 [**describe_item**](V2Api.md#describe_item) | **POST** /describe-item | 
 [**describe_permissions**](V2Api.md#describe_permissions) | **POST** /describe-permissions | 
 [**describe_sub_claims**](V2Api.md#describe_sub_claims) | **POST** /describe-sub-claims | 
@@ -105,6 +106,7 @@ Method | HTTP request | Description
 [**gateway_delete_k8_s_auth_config**](V2Api.md#gateway_delete_k8_s_auth_config) | **POST** /gateway-delete-k8s-auth-config | 
 [**gateway_delete_migration**](V2Api.md#gateway_delete_migration) | **POST** /gateway-delete-migration | 
 [**gateway_delete_producer**](V2Api.md#gateway_delete_producer) | **POST** /gateway-delete-producer | 
+[**gateway_download_customer_fragments**](V2Api.md#gateway_download_customer_fragments) | **POST** /gateway-download-customer-fragments | 
 [**gateway_get_config**](V2Api.md#gateway_get_config) | **POST** /gateway-get-config | 
 [**gateway_get_k8_s_auth_config**](V2Api.md#gateway_get_k8_s_auth_config) | **POST** /gateway-get-k8s-auth-config | 
 [**gateway_get_ldap_auth_config**](V2Api.md#gateway_get_ldap_auth_config) | **POST** /gateway-get-ldap-auth-config | 
@@ -166,6 +168,7 @@ Method | HTTP request | Description
 [**get_tags**](V2Api.md#get_tags) | **POST** /get-tags | 
 [**get_target**](V2Api.md#get_target) | **POST** /get-target | 
 [**get_target_details**](V2Api.md#get_target_details) | **POST** /get-target-details | 
+[**import_passwords**](V2Api.md#import_passwords) | **POST** /import-passwords | 
 [**kmip_client_delete_rule**](V2Api.md#kmip_client_delete_rule) | **POST** /kmip-client-delete-rule | 
 [**kmip_client_set_rule**](V2Api.md#kmip_client_set_rule) | **POST** /kmip-client-set-rule | 
 [**kmip_create_client**](V2Api.md#kmip_create_client) | **POST** /kmip-create-client | 
@@ -4047,6 +4050,66 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **describe_assoc**
+> RoleAssociationDetails describe_assoc(body)
+
+
+
+### Example
+
+```python
+from __future__ import print_function
+import time
+import akeyless
+from akeyless.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.akeyless.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = akeyless.Configuration(
+    host = "https://api.akeyless.io"
+)
+
+
+# Enter a context with an instance of the API client
+with akeyless.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = akeyless.V2Api(api_client)
+    body = akeyless.DescribeAssoc() # DescribeAssoc | 
+
+    try:
+        api_response = api_instance.describe_assoc(body)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling V2Api->describe_assoc: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**DescribeAssoc**](DescribeAssoc.md)|  | 
+
+### Return type
+
+[**RoleAssociationDetails**](RoleAssociationDetails.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | describeAssocResponse wraps response body. |  -  |
+**0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **describe_item**
 > Item describe_item(body)
 
@@ -6324,6 +6387,66 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | gatewayDeleteProducerResponse wraps response body. |  -  |
+**0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **gateway_download_customer_fragments**
+> GatewayDownloadCustomerFragmentsOutput gateway_download_customer_fragments(body)
+
+
+
+### Example
+
+```python
+from __future__ import print_function
+import time
+import akeyless
+from akeyless.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.akeyless.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = akeyless.Configuration(
+    host = "https://api.akeyless.io"
+)
+
+
+# Enter a context with an instance of the API client
+with akeyless.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = akeyless.V2Api(api_client)
+    body = akeyless.GatewayDownloadCustomerFragments() # GatewayDownloadCustomerFragments | 
+
+    try:
+        api_response = api_instance.gateway_download_customer_fragments(body)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling V2Api->gateway_download_customer_fragments: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**GatewayDownloadCustomerFragments**](GatewayDownloadCustomerFragments.md)|  | 
+
+### Return type
+
+[**GatewayDownloadCustomerFragmentsOutput**](GatewayDownloadCustomerFragmentsOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | gatewayDownloadCustomerFragmentsResponse wraps response body. |  -  |
 **0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -9978,6 +10101,66 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | getTargetDetailsResponse wraps response body. |  -  |
+**0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **import_passwords**
+> ImportPasswordsOutput import_passwords(body)
+
+
+
+### Example
+
+```python
+from __future__ import print_function
+import time
+import akeyless
+from akeyless.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.akeyless.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = akeyless.Configuration(
+    host = "https://api.akeyless.io"
+)
+
+
+# Enter a context with an instance of the API client
+with akeyless.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = akeyless.V2Api(api_client)
+    body = akeyless.ImportPasswords() # ImportPasswords | 
+
+    try:
+        api_response = api_instance.import_passwords(body)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling V2Api->import_passwords: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**ImportPasswords**](ImportPasswords.md)|  | 
+
+### Return type
+
+[**ImportPasswordsOutput**](ImportPasswordsOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | importPasswordsResponse wraps response body. |  -  |
 **0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

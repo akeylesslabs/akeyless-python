@@ -526,7 +526,7 @@ class GatewayCreateProducerOracleDb(object):
     def tags(self):
         """Gets the tags of this GatewayCreateProducerOracleDb.  # noqa: E501
 
-        List of the tags attached to this secret  # noqa: E501
+        Add tags attached to this object  # noqa: E501
 
         :return: The tags of this GatewayCreateProducerOracleDb.  # noqa: E501
         :rtype: list[str]
@@ -537,7 +537,7 @@ class GatewayCreateProducerOracleDb(object):
     def tags(self, tags):
         """Sets the tags of this GatewayCreateProducerOracleDb.
 
-        List of the tags attached to this secret  # noqa: E501
+        Add tags attached to this object  # noqa: E501
 
         :param tags: The tags of this GatewayCreateProducerOracleDb.  # noqa: E501
         :type: list[str]

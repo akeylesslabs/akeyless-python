@@ -3,6 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**allowed_cors** | **list[str]** | a list of allowed cors domains if used for browser authentication | [optional] 
 **bound_common_names** | **list[str]** | A list of names. At least one must exist in the Common Name. Supports globbing. | [optional] 
 **bound_dns_sans** | **list[str]** | A list of DNS names. At least one must exist in the SANs. Supports globbing. | [optional] 
 **bound_email_sans** | **list[str]** | A list of Email Addresses. At least one must exist in the SANs. Supports globbing. | [optional] 

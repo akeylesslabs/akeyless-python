@@ -34,6 +34,7 @@ class CertAccessRules(object):
                             and the value is json key in definition.
     """
     openapi_types = {
+        'allowed_cors': 'list[str]',
         'bound_common_names': 'list[str]',
         'bound_dns_sans': 'list[str]',
         'bound_email_sans': 'list[str]',
@@ -46,6 +47,7 @@ class CertAccessRules(object):
     }
 
     attribute_map = {
+        'allowed_cors': 'allowed_cors',
         'bound_common_names': 'bound_common_names',
         'bound_dns_sans': 'bound_dns_sans',
         'bound_email_sans': 'bound_email_sans',
@@ -57,12 +59,13 @@ class CertAccessRules(object):
         'unique_identifier': 'unique_identifier'
     }
 
-    def __init__(self, bound_common_names=None, bound_dns_sans=None, bound_email_sans=None, bound_extensions=None, bound_organizational_units=None, bound_uri_sans=None, certificate=None, revoked_cert_ids=None, unique_identifier=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, allowed_cors=None, bound_common_names=None, bound_dns_sans=None, bound_email_sans=None, bound_extensions=None, bound_organizational_units=None, bound_uri_sans=None, certificate=None, revoked_cert_ids=None, unique_identifier=None, local_vars_configuration=None):  # noqa: E501
         """CertAccessRules - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
+        self._allowed_cors = None
         self._bound_common_names = None
         self._bound_dns_sans = None
         self._bound_email_sans = None
@@ -74,6 +77,8 @@ class CertAccessRules(object):
         self._unique_identifier = None
         self.discriminator = None
 
+        if allowed_cors is not None:
+            self.allowed_cors = allowed_cors
         if bound_common_names is not None:
             self.bound_common_names = bound_common_names
         if bound_dns_sans is not None:
@@ -92,6 +97,29 @@ class CertAccessRules(object):
             self.revoked_cert_ids = revoked_cert_ids
         if unique_identifier is not None:
             self.unique_identifier = unique_identifier
+
+    @property
+    def allowed_cors(self):
+        """Gets the allowed_cors of this CertAccessRules.  # noqa: E501
+
+        a list of allowed cors domains if used for browser authentication  # noqa: E501
+
+        :return: The allowed_cors of this CertAccessRules.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._allowed_cors
+
+    @allowed_cors.setter
+    def allowed_cors(self, allowed_cors):
+        """Sets the allowed_cors of this CertAccessRules.
+
+        a list of allowed cors domains if used for browser authentication  # noqa: E501
+
+        :param allowed_cors: The allowed_cors of this CertAccessRules.  # noqa: E501
+        :type: list[str]
+        """
+
+        self._allowed_cors = allowed_cors
 
     @property
     def bound_common_names(self):

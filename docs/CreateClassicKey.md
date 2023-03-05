@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 **metadata** | **str** | Deprecated - use description | [optional] 
 **name** | **str** | ClassicKey name | 
 **protection_key_name** | **str** | The name of a key that used to encrypt the secret value (if empty, the account default protectionKey key will be used) | [optional] 
-**tags** | **list[str]** | List of the tags attached to this classic key | [optional] 
+**tags** | **list[str]** | Add tags attached to this object | [optional] 
 **token** | **str** | Authentication token (see &#x60;/auth&#x60; and &#x60;/configure&#x60;) | [optional] 
 **uid_token** | **str** | The universal identity token, Required only for universal_identity authentication | [optional] 
 

@@ -34,48 +34,83 @@ class DecryptFile(object):
                             and the value is json key in definition.
     """
     openapi_types = {
+        'cyphertext_header': 'str',
         'display_id': 'str',
+        '_in': 'str',
         'item_id': 'int',
         'json': 'bool',
         'key_name': 'str',
+        'out': 'str',
         'token': 'str',
         'uid_token': 'str'
     }
 
     attribute_map = {
+        'cyphertext_header': 'cyphertext-header',
         'display_id': 'display-id',
+        '_in': 'in',
         'item_id': 'item-id',
         'json': 'json',
         'key_name': 'key-name',
+        'out': 'out',
         'token': 'token',
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, display_id=None, item_id=None, json=False, key_name=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, cyphertext_header=None, display_id=None, _in=None, item_id=None, json=False, key_name=None, out=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """DecryptFile - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
+        self._cyphertext_header = None
         self._display_id = None
+        self.__in = None
         self._item_id = None
         self._json = None
         self._key_name = None
+        self._out = None
         self._token = None
         self._uid_token = None
         self.discriminator = None
 
+        if cyphertext_header is not None:
+            self.cyphertext_header = cyphertext_header
         if display_id is not None:
             self.display_id = display_id
+        self._in = _in
         if item_id is not None:
             self.item_id = item_id
         if json is not None:
             self.json = json
         self.key_name = key_name
+        if out is not None:
+            self.out = out
         if token is not None:
             self.token = token
         if uid_token is not None:
             self.uid_token = uid_token
+
+    @property
+    def cyphertext_header(self):
+        """Gets the cyphertext_header of this DecryptFile.  # noqa: E501
+
+
+        :return: The cyphertext_header of this DecryptFile.  # noqa: E501
+        :rtype: str
+        """
+        return self._cyphertext_header
+
+    @cyphertext_header.setter
+    def cyphertext_header(self, cyphertext_header):
+        """Sets the cyphertext_header of this DecryptFile.
+
+
+        :param cyphertext_header: The cyphertext_header of this DecryptFile.  # noqa: E501
+        :type: str
+        """
+
+        self._cyphertext_header = cyphertext_header
 
     @property
     def display_id(self):
@@ -99,6 +134,31 @@ class DecryptFile(object):
         """
 
         self._display_id = display_id
+
+    @property
+    def _in(self):
+        """Gets the _in of this DecryptFile.  # noqa: E501
+
+        Path to the file to be decrypted. If not provided, the content will be taken from stdin  # noqa: E501
+
+        :return: The _in of this DecryptFile.  # noqa: E501
+        :rtype: str
+        """
+        return self.__in
+
+    @_in.setter
+    def _in(self, _in):
+        """Sets the _in of this DecryptFile.
+
+        Path to the file to be decrypted. If not provided, the content will be taken from stdin  # noqa: E501
+
+        :param _in: The _in of this DecryptFile.  # noqa: E501
+        :type: str
+        """
+        if self.local_vars_configuration.client_side_validation and _in is None:  # noqa: E501
+            raise ValueError("Invalid value for `_in`, must not be `None`")  # noqa: E501
+
+        self.__in = _in
 
     @property
     def item_id(self):
@@ -170,6 +230,29 @@ class DecryptFile(object):
             raise ValueError("Invalid value for `key_name`, must not be `None`")  # noqa: E501
 
         self._key_name = key_name
+
+    @property
+    def out(self):
+        """Gets the out of this DecryptFile.  # noqa: E501
+
+        Path to the output file. If not provided, the output will be sent to stdout  # noqa: E501
+
+        :return: The out of this DecryptFile.  # noqa: E501
+        :rtype: str
+        """
+        return self._out
+
+    @out.setter
+    def out(self, out):
+        """Sets the out of this DecryptFile.
+
+        Path to the output file. If not provided, the output will be sent to stdout  # noqa: E501
+
+        :param out: The out of this DecryptFile.  # noqa: E501
+        :type: str
+        """
+
+        self._out = out
 
     @property
     def token(self):
