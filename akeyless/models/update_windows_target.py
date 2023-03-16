@@ -34,6 +34,7 @@ class UpdateWindowsTarget(object):
                             and the value is json key in definition.
     """
     openapi_types = {
+        'certificate': 'str',
         'description': 'str',
         'hostname': 'str',
         'json': 'bool',
@@ -46,10 +47,12 @@ class UpdateWindowsTarget(object):
         'token': 'str',
         'uid_token': 'str',
         'update_version': 'bool',
+        'use_tls': 'str',
         'username': 'str'
     }
 
     attribute_map = {
+        'certificate': 'certificate',
         'description': 'description',
         'hostname': 'hostname',
         'json': 'json',
@@ -62,15 +65,17 @@ class UpdateWindowsTarget(object):
         'token': 'token',
         'uid_token': 'uid-token',
         'update_version': 'update-version',
+        'use_tls': 'use-tls',
         'username': 'username'
     }
 
-    def __init__(self, description=None, hostname=None, json=False, keep_prev_version=None, key=None, name=None, new_name=None, password=None, port='5986', token=None, uid_token=None, update_version=None, username=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, certificate=None, description=None, hostname=None, json=False, keep_prev_version=None, key=None, name=None, new_name=None, password=None, port='5986', token=None, uid_token=None, update_version=None, use_tls='true', username=None, local_vars_configuration=None):  # noqa: E501
         """UpdateWindowsTarget - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
+        self._certificate = None
         self._description = None
         self._hostname = None
         self._json = None
@@ -83,13 +88,15 @@ class UpdateWindowsTarget(object):
         self._token = None
         self._uid_token = None
         self._update_version = None
+        self._use_tls = None
         self._username = None
         self.discriminator = None
 
+        if certificate is not None:
+            self.certificate = certificate
         if description is not None:
             self.description = description
-        if hostname is not None:
-            self.hostname = hostname
+        self.hostname = hostname
         if json is not None:
             self.json = json
         if keep_prev_version is not None:
@@ -99,8 +106,7 @@ class UpdateWindowsTarget(object):
         self.name = name
         if new_name is not None:
             self.new_name = new_name
-        if password is not None:
-            self.password = password
+        self.password = password
         if port is not None:
             self.port = port
         if token is not None:
@@ -109,8 +115,32 @@ class UpdateWindowsTarget(object):
             self.uid_token = uid_token
         if update_version is not None:
             self.update_version = update_version
-        if username is not None:
-            self.username = username
+        if use_tls is not None:
+            self.use_tls = use_tls
+        self.username = username
+
+    @property
+    def certificate(self):
+        """Gets the certificate of this UpdateWindowsTarget.  # noqa: E501
+
+        SSL CA certificate in base64 encoding generated from a trusted Certificate Authority (CA)  # noqa: E501
+
+        :return: The certificate of this UpdateWindowsTarget.  # noqa: E501
+        :rtype: str
+        """
+        return self._certificate
+
+    @certificate.setter
+    def certificate(self, certificate):
+        """Sets the certificate of this UpdateWindowsTarget.
+
+        SSL CA certificate in base64 encoding generated from a trusted Certificate Authority (CA)  # noqa: E501
+
+        :param certificate: The certificate of this UpdateWindowsTarget.  # noqa: E501
+        :type: str
+        """
+
+        self._certificate = certificate
 
     @property
     def description(self):
@@ -155,6 +185,8 @@ class UpdateWindowsTarget(object):
         :param hostname: The hostname of this UpdateWindowsTarget.  # noqa: E501
         :type: str
         """
+        if self.local_vars_configuration.client_side_validation and hostname is None:  # noqa: E501
+            raise ValueError("Invalid value for `hostname`, must not be `None`")  # noqa: E501
 
         self._hostname = hostname
 
@@ -279,7 +311,7 @@ class UpdateWindowsTarget(object):
     def password(self):
         """Gets the password of this UpdateWindowsTarget.  # noqa: E501
 
-        The privileged user password  # noqa: E501
+        Privileged user password  # noqa: E501
 
         :return: The password of this UpdateWindowsTarget.  # noqa: E501
         :rtype: str
@@ -290,11 +322,13 @@ class UpdateWindowsTarget(object):
     def password(self, password):
         """Sets the password of this UpdateWindowsTarget.
 
-        The privileged user password  # noqa: E501
+        Privileged user password  # noqa: E501
 
         :param password: The password of this UpdateWindowsTarget.  # noqa: E501
         :type: str
         """
+        if self.local_vars_configuration.client_side_validation and password is None:  # noqa: E501
+            raise ValueError("Invalid value for `password`, must not be `None`")  # noqa: E501
 
         self._password = password
 
@@ -302,7 +336,7 @@ class UpdateWindowsTarget(object):
     def port(self):
         """Gets the port of this UpdateWindowsTarget.  # noqa: E501
 
-        Server WinRM HTTPS port  # noqa: E501
+        Server WinRM port  # noqa: E501
 
         :return: The port of this UpdateWindowsTarget.  # noqa: E501
         :rtype: str
@@ -313,7 +347,7 @@ class UpdateWindowsTarget(object):
     def port(self, port):
         """Sets the port of this UpdateWindowsTarget.
 
-        Server WinRM HTTPS port  # noqa: E501
+        Server WinRM port  # noqa: E501
 
         :param port: The port of this UpdateWindowsTarget.  # noqa: E501
         :type: str
@@ -391,6 +425,29 @@ class UpdateWindowsTarget(object):
         self._update_version = update_version
 
     @property
+    def use_tls(self):
+        """Gets the use_tls of this UpdateWindowsTarget.  # noqa: E501
+
+        Enable/Disable TLS for WinRM over HTTPS [true/false]  # noqa: E501
+
+        :return: The use_tls of this UpdateWindowsTarget.  # noqa: E501
+        :rtype: str
+        """
+        return self._use_tls
+
+    @use_tls.setter
+    def use_tls(self, use_tls):
+        """Sets the use_tls of this UpdateWindowsTarget.
+
+        Enable/Disable TLS for WinRM over HTTPS [true/false]  # noqa: E501
+
+        :param use_tls: The use_tls of this UpdateWindowsTarget.  # noqa: E501
+        :type: str
+        """
+
+        self._use_tls = use_tls
+
+    @property
     def username(self):
         """Gets the username of this UpdateWindowsTarget.  # noqa: E501
 
@@ -410,6 +467,8 @@ class UpdateWindowsTarget(object):
         :param username: The username of this UpdateWindowsTarget.  # noqa: E501
         :type: str
         """
+        if self.local_vars_configuration.client_side_validation and username is None:  # noqa: E501
+            raise ValueError("Invalid value for `username`, must not be `None`")  # noqa: E501
 
         self._username = username
 

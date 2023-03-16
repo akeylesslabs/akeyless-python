@@ -37,6 +37,7 @@ class Item(object):
         'access_date': 'datetime',
         'access_request_status': 'str',
         'auto_rotate': 'bool',
+        'bastion_details': 'BastionsList',
         'cert_issuer_signer_key_name': 'str',
         'certificate_issue_details': 'CertificateIssueInfo',
         'certificates': 'str',
@@ -78,6 +79,7 @@ class Item(object):
         'access_date': 'access_date',
         'access_request_status': 'access_request_status',
         'auto_rotate': 'auto_rotate',
+        'bastion_details': 'bastion_details',
         'cert_issuer_signer_key_name': 'cert_issuer_signer_key_name',
         'certificate_issue_details': 'certificate_issue_details',
         'certificates': 'certificates',
@@ -115,7 +117,7 @@ class Item(object):
         'with_customer_fragment': 'with_customer_fragment'
     }
 
-    def __init__(self, access_date=None, access_request_status=None, auto_rotate=None, cert_issuer_signer_key_name=None, certificate_issue_details=None, certificates=None, client_permissions=None, creation_date=None, customer_fragment_id=None, delete_protection=None, deletion_date=None, display_id=None, gateway_details=None, is_access_request_enabled=None, is_enabled=None, item_accessibility=None, item_general_info=None, item_id=None, item_metadata=None, item_name=None, item_size=None, item_state=None, item_sub_type=None, item_tags=None, item_targets_assoc=None, item_type=None, item_versions=None, last_version=None, linked_details=None, modification_date=None, next_rotation_date=None, protection_key_name=None, protection_key_type=None, public_value=None, rotation_interval=None, shared_by=None, target_versions=None, with_customer_fragment=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, access_date=None, access_request_status=None, auto_rotate=None, bastion_details=None, cert_issuer_signer_key_name=None, certificate_issue_details=None, certificates=None, client_permissions=None, creation_date=None, customer_fragment_id=None, delete_protection=None, deletion_date=None, display_id=None, gateway_details=None, is_access_request_enabled=None, is_enabled=None, item_accessibility=None, item_general_info=None, item_id=None, item_metadata=None, item_name=None, item_size=None, item_state=None, item_sub_type=None, item_tags=None, item_targets_assoc=None, item_type=None, item_versions=None, last_version=None, linked_details=None, modification_date=None, next_rotation_date=None, protection_key_name=None, protection_key_type=None, public_value=None, rotation_interval=None, shared_by=None, target_versions=None, with_customer_fragment=None, local_vars_configuration=None):  # noqa: E501
         """Item - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -124,6 +126,7 @@ class Item(object):
         self._access_date = None
         self._access_request_status = None
         self._auto_rotate = None
+        self._bastion_details = None
         self._cert_issuer_signer_key_name = None
         self._certificate_issue_details = None
         self._certificates = None
@@ -167,6 +170,8 @@ class Item(object):
             self.access_request_status = access_request_status
         if auto_rotate is not None:
             self.auto_rotate = auto_rotate
+        if bastion_details is not None:
+            self.bastion_details = bastion_details
         if cert_issuer_signer_key_name is not None:
             self.cert_issuer_signer_key_name = cert_issuer_signer_key_name
         if certificate_issue_details is not None:
@@ -300,6 +305,27 @@ class Item(object):
         """
 
         self._auto_rotate = auto_rotate
+
+    @property
+    def bastion_details(self):
+        """Gets the bastion_details of this Item.  # noqa: E501
+
+
+        :return: The bastion_details of this Item.  # noqa: E501
+        :rtype: BastionsList
+        """
+        return self._bastion_details
+
+    @bastion_details.setter
+    def bastion_details(self, bastion_details):
+        """Sets the bastion_details of this Item.
+
+
+        :param bastion_details: The bastion_details of this Item.  # noqa: E501
+        :type: BastionsList
+        """
+
+        self._bastion_details = bastion_details
 
     @property
     def cert_issuer_signer_key_name(self):

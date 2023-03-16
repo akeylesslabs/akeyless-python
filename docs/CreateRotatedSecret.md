@@ -32,7 +32,7 @@ Name | Type | Description | Notes
 **secure_access_db_name** | **str** | The DB name (relevant only for DB Dynamic-Secret) | [optional] 
 **secure_access_db_schema** | **str** | The db schema (relevant only for mssql or postgresql) | [optional] 
 **secure_access_enable** | **str** | Enable/Disable secure remote access [true/false] | [optional] 
-**secure_access_host** | **list[str]** | Target servers for connections | [optional] 
+**secure_access_host** | **list[str]** | Target servers for connections (In case of Linked Target association, host(s) will inherit Linked Target hosts - Relevant only for Dynamic Secrets/producers) | [optional] 
 **secure_access_rdp_domain** | **str** | Required when the Dynamic Secret is used for a domain user (relevant only for RDP Dynamic-Secret) | [optional] 
 **secure_access_rdp_user** | **str** | Override the RDP Domain username (relevant only for rdp) | [optional] 
 **secure_access_web** | **bool** | Enable Web Secure Remote Access | [optional] [default to False]

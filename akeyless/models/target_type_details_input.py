@@ -53,6 +53,7 @@ class TargetTypeDetailsInput(object):
         'azure_tenant_id': 'str',
         'ca_cert_data': 'list[int]',
         'ca_cert_name': 'str',
+        'certificate': 'str',
         'chef_server_host_name': 'str',
         'chef_server_key': 'str',
         'chef_server_port': 'str',
@@ -128,6 +129,7 @@ class TargetTypeDetailsInput(object):
         'tenant_url': 'str',
         'url': 'str',
         'use_gw_cloud_identity': 'bool',
+        'use_tls': 'bool',
         'user_name': 'str',
         'user_password': 'str',
         'username': 'str',
@@ -159,6 +161,7 @@ class TargetTypeDetailsInput(object):
         'azure_tenant_id': 'azure_tenant_id',
         'ca_cert_data': 'ca_cert_data',
         'ca_cert_name': 'ca_cert_name',
+        'certificate': 'certificate',
         'chef_server_host_name': 'chef_server_host_name',
         'chef_server_key': 'chef_server_key',
         'chef_server_port': 'chef_server_port',
@@ -234,6 +237,7 @@ class TargetTypeDetailsInput(object):
         'tenant_url': 'tenant_url',
         'url': 'url',
         'use_gw_cloud_identity': 'use_gw_cloud_identity',
+        'use_tls': 'use_tls',
         'user_name': 'user_name',
         'user_password': 'user_password',
         'username': 'username',
@@ -245,7 +249,7 @@ class TargetTypeDetailsInput(object):
         'venafi_zone': 'venafi_zone'
     }
 
-    def __init__(self, administrative_port=None, app_private_key=None, artifactory_admin_apikey=None, artifactory_admin_username=None, artifactory_base_url=None, auth_flow=None, authorization_port=None, aws_access_key_id=None, aws_region=None, aws_secret_access_key=None, aws_session_token=None, azure_client_id=None, azure_client_secret=None, azure_resource_group_name=None, azure_resource_name=None, azure_subscription_id=None, azure_tenant_id=None, ca_cert_data=None, ca_cert_name=None, chef_server_host_name=None, chef_server_key=None, chef_server_port=None, chef_server_url=None, chef_server_username=None, chef_skip_ssl=None, client_id=None, client_secret=None, db_host_name=None, db_name=None, db_port=None, db_private_key=None, db_private_key_passphrase=None, db_pwd=None, db_server_certificates=None, db_server_name=None, db_user_name=None, eks_access_key_id=None, eks_cluster_ca_certificate=None, eks_cluster_endpoint=None, eks_cluster_name=None, eks_region=None, eks_secret_access_key=None, gcp_service_account_email=None, gcp_service_account_key=None, gcp_service_account_key_base64=None, github_app_id=None, github_app_private_key=None, github_base_url=None, gke_cluster_ca_certificate=None, gke_cluster_endpoint=None, gke_cluster_name=None, gke_service_account_key=None, gke_service_account_name=None, host=None, hostname=None, hosts=None, implementation_type=None, k8s_bearer_token=None, k8s_cluster_ca_certificate=None, k8s_cluster_endpoint=None, ldap_audience=None, ldap_bind_dn=None, ldap_bind_password=None, ldap_certificate=None, ldap_token_expiration=None, ldap_url=None, mongodb_atlas_api_private_key=None, mongodb_atlas_api_public_key=None, mongodb_atlas_project_id=None, mongodb_db_name=None, mongodb_default_auth_db=None, mongodb_host_port=None, mongodb_is_atlas=None, mongodb_password=None, mongodb_uri_connection=None, mongodb_uri_options=None, mongodb_username=None, password=None, payload=None, ping_url=None, port=None, private_key=None, private_key_password=None, privileged_user=None, rabbitmq_server_password=None, rabbitmq_server_uri=None, rabbitmq_server_user=None, security_token=None, sf_account=None, ssl_connection_certificate=None, ssl_connection_mode=None, tenant_url=None, url=None, use_gw_cloud_identity=None, user_name=None, user_password=None, username=None, venafi_api_key=None, venafi_base_url=None, venafi_tpp_password=None, venafi_tpp_username=None, venafi_use_tpp=None, venafi_zone=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, administrative_port=None, app_private_key=None, artifactory_admin_apikey=None, artifactory_admin_username=None, artifactory_base_url=None, auth_flow=None, authorization_port=None, aws_access_key_id=None, aws_region=None, aws_secret_access_key=None, aws_session_token=None, azure_client_id=None, azure_client_secret=None, azure_resource_group_name=None, azure_resource_name=None, azure_subscription_id=None, azure_tenant_id=None, ca_cert_data=None, ca_cert_name=None, certificate=None, chef_server_host_name=None, chef_server_key=None, chef_server_port=None, chef_server_url=None, chef_server_username=None, chef_skip_ssl=None, client_id=None, client_secret=None, db_host_name=None, db_name=None, db_port=None, db_private_key=None, db_private_key_passphrase=None, db_pwd=None, db_server_certificates=None, db_server_name=None, db_user_name=None, eks_access_key_id=None, eks_cluster_ca_certificate=None, eks_cluster_endpoint=None, eks_cluster_name=None, eks_region=None, eks_secret_access_key=None, gcp_service_account_email=None, gcp_service_account_key=None, gcp_service_account_key_base64=None, github_app_id=None, github_app_private_key=None, github_base_url=None, gke_cluster_ca_certificate=None, gke_cluster_endpoint=None, gke_cluster_name=None, gke_service_account_key=None, gke_service_account_name=None, host=None, hostname=None, hosts=None, implementation_type=None, k8s_bearer_token=None, k8s_cluster_ca_certificate=None, k8s_cluster_endpoint=None, ldap_audience=None, ldap_bind_dn=None, ldap_bind_password=None, ldap_certificate=None, ldap_token_expiration=None, ldap_url=None, mongodb_atlas_api_private_key=None, mongodb_atlas_api_public_key=None, mongodb_atlas_project_id=None, mongodb_db_name=None, mongodb_default_auth_db=None, mongodb_host_port=None, mongodb_is_atlas=None, mongodb_password=None, mongodb_uri_connection=None, mongodb_uri_options=None, mongodb_username=None, password=None, payload=None, ping_url=None, port=None, private_key=None, private_key_password=None, privileged_user=None, rabbitmq_server_password=None, rabbitmq_server_uri=None, rabbitmq_server_user=None, security_token=None, sf_account=None, ssl_connection_certificate=None, ssl_connection_mode=None, tenant_url=None, url=None, use_gw_cloud_identity=None, use_tls=None, user_name=None, user_password=None, username=None, venafi_api_key=None, venafi_base_url=None, venafi_tpp_password=None, venafi_tpp_username=None, venafi_use_tpp=None, venafi_zone=None, local_vars_configuration=None):  # noqa: E501
         """TargetTypeDetailsInput - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -270,6 +274,7 @@ class TargetTypeDetailsInput(object):
         self._azure_tenant_id = None
         self._ca_cert_data = None
         self._ca_cert_name = None
+        self._certificate = None
         self._chef_server_host_name = None
         self._chef_server_key = None
         self._chef_server_port = None
@@ -345,6 +350,7 @@ class TargetTypeDetailsInput(object):
         self._tenant_url = None
         self._url = None
         self._use_gw_cloud_identity = None
+        self._use_tls = None
         self._user_name = None
         self._user_password = None
         self._username = None
@@ -394,6 +400,8 @@ class TargetTypeDetailsInput(object):
             self.ca_cert_data = ca_cert_data
         if ca_cert_name is not None:
             self.ca_cert_name = ca_cert_name
+        if certificate is not None:
+            self.certificate = certificate
         if chef_server_host_name is not None:
             self.chef_server_host_name = chef_server_host_name
         if chef_server_key is not None:
@@ -544,6 +552,8 @@ class TargetTypeDetailsInput(object):
             self.url = url
         if use_gw_cloud_identity is not None:
             self.use_gw_cloud_identity = use_gw_cloud_identity
+        if use_tls is not None:
+            self.use_tls = use_tls
         if user_name is not None:
             self.user_name = user_name
         if user_password is not None:
@@ -967,6 +977,27 @@ class TargetTypeDetailsInput(object):
         """
 
         self._ca_cert_name = ca_cert_name
+
+    @property
+    def certificate(self):
+        """Gets the certificate of this TargetTypeDetailsInput.  # noqa: E501
+
+
+        :return: The certificate of this TargetTypeDetailsInput.  # noqa: E501
+        :rtype: str
+        """
+        return self._certificate
+
+    @certificate.setter
+    def certificate(self, certificate):
+        """Sets the certificate of this TargetTypeDetailsInput.
+
+
+        :param certificate: The certificate of this TargetTypeDetailsInput.  # noqa: E501
+        :type: str
+        """
+
+        self._certificate = certificate
 
     @property
     def chef_server_host_name(self):
@@ -2562,6 +2593,27 @@ class TargetTypeDetailsInput(object):
         """
 
         self._use_gw_cloud_identity = use_gw_cloud_identity
+
+    @property
+    def use_tls(self):
+        """Gets the use_tls of this TargetTypeDetailsInput.  # noqa: E501
+
+
+        :return: The use_tls of this TargetTypeDetailsInput.  # noqa: E501
+        :rtype: bool
+        """
+        return self._use_tls
+
+    @use_tls.setter
+    def use_tls(self, use_tls):
+        """Sets the use_tls of this TargetTypeDetailsInput.
+
+
+        :param use_tls: The use_tls of this TargetTypeDetailsInput.  # noqa: E501
+        :type: bool
+        """
+
+        self._use_tls = use_tls
 
     @property
     def user_name(self):

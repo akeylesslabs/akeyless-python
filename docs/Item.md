@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 **access_date** | **datetime** |  | [optional] 
 **access_request_status** | **str** |  | [optional] 
 **auto_rotate** | **bool** |  | [optional] 
+**bastion_details** | [**BastionsList**](BastionsList.md) |  | [optional] 
 **cert_issuer_signer_key_name** | **str** |  | [optional] 
 **certificate_issue_details** | [**CertificateIssueInfo**](CertificateIssueInfo.md) |  | [optional] 
 **certificates** | **str** |  | [optional] 

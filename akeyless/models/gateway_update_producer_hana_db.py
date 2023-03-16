@@ -508,7 +508,7 @@ class GatewayUpdateProducerHanaDb(object):
     def secure_access_host(self):
         """Gets the secure_access_host of this GatewayUpdateProducerHanaDb.  # noqa: E501
 
-        Target DB servers for connections  # noqa: E501
+        Target DB servers for connections (In case of Linked Target association, host(s) will inherit Linked Target hosts)  # noqa: E501
 
         :return: The secure_access_host of this GatewayUpdateProducerHanaDb.  # noqa: E501
         :rtype: list[str]
@@ -519,7 +519,7 @@ class GatewayUpdateProducerHanaDb(object):
     def secure_access_host(self, secure_access_host):
         """Sets the secure_access_host of this GatewayUpdateProducerHanaDb.
 
-        Target DB servers for connections  # noqa: E501
+        Target DB servers for connections (In case of Linked Target association, host(s) will inherit Linked Target hosts)  # noqa: E501
 
         :param secure_access_host: The secure_access_host of this GatewayUpdateProducerHanaDb.  # noqa: E501
         :type: list[str]

@@ -35,15 +35,17 @@ class LastStatusInfo(object):
     """
     openapi_types = {
         'migrations_status': 'MigrationStatus',
-        'producers_errors': 'object'
+        'producers_errors': 'object',
+        'was_migrations_copied_to_new_table': 'bool'
     }
 
     attribute_map = {
         'migrations_status': 'migrations_status',
-        'producers_errors': 'producers_errors'
+        'producers_errors': 'producers_errors',
+        'was_migrations_copied_to_new_table': 'was_migrations_copied_to_new_table'
     }
 
-    def __init__(self, migrations_status=None, producers_errors=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, migrations_status=None, producers_errors=None, was_migrations_copied_to_new_table=None, local_vars_configuration=None):  # noqa: E501
         """LastStatusInfo - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -51,12 +53,15 @@ class LastStatusInfo(object):
 
         self._migrations_status = None
         self._producers_errors = None
+        self._was_migrations_copied_to_new_table = None
         self.discriminator = None
 
         if migrations_status is not None:
             self.migrations_status = migrations_status
         if producers_errors is not None:
             self.producers_errors = producers_errors
+        if was_migrations_copied_to_new_table is not None:
+            self.was_migrations_copied_to_new_table = was_migrations_copied_to_new_table
 
     @property
     def migrations_status(self):
@@ -99,6 +104,29 @@ class LastStatusInfo(object):
         """
 
         self._producers_errors = producers_errors
+
+    @property
+    def was_migrations_copied_to_new_table(self):
+        """Gets the was_migrations_copied_to_new_table of this LastStatusInfo.  # noqa: E501
+
+        flag to indicate migrationStatus copied to new table  # noqa: E501
+
+        :return: The was_migrations_copied_to_new_table of this LastStatusInfo.  # noqa: E501
+        :rtype: bool
+        """
+        return self._was_migrations_copied_to_new_table
+
+    @was_migrations_copied_to_new_table.setter
+    def was_migrations_copied_to_new_table(self, was_migrations_copied_to_new_table):
+        """Sets the was_migrations_copied_to_new_table of this LastStatusInfo.
+
+        flag to indicate migrationStatus copied to new table  # noqa: E501
+
+        :param was_migrations_copied_to_new_table: The was_migrations_copied_to_new_table of this LastStatusInfo.  # noqa: E501
+        :type: bool
+        """
+
+        self._was_migrations_copied_to_new_table = was_migrations_copied_to_new_table
 
     def to_dict(self):
         """Returns the model properties as a dict"""

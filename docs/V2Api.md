@@ -31,6 +31,7 @@ Method | HTTP request | Description
 [**create_dockerhub_target**](V2Api.md#create_dockerhub_target) | **POST** /create-dockerhub-target | 
 [**create_dynamic_secret**](V2Api.md#create_dynamic_secret) | **POST** /create-dynamic-secret | 
 [**create_eks_target**](V2Api.md#create_eks_target) | **POST** /create-eks-target | 
+[**create_esm**](V2Api.md#create_esm) | **POST** /create-esm | 
 [**create_event_forwarder**](V2Api.md#create_event_forwarder) | **POST** /create-event-forwarder | 
 [**create_gcp_target**](V2Api.md#create_gcp_target) | **POST** /create-gcp-target | 
 [**create_github_target**](V2Api.md#create_github_target) | **POST** /create-github-target | 
@@ -75,6 +76,11 @@ Method | HTTP request | Description
 [**encrypt**](V2Api.md#encrypt) | **POST** /encrypt | 
 [**encrypt_gpg**](V2Api.md#encrypt_gpg) | **POST** /encrypt-gpg | 
 [**encrypt_with_classic_key**](V2Api.md#encrypt_with_classic_key) | **POST** /encrypt-with-classic-key | 
+[**esm_create**](V2Api.md#esm_create) | **POST** /esm-create | 
+[**esm_delete**](V2Api.md#esm_delete) | **POST** /esm-delete | 
+[**esm_get**](V2Api.md#esm_get) | **POST** /esm-get | 
+[**esm_list**](V2Api.md#esm_list) | **POST** /esm-list | 
+[**esm_update**](V2Api.md#esm_update) | **POST** /esm-update | 
 [**export_classic_key**](V2Api.md#export_classic_key) | **POST** /export-classic-key | 
 [**gateway_create_k8_s_auth_config**](V2Api.md#gateway_create_k8_s_auth_config) | **POST** /gateway-create-k8s-auth-config | 
 [**gateway_create_migration**](V2Api.md#gateway_create_migration) | **POST** /gateway-create-migration | 
@@ -100,6 +106,7 @@ Method | HTTP request | Description
 [**gateway_create_producer_postgre_sql**](V2Api.md#gateway_create_producer_postgre_sql) | **POST** /gateway-create-producer-postgresql | 
 [**gateway_create_producer_rabbit_mq**](V2Api.md#gateway_create_producer_rabbit_mq) | **POST** /gateway-create-producer-rabbitmq | 
 [**gateway_create_producer_rdp**](V2Api.md#gateway_create_producer_rdp) | **POST** /gateway-create-producer-rdp | 
+[**gateway_create_producer_redis**](V2Api.md#gateway_create_producer_redis) | **POST** /gateway-create-producer-Redis | 
 [**gateway_create_producer_redshift**](V2Api.md#gateway_create_producer_redshift) | **POST** /gateway-create-producer-redshift | 
 [**gateway_create_producer_snowflake**](V2Api.md#gateway_create_producer_snowflake) | **POST** /gateway-create-producer-snowflake | 
 [**gateway_delete_allowed_management_access**](V2Api.md#gateway_delete_allowed_management_access) | **POST** /gateway-delete-allowed-management-access | 
@@ -148,6 +155,7 @@ Method | HTTP request | Description
 [**gateway_update_producer_postgre_sql**](V2Api.md#gateway_update_producer_postgre_sql) | **POST** /gateway-update-producer-postgresql | 
 [**gateway_update_producer_rabbit_mq**](V2Api.md#gateway_update_producer_rabbit_mq) | **POST** /gateway-update-producer-rabbitmq | 
 [**gateway_update_producer_rdp**](V2Api.md#gateway_update_producer_rdp) | **POST** /gateway-update-producer-rdp | 
+[**gateway_update_producer_redis**](V2Api.md#gateway_update_producer_redis) | **POST** /gateway-update-producer-redis | 
 [**gateway_update_producer_redshift**](V2Api.md#gateway_update_producer_redshift) | **POST** /gateway-update-producer-redshift | 
 [**gateway_update_producer_snowflake**](V2Api.md#gateway_update_producer_snowflake) | **POST** /gateway-update-producer-snowflake | 
 [**gateway_update_tls_cert**](V2Api.md#gateway_update_tls_cert) | **POST** /gateway-update-tls-cert | 
@@ -1886,6 +1894,66 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | createEKSTargetResponse wraps response body. |  -  |
+**0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **create_esm**
+> CreateESMOutput create_esm(body)
+
+
+
+### Example
+
+```python
+from __future__ import print_function
+import time
+import akeyless
+from akeyless.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.akeyless.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = akeyless.Configuration(
+    host = "https://api.akeyless.io"
+)
+
+
+# Enter a context with an instance of the API client
+with akeyless.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = akeyless.V2Api(api_client)
+    body = akeyless.CreateESM() # CreateESM | 
+
+    try:
+        api_response = api_instance.create_esm(body)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling V2Api->create_esm: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**CreateESM**](CreateESM.md)|  | 
+
+### Return type
+
+[**CreateESMOutput**](CreateESMOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**201** | CreateExternalSecretsManagerResponse wraps response body. |  -  |
 **0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -4531,6 +4599,302 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **esm_create**
+> EsmCreateSecretOutput esm_create(body)
+
+
+
+### Example
+
+```python
+from __future__ import print_function
+import time
+import akeyless
+from akeyless.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.akeyless.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = akeyless.Configuration(
+    host = "https://api.akeyless.io"
+)
+
+
+# Enter a context with an instance of the API client
+with akeyless.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = akeyless.V2Api(api_client)
+    body = akeyless.EsmUpdate() # EsmUpdate | 
+
+    try:
+        api_response = api_instance.esm_create(body)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling V2Api->esm_create: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**EsmUpdate**](EsmUpdate.md)|  | 
+
+### Return type
+
+[**EsmCreateSecretOutput**](EsmCreateSecretOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | esmCreateResponse wraps response body. |  -  |
+**0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **esm_delete**
+> object esm_delete(body)
+
+
+
+### Example
+
+```python
+from __future__ import print_function
+import time
+import akeyless
+from akeyless.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.akeyless.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = akeyless.Configuration(
+    host = "https://api.akeyless.io"
+)
+
+
+# Enter a context with an instance of the API client
+with akeyless.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = akeyless.V2Api(api_client)
+    body = akeyless.EsmDelete() # EsmDelete | 
+
+    try:
+        api_response = api_instance.esm_delete(body)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling V2Api->esm_delete: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**EsmDelete**](EsmDelete.md)|  | 
+
+### Return type
+
+**object**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**202** | esmDeleteResponse wraps response body. |  -  |
+**0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **esm_get**
+> EsmGetSecretOutput esm_get(body)
+
+
+
+### Example
+
+```python
+from __future__ import print_function
+import time
+import akeyless
+from akeyless.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.akeyless.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = akeyless.Configuration(
+    host = "https://api.akeyless.io"
+)
+
+
+# Enter a context with an instance of the API client
+with akeyless.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = akeyless.V2Api(api_client)
+    body = akeyless.EsmGet() # EsmGet | 
+
+    try:
+        api_response = api_instance.esm_get(body)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling V2Api->esm_get: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**EsmGet**](EsmGet.md)|  | 
+
+### Return type
+
+[**EsmGetSecretOutput**](EsmGetSecretOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | esmGetResponse wraps response body. |  -  |
+**0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **esm_list**
+> EsmListSecretsOutput esm_list(body)
+
+
+
+### Example
+
+```python
+from __future__ import print_function
+import time
+import akeyless
+from akeyless.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.akeyless.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = akeyless.Configuration(
+    host = "https://api.akeyless.io"
+)
+
+
+# Enter a context with an instance of the API client
+with akeyless.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = akeyless.V2Api(api_client)
+    body = akeyless.EsmList() # EsmList | 
+
+    try:
+        api_response = api_instance.esm_list(body)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling V2Api->esm_list: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**EsmList**](EsmList.md)|  | 
+
+### Return type
+
+[**EsmListSecretsOutput**](EsmListSecretsOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | esmListResponse wraps response body. |  -  |
+**0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **esm_update**
+> EsmUpdateSecretOutput esm_update()
+
+
+
+### Example
+
+```python
+from __future__ import print_function
+import time
+import akeyless
+from akeyless.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.akeyless.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = akeyless.Configuration(
+    host = "https://api.akeyless.io"
+)
+
+
+# Enter a context with an instance of the API client
+with akeyless.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = akeyless.V2Api(api_client)
+    
+    try:
+        api_response = api_instance.esm_update()
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling V2Api->esm_update: %s\n" % e)
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**EsmUpdateSecretOutput**](EsmUpdateSecretOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | esmUpdateResponse wraps response body. |  -  |
+**0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **export_classic_key**
 > ExportClassicKeyOutput export_classic_key(body)
 
@@ -6027,6 +6391,66 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | gatewayCreateProducerRdpResponse wraps response body. |  -  |
+**0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **gateway_create_producer_redis**
+> GatewayCreateProducerRedisOutput gateway_create_producer_redis(body)
+
+
+
+### Example
+
+```python
+from __future__ import print_function
+import time
+import akeyless
+from akeyless.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.akeyless.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = akeyless.Configuration(
+    host = "https://api.akeyless.io"
+)
+
+
+# Enter a context with an instance of the API client
+with akeyless.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = akeyless.V2Api(api_client)
+    body = akeyless.GatewayCreateProducerRedis() # GatewayCreateProducerRedis | 
+
+    try:
+        api_response = api_instance.gateway_create_producer_redis(body)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling V2Api->gateway_create_producer_redis: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**GatewayCreateProducerRedis**](GatewayCreateProducerRedis.md)|  | 
+
+### Return type
+
+[**GatewayCreateProducerRedisOutput**](GatewayCreateProducerRedisOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**201** | gatewayCreateProducerRedisResponse wraps response body. |  -  |
 **0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -8906,6 +9330,66 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | gatewayUpdateProducerRdpResponse wraps response body. |  -  |
+**0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **gateway_update_producer_redis**
+> GatewayUpdateProducerRedisOutput gateway_update_producer_redis(body)
+
+
+
+### Example
+
+```python
+from __future__ import print_function
+import time
+import akeyless
+from akeyless.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.akeyless.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = akeyless.Configuration(
+    host = "https://api.akeyless.io"
+)
+
+
+# Enter a context with an instance of the API client
+with akeyless.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = akeyless.V2Api(api_client)
+    body = akeyless.GatewayUpdateProducerRedis() # GatewayUpdateProducerRedis | 
+
+    try:
+        api_response = api_instance.gateway_update_producer_redis(body)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling V2Api->gateway_update_producer_redis: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**GatewayUpdateProducerRedis**](GatewayUpdateProducerRedis.md)|  | 
+
+### Return type
+
+[**GatewayUpdateProducerRedisOutput**](GatewayUpdateProducerRedisOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**201** | gatewayUpdateProducerRedisResponse wraps response body. |  -  |
 **0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

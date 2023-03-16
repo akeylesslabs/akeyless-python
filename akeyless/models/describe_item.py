@@ -34,6 +34,7 @@ class DescribeItem(object):
                             and the value is json key in definition.
     """
     openapi_types = {
+        'bastion_details': 'bool',
         'display_id': 'str',
         'gateway_details': 'bool',
         'item_id': 'int',
@@ -45,6 +46,7 @@ class DescribeItem(object):
     }
 
     attribute_map = {
+        'bastion_details': 'bastion-details',
         'display_id': 'display-id',
         'gateway_details': 'gateway-details',
         'item_id': 'item-id',
@@ -55,12 +57,13 @@ class DescribeItem(object):
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, display_id=None, gateway_details=False, item_id=None, json=False, name=None, show_versions=False, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, bastion_details=False, display_id=None, gateway_details=False, item_id=None, json=False, name=None, show_versions=False, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """DescribeItem - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
+        self._bastion_details = None
         self._display_id = None
         self._gateway_details = None
         self._item_id = None
@@ -71,6 +74,8 @@ class DescribeItem(object):
         self._uid_token = None
         self.discriminator = None
 
+        if bastion_details is not None:
+            self.bastion_details = bastion_details
         if display_id is not None:
             self.display_id = display_id
         if gateway_details is not None:
@@ -86,6 +91,29 @@ class DescribeItem(object):
             self.token = token
         if uid_token is not None:
             self.uid_token = uid_token
+
+    @property
+    def bastion_details(self):
+        """Gets the bastion_details of this DescribeItem.  # noqa: E501
+
+        Indicate if the item should return with ztb cluster details (url, etc)  # noqa: E501
+
+        :return: The bastion_details of this DescribeItem.  # noqa: E501
+        :rtype: bool
+        """
+        return self._bastion_details
+
+    @bastion_details.setter
+    def bastion_details(self, bastion_details):
+        """Sets the bastion_details of this DescribeItem.
+
+        Indicate if the item should return with ztb cluster details (url, etc)  # noqa: E501
+
+        :param bastion_details: The bastion_details of this DescribeItem.  # noqa: E501
+        :type: bool
+        """
+
+        self._bastion_details = bastion_details
 
     @property
     def display_id(self):

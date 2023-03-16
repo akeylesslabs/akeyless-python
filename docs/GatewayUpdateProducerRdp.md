@@ -18,7 +18,7 @@ Name | Type | Description | Notes
 **rdp_user_groups** | **str** | Groups | [optional] 
 **secure_access_allow_external_user** | **bool** | Allow providing external user for a domain users | [optional] [default to False]
 **secure_access_enable** | **str** | Enable/Disable secure remote access [true/false] | [optional] 
-**secure_access_host** | **list[str]** | Target servers for connections | [optional] 
+**secure_access_host** | **list[str]** | Target servers for connections (In case of Linked Target association, host(s) will inherit Linked Target hosts - Relevant only for Dynamic Secrets/producers) | [optional] 
 **secure_access_rdp_domain** | **str** | Required when the Dynamic Secret is used for a domain user | [optional] 
 **secure_access_rdp_user** | **str** | Override the RDP Domain username | [optional] 
 **tags** | **list[str]** | Add tags attached to this object | [optional] 

@@ -15,7 +15,7 @@
 
 from __future__ import absolute_import
 
-__version__ = "3.2.8"
+__version__ = "3.3.0"
 
 # import apis into sdk package
 from akeyless.api.v2_api import V2Api
@@ -115,6 +115,8 @@ from akeyless.models.create_dockerhub_target_output import CreateDockerhubTarget
 from akeyless.models.create_dynamic_secret import CreateDynamicSecret
 from akeyless.models.create_eks_target import CreateEKSTarget
 from akeyless.models.create_eks_target_output import CreateEKSTargetOutput
+from akeyless.models.create_esm import CreateESM
+from akeyless.models.create_esm_output import CreateESMOutput
 from akeyless.models.create_event_forwarder import CreateEventForwarder
 from akeyless.models.create_event_forwarder_output import CreateEventForwarderOutput
 from akeyless.models.create_gke_target import CreateGKETarget
@@ -212,6 +214,15 @@ from akeyless.models.encrypt_gpg_output import EncryptGPGOutput
 from akeyless.models.encrypt_output import EncryptOutput
 from akeyless.models.encrypt_with_classic_key import EncryptWithClassicKey
 from akeyless.models.encrypt_with_classic_key_output import EncryptWithClassicKeyOutput
+from akeyless.models.esm_create import EsmCreate
+from akeyless.models.esm_create_secret_output import EsmCreateSecretOutput
+from akeyless.models.esm_delete import EsmDelete
+from akeyless.models.esm_get import EsmGet
+from akeyless.models.esm_get_secret_output import EsmGetSecretOutput
+from akeyless.models.esm_list import EsmList
+from akeyless.models.esm_list_secrets_output import EsmListSecretsOutput
+from akeyless.models.esm_update import EsmUpdate
+from akeyless.models.esm_update_secret_output import EsmUpdateSecretOutput
 from akeyless.models.export_classic_key import ExportClassicKey
 from akeyless.models.export_classic_key_output import ExportClassicKeyOutput
 from akeyless.models.extension import Extension
@@ -269,6 +280,8 @@ from akeyless.models.gateway_create_producer_rabbit_mq import GatewayCreateProdu
 from akeyless.models.gateway_create_producer_rabbit_mq_output import GatewayCreateProducerRabbitMQOutput
 from akeyless.models.gateway_create_producer_rdp import GatewayCreateProducerRdp
 from akeyless.models.gateway_create_producer_rdp_output import GatewayCreateProducerRdpOutput
+from akeyless.models.gateway_create_producer_redis import GatewayCreateProducerRedis
+from akeyless.models.gateway_create_producer_redis_output import GatewayCreateProducerRedisOutput
 from akeyless.models.gateway_create_producer_redshift import GatewayCreateProducerRedshift
 from akeyless.models.gateway_create_producer_redshift_output import GatewayCreateProducerRedshiftOutput
 from akeyless.models.gateway_create_producer_snowflake import GatewayCreateProducerSnowflake
@@ -361,6 +374,8 @@ from akeyless.models.gateway_update_producer_rabbit_mq import GatewayUpdateProdu
 from akeyless.models.gateway_update_producer_rabbit_mq_output import GatewayUpdateProducerRabbitMQOutput
 from akeyless.models.gateway_update_producer_rdp import GatewayUpdateProducerRdp
 from akeyless.models.gateway_update_producer_rdp_output import GatewayUpdateProducerRdpOutput
+from akeyless.models.gateway_update_producer_redis import GatewayUpdateProducerRedis
+from akeyless.models.gateway_update_producer_redis_output import GatewayUpdateProducerRedisOutput
 from akeyless.models.gateway_update_producer_redshift import GatewayUpdateProducerRedshift
 from akeyless.models.gateway_update_producer_redshift_output import GatewayUpdateProducerRedshiftOutput
 from akeyless.models.gateway_update_producer_snowflake import GatewayUpdateProducerSnowflake
@@ -511,6 +526,7 @@ from akeyless.models.rules import Rules
 from akeyless.models.saml_access_rules import SAMLAccessRules
 from akeyless.models.saml_attribute import SAMLAttribute
 from akeyless.models.ssh_certificate_issue_details import SSHCertificateIssueDetails
+from akeyless.models.secret_info import SecretInfo
 from akeyless.models.secure_remote_access import SecureRemoteAccess
 from akeyless.models.set_item_state import SetItemState
 from akeyless.models.set_role_rule import SetRoleRule

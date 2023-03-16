@@ -19,7 +19,7 @@ Name | Type | Description | Notes
 **producer_encryption_key_name** | **str** | Dynamic producer encryption key | [optional] 
 **secure_access_bastion_issuer** | **str** | Path to the SSH Certificate Issuer for your Akeyless Bastion | [optional] 
 **secure_access_enable** | **str** | Enable/Disable secure remote access [true/false] | [optional] 
-**secure_access_host** | **list[str]** | Target DB servers for connections | [optional] 
+**secure_access_host** | **list[str]** | Target DB servers for connections (In case of Linked Target association, host(s) will inherit Linked Target hosts) | [optional] 
 **secure_access_web** | **bool** | Enable Web Secure Remote Access | [optional] [default to False]
 **ssl** | **bool** | Enable/Disable SSL [true/false] | [optional] [default to False]
 **ssl_certificate** | **str** | SSL connection certificate | [optional] 

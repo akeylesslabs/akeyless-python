@@ -19,7 +19,7 @@ Name | Type | Description | Notes
 **secure_access_bastion_issuer** | **str** | Path to the SSH Certificate Issuer for your Akeyless Bastion | [optional] 
 **secure_access_db_schema** | **str** | The DB schema | [optional] 
 **secure_access_enable** | **str** | Enable/Disable secure remote access [true/false] | [optional] 
-**secure_access_host** | **list[str]** | Target DB servers for connections | [optional] 
+**secure_access_host** | **list[str]** | Target DB servers for connections (In case of Linked Target association, host(s) will inherit Linked Target hosts) | [optional] 
 **secure_access_web** | **bool** | Enable Web Secure Remote Access | [optional] [default to False]
 **ssl** | **bool** | Enable/Disable SSL [true/false] | [optional] [default to False]
 **tags** | **list[str]** | Add tags attached to this object | [optional] 

@@ -4,6 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **access_token_manager_id** | **str** |  | [optional] 
+**acl_rules** | **list[str]** |  | [optional] 
 **active** | **bool** |  | [optional] 
 **admin_name** | **str** |  | [optional] 
 **admin_pwd** | **str** |  | [optional] 
