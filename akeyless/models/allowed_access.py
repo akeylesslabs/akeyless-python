@@ -34,153 +34,189 @@ class AllowedAccess(object):
                             and the value is json key in definition.
     """
     openapi_types = {
-        'acc_id': 'str',
-        'access_rules_type': 'str',
-        'allowed_api': 'bool',
-        'alloweds_login': 'bool',
+        'access_id': 'str',
+        'access_type': 'str',
+        'cluster_id': 'int',
+        'created_at': 'datetime',
+        'description': 'str',
         'editable': 'bool',
-        'err_msg': 'str',
-        'hash': 'str',
+        'error': 'str',
+        'id': 'int',
         'is_valid': 'bool',
         'name': 'str',
-        'sub_claims': 'dict(str, list[str])'
+        'permissions': 'list[str]',
+        'sub_claims': 'dict(str, list[str])',
+        'updated_at': 'datetime'
     }
 
     attribute_map = {
-        'acc_id': 'acc_id',
-        'access_rules_type': 'access_rules_type',
-        'allowed_api': 'allowed_api',
-        'alloweds_login': 'alloweds_login',
+        'access_id': 'access_id',
+        'access_type': 'access_type',
+        'cluster_id': 'cluster_id',
+        'created_at': 'created_at',
+        'description': 'description',
         'editable': 'editable',
-        'err_msg': 'err_msg',
-        'hash': 'hash',
+        'error': 'error',
+        'id': 'id',
         'is_valid': 'is_valid',
         'name': 'name',
-        'sub_claims': 'sub_claims'
+        'permissions': 'permissions',
+        'sub_claims': 'sub_claims',
+        'updated_at': 'updated_at'
     }
 
-    def __init__(self, acc_id=None, access_rules_type=None, allowed_api=None, alloweds_login=None, editable=None, err_msg=None, hash=None, is_valid=None, name=None, sub_claims=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, access_id=None, access_type=None, cluster_id=None, created_at=None, description=None, editable=None, error=None, id=None, is_valid=None, name=None, permissions=None, sub_claims=None, updated_at=None, local_vars_configuration=None):  # noqa: E501
         """AllowedAccess - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
-        self._acc_id = None
-        self._access_rules_type = None
-        self._allowed_api = None
-        self._alloweds_login = None
+        self._access_id = None
+        self._access_type = None
+        self._cluster_id = None
+        self._created_at = None
+        self._description = None
         self._editable = None
-        self._err_msg = None
-        self._hash = None
+        self._error = None
+        self._id = None
         self._is_valid = None
         self._name = None
+        self._permissions = None
         self._sub_claims = None
+        self._updated_at = None
         self.discriminator = None
 
-        if acc_id is not None:
-            self.acc_id = acc_id
-        if access_rules_type is not None:
-            self.access_rules_type = access_rules_type
-        if allowed_api is not None:
-            self.allowed_api = allowed_api
-        if alloweds_login is not None:
-            self.alloweds_login = alloweds_login
+        if access_id is not None:
+            self.access_id = access_id
+        if access_type is not None:
+            self.access_type = access_type
+        if cluster_id is not None:
+            self.cluster_id = cluster_id
+        if created_at is not None:
+            self.created_at = created_at
+        if description is not None:
+            self.description = description
         if editable is not None:
             self.editable = editable
-        if err_msg is not None:
-            self.err_msg = err_msg
-        if hash is not None:
-            self.hash = hash
+        if error is not None:
+            self.error = error
+        if id is not None:
+            self.id = id
         if is_valid is not None:
             self.is_valid = is_valid
         if name is not None:
             self.name = name
+        if permissions is not None:
+            self.permissions = permissions
         if sub_claims is not None:
             self.sub_claims = sub_claims
+        if updated_at is not None:
+            self.updated_at = updated_at
 
     @property
-    def acc_id(self):
-        """Gets the acc_id of this AllowedAccess.  # noqa: E501
+    def access_id(self):
+        """Gets the access_id of this AllowedAccess.  # noqa: E501
 
 
-        :return: The acc_id of this AllowedAccess.  # noqa: E501
+        :return: The access_id of this AllowedAccess.  # noqa: E501
         :rtype: str
         """
-        return self._acc_id
+        return self._access_id
 
-    @acc_id.setter
-    def acc_id(self, acc_id):
-        """Sets the acc_id of this AllowedAccess.
+    @access_id.setter
+    def access_id(self, access_id):
+        """Sets the access_id of this AllowedAccess.
 
 
-        :param acc_id: The acc_id of this AllowedAccess.  # noqa: E501
+        :param access_id: The access_id of this AllowedAccess.  # noqa: E501
         :type: str
         """
 
-        self._acc_id = acc_id
+        self._access_id = access_id
 
     @property
-    def access_rules_type(self):
-        """Gets the access_rules_type of this AllowedAccess.  # noqa: E501
+    def access_type(self):
+        """Gets the access_type of this AllowedAccess.  # noqa: E501
 
 
-        :return: The access_rules_type of this AllowedAccess.  # noqa: E501
+        :return: The access_type of this AllowedAccess.  # noqa: E501
         :rtype: str
         """
-        return self._access_rules_type
+        return self._access_type
 
-    @access_rules_type.setter
-    def access_rules_type(self, access_rules_type):
-        """Sets the access_rules_type of this AllowedAccess.
+    @access_type.setter
+    def access_type(self, access_type):
+        """Sets the access_type of this AllowedAccess.
 
 
-        :param access_rules_type: The access_rules_type of this AllowedAccess.  # noqa: E501
+        :param access_type: The access_type of this AllowedAccess.  # noqa: E501
         :type: str
         """
 
-        self._access_rules_type = access_rules_type
+        self._access_type = access_type
 
     @property
-    def allowed_api(self):
-        """Gets the allowed_api of this AllowedAccess.  # noqa: E501
+    def cluster_id(self):
+        """Gets the cluster_id of this AllowedAccess.  # noqa: E501
 
 
-        :return: The allowed_api of this AllowedAccess.  # noqa: E501
-        :rtype: bool
+        :return: The cluster_id of this AllowedAccess.  # noqa: E501
+        :rtype: int
         """
-        return self._allowed_api
+        return self._cluster_id
 
-    @allowed_api.setter
-    def allowed_api(self, allowed_api):
-        """Sets the allowed_api of this AllowedAccess.
+    @cluster_id.setter
+    def cluster_id(self, cluster_id):
+        """Sets the cluster_id of this AllowedAccess.
 
 
-        :param allowed_api: The allowed_api of this AllowedAccess.  # noqa: E501
-        :type: bool
+        :param cluster_id: The cluster_id of this AllowedAccess.  # noqa: E501
+        :type: int
         """
 
-        self._allowed_api = allowed_api
+        self._cluster_id = cluster_id
 
     @property
-    def alloweds_login(self):
-        """Gets the alloweds_login of this AllowedAccess.  # noqa: E501
+    def created_at(self):
+        """Gets the created_at of this AllowedAccess.  # noqa: E501
 
 
-        :return: The alloweds_login of this AllowedAccess.  # noqa: E501
-        :rtype: bool
+        :return: The created_at of this AllowedAccess.  # noqa: E501
+        :rtype: datetime
         """
-        return self._alloweds_login
+        return self._created_at
 
-    @alloweds_login.setter
-    def alloweds_login(self, alloweds_login):
-        """Sets the alloweds_login of this AllowedAccess.
+    @created_at.setter
+    def created_at(self, created_at):
+        """Sets the created_at of this AllowedAccess.
 
 
-        :param alloweds_login: The alloweds_login of this AllowedAccess.  # noqa: E501
-        :type: bool
+        :param created_at: The created_at of this AllowedAccess.  # noqa: E501
+        :type: datetime
         """
 
-        self._alloweds_login = alloweds_login
+        self._created_at = created_at
+
+    @property
+    def description(self):
+        """Gets the description of this AllowedAccess.  # noqa: E501
+
+
+        :return: The description of this AllowedAccess.  # noqa: E501
+        :rtype: str
+        """
+        return self._description
+
+    @description.setter
+    def description(self, description):
+        """Sets the description of this AllowedAccess.
+
+
+        :param description: The description of this AllowedAccess.  # noqa: E501
+        :type: str
+        """
+
+        self._description = description
 
     @property
     def editable(self):
@@ -204,46 +240,46 @@ class AllowedAccess(object):
         self._editable = editable
 
     @property
-    def err_msg(self):
-        """Gets the err_msg of this AllowedAccess.  # noqa: E501
+    def error(self):
+        """Gets the error of this AllowedAccess.  # noqa: E501
 
 
-        :return: The err_msg of this AllowedAccess.  # noqa: E501
+        :return: The error of this AllowedAccess.  # noqa: E501
         :rtype: str
         """
-        return self._err_msg
+        return self._error
 
-    @err_msg.setter
-    def err_msg(self, err_msg):
-        """Sets the err_msg of this AllowedAccess.
+    @error.setter
+    def error(self, error):
+        """Sets the error of this AllowedAccess.
 
 
-        :param err_msg: The err_msg of this AllowedAccess.  # noqa: E501
+        :param error: The error of this AllowedAccess.  # noqa: E501
         :type: str
         """
 
-        self._err_msg = err_msg
+        self._error = error
 
     @property
-    def hash(self):
-        """Gets the hash of this AllowedAccess.  # noqa: E501
+    def id(self):
+        """Gets the id of this AllowedAccess.  # noqa: E501
 
 
-        :return: The hash of this AllowedAccess.  # noqa: E501
-        :rtype: str
+        :return: The id of this AllowedAccess.  # noqa: E501
+        :rtype: int
         """
-        return self._hash
+        return self._id
 
-    @hash.setter
-    def hash(self, hash):
-        """Sets the hash of this AllowedAccess.
+    @id.setter
+    def id(self, id):
+        """Sets the id of this AllowedAccess.
 
 
-        :param hash: The hash of this AllowedAccess.  # noqa: E501
-        :type: str
+        :param id: The id of this AllowedAccess.  # noqa: E501
+        :type: int
         """
 
-        self._hash = hash
+        self._id = id
 
     @property
     def is_valid(self):
@@ -288,6 +324,27 @@ class AllowedAccess(object):
         self._name = name
 
     @property
+    def permissions(self):
+        """Gets the permissions of this AllowedAccess.  # noqa: E501
+
+
+        :return: The permissions of this AllowedAccess.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._permissions
+
+    @permissions.setter
+    def permissions(self, permissions):
+        """Sets the permissions of this AllowedAccess.
+
+
+        :param permissions: The permissions of this AllowedAccess.  # noqa: E501
+        :type: list[str]
+        """
+
+        self._permissions = permissions
+
+    @property
     def sub_claims(self):
         """Gets the sub_claims of this AllowedAccess.  # noqa: E501
 
@@ -307,6 +364,27 @@ class AllowedAccess(object):
         """
 
         self._sub_claims = sub_claims
+
+    @property
+    def updated_at(self):
+        """Gets the updated_at of this AllowedAccess.  # noqa: E501
+
+
+        :return: The updated_at of this AllowedAccess.  # noqa: E501
+        :rtype: datetime
+        """
+        return self._updated_at
+
+    @updated_at.setter
+    def updated_at(self, updated_at):
+        """Sets the updated_at of this AllowedAccess.
+
+
+        :param updated_at: The updated_at of this AllowedAccess.  # noqa: E501
+        :type: datetime
+        """
+
+        self._updated_at = updated_at
 
     def to_dict(self):
         """Returns the model properties as a dict"""

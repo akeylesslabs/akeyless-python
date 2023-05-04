@@ -4,6 +4,7 @@ ExportClassicKey is a command that returns the classic key material
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**export_public_key** | **bool** | Use this option to output only public key | [optional] [default to False]
 **ignore_cache** | **str** | Retrieve the Secret value without checking the Gateway&#39;s cache [true/false]. This flag is only relevant when using the RestAPI | [optional] [default to 'false']
 **json** | **bool** | Set output format to JSON | [optional] [default to False]
 **name** | **str** | ClassicKey name | 

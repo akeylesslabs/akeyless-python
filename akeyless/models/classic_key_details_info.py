@@ -42,6 +42,7 @@ class ClassicKeyDetailsInfo(object):
         'key_state': 'str',
         'key_type': 'str',
         'last_error': 'str',
+        'public_key': 'str',
         'target_alias_helper': 'str',
         'target_types': 'list[str]',
         'targets': 'list[ClassicKeyTargetInfo]'
@@ -56,12 +57,13 @@ class ClassicKeyDetailsInfo(object):
         'key_state': 'key_state',
         'key_type': 'key_type',
         'last_error': 'last_error',
+        'public_key': 'public_key',
         'target_alias_helper': 'target_alias_helper',
         'target_types': 'target_types',
         'targets': 'targets'
     }
 
-    def __init__(self, classic_key_attributes=None, classic_key_id=None, gw_cluster_id=None, is_provided_by_user=None, is_unexportable=None, key_state=None, key_type=None, last_error=None, target_alias_helper=None, target_types=None, targets=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, classic_key_attributes=None, classic_key_id=None, gw_cluster_id=None, is_provided_by_user=None, is_unexportable=None, key_state=None, key_type=None, last_error=None, public_key=None, target_alias_helper=None, target_types=None, targets=None, local_vars_configuration=None):  # noqa: E501
         """ClassicKeyDetailsInfo - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -75,6 +77,7 @@ class ClassicKeyDetailsInfo(object):
         self._key_state = None
         self._key_type = None
         self._last_error = None
+        self._public_key = None
         self._target_alias_helper = None
         self._target_types = None
         self._targets = None
@@ -96,6 +99,8 @@ class ClassicKeyDetailsInfo(object):
             self.key_type = key_type
         if last_error is not None:
             self.last_error = last_error
+        if public_key is not None:
+            self.public_key = public_key
         if target_alias_helper is not None:
             self.target_alias_helper = target_alias_helper
         if target_types is not None:
@@ -272,6 +277,27 @@ class ClassicKeyDetailsInfo(object):
         """
 
         self._last_error = last_error
+
+    @property
+    def public_key(self):
+        """Gets the public_key of this ClassicKeyDetailsInfo.  # noqa: E501
+
+
+        :return: The public_key of this ClassicKeyDetailsInfo.  # noqa: E501
+        :rtype: str
+        """
+        return self._public_key
+
+    @public_key.setter
+    def public_key(self, public_key):
+        """Sets the public_key of this ClassicKeyDetailsInfo.
+
+
+        :param public_key: The public_key of this ClassicKeyDetailsInfo.  # noqa: E501
+        :type: str
+        """
+
+        self._public_key = public_key
 
     @property
     def target_alias_helper(self):

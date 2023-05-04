@@ -34,33 +34,33 @@ class GatewayMessageQueueInfo(object):
                             and the value is json key in definition.
     """
     openapi_types = {
-        'broadcast_queue_name': 'str',
+        'broadcast_queue_name_a': 'str',
         'mq_type': 'str',
         'queue_name': 'str',
         'queue_url': 'str'
     }
 
     attribute_map = {
-        'broadcast_queue_name': 'broadcast_queue_name',
+        'broadcast_queue_name_a': 'broadcast_queue_name_a',
         'mq_type': 'mq_type',
         'queue_name': 'queue_name',
         'queue_url': 'queue_url'
     }
 
-    def __init__(self, broadcast_queue_name=None, mq_type=None, queue_name=None, queue_url=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, broadcast_queue_name_a=None, mq_type=None, queue_name=None, queue_url=None, local_vars_configuration=None):  # noqa: E501
         """GatewayMessageQueueInfo - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
-        self._broadcast_queue_name = None
+        self._broadcast_queue_name_a = None
         self._mq_type = None
         self._queue_name = None
         self._queue_url = None
         self.discriminator = None
 
-        if broadcast_queue_name is not None:
-            self.broadcast_queue_name = broadcast_queue_name
+        if broadcast_queue_name_a is not None:
+            self.broadcast_queue_name_a = broadcast_queue_name_a
         if mq_type is not None:
             self.mq_type = mq_type
         if queue_name is not None:
@@ -69,25 +69,25 @@ class GatewayMessageQueueInfo(object):
             self.queue_url = queue_url
 
     @property
-    def broadcast_queue_name(self):
-        """Gets the broadcast_queue_name of this GatewayMessageQueueInfo.  # noqa: E501
+    def broadcast_queue_name_a(self):
+        """Gets the broadcast_queue_name_a of this GatewayMessageQueueInfo.  # noqa: E501
 
 
-        :return: The broadcast_queue_name of this GatewayMessageQueueInfo.  # noqa: E501
+        :return: The broadcast_queue_name_a of this GatewayMessageQueueInfo.  # noqa: E501
         :rtype: str
         """
-        return self._broadcast_queue_name
+        return self._broadcast_queue_name_a
 
-    @broadcast_queue_name.setter
-    def broadcast_queue_name(self, broadcast_queue_name):
-        """Sets the broadcast_queue_name of this GatewayMessageQueueInfo.
+    @broadcast_queue_name_a.setter
+    def broadcast_queue_name_a(self, broadcast_queue_name_a):
+        """Sets the broadcast_queue_name_a of this GatewayMessageQueueInfo.
 
 
-        :param broadcast_queue_name: The broadcast_queue_name of this GatewayMessageQueueInfo.  # noqa: E501
+        :param broadcast_queue_name_a: The broadcast_queue_name_a of this GatewayMessageQueueInfo.  # noqa: E501
         :type: str
         """
 
-        self._broadcast_queue_name = broadcast_queue_name
+        self._broadcast_queue_name_a = broadcast_queue_name_a
 
     @property
     def mq_type(self):

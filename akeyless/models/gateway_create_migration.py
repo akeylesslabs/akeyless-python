@@ -39,6 +39,10 @@ class GatewayCreateMigration(object):
         '_1password_secret_key': 'str',
         '_1password_url': 'str',
         '_1password_vaults': 'list[str]',
+        'ad_ssh_port': 'str',
+        'ad_targets_type': 'str',
+        'ad_winrm_over_http': 'str',
+        'ad_winrm_port': 'str',
         'ad_auto_rotate': 'str',
         'ad_computer_base_dn': 'str',
         'ad_discover_local_users': 'str',
@@ -53,7 +57,6 @@ class GatewayCreateMigration(object):
         'ad_targets_path_template': 'str',
         'ad_user_base_dn': 'str',
         'ad_user_groups': 'str',
-        'as_ssh_port': 'str',
         'aws_key': 'str',
         'aws_key_id': 'str',
         'aws_region': 'str',
@@ -90,6 +93,10 @@ class GatewayCreateMigration(object):
         '_1password_secret_key': '1password-secret-key',
         '_1password_url': '1password-url',
         '_1password_vaults': '1password-vaults',
+        'ad_ssh_port': 'ad-ssh-port',
+        'ad_targets_type': 'ad-targets-type',
+        'ad_winrm_over_http': 'ad-winrm-over-http',
+        'ad_winrm_port': 'ad-winrm-port',
         'ad_auto_rotate': 'ad_auto_rotate',
         'ad_computer_base_dn': 'ad_computer_base_dn',
         'ad_discover_local_users': 'ad_discover_local_users',
@@ -104,7 +111,6 @@ class GatewayCreateMigration(object):
         'ad_targets_path_template': 'ad_targets_path_template',
         'ad_user_base_dn': 'ad_user_base_dn',
         'ad_user_groups': 'ad_user_groups',
-        'as_ssh_port': 'as_ssh_port',
         'aws_key': 'aws-key',
         'aws_key_id': 'aws-key-id',
         'aws_region': 'aws-region',
@@ -135,7 +141,7 @@ class GatewayCreateMigration(object):
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, _1password_email=None, _1password_password=None, _1password_secret_key=None, _1password_url=None, _1password_vaults=None, ad_auto_rotate=None, ad_computer_base_dn=None, ad_discover_local_users=None, ad_domain_name=None, ad_domain_users_path_template=None, ad_local_users_ignore=None, ad_local_users_path_template=None, ad_rotation_hour=None, ad_rotation_interval=None, ad_sra_enable_rdp=None, ad_target_name=None, ad_targets_path_template=None, ad_user_base_dn=None, ad_user_groups=None, as_ssh_port='22', aws_key=None, aws_key_id=None, aws_region='us-east-2', azure_client_id=None, azure_kv_name=None, azure_secret=None, azure_tenant_id=None, gcp_key=None, hashi_json='true', hashi_ns=None, hashi_token=None, hashi_url=None, json=False, k8s_ca_certificate=None, k8s_client_certificate=None, k8s_client_key=None, k8s_namespace=None, k8s_password=None, k8s_skip_system=None, k8s_token=None, k8s_url=None, k8s_username=None, name=None, protection_key=None, target_location=None, token=None, type=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, _1password_email=None, _1password_password=None, _1password_secret_key=None, _1password_url=None, _1password_vaults=None, ad_ssh_port='22', ad_targets_type='windows', ad_winrm_over_http='false', ad_winrm_port='5986', ad_auto_rotate=None, ad_computer_base_dn=None, ad_discover_local_users=None, ad_domain_name=None, ad_domain_users_path_template=None, ad_local_users_ignore=None, ad_local_users_path_template=None, ad_rotation_hour=None, ad_rotation_interval=None, ad_sra_enable_rdp=None, ad_target_name=None, ad_targets_path_template=None, ad_user_base_dn=None, ad_user_groups=None, aws_key=None, aws_key_id=None, aws_region='us-east-2', azure_client_id=None, azure_kv_name=None, azure_secret=None, azure_tenant_id=None, gcp_key=None, hashi_json='true', hashi_ns=None, hashi_token=None, hashi_url=None, json=False, k8s_ca_certificate=None, k8s_client_certificate=None, k8s_client_key=None, k8s_namespace=None, k8s_password=None, k8s_skip_system=None, k8s_token=None, k8s_url=None, k8s_username=None, name=None, protection_key=None, target_location=None, token=None, type=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """GatewayCreateMigration - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -146,6 +152,10 @@ class GatewayCreateMigration(object):
         self.__1password_secret_key = None
         self.__1password_url = None
         self.__1password_vaults = None
+        self._ad_ssh_port = None
+        self._ad_targets_type = None
+        self._ad_winrm_over_http = None
+        self._ad_winrm_port = None
         self._ad_auto_rotate = None
         self._ad_computer_base_dn = None
         self._ad_discover_local_users = None
@@ -160,7 +170,6 @@ class GatewayCreateMigration(object):
         self._ad_targets_path_template = None
         self._ad_user_base_dn = None
         self._ad_user_groups = None
-        self._as_ssh_port = None
         self._aws_key = None
         self._aws_key_id = None
         self._aws_region = None
@@ -201,6 +210,14 @@ class GatewayCreateMigration(object):
             self._1password_url = _1password_url
         if _1password_vaults is not None:
             self._1password_vaults = _1password_vaults
+        if ad_ssh_port is not None:
+            self.ad_ssh_port = ad_ssh_port
+        if ad_targets_type is not None:
+            self.ad_targets_type = ad_targets_type
+        if ad_winrm_over_http is not None:
+            self.ad_winrm_over_http = ad_winrm_over_http
+        if ad_winrm_port is not None:
+            self.ad_winrm_port = ad_winrm_port
         if ad_auto_rotate is not None:
             self.ad_auto_rotate = ad_auto_rotate
         if ad_computer_base_dn is not None:
@@ -229,8 +246,6 @@ class GatewayCreateMigration(object):
             self.ad_user_base_dn = ad_user_base_dn
         if ad_user_groups is not None:
             self.ad_user_groups = ad_user_groups
-        if as_ssh_port is not None:
-            self.as_ssh_port = as_ssh_port
         if aws_key is not None:
             self.aws_key = aws_key
         if aws_key_id is not None:
@@ -402,6 +417,98 @@ class GatewayCreateMigration(object):
         self.__1password_vaults = _1password_vaults
 
     @property
+    def ad_ssh_port(self):
+        """Gets the ad_ssh_port of this GatewayCreateMigration.  # noqa: E501
+
+        Set the SSH Port for further connection to the domain servers. Default is port 22 (Relevant only for Active Directory migration)  # noqa: E501
+
+        :return: The ad_ssh_port of this GatewayCreateMigration.  # noqa: E501
+        :rtype: str
+        """
+        return self._ad_ssh_port
+
+    @ad_ssh_port.setter
+    def ad_ssh_port(self, ad_ssh_port):
+        """Sets the ad_ssh_port of this GatewayCreateMigration.
+
+        Set the SSH Port for further connection to the domain servers. Default is port 22 (Relevant only for Active Directory migration)  # noqa: E501
+
+        :param ad_ssh_port: The ad_ssh_port of this GatewayCreateMigration.  # noqa: E501
+        :type: str
+        """
+
+        self._ad_ssh_port = ad_ssh_port
+
+    @property
+    def ad_targets_type(self):
+        """Gets the ad_targets_type of this GatewayCreateMigration.  # noqa: E501
+
+        Set the target type of the domain servers [ssh/windows](Relevant only for Active Directory migration)  # noqa: E501
+
+        :return: The ad_targets_type of this GatewayCreateMigration.  # noqa: E501
+        :rtype: str
+        """
+        return self._ad_targets_type
+
+    @ad_targets_type.setter
+    def ad_targets_type(self, ad_targets_type):
+        """Sets the ad_targets_type of this GatewayCreateMigration.
+
+        Set the target type of the domain servers [ssh/windows](Relevant only for Active Directory migration)  # noqa: E501
+
+        :param ad_targets_type: The ad_targets_type of this GatewayCreateMigration.  # noqa: E501
+        :type: str
+        """
+
+        self._ad_targets_type = ad_targets_type
+
+    @property
+    def ad_winrm_over_http(self):
+        """Gets the ad_winrm_over_http of this GatewayCreateMigration.  # noqa: E501
+
+        Use WinRM over HTTP, by default runs over HTTPS  # noqa: E501
+
+        :return: The ad_winrm_over_http of this GatewayCreateMigration.  # noqa: E501
+        :rtype: str
+        """
+        return self._ad_winrm_over_http
+
+    @ad_winrm_over_http.setter
+    def ad_winrm_over_http(self, ad_winrm_over_http):
+        """Sets the ad_winrm_over_http of this GatewayCreateMigration.
+
+        Use WinRM over HTTP, by default runs over HTTPS  # noqa: E501
+
+        :param ad_winrm_over_http: The ad_winrm_over_http of this GatewayCreateMigration.  # noqa: E501
+        :type: str
+        """
+
+        self._ad_winrm_over_http = ad_winrm_over_http
+
+    @property
+    def ad_winrm_port(self):
+        """Gets the ad_winrm_port of this GatewayCreateMigration.  # noqa: E501
+
+        Set the WinRM Port for further connection to the domain servers. Default is 5986 (Relevant only for Active Directory migration)  # noqa: E501
+
+        :return: The ad_winrm_port of this GatewayCreateMigration.  # noqa: E501
+        :rtype: str
+        """
+        return self._ad_winrm_port
+
+    @ad_winrm_port.setter
+    def ad_winrm_port(self, ad_winrm_port):
+        """Sets the ad_winrm_port of this GatewayCreateMigration.
+
+        Set the WinRM Port for further connection to the domain servers. Default is 5986 (Relevant only for Active Directory migration)  # noqa: E501
+
+        :param ad_winrm_port: The ad_winrm_port of this GatewayCreateMigration.  # noqa: E501
+        :type: str
+        """
+
+        self._ad_winrm_port = ad_winrm_port
+
+    @property
     def ad_auto_rotate(self):
         """Gets the ad_auto_rotate of this GatewayCreateMigration.  # noqa: E501
 
@@ -451,7 +558,7 @@ class GatewayCreateMigration(object):
     def ad_discover_local_users(self):
         """Gets the ad_discover_local_users of this GatewayCreateMigration.  # noqa: E501
 
-        Enable/Disable discovery of local users from each domain server and migrate them as SSH Rotated Secrets. Default is false: only domain users will be migrated. Discovery of local users might require further installation of SSH on the servers, based on the supplied computer base DN. This will be implemented automatically as part of the migration process (Relevant only for Active Directory migration)  # noqa: E501
+        Enable/Disable discovery of local users from each domain server and migrate them as SSH/Windows Rotated Secrets. Default is false: only domain users will be migrated. Discovery of local users might require further installation of SSH on the servers, based on the supplied computer base DN. This will be implemented automatically as part of the migration process (Relevant only for Active Directory migration)  # noqa: E501
 
         :return: The ad_discover_local_users of this GatewayCreateMigration.  # noqa: E501
         :rtype: str
@@ -462,7 +569,7 @@ class GatewayCreateMigration(object):
     def ad_discover_local_users(self, ad_discover_local_users):
         """Sets the ad_discover_local_users of this GatewayCreateMigration.
 
-        Enable/Disable discovery of local users from each domain server and migrate them as SSH Rotated Secrets. Default is false: only domain users will be migrated. Discovery of local users might require further installation of SSH on the servers, based on the supplied computer base DN. This will be implemented automatically as part of the migration process (Relevant only for Active Directory migration)  # noqa: E501
+        Enable/Disable discovery of local users from each domain server and migrate them as SSH/Windows Rotated Secrets. Default is false: only domain users will be migrated. Discovery of local users might require further installation of SSH on the servers, based on the supplied computer base DN. This will be implemented automatically as part of the migration process (Relevant only for Active Directory migration)  # noqa: E501
 
         :param ad_discover_local_users: The ad_discover_local_users of this GatewayCreateMigration.  # noqa: E501
         :type: str
@@ -658,7 +765,7 @@ class GatewayCreateMigration(object):
     def ad_targets_path_template(self):
         """Gets the ad_targets_path_template of this GatewayCreateMigration.  # noqa: E501
 
-        Path location template for migrating domain servers as SSH Targets e.g.: .../Servers/{{COMPUTER_NAME}} (Relevant only for Active Directory migration)  # noqa: E501
+        Path location template for migrating domain servers as SSH/Windows Targets e.g.: .../Servers/{{COMPUTER_NAME}} (Relevant only for Active Directory migration)  # noqa: E501
 
         :return: The ad_targets_path_template of this GatewayCreateMigration.  # noqa: E501
         :rtype: str
@@ -669,7 +776,7 @@ class GatewayCreateMigration(object):
     def ad_targets_path_template(self, ad_targets_path_template):
         """Sets the ad_targets_path_template of this GatewayCreateMigration.
 
-        Path location template for migrating domain servers as SSH Targets e.g.: .../Servers/{{COMPUTER_NAME}} (Relevant only for Active Directory migration)  # noqa: E501
+        Path location template for migrating domain servers as SSH/Windows Targets e.g.: .../Servers/{{COMPUTER_NAME}} (Relevant only for Active Directory migration)  # noqa: E501
 
         :param ad_targets_path_template: The ad_targets_path_template of this GatewayCreateMigration.  # noqa: E501
         :type: str
@@ -722,29 +829,6 @@ class GatewayCreateMigration(object):
         """
 
         self._ad_user_groups = ad_user_groups
-
-    @property
-    def as_ssh_port(self):
-        """Gets the as_ssh_port of this GatewayCreateMigration.  # noqa: E501
-
-        Set the SSH Port for further connection to the domain servers. Default is port 22 (Relevant only for Active Directory migration)  # noqa: E501
-
-        :return: The as_ssh_port of this GatewayCreateMigration.  # noqa: E501
-        :rtype: str
-        """
-        return self._as_ssh_port
-
-    @as_ssh_port.setter
-    def as_ssh_port(self, as_ssh_port):
-        """Sets the as_ssh_port of this GatewayCreateMigration.
-
-        Set the SSH Port for further connection to the domain servers. Default is port 22 (Relevant only for Active Directory migration)  # noqa: E501
-
-        :param as_ssh_port: The as_ssh_port of this GatewayCreateMigration.  # noqa: E501
-        :type: str
-        """
-
-        self._as_ssh_port = as_ssh_port
 
     @property
     def aws_key(self):

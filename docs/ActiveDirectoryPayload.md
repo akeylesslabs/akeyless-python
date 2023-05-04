@@ -16,8 +16,11 @@ Name | Type | Description | Notes
 **local_users_ignore_list** | **dict(str, bool)** |  | [optional] 
 **local_users_rotated_secrets_path_template** | **str** |  | [optional] 
 **ssh_port** | **str** |  | [optional] 
+**targets_type** | **str** |  | [optional] 
 **user_base_dn** | **str** |  | [optional] 
 **user_groups** | **list[str]** |  | [optional] 
+**winrm_over_http** | **bool** |  | [optional] 
+**winrm_port** | **str** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

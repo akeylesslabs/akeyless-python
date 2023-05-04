@@ -43,7 +43,8 @@ class CreateNativeK8STarget(object):
         'key': 'str',
         'name': 'str',
         'token': 'str',
-        'uid_token': 'str'
+        'uid_token': 'str',
+        'use_gw_service_account': 'bool'
     }
 
     attribute_map = {
@@ -56,10 +57,11 @@ class CreateNativeK8STarget(object):
         'key': 'key',
         'name': 'name',
         'token': 'token',
-        'uid_token': 'uid-token'
+        'uid_token': 'uid-token',
+        'use_gw_service_account': 'use-gw-service-account'
     }
 
-    def __init__(self, comment=None, description=None, json=False, k8s_cluster_ca_cert=None, k8s_cluster_endpoint=None, k8s_cluster_token=None, key=None, name=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, comment=None, description=None, json=False, k8s_cluster_ca_cert='dummy_val', k8s_cluster_endpoint='dummy_val', k8s_cluster_token='dummy_val', key=None, name=None, token=None, uid_token=None, use_gw_service_account=None, local_vars_configuration=None):  # noqa: E501
         """CreateNativeK8STarget - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -75,6 +77,7 @@ class CreateNativeK8STarget(object):
         self._name = None
         self._token = None
         self._uid_token = None
+        self._use_gw_service_account = None
         self.discriminator = None
 
         if comment is not None:
@@ -93,6 +96,8 @@ class CreateNativeK8STarget(object):
             self.token = token
         if uid_token is not None:
             self.uid_token = uid_token
+        if use_gw_service_account is not None:
+            self.use_gw_service_account = use_gw_service_account
 
     @property
     def comment(self):
@@ -331,6 +336,29 @@ class CreateNativeK8STarget(object):
         """
 
         self._uid_token = uid_token
+
+    @property
+    def use_gw_service_account(self):
+        """Gets the use_gw_service_account of this CreateNativeK8STarget.  # noqa: E501
+
+        Use the GW's service account  # noqa: E501
+
+        :return: The use_gw_service_account of this CreateNativeK8STarget.  # noqa: E501
+        :rtype: bool
+        """
+        return self._use_gw_service_account
+
+    @use_gw_service_account.setter
+    def use_gw_service_account(self, use_gw_service_account):
+        """Sets the use_gw_service_account of this CreateNativeK8STarget.
+
+        Use the GW's service account  # noqa: E501
+
+        :param use_gw_service_account: The use_gw_service_account of this CreateNativeK8STarget.  # noqa: E501
+        :type: bool
+        """
+
+        self._use_gw_service_account = use_gw_service_account
 
     def to_dict(self):
         """Returns the model properties as a dict"""

@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **output_format** | **str** | If specified, the output will be formatted accordingly. options: [base64] | [optional] 
 **token** | **str** | Authentication token (see &#x60;/auth&#x60; and &#x60;/configure&#x60;) | [optional] 
 **uid_token** | **str** | The universal identity token, Required only for universal_identity authentication | [optional] 
+**version** | **int** | key version (relevant only for classic key) | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

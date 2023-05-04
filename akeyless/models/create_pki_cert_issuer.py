@@ -38,11 +38,15 @@ class CreatePKICertIssuer(object):
         'allow_subdomains': 'bool',
         'allowed_domains': 'str',
         'allowed_uri_sans': 'str',
+        'ca_target': 'str',
         'client_flag': 'bool',
         'code_signing_flag': 'bool',
         'country': 'str',
         'delete_protection': 'str',
         'description': 'str',
+        'destination_path': 'str',
+        'expiration_event_in': 'list[str]',
+        'gw_cluster_url': 'str',
         'json': 'bool',
         'key_usage': 'str',
         'locality': 'str',
@@ -53,6 +57,7 @@ class CreatePKICertIssuer(object):
         'organizational_units': 'str',
         'organizations': 'str',
         'postal_code': 'str',
+        'protect_certificates': 'bool',
         'province': 'str',
         'server_flag': 'bool',
         'signer_key_name': 'str',
@@ -68,11 +73,15 @@ class CreatePKICertIssuer(object):
         'allow_subdomains': 'allow-subdomains',
         'allowed_domains': 'allowed-domains',
         'allowed_uri_sans': 'allowed-uri-sans',
+        'ca_target': 'ca-target',
         'client_flag': 'client-flag',
         'code_signing_flag': 'code-signing-flag',
         'country': 'country',
         'delete_protection': 'delete_protection',
         'description': 'description',
+        'destination_path': 'destination-path',
+        'expiration_event_in': 'expiration-event-in',
+        'gw_cluster_url': 'gw-cluster-url',
         'json': 'json',
         'key_usage': 'key-usage',
         'locality': 'locality',
@@ -83,6 +92,7 @@ class CreatePKICertIssuer(object):
         'organizational_units': 'organizational-units',
         'organizations': 'organizations',
         'postal_code': 'postal-code',
+        'protect_certificates': 'protect-certificates',
         'province': 'province',
         'server_flag': 'server-flag',
         'signer_key_name': 'signer-key-name',
@@ -93,7 +103,7 @@ class CreatePKICertIssuer(object):
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, allow_any_name=None, allow_subdomains=None, allowed_domains=None, allowed_uri_sans=None, client_flag=None, code_signing_flag=None, country=None, delete_protection=None, description=None, json=False, key_usage='DigitalSignature,KeyAgreement,KeyEncipherment', locality=None, metadata=None, name=None, not_enforce_hostnames=None, not_require_cn=None, organizational_units=None, organizations=None, postal_code=None, province=None, server_flag=None, signer_key_name=None, street_address=None, tag=None, token=None, ttl=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, allow_any_name=None, allow_subdomains=None, allowed_domains=None, allowed_uri_sans=None, ca_target=None, client_flag=None, code_signing_flag=None, country=None, delete_protection=None, description=None, destination_path=None, expiration_event_in=None, gw_cluster_url=None, json=False, key_usage='DigitalSignature,KeyAgreement,KeyEncipherment', locality=None, metadata=None, name=None, not_enforce_hostnames=None, not_require_cn=None, organizational_units=None, organizations=None, postal_code=None, protect_certificates=None, province=None, server_flag=None, signer_key_name='dummy_signer_key', street_address=None, tag=None, token=None, ttl=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """CreatePKICertIssuer - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -103,11 +113,15 @@ class CreatePKICertIssuer(object):
         self._allow_subdomains = None
         self._allowed_domains = None
         self._allowed_uri_sans = None
+        self._ca_target = None
         self._client_flag = None
         self._code_signing_flag = None
         self._country = None
         self._delete_protection = None
         self._description = None
+        self._destination_path = None
+        self._expiration_event_in = None
+        self._gw_cluster_url = None
         self._json = None
         self._key_usage = None
         self._locality = None
@@ -118,6 +132,7 @@ class CreatePKICertIssuer(object):
         self._organizational_units = None
         self._organizations = None
         self._postal_code = None
+        self._protect_certificates = None
         self._province = None
         self._server_flag = None
         self._signer_key_name = None
@@ -136,6 +151,8 @@ class CreatePKICertIssuer(object):
             self.allowed_domains = allowed_domains
         if allowed_uri_sans is not None:
             self.allowed_uri_sans = allowed_uri_sans
+        if ca_target is not None:
+            self.ca_target = ca_target
         if client_flag is not None:
             self.client_flag = client_flag
         if code_signing_flag is not None:
@@ -146,6 +163,12 @@ class CreatePKICertIssuer(object):
             self.delete_protection = delete_protection
         if description is not None:
             self.description = description
+        if destination_path is not None:
+            self.destination_path = destination_path
+        if expiration_event_in is not None:
+            self.expiration_event_in = expiration_event_in
+        if gw_cluster_url is not None:
+            self.gw_cluster_url = gw_cluster_url
         if json is not None:
             self.json = json
         if key_usage is not None:
@@ -165,6 +188,8 @@ class CreatePKICertIssuer(object):
             self.organizations = organizations
         if postal_code is not None:
             self.postal_code = postal_code
+        if protect_certificates is not None:
+            self.protect_certificates = protect_certificates
         if province is not None:
             self.province = province
         if server_flag is not None:
@@ -271,6 +296,29 @@ class CreatePKICertIssuer(object):
         """
 
         self._allowed_uri_sans = allowed_uri_sans
+
+    @property
+    def ca_target(self):
+        """Gets the ca_target of this CreatePKICertIssuer.  # noqa: E501
+
+        The name of an existing CA target to attach this PKI Certificate Issuer to, required in Public CA mode  # noqa: E501
+
+        :return: The ca_target of this CreatePKICertIssuer.  # noqa: E501
+        :rtype: str
+        """
+        return self._ca_target
+
+    @ca_target.setter
+    def ca_target(self, ca_target):
+        """Sets the ca_target of this CreatePKICertIssuer.
+
+        The name of an existing CA target to attach this PKI Certificate Issuer to, required in Public CA mode  # noqa: E501
+
+        :param ca_target: The ca_target of this CreatePKICertIssuer.  # noqa: E501
+        :type: str
+        """
+
+        self._ca_target = ca_target
 
     @property
     def client_flag(self):
@@ -386,6 +434,75 @@ class CreatePKICertIssuer(object):
         """
 
         self._description = description
+
+    @property
+    def destination_path(self):
+        """Gets the destination_path of this CreatePKICertIssuer.  # noqa: E501
+
+        A path in which to save generated certificates  # noqa: E501
+
+        :return: The destination_path of this CreatePKICertIssuer.  # noqa: E501
+        :rtype: str
+        """
+        return self._destination_path
+
+    @destination_path.setter
+    def destination_path(self, destination_path):
+        """Sets the destination_path of this CreatePKICertIssuer.
+
+        A path in which to save generated certificates  # noqa: E501
+
+        :param destination_path: The destination_path of this CreatePKICertIssuer.  # noqa: E501
+        :type: str
+        """
+
+        self._destination_path = destination_path
+
+    @property
+    def expiration_event_in(self):
+        """Gets the expiration_event_in of this CreatePKICertIssuer.  # noqa: E501
+
+        How many days before the expiration of the certificate would you like to be notified.  # noqa: E501
+
+        :return: The expiration_event_in of this CreatePKICertIssuer.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._expiration_event_in
+
+    @expiration_event_in.setter
+    def expiration_event_in(self, expiration_event_in):
+        """Sets the expiration_event_in of this CreatePKICertIssuer.
+
+        How many days before the expiration of the certificate would you like to be notified.  # noqa: E501
+
+        :param expiration_event_in: The expiration_event_in of this CreatePKICertIssuer.  # noqa: E501
+        :type: list[str]
+        """
+
+        self._expiration_event_in = expiration_event_in
+
+    @property
+    def gw_cluster_url(self):
+        """Gets the gw_cluster_url of this CreatePKICertIssuer.  # noqa: E501
+
+        The GW cluster URL to issue the certificate from, required in Public CA mode  # noqa: E501
+
+        :return: The gw_cluster_url of this CreatePKICertIssuer.  # noqa: E501
+        :rtype: str
+        """
+        return self._gw_cluster_url
+
+    @gw_cluster_url.setter
+    def gw_cluster_url(self, gw_cluster_url):
+        """Sets the gw_cluster_url of this CreatePKICertIssuer.
+
+        The GW cluster URL to issue the certificate from, required in Public CA mode  # noqa: E501
+
+        :param gw_cluster_url: The gw_cluster_url of this CreatePKICertIssuer.  # noqa: E501
+        :type: str
+        """
+
+        self._gw_cluster_url = gw_cluster_url
 
     @property
     def json(self):
@@ -620,6 +737,29 @@ class CreatePKICertIssuer(object):
         self._postal_code = postal_code
 
     @property
+    def protect_certificates(self):
+        """Gets the protect_certificates of this CreatePKICertIssuer.  # noqa: E501
+
+        Whether to protect generated certificates from deletion  # noqa: E501
+
+        :return: The protect_certificates of this CreatePKICertIssuer.  # noqa: E501
+        :rtype: bool
+        """
+        return self._protect_certificates
+
+    @protect_certificates.setter
+    def protect_certificates(self, protect_certificates):
+        """Sets the protect_certificates of this CreatePKICertIssuer.
+
+        Whether to protect generated certificates from deletion  # noqa: E501
+
+        :param protect_certificates: The protect_certificates of this CreatePKICertIssuer.  # noqa: E501
+        :type: bool
+        """
+
+        self._protect_certificates = protect_certificates
+
+    @property
     def province(self):
         """Gets the province of this CreatePKICertIssuer.  # noqa: E501
 
@@ -669,7 +809,7 @@ class CreatePKICertIssuer(object):
     def signer_key_name(self):
         """Gets the signer_key_name of this CreatePKICertIssuer.  # noqa: E501
 
-        A key to sign the certificate with  # noqa: E501
+        A key to sign the certificate with, required in Private CA mode  # noqa: E501
 
         :return: The signer_key_name of this CreatePKICertIssuer.  # noqa: E501
         :rtype: str
@@ -680,7 +820,7 @@ class CreatePKICertIssuer(object):
     def signer_key_name(self, signer_key_name):
         """Sets the signer_key_name of this CreatePKICertIssuer.
 
-        A key to sign the certificate with  # noqa: E501
+        A key to sign the certificate with, required in Private CA mode  # noqa: E501
 
         :param signer_key_name: The signer_key_name of this CreatePKICertIssuer.  # noqa: E501
         :type: str
@@ -763,7 +903,7 @@ class CreatePKICertIssuer(object):
     def ttl(self):
         """Gets the ttl of this CreatePKICertIssuer.  # noqa: E501
 
-        he requested Time To Live for the certificate, in seconds  # noqa: E501
+        The maximum requested Time To Live for issued certificates, in seconds. In case of Public CA, this is based on the CA target's supported maximum TTLs  # noqa: E501
 
         :return: The ttl of this CreatePKICertIssuer.  # noqa: E501
         :rtype: int
@@ -774,7 +914,7 @@ class CreatePKICertIssuer(object):
     def ttl(self, ttl):
         """Sets the ttl of this CreatePKICertIssuer.
 
-        he requested Time To Live for the certificate, in seconds  # noqa: E501
+        The maximum requested Time To Live for issued certificates, in seconds. In case of Public CA, this is based on the CA target's supported maximum TTLs  # noqa: E501
 
         :param ttl: The ttl of this CreatePKICertIssuer.  # noqa: E501
         :type: int

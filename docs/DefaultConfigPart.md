@@ -3,6 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**certificate_access_id** | **str** |  | [optional] 
 **default_protection_key_id** | **int** |  | [optional] 
 **default_secret_location** | **str** |  | [optional] 
 **oidc_access_id** | **str** |  | [optional] 

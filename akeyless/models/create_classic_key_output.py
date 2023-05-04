@@ -36,16 +36,18 @@ class CreateClassicKeyOutput(object):
     openapi_types = {
         'classic_key_id': 'str',
         'classic_key_name': 'str',
-        'classic_key_type': 'str'
+        'classic_key_type': 'str',
+        'public_key': 'str'
     }
 
     attribute_map = {
         'classic_key_id': 'classic_key_id',
         'classic_key_name': 'classic_key_name',
-        'classic_key_type': 'classic_key_type'
+        'classic_key_type': 'classic_key_type',
+        'public_key': 'public_key'
     }
 
-    def __init__(self, classic_key_id=None, classic_key_name=None, classic_key_type=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, classic_key_id=None, classic_key_name=None, classic_key_type=None, public_key=None, local_vars_configuration=None):  # noqa: E501
         """CreateClassicKeyOutput - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -54,6 +56,7 @@ class CreateClassicKeyOutput(object):
         self._classic_key_id = None
         self._classic_key_name = None
         self._classic_key_type = None
+        self._public_key = None
         self.discriminator = None
 
         if classic_key_id is not None:
@@ -62,6 +65,8 @@ class CreateClassicKeyOutput(object):
             self.classic_key_name = classic_key_name
         if classic_key_type is not None:
             self.classic_key_type = classic_key_type
+        if public_key is not None:
+            self.public_key = public_key
 
     @property
     def classic_key_id(self):
@@ -125,6 +130,27 @@ class CreateClassicKeyOutput(object):
         """
 
         self._classic_key_type = classic_key_type
+
+    @property
+    def public_key(self):
+        """Gets the public_key of this CreateClassicKeyOutput.  # noqa: E501
+
+
+        :return: The public_key of this CreateClassicKeyOutput.  # noqa: E501
+        :rtype: str
+        """
+        return self._public_key
+
+    @public_key.setter
+    def public_key(self, public_key):
+        """Sets the public_key of this CreateClassicKeyOutput.
+
+
+        :param public_key: The public_key of this CreateClassicKeyOutput.  # noqa: E501
+        :type: str
+        """
+
+        self._public_key = public_key
 
     def to_dict(self):
         """Returns the model properties as a dict"""

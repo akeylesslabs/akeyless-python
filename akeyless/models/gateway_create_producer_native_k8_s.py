@@ -60,6 +60,7 @@ class GatewayCreateProducerNativeK8S(object):
         'target_name': 'str',
         'token': 'str',
         'uid_token': 'str',
+        'use_gw_service_account': 'bool',
         'user_ttl': 'str'
     }
 
@@ -90,10 +91,11 @@ class GatewayCreateProducerNativeK8S(object):
         'target_name': 'target-name',
         'token': 'token',
         'uid_token': 'uid-token',
+        'use_gw_service_account': 'use-gw-service-account',
         'user_ttl': 'user-ttl'
     }
 
-    def __init__(self, delete_protection=None, json=False, k8s_allowed_namespaces=None, k8s_cluster_ca_cert=None, k8s_cluster_endpoint=None, k8s_cluster_token=None, k8s_namespace=None, k8s_predefined_role_name=None, k8s_predefined_role_type=None, k8s_rolebinding_yaml_def=None, k8s_service_account=None, k8s_service_account_type=None, name=None, producer_encryption_key_name=None, secure_access_allow_port_forwading=None, secure_access_bastion_issuer=None, secure_access_cluster_endpoint=None, secure_access_dashboard_url=None, secure_access_enable=None, secure_access_web=False, secure_access_web_browsing=False, secure_access_web_proxy=False, tags=None, target_name=None, token=None, uid_token=None, user_ttl='60m', local_vars_configuration=None):  # noqa: E501
+    def __init__(self, delete_protection=None, json=False, k8s_allowed_namespaces=None, k8s_cluster_ca_cert=None, k8s_cluster_endpoint=None, k8s_cluster_token=None, k8s_namespace=None, k8s_predefined_role_name=None, k8s_predefined_role_type=None, k8s_rolebinding_yaml_def=None, k8s_service_account=None, k8s_service_account_type=None, name=None, producer_encryption_key_name=None, secure_access_allow_port_forwading=None, secure_access_bastion_issuer=None, secure_access_cluster_endpoint=None, secure_access_dashboard_url=None, secure_access_enable=None, secure_access_web=False, secure_access_web_browsing=False, secure_access_web_proxy=False, tags=None, target_name=None, token=None, uid_token=None, use_gw_service_account=None, user_ttl='60m', local_vars_configuration=None):  # noqa: E501
         """GatewayCreateProducerNativeK8S - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -125,6 +127,7 @@ class GatewayCreateProducerNativeK8S(object):
         self._target_name = None
         self._token = None
         self._uid_token = None
+        self._use_gw_service_account = None
         self._user_ttl = None
         self.discriminator = None
 
@@ -179,6 +182,8 @@ class GatewayCreateProducerNativeK8S(object):
             self.token = token
         if uid_token is not None:
             self.uid_token = uid_token
+        if use_gw_service_account is not None:
+            self.use_gw_service_account = use_gw_service_account
         if user_ttl is not None:
             self.user_ttl = user_ttl
 
@@ -781,6 +786,29 @@ class GatewayCreateProducerNativeK8S(object):
         """
 
         self._uid_token = uid_token
+
+    @property
+    def use_gw_service_account(self):
+        """Gets the use_gw_service_account of this GatewayCreateProducerNativeK8S.  # noqa: E501
+
+        Use the GW's service account  # noqa: E501
+
+        :return: The use_gw_service_account of this GatewayCreateProducerNativeK8S.  # noqa: E501
+        :rtype: bool
+        """
+        return self._use_gw_service_account
+
+    @use_gw_service_account.setter
+    def use_gw_service_account(self, use_gw_service_account):
+        """Sets the use_gw_service_account of this GatewayCreateProducerNativeK8S.
+
+        Use the GW's service account  # noqa: E501
+
+        :param use_gw_service_account: The use_gw_service_account of this GatewayCreateProducerNativeK8S.  # noqa: E501
+        :type: bool
+        """
+
+        self._use_gw_service_account = use_gw_service_account
 
     @property
     def user_ttl(self):

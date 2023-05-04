@@ -34,6 +34,7 @@ class DefaultConfigPart(object):
                             and the value is json key in definition.
     """
     openapi_types = {
+        'certificate_access_id': 'str',
         'default_protection_key_id': 'int',
         'default_secret_location': 'str',
         'oidc_access_id': 'str',
@@ -41,24 +42,28 @@ class DefaultConfigPart(object):
     }
 
     attribute_map = {
+        'certificate_access_id': 'certificate_access_id',
         'default_protection_key_id': 'default_protection_key_id',
         'default_secret_location': 'default_secret_location',
         'oidc_access_id': 'oidc_access_id',
         'saml_access_id': 'saml_access_id'
     }
 
-    def __init__(self, default_protection_key_id=None, default_secret_location=None, oidc_access_id=None, saml_access_id=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, certificate_access_id=None, default_protection_key_id=None, default_secret_location=None, oidc_access_id=None, saml_access_id=None, local_vars_configuration=None):  # noqa: E501
         """DefaultConfigPart - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
+        self._certificate_access_id = None
         self._default_protection_key_id = None
         self._default_secret_location = None
         self._oidc_access_id = None
         self._saml_access_id = None
         self.discriminator = None
 
+        if certificate_access_id is not None:
+            self.certificate_access_id = certificate_access_id
         if default_protection_key_id is not None:
             self.default_protection_key_id = default_protection_key_id
         if default_secret_location is not None:
@@ -67,6 +72,27 @@ class DefaultConfigPart(object):
             self.oidc_access_id = oidc_access_id
         if saml_access_id is not None:
             self.saml_access_id = saml_access_id
+
+    @property
+    def certificate_access_id(self):
+        """Gets the certificate_access_id of this DefaultConfigPart.  # noqa: E501
+
+
+        :return: The certificate_access_id of this DefaultConfigPart.  # noqa: E501
+        :rtype: str
+        """
+        return self._certificate_access_id
+
+    @certificate_access_id.setter
+    def certificate_access_id(self, certificate_access_id):
+        """Sets the certificate_access_id of this DefaultConfigPart.
+
+
+        :param certificate_access_id: The certificate_access_id of this DefaultConfigPart.  # noqa: E501
+        :type: str
+        """
+
+        self._certificate_access_id = certificate_access_id
 
     @property
     def default_protection_key_id(self):

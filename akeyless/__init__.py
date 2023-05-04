@@ -15,7 +15,7 @@
 
 from __future__ import absolute_import
 
-__version__ = "3.3.0"
+__version__ = "3.3.1"
 
 # import apis into sdk package
 from akeyless.api.v2_api import V2Api
@@ -41,6 +41,10 @@ from akeyless.models.add_gateway_allowed_access_id import AddGatewayAllowedAcces
 from akeyless.models.admins_config_part import AdminsConfigPart
 from akeyless.models.akeyless_gateway_config import AkeylessGatewayConfig
 from akeyless.models.allowed_access import AllowedAccess
+from akeyless.models.allowed_access_args import AllowedAccessArgs
+from akeyless.models.allowed_access_delete_args import AllowedAccessDeleteArgs
+from akeyless.models.allowed_access_old import AllowedAccessOld
+from akeyless.models.allowed_access_update_args import AllowedAccessUpdateArgs
 from akeyless.models.assoc_role_auth_method import AssocRoleAuthMethod
 from akeyless.models.assoc_target_item import AssocTargetItem
 from akeyless.models.attribute_type_and_value import AttributeTypeAndValue
@@ -125,6 +129,8 @@ from akeyless.models.create_gcp_target import CreateGcpTarget
 from akeyless.models.create_gcp_target_output import CreateGcpTargetOutput
 from akeyless.models.create_github_target import CreateGithubTarget
 from akeyless.models.create_github_target_output import CreateGithubTargetOutput
+from akeyless.models.create_global_sign_target import CreateGlobalSignTarget
+from akeyless.models.create_global_sign_target_output import CreateGlobalSignTargetOutput
 from akeyless.models.create_key import CreateKey
 from akeyless.models.create_key_output import CreateKeyOutput
 from akeyless.models.create_ldap_target import CreateLdapTarget
@@ -158,6 +164,8 @@ from akeyless.models.create_web_target import CreateWebTarget
 from akeyless.models.create_web_target_output import CreateWebTargetOutput
 from akeyless.models.create_windows_target import CreateWindowsTarget
 from akeyless.models.create_windows_target_output import CreateWindowsTargetOutput
+from akeyless.models.create_zero_ssl_target import CreateZeroSSLTarget
+from akeyless.models.create_zero_ssl_target_output import CreateZeroSSLTargetOutput
 from akeyless.models.customer_fragment import CustomerFragment
 from akeyless.models.customer_fragments_json import CustomerFragmentsJson
 from akeyless.models.customer_full_address import CustomerFullAddress
@@ -286,7 +294,7 @@ from akeyless.models.gateway_create_producer_redshift import GatewayCreateProduc
 from akeyless.models.gateway_create_producer_redshift_output import GatewayCreateProducerRedshiftOutput
 from akeyless.models.gateway_create_producer_snowflake import GatewayCreateProducerSnowflake
 from akeyless.models.gateway_create_producer_snowflake_output import GatewayCreateProducerSnowflakeOutput
-from akeyless.models.gateway_delete_allowed_management_access import GatewayDeleteAllowedManagementAccess
+from akeyless.models.gateway_delete_allowed_access_output import GatewayDeleteAllowedAccessOutput
 from akeyless.models.gateway_delete_k8_s_auth_config import GatewayDeleteK8SAuthConfig
 from akeyless.models.gateway_delete_k8_s_auth_config_output import GatewayDeleteK8SAuthConfigOutput
 from akeyless.models.gateway_delete_migration import GatewayDeleteMigration
@@ -302,9 +310,9 @@ from akeyless.models.gateway_get_ldap_auth_config_output import GatewayGetLdapAu
 from akeyless.models.gateway_get_migration import GatewayGetMigration
 from akeyless.models.gateway_get_producer import GatewayGetProducer
 from akeyless.models.gateway_get_tmp_users import GatewayGetTmpUsers
-from akeyless.models.gateway_list_allowed_management_access import GatewayListAllowedManagementAccess
 from akeyless.models.gateway_list_migration import GatewayListMigration
 from akeyless.models.gateway_list_producers import GatewayListProducers
+from akeyless.models.gateway_list_rotated_secrets import GatewayListRotatedSecrets
 from akeyless.models.gateway_message_queue_info import GatewayMessageQueueInfo
 from akeyless.models.gateway_migrate_personal_items import GatewayMigratePersonalItems
 from akeyless.models.gateway_migrate_personal_items_output import GatewayMigratePersonalItemsOutput
@@ -406,7 +414,6 @@ from akeyless.models.get_rotated_secret_value import GetRotatedSecretValue
 from akeyless.models.get_ssh_certificate import GetSSHCertificate
 from akeyless.models.get_ssh_certificate_output import GetSSHCertificateOutput
 from akeyless.models.get_secret_value import GetSecretValue
-from akeyless.models.get_sub_admins_list_reply_obj import GetSubAdminsListReplyObj
 from akeyless.models.get_tags import GetTags
 from akeyless.models.get_target import GetTarget
 from akeyless.models.get_target_details import GetTargetDetails
@@ -414,6 +421,8 @@ from akeyless.models.get_target_details_output import GetTargetDetailsOutput
 from akeyless.models.gw_cluster_identity import GwClusterIdentity
 from akeyless.models.hashi_migration import HashiMigration
 from akeyless.models.hashi_payload import HashiPayload
+from akeyless.models.hmac import Hmac
+from akeyless.models.hmac_output import HmacOutput
 from akeyless.models.huawei_access_rules import HuaweiAccessRules
 from akeyless.models.import_passwords import ImportPasswords
 from akeyless.models.import_passwords_output import ImportPasswordsOutput
@@ -466,6 +475,7 @@ from akeyless.models.list_auth_methods_output import ListAuthMethodsOutput
 from akeyless.models.list_gateways import ListGateways
 from akeyless.models.list_items import ListItems
 from akeyless.models.list_items_in_path_output import ListItemsInPathOutput
+from akeyless.models.list_items_output import ListItemsOutput
 from akeyless.models.list_roles import ListRoles
 from akeyless.models.list_roles_output import ListRolesOutput
 from akeyless.models.list_sra_bastions import ListSRABastions
@@ -610,6 +620,8 @@ from akeyless.models.update_gcp_target import UpdateGcpTarget
 from akeyless.models.update_gcp_target_output import UpdateGcpTargetOutput
 from akeyless.models.update_github_target import UpdateGithubTarget
 from akeyless.models.update_github_target_output import UpdateGithubTargetOutput
+from akeyless.models.update_global_sign_target import UpdateGlobalSignTarget
+from akeyless.models.update_global_sign_target_output import UpdateGlobalSignTargetOutput
 from akeyless.models.update_item import UpdateItem
 from akeyless.models.update_item_output import UpdateItemOutput
 from akeyless.models.update_ldap_target import UpdateLdapTarget
@@ -648,6 +660,8 @@ from akeyless.models.update_web_target import UpdateWebTarget
 from akeyless.models.update_web_target_details import UpdateWebTargetDetails
 from akeyless.models.update_web_target_output import UpdateWebTargetOutput
 from akeyless.models.update_windows_target import UpdateWindowsTarget
+from akeyless.models.update_zero_ssl_target import UpdateZeroSSLTarget
+from akeyless.models.update_zero_ssl_target_output import UpdateZeroSSLTargetOutput
 from akeyless.models.upload_pkcs12 import UploadPKCS12
 from akeyless.models.upload_rsa import UploadRSA
 from akeyless.models.validate_token import ValidateToken

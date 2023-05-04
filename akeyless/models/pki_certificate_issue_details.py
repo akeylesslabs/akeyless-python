@@ -39,10 +39,14 @@ class PKICertificateIssueDetails(object):
         'allowed_domains_list': 'list[str]',
         'allowed_uri_sans': 'list[str]',
         'basic_constraints_valid_for_non_ca': 'bool',
+        'certificate_authority_mode': 'str',
         'client_flag': 'bool',
         'code_signing_flag': 'bool',
         'country': 'list[str]',
+        'destination_path': 'str',
         'enforce_hostnames': 'bool',
+        'expiration_events': 'list[CertificateExpirationEvent]',
+        'gw_cluster_url': 'str',
         'is_ca': 'bool',
         'key_bits': 'int',
         'key_type': 'str',
@@ -52,6 +56,7 @@ class PKICertificateIssueDetails(object):
         'organization_list': 'list[str]',
         'organization_unit_list': 'list[str]',
         'postal_code': 'list[str]',
+        'protect_generated_certificates': 'bool',
         'province': 'list[str]',
         'require_cn': 'bool',
         'server_flag': 'bool',
@@ -64,10 +69,14 @@ class PKICertificateIssueDetails(object):
         'allowed_domains_list': 'allowed_domains_list',
         'allowed_uri_sans': 'allowed_uri_sans',
         'basic_constraints_valid_for_non_ca': 'basic_constraints_valid_for_non_ca',
+        'certificate_authority_mode': 'certificate_authority_mode',
         'client_flag': 'client_flag',
         'code_signing_flag': 'code_signing_flag',
         'country': 'country',
+        'destination_path': 'destination_path',
         'enforce_hostnames': 'enforce_hostnames',
+        'expiration_events': 'expiration_events',
+        'gw_cluster_url': 'gw_cluster_url',
         'is_ca': 'is_ca',
         'key_bits': 'key_bits',
         'key_type': 'key_type',
@@ -77,13 +86,14 @@ class PKICertificateIssueDetails(object):
         'organization_list': 'organization_list',
         'organization_unit_list': 'organization_unit_list',
         'postal_code': 'postal_code',
+        'protect_generated_certificates': 'protect_generated_certificates',
         'province': 'province',
         'require_cn': 'require_cn',
         'server_flag': 'server_flag',
         'street_address': 'street_address'
     }
 
-    def __init__(self, allow_any_name=None, allow_subdomains=None, allowed_domains_list=None, allowed_uri_sans=None, basic_constraints_valid_for_non_ca=None, client_flag=None, code_signing_flag=None, country=None, enforce_hostnames=None, is_ca=None, key_bits=None, key_type=None, key_usage_list=None, locality=None, not_before_duration=None, organization_list=None, organization_unit_list=None, postal_code=None, province=None, require_cn=None, server_flag=None, street_address=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, allow_any_name=None, allow_subdomains=None, allowed_domains_list=None, allowed_uri_sans=None, basic_constraints_valid_for_non_ca=None, certificate_authority_mode=None, client_flag=None, code_signing_flag=None, country=None, destination_path=None, enforce_hostnames=None, expiration_events=None, gw_cluster_url=None, is_ca=None, key_bits=None, key_type=None, key_usage_list=None, locality=None, not_before_duration=None, organization_list=None, organization_unit_list=None, postal_code=None, protect_generated_certificates=None, province=None, require_cn=None, server_flag=None, street_address=None, local_vars_configuration=None):  # noqa: E501
         """PKICertificateIssueDetails - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -94,10 +104,14 @@ class PKICertificateIssueDetails(object):
         self._allowed_domains_list = None
         self._allowed_uri_sans = None
         self._basic_constraints_valid_for_non_ca = None
+        self._certificate_authority_mode = None
         self._client_flag = None
         self._code_signing_flag = None
         self._country = None
+        self._destination_path = None
         self._enforce_hostnames = None
+        self._expiration_events = None
+        self._gw_cluster_url = None
         self._is_ca = None
         self._key_bits = None
         self._key_type = None
@@ -107,6 +121,7 @@ class PKICertificateIssueDetails(object):
         self._organization_list = None
         self._organization_unit_list = None
         self._postal_code = None
+        self._protect_generated_certificates = None
         self._province = None
         self._require_cn = None
         self._server_flag = None
@@ -123,14 +138,22 @@ class PKICertificateIssueDetails(object):
             self.allowed_uri_sans = allowed_uri_sans
         if basic_constraints_valid_for_non_ca is not None:
             self.basic_constraints_valid_for_non_ca = basic_constraints_valid_for_non_ca
+        if certificate_authority_mode is not None:
+            self.certificate_authority_mode = certificate_authority_mode
         if client_flag is not None:
             self.client_flag = client_flag
         if code_signing_flag is not None:
             self.code_signing_flag = code_signing_flag
         if country is not None:
             self.country = country
+        if destination_path is not None:
+            self.destination_path = destination_path
         if enforce_hostnames is not None:
             self.enforce_hostnames = enforce_hostnames
+        if expiration_events is not None:
+            self.expiration_events = expiration_events
+        if gw_cluster_url is not None:
+            self.gw_cluster_url = gw_cluster_url
         if is_ca is not None:
             self.is_ca = is_ca
         if key_bits is not None:
@@ -149,6 +172,8 @@ class PKICertificateIssueDetails(object):
             self.organization_unit_list = organization_unit_list
         if postal_code is not None:
             self.postal_code = postal_code
+        if protect_generated_certificates is not None:
+            self.protect_generated_certificates = protect_generated_certificates
         if province is not None:
             self.province = province
         if require_cn is not None:
@@ -264,6 +289,27 @@ class PKICertificateIssueDetails(object):
         self._basic_constraints_valid_for_non_ca = basic_constraints_valid_for_non_ca
 
     @property
+    def certificate_authority_mode(self):
+        """Gets the certificate_authority_mode of this PKICertificateIssueDetails.  # noqa: E501
+
+
+        :return: The certificate_authority_mode of this PKICertificateIssueDetails.  # noqa: E501
+        :rtype: str
+        """
+        return self._certificate_authority_mode
+
+    @certificate_authority_mode.setter
+    def certificate_authority_mode(self, certificate_authority_mode):
+        """Sets the certificate_authority_mode of this PKICertificateIssueDetails.
+
+
+        :param certificate_authority_mode: The certificate_authority_mode of this PKICertificateIssueDetails.  # noqa: E501
+        :type: str
+        """
+
+        self._certificate_authority_mode = certificate_authority_mode
+
+    @property
     def client_flag(self):
         """Gets the client_flag of this PKICertificateIssueDetails.  # noqa: E501
 
@@ -327,6 +373,29 @@ class PKICertificateIssueDetails(object):
         self._country = country
 
     @property
+    def destination_path(self):
+        """Gets the destination_path of this PKICertificateIssueDetails.  # noqa: E501
+
+        DestinationPath is the destination to save generated certificates  # noqa: E501
+
+        :return: The destination_path of this PKICertificateIssueDetails.  # noqa: E501
+        :rtype: str
+        """
+        return self._destination_path
+
+    @destination_path.setter
+    def destination_path(self, destination_path):
+        """Sets the destination_path of this PKICertificateIssueDetails.
+
+        DestinationPath is the destination to save generated certificates  # noqa: E501
+
+        :param destination_path: The destination_path of this PKICertificateIssueDetails.  # noqa: E501
+        :type: str
+        """
+
+        self._destination_path = destination_path
+
+    @property
     def enforce_hostnames(self):
         """Gets the enforce_hostnames of this PKICertificateIssueDetails.  # noqa: E501
 
@@ -346,6 +415,52 @@ class PKICertificateIssueDetails(object):
         """
 
         self._enforce_hostnames = enforce_hostnames
+
+    @property
+    def expiration_events(self):
+        """Gets the expiration_events of this PKICertificateIssueDetails.  # noqa: E501
+
+        ExpirationNotification holds a list of expiration notices that should be sent in case a certificate is about to expire, this value is being propagated to the Certificate resources that are created  # noqa: E501
+
+        :return: The expiration_events of this PKICertificateIssueDetails.  # noqa: E501
+        :rtype: list[CertificateExpirationEvent]
+        """
+        return self._expiration_events
+
+    @expiration_events.setter
+    def expiration_events(self, expiration_events):
+        """Sets the expiration_events of this PKICertificateIssueDetails.
+
+        ExpirationNotification holds a list of expiration notices that should be sent in case a certificate is about to expire, this value is being propagated to the Certificate resources that are created  # noqa: E501
+
+        :param expiration_events: The expiration_events of this PKICertificateIssueDetails.  # noqa: E501
+        :type: list[CertificateExpirationEvent]
+        """
+
+        self._expiration_events = expiration_events
+
+    @property
+    def gw_cluster_url(self):
+        """Gets the gw_cluster_url of this PKICertificateIssueDetails.  # noqa: E501
+
+        GWClusterURL is required when CAMode is \"public\" and it defines the cluster URL the PKI should be issued from. The GW cluster must have permissions to read associated target's details  # noqa: E501
+
+        :return: The gw_cluster_url of this PKICertificateIssueDetails.  # noqa: E501
+        :rtype: str
+        """
+        return self._gw_cluster_url
+
+    @gw_cluster_url.setter
+    def gw_cluster_url(self, gw_cluster_url):
+        """Sets the gw_cluster_url of this PKICertificateIssueDetails.
+
+        GWClusterURL is required when CAMode is \"public\" and it defines the cluster URL the PKI should be issued from. The GW cluster must have permissions to read associated target's details  # noqa: E501
+
+        :param gw_cluster_url: The gw_cluster_url of this PKICertificateIssueDetails.  # noqa: E501
+        :type: str
+        """
+
+        self._gw_cluster_url = gw_cluster_url
 
     @property
     def is_ca(self):
@@ -537,6 +652,29 @@ class PKICertificateIssueDetails(object):
         """
 
         self._postal_code = postal_code
+
+    @property
+    def protect_generated_certificates(self):
+        """Gets the protect_generated_certificates of this PKICertificateIssueDetails.  # noqa: E501
+
+        ProtectGeneratedCertificates dictates whether the created certificates should be protected from deletion  # noqa: E501
+
+        :return: The protect_generated_certificates of this PKICertificateIssueDetails.  # noqa: E501
+        :rtype: bool
+        """
+        return self._protect_generated_certificates
+
+    @protect_generated_certificates.setter
+    def protect_generated_certificates(self, protect_generated_certificates):
+        """Sets the protect_generated_certificates of this PKICertificateIssueDetails.
+
+        ProtectGeneratedCertificates dictates whether the created certificates should be protected from deletion  # noqa: E501
+
+        :param protect_generated_certificates: The protect_generated_certificates of this PKICertificateIssueDetails.  # noqa: E501
+        :type: bool
+        """
+
+        self._protect_generated_certificates = protect_generated_certificates
 
     @property
     def province(self):

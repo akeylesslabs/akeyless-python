@@ -34,29 +34,62 @@ class Update(object):
                             and the value is json key in definition.
     """
     openapi_types = {
+        'artifact_repository': 'str',
         'json': 'bool',
+        'show_changelog': 'bool',
         'version': 'str'
     }
 
     attribute_map = {
+        'artifact_repository': 'artifact-repository',
         'json': 'json',
+        'show_changelog': 'show-changelog',
         'version': 'version'
     }
 
-    def __init__(self, json=False, version='latest', local_vars_configuration=None):  # noqa: E501
+    def __init__(self, artifact_repository=None, json=False, show_changelog=None, version='latest', local_vars_configuration=None):  # noqa: E501
         """Update - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
+        self._artifact_repository = None
         self._json = None
+        self._show_changelog = None
         self._version = None
         self.discriminator = None
 
+        if artifact_repository is not None:
+            self.artifact_repository = artifact_repository
         if json is not None:
             self.json = json
+        if show_changelog is not None:
+            self.show_changelog = show_changelog
         if version is not None:
             self.version = version
+
+    @property
+    def artifact_repository(self):
+        """Gets the artifact_repository of this Update.  # noqa: E501
+
+        Alternative CLI repository url. e.g. https://artifacts.site2.akeyless.io  # noqa: E501
+
+        :return: The artifact_repository of this Update.  # noqa: E501
+        :rtype: str
+        """
+        return self._artifact_repository
+
+    @artifact_repository.setter
+    def artifact_repository(self, artifact_repository):
+        """Sets the artifact_repository of this Update.
+
+        Alternative CLI repository url. e.g. https://artifacts.site2.akeyless.io  # noqa: E501
+
+        :param artifact_repository: The artifact_repository of this Update.  # noqa: E501
+        :type: str
+        """
+
+        self._artifact_repository = artifact_repository
 
     @property
     def json(self):
@@ -82,10 +115,33 @@ class Update(object):
         self._json = json
 
     @property
+    def show_changelog(self):
+        """Gets the show_changelog of this Update.  # noqa: E501
+
+        Show the changelog between the current version and the latest one and exit (update will not be performed)  # noqa: E501
+
+        :return: The show_changelog of this Update.  # noqa: E501
+        :rtype: bool
+        """
+        return self._show_changelog
+
+    @show_changelog.setter
+    def show_changelog(self, show_changelog):
+        """Sets the show_changelog of this Update.
+
+        Show the changelog between the current version and the latest one and exit (update will not be performed)  # noqa: E501
+
+        :param show_changelog: The show_changelog of this Update.  # noqa: E501
+        :type: bool
+        """
+
+        self._show_changelog = show_changelog
+
+    @property
     def version(self):
         """Gets the version of this Update.  # noqa: E501
 
-        Version  # noqa: E501
+        The CLI version  # noqa: E501
 
         :return: The version of this Update.  # noqa: E501
         :rtype: str
@@ -96,7 +152,7 @@ class Update(object):
     def version(self, version):
         """Sets the version of this Update.
 
-        Version  # noqa: E501
+        The CLI version  # noqa: E501
 
         :param version: The version of this Update.  # noqa: E501
         :type: str

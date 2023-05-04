@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **key_state** | **str** | ItemState defines the different states an Item can be in | [optional] 
 **key_type** | **str** |  | [optional] 
 **last_error** | **str** |  | [optional] 
+**public_key** | **str** |  | [optional] 
 **target_alias_helper** | **str** |  | [optional] 
 **target_types** | **list[str]** |  | [optional] 
 **targets** | [**list[ClassicKeyTargetInfo]**](ClassicKeyTargetInfo.md) |  | [optional] 

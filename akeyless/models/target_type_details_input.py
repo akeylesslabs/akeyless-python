@@ -35,6 +35,7 @@ class TargetTypeDetailsInput(object):
     """
     openapi_types = {
         'administrative_port': 'str',
+        'api_key': 'str',
         'app_private_key': 'list[int]',
         'artifactory_admin_apikey': 'str',
         'artifactory_admin_username': 'str',
@@ -71,12 +72,15 @@ class TargetTypeDetailsInput(object):
         'db_server_certificates': 'str',
         'db_server_name': 'str',
         'db_user_name': 'str',
+        'domain_name': 'str',
         'eks_access_key_id': 'str',
         'eks_cluster_ca_certificate': 'str',
         'eks_cluster_endpoint': 'str',
         'eks_cluster_name': 'str',
         'eks_region': 'str',
         'eks_secret_access_key': 'str',
+        'email': 'str',
+        'first_name': 'str',
         'gcp_service_account_email': 'str',
         'gcp_service_account_key': 'str',
         'gcp_service_account_key_base64': 'str',
@@ -91,10 +95,15 @@ class TargetTypeDetailsInput(object):
         'host': 'str',
         'hostname': 'str',
         'hosts': 'dict(str, str)',
+        'imap_fqdn': 'str',
+        'imap_password': 'str',
+        'imap_port': 'str',
+        'imap_user': 'str',
         'implementation_type': 'str',
         'k8s_bearer_token': 'str',
         'k8s_cluster_ca_certificate': 'str',
         'k8s_cluster_endpoint': 'str',
+        'last_name': 'str',
         'ldap_audience': 'str',
         'ldap_bind_dn': 'str',
         'ldap_bind_password': 'str',
@@ -114,11 +123,13 @@ class TargetTypeDetailsInput(object):
         'mongodb_username': 'str',
         'password': 'str',
         'payload': 'str',
+        'phone': 'str',
         'ping_url': 'str',
         'port': 'str',
         'private_key': 'str',
         'private_key_password': 'str',
         'privileged_user': 'str',
+        'profile_id': 'str',
         'rabbitmq_server_password': 'str',
         'rabbitmq_server_uri': 'str',
         'rabbitmq_server_user': 'str',
@@ -127,12 +138,15 @@ class TargetTypeDetailsInput(object):
         'ssl_connection_certificate': 'str',
         'ssl_connection_mode': 'bool',
         'tenant_url': 'str',
+        'timeout': 'int',
         'url': 'str',
         'use_gw_cloud_identity': 'bool',
+        'use_gw_service_account': 'bool',
         'use_tls': 'bool',
         'user_name': 'str',
         'user_password': 'str',
         'username': 'str',
+        'validation_email': 'str',
         'venafi_api_key': 'str',
         'venafi_base_url': 'str',
         'venafi_tpp_password': 'str',
@@ -143,6 +157,7 @@ class TargetTypeDetailsInput(object):
 
     attribute_map = {
         'administrative_port': 'administrative_port',
+        'api_key': 'api_key',
         'app_private_key': 'app_private_key',
         'artifactory_admin_apikey': 'artifactory_admin_apikey',
         'artifactory_admin_username': 'artifactory_admin_username',
@@ -179,12 +194,15 @@ class TargetTypeDetailsInput(object):
         'db_server_certificates': 'db_server_certificates',
         'db_server_name': 'db_server_name',
         'db_user_name': 'db_user_name',
+        'domain_name': 'domain_name',
         'eks_access_key_id': 'eks_access_key_id',
         'eks_cluster_ca_certificate': 'eks_cluster_ca_certificate',
         'eks_cluster_endpoint': 'eks_cluster_endpoint',
         'eks_cluster_name': 'eks_cluster_name',
         'eks_region': 'eks_region',
         'eks_secret_access_key': 'eks_secret_access_key',
+        'email': 'email',
+        'first_name': 'first_name',
         'gcp_service_account_email': 'gcp_service_account_email',
         'gcp_service_account_key': 'gcp_service_account_key',
         'gcp_service_account_key_base64': 'gcp_service_account_key_base64',
@@ -199,10 +217,15 @@ class TargetTypeDetailsInput(object):
         'host': 'host',
         'hostname': 'hostname',
         'hosts': 'hosts',
+        'imap_fqdn': 'imap_fqdn',
+        'imap_password': 'imap_password',
+        'imap_port': 'imap_port',
+        'imap_user': 'imap_user',
         'implementation_type': 'implementation_type',
         'k8s_bearer_token': 'k8s_bearer_token',
         'k8s_cluster_ca_certificate': 'k8s_cluster_ca_certificate',
         'k8s_cluster_endpoint': 'k8s_cluster_endpoint',
+        'last_name': 'last_name',
         'ldap_audience': 'ldap_audience',
         'ldap_bind_dn': 'ldap_bind_dn',
         'ldap_bind_password': 'ldap_bind_password',
@@ -222,11 +245,13 @@ class TargetTypeDetailsInput(object):
         'mongodb_username': 'mongodb_username',
         'password': 'password',
         'payload': 'payload',
+        'phone': 'phone',
         'ping_url': 'ping_url',
         'port': 'port',
         'private_key': 'private_key',
         'private_key_password': 'private_key_password',
         'privileged_user': 'privileged_user',
+        'profile_id': 'profile_id',
         'rabbitmq_server_password': 'rabbitmq_server_password',
         'rabbitmq_server_uri': 'rabbitmq_server_uri',
         'rabbitmq_server_user': 'rabbitmq_server_user',
@@ -235,12 +260,15 @@ class TargetTypeDetailsInput(object):
         'ssl_connection_certificate': 'ssl_connection_certificate',
         'ssl_connection_mode': 'ssl_connection_mode',
         'tenant_url': 'tenant_url',
+        'timeout': 'timeout',
         'url': 'url',
         'use_gw_cloud_identity': 'use_gw_cloud_identity',
+        'use_gw_service_account': 'use_gw_service_account',
         'use_tls': 'use_tls',
         'user_name': 'user_name',
         'user_password': 'user_password',
         'username': 'username',
+        'validation_email': 'validation_email',
         'venafi_api_key': 'venafi_api_key',
         'venafi_base_url': 'venafi_base_url',
         'venafi_tpp_password': 'venafi_tpp_password',
@@ -249,13 +277,14 @@ class TargetTypeDetailsInput(object):
         'venafi_zone': 'venafi_zone'
     }
 
-    def __init__(self, administrative_port=None, app_private_key=None, artifactory_admin_apikey=None, artifactory_admin_username=None, artifactory_base_url=None, auth_flow=None, authorization_port=None, aws_access_key_id=None, aws_region=None, aws_secret_access_key=None, aws_session_token=None, azure_client_id=None, azure_client_secret=None, azure_resource_group_name=None, azure_resource_name=None, azure_subscription_id=None, azure_tenant_id=None, ca_cert_data=None, ca_cert_name=None, certificate=None, chef_server_host_name=None, chef_server_key=None, chef_server_port=None, chef_server_url=None, chef_server_username=None, chef_skip_ssl=None, client_id=None, client_secret=None, db_host_name=None, db_name=None, db_port=None, db_private_key=None, db_private_key_passphrase=None, db_pwd=None, db_server_certificates=None, db_server_name=None, db_user_name=None, eks_access_key_id=None, eks_cluster_ca_certificate=None, eks_cluster_endpoint=None, eks_cluster_name=None, eks_region=None, eks_secret_access_key=None, gcp_service_account_email=None, gcp_service_account_key=None, gcp_service_account_key_base64=None, github_app_id=None, github_app_private_key=None, github_base_url=None, gke_cluster_ca_certificate=None, gke_cluster_endpoint=None, gke_cluster_name=None, gke_service_account_key=None, gke_service_account_name=None, host=None, hostname=None, hosts=None, implementation_type=None, k8s_bearer_token=None, k8s_cluster_ca_certificate=None, k8s_cluster_endpoint=None, ldap_audience=None, ldap_bind_dn=None, ldap_bind_password=None, ldap_certificate=None, ldap_token_expiration=None, ldap_url=None, mongodb_atlas_api_private_key=None, mongodb_atlas_api_public_key=None, mongodb_atlas_project_id=None, mongodb_db_name=None, mongodb_default_auth_db=None, mongodb_host_port=None, mongodb_is_atlas=None, mongodb_password=None, mongodb_uri_connection=None, mongodb_uri_options=None, mongodb_username=None, password=None, payload=None, ping_url=None, port=None, private_key=None, private_key_password=None, privileged_user=None, rabbitmq_server_password=None, rabbitmq_server_uri=None, rabbitmq_server_user=None, security_token=None, sf_account=None, ssl_connection_certificate=None, ssl_connection_mode=None, tenant_url=None, url=None, use_gw_cloud_identity=None, use_tls=None, user_name=None, user_password=None, username=None, venafi_api_key=None, venafi_base_url=None, venafi_tpp_password=None, venafi_tpp_username=None, venafi_use_tpp=None, venafi_zone=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, administrative_port=None, api_key=None, app_private_key=None, artifactory_admin_apikey=None, artifactory_admin_username=None, artifactory_base_url=None, auth_flow=None, authorization_port=None, aws_access_key_id=None, aws_region=None, aws_secret_access_key=None, aws_session_token=None, azure_client_id=None, azure_client_secret=None, azure_resource_group_name=None, azure_resource_name=None, azure_subscription_id=None, azure_tenant_id=None, ca_cert_data=None, ca_cert_name=None, certificate=None, chef_server_host_name=None, chef_server_key=None, chef_server_port=None, chef_server_url=None, chef_server_username=None, chef_skip_ssl=None, client_id=None, client_secret=None, db_host_name=None, db_name=None, db_port=None, db_private_key=None, db_private_key_passphrase=None, db_pwd=None, db_server_certificates=None, db_server_name=None, db_user_name=None, domain_name=None, eks_access_key_id=None, eks_cluster_ca_certificate=None, eks_cluster_endpoint=None, eks_cluster_name=None, eks_region=None, eks_secret_access_key=None, email=None, first_name=None, gcp_service_account_email=None, gcp_service_account_key=None, gcp_service_account_key_base64=None, github_app_id=None, github_app_private_key=None, github_base_url=None, gke_cluster_ca_certificate=None, gke_cluster_endpoint=None, gke_cluster_name=None, gke_service_account_key=None, gke_service_account_name=None, host=None, hostname=None, hosts=None, imap_fqdn=None, imap_password=None, imap_port=None, imap_user=None, implementation_type=None, k8s_bearer_token=None, k8s_cluster_ca_certificate=None, k8s_cluster_endpoint=None, last_name=None, ldap_audience=None, ldap_bind_dn=None, ldap_bind_password=None, ldap_certificate=None, ldap_token_expiration=None, ldap_url=None, mongodb_atlas_api_private_key=None, mongodb_atlas_api_public_key=None, mongodb_atlas_project_id=None, mongodb_db_name=None, mongodb_default_auth_db=None, mongodb_host_port=None, mongodb_is_atlas=None, mongodb_password=None, mongodb_uri_connection=None, mongodb_uri_options=None, mongodb_username=None, password=None, payload=None, phone=None, ping_url=None, port=None, private_key=None, private_key_password=None, privileged_user=None, profile_id=None, rabbitmq_server_password=None, rabbitmq_server_uri=None, rabbitmq_server_user=None, security_token=None, sf_account=None, ssl_connection_certificate=None, ssl_connection_mode=None, tenant_url=None, timeout=None, url=None, use_gw_cloud_identity=None, use_gw_service_account=None, use_tls=None, user_name=None, user_password=None, username=None, validation_email=None, venafi_api_key=None, venafi_base_url=None, venafi_tpp_password=None, venafi_tpp_username=None, venafi_use_tpp=None, venafi_zone=None, local_vars_configuration=None):  # noqa: E501
         """TargetTypeDetailsInput - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._administrative_port = None
+        self._api_key = None
         self._app_private_key = None
         self._artifactory_admin_apikey = None
         self._artifactory_admin_username = None
@@ -292,12 +321,15 @@ class TargetTypeDetailsInput(object):
         self._db_server_certificates = None
         self._db_server_name = None
         self._db_user_name = None
+        self._domain_name = None
         self._eks_access_key_id = None
         self._eks_cluster_ca_certificate = None
         self._eks_cluster_endpoint = None
         self._eks_cluster_name = None
         self._eks_region = None
         self._eks_secret_access_key = None
+        self._email = None
+        self._first_name = None
         self._gcp_service_account_email = None
         self._gcp_service_account_key = None
         self._gcp_service_account_key_base64 = None
@@ -312,10 +344,15 @@ class TargetTypeDetailsInput(object):
         self._host = None
         self._hostname = None
         self._hosts = None
+        self._imap_fqdn = None
+        self._imap_password = None
+        self._imap_port = None
+        self._imap_user = None
         self._implementation_type = None
         self._k8s_bearer_token = None
         self._k8s_cluster_ca_certificate = None
         self._k8s_cluster_endpoint = None
+        self._last_name = None
         self._ldap_audience = None
         self._ldap_bind_dn = None
         self._ldap_bind_password = None
@@ -335,11 +372,13 @@ class TargetTypeDetailsInput(object):
         self._mongodb_username = None
         self._password = None
         self._payload = None
+        self._phone = None
         self._ping_url = None
         self._port = None
         self._private_key = None
         self._private_key_password = None
         self._privileged_user = None
+        self._profile_id = None
         self._rabbitmq_server_password = None
         self._rabbitmq_server_uri = None
         self._rabbitmq_server_user = None
@@ -348,12 +387,15 @@ class TargetTypeDetailsInput(object):
         self._ssl_connection_certificate = None
         self._ssl_connection_mode = None
         self._tenant_url = None
+        self._timeout = None
         self._url = None
         self._use_gw_cloud_identity = None
+        self._use_gw_service_account = None
         self._use_tls = None
         self._user_name = None
         self._user_password = None
         self._username = None
+        self._validation_email = None
         self._venafi_api_key = None
         self._venafi_base_url = None
         self._venafi_tpp_password = None
@@ -364,6 +406,8 @@ class TargetTypeDetailsInput(object):
 
         if administrative_port is not None:
             self.administrative_port = administrative_port
+        if api_key is not None:
+            self.api_key = api_key
         if app_private_key is not None:
             self.app_private_key = app_private_key
         if artifactory_admin_apikey is not None:
@@ -436,6 +480,8 @@ class TargetTypeDetailsInput(object):
             self.db_server_name = db_server_name
         if db_user_name is not None:
             self.db_user_name = db_user_name
+        if domain_name is not None:
+            self.domain_name = domain_name
         if eks_access_key_id is not None:
             self.eks_access_key_id = eks_access_key_id
         if eks_cluster_ca_certificate is not None:
@@ -448,6 +494,10 @@ class TargetTypeDetailsInput(object):
             self.eks_region = eks_region
         if eks_secret_access_key is not None:
             self.eks_secret_access_key = eks_secret_access_key
+        if email is not None:
+            self.email = email
+        if first_name is not None:
+            self.first_name = first_name
         if gcp_service_account_email is not None:
             self.gcp_service_account_email = gcp_service_account_email
         if gcp_service_account_key is not None:
@@ -476,6 +526,14 @@ class TargetTypeDetailsInput(object):
             self.hostname = hostname
         if hosts is not None:
             self.hosts = hosts
+        if imap_fqdn is not None:
+            self.imap_fqdn = imap_fqdn
+        if imap_password is not None:
+            self.imap_password = imap_password
+        if imap_port is not None:
+            self.imap_port = imap_port
+        if imap_user is not None:
+            self.imap_user = imap_user
         if implementation_type is not None:
             self.implementation_type = implementation_type
         if k8s_bearer_token is not None:
@@ -484,6 +542,8 @@ class TargetTypeDetailsInput(object):
             self.k8s_cluster_ca_certificate = k8s_cluster_ca_certificate
         if k8s_cluster_endpoint is not None:
             self.k8s_cluster_endpoint = k8s_cluster_endpoint
+        if last_name is not None:
+            self.last_name = last_name
         if ldap_audience is not None:
             self.ldap_audience = ldap_audience
         if ldap_bind_dn is not None:
@@ -522,6 +582,8 @@ class TargetTypeDetailsInput(object):
             self.password = password
         if payload is not None:
             self.payload = payload
+        if phone is not None:
+            self.phone = phone
         if ping_url is not None:
             self.ping_url = ping_url
         if port is not None:
@@ -532,6 +594,8 @@ class TargetTypeDetailsInput(object):
             self.private_key_password = private_key_password
         if privileged_user is not None:
             self.privileged_user = privileged_user
+        if profile_id is not None:
+            self.profile_id = profile_id
         if rabbitmq_server_password is not None:
             self.rabbitmq_server_password = rabbitmq_server_password
         if rabbitmq_server_uri is not None:
@@ -548,10 +612,14 @@ class TargetTypeDetailsInput(object):
             self.ssl_connection_mode = ssl_connection_mode
         if tenant_url is not None:
             self.tenant_url = tenant_url
+        if timeout is not None:
+            self.timeout = timeout
         if url is not None:
             self.url = url
         if use_gw_cloud_identity is not None:
             self.use_gw_cloud_identity = use_gw_cloud_identity
+        if use_gw_service_account is not None:
+            self.use_gw_service_account = use_gw_service_account
         if use_tls is not None:
             self.use_tls = use_tls
         if user_name is not None:
@@ -560,6 +628,8 @@ class TargetTypeDetailsInput(object):
             self.user_password = user_password
         if username is not None:
             self.username = username
+        if validation_email is not None:
+            self.validation_email = validation_email
         if venafi_api_key is not None:
             self.venafi_api_key = venafi_api_key
         if venafi_base_url is not None:
@@ -593,6 +663,27 @@ class TargetTypeDetailsInput(object):
         """
 
         self._administrative_port = administrative_port
+
+    @property
+    def api_key(self):
+        """Gets the api_key of this TargetTypeDetailsInput.  # noqa: E501
+
+
+        :return: The api_key of this TargetTypeDetailsInput.  # noqa: E501
+        :rtype: str
+        """
+        return self._api_key
+
+    @api_key.setter
+    def api_key(self, api_key):
+        """Sets the api_key of this TargetTypeDetailsInput.
+
+
+        :param api_key: The api_key of this TargetTypeDetailsInput.  # noqa: E501
+        :type: str
+        """
+
+        self._api_key = api_key
 
     @property
     def app_private_key(self):
@@ -1365,6 +1456,27 @@ class TargetTypeDetailsInput(object):
         self._db_user_name = db_user_name
 
     @property
+    def domain_name(self):
+        """Gets the domain_name of this TargetTypeDetailsInput.  # noqa: E501
+
+
+        :return: The domain_name of this TargetTypeDetailsInput.  # noqa: E501
+        :rtype: str
+        """
+        return self._domain_name
+
+    @domain_name.setter
+    def domain_name(self, domain_name):
+        """Sets the domain_name of this TargetTypeDetailsInput.
+
+
+        :param domain_name: The domain_name of this TargetTypeDetailsInput.  # noqa: E501
+        :type: str
+        """
+
+        self._domain_name = domain_name
+
+    @property
     def eks_access_key_id(self):
         """Gets the eks_access_key_id of this TargetTypeDetailsInput.  # noqa: E501
 
@@ -1489,6 +1601,50 @@ class TargetTypeDetailsInput(object):
         """
 
         self._eks_secret_access_key = eks_secret_access_key
+
+    @property
+    def email(self):
+        """Gets the email of this TargetTypeDetailsInput.  # noqa: E501
+
+
+        :return: The email of this TargetTypeDetailsInput.  # noqa: E501
+        :rtype: str
+        """
+        return self._email
+
+    @email.setter
+    def email(self, email):
+        """Sets the email of this TargetTypeDetailsInput.
+
+
+        :param email: The email of this TargetTypeDetailsInput.  # noqa: E501
+        :type: str
+        """
+
+        self._email = email
+
+    @property
+    def first_name(self):
+        """Gets the first_name of this TargetTypeDetailsInput.  # noqa: E501
+
+        Contact Info - GlobalSign requires this to be sent with every certificate creation request  # noqa: E501
+
+        :return: The first_name of this TargetTypeDetailsInput.  # noqa: E501
+        :rtype: str
+        """
+        return self._first_name
+
+    @first_name.setter
+    def first_name(self, first_name):
+        """Sets the first_name of this TargetTypeDetailsInput.
+
+        Contact Info - GlobalSign requires this to be sent with every certificate creation request  # noqa: E501
+
+        :param first_name: The first_name of this TargetTypeDetailsInput.  # noqa: E501
+        :type: str
+        """
+
+        self._first_name = first_name
 
     @property
     def gcp_service_account_email(self):
@@ -1787,6 +1943,90 @@ class TargetTypeDetailsInput(object):
         self._hosts = hosts
 
     @property
+    def imap_fqdn(self):
+        """Gets the imap_fqdn of this TargetTypeDetailsInput.  # noqa: E501
+
+
+        :return: The imap_fqdn of this TargetTypeDetailsInput.  # noqa: E501
+        :rtype: str
+        """
+        return self._imap_fqdn
+
+    @imap_fqdn.setter
+    def imap_fqdn(self, imap_fqdn):
+        """Sets the imap_fqdn of this TargetTypeDetailsInput.
+
+
+        :param imap_fqdn: The imap_fqdn of this TargetTypeDetailsInput.  # noqa: E501
+        :type: str
+        """
+
+        self._imap_fqdn = imap_fqdn
+
+    @property
+    def imap_password(self):
+        """Gets the imap_password of this TargetTypeDetailsInput.  # noqa: E501
+
+
+        :return: The imap_password of this TargetTypeDetailsInput.  # noqa: E501
+        :rtype: str
+        """
+        return self._imap_password
+
+    @imap_password.setter
+    def imap_password(self, imap_password):
+        """Sets the imap_password of this TargetTypeDetailsInput.
+
+
+        :param imap_password: The imap_password of this TargetTypeDetailsInput.  # noqa: E501
+        :type: str
+        """
+
+        self._imap_password = imap_password
+
+    @property
+    def imap_port(self):
+        """Gets the imap_port of this TargetTypeDetailsInput.  # noqa: E501
+
+
+        :return: The imap_port of this TargetTypeDetailsInput.  # noqa: E501
+        :rtype: str
+        """
+        return self._imap_port
+
+    @imap_port.setter
+    def imap_port(self, imap_port):
+        """Sets the imap_port of this TargetTypeDetailsInput.
+
+
+        :param imap_port: The imap_port of this TargetTypeDetailsInput.  # noqa: E501
+        :type: str
+        """
+
+        self._imap_port = imap_port
+
+    @property
+    def imap_user(self):
+        """Gets the imap_user of this TargetTypeDetailsInput.  # noqa: E501
+
+
+        :return: The imap_user of this TargetTypeDetailsInput.  # noqa: E501
+        :rtype: str
+        """
+        return self._imap_user
+
+    @imap_user.setter
+    def imap_user(self, imap_user):
+        """Sets the imap_user of this TargetTypeDetailsInput.
+
+
+        :param imap_user: The imap_user of this TargetTypeDetailsInput.  # noqa: E501
+        :type: str
+        """
+
+        self._imap_user = imap_user
+
+    @property
     def implementation_type(self):
         """Gets the implementation_type of this TargetTypeDetailsInput.  # noqa: E501
 
@@ -1869,6 +2109,27 @@ class TargetTypeDetailsInput(object):
         """
 
         self._k8s_cluster_endpoint = k8s_cluster_endpoint
+
+    @property
+    def last_name(self):
+        """Gets the last_name of this TargetTypeDetailsInput.  # noqa: E501
+
+
+        :return: The last_name of this TargetTypeDetailsInput.  # noqa: E501
+        :rtype: str
+        """
+        return self._last_name
+
+    @last_name.setter
+    def last_name(self, last_name):
+        """Sets the last_name of this TargetTypeDetailsInput.
+
+
+        :param last_name: The last_name of this TargetTypeDetailsInput.  # noqa: E501
+        :type: str
+        """
+
+        self._last_name = last_name
 
     @property
     def ldap_audience(self):
@@ -2276,6 +2537,27 @@ class TargetTypeDetailsInput(object):
         self._payload = payload
 
     @property
+    def phone(self):
+        """Gets the phone of this TargetTypeDetailsInput.  # noqa: E501
+
+
+        :return: The phone of this TargetTypeDetailsInput.  # noqa: E501
+        :rtype: str
+        """
+        return self._phone
+
+    @phone.setter
+    def phone(self, phone):
+        """Sets the phone of this TargetTypeDetailsInput.
+
+
+        :param phone: The phone of this TargetTypeDetailsInput.  # noqa: E501
+        :type: str
+        """
+
+        self._phone = phone
+
+    @property
     def ping_url(self):
         """Gets the ping_url of this TargetTypeDetailsInput.  # noqa: E501
 
@@ -2379,6 +2661,27 @@ class TargetTypeDetailsInput(object):
         """
 
         self._privileged_user = privileged_user
+
+    @property
+    def profile_id(self):
+        """Gets the profile_id of this TargetTypeDetailsInput.  # noqa: E501
+
+
+        :return: The profile_id of this TargetTypeDetailsInput.  # noqa: E501
+        :rtype: str
+        """
+        return self._profile_id
+
+    @profile_id.setter
+    def profile_id(self, profile_id):
+        """Sets the profile_id of this TargetTypeDetailsInput.
+
+
+        :param profile_id: The profile_id of this TargetTypeDetailsInput.  # noqa: E501
+        :type: str
+        """
+
+        self._profile_id = profile_id
 
     @property
     def rabbitmq_server_password(self):
@@ -2553,6 +2856,29 @@ class TargetTypeDetailsInput(object):
         self._tenant_url = tenant_url
 
     @property
+    def timeout(self):
+        """Gets the timeout of this TargetTypeDetailsInput.  # noqa: E501
+
+        A Duration represents the elapsed time between two instants as an int64 nanosecond count. The representation limits the largest representable duration to approximately 290 years.  # noqa: E501
+
+        :return: The timeout of this TargetTypeDetailsInput.  # noqa: E501
+        :rtype: int
+        """
+        return self._timeout
+
+    @timeout.setter
+    def timeout(self, timeout):
+        """Sets the timeout of this TargetTypeDetailsInput.
+
+        A Duration represents the elapsed time between two instants as an int64 nanosecond count. The representation limits the largest representable duration to approximately 290 years.  # noqa: E501
+
+        :param timeout: The timeout of this TargetTypeDetailsInput.  # noqa: E501
+        :type: int
+        """
+
+        self._timeout = timeout
+
+    @property
     def url(self):
         """Gets the url of this TargetTypeDetailsInput.  # noqa: E501
 
@@ -2593,6 +2919,27 @@ class TargetTypeDetailsInput(object):
         """
 
         self._use_gw_cloud_identity = use_gw_cloud_identity
+
+    @property
+    def use_gw_service_account(self):
+        """Gets the use_gw_service_account of this TargetTypeDetailsInput.  # noqa: E501
+
+
+        :return: The use_gw_service_account of this TargetTypeDetailsInput.  # noqa: E501
+        :rtype: bool
+        """
+        return self._use_gw_service_account
+
+    @use_gw_service_account.setter
+    def use_gw_service_account(self, use_gw_service_account):
+        """Sets the use_gw_service_account of this TargetTypeDetailsInput.
+
+
+        :param use_gw_service_account: The use_gw_service_account of this TargetTypeDetailsInput.  # noqa: E501
+        :type: bool
+        """
+
+        self._use_gw_service_account = use_gw_service_account
 
     @property
     def use_tls(self):
@@ -2677,6 +3024,27 @@ class TargetTypeDetailsInput(object):
         """
 
         self._username = username
+
+    @property
+    def validation_email(self):
+        """Gets the validation_email of this TargetTypeDetailsInput.  # noqa: E501
+
+
+        :return: The validation_email of this TargetTypeDetailsInput.  # noqa: E501
+        :rtype: str
+        """
+        return self._validation_email
+
+    @validation_email.setter
+    def validation_email(self, validation_email):
+        """Sets the validation_email of this TargetTypeDetailsInput.
+
+
+        :param validation_email: The validation_email of this TargetTypeDetailsInput.  # noqa: E501
+        :type: str
+        """
+
+        self._validation_email = validation_email
 
     @property
     def venafi_api_key(self):

@@ -47,8 +47,11 @@ class ActiveDirectoryPayload(object):
         'local_users_ignore_list': 'dict(str, bool)',
         'local_users_rotated_secrets_path_template': 'str',
         'ssh_port': 'str',
+        'targets_type': 'str',
         'user_base_dn': 'str',
-        'user_groups': 'list[str]'
+        'user_groups': 'list[str]',
+        'winrm_over_http': 'bool',
+        'winrm_port': 'str'
     }
 
     attribute_map = {
@@ -65,11 +68,14 @@ class ActiveDirectoryPayload(object):
         'local_users_ignore_list': 'local_users_ignore_list',
         'local_users_rotated_secrets_path_template': 'local_users_rotated_secrets_path_template',
         'ssh_port': 'ssh_port',
+        'targets_type': 'targets_type',
         'user_base_dn': 'user_base_dn',
-        'user_groups': 'user_groups'
+        'user_groups': 'user_groups',
+        'winrm_over_http': 'winrm_over_http',
+        'winrm_port': 'winrm_port'
     }
 
-    def __init__(self, active_directory_target_id=None, auto_rotate=None, auto_rotate_interval_in_days=None, auto_rotate_rotation_hour=None, computer_base_dn=None, discover_local_users=None, domain_name=None, domain_server_targets_path_template=None, domain_users_rotated_secrets_path_template=None, enable_rdp_sra=None, local_users_ignore_list=None, local_users_rotated_secrets_path_template=None, ssh_port=None, user_base_dn=None, user_groups=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, active_directory_target_id=None, auto_rotate=None, auto_rotate_interval_in_days=None, auto_rotate_rotation_hour=None, computer_base_dn=None, discover_local_users=None, domain_name=None, domain_server_targets_path_template=None, domain_users_rotated_secrets_path_template=None, enable_rdp_sra=None, local_users_ignore_list=None, local_users_rotated_secrets_path_template=None, ssh_port=None, targets_type=None, user_base_dn=None, user_groups=None, winrm_over_http=None, winrm_port=None, local_vars_configuration=None):  # noqa: E501
         """ActiveDirectoryPayload - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -88,8 +94,11 @@ class ActiveDirectoryPayload(object):
         self._local_users_ignore_list = None
         self._local_users_rotated_secrets_path_template = None
         self._ssh_port = None
+        self._targets_type = None
         self._user_base_dn = None
         self._user_groups = None
+        self._winrm_over_http = None
+        self._winrm_port = None
         self.discriminator = None
 
         if active_directory_target_id is not None:
@@ -118,10 +127,16 @@ class ActiveDirectoryPayload(object):
             self.local_users_rotated_secrets_path_template = local_users_rotated_secrets_path_template
         if ssh_port is not None:
             self.ssh_port = ssh_port
+        if targets_type is not None:
+            self.targets_type = targets_type
         if user_base_dn is not None:
             self.user_base_dn = user_base_dn
         if user_groups is not None:
             self.user_groups = user_groups
+        if winrm_over_http is not None:
+            self.winrm_over_http = winrm_over_http
+        if winrm_port is not None:
+            self.winrm_port = winrm_port
 
     @property
     def active_directory_target_id(self):
@@ -397,6 +412,27 @@ class ActiveDirectoryPayload(object):
         self._ssh_port = ssh_port
 
     @property
+    def targets_type(self):
+        """Gets the targets_type of this ActiveDirectoryPayload.  # noqa: E501
+
+
+        :return: The targets_type of this ActiveDirectoryPayload.  # noqa: E501
+        :rtype: str
+        """
+        return self._targets_type
+
+    @targets_type.setter
+    def targets_type(self, targets_type):
+        """Sets the targets_type of this ActiveDirectoryPayload.
+
+
+        :param targets_type: The targets_type of this ActiveDirectoryPayload.  # noqa: E501
+        :type: str
+        """
+
+        self._targets_type = targets_type
+
+    @property
     def user_base_dn(self):
         """Gets the user_base_dn of this ActiveDirectoryPayload.  # noqa: E501
 
@@ -437,6 +473,48 @@ class ActiveDirectoryPayload(object):
         """
 
         self._user_groups = user_groups
+
+    @property
+    def winrm_over_http(self):
+        """Gets the winrm_over_http of this ActiveDirectoryPayload.  # noqa: E501
+
+
+        :return: The winrm_over_http of this ActiveDirectoryPayload.  # noqa: E501
+        :rtype: bool
+        """
+        return self._winrm_over_http
+
+    @winrm_over_http.setter
+    def winrm_over_http(self, winrm_over_http):
+        """Sets the winrm_over_http of this ActiveDirectoryPayload.
+
+
+        :param winrm_over_http: The winrm_over_http of this ActiveDirectoryPayload.  # noqa: E501
+        :type: bool
+        """
+
+        self._winrm_over_http = winrm_over_http
+
+    @property
+    def winrm_port(self):
+        """Gets the winrm_port of this ActiveDirectoryPayload.  # noqa: E501
+
+
+        :return: The winrm_port of this ActiveDirectoryPayload.  # noqa: E501
+        :rtype: str
+        """
+        return self._winrm_port
+
+    @winrm_port.setter
+    def winrm_port(self, winrm_port):
+        """Sets the winrm_port of this ActiveDirectoryPayload.
+
+
+        :param winrm_port: The winrm_port of this ActiveDirectoryPayload.  # noqa: E501
+        :type: str
+        """
+
+        self._winrm_port = winrm_port
 
     def to_dict(self):
         """Returns the model properties as a dict"""

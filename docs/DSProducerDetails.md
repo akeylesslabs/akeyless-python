@@ -187,6 +187,7 @@ Name | Type | Description | Notes
 **tags** | **list[str]** |  | [optional] 
 **timeout_seconds** | **int** |  | [optional] 
 **use_gw_cloud_identity** | **bool** |  | [optional] 
+**use_gw_service_account** | **bool** |  | [optional] 
 **user_name** | **str** |  | [optional] 
 **user_password** | **str** |  | [optional] 
 **user_principal_name** | **str** |  | [optional] 

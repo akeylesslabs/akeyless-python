@@ -34,24 +34,50 @@ class AdminsConfigPart(object):
                             and the value is json key in definition.
     """
     openapi_types = {
-        'allowed_access': 'dict(str, AllowedAccess)'
+        'admins_migration_status': 'int',
+        'allowed_access': 'dict(str, AllowedAccessOld)'
     }
 
     attribute_map = {
+        'admins_migration_status': 'admins_migration_status',
         'allowed_access': 'allowed_access'
     }
 
-    def __init__(self, allowed_access=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, admins_migration_status=None, allowed_access=None, local_vars_configuration=None):  # noqa: E501
         """AdminsConfigPart - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
+        self._admins_migration_status = None
         self._allowed_access = None
         self.discriminator = None
 
+        if admins_migration_status is not None:
+            self.admins_migration_status = admins_migration_status
         if allowed_access is not None:
             self.allowed_access = allowed_access
+
+    @property
+    def admins_migration_status(self):
+        """Gets the admins_migration_status of this AdminsConfigPart.  # noqa: E501
+
+
+        :return: The admins_migration_status of this AdminsConfigPart.  # noqa: E501
+        :rtype: int
+        """
+        return self._admins_migration_status
+
+    @admins_migration_status.setter
+    def admins_migration_status(self, admins_migration_status):
+        """Sets the admins_migration_status of this AdminsConfigPart.
+
+
+        :param admins_migration_status: The admins_migration_status of this AdminsConfigPart.  # noqa: E501
+        :type: int
+        """
+
+        self._admins_migration_status = admins_migration_status
 
     @property
     def allowed_access(self):
@@ -59,7 +85,7 @@ class AdminsConfigPart(object):
 
 
         :return: The allowed_access of this AdminsConfigPart.  # noqa: E501
-        :rtype: dict(str, AllowedAccess)
+        :rtype: dict(str, AllowedAccessOld)
         """
         return self._allowed_access
 
@@ -69,7 +95,7 @@ class AdminsConfigPart(object):
 
 
         :param allowed_access: The allowed_access of this AdminsConfigPart.  # noqa: E501
-        :type: dict(str, AllowedAccess)
+        :type: dict(str, AllowedAccessOld)
         """
 
         self._allowed_access = allowed_access

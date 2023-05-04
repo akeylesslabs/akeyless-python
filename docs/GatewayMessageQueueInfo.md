@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**broadcast_queue_name** | **str** |  | [optional] 
+**broadcast_queue_name_a** | **str** |  | [optional] 
 **mq_type** | **str** |  | [optional] 
 **queue_name** | **str** |  | [optional] 
 **queue_url** | **str** |  | [optional] 

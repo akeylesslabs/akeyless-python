@@ -34,29 +34,55 @@ class EsmGetSecretOutput(object):
                             and the value is json key in definition.
     """
     openapi_types = {
+        'binary_value': 'bool',
         'metadata': 'object',
         'value': 'str'
     }
 
     attribute_map = {
+        'binary_value': 'binary_value',
         'metadata': 'metadata',
         'value': 'value'
     }
 
-    def __init__(self, metadata=None, value=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, binary_value=None, metadata=None, value=None, local_vars_configuration=None):  # noqa: E501
         """EsmGetSecretOutput - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
+        self._binary_value = None
         self._metadata = None
         self._value = None
         self.discriminator = None
 
+        if binary_value is not None:
+            self.binary_value = binary_value
         if metadata is not None:
             self.metadata = metadata
         if value is not None:
             self.value = value
+
+    @property
+    def binary_value(self):
+        """Gets the binary_value of this EsmGetSecretOutput.  # noqa: E501
+
+
+        :return: The binary_value of this EsmGetSecretOutput.  # noqa: E501
+        :rtype: bool
+        """
+        return self._binary_value
+
+    @binary_value.setter
+    def binary_value(self, binary_value):
+        """Sets the binary_value of this EsmGetSecretOutput.
+
+
+        :param binary_value: The binary_value of this EsmGetSecretOutput.  # noqa: E501
+        :type: bool
+        """
+
+        self._binary_value = binary_value
 
     @property
     def metadata(self):

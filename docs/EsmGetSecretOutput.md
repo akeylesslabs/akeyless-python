@@ -3,6 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**binary_value** | **bool** |  | [optional] 
 **metadata** | [**object**](.md) |  | [optional] 
 **value** | **str** |  | [optional] 
 

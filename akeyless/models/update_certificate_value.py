@@ -36,6 +36,7 @@ class UpdateCertificateValue(object):
     openapi_types = {
         'certificate_data': 'str',
         'expiration_event_in': 'list[str]',
+        'format': 'str',
         'json': 'bool',
         'key': 'str',
         'key_data': 'str',
@@ -47,6 +48,7 @@ class UpdateCertificateValue(object):
     attribute_map = {
         'certificate_data': 'certificate-data',
         'expiration_event_in': 'expiration-event-in',
+        'format': 'format',
         'json': 'json',
         'key': 'key',
         'key_data': 'key-data',
@@ -55,7 +57,7 @@ class UpdateCertificateValue(object):
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, certificate_data=None, expiration_event_in=None, json=False, key=None, key_data=None, name=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, certificate_data=None, expiration_event_in=None, format=None, json=False, key=None, key_data=None, name=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """UpdateCertificateValue - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -63,6 +65,7 @@ class UpdateCertificateValue(object):
 
         self._certificate_data = None
         self._expiration_event_in = None
+        self._format = None
         self._json = None
         self._key = None
         self._key_data = None
@@ -75,6 +78,8 @@ class UpdateCertificateValue(object):
             self.certificate_data = certificate_data
         if expiration_event_in is not None:
             self.expiration_event_in = expiration_event_in
+        if format is not None:
+            self.format = format
         if json is not None:
             self.json = json
         if key is not None:
@@ -91,7 +96,7 @@ class UpdateCertificateValue(object):
     def certificate_data(self):
         """Gets the certificate_data of this UpdateCertificateValue.  # noqa: E501
 
-        Content of the certificate PEM in a Base64 format.  # noqa: E501
+        Content of the certificate in a Base64 format.  # noqa: E501
 
         :return: The certificate_data of this UpdateCertificateValue.  # noqa: E501
         :rtype: str
@@ -102,7 +107,7 @@ class UpdateCertificateValue(object):
     def certificate_data(self, certificate_data):
         """Sets the certificate_data of this UpdateCertificateValue.
 
-        Content of the certificate PEM in a Base64 format.  # noqa: E501
+        Content of the certificate in a Base64 format.  # noqa: E501
 
         :param certificate_data: The certificate_data of this UpdateCertificateValue.  # noqa: E501
         :type: str
@@ -132,6 +137,29 @@ class UpdateCertificateValue(object):
         """
 
         self._expiration_event_in = expiration_event_in
+
+    @property
+    def format(self):
+        """Gets the format of this UpdateCertificateValue.  # noqa: E501
+
+        CertificateFormat of the certificate and private key, possible values: cer,crt,pem,pfx,p12. Required when passing inline certificate content with --certificate-data or --key-data, otherwise format is derived from the file extension.  # noqa: E501
+
+        :return: The format of this UpdateCertificateValue.  # noqa: E501
+        :rtype: str
+        """
+        return self._format
+
+    @format.setter
+    def format(self, format):
+        """Sets the format of this UpdateCertificateValue.
+
+        CertificateFormat of the certificate and private key, possible values: cer,crt,pem,pfx,p12. Required when passing inline certificate content with --certificate-data or --key-data, otherwise format is derived from the file extension.  # noqa: E501
+
+        :param format: The format of this UpdateCertificateValue.  # noqa: E501
+        :type: str
+        """
+
+        self._format = format
 
     @property
     def json(self):
@@ -183,7 +211,7 @@ class UpdateCertificateValue(object):
     def key_data(self):
         """Gets the key_data of this UpdateCertificateValue.  # noqa: E501
 
-        Content of the certificate's private key PEM in a Base64 format.  # noqa: E501
+        Content of the certificate's private key in a Base64 format.  # noqa: E501
 
         :return: The key_data of this UpdateCertificateValue.  # noqa: E501
         :rtype: str
@@ -194,7 +222,7 @@ class UpdateCertificateValue(object):
     def key_data(self, key_data):
         """Sets the key_data of this UpdateCertificateValue.
 
-        Content of the certificate's private key PEM in a Base64 format.  # noqa: E501
+        Content of the certificate's private key in a Base64 format.  # noqa: E501
 
         :param key_data: The key_data of this UpdateCertificateValue.  # noqa: E501
         :type: str

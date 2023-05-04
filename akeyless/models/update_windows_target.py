@@ -36,6 +36,7 @@ class UpdateWindowsTarget(object):
     openapi_types = {
         'certificate': 'str',
         'description': 'str',
+        'domain': 'str',
         'hostname': 'str',
         'json': 'bool',
         'keep_prev_version': 'str',
@@ -54,6 +55,7 @@ class UpdateWindowsTarget(object):
     attribute_map = {
         'certificate': 'certificate',
         'description': 'description',
+        'domain': 'domain',
         'hostname': 'hostname',
         'json': 'json',
         'keep_prev_version': 'keep-prev-version',
@@ -69,7 +71,7 @@ class UpdateWindowsTarget(object):
         'username': 'username'
     }
 
-    def __init__(self, certificate=None, description=None, hostname=None, json=False, keep_prev_version=None, key=None, name=None, new_name=None, password=None, port='5986', token=None, uid_token=None, update_version=None, use_tls='true', username=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, certificate=None, description=None, domain=None, hostname=None, json=False, keep_prev_version=None, key=None, name=None, new_name=None, password=None, port='5986', token=None, uid_token=None, update_version=None, use_tls='true', username=None, local_vars_configuration=None):  # noqa: E501
         """UpdateWindowsTarget - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -77,6 +79,7 @@ class UpdateWindowsTarget(object):
 
         self._certificate = None
         self._description = None
+        self._domain = None
         self._hostname = None
         self._json = None
         self._keep_prev_version = None
@@ -96,6 +99,8 @@ class UpdateWindowsTarget(object):
             self.certificate = certificate
         if description is not None:
             self.description = description
+        if domain is not None:
+            self.domain = domain
         self.hostname = hostname
         if json is not None:
             self.json = json
@@ -164,6 +169,29 @@ class UpdateWindowsTarget(object):
         """
 
         self._description = description
+
+    @property
+    def domain(self):
+        """Gets the domain of this UpdateWindowsTarget.  # noqa: E501
+
+        User domain name  # noqa: E501
+
+        :return: The domain of this UpdateWindowsTarget.  # noqa: E501
+        :rtype: str
+        """
+        return self._domain
+
+    @domain.setter
+    def domain(self, domain):
+        """Sets the domain of this UpdateWindowsTarget.
+
+        User domain name  # noqa: E501
+
+        :param domain: The domain of this UpdateWindowsTarget.  # noqa: E501
+        :type: str
+        """
+
+        self._domain = domain
 
     @property
     def hostname(self):

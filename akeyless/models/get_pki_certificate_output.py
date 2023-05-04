@@ -34,34 +34,65 @@ class GetPKICertificateOutput(object):
                             and the value is json key in definition.
     """
     openapi_types = {
+        'cert_display_id': 'str',
         'data': 'str',
         'parent_cert': 'str',
-        'path': 'str'
+        'path': 'str',
+        'reading_token': 'str'
     }
 
     attribute_map = {
+        'cert_display_id': 'cert_display_id',
         'data': 'data',
         'parent_cert': 'parent_cert',
-        'path': 'path'
+        'path': 'path',
+        'reading_token': 'reading_token'
     }
 
-    def __init__(self, data=None, parent_cert=None, path=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, cert_display_id=None, data=None, parent_cert=None, path=None, reading_token=None, local_vars_configuration=None):  # noqa: E501
         """GetPKICertificateOutput - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
+        self._cert_display_id = None
         self._data = None
         self._parent_cert = None
         self._path = None
+        self._reading_token = None
         self.discriminator = None
 
+        if cert_display_id is not None:
+            self.cert_display_id = cert_display_id
         if data is not None:
             self.data = data
         if parent_cert is not None:
             self.parent_cert = parent_cert
         if path is not None:
             self.path = path
+        if reading_token is not None:
+            self.reading_token = reading_token
+
+    @property
+    def cert_display_id(self):
+        """Gets the cert_display_id of this GetPKICertificateOutput.  # noqa: E501
+
+
+        :return: The cert_display_id of this GetPKICertificateOutput.  # noqa: E501
+        :rtype: str
+        """
+        return self._cert_display_id
+
+    @cert_display_id.setter
+    def cert_display_id(self, cert_display_id):
+        """Sets the cert_display_id of this GetPKICertificateOutput.
+
+
+        :param cert_display_id: The cert_display_id of this GetPKICertificateOutput.  # noqa: E501
+        :type: str
+        """
+
+        self._cert_display_id = cert_display_id
 
     @property
     def data(self):
@@ -125,6 +156,27 @@ class GetPKICertificateOutput(object):
         """
 
         self._path = path
+
+    @property
+    def reading_token(self):
+        """Gets the reading_token of this GetPKICertificateOutput.  # noqa: E501
+
+
+        :return: The reading_token of this GetPKICertificateOutput.  # noqa: E501
+        :rtype: str
+        """
+        return self._reading_token
+
+    @reading_token.setter
+    def reading_token(self, reading_token):
+        """Sets the reading_token of this GetPKICertificateOutput.
+
+
+        :param reading_token: The reading_token of this GetPKICertificateOutput.  # noqa: E501
+        :type: str
+        """
+
+        self._reading_token = reading_token
 
     def to_dict(self):
         """Returns the model properties as a dict"""

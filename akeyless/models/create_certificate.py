@@ -38,6 +38,7 @@ class CreateCertificate(object):
         'delete_protection': 'str',
         'description': 'str',
         'expiration_event_in': 'list[str]',
+        'format': 'str',
         'json': 'bool',
         'key': 'str',
         'key_data': 'str',
@@ -53,6 +54,7 @@ class CreateCertificate(object):
         'delete_protection': 'delete_protection',
         'description': 'description',
         'expiration_event_in': 'expiration-event-in',
+        'format': 'format',
         'json': 'json',
         'key': 'key',
         'key_data': 'key-data',
@@ -63,7 +65,7 @@ class CreateCertificate(object):
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, certificate_data=None, delete_protection=None, description=None, expiration_event_in=None, json=False, key=None, key_data=None, metadata=None, name=None, tags=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, certificate_data=None, delete_protection=None, description=None, expiration_event_in=None, format=None, json=False, key=None, key_data=None, metadata=None, name=None, tags=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """CreateCertificate - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -73,6 +75,7 @@ class CreateCertificate(object):
         self._delete_protection = None
         self._description = None
         self._expiration_event_in = None
+        self._format = None
         self._json = None
         self._key = None
         self._key_data = None
@@ -91,6 +94,8 @@ class CreateCertificate(object):
             self.description = description
         if expiration_event_in is not None:
             self.expiration_event_in = expiration_event_in
+        if format is not None:
+            self.format = format
         if json is not None:
             self.json = json
         if key is not None:
@@ -111,7 +116,7 @@ class CreateCertificate(object):
     def certificate_data(self):
         """Gets the certificate_data of this CreateCertificate.  # noqa: E501
 
-        Content of the certificate PEM in a Base64 format.  # noqa: E501
+        Content of the certificate in a Base64 format.  # noqa: E501
 
         :return: The certificate_data of this CreateCertificate.  # noqa: E501
         :rtype: str
@@ -122,7 +127,7 @@ class CreateCertificate(object):
     def certificate_data(self, certificate_data):
         """Sets the certificate_data of this CreateCertificate.
 
-        Content of the certificate PEM in a Base64 format.  # noqa: E501
+        Content of the certificate in a Base64 format.  # noqa: E501
 
         :param certificate_data: The certificate_data of this CreateCertificate.  # noqa: E501
         :type: str
@@ -200,6 +205,29 @@ class CreateCertificate(object):
         self._expiration_event_in = expiration_event_in
 
     @property
+    def format(self):
+        """Gets the format of this CreateCertificate.  # noqa: E501
+
+        CertificateFormat of the certificate and private key, possible values: cer,crt,pem,pfx,p12. Required when passing inline certificate content with --certificate-data or --key-data, otherwise format is derived from the file extension.  # noqa: E501
+
+        :return: The format of this CreateCertificate.  # noqa: E501
+        :rtype: str
+        """
+        return self._format
+
+    @format.setter
+    def format(self, format):
+        """Sets the format of this CreateCertificate.
+
+        CertificateFormat of the certificate and private key, possible values: cer,crt,pem,pfx,p12. Required when passing inline certificate content with --certificate-data or --key-data, otherwise format is derived from the file extension.  # noqa: E501
+
+        :param format: The format of this CreateCertificate.  # noqa: E501
+        :type: str
+        """
+
+        self._format = format
+
+    @property
     def json(self):
         """Gets the json of this CreateCertificate.  # noqa: E501
 
@@ -249,7 +277,7 @@ class CreateCertificate(object):
     def key_data(self):
         """Gets the key_data of this CreateCertificate.  # noqa: E501
 
-        Content of the certificate's private key PEM in a Base64 format.  # noqa: E501
+        Content of the certificate's private key in a Base64 format.  # noqa: E501
 
         :return: The key_data of this CreateCertificate.  # noqa: E501
         :rtype: str
@@ -260,7 +288,7 @@ class CreateCertificate(object):
     def key_data(self, key_data):
         """Sets the key_data of this CreateCertificate.
 
-        Content of the certificate's private key PEM in a Base64 format.  # noqa: E501
+        Content of the certificate's private key in a Base64 format.  # noqa: E501
 
         :param key_data: The key_data of this CreateCertificate.  # noqa: E501
         :type: str

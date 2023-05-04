@@ -34,6 +34,7 @@ class ExportClassicKey(object):
                             and the value is json key in definition.
     """
     openapi_types = {
+        'export_public_key': 'bool',
         'ignore_cache': 'str',
         'json': 'bool',
         'name': 'str',
@@ -43,6 +44,7 @@ class ExportClassicKey(object):
     }
 
     attribute_map = {
+        'export_public_key': 'export-public-key',
         'ignore_cache': 'ignore-cache',
         'json': 'json',
         'name': 'name',
@@ -51,12 +53,13 @@ class ExportClassicKey(object):
         'version': 'version'
     }
 
-    def __init__(self, ignore_cache='false', json=False, name=None, token=None, uid_token=None, version=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, export_public_key=False, ignore_cache='false', json=False, name=None, token=None, uid_token=None, version=None, local_vars_configuration=None):  # noqa: E501
         """ExportClassicKey - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
+        self._export_public_key = None
         self._ignore_cache = None
         self._json = None
         self._name = None
@@ -65,6 +68,8 @@ class ExportClassicKey(object):
         self._version = None
         self.discriminator = None
 
+        if export_public_key is not None:
+            self.export_public_key = export_public_key
         if ignore_cache is not None:
             self.ignore_cache = ignore_cache
         if json is not None:
@@ -76,6 +81,29 @@ class ExportClassicKey(object):
             self.uid_token = uid_token
         if version is not None:
             self.version = version
+
+    @property
+    def export_public_key(self):
+        """Gets the export_public_key of this ExportClassicKey.  # noqa: E501
+
+        Use this option to output only public key  # noqa: E501
+
+        :return: The export_public_key of this ExportClassicKey.  # noqa: E501
+        :rtype: bool
+        """
+        return self._export_public_key
+
+    @export_public_key.setter
+    def export_public_key(self, export_public_key):
+        """Sets the export_public_key of this ExportClassicKey.
+
+        Use this option to output only public key  # noqa: E501
+
+        :param export_public_key: The export_public_key of this ExportClassicKey.  # noqa: E501
+        :type: bool
+        """
+
+        self._export_public_key = export_public_key
 
     @property
     def ignore_cache(self):

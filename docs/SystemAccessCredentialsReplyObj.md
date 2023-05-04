@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 **auth_creds** | **str** | Temporary credentials for accessing Auth | [optional] 
 **expiry** | **int** | Credentials expiration date | [optional] 
 **kfm_creds** | **str** | Temporary credentials for accessing the KFMs instances | [optional] 
+**required_mfa** | **str** |  | [optional] 
 **token** | **str** | Credentials tmp token | [optional] 
 **uam_creds** | **str** | Temporary credentials for accessing the UAM service | [optional] 
 
