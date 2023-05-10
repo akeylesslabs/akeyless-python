@@ -50,7 +50,8 @@ class GatewayUpdateK8SAuthConfig(object):
         'token': 'str',
         'token_exp': 'int',
         'token_reviewer_jwt': 'str',
-        'uid_token': 'str'
+        'uid_token': 'str',
+        'use_gw_service_account': 'bool'
     }
 
     attribute_map = {
@@ -70,10 +71,11 @@ class GatewayUpdateK8SAuthConfig(object):
         'token': 'token',
         'token_exp': 'token-exp',
         'token_reviewer_jwt': 'token-reviewer-jwt',
-        'uid_token': 'uid-token'
+        'uid_token': 'uid-token',
+        'use_gw_service_account': 'use-gw-service-account'
     }
 
-    def __init__(self, access_id=None, cluster_api_type='native_k8s', config_encryption_key_name=None, disable_issuer_validation=None, json=False, k8s_ca_cert=None, k8s_host=None, k8s_issuer='kubernetes/serviceaccount', name=None, new_name=None, rancher_api_key=None, rancher_cluster_id=None, signing_key=None, token=None, token_exp=300, token_reviewer_jwt=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, access_id=None, cluster_api_type='native_k8s', config_encryption_key_name=None, disable_issuer_validation=None, json=False, k8s_ca_cert=None, k8s_host=None, k8s_issuer='kubernetes/serviceaccount', name=None, new_name=None, rancher_api_key=None, rancher_cluster_id=None, signing_key=None, token=None, token_exp=300, token_reviewer_jwt=None, uid_token=None, use_gw_service_account=None, local_vars_configuration=None):  # noqa: E501
         """GatewayUpdateK8SAuthConfig - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -96,6 +98,7 @@ class GatewayUpdateK8SAuthConfig(object):
         self._token_exp = None
         self._token_reviewer_jwt = None
         self._uid_token = None
+        self._use_gw_service_account = None
         self.discriminator = None
 
         self.access_id = access_id
@@ -127,6 +130,8 @@ class GatewayUpdateK8SAuthConfig(object):
             self.token_reviewer_jwt = token_reviewer_jwt
         if uid_token is not None:
             self.uid_token = uid_token
+        if use_gw_service_account is not None:
+            self.use_gw_service_account = use_gw_service_account
 
     @property
     def access_id(self):
@@ -528,6 +533,29 @@ class GatewayUpdateK8SAuthConfig(object):
         """
 
         self._uid_token = uid_token
+
+    @property
+    def use_gw_service_account(self):
+        """Gets the use_gw_service_account of this GatewayUpdateK8SAuthConfig.  # noqa: E501
+
+        Use the GW's service account  # noqa: E501
+
+        :return: The use_gw_service_account of this GatewayUpdateK8SAuthConfig.  # noqa: E501
+        :rtype: bool
+        """
+        return self._use_gw_service_account
+
+    @use_gw_service_account.setter
+    def use_gw_service_account(self, use_gw_service_account):
+        """Sets the use_gw_service_account of this GatewayUpdateK8SAuthConfig.
+
+        Use the GW's service account  # noqa: E501
+
+        :param use_gw_service_account: The use_gw_service_account of this GatewayUpdateK8SAuthConfig.  # noqa: E501
+        :type: bool
+        """
+
+        self._use_gw_service_account = use_gw_service_account
 
     def to_dict(self):
         """Returns the model properties as a dict"""

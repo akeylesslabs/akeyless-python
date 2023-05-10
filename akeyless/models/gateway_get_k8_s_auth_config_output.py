@@ -471,7 +471,7 @@ class GatewayGetK8SAuthConfigOutput(object):
     def use_local_ca_jwt(self):
         """Gets the use_local_ca_jwt of this GatewayGetK8SAuthConfigOutput.  # noqa: E501
 
-        UseLocalCAJwt is an optional parameter to set defaulting to using the local CA cert and service account jwt when running in a Kubernetes pod  # noqa: E501
+        UseLocalCAJwt is an optional parameter to set defaulting to using the local service account when running in a Kubernetes pod  # noqa: E501
 
         :return: The use_local_ca_jwt of this GatewayGetK8SAuthConfigOutput.  # noqa: E501
         :rtype: bool
@@ -482,7 +482,7 @@ class GatewayGetK8SAuthConfigOutput(object):
     def use_local_ca_jwt(self, use_local_ca_jwt):
         """Sets the use_local_ca_jwt of this GatewayGetK8SAuthConfigOutput.
 
-        UseLocalCAJwt is an optional parameter to set defaulting to using the local CA cert and service account jwt when running in a Kubernetes pod  # noqa: E501
+        UseLocalCAJwt is an optional parameter to set defaulting to using the local service account when running in a Kubernetes pod  # noqa: E501
 
         :param use_local_ca_jwt: The use_local_ca_jwt of this GatewayGetK8SAuthConfigOutput.  # noqa: E501
         :type: bool
