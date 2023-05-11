@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **minimal_view** | **bool** |  | [optional] 
 **pagination_token** | **str** | Next page reference | [optional] 
 **path** | **str** | Path to folder | [optional] 
+**sra_only** | **bool** | Filter by items with SRA functionality enabled | [optional] [default to False]
 **sub_types** | **list[str]** |  | [optional] 
 **tag** | **str** | Filter by item tag | [optional] 
 **token** | **str** | Authentication token (see &#x60;/auth&#x60; and &#x60;/configure&#x60;) | [optional] 

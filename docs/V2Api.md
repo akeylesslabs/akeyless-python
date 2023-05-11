@@ -62,6 +62,7 @@ Method | HTTP request | Description
 [**delete_auth_methods**](V2Api.md#delete_auth_methods) | **POST** /delete-auth-methods | 
 [**delete_event_forwarder**](V2Api.md#delete_event_forwarder) | **POST** /delete-event-forwarder | 
 [**delete_gateway_allowed_access_id**](V2Api.md#delete_gateway_allowed_access_id) | **POST** /gateway-delete-allowed-management-access | 
+[**delete_gw_cluster**](V2Api.md#delete_gw_cluster) | **POST** /delete-gateway-cluster | 
 [**delete_item**](V2Api.md#delete_item) | **POST** /delete-item | 
 [**delete_items**](V2Api.md#delete_items) | **POST** /delete-items | 
 [**delete_role**](V2Api.md#delete_role) | **POST** /delete-role | 
@@ -3759,6 +3760,66 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | deleteGatewayAllowedAccessIdResponse wraps response body. |  -  |
+**0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **delete_gw_cluster**
+> object delete_gw_cluster(body)
+
+
+
+### Example
+
+```python
+from __future__ import print_function
+import time
+import akeyless
+from akeyless.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.akeyless.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = akeyless.Configuration(
+    host = "https://api.akeyless.io"
+)
+
+
+# Enter a context with an instance of the API client
+with akeyless.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = akeyless.V2Api(api_client)
+    body = akeyless.DeleteGwCluster() # DeleteGwCluster | 
+
+    try:
+        api_response = api_instance.delete_gw_cluster(body)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling V2Api->delete_gw_cluster: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**DeleteGwCluster**](DeleteGwCluster.md)|  | 
+
+### Return type
+
+**object**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | deleteGwClusterResponse wraps response body. |  -  |
 **0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

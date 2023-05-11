@@ -26,7 +26,7 @@ Name | Type | Description | Notes
 **ad_target_name** | **str** | Active Directory LDAP Target Name. Server type should be Active Directory (Relevant only for Active Directory migration) | [optional] 
 **ad_targets_path_template** | **str** | Path location template for migrating domain servers as SSH/Windows Targets e.g.: .../Servers/{{COMPUTER_NAME}} (Relevant only for Active Directory migration) | [optional] 
 **ad_user_base_dn** | **str** | Distinguished Name of User objects to search in Active Directory, e.g.: CN&#x3D;Users,DC&#x3D;example,DC&#x3D;com (Relevant only for Active Directory migration) | [optional] 
-**ad_user_groups** | **str** | Comma-separated list of domain groups from which privileged domain users will be migrated (Relevant only for Active Directory migration) | [optional] 
+**ad_user_groups** | **str** | Comma-separated list of domain groups from which privileged domain users will be migrated. If empty, migrate all users based on the --ad-user-base-dn (Relevant only for Active Directory migration) | [optional] 
 **aws_key** | **str** | AWS Secret Access Key (relevant only for AWS migration) | [optional] 
 **aws_key_id** | **str** | AWS Access Key ID with sufficient permissions to get all secrets, e.g. &#39;arn:aws:secretsmanager:[Region]:[AccountId]:secret:[/path/to/secrets/*]&#39; (relevant only for AWS migration) | [optional] 
 **aws_region** | **str** | AWS region of the required Secrets Manager (relevant only for AWS migration) | [optional] [default to 'us-east-2']
@@ -51,6 +51,13 @@ Name | Type | Description | Notes
 **k8s_username** | **str** | For Password Authentication method K8s Client username with sufficient permission to list and get secrets in the namespace(s) you selected (relevant only for K8s migration with Password Authentication method) | [optional] 
 **name** | **str** | Migration name | 
 **protection_key** | **str** | The name of the key that protects the classic key value (if empty, the account default key will be used) | [optional] 
+**si_auto_rotate** | **str** | Enable/Disable automatic/recurrent rotation for migrated secrets. Default is false: only manual rotation is allowed for migrated secrets. If set to true, this command should be combined with --si-rotation-interval and --si-rotation-hour parameters (Relevant only for Server Inventory migration) | [optional] 
+**si_rotation_hour** | **int** | The hour of the scheduled rotation in UTC (Relevant only for Server Inventory migration) | [optional] 
+**si_rotation_interval** | **int** | The number of days to wait between every automatic rotation [1-365] (Relevant only for Server Inventory migration) | [optional] 
+**si_sra_enable_rdp** | **str** | Enable/Disable RDP Secure Remote Access for the migrated local users rotated secrets. Default is false: rotated secrets will not be created with SRA (Relevant only for Server Inventory migration) | [optional] [default to 'false']
+**si_target_name** | **str** | SSH, Windows or Linked Target Name. (Relevant only for Server Inventory migration) | 
+**si_users_ignore** | **str** | Comma-separated list of Local Users which should not be migrated (Relevant only for Server Inventory migration) | [optional] 
+**si_users_path_template** | **str** | Path location template for migrating users as Rotated Secrets e.g.: .../Users/{{COMPUTER_NAME}}/{{USERNAME}} (Relevant only for Server Inventory migration) | 
 **target_location** | **str** | Target location in Akeyless for imported secrets | 
 **token** | **str** | Authentication token (see &#x60;/auth&#x60; and &#x60;/configure&#x60;) | [optional] 
 **type** | **str** | Migration type (hashi/aws/gcp/k8s/azure_kv/1password/active_directory) | [optional] 

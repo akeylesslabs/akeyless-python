@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **k8s_migrations** | [**list[K8SMigration]**](K8SMigration.md) |  | [optional] 
 **mock_migrations** | [**list[MockMigration]**](MockMigration.md) |  | [optional] 
 **one_password_migrations** | [**list[OnePasswordMigration]**](OnePasswordMigration.md) |  | [optional] 
+**server_inventory_migrations** | [**list[ServerInventoryMigration]**](ServerInventoryMigration.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

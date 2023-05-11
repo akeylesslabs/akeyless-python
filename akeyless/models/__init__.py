@@ -175,6 +175,7 @@ from akeyless.models.delete_auth_methods import DeleteAuthMethods
 from akeyless.models.delete_auth_methods_output import DeleteAuthMethodsOutput
 from akeyless.models.delete_event_forwarder import DeleteEventForwarder
 from akeyless.models.delete_gateway_allowed_access_id import DeleteGatewayAllowedAccessId
+from akeyless.models.delete_gw_cluster import DeleteGwCluster
 from akeyless.models.delete_item import DeleteItem
 from akeyless.models.delete_item_output import DeleteItemOutput
 from akeyless.models.delete_items import DeleteItems
@@ -524,6 +525,8 @@ from akeyless.models.saml_attribute import SAMLAttribute
 from akeyless.models.ssh_certificate_issue_details import SSHCertificateIssueDetails
 from akeyless.models.secret_info import SecretInfo
 from akeyless.models.secure_remote_access import SecureRemoteAccess
+from akeyless.models.server_inventory_migration import ServerInventoryMigration
+from akeyless.models.server_inventory_payload import ServerInventoryPayload
 from akeyless.models.set_item_state import SetItemState
 from akeyless.models.set_role_rule import SetRoleRule
 from akeyless.models.share_item import ShareItem

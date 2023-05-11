@@ -83,6 +83,13 @@ class GatewayUpdateMigration(object):
         'name': 'str',
         'new_name': 'str',
         'protection_key': 'str',
+        'si_auto_rotate': 'str',
+        'si_rotation_hour': 'int',
+        'si_rotation_interval': 'int',
+        'si_sra_enable_rdp': 'str',
+        'si_target_name': 'str',
+        'si_users_ignore': 'str',
+        'si_users_path_template': 'str',
         'target_location': 'str',
         'token': 'str',
         'uid_token': 'str'
@@ -138,12 +145,19 @@ class GatewayUpdateMigration(object):
         'name': 'name',
         'new_name': 'new_name',
         'protection_key': 'protection-key',
+        'si_auto_rotate': 'si-auto-rotate',
+        'si_rotation_hour': 'si-rotation-hour',
+        'si_rotation_interval': 'si-rotation-interval',
+        'si_sra_enable_rdp': 'si-sra-enable-rdp',
+        'si_target_name': 'si-target-name',
+        'si_users_ignore': 'si-users-ignore',
+        'si_users_path_template': 'si-users-path-template',
         'target_location': 'target-location',
         'token': 'token',
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, _1password_email=None, _1password_password=None, _1password_secret_key=None, _1password_url=None, _1password_vaults=None, ad_ssh_port='22', ad_targets_type='windows', ad_winrm_over_http='false', ad_winrm_port='5986', ad_auto_rotate=None, ad_computer_base_dn=None, ad_discover_local_users=None, ad_domain_name=None, ad_domain_users_path_template=None, ad_local_users_ignore=None, ad_local_users_path_template=None, ad_rotation_hour=None, ad_rotation_interval=None, ad_sra_enable_rdp=None, ad_target_name=None, ad_targets_path_template=None, ad_user_base_dn=None, ad_user_groups=None, aws_key=None, aws_key_id=None, aws_region='us-east-2', azure_client_id=None, azure_kv_name=None, azure_secret=None, azure_tenant_id=None, gcp_key=None, hashi_json='true', hashi_ns=None, hashi_token=None, hashi_url=None, id=None, json=False, k8s_ca_certificate=None, k8s_client_certificate=None, k8s_client_key=None, k8s_namespace=None, k8s_password=None, k8s_skip_system=None, k8s_token=None, k8s_url=None, k8s_username=None, name=None, new_name=None, protection_key=None, target_location=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, _1password_email=None, _1password_password=None, _1password_secret_key=None, _1password_url=None, _1password_vaults=None, ad_ssh_port='22', ad_targets_type='windows', ad_winrm_over_http='false', ad_winrm_port='5986', ad_auto_rotate=None, ad_computer_base_dn=None, ad_discover_local_users=None, ad_domain_name=None, ad_domain_users_path_template=None, ad_local_users_ignore=None, ad_local_users_path_template=None, ad_rotation_hour=None, ad_rotation_interval=None, ad_sra_enable_rdp=None, ad_target_name=None, ad_targets_path_template=None, ad_user_base_dn=None, ad_user_groups=None, aws_key=None, aws_key_id=None, aws_region='us-east-2', azure_client_id=None, azure_kv_name=None, azure_secret=None, azure_tenant_id=None, gcp_key=None, hashi_json='true', hashi_ns=None, hashi_token=None, hashi_url=None, id=None, json=False, k8s_ca_certificate=None, k8s_client_certificate=None, k8s_client_key=None, k8s_namespace=None, k8s_password=None, k8s_skip_system=None, k8s_token=None, k8s_url=None, k8s_username=None, name=None, new_name=None, protection_key=None, si_auto_rotate=None, si_rotation_hour=None, si_rotation_interval=None, si_sra_enable_rdp='false', si_target_name=None, si_users_ignore=None, si_users_path_template=None, target_location=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """GatewayUpdateMigration - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -198,6 +212,13 @@ class GatewayUpdateMigration(object):
         self._name = None
         self._new_name = None
         self._protection_key = None
+        self._si_auto_rotate = None
+        self._si_rotation_hour = None
+        self._si_rotation_interval = None
+        self._si_sra_enable_rdp = None
+        self._si_target_name = None
+        self._si_users_ignore = None
+        self._si_users_path_template = None
         self._target_location = None
         self._token = None
         self._uid_token = None
@@ -301,6 +322,18 @@ class GatewayUpdateMigration(object):
             self.new_name = new_name
         if protection_key is not None:
             self.protection_key = protection_key
+        if si_auto_rotate is not None:
+            self.si_auto_rotate = si_auto_rotate
+        if si_rotation_hour is not None:
+            self.si_rotation_hour = si_rotation_hour
+        if si_rotation_interval is not None:
+            self.si_rotation_interval = si_rotation_interval
+        if si_sra_enable_rdp is not None:
+            self.si_sra_enable_rdp = si_sra_enable_rdp
+        self.si_target_name = si_target_name
+        if si_users_ignore is not None:
+            self.si_users_ignore = si_users_ignore
+        self.si_users_path_template = si_users_path_template
         self.target_location = target_location
         if token is not None:
             self.token = token
@@ -817,7 +850,7 @@ class GatewayUpdateMigration(object):
     def ad_user_groups(self):
         """Gets the ad_user_groups of this GatewayUpdateMigration.  # noqa: E501
 
-        Comma-separated list of domain groups from which privileged domain users will be migrated (Relevant only for Active Directory migration)  # noqa: E501
+        Comma-separated list of domain groups from which privileged domain users will be migrated. If empty, migrate all users based on the --ad-user-base-dn (Relevant only for Active Directory migration)  # noqa: E501
 
         :return: The ad_user_groups of this GatewayUpdateMigration.  # noqa: E501
         :rtype: str
@@ -828,7 +861,7 @@ class GatewayUpdateMigration(object):
     def ad_user_groups(self, ad_user_groups):
         """Sets the ad_user_groups of this GatewayUpdateMigration.
 
-        Comma-separated list of domain groups from which privileged domain users will be migrated (Relevant only for Active Directory migration)  # noqa: E501
+        Comma-separated list of domain groups from which privileged domain users will be migrated. If empty, migrate all users based on the --ad-user-base-dn (Relevant only for Active Directory migration)  # noqa: E501
 
         :param ad_user_groups: The ad_user_groups of this GatewayUpdateMigration.  # noqa: E501
         :type: str
@@ -1433,6 +1466,171 @@ class GatewayUpdateMigration(object):
         """
 
         self._protection_key = protection_key
+
+    @property
+    def si_auto_rotate(self):
+        """Gets the si_auto_rotate of this GatewayUpdateMigration.  # noqa: E501
+
+        Enable/Disable automatic/recurrent rotation for migrated secrets. Default is false: only manual rotation is allowed for migrated secrets. If set to true, this command should be combined with --si-rotation-interval and --si-rotation-hour parameters (Relevant only for Server Inventory migration)  # noqa: E501
+
+        :return: The si_auto_rotate of this GatewayUpdateMigration.  # noqa: E501
+        :rtype: str
+        """
+        return self._si_auto_rotate
+
+    @si_auto_rotate.setter
+    def si_auto_rotate(self, si_auto_rotate):
+        """Sets the si_auto_rotate of this GatewayUpdateMigration.
+
+        Enable/Disable automatic/recurrent rotation for migrated secrets. Default is false: only manual rotation is allowed for migrated secrets. If set to true, this command should be combined with --si-rotation-interval and --si-rotation-hour parameters (Relevant only for Server Inventory migration)  # noqa: E501
+
+        :param si_auto_rotate: The si_auto_rotate of this GatewayUpdateMigration.  # noqa: E501
+        :type: str
+        """
+
+        self._si_auto_rotate = si_auto_rotate
+
+    @property
+    def si_rotation_hour(self):
+        """Gets the si_rotation_hour of this GatewayUpdateMigration.  # noqa: E501
+
+        The hour of the scheduled rotation in UTC (Relevant only for Server Inventory migration)  # noqa: E501
+
+        :return: The si_rotation_hour of this GatewayUpdateMigration.  # noqa: E501
+        :rtype: int
+        """
+        return self._si_rotation_hour
+
+    @si_rotation_hour.setter
+    def si_rotation_hour(self, si_rotation_hour):
+        """Sets the si_rotation_hour of this GatewayUpdateMigration.
+
+        The hour of the scheduled rotation in UTC (Relevant only for Server Inventory migration)  # noqa: E501
+
+        :param si_rotation_hour: The si_rotation_hour of this GatewayUpdateMigration.  # noqa: E501
+        :type: int
+        """
+
+        self._si_rotation_hour = si_rotation_hour
+
+    @property
+    def si_rotation_interval(self):
+        """Gets the si_rotation_interval of this GatewayUpdateMigration.  # noqa: E501
+
+        The number of days to wait between every automatic rotation [1-365] (Relevant only for Server Inventory migration)  # noqa: E501
+
+        :return: The si_rotation_interval of this GatewayUpdateMigration.  # noqa: E501
+        :rtype: int
+        """
+        return self._si_rotation_interval
+
+    @si_rotation_interval.setter
+    def si_rotation_interval(self, si_rotation_interval):
+        """Sets the si_rotation_interval of this GatewayUpdateMigration.
+
+        The number of days to wait between every automatic rotation [1-365] (Relevant only for Server Inventory migration)  # noqa: E501
+
+        :param si_rotation_interval: The si_rotation_interval of this GatewayUpdateMigration.  # noqa: E501
+        :type: int
+        """
+
+        self._si_rotation_interval = si_rotation_interval
+
+    @property
+    def si_sra_enable_rdp(self):
+        """Gets the si_sra_enable_rdp of this GatewayUpdateMigration.  # noqa: E501
+
+        Enable/Disable RDP Secure Remote Access for the migrated local users rotated secrets. Default is false: rotated secrets will not be created with SRA (Relevant only for Server Inventory migration)  # noqa: E501
+
+        :return: The si_sra_enable_rdp of this GatewayUpdateMigration.  # noqa: E501
+        :rtype: str
+        """
+        return self._si_sra_enable_rdp
+
+    @si_sra_enable_rdp.setter
+    def si_sra_enable_rdp(self, si_sra_enable_rdp):
+        """Sets the si_sra_enable_rdp of this GatewayUpdateMigration.
+
+        Enable/Disable RDP Secure Remote Access for the migrated local users rotated secrets. Default is false: rotated secrets will not be created with SRA (Relevant only for Server Inventory migration)  # noqa: E501
+
+        :param si_sra_enable_rdp: The si_sra_enable_rdp of this GatewayUpdateMigration.  # noqa: E501
+        :type: str
+        """
+
+        self._si_sra_enable_rdp = si_sra_enable_rdp
+
+    @property
+    def si_target_name(self):
+        """Gets the si_target_name of this GatewayUpdateMigration.  # noqa: E501
+
+        SSH, Windows or Linked Target Name. (Relevant only for Server Inventory migration)  # noqa: E501
+
+        :return: The si_target_name of this GatewayUpdateMigration.  # noqa: E501
+        :rtype: str
+        """
+        return self._si_target_name
+
+    @si_target_name.setter
+    def si_target_name(self, si_target_name):
+        """Sets the si_target_name of this GatewayUpdateMigration.
+
+        SSH, Windows or Linked Target Name. (Relevant only for Server Inventory migration)  # noqa: E501
+
+        :param si_target_name: The si_target_name of this GatewayUpdateMigration.  # noqa: E501
+        :type: str
+        """
+        if self.local_vars_configuration.client_side_validation and si_target_name is None:  # noqa: E501
+            raise ValueError("Invalid value for `si_target_name`, must not be `None`")  # noqa: E501
+
+        self._si_target_name = si_target_name
+
+    @property
+    def si_users_ignore(self):
+        """Gets the si_users_ignore of this GatewayUpdateMigration.  # noqa: E501
+
+        Comma-separated list of Local Users which should not be migrated (Relevant only for Server Inventory migration)  # noqa: E501
+
+        :return: The si_users_ignore of this GatewayUpdateMigration.  # noqa: E501
+        :rtype: str
+        """
+        return self._si_users_ignore
+
+    @si_users_ignore.setter
+    def si_users_ignore(self, si_users_ignore):
+        """Sets the si_users_ignore of this GatewayUpdateMigration.
+
+        Comma-separated list of Local Users which should not be migrated (Relevant only for Server Inventory migration)  # noqa: E501
+
+        :param si_users_ignore: The si_users_ignore of this GatewayUpdateMigration.  # noqa: E501
+        :type: str
+        """
+
+        self._si_users_ignore = si_users_ignore
+
+    @property
+    def si_users_path_template(self):
+        """Gets the si_users_path_template of this GatewayUpdateMigration.  # noqa: E501
+
+        Path location template for migrating users as Rotated Secrets e.g.: .../Users/{{COMPUTER_NAME}}/{{USERNAME}} (Relevant only for Server Inventory migration)  # noqa: E501
+
+        :return: The si_users_path_template of this GatewayUpdateMigration.  # noqa: E501
+        :rtype: str
+        """
+        return self._si_users_path_template
+
+    @si_users_path_template.setter
+    def si_users_path_template(self, si_users_path_template):
+        """Sets the si_users_path_template of this GatewayUpdateMigration.
+
+        Path location template for migrating users as Rotated Secrets e.g.: .../Users/{{COMPUTER_NAME}}/{{USERNAME}} (Relevant only for Server Inventory migration)  # noqa: E501
+
+        :param si_users_path_template: The si_users_path_template of this GatewayUpdateMigration.  # noqa: E501
+        :type: str
+        """
+        if self.local_vars_configuration.client_side_validation and si_users_path_template is None:  # noqa: E501
+            raise ValueError("Invalid value for `si_users_path_template`, must not be `None`")  # noqa: E501
+
+        self._si_users_path_template = si_users_path_template
 
     @property
     def target_location(self):

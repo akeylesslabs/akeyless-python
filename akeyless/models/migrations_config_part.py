@@ -41,7 +41,8 @@ class MigrationsConfigPart(object):
         'hashi_migrations': 'list[HashiMigration]',
         'k8s_migrations': 'list[K8SMigration]',
         'mock_migrations': 'list[MockMigration]',
-        'one_password_migrations': 'list[OnePasswordMigration]'
+        'one_password_migrations': 'list[OnePasswordMigration]',
+        'server_inventory_migrations': 'list[ServerInventoryMigration]'
     }
 
     attribute_map = {
@@ -52,10 +53,11 @@ class MigrationsConfigPart(object):
         'hashi_migrations': 'hashi_migrations',
         'k8s_migrations': 'k8s_migrations',
         'mock_migrations': 'mock_migrations',
-        'one_password_migrations': 'one_password_migrations'
+        'one_password_migrations': 'one_password_migrations',
+        'server_inventory_migrations': 'server_inventory_migrations'
     }
 
-    def __init__(self, active_directory_migrations=None, aws_secrets_migrations=None, azure_kv_migrations=None, gcp_secrets_migrations=None, hashi_migrations=None, k8s_migrations=None, mock_migrations=None, one_password_migrations=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, active_directory_migrations=None, aws_secrets_migrations=None, azure_kv_migrations=None, gcp_secrets_migrations=None, hashi_migrations=None, k8s_migrations=None, mock_migrations=None, one_password_migrations=None, server_inventory_migrations=None, local_vars_configuration=None):  # noqa: E501
         """MigrationsConfigPart - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -69,6 +71,7 @@ class MigrationsConfigPart(object):
         self._k8s_migrations = None
         self._mock_migrations = None
         self._one_password_migrations = None
+        self._server_inventory_migrations = None
         self.discriminator = None
 
         if active_directory_migrations is not None:
@@ -87,6 +90,8 @@ class MigrationsConfigPart(object):
             self.mock_migrations = mock_migrations
         if one_password_migrations is not None:
             self.one_password_migrations = one_password_migrations
+        if server_inventory_migrations is not None:
+            self.server_inventory_migrations = server_inventory_migrations
 
     @property
     def active_directory_migrations(self):
@@ -255,6 +260,27 @@ class MigrationsConfigPart(object):
         """
 
         self._one_password_migrations = one_password_migrations
+
+    @property
+    def server_inventory_migrations(self):
+        """Gets the server_inventory_migrations of this MigrationsConfigPart.  # noqa: E501
+
+
+        :return: The server_inventory_migrations of this MigrationsConfigPart.  # noqa: E501
+        :rtype: list[ServerInventoryMigration]
+        """
+        return self._server_inventory_migrations
+
+    @server_inventory_migrations.setter
+    def server_inventory_migrations(self, server_inventory_migrations):
+        """Sets the server_inventory_migrations of this MigrationsConfigPart.
+
+
+        :param server_inventory_migrations: The server_inventory_migrations of this MigrationsConfigPart.  # noqa: E501
+        :type: list[ServerInventoryMigration]
+        """
+
+        self._server_inventory_migrations = server_inventory_migrations
 
     def to_dict(self):
         """Returns the model properties as a dict"""

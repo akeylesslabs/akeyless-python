@@ -40,6 +40,7 @@ class ListItems(object):
         'minimal_view': 'bool',
         'pagination_token': 'str',
         'path': 'str',
+        'sra_only': 'bool',
         'sub_types': 'list[str]',
         'tag': 'str',
         'token': 'str',
@@ -54,6 +55,7 @@ class ListItems(object):
         'minimal_view': 'minimal-view',
         'pagination_token': 'pagination-token',
         'path': 'path',
+        'sra_only': 'sra-only',
         'sub_types': 'sub_types',
         'tag': 'tag',
         'token': 'token',
@@ -61,7 +63,7 @@ class ListItems(object):
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, accessibility='regular', filter=None, json=False, minimal_view=None, pagination_token=None, path=None, sub_types=None, tag=None, token=None, type=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, accessibility='regular', filter=None, json=False, minimal_view=None, pagination_token=None, path=None, sra_only=False, sub_types=None, tag=None, token=None, type=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """ListItems - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -73,6 +75,7 @@ class ListItems(object):
         self._minimal_view = None
         self._pagination_token = None
         self._path = None
+        self._sra_only = None
         self._sub_types = None
         self._tag = None
         self._token = None
@@ -92,6 +95,8 @@ class ListItems(object):
             self.pagination_token = pagination_token
         if path is not None:
             self.path = path
+        if sra_only is not None:
+            self.sra_only = sra_only
         if sub_types is not None:
             self.sub_types = sub_types
         if tag is not None:
@@ -238,6 +243,29 @@ class ListItems(object):
         """
 
         self._path = path
+
+    @property
+    def sra_only(self):
+        """Gets the sra_only of this ListItems.  # noqa: E501
+
+        Filter by items with SRA functionality enabled  # noqa: E501
+
+        :return: The sra_only of this ListItems.  # noqa: E501
+        :rtype: bool
+        """
+        return self._sra_only
+
+    @sra_only.setter
+    def sra_only(self, sra_only):
+        """Sets the sra_only of this ListItems.
+
+        Filter by items with SRA functionality enabled  # noqa: E501
+
+        :param sra_only: The sra_only of this ListItems.  # noqa: E501
+        :type: bool
+        """
+
+        self._sra_only = sra_only
 
     @property
     def sub_types(self):

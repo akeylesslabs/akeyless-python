@@ -35,6 +35,7 @@ class MigrationStatusReplyObj(object):
     """
     openapi_types = {
         'duration_time': 'str',
+        'error': 'str',
         'last_status_message': 'str',
         'max_name_length': 'int',
         'max_value_length': 'int',
@@ -43,11 +44,15 @@ class MigrationStatusReplyObj(object):
         'migration_name': 'str',
         'migration_state': 'str',
         'migration_type': 'str',
-        'start_time': 'str'
+        'migration_type_name': 'str',
+        'rotated_secrets': 'MigrationItems',
+        'start_time': 'str',
+        'targets': 'MigrationItems'
     }
 
     attribute_map = {
         'duration_time': 'duration_time',
+        'error': 'error',
         'last_status_message': 'last_status_message',
         'max_name_length': 'max_name_length',
         'max_value_length': 'max_value_length',
@@ -56,16 +61,20 @@ class MigrationStatusReplyObj(object):
         'migration_name': 'migration_name',
         'migration_state': 'migration_state',
         'migration_type': 'migration_type',
-        'start_time': 'start_time'
+        'migration_type_name': 'migration_type_name',
+        'rotated_secrets': 'rotated_secrets',
+        'start_time': 'start_time',
+        'targets': 'targets'
     }
 
-    def __init__(self, duration_time=None, last_status_message=None, max_name_length=None, max_value_length=None, migration_id=None, migration_items=None, migration_name=None, migration_state=None, migration_type=None, start_time=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, duration_time=None, error=None, last_status_message=None, max_name_length=None, max_value_length=None, migration_id=None, migration_items=None, migration_name=None, migration_state=None, migration_type=None, migration_type_name=None, rotated_secrets=None, start_time=None, targets=None, local_vars_configuration=None):  # noqa: E501
         """MigrationStatusReplyObj - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._duration_time = None
+        self._error = None
         self._last_status_message = None
         self._max_name_length = None
         self._max_value_length = None
@@ -74,11 +83,16 @@ class MigrationStatusReplyObj(object):
         self._migration_name = None
         self._migration_state = None
         self._migration_type = None
+        self._migration_type_name = None
+        self._rotated_secrets = None
         self._start_time = None
+        self._targets = None
         self.discriminator = None
 
         if duration_time is not None:
             self.duration_time = duration_time
+        if error is not None:
+            self.error = error
         if last_status_message is not None:
             self.last_status_message = last_status_message
         if max_name_length is not None:
@@ -95,8 +109,14 @@ class MigrationStatusReplyObj(object):
             self.migration_state = migration_state
         if migration_type is not None:
             self.migration_type = migration_type
+        if migration_type_name is not None:
+            self.migration_type_name = migration_type_name
+        if rotated_secrets is not None:
+            self.rotated_secrets = rotated_secrets
         if start_time is not None:
             self.start_time = start_time
+        if targets is not None:
+            self.targets = targets
 
     @property
     def duration_time(self):
@@ -118,6 +138,27 @@ class MigrationStatusReplyObj(object):
         """
 
         self._duration_time = duration_time
+
+    @property
+    def error(self):
+        """Gets the error of this MigrationStatusReplyObj.  # noqa: E501
+
+
+        :return: The error of this MigrationStatusReplyObj.  # noqa: E501
+        :rtype: str
+        """
+        return self._error
+
+    @error.setter
+    def error(self, error):
+        """Sets the error of this MigrationStatusReplyObj.
+
+
+        :param error: The error of this MigrationStatusReplyObj.  # noqa: E501
+        :type: str
+        """
+
+        self._error = error
 
     @property
     def last_status_message(self):
@@ -288,6 +329,48 @@ class MigrationStatusReplyObj(object):
         self._migration_type = migration_type
 
     @property
+    def migration_type_name(self):
+        """Gets the migration_type_name of this MigrationStatusReplyObj.  # noqa: E501
+
+
+        :return: The migration_type_name of this MigrationStatusReplyObj.  # noqa: E501
+        :rtype: str
+        """
+        return self._migration_type_name
+
+    @migration_type_name.setter
+    def migration_type_name(self, migration_type_name):
+        """Sets the migration_type_name of this MigrationStatusReplyObj.
+
+
+        :param migration_type_name: The migration_type_name of this MigrationStatusReplyObj.  # noqa: E501
+        :type: str
+        """
+
+        self._migration_type_name = migration_type_name
+
+    @property
+    def rotated_secrets(self):
+        """Gets the rotated_secrets of this MigrationStatusReplyObj.  # noqa: E501
+
+
+        :return: The rotated_secrets of this MigrationStatusReplyObj.  # noqa: E501
+        :rtype: MigrationItems
+        """
+        return self._rotated_secrets
+
+    @rotated_secrets.setter
+    def rotated_secrets(self, rotated_secrets):
+        """Sets the rotated_secrets of this MigrationStatusReplyObj.
+
+
+        :param rotated_secrets: The rotated_secrets of this MigrationStatusReplyObj.  # noqa: E501
+        :type: MigrationItems
+        """
+
+        self._rotated_secrets = rotated_secrets
+
+    @property
     def start_time(self):
         """Gets the start_time of this MigrationStatusReplyObj.  # noqa: E501
 
@@ -307,6 +390,27 @@ class MigrationStatusReplyObj(object):
         """
 
         self._start_time = start_time
+
+    @property
+    def targets(self):
+        """Gets the targets of this MigrationStatusReplyObj.  # noqa: E501
+
+
+        :return: The targets of this MigrationStatusReplyObj.  # noqa: E501
+        :rtype: MigrationItems
+        """
+        return self._targets
+
+    @targets.setter
+    def targets(self, targets):
+        """Sets the targets of this MigrationStatusReplyObj.
+
+
+        :param targets: The targets of this MigrationStatusReplyObj.  # noqa: E501
+        :type: MigrationItems
+        """
+
+        self._targets = targets
 
     def to_dict(self):
         """Returns the model properties as a dict"""
