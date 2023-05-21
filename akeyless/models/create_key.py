@@ -35,9 +35,17 @@ class CreateKey(object):
     """
     openapi_types = {
         'alg': 'str',
+        'certificate_common_name': 'str',
+        'certificate_country': 'str',
+        'certificate_digest_algo': 'str',
+        'certificate_locality': 'str',
+        'certificate_organization': 'str',
+        'certificate_province': 'str',
+        'certificate_ttl': 'int',
         'customer_frg_id': 'str',
         'delete_protection': 'str',
         'description': 'str',
+        'generate_self_signed_certificate': 'bool',
         'json': 'bool',
         'metadata': 'str',
         'name': 'str',
@@ -49,9 +57,17 @@ class CreateKey(object):
 
     attribute_map = {
         'alg': 'alg',
+        'certificate_common_name': 'certificate-common-name',
+        'certificate_country': 'certificate-country',
+        'certificate_digest_algo': 'certificate-digest-algo',
+        'certificate_locality': 'certificate-locality',
+        'certificate_organization': 'certificate-organization',
+        'certificate_province': 'certificate-province',
+        'certificate_ttl': 'certificate-ttl',
         'customer_frg_id': 'customer-frg-id',
         'delete_protection': 'delete_protection',
         'description': 'description',
+        'generate_self_signed_certificate': 'generate-self-signed-certificate',
         'json': 'json',
         'metadata': 'metadata',
         'name': 'name',
@@ -61,16 +77,24 @@ class CreateKey(object):
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, alg=None, customer_frg_id=None, delete_protection=None, description=None, json=False, metadata=None, name=None, split_level=2, tag=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, alg=None, certificate_common_name=None, certificate_country=None, certificate_digest_algo=None, certificate_locality=None, certificate_organization=None, certificate_province=None, certificate_ttl=None, customer_frg_id=None, delete_protection=None, description=None, generate_self_signed_certificate=None, json=False, metadata=None, name=None, split_level=2, tag=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """CreateKey - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._alg = None
+        self._certificate_common_name = None
+        self._certificate_country = None
+        self._certificate_digest_algo = None
+        self._certificate_locality = None
+        self._certificate_organization = None
+        self._certificate_province = None
+        self._certificate_ttl = None
         self._customer_frg_id = None
         self._delete_protection = None
         self._description = None
+        self._generate_self_signed_certificate = None
         self._json = None
         self._metadata = None
         self._name = None
@@ -81,12 +105,28 @@ class CreateKey(object):
         self.discriminator = None
 
         self.alg = alg
+        if certificate_common_name is not None:
+            self.certificate_common_name = certificate_common_name
+        if certificate_country is not None:
+            self.certificate_country = certificate_country
+        if certificate_digest_algo is not None:
+            self.certificate_digest_algo = certificate_digest_algo
+        if certificate_locality is not None:
+            self.certificate_locality = certificate_locality
+        if certificate_organization is not None:
+            self.certificate_organization = certificate_organization
+        if certificate_province is not None:
+            self.certificate_province = certificate_province
+        if certificate_ttl is not None:
+            self.certificate_ttl = certificate_ttl
         if customer_frg_id is not None:
             self.customer_frg_id = customer_frg_id
         if delete_protection is not None:
             self.delete_protection = delete_protection
         if description is not None:
             self.description = description
+        if generate_self_signed_certificate is not None:
+            self.generate_self_signed_certificate = generate_self_signed_certificate
         if json is not None:
             self.json = json
         if metadata is not None:
@@ -125,6 +165,167 @@ class CreateKey(object):
             raise ValueError("Invalid value for `alg`, must not be `None`")  # noqa: E501
 
         self._alg = alg
+
+    @property
+    def certificate_common_name(self):
+        """Gets the certificate_common_name of this CreateKey.  # noqa: E501
+
+        Common name for the generated certificate. Relevant only for generate-self-signed-certificate.  # noqa: E501
+
+        :return: The certificate_common_name of this CreateKey.  # noqa: E501
+        :rtype: str
+        """
+        return self._certificate_common_name
+
+    @certificate_common_name.setter
+    def certificate_common_name(self, certificate_common_name):
+        """Sets the certificate_common_name of this CreateKey.
+
+        Common name for the generated certificate. Relevant only for generate-self-signed-certificate.  # noqa: E501
+
+        :param certificate_common_name: The certificate_common_name of this CreateKey.  # noqa: E501
+        :type: str
+        """
+
+        self._certificate_common_name = certificate_common_name
+
+    @property
+    def certificate_country(self):
+        """Gets the certificate_country of this CreateKey.  # noqa: E501
+
+        Country name for the generated certificate. Relevant only for generate-self-signed-certificate.  # noqa: E501
+
+        :return: The certificate_country of this CreateKey.  # noqa: E501
+        :rtype: str
+        """
+        return self._certificate_country
+
+    @certificate_country.setter
+    def certificate_country(self, certificate_country):
+        """Sets the certificate_country of this CreateKey.
+
+        Country name for the generated certificate. Relevant only for generate-self-signed-certificate.  # noqa: E501
+
+        :param certificate_country: The certificate_country of this CreateKey.  # noqa: E501
+        :type: str
+        """
+
+        self._certificate_country = certificate_country
+
+    @property
+    def certificate_digest_algo(self):
+        """Gets the certificate_digest_algo of this CreateKey.  # noqa: E501
+
+        Digest algorithm to be used for the certificate key signing. Currently, we support only \"sha256\" so we hide this option for CLI.  # noqa: E501
+
+        :return: The certificate_digest_algo of this CreateKey.  # noqa: E501
+        :rtype: str
+        """
+        return self._certificate_digest_algo
+
+    @certificate_digest_algo.setter
+    def certificate_digest_algo(self, certificate_digest_algo):
+        """Sets the certificate_digest_algo of this CreateKey.
+
+        Digest algorithm to be used for the certificate key signing. Currently, we support only \"sha256\" so we hide this option for CLI.  # noqa: E501
+
+        :param certificate_digest_algo: The certificate_digest_algo of this CreateKey.  # noqa: E501
+        :type: str
+        """
+
+        self._certificate_digest_algo = certificate_digest_algo
+
+    @property
+    def certificate_locality(self):
+        """Gets the certificate_locality of this CreateKey.  # noqa: E501
+
+        Locality for the generated certificate. Relevant only for generate-self-signed-certificate.  # noqa: E501
+
+        :return: The certificate_locality of this CreateKey.  # noqa: E501
+        :rtype: str
+        """
+        return self._certificate_locality
+
+    @certificate_locality.setter
+    def certificate_locality(self, certificate_locality):
+        """Sets the certificate_locality of this CreateKey.
+
+        Locality for the generated certificate. Relevant only for generate-self-signed-certificate.  # noqa: E501
+
+        :param certificate_locality: The certificate_locality of this CreateKey.  # noqa: E501
+        :type: str
+        """
+
+        self._certificate_locality = certificate_locality
+
+    @property
+    def certificate_organization(self):
+        """Gets the certificate_organization of this CreateKey.  # noqa: E501
+
+        Organization name for the generated certificate. Relevant only for generate-self-signed-certificate.  # noqa: E501
+
+        :return: The certificate_organization of this CreateKey.  # noqa: E501
+        :rtype: str
+        """
+        return self._certificate_organization
+
+    @certificate_organization.setter
+    def certificate_organization(self, certificate_organization):
+        """Sets the certificate_organization of this CreateKey.
+
+        Organization name for the generated certificate. Relevant only for generate-self-signed-certificate.  # noqa: E501
+
+        :param certificate_organization: The certificate_organization of this CreateKey.  # noqa: E501
+        :type: str
+        """
+
+        self._certificate_organization = certificate_organization
+
+    @property
+    def certificate_province(self):
+        """Gets the certificate_province of this CreateKey.  # noqa: E501
+
+        Province name for the generated certificate. Relevant only for generate-self-signed-certificate.  # noqa: E501
+
+        :return: The certificate_province of this CreateKey.  # noqa: E501
+        :rtype: str
+        """
+        return self._certificate_province
+
+    @certificate_province.setter
+    def certificate_province(self, certificate_province):
+        """Sets the certificate_province of this CreateKey.
+
+        Province name for the generated certificate. Relevant only for generate-self-signed-certificate.  # noqa: E501
+
+        :param certificate_province: The certificate_province of this CreateKey.  # noqa: E501
+        :type: str
+        """
+
+        self._certificate_province = certificate_province
+
+    @property
+    def certificate_ttl(self):
+        """Gets the certificate_ttl of this CreateKey.  # noqa: E501
+
+        TTL in days for the generated certificate. Required only for generate-self-signed-certificate.  # noqa: E501
+
+        :return: The certificate_ttl of this CreateKey.  # noqa: E501
+        :rtype: int
+        """
+        return self._certificate_ttl
+
+    @certificate_ttl.setter
+    def certificate_ttl(self, certificate_ttl):
+        """Sets the certificate_ttl of this CreateKey.
+
+        TTL in days for the generated certificate. Required only for generate-self-signed-certificate.  # noqa: E501
+
+        :param certificate_ttl: The certificate_ttl of this CreateKey.  # noqa: E501
+        :type: int
+        """
+
+        self._certificate_ttl = certificate_ttl
 
     @property
     def customer_frg_id(self):
@@ -194,6 +395,29 @@ class CreateKey(object):
         """
 
         self._description = description
+
+    @property
+    def generate_self_signed_certificate(self):
+        """Gets the generate_self_signed_certificate of this CreateKey.  # noqa: E501
+
+        Whether to generate a self signed certificate with the key. If set, --certificate-ttl must be provided.  # noqa: E501
+
+        :return: The generate_self_signed_certificate of this CreateKey.  # noqa: E501
+        :rtype: bool
+        """
+        return self._generate_self_signed_certificate
+
+    @generate_self_signed_certificate.setter
+    def generate_self_signed_certificate(self, generate_self_signed_certificate):
+        """Sets the generate_self_signed_certificate of this CreateKey.
+
+        Whether to generate a self signed certificate with the key. If set, --certificate-ttl must be provided.  # noqa: E501
+
+        :param generate_self_signed_certificate: The generate_self_signed_certificate of this CreateKey.  # noqa: E501
+        :type: bool
+        """
+
+        self._generate_self_signed_certificate = generate_self_signed_certificate
 
     @property
     def json(self):

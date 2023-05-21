@@ -15,7 +15,7 @@
 
 from __future__ import absolute_import
 
-__version__ = "3.3.4"
+__version__ = "3.3.5"
 
 # import apis into sdk package
 from akeyless.api.v2_api import V2Api
@@ -67,6 +67,7 @@ from akeyless.models.certificate_chain_info import CertificateChainInfo
 from akeyless.models.certificate_expiration_event import CertificateExpirationEvent
 from akeyless.models.certificate_info import CertificateInfo
 from akeyless.models.certificate_issue_info import CertificateIssueInfo
+from akeyless.models.certificate_template_info import CertificateTemplateInfo
 from akeyless.models.classic_key_details_info import ClassicKeyDetailsInfo
 from akeyless.models.classic_key_status_info import ClassicKeyStatusInfo
 from akeyless.models.classic_key_target_info import ClassicKeyTargetInfo
@@ -202,6 +203,8 @@ from akeyless.models.delete_roles import DeleteRoles
 from akeyless.models.delete_target import DeleteTarget
 from akeyless.models.delete_target_association import DeleteTargetAssociation
 from akeyless.models.delete_targets import DeleteTargets
+from akeyless.models.derive_key import DeriveKey
+from akeyless.models.derive_key_output import DeriveKeyOutput
 from akeyless.models.describe_assoc import DescribeAssoc
 from akeyless.models.describe_item import DescribeItem
 from akeyless.models.describe_permissions import DescribePermissions
@@ -232,6 +235,7 @@ from akeyless.models.esm_list import EsmList
 from akeyless.models.esm_list_secrets_output import EsmListSecretsOutput
 from akeyless.models.esm_update import EsmUpdate
 from akeyless.models.esm_update_secret_output import EsmUpdateSecretOutput
+from akeyless.models.event_action import EventAction
 from akeyless.models.export_classic_key import ExportClassicKey
 from akeyless.models.export_classic_key_output import ExportClassicKeyOutput
 from akeyless.models.extension import Extension

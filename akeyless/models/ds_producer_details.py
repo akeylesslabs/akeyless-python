@@ -234,7 +234,10 @@ class DSProducerDetails(object):
         'venafi_sign_using_akeyless_pki': 'bool',
         'venafi_signer_key_name': 'str',
         'venafi_store_private_key': 'bool',
+        'venafi_tpp_access_token': 'str',
+        'venafi_tpp_client_id': 'str',
         'venafi_tpp_password': 'str',
+        'venafi_tpp_refresh_token': 'str',
         'venafi_tpp_username': 'str',
         'venafi_use_tpp': 'bool',
         'venafi_zone': 'str',
@@ -442,14 +445,17 @@ class DSProducerDetails(object):
         'venafi_sign_using_akeyless_pki': 'venafi_sign_using_akeyless_pki',
         'venafi_signer_key_name': 'venafi_signer_key_name',
         'venafi_store_private_key': 'venafi_store_private_key',
+        'venafi_tpp_access_token': 'venafi_tpp_access_token',
+        'venafi_tpp_client_id': 'venafi_tpp_client_id',
         'venafi_tpp_password': 'venafi_tpp_password',
+        'venafi_tpp_refresh_token': 'venafi_tpp_refresh_token',
         'venafi_tpp_username': 'venafi_tpp_username',
         'venafi_use_tpp': 'venafi_use_tpp',
         'venafi_zone': 'venafi_zone',
         'warn_before_user_expiration_min': 'warn_before_user_expiration_min'
     }
 
-    def __init__(self, access_token_manager_id=None, acl_rules=None, active=None, admin_name=None, admin_pwd=None, admin_rotation_interval_days=None, administrative_port=None, artifactory_admin_apikey=None, artifactory_admin_username=None, artifactory_base_url=None, artifactory_token_audience=None, artifactory_token_scope=None, authorization_port=None, aws_access_key_id=None, aws_access_mode=None, aws_region=None, aws_role_arns=None, aws_secret_access_key=None, aws_session_token=None, aws_user_console_access=None, aws_user_groups=None, aws_user_policies=None, aws_user_programmatic_access=None, azure_app_object_id=None, azure_client_id=None, azure_client_secret=None, azure_fixed_user_name_sub_claim_key=None, azure_fixed_user_only=None, azure_resource_group_name=None, azure_resource_name=None, azure_subscription_id=None, azure_tenant_id=None, azure_user_groups_obj_id=None, azure_user_portal_access=None, azure_user_programmatic_access=None, azure_user_roles_template_id=None, cassandra_creation_statements=None, chef_organizations=None, chef_server_access_mode=None, chef_server_host_name=None, chef_server_key=None, chef_server_port=None, chef_server_url=None, chef_server_username=None, chef_skip_ssl=None, client_authentication_type=None, create_sync_url=None, db_host_name=None, db_isolation_level=None, db_max_idle_conns=None, db_max_open_conns=None, db_name=None, db_port=None, db_private_key=None, db_private_key_passphrase=None, db_pwd=None, db_server_certificates=None, db_server_name=None, db_user_name=None, delete_protection=None, dynamic_secret_id=None, dynamic_secret_key=None, dynamic_secret_name=None, dynamic_secret_type=None, eks_access_key_id=None, eks_assume_role=None, eks_cluster_ca_certificate=None, eks_cluster_endpoint=None, eks_cluster_name=None, eks_region=None, eks_secret_access_key=None, enable_admin_rotation=None, enforce_replay_prevention=None, externally_provided_user=None, failure_message=None, fixed_user_only=None, gcp_key_algo=None, gcp_role_bindings=None, gcp_service_account_email=None, gcp_service_account_key=None, gcp_service_account_key_base64=None, gcp_service_account_type=None, gcp_tmp_service_account_name=None, gcp_token_lifetime=None, gcp_token_scope=None, gcp_token_type=None, github_app_id=None, github_app_private_key=None, github_base_url=None, github_installation_id=None, github_installation_token_permissions=None, github_installation_token_repositories=None, github_installation_token_repositories_ids=None, github_repository_path=None, gke_cluster_ca_certificate=None, gke_cluster_endpoint=None, gke_cluster_name=None, gke_service_account_key=None, gke_service_account_name=None, grant_types=None, groups=None, hanadb_creation_statements=None, hanadb_revocation_statements=None, host_name=None, host_port=None, implementation_type=None, is_fixed_user=None, issuer=None, item_targets_assoc=None, jwks=None, jwks_url=None, k8s_allowed_namespaces=None, k8s_bearer_token=None, k8s_cluster_ca_certificate=None, k8s_cluster_endpoint=None, k8s_dynamic_mode=None, k8s_multiple_doc_yaml_temp_definition=None, k8s_namespace=None, k8s_role_name=None, k8s_role_type=None, k8s_service_account=None, last_admin_rotation=None, ldap_audience=None, ldap_bind_dn=None, ldap_bind_password=None, ldap_certificate=None, ldap_token_expiration=None, ldap_url=None, ldap_user_attr=None, ldap_user_dn=None, metadata=None, mongodb_atlas_api_private_key=None, mongodb_atlas_api_public_key=None, mongodb_atlas_project_id=None, mongodb_custom_data=None, mongodb_db_name=None, mongodb_default_auth_db=None, mongodb_host_port=None, mongodb_is_atlas=None, mongodb_password=None, mongodb_roles=None, mongodb_uri_connection=None, mongodb_uri_options=None, mongodb_username=None, mssql_creation_statements=None, mssql_revocation_statements=None, mysql_creation_statements=None, mysql_revocation_statements=None, oracle_creation_statements=None, password=None, password_length=None, password_policy=None, payload=None, ping_url=None, postgres_creation_statements=None, postgres_revocation_statements=None, privileged_user=None, rabbitmq_server_password=None, rabbitmq_server_uri=None, rabbitmq_server_user=None, rabbitmq_user_conf_permission=None, rabbitmq_user_read_permission=None, rabbitmq_user_tags=None, rabbitmq_user_vhost=None, rabbitmq_user_write_permission=None, redirect_uris=None, redshift_creation_statements=None, restricted_scopes=None, revoke_sync_url=None, rotate_sync_url=None, scopes=None, secure_remote_access_details=None, session_extension_warn_interval_min=None, sf_account=None, sf_user_role=None, sf_warehouse_name=None, should_stop=None, signing_algorithm=None, ssl_connection_certificate=None, ssl_connection_mode=None, subject_dn=None, tags=None, timeout_seconds=None, use_gw_cloud_identity=None, use_gw_service_account=None, user_name=None, user_password=None, user_principal_name=None, user_ttl=None, username_length=None, username_policy=None, venafi_allow_subdomains=None, venafi_allowed_domains=None, venafi_api_key=None, venafi_auto_generated_folder=None, venafi_base_url=None, venafi_root_first_in_chain=None, venafi_sign_using_akeyless_pki=None, venafi_signer_key_name=None, venafi_store_private_key=None, venafi_tpp_password=None, venafi_tpp_username=None, venafi_use_tpp=None, venafi_zone=None, warn_before_user_expiration_min=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, access_token_manager_id=None, acl_rules=None, active=None, admin_name=None, admin_pwd=None, admin_rotation_interval_days=None, administrative_port=None, artifactory_admin_apikey=None, artifactory_admin_username=None, artifactory_base_url=None, artifactory_token_audience=None, artifactory_token_scope=None, authorization_port=None, aws_access_key_id=None, aws_access_mode=None, aws_region=None, aws_role_arns=None, aws_secret_access_key=None, aws_session_token=None, aws_user_console_access=None, aws_user_groups=None, aws_user_policies=None, aws_user_programmatic_access=None, azure_app_object_id=None, azure_client_id=None, azure_client_secret=None, azure_fixed_user_name_sub_claim_key=None, azure_fixed_user_only=None, azure_resource_group_name=None, azure_resource_name=None, azure_subscription_id=None, azure_tenant_id=None, azure_user_groups_obj_id=None, azure_user_portal_access=None, azure_user_programmatic_access=None, azure_user_roles_template_id=None, cassandra_creation_statements=None, chef_organizations=None, chef_server_access_mode=None, chef_server_host_name=None, chef_server_key=None, chef_server_port=None, chef_server_url=None, chef_server_username=None, chef_skip_ssl=None, client_authentication_type=None, create_sync_url=None, db_host_name=None, db_isolation_level=None, db_max_idle_conns=None, db_max_open_conns=None, db_name=None, db_port=None, db_private_key=None, db_private_key_passphrase=None, db_pwd=None, db_server_certificates=None, db_server_name=None, db_user_name=None, delete_protection=None, dynamic_secret_id=None, dynamic_secret_key=None, dynamic_secret_name=None, dynamic_secret_type=None, eks_access_key_id=None, eks_assume_role=None, eks_cluster_ca_certificate=None, eks_cluster_endpoint=None, eks_cluster_name=None, eks_region=None, eks_secret_access_key=None, enable_admin_rotation=None, enforce_replay_prevention=None, externally_provided_user=None, failure_message=None, fixed_user_only=None, gcp_key_algo=None, gcp_role_bindings=None, gcp_service_account_email=None, gcp_service_account_key=None, gcp_service_account_key_base64=None, gcp_service_account_type=None, gcp_tmp_service_account_name=None, gcp_token_lifetime=None, gcp_token_scope=None, gcp_token_type=None, github_app_id=None, github_app_private_key=None, github_base_url=None, github_installation_id=None, github_installation_token_permissions=None, github_installation_token_repositories=None, github_installation_token_repositories_ids=None, github_repository_path=None, gke_cluster_ca_certificate=None, gke_cluster_endpoint=None, gke_cluster_name=None, gke_service_account_key=None, gke_service_account_name=None, grant_types=None, groups=None, hanadb_creation_statements=None, hanadb_revocation_statements=None, host_name=None, host_port=None, implementation_type=None, is_fixed_user=None, issuer=None, item_targets_assoc=None, jwks=None, jwks_url=None, k8s_allowed_namespaces=None, k8s_bearer_token=None, k8s_cluster_ca_certificate=None, k8s_cluster_endpoint=None, k8s_dynamic_mode=None, k8s_multiple_doc_yaml_temp_definition=None, k8s_namespace=None, k8s_role_name=None, k8s_role_type=None, k8s_service_account=None, last_admin_rotation=None, ldap_audience=None, ldap_bind_dn=None, ldap_bind_password=None, ldap_certificate=None, ldap_token_expiration=None, ldap_url=None, ldap_user_attr=None, ldap_user_dn=None, metadata=None, mongodb_atlas_api_private_key=None, mongodb_atlas_api_public_key=None, mongodb_atlas_project_id=None, mongodb_custom_data=None, mongodb_db_name=None, mongodb_default_auth_db=None, mongodb_host_port=None, mongodb_is_atlas=None, mongodb_password=None, mongodb_roles=None, mongodb_uri_connection=None, mongodb_uri_options=None, mongodb_username=None, mssql_creation_statements=None, mssql_revocation_statements=None, mysql_creation_statements=None, mysql_revocation_statements=None, oracle_creation_statements=None, password=None, password_length=None, password_policy=None, payload=None, ping_url=None, postgres_creation_statements=None, postgres_revocation_statements=None, privileged_user=None, rabbitmq_server_password=None, rabbitmq_server_uri=None, rabbitmq_server_user=None, rabbitmq_user_conf_permission=None, rabbitmq_user_read_permission=None, rabbitmq_user_tags=None, rabbitmq_user_vhost=None, rabbitmq_user_write_permission=None, redirect_uris=None, redshift_creation_statements=None, restricted_scopes=None, revoke_sync_url=None, rotate_sync_url=None, scopes=None, secure_remote_access_details=None, session_extension_warn_interval_min=None, sf_account=None, sf_user_role=None, sf_warehouse_name=None, should_stop=None, signing_algorithm=None, ssl_connection_certificate=None, ssl_connection_mode=None, subject_dn=None, tags=None, timeout_seconds=None, use_gw_cloud_identity=None, use_gw_service_account=None, user_name=None, user_password=None, user_principal_name=None, user_ttl=None, username_length=None, username_policy=None, venafi_allow_subdomains=None, venafi_allowed_domains=None, venafi_api_key=None, venafi_auto_generated_folder=None, venafi_base_url=None, venafi_root_first_in_chain=None, venafi_sign_using_akeyless_pki=None, venafi_signer_key_name=None, venafi_store_private_key=None, venafi_tpp_access_token=None, venafi_tpp_client_id=None, venafi_tpp_password=None, venafi_tpp_refresh_token=None, venafi_tpp_username=None, venafi_use_tpp=None, venafi_zone=None, warn_before_user_expiration_min=None, local_vars_configuration=None):  # noqa: E501
         """DSProducerDetails - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -655,7 +661,10 @@ class DSProducerDetails(object):
         self._venafi_sign_using_akeyless_pki = None
         self._venafi_signer_key_name = None
         self._venafi_store_private_key = None
+        self._venafi_tpp_access_token = None
+        self._venafi_tpp_client_id = None
         self._venafi_tpp_password = None
+        self._venafi_tpp_refresh_token = None
         self._venafi_tpp_username = None
         self._venafi_use_tpp = None
         self._venafi_zone = None
@@ -1062,8 +1071,14 @@ class DSProducerDetails(object):
             self.venafi_signer_key_name = venafi_signer_key_name
         if venafi_store_private_key is not None:
             self.venafi_store_private_key = venafi_store_private_key
+        if venafi_tpp_access_token is not None:
+            self.venafi_tpp_access_token = venafi_tpp_access_token
+        if venafi_tpp_client_id is not None:
+            self.venafi_tpp_client_id = venafi_tpp_client_id
         if venafi_tpp_password is not None:
             self.venafi_tpp_password = venafi_tpp_password
+        if venafi_tpp_refresh_token is not None:
+            self.venafi_tpp_refresh_token = venafi_tpp_refresh_token
         if venafi_tpp_username is not None:
             self.venafi_tpp_username = venafi_tpp_username
         if venafi_use_tpp is not None:
@@ -5310,9 +5325,52 @@ class DSProducerDetails(object):
         self._venafi_store_private_key = venafi_store_private_key
 
     @property
+    def venafi_tpp_access_token(self):
+        """Gets the venafi_tpp_access_token of this DSProducerDetails.  # noqa: E501
+
+
+        :return: The venafi_tpp_access_token of this DSProducerDetails.  # noqa: E501
+        :rtype: str
+        """
+        return self._venafi_tpp_access_token
+
+    @venafi_tpp_access_token.setter
+    def venafi_tpp_access_token(self, venafi_tpp_access_token):
+        """Sets the venafi_tpp_access_token of this DSProducerDetails.
+
+
+        :param venafi_tpp_access_token: The venafi_tpp_access_token of this DSProducerDetails.  # noqa: E501
+        :type: str
+        """
+
+        self._venafi_tpp_access_token = venafi_tpp_access_token
+
+    @property
+    def venafi_tpp_client_id(self):
+        """Gets the venafi_tpp_client_id of this DSProducerDetails.  # noqa: E501
+
+
+        :return: The venafi_tpp_client_id of this DSProducerDetails.  # noqa: E501
+        :rtype: str
+        """
+        return self._venafi_tpp_client_id
+
+    @venafi_tpp_client_id.setter
+    def venafi_tpp_client_id(self, venafi_tpp_client_id):
+        """Sets the venafi_tpp_client_id of this DSProducerDetails.
+
+
+        :param venafi_tpp_client_id: The venafi_tpp_client_id of this DSProducerDetails.  # noqa: E501
+        :type: str
+        """
+
+        self._venafi_tpp_client_id = venafi_tpp_client_id
+
+    @property
     def venafi_tpp_password(self):
         """Gets the venafi_tpp_password of this DSProducerDetails.  # noqa: E501
 
+        Deprecated: VenafiAccessToken and VenafiRefreshToken should be used instead  # noqa: E501
 
         :return: The venafi_tpp_password of this DSProducerDetails.  # noqa: E501
         :rtype: str
@@ -5323,6 +5381,7 @@ class DSProducerDetails(object):
     def venafi_tpp_password(self, venafi_tpp_password):
         """Sets the venafi_tpp_password of this DSProducerDetails.
 
+        Deprecated: VenafiAccessToken and VenafiRefreshToken should be used instead  # noqa: E501
 
         :param venafi_tpp_password: The venafi_tpp_password of this DSProducerDetails.  # noqa: E501
         :type: str
@@ -5331,9 +5390,31 @@ class DSProducerDetails(object):
         self._venafi_tpp_password = venafi_tpp_password
 
     @property
+    def venafi_tpp_refresh_token(self):
+        """Gets the venafi_tpp_refresh_token of this DSProducerDetails.  # noqa: E501
+
+
+        :return: The venafi_tpp_refresh_token of this DSProducerDetails.  # noqa: E501
+        :rtype: str
+        """
+        return self._venafi_tpp_refresh_token
+
+    @venafi_tpp_refresh_token.setter
+    def venafi_tpp_refresh_token(self, venafi_tpp_refresh_token):
+        """Sets the venafi_tpp_refresh_token of this DSProducerDetails.
+
+
+        :param venafi_tpp_refresh_token: The venafi_tpp_refresh_token of this DSProducerDetails.  # noqa: E501
+        :type: str
+        """
+
+        self._venafi_tpp_refresh_token = venafi_tpp_refresh_token
+
+    @property
     def venafi_tpp_username(self):
         """Gets the venafi_tpp_username of this DSProducerDetails.  # noqa: E501
 
+        Deprecated: VenafiAccessToken and VenafiRefreshToken should be used instead  # noqa: E501
 
         :return: The venafi_tpp_username of this DSProducerDetails.  # noqa: E501
         :rtype: str
@@ -5344,6 +5425,7 @@ class DSProducerDetails(object):
     def venafi_tpp_username(self, venafi_tpp_username):
         """Sets the venafi_tpp_username of this DSProducerDetails.
 
+        Deprecated: VenafiAccessToken and VenafiRefreshToken should be used instead  # noqa: E501
 
         :param venafi_tpp_username: The venafi_tpp_username of this DSProducerDetails.  # noqa: E501
         :type: str

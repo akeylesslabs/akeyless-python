@@ -72,6 +72,7 @@ Method | HTTP request | Description
 [**delete_target**](V2Api.md#delete_target) | **POST** /delete-target | 
 [**delete_target_association**](V2Api.md#delete_target_association) | **POST** /delete-assoc-target-item | 
 [**delete_targets**](V2Api.md#delete_targets) | **POST** /delete-targets | 
+[**derive_key**](V2Api.md#derive_key) | **POST** /derive-key | 
 [**describe_assoc**](V2Api.md#describe_assoc) | **POST** /describe-role-am-assoc | 
 [**describe_item**](V2Api.md#describe_item) | **POST** /describe-item | 
 [**describe_permissions**](V2Api.md#describe_permissions) | **POST** /describe-permissions | 
@@ -85,6 +86,7 @@ Method | HTTP request | Description
 [**esm_get**](V2Api.md#esm_get) | **POST** /esm-get | 
 [**esm_list**](V2Api.md#esm_list) | **POST** /esm-list | 
 [**esm_update**](V2Api.md#esm_update) | **POST** /esm-update | 
+[**event_action**](V2Api.md#event_action) | **POST** /event-action | 
 [**export_classic_key**](V2Api.md#export_classic_key) | **POST** /export-classic-key | 
 [**gateway_create_k8_s_auth_config**](V2Api.md#gateway_create_k8_s_auth_config) | **POST** /gateway-create-k8s-auth-config | 
 [**gateway_create_migration**](V2Api.md#gateway_create_migration) | **POST** /gateway-create-migration | 
@@ -4364,6 +4366,66 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **derive_key**
+> DeriveKeyOutput derive_key(body)
+
+
+
+### Example
+
+```python
+from __future__ import print_function
+import time
+import akeyless
+from akeyless.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.akeyless.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = akeyless.Configuration(
+    host = "https://api.akeyless.io"
+)
+
+
+# Enter a context with an instance of the API client
+with akeyless.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = akeyless.V2Api(api_client)
+    body = akeyless.DeriveKey() # DeriveKey | 
+
+    try:
+        api_response = api_instance.derive_key(body)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling V2Api->derive_key: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**DeriveKey**](DeriveKey.md)|  | 
+
+### Return type
+
+[**DeriveKeyOutput**](DeriveKeyOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | DeriveKeyResponse wraps response body. |  -  |
+**0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **describe_assoc**
 > RoleAssociationDetails describe_assoc(body)
 
@@ -5137,6 +5199,66 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | esmUpdateResponse wraps response body. |  -  |
+**0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **event_action**
+> object event_action(body)
+
+
+
+### Example
+
+```python
+from __future__ import print_function
+import time
+import akeyless
+from akeyless.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.akeyless.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = akeyless.Configuration(
+    host = "https://api.akeyless.io"
+)
+
+
+# Enter a context with an instance of the API client
+with akeyless.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = akeyless.V2Api(api_client)
+    body = akeyless.EventAction() # EventAction | 
+
+    try:
+        api_response = api_instance.event_action(body)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling V2Api->event_action: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**EventAction**](EventAction.md)|  | 
+
+### Return type
+
+**object**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | eventActionResponse wraps response body. |  -  |
 **0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

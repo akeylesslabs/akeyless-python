@@ -52,11 +52,12 @@ class GatewayCreateProducerCertificateAutomation(object):
         'token': 'str',
         'uid_token': 'str',
         'user_ttl': 'str',
+        'venafi_access_token': 'str',
         'venafi_api_key': 'str',
         'venafi_baseurl': 'str',
-        'venafi_password': 'str',
+        'venafi_client_id': 'str',
+        'venafi_refresh_token': 'str',
         'venafi_use_tpp': 'bool',
-        'venafi_username': 'str',
         'venafi_zone': 'str'
     }
 
@@ -79,15 +80,16 @@ class GatewayCreateProducerCertificateAutomation(object):
         'token': 'token',
         'uid_token': 'uid-token',
         'user_ttl': 'user-ttl',
+        'venafi_access_token': 'venafi-access-token',
         'venafi_api_key': 'venafi-api-key',
         'venafi_baseurl': 'venafi-baseurl',
-        'venafi_password': 'venafi-password',
+        'venafi_client_id': 'venafi-client-id',
+        'venafi_refresh_token': 'venafi-refresh-token',
         'venafi_use_tpp': 'venafi-use-tpp',
-        'venafi_username': 'venafi-username',
         'venafi_zone': 'venafi-zone'
     }
 
-    def __init__(self, admin_rotation_interval_days=0, allow_subdomains=None, allowed_domains=None, auto_generated_folder=None, delete_protection=None, enable_admin_rotation=False, json=False, name=None, producer_encryption_key_name=None, root_first_in_chain=None, sign_using_akeyless_pki=None, signer_key_name=None, store_private_key=None, tags=None, target_name=None, token=None, uid_token=None, user_ttl='2160h', venafi_api_key=None, venafi_baseurl=None, venafi_password=None, venafi_use_tpp=None, venafi_username=None, venafi_zone=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, admin_rotation_interval_days=0, allow_subdomains=None, allowed_domains=None, auto_generated_folder=None, delete_protection=None, enable_admin_rotation=False, json=False, name=None, producer_encryption_key_name=None, root_first_in_chain=None, sign_using_akeyless_pki=None, signer_key_name=None, store_private_key=None, tags=None, target_name=None, token=None, uid_token=None, user_ttl='2160h', venafi_access_token=None, venafi_api_key=None, venafi_baseurl=None, venafi_client_id='akeyless', venafi_refresh_token=None, venafi_use_tpp=None, venafi_zone=None, local_vars_configuration=None):  # noqa: E501
         """GatewayCreateProducerCertificateAutomation - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -111,11 +113,12 @@ class GatewayCreateProducerCertificateAutomation(object):
         self._token = None
         self._uid_token = None
         self._user_ttl = None
+        self._venafi_access_token = None
         self._venafi_api_key = None
         self._venafi_baseurl = None
-        self._venafi_password = None
+        self._venafi_client_id = None
+        self._venafi_refresh_token = None
         self._venafi_use_tpp = None
-        self._venafi_username = None
         self._venafi_zone = None
         self.discriminator = None
 
@@ -154,16 +157,18 @@ class GatewayCreateProducerCertificateAutomation(object):
             self.uid_token = uid_token
         if user_ttl is not None:
             self.user_ttl = user_ttl
+        if venafi_access_token is not None:
+            self.venafi_access_token = venafi_access_token
         if venafi_api_key is not None:
             self.venafi_api_key = venafi_api_key
         if venafi_baseurl is not None:
             self.venafi_baseurl = venafi_baseurl
-        if venafi_password is not None:
-            self.venafi_password = venafi_password
+        if venafi_client_id is not None:
+            self.venafi_client_id = venafi_client_id
+        if venafi_refresh_token is not None:
+            self.venafi_refresh_token = venafi_refresh_token
         if venafi_use_tpp is not None:
             self.venafi_use_tpp = venafi_use_tpp
-        if venafi_username is not None:
-            self.venafi_username = venafi_username
         if venafi_zone is not None:
             self.venafi_zone = venafi_zone
 
@@ -584,6 +589,29 @@ class GatewayCreateProducerCertificateAutomation(object):
         self._user_ttl = user_ttl
 
     @property
+    def venafi_access_token(self):
+        """Gets the venafi_access_token of this GatewayCreateProducerCertificateAutomation.  # noqa: E501
+
+        Venafi Access Token to use to access the TPP environment (Relevant when using TPP)  # noqa: E501
+
+        :return: The venafi_access_token of this GatewayCreateProducerCertificateAutomation.  # noqa: E501
+        :rtype: str
+        """
+        return self._venafi_access_token
+
+    @venafi_access_token.setter
+    def venafi_access_token(self, venafi_access_token):
+        """Sets the venafi_access_token of this GatewayCreateProducerCertificateAutomation.
+
+        Venafi Access Token to use to access the TPP environment (Relevant when using TPP)  # noqa: E501
+
+        :param venafi_access_token: The venafi_access_token of this GatewayCreateProducerCertificateAutomation.  # noqa: E501
+        :type: str
+        """
+
+        self._venafi_access_token = venafi_access_token
+
+    @property
     def venafi_api_key(self):
         """Gets the venafi_api_key of this GatewayCreateProducerCertificateAutomation.  # noqa: E501
 
@@ -630,27 +658,50 @@ class GatewayCreateProducerCertificateAutomation(object):
         self._venafi_baseurl = venafi_baseurl
 
     @property
-    def venafi_password(self):
-        """Gets the venafi_password of this GatewayCreateProducerCertificateAutomation.  # noqa: E501
+    def venafi_client_id(self):
+        """Gets the venafi_client_id of this GatewayCreateProducerCertificateAutomation.  # noqa: E501
 
-        Venafi Password  # noqa: E501
+        Venafi Client ID that was used when the access token was generated  # noqa: E501
 
-        :return: The venafi_password of this GatewayCreateProducerCertificateAutomation.  # noqa: E501
+        :return: The venafi_client_id of this GatewayCreateProducerCertificateAutomation.  # noqa: E501
         :rtype: str
         """
-        return self._venafi_password
+        return self._venafi_client_id
 
-    @venafi_password.setter
-    def venafi_password(self, venafi_password):
-        """Sets the venafi_password of this GatewayCreateProducerCertificateAutomation.
+    @venafi_client_id.setter
+    def venafi_client_id(self, venafi_client_id):
+        """Sets the venafi_client_id of this GatewayCreateProducerCertificateAutomation.
 
-        Venafi Password  # noqa: E501
+        Venafi Client ID that was used when the access token was generated  # noqa: E501
 
-        :param venafi_password: The venafi_password of this GatewayCreateProducerCertificateAutomation.  # noqa: E501
+        :param venafi_client_id: The venafi_client_id of this GatewayCreateProducerCertificateAutomation.  # noqa: E501
         :type: str
         """
 
-        self._venafi_password = venafi_password
+        self._venafi_client_id = venafi_client_id
+
+    @property
+    def venafi_refresh_token(self):
+        """Gets the venafi_refresh_token of this GatewayCreateProducerCertificateAutomation.  # noqa: E501
+
+        Venafi Refresh Token to use when the Access Token is expired (Relevant when using TPP)  # noqa: E501
+
+        :return: The venafi_refresh_token of this GatewayCreateProducerCertificateAutomation.  # noqa: E501
+        :rtype: str
+        """
+        return self._venafi_refresh_token
+
+    @venafi_refresh_token.setter
+    def venafi_refresh_token(self, venafi_refresh_token):
+        """Sets the venafi_refresh_token of this GatewayCreateProducerCertificateAutomation.
+
+        Venafi Refresh Token to use when the Access Token is expired (Relevant when using TPP)  # noqa: E501
+
+        :param venafi_refresh_token: The venafi_refresh_token of this GatewayCreateProducerCertificateAutomation.  # noqa: E501
+        :type: str
+        """
+
+        self._venafi_refresh_token = venafi_refresh_token
 
     @property
     def venafi_use_tpp(self):
@@ -674,29 +725,6 @@ class GatewayCreateProducerCertificateAutomation(object):
         """
 
         self._venafi_use_tpp = venafi_use_tpp
-
-    @property
-    def venafi_username(self):
-        """Gets the venafi_username of this GatewayCreateProducerCertificateAutomation.  # noqa: E501
-
-        Venafi Username  # noqa: E501
-
-        :return: The venafi_username of this GatewayCreateProducerCertificateAutomation.  # noqa: E501
-        :rtype: str
-        """
-        return self._venafi_username
-
-    @venafi_username.setter
-    def venafi_username(self, venafi_username):
-        """Sets the venafi_username of this GatewayCreateProducerCertificateAutomation.
-
-        Venafi Username  # noqa: E501
-
-        :param venafi_username: The venafi_username of this GatewayCreateProducerCertificateAutomation.  # noqa: E501
-        :type: str
-        """
-
-        self._venafi_username = venafi_username
 
     @property
     def venafi_zone(self):

@@ -149,7 +149,10 @@ class TargetTypeDetailsInput(object):
         'validation_email': 'str',
         'venafi_api_key': 'str',
         'venafi_base_url': 'str',
+        'venafi_tpp_access_token': 'str',
+        'venafi_tpp_client_id': 'str',
         'venafi_tpp_password': 'str',
+        'venafi_tpp_refresh_token': 'str',
         'venafi_tpp_username': 'str',
         'venafi_use_tpp': 'bool',
         'venafi_zone': 'str'
@@ -271,13 +274,16 @@ class TargetTypeDetailsInput(object):
         'validation_email': 'validation_email',
         'venafi_api_key': 'venafi_api_key',
         'venafi_base_url': 'venafi_base_url',
+        'venafi_tpp_access_token': 'venafi_tpp_access_token',
+        'venafi_tpp_client_id': 'venafi_tpp_client_id',
         'venafi_tpp_password': 'venafi_tpp_password',
+        'venafi_tpp_refresh_token': 'venafi_tpp_refresh_token',
         'venafi_tpp_username': 'venafi_tpp_username',
         'venafi_use_tpp': 'venafi_use_tpp',
         'venafi_zone': 'venafi_zone'
     }
 
-    def __init__(self, administrative_port=None, api_key=None, app_private_key=None, artifactory_admin_apikey=None, artifactory_admin_username=None, artifactory_base_url=None, auth_flow=None, authorization_port=None, aws_access_key_id=None, aws_region=None, aws_secret_access_key=None, aws_session_token=None, azure_client_id=None, azure_client_secret=None, azure_resource_group_name=None, azure_resource_name=None, azure_subscription_id=None, azure_tenant_id=None, ca_cert_data=None, ca_cert_name=None, certificate=None, chef_server_host_name=None, chef_server_key=None, chef_server_port=None, chef_server_url=None, chef_server_username=None, chef_skip_ssl=None, client_id=None, client_secret=None, db_host_name=None, db_name=None, db_port=None, db_private_key=None, db_private_key_passphrase=None, db_pwd=None, db_server_certificates=None, db_server_name=None, db_user_name=None, domain_name=None, eks_access_key_id=None, eks_cluster_ca_certificate=None, eks_cluster_endpoint=None, eks_cluster_name=None, eks_region=None, eks_secret_access_key=None, email=None, first_name=None, gcp_service_account_email=None, gcp_service_account_key=None, gcp_service_account_key_base64=None, github_app_id=None, github_app_private_key=None, github_base_url=None, gke_cluster_ca_certificate=None, gke_cluster_endpoint=None, gke_cluster_name=None, gke_service_account_key=None, gke_service_account_name=None, host=None, hostname=None, hosts=None, imap_fqdn=None, imap_password=None, imap_port=None, imap_user=None, implementation_type=None, k8s_bearer_token=None, k8s_cluster_ca_certificate=None, k8s_cluster_endpoint=None, last_name=None, ldap_audience=None, ldap_bind_dn=None, ldap_bind_password=None, ldap_certificate=None, ldap_token_expiration=None, ldap_url=None, mongodb_atlas_api_private_key=None, mongodb_atlas_api_public_key=None, mongodb_atlas_project_id=None, mongodb_db_name=None, mongodb_default_auth_db=None, mongodb_host_port=None, mongodb_is_atlas=None, mongodb_password=None, mongodb_uri_connection=None, mongodb_uri_options=None, mongodb_username=None, password=None, payload=None, phone=None, ping_url=None, port=None, private_key=None, private_key_password=None, privileged_user=None, profile_id=None, rabbitmq_server_password=None, rabbitmq_server_uri=None, rabbitmq_server_user=None, security_token=None, sf_account=None, ssl_connection_certificate=None, ssl_connection_mode=None, tenant_url=None, timeout=None, url=None, use_gw_cloud_identity=None, use_gw_service_account=None, use_tls=None, user_name=None, user_password=None, username=None, validation_email=None, venafi_api_key=None, venafi_base_url=None, venafi_tpp_password=None, venafi_tpp_username=None, venafi_use_tpp=None, venafi_zone=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, administrative_port=None, api_key=None, app_private_key=None, artifactory_admin_apikey=None, artifactory_admin_username=None, artifactory_base_url=None, auth_flow=None, authorization_port=None, aws_access_key_id=None, aws_region=None, aws_secret_access_key=None, aws_session_token=None, azure_client_id=None, azure_client_secret=None, azure_resource_group_name=None, azure_resource_name=None, azure_subscription_id=None, azure_tenant_id=None, ca_cert_data=None, ca_cert_name=None, certificate=None, chef_server_host_name=None, chef_server_key=None, chef_server_port=None, chef_server_url=None, chef_server_username=None, chef_skip_ssl=None, client_id=None, client_secret=None, db_host_name=None, db_name=None, db_port=None, db_private_key=None, db_private_key_passphrase=None, db_pwd=None, db_server_certificates=None, db_server_name=None, db_user_name=None, domain_name=None, eks_access_key_id=None, eks_cluster_ca_certificate=None, eks_cluster_endpoint=None, eks_cluster_name=None, eks_region=None, eks_secret_access_key=None, email=None, first_name=None, gcp_service_account_email=None, gcp_service_account_key=None, gcp_service_account_key_base64=None, github_app_id=None, github_app_private_key=None, github_base_url=None, gke_cluster_ca_certificate=None, gke_cluster_endpoint=None, gke_cluster_name=None, gke_service_account_key=None, gke_service_account_name=None, host=None, hostname=None, hosts=None, imap_fqdn=None, imap_password=None, imap_port=None, imap_user=None, implementation_type=None, k8s_bearer_token=None, k8s_cluster_ca_certificate=None, k8s_cluster_endpoint=None, last_name=None, ldap_audience=None, ldap_bind_dn=None, ldap_bind_password=None, ldap_certificate=None, ldap_token_expiration=None, ldap_url=None, mongodb_atlas_api_private_key=None, mongodb_atlas_api_public_key=None, mongodb_atlas_project_id=None, mongodb_db_name=None, mongodb_default_auth_db=None, mongodb_host_port=None, mongodb_is_atlas=None, mongodb_password=None, mongodb_uri_connection=None, mongodb_uri_options=None, mongodb_username=None, password=None, payload=None, phone=None, ping_url=None, port=None, private_key=None, private_key_password=None, privileged_user=None, profile_id=None, rabbitmq_server_password=None, rabbitmq_server_uri=None, rabbitmq_server_user=None, security_token=None, sf_account=None, ssl_connection_certificate=None, ssl_connection_mode=None, tenant_url=None, timeout=None, url=None, use_gw_cloud_identity=None, use_gw_service_account=None, use_tls=None, user_name=None, user_password=None, username=None, validation_email=None, venafi_api_key=None, venafi_base_url=None, venafi_tpp_access_token=None, venafi_tpp_client_id=None, venafi_tpp_password=None, venafi_tpp_refresh_token=None, venafi_tpp_username=None, venafi_use_tpp=None, venafi_zone=None, local_vars_configuration=None):  # noqa: E501
         """TargetTypeDetailsInput - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -398,7 +404,10 @@ class TargetTypeDetailsInput(object):
         self._validation_email = None
         self._venafi_api_key = None
         self._venafi_base_url = None
+        self._venafi_tpp_access_token = None
+        self._venafi_tpp_client_id = None
         self._venafi_tpp_password = None
+        self._venafi_tpp_refresh_token = None
         self._venafi_tpp_username = None
         self._venafi_use_tpp = None
         self._venafi_zone = None
@@ -634,8 +643,14 @@ class TargetTypeDetailsInput(object):
             self.venafi_api_key = venafi_api_key
         if venafi_base_url is not None:
             self.venafi_base_url = venafi_base_url
+        if venafi_tpp_access_token is not None:
+            self.venafi_tpp_access_token = venafi_tpp_access_token
+        if venafi_tpp_client_id is not None:
+            self.venafi_tpp_client_id = venafi_tpp_client_id
         if venafi_tpp_password is not None:
             self.venafi_tpp_password = venafi_tpp_password
+        if venafi_tpp_refresh_token is not None:
+            self.venafi_tpp_refresh_token = venafi_tpp_refresh_token
         if venafi_tpp_username is not None:
             self.venafi_tpp_username = venafi_tpp_username
         if venafi_use_tpp is not None:
@@ -3089,9 +3104,52 @@ class TargetTypeDetailsInput(object):
         self._venafi_base_url = venafi_base_url
 
     @property
+    def venafi_tpp_access_token(self):
+        """Gets the venafi_tpp_access_token of this TargetTypeDetailsInput.  # noqa: E501
+
+
+        :return: The venafi_tpp_access_token of this TargetTypeDetailsInput.  # noqa: E501
+        :rtype: str
+        """
+        return self._venafi_tpp_access_token
+
+    @venafi_tpp_access_token.setter
+    def venafi_tpp_access_token(self, venafi_tpp_access_token):
+        """Sets the venafi_tpp_access_token of this TargetTypeDetailsInput.
+
+
+        :param venafi_tpp_access_token: The venafi_tpp_access_token of this TargetTypeDetailsInput.  # noqa: E501
+        :type: str
+        """
+
+        self._venafi_tpp_access_token = venafi_tpp_access_token
+
+    @property
+    def venafi_tpp_client_id(self):
+        """Gets the venafi_tpp_client_id of this TargetTypeDetailsInput.  # noqa: E501
+
+
+        :return: The venafi_tpp_client_id of this TargetTypeDetailsInput.  # noqa: E501
+        :rtype: str
+        """
+        return self._venafi_tpp_client_id
+
+    @venafi_tpp_client_id.setter
+    def venafi_tpp_client_id(self, venafi_tpp_client_id):
+        """Sets the venafi_tpp_client_id of this TargetTypeDetailsInput.
+
+
+        :param venafi_tpp_client_id: The venafi_tpp_client_id of this TargetTypeDetailsInput.  # noqa: E501
+        :type: str
+        """
+
+        self._venafi_tpp_client_id = venafi_tpp_client_id
+
+    @property
     def venafi_tpp_password(self):
         """Gets the venafi_tpp_password of this TargetTypeDetailsInput.  # noqa: E501
 
+        Deprecated: VenafiAccessToken and VenafiRefreshToken should be used instead  # noqa: E501
 
         :return: The venafi_tpp_password of this TargetTypeDetailsInput.  # noqa: E501
         :rtype: str
@@ -3102,6 +3160,7 @@ class TargetTypeDetailsInput(object):
     def venafi_tpp_password(self, venafi_tpp_password):
         """Sets the venafi_tpp_password of this TargetTypeDetailsInput.
 
+        Deprecated: VenafiAccessToken and VenafiRefreshToken should be used instead  # noqa: E501
 
         :param venafi_tpp_password: The venafi_tpp_password of this TargetTypeDetailsInput.  # noqa: E501
         :type: str
@@ -3110,9 +3169,31 @@ class TargetTypeDetailsInput(object):
         self._venafi_tpp_password = venafi_tpp_password
 
     @property
+    def venafi_tpp_refresh_token(self):
+        """Gets the venafi_tpp_refresh_token of this TargetTypeDetailsInput.  # noqa: E501
+
+
+        :return: The venafi_tpp_refresh_token of this TargetTypeDetailsInput.  # noqa: E501
+        :rtype: str
+        """
+        return self._venafi_tpp_refresh_token
+
+    @venafi_tpp_refresh_token.setter
+    def venafi_tpp_refresh_token(self, venafi_tpp_refresh_token):
+        """Sets the venafi_tpp_refresh_token of this TargetTypeDetailsInput.
+
+
+        :param venafi_tpp_refresh_token: The venafi_tpp_refresh_token of this TargetTypeDetailsInput.  # noqa: E501
+        :type: str
+        """
+
+        self._venafi_tpp_refresh_token = venafi_tpp_refresh_token
+
+    @property
     def venafi_tpp_username(self):
         """Gets the venafi_tpp_username of this TargetTypeDetailsInput.  # noqa: E501
 
+        Deprecated: VenafiAccessToken and VenafiRefreshToken should be used instead  # noqa: E501
 
         :return: The venafi_tpp_username of this TargetTypeDetailsInput.  # noqa: E501
         :rtype: str
@@ -3123,6 +3204,7 @@ class TargetTypeDetailsInput(object):
     def venafi_tpp_username(self, venafi_tpp_username):
         """Sets the venafi_tpp_username of this TargetTypeDetailsInput.
 
+        Deprecated: VenafiAccessToken and VenafiRefreshToken should be used instead  # noqa: E501
 
         :param venafi_tpp_username: The venafi_tpp_username of this TargetTypeDetailsInput.  # noqa: E501
         :type: str
