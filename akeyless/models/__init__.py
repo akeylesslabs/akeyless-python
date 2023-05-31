@@ -535,10 +535,12 @@ from akeyless.models.set_item_state import SetItemState
 from akeyless.models.set_role_rule import SetRoleRule
 from akeyless.models.share_item import ShareItem
 from akeyless.models.sharing_policy_info import SharingPolicyInfo
+from akeyless.models.sign_data_with_classic_key import SignDataWithClassicKey
 from akeyless.models.sign_gpg import SignGPG
 from akeyless.models.sign_gpg_output import SignGPGOutput
 from akeyless.models.sign_jwt_output import SignJWTOutput
 from akeyless.models.sign_jwt_with_classic_key import SignJWTWithClassicKey
+from akeyless.models.sign_output import SignOutput
 from akeyless.models.sign_pkcs1 import SignPKCS1
 from akeyless.models.sign_pkcs1_output import SignPKCS1Output
 from akeyless.models.sign_pki_cert_output import SignPKICertOutput
@@ -660,6 +662,7 @@ from akeyless.models.upload_rsa import UploadRSA
 from akeyless.models.validate_token import ValidateToken
 from akeyless.models.validate_token_output import ValidateTokenOutput
 from akeyless.models.vaultless_tokenizer_info import VaultlessTokenizerInfo
+from akeyless.models.verify_data_with_classic_key import VerifyDataWithClassicKey
 from akeyless.models.verify_gpg import VerifyGPG
 from akeyless.models.verify_jwt_output import VerifyJWTOutput
 from akeyless.models.verify_jwt_with_classic_key import VerifyJWTWithClassicKey
