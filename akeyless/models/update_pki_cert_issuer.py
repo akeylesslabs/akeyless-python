@@ -42,6 +42,7 @@ class UpdatePKICertIssuer(object):
         'client_flag': 'bool',
         'code_signing_flag': 'bool',
         'country': 'str',
+        'delete_protection': 'str',
         'description': 'str',
         'destination_path': 'str',
         'expiration_event_in': 'list[str]',
@@ -77,6 +78,7 @@ class UpdatePKICertIssuer(object):
         'client_flag': 'client-flag',
         'code_signing_flag': 'code-signing-flag',
         'country': 'country',
+        'delete_protection': 'delete_protection',
         'description': 'description',
         'destination_path': 'destination-path',
         'expiration_event_in': 'expiration-event-in',
@@ -103,7 +105,7 @@ class UpdatePKICertIssuer(object):
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, add_tag=None, allow_any_name=None, allow_subdomains=None, allowed_domains=None, allowed_uri_sans=None, client_flag=None, code_signing_flag=None, country=None, description=None, destination_path=None, expiration_event_in=None, gw_cluster_url=None, json=False, key_usage='DigitalSignature,KeyAgreement,KeyEncipherment', locality=None, metadata=None, name=None, new_name=None, not_enforce_hostnames=None, not_require_cn=None, organizational_units=None, organizations=None, postal_code=None, protect_certificates=None, province=None, rm_tag=None, server_flag=None, signer_key_name='dummy_signer_key', street_address=None, token=None, ttl=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, add_tag=None, allow_any_name=None, allow_subdomains=None, allowed_domains=None, allowed_uri_sans=None, client_flag=None, code_signing_flag=None, country=None, delete_protection=None, description=None, destination_path=None, expiration_event_in=None, gw_cluster_url=None, json=False, key_usage='DigitalSignature,KeyAgreement,KeyEncipherment', locality=None, metadata=None, name=None, new_name=None, not_enforce_hostnames=None, not_require_cn=None, organizational_units=None, organizations=None, postal_code=None, protect_certificates=None, province=None, rm_tag=None, server_flag=None, signer_key_name='dummy_signer_key', street_address=None, token=None, ttl=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """UpdatePKICertIssuer - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -117,6 +119,7 @@ class UpdatePKICertIssuer(object):
         self._client_flag = None
         self._code_signing_flag = None
         self._country = None
+        self._delete_protection = None
         self._description = None
         self._destination_path = None
         self._expiration_event_in = None
@@ -159,6 +162,8 @@ class UpdatePKICertIssuer(object):
             self.code_signing_flag = code_signing_flag
         if country is not None:
             self.country = country
+        if delete_protection is not None:
+            self.delete_protection = delete_protection
         if description is not None:
             self.description = description
         if destination_path is not None:
@@ -370,7 +375,7 @@ class UpdatePKICertIssuer(object):
     def country(self):
         """Gets the country of this UpdatePKICertIssuer.  # noqa: E501
 
-        A comma-separated list of the country that will be set in the issued certificate  # noqa: E501
+        A comma-separated list of countries that will be set in the issued certificate  # noqa: E501
 
         :return: The country of this UpdatePKICertIssuer.  # noqa: E501
         :rtype: str
@@ -381,13 +386,36 @@ class UpdatePKICertIssuer(object):
     def country(self, country):
         """Sets the country of this UpdatePKICertIssuer.
 
-        A comma-separated list of the country that will be set in the issued certificate  # noqa: E501
+        A comma-separated list of countries that will be set in the issued certificate  # noqa: E501
 
         :param country: The country of this UpdatePKICertIssuer.  # noqa: E501
         :type: str
         """
 
         self._country = country
+
+    @property
+    def delete_protection(self):
+        """Gets the delete_protection of this UpdatePKICertIssuer.  # noqa: E501
+
+        Protection from accidental deletion of this item [true/false]  # noqa: E501
+
+        :return: The delete_protection of this UpdatePKICertIssuer.  # noqa: E501
+        :rtype: str
+        """
+        return self._delete_protection
+
+    @delete_protection.setter
+    def delete_protection(self, delete_protection):
+        """Sets the delete_protection of this UpdatePKICertIssuer.
+
+        Protection from accidental deletion of this item [true/false]  # noqa: E501
+
+        :param delete_protection: The delete_protection of this UpdatePKICertIssuer.  # noqa: E501
+        :type: str
+        """
+
+        self._delete_protection = delete_protection
 
     @property
     def description(self):
@@ -531,7 +559,7 @@ class UpdatePKICertIssuer(object):
     def locality(self):
         """Gets the locality of this UpdatePKICertIssuer.  # noqa: E501
 
-        A comma-separated list of the locality that will be set in the issued certificate  # noqa: E501
+        A comma-separated list of localities that will be set in the issued certificate  # noqa: E501
 
         :return: The locality of this UpdatePKICertIssuer.  # noqa: E501
         :rtype: str
@@ -542,7 +570,7 @@ class UpdatePKICertIssuer(object):
     def locality(self, locality):
         """Sets the locality of this UpdatePKICertIssuer.
 
-        A comma-separated list of the locality that will be set in the issued certificate  # noqa: E501
+        A comma-separated list of localities that will be set in the issued certificate  # noqa: E501
 
         :param locality: The locality of this UpdatePKICertIssuer.  # noqa: E501
         :type: str
@@ -717,7 +745,7 @@ class UpdatePKICertIssuer(object):
     def postal_code(self):
         """Gets the postal_code of this UpdatePKICertIssuer.  # noqa: E501
 
-        A comma-separated list of the postal code that will be set in the issued certificate  # noqa: E501
+        A comma-separated list of postal codes that will be set in the issued certificate  # noqa: E501
 
         :return: The postal_code of this UpdatePKICertIssuer.  # noqa: E501
         :rtype: str
@@ -728,7 +756,7 @@ class UpdatePKICertIssuer(object):
     def postal_code(self, postal_code):
         """Sets the postal_code of this UpdatePKICertIssuer.
 
-        A comma-separated list of the postal code that will be set in the issued certificate  # noqa: E501
+        A comma-separated list of postal codes that will be set in the issued certificate  # noqa: E501
 
         :param postal_code: The postal_code of this UpdatePKICertIssuer.  # noqa: E501
         :type: str
@@ -763,7 +791,7 @@ class UpdatePKICertIssuer(object):
     def province(self):
         """Gets the province of this UpdatePKICertIssuer.  # noqa: E501
 
-        A comma-separated list of the province that will be set in the issued certificate  # noqa: E501
+        A comma-separated list of provinces that will be set in the issued certificate  # noqa: E501
 
         :return: The province of this UpdatePKICertIssuer.  # noqa: E501
         :rtype: str
@@ -774,7 +802,7 @@ class UpdatePKICertIssuer(object):
     def province(self, province):
         """Sets the province of this UpdatePKICertIssuer.
 
-        A comma-separated list of the province that will be set in the issued certificate  # noqa: E501
+        A comma-separated list of provinces that will be set in the issued certificate  # noqa: E501
 
         :param province: The province of this UpdatePKICertIssuer.  # noqa: E501
         :type: str
@@ -857,7 +885,7 @@ class UpdatePKICertIssuer(object):
     def street_address(self):
         """Gets the street_address of this UpdatePKICertIssuer.  # noqa: E501
 
-        A comma-separated list of the street address that will be set in the issued certificate  # noqa: E501
+        A comma-separated list of street addresses that will be set in the issued certificate  # noqa: E501
 
         :return: The street_address of this UpdatePKICertIssuer.  # noqa: E501
         :rtype: str
@@ -868,7 +896,7 @@ class UpdatePKICertIssuer(object):
     def street_address(self, street_address):
         """Sets the street_address of this UpdatePKICertIssuer.
 
-        A comma-separated list of the street address that will be set in the issued certificate  # noqa: E501
+        A comma-separated list of street addresses that will be set in the issued certificate  # noqa: E501
 
         :param street_address: The street_address of this UpdatePKICertIssuer.  # noqa: E501
         :type: str
@@ -903,7 +931,7 @@ class UpdatePKICertIssuer(object):
     def ttl(self):
         """Gets the ttl of this UpdatePKICertIssuer.  # noqa: E501
 
-        he requested Time To Live for the certificate, in seconds  # noqa: E501
+        The maximum requested Time To Live for issued certificates, in seconds. In case of Public CA, this is based on the CA target's supported maximum TTLs  # noqa: E501
 
         :return: The ttl of this UpdatePKICertIssuer.  # noqa: E501
         :rtype: int
@@ -914,7 +942,7 @@ class UpdatePKICertIssuer(object):
     def ttl(self, ttl):
         """Sets the ttl of this UpdatePKICertIssuer.
 
-        he requested Time To Live for the certificate, in seconds  # noqa: E501
+        The maximum requested Time To Live for issued certificates, in seconds. In case of Public CA, this is based on the CA target's supported maximum TTLs  # noqa: E501
 
         :param ttl: The ttl of this UpdatePKICertIssuer.  # noqa: E501
         :type: int

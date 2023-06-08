@@ -49,6 +49,7 @@ class Target(object):
         'target_id': 'int',
         'target_items_assoc': 'list[TargetItemAssociation]',
         'target_name': 'str',
+        'target_sub_type': 'str',
         'target_type': 'str',
         'target_versions': 'list[ItemVersion]',
         'with_customer_fragment': 'bool'
@@ -70,12 +71,13 @@ class Target(object):
         'target_id': 'target_id',
         'target_items_assoc': 'target_items_assoc',
         'target_name': 'target_name',
+        'target_sub_type': 'target_sub_type',
         'target_type': 'target_type',
         'target_versions': 'target_versions',
         'with_customer_fragment': 'with_customer_fragment'
     }
 
-    def __init__(self, access_date=None, access_request_status=None, attributes=None, client_permissions=None, comment=None, creation_date=None, credentials_less=None, is_access_request_enabled=None, last_version=None, modification_date=None, protection_key_name=None, target_details=None, target_id=None, target_items_assoc=None, target_name=None, target_type=None, target_versions=None, with_customer_fragment=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, access_date=None, access_request_status=None, attributes=None, client_permissions=None, comment=None, creation_date=None, credentials_less=None, is_access_request_enabled=None, last_version=None, modification_date=None, protection_key_name=None, target_details=None, target_id=None, target_items_assoc=None, target_name=None, target_sub_type=None, target_type=None, target_versions=None, with_customer_fragment=None, local_vars_configuration=None):  # noqa: E501
         """Target - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -96,6 +98,7 @@ class Target(object):
         self._target_id = None
         self._target_items_assoc = None
         self._target_name = None
+        self._target_sub_type = None
         self._target_type = None
         self._target_versions = None
         self._with_customer_fragment = None
@@ -131,6 +134,8 @@ class Target(object):
             self.target_items_assoc = target_items_assoc
         if target_name is not None:
             self.target_name = target_name
+        if target_sub_type is not None:
+            self.target_sub_type = target_sub_type
         if target_type is not None:
             self.target_type = target_type
         if target_versions is not None:
@@ -454,6 +459,27 @@ class Target(object):
         """
 
         self._target_name = target_name
+
+    @property
+    def target_sub_type(self):
+        """Gets the target_sub_type of this Target.  # noqa: E501
+
+
+        :return: The target_sub_type of this Target.  # noqa: E501
+        :rtype: str
+        """
+        return self._target_sub_type
+
+    @target_sub_type.setter
+    def target_sub_type(self, target_sub_type):
+        """Sets the target_sub_type of this Target.
+
+
+        :param target_sub_type: The target_sub_type of this Target.  # noqa: E501
+        :type: str
+        """
+
+        self._target_sub_type = target_sub_type
 
     @property
     def target_type(self):

@@ -39,7 +39,7 @@ class VerifyDataWithClassicKey(object):
         'hashed': 'bool',
         'hashing_method': 'str',
         'json': 'bool',
-        'key_name': 'str',
+        'name': 'str',
         'signature': 'str',
         'token': 'str',
         'uid_token': 'str',
@@ -52,14 +52,14 @@ class VerifyDataWithClassicKey(object):
         'hashed': 'hashed',
         'hashing_method': 'hashing-method',
         'json': 'json',
-        'key_name': 'key-name',
+        'name': 'name',
         'signature': 'signature',
         'token': 'token',
         'uid_token': 'uid-token',
         'version': 'version'
     }
 
-    def __init__(self, data=None, display_id=None, hashed=False, hashing_method='SHA256', json=False, key_name=None, signature=None, token=None, uid_token=None, version=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, data=None, display_id=None, hashed=False, hashing_method='SHA256', json=False, name=None, signature=None, token=None, uid_token=None, version=None, local_vars_configuration=None):  # noqa: E501
         """VerifyDataWithClassicKey - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -70,7 +70,7 @@ class VerifyDataWithClassicKey(object):
         self._hashed = None
         self._hashing_method = None
         self._json = None
-        self._key_name = None
+        self._name = None
         self._signature = None
         self._token = None
         self._uid_token = None
@@ -86,7 +86,7 @@ class VerifyDataWithClassicKey(object):
             self.hashing_method = hashing_method
         if json is not None:
             self.json = json
-        self.key_name = key_name
+        self.name = name
         self.signature = signature
         if token is not None:
             self.token = token
@@ -212,29 +212,29 @@ class VerifyDataWithClassicKey(object):
         self._json = json
 
     @property
-    def key_name(self):
-        """Gets the key_name of this VerifyDataWithClassicKey.  # noqa: E501
+    def name(self):
+        """Gets the name of this VerifyDataWithClassicKey.  # noqa: E501
 
         The name of the key to use in the verification process  # noqa: E501
 
-        :return: The key_name of this VerifyDataWithClassicKey.  # noqa: E501
+        :return: The name of this VerifyDataWithClassicKey.  # noqa: E501
         :rtype: str
         """
-        return self._key_name
+        return self._name
 
-    @key_name.setter
-    def key_name(self, key_name):
-        """Sets the key_name of this VerifyDataWithClassicKey.
+    @name.setter
+    def name(self, name):
+        """Sets the name of this VerifyDataWithClassicKey.
 
         The name of the key to use in the verification process  # noqa: E501
 
-        :param key_name: The key_name of this VerifyDataWithClassicKey.  # noqa: E501
+        :param name: The name of this VerifyDataWithClassicKey.  # noqa: E501
         :type: str
         """
-        if self.local_vars_configuration.client_side_validation and key_name is None:  # noqa: E501
-            raise ValueError("Invalid value for `key_name`, must not be `None`")  # noqa: E501
+        if self.local_vars_configuration.client_side_validation and name is None:  # noqa: E501
+            raise ValueError("Invalid value for `name`, must not be `None`")  # noqa: E501
 
-        self._key_name = key_name
+        self._name = name
 
     @property
     def signature(self):

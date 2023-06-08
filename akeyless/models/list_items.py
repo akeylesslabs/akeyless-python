@@ -38,6 +38,7 @@ class ListItems(object):
         'filter': 'str',
         'json': 'bool',
         'minimal_view': 'bool',
+        'pagination': 'str',
         'pagination_token': 'str',
         'path': 'str',
         'sra_only': 'bool',
@@ -53,6 +54,7 @@ class ListItems(object):
         'filter': 'filter',
         'json': 'json',
         'minimal_view': 'minimal-view',
+        'pagination': 'pagination',
         'pagination_token': 'pagination-token',
         'path': 'path',
         'sra_only': 'sra-only',
@@ -63,7 +65,7 @@ class ListItems(object):
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, accessibility='regular', filter=None, json=False, minimal_view=None, pagination_token=None, path=None, sra_only=False, sub_types=None, tag=None, token=None, type=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, accessibility='regular', filter=None, json=False, minimal_view=None, pagination='enabled', pagination_token=None, path=None, sra_only=False, sub_types=None, tag=None, token=None, type=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """ListItems - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -73,6 +75,7 @@ class ListItems(object):
         self._filter = None
         self._json = None
         self._minimal_view = None
+        self._pagination = None
         self._pagination_token = None
         self._path = None
         self._sra_only = None
@@ -91,6 +94,8 @@ class ListItems(object):
             self.json = json
         if minimal_view is not None:
             self.minimal_view = minimal_view
+        if pagination is not None:
+            self.pagination = pagination
         if pagination_token is not None:
             self.pagination_token = pagination_token
         if path is not None:
@@ -197,6 +202,29 @@ class ListItems(object):
         """
 
         self._minimal_view = minimal_view
+
+    @property
+    def pagination(self):
+        """Gets the pagination of this ListItems.  # noqa: E501
+
+        Retrieve items with pagination  # noqa: E501
+
+        :return: The pagination of this ListItems.  # noqa: E501
+        :rtype: str
+        """
+        return self._pagination
+
+    @pagination.setter
+    def pagination(self, pagination):
+        """Sets the pagination of this ListItems.
+
+        Retrieve items with pagination  # noqa: E501
+
+        :param pagination: The pagination of this ListItems.  # noqa: E501
+        :type: str
+        """
+
+        self._pagination = pagination
 
     @property
     def pagination_token(self):

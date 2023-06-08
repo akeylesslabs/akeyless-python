@@ -36,6 +36,7 @@ class UpdateSSHCertIssuer(object):
     openapi_types = {
         'add_tag': 'list[str]',
         'allowed_users': 'str',
+        'delete_protection': 'str',
         'description': 'str',
         'extensions': 'dict(str, str)',
         'json': 'bool',
@@ -59,6 +60,7 @@ class UpdateSSHCertIssuer(object):
     attribute_map = {
         'add_tag': 'add-tag',
         'allowed_users': 'allowed-users',
+        'delete_protection': 'delete_protection',
         'description': 'description',
         'extensions': 'extensions',
         'json': 'json',
@@ -79,7 +81,7 @@ class UpdateSSHCertIssuer(object):
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, add_tag=None, allowed_users=None, description=None, extensions=None, json=False, metadata=None, name=None, new_name=None, principals=None, rm_tag=None, secure_access_bastion_api=None, secure_access_bastion_ssh=None, secure_access_enable=None, secure_access_host=None, secure_access_ssh_creds_user=None, secure_access_use_internal_bastion=None, signer_key_name=None, token=None, ttl=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, add_tag=None, allowed_users=None, delete_protection=None, description=None, extensions=None, json=False, metadata=None, name=None, new_name=None, principals=None, rm_tag=None, secure_access_bastion_api=None, secure_access_bastion_ssh=None, secure_access_enable=None, secure_access_host=None, secure_access_ssh_creds_user=None, secure_access_use_internal_bastion=None, signer_key_name=None, token=None, ttl=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """UpdateSSHCertIssuer - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -87,6 +89,7 @@ class UpdateSSHCertIssuer(object):
 
         self._add_tag = None
         self._allowed_users = None
+        self._delete_protection = None
         self._description = None
         self._extensions = None
         self._json = None
@@ -110,6 +113,8 @@ class UpdateSSHCertIssuer(object):
         if add_tag is not None:
             self.add_tag = add_tag
         self.allowed_users = allowed_users
+        if delete_protection is not None:
+            self.delete_protection = delete_protection
         if description is not None:
             self.description = description
         if extensions is not None:
@@ -191,6 +196,29 @@ class UpdateSSHCertIssuer(object):
             raise ValueError("Invalid value for `allowed_users`, must not be `None`")  # noqa: E501
 
         self._allowed_users = allowed_users
+
+    @property
+    def delete_protection(self):
+        """Gets the delete_protection of this UpdateSSHCertIssuer.  # noqa: E501
+
+        Protection from accidental deletion of this item [true/false]  # noqa: E501
+
+        :return: The delete_protection of this UpdateSSHCertIssuer.  # noqa: E501
+        :rtype: str
+        """
+        return self._delete_protection
+
+    @delete_protection.setter
+    def delete_protection(self, delete_protection):
+        """Sets the delete_protection of this UpdateSSHCertIssuer.
+
+        Protection from accidental deletion of this item [true/false]  # noqa: E501
+
+        :param delete_protection: The delete_protection of this UpdateSSHCertIssuer.  # noqa: E501
+        :type: str
+        """
+
+        self._delete_protection = delete_protection
 
     @property
     def description(self):
@@ -568,7 +596,7 @@ class UpdateSSHCertIssuer(object):
     def ttl(self):
         """Gets the ttl of this UpdateSSHCertIssuer.  # noqa: E501
 
-        he requested Time To Live for the certificate, in seconds  # noqa: E501
+        The requested Time To Live for the certificate, in seconds  # noqa: E501
 
         :return: The ttl of this UpdateSSHCertIssuer.  # noqa: E501
         :rtype: int
@@ -579,7 +607,7 @@ class UpdateSSHCertIssuer(object):
     def ttl(self, ttl):
         """Sets the ttl of this UpdateSSHCertIssuer.
 
-        he requested Time To Live for the certificate, in seconds  # noqa: E501
+        The requested Time To Live for the certificate, in seconds  # noqa: E501
 
         :param ttl: The ttl of this UpdateSSHCertIssuer.  # noqa: E501
         :type: int
