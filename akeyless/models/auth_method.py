@@ -37,6 +37,7 @@ class AuthMethod(object):
         'access_date': 'datetime',
         'access_info': 'AuthMethodAccessInfo',
         'account_id': 'str',
+        'associated_gw_ids': 'list[int]',
         'auth_method_access_id': 'str',
         'auth_method_name': 'str',
         'auth_method_roles_assoc': 'list[AuthMethodRoleAssociation]',
@@ -50,6 +51,7 @@ class AuthMethod(object):
         'access_date': 'access_date',
         'access_info': 'access_info',
         'account_id': 'account_id',
+        'associated_gw_ids': 'associated_gw_ids',
         'auth_method_access_id': 'auth_method_access_id',
         'auth_method_name': 'auth_method_name',
         'auth_method_roles_assoc': 'auth_method_roles_assoc',
@@ -59,7 +61,7 @@ class AuthMethod(object):
         'modification_date': 'modification_date'
     }
 
-    def __init__(self, access_date=None, access_info=None, account_id=None, auth_method_access_id=None, auth_method_name=None, auth_method_roles_assoc=None, client_permissions=None, creation_date=None, is_approved=None, modification_date=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, access_date=None, access_info=None, account_id=None, associated_gw_ids=None, auth_method_access_id=None, auth_method_name=None, auth_method_roles_assoc=None, client_permissions=None, creation_date=None, is_approved=None, modification_date=None, local_vars_configuration=None):  # noqa: E501
         """AuthMethod - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -68,6 +70,7 @@ class AuthMethod(object):
         self._access_date = None
         self._access_info = None
         self._account_id = None
+        self._associated_gw_ids = None
         self._auth_method_access_id = None
         self._auth_method_name = None
         self._auth_method_roles_assoc = None
@@ -83,6 +86,8 @@ class AuthMethod(object):
             self.access_info = access_info
         if account_id is not None:
             self.account_id = account_id
+        if associated_gw_ids is not None:
+            self.associated_gw_ids = associated_gw_ids
         if auth_method_access_id is not None:
             self.auth_method_access_id = auth_method_access_id
         if auth_method_name is not None:
@@ -160,6 +165,27 @@ class AuthMethod(object):
         """
 
         self._account_id = account_id
+
+    @property
+    def associated_gw_ids(self):
+        """Gets the associated_gw_ids of this AuthMethod.  # noqa: E501
+
+
+        :return: The associated_gw_ids of this AuthMethod.  # noqa: E501
+        :rtype: list[int]
+        """
+        return self._associated_gw_ids
+
+    @associated_gw_ids.setter
+    def associated_gw_ids(self, associated_gw_ids):
+        """Sets the associated_gw_ids of this AuthMethod.
+
+
+        :param associated_gw_ids: The associated_gw_ids of this AuthMethod.  # noqa: E501
+        :type: list[int]
+        """
+
+        self._associated_gw_ids = associated_gw_ids
 
     @property
     def auth_method_access_id(self):
