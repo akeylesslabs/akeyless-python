@@ -129,6 +129,7 @@ Name | Type | Description | Notes
 **ldap_bind_dn** | **str** |  | [optional] 
 **ldap_bind_password** | **str** |  | [optional] 
 **ldap_certificate** | **str** |  | [optional] 
+**ldap_group_dn** | **str** |  | [optional] 
 **ldap_token_expiration** | **str** |  | [optional] 
 **ldap_url** | **str** |  | [optional] 
 **ldap_user_attr** | **str** |  | [optional] 

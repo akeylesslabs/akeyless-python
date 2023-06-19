@@ -35,16 +35,15 @@ class CreateSecret(object):
     """
     openapi_types = {
         'accessibility': 'str',
+        'custom_field': 'dict(str, str)',
         'delete_protection': 'str',
         'description': 'str',
+        'inject_url': 'list[str]',
         'json': 'bool',
         'metadata': 'str',
         'multiline_value': 'bool',
         'name': 'str',
-        'password_manager_custom_field': 'dict(str, str)',
-        'password_manager_inject_url': 'list[str]',
-        'password_manager_password': 'str',
-        'password_manager_username': 'str',
+        'password': 'str',
         'protection_key': 'str',
         'secure_access_bastion_issuer': 'str',
         'secure_access_enable': 'str',
@@ -59,21 +58,21 @@ class CreateSecret(object):
         'token': 'str',
         'type': 'str',
         'uid_token': 'str',
+        'username': 'str',
         'value': 'str'
     }
 
     attribute_map = {
         'accessibility': 'accessibility',
+        'custom_field': 'custom-field',
         'delete_protection': 'delete_protection',
         'description': 'description',
+        'inject_url': 'inject-url',
         'json': 'json',
         'metadata': 'metadata',
         'multiline_value': 'multiline_value',
         'name': 'name',
-        'password_manager_custom_field': 'password-manager-custom-field',
-        'password_manager_inject_url': 'password-manager-inject-url',
-        'password_manager_password': 'password-manager-password',
-        'password_manager_username': 'password-manager-username',
+        'password': 'password',
         'protection_key': 'protection_key',
         'secure_access_bastion_issuer': 'secure-access-bastion-issuer',
         'secure_access_enable': 'secure-access-enable',
@@ -88,26 +87,26 @@ class CreateSecret(object):
         'token': 'token',
         'type': 'type',
         'uid_token': 'uid-token',
+        'username': 'username',
         'value': 'value'
     }
 
-    def __init__(self, accessibility='regular', delete_protection=None, description=None, json=False, metadata=None, multiline_value=None, name=None, password_manager_custom_field=None, password_manager_inject_url=None, password_manager_password=None, password_manager_username=None, protection_key=None, secure_access_bastion_issuer=None, secure_access_enable=None, secure_access_host=None, secure_access_rdp_user=None, secure_access_ssh_creds=None, secure_access_ssh_user=None, secure_access_url=None, secure_access_web_browsing=False, secure_access_web_proxy=False, tags=None, token=None, type='generic', uid_token=None, value=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, accessibility='regular', custom_field=None, delete_protection=None, description=None, inject_url=None, json=False, metadata=None, multiline_value=None, name=None, password=None, protection_key=None, secure_access_bastion_issuer=None, secure_access_enable=None, secure_access_host=None, secure_access_rdp_user=None, secure_access_ssh_creds=None, secure_access_ssh_user=None, secure_access_url=None, secure_access_web_browsing=False, secure_access_web_proxy=False, tags=None, token=None, type='generic', uid_token=None, username=None, value=None, local_vars_configuration=None):  # noqa: E501
         """CreateSecret - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._accessibility = None
+        self._custom_field = None
         self._delete_protection = None
         self._description = None
+        self._inject_url = None
         self._json = None
         self._metadata = None
         self._multiline_value = None
         self._name = None
-        self._password_manager_custom_field = None
-        self._password_manager_inject_url = None
-        self._password_manager_password = None
-        self._password_manager_username = None
+        self._password = None
         self._protection_key = None
         self._secure_access_bastion_issuer = None
         self._secure_access_enable = None
@@ -122,15 +121,20 @@ class CreateSecret(object):
         self._token = None
         self._type = None
         self._uid_token = None
+        self._username = None
         self._value = None
         self.discriminator = None
 
         if accessibility is not None:
             self.accessibility = accessibility
+        if custom_field is not None:
+            self.custom_field = custom_field
         if delete_protection is not None:
             self.delete_protection = delete_protection
         if description is not None:
             self.description = description
+        if inject_url is not None:
+            self.inject_url = inject_url
         if json is not None:
             self.json = json
         if metadata is not None:
@@ -138,14 +142,8 @@ class CreateSecret(object):
         if multiline_value is not None:
             self.multiline_value = multiline_value
         self.name = name
-        if password_manager_custom_field is not None:
-            self.password_manager_custom_field = password_manager_custom_field
-        if password_manager_inject_url is not None:
-            self.password_manager_inject_url = password_manager_inject_url
-        if password_manager_password is not None:
-            self.password_manager_password = password_manager_password
-        if password_manager_username is not None:
-            self.password_manager_username = password_manager_username
+        if password is not None:
+            self.password = password
         if protection_key is not None:
             self.protection_key = protection_key
         if secure_access_bastion_issuer is not None:
@@ -174,6 +172,8 @@ class CreateSecret(object):
             self.type = type
         if uid_token is not None:
             self.uid_token = uid_token
+        if username is not None:
+            self.username = username
         self.value = value
 
     @property
@@ -198,6 +198,29 @@ class CreateSecret(object):
         """
 
         self._accessibility = accessibility
+
+    @property
+    def custom_field(self):
+        """Gets the custom_field of this CreateSecret.  # noqa: E501
+
+        For Password Management use, additional fields  # noqa: E501
+
+        :return: The custom_field of this CreateSecret.  # noqa: E501
+        :rtype: dict(str, str)
+        """
+        return self._custom_field
+
+    @custom_field.setter
+    def custom_field(self, custom_field):
+        """Sets the custom_field of this CreateSecret.
+
+        For Password Management use, additional fields  # noqa: E501
+
+        :param custom_field: The custom_field of this CreateSecret.  # noqa: E501
+        :type: dict(str, str)
+        """
+
+        self._custom_field = custom_field
 
     @property
     def delete_protection(self):
@@ -244,6 +267,29 @@ class CreateSecret(object):
         """
 
         self._description = description
+
+    @property
+    def inject_url(self):
+        """Gets the inject_url of this CreateSecret.  # noqa: E501
+
+        For Password Management use, reflect the website context  # noqa: E501
+
+        :return: The inject_url of this CreateSecret.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._inject_url
+
+    @inject_url.setter
+    def inject_url(self, inject_url):
+        """Sets the inject_url of this CreateSecret.
+
+        For Password Management use, reflect the website context  # noqa: E501
+
+        :param inject_url: The inject_url of this CreateSecret.  # noqa: E501
+        :type: list[str]
+        """
+
+        self._inject_url = inject_url
 
     @property
     def json(self):
@@ -340,96 +386,27 @@ class CreateSecret(object):
         self._name = name
 
     @property
-    def password_manager_custom_field(self):
-        """Gets the password_manager_custom_field of this CreateSecret.  # noqa: E501
+    def password(self):
+        """Gets the password of this CreateSecret.  # noqa: E501
 
         For Password Management use, additional fields  # noqa: E501
 
-        :return: The password_manager_custom_field of this CreateSecret.  # noqa: E501
-        :rtype: dict(str, str)
-        """
-        return self._password_manager_custom_field
-
-    @password_manager_custom_field.setter
-    def password_manager_custom_field(self, password_manager_custom_field):
-        """Sets the password_manager_custom_field of this CreateSecret.
-
-        For Password Management use, additional fields  # noqa: E501
-
-        :param password_manager_custom_field: The password_manager_custom_field of this CreateSecret.  # noqa: E501
-        :type: dict(str, str)
-        """
-
-        self._password_manager_custom_field = password_manager_custom_field
-
-    @property
-    def password_manager_inject_url(self):
-        """Gets the password_manager_inject_url of this CreateSecret.  # noqa: E501
-
-        For Password Management use, reflect the website context  # noqa: E501
-
-        :return: The password_manager_inject_url of this CreateSecret.  # noqa: E501
-        :rtype: list[str]
-        """
-        return self._password_manager_inject_url
-
-    @password_manager_inject_url.setter
-    def password_manager_inject_url(self, password_manager_inject_url):
-        """Sets the password_manager_inject_url of this CreateSecret.
-
-        For Password Management use, reflect the website context  # noqa: E501
-
-        :param password_manager_inject_url: The password_manager_inject_url of this CreateSecret.  # noqa: E501
-        :type: list[str]
-        """
-
-        self._password_manager_inject_url = password_manager_inject_url
-
-    @property
-    def password_manager_password(self):
-        """Gets the password_manager_password of this CreateSecret.  # noqa: E501
-
-        For Password Management use, additional fields  # noqa: E501
-
-        :return: The password_manager_password of this CreateSecret.  # noqa: E501
+        :return: The password of this CreateSecret.  # noqa: E501
         :rtype: str
         """
-        return self._password_manager_password
+        return self._password
 
-    @password_manager_password.setter
-    def password_manager_password(self, password_manager_password):
-        """Sets the password_manager_password of this CreateSecret.
+    @password.setter
+    def password(self, password):
+        """Sets the password of this CreateSecret.
 
         For Password Management use, additional fields  # noqa: E501
 
-        :param password_manager_password: The password_manager_password of this CreateSecret.  # noqa: E501
+        :param password: The password of this CreateSecret.  # noqa: E501
         :type: str
         """
 
-        self._password_manager_password = password_manager_password
-
-    @property
-    def password_manager_username(self):
-        """Gets the password_manager_username of this CreateSecret.  # noqa: E501
-
-        For Password Management use  # noqa: E501
-
-        :return: The password_manager_username of this CreateSecret.  # noqa: E501
-        :rtype: str
-        """
-        return self._password_manager_username
-
-    @password_manager_username.setter
-    def password_manager_username(self, password_manager_username):
-        """Sets the password_manager_username of this CreateSecret.
-
-        For Password Management use  # noqa: E501
-
-        :param password_manager_username: The password_manager_username of this CreateSecret.  # noqa: E501
-        :type: str
-        """
-
-        self._password_manager_username = password_manager_username
+        self._password = password
 
     @property
     def protection_key(self):
@@ -752,6 +729,29 @@ class CreateSecret(object):
         """
 
         self._uid_token = uid_token
+
+    @property
+    def username(self):
+        """Gets the username of this CreateSecret.  # noqa: E501
+
+        For Password Management use  # noqa: E501
+
+        :return: The username of this CreateSecret.  # noqa: E501
+        :rtype: str
+        """
+        return self._username
+
+    @username.setter
+    def username(self, username):
+        """Sets the username of this CreateSecret.
+
+        For Password Management use  # noqa: E501
+
+        :param username: The username of this CreateSecret.  # noqa: E501
+        :type: str
+        """
+
+        self._username = username
 
     @property
     def value(self):

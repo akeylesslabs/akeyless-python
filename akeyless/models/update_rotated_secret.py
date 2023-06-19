@@ -57,6 +57,7 @@ class UpdateRotatedSecret(object):
         'rotation_interval': 'str',
         'rotator_creds_type': 'str',
         'rotator_custom_cmd': 'str',
+        'same_password': 'str',
         'secure_access_allow_external_user': 'bool',
         'secure_access_aws_account_id': 'str',
         'secure_access_aws_native_cli': 'bool',
@@ -101,6 +102,7 @@ class UpdateRotatedSecret(object):
         'rotation_interval': 'rotation-interval',
         'rotator_creds_type': 'rotator-creds-type',
         'rotator_custom_cmd': 'rotator-custom-cmd',
+        'same_password': 'same-password',
         'secure_access_allow_external_user': 'secure-access-allow-external-user',
         'secure_access_aws_account_id': 'secure-access-aws-account-id',
         'secure_access_aws_native_cli': 'secure-access-aws-native-cli',
@@ -121,7 +123,7 @@ class UpdateRotatedSecret(object):
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, add_tag=None, api_id=None, api_key=None, auto_rotate=None, aws_region='us-east-2', custom_payload=None, description='default_metadata', gcp_key=None, json=False, keep_prev_version=None, key=None, name=None, new_metadata='default_metadata', new_name=None, new_version=None, rm_tag=None, rotate_after_disconnect='false', rotated_password=None, rotated_username=None, rotation_hour=None, rotation_interval=None, rotator_creds_type='use-self-creds', rotator_custom_cmd=None, secure_access_allow_external_user=False, secure_access_aws_account_id=None, secure_access_aws_native_cli=None, secure_access_bastion_issuer=None, secure_access_db_name=None, secure_access_db_schema=None, secure_access_enable=None, secure_access_host=None, secure_access_rdp_domain=None, secure_access_rdp_user=None, secure_access_web=False, secure_access_web_browsing=False, secure_access_web_proxy=False, ssh_password=None, ssh_username=None, storage_account_key_name=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, add_tag=None, api_id=None, api_key=None, auto_rotate=None, aws_region='us-east-2', custom_payload=None, description='default_metadata', gcp_key=None, json=False, keep_prev_version=None, key=None, name=None, new_metadata='default_metadata', new_name=None, new_version=None, rm_tag=None, rotate_after_disconnect='false', rotated_password=None, rotated_username=None, rotation_hour=None, rotation_interval=None, rotator_creds_type='use-self-creds', rotator_custom_cmd=None, same_password=None, secure_access_allow_external_user=False, secure_access_aws_account_id=None, secure_access_aws_native_cli=None, secure_access_bastion_issuer=None, secure_access_db_name=None, secure_access_db_schema=None, secure_access_enable=None, secure_access_host=None, secure_access_rdp_domain=None, secure_access_rdp_user=None, secure_access_web=False, secure_access_web_browsing=False, secure_access_web_proxy=False, ssh_password=None, ssh_username=None, storage_account_key_name=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """UpdateRotatedSecret - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -150,6 +152,7 @@ class UpdateRotatedSecret(object):
         self._rotation_interval = None
         self._rotator_creds_type = None
         self._rotator_custom_cmd = None
+        self._same_password = None
         self._secure_access_allow_external_user = None
         self._secure_access_aws_account_id = None
         self._secure_access_aws_native_cli = None
@@ -215,6 +218,8 @@ class UpdateRotatedSecret(object):
             self.rotator_creds_type = rotator_creds_type
         if rotator_custom_cmd is not None:
             self.rotator_custom_cmd = rotator_custom_cmd
+        if same_password is not None:
+            self.same_password = same_password
         if secure_access_allow_external_user is not None:
             self.secure_access_allow_external_user = secure_access_allow_external_user
         if secure_access_aws_account_id is not None:
@@ -782,6 +787,29 @@ class UpdateRotatedSecret(object):
         """
 
         self._rotator_custom_cmd = rotator_custom_cmd
+
+    @property
+    def same_password(self):
+        """Gets the same_password of this UpdateRotatedSecret.  # noqa: E501
+
+        Rotate same password for each host from the Linked Target (relevant only for Linked Target)  # noqa: E501
+
+        :return: The same_password of this UpdateRotatedSecret.  # noqa: E501
+        :rtype: str
+        """
+        return self._same_password
+
+    @same_password.setter
+    def same_password(self, same_password):
+        """Sets the same_password of this UpdateRotatedSecret.
+
+        Rotate same password for each host from the Linked Target (relevant only for Linked Target)  # noqa: E501
+
+        :param same_password: The same_password of this UpdateRotatedSecret.  # noqa: E501
+        :type: str
+        """
+
+        self._same_password = same_password
 
     @property
     def secure_access_allow_external_user(self):

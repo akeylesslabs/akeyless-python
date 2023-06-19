@@ -43,7 +43,8 @@ class RotatedSecretDetailsInfo(object):
         'rotation_statement': 'str',
         'rotator_creds_type': 'str',
         'rotator_status': 'str',
-        'rotator_type': 'str'
+        'rotator_type': 'str',
+        'same_password': 'bool'
     }
 
     attribute_map = {
@@ -56,10 +57,11 @@ class RotatedSecretDetailsInfo(object):
         'rotation_statement': 'rotation_statement',
         'rotator_creds_type': 'rotator_creds_type',
         'rotator_status': 'rotator_status',
-        'rotator_type': 'rotator_type'
+        'rotator_type': 'rotator_type',
+        'same_password': 'same_password'
     }
 
-    def __init__(self, delete_previous_version_in_days=None, gw_cluster_id=None, last_rotation_error=None, number_of_versions_to_save=None, rotation_hour=None, rotation_interval_min=None, rotation_statement=None, rotator_creds_type=None, rotator_status=None, rotator_type=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, delete_previous_version_in_days=None, gw_cluster_id=None, last_rotation_error=None, number_of_versions_to_save=None, rotation_hour=None, rotation_interval_min=None, rotation_statement=None, rotator_creds_type=None, rotator_status=None, rotator_type=None, same_password=None, local_vars_configuration=None):  # noqa: E501
         """RotatedSecretDetailsInfo - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -75,6 +77,7 @@ class RotatedSecretDetailsInfo(object):
         self._rotator_creds_type = None
         self._rotator_status = None
         self._rotator_type = None
+        self._same_password = None
         self.discriminator = None
 
         if delete_previous_version_in_days is not None:
@@ -97,6 +100,8 @@ class RotatedSecretDetailsInfo(object):
             self.rotator_status = rotator_status
         if rotator_type is not None:
             self.rotator_type = rotator_type
+        if same_password is not None:
+            self.same_password = same_password
 
     @property
     def delete_previous_version_in_days(self):
@@ -309,6 +314,27 @@ class RotatedSecretDetailsInfo(object):
         """
 
         self._rotator_type = rotator_type
+
+    @property
+    def same_password(self):
+        """Gets the same_password of this RotatedSecretDetailsInfo.  # noqa: E501
+
+
+        :return: The same_password of this RotatedSecretDetailsInfo.  # noqa: E501
+        :rtype: bool
+        """
+        return self._same_password
+
+    @same_password.setter
+    def same_password(self, same_password):
+        """Sets the same_password of this RotatedSecretDetailsInfo.
+
+
+        :param same_password: The same_password of this RotatedSecretDetailsInfo.  # noqa: E501
+        :type: bool
+        """
+
+        self._same_password = same_password
 
     def to_dict(self):
         """Returns the model properties as a dict"""

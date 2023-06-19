@@ -34,6 +34,7 @@ class GetRotatedSecretValue(object):
                             and the value is json key in definition.
     """
     openapi_types = {
+        'host': 'str',
         'ignore_cache': 'str',
         'json': 'bool',
         'names': 'str',
@@ -43,6 +44,7 @@ class GetRotatedSecretValue(object):
     }
 
     attribute_map = {
+        'host': 'host',
         'ignore_cache': 'ignore-cache',
         'json': 'json',
         'names': 'names',
@@ -51,12 +53,13 @@ class GetRotatedSecretValue(object):
         'version': 'version'
     }
 
-    def __init__(self, ignore_cache='false', json=False, names=None, token=None, uid_token=None, version=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, host=None, ignore_cache='false', json=False, names=None, token=None, uid_token=None, version=None, local_vars_configuration=None):  # noqa: E501
         """GetRotatedSecretValue - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
+        self._host = None
         self._ignore_cache = None
         self._json = None
         self._names = None
@@ -65,6 +68,8 @@ class GetRotatedSecretValue(object):
         self._version = None
         self.discriminator = None
 
+        if host is not None:
+            self.host = host
         if ignore_cache is not None:
             self.ignore_cache = ignore_cache
         if json is not None:
@@ -76,6 +81,29 @@ class GetRotatedSecretValue(object):
             self.uid_token = uid_token
         if version is not None:
             self.version = version
+
+    @property
+    def host(self):
+        """Gets the host of this GetRotatedSecretValue.  # noqa: E501
+
+        Get rotated secret value of specific Host (relevant only for Linked Target)  # noqa: E501
+
+        :return: The host of this GetRotatedSecretValue.  # noqa: E501
+        :rtype: str
+        """
+        return self._host
+
+    @host.setter
+    def host(self, host):
+        """Sets the host of this GetRotatedSecretValue.
+
+        Get rotated secret value of specific Host (relevant only for Linked Target)  # noqa: E501
+
+        :param host: The host of this GetRotatedSecretValue.  # noqa: E501
+        :type: str
+        """
+
+        self._host = host
 
     @property
     def ignore_cache(self):

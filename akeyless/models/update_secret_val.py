@@ -35,62 +35,66 @@ class UpdateSecretVal(object):
     """
     openapi_types = {
         'accessibility': 'str',
+        'custom_field': 'dict(str, str)',
+        'inject_url': 'list[str]',
         'json': 'bool',
         'keep_prev_version': 'str',
         'key': 'str',
         'multiline': 'bool',
         'name': 'str',
         'new_version': 'bool',
-        'password_manager_custom_field': 'dict(str, str)',
-        'password_manager_inject_url': 'list[str]',
-        'password_manager_password': 'str',
-        'password_manager_username': 'str',
+        'password': 'str',
         'token': 'str',
         'uid_token': 'str',
+        'username': 'str',
         'value': 'str'
     }
 
     attribute_map = {
         'accessibility': 'accessibility',
+        'custom_field': 'custom-field',
+        'inject_url': 'inject-url',
         'json': 'json',
         'keep_prev_version': 'keep-prev-version',
         'key': 'key',
         'multiline': 'multiline',
         'name': 'name',
         'new_version': 'new-version',
-        'password_manager_custom_field': 'password-manager-custom-field',
-        'password_manager_inject_url': 'password-manager-inject-url',
-        'password_manager_password': 'password-manager-password',
-        'password_manager_username': 'password-manager-username',
+        'password': 'password',
         'token': 'token',
         'uid_token': 'uid-token',
+        'username': 'username',
         'value': 'value'
     }
 
-    def __init__(self, accessibility='regular', json=False, keep_prev_version=None, key=None, multiline=None, name=None, new_version=None, password_manager_custom_field=None, password_manager_inject_url=None, password_manager_password=None, password_manager_username=None, token=None, uid_token=None, value=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, accessibility='regular', custom_field=None, inject_url=None, json=False, keep_prev_version=None, key=None, multiline=None, name=None, new_version=None, password=None, token=None, uid_token=None, username=None, value=None, local_vars_configuration=None):  # noqa: E501
         """UpdateSecretVal - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._accessibility = None
+        self._custom_field = None
+        self._inject_url = None
         self._json = None
         self._keep_prev_version = None
         self._key = None
         self._multiline = None
         self._name = None
         self._new_version = None
-        self._password_manager_custom_field = None
-        self._password_manager_inject_url = None
-        self._password_manager_password = None
-        self._password_manager_username = None
+        self._password = None
         self._token = None
         self._uid_token = None
+        self._username = None
         self._value = None
         self.discriminator = None
 
         if accessibility is not None:
             self.accessibility = accessibility
+        if custom_field is not None:
+            self.custom_field = custom_field
+        if inject_url is not None:
+            self.inject_url = inject_url
         if json is not None:
             self.json = json
         if keep_prev_version is not None:
@@ -102,18 +106,14 @@ class UpdateSecretVal(object):
         self.name = name
         if new_version is not None:
             self.new_version = new_version
-        if password_manager_custom_field is not None:
-            self.password_manager_custom_field = password_manager_custom_field
-        if password_manager_inject_url is not None:
-            self.password_manager_inject_url = password_manager_inject_url
-        if password_manager_password is not None:
-            self.password_manager_password = password_manager_password
-        if password_manager_username is not None:
-            self.password_manager_username = password_manager_username
+        if password is not None:
+            self.password = password
         if token is not None:
             self.token = token
         if uid_token is not None:
             self.uid_token = uid_token
+        if username is not None:
+            self.username = username
         self.value = value
 
     @property
@@ -138,6 +138,52 @@ class UpdateSecretVal(object):
         """
 
         self._accessibility = accessibility
+
+    @property
+    def custom_field(self):
+        """Gets the custom_field of this UpdateSecretVal.  # noqa: E501
+
+        For Password Management use, additional fields  # noqa: E501
+
+        :return: The custom_field of this UpdateSecretVal.  # noqa: E501
+        :rtype: dict(str, str)
+        """
+        return self._custom_field
+
+    @custom_field.setter
+    def custom_field(self, custom_field):
+        """Sets the custom_field of this UpdateSecretVal.
+
+        For Password Management use, additional fields  # noqa: E501
+
+        :param custom_field: The custom_field of this UpdateSecretVal.  # noqa: E501
+        :type: dict(str, str)
+        """
+
+        self._custom_field = custom_field
+
+    @property
+    def inject_url(self):
+        """Gets the inject_url of this UpdateSecretVal.  # noqa: E501
+
+        For Password Management use, reflect the website context  # noqa: E501
+
+        :return: The inject_url of this UpdateSecretVal.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._inject_url
+
+    @inject_url.setter
+    def inject_url(self, inject_url):
+        """Sets the inject_url of this UpdateSecretVal.
+
+        For Password Management use, reflect the website context  # noqa: E501
+
+        :param inject_url: The inject_url of this UpdateSecretVal.  # noqa: E501
+        :type: list[str]
+        """
+
+        self._inject_url = inject_url
 
     @property
     def json(self):
@@ -280,96 +326,27 @@ class UpdateSecretVal(object):
         self._new_version = new_version
 
     @property
-    def password_manager_custom_field(self):
-        """Gets the password_manager_custom_field of this UpdateSecretVal.  # noqa: E501
+    def password(self):
+        """Gets the password of this UpdateSecretVal.  # noqa: E501
 
         For Password Management use, additional fields  # noqa: E501
 
-        :return: The password_manager_custom_field of this UpdateSecretVal.  # noqa: E501
-        :rtype: dict(str, str)
-        """
-        return self._password_manager_custom_field
-
-    @password_manager_custom_field.setter
-    def password_manager_custom_field(self, password_manager_custom_field):
-        """Sets the password_manager_custom_field of this UpdateSecretVal.
-
-        For Password Management use, additional fields  # noqa: E501
-
-        :param password_manager_custom_field: The password_manager_custom_field of this UpdateSecretVal.  # noqa: E501
-        :type: dict(str, str)
-        """
-
-        self._password_manager_custom_field = password_manager_custom_field
-
-    @property
-    def password_manager_inject_url(self):
-        """Gets the password_manager_inject_url of this UpdateSecretVal.  # noqa: E501
-
-        For Password Management use, reflect the website context  # noqa: E501
-
-        :return: The password_manager_inject_url of this UpdateSecretVal.  # noqa: E501
-        :rtype: list[str]
-        """
-        return self._password_manager_inject_url
-
-    @password_manager_inject_url.setter
-    def password_manager_inject_url(self, password_manager_inject_url):
-        """Sets the password_manager_inject_url of this UpdateSecretVal.
-
-        For Password Management use, reflect the website context  # noqa: E501
-
-        :param password_manager_inject_url: The password_manager_inject_url of this UpdateSecretVal.  # noqa: E501
-        :type: list[str]
-        """
-
-        self._password_manager_inject_url = password_manager_inject_url
-
-    @property
-    def password_manager_password(self):
-        """Gets the password_manager_password of this UpdateSecretVal.  # noqa: E501
-
-        For Password Management use, additional fields  # noqa: E501
-
-        :return: The password_manager_password of this UpdateSecretVal.  # noqa: E501
+        :return: The password of this UpdateSecretVal.  # noqa: E501
         :rtype: str
         """
-        return self._password_manager_password
+        return self._password
 
-    @password_manager_password.setter
-    def password_manager_password(self, password_manager_password):
-        """Sets the password_manager_password of this UpdateSecretVal.
+    @password.setter
+    def password(self, password):
+        """Sets the password of this UpdateSecretVal.
 
         For Password Management use, additional fields  # noqa: E501
 
-        :param password_manager_password: The password_manager_password of this UpdateSecretVal.  # noqa: E501
+        :param password: The password of this UpdateSecretVal.  # noqa: E501
         :type: str
         """
 
-        self._password_manager_password = password_manager_password
-
-    @property
-    def password_manager_username(self):
-        """Gets the password_manager_username of this UpdateSecretVal.  # noqa: E501
-
-        For Password Management use  # noqa: E501
-
-        :return: The password_manager_username of this UpdateSecretVal.  # noqa: E501
-        :rtype: str
-        """
-        return self._password_manager_username
-
-    @password_manager_username.setter
-    def password_manager_username(self, password_manager_username):
-        """Sets the password_manager_username of this UpdateSecretVal.
-
-        For Password Management use  # noqa: E501
-
-        :param password_manager_username: The password_manager_username of this UpdateSecretVal.  # noqa: E501
-        :type: str
-        """
-
-        self._password_manager_username = password_manager_username
+        self._password = password
 
     @property
     def token(self):
@@ -416,6 +393,29 @@ class UpdateSecretVal(object):
         """
 
         self._uid_token = uid_token
+
+    @property
+    def username(self):
+        """Gets the username of this UpdateSecretVal.  # noqa: E501
+
+        For Password Management use  # noqa: E501
+
+        :return: The username of this UpdateSecretVal.  # noqa: E501
+        :rtype: str
+        """
+        return self._username
+
+    @username.setter
+    def username(self, username):
+        """Sets the username of this UpdateSecretVal.
+
+        For Password Management use  # noqa: E501
+
+        :param username: The username of this UpdateSecretVal.  # noqa: E501
+        :type: str
+        """
+
+        self._username = username
 
     @property
     def value(self):

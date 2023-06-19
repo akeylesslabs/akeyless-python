@@ -37,6 +37,7 @@ class AccountGeneralSettings(object):
         'data_protection_section': 'DataProtectionSection',
         'enable_request_for_access': 'bool',
         'password_policy': 'PasswordPolicyInfo',
+        'protect_items_by_default': 'bool',
         'sharing_policy': 'SharingPolicyInfo'
     }
 
@@ -44,10 +45,11 @@ class AccountGeneralSettings(object):
         'data_protection_section': 'data_protection_section',
         'enable_request_for_access': 'enable_request_for_access',
         'password_policy': 'password_policy',
+        'protect_items_by_default': 'protect_items_by_default',
         'sharing_policy': 'sharing_policy'
     }
 
-    def __init__(self, data_protection_section=None, enable_request_for_access=None, password_policy=None, sharing_policy=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, data_protection_section=None, enable_request_for_access=None, password_policy=None, protect_items_by_default=None, sharing_policy=None, local_vars_configuration=None):  # noqa: E501
         """AccountGeneralSettings - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -56,6 +58,7 @@ class AccountGeneralSettings(object):
         self._data_protection_section = None
         self._enable_request_for_access = None
         self._password_policy = None
+        self._protect_items_by_default = None
         self._sharing_policy = None
         self.discriminator = None
 
@@ -65,6 +68,8 @@ class AccountGeneralSettings(object):
             self.enable_request_for_access = enable_request_for_access
         if password_policy is not None:
             self.password_policy = password_policy
+        if protect_items_by_default is not None:
+            self.protect_items_by_default = protect_items_by_default
         if sharing_policy is not None:
             self.sharing_policy = sharing_policy
 
@@ -130,6 +135,27 @@ class AccountGeneralSettings(object):
         """
 
         self._password_policy = password_policy
+
+    @property
+    def protect_items_by_default(self):
+        """Gets the protect_items_by_default of this AccountGeneralSettings.  # noqa: E501
+
+
+        :return: The protect_items_by_default of this AccountGeneralSettings.  # noqa: E501
+        :rtype: bool
+        """
+        return self._protect_items_by_default
+
+    @protect_items_by_default.setter
+    def protect_items_by_default(self, protect_items_by_default):
+        """Sets the protect_items_by_default of this AccountGeneralSettings.
+
+
+        :param protect_items_by_default: The protect_items_by_default of this AccountGeneralSettings.  # noqa: E501
+        :type: bool
+        """
+
+        self._protect_items_by_default = protect_items_by_default
 
     @property
     def sharing_policy(self):

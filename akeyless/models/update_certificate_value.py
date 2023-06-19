@@ -34,48 +34,69 @@ class UpdateCertificateValue(object):
                             and the value is json key in definition.
     """
     openapi_types = {
+        'add_tag': 'list[str]',
         'certificate_data': 'str',
+        'delete_protection': 'str',
+        'description': 'str',
         'expiration_event_in': 'list[str]',
         'format': 'str',
         'json': 'bool',
         'key': 'str',
         'key_data': 'str',
+        'metadata': 'str',
         'name': 'str',
+        'rm_tag': 'list[str]',
         'token': 'str',
         'uid_token': 'str'
     }
 
     attribute_map = {
+        'add_tag': 'add-tag',
         'certificate_data': 'certificate-data',
+        'delete_protection': 'delete_protection',
+        'description': 'description',
         'expiration_event_in': 'expiration-event-in',
         'format': 'format',
         'json': 'json',
         'key': 'key',
         'key_data': 'key-data',
+        'metadata': 'metadata',
         'name': 'name',
+        'rm_tag': 'rm-tag',
         'token': 'token',
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, certificate_data=None, expiration_event_in=None, format=None, json=False, key=None, key_data=None, name=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, add_tag=None, certificate_data=None, delete_protection=None, description=None, expiration_event_in=None, format=None, json=False, key=None, key_data=None, metadata=None, name=None, rm_tag=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """UpdateCertificateValue - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
+        self._add_tag = None
         self._certificate_data = None
+        self._delete_protection = None
+        self._description = None
         self._expiration_event_in = None
         self._format = None
         self._json = None
         self._key = None
         self._key_data = None
+        self._metadata = None
         self._name = None
+        self._rm_tag = None
         self._token = None
         self._uid_token = None
         self.discriminator = None
 
+        if add_tag is not None:
+            self.add_tag = add_tag
         if certificate_data is not None:
             self.certificate_data = certificate_data
+        if delete_protection is not None:
+            self.delete_protection = delete_protection
+        if description is not None:
+            self.description = description
         if expiration_event_in is not None:
             self.expiration_event_in = expiration_event_in
         if format is not None:
@@ -86,11 +107,38 @@ class UpdateCertificateValue(object):
             self.key = key
         if key_data is not None:
             self.key_data = key_data
+        if metadata is not None:
+            self.metadata = metadata
         self.name = name
+        if rm_tag is not None:
+            self.rm_tag = rm_tag
         if token is not None:
             self.token = token
         if uid_token is not None:
             self.uid_token = uid_token
+
+    @property
+    def add_tag(self):
+        """Gets the add_tag of this UpdateCertificateValue.  # noqa: E501
+
+        List of the new tags that will be attached to this item  # noqa: E501
+
+        :return: The add_tag of this UpdateCertificateValue.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._add_tag
+
+    @add_tag.setter
+    def add_tag(self, add_tag):
+        """Sets the add_tag of this UpdateCertificateValue.
+
+        List of the new tags that will be attached to this item  # noqa: E501
+
+        :param add_tag: The add_tag of this UpdateCertificateValue.  # noqa: E501
+        :type: list[str]
+        """
+
+        self._add_tag = add_tag
 
     @property
     def certificate_data(self):
@@ -114,6 +162,52 @@ class UpdateCertificateValue(object):
         """
 
         self._certificate_data = certificate_data
+
+    @property
+    def delete_protection(self):
+        """Gets the delete_protection of this UpdateCertificateValue.  # noqa: E501
+
+        Protection from accidental deletion of this item [true/false]  # noqa: E501
+
+        :return: The delete_protection of this UpdateCertificateValue.  # noqa: E501
+        :rtype: str
+        """
+        return self._delete_protection
+
+    @delete_protection.setter
+    def delete_protection(self, delete_protection):
+        """Sets the delete_protection of this UpdateCertificateValue.
+
+        Protection from accidental deletion of this item [true/false]  # noqa: E501
+
+        :param delete_protection: The delete_protection of this UpdateCertificateValue.  # noqa: E501
+        :type: str
+        """
+
+        self._delete_protection = delete_protection
+
+    @property
+    def description(self):
+        """Gets the description of this UpdateCertificateValue.  # noqa: E501
+
+        Description of the object  # noqa: E501
+
+        :return: The description of this UpdateCertificateValue.  # noqa: E501
+        :rtype: str
+        """
+        return self._description
+
+    @description.setter
+    def description(self, description):
+        """Sets the description of this UpdateCertificateValue.
+
+        Description of the object  # noqa: E501
+
+        :param description: The description of this UpdateCertificateValue.  # noqa: E501
+        :type: str
+        """
+
+        self._description = description
 
     @property
     def expiration_event_in(self):
@@ -231,6 +325,29 @@ class UpdateCertificateValue(object):
         self._key_data = key_data
 
     @property
+    def metadata(self):
+        """Gets the metadata of this UpdateCertificateValue.  # noqa: E501
+
+        Deprecated - use description  # noqa: E501
+
+        :return: The metadata of this UpdateCertificateValue.  # noqa: E501
+        :rtype: str
+        """
+        return self._metadata
+
+    @metadata.setter
+    def metadata(self, metadata):
+        """Sets the metadata of this UpdateCertificateValue.
+
+        Deprecated - use description  # noqa: E501
+
+        :param metadata: The metadata of this UpdateCertificateValue.  # noqa: E501
+        :type: str
+        """
+
+        self._metadata = metadata
+
+    @property
     def name(self):
         """Gets the name of this UpdateCertificateValue.  # noqa: E501
 
@@ -254,6 +371,29 @@ class UpdateCertificateValue(object):
             raise ValueError("Invalid value for `name`, must not be `None`")  # noqa: E501
 
         self._name = name
+
+    @property
+    def rm_tag(self):
+        """Gets the rm_tag of this UpdateCertificateValue.  # noqa: E501
+
+        List of the existent tags that will be removed from this item  # noqa: E501
+
+        :return: The rm_tag of this UpdateCertificateValue.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._rm_tag
+
+    @rm_tag.setter
+    def rm_tag(self, rm_tag):
+        """Sets the rm_tag of this UpdateCertificateValue.
+
+        List of the existent tags that will be removed from this item  # noqa: E501
+
+        :param rm_tag: The rm_tag of this UpdateCertificateValue.  # noqa: E501
+        :type: list[str]
+        """
+
+        self._rm_tag = rm_tag
 
     @property
     def token(self):

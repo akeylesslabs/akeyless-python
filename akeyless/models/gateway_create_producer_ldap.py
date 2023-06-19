@@ -38,6 +38,7 @@ class GatewayCreateProducerLdap(object):
         'bind_dn_password': 'str',
         'delete_protection': 'str',
         'external_username': 'str',
+        'group_dn': 'str',
         'json': 'bool',
         'ldap_ca_cert': 'str',
         'ldap_url': 'str',
@@ -58,6 +59,7 @@ class GatewayCreateProducerLdap(object):
         'bind_dn_password': 'bind-dn-password',
         'delete_protection': 'delete_protection',
         'external_username': 'external-username',
+        'group_dn': 'group-dn',
         'json': 'json',
         'ldap_ca_cert': 'ldap-ca-cert',
         'ldap_url': 'ldap-url',
@@ -73,7 +75,7 @@ class GatewayCreateProducerLdap(object):
         'user_ttl': 'user-ttl'
     }
 
-    def __init__(self, bind_dn=None, bind_dn_password=None, delete_protection=None, external_username='false', json=False, ldap_ca_cert=None, ldap_url=None, name=None, producer_encryption_key_name=None, tags=None, target_name=None, token=None, token_expiration=None, uid_token=None, user_attribute=None, user_dn=None, user_ttl='60m', local_vars_configuration=None):  # noqa: E501
+    def __init__(self, bind_dn=None, bind_dn_password=None, delete_protection=None, external_username='false', group_dn=None, json=False, ldap_ca_cert=None, ldap_url=None, name=None, producer_encryption_key_name=None, tags=None, target_name=None, token=None, token_expiration=None, uid_token=None, user_attribute=None, user_dn=None, user_ttl='60m', local_vars_configuration=None):  # noqa: E501
         """GatewayCreateProducerLdap - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -83,6 +85,7 @@ class GatewayCreateProducerLdap(object):
         self._bind_dn_password = None
         self._delete_protection = None
         self._external_username = None
+        self._group_dn = None
         self._json = None
         self._ldap_ca_cert = None
         self._ldap_url = None
@@ -106,6 +109,8 @@ class GatewayCreateProducerLdap(object):
             self.delete_protection = delete_protection
         if external_username is not None:
             self.external_username = external_username
+        if group_dn is not None:
+            self.group_dn = group_dn
         if json is not None:
             self.json = json
         if ldap_ca_cert is not None:
@@ -223,6 +228,29 @@ class GatewayCreateProducerLdap(object):
         """
 
         self._external_username = external_username
+
+    @property
+    def group_dn(self):
+        """Gets the group_dn of this GatewayCreateProducerLdap.  # noqa: E501
+
+        Group DN which the temporary user should be added  # noqa: E501
+
+        :return: The group_dn of this GatewayCreateProducerLdap.  # noqa: E501
+        :rtype: str
+        """
+        return self._group_dn
+
+    @group_dn.setter
+    def group_dn(self, group_dn):
+        """Sets the group_dn of this GatewayCreateProducerLdap.
+
+        Group DN which the temporary user should be added  # noqa: E501
+
+        :param group_dn: The group_dn of this GatewayCreateProducerLdap.  # noqa: E501
+        :type: str
+        """
+
+        self._group_dn = group_dn
 
     @property
     def json(self):

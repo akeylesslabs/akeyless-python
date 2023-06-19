@@ -42,6 +42,7 @@ class UpdateAccountSettings(object):
         'default_versioning': 'str',
         'dp_enable_classic_key_protection': 'str',
         'item_type': 'str',
+        'items_deletion_protection': 'str',
         'json': 'bool',
         'jwt_ttl_default': 'int',
         'jwt_ttl_max': 'int',
@@ -67,6 +68,7 @@ class UpdateAccountSettings(object):
         'default_versioning': 'default-versioning',
         'dp_enable_classic_key_protection': 'dp-enable-classic-key-protection',
         'item_type': 'item-type',
+        'items_deletion_protection': 'items-deletion-protection',
         'json': 'json',
         'jwt_ttl_default': 'jwt-ttl-default',
         'jwt_ttl_max': 'jwt-ttl-max',
@@ -83,7 +85,7 @@ class UpdateAccountSettings(object):
         'use_capital_letters': 'use_capital-letters'
     }
 
-    def __init__(self, address=None, city=None, company_name=None, country=None, default_share_link_ttl_minutes=None, default_versioning=None, dp_enable_classic_key_protection=None, item_type=None, json=False, jwt_ttl_default=None, jwt_ttl_max=None, jwt_ttl_min=None, max_versions=None, password_length=None, phone=None, postal_code=None, token=None, uid_token=None, use_lower_letters=None, use_numbers=None, use_special_characters=None, use_capital_letters=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, address=None, city=None, company_name=None, country=None, default_share_link_ttl_minutes=None, default_versioning=None, dp_enable_classic_key_protection=None, item_type=None, items_deletion_protection=None, json=False, jwt_ttl_default=None, jwt_ttl_max=None, jwt_ttl_min=None, max_versions=None, password_length=None, phone=None, postal_code=None, token=None, uid_token=None, use_lower_letters=None, use_numbers=None, use_special_characters=None, use_capital_letters=None, local_vars_configuration=None):  # noqa: E501
         """UpdateAccountSettings - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -97,6 +99,7 @@ class UpdateAccountSettings(object):
         self._default_versioning = None
         self._dp_enable_classic_key_protection = None
         self._item_type = None
+        self._items_deletion_protection = None
         self._json = None
         self._jwt_ttl_default = None
         self._jwt_ttl_max = None
@@ -129,6 +132,8 @@ class UpdateAccountSettings(object):
             self.dp_enable_classic_key_protection = dp_enable_classic_key_protection
         if item_type is not None:
             self.item_type = item_type
+        if items_deletion_protection is not None:
+            self.items_deletion_protection = items_deletion_protection
         if json is not None:
             self.json = json
         if jwt_ttl_default is not None:
@@ -341,6 +346,29 @@ class UpdateAccountSettings(object):
         """
 
         self._item_type = item_type
+
+    @property
+    def items_deletion_protection(self):
+        """Gets the items_deletion_protection of this UpdateAccountSettings.  # noqa: E501
+
+        Set or unset the default behaviour of items deletion protection [true/false]  # noqa: E501
+
+        :return: The items_deletion_protection of this UpdateAccountSettings.  # noqa: E501
+        :rtype: str
+        """
+        return self._items_deletion_protection
+
+    @items_deletion_protection.setter
+    def items_deletion_protection(self, items_deletion_protection):
+        """Sets the items_deletion_protection of this UpdateAccountSettings.
+
+        Set or unset the default behaviour of items deletion protection [true/false]  # noqa: E501
+
+        :param items_deletion_protection: The items_deletion_protection of this UpdateAccountSettings.  # noqa: E501
+        :type: str
+        """
+
+        self._items_deletion_protection = items_deletion_protection
 
     @property
     def json(self):

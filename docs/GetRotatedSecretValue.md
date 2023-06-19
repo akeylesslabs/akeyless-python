@@ -3,6 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**host** | **str** | Get rotated secret value of specific Host (relevant only for Linked Target) | [optional] 
 **ignore_cache** | **str** | Retrieve the Secret value without checking the Gateway&#39;s cache [true/false]. This flag is only relevant when using the RestAPI | [optional] [default to 'false']
 **json** | **bool** | Set output format to JSON | [optional] [default to False]
 **names** | **str** | Secret name | 

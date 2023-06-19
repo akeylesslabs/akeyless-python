@@ -27,6 +27,7 @@ Name | Type | Description | Notes
 **rotation_interval** | **str** | The number of days to wait between every automatic key rotation (7-365) | [optional] 
 **rotator_creds_type** | **str** | The credentials to connect with use-self-creds/use-target-creds | [optional] [default to 'use-self-creds']
 **rotator_custom_cmd** | **str** | \&quot;Custom rotation command (relevant only for ssh target) | [optional] 
+**same_password** | **str** | Rotate same password for each host from the Linked Target (relevant only for Linked Target) | [optional] 
 **secure_access_allow_external_user** | **bool** | Allow providing external user for a domain users (relevant only for rdp) | [optional] [default to False]
 **secure_access_aws_account_id** | **str** | The AWS account id (relevant only for aws) | [optional] 
 **secure_access_aws_native_cli** | **bool** | The AWS native cli | [optional] 

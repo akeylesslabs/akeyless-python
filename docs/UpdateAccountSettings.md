@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **default_versioning** | **str** | If set to true, new item version will be created on each update [true/false] | [optional] 
 **dp_enable_classic_key_protection** | **str** | Set to update protection with classic keys state [true/false] | [optional] 
 **item_type** | **str** | VersionSettingsObjectType defines object types for account version settings | [optional] 
+**items_deletion_protection** | **str** | Set or unset the default behaviour of items deletion protection [true/false] | [optional] 
 **json** | **bool** | Set output format to JSON | [optional] [default to False]
 **jwt_ttl_default** | **int** | Default ttl | [optional] 
 **jwt_ttl_max** | **int** | Maximum ttl | [optional] 

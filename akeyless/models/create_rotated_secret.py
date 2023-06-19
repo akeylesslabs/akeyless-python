@@ -56,6 +56,7 @@ class CreateRotatedSecret(object):
         'rotator_creds_type': 'str',
         'rotator_custom_cmd': 'str',
         'rotator_type': 'str',
+        'same_password': 'str',
         'secure_access_allow_external_user': 'bool',
         'secure_access_aws_account_id': 'str',
         'secure_access_aws_native_cli': 'bool',
@@ -103,6 +104,7 @@ class CreateRotatedSecret(object):
         'rotator_creds_type': 'rotator-creds-type',
         'rotator_custom_cmd': 'rotator-custom-cmd',
         'rotator_type': 'rotator-type',
+        'same_password': 'same-password',
         'secure_access_allow_external_user': 'secure-access-allow-external-user',
         'secure_access_aws_account_id': 'secure-access-aws-account-id',
         'secure_access_aws_native_cli': 'secure-access-aws-native-cli',
@@ -127,7 +129,7 @@ class CreateRotatedSecret(object):
         'user_dn': 'user-dn'
     }
 
-    def __init__(self, api_id=None, api_key=None, application_id=None, authentication_credentials='use-user-creds', auto_rotate=None, aws_region='us-east-2', custom_payload=None, delete_protection=None, description=None, gcp_key=None, json=False, key=None, metadata=None, name=None, rotate_after_disconnect='false', rotated_password=None, rotated_username=None, rotation_hour=None, rotation_interval=None, rotator_creds_type=None, rotator_custom_cmd=None, rotator_type=None, secure_access_allow_external_user=False, secure_access_aws_account_id=None, secure_access_aws_native_cli=None, secure_access_bastion_issuer=None, secure_access_db_name=None, secure_access_db_schema=None, secure_access_enable=None, secure_access_host=None, secure_access_rdp_domain=None, secure_access_rdp_user=None, secure_access_web=False, secure_access_web_browsing=False, secure_access_web_proxy=False, ssh_password=None, ssh_username=None, storage_account_key_name=None, tags=None, target_name=None, token=None, uid_token=None, user_attribute=None, user_dn=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, api_id=None, api_key=None, application_id=None, authentication_credentials='use-user-creds', auto_rotate=None, aws_region='us-east-2', custom_payload=None, delete_protection=None, description=None, gcp_key=None, json=False, key=None, metadata=None, name=None, rotate_after_disconnect='false', rotated_password=None, rotated_username=None, rotation_hour=None, rotation_interval=None, rotator_creds_type=None, rotator_custom_cmd=None, rotator_type=None, same_password=None, secure_access_allow_external_user=False, secure_access_aws_account_id=None, secure_access_aws_native_cli=None, secure_access_bastion_issuer=None, secure_access_db_name=None, secure_access_db_schema=None, secure_access_enable=None, secure_access_host=None, secure_access_rdp_domain=None, secure_access_rdp_user=None, secure_access_web=False, secure_access_web_browsing=False, secure_access_web_proxy=False, ssh_password=None, ssh_username=None, storage_account_key_name=None, tags=None, target_name=None, token=None, uid_token=None, user_attribute=None, user_dn=None, local_vars_configuration=None):  # noqa: E501
         """CreateRotatedSecret - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -155,6 +157,7 @@ class CreateRotatedSecret(object):
         self._rotator_creds_type = None
         self._rotator_custom_cmd = None
         self._rotator_type = None
+        self._same_password = None
         self._secure_access_allow_external_user = None
         self._secure_access_aws_account_id = None
         self._secure_access_aws_native_cli = None
@@ -221,6 +224,8 @@ class CreateRotatedSecret(object):
         if rotator_custom_cmd is not None:
             self.rotator_custom_cmd = rotator_custom_cmd
         self.rotator_type = rotator_type
+        if same_password is not None:
+            self.same_password = same_password
         if secure_access_allow_external_user is not None:
             self.secure_access_allow_external_user = secure_access_allow_external_user
         if secure_access_aws_account_id is not None:
@@ -772,6 +777,29 @@ class CreateRotatedSecret(object):
             raise ValueError("Invalid value for `rotator_type`, must not be `None`")  # noqa: E501
 
         self._rotator_type = rotator_type
+
+    @property
+    def same_password(self):
+        """Gets the same_password of this CreateRotatedSecret.  # noqa: E501
+
+        Rotate same password for each host from the Linked Target (relevant only for Linked Target)  # noqa: E501
+
+        :return: The same_password of this CreateRotatedSecret.  # noqa: E501
+        :rtype: str
+        """
+        return self._same_password
+
+    @same_password.setter
+    def same_password(self, same_password):
+        """Sets the same_password of this CreateRotatedSecret.
+
+        Rotate same password for each host from the Linked Target (relevant only for Linked Target)  # noqa: E501
+
+        :param same_password: The same_password of this CreateRotatedSecret.  # noqa: E501
+        :type: str
+        """
+
+        self._same_password = same_password
 
     @property
     def secure_access_allow_external_user(self):

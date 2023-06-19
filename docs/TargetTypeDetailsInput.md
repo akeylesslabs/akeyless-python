@@ -63,7 +63,7 @@ Name | Type | Description | Notes
 **gke_service_account_name** | **str** |  | [optional] 
 **host** | **str** |  | [optional] 
 **hostname** | **str** |  | [optional] 
-**hosts** | **dict(str, str)** |  | [optional] 
+**hosts** | **dict(str, str)** | key hostname, value description | [optional] 
 **imap_fqdn** | **str** |  | [optional] 
 **imap_password** | **str** |  | [optional] 
 **imap_port** | **str** |  | [optional] 

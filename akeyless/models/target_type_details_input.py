@@ -1940,6 +1940,7 @@ class TargetTypeDetailsInput(object):
     def hosts(self):
         """Gets the hosts of this TargetTypeDetailsInput.  # noqa: E501
 
+        key hostname, value description  # noqa: E501
 
         :return: The hosts of this TargetTypeDetailsInput.  # noqa: E501
         :rtype: dict(str, str)
@@ -1950,6 +1951,7 @@ class TargetTypeDetailsInput(object):
     def hosts(self, hosts):
         """Sets the hosts of this TargetTypeDetailsInput.
 
+        key hostname, value description  # noqa: E501
 
         :param hosts: The hosts of this TargetTypeDetailsInput.  # noqa: E501
         :type: dict(str, str)

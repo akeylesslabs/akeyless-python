@@ -14,6 +14,7 @@ Name | Type | Description | Notes
 **rotator_creds_type** | **str** |  | [optional] 
 **rotator_status** | **str** | RotationStatus defines types of rotation Status | [optional] 
 **rotator_type** | **str** |  | [optional] 
+**same_password** | **bool** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
