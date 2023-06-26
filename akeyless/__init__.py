@@ -15,7 +15,7 @@
 
 from __future__ import absolute_import
 
-__version__ = "3.3.9"
+__version__ = "3.3.10"
 
 # import apis into sdk package
 from akeyless.api.v2_api import V2Api
@@ -565,6 +565,7 @@ from akeyless.models.sra_info import SraInfo
 from akeyless.models.static_creds_auth import StaticCredsAuth
 from akeyless.models.static_creds_auth_output import StaticCredsAuthOutput
 from akeyless.models.static_secret_details_info import StaticSecretDetailsInfo
+from akeyless.models.sumologic_log_forwarding_config import SumologicLogForwardingConfig
 from akeyless.models.syslog_log_forwarding_config import SyslogLogForwardingConfig
 from akeyless.models.system_access_credentials_reply_obj import SystemAccessCredentialsReplyObj
 from akeyless.models.system_access_creds_settings import SystemAccessCredsSettings

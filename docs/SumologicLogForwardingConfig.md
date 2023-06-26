@@ -1,12 +1,11 @@
-# LogstashLogForwardingConfig
+# SumologicLogForwardingConfig
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**logstash_dns** | **str** |  | [optional] 
-**logstash_enable_tls** | **bool** |  | [optional] 
-**logstash_protocol** | **str** |  | [optional] 
-**logstash_tls_certificate** | **str** |  | [optional] 
+**sumo_logic_endpoint** | **str** |  | [optional] 
+**sumo_logic_host** | **str** |  | [optional] 
+**sumo_logic_tags** | **str** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -37,10 +37,12 @@ class ElasticsearchLogForwardingConfig(object):
         'elasticsearch_api_key': 'str',
         'elasticsearch_auth_type': 'str',
         'elasticsearch_cloud_id': 'str',
+        'elasticsearch_enable_tls': 'bool',
         'elasticsearch_index': 'str',
         'elasticsearch_nodes': 'str',
         'elasticsearch_password': 'str',
         'elasticsearch_server_type': 'str',
+        'elasticsearch_tls_certificate': 'str',
         'elasticsearch_user_name': 'str'
     }
 
@@ -48,14 +50,16 @@ class ElasticsearchLogForwardingConfig(object):
         'elasticsearch_api_key': 'elasticsearch_api_key',
         'elasticsearch_auth_type': 'elasticsearch_auth_type',
         'elasticsearch_cloud_id': 'elasticsearch_cloud_id',
+        'elasticsearch_enable_tls': 'elasticsearch_enable_tls',
         'elasticsearch_index': 'elasticsearch_index',
         'elasticsearch_nodes': 'elasticsearch_nodes',
         'elasticsearch_password': 'elasticsearch_password',
         'elasticsearch_server_type': 'elasticsearch_server_type',
+        'elasticsearch_tls_certificate': 'elasticsearch_tls_certificate',
         'elasticsearch_user_name': 'elasticsearch_user_name'
     }
 
-    def __init__(self, elasticsearch_api_key=None, elasticsearch_auth_type=None, elasticsearch_cloud_id=None, elasticsearch_index=None, elasticsearch_nodes=None, elasticsearch_password=None, elasticsearch_server_type=None, elasticsearch_user_name=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, elasticsearch_api_key=None, elasticsearch_auth_type=None, elasticsearch_cloud_id=None, elasticsearch_enable_tls=None, elasticsearch_index=None, elasticsearch_nodes=None, elasticsearch_password=None, elasticsearch_server_type=None, elasticsearch_tls_certificate=None, elasticsearch_user_name=None, local_vars_configuration=None):  # noqa: E501
         """ElasticsearchLogForwardingConfig - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -64,10 +68,12 @@ class ElasticsearchLogForwardingConfig(object):
         self._elasticsearch_api_key = None
         self._elasticsearch_auth_type = None
         self._elasticsearch_cloud_id = None
+        self._elasticsearch_enable_tls = None
         self._elasticsearch_index = None
         self._elasticsearch_nodes = None
         self._elasticsearch_password = None
         self._elasticsearch_server_type = None
+        self._elasticsearch_tls_certificate = None
         self._elasticsearch_user_name = None
         self.discriminator = None
 
@@ -77,6 +83,8 @@ class ElasticsearchLogForwardingConfig(object):
             self.elasticsearch_auth_type = elasticsearch_auth_type
         if elasticsearch_cloud_id is not None:
             self.elasticsearch_cloud_id = elasticsearch_cloud_id
+        if elasticsearch_enable_tls is not None:
+            self.elasticsearch_enable_tls = elasticsearch_enable_tls
         if elasticsearch_index is not None:
             self.elasticsearch_index = elasticsearch_index
         if elasticsearch_nodes is not None:
@@ -85,6 +93,8 @@ class ElasticsearchLogForwardingConfig(object):
             self.elasticsearch_password = elasticsearch_password
         if elasticsearch_server_type is not None:
             self.elasticsearch_server_type = elasticsearch_server_type
+        if elasticsearch_tls_certificate is not None:
+            self.elasticsearch_tls_certificate = elasticsearch_tls_certificate
         if elasticsearch_user_name is not None:
             self.elasticsearch_user_name = elasticsearch_user_name
 
@@ -150,6 +160,27 @@ class ElasticsearchLogForwardingConfig(object):
         """
 
         self._elasticsearch_cloud_id = elasticsearch_cloud_id
+
+    @property
+    def elasticsearch_enable_tls(self):
+        """Gets the elasticsearch_enable_tls of this ElasticsearchLogForwardingConfig.  # noqa: E501
+
+
+        :return: The elasticsearch_enable_tls of this ElasticsearchLogForwardingConfig.  # noqa: E501
+        :rtype: bool
+        """
+        return self._elasticsearch_enable_tls
+
+    @elasticsearch_enable_tls.setter
+    def elasticsearch_enable_tls(self, elasticsearch_enable_tls):
+        """Sets the elasticsearch_enable_tls of this ElasticsearchLogForwardingConfig.
+
+
+        :param elasticsearch_enable_tls: The elasticsearch_enable_tls of this ElasticsearchLogForwardingConfig.  # noqa: E501
+        :type: bool
+        """
+
+        self._elasticsearch_enable_tls = elasticsearch_enable_tls
 
     @property
     def elasticsearch_index(self):
@@ -234,6 +265,27 @@ class ElasticsearchLogForwardingConfig(object):
         """
 
         self._elasticsearch_server_type = elasticsearch_server_type
+
+    @property
+    def elasticsearch_tls_certificate(self):
+        """Gets the elasticsearch_tls_certificate of this ElasticsearchLogForwardingConfig.  # noqa: E501
+
+
+        :return: The elasticsearch_tls_certificate of this ElasticsearchLogForwardingConfig.  # noqa: E501
+        :rtype: str
+        """
+        return self._elasticsearch_tls_certificate
+
+    @elasticsearch_tls_certificate.setter
+    def elasticsearch_tls_certificate(self, elasticsearch_tls_certificate):
+        """Sets the elasticsearch_tls_certificate of this ElasticsearchLogForwardingConfig.
+
+
+        :param elasticsearch_tls_certificate: The elasticsearch_tls_certificate of this ElasticsearchLogForwardingConfig.  # noqa: E501
+        :type: str
+        """
+
+        self._elasticsearch_tls_certificate = elasticsearch_tls_certificate
 
     @property
     def elasticsearch_user_name(self):

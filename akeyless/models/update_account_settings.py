@@ -38,6 +38,7 @@ class UpdateAccountSettings(object):
         'city': 'str',
         'company_name': 'str',
         'country': 'str',
+        'default_key_name': 'str',
         'default_share_link_ttl_minutes': 'str',
         'default_versioning': 'str',
         'dp_enable_classic_key_protection': 'str',
@@ -64,6 +65,7 @@ class UpdateAccountSettings(object):
         'city': 'city',
         'company_name': 'company-name',
         'country': 'country',
+        'default_key_name': 'default-key-name',
         'default_share_link_ttl_minutes': 'default-share-link-ttl-minutes',
         'default_versioning': 'default-versioning',
         'dp_enable_classic_key_protection': 'dp-enable-classic-key-protection',
@@ -85,7 +87,7 @@ class UpdateAccountSettings(object):
         'use_capital_letters': 'use_capital-letters'
     }
 
-    def __init__(self, address=None, city=None, company_name=None, country=None, default_share_link_ttl_minutes=None, default_versioning=None, dp_enable_classic_key_protection=None, item_type=None, items_deletion_protection=None, json=False, jwt_ttl_default=None, jwt_ttl_max=None, jwt_ttl_min=None, max_versions=None, password_length=None, phone=None, postal_code=None, token=None, uid_token=None, use_lower_letters=None, use_numbers=None, use_special_characters=None, use_capital_letters=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, address=None, city=None, company_name=None, country=None, default_key_name=None, default_share_link_ttl_minutes=None, default_versioning=None, dp_enable_classic_key_protection=None, item_type=None, items_deletion_protection=None, json=False, jwt_ttl_default=None, jwt_ttl_max=None, jwt_ttl_min=None, max_versions=None, password_length=None, phone=None, postal_code=None, token=None, uid_token=None, use_lower_letters=None, use_numbers=None, use_special_characters=None, use_capital_letters=None, local_vars_configuration=None):  # noqa: E501
         """UpdateAccountSettings - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -95,6 +97,7 @@ class UpdateAccountSettings(object):
         self._city = None
         self._company_name = None
         self._country = None
+        self._default_key_name = None
         self._default_share_link_ttl_minutes = None
         self._default_versioning = None
         self._dp_enable_classic_key_protection = None
@@ -124,6 +127,8 @@ class UpdateAccountSettings(object):
             self.company_name = company_name
         if country is not None:
             self.country = country
+        if default_key_name is not None:
+            self.default_key_name = default_key_name
         if default_share_link_ttl_minutes is not None:
             self.default_share_link_ttl_minutes = default_share_link_ttl_minutes
         if default_versioning is not None:
@@ -254,6 +259,29 @@ class UpdateAccountSettings(object):
         """
 
         self._country = country
+
+    @property
+    def default_key_name(self):
+        """Gets the default_key_name of this UpdateAccountSettings.  # noqa: E501
+
+        Set the account default key based on the DFC key item name. Use \"set-original-akeyless-default-key\" to revert to using the original default key of the account. Empty string will change nothing.  # noqa: E501
+
+        :return: The default_key_name of this UpdateAccountSettings.  # noqa: E501
+        :rtype: str
+        """
+        return self._default_key_name
+
+    @default_key_name.setter
+    def default_key_name(self, default_key_name):
+        """Sets the default_key_name of this UpdateAccountSettings.
+
+        Set the account default key based on the DFC key item name. Use \"set-original-akeyless-default-key\" to revert to using the original default key of the account. Empty string will change nothing.  # noqa: E501
+
+        :param default_key_name: The default_key_name of this UpdateAccountSettings.  # noqa: E501
+        :type: str
+        """
+
+        self._default_key_name = default_key_name
 
     @property
     def default_share_link_ttl_minutes(self):

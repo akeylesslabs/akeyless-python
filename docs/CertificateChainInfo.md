@@ -5,6 +5,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **certificate_chain** | [**list[CertificateInfo]**](CertificateInfo.md) |  | [optional] 
 **certificate_format** | **str** |  | [optional] 
+**certificate_issuer_item_id** | **int** |  | [optional] 
 **certificate_issuer_name** | **str** |  | [optional] 
 **certificate_pem** | **str** |  | [optional] 
 **certificate_status** | **str** |  | [optional] 

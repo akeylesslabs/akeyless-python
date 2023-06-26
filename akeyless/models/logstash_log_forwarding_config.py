@@ -35,28 +35,38 @@ class LogstashLogForwardingConfig(object):
     """
     openapi_types = {
         'logstash_dns': 'str',
-        'logstash_protocol': 'str'
+        'logstash_enable_tls': 'bool',
+        'logstash_protocol': 'str',
+        'logstash_tls_certificate': 'str'
     }
 
     attribute_map = {
         'logstash_dns': 'logstash_dns',
-        'logstash_protocol': 'logstash_protocol'
+        'logstash_enable_tls': 'logstash_enable_tls',
+        'logstash_protocol': 'logstash_protocol',
+        'logstash_tls_certificate': 'logstash_tls_certificate'
     }
 
-    def __init__(self, logstash_dns=None, logstash_protocol=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, logstash_dns=None, logstash_enable_tls=None, logstash_protocol=None, logstash_tls_certificate=None, local_vars_configuration=None):  # noqa: E501
         """LogstashLogForwardingConfig - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._logstash_dns = None
+        self._logstash_enable_tls = None
         self._logstash_protocol = None
+        self._logstash_tls_certificate = None
         self.discriminator = None
 
         if logstash_dns is not None:
             self.logstash_dns = logstash_dns
+        if logstash_enable_tls is not None:
+            self.logstash_enable_tls = logstash_enable_tls
         if logstash_protocol is not None:
             self.logstash_protocol = logstash_protocol
+        if logstash_tls_certificate is not None:
+            self.logstash_tls_certificate = logstash_tls_certificate
 
     @property
     def logstash_dns(self):
@@ -80,6 +90,27 @@ class LogstashLogForwardingConfig(object):
         self._logstash_dns = logstash_dns
 
     @property
+    def logstash_enable_tls(self):
+        """Gets the logstash_enable_tls of this LogstashLogForwardingConfig.  # noqa: E501
+
+
+        :return: The logstash_enable_tls of this LogstashLogForwardingConfig.  # noqa: E501
+        :rtype: bool
+        """
+        return self._logstash_enable_tls
+
+    @logstash_enable_tls.setter
+    def logstash_enable_tls(self, logstash_enable_tls):
+        """Sets the logstash_enable_tls of this LogstashLogForwardingConfig.
+
+
+        :param logstash_enable_tls: The logstash_enable_tls of this LogstashLogForwardingConfig.  # noqa: E501
+        :type: bool
+        """
+
+        self._logstash_enable_tls = logstash_enable_tls
+
+    @property
     def logstash_protocol(self):
         """Gets the logstash_protocol of this LogstashLogForwardingConfig.  # noqa: E501
 
@@ -99,6 +130,27 @@ class LogstashLogForwardingConfig(object):
         """
 
         self._logstash_protocol = logstash_protocol
+
+    @property
+    def logstash_tls_certificate(self):
+        """Gets the logstash_tls_certificate of this LogstashLogForwardingConfig.  # noqa: E501
+
+
+        :return: The logstash_tls_certificate of this LogstashLogForwardingConfig.  # noqa: E501
+        :rtype: str
+        """
+        return self._logstash_tls_certificate
+
+    @logstash_tls_certificate.setter
+    def logstash_tls_certificate(self, logstash_tls_certificate):
+        """Sets the logstash_tls_certificate of this LogstashLogForwardingConfig.
+
+
+        :param logstash_tls_certificate: The logstash_tls_certificate of this LogstashLogForwardingConfig.  # noqa: E501
+        :type: str
+        """
+
+        self._logstash_tls_certificate = logstash_tls_certificate
 
     def to_dict(self):
         """Returns the model properties as a dict"""

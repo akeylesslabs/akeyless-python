@@ -34,6 +34,8 @@ class AccountGeneralSettings(object):
                             and the value is json key in definition.
     """
     openapi_types = {
+        'account_default_key_item_id': 'int',
+        'account_default_key_name': 'str',
         'data_protection_section': 'DataProtectionSection',
         'enable_request_for_access': 'bool',
         'password_policy': 'PasswordPolicyInfo',
@@ -42,6 +44,8 @@ class AccountGeneralSettings(object):
     }
 
     attribute_map = {
+        'account_default_key_item_id': 'account_default_key_item_id',
+        'account_default_key_name': 'account_default_key_name',
         'data_protection_section': 'data_protection_section',
         'enable_request_for_access': 'enable_request_for_access',
         'password_policy': 'password_policy',
@@ -49,12 +53,14 @@ class AccountGeneralSettings(object):
         'sharing_policy': 'sharing_policy'
     }
 
-    def __init__(self, data_protection_section=None, enable_request_for_access=None, password_policy=None, protect_items_by_default=None, sharing_policy=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, account_default_key_item_id=None, account_default_key_name=None, data_protection_section=None, enable_request_for_access=None, password_policy=None, protect_items_by_default=None, sharing_policy=None, local_vars_configuration=None):  # noqa: E501
         """AccountGeneralSettings - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
+        self._account_default_key_item_id = None
+        self._account_default_key_name = None
         self._data_protection_section = None
         self._enable_request_for_access = None
         self._password_policy = None
@@ -62,6 +68,10 @@ class AccountGeneralSettings(object):
         self._sharing_policy = None
         self.discriminator = None
 
+        if account_default_key_item_id is not None:
+            self.account_default_key_item_id = account_default_key_item_id
+        if account_default_key_name is not None:
+            self.account_default_key_name = account_default_key_name
         if data_protection_section is not None:
             self.data_protection_section = data_protection_section
         if enable_request_for_access is not None:
@@ -72,6 +82,52 @@ class AccountGeneralSettings(object):
             self.protect_items_by_default = protect_items_by_default
         if sharing_policy is not None:
             self.sharing_policy = sharing_policy
+
+    @property
+    def account_default_key_item_id(self):
+        """Gets the account_default_key_item_id of this AccountGeneralSettings.  # noqa: E501
+
+        AccountDefaultKeyItemID is the item ID of the DFC key item configured as the default protection key  # noqa: E501
+
+        :return: The account_default_key_item_id of this AccountGeneralSettings.  # noqa: E501
+        :rtype: int
+        """
+        return self._account_default_key_item_id
+
+    @account_default_key_item_id.setter
+    def account_default_key_item_id(self, account_default_key_item_id):
+        """Sets the account_default_key_item_id of this AccountGeneralSettings.
+
+        AccountDefaultKeyItemID is the item ID of the DFC key item configured as the default protection key  # noqa: E501
+
+        :param account_default_key_item_id: The account_default_key_item_id of this AccountGeneralSettings.  # noqa: E501
+        :type: int
+        """
+
+        self._account_default_key_item_id = account_default_key_item_id
+
+    @property
+    def account_default_key_name(self):
+        """Gets the account_default_key_name of this AccountGeneralSettings.  # noqa: E501
+
+        AccountDefaultKeyName is the name of the DFC key item configured as the default key This is here simply for the response to include the item name in addition to the display ID so the client can properly show this to the user. It will not be saved to the DB, only the AccountDefaultKeyItemID will.  # noqa: E501
+
+        :return: The account_default_key_name of this AccountGeneralSettings.  # noqa: E501
+        :rtype: str
+        """
+        return self._account_default_key_name
+
+    @account_default_key_name.setter
+    def account_default_key_name(self, account_default_key_name):
+        """Sets the account_default_key_name of this AccountGeneralSettings.
+
+        AccountDefaultKeyName is the name of the DFC key item configured as the default key This is here simply for the response to include the item name in addition to the display ID so the client can properly show this to the user. It will not be saved to the DB, only the AccountDefaultKeyItemID will.  # noqa: E501
+
+        :param account_default_key_name: The account_default_key_name of this AccountGeneralSettings.  # noqa: E501
+        :type: str
+        """
+
+        self._account_default_key_name = account_default_key_name
 
     @property
     def data_protection_section(self):

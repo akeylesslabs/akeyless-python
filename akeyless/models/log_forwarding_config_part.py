@@ -45,6 +45,7 @@ class LogForwardingConfigPart(object):
         'logz_io_config': 'LogzIoLogForwardingConfig',
         'pull_interval_sec': 'str',
         'splunk_config': 'SplunkLogForwardingConfig',
+        'sumo_logic_config': 'SumologicLogForwardingConfig',
         'syslog_config': 'SyslogLogForwardingConfig',
         'target_log_type': 'str'
     }
@@ -61,11 +62,12 @@ class LogForwardingConfigPart(object):
         'logz_io_config': 'logz_io_config',
         'pull_interval_sec': 'pull_interval_sec',
         'splunk_config': 'splunk_config',
+        'sumo_logic_config': 'sumo_logic_config',
         'syslog_config': 'syslog_config',
         'target_log_type': 'target_log_type'
     }
 
-    def __init__(self, aws_s3_config=None, azure_analytics_config=None, datadog_config=None, elasticsearch_config=None, json_output=None, logan_enable=None, logan_url=None, logstash_config=None, logz_io_config=None, pull_interval_sec=None, splunk_config=None, syslog_config=None, target_log_type=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, aws_s3_config=None, azure_analytics_config=None, datadog_config=None, elasticsearch_config=None, json_output=None, logan_enable=None, logan_url=None, logstash_config=None, logz_io_config=None, pull_interval_sec=None, splunk_config=None, sumo_logic_config=None, syslog_config=None, target_log_type=None, local_vars_configuration=None):  # noqa: E501
         """LogForwardingConfigPart - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -82,6 +84,7 @@ class LogForwardingConfigPart(object):
         self._logz_io_config = None
         self._pull_interval_sec = None
         self._splunk_config = None
+        self._sumo_logic_config = None
         self._syslog_config = None
         self._target_log_type = None
         self.discriminator = None
@@ -108,6 +111,8 @@ class LogForwardingConfigPart(object):
             self.pull_interval_sec = pull_interval_sec
         if splunk_config is not None:
             self.splunk_config = splunk_config
+        if sumo_logic_config is not None:
+            self.sumo_logic_config = sumo_logic_config
         if syslog_config is not None:
             self.syslog_config = syslog_config
         if target_log_type is not None:
@@ -343,6 +348,27 @@ class LogForwardingConfigPart(object):
         """
 
         self._splunk_config = splunk_config
+
+    @property
+    def sumo_logic_config(self):
+        """Gets the sumo_logic_config of this LogForwardingConfigPart.  # noqa: E501
+
+
+        :return: The sumo_logic_config of this LogForwardingConfigPart.  # noqa: E501
+        :rtype: SumologicLogForwardingConfig
+        """
+        return self._sumo_logic_config
+
+    @sumo_logic_config.setter
+    def sumo_logic_config(self, sumo_logic_config):
+        """Sets the sumo_logic_config of this LogForwardingConfigPart.
+
+
+        :param sumo_logic_config: The sumo_logic_config of this LogForwardingConfigPart.  # noqa: E501
+        :type: SumologicLogForwardingConfig
+        """
+
+        self._sumo_logic_config = sumo_logic_config
 
     @property
     def syslog_config(self):

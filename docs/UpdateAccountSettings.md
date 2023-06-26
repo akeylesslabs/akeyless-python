@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **city** | **str** | City | [optional] 
 **company_name** | **str** | Company name | [optional] 
 **country** | **str** | Country | [optional] 
+**default_key_name** | **str** | Set the account default key based on the DFC key item name. Use \&quot;set-original-akeyless-default-key\&quot; to revert to using the original default key of the account. Empty string will change nothing. | [optional] 
 **default_share_link_ttl_minutes** | **str** | Set the default ttl in minutes for sharing item number between 60 and 43200 | [optional] 
 **default_versioning** | **str** | If set to true, new item version will be created on each update [true/false] | [optional] 
 **dp_enable_classic_key_protection** | **str** | Set to update protection with classic keys state [true/false] | [optional] 

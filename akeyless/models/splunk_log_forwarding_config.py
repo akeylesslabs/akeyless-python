@@ -34,44 +34,75 @@ class SplunkLogForwardingConfig(object):
                             and the value is json key in definition.
     """
     openapi_types = {
+        'splunk_enable_tls': 'bool',
         'splunk_index': 'str',
         'splunk_source': 'str',
         'splunk_sourcetype': 'str',
+        'splunk_tls_certificate': 'str',
         'splunk_token': 'str',
         'splunk_url': 'str'
     }
 
     attribute_map = {
+        'splunk_enable_tls': 'splunk_enable_tls',
         'splunk_index': 'splunk_index',
         'splunk_source': 'splunk_source',
         'splunk_sourcetype': 'splunk_sourcetype',
+        'splunk_tls_certificate': 'splunk_tls_certificate',
         'splunk_token': 'splunk_token',
         'splunk_url': 'splunk_url'
     }
 
-    def __init__(self, splunk_index=None, splunk_source=None, splunk_sourcetype=None, splunk_token=None, splunk_url=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, splunk_enable_tls=None, splunk_index=None, splunk_source=None, splunk_sourcetype=None, splunk_tls_certificate=None, splunk_token=None, splunk_url=None, local_vars_configuration=None):  # noqa: E501
         """SplunkLogForwardingConfig - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
+        self._splunk_enable_tls = None
         self._splunk_index = None
         self._splunk_source = None
         self._splunk_sourcetype = None
+        self._splunk_tls_certificate = None
         self._splunk_token = None
         self._splunk_url = None
         self.discriminator = None
 
+        if splunk_enable_tls is not None:
+            self.splunk_enable_tls = splunk_enable_tls
         if splunk_index is not None:
             self.splunk_index = splunk_index
         if splunk_source is not None:
             self.splunk_source = splunk_source
         if splunk_sourcetype is not None:
             self.splunk_sourcetype = splunk_sourcetype
+        if splunk_tls_certificate is not None:
+            self.splunk_tls_certificate = splunk_tls_certificate
         if splunk_token is not None:
             self.splunk_token = splunk_token
         if splunk_url is not None:
             self.splunk_url = splunk_url
+
+    @property
+    def splunk_enable_tls(self):
+        """Gets the splunk_enable_tls of this SplunkLogForwardingConfig.  # noqa: E501
+
+
+        :return: The splunk_enable_tls of this SplunkLogForwardingConfig.  # noqa: E501
+        :rtype: bool
+        """
+        return self._splunk_enable_tls
+
+    @splunk_enable_tls.setter
+    def splunk_enable_tls(self, splunk_enable_tls):
+        """Sets the splunk_enable_tls of this SplunkLogForwardingConfig.
+
+
+        :param splunk_enable_tls: The splunk_enable_tls of this SplunkLogForwardingConfig.  # noqa: E501
+        :type: bool
+        """
+
+        self._splunk_enable_tls = splunk_enable_tls
 
     @property
     def splunk_index(self):
@@ -135,6 +166,27 @@ class SplunkLogForwardingConfig(object):
         """
 
         self._splunk_sourcetype = splunk_sourcetype
+
+    @property
+    def splunk_tls_certificate(self):
+        """Gets the splunk_tls_certificate of this SplunkLogForwardingConfig.  # noqa: E501
+
+
+        :return: The splunk_tls_certificate of this SplunkLogForwardingConfig.  # noqa: E501
+        :rtype: str
+        """
+        return self._splunk_tls_certificate
+
+    @splunk_tls_certificate.setter
+    def splunk_tls_certificate(self, splunk_tls_certificate):
+        """Sets the splunk_tls_certificate of this SplunkLogForwardingConfig.
+
+
+        :param splunk_tls_certificate: The splunk_tls_certificate of this SplunkLogForwardingConfig.  # noqa: E501
+        :type: str
+        """
+
+        self._splunk_tls_certificate = splunk_tls_certificate
 
     @property
     def splunk_token(self):

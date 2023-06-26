@@ -34,31 +34,39 @@ class SyslogLogForwardingConfig(object):
                             and the value is json key in definition.
     """
     openapi_types = {
+        'syslog_enable_tls': 'bool',
         'syslog_formatter': 'str',
         'syslog_host': 'str',
         'syslog_network': 'str',
-        'syslog_target_tag': 'str'
+        'syslog_target_tag': 'str',
+        'syslog_tls_certificate': 'str'
     }
 
     attribute_map = {
+        'syslog_enable_tls': 'syslog_enable_tls',
         'syslog_formatter': 'syslog_formatter',
         'syslog_host': 'syslog_host',
         'syslog_network': 'syslog_network',
-        'syslog_target_tag': 'syslog_target_tag'
+        'syslog_target_tag': 'syslog_target_tag',
+        'syslog_tls_certificate': 'syslog_tls_certificate'
     }
 
-    def __init__(self, syslog_formatter=None, syslog_host=None, syslog_network=None, syslog_target_tag=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, syslog_enable_tls=None, syslog_formatter=None, syslog_host=None, syslog_network=None, syslog_target_tag=None, syslog_tls_certificate=None, local_vars_configuration=None):  # noqa: E501
         """SyslogLogForwardingConfig - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
+        self._syslog_enable_tls = None
         self._syslog_formatter = None
         self._syslog_host = None
         self._syslog_network = None
         self._syslog_target_tag = None
+        self._syslog_tls_certificate = None
         self.discriminator = None
 
+        if syslog_enable_tls is not None:
+            self.syslog_enable_tls = syslog_enable_tls
         if syslog_formatter is not None:
             self.syslog_formatter = syslog_formatter
         if syslog_host is not None:
@@ -67,6 +75,29 @@ class SyslogLogForwardingConfig(object):
             self.syslog_network = syslog_network
         if syslog_target_tag is not None:
             self.syslog_target_tag = syslog_target_tag
+        if syslog_tls_certificate is not None:
+            self.syslog_tls_certificate = syslog_tls_certificate
+
+    @property
+    def syslog_enable_tls(self):
+        """Gets the syslog_enable_tls of this SyslogLogForwardingConfig.  # noqa: E501
+
+
+        :return: The syslog_enable_tls of this SyslogLogForwardingConfig.  # noqa: E501
+        :rtype: bool
+        """
+        return self._syslog_enable_tls
+
+    @syslog_enable_tls.setter
+    def syslog_enable_tls(self, syslog_enable_tls):
+        """Sets the syslog_enable_tls of this SyslogLogForwardingConfig.
+
+
+        :param syslog_enable_tls: The syslog_enable_tls of this SyslogLogForwardingConfig.  # noqa: E501
+        :type: bool
+        """
+
+        self._syslog_enable_tls = syslog_enable_tls
 
     @property
     def syslog_formatter(self):
@@ -151,6 +182,27 @@ class SyslogLogForwardingConfig(object):
         """
 
         self._syslog_target_tag = syslog_target_tag
+
+    @property
+    def syslog_tls_certificate(self):
+        """Gets the syslog_tls_certificate of this SyslogLogForwardingConfig.  # noqa: E501
+
+
+        :return: The syslog_tls_certificate of this SyslogLogForwardingConfig.  # noqa: E501
+        :rtype: str
+        """
+        return self._syslog_tls_certificate
+
+    @syslog_tls_certificate.setter
+    def syslog_tls_certificate(self, syslog_tls_certificate):
+        """Sets the syslog_tls_certificate of this SyslogLogForwardingConfig.
+
+
+        :param syslog_tls_certificate: The syslog_tls_certificate of this SyslogLogForwardingConfig.  # noqa: E501
+        :type: str
+        """
+
+        self._syslog_tls_certificate = syslog_tls_certificate
 
     def to_dict(self):
         """Returns the model properties as a dict"""
