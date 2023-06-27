@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **allowed_ops** | **list[str]** |  | [optional] 
 **assoc_id** | **str** |  | [optional] 
 **auth_method_sub_claims** | **dict(str, list[str])** |  | [optional] 
+**is_sub_claims_case_sensitive** | **bool** |  | [optional] 
 **role_name** | **str** |  | [optional] 
 **rules** | [**Rules**](Rules.md) |  | [optional] 
 

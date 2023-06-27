@@ -37,6 +37,7 @@ class AuthMethodRoleAssociation(object):
         'allowed_ops': 'list[str]',
         'assoc_id': 'str',
         'auth_method_sub_claims': 'dict(str, list[str])',
+        'is_sub_claims_case_sensitive': 'bool',
         'role_name': 'str',
         'rules': 'Rules'
     }
@@ -45,11 +46,12 @@ class AuthMethodRoleAssociation(object):
         'allowed_ops': 'allowed_ops',
         'assoc_id': 'assoc_id',
         'auth_method_sub_claims': 'auth_method_sub_claims',
+        'is_sub_claims_case_sensitive': 'is_sub_claims_case_sensitive',
         'role_name': 'role_name',
         'rules': 'rules'
     }
 
-    def __init__(self, allowed_ops=None, assoc_id=None, auth_method_sub_claims=None, role_name=None, rules=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, allowed_ops=None, assoc_id=None, auth_method_sub_claims=None, is_sub_claims_case_sensitive=None, role_name=None, rules=None, local_vars_configuration=None):  # noqa: E501
         """AuthMethodRoleAssociation - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -58,6 +60,7 @@ class AuthMethodRoleAssociation(object):
         self._allowed_ops = None
         self._assoc_id = None
         self._auth_method_sub_claims = None
+        self._is_sub_claims_case_sensitive = None
         self._role_name = None
         self._rules = None
         self.discriminator = None
@@ -68,6 +71,8 @@ class AuthMethodRoleAssociation(object):
             self.assoc_id = assoc_id
         if auth_method_sub_claims is not None:
             self.auth_method_sub_claims = auth_method_sub_claims
+        if is_sub_claims_case_sensitive is not None:
+            self.is_sub_claims_case_sensitive = is_sub_claims_case_sensitive
         if role_name is not None:
             self.role_name = role_name
         if rules is not None:
@@ -135,6 +140,27 @@ class AuthMethodRoleAssociation(object):
         """
 
         self._auth_method_sub_claims = auth_method_sub_claims
+
+    @property
+    def is_sub_claims_case_sensitive(self):
+        """Gets the is_sub_claims_case_sensitive of this AuthMethodRoleAssociation.  # noqa: E501
+
+
+        :return: The is_sub_claims_case_sensitive of this AuthMethodRoleAssociation.  # noqa: E501
+        :rtype: bool
+        """
+        return self._is_sub_claims_case_sensitive
+
+    @is_sub_claims_case_sensitive.setter
+    def is_sub_claims_case_sensitive(self, is_sub_claims_case_sensitive):
+        """Sets the is_sub_claims_case_sensitive of this AuthMethodRoleAssociation.
+
+
+        :param is_sub_claims_case_sensitive: The is_sub_claims_case_sensitive of this AuthMethodRoleAssociation.  # noqa: E501
+        :type: bool
+        """
+
+        self._is_sub_claims_case_sensitive = is_sub_claims_case_sensitive
 
     @property
     def role_name(self):
