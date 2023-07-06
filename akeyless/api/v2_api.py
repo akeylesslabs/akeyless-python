@@ -9893,7 +9893,7 @@ class V2Api(object):
         >>> result = thread.get()
 
         :param async_req bool: execute request asynchronously
-        :param AllowedAccessArgs body: (required)
+        :param GatewayCreateAllowedAccess body: (required)
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
@@ -9917,7 +9917,7 @@ class V2Api(object):
         >>> result = thread.get()
 
         :param async_req bool: execute request asynchronously
-        :param AllowedAccessArgs body: (required)
+        :param GatewayCreateAllowedAccess body: (required)
         :param _return_http_data_only: response data without head status code
                                        and headers
         :param _preload_content: if False, the urllib3.HTTPResponse object will
@@ -13137,7 +13137,7 @@ class V2Api(object):
         >>> result = thread.get()
 
         :param async_req bool: execute request asynchronously
-        :param AllowedAccessDeleteArgs body: (required)
+        :param GatewayDeleteAllowedAccess body: (required)
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
@@ -13161,7 +13161,7 @@ class V2Api(object):
         >>> result = thread.get()
 
         :param async_req bool: execute request asynchronously
-        :param AllowedAccessDeleteArgs body: (required)
+        :param GatewayDeleteAllowedAccess body: (required)
         :param _return_http_data_only: response data without head status code
                                        and headers
         :param _preload_content: if False, the urllib3.HTTPResponse object will
@@ -13717,7 +13717,7 @@ class V2Api(object):
         >>> result = thread.get()
 
         :param async_req bool: execute request asynchronously
-        :param AllowedAccessArgs body: (required)
+        :param GatewayGetAllowedAccess body: (required)
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
@@ -13741,7 +13741,7 @@ class V2Api(object):
         >>> result = thread.get()
 
         :param async_req bool: execute request asynchronously
-        :param AllowedAccessArgs body: (required)
+        :param GatewayGetAllowedAccess body: (required)
         :param _return_http_data_only: response data without head status code
                                        and headers
         :param _preload_content: if False, the urllib3.HTTPResponse object will
@@ -15569,7 +15569,7 @@ class V2Api(object):
         >>> result = thread.get()
 
         :param async_req bool: execute request asynchronously
-        :param AllowedAccessUpdateArgs body: (required)
+        :param GatewayUpdateAllowedAccess body: (required)
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
@@ -15593,7 +15593,7 @@ class V2Api(object):
         >>> result = thread.get()
 
         :param async_req bool: execute request asynchronously
-        :param AllowedAccessUpdateArgs body: (required)
+        :param GatewayUpdateAllowedAccess body: (required)
         :param _return_http_data_only: response data without head status code
                                        and headers
         :param _preload_content: if False, the urllib3.HTTPResponse object will

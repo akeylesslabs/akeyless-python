@@ -5414,7 +5414,7 @@ configuration = akeyless.Configuration(
 with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
-    body = akeyless.AllowedAccessArgs() # AllowedAccessArgs | 
+    body = akeyless.GatewayCreateAllowedAccess() # GatewayCreateAllowedAccess | 
 
     try:
         api_response = api_instance.gateway_create_allowed_access(body)
@@ -5427,7 +5427,7 @@ with akeyless.ApiClient() as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**AllowedAccessArgs**](AllowedAccessArgs.md)|  | 
+ **body** | [**GatewayCreateAllowedAccess**](GatewayCreateAllowedAccess.md)|  | 
 
 ### Return type
 
@@ -7094,7 +7094,7 @@ configuration = akeyless.Configuration(
 with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
-    body = akeyless.AllowedAccessDeleteArgs() # AllowedAccessDeleteArgs | 
+    body = akeyless.GatewayDeleteAllowedAccess() # GatewayDeleteAllowedAccess | 
 
     try:
         api_response = api_instance.gateway_delete_allowed_access(body)
@@ -7107,7 +7107,7 @@ with akeyless.ApiClient() as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**AllowedAccessDeleteArgs**](AllowedAccessDeleteArgs.md)|  | 
+ **body** | [**GatewayDeleteAllowedAccess**](GatewayDeleteAllowedAccess.md)|  | 
 
 ### Return type
 
@@ -7394,7 +7394,7 @@ configuration = akeyless.Configuration(
 with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
-    body = akeyless.AllowedAccessArgs() # AllowedAccessArgs | 
+    body = akeyless.GatewayGetAllowedAccess() # GatewayGetAllowedAccess | 
 
     try:
         api_response = api_instance.gateway_get_allowed_access(body)
@@ -7407,7 +7407,7 @@ with akeyless.ApiClient() as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**AllowedAccessArgs**](AllowedAccessArgs.md)|  | 
+ **body** | [**GatewayGetAllowedAccess**](GatewayGetAllowedAccess.md)|  | 
 
 ### Return type
 
@@ -8353,7 +8353,7 @@ configuration = akeyless.Configuration(
 with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
-    body = akeyless.AllowedAccessUpdateArgs() # AllowedAccessUpdateArgs | 
+    body = akeyless.GatewayUpdateAllowedAccess() # GatewayUpdateAllowedAccess | 
 
     try:
         api_response = api_instance.gateway_update_allowed_access(body)
@@ -8366,7 +8366,7 @@ with akeyless.ApiClient() as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**AllowedAccessUpdateArgs**](AllowedAccessUpdateArgs.md)|  | 
+ **body** | [**GatewayUpdateAllowedAccess**](GatewayUpdateAllowedAccess.md)|  | 
 
 ### Return type
 
