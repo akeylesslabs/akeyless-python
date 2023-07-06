@@ -38,6 +38,7 @@ class LogForwardingConfigPart(object):
         'azure_analytics_config': 'AzureLogAnalyticsForwardingConfig',
         'datadog_config': 'DatadogForwardingConfig',
         'elasticsearch_config': 'ElasticsearchLogForwardingConfig',
+        'google_chronicle_config': 'GoogleChronicleForwardingConfig',
         'json_output': 'bool',
         'logan_enable': 'bool',
         'logan_url': 'str',
@@ -55,6 +56,7 @@ class LogForwardingConfigPart(object):
         'azure_analytics_config': 'azure_analytics_config',
         'datadog_config': 'datadog_config',
         'elasticsearch_config': 'elasticsearch_config',
+        'google_chronicle_config': 'google_chronicle_config',
         'json_output': 'json_output',
         'logan_enable': 'logan_enable',
         'logan_url': 'logan_url',
@@ -67,7 +69,7 @@ class LogForwardingConfigPart(object):
         'target_log_type': 'target_log_type'
     }
 
-    def __init__(self, aws_s3_config=None, azure_analytics_config=None, datadog_config=None, elasticsearch_config=None, json_output=None, logan_enable=None, logan_url=None, logstash_config=None, logz_io_config=None, pull_interval_sec=None, splunk_config=None, sumo_logic_config=None, syslog_config=None, target_log_type=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, aws_s3_config=None, azure_analytics_config=None, datadog_config=None, elasticsearch_config=None, google_chronicle_config=None, json_output=None, logan_enable=None, logan_url=None, logstash_config=None, logz_io_config=None, pull_interval_sec=None, splunk_config=None, sumo_logic_config=None, syslog_config=None, target_log_type=None, local_vars_configuration=None):  # noqa: E501
         """LogForwardingConfigPart - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -77,6 +79,7 @@ class LogForwardingConfigPart(object):
         self._azure_analytics_config = None
         self._datadog_config = None
         self._elasticsearch_config = None
+        self._google_chronicle_config = None
         self._json_output = None
         self._logan_enable = None
         self._logan_url = None
@@ -97,6 +100,8 @@ class LogForwardingConfigPart(object):
             self.datadog_config = datadog_config
         if elasticsearch_config is not None:
             self.elasticsearch_config = elasticsearch_config
+        if google_chronicle_config is not None:
+            self.google_chronicle_config = google_chronicle_config
         if json_output is not None:
             self.json_output = json_output
         if logan_enable is not None:
@@ -201,6 +206,27 @@ class LogForwardingConfigPart(object):
         """
 
         self._elasticsearch_config = elasticsearch_config
+
+    @property
+    def google_chronicle_config(self):
+        """Gets the google_chronicle_config of this LogForwardingConfigPart.  # noqa: E501
+
+
+        :return: The google_chronicle_config of this LogForwardingConfigPart.  # noqa: E501
+        :rtype: GoogleChronicleForwardingConfig
+        """
+        return self._google_chronicle_config
+
+    @google_chronicle_config.setter
+    def google_chronicle_config(self, google_chronicle_config):
+        """Sets the google_chronicle_config of this LogForwardingConfigPart.
+
+
+        :param google_chronicle_config: The google_chronicle_config of this LogForwardingConfigPart.  # noqa: E501
+        :type: GoogleChronicleForwardingConfig
+        """
+
+        self._google_chronicle_config = google_chronicle_config
 
     @property
     def json_output(self):

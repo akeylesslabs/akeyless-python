@@ -42,6 +42,7 @@ class ItemGeneralInfo(object):
         'display_metadata': 'str',
         'dynamic_secret_producer_details': 'DynamicSecretProducerInfo',
         'importer_info': 'ImporterInfo',
+        'oidc_client_info': 'OidcClientInfo',
         'password_policy': 'PasswordPolicyInfo',
         'rotated_secret_details': 'RotatedSecretDetailsInfo',
         'secure_remote_access_details': 'SecureRemoteAccess',
@@ -58,6 +59,7 @@ class ItemGeneralInfo(object):
         'display_metadata': 'display_metadata',
         'dynamic_secret_producer_details': 'dynamic_secret_producer_details',
         'importer_info': 'importer_info',
+        'oidc_client_info': 'oidc_client_info',
         'password_policy': 'password_policy',
         'rotated_secret_details': 'rotated_secret_details',
         'secure_remote_access_details': 'secure_remote_access_details',
@@ -65,7 +67,7 @@ class ItemGeneralInfo(object):
         'tokenizer_info': 'tokenizer_info'
     }
 
-    def __init__(self, cert_issue_details=None, certificate_chain_info=None, certificates_template_info=None, classic_key_details=None, cluster_gw_url=None, display_metadata=None, dynamic_secret_producer_details=None, importer_info=None, password_policy=None, rotated_secret_details=None, secure_remote_access_details=None, static_secret_info=None, tokenizer_info=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, cert_issue_details=None, certificate_chain_info=None, certificates_template_info=None, classic_key_details=None, cluster_gw_url=None, display_metadata=None, dynamic_secret_producer_details=None, importer_info=None, oidc_client_info=None, password_policy=None, rotated_secret_details=None, secure_remote_access_details=None, static_secret_info=None, tokenizer_info=None, local_vars_configuration=None):  # noqa: E501
         """ItemGeneralInfo - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -79,6 +81,7 @@ class ItemGeneralInfo(object):
         self._display_metadata = None
         self._dynamic_secret_producer_details = None
         self._importer_info = None
+        self._oidc_client_info = None
         self._password_policy = None
         self._rotated_secret_details = None
         self._secure_remote_access_details = None
@@ -102,6 +105,8 @@ class ItemGeneralInfo(object):
             self.dynamic_secret_producer_details = dynamic_secret_producer_details
         if importer_info is not None:
             self.importer_info = importer_info
+        if oidc_client_info is not None:
+            self.oidc_client_info = oidc_client_info
         if password_policy is not None:
             self.password_policy = password_policy
         if rotated_secret_details is not None:
@@ -280,6 +285,27 @@ class ItemGeneralInfo(object):
         """
 
         self._importer_info = importer_info
+
+    @property
+    def oidc_client_info(self):
+        """Gets the oidc_client_info of this ItemGeneralInfo.  # noqa: E501
+
+
+        :return: The oidc_client_info of this ItemGeneralInfo.  # noqa: E501
+        :rtype: OidcClientInfo
+        """
+        return self._oidc_client_info
+
+    @oidc_client_info.setter
+    def oidc_client_info(self, oidc_client_info):
+        """Sets the oidc_client_info of this ItemGeneralInfo.
+
+
+        :param oidc_client_info: The oidc_client_info of this ItemGeneralInfo.  # noqa: E501
+        :type: OidcClientInfo
+        """
+
+        self._oidc_client_info = oidc_client_info
 
     @property
     def password_policy(self):

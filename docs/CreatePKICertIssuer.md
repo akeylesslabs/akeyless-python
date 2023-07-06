@@ -16,6 +16,7 @@ Name | Type | Description | Notes
 **destination_path** | **str** | A path in which to save generated certificates | [optional] 
 **expiration_event_in** | **list[str]** | How many days before the expiration of the certificate would you like to be notified. | [optional] 
 **gw_cluster_url** | **str** | The GW cluster URL to issue the certificate from, required in Public CA mode | [optional] 
+**is_ca** | **bool** | If set, the basic constraints extension will be added to certificate | [optional] 
 **json** | **bool** | Set output format to JSON | [optional] [default to False]
 **key_usage** | **str** | key-usage | [optional] [default to 'DigitalSignature,KeyAgreement,KeyEncipherment']
 **locality** | **str** | A comma-separated list of localities that will be set in the issued certificate | [optional] 

@@ -15,7 +15,7 @@
 
 from __future__ import absolute_import
 
-__version__ = "3.3.12"
+__version__ = "3.3.13"
 
 # import apis into sdk package
 from akeyless.api.v2_api import V2Api
@@ -33,6 +33,7 @@ from akeyless.models.api_key_access_rules import APIKeyAccessRules
 from akeyless.models.awsiam_access_rules import AWSIAMAccessRules
 from akeyless.models.aws_payload import AWSPayload
 from akeyless.models.aws_secrets_migration import AWSSecretsMigration
+from akeyless.models.access_permission_assignment import AccessPermissionAssignment
 from akeyless.models.account_general_settings import AccountGeneralSettings
 from akeyless.models.account_object_version_settings_output import AccountObjectVersionSettingsOutput
 from akeyless.models.active_directory_migration import ActiveDirectoryMigration
@@ -88,6 +89,8 @@ from akeyless.models.create_auth_method_azure_ad import CreateAuthMethodAzureAD
 from akeyless.models.create_auth_method_azure_ad_output import CreateAuthMethodAzureADOutput
 from akeyless.models.create_auth_method_cert import CreateAuthMethodCert
 from akeyless.models.create_auth_method_cert_output import CreateAuthMethodCertOutput
+from akeyless.models.create_auth_method_email import CreateAuthMethodEmail
+from akeyless.models.create_auth_method_email_output import CreateAuthMethodEmailOutput
 from akeyless.models.create_auth_method_gcp import CreateAuthMethodGCP
 from akeyless.models.create_auth_method_gcp_output import CreateAuthMethodGCPOutput
 from akeyless.models.create_auth_method_huawei import CreateAuthMethodHuawei
@@ -229,6 +232,7 @@ from akeyless.models.encrypt_with_classic_key_output import EncryptWithClassicKe
 from akeyless.models.esm_create import EsmCreate
 from akeyless.models.esm_create_secret_output import EsmCreateSecretOutput
 from akeyless.models.esm_delete import EsmDelete
+from akeyless.models.esm_delete_secret_output import EsmDeleteSecretOutput
 from akeyless.models.esm_get import EsmGet
 from akeyless.models.esm_get_secret_output import EsmGetSecretOutput
 from akeyless.models.esm_list import EsmList
@@ -423,6 +427,7 @@ from akeyless.models.get_tags import GetTags
 from akeyless.models.get_target import GetTarget
 from akeyless.models.get_target_details import GetTargetDetails
 from akeyless.models.get_target_details_output import GetTargetDetailsOutput
+from akeyless.models.google_chronicle_forwarding_config import GoogleChronicleForwardingConfig
 from akeyless.models.gw_cluster_identity import GwClusterIdentity
 from akeyless.models.hashi_migration import HashiMigration
 from akeyless.models.hashi_payload import HashiPayload
@@ -506,6 +511,7 @@ from akeyless.models.o_auth2_custom_claim import OAuth2CustomClaim
 from akeyless.models.oidc_access_rules import OIDCAccessRules
 from akeyless.models.oidc_custom_claim import OIDCCustomClaim
 from akeyless.models.object_version_settings_output import ObjectVersionSettingsOutput
+from akeyless.models.oidc_client_info import OidcClientInfo
 from akeyless.models.one_password_migration import OnePasswordMigration
 from akeyless.models.one_password_payload import OnePasswordPayload
 from akeyless.models.pki_certificate_issue_details import PKICertificateIssueDetails

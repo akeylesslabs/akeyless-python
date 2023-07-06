@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **display_metadata** | **str** |  | [optional] 
 **dynamic_secret_producer_details** | [**DynamicSecretProducerInfo**](DynamicSecretProducerInfo.md) |  | [optional] 
 **importer_info** | [**ImporterInfo**](ImporterInfo.md) |  | [optional] 
+**oidc_client_info** | [**OidcClientInfo**](OidcClientInfo.md) |  | [optional] 
 **password_policy** | [**PasswordPolicyInfo**](PasswordPolicyInfo.md) |  | [optional] 
 **rotated_secret_details** | [**RotatedSecretDetailsInfo**](RotatedSecretDetailsInfo.md) |  | [optional] 
 **secure_remote_access_details** | [**SecureRemoteAccess**](SecureRemoteAccess.md) |  | [optional] 

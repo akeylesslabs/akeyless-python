@@ -3,6 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**name** | **str** |  | [optional] 
 **secret_id** | **str** |  | [optional] 
 **version_id** | **str** |  | [optional] 
 

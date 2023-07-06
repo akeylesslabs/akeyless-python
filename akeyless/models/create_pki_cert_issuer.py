@@ -47,6 +47,7 @@ class CreatePKICertIssuer(object):
         'destination_path': 'str',
         'expiration_event_in': 'list[str]',
         'gw_cluster_url': 'str',
+        'is_ca': 'bool',
         'json': 'bool',
         'key_usage': 'str',
         'locality': 'str',
@@ -82,6 +83,7 @@ class CreatePKICertIssuer(object):
         'destination_path': 'destination-path',
         'expiration_event_in': 'expiration-event-in',
         'gw_cluster_url': 'gw-cluster-url',
+        'is_ca': 'is-ca',
         'json': 'json',
         'key_usage': 'key-usage',
         'locality': 'locality',
@@ -103,7 +105,7 @@ class CreatePKICertIssuer(object):
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, allow_any_name=None, allow_subdomains=None, allowed_domains=None, allowed_uri_sans=None, ca_target=None, client_flag=None, code_signing_flag=None, country=None, delete_protection=None, description=None, destination_path=None, expiration_event_in=None, gw_cluster_url=None, json=False, key_usage='DigitalSignature,KeyAgreement,KeyEncipherment', locality=None, metadata=None, name=None, not_enforce_hostnames=None, not_require_cn=None, organizational_units=None, organizations=None, postal_code=None, protect_certificates=None, province=None, server_flag=None, signer_key_name='dummy_signer_key', street_address=None, tag=None, token=None, ttl=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, allow_any_name=None, allow_subdomains=None, allowed_domains=None, allowed_uri_sans=None, ca_target=None, client_flag=None, code_signing_flag=None, country=None, delete_protection=None, description=None, destination_path=None, expiration_event_in=None, gw_cluster_url=None, is_ca=None, json=False, key_usage='DigitalSignature,KeyAgreement,KeyEncipherment', locality=None, metadata=None, name=None, not_enforce_hostnames=None, not_require_cn=None, organizational_units=None, organizations=None, postal_code=None, protect_certificates=None, province=None, server_flag=None, signer_key_name='dummy_signer_key', street_address=None, tag=None, token=None, ttl=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """CreatePKICertIssuer - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -122,6 +124,7 @@ class CreatePKICertIssuer(object):
         self._destination_path = None
         self._expiration_event_in = None
         self._gw_cluster_url = None
+        self._is_ca = None
         self._json = None
         self._key_usage = None
         self._locality = None
@@ -169,6 +172,8 @@ class CreatePKICertIssuer(object):
             self.expiration_event_in = expiration_event_in
         if gw_cluster_url is not None:
             self.gw_cluster_url = gw_cluster_url
+        if is_ca is not None:
+            self.is_ca = is_ca
         if json is not None:
             self.json = json
         if key_usage is not None:
@@ -503,6 +508,29 @@ class CreatePKICertIssuer(object):
         """
 
         self._gw_cluster_url = gw_cluster_url
+
+    @property
+    def is_ca(self):
+        """Gets the is_ca of this CreatePKICertIssuer.  # noqa: E501
+
+        If set, the basic constraints extension will be added to certificate  # noqa: E501
+
+        :return: The is_ca of this CreatePKICertIssuer.  # noqa: E501
+        :rtype: bool
+        """
+        return self._is_ca
+
+    @is_ca.setter
+    def is_ca(self, is_ca):
+        """Sets the is_ca of this CreatePKICertIssuer.
+
+        If set, the basic constraints extension will be added to certificate  # noqa: E501
+
+        :param is_ca: The is_ca of this CreatePKICertIssuer.  # noqa: E501
+        :type: bool
+        """
+
+        self._is_ca = is_ca
 
     @property
     def json(self):

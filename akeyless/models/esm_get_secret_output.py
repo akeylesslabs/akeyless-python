@@ -36,16 +36,18 @@ class EsmGetSecretOutput(object):
     openapi_types = {
         'binary_value': 'bool',
         'metadata': 'object',
+        'name': 'str',
         'value': 'str'
     }
 
     attribute_map = {
         'binary_value': 'binary_value',
         'metadata': 'metadata',
+        'name': 'name',
         'value': 'value'
     }
 
-    def __init__(self, binary_value=None, metadata=None, value=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, binary_value=None, metadata=None, name=None, value=None, local_vars_configuration=None):  # noqa: E501
         """EsmGetSecretOutput - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -53,6 +55,7 @@ class EsmGetSecretOutput(object):
 
         self._binary_value = None
         self._metadata = None
+        self._name = None
         self._value = None
         self.discriminator = None
 
@@ -60,6 +63,8 @@ class EsmGetSecretOutput(object):
             self.binary_value = binary_value
         if metadata is not None:
             self.metadata = metadata
+        if name is not None:
+            self.name = name
         if value is not None:
             self.value = value
 
@@ -104,6 +109,27 @@ class EsmGetSecretOutput(object):
         """
 
         self._metadata = metadata
+
+    @property
+    def name(self):
+        """Gets the name of this EsmGetSecretOutput.  # noqa: E501
+
+
+        :return: The name of this EsmGetSecretOutput.  # noqa: E501
+        :rtype: str
+        """
+        return self._name
+
+    @name.setter
+    def name(self, name):
+        """Sets the name of this EsmGetSecretOutput.
+
+
+        :param name: The name of this EsmGetSecretOutput.  # noqa: E501
+        :type: str
+        """
+
+        self._name = name
 
     @property
     def value(self):
