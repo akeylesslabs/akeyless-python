@@ -117,12 +117,12 @@ Method | HTTP request | Description
 [**gateway_create_producer_redis**](V2Api.md#gateway_create_producer_redis) | **POST** /gateway-create-producer-Redis | 
 [**gateway_create_producer_redshift**](V2Api.md#gateway_create_producer_redshift) | **POST** /gateway-create-producer-redshift | 
 [**gateway_create_producer_snowflake**](V2Api.md#gateway_create_producer_snowflake) | **POST** /gateway-create-producer-snowflake | 
-[**gateway_delete_allowed_access**](V2Api.md#gateway_delete_allowed_access) | **DELETE** /gateway-delete-allowed-access | 
+[**gateway_delete_allowed_access**](V2Api.md#gateway_delete_allowed_access) | **POST** /gateway-delete-allowed-access | 
 [**gateway_delete_k8_s_auth_config**](V2Api.md#gateway_delete_k8_s_auth_config) | **POST** /gateway-delete-k8s-auth-config | 
 [**gateway_delete_migration**](V2Api.md#gateway_delete_migration) | **POST** /gateway-delete-migration | 
 [**gateway_delete_producer**](V2Api.md#gateway_delete_producer) | **POST** /gateway-delete-producer | 
 [**gateway_download_customer_fragments**](V2Api.md#gateway_download_customer_fragments) | **POST** /gateway-download-customer-fragments | 
-[**gateway_get_allowed_access**](V2Api.md#gateway_get_allowed_access) | **GET** /gateway-get-allowed-access | 
+[**gateway_get_allowed_access**](V2Api.md#gateway_get_allowed_access) | **POST** /gateway-get-allowed-access | 
 [**gateway_get_config**](V2Api.md#gateway_get_config) | **POST** /gateway-get-config | 
 [**gateway_get_k8_s_auth_config**](V2Api.md#gateway_get_k8_s_auth_config) | **POST** /gateway-get-k8s-auth-config | 
 [**gateway_get_ldap_auth_config**](V2Api.md#gateway_get_ldap_auth_config) | **POST** /gateway-get-ldap-auth-config | 
@@ -170,6 +170,7 @@ Method | HTTP request | Description
 [**gateway_update_producer_snowflake**](V2Api.md#gateway_update_producer_snowflake) | **POST** /gateway-update-producer-snowflake | 
 [**gateway_update_tls_cert**](V2Api.md#gateway_update_tls_cert) | **POST** /gateway-update-tls-cert | 
 [**gateway_update_tmp_users**](V2Api.md#gateway_update_tmp_users) | **POST** /gateway-update-producer-tmp-creds | 
+[**generate_csr**](V2Api.md#generate_csr) | **POST** /generate-csr | 
 [**get_account_logo**](V2Api.md#get_account_logo) | **POST** /get-account-logo | 
 [**get_account_settings**](V2Api.md#get_account_settings) | **POST** /get-account-settings | 
 [**get_auth_method**](V2Api.md#get_auth_method) | **POST** /get-auth-method | 
@@ -10244,6 +10245,66 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | gatewayUpdateTmpUsersResponse wraps response body. |  -  |
+**0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **generate_csr**
+> GenerateCsrOutput generate_csr(body)
+
+
+
+### Example
+
+```python
+from __future__ import print_function
+import time
+import akeyless
+from akeyless.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.akeyless.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = akeyless.Configuration(
+    host = "https://api.akeyless.io"
+)
+
+
+# Enter a context with an instance of the API client
+with akeyless.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = akeyless.V2Api(api_client)
+    body = akeyless.GenerateCsr() # GenerateCsr | 
+
+    try:
+        api_response = api_instance.generate_csr(body)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling V2Api->generate_csr: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**GenerateCsr**](GenerateCsr.md)|  | 
+
+### Return type
+
+[**GenerateCsrOutput**](GenerateCsrOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | generateCsrResponse wraps response body. |  -  |
 **0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

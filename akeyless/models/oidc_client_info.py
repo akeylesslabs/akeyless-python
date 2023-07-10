@@ -48,7 +48,7 @@ class OidcClientInfo(object):
     attribute_map = {
         'access_permission_assignment': 'access_permission_assignment',
         'audience': 'audience',
-        'client_id': 'client-id',
+        'client_id': 'client_id',
         'grant_types': 'grant_types',
         'logout_uris': 'logout_uris',
         'public': 'public',

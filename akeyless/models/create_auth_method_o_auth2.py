@@ -43,7 +43,6 @@ class CreateAuthMethodOAuth2(object):
         'issuer': 'str',
         'json': 'bool',
         'jwks_json_data': 'str',
-        'jwks_json_file': 'str',
         'jwks_uri': 'str',
         'jwt_ttl': 'int',
         'name': 'str',
@@ -62,7 +61,6 @@ class CreateAuthMethodOAuth2(object):
         'issuer': 'issuer',
         'json': 'json',
         'jwks_json_data': 'jwks-json-data',
-        'jwks_json_file': 'jwks-json-file',
         'jwks_uri': 'jwks-uri',
         'jwt_ttl': 'jwt-ttl',
         'name': 'name',
@@ -71,7 +69,7 @@ class CreateAuthMethodOAuth2(object):
         'unique_identifier': 'unique-identifier'
     }
 
-    def __init__(self, access_expires=0, audience=None, bound_client_ids=None, bound_ips=None, force_sub_claims=None, gw_bound_ips=None, issuer=None, json=False, jwks_json_data=None, jwks_json_file=None, jwks_uri='default_jwks_url', jwt_ttl=0, name=None, token=None, uid_token=None, unique_identifier=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, access_expires=0, audience=None, bound_client_ids=None, bound_ips=None, force_sub_claims=None, gw_bound_ips=None, issuer=None, json=False, jwks_json_data=None, jwks_uri='default_jwks_url', jwt_ttl=0, name=None, token=None, uid_token=None, unique_identifier=None, local_vars_configuration=None):  # noqa: E501
         """CreateAuthMethodOAuth2 - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -86,7 +84,6 @@ class CreateAuthMethodOAuth2(object):
         self._issuer = None
         self._json = None
         self._jwks_json_data = None
-        self._jwks_json_file = None
         self._jwks_uri = None
         self._jwt_ttl = None
         self._name = None
@@ -113,8 +110,6 @@ class CreateAuthMethodOAuth2(object):
             self.json = json
         if jwks_json_data is not None:
             self.jwks_json_data = jwks_json_data
-        if jwks_json_file is not None:
-            self.jwks_json_file = jwks_json_file
         self.jwks_uri = jwks_uri
         if jwt_ttl is not None:
             self.jwt_ttl = jwt_ttl
@@ -331,29 +326,6 @@ class CreateAuthMethodOAuth2(object):
         """
 
         self._jwks_json_data = jwks_json_data
-
-    @property
-    def jwks_json_file(self):
-        """Gets the jwks_json_file of this CreateAuthMethodOAuth2.  # noqa: E501
-
-        JSON Web Key Set (JWKS) JSON file path that will be used to verify any JSON Web Token (JWT) issued by the authorization server.  # noqa: E501
-
-        :return: The jwks_json_file of this CreateAuthMethodOAuth2.  # noqa: E501
-        :rtype: str
-        """
-        return self._jwks_json_file
-
-    @jwks_json_file.setter
-    def jwks_json_file(self, jwks_json_file):
-        """Sets the jwks_json_file of this CreateAuthMethodOAuth2.
-
-        JSON Web Key Set (JWKS) JSON file path that will be used to verify any JSON Web Token (JWT) issued by the authorization server.  # noqa: E501
-
-        :param jwks_json_file: The jwks_json_file of this CreateAuthMethodOAuth2.  # noqa: E501
-        :type: str
-        """
-
-        self._jwks_json_file = jwks_json_file
 
     @property
     def jwks_uri(self):

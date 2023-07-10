@@ -15,7 +15,7 @@
 
 from __future__ import absolute_import
 
-__version__ = "3.3.14"
+__version__ = "3.3.15"
 
 # import apis into sdk package
 from akeyless.api.v2_api import V2Api
@@ -404,6 +404,8 @@ from akeyless.models.gateway_update_tmp_users import GatewayUpdateTmpUsers
 from akeyless.models.gateways_list_response import GatewaysListResponse
 from akeyless.models.gen_customer_fragment import GenCustomerFragment
 from akeyless.models.general_config_part import GeneralConfigPart
+from akeyless.models.generate_csr import GenerateCsr
+from akeyless.models.generate_csr_output import GenerateCsrOutput
 from akeyless.models.get_account_settings import GetAccountSettings
 from akeyless.models.get_account_settings_command_output import GetAccountSettingsCommandOutput
 from akeyless.models.get_auth_method import GetAuthMethod
