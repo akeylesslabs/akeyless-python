@@ -225,7 +225,7 @@ class CreateEventForwarder(object):
     def email_to(self):
         """Gets the email_to of this CreateEventForwarder.  # noqa: E501
 
-        A comma seperated list of email addresses to send event to (relevant only for \\\"email\\\" Event Forwarder)  # noqa: E501
+        A comma seperated list of email addresses to send event to (relevant only for \"email\" Event Forwarder)  # noqa: E501
 
         :return: The email_to of this CreateEventForwarder.  # noqa: E501
         :rtype: str
@@ -236,7 +236,7 @@ class CreateEventForwarder(object):
     def email_to(self, email_to):
         """Sets the email_to of this CreateEventForwarder.
 
-        A comma seperated list of email addresses to send event to (relevant only for \\\"email\\\" Event Forwarder)  # noqa: E501
+        A comma seperated list of email addresses to send event to (relevant only for \"email\" Event Forwarder)  # noqa: E501
 
         :param email_to: The email_to of this CreateEventForwarder.  # noqa: E501
         :type: str
@@ -273,7 +273,7 @@ class CreateEventForwarder(object):
     def event_source_type(self):
         """Gets the event_source_type of this CreateEventForwarder.  # noqa: E501
 
-        Event Source type [item, target]  # noqa: E501
+        Event Source type [item, target, auth_method]  # noqa: E501
 
         :return: The event_source_type of this CreateEventForwarder.  # noqa: E501
         :rtype: str
@@ -284,7 +284,7 @@ class CreateEventForwarder(object):
     def event_source_type(self, event_source_type):
         """Sets the event_source_type of this CreateEventForwarder.
 
-        Event Source type [item, target]  # noqa: E501
+        Event Source type [item, target, auth_method]  # noqa: E501
 
         :param event_source_type: The event_source_type of this CreateEventForwarder.  # noqa: E501
         :type: str
@@ -296,7 +296,7 @@ class CreateEventForwarder(object):
     def event_types(self):
         """Gets the event_types of this CreateEventForwarder.  # noqa: E501
 
-        Event types  # noqa: E501
+        List of event types to notify about [request-access, certificate-pending-expiration, certificate-expired, auth-method-pending-expiration, auth-method-expired, rotated-secret-success, rotated-secret-failure, dynamic-secret-failure, multi-auth-failure]  # noqa: E501
 
         :return: The event_types of this CreateEventForwarder.  # noqa: E501
         :rtype: list[str]
@@ -307,7 +307,7 @@ class CreateEventForwarder(object):
     def event_types(self, event_types):
         """Sets the event_types of this CreateEventForwarder.
 
-        Event types  # noqa: E501
+        List of event types to notify about [request-access, certificate-pending-expiration, certificate-expired, auth-method-pending-expiration, auth-method-expired, rotated-secret-success, rotated-secret-failure, dynamic-secret-failure, multi-auth-failure]  # noqa: E501
 
         :param event_types: The event_types of this CreateEventForwarder.  # noqa: E501
         :type: list[str]

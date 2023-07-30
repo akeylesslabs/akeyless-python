@@ -39,8 +39,10 @@ class DecryptPKCS1(object):
         'item_id': 'int',
         'json': 'bool',
         'key_name': 'str',
+        'output_format': 'str',
         'token': 'str',
-        'uid_token': 'str'
+        'uid_token': 'str',
+        'version': 'int'
     }
 
     attribute_map = {
@@ -49,11 +51,13 @@ class DecryptPKCS1(object):
         'item_id': 'item-id',
         'json': 'json',
         'key_name': 'key-name',
+        'output_format': 'output-format',
         'token': 'token',
-        'uid_token': 'uid-token'
+        'uid_token': 'uid-token',
+        'version': 'version'
     }
 
-    def __init__(self, ciphertext=None, display_id=None, item_id=None, json=False, key_name=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, ciphertext=None, display_id=None, item_id=None, json=False, key_name=None, output_format=None, token=None, uid_token=None, version=None, local_vars_configuration=None):  # noqa: E501
         """DecryptPKCS1 - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -64,8 +68,10 @@ class DecryptPKCS1(object):
         self._item_id = None
         self._json = None
         self._key_name = None
+        self._output_format = None
         self._token = None
         self._uid_token = None
+        self._version = None
         self.discriminator = None
 
         self.ciphertext = ciphertext
@@ -76,10 +82,14 @@ class DecryptPKCS1(object):
         if json is not None:
             self.json = json
         self.key_name = key_name
+        if output_format is not None:
+            self.output_format = output_format
         if token is not None:
             self.token = token
         if uid_token is not None:
             self.uid_token = uid_token
+        if version is not None:
+            self.version = version
 
     @property
     def ciphertext(self):
@@ -201,6 +211,29 @@ class DecryptPKCS1(object):
         self._key_name = key_name
 
     @property
+    def output_format(self):
+        """Gets the output_format of this DecryptPKCS1.  # noqa: E501
+
+        If specified, the output will be formatted accordingly. options: [base64]  # noqa: E501
+
+        :return: The output_format of this DecryptPKCS1.  # noqa: E501
+        :rtype: str
+        """
+        return self._output_format
+
+    @output_format.setter
+    def output_format(self, output_format):
+        """Sets the output_format of this DecryptPKCS1.
+
+        If specified, the output will be formatted accordingly. options: [base64]  # noqa: E501
+
+        :param output_format: The output_format of this DecryptPKCS1.  # noqa: E501
+        :type: str
+        """
+
+        self._output_format = output_format
+
+    @property
     def token(self):
         """Gets the token of this DecryptPKCS1.  # noqa: E501
 
@@ -245,6 +278,29 @@ class DecryptPKCS1(object):
         """
 
         self._uid_token = uid_token
+
+    @property
+    def version(self):
+        """Gets the version of this DecryptPKCS1.  # noqa: E501
+
+        key version (relevant only for classic key)  # noqa: E501
+
+        :return: The version of this DecryptPKCS1.  # noqa: E501
+        :rtype: int
+        """
+        return self._version
+
+    @version.setter
+    def version(self, version):
+        """Sets the version of this DecryptPKCS1.
+
+        key version (relevant only for classic key)  # noqa: E501
+
+        :param version: The version of this DecryptPKCS1.  # noqa: E501
+        :type: int
+        """
+
+        self._version = version
 
     def to_dict(self):
         """Returns the model properties as a dict"""

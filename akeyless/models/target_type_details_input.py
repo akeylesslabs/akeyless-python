@@ -34,3227 +34,669 @@ class TargetTypeDetailsInput(object):
                             and the value is json key in definition.
     """
     openapi_types = {
-        'administrative_port': 'str',
-        'api_key': 'str',
-        'app_private_key': 'list[int]',
-        'artifactory_admin_apikey': 'str',
-        'artifactory_admin_username': 'str',
-        'artifactory_base_url': 'str',
-        'auth_flow': 'str',
-        'authorization_port': 'str',
-        'aws_access_key_id': 'str',
-        'aws_region': 'str',
-        'aws_secret_access_key': 'str',
-        'aws_session_token': 'str',
-        'azure_client_id': 'str',
-        'azure_client_secret': 'str',
-        'azure_resource_group_name': 'str',
-        'azure_resource_name': 'str',
-        'azure_subscription_id': 'str',
-        'azure_tenant_id': 'str',
-        'ca_cert_data': 'list[int]',
-        'ca_cert_name': 'str',
-        'certificate': 'str',
-        'chef_server_host_name': 'str',
-        'chef_server_key': 'str',
-        'chef_server_port': 'str',
-        'chef_server_url': 'str',
-        'chef_server_username': 'str',
-        'chef_skip_ssl': 'bool',
-        'client_id': 'str',
-        'client_secret': 'str',
-        'db_host_name': 'str',
-        'db_name': 'str',
-        'db_port': 'str',
-        'db_private_key': 'str',
-        'db_private_key_passphrase': 'str',
-        'db_pwd': 'str',
-        'db_server_certificates': 'str',
-        'db_server_name': 'str',
-        'db_user_name': 'str',
-        'domain_name': 'str',
-        'eks_access_key_id': 'str',
-        'eks_cluster_ca_certificate': 'str',
-        'eks_cluster_endpoint': 'str',
-        'eks_cluster_name': 'str',
-        'eks_region': 'str',
-        'eks_secret_access_key': 'str',
-        'email': 'str',
-        'first_name': 'str',
-        'gcp_service_account_email': 'str',
-        'gcp_service_account_key': 'str',
-        'gcp_service_account_key_base64': 'str',
-        'github_app_id': 'int',
-        'github_app_private_key': 'str',
-        'github_base_url': 'str',
-        'gke_cluster_ca_certificate': 'str',
-        'gke_cluster_endpoint': 'str',
-        'gke_cluster_name': 'str',
-        'gke_service_account_key': 'str',
-        'gke_service_account_name': 'str',
-        'host': 'str',
-        'hostname': 'str',
-        'hosts': 'dict(str, str)',
-        'imap_fqdn': 'str',
-        'imap_password': 'str',
-        'imap_port': 'str',
-        'imap_user': 'str',
-        'implementation_type': 'str',
-        'k8s_bearer_token': 'str',
-        'k8s_cluster_ca_certificate': 'str',
-        'k8s_cluster_endpoint': 'str',
-        'last_name': 'str',
-        'ldap_audience': 'str',
-        'ldap_bind_dn': 'str',
-        'ldap_bind_password': 'str',
-        'ldap_certificate': 'str',
-        'ldap_token_expiration': 'str',
-        'ldap_url': 'str',
-        'mongodb_atlas_api_private_key': 'str',
-        'mongodb_atlas_api_public_key': 'str',
-        'mongodb_atlas_project_id': 'str',
-        'mongodb_db_name': 'str',
-        'mongodb_default_auth_db': 'str',
-        'mongodb_host_port': 'str',
-        'mongodb_is_atlas': 'bool',
-        'mongodb_password': 'str',
-        'mongodb_uri_connection': 'str',
-        'mongodb_uri_options': 'str',
-        'mongodb_username': 'str',
-        'password': 'str',
-        'payload': 'str',
-        'phone': 'str',
-        'ping_url': 'str',
-        'port': 'str',
-        'private_key': 'str',
-        'private_key_password': 'str',
-        'privileged_user': 'str',
-        'profile_id': 'str',
-        'rabbitmq_server_password': 'str',
-        'rabbitmq_server_uri': 'str',
-        'rabbitmq_server_user': 'str',
-        'security_token': 'str',
-        'sf_account': 'str',
-        'ssl_connection_certificate': 'str',
-        'ssl_connection_mode': 'bool',
-        'tenant_url': 'str',
-        'timeout': 'int',
-        'url': 'str',
-        'use_gw_cloud_identity': 'bool',
-        'use_gw_service_account': 'bool',
-        'use_tls': 'bool',
-        'user_name': 'str',
-        'user_password': 'str',
-        'username': 'str',
-        'validation_email': 'str',
-        'venafi_api_key': 'str',
-        'venafi_base_url': 'str',
-        'venafi_tpp_access_token': 'str',
-        'venafi_tpp_client_id': 'str',
-        'venafi_tpp_password': 'str',
-        'venafi_tpp_refresh_token': 'str',
-        'venafi_tpp_username': 'str',
-        'venafi_use_tpp': 'bool',
-        'venafi_zone': 'str'
+        'artifactory_target_details': 'ArtifactoryTargetDetails',
+        'aws_target_details': 'AWSTargetDetails',
+        'azure_target_details': 'AzureTargetDetails',
+        'chef_target_details': 'ChefTargetDetails',
+        'custom_target_details': 'CustomTargetDetails',
+        'db_target_details': 'DbTargetDetails',
+        'dockerhub_target_details': 'DockerhubTargetDetails',
+        'eks_target_details': 'EKSTargetDetails',
+        'gcp_target_details': 'GcpTargetDetails',
+        'github_target_details': 'GithubTargetDetails',
+        'gke_target_details': 'GKETargetDetails',
+        'globalsign_atlas_target_details': 'GlobalSignAtlasTargetDetails',
+        'globalsign_target_details': 'GlobalSignGCCTargetDetails',
+        'ldap_target_details': 'LdapTargetDetails',
+        'linked_target_details': 'LinkedTargetDetails',
+        'mongo_db_target_details': 'MongoDBTargetDetails',
+        'native_k8s_target_details': 'NativeK8sTargetDetails',
+        'ping_target_details': 'PingTargetDetails',
+        'rabbit_mq_target_details': 'RabbitMQTargetDetails',
+        'salesforce_target_details': 'SalesforceTargetDetails',
+        'ssh_target_details': 'SSHTargetDetails',
+        'venafi_target_details': 'VenafiTargetDetails',
+        'web_target_details': 'WebTargetDetails',
+        'windows_target_details': 'WindowsTargetDetails',
+        'zerossl_target_details': 'ZeroSSLTargetDetails'
     }
 
     attribute_map = {
-        'administrative_port': 'administrative_port',
-        'api_key': 'api_key',
-        'app_private_key': 'app_private_key',
-        'artifactory_admin_apikey': 'artifactory_admin_apikey',
-        'artifactory_admin_username': 'artifactory_admin_username',
-        'artifactory_base_url': 'artifactory_base_url',
-        'auth_flow': 'auth_flow',
-        'authorization_port': 'authorization_port',
-        'aws_access_key_id': 'aws_access_key_id',
-        'aws_region': 'aws_region',
-        'aws_secret_access_key': 'aws_secret_access_key',
-        'aws_session_token': 'aws_session_token',
-        'azure_client_id': 'azure_client_id',
-        'azure_client_secret': 'azure_client_secret',
-        'azure_resource_group_name': 'azure_resource_group_name',
-        'azure_resource_name': 'azure_resource_name',
-        'azure_subscription_id': 'azure_subscription_id',
-        'azure_tenant_id': 'azure_tenant_id',
-        'ca_cert_data': 'ca_cert_data',
-        'ca_cert_name': 'ca_cert_name',
-        'certificate': 'certificate',
-        'chef_server_host_name': 'chef_server_host_name',
-        'chef_server_key': 'chef_server_key',
-        'chef_server_port': 'chef_server_port',
-        'chef_server_url': 'chef_server_url',
-        'chef_server_username': 'chef_server_username',
-        'chef_skip_ssl': 'chef_skip_ssl',
-        'client_id': 'client_id',
-        'client_secret': 'client_secret',
-        'db_host_name': 'db_host_name',
-        'db_name': 'db_name',
-        'db_port': 'db_port',
-        'db_private_key': 'db_private_key',
-        'db_private_key_passphrase': 'db_private_key_passphrase',
-        'db_pwd': 'db_pwd',
-        'db_server_certificates': 'db_server_certificates',
-        'db_server_name': 'db_server_name',
-        'db_user_name': 'db_user_name',
-        'domain_name': 'domain_name',
-        'eks_access_key_id': 'eks_access_key_id',
-        'eks_cluster_ca_certificate': 'eks_cluster_ca_certificate',
-        'eks_cluster_endpoint': 'eks_cluster_endpoint',
-        'eks_cluster_name': 'eks_cluster_name',
-        'eks_region': 'eks_region',
-        'eks_secret_access_key': 'eks_secret_access_key',
-        'email': 'email',
-        'first_name': 'first_name',
-        'gcp_service_account_email': 'gcp_service_account_email',
-        'gcp_service_account_key': 'gcp_service_account_key',
-        'gcp_service_account_key_base64': 'gcp_service_account_key_base64',
-        'github_app_id': 'github_app_id',
-        'github_app_private_key': 'github_app_private_key',
-        'github_base_url': 'github_base_url',
-        'gke_cluster_ca_certificate': 'gke_cluster_ca_certificate',
-        'gke_cluster_endpoint': 'gke_cluster_endpoint',
-        'gke_cluster_name': 'gke_cluster_name',
-        'gke_service_account_key': 'gke_service_account_key',
-        'gke_service_account_name': 'gke_service_account_name',
-        'host': 'host',
-        'hostname': 'hostname',
-        'hosts': 'hosts',
-        'imap_fqdn': 'imap_fqdn',
-        'imap_password': 'imap_password',
-        'imap_port': 'imap_port',
-        'imap_user': 'imap_user',
-        'implementation_type': 'implementation_type',
-        'k8s_bearer_token': 'k8s_bearer_token',
-        'k8s_cluster_ca_certificate': 'k8s_cluster_ca_certificate',
-        'k8s_cluster_endpoint': 'k8s_cluster_endpoint',
-        'last_name': 'last_name',
-        'ldap_audience': 'ldap_audience',
-        'ldap_bind_dn': 'ldap_bind_dn',
-        'ldap_bind_password': 'ldap_bind_password',
-        'ldap_certificate': 'ldap_certificate',
-        'ldap_token_expiration': 'ldap_token_expiration',
-        'ldap_url': 'ldap_url',
-        'mongodb_atlas_api_private_key': 'mongodb_atlas_api_private_key',
-        'mongodb_atlas_api_public_key': 'mongodb_atlas_api_public_key',
-        'mongodb_atlas_project_id': 'mongodb_atlas_project_id',
-        'mongodb_db_name': 'mongodb_db_name',
-        'mongodb_default_auth_db': 'mongodb_default_auth_db',
-        'mongodb_host_port': 'mongodb_host_port',
-        'mongodb_is_atlas': 'mongodb_is_atlas',
-        'mongodb_password': 'mongodb_password',
-        'mongodb_uri_connection': 'mongodb_uri_connection',
-        'mongodb_uri_options': 'mongodb_uri_options',
-        'mongodb_username': 'mongodb_username',
-        'password': 'password',
-        'payload': 'payload',
-        'phone': 'phone',
-        'ping_url': 'ping_url',
-        'port': 'port',
-        'private_key': 'private_key',
-        'private_key_password': 'private_key_password',
-        'privileged_user': 'privileged_user',
-        'profile_id': 'profile_id',
-        'rabbitmq_server_password': 'rabbitmq_server_password',
-        'rabbitmq_server_uri': 'rabbitmq_server_uri',
-        'rabbitmq_server_user': 'rabbitmq_server_user',
-        'security_token': 'security_token',
-        'sf_account': 'sf_account',
-        'ssl_connection_certificate': 'ssl_connection_certificate',
-        'ssl_connection_mode': 'ssl_connection_mode',
-        'tenant_url': 'tenant_url',
-        'timeout': 'timeout',
-        'url': 'url',
-        'use_gw_cloud_identity': 'use_gw_cloud_identity',
-        'use_gw_service_account': 'use_gw_service_account',
-        'use_tls': 'use_tls',
-        'user_name': 'user_name',
-        'user_password': 'user_password',
-        'username': 'username',
-        'validation_email': 'validation_email',
-        'venafi_api_key': 'venafi_api_key',
-        'venafi_base_url': 'venafi_base_url',
-        'venafi_tpp_access_token': 'venafi_tpp_access_token',
-        'venafi_tpp_client_id': 'venafi_tpp_client_id',
-        'venafi_tpp_password': 'venafi_tpp_password',
-        'venafi_tpp_refresh_token': 'venafi_tpp_refresh_token',
-        'venafi_tpp_username': 'venafi_tpp_username',
-        'venafi_use_tpp': 'venafi_use_tpp',
-        'venafi_zone': 'venafi_zone'
+        'artifactory_target_details': 'artifactory_target_details',
+        'aws_target_details': 'aws_target_details',
+        'azure_target_details': 'azure_target_details',
+        'chef_target_details': 'chef_target_details',
+        'custom_target_details': 'custom_target_details',
+        'db_target_details': 'db_target_details',
+        'dockerhub_target_details': 'dockerhub_target_details',
+        'eks_target_details': 'eks_target_details',
+        'gcp_target_details': 'gcp_target_details',
+        'github_target_details': 'github_target_details',
+        'gke_target_details': 'gke_target_details',
+        'globalsign_atlas_target_details': 'globalsign_atlas_target_details',
+        'globalsign_target_details': 'globalsign_target_details',
+        'ldap_target_details': 'ldap_target_details',
+        'linked_target_details': 'linked_target_details',
+        'mongo_db_target_details': 'mongo_db_target_details',
+        'native_k8s_target_details': 'native_k8s_target_details',
+        'ping_target_details': 'ping_target_details',
+        'rabbit_mq_target_details': 'rabbit_mq_target_details',
+        'salesforce_target_details': 'salesforce_target_details',
+        'ssh_target_details': 'ssh_target_details',
+        'venafi_target_details': 'venafi_target_details',
+        'web_target_details': 'web_target_details',
+        'windows_target_details': 'windows_target_details',
+        'zerossl_target_details': 'zerossl_target_details'
     }
 
-    def __init__(self, administrative_port=None, api_key=None, app_private_key=None, artifactory_admin_apikey=None, artifactory_admin_username=None, artifactory_base_url=None, auth_flow=None, authorization_port=None, aws_access_key_id=None, aws_region=None, aws_secret_access_key=None, aws_session_token=None, azure_client_id=None, azure_client_secret=None, azure_resource_group_name=None, azure_resource_name=None, azure_subscription_id=None, azure_tenant_id=None, ca_cert_data=None, ca_cert_name=None, certificate=None, chef_server_host_name=None, chef_server_key=None, chef_server_port=None, chef_server_url=None, chef_server_username=None, chef_skip_ssl=None, client_id=None, client_secret=None, db_host_name=None, db_name=None, db_port=None, db_private_key=None, db_private_key_passphrase=None, db_pwd=None, db_server_certificates=None, db_server_name=None, db_user_name=None, domain_name=None, eks_access_key_id=None, eks_cluster_ca_certificate=None, eks_cluster_endpoint=None, eks_cluster_name=None, eks_region=None, eks_secret_access_key=None, email=None, first_name=None, gcp_service_account_email=None, gcp_service_account_key=None, gcp_service_account_key_base64=None, github_app_id=None, github_app_private_key=None, github_base_url=None, gke_cluster_ca_certificate=None, gke_cluster_endpoint=None, gke_cluster_name=None, gke_service_account_key=None, gke_service_account_name=None, host=None, hostname=None, hosts=None, imap_fqdn=None, imap_password=None, imap_port=None, imap_user=None, implementation_type=None, k8s_bearer_token=None, k8s_cluster_ca_certificate=None, k8s_cluster_endpoint=None, last_name=None, ldap_audience=None, ldap_bind_dn=None, ldap_bind_password=None, ldap_certificate=None, ldap_token_expiration=None, ldap_url=None, mongodb_atlas_api_private_key=None, mongodb_atlas_api_public_key=None, mongodb_atlas_project_id=None, mongodb_db_name=None, mongodb_default_auth_db=None, mongodb_host_port=None, mongodb_is_atlas=None, mongodb_password=None, mongodb_uri_connection=None, mongodb_uri_options=None, mongodb_username=None, password=None, payload=None, phone=None, ping_url=None, port=None, private_key=None, private_key_password=None, privileged_user=None, profile_id=None, rabbitmq_server_password=None, rabbitmq_server_uri=None, rabbitmq_server_user=None, security_token=None, sf_account=None, ssl_connection_certificate=None, ssl_connection_mode=None, tenant_url=None, timeout=None, url=None, use_gw_cloud_identity=None, use_gw_service_account=None, use_tls=None, user_name=None, user_password=None, username=None, validation_email=None, venafi_api_key=None, venafi_base_url=None, venafi_tpp_access_token=None, venafi_tpp_client_id=None, venafi_tpp_password=None, venafi_tpp_refresh_token=None, venafi_tpp_username=None, venafi_use_tpp=None, venafi_zone=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, artifactory_target_details=None, aws_target_details=None, azure_target_details=None, chef_target_details=None, custom_target_details=None, db_target_details=None, dockerhub_target_details=None, eks_target_details=None, gcp_target_details=None, github_target_details=None, gke_target_details=None, globalsign_atlas_target_details=None, globalsign_target_details=None, ldap_target_details=None, linked_target_details=None, mongo_db_target_details=None, native_k8s_target_details=None, ping_target_details=None, rabbit_mq_target_details=None, salesforce_target_details=None, ssh_target_details=None, venafi_target_details=None, web_target_details=None, windows_target_details=None, zerossl_target_details=None, local_vars_configuration=None):  # noqa: E501
         """TargetTypeDetailsInput - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
-        self._administrative_port = None
-        self._api_key = None
-        self._app_private_key = None
-        self._artifactory_admin_apikey = None
-        self._artifactory_admin_username = None
-        self._artifactory_base_url = None
-        self._auth_flow = None
-        self._authorization_port = None
-        self._aws_access_key_id = None
-        self._aws_region = None
-        self._aws_secret_access_key = None
-        self._aws_session_token = None
-        self._azure_client_id = None
-        self._azure_client_secret = None
-        self._azure_resource_group_name = None
-        self._azure_resource_name = None
-        self._azure_subscription_id = None
-        self._azure_tenant_id = None
-        self._ca_cert_data = None
-        self._ca_cert_name = None
-        self._certificate = None
-        self._chef_server_host_name = None
-        self._chef_server_key = None
-        self._chef_server_port = None
-        self._chef_server_url = None
-        self._chef_server_username = None
-        self._chef_skip_ssl = None
-        self._client_id = None
-        self._client_secret = None
-        self._db_host_name = None
-        self._db_name = None
-        self._db_port = None
-        self._db_private_key = None
-        self._db_private_key_passphrase = None
-        self._db_pwd = None
-        self._db_server_certificates = None
-        self._db_server_name = None
-        self._db_user_name = None
-        self._domain_name = None
-        self._eks_access_key_id = None
-        self._eks_cluster_ca_certificate = None
-        self._eks_cluster_endpoint = None
-        self._eks_cluster_name = None
-        self._eks_region = None
-        self._eks_secret_access_key = None
-        self._email = None
-        self._first_name = None
-        self._gcp_service_account_email = None
-        self._gcp_service_account_key = None
-        self._gcp_service_account_key_base64 = None
-        self._github_app_id = None
-        self._github_app_private_key = None
-        self._github_base_url = None
-        self._gke_cluster_ca_certificate = None
-        self._gke_cluster_endpoint = None
-        self._gke_cluster_name = None
-        self._gke_service_account_key = None
-        self._gke_service_account_name = None
-        self._host = None
-        self._hostname = None
-        self._hosts = None
-        self._imap_fqdn = None
-        self._imap_password = None
-        self._imap_port = None
-        self._imap_user = None
-        self._implementation_type = None
-        self._k8s_bearer_token = None
-        self._k8s_cluster_ca_certificate = None
-        self._k8s_cluster_endpoint = None
-        self._last_name = None
-        self._ldap_audience = None
-        self._ldap_bind_dn = None
-        self._ldap_bind_password = None
-        self._ldap_certificate = None
-        self._ldap_token_expiration = None
-        self._ldap_url = None
-        self._mongodb_atlas_api_private_key = None
-        self._mongodb_atlas_api_public_key = None
-        self._mongodb_atlas_project_id = None
-        self._mongodb_db_name = None
-        self._mongodb_default_auth_db = None
-        self._mongodb_host_port = None
-        self._mongodb_is_atlas = None
-        self._mongodb_password = None
-        self._mongodb_uri_connection = None
-        self._mongodb_uri_options = None
-        self._mongodb_username = None
-        self._password = None
-        self._payload = None
-        self._phone = None
-        self._ping_url = None
-        self._port = None
-        self._private_key = None
-        self._private_key_password = None
-        self._privileged_user = None
-        self._profile_id = None
-        self._rabbitmq_server_password = None
-        self._rabbitmq_server_uri = None
-        self._rabbitmq_server_user = None
-        self._security_token = None
-        self._sf_account = None
-        self._ssl_connection_certificate = None
-        self._ssl_connection_mode = None
-        self._tenant_url = None
-        self._timeout = None
-        self._url = None
-        self._use_gw_cloud_identity = None
-        self._use_gw_service_account = None
-        self._use_tls = None
-        self._user_name = None
-        self._user_password = None
-        self._username = None
-        self._validation_email = None
-        self._venafi_api_key = None
-        self._venafi_base_url = None
-        self._venafi_tpp_access_token = None
-        self._venafi_tpp_client_id = None
-        self._venafi_tpp_password = None
-        self._venafi_tpp_refresh_token = None
-        self._venafi_tpp_username = None
-        self._venafi_use_tpp = None
-        self._venafi_zone = None
+        self._artifactory_target_details = None
+        self._aws_target_details = None
+        self._azure_target_details = None
+        self._chef_target_details = None
+        self._custom_target_details = None
+        self._db_target_details = None
+        self._dockerhub_target_details = None
+        self._eks_target_details = None
+        self._gcp_target_details = None
+        self._github_target_details = None
+        self._gke_target_details = None
+        self._globalsign_atlas_target_details = None
+        self._globalsign_target_details = None
+        self._ldap_target_details = None
+        self._linked_target_details = None
+        self._mongo_db_target_details = None
+        self._native_k8s_target_details = None
+        self._ping_target_details = None
+        self._rabbit_mq_target_details = None
+        self._salesforce_target_details = None
+        self._ssh_target_details = None
+        self._venafi_target_details = None
+        self._web_target_details = None
+        self._windows_target_details = None
+        self._zerossl_target_details = None
         self.discriminator = None
 
-        if administrative_port is not None:
-            self.administrative_port = administrative_port
-        if api_key is not None:
-            self.api_key = api_key
-        if app_private_key is not None:
-            self.app_private_key = app_private_key
-        if artifactory_admin_apikey is not None:
-            self.artifactory_admin_apikey = artifactory_admin_apikey
-        if artifactory_admin_username is not None:
-            self.artifactory_admin_username = artifactory_admin_username
-        if artifactory_base_url is not None:
-            self.artifactory_base_url = artifactory_base_url
-        if auth_flow is not None:
-            self.auth_flow = auth_flow
-        if authorization_port is not None:
-            self.authorization_port = authorization_port
-        if aws_access_key_id is not None:
-            self.aws_access_key_id = aws_access_key_id
-        if aws_region is not None:
-            self.aws_region = aws_region
-        if aws_secret_access_key is not None:
-            self.aws_secret_access_key = aws_secret_access_key
-        if aws_session_token is not None:
-            self.aws_session_token = aws_session_token
-        if azure_client_id is not None:
-            self.azure_client_id = azure_client_id
-        if azure_client_secret is not None:
-            self.azure_client_secret = azure_client_secret
-        if azure_resource_group_name is not None:
-            self.azure_resource_group_name = azure_resource_group_name
-        if azure_resource_name is not None:
-            self.azure_resource_name = azure_resource_name
-        if azure_subscription_id is not None:
-            self.azure_subscription_id = azure_subscription_id
-        if azure_tenant_id is not None:
-            self.azure_tenant_id = azure_tenant_id
-        if ca_cert_data is not None:
-            self.ca_cert_data = ca_cert_data
-        if ca_cert_name is not None:
-            self.ca_cert_name = ca_cert_name
-        if certificate is not None:
-            self.certificate = certificate
-        if chef_server_host_name is not None:
-            self.chef_server_host_name = chef_server_host_name
-        if chef_server_key is not None:
-            self.chef_server_key = chef_server_key
-        if chef_server_port is not None:
-            self.chef_server_port = chef_server_port
-        if chef_server_url is not None:
-            self.chef_server_url = chef_server_url
-        if chef_server_username is not None:
-            self.chef_server_username = chef_server_username
-        if chef_skip_ssl is not None:
-            self.chef_skip_ssl = chef_skip_ssl
-        if client_id is not None:
-            self.client_id = client_id
-        if client_secret is not None:
-            self.client_secret = client_secret
-        if db_host_name is not None:
-            self.db_host_name = db_host_name
-        if db_name is not None:
-            self.db_name = db_name
-        if db_port is not None:
-            self.db_port = db_port
-        if db_private_key is not None:
-            self.db_private_key = db_private_key
-        if db_private_key_passphrase is not None:
-            self.db_private_key_passphrase = db_private_key_passphrase
-        if db_pwd is not None:
-            self.db_pwd = db_pwd
-        if db_server_certificates is not None:
-            self.db_server_certificates = db_server_certificates
-        if db_server_name is not None:
-            self.db_server_name = db_server_name
-        if db_user_name is not None:
-            self.db_user_name = db_user_name
-        if domain_name is not None:
-            self.domain_name = domain_name
-        if eks_access_key_id is not None:
-            self.eks_access_key_id = eks_access_key_id
-        if eks_cluster_ca_certificate is not None:
-            self.eks_cluster_ca_certificate = eks_cluster_ca_certificate
-        if eks_cluster_endpoint is not None:
-            self.eks_cluster_endpoint = eks_cluster_endpoint
-        if eks_cluster_name is not None:
-            self.eks_cluster_name = eks_cluster_name
-        if eks_region is not None:
-            self.eks_region = eks_region
-        if eks_secret_access_key is not None:
-            self.eks_secret_access_key = eks_secret_access_key
-        if email is not None:
-            self.email = email
-        if first_name is not None:
-            self.first_name = first_name
-        if gcp_service_account_email is not None:
-            self.gcp_service_account_email = gcp_service_account_email
-        if gcp_service_account_key is not None:
-            self.gcp_service_account_key = gcp_service_account_key
-        if gcp_service_account_key_base64 is not None:
-            self.gcp_service_account_key_base64 = gcp_service_account_key_base64
-        if github_app_id is not None:
-            self.github_app_id = github_app_id
-        if github_app_private_key is not None:
-            self.github_app_private_key = github_app_private_key
-        if github_base_url is not None:
-            self.github_base_url = github_base_url
-        if gke_cluster_ca_certificate is not None:
-            self.gke_cluster_ca_certificate = gke_cluster_ca_certificate
-        if gke_cluster_endpoint is not None:
-            self.gke_cluster_endpoint = gke_cluster_endpoint
-        if gke_cluster_name is not None:
-            self.gke_cluster_name = gke_cluster_name
-        if gke_service_account_key is not None:
-            self.gke_service_account_key = gke_service_account_key
-        if gke_service_account_name is not None:
-            self.gke_service_account_name = gke_service_account_name
-        if host is not None:
-            self.host = host
-        if hostname is not None:
-            self.hostname = hostname
-        if hosts is not None:
-            self.hosts = hosts
-        if imap_fqdn is not None:
-            self.imap_fqdn = imap_fqdn
-        if imap_password is not None:
-            self.imap_password = imap_password
-        if imap_port is not None:
-            self.imap_port = imap_port
-        if imap_user is not None:
-            self.imap_user = imap_user
-        if implementation_type is not None:
-            self.implementation_type = implementation_type
-        if k8s_bearer_token is not None:
-            self.k8s_bearer_token = k8s_bearer_token
-        if k8s_cluster_ca_certificate is not None:
-            self.k8s_cluster_ca_certificate = k8s_cluster_ca_certificate
-        if k8s_cluster_endpoint is not None:
-            self.k8s_cluster_endpoint = k8s_cluster_endpoint
-        if last_name is not None:
-            self.last_name = last_name
-        if ldap_audience is not None:
-            self.ldap_audience = ldap_audience
-        if ldap_bind_dn is not None:
-            self.ldap_bind_dn = ldap_bind_dn
-        if ldap_bind_password is not None:
-            self.ldap_bind_password = ldap_bind_password
-        if ldap_certificate is not None:
-            self.ldap_certificate = ldap_certificate
-        if ldap_token_expiration is not None:
-            self.ldap_token_expiration = ldap_token_expiration
-        if ldap_url is not None:
-            self.ldap_url = ldap_url
-        if mongodb_atlas_api_private_key is not None:
-            self.mongodb_atlas_api_private_key = mongodb_atlas_api_private_key
-        if mongodb_atlas_api_public_key is not None:
-            self.mongodb_atlas_api_public_key = mongodb_atlas_api_public_key
-        if mongodb_atlas_project_id is not None:
-            self.mongodb_atlas_project_id = mongodb_atlas_project_id
-        if mongodb_db_name is not None:
-            self.mongodb_db_name = mongodb_db_name
-        if mongodb_default_auth_db is not None:
-            self.mongodb_default_auth_db = mongodb_default_auth_db
-        if mongodb_host_port is not None:
-            self.mongodb_host_port = mongodb_host_port
-        if mongodb_is_atlas is not None:
-            self.mongodb_is_atlas = mongodb_is_atlas
-        if mongodb_password is not None:
-            self.mongodb_password = mongodb_password
-        if mongodb_uri_connection is not None:
-            self.mongodb_uri_connection = mongodb_uri_connection
-        if mongodb_uri_options is not None:
-            self.mongodb_uri_options = mongodb_uri_options
-        if mongodb_username is not None:
-            self.mongodb_username = mongodb_username
-        if password is not None:
-            self.password = password
-        if payload is not None:
-            self.payload = payload
-        if phone is not None:
-            self.phone = phone
-        if ping_url is not None:
-            self.ping_url = ping_url
-        if port is not None:
-            self.port = port
-        if private_key is not None:
-            self.private_key = private_key
-        if private_key_password is not None:
-            self.private_key_password = private_key_password
-        if privileged_user is not None:
-            self.privileged_user = privileged_user
-        if profile_id is not None:
-            self.profile_id = profile_id
-        if rabbitmq_server_password is not None:
-            self.rabbitmq_server_password = rabbitmq_server_password
-        if rabbitmq_server_uri is not None:
-            self.rabbitmq_server_uri = rabbitmq_server_uri
-        if rabbitmq_server_user is not None:
-            self.rabbitmq_server_user = rabbitmq_server_user
-        if security_token is not None:
-            self.security_token = security_token
-        if sf_account is not None:
-            self.sf_account = sf_account
-        if ssl_connection_certificate is not None:
-            self.ssl_connection_certificate = ssl_connection_certificate
-        if ssl_connection_mode is not None:
-            self.ssl_connection_mode = ssl_connection_mode
-        if tenant_url is not None:
-            self.tenant_url = tenant_url
-        if timeout is not None:
-            self.timeout = timeout
-        if url is not None:
-            self.url = url
-        if use_gw_cloud_identity is not None:
-            self.use_gw_cloud_identity = use_gw_cloud_identity
-        if use_gw_service_account is not None:
-            self.use_gw_service_account = use_gw_service_account
-        if use_tls is not None:
-            self.use_tls = use_tls
-        if user_name is not None:
-            self.user_name = user_name
-        if user_password is not None:
-            self.user_password = user_password
-        if username is not None:
-            self.username = username
-        if validation_email is not None:
-            self.validation_email = validation_email
-        if venafi_api_key is not None:
-            self.venafi_api_key = venafi_api_key
-        if venafi_base_url is not None:
-            self.venafi_base_url = venafi_base_url
-        if venafi_tpp_access_token is not None:
-            self.venafi_tpp_access_token = venafi_tpp_access_token
-        if venafi_tpp_client_id is not None:
-            self.venafi_tpp_client_id = venafi_tpp_client_id
-        if venafi_tpp_password is not None:
-            self.venafi_tpp_password = venafi_tpp_password
-        if venafi_tpp_refresh_token is not None:
-            self.venafi_tpp_refresh_token = venafi_tpp_refresh_token
-        if venafi_tpp_username is not None:
-            self.venafi_tpp_username = venafi_tpp_username
-        if venafi_use_tpp is not None:
-            self.venafi_use_tpp = venafi_use_tpp
-        if venafi_zone is not None:
-            self.venafi_zone = venafi_zone
+        if artifactory_target_details is not None:
+            self.artifactory_target_details = artifactory_target_details
+        if aws_target_details is not None:
+            self.aws_target_details = aws_target_details
+        if azure_target_details is not None:
+            self.azure_target_details = azure_target_details
+        if chef_target_details is not None:
+            self.chef_target_details = chef_target_details
+        if custom_target_details is not None:
+            self.custom_target_details = custom_target_details
+        if db_target_details is not None:
+            self.db_target_details = db_target_details
+        if dockerhub_target_details is not None:
+            self.dockerhub_target_details = dockerhub_target_details
+        if eks_target_details is not None:
+            self.eks_target_details = eks_target_details
+        if gcp_target_details is not None:
+            self.gcp_target_details = gcp_target_details
+        if github_target_details is not None:
+            self.github_target_details = github_target_details
+        if gke_target_details is not None:
+            self.gke_target_details = gke_target_details
+        if globalsign_atlas_target_details is not None:
+            self.globalsign_atlas_target_details = globalsign_atlas_target_details
+        if globalsign_target_details is not None:
+            self.globalsign_target_details = globalsign_target_details
+        if ldap_target_details is not None:
+            self.ldap_target_details = ldap_target_details
+        if linked_target_details is not None:
+            self.linked_target_details = linked_target_details
+        if mongo_db_target_details is not None:
+            self.mongo_db_target_details = mongo_db_target_details
+        if native_k8s_target_details is not None:
+            self.native_k8s_target_details = native_k8s_target_details
+        if ping_target_details is not None:
+            self.ping_target_details = ping_target_details
+        if rabbit_mq_target_details is not None:
+            self.rabbit_mq_target_details = rabbit_mq_target_details
+        if salesforce_target_details is not None:
+            self.salesforce_target_details = salesforce_target_details
+        if ssh_target_details is not None:
+            self.ssh_target_details = ssh_target_details
+        if venafi_target_details is not None:
+            self.venafi_target_details = venafi_target_details
+        if web_target_details is not None:
+            self.web_target_details = web_target_details
+        if windows_target_details is not None:
+            self.windows_target_details = windows_target_details
+        if zerossl_target_details is not None:
+            self.zerossl_target_details = zerossl_target_details
 
     @property
-    def administrative_port(self):
-        """Gets the administrative_port of this TargetTypeDetailsInput.  # noqa: E501
+    def artifactory_target_details(self):
+        """Gets the artifactory_target_details of this TargetTypeDetailsInput.  # noqa: E501
 
 
-        :return: The administrative_port of this TargetTypeDetailsInput.  # noqa: E501
-        :rtype: str
+        :return: The artifactory_target_details of this TargetTypeDetailsInput.  # noqa: E501
+        :rtype: ArtifactoryTargetDetails
         """
-        return self._administrative_port
+        return self._artifactory_target_details
 
-    @administrative_port.setter
-    def administrative_port(self, administrative_port):
-        """Sets the administrative_port of this TargetTypeDetailsInput.
+    @artifactory_target_details.setter
+    def artifactory_target_details(self, artifactory_target_details):
+        """Sets the artifactory_target_details of this TargetTypeDetailsInput.
 
 
-        :param administrative_port: The administrative_port of this TargetTypeDetailsInput.  # noqa: E501
-        :type: str
+        :param artifactory_target_details: The artifactory_target_details of this TargetTypeDetailsInput.  # noqa: E501
+        :type: ArtifactoryTargetDetails
         """
 
-        self._administrative_port = administrative_port
+        self._artifactory_target_details = artifactory_target_details
 
     @property
-    def api_key(self):
-        """Gets the api_key of this TargetTypeDetailsInput.  # noqa: E501
+    def aws_target_details(self):
+        """Gets the aws_target_details of this TargetTypeDetailsInput.  # noqa: E501
 
 
-        :return: The api_key of this TargetTypeDetailsInput.  # noqa: E501
-        :rtype: str
+        :return: The aws_target_details of this TargetTypeDetailsInput.  # noqa: E501
+        :rtype: AWSTargetDetails
         """
-        return self._api_key
+        return self._aws_target_details
 
-    @api_key.setter
-    def api_key(self, api_key):
-        """Sets the api_key of this TargetTypeDetailsInput.
+    @aws_target_details.setter
+    def aws_target_details(self, aws_target_details):
+        """Sets the aws_target_details of this TargetTypeDetailsInput.
 
 
-        :param api_key: The api_key of this TargetTypeDetailsInput.  # noqa: E501
-        :type: str
+        :param aws_target_details: The aws_target_details of this TargetTypeDetailsInput.  # noqa: E501
+        :type: AWSTargetDetails
         """
 
-        self._api_key = api_key
+        self._aws_target_details = aws_target_details
 
     @property
-    def app_private_key(self):
-        """Gets the app_private_key of this TargetTypeDetailsInput.  # noqa: E501
+    def azure_target_details(self):
+        """Gets the azure_target_details of this TargetTypeDetailsInput.  # noqa: E501
 
-        params needed for jwt auth AppPrivateKey is the rsa private key in PEM format  # noqa: E501
 
-        :return: The app_private_key of this TargetTypeDetailsInput.  # noqa: E501
-        :rtype: list[int]
+        :return: The azure_target_details of this TargetTypeDetailsInput.  # noqa: E501
+        :rtype: AzureTargetDetails
         """
-        return self._app_private_key
+        return self._azure_target_details
 
-    @app_private_key.setter
-    def app_private_key(self, app_private_key):
-        """Sets the app_private_key of this TargetTypeDetailsInput.
+    @azure_target_details.setter
+    def azure_target_details(self, azure_target_details):
+        """Sets the azure_target_details of this TargetTypeDetailsInput.
 
-        params needed for jwt auth AppPrivateKey is the rsa private key in PEM format  # noqa: E501
 
-        :param app_private_key: The app_private_key of this TargetTypeDetailsInput.  # noqa: E501
-        :type: list[int]
+        :param azure_target_details: The azure_target_details of this TargetTypeDetailsInput.  # noqa: E501
+        :type: AzureTargetDetails
         """
 
-        self._app_private_key = app_private_key
+        self._azure_target_details = azure_target_details
 
     @property
-    def artifactory_admin_apikey(self):
-        """Gets the artifactory_admin_apikey of this TargetTypeDetailsInput.  # noqa: E501
+    def chef_target_details(self):
+        """Gets the chef_target_details of this TargetTypeDetailsInput.  # noqa: E501
 
 
-        :return: The artifactory_admin_apikey of this TargetTypeDetailsInput.  # noqa: E501
-        :rtype: str
+        :return: The chef_target_details of this TargetTypeDetailsInput.  # noqa: E501
+        :rtype: ChefTargetDetails
         """
-        return self._artifactory_admin_apikey
+        return self._chef_target_details
 
-    @artifactory_admin_apikey.setter
-    def artifactory_admin_apikey(self, artifactory_admin_apikey):
-        """Sets the artifactory_admin_apikey of this TargetTypeDetailsInput.
+    @chef_target_details.setter
+    def chef_target_details(self, chef_target_details):
+        """Sets the chef_target_details of this TargetTypeDetailsInput.
 
 
-        :param artifactory_admin_apikey: The artifactory_admin_apikey of this TargetTypeDetailsInput.  # noqa: E501
-        :type: str
+        :param chef_target_details: The chef_target_details of this TargetTypeDetailsInput.  # noqa: E501
+        :type: ChefTargetDetails
         """
 
-        self._artifactory_admin_apikey = artifactory_admin_apikey
+        self._chef_target_details = chef_target_details
 
     @property
-    def artifactory_admin_username(self):
-        """Gets the artifactory_admin_username of this TargetTypeDetailsInput.  # noqa: E501
+    def custom_target_details(self):
+        """Gets the custom_target_details of this TargetTypeDetailsInput.  # noqa: E501
 
 
-        :return: The artifactory_admin_username of this TargetTypeDetailsInput.  # noqa: E501
-        :rtype: str
+        :return: The custom_target_details of this TargetTypeDetailsInput.  # noqa: E501
+        :rtype: CustomTargetDetails
         """
-        return self._artifactory_admin_username
+        return self._custom_target_details
 
-    @artifactory_admin_username.setter
-    def artifactory_admin_username(self, artifactory_admin_username):
-        """Sets the artifactory_admin_username of this TargetTypeDetailsInput.
+    @custom_target_details.setter
+    def custom_target_details(self, custom_target_details):
+        """Sets the custom_target_details of this TargetTypeDetailsInput.
 
 
-        :param artifactory_admin_username: The artifactory_admin_username of this TargetTypeDetailsInput.  # noqa: E501
-        :type: str
+        :param custom_target_details: The custom_target_details of this TargetTypeDetailsInput.  # noqa: E501
+        :type: CustomTargetDetails
         """
 
-        self._artifactory_admin_username = artifactory_admin_username
+        self._custom_target_details = custom_target_details
 
     @property
-    def artifactory_base_url(self):
-        """Gets the artifactory_base_url of this TargetTypeDetailsInput.  # noqa: E501
+    def db_target_details(self):
+        """Gets the db_target_details of this TargetTypeDetailsInput.  # noqa: E501
 
 
-        :return: The artifactory_base_url of this TargetTypeDetailsInput.  # noqa: E501
-        :rtype: str
+        :return: The db_target_details of this TargetTypeDetailsInput.  # noqa: E501
+        :rtype: DbTargetDetails
         """
-        return self._artifactory_base_url
+        return self._db_target_details
 
-    @artifactory_base_url.setter
-    def artifactory_base_url(self, artifactory_base_url):
-        """Sets the artifactory_base_url of this TargetTypeDetailsInput.
+    @db_target_details.setter
+    def db_target_details(self, db_target_details):
+        """Sets the db_target_details of this TargetTypeDetailsInput.
 
 
-        :param artifactory_base_url: The artifactory_base_url of this TargetTypeDetailsInput.  # noqa: E501
-        :type: str
+        :param db_target_details: The db_target_details of this TargetTypeDetailsInput.  # noqa: E501
+        :type: DbTargetDetails
         """
 
-        self._artifactory_base_url = artifactory_base_url
+        self._db_target_details = db_target_details
 
     @property
-    def auth_flow(self):
-        """Gets the auth_flow of this TargetTypeDetailsInput.  # noqa: E501
+    def dockerhub_target_details(self):
+        """Gets the dockerhub_target_details of this TargetTypeDetailsInput.  # noqa: E501
 
 
-        :return: The auth_flow of this TargetTypeDetailsInput.  # noqa: E501
-        :rtype: str
+        :return: The dockerhub_target_details of this TargetTypeDetailsInput.  # noqa: E501
+        :rtype: DockerhubTargetDetails
         """
-        return self._auth_flow
+        return self._dockerhub_target_details
 
-    @auth_flow.setter
-    def auth_flow(self, auth_flow):
-        """Sets the auth_flow of this TargetTypeDetailsInput.
+    @dockerhub_target_details.setter
+    def dockerhub_target_details(self, dockerhub_target_details):
+        """Sets the dockerhub_target_details of this TargetTypeDetailsInput.
 
 
-        :param auth_flow: The auth_flow of this TargetTypeDetailsInput.  # noqa: E501
-        :type: str
+        :param dockerhub_target_details: The dockerhub_target_details of this TargetTypeDetailsInput.  # noqa: E501
+        :type: DockerhubTargetDetails
         """
 
-        self._auth_flow = auth_flow
+        self._dockerhub_target_details = dockerhub_target_details
 
     @property
-    def authorization_port(self):
-        """Gets the authorization_port of this TargetTypeDetailsInput.  # noqa: E501
+    def eks_target_details(self):
+        """Gets the eks_target_details of this TargetTypeDetailsInput.  # noqa: E501
 
 
-        :return: The authorization_port of this TargetTypeDetailsInput.  # noqa: E501
-        :rtype: str
+        :return: The eks_target_details of this TargetTypeDetailsInput.  # noqa: E501
+        :rtype: EKSTargetDetails
         """
-        return self._authorization_port
+        return self._eks_target_details
 
-    @authorization_port.setter
-    def authorization_port(self, authorization_port):
-        """Sets the authorization_port of this TargetTypeDetailsInput.
+    @eks_target_details.setter
+    def eks_target_details(self, eks_target_details):
+        """Sets the eks_target_details of this TargetTypeDetailsInput.
 
 
-        :param authorization_port: The authorization_port of this TargetTypeDetailsInput.  # noqa: E501
-        :type: str
+        :param eks_target_details: The eks_target_details of this TargetTypeDetailsInput.  # noqa: E501
+        :type: EKSTargetDetails
         """
 
-        self._authorization_port = authorization_port
+        self._eks_target_details = eks_target_details
 
     @property
-    def aws_access_key_id(self):
-        """Gets the aws_access_key_id of this TargetTypeDetailsInput.  # noqa: E501
+    def gcp_target_details(self):
+        """Gets the gcp_target_details of this TargetTypeDetailsInput.  # noqa: E501
 
 
-        :return: The aws_access_key_id of this TargetTypeDetailsInput.  # noqa: E501
-        :rtype: str
+        :return: The gcp_target_details of this TargetTypeDetailsInput.  # noqa: E501
+        :rtype: GcpTargetDetails
         """
-        return self._aws_access_key_id
+        return self._gcp_target_details
 
-    @aws_access_key_id.setter
-    def aws_access_key_id(self, aws_access_key_id):
-        """Sets the aws_access_key_id of this TargetTypeDetailsInput.
+    @gcp_target_details.setter
+    def gcp_target_details(self, gcp_target_details):
+        """Sets the gcp_target_details of this TargetTypeDetailsInput.
 
 
-        :param aws_access_key_id: The aws_access_key_id of this TargetTypeDetailsInput.  # noqa: E501
-        :type: str
+        :param gcp_target_details: The gcp_target_details of this TargetTypeDetailsInput.  # noqa: E501
+        :type: GcpTargetDetails
         """
 
-        self._aws_access_key_id = aws_access_key_id
+        self._gcp_target_details = gcp_target_details
 
     @property
-    def aws_region(self):
-        """Gets the aws_region of this TargetTypeDetailsInput.  # noqa: E501
+    def github_target_details(self):
+        """Gets the github_target_details of this TargetTypeDetailsInput.  # noqa: E501
 
 
-        :return: The aws_region of this TargetTypeDetailsInput.  # noqa: E501
-        :rtype: str
+        :return: The github_target_details of this TargetTypeDetailsInput.  # noqa: E501
+        :rtype: GithubTargetDetails
         """
-        return self._aws_region
+        return self._github_target_details
 
-    @aws_region.setter
-    def aws_region(self, aws_region):
-        """Sets the aws_region of this TargetTypeDetailsInput.
+    @github_target_details.setter
+    def github_target_details(self, github_target_details):
+        """Sets the github_target_details of this TargetTypeDetailsInput.
 
 
-        :param aws_region: The aws_region of this TargetTypeDetailsInput.  # noqa: E501
-        :type: str
+        :param github_target_details: The github_target_details of this TargetTypeDetailsInput.  # noqa: E501
+        :type: GithubTargetDetails
         """
 
-        self._aws_region = aws_region
+        self._github_target_details = github_target_details
 
     @property
-    def aws_secret_access_key(self):
-        """Gets the aws_secret_access_key of this TargetTypeDetailsInput.  # noqa: E501
+    def gke_target_details(self):
+        """Gets the gke_target_details of this TargetTypeDetailsInput.  # noqa: E501
 
 
-        :return: The aws_secret_access_key of this TargetTypeDetailsInput.  # noqa: E501
-        :rtype: str
+        :return: The gke_target_details of this TargetTypeDetailsInput.  # noqa: E501
+        :rtype: GKETargetDetails
         """
-        return self._aws_secret_access_key
+        return self._gke_target_details
 
-    @aws_secret_access_key.setter
-    def aws_secret_access_key(self, aws_secret_access_key):
-        """Sets the aws_secret_access_key of this TargetTypeDetailsInput.
+    @gke_target_details.setter
+    def gke_target_details(self, gke_target_details):
+        """Sets the gke_target_details of this TargetTypeDetailsInput.
 
 
-        :param aws_secret_access_key: The aws_secret_access_key of this TargetTypeDetailsInput.  # noqa: E501
-        :type: str
+        :param gke_target_details: The gke_target_details of this TargetTypeDetailsInput.  # noqa: E501
+        :type: GKETargetDetails
         """
 
-        self._aws_secret_access_key = aws_secret_access_key
+        self._gke_target_details = gke_target_details
 
     @property
-    def aws_session_token(self):
-        """Gets the aws_session_token of this TargetTypeDetailsInput.  # noqa: E501
+    def globalsign_atlas_target_details(self):
+        """Gets the globalsign_atlas_target_details of this TargetTypeDetailsInput.  # noqa: E501
 
 
-        :return: The aws_session_token of this TargetTypeDetailsInput.  # noqa: E501
-        :rtype: str
+        :return: The globalsign_atlas_target_details of this TargetTypeDetailsInput.  # noqa: E501
+        :rtype: GlobalSignAtlasTargetDetails
         """
-        return self._aws_session_token
+        return self._globalsign_atlas_target_details
 
-    @aws_session_token.setter
-    def aws_session_token(self, aws_session_token):
-        """Sets the aws_session_token of this TargetTypeDetailsInput.
+    @globalsign_atlas_target_details.setter
+    def globalsign_atlas_target_details(self, globalsign_atlas_target_details):
+        """Sets the globalsign_atlas_target_details of this TargetTypeDetailsInput.
 
 
-        :param aws_session_token: The aws_session_token of this TargetTypeDetailsInput.  # noqa: E501
-        :type: str
+        :param globalsign_atlas_target_details: The globalsign_atlas_target_details of this TargetTypeDetailsInput.  # noqa: E501
+        :type: GlobalSignAtlasTargetDetails
         """
 
-        self._aws_session_token = aws_session_token
+        self._globalsign_atlas_target_details = globalsign_atlas_target_details
 
     @property
-    def azure_client_id(self):
-        """Gets the azure_client_id of this TargetTypeDetailsInput.  # noqa: E501
+    def globalsign_target_details(self):
+        """Gets the globalsign_target_details of this TargetTypeDetailsInput.  # noqa: E501
 
 
-        :return: The azure_client_id of this TargetTypeDetailsInput.  # noqa: E501
-        :rtype: str
+        :return: The globalsign_target_details of this TargetTypeDetailsInput.  # noqa: E501
+        :rtype: GlobalSignGCCTargetDetails
         """
-        return self._azure_client_id
+        return self._globalsign_target_details
 
-    @azure_client_id.setter
-    def azure_client_id(self, azure_client_id):
-        """Sets the azure_client_id of this TargetTypeDetailsInput.
+    @globalsign_target_details.setter
+    def globalsign_target_details(self, globalsign_target_details):
+        """Sets the globalsign_target_details of this TargetTypeDetailsInput.
 
 
-        :param azure_client_id: The azure_client_id of this TargetTypeDetailsInput.  # noqa: E501
-        :type: str
+        :param globalsign_target_details: The globalsign_target_details of this TargetTypeDetailsInput.  # noqa: E501
+        :type: GlobalSignGCCTargetDetails
         """
 
-        self._azure_client_id = azure_client_id
+        self._globalsign_target_details = globalsign_target_details
 
     @property
-    def azure_client_secret(self):
-        """Gets the azure_client_secret of this TargetTypeDetailsInput.  # noqa: E501
+    def ldap_target_details(self):
+        """Gets the ldap_target_details of this TargetTypeDetailsInput.  # noqa: E501
 
 
-        :return: The azure_client_secret of this TargetTypeDetailsInput.  # noqa: E501
-        :rtype: str
+        :return: The ldap_target_details of this TargetTypeDetailsInput.  # noqa: E501
+        :rtype: LdapTargetDetails
         """
-        return self._azure_client_secret
+        return self._ldap_target_details
 
-    @azure_client_secret.setter
-    def azure_client_secret(self, azure_client_secret):
-        """Sets the azure_client_secret of this TargetTypeDetailsInput.
+    @ldap_target_details.setter
+    def ldap_target_details(self, ldap_target_details):
+        """Sets the ldap_target_details of this TargetTypeDetailsInput.
 
 
-        :param azure_client_secret: The azure_client_secret of this TargetTypeDetailsInput.  # noqa: E501
-        :type: str
+        :param ldap_target_details: The ldap_target_details of this TargetTypeDetailsInput.  # noqa: E501
+        :type: LdapTargetDetails
         """
 
-        self._azure_client_secret = azure_client_secret
+        self._ldap_target_details = ldap_target_details
 
     @property
-    def azure_resource_group_name(self):
-        """Gets the azure_resource_group_name of this TargetTypeDetailsInput.  # noqa: E501
+    def linked_target_details(self):
+        """Gets the linked_target_details of this TargetTypeDetailsInput.  # noqa: E501
 
 
-        :return: The azure_resource_group_name of this TargetTypeDetailsInput.  # noqa: E501
-        :rtype: str
+        :return: The linked_target_details of this TargetTypeDetailsInput.  # noqa: E501
+        :rtype: LinkedTargetDetails
         """
-        return self._azure_resource_group_name
+        return self._linked_target_details
 
-    @azure_resource_group_name.setter
-    def azure_resource_group_name(self, azure_resource_group_name):
-        """Sets the azure_resource_group_name of this TargetTypeDetailsInput.
+    @linked_target_details.setter
+    def linked_target_details(self, linked_target_details):
+        """Sets the linked_target_details of this TargetTypeDetailsInput.
 
 
-        :param azure_resource_group_name: The azure_resource_group_name of this TargetTypeDetailsInput.  # noqa: E501
-        :type: str
+        :param linked_target_details: The linked_target_details of this TargetTypeDetailsInput.  # noqa: E501
+        :type: LinkedTargetDetails
         """
 
-        self._azure_resource_group_name = azure_resource_group_name
+        self._linked_target_details = linked_target_details
 
     @property
-    def azure_resource_name(self):
-        """Gets the azure_resource_name of this TargetTypeDetailsInput.  # noqa: E501
+    def mongo_db_target_details(self):
+        """Gets the mongo_db_target_details of this TargetTypeDetailsInput.  # noqa: E501
 
 
-        :return: The azure_resource_name of this TargetTypeDetailsInput.  # noqa: E501
-        :rtype: str
+        :return: The mongo_db_target_details of this TargetTypeDetailsInput.  # noqa: E501
+        :rtype: MongoDBTargetDetails
         """
-        return self._azure_resource_name
+        return self._mongo_db_target_details
 
-    @azure_resource_name.setter
-    def azure_resource_name(self, azure_resource_name):
-        """Sets the azure_resource_name of this TargetTypeDetailsInput.
+    @mongo_db_target_details.setter
+    def mongo_db_target_details(self, mongo_db_target_details):
+        """Sets the mongo_db_target_details of this TargetTypeDetailsInput.
 
 
-        :param azure_resource_name: The azure_resource_name of this TargetTypeDetailsInput.  # noqa: E501
-        :type: str
+        :param mongo_db_target_details: The mongo_db_target_details of this TargetTypeDetailsInput.  # noqa: E501
+        :type: MongoDBTargetDetails
         """
 
-        self._azure_resource_name = azure_resource_name
+        self._mongo_db_target_details = mongo_db_target_details
 
     @property
-    def azure_subscription_id(self):
-        """Gets the azure_subscription_id of this TargetTypeDetailsInput.  # noqa: E501
+    def native_k8s_target_details(self):
+        """Gets the native_k8s_target_details of this TargetTypeDetailsInput.  # noqa: E501
 
 
-        :return: The azure_subscription_id of this TargetTypeDetailsInput.  # noqa: E501
-        :rtype: str
+        :return: The native_k8s_target_details of this TargetTypeDetailsInput.  # noqa: E501
+        :rtype: NativeK8sTargetDetails
         """
-        return self._azure_subscription_id
+        return self._native_k8s_target_details
 
-    @azure_subscription_id.setter
-    def azure_subscription_id(self, azure_subscription_id):
-        """Sets the azure_subscription_id of this TargetTypeDetailsInput.
+    @native_k8s_target_details.setter
+    def native_k8s_target_details(self, native_k8s_target_details):
+        """Sets the native_k8s_target_details of this TargetTypeDetailsInput.
 
 
-        :param azure_subscription_id: The azure_subscription_id of this TargetTypeDetailsInput.  # noqa: E501
-        :type: str
+        :param native_k8s_target_details: The native_k8s_target_details of this TargetTypeDetailsInput.  # noqa: E501
+        :type: NativeK8sTargetDetails
         """
 
-        self._azure_subscription_id = azure_subscription_id
+        self._native_k8s_target_details = native_k8s_target_details
 
     @property
-    def azure_tenant_id(self):
-        """Gets the azure_tenant_id of this TargetTypeDetailsInput.  # noqa: E501
+    def ping_target_details(self):
+        """Gets the ping_target_details of this TargetTypeDetailsInput.  # noqa: E501
 
 
-        :return: The azure_tenant_id of this TargetTypeDetailsInput.  # noqa: E501
-        :rtype: str
+        :return: The ping_target_details of this TargetTypeDetailsInput.  # noqa: E501
+        :rtype: PingTargetDetails
         """
-        return self._azure_tenant_id
+        return self._ping_target_details
 
-    @azure_tenant_id.setter
-    def azure_tenant_id(self, azure_tenant_id):
-        """Sets the azure_tenant_id of this TargetTypeDetailsInput.
+    @ping_target_details.setter
+    def ping_target_details(self, ping_target_details):
+        """Sets the ping_target_details of this TargetTypeDetailsInput.
 
 
-        :param azure_tenant_id: The azure_tenant_id of this TargetTypeDetailsInput.  # noqa: E501
-        :type: str
+        :param ping_target_details: The ping_target_details of this TargetTypeDetailsInput.  # noqa: E501
+        :type: PingTargetDetails
         """
 
-        self._azure_tenant_id = azure_tenant_id
+        self._ping_target_details = ping_target_details
 
     @property
-    def ca_cert_data(self):
-        """Gets the ca_cert_data of this TargetTypeDetailsInput.  # noqa: E501
+    def rabbit_mq_target_details(self):
+        """Gets the rabbit_mq_target_details of this TargetTypeDetailsInput.  # noqa: E501
 
-        CACertData is the rsa 4096 certificate data in PEM format  # noqa: E501
 
-        :return: The ca_cert_data of this TargetTypeDetailsInput.  # noqa: E501
-        :rtype: list[int]
+        :return: The rabbit_mq_target_details of this TargetTypeDetailsInput.  # noqa: E501
+        :rtype: RabbitMQTargetDetails
         """
-        return self._ca_cert_data
+        return self._rabbit_mq_target_details
 
-    @ca_cert_data.setter
-    def ca_cert_data(self, ca_cert_data):
-        """Sets the ca_cert_data of this TargetTypeDetailsInput.
+    @rabbit_mq_target_details.setter
+    def rabbit_mq_target_details(self, rabbit_mq_target_details):
+        """Sets the rabbit_mq_target_details of this TargetTypeDetailsInput.
 
-        CACertData is the rsa 4096 certificate data in PEM format  # noqa: E501
 
-        :param ca_cert_data: The ca_cert_data of this TargetTypeDetailsInput.  # noqa: E501
-        :type: list[int]
+        :param rabbit_mq_target_details: The rabbit_mq_target_details of this TargetTypeDetailsInput.  # noqa: E501
+        :type: RabbitMQTargetDetails
         """
 
-        self._ca_cert_data = ca_cert_data
+        self._rabbit_mq_target_details = rabbit_mq_target_details
 
     @property
-    def ca_cert_name(self):
-        """Gets the ca_cert_name of this TargetTypeDetailsInput.  # noqa: E501
+    def salesforce_target_details(self):
+        """Gets the salesforce_target_details of this TargetTypeDetailsInput.  # noqa: E501
 
-        CACertName is the name of the certificate in SalesForce tenant  # noqa: E501
 
-        :return: The ca_cert_name of this TargetTypeDetailsInput.  # noqa: E501
-        :rtype: str
+        :return: The salesforce_target_details of this TargetTypeDetailsInput.  # noqa: E501
+        :rtype: SalesforceTargetDetails
         """
-        return self._ca_cert_name
+        return self._salesforce_target_details
 
-    @ca_cert_name.setter
-    def ca_cert_name(self, ca_cert_name):
-        """Sets the ca_cert_name of this TargetTypeDetailsInput.
+    @salesforce_target_details.setter
+    def salesforce_target_details(self, salesforce_target_details):
+        """Sets the salesforce_target_details of this TargetTypeDetailsInput.
 
-        CACertName is the name of the certificate in SalesForce tenant  # noqa: E501
 
-        :param ca_cert_name: The ca_cert_name of this TargetTypeDetailsInput.  # noqa: E501
-        :type: str
+        :param salesforce_target_details: The salesforce_target_details of this TargetTypeDetailsInput.  # noqa: E501
+        :type: SalesforceTargetDetails
         """
 
-        self._ca_cert_name = ca_cert_name
+        self._salesforce_target_details = salesforce_target_details
 
     @property
-    def certificate(self):
-        """Gets the certificate of this TargetTypeDetailsInput.  # noqa: E501
+    def ssh_target_details(self):
+        """Gets the ssh_target_details of this TargetTypeDetailsInput.  # noqa: E501
 
 
-        :return: The certificate of this TargetTypeDetailsInput.  # noqa: E501
-        :rtype: str
+        :return: The ssh_target_details of this TargetTypeDetailsInput.  # noqa: E501
+        :rtype: SSHTargetDetails
         """
-        return self._certificate
+        return self._ssh_target_details
 
-    @certificate.setter
-    def certificate(self, certificate):
-        """Sets the certificate of this TargetTypeDetailsInput.
+    @ssh_target_details.setter
+    def ssh_target_details(self, ssh_target_details):
+        """Sets the ssh_target_details of this TargetTypeDetailsInput.
 
 
-        :param certificate: The certificate of this TargetTypeDetailsInput.  # noqa: E501
-        :type: str
+        :param ssh_target_details: The ssh_target_details of this TargetTypeDetailsInput.  # noqa: E501
+        :type: SSHTargetDetails
         """
 
-        self._certificate = certificate
+        self._ssh_target_details = ssh_target_details
 
     @property
-    def chef_server_host_name(self):
-        """Gets the chef_server_host_name of this TargetTypeDetailsInput.  # noqa: E501
+    def venafi_target_details(self):
+        """Gets the venafi_target_details of this TargetTypeDetailsInput.  # noqa: E501
 
 
-        :return: The chef_server_host_name of this TargetTypeDetailsInput.  # noqa: E501
-        :rtype: str
+        :return: The venafi_target_details of this TargetTypeDetailsInput.  # noqa: E501
+        :rtype: VenafiTargetDetails
         """
-        return self._chef_server_host_name
+        return self._venafi_target_details
 
-    @chef_server_host_name.setter
-    def chef_server_host_name(self, chef_server_host_name):
-        """Sets the chef_server_host_name of this TargetTypeDetailsInput.
+    @venafi_target_details.setter
+    def venafi_target_details(self, venafi_target_details):
+        """Sets the venafi_target_details of this TargetTypeDetailsInput.
 
 
-        :param chef_server_host_name: The chef_server_host_name of this TargetTypeDetailsInput.  # noqa: E501
-        :type: str
+        :param venafi_target_details: The venafi_target_details of this TargetTypeDetailsInput.  # noqa: E501
+        :type: VenafiTargetDetails
         """
 
-        self._chef_server_host_name = chef_server_host_name
+        self._venafi_target_details = venafi_target_details
 
     @property
-    def chef_server_key(self):
-        """Gets the chef_server_key of this TargetTypeDetailsInput.  # noqa: E501
+    def web_target_details(self):
+        """Gets the web_target_details of this TargetTypeDetailsInput.  # noqa: E501
 
 
-        :return: The chef_server_key of this TargetTypeDetailsInput.  # noqa: E501
-        :rtype: str
+        :return: The web_target_details of this TargetTypeDetailsInput.  # noqa: E501
+        :rtype: WebTargetDetails
         """
-        return self._chef_server_key
+        return self._web_target_details
 
-    @chef_server_key.setter
-    def chef_server_key(self, chef_server_key):
-        """Sets the chef_server_key of this TargetTypeDetailsInput.
+    @web_target_details.setter
+    def web_target_details(self, web_target_details):
+        """Sets the web_target_details of this TargetTypeDetailsInput.
 
 
-        :param chef_server_key: The chef_server_key of this TargetTypeDetailsInput.  # noqa: E501
-        :type: str
+        :param web_target_details: The web_target_details of this TargetTypeDetailsInput.  # noqa: E501
+        :type: WebTargetDetails
         """
 
-        self._chef_server_key = chef_server_key
+        self._web_target_details = web_target_details
 
     @property
-    def chef_server_port(self):
-        """Gets the chef_server_port of this TargetTypeDetailsInput.  # noqa: E501
+    def windows_target_details(self):
+        """Gets the windows_target_details of this TargetTypeDetailsInput.  # noqa: E501
 
 
-        :return: The chef_server_port of this TargetTypeDetailsInput.  # noqa: E501
-        :rtype: str
+        :return: The windows_target_details of this TargetTypeDetailsInput.  # noqa: E501
+        :rtype: WindowsTargetDetails
         """
-        return self._chef_server_port
+        return self._windows_target_details
 
-    @chef_server_port.setter
-    def chef_server_port(self, chef_server_port):
-        """Sets the chef_server_port of this TargetTypeDetailsInput.
+    @windows_target_details.setter
+    def windows_target_details(self, windows_target_details):
+        """Sets the windows_target_details of this TargetTypeDetailsInput.
 
 
-        :param chef_server_port: The chef_server_port of this TargetTypeDetailsInput.  # noqa: E501
-        :type: str
+        :param windows_target_details: The windows_target_details of this TargetTypeDetailsInput.  # noqa: E501
+        :type: WindowsTargetDetails
         """
 
-        self._chef_server_port = chef_server_port
+        self._windows_target_details = windows_target_details
 
     @property
-    def chef_server_url(self):
-        """Gets the chef_server_url of this TargetTypeDetailsInput.  # noqa: E501
+    def zerossl_target_details(self):
+        """Gets the zerossl_target_details of this TargetTypeDetailsInput.  # noqa: E501
 
 
-        :return: The chef_server_url of this TargetTypeDetailsInput.  # noqa: E501
-        :rtype: str
+        :return: The zerossl_target_details of this TargetTypeDetailsInput.  # noqa: E501
+        :rtype: ZeroSSLTargetDetails
         """
-        return self._chef_server_url
+        return self._zerossl_target_details
 
-    @chef_server_url.setter
-    def chef_server_url(self, chef_server_url):
-        """Sets the chef_server_url of this TargetTypeDetailsInput.
+    @zerossl_target_details.setter
+    def zerossl_target_details(self, zerossl_target_details):
+        """Sets the zerossl_target_details of this TargetTypeDetailsInput.
 
 
-        :param chef_server_url: The chef_server_url of this TargetTypeDetailsInput.  # noqa: E501
-        :type: str
+        :param zerossl_target_details: The zerossl_target_details of this TargetTypeDetailsInput.  # noqa: E501
+        :type: ZeroSSLTargetDetails
         """
 
-        self._chef_server_url = chef_server_url
-
-    @property
-    def chef_server_username(self):
-        """Gets the chef_server_username of this TargetTypeDetailsInput.  # noqa: E501
-
-
-        :return: The chef_server_username of this TargetTypeDetailsInput.  # noqa: E501
-        :rtype: str
-        """
-        return self._chef_server_username
-
-    @chef_server_username.setter
-    def chef_server_username(self, chef_server_username):
-        """Sets the chef_server_username of this TargetTypeDetailsInput.
-
-
-        :param chef_server_username: The chef_server_username of this TargetTypeDetailsInput.  # noqa: E501
-        :type: str
-        """
-
-        self._chef_server_username = chef_server_username
-
-    @property
-    def chef_skip_ssl(self):
-        """Gets the chef_skip_ssl of this TargetTypeDetailsInput.  # noqa: E501
-
-
-        :return: The chef_skip_ssl of this TargetTypeDetailsInput.  # noqa: E501
-        :rtype: bool
-        """
-        return self._chef_skip_ssl
-
-    @chef_skip_ssl.setter
-    def chef_skip_ssl(self, chef_skip_ssl):
-        """Sets the chef_skip_ssl of this TargetTypeDetailsInput.
-
-
-        :param chef_skip_ssl: The chef_skip_ssl of this TargetTypeDetailsInput.  # noqa: E501
-        :type: bool
-        """
-
-        self._chef_skip_ssl = chef_skip_ssl
-
-    @property
-    def client_id(self):
-        """Gets the client_id of this TargetTypeDetailsInput.  # noqa: E501
-
-
-        :return: The client_id of this TargetTypeDetailsInput.  # noqa: E501
-        :rtype: str
-        """
-        return self._client_id
-
-    @client_id.setter
-    def client_id(self, client_id):
-        """Sets the client_id of this TargetTypeDetailsInput.
-
-
-        :param client_id: The client_id of this TargetTypeDetailsInput.  # noqa: E501
-        :type: str
-        """
-
-        self._client_id = client_id
-
-    @property
-    def client_secret(self):
-        """Gets the client_secret of this TargetTypeDetailsInput.  # noqa: E501
-
-        params needed for password auth  # noqa: E501
-
-        :return: The client_secret of this TargetTypeDetailsInput.  # noqa: E501
-        :rtype: str
-        """
-        return self._client_secret
-
-    @client_secret.setter
-    def client_secret(self, client_secret):
-        """Sets the client_secret of this TargetTypeDetailsInput.
-
-        params needed for password auth  # noqa: E501
-
-        :param client_secret: The client_secret of this TargetTypeDetailsInput.  # noqa: E501
-        :type: str
-        """
-
-        self._client_secret = client_secret
-
-    @property
-    def db_host_name(self):
-        """Gets the db_host_name of this TargetTypeDetailsInput.  # noqa: E501
-
-
-        :return: The db_host_name of this TargetTypeDetailsInput.  # noqa: E501
-        :rtype: str
-        """
-        return self._db_host_name
-
-    @db_host_name.setter
-    def db_host_name(self, db_host_name):
-        """Sets the db_host_name of this TargetTypeDetailsInput.
-
-
-        :param db_host_name: The db_host_name of this TargetTypeDetailsInput.  # noqa: E501
-        :type: str
-        """
-
-        self._db_host_name = db_host_name
-
-    @property
-    def db_name(self):
-        """Gets the db_name of this TargetTypeDetailsInput.  # noqa: E501
-
-
-        :return: The db_name of this TargetTypeDetailsInput.  # noqa: E501
-        :rtype: str
-        """
-        return self._db_name
-
-    @db_name.setter
-    def db_name(self, db_name):
-        """Sets the db_name of this TargetTypeDetailsInput.
-
-
-        :param db_name: The db_name of this TargetTypeDetailsInput.  # noqa: E501
-        :type: str
-        """
-
-        self._db_name = db_name
-
-    @property
-    def db_port(self):
-        """Gets the db_port of this TargetTypeDetailsInput.  # noqa: E501
-
-
-        :return: The db_port of this TargetTypeDetailsInput.  # noqa: E501
-        :rtype: str
-        """
-        return self._db_port
-
-    @db_port.setter
-    def db_port(self, db_port):
-        """Sets the db_port of this TargetTypeDetailsInput.
-
-
-        :param db_port: The db_port of this TargetTypeDetailsInput.  # noqa: E501
-        :type: str
-        """
-
-        self._db_port = db_port
-
-    @property
-    def db_private_key(self):
-        """Gets the db_private_key of this TargetTypeDetailsInput.  # noqa: E501
-
-        (Optional) Private Key in PEM format  # noqa: E501
-
-        :return: The db_private_key of this TargetTypeDetailsInput.  # noqa: E501
-        :rtype: str
-        """
-        return self._db_private_key
-
-    @db_private_key.setter
-    def db_private_key(self, db_private_key):
-        """Sets the db_private_key of this TargetTypeDetailsInput.
-
-        (Optional) Private Key in PEM format  # noqa: E501
-
-        :param db_private_key: The db_private_key of this TargetTypeDetailsInput.  # noqa: E501
-        :type: str
-        """
-
-        self._db_private_key = db_private_key
-
-    @property
-    def db_private_key_passphrase(self):
-        """Gets the db_private_key_passphrase of this TargetTypeDetailsInput.  # noqa: E501
-
-
-        :return: The db_private_key_passphrase of this TargetTypeDetailsInput.  # noqa: E501
-        :rtype: str
-        """
-        return self._db_private_key_passphrase
-
-    @db_private_key_passphrase.setter
-    def db_private_key_passphrase(self, db_private_key_passphrase):
-        """Sets the db_private_key_passphrase of this TargetTypeDetailsInput.
-
-
-        :param db_private_key_passphrase: The db_private_key_passphrase of this TargetTypeDetailsInput.  # noqa: E501
-        :type: str
-        """
-
-        self._db_private_key_passphrase = db_private_key_passphrase
-
-    @property
-    def db_pwd(self):
-        """Gets the db_pwd of this TargetTypeDetailsInput.  # noqa: E501
-
-
-        :return: The db_pwd of this TargetTypeDetailsInput.  # noqa: E501
-        :rtype: str
-        """
-        return self._db_pwd
-
-    @db_pwd.setter
-    def db_pwd(self, db_pwd):
-        """Sets the db_pwd of this TargetTypeDetailsInput.
-
-
-        :param db_pwd: The db_pwd of this TargetTypeDetailsInput.  # noqa: E501
-        :type: str
-        """
-
-        self._db_pwd = db_pwd
-
-    @property
-    def db_server_certificates(self):
-        """Gets the db_server_certificates of this TargetTypeDetailsInput.  # noqa: E501
-
-        (Optional) DBServerCertificates defines the set of root certificate authorities that clients use when verifying server certificates. If DBServerCertificates is empty, TLS uses the host's root CA set.  # noqa: E501
-
-        :return: The db_server_certificates of this TargetTypeDetailsInput.  # noqa: E501
-        :rtype: str
-        """
-        return self._db_server_certificates
-
-    @db_server_certificates.setter
-    def db_server_certificates(self, db_server_certificates):
-        """Sets the db_server_certificates of this TargetTypeDetailsInput.
-
-        (Optional) DBServerCertificates defines the set of root certificate authorities that clients use when verifying server certificates. If DBServerCertificates is empty, TLS uses the host's root CA set.  # noqa: E501
-
-        :param db_server_certificates: The db_server_certificates of this TargetTypeDetailsInput.  # noqa: E501
-        :type: str
-        """
-
-        self._db_server_certificates = db_server_certificates
-
-    @property
-    def db_server_name(self):
-        """Gets the db_server_name of this TargetTypeDetailsInput.  # noqa: E501
-
-        (Optional) ServerName is used to verify the hostname on the returned certificates unless InsecureSkipVerify is given. It is also included in the client's handshake to support virtual hosting unless it is an IP address.  # noqa: E501
-
-        :return: The db_server_name of this TargetTypeDetailsInput.  # noqa: E501
-        :rtype: str
-        """
-        return self._db_server_name
-
-    @db_server_name.setter
-    def db_server_name(self, db_server_name):
-        """Sets the db_server_name of this TargetTypeDetailsInput.
-
-        (Optional) ServerName is used to verify the hostname on the returned certificates unless InsecureSkipVerify is given. It is also included in the client's handshake to support virtual hosting unless it is an IP address.  # noqa: E501
-
-        :param db_server_name: The db_server_name of this TargetTypeDetailsInput.  # noqa: E501
-        :type: str
-        """
-
-        self._db_server_name = db_server_name
-
-    @property
-    def db_user_name(self):
-        """Gets the db_user_name of this TargetTypeDetailsInput.  # noqa: E501
-
-
-        :return: The db_user_name of this TargetTypeDetailsInput.  # noqa: E501
-        :rtype: str
-        """
-        return self._db_user_name
-
-    @db_user_name.setter
-    def db_user_name(self, db_user_name):
-        """Sets the db_user_name of this TargetTypeDetailsInput.
-
-
-        :param db_user_name: The db_user_name of this TargetTypeDetailsInput.  # noqa: E501
-        :type: str
-        """
-
-        self._db_user_name = db_user_name
-
-    @property
-    def domain_name(self):
-        """Gets the domain_name of this TargetTypeDetailsInput.  # noqa: E501
-
-
-        :return: The domain_name of this TargetTypeDetailsInput.  # noqa: E501
-        :rtype: str
-        """
-        return self._domain_name
-
-    @domain_name.setter
-    def domain_name(self, domain_name):
-        """Sets the domain_name of this TargetTypeDetailsInput.
-
-
-        :param domain_name: The domain_name of this TargetTypeDetailsInput.  # noqa: E501
-        :type: str
-        """
-
-        self._domain_name = domain_name
-
-    @property
-    def eks_access_key_id(self):
-        """Gets the eks_access_key_id of this TargetTypeDetailsInput.  # noqa: E501
-
-
-        :return: The eks_access_key_id of this TargetTypeDetailsInput.  # noqa: E501
-        :rtype: str
-        """
-        return self._eks_access_key_id
-
-    @eks_access_key_id.setter
-    def eks_access_key_id(self, eks_access_key_id):
-        """Sets the eks_access_key_id of this TargetTypeDetailsInput.
-
-
-        :param eks_access_key_id: The eks_access_key_id of this TargetTypeDetailsInput.  # noqa: E501
-        :type: str
-        """
-
-        self._eks_access_key_id = eks_access_key_id
-
-    @property
-    def eks_cluster_ca_certificate(self):
-        """Gets the eks_cluster_ca_certificate of this TargetTypeDetailsInput.  # noqa: E501
-
-
-        :return: The eks_cluster_ca_certificate of this TargetTypeDetailsInput.  # noqa: E501
-        :rtype: str
-        """
-        return self._eks_cluster_ca_certificate
-
-    @eks_cluster_ca_certificate.setter
-    def eks_cluster_ca_certificate(self, eks_cluster_ca_certificate):
-        """Sets the eks_cluster_ca_certificate of this TargetTypeDetailsInput.
-
-
-        :param eks_cluster_ca_certificate: The eks_cluster_ca_certificate of this TargetTypeDetailsInput.  # noqa: E501
-        :type: str
-        """
-
-        self._eks_cluster_ca_certificate = eks_cluster_ca_certificate
-
-    @property
-    def eks_cluster_endpoint(self):
-        """Gets the eks_cluster_endpoint of this TargetTypeDetailsInput.  # noqa: E501
-
-
-        :return: The eks_cluster_endpoint of this TargetTypeDetailsInput.  # noqa: E501
-        :rtype: str
-        """
-        return self._eks_cluster_endpoint
-
-    @eks_cluster_endpoint.setter
-    def eks_cluster_endpoint(self, eks_cluster_endpoint):
-        """Sets the eks_cluster_endpoint of this TargetTypeDetailsInput.
-
-
-        :param eks_cluster_endpoint: The eks_cluster_endpoint of this TargetTypeDetailsInput.  # noqa: E501
-        :type: str
-        """
-
-        self._eks_cluster_endpoint = eks_cluster_endpoint
-
-    @property
-    def eks_cluster_name(self):
-        """Gets the eks_cluster_name of this TargetTypeDetailsInput.  # noqa: E501
-
-
-        :return: The eks_cluster_name of this TargetTypeDetailsInput.  # noqa: E501
-        :rtype: str
-        """
-        return self._eks_cluster_name
-
-    @eks_cluster_name.setter
-    def eks_cluster_name(self, eks_cluster_name):
-        """Sets the eks_cluster_name of this TargetTypeDetailsInput.
-
-
-        :param eks_cluster_name: The eks_cluster_name of this TargetTypeDetailsInput.  # noqa: E501
-        :type: str
-        """
-
-        self._eks_cluster_name = eks_cluster_name
-
-    @property
-    def eks_region(self):
-        """Gets the eks_region of this TargetTypeDetailsInput.  # noqa: E501
-
-
-        :return: The eks_region of this TargetTypeDetailsInput.  # noqa: E501
-        :rtype: str
-        """
-        return self._eks_region
-
-    @eks_region.setter
-    def eks_region(self, eks_region):
-        """Sets the eks_region of this TargetTypeDetailsInput.
-
-
-        :param eks_region: The eks_region of this TargetTypeDetailsInput.  # noqa: E501
-        :type: str
-        """
-
-        self._eks_region = eks_region
-
-    @property
-    def eks_secret_access_key(self):
-        """Gets the eks_secret_access_key of this TargetTypeDetailsInput.  # noqa: E501
-
-
-        :return: The eks_secret_access_key of this TargetTypeDetailsInput.  # noqa: E501
-        :rtype: str
-        """
-        return self._eks_secret_access_key
-
-    @eks_secret_access_key.setter
-    def eks_secret_access_key(self, eks_secret_access_key):
-        """Sets the eks_secret_access_key of this TargetTypeDetailsInput.
-
-
-        :param eks_secret_access_key: The eks_secret_access_key of this TargetTypeDetailsInput.  # noqa: E501
-        :type: str
-        """
-
-        self._eks_secret_access_key = eks_secret_access_key
-
-    @property
-    def email(self):
-        """Gets the email of this TargetTypeDetailsInput.  # noqa: E501
-
-
-        :return: The email of this TargetTypeDetailsInput.  # noqa: E501
-        :rtype: str
-        """
-        return self._email
-
-    @email.setter
-    def email(self, email):
-        """Sets the email of this TargetTypeDetailsInput.
-
-
-        :param email: The email of this TargetTypeDetailsInput.  # noqa: E501
-        :type: str
-        """
-
-        self._email = email
-
-    @property
-    def first_name(self):
-        """Gets the first_name of this TargetTypeDetailsInput.  # noqa: E501
-
-        Contact Info - GlobalSign requires this to be sent with every certificate creation request  # noqa: E501
-
-        :return: The first_name of this TargetTypeDetailsInput.  # noqa: E501
-        :rtype: str
-        """
-        return self._first_name
-
-    @first_name.setter
-    def first_name(self, first_name):
-        """Sets the first_name of this TargetTypeDetailsInput.
-
-        Contact Info - GlobalSign requires this to be sent with every certificate creation request  # noqa: E501
-
-        :param first_name: The first_name of this TargetTypeDetailsInput.  # noqa: E501
-        :type: str
-        """
-
-        self._first_name = first_name
-
-    @property
-    def gcp_service_account_email(self):
-        """Gets the gcp_service_account_email of this TargetTypeDetailsInput.  # noqa: E501
-
-        deprecated  # noqa: E501
-
-        :return: The gcp_service_account_email of this TargetTypeDetailsInput.  # noqa: E501
-        :rtype: str
-        """
-        return self._gcp_service_account_email
-
-    @gcp_service_account_email.setter
-    def gcp_service_account_email(self, gcp_service_account_email):
-        """Sets the gcp_service_account_email of this TargetTypeDetailsInput.
-
-        deprecated  # noqa: E501
-
-        :param gcp_service_account_email: The gcp_service_account_email of this TargetTypeDetailsInput.  # noqa: E501
-        :type: str
-        """
-
-        self._gcp_service_account_email = gcp_service_account_email
-
-    @property
-    def gcp_service_account_key(self):
-        """Gets the gcp_service_account_key of this TargetTypeDetailsInput.  # noqa: E501
-
-
-        :return: The gcp_service_account_key of this TargetTypeDetailsInput.  # noqa: E501
-        :rtype: str
-        """
-        return self._gcp_service_account_key
-
-    @gcp_service_account_key.setter
-    def gcp_service_account_key(self, gcp_service_account_key):
-        """Sets the gcp_service_account_key of this TargetTypeDetailsInput.
-
-
-        :param gcp_service_account_key: The gcp_service_account_key of this TargetTypeDetailsInput.  # noqa: E501
-        :type: str
-        """
-
-        self._gcp_service_account_key = gcp_service_account_key
-
-    @property
-    def gcp_service_account_key_base64(self):
-        """Gets the gcp_service_account_key_base64 of this TargetTypeDetailsInput.  # noqa: E501
-
-
-        :return: The gcp_service_account_key_base64 of this TargetTypeDetailsInput.  # noqa: E501
-        :rtype: str
-        """
-        return self._gcp_service_account_key_base64
-
-    @gcp_service_account_key_base64.setter
-    def gcp_service_account_key_base64(self, gcp_service_account_key_base64):
-        """Sets the gcp_service_account_key_base64 of this TargetTypeDetailsInput.
-
-
-        :param gcp_service_account_key_base64: The gcp_service_account_key_base64 of this TargetTypeDetailsInput.  # noqa: E501
-        :type: str
-        """
-
-        self._gcp_service_account_key_base64 = gcp_service_account_key_base64
-
-    @property
-    def github_app_id(self):
-        """Gets the github_app_id of this TargetTypeDetailsInput.  # noqa: E501
-
-
-        :return: The github_app_id of this TargetTypeDetailsInput.  # noqa: E501
-        :rtype: int
-        """
-        return self._github_app_id
-
-    @github_app_id.setter
-    def github_app_id(self, github_app_id):
-        """Sets the github_app_id of this TargetTypeDetailsInput.
-
-
-        :param github_app_id: The github_app_id of this TargetTypeDetailsInput.  # noqa: E501
-        :type: int
-        """
-
-        self._github_app_id = github_app_id
-
-    @property
-    def github_app_private_key(self):
-        """Gets the github_app_private_key of this TargetTypeDetailsInput.  # noqa: E501
-
-
-        :return: The github_app_private_key of this TargetTypeDetailsInput.  # noqa: E501
-        :rtype: str
-        """
-        return self._github_app_private_key
-
-    @github_app_private_key.setter
-    def github_app_private_key(self, github_app_private_key):
-        """Sets the github_app_private_key of this TargetTypeDetailsInput.
-
-
-        :param github_app_private_key: The github_app_private_key of this TargetTypeDetailsInput.  # noqa: E501
-        :type: str
-        """
-
-        self._github_app_private_key = github_app_private_key
-
-    @property
-    def github_base_url(self):
-        """Gets the github_base_url of this TargetTypeDetailsInput.  # noqa: E501
-
-
-        :return: The github_base_url of this TargetTypeDetailsInput.  # noqa: E501
-        :rtype: str
-        """
-        return self._github_base_url
-
-    @github_base_url.setter
-    def github_base_url(self, github_base_url):
-        """Sets the github_base_url of this TargetTypeDetailsInput.
-
-
-        :param github_base_url: The github_base_url of this TargetTypeDetailsInput.  # noqa: E501
-        :type: str
-        """
-
-        self._github_base_url = github_base_url
-
-    @property
-    def gke_cluster_ca_certificate(self):
-        """Gets the gke_cluster_ca_certificate of this TargetTypeDetailsInput.  # noqa: E501
-
-
-        :return: The gke_cluster_ca_certificate of this TargetTypeDetailsInput.  # noqa: E501
-        :rtype: str
-        """
-        return self._gke_cluster_ca_certificate
-
-    @gke_cluster_ca_certificate.setter
-    def gke_cluster_ca_certificate(self, gke_cluster_ca_certificate):
-        """Sets the gke_cluster_ca_certificate of this TargetTypeDetailsInput.
-
-
-        :param gke_cluster_ca_certificate: The gke_cluster_ca_certificate of this TargetTypeDetailsInput.  # noqa: E501
-        :type: str
-        """
-
-        self._gke_cluster_ca_certificate = gke_cluster_ca_certificate
-
-    @property
-    def gke_cluster_endpoint(self):
-        """Gets the gke_cluster_endpoint of this TargetTypeDetailsInput.  # noqa: E501
-
-
-        :return: The gke_cluster_endpoint of this TargetTypeDetailsInput.  # noqa: E501
-        :rtype: str
-        """
-        return self._gke_cluster_endpoint
-
-    @gke_cluster_endpoint.setter
-    def gke_cluster_endpoint(self, gke_cluster_endpoint):
-        """Sets the gke_cluster_endpoint of this TargetTypeDetailsInput.
-
-
-        :param gke_cluster_endpoint: The gke_cluster_endpoint of this TargetTypeDetailsInput.  # noqa: E501
-        :type: str
-        """
-
-        self._gke_cluster_endpoint = gke_cluster_endpoint
-
-    @property
-    def gke_cluster_name(self):
-        """Gets the gke_cluster_name of this TargetTypeDetailsInput.  # noqa: E501
-
-
-        :return: The gke_cluster_name of this TargetTypeDetailsInput.  # noqa: E501
-        :rtype: str
-        """
-        return self._gke_cluster_name
-
-    @gke_cluster_name.setter
-    def gke_cluster_name(self, gke_cluster_name):
-        """Sets the gke_cluster_name of this TargetTypeDetailsInput.
-
-
-        :param gke_cluster_name: The gke_cluster_name of this TargetTypeDetailsInput.  # noqa: E501
-        :type: str
-        """
-
-        self._gke_cluster_name = gke_cluster_name
-
-    @property
-    def gke_service_account_key(self):
-        """Gets the gke_service_account_key of this TargetTypeDetailsInput.  # noqa: E501
-
-
-        :return: The gke_service_account_key of this TargetTypeDetailsInput.  # noqa: E501
-        :rtype: str
-        """
-        return self._gke_service_account_key
-
-    @gke_service_account_key.setter
-    def gke_service_account_key(self, gke_service_account_key):
-        """Sets the gke_service_account_key of this TargetTypeDetailsInput.
-
-
-        :param gke_service_account_key: The gke_service_account_key of this TargetTypeDetailsInput.  # noqa: E501
-        :type: str
-        """
-
-        self._gke_service_account_key = gke_service_account_key
-
-    @property
-    def gke_service_account_name(self):
-        """Gets the gke_service_account_name of this TargetTypeDetailsInput.  # noqa: E501
-
-
-        :return: The gke_service_account_name of this TargetTypeDetailsInput.  # noqa: E501
-        :rtype: str
-        """
-        return self._gke_service_account_name
-
-    @gke_service_account_name.setter
-    def gke_service_account_name(self, gke_service_account_name):
-        """Sets the gke_service_account_name of this TargetTypeDetailsInput.
-
-
-        :param gke_service_account_name: The gke_service_account_name of this TargetTypeDetailsInput.  # noqa: E501
-        :type: str
-        """
-
-        self._gke_service_account_name = gke_service_account_name
-
-    @property
-    def host(self):
-        """Gets the host of this TargetTypeDetailsInput.  # noqa: E501
-
-
-        :return: The host of this TargetTypeDetailsInput.  # noqa: E501
-        :rtype: str
-        """
-        return self._host
-
-    @host.setter
-    def host(self, host):
-        """Sets the host of this TargetTypeDetailsInput.
-
-
-        :param host: The host of this TargetTypeDetailsInput.  # noqa: E501
-        :type: str
-        """
-
-        self._host = host
-
-    @property
-    def hostname(self):
-        """Gets the hostname of this TargetTypeDetailsInput.  # noqa: E501
-
-
-        :return: The hostname of this TargetTypeDetailsInput.  # noqa: E501
-        :rtype: str
-        """
-        return self._hostname
-
-    @hostname.setter
-    def hostname(self, hostname):
-        """Sets the hostname of this TargetTypeDetailsInput.
-
-
-        :param hostname: The hostname of this TargetTypeDetailsInput.  # noqa: E501
-        :type: str
-        """
-
-        self._hostname = hostname
-
-    @property
-    def hosts(self):
-        """Gets the hosts of this TargetTypeDetailsInput.  # noqa: E501
-
-        key hostname, value description  # noqa: E501
-
-        :return: The hosts of this TargetTypeDetailsInput.  # noqa: E501
-        :rtype: dict(str, str)
-        """
-        return self._hosts
-
-    @hosts.setter
-    def hosts(self, hosts):
-        """Sets the hosts of this TargetTypeDetailsInput.
-
-        key hostname, value description  # noqa: E501
-
-        :param hosts: The hosts of this TargetTypeDetailsInput.  # noqa: E501
-        :type: dict(str, str)
-        """
-
-        self._hosts = hosts
-
-    @property
-    def imap_fqdn(self):
-        """Gets the imap_fqdn of this TargetTypeDetailsInput.  # noqa: E501
-
-
-        :return: The imap_fqdn of this TargetTypeDetailsInput.  # noqa: E501
-        :rtype: str
-        """
-        return self._imap_fqdn
-
-    @imap_fqdn.setter
-    def imap_fqdn(self, imap_fqdn):
-        """Sets the imap_fqdn of this TargetTypeDetailsInput.
-
-
-        :param imap_fqdn: The imap_fqdn of this TargetTypeDetailsInput.  # noqa: E501
-        :type: str
-        """
-
-        self._imap_fqdn = imap_fqdn
-
-    @property
-    def imap_password(self):
-        """Gets the imap_password of this TargetTypeDetailsInput.  # noqa: E501
-
-
-        :return: The imap_password of this TargetTypeDetailsInput.  # noqa: E501
-        :rtype: str
-        """
-        return self._imap_password
-
-    @imap_password.setter
-    def imap_password(self, imap_password):
-        """Sets the imap_password of this TargetTypeDetailsInput.
-
-
-        :param imap_password: The imap_password of this TargetTypeDetailsInput.  # noqa: E501
-        :type: str
-        """
-
-        self._imap_password = imap_password
-
-    @property
-    def imap_port(self):
-        """Gets the imap_port of this TargetTypeDetailsInput.  # noqa: E501
-
-
-        :return: The imap_port of this TargetTypeDetailsInput.  # noqa: E501
-        :rtype: str
-        """
-        return self._imap_port
-
-    @imap_port.setter
-    def imap_port(self, imap_port):
-        """Sets the imap_port of this TargetTypeDetailsInput.
-
-
-        :param imap_port: The imap_port of this TargetTypeDetailsInput.  # noqa: E501
-        :type: str
-        """
-
-        self._imap_port = imap_port
-
-    @property
-    def imap_user(self):
-        """Gets the imap_user of this TargetTypeDetailsInput.  # noqa: E501
-
-
-        :return: The imap_user of this TargetTypeDetailsInput.  # noqa: E501
-        :rtype: str
-        """
-        return self._imap_user
-
-    @imap_user.setter
-    def imap_user(self, imap_user):
-        """Sets the imap_user of this TargetTypeDetailsInput.
-
-
-        :param imap_user: The imap_user of this TargetTypeDetailsInput.  # noqa: E501
-        :type: str
-        """
-
-        self._imap_user = imap_user
-
-    @property
-    def implementation_type(self):
-        """Gets the implementation_type of this TargetTypeDetailsInput.  # noqa: E501
-
-
-        :return: The implementation_type of this TargetTypeDetailsInput.  # noqa: E501
-        :rtype: str
-        """
-        return self._implementation_type
-
-    @implementation_type.setter
-    def implementation_type(self, implementation_type):
-        """Sets the implementation_type of this TargetTypeDetailsInput.
-
-
-        :param implementation_type: The implementation_type of this TargetTypeDetailsInput.  # noqa: E501
-        :type: str
-        """
-
-        self._implementation_type = implementation_type
-
-    @property
-    def k8s_bearer_token(self):
-        """Gets the k8s_bearer_token of this TargetTypeDetailsInput.  # noqa: E501
-
-
-        :return: The k8s_bearer_token of this TargetTypeDetailsInput.  # noqa: E501
-        :rtype: str
-        """
-        return self._k8s_bearer_token
-
-    @k8s_bearer_token.setter
-    def k8s_bearer_token(self, k8s_bearer_token):
-        """Sets the k8s_bearer_token of this TargetTypeDetailsInput.
-
-
-        :param k8s_bearer_token: The k8s_bearer_token of this TargetTypeDetailsInput.  # noqa: E501
-        :type: str
-        """
-
-        self._k8s_bearer_token = k8s_bearer_token
-
-    @property
-    def k8s_cluster_ca_certificate(self):
-        """Gets the k8s_cluster_ca_certificate of this TargetTypeDetailsInput.  # noqa: E501
-
-
-        :return: The k8s_cluster_ca_certificate of this TargetTypeDetailsInput.  # noqa: E501
-        :rtype: str
-        """
-        return self._k8s_cluster_ca_certificate
-
-    @k8s_cluster_ca_certificate.setter
-    def k8s_cluster_ca_certificate(self, k8s_cluster_ca_certificate):
-        """Sets the k8s_cluster_ca_certificate of this TargetTypeDetailsInput.
-
-
-        :param k8s_cluster_ca_certificate: The k8s_cluster_ca_certificate of this TargetTypeDetailsInput.  # noqa: E501
-        :type: str
-        """
-
-        self._k8s_cluster_ca_certificate = k8s_cluster_ca_certificate
-
-    @property
-    def k8s_cluster_endpoint(self):
-        """Gets the k8s_cluster_endpoint of this TargetTypeDetailsInput.  # noqa: E501
-
-
-        :return: The k8s_cluster_endpoint of this TargetTypeDetailsInput.  # noqa: E501
-        :rtype: str
-        """
-        return self._k8s_cluster_endpoint
-
-    @k8s_cluster_endpoint.setter
-    def k8s_cluster_endpoint(self, k8s_cluster_endpoint):
-        """Sets the k8s_cluster_endpoint of this TargetTypeDetailsInput.
-
-
-        :param k8s_cluster_endpoint: The k8s_cluster_endpoint of this TargetTypeDetailsInput.  # noqa: E501
-        :type: str
-        """
-
-        self._k8s_cluster_endpoint = k8s_cluster_endpoint
-
-    @property
-    def last_name(self):
-        """Gets the last_name of this TargetTypeDetailsInput.  # noqa: E501
-
-
-        :return: The last_name of this TargetTypeDetailsInput.  # noqa: E501
-        :rtype: str
-        """
-        return self._last_name
-
-    @last_name.setter
-    def last_name(self, last_name):
-        """Sets the last_name of this TargetTypeDetailsInput.
-
-
-        :param last_name: The last_name of this TargetTypeDetailsInput.  # noqa: E501
-        :type: str
-        """
-
-        self._last_name = last_name
-
-    @property
-    def ldap_audience(self):
-        """Gets the ldap_audience of this TargetTypeDetailsInput.  # noqa: E501
-
-
-        :return: The ldap_audience of this TargetTypeDetailsInput.  # noqa: E501
-        :rtype: str
-        """
-        return self._ldap_audience
-
-    @ldap_audience.setter
-    def ldap_audience(self, ldap_audience):
-        """Sets the ldap_audience of this TargetTypeDetailsInput.
-
-
-        :param ldap_audience: The ldap_audience of this TargetTypeDetailsInput.  # noqa: E501
-        :type: str
-        """
-
-        self._ldap_audience = ldap_audience
-
-    @property
-    def ldap_bind_dn(self):
-        """Gets the ldap_bind_dn of this TargetTypeDetailsInput.  # noqa: E501
-
-
-        :return: The ldap_bind_dn of this TargetTypeDetailsInput.  # noqa: E501
-        :rtype: str
-        """
-        return self._ldap_bind_dn
-
-    @ldap_bind_dn.setter
-    def ldap_bind_dn(self, ldap_bind_dn):
-        """Sets the ldap_bind_dn of this TargetTypeDetailsInput.
-
-
-        :param ldap_bind_dn: The ldap_bind_dn of this TargetTypeDetailsInput.  # noqa: E501
-        :type: str
-        """
-
-        self._ldap_bind_dn = ldap_bind_dn
-
-    @property
-    def ldap_bind_password(self):
-        """Gets the ldap_bind_password of this TargetTypeDetailsInput.  # noqa: E501
-
-
-        :return: The ldap_bind_password of this TargetTypeDetailsInput.  # noqa: E501
-        :rtype: str
-        """
-        return self._ldap_bind_password
-
-    @ldap_bind_password.setter
-    def ldap_bind_password(self, ldap_bind_password):
-        """Sets the ldap_bind_password of this TargetTypeDetailsInput.
-
-
-        :param ldap_bind_password: The ldap_bind_password of this TargetTypeDetailsInput.  # noqa: E501
-        :type: str
-        """
-
-        self._ldap_bind_password = ldap_bind_password
-
-    @property
-    def ldap_certificate(self):
-        """Gets the ldap_certificate of this TargetTypeDetailsInput.  # noqa: E501
-
-
-        :return: The ldap_certificate of this TargetTypeDetailsInput.  # noqa: E501
-        :rtype: str
-        """
-        return self._ldap_certificate
-
-    @ldap_certificate.setter
-    def ldap_certificate(self, ldap_certificate):
-        """Sets the ldap_certificate of this TargetTypeDetailsInput.
-
-
-        :param ldap_certificate: The ldap_certificate of this TargetTypeDetailsInput.  # noqa: E501
-        :type: str
-        """
-
-        self._ldap_certificate = ldap_certificate
-
-    @property
-    def ldap_token_expiration(self):
-        """Gets the ldap_token_expiration of this TargetTypeDetailsInput.  # noqa: E501
-
-
-        :return: The ldap_token_expiration of this TargetTypeDetailsInput.  # noqa: E501
-        :rtype: str
-        """
-        return self._ldap_token_expiration
-
-    @ldap_token_expiration.setter
-    def ldap_token_expiration(self, ldap_token_expiration):
-        """Sets the ldap_token_expiration of this TargetTypeDetailsInput.
-
-
-        :param ldap_token_expiration: The ldap_token_expiration of this TargetTypeDetailsInput.  # noqa: E501
-        :type: str
-        """
-
-        self._ldap_token_expiration = ldap_token_expiration
-
-    @property
-    def ldap_url(self):
-        """Gets the ldap_url of this TargetTypeDetailsInput.  # noqa: E501
-
-
-        :return: The ldap_url of this TargetTypeDetailsInput.  # noqa: E501
-        :rtype: str
-        """
-        return self._ldap_url
-
-    @ldap_url.setter
-    def ldap_url(self, ldap_url):
-        """Sets the ldap_url of this TargetTypeDetailsInput.
-
-
-        :param ldap_url: The ldap_url of this TargetTypeDetailsInput.  # noqa: E501
-        :type: str
-        """
-
-        self._ldap_url = ldap_url
-
-    @property
-    def mongodb_atlas_api_private_key(self):
-        """Gets the mongodb_atlas_api_private_key of this TargetTypeDetailsInput.  # noqa: E501
-
-
-        :return: The mongodb_atlas_api_private_key of this TargetTypeDetailsInput.  # noqa: E501
-        :rtype: str
-        """
-        return self._mongodb_atlas_api_private_key
-
-    @mongodb_atlas_api_private_key.setter
-    def mongodb_atlas_api_private_key(self, mongodb_atlas_api_private_key):
-        """Sets the mongodb_atlas_api_private_key of this TargetTypeDetailsInput.
-
-
-        :param mongodb_atlas_api_private_key: The mongodb_atlas_api_private_key of this TargetTypeDetailsInput.  # noqa: E501
-        :type: str
-        """
-
-        self._mongodb_atlas_api_private_key = mongodb_atlas_api_private_key
-
-    @property
-    def mongodb_atlas_api_public_key(self):
-        """Gets the mongodb_atlas_api_public_key of this TargetTypeDetailsInput.  # noqa: E501
-
-
-        :return: The mongodb_atlas_api_public_key of this TargetTypeDetailsInput.  # noqa: E501
-        :rtype: str
-        """
-        return self._mongodb_atlas_api_public_key
-
-    @mongodb_atlas_api_public_key.setter
-    def mongodb_atlas_api_public_key(self, mongodb_atlas_api_public_key):
-        """Sets the mongodb_atlas_api_public_key of this TargetTypeDetailsInput.
-
-
-        :param mongodb_atlas_api_public_key: The mongodb_atlas_api_public_key of this TargetTypeDetailsInput.  # noqa: E501
-        :type: str
-        """
-
-        self._mongodb_atlas_api_public_key = mongodb_atlas_api_public_key
-
-    @property
-    def mongodb_atlas_project_id(self):
-        """Gets the mongodb_atlas_project_id of this TargetTypeDetailsInput.  # noqa: E501
-
-        mongodb atlas fields  # noqa: E501
-
-        :return: The mongodb_atlas_project_id of this TargetTypeDetailsInput.  # noqa: E501
-        :rtype: str
-        """
-        return self._mongodb_atlas_project_id
-
-    @mongodb_atlas_project_id.setter
-    def mongodb_atlas_project_id(self, mongodb_atlas_project_id):
-        """Sets the mongodb_atlas_project_id of this TargetTypeDetailsInput.
-
-        mongodb atlas fields  # noqa: E501
-
-        :param mongodb_atlas_project_id: The mongodb_atlas_project_id of this TargetTypeDetailsInput.  # noqa: E501
-        :type: str
-        """
-
-        self._mongodb_atlas_project_id = mongodb_atlas_project_id
-
-    @property
-    def mongodb_db_name(self):
-        """Gets the mongodb_db_name of this TargetTypeDetailsInput.  # noqa: E501
-
-        common fields  # noqa: E501
-
-        :return: The mongodb_db_name of this TargetTypeDetailsInput.  # noqa: E501
-        :rtype: str
-        """
-        return self._mongodb_db_name
-
-    @mongodb_db_name.setter
-    def mongodb_db_name(self, mongodb_db_name):
-        """Sets the mongodb_db_name of this TargetTypeDetailsInput.
-
-        common fields  # noqa: E501
-
-        :param mongodb_db_name: The mongodb_db_name of this TargetTypeDetailsInput.  # noqa: E501
-        :type: str
-        """
-
-        self._mongodb_db_name = mongodb_db_name
-
-    @property
-    def mongodb_default_auth_db(self):
-        """Gets the mongodb_default_auth_db of this TargetTypeDetailsInput.  # noqa: E501
-
-
-        :return: The mongodb_default_auth_db of this TargetTypeDetailsInput.  # noqa: E501
-        :rtype: str
-        """
-        return self._mongodb_default_auth_db
-
-    @mongodb_default_auth_db.setter
-    def mongodb_default_auth_db(self, mongodb_default_auth_db):
-        """Sets the mongodb_default_auth_db of this TargetTypeDetailsInput.
-
-
-        :param mongodb_default_auth_db: The mongodb_default_auth_db of this TargetTypeDetailsInput.  # noqa: E501
-        :type: str
-        """
-
-        self._mongodb_default_auth_db = mongodb_default_auth_db
-
-    @property
-    def mongodb_host_port(self):
-        """Gets the mongodb_host_port of this TargetTypeDetailsInput.  # noqa: E501
-
-
-        :return: The mongodb_host_port of this TargetTypeDetailsInput.  # noqa: E501
-        :rtype: str
-        """
-        return self._mongodb_host_port
-
-    @mongodb_host_port.setter
-    def mongodb_host_port(self, mongodb_host_port):
-        """Sets the mongodb_host_port of this TargetTypeDetailsInput.
-
-
-        :param mongodb_host_port: The mongodb_host_port of this TargetTypeDetailsInput.  # noqa: E501
-        :type: str
-        """
-
-        self._mongodb_host_port = mongodb_host_port
-
-    @property
-    def mongodb_is_atlas(self):
-        """Gets the mongodb_is_atlas of this TargetTypeDetailsInput.  # noqa: E501
-
-
-        :return: The mongodb_is_atlas of this TargetTypeDetailsInput.  # noqa: E501
-        :rtype: bool
-        """
-        return self._mongodb_is_atlas
-
-    @mongodb_is_atlas.setter
-    def mongodb_is_atlas(self, mongodb_is_atlas):
-        """Sets the mongodb_is_atlas of this TargetTypeDetailsInput.
-
-
-        :param mongodb_is_atlas: The mongodb_is_atlas of this TargetTypeDetailsInput.  # noqa: E501
-        :type: bool
-        """
-
-        self._mongodb_is_atlas = mongodb_is_atlas
-
-    @property
-    def mongodb_password(self):
-        """Gets the mongodb_password of this TargetTypeDetailsInput.  # noqa: E501
-
-
-        :return: The mongodb_password of this TargetTypeDetailsInput.  # noqa: E501
-        :rtype: str
-        """
-        return self._mongodb_password
-
-    @mongodb_password.setter
-    def mongodb_password(self, mongodb_password):
-        """Sets the mongodb_password of this TargetTypeDetailsInput.
-
-
-        :param mongodb_password: The mongodb_password of this TargetTypeDetailsInput.  # noqa: E501
-        :type: str
-        """
-
-        self._mongodb_password = mongodb_password
-
-    @property
-    def mongodb_uri_connection(self):
-        """Gets the mongodb_uri_connection of this TargetTypeDetailsInput.  # noqa: E501
-
-        mongodb fields  # noqa: E501
-
-        :return: The mongodb_uri_connection of this TargetTypeDetailsInput.  # noqa: E501
-        :rtype: str
-        """
-        return self._mongodb_uri_connection
-
-    @mongodb_uri_connection.setter
-    def mongodb_uri_connection(self, mongodb_uri_connection):
-        """Sets the mongodb_uri_connection of this TargetTypeDetailsInput.
-
-        mongodb fields  # noqa: E501
-
-        :param mongodb_uri_connection: The mongodb_uri_connection of this TargetTypeDetailsInput.  # noqa: E501
-        :type: str
-        """
-
-        self._mongodb_uri_connection = mongodb_uri_connection
-
-    @property
-    def mongodb_uri_options(self):
-        """Gets the mongodb_uri_options of this TargetTypeDetailsInput.  # noqa: E501
-
-
-        :return: The mongodb_uri_options of this TargetTypeDetailsInput.  # noqa: E501
-        :rtype: str
-        """
-        return self._mongodb_uri_options
-
-    @mongodb_uri_options.setter
-    def mongodb_uri_options(self, mongodb_uri_options):
-        """Sets the mongodb_uri_options of this TargetTypeDetailsInput.
-
-
-        :param mongodb_uri_options: The mongodb_uri_options of this TargetTypeDetailsInput.  # noqa: E501
-        :type: str
-        """
-
-        self._mongodb_uri_options = mongodb_uri_options
-
-    @property
-    def mongodb_username(self):
-        """Gets the mongodb_username of this TargetTypeDetailsInput.  # noqa: E501
-
-
-        :return: The mongodb_username of this TargetTypeDetailsInput.  # noqa: E501
-        :rtype: str
-        """
-        return self._mongodb_username
-
-    @mongodb_username.setter
-    def mongodb_username(self, mongodb_username):
-        """Sets the mongodb_username of this TargetTypeDetailsInput.
-
-
-        :param mongodb_username: The mongodb_username of this TargetTypeDetailsInput.  # noqa: E501
-        :type: str
-        """
-
-        self._mongodb_username = mongodb_username
-
-    @property
-    def password(self):
-        """Gets the password of this TargetTypeDetailsInput.  # noqa: E501
-
-
-        :return: The password of this TargetTypeDetailsInput.  # noqa: E501
-        :rtype: str
-        """
-        return self._password
-
-    @password.setter
-    def password(self, password):
-        """Sets the password of this TargetTypeDetailsInput.
-
-
-        :param password: The password of this TargetTypeDetailsInput.  # noqa: E501
-        :type: str
-        """
-
-        self._password = password
-
-    @property
-    def payload(self):
-        """Gets the payload of this TargetTypeDetailsInput.  # noqa: E501
-
-
-        :return: The payload of this TargetTypeDetailsInput.  # noqa: E501
-        :rtype: str
-        """
-        return self._payload
-
-    @payload.setter
-    def payload(self, payload):
-        """Sets the payload of this TargetTypeDetailsInput.
-
-
-        :param payload: The payload of this TargetTypeDetailsInput.  # noqa: E501
-        :type: str
-        """
-
-        self._payload = payload
-
-    @property
-    def phone(self):
-        """Gets the phone of this TargetTypeDetailsInput.  # noqa: E501
-
-
-        :return: The phone of this TargetTypeDetailsInput.  # noqa: E501
-        :rtype: str
-        """
-        return self._phone
-
-    @phone.setter
-    def phone(self, phone):
-        """Sets the phone of this TargetTypeDetailsInput.
-
-
-        :param phone: The phone of this TargetTypeDetailsInput.  # noqa: E501
-        :type: str
-        """
-
-        self._phone = phone
-
-    @property
-    def ping_url(self):
-        """Gets the ping_url of this TargetTypeDetailsInput.  # noqa: E501
-
-
-        :return: The ping_url of this TargetTypeDetailsInput.  # noqa: E501
-        :rtype: str
-        """
-        return self._ping_url
-
-    @ping_url.setter
-    def ping_url(self, ping_url):
-        """Sets the ping_url of this TargetTypeDetailsInput.
-
-
-        :param ping_url: The ping_url of this TargetTypeDetailsInput.  # noqa: E501
-        :type: str
-        """
-
-        self._ping_url = ping_url
-
-    @property
-    def port(self):
-        """Gets the port of this TargetTypeDetailsInput.  # noqa: E501
-
-
-        :return: The port of this TargetTypeDetailsInput.  # noqa: E501
-        :rtype: str
-        """
-        return self._port
-
-    @port.setter
-    def port(self, port):
-        """Sets the port of this TargetTypeDetailsInput.
-
-
-        :param port: The port of this TargetTypeDetailsInput.  # noqa: E501
-        :type: str
-        """
-
-        self._port = port
-
-    @property
-    def private_key(self):
-        """Gets the private_key of this TargetTypeDetailsInput.  # noqa: E501
-
-
-        :return: The private_key of this TargetTypeDetailsInput.  # noqa: E501
-        :rtype: str
-        """
-        return self._private_key
-
-    @private_key.setter
-    def private_key(self, private_key):
-        """Sets the private_key of this TargetTypeDetailsInput.
-
-
-        :param private_key: The private_key of this TargetTypeDetailsInput.  # noqa: E501
-        :type: str
-        """
-
-        self._private_key = private_key
-
-    @property
-    def private_key_password(self):
-        """Gets the private_key_password of this TargetTypeDetailsInput.  # noqa: E501
-
-
-        :return: The private_key_password of this TargetTypeDetailsInput.  # noqa: E501
-        :rtype: str
-        """
-        return self._private_key_password
-
-    @private_key_password.setter
-    def private_key_password(self, private_key_password):
-        """Sets the private_key_password of this TargetTypeDetailsInput.
-
-
-        :param private_key_password: The private_key_password of this TargetTypeDetailsInput.  # noqa: E501
-        :type: str
-        """
-
-        self._private_key_password = private_key_password
-
-    @property
-    def privileged_user(self):
-        """Gets the privileged_user of this TargetTypeDetailsInput.  # noqa: E501
-
-
-        :return: The privileged_user of this TargetTypeDetailsInput.  # noqa: E501
-        :rtype: str
-        """
-        return self._privileged_user
-
-    @privileged_user.setter
-    def privileged_user(self, privileged_user):
-        """Sets the privileged_user of this TargetTypeDetailsInput.
-
-
-        :param privileged_user: The privileged_user of this TargetTypeDetailsInput.  # noqa: E501
-        :type: str
-        """
-
-        self._privileged_user = privileged_user
-
-    @property
-    def profile_id(self):
-        """Gets the profile_id of this TargetTypeDetailsInput.  # noqa: E501
-
-
-        :return: The profile_id of this TargetTypeDetailsInput.  # noqa: E501
-        :rtype: str
-        """
-        return self._profile_id
-
-    @profile_id.setter
-    def profile_id(self, profile_id):
-        """Sets the profile_id of this TargetTypeDetailsInput.
-
-
-        :param profile_id: The profile_id of this TargetTypeDetailsInput.  # noqa: E501
-        :type: str
-        """
-
-        self._profile_id = profile_id
-
-    @property
-    def rabbitmq_server_password(self):
-        """Gets the rabbitmq_server_password of this TargetTypeDetailsInput.  # noqa: E501
-
-
-        :return: The rabbitmq_server_password of this TargetTypeDetailsInput.  # noqa: E501
-        :rtype: str
-        """
-        return self._rabbitmq_server_password
-
-    @rabbitmq_server_password.setter
-    def rabbitmq_server_password(self, rabbitmq_server_password):
-        """Sets the rabbitmq_server_password of this TargetTypeDetailsInput.
-
-
-        :param rabbitmq_server_password: The rabbitmq_server_password of this TargetTypeDetailsInput.  # noqa: E501
-        :type: str
-        """
-
-        self._rabbitmq_server_password = rabbitmq_server_password
-
-    @property
-    def rabbitmq_server_uri(self):
-        """Gets the rabbitmq_server_uri of this TargetTypeDetailsInput.  # noqa: E501
-
-
-        :return: The rabbitmq_server_uri of this TargetTypeDetailsInput.  # noqa: E501
-        :rtype: str
-        """
-        return self._rabbitmq_server_uri
-
-    @rabbitmq_server_uri.setter
-    def rabbitmq_server_uri(self, rabbitmq_server_uri):
-        """Sets the rabbitmq_server_uri of this TargetTypeDetailsInput.
-
-
-        :param rabbitmq_server_uri: The rabbitmq_server_uri of this TargetTypeDetailsInput.  # noqa: E501
-        :type: str
-        """
-
-        self._rabbitmq_server_uri = rabbitmq_server_uri
-
-    @property
-    def rabbitmq_server_user(self):
-        """Gets the rabbitmq_server_user of this TargetTypeDetailsInput.  # noqa: E501
-
-
-        :return: The rabbitmq_server_user of this TargetTypeDetailsInput.  # noqa: E501
-        :rtype: str
-        """
-        return self._rabbitmq_server_user
-
-    @rabbitmq_server_user.setter
-    def rabbitmq_server_user(self, rabbitmq_server_user):
-        """Sets the rabbitmq_server_user of this TargetTypeDetailsInput.
-
-
-        :param rabbitmq_server_user: The rabbitmq_server_user of this TargetTypeDetailsInput.  # noqa: E501
-        :type: str
-        """
-
-        self._rabbitmq_server_user = rabbitmq_server_user
-
-    @property
-    def security_token(self):
-        """Gets the security_token of this TargetTypeDetailsInput.  # noqa: E501
-
-
-        :return: The security_token of this TargetTypeDetailsInput.  # noqa: E501
-        :rtype: str
-        """
-        return self._security_token
-
-    @security_token.setter
-    def security_token(self, security_token):
-        """Sets the security_token of this TargetTypeDetailsInput.
-
-
-        :param security_token: The security_token of this TargetTypeDetailsInput.  # noqa: E501
-        :type: str
-        """
-
-        self._security_token = security_token
-
-    @property
-    def sf_account(self):
-        """Gets the sf_account of this TargetTypeDetailsInput.  # noqa: E501
-
-
-        :return: The sf_account of this TargetTypeDetailsInput.  # noqa: E501
-        :rtype: str
-        """
-        return self._sf_account
-
-    @sf_account.setter
-    def sf_account(self, sf_account):
-        """Sets the sf_account of this TargetTypeDetailsInput.
-
-
-        :param sf_account: The sf_account of this TargetTypeDetailsInput.  # noqa: E501
-        :type: str
-        """
-
-        self._sf_account = sf_account
-
-    @property
-    def ssl_connection_certificate(self):
-        """Gets the ssl_connection_certificate of this TargetTypeDetailsInput.  # noqa: E501
-
-        (Optional) SSLConnectionCertificate defines the certificate for SSL connection. Must be base64 certificate loaded by UI using file loader field  # noqa: E501
-
-        :return: The ssl_connection_certificate of this TargetTypeDetailsInput.  # noqa: E501
-        :rtype: str
-        """
-        return self._ssl_connection_certificate
-
-    @ssl_connection_certificate.setter
-    def ssl_connection_certificate(self, ssl_connection_certificate):
-        """Sets the ssl_connection_certificate of this TargetTypeDetailsInput.
-
-        (Optional) SSLConnectionCertificate defines the certificate for SSL connection. Must be base64 certificate loaded by UI using file loader field  # noqa: E501
-
-        :param ssl_connection_certificate: The ssl_connection_certificate of this TargetTypeDetailsInput.  # noqa: E501
-        :type: str
-        """
-
-        self._ssl_connection_certificate = ssl_connection_certificate
-
-    @property
-    def ssl_connection_mode(self):
-        """Gets the ssl_connection_mode of this TargetTypeDetailsInput.  # noqa: E501
-
-        (Optional) SSLConnectionMode defines if SSL mode will be used to connect to DB  # noqa: E501
-
-        :return: The ssl_connection_mode of this TargetTypeDetailsInput.  # noqa: E501
-        :rtype: bool
-        """
-        return self._ssl_connection_mode
-
-    @ssl_connection_mode.setter
-    def ssl_connection_mode(self, ssl_connection_mode):
-        """Sets the ssl_connection_mode of this TargetTypeDetailsInput.
-
-        (Optional) SSLConnectionMode defines if SSL mode will be used to connect to DB  # noqa: E501
-
-        :param ssl_connection_mode: The ssl_connection_mode of this TargetTypeDetailsInput.  # noqa: E501
-        :type: bool
-        """
-
-        self._ssl_connection_mode = ssl_connection_mode
-
-    @property
-    def tenant_url(self):
-        """Gets the tenant_url of this TargetTypeDetailsInput.  # noqa: E501
-
-
-        :return: The tenant_url of this TargetTypeDetailsInput.  # noqa: E501
-        :rtype: str
-        """
-        return self._tenant_url
-
-    @tenant_url.setter
-    def tenant_url(self, tenant_url):
-        """Sets the tenant_url of this TargetTypeDetailsInput.
-
-
-        :param tenant_url: The tenant_url of this TargetTypeDetailsInput.  # noqa: E501
-        :type: str
-        """
-
-        self._tenant_url = tenant_url
-
-    @property
-    def timeout(self):
-        """Gets the timeout of this TargetTypeDetailsInput.  # noqa: E501
-
-        A Duration represents the elapsed time between two instants as an int64 nanosecond count. The representation limits the largest representable duration to approximately 290 years.  # noqa: E501
-
-        :return: The timeout of this TargetTypeDetailsInput.  # noqa: E501
-        :rtype: int
-        """
-        return self._timeout
-
-    @timeout.setter
-    def timeout(self, timeout):
-        """Sets the timeout of this TargetTypeDetailsInput.
-
-        A Duration represents the elapsed time between two instants as an int64 nanosecond count. The representation limits the largest representable duration to approximately 290 years.  # noqa: E501
-
-        :param timeout: The timeout of this TargetTypeDetailsInput.  # noqa: E501
-        :type: int
-        """
-
-        self._timeout = timeout
-
-    @property
-    def url(self):
-        """Gets the url of this TargetTypeDetailsInput.  # noqa: E501
-
-
-        :return: The url of this TargetTypeDetailsInput.  # noqa: E501
-        :rtype: str
-        """
-        return self._url
-
-    @url.setter
-    def url(self, url):
-        """Sets the url of this TargetTypeDetailsInput.
-
-
-        :param url: The url of this TargetTypeDetailsInput.  # noqa: E501
-        :type: str
-        """
-
-        self._url = url
-
-    @property
-    def use_gw_cloud_identity(self):
-        """Gets the use_gw_cloud_identity of this TargetTypeDetailsInput.  # noqa: E501
-
-
-        :return: The use_gw_cloud_identity of this TargetTypeDetailsInput.  # noqa: E501
-        :rtype: bool
-        """
-        return self._use_gw_cloud_identity
-
-    @use_gw_cloud_identity.setter
-    def use_gw_cloud_identity(self, use_gw_cloud_identity):
-        """Sets the use_gw_cloud_identity of this TargetTypeDetailsInput.
-
-
-        :param use_gw_cloud_identity: The use_gw_cloud_identity of this TargetTypeDetailsInput.  # noqa: E501
-        :type: bool
-        """
-
-        self._use_gw_cloud_identity = use_gw_cloud_identity
-
-    @property
-    def use_gw_service_account(self):
-        """Gets the use_gw_service_account of this TargetTypeDetailsInput.  # noqa: E501
-
-
-        :return: The use_gw_service_account of this TargetTypeDetailsInput.  # noqa: E501
-        :rtype: bool
-        """
-        return self._use_gw_service_account
-
-    @use_gw_service_account.setter
-    def use_gw_service_account(self, use_gw_service_account):
-        """Sets the use_gw_service_account of this TargetTypeDetailsInput.
-
-
-        :param use_gw_service_account: The use_gw_service_account of this TargetTypeDetailsInput.  # noqa: E501
-        :type: bool
-        """
-
-        self._use_gw_service_account = use_gw_service_account
-
-    @property
-    def use_tls(self):
-        """Gets the use_tls of this TargetTypeDetailsInput.  # noqa: E501
-
-
-        :return: The use_tls of this TargetTypeDetailsInput.  # noqa: E501
-        :rtype: bool
-        """
-        return self._use_tls
-
-    @use_tls.setter
-    def use_tls(self, use_tls):
-        """Sets the use_tls of this TargetTypeDetailsInput.
-
-
-        :param use_tls: The use_tls of this TargetTypeDetailsInput.  # noqa: E501
-        :type: bool
-        """
-
-        self._use_tls = use_tls
-
-    @property
-    def user_name(self):
-        """Gets the user_name of this TargetTypeDetailsInput.  # noqa: E501
-
-
-        :return: The user_name of this TargetTypeDetailsInput.  # noqa: E501
-        :rtype: str
-        """
-        return self._user_name
-
-    @user_name.setter
-    def user_name(self, user_name):
-        """Sets the user_name of this TargetTypeDetailsInput.
-
-
-        :param user_name: The user_name of this TargetTypeDetailsInput.  # noqa: E501
-        :type: str
-        """
-
-        self._user_name = user_name
-
-    @property
-    def user_password(self):
-        """Gets the user_password of this TargetTypeDetailsInput.  # noqa: E501
-
-
-        :return: The user_password of this TargetTypeDetailsInput.  # noqa: E501
-        :rtype: str
-        """
-        return self._user_password
-
-    @user_password.setter
-    def user_password(self, user_password):
-        """Sets the user_password of this TargetTypeDetailsInput.
-
-
-        :param user_password: The user_password of this TargetTypeDetailsInput.  # noqa: E501
-        :type: str
-        """
-
-        self._user_password = user_password
-
-    @property
-    def username(self):
-        """Gets the username of this TargetTypeDetailsInput.  # noqa: E501
-
-
-        :return: The username of this TargetTypeDetailsInput.  # noqa: E501
-        :rtype: str
-        """
-        return self._username
-
-    @username.setter
-    def username(self, username):
-        """Sets the username of this TargetTypeDetailsInput.
-
-
-        :param username: The username of this TargetTypeDetailsInput.  # noqa: E501
-        :type: str
-        """
-
-        self._username = username
-
-    @property
-    def validation_email(self):
-        """Gets the validation_email of this TargetTypeDetailsInput.  # noqa: E501
-
-
-        :return: The validation_email of this TargetTypeDetailsInput.  # noqa: E501
-        :rtype: str
-        """
-        return self._validation_email
-
-    @validation_email.setter
-    def validation_email(self, validation_email):
-        """Sets the validation_email of this TargetTypeDetailsInput.
-
-
-        :param validation_email: The validation_email of this TargetTypeDetailsInput.  # noqa: E501
-        :type: str
-        """
-
-        self._validation_email = validation_email
-
-    @property
-    def venafi_api_key(self):
-        """Gets the venafi_api_key of this TargetTypeDetailsInput.  # noqa: E501
-
-
-        :return: The venafi_api_key of this TargetTypeDetailsInput.  # noqa: E501
-        :rtype: str
-        """
-        return self._venafi_api_key
-
-    @venafi_api_key.setter
-    def venafi_api_key(self, venafi_api_key):
-        """Sets the venafi_api_key of this TargetTypeDetailsInput.
-
-
-        :param venafi_api_key: The venafi_api_key of this TargetTypeDetailsInput.  # noqa: E501
-        :type: str
-        """
-
-        self._venafi_api_key = venafi_api_key
-
-    @property
-    def venafi_base_url(self):
-        """Gets the venafi_base_url of this TargetTypeDetailsInput.  # noqa: E501
-
-
-        :return: The venafi_base_url of this TargetTypeDetailsInput.  # noqa: E501
-        :rtype: str
-        """
-        return self._venafi_base_url
-
-    @venafi_base_url.setter
-    def venafi_base_url(self, venafi_base_url):
-        """Sets the venafi_base_url of this TargetTypeDetailsInput.
-
-
-        :param venafi_base_url: The venafi_base_url of this TargetTypeDetailsInput.  # noqa: E501
-        :type: str
-        """
-
-        self._venafi_base_url = venafi_base_url
-
-    @property
-    def venafi_tpp_access_token(self):
-        """Gets the venafi_tpp_access_token of this TargetTypeDetailsInput.  # noqa: E501
-
-
-        :return: The venafi_tpp_access_token of this TargetTypeDetailsInput.  # noqa: E501
-        :rtype: str
-        """
-        return self._venafi_tpp_access_token
-
-    @venafi_tpp_access_token.setter
-    def venafi_tpp_access_token(self, venafi_tpp_access_token):
-        """Sets the venafi_tpp_access_token of this TargetTypeDetailsInput.
-
-
-        :param venafi_tpp_access_token: The venafi_tpp_access_token of this TargetTypeDetailsInput.  # noqa: E501
-        :type: str
-        """
-
-        self._venafi_tpp_access_token = venafi_tpp_access_token
-
-    @property
-    def venafi_tpp_client_id(self):
-        """Gets the venafi_tpp_client_id of this TargetTypeDetailsInput.  # noqa: E501
-
-
-        :return: The venafi_tpp_client_id of this TargetTypeDetailsInput.  # noqa: E501
-        :rtype: str
-        """
-        return self._venafi_tpp_client_id
-
-    @venafi_tpp_client_id.setter
-    def venafi_tpp_client_id(self, venafi_tpp_client_id):
-        """Sets the venafi_tpp_client_id of this TargetTypeDetailsInput.
-
-
-        :param venafi_tpp_client_id: The venafi_tpp_client_id of this TargetTypeDetailsInput.  # noqa: E501
-        :type: str
-        """
-
-        self._venafi_tpp_client_id = venafi_tpp_client_id
-
-    @property
-    def venafi_tpp_password(self):
-        """Gets the venafi_tpp_password of this TargetTypeDetailsInput.  # noqa: E501
-
-        Deprecated: VenafiAccessToken and VenafiRefreshToken should be used instead  # noqa: E501
-
-        :return: The venafi_tpp_password of this TargetTypeDetailsInput.  # noqa: E501
-        :rtype: str
-        """
-        return self._venafi_tpp_password
-
-    @venafi_tpp_password.setter
-    def venafi_tpp_password(self, venafi_tpp_password):
-        """Sets the venafi_tpp_password of this TargetTypeDetailsInput.
-
-        Deprecated: VenafiAccessToken and VenafiRefreshToken should be used instead  # noqa: E501
-
-        :param venafi_tpp_password: The venafi_tpp_password of this TargetTypeDetailsInput.  # noqa: E501
-        :type: str
-        """
-
-        self._venafi_tpp_password = venafi_tpp_password
-
-    @property
-    def venafi_tpp_refresh_token(self):
-        """Gets the venafi_tpp_refresh_token of this TargetTypeDetailsInput.  # noqa: E501
-
-
-        :return: The venafi_tpp_refresh_token of this TargetTypeDetailsInput.  # noqa: E501
-        :rtype: str
-        """
-        return self._venafi_tpp_refresh_token
-
-    @venafi_tpp_refresh_token.setter
-    def venafi_tpp_refresh_token(self, venafi_tpp_refresh_token):
-        """Sets the venafi_tpp_refresh_token of this TargetTypeDetailsInput.
-
-
-        :param venafi_tpp_refresh_token: The venafi_tpp_refresh_token of this TargetTypeDetailsInput.  # noqa: E501
-        :type: str
-        """
-
-        self._venafi_tpp_refresh_token = venafi_tpp_refresh_token
-
-    @property
-    def venafi_tpp_username(self):
-        """Gets the venafi_tpp_username of this TargetTypeDetailsInput.  # noqa: E501
-
-        Deprecated: VenafiAccessToken and VenafiRefreshToken should be used instead  # noqa: E501
-
-        :return: The venafi_tpp_username of this TargetTypeDetailsInput.  # noqa: E501
-        :rtype: str
-        """
-        return self._venafi_tpp_username
-
-    @venafi_tpp_username.setter
-    def venafi_tpp_username(self, venafi_tpp_username):
-        """Sets the venafi_tpp_username of this TargetTypeDetailsInput.
-
-        Deprecated: VenafiAccessToken and VenafiRefreshToken should be used instead  # noqa: E501
-
-        :param venafi_tpp_username: The venafi_tpp_username of this TargetTypeDetailsInput.  # noqa: E501
-        :type: str
-        """
-
-        self._venafi_tpp_username = venafi_tpp_username
-
-    @property
-    def venafi_use_tpp(self):
-        """Gets the venafi_use_tpp of this TargetTypeDetailsInput.  # noqa: E501
-
-
-        :return: The venafi_use_tpp of this TargetTypeDetailsInput.  # noqa: E501
-        :rtype: bool
-        """
-        return self._venafi_use_tpp
-
-    @venafi_use_tpp.setter
-    def venafi_use_tpp(self, venafi_use_tpp):
-        """Sets the venafi_use_tpp of this TargetTypeDetailsInput.
-
-
-        :param venafi_use_tpp: The venafi_use_tpp of this TargetTypeDetailsInput.  # noqa: E501
-        :type: bool
-        """
-
-        self._venafi_use_tpp = venafi_use_tpp
-
-    @property
-    def venafi_zone(self):
-        """Gets the venafi_zone of this TargetTypeDetailsInput.  # noqa: E501
-
-
-        :return: The venafi_zone of this TargetTypeDetailsInput.  # noqa: E501
-        :rtype: str
-        """
-        return self._venafi_zone
-
-    @venafi_zone.setter
-    def venafi_zone(self, venafi_zone):
-        """Sets the venafi_zone of this TargetTypeDetailsInput.
-
-
-        :param venafi_zone: The venafi_zone of this TargetTypeDetailsInput.  # noqa: E501
-        :type: str
-        """
-
-        self._venafi_zone = venafi_zone
+        self._zerossl_target_details = zerossl_target_details
 
     def to_dict(self):
         """Returns the model properties as a dict"""

@@ -42,12 +42,10 @@ class GenerateCsr(object):
         'country': 'str',
         'critical': 'bool',
         'dep': 'str',
-        'description': 'str',
         'email_addresses': 'str',
         'generate_key': 'bool',
         'ip_addresses': 'str',
         'json': 'bool',
-        'metadata': 'str',
         'name': 'str',
         'org': 'str',
         'state': 'str',
@@ -65,12 +63,10 @@ class GenerateCsr(object):
         'country': 'country',
         'critical': 'critical',
         'dep': 'dep',
-        'description': 'description',
         'email_addresses': 'email-addresses',
         'generate_key': 'generate-key',
         'ip_addresses': 'ip-addresses',
         'json': 'json',
-        'metadata': 'metadata',
         'name': 'name',
         'org': 'org',
         'state': 'state',
@@ -79,7 +75,7 @@ class GenerateCsr(object):
         'uri_sans': 'uri-sans'
     }
 
-    def __init__(self, alg=None, alt_names=None, certificate_type=None, city=None, common_name=None, country=None, critical=None, dep=None, description=None, email_addresses=None, generate_key=None, ip_addresses=None, json=False, metadata=None, name=None, org=None, state=None, token=None, uid_token=None, uri_sans=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, alg=None, alt_names=None, certificate_type=None, city=None, common_name=None, country=None, critical=None, dep=None, email_addresses=None, generate_key=None, ip_addresses=None, json=False, name=None, org=None, state=None, token=None, uid_token=None, uri_sans=None, local_vars_configuration=None):  # noqa: E501
         """GenerateCsr - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -93,12 +89,10 @@ class GenerateCsr(object):
         self._country = None
         self._critical = None
         self._dep = None
-        self._description = None
         self._email_addresses = None
         self._generate_key = None
         self._ip_addresses = None
         self._json = None
-        self._metadata = None
         self._name = None
         self._org = None
         self._state = None
@@ -122,8 +116,6 @@ class GenerateCsr(object):
             self.critical = critical
         if dep is not None:
             self.dep = dep
-        if description is not None:
-            self.description = description
         if email_addresses is not None:
             self.email_addresses = email_addresses
         if generate_key is not None:
@@ -132,8 +124,6 @@ class GenerateCsr(object):
             self.ip_addresses = ip_addresses
         if json is not None:
             self.json = json
-        if metadata is not None:
-            self.metadata = metadata
         self.name = name
         if org is not None:
             self.org = org
@@ -171,7 +161,7 @@ class GenerateCsr(object):
     def alt_names(self):
         """Gets the alt_names of this GenerateCsr.  # noqa: E501
 
-        The DNS Alternative Names to be included in the CSR certificate (in a comma-separated list)  # noqa: E501
+        A comma-separated list of dns alternative names  # noqa: E501
 
         :return: The alt_names of this GenerateCsr.  # noqa: E501
         :rtype: str
@@ -182,7 +172,7 @@ class GenerateCsr(object):
     def alt_names(self, alt_names):
         """Sets the alt_names of this GenerateCsr.
 
-        The DNS Alternative Names to be included in the CSR certificate (in a comma-separated list)  # noqa: E501
+        A comma-separated list of dns alternative names  # noqa: E501
 
         :param alt_names: The alt_names of this GenerateCsr.  # noqa: E501
         :type: str
@@ -194,7 +184,7 @@ class GenerateCsr(object):
     def certificate_type(self):
         """Gets the certificate_type of this GenerateCsr.  # noqa: E501
 
-        The certificateType to be included in the CSR certificate (ssl-client/ssl-server/certificate-signing)  # noqa: E501
+        The certificate type to be included in the CSR certificate (ssl-client/ssl-server/certificate-signing)  # noqa: E501
 
         :return: The certificate_type of this GenerateCsr.  # noqa: E501
         :rtype: str
@@ -205,7 +195,7 @@ class GenerateCsr(object):
     def certificate_type(self, certificate_type):
         """Sets the certificate_type of this GenerateCsr.
 
-        The certificateType to be included in the CSR certificate (ssl-client/ssl-server/certificate-signing)  # noqa: E501
+        The certificate type to be included in the CSR certificate (ssl-client/ssl-server/certificate-signing)  # noqa: E501
 
         :param certificate_type: The certificate_type of this GenerateCsr.  # noqa: E501
         :type: str
@@ -240,7 +230,7 @@ class GenerateCsr(object):
     def common_name(self):
         """Gets the common_name of this GenerateCsr.  # noqa: E501
 
-        The commonName to be included in the CSR certificate  # noqa: E501
+        The common name to be included in the CSR certificate  # noqa: E501
 
         :return: The common_name of this GenerateCsr.  # noqa: E501
         :rtype: str
@@ -251,7 +241,7 @@ class GenerateCsr(object):
     def common_name(self, common_name):
         """Sets the common_name of this GenerateCsr.
 
-        The commonName to be included in the CSR certificate  # noqa: E501
+        The common name to be included in the CSR certificate  # noqa: E501
 
         :param common_name: The common_name of this GenerateCsr.  # noqa: E501
         :type: str
@@ -331,33 +321,10 @@ class GenerateCsr(object):
         self._dep = dep
 
     @property
-    def description(self):
-        """Gets the description of this GenerateCsr.  # noqa: E501
-
-        Description of the object  # noqa: E501
-
-        :return: The description of this GenerateCsr.  # noqa: E501
-        :rtype: str
-        """
-        return self._description
-
-    @description.setter
-    def description(self, description):
-        """Sets the description of this GenerateCsr.
-
-        Description of the object  # noqa: E501
-
-        :param description: The description of this GenerateCsr.  # noqa: E501
-        :type: str
-        """
-
-        self._description = description
-
-    @property
     def email_addresses(self):
         """Gets the email_addresses of this GenerateCsr.  # noqa: E501
 
-        The email addresses Alternative Names to be included in the CSR certificate (in a comma-separated list)  # noqa: E501
+        A comma-separated list of email addresses alternative names  # noqa: E501
 
         :return: The email_addresses of this GenerateCsr.  # noqa: E501
         :rtype: str
@@ -368,7 +335,7 @@ class GenerateCsr(object):
     def email_addresses(self, email_addresses):
         """Sets the email_addresses of this GenerateCsr.
 
-        The email addresses Alternative Names to be included in the CSR certificate (in a comma-separated list)  # noqa: E501
+        A comma-separated list of email addresses alternative names  # noqa: E501
 
         :param email_addresses: The email_addresses of this GenerateCsr.  # noqa: E501
         :type: str
@@ -380,7 +347,7 @@ class GenerateCsr(object):
     def generate_key(self):
         """Gets the generate_key of this GenerateCsr.  # noqa: E501
 
-        Generate a new csr key  # noqa: E501
+        Generate a new classic key for the csr  # noqa: E501
 
         :return: The generate_key of this GenerateCsr.  # noqa: E501
         :rtype: bool
@@ -391,7 +358,7 @@ class GenerateCsr(object):
     def generate_key(self, generate_key):
         """Sets the generate_key of this GenerateCsr.
 
-        Generate a new csr key  # noqa: E501
+        Generate a new classic key for the csr  # noqa: E501
 
         :param generate_key: The generate_key of this GenerateCsr.  # noqa: E501
         :type: bool
@@ -403,7 +370,7 @@ class GenerateCsr(object):
     def ip_addresses(self):
         """Gets the ip_addresses of this GenerateCsr.  # noqa: E501
 
-        The ip addresses Alternative Names to be included in the CSR certificate (in a comma-separated list)  # noqa: E501
+        A comma-separated list of ip addresses alternative names  # noqa: E501
 
         :return: The ip_addresses of this GenerateCsr.  # noqa: E501
         :rtype: str
@@ -414,7 +381,7 @@ class GenerateCsr(object):
     def ip_addresses(self, ip_addresses):
         """Sets the ip_addresses of this GenerateCsr.
 
-        The ip addresses Alternative Names to be included in the CSR certificate (in a comma-separated list)  # noqa: E501
+        A comma-separated list of ip addresses alternative names  # noqa: E501
 
         :param ip_addresses: The ip_addresses of this GenerateCsr.  # noqa: E501
         :type: str
@@ -446,33 +413,10 @@ class GenerateCsr(object):
         self._json = json
 
     @property
-    def metadata(self):
-        """Gets the metadata of this GenerateCsr.  # noqa: E501
-
-        Deprecated - use description  # noqa: E501
-
-        :return: The metadata of this GenerateCsr.  # noqa: E501
-        :rtype: str
-        """
-        return self._metadata
-
-    @metadata.setter
-    def metadata(self, metadata):
-        """Sets the metadata of this GenerateCsr.
-
-        Deprecated - use description  # noqa: E501
-
-        :param metadata: The metadata of this GenerateCsr.  # noqa: E501
-        :type: str
-        """
-
-        self._metadata = metadata
-
-    @property
     def name(self):
         """Gets the name of this GenerateCsr.  # noqa: E501
 
-        Key name in akeyless  # noqa: E501
+        The classic key name  # noqa: E501
 
         :return: The name of this GenerateCsr.  # noqa: E501
         :rtype: str
@@ -483,7 +427,7 @@ class GenerateCsr(object):
     def name(self, name):
         """Sets the name of this GenerateCsr.
 
-        Key name in akeyless  # noqa: E501
+        The classic key name  # noqa: E501
 
         :param name: The name of this GenerateCsr.  # noqa: E501
         :type: str
@@ -589,7 +533,7 @@ class GenerateCsr(object):
     def uri_sans(self):
         """Gets the uri_sans of this GenerateCsr.  # noqa: E501
 
-        The URI Subject Alternative Names to be included in the CSR certificate (in a comma-separated list)  # noqa: E501
+        A comma-separated list of uri alternative names  # noqa: E501
 
         :return: The uri_sans of this GenerateCsr.  # noqa: E501
         :rtype: str
@@ -600,7 +544,7 @@ class GenerateCsr(object):
     def uri_sans(self, uri_sans):
         """Sets the uri_sans of this GenerateCsr.
 
-        The URI Subject Alternative Names to be included in the CSR certificate (in a comma-separated list)  # noqa: E501
+        A comma-separated list of uri alternative names  # noqa: E501
 
         :param uri_sans: The uri_sans of this GenerateCsr.  # noqa: E501
         :type: str

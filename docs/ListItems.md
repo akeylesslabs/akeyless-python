@@ -4,10 +4,10 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **accessibility** | **str** | for personal password manager | [optional] [default to 'regular']
+**auto_pagination** | **str** | Retrieve all items using pagination, when disabled retrieving only first 1000 items | [optional] [default to 'enabled']
 **filter** | **str** | Filter by item name or part of it | [optional] 
 **json** | **bool** | Set output format to JSON | [optional] [default to False]
 **minimal_view** | **bool** |  | [optional] 
-**pagination** | **str** | Retrieve items with pagination | [optional] [default to 'enabled']
 **pagination_token** | **str** | Next page reference | [optional] 
 **path** | **str** | Path to folder | [optional] 
 **sra_only** | **bool** | Filter by items with SRA functionality enabled | [optional] [default to False]

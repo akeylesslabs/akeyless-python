@@ -5,7 +5,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **admin_name** | **str** | Workstation Admin Name | [optional] 
 **description** | **str** | Description of the object | [optional] [default to 'default_comment']
-**email_to** | **str** | A comma seperated list of email addresses to send event to (relevant only for \\\&quot;email\\\&quot; Event Forwarder) | [optional] 
+**email_to** | **str** | A comma seperated list of email addresses to send event to (relevant only for \&quot;email\&quot; Event Forwarder) | [optional] 
 **enable** | **str** | Enable/Disable Event Forwarder [true/false] | [optional] [default to 'true']
 **event_source_locations** | **list[str]** | Event sources | [optional] 
 **event_types** | **list[str]** | Event types | [optional] 

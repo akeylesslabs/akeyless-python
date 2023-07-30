@@ -37,6 +37,7 @@ Method | HTTP request | Description
 [**create_gcp_target**](V2Api.md#create_gcp_target) | **POST** /create-gcp-target | 
 [**create_github_target**](V2Api.md#create_github_target) | **POST** /create-github-target | 
 [**create_gke_target**](V2Api.md#create_gke_target) | **POST** /create-gke-target | 
+[**create_global_sign_atlas_target**](V2Api.md#create_global_sign_atlas_target) | **POST** /create-globalsign-atlas-target | 
 [**create_global_sign_target**](V2Api.md#create_global_sign_target) | **POST** /create-globalsign-target | 
 [**create_key**](V2Api.md#create_key) | **POST** /create-key | 
 [**create_linked_target**](V2Api.md#create_linked_target) | **POST** /create-linked-target | 
@@ -259,6 +260,7 @@ Method | HTTP request | Description
 [**update_gcp_target**](V2Api.md#update_gcp_target) | **POST** /update-gcp-target | 
 [**update_github_target**](V2Api.md#update_github_target) | **POST** /update-github-target | 
 [**update_gke_target**](V2Api.md#update_gke_target) | **POST** /update-gke-target | 
+[**update_global_sign_atlas_target**](V2Api.md#update_global_sign_atlas_target) | **POST** /update-globalsign-atlas-target | 
 [**update_global_sign_target**](V2Api.md#update_global_sign_target) | **POST** /update-globalsign-target | 
 [**update_item**](V2Api.md#update_item) | **POST** /update-item | 
 [**update_ldap_target**](V2Api.md#update_ldap_target) | **POST** /update-ldap-target | 
@@ -2270,6 +2272,66 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | createGKETargetResponse wraps response body. |  -  |
+**0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **create_global_sign_atlas_target**
+> CreateGlobalSignAtlasTargetOutput create_global_sign_atlas_target(body)
+
+
+
+### Example
+
+```python
+from __future__ import print_function
+import time
+import akeyless
+from akeyless.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.akeyless.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = akeyless.Configuration(
+    host = "https://api.akeyless.io"
+)
+
+
+# Enter a context with an instance of the API client
+with akeyless.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = akeyless.V2Api(api_client)
+    body = akeyless.CreateGlobalSignAtlasTarget() # CreateGlobalSignAtlasTarget | 
+
+    try:
+        api_response = api_instance.create_global_sign_atlas_target(body)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling V2Api->create_global_sign_atlas_target: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**CreateGlobalSignAtlasTarget**](CreateGlobalSignAtlasTarget.md)|  | 
+
+### Return type
+
+[**CreateGlobalSignAtlasTargetOutput**](CreateGlobalSignAtlasTargetOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | createGlobalSignAtlasTargetResponse wraps response body. |  -  |
 **0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -15575,6 +15637,66 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | updateGKETargetResponse wraps response body. |  -  |
+**0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **update_global_sign_atlas_target**
+> UpdateGlobalSignAtlasTargetOutput update_global_sign_atlas_target(body)
+
+
+
+### Example
+
+```python
+from __future__ import print_function
+import time
+import akeyless
+from akeyless.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.akeyless.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = akeyless.Configuration(
+    host = "https://api.akeyless.io"
+)
+
+
+# Enter a context with an instance of the API client
+with akeyless.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = akeyless.V2Api(api_client)
+    body = akeyless.UpdateGlobalSignAtlasTarget() # UpdateGlobalSignAtlasTarget | 
+
+    try:
+        api_response = api_instance.update_global_sign_atlas_target(body)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling V2Api->update_global_sign_atlas_target: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**UpdateGlobalSignAtlasTarget**](UpdateGlobalSignAtlasTarget.md)|  | 
+
+### Return type
+
+[**UpdateGlobalSignAtlasTargetOutput**](UpdateGlobalSignAtlasTargetOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | updateGlobalSignAtlasTargetResponse wraps response body. |  -  |
 **0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

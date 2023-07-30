@@ -421,7 +421,7 @@ class UpdateSecretVal(object):
     def value(self):
         """Gets the value of this UpdateSecretVal.  # noqa: E501
 
-        The new secret value  # noqa: E501
+        The secret value (only relevant for type 'generic')  # noqa: E501
 
         :return: The value of this UpdateSecretVal.  # noqa: E501
         :rtype: str
@@ -432,7 +432,7 @@ class UpdateSecretVal(object):
     def value(self, value):
         """Sets the value of this UpdateSecretVal.
 
-        The new secret value  # noqa: E501
+        The secret value (only relevant for type 'generic')  # noqa: E501
 
         :param value: The value of this UpdateSecretVal.  # noqa: E501
         :type: str

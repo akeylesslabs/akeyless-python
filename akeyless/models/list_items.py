@@ -35,10 +35,10 @@ class ListItems(object):
     """
     openapi_types = {
         'accessibility': 'str',
+        'auto_pagination': 'str',
         'filter': 'str',
         'json': 'bool',
         'minimal_view': 'bool',
-        'pagination': 'str',
         'pagination_token': 'str',
         'path': 'str',
         'sra_only': 'bool',
@@ -51,10 +51,10 @@ class ListItems(object):
 
     attribute_map = {
         'accessibility': 'accessibility',
+        'auto_pagination': 'auto-pagination',
         'filter': 'filter',
         'json': 'json',
         'minimal_view': 'minimal-view',
-        'pagination': 'pagination',
         'pagination_token': 'pagination-token',
         'path': 'path',
         'sra_only': 'sra-only',
@@ -65,17 +65,17 @@ class ListItems(object):
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, accessibility='regular', filter=None, json=False, minimal_view=None, pagination='enabled', pagination_token=None, path=None, sra_only=False, sub_types=None, tag=None, token=None, type=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, accessibility='regular', auto_pagination='enabled', filter=None, json=False, minimal_view=None, pagination_token=None, path=None, sra_only=False, sub_types=None, tag=None, token=None, type=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """ListItems - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._accessibility = None
+        self._auto_pagination = None
         self._filter = None
         self._json = None
         self._minimal_view = None
-        self._pagination = None
         self._pagination_token = None
         self._path = None
         self._sra_only = None
@@ -88,14 +88,14 @@ class ListItems(object):
 
         if accessibility is not None:
             self.accessibility = accessibility
+        if auto_pagination is not None:
+            self.auto_pagination = auto_pagination
         if filter is not None:
             self.filter = filter
         if json is not None:
             self.json = json
         if minimal_view is not None:
             self.minimal_view = minimal_view
-        if pagination is not None:
-            self.pagination = pagination
         if pagination_token is not None:
             self.pagination_token = pagination_token
         if path is not None:
@@ -135,6 +135,29 @@ class ListItems(object):
         """
 
         self._accessibility = accessibility
+
+    @property
+    def auto_pagination(self):
+        """Gets the auto_pagination of this ListItems.  # noqa: E501
+
+        Retrieve all items using pagination, when disabled retrieving only first 1000 items  # noqa: E501
+
+        :return: The auto_pagination of this ListItems.  # noqa: E501
+        :rtype: str
+        """
+        return self._auto_pagination
+
+    @auto_pagination.setter
+    def auto_pagination(self, auto_pagination):
+        """Sets the auto_pagination of this ListItems.
+
+        Retrieve all items using pagination, when disabled retrieving only first 1000 items  # noqa: E501
+
+        :param auto_pagination: The auto_pagination of this ListItems.  # noqa: E501
+        :type: str
+        """
+
+        self._auto_pagination = auto_pagination
 
     @property
     def filter(self):
@@ -202,29 +225,6 @@ class ListItems(object):
         """
 
         self._minimal_view = minimal_view
-
-    @property
-    def pagination(self):
-        """Gets the pagination of this ListItems.  # noqa: E501
-
-        Retrieve items with pagination  # noqa: E501
-
-        :return: The pagination of this ListItems.  # noqa: E501
-        :rtype: str
-        """
-        return self._pagination
-
-    @pagination.setter
-    def pagination(self, pagination):
-        """Sets the pagination of this ListItems.
-
-        Retrieve items with pagination  # noqa: E501
-
-        :param pagination: The pagination of this ListItems.  # noqa: E501
-        :type: str
-        """
-
-        self._pagination = pagination
 
     @property
     def pagination_token(self):

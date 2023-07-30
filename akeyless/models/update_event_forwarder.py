@@ -162,7 +162,7 @@ class UpdateEventForwarder(object):
     def email_to(self):
         """Gets the email_to of this UpdateEventForwarder.  # noqa: E501
 
-        A comma seperated list of email addresses to send event to (relevant only for \\\"email\\\" Event Forwarder)  # noqa: E501
+        A comma seperated list of email addresses to send event to (relevant only for \"email\" Event Forwarder)  # noqa: E501
 
         :return: The email_to of this UpdateEventForwarder.  # noqa: E501
         :rtype: str
@@ -173,7 +173,7 @@ class UpdateEventForwarder(object):
     def email_to(self, email_to):
         """Sets the email_to of this UpdateEventForwarder.
 
-        A comma seperated list of email addresses to send event to (relevant only for \\\"email\\\" Event Forwarder)  # noqa: E501
+        A comma seperated list of email addresses to send event to (relevant only for \"email\" Event Forwarder)  # noqa: E501
 
         :param email_to: The email_to of this UpdateEventForwarder.  # noqa: E501
         :type: str
