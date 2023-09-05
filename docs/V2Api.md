@@ -184,6 +184,7 @@ Method | HTTP request | Description
 [**get_event_forwarder**](V2Api.md#get_event_forwarder) | **POST** /get-event-forwarder | 
 [**get_group**](V2Api.md#get_group) | **POST** /get-group | 
 [**get_kube_exec_creds**](V2Api.md#get_kube_exec_creds) | **POST** /get-kube-exec-creds | 
+[**get_last_user_event_status**](V2Api.md#get_last_user_event_status) | **POST** /user-event-last-status | 
 [**get_pki_certificate**](V2Api.md#get_pki_certificate) | **POST** /get-pki-certificate | 
 [**get_role**](V2Api.md#get_role) | **POST** /get-role | 
 [**get_rotated_secret_value**](V2Api.md#get_rotated_secret_value) | **POST** /get-rotated-secret-value | 
@@ -193,7 +194,6 @@ Method | HTTP request | Description
 [**get_tags**](V2Api.md#get_tags) | **POST** /get-tags | 
 [**get_target**](V2Api.md#get_target) | **POST** /get-target | 
 [**get_target_details**](V2Api.md#get_target_details) | **POST** /get-target-details | 
-[**get_user_last_event_status**](V2Api.md#get_user_last_event_status) | **POST** /user-event-last-status | 
 [**hmac**](V2Api.md#hmac) | **POST** /hmac | 
 [**import_passwords**](V2Api.md#import_passwords) | **POST** /import-passwords | 
 [**kmip_client_delete_rule**](V2Api.md#kmip_client_delete_rule) | **POST** /kmip-client-delete-rule | 
@@ -11097,6 +11097,66 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **get_last_user_event_status**
+> GetUserEventStatusOutput get_last_user_event_status(body)
+
+
+
+### Example
+
+```python
+from __future__ import print_function
+import time
+import akeyless
+from akeyless.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.akeyless.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = akeyless.Configuration(
+    host = "https://api.akeyless.io"
+)
+
+
+# Enter a context with an instance of the API client
+with akeyless.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = akeyless.V2Api(api_client)
+    body = akeyless.GetLastUserEventStatus() # GetLastUserEventStatus | 
+
+    try:
+        api_response = api_instance.get_last_user_event_status(body)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling V2Api->get_last_user_event_status: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**GetLastUserEventStatus**](GetLastUserEventStatus.md)|  | 
+
+### Return type
+
+[**GetUserEventStatusOutput**](GetUserEventStatusOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | getLastUserEventStatusResponse wraps response body. |  -  |
+**0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **get_pki_certificate**
 > GetPKICertificateOutput get_pki_certificate(body)
 
@@ -11633,62 +11693,6 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | getTargetDetailsResponse wraps response body. |  -  |
-**0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **get_user_last_event_status**
-> GetUserEventStatusOutput get_user_last_event_status()
-
-
-
-### Example
-
-```python
-from __future__ import print_function
-import time
-import akeyless
-from akeyless.rest import ApiException
-from pprint import pprint
-# Defining the host is optional and defaults to https://api.akeyless.io
-# See configuration.py for a list of all supported configuration parameters.
-configuration = akeyless.Configuration(
-    host = "https://api.akeyless.io"
-)
-
-
-# Enter a context with an instance of the API client
-with akeyless.ApiClient() as api_client:
-    # Create an instance of the API class
-    api_instance = akeyless.V2Api(api_client)
-    
-    try:
-        api_response = api_instance.get_user_last_event_status()
-        pprint(api_response)
-    except ApiException as e:
-        print("Exception when calling V2Api->get_user_last_event_status: %s\n" % e)
-```
-
-### Parameters
-This endpoint does not need any parameter.
-
-### Return type
-
-[**GetUserEventStatusOutput**](GetUserEventStatusOutput.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | getLastUserEventStatusResponse wraps response body. |  -  |
 **0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
