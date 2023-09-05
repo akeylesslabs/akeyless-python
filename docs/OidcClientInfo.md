@@ -3,10 +3,11 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**access_permission_assignment** | [**list[AccessPermissionAssignment]**](AccessPermissionAssignment.md) |  | [optional] 
+**access_permission_assignment** | [**list[AccessOrGroupPermissionAssignment]**](AccessOrGroupPermissionAssignment.md) |  | [optional] 
 **audience** | **list[str]** |  | [optional] 
 **client_id** | **str** |  | [optional] 
 **grant_types** | **list[str]** |  | [optional] 
+**issuer_url** | **str** |  | [optional] 
 **logout_uris** | **list[str]** |  | [optional] 
 **public** | **bool** |  | [optional] 
 **redirect_uris** | **list[str]** |  | [optional] 

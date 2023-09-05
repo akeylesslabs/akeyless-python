@@ -34,39 +34,75 @@ class NativeK8sTargetDetails(object):
                             and the value is json key in definition.
     """
     openapi_types = {
+        'k8s_auth_type': 'str',
         'k8s_bearer_token': 'str',
+        'k8s_client_cert_data': 'str',
+        'k8s_client_key_data': 'str',
         'k8s_cluster_ca_certificate': 'str',
         'k8s_cluster_endpoint': 'str',
         'use_gw_service_account': 'bool'
     }
 
     attribute_map = {
+        'k8s_auth_type': 'k8s_auth_type',
         'k8s_bearer_token': 'k8s_bearer_token',
+        'k8s_client_cert_data': 'k8s_client_cert_data',
+        'k8s_client_key_data': 'k8s_client_key_data',
         'k8s_cluster_ca_certificate': 'k8s_cluster_ca_certificate',
         'k8s_cluster_endpoint': 'k8s_cluster_endpoint',
         'use_gw_service_account': 'use_gw_service_account'
     }
 
-    def __init__(self, k8s_bearer_token=None, k8s_cluster_ca_certificate=None, k8s_cluster_endpoint=None, use_gw_service_account=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, k8s_auth_type=None, k8s_bearer_token=None, k8s_client_cert_data=None, k8s_client_key_data=None, k8s_cluster_ca_certificate=None, k8s_cluster_endpoint=None, use_gw_service_account=None, local_vars_configuration=None):  # noqa: E501
         """NativeK8sTargetDetails - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
+        self._k8s_auth_type = None
         self._k8s_bearer_token = None
+        self._k8s_client_cert_data = None
+        self._k8s_client_key_data = None
         self._k8s_cluster_ca_certificate = None
         self._k8s_cluster_endpoint = None
         self._use_gw_service_account = None
         self.discriminator = None
 
+        if k8s_auth_type is not None:
+            self.k8s_auth_type = k8s_auth_type
         if k8s_bearer_token is not None:
             self.k8s_bearer_token = k8s_bearer_token
+        if k8s_client_cert_data is not None:
+            self.k8s_client_cert_data = k8s_client_cert_data
+        if k8s_client_key_data is not None:
+            self.k8s_client_key_data = k8s_client_key_data
         if k8s_cluster_ca_certificate is not None:
             self.k8s_cluster_ca_certificate = k8s_cluster_ca_certificate
         if k8s_cluster_endpoint is not None:
             self.k8s_cluster_endpoint = k8s_cluster_endpoint
         if use_gw_service_account is not None:
             self.use_gw_service_account = use_gw_service_account
+
+    @property
+    def k8s_auth_type(self):
+        """Gets the k8s_auth_type of this NativeK8sTargetDetails.  # noqa: E501
+
+
+        :return: The k8s_auth_type of this NativeK8sTargetDetails.  # noqa: E501
+        :rtype: str
+        """
+        return self._k8s_auth_type
+
+    @k8s_auth_type.setter
+    def k8s_auth_type(self, k8s_auth_type):
+        """Sets the k8s_auth_type of this NativeK8sTargetDetails.
+
+
+        :param k8s_auth_type: The k8s_auth_type of this NativeK8sTargetDetails.  # noqa: E501
+        :type: str
+        """
+
+        self._k8s_auth_type = k8s_auth_type
 
     @property
     def k8s_bearer_token(self):
@@ -88,6 +124,50 @@ class NativeK8sTargetDetails(object):
         """
 
         self._k8s_bearer_token = k8s_bearer_token
+
+    @property
+    def k8s_client_cert_data(self):
+        """Gets the k8s_client_cert_data of this NativeK8sTargetDetails.  # noqa: E501
+
+        For K8s Client certificates authentication  # noqa: E501
+
+        :return: The k8s_client_cert_data of this NativeK8sTargetDetails.  # noqa: E501
+        :rtype: str
+        """
+        return self._k8s_client_cert_data
+
+    @k8s_client_cert_data.setter
+    def k8s_client_cert_data(self, k8s_client_cert_data):
+        """Sets the k8s_client_cert_data of this NativeK8sTargetDetails.
+
+        For K8s Client certificates authentication  # noqa: E501
+
+        :param k8s_client_cert_data: The k8s_client_cert_data of this NativeK8sTargetDetails.  # noqa: E501
+        :type: str
+        """
+
+        self._k8s_client_cert_data = k8s_client_cert_data
+
+    @property
+    def k8s_client_key_data(self):
+        """Gets the k8s_client_key_data of this NativeK8sTargetDetails.  # noqa: E501
+
+
+        :return: The k8s_client_key_data of this NativeK8sTargetDetails.  # noqa: E501
+        :rtype: str
+        """
+        return self._k8s_client_key_data
+
+    @k8s_client_key_data.setter
+    def k8s_client_key_data(self, k8s_client_key_data):
+        """Sets the k8s_client_key_data of this NativeK8sTargetDetails.
+
+
+        :param k8s_client_key_data: The k8s_client_key_data of this NativeK8sTargetDetails.  # noqa: E501
+        :type: str
+        """
+
+        self._k8s_client_key_data = k8s_client_key_data
 
     @property
     def k8s_cluster_ca_certificate(self):

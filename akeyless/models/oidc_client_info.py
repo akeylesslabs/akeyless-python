@@ -34,10 +34,11 @@ class OidcClientInfo(object):
                             and the value is json key in definition.
     """
     openapi_types = {
-        'access_permission_assignment': 'list[AccessPermissionAssignment]',
+        'access_permission_assignment': 'list[AccessOrGroupPermissionAssignment]',
         'audience': 'list[str]',
         'client_id': 'str',
         'grant_types': 'list[str]',
+        'issuer_url': 'str',
         'logout_uris': 'list[str]',
         'public': 'bool',
         'redirect_uris': 'list[str]',
@@ -50,6 +51,7 @@ class OidcClientInfo(object):
         'audience': 'audience',
         'client_id': 'client_id',
         'grant_types': 'grant_types',
+        'issuer_url': 'issuer_url',
         'logout_uris': 'logout_uris',
         'public': 'public',
         'redirect_uris': 'redirect_uris',
@@ -57,7 +59,7 @@ class OidcClientInfo(object):
         'scopes': 'scopes'
     }
 
-    def __init__(self, access_permission_assignment=None, audience=None, client_id=None, grant_types=None, logout_uris=None, public=None, redirect_uris=None, response_types=None, scopes=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, access_permission_assignment=None, audience=None, client_id=None, grant_types=None, issuer_url=None, logout_uris=None, public=None, redirect_uris=None, response_types=None, scopes=None, local_vars_configuration=None):  # noqa: E501
         """OidcClientInfo - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -67,6 +69,7 @@ class OidcClientInfo(object):
         self._audience = None
         self._client_id = None
         self._grant_types = None
+        self._issuer_url = None
         self._logout_uris = None
         self._public = None
         self._redirect_uris = None
@@ -82,6 +85,8 @@ class OidcClientInfo(object):
             self.client_id = client_id
         if grant_types is not None:
             self.grant_types = grant_types
+        if issuer_url is not None:
+            self.issuer_url = issuer_url
         if logout_uris is not None:
             self.logout_uris = logout_uris
         if public is not None:
@@ -99,7 +104,7 @@ class OidcClientInfo(object):
 
 
         :return: The access_permission_assignment of this OidcClientInfo.  # noqa: E501
-        :rtype: list[AccessPermissionAssignment]
+        :rtype: list[AccessOrGroupPermissionAssignment]
         """
         return self._access_permission_assignment
 
@@ -109,7 +114,7 @@ class OidcClientInfo(object):
 
 
         :param access_permission_assignment: The access_permission_assignment of this OidcClientInfo.  # noqa: E501
-        :type: list[AccessPermissionAssignment]
+        :type: list[AccessOrGroupPermissionAssignment]
         """
 
         self._access_permission_assignment = access_permission_assignment
@@ -176,6 +181,27 @@ class OidcClientInfo(object):
         """
 
         self._grant_types = grant_types
+
+    @property
+    def issuer_url(self):
+        """Gets the issuer_url of this OidcClientInfo.  # noqa: E501
+
+
+        :return: The issuer_url of this OidcClientInfo.  # noqa: E501
+        :rtype: str
+        """
+        return self._issuer_url
+
+    @issuer_url.setter
+    def issuer_url(self, issuer_url):
+        """Sets the issuer_url of this OidcClientInfo.
+
+
+        :param issuer_url: The issuer_url of this OidcClientInfo.  # noqa: E501
+        :type: str
+        """
+
+        self._issuer_url = issuer_url
 
     @property
     def logout_uris(self):

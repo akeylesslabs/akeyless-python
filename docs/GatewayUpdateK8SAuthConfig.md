@@ -9,7 +9,10 @@ Name | Type | Description | Notes
 **config_encryption_key_name** | **str** | Config encryption key | [optional] 
 **disable_issuer_validation** | **str** | Disable issuer validation [true/false] | [optional] 
 **json** | **bool** | Set output format to JSON | [optional] [default to False]
+**k8s_auth_type** | **str** | K8S auth type [token/certificate]. (relevant for \&quot;native_k8s\&quot; only) | [optional] [default to 'token']
 **k8s_ca_cert** | **str** | The CA Certificate (base64 encoded) to use to call into the kubernetes API server | [optional] 
+**k8s_client_certificate** | **str** | Content of the k8 client certificate (PEM format) in a Base64 format (relevant for \&quot;native_k8s\&quot; only) | [optional] 
+**k8s_client_key** | **str** | Content of the k8 client private key (PEM format) in a Base64 format (relevant for \&quot;native_k8s\&quot; only) | [optional] 
 **k8s_host** | **str** | The URL of the kubernetes API server | 
 **k8s_issuer** | **str** | The Kubernetes JWT issuer name. K8SIssuer is the claim that specifies who issued the Kubernetes token | [optional] [default to 'kubernetes/serviceaccount']
 **name** | **str** | K8S Auth config name | 

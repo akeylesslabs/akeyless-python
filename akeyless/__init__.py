@@ -15,7 +15,7 @@
 
 from __future__ import absolute_import
 
-__version__ = "3.3.16"
+__version__ = "3.3.17"
 
 # import apis into sdk package
 from akeyless.api.v2_api import V2Api
@@ -34,6 +34,7 @@ from akeyless.models.awsiam_access_rules import AWSIAMAccessRules
 from akeyless.models.aws_payload import AWSPayload
 from akeyless.models.aws_secrets_migration import AWSSecretsMigration
 from akeyless.models.aws_target_details import AWSTargetDetails
+from akeyless.models.access_or_group_permission_assignment import AccessOrGroupPermissionAssignment
 from akeyless.models.access_permission_assignment import AccessPermissionAssignment
 from akeyless.models.account_general_settings import AccountGeneralSettings
 from akeyless.models.account_object_version_settings_output import AccountObjectVersionSettingsOutput
@@ -138,6 +139,8 @@ from akeyless.models.create_global_sign_atlas_target import CreateGlobalSignAtla
 from akeyless.models.create_global_sign_atlas_target_output import CreateGlobalSignAtlasTargetOutput
 from akeyless.models.create_global_sign_target import CreateGlobalSignTarget
 from akeyless.models.create_global_sign_target_output import CreateGlobalSignTargetOutput
+from akeyless.models.create_group import CreateGroup
+from akeyless.models.create_group_output import CreateGroupOutput
 from akeyless.models.create_key import CreateKey
 from akeyless.models.create_key_output import CreateKeyOutput
 from akeyless.models.create_ldap_target import CreateLdapTarget
@@ -146,6 +149,8 @@ from akeyless.models.create_linked_target import CreateLinkedTarget
 from akeyless.models.create_linked_target_output import CreateLinkedTargetOutput
 from akeyless.models.create_native_k8_s_target import CreateNativeK8STarget
 from akeyless.models.create_native_k8_s_target_output import CreateNativeK8STargetOutput
+from akeyless.models.create_oidc_app import CreateOidcApp
+from akeyless.models.create_oidc_app_output import CreateOidcAppOutput
 from akeyless.models.create_pki_cert_issuer import CreatePKICertIssuer
 from akeyless.models.create_pki_cert_issuer_output import CreatePKICertIssuerOutput
 from akeyless.models.create_ping_target import CreatePingTarget
@@ -167,6 +172,8 @@ from akeyless.models.create_secret_output import CreateSecretOutput
 from akeyless.models.create_target_item_assoc_output import CreateTargetItemAssocOutput
 from akeyless.models.create_tokenizer import CreateTokenizer
 from akeyless.models.create_tokenizer_output import CreateTokenizerOutput
+from akeyless.models.create_user_event import CreateUserEvent
+from akeyless.models.create_user_event_output import CreateUserEventOutput
 from akeyless.models.create_web_target import CreateWebTarget
 from akeyless.models.create_web_target_output import CreateWebTargetOutput
 from akeyless.models.create_windows_target import CreateWindowsTarget
@@ -198,6 +205,8 @@ from akeyless.models.delete_auth_methods import DeleteAuthMethods
 from akeyless.models.delete_auth_methods_output import DeleteAuthMethodsOutput
 from akeyless.models.delete_event_forwarder import DeleteEventForwarder
 from akeyless.models.delete_gateway_allowed_access_id import DeleteGatewayAllowedAccessId
+from akeyless.models.delete_group import DeleteGroup
+from akeyless.models.delete_group_output import DeleteGroupOutput
 from akeyless.models.delete_gw_cluster import DeleteGwCluster
 from akeyless.models.delete_item import DeleteItem
 from akeyless.models.delete_item_output import DeleteItemOutput
@@ -426,8 +435,11 @@ from akeyless.models.get_certificate_value_output import GetCertificateValueOutp
 from akeyless.models.get_dynamic_secret_value import GetDynamicSecretValue
 from akeyless.models.get_event_forwarder import GetEventForwarder
 from akeyless.models.get_event_forwarder_output import GetEventForwarderOutput
+from akeyless.models.get_group import GetGroup
+from akeyless.models.get_group_output import GetGroupOutput
 from akeyless.models.get_kube_exec_creds import GetKubeExecCreds
 from akeyless.models.get_kube_exec_creds_output import GetKubeExecCredsOutput
+from akeyless.models.get_last_user_event_status import GetLastUserEventStatus
 from akeyless.models.get_pki_certificate import GetPKICertificate
 from akeyless.models.get_pki_certificate_output import GetPKICertificateOutput
 from akeyless.models.get_producers_list_reply_obj import GetProducersListReplyObj
@@ -442,10 +454,12 @@ from akeyless.models.get_tags import GetTags
 from akeyless.models.get_target import GetTarget
 from akeyless.models.get_target_details import GetTargetDetails
 from akeyless.models.get_target_details_output import GetTargetDetailsOutput
+from akeyless.models.get_user_event_status_output import GetUserEventStatusOutput
 from akeyless.models.github_target_details import GithubTargetDetails
 from akeyless.models.global_sign_atlas_target_details import GlobalSignAtlasTargetDetails
 from akeyless.models.global_sign_gcc_target_details import GlobalSignGCCTargetDetails
 from akeyless.models.google_chronicle_forwarding_config import GoogleChronicleForwardingConfig
+from akeyless.models.group import Group
 from akeyless.models.gw_cluster_identity import GwClusterIdentity
 from akeyless.models.hashi_migration import HashiMigration
 from akeyless.models.hashi_payload import HashiPayload
@@ -503,6 +517,8 @@ from akeyless.models.linked_target_details import LinkedTargetDetails
 from akeyless.models.list_auth_methods import ListAuthMethods
 from akeyless.models.list_auth_methods_output import ListAuthMethodsOutput
 from akeyless.models.list_gateways import ListGateways
+from akeyless.models.list_groups import ListGroups
+from akeyless.models.list_groups_output import ListGroupsOutput
 from akeyless.models.list_items import ListItems
 from akeyless.models.list_items_in_path_output import ListItemsInPathOutput
 from akeyless.models.list_items_output import ListItemsOutput
@@ -561,6 +577,8 @@ from akeyless.models.rollback_secret import RollbackSecret
 from akeyless.models.rollback_secret_output import RollbackSecretOutput
 from akeyless.models.rotate_key import RotateKey
 from akeyless.models.rotate_key_output import RotateKeyOutput
+from akeyless.models.rotate_oidc_client_output import RotateOidcClientOutput
+from akeyless.models.rotate_oidc_client_secret import RotateOidcClientSecret
 from akeyless.models.rotate_secret import RotateSecret
 from akeyless.models.rotated_secret_details_info import RotatedSecretDetailsInfo
 from akeyless.models.rotated_secret_output import RotatedSecretOutput
@@ -666,6 +684,8 @@ from akeyless.models.update_global_sign_atlas_target import UpdateGlobalSignAtla
 from akeyless.models.update_global_sign_atlas_target_output import UpdateGlobalSignAtlasTargetOutput
 from akeyless.models.update_global_sign_target import UpdateGlobalSignTarget
 from akeyless.models.update_global_sign_target_output import UpdateGlobalSignTargetOutput
+from akeyless.models.update_group import UpdateGroup
+from akeyless.models.update_group_output import UpdateGroupOutput
 from akeyless.models.update_item import UpdateItem
 from akeyless.models.update_item_output import UpdateItemOutput
 from akeyless.models.update_ldap_target import UpdateLdapTarget
@@ -674,6 +694,7 @@ from akeyless.models.update_ldap_target_output import UpdateLdapTargetOutput
 from akeyless.models.update_linked_target import UpdateLinkedTarget
 from akeyless.models.update_native_k8_s_target import UpdateNativeK8STarget
 from akeyless.models.update_native_k8_s_target_output import UpdateNativeK8STargetOutput
+from akeyless.models.update_oidc_app import UpdateOidcApp
 from akeyless.models.update_output import UpdateOutput
 from akeyless.models.update_pki_cert_issuer import UpdatePKICertIssuer
 from akeyless.models.update_pki_cert_issuer_output import UpdatePKICertIssuerOutput

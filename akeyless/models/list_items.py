@@ -35,6 +35,7 @@ class ListItems(object):
     """
     openapi_types = {
         'accessibility': 'str',
+        'advanced_filter': 'str',
         'auto_pagination': 'str',
         'filter': 'str',
         'json': 'bool',
@@ -51,6 +52,7 @@ class ListItems(object):
 
     attribute_map = {
         'accessibility': 'accessibility',
+        'advanced_filter': 'advanced-filter',
         'auto_pagination': 'auto-pagination',
         'filter': 'filter',
         'json': 'json',
@@ -65,13 +67,14 @@ class ListItems(object):
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, accessibility='regular', auto_pagination='enabled', filter=None, json=False, minimal_view=None, pagination_token=None, path=None, sra_only=False, sub_types=None, tag=None, token=None, type=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, accessibility='regular', advanced_filter=None, auto_pagination='enabled', filter=None, json=False, minimal_view=None, pagination_token=None, path=None, sra_only=False, sub_types=None, tag=None, token=None, type=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """ListItems - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._accessibility = None
+        self._advanced_filter = None
         self._auto_pagination = None
         self._filter = None
         self._json = None
@@ -88,6 +91,8 @@ class ListItems(object):
 
         if accessibility is not None:
             self.accessibility = accessibility
+        if advanced_filter is not None:
+            self.advanced_filter = advanced_filter
         if auto_pagination is not None:
             self.auto_pagination = auto_pagination
         if filter is not None:
@@ -135,6 +140,29 @@ class ListItems(object):
         """
 
         self._accessibility = accessibility
+
+    @property
+    def advanced_filter(self):
+        """Gets the advanced_filter of this ListItems.  # noqa: E501
+
+        Filter by item name/username/website or part of it  # noqa: E501
+
+        :return: The advanced_filter of this ListItems.  # noqa: E501
+        :rtype: str
+        """
+        return self._advanced_filter
+
+    @advanced_filter.setter
+    def advanced_filter(self, advanced_filter):
+        """Sets the advanced_filter of this ListItems.
+
+        Filter by item name/username/website or part of it  # noqa: E501
+
+        :param advanced_filter: The advanced_filter of this ListItems.  # noqa: E501
+        :type: str
+        """
+
+        self._advanced_filter = advanced_filter
 
     @property
     def auto_pagination(self):

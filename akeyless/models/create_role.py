@@ -43,7 +43,8 @@ class CreateRole(object):
         'name': 'str',
         'sra_reports_access': 'str',
         'token': 'str',
-        'uid_token': 'str'
+        'uid_token': 'str',
+        'usage_reports_access': 'str'
     }
 
     attribute_map = {
@@ -56,10 +57,11 @@ class CreateRole(object):
         'name': 'name',
         'sra_reports_access': 'sra-reports-access',
         'token': 'token',
-        'uid_token': 'uid-token'
+        'uid_token': 'uid-token',
+        'usage_reports_access': 'usage-reports-access'
     }
 
-    def __init__(self, analytics_access=None, audit_access=None, comment=None, description=None, gw_analytics_access=None, json=False, name=None, sra_reports_access=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, analytics_access=None, audit_access=None, comment=None, description=None, gw_analytics_access=None, json=False, name=None, sra_reports_access=None, token=None, uid_token=None, usage_reports_access=None, local_vars_configuration=None):  # noqa: E501
         """CreateRole - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -75,6 +77,7 @@ class CreateRole(object):
         self._sra_reports_access = None
         self._token = None
         self._uid_token = None
+        self._usage_reports_access = None
         self.discriminator = None
 
         if analytics_access is not None:
@@ -96,6 +99,8 @@ class CreateRole(object):
             self.token = token
         if uid_token is not None:
             self.uid_token = uid_token
+        if usage_reports_access is not None:
+            self.usage_reports_access = usage_reports_access
 
     @property
     def analytics_access(self):
@@ -328,6 +333,29 @@ class CreateRole(object):
         """
 
         self._uid_token = uid_token
+
+    @property
+    def usage_reports_access(self):
+        """Gets the usage_reports_access of this CreateRole.  # noqa: E501
+
+        Allow this role to view Usage Report. Currently only 'none' and 'all' values are supported.  # noqa: E501
+
+        :return: The usage_reports_access of this CreateRole.  # noqa: E501
+        :rtype: str
+        """
+        return self._usage_reports_access
+
+    @usage_reports_access.setter
+    def usage_reports_access(self, usage_reports_access):
+        """Sets the usage_reports_access of this CreateRole.
+
+        Allow this role to view Usage Report. Currently only 'none' and 'all' values are supported.  # noqa: E501
+
+        :param usage_reports_access: The usage_reports_access of this CreateRole.  # noqa: E501
+        :type: str
+        """
+
+        self._usage_reports_access = usage_reports_access
 
     def to_dict(self):
         """Returns the model properties as a dict"""

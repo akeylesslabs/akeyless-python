@@ -37,6 +37,9 @@ class CreateNativeK8STarget(object):
         'comment': 'str',
         'description': 'str',
         'json': 'bool',
+        'k8s_auth_type': 'str',
+        'k8s_client_certificate': 'str',
+        'k8s_client_key': 'str',
         'k8s_cluster_ca_cert': 'str',
         'k8s_cluster_endpoint': 'str',
         'k8s_cluster_token': 'str',
@@ -51,6 +54,9 @@ class CreateNativeK8STarget(object):
         'comment': 'comment',
         'description': 'description',
         'json': 'json',
+        'k8s_auth_type': 'k8s-auth-type',
+        'k8s_client_certificate': 'k8s-client-certificate',
+        'k8s_client_key': 'k8s-client-key',
         'k8s_cluster_ca_cert': 'k8s-cluster-ca-cert',
         'k8s_cluster_endpoint': 'k8s-cluster-endpoint',
         'k8s_cluster_token': 'k8s-cluster-token',
@@ -61,7 +67,7 @@ class CreateNativeK8STarget(object):
         'use_gw_service_account': 'use-gw-service-account'
     }
 
-    def __init__(self, comment=None, description=None, json=False, k8s_cluster_ca_cert='dummy_val', k8s_cluster_endpoint='dummy_val', k8s_cluster_token='dummy_val', key=None, name=None, token=None, uid_token=None, use_gw_service_account=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, comment=None, description=None, json=False, k8s_auth_type='token', k8s_client_certificate=None, k8s_client_key=None, k8s_cluster_ca_cert='dummy_val', k8s_cluster_endpoint='dummy_val', k8s_cluster_token='dummy_val', key=None, name=None, token=None, uid_token=None, use_gw_service_account=None, local_vars_configuration=None):  # noqa: E501
         """CreateNativeK8STarget - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -70,6 +76,9 @@ class CreateNativeK8STarget(object):
         self._comment = None
         self._description = None
         self._json = None
+        self._k8s_auth_type = None
+        self._k8s_client_certificate = None
+        self._k8s_client_key = None
         self._k8s_cluster_ca_cert = None
         self._k8s_cluster_endpoint = None
         self._k8s_cluster_token = None
@@ -86,6 +95,12 @@ class CreateNativeK8STarget(object):
             self.description = description
         if json is not None:
             self.json = json
+        if k8s_auth_type is not None:
+            self.k8s_auth_type = k8s_auth_type
+        if k8s_client_certificate is not None:
+            self.k8s_client_certificate = k8s_client_certificate
+        if k8s_client_key is not None:
+            self.k8s_client_key = k8s_client_key
         self.k8s_cluster_ca_cert = k8s_cluster_ca_cert
         self.k8s_cluster_endpoint = k8s_cluster_endpoint
         self.k8s_cluster_token = k8s_cluster_token
@@ -167,6 +182,75 @@ class CreateNativeK8STarget(object):
         """
 
         self._json = json
+
+    @property
+    def k8s_auth_type(self):
+        """Gets the k8s_auth_type of this CreateNativeK8STarget.  # noqa: E501
+
+        K8S auth type [token/certificate]  # noqa: E501
+
+        :return: The k8s_auth_type of this CreateNativeK8STarget.  # noqa: E501
+        :rtype: str
+        """
+        return self._k8s_auth_type
+
+    @k8s_auth_type.setter
+    def k8s_auth_type(self, k8s_auth_type):
+        """Sets the k8s_auth_type of this CreateNativeK8STarget.
+
+        K8S auth type [token/certificate]  # noqa: E501
+
+        :param k8s_auth_type: The k8s_auth_type of this CreateNativeK8STarget.  # noqa: E501
+        :type: str
+        """
+
+        self._k8s_auth_type = k8s_auth_type
+
+    @property
+    def k8s_client_certificate(self):
+        """Gets the k8s_client_certificate of this CreateNativeK8STarget.  # noqa: E501
+
+        Content of the k8 client certificate (PEM format) in a Base64 format  # noqa: E501
+
+        :return: The k8s_client_certificate of this CreateNativeK8STarget.  # noqa: E501
+        :rtype: str
+        """
+        return self._k8s_client_certificate
+
+    @k8s_client_certificate.setter
+    def k8s_client_certificate(self, k8s_client_certificate):
+        """Sets the k8s_client_certificate of this CreateNativeK8STarget.
+
+        Content of the k8 client certificate (PEM format) in a Base64 format  # noqa: E501
+
+        :param k8s_client_certificate: The k8s_client_certificate of this CreateNativeK8STarget.  # noqa: E501
+        :type: str
+        """
+
+        self._k8s_client_certificate = k8s_client_certificate
+
+    @property
+    def k8s_client_key(self):
+        """Gets the k8s_client_key of this CreateNativeK8STarget.  # noqa: E501
+
+        Content of the k8 client private key (PEM format) in a Base64 format  # noqa: E501
+
+        :return: The k8s_client_key of this CreateNativeK8STarget.  # noqa: E501
+        :rtype: str
+        """
+        return self._k8s_client_key
+
+    @k8s_client_key.setter
+    def k8s_client_key(self, k8s_client_key):
+        """Sets the k8s_client_key of this CreateNativeK8STarget.
+
+        Content of the k8 client private key (PEM format) in a Base64 format  # noqa: E501
+
+        :param k8s_client_key: The k8s_client_key of this CreateNativeK8STarget.  # noqa: E501
+        :type: str
+        """
+
+        self._k8s_client_key = k8s_client_key
 
     @property
     def k8s_cluster_ca_cert(self):

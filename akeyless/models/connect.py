@@ -50,6 +50,7 @@ class Connect(object):
         'target': 'str',
         'token': 'str',
         'uid_token': 'str',
+        'use_ssh_agent': 'bool',
         'via_bastion': 'str'
     }
 
@@ -70,10 +71,11 @@ class Connect(object):
         'target': 'target',
         'token': 'token',
         'uid_token': 'uid-token',
+        'use_ssh_agent': 'use-ssh-agent',
         'via_bastion': 'via-bastion'
     }
 
-    def __init__(self, helper=None, rc_file_override=None, bastion_ctrl_path=None, bastion_ctrl_port='9900', bastion_ctrl_proto='http', bastion_ctrl_subdomain=None, cert_issuer_name=None, identity_file=None, json=False, name=None, ssh_command=None, ssh_extra_args=None, ssh_legacy_signing_alg=False, target=None, token=None, uid_token=None, via_bastion=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, helper=None, rc_file_override=None, bastion_ctrl_path=None, bastion_ctrl_port='9900', bastion_ctrl_proto='http', bastion_ctrl_subdomain=None, cert_issuer_name=None, identity_file=None, json=False, name=None, ssh_command=None, ssh_extra_args=None, ssh_legacy_signing_alg=False, target=None, token=None, uid_token=None, use_ssh_agent=None, via_bastion=None, local_vars_configuration=None):  # noqa: E501
         """Connect - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -95,6 +97,7 @@ class Connect(object):
         self._target = None
         self._token = None
         self._uid_token = None
+        self._use_ssh_agent = None
         self._via_bastion = None
         self.discriminator = None
 
@@ -130,6 +133,8 @@ class Connect(object):
             self.token = token
         if uid_token is not None:
             self.uid_token = uid_token
+        if use_ssh_agent is not None:
+            self.use_ssh_agent = use_ssh_agent
         if via_bastion is not None:
             self.via_bastion = via_bastion
 
@@ -498,6 +503,29 @@ class Connect(object):
         """
 
         self._uid_token = uid_token
+
+    @property
+    def use_ssh_agent(self):
+        """Gets the use_ssh_agent of this Connect.  # noqa: E501
+
+        Enable ssh-agent  # noqa: E501
+
+        :return: The use_ssh_agent of this Connect.  # noqa: E501
+        :rtype: bool
+        """
+        return self._use_ssh_agent
+
+    @use_ssh_agent.setter
+    def use_ssh_agent(self, use_ssh_agent):
+        """Sets the use_ssh_agent of this Connect.
+
+        Enable ssh-agent  # noqa: E501
+
+        :param use_ssh_agent: The use_ssh_agent of this Connect.  # noqa: E501
+        :type: bool
+        """
+
+        self._use_ssh_agent = use_ssh_agent
 
     @property
     def via_bastion(self):

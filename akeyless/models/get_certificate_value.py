@@ -37,6 +37,7 @@ class GetCertificateValue(object):
         'cert_issuer_name': 'str',
         'certificate_file_output': 'str',
         'display_id': 'str',
+        'ignore_cache': 'str',
         'issuance_token': 'str',
         'json': 'bool',
         'name': 'str',
@@ -50,6 +51,7 @@ class GetCertificateValue(object):
         'cert_issuer_name': 'cert-issuer-name',
         'certificate_file_output': 'certificate-file-output',
         'display_id': 'display-id',
+        'ignore_cache': 'ignore-cache',
         'issuance_token': 'issuance-token',
         'json': 'json',
         'name': 'name',
@@ -59,7 +61,7 @@ class GetCertificateValue(object):
         'version': 'version'
     }
 
-    def __init__(self, cert_issuer_name=None, certificate_file_output=None, display_id=None, issuance_token=None, json=False, name='dummy_certificate_name', private_key_file_output=None, token=None, uid_token=None, version=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, cert_issuer_name=None, certificate_file_output=None, display_id=None, ignore_cache='false', issuance_token=None, json=False, name='dummy_certificate_name', private_key_file_output=None, token=None, uid_token=None, version=None, local_vars_configuration=None):  # noqa: E501
         """GetCertificateValue - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -68,6 +70,7 @@ class GetCertificateValue(object):
         self._cert_issuer_name = None
         self._certificate_file_output = None
         self._display_id = None
+        self._ignore_cache = None
         self._issuance_token = None
         self._json = None
         self._name = None
@@ -83,6 +86,8 @@ class GetCertificateValue(object):
             self.certificate_file_output = certificate_file_output
         if display_id is not None:
             self.display_id = display_id
+        if ignore_cache is not None:
+            self.ignore_cache = ignore_cache
         if issuance_token is not None:
             self.issuance_token = issuance_token
         if json is not None:
@@ -165,6 +170,29 @@ class GetCertificateValue(object):
         """
 
         self._display_id = display_id
+
+    @property
+    def ignore_cache(self):
+        """Gets the ignore_cache of this GetCertificateValue.  # noqa: E501
+
+        Retrieve the Secret value without checking the Gateway's cache [true/false]. This flag is only relevant when using the RestAPI  # noqa: E501
+
+        :return: The ignore_cache of this GetCertificateValue.  # noqa: E501
+        :rtype: str
+        """
+        return self._ignore_cache
+
+    @ignore_cache.setter
+    def ignore_cache(self, ignore_cache):
+        """Sets the ignore_cache of this GetCertificateValue.
+
+        Retrieve the Secret value without checking the Gateway's cache [true/false]. This flag is only relevant when using the RestAPI  # noqa: E501
+
+        :param ignore_cache: The ignore_cache of this GetCertificateValue.  # noqa: E501
+        :type: str
+        """
+
+        self._ignore_cache = ignore_cache
 
     @property
     def issuance_token(self):

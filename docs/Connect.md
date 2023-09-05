@@ -20,6 +20,7 @@ Name | Type | Description | Notes
 **target** | **str** | The target | [optional] 
 **token** | **str** | Authentication token (see &#x60;/auth&#x60; and &#x60;/configure&#x60;) | [optional] 
 **uid_token** | **str** | The universal identity token, Required only for universal_identity authentication | [optional] 
+**use_ssh_agent** | **bool** | Enable ssh-agent | [optional] 
 **via_bastion** | **str** | The jump box server | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

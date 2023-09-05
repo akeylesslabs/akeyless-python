@@ -4,6 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **accessibility** | **str** | for personal password manager | [optional] [default to 'regular']
+**advanced_filter** | **str** | Filter by item name/username/website or part of it | [optional] 
 **auto_pagination** | **str** | Retrieve all items using pagination, when disabled retrieving only first 1000 items | [optional] [default to 'enabled']
 **filter** | **str** | Filter by item name or part of it | [optional] 
 **json** | **bool** | Set output format to JSON | [optional] [default to False]

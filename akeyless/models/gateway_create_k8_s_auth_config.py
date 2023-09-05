@@ -39,7 +39,10 @@ class GatewayCreateK8SAuthConfig(object):
         'config_encryption_key_name': 'str',
         'disable_issuer_validation': 'str',
         'json': 'bool',
+        'k8s_auth_type': 'str',
         'k8s_ca_cert': 'str',
+        'k8s_client_certificate': 'str',
+        'k8s_client_key': 'str',
         'k8s_host': 'str',
         'k8s_issuer': 'str',
         'name': 'str',
@@ -59,7 +62,10 @@ class GatewayCreateK8SAuthConfig(object):
         'config_encryption_key_name': 'config-encryption-key-name',
         'disable_issuer_validation': 'disable-issuer-validation',
         'json': 'json',
+        'k8s_auth_type': 'k8s-auth-type',
         'k8s_ca_cert': 'k8s-ca-cert',
+        'k8s_client_certificate': 'k8s-client-certificate',
+        'k8s_client_key': 'k8s-client-key',
         'k8s_host': 'k8s-host',
         'k8s_issuer': 'k8s-issuer',
         'name': 'name',
@@ -73,7 +79,7 @@ class GatewayCreateK8SAuthConfig(object):
         'use_gw_service_account': 'use-gw-service-account'
     }
 
-    def __init__(self, access_id=None, cluster_api_type='native_k8s', config_encryption_key_name=None, disable_issuer_validation=None, json=False, k8s_ca_cert=None, k8s_host=None, k8s_issuer='kubernetes/serviceaccount', name=None, rancher_api_key=None, rancher_cluster_id=None, signing_key=None, token=None, token_exp=300, token_reviewer_jwt=None, uid_token=None, use_gw_service_account=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, access_id=None, cluster_api_type='native_k8s', config_encryption_key_name=None, disable_issuer_validation=None, json=False, k8s_auth_type='token', k8s_ca_cert=None, k8s_client_certificate=None, k8s_client_key=None, k8s_host=None, k8s_issuer='kubernetes/serviceaccount', name=None, rancher_api_key=None, rancher_cluster_id=None, signing_key=None, token=None, token_exp=300, token_reviewer_jwt=None, uid_token=None, use_gw_service_account=None, local_vars_configuration=None):  # noqa: E501
         """GatewayCreateK8SAuthConfig - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -84,7 +90,10 @@ class GatewayCreateK8SAuthConfig(object):
         self._config_encryption_key_name = None
         self._disable_issuer_validation = None
         self._json = None
+        self._k8s_auth_type = None
         self._k8s_ca_cert = None
+        self._k8s_client_certificate = None
+        self._k8s_client_key = None
         self._k8s_host = None
         self._k8s_issuer = None
         self._name = None
@@ -107,8 +116,14 @@ class GatewayCreateK8SAuthConfig(object):
             self.disable_issuer_validation = disable_issuer_validation
         if json is not None:
             self.json = json
+        if k8s_auth_type is not None:
+            self.k8s_auth_type = k8s_auth_type
         if k8s_ca_cert is not None:
             self.k8s_ca_cert = k8s_ca_cert
+        if k8s_client_certificate is not None:
+            self.k8s_client_certificate = k8s_client_certificate
+        if k8s_client_key is not None:
+            self.k8s_client_key = k8s_client_key
         self.k8s_host = k8s_host
         if k8s_issuer is not None:
             self.k8s_issuer = k8s_issuer
@@ -247,6 +262,29 @@ class GatewayCreateK8SAuthConfig(object):
         self._json = json
 
     @property
+    def k8s_auth_type(self):
+        """Gets the k8s_auth_type of this GatewayCreateK8SAuthConfig.  # noqa: E501
+
+        K8S auth type [token/certificate]. (relevant for \"native_k8s\" only)  # noqa: E501
+
+        :return: The k8s_auth_type of this GatewayCreateK8SAuthConfig.  # noqa: E501
+        :rtype: str
+        """
+        return self._k8s_auth_type
+
+    @k8s_auth_type.setter
+    def k8s_auth_type(self, k8s_auth_type):
+        """Sets the k8s_auth_type of this GatewayCreateK8SAuthConfig.
+
+        K8S auth type [token/certificate]. (relevant for \"native_k8s\" only)  # noqa: E501
+
+        :param k8s_auth_type: The k8s_auth_type of this GatewayCreateK8SAuthConfig.  # noqa: E501
+        :type: str
+        """
+
+        self._k8s_auth_type = k8s_auth_type
+
+    @property
     def k8s_ca_cert(self):
         """Gets the k8s_ca_cert of this GatewayCreateK8SAuthConfig.  # noqa: E501
 
@@ -268,6 +306,52 @@ class GatewayCreateK8SAuthConfig(object):
         """
 
         self._k8s_ca_cert = k8s_ca_cert
+
+    @property
+    def k8s_client_certificate(self):
+        """Gets the k8s_client_certificate of this GatewayCreateK8SAuthConfig.  # noqa: E501
+
+        Content of the k8 client certificate (PEM format) in a Base64 format (relevant for \"native_k8s\" only)  # noqa: E501
+
+        :return: The k8s_client_certificate of this GatewayCreateK8SAuthConfig.  # noqa: E501
+        :rtype: str
+        """
+        return self._k8s_client_certificate
+
+    @k8s_client_certificate.setter
+    def k8s_client_certificate(self, k8s_client_certificate):
+        """Sets the k8s_client_certificate of this GatewayCreateK8SAuthConfig.
+
+        Content of the k8 client certificate (PEM format) in a Base64 format (relevant for \"native_k8s\" only)  # noqa: E501
+
+        :param k8s_client_certificate: The k8s_client_certificate of this GatewayCreateK8SAuthConfig.  # noqa: E501
+        :type: str
+        """
+
+        self._k8s_client_certificate = k8s_client_certificate
+
+    @property
+    def k8s_client_key(self):
+        """Gets the k8s_client_key of this GatewayCreateK8SAuthConfig.  # noqa: E501
+
+        Content of the k8 client private key (PEM format) in a Base64 format (relevant for \"native_k8s\" only)  # noqa: E501
+
+        :return: The k8s_client_key of this GatewayCreateK8SAuthConfig.  # noqa: E501
+        :rtype: str
+        """
+        return self._k8s_client_key
+
+    @k8s_client_key.setter
+    def k8s_client_key(self, k8s_client_key):
+        """Sets the k8s_client_key of this GatewayCreateK8SAuthConfig.
+
+        Content of the k8 client private key (PEM format) in a Base64 format (relevant for \"native_k8s\" only)  # noqa: E501
+
+        :param k8s_client_key: The k8s_client_key of this GatewayCreateK8SAuthConfig.  # noqa: E501
+        :type: str
+        """
+
+        self._k8s_client_key = k8s_client_key
 
     @property
     def k8s_host(self):

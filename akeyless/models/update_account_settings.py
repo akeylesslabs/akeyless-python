@@ -42,6 +42,7 @@ class UpdateAccountSettings(object):
         'default_share_link_ttl_minutes': 'str',
         'default_versioning': 'str',
         'dp_enable_classic_key_protection': 'str',
+        'invalid_characters': 'str',
         'item_type': 'str',
         'items_deletion_protection': 'str',
         'json': 'bool',
@@ -69,6 +70,7 @@ class UpdateAccountSettings(object):
         'default_share_link_ttl_minutes': 'default-share-link-ttl-minutes',
         'default_versioning': 'default-versioning',
         'dp_enable_classic_key_protection': 'dp-enable-classic-key-protection',
+        'invalid_characters': 'invalid-characters',
         'item_type': 'item-type',
         'items_deletion_protection': 'items-deletion-protection',
         'json': 'json',
@@ -87,7 +89,7 @@ class UpdateAccountSettings(object):
         'use_capital_letters': 'use_capital-letters'
     }
 
-    def __init__(self, address=None, city=None, company_name=None, country=None, default_key_name=None, default_share_link_ttl_minutes=None, default_versioning=None, dp_enable_classic_key_protection=None, item_type=None, items_deletion_protection=None, json=False, jwt_ttl_default=None, jwt_ttl_max=None, jwt_ttl_min=None, max_versions=None, password_length=None, phone=None, postal_code=None, token=None, uid_token=None, use_lower_letters=None, use_numbers=None, use_special_characters=None, use_capital_letters=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, address=None, city=None, company_name=None, country=None, default_key_name=None, default_share_link_ttl_minutes=None, default_versioning=None, dp_enable_classic_key_protection=None, invalid_characters='notReceivedInvalidCharacter', item_type=None, items_deletion_protection=None, json=False, jwt_ttl_default=None, jwt_ttl_max=None, jwt_ttl_min=None, max_versions=None, password_length=None, phone=None, postal_code=None, token=None, uid_token=None, use_lower_letters=None, use_numbers=None, use_special_characters=None, use_capital_letters=None, local_vars_configuration=None):  # noqa: E501
         """UpdateAccountSettings - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -101,6 +103,7 @@ class UpdateAccountSettings(object):
         self._default_share_link_ttl_minutes = None
         self._default_versioning = None
         self._dp_enable_classic_key_protection = None
+        self._invalid_characters = None
         self._item_type = None
         self._items_deletion_protection = None
         self._json = None
@@ -135,6 +138,8 @@ class UpdateAccountSettings(object):
             self.default_versioning = default_versioning
         if dp_enable_classic_key_protection is not None:
             self.dp_enable_classic_key_protection = dp_enable_classic_key_protection
+        if invalid_characters is not None:
+            self.invalid_characters = invalid_characters
         if item_type is not None:
             self.item_type = item_type
         if items_deletion_protection is not None:
@@ -351,6 +356,29 @@ class UpdateAccountSettings(object):
         """
 
         self._dp_enable_classic_key_protection = dp_enable_classic_key_protection
+
+    @property
+    def invalid_characters(self):
+        """Gets the invalid_characters of this UpdateAccountSettings.  # noqa: E501
+
+        Characters that cannot be used for items/targets/roles/auths/event_forwarder names. Empty string will enforce nothing.  # noqa: E501
+
+        :return: The invalid_characters of this UpdateAccountSettings.  # noqa: E501
+        :rtype: str
+        """
+        return self._invalid_characters
+
+    @invalid_characters.setter
+    def invalid_characters(self, invalid_characters):
+        """Sets the invalid_characters of this UpdateAccountSettings.
+
+        Characters that cannot be used for items/targets/roles/auths/event_forwarder names. Empty string will enforce nothing.  # noqa: E501
+
+        :param invalid_characters: The invalid_characters of this UpdateAccountSettings.  # noqa: E501
+        :type: str
+        """
+
+        self._invalid_characters = invalid_characters
 
     @property
     def item_type(self):

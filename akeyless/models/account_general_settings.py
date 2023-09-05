@@ -38,6 +38,7 @@ class AccountGeneralSettings(object):
         'account_default_key_name': 'str',
         'data_protection_section': 'DataProtectionSection',
         'enable_request_for_access': 'bool',
+        'invalid_characters': 'str',
         'password_policy': 'PasswordPolicyInfo',
         'protect_items_by_default': 'bool',
         'sharing_policy': 'SharingPolicyInfo'
@@ -48,12 +49,13 @@ class AccountGeneralSettings(object):
         'account_default_key_name': 'account_default_key_name',
         'data_protection_section': 'data_protection_section',
         'enable_request_for_access': 'enable_request_for_access',
+        'invalid_characters': 'invalid_characters',
         'password_policy': 'password_policy',
         'protect_items_by_default': 'protect_items_by_default',
         'sharing_policy': 'sharing_policy'
     }
 
-    def __init__(self, account_default_key_item_id=None, account_default_key_name=None, data_protection_section=None, enable_request_for_access=None, password_policy=None, protect_items_by_default=None, sharing_policy=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, account_default_key_item_id=None, account_default_key_name=None, data_protection_section=None, enable_request_for_access=None, invalid_characters=None, password_policy=None, protect_items_by_default=None, sharing_policy=None, local_vars_configuration=None):  # noqa: E501
         """AccountGeneralSettings - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -63,6 +65,7 @@ class AccountGeneralSettings(object):
         self._account_default_key_name = None
         self._data_protection_section = None
         self._enable_request_for_access = None
+        self._invalid_characters = None
         self._password_policy = None
         self._protect_items_by_default = None
         self._sharing_policy = None
@@ -76,6 +79,8 @@ class AccountGeneralSettings(object):
             self.data_protection_section = data_protection_section
         if enable_request_for_access is not None:
             self.enable_request_for_access = enable_request_for_access
+        if invalid_characters is not None:
+            self.invalid_characters = invalid_characters
         if password_policy is not None:
             self.password_policy = password_policy
         if protect_items_by_default is not None:
@@ -170,6 +175,29 @@ class AccountGeneralSettings(object):
         """
 
         self._enable_request_for_access = enable_request_for_access
+
+    @property
+    def invalid_characters(self):
+        """Gets the invalid_characters of this AccountGeneralSettings.  # noqa: E501
+
+        InvalidCharacters is the invalid characters for items/targets/roles/auths/notifier_forwarder naming convention  # noqa: E501
+
+        :return: The invalid_characters of this AccountGeneralSettings.  # noqa: E501
+        :rtype: str
+        """
+        return self._invalid_characters
+
+    @invalid_characters.setter
+    def invalid_characters(self, invalid_characters):
+        """Sets the invalid_characters of this AccountGeneralSettings.
+
+        InvalidCharacters is the invalid characters for items/targets/roles/auths/notifier_forwarder naming convention  # noqa: E501
+
+        :param invalid_characters: The invalid_characters of this AccountGeneralSettings.  # noqa: E501
+        :type: str
+        """
+
+        self._invalid_characters = invalid_characters
 
     @property
     def password_policy(self):

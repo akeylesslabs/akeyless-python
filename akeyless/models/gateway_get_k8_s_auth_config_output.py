@@ -40,7 +40,10 @@ class GatewayGetK8SAuthConfigOutput(object):
         'cluster_api_type': 'str',
         'disable_iss_validation': 'bool',
         'id': 'str',
+        'k8s_auth_type': 'str',
         'k8s_ca_cert': 'str',
+        'k8s_client_cert_data': 'str',
+        'k8s_client_key_data': 'str',
         'k8s_host': 'str',
         'k8s_issuer': 'str',
         'k8s_pub_keys_pem': 'list[str]',
@@ -59,7 +62,10 @@ class GatewayGetK8SAuthConfigOutput(object):
         'cluster_api_type': 'cluster_api_type',
         'disable_iss_validation': 'disable_iss_validation',
         'id': 'id',
+        'k8s_auth_type': 'k8s_auth_type',
         'k8s_ca_cert': 'k8s_ca_cert',
+        'k8s_client_cert_data': 'k8s_client_cert_data',
+        'k8s_client_key_data': 'k8s_client_key_data',
         'k8s_host': 'k8s_host',
         'k8s_issuer': 'k8s_issuer',
         'k8s_pub_keys_pem': 'k8s_pub_keys_pem',
@@ -71,7 +77,7 @@ class GatewayGetK8SAuthConfigOutput(object):
         'use_local_ca_jwt': 'use_local_ca_jwt'
     }
 
-    def __init__(self, am_token_expiration=None, auth_method_access_id=None, auth_method_prv_key_pem=None, cluster_api_type=None, disable_iss_validation=None, id=None, k8s_ca_cert=None, k8s_host=None, k8s_issuer=None, k8s_pub_keys_pem=None, k8s_token_reviewer_jwt=None, name=None, protection_key=None, rancher_api_key=None, rancher_cluster_id=None, use_local_ca_jwt=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, am_token_expiration=None, auth_method_access_id=None, auth_method_prv_key_pem=None, cluster_api_type=None, disable_iss_validation=None, id=None, k8s_auth_type=None, k8s_ca_cert=None, k8s_client_cert_data=None, k8s_client_key_data=None, k8s_host=None, k8s_issuer=None, k8s_pub_keys_pem=None, k8s_token_reviewer_jwt=None, name=None, protection_key=None, rancher_api_key=None, rancher_cluster_id=None, use_local_ca_jwt=None, local_vars_configuration=None):  # noqa: E501
         """GatewayGetK8SAuthConfigOutput - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -83,7 +89,10 @@ class GatewayGetK8SAuthConfigOutput(object):
         self._cluster_api_type = None
         self._disable_iss_validation = None
         self._id = None
+        self._k8s_auth_type = None
         self._k8s_ca_cert = None
+        self._k8s_client_cert_data = None
+        self._k8s_client_key_data = None
         self._k8s_host = None
         self._k8s_issuer = None
         self._k8s_pub_keys_pem = None
@@ -107,8 +116,14 @@ class GatewayGetK8SAuthConfigOutput(object):
             self.disable_iss_validation = disable_iss_validation
         if id is not None:
             self.id = id
+        if k8s_auth_type is not None:
+            self.k8s_auth_type = k8s_auth_type
         if k8s_ca_cert is not None:
             self.k8s_ca_cert = k8s_ca_cert
+        if k8s_client_cert_data is not None:
+            self.k8s_client_cert_data = k8s_client_cert_data
+        if k8s_client_key_data is not None:
+            self.k8s_client_key_data = k8s_client_key_data
         if k8s_host is not None:
             self.k8s_host = k8s_host
         if k8s_issuer is not None:
@@ -265,6 +280,27 @@ class GatewayGetK8SAuthConfigOutput(object):
         self._id = id
 
     @property
+    def k8s_auth_type(self):
+        """Gets the k8s_auth_type of this GatewayGetK8SAuthConfigOutput.  # noqa: E501
+
+
+        :return: The k8s_auth_type of this GatewayGetK8SAuthConfigOutput.  # noqa: E501
+        :rtype: str
+        """
+        return self._k8s_auth_type
+
+    @k8s_auth_type.setter
+    def k8s_auth_type(self, k8s_auth_type):
+        """Sets the k8s_auth_type of this GatewayGetK8SAuthConfigOutput.
+
+
+        :param k8s_auth_type: The k8s_auth_type of this GatewayGetK8SAuthConfigOutput.  # noqa: E501
+        :type: str
+        """
+
+        self._k8s_auth_type = k8s_auth_type
+
+    @property
     def k8s_ca_cert(self):
         """Gets the k8s_ca_cert of this GatewayGetK8SAuthConfigOutput.  # noqa: E501
 
@@ -286,6 +322,52 @@ class GatewayGetK8SAuthConfigOutput(object):
         """
 
         self._k8s_ca_cert = k8s_ca_cert
+
+    @property
+    def k8s_client_cert_data(self):
+        """Gets the k8s_client_cert_data of this GatewayGetK8SAuthConfigOutput.  # noqa: E501
+
+        K8sClientCertData is the client certificate for k8s client certificate authentication  # noqa: E501
+
+        :return: The k8s_client_cert_data of this GatewayGetK8SAuthConfigOutput.  # noqa: E501
+        :rtype: str
+        """
+        return self._k8s_client_cert_data
+
+    @k8s_client_cert_data.setter
+    def k8s_client_cert_data(self, k8s_client_cert_data):
+        """Sets the k8s_client_cert_data of this GatewayGetK8SAuthConfigOutput.
+
+        K8sClientCertData is the client certificate for k8s client certificate authentication  # noqa: E501
+
+        :param k8s_client_cert_data: The k8s_client_cert_data of this GatewayGetK8SAuthConfigOutput.  # noqa: E501
+        :type: str
+        """
+
+        self._k8s_client_cert_data = k8s_client_cert_data
+
+    @property
+    def k8s_client_key_data(self):
+        """Gets the k8s_client_key_data of this GatewayGetK8SAuthConfigOutput.  # noqa: E501
+
+        K8sClientKeyData is the client key for k8s client certificate authentication  # noqa: E501
+
+        :return: The k8s_client_key_data of this GatewayGetK8SAuthConfigOutput.  # noqa: E501
+        :rtype: str
+        """
+        return self._k8s_client_key_data
+
+    @k8s_client_key_data.setter
+    def k8s_client_key_data(self, k8s_client_key_data):
+        """Sets the k8s_client_key_data of this GatewayGetK8SAuthConfigOutput.
+
+        K8sClientKeyData is the client key for k8s client certificate authentication  # noqa: E501
+
+        :param k8s_client_key_data: The k8s_client_key_data of this GatewayGetK8SAuthConfigOutput.  # noqa: E501
+        :type: str
+        """
+
+        self._k8s_client_key_data = k8s_client_key_data
 
     @property
     def k8s_host(self):
