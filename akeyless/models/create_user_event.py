@@ -217,7 +217,7 @@ class CreateUserEvent(object):
     def item_name(self):
         """Gets the item_name of this CreateUserEvent.  # noqa: E501
 
-        Event item name  # noqa: E501
+        EventItemName Event item name  # noqa: E501
 
         :return: The item_name of this CreateUserEvent.  # noqa: E501
         :rtype: str
@@ -228,7 +228,7 @@ class CreateUserEvent(object):
     def item_name(self, item_name):
         """Sets the item_name of this CreateUserEvent.
 
-        Event item name  # noqa: E501
+        EventItemName Event item name  # noqa: E501
 
         :param item_name: The item_name of this CreateUserEvent.  # noqa: E501
         :type: str
@@ -242,7 +242,7 @@ class CreateUserEvent(object):
     def item_type(self):
         """Gets the item_type of this CreateUserEvent.  # noqa: E501
 
-        Event item type can be either \"target\" or type of item eg \"static_secret\"/\"dynamic_secret\" To get type of some item run `akeyless describe-item -n {ITEM_NAME} --jq-expression .item_type`  # noqa: E501
+        EventItemType Event item type  # noqa: E501
 
         :return: The item_type of this CreateUserEvent.  # noqa: E501
         :rtype: str
@@ -253,7 +253,7 @@ class CreateUserEvent(object):
     def item_type(self, item_type):
         """Sets the item_type of this CreateUserEvent.
 
-        Event item type can be either \"target\" or type of item eg \"static_secret\"/\"dynamic_secret\" To get type of some item run `akeyless describe-item -n {ITEM_NAME} --jq-expression .item_type`  # noqa: E501
+        EventItemType Event item type  # noqa: E501
 
         :param item_type: The item_type of this CreateUserEvent.  # noqa: E501
         :type: str
@@ -290,7 +290,7 @@ class CreateUserEvent(object):
     def request_access_ttl(self):
         """Gets the request_access_ttl of this CreateUserEvent.  # noqa: E501
 
-        TTL in minutes for how long to grant the requested access  # noqa: E501
+        For how long to grant the requested access, in minutes  # noqa: E501
 
         :return: The request_access_ttl of this CreateUserEvent.  # noqa: E501
         :rtype: int
@@ -301,7 +301,7 @@ class CreateUserEvent(object):
     def request_access_ttl(self, request_access_ttl):
         """Sets the request_access_ttl of this CreateUserEvent.
 
-        TTL in minutes for how long to grant the requested access  # noqa: E501
+        For how long to grant the requested access, in minutes  # noqa: E501
 
         :param request_access_ttl: The request_access_ttl of this CreateUserEvent.  # noqa: E501
         :type: int

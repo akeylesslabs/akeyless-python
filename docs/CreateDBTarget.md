@@ -3,7 +3,13 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**db_defined_connection_type** | **str** |  | [optional] 
+**azure_client_id** | **str** | (Optional) Client id (relevant for \&quot;cloud-service-provider\&quot; only) | [optional] 
+**azure_client_secret** | **str** | (Optional) Client secret (relevant for \&quot;cloud-service-provider\&quot; only) | [optional] 
+**azure_tenant_id** | **str** | (Optional) Tenant id (relevant for \&quot;cloud-service-provider\&quot; only) | [optional] 
+**cloud_service_provider** | **str** | (Optional) Cloud service provider (currently only supports Azure) | [optional] 
 **comment** | **str** | Deprecated - use description | [optional] 
+**connection_type** | **str** | (Optional) Type of connection to mssql database [credentials/cloud-identity] | [default to 'credentials']
 **db_name** | **str** |  | [optional] 
 **db_server_certificates** | **str** | (Optional) DB server certificates | [optional] 
 **db_server_name** | **str** | (Optional) Server name for certificate verification | [optional] 

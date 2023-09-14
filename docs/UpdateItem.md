@@ -29,6 +29,7 @@ Name | Type | Description | Notes
 **secure_access_db_schema** | **str** | The DB schema (relevant only for DB Dynamic-Secret) | [optional] 
 **secure_access_enable** | **str** | Enable/Disable secure remote access [true/false] | [optional] 
 **secure_access_host** | **list[str]** | Target servers for connections (In case of Linked Target association, host(s) will inherit Linked Target hosts - Relevant only for Dynamic Secrets/producers) | [optional] 
+**secure_access_rd_gateway_server** | **str** | RD Gateway server (relevant only for rdp) | [optional] 
 **secure_access_rdp_domain** | **str** | Required when the Dynamic Secret is used for a domain user (relevant only for RDP Dynamic-Secret) | [optional] 
 **secure_access_rdp_user** | **str** | Override the RDP Domain username | [optional] 
 **secure_access_rm_host** | **list[str]** | List of the existent hosts that will be removed from SRA servers host | [optional] 

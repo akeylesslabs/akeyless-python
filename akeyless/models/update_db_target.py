@@ -34,7 +34,13 @@ class UpdateDBTarget(object):
                             and the value is json key in definition.
     """
     openapi_types = {
+        'db_defined_connection_type': 'str',
+        'azure_client_id': 'str',
+        'azure_client_secret': 'str',
+        'azure_tenant_id': 'str',
+        'cloud_service_provider': 'str',
         'comment': 'str',
+        'connection_type': 'str',
         'db_name': 'str',
         'db_server_certificates': 'str',
         'db_server_name': 'str',
@@ -67,7 +73,13 @@ class UpdateDBTarget(object):
     }
 
     attribute_map = {
+        'db_defined_connection_type': 'DBDefinedConnectionType',
+        'azure_client_id': 'azure-client-id',
+        'azure_client_secret': 'azure-client-secret',
+        'azure_tenant_id': 'azure-tenant-id',
+        'cloud_service_provider': 'cloud-service-provider',
         'comment': 'comment',
+        'connection_type': 'connection-type',
         'db_name': 'db-name',
         'db_server_certificates': 'db-server-certificates',
         'db_server_name': 'db-server-name',
@@ -99,13 +111,19 @@ class UpdateDBTarget(object):
         'user_name': 'user-name'
     }
 
-    def __init__(self, comment=None, db_name=None, db_server_certificates=None, db_server_name=None, db_type=None, description=None, host=None, json=False, keep_prev_version=None, key=None, mongodb_atlas=None, mongodb_atlas_api_private_key=None, mongodb_atlas_api_public_key=None, mongodb_atlas_project_id=None, mongodb_default_auth_db=None, mongodb_uri_options=None, name=None, new_name=None, oracle_service_name=None, port=None, pwd=None, snowflake_account=None, snowflake_api_private_key=None, snowflake_api_private_key_password=None, ssl=False, ssl_certificate=None, token=None, uid_token=None, update_version=None, user_name=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, db_defined_connection_type=None, azure_client_id=None, azure_client_secret=None, azure_tenant_id=None, cloud_service_provider=None, comment=None, connection_type='credentials', db_name=None, db_server_certificates=None, db_server_name=None, db_type=None, description=None, host=None, json=False, keep_prev_version=None, key=None, mongodb_atlas=None, mongodb_atlas_api_private_key=None, mongodb_atlas_api_public_key=None, mongodb_atlas_project_id=None, mongodb_default_auth_db=None, mongodb_uri_options=None, name=None, new_name=None, oracle_service_name=None, port=None, pwd=None, snowflake_account=None, snowflake_api_private_key=None, snowflake_api_private_key_password=None, ssl=False, ssl_certificate=None, token=None, uid_token=None, update_version=None, user_name=None, local_vars_configuration=None):  # noqa: E501
         """UpdateDBTarget - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
+        self._db_defined_connection_type = None
+        self._azure_client_id = None
+        self._azure_client_secret = None
+        self._azure_tenant_id = None
+        self._cloud_service_provider = None
         self._comment = None
+        self._connection_type = None
         self._db_name = None
         self._db_server_certificates = None
         self._db_server_name = None
@@ -137,8 +155,19 @@ class UpdateDBTarget(object):
         self._user_name = None
         self.discriminator = None
 
+        if db_defined_connection_type is not None:
+            self.db_defined_connection_type = db_defined_connection_type
+        if azure_client_id is not None:
+            self.azure_client_id = azure_client_id
+        if azure_client_secret is not None:
+            self.azure_client_secret = azure_client_secret
+        if azure_tenant_id is not None:
+            self.azure_tenant_id = azure_tenant_id
+        if cloud_service_provider is not None:
+            self.cloud_service_provider = cloud_service_provider
         if comment is not None:
             self.comment = comment
+        self.connection_type = connection_type
         if db_name is not None:
             self.db_name = db_name
         if db_server_certificates is not None:
@@ -197,6 +226,119 @@ class UpdateDBTarget(object):
             self.user_name = user_name
 
     @property
+    def db_defined_connection_type(self):
+        """Gets the db_defined_connection_type of this UpdateDBTarget.  # noqa: E501
+
+
+        :return: The db_defined_connection_type of this UpdateDBTarget.  # noqa: E501
+        :rtype: str
+        """
+        return self._db_defined_connection_type
+
+    @db_defined_connection_type.setter
+    def db_defined_connection_type(self, db_defined_connection_type):
+        """Sets the db_defined_connection_type of this UpdateDBTarget.
+
+
+        :param db_defined_connection_type: The db_defined_connection_type of this UpdateDBTarget.  # noqa: E501
+        :type: str
+        """
+
+        self._db_defined_connection_type = db_defined_connection_type
+
+    @property
+    def azure_client_id(self):
+        """Gets the azure_client_id of this UpdateDBTarget.  # noqa: E501
+
+        (Optional) Client id (relevant for \"cloud-service-provider\" only)  # noqa: E501
+
+        :return: The azure_client_id of this UpdateDBTarget.  # noqa: E501
+        :rtype: str
+        """
+        return self._azure_client_id
+
+    @azure_client_id.setter
+    def azure_client_id(self, azure_client_id):
+        """Sets the azure_client_id of this UpdateDBTarget.
+
+        (Optional) Client id (relevant for \"cloud-service-provider\" only)  # noqa: E501
+
+        :param azure_client_id: The azure_client_id of this UpdateDBTarget.  # noqa: E501
+        :type: str
+        """
+
+        self._azure_client_id = azure_client_id
+
+    @property
+    def azure_client_secret(self):
+        """Gets the azure_client_secret of this UpdateDBTarget.  # noqa: E501
+
+        (Optional) Client secret (relevant for \"cloud-service-provider\" only)  # noqa: E501
+
+        :return: The azure_client_secret of this UpdateDBTarget.  # noqa: E501
+        :rtype: str
+        """
+        return self._azure_client_secret
+
+    @azure_client_secret.setter
+    def azure_client_secret(self, azure_client_secret):
+        """Sets the azure_client_secret of this UpdateDBTarget.
+
+        (Optional) Client secret (relevant for \"cloud-service-provider\" only)  # noqa: E501
+
+        :param azure_client_secret: The azure_client_secret of this UpdateDBTarget.  # noqa: E501
+        :type: str
+        """
+
+        self._azure_client_secret = azure_client_secret
+
+    @property
+    def azure_tenant_id(self):
+        """Gets the azure_tenant_id of this UpdateDBTarget.  # noqa: E501
+
+        (Optional) Tenant id (relevant for \"cloud-service-provider\" only)  # noqa: E501
+
+        :return: The azure_tenant_id of this UpdateDBTarget.  # noqa: E501
+        :rtype: str
+        """
+        return self._azure_tenant_id
+
+    @azure_tenant_id.setter
+    def azure_tenant_id(self, azure_tenant_id):
+        """Sets the azure_tenant_id of this UpdateDBTarget.
+
+        (Optional) Tenant id (relevant for \"cloud-service-provider\" only)  # noqa: E501
+
+        :param azure_tenant_id: The azure_tenant_id of this UpdateDBTarget.  # noqa: E501
+        :type: str
+        """
+
+        self._azure_tenant_id = azure_tenant_id
+
+    @property
+    def cloud_service_provider(self):
+        """Gets the cloud_service_provider of this UpdateDBTarget.  # noqa: E501
+
+        (Optional) Cloud service provider (currently only supports Azure)  # noqa: E501
+
+        :return: The cloud_service_provider of this UpdateDBTarget.  # noqa: E501
+        :rtype: str
+        """
+        return self._cloud_service_provider
+
+    @cloud_service_provider.setter
+    def cloud_service_provider(self, cloud_service_provider):
+        """Sets the cloud_service_provider of this UpdateDBTarget.
+
+        (Optional) Cloud service provider (currently only supports Azure)  # noqa: E501
+
+        :param cloud_service_provider: The cloud_service_provider of this UpdateDBTarget.  # noqa: E501
+        :type: str
+        """
+
+        self._cloud_service_provider = cloud_service_provider
+
+    @property
     def comment(self):
         """Gets the comment of this UpdateDBTarget.  # noqa: E501
 
@@ -218,6 +360,31 @@ class UpdateDBTarget(object):
         """
 
         self._comment = comment
+
+    @property
+    def connection_type(self):
+        """Gets the connection_type of this UpdateDBTarget.  # noqa: E501
+
+        (Optional) Type of connection to mssql database [credentials/cloud-identity]  # noqa: E501
+
+        :return: The connection_type of this UpdateDBTarget.  # noqa: E501
+        :rtype: str
+        """
+        return self._connection_type
+
+    @connection_type.setter
+    def connection_type(self, connection_type):
+        """Sets the connection_type of this UpdateDBTarget.
+
+        (Optional) Type of connection to mssql database [credentials/cloud-identity]  # noqa: E501
+
+        :param connection_type: The connection_type of this UpdateDBTarget.  # noqa: E501
+        :type: str
+        """
+        if self.local_vars_configuration.client_side_validation and connection_type is None:  # noqa: E501
+            raise ValueError("Invalid value for `connection_type`, must not be `None`")  # noqa: E501
+
+        self._connection_type = connection_type
 
     @property
     def db_name(self):

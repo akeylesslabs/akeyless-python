@@ -21,6 +21,7 @@ Name | Type | Description | Notes
 **is_web** | **bool** |  | [optional] 
 **isolated** | **bool** |  | [optional] 
 **native** | **bool** |  | [optional] 
+**rd_gateway_server** | **str** |  | [optional] 
 **rdp_user** | **str** |  | [optional] 
 **region** | **str** |  | [optional] 
 **rotate_after_disconnect** | **bool** |  | [optional] 

@@ -34,6 +34,10 @@ class DbTargetDetails(object):
                             and the value is json key in definition.
     """
     openapi_types = {
+        'cloud_service_provider': 'str',
+        'connection_type': 'str',
+        'db_client_id': 'str',
+        'db_client_secret': 'str',
         'db_host_name': 'str',
         'db_name': 'str',
         'db_port': 'str',
@@ -42,6 +46,7 @@ class DbTargetDetails(object):
         'db_pwd': 'str',
         'db_server_certificates': 'str',
         'db_server_name': 'str',
+        'db_tenant_id': 'str',
         'db_user_name': 'str',
         'sf_account': 'str',
         'ssl_connection_certificate': 'str',
@@ -49,6 +54,10 @@ class DbTargetDetails(object):
     }
 
     attribute_map = {
+        'cloud_service_provider': 'cloud_service_provider',
+        'connection_type': 'connection_type',
+        'db_client_id': 'db_client_id',
+        'db_client_secret': 'db_client_secret',
         'db_host_name': 'db_host_name',
         'db_name': 'db_name',
         'db_port': 'db_port',
@@ -57,18 +66,23 @@ class DbTargetDetails(object):
         'db_pwd': 'db_pwd',
         'db_server_certificates': 'db_server_certificates',
         'db_server_name': 'db_server_name',
+        'db_tenant_id': 'db_tenant_id',
         'db_user_name': 'db_user_name',
         'sf_account': 'sf_account',
         'ssl_connection_certificate': 'ssl_connection_certificate',
         'ssl_connection_mode': 'ssl_connection_mode'
     }
 
-    def __init__(self, db_host_name=None, db_name=None, db_port=None, db_private_key=None, db_private_key_passphrase=None, db_pwd=None, db_server_certificates=None, db_server_name=None, db_user_name=None, sf_account=None, ssl_connection_certificate=None, ssl_connection_mode=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, cloud_service_provider=None, connection_type=None, db_client_id=None, db_client_secret=None, db_host_name=None, db_name=None, db_port=None, db_private_key=None, db_private_key_passphrase=None, db_pwd=None, db_server_certificates=None, db_server_name=None, db_tenant_id=None, db_user_name=None, sf_account=None, ssl_connection_certificate=None, ssl_connection_mode=None, local_vars_configuration=None):  # noqa: E501
         """DbTargetDetails - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
+        self._cloud_service_provider = None
+        self._connection_type = None
+        self._db_client_id = None
+        self._db_client_secret = None
         self._db_host_name = None
         self._db_name = None
         self._db_port = None
@@ -77,12 +91,21 @@ class DbTargetDetails(object):
         self._db_pwd = None
         self._db_server_certificates = None
         self._db_server_name = None
+        self._db_tenant_id = None
         self._db_user_name = None
         self._sf_account = None
         self._ssl_connection_certificate = None
         self._ssl_connection_mode = None
         self.discriminator = None
 
+        if cloud_service_provider is not None:
+            self.cloud_service_provider = cloud_service_provider
+        if connection_type is not None:
+            self.connection_type = connection_type
+        if db_client_id is not None:
+            self.db_client_id = db_client_id
+        if db_client_secret is not None:
+            self.db_client_secret = db_client_secret
         if db_host_name is not None:
             self.db_host_name = db_host_name
         if db_name is not None:
@@ -99,6 +122,8 @@ class DbTargetDetails(object):
             self.db_server_certificates = db_server_certificates
         if db_server_name is not None:
             self.db_server_name = db_server_name
+        if db_tenant_id is not None:
+            self.db_tenant_id = db_tenant_id
         if db_user_name is not None:
             self.db_user_name = db_user_name
         if sf_account is not None:
@@ -107,6 +132,90 @@ class DbTargetDetails(object):
             self.ssl_connection_certificate = ssl_connection_certificate
         if ssl_connection_mode is not None:
             self.ssl_connection_mode = ssl_connection_mode
+
+    @property
+    def cloud_service_provider(self):
+        """Gets the cloud_service_provider of this DbTargetDetails.  # noqa: E501
+
+
+        :return: The cloud_service_provider of this DbTargetDetails.  # noqa: E501
+        :rtype: str
+        """
+        return self._cloud_service_provider
+
+    @cloud_service_provider.setter
+    def cloud_service_provider(self, cloud_service_provider):
+        """Sets the cloud_service_provider of this DbTargetDetails.
+
+
+        :param cloud_service_provider: The cloud_service_provider of this DbTargetDetails.  # noqa: E501
+        :type: str
+        """
+
+        self._cloud_service_provider = cloud_service_provider
+
+    @property
+    def connection_type(self):
+        """Gets the connection_type of this DbTargetDetails.  # noqa: E501
+
+
+        :return: The connection_type of this DbTargetDetails.  # noqa: E501
+        :rtype: str
+        """
+        return self._connection_type
+
+    @connection_type.setter
+    def connection_type(self, connection_type):
+        """Sets the connection_type of this DbTargetDetails.
+
+
+        :param connection_type: The connection_type of this DbTargetDetails.  # noqa: E501
+        :type: str
+        """
+
+        self._connection_type = connection_type
+
+    @property
+    def db_client_id(self):
+        """Gets the db_client_id of this DbTargetDetails.  # noqa: E501
+
+
+        :return: The db_client_id of this DbTargetDetails.  # noqa: E501
+        :rtype: str
+        """
+        return self._db_client_id
+
+    @db_client_id.setter
+    def db_client_id(self, db_client_id):
+        """Sets the db_client_id of this DbTargetDetails.
+
+
+        :param db_client_id: The db_client_id of this DbTargetDetails.  # noqa: E501
+        :type: str
+        """
+
+        self._db_client_id = db_client_id
+
+    @property
+    def db_client_secret(self):
+        """Gets the db_client_secret of this DbTargetDetails.  # noqa: E501
+
+
+        :return: The db_client_secret of this DbTargetDetails.  # noqa: E501
+        :rtype: str
+        """
+        return self._db_client_secret
+
+    @db_client_secret.setter
+    def db_client_secret(self, db_client_secret):
+        """Sets the db_client_secret of this DbTargetDetails.
+
+
+        :param db_client_secret: The db_client_secret of this DbTargetDetails.  # noqa: E501
+        :type: str
+        """
+
+        self._db_client_secret = db_client_secret
 
     @property
     def db_host_name(self):
@@ -281,6 +390,27 @@ class DbTargetDetails(object):
         """
 
         self._db_server_name = db_server_name
+
+    @property
+    def db_tenant_id(self):
+        """Gets the db_tenant_id of this DbTargetDetails.  # noqa: E501
+
+
+        :return: The db_tenant_id of this DbTargetDetails.  # noqa: E501
+        :rtype: str
+        """
+        return self._db_tenant_id
+
+    @db_tenant_id.setter
+    def db_tenant_id(self, db_tenant_id):
+        """Sets the db_tenant_id of this DbTargetDetails.
+
+
+        :param db_tenant_id: The db_tenant_id of this DbTargetDetails.  # noqa: E501
+        :type: str
+        """
+
+        self._db_tenant_id = db_tenant_id
 
     @property
     def db_user_name(self):

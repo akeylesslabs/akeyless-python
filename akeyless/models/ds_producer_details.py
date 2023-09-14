@@ -80,7 +80,11 @@ class DSProducerDetails(object):
         'chef_server_username': 'str',
         'chef_skip_ssl': 'bool',
         'client_authentication_type': 'str',
+        'cloud_service_provider': 'str',
+        'connection_type': 'str',
         'create_sync_url': 'str',
+        'db_client_id': 'str',
+        'db_client_secret': 'str',
         'db_host_name': 'str',
         'db_isolation_level': 'str',
         'db_max_idle_conns': 'str',
@@ -92,6 +96,7 @@ class DSProducerDetails(object):
         'db_pwd': 'str',
         'db_server_certificates': 'str',
         'db_server_name': 'str',
+        'db_tenant_id': 'str',
         'db_user_name': 'str',
         'delete_protection': 'bool',
         'dynamic_secret_id': 'int',
@@ -295,7 +300,11 @@ class DSProducerDetails(object):
         'chef_server_username': 'chef_server_username',
         'chef_skip_ssl': 'chef_skip_ssl',
         'client_authentication_type': 'client_authentication_type',
+        'cloud_service_provider': 'cloud_service_provider',
+        'connection_type': 'connection_type',
         'create_sync_url': 'create_sync_url',
+        'db_client_id': 'db_client_id',
+        'db_client_secret': 'db_client_secret',
         'db_host_name': 'db_host_name',
         'db_isolation_level': 'db_isolation_level',
         'db_max_idle_conns': 'db_max_idle_conns',
@@ -307,6 +316,7 @@ class DSProducerDetails(object):
         'db_pwd': 'db_pwd',
         'db_server_certificates': 'db_server_certificates',
         'db_server_name': 'db_server_name',
+        'db_tenant_id': 'db_tenant_id',
         'db_user_name': 'db_user_name',
         'delete_protection': 'delete_protection',
         'dynamic_secret_id': 'dynamic_secret_id',
@@ -463,7 +473,7 @@ class DSProducerDetails(object):
         'warn_before_user_expiration_min': 'warn_before_user_expiration_min'
     }
 
-    def __init__(self, access_token_manager_id=None, acl_rules=None, active=None, admin_name=None, admin_pwd=None, admin_rotation_interval_days=None, administrative_port=None, artifactory_admin_apikey=None, artifactory_admin_username=None, artifactory_base_url=None, artifactory_token_audience=None, artifactory_token_scope=None, authorization_port=None, aws_access_key_id=None, aws_access_mode=None, aws_region=None, aws_role_arns=None, aws_secret_access_key=None, aws_session_token=None, aws_user_console_access=None, aws_user_groups=None, aws_user_policies=None, aws_user_programmatic_access=None, azure_app_object_id=None, azure_client_id=None, azure_client_secret=None, azure_fixed_user_name_sub_claim_key=None, azure_fixed_user_only=None, azure_resource_group_name=None, azure_resource_name=None, azure_subscription_id=None, azure_tenant_id=None, azure_user_groups_obj_id=None, azure_user_portal_access=None, azure_user_programmatic_access=None, azure_user_roles_template_id=None, cassandra_creation_statements=None, chef_organizations=None, chef_server_access_mode=None, chef_server_host_name=None, chef_server_key=None, chef_server_port=None, chef_server_url=None, chef_server_username=None, chef_skip_ssl=None, client_authentication_type=None, create_sync_url=None, db_host_name=None, db_isolation_level=None, db_max_idle_conns=None, db_max_open_conns=None, db_name=None, db_port=None, db_private_key=None, db_private_key_passphrase=None, db_pwd=None, db_server_certificates=None, db_server_name=None, db_user_name=None, delete_protection=None, dynamic_secret_id=None, dynamic_secret_key=None, dynamic_secret_name=None, dynamic_secret_type=None, eks_access_key_id=None, eks_assume_role=None, eks_cluster_ca_certificate=None, eks_cluster_endpoint=None, eks_cluster_name=None, eks_region=None, eks_secret_access_key=None, enable_admin_rotation=None, enforce_replay_prevention=None, externally_provided_user=None, failure_message=None, fixed_user_only=None, gcp_key_algo=None, gcp_role_bindings=None, gcp_service_account_email=None, gcp_service_account_key=None, gcp_service_account_key_base64=None, gcp_service_account_type=None, gcp_tmp_service_account_name=None, gcp_token_lifetime=None, gcp_token_scope=None, gcp_token_type=None, github_app_id=None, github_app_private_key=None, github_base_url=None, github_installation_id=None, github_installation_token_permissions=None, github_installation_token_repositories=None, github_installation_token_repositories_ids=None, github_repository_path=None, gke_cluster_ca_certificate=None, gke_cluster_endpoint=None, gke_cluster_name=None, gke_service_account_key=None, gke_service_account_name=None, grant_types=None, groups=None, hanadb_creation_statements=None, hanadb_revocation_statements=None, host_name=None, host_port=None, implementation_type=None, is_fixed_user=None, issuer=None, item_targets_assoc=None, jwks=None, jwks_url=None, k8s_allowed_namespaces=None, k8s_auth_type=None, k8s_bearer_token=None, k8s_client_cert_data=None, k8s_client_key_data=None, k8s_cluster_ca_certificate=None, k8s_cluster_endpoint=None, k8s_dynamic_mode=None, k8s_multiple_doc_yaml_temp_definition=None, k8s_namespace=None, k8s_role_name=None, k8s_role_type=None, k8s_service_account=None, last_admin_rotation=None, ldap_audience=None, ldap_bind_dn=None, ldap_bind_password=None, ldap_certificate=None, ldap_group_dn=None, ldap_token_expiration=None, ldap_url=None, ldap_user_attr=None, ldap_user_dn=None, metadata=None, mongodb_atlas_api_private_key=None, mongodb_atlas_api_public_key=None, mongodb_atlas_project_id=None, mongodb_custom_data=None, mongodb_db_name=None, mongodb_default_auth_db=None, mongodb_host_port=None, mongodb_is_atlas=None, mongodb_password=None, mongodb_roles=None, mongodb_uri_connection=None, mongodb_uri_options=None, mongodb_username=None, mssql_creation_statements=None, mssql_revocation_statements=None, mysql_creation_statements=None, mysql_revocation_statements=None, oracle_creation_statements=None, password=None, password_length=None, password_policy=None, payload=None, ping_url=None, postgres_creation_statements=None, postgres_revocation_statements=None, privileged_user=None, rabbitmq_server_password=None, rabbitmq_server_uri=None, rabbitmq_server_user=None, rabbitmq_user_conf_permission=None, rabbitmq_user_read_permission=None, rabbitmq_user_tags=None, rabbitmq_user_vhost=None, rabbitmq_user_write_permission=None, redirect_uris=None, redshift_creation_statements=None, restricted_scopes=None, revoke_sync_url=None, rotate_sync_url=None, scopes=None, secure_remote_access_details=None, session_extension_warn_interval_min=None, sf_account=None, sf_user_role=None, sf_warehouse_name=None, should_stop=None, signing_algorithm=None, ssl_connection_certificate=None, ssl_connection_mode=None, subject_dn=None, tags=None, timeout_seconds=None, use_gw_cloud_identity=None, use_gw_service_account=None, user_name=None, user_password=None, user_principal_name=None, user_ttl=None, username_length=None, username_policy=None, venafi_allow_subdomains=None, venafi_allowed_domains=None, venafi_api_key=None, venafi_auto_generated_folder=None, venafi_base_url=None, venafi_root_first_in_chain=None, venafi_sign_using_akeyless_pki=None, venafi_signer_key_name=None, venafi_store_private_key=None, venafi_tpp_access_token=None, venafi_tpp_client_id=None, venafi_tpp_password=None, venafi_tpp_refresh_token=None, venafi_tpp_username=None, venafi_use_tpp=None, venafi_zone=None, warn_before_user_expiration_min=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, access_token_manager_id=None, acl_rules=None, active=None, admin_name=None, admin_pwd=None, admin_rotation_interval_days=None, administrative_port=None, artifactory_admin_apikey=None, artifactory_admin_username=None, artifactory_base_url=None, artifactory_token_audience=None, artifactory_token_scope=None, authorization_port=None, aws_access_key_id=None, aws_access_mode=None, aws_region=None, aws_role_arns=None, aws_secret_access_key=None, aws_session_token=None, aws_user_console_access=None, aws_user_groups=None, aws_user_policies=None, aws_user_programmatic_access=None, azure_app_object_id=None, azure_client_id=None, azure_client_secret=None, azure_fixed_user_name_sub_claim_key=None, azure_fixed_user_only=None, azure_resource_group_name=None, azure_resource_name=None, azure_subscription_id=None, azure_tenant_id=None, azure_user_groups_obj_id=None, azure_user_portal_access=None, azure_user_programmatic_access=None, azure_user_roles_template_id=None, cassandra_creation_statements=None, chef_organizations=None, chef_server_access_mode=None, chef_server_host_name=None, chef_server_key=None, chef_server_port=None, chef_server_url=None, chef_server_username=None, chef_skip_ssl=None, client_authentication_type=None, cloud_service_provider=None, connection_type=None, create_sync_url=None, db_client_id=None, db_client_secret=None, db_host_name=None, db_isolation_level=None, db_max_idle_conns=None, db_max_open_conns=None, db_name=None, db_port=None, db_private_key=None, db_private_key_passphrase=None, db_pwd=None, db_server_certificates=None, db_server_name=None, db_tenant_id=None, db_user_name=None, delete_protection=None, dynamic_secret_id=None, dynamic_secret_key=None, dynamic_secret_name=None, dynamic_secret_type=None, eks_access_key_id=None, eks_assume_role=None, eks_cluster_ca_certificate=None, eks_cluster_endpoint=None, eks_cluster_name=None, eks_region=None, eks_secret_access_key=None, enable_admin_rotation=None, enforce_replay_prevention=None, externally_provided_user=None, failure_message=None, fixed_user_only=None, gcp_key_algo=None, gcp_role_bindings=None, gcp_service_account_email=None, gcp_service_account_key=None, gcp_service_account_key_base64=None, gcp_service_account_type=None, gcp_tmp_service_account_name=None, gcp_token_lifetime=None, gcp_token_scope=None, gcp_token_type=None, github_app_id=None, github_app_private_key=None, github_base_url=None, github_installation_id=None, github_installation_token_permissions=None, github_installation_token_repositories=None, github_installation_token_repositories_ids=None, github_repository_path=None, gke_cluster_ca_certificate=None, gke_cluster_endpoint=None, gke_cluster_name=None, gke_service_account_key=None, gke_service_account_name=None, grant_types=None, groups=None, hanadb_creation_statements=None, hanadb_revocation_statements=None, host_name=None, host_port=None, implementation_type=None, is_fixed_user=None, issuer=None, item_targets_assoc=None, jwks=None, jwks_url=None, k8s_allowed_namespaces=None, k8s_auth_type=None, k8s_bearer_token=None, k8s_client_cert_data=None, k8s_client_key_data=None, k8s_cluster_ca_certificate=None, k8s_cluster_endpoint=None, k8s_dynamic_mode=None, k8s_multiple_doc_yaml_temp_definition=None, k8s_namespace=None, k8s_role_name=None, k8s_role_type=None, k8s_service_account=None, last_admin_rotation=None, ldap_audience=None, ldap_bind_dn=None, ldap_bind_password=None, ldap_certificate=None, ldap_group_dn=None, ldap_token_expiration=None, ldap_url=None, ldap_user_attr=None, ldap_user_dn=None, metadata=None, mongodb_atlas_api_private_key=None, mongodb_atlas_api_public_key=None, mongodb_atlas_project_id=None, mongodb_custom_data=None, mongodb_db_name=None, mongodb_default_auth_db=None, mongodb_host_port=None, mongodb_is_atlas=None, mongodb_password=None, mongodb_roles=None, mongodb_uri_connection=None, mongodb_uri_options=None, mongodb_username=None, mssql_creation_statements=None, mssql_revocation_statements=None, mysql_creation_statements=None, mysql_revocation_statements=None, oracle_creation_statements=None, password=None, password_length=None, password_policy=None, payload=None, ping_url=None, postgres_creation_statements=None, postgres_revocation_statements=None, privileged_user=None, rabbitmq_server_password=None, rabbitmq_server_uri=None, rabbitmq_server_user=None, rabbitmq_user_conf_permission=None, rabbitmq_user_read_permission=None, rabbitmq_user_tags=None, rabbitmq_user_vhost=None, rabbitmq_user_write_permission=None, redirect_uris=None, redshift_creation_statements=None, restricted_scopes=None, revoke_sync_url=None, rotate_sync_url=None, scopes=None, secure_remote_access_details=None, session_extension_warn_interval_min=None, sf_account=None, sf_user_role=None, sf_warehouse_name=None, should_stop=None, signing_algorithm=None, ssl_connection_certificate=None, ssl_connection_mode=None, subject_dn=None, tags=None, timeout_seconds=None, use_gw_cloud_identity=None, use_gw_service_account=None, user_name=None, user_password=None, user_principal_name=None, user_ttl=None, username_length=None, username_policy=None, venafi_allow_subdomains=None, venafi_allowed_domains=None, venafi_api_key=None, venafi_auto_generated_folder=None, venafi_base_url=None, venafi_root_first_in_chain=None, venafi_sign_using_akeyless_pki=None, venafi_signer_key_name=None, venafi_store_private_key=None, venafi_tpp_access_token=None, venafi_tpp_client_id=None, venafi_tpp_password=None, venafi_tpp_refresh_token=None, venafi_tpp_username=None, venafi_use_tpp=None, venafi_zone=None, warn_before_user_expiration_min=None, local_vars_configuration=None):  # noqa: E501
         """DSProducerDetails - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -515,7 +525,11 @@ class DSProducerDetails(object):
         self._chef_server_username = None
         self._chef_skip_ssl = None
         self._client_authentication_type = None
+        self._cloud_service_provider = None
+        self._connection_type = None
         self._create_sync_url = None
+        self._db_client_id = None
+        self._db_client_secret = None
         self._db_host_name = None
         self._db_isolation_level = None
         self._db_max_idle_conns = None
@@ -527,6 +541,7 @@ class DSProducerDetails(object):
         self._db_pwd = None
         self._db_server_certificates = None
         self._db_server_name = None
+        self._db_tenant_id = None
         self._db_user_name = None
         self._delete_protection = None
         self._dynamic_secret_id = None
@@ -775,8 +790,16 @@ class DSProducerDetails(object):
             self.chef_skip_ssl = chef_skip_ssl
         if client_authentication_type is not None:
             self.client_authentication_type = client_authentication_type
+        if cloud_service_provider is not None:
+            self.cloud_service_provider = cloud_service_provider
+        if connection_type is not None:
+            self.connection_type = connection_type
         if create_sync_url is not None:
             self.create_sync_url = create_sync_url
+        if db_client_id is not None:
+            self.db_client_id = db_client_id
+        if db_client_secret is not None:
+            self.db_client_secret = db_client_secret
         if db_host_name is not None:
             self.db_host_name = db_host_name
         if db_isolation_level is not None:
@@ -799,6 +822,8 @@ class DSProducerDetails(object):
             self.db_server_certificates = db_server_certificates
         if db_server_name is not None:
             self.db_server_name = db_server_name
+        if db_tenant_id is not None:
+            self.db_tenant_id = db_tenant_id
         if db_user_name is not None:
             self.db_user_name = db_user_name
         if delete_protection is not None:
@@ -2075,6 +2100,48 @@ class DSProducerDetails(object):
         self._client_authentication_type = client_authentication_type
 
     @property
+    def cloud_service_provider(self):
+        """Gets the cloud_service_provider of this DSProducerDetails.  # noqa: E501
+
+
+        :return: The cloud_service_provider of this DSProducerDetails.  # noqa: E501
+        :rtype: str
+        """
+        return self._cloud_service_provider
+
+    @cloud_service_provider.setter
+    def cloud_service_provider(self, cloud_service_provider):
+        """Sets the cloud_service_provider of this DSProducerDetails.
+
+
+        :param cloud_service_provider: The cloud_service_provider of this DSProducerDetails.  # noqa: E501
+        :type: str
+        """
+
+        self._cloud_service_provider = cloud_service_provider
+
+    @property
+    def connection_type(self):
+        """Gets the connection_type of this DSProducerDetails.  # noqa: E501
+
+
+        :return: The connection_type of this DSProducerDetails.  # noqa: E501
+        :rtype: str
+        """
+        return self._connection_type
+
+    @connection_type.setter
+    def connection_type(self, connection_type):
+        """Sets the connection_type of this DSProducerDetails.
+
+
+        :param connection_type: The connection_type of this DSProducerDetails.  # noqa: E501
+        :type: str
+        """
+
+        self._connection_type = connection_type
+
+    @property
     def create_sync_url(self):
         """Gets the create_sync_url of this DSProducerDetails.  # noqa: E501
 
@@ -2094,6 +2161,48 @@ class DSProducerDetails(object):
         """
 
         self._create_sync_url = create_sync_url
+
+    @property
+    def db_client_id(self):
+        """Gets the db_client_id of this DSProducerDetails.  # noqa: E501
+
+
+        :return: The db_client_id of this DSProducerDetails.  # noqa: E501
+        :rtype: str
+        """
+        return self._db_client_id
+
+    @db_client_id.setter
+    def db_client_id(self, db_client_id):
+        """Sets the db_client_id of this DSProducerDetails.
+
+
+        :param db_client_id: The db_client_id of this DSProducerDetails.  # noqa: E501
+        :type: str
+        """
+
+        self._db_client_id = db_client_id
+
+    @property
+    def db_client_secret(self):
+        """Gets the db_client_secret of this DSProducerDetails.  # noqa: E501
+
+
+        :return: The db_client_secret of this DSProducerDetails.  # noqa: E501
+        :rtype: str
+        """
+        return self._db_client_secret
+
+    @db_client_secret.setter
+    def db_client_secret(self, db_client_secret):
+        """Sets the db_client_secret of this DSProducerDetails.
+
+
+        :param db_client_secret: The db_client_secret of this DSProducerDetails.  # noqa: E501
+        :type: str
+        """
+
+        self._db_client_secret = db_client_secret
 
     @property
     def db_host_name(self):
@@ -2331,6 +2440,27 @@ class DSProducerDetails(object):
         """
 
         self._db_server_name = db_server_name
+
+    @property
+    def db_tenant_id(self):
+        """Gets the db_tenant_id of this DSProducerDetails.  # noqa: E501
+
+
+        :return: The db_tenant_id of this DSProducerDetails.  # noqa: E501
+        :rtype: str
+        """
+        return self._db_tenant_id
+
+    @db_tenant_id.setter
+    def db_tenant_id(self, db_tenant_id):
+        """Sets the db_tenant_id of this DSProducerDetails.
+
+
+        :param db_tenant_id: The db_tenant_id of this DSProducerDetails.  # noqa: E501
+        :type: str
+        """
+
+        self._db_tenant_id = db_tenant_id
 
     @property
     def db_user_name(self):

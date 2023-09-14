@@ -206,7 +206,7 @@ class GetLastUserEventStatus(object):
     def time_back(self):
         """Gets the time_back of this GetLastUserEventStatus.  # noqa: E501
 
-        The time back to search the event, can be passed as string representation. For example if the value is \"5m\" we will return the last user event issued in the last 5 minutes By default we will search without any time boundary  # noqa: E501
+        The time back to search the event, for example if the value is \"5m\" we will return the last user event issued in the last 5 minutes. By default, we will search without any time boundary.  # noqa: E501
 
         :return: The time_back of this GetLastUserEventStatus.  # noqa: E501
         :rtype: str
@@ -217,7 +217,7 @@ class GetLastUserEventStatus(object):
     def time_back(self, time_back):
         """Sets the time_back of this GetLastUserEventStatus.
 
-        The time back to search the event, can be passed as string representation. For example if the value is \"5m\" we will return the last user event issued in the last 5 minutes By default we will search without any time boundary  # noqa: E501
+        The time back to search the event, for example if the value is \"5m\" we will return the last user event issued in the last 5 minutes. By default, we will search without any time boundary.  # noqa: E501
 
         :param time_back: The time_back of this GetLastUserEventStatus.  # noqa: E501
         :type: str

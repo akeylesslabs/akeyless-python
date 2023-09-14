@@ -60,6 +60,7 @@ class UpdateItem(object):
         'secure_access_db_schema': 'str',
         'secure_access_enable': 'str',
         'secure_access_host': 'list[str]',
+        'secure_access_rd_gateway_server': 'str',
         'secure_access_rdp_domain': 'str',
         'secure_access_rdp_user': 'str',
         'secure_access_rm_host': 'list[str]',
@@ -100,6 +101,7 @@ class UpdateItem(object):
         'secure_access_db_schema': 'secure-access-db-schema',
         'secure_access_enable': 'secure-access-enable',
         'secure_access_host': 'secure-access-host',
+        'secure_access_rd_gateway_server': 'secure-access-rd-gateway-server',
         'secure_access_rdp_domain': 'secure-access-rdp-domain',
         'secure_access_rdp_user': 'secure-access-rdp-user',
         'secure_access_rm_host': 'secure-access-rm-host',
@@ -113,7 +115,7 @@ class UpdateItem(object):
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, accessibility='regular', add_tag=None, cert_file_data=None, delete_protection=None, description='default_metadata', json=False, name=None, new_metadata='default_metadata', new_name=None, rm_tag=None, rotate_after_disconnect='false', secure_access_add_host=None, secure_access_allow_external_user=None, secure_access_allow_port_forwading=None, secure_access_aws_account_id=None, secure_access_aws_native_cli=None, secure_access_aws_region=None, secure_access_bastion_api=None, secure_access_bastion_issuer=None, secure_access_bastion_ssh=None, secure_access_cluster_endpoint=None, secure_access_dashboard_url=None, secure_access_db_name=None, secure_access_db_schema=None, secure_access_enable=None, secure_access_host=None, secure_access_rdp_domain=None, secure_access_rdp_user=None, secure_access_rm_host=None, secure_access_ssh_creds=None, secure_access_ssh_creds_user=None, secure_access_url=None, secure_access_use_internal_bastion=None, secure_access_web_browsing=False, secure_access_web_proxy=False, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, accessibility='regular', add_tag=None, cert_file_data=None, delete_protection=None, description='default_metadata', json=False, name=None, new_metadata='default_metadata', new_name=None, rm_tag=None, rotate_after_disconnect='false', secure_access_add_host=None, secure_access_allow_external_user=None, secure_access_allow_port_forwading=None, secure_access_aws_account_id=None, secure_access_aws_native_cli=None, secure_access_aws_region=None, secure_access_bastion_api=None, secure_access_bastion_issuer=None, secure_access_bastion_ssh=None, secure_access_cluster_endpoint=None, secure_access_dashboard_url=None, secure_access_db_name=None, secure_access_db_schema=None, secure_access_enable=None, secure_access_host=None, secure_access_rd_gateway_server=None, secure_access_rdp_domain=None, secure_access_rdp_user=None, secure_access_rm_host=None, secure_access_ssh_creds=None, secure_access_ssh_creds_user=None, secure_access_url=None, secure_access_use_internal_bastion=None, secure_access_web_browsing=False, secure_access_web_proxy=False, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """UpdateItem - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -145,6 +147,7 @@ class UpdateItem(object):
         self._secure_access_db_schema = None
         self._secure_access_enable = None
         self._secure_access_host = None
+        self._secure_access_rd_gateway_server = None
         self._secure_access_rdp_domain = None
         self._secure_access_rdp_user = None
         self._secure_access_rm_host = None
@@ -209,6 +212,8 @@ class UpdateItem(object):
             self.secure_access_enable = secure_access_enable
         if secure_access_host is not None:
             self.secure_access_host = secure_access_host
+        if secure_access_rd_gateway_server is not None:
+            self.secure_access_rd_gateway_server = secure_access_rd_gateway_server
         if secure_access_rdp_domain is not None:
             self.secure_access_rdp_domain = secure_access_rdp_domain
         if secure_access_rdp_user is not None:
@@ -831,6 +836,29 @@ class UpdateItem(object):
         """
 
         self._secure_access_host = secure_access_host
+
+    @property
+    def secure_access_rd_gateway_server(self):
+        """Gets the secure_access_rd_gateway_server of this UpdateItem.  # noqa: E501
+
+        RD Gateway server (relevant only for rdp)  # noqa: E501
+
+        :return: The secure_access_rd_gateway_server of this UpdateItem.  # noqa: E501
+        :rtype: str
+        """
+        return self._secure_access_rd_gateway_server
+
+    @secure_access_rd_gateway_server.setter
+    def secure_access_rd_gateway_server(self, secure_access_rd_gateway_server):
+        """Sets the secure_access_rd_gateway_server of this UpdateItem.
+
+        RD Gateway server (relevant only for rdp)  # noqa: E501
+
+        :param secure_access_rd_gateway_server: The secure_access_rd_gateway_server of this UpdateItem.  # noqa: E501
+        :type: str
+        """
+
+        self._secure_access_rd_gateway_server = secure_access_rd_gateway_server
 
     @property
     def secure_access_rdp_domain(self):

@@ -49,6 +49,7 @@ class GatewayUpdateProducerRdp(object):
         'secure_access_allow_external_user': 'bool',
         'secure_access_enable': 'str',
         'secure_access_host': 'list[str]',
+        'secure_access_rd_gateway_server': 'str',
         'secure_access_rdp_domain': 'str',
         'secure_access_rdp_user': 'str',
         'tags': 'list[str]',
@@ -75,6 +76,7 @@ class GatewayUpdateProducerRdp(object):
         'secure_access_allow_external_user': 'secure-access-allow-external-user',
         'secure_access_enable': 'secure-access-enable',
         'secure_access_host': 'secure-access-host',
+        'secure_access_rd_gateway_server': 'secure-access-rd-gateway-server',
         'secure_access_rdp_domain': 'secure-access-rdp-domain',
         'secure_access_rdp_user': 'secure-access-rdp-user',
         'tags': 'tags',
@@ -85,7 +87,7 @@ class GatewayUpdateProducerRdp(object):
         'warn_user_before_expiration': 'warn-user-before-expiration'
     }
 
-    def __init__(self, allow_user_extend_session=None, delete_protection=None, fixed_user_only='false', json=False, name=None, new_name=None, producer_encryption_key_name=None, rdp_admin_name=None, rdp_admin_pwd=None, rdp_host_name=None, rdp_host_port='22', rdp_user_groups=None, secure_access_allow_external_user=False, secure_access_enable=None, secure_access_host=None, secure_access_rdp_domain=None, secure_access_rdp_user=None, tags=None, target_name=None, token=None, uid_token=None, user_ttl='60m', warn_user_before_expiration=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, allow_user_extend_session=None, delete_protection=None, fixed_user_only='false', json=False, name=None, new_name=None, producer_encryption_key_name=None, rdp_admin_name=None, rdp_admin_pwd=None, rdp_host_name=None, rdp_host_port='22', rdp_user_groups=None, secure_access_allow_external_user=False, secure_access_enable=None, secure_access_host=None, secure_access_rd_gateway_server=None, secure_access_rdp_domain=None, secure_access_rdp_user=None, tags=None, target_name=None, token=None, uid_token=None, user_ttl='60m', warn_user_before_expiration=None, local_vars_configuration=None):  # noqa: E501
         """GatewayUpdateProducerRdp - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -106,6 +108,7 @@ class GatewayUpdateProducerRdp(object):
         self._secure_access_allow_external_user = None
         self._secure_access_enable = None
         self._secure_access_host = None
+        self._secure_access_rd_gateway_server = None
         self._secure_access_rdp_domain = None
         self._secure_access_rdp_user = None
         self._tags = None
@@ -145,6 +148,8 @@ class GatewayUpdateProducerRdp(object):
             self.secure_access_enable = secure_access_enable
         if secure_access_host is not None:
             self.secure_access_host = secure_access_host
+        if secure_access_rd_gateway_server is not None:
+            self.secure_access_rd_gateway_server = secure_access_rd_gateway_server
         if secure_access_rdp_domain is not None:
             self.secure_access_rdp_domain = secure_access_rdp_domain
         if secure_access_rdp_user is not None:
@@ -508,6 +513,29 @@ class GatewayUpdateProducerRdp(object):
         """
 
         self._secure_access_host = secure_access_host
+
+    @property
+    def secure_access_rd_gateway_server(self):
+        """Gets the secure_access_rd_gateway_server of this GatewayUpdateProducerRdp.  # noqa: E501
+
+        RD Gateway server  # noqa: E501
+
+        :return: The secure_access_rd_gateway_server of this GatewayUpdateProducerRdp.  # noqa: E501
+        :rtype: str
+        """
+        return self._secure_access_rd_gateway_server
+
+    @secure_access_rd_gateway_server.setter
+    def secure_access_rd_gateway_server(self, secure_access_rd_gateway_server):
+        """Sets the secure_access_rd_gateway_server of this GatewayUpdateProducerRdp.
+
+        RD Gateway server  # noqa: E501
+
+        :param secure_access_rd_gateway_server: The secure_access_rd_gateway_server of this GatewayUpdateProducerRdp.  # noqa: E501
+        :type: str
+        """
+
+        self._secure_access_rd_gateway_server = secure_access_rd_gateway_server
 
     @property
     def secure_access_rdp_domain(self):
