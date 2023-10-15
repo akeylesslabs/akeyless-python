@@ -4,6 +4,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **access_id** | **str** |  | [optional] 
+**access_type** | **str** |  | [optional] 
+**assignment_name** | **str** |  | [optional] 
 **assignment_type** | **str** |  | [optional] 
 **group_id** | **str** |  | [optional] 
 **sub_claims** | **dict(str, list[str])** |  | [optional] 

@@ -36,16 +36,18 @@ class CustomerFragment(object):
     openapi_types = {
         'description': 'str',
         'id': 'str',
+        'name': 'str',
         'value': 'str'
     }
 
     attribute_map = {
         'description': 'description',
         'id': 'id',
+        'name': 'name',
         'value': 'value'
     }
 
-    def __init__(self, description=None, id=None, value=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, description=None, id=None, name=None, value=None, local_vars_configuration=None):  # noqa: E501
         """CustomerFragment - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -53,6 +55,7 @@ class CustomerFragment(object):
 
         self._description = None
         self._id = None
+        self._name = None
         self._value = None
         self.discriminator = None
 
@@ -60,6 +63,8 @@ class CustomerFragment(object):
             self.description = description
         if id is not None:
             self.id = id
+        if name is not None:
+            self.name = name
         if value is not None:
             self.value = value
 
@@ -104,6 +109,27 @@ class CustomerFragment(object):
         """
 
         self._id = id
+
+    @property
+    def name(self):
+        """Gets the name of this CustomerFragment.  # noqa: E501
+
+
+        :return: The name of this CustomerFragment.  # noqa: E501
+        :rtype: str
+        """
+        return self._name
+
+    @name.setter
+    def name(self, name):
+        """Sets the name of this CustomerFragment.
+
+
+        :param name: The name of this CustomerFragment.  # noqa: E501
+        :type: str
+        """
+
+        self._name = name
 
     @property
     def value(self):

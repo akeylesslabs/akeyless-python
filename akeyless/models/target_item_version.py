@@ -35,6 +35,7 @@ class TargetItemVersion(object):
     """
     openapi_types = {
         'access_date': 'datetime',
+        'access_date_display': 'str',
         'creation_date': 'datetime',
         'customer_fragment_id': 'str',
         'deletion_date': 'datetime',
@@ -49,6 +50,7 @@ class TargetItemVersion(object):
 
     attribute_map = {
         'access_date': 'access_date',
+        'access_date_display': 'access_date_display',
         'creation_date': 'creation_date',
         'customer_fragment_id': 'customer_fragment_id',
         'deletion_date': 'deletion_date',
@@ -61,13 +63,14 @@ class TargetItemVersion(object):
         'with_customer_fragment': 'with_customer_fragment'
     }
 
-    def __init__(self, access_date=None, creation_date=None, customer_fragment_id=None, deletion_date=None, item_version_state=None, latest_version=None, modification_date=None, protection_key_name=None, target_name=None, version=None, with_customer_fragment=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, access_date=None, access_date_display=None, creation_date=None, customer_fragment_id=None, deletion_date=None, item_version_state=None, latest_version=None, modification_date=None, protection_key_name=None, target_name=None, version=None, with_customer_fragment=None, local_vars_configuration=None):  # noqa: E501
         """TargetItemVersion - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._access_date = None
+        self._access_date_display = None
         self._creation_date = None
         self._customer_fragment_id = None
         self._deletion_date = None
@@ -82,6 +85,8 @@ class TargetItemVersion(object):
 
         if access_date is not None:
             self.access_date = access_date
+        if access_date_display is not None:
+            self.access_date_display = access_date_display
         if creation_date is not None:
             self.creation_date = creation_date
         if customer_fragment_id is not None:
@@ -123,6 +128,27 @@ class TargetItemVersion(object):
         """
 
         self._access_date = access_date
+
+    @property
+    def access_date_display(self):
+        """Gets the access_date_display of this TargetItemVersion.  # noqa: E501
+
+
+        :return: The access_date_display of this TargetItemVersion.  # noqa: E501
+        :rtype: str
+        """
+        return self._access_date_display
+
+    @access_date_display.setter
+    def access_date_display(self, access_date_display):
+        """Sets the access_date_display of this TargetItemVersion.
+
+
+        :param access_date_display: The access_date_display of this TargetItemVersion.  # noqa: E501
+        :type: str
+        """
+
+        self._access_date_display = access_date_display
 
     @property
     def creation_date(self):

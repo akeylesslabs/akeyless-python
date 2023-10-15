@@ -4,6 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **access_date** | **datetime** |  | [optional] 
+**access_date_display** | **str** |  | [optional] 
 **client_permissions** | **list[str]** |  | [optional] 
 **comment** | **str** |  | [optional] 
 **creation_date** | **datetime** |  | [optional] 

@@ -39,6 +39,7 @@ class UpdateAuthMethodOAuth2(object):
         'bound_client_ids': 'list[str]',
         'bound_ips': 'list[str]',
         'force_sub_claims': 'bool',
+        'gateway_url': 'str',
         'gw_bound_ips': 'list[str]',
         'issuer': 'str',
         'json': 'bool',
@@ -47,6 +48,7 @@ class UpdateAuthMethodOAuth2(object):
         'jwt_ttl': 'int',
         'name': 'str',
         'new_name': 'str',
+        'subclaims_delimiters': 'list[str]',
         'token': 'str',
         'uid_token': 'str',
         'unique_identifier': 'str'
@@ -58,6 +60,7 @@ class UpdateAuthMethodOAuth2(object):
         'bound_client_ids': 'bound-client-ids',
         'bound_ips': 'bound-ips',
         'force_sub_claims': 'force-sub-claims',
+        'gateway_url': 'gateway-url',
         'gw_bound_ips': 'gw-bound-ips',
         'issuer': 'issuer',
         'json': 'json',
@@ -66,12 +69,13 @@ class UpdateAuthMethodOAuth2(object):
         'jwt_ttl': 'jwt-ttl',
         'name': 'name',
         'new_name': 'new-name',
+        'subclaims_delimiters': 'subclaims-delimiters',
         'token': 'token',
         'uid_token': 'uid-token',
         'unique_identifier': 'unique-identifier'
     }
 
-    def __init__(self, access_expires=0, audience=None, bound_client_ids=None, bound_ips=None, force_sub_claims=None, gw_bound_ips=None, issuer=None, json=False, jwks_json_data=None, jwks_uri='default_jwks_url', jwt_ttl=0, name=None, new_name=None, token=None, uid_token=None, unique_identifier=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, access_expires=0, audience=None, bound_client_ids=None, bound_ips=None, force_sub_claims=None, gateway_url=None, gw_bound_ips=None, issuer=None, json=False, jwks_json_data=None, jwks_uri='default_jwks_url', jwt_ttl=0, name=None, new_name=None, subclaims_delimiters=None, token=None, uid_token=None, unique_identifier=None, local_vars_configuration=None):  # noqa: E501
         """UpdateAuthMethodOAuth2 - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -82,6 +86,7 @@ class UpdateAuthMethodOAuth2(object):
         self._bound_client_ids = None
         self._bound_ips = None
         self._force_sub_claims = None
+        self._gateway_url = None
         self._gw_bound_ips = None
         self._issuer = None
         self._json = None
@@ -90,6 +95,7 @@ class UpdateAuthMethodOAuth2(object):
         self._jwt_ttl = None
         self._name = None
         self._new_name = None
+        self._subclaims_delimiters = None
         self._token = None
         self._uid_token = None
         self._unique_identifier = None
@@ -105,6 +111,8 @@ class UpdateAuthMethodOAuth2(object):
             self.bound_ips = bound_ips
         if force_sub_claims is not None:
             self.force_sub_claims = force_sub_claims
+        if gateway_url is not None:
+            self.gateway_url = gateway_url
         if gw_bound_ips is not None:
             self.gw_bound_ips = gw_bound_ips
         if issuer is not None:
@@ -119,6 +127,8 @@ class UpdateAuthMethodOAuth2(object):
         self.name = name
         if new_name is not None:
             self.new_name = new_name
+        if subclaims_delimiters is not None:
+            self.subclaims_delimiters = subclaims_delimiters
         if token is not None:
             self.token = token
         if uid_token is not None:
@@ -239,6 +249,29 @@ class UpdateAuthMethodOAuth2(object):
         """
 
         self._force_sub_claims = force_sub_claims
+
+    @property
+    def gateway_url(self):
+        """Gets the gateway_url of this UpdateAuthMethodOAuth2.  # noqa: E501
+
+        Akeyless Gateway URL (Configuration Management port). Relevant only when the jwks-uri is accessible only from the gateway.  # noqa: E501
+
+        :return: The gateway_url of this UpdateAuthMethodOAuth2.  # noqa: E501
+        :rtype: str
+        """
+        return self._gateway_url
+
+    @gateway_url.setter
+    def gateway_url(self, gateway_url):
+        """Sets the gateway_url of this UpdateAuthMethodOAuth2.
+
+        Akeyless Gateway URL (Configuration Management port). Relevant only when the jwks-uri is accessible only from the gateway.  # noqa: E501
+
+        :param gateway_url: The gateway_url of this UpdateAuthMethodOAuth2.  # noqa: E501
+        :type: str
+        """
+
+        self._gateway_url = gateway_url
 
     @property
     def gw_bound_ips(self):
@@ -427,6 +460,29 @@ class UpdateAuthMethodOAuth2(object):
         """
 
         self._new_name = new_name
+
+    @property
+    def subclaims_delimiters(self):
+        """Gets the subclaims_delimiters of this UpdateAuthMethodOAuth2.  # noqa: E501
+
+        A list of additional sub claims delimiters (relevant only for SAML, OIDC, OAuth2/JWT)  # noqa: E501
+
+        :return: The subclaims_delimiters of this UpdateAuthMethodOAuth2.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._subclaims_delimiters
+
+    @subclaims_delimiters.setter
+    def subclaims_delimiters(self, subclaims_delimiters):
+        """Sets the subclaims_delimiters of this UpdateAuthMethodOAuth2.
+
+        A list of additional sub claims delimiters (relevant only for SAML, OIDC, OAuth2/JWT)  # noqa: E501
+
+        :param subclaims_delimiters: The subclaims_delimiters of this UpdateAuthMethodOAuth2.  # noqa: E501
+        :type: list[str]
+        """
+
+        self._subclaims_delimiters = subclaims_delimiters
 
     @property
     def token(self):

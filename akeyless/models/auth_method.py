@@ -35,6 +35,7 @@ class AuthMethod(object):
     """
     openapi_types = {
         'access_date': 'datetime',
+        'access_date_display': 'str',
         'access_info': 'AuthMethodAccessInfo',
         'account_id': 'str',
         'associated_gw_ids': 'list[int]',
@@ -49,6 +50,7 @@ class AuthMethod(object):
 
     attribute_map = {
         'access_date': 'access_date',
+        'access_date_display': 'access_date_display',
         'access_info': 'access_info',
         'account_id': 'account_id',
         'associated_gw_ids': 'associated_gw_ids',
@@ -61,13 +63,14 @@ class AuthMethod(object):
         'modification_date': 'modification_date'
     }
 
-    def __init__(self, access_date=None, access_info=None, account_id=None, associated_gw_ids=None, auth_method_access_id=None, auth_method_name=None, auth_method_roles_assoc=None, client_permissions=None, creation_date=None, is_approved=None, modification_date=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, access_date=None, access_date_display=None, access_info=None, account_id=None, associated_gw_ids=None, auth_method_access_id=None, auth_method_name=None, auth_method_roles_assoc=None, client_permissions=None, creation_date=None, is_approved=None, modification_date=None, local_vars_configuration=None):  # noqa: E501
         """AuthMethod - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._access_date = None
+        self._access_date_display = None
         self._access_info = None
         self._account_id = None
         self._associated_gw_ids = None
@@ -82,6 +85,8 @@ class AuthMethod(object):
 
         if access_date is not None:
             self.access_date = access_date
+        if access_date_display is not None:
+            self.access_date_display = access_date_display
         if access_info is not None:
             self.access_info = access_info
         if account_id is not None:
@@ -123,6 +128,27 @@ class AuthMethod(object):
         """
 
         self._access_date = access_date
+
+    @property
+    def access_date_display(self):
+        """Gets the access_date_display of this AuthMethod.  # noqa: E501
+
+
+        :return: The access_date_display of this AuthMethod.  # noqa: E501
+        :rtype: str
+        """
+        return self._access_date_display
+
+    @access_date_display.setter
+    def access_date_display(self, access_date_display):
+        """Sets the access_date_display of this AuthMethod.
+
+
+        :param access_date_display: The access_date_display of this AuthMethod.  # noqa: E501
+        :type: str
+        """
+
+        self._access_date_display = access_date_display
 
     @property
     def access_info(self):

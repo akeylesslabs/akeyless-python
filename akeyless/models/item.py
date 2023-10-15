@@ -35,6 +35,7 @@ class Item(object):
     """
     openapi_types = {
         'access_date': 'datetime',
+        'access_date_display': 'str',
         'access_request_status': 'str',
         'auto_rotate': 'bool',
         'bastion_details': 'BastionsList',
@@ -77,6 +78,7 @@ class Item(object):
 
     attribute_map = {
         'access_date': 'access_date',
+        'access_date_display': 'access_date_display',
         'access_request_status': 'access_request_status',
         'auto_rotate': 'auto_rotate',
         'bastion_details': 'bastion_details',
@@ -117,13 +119,14 @@ class Item(object):
         'with_customer_fragment': 'with_customer_fragment'
     }
 
-    def __init__(self, access_date=None, access_request_status=None, auto_rotate=None, bastion_details=None, cert_issuer_signer_key_name=None, certificate_issue_details=None, certificates=None, client_permissions=None, creation_date=None, customer_fragment_id=None, delete_protection=None, deletion_date=None, display_id=None, gateway_details=None, is_access_request_enabled=None, is_enabled=None, item_accessibility=None, item_general_info=None, item_id=None, item_metadata=None, item_name=None, item_size=None, item_state=None, item_sub_type=None, item_tags=None, item_targets_assoc=None, item_type=None, item_versions=None, last_version=None, linked_details=None, modification_date=None, next_rotation_date=None, protection_key_name=None, protection_key_type=None, public_value=None, rotation_interval=None, shared_by=None, target_versions=None, with_customer_fragment=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, access_date=None, access_date_display=None, access_request_status=None, auto_rotate=None, bastion_details=None, cert_issuer_signer_key_name=None, certificate_issue_details=None, certificates=None, client_permissions=None, creation_date=None, customer_fragment_id=None, delete_protection=None, deletion_date=None, display_id=None, gateway_details=None, is_access_request_enabled=None, is_enabled=None, item_accessibility=None, item_general_info=None, item_id=None, item_metadata=None, item_name=None, item_size=None, item_state=None, item_sub_type=None, item_tags=None, item_targets_assoc=None, item_type=None, item_versions=None, last_version=None, linked_details=None, modification_date=None, next_rotation_date=None, protection_key_name=None, protection_key_type=None, public_value=None, rotation_interval=None, shared_by=None, target_versions=None, with_customer_fragment=None, local_vars_configuration=None):  # noqa: E501
         """Item - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._access_date = None
+        self._access_date_display = None
         self._access_request_status = None
         self._auto_rotate = None
         self._bastion_details = None
@@ -166,6 +169,8 @@ class Item(object):
 
         if access_date is not None:
             self.access_date = access_date
+        if access_date_display is not None:
+            self.access_date_display = access_date_display
         if access_request_status is not None:
             self.access_request_status = access_request_status
         if auto_rotate is not None:
@@ -263,6 +268,27 @@ class Item(object):
         """
 
         self._access_date = access_date
+
+    @property
+    def access_date_display(self):
+        """Gets the access_date_display of this Item.  # noqa: E501
+
+
+        :return: The access_date_display of this Item.  # noqa: E501
+        :rtype: str
+        """
+        return self._access_date_display
+
+    @access_date_display.setter
+    def access_date_display(self, access_date_display):
+        """Sets the access_date_display of this Item.
+
+
+        :param access_date_display: The access_date_display of this Item.  # noqa: E501
+        :type: str
+        """
+
+        self._access_date_display = access_date_display
 
     @property
     def access_request_status(self):

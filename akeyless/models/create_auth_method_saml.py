@@ -44,6 +44,7 @@ class CreateAuthMethodSAML(object):
         'json': 'bool',
         'jwt_ttl': 'int',
         'name': 'str',
+        'subclaims_delimiters': 'list[str]',
         'token': 'str',
         'uid_token': 'str',
         'unique_identifier': 'str'
@@ -60,12 +61,13 @@ class CreateAuthMethodSAML(object):
         'json': 'json',
         'jwt_ttl': 'jwt-ttl',
         'name': 'name',
+        'subclaims_delimiters': 'subclaims-delimiters',
         'token': 'token',
         'uid_token': 'uid-token',
         'unique_identifier': 'unique-identifier'
     }
 
-    def __init__(self, access_expires=0, allowed_redirect_uri=None, bound_ips=None, force_sub_claims=None, gw_bound_ips=None, idp_metadata_url=None, idp_metadata_xml_data=None, json=False, jwt_ttl=0, name=None, token=None, uid_token=None, unique_identifier=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, access_expires=0, allowed_redirect_uri=None, bound_ips=None, force_sub_claims=None, gw_bound_ips=None, idp_metadata_url=None, idp_metadata_xml_data=None, json=False, jwt_ttl=0, name=None, subclaims_delimiters=None, token=None, uid_token=None, unique_identifier=None, local_vars_configuration=None):  # noqa: E501
         """CreateAuthMethodSAML - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -81,6 +83,7 @@ class CreateAuthMethodSAML(object):
         self._json = None
         self._jwt_ttl = None
         self._name = None
+        self._subclaims_delimiters = None
         self._token = None
         self._uid_token = None
         self._unique_identifier = None
@@ -105,6 +108,8 @@ class CreateAuthMethodSAML(object):
         if jwt_ttl is not None:
             self.jwt_ttl = jwt_ttl
         self.name = name
+        if subclaims_delimiters is not None:
+            self.subclaims_delimiters = subclaims_delimiters
         if token is not None:
             self.token = token
         if uid_token is not None:
@@ -342,6 +347,29 @@ class CreateAuthMethodSAML(object):
             raise ValueError("Invalid value for `name`, must not be `None`")  # noqa: E501
 
         self._name = name
+
+    @property
+    def subclaims_delimiters(self):
+        """Gets the subclaims_delimiters of this CreateAuthMethodSAML.  # noqa: E501
+
+        A list of additional sub claims delimiters (relevant only for SAML, OIDC, OAuth2/JWT)  # noqa: E501
+
+        :return: The subclaims_delimiters of this CreateAuthMethodSAML.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._subclaims_delimiters
+
+    @subclaims_delimiters.setter
+    def subclaims_delimiters(self, subclaims_delimiters):
+        """Sets the subclaims_delimiters of this CreateAuthMethodSAML.
+
+        A list of additional sub claims delimiters (relevant only for SAML, OIDC, OAuth2/JWT)  # noqa: E501
+
+        :param subclaims_delimiters: The subclaims_delimiters of this CreateAuthMethodSAML.  # noqa: E501
+        :type: list[str]
+        """
+
+        self._subclaims_delimiters = subclaims_delimiters
 
     @property
     def token(self):

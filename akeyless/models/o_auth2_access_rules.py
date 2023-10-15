@@ -35,6 +35,7 @@ class OAuth2AccessRules(object):
     """
     openapi_types = {
         'audience': 'str',
+        'authorized_gw_cluster_name': 'str',
         'bound_claims': 'list[OAuth2CustomClaim]',
         'bound_clients_id': 'list[str]',
         'issuer': 'str',
@@ -45,6 +46,7 @@ class OAuth2AccessRules(object):
 
     attribute_map = {
         'audience': 'audience',
+        'authorized_gw_cluster_name': 'authorized_gw_cluster_name',
         'bound_claims': 'bound_claims',
         'bound_clients_id': 'bound_clients_id',
         'issuer': 'issuer',
@@ -53,13 +55,14 @@ class OAuth2AccessRules(object):
         'unique_identifier': 'unique_identifier'
     }
 
-    def __init__(self, audience=None, bound_claims=None, bound_clients_id=None, issuer=None, jwks_json_data=None, jwks_uri=None, unique_identifier=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, audience=None, authorized_gw_cluster_name=None, bound_claims=None, bound_clients_id=None, issuer=None, jwks_json_data=None, jwks_uri=None, unique_identifier=None, local_vars_configuration=None):  # noqa: E501
         """OAuth2AccessRules - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._audience = None
+        self._authorized_gw_cluster_name = None
         self._bound_claims = None
         self._bound_clients_id = None
         self._issuer = None
@@ -70,6 +73,8 @@ class OAuth2AccessRules(object):
 
         if audience is not None:
             self.audience = audience
+        if authorized_gw_cluster_name is not None:
+            self.authorized_gw_cluster_name = authorized_gw_cluster_name
         if bound_claims is not None:
             self.bound_claims = bound_claims
         if bound_clients_id is not None:
@@ -105,6 +110,29 @@ class OAuth2AccessRules(object):
         """
 
         self._audience = audience
+
+    @property
+    def authorized_gw_cluster_name(self):
+        """Gets the authorized_gw_cluster_name of this OAuth2AccessRules.  # noqa: E501
+
+        The gateway cluster name that is authorized to access JWKeySetURL  # noqa: E501
+
+        :return: The authorized_gw_cluster_name of this OAuth2AccessRules.  # noqa: E501
+        :rtype: str
+        """
+        return self._authorized_gw_cluster_name
+
+    @authorized_gw_cluster_name.setter
+    def authorized_gw_cluster_name(self, authorized_gw_cluster_name):
+        """Sets the authorized_gw_cluster_name of this OAuth2AccessRules.
+
+        The gateway cluster name that is authorized to access JWKeySetURL  # noqa: E501
+
+        :param authorized_gw_cluster_name: The authorized_gw_cluster_name of this OAuth2AccessRules.  # noqa: E501
+        :type: str
+        """
+
+        self._authorized_gw_cluster_name = authorized_gw_cluster_name
 
     @property
     def bound_claims(self):

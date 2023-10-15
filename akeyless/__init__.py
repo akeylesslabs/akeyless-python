@@ -15,7 +15,7 @@
 
 from __future__ import absolute_import
 
-__version__ = "3.4.0"
+__version__ = "3.5.0"
 
 # import apis into sdk package
 from akeyless.api.v2_api import V2Api
@@ -70,6 +70,7 @@ from akeyless.models.certificate_expiration_event import CertificateExpirationEv
 from akeyless.models.certificate_info import CertificateInfo
 from akeyless.models.certificate_issue_info import CertificateIssueInfo
 from akeyless.models.certificate_template_info import CertificateTemplateInfo
+from akeyless.models.cf_info import CfInfo
 from akeyless.models.chef_target_details import ChefTargetDetails
 from akeyless.models.classic_key_details_info import ClassicKeyDetailsInfo
 from akeyless.models.classic_key_status_info import ClassicKeyStatusInfo
@@ -600,6 +601,8 @@ from akeyless.models.set_role_rule import SetRoleRule
 from akeyless.models.share_item import ShareItem
 from akeyless.models.sharing_policy_info import SharingPolicyInfo
 from akeyless.models.sign_data_with_classic_key import SignDataWithClassicKey
+from akeyless.models.sign_ec_dsa import SignEcDsa
+from akeyless.models.sign_ec_dsa_output import SignEcDsaOutput
 from akeyless.models.sign_gpg import SignGPG
 from akeyless.models.sign_gpg_output import SignGPGOutput
 from akeyless.models.sign_jwt_output import SignJWTOutput
@@ -609,6 +612,8 @@ from akeyless.models.sign_pkcs1 import SignPKCS1
 from akeyless.models.sign_pkcs1_output import SignPKCS1Output
 from akeyless.models.sign_pki_cert_output import SignPKICertOutput
 from akeyless.models.sign_pki_cert_with_classic_key import SignPKICertWithClassicKey
+from akeyless.models.sign_rsa_ssa_pss import SignRsaSsaPss
+from akeyless.models.sign_rsa_ssa_pss_output import SignRsaSsaPssOutput
 from akeyless.models.sm_info import SmInfo
 from akeyless.models.splunk_log_forwarding_config import SplunkLogForwardingConfig
 from akeyless.models.sra_info import SraInfo
@@ -734,12 +739,14 @@ from akeyless.models.validate_token_output import ValidateTokenOutput
 from akeyless.models.vaultless_tokenizer_info import VaultlessTokenizerInfo
 from akeyless.models.venafi_target_details import VenafiTargetDetails
 from akeyless.models.verify_data_with_classic_key import VerifyDataWithClassicKey
+from akeyless.models.verify_ec_dsa import VerifyEcDsa
 from akeyless.models.verify_gpg import VerifyGPG
 from akeyless.models.verify_jwt_output import VerifyJWTOutput
 from akeyless.models.verify_jwt_with_classic_key import VerifyJWTWithClassicKey
 from akeyless.models.verify_pkcs1 import VerifyPKCS1
 from akeyless.models.verify_pki_cert_output import VerifyPKICertOutput
 from akeyless.models.verify_pki_cert_with_classic_key import VerifyPKICertWithClassicKey
+from akeyless.models.verify_rsa_ssa_pss import VerifyRsaSsaPss
 from akeyless.models.web_target_details import WebTargetDetails
 from akeyless.models.windows_target_details import WindowsTargetDetails
 from akeyless.models.zero_ssl_target_details import ZeroSSLTargetDetails

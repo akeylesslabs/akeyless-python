@@ -40,6 +40,7 @@ class GwClusterIdentity(object):
         'cluster_url': 'str',
         'current_gw': 'bool',
         'customer_fragment_ids': 'list[str]',
+        'customer_fragments': 'list[CfInfo]',
         'default_protection_key_id': 'int',
         'default_secret_location': 'str',
         'display_name': 'str',
@@ -55,6 +56,7 @@ class GwClusterIdentity(object):
         'cluster_url': 'cluster_url',
         'current_gw': 'current_gw',
         'customer_fragment_ids': 'customer_fragment_ids',
+        'customer_fragments': 'customer_fragments',
         'default_protection_key_id': 'default_protection_key_id',
         'default_secret_location': 'default_secret_location',
         'display_name': 'display_name',
@@ -63,7 +65,7 @@ class GwClusterIdentity(object):
         'status_description': 'status_description'
     }
 
-    def __init__(self, allowed=None, allowed_access_ids=None, cluster_name=None, cluster_url=None, current_gw=None, customer_fragment_ids=None, default_protection_key_id=None, default_secret_location=None, display_name=None, id=None, status=None, status_description=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, allowed=None, allowed_access_ids=None, cluster_name=None, cluster_url=None, current_gw=None, customer_fragment_ids=None, customer_fragments=None, default_protection_key_id=None, default_secret_location=None, display_name=None, id=None, status=None, status_description=None, local_vars_configuration=None):  # noqa: E501
         """GwClusterIdentity - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -75,6 +77,7 @@ class GwClusterIdentity(object):
         self._cluster_url = None
         self._current_gw = None
         self._customer_fragment_ids = None
+        self._customer_fragments = None
         self._default_protection_key_id = None
         self._default_secret_location = None
         self._display_name = None
@@ -95,6 +98,8 @@ class GwClusterIdentity(object):
             self.current_gw = current_gw
         if customer_fragment_ids is not None:
             self.customer_fragment_ids = customer_fragment_ids
+        if customer_fragments is not None:
+            self.customer_fragments = customer_fragments
         if default_protection_key_id is not None:
             self.default_protection_key_id = default_protection_key_id
         if default_secret_location is not None:
@@ -217,6 +222,7 @@ class GwClusterIdentity(object):
     def customer_fragment_ids(self):
         """Gets the customer_fragment_ids of this GwClusterIdentity.  # noqa: E501
 
+        Deprecated - use CustomerFragments instead  # noqa: E501
 
         :return: The customer_fragment_ids of this GwClusterIdentity.  # noqa: E501
         :rtype: list[str]
@@ -227,12 +233,34 @@ class GwClusterIdentity(object):
     def customer_fragment_ids(self, customer_fragment_ids):
         """Sets the customer_fragment_ids of this GwClusterIdentity.
 
+        Deprecated - use CustomerFragments instead  # noqa: E501
 
         :param customer_fragment_ids: The customer_fragment_ids of this GwClusterIdentity.  # noqa: E501
         :type: list[str]
         """
 
         self._customer_fragment_ids = customer_fragment_ids
+
+    @property
+    def customer_fragments(self):
+        """Gets the customer_fragments of this GwClusterIdentity.  # noqa: E501
+
+
+        :return: The customer_fragments of this GwClusterIdentity.  # noqa: E501
+        :rtype: list[CfInfo]
+        """
+        return self._customer_fragments
+
+    @customer_fragments.setter
+    def customer_fragments(self, customer_fragments):
+        """Sets the customer_fragments of this GwClusterIdentity.
+
+
+        :param customer_fragments: The customer_fragments of this GwClusterIdentity.  # noqa: E501
+        :type: list[CfInfo]
+        """
+
+        self._customer_fragments = customer_fragments
 
     @property
     def default_protection_key_id(self):

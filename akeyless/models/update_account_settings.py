@@ -49,6 +49,7 @@ class UpdateAccountSettings(object):
         'jwt_ttl_default': 'int',
         'jwt_ttl_max': 'int',
         'jwt_ttl_min': 'int',
+        'lock_default_key': 'str',
         'max_versions': 'str',
         'password_length': 'int',
         'phone': 'str',
@@ -77,6 +78,7 @@ class UpdateAccountSettings(object):
         'jwt_ttl_default': 'jwt-ttl-default',
         'jwt_ttl_max': 'jwt-ttl-max',
         'jwt_ttl_min': 'jwt-ttl-min',
+        'lock_default_key': 'lock-default-key',
         'max_versions': 'max-versions',
         'password_length': 'password-length',
         'phone': 'phone',
@@ -89,7 +91,7 @@ class UpdateAccountSettings(object):
         'use_capital_letters': 'use_capital-letters'
     }
 
-    def __init__(self, address=None, city=None, company_name=None, country=None, default_key_name=None, default_share_link_ttl_minutes=None, default_versioning=None, dp_enable_classic_key_protection=None, invalid_characters='notReceivedInvalidCharacter', item_type=None, items_deletion_protection=None, json=False, jwt_ttl_default=None, jwt_ttl_max=None, jwt_ttl_min=None, max_versions=None, password_length=None, phone=None, postal_code=None, token=None, uid_token=None, use_lower_letters=None, use_numbers=None, use_special_characters=None, use_capital_letters=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, address=None, city=None, company_name=None, country=None, default_key_name=None, default_share_link_ttl_minutes=None, default_versioning=None, dp_enable_classic_key_protection=None, invalid_characters='notReceivedInvalidCharacter', item_type=None, items_deletion_protection=None, json=False, jwt_ttl_default=None, jwt_ttl_max=None, jwt_ttl_min=None, lock_default_key=None, max_versions=None, password_length=None, phone=None, postal_code=None, token=None, uid_token=None, use_lower_letters=None, use_numbers=None, use_special_characters=None, use_capital_letters=None, local_vars_configuration=None):  # noqa: E501
         """UpdateAccountSettings - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -110,6 +112,7 @@ class UpdateAccountSettings(object):
         self._jwt_ttl_default = None
         self._jwt_ttl_max = None
         self._jwt_ttl_min = None
+        self._lock_default_key = None
         self._max_versions = None
         self._password_length = None
         self._phone = None
@@ -152,6 +155,8 @@ class UpdateAccountSettings(object):
             self.jwt_ttl_max = jwt_ttl_max
         if jwt_ttl_min is not None:
             self.jwt_ttl_min = jwt_ttl_min
+        if lock_default_key is not None:
+            self.lock_default_key = lock_default_key
         if max_versions is not None:
             self.max_versions = max_versions
         if password_length is not None:
@@ -269,7 +274,7 @@ class UpdateAccountSettings(object):
     def default_key_name(self):
         """Gets the default_key_name of this UpdateAccountSettings.  # noqa: E501
 
-        Set the account default key based on the DFC key item name. Use \"set-original-akeyless-default-key\" to revert to using the original default key of the account. Empty string will change nothing.  # noqa: E501
+        Set the account default key based on the DFC key name. Use \"set-original-akeyless-default-key\" to revert to using the original default key of the account.  # noqa: E501
 
         :return: The default_key_name of this UpdateAccountSettings.  # noqa: E501
         :rtype: str
@@ -280,7 +285,7 @@ class UpdateAccountSettings(object):
     def default_key_name(self, default_key_name):
         """Sets the default_key_name of this UpdateAccountSettings.
 
-        Set the account default key based on the DFC key item name. Use \"set-original-akeyless-default-key\" to revert to using the original default key of the account. Empty string will change nothing.  # noqa: E501
+        Set the account default key based on the DFC key name. Use \"set-original-akeyless-default-key\" to revert to using the original default key of the account.  # noqa: E501
 
         :param default_key_name: The default_key_name of this UpdateAccountSettings.  # noqa: E501
         :type: str
@@ -517,6 +522,29 @@ class UpdateAccountSettings(object):
         """
 
         self._jwt_ttl_min = jwt_ttl_min
+
+    @property
+    def lock_default_key(self):
+        """Gets the lock_default_key of this UpdateAccountSettings.  # noqa: E501
+
+        Lock the account's default protection key, if set - users will not be able to use a different protection key, relevant only if default-key-name is configured [true/false]  # noqa: E501
+
+        :return: The lock_default_key of this UpdateAccountSettings.  # noqa: E501
+        :rtype: str
+        """
+        return self._lock_default_key
+
+    @lock_default_key.setter
+    def lock_default_key(self, lock_default_key):
+        """Sets the lock_default_key of this UpdateAccountSettings.
+
+        Lock the account's default protection key, if set - users will not be able to use a different protection key, relevant only if default-key-name is configured [true/false]  # noqa: E501
+
+        :param lock_default_key: The lock_default_key of this UpdateAccountSettings.  # noqa: E501
+        :type: str
+        """
+
+        self._lock_default_key = lock_default_key
 
     @property
     def max_versions(self):

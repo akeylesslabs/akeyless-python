@@ -35,26 +35,31 @@ class AccessPermissionAssignment(object):
     """
     openapi_types = {
         'access_id': 'str',
+        'access_type': 'str',
         'sub_claims': 'dict(str, list[str])'
     }
 
     attribute_map = {
         'access_id': 'access_id',
+        'access_type': 'access_type',
         'sub_claims': 'sub_claims'
     }
 
-    def __init__(self, access_id=None, sub_claims=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, access_id=None, access_type=None, sub_claims=None, local_vars_configuration=None):  # noqa: E501
         """AccessPermissionAssignment - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._access_id = None
+        self._access_type = None
         self._sub_claims = None
         self.discriminator = None
 
         if access_id is not None:
             self.access_id = access_id
+        if access_type is not None:
+            self.access_type = access_type
         if sub_claims is not None:
             self.sub_claims = sub_claims
 
@@ -78,6 +83,27 @@ class AccessPermissionAssignment(object):
         """
 
         self._access_id = access_id
+
+    @property
+    def access_type(self):
+        """Gets the access_type of this AccessPermissionAssignment.  # noqa: E501
+
+
+        :return: The access_type of this AccessPermissionAssignment.  # noqa: E501
+        :rtype: str
+        """
+        return self._access_type
+
+    @access_type.setter
+    def access_type(self, access_type):
+        """Sets the access_type of this AccessPermissionAssignment.
+
+
+        :param access_type: The access_type of this AccessPermissionAssignment.  # noqa: E501
+        :type: str
+        """
+
+        self._access_type = access_type
 
     @property
     def sub_claims(self):

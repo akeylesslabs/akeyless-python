@@ -35,6 +35,7 @@ class MigrationGeneral(object):
     """
     openapi_types = {
         'id': 'str',
+        'last_migration': 'str',
         'name': 'str',
         'new_name': 'str',
         'prefix': 'str',
@@ -45,6 +46,7 @@ class MigrationGeneral(object):
 
     attribute_map = {
         'id': 'id',
+        'last_migration': 'last_migration',
         'name': 'name',
         'new_name': 'new_name',
         'prefix': 'prefix',
@@ -53,13 +55,14 @@ class MigrationGeneral(object):
         'type': 'type'
     }
 
-    def __init__(self, id=None, name=None, new_name=None, prefix=None, protection_key=None, status=None, type=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, id=None, last_migration=None, name=None, new_name=None, prefix=None, protection_key=None, status=None, type=None, local_vars_configuration=None):  # noqa: E501
         """MigrationGeneral - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._id = None
+        self._last_migration = None
         self._name = None
         self._new_name = None
         self._prefix = None
@@ -70,6 +73,8 @@ class MigrationGeneral(object):
 
         if id is not None:
             self.id = id
+        if last_migration is not None:
+            self.last_migration = last_migration
         if name is not None:
             self.name = name
         if new_name is not None:
@@ -103,6 +108,27 @@ class MigrationGeneral(object):
         """
 
         self._id = id
+
+    @property
+    def last_migration(self):
+        """Gets the last_migration of this MigrationGeneral.  # noqa: E501
+
+
+        :return: The last_migration of this MigrationGeneral.  # noqa: E501
+        :rtype: str
+        """
+        return self._last_migration
+
+    @last_migration.setter
+    def last_migration(self, last_migration):
+        """Sets the last_migration of this MigrationGeneral.
+
+
+        :param last_migration: The last_migration of this MigrationGeneral.  # noqa: E501
+        :type: str
+        """
+
+        self._last_migration = last_migration
 
     @property
     def name(self):

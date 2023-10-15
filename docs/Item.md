@@ -4,6 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **access_date** | **datetime** |  | [optional] 
+**access_date_display** | **str** |  | [optional] 
 **access_request_status** | **str** |  | [optional] 
 **auto_rotate** | **bool** |  | [optional] 
 **bastion_details** | [**BastionsList**](BastionsList.md) |  | [optional] 

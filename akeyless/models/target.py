@@ -35,6 +35,7 @@ class Target(object):
     """
     openapi_types = {
         'access_date': 'datetime',
+        'access_date_display': 'str',
         'access_request_status': 'str',
         'attributes': 'dict(str, object)',
         'client_permissions': 'list[str]',
@@ -57,6 +58,7 @@ class Target(object):
 
     attribute_map = {
         'access_date': 'access_date',
+        'access_date_display': 'access_date_display',
         'access_request_status': 'access_request_status',
         'attributes': 'attributes',
         'client_permissions': 'client_permissions',
@@ -77,13 +79,14 @@ class Target(object):
         'with_customer_fragment': 'with_customer_fragment'
     }
 
-    def __init__(self, access_date=None, access_request_status=None, attributes=None, client_permissions=None, comment=None, creation_date=None, credentials_less=None, is_access_request_enabled=None, last_version=None, modification_date=None, protection_key_name=None, target_details=None, target_id=None, target_items_assoc=None, target_name=None, target_sub_type=None, target_type=None, target_versions=None, with_customer_fragment=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, access_date=None, access_date_display=None, access_request_status=None, attributes=None, client_permissions=None, comment=None, creation_date=None, credentials_less=None, is_access_request_enabled=None, last_version=None, modification_date=None, protection_key_name=None, target_details=None, target_id=None, target_items_assoc=None, target_name=None, target_sub_type=None, target_type=None, target_versions=None, with_customer_fragment=None, local_vars_configuration=None):  # noqa: E501
         """Target - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._access_date = None
+        self._access_date_display = None
         self._access_request_status = None
         self._attributes = None
         self._client_permissions = None
@@ -106,6 +109,8 @@ class Target(object):
 
         if access_date is not None:
             self.access_date = access_date
+        if access_date_display is not None:
+            self.access_date_display = access_date_display
         if access_request_status is not None:
             self.access_request_status = access_request_status
         if attributes is not None:
@@ -163,6 +168,27 @@ class Target(object):
         """
 
         self._access_date = access_date
+
+    @property
+    def access_date_display(self):
+        """Gets the access_date_display of this Target.  # noqa: E501
+
+
+        :return: The access_date_display of this Target.  # noqa: E501
+        :rtype: str
+        """
+        return self._access_date_display
+
+    @access_date_display.setter
+    def access_date_display(self, access_date_display):
+        """Sets the access_date_display of this Target.
+
+
+        :param access_date_display: The access_date_display of this Target.  # noqa: E501
+        :type: str
+        """
+
+        self._access_date_display = access_date_display
 
     @property
     def access_request_status(self):

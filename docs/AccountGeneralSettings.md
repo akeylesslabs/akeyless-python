@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **data_protection_section** | [**DataProtectionSection**](DataProtectionSection.md) |  | [optional] 
 **enable_request_for_access** | **bool** |  | [optional] 
 **invalid_characters** | **str** | InvalidCharacters is the invalid characters for items/targets/roles/auths/notifier_forwarder naming convention | [optional] 
+**lock_default_key** | **bool** | LockDefaultKey determines whether the configured default key can be updated by end-users on a per-request basis true - all requests use the configured default key false - every request can determine its protection key (default) nil - change nothing (every request can determine its protection key (default)) This parameter is only relevant if AccountDefaultKeyItemID is not empty | [optional] 
 **password_policy** | [**PasswordPolicyInfo**](PasswordPolicyInfo.md) |  | [optional] 
 **protect_items_by_default** | **bool** |  | [optional] 
 **sharing_policy** | [**SharingPolicyInfo**](SharingPolicyInfo.md) |  | [optional] 

@@ -231,10 +231,12 @@ Method | HTTP request | Description
 [**set_role_rule**](V2Api.md#set_role_rule) | **POST** /set-role-rule | 
 [**share_item**](V2Api.md#share_item) | **POST** /share-item | 
 [**sign_data_with_classic_key**](V2Api.md#sign_data_with_classic_key) | **POST** /sign-data-with-classic-key | 
+[**sign_ec_dsa**](V2Api.md#sign_ec_dsa) | **POST** /sign-ecdsa | 
 [**sign_gpg**](V2Api.md#sign_gpg) | **POST** /sign-gpg | 
 [**sign_jwt_with_classic_key**](V2Api.md#sign_jwt_with_classic_key) | **POST** /sign-jwt-with-classic-key | 
 [**sign_pkcs1**](V2Api.md#sign_pkcs1) | **POST** /sign-pkcs1 | 
 [**sign_pki_cert_with_classic_key**](V2Api.md#sign_pki_cert_with_classic_key) | **POST** /sign-pki-cert-with-classic-key | 
+[**sign_rsa_ssa_pss**](V2Api.md#sign_rsa_ssa_pss) | **POST** /sign-rsassa-pss | 
 [**static_creds_auth**](V2Api.md#static_creds_auth) | **POST** /static-creds-auth | 
 [**tokenize**](V2Api.md#tokenize) | **POST** /tokenize | 
 [**uid_create_child_token**](V2Api.md#uid_create_child_token) | **POST** /uid-create-child-token | 
@@ -299,10 +301,12 @@ Method | HTTP request | Description
 [**upload_rsa**](V2Api.md#upload_rsa) | **POST** /upload-rsa | 
 [**validate_token**](V2Api.md#validate_token) | **POST** /validate-token | 
 [**verify_data_with_classic_key**](V2Api.md#verify_data_with_classic_key) | **POST** /verify-data-with-classic-key | 
+[**verify_ec_dsa**](V2Api.md#verify_ec_dsa) | **POST** /verify-ecdsa | 
 [**verify_gpg**](V2Api.md#verify_gpg) | **POST** /verify-gpg | 
 [**verify_jwt_with_classic_key**](V2Api.md#verify_jwt_with_classic_key) | **POST** /verify-jwt-with-classic-key | 
 [**verify_pkcs1**](V2Api.md#verify_pkcs1) | **POST** /verify-pkcs1 | 
 [**verify_pki_cert_with_classic_key**](V2Api.md#verify_pki_cert_with_classic_key) | **POST** /verify-pki-cert-with-classic-key | 
+[**verify_rsa_ssa_pss**](V2Api.md#verify_rsa_ssa_pss) | **POST** /verify-rsassa-pss | 
 
 
 # **assoc_role_auth_method**
@@ -13911,6 +13915,66 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **sign_ec_dsa**
+> SignEcDsaOutput sign_ec_dsa(body)
+
+
+
+### Example
+
+```python
+from __future__ import print_function
+import time
+import akeyless
+from akeyless.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.akeyless.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = akeyless.Configuration(
+    host = "https://api.akeyless.io"
+)
+
+
+# Enter a context with an instance of the API client
+with akeyless.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = akeyless.V2Api(api_client)
+    body = akeyless.SignEcDsa() # SignEcDsa | 
+
+    try:
+        api_response = api_instance.sign_ec_dsa(body)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling V2Api->sign_ec_dsa: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**SignEcDsa**](SignEcDsa.md)|  | 
+
+### Return type
+
+[**SignEcDsaOutput**](SignEcDsaOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | signEcDsaResponse wraps response body. |  -  |
+**0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **sign_gpg**
 > SignGPGOutput sign_gpg(body)
 
@@ -14147,6 +14211,66 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | signPKICertWithClassicKeyResponse wraps response body. |  -  |
+**0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **sign_rsa_ssa_pss**
+> SignRsaSsaPssOutput sign_rsa_ssa_pss(body)
+
+
+
+### Example
+
+```python
+from __future__ import print_function
+import time
+import akeyless
+from akeyless.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.akeyless.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = akeyless.Configuration(
+    host = "https://api.akeyless.io"
+)
+
+
+# Enter a context with an instance of the API client
+with akeyless.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = akeyless.V2Api(api_client)
+    body = akeyless.SignRsaSsaPss() # SignRsaSsaPss | 
+
+    try:
+        api_response = api_instance.sign_rsa_ssa_pss(body)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling V2Api->sign_rsa_ssa_pss: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**SignRsaSsaPss**](SignRsaSsaPss.md)|  | 
+
+### Return type
+
+[**SignRsaSsaPssOutput**](SignRsaSsaPssOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | signRsaSsaPssResponse wraps response body. |  -  |
 **0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -17988,6 +18112,66 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **verify_ec_dsa**
+> object verify_ec_dsa(body)
+
+
+
+### Example
+
+```python
+from __future__ import print_function
+import time
+import akeyless
+from akeyless.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.akeyless.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = akeyless.Configuration(
+    host = "https://api.akeyless.io"
+)
+
+
+# Enter a context with an instance of the API client
+with akeyless.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = akeyless.V2Api(api_client)
+    body = akeyless.VerifyEcDsa() # VerifyEcDsa | 
+
+    try:
+        api_response = api_instance.verify_ec_dsa(body)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling V2Api->verify_ec_dsa: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**VerifyEcDsa**](VerifyEcDsa.md)|  | 
+
+### Return type
+
+**object**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | verifyEcDsaResponse wraps response body. |  -  |
+**0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **verify_gpg**
 > object verify_gpg(body)
 
@@ -18224,6 +18408,66 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | verifyPKICertWithClassicKeyResponse wraps response body. |  -  |
+**0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **verify_rsa_ssa_pss**
+> object verify_rsa_ssa_pss(body)
+
+
+
+### Example
+
+```python
+from __future__ import print_function
+import time
+import akeyless
+from akeyless.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.akeyless.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = akeyless.Configuration(
+    host = "https://api.akeyless.io"
+)
+
+
+# Enter a context with an instance of the API client
+with akeyless.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = akeyless.V2Api(api_client)
+    body = akeyless.VerifyRsaSsaPss() # VerifyRsaSsaPss | 
+
+    try:
+        api_response = api_instance.verify_rsa_ssa_pss(body)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling V2Api->verify_rsa_ssa_pss: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**VerifyRsaSsaPss**](VerifyRsaSsaPss.md)|  | 
+
+### Return type
+
+**object**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | verifyRsaSsaPssResponse wraps response body. |  -  |
 **0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

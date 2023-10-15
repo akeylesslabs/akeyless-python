@@ -39,6 +39,7 @@ class AccountGeneralSettings(object):
         'data_protection_section': 'DataProtectionSection',
         'enable_request_for_access': 'bool',
         'invalid_characters': 'str',
+        'lock_default_key': 'bool',
         'password_policy': 'PasswordPolicyInfo',
         'protect_items_by_default': 'bool',
         'sharing_policy': 'SharingPolicyInfo'
@@ -50,12 +51,13 @@ class AccountGeneralSettings(object):
         'data_protection_section': 'data_protection_section',
         'enable_request_for_access': 'enable_request_for_access',
         'invalid_characters': 'invalid_characters',
+        'lock_default_key': 'lock_default_key',
         'password_policy': 'password_policy',
         'protect_items_by_default': 'protect_items_by_default',
         'sharing_policy': 'sharing_policy'
     }
 
-    def __init__(self, account_default_key_item_id=None, account_default_key_name=None, data_protection_section=None, enable_request_for_access=None, invalid_characters=None, password_policy=None, protect_items_by_default=None, sharing_policy=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, account_default_key_item_id=None, account_default_key_name=None, data_protection_section=None, enable_request_for_access=None, invalid_characters=None, lock_default_key=None, password_policy=None, protect_items_by_default=None, sharing_policy=None, local_vars_configuration=None):  # noqa: E501
         """AccountGeneralSettings - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -66,6 +68,7 @@ class AccountGeneralSettings(object):
         self._data_protection_section = None
         self._enable_request_for_access = None
         self._invalid_characters = None
+        self._lock_default_key = None
         self._password_policy = None
         self._protect_items_by_default = None
         self._sharing_policy = None
@@ -81,6 +84,8 @@ class AccountGeneralSettings(object):
             self.enable_request_for_access = enable_request_for_access
         if invalid_characters is not None:
             self.invalid_characters = invalid_characters
+        if lock_default_key is not None:
+            self.lock_default_key = lock_default_key
         if password_policy is not None:
             self.password_policy = password_policy
         if protect_items_by_default is not None:
@@ -198,6 +203,29 @@ class AccountGeneralSettings(object):
         """
 
         self._invalid_characters = invalid_characters
+
+    @property
+    def lock_default_key(self):
+        """Gets the lock_default_key of this AccountGeneralSettings.  # noqa: E501
+
+        LockDefaultKey determines whether the configured default key can be updated by end-users on a per-request basis true - all requests use the configured default key false - every request can determine its protection key (default) nil - change nothing (every request can determine its protection key (default)) This parameter is only relevant if AccountDefaultKeyItemID is not empty  # noqa: E501
+
+        :return: The lock_default_key of this AccountGeneralSettings.  # noqa: E501
+        :rtype: bool
+        """
+        return self._lock_default_key
+
+    @lock_default_key.setter
+    def lock_default_key(self, lock_default_key):
+        """Sets the lock_default_key of this AccountGeneralSettings.
+
+        LockDefaultKey determines whether the configured default key can be updated by end-users on a per-request basis true - all requests use the configured default key false - every request can determine its protection key (default) nil - change nothing (every request can determine its protection key (default)) This parameter is only relevant if AccountDefaultKeyItemID is not empty  # noqa: E501
+
+        :param lock_default_key: The lock_default_key of this AccountGeneralSettings.  # noqa: E501
+        :type: bool
+        """
+
+        self._lock_default_key = lock_default_key
 
     @property
     def password_policy(self):

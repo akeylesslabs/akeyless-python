@@ -35,6 +35,8 @@ class AccessOrGroupPermissionAssignment(object):
     """
     openapi_types = {
         'access_id': 'str',
+        'access_type': 'str',
+        'assignment_name': 'str',
         'assignment_type': 'str',
         'group_id': 'str',
         'sub_claims': 'dict(str, list[str])'
@@ -42,18 +44,22 @@ class AccessOrGroupPermissionAssignment(object):
 
     attribute_map = {
         'access_id': 'access_id',
+        'access_type': 'access_type',
+        'assignment_name': 'assignment_name',
         'assignment_type': 'assignment_type',
         'group_id': 'group_id',
         'sub_claims': 'sub_claims'
     }
 
-    def __init__(self, access_id=None, assignment_type=None, group_id=None, sub_claims=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, access_id=None, access_type=None, assignment_name=None, assignment_type=None, group_id=None, sub_claims=None, local_vars_configuration=None):  # noqa: E501
         """AccessOrGroupPermissionAssignment - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._access_id = None
+        self._access_type = None
+        self._assignment_name = None
         self._assignment_type = None
         self._group_id = None
         self._sub_claims = None
@@ -61,6 +67,10 @@ class AccessOrGroupPermissionAssignment(object):
 
         if access_id is not None:
             self.access_id = access_id
+        if access_type is not None:
+            self.access_type = access_type
+        if assignment_name is not None:
+            self.assignment_name = assignment_name
         if assignment_type is not None:
             self.assignment_type = assignment_type
         if group_id is not None:
@@ -88,6 +98,48 @@ class AccessOrGroupPermissionAssignment(object):
         """
 
         self._access_id = access_id
+
+    @property
+    def access_type(self):
+        """Gets the access_type of this AccessOrGroupPermissionAssignment.  # noqa: E501
+
+
+        :return: The access_type of this AccessOrGroupPermissionAssignment.  # noqa: E501
+        :rtype: str
+        """
+        return self._access_type
+
+    @access_type.setter
+    def access_type(self, access_type):
+        """Sets the access_type of this AccessOrGroupPermissionAssignment.
+
+
+        :param access_type: The access_type of this AccessOrGroupPermissionAssignment.  # noqa: E501
+        :type: str
+        """
+
+        self._access_type = access_type
+
+    @property
+    def assignment_name(self):
+        """Gets the assignment_name of this AccessOrGroupPermissionAssignment.  # noqa: E501
+
+
+        :return: The assignment_name of this AccessOrGroupPermissionAssignment.  # noqa: E501
+        :rtype: str
+        """
+        return self._assignment_name
+
+    @assignment_name.setter
+    def assignment_name(self, assignment_name):
+        """Sets the assignment_name of this AccessOrGroupPermissionAssignment.
+
+
+        :param assignment_name: The assignment_name of this AccessOrGroupPermissionAssignment.  # noqa: E501
+        :type: str
+        """
+
+        self._assignment_name = assignment_name
 
     @property
     def assignment_type(self):

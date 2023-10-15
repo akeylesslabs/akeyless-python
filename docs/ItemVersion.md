@@ -4,6 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **access_date** | **datetime** |  | [optional] 
+**access_date_display** | **str** |  | [optional] 
 **creation_date** | **datetime** |  | [optional] 
 **customer_fragment_id** | **str** |  | [optional] 
 **deletion_date** | **datetime** |  | [optional] 

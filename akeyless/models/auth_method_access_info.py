@@ -53,6 +53,7 @@ class AuthMethodAccessInfo(object):
         'oidc_access_rules': 'OIDCAccessRules',
         'rules_type': 'str',
         'saml_access_rules': 'SAMLAccessRules',
+        'sub_claims_delimiters': 'list[str]',
         'universal_identity_access_rules': 'UniversalIdentityAccessRules'
     }
 
@@ -76,10 +77,11 @@ class AuthMethodAccessInfo(object):
         'oidc_access_rules': 'oidc_access_rules',
         'rules_type': 'rules_type',
         'saml_access_rules': 'saml_access_rules',
+        'sub_claims_delimiters': 'sub_claims_delimiters',
         'universal_identity_access_rules': 'universal_identity_access_rules'
     }
 
-    def __init__(self, access_expires=None, access_id_alias=None, api_key_access_rules=None, aws_iam_access_rules=None, azure_ad_access_rules=None, cert_access_rules=None, cidr_whitelist=None, email_pass_access_rules=None, force_sub_claims=None, gcp_access_rules=None, gw_cidr_whitelist=None, huawei_access_rules=None, jwt_ttl=None, k8s_access_rules=None, ldap_access_rules=None, oauth2_access_rules=None, oidc_access_rules=None, rules_type=None, saml_access_rules=None, universal_identity_access_rules=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, access_expires=None, access_id_alias=None, api_key_access_rules=None, aws_iam_access_rules=None, azure_ad_access_rules=None, cert_access_rules=None, cidr_whitelist=None, email_pass_access_rules=None, force_sub_claims=None, gcp_access_rules=None, gw_cidr_whitelist=None, huawei_access_rules=None, jwt_ttl=None, k8s_access_rules=None, ldap_access_rules=None, oauth2_access_rules=None, oidc_access_rules=None, rules_type=None, saml_access_rules=None, sub_claims_delimiters=None, universal_identity_access_rules=None, local_vars_configuration=None):  # noqa: E501
         """AuthMethodAccessInfo - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -104,6 +106,7 @@ class AuthMethodAccessInfo(object):
         self._oidc_access_rules = None
         self._rules_type = None
         self._saml_access_rules = None
+        self._sub_claims_delimiters = None
         self._universal_identity_access_rules = None
         self.discriminator = None
 
@@ -145,6 +148,8 @@ class AuthMethodAccessInfo(object):
             self.rules_type = rules_type
         if saml_access_rules is not None:
             self.saml_access_rules = saml_access_rules
+        if sub_claims_delimiters is not None:
+            self.sub_claims_delimiters = sub_claims_delimiters
         if universal_identity_access_rules is not None:
             self.universal_identity_access_rules = universal_identity_access_rules
 
@@ -550,6 +555,27 @@ class AuthMethodAccessInfo(object):
         """
 
         self._saml_access_rules = saml_access_rules
+
+    @property
+    def sub_claims_delimiters(self):
+        """Gets the sub_claims_delimiters of this AuthMethodAccessInfo.  # noqa: E501
+
+
+        :return: The sub_claims_delimiters of this AuthMethodAccessInfo.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._sub_claims_delimiters
+
+    @sub_claims_delimiters.setter
+    def sub_claims_delimiters(self, sub_claims_delimiters):
+        """Sets the sub_claims_delimiters of this AuthMethodAccessInfo.
+
+
+        :param sub_claims_delimiters: The sub_claims_delimiters of this AuthMethodAccessInfo.  # noqa: E501
+        :type: list[str]
+        """
+
+        self._sub_claims_delimiters = sub_claims_delimiters
 
     @property
     def universal_identity_access_rules(self):

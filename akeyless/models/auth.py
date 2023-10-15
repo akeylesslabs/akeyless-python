@@ -352,7 +352,7 @@ class Auth(object):
     def gateway_url(self):
         """Gets the gateway_url of this Auth.  # noqa: E501
 
-        Gateway URL for the K8S authenticated (relevant only for access-type=k8s)  # noqa: E501
+        Gateway URL for the K8S/OAUTH2 authenticated (relevant only for access-type=k8s/oauth2)  # noqa: E501
 
         :return: The gateway_url of this Auth.  # noqa: E501
         :rtype: str
@@ -363,7 +363,7 @@ class Auth(object):
     def gateway_url(self, gateway_url):
         """Sets the gateway_url of this Auth.
 
-        Gateway URL for the K8S authenticated (relevant only for access-type=k8s)  # noqa: E501
+        Gateway URL for the K8S/OAUTH2 authenticated (relevant only for access-type=k8s/oauth2)  # noqa: E501
 
         :param gateway_url: The gateway_url of this Auth.  # noqa: E501
         :type: str

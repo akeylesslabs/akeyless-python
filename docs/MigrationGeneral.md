@@ -4,6 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **str** |  | [optional] 
+**last_migration** | **str** |  | [optional] 
 **name** | **str** |  | [optional] 
 **new_name** | **str** |  | [optional] 
 **prefix** | **str** |  | [optional] 
