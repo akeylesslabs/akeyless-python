@@ -36,6 +36,10 @@ class CreateEventForwarder(object):
     openapi_types = {
         'admin_name': 'str',
         'admin_pwd': 'str',
+        'app_private_key_base64': 'str',
+        'auth_type': 'str',
+        'client_id': 'str',
+        'client_secret': 'str',
         'comment': 'str',
         'description': 'str',
         'email_to': 'str',
@@ -50,12 +54,17 @@ class CreateEventForwarder(object):
         'name': 'str',
         'runner_type': 'str',
         'token': 'str',
-        'uid_token': 'str'
+        'uid_token': 'str',
+        'user_email': 'str'
     }
 
     attribute_map = {
         'admin_name': 'admin-name',
         'admin_pwd': 'admin-pwd',
+        'app_private_key_base64': 'app-private-key-base64',
+        'auth_type': 'auth-type',
+        'client_id': 'client-id',
+        'client_secret': 'client-secret',
         'comment': 'comment',
         'description': 'description',
         'email_to': 'email-to',
@@ -70,10 +79,11 @@ class CreateEventForwarder(object):
         'name': 'name',
         'runner_type': 'runner-type',
         'token': 'token',
-        'uid_token': 'uid-token'
+        'uid_token': 'uid-token',
+        'user_email': 'user-email'
     }
 
-    def __init__(self, admin_name=None, admin_pwd=None, comment=None, description=None, email_to=None, event_source_locations=None, event_source_type='item', event_types=None, every=None, forwarder_type=None, host=None, json=False, key=None, name=None, runner_type=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, admin_name=None, admin_pwd=None, app_private_key_base64=None, auth_type='user-pass', client_id=None, client_secret=None, comment=None, description=None, email_to=None, event_source_locations=None, event_source_type='item', event_types=None, every=None, forwarder_type=None, host=None, json=False, key=None, name=None, runner_type=None, token=None, uid_token=None, user_email=None, local_vars_configuration=None):  # noqa: E501
         """CreateEventForwarder - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -81,6 +91,10 @@ class CreateEventForwarder(object):
 
         self._admin_name = None
         self._admin_pwd = None
+        self._app_private_key_base64 = None
+        self._auth_type = None
+        self._client_id = None
+        self._client_secret = None
         self._comment = None
         self._description = None
         self._email_to = None
@@ -96,12 +110,21 @@ class CreateEventForwarder(object):
         self._runner_type = None
         self._token = None
         self._uid_token = None
+        self._user_email = None
         self.discriminator = None
 
         if admin_name is not None:
             self.admin_name = admin_name
         if admin_pwd is not None:
             self.admin_pwd = admin_pwd
+        if app_private_key_base64 is not None:
+            self.app_private_key_base64 = app_private_key_base64
+        if auth_type is not None:
+            self.auth_type = auth_type
+        if client_id is not None:
+            self.client_id = client_id
+        if client_secret is not None:
+            self.client_secret = client_secret
         if comment is not None:
             self.comment = comment
         if description is not None:
@@ -128,6 +151,8 @@ class CreateEventForwarder(object):
             self.token = token
         if uid_token is not None:
             self.uid_token = uid_token
+        if user_email is not None:
+            self.user_email = user_email
 
     @property
     def admin_name(self):
@@ -174,6 +199,98 @@ class CreateEventForwarder(object):
         """
 
         self._admin_pwd = admin_pwd
+
+    @property
+    def app_private_key_base64(self):
+        """Gets the app_private_key_base64 of this CreateEventForwarder.  # noqa: E501
+
+        The RSA Private Key PEM formatted in base64 to use when connecting to ServiceNow with jwt authentication  # noqa: E501
+
+        :return: The app_private_key_base64 of this CreateEventForwarder.  # noqa: E501
+        :rtype: str
+        """
+        return self._app_private_key_base64
+
+    @app_private_key_base64.setter
+    def app_private_key_base64(self, app_private_key_base64):
+        """Sets the app_private_key_base64 of this CreateEventForwarder.
+
+        The RSA Private Key PEM formatted in base64 to use when connecting to ServiceNow with jwt authentication  # noqa: E501
+
+        :param app_private_key_base64: The app_private_key_base64 of this CreateEventForwarder.  # noqa: E501
+        :type: str
+        """
+
+        self._app_private_key_base64 = app_private_key_base64
+
+    @property
+    def auth_type(self):
+        """Gets the auth_type of this CreateEventForwarder.  # noqa: E501
+
+        The authentication type to use when connecting to ServiceNow (user-pass / jwt)  # noqa: E501
+
+        :return: The auth_type of this CreateEventForwarder.  # noqa: E501
+        :rtype: str
+        """
+        return self._auth_type
+
+    @auth_type.setter
+    def auth_type(self, auth_type):
+        """Sets the auth_type of this CreateEventForwarder.
+
+        The authentication type to use when connecting to ServiceNow (user-pass / jwt)  # noqa: E501
+
+        :param auth_type: The auth_type of this CreateEventForwarder.  # noqa: E501
+        :type: str
+        """
+
+        self._auth_type = auth_type
+
+    @property
+    def client_id(self):
+        """Gets the client_id of this CreateEventForwarder.  # noqa: E501
+
+        The client ID to use when connecting to ServiceNow with jwt authentication  # noqa: E501
+
+        :return: The client_id of this CreateEventForwarder.  # noqa: E501
+        :rtype: str
+        """
+        return self._client_id
+
+    @client_id.setter
+    def client_id(self, client_id):
+        """Sets the client_id of this CreateEventForwarder.
+
+        The client ID to use when connecting to ServiceNow with jwt authentication  # noqa: E501
+
+        :param client_id: The client_id of this CreateEventForwarder.  # noqa: E501
+        :type: str
+        """
+
+        self._client_id = client_id
+
+    @property
+    def client_secret(self):
+        """Gets the client_secret of this CreateEventForwarder.  # noqa: E501
+
+        The client secret to use when connecting to ServiceNow with jwt authentication  # noqa: E501
+
+        :return: The client_secret of this CreateEventForwarder.  # noqa: E501
+        :rtype: str
+        """
+        return self._client_secret
+
+    @client_secret.setter
+    def client_secret(self, client_secret):
+        """Sets the client_secret of this CreateEventForwarder.
+
+        The client secret to use when connecting to ServiceNow with jwt authentication  # noqa: E501
+
+        :param client_secret: The client_secret of this CreateEventForwarder.  # noqa: E501
+        :type: str
+        """
+
+        self._client_secret = client_secret
 
     @property
     def comment(self):
@@ -523,6 +640,29 @@ class CreateEventForwarder(object):
         """
 
         self._uid_token = uid_token
+
+    @property
+    def user_email(self):
+        """Gets the user_email of this CreateEventForwarder.  # noqa: E501
+
+        The user email to use when connecting to ServiceNow with jwt authentication  # noqa: E501
+
+        :return: The user_email of this CreateEventForwarder.  # noqa: E501
+        :rtype: str
+        """
+        return self._user_email
+
+    @user_email.setter
+    def user_email(self, user_email):
+        """Sets the user_email of this CreateEventForwarder.
+
+        The user email to use when connecting to ServiceNow with jwt authentication  # noqa: E501
+
+        :param user_email: The user_email of this CreateEventForwarder.  # noqa: E501
+        :type: str
+        """
+
+        self._user_email = user_email
 
     def to_dict(self):
         """Returns the model properties as a dict"""

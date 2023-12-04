@@ -5315,7 +5315,7 @@ configuration = akeyless.Configuration(
 with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
-    body = akeyless.EsmUpdate() # EsmUpdate | 
+    body = akeyless.EsmCreate() # EsmCreate | 
 
     try:
         api_response = api_instance.esm_create(body)
@@ -5328,7 +5328,7 @@ with akeyless.ApiClient() as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**EsmUpdate**](EsmUpdate.md)|  | 
+ **body** | [**EsmCreate**](EsmCreate.md)|  | 
 
 ### Return type
 
@@ -5532,7 +5532,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **esm_update**
-> EsmUpdateSecretOutput esm_update()
+> EsmUpdateSecretOutput esm_update(body)
 
 
 
@@ -5555,16 +5555,20 @@ configuration = akeyless.Configuration(
 with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
-    
+    body = akeyless.EsmUpdate() # EsmUpdate | 
+
     try:
-        api_response = api_instance.esm_update()
+        api_response = api_instance.esm_update(body)
         pprint(api_response)
     except ApiException as e:
         print("Exception when calling V2Api->esm_update: %s\n" % e)
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**EsmUpdate**](EsmUpdate.md)|  | 
 
 ### Return type
 
@@ -5576,7 +5580,7 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 ### HTTP response details

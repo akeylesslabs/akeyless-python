@@ -56,6 +56,9 @@ class UpdateAccountSettings(object):
         'postal_code': 'str',
         'token': 'str',
         'uid_token': 'str',
+        'usage_event_enable': 'str',
+        'usage_event_interval': 'int',
+        'usage_event_object_type': 'str',
         'use_lower_letters': 'str',
         'use_numbers': 'str',
         'use_special_characters': 'str',
@@ -85,13 +88,16 @@ class UpdateAccountSettings(object):
         'postal_code': 'postal-code',
         'token': 'token',
         'uid_token': 'uid-token',
+        'usage_event_enable': 'usage-event-enable',
+        'usage_event_interval': 'usage-event-interval',
+        'usage_event_object_type': 'usage-event-object-type',
         'use_lower_letters': 'use-lower-letters',
         'use_numbers': 'use-numbers',
         'use_special_characters': 'use-special-characters',
         'use_capital_letters': 'use_capital-letters'
     }
 
-    def __init__(self, address=None, city=None, company_name=None, country=None, default_key_name=None, default_share_link_ttl_minutes=None, default_versioning=None, dp_enable_classic_key_protection=None, invalid_characters='notReceivedInvalidCharacter', item_type=None, items_deletion_protection=None, json=False, jwt_ttl_default=None, jwt_ttl_max=None, jwt_ttl_min=None, lock_default_key=None, max_versions=None, password_length=None, phone=None, postal_code=None, token=None, uid_token=None, use_lower_letters=None, use_numbers=None, use_special_characters=None, use_capital_letters=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, address=None, city=None, company_name=None, country=None, default_key_name=None, default_share_link_ttl_minutes=None, default_versioning=None, dp_enable_classic_key_protection=None, invalid_characters='notReceivedInvalidCharacter', item_type=None, items_deletion_protection=None, json=False, jwt_ttl_default=None, jwt_ttl_max=None, jwt_ttl_min=None, lock_default_key=None, max_versions=None, password_length=None, phone=None, postal_code=None, token=None, uid_token=None, usage_event_enable=None, usage_event_interval=None, usage_event_object_type=None, use_lower_letters=None, use_numbers=None, use_special_characters=None, use_capital_letters=None, local_vars_configuration=None):  # noqa: E501
         """UpdateAccountSettings - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -119,6 +125,9 @@ class UpdateAccountSettings(object):
         self._postal_code = None
         self._token = None
         self._uid_token = None
+        self._usage_event_enable = None
+        self._usage_event_interval = None
+        self._usage_event_object_type = None
         self._use_lower_letters = None
         self._use_numbers = None
         self._use_special_characters = None
@@ -169,6 +178,12 @@ class UpdateAccountSettings(object):
             self.token = token
         if uid_token is not None:
             self.uid_token = uid_token
+        if usage_event_enable is not None:
+            self.usage_event_enable = usage_event_enable
+        if usage_event_interval is not None:
+            self.usage_event_interval = usage_event_interval
+        if usage_event_object_type is not None:
+            self.usage_event_object_type = usage_event_object_type
         if use_lower_letters is not None:
             self.use_lower_letters = use_lower_letters
         if use_numbers is not None:
@@ -683,6 +698,75 @@ class UpdateAccountSettings(object):
         """
 
         self._uid_token = uid_token
+
+    @property
+    def usage_event_enable(self):
+        """Gets the usage_event_enable of this UpdateAccountSettings.  # noqa: E501
+
+        Enable event for objects that have not been used or changed [true/false]  # noqa: E501
+
+        :return: The usage_event_enable of this UpdateAccountSettings.  # noqa: E501
+        :rtype: str
+        """
+        return self._usage_event_enable
+
+    @usage_event_enable.setter
+    def usage_event_enable(self, usage_event_enable):
+        """Sets the usage_event_enable of this UpdateAccountSettings.
+
+        Enable event for objects that have not been used or changed [true/false]  # noqa: E501
+
+        :param usage_event_enable: The usage_event_enable of this UpdateAccountSettings.  # noqa: E501
+        :type: str
+        """
+
+        self._usage_event_enable = usage_event_enable
+
+    @property
+    def usage_event_interval(self):
+        """Gets the usage_event_interval of this UpdateAccountSettings.  # noqa: E501
+
+        Interval by days for unused objects. Default and minimum interval is 90 days  # noqa: E501
+
+        :return: The usage_event_interval of this UpdateAccountSettings.  # noqa: E501
+        :rtype: int
+        """
+        return self._usage_event_interval
+
+    @usage_event_interval.setter
+    def usage_event_interval(self, usage_event_interval):
+        """Sets the usage_event_interval of this UpdateAccountSettings.
+
+        Interval by days for unused objects. Default and minimum interval is 90 days  # noqa: E501
+
+        :param usage_event_interval: The usage_event_interval of this UpdateAccountSettings.  # noqa: E501
+        :type: int
+        """
+
+        self._usage_event_interval = usage_event_interval
+
+    @property
+    def usage_event_object_type(self):
+        """Gets the usage_event_object_type of this UpdateAccountSettings.  # noqa: E501
+
+        Usage event is supported for auth method or secrets-and-keys [auth/item]  # noqa: E501
+
+        :return: The usage_event_object_type of this UpdateAccountSettings.  # noqa: E501
+        :rtype: str
+        """
+        return self._usage_event_object_type
+
+    @usage_event_object_type.setter
+    def usage_event_object_type(self, usage_event_object_type):
+        """Sets the usage_event_object_type of this UpdateAccountSettings.
+
+        Usage event is supported for auth method or secrets-and-keys [auth/item]  # noqa: E501
+
+        :param usage_event_object_type: The usage_event_object_type of this UpdateAccountSettings.  # noqa: E501
+        :type: str
+        """
+
+        self._usage_event_object_type = usage_event_object_type
 
     @property
     def use_lower_letters(self):

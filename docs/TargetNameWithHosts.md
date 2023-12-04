@@ -1,11 +1,10 @@
-# APIKeyAccessRules
+# TargetNameWithHosts
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**alg** | **str** |  | [optional] 
-**key** | **str** | The public key value of the API-key. | [optional] 
-**modification_date** | **datetime** |  | [optional] 
+**hosts** | **list[str]** |  | [optional] 
+**target_name** | **str** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

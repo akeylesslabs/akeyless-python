@@ -36,9 +36,11 @@ class AccountGeneralSettings(object):
     openapi_types = {
         'account_default_key_item_id': 'int',
         'account_default_key_name': 'str',
+        'auth_usage_event': 'UsageEventSetting',
         'data_protection_section': 'DataProtectionSection',
         'enable_request_for_access': 'bool',
         'invalid_characters': 'str',
+        'item_usage_event': 'UsageEventSetting',
         'lock_default_key': 'bool',
         'password_policy': 'PasswordPolicyInfo',
         'protect_items_by_default': 'bool',
@@ -48,16 +50,18 @@ class AccountGeneralSettings(object):
     attribute_map = {
         'account_default_key_item_id': 'account_default_key_item_id',
         'account_default_key_name': 'account_default_key_name',
+        'auth_usage_event': 'auth_usage_event',
         'data_protection_section': 'data_protection_section',
         'enable_request_for_access': 'enable_request_for_access',
         'invalid_characters': 'invalid_characters',
+        'item_usage_event': 'item_usage_event',
         'lock_default_key': 'lock_default_key',
         'password_policy': 'password_policy',
         'protect_items_by_default': 'protect_items_by_default',
         'sharing_policy': 'sharing_policy'
     }
 
-    def __init__(self, account_default_key_item_id=None, account_default_key_name=None, data_protection_section=None, enable_request_for_access=None, invalid_characters=None, lock_default_key=None, password_policy=None, protect_items_by_default=None, sharing_policy=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, account_default_key_item_id=None, account_default_key_name=None, auth_usage_event=None, data_protection_section=None, enable_request_for_access=None, invalid_characters=None, item_usage_event=None, lock_default_key=None, password_policy=None, protect_items_by_default=None, sharing_policy=None, local_vars_configuration=None):  # noqa: E501
         """AccountGeneralSettings - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -65,9 +69,11 @@ class AccountGeneralSettings(object):
 
         self._account_default_key_item_id = None
         self._account_default_key_name = None
+        self._auth_usage_event = None
         self._data_protection_section = None
         self._enable_request_for_access = None
         self._invalid_characters = None
+        self._item_usage_event = None
         self._lock_default_key = None
         self._password_policy = None
         self._protect_items_by_default = None
@@ -78,12 +84,16 @@ class AccountGeneralSettings(object):
             self.account_default_key_item_id = account_default_key_item_id
         if account_default_key_name is not None:
             self.account_default_key_name = account_default_key_name
+        if auth_usage_event is not None:
+            self.auth_usage_event = auth_usage_event
         if data_protection_section is not None:
             self.data_protection_section = data_protection_section
         if enable_request_for_access is not None:
             self.enable_request_for_access = enable_request_for_access
         if invalid_characters is not None:
             self.invalid_characters = invalid_characters
+        if item_usage_event is not None:
+            self.item_usage_event = item_usage_event
         if lock_default_key is not None:
             self.lock_default_key = lock_default_key
         if password_policy is not None:
@@ -138,6 +148,27 @@ class AccountGeneralSettings(object):
         """
 
         self._account_default_key_name = account_default_key_name
+
+    @property
+    def auth_usage_event(self):
+        """Gets the auth_usage_event of this AccountGeneralSettings.  # noqa: E501
+
+
+        :return: The auth_usage_event of this AccountGeneralSettings.  # noqa: E501
+        :rtype: UsageEventSetting
+        """
+        return self._auth_usage_event
+
+    @auth_usage_event.setter
+    def auth_usage_event(self, auth_usage_event):
+        """Sets the auth_usage_event of this AccountGeneralSettings.
+
+
+        :param auth_usage_event: The auth_usage_event of this AccountGeneralSettings.  # noqa: E501
+        :type: UsageEventSetting
+        """
+
+        self._auth_usage_event = auth_usage_event
 
     @property
     def data_protection_section(self):
@@ -203,6 +234,27 @@ class AccountGeneralSettings(object):
         """
 
         self._invalid_characters = invalid_characters
+
+    @property
+    def item_usage_event(self):
+        """Gets the item_usage_event of this AccountGeneralSettings.  # noqa: E501
+
+
+        :return: The item_usage_event of this AccountGeneralSettings.  # noqa: E501
+        :rtype: UsageEventSetting
+        """
+        return self._item_usage_event
+
+    @item_usage_event.setter
+    def item_usage_event(self, item_usage_event):
+        """Sets the item_usage_event of this AccountGeneralSettings.
+
+
+        :param item_usage_event: The item_usage_event of this AccountGeneralSettings.  # noqa: E501
+        :type: UsageEventSetting
+        """
+
+        self._item_usage_event = item_usage_event
 
     @property
     def lock_default_key(self):

@@ -35,15 +35,17 @@ class APIKeyAccessRules(object):
     """
     openapi_types = {
         'alg': 'str',
-        'key': 'str'
+        'key': 'str',
+        'modification_date': 'datetime'
     }
 
     attribute_map = {
         'alg': 'alg',
-        'key': 'key'
+        'key': 'key',
+        'modification_date': 'modification_date'
     }
 
-    def __init__(self, alg=None, key=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, alg=None, key=None, modification_date=None, local_vars_configuration=None):  # noqa: E501
         """APIKeyAccessRules - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -51,12 +53,15 @@ class APIKeyAccessRules(object):
 
         self._alg = None
         self._key = None
+        self._modification_date = None
         self.discriminator = None
 
         if alg is not None:
             self.alg = alg
         if key is not None:
             self.key = key
+        if modification_date is not None:
+            self.modification_date = modification_date
 
     @property
     def alg(self):
@@ -101,6 +106,27 @@ class APIKeyAccessRules(object):
         """
 
         self._key = key
+
+    @property
+    def modification_date(self):
+        """Gets the modification_date of this APIKeyAccessRules.  # noqa: E501
+
+
+        :return: The modification_date of this APIKeyAccessRules.  # noqa: E501
+        :rtype: datetime
+        """
+        return self._modification_date
+
+    @modification_date.setter
+    def modification_date(self, modification_date):
+        """Sets the modification_date of this APIKeyAccessRules.
+
+
+        :param modification_date: The modification_date of this APIKeyAccessRules.  # noqa: E501
+        :type: datetime
+        """
+
+        self._modification_date = modification_date
 
     def to_dict(self):
         """Returns the model properties as a dict"""

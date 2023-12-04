@@ -1,6 +1,6 @@
 # TargetItemAssociation
 
-TargetItemAssociation includes details of an association between a target and an item.
+TargetItemAssociation includes details of an association between a target and an item. Also, between targets in case of CredentialsLess target or Linked target.
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

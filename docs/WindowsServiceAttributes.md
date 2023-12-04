@@ -1,11 +1,11 @@
-# APIKeyAccessRules
+# WindowsServiceAttributes
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**alg** | **str** |  | [optional] 
-**key** | **str** | The public key value of the API-key. | [optional] 
-**modification_date** | **datetime** |  | [optional] 
+**connection_type** | **str** |  | [optional] 
+**port** | **str** |  | [optional] 
+**use_tls** | **bool** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

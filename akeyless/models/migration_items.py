@@ -37,17 +37,19 @@ class MigrationItems(object):
         'failed': 'int',
         'migrated': 'int',
         'skipped': 'int',
-        'total': 'int'
+        'total': 'int',
+        'updated': 'int'
     }
 
     attribute_map = {
         'failed': 'failed',
         'migrated': 'migrated',
         'skipped': 'skipped',
-        'total': 'total'
+        'total': 'total',
+        'updated': 'updated'
     }
 
-    def __init__(self, failed=None, migrated=None, skipped=None, total=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, failed=None, migrated=None, skipped=None, total=None, updated=None, local_vars_configuration=None):  # noqa: E501
         """MigrationItems - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -57,6 +59,7 @@ class MigrationItems(object):
         self._migrated = None
         self._skipped = None
         self._total = None
+        self._updated = None
         self.discriminator = None
 
         if failed is not None:
@@ -67,6 +70,8 @@ class MigrationItems(object):
             self.skipped = skipped
         if total is not None:
             self.total = total
+        if updated is not None:
+            self.updated = updated
 
     @property
     def failed(self):
@@ -151,6 +156,27 @@ class MigrationItems(object):
         """
 
         self._total = total
+
+    @property
+    def updated(self):
+        """Gets the updated of this MigrationItems.  # noqa: E501
+
+
+        :return: The updated of this MigrationItems.  # noqa: E501
+        :rtype: int
+        """
+        return self._updated
+
+    @updated.setter
+    def updated(self, updated):
+        """Sets the updated of this MigrationItems.
+
+
+        :param updated: The updated of this MigrationItems.  # noqa: E501
+        :type: int
+        """
+
+        self._updated = updated
 
     def to_dict(self):
         """Returns the model properties as a dict"""

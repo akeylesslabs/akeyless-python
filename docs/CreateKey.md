@@ -19,7 +19,7 @@ Name | Type | Description | Notes
 **json** | **bool** | Set output format to JSON | [optional] [default to False]
 **metadata** | **str** | Deprecated - use description | [optional] 
 **name** | **str** | Key name | 
-**split_level** | **int** | The number of fragments that the item will be split into (not includes customer fragment) | [optional] [default to 2]
+**split_level** | **int** | The number of fragments that the item will be split into (not includes customer fragment) | [optional] [default to 3]
 **tag** | **list[str]** | List of the tags attached to this key | [optional] 
 **token** | **str** | Authentication token (see &#x60;/auth&#x60; and &#x60;/configure&#x60;) | [optional] 
 **uid_token** | **str** | The universal identity token, Required only for universal_identity authentication | [optional] 

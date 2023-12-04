@@ -34,46 +34,54 @@ class DescribeItem(object):
                             and the value is json key in definition.
     """
     openapi_types = {
+        'accessibility': 'str',
         'bastion_details': 'bool',
         'display_id': 'str',
         'gateway_details': 'bool',
         'item_id': 'int',
         'json': 'bool',
         'name': 'str',
+        'services_details': 'bool',
         'show_versions': 'bool',
         'token': 'str',
         'uid_token': 'str'
     }
 
     attribute_map = {
+        'accessibility': 'accessibility',
         'bastion_details': 'bastion-details',
         'display_id': 'display-id',
         'gateway_details': 'gateway-details',
         'item_id': 'item-id',
         'json': 'json',
         'name': 'name',
+        'services_details': 'services-details',
         'show_versions': 'show-versions',
         'token': 'token',
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, bastion_details=False, display_id=None, gateway_details=False, item_id=None, json=False, name=None, show_versions=False, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, accessibility='regular', bastion_details=False, display_id=None, gateway_details=False, item_id=None, json=False, name=None, services_details=False, show_versions=False, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """DescribeItem - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
+        self._accessibility = None
         self._bastion_details = None
         self._display_id = None
         self._gateway_details = None
         self._item_id = None
         self._json = None
         self._name = None
+        self._services_details = None
         self._show_versions = None
         self._token = None
         self._uid_token = None
         self.discriminator = None
 
+        if accessibility is not None:
+            self.accessibility = accessibility
         if bastion_details is not None:
             self.bastion_details = bastion_details
         if display_id is not None:
@@ -85,12 +93,37 @@ class DescribeItem(object):
         if json is not None:
             self.json = json
         self.name = name
+        if services_details is not None:
+            self.services_details = services_details
         if show_versions is not None:
             self.show_versions = show_versions
         if token is not None:
             self.token = token
         if uid_token is not None:
             self.uid_token = uid_token
+
+    @property
+    def accessibility(self):
+        """Gets the accessibility of this DescribeItem.  # noqa: E501
+
+        for personal password manager  # noqa: E501
+
+        :return: The accessibility of this DescribeItem.  # noqa: E501
+        :rtype: str
+        """
+        return self._accessibility
+
+    @accessibility.setter
+    def accessibility(self, accessibility):
+        """Sets the accessibility of this DescribeItem.
+
+        for personal password manager  # noqa: E501
+
+        :param accessibility: The accessibility of this DescribeItem.  # noqa: E501
+        :type: str
+        """
+
+        self._accessibility = accessibility
 
     @property
     def bastion_details(self):
@@ -231,6 +264,29 @@ class DescribeItem(object):
             raise ValueError("Invalid value for `name`, must not be `None`")  # noqa: E501
 
         self._name = name
+
+    @property
+    def services_details(self):
+        """Gets the services_details of this DescribeItem.  # noqa: E501
+
+        Include all associated services details  # noqa: E501
+
+        :return: The services_details of this DescribeItem.  # noqa: E501
+        :rtype: bool
+        """
+        return self._services_details
+
+    @services_details.setter
+    def services_details(self, services_details):
+        """Sets the services_details of this DescribeItem.
+
+        Include all associated services details  # noqa: E501
+
+        :param services_details: The services_details of this DescribeItem.  # noqa: E501
+        :type: bool
+        """
+
+        self._services_details = services_details
 
     @property
     def show_versions(self):

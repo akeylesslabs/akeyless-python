@@ -9674,7 +9674,7 @@ class V2Api(object):
         >>> result = thread.get()
 
         :param async_req bool: execute request asynchronously
-        :param EsmUpdate body: (required)
+        :param EsmCreate body: (required)
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
@@ -9698,7 +9698,7 @@ class V2Api(object):
         >>> result = thread.get()
 
         :param async_req bool: execute request asynchronously
-        :param EsmUpdate body: (required)
+        :param EsmCreate body: (required)
         :param _return_http_data_only: response data without head status code
                                        and headers
         :param _preload_content: if False, the urllib3.HTTPResponse object will
@@ -10129,15 +10129,16 @@ class V2Api(object):
             _request_timeout=local_var_params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def esm_update(self, **kwargs):  # noqa: E501
+    def esm_update(self, body, **kwargs):  # noqa: E501
         """esm_update  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.esm_update(async_req=True)
+        >>> thread = api.esm_update(body, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool: execute request asynchronously
+        :param EsmUpdate body: (required)
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
@@ -10150,17 +10151,18 @@ class V2Api(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        return self.esm_update_with_http_info(**kwargs)  # noqa: E501
+        return self.esm_update_with_http_info(body, **kwargs)  # noqa: E501
 
-    def esm_update_with_http_info(self, **kwargs):  # noqa: E501
+    def esm_update_with_http_info(self, body, **kwargs):  # noqa: E501
         """esm_update  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.esm_update_with_http_info(async_req=True)
+        >>> thread = api.esm_update_with_http_info(body, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool: execute request asynchronously
+        :param EsmUpdate body: (required)
         :param _return_http_data_only: response data without head status code
                                        and headers
         :param _preload_content: if False, the urllib3.HTTPResponse object will
@@ -10178,6 +10180,7 @@ class V2Api(object):
         local_var_params = locals()
 
         all_params = [
+            'body'
         ]
         all_params.extend(
             [
@@ -10196,6 +10199,10 @@ class V2Api(object):
                 )
             local_var_params[key] = val
         del local_var_params['kwargs']
+        # verify the required parameter 'body' is set
+        if self.api_client.client_side_validation and ('body' not in local_var_params or  # noqa: E501
+                                                        local_var_params['body'] is None):  # noqa: E501
+            raise ApiValueError("Missing the required parameter `body` when calling `esm_update`")  # noqa: E501
 
         collection_formats = {}
 
@@ -10209,8 +10216,14 @@ class V2Api(object):
         local_var_files = {}
 
         body_params = None
+        if 'body' in local_var_params:
+            body_params = local_var_params['body']
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
             ['application/json'])  # noqa: E501
 
         # Authentication setting

@@ -39,6 +39,7 @@ class GatewayCreateMigration(object):
         '_1password_secret_key': 'str',
         '_1password_url': 'str',
         '_1password_vaults': 'list[str]',
+        'ad_discover_services': 'str',
         'ad_ssh_port': 'str',
         'ad_targets_type': 'str',
         'ad_winrm_over_http': 'str',
@@ -100,6 +101,7 @@ class GatewayCreateMigration(object):
         '_1password_secret_key': '1password-secret-key',
         '_1password_url': '1password-url',
         '_1password_vaults': '1password-vaults',
+        'ad_discover_services': 'ad-discover-services',
         'ad_ssh_port': 'ad-ssh-port',
         'ad_targets_type': 'ad-targets-type',
         'ad_winrm_over_http': 'ad-winrm-over-http',
@@ -155,7 +157,7 @@ class GatewayCreateMigration(object):
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, _1password_email=None, _1password_password=None, _1password_secret_key=None, _1password_url=None, _1password_vaults=None, ad_ssh_port='22', ad_targets_type='windows', ad_winrm_over_http='false', ad_winrm_port='5986', ad_auto_rotate=None, ad_computer_base_dn=None, ad_discover_local_users=None, ad_domain_name=None, ad_domain_users_path_template=None, ad_local_users_ignore=None, ad_local_users_path_template=None, ad_rotation_hour=None, ad_rotation_interval=None, ad_sra_enable_rdp=None, ad_target_name=None, ad_targets_path_template=None, ad_user_base_dn=None, ad_user_groups=None, aws_key=None, aws_key_id=None, aws_region='us-east-2', azure_client_id=None, azure_kv_name=None, azure_secret=None, azure_tenant_id=None, gcp_key=None, hashi_json='true', hashi_ns=None, hashi_token=None, hashi_url=None, json=False, k8s_ca_certificate=None, k8s_client_certificate=None, k8s_client_key=None, k8s_namespace=None, k8s_password=None, k8s_skip_system=None, k8s_token=None, k8s_url=None, k8s_username=None, name=None, protection_key=None, si_auto_rotate=None, si_rotation_hour=None, si_rotation_interval=None, si_sra_enable_rdp='false', si_target_name=None, si_users_ignore=None, si_users_path_template=None, target_location=None, token=None, type=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, _1password_email=None, _1password_password=None, _1password_secret_key=None, _1password_url=None, _1password_vaults=None, ad_discover_services='false', ad_ssh_port='22', ad_targets_type='windows', ad_winrm_over_http='false', ad_winrm_port='5986', ad_auto_rotate=None, ad_computer_base_dn=None, ad_discover_local_users=None, ad_domain_name=None, ad_domain_users_path_template=None, ad_local_users_ignore=None, ad_local_users_path_template=None, ad_rotation_hour=None, ad_rotation_interval=None, ad_sra_enable_rdp=None, ad_target_name=None, ad_targets_path_template=None, ad_user_base_dn=None, ad_user_groups=None, aws_key=None, aws_key_id=None, aws_region='us-east-2', azure_client_id=None, azure_kv_name=None, azure_secret=None, azure_tenant_id=None, gcp_key=None, hashi_json='true', hashi_ns=None, hashi_token=None, hashi_url=None, json=False, k8s_ca_certificate=None, k8s_client_certificate=None, k8s_client_key=None, k8s_namespace=None, k8s_password=None, k8s_skip_system=None, k8s_token=None, k8s_url=None, k8s_username=None, name=None, protection_key=None, si_auto_rotate=None, si_rotation_hour=None, si_rotation_interval=None, si_sra_enable_rdp='false', si_target_name=None, si_users_ignore=None, si_users_path_template=None, target_location=None, token=None, type=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """GatewayCreateMigration - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -166,6 +168,7 @@ class GatewayCreateMigration(object):
         self.__1password_secret_key = None
         self.__1password_url = None
         self.__1password_vaults = None
+        self._ad_discover_services = None
         self._ad_ssh_port = None
         self._ad_targets_type = None
         self._ad_winrm_over_http = None
@@ -231,6 +234,8 @@ class GatewayCreateMigration(object):
             self._1password_url = _1password_url
         if _1password_vaults is not None:
             self._1password_vaults = _1password_vaults
+        if ad_discover_services is not None:
+            self.ad_discover_services = ad_discover_services
         if ad_ssh_port is not None:
             self.ad_ssh_port = ad_ssh_port
         if ad_targets_type is not None:
@@ -448,6 +453,29 @@ class GatewayCreateMigration(object):
         """
 
         self.__1password_vaults = _1password_vaults
+
+    @property
+    def ad_discover_services(self):
+        """Gets the ad_discover_services of this GatewayCreateMigration.  # noqa: E501
+
+        Enable/Disable discovery of Windows services from each domain server as part of the SSH/Windows Rotated Secrets. Default is false. (Relevant only for Active Directory migration)  # noqa: E501
+
+        :return: The ad_discover_services of this GatewayCreateMigration.  # noqa: E501
+        :rtype: str
+        """
+        return self._ad_discover_services
+
+    @ad_discover_services.setter
+    def ad_discover_services(self, ad_discover_services):
+        """Sets the ad_discover_services of this GatewayCreateMigration.
+
+        Enable/Disable discovery of Windows services from each domain server as part of the SSH/Windows Rotated Secrets. Default is false. (Relevant only for Active Directory migration)  # noqa: E501
+
+        :param ad_discover_services: The ad_discover_services of this GatewayCreateMigration.  # noqa: E501
+        :type: str
+        """
+
+        self._ad_discover_services = ad_discover_services
 
     @property
     def ad_ssh_port(self):

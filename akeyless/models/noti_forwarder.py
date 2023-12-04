@@ -34,6 +34,8 @@ class NotiForwarder(object):
                             and the value is json key in definition.
     """
     openapi_types = {
+        'auth_type': 'str',
+        'client_id': 'str',
         'client_permissions': 'list[str]',
         'comment': 'str',
         'creation_date': 'datetime',
@@ -52,11 +54,14 @@ class NotiForwarder(object):
         'runner_type': 'str',
         'timespan_in_seconds': 'int',
         'to_emails': 'list[EmailEntry]',
+        'user_email': 'str',
         'username': 'str',
         'with_customer_fragment': 'bool'
     }
 
     attribute_map = {
+        'auth_type': 'auth_type',
+        'client_id': 'client_id',
         'client_permissions': 'client_permissions',
         'comment': 'comment',
         'creation_date': 'creation_date',
@@ -75,16 +80,19 @@ class NotiForwarder(object):
         'runner_type': 'runner_type',
         'timespan_in_seconds': 'timespan_in_seconds',
         'to_emails': 'to_emails',
+        'user_email': 'user_email',
         'username': 'username',
         'with_customer_fragment': 'with_customer_fragment'
     }
 
-    def __init__(self, client_permissions=None, comment=None, creation_date=None, endpoint=None, event_types=None, gateway_cluster_id=None, is_enabled=None, last_version=None, modification_date=None, noti_forwarder_id=None, noti_forwarder_name=None, noti_forwarder_type=None, noti_forwarder_versions=None, paths=None, protection_key=None, runner_type=None, timespan_in_seconds=None, to_emails=None, username=None, with_customer_fragment=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, auth_type=None, client_id=None, client_permissions=None, comment=None, creation_date=None, endpoint=None, event_types=None, gateway_cluster_id=None, is_enabled=None, last_version=None, modification_date=None, noti_forwarder_id=None, noti_forwarder_name=None, noti_forwarder_type=None, noti_forwarder_versions=None, paths=None, protection_key=None, runner_type=None, timespan_in_seconds=None, to_emails=None, user_email=None, username=None, with_customer_fragment=None, local_vars_configuration=None):  # noqa: E501
         """NotiForwarder - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
+        self._auth_type = None
+        self._client_id = None
         self._client_permissions = None
         self._comment = None
         self._creation_date = None
@@ -103,10 +111,15 @@ class NotiForwarder(object):
         self._runner_type = None
         self._timespan_in_seconds = None
         self._to_emails = None
+        self._user_email = None
         self._username = None
         self._with_customer_fragment = None
         self.discriminator = None
 
+        if auth_type is not None:
+            self.auth_type = auth_type
+        if client_id is not None:
+            self.client_id = client_id
         if client_permissions is not None:
             self.client_permissions = client_permissions
         if comment is not None:
@@ -143,10 +156,56 @@ class NotiForwarder(object):
             self.timespan_in_seconds = timespan_in_seconds
         if to_emails is not None:
             self.to_emails = to_emails
+        if user_email is not None:
+            self.user_email = user_email
         if username is not None:
             self.username = username
         if with_customer_fragment is not None:
             self.with_customer_fragment = with_customer_fragment
+
+    @property
+    def auth_type(self):
+        """Gets the auth_type of this NotiForwarder.  # noqa: E501
+
+
+        :return: The auth_type of this NotiForwarder.  # noqa: E501
+        :rtype: str
+        """
+        return self._auth_type
+
+    @auth_type.setter
+    def auth_type(self, auth_type):
+        """Sets the auth_type of this NotiForwarder.
+
+
+        :param auth_type: The auth_type of this NotiForwarder.  # noqa: E501
+        :type: str
+        """
+
+        self._auth_type = auth_type
+
+    @property
+    def client_id(self):
+        """Gets the client_id of this NotiForwarder.  # noqa: E501
+
+        Auth - JWT  # noqa: E501
+
+        :return: The client_id of this NotiForwarder.  # noqa: E501
+        :rtype: str
+        """
+        return self._client_id
+
+    @client_id.setter
+    def client_id(self, client_id):
+        """Sets the client_id of this NotiForwarder.
+
+        Auth - JWT  # noqa: E501
+
+        :param client_id: The client_id of this NotiForwarder.  # noqa: E501
+        :type: str
+        """
+
+        self._client_id = client_id
 
     @property
     def client_permissions(self):
@@ -527,9 +586,31 @@ class NotiForwarder(object):
         self._to_emails = to_emails
 
     @property
+    def user_email(self):
+        """Gets the user_email of this NotiForwarder.  # noqa: E501
+
+
+        :return: The user_email of this NotiForwarder.  # noqa: E501
+        :rtype: str
+        """
+        return self._user_email
+
+    @user_email.setter
+    def user_email(self, user_email):
+        """Sets the user_email of this NotiForwarder.
+
+
+        :param user_email: The user_email of this NotiForwarder.  # noqa: E501
+        :type: str
+        """
+
+        self._user_email = user_email
+
+    @property
     def username(self):
         """Gets the username of this NotiForwarder.  # noqa: E501
 
+        Auth - User Password  # noqa: E501
 
         :return: The username of this NotiForwarder.  # noqa: E501
         :rtype: str
@@ -540,6 +621,7 @@ class NotiForwarder(object):
     def username(self, username):
         """Sets the username of this NotiForwarder.
 
+        Auth - User Password  # noqa: E501
 
         :param username: The username of this NotiForwarder.  # noqa: E501
         :type: str

@@ -77,7 +77,7 @@ class CreateKey(object):
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, alg=None, certificate_common_name=None, certificate_country=None, certificate_digest_algo=None, certificate_locality=None, certificate_organization=None, certificate_province=None, certificate_ttl=None, customer_frg_id=None, delete_protection=None, description=None, generate_self_signed_certificate=None, json=False, metadata=None, name=None, split_level=2, tag=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, alg=None, certificate_common_name=None, certificate_country=None, certificate_digest_algo=None, certificate_locality=None, certificate_organization=None, certificate_province=None, certificate_ttl=None, customer_frg_id=None, delete_protection=None, description=None, generate_self_signed_certificate=None, json=False, metadata=None, name=None, split_level=3, tag=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """CreateKey - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()

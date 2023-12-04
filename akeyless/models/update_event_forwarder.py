@@ -35,6 +35,8 @@ class UpdateEventForwarder(object):
     """
     openapi_types = {
         'admin_name': 'str',
+        'auth_type': 'str',
+        'client_id': 'str',
         'description': 'str',
         'email_to': 'str',
         'enable': 'str',
@@ -46,11 +48,14 @@ class UpdateEventForwarder(object):
         'new_comment': 'str',
         'new_name': 'str',
         'token': 'str',
-        'uid_token': 'str'
+        'uid_token': 'str',
+        'user_email': 'str'
     }
 
     attribute_map = {
         'admin_name': 'admin-name',
+        'auth_type': 'auth-type',
+        'client_id': 'client-id',
         'description': 'description',
         'email_to': 'email-to',
         'enable': 'enable',
@@ -62,16 +67,19 @@ class UpdateEventForwarder(object):
         'new_comment': 'new-comment',
         'new_name': 'new-name',
         'token': 'token',
-        'uid_token': 'uid-token'
+        'uid_token': 'uid-token',
+        'user_email': 'user-email'
     }
 
-    def __init__(self, admin_name=None, description='default_comment', email_to=None, enable='true', event_source_locations=None, event_types=None, host=None, json=False, name=None, new_comment='default_comment', new_name=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, admin_name=None, auth_type='user-pass', client_id=None, description='default_comment', email_to=None, enable='true', event_source_locations=None, event_types=None, host=None, json=False, name=None, new_comment='default_comment', new_name=None, token=None, uid_token=None, user_email=None, local_vars_configuration=None):  # noqa: E501
         """UpdateEventForwarder - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._admin_name = None
+        self._auth_type = None
+        self._client_id = None
         self._description = None
         self._email_to = None
         self._enable = None
@@ -84,10 +92,15 @@ class UpdateEventForwarder(object):
         self._new_name = None
         self._token = None
         self._uid_token = None
+        self._user_email = None
         self.discriminator = None
 
         if admin_name is not None:
             self.admin_name = admin_name
+        if auth_type is not None:
+            self.auth_type = auth_type
+        if client_id is not None:
+            self.client_id = client_id
         if description is not None:
             self.description = description
         if email_to is not None:
@@ -111,6 +124,8 @@ class UpdateEventForwarder(object):
             self.token = token
         if uid_token is not None:
             self.uid_token = uid_token
+        if user_email is not None:
+            self.user_email = user_email
 
     @property
     def admin_name(self):
@@ -134,6 +149,52 @@ class UpdateEventForwarder(object):
         """
 
         self._admin_name = admin_name
+
+    @property
+    def auth_type(self):
+        """Gets the auth_type of this UpdateEventForwarder.  # noqa: E501
+
+        The authentication type to use when connecting to ServiceNow (user-pass / jwt)  # noqa: E501
+
+        :return: The auth_type of this UpdateEventForwarder.  # noqa: E501
+        :rtype: str
+        """
+        return self._auth_type
+
+    @auth_type.setter
+    def auth_type(self, auth_type):
+        """Sets the auth_type of this UpdateEventForwarder.
+
+        The authentication type to use when connecting to ServiceNow (user-pass / jwt)  # noqa: E501
+
+        :param auth_type: The auth_type of this UpdateEventForwarder.  # noqa: E501
+        :type: str
+        """
+
+        self._auth_type = auth_type
+
+    @property
+    def client_id(self):
+        """Gets the client_id of this UpdateEventForwarder.  # noqa: E501
+
+        The client ID to use when connecting to ServiceNow with jwt authentication  # noqa: E501
+
+        :return: The client_id of this UpdateEventForwarder.  # noqa: E501
+        :rtype: str
+        """
+        return self._client_id
+
+    @client_id.setter
+    def client_id(self, client_id):
+        """Sets the client_id of this UpdateEventForwarder.
+
+        The client ID to use when connecting to ServiceNow with jwt authentication  # noqa: E501
+
+        :param client_id: The client_id of this UpdateEventForwarder.  # noqa: E501
+        :type: str
+        """
+
+        self._client_id = client_id
 
     @property
     def description(self):
@@ -412,6 +473,29 @@ class UpdateEventForwarder(object):
         """
 
         self._uid_token = uid_token
+
+    @property
+    def user_email(self):
+        """Gets the user_email of this UpdateEventForwarder.  # noqa: E501
+
+        The user email to use when connecting to ServiceNow with jwt authentication  # noqa: E501
+
+        :return: The user_email of this UpdateEventForwarder.  # noqa: E501
+        :rtype: str
+        """
+        return self._user_email
+
+    @user_email.setter
+    def user_email(self, user_email):
+        """Sets the user_email of this UpdateEventForwarder.
+
+        The user email to use when connecting to ServiceNow with jwt authentication  # noqa: E501
+
+        :param user_email: The user_email of this UpdateEventForwarder.  # noqa: E501
+        :type: str
+        """
+
+        self._user_email = user_email
 
     def to_dict(self):
         """Returns the model properties as a dict"""

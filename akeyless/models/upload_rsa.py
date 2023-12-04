@@ -67,7 +67,7 @@ class UploadRSA(object):
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, alg=None, cert_file_data=None, customer_frg_id=None, delete_protection=None, description=None, json=False, metadata=None, name=None, overwrite='false', rsa_file_data=None, split_level=2, tag=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, alg=None, cert_file_data=None, customer_frg_id=None, delete_protection=None, description=None, json=False, metadata=None, name=None, overwrite='false', rsa_file_data=None, split_level=3, tag=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """UploadRSA - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()

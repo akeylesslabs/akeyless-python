@@ -40,6 +40,7 @@ class ActiveDirectoryPayload(object):
         'auto_rotate_rotation_hour': 'int',
         'computer_base_dn': 'str',
         'discover_local_users': 'bool',
+        'discover_services': 'bool',
         'domain_name': 'str',
         'domain_server_targets_path_template': 'str',
         'domain_users_rotated_secrets_path_template': 'str',
@@ -61,6 +62,7 @@ class ActiveDirectoryPayload(object):
         'auto_rotate_rotation_hour': 'auto_rotate_rotation_hour',
         'computer_base_dn': 'computer_base_dn',
         'discover_local_users': 'discover_local_users',
+        'discover_services': 'discover_services',
         'domain_name': 'domain_name',
         'domain_server_targets_path_template': 'domain_server_targets_path_template',
         'domain_users_rotated_secrets_path_template': 'domain_users_rotated_secrets_path_template',
@@ -75,7 +77,7 @@ class ActiveDirectoryPayload(object):
         'winrm_port': 'winrm_port'
     }
 
-    def __init__(self, active_directory_target_id=None, auto_rotate=None, auto_rotate_interval_in_days=None, auto_rotate_rotation_hour=None, computer_base_dn=None, discover_local_users=None, domain_name=None, domain_server_targets_path_template=None, domain_users_rotated_secrets_path_template=None, enable_rdp_sra=None, local_users_ignore_list=None, local_users_rotated_secrets_path_template=None, ssh_port=None, targets_type=None, user_base_dn=None, user_groups=None, winrm_over_http=None, winrm_port=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, active_directory_target_id=None, auto_rotate=None, auto_rotate_interval_in_days=None, auto_rotate_rotation_hour=None, computer_base_dn=None, discover_local_users=None, discover_services=None, domain_name=None, domain_server_targets_path_template=None, domain_users_rotated_secrets_path_template=None, enable_rdp_sra=None, local_users_ignore_list=None, local_users_rotated_secrets_path_template=None, ssh_port=None, targets_type=None, user_base_dn=None, user_groups=None, winrm_over_http=None, winrm_port=None, local_vars_configuration=None):  # noqa: E501
         """ActiveDirectoryPayload - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -87,6 +89,7 @@ class ActiveDirectoryPayload(object):
         self._auto_rotate_rotation_hour = None
         self._computer_base_dn = None
         self._discover_local_users = None
+        self._discover_services = None
         self._domain_name = None
         self._domain_server_targets_path_template = None
         self._domain_users_rotated_secrets_path_template = None
@@ -113,6 +116,8 @@ class ActiveDirectoryPayload(object):
             self.computer_base_dn = computer_base_dn
         if discover_local_users is not None:
             self.discover_local_users = discover_local_users
+        if discover_services is not None:
+            self.discover_services = discover_services
         if domain_name is not None:
             self.domain_name = domain_name
         if domain_server_targets_path_template is not None:
@@ -263,6 +268,27 @@ class ActiveDirectoryPayload(object):
         """
 
         self._discover_local_users = discover_local_users
+
+    @property
+    def discover_services(self):
+        """Gets the discover_services of this ActiveDirectoryPayload.  # noqa: E501
+
+
+        :return: The discover_services of this ActiveDirectoryPayload.  # noqa: E501
+        :rtype: bool
+        """
+        return self._discover_services
+
+    @discover_services.setter
+    def discover_services(self, discover_services):
+        """Sets the discover_services of this ActiveDirectoryPayload.
+
+
+        :param discover_services: The discover_services of this ActiveDirectoryPayload.  # noqa: E501
+        :type: bool
+        """
+
+        self._discover_services = discover_services
 
     @property
     def domain_name(self):

@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 **name** | **str** | Name of key to be created | 
 **overwrite** | **str** | When the overwrite flag is set, this command will only update an existing key [true/false] | [optional] [default to 'false']
 **rsa_file_data** | **str** | RSA private key data, base64 encoded | [optional] 
-**split_level** | **int** | The number of fragments that the item will be split into | [optional] [default to 2]
+**split_level** | **int** | The number of fragments that the item will be split into | [optional] [default to 3]
 **tag** | **list[str]** | List of the tags attached to this key | [optional] 
 **token** | **str** | Authentication token (see &#x60;/auth&#x60; and &#x60;/configure&#x60;) | [optional] 
 **uid_token** | **str** | The universal identity token, Required only for universal_identity authentication | [optional] 

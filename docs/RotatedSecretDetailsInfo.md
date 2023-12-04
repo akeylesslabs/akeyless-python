@@ -15,6 +15,7 @@ Name | Type | Description | Notes
 **rotator_status** | **str** | RotationStatus defines types of rotation Status | [optional] 
 **rotator_type** | **str** |  | [optional] 
 **same_password** | **bool** |  | [optional] 
+**services_details** | [**list[WindowsService]**](WindowsService.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

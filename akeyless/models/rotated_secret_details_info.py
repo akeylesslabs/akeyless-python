@@ -44,7 +44,8 @@ class RotatedSecretDetailsInfo(object):
         'rotator_creds_type': 'str',
         'rotator_status': 'str',
         'rotator_type': 'str',
-        'same_password': 'bool'
+        'same_password': 'bool',
+        'services_details': 'list[WindowsService]'
     }
 
     attribute_map = {
@@ -58,10 +59,11 @@ class RotatedSecretDetailsInfo(object):
         'rotator_creds_type': 'rotator_creds_type',
         'rotator_status': 'rotator_status',
         'rotator_type': 'rotator_type',
-        'same_password': 'same_password'
+        'same_password': 'same_password',
+        'services_details': 'services_details'
     }
 
-    def __init__(self, delete_previous_version_in_days=None, gw_cluster_id=None, last_rotation_error=None, number_of_versions_to_save=None, rotation_hour=None, rotation_interval_min=None, rotation_statement=None, rotator_creds_type=None, rotator_status=None, rotator_type=None, same_password=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, delete_previous_version_in_days=None, gw_cluster_id=None, last_rotation_error=None, number_of_versions_to_save=None, rotation_hour=None, rotation_interval_min=None, rotation_statement=None, rotator_creds_type=None, rotator_status=None, rotator_type=None, same_password=None, services_details=None, local_vars_configuration=None):  # noqa: E501
         """RotatedSecretDetailsInfo - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -78,6 +80,7 @@ class RotatedSecretDetailsInfo(object):
         self._rotator_status = None
         self._rotator_type = None
         self._same_password = None
+        self._services_details = None
         self.discriminator = None
 
         if delete_previous_version_in_days is not None:
@@ -102,6 +105,8 @@ class RotatedSecretDetailsInfo(object):
             self.rotator_type = rotator_type
         if same_password is not None:
             self.same_password = same_password
+        if services_details is not None:
+            self.services_details = services_details
 
     @property
     def delete_previous_version_in_days(self):
@@ -335,6 +340,27 @@ class RotatedSecretDetailsInfo(object):
         """
 
         self._same_password = same_password
+
+    @property
+    def services_details(self):
+        """Gets the services_details of this RotatedSecretDetailsInfo.  # noqa: E501
+
+
+        :return: The services_details of this RotatedSecretDetailsInfo.  # noqa: E501
+        :rtype: list[WindowsService]
+        """
+        return self._services_details
+
+    @services_details.setter
+    def services_details(self, services_details):
+        """Sets the services_details of this RotatedSecretDetailsInfo.
+
+
+        :param services_details: The services_details of this RotatedSecretDetailsInfo.  # noqa: E501
+        :type: list[WindowsService]
+        """
+
+        self._services_details = services_details
 
     def to_dict(self):
         """Returns the model properties as a dict"""

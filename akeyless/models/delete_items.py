@@ -34,6 +34,7 @@ class DeleteItems(object):
                             and the value is json key in definition.
     """
     openapi_types = {
+        'item': 'list[str]',
         'json': 'bool',
         'path': 'str',
         'token': 'str',
@@ -41,24 +42,28 @@ class DeleteItems(object):
     }
 
     attribute_map = {
+        'item': 'item',
         'json': 'json',
         'path': 'path',
         'token': 'token',
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, json=False, path=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, item=None, json=False, path='dummy_path', token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """DeleteItems - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
+        self._item = None
         self._json = None
         self._path = None
         self._token = None
         self._uid_token = None
         self.discriminator = None
 
+        if item is not None:
+            self.item = item
         if json is not None:
             self.json = json
         self.path = path
@@ -66,6 +71,29 @@ class DeleteItems(object):
             self.token = token
         if uid_token is not None:
             self.uid_token = uid_token
+
+    @property
+    def item(self):
+        """Gets the item of this DeleteItems.  # noqa: E501
+
+        A list of items to delete, To specify multiple items use argument multiple times  # noqa: E501
+
+        :return: The item of this DeleteItems.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._item
+
+    @item.setter
+    def item(self, item):
+        """Sets the item of this DeleteItems.
+
+        A list of items to delete, To specify multiple items use argument multiple times  # noqa: E501
+
+        :param item: The item of this DeleteItems.  # noqa: E501
+        :type: list[str]
+        """
+
+        self._item = item
 
     @property
     def json(self):

@@ -34,10 +34,12 @@ class CreateSSHCertIssuer(object):
                             and the value is json key in definition.
     """
     openapi_types = {
+        'ssh_cert_issuer_host_provider': 'str',
         'allowed_users': 'str',
         'delete_protection': 'str',
         'description': 'str',
         'extensions': 'dict(str, str)',
+        'host_provider': 'str',
         'json': 'bool',
         'metadata': 'str',
         'name': 'str',
@@ -50,16 +52,19 @@ class CreateSSHCertIssuer(object):
         'secure_access_use_internal_bastion': 'bool',
         'signer_key_name': 'str',
         'tag': 'list[str]',
+        'target': 'list[str]',
         'token': 'str',
         'ttl': 'int',
         'uid_token': 'str'
     }
 
     attribute_map = {
+        'ssh_cert_issuer_host_provider': 'SshCertIssuerHostProvider',
         'allowed_users': 'allowed-users',
         'delete_protection': 'delete_protection',
         'description': 'description',
         'extensions': 'extensions',
+        'host_provider': 'host-provider',
         'json': 'json',
         'metadata': 'metadata',
         'name': 'name',
@@ -72,21 +77,24 @@ class CreateSSHCertIssuer(object):
         'secure_access_use_internal_bastion': 'secure-access-use-internal-bastion',
         'signer_key_name': 'signer-key-name',
         'tag': 'tag',
+        'target': 'target',
         'token': 'token',
         'ttl': 'ttl',
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, allowed_users=None, delete_protection=None, description=None, extensions=None, json=False, metadata=None, name=None, principals=None, secure_access_bastion_api=None, secure_access_bastion_ssh=None, secure_access_enable=None, secure_access_host=None, secure_access_ssh_creds_user=None, secure_access_use_internal_bastion=None, signer_key_name=None, tag=None, token=None, ttl=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, ssh_cert_issuer_host_provider=None, allowed_users=None, delete_protection=None, description=None, extensions=None, host_provider='explicit', json=False, metadata=None, name=None, principals=None, secure_access_bastion_api=None, secure_access_bastion_ssh=None, secure_access_enable=None, secure_access_host=None, secure_access_ssh_creds_user=None, secure_access_use_internal_bastion=None, signer_key_name=None, tag=None, target=None, token=None, ttl=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """CreateSSHCertIssuer - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
+        self._ssh_cert_issuer_host_provider = None
         self._allowed_users = None
         self._delete_protection = None
         self._description = None
         self._extensions = None
+        self._host_provider = None
         self._json = None
         self._metadata = None
         self._name = None
@@ -99,11 +107,14 @@ class CreateSSHCertIssuer(object):
         self._secure_access_use_internal_bastion = None
         self._signer_key_name = None
         self._tag = None
+        self._target = None
         self._token = None
         self._ttl = None
         self._uid_token = None
         self.discriminator = None
 
+        if ssh_cert_issuer_host_provider is not None:
+            self.ssh_cert_issuer_host_provider = ssh_cert_issuer_host_provider
         self.allowed_users = allowed_users
         if delete_protection is not None:
             self.delete_protection = delete_protection
@@ -111,6 +122,8 @@ class CreateSSHCertIssuer(object):
             self.description = description
         if extensions is not None:
             self.extensions = extensions
+        if host_provider is not None:
+            self.host_provider = host_provider
         if json is not None:
             self.json = json
         if metadata is not None:
@@ -133,11 +146,34 @@ class CreateSSHCertIssuer(object):
         self.signer_key_name = signer_key_name
         if tag is not None:
             self.tag = tag
+        if target is not None:
+            self.target = target
         if token is not None:
             self.token = token
         self.ttl = ttl
         if uid_token is not None:
             self.uid_token = uid_token
+
+    @property
+    def ssh_cert_issuer_host_provider(self):
+        """Gets the ssh_cert_issuer_host_provider of this CreateSSHCertIssuer.  # noqa: E501
+
+
+        :return: The ssh_cert_issuer_host_provider of this CreateSSHCertIssuer.  # noqa: E501
+        :rtype: str
+        """
+        return self._ssh_cert_issuer_host_provider
+
+    @ssh_cert_issuer_host_provider.setter
+    def ssh_cert_issuer_host_provider(self, ssh_cert_issuer_host_provider):
+        """Sets the ssh_cert_issuer_host_provider of this CreateSSHCertIssuer.
+
+
+        :param ssh_cert_issuer_host_provider: The ssh_cert_issuer_host_provider of this CreateSSHCertIssuer.  # noqa: E501
+        :type: str
+        """
+
+        self._ssh_cert_issuer_host_provider = ssh_cert_issuer_host_provider
 
     @property
     def allowed_users(self):
@@ -232,6 +268,29 @@ class CreateSSHCertIssuer(object):
         """
 
         self._extensions = extensions
+
+    @property
+    def host_provider(self):
+        """Gets the host_provider of this CreateSSHCertIssuer.  # noqa: E501
+
+        Host provider type [explicit/target]  # noqa: E501
+
+        :return: The host_provider of this CreateSSHCertIssuer.  # noqa: E501
+        :rtype: str
+        """
+        return self._host_provider
+
+    @host_provider.setter
+    def host_provider(self, host_provider):
+        """Sets the host_provider of this CreateSSHCertIssuer.
+
+        Host provider type [explicit/target]  # noqa: E501
+
+        :param host_provider: The host_provider of this CreateSSHCertIssuer.  # noqa: E501
+        :type: str
+        """
+
+        self._host_provider = host_provider
 
     @property
     def json(self):
@@ -512,6 +571,29 @@ class CreateSSHCertIssuer(object):
         """
 
         self._tag = tag
+
+    @property
+    def target(self):
+        """Gets the target of this CreateSSHCertIssuer.  # noqa: E501
+
+        A list of existing targets to be associated, Relevant only for Secure Remote Access, To specify multiple targets use argument multiple times  # noqa: E501
+
+        :return: The target of this CreateSSHCertIssuer.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._target
+
+    @target.setter
+    def target(self, target):
+        """Sets the target of this CreateSSHCertIssuer.
+
+        A list of existing targets to be associated, Relevant only for Secure Remote Access, To specify multiple targets use argument multiple times  # noqa: E501
+
+        :param target: The target of this CreateSSHCertIssuer.  # noqa: E501
+        :type: list[str]
+        """
+
+        self._target = target
 
     @property
     def token(self):

@@ -34,11 +34,13 @@ class UpdateSSHCertIssuer(object):
                             and the value is json key in definition.
     """
     openapi_types = {
+        'ssh_cert_issuer_host_provider': 'str',
         'add_tag': 'list[str]',
         'allowed_users': 'str',
         'delete_protection': 'str',
         'description': 'str',
         'extensions': 'dict(str, str)',
+        'host_provider': 'str',
         'json': 'bool',
         'metadata': 'str',
         'name': 'str',
@@ -58,11 +60,13 @@ class UpdateSSHCertIssuer(object):
     }
 
     attribute_map = {
+        'ssh_cert_issuer_host_provider': 'SshCertIssuerHostProvider',
         'add_tag': 'add-tag',
         'allowed_users': 'allowed-users',
         'delete_protection': 'delete_protection',
         'description': 'description',
         'extensions': 'extensions',
+        'host_provider': 'host-provider',
         'json': 'json',
         'metadata': 'metadata',
         'name': 'name',
@@ -81,17 +85,19 @@ class UpdateSSHCertIssuer(object):
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, add_tag=None, allowed_users=None, delete_protection=None, description=None, extensions=None, json=False, metadata=None, name=None, new_name=None, principals=None, rm_tag=None, secure_access_bastion_api=None, secure_access_bastion_ssh=None, secure_access_enable=None, secure_access_host=None, secure_access_ssh_creds_user=None, secure_access_use_internal_bastion=None, signer_key_name=None, token=None, ttl=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, ssh_cert_issuer_host_provider=None, add_tag=None, allowed_users=None, delete_protection=None, description=None, extensions=None, host_provider='explicit', json=False, metadata=None, name=None, new_name=None, principals=None, rm_tag=None, secure_access_bastion_api=None, secure_access_bastion_ssh=None, secure_access_enable=None, secure_access_host=None, secure_access_ssh_creds_user=None, secure_access_use_internal_bastion=None, signer_key_name=None, token=None, ttl=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """UpdateSSHCertIssuer - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
+        self._ssh_cert_issuer_host_provider = None
         self._add_tag = None
         self._allowed_users = None
         self._delete_protection = None
         self._description = None
         self._extensions = None
+        self._host_provider = None
         self._json = None
         self._metadata = None
         self._name = None
@@ -110,6 +116,8 @@ class UpdateSSHCertIssuer(object):
         self._uid_token = None
         self.discriminator = None
 
+        if ssh_cert_issuer_host_provider is not None:
+            self.ssh_cert_issuer_host_provider = ssh_cert_issuer_host_provider
         if add_tag is not None:
             self.add_tag = add_tag
         self.allowed_users = allowed_users
@@ -119,6 +127,8 @@ class UpdateSSHCertIssuer(object):
             self.description = description
         if extensions is not None:
             self.extensions = extensions
+        if host_provider is not None:
+            self.host_provider = host_provider
         if json is not None:
             self.json = json
         if metadata is not None:
@@ -148,6 +158,27 @@ class UpdateSSHCertIssuer(object):
         self.ttl = ttl
         if uid_token is not None:
             self.uid_token = uid_token
+
+    @property
+    def ssh_cert_issuer_host_provider(self):
+        """Gets the ssh_cert_issuer_host_provider of this UpdateSSHCertIssuer.  # noqa: E501
+
+
+        :return: The ssh_cert_issuer_host_provider of this UpdateSSHCertIssuer.  # noqa: E501
+        :rtype: str
+        """
+        return self._ssh_cert_issuer_host_provider
+
+    @ssh_cert_issuer_host_provider.setter
+    def ssh_cert_issuer_host_provider(self, ssh_cert_issuer_host_provider):
+        """Sets the ssh_cert_issuer_host_provider of this UpdateSSHCertIssuer.
+
+
+        :param ssh_cert_issuer_host_provider: The ssh_cert_issuer_host_provider of this UpdateSSHCertIssuer.  # noqa: E501
+        :type: str
+        """
+
+        self._ssh_cert_issuer_host_provider = ssh_cert_issuer_host_provider
 
     @property
     def add_tag(self):
@@ -265,6 +296,29 @@ class UpdateSSHCertIssuer(object):
         """
 
         self._extensions = extensions
+
+    @property
+    def host_provider(self):
+        """Gets the host_provider of this UpdateSSHCertIssuer.  # noqa: E501
+
+        Host provider type [explicit/target]  # noqa: E501
+
+        :return: The host_provider of this UpdateSSHCertIssuer.  # noqa: E501
+        :rtype: str
+        """
+        return self._host_provider
+
+    @host_provider.setter
+    def host_provider(self, host_provider):
+        """Sets the host_provider of this UpdateSSHCertIssuer.
+
+        Host provider type [explicit/target]  # noqa: E501
+
+        :param host_provider: The host_provider of this UpdateSSHCertIssuer.  # noqa: E501
+        :type: str
+        """
+
+        self._host_provider = host_provider
 
     @property
     def json(self):

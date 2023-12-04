@@ -34,38 +34,69 @@ class RotateSecret(object):
                             and the value is json key in definition.
     """
     openapi_types = {
+        'rotate_all_services_boolean': 'bool',
         'json': 'bool',
         'name': 'str',
+        'rotate_all_services': 'str',
         'token': 'str',
         'uid_token': 'str'
     }
 
     attribute_map = {
+        'rotate_all_services_boolean': 'RotateAllServicesBoolean',
         'json': 'json',
         'name': 'name',
+        'rotate_all_services': 'rotate-all-services',
         'token': 'token',
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, json=False, name=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, rotate_all_services_boolean=None, json=False, name=None, rotate_all_services='false', token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """RotateSecret - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
+        self._rotate_all_services_boolean = None
         self._json = None
         self._name = None
+        self._rotate_all_services = None
         self._token = None
         self._uid_token = None
         self.discriminator = None
 
+        if rotate_all_services_boolean is not None:
+            self.rotate_all_services_boolean = rotate_all_services_boolean
         if json is not None:
             self.json = json
         self.name = name
+        if rotate_all_services is not None:
+            self.rotate_all_services = rotate_all_services
         if token is not None:
             self.token = token
         if uid_token is not None:
             self.uid_token = uid_token
+
+    @property
+    def rotate_all_services_boolean(self):
+        """Gets the rotate_all_services_boolean of this RotateSecret.  # noqa: E501
+
+
+        :return: The rotate_all_services_boolean of this RotateSecret.  # noqa: E501
+        :rtype: bool
+        """
+        return self._rotate_all_services_boolean
+
+    @rotate_all_services_boolean.setter
+    def rotate_all_services_boolean(self, rotate_all_services_boolean):
+        """Sets the rotate_all_services_boolean of this RotateSecret.
+
+
+        :param rotate_all_services_boolean: The rotate_all_services_boolean of this RotateSecret.  # noqa: E501
+        :type: bool
+        """
+
+        self._rotate_all_services_boolean = rotate_all_services_boolean
 
     @property
     def json(self):
@@ -114,6 +145,29 @@ class RotateSecret(object):
             raise ValueError("Invalid value for `name`, must not be `None`")  # noqa: E501
 
         self._name = name
+
+    @property
+    def rotate_all_services(self):
+        """Gets the rotate_all_services of this RotateSecret.  # noqa: E501
+
+        Rotate all associated services  # noqa: E501
+
+        :return: The rotate_all_services of this RotateSecret.  # noqa: E501
+        :rtype: str
+        """
+        return self._rotate_all_services
+
+    @rotate_all_services.setter
+    def rotate_all_services(self, rotate_all_services):
+        """Sets the rotate_all_services of this RotateSecret.
+
+        Rotate all associated services  # noqa: E501
+
+        :param rotate_all_services: The rotate_all_services of this RotateSecret.  # noqa: E501
+        :type: str
+        """
+
+        self._rotate_all_services = rotate_all_services
 
     @property
     def token(self):

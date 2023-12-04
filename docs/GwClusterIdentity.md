@@ -3,6 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**action_allowed** | **bool** |  | [optional] 
 **allowed** | **bool** |  | [optional] 
 **allowed_access_ids** | **list[str]** |  | [optional] 
 **cluster_name** | **str** |  | [optional] 

@@ -3,11 +3,13 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**ssh_cert_issuer_host_provider** | **str** |  | [optional] 
 **add_tag** | **list[str]** | List of the new tags that will be attached to this item | [optional] 
 **allowed_users** | **str** | Users allowed to fetch the certificate, e.g root,ubuntu | 
 **delete_protection** | **str** | Protection from accidental deletion of this item [true/false] | [optional] 
 **description** | **str** | Description of the object | [optional] 
 **extensions** | **dict(str, str)** | Signed certificates with extensions, e.g permit-port-forwarding&#x3D;\\\&quot;\\\&quot; | [optional] 
+**host_provider** | **str** | Host provider type [explicit/target] | [optional] [default to 'explicit']
 **json** | **bool** | Set output format to JSON | [optional] [default to False]
 **metadata** | **str** | Deprecated - use description | [optional] 
 **name** | **str** | SSH certificate issuer name | 

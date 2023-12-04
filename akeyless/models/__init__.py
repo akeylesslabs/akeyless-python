@@ -613,6 +613,7 @@ from akeyless.models.system_access_creds_settings import SystemAccessCredsSettin
 from akeyless.models.target import Target
 from akeyless.models.target_item_association import TargetItemAssociation
 from akeyless.models.target_item_version import TargetItemVersion
+from akeyless.models.target_name_with_hosts import TargetNameWithHosts
 from akeyless.models.target_type_details_input import TargetTypeDetailsInput
 from akeyless.models.tmp_user_data import TmpUserData
 from akeyless.models.tokenize import Tokenize
@@ -720,6 +721,7 @@ from akeyless.models.update_zero_ssl_target import UpdateZeroSSLTarget
 from akeyless.models.update_zero_ssl_target_output import UpdateZeroSSLTargetOutput
 from akeyless.models.upload_pkcs12 import UploadPKCS12
 from akeyless.models.upload_rsa import UploadRSA
+from akeyless.models.usage_event_setting import UsageEventSetting
 from akeyless.models.validate_token import ValidateToken
 from akeyless.models.validate_token_output import ValidateTokenOutput
 from akeyless.models.vaultless_tokenizer_info import VaultlessTokenizerInfo
@@ -734,5 +736,7 @@ from akeyless.models.verify_pki_cert_output import VerifyPKICertOutput
 from akeyless.models.verify_pki_cert_with_classic_key import VerifyPKICertWithClassicKey
 from akeyless.models.verify_rsa_ssa_pss import VerifyRsaSsaPss
 from akeyless.models.web_target_details import WebTargetDetails
+from akeyless.models.windows_service import WindowsService
+from akeyless.models.windows_service_attributes import WindowsServiceAttributes
 from akeyless.models.windows_target_details import WindowsTargetDetails
 from akeyless.models.zero_ssl_target_details import ZeroSSLTargetDetails

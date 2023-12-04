@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **auto_rotate_rotation_hour** | **int** |  | [optional] 
 **computer_base_dn** | **str** |  | [optional] 
 **discover_local_users** | **bool** |  | [optional] 
+**discover_services** | **bool** |  | [optional] 
 **domain_name** | **str** |  | [optional] 
 **domain_server_targets_path_template** | **str** |  | [optional] 
 **domain_users_rotated_secrets_path_template** | **str** |  | [optional] 

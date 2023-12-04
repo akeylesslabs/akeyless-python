@@ -35,13 +35,11 @@ class GetCertificateValue(object):
     """
     openapi_types = {
         'cert_issuer_name': 'str',
-        'certificate_file_output': 'str',
         'display_id': 'str',
         'ignore_cache': 'str',
         'issuance_token': 'str',
         'json': 'bool',
         'name': 'str',
-        'private_key_file_output': 'str',
         'token': 'str',
         'uid_token': 'str',
         'version': 'int'
@@ -49,32 +47,28 @@ class GetCertificateValue(object):
 
     attribute_map = {
         'cert_issuer_name': 'cert-issuer-name',
-        'certificate_file_output': 'certificate-file-output',
         'display_id': 'display-id',
         'ignore_cache': 'ignore-cache',
         'issuance_token': 'issuance-token',
         'json': 'json',
         'name': 'name',
-        'private_key_file_output': 'private-key-file-output',
         'token': 'token',
         'uid_token': 'uid-token',
         'version': 'version'
     }
 
-    def __init__(self, cert_issuer_name=None, certificate_file_output=None, display_id=None, ignore_cache='false', issuance_token=None, json=False, name='dummy_certificate_name', private_key_file_output=None, token=None, uid_token=None, version=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, cert_issuer_name=None, display_id=None, ignore_cache='false', issuance_token=None, json=False, name='dummy_certificate_name', token=None, uid_token=None, version=None, local_vars_configuration=None):  # noqa: E501
         """GetCertificateValue - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._cert_issuer_name = None
-        self._certificate_file_output = None
         self._display_id = None
         self._ignore_cache = None
         self._issuance_token = None
         self._json = None
         self._name = None
-        self._private_key_file_output = None
         self._token = None
         self._uid_token = None
         self._version = None
@@ -82,8 +76,6 @@ class GetCertificateValue(object):
 
         if cert_issuer_name is not None:
             self.cert_issuer_name = cert_issuer_name
-        if certificate_file_output is not None:
-            self.certificate_file_output = certificate_file_output
         if display_id is not None:
             self.display_id = display_id
         if ignore_cache is not None:
@@ -93,8 +85,6 @@ class GetCertificateValue(object):
         if json is not None:
             self.json = json
         self.name = name
-        if private_key_file_output is not None:
-            self.private_key_file_output = private_key_file_output
         if token is not None:
             self.token = token
         if uid_token is not None:
@@ -124,29 +114,6 @@ class GetCertificateValue(object):
         """
 
         self._cert_issuer_name = cert_issuer_name
-
-    @property
-    def certificate_file_output(self):
-        """Gets the certificate_file_output of this GetCertificateValue.  # noqa: E501
-
-        File to write the certificates to.  # noqa: E501
-
-        :return: The certificate_file_output of this GetCertificateValue.  # noqa: E501
-        :rtype: str
-        """
-        return self._certificate_file_output
-
-    @certificate_file_output.setter
-    def certificate_file_output(self, certificate_file_output):
-        """Sets the certificate_file_output of this GetCertificateValue.
-
-        File to write the certificates to.  # noqa: E501
-
-        :param certificate_file_output: The certificate_file_output of this GetCertificateValue.  # noqa: E501
-        :type: str
-        """
-
-        self._certificate_file_output = certificate_file_output
 
     @property
     def display_id(self):
@@ -264,29 +231,6 @@ class GetCertificateValue(object):
             raise ValueError("Invalid value for `name`, must not be `None`")  # noqa: E501
 
         self._name = name
-
-    @property
-    def private_key_file_output(self):
-        """Gets the private_key_file_output of this GetCertificateValue.  # noqa: E501
-
-        File to write the private key to.  # noqa: E501
-
-        :return: The private_key_file_output of this GetCertificateValue.  # noqa: E501
-        :rtype: str
-        """
-        return self._private_key_file_output
-
-    @private_key_file_output.setter
-    def private_key_file_output(self, private_key_file_output):
-        """Sets the private_key_file_output of this GetCertificateValue.
-
-        File to write the private key to.  # noqa: E501
-
-        :param private_key_file_output: The private_key_file_output of this GetCertificateValue.  # noqa: E501
-        :type: str
-        """
-
-        self._private_key_file_output = private_key_file_output
 
     @property
     def token(self):

@@ -3,6 +3,8 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**auth_type** | **str** |  | [optional] 
+**client_id** | **str** | Auth - JWT | [optional] 
 **client_permissions** | **list[str]** |  | [optional] 
 **comment** | **str** |  | [optional] 
 **creation_date** | **datetime** |  | [optional] 
@@ -21,7 +23,8 @@ Name | Type | Description | Notes
 **runner_type** | **str** |  | [optional] 
 **timespan_in_seconds** | **int** |  | [optional] 
 **to_emails** | [**list[EmailEntry]**](EmailEntry.md) |  | [optional] 
-**username** | **str** |  | [optional] 
+**user_email** | **str** |  | [optional] 
+**username** | **str** | Auth - User Password | [optional] 
 **with_customer_fragment** | **bool** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

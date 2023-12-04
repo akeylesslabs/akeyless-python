@@ -34,6 +34,7 @@ class GwClusterIdentity(object):
                             and the value is json key in definition.
     """
     openapi_types = {
+        'action_allowed': 'bool',
         'allowed': 'bool',
         'allowed_access_ids': 'list[str]',
         'cluster_name': 'str',
@@ -50,6 +51,7 @@ class GwClusterIdentity(object):
     }
 
     attribute_map = {
+        'action_allowed': 'action_allowed',
         'allowed': 'allowed',
         'allowed_access_ids': 'allowed_access_ids',
         'cluster_name': 'cluster_name',
@@ -65,12 +67,13 @@ class GwClusterIdentity(object):
         'status_description': 'status_description'
     }
 
-    def __init__(self, allowed=None, allowed_access_ids=None, cluster_name=None, cluster_url=None, current_gw=None, customer_fragment_ids=None, customer_fragments=None, default_protection_key_id=None, default_secret_location=None, display_name=None, id=None, status=None, status_description=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, action_allowed=None, allowed=None, allowed_access_ids=None, cluster_name=None, cluster_url=None, current_gw=None, customer_fragment_ids=None, customer_fragments=None, default_protection_key_id=None, default_secret_location=None, display_name=None, id=None, status=None, status_description=None, local_vars_configuration=None):  # noqa: E501
         """GwClusterIdentity - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
+        self._action_allowed = None
         self._allowed = None
         self._allowed_access_ids = None
         self._cluster_name = None
@@ -86,6 +89,8 @@ class GwClusterIdentity(object):
         self._status_description = None
         self.discriminator = None
 
+        if action_allowed is not None:
+            self.action_allowed = action_allowed
         if allowed is not None:
             self.allowed = allowed
         if allowed_access_ids is not None:
@@ -112,6 +117,27 @@ class GwClusterIdentity(object):
             self.status = status
         if status_description is not None:
             self.status_description = status_description
+
+    @property
+    def action_allowed(self):
+        """Gets the action_allowed of this GwClusterIdentity.  # noqa: E501
+
+
+        :return: The action_allowed of this GwClusterIdentity.  # noqa: E501
+        :rtype: bool
+        """
+        return self._action_allowed
+
+    @action_allowed.setter
+    def action_allowed(self, action_allowed):
+        """Sets the action_allowed of this GwClusterIdentity.
+
+
+        :param action_allowed: The action_allowed of this GwClusterIdentity.  # noqa: E501
+        :type: bool
+        """
+
+        self._action_allowed = action_allowed
 
     @property
     def allowed(self):
