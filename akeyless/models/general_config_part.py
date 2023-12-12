@@ -43,6 +43,7 @@ class GeneralConfigPart(object):
         'enable_tls_curl': 'bool',
         'enable_tls_hvp': 'bool',
         'gw_cluster_url': 'str',
+        'notify_on_status_change': 'bool',
         'tcp_port': 'str',
         'tls_cert': 'str',
         'tls_key': 'str'
@@ -58,12 +59,13 @@ class GeneralConfigPart(object):
         'enable_tls_curl': 'enable_tls_curl',
         'enable_tls_hvp': 'enable_tls_hvp',
         'gw_cluster_url': 'gw_cluster_url',
+        'notify_on_status_change': 'notify_on_status_change',
         'tcp_port': 'tcp_port',
         'tls_cert': 'tls_cert',
         'tls_key': 'tls_key'
     }
 
-    def __init__(self, akeyless_url=None, api_token_ttl=None, display_name=None, enable_sni_proxy=None, enable_tls=None, enable_tls_configure=None, enable_tls_curl=None, enable_tls_hvp=None, gw_cluster_url=None, tcp_port=None, tls_cert=None, tls_key=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, akeyless_url=None, api_token_ttl=None, display_name=None, enable_sni_proxy=None, enable_tls=None, enable_tls_configure=None, enable_tls_curl=None, enable_tls_hvp=None, gw_cluster_url=None, notify_on_status_change=None, tcp_port=None, tls_cert=None, tls_key=None, local_vars_configuration=None):  # noqa: E501
         """GeneralConfigPart - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -78,6 +80,7 @@ class GeneralConfigPart(object):
         self._enable_tls_curl = None
         self._enable_tls_hvp = None
         self._gw_cluster_url = None
+        self._notify_on_status_change = None
         self._tcp_port = None
         self._tls_cert = None
         self._tls_key = None
@@ -101,6 +104,8 @@ class GeneralConfigPart(object):
             self.enable_tls_hvp = enable_tls_hvp
         if gw_cluster_url is not None:
             self.gw_cluster_url = gw_cluster_url
+        if notify_on_status_change is not None:
+            self.notify_on_status_change = notify_on_status_change
         if tcp_port is not None:
             self.tcp_port = tcp_port
         if tls_cert is not None:
@@ -298,6 +303,27 @@ class GeneralConfigPart(object):
         """
 
         self._gw_cluster_url = gw_cluster_url
+
+    @property
+    def notify_on_status_change(self):
+        """Gets the notify_on_status_change of this GeneralConfigPart.  # noqa: E501
+
+
+        :return: The notify_on_status_change of this GeneralConfigPart.  # noqa: E501
+        :rtype: bool
+        """
+        return self._notify_on_status_change
+
+    @notify_on_status_change.setter
+    def notify_on_status_change(self, notify_on_status_change):
+        """Sets the notify_on_status_change of this GeneralConfigPart.
+
+
+        :param notify_on_status_change: The notify_on_status_change of this GeneralConfigPart.  # noqa: E501
+        :type: bool
+        """
+
+        self._notify_on_status_change = notify_on_status_change
 
     @property
     def tcp_port(self):
