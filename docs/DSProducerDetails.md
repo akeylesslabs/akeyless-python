@@ -89,6 +89,7 @@ Name | Type | Description | Notes
 **gcp_service_account_email** | **str** | GCPServiceAccountEmail overrides the deprecated field from the target | [optional] 
 **gcp_service_account_key** | **str** |  | [optional] 
 **gcp_service_account_key_base64** | **str** |  | [optional] 
+**gcp_service_account_key_id** | **str** |  | [optional] 
 **gcp_service_account_type** | **str** |  | [optional] 
 **gcp_tmp_service_account_name** | **str** |  | [optional] 
 **gcp_token_lifetime** | **str** |  | [optional] 

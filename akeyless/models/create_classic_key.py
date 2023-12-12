@@ -43,6 +43,7 @@ class CreateClassicKey(object):
         'certificate_organization': 'str',
         'certificate_province': 'str',
         'certificate_ttl': 'int',
+        'conf_file_data': 'str',
         'delete_protection': 'str',
         'description': 'str',
         'generate_self_signed_certificate': 'bool',
@@ -67,6 +68,7 @@ class CreateClassicKey(object):
         'certificate_organization': 'certificate-organization',
         'certificate_province': 'certificate-province',
         'certificate_ttl': 'certificate-ttl',
+        'conf_file_data': 'conf-file-data',
         'delete_protection': 'delete_protection',
         'description': 'description',
         'generate_self_signed_certificate': 'generate-self-signed-certificate',
@@ -81,7 +83,7 @@ class CreateClassicKey(object):
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, alg=None, cert_file_data=None, certificate_common_name=None, certificate_country=None, certificate_digest_algo=None, certificate_locality=None, certificate_organization=None, certificate_province=None, certificate_ttl=None, delete_protection=None, description=None, generate_self_signed_certificate=None, gpg_alg=None, json=False, key_data=None, metadata=None, name=None, protection_key_name=None, tags=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, alg=None, cert_file_data=None, certificate_common_name=None, certificate_country=None, certificate_digest_algo=None, certificate_locality=None, certificate_organization=None, certificate_province=None, certificate_ttl=None, conf_file_data=None, delete_protection=None, description=None, generate_self_signed_certificate=None, gpg_alg=None, json=False, key_data=None, metadata=None, name=None, protection_key_name=None, tags=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """CreateClassicKey - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -96,6 +98,7 @@ class CreateClassicKey(object):
         self._certificate_organization = None
         self._certificate_province = None
         self._certificate_ttl = None
+        self._conf_file_data = None
         self._delete_protection = None
         self._description = None
         self._generate_self_signed_certificate = None
@@ -127,6 +130,8 @@ class CreateClassicKey(object):
             self.certificate_province = certificate_province
         if certificate_ttl is not None:
             self.certificate_ttl = certificate_ttl
+        if conf_file_data is not None:
+            self.conf_file_data = conf_file_data
         if delete_protection is not None:
             self.delete_protection = delete_protection
         if description is not None:
@@ -359,6 +364,29 @@ class CreateClassicKey(object):
         """
 
         self._certificate_ttl = certificate_ttl
+
+    @property
+    def conf_file_data(self):
+        """Gets the conf_file_data of this CreateClassicKey.  # noqa: E501
+
+        The csr config data in base64 encoding  # noqa: E501
+
+        :return: The conf_file_data of this CreateClassicKey.  # noqa: E501
+        :rtype: str
+        """
+        return self._conf_file_data
+
+    @conf_file_data.setter
+    def conf_file_data(self, conf_file_data):
+        """Sets the conf_file_data of this CreateClassicKey.
+
+        The csr config data in base64 encoding  # noqa: E501
+
+        :param conf_file_data: The conf_file_data of this CreateClassicKey.  # noqa: E501
+        :type: str
+        """
+
+        self._conf_file_data = conf_file_data
 
     @property
     def delete_protection(self):

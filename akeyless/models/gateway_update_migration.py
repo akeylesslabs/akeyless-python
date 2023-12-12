@@ -40,6 +40,8 @@ class GatewayUpdateMigration(object):
         '_1password_url': 'str',
         '_1password_vaults': 'list[str]',
         'ad_discover_services': 'str',
+        'ad_discovery_types': 'list[str]',
+        'ad_os_filter': 'str',
         'ad_ssh_port': 'str',
         'ad_targets_type': 'str',
         'ad_winrm_over_http': 'str',
@@ -103,6 +105,8 @@ class GatewayUpdateMigration(object):
         '_1password_url': '1password-url',
         '_1password_vaults': '1password-vaults',
         'ad_discover_services': 'ad-discover-services',
+        'ad_discovery_types': 'ad-discovery-types',
+        'ad_os_filter': 'ad-os-filter',
         'ad_ssh_port': 'ad-ssh-port',
         'ad_targets_type': 'ad-targets-type',
         'ad_winrm_over_http': 'ad-winrm-over-http',
@@ -159,7 +163,7 @@ class GatewayUpdateMigration(object):
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, _1password_email=None, _1password_password=None, _1password_secret_key=None, _1password_url=None, _1password_vaults=None, ad_discover_services='false', ad_ssh_port='22', ad_targets_type='windows', ad_winrm_over_http='false', ad_winrm_port='5986', ad_auto_rotate=None, ad_computer_base_dn=None, ad_discover_local_users=None, ad_domain_name=None, ad_domain_users_path_template=None, ad_local_users_ignore=None, ad_local_users_path_template=None, ad_rotation_hour=None, ad_rotation_interval=None, ad_sra_enable_rdp=None, ad_target_name=None, ad_targets_path_template=None, ad_user_base_dn=None, ad_user_groups=None, aws_key=None, aws_key_id=None, aws_region='us-east-2', azure_client_id=None, azure_kv_name=None, azure_secret=None, azure_tenant_id=None, gcp_key=None, hashi_json='true', hashi_ns=None, hashi_token=None, hashi_url=None, id=None, json=False, k8s_ca_certificate=None, k8s_client_certificate=None, k8s_client_key=None, k8s_namespace=None, k8s_password=None, k8s_skip_system=None, k8s_token=None, k8s_url=None, k8s_username=None, name=None, new_name=None, protection_key=None, si_auto_rotate=None, si_rotation_hour=None, si_rotation_interval=None, si_sra_enable_rdp='false', si_target_name=None, si_users_ignore=None, si_users_path_template=None, target_location=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, _1password_email=None, _1password_password=None, _1password_secret_key=None, _1password_url=None, _1password_vaults=None, ad_discover_services='false', ad_discovery_types=None, ad_os_filter=None, ad_ssh_port='22', ad_targets_type='windows', ad_winrm_over_http='false', ad_winrm_port='5986', ad_auto_rotate=None, ad_computer_base_dn=None, ad_discover_local_users=None, ad_domain_name=None, ad_domain_users_path_template=None, ad_local_users_ignore=None, ad_local_users_path_template=None, ad_rotation_hour=None, ad_rotation_interval=None, ad_sra_enable_rdp=None, ad_target_name=None, ad_targets_path_template=None, ad_user_base_dn=None, ad_user_groups=None, aws_key=None, aws_key_id=None, aws_region='us-east-2', azure_client_id=None, azure_kv_name=None, azure_secret=None, azure_tenant_id=None, gcp_key=None, hashi_json='true', hashi_ns=None, hashi_token=None, hashi_url=None, id=None, json=False, k8s_ca_certificate=None, k8s_client_certificate=None, k8s_client_key=None, k8s_namespace=None, k8s_password=None, k8s_skip_system=None, k8s_token=None, k8s_url=None, k8s_username=None, name=None, new_name=None, protection_key=None, si_auto_rotate=None, si_rotation_hour=None, si_rotation_interval=None, si_sra_enable_rdp='false', si_target_name=None, si_users_ignore=None, si_users_path_template=None, target_location=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """GatewayUpdateMigration - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -171,6 +175,8 @@ class GatewayUpdateMigration(object):
         self.__1password_url = None
         self.__1password_vaults = None
         self._ad_discover_services = None
+        self._ad_discovery_types = None
+        self._ad_os_filter = None
         self._ad_ssh_port = None
         self._ad_targets_type = None
         self._ad_winrm_over_http = None
@@ -239,6 +245,10 @@ class GatewayUpdateMigration(object):
             self._1password_vaults = _1password_vaults
         if ad_discover_services is not None:
             self.ad_discover_services = ad_discover_services
+        if ad_discovery_types is not None:
+            self.ad_discovery_types = ad_discovery_types
+        if ad_os_filter is not None:
+            self.ad_os_filter = ad_os_filter
         if ad_ssh_port is not None:
             self.ad_ssh_port = ad_ssh_port
         if ad_targets_type is not None:
@@ -484,6 +494,52 @@ class GatewayUpdateMigration(object):
         self._ad_discover_services = ad_discover_services
 
     @property
+    def ad_discovery_types(self):
+        """Gets the ad_discovery_types of this GatewayUpdateMigration.  # noqa: E501
+
+        Set migration discovery types (domain-users, computers, local-users). (Relevant only for Active Directory migration)  # noqa: E501
+
+        :return: The ad_discovery_types of this GatewayUpdateMigration.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._ad_discovery_types
+
+    @ad_discovery_types.setter
+    def ad_discovery_types(self, ad_discovery_types):
+        """Sets the ad_discovery_types of this GatewayUpdateMigration.
+
+        Set migration discovery types (domain-users, computers, local-users). (Relevant only for Active Directory migration)  # noqa: E501
+
+        :param ad_discovery_types: The ad_discovery_types of this GatewayUpdateMigration.  # noqa: E501
+        :type: list[str]
+        """
+
+        self._ad_discovery_types = ad_discovery_types
+
+    @property
+    def ad_os_filter(self):
+        """Gets the ad_os_filter of this GatewayUpdateMigration.  # noqa: E501
+
+        Filter by Operating System to run the migration, can be used with wildcards, e.g. SRV20* (Relevant only for Active Directory migration)  # noqa: E501
+
+        :return: The ad_os_filter of this GatewayUpdateMigration.  # noqa: E501
+        :rtype: str
+        """
+        return self._ad_os_filter
+
+    @ad_os_filter.setter
+    def ad_os_filter(self, ad_os_filter):
+        """Sets the ad_os_filter of this GatewayUpdateMigration.
+
+        Filter by Operating System to run the migration, can be used with wildcards, e.g. SRV20* (Relevant only for Active Directory migration)  # noqa: E501
+
+        :param ad_os_filter: The ad_os_filter of this GatewayUpdateMigration.  # noqa: E501
+        :type: str
+        """
+
+        self._ad_os_filter = ad_os_filter
+
+    @property
     def ad_ssh_port(self):
         """Gets the ad_ssh_port of this GatewayUpdateMigration.  # noqa: E501
 
@@ -625,7 +681,7 @@ class GatewayUpdateMigration(object):
     def ad_discover_local_users(self):
         """Gets the ad_discover_local_users of this GatewayUpdateMigration.  # noqa: E501
 
-        Enable/Disable discovery of local users from each domain server and migrate them as SSH/Windows Rotated Secrets. Default is false: only domain users will be migrated. Discovery of local users might require further installation of SSH on the servers, based on the supplied computer base DN. This will be implemented automatically as part of the migration process (Relevant only for Active Directory migration)  # noqa: E501
+        Enable/Disable discovery of local users from each domain server and migrate them as SSH/Windows Rotated Secrets. Default is false: only domain users will be migrated. Discovery of local users might require further installation of SSH on the servers, based on the supplied computer base DN. This will be implemented automatically as part of the migration process (Relevant only for Active Directory migration) Deprecated: use AdDiscoverTypes  # noqa: E501
 
         :return: The ad_discover_local_users of this GatewayUpdateMigration.  # noqa: E501
         :rtype: str
@@ -636,7 +692,7 @@ class GatewayUpdateMigration(object):
     def ad_discover_local_users(self, ad_discover_local_users):
         """Sets the ad_discover_local_users of this GatewayUpdateMigration.
 
-        Enable/Disable discovery of local users from each domain server and migrate them as SSH/Windows Rotated Secrets. Default is false: only domain users will be migrated. Discovery of local users might require further installation of SSH on the servers, based on the supplied computer base DN. This will be implemented automatically as part of the migration process (Relevant only for Active Directory migration)  # noqa: E501
+        Enable/Disable discovery of local users from each domain server and migrate them as SSH/Windows Rotated Secrets. Default is false: only domain users will be migrated. Discovery of local users might require further installation of SSH on the servers, based on the supplied computer base DN. This will be implemented automatically as part of the migration process (Relevant only for Active Directory migration) Deprecated: use AdDiscoverTypes  # noqa: E501
 
         :param ad_discover_local_users: The ad_discover_local_users of this GatewayUpdateMigration.  # noqa: E501
         :type: str

@@ -262,6 +262,7 @@ Method | HTTP request | Description
 [**update_aws_target_details**](V2Api.md#update_aws_target_details) | **POST** /update-aws-target-details | 
 [**update_azure_target**](V2Api.md#update_azure_target) | **POST** /update-azure-target | 
 [**update_certificate_value**](V2Api.md#update_certificate_value) | **POST** /update-certificate-value | 
+[**update_classic_key_certificate**](V2Api.md#update_classic_key_certificate) | **POST** /update-classic-key-certificate | 
 [**update_db_target**](V2Api.md#update_db_target) | **POST** /update-db-target | 
 [**update_db_target_details**](V2Api.md#update_db_target_details) | **POST** /update-db-target-details | 
 [**update_dockerhub_target**](V2Api.md#update_dockerhub_target) | **POST** /update-dockerhub-target | 
@@ -15775,6 +15776,66 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | updateCertificateValueResponse wraps response body. |  -  |
+**0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **update_classic_key_certificate**
+> object update_classic_key_certificate(body)
+
+
+
+### Example
+
+```python
+from __future__ import print_function
+import time
+import akeyless
+from akeyless.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.akeyless.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = akeyless.Configuration(
+    host = "https://api.akeyless.io"
+)
+
+
+# Enter a context with an instance of the API client
+with akeyless.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = akeyless.V2Api(api_client)
+    body = akeyless.UpdateClassicKeyCertificate() # UpdateClassicKeyCertificate | 
+
+    try:
+        api_response = api_instance.update_classic_key_certificate(body)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling V2Api->update_classic_key_certificate: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**UpdateClassicKeyCertificate**](UpdateClassicKeyCertificate.md)|  | 
+
+### Return type
+
+**object**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | UpdateClassicKeyCertificateResponse wraps response body. |  -  |
 **0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

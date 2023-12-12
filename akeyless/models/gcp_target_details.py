@@ -37,6 +37,7 @@ class GcpTargetDetails(object):
         'gcp_service_account_email': 'str',
         'gcp_service_account_key': 'str',
         'gcp_service_account_key_base64': 'str',
+        'gcp_service_account_key_id': 'str',
         'use_gw_cloud_identity': 'bool'
     }
 
@@ -44,10 +45,11 @@ class GcpTargetDetails(object):
         'gcp_service_account_email': 'gcp_service_account_email',
         'gcp_service_account_key': 'gcp_service_account_key',
         'gcp_service_account_key_base64': 'gcp_service_account_key_base64',
+        'gcp_service_account_key_id': 'gcp_service_account_key_id',
         'use_gw_cloud_identity': 'use_gw_cloud_identity'
     }
 
-    def __init__(self, gcp_service_account_email=None, gcp_service_account_key=None, gcp_service_account_key_base64=None, use_gw_cloud_identity=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, gcp_service_account_email=None, gcp_service_account_key=None, gcp_service_account_key_base64=None, gcp_service_account_key_id=None, use_gw_cloud_identity=None, local_vars_configuration=None):  # noqa: E501
         """GcpTargetDetails - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -56,6 +58,7 @@ class GcpTargetDetails(object):
         self._gcp_service_account_email = None
         self._gcp_service_account_key = None
         self._gcp_service_account_key_base64 = None
+        self._gcp_service_account_key_id = None
         self._use_gw_cloud_identity = None
         self.discriminator = None
 
@@ -65,6 +68,8 @@ class GcpTargetDetails(object):
             self.gcp_service_account_key = gcp_service_account_key
         if gcp_service_account_key_base64 is not None:
             self.gcp_service_account_key_base64 = gcp_service_account_key_base64
+        if gcp_service_account_key_id is not None:
+            self.gcp_service_account_key_id = gcp_service_account_key_id
         if use_gw_cloud_identity is not None:
             self.use_gw_cloud_identity = use_gw_cloud_identity
 
@@ -72,7 +77,6 @@ class GcpTargetDetails(object):
     def gcp_service_account_email(self):
         """Gets the gcp_service_account_email of this GcpTargetDetails.  # noqa: E501
 
-        deprecated  # noqa: E501
 
         :return: The gcp_service_account_email of this GcpTargetDetails.  # noqa: E501
         :rtype: str
@@ -83,7 +87,6 @@ class GcpTargetDetails(object):
     def gcp_service_account_email(self, gcp_service_account_email):
         """Sets the gcp_service_account_email of this GcpTargetDetails.
 
-        deprecated  # noqa: E501
 
         :param gcp_service_account_email: The gcp_service_account_email of this GcpTargetDetails.  # noqa: E501
         :type: str
@@ -132,6 +135,27 @@ class GcpTargetDetails(object):
         """
 
         self._gcp_service_account_key_base64 = gcp_service_account_key_base64
+
+    @property
+    def gcp_service_account_key_id(self):
+        """Gets the gcp_service_account_key_id of this GcpTargetDetails.  # noqa: E501
+
+
+        :return: The gcp_service_account_key_id of this GcpTargetDetails.  # noqa: E501
+        :rtype: str
+        """
+        return self._gcp_service_account_key_id
+
+    @gcp_service_account_key_id.setter
+    def gcp_service_account_key_id(self, gcp_service_account_key_id):
+        """Sets the gcp_service_account_key_id of this GcpTargetDetails.
+
+
+        :param gcp_service_account_key_id: The gcp_service_account_key_id of this GcpTargetDetails.  # noqa: E501
+        :type: str
+        """
+
+        self._gcp_service_account_key_id = gcp_service_account_key_id
 
     @property
     def use_gw_cloud_identity(self):

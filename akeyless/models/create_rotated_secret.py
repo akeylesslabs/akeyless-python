@@ -44,6 +44,8 @@ class CreateRotatedSecret(object):
         'delete_protection': 'str',
         'description': 'str',
         'gcp_key': 'str',
+        'gcp_service_account_email': 'str',
+        'gcp_service_account_key_id': 'str',
         'json': 'bool',
         'key': 'str',
         'metadata': 'str',
@@ -92,6 +94,8 @@ class CreateRotatedSecret(object):
         'delete_protection': 'delete_protection',
         'description': 'description',
         'gcp_key': 'gcp-key',
+        'gcp_service_account_email': 'gcp-service-account-email',
+        'gcp_service_account_key_id': 'gcp-service-account-key-id',
         'json': 'json',
         'key': 'key',
         'metadata': 'metadata',
@@ -129,7 +133,7 @@ class CreateRotatedSecret(object):
         'user_dn': 'user-dn'
     }
 
-    def __init__(self, api_id=None, api_key=None, application_id=None, authentication_credentials='use-user-creds', auto_rotate=None, aws_region='us-east-2', custom_payload=None, delete_protection=None, description=None, gcp_key=None, json=False, key=None, metadata=None, name=None, rotate_after_disconnect='false', rotated_password=None, rotated_username=None, rotation_hour=None, rotation_interval=None, rotator_creds_type=None, rotator_custom_cmd=None, rotator_type=None, same_password=None, secure_access_allow_external_user=False, secure_access_aws_account_id=None, secure_access_aws_native_cli=None, secure_access_bastion_issuer=None, secure_access_db_name=None, secure_access_db_schema=None, secure_access_enable=None, secure_access_host=None, secure_access_rdp_domain=None, secure_access_rdp_user=None, secure_access_web=False, secure_access_web_browsing=False, secure_access_web_proxy=False, ssh_password=None, ssh_username=None, storage_account_key_name=None, tags=None, target_name=None, token=None, uid_token=None, user_attribute=None, user_dn=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, api_id=None, api_key=None, application_id=None, authentication_credentials='use-user-creds', auto_rotate=None, aws_region='us-east-2', custom_payload=None, delete_protection=None, description=None, gcp_key=None, gcp_service_account_email=None, gcp_service_account_key_id=None, json=False, key=None, metadata=None, name=None, rotate_after_disconnect='false', rotated_password=None, rotated_username=None, rotation_hour=None, rotation_interval=None, rotator_creds_type=None, rotator_custom_cmd=None, rotator_type=None, same_password=None, secure_access_allow_external_user=False, secure_access_aws_account_id=None, secure_access_aws_native_cli=None, secure_access_bastion_issuer=None, secure_access_db_name=None, secure_access_db_schema=None, secure_access_enable=None, secure_access_host=None, secure_access_rdp_domain=None, secure_access_rdp_user=None, secure_access_web=False, secure_access_web_browsing=False, secure_access_web_proxy=False, ssh_password=None, ssh_username=None, storage_account_key_name=None, tags=None, target_name=None, token=None, uid_token=None, user_attribute=None, user_dn=None, local_vars_configuration=None):  # noqa: E501
         """CreateRotatedSecret - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -145,6 +149,8 @@ class CreateRotatedSecret(object):
         self._delete_protection = None
         self._description = None
         self._gcp_key = None
+        self._gcp_service_account_email = None
+        self._gcp_service_account_key_id = None
         self._json = None
         self._key = None
         self._metadata = None
@@ -202,6 +208,10 @@ class CreateRotatedSecret(object):
             self.description = description
         if gcp_key is not None:
             self.gcp_key = gcp_key
+        if gcp_service_account_email is not None:
+            self.gcp_service_account_email = gcp_service_account_email
+        if gcp_service_account_key_id is not None:
+            self.gcp_service_account_key_id = gcp_service_account_key_id
         if json is not None:
             self.json = json
         if key is not None:
@@ -499,6 +509,52 @@ class CreateRotatedSecret(object):
         """
 
         self._gcp_key = gcp_key
+
+    @property
+    def gcp_service_account_email(self):
+        """Gets the gcp_service_account_email of this CreateRotatedSecret.  # noqa: E501
+
+        The email of the gcp service account to rotate  # noqa: E501
+
+        :return: The gcp_service_account_email of this CreateRotatedSecret.  # noqa: E501
+        :rtype: str
+        """
+        return self._gcp_service_account_email
+
+    @gcp_service_account_email.setter
+    def gcp_service_account_email(self, gcp_service_account_email):
+        """Sets the gcp_service_account_email of this CreateRotatedSecret.
+
+        The email of the gcp service account to rotate  # noqa: E501
+
+        :param gcp_service_account_email: The gcp_service_account_email of this CreateRotatedSecret.  # noqa: E501
+        :type: str
+        """
+
+        self._gcp_service_account_email = gcp_service_account_email
+
+    @property
+    def gcp_service_account_key_id(self):
+        """Gets the gcp_service_account_key_id of this CreateRotatedSecret.  # noqa: E501
+
+        The key id of the gcp service account to rotate  # noqa: E501
+
+        :return: The gcp_service_account_key_id of this CreateRotatedSecret.  # noqa: E501
+        :rtype: str
+        """
+        return self._gcp_service_account_key_id
+
+    @gcp_service_account_key_id.setter
+    def gcp_service_account_key_id(self, gcp_service_account_key_id):
+        """Sets the gcp_service_account_key_id of this CreateRotatedSecret.
+
+        The key id of the gcp service account to rotate  # noqa: E501
+
+        :param gcp_service_account_key_id: The gcp_service_account_key_id of this CreateRotatedSecret.  # noqa: E501
+        :type: str
+        """
+
+        self._gcp_service_account_key_id = gcp_service_account_key_id
 
     @property
     def json(self):

@@ -36,6 +36,7 @@ class CertificateTemplateInfo(object):
     openapi_types = {
         'common_name': 'str',
         'country': 'str',
+        'csr_cnf_base_64': 'str',
         'digest_algo': 'str',
         'locality': 'str',
         'organization': 'str',
@@ -47,6 +48,7 @@ class CertificateTemplateInfo(object):
     attribute_map = {
         'common_name': 'common_name',
         'country': 'country',
+        'csr_cnf_base_64': 'csr_cnf_base_64',
         'digest_algo': 'digest_algo',
         'locality': 'locality',
         'organization': 'organization',
@@ -55,7 +57,7 @@ class CertificateTemplateInfo(object):
         'ttl': 'ttl'
     }
 
-    def __init__(self, common_name=None, country=None, digest_algo=None, locality=None, organization=None, province=None, self_signed_enabled=None, ttl=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, common_name=None, country=None, csr_cnf_base_64=None, digest_algo=None, locality=None, organization=None, province=None, self_signed_enabled=None, ttl=None, local_vars_configuration=None):  # noqa: E501
         """CertificateTemplateInfo - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -63,6 +65,7 @@ class CertificateTemplateInfo(object):
 
         self._common_name = None
         self._country = None
+        self._csr_cnf_base_64 = None
         self._digest_algo = None
         self._locality = None
         self._organization = None
@@ -75,6 +78,8 @@ class CertificateTemplateInfo(object):
             self.common_name = common_name
         if country is not None:
             self.country = country
+        if csr_cnf_base_64 is not None:
+            self.csr_cnf_base_64 = csr_cnf_base_64
         if digest_algo is not None:
             self.digest_algo = digest_algo
         if locality is not None:
@@ -129,6 +134,27 @@ class CertificateTemplateInfo(object):
         """
 
         self._country = country
+
+    @property
+    def csr_cnf_base_64(self):
+        """Gets the csr_cnf_base_64 of this CertificateTemplateInfo.  # noqa: E501
+
+
+        :return: The csr_cnf_base_64 of this CertificateTemplateInfo.  # noqa: E501
+        :rtype: str
+        """
+        return self._csr_cnf_base_64
+
+    @csr_cnf_base_64.setter
+    def csr_cnf_base_64(self, csr_cnf_base_64):
+        """Sets the csr_cnf_base_64 of this CertificateTemplateInfo.
+
+
+        :param csr_cnf_base_64: The csr_cnf_base_64 of this CertificateTemplateInfo.  # noqa: E501
+        :type: str
+        """
+
+        self._csr_cnf_base_64 = csr_cnf_base_64
 
     @property
     def digest_algo(self):

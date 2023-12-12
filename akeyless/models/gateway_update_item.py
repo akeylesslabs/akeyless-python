@@ -42,6 +42,8 @@ class GatewayUpdateItem(object):
         'delete_protection': 'str',
         'description': 'str',
         'gcp_key': 'str',
+        'gcp_service_account_email': 'str',
+        'gcp_service_account_key_id': 'str',
         'json': 'bool',
         'keep_prev_version': 'str',
         'key': 'str',
@@ -69,6 +71,8 @@ class GatewayUpdateItem(object):
         'delete_protection': 'delete_protection',
         'description': 'description',
         'gcp_key': 'gcp-key',
+        'gcp_service_account_email': 'gcp-service-account-email',
+        'gcp_service_account_key_id': 'gcp-service-account-key-id',
         'json': 'json',
         'keep_prev_version': 'keep-prev-version',
         'key': 'key',
@@ -87,7 +91,7 @@ class GatewayUpdateItem(object):
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, add_tag=None, api_id=None, api_key=None, auto_rotate=None, custom_payload=None, delete_protection=None, description='default_metadata', gcp_key=None, json=False, keep_prev_version=None, key=None, name=None, new_metadata='default_metadata', new_name=None, new_version=None, rm_tag=None, rotated_password=None, rotated_username=None, rotation_hour=0, rotation_interval=None, rotator_creds_type='use-self-creds', token=None, type=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, add_tag=None, api_id=None, api_key=None, auto_rotate=None, custom_payload=None, delete_protection=None, description='default_metadata', gcp_key=None, gcp_service_account_email=None, gcp_service_account_key_id=None, json=False, keep_prev_version=None, key=None, name=None, new_metadata='default_metadata', new_name=None, new_version=None, rm_tag=None, rotated_password=None, rotated_username=None, rotation_hour=0, rotation_interval=None, rotator_creds_type='use-self-creds', token=None, type=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """GatewayUpdateItem - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -101,6 +105,8 @@ class GatewayUpdateItem(object):
         self._delete_protection = None
         self._description = None
         self._gcp_key = None
+        self._gcp_service_account_email = None
+        self._gcp_service_account_key_id = None
         self._json = None
         self._keep_prev_version = None
         self._key = None
@@ -135,6 +141,10 @@ class GatewayUpdateItem(object):
             self.description = description
         if gcp_key is not None:
             self.gcp_key = gcp_key
+        if gcp_service_account_email is not None:
+            self.gcp_service_account_email = gcp_service_account_email
+        if gcp_service_account_key_id is not None:
+            self.gcp_service_account_key_id = gcp_service_account_key_id
         if json is not None:
             self.json = json
         if keep_prev_version is not None:
@@ -349,6 +359,52 @@ class GatewayUpdateItem(object):
         """
 
         self._gcp_key = gcp_key
+
+    @property
+    def gcp_service_account_email(self):
+        """Gets the gcp_service_account_email of this GatewayUpdateItem.  # noqa: E501
+
+        The email of the gcp service account to rotate  # noqa: E501
+
+        :return: The gcp_service_account_email of this GatewayUpdateItem.  # noqa: E501
+        :rtype: str
+        """
+        return self._gcp_service_account_email
+
+    @gcp_service_account_email.setter
+    def gcp_service_account_email(self, gcp_service_account_email):
+        """Sets the gcp_service_account_email of this GatewayUpdateItem.
+
+        The email of the gcp service account to rotate  # noqa: E501
+
+        :param gcp_service_account_email: The gcp_service_account_email of this GatewayUpdateItem.  # noqa: E501
+        :type: str
+        """
+
+        self._gcp_service_account_email = gcp_service_account_email
+
+    @property
+    def gcp_service_account_key_id(self):
+        """Gets the gcp_service_account_key_id of this GatewayUpdateItem.  # noqa: E501
+
+        The key id of the gcp service account to rotate  # noqa: E501
+
+        :return: The gcp_service_account_key_id of this GatewayUpdateItem.  # noqa: E501
+        :rtype: str
+        """
+        return self._gcp_service_account_key_id
+
+    @gcp_service_account_key_id.setter
+    def gcp_service_account_key_id(self, gcp_service_account_key_id):
+        """Sets the gcp_service_account_key_id of this GatewayUpdateItem.
+
+        The key id of the gcp service account to rotate  # noqa: E501
+
+        :param gcp_service_account_key_id: The gcp_service_account_key_id of this GatewayUpdateItem.  # noqa: E501
+        :type: str
+        """
+
+        self._gcp_service_account_key_id = gcp_service_account_key_id
 
     @property
     def json(self):

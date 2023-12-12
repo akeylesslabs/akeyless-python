@@ -42,6 +42,7 @@ class CreateDFCKey(object):
         'certificate_organization': 'str',
         'certificate_province': 'str',
         'certificate_ttl': 'int',
+        'conf_file_data': 'str',
         'customer_frg_id': 'str',
         'delete_protection': 'str',
         'description': 'str',
@@ -64,6 +65,7 @@ class CreateDFCKey(object):
         'certificate_organization': 'certificate-organization',
         'certificate_province': 'certificate-province',
         'certificate_ttl': 'certificate-ttl',
+        'conf_file_data': 'conf-file-data',
         'customer_frg_id': 'customer-frg-id',
         'delete_protection': 'delete_protection',
         'description': 'description',
@@ -77,7 +79,7 @@ class CreateDFCKey(object):
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, alg=None, certificate_common_name=None, certificate_country=None, certificate_digest_algo=None, certificate_locality=None, certificate_organization=None, certificate_province=None, certificate_ttl=None, customer_frg_id=None, delete_protection=None, description=None, generate_self_signed_certificate=None, json=False, metadata=None, name=None, split_level=3, tag=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, alg=None, certificate_common_name=None, certificate_country=None, certificate_digest_algo=None, certificate_locality=None, certificate_organization=None, certificate_province=None, certificate_ttl=None, conf_file_data=None, customer_frg_id=None, delete_protection=None, description=None, generate_self_signed_certificate=None, json=False, metadata=None, name=None, split_level=3, tag=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """CreateDFCKey - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -91,6 +93,7 @@ class CreateDFCKey(object):
         self._certificate_organization = None
         self._certificate_province = None
         self._certificate_ttl = None
+        self._conf_file_data = None
         self._customer_frg_id = None
         self._delete_protection = None
         self._description = None
@@ -119,6 +122,8 @@ class CreateDFCKey(object):
             self.certificate_province = certificate_province
         if certificate_ttl is not None:
             self.certificate_ttl = certificate_ttl
+        if conf_file_data is not None:
+            self.conf_file_data = conf_file_data
         if customer_frg_id is not None:
             self.customer_frg_id = customer_frg_id
         if delete_protection is not None:
@@ -326,6 +331,29 @@ class CreateDFCKey(object):
         """
 
         self._certificate_ttl = certificate_ttl
+
+    @property
+    def conf_file_data(self):
+        """Gets the conf_file_data of this CreateDFCKey.  # noqa: E501
+
+        The csr config data in base64 encoding  # noqa: E501
+
+        :return: The conf_file_data of this CreateDFCKey.  # noqa: E501
+        :rtype: str
+        """
+        return self._conf_file_data
+
+    @conf_file_data.setter
+    def conf_file_data(self, conf_file_data):
+        """Sets the conf_file_data of this CreateDFCKey.
+
+        The csr config data in base64 encoding  # noqa: E501
+
+        :param conf_file_data: The conf_file_data of this CreateDFCKey.  # noqa: E501
+        :type: str
+        """
+
+        self._conf_file_data = conf_file_data
 
     @property
     def customer_frg_id(self):

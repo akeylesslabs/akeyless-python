@@ -46,8 +46,10 @@ class GenerateCsr(object):
         'generate_key': 'bool',
         'ip_addresses': 'str',
         'json': 'bool',
+        'key_type': 'str',
         'name': 'str',
         'org': 'str',
+        'split_level': 'int',
         'state': 'str',
         'token': 'str',
         'uid_token': 'str',
@@ -67,15 +69,17 @@ class GenerateCsr(object):
         'generate_key': 'generate-key',
         'ip_addresses': 'ip-addresses',
         'json': 'json',
+        'key_type': 'key-type',
         'name': 'name',
         'org': 'org',
+        'split_level': 'split-level',
         'state': 'state',
         'token': 'token',
         'uid_token': 'uid-token',
         'uri_sans': 'uri-sans'
     }
 
-    def __init__(self, alg=None, alt_names=None, certificate_type=None, city=None, common_name=None, country=None, critical=None, dep=None, email_addresses=None, generate_key=None, ip_addresses=None, json=False, name=None, org=None, state=None, token=None, uid_token=None, uri_sans=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, alg=None, alt_names=None, certificate_type=None, city=None, common_name=None, country=None, critical=None, dep=None, email_addresses=None, generate_key=None, ip_addresses=None, json=False, key_type='classic-key', name=None, org=None, split_level=3, state=None, token=None, uid_token=None, uri_sans=None, local_vars_configuration=None):  # noqa: E501
         """GenerateCsr - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -93,8 +97,10 @@ class GenerateCsr(object):
         self._generate_key = None
         self._ip_addresses = None
         self._json = None
+        self._key_type = None
         self._name = None
         self._org = None
+        self._split_level = None
         self._state = None
         self._token = None
         self._uid_token = None
@@ -124,9 +130,12 @@ class GenerateCsr(object):
             self.ip_addresses = ip_addresses
         if json is not None:
             self.json = json
+        self.key_type = key_type
         self.name = name
         if org is not None:
             self.org = org
+        if split_level is not None:
+            self.split_level = split_level
         if state is not None:
             self.state = state
         if token is not None:
@@ -413,6 +422,31 @@ class GenerateCsr(object):
         self._json = json
 
     @property
+    def key_type(self):
+        """Gets the key_type of this GenerateCsr.  # noqa: E501
+
+        The type of the key to generate (classic-key/dfc)  # noqa: E501
+
+        :return: The key_type of this GenerateCsr.  # noqa: E501
+        :rtype: str
+        """
+        return self._key_type
+
+    @key_type.setter
+    def key_type(self, key_type):
+        """Sets the key_type of this GenerateCsr.
+
+        The type of the key to generate (classic-key/dfc)  # noqa: E501
+
+        :param key_type: The key_type of this GenerateCsr.  # noqa: E501
+        :type: str
+        """
+        if self.local_vars_configuration.client_side_validation and key_type is None:  # noqa: E501
+            raise ValueError("Invalid value for `key_type`, must not be `None`")  # noqa: E501
+
+        self._key_type = key_type
+
+    @property
     def name(self):
         """Gets the name of this GenerateCsr.  # noqa: E501
 
@@ -459,6 +493,29 @@ class GenerateCsr(object):
         """
 
         self._org = org
+
+    @property
+    def split_level(self):
+        """Gets the split_level of this GenerateCsr.  # noqa: E501
+
+        The number of fragments that the item will be split into (not includes customer fragment)  # noqa: E501
+
+        :return: The split_level of this GenerateCsr.  # noqa: E501
+        :rtype: int
+        """
+        return self._split_level
+
+    @split_level.setter
+    def split_level(self, split_level):
+        """Sets the split_level of this GenerateCsr.
+
+        The number of fragments that the item will be split into (not includes customer fragment)  # noqa: E501
+
+        :param split_level: The split_level of this GenerateCsr.  # noqa: E501
+        :type: int
+        """
+
+        self._split_level = split_level
 
     @property
     def state(self):

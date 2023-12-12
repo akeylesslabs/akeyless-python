@@ -41,12 +41,14 @@ class ActiveDirectoryPayload(object):
         'computer_base_dn': 'str',
         'discover_local_users': 'bool',
         'discover_services': 'bool',
+        'discovery_types': 'list[str]',
         'domain_name': 'str',
         'domain_server_targets_path_template': 'str',
         'domain_users_rotated_secrets_path_template': 'str',
         'enable_rdp_sra': 'bool',
         'local_users_ignore_list': 'dict(str, bool)',
         'local_users_rotated_secrets_path_template': 'str',
+        'os_filter': 'str',
         'ssh_port': 'str',
         'targets_type': 'str',
         'user_base_dn': 'str',
@@ -63,12 +65,14 @@ class ActiveDirectoryPayload(object):
         'computer_base_dn': 'computer_base_dn',
         'discover_local_users': 'discover_local_users',
         'discover_services': 'discover_services',
+        'discovery_types': 'discovery_types',
         'domain_name': 'domain_name',
         'domain_server_targets_path_template': 'domain_server_targets_path_template',
         'domain_users_rotated_secrets_path_template': 'domain_users_rotated_secrets_path_template',
         'enable_rdp_sra': 'enable_rdp_sra',
         'local_users_ignore_list': 'local_users_ignore_list',
         'local_users_rotated_secrets_path_template': 'local_users_rotated_secrets_path_template',
+        'os_filter': 'os_filter',
         'ssh_port': 'ssh_port',
         'targets_type': 'targets_type',
         'user_base_dn': 'user_base_dn',
@@ -77,7 +81,7 @@ class ActiveDirectoryPayload(object):
         'winrm_port': 'winrm_port'
     }
 
-    def __init__(self, active_directory_target_id=None, auto_rotate=None, auto_rotate_interval_in_days=None, auto_rotate_rotation_hour=None, computer_base_dn=None, discover_local_users=None, discover_services=None, domain_name=None, domain_server_targets_path_template=None, domain_users_rotated_secrets_path_template=None, enable_rdp_sra=None, local_users_ignore_list=None, local_users_rotated_secrets_path_template=None, ssh_port=None, targets_type=None, user_base_dn=None, user_groups=None, winrm_over_http=None, winrm_port=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, active_directory_target_id=None, auto_rotate=None, auto_rotate_interval_in_days=None, auto_rotate_rotation_hour=None, computer_base_dn=None, discover_local_users=None, discover_services=None, discovery_types=None, domain_name=None, domain_server_targets_path_template=None, domain_users_rotated_secrets_path_template=None, enable_rdp_sra=None, local_users_ignore_list=None, local_users_rotated_secrets_path_template=None, os_filter=None, ssh_port=None, targets_type=None, user_base_dn=None, user_groups=None, winrm_over_http=None, winrm_port=None, local_vars_configuration=None):  # noqa: E501
         """ActiveDirectoryPayload - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -90,12 +94,14 @@ class ActiveDirectoryPayload(object):
         self._computer_base_dn = None
         self._discover_local_users = None
         self._discover_services = None
+        self._discovery_types = None
         self._domain_name = None
         self._domain_server_targets_path_template = None
         self._domain_users_rotated_secrets_path_template = None
         self._enable_rdp_sra = None
         self._local_users_ignore_list = None
         self._local_users_rotated_secrets_path_template = None
+        self._os_filter = None
         self._ssh_port = None
         self._targets_type = None
         self._user_base_dn = None
@@ -118,6 +124,8 @@ class ActiveDirectoryPayload(object):
             self.discover_local_users = discover_local_users
         if discover_services is not None:
             self.discover_services = discover_services
+        if discovery_types is not None:
+            self.discovery_types = discovery_types
         if domain_name is not None:
             self.domain_name = domain_name
         if domain_server_targets_path_template is not None:
@@ -130,6 +138,8 @@ class ActiveDirectoryPayload(object):
             self.local_users_ignore_list = local_users_ignore_list
         if local_users_rotated_secrets_path_template is not None:
             self.local_users_rotated_secrets_path_template = local_users_rotated_secrets_path_template
+        if os_filter is not None:
+            self.os_filter = os_filter
         if ssh_port is not None:
             self.ssh_port = ssh_port
         if targets_type is not None:
@@ -252,6 +262,7 @@ class ActiveDirectoryPayload(object):
     def discover_local_users(self):
         """Gets the discover_local_users of this ActiveDirectoryPayload.  # noqa: E501
 
+        Deprecated  # noqa: E501
 
         :return: The discover_local_users of this ActiveDirectoryPayload.  # noqa: E501
         :rtype: bool
@@ -262,6 +273,7 @@ class ActiveDirectoryPayload(object):
     def discover_local_users(self, discover_local_users):
         """Sets the discover_local_users of this ActiveDirectoryPayload.
 
+        Deprecated  # noqa: E501
 
         :param discover_local_users: The discover_local_users of this ActiveDirectoryPayload.  # noqa: E501
         :type: bool
@@ -289,6 +301,27 @@ class ActiveDirectoryPayload(object):
         """
 
         self._discover_services = discover_services
+
+    @property
+    def discovery_types(self):
+        """Gets the discovery_types of this ActiveDirectoryPayload.  # noqa: E501
+
+
+        :return: The discovery_types of this ActiveDirectoryPayload.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._discovery_types
+
+    @discovery_types.setter
+    def discovery_types(self, discovery_types):
+        """Sets the discovery_types of this ActiveDirectoryPayload.
+
+
+        :param discovery_types: The discovery_types of this ActiveDirectoryPayload.  # noqa: E501
+        :type: list[str]
+        """
+
+        self._discovery_types = discovery_types
 
     @property
     def domain_name(self):
@@ -415,6 +448,27 @@ class ActiveDirectoryPayload(object):
         """
 
         self._local_users_rotated_secrets_path_template = local_users_rotated_secrets_path_template
+
+    @property
+    def os_filter(self):
+        """Gets the os_filter of this ActiveDirectoryPayload.  # noqa: E501
+
+
+        :return: The os_filter of this ActiveDirectoryPayload.  # noqa: E501
+        :rtype: str
+        """
+        return self._os_filter
+
+    @os_filter.setter
+    def os_filter(self, os_filter):
+        """Sets the os_filter of this ActiveDirectoryPayload.
+
+
+        :param os_filter: The os_filter of this ActiveDirectoryPayload.  # noqa: E501
+        :type: str
+        """
+
+        self._os_filter = os_filter
 
     @property
     def ssh_port(self):

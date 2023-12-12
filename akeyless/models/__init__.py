@@ -658,6 +658,7 @@ from akeyless.models.update_azure_target import UpdateAzureTarget
 from akeyless.models.update_azure_target_output import UpdateAzureTargetOutput
 from akeyless.models.update_certificate_output import UpdateCertificateOutput
 from akeyless.models.update_certificate_value import UpdateCertificateValue
+from akeyless.models.update_classic_key_certificate import UpdateClassicKeyCertificate
 from akeyless.models.update_db_target import UpdateDBTarget
 from akeyless.models.update_db_target_details import UpdateDBTargetDetails
 from akeyless.models.update_db_target_output import UpdateDBTargetOutput

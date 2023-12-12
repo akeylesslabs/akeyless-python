@@ -5,6 +5,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **common_name** | **str** |  | [optional] 
 **country** | **str** |  | [optional] 
+**csr_cnf_base_64** | **str** |  | [optional] 
 **digest_algo** | **str** |  | [optional] 
 **locality** | **str** |  | [optional] 
 **organization** | **str** |  | [optional] 
