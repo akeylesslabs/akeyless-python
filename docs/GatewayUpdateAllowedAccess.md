@@ -4,7 +4,9 @@ gatewayUpdateAllowedAccess is a command that update allowed access in Gator
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**sub_claims_case_insensitive** | **bool** |  | [optional] 
 **access_id** | **str** | Access ID The access id to be attached to this allowed access. Auth method with this access id should already exist. | 
+**case_sensitive** | **str** | Treat sub claims as case-sensitive [true/false] | [optional] [default to 'true']
 **description** | **str** | Allowed access description | [optional] 
 **json** | **bool** | Set output format to JSON | [optional] [default to False]
 **name** | **str** | Allowed access name | 

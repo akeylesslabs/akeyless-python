@@ -40,6 +40,7 @@ class ListItems(object):
         'filter': 'str',
         'json': 'bool',
         'minimal_view': 'bool',
+        'modified_after': 'int',
         'pagination_token': 'str',
         'path': 'str',
         'sra_only': 'bool',
@@ -57,6 +58,7 @@ class ListItems(object):
         'filter': 'filter',
         'json': 'json',
         'minimal_view': 'minimal-view',
+        'modified_after': 'modified-after',
         'pagination_token': 'pagination-token',
         'path': 'path',
         'sra_only': 'sra-only',
@@ -67,7 +69,7 @@ class ListItems(object):
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, accessibility='regular', advanced_filter=None, auto_pagination='enabled', filter=None, json=False, minimal_view=None, pagination_token=None, path=None, sra_only=False, sub_types=None, tag=None, token=None, type=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, accessibility='regular', advanced_filter=None, auto_pagination='enabled', filter=None, json=False, minimal_view=None, modified_after=None, pagination_token=None, path=None, sra_only=False, sub_types=None, tag=None, token=None, type=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """ListItems - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -79,6 +81,7 @@ class ListItems(object):
         self._filter = None
         self._json = None
         self._minimal_view = None
+        self._modified_after = None
         self._pagination_token = None
         self._path = None
         self._sra_only = None
@@ -101,6 +104,8 @@ class ListItems(object):
             self.json = json
         if minimal_view is not None:
             self.minimal_view = minimal_view
+        if modified_after is not None:
+            self.modified_after = modified_after
         if pagination_token is not None:
             self.pagination_token = pagination_token
         if path is not None:
@@ -237,6 +242,7 @@ class ListItems(object):
     def minimal_view(self):
         """Gets the minimal_view of this ListItems.  # noqa: E501
 
+        Show only basic information of the items  # noqa: E501
 
         :return: The minimal_view of this ListItems.  # noqa: E501
         :rtype: bool
@@ -247,12 +253,36 @@ class ListItems(object):
     def minimal_view(self, minimal_view):
         """Sets the minimal_view of this ListItems.
 
+        Show only basic information of the items  # noqa: E501
 
         :param minimal_view: The minimal_view of this ListItems.  # noqa: E501
         :type: bool
         """
 
         self._minimal_view = minimal_view
+
+    @property
+    def modified_after(self):
+        """Gets the modified_after of this ListItems.  # noqa: E501
+
+        List only secrets modified after specified date (in unix time)  # noqa: E501
+
+        :return: The modified_after of this ListItems.  # noqa: E501
+        :rtype: int
+        """
+        return self._modified_after
+
+    @modified_after.setter
+    def modified_after(self, modified_after):
+        """Sets the modified_after of this ListItems.
+
+        List only secrets modified after specified date (in unix time)  # noqa: E501
+
+        :param modified_after: The modified_after of this ListItems.  # noqa: E501
+        :type: int
+        """
+
+        self._modified_after = modified_after
 
     @property
     def pagination_token(self):

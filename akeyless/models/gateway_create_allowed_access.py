@@ -34,7 +34,9 @@ class GatewayCreateAllowedAccess(object):
                             and the value is json key in definition.
     """
     openapi_types = {
+        'sub_claims_case_insensitive': 'bool',
         'access_id': 'str',
+        'case_sensitive': 'str',
         'description': 'str',
         'json': 'bool',
         'name': 'str',
@@ -45,7 +47,9 @@ class GatewayCreateAllowedAccess(object):
     }
 
     attribute_map = {
+        'sub_claims_case_insensitive': 'SubClaimsCaseInsensitive',
         'access_id': 'access-id',
+        'case_sensitive': 'case-sensitive',
         'description': 'description',
         'json': 'json',
         'name': 'name',
@@ -55,13 +59,15 @@ class GatewayCreateAllowedAccess(object):
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, access_id=None, description=None, json=False, name=None, permissions=None, sub_claims=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, sub_claims_case_insensitive=None, access_id=None, case_sensitive='true', description=None, json=False, name=None, permissions=None, sub_claims=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """GatewayCreateAllowedAccess - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
+        self._sub_claims_case_insensitive = None
         self._access_id = None
+        self._case_sensitive = None
         self._description = None
         self._json = None
         self._name = None
@@ -71,7 +77,11 @@ class GatewayCreateAllowedAccess(object):
         self._uid_token = None
         self.discriminator = None
 
+        if sub_claims_case_insensitive is not None:
+            self.sub_claims_case_insensitive = sub_claims_case_insensitive
         self.access_id = access_id
+        if case_sensitive is not None:
+            self.case_sensitive = case_sensitive
         if description is not None:
             self.description = description
         if json is not None:
@@ -85,6 +95,27 @@ class GatewayCreateAllowedAccess(object):
             self.token = token
         if uid_token is not None:
             self.uid_token = uid_token
+
+    @property
+    def sub_claims_case_insensitive(self):
+        """Gets the sub_claims_case_insensitive of this GatewayCreateAllowedAccess.  # noqa: E501
+
+
+        :return: The sub_claims_case_insensitive of this GatewayCreateAllowedAccess.  # noqa: E501
+        :rtype: bool
+        """
+        return self._sub_claims_case_insensitive
+
+    @sub_claims_case_insensitive.setter
+    def sub_claims_case_insensitive(self, sub_claims_case_insensitive):
+        """Sets the sub_claims_case_insensitive of this GatewayCreateAllowedAccess.
+
+
+        :param sub_claims_case_insensitive: The sub_claims_case_insensitive of this GatewayCreateAllowedAccess.  # noqa: E501
+        :type: bool
+        """
+
+        self._sub_claims_case_insensitive = sub_claims_case_insensitive
 
     @property
     def access_id(self):
@@ -110,6 +141,29 @@ class GatewayCreateAllowedAccess(object):
             raise ValueError("Invalid value for `access_id`, must not be `None`")  # noqa: E501
 
         self._access_id = access_id
+
+    @property
+    def case_sensitive(self):
+        """Gets the case_sensitive of this GatewayCreateAllowedAccess.  # noqa: E501
+
+        Treat sub claims as case-sensitive [true/false]  # noqa: E501
+
+        :return: The case_sensitive of this GatewayCreateAllowedAccess.  # noqa: E501
+        :rtype: str
+        """
+        return self._case_sensitive
+
+    @case_sensitive.setter
+    def case_sensitive(self, case_sensitive):
+        """Sets the case_sensitive of this GatewayCreateAllowedAccess.
+
+        Treat sub claims as case-sensitive [true/false]  # noqa: E501
+
+        :param case_sensitive: The case_sensitive of this GatewayCreateAllowedAccess.  # noqa: E501
+        :type: str
+        """
+
+        self._case_sensitive = case_sensitive
 
     @property
     def description(self):

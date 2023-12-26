@@ -46,6 +46,7 @@ class AllowedAccess(object):
         'name': 'str',
         'permissions': 'list[str]',
         'sub_claims': 'dict(str, list[str])',
+        'sub_claims_case_insensitive': 'bool',
         'updated_at': 'datetime'
     }
 
@@ -62,10 +63,11 @@ class AllowedAccess(object):
         'name': 'name',
         'permissions': 'permissions',
         'sub_claims': 'sub_claims',
+        'sub_claims_case_insensitive': 'sub_claims_case_insensitive',
         'updated_at': 'updated_at'
     }
 
-    def __init__(self, access_id=None, access_type=None, cluster_id=None, created_at=None, description=None, editable=None, error=None, id=None, is_valid=None, name=None, permissions=None, sub_claims=None, updated_at=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, access_id=None, access_type=None, cluster_id=None, created_at=None, description=None, editable=None, error=None, id=None, is_valid=None, name=None, permissions=None, sub_claims=None, sub_claims_case_insensitive=None, updated_at=None, local_vars_configuration=None):  # noqa: E501
         """AllowedAccess - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -83,6 +85,7 @@ class AllowedAccess(object):
         self._name = None
         self._permissions = None
         self._sub_claims = None
+        self._sub_claims_case_insensitive = None
         self._updated_at = None
         self.discriminator = None
 
@@ -110,6 +113,8 @@ class AllowedAccess(object):
             self.permissions = permissions
         if sub_claims is not None:
             self.sub_claims = sub_claims
+        if sub_claims_case_insensitive is not None:
+            self.sub_claims_case_insensitive = sub_claims_case_insensitive
         if updated_at is not None:
             self.updated_at = updated_at
 
@@ -364,6 +369,27 @@ class AllowedAccess(object):
         """
 
         self._sub_claims = sub_claims
+
+    @property
+    def sub_claims_case_insensitive(self):
+        """Gets the sub_claims_case_insensitive of this AllowedAccess.  # noqa: E501
+
+
+        :return: The sub_claims_case_insensitive of this AllowedAccess.  # noqa: E501
+        :rtype: bool
+        """
+        return self._sub_claims_case_insensitive
+
+    @sub_claims_case_insensitive.setter
+    def sub_claims_case_insensitive(self, sub_claims_case_insensitive):
+        """Sets the sub_claims_case_insensitive of this AllowedAccess.
+
+
+        :param sub_claims_case_insensitive: The sub_claims_case_insensitive of this AllowedAccess.  # noqa: E501
+        :type: bool
+        """
+
+        self._sub_claims_case_insensitive = sub_claims_case_insensitive
 
     @property
     def updated_at(self):

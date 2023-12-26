@@ -390,7 +390,7 @@ class CreateEventForwarder(object):
     def event_source_type(self):
         """Gets the event_source_type of this CreateEventForwarder.  # noqa: E501
 
-        Event Source type [item, target, auth_method]  # noqa: E501
+        Event Source type [item, target, auth_method, gateway]  # noqa: E501
 
         :return: The event_source_type of this CreateEventForwarder.  # noqa: E501
         :rtype: str
@@ -401,7 +401,7 @@ class CreateEventForwarder(object):
     def event_source_type(self, event_source_type):
         """Sets the event_source_type of this CreateEventForwarder.
 
-        Event Source type [item, target, auth_method]  # noqa: E501
+        Event Source type [item, target, auth_method, gateway]  # noqa: E501
 
         :param event_source_type: The event_source_type of this CreateEventForwarder.  # noqa: E501
         :type: str

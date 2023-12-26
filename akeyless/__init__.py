@@ -15,7 +15,7 @@
 
 from __future__ import absolute_import
 
-__version__ = "3.5.3"
+__version__ = "3.5.4"
 
 # import apis into sdk package
 from akeyless.api.v2_api import V2Api
@@ -173,6 +173,8 @@ from akeyless.models.create_secret_output import CreateSecretOutput
 from akeyless.models.create_target_item_assoc_output import CreateTargetItemAssocOutput
 from akeyless.models.create_tokenizer import CreateTokenizer
 from akeyless.models.create_tokenizer_output import CreateTokenizerOutput
+from akeyless.models.create_usc import CreateUSC
+from akeyless.models.create_usc_output import CreateUSCOutput
 from akeyless.models.create_user_event import CreateUserEvent
 from akeyless.models.create_user_event_output import CreateUserEventOutput
 from akeyless.models.create_web_target import CreateWebTarget
@@ -737,6 +739,16 @@ from akeyless.models.update_zero_ssl_target_output import UpdateZeroSSLTargetOut
 from akeyless.models.upload_pkcs12 import UploadPKCS12
 from akeyless.models.upload_rsa import UploadRSA
 from akeyless.models.usage_event_setting import UsageEventSetting
+from akeyless.models.usc_create import UscCreate
+from akeyless.models.usc_create_secret_output import UscCreateSecretOutput
+from akeyless.models.usc_delete import UscDelete
+from akeyless.models.usc_delete_secret_output import UscDeleteSecretOutput
+from akeyless.models.usc_get import UscGet
+from akeyless.models.usc_get_secret_output import UscGetSecretOutput
+from akeyless.models.usc_list import UscList
+from akeyless.models.usc_list_secrets_output import UscListSecretsOutput
+from akeyless.models.usc_update import UscUpdate
+from akeyless.models.usc_update_secret_output import UscUpdateSecretOutput
 from akeyless.models.validate_token import ValidateToken
 from akeyless.models.validate_token_output import ValidateTokenOutput
 from akeyless.models.vaultless_tokenizer_info import VaultlessTokenizerInfo

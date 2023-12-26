@@ -42,6 +42,7 @@ class GatewayCreateProducerOracleDb(object):
         'oracle_host': 'str',
         'oracle_password': 'str',
         'oracle_port': 'str',
+        'oracle_revocation_statements': 'str',
         'oracle_screation_statements': 'str',
         'oracle_service_name': 'str',
         'oracle_username': 'str',
@@ -66,6 +67,7 @@ class GatewayCreateProducerOracleDb(object):
         'oracle_host': 'oracle-host',
         'oracle_password': 'oracle-password',
         'oracle_port': 'oracle-port',
+        'oracle_revocation_statements': 'oracle-revocation-statements',
         'oracle_screation_statements': 'oracle-screation-statements',
         'oracle_service_name': 'oracle-service-name',
         'oracle_username': 'oracle-username',
@@ -81,7 +83,7 @@ class GatewayCreateProducerOracleDb(object):
         'user_ttl': 'user-ttl'
     }
 
-    def __init__(self, db_server_certificates=None, db_server_name=None, delete_protection=None, json=False, name=None, oracle_host='127.0.0.1', oracle_password=None, oracle_port='1521', oracle_screation_statements=None, oracle_service_name=None, oracle_username=None, producer_encryption_key_name=None, secure_access_bastion_issuer=None, secure_access_enable='false', secure_access_host=None, secure_access_web=False, tags=None, target_name=None, token=None, uid_token=None, user_ttl='60m', local_vars_configuration=None):  # noqa: E501
+    def __init__(self, db_server_certificates=None, db_server_name=None, delete_protection=None, json=False, name=None, oracle_host='127.0.0.1', oracle_password=None, oracle_port='1521', oracle_revocation_statements=None, oracle_screation_statements=None, oracle_service_name=None, oracle_username=None, producer_encryption_key_name=None, secure_access_bastion_issuer=None, secure_access_enable='false', secure_access_host=None, secure_access_web=False, tags=None, target_name=None, token=None, uid_token=None, user_ttl='60m', local_vars_configuration=None):  # noqa: E501
         """GatewayCreateProducerOracleDb - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -95,6 +97,7 @@ class GatewayCreateProducerOracleDb(object):
         self._oracle_host = None
         self._oracle_password = None
         self._oracle_port = None
+        self._oracle_revocation_statements = None
         self._oracle_screation_statements = None
         self._oracle_service_name = None
         self._oracle_username = None
@@ -125,6 +128,8 @@ class GatewayCreateProducerOracleDb(object):
             self.oracle_password = oracle_password
         if oracle_port is not None:
             self.oracle_port = oracle_port
+        if oracle_revocation_statements is not None:
+            self.oracle_revocation_statements = oracle_revocation_statements
         if oracle_screation_statements is not None:
             self.oracle_screation_statements = oracle_screation_statements
         if oracle_service_name is not None:
@@ -337,6 +342,29 @@ class GatewayCreateProducerOracleDb(object):
         """
 
         self._oracle_port = oracle_port
+
+    @property
+    def oracle_revocation_statements(self):
+        """Gets the oracle_revocation_statements of this GatewayCreateProducerOracleDb.  # noqa: E501
+
+        Oracle Revocation statements  # noqa: E501
+
+        :return: The oracle_revocation_statements of this GatewayCreateProducerOracleDb.  # noqa: E501
+        :rtype: str
+        """
+        return self._oracle_revocation_statements
+
+    @oracle_revocation_statements.setter
+    def oracle_revocation_statements(self, oracle_revocation_statements):
+        """Sets the oracle_revocation_statements of this GatewayCreateProducerOracleDb.
+
+        Oracle Revocation statements  # noqa: E501
+
+        :param oracle_revocation_statements: The oracle_revocation_statements of this GatewayCreateProducerOracleDb.  # noqa: E501
+        :type: str
+        """
+
+        self._oracle_revocation_statements = oracle_revocation_statements
 
     @property
     def oracle_screation_statements(self):

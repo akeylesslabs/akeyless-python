@@ -54,6 +54,7 @@ Method | HTTP request | Description
 [**create_ssh_cert_issuer**](V2Api.md#create_ssh_cert_issuer) | **POST** /create-ssh-cert-issuer | 
 [**create_ssh_target**](V2Api.md#create_ssh_target) | **POST** /create-ssh-target | 
 [**create_tokenizer**](V2Api.md#create_tokenizer) | **POST** /create-tokenizer | 
+[**create_usc**](V2Api.md#create_usc) | **POST** /create-usc | 
 [**create_user_event**](V2Api.md#create_user_event) | **POST** /create-user-event | 
 [**create_web_target**](V2Api.md#create_web_target) | **POST** /create-web-target | 
 [**create_windows_target**](V2Api.md#create_windows_target) | **POST** /create-windows-target | 
@@ -300,6 +301,11 @@ Method | HTTP request | Description
 [**update_windows_target**](V2Api.md#update_windows_target) | **POST** /update-windows-target | 
 [**update_zero_ssl_target**](V2Api.md#update_zero_ssl_target) | **POST** /update-zerossl-target | 
 [**upload_rsa**](V2Api.md#upload_rsa) | **POST** /upload-rsa | 
+[**usc_create**](V2Api.md#usc_create) | **POST** /usc-create | 
+[**usc_delete**](V2Api.md#usc_delete) | **POST** /usc-delete | 
+[**usc_get**](V2Api.md#usc_get) | **POST** /usc-get | 
+[**usc_list**](V2Api.md#usc_list) | **POST** /usc-list | 
+[**usc_update**](V2Api.md#usc_update) | **POST** /usc-update | 
 [**validate_token**](V2Api.md#validate_token) | **POST** /validate-token | 
 [**verify_data_with_classic_key**](V2Api.md#verify_data_with_classic_key) | **POST** /verify-data-with-classic-key | 
 [**verify_ec_dsa**](V2Api.md#verify_ec_dsa) | **POST** /verify-ecdsa | 
@@ -3307,6 +3313,66 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | createTokenizerResponse wraps response body. |  -  |
+**0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **create_usc**
+> CreateUSCOutput create_usc(body)
+
+
+
+### Example
+
+```python
+from __future__ import print_function
+import time
+import akeyless
+from akeyless.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.akeyless.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = akeyless.Configuration(
+    host = "https://api.akeyless.io"
+)
+
+
+# Enter a context with an instance of the API client
+with akeyless.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = akeyless.V2Api(api_client)
+    body = akeyless.CreateUSC() # CreateUSC | 
+
+    try:
+        api_response = api_instance.create_usc(body)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling V2Api->create_usc: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**CreateUSC**](CreateUSC.md)|  | 
+
+### Return type
+
+[**CreateUSCOutput**](CreateUSCOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**201** | CreateUniversalSecretsConnectorResponse wraps response body. |  -  |
 **0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -18052,6 +18118,302 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | uploadRSAResponse wraps response body. |  -  |
+**0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **usc_create**
+> UscCreateSecretOutput usc_create(body)
+
+
+
+### Example
+
+```python
+from __future__ import print_function
+import time
+import akeyless
+from akeyless.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.akeyless.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = akeyless.Configuration(
+    host = "https://api.akeyless.io"
+)
+
+
+# Enter a context with an instance of the API client
+with akeyless.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = akeyless.V2Api(api_client)
+    body = akeyless.UscUpdate() # UscUpdate | 
+
+    try:
+        api_response = api_instance.usc_create(body)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling V2Api->usc_create: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**UscUpdate**](UscUpdate.md)|  | 
+
+### Return type
+
+[**UscCreateSecretOutput**](UscCreateSecretOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | uscCreateResponse wraps response body. |  -  |
+**0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **usc_delete**
+> UscDeleteSecretOutput usc_delete(body)
+
+
+
+### Example
+
+```python
+from __future__ import print_function
+import time
+import akeyless
+from akeyless.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.akeyless.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = akeyless.Configuration(
+    host = "https://api.akeyless.io"
+)
+
+
+# Enter a context with an instance of the API client
+with akeyless.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = akeyless.V2Api(api_client)
+    body = akeyless.UscDelete() # UscDelete | 
+
+    try:
+        api_response = api_instance.usc_delete(body)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling V2Api->usc_delete: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**UscDelete**](UscDelete.md)|  | 
+
+### Return type
+
+[**UscDeleteSecretOutput**](UscDeleteSecretOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**202** | uscDeleteResponse wraps response body. |  -  |
+**0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **usc_get**
+> UscGetSecretOutput usc_get(body)
+
+
+
+### Example
+
+```python
+from __future__ import print_function
+import time
+import akeyless
+from akeyless.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.akeyless.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = akeyless.Configuration(
+    host = "https://api.akeyless.io"
+)
+
+
+# Enter a context with an instance of the API client
+with akeyless.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = akeyless.V2Api(api_client)
+    body = akeyless.UscGet() # UscGet | 
+
+    try:
+        api_response = api_instance.usc_get(body)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling V2Api->usc_get: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**UscGet**](UscGet.md)|  | 
+
+### Return type
+
+[**UscGetSecretOutput**](UscGetSecretOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | uscGetResponse wraps response body. |  -  |
+**0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **usc_list**
+> UscListSecretsOutput usc_list(body)
+
+
+
+### Example
+
+```python
+from __future__ import print_function
+import time
+import akeyless
+from akeyless.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.akeyless.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = akeyless.Configuration(
+    host = "https://api.akeyless.io"
+)
+
+
+# Enter a context with an instance of the API client
+with akeyless.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = akeyless.V2Api(api_client)
+    body = akeyless.UscList() # UscList | 
+
+    try:
+        api_response = api_instance.usc_list(body)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling V2Api->usc_list: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**UscList**](UscList.md)|  | 
+
+### Return type
+
+[**UscListSecretsOutput**](UscListSecretsOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | uscListResponse wraps response body. |  -  |
+**0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **usc_update**
+> UscUpdateSecretOutput usc_update()
+
+
+
+### Example
+
+```python
+from __future__ import print_function
+import time
+import akeyless
+from akeyless.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.akeyless.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = akeyless.Configuration(
+    host = "https://api.akeyless.io"
+)
+
+
+# Enter a context with an instance of the API client
+with akeyless.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = akeyless.V2Api(api_client)
+    
+    try:
+        api_response = api_instance.usc_update()
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling V2Api->usc_update: %s\n" % e)
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**UscUpdateSecretOutput**](UscUpdateSecretOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | uscUpdateResponse wraps response body. |  -  |
 **0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

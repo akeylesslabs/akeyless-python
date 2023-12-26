@@ -15,6 +15,7 @@ Name | Type | Description | Notes
 **name** | **str** |  | [optional] 
 **permissions** | **list[str]** |  | [optional] 
 **sub_claims** | **dict(str, list[str])** |  | [optional] 
+**sub_claims_case_insensitive** | **bool** |  | [optional] 
 **updated_at** | **datetime** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
