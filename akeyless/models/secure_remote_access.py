@@ -62,6 +62,7 @@ class SecureRemoteAccess(object):
         'ssh_private_key': 'bool',
         'ssh_user': 'str',
         'target_hosts': 'list[TargetNameWithHosts]',
+        'targets': 'list[str]',
         'url': 'str',
         'use_internal_bastion': 'bool',
         'web_proxy': 'bool'
@@ -96,12 +97,13 @@ class SecureRemoteAccess(object):
         'ssh_private_key': 'ssh_private_key',
         'ssh_user': 'ssh_user',
         'target_hosts': 'target_hosts',
+        'targets': 'targets',
         'url': 'url',
         'use_internal_bastion': 'use_internal_bastion',
         'web_proxy': 'web_proxy'
     }
 
-    def __init__(self, account_id=None, allow_port_forwarding=None, allow_providing_external_username=None, bastion_api=None, bastion_issuer=None, bastion_issuer_id=None, bastion_ssh=None, category=None, dashboard_url=None, db_name=None, domain=None, enable=None, endpoint=None, host=None, host_provider_type=None, is_cli=None, is_web=None, isolated=None, native=None, rd_gateway_server=None, rdp_user=None, region=None, rotate_after_disconnect=None, schema=None, ssh_password=None, ssh_private_key=None, ssh_user=None, target_hosts=None, url=None, use_internal_bastion=None, web_proxy=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, account_id=None, allow_port_forwarding=None, allow_providing_external_username=None, bastion_api=None, bastion_issuer=None, bastion_issuer_id=None, bastion_ssh=None, category=None, dashboard_url=None, db_name=None, domain=None, enable=None, endpoint=None, host=None, host_provider_type=None, is_cli=None, is_web=None, isolated=None, native=None, rd_gateway_server=None, rdp_user=None, region=None, rotate_after_disconnect=None, schema=None, ssh_password=None, ssh_private_key=None, ssh_user=None, target_hosts=None, targets=None, url=None, use_internal_bastion=None, web_proxy=None, local_vars_configuration=None):  # noqa: E501
         """SecureRemoteAccess - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -135,6 +137,7 @@ class SecureRemoteAccess(object):
         self._ssh_private_key = None
         self._ssh_user = None
         self._target_hosts = None
+        self._targets = None
         self._url = None
         self._use_internal_bastion = None
         self._web_proxy = None
@@ -196,6 +199,8 @@ class SecureRemoteAccess(object):
             self.ssh_user = ssh_user
         if target_hosts is not None:
             self.target_hosts = target_hosts
+        if targets is not None:
+            self.targets = targets
         if url is not None:
             self.url = url
         if use_internal_bastion is not None:
@@ -790,6 +795,27 @@ class SecureRemoteAccess(object):
         """
 
         self._target_hosts = target_hosts
+
+    @property
+    def targets(self):
+        """Gets the targets of this SecureRemoteAccess.  # noqa: E501
+
+
+        :return: The targets of this SecureRemoteAccess.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._targets
+
+    @targets.setter
+    def targets(self, targets):
+        """Sets the targets of this SecureRemoteAccess.
+
+
+        :param targets: The targets of this SecureRemoteAccess.  # noqa: E501
+        :type: list[str]
+        """
+
+        self._targets = targets
 
     @property
     def url(self):

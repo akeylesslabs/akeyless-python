@@ -91,6 +91,7 @@ class GatewayUpdateMigration(object):
         'si_rotation_interval': 'int',
         'si_sra_enable_rdp': 'str',
         'si_target_name': 'str',
+        'si_user_groups': 'str',
         'si_users_ignore': 'str',
         'si_users_path_template': 'str',
         'target_location': 'str',
@@ -156,6 +157,7 @@ class GatewayUpdateMigration(object):
         'si_rotation_interval': 'si-rotation-interval',
         'si_sra_enable_rdp': 'si-sra-enable-rdp',
         'si_target_name': 'si-target-name',
+        'si_user_groups': 'si-user-groups',
         'si_users_ignore': 'si-users-ignore',
         'si_users_path_template': 'si-users-path-template',
         'target_location': 'target-location',
@@ -163,7 +165,7 @@ class GatewayUpdateMigration(object):
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, _1password_email=None, _1password_password=None, _1password_secret_key=None, _1password_url=None, _1password_vaults=None, ad_discover_services='false', ad_discovery_types=None, ad_os_filter=None, ad_ssh_port='22', ad_targets_type='windows', ad_winrm_over_http='false', ad_winrm_port='5986', ad_auto_rotate=None, ad_computer_base_dn=None, ad_discover_local_users=None, ad_domain_name=None, ad_domain_users_path_template=None, ad_local_users_ignore=None, ad_local_users_path_template=None, ad_rotation_hour=None, ad_rotation_interval=None, ad_sra_enable_rdp=None, ad_target_name=None, ad_targets_path_template=None, ad_user_base_dn=None, ad_user_groups=None, aws_key=None, aws_key_id=None, aws_region='us-east-2', azure_client_id=None, azure_kv_name=None, azure_secret=None, azure_tenant_id=None, gcp_key=None, hashi_json='true', hashi_ns=None, hashi_token=None, hashi_url=None, id=None, json=False, k8s_ca_certificate=None, k8s_client_certificate=None, k8s_client_key=None, k8s_namespace=None, k8s_password=None, k8s_skip_system=None, k8s_token=None, k8s_url=None, k8s_username=None, name=None, new_name=None, protection_key=None, si_auto_rotate=None, si_rotation_hour=None, si_rotation_interval=None, si_sra_enable_rdp='false', si_target_name=None, si_users_ignore=None, si_users_path_template=None, target_location=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, _1password_email=None, _1password_password=None, _1password_secret_key=None, _1password_url=None, _1password_vaults=None, ad_discover_services='false', ad_discovery_types=None, ad_os_filter=None, ad_ssh_port='22', ad_targets_type='windows', ad_winrm_over_http='false', ad_winrm_port='5986', ad_auto_rotate=None, ad_computer_base_dn=None, ad_discover_local_users=None, ad_domain_name=None, ad_domain_users_path_template=None, ad_local_users_ignore=None, ad_local_users_path_template=None, ad_rotation_hour=None, ad_rotation_interval=None, ad_sra_enable_rdp=None, ad_target_name=None, ad_targets_path_template=None, ad_user_base_dn=None, ad_user_groups=None, aws_key=None, aws_key_id=None, aws_region='us-east-2', azure_client_id=None, azure_kv_name=None, azure_secret=None, azure_tenant_id=None, gcp_key=None, hashi_json='true', hashi_ns=None, hashi_token=None, hashi_url=None, id=None, json=False, k8s_ca_certificate=None, k8s_client_certificate=None, k8s_client_key=None, k8s_namespace=None, k8s_password=None, k8s_skip_system=None, k8s_token=None, k8s_url=None, k8s_username=None, name=None, new_name=None, protection_key=None, si_auto_rotate=None, si_rotation_hour=None, si_rotation_interval=None, si_sra_enable_rdp='false', si_target_name=None, si_user_groups=None, si_users_ignore=None, si_users_path_template=None, target_location=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """GatewayUpdateMigration - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -226,6 +228,7 @@ class GatewayUpdateMigration(object):
         self._si_rotation_interval = None
         self._si_sra_enable_rdp = None
         self._si_target_name = None
+        self._si_user_groups = None
         self._si_users_ignore = None
         self._si_users_path_template = None
         self._target_location = None
@@ -346,6 +349,8 @@ class GatewayUpdateMigration(object):
         if si_sra_enable_rdp is not None:
             self.si_sra_enable_rdp = si_sra_enable_rdp
         self.si_target_name = si_target_name
+        if si_user_groups is not None:
+            self.si_user_groups = si_user_groups
         if si_users_ignore is not None:
             self.si_users_ignore = si_users_ignore
         self.si_users_path_template = si_users_path_template
@@ -1667,6 +1672,29 @@ class GatewayUpdateMigration(object):
             raise ValueError("Invalid value for `si_target_name`, must not be `None`")  # noqa: E501
 
         self._si_target_name = si_target_name
+
+    @property
+    def si_user_groups(self):
+        """Gets the si_user_groups of this GatewayUpdateMigration.  # noqa: E501
+
+        Comma-separated list of groups to migrate users from. If empty, all users from all groups will be migrated (Relevant only for Server Inventory migration)  # noqa: E501
+
+        :return: The si_user_groups of this GatewayUpdateMigration.  # noqa: E501
+        :rtype: str
+        """
+        return self._si_user_groups
+
+    @si_user_groups.setter
+    def si_user_groups(self, si_user_groups):
+        """Sets the si_user_groups of this GatewayUpdateMigration.
+
+        Comma-separated list of groups to migrate users from. If empty, all users from all groups will be migrated (Relevant only for Server Inventory migration)  # noqa: E501
+
+        :param si_user_groups: The si_user_groups of this GatewayUpdateMigration.  # noqa: E501
+        :type: str
+        """
+
+        self._si_user_groups = si_user_groups
 
     @property
     def si_users_ignore(self):

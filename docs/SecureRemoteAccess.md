@@ -31,6 +31,7 @@ Name | Type | Description | Notes
 **ssh_private_key** | **bool** |  | [optional] 
 **ssh_user** | **str** |  | [optional] 
 **target_hosts** | [**list[TargetNameWithHosts]**](TargetNameWithHosts.md) |  | [optional] 
+**targets** | **list[str]** |  | [optional] 
 **url** | **str** |  | [optional] 
 **use_internal_bastion** | **bool** |  | [optional] 
 **web_proxy** | **bool** |  | [optional] 

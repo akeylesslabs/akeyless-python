@@ -44,6 +44,7 @@ class AuthMethod(object):
         'auth_method_roles_assoc': 'list[AuthMethodRoleAssociation]',
         'client_permissions': 'list[str]',
         'creation_date': 'datetime',
+        'description': 'str',
         'is_approved': 'bool',
         'modification_date': 'datetime'
     }
@@ -59,11 +60,12 @@ class AuthMethod(object):
         'auth_method_roles_assoc': 'auth_method_roles_assoc',
         'client_permissions': 'client_permissions',
         'creation_date': 'creation_date',
+        'description': 'description',
         'is_approved': 'is_approved',
         'modification_date': 'modification_date'
     }
 
-    def __init__(self, access_date=None, access_date_display=None, access_info=None, account_id=None, associated_gw_ids=None, auth_method_access_id=None, auth_method_name=None, auth_method_roles_assoc=None, client_permissions=None, creation_date=None, is_approved=None, modification_date=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, access_date=None, access_date_display=None, access_info=None, account_id=None, associated_gw_ids=None, auth_method_access_id=None, auth_method_name=None, auth_method_roles_assoc=None, client_permissions=None, creation_date=None, description=None, is_approved=None, modification_date=None, local_vars_configuration=None):  # noqa: E501
         """AuthMethod - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -79,6 +81,7 @@ class AuthMethod(object):
         self._auth_method_roles_assoc = None
         self._client_permissions = None
         self._creation_date = None
+        self._description = None
         self._is_approved = None
         self._modification_date = None
         self.discriminator = None
@@ -103,6 +106,8 @@ class AuthMethod(object):
             self.client_permissions = client_permissions
         if creation_date is not None:
             self.creation_date = creation_date
+        if description is not None:
+            self.description = description
         if is_approved is not None:
             self.is_approved = is_approved
         if modification_date is not None:
@@ -317,6 +322,27 @@ class AuthMethod(object):
         """
 
         self._creation_date = creation_date
+
+    @property
+    def description(self):
+        """Gets the description of this AuthMethod.  # noqa: E501
+
+
+        :return: The description of this AuthMethod.  # noqa: E501
+        :rtype: str
+        """
+        return self._description
+
+    @description.setter
+    def description(self, description):
+        """Sets the description of this AuthMethod.
+
+
+        :param description: The description of this AuthMethod.  # noqa: E501
+        :type: str
+        """
+
+        self._description = description
 
     @property
     def is_approved(self):

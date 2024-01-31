@@ -4,6 +4,8 @@ assocTargetItem is a command that creates an association between target and item
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**certificate_path** | **str** | A path on the target to store the certificate pem file (relevant only for certificate provisioning) | [optional] 
+**chain_path** | **str** | A path on the target to store the full chain pem file (relevant only for certificate provisioning) | [optional] 
 **disable_previous_key_version** | **bool** | Automatically disable previous key version (required for azure targets) | [optional] [default to False]
 **json** | **bool** | Set output format to JSON | [optional] [default to False]
 **key_operations** | **list[str]** | A list of allowed operations for the key (required for azure targets) | [optional] 
@@ -12,9 +14,11 @@ Name | Type | Description | Notes
 **location_id** | **str** | Location id of the GCP KMS (required for gcp targets) | [optional] 
 **multi_region** | **str** | Set to &#39;true&#39; to create a multi-region managed key. (Relevant only for Classic Key AWS targets) | [optional] [default to 'false']
 **name** | **str** | The item to associate | 
+**private_key_path** | **str** | A path on the target to store the private key (relevant only for certificate provisioning) | [optional] 
 **project_id** | **str** | Project id of the GCP KMS (required for gcp targets) | [optional] 
 **purpose** | **str** | Purpose of the key in GCP KMS (required for gcp targets) | [optional] 
 **regions** | **list[str]** | The list of regions to create a copy of the key in (relevant for aws targets) | [optional] 
+**sra_association** | **bool** | Is the target to associate is for sra, relevant only for linked target association for ldap rotated secret | [optional] [default to False]
 **target_name** | **str** | The target to associate | 
 **tenant_secret_type** | **str** | The tenant secret type [Data/SearchIndex/Analytics] (required for salesforce targets) | [optional] 
 **token** | **str** | Authentication token (see &#x60;/auth&#x60; and &#x60;/configure&#x60;) | [optional] 

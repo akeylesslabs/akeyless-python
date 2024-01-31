@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **name** | **str** | Target name | 
 **parent_target_name** | **str** | The parent Target name | [optional] 
 **token** | **str** | Authentication token (see &#x60;/auth&#x60; and &#x60;/configure&#x60;) | [optional] 
+**type** | **str** | Specifies the hosts type, relevant only when working without parent target | [optional] 
 **uid_token** | **str** | The universal identity token, Required only for universal_identity authentication | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

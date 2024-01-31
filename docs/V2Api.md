@@ -219,8 +219,10 @@ Method | HTTP request | Description
 [**list_sra_bastions**](V2Api.md#list_sra_bastions) | **POST** /list-sra-bastions | 
 [**list_targets**](V2Api.md#list_targets) | **POST** /list-targets | 
 [**move_objects**](V2Api.md#move_objects) | **POST** /move-objects | 
+[**provision_certificate**](V2Api.md#provision_certificate) | **POST** /provision-certificate | 
 [**raw_creds**](V2Api.md#raw_creds) | **POST** /raw-creds | 
 [**refresh_key**](V2Api.md#refresh_key) | **POST** /refresh-key | 
+[**renew_certificate**](V2Api.md#renew_certificate) | **POST** /renew-certificate | 
 [**request_access**](V2Api.md#request_access) | **POST** /request-access | 
 [**reverse_rbac**](V2Api.md#reverse_rbac) | **POST** /reverse-rbac | 
 [**revoke_creds**](V2Api.md#revoke_creds) | **POST** /revoke-creds | 
@@ -288,7 +290,7 @@ Method | HTTP request | Description
 [**update_rdp_target_details**](V2Api.md#update_rdp_target_details) | **POST** /update-rdp-target-details | 
 [**update_role**](V2Api.md#update_role) | **POST** /update-role | 
 [**update_rotated_secret**](V2Api.md#update_rotated_secret) | **POST** /update-rotated-secret | 
-[**update_rotation_settings**](V2Api.md#update_rotation_settings) | **POST** /update-rotation-settingsrotate-key | 
+[**update_rotation_settings**](V2Api.md#update_rotation_settings) | **POST** /update-rotation-settings | 
 [**update_salesforce_target**](V2Api.md#update_salesforce_target) | **POST** /update-salesforce-target | 
 [**update_secret_val**](V2Api.md#update_secret_val) | **POST** /update-secret-val | 
 [**update_ssh_cert_issuer**](V2Api.md#update_ssh_cert_issuer) | **POST** /update-ssh-cert-issuer | 
@@ -13211,6 +13213,66 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **provision_certificate**
+> ProvisionCertificateOutput provision_certificate(body)
+
+
+
+### Example
+
+```python
+from __future__ import print_function
+import time
+import akeyless
+from akeyless.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.akeyless.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = akeyless.Configuration(
+    host = "https://api.akeyless.io"
+)
+
+
+# Enter a context with an instance of the API client
+with akeyless.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = akeyless.V2Api(api_client)
+    body = akeyless.ProvisionCertificate() # ProvisionCertificate | 
+
+    try:
+        api_response = api_instance.provision_certificate(body)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling V2Api->provision_certificate: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**ProvisionCertificate**](ProvisionCertificate.md)|  | 
+
+### Return type
+
+[**ProvisionCertificateOutput**](ProvisionCertificateOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | provisionCertificateResponse wraps response body. |  -  |
+**0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **raw_creds**
 > SystemAccessCredentialsReplyObj raw_creds(body=body)
 
@@ -13327,6 +13389,66 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | refreshKeyResponse wraps response body. |  -  |
+**0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **renew_certificate**
+> RenewCertificateOutput renew_certificate(body)
+
+
+
+### Example
+
+```python
+from __future__ import print_function
+import time
+import akeyless
+from akeyless.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.akeyless.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = akeyless.Configuration(
+    host = "https://api.akeyless.io"
+)
+
+
+# Enter a context with an instance of the API client
+with akeyless.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = akeyless.V2Api(api_client)
+    body = akeyless.RenewCertificate() # RenewCertificate | 
+
+    try:
+        api_response = api_instance.renew_certificate(body)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling V2Api->renew_certificate: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**RenewCertificate**](RenewCertificate.md)|  | 
+
+### Return type
+
+[**RenewCertificateOutput**](RenewCertificateOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | renewCertificateResponse wraps response body. |  -  |
 **0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -13591,7 +13713,7 @@ configuration = akeyless.Configuration(
 with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
-    body = akeyless.UpdateRotationSettings() # UpdateRotationSettings | 
+    body = akeyless.RotateKey() # RotateKey | 
 
     try:
         api_response = api_instance.rotate_key(body)
@@ -13604,7 +13726,7 @@ with akeyless.ApiClient() as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**UpdateRotationSettings**](UpdateRotationSettings.md)|  | 
+ **body** | [**RotateKey**](RotateKey.md)|  | 
 
 ### Return type
 
@@ -17347,7 +17469,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_rotation_settings**
-> RotateKeyOutput update_rotation_settings()
+> RotateKeyOutput update_rotation_settings(body)
 
 
 
@@ -17370,16 +17492,20 @@ configuration = akeyless.Configuration(
 with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
-    
+    body = akeyless.UpdateRotationSettings() # UpdateRotationSettings | 
+
     try:
-        api_response = api_instance.update_rotation_settings()
+        api_response = api_instance.update_rotation_settings(body)
         pprint(api_response)
     except ApiException as e:
         print("Exception when calling V2Api->update_rotation_settings: %s\n" % e)
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**UpdateRotationSettings**](UpdateRotationSettings.md)|  | 
 
 ### Return type
 
@@ -17391,7 +17517,7 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 ### HTTP response details

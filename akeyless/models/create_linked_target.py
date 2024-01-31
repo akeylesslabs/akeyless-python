@@ -40,6 +40,7 @@ class CreateLinkedTarget(object):
         'name': 'str',
         'parent_target_name': 'str',
         'token': 'str',
+        'type': 'str',
         'uid_token': 'str'
     }
 
@@ -50,10 +51,11 @@ class CreateLinkedTarget(object):
         'name': 'name',
         'parent_target_name': 'parent-target-name',
         'token': 'token',
+        'type': 'type',
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, description=None, hosts=None, json=False, name=None, parent_target_name=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, description=None, hosts=None, json=False, name=None, parent_target_name=None, token=None, type=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """CreateLinkedTarget - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -65,6 +67,7 @@ class CreateLinkedTarget(object):
         self._name = None
         self._parent_target_name = None
         self._token = None
+        self._type = None
         self._uid_token = None
         self.discriminator = None
 
@@ -79,6 +82,8 @@ class CreateLinkedTarget(object):
             self.parent_target_name = parent_target_name
         if token is not None:
             self.token = token
+        if type is not None:
+            self.type = type
         if uid_token is not None:
             self.uid_token = uid_token
 
@@ -221,6 +226,29 @@ class CreateLinkedTarget(object):
         """
 
         self._token = token
+
+    @property
+    def type(self):
+        """Gets the type of this CreateLinkedTarget.  # noqa: E501
+
+        Specifies the hosts type, relevant only when working without parent target  # noqa: E501
+
+        :return: The type of this CreateLinkedTarget.  # noqa: E501
+        :rtype: str
+        """
+        return self._type
+
+    @type.setter
+    def type(self, type):
+        """Sets the type of this CreateLinkedTarget.
+
+        Specifies the hosts type, relevant only when working without parent target  # noqa: E501
+
+        :param type: The type of this CreateLinkedTarget.  # noqa: E501
+        :type: str
+        """
+
+        self._type = type
 
     @property
     def uid_token(self):

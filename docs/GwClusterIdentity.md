@@ -15,6 +15,7 @@ Name | Type | Description | Notes
 **default_secret_location** | **str** |  | [optional] 
 **display_name** | **str** |  | [optional] 
 **id** | **int** |  | [optional] 
+**serverless_type** | **str** |  | [optional] 
 **status** | **str** |  | [optional] 
 **status_description** | **str** |  | [optional] 
 

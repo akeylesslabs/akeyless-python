@@ -38,6 +38,7 @@ class SignDataWithClassicKey(object):
         'display_id': 'str',
         'hashed': 'bool',
         'hashing_method': 'str',
+        'ignore_cache': 'str',
         'json': 'bool',
         'name': 'str',
         'token': 'str',
@@ -50,6 +51,7 @@ class SignDataWithClassicKey(object):
         'display_id': 'display-id',
         'hashed': 'hashed',
         'hashing_method': 'hashing-method',
+        'ignore_cache': 'ignore-cache',
         'json': 'json',
         'name': 'name',
         'token': 'token',
@@ -57,7 +59,7 @@ class SignDataWithClassicKey(object):
         'version': 'version'
     }
 
-    def __init__(self, data=None, display_id=None, hashed=False, hashing_method='SHA256', json=False, name=None, token=None, uid_token=None, version=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, data=None, display_id=None, hashed=False, hashing_method='SHA256', ignore_cache='false', json=False, name=None, token=None, uid_token=None, version=None, local_vars_configuration=None):  # noqa: E501
         """SignDataWithClassicKey - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -67,6 +69,7 @@ class SignDataWithClassicKey(object):
         self._display_id = None
         self._hashed = None
         self._hashing_method = None
+        self._ignore_cache = None
         self._json = None
         self._name = None
         self._token = None
@@ -80,6 +83,8 @@ class SignDataWithClassicKey(object):
             self.hashed = hashed
         if hashing_method is not None:
             self.hashing_method = hashing_method
+        if ignore_cache is not None:
+            self.ignore_cache = ignore_cache
         if json is not None:
             self.json = json
         self.name = name
@@ -184,6 +189,29 @@ class SignDataWithClassicKey(object):
         """
 
         self._hashing_method = hashing_method
+
+    @property
+    def ignore_cache(self):
+        """Gets the ignore_cache of this SignDataWithClassicKey.  # noqa: E501
+
+        Retrieve the Secret value without checking the Gateway's cache [true/false]. This flag is only relevant when using the RestAPI  # noqa: E501
+
+        :return: The ignore_cache of this SignDataWithClassicKey.  # noqa: E501
+        :rtype: str
+        """
+        return self._ignore_cache
+
+    @ignore_cache.setter
+    def ignore_cache(self, ignore_cache):
+        """Sets the ignore_cache of this SignDataWithClassicKey.
+
+        Retrieve the Secret value without checking the Gateway's cache [true/false]. This flag is only relevant when using the RestAPI  # noqa: E501
+
+        :param ignore_cache: The ignore_cache of this SignDataWithClassicKey.  # noqa: E501
+        :type: str
+        """
+
+        self._ignore_cache = ignore_cache
 
     @property
     def json(self):

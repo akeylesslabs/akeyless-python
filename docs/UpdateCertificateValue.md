@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **expiration_event_in** | **list[str]** | How many days before the expiration of the certificate would you like to be notified. | [optional] 
 **format** | **str** | CertificateFormat of the certificate and private key, possible values: cer,crt,pem,pfx,p12. Required when passing inline certificate content with --certificate-data or --key-data, otherwise format is derived from the file extension. | [optional] 
 **json** | **bool** | Set output format to JSON | [optional] [default to False]
+**keep_prev_version** | **str** | Whether to keep previous version [true/false]. If not set, use default according to account settings | [optional] 
 **key** | **str** | The name of a key to use to encrypt the certificate&#39;s key (if empty, the account default protectionKey key will be used) | [optional] 
 **key_data** | **str** | Content of the certificate&#39;s private key in a Base64 format. | [optional] 
 **metadata** | **str** | Deprecated - use description | [optional] 

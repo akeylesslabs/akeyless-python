@@ -34,6 +34,7 @@ class CreateRotatedSecret(object):
                             and the value is json key in definition.
     """
     openapi_types = {
+        'provider_type': 'str',
         'api_id': 'str',
         'api_key': 'str',
         'application_id': 'str',
@@ -46,6 +47,7 @@ class CreateRotatedSecret(object):
         'gcp_key': 'str',
         'gcp_service_account_email': 'str',
         'gcp_service_account_key_id': 'str',
+        'host_provider': 'str',
         'json': 'bool',
         'key': 'str',
         'metadata': 'str',
@@ -76,6 +78,7 @@ class CreateRotatedSecret(object):
         'ssh_username': 'str',
         'storage_account_key_name': 'str',
         'tags': 'list[str]',
+        'target': 'list[str]',
         'target_name': 'str',
         'token': 'str',
         'uid_token': 'str',
@@ -84,6 +87,7 @@ class CreateRotatedSecret(object):
     }
 
     attribute_map = {
+        'provider_type': 'ProviderType',
         'api_id': 'api-id',
         'api_key': 'api-key',
         'application_id': 'application-id',
@@ -96,6 +100,7 @@ class CreateRotatedSecret(object):
         'gcp_key': 'gcp-key',
         'gcp_service_account_email': 'gcp-service-account-email',
         'gcp_service_account_key_id': 'gcp-service-account-key-id',
+        'host_provider': 'host-provider',
         'json': 'json',
         'key': 'key',
         'metadata': 'metadata',
@@ -126,6 +131,7 @@ class CreateRotatedSecret(object):
         'ssh_username': 'ssh-username',
         'storage_account_key_name': 'storage-account-key-name',
         'tags': 'tags',
+        'target': 'target',
         'target_name': 'target-name',
         'token': 'token',
         'uid_token': 'uid-token',
@@ -133,12 +139,13 @@ class CreateRotatedSecret(object):
         'user_dn': 'user-dn'
     }
 
-    def __init__(self, api_id=None, api_key=None, application_id=None, authentication_credentials='use-user-creds', auto_rotate=None, aws_region='us-east-2', custom_payload=None, delete_protection=None, description=None, gcp_key=None, gcp_service_account_email=None, gcp_service_account_key_id=None, json=False, key=None, metadata=None, name=None, rotate_after_disconnect='false', rotated_password=None, rotated_username=None, rotation_hour=None, rotation_interval=None, rotator_creds_type=None, rotator_custom_cmd=None, rotator_type=None, same_password=None, secure_access_allow_external_user=False, secure_access_aws_account_id=None, secure_access_aws_native_cli=None, secure_access_bastion_issuer=None, secure_access_db_name=None, secure_access_db_schema=None, secure_access_enable=None, secure_access_host=None, secure_access_rdp_domain=None, secure_access_rdp_user=None, secure_access_web=False, secure_access_web_browsing=False, secure_access_web_proxy=False, ssh_password=None, ssh_username=None, storage_account_key_name=None, tags=None, target_name=None, token=None, uid_token=None, user_attribute=None, user_dn=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, provider_type=None, api_id=None, api_key=None, application_id=None, authentication_credentials='use-user-creds', auto_rotate=None, aws_region='us-east-2', custom_payload=None, delete_protection=None, description=None, gcp_key=None, gcp_service_account_email=None, gcp_service_account_key_id=None, host_provider='explicit', json=False, key=None, metadata=None, name=None, rotate_after_disconnect='false', rotated_password=None, rotated_username=None, rotation_hour=None, rotation_interval=None, rotator_creds_type=None, rotator_custom_cmd=None, rotator_type=None, same_password=None, secure_access_allow_external_user=False, secure_access_aws_account_id=None, secure_access_aws_native_cli=None, secure_access_bastion_issuer=None, secure_access_db_name=None, secure_access_db_schema=None, secure_access_enable=None, secure_access_host=None, secure_access_rdp_domain=None, secure_access_rdp_user=None, secure_access_web=False, secure_access_web_browsing=False, secure_access_web_proxy=False, ssh_password=None, ssh_username=None, storage_account_key_name=None, tags=None, target=None, target_name=None, token=None, uid_token=None, user_attribute=None, user_dn=None, local_vars_configuration=None):  # noqa: E501
         """CreateRotatedSecret - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
+        self._provider_type = None
         self._api_id = None
         self._api_key = None
         self._application_id = None
@@ -151,6 +158,7 @@ class CreateRotatedSecret(object):
         self._gcp_key = None
         self._gcp_service_account_email = None
         self._gcp_service_account_key_id = None
+        self._host_provider = None
         self._json = None
         self._key = None
         self._metadata = None
@@ -181,6 +189,7 @@ class CreateRotatedSecret(object):
         self._ssh_username = None
         self._storage_account_key_name = None
         self._tags = None
+        self._target = None
         self._target_name = None
         self._token = None
         self._uid_token = None
@@ -188,6 +197,8 @@ class CreateRotatedSecret(object):
         self._user_dn = None
         self.discriminator = None
 
+        if provider_type is not None:
+            self.provider_type = provider_type
         if api_id is not None:
             self.api_id = api_id
         if api_key is not None:
@@ -212,6 +223,8 @@ class CreateRotatedSecret(object):
             self.gcp_service_account_email = gcp_service_account_email
         if gcp_service_account_key_id is not None:
             self.gcp_service_account_key_id = gcp_service_account_key_id
+        if host_provider is not None:
+            self.host_provider = host_provider
         if json is not None:
             self.json = json
         if key is not None:
@@ -270,6 +283,8 @@ class CreateRotatedSecret(object):
             self.storage_account_key_name = storage_account_key_name
         if tags is not None:
             self.tags = tags
+        if target is not None:
+            self.target = target
         self.target_name = target_name
         if token is not None:
             self.token = token
@@ -279,6 +294,27 @@ class CreateRotatedSecret(object):
             self.user_attribute = user_attribute
         if user_dn is not None:
             self.user_dn = user_dn
+
+    @property
+    def provider_type(self):
+        """Gets the provider_type of this CreateRotatedSecret.  # noqa: E501
+
+
+        :return: The provider_type of this CreateRotatedSecret.  # noqa: E501
+        :rtype: str
+        """
+        return self._provider_type
+
+    @provider_type.setter
+    def provider_type(self, provider_type):
+        """Sets the provider_type of this CreateRotatedSecret.
+
+
+        :param provider_type: The provider_type of this CreateRotatedSecret.  # noqa: E501
+        :type: str
+        """
+
+        self._provider_type = provider_type
 
     @property
     def api_id(self):
@@ -557,6 +593,29 @@ class CreateRotatedSecret(object):
         self._gcp_service_account_key_id = gcp_service_account_key_id
 
     @property
+    def host_provider(self):
+        """Gets the host_provider of this CreateRotatedSecret.  # noqa: E501
+
+        Host provider type [explicit/target], Relevant only for Secure Remote Access of ssh cert issuer and ldap rotated secret  # noqa: E501
+
+        :return: The host_provider of this CreateRotatedSecret.  # noqa: E501
+        :rtype: str
+        """
+        return self._host_provider
+
+    @host_provider.setter
+    def host_provider(self, host_provider):
+        """Sets the host_provider of this CreateRotatedSecret.
+
+        Host provider type [explicit/target], Relevant only for Secure Remote Access of ssh cert issuer and ldap rotated secret  # noqa: E501
+
+        :param host_provider: The host_provider of this CreateRotatedSecret.  # noqa: E501
+        :type: str
+        """
+
+        self._host_provider = host_provider
+
+    @property
     def json(self):
         """Gets the json of this CreateRotatedSecret.  # noqa: E501
 
@@ -723,7 +782,7 @@ class CreateRotatedSecret(object):
     def rotation_hour(self):
         """Gets the rotation_hour of this CreateRotatedSecret.  # noqa: E501
 
-        The Hour of the rotation in UTC  # noqa: E501
+        The Hour of the rotation in UTC. Default rotation-hour is 14:00  # noqa: E501
 
         :return: The rotation_hour of this CreateRotatedSecret.  # noqa: E501
         :rtype: int
@@ -734,7 +793,7 @@ class CreateRotatedSecret(object):
     def rotation_hour(self, rotation_hour):
         """Sets the rotation_hour of this CreateRotatedSecret.
 
-        The Hour of the rotation in UTC  # noqa: E501
+        The Hour of the rotation in UTC. Default rotation-hour is 14:00  # noqa: E501
 
         :param rotation_hour: The rotation_hour of this CreateRotatedSecret.  # noqa: E501
         :type: int
@@ -1247,6 +1306,29 @@ class CreateRotatedSecret(object):
         """
 
         self._tags = tags
+
+    @property
+    def target(self):
+        """Gets the target of this CreateRotatedSecret.  # noqa: E501
+
+        A list of linked targets to be associated, Relevant only for Secure Remote Access for ssh cert issuer and ldap rotated secret, To specify multiple targets use argument multiple times  # noqa: E501
+
+        :return: The target of this CreateRotatedSecret.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._target
+
+    @target.setter
+    def target(self, target):
+        """Sets the target of this CreateRotatedSecret.
+
+        A list of linked targets to be associated, Relevant only for Secure Remote Access for ssh cert issuer and ldap rotated secret, To specify multiple targets use argument multiple times  # noqa: E501
+
+        :param target: The target of this CreateRotatedSecret.  # noqa: E501
+        :type: list[str]
+        """
+
+        self._target = target
 
     @property
     def target_name(self):

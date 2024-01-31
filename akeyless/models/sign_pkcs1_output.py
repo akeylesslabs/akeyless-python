@@ -34,7 +34,7 @@ class SignPKCS1Output(object):
                             and the value is json key in definition.
     """
     openapi_types = {
-        'result': 'list[int]'
+        'result': 'str'
     }
 
     attribute_map = {
@@ -59,7 +59,7 @@ class SignPKCS1Output(object):
 
 
         :return: The result of this SignPKCS1Output.  # noqa: E501
-        :rtype: list[int]
+        :rtype: str
         """
         return self._result
 
@@ -69,7 +69,7 @@ class SignPKCS1Output(object):
 
 
         :param result: The result of this SignPKCS1Output.  # noqa: E501
-        :type: list[int]
+        :type: str
         """
 
         self._result = result

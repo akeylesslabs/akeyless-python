@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **enable_rdp_sra** | **bool** |  | [optional] 
 **migration_target_id** | **int** |  | [optional] 
 **server_targets_path_template** | **str** |  | [optional] 
+**user_groups** | **list[str]** |  | [optional] 
 **users_ignore_list** | **dict(str, bool)** |  | [optional] 
 **users_rotated_secrets_path_template** | **str** |  | [optional] 
 

@@ -14,6 +14,7 @@ Name | Type | Description | Notes
 **bound_organizational_units** | **list[str]** | A list of Organizational Units names. At least one must exist in the OU field. | [optional] 
 **bound_uri_sans** | **list[str]** | A list of URIs. At least one must exist in the SANs. Supports globbing. | [optional] 
 **certificate_data** | **str** | The certificate data in base64, if no file was provided | [optional] 
+**description** | **str** | Auth Method description | [optional] 
 **force_sub_claims** | **bool** | if true: enforce role-association must include sub claims | [optional] 
 **gw_bound_ips** | **list[str]** | A CIDR whitelist with the GW IPs that the access is restricted to | [optional] 
 **json** | **bool** | Set output format to JSON | [optional] [default to False]

@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **bound_namespaces** | **list[str]** | A list of namespaces that the access is restricted to | [optional] 
 **bound_pod_names** | **list[str]** | A list of pod names that the access is restricted to | [optional] 
 **bound_sa_names** | **list[str]** | A list of service account names that the access is restricted to | [optional] 
+**description** | **str** | Auth Method description | [optional] 
 **force_sub_claims** | **bool** | if true: enforce role-association must include sub claims | [optional] 
 **gen_key** | **str** | Automatically generate key-pair for K8S configuration. If set to false, a public key needs to be provided [true/false] | [optional] [default to 'true']
 **gw_bound_ips** | **list[str]** | A CIDR whitelist with the GW IPs that the access is restricted to | [optional] 

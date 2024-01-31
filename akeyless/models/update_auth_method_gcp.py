@@ -42,6 +42,7 @@ class UpdateAuthMethodGCP(object):
         'bound_regions': 'list[str]',
         'bound_service_accounts': 'list[str]',
         'bound_zones': 'list[str]',
+        'description': 'str',
         'force_sub_claims': 'bool',
         'gw_bound_ips': 'list[str]',
         'json': 'bool',
@@ -63,6 +64,7 @@ class UpdateAuthMethodGCP(object):
         'bound_regions': 'bound-regions',
         'bound_service_accounts': 'bound-service-accounts',
         'bound_zones': 'bound-zones',
+        'description': 'description',
         'force_sub_claims': 'force-sub-claims',
         'gw_bound_ips': 'gw-bound-ips',
         'json': 'json',
@@ -75,7 +77,7 @@ class UpdateAuthMethodGCP(object):
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, access_expires=0, audience='akeyless.io', bound_ips=None, bound_labels=None, bound_projects=None, bound_regions=None, bound_service_accounts=None, bound_zones=None, force_sub_claims=None, gw_bound_ips=None, json=False, jwt_ttl=0, name=None, new_name=None, service_account_creds_data=None, token=None, type=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, access_expires=0, audience='akeyless.io', bound_ips=None, bound_labels=None, bound_projects=None, bound_regions=None, bound_service_accounts=None, bound_zones=None, description=None, force_sub_claims=None, gw_bound_ips=None, json=False, jwt_ttl=0, name=None, new_name=None, service_account_creds_data=None, token=None, type=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """UpdateAuthMethodGCP - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -89,6 +91,7 @@ class UpdateAuthMethodGCP(object):
         self._bound_regions = None
         self._bound_service_accounts = None
         self._bound_zones = None
+        self._description = None
         self._force_sub_claims = None
         self._gw_bound_ips = None
         self._json = None
@@ -116,6 +119,8 @@ class UpdateAuthMethodGCP(object):
             self.bound_service_accounts = bound_service_accounts
         if bound_zones is not None:
             self.bound_zones = bound_zones
+        if description is not None:
+            self.description = description
         if force_sub_claims is not None:
             self.force_sub_claims = force_sub_claims
         if gw_bound_ips is not None:
@@ -320,6 +325,29 @@ class UpdateAuthMethodGCP(object):
         """
 
         self._bound_zones = bound_zones
+
+    @property
+    def description(self):
+        """Gets the description of this UpdateAuthMethodGCP.  # noqa: E501
+
+        Auth Method description  # noqa: E501
+
+        :return: The description of this UpdateAuthMethodGCP.  # noqa: E501
+        :rtype: str
+        """
+        return self._description
+
+    @description.setter
+    def description(self, description):
+        """Sets the description of this UpdateAuthMethodGCP.
+
+        Auth Method description  # noqa: E501
+
+        :param description: The description of this UpdateAuthMethodGCP.  # noqa: E501
+        :type: str
+        """
+
+        self._description = description
 
     @property
     def force_sub_claims(self):

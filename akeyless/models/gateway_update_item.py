@@ -37,6 +37,7 @@ class GatewayUpdateItem(object):
         'add_tag': 'list[str]',
         'api_id': 'str',
         'api_key': 'str',
+        'app_id': 'str',
         'auto_rotate': 'str',
         'custom_payload': 'str',
         'delete_protection': 'str',
@@ -66,6 +67,7 @@ class GatewayUpdateItem(object):
         'add_tag': 'add-tag',
         'api_id': 'api-id',
         'api_key': 'api-key',
+        'app_id': 'app-id',
         'auto_rotate': 'auto-rotate',
         'custom_payload': 'custom-payload',
         'delete_protection': 'delete_protection',
@@ -91,7 +93,7 @@ class GatewayUpdateItem(object):
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, add_tag=None, api_id=None, api_key=None, auto_rotate=None, custom_payload=None, delete_protection=None, description='default_metadata', gcp_key=None, gcp_service_account_email=None, gcp_service_account_key_id=None, json=False, keep_prev_version=None, key=None, name=None, new_metadata='default_metadata', new_name=None, new_version=None, rm_tag=None, rotated_password=None, rotated_username=None, rotation_hour=0, rotation_interval=None, rotator_creds_type='use-self-creds', token=None, type=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, add_tag=None, api_id=None, api_key=None, app_id=None, auto_rotate=None, custom_payload=None, delete_protection=None, description='default_metadata', gcp_key=None, gcp_service_account_email=None, gcp_service_account_key_id=None, json=False, keep_prev_version=None, key=None, name=None, new_metadata='default_metadata', new_name=None, new_version=None, rm_tag=None, rotated_password=None, rotated_username=None, rotation_hour=0, rotation_interval=None, rotator_creds_type='use-self-creds', token=None, type=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """GatewayUpdateItem - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -100,6 +102,7 @@ class GatewayUpdateItem(object):
         self._add_tag = None
         self._api_id = None
         self._api_key = None
+        self._app_id = None
         self._auto_rotate = None
         self._custom_payload = None
         self._delete_protection = None
@@ -131,6 +134,8 @@ class GatewayUpdateItem(object):
             self.api_id = api_id
         if api_key is not None:
             self.api_key = api_key
+        if app_id is not None:
+            self.app_id = app_id
         if auto_rotate is not None:
             self.auto_rotate = auto_rotate
         if custom_payload is not None:
@@ -244,6 +249,29 @@ class GatewayUpdateItem(object):
         """
 
         self._api_key = api_key
+
+    @property
+    def app_id(self):
+        """Gets the app_id of this GatewayUpdateItem.  # noqa: E501
+
+        ApplicationId (used in azure)  # noqa: E501
+
+        :return: The app_id of this GatewayUpdateItem.  # noqa: E501
+        :rtype: str
+        """
+        return self._app_id
+
+    @app_id.setter
+    def app_id(self, app_id):
+        """Sets the app_id of this GatewayUpdateItem.
+
+        ApplicationId (used in azure)  # noqa: E501
+
+        :param app_id: The app_id of this GatewayUpdateItem.  # noqa: E501
+        :type: str
+        """
+
+        self._app_id = app_id
 
     @property
     def auto_rotate(self):

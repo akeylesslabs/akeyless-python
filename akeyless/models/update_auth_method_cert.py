@@ -44,6 +44,7 @@ class UpdateAuthMethodCert(object):
         'bound_organizational_units': 'list[str]',
         'bound_uri_sans': 'list[str]',
         'certificate_data': 'str',
+        'description': 'str',
         'force_sub_claims': 'bool',
         'gw_bound_ips': 'list[str]',
         'json': 'bool',
@@ -67,6 +68,7 @@ class UpdateAuthMethodCert(object):
         'bound_organizational_units': 'bound-organizational-units',
         'bound_uri_sans': 'bound-uri-sans',
         'certificate_data': 'certificate-data',
+        'description': 'description',
         'force_sub_claims': 'force-sub-claims',
         'gw_bound_ips': 'gw-bound-ips',
         'json': 'json',
@@ -79,7 +81,7 @@ class UpdateAuthMethodCert(object):
         'unique_identifier': 'unique-identifier'
     }
 
-    def __init__(self, access_expires=0, allowed_cors=None, bound_common_names=None, bound_dns_sans=None, bound_email_sans=None, bound_extensions=None, bound_ips=None, bound_organizational_units=None, bound_uri_sans=None, certificate_data=None, force_sub_claims=None, gw_bound_ips=None, json=False, jwt_ttl=0, name=None, new_name=None, revoked_cert_ids=None, token=None, uid_token=None, unique_identifier=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, access_expires=0, allowed_cors=None, bound_common_names=None, bound_dns_sans=None, bound_email_sans=None, bound_extensions=None, bound_ips=None, bound_organizational_units=None, bound_uri_sans=None, certificate_data=None, description=None, force_sub_claims=None, gw_bound_ips=None, json=False, jwt_ttl=0, name=None, new_name=None, revoked_cert_ids=None, token=None, uid_token=None, unique_identifier=None, local_vars_configuration=None):  # noqa: E501
         """UpdateAuthMethodCert - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -95,6 +97,7 @@ class UpdateAuthMethodCert(object):
         self._bound_organizational_units = None
         self._bound_uri_sans = None
         self._certificate_data = None
+        self._description = None
         self._force_sub_claims = None
         self._gw_bound_ips = None
         self._json = None
@@ -127,6 +130,8 @@ class UpdateAuthMethodCert(object):
             self.bound_uri_sans = bound_uri_sans
         if certificate_data is not None:
             self.certificate_data = certificate_data
+        if description is not None:
+            self.description = description
         if force_sub_claims is not None:
             self.force_sub_claims = force_sub_claims
         if gw_bound_ips is not None:
@@ -375,6 +380,29 @@ class UpdateAuthMethodCert(object):
         """
 
         self._certificate_data = certificate_data
+
+    @property
+    def description(self):
+        """Gets the description of this UpdateAuthMethodCert.  # noqa: E501
+
+        Auth Method description  # noqa: E501
+
+        :return: The description of this UpdateAuthMethodCert.  # noqa: E501
+        :rtype: str
+        """
+        return self._description
+
+    @description.setter
+    def description(self, description):
+        """Sets the description of this UpdateAuthMethodCert.
+
+        Auth Method description  # noqa: E501
+
+        :param description: The description of this UpdateAuthMethodCert.  # noqa: E501
+        :type: str
+        """
+
+        self._description = description
 
     @property
     def force_sub_claims(self):

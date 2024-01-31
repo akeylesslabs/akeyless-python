@@ -36,6 +36,8 @@ class CertificateChainInfo(object):
     openapi_types = {
         'certificate_chain': 'list[CertificateInfo]',
         'certificate_format': 'str',
+        'certificate_has_private_key': 'bool',
+        'certificate_issuer_gw_cluster_url': 'str',
         'certificate_issuer_item_id': 'int',
         'certificate_issuer_name': 'str',
         'certificate_pem': 'str',
@@ -46,6 +48,8 @@ class CertificateChainInfo(object):
     attribute_map = {
         'certificate_chain': 'certificate_chain',
         'certificate_format': 'certificate_format',
+        'certificate_has_private_key': 'certificate_has_private_key',
+        'certificate_issuer_gw_cluster_url': 'certificate_issuer_gw_cluster_url',
         'certificate_issuer_item_id': 'certificate_issuer_item_id',
         'certificate_issuer_name': 'certificate_issuer_name',
         'certificate_pem': 'certificate_pem',
@@ -53,7 +57,7 @@ class CertificateChainInfo(object):
         'expiration_events': 'expiration_events'
     }
 
-    def __init__(self, certificate_chain=None, certificate_format=None, certificate_issuer_item_id=None, certificate_issuer_name=None, certificate_pem=None, certificate_status=None, expiration_events=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, certificate_chain=None, certificate_format=None, certificate_has_private_key=None, certificate_issuer_gw_cluster_url=None, certificate_issuer_item_id=None, certificate_issuer_name=None, certificate_pem=None, certificate_status=None, expiration_events=None, local_vars_configuration=None):  # noqa: E501
         """CertificateChainInfo - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -61,6 +65,8 @@ class CertificateChainInfo(object):
 
         self._certificate_chain = None
         self._certificate_format = None
+        self._certificate_has_private_key = None
+        self._certificate_issuer_gw_cluster_url = None
         self._certificate_issuer_item_id = None
         self._certificate_issuer_name = None
         self._certificate_pem = None
@@ -72,6 +78,10 @@ class CertificateChainInfo(object):
             self.certificate_chain = certificate_chain
         if certificate_format is not None:
             self.certificate_format = certificate_format
+        if certificate_has_private_key is not None:
+            self.certificate_has_private_key = certificate_has_private_key
+        if certificate_issuer_gw_cluster_url is not None:
+            self.certificate_issuer_gw_cluster_url = certificate_issuer_gw_cluster_url
         if certificate_issuer_item_id is not None:
             self.certificate_issuer_item_id = certificate_issuer_item_id
         if certificate_issuer_name is not None:
@@ -124,6 +134,48 @@ class CertificateChainInfo(object):
         """
 
         self._certificate_format = certificate_format
+
+    @property
+    def certificate_has_private_key(self):
+        """Gets the certificate_has_private_key of this CertificateChainInfo.  # noqa: E501
+
+
+        :return: The certificate_has_private_key of this CertificateChainInfo.  # noqa: E501
+        :rtype: bool
+        """
+        return self._certificate_has_private_key
+
+    @certificate_has_private_key.setter
+    def certificate_has_private_key(self, certificate_has_private_key):
+        """Sets the certificate_has_private_key of this CertificateChainInfo.
+
+
+        :param certificate_has_private_key: The certificate_has_private_key of this CertificateChainInfo.  # noqa: E501
+        :type: bool
+        """
+
+        self._certificate_has_private_key = certificate_has_private_key
+
+    @property
+    def certificate_issuer_gw_cluster_url(self):
+        """Gets the certificate_issuer_gw_cluster_url of this CertificateChainInfo.  # noqa: E501
+
+
+        :return: The certificate_issuer_gw_cluster_url of this CertificateChainInfo.  # noqa: E501
+        :rtype: str
+        """
+        return self._certificate_issuer_gw_cluster_url
+
+    @certificate_issuer_gw_cluster_url.setter
+    def certificate_issuer_gw_cluster_url(self, certificate_issuer_gw_cluster_url):
+        """Sets the certificate_issuer_gw_cluster_url of this CertificateChainInfo.
+
+
+        :param certificate_issuer_gw_cluster_url: The certificate_issuer_gw_cluster_url of this CertificateChainInfo.  # noqa: E501
+        :type: str
+        """
+
+        self._certificate_issuer_gw_cluster_url = certificate_issuer_gw_cluster_url
 
     @property
     def certificate_issuer_item_id(self):

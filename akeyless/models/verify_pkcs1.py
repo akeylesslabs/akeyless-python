@@ -35,55 +35,75 @@ class VerifyPKCS1(object):
     """
     openapi_types = {
         'display_id': 'str',
+        'hash_function': 'str',
+        'input_format': 'str',
         'item_id': 'int',
         'json': 'bool',
         'key_name': 'str',
         'message': 'str',
+        'prehashed': 'bool',
         'signature': 'str',
         'token': 'str',
-        'uid_token': 'str'
+        'uid_token': 'str',
+        'version': 'int'
     }
 
     attribute_map = {
         'display_id': 'display-id',
+        'hash_function': 'hash-function',
+        'input_format': 'input-format',
         'item_id': 'item-id',
         'json': 'json',
         'key_name': 'key-name',
         'message': 'message',
+        'prehashed': 'prehashed',
         'signature': 'signature',
         'token': 'token',
-        'uid_token': 'uid-token'
+        'uid_token': 'uid-token',
+        'version': 'version'
     }
 
-    def __init__(self, display_id=None, item_id=None, json=False, key_name=None, message=None, signature=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, display_id=None, hash_function=None, input_format=None, item_id=None, json=False, key_name=None, message=None, prehashed=None, signature=None, token=None, uid_token=None, version=None, local_vars_configuration=None):  # noqa: E501
         """VerifyPKCS1 - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._display_id = None
+        self._hash_function = None
+        self._input_format = None
         self._item_id = None
         self._json = None
         self._key_name = None
         self._message = None
+        self._prehashed = None
         self._signature = None
         self._token = None
         self._uid_token = None
+        self._version = None
         self.discriminator = None
 
         if display_id is not None:
             self.display_id = display_id
+        if hash_function is not None:
+            self.hash_function = hash_function
+        if input_format is not None:
+            self.input_format = input_format
         if item_id is not None:
             self.item_id = item_id
         if json is not None:
             self.json = json
         self.key_name = key_name
         self.message = message
+        if prehashed is not None:
+            self.prehashed = prehashed
         self.signature = signature
         if token is not None:
             self.token = token
         if uid_token is not None:
             self.uid_token = uid_token
+        if version is not None:
+            self.version = version
 
     @property
     def display_id(self):
@@ -107,6 +127,52 @@ class VerifyPKCS1(object):
         """
 
         self._display_id = display_id
+
+    @property
+    def hash_function(self):
+        """Gets the hash_function of this VerifyPKCS1.  # noqa: E501
+
+        HashFunction defines the hash function (e.g. sha-256)  # noqa: E501
+
+        :return: The hash_function of this VerifyPKCS1.  # noqa: E501
+        :rtype: str
+        """
+        return self._hash_function
+
+    @hash_function.setter
+    def hash_function(self, hash_function):
+        """Sets the hash_function of this VerifyPKCS1.
+
+        HashFunction defines the hash function (e.g. sha-256)  # noqa: E501
+
+        :param hash_function: The hash_function of this VerifyPKCS1.  # noqa: E501
+        :type: str
+        """
+
+        self._hash_function = hash_function
+
+    @property
+    def input_format(self):
+        """Gets the input_format of this VerifyPKCS1.  # noqa: E501
+
+        Select default assumed format for the plaintext message. Currently supported options: [base64]  # noqa: E501
+
+        :return: The input_format of this VerifyPKCS1.  # noqa: E501
+        :rtype: str
+        """
+        return self._input_format
+
+    @input_format.setter
+    def input_format(self, input_format):
+        """Sets the input_format of this VerifyPKCS1.
+
+        Select default assumed format for the plaintext message. Currently supported options: [base64]  # noqa: E501
+
+        :param input_format: The input_format of this VerifyPKCS1.  # noqa: E501
+        :type: str
+        """
+
+        self._input_format = input_format
 
     @property
     def item_id(self):
@@ -205,6 +271,29 @@ class VerifyPKCS1(object):
         self._message = message
 
     @property
+    def prehashed(self):
+        """Gets the prehashed of this VerifyPKCS1.  # noqa: E501
+
+        Markes that the message is already hashed  # noqa: E501
+
+        :return: The prehashed of this VerifyPKCS1.  # noqa: E501
+        :rtype: bool
+        """
+        return self._prehashed
+
+    @prehashed.setter
+    def prehashed(self, prehashed):
+        """Sets the prehashed of this VerifyPKCS1.
+
+        Markes that the message is already hashed  # noqa: E501
+
+        :param prehashed: The prehashed of this VerifyPKCS1.  # noqa: E501
+        :type: bool
+        """
+
+        self._prehashed = prehashed
+
+    @property
     def signature(self):
         """Gets the signature of this VerifyPKCS1.  # noqa: E501
 
@@ -274,6 +363,29 @@ class VerifyPKCS1(object):
         """
 
         self._uid_token = uid_token
+
+    @property
+    def version(self):
+        """Gets the version of this VerifyPKCS1.  # noqa: E501
+
+        The version of the key to use for verification  # noqa: E501
+
+        :return: The version of this VerifyPKCS1.  # noqa: E501
+        :rtype: int
+        """
+        return self._version
+
+    @version.setter
+    def version(self, version):
+        """Sets the version of this VerifyPKCS1.
+
+        The version of the key to use for verification  # noqa: E501
+
+        :param version: The version of this VerifyPKCS1.  # noqa: E501
+        :type: int
+        """
+
+        self._version = version
 
     def to_dict(self):
         """Returns the model properties as a dict"""

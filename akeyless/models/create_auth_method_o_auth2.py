@@ -38,6 +38,7 @@ class CreateAuthMethodOAuth2(object):
         'audience': 'str',
         'bound_client_ids': 'list[str]',
         'bound_ips': 'list[str]',
+        'description': 'str',
         'force_sub_claims': 'bool',
         'gateway_url': 'str',
         'gw_bound_ips': 'list[str]',
@@ -58,6 +59,7 @@ class CreateAuthMethodOAuth2(object):
         'audience': 'audience',
         'bound_client_ids': 'bound-client-ids',
         'bound_ips': 'bound-ips',
+        'description': 'description',
         'force_sub_claims': 'force-sub-claims',
         'gateway_url': 'gateway-url',
         'gw_bound_ips': 'gw-bound-ips',
@@ -73,7 +75,7 @@ class CreateAuthMethodOAuth2(object):
         'unique_identifier': 'unique-identifier'
     }
 
-    def __init__(self, access_expires=0, audience=None, bound_client_ids=None, bound_ips=None, force_sub_claims=None, gateway_url=None, gw_bound_ips=None, issuer=None, json=False, jwks_json_data=None, jwks_uri='default_jwks_url', jwt_ttl=0, name=None, subclaims_delimiters=None, token=None, uid_token=None, unique_identifier=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, access_expires=0, audience=None, bound_client_ids=None, bound_ips=None, description=None, force_sub_claims=None, gateway_url=None, gw_bound_ips=None, issuer=None, json=False, jwks_json_data=None, jwks_uri='default_jwks_url', jwt_ttl=0, name=None, subclaims_delimiters=None, token=None, uid_token=None, unique_identifier=None, local_vars_configuration=None):  # noqa: E501
         """CreateAuthMethodOAuth2 - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -83,6 +85,7 @@ class CreateAuthMethodOAuth2(object):
         self._audience = None
         self._bound_client_ids = None
         self._bound_ips = None
+        self._description = None
         self._force_sub_claims = None
         self._gateway_url = None
         self._gw_bound_ips = None
@@ -106,6 +109,8 @@ class CreateAuthMethodOAuth2(object):
             self.bound_client_ids = bound_client_ids
         if bound_ips is not None:
             self.bound_ips = bound_ips
+        if description is not None:
+            self.description = description
         if force_sub_claims is not None:
             self.force_sub_claims = force_sub_claims
         if gateway_url is not None:
@@ -221,6 +226,29 @@ class CreateAuthMethodOAuth2(object):
         """
 
         self._bound_ips = bound_ips
+
+    @property
+    def description(self):
+        """Gets the description of this CreateAuthMethodOAuth2.  # noqa: E501
+
+        Auth Method description  # noqa: E501
+
+        :return: The description of this CreateAuthMethodOAuth2.  # noqa: E501
+        :rtype: str
+        """
+        return self._description
+
+    @description.setter
+    def description(self, description):
+        """Sets the description of this CreateAuthMethodOAuth2.
+
+        Auth Method description  # noqa: E501
+
+        :param description: The description of this CreateAuthMethodOAuth2.  # noqa: E501
+        :type: str
+        """
+
+        self._description = description
 
     @property
     def force_sub_claims(self):

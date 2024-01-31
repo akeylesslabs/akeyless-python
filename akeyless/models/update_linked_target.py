@@ -44,6 +44,7 @@ class UpdateLinkedTarget(object):
         'parent_target_name': 'str',
         'rm_hosts': 'str',
         'token': 'str',
+        'type': 'str',
         'uid_token': 'str'
     }
 
@@ -58,10 +59,11 @@ class UpdateLinkedTarget(object):
         'parent_target_name': 'parent-target-name',
         'rm_hosts': 'rm-hosts',
         'token': 'token',
+        'type': 'type',
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, add_hosts=None, description=None, hosts=None, json=False, keep_prev_version=None, name=None, new_name=None, parent_target_name=None, rm_hosts=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, add_hosts=None, description=None, hosts=None, json=False, keep_prev_version=None, name=None, new_name=None, parent_target_name=None, rm_hosts=None, token=None, type=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """UpdateLinkedTarget - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -77,6 +79,7 @@ class UpdateLinkedTarget(object):
         self._parent_target_name = None
         self._rm_hosts = None
         self._token = None
+        self._type = None
         self._uid_token = None
         self.discriminator = None
 
@@ -99,6 +102,8 @@ class UpdateLinkedTarget(object):
             self.rm_hosts = rm_hosts
         if token is not None:
             self.token = token
+        if type is not None:
+            self.type = type
         if uid_token is not None:
             self.uid_token = uid_token
 
@@ -333,6 +338,29 @@ class UpdateLinkedTarget(object):
         """
 
         self._token = token
+
+    @property
+    def type(self):
+        """Gets the type of this UpdateLinkedTarget.  # noqa: E501
+
+        Specifies the hosts type, relevant only when working without parent target  # noqa: E501
+
+        :return: The type of this UpdateLinkedTarget.  # noqa: E501
+        :rtype: str
+        """
+        return self._type
+
+    @type.setter
+    def type(self, type):
+        """Sets the type of this UpdateLinkedTarget.
+
+        Specifies the hosts type, relevant only when working without parent target  # noqa: E501
+
+        :param type: The type of this UpdateLinkedTarget.  # noqa: E501
+        :type: str
+        """
+
+        self._type = type
 
     @property
     def uid_token(self):

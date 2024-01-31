@@ -40,6 +40,7 @@ class UpdateAuthMethodOIDC(object):
         'bound_ips': 'list[str]',
         'client_id': 'str',
         'client_secret': 'str',
+        'description': 'str',
         'force_sub_claims': 'bool',
         'gw_bound_ips': 'list[str]',
         'issuer': 'str',
@@ -62,6 +63,7 @@ class UpdateAuthMethodOIDC(object):
         'bound_ips': 'bound-ips',
         'client_id': 'client-id',
         'client_secret': 'client-secret',
+        'description': 'description',
         'force_sub_claims': 'force-sub-claims',
         'gw_bound_ips': 'gw-bound-ips',
         'issuer': 'issuer',
@@ -77,7 +79,7 @@ class UpdateAuthMethodOIDC(object):
         'unique_identifier': 'unique-identifier'
     }
 
-    def __init__(self, access_expires=0, allowed_redirect_uri=None, audience=None, bound_ips=None, client_id=None, client_secret=None, force_sub_claims=None, gw_bound_ips=None, issuer=None, json=False, jwt_ttl=0, name=None, new_name=None, required_scopes=None, required_scopes_prefix=None, subclaims_delimiters=None, token=None, uid_token=None, unique_identifier=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, access_expires=0, allowed_redirect_uri=None, audience=None, bound_ips=None, client_id=None, client_secret=None, description=None, force_sub_claims=None, gw_bound_ips=None, issuer=None, json=False, jwt_ttl=0, name=None, new_name=None, required_scopes=None, required_scopes_prefix=None, subclaims_delimiters=None, token=None, uid_token=None, unique_identifier=None, local_vars_configuration=None):  # noqa: E501
         """UpdateAuthMethodOIDC - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -89,6 +91,7 @@ class UpdateAuthMethodOIDC(object):
         self._bound_ips = None
         self._client_id = None
         self._client_secret = None
+        self._description = None
         self._force_sub_claims = None
         self._gw_bound_ips = None
         self._issuer = None
@@ -116,6 +119,8 @@ class UpdateAuthMethodOIDC(object):
             self.client_id = client_id
         if client_secret is not None:
             self.client_secret = client_secret
+        if description is not None:
+            self.description = description
         if force_sub_claims is not None:
             self.force_sub_claims = force_sub_claims
         if gw_bound_ips is not None:
@@ -278,6 +283,29 @@ class UpdateAuthMethodOIDC(object):
         """
 
         self._client_secret = client_secret
+
+    @property
+    def description(self):
+        """Gets the description of this UpdateAuthMethodOIDC.  # noqa: E501
+
+        Auth Method description  # noqa: E501
+
+        :return: The description of this UpdateAuthMethodOIDC.  # noqa: E501
+        :rtype: str
+        """
+        return self._description
+
+    @description.setter
+    def description(self, description):
+        """Sets the description of this UpdateAuthMethodOIDC.
+
+        Auth Method description  # noqa: E501
+
+        :param description: The description of this UpdateAuthMethodOIDC.  # noqa: E501
+        :type: str
+        """
+
+        self._description = description
 
     @property
     def force_sub_claims(self):

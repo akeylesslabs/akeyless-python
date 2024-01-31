@@ -46,6 +46,7 @@ class UpdateAuthMethodAzureAD(object):
         'bound_spid': 'list[str]',
         'bound_sub_id': 'list[str]',
         'bound_tenant_id': 'str',
+        'description': 'str',
         'force_sub_claims': 'bool',
         'gw_bound_ips': 'list[str]',
         'issuer': 'str',
@@ -71,6 +72,7 @@ class UpdateAuthMethodAzureAD(object):
         'bound_spid': 'bound-spid',
         'bound_sub_id': 'bound-sub-id',
         'bound_tenant_id': 'bound-tenant-id',
+        'description': 'description',
         'force_sub_claims': 'force-sub-claims',
         'gw_bound_ips': 'gw-bound-ips',
         'issuer': 'issuer',
@@ -83,7 +85,7 @@ class UpdateAuthMethodAzureAD(object):
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, access_expires=0, audience='https://management.azure.com/', bound_group_id=None, bound_ips=None, bound_providers=None, bound_resource_id=None, bound_resource_names=None, bound_resource_types=None, bound_rg_id=None, bound_spid=None, bound_sub_id=None, bound_tenant_id=None, force_sub_claims=None, gw_bound_ips=None, issuer='https://sts.windows.net/---bound_tenant_id---', json=False, jwks_uri='https://login.microsoftonline.com/common/discovery/keys', jwt_ttl=0, name=None, new_name=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, access_expires=0, audience='https://management.azure.com/', bound_group_id=None, bound_ips=None, bound_providers=None, bound_resource_id=None, bound_resource_names=None, bound_resource_types=None, bound_rg_id=None, bound_spid=None, bound_sub_id=None, bound_tenant_id=None, description=None, force_sub_claims=None, gw_bound_ips=None, issuer='https://sts.windows.net/---bound_tenant_id---', json=False, jwks_uri='https://login.microsoftonline.com/common/discovery/keys', jwt_ttl=0, name=None, new_name=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """UpdateAuthMethodAzureAD - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -101,6 +103,7 @@ class UpdateAuthMethodAzureAD(object):
         self._bound_spid = None
         self._bound_sub_id = None
         self._bound_tenant_id = None
+        self._description = None
         self._force_sub_claims = None
         self._gw_bound_ips = None
         self._issuer = None
@@ -136,6 +139,8 @@ class UpdateAuthMethodAzureAD(object):
         if bound_sub_id is not None:
             self.bound_sub_id = bound_sub_id
         self.bound_tenant_id = bound_tenant_id
+        if description is not None:
+            self.description = description
         if force_sub_claims is not None:
             self.force_sub_claims = force_sub_claims
         if gw_bound_ips is not None:
@@ -183,7 +188,7 @@ class UpdateAuthMethodAzureAD(object):
     def audience(self):
         """Gets the audience of this UpdateAuthMethodAzureAD.  # noqa: E501
 
-        The audience in the JWT  # noqa: E501
+        Deprecated (Deprecated) The audience in the JWT  # noqa: E501
 
         :return: The audience of this UpdateAuthMethodAzureAD.  # noqa: E501
         :rtype: str
@@ -194,7 +199,7 @@ class UpdateAuthMethodAzureAD(object):
     def audience(self, audience):
         """Sets the audience of this UpdateAuthMethodAzureAD.
 
-        The audience in the JWT  # noqa: E501
+        Deprecated (Deprecated) The audience in the JWT  # noqa: E501
 
         :param audience: The audience of this UpdateAuthMethodAzureAD.  # noqa: E501
         :type: str
@@ -433,6 +438,29 @@ class UpdateAuthMethodAzureAD(object):
             raise ValueError("Invalid value for `bound_tenant_id`, must not be `None`")  # noqa: E501
 
         self._bound_tenant_id = bound_tenant_id
+
+    @property
+    def description(self):
+        """Gets the description of this UpdateAuthMethodAzureAD.  # noqa: E501
+
+        Auth Method description  # noqa: E501
+
+        :return: The description of this UpdateAuthMethodAzureAD.  # noqa: E501
+        :rtype: str
+        """
+        return self._description
+
+    @description.setter
+    def description(self, description):
+        """Sets the description of this UpdateAuthMethodAzureAD.
+
+        Auth Method description  # noqa: E501
+
+        :param description: The description of this UpdateAuthMethodAzureAD.  # noqa: E501
+        :type: str
+        """
+
+        self._description = description
 
     @property
     def force_sub_claims(self):

@@ -40,6 +40,7 @@ class ServerInventoryPayload(object):
         'enable_rdp_sra': 'bool',
         'migration_target_id': 'int',
         'server_targets_path_template': 'str',
+        'user_groups': 'list[str]',
         'users_ignore_list': 'dict(str, bool)',
         'users_rotated_secrets_path_template': 'str'
     }
@@ -51,11 +52,12 @@ class ServerInventoryPayload(object):
         'enable_rdp_sra': 'enable_rdp_sra',
         'migration_target_id': 'migration_target_id',
         'server_targets_path_template': 'server_targets_path_template',
+        'user_groups': 'user_groups',
         'users_ignore_list': 'users_ignore_list',
         'users_rotated_secrets_path_template': 'users_rotated_secrets_path_template'
     }
 
-    def __init__(self, auto_rotate=None, auto_rotate_interval_in_days=None, auto_rotate_rotation_hour=None, enable_rdp_sra=None, migration_target_id=None, server_targets_path_template=None, users_ignore_list=None, users_rotated_secrets_path_template=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, auto_rotate=None, auto_rotate_interval_in_days=None, auto_rotate_rotation_hour=None, enable_rdp_sra=None, migration_target_id=None, server_targets_path_template=None, user_groups=None, users_ignore_list=None, users_rotated_secrets_path_template=None, local_vars_configuration=None):  # noqa: E501
         """ServerInventoryPayload - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -67,6 +69,7 @@ class ServerInventoryPayload(object):
         self._enable_rdp_sra = None
         self._migration_target_id = None
         self._server_targets_path_template = None
+        self._user_groups = None
         self._users_ignore_list = None
         self._users_rotated_secrets_path_template = None
         self.discriminator = None
@@ -83,6 +86,8 @@ class ServerInventoryPayload(object):
             self.migration_target_id = migration_target_id
         if server_targets_path_template is not None:
             self.server_targets_path_template = server_targets_path_template
+        if user_groups is not None:
+            self.user_groups = user_groups
         if users_ignore_list is not None:
             self.users_ignore_list = users_ignore_list
         if users_rotated_secrets_path_template is not None:
@@ -213,6 +218,27 @@ class ServerInventoryPayload(object):
         """
 
         self._server_targets_path_template = server_targets_path_template
+
+    @property
+    def user_groups(self):
+        """Gets the user_groups of this ServerInventoryPayload.  # noqa: E501
+
+
+        :return: The user_groups of this ServerInventoryPayload.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._user_groups
+
+    @user_groups.setter
+    def user_groups(self, user_groups):
+        """Sets the user_groups of this ServerInventoryPayload.
+
+
+        :param user_groups: The user_groups of this ServerInventoryPayload.  # noqa: E501
+        :type: list[str]
+        """
+
+        self._user_groups = user_groups
 
     @property
     def users_ignore_list(self):

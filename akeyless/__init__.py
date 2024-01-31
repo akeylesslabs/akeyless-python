@@ -15,7 +15,7 @@
 
 from __future__ import absolute_import
 
-__version__ = "3.5.4"
+__version__ = "3.6.0"
 
 # import apis into sdk package
 from akeyless.api.v2_api import V2Api
@@ -70,6 +70,7 @@ from akeyless.models.certificate_expiration_event import CertificateExpirationEv
 from akeyless.models.certificate_info import CertificateInfo
 from akeyless.models.certificate_issue_info import CertificateIssueInfo
 from akeyless.models.certificate_template_info import CertificateTemplateInfo
+from akeyless.models.certificate_version_info import CertificateVersionInfo
 from akeyless.models.cf_info import CfInfo
 from akeyless.models.chef_target_details import ChefTargetDetails
 from akeyless.models.classic_key_details_info import ClassicKeyDetailsInfo
@@ -561,11 +562,15 @@ from akeyless.models.path_rule import PathRule
 from akeyless.models.ping_target_details import PingTargetDetails
 from akeyless.models.producer import Producer
 from akeyless.models.producers_config_part import ProducersConfigPart
+from akeyless.models.provision_certificate import ProvisionCertificate
+from akeyless.models.provision_certificate_output import ProvisionCertificateOutput
 from akeyless.models.rabbit_mq_target_details import RabbitMQTargetDetails
 from akeyless.models.raw_creds import RawCreds
 from akeyless.models.refresh_key import RefreshKey
 from akeyless.models.refresh_key_output import RefreshKeyOutput
 from akeyless.models.regexp_tokenizer_info import RegexpTokenizerInfo
+from akeyless.models.renew_certificate import RenewCertificate
+from akeyless.models.renew_certificate_output import RenewCertificateOutput
 from akeyless.models.request_access import RequestAccess
 from akeyless.models.request_access_output import RequestAccessOutput
 from akeyless.models.required_activity import RequiredActivity

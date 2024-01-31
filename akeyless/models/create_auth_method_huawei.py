@@ -43,6 +43,7 @@ class CreateAuthMethodHuawei(object):
         'bound_tenant_name': 'list[str]',
         'bound_user_id': 'list[str]',
         'bound_user_name': 'list[str]',
+        'description': 'str',
         'force_sub_claims': 'bool',
         'gw_bound_ips': 'list[str]',
         'json': 'bool',
@@ -62,6 +63,7 @@ class CreateAuthMethodHuawei(object):
         'bound_tenant_name': 'bound-tenant-name',
         'bound_user_id': 'bound-user-id',
         'bound_user_name': 'bound-user-name',
+        'description': 'description',
         'force_sub_claims': 'force-sub-claims',
         'gw_bound_ips': 'gw-bound-ips',
         'json': 'json',
@@ -71,7 +73,7 @@ class CreateAuthMethodHuawei(object):
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, access_expires=0, auth_url='https://iam.myhwclouds.com:443/v3', bound_domain_id=None, bound_domain_name=None, bound_ips=None, bound_tenant_id=None, bound_tenant_name=None, bound_user_id=None, bound_user_name=None, force_sub_claims=None, gw_bound_ips=None, json=False, jwt_ttl=0, name=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, access_expires=0, auth_url='https://iam.myhwclouds.com:443/v3', bound_domain_id=None, bound_domain_name=None, bound_ips=None, bound_tenant_id=None, bound_tenant_name=None, bound_user_id=None, bound_user_name=None, description=None, force_sub_claims=None, gw_bound_ips=None, json=False, jwt_ttl=0, name=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """CreateAuthMethodHuawei - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -86,6 +88,7 @@ class CreateAuthMethodHuawei(object):
         self._bound_tenant_name = None
         self._bound_user_id = None
         self._bound_user_name = None
+        self._description = None
         self._force_sub_claims = None
         self._gw_bound_ips = None
         self._json = None
@@ -113,6 +116,8 @@ class CreateAuthMethodHuawei(object):
             self.bound_user_id = bound_user_id
         if bound_user_name is not None:
             self.bound_user_name = bound_user_name
+        if description is not None:
+            self.description = description
         if force_sub_claims is not None:
             self.force_sub_claims = force_sub_claims
         if gw_bound_ips is not None:
@@ -333,6 +338,29 @@ class CreateAuthMethodHuawei(object):
         """
 
         self._bound_user_name = bound_user_name
+
+    @property
+    def description(self):
+        """Gets the description of this CreateAuthMethodHuawei.  # noqa: E501
+
+        Auth Method description  # noqa: E501
+
+        :return: The description of this CreateAuthMethodHuawei.  # noqa: E501
+        :rtype: str
+        """
+        return self._description
+
+    @description.setter
+    def description(self, description):
+        """Sets the description of this CreateAuthMethodHuawei.
+
+        Auth Method description  # noqa: E501
+
+        :param description: The description of this CreateAuthMethodHuawei.  # noqa: E501
+        :type: str
+        """
+
+        self._description = description
 
     @property
     def force_sub_claims(self):

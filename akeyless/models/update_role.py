@@ -37,6 +37,8 @@ class UpdateRole(object):
         'analytics_access': 'str',
         'audit_access': 'str',
         'description': 'str',
+        'event_center_access': 'str',
+        'event_forwarder_access': 'str',
         'gw_analytics_access': 'str',
         'json': 'bool',
         'name': 'str',
@@ -52,6 +54,8 @@ class UpdateRole(object):
         'analytics_access': 'analytics-access',
         'audit_access': 'audit-access',
         'description': 'description',
+        'event_center_access': 'event-center-access',
+        'event_forwarder_access': 'event-forwarder-access',
         'gw_analytics_access': 'gw-analytics-access',
         'json': 'json',
         'name': 'name',
@@ -63,7 +67,7 @@ class UpdateRole(object):
         'usage_reports_access': 'usage-reports-access'
     }
 
-    def __init__(self, analytics_access=None, audit_access=None, description='default_comment', gw_analytics_access=None, json=False, name=None, new_comment='default_comment', new_name=None, sra_reports_access=None, token=None, uid_token=None, usage_reports_access=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, analytics_access=None, audit_access=None, description='default_comment', event_center_access=None, event_forwarder_access=None, gw_analytics_access=None, json=False, name=None, new_comment='default_comment', new_name=None, sra_reports_access=None, token=None, uid_token=None, usage_reports_access=None, local_vars_configuration=None):  # noqa: E501
         """UpdateRole - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -72,6 +76,8 @@ class UpdateRole(object):
         self._analytics_access = None
         self._audit_access = None
         self._description = None
+        self._event_center_access = None
+        self._event_forwarder_access = None
         self._gw_analytics_access = None
         self._json = None
         self._name = None
@@ -89,6 +95,10 @@ class UpdateRole(object):
             self.audit_access = audit_access
         if description is not None:
             self.description = description
+        if event_center_access is not None:
+            self.event_center_access = event_center_access
+        if event_forwarder_access is not None:
+            self.event_forwarder_access = event_forwarder_access
         if gw_analytics_access is not None:
             self.gw_analytics_access = gw_analytics_access
         if json is not None:
@@ -175,6 +185,52 @@ class UpdateRole(object):
         """
 
         self._description = description
+
+    @property
+    def event_center_access(self):
+        """Gets the event_center_access of this UpdateRole.  # noqa: E501
+
+        Allow this role to view Event Center. Currently only 'none', 'own' and 'all' values are supported  # noqa: E501
+
+        :return: The event_center_access of this UpdateRole.  # noqa: E501
+        :rtype: str
+        """
+        return self._event_center_access
+
+    @event_center_access.setter
+    def event_center_access(self, event_center_access):
+        """Sets the event_center_access of this UpdateRole.
+
+        Allow this role to view Event Center. Currently only 'none', 'own' and 'all' values are supported  # noqa: E501
+
+        :param event_center_access: The event_center_access of this UpdateRole.  # noqa: E501
+        :type: str
+        """
+
+        self._event_center_access = event_center_access
+
+    @property
+    def event_forwarder_access(self):
+        """Gets the event_forwarder_access of this UpdateRole.  # noqa: E501
+
+        Allow this role to manage Event Forwarders. Currently only 'none' and 'all' values are supported.  # noqa: E501
+
+        :return: The event_forwarder_access of this UpdateRole.  # noqa: E501
+        :rtype: str
+        """
+        return self._event_forwarder_access
+
+    @event_forwarder_access.setter
+    def event_forwarder_access(self, event_forwarder_access):
+        """Sets the event_forwarder_access of this UpdateRole.
+
+        Allow this role to manage Event Forwarders. Currently only 'none' and 'all' values are supported.  # noqa: E501
+
+        :param event_forwarder_access: The event_forwarder_access of this UpdateRole.  # noqa: E501
+        :type: str
+        """
+
+        self._event_forwarder_access = event_forwarder_access
 
     @property
     def gw_analytics_access(self):

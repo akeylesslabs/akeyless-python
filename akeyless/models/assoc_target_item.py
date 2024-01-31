@@ -34,6 +34,8 @@ class AssocTargetItem(object):
                             and the value is json key in definition.
     """
     openapi_types = {
+        'certificate_path': 'str',
+        'chain_path': 'str',
         'disable_previous_key_version': 'bool',
         'json': 'bool',
         'key_operations': 'list[str]',
@@ -42,9 +44,11 @@ class AssocTargetItem(object):
         'location_id': 'str',
         'multi_region': 'str',
         'name': 'str',
+        'private_key_path': 'str',
         'project_id': 'str',
         'purpose': 'str',
         'regions': 'list[str]',
+        'sra_association': 'bool',
         'target_name': 'str',
         'tenant_secret_type': 'str',
         'token': 'str',
@@ -53,6 +57,8 @@ class AssocTargetItem(object):
     }
 
     attribute_map = {
+        'certificate_path': 'certificate-path',
+        'chain_path': 'chain-path',
         'disable_previous_key_version': 'disable-previous-key-version',
         'json': 'json',
         'key_operations': 'key-operations',
@@ -61,9 +67,11 @@ class AssocTargetItem(object):
         'location_id': 'location-id',
         'multi_region': 'multi-region',
         'name': 'name',
+        'private_key_path': 'private-key-path',
         'project_id': 'project-id',
         'purpose': 'purpose',
         'regions': 'regions',
+        'sra_association': 'sra-association',
         'target_name': 'target-name',
         'tenant_secret_type': 'tenant-secret-type',
         'token': 'token',
@@ -71,12 +79,14 @@ class AssocTargetItem(object):
         'vault_name': 'vault-name'
     }
 
-    def __init__(self, disable_previous_key_version=False, json=False, key_operations=None, keyring_name=None, kms_algorithm=None, location_id=None, multi_region='false', name=None, project_id=None, purpose=None, regions=None, target_name=None, tenant_secret_type=None, token=None, uid_token=None, vault_name=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, certificate_path=None, chain_path=None, disable_previous_key_version=False, json=False, key_operations=None, keyring_name=None, kms_algorithm=None, location_id=None, multi_region='false', name=None, private_key_path=None, project_id=None, purpose=None, regions=None, sra_association=False, target_name=None, tenant_secret_type=None, token=None, uid_token=None, vault_name=None, local_vars_configuration=None):  # noqa: E501
         """AssocTargetItem - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
+        self._certificate_path = None
+        self._chain_path = None
         self._disable_previous_key_version = None
         self._json = None
         self._key_operations = None
@@ -85,9 +95,11 @@ class AssocTargetItem(object):
         self._location_id = None
         self._multi_region = None
         self._name = None
+        self._private_key_path = None
         self._project_id = None
         self._purpose = None
         self._regions = None
+        self._sra_association = None
         self._target_name = None
         self._tenant_secret_type = None
         self._token = None
@@ -95,6 +107,10 @@ class AssocTargetItem(object):
         self._vault_name = None
         self.discriminator = None
 
+        if certificate_path is not None:
+            self.certificate_path = certificate_path
+        if chain_path is not None:
+            self.chain_path = chain_path
         if disable_previous_key_version is not None:
             self.disable_previous_key_version = disable_previous_key_version
         if json is not None:
@@ -110,12 +126,16 @@ class AssocTargetItem(object):
         if multi_region is not None:
             self.multi_region = multi_region
         self.name = name
+        if private_key_path is not None:
+            self.private_key_path = private_key_path
         if project_id is not None:
             self.project_id = project_id
         if purpose is not None:
             self.purpose = purpose
         if regions is not None:
             self.regions = regions
+        if sra_association is not None:
+            self.sra_association = sra_association
         self.target_name = target_name
         if tenant_secret_type is not None:
             self.tenant_secret_type = tenant_secret_type
@@ -125,6 +145,52 @@ class AssocTargetItem(object):
             self.uid_token = uid_token
         if vault_name is not None:
             self.vault_name = vault_name
+
+    @property
+    def certificate_path(self):
+        """Gets the certificate_path of this AssocTargetItem.  # noqa: E501
+
+        A path on the target to store the certificate pem file (relevant only for certificate provisioning)  # noqa: E501
+
+        :return: The certificate_path of this AssocTargetItem.  # noqa: E501
+        :rtype: str
+        """
+        return self._certificate_path
+
+    @certificate_path.setter
+    def certificate_path(self, certificate_path):
+        """Sets the certificate_path of this AssocTargetItem.
+
+        A path on the target to store the certificate pem file (relevant only for certificate provisioning)  # noqa: E501
+
+        :param certificate_path: The certificate_path of this AssocTargetItem.  # noqa: E501
+        :type: str
+        """
+
+        self._certificate_path = certificate_path
+
+    @property
+    def chain_path(self):
+        """Gets the chain_path of this AssocTargetItem.  # noqa: E501
+
+        A path on the target to store the full chain pem file (relevant only for certificate provisioning)  # noqa: E501
+
+        :return: The chain_path of this AssocTargetItem.  # noqa: E501
+        :rtype: str
+        """
+        return self._chain_path
+
+    @chain_path.setter
+    def chain_path(self, chain_path):
+        """Sets the chain_path of this AssocTargetItem.
+
+        A path on the target to store the full chain pem file (relevant only for certificate provisioning)  # noqa: E501
+
+        :param chain_path: The chain_path of this AssocTargetItem.  # noqa: E501
+        :type: str
+        """
+
+        self._chain_path = chain_path
 
     @property
     def disable_previous_key_version(self):
@@ -313,6 +379,29 @@ class AssocTargetItem(object):
         self._name = name
 
     @property
+    def private_key_path(self):
+        """Gets the private_key_path of this AssocTargetItem.  # noqa: E501
+
+        A path on the target to store the private key (relevant only for certificate provisioning)  # noqa: E501
+
+        :return: The private_key_path of this AssocTargetItem.  # noqa: E501
+        :rtype: str
+        """
+        return self._private_key_path
+
+    @private_key_path.setter
+    def private_key_path(self, private_key_path):
+        """Sets the private_key_path of this AssocTargetItem.
+
+        A path on the target to store the private key (relevant only for certificate provisioning)  # noqa: E501
+
+        :param private_key_path: The private_key_path of this AssocTargetItem.  # noqa: E501
+        :type: str
+        """
+
+        self._private_key_path = private_key_path
+
+    @property
     def project_id(self):
         """Gets the project_id of this AssocTargetItem.  # noqa: E501
 
@@ -380,6 +469,29 @@ class AssocTargetItem(object):
         """
 
         self._regions = regions
+
+    @property
+    def sra_association(self):
+        """Gets the sra_association of this AssocTargetItem.  # noqa: E501
+
+        Is the target to associate is for sra, relevant only for linked target association for ldap rotated secret  # noqa: E501
+
+        :return: The sra_association of this AssocTargetItem.  # noqa: E501
+        :rtype: bool
+        """
+        return self._sra_association
+
+    @sra_association.setter
+    def sra_association(self, sra_association):
+        """Sets the sra_association of this AssocTargetItem.
+
+        Is the target to associate is for sra, relevant only for linked target association for ldap rotated secret  # noqa: E501
+
+        :param sra_association: The sra_association of this AssocTargetItem.  # noqa: E501
+        :type: bool
+        """
+
+        self._sra_association = sra_association
 
     @property
     def target_name(self):

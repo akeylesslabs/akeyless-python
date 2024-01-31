@@ -46,6 +46,7 @@ class GwClusterIdentity(object):
         'default_secret_location': 'str',
         'display_name': 'str',
         'id': 'int',
+        'serverless_type': 'str',
         'status': 'str',
         'status_description': 'str'
     }
@@ -63,11 +64,12 @@ class GwClusterIdentity(object):
         'default_secret_location': 'default_secret_location',
         'display_name': 'display_name',
         'id': 'id',
+        'serverless_type': 'serverless_type',
         'status': 'status',
         'status_description': 'status_description'
     }
 
-    def __init__(self, action_allowed=None, allowed=None, allowed_access_ids=None, cluster_name=None, cluster_url=None, current_gw=None, customer_fragment_ids=None, customer_fragments=None, default_protection_key_id=None, default_secret_location=None, display_name=None, id=None, status=None, status_description=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, action_allowed=None, allowed=None, allowed_access_ids=None, cluster_name=None, cluster_url=None, current_gw=None, customer_fragment_ids=None, customer_fragments=None, default_protection_key_id=None, default_secret_location=None, display_name=None, id=None, serverless_type=None, status=None, status_description=None, local_vars_configuration=None):  # noqa: E501
         """GwClusterIdentity - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -85,6 +87,7 @@ class GwClusterIdentity(object):
         self._default_secret_location = None
         self._display_name = None
         self._id = None
+        self._serverless_type = None
         self._status = None
         self._status_description = None
         self.discriminator = None
@@ -113,6 +116,8 @@ class GwClusterIdentity(object):
             self.display_name = display_name
         if id is not None:
             self.id = id
+        if serverless_type is not None:
+            self.serverless_type = serverless_type
         if status is not None:
             self.status = status
         if status_description is not None:
@@ -371,6 +376,27 @@ class GwClusterIdentity(object):
         """
 
         self._id = id
+
+    @property
+    def serverless_type(self):
+        """Gets the serverless_type of this GwClusterIdentity.  # noqa: E501
+
+
+        :return: The serverless_type of this GwClusterIdentity.  # noqa: E501
+        :rtype: str
+        """
+        return self._serverless_type
+
+    @serverless_type.setter
+    def serverless_type(self, serverless_type):
+        """Sets the serverless_type of this GwClusterIdentity.
+
+
+        :param serverless_type: The serverless_type of this GwClusterIdentity.  # noqa: E501
+        :type: str
+        """
+
+        self._serverless_type = serverless_type
 
     @property
     def status(self):

@@ -40,6 +40,7 @@ class CreateAuthMethodK8S(object):
         'bound_namespaces': 'list[str]',
         'bound_pod_names': 'list[str]',
         'bound_sa_names': 'list[str]',
+        'description': 'str',
         'force_sub_claims': 'bool',
         'gen_key': 'str',
         'gw_bound_ips': 'list[str]',
@@ -58,6 +59,7 @@ class CreateAuthMethodK8S(object):
         'bound_namespaces': 'bound-namespaces',
         'bound_pod_names': 'bound-pod-names',
         'bound_sa_names': 'bound-sa-names',
+        'description': 'description',
         'force_sub_claims': 'force-sub-claims',
         'gen_key': 'gen-key',
         'gw_bound_ips': 'gw-bound-ips',
@@ -69,7 +71,7 @@ class CreateAuthMethodK8S(object):
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, access_expires=0, audience=None, bound_ips=None, bound_namespaces=None, bound_pod_names=None, bound_sa_names=None, force_sub_claims=None, gen_key='true', gw_bound_ips=None, json=False, jwt_ttl=0, name=None, public_key=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, access_expires=0, audience=None, bound_ips=None, bound_namespaces=None, bound_pod_names=None, bound_sa_names=None, description=None, force_sub_claims=None, gen_key='true', gw_bound_ips=None, json=False, jwt_ttl=0, name=None, public_key=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """CreateAuthMethodK8S - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -81,6 +83,7 @@ class CreateAuthMethodK8S(object):
         self._bound_namespaces = None
         self._bound_pod_names = None
         self._bound_sa_names = None
+        self._description = None
         self._force_sub_claims = None
         self._gen_key = None
         self._gw_bound_ips = None
@@ -104,6 +107,8 @@ class CreateAuthMethodK8S(object):
             self.bound_pod_names = bound_pod_names
         if bound_sa_names is not None:
             self.bound_sa_names = bound_sa_names
+        if description is not None:
+            self.description = description
         if force_sub_claims is not None:
             self.force_sub_claims = force_sub_claims
         if gen_key is not None:
@@ -259,6 +264,29 @@ class CreateAuthMethodK8S(object):
         """
 
         self._bound_sa_names = bound_sa_names
+
+    @property
+    def description(self):
+        """Gets the description of this CreateAuthMethodK8S.  # noqa: E501
+
+        Auth Method description  # noqa: E501
+
+        :return: The description of this CreateAuthMethodK8S.  # noqa: E501
+        :rtype: str
+        """
+        return self._description
+
+    @description.setter
+    def description(self, description):
+        """Sets the description of this CreateAuthMethodK8S.
+
+        Auth Method description  # noqa: E501
+
+        :param description: The description of this CreateAuthMethodK8S.  # noqa: E501
+        :type: str
+        """
+
+        self._description = description
 
     @property
     def force_sub_claims(self):

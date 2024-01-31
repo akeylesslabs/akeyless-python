@@ -38,6 +38,8 @@ class CreateRole(object):
         'audit_access': 'str',
         'comment': 'str',
         'description': 'str',
+        'event_center_access': 'str',
+        'event_forwarders_access': 'str',
         'gw_analytics_access': 'str',
         'json': 'bool',
         'name': 'str',
@@ -52,6 +54,8 @@ class CreateRole(object):
         'audit_access': 'audit-access',
         'comment': 'comment',
         'description': 'description',
+        'event_center_access': 'event-center-access',
+        'event_forwarders_access': 'event-forwarders-access',
         'gw_analytics_access': 'gw-analytics-access',
         'json': 'json',
         'name': 'name',
@@ -61,7 +65,7 @@ class CreateRole(object):
         'usage_reports_access': 'usage-reports-access'
     }
 
-    def __init__(self, analytics_access=None, audit_access=None, comment=None, description=None, gw_analytics_access=None, json=False, name=None, sra_reports_access=None, token=None, uid_token=None, usage_reports_access=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, analytics_access=None, audit_access=None, comment=None, description=None, event_center_access=None, event_forwarders_access=None, gw_analytics_access=None, json=False, name=None, sra_reports_access=None, token=None, uid_token=None, usage_reports_access=None, local_vars_configuration=None):  # noqa: E501
         """CreateRole - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -71,6 +75,8 @@ class CreateRole(object):
         self._audit_access = None
         self._comment = None
         self._description = None
+        self._event_center_access = None
+        self._event_forwarders_access = None
         self._gw_analytics_access = None
         self._json = None
         self._name = None
@@ -88,6 +94,10 @@ class CreateRole(object):
             self.comment = comment
         if description is not None:
             self.description = description
+        if event_center_access is not None:
+            self.event_center_access = event_center_access
+        if event_forwarders_access is not None:
+            self.event_forwarders_access = event_forwarders_access
         if gw_analytics_access is not None:
             self.gw_analytics_access = gw_analytics_access
         if json is not None:
@@ -193,6 +203,52 @@ class CreateRole(object):
         """
 
         self._description = description
+
+    @property
+    def event_center_access(self):
+        """Gets the event_center_access of this CreateRole.  # noqa: E501
+
+        Allow this role to view Event Center. Currently only 'none', 'own' and 'all' values are supported  # noqa: E501
+
+        :return: The event_center_access of this CreateRole.  # noqa: E501
+        :rtype: str
+        """
+        return self._event_center_access
+
+    @event_center_access.setter
+    def event_center_access(self, event_center_access):
+        """Sets the event_center_access of this CreateRole.
+
+        Allow this role to view Event Center. Currently only 'none', 'own' and 'all' values are supported  # noqa: E501
+
+        :param event_center_access: The event_center_access of this CreateRole.  # noqa: E501
+        :type: str
+        """
+
+        self._event_center_access = event_center_access
+
+    @property
+    def event_forwarders_access(self):
+        """Gets the event_forwarders_access of this CreateRole.  # noqa: E501
+
+        Allow this role to manage Event Forwarders. Currently only 'none' and 'all' values are supported.  # noqa: E501
+
+        :return: The event_forwarders_access of this CreateRole.  # noqa: E501
+        :rtype: str
+        """
+        return self._event_forwarders_access
+
+    @event_forwarders_access.setter
+    def event_forwarders_access(self, event_forwarders_access):
+        """Sets the event_forwarders_access of this CreateRole.
+
+        Allow this role to manage Event Forwarders. Currently only 'none' and 'all' values are supported.  # noqa: E501
+
+        :param event_forwarders_access: The event_forwarders_access of this CreateRole.  # noqa: E501
+        :type: str
+        """
+
+        self._event_forwarders_access = event_forwarders_access
 
     @property
     def gw_analytics_access(self):

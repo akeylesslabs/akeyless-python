@@ -36,6 +36,7 @@ class UpdateAuthMethod(object):
     openapi_types = {
         'access_expires': 'int',
         'bound_ips': 'list[str]',
+        'description': 'str',
         'force_sub_claims': 'bool',
         'gw_bound_ips': 'list[str]',
         'json': 'bool',
@@ -49,6 +50,7 @@ class UpdateAuthMethod(object):
     attribute_map = {
         'access_expires': 'access-expires',
         'bound_ips': 'bound-ips',
+        'description': 'description',
         'force_sub_claims': 'force-sub-claims',
         'gw_bound_ips': 'gw-bound-ips',
         'json': 'json',
@@ -59,7 +61,7 @@ class UpdateAuthMethod(object):
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, access_expires=0, bound_ips=None, force_sub_claims=None, gw_bound_ips=None, json=False, jwt_ttl=0, name=None, new_name=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, access_expires=0, bound_ips=None, description=None, force_sub_claims=None, gw_bound_ips=None, json=False, jwt_ttl=0, name=None, new_name=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """UpdateAuthMethod - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -67,6 +69,7 @@ class UpdateAuthMethod(object):
 
         self._access_expires = None
         self._bound_ips = None
+        self._description = None
         self._force_sub_claims = None
         self._gw_bound_ips = None
         self._json = None
@@ -81,6 +84,8 @@ class UpdateAuthMethod(object):
             self.access_expires = access_expires
         if bound_ips is not None:
             self.bound_ips = bound_ips
+        if description is not None:
+            self.description = description
         if force_sub_claims is not None:
             self.force_sub_claims = force_sub_claims
         if gw_bound_ips is not None:
@@ -142,6 +147,29 @@ class UpdateAuthMethod(object):
         """
 
         self._bound_ips = bound_ips
+
+    @property
+    def description(self):
+        """Gets the description of this UpdateAuthMethod.  # noqa: E501
+
+        Auth Method description  # noqa: E501
+
+        :return: The description of this UpdateAuthMethod.  # noqa: E501
+        :rtype: str
+        """
+        return self._description
+
+    @description.setter
+    def description(self, description):
+        """Sets the description of this UpdateAuthMethod.
+
+        Auth Method description  # noqa: E501
+
+        :param description: The description of this UpdateAuthMethod.  # noqa: E501
+        :type: str
+        """
+
+        self._description = description
 
     @property
     def force_sub_claims(self):

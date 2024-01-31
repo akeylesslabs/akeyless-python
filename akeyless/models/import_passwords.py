@@ -41,7 +41,8 @@ class ImportPasswords(object):
         'protection_key': 'str',
         'target_folder': 'str',
         'token': 'str',
-        'uid_token': 'str'
+        'uid_token': 'str',
+        'update_mode': 'str'
     }
 
     attribute_map = {
@@ -52,10 +53,11 @@ class ImportPasswords(object):
         'protection_key': 'protection_key',
         'target_folder': 'target-folder',
         'token': 'token',
-        'uid_token': 'uid-token'
+        'uid_token': 'uid-token',
+        'update_mode': 'update-mode'
     }
 
-    def __init__(self, accessibility='personal', format='LastPass', import_path=None, json=False, protection_key=None, target_folder='/', token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, accessibility='personal', format='LastPass', import_path=None, json=False, protection_key=None, target_folder='/', token=None, uid_token=None, update_mode=None, local_vars_configuration=None):  # noqa: E501
         """ImportPasswords - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -69,6 +71,7 @@ class ImportPasswords(object):
         self._target_folder = None
         self._token = None
         self._uid_token = None
+        self._update_mode = None
         self.discriminator = None
 
         if accessibility is not None:
@@ -86,6 +89,8 @@ class ImportPasswords(object):
             self.token = token
         if uid_token is not None:
             self.uid_token = uid_token
+        if update_mode is not None:
+            self.update_mode = update_mode
 
     @property
     def accessibility(self):
@@ -272,6 +277,27 @@ class ImportPasswords(object):
         """
 
         self._uid_token = uid_token
+
+    @property
+    def update_mode(self):
+        """Gets the update_mode of this ImportPasswords.  # noqa: E501
+
+
+        :return: The update_mode of this ImportPasswords.  # noqa: E501
+        :rtype: str
+        """
+        return self._update_mode
+
+    @update_mode.setter
+    def update_mode(self, update_mode):
+        """Sets the update_mode of this ImportPasswords.
+
+
+        :param update_mode: The update_mode of this ImportPasswords.  # noqa: E501
+        :type: str
+        """
+
+        self._update_mode = update_mode
 
     def to_dict(self):
         """Returns the model properties as a dict"""

@@ -34,34 +34,60 @@ class StaticSecretDetailsInfo(object):
                             and the value is json key in definition.
     """
     openapi_types = {
+        'notify_on_change_event': 'bool',
         'username': 'str',
         'website': 'str',
         'websites': 'list[str]'
     }
 
     attribute_map = {
+        'notify_on_change_event': 'notify_on_change_event',
         'username': 'username',
         'website': 'website',
         'websites': 'websites'
     }
 
-    def __init__(self, username=None, website=None, websites=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, notify_on_change_event=None, username=None, website=None, websites=None, local_vars_configuration=None):  # noqa: E501
         """StaticSecretDetailsInfo - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
+        self._notify_on_change_event = None
         self._username = None
         self._website = None
         self._websites = None
         self.discriminator = None
 
+        if notify_on_change_event is not None:
+            self.notify_on_change_event = notify_on_change_event
         if username is not None:
             self.username = username
         if website is not None:
             self.website = website
         if websites is not None:
             self.websites = websites
+
+    @property
+    def notify_on_change_event(self):
+        """Gets the notify_on_change_event of this StaticSecretDetailsInfo.  # noqa: E501
+
+
+        :return: The notify_on_change_event of this StaticSecretDetailsInfo.  # noqa: E501
+        :rtype: bool
+        """
+        return self._notify_on_change_event
+
+    @notify_on_change_event.setter
+    def notify_on_change_event(self, notify_on_change_event):
+        """Sets the notify_on_change_event of this StaticSecretDetailsInfo.
+
+
+        :param notify_on_change_event: The notify_on_change_event of this StaticSecretDetailsInfo.  # noqa: E501
+        :type: bool
+        """
+
+        self._notify_on_change_event = notify_on_change_event
 
     @property
     def username(self):

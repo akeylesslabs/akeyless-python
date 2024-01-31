@@ -3,6 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**provider_type** | **str** |  | [optional] 
 **api_id** | **str** | API ID to rotate (relevant only for rotator-type&#x3D;api-key) | [optional] 
 **api_key** | **str** | API key to rotate (relevant only for rotator-type&#x3D;api-key) | [optional] 
 **application_id** | **str** | ApplicationId (used in azure) | [optional] 
@@ -15,6 +16,7 @@ Name | Type | Description | Notes
 **gcp_key** | **str** | Base64-encoded service account private key text | [optional] 
 **gcp_service_account_email** | **str** | The email of the gcp service account to rotate | [optional] 
 **gcp_service_account_key_id** | **str** | The key id of the gcp service account to rotate | [optional] 
+**host_provider** | **str** | Host provider type [explicit/target], Relevant only for Secure Remote Access of ssh cert issuer and ldap rotated secret | [optional] [default to 'explicit']
 **json** | **bool** | Set output format to JSON | [optional] [default to False]
 **key** | **str** | The name of a key that used to encrypt the secret value (if empty, the account default protectionKey key will be used) | [optional] 
 **metadata** | **str** | Deprecated - use description | [optional] 
@@ -22,7 +24,7 @@ Name | Type | Description | Notes
 **rotate_after_disconnect** | **str** | Rotate the value of the secret after SRA session ends [true/false] | [optional] [default to 'false']
 **rotated_password** | **str** | rotated-username password (relevant only for rotator-type&#x3D;password) | [optional] 
 **rotated_username** | **str** | username to be rotated, if selected use-self-creds at rotator-creds-type, this username will try to rotate it&#39;s own password, if use-target-creds is selected, target credentials will be use to rotate the rotated-password (relevant only for rotator-type&#x3D;password) | [optional] 
-**rotation_hour** | **int** | The Hour of the rotation in UTC | [optional] 
+**rotation_hour** | **int** | The Hour of the rotation in UTC. Default rotation-hour is 14:00 | [optional] 
 **rotation_interval** | **str** | The number of days to wait between every automatic key rotation (1-365) | [optional] 
 **rotator_creds_type** | **str** |  | [optional] 
 **rotator_custom_cmd** | **str** | Custom rotation command (relevant only for ssh target) | [optional] 
@@ -45,6 +47,7 @@ Name | Type | Description | Notes
 **ssh_username** | **str** | Deprecated: use RotatedUser | [optional] 
 **storage_account_key_name** | **str** | The name of the storage account key to rotate [key1/key2/kerb1/kerb2] (relevat to azure-storage-account) | [optional] 
 **tags** | **list[str]** | Add tags attached to this object | [optional] 
+**target** | **list[str]** | A list of linked targets to be associated, Relevant only for Secure Remote Access for ssh cert issuer and ldap rotated secret, To specify multiple targets use argument multiple times | [optional] 
 **target_name** | **str** | Target name | 
 **token** | **str** | Authentication token (see &#x60;/auth&#x60; and &#x60;/configure&#x60;) | [optional] 
 **uid_token** | **str** | The universal identity token, Required only for universal_identity authentication | [optional] 

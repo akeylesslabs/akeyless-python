@@ -38,6 +38,7 @@ class UpdateAuthMethodUniversalIdentity(object):
         'bound_ips': 'list[str]',
         'deny_inheritance': 'bool',
         'deny_rotate': 'bool',
+        'description': 'str',
         'force_sub_claims': 'bool',
         'gw_bound_ips': 'list[str]',
         'json': 'bool',
@@ -54,6 +55,7 @@ class UpdateAuthMethodUniversalIdentity(object):
         'bound_ips': 'bound-ips',
         'deny_inheritance': 'deny-inheritance',
         'deny_rotate': 'deny-rotate',
+        'description': 'description',
         'force_sub_claims': 'force-sub-claims',
         'gw_bound_ips': 'gw-bound-ips',
         'json': 'json',
@@ -65,7 +67,7 @@ class UpdateAuthMethodUniversalIdentity(object):
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, access_expires=0, bound_ips=None, deny_inheritance=None, deny_rotate=None, force_sub_claims=None, gw_bound_ips=None, json=False, jwt_ttl=0, name=None, new_name=None, token=None, ttl=60, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, access_expires=0, bound_ips=None, deny_inheritance=None, deny_rotate=None, description=None, force_sub_claims=None, gw_bound_ips=None, json=False, jwt_ttl=0, name=None, new_name=None, token=None, ttl=60, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """UpdateAuthMethodUniversalIdentity - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -75,6 +77,7 @@ class UpdateAuthMethodUniversalIdentity(object):
         self._bound_ips = None
         self._deny_inheritance = None
         self._deny_rotate = None
+        self._description = None
         self._force_sub_claims = None
         self._gw_bound_ips = None
         self._json = None
@@ -94,6 +97,8 @@ class UpdateAuthMethodUniversalIdentity(object):
             self.deny_inheritance = deny_inheritance
         if deny_rotate is not None:
             self.deny_rotate = deny_rotate
+        if description is not None:
+            self.description = description
         if force_sub_claims is not None:
             self.force_sub_claims = force_sub_claims
         if gw_bound_ips is not None:
@@ -203,6 +208,29 @@ class UpdateAuthMethodUniversalIdentity(object):
         """
 
         self._deny_rotate = deny_rotate
+
+    @property
+    def description(self):
+        """Gets the description of this UpdateAuthMethodUniversalIdentity.  # noqa: E501
+
+        Auth Method description  # noqa: E501
+
+        :return: The description of this UpdateAuthMethodUniversalIdentity.  # noqa: E501
+        :rtype: str
+        """
+        return self._description
+
+    @description.setter
+    def description(self, description):
+        """Sets the description of this UpdateAuthMethodUniversalIdentity.
+
+        Auth Method description  # noqa: E501
+
+        :param description: The description of this UpdateAuthMethodUniversalIdentity.  # noqa: E501
+        :type: str
+        """
+
+        self._description = description
 
     @property
     def force_sub_claims(self):

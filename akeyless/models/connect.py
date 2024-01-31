@@ -419,7 +419,7 @@ class Connect(object):
     def ssh_extra_args(self):
         """Gets the ssh_extra_args of this Connect.  # noqa: E501
 
-        The Use to add offical SSH arguments (except -i)  # noqa: E501
+        Additional SSH arguments (except -i)  # noqa: E501
 
         :return: The ssh_extra_args of this Connect.  # noqa: E501
         :rtype: str
@@ -430,7 +430,7 @@ class Connect(object):
     def ssh_extra_args(self, ssh_extra_args):
         """Sets the ssh_extra_args of this Connect.
 
-        The Use to add offical SSH arguments (except -i)  # noqa: E501
+        Additional SSH arguments (except -i)  # noqa: E501
 
         :param ssh_extra_args: The ssh_extra_args of this Connect.  # noqa: E501
         :type: str

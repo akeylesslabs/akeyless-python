@@ -36,16 +36,18 @@ class ImportPasswordsOutput(object):
     openapi_types = {
         'imported': 'int',
         'passwords_in_file': 'int',
-        'successfully_parsed': 'int'
+        'successfully_parsed': 'int',
+        'updated': 'int'
     }
 
     attribute_map = {
         'imported': 'imported',
         'passwords_in_file': 'passwords_in_file',
-        'successfully_parsed': 'successfully_parsed'
+        'successfully_parsed': 'successfully_parsed',
+        'updated': 'updated'
     }
 
-    def __init__(self, imported=None, passwords_in_file=None, successfully_parsed=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, imported=None, passwords_in_file=None, successfully_parsed=None, updated=None, local_vars_configuration=None):  # noqa: E501
         """ImportPasswordsOutput - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -54,6 +56,7 @@ class ImportPasswordsOutput(object):
         self._imported = None
         self._passwords_in_file = None
         self._successfully_parsed = None
+        self._updated = None
         self.discriminator = None
 
         if imported is not None:
@@ -62,6 +65,8 @@ class ImportPasswordsOutput(object):
             self.passwords_in_file = passwords_in_file
         if successfully_parsed is not None:
             self.successfully_parsed = successfully_parsed
+        if updated is not None:
+            self.updated = updated
 
     @property
     def imported(self):
@@ -125,6 +130,27 @@ class ImportPasswordsOutput(object):
         """
 
         self._successfully_parsed = successfully_parsed
+
+    @property
+    def updated(self):
+        """Gets the updated of this ImportPasswordsOutput.  # noqa: E501
+
+
+        :return: The updated of this ImportPasswordsOutput.  # noqa: E501
+        :rtype: int
+        """
+        return self._updated
+
+    @updated.setter
+    def updated(self, updated):
+        """Sets the updated of this ImportPasswordsOutput.
+
+
+        :param updated: The updated of this ImportPasswordsOutput.  # noqa: E501
+        :type: int
+        """
+
+        self._updated = updated
 
     def to_dict(self):
         """Returns the model properties as a dict"""

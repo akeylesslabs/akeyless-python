@@ -34,11 +34,14 @@ class UpdateItem(object):
                             and the value is json key in definition.
     """
     openapi_types = {
+        'provider_type': 'str',
         'accessibility': 'str',
         'add_tag': 'list[str]',
         'cert_file_data': 'str',
+        'change_event': 'str',
         'delete_protection': 'str',
         'description': 'str',
+        'host_provider': 'str',
         'json': 'bool',
         'name': 'str',
         'new_metadata': 'str',
@@ -75,11 +78,14 @@ class UpdateItem(object):
     }
 
     attribute_map = {
+        'provider_type': 'ProviderType',
         'accessibility': 'accessibility',
         'add_tag': 'add-tag',
         'cert_file_data': 'cert-file-data',
+        'change_event': 'change-event',
         'delete_protection': 'delete_protection',
         'description': 'description',
+        'host_provider': 'host-provider',
         'json': 'json',
         'name': 'name',
         'new_metadata': 'new-metadata',
@@ -115,17 +121,20 @@ class UpdateItem(object):
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, accessibility='regular', add_tag=None, cert_file_data=None, delete_protection=None, description='default_metadata', json=False, name=None, new_metadata='default_metadata', new_name=None, rm_tag=None, rotate_after_disconnect='false', secure_access_add_host=None, secure_access_allow_external_user=None, secure_access_allow_port_forwading=None, secure_access_aws_account_id=None, secure_access_aws_native_cli=None, secure_access_aws_region=None, secure_access_bastion_api=None, secure_access_bastion_issuer=None, secure_access_bastion_ssh=None, secure_access_cluster_endpoint=None, secure_access_dashboard_url=None, secure_access_db_name=None, secure_access_db_schema=None, secure_access_enable=None, secure_access_host=None, secure_access_rd_gateway_server=None, secure_access_rdp_domain=None, secure_access_rdp_user=None, secure_access_rm_host=None, secure_access_ssh_creds=None, secure_access_ssh_creds_user=None, secure_access_url=None, secure_access_use_internal_bastion=None, secure_access_web_browsing=False, secure_access_web_proxy=False, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, provider_type=None, accessibility='regular', add_tag=None, cert_file_data=None, change_event=None, delete_protection=None, description='default_metadata', host_provider='explicit', json=False, name=None, new_metadata='default_metadata', new_name=None, rm_tag=None, rotate_after_disconnect='false', secure_access_add_host=None, secure_access_allow_external_user=None, secure_access_allow_port_forwading=None, secure_access_aws_account_id=None, secure_access_aws_native_cli=None, secure_access_aws_region=None, secure_access_bastion_api=None, secure_access_bastion_issuer=None, secure_access_bastion_ssh=None, secure_access_cluster_endpoint=None, secure_access_dashboard_url=None, secure_access_db_name=None, secure_access_db_schema=None, secure_access_enable=None, secure_access_host=None, secure_access_rd_gateway_server=None, secure_access_rdp_domain=None, secure_access_rdp_user=None, secure_access_rm_host=None, secure_access_ssh_creds=None, secure_access_ssh_creds_user=None, secure_access_url=None, secure_access_use_internal_bastion=None, secure_access_web_browsing=False, secure_access_web_proxy=False, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """UpdateItem - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
+        self._provider_type = None
         self._accessibility = None
         self._add_tag = None
         self._cert_file_data = None
+        self._change_event = None
         self._delete_protection = None
         self._description = None
+        self._host_provider = None
         self._json = None
         self._name = None
         self._new_metadata = None
@@ -161,16 +170,22 @@ class UpdateItem(object):
         self._uid_token = None
         self.discriminator = None
 
+        if provider_type is not None:
+            self.provider_type = provider_type
         if accessibility is not None:
             self.accessibility = accessibility
         if add_tag is not None:
             self.add_tag = add_tag
         if cert_file_data is not None:
             self.cert_file_data = cert_file_data
+        if change_event is not None:
+            self.change_event = change_event
         if delete_protection is not None:
             self.delete_protection = delete_protection
         if description is not None:
             self.description = description
+        if host_provider is not None:
+            self.host_provider = host_provider
         if json is not None:
             self.json = json
         self.name = name
@@ -236,6 +251,27 @@ class UpdateItem(object):
             self.token = token
         if uid_token is not None:
             self.uid_token = uid_token
+
+    @property
+    def provider_type(self):
+        """Gets the provider_type of this UpdateItem.  # noqa: E501
+
+
+        :return: The provider_type of this UpdateItem.  # noqa: E501
+        :rtype: str
+        """
+        return self._provider_type
+
+    @provider_type.setter
+    def provider_type(self, provider_type):
+        """Sets the provider_type of this UpdateItem.
+
+
+        :param provider_type: The provider_type of this UpdateItem.  # noqa: E501
+        :type: str
+        """
+
+        self._provider_type = provider_type
 
     @property
     def accessibility(self):
@@ -307,6 +343,29 @@ class UpdateItem(object):
         self._cert_file_data = cert_file_data
 
     @property
+    def change_event(self):
+        """Gets the change_event of this UpdateItem.  # noqa: E501
+
+        Trigger an event when a secret value changed [true/false] (Relevant only for Static Secret)  # noqa: E501
+
+        :return: The change_event of this UpdateItem.  # noqa: E501
+        :rtype: str
+        """
+        return self._change_event
+
+    @change_event.setter
+    def change_event(self, change_event):
+        """Sets the change_event of this UpdateItem.
+
+        Trigger an event when a secret value changed [true/false] (Relevant only for Static Secret)  # noqa: E501
+
+        :param change_event: The change_event of this UpdateItem.  # noqa: E501
+        :type: str
+        """
+
+        self._change_event = change_event
+
+    @property
     def delete_protection(self):
         """Gets the delete_protection of this UpdateItem.  # noqa: E501
 
@@ -351,6 +410,29 @@ class UpdateItem(object):
         """
 
         self._description = description
+
+    @property
+    def host_provider(self):
+        """Gets the host_provider of this UpdateItem.  # noqa: E501
+
+        Host provider type [explicit/target], Relevant only for Secure Remote Access of ssh cert issuer and ldap rotated secret  # noqa: E501
+
+        :return: The host_provider of this UpdateItem.  # noqa: E501
+        :rtype: str
+        """
+        return self._host_provider
+
+    @host_provider.setter
+    def host_provider(self, host_provider):
+        """Sets the host_provider of this UpdateItem.
+
+        Host provider type [explicit/target], Relevant only for Secure Remote Access of ssh cert issuer and ldap rotated secret  # noqa: E501
+
+        :param host_provider: The host_provider of this UpdateItem.  # noqa: E501
+        :type: str
+        """
+
+        self._host_provider = host_provider
 
     @property
     def json(self):

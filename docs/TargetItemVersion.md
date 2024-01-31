@@ -5,6 +5,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **access_date** | **datetime** |  | [optional] 
 **access_date_display** | **str** |  | [optional] 
+**certificate_version_info** | [**CertificateVersionInfo**](CertificateVersionInfo.md) |  | [optional] 
 **creation_date** | **datetime** |  | [optional] 
 **customer_fragment_id** | **str** |  | [optional] 
 **deletion_date** | **datetime** |  | [optional] 

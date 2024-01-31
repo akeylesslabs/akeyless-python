@@ -41,6 +41,7 @@ class UpdateCertificateValue(object):
         'expiration_event_in': 'list[str]',
         'format': 'str',
         'json': 'bool',
+        'keep_prev_version': 'str',
         'key': 'str',
         'key_data': 'str',
         'metadata': 'str',
@@ -58,6 +59,7 @@ class UpdateCertificateValue(object):
         'expiration_event_in': 'expiration-event-in',
         'format': 'format',
         'json': 'json',
+        'keep_prev_version': 'keep-prev-version',
         'key': 'key',
         'key_data': 'key-data',
         'metadata': 'metadata',
@@ -67,7 +69,7 @@ class UpdateCertificateValue(object):
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, add_tag=None, certificate_data=None, delete_protection=None, description=None, expiration_event_in=None, format=None, json=False, key=None, key_data=None, metadata=None, name=None, rm_tag=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, add_tag=None, certificate_data=None, delete_protection=None, description=None, expiration_event_in=None, format=None, json=False, keep_prev_version=None, key=None, key_data=None, metadata=None, name=None, rm_tag=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """UpdateCertificateValue - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -80,6 +82,7 @@ class UpdateCertificateValue(object):
         self._expiration_event_in = None
         self._format = None
         self._json = None
+        self._keep_prev_version = None
         self._key = None
         self._key_data = None
         self._metadata = None
@@ -103,6 +106,8 @@ class UpdateCertificateValue(object):
             self.format = format
         if json is not None:
             self.json = json
+        if keep_prev_version is not None:
+            self.keep_prev_version = keep_prev_version
         if key is not None:
             self.key = key
         if key_data is not None:
@@ -277,6 +282,29 @@ class UpdateCertificateValue(object):
         """
 
         self._json = json
+
+    @property
+    def keep_prev_version(self):
+        """Gets the keep_prev_version of this UpdateCertificateValue.  # noqa: E501
+
+        Whether to keep previous version [true/false]. If not set, use default according to account settings  # noqa: E501
+
+        :return: The keep_prev_version of this UpdateCertificateValue.  # noqa: E501
+        :rtype: str
+        """
+        return self._keep_prev_version
+
+    @keep_prev_version.setter
+    def keep_prev_version(self, keep_prev_version):
+        """Sets the keep_prev_version of this UpdateCertificateValue.
+
+        Whether to keep previous version [true/false]. If not set, use default according to account settings  # noqa: E501
+
+        :param keep_prev_version: The keep_prev_version of this UpdateCertificateValue.  # noqa: E501
+        :type: str
+        """
+
+        self._keep_prev_version = keep_prev_version
 
     @property
     def key(self):

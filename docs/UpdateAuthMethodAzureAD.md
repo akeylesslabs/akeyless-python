@@ -5,7 +5,7 @@ updateAuthMethodAzureAD is a command that updates a new auth method that will be
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **access_expires** | **int** | Access expiration date in Unix timestamp (select 0 for access without expiry date) | [optional] [default to 0]
-**audience** | **str** | The audience in the JWT | [optional] [default to 'https://management.azure.com/']
+**audience** | **str** | Deprecated (Deprecated) The audience in the JWT | [optional] [default to 'https://management.azure.com/']
 **bound_group_id** | **list[str]** | A list of group ids that the access is restricted to | [optional] 
 **bound_ips** | **list[str]** | A CIDR whitelist with the IPs that the access is restricted to | [optional] 
 **bound_providers** | **list[str]** | A list of resource providers that the access is restricted to (e.g, Microsoft.Compute, Microsoft.ManagedIdentity, etc) | [optional] 
@@ -16,6 +16,7 @@ Name | Type | Description | Notes
 **bound_spid** | **list[str]** | A list of service principal IDs that the access is restricted to | [optional] 
 **bound_sub_id** | **list[str]** | A list of subscription ids that the access is restricted to | [optional] 
 **bound_tenant_id** | **str** | The Azure tenant id that the access is restricted to | 
+**description** | **str** | Auth Method description | [optional] 
 **force_sub_claims** | **bool** | if true: enforce role-association must include sub claims | [optional] 
 **gw_bound_ips** | **list[str]** | A CIDR whitelist with the GW IPs that the access is restricted to | [optional] 
 **issuer** | **str** | Issuer URL | [optional] [default to 'https://sts.windows.net/---bound_tenant_id---']

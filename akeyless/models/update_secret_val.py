@@ -40,6 +40,7 @@ class UpdateSecretVal(object):
         'json': 'bool',
         'keep_prev_version': 'str',
         'key': 'str',
+        'last_version': 'int',
         'multiline': 'bool',
         'name': 'str',
         'new_version': 'bool',
@@ -57,6 +58,7 @@ class UpdateSecretVal(object):
         'json': 'json',
         'keep_prev_version': 'keep-prev-version',
         'key': 'key',
+        'last_version': 'last-version',
         'multiline': 'multiline',
         'name': 'name',
         'new_version': 'new-version',
@@ -67,7 +69,7 @@ class UpdateSecretVal(object):
         'value': 'value'
     }
 
-    def __init__(self, accessibility='regular', custom_field=None, inject_url=None, json=False, keep_prev_version=None, key=None, multiline=None, name=None, new_version=None, password=None, token=None, uid_token=None, username=None, value=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, accessibility='regular', custom_field=None, inject_url=None, json=False, keep_prev_version=None, key=None, last_version=None, multiline=None, name=None, new_version=None, password=None, token=None, uid_token=None, username=None, value=None, local_vars_configuration=None):  # noqa: E501
         """UpdateSecretVal - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -79,6 +81,7 @@ class UpdateSecretVal(object):
         self._json = None
         self._keep_prev_version = None
         self._key = None
+        self._last_version = None
         self._multiline = None
         self._name = None
         self._new_version = None
@@ -101,6 +104,8 @@ class UpdateSecretVal(object):
             self.keep_prev_version = keep_prev_version
         if key is not None:
             self.key = key
+        if last_version is not None:
+            self.last_version = last_version
         if multiline is not None:
             self.multiline = multiline
         self.name = name
@@ -253,6 +258,29 @@ class UpdateSecretVal(object):
         """
 
         self._key = key
+
+    @property
+    def last_version(self):
+        """Gets the last_version of this UpdateSecretVal.  # noqa: E501
+
+        The last version number before the update  # noqa: E501
+
+        :return: The last_version of this UpdateSecretVal.  # noqa: E501
+        :rtype: int
+        """
+        return self._last_version
+
+    @last_version.setter
+    def last_version(self, last_version):
+        """Sets the last_version of this UpdateSecretVal.
+
+        The last version number before the update  # noqa: E501
+
+        :param last_version: The last_version of this UpdateSecretVal.  # noqa: E501
+        :type: int
+        """
+
+        self._last_version = last_version
 
     @property
     def multiline(self):

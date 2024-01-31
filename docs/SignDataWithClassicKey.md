@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **display_id** | **str** | The name of the key to use in the sign data process | 
 **hashed** | **bool** | Defines whether the data should be hashed as part of the signing. If true, the data will not be hashed | [optional] [default to False]
 **hashing_method** | **str** | HashingMethod | [optional] [default to 'SHA256']
+**ignore_cache** | **str** | Retrieve the Secret value without checking the Gateway&#39;s cache [true/false]. This flag is only relevant when using the RestAPI | [optional] [default to 'false']
 **json** | **bool** | Set output format to JSON | [optional] [default to False]
 **name** | **str** | ClassicKey name | 
 **token** | **str** | Authentication token (see &#x60;/auth&#x60; and &#x60;/configure&#x60;) | [optional] 

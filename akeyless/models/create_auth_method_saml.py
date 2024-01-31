@@ -37,6 +37,7 @@ class CreateAuthMethodSAML(object):
         'access_expires': 'int',
         'allowed_redirect_uri': 'list[str]',
         'bound_ips': 'list[str]',
+        'description': 'str',
         'force_sub_claims': 'bool',
         'gw_bound_ips': 'list[str]',
         'idp_metadata_url': 'str',
@@ -54,6 +55,7 @@ class CreateAuthMethodSAML(object):
         'access_expires': 'access-expires',
         'allowed_redirect_uri': 'allowed-redirect-uri',
         'bound_ips': 'bound-ips',
+        'description': 'description',
         'force_sub_claims': 'force-sub-claims',
         'gw_bound_ips': 'gw-bound-ips',
         'idp_metadata_url': 'idp-metadata-url',
@@ -67,7 +69,7 @@ class CreateAuthMethodSAML(object):
         'unique_identifier': 'unique-identifier'
     }
 
-    def __init__(self, access_expires=0, allowed_redirect_uri=None, bound_ips=None, force_sub_claims=None, gw_bound_ips=None, idp_metadata_url=None, idp_metadata_xml_data=None, json=False, jwt_ttl=0, name=None, subclaims_delimiters=None, token=None, uid_token=None, unique_identifier=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, access_expires=0, allowed_redirect_uri=None, bound_ips=None, description=None, force_sub_claims=None, gw_bound_ips=None, idp_metadata_url=None, idp_metadata_xml_data=None, json=False, jwt_ttl=0, name=None, subclaims_delimiters=None, token=None, uid_token=None, unique_identifier=None, local_vars_configuration=None):  # noqa: E501
         """CreateAuthMethodSAML - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -76,6 +78,7 @@ class CreateAuthMethodSAML(object):
         self._access_expires = None
         self._allowed_redirect_uri = None
         self._bound_ips = None
+        self._description = None
         self._force_sub_claims = None
         self._gw_bound_ips = None
         self._idp_metadata_url = None
@@ -95,6 +98,8 @@ class CreateAuthMethodSAML(object):
             self.allowed_redirect_uri = allowed_redirect_uri
         if bound_ips is not None:
             self.bound_ips = bound_ips
+        if description is not None:
+            self.description = description
         if force_sub_claims is not None:
             self.force_sub_claims = force_sub_claims
         if gw_bound_ips is not None:
@@ -184,6 +189,29 @@ class CreateAuthMethodSAML(object):
         """
 
         self._bound_ips = bound_ips
+
+    @property
+    def description(self):
+        """Gets the description of this CreateAuthMethodSAML.  # noqa: E501
+
+        Auth Method description  # noqa: E501
+
+        :return: The description of this CreateAuthMethodSAML.  # noqa: E501
+        :rtype: str
+        """
+        return self._description
+
+    @description.setter
+    def description(self, description):
+        """Sets the description of this CreateAuthMethodSAML.
+
+        Auth Method description  # noqa: E501
+
+        :param description: The description of this CreateAuthMethodSAML.  # noqa: E501
+        :type: str
+        """
+
+        self._description = description
 
     @property
     def force_sub_claims(self):

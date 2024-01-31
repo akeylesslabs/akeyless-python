@@ -36,6 +36,7 @@ class TargetItemVersion(object):
     openapi_types = {
         'access_date': 'datetime',
         'access_date_display': 'str',
+        'certificate_version_info': 'CertificateVersionInfo',
         'creation_date': 'datetime',
         'customer_fragment_id': 'str',
         'deletion_date': 'datetime',
@@ -51,6 +52,7 @@ class TargetItemVersion(object):
     attribute_map = {
         'access_date': 'access_date',
         'access_date_display': 'access_date_display',
+        'certificate_version_info': 'certificate_version_info',
         'creation_date': 'creation_date',
         'customer_fragment_id': 'customer_fragment_id',
         'deletion_date': 'deletion_date',
@@ -63,7 +65,7 @@ class TargetItemVersion(object):
         'with_customer_fragment': 'with_customer_fragment'
     }
 
-    def __init__(self, access_date=None, access_date_display=None, creation_date=None, customer_fragment_id=None, deletion_date=None, item_version_state=None, latest_version=None, modification_date=None, protection_key_name=None, target_name=None, version=None, with_customer_fragment=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, access_date=None, access_date_display=None, certificate_version_info=None, creation_date=None, customer_fragment_id=None, deletion_date=None, item_version_state=None, latest_version=None, modification_date=None, protection_key_name=None, target_name=None, version=None, with_customer_fragment=None, local_vars_configuration=None):  # noqa: E501
         """TargetItemVersion - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -71,6 +73,7 @@ class TargetItemVersion(object):
 
         self._access_date = None
         self._access_date_display = None
+        self._certificate_version_info = None
         self._creation_date = None
         self._customer_fragment_id = None
         self._deletion_date = None
@@ -87,6 +90,8 @@ class TargetItemVersion(object):
             self.access_date = access_date
         if access_date_display is not None:
             self.access_date_display = access_date_display
+        if certificate_version_info is not None:
+            self.certificate_version_info = certificate_version_info
         if creation_date is not None:
             self.creation_date = creation_date
         if customer_fragment_id is not None:
@@ -149,6 +154,27 @@ class TargetItemVersion(object):
         """
 
         self._access_date_display = access_date_display
+
+    @property
+    def certificate_version_info(self):
+        """Gets the certificate_version_info of this TargetItemVersion.  # noqa: E501
+
+
+        :return: The certificate_version_info of this TargetItemVersion.  # noqa: E501
+        :rtype: CertificateVersionInfo
+        """
+        return self._certificate_version_info
+
+    @certificate_version_info.setter
+    def certificate_version_info(self, certificate_version_info):
+        """Sets the certificate_version_info of this TargetItemVersion.
+
+
+        :param certificate_version_info: The certificate_version_info of this TargetItemVersion.  # noqa: E501
+        :type: CertificateVersionInfo
+        """
+
+        self._certificate_version_info = certificate_version_info
 
     @property
     def creation_date(self):

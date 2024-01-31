@@ -40,8 +40,10 @@ class SignRsaSsaPss(object):
         'json': 'bool',
         'key_name': 'str',
         'message': 'str',
+        'prehashed': 'bool',
         'token': 'str',
-        'uid_token': 'str'
+        'uid_token': 'str',
+        'version': 'int'
     }
 
     attribute_map = {
@@ -51,11 +53,13 @@ class SignRsaSsaPss(object):
         'json': 'json',
         'key_name': 'key-name',
         'message': 'message',
+        'prehashed': 'prehashed',
         'token': 'token',
-        'uid_token': 'uid-token'
+        'uid_token': 'uid-token',
+        'version': 'version'
     }
 
-    def __init__(self, display_id=None, hash_function=None, item_id=None, json=False, key_name=None, message=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, display_id=None, hash_function=None, item_id=None, json=False, key_name=None, message=None, prehashed=None, token=None, uid_token=None, version=None, local_vars_configuration=None):  # noqa: E501
         """SignRsaSsaPss - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -67,8 +71,10 @@ class SignRsaSsaPss(object):
         self._json = None
         self._key_name = None
         self._message = None
+        self._prehashed = None
         self._token = None
         self._uid_token = None
+        self._version = None
         self.discriminator = None
 
         if display_id is not None:
@@ -82,10 +88,14 @@ class SignRsaSsaPss(object):
         if key_name is not None:
             self.key_name = key_name
         self.message = message
+        if prehashed is not None:
+            self.prehashed = prehashed
         if token is not None:
             self.token = token
         if uid_token is not None:
             self.uid_token = uid_token
+        if version is not None:
+            self.version = version
 
     @property
     def display_id(self):
@@ -228,6 +238,29 @@ class SignRsaSsaPss(object):
         self._message = message
 
     @property
+    def prehashed(self):
+        """Gets the prehashed of this SignRsaSsaPss.  # noqa: E501
+
+        Markes that the message is already hashed  # noqa: E501
+
+        :return: The prehashed of this SignRsaSsaPss.  # noqa: E501
+        :rtype: bool
+        """
+        return self._prehashed
+
+    @prehashed.setter
+    def prehashed(self, prehashed):
+        """Sets the prehashed of this SignRsaSsaPss.
+
+        Markes that the message is already hashed  # noqa: E501
+
+        :param prehashed: The prehashed of this SignRsaSsaPss.  # noqa: E501
+        :type: bool
+        """
+
+        self._prehashed = prehashed
+
+    @property
     def token(self):
         """Gets the token of this SignRsaSsaPss.  # noqa: E501
 
@@ -272,6 +305,29 @@ class SignRsaSsaPss(object):
         """
 
         self._uid_token = uid_token
+
+    @property
+    def version(self):
+        """Gets the version of this SignRsaSsaPss.  # noqa: E501
+
+        The version of the key to use for signing  # noqa: E501
+
+        :return: The version of this SignRsaSsaPss.  # noqa: E501
+        :rtype: int
+        """
+        return self._version
+
+    @version.setter
+    def version(self, version):
+        """Sets the version of this SignRsaSsaPss.
+
+        The version of the key to use for signing  # noqa: E501
+
+        :param version: The version of this SignRsaSsaPss.  # noqa: E501
+        :type: int
+        """
+
+        self._version = version
 
     def to_dict(self):
         """Returns the model properties as a dict"""

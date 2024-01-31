@@ -4,6 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **accessibility** | **str** | for personal password manager | [optional] [default to 'regular']
+**change_event** | **str** | Trigger an event when a secret value changed [true/false] (Relevant only for Static Secret) | [optional] 
 **custom_field** | **dict(str, str)** | For Password Management use, additional fields | [optional] 
 **delete_protection** | **str** | Protection from accidental deletion of this item [true/false] | [optional] 
 **description** | **str** | Description of the object | [optional] 

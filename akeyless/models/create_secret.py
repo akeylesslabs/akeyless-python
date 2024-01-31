@@ -35,6 +35,7 @@ class CreateSecret(object):
     """
     openapi_types = {
         'accessibility': 'str',
+        'change_event': 'str',
         'custom_field': 'dict(str, str)',
         'delete_protection': 'str',
         'description': 'str',
@@ -64,6 +65,7 @@ class CreateSecret(object):
 
     attribute_map = {
         'accessibility': 'accessibility',
+        'change_event': 'change-event',
         'custom_field': 'custom-field',
         'delete_protection': 'delete_protection',
         'description': 'description',
@@ -91,13 +93,14 @@ class CreateSecret(object):
         'value': 'value'
     }
 
-    def __init__(self, accessibility='regular', custom_field=None, delete_protection=None, description=None, inject_url=None, json=False, metadata=None, multiline_value=None, name=None, password=None, protection_key=None, secure_access_bastion_issuer=None, secure_access_enable=None, secure_access_host=None, secure_access_rdp_user=None, secure_access_ssh_creds=None, secure_access_ssh_user=None, secure_access_url=None, secure_access_web_browsing=False, secure_access_web_proxy=False, tags=None, token=None, type='generic', uid_token=None, username=None, value=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, accessibility='regular', change_event=None, custom_field=None, delete_protection=None, description=None, inject_url=None, json=False, metadata=None, multiline_value=None, name=None, password=None, protection_key=None, secure_access_bastion_issuer=None, secure_access_enable=None, secure_access_host=None, secure_access_rdp_user=None, secure_access_ssh_creds=None, secure_access_ssh_user=None, secure_access_url=None, secure_access_web_browsing=False, secure_access_web_proxy=False, tags=None, token=None, type='generic', uid_token=None, username=None, value=None, local_vars_configuration=None):  # noqa: E501
         """CreateSecret - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._accessibility = None
+        self._change_event = None
         self._custom_field = None
         self._delete_protection = None
         self._description = None
@@ -127,6 +130,8 @@ class CreateSecret(object):
 
         if accessibility is not None:
             self.accessibility = accessibility
+        if change_event is not None:
+            self.change_event = change_event
         if custom_field is not None:
             self.custom_field = custom_field
         if delete_protection is not None:
@@ -198,6 +203,29 @@ class CreateSecret(object):
         """
 
         self._accessibility = accessibility
+
+    @property
+    def change_event(self):
+        """Gets the change_event of this CreateSecret.  # noqa: E501
+
+        Trigger an event when a secret value changed [true/false] (Relevant only for Static Secret)  # noqa: E501
+
+        :return: The change_event of this CreateSecret.  # noqa: E501
+        :rtype: str
+        """
+        return self._change_event
+
+    @change_event.setter
+    def change_event(self, change_event):
+        """Sets the change_event of this CreateSecret.
+
+        Trigger an event when a secret value changed [true/false] (Relevant only for Static Secret)  # noqa: E501
+
+        :param change_event: The change_event of this CreateSecret.  # noqa: E501
+        :type: str
+        """
+
+        self._change_event = change_event
 
     @property
     def custom_field(self):
