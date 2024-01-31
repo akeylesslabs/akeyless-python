@@ -45,7 +45,9 @@ class Configure(object):
         'gcp_audience': 'str',
         'json': 'bool',
         'k8s_auth_config_name': 'str',
-        'key_data': 'str'
+        'key_data': 'str',
+        'oci_auth_type': 'str',
+        'oci_group_ocid': 'list[str]'
     }
 
     attribute_map = {
@@ -60,10 +62,12 @@ class Configure(object):
         'gcp_audience': 'gcp-audience',
         'json': 'json',
         'k8s_auth_config_name': 'k8s-auth-config-name',
-        'key_data': 'key-data'
+        'key_data': 'key-data',
+        'oci_auth_type': 'oci-auth-type',
+        'oci_group_ocid': 'oci-group-ocid'
     }
 
-    def __init__(self, access_id=None, access_key=None, access_type='access_key', account_id=None, admin_email=None, admin_password=None, azure_ad_object_id=None, cert_data=None, gcp_audience='akeyless.io', json=False, k8s_auth_config_name=None, key_data=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, access_id=None, access_key=None, access_type='access_key', account_id=None, admin_email=None, admin_password=None, azure_ad_object_id=None, cert_data=None, gcp_audience='akeyless.io', json=False, k8s_auth_config_name=None, key_data=None, oci_auth_type='apikey', oci_group_ocid=None, local_vars_configuration=None):  # noqa: E501
         """Configure - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -81,6 +85,8 @@ class Configure(object):
         self._json = None
         self._k8s_auth_config_name = None
         self._key_data = None
+        self._oci_auth_type = None
+        self._oci_group_ocid = None
         self.discriminator = None
 
         if access_id is not None:
@@ -107,6 +113,10 @@ class Configure(object):
             self.k8s_auth_config_name = k8s_auth_config_name
         if key_data is not None:
             self.key_data = key_data
+        if oci_auth_type is not None:
+            self.oci_auth_type = oci_auth_type
+        if oci_group_ocid is not None:
+            self.oci_group_ocid = oci_group_ocid
 
     @property
     def access_id(self):
@@ -383,6 +393,52 @@ class Configure(object):
         """
 
         self._key_data = key_data
+
+    @property
+    def oci_auth_type(self):
+        """Gets the oci_auth_type of this Configure.  # noqa: E501
+
+        The type of the OCI configuration to use [instance/apikey/resource] (relevant only for access-type=oci)  # noqa: E501
+
+        :return: The oci_auth_type of this Configure.  # noqa: E501
+        :rtype: str
+        """
+        return self._oci_auth_type
+
+    @oci_auth_type.setter
+    def oci_auth_type(self, oci_auth_type):
+        """Sets the oci_auth_type of this Configure.
+
+        The type of the OCI configuration to use [instance/apikey/resource] (relevant only for access-type=oci)  # noqa: E501
+
+        :param oci_auth_type: The oci_auth_type of this Configure.  # noqa: E501
+        :type: str
+        """
+
+        self._oci_auth_type = oci_auth_type
+
+    @property
+    def oci_group_ocid(self):
+        """Gets the oci_group_ocid of this Configure.  # noqa: E501
+
+        A list of Oracle Cloud IDs groups (relevant only for access-type=oci)  # noqa: E501
+
+        :return: The oci_group_ocid of this Configure.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._oci_group_ocid
+
+    @oci_group_ocid.setter
+    def oci_group_ocid(self, oci_group_ocid):
+        """Sets the oci_group_ocid of this Configure.
+
+        A list of Oracle Cloud IDs groups (relevant only for access-type=oci)  # noqa: E501
+
+        :param oci_group_ocid: The oci_group_ocid of this Configure.  # noqa: E501
+        :type: list[str]
+        """
+
+        self._oci_group_ocid = oci_group_ocid
 
     def to_dict(self):
         """Returns the model properties as a dict"""

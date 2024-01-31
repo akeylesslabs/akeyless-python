@@ -52,6 +52,8 @@ class Auth(object):
         'key_data': 'str',
         'ldap_password': 'str',
         'ldap_username': 'str',
+        'oci_auth_type': 'str',
+        'oci_group_ocid': 'list[str]',
         'uid_token': 'str'
     }
 
@@ -74,10 +76,12 @@ class Auth(object):
         'key_data': 'key-data',
         'ldap_password': 'ldap_password',
         'ldap_username': 'ldap_username',
+        'oci_auth_type': 'oci-auth-type',
+        'oci_group_ocid': 'oci-group-ocid',
         'uid_token': 'uid_token'
     }
 
-    def __init__(self, access_id=None, access_key=None, access_type='access_key', account_id=None, admin_email=None, admin_password=None, cert_data=None, cloud_id=None, debug=None, gateway_url=None, gcp_audience='akeyless.io', json=False, jwt=None, k8s_auth_config_name=None, k8s_service_account_token=None, key_data=None, ldap_password=None, ldap_username=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, access_id=None, access_key=None, access_type='access_key', account_id=None, admin_email=None, admin_password=None, cert_data=None, cloud_id=None, debug=None, gateway_url=None, gcp_audience='akeyless.io', json=False, jwt=None, k8s_auth_config_name=None, k8s_service_account_token=None, key_data=None, ldap_password=None, ldap_username=None, oci_auth_type='apikey', oci_group_ocid=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """Auth - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -101,6 +105,8 @@ class Auth(object):
         self._key_data = None
         self._ldap_password = None
         self._ldap_username = None
+        self._oci_auth_type = None
+        self._oci_group_ocid = None
         self._uid_token = None
         self.discriminator = None
 
@@ -140,6 +146,10 @@ class Auth(object):
             self.ldap_password = ldap_password
         if ldap_username is not None:
             self.ldap_username = ldap_username
+        if oci_auth_type is not None:
+            self.oci_auth_type = oci_auth_type
+        if oci_group_ocid is not None:
+            self.oci_group_ocid = oci_group_ocid
         if uid_token is not None:
             self.uid_token = uid_token
 
@@ -554,6 +564,52 @@ class Auth(object):
         """
 
         self._ldap_username = ldap_username
+
+    @property
+    def oci_auth_type(self):
+        """Gets the oci_auth_type of this Auth.  # noqa: E501
+
+        The type of the OCI configuration to use [instance/apikey/resource] (relevant only for access-type=oci)  # noqa: E501
+
+        :return: The oci_auth_type of this Auth.  # noqa: E501
+        :rtype: str
+        """
+        return self._oci_auth_type
+
+    @oci_auth_type.setter
+    def oci_auth_type(self, oci_auth_type):
+        """Sets the oci_auth_type of this Auth.
+
+        The type of the OCI configuration to use [instance/apikey/resource] (relevant only for access-type=oci)  # noqa: E501
+
+        :param oci_auth_type: The oci_auth_type of this Auth.  # noqa: E501
+        :type: str
+        """
+
+        self._oci_auth_type = oci_auth_type
+
+    @property
+    def oci_group_ocid(self):
+        """Gets the oci_group_ocid of this Auth.  # noqa: E501
+
+        A list of Oracle Cloud IDs groups (relevant only for access-type=oci)  # noqa: E501
+
+        :return: The oci_group_ocid of this Auth.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._oci_group_ocid
+
+    @oci_group_ocid.setter
+    def oci_group_ocid(self, oci_group_ocid):
+        """Sets the oci_group_ocid of this Auth.
+
+        A list of Oracle Cloud IDs groups (relevant only for access-type=oci)  # noqa: E501
+
+        :param oci_group_ocid: The oci_group_ocid of this Auth.  # noqa: E501
+        :type: list[str]
+        """
+
+        self._oci_group_ocid = oci_group_ocid
 
     @property
     def uid_token(self):

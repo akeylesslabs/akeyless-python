@@ -20,6 +20,7 @@ Method | HTTP request | Description
 [**create_auth_method_k8_s**](V2Api.md#create_auth_method_k8_s) | **POST** /create-auth-method-k8s | 
 [**create_auth_method_ldap**](V2Api.md#create_auth_method_ldap) | **POST** /create-auth-method-ldap | 
 [**create_auth_method_o_auth2**](V2Api.md#create_auth_method_o_auth2) | **POST** /create-auth-method-oauth2 | 
+[**create_auth_method_oci**](V2Api.md#create_auth_method_oci) | **POST** /create-auth-method-oci | 
 [**create_auth_method_oidc**](V2Api.md#create_auth_method_oidc) | **POST** /create-auth-method-oidc | 
 [**create_auth_method_saml**](V2Api.md#create_auth_method_saml) | **POST** /create-auth-method-saml | 
 [**create_auth_method_universal_identity**](V2Api.md#create_auth_method_universal_identity) | **POST** /create-auth-method-universal-identity | 
@@ -258,6 +259,7 @@ Method | HTTP request | Description
 [**update_auth_method_k8_s**](V2Api.md#update_auth_method_k8_s) | **POST** /update-auth-method-k8s | 
 [**update_auth_method_ldap**](V2Api.md#update_auth_method_ldap) | **POST** /update-auth-method-ldap | 
 [**update_auth_method_o_auth2**](V2Api.md#update_auth_method_o_auth2) | **POST** /update-auth-method-oauth2 | 
+[**update_auth_method_oci**](V2Api.md#update_auth_method_oci) | **POST** /update-auth-method-oci | 
 [**update_auth_method_oidc**](V2Api.md#update_auth_method_oidc) | **POST** /update-auth-method-oidc | 
 [**update_auth_method_saml**](V2Api.md#update_auth_method_saml) | **POST** /update-auth-method-saml | 
 [**update_auth_method_universal_identity**](V2Api.md#update_auth_method_universal_identity) | **POST** /update-auth-method-universal-identity | 
@@ -1275,6 +1277,66 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | createAuthMethodOAuth2Response wraps response body. |  -  |
+**0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **create_auth_method_oci**
+> CreateAuthMethodOCIOutput create_auth_method_oci(body)
+
+
+
+### Example
+
+```python
+from __future__ import print_function
+import time
+import akeyless
+from akeyless.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.akeyless.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = akeyless.Configuration(
+    host = "https://api.akeyless.io"
+)
+
+
+# Enter a context with an instance of the API client
+with akeyless.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = akeyless.V2Api(api_client)
+    body = akeyless.CreateAuthMethodOCI() # CreateAuthMethodOCI | 
+
+    try:
+        api_response = api_instance.create_auth_method_oci(body)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling V2Api->create_auth_method_oci: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**CreateAuthMethodOCI**](CreateAuthMethodOCI.md)|  | 
+
+### Return type
+
+[**CreateAuthMethodOCIOutput**](CreateAuthMethodOCIOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | createAuthMethodOCIResponse wraps response body. |  -  |
 **0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -15544,6 +15606,66 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | updateAuthMethodOAuth2Response wraps response body. |  -  |
+**0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **update_auth_method_oci**
+> UpdateAuthMethodOCIOutput update_auth_method_oci(body)
+
+
+
+### Example
+
+```python
+from __future__ import print_function
+import time
+import akeyless
+from akeyless.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.akeyless.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = akeyless.Configuration(
+    host = "https://api.akeyless.io"
+)
+
+
+# Enter a context with an instance of the API client
+with akeyless.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = akeyless.V2Api(api_client)
+    body = akeyless.UpdateAuthMethodOCI() # UpdateAuthMethodOCI | 
+
+    try:
+        api_response = api_instance.update_auth_method_oci(body)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling V2Api->update_auth_method_oci: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**UpdateAuthMethodOCI**](UpdateAuthMethodOCI.md)|  | 
+
+### Return type
+
+[**UpdateAuthMethodOCIOutput**](UpdateAuthMethodOCIOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | updateAuthMethodOCIResponse wraps response body. |  -  |
 **0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

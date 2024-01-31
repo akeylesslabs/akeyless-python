@@ -50,6 +50,7 @@ class AuthMethodAccessInfo(object):
         'k8s_access_rules': 'KubernetesAccessRules',
         'ldap_access_rules': 'LDAPAccessRules',
         'oauth2_access_rules': 'OAuth2AccessRules',
+        'oci_access_rules': 'OCIAccessRules',
         'oidc_access_rules': 'OIDCAccessRules',
         'rules_type': 'str',
         'saml_access_rules': 'SAMLAccessRules',
@@ -74,6 +75,7 @@ class AuthMethodAccessInfo(object):
         'k8s_access_rules': 'k8s_access_rules',
         'ldap_access_rules': 'ldap_access_rules',
         'oauth2_access_rules': 'oauth2_access_rules',
+        'oci_access_rules': 'oci_access_rules',
         'oidc_access_rules': 'oidc_access_rules',
         'rules_type': 'rules_type',
         'saml_access_rules': 'saml_access_rules',
@@ -81,7 +83,7 @@ class AuthMethodAccessInfo(object):
         'universal_identity_access_rules': 'universal_identity_access_rules'
     }
 
-    def __init__(self, access_expires=None, access_id_alias=None, api_key_access_rules=None, aws_iam_access_rules=None, azure_ad_access_rules=None, cert_access_rules=None, cidr_whitelist=None, email_pass_access_rules=None, force_sub_claims=None, gcp_access_rules=None, gw_cidr_whitelist=None, huawei_access_rules=None, jwt_ttl=None, k8s_access_rules=None, ldap_access_rules=None, oauth2_access_rules=None, oidc_access_rules=None, rules_type=None, saml_access_rules=None, sub_claims_delimiters=None, universal_identity_access_rules=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, access_expires=None, access_id_alias=None, api_key_access_rules=None, aws_iam_access_rules=None, azure_ad_access_rules=None, cert_access_rules=None, cidr_whitelist=None, email_pass_access_rules=None, force_sub_claims=None, gcp_access_rules=None, gw_cidr_whitelist=None, huawei_access_rules=None, jwt_ttl=None, k8s_access_rules=None, ldap_access_rules=None, oauth2_access_rules=None, oci_access_rules=None, oidc_access_rules=None, rules_type=None, saml_access_rules=None, sub_claims_delimiters=None, universal_identity_access_rules=None, local_vars_configuration=None):  # noqa: E501
         """AuthMethodAccessInfo - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -103,6 +105,7 @@ class AuthMethodAccessInfo(object):
         self._k8s_access_rules = None
         self._ldap_access_rules = None
         self._oauth2_access_rules = None
+        self._oci_access_rules = None
         self._oidc_access_rules = None
         self._rules_type = None
         self._saml_access_rules = None
@@ -142,6 +145,8 @@ class AuthMethodAccessInfo(object):
             self.ldap_access_rules = ldap_access_rules
         if oauth2_access_rules is not None:
             self.oauth2_access_rules = oauth2_access_rules
+        if oci_access_rules is not None:
+            self.oci_access_rules = oci_access_rules
         if oidc_access_rules is not None:
             self.oidc_access_rules = oidc_access_rules
         if rules_type is not None:
@@ -492,6 +497,27 @@ class AuthMethodAccessInfo(object):
         """
 
         self._oauth2_access_rules = oauth2_access_rules
+
+    @property
+    def oci_access_rules(self):
+        """Gets the oci_access_rules of this AuthMethodAccessInfo.  # noqa: E501
+
+
+        :return: The oci_access_rules of this AuthMethodAccessInfo.  # noqa: E501
+        :rtype: OCIAccessRules
+        """
+        return self._oci_access_rules
+
+    @oci_access_rules.setter
+    def oci_access_rules(self, oci_access_rules):
+        """Sets the oci_access_rules of this AuthMethodAccessInfo.
+
+
+        :param oci_access_rules: The oci_access_rules of this AuthMethodAccessInfo.  # noqa: E501
+        :type: OCIAccessRules
+        """
+
+        self._oci_access_rules = oci_access_rules
 
     @property
     def oidc_access_rules(self):

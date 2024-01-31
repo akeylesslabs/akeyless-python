@@ -21,6 +21,8 @@ Name | Type | Description | Notes
 **key_data** | **str** | Private key data encoded in base64. Used if file was not provided.(relevant only for access-type&#x3D;cert) | [optional] 
 **ldap_password** | **str** | LDAP password (relevant only for access-type&#x3D;ldap) | [optional] 
 **ldap_username** | **str** | LDAP username (relevant only for access-type&#x3D;ldap) | [optional] 
+**oci_auth_type** | **str** | The type of the OCI configuration to use [instance/apikey/resource] (relevant only for access-type&#x3D;oci) | [optional] [default to 'apikey']
+**oci_group_ocid** | **list[str]** | A list of Oracle Cloud IDs groups (relevant only for access-type&#x3D;oci) | [optional] 
 **uid_token** | **str** | The universal_identity token (relevant only for access-type&#x3D;universal_identity) | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

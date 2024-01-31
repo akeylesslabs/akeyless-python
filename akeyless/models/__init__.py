@@ -91,6 +91,8 @@ from akeyless.models.create_auth_method_ldap import CreateAuthMethodLDAP
 from akeyless.models.create_auth_method_ldap_output import CreateAuthMethodLDAPOutput
 from akeyless.models.create_auth_method_o_auth2 import CreateAuthMethodOAuth2
 from akeyless.models.create_auth_method_o_auth2_output import CreateAuthMethodOAuth2Output
+from akeyless.models.create_auth_method_oci import CreateAuthMethodOCI
+from akeyless.models.create_auth_method_oci_output import CreateAuthMethodOCIOutput
 from akeyless.models.create_auth_method_oidc import CreateAuthMethodOIDC
 from akeyless.models.create_auth_method_oidc_output import CreateAuthMethodOIDCOutput
 from akeyless.models.create_auth_method_output import CreateAuthMethodOutput
@@ -536,6 +538,7 @@ from akeyless.models.native_k8s_target_details import NativeK8sTargetDetails
 from akeyless.models.noti_forwarder import NotiForwarder
 from akeyless.models.o_auth2_access_rules import OAuth2AccessRules
 from akeyless.models.o_auth2_custom_claim import OAuth2CustomClaim
+from akeyless.models.oci_access_rules import OCIAccessRules
 from akeyless.models.oidc_access_rules import OIDCAccessRules
 from akeyless.models.oidc_custom_claim import OIDCCustomClaim
 from akeyless.models.object_version_settings_output import ObjectVersionSettingsOutput
@@ -657,6 +660,8 @@ from akeyless.models.update_auth_method_k8_s_output import UpdateAuthMethodK8SOu
 from akeyless.models.update_auth_method_ldap import UpdateAuthMethodLDAP
 from akeyless.models.update_auth_method_ldap_output import UpdateAuthMethodLDAPOutput
 from akeyless.models.update_auth_method_o_auth2 import UpdateAuthMethodOAuth2
+from akeyless.models.update_auth_method_oci import UpdateAuthMethodOCI
+from akeyless.models.update_auth_method_oci_output import UpdateAuthMethodOCIOutput
 from akeyless.models.update_auth_method_oidc import UpdateAuthMethodOIDC
 from akeyless.models.update_auth_method_output import UpdateAuthMethodOutput
 from akeyless.models.update_auth_method_saml import UpdateAuthMethodSAML
