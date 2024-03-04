@@ -39,9 +39,11 @@ class GatewayCreateProducerGithub(object):
         'github_app_private_key': 'str',
         'github_base_url': 'str',
         'installation_id': 'int',
+        'installation_organization': 'str',
         'installation_repository': 'str',
         'json': 'bool',
         'name': 'str',
+        'tags': 'list[str]',
         'target_name': 'str',
         'token': 'str',
         'token_permissions': 'list[str]',
@@ -55,9 +57,11 @@ class GatewayCreateProducerGithub(object):
         'github_app_private_key': 'github-app-private-key',
         'github_base_url': 'github-base-url',
         'installation_id': 'installation-id',
+        'installation_organization': 'installation-organization',
         'installation_repository': 'installation-repository',
         'json': 'json',
         'name': 'name',
+        'tags': 'tags',
         'target_name': 'target-name',
         'token': 'token',
         'token_permissions': 'token-permissions',
@@ -65,7 +69,7 @@ class GatewayCreateProducerGithub(object):
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, delete_protection=None, github_app_id=None, github_app_private_key=None, github_base_url='https://api.github.com/', installation_id=None, installation_repository=None, json=False, name=None, target_name=None, token=None, token_permissions=None, token_repositories=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, delete_protection=None, github_app_id=None, github_app_private_key=None, github_base_url='https://api.github.com/', installation_id=None, installation_organization=None, installation_repository=None, json=False, name=None, tags=None, target_name=None, token=None, token_permissions=None, token_repositories=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """GatewayCreateProducerGithub - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -76,9 +80,11 @@ class GatewayCreateProducerGithub(object):
         self._github_app_private_key = None
         self._github_base_url = None
         self._installation_id = None
+        self._installation_organization = None
         self._installation_repository = None
         self._json = None
         self._name = None
+        self._tags = None
         self._target_name = None
         self._token = None
         self._token_permissions = None
@@ -96,11 +102,15 @@ class GatewayCreateProducerGithub(object):
             self.github_base_url = github_base_url
         if installation_id is not None:
             self.installation_id = installation_id
+        if installation_organization is not None:
+            self.installation_organization = installation_organization
         if installation_repository is not None:
             self.installation_repository = installation_repository
         if json is not None:
             self.json = json
         self.name = name
+        if tags is not None:
+            self.tags = tags
         if target_name is not None:
             self.target_name = target_name
         if token is not None:
@@ -228,10 +238,33 @@ class GatewayCreateProducerGithub(object):
         self._installation_id = installation_id
 
     @property
+    def installation_organization(self):
+        """Gets the installation_organization of this GatewayCreateProducerGithub.  # noqa: E501
+
+        Optional, instead of installation id, set a GitHub organization name  # noqa: E501
+
+        :return: The installation_organization of this GatewayCreateProducerGithub.  # noqa: E501
+        :rtype: str
+        """
+        return self._installation_organization
+
+    @installation_organization.setter
+    def installation_organization(self, installation_organization):
+        """Sets the installation_organization of this GatewayCreateProducerGithub.
+
+        Optional, instead of installation id, set a GitHub organization name  # noqa: E501
+
+        :param installation_organization: The installation_organization of this GatewayCreateProducerGithub.  # noqa: E501
+        :type: str
+        """
+
+        self._installation_organization = installation_organization
+
+    @property
     def installation_repository(self):
         """Gets the installation_repository of this GatewayCreateProducerGithub.  # noqa: E501
 
-        Repository that the app installation has access to  # noqa: E501
+        Optional, instead of installation id, set a GitHub repository '<owner>/<repo-name>  # noqa: E501
 
         :return: The installation_repository of this GatewayCreateProducerGithub.  # noqa: E501
         :rtype: str
@@ -242,7 +275,7 @@ class GatewayCreateProducerGithub(object):
     def installation_repository(self, installation_repository):
         """Sets the installation_repository of this GatewayCreateProducerGithub.
 
-        Repository that the app installation has access to  # noqa: E501
+        Optional, instead of installation id, set a GitHub repository '<owner>/<repo-name>  # noqa: E501
 
         :param installation_repository: The installation_repository of this GatewayCreateProducerGithub.  # noqa: E501
         :type: str
@@ -277,7 +310,7 @@ class GatewayCreateProducerGithub(object):
     def name(self):
         """Gets the name of this GatewayCreateProducerGithub.  # noqa: E501
 
-        Producer name  # noqa: E501
+        Dynamic secret name  # noqa: E501
 
         :return: The name of this GatewayCreateProducerGithub.  # noqa: E501
         :rtype: str
@@ -288,7 +321,7 @@ class GatewayCreateProducerGithub(object):
     def name(self, name):
         """Sets the name of this GatewayCreateProducerGithub.
 
-        Producer name  # noqa: E501
+        Dynamic secret name  # noqa: E501
 
         :param name: The name of this GatewayCreateProducerGithub.  # noqa: E501
         :type: str
@@ -297,6 +330,29 @@ class GatewayCreateProducerGithub(object):
             raise ValueError("Invalid value for `name`, must not be `None`")  # noqa: E501
 
         self._name = name
+
+    @property
+    def tags(self):
+        """Gets the tags of this GatewayCreateProducerGithub.  # noqa: E501
+
+        Add tags attached to this object  # noqa: E501
+
+        :return: The tags of this GatewayCreateProducerGithub.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._tags
+
+    @tags.setter
+    def tags(self, tags):
+        """Sets the tags of this GatewayCreateProducerGithub.
+
+        Add tags attached to this object  # noqa: E501
+
+        :param tags: The tags of this GatewayCreateProducerGithub.  # noqa: E501
+        :type: list[str]
+        """
+
+        self._tags = tags
 
     @property
     def target_name(self):

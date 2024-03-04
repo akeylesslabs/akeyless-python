@@ -1,6 +1,6 @@
 # GatewayListRotatedSecrets
 
-gatewayListRotatedSecrets is a command that returns a list of rotated secrets
+gatewayListRotatedSecrets is a command that returns a list of rotated secrets. [Deprecated: Use rotated-secret list command]
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

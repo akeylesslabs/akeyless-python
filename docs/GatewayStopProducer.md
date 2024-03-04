@@ -1,11 +1,11 @@
 # GatewayStopProducer
 
-gatewayStopProducer is a command that stops producer
+gatewayStopProducer is a command that stops producer [Deprecated: Use set-item-state command]
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **json** | **bool** | Set output format to JSON | [optional] [default to False]
-**name** | **str** | Producer name | 
+**name** | **str** | Dynamic secret name | 
 **token** | **str** | Authentication token (see &#x60;/auth&#x60; and &#x60;/configure&#x60;) | [optional] 
 **uid_token** | **str** | The universal identity token, Required only for universal_identity authentication | [optional] 
 

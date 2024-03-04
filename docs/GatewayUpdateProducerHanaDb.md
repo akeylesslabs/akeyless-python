@@ -1,6 +1,6 @@
 # GatewayUpdateProducerHanaDb
 
-gatewayUpdateProducerHanaDb is a command that updates hanadb producer
+gatewayUpdateProducerHanaDb is a command that updates hanadb producer [Deprecated: Use dynamic-secret-update-hanadb command]
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
@@ -13,8 +13,9 @@ Name | Type | Description | Notes
 **hanadb_revocation_statements** | **str** | HanaDb Revocation statements | [optional] 
 **hanadb_username** | **str** | HanaDb Username | [optional] 
 **json** | **bool** | Set output format to JSON | [optional] [default to False]
-**name** | **str** | Producer name | 
-**new_name** | **str** | Producer name | [optional] 
+**name** | **str** | Dynamic secret name | 
+**new_name** | **str** | Dynamic secret name | [optional] 
+**password_length** | **str** | The length of the password to be generated | [optional] 
 **producer_encryption_key_name** | **str** | Dynamic producer encryption key | [optional] 
 **secure_access_bastion_issuer** | **str** | Path to the SSH Certificate Issuer for your Akeyless Bastion | [optional] 
 **secure_access_db_schema** | **str** | The DB schema | [optional] 

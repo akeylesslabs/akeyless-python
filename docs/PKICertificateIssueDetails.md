@@ -4,8 +4,10 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **allow_any_name** | **bool** |  | [optional] 
+**allow_copy_ext_from_csr** | **bool** |  | [optional] 
 **allow_subdomains** | **bool** |  | [optional] 
 **allowed_domains_list** | **list[str]** |  | [optional] 
+**allowed_extra_extensions** | **dict(str, list[str])** |  | [optional] 
 **allowed_uri_sans** | **list[str]** |  | [optional] 
 **basic_constraints_valid_for_non_ca** | **bool** |  | [optional] 
 **certificate_authority_mode** | **str** |  | [optional] 

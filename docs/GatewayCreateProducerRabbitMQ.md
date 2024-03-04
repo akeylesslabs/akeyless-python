@@ -1,12 +1,13 @@
 # GatewayCreateProducerRabbitMQ
 
-gatewayCreateProducerRabbitMQ is a command that creates rabbitmq producer
+gatewayCreateProducerRabbitMQ is a command that creates rabbitmq producer [Deprecated: Use dynamic-secret-create-rabbitmq command]
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **delete_protection** | **str** | Protection from accidental deletion of this item [true/false] | [optional] 
 **json** | **bool** | Set output format to JSON | [optional] [default to False]
-**name** | **str** | Producer name | 
+**name** | **str** | Dynamic secret name | 
+**password_length** | **str** | The length of the password to be generated | [optional] 
 **producer_encryption_key_name** | **str** | Dynamic producer encryption key | [optional] 
 **rabbitmq_admin_pwd** | **str** | RabbitMQ Admin password | [optional] 
 **rabbitmq_admin_user** | **str** | RabbitMQ Admin User | [optional] 

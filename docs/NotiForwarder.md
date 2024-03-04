@@ -25,6 +25,7 @@ Name | Type | Description | Notes
 **to_emails** | [**list[EmailEntry]**](EmailEntry.md) |  | [optional] 
 **user_email** | **str** |  | [optional] 
 **username** | **str** | Auth - User Password | [optional] 
+**webhook_noti_forwarder_public_details** | [**WebHookNotiForwarderPublicDetails**](WebHookNotiForwarderPublicDetails.md) |  | [optional] 
 **with_customer_fragment** | **bool** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

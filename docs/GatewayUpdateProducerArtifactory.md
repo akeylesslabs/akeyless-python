@@ -1,6 +1,6 @@
 # GatewayUpdateProducerArtifactory
 
-gatewayUpdateProducerArtifactory is a command that updates artifactory producer
+gatewayUpdateProducerArtifactory is a command that updates artifactory producer [Deprecated: Use dynamic-secret-update-artifactory command]
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
@@ -11,8 +11,8 @@ Name | Type | Description | Notes
 **base_url** | **str** | Base URL | [optional] 
 **delete_protection** | **str** | Protection from accidental deletion of this item [true/false] | [optional] 
 **json** | **bool** | Set output format to JSON | [optional] [default to False]
-**name** | **str** | Producer name | 
-**new_name** | **str** | Producer name | [optional] 
+**name** | **str** | Dynamic secret name | 
+**new_name** | **str** | Dynamic secret name | [optional] 
 **producer_encryption_key_name** | **str** | Dynamic producer encryption key | [optional] 
 **tags** | **list[str]** | Add tags attached to this object | [optional] 
 **target_name** | **str** | Target name | [optional] 

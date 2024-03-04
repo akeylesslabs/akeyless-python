@@ -21,6 +21,7 @@ Name | Type | Description | Notes
 **oauth2_access_rules** | [**OAuth2AccessRules**](OAuth2AccessRules.md) |  | [optional] 
 **oci_access_rules** | [**OCIAccessRules**](OCIAccessRules.md) |  | [optional] 
 **oidc_access_rules** | [**OIDCAccessRules**](OIDCAccessRules.md) |  | [optional] 
+**product_types** | **list[str]** | List of product types this auth method will be in use of | [optional] 
 **rules_type** | **str** |  | [optional] 
 **saml_access_rules** | [**SAMLAccessRules**](SAMLAccessRules.md) |  | [optional] 
 **sub_claims_delimiters** | **list[str]** |  | [optional] 

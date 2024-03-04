@@ -1,6 +1,6 @@
 # GatewayUpdateProducerLdap
 
-gatewayUpdateProducerLdap is a command that updates ldap producer
+gatewayUpdateProducerLdap is a command that updates ldap producer [Deprecated: Use dynamic-secret-update-ldap command]
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
@@ -12,8 +12,9 @@ Name | Type | Description | Notes
 **json** | **bool** | Set output format to JSON | [optional] [default to False]
 **ldap_ca_cert** | **str** | CA Certificate File Content | [optional] 
 **ldap_url** | **str** | LDAP Server URL | [optional] 
-**name** | **str** | Producer name | 
-**new_name** | **str** | Producer name | [optional] 
+**name** | **str** | Dynamic secret name | 
+**new_name** | **str** | Dynamic secret name | [optional] 
+**password_length** | **str** | The length of the password to be generated | [optional] 
 **producer_encryption_key_name** | **str** | Dynamic producer encryption key | [optional] 
 **tags** | **list[str]** | Add tags attached to this object | [optional] 
 **target_name** | **str** | Target name | [optional] 

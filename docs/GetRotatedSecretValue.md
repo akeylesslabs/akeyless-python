@@ -1,5 +1,6 @@
 # GetRotatedSecretValue
 
+getRotatedSecretValue is a command that creates a new Akeyless profile. [Deprecated: Use rotated-secret get-value command]
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

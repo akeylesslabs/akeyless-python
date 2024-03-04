@@ -34,6 +34,7 @@ class GatewayUpdateTmpUsers(object):
                             and the value is json key in definition.
     """
     openapi_types = {
+        'host': 'str',
         'json': 'bool',
         'name': 'str',
         'new_ttl_min': 'int',
@@ -43,6 +44,7 @@ class GatewayUpdateTmpUsers(object):
     }
 
     attribute_map = {
+        'host': 'host',
         'json': 'json',
         'name': 'name',
         'new_ttl_min': 'new-ttl-min',
@@ -51,12 +53,13 @@ class GatewayUpdateTmpUsers(object):
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, json=False, name=None, new_ttl_min=None, tmp_creds_id=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, host=None, json=False, name=None, new_ttl_min=None, tmp_creds_id=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """GatewayUpdateTmpUsers - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
+        self._host = None
         self._json = None
         self._name = None
         self._new_ttl_min = None
@@ -65,6 +68,7 @@ class GatewayUpdateTmpUsers(object):
         self._uid_token = None
         self.discriminator = None
 
+        self.host = host
         if json is not None:
             self.json = json
         self.name = name
@@ -74,6 +78,31 @@ class GatewayUpdateTmpUsers(object):
             self.token = token
         if uid_token is not None:
             self.uid_token = uid_token
+
+    @property
+    def host(self):
+        """Gets the host of this GatewayUpdateTmpUsers.  # noqa: E501
+
+        Host  # noqa: E501
+
+        :return: The host of this GatewayUpdateTmpUsers.  # noqa: E501
+        :rtype: str
+        """
+        return self._host
+
+    @host.setter
+    def host(self, host):
+        """Sets the host of this GatewayUpdateTmpUsers.
+
+        Host  # noqa: E501
+
+        :param host: The host of this GatewayUpdateTmpUsers.  # noqa: E501
+        :type: str
+        """
+        if self.local_vars_configuration.client_side_validation and host is None:  # noqa: E501
+            raise ValueError("Invalid value for `host`, must not be `None`")  # noqa: E501
+
+        self._host = host
 
     @property
     def json(self):
@@ -102,7 +131,7 @@ class GatewayUpdateTmpUsers(object):
     def name(self):
         """Gets the name of this GatewayUpdateTmpUsers.  # noqa: E501
 
-        Producer Name  # noqa: E501
+        Dynamic secret name  # noqa: E501
 
         :return: The name of this GatewayUpdateTmpUsers.  # noqa: E501
         :rtype: str
@@ -113,7 +142,7 @@ class GatewayUpdateTmpUsers(object):
     def name(self, name):
         """Sets the name of this GatewayUpdateTmpUsers.
 
-        Producer Name  # noqa: E501
+        Dynamic secret name  # noqa: E501
 
         :param name: The name of this GatewayUpdateTmpUsers.  # noqa: E501
         :type: str

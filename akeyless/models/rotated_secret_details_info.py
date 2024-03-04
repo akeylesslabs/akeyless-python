@@ -35,6 +35,7 @@ class RotatedSecretDetailsInfo(object):
     """
     openapi_types = {
         'delete_previous_version_in_days': 'int',
+        'grace_rotation': 'bool',
         'gw_cluster_id': 'int',
         'last_rotation_error': 'str',
         'number_of_versions_to_save': 'int',
@@ -50,6 +51,7 @@ class RotatedSecretDetailsInfo(object):
 
     attribute_map = {
         'delete_previous_version_in_days': 'delete_previous_version_in_days',
+        'grace_rotation': 'grace_rotation',
         'gw_cluster_id': 'gw_cluster_id',
         'last_rotation_error': 'last_rotation_error',
         'number_of_versions_to_save': 'number_of_versions_to_save',
@@ -63,13 +65,14 @@ class RotatedSecretDetailsInfo(object):
         'services_details': 'services_details'
     }
 
-    def __init__(self, delete_previous_version_in_days=None, gw_cluster_id=None, last_rotation_error=None, number_of_versions_to_save=None, rotation_hour=None, rotation_interval_min=None, rotation_statement=None, rotator_creds_type=None, rotator_status=None, rotator_type=None, same_password=None, services_details=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, delete_previous_version_in_days=None, grace_rotation=None, gw_cluster_id=None, last_rotation_error=None, number_of_versions_to_save=None, rotation_hour=None, rotation_interval_min=None, rotation_statement=None, rotator_creds_type=None, rotator_status=None, rotator_type=None, same_password=None, services_details=None, local_vars_configuration=None):  # noqa: E501
         """RotatedSecretDetailsInfo - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._delete_previous_version_in_days = None
+        self._grace_rotation = None
         self._gw_cluster_id = None
         self._last_rotation_error = None
         self._number_of_versions_to_save = None
@@ -85,6 +88,8 @@ class RotatedSecretDetailsInfo(object):
 
         if delete_previous_version_in_days is not None:
             self.delete_previous_version_in_days = delete_previous_version_in_days
+        if grace_rotation is not None:
+            self.grace_rotation = grace_rotation
         if gw_cluster_id is not None:
             self.gw_cluster_id = gw_cluster_id
         if last_rotation_error is not None:
@@ -128,6 +133,27 @@ class RotatedSecretDetailsInfo(object):
         """
 
         self._delete_previous_version_in_days = delete_previous_version_in_days
+
+    @property
+    def grace_rotation(self):
+        """Gets the grace_rotation of this RotatedSecretDetailsInfo.  # noqa: E501
+
+
+        :return: The grace_rotation of this RotatedSecretDetailsInfo.  # noqa: E501
+        :rtype: bool
+        """
+        return self._grace_rotation
+
+    @grace_rotation.setter
+    def grace_rotation(self, grace_rotation):
+        """Sets the grace_rotation of this RotatedSecretDetailsInfo.
+
+
+        :param grace_rotation: The grace_rotation of this RotatedSecretDetailsInfo.  # noqa: E501
+        :type: bool
+        """
+
+        self._grace_rotation = grace_rotation
 
     @property
     def gw_cluster_id(self):

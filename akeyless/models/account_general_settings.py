@@ -38,12 +38,14 @@ class AccountGeneralSettings(object):
         'account_default_key_name': 'str',
         'auth_usage_event': 'UsageEventSetting',
         'data_protection_section': 'DataProtectionSection',
+        'dynamic_secret_max_ttl': 'DynamicSecretMaxTtl',
         'enable_request_for_access': 'bool',
         'invalid_characters': 'str',
         'item_usage_event': 'UsageEventSetting',
         'lock_default_key': 'bool',
         'password_policy': 'PasswordPolicyInfo',
         'protect_items_by_default': 'bool',
+        'rotation_secret_max_interval': 'RotationSecretMaxInterval',
         'sharing_policy': 'SharingPolicyInfo'
     }
 
@@ -52,16 +54,18 @@ class AccountGeneralSettings(object):
         'account_default_key_name': 'account_default_key_name',
         'auth_usage_event': 'auth_usage_event',
         'data_protection_section': 'data_protection_section',
+        'dynamic_secret_max_ttl': 'dynamic_secret_max_ttl',
         'enable_request_for_access': 'enable_request_for_access',
         'invalid_characters': 'invalid_characters',
         'item_usage_event': 'item_usage_event',
         'lock_default_key': 'lock_default_key',
         'password_policy': 'password_policy',
         'protect_items_by_default': 'protect_items_by_default',
+        'rotation_secret_max_interval': 'rotation_secret_max_interval',
         'sharing_policy': 'sharing_policy'
     }
 
-    def __init__(self, account_default_key_item_id=None, account_default_key_name=None, auth_usage_event=None, data_protection_section=None, enable_request_for_access=None, invalid_characters=None, item_usage_event=None, lock_default_key=None, password_policy=None, protect_items_by_default=None, sharing_policy=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, account_default_key_item_id=None, account_default_key_name=None, auth_usage_event=None, data_protection_section=None, dynamic_secret_max_ttl=None, enable_request_for_access=None, invalid_characters=None, item_usage_event=None, lock_default_key=None, password_policy=None, protect_items_by_default=None, rotation_secret_max_interval=None, sharing_policy=None, local_vars_configuration=None):  # noqa: E501
         """AccountGeneralSettings - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -71,12 +75,14 @@ class AccountGeneralSettings(object):
         self._account_default_key_name = None
         self._auth_usage_event = None
         self._data_protection_section = None
+        self._dynamic_secret_max_ttl = None
         self._enable_request_for_access = None
         self._invalid_characters = None
         self._item_usage_event = None
         self._lock_default_key = None
         self._password_policy = None
         self._protect_items_by_default = None
+        self._rotation_secret_max_interval = None
         self._sharing_policy = None
         self.discriminator = None
 
@@ -88,6 +94,8 @@ class AccountGeneralSettings(object):
             self.auth_usage_event = auth_usage_event
         if data_protection_section is not None:
             self.data_protection_section = data_protection_section
+        if dynamic_secret_max_ttl is not None:
+            self.dynamic_secret_max_ttl = dynamic_secret_max_ttl
         if enable_request_for_access is not None:
             self.enable_request_for_access = enable_request_for_access
         if invalid_characters is not None:
@@ -100,6 +108,8 @@ class AccountGeneralSettings(object):
             self.password_policy = password_policy
         if protect_items_by_default is not None:
             self.protect_items_by_default = protect_items_by_default
+        if rotation_secret_max_interval is not None:
+            self.rotation_secret_max_interval = rotation_secret_max_interval
         if sharing_policy is not None:
             self.sharing_policy = sharing_policy
 
@@ -190,6 +200,27 @@ class AccountGeneralSettings(object):
         """
 
         self._data_protection_section = data_protection_section
+
+    @property
+    def dynamic_secret_max_ttl(self):
+        """Gets the dynamic_secret_max_ttl of this AccountGeneralSettings.  # noqa: E501
+
+
+        :return: The dynamic_secret_max_ttl of this AccountGeneralSettings.  # noqa: E501
+        :rtype: DynamicSecretMaxTtl
+        """
+        return self._dynamic_secret_max_ttl
+
+    @dynamic_secret_max_ttl.setter
+    def dynamic_secret_max_ttl(self, dynamic_secret_max_ttl):
+        """Sets the dynamic_secret_max_ttl of this AccountGeneralSettings.
+
+
+        :param dynamic_secret_max_ttl: The dynamic_secret_max_ttl of this AccountGeneralSettings.  # noqa: E501
+        :type: DynamicSecretMaxTtl
+        """
+
+        self._dynamic_secret_max_ttl = dynamic_secret_max_ttl
 
     @property
     def enable_request_for_access(self):
@@ -320,6 +351,27 @@ class AccountGeneralSettings(object):
         """
 
         self._protect_items_by_default = protect_items_by_default
+
+    @property
+    def rotation_secret_max_interval(self):
+        """Gets the rotation_secret_max_interval of this AccountGeneralSettings.  # noqa: E501
+
+
+        :return: The rotation_secret_max_interval of this AccountGeneralSettings.  # noqa: E501
+        :rtype: RotationSecretMaxInterval
+        """
+        return self._rotation_secret_max_interval
+
+    @rotation_secret_max_interval.setter
+    def rotation_secret_max_interval(self, rotation_secret_max_interval):
+        """Sets the rotation_secret_max_interval of this AccountGeneralSettings.
+
+
+        :param rotation_secret_max_interval: The rotation_secret_max_interval of this AccountGeneralSettings.  # noqa: E501
+        :type: RotationSecretMaxInterval
+        """
+
+        self._rotation_secret_max_interval = rotation_secret_max_interval
 
     @property
     def sharing_policy(self):

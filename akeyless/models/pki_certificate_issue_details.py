@@ -35,8 +35,10 @@ class PKICertificateIssueDetails(object):
     """
     openapi_types = {
         'allow_any_name': 'bool',
+        'allow_copy_ext_from_csr': 'bool',
         'allow_subdomains': 'bool',
         'allowed_domains_list': 'list[str]',
+        'allowed_extra_extensions': 'dict(str, list[str])',
         'allowed_uri_sans': 'list[str]',
         'basic_constraints_valid_for_non_ca': 'bool',
         'certificate_authority_mode': 'str',
@@ -65,8 +67,10 @@ class PKICertificateIssueDetails(object):
 
     attribute_map = {
         'allow_any_name': 'allow_any_name',
+        'allow_copy_ext_from_csr': 'allow_copy_ext_from_csr',
         'allow_subdomains': 'allow_subdomains',
         'allowed_domains_list': 'allowed_domains_list',
+        'allowed_extra_extensions': 'allowed_extra_extensions',
         'allowed_uri_sans': 'allowed_uri_sans',
         'basic_constraints_valid_for_non_ca': 'basic_constraints_valid_for_non_ca',
         'certificate_authority_mode': 'certificate_authority_mode',
@@ -93,15 +97,17 @@ class PKICertificateIssueDetails(object):
         'street_address': 'street_address'
     }
 
-    def __init__(self, allow_any_name=None, allow_subdomains=None, allowed_domains_list=None, allowed_uri_sans=None, basic_constraints_valid_for_non_ca=None, certificate_authority_mode=None, client_flag=None, code_signing_flag=None, country=None, destination_path=None, enforce_hostnames=None, expiration_events=None, gw_cluster_url=None, is_ca=None, key_bits=None, key_type=None, key_usage_list=None, locality=None, not_before_duration=None, organization_list=None, organization_unit_list=None, postal_code=None, protect_generated_certificates=None, province=None, require_cn=None, server_flag=None, street_address=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, allow_any_name=None, allow_copy_ext_from_csr=None, allow_subdomains=None, allowed_domains_list=None, allowed_extra_extensions=None, allowed_uri_sans=None, basic_constraints_valid_for_non_ca=None, certificate_authority_mode=None, client_flag=None, code_signing_flag=None, country=None, destination_path=None, enforce_hostnames=None, expiration_events=None, gw_cluster_url=None, is_ca=None, key_bits=None, key_type=None, key_usage_list=None, locality=None, not_before_duration=None, organization_list=None, organization_unit_list=None, postal_code=None, protect_generated_certificates=None, province=None, require_cn=None, server_flag=None, street_address=None, local_vars_configuration=None):  # noqa: E501
         """PKICertificateIssueDetails - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._allow_any_name = None
+        self._allow_copy_ext_from_csr = None
         self._allow_subdomains = None
         self._allowed_domains_list = None
+        self._allowed_extra_extensions = None
         self._allowed_uri_sans = None
         self._basic_constraints_valid_for_non_ca = None
         self._certificate_authority_mode = None
@@ -130,10 +136,14 @@ class PKICertificateIssueDetails(object):
 
         if allow_any_name is not None:
             self.allow_any_name = allow_any_name
+        if allow_copy_ext_from_csr is not None:
+            self.allow_copy_ext_from_csr = allow_copy_ext_from_csr
         if allow_subdomains is not None:
             self.allow_subdomains = allow_subdomains
         if allowed_domains_list is not None:
             self.allowed_domains_list = allowed_domains_list
+        if allowed_extra_extensions is not None:
+            self.allowed_extra_extensions = allowed_extra_extensions
         if allowed_uri_sans is not None:
             self.allowed_uri_sans = allowed_uri_sans
         if basic_constraints_valid_for_non_ca is not None:
@@ -205,6 +215,27 @@ class PKICertificateIssueDetails(object):
         self._allow_any_name = allow_any_name
 
     @property
+    def allow_copy_ext_from_csr(self):
+        """Gets the allow_copy_ext_from_csr of this PKICertificateIssueDetails.  # noqa: E501
+
+
+        :return: The allow_copy_ext_from_csr of this PKICertificateIssueDetails.  # noqa: E501
+        :rtype: bool
+        """
+        return self._allow_copy_ext_from_csr
+
+    @allow_copy_ext_from_csr.setter
+    def allow_copy_ext_from_csr(self, allow_copy_ext_from_csr):
+        """Sets the allow_copy_ext_from_csr of this PKICertificateIssueDetails.
+
+
+        :param allow_copy_ext_from_csr: The allow_copy_ext_from_csr of this PKICertificateIssueDetails.  # noqa: E501
+        :type: bool
+        """
+
+        self._allow_copy_ext_from_csr = allow_copy_ext_from_csr
+
+    @property
     def allow_subdomains(self):
         """Gets the allow_subdomains of this PKICertificateIssueDetails.  # noqa: E501
 
@@ -245,6 +276,27 @@ class PKICertificateIssueDetails(object):
         """
 
         self._allowed_domains_list = allowed_domains_list
+
+    @property
+    def allowed_extra_extensions(self):
+        """Gets the allowed_extra_extensions of this PKICertificateIssueDetails.  # noqa: E501
+
+
+        :return: The allowed_extra_extensions of this PKICertificateIssueDetails.  # noqa: E501
+        :rtype: dict(str, list[str])
+        """
+        return self._allowed_extra_extensions
+
+    @allowed_extra_extensions.setter
+    def allowed_extra_extensions(self, allowed_extra_extensions):
+        """Sets the allowed_extra_extensions of this PKICertificateIssueDetails.
+
+
+        :param allowed_extra_extensions: The allowed_extra_extensions of this PKICertificateIssueDetails.  # noqa: E501
+        :type: dict(str, list[str])
+        """
+
+        self._allowed_extra_extensions = allowed_extra_extensions
 
     @property
     def allowed_uri_sans(self):

@@ -50,6 +50,7 @@ class CreateAuthMethodCert(object):
         'json': 'bool',
         'jwt_ttl': 'int',
         'name': 'str',
+        'product_type': 'list[str]',
         'revoked_cert_ids': 'list[str]',
         'token': 'str',
         'uid_token': 'str',
@@ -73,13 +74,14 @@ class CreateAuthMethodCert(object):
         'json': 'json',
         'jwt_ttl': 'jwt-ttl',
         'name': 'name',
+        'product_type': 'product-type',
         'revoked_cert_ids': 'revoked-cert-ids',
         'token': 'token',
         'uid_token': 'uid-token',
         'unique_identifier': 'unique-identifier'
     }
 
-    def __init__(self, access_expires=0, allowed_cors=None, bound_common_names=None, bound_dns_sans=None, bound_email_sans=None, bound_extensions=None, bound_ips=None, bound_organizational_units=None, bound_uri_sans=None, certificate_data=None, description=None, force_sub_claims=None, gw_bound_ips=None, json=False, jwt_ttl=0, name=None, revoked_cert_ids=None, token=None, uid_token=None, unique_identifier=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, access_expires=0, allowed_cors=None, bound_common_names=None, bound_dns_sans=None, bound_email_sans=None, bound_extensions=None, bound_ips=None, bound_organizational_units=None, bound_uri_sans=None, certificate_data=None, description=None, force_sub_claims=None, gw_bound_ips=None, json=False, jwt_ttl=0, name=None, product_type=None, revoked_cert_ids=None, token=None, uid_token=None, unique_identifier=None, local_vars_configuration=None):  # noqa: E501
         """CreateAuthMethodCert - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -101,6 +103,7 @@ class CreateAuthMethodCert(object):
         self._json = None
         self._jwt_ttl = None
         self._name = None
+        self._product_type = None
         self._revoked_cert_ids = None
         self._token = None
         self._uid_token = None
@@ -138,6 +141,8 @@ class CreateAuthMethodCert(object):
         if jwt_ttl is not None:
             self.jwt_ttl = jwt_ttl
         self.name = name
+        if product_type is not None:
+            self.product_type = product_type
         if revoked_cert_ids is not None:
             self.revoked_cert_ids = revoked_cert_ids
         if token is not None:
@@ -515,6 +520,29 @@ class CreateAuthMethodCert(object):
             raise ValueError("Invalid value for `name`, must not be `None`")  # noqa: E501
 
         self._name = name
+
+    @property
+    def product_type(self):
+        """Gets the product_type of this CreateAuthMethodCert.  # noqa: E501
+
+        Choose the relevant product type for the auth method [sm, sra, pm, dp, ca]  # noqa: E501
+
+        :return: The product_type of this CreateAuthMethodCert.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._product_type
+
+    @product_type.setter
+    def product_type(self, product_type):
+        """Sets the product_type of this CreateAuthMethodCert.
+
+        Choose the relevant product type for the auth method [sm, sra, pm, dp, ca]  # noqa: E501
+
+        :param product_type: The product_type of this CreateAuthMethodCert.  # noqa: E501
+        :type: list[str]
+        """
+
+        self._product_type = product_type
 
     @property
     def revoked_cert_ids(self):

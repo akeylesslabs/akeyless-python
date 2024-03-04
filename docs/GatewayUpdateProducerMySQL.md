@@ -1,6 +1,6 @@
 # GatewayUpdateProducerMySQL
 
-gatewayUpdateProducerMySQL is a command that updates mysql producer
+gatewayUpdateProducerMySQL is a command that updates mysql producer [Deprecated: Use dynamic-secret-update-mysql command]
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
@@ -15,8 +15,9 @@ Name | Type | Description | Notes
 **mysql_revocation_statements** | **str** | MySQL Revocation statements | [optional] 
 **mysql_screation_statements** | **str** | MySQL Creation statements | [optional] 
 **mysql_username** | **str** | MySQL Username | [optional] 
-**name** | **str** | Producer name | 
-**new_name** | **str** | Producer name | [optional] 
+**name** | **str** | Dynamic secret name | 
+**new_name** | **str** | Dynamic secret name | [optional] 
+**password_length** | **str** | The length of the password to be generated | [optional] 
 **producer_encryption_key_name** | **str** | Dynamic producer encryption key | [optional] 
 **secure_access_bastion_issuer** | **str** | Path to the SSH Certificate Issuer for your Akeyless Bastion | [optional] 
 **secure_access_enable** | **str** | Enable/Disable secure remote access [true/false] | [optional] 

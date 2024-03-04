@@ -47,11 +47,13 @@ class CreateRotatedSecret(object):
         'gcp_key': 'str',
         'gcp_service_account_email': 'str',
         'gcp_service_account_key_id': 'str',
+        'grace_rotation': 'str',
         'host_provider': 'str',
         'json': 'bool',
         'key': 'str',
         'metadata': 'str',
         'name': 'str',
+        'password_length': 'str',
         'rotate_after_disconnect': 'str',
         'rotated_password': 'str',
         'rotated_username': 'str',
@@ -71,6 +73,7 @@ class CreateRotatedSecret(object):
         'secure_access_host': 'list[str]',
         'secure_access_rdp_domain': 'str',
         'secure_access_rdp_user': 'str',
+        'secure_access_url': 'str',
         'secure_access_web': 'bool',
         'secure_access_web_browsing': 'bool',
         'secure_access_web_proxy': 'bool',
@@ -100,11 +103,13 @@ class CreateRotatedSecret(object):
         'gcp_key': 'gcp-key',
         'gcp_service_account_email': 'gcp-service-account-email',
         'gcp_service_account_key_id': 'gcp-service-account-key-id',
+        'grace_rotation': 'grace-rotation',
         'host_provider': 'host-provider',
         'json': 'json',
         'key': 'key',
         'metadata': 'metadata',
         'name': 'name',
+        'password_length': 'password-length',
         'rotate_after_disconnect': 'rotate-after-disconnect',
         'rotated_password': 'rotated-password',
         'rotated_username': 'rotated-username',
@@ -124,6 +129,7 @@ class CreateRotatedSecret(object):
         'secure_access_host': 'secure-access-host',
         'secure_access_rdp_domain': 'secure-access-rdp-domain',
         'secure_access_rdp_user': 'secure-access-rdp-user',
+        'secure_access_url': 'secure-access-url',
         'secure_access_web': 'secure-access-web',
         'secure_access_web_browsing': 'secure-access-web-browsing',
         'secure_access_web_proxy': 'secure-access-web-proxy',
@@ -139,7 +145,7 @@ class CreateRotatedSecret(object):
         'user_dn': 'user-dn'
     }
 
-    def __init__(self, provider_type=None, api_id=None, api_key=None, application_id=None, authentication_credentials='use-user-creds', auto_rotate=None, aws_region='us-east-2', custom_payload=None, delete_protection=None, description=None, gcp_key=None, gcp_service_account_email=None, gcp_service_account_key_id=None, host_provider='explicit', json=False, key=None, metadata=None, name=None, rotate_after_disconnect='false', rotated_password=None, rotated_username=None, rotation_hour=None, rotation_interval=None, rotator_creds_type=None, rotator_custom_cmd=None, rotator_type=None, same_password=None, secure_access_allow_external_user=False, secure_access_aws_account_id=None, secure_access_aws_native_cli=None, secure_access_bastion_issuer=None, secure_access_db_name=None, secure_access_db_schema=None, secure_access_enable=None, secure_access_host=None, secure_access_rdp_domain=None, secure_access_rdp_user=None, secure_access_web=False, secure_access_web_browsing=False, secure_access_web_proxy=False, ssh_password=None, ssh_username=None, storage_account_key_name=None, tags=None, target=None, target_name=None, token=None, uid_token=None, user_attribute=None, user_dn=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, provider_type=None, api_id=None, api_key=None, application_id=None, authentication_credentials='use-user-creds', auto_rotate=None, aws_region='us-east-2', custom_payload=None, delete_protection=None, description=None, gcp_key=None, gcp_service_account_email=None, gcp_service_account_key_id=None, grace_rotation=None, host_provider='explicit', json=False, key=None, metadata=None, name=None, password_length=None, rotate_after_disconnect='false', rotated_password=None, rotated_username=None, rotation_hour=None, rotation_interval=None, rotator_creds_type=None, rotator_custom_cmd=None, rotator_type=None, same_password=None, secure_access_allow_external_user=False, secure_access_aws_account_id=None, secure_access_aws_native_cli=None, secure_access_bastion_issuer=None, secure_access_db_name=None, secure_access_db_schema=None, secure_access_enable=None, secure_access_host=None, secure_access_rdp_domain=None, secure_access_rdp_user=None, secure_access_url=None, secure_access_web=False, secure_access_web_browsing=False, secure_access_web_proxy=False, ssh_password=None, ssh_username=None, storage_account_key_name=None, tags=None, target=None, target_name=None, token=None, uid_token=None, user_attribute='cn', user_dn=None, local_vars_configuration=None):  # noqa: E501
         """CreateRotatedSecret - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -158,11 +164,13 @@ class CreateRotatedSecret(object):
         self._gcp_key = None
         self._gcp_service_account_email = None
         self._gcp_service_account_key_id = None
+        self._grace_rotation = None
         self._host_provider = None
         self._json = None
         self._key = None
         self._metadata = None
         self._name = None
+        self._password_length = None
         self._rotate_after_disconnect = None
         self._rotated_password = None
         self._rotated_username = None
@@ -182,6 +190,7 @@ class CreateRotatedSecret(object):
         self._secure_access_host = None
         self._secure_access_rdp_domain = None
         self._secure_access_rdp_user = None
+        self._secure_access_url = None
         self._secure_access_web = None
         self._secure_access_web_browsing = None
         self._secure_access_web_proxy = None
@@ -223,6 +232,8 @@ class CreateRotatedSecret(object):
             self.gcp_service_account_email = gcp_service_account_email
         if gcp_service_account_key_id is not None:
             self.gcp_service_account_key_id = gcp_service_account_key_id
+        if grace_rotation is not None:
+            self.grace_rotation = grace_rotation
         if host_provider is not None:
             self.host_provider = host_provider
         if json is not None:
@@ -232,6 +243,8 @@ class CreateRotatedSecret(object):
         if metadata is not None:
             self.metadata = metadata
         self.name = name
+        if password_length is not None:
+            self.password_length = password_length
         if rotate_after_disconnect is not None:
             self.rotate_after_disconnect = rotate_after_disconnect
         if rotated_password is not None:
@@ -269,6 +282,8 @@ class CreateRotatedSecret(object):
             self.secure_access_rdp_domain = secure_access_rdp_domain
         if secure_access_rdp_user is not None:
             self.secure_access_rdp_user = secure_access_rdp_user
+        if secure_access_url is not None:
+            self.secure_access_url = secure_access_url
         if secure_access_web is not None:
             self.secure_access_web = secure_access_web
         if secure_access_web_browsing is not None:
@@ -435,7 +450,7 @@ class CreateRotatedSecret(object):
     def aws_region(self):
         """Gets the aws_region of this CreateRotatedSecret.  # noqa: E501
 
-        Region (used in aws)  # noqa: E501
+        Aws Region (relevant only for aws)  # noqa: E501
 
         :return: The aws_region of this CreateRotatedSecret.  # noqa: E501
         :rtype: str
@@ -446,7 +461,7 @@ class CreateRotatedSecret(object):
     def aws_region(self, aws_region):
         """Sets the aws_region of this CreateRotatedSecret.
 
-        Region (used in aws)  # noqa: E501
+        Aws Region (relevant only for aws)  # noqa: E501
 
         :param aws_region: The aws_region of this CreateRotatedSecret.  # noqa: E501
         :type: str
@@ -593,6 +608,29 @@ class CreateRotatedSecret(object):
         self._gcp_service_account_key_id = gcp_service_account_key_id
 
     @property
+    def grace_rotation(self):
+        """Gets the grace_rotation of this CreateRotatedSecret.  # noqa: E501
+
+        Create a new access key without deleting the old key from AWS for backup (relevant only for AWS) [true/false]  # noqa: E501
+
+        :return: The grace_rotation of this CreateRotatedSecret.  # noqa: E501
+        :rtype: str
+        """
+        return self._grace_rotation
+
+    @grace_rotation.setter
+    def grace_rotation(self, grace_rotation):
+        """Sets the grace_rotation of this CreateRotatedSecret.
+
+        Create a new access key without deleting the old key from AWS for backup (relevant only for AWS) [true/false]  # noqa: E501
+
+        :param grace_rotation: The grace_rotation of this CreateRotatedSecret.  # noqa: E501
+        :type: str
+        """
+
+        self._grace_rotation = grace_rotation
+
+    @property
     def host_provider(self):
         """Gets the host_provider of this CreateRotatedSecret.  # noqa: E501
 
@@ -708,6 +746,29 @@ class CreateRotatedSecret(object):
             raise ValueError("Invalid value for `name`, must not be `None`")  # noqa: E501
 
         self._name = name
+
+    @property
+    def password_length(self):
+        """Gets the password_length of this CreateRotatedSecret.  # noqa: E501
+
+        The length of the password to be generated  # noqa: E501
+
+        :return: The password_length of this CreateRotatedSecret.  # noqa: E501
+        :rtype: str
+        """
+        return self._password_length
+
+    @password_length.setter
+    def password_length(self, password_length):
+        """Sets the password_length of this CreateRotatedSecret.
+
+        The length of the password to be generated  # noqa: E501
+
+        :param password_length: The password_length of this CreateRotatedSecret.  # noqa: E501
+        :type: str
+        """
+
+        self._password_length = password_length
 
     @property
     def rotate_after_disconnect(self):
@@ -1145,6 +1206,29 @@ class CreateRotatedSecret(object):
         """
 
         self._secure_access_rdp_user = secure_access_rdp_user
+
+    @property
+    def secure_access_url(self):
+        """Gets the secure_access_url of this CreateRotatedSecret.  # noqa: E501
+
+        Destination URL to inject secrets  # noqa: E501
+
+        :return: The secure_access_url of this CreateRotatedSecret.  # noqa: E501
+        :rtype: str
+        """
+        return self._secure_access_url
+
+    @secure_access_url.setter
+    def secure_access_url(self, secure_access_url):
+        """Sets the secure_access_url of this CreateRotatedSecret.
+
+        Destination URL to inject secrets  # noqa: E501
+
+        :param secure_access_url: The secure_access_url of this CreateRotatedSecret.  # noqa: E501
+        :type: str
+        """
+
+        self._secure_access_url = secure_access_url
 
     @property
     def secure_access_web(self):

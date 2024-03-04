@@ -52,6 +52,7 @@ class AuthMethodAccessInfo(object):
         'oauth2_access_rules': 'OAuth2AccessRules',
         'oci_access_rules': 'OCIAccessRules',
         'oidc_access_rules': 'OIDCAccessRules',
+        'product_types': 'list[str]',
         'rules_type': 'str',
         'saml_access_rules': 'SAMLAccessRules',
         'sub_claims_delimiters': 'list[str]',
@@ -77,13 +78,14 @@ class AuthMethodAccessInfo(object):
         'oauth2_access_rules': 'oauth2_access_rules',
         'oci_access_rules': 'oci_access_rules',
         'oidc_access_rules': 'oidc_access_rules',
+        'product_types': 'product_types',
         'rules_type': 'rules_type',
         'saml_access_rules': 'saml_access_rules',
         'sub_claims_delimiters': 'sub_claims_delimiters',
         'universal_identity_access_rules': 'universal_identity_access_rules'
     }
 
-    def __init__(self, access_expires=None, access_id_alias=None, api_key_access_rules=None, aws_iam_access_rules=None, azure_ad_access_rules=None, cert_access_rules=None, cidr_whitelist=None, email_pass_access_rules=None, force_sub_claims=None, gcp_access_rules=None, gw_cidr_whitelist=None, huawei_access_rules=None, jwt_ttl=None, k8s_access_rules=None, ldap_access_rules=None, oauth2_access_rules=None, oci_access_rules=None, oidc_access_rules=None, rules_type=None, saml_access_rules=None, sub_claims_delimiters=None, universal_identity_access_rules=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, access_expires=None, access_id_alias=None, api_key_access_rules=None, aws_iam_access_rules=None, azure_ad_access_rules=None, cert_access_rules=None, cidr_whitelist=None, email_pass_access_rules=None, force_sub_claims=None, gcp_access_rules=None, gw_cidr_whitelist=None, huawei_access_rules=None, jwt_ttl=None, k8s_access_rules=None, ldap_access_rules=None, oauth2_access_rules=None, oci_access_rules=None, oidc_access_rules=None, product_types=None, rules_type=None, saml_access_rules=None, sub_claims_delimiters=None, universal_identity_access_rules=None, local_vars_configuration=None):  # noqa: E501
         """AuthMethodAccessInfo - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -107,6 +109,7 @@ class AuthMethodAccessInfo(object):
         self._oauth2_access_rules = None
         self._oci_access_rules = None
         self._oidc_access_rules = None
+        self._product_types = None
         self._rules_type = None
         self._saml_access_rules = None
         self._sub_claims_delimiters = None
@@ -149,6 +152,8 @@ class AuthMethodAccessInfo(object):
             self.oci_access_rules = oci_access_rules
         if oidc_access_rules is not None:
             self.oidc_access_rules = oidc_access_rules
+        if product_types is not None:
+            self.product_types = product_types
         if rules_type is not None:
             self.rules_type = rules_type
         if saml_access_rules is not None:
@@ -539,6 +544,29 @@ class AuthMethodAccessInfo(object):
         """
 
         self._oidc_access_rules = oidc_access_rules
+
+    @property
+    def product_types(self):
+        """Gets the product_types of this AuthMethodAccessInfo.  # noqa: E501
+
+        List of product types this auth method will be in use of  # noqa: E501
+
+        :return: The product_types of this AuthMethodAccessInfo.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._product_types
+
+    @product_types.setter
+    def product_types(self, product_types):
+        """Sets the product_types of this AuthMethodAccessInfo.
+
+        List of product types this auth method will be in use of  # noqa: E501
+
+        :param product_types: The product_types of this AuthMethodAccessInfo.  # noqa: E501
+        :type: list[str]
+        """
+
+        self._product_types = product_types
 
     @property
     def rules_type(self):

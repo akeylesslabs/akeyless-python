@@ -44,6 +44,7 @@ class GatewayCreateProducerMSSQL(object):
         'mssql_revocation_statements': 'str',
         'mssql_username': 'str',
         'name': 'str',
+        'password_length': 'str',
         'producer_encryption_key_name': 'str',
         'secure_access_bastion_issuer': 'str',
         'secure_access_db_schema': 'str',
@@ -68,6 +69,7 @@ class GatewayCreateProducerMSSQL(object):
         'mssql_revocation_statements': 'mssql-revocation-statements',
         'mssql_username': 'mssql-username',
         'name': 'name',
+        'password_length': 'password-length',
         'producer_encryption_key_name': 'producer-encryption-key-name',
         'secure_access_bastion_issuer': 'secure-access-bastion-issuer',
         'secure_access_db_schema': 'secure-access-db-schema',
@@ -81,7 +83,7 @@ class GatewayCreateProducerMSSQL(object):
         'user_ttl': 'user-ttl'
     }
 
-    def __init__(self, delete_protection=None, json=False, mssql_create_statements=None, mssql_dbname=None, mssql_host='127.0.0.1', mssql_password=None, mssql_port='1433', mssql_revocation_statements=None, mssql_username=None, name=None, producer_encryption_key_name=None, secure_access_bastion_issuer=None, secure_access_db_schema=None, secure_access_enable=None, secure_access_host=None, secure_access_web=False, tags=None, target_name=None, token=None, uid_token=None, user_ttl='60m', local_vars_configuration=None):  # noqa: E501
+    def __init__(self, delete_protection=None, json=False, mssql_create_statements=None, mssql_dbname=None, mssql_host='127.0.0.1', mssql_password=None, mssql_port='1433', mssql_revocation_statements=None, mssql_username=None, name=None, password_length=None, producer_encryption_key_name=None, secure_access_bastion_issuer=None, secure_access_db_schema=None, secure_access_enable=None, secure_access_host=None, secure_access_web=False, tags=None, target_name=None, token=None, uid_token=None, user_ttl='60m', local_vars_configuration=None):  # noqa: E501
         """GatewayCreateProducerMSSQL - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -97,6 +99,7 @@ class GatewayCreateProducerMSSQL(object):
         self._mssql_revocation_statements = None
         self._mssql_username = None
         self._name = None
+        self._password_length = None
         self._producer_encryption_key_name = None
         self._secure_access_bastion_issuer = None
         self._secure_access_db_schema = None
@@ -129,6 +132,8 @@ class GatewayCreateProducerMSSQL(object):
         if mssql_username is not None:
             self.mssql_username = mssql_username
         self.name = name
+        if password_length is not None:
+            self.password_length = password_length
         if producer_encryption_key_name is not None:
             self.producer_encryption_key_name = producer_encryption_key_name
         if secure_access_bastion_issuer is not None:
@@ -363,7 +368,7 @@ class GatewayCreateProducerMSSQL(object):
     def name(self):
         """Gets the name of this GatewayCreateProducerMSSQL.  # noqa: E501
 
-        Producer name  # noqa: E501
+        Dynamic secret name  # noqa: E501
 
         :return: The name of this GatewayCreateProducerMSSQL.  # noqa: E501
         :rtype: str
@@ -374,7 +379,7 @@ class GatewayCreateProducerMSSQL(object):
     def name(self, name):
         """Sets the name of this GatewayCreateProducerMSSQL.
 
-        Producer name  # noqa: E501
+        Dynamic secret name  # noqa: E501
 
         :param name: The name of this GatewayCreateProducerMSSQL.  # noqa: E501
         :type: str
@@ -383,6 +388,29 @@ class GatewayCreateProducerMSSQL(object):
             raise ValueError("Invalid value for `name`, must not be `None`")  # noqa: E501
 
         self._name = name
+
+    @property
+    def password_length(self):
+        """Gets the password_length of this GatewayCreateProducerMSSQL.  # noqa: E501
+
+        The length of the password to be generated  # noqa: E501
+
+        :return: The password_length of this GatewayCreateProducerMSSQL.  # noqa: E501
+        :rtype: str
+        """
+        return self._password_length
+
+    @password_length.setter
+    def password_length(self, password_length):
+        """Sets the password_length of this GatewayCreateProducerMSSQL.
+
+        The length of the password to be generated  # noqa: E501
+
+        :param password_length: The password_length of this GatewayCreateProducerMSSQL.  # noqa: E501
+        :type: str
+        """
+
+        self._password_length = password_length
 
     @property
     def producer_encryption_key_name(self):

@@ -41,6 +41,7 @@ class GatewayUpdateProducerRedis(object):
         'name': 'str',
         'new_name': 'str',
         'password': 'str',
+        'password_length': 'str',
         'port': 'str',
         'producer_encryption_key_name': 'str',
         'ssl': 'bool',
@@ -61,6 +62,7 @@ class GatewayUpdateProducerRedis(object):
         'name': 'name',
         'new_name': 'new-name',
         'password': 'password',
+        'password_length': 'password-length',
         'port': 'port',
         'producer_encryption_key_name': 'producer-encryption-key-name',
         'ssl': 'ssl',
@@ -73,7 +75,7 @@ class GatewayUpdateProducerRedis(object):
         'username': 'username'
     }
 
-    def __init__(self, acl_rules=None, delete_protection=None, host='127.0.0.1', json=False, name=None, new_name=None, password=None, port='6379', producer_encryption_key_name=None, ssl=False, ssl_certificate=None, tags=None, target_name=None, token=None, uid_token=None, user_ttl='60m', username=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, acl_rules=None, delete_protection=None, host='127.0.0.1', json=False, name=None, new_name=None, password=None, password_length=None, port='6379', producer_encryption_key_name=None, ssl=False, ssl_certificate=None, tags=None, target_name=None, token=None, uid_token=None, user_ttl='60m', username=None, local_vars_configuration=None):  # noqa: E501
         """GatewayUpdateProducerRedis - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -86,6 +88,7 @@ class GatewayUpdateProducerRedis(object):
         self._name = None
         self._new_name = None
         self._password = None
+        self._password_length = None
         self._port = None
         self._producer_encryption_key_name = None
         self._ssl = None
@@ -111,6 +114,8 @@ class GatewayUpdateProducerRedis(object):
             self.new_name = new_name
         if password is not None:
             self.password = password
+        if password_length is not None:
+            self.password_length = password_length
         if port is not None:
             self.port = port
         if producer_encryption_key_name is not None:
@@ -228,7 +233,7 @@ class GatewayUpdateProducerRedis(object):
     def name(self):
         """Gets the name of this GatewayUpdateProducerRedis.  # noqa: E501
 
-        Producer name  # noqa: E501
+        Dynamic secret name  # noqa: E501
 
         :return: The name of this GatewayUpdateProducerRedis.  # noqa: E501
         :rtype: str
@@ -239,7 +244,7 @@ class GatewayUpdateProducerRedis(object):
     def name(self, name):
         """Sets the name of this GatewayUpdateProducerRedis.
 
-        Producer name  # noqa: E501
+        Dynamic secret name  # noqa: E501
 
         :param name: The name of this GatewayUpdateProducerRedis.  # noqa: E501
         :type: str
@@ -253,7 +258,7 @@ class GatewayUpdateProducerRedis(object):
     def new_name(self):
         """Gets the new_name of this GatewayUpdateProducerRedis.  # noqa: E501
 
-        Producer name  # noqa: E501
+        Dynamic secret name  # noqa: E501
 
         :return: The new_name of this GatewayUpdateProducerRedis.  # noqa: E501
         :rtype: str
@@ -264,7 +269,7 @@ class GatewayUpdateProducerRedis(object):
     def new_name(self, new_name):
         """Sets the new_name of this GatewayUpdateProducerRedis.
 
-        Producer name  # noqa: E501
+        Dynamic secret name  # noqa: E501
 
         :param new_name: The new_name of this GatewayUpdateProducerRedis.  # noqa: E501
         :type: str
@@ -294,6 +299,29 @@ class GatewayUpdateProducerRedis(object):
         """
 
         self._password = password
+
+    @property
+    def password_length(self):
+        """Gets the password_length of this GatewayUpdateProducerRedis.  # noqa: E501
+
+        The length of the password to be generated  # noqa: E501
+
+        :return: The password_length of this GatewayUpdateProducerRedis.  # noqa: E501
+        :rtype: str
+        """
+        return self._password_length
+
+    @password_length.setter
+    def password_length(self, password_length):
+        """Sets the password_length of this GatewayUpdateProducerRedis.
+
+        The length of the password to be generated  # noqa: E501
+
+        :param password_length: The password_length of this GatewayUpdateProducerRedis.  # noqa: E501
+        :type: str
+        """
+
+        self._password_length = password_length
 
     @property
     def port(self):

@@ -102,6 +102,7 @@ Name | Type | Description | Notes
 **github_installation_token_permissions** | **dict(str, str)** |  | [optional] 
 **github_installation_token_repositories** | **list[str]** |  | [optional] 
 **github_installation_token_repositories_ids** | **list[int]** |  | [optional] 
+**github_organization_name** | **str** |  | [optional] 
 **github_repository_path** | **str** |  | [optional] 
 **gke_cluster_ca_certificate** | **str** |  | [optional] 
 **gke_cluster_endpoint** | **str** |  | [optional] 

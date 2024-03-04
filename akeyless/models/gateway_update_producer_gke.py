@@ -312,7 +312,7 @@ class GatewayUpdateProducerGke(object):
     def name(self):
         """Gets the name of this GatewayUpdateProducerGke.  # noqa: E501
 
-        Producer name  # noqa: E501
+        Dynamic secret name  # noqa: E501
 
         :return: The name of this GatewayUpdateProducerGke.  # noqa: E501
         :rtype: str
@@ -323,7 +323,7 @@ class GatewayUpdateProducerGke(object):
     def name(self, name):
         """Sets the name of this GatewayUpdateProducerGke.
 
-        Producer name  # noqa: E501
+        Dynamic secret name  # noqa: E501
 
         :param name: The name of this GatewayUpdateProducerGke.  # noqa: E501
         :type: str
@@ -337,7 +337,7 @@ class GatewayUpdateProducerGke(object):
     def new_name(self):
         """Gets the new_name of this GatewayUpdateProducerGke.  # noqa: E501
 
-        Producer name  # noqa: E501
+        Dynamic secret name  # noqa: E501
 
         :return: The new_name of this GatewayUpdateProducerGke.  # noqa: E501
         :rtype: str
@@ -348,7 +348,7 @@ class GatewayUpdateProducerGke(object):
     def new_name(self, new_name):
         """Sets the new_name of this GatewayUpdateProducerGke.
 
-        Producer name  # noqa: E501
+        Dynamic secret name  # noqa: E501
 
         :param new_name: The new_name of this GatewayUpdateProducerGke.  # noqa: E501
         :type: str

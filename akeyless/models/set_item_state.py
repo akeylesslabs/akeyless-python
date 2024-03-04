@@ -199,7 +199,7 @@ class SetItemState(object):
     def version(self):
         """Gets the version of this SetItemState.  # noqa: E501
 
-        The specific version you want to update: 0=item level state (default)  # noqa: E501
+        The specific version you want to update: 0=item level state (default) (relevant only for keys)  # noqa: E501
 
         :return: The version of this SetItemState.  # noqa: E501
         :rtype: int
@@ -210,7 +210,7 @@ class SetItemState(object):
     def version(self, version):
         """Sets the version of this SetItemState.
 
-        The specific version you want to update: 0=item level state (default)  # noqa: E501
+        The specific version you want to update: 0=item level state (default) (relevant only for keys)  # noqa: E501
 
         :param version: The version of this SetItemState.  # noqa: E501
         :type: int

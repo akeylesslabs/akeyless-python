@@ -49,6 +49,7 @@ class UpdateAuthMethodGCP(object):
         'jwt_ttl': 'int',
         'name': 'str',
         'new_name': 'str',
+        'product_type': 'list[str]',
         'service_account_creds_data': 'str',
         'token': 'str',
         'type': 'str',
@@ -71,13 +72,14 @@ class UpdateAuthMethodGCP(object):
         'jwt_ttl': 'jwt-ttl',
         'name': 'name',
         'new_name': 'new-name',
+        'product_type': 'product-type',
         'service_account_creds_data': 'service-account-creds-data',
         'token': 'token',
         'type': 'type',
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, access_expires=0, audience='akeyless.io', bound_ips=None, bound_labels=None, bound_projects=None, bound_regions=None, bound_service_accounts=None, bound_zones=None, description=None, force_sub_claims=None, gw_bound_ips=None, json=False, jwt_ttl=0, name=None, new_name=None, service_account_creds_data=None, token=None, type=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, access_expires=0, audience='akeyless.io', bound_ips=None, bound_labels=None, bound_projects=None, bound_regions=None, bound_service_accounts=None, bound_zones=None, description=None, force_sub_claims=None, gw_bound_ips=None, json=False, jwt_ttl=0, name=None, new_name=None, product_type=None, service_account_creds_data=None, token=None, type=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """UpdateAuthMethodGCP - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -98,6 +100,7 @@ class UpdateAuthMethodGCP(object):
         self._jwt_ttl = None
         self._name = None
         self._new_name = None
+        self._product_type = None
         self._service_account_creds_data = None
         self._token = None
         self._type = None
@@ -132,6 +135,8 @@ class UpdateAuthMethodGCP(object):
         self.name = name
         if new_name is not None:
             self.new_name = new_name
+        if product_type is not None:
+            self.product_type = product_type
         if service_account_creds_data is not None:
             self.service_account_creds_data = service_account_creds_data
         if token is not None:
@@ -488,6 +493,29 @@ class UpdateAuthMethodGCP(object):
         """
 
         self._new_name = new_name
+
+    @property
+    def product_type(self):
+        """Gets the product_type of this UpdateAuthMethodGCP.  # noqa: E501
+
+        Choose the relevant product type for the auth method [sm, sra, pm, dp, ca]  # noqa: E501
+
+        :return: The product_type of this UpdateAuthMethodGCP.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._product_type
+
+    @product_type.setter
+    def product_type(self, product_type):
+        """Sets the product_type of this UpdateAuthMethodGCP.
+
+        Choose the relevant product type for the auth method [sm, sra, pm, dp, ca]  # noqa: E501
+
+        :param product_type: The product_type of this UpdateAuthMethodGCP.  # noqa: E501
+        :type: list[str]
+        """
+
+        self._product_type = product_type
 
     @property
     def service_account_creds_data(self):

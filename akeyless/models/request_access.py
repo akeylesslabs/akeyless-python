@@ -40,6 +40,7 @@ class RequestAccess(object):
         'json': 'bool',
         'name': 'str',
         'token': 'str',
+        'type': 'str',
         'uid_token': 'str'
     }
 
@@ -50,10 +51,11 @@ class RequestAccess(object):
         'json': 'json',
         'name': 'name',
         'token': 'token',
+        'type': 'type',
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, capability=None, comment=None, description=None, json=False, name=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, capability=None, comment=None, description=None, json=False, name=None, token=None, type=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """RequestAccess - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -65,6 +67,7 @@ class RequestAccess(object):
         self._json = None
         self._name = None
         self._token = None
+        self._type = None
         self._uid_token = None
         self.discriminator = None
 
@@ -78,6 +81,7 @@ class RequestAccess(object):
         self.name = name
         if token is not None:
             self.token = token
+        self.type = type
         if uid_token is not None:
             self.uid_token = uid_token
 
@@ -179,7 +183,7 @@ class RequestAccess(object):
     def name(self):
         """Gets the name of this RequestAccess.  # noqa: E501
 
-        Item type  # noqa: E501
+        Item name  # noqa: E501
 
         :return: The name of this RequestAccess.  # noqa: E501
         :rtype: str
@@ -190,7 +194,7 @@ class RequestAccess(object):
     def name(self, name):
         """Sets the name of this RequestAccess.
 
-        Item type  # noqa: E501
+        Item name  # noqa: E501
 
         :param name: The name of this RequestAccess.  # noqa: E501
         :type: str
@@ -222,6 +226,31 @@ class RequestAccess(object):
         """
 
         self._token = token
+
+    @property
+    def type(self):
+        """Gets the type of this RequestAccess.  # noqa: E501
+
+        Item type  # noqa: E501
+
+        :return: The type of this RequestAccess.  # noqa: E501
+        :rtype: str
+        """
+        return self._type
+
+    @type.setter
+    def type(self, type):
+        """Sets the type of this RequestAccess.
+
+        Item type  # noqa: E501
+
+        :param type: The type of this RequestAccess.  # noqa: E501
+        :type: str
+        """
+        if self.local_vars_configuration.client_side_validation and type is None:  # noqa: E501
+            raise ValueError("Invalid value for `type`, must not be `None`")  # noqa: E501
+
+        self._type = type
 
     @property
     def uid_token(self):

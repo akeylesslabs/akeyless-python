@@ -47,6 +47,7 @@ class CreateAuthMethodOIDC(object):
         'json': 'bool',
         'jwt_ttl': 'int',
         'name': 'str',
+        'product_type': 'list[str]',
         'required_scopes': 'list[str]',
         'required_scopes_prefix': 'str',
         'subclaims_delimiters': 'list[str]',
@@ -69,6 +70,7 @@ class CreateAuthMethodOIDC(object):
         'json': 'json',
         'jwt_ttl': 'jwt-ttl',
         'name': 'name',
+        'product_type': 'product-type',
         'required_scopes': 'required-scopes',
         'required_scopes_prefix': 'required-scopes-prefix',
         'subclaims_delimiters': 'subclaims-delimiters',
@@ -77,7 +79,7 @@ class CreateAuthMethodOIDC(object):
         'unique_identifier': 'unique-identifier'
     }
 
-    def __init__(self, access_expires=0, allowed_redirect_uri=None, audience=None, bound_ips=None, client_id=None, client_secret=None, description=None, force_sub_claims=None, gw_bound_ips=None, issuer=None, json=False, jwt_ttl=0, name=None, required_scopes=None, required_scopes_prefix=None, subclaims_delimiters=None, token=None, uid_token=None, unique_identifier=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, access_expires=0, allowed_redirect_uri=None, audience=None, bound_ips=None, client_id=None, client_secret=None, description=None, force_sub_claims=None, gw_bound_ips=None, issuer=None, json=False, jwt_ttl=0, name=None, product_type=None, required_scopes=None, required_scopes_prefix=None, subclaims_delimiters=None, token=None, uid_token=None, unique_identifier=None, local_vars_configuration=None):  # noqa: E501
         """CreateAuthMethodOIDC - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -96,6 +98,7 @@ class CreateAuthMethodOIDC(object):
         self._json = None
         self._jwt_ttl = None
         self._name = None
+        self._product_type = None
         self._required_scopes = None
         self._required_scopes_prefix = None
         self._subclaims_delimiters = None
@@ -129,6 +132,8 @@ class CreateAuthMethodOIDC(object):
         if jwt_ttl is not None:
             self.jwt_ttl = jwt_ttl
         self.name = name
+        if product_type is not None:
+            self.product_type = product_type
         if required_scopes is not None:
             self.required_scopes = required_scopes
         if required_scopes_prefix is not None:
@@ -441,6 +446,29 @@ class CreateAuthMethodOIDC(object):
             raise ValueError("Invalid value for `name`, must not be `None`")  # noqa: E501
 
         self._name = name
+
+    @property
+    def product_type(self):
+        """Gets the product_type of this CreateAuthMethodOIDC.  # noqa: E501
+
+        Choose the relevant product type for the auth method [sm, sra, pm, dp, ca]  # noqa: E501
+
+        :return: The product_type of this CreateAuthMethodOIDC.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._product_type
+
+    @product_type.setter
+    def product_type(self, product_type):
+        """Sets the product_type of this CreateAuthMethodOIDC.
+
+        Choose the relevant product type for the auth method [sm, sra, pm, dp, ca]  # noqa: E501
+
+        :param product_type: The product_type of this CreateAuthMethodOIDC.  # noqa: E501
+        :type: list[str]
+        """
+
+        self._product_type = product_type
 
     @property
     def required_scopes(self):

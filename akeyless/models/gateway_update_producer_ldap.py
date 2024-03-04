@@ -44,6 +44,7 @@ class GatewayUpdateProducerLdap(object):
         'ldap_url': 'str',
         'name': 'str',
         'new_name': 'str',
+        'password_length': 'str',
         'producer_encryption_key_name': 'str',
         'tags': 'list[str]',
         'target_name': 'str',
@@ -66,6 +67,7 @@ class GatewayUpdateProducerLdap(object):
         'ldap_url': 'ldap-url',
         'name': 'name',
         'new_name': 'new-name',
+        'password_length': 'password-length',
         'producer_encryption_key_name': 'producer-encryption-key-name',
         'tags': 'tags',
         'target_name': 'target-name',
@@ -77,7 +79,7 @@ class GatewayUpdateProducerLdap(object):
         'user_ttl': 'user-ttl'
     }
 
-    def __init__(self, bind_dn=None, bind_dn_password=None, delete_protection=None, external_username='false', group_dn=None, json=False, ldap_ca_cert=None, ldap_url=None, name=None, new_name=None, producer_encryption_key_name=None, tags=None, target_name=None, token=None, token_expiration=None, uid_token=None, user_attribute=None, user_dn=None, user_ttl='60m', local_vars_configuration=None):  # noqa: E501
+    def __init__(self, bind_dn=None, bind_dn_password=None, delete_protection=None, external_username='false', group_dn=None, json=False, ldap_ca_cert=None, ldap_url=None, name=None, new_name=None, password_length=None, producer_encryption_key_name=None, tags=None, target_name=None, token=None, token_expiration=None, uid_token=None, user_attribute=None, user_dn=None, user_ttl='60m', local_vars_configuration=None):  # noqa: E501
         """GatewayUpdateProducerLdap - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -93,6 +95,7 @@ class GatewayUpdateProducerLdap(object):
         self._ldap_url = None
         self._name = None
         self._new_name = None
+        self._password_length = None
         self._producer_encryption_key_name = None
         self._tags = None
         self._target_name = None
@@ -123,6 +126,8 @@ class GatewayUpdateProducerLdap(object):
         self.name = name
         if new_name is not None:
             self.new_name = new_name
+        if password_length is not None:
+            self.password_length = password_length
         if producer_encryption_key_name is not None:
             self.producer_encryption_key_name = producer_encryption_key_name
         if tags is not None:
@@ -330,7 +335,7 @@ class GatewayUpdateProducerLdap(object):
     def name(self):
         """Gets the name of this GatewayUpdateProducerLdap.  # noqa: E501
 
-        Producer name  # noqa: E501
+        Dynamic secret name  # noqa: E501
 
         :return: The name of this GatewayUpdateProducerLdap.  # noqa: E501
         :rtype: str
@@ -341,7 +346,7 @@ class GatewayUpdateProducerLdap(object):
     def name(self, name):
         """Sets the name of this GatewayUpdateProducerLdap.
 
-        Producer name  # noqa: E501
+        Dynamic secret name  # noqa: E501
 
         :param name: The name of this GatewayUpdateProducerLdap.  # noqa: E501
         :type: str
@@ -355,7 +360,7 @@ class GatewayUpdateProducerLdap(object):
     def new_name(self):
         """Gets the new_name of this GatewayUpdateProducerLdap.  # noqa: E501
 
-        Producer name  # noqa: E501
+        Dynamic secret name  # noqa: E501
 
         :return: The new_name of this GatewayUpdateProducerLdap.  # noqa: E501
         :rtype: str
@@ -366,13 +371,36 @@ class GatewayUpdateProducerLdap(object):
     def new_name(self, new_name):
         """Sets the new_name of this GatewayUpdateProducerLdap.
 
-        Producer name  # noqa: E501
+        Dynamic secret name  # noqa: E501
 
         :param new_name: The new_name of this GatewayUpdateProducerLdap.  # noqa: E501
         :type: str
         """
 
         self._new_name = new_name
+
+    @property
+    def password_length(self):
+        """Gets the password_length of this GatewayUpdateProducerLdap.  # noqa: E501
+
+        The length of the password to be generated  # noqa: E501
+
+        :return: The password_length of this GatewayUpdateProducerLdap.  # noqa: E501
+        :rtype: str
+        """
+        return self._password_length
+
+    @password_length.setter
+    def password_length(self, password_length):
+        """Sets the password_length of this GatewayUpdateProducerLdap.
+
+        The length of the password to be generated  # noqa: E501
+
+        :param password_length: The password_length of this GatewayUpdateProducerLdap.  # noqa: E501
+        :type: str
+        """
+
+        self._password_length = password_length
 
     @property
     def producer_encryption_key_name(self):

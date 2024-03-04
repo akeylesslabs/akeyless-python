@@ -38,6 +38,7 @@ class GatewayCreateProducerPostgreSQL(object):
         'delete_protection': 'str',
         'json': 'bool',
         'name': 'str',
+        'password_length': 'str',
         'postgresql_db_name': 'str',
         'postgresql_host': 'str',
         'postgresql_password': 'str',
@@ -63,6 +64,7 @@ class GatewayCreateProducerPostgreSQL(object):
         'delete_protection': 'delete_protection',
         'json': 'json',
         'name': 'name',
+        'password_length': 'password-length',
         'postgresql_db_name': 'postgresql-db-name',
         'postgresql_host': 'postgresql-host',
         'postgresql_password': 'postgresql-password',
@@ -83,7 +85,7 @@ class GatewayCreateProducerPostgreSQL(object):
         'user_ttl': 'user-ttl'
     }
 
-    def __init__(self, creation_statements=None, delete_protection=None, json=False, name=None, postgresql_db_name=None, postgresql_host='127.0.0.1', postgresql_password=None, postgresql_port='5432', postgresql_username=None, producer_encryption_key=None, revocation_statement=None, secure_access_bastion_issuer=None, secure_access_db_schema=None, secure_access_enable=None, secure_access_host=None, secure_access_web=False, ssl=False, tags=None, target_name=None, token=None, uid_token=None, user_ttl='60m', local_vars_configuration=None):  # noqa: E501
+    def __init__(self, creation_statements=None, delete_protection=None, json=False, name=None, password_length=None, postgresql_db_name=None, postgresql_host='127.0.0.1', postgresql_password=None, postgresql_port='5432', postgresql_username=None, producer_encryption_key=None, revocation_statement=None, secure_access_bastion_issuer=None, secure_access_db_schema=None, secure_access_enable=None, secure_access_host=None, secure_access_web=False, ssl=False, tags=None, target_name=None, token=None, uid_token=None, user_ttl='60m', local_vars_configuration=None):  # noqa: E501
         """GatewayCreateProducerPostgreSQL - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -93,6 +95,7 @@ class GatewayCreateProducerPostgreSQL(object):
         self._delete_protection = None
         self._json = None
         self._name = None
+        self._password_length = None
         self._postgresql_db_name = None
         self._postgresql_host = None
         self._postgresql_password = None
@@ -120,6 +123,8 @@ class GatewayCreateProducerPostgreSQL(object):
         if json is not None:
             self.json = json
         self.name = name
+        if password_length is not None:
+            self.password_length = password_length
         if postgresql_db_name is not None:
             self.postgresql_db_name = postgresql_db_name
         if postgresql_host is not None:
@@ -230,7 +235,7 @@ class GatewayCreateProducerPostgreSQL(object):
     def name(self):
         """Gets the name of this GatewayCreateProducerPostgreSQL.  # noqa: E501
 
-        Producer name  # noqa: E501
+        Dynamic secret name  # noqa: E501
 
         :return: The name of this GatewayCreateProducerPostgreSQL.  # noqa: E501
         :rtype: str
@@ -241,7 +246,7 @@ class GatewayCreateProducerPostgreSQL(object):
     def name(self, name):
         """Sets the name of this GatewayCreateProducerPostgreSQL.
 
-        Producer name  # noqa: E501
+        Dynamic secret name  # noqa: E501
 
         :param name: The name of this GatewayCreateProducerPostgreSQL.  # noqa: E501
         :type: str
@@ -250,6 +255,29 @@ class GatewayCreateProducerPostgreSQL(object):
             raise ValueError("Invalid value for `name`, must not be `None`")  # noqa: E501
 
         self._name = name
+
+    @property
+    def password_length(self):
+        """Gets the password_length of this GatewayCreateProducerPostgreSQL.  # noqa: E501
+
+        The length of the password to be generated  # noqa: E501
+
+        :return: The password_length of this GatewayCreateProducerPostgreSQL.  # noqa: E501
+        :rtype: str
+        """
+        return self._password_length
+
+    @password_length.setter
+    def password_length(self, password_length):
+        """Sets the password_length of this GatewayCreateProducerPostgreSQL.
+
+        The length of the password to be generated  # noqa: E501
+
+        :param password_length: The password_length of this GatewayCreateProducerPostgreSQL.  # noqa: E501
+        :type: str
+        """
+
+        self._password_length = password_length
 
     @property
     def postgresql_db_name(self):

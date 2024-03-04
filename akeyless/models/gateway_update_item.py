@@ -45,6 +45,7 @@ class GatewayUpdateItem(object):
         'gcp_key': 'str',
         'gcp_service_account_email': 'str',
         'gcp_service_account_key_id': 'str',
+        'grace_rotation': 'str',
         'json': 'bool',
         'keep_prev_version': 'str',
         'key': 'str',
@@ -52,6 +53,7 @@ class GatewayUpdateItem(object):
         'new_metadata': 'str',
         'new_name': 'str',
         'new_version': 'bool',
+        'password_length': 'str',
         'rm_tag': 'list[str]',
         'rotated_password': 'str',
         'rotated_username': 'str',
@@ -75,6 +77,7 @@ class GatewayUpdateItem(object):
         'gcp_key': 'gcp-key',
         'gcp_service_account_email': 'gcp-service-account-email',
         'gcp_service_account_key_id': 'gcp-service-account-key-id',
+        'grace_rotation': 'grace-rotation',
         'json': 'json',
         'keep_prev_version': 'keep-prev-version',
         'key': 'key',
@@ -82,6 +85,7 @@ class GatewayUpdateItem(object):
         'new_metadata': 'new-metadata',
         'new_name': 'new-name',
         'new_version': 'new-version',
+        'password_length': 'password-length',
         'rm_tag': 'rm-tag',
         'rotated_password': 'rotated-password',
         'rotated_username': 'rotated-username',
@@ -93,7 +97,7 @@ class GatewayUpdateItem(object):
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, add_tag=None, api_id=None, api_key=None, app_id=None, auto_rotate=None, custom_payload=None, delete_protection=None, description='default_metadata', gcp_key=None, gcp_service_account_email=None, gcp_service_account_key_id=None, json=False, keep_prev_version=None, key=None, name=None, new_metadata='default_metadata', new_name=None, new_version=None, rm_tag=None, rotated_password=None, rotated_username=None, rotation_hour=0, rotation_interval=None, rotator_creds_type='use-self-creds', token=None, type=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, add_tag=None, api_id=None, api_key=None, app_id=None, auto_rotate=None, custom_payload=None, delete_protection=None, description='default_metadata', gcp_key=None, gcp_service_account_email=None, gcp_service_account_key_id=None, grace_rotation=None, json=False, keep_prev_version=None, key=None, name=None, new_metadata='default_metadata', new_name=None, new_version=None, password_length=None, rm_tag=None, rotated_password=None, rotated_username=None, rotation_hour=0, rotation_interval=None, rotator_creds_type='use-self-creds', token=None, type=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """GatewayUpdateItem - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -110,6 +114,7 @@ class GatewayUpdateItem(object):
         self._gcp_key = None
         self._gcp_service_account_email = None
         self._gcp_service_account_key_id = None
+        self._grace_rotation = None
         self._json = None
         self._keep_prev_version = None
         self._key = None
@@ -117,6 +122,7 @@ class GatewayUpdateItem(object):
         self._new_metadata = None
         self._new_name = None
         self._new_version = None
+        self._password_length = None
         self._rm_tag = None
         self._rotated_password = None
         self._rotated_username = None
@@ -150,6 +156,8 @@ class GatewayUpdateItem(object):
             self.gcp_service_account_email = gcp_service_account_email
         if gcp_service_account_key_id is not None:
             self.gcp_service_account_key_id = gcp_service_account_key_id
+        if grace_rotation is not None:
+            self.grace_rotation = grace_rotation
         if json is not None:
             self.json = json
         if keep_prev_version is not None:
@@ -163,6 +171,8 @@ class GatewayUpdateItem(object):
             self.new_name = new_name
         if new_version is not None:
             self.new_version = new_version
+        if password_length is not None:
+            self.password_length = password_length
         if rm_tag is not None:
             self.rm_tag = rm_tag
         if rotated_password is not None:
@@ -435,6 +445,29 @@ class GatewayUpdateItem(object):
         self._gcp_service_account_key_id = gcp_service_account_key_id
 
     @property
+    def grace_rotation(self):
+        """Gets the grace_rotation of this GatewayUpdateItem.  # noqa: E501
+
+        Create a new access key without deleting the old key from AWS for backup (relevant only for AWS) [true/false]  # noqa: E501
+
+        :return: The grace_rotation of this GatewayUpdateItem.  # noqa: E501
+        :rtype: str
+        """
+        return self._grace_rotation
+
+    @grace_rotation.setter
+    def grace_rotation(self, grace_rotation):
+        """Sets the grace_rotation of this GatewayUpdateItem.
+
+        Create a new access key without deleting the old key from AWS for backup (relevant only for AWS) [true/false]  # noqa: E501
+
+        :param grace_rotation: The grace_rotation of this GatewayUpdateItem.  # noqa: E501
+        :type: str
+        """
+
+        self._grace_rotation = grace_rotation
+
+    @property
     def json(self):
         """Gets the json of this GatewayUpdateItem.  # noqa: E501
 
@@ -596,6 +629,29 @@ class GatewayUpdateItem(object):
         """
 
         self._new_version = new_version
+
+    @property
+    def password_length(self):
+        """Gets the password_length of this GatewayUpdateItem.  # noqa: E501
+
+        The length of the password to be generated  # noqa: E501
+
+        :return: The password_length of this GatewayUpdateItem.  # noqa: E501
+        :rtype: str
+        """
+        return self._password_length
+
+    @password_length.setter
+    def password_length(self, password_length):
+        """Sets the password_length of this GatewayUpdateItem.
+
+        The length of the password to be generated  # noqa: E501
+
+        :param password_length: The password_length of this GatewayUpdateItem.  # noqa: E501
+        :type: str
+        """
+
+        self._password_length = password_length
 
     @property
     def rm_tag(self):

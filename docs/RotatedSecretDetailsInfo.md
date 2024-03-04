@@ -5,6 +5,7 @@ RotatedSecretDetailsInfo The rotated secret rotator info
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **delete_previous_version_in_days** | **int** |  | [optional] 
+**grace_rotation** | **bool** |  | [optional] 
 **gw_cluster_id** | **int** |  | [optional] 
 **last_rotation_error** | **str** |  | [optional] 
 **number_of_versions_to_save** | **int** |  | [optional] 

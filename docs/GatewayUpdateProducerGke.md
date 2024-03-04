@@ -1,6 +1,6 @@
 # GatewayUpdateProducerGke
 
-gatewayUpdateProducerGke is a command that updates gke producer
+gatewayUpdateProducerGke is a command that updates gke producer [Deprecated: Use dynamic-secret-update-gke command]
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
@@ -11,8 +11,8 @@ Name | Type | Description | Notes
 **gke_cluster_name** | **str** | GKE cluster name | [optional] 
 **gke_service_account_email** | **str** | GKE service account email | [optional] 
 **json** | **bool** | Set output format to JSON | [optional] [default to False]
-**name** | **str** | Producer name | 
-**new_name** | **str** | Producer name | [optional] 
+**name** | **str** | Dynamic secret name | 
+**new_name** | **str** | Dynamic secret name | [optional] 
 **producer_encryption_key_name** | **str** | Dynamic producer encryption key | [optional] 
 **secure_access_allow_port_forwading** | **bool** | Enable Port forwarding while using CLI access | [optional] 
 **secure_access_bastion_issuer** | **str** | Path to the SSH Certificate Issuer for your Akeyless Bastion | [optional] 

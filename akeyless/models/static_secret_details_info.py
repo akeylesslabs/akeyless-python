@@ -34,6 +34,7 @@ class StaticSecretDetailsInfo(object):
                             and the value is json key in definition.
     """
     openapi_types = {
+        'format': 'str',
         'notify_on_change_event': 'bool',
         'username': 'str',
         'website': 'str',
@@ -41,24 +42,28 @@ class StaticSecretDetailsInfo(object):
     }
 
     attribute_map = {
+        'format': 'format',
         'notify_on_change_event': 'notify_on_change_event',
         'username': 'username',
         'website': 'website',
         'websites': 'websites'
     }
 
-    def __init__(self, notify_on_change_event=None, username=None, website=None, websites=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, format=None, notify_on_change_event=None, username=None, website=None, websites=None, local_vars_configuration=None):  # noqa: E501
         """StaticSecretDetailsInfo - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
+        self._format = None
         self._notify_on_change_event = None
         self._username = None
         self._website = None
         self._websites = None
         self.discriminator = None
 
+        if format is not None:
+            self.format = format
         if notify_on_change_event is not None:
             self.notify_on_change_event = notify_on_change_event
         if username is not None:
@@ -67,6 +72,29 @@ class StaticSecretDetailsInfo(object):
             self.website = website
         if websites is not None:
             self.websites = websites
+
+    @property
+    def format(self):
+        """Gets the format of this StaticSecretDetailsInfo.  # noqa: E501
+
+        StaticSecretFormat defines the format of static secret (e.g. Text)  # noqa: E501
+
+        :return: The format of this StaticSecretDetailsInfo.  # noqa: E501
+        :rtype: str
+        """
+        return self._format
+
+    @format.setter
+    def format(self, format):
+        """Sets the format of this StaticSecretDetailsInfo.
+
+        StaticSecretFormat defines the format of static secret (e.g. Text)  # noqa: E501
+
+        :param format: The format of this StaticSecretDetailsInfo.  # noqa: E501
+        :type: str
+        """
+
+        self._format = format
 
     @property
     def notify_on_change_event(self):

@@ -42,6 +42,7 @@ class GatewayCreateProducerCassandra(object):
         'delete_protection': 'str',
         'json': 'bool',
         'name': 'str',
+        'password_length': 'str',
         'producer_encryption_key_name': 'str',
         'ssl': 'bool',
         'ssl_certificate': 'str',
@@ -61,6 +62,7 @@ class GatewayCreateProducerCassandra(object):
         'delete_protection': 'delete_protection',
         'json': 'json',
         'name': 'name',
+        'password_length': 'password-length',
         'producer_encryption_key_name': 'producer-encryption-key-name',
         'ssl': 'ssl',
         'ssl_certificate': 'ssl-certificate',
@@ -71,7 +73,7 @@ class GatewayCreateProducerCassandra(object):
         'user_ttl': 'user-ttl'
     }
 
-    def __init__(self, cassandra_creation_statements=None, cassandra_hosts=None, cassandra_password=None, cassandra_port='9042', cassandra_username=None, delete_protection=None, json=False, name=None, producer_encryption_key_name=None, ssl=False, ssl_certificate=None, tags=None, target_name=None, token=None, uid_token=None, user_ttl='60m', local_vars_configuration=None):  # noqa: E501
+    def __init__(self, cassandra_creation_statements=None, cassandra_hosts=None, cassandra_password=None, cassandra_port='9042', cassandra_username=None, delete_protection=None, json=False, name=None, password_length=None, producer_encryption_key_name=None, ssl=False, ssl_certificate=None, tags=None, target_name=None, token=None, uid_token=None, user_ttl='60m', local_vars_configuration=None):  # noqa: E501
         """GatewayCreateProducerCassandra - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -85,6 +87,7 @@ class GatewayCreateProducerCassandra(object):
         self._delete_protection = None
         self._json = None
         self._name = None
+        self._password_length = None
         self._producer_encryption_key_name = None
         self._ssl = None
         self._ssl_certificate = None
@@ -110,6 +113,8 @@ class GatewayCreateProducerCassandra(object):
         if json is not None:
             self.json = json
         self.name = name
+        if password_length is not None:
+            self.password_length = password_length
         if producer_encryption_key_name is not None:
             self.producer_encryption_key_name = producer_encryption_key_name
         if ssl is not None:
@@ -292,7 +297,7 @@ class GatewayCreateProducerCassandra(object):
     def name(self):
         """Gets the name of this GatewayCreateProducerCassandra.  # noqa: E501
 
-        Producer name  # noqa: E501
+        Dynamic secret name  # noqa: E501
 
         :return: The name of this GatewayCreateProducerCassandra.  # noqa: E501
         :rtype: str
@@ -303,7 +308,7 @@ class GatewayCreateProducerCassandra(object):
     def name(self, name):
         """Sets the name of this GatewayCreateProducerCassandra.
 
-        Producer name  # noqa: E501
+        Dynamic secret name  # noqa: E501
 
         :param name: The name of this GatewayCreateProducerCassandra.  # noqa: E501
         :type: str
@@ -312,6 +317,29 @@ class GatewayCreateProducerCassandra(object):
             raise ValueError("Invalid value for `name`, must not be `None`")  # noqa: E501
 
         self._name = name
+
+    @property
+    def password_length(self):
+        """Gets the password_length of this GatewayCreateProducerCassandra.  # noqa: E501
+
+        The length of the password to be generated  # noqa: E501
+
+        :return: The password_length of this GatewayCreateProducerCassandra.  # noqa: E501
+        :rtype: str
+        """
+        return self._password_length
+
+    @password_length.setter
+    def password_length(self, password_length):
+        """Sets the password_length of this GatewayCreateProducerCassandra.
+
+        The length of the password to be generated  # noqa: E501
+
+        :param password_length: The password_length of this GatewayCreateProducerCassandra.  # noqa: E501
+        :type: str
+        """
+
+        self._password_length = password_length
 
     @property
     def producer_encryption_key_name(self):

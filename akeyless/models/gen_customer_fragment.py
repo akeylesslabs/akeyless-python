@@ -35,38 +35,48 @@ class GenCustomerFragment(object):
     """
     openapi_types = {
         'description': 'str',
+        'hsm_key_label': 'str',
         'json': 'bool',
         'metadata': 'str',
-        'name': 'str'
+        'name': 'str',
+        'type': 'str'
     }
 
     attribute_map = {
         'description': 'description',
+        'hsm_key_label': 'hsm-key-label',
         'json': 'json',
         'metadata': 'metadata',
-        'name': 'name'
+        'name': 'name',
+        'type': 'type'
     }
 
-    def __init__(self, description=None, json=False, metadata=None, name=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, description=None, hsm_key_label=None, json=False, metadata=None, name=None, type='standard', local_vars_configuration=None):  # noqa: E501
         """GenCustomerFragment - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._description = None
+        self._hsm_key_label = None
         self._json = None
         self._metadata = None
         self._name = None
+        self._type = None
         self.discriminator = None
 
         if description is not None:
             self.description = description
+        if hsm_key_label is not None:
+            self.hsm_key_label = hsm_key_label
         if json is not None:
             self.json = json
         if metadata is not None:
             self.metadata = metadata
         if name is not None:
             self.name = name
+        if type is not None:
+            self.type = type
 
     @property
     def description(self):
@@ -90,6 +100,29 @@ class GenCustomerFragment(object):
         """
 
         self._description = description
+
+    @property
+    def hsm_key_label(self):
+        """Gets the hsm_key_label of this GenCustomerFragment.  # noqa: E501
+
+        The label of the hsm key to use for customer fragment operations (relevant for hsm_wrapped/hsm_protected customer fragments)  # noqa: E501
+
+        :return: The hsm_key_label of this GenCustomerFragment.  # noqa: E501
+        :rtype: str
+        """
+        return self._hsm_key_label
+
+    @hsm_key_label.setter
+    def hsm_key_label(self, hsm_key_label):
+        """Sets the hsm_key_label of this GenCustomerFragment.
+
+        The label of the hsm key to use for customer fragment operations (relevant for hsm_wrapped/hsm_protected customer fragments)  # noqa: E501
+
+        :param hsm_key_label: The hsm_key_label of this GenCustomerFragment.  # noqa: E501
+        :type: str
+        """
+
+        self._hsm_key_label = hsm_key_label
 
     @property
     def json(self):
@@ -159,6 +192,29 @@ class GenCustomerFragment(object):
         """
 
         self._name = name
+
+    @property
+    def type(self):
+        """Gets the type of this GenCustomerFragment.  # noqa: E501
+
+        Customer fragment type [standard/hsm_wrapped/hsm_secured]  # noqa: E501
+
+        :return: The type of this GenCustomerFragment.  # noqa: E501
+        :rtype: str
+        """
+        return self._type
+
+    @type.setter
+    def type(self, type):
+        """Sets the type of this GenCustomerFragment.
+
+        Customer fragment type [standard/hsm_wrapped/hsm_secured]  # noqa: E501
+
+        :param type: The type of this GenCustomerFragment.  # noqa: E501
+        :type: str
+        """
+
+        self._type = type
 
     def to_dict(self):
         """Returns the model properties as a dict"""

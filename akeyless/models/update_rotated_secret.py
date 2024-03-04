@@ -34,6 +34,7 @@ class UpdateRotatedSecret(object):
                             and the value is json key in definition.
     """
     openapi_types = {
+        'provider_type': 'str',
         'add_tag': 'list[str]',
         'api_id': 'str',
         'api_key': 'str',
@@ -42,6 +43,8 @@ class UpdateRotatedSecret(object):
         'custom_payload': 'str',
         'description': 'str',
         'gcp_key': 'str',
+        'grace_rotation': 'str',
+        'host_provider': 'str',
         'json': 'bool',
         'keep_prev_version': 'str',
         'key': 'str',
@@ -68,6 +71,7 @@ class UpdateRotatedSecret(object):
         'secure_access_host': 'list[str]',
         'secure_access_rdp_domain': 'str',
         'secure_access_rdp_user': 'str',
+        'secure_access_url': 'str',
         'secure_access_web': 'bool',
         'secure_access_web_browsing': 'bool',
         'secure_access_web_proxy': 'bool',
@@ -75,10 +79,13 @@ class UpdateRotatedSecret(object):
         'ssh_username': 'str',
         'storage_account_key_name': 'str',
         'token': 'str',
-        'uid_token': 'str'
+        'uid_token': 'str',
+        'user_attribute': 'str',
+        'user_dn': 'str'
     }
 
     attribute_map = {
+        'provider_type': 'ProviderType',
         'add_tag': 'add-tag',
         'api_id': 'api-id',
         'api_key': 'api-key',
@@ -87,6 +94,8 @@ class UpdateRotatedSecret(object):
         'custom_payload': 'custom-payload',
         'description': 'description',
         'gcp_key': 'gcp-key',
+        'grace_rotation': 'grace-rotation',
+        'host_provider': 'host-provider',
         'json': 'json',
         'keep_prev_version': 'keep-prev-version',
         'key': 'key',
@@ -113,6 +122,7 @@ class UpdateRotatedSecret(object):
         'secure_access_host': 'secure-access-host',
         'secure_access_rdp_domain': 'secure-access-rdp-domain',
         'secure_access_rdp_user': 'secure-access-rdp-user',
+        'secure_access_url': 'secure-access-url',
         'secure_access_web': 'secure-access-web',
         'secure_access_web_browsing': 'secure-access-web-browsing',
         'secure_access_web_proxy': 'secure-access-web-proxy',
@@ -120,15 +130,18 @@ class UpdateRotatedSecret(object):
         'ssh_username': 'ssh-username',
         'storage_account_key_name': 'storage-account-key-name',
         'token': 'token',
-        'uid_token': 'uid-token'
+        'uid_token': 'uid-token',
+        'user_attribute': 'user-attribute',
+        'user_dn': 'user-dn'
     }
 
-    def __init__(self, add_tag=None, api_id=None, api_key=None, auto_rotate=None, aws_region='us-east-2', custom_payload=None, description='default_metadata', gcp_key=None, json=False, keep_prev_version=None, key=None, name=None, new_metadata='default_metadata', new_name=None, new_version=None, rm_tag=None, rotate_after_disconnect='false', rotated_password=None, rotated_username=None, rotation_hour=None, rotation_interval=None, rotator_creds_type='use-self-creds', rotator_custom_cmd=None, same_password=None, secure_access_allow_external_user=False, secure_access_aws_account_id=None, secure_access_aws_native_cli=None, secure_access_bastion_issuer=None, secure_access_db_name=None, secure_access_db_schema=None, secure_access_enable=None, secure_access_host=None, secure_access_rdp_domain=None, secure_access_rdp_user=None, secure_access_web=False, secure_access_web_browsing=False, secure_access_web_proxy=False, ssh_password=None, ssh_username=None, storage_account_key_name=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, provider_type=None, add_tag=None, api_id=None, api_key=None, auto_rotate=None, aws_region='us-east-2', custom_payload=None, description='default_metadata', gcp_key=None, grace_rotation=None, host_provider='explicit', json=False, keep_prev_version=None, key=None, name=None, new_metadata='default_metadata', new_name=None, new_version=None, rm_tag=None, rotate_after_disconnect='false', rotated_password=None, rotated_username=None, rotation_hour=None, rotation_interval=None, rotator_creds_type='use-self-creds', rotator_custom_cmd=None, same_password=None, secure_access_allow_external_user=False, secure_access_aws_account_id=None, secure_access_aws_native_cli=None, secure_access_bastion_issuer=None, secure_access_db_name=None, secure_access_db_schema=None, secure_access_enable=None, secure_access_host=None, secure_access_rdp_domain=None, secure_access_rdp_user=None, secure_access_url=None, secure_access_web=False, secure_access_web_browsing=False, secure_access_web_proxy=False, ssh_password=None, ssh_username=None, storage_account_key_name=None, token=None, uid_token=None, user_attribute='cn', user_dn=None, local_vars_configuration=None):  # noqa: E501
         """UpdateRotatedSecret - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
+        self._provider_type = None
         self._add_tag = None
         self._api_id = None
         self._api_key = None
@@ -137,6 +150,8 @@ class UpdateRotatedSecret(object):
         self._custom_payload = None
         self._description = None
         self._gcp_key = None
+        self._grace_rotation = None
+        self._host_provider = None
         self._json = None
         self._keep_prev_version = None
         self._key = None
@@ -163,6 +178,7 @@ class UpdateRotatedSecret(object):
         self._secure_access_host = None
         self._secure_access_rdp_domain = None
         self._secure_access_rdp_user = None
+        self._secure_access_url = None
         self._secure_access_web = None
         self._secure_access_web_browsing = None
         self._secure_access_web_proxy = None
@@ -171,8 +187,12 @@ class UpdateRotatedSecret(object):
         self._storage_account_key_name = None
         self._token = None
         self._uid_token = None
+        self._user_attribute = None
+        self._user_dn = None
         self.discriminator = None
 
+        if provider_type is not None:
+            self.provider_type = provider_type
         if add_tag is not None:
             self.add_tag = add_tag
         if api_id is not None:
@@ -189,6 +209,10 @@ class UpdateRotatedSecret(object):
             self.description = description
         if gcp_key is not None:
             self.gcp_key = gcp_key
+        if grace_rotation is not None:
+            self.grace_rotation = grace_rotation
+        if host_provider is not None:
+            self.host_provider = host_provider
         if json is not None:
             self.json = json
         if keep_prev_version is not None:
@@ -240,6 +264,8 @@ class UpdateRotatedSecret(object):
             self.secure_access_rdp_domain = secure_access_rdp_domain
         if secure_access_rdp_user is not None:
             self.secure_access_rdp_user = secure_access_rdp_user
+        if secure_access_url is not None:
+            self.secure_access_url = secure_access_url
         if secure_access_web is not None:
             self.secure_access_web = secure_access_web
         if secure_access_web_browsing is not None:
@@ -256,6 +282,31 @@ class UpdateRotatedSecret(object):
             self.token = token
         if uid_token is not None:
             self.uid_token = uid_token
+        if user_attribute is not None:
+            self.user_attribute = user_attribute
+        if user_dn is not None:
+            self.user_dn = user_dn
+
+    @property
+    def provider_type(self):
+        """Gets the provider_type of this UpdateRotatedSecret.  # noqa: E501
+
+
+        :return: The provider_type of this UpdateRotatedSecret.  # noqa: E501
+        :rtype: str
+        """
+        return self._provider_type
+
+    @provider_type.setter
+    def provider_type(self, provider_type):
+        """Sets the provider_type of this UpdateRotatedSecret.
+
+
+        :param provider_type: The provider_type of this UpdateRotatedSecret.  # noqa: E501
+        :type: str
+        """
+
+        self._provider_type = provider_type
 
     @property
     def add_tag(self):
@@ -353,7 +404,7 @@ class UpdateRotatedSecret(object):
     def aws_region(self):
         """Gets the aws_region of this UpdateRotatedSecret.  # noqa: E501
 
-        Region (used in aws)  # noqa: E501
+        Aws Region (relevant only for aws)  # noqa: E501
 
         :return: The aws_region of this UpdateRotatedSecret.  # noqa: E501
         :rtype: str
@@ -364,7 +415,7 @@ class UpdateRotatedSecret(object):
     def aws_region(self, aws_region):
         """Sets the aws_region of this UpdateRotatedSecret.
 
-        Region (used in aws)  # noqa: E501
+        Aws Region (relevant only for aws)  # noqa: E501
 
         :param aws_region: The aws_region of this UpdateRotatedSecret.  # noqa: E501
         :type: str
@@ -440,6 +491,52 @@ class UpdateRotatedSecret(object):
         """
 
         self._gcp_key = gcp_key
+
+    @property
+    def grace_rotation(self):
+        """Gets the grace_rotation of this UpdateRotatedSecret.  # noqa: E501
+
+        Create a new access key without deleting the old key from AWS for backup (relevant only for AWS) [true/false]  # noqa: E501
+
+        :return: The grace_rotation of this UpdateRotatedSecret.  # noqa: E501
+        :rtype: str
+        """
+        return self._grace_rotation
+
+    @grace_rotation.setter
+    def grace_rotation(self, grace_rotation):
+        """Sets the grace_rotation of this UpdateRotatedSecret.
+
+        Create a new access key without deleting the old key from AWS for backup (relevant only for AWS) [true/false]  # noqa: E501
+
+        :param grace_rotation: The grace_rotation of this UpdateRotatedSecret.  # noqa: E501
+        :type: str
+        """
+
+        self._grace_rotation = grace_rotation
+
+    @property
+    def host_provider(self):
+        """Gets the host_provider of this UpdateRotatedSecret.  # noqa: E501
+
+        Host provider type [explicit/target], Relevant only for Secure Remote Access of ssh cert issuer and ldap rotated secret  # noqa: E501
+
+        :return: The host_provider of this UpdateRotatedSecret.  # noqa: E501
+        :rtype: str
+        """
+        return self._host_provider
+
+    @host_provider.setter
+    def host_provider(self, host_provider):
+        """Sets the host_provider of this UpdateRotatedSecret.
+
+        Host provider type [explicit/target], Relevant only for Secure Remote Access of ssh cert issuer and ldap rotated secret  # noqa: E501
+
+        :param host_provider: The host_provider of this UpdateRotatedSecret.  # noqa: E501
+        :type: str
+        """
+
+        self._host_provider = host_provider
 
     @property
     def json(self):
@@ -1042,6 +1139,29 @@ class UpdateRotatedSecret(object):
         self._secure_access_rdp_user = secure_access_rdp_user
 
     @property
+    def secure_access_url(self):
+        """Gets the secure_access_url of this UpdateRotatedSecret.  # noqa: E501
+
+        Destination URL to inject secrets  # noqa: E501
+
+        :return: The secure_access_url of this UpdateRotatedSecret.  # noqa: E501
+        :rtype: str
+        """
+        return self._secure_access_url
+
+    @secure_access_url.setter
+    def secure_access_url(self, secure_access_url):
+        """Sets the secure_access_url of this UpdateRotatedSecret.
+
+        Destination URL to inject secrets  # noqa: E501
+
+        :param secure_access_url: The secure_access_url of this UpdateRotatedSecret.  # noqa: E501
+        :type: str
+        """
+
+        self._secure_access_url = secure_access_url
+
+    @property
     def secure_access_web(self):
         """Gets the secure_access_web of this UpdateRotatedSecret.  # noqa: E501
 
@@ -1224,6 +1344,52 @@ class UpdateRotatedSecret(object):
         """
 
         self._uid_token = uid_token
+
+    @property
+    def user_attribute(self):
+        """Gets the user_attribute of this UpdateRotatedSecret.  # noqa: E501
+
+        LDAP User Attribute, Default value \"cn\"  # noqa: E501
+
+        :return: The user_attribute of this UpdateRotatedSecret.  # noqa: E501
+        :rtype: str
+        """
+        return self._user_attribute
+
+    @user_attribute.setter
+    def user_attribute(self, user_attribute):
+        """Sets the user_attribute of this UpdateRotatedSecret.
+
+        LDAP User Attribute, Default value \"cn\"  # noqa: E501
+
+        :param user_attribute: The user_attribute of this UpdateRotatedSecret.  # noqa: E501
+        :type: str
+        """
+
+        self._user_attribute = user_attribute
+
+    @property
+    def user_dn(self):
+        """Gets the user_dn of this UpdateRotatedSecret.  # noqa: E501
+
+        LDAP User Base DN  # noqa: E501
+
+        :return: The user_dn of this UpdateRotatedSecret.  # noqa: E501
+        :rtype: str
+        """
+        return self._user_dn
+
+    @user_dn.setter
+    def user_dn(self, user_dn):
+        """Sets the user_dn of this UpdateRotatedSecret.
+
+        LDAP User Base DN  # noqa: E501
+
+        :param user_dn: The user_dn of this UpdateRotatedSecret.  # noqa: E501
+        :type: str
+        """
+
+        self._user_dn = user_dn
 
     def to_dict(self):
         """Returns the model properties as a dict"""

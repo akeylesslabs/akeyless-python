@@ -43,6 +43,7 @@ class GatewayCreateProducerAzure(object):
         'fixed_user_only': 'bool',
         'json': 'bool',
         'name': 'str',
+        'password_length': 'str',
         'producer_encryption_key_name': 'str',
         'secure_access_enable': 'str',
         'secure_access_web': 'bool',
@@ -70,6 +71,7 @@ class GatewayCreateProducerAzure(object):
         'fixed_user_only': 'fixed-user-only',
         'json': 'json',
         'name': 'name',
+        'password_length': 'password-length',
         'producer_encryption_key_name': 'producer-encryption-key-name',
         'secure_access_enable': 'secure-access-enable',
         'secure_access_web': 'secure-access-web',
@@ -87,7 +89,7 @@ class GatewayCreateProducerAzure(object):
         'user_ttl': 'user-ttl'
     }
 
-    def __init__(self, app_obj_id=None, azure_client_id=None, azure_client_secret=None, azure_tenant_id=None, delete_protection=None, fixed_user_claim_keyname='false', fixed_user_only=False, json=False, name=None, producer_encryption_key_name=None, secure_access_enable=None, secure_access_web=True, secure_access_web_browsing=False, secure_access_web_proxy=False, tags=None, target_name=None, token=None, uid_token=None, user_group_obj_id=None, user_portal_access=False, user_principal_name=None, user_programmatic_access=False, user_role_template_id=None, user_ttl='60m', local_vars_configuration=None):  # noqa: E501
+    def __init__(self, app_obj_id=None, azure_client_id=None, azure_client_secret=None, azure_tenant_id=None, delete_protection=None, fixed_user_claim_keyname='false', fixed_user_only=False, json=False, name=None, password_length=None, producer_encryption_key_name=None, secure_access_enable=None, secure_access_web=True, secure_access_web_browsing=False, secure_access_web_proxy=False, tags=None, target_name=None, token=None, uid_token=None, user_group_obj_id=None, user_portal_access=False, user_principal_name=None, user_programmatic_access=False, user_role_template_id=None, user_ttl='60m', local_vars_configuration=None):  # noqa: E501
         """GatewayCreateProducerAzure - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -102,6 +104,7 @@ class GatewayCreateProducerAzure(object):
         self._fixed_user_only = None
         self._json = None
         self._name = None
+        self._password_length = None
         self._producer_encryption_key_name = None
         self._secure_access_enable = None
         self._secure_access_web = None
@@ -136,6 +139,8 @@ class GatewayCreateProducerAzure(object):
         if json is not None:
             self.json = json
         self.name = name
+        if password_length is not None:
+            self.password_length = password_length
         if producer_encryption_key_name is not None:
             self.producer_encryption_key_name = producer_encryption_key_name
         if secure_access_enable is not None:
@@ -355,7 +360,7 @@ class GatewayCreateProducerAzure(object):
     def name(self):
         """Gets the name of this GatewayCreateProducerAzure.  # noqa: E501
 
-        Producer name  # noqa: E501
+        Dynamic secret name  # noqa: E501
 
         :return: The name of this GatewayCreateProducerAzure.  # noqa: E501
         :rtype: str
@@ -366,7 +371,7 @@ class GatewayCreateProducerAzure(object):
     def name(self, name):
         """Sets the name of this GatewayCreateProducerAzure.
 
-        Producer name  # noqa: E501
+        Dynamic secret name  # noqa: E501
 
         :param name: The name of this GatewayCreateProducerAzure.  # noqa: E501
         :type: str
@@ -375,6 +380,29 @@ class GatewayCreateProducerAzure(object):
             raise ValueError("Invalid value for `name`, must not be `None`")  # noqa: E501
 
         self._name = name
+
+    @property
+    def password_length(self):
+        """Gets the password_length of this GatewayCreateProducerAzure.  # noqa: E501
+
+        The length of the password to be generated  # noqa: E501
+
+        :return: The password_length of this GatewayCreateProducerAzure.  # noqa: E501
+        :rtype: str
+        """
+        return self._password_length
+
+    @password_length.setter
+    def password_length(self, password_length):
+        """Sets the password_length of this GatewayCreateProducerAzure.
+
+        The length of the password to be generated  # noqa: E501
+
+        :param password_length: The password_length of this GatewayCreateProducerAzure.  # noqa: E501
+        :type: str
+        """
+
+        self._password_length = password_length
 
     @property
     def producer_encryption_key_name(self):

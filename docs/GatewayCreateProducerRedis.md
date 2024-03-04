@@ -1,6 +1,6 @@
 # GatewayCreateProducerRedis
 
-gatewayCreateProducerRedis is a command that creates Redis producer
+gatewayCreateProducerRedis is a command that creates Redis producer [Deprecated: Use dynamic-secret-create-redis command]
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
@@ -8,8 +8,9 @@ Name | Type | Description | Notes
 **delete_protection** | **str** | Protection from accidental deletion of this item [true/false] | [optional] 
 **host** | **str** | Redis Host | [optional] [default to '127.0.0.1']
 **json** | **bool** | Set output format to JSON | [optional] [default to False]
-**name** | **str** | Producer name | 
+**name** | **str** | Dynamic secret name | 
 **password** | **str** | Redis Password | [optional] 
+**password_length** | **str** | The length of the password to be generated | [optional] 
 **port** | **str** | Redis Port | [optional] [default to '6379']
 **producer_encryption_key_name** | **str** | Dynamic producer encryption key | [optional] 
 **ssl** | **bool** | Enable/Disable SSL [true/false] | [optional] [default to False]

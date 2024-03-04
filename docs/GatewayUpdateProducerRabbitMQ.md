@@ -1,13 +1,14 @@
 # GatewayUpdateProducerRabbitMQ
 
-gatewayUpdateProducerRabbitMQ is a command that updates rabbitmq producer
+gatewayUpdateProducerRabbitMQ is a command that updates rabbitmq producer [Deprecated: Use dynamic-secret-update-rabbitmq command]
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **delete_protection** | **str** | Protection from accidental deletion of this item [true/false] | [optional] 
 **json** | **bool** | Set output format to JSON | [optional] [default to False]
-**name** | **str** | Producer name | 
-**new_name** | **str** | Producer name | [optional] 
+**name** | **str** | Dynamic secret name | 
+**new_name** | **str** | Dynamic secret name | [optional] 
+**password_length** | **str** | The length of the password to be generated | [optional] 
 **producer_encryption_key_name** | **str** | Dynamic producer encryption key | [optional] 
 **rabbitmq_admin_pwd** | **str** | RabbitMQ Admin password | [optional] 
 **rabbitmq_admin_user** | **str** | RabbitMQ Admin User | [optional] 

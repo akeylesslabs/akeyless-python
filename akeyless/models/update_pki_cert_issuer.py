@@ -36,8 +36,10 @@ class UpdatePKICertIssuer(object):
     openapi_types = {
         'add_tag': 'list[str]',
         'allow_any_name': 'bool',
+        'allow_copy_ext_from_csr': 'bool',
         'allow_subdomains': 'bool',
         'allowed_domains': 'str',
+        'allowed_extra_extensions': 'str',
         'allowed_uri_sans': 'str',
         'client_flag': 'bool',
         'code_signing_flag': 'bool',
@@ -73,8 +75,10 @@ class UpdatePKICertIssuer(object):
     attribute_map = {
         'add_tag': 'add-tag',
         'allow_any_name': 'allow-any-name',
+        'allow_copy_ext_from_csr': 'allow-copy-ext-from-csr',
         'allow_subdomains': 'allow-subdomains',
         'allowed_domains': 'allowed-domains',
+        'allowed_extra_extensions': 'allowed-extra-extensions',
         'allowed_uri_sans': 'allowed-uri-sans',
         'client_flag': 'client-flag',
         'code_signing_flag': 'code-signing-flag',
@@ -107,7 +111,7 @@ class UpdatePKICertIssuer(object):
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, add_tag=None, allow_any_name=None, allow_subdomains=None, allowed_domains=None, allowed_uri_sans=None, client_flag=None, code_signing_flag=None, country=None, delete_protection=None, description=None, destination_path=None, expiration_event_in=None, gw_cluster_url=None, is_ca=None, json=False, key_usage='DigitalSignature,KeyAgreement,KeyEncipherment', locality=None, metadata=None, name=None, new_name=None, not_enforce_hostnames=None, not_require_cn=None, organizational_units=None, organizations=None, postal_code=None, protect_certificates=None, province=None, rm_tag=None, server_flag=None, signer_key_name='dummy_signer_key', street_address=None, token=None, ttl=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, add_tag=None, allow_any_name=None, allow_copy_ext_from_csr=None, allow_subdomains=None, allowed_domains=None, allowed_extra_extensions=None, allowed_uri_sans=None, client_flag=None, code_signing_flag=None, country=None, delete_protection=None, description=None, destination_path=None, expiration_event_in=None, gw_cluster_url=None, is_ca=None, json=False, key_usage='DigitalSignature,KeyAgreement,KeyEncipherment', locality=None, metadata=None, name=None, new_name=None, not_enforce_hostnames=None, not_require_cn=None, organizational_units=None, organizations=None, postal_code=None, protect_certificates=None, province=None, rm_tag=None, server_flag=None, signer_key_name='dummy_signer_key', street_address=None, token=None, ttl=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """UpdatePKICertIssuer - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -115,8 +119,10 @@ class UpdatePKICertIssuer(object):
 
         self._add_tag = None
         self._allow_any_name = None
+        self._allow_copy_ext_from_csr = None
         self._allow_subdomains = None
         self._allowed_domains = None
+        self._allowed_extra_extensions = None
         self._allowed_uri_sans = None
         self._client_flag = None
         self._code_signing_flag = None
@@ -153,10 +159,14 @@ class UpdatePKICertIssuer(object):
             self.add_tag = add_tag
         if allow_any_name is not None:
             self.allow_any_name = allow_any_name
+        if allow_copy_ext_from_csr is not None:
+            self.allow_copy_ext_from_csr = allow_copy_ext_from_csr
         if allow_subdomains is not None:
             self.allow_subdomains = allow_subdomains
         if allowed_domains is not None:
             self.allowed_domains = allowed_domains
+        if allowed_extra_extensions is not None:
+            self.allowed_extra_extensions = allowed_extra_extensions
         if allowed_uri_sans is not None:
             self.allowed_uri_sans = allowed_uri_sans
         if client_flag is not None:
@@ -262,6 +272,29 @@ class UpdatePKICertIssuer(object):
         self._allow_any_name = allow_any_name
 
     @property
+    def allow_copy_ext_from_csr(self):
+        """Gets the allow_copy_ext_from_csr of this UpdatePKICertIssuer.  # noqa: E501
+
+        If set, will allow copying the extra extensions from the csr file (if given)  # noqa: E501
+
+        :return: The allow_copy_ext_from_csr of this UpdatePKICertIssuer.  # noqa: E501
+        :rtype: bool
+        """
+        return self._allow_copy_ext_from_csr
+
+    @allow_copy_ext_from_csr.setter
+    def allow_copy_ext_from_csr(self, allow_copy_ext_from_csr):
+        """Sets the allow_copy_ext_from_csr of this UpdatePKICertIssuer.
+
+        If set, will allow copying the extra extensions from the csr file (if given)  # noqa: E501
+
+        :param allow_copy_ext_from_csr: The allow_copy_ext_from_csr of this UpdatePKICertIssuer.  # noqa: E501
+        :type: bool
+        """
+
+        self._allow_copy_ext_from_csr = allow_copy_ext_from_csr
+
+    @property
     def allow_subdomains(self):
         """Gets the allow_subdomains of this UpdatePKICertIssuer.  # noqa: E501
 
@@ -306,6 +339,29 @@ class UpdatePKICertIssuer(object):
         """
 
         self._allowed_domains = allowed_domains
+
+    @property
+    def allowed_extra_extensions(self):
+        """Gets the allowed_extra_extensions of this UpdatePKICertIssuer.  # noqa: E501
+
+        A json string containing the allowed extra extensions for the pki cert issuer  # noqa: E501
+
+        :return: The allowed_extra_extensions of this UpdatePKICertIssuer.  # noqa: E501
+        :rtype: str
+        """
+        return self._allowed_extra_extensions
+
+    @allowed_extra_extensions.setter
+    def allowed_extra_extensions(self, allowed_extra_extensions):
+        """Sets the allowed_extra_extensions of this UpdatePKICertIssuer.
+
+        A json string containing the allowed extra extensions for the pki cert issuer  # noqa: E501
+
+        :param allowed_extra_extensions: The allowed_extra_extensions of this UpdatePKICertIssuer.  # noqa: E501
+        :type: str
+        """
+
+        self._allowed_extra_extensions = allowed_extra_extensions
 
     @property
     def allowed_uri_sans(self):

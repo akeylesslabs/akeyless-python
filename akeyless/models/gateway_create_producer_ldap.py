@@ -43,6 +43,7 @@ class GatewayCreateProducerLdap(object):
         'ldap_ca_cert': 'str',
         'ldap_url': 'str',
         'name': 'str',
+        'password_length': 'str',
         'producer_encryption_key_name': 'str',
         'tags': 'list[str]',
         'target_name': 'str',
@@ -64,6 +65,7 @@ class GatewayCreateProducerLdap(object):
         'ldap_ca_cert': 'ldap-ca-cert',
         'ldap_url': 'ldap-url',
         'name': 'name',
+        'password_length': 'password-length',
         'producer_encryption_key_name': 'producer-encryption-key-name',
         'tags': 'tags',
         'target_name': 'target-name',
@@ -75,7 +77,7 @@ class GatewayCreateProducerLdap(object):
         'user_ttl': 'user-ttl'
     }
 
-    def __init__(self, bind_dn=None, bind_dn_password=None, delete_protection=None, external_username='false', group_dn=None, json=False, ldap_ca_cert=None, ldap_url=None, name=None, producer_encryption_key_name=None, tags=None, target_name=None, token=None, token_expiration=None, uid_token=None, user_attribute=None, user_dn=None, user_ttl='60m', local_vars_configuration=None):  # noqa: E501
+    def __init__(self, bind_dn=None, bind_dn_password=None, delete_protection=None, external_username='false', group_dn=None, json=False, ldap_ca_cert=None, ldap_url=None, name=None, password_length=None, producer_encryption_key_name=None, tags=None, target_name=None, token=None, token_expiration=None, uid_token=None, user_attribute=None, user_dn=None, user_ttl='60m', local_vars_configuration=None):  # noqa: E501
         """GatewayCreateProducerLdap - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -90,6 +92,7 @@ class GatewayCreateProducerLdap(object):
         self._ldap_ca_cert = None
         self._ldap_url = None
         self._name = None
+        self._password_length = None
         self._producer_encryption_key_name = None
         self._tags = None
         self._target_name = None
@@ -118,6 +121,8 @@ class GatewayCreateProducerLdap(object):
         if ldap_url is not None:
             self.ldap_url = ldap_url
         self.name = name
+        if password_length is not None:
+            self.password_length = password_length
         if producer_encryption_key_name is not None:
             self.producer_encryption_key_name = producer_encryption_key_name
         if tags is not None:
@@ -325,7 +330,7 @@ class GatewayCreateProducerLdap(object):
     def name(self):
         """Gets the name of this GatewayCreateProducerLdap.  # noqa: E501
 
-        Producer name  # noqa: E501
+        Dynamic secret name  # noqa: E501
 
         :return: The name of this GatewayCreateProducerLdap.  # noqa: E501
         :rtype: str
@@ -336,7 +341,7 @@ class GatewayCreateProducerLdap(object):
     def name(self, name):
         """Sets the name of this GatewayCreateProducerLdap.
 
-        Producer name  # noqa: E501
+        Dynamic secret name  # noqa: E501
 
         :param name: The name of this GatewayCreateProducerLdap.  # noqa: E501
         :type: str
@@ -345,6 +350,29 @@ class GatewayCreateProducerLdap(object):
             raise ValueError("Invalid value for `name`, must not be `None`")  # noqa: E501
 
         self._name = name
+
+    @property
+    def password_length(self):
+        """Gets the password_length of this GatewayCreateProducerLdap.  # noqa: E501
+
+        The length of the password to be generated  # noqa: E501
+
+        :return: The password_length of this GatewayCreateProducerLdap.  # noqa: E501
+        :rtype: str
+        """
+        return self._password_length
+
+    @password_length.setter
+    def password_length(self, password_length):
+        """Sets the password_length of this GatewayCreateProducerLdap.
+
+        The length of the password to be generated  # noqa: E501
+
+        :param password_length: The password_length of this GatewayCreateProducerLdap.  # noqa: E501
+        :type: str
+        """
+
+        self._password_length = password_length
 
     @property
     def producer_encryption_key_name(self):

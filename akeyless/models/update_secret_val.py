@@ -36,6 +36,7 @@ class UpdateSecretVal(object):
     openapi_types = {
         'accessibility': 'str',
         'custom_field': 'dict(str, str)',
+        'format': 'str',
         'inject_url': 'list[str]',
         'json': 'bool',
         'keep_prev_version': 'str',
@@ -54,6 +55,7 @@ class UpdateSecretVal(object):
     attribute_map = {
         'accessibility': 'accessibility',
         'custom_field': 'custom-field',
+        'format': 'format',
         'inject_url': 'inject-url',
         'json': 'json',
         'keep_prev_version': 'keep-prev-version',
@@ -69,7 +71,7 @@ class UpdateSecretVal(object):
         'value': 'value'
     }
 
-    def __init__(self, accessibility='regular', custom_field=None, inject_url=None, json=False, keep_prev_version=None, key=None, last_version=None, multiline=None, name=None, new_version=None, password=None, token=None, uid_token=None, username=None, value=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, accessibility='regular', custom_field=None, format='text', inject_url=None, json=False, keep_prev_version=None, key=None, last_version=None, multiline=None, name=None, new_version=None, password=None, token=None, uid_token=None, username=None, value=None, local_vars_configuration=None):  # noqa: E501
         """UpdateSecretVal - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -77,6 +79,7 @@ class UpdateSecretVal(object):
 
         self._accessibility = None
         self._custom_field = None
+        self._format = None
         self._inject_url = None
         self._json = None
         self._keep_prev_version = None
@@ -96,6 +99,8 @@ class UpdateSecretVal(object):
             self.accessibility = accessibility
         if custom_field is not None:
             self.custom_field = custom_field
+        if format is not None:
+            self.format = format
         if inject_url is not None:
             self.inject_url = inject_url
         if json is not None:
@@ -166,6 +171,29 @@ class UpdateSecretVal(object):
         """
 
         self._custom_field = custom_field
+
+    @property
+    def format(self):
+        """Gets the format of this UpdateSecretVal.  # noqa: E501
+
+        Secret format [text/json] (relevant only for type 'generic')  # noqa: E501
+
+        :return: The format of this UpdateSecretVal.  # noqa: E501
+        :rtype: str
+        """
+        return self._format
+
+    @format.setter
+    def format(self, format):
+        """Sets the format of this UpdateSecretVal.
+
+        Secret format [text/json] (relevant only for type 'generic')  # noqa: E501
+
+        :param format: The format of this UpdateSecretVal.  # noqa: E501
+        :type: str
+        """
+
+        self._format = format
 
     @property
     def inject_url(self):
@@ -449,7 +477,7 @@ class UpdateSecretVal(object):
     def value(self):
         """Gets the value of this UpdateSecretVal.  # noqa: E501
 
-        The secret value (only relevant for type 'generic')  # noqa: E501
+        The secret value (relevant only for type 'generic')  # noqa: E501
 
         :return: The value of this UpdateSecretVal.  # noqa: E501
         :rtype: str
@@ -460,7 +488,7 @@ class UpdateSecretVal(object):
     def value(self, value):
         """Sets the value of this UpdateSecretVal.
 
-        The secret value (only relevant for type 'generic')  # noqa: E501
+        The secret value (relevant only for type 'generic')  # noqa: E501
 
         :param value: The value of this UpdateSecretVal.  # noqa: E501
         :type: str

@@ -38,6 +38,8 @@ class CreateAuthMethodOAuth2(object):
         'audience': 'str',
         'bound_client_ids': 'list[str]',
         'bound_ips': 'list[str]',
+        'cert': 'str',
+        'cert_file_data': 'str',
         'description': 'str',
         'force_sub_claims': 'bool',
         'gateway_url': 'str',
@@ -48,6 +50,7 @@ class CreateAuthMethodOAuth2(object):
         'jwks_uri': 'str',
         'jwt_ttl': 'int',
         'name': 'str',
+        'product_type': 'list[str]',
         'subclaims_delimiters': 'list[str]',
         'token': 'str',
         'uid_token': 'str',
@@ -59,6 +62,8 @@ class CreateAuthMethodOAuth2(object):
         'audience': 'audience',
         'bound_client_ids': 'bound-client-ids',
         'bound_ips': 'bound-ips',
+        'cert': 'cert',
+        'cert_file_data': 'cert-file-data',
         'description': 'description',
         'force_sub_claims': 'force-sub-claims',
         'gateway_url': 'gateway-url',
@@ -69,13 +74,14 @@ class CreateAuthMethodOAuth2(object):
         'jwks_uri': 'jwks-uri',
         'jwt_ttl': 'jwt-ttl',
         'name': 'name',
+        'product_type': 'product-type',
         'subclaims_delimiters': 'subclaims-delimiters',
         'token': 'token',
         'uid_token': 'uid-token',
         'unique_identifier': 'unique-identifier'
     }
 
-    def __init__(self, access_expires=0, audience=None, bound_client_ids=None, bound_ips=None, description=None, force_sub_claims=None, gateway_url=None, gw_bound_ips=None, issuer=None, json=False, jwks_json_data=None, jwks_uri='default_jwks_url', jwt_ttl=0, name=None, subclaims_delimiters=None, token=None, uid_token=None, unique_identifier=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, access_expires=0, audience=None, bound_client_ids=None, bound_ips=None, cert=None, cert_file_data=None, description=None, force_sub_claims=None, gateway_url=None, gw_bound_ips=None, issuer=None, json=False, jwks_json_data=None, jwks_uri='default_jwks_url', jwt_ttl=0, name=None, product_type=None, subclaims_delimiters=None, token=None, uid_token=None, unique_identifier=None, local_vars_configuration=None):  # noqa: E501
         """CreateAuthMethodOAuth2 - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -85,6 +91,8 @@ class CreateAuthMethodOAuth2(object):
         self._audience = None
         self._bound_client_ids = None
         self._bound_ips = None
+        self._cert = None
+        self._cert_file_data = None
         self._description = None
         self._force_sub_claims = None
         self._gateway_url = None
@@ -95,6 +103,7 @@ class CreateAuthMethodOAuth2(object):
         self._jwks_uri = None
         self._jwt_ttl = None
         self._name = None
+        self._product_type = None
         self._subclaims_delimiters = None
         self._token = None
         self._uid_token = None
@@ -109,6 +118,10 @@ class CreateAuthMethodOAuth2(object):
             self.bound_client_ids = bound_client_ids
         if bound_ips is not None:
             self.bound_ips = bound_ips
+        if cert is not None:
+            self.cert = cert
+        if cert_file_data is not None:
+            self.cert_file_data = cert_file_data
         if description is not None:
             self.description = description
         if force_sub_claims is not None:
@@ -127,6 +140,8 @@ class CreateAuthMethodOAuth2(object):
         if jwt_ttl is not None:
             self.jwt_ttl = jwt_ttl
         self.name = name
+        if product_type is not None:
+            self.product_type = product_type
         if subclaims_delimiters is not None:
             self.subclaims_delimiters = subclaims_delimiters
         if token is not None:
@@ -226,6 +241,52 @@ class CreateAuthMethodOAuth2(object):
         """
 
         self._bound_ips = bound_ips
+
+    @property
+    def cert(self):
+        """Gets the cert of this CreateAuthMethodOAuth2.  # noqa: E501
+
+        CertificateFile Path to a file that contain the certificate in a PEM format.  # noqa: E501
+
+        :return: The cert of this CreateAuthMethodOAuth2.  # noqa: E501
+        :rtype: str
+        """
+        return self._cert
+
+    @cert.setter
+    def cert(self, cert):
+        """Sets the cert of this CreateAuthMethodOAuth2.
+
+        CertificateFile Path to a file that contain the certificate in a PEM format.  # noqa: E501
+
+        :param cert: The cert of this CreateAuthMethodOAuth2.  # noqa: E501
+        :type: str
+        """
+
+        self._cert = cert
+
+    @property
+    def cert_file_data(self):
+        """Gets the cert_file_data of this CreateAuthMethodOAuth2.  # noqa: E501
+
+        CertificateFileData PEM Certificate in a Base64 format.  # noqa: E501
+
+        :return: The cert_file_data of this CreateAuthMethodOAuth2.  # noqa: E501
+        :rtype: str
+        """
+        return self._cert_file_data
+
+    @cert_file_data.setter
+    def cert_file_data(self, cert_file_data):
+        """Sets the cert_file_data of this CreateAuthMethodOAuth2.
+
+        CertificateFileData PEM Certificate in a Base64 format.  # noqa: E501
+
+        :param cert_file_data: The cert_file_data of this CreateAuthMethodOAuth2.  # noqa: E501
+        :type: str
+        """
+
+        self._cert_file_data = cert_file_data
 
     @property
     def description(self):
@@ -460,6 +521,29 @@ class CreateAuthMethodOAuth2(object):
             raise ValueError("Invalid value for `name`, must not be `None`")  # noqa: E501
 
         self._name = name
+
+    @property
+    def product_type(self):
+        """Gets the product_type of this CreateAuthMethodOAuth2.  # noqa: E501
+
+        Choose the relevant product type for the auth method [sm, sra, pm, dp, ca]  # noqa: E501
+
+        :return: The product_type of this CreateAuthMethodOAuth2.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._product_type
+
+    @product_type.setter
+    def product_type(self, product_type):
+        """Sets the product_type of this CreateAuthMethodOAuth2.
+
+        Choose the relevant product type for the auth method [sm, sra, pm, dp, ca]  # noqa: E501
+
+        :param product_type: The product_type of this CreateAuthMethodOAuth2.  # noqa: E501
+        :type: list[str]
+        """
+
+        self._product_type = product_type
 
     @property
     def subclaims_delimiters(self):

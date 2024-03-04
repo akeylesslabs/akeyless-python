@@ -41,7 +41,8 @@ class DynamicSecretProducerInfo(object):
         'producer_last_keep_alive': 'str',
         'producer_metadata': 'str',
         'producer_status': 'str',
-        'producer_type': 'str'
+        'producer_type': 'str',
+        'user_ttl': 'str'
     }
 
     attribute_map = {
@@ -52,10 +53,11 @@ class DynamicSecretProducerInfo(object):
         'producer_last_keep_alive': 'producer_last_keep_alive',
         'producer_metadata': 'producer_metadata',
         'producer_status': 'producer_status',
-        'producer_type': 'producer_type'
+        'producer_type': 'producer_type',
+        'user_ttl': 'user_ttl'
     }
 
-    def __init__(self, failure_message=None, gw_cluster_id=None, k8s_allowed_namespaces=None, k8s_dynamic_mode=None, producer_last_keep_alive=None, producer_metadata=None, producer_status=None, producer_type=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, failure_message=None, gw_cluster_id=None, k8s_allowed_namespaces=None, k8s_dynamic_mode=None, producer_last_keep_alive=None, producer_metadata=None, producer_status=None, producer_type=None, user_ttl=None, local_vars_configuration=None):  # noqa: E501
         """DynamicSecretProducerInfo - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -69,6 +71,7 @@ class DynamicSecretProducerInfo(object):
         self._producer_metadata = None
         self._producer_status = None
         self._producer_type = None
+        self._user_ttl = None
         self.discriminator = None
 
         if failure_message is not None:
@@ -87,6 +90,8 @@ class DynamicSecretProducerInfo(object):
             self.producer_status = producer_status
         if producer_type is not None:
             self.producer_type = producer_type
+        if user_ttl is not None:
+            self.user_ttl = user_ttl
 
     @property
     def failure_message(self):
@@ -261,6 +266,27 @@ class DynamicSecretProducerInfo(object):
         """
 
         self._producer_type = producer_type
+
+    @property
+    def user_ttl(self):
+        """Gets the user_ttl of this DynamicSecretProducerInfo.  # noqa: E501
+
+
+        :return: The user_ttl of this DynamicSecretProducerInfo.  # noqa: E501
+        :rtype: str
+        """
+        return self._user_ttl
+
+    @user_ttl.setter
+    def user_ttl(self, user_ttl):
+        """Sets the user_ttl of this DynamicSecretProducerInfo.
+
+
+        :param user_ttl: The user_ttl of this DynamicSecretProducerInfo.  # noqa: E501
+        :type: str
+        """
+
+        self._user_ttl = user_ttl
 
     def to_dict(self):
         """Returns the model properties as a dict"""

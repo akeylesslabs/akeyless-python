@@ -42,6 +42,8 @@ class UpdateAccountSettings(object):
         'default_share_link_ttl_minutes': 'str',
         'default_versioning': 'str',
         'dp_enable_classic_key_protection': 'str',
+        'dynamic_secret_max_ttl': 'int',
+        'dynamic_secret_max_ttl_enable': 'str',
         'invalid_characters': 'str',
         'item_type': 'str',
         'items_deletion_protection': 'str',
@@ -50,6 +52,8 @@ class UpdateAccountSettings(object):
         'jwt_ttl_max': 'int',
         'jwt_ttl_min': 'int',
         'lock_default_key': 'str',
+        'max_rotation_interval': 'int',
+        'max_rotation_interval_enable': 'str',
         'max_versions': 'str',
         'password_length': 'int',
         'phone': 'str',
@@ -74,6 +78,8 @@ class UpdateAccountSettings(object):
         'default_share_link_ttl_minutes': 'default-share-link-ttl-minutes',
         'default_versioning': 'default-versioning',
         'dp_enable_classic_key_protection': 'dp-enable-classic-key-protection',
+        'dynamic_secret_max_ttl': 'dynamic-secret-max-ttl',
+        'dynamic_secret_max_ttl_enable': 'dynamic-secret-max-ttl-enable',
         'invalid_characters': 'invalid-characters',
         'item_type': 'item-type',
         'items_deletion_protection': 'items-deletion-protection',
@@ -82,6 +88,8 @@ class UpdateAccountSettings(object):
         'jwt_ttl_max': 'jwt-ttl-max',
         'jwt_ttl_min': 'jwt-ttl-min',
         'lock_default_key': 'lock-default-key',
+        'max_rotation_interval': 'max-rotation-interval',
+        'max_rotation_interval_enable': 'max-rotation-interval-enable',
         'max_versions': 'max-versions',
         'password_length': 'password-length',
         'phone': 'phone',
@@ -97,7 +105,7 @@ class UpdateAccountSettings(object):
         'use_capital_letters': 'use_capital-letters'
     }
 
-    def __init__(self, address=None, city=None, company_name=None, country=None, default_key_name=None, default_share_link_ttl_minutes=None, default_versioning=None, dp_enable_classic_key_protection=None, invalid_characters='notReceivedInvalidCharacter', item_type=None, items_deletion_protection=None, json=False, jwt_ttl_default=None, jwt_ttl_max=None, jwt_ttl_min=None, lock_default_key=None, max_versions=None, password_length=None, phone=None, postal_code=None, token=None, uid_token=None, usage_event_enable=None, usage_event_interval=None, usage_event_object_type=None, use_lower_letters=None, use_numbers=None, use_special_characters=None, use_capital_letters=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, address=None, city=None, company_name=None, country=None, default_key_name=None, default_share_link_ttl_minutes=None, default_versioning=None, dp_enable_classic_key_protection=None, dynamic_secret_max_ttl=None, dynamic_secret_max_ttl_enable=None, invalid_characters='notReceivedInvalidCharacter', item_type=None, items_deletion_protection=None, json=False, jwt_ttl_default=None, jwt_ttl_max=None, jwt_ttl_min=None, lock_default_key=None, max_rotation_interval=None, max_rotation_interval_enable=None, max_versions=None, password_length=None, phone=None, postal_code=None, token=None, uid_token=None, usage_event_enable=None, usage_event_interval=None, usage_event_object_type=None, use_lower_letters=None, use_numbers=None, use_special_characters=None, use_capital_letters=None, local_vars_configuration=None):  # noqa: E501
         """UpdateAccountSettings - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -111,6 +119,8 @@ class UpdateAccountSettings(object):
         self._default_share_link_ttl_minutes = None
         self._default_versioning = None
         self._dp_enable_classic_key_protection = None
+        self._dynamic_secret_max_ttl = None
+        self._dynamic_secret_max_ttl_enable = None
         self._invalid_characters = None
         self._item_type = None
         self._items_deletion_protection = None
@@ -119,6 +129,8 @@ class UpdateAccountSettings(object):
         self._jwt_ttl_max = None
         self._jwt_ttl_min = None
         self._lock_default_key = None
+        self._max_rotation_interval = None
+        self._max_rotation_interval_enable = None
         self._max_versions = None
         self._password_length = None
         self._phone = None
@@ -150,6 +162,10 @@ class UpdateAccountSettings(object):
             self.default_versioning = default_versioning
         if dp_enable_classic_key_protection is not None:
             self.dp_enable_classic_key_protection = dp_enable_classic_key_protection
+        if dynamic_secret_max_ttl is not None:
+            self.dynamic_secret_max_ttl = dynamic_secret_max_ttl
+        if dynamic_secret_max_ttl_enable is not None:
+            self.dynamic_secret_max_ttl_enable = dynamic_secret_max_ttl_enable
         if invalid_characters is not None:
             self.invalid_characters = invalid_characters
         if item_type is not None:
@@ -166,6 +182,10 @@ class UpdateAccountSettings(object):
             self.jwt_ttl_min = jwt_ttl_min
         if lock_default_key is not None:
             self.lock_default_key = lock_default_key
+        if max_rotation_interval is not None:
+            self.max_rotation_interval = max_rotation_interval
+        if max_rotation_interval_enable is not None:
+            self.max_rotation_interval_enable = max_rotation_interval_enable
         if max_versions is not None:
             self.max_versions = max_versions
         if password_length is not None:
@@ -378,6 +398,52 @@ class UpdateAccountSettings(object):
         self._dp_enable_classic_key_protection = dp_enable_classic_key_protection
 
     @property
+    def dynamic_secret_max_ttl(self):
+        """Gets the dynamic_secret_max_ttl of this UpdateAccountSettings.  # noqa: E501
+
+        Set the maximum ttl for dynamic secrets  # noqa: E501
+
+        :return: The dynamic_secret_max_ttl of this UpdateAccountSettings.  # noqa: E501
+        :rtype: int
+        """
+        return self._dynamic_secret_max_ttl
+
+    @dynamic_secret_max_ttl.setter
+    def dynamic_secret_max_ttl(self, dynamic_secret_max_ttl):
+        """Sets the dynamic_secret_max_ttl of this UpdateAccountSettings.
+
+        Set the maximum ttl for dynamic secrets  # noqa: E501
+
+        :param dynamic_secret_max_ttl: The dynamic_secret_max_ttl of this UpdateAccountSettings.  # noqa: E501
+        :type: int
+        """
+
+        self._dynamic_secret_max_ttl = dynamic_secret_max_ttl
+
+    @property
+    def dynamic_secret_max_ttl_enable(self):
+        """Gets the dynamic_secret_max_ttl_enable of this UpdateAccountSettings.  # noqa: E501
+
+        Set a maximum ttl for dynamic secrets [true/false]  # noqa: E501
+
+        :return: The dynamic_secret_max_ttl_enable of this UpdateAccountSettings.  # noqa: E501
+        :rtype: str
+        """
+        return self._dynamic_secret_max_ttl_enable
+
+    @dynamic_secret_max_ttl_enable.setter
+    def dynamic_secret_max_ttl_enable(self, dynamic_secret_max_ttl_enable):
+        """Sets the dynamic_secret_max_ttl_enable of this UpdateAccountSettings.
+
+        Set a maximum ttl for dynamic secrets [true/false]  # noqa: E501
+
+        :param dynamic_secret_max_ttl_enable: The dynamic_secret_max_ttl_enable of this UpdateAccountSettings.  # noqa: E501
+        :type: str
+        """
+
+        self._dynamic_secret_max_ttl_enable = dynamic_secret_max_ttl_enable
+
+    @property
     def invalid_characters(self):
         """Gets the invalid_characters of this UpdateAccountSettings.  # noqa: E501
 
@@ -560,6 +626,52 @@ class UpdateAccountSettings(object):
         """
 
         self._lock_default_key = lock_default_key
+
+    @property
+    def max_rotation_interval(self):
+        """Gets the max_rotation_interval of this UpdateAccountSettings.  # noqa: E501
+
+        Set the maximum rotation interval for rotated secrets auto rotation settings  # noqa: E501
+
+        :return: The max_rotation_interval of this UpdateAccountSettings.  # noqa: E501
+        :rtype: int
+        """
+        return self._max_rotation_interval
+
+    @max_rotation_interval.setter
+    def max_rotation_interval(self, max_rotation_interval):
+        """Sets the max_rotation_interval of this UpdateAccountSettings.
+
+        Set the maximum rotation interval for rotated secrets auto rotation settings  # noqa: E501
+
+        :param max_rotation_interval: The max_rotation_interval of this UpdateAccountSettings.  # noqa: E501
+        :type: int
+        """
+
+        self._max_rotation_interval = max_rotation_interval
+
+    @property
+    def max_rotation_interval_enable(self):
+        """Gets the max_rotation_interval_enable of this UpdateAccountSettings.  # noqa: E501
+
+        Set a maximum rotation interval for rotated secrets auto rotation settings [true/false]  # noqa: E501
+
+        :return: The max_rotation_interval_enable of this UpdateAccountSettings.  # noqa: E501
+        :rtype: str
+        """
+        return self._max_rotation_interval_enable
+
+    @max_rotation_interval_enable.setter
+    def max_rotation_interval_enable(self, max_rotation_interval_enable):
+        """Sets the max_rotation_interval_enable of this UpdateAccountSettings.
+
+        Set a maximum rotation interval for rotated secrets auto rotation settings [true/false]  # noqa: E501
+
+        :param max_rotation_interval_enable: The max_rotation_interval_enable of this UpdateAccountSettings.  # noqa: E501
+        :type: str
+        """
+
+        self._max_rotation_interval_enable = max_rotation_interval_enable
 
     @property
     def max_versions(self):

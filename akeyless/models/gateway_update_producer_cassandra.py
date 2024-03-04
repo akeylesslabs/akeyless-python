@@ -43,6 +43,7 @@ class GatewayUpdateProducerCassandra(object):
         'json': 'bool',
         'name': 'str',
         'new_name': 'str',
+        'password_length': 'str',
         'producer_encryption_key_name': 'str',
         'ssl': 'bool',
         'ssl_certificate': 'str',
@@ -63,6 +64,7 @@ class GatewayUpdateProducerCassandra(object):
         'json': 'json',
         'name': 'name',
         'new_name': 'new-name',
+        'password_length': 'password-length',
         'producer_encryption_key_name': 'producer-encryption-key-name',
         'ssl': 'ssl',
         'ssl_certificate': 'ssl-certificate',
@@ -73,7 +75,7 @@ class GatewayUpdateProducerCassandra(object):
         'user_ttl': 'user-ttl'
     }
 
-    def __init__(self, cassandra_creation_statements=None, cassandra_hosts=None, cassandra_password=None, cassandra_port='9042', cassandra_username=None, delete_protection=None, json=False, name=None, new_name=None, producer_encryption_key_name=None, ssl=False, ssl_certificate=None, tags=None, target_name=None, token=None, uid_token=None, user_ttl='60m', local_vars_configuration=None):  # noqa: E501
+    def __init__(self, cassandra_creation_statements=None, cassandra_hosts=None, cassandra_password=None, cassandra_port='9042', cassandra_username=None, delete_protection=None, json=False, name=None, new_name=None, password_length=None, producer_encryption_key_name=None, ssl=False, ssl_certificate=None, tags=None, target_name=None, token=None, uid_token=None, user_ttl='60m', local_vars_configuration=None):  # noqa: E501
         """GatewayUpdateProducerCassandra - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -88,6 +90,7 @@ class GatewayUpdateProducerCassandra(object):
         self._json = None
         self._name = None
         self._new_name = None
+        self._password_length = None
         self._producer_encryption_key_name = None
         self._ssl = None
         self._ssl_certificate = None
@@ -115,6 +118,8 @@ class GatewayUpdateProducerCassandra(object):
         self.name = name
         if new_name is not None:
             self.new_name = new_name
+        if password_length is not None:
+            self.password_length = password_length
         if producer_encryption_key_name is not None:
             self.producer_encryption_key_name = producer_encryption_key_name
         if ssl is not None:
@@ -297,7 +302,7 @@ class GatewayUpdateProducerCassandra(object):
     def name(self):
         """Gets the name of this GatewayUpdateProducerCassandra.  # noqa: E501
 
-        Producer name  # noqa: E501
+        Dynamic secret name  # noqa: E501
 
         :return: The name of this GatewayUpdateProducerCassandra.  # noqa: E501
         :rtype: str
@@ -308,7 +313,7 @@ class GatewayUpdateProducerCassandra(object):
     def name(self, name):
         """Sets the name of this GatewayUpdateProducerCassandra.
 
-        Producer name  # noqa: E501
+        Dynamic secret name  # noqa: E501
 
         :param name: The name of this GatewayUpdateProducerCassandra.  # noqa: E501
         :type: str
@@ -322,7 +327,7 @@ class GatewayUpdateProducerCassandra(object):
     def new_name(self):
         """Gets the new_name of this GatewayUpdateProducerCassandra.  # noqa: E501
 
-        Producer name  # noqa: E501
+        Dynamic secret name  # noqa: E501
 
         :return: The new_name of this GatewayUpdateProducerCassandra.  # noqa: E501
         :rtype: str
@@ -333,13 +338,36 @@ class GatewayUpdateProducerCassandra(object):
     def new_name(self, new_name):
         """Sets the new_name of this GatewayUpdateProducerCassandra.
 
-        Producer name  # noqa: E501
+        Dynamic secret name  # noqa: E501
 
         :param new_name: The new_name of this GatewayUpdateProducerCassandra.  # noqa: E501
         :type: str
         """
 
         self._new_name = new_name
+
+    @property
+    def password_length(self):
+        """Gets the password_length of this GatewayUpdateProducerCassandra.  # noqa: E501
+
+        The length of the password to be generated  # noqa: E501
+
+        :return: The password_length of this GatewayUpdateProducerCassandra.  # noqa: E501
+        :rtype: str
+        """
+        return self._password_length
+
+    @password_length.setter
+    def password_length(self, password_length):
+        """Sets the password_length of this GatewayUpdateProducerCassandra.
+
+        The length of the password to be generated  # noqa: E501
+
+        :param password_length: The password_length of this GatewayUpdateProducerCassandra.  # noqa: E501
+        :type: str
+        """
+
+        self._password_length = password_length
 
     @property
     def producer_encryption_key_name(self):

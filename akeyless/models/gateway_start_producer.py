@@ -94,7 +94,7 @@ class GatewayStartProducer(object):
     def name(self):
         """Gets the name of this GatewayStartProducer.  # noqa: E501
 
-        Producer name  # noqa: E501
+        Dynamic secret name  # noqa: E501
 
         :return: The name of this GatewayStartProducer.  # noqa: E501
         :rtype: str
@@ -105,7 +105,7 @@ class GatewayStartProducer(object):
     def name(self, name):
         """Sets the name of this GatewayStartProducer.
 
-        Producer name  # noqa: E501
+        Dynamic secret name  # noqa: E501
 
         :param name: The name of this GatewayStartProducer.  # noqa: E501
         :type: str

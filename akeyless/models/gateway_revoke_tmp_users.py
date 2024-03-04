@@ -90,7 +90,7 @@ class GatewayRevokeTmpUsers(object):
     def host(self):
         """Gets the host of this GatewayRevokeTmpUsers.  # noqa: E501
 
-        Deprecated: has no effect  # noqa: E501
+        Host  # noqa: E501
 
         :return: The host of this GatewayRevokeTmpUsers.  # noqa: E501
         :rtype: str
@@ -101,7 +101,7 @@ class GatewayRevokeTmpUsers(object):
     def host(self, host):
         """Sets the host of this GatewayRevokeTmpUsers.
 
-        Deprecated: has no effect  # noqa: E501
+        Host  # noqa: E501
 
         :param host: The host of this GatewayRevokeTmpUsers.  # noqa: E501
         :type: str
@@ -136,7 +136,7 @@ class GatewayRevokeTmpUsers(object):
     def name(self):
         """Gets the name of this GatewayRevokeTmpUsers.  # noqa: E501
 
-        Producer Name  # noqa: E501
+        Dynamic secret name  # noqa: E501
 
         :return: The name of this GatewayRevokeTmpUsers.  # noqa: E501
         :rtype: str
@@ -147,7 +147,7 @@ class GatewayRevokeTmpUsers(object):
     def name(self, name):
         """Sets the name of this GatewayRevokeTmpUsers.
 
-        Producer Name  # noqa: E501
+        Dynamic secret name  # noqa: E501
 
         :param name: The name of this GatewayRevokeTmpUsers.  # noqa: E501
         :type: str

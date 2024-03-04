@@ -1,6 +1,6 @@
 # GatewayCreateProducerGithub
 
-gatewayCreateProducerGithub is a command that creates github producer
+gatewayCreateProducerGithub is a command that creates github producer [Deprecated: Use dynamic-secret-create-github command]
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
@@ -9,9 +9,11 @@ Name | Type | Description | Notes
 **github_app_private_key** | **str** | App private key | [optional] 
 **github_base_url** | **str** | Base URL | [optional] [default to 'https://api.github.com/']
 **installation_id** | **int** | Github app installation id | [optional] 
-**installation_repository** | **str** | Repository that the app installation has access to | [optional] 
+**installation_organization** | **str** | Optional, instead of installation id, set a GitHub organization name | [optional] 
+**installation_repository** | **str** | Optional, instead of installation id, set a GitHub repository &#39;&lt;owner&gt;/&lt;repo-name&gt; | [optional] 
 **json** | **bool** | Set output format to JSON | [optional] [default to False]
-**name** | **str** | Producer name | 
+**name** | **str** | Dynamic secret name | 
+**tags** | **list[str]** | Add tags attached to this object | [optional] 
 **target_name** | **str** | Target name | [optional] 
 **token** | **str** | Authentication token (see &#x60;/auth&#x60; and &#x60;/configure&#x60;) | [optional] 
 **token_permissions** | **list[str]** | Optional - installation token&#39;s allowed permissions | [optional] 

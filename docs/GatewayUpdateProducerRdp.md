@@ -1,6 +1,6 @@
 # GatewayUpdateProducerRdp
 
-gatewayUpdateProducerRdp is a command that updates rdp producer
+gatewayUpdateProducerRdp is a command that updates rdp producer [Deprecated: Use dynamic-secret-update-rdp command]
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
@@ -8,8 +8,9 @@ Name | Type | Description | Notes
 **delete_protection** | **str** | Protection from accidental deletion of this item [true/false] | [optional] 
 **fixed_user_only** | **str** | Allow access using externally (IdP) provided username [true/false] | [optional] [default to 'false']
 **json** | **bool** | Set output format to JSON | [optional] [default to False]
-**name** | **str** | Producer name | 
-**new_name** | **str** | Producer name | [optional] 
+**name** | **str** | Dynamic secret name | 
+**new_name** | **str** | Dynamic secret name | [optional] 
+**password_length** | **str** | The length of the password to be generated | [optional] 
 **producer_encryption_key_name** | **str** | Dynamic producer encryption key | [optional] 
 **rdp_admin_name** | **str** | RDP Admin Name | [optional] 
 **rdp_admin_pwd** | **str** | RDP Admin password | [optional] 

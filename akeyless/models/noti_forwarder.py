@@ -56,6 +56,7 @@ class NotiForwarder(object):
         'to_emails': 'list[EmailEntry]',
         'user_email': 'str',
         'username': 'str',
+        'webhook_noti_forwarder_public_details': 'WebHookNotiForwarderPublicDetails',
         'with_customer_fragment': 'bool'
     }
 
@@ -82,10 +83,11 @@ class NotiForwarder(object):
         'to_emails': 'to_emails',
         'user_email': 'user_email',
         'username': 'username',
+        'webhook_noti_forwarder_public_details': 'webhook_noti_forwarder_public_details',
         'with_customer_fragment': 'with_customer_fragment'
     }
 
-    def __init__(self, auth_type=None, client_id=None, client_permissions=None, comment=None, creation_date=None, endpoint=None, event_types=None, gateway_cluster_id=None, is_enabled=None, last_version=None, modification_date=None, noti_forwarder_id=None, noti_forwarder_name=None, noti_forwarder_type=None, noti_forwarder_versions=None, paths=None, protection_key=None, runner_type=None, timespan_in_seconds=None, to_emails=None, user_email=None, username=None, with_customer_fragment=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, auth_type=None, client_id=None, client_permissions=None, comment=None, creation_date=None, endpoint=None, event_types=None, gateway_cluster_id=None, is_enabled=None, last_version=None, modification_date=None, noti_forwarder_id=None, noti_forwarder_name=None, noti_forwarder_type=None, noti_forwarder_versions=None, paths=None, protection_key=None, runner_type=None, timespan_in_seconds=None, to_emails=None, user_email=None, username=None, webhook_noti_forwarder_public_details=None, with_customer_fragment=None, local_vars_configuration=None):  # noqa: E501
         """NotiForwarder - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -113,6 +115,7 @@ class NotiForwarder(object):
         self._to_emails = None
         self._user_email = None
         self._username = None
+        self._webhook_noti_forwarder_public_details = None
         self._with_customer_fragment = None
         self.discriminator = None
 
@@ -160,6 +163,8 @@ class NotiForwarder(object):
             self.user_email = user_email
         if username is not None:
             self.username = username
+        if webhook_noti_forwarder_public_details is not None:
+            self.webhook_noti_forwarder_public_details = webhook_noti_forwarder_public_details
         if with_customer_fragment is not None:
             self.with_customer_fragment = with_customer_fragment
 
@@ -628,6 +633,27 @@ class NotiForwarder(object):
         """
 
         self._username = username
+
+    @property
+    def webhook_noti_forwarder_public_details(self):
+        """Gets the webhook_noti_forwarder_public_details of this NotiForwarder.  # noqa: E501
+
+
+        :return: The webhook_noti_forwarder_public_details of this NotiForwarder.  # noqa: E501
+        :rtype: WebHookNotiForwarderPublicDetails
+        """
+        return self._webhook_noti_forwarder_public_details
+
+    @webhook_noti_forwarder_public_details.setter
+    def webhook_noti_forwarder_public_details(self, webhook_noti_forwarder_public_details):
+        """Sets the webhook_noti_forwarder_public_details of this NotiForwarder.
+
+
+        :param webhook_noti_forwarder_public_details: The webhook_noti_forwarder_public_details of this NotiForwarder.  # noqa: E501
+        :type: WebHookNotiForwarderPublicDetails
+        """
+
+        self._webhook_noti_forwarder_public_details = webhook_noti_forwarder_public_details
 
     @property
     def with_customer_fragment(self):

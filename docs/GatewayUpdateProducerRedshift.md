@@ -1,14 +1,15 @@
 # GatewayUpdateProducerRedshift
 
-gatewayUpdateProducerRedshift is a command that updates redshift producer
+gatewayUpdateProducerRedshift is a command that updates redshift producer [Deprecated: Use dynamic-secret-update-redshift command]
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **creation_statements** | **str** | Redshift Creation statements | [optional] 
 **delete_protection** | **str** | Protection from accidental deletion of this item [true/false] | [optional] 
 **json** | **bool** | Set output format to JSON | [optional] [default to False]
-**name** | **str** | Producer name | 
-**new_name** | **str** | Producer name | [optional] 
+**name** | **str** | Dynamic secret name | 
+**new_name** | **str** | Dynamic secret name | [optional] 
+**password_length** | **str** | The length of the password to be generated | [optional] 
 **producer_encryption_key** | **str** | Dynamic producer encryption key | [optional] 
 **redshift_db_name** | **str** | Redshift DB Name | [optional] 
 **redshift_host** | **str** | Redshift Host | [optional] [default to '127.0.0.1']

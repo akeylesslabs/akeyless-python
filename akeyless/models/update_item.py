@@ -555,7 +555,7 @@ class UpdateItem(object):
     def rotate_after_disconnect(self):
         """Gets the rotate_after_disconnect of this UpdateItem.  # noqa: E501
 
-        Rotate the value of the secret after SRA session ends [true/false] (relevant only for Rotated-secret)  # noqa: E501
+        Rotate the value of the secret after SRA session ends [true/false]  # noqa: E501
 
         :return: The rotate_after_disconnect of this UpdateItem.  # noqa: E501
         :rtype: str
@@ -566,7 +566,7 @@ class UpdateItem(object):
     def rotate_after_disconnect(self, rotate_after_disconnect):
         """Sets the rotate_after_disconnect of this UpdateItem.
 
-        Rotate the value of the secret after SRA session ends [true/false] (relevant only for Rotated-secret)  # noqa: E501
+        Rotate the value of the secret after SRA session ends [true/false]  # noqa: E501
 
         :param rotate_after_disconnect: The rotate_after_disconnect of this UpdateItem.  # noqa: E501
         :type: str

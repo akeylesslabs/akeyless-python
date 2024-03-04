@@ -460,7 +460,7 @@ class GatewayCreateProducerAws(object):
     def name(self):
         """Gets the name of this GatewayCreateProducerAws.  # noqa: E501
 
-        Producer name  # noqa: E501
+        Dynamic secret name  # noqa: E501
 
         :return: The name of this GatewayCreateProducerAws.  # noqa: E501
         :rtype: str
@@ -471,7 +471,7 @@ class GatewayCreateProducerAws(object):
     def name(self, name):
         """Sets the name of this GatewayCreateProducerAws.
 
-        Producer name  # noqa: E501
+        Dynamic secret name  # noqa: E501
 
         :param name: The name of this GatewayCreateProducerAws.  # noqa: E501
         :type: str

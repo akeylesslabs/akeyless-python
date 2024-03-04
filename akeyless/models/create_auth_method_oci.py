@@ -43,6 +43,7 @@ class CreateAuthMethodOCI(object):
         'json': 'bool',
         'jwt_ttl': 'int',
         'name': 'str',
+        'product_type': 'list[str]',
         'tenant_ocid': 'str',
         'token': 'str',
         'uid_token': 'str'
@@ -58,12 +59,13 @@ class CreateAuthMethodOCI(object):
         'json': 'json',
         'jwt_ttl': 'jwt-ttl',
         'name': 'name',
+        'product_type': 'product-type',
         'tenant_ocid': 'tenant-ocid',
         'token': 'token',
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, access_expires=0, bound_ips=None, description=None, force_sub_claims=None, group_ocid=None, gw_bound_ips=None, json=False, jwt_ttl=0, name=None, tenant_ocid=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, access_expires=0, bound_ips=None, description=None, force_sub_claims=None, group_ocid=None, gw_bound_ips=None, json=False, jwt_ttl=0, name=None, product_type=None, tenant_ocid=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """CreateAuthMethodOCI - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -78,6 +80,7 @@ class CreateAuthMethodOCI(object):
         self._json = None
         self._jwt_ttl = None
         self._name = None
+        self._product_type = None
         self._tenant_ocid = None
         self._token = None
         self._uid_token = None
@@ -99,6 +102,8 @@ class CreateAuthMethodOCI(object):
         if jwt_ttl is not None:
             self.jwt_ttl = jwt_ttl
         self.name = name
+        if product_type is not None:
+            self.product_type = product_type
         self.tenant_ocid = tenant_ocid
         if token is not None:
             self.token = token
@@ -315,6 +320,29 @@ class CreateAuthMethodOCI(object):
             raise ValueError("Invalid value for `name`, must not be `None`")  # noqa: E501
 
         self._name = name
+
+    @property
+    def product_type(self):
+        """Gets the product_type of this CreateAuthMethodOCI.  # noqa: E501
+
+        Choose the relevant product type for the auth method [sm, sra, pm, dp, ca]  # noqa: E501
+
+        :return: The product_type of this CreateAuthMethodOCI.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._product_type
+
+    @product_type.setter
+    def product_type(self, product_type):
+        """Sets the product_type of this CreateAuthMethodOCI.
+
+        Choose the relevant product type for the auth method [sm, sra, pm, dp, ca]  # noqa: E501
+
+        :param product_type: The product_type of this CreateAuthMethodOCI.  # noqa: E501
+        :type: list[str]
+        """
+
+        self._product_type = product_type
 
     @property
     def tenant_ocid(self):

@@ -1,6 +1,6 @@
 # GatewayUpdateProducerGcp
 
-gatewayUpdateProducerGcp is a command that updates a GCP producer
+gatewayUpdateProducerGcp is a command that updates a GCP producer [Deprecated: Use dynamic-secret-update-gcp command]
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
@@ -11,8 +11,8 @@ Name | Type | Description | Notes
 **gcp_sa_email** | **str** | The email of the fixed service acocunt to generate keys or tokens for. (revelant for service-account-type&#x3D;fixed) | [optional] 
 **gcp_token_scopes** | **str** | Access token scopes list, e.g. scope1,scope2 | [optional] 
 **json** | **bool** | Set output format to JSON | [optional] [default to False]
-**name** | **str** | Producer name | 
-**new_name** | **str** | Producer name | [optional] 
+**name** | **str** | Dynamic secret name | 
+**new_name** | **str** | Dynamic secret name | [optional] 
 **producer_encryption_key_name** | **str** | Dynamic producer encryption key | [optional] 
 **role_binding** | **str** | Role binding definitions in json format | [optional] 
 **service_account_type** | **str** | The type of the gcp dynamic secret. Options[fixed, dynamic] | [default to 'fixed']

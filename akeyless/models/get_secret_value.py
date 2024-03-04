@@ -254,7 +254,7 @@ class GetSecretValue(object):
     def version(self):
         """Gets the version of this GetSecretValue.  # noqa: E501
 
-        Secret version  # noqa: E501
+        Secret version, if negative value N is provided the last N versions will return (maximum 20)  # noqa: E501
 
         :return: The version of this GetSecretValue.  # noqa: E501
         :rtype: int
@@ -265,7 +265,7 @@ class GetSecretValue(object):
     def version(self, version):
         """Sets the version of this GetSecretValue.
 
-        Secret version  # noqa: E501
+        Secret version, if negative value N is provided the last N versions will return (maximum 20)  # noqa: E501
 
         :param version: The version of this GetSecretValue.  # noqa: E501
         :type: int

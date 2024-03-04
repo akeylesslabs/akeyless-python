@@ -50,6 +50,7 @@ class GatewayUpdateProducerMongo(object):
         'mongodb_username': 'str',
         'name': 'str',
         'new_name': 'str',
+        'password_length': 'str',
         'producer_encryption_key_name': 'str',
         'secure_access_bastion_issuer': 'str',
         'secure_access_enable': 'str',
@@ -79,6 +80,7 @@ class GatewayUpdateProducerMongo(object):
         'mongodb_username': 'mongodb-username',
         'name': 'name',
         'new_name': 'new-name',
+        'password_length': 'password-length',
         'producer_encryption_key_name': 'producer-encryption-key-name',
         'secure_access_bastion_issuer': 'secure-access-bastion-issuer',
         'secure_access_enable': 'secure-access-enable',
@@ -91,7 +93,7 @@ class GatewayUpdateProducerMongo(object):
         'user_ttl': 'user-ttl'
     }
 
-    def __init__(self, delete_protection=None, json=False, mongodb_atlas_api_private_key=None, mongodb_atlas_api_public_key=None, mongodb_atlas_project_id=None, mongodb_custom_data=None, mongodb_default_auth_db=None, mongodb_host_port=None, mongodb_name=None, mongodb_password=None, mongodb_roles='[]', mongodb_server_uri=None, mongodb_uri_options=None, mongodb_username=None, name=None, new_name=None, producer_encryption_key_name=None, secure_access_bastion_issuer=None, secure_access_enable=None, secure_access_host=None, secure_access_web=False, tags=None, target_name=None, token=None, uid_token=None, user_ttl='60m', local_vars_configuration=None):  # noqa: E501
+    def __init__(self, delete_protection=None, json=False, mongodb_atlas_api_private_key=None, mongodb_atlas_api_public_key=None, mongodb_atlas_project_id=None, mongodb_custom_data=None, mongodb_default_auth_db=None, mongodb_host_port=None, mongodb_name=None, mongodb_password=None, mongodb_roles='[]', mongodb_server_uri=None, mongodb_uri_options=None, mongodb_username=None, name=None, new_name=None, password_length=None, producer_encryption_key_name=None, secure_access_bastion_issuer=None, secure_access_enable=None, secure_access_host=None, secure_access_web=False, tags=None, target_name=None, token=None, uid_token=None, user_ttl='60m', local_vars_configuration=None):  # noqa: E501
         """GatewayUpdateProducerMongo - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -113,6 +115,7 @@ class GatewayUpdateProducerMongo(object):
         self._mongodb_username = None
         self._name = None
         self._new_name = None
+        self._password_length = None
         self._producer_encryption_key_name = None
         self._secure_access_bastion_issuer = None
         self._secure_access_enable = None
@@ -156,6 +159,8 @@ class GatewayUpdateProducerMongo(object):
         self.name = name
         if new_name is not None:
             self.new_name = new_name
+        if password_length is not None:
+            self.password_length = password_length
         if producer_encryption_key_name is not None:
             self.producer_encryption_key_name = producer_encryption_key_name
         if secure_access_bastion_issuer is not None:
@@ -503,7 +508,7 @@ class GatewayUpdateProducerMongo(object):
     def name(self):
         """Gets the name of this GatewayUpdateProducerMongo.  # noqa: E501
 
-        Producer name  # noqa: E501
+        Dynamic secret name  # noqa: E501
 
         :return: The name of this GatewayUpdateProducerMongo.  # noqa: E501
         :rtype: str
@@ -514,7 +519,7 @@ class GatewayUpdateProducerMongo(object):
     def name(self, name):
         """Sets the name of this GatewayUpdateProducerMongo.
 
-        Producer name  # noqa: E501
+        Dynamic secret name  # noqa: E501
 
         :param name: The name of this GatewayUpdateProducerMongo.  # noqa: E501
         :type: str
@@ -528,7 +533,7 @@ class GatewayUpdateProducerMongo(object):
     def new_name(self):
         """Gets the new_name of this GatewayUpdateProducerMongo.  # noqa: E501
 
-        Producer name  # noqa: E501
+        Dynamic secret name  # noqa: E501
 
         :return: The new_name of this GatewayUpdateProducerMongo.  # noqa: E501
         :rtype: str
@@ -539,13 +544,36 @@ class GatewayUpdateProducerMongo(object):
     def new_name(self, new_name):
         """Sets the new_name of this GatewayUpdateProducerMongo.
 
-        Producer name  # noqa: E501
+        Dynamic secret name  # noqa: E501
 
         :param new_name: The new_name of this GatewayUpdateProducerMongo.  # noqa: E501
         :type: str
         """
 
         self._new_name = new_name
+
+    @property
+    def password_length(self):
+        """Gets the password_length of this GatewayUpdateProducerMongo.  # noqa: E501
+
+        The length of the password to be generated  # noqa: E501
+
+        :return: The password_length of this GatewayUpdateProducerMongo.  # noqa: E501
+        :rtype: str
+        """
+        return self._password_length
+
+    @password_length.setter
+    def password_length(self, password_length):
+        """Sets the password_length of this GatewayUpdateProducerMongo.
+
+        The length of the password to be generated  # noqa: E501
+
+        :param password_length: The password_length of this GatewayUpdateProducerMongo.  # noqa: E501
+        :type: str
+        """
+
+        self._password_length = password_length
 
     @property
     def producer_encryption_key_name(self):

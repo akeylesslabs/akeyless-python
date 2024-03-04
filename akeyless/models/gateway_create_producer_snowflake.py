@@ -41,6 +41,7 @@ class GatewayCreateProducerSnowflake(object):
         'delete_protection': 'str',
         'json': 'bool',
         'name': 'str',
+        'password_length': 'str',
         'private_key': 'str',
         'private_key_passphrase': 'str',
         'role': 'str',
@@ -60,6 +61,7 @@ class GatewayCreateProducerSnowflake(object):
         'delete_protection': 'delete_protection',
         'json': 'json',
         'name': 'name',
+        'password_length': 'password-length',
         'private_key': 'private-key',
         'private_key_passphrase': 'private-key-passphrase',
         'role': 'role',
@@ -71,7 +73,7 @@ class GatewayCreateProducerSnowflake(object):
         'warehouse': 'warehouse'
     }
 
-    def __init__(self, account=None, account_password=None, account_username=None, db_name=None, delete_protection=None, json=False, name=None, private_key=None, private_key_passphrase=None, role=None, tags=None, target_name=None, token=None, uid_token=None, user_ttl='24h', warehouse=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, account=None, account_password=None, account_username=None, db_name=None, delete_protection=None, json=False, name=None, password_length=None, private_key=None, private_key_passphrase=None, role=None, tags=None, target_name=None, token=None, uid_token=None, user_ttl='24h', warehouse=None, local_vars_configuration=None):  # noqa: E501
         """GatewayCreateProducerSnowflake - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -84,6 +86,7 @@ class GatewayCreateProducerSnowflake(object):
         self._delete_protection = None
         self._json = None
         self._name = None
+        self._password_length = None
         self._private_key = None
         self._private_key_passphrase = None
         self._role = None
@@ -108,6 +111,8 @@ class GatewayCreateProducerSnowflake(object):
         if json is not None:
             self.json = json
         self.name = name
+        if password_length is not None:
+            self.password_length = password_length
         if private_key is not None:
             self.private_key = private_key
         if private_key_passphrase is not None:
@@ -269,7 +274,7 @@ class GatewayCreateProducerSnowflake(object):
     def name(self):
         """Gets the name of this GatewayCreateProducerSnowflake.  # noqa: E501
 
-        Producer name  # noqa: E501
+        Dynamic secret name  # noqa: E501
 
         :return: The name of this GatewayCreateProducerSnowflake.  # noqa: E501
         :rtype: str
@@ -280,7 +285,7 @@ class GatewayCreateProducerSnowflake(object):
     def name(self, name):
         """Sets the name of this GatewayCreateProducerSnowflake.
 
-        Producer name  # noqa: E501
+        Dynamic secret name  # noqa: E501
 
         :param name: The name of this GatewayCreateProducerSnowflake.  # noqa: E501
         :type: str
@@ -289,6 +294,29 @@ class GatewayCreateProducerSnowflake(object):
             raise ValueError("Invalid value for `name`, must not be `None`")  # noqa: E501
 
         self._name = name
+
+    @property
+    def password_length(self):
+        """Gets the password_length of this GatewayCreateProducerSnowflake.  # noqa: E501
+
+        The length of the password to be generated  # noqa: E501
+
+        :return: The password_length of this GatewayCreateProducerSnowflake.  # noqa: E501
+        :rtype: str
+        """
+        return self._password_length
+
+    @password_length.setter
+    def password_length(self, password_length):
+        """Sets the password_length of this GatewayCreateProducerSnowflake.
+
+        The length of the password to be generated  # noqa: E501
+
+        :param password_length: The password_length of this GatewayCreateProducerSnowflake.  # noqa: E501
+        :type: str
+        """
+
+        self._password_length = password_length
 
     @property
     def private_key(self):

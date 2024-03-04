@@ -4,8 +4,10 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **allow_any_name** | **bool** | If set, clients can request certificates for any CN | [optional] 
+**allow_copy_ext_from_csr** | **bool** | If set, will allow copying the extra extensions from the csr file (if given) | [optional] 
 **allow_subdomains** | **bool** | If set, clients can request certificates for subdomains and wildcard subdomains of the allowed domains | [optional] 
 **allowed_domains** | **str** | A list of the allowed domains that clients can request to be included in the certificate (in a comma-delimited list) | [optional] 
+**allowed_extra_extensions** | **str** | A json string containing the allowed extra extensions for the pki cert issuer | [optional] 
 **allowed_uri_sans** | **str** | A list of the allowed URIs that clients can request to be included in the certificate as part of the URI Subject Alternative Names (in a comma-delimited list) | [optional] 
 **ca_target** | **str** | The name of an existing CA target to attach this PKI Certificate Issuer to, required in Public CA mode | [optional] 
 **client_flag** | **bool** | If set, certificates will be flagged for client auth use | [optional] 

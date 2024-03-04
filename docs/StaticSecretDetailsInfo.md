@@ -3,6 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**format** | **str** | StaticSecretFormat defines the format of static secret (e.g. Text) | [optional] 
 **notify_on_change_event** | **bool** |  | [optional] 
 **username** | **str** |  | [optional] 
 **website** | **str** | deprecated | [optional] 

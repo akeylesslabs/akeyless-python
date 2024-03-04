@@ -47,6 +47,7 @@ class GatewayUpdateProducerOracleDb(object):
         'oracle_screation_statements': 'str',
         'oracle_service_name': 'str',
         'oracle_username': 'str',
+        'password_length': 'str',
         'producer_encryption_key_name': 'str',
         'secure_access_bastion_issuer': 'str',
         'secure_access_enable': 'str',
@@ -73,6 +74,7 @@ class GatewayUpdateProducerOracleDb(object):
         'oracle_screation_statements': 'oracle-screation-statements',
         'oracle_service_name': 'oracle-service-name',
         'oracle_username': 'oracle-username',
+        'password_length': 'password-length',
         'producer_encryption_key_name': 'producer-encryption-key-name',
         'secure_access_bastion_issuer': 'secure-access-bastion-issuer',
         'secure_access_enable': 'secure-access-enable',
@@ -85,7 +87,7 @@ class GatewayUpdateProducerOracleDb(object):
         'user_ttl': 'user-ttl'
     }
 
-    def __init__(self, db_server_certificates=None, db_server_name=None, delete_protection=None, json=False, name=None, new_name=None, oracle_host='127.0.0.1', oracle_password=None, oracle_port='1521', oracle_revocation_statements=None, oracle_screation_statements=None, oracle_service_name=None, oracle_username=None, producer_encryption_key_name=None, secure_access_bastion_issuer=None, secure_access_enable='false', secure_access_host=None, secure_access_web=False, tags=None, target_name=None, token=None, uid_token=None, user_ttl='60m', local_vars_configuration=None):  # noqa: E501
+    def __init__(self, db_server_certificates=None, db_server_name=None, delete_protection=None, json=False, name=None, new_name=None, oracle_host='127.0.0.1', oracle_password=None, oracle_port='1521', oracle_revocation_statements=None, oracle_screation_statements=None, oracle_service_name=None, oracle_username=None, password_length=None, producer_encryption_key_name=None, secure_access_bastion_issuer=None, secure_access_enable='false', secure_access_host=None, secure_access_web=False, tags=None, target_name=None, token=None, uid_token=None, user_ttl='60m', local_vars_configuration=None):  # noqa: E501
         """GatewayUpdateProducerOracleDb - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -104,6 +106,7 @@ class GatewayUpdateProducerOracleDb(object):
         self._oracle_screation_statements = None
         self._oracle_service_name = None
         self._oracle_username = None
+        self._password_length = None
         self._producer_encryption_key_name = None
         self._secure_access_bastion_issuer = None
         self._secure_access_enable = None
@@ -141,6 +144,8 @@ class GatewayUpdateProducerOracleDb(object):
             self.oracle_service_name = oracle_service_name
         if oracle_username is not None:
             self.oracle_username = oracle_username
+        if password_length is not None:
+            self.password_length = password_length
         if producer_encryption_key_name is not None:
             self.producer_encryption_key_name = producer_encryption_key_name
         if secure_access_bastion_issuer is not None:
@@ -258,7 +263,7 @@ class GatewayUpdateProducerOracleDb(object):
     def name(self):
         """Gets the name of this GatewayUpdateProducerOracleDb.  # noqa: E501
 
-        Producer name  # noqa: E501
+        Dynamic secret name  # noqa: E501
 
         :return: The name of this GatewayUpdateProducerOracleDb.  # noqa: E501
         :rtype: str
@@ -269,7 +274,7 @@ class GatewayUpdateProducerOracleDb(object):
     def name(self, name):
         """Sets the name of this GatewayUpdateProducerOracleDb.
 
-        Producer name  # noqa: E501
+        Dynamic secret name  # noqa: E501
 
         :param name: The name of this GatewayUpdateProducerOracleDb.  # noqa: E501
         :type: str
@@ -283,7 +288,7 @@ class GatewayUpdateProducerOracleDb(object):
     def new_name(self):
         """Gets the new_name of this GatewayUpdateProducerOracleDb.  # noqa: E501
 
-        Producer name  # noqa: E501
+        Dynamic secret name  # noqa: E501
 
         :return: The new_name of this GatewayUpdateProducerOracleDb.  # noqa: E501
         :rtype: str
@@ -294,7 +299,7 @@ class GatewayUpdateProducerOracleDb(object):
     def new_name(self, new_name):
         """Sets the new_name of this GatewayUpdateProducerOracleDb.
 
-        Producer name  # noqa: E501
+        Dynamic secret name  # noqa: E501
 
         :param new_name: The new_name of this GatewayUpdateProducerOracleDb.  # noqa: E501
         :type: str
@@ -462,6 +467,29 @@ class GatewayUpdateProducerOracleDb(object):
         """
 
         self._oracle_username = oracle_username
+
+    @property
+    def password_length(self):
+        """Gets the password_length of this GatewayUpdateProducerOracleDb.  # noqa: E501
+
+        The length of the password to be generated  # noqa: E501
+
+        :return: The password_length of this GatewayUpdateProducerOracleDb.  # noqa: E501
+        :rtype: str
+        """
+        return self._password_length
+
+    @password_length.setter
+    def password_length(self, password_length):
+        """Sets the password_length of this GatewayUpdateProducerOracleDb.
+
+        The length of the password to be generated  # noqa: E501
+
+        :param password_length: The password_length of this GatewayUpdateProducerOracleDb.  # noqa: E501
+        :type: str
+        """
+
+        self._password_length = password_length
 
     @property
     def producer_encryption_key_name(self):

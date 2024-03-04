@@ -54,6 +54,7 @@ class CreateAuthMethodAzureAD(object):
         'jwks_uri': 'str',
         'jwt_ttl': 'int',
         'name': 'str',
+        'product_type': 'list[str]',
         'token': 'str',
         'uid_token': 'str'
     }
@@ -79,11 +80,12 @@ class CreateAuthMethodAzureAD(object):
         'jwks_uri': 'jwks-uri',
         'jwt_ttl': 'jwt-ttl',
         'name': 'name',
+        'product_type': 'product-type',
         'token': 'token',
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, access_expires=0, audience='https://management.azure.com/', bound_group_id=None, bound_ips=None, bound_providers=None, bound_resource_id=None, bound_resource_names=None, bound_resource_types=None, bound_rg_id=None, bound_spid=None, bound_sub_id=None, bound_tenant_id=None, description=None, force_sub_claims=None, gw_bound_ips=None, issuer='https://sts.windows.net/---bound_tenant_id---', json=False, jwks_uri='https://login.microsoftonline.com/common/discovery/keys', jwt_ttl=0, name=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, access_expires=0, audience='https://management.azure.com/', bound_group_id=None, bound_ips=None, bound_providers=None, bound_resource_id=None, bound_resource_names=None, bound_resource_types=None, bound_rg_id=None, bound_spid=None, bound_sub_id=None, bound_tenant_id=None, description=None, force_sub_claims=None, gw_bound_ips=None, issuer='https://sts.windows.net/---bound_tenant_id---', json=False, jwks_uri='https://login.microsoftonline.com/common/discovery/keys', jwt_ttl=0, name=None, product_type=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """CreateAuthMethodAzureAD - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -109,6 +111,7 @@ class CreateAuthMethodAzureAD(object):
         self._jwks_uri = None
         self._jwt_ttl = None
         self._name = None
+        self._product_type = None
         self._token = None
         self._uid_token = None
         self.discriminator = None
@@ -151,6 +154,8 @@ class CreateAuthMethodAzureAD(object):
         if jwt_ttl is not None:
             self.jwt_ttl = jwt_ttl
         self.name = name
+        if product_type is not None:
+            self.product_type = product_type
         if token is not None:
             self.token = token
         if uid_token is not None:
@@ -619,6 +624,29 @@ class CreateAuthMethodAzureAD(object):
             raise ValueError("Invalid value for `name`, must not be `None`")  # noqa: E501
 
         self._name = name
+
+    @property
+    def product_type(self):
+        """Gets the product_type of this CreateAuthMethodAzureAD.  # noqa: E501
+
+        Choose the relevant product type for the auth method [sm, sra, pm, dp, ca]  # noqa: E501
+
+        :return: The product_type of this CreateAuthMethodAzureAD.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._product_type
+
+    @product_type.setter
+    def product_type(self, product_type):
+        """Sets the product_type of this CreateAuthMethodAzureAD.
+
+        Choose the relevant product type for the auth method [sm, sra, pm, dp, ca]  # noqa: E501
+
+        :param product_type: The product_type of this CreateAuthMethodAzureAD.  # noqa: E501
+        :type: list[str]
+        """
+
+        self._product_type = product_type
 
     @property
     def token(self):

@@ -39,6 +39,7 @@ class CreateSecret(object):
         'custom_field': 'dict(str, str)',
         'delete_protection': 'str',
         'description': 'str',
+        'format': 'str',
         'inject_url': 'list[str]',
         'json': 'bool',
         'metadata': 'str',
@@ -69,6 +70,7 @@ class CreateSecret(object):
         'custom_field': 'custom-field',
         'delete_protection': 'delete_protection',
         'description': 'description',
+        'format': 'format',
         'inject_url': 'inject-url',
         'json': 'json',
         'metadata': 'metadata',
@@ -93,7 +95,7 @@ class CreateSecret(object):
         'value': 'value'
     }
 
-    def __init__(self, accessibility='regular', change_event=None, custom_field=None, delete_protection=None, description=None, inject_url=None, json=False, metadata=None, multiline_value=None, name=None, password=None, protection_key=None, secure_access_bastion_issuer=None, secure_access_enable=None, secure_access_host=None, secure_access_rdp_user=None, secure_access_ssh_creds=None, secure_access_ssh_user=None, secure_access_url=None, secure_access_web_browsing=False, secure_access_web_proxy=False, tags=None, token=None, type='generic', uid_token=None, username=None, value=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, accessibility='regular', change_event=None, custom_field=None, delete_protection=None, description=None, format='text', inject_url=None, json=False, metadata=None, multiline_value=None, name=None, password=None, protection_key=None, secure_access_bastion_issuer=None, secure_access_enable=None, secure_access_host=None, secure_access_rdp_user=None, secure_access_ssh_creds=None, secure_access_ssh_user=None, secure_access_url=None, secure_access_web_browsing=False, secure_access_web_proxy=False, tags=None, token=None, type='generic', uid_token=None, username=None, value=None, local_vars_configuration=None):  # noqa: E501
         """CreateSecret - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -104,6 +106,7 @@ class CreateSecret(object):
         self._custom_field = None
         self._delete_protection = None
         self._description = None
+        self._format = None
         self._inject_url = None
         self._json = None
         self._metadata = None
@@ -138,6 +141,8 @@ class CreateSecret(object):
             self.delete_protection = delete_protection
         if description is not None:
             self.description = description
+        if format is not None:
+            self.format = format
         if inject_url is not None:
             self.inject_url = inject_url
         if json is not None:
@@ -295,6 +300,29 @@ class CreateSecret(object):
         """
 
         self._description = description
+
+    @property
+    def format(self):
+        """Gets the format of this CreateSecret.  # noqa: E501
+
+        Secret format [text/json] (relevant only for type 'generic')  # noqa: E501
+
+        :return: The format of this CreateSecret.  # noqa: E501
+        :rtype: str
+        """
+        return self._format
+
+    @format.setter
+    def format(self, format):
+        """Sets the format of this CreateSecret.
+
+        Secret format [text/json] (relevant only for type 'generic')  # noqa: E501
+
+        :param format: The format of this CreateSecret.  # noqa: E501
+        :type: str
+        """
+
+        self._format = format
 
     @property
     def inject_url(self):
@@ -785,7 +813,7 @@ class CreateSecret(object):
     def value(self):
         """Gets the value of this CreateSecret.  # noqa: E501
 
-        The secret value (only relevant for type 'generic')  # noqa: E501
+        The secret value (relevant only for type 'generic')  # noqa: E501
 
         :return: The value of this CreateSecret.  # noqa: E501
         :rtype: str
@@ -796,7 +824,7 @@ class CreateSecret(object):
     def value(self, value):
         """Sets the value of this CreateSecret.
 
-        The secret value (only relevant for type 'generic')  # noqa: E501
+        The secret value (relevant only for type 'generic')  # noqa: E501
 
         :param value: The value of this CreateSecret.  # noqa: E501
         :type: str

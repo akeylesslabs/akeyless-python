@@ -1,6 +1,6 @@
 # GatewayCreateProducerAzure
 
-gatewayCreateProducerAzure is a command that creates azure producer
+gatewayCreateProducerAzure is a command that creates azure producer [Deprecated: Use dynamic-secret-create-azure command]
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
@@ -12,7 +12,8 @@ Name | Type | Description | Notes
 **fixed_user_claim_keyname** | **str** | FixedUserClaimKeyname | [optional] [default to 'false']
 **fixed_user_only** | **bool** | Fixed user | [optional] [default to False]
 **json** | **bool** | Set output format to JSON | [optional] [default to False]
-**name** | **str** | Producer name | 
+**name** | **str** | Dynamic secret name | 
+**password_length** | **str** | The length of the password to be generated | [optional] 
 **producer_encryption_key_name** | **str** | Dynamic producer encryption key | [optional] 
 **secure_access_enable** | **str** | Enable/Disable secure remote access [true/false] | [optional] 
 **secure_access_web** | **bool** | Enable Web Secure Remote Access | [optional] [default to True]

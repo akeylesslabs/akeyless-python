@@ -38,6 +38,7 @@ class GatewayCreateProducerRedshift(object):
         'delete_protection': 'str',
         'json': 'bool',
         'name': 'str',
+        'password_length': 'str',
         'producer_encryption_key': 'str',
         'redshift_db_name': 'str',
         'redshift_host': 'str',
@@ -59,6 +60,7 @@ class GatewayCreateProducerRedshift(object):
         'delete_protection': 'delete_protection',
         'json': 'json',
         'name': 'name',
+        'password_length': 'password-length',
         'producer_encryption_key': 'producer-encryption-key',
         'redshift_db_name': 'redshift-db-name',
         'redshift_host': 'redshift-host',
@@ -75,7 +77,7 @@ class GatewayCreateProducerRedshift(object):
         'user_ttl': 'user-ttl'
     }
 
-    def __init__(self, creation_statements=None, delete_protection=None, json=False, name=None, producer_encryption_key=None, redshift_db_name=None, redshift_host='127.0.0.1', redshift_password=None, redshift_port='5439', redshift_username=None, secure_access_enable=None, secure_access_host=None, ssl=False, tags=None, target_name=None, token=None, uid_token=None, user_ttl='60m', local_vars_configuration=None):  # noqa: E501
+    def __init__(self, creation_statements=None, delete_protection=None, json=False, name=None, password_length=None, producer_encryption_key=None, redshift_db_name=None, redshift_host='127.0.0.1', redshift_password=None, redshift_port='5439', redshift_username=None, secure_access_enable=None, secure_access_host=None, ssl=False, tags=None, target_name=None, token=None, uid_token=None, user_ttl='60m', local_vars_configuration=None):  # noqa: E501
         """GatewayCreateProducerRedshift - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -85,6 +87,7 @@ class GatewayCreateProducerRedshift(object):
         self._delete_protection = None
         self._json = None
         self._name = None
+        self._password_length = None
         self._producer_encryption_key = None
         self._redshift_db_name = None
         self._redshift_host = None
@@ -108,6 +111,8 @@ class GatewayCreateProducerRedshift(object):
         if json is not None:
             self.json = json
         self.name = name
+        if password_length is not None:
+            self.password_length = password_length
         if producer_encryption_key is not None:
             self.producer_encryption_key = producer_encryption_key
         if redshift_db_name is not None:
@@ -210,7 +215,7 @@ class GatewayCreateProducerRedshift(object):
     def name(self):
         """Gets the name of this GatewayCreateProducerRedshift.  # noqa: E501
 
-        Producer name  # noqa: E501
+        Dynamic secret name  # noqa: E501
 
         :return: The name of this GatewayCreateProducerRedshift.  # noqa: E501
         :rtype: str
@@ -221,7 +226,7 @@ class GatewayCreateProducerRedshift(object):
     def name(self, name):
         """Sets the name of this GatewayCreateProducerRedshift.
 
-        Producer name  # noqa: E501
+        Dynamic secret name  # noqa: E501
 
         :param name: The name of this GatewayCreateProducerRedshift.  # noqa: E501
         :type: str
@@ -230,6 +235,29 @@ class GatewayCreateProducerRedshift(object):
             raise ValueError("Invalid value for `name`, must not be `None`")  # noqa: E501
 
         self._name = name
+
+    @property
+    def password_length(self):
+        """Gets the password_length of this GatewayCreateProducerRedshift.  # noqa: E501
+
+        The length of the password to be generated  # noqa: E501
+
+        :return: The password_length of this GatewayCreateProducerRedshift.  # noqa: E501
+        :rtype: str
+        """
+        return self._password_length
+
+    @password_length.setter
+    def password_length(self, password_length):
+        """Sets the password_length of this GatewayCreateProducerRedshift.
+
+        The length of the password to be generated  # noqa: E501
+
+        :param password_length: The password_length of this GatewayCreateProducerRedshift.  # noqa: E501
+        :type: str
+        """
+
+        self._password_length = password_length
 
     @property
     def producer_encryption_key(self):

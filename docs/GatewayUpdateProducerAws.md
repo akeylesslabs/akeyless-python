@@ -1,6 +1,6 @@
 # GatewayUpdateProducerAws
 
-gatewayUpdateProducerAws is a command that Updates aws producer
+gatewayUpdateProducerAws is a command that Updates aws producer [Deprecated: Use dynamic-secret-update-aws command]
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
@@ -16,8 +16,8 @@ Name | Type | Description | Notes
 **delete_protection** | **str** | Protection from accidental deletion of this item [true/false] | [optional] 
 **enable_admin_rotation** | **bool** | Automatic admin credentials rotation | [optional] [default to False]
 **json** | **bool** | Set output format to JSON | [optional] [default to False]
-**name** | **str** | Producer name | 
-**new_name** | **str** | Producer name | [optional] 
+**name** | **str** | Dynamic secret name | 
+**new_name** | **str** | Dynamic secret name | [optional] 
 **producer_encryption_key_name** | **str** | Dynamic producer encryption key | [optional] 
 **region** | **str** | Region | [optional] [default to 'us-east-2']
 **secure_access_aws_account_id** | **str** | The AWS account id | [optional] 

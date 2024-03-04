@@ -40,6 +40,7 @@ class GetKubeExecCreds(object):
         'common_name': 'str',
         'csr_data_base64': 'str',
         'extended_key_usage': 'str',
+        'extra_extensions': 'str',
         'json': 'bool',
         'key_data_base64': 'str',
         'token': 'str',
@@ -55,6 +56,7 @@ class GetKubeExecCreds(object):
         'common_name': 'common-name',
         'csr_data_base64': 'csr-data-base64',
         'extended_key_usage': 'extended-key-usage',
+        'extra_extensions': 'extra-extensions',
         'json': 'json',
         'key_data_base64': 'key-data-base64',
         'token': 'token',
@@ -63,7 +65,7 @@ class GetKubeExecCreds(object):
         'uri_sans': 'uri-sans'
     }
 
-    def __init__(self, alt_names=None, api_version='v1', cert_issuer_name=None, common_name=None, csr_data_base64=None, extended_key_usage=None, json=False, key_data_base64=None, token=None, ttl=None, uid_token=None, uri_sans=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, alt_names=None, api_version='v1', cert_issuer_name=None, common_name=None, csr_data_base64=None, extended_key_usage=None, extra_extensions=None, json=False, key_data_base64=None, token=None, ttl=None, uid_token=None, uri_sans=None, local_vars_configuration=None):  # noqa: E501
         """GetKubeExecCreds - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -75,6 +77,7 @@ class GetKubeExecCreds(object):
         self._common_name = None
         self._csr_data_base64 = None
         self._extended_key_usage = None
+        self._extra_extensions = None
         self._json = None
         self._key_data_base64 = None
         self._token = None
@@ -94,6 +97,8 @@ class GetKubeExecCreds(object):
             self.csr_data_base64 = csr_data_base64
         if extended_key_usage is not None:
             self.extended_key_usage = extended_key_usage
+        if extra_extensions is not None:
+            self.extra_extensions = extra_extensions
         if json is not None:
             self.json = json
         if key_data_base64 is not None:
@@ -246,6 +251,29 @@ class GetKubeExecCreds(object):
         """
 
         self._extended_key_usage = extended_key_usage
+
+    @property
+    def extra_extensions(self):
+        """Gets the extra_extensions of this GetKubeExecCreds.  # noqa: E501
+
+        A json string that defines the requested extra extensions for the certificate  # noqa: E501
+
+        :return: The extra_extensions of this GetKubeExecCreds.  # noqa: E501
+        :rtype: str
+        """
+        return self._extra_extensions
+
+    @extra_extensions.setter
+    def extra_extensions(self, extra_extensions):
+        """Sets the extra_extensions of this GetKubeExecCreds.
+
+        A json string that defines the requested extra extensions for the certificate  # noqa: E501
+
+        :param extra_extensions: The extra_extensions of this GetKubeExecCreds.  # noqa: E501
+        :type: str
+        """
+
+        self._extra_extensions = extra_extensions
 
     @property
     def json(self):

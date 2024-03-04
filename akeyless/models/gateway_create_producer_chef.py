@@ -41,6 +41,7 @@ class GatewayCreateProducerChef(object):
         'delete_protection': 'str',
         'json': 'bool',
         'name': 'str',
+        'password_length': 'str',
         'producer_encryption_key_name': 'str',
         'skip_ssl': 'bool',
         'tags': 'list[str]',
@@ -58,6 +59,7 @@ class GatewayCreateProducerChef(object):
         'delete_protection': 'delete_protection',
         'json': 'json',
         'name': 'name',
+        'password_length': 'password-length',
         'producer_encryption_key_name': 'producer-encryption-key-name',
         'skip_ssl': 'skip-ssl',
         'tags': 'tags',
@@ -67,7 +69,7 @@ class GatewayCreateProducerChef(object):
         'user_ttl': 'user-ttl'
     }
 
-    def __init__(self, chef_orgs=None, chef_server_key=None, chef_server_url=None, chef_server_username=None, delete_protection=None, json=False, name=None, producer_encryption_key_name=None, skip_ssl=True, tags=None, target_name=None, token=None, uid_token=None, user_ttl='60m', local_vars_configuration=None):  # noqa: E501
+    def __init__(self, chef_orgs=None, chef_server_key=None, chef_server_url=None, chef_server_username=None, delete_protection=None, json=False, name=None, password_length=None, producer_encryption_key_name=None, skip_ssl=True, tags=None, target_name=None, token=None, uid_token=None, user_ttl='60m', local_vars_configuration=None):  # noqa: E501
         """GatewayCreateProducerChef - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -80,6 +82,7 @@ class GatewayCreateProducerChef(object):
         self._delete_protection = None
         self._json = None
         self._name = None
+        self._password_length = None
         self._producer_encryption_key_name = None
         self._skip_ssl = None
         self._tags = None
@@ -102,6 +105,8 @@ class GatewayCreateProducerChef(object):
         if json is not None:
             self.json = json
         self.name = name
+        if password_length is not None:
+            self.password_length = password_length
         if producer_encryption_key_name is not None:
             self.producer_encryption_key_name = producer_encryption_key_name
         if skip_ssl is not None:
@@ -259,7 +264,7 @@ class GatewayCreateProducerChef(object):
     def name(self):
         """Gets the name of this GatewayCreateProducerChef.  # noqa: E501
 
-        Producer name  # noqa: E501
+        Dynamic secret name  # noqa: E501
 
         :return: The name of this GatewayCreateProducerChef.  # noqa: E501
         :rtype: str
@@ -270,7 +275,7 @@ class GatewayCreateProducerChef(object):
     def name(self, name):
         """Sets the name of this GatewayCreateProducerChef.
 
-        Producer name  # noqa: E501
+        Dynamic secret name  # noqa: E501
 
         :param name: The name of this GatewayCreateProducerChef.  # noqa: E501
         :type: str
@@ -279,6 +284,29 @@ class GatewayCreateProducerChef(object):
             raise ValueError("Invalid value for `name`, must not be `None`")  # noqa: E501
 
         self._name = name
+
+    @property
+    def password_length(self):
+        """Gets the password_length of this GatewayCreateProducerChef.  # noqa: E501
+
+        The length of the password to be generated  # noqa: E501
+
+        :return: The password_length of this GatewayCreateProducerChef.  # noqa: E501
+        :rtype: str
+        """
+        return self._password_length
+
+    @password_length.setter
+    def password_length(self, password_length):
+        """Sets the password_length of this GatewayCreateProducerChef.
+
+        The length of the password to be generated  # noqa: E501
+
+        :param password_length: The password_length of this GatewayCreateProducerChef.  # noqa: E501
+        :type: str
+        """
+
+        self._password_length = password_length
 
     @property
     def producer_encryption_key_name(self):

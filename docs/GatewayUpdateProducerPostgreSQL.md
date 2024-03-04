@@ -1,14 +1,15 @@
 # GatewayUpdateProducerPostgreSQL
 
-gatewayUpdateProducerPostgreSQL is a command that updates postgresql producer
+gatewayUpdateProducerPostgreSQL is a command that updates postgresql producer [Deprecated: Use dynamic-secret-update-postgresql command]
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **creation_statements** | **str** | PostgreSQL Creation statements | [optional] 
 **delete_protection** | **str** | Protection from accidental deletion of this item [true/false] | [optional] 
 **json** | **bool** | Set output format to JSON | [optional] [default to False]
-**name** | **str** | Producer name | 
-**new_name** | **str** | Producer name | [optional] 
+**name** | **str** | Dynamic secret name | 
+**new_name** | **str** | Dynamic secret name | [optional] 
+**password_length** | **str** | The length of the password to be generated | [optional] 
 **postgresql_db_name** | **str** | PostgreSQL DB Name | [optional] 
 **postgresql_host** | **str** | PostgreSQL Host | [optional] [default to '127.0.0.1']
 **postgresql_password** | **str** | PostgreSQL Password | [optional] 

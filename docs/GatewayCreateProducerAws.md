@@ -1,6 +1,6 @@
 # GatewayCreateProducerAws
 
-gatewayCreateProducerAws is a command that creates aws producer
+gatewayCreateProducerAws is a command that creates aws producer [Deprecated: Use dynamic-secret-create-aws command]
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
@@ -16,7 +16,7 @@ Name | Type | Description | Notes
 **delete_protection** | **str** | Protection from accidental deletion of this item [true/false] | [optional] 
 **enable_admin_rotation** | **bool** | Automatic admin credentials rotation | [optional] [default to False]
 **json** | **bool** | Set output format to JSON | [optional] [default to False]
-**name** | **str** | Producer name | 
+**name** | **str** | Dynamic secret name | 
 **producer_encryption_key_name** | **str** | Dynamic producer encryption key | [optional] 
 **region** | **str** | Region | [optional] [default to 'us-east-2']
 **secure_access_aws_account_id** | **str** | The AWS account id | [optional] 

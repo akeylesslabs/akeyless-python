@@ -38,6 +38,7 @@ class OAuth2AccessRules(object):
         'authorized_gw_cluster_name': 'str',
         'bound_claims': 'list[OAuth2CustomClaim]',
         'bound_clients_id': 'list[str]',
+        'certificate': 'str',
         'issuer': 'str',
         'jwks_json_data': 'str',
         'jwks_uri': 'str',
@@ -49,13 +50,14 @@ class OAuth2AccessRules(object):
         'authorized_gw_cluster_name': 'authorized_gw_cluster_name',
         'bound_claims': 'bound_claims',
         'bound_clients_id': 'bound_clients_id',
+        'certificate': 'certificate',
         'issuer': 'issuer',
         'jwks_json_data': 'jwks_json_data',
         'jwks_uri': 'jwks_uri',
         'unique_identifier': 'unique_identifier'
     }
 
-    def __init__(self, audience=None, authorized_gw_cluster_name=None, bound_claims=None, bound_clients_id=None, issuer=None, jwks_json_data=None, jwks_uri=None, unique_identifier=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, audience=None, authorized_gw_cluster_name=None, bound_claims=None, bound_clients_id=None, certificate=None, issuer=None, jwks_json_data=None, jwks_uri=None, unique_identifier=None, local_vars_configuration=None):  # noqa: E501
         """OAuth2AccessRules - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -65,6 +67,7 @@ class OAuth2AccessRules(object):
         self._authorized_gw_cluster_name = None
         self._bound_claims = None
         self._bound_clients_id = None
+        self._certificate = None
         self._issuer = None
         self._jwks_json_data = None
         self._jwks_uri = None
@@ -79,6 +82,8 @@ class OAuth2AccessRules(object):
             self.bound_claims = bound_claims
         if bound_clients_id is not None:
             self.bound_clients_id = bound_clients_id
+        if certificate is not None:
+            self.certificate = certificate
         if issuer is not None:
             self.issuer = issuer
         if jwks_json_data is not None:
@@ -179,6 +184,29 @@ class OAuth2AccessRules(object):
         """
 
         self._bound_clients_id = bound_clients_id
+
+    @property
+    def certificate(self):
+        """Gets the certificate of this OAuth2AccessRules.  # noqa: E501
+
+        Certificate to use when calling jwks_uri from the gateway. in PEM format  # noqa: E501
+
+        :return: The certificate of this OAuth2AccessRules.  # noqa: E501
+        :rtype: str
+        """
+        return self._certificate
+
+    @certificate.setter
+    def certificate(self, certificate):
+        """Sets the certificate of this OAuth2AccessRules.
+
+        Certificate to use when calling jwks_uri from the gateway. in PEM format  # noqa: E501
+
+        :param certificate: The certificate of this OAuth2AccessRules.  # noqa: E501
+        :type: str
+        """
+
+        self._certificate = certificate
 
     @property
     def issuer(self):

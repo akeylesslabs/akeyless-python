@@ -3,7 +3,6 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**comment** | **str** | Deprecated - use description | [optional] 
 **description** | **str** | Description of the object | [optional] 
 **host** | **str** | SSH host name | [optional] 
 **json** | **bool** | Set output format to JSON | [optional] [default to False]

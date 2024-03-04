@@ -46,6 +46,7 @@ class UpdateAuthMethodSAML(object):
         'jwt_ttl': 'int',
         'name': 'str',
         'new_name': 'str',
+        'product_type': 'list[str]',
         'subclaims_delimiters': 'list[str]',
         'token': 'str',
         'uid_token': 'str',
@@ -65,13 +66,14 @@ class UpdateAuthMethodSAML(object):
         'jwt_ttl': 'jwt-ttl',
         'name': 'name',
         'new_name': 'new-name',
+        'product_type': 'product-type',
         'subclaims_delimiters': 'subclaims-delimiters',
         'token': 'token',
         'uid_token': 'uid-token',
         'unique_identifier': 'unique-identifier'
     }
 
-    def __init__(self, access_expires=0, allowed_redirect_uri=None, bound_ips=None, description=None, force_sub_claims=None, gw_bound_ips=None, idp_metadata_url=None, idp_metadata_xml_data=None, json=False, jwt_ttl=0, name=None, new_name=None, subclaims_delimiters=None, token=None, uid_token=None, unique_identifier=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, access_expires=0, allowed_redirect_uri=None, bound_ips=None, description=None, force_sub_claims=None, gw_bound_ips=None, idp_metadata_url=None, idp_metadata_xml_data=None, json=False, jwt_ttl=0, name=None, new_name=None, product_type=None, subclaims_delimiters=None, token=None, uid_token=None, unique_identifier=None, local_vars_configuration=None):  # noqa: E501
         """UpdateAuthMethodSAML - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -89,6 +91,7 @@ class UpdateAuthMethodSAML(object):
         self._jwt_ttl = None
         self._name = None
         self._new_name = None
+        self._product_type = None
         self._subclaims_delimiters = None
         self._token = None
         self._uid_token = None
@@ -118,6 +121,8 @@ class UpdateAuthMethodSAML(object):
         self.name = name
         if new_name is not None:
             self.new_name = new_name
+        if product_type is not None:
+            self.product_type = product_type
         if subclaims_delimiters is not None:
             self.subclaims_delimiters = subclaims_delimiters
         if token is not None:
@@ -403,6 +408,29 @@ class UpdateAuthMethodSAML(object):
         """
 
         self._new_name = new_name
+
+    @property
+    def product_type(self):
+        """Gets the product_type of this UpdateAuthMethodSAML.  # noqa: E501
+
+        Choose the relevant product type for the auth method [sm, sra, pm, dp, ca]  # noqa: E501
+
+        :return: The product_type of this UpdateAuthMethodSAML.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._product_type
+
+    @product_type.setter
+    def product_type(self, product_type):
+        """Sets the product_type of this UpdateAuthMethodSAML.
+
+        Choose the relevant product type for the auth method [sm, sra, pm, dp, ca]  # noqa: E501
+
+        :param product_type: The product_type of this UpdateAuthMethodSAML.  # noqa: E501
+        :type: list[str]
+        """
+
+        self._product_type = product_type
 
     @property
     def subclaims_delimiters(self):
