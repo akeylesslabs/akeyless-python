@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **description** | **str** | Description of the object | [optional] 
 **json** | **bool** | Set output format to JSON | [optional] [default to False]
 **key** | **str** | The name of a key that used to encrypt the target secret value (if empty, the account default protectionKey key will be used) | [optional] 
+**max_versions** | **str** | Set the maximum number of versions, limited by the account settings defaults. | [optional] 
 **mtls_cert_data_base64** | **str** | Mutual TLS Certificate contents of the GlobalSign Atlas account encoded in base64, either mtls-cert-file-path or mtls-cert-data-base64 must be supplied | [optional] 
 **mtls_key_data_base64** | **str** | Mutual TLS Key contents of the GlobalSign Atlas account encoded in base64, either mtls-key-file-path or mtls-data-base64 must be supplied | [optional] 
 **name** | **str** | Target name | 

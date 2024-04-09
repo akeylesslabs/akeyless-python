@@ -16,6 +16,7 @@ Name | Type | Description | Notes
 **key** | **str** | The name of a key that used to encrypt the EventForwarder secret value (if empty, the account default protectionKey key will be used) | [optional] 
 **name** | **str** | EventForwarder name | 
 **new_name** | **str** | New EventForwarder name | [optional] 
+**override_url** | **str** | Override Akeyless default URL with your Gateway url (port 18888) | [optional] 
 **targets_event_source_locations** | **list[str]** | Targets Event sources | [optional] 
 **token** | **str** | Authentication token (see &#x60;/auth&#x60; and &#x60;/configure&#x60;) | [optional] 
 **uid_token** | **str** | The universal identity token, Required only for universal_identity authentication | [optional] 

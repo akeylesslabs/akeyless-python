@@ -47,6 +47,7 @@ class GatewayCreateProducerAws(object):
         'enable_admin_rotation': 'bool',
         'json': 'bool',
         'name': 'str',
+        'password_length': 'str',
         'producer_encryption_key_name': 'str',
         'region': 'str',
         'secure_access_aws_account_id': 'str',
@@ -77,6 +78,7 @@ class GatewayCreateProducerAws(object):
         'enable_admin_rotation': 'enable-admin-rotation',
         'json': 'json',
         'name': 'name',
+        'password_length': 'password-length',
         'producer_encryption_key_name': 'producer-encryption-key-name',
         'region': 'region',
         'secure_access_aws_account_id': 'secure-access-aws-account-id',
@@ -93,7 +95,7 @@ class GatewayCreateProducerAws(object):
         'user_ttl': 'user-ttl'
     }
 
-    def __init__(self, access_mode=None, admin_rotation_interval_days=0, aws_access_key_id=None, aws_access_secret_key=None, aws_role_arns=None, aws_user_console_access=False, aws_user_groups=None, aws_user_policies=None, aws_user_programmatic_access=True, delete_protection=None, enable_admin_rotation=False, json=False, name=None, producer_encryption_key_name=None, region='us-east-2', secure_access_aws_account_id=None, secure_access_aws_native_cli=None, secure_access_bastion_issuer=None, secure_access_enable=None, secure_access_web=True, secure_access_web_browsing=False, secure_access_web_proxy=False, tags=None, target_name=None, token=None, uid_token=None, user_ttl='60m', local_vars_configuration=None):  # noqa: E501
+    def __init__(self, access_mode=None, admin_rotation_interval_days=0, aws_access_key_id=None, aws_access_secret_key=None, aws_role_arns=None, aws_user_console_access=False, aws_user_groups=None, aws_user_policies=None, aws_user_programmatic_access=True, delete_protection=None, enable_admin_rotation=False, json=False, name=None, password_length=None, producer_encryption_key_name=None, region='us-east-2', secure_access_aws_account_id=None, secure_access_aws_native_cli=None, secure_access_bastion_issuer=None, secure_access_enable=None, secure_access_web=True, secure_access_web_browsing=False, secure_access_web_proxy=False, tags=None, target_name=None, token=None, uid_token=None, user_ttl='60m', local_vars_configuration=None):  # noqa: E501
         """GatewayCreateProducerAws - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -112,6 +114,7 @@ class GatewayCreateProducerAws(object):
         self._enable_admin_rotation = None
         self._json = None
         self._name = None
+        self._password_length = None
         self._producer_encryption_key_name = None
         self._region = None
         self._secure_access_aws_account_id = None
@@ -153,6 +156,8 @@ class GatewayCreateProducerAws(object):
         if json is not None:
             self.json = json
         self.name = name
+        if password_length is not None:
+            self.password_length = password_length
         if producer_encryption_key_name is not None:
             self.producer_encryption_key_name = producer_encryption_key_name
         if region is not None:
@@ -480,6 +485,29 @@ class GatewayCreateProducerAws(object):
             raise ValueError("Invalid value for `name`, must not be `None`")  # noqa: E501
 
         self._name = name
+
+    @property
+    def password_length(self):
+        """Gets the password_length of this GatewayCreateProducerAws.  # noqa: E501
+
+        The length of the password to be generated  # noqa: E501
+
+        :return: The password_length of this GatewayCreateProducerAws.  # noqa: E501
+        :rtype: str
+        """
+        return self._password_length
+
+    @password_length.setter
+    def password_length(self, password_length):
+        """Sets the password_length of this GatewayCreateProducerAws.
+
+        The length of the password to be generated  # noqa: E501
+
+        :param password_length: The password_length of this GatewayCreateProducerAws.  # noqa: E501
+        :type: str
+        """
+
+        self._password_length = password_length
 
     @property
     def producer_encryption_key_name(self):

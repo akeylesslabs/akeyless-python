@@ -39,6 +39,7 @@ class CreateSSHTarget(object):
         'host': 'str',
         'json': 'bool',
         'key': 'str',
+        'max_versions': 'str',
         'name': 'str',
         'port': 'str',
         'private_key': 'str',
@@ -55,6 +56,7 @@ class CreateSSHTarget(object):
         'host': 'host',
         'json': 'json',
         'key': 'key',
+        'max_versions': 'max-versions',
         'name': 'name',
         'port': 'port',
         'private_key': 'private-key',
@@ -65,7 +67,7 @@ class CreateSSHTarget(object):
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, comment=None, description=None, host=None, json=False, key=None, name=None, port='22', private_key=None, private_key_password=None, ssh_password=None, ssh_username=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, comment=None, description=None, host=None, json=False, key=None, max_versions=None, name=None, port='22', private_key=None, private_key_password=None, ssh_password=None, ssh_username=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """CreateSSHTarget - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -76,6 +78,7 @@ class CreateSSHTarget(object):
         self._host = None
         self._json = None
         self._key = None
+        self._max_versions = None
         self._name = None
         self._port = None
         self._private_key = None
@@ -96,6 +99,8 @@ class CreateSSHTarget(object):
             self.json = json
         if key is not None:
             self.key = key
+        if max_versions is not None:
+            self.max_versions = max_versions
         self.name = name
         if port is not None:
             self.port = port
@@ -226,6 +231,29 @@ class CreateSSHTarget(object):
         """
 
         self._key = key
+
+    @property
+    def max_versions(self):
+        """Gets the max_versions of this CreateSSHTarget.  # noqa: E501
+
+        Set the maximum number of versions, limited by the account settings defaults.  # noqa: E501
+
+        :return: The max_versions of this CreateSSHTarget.  # noqa: E501
+        :rtype: str
+        """
+        return self._max_versions
+
+    @max_versions.setter
+    def max_versions(self, max_versions):
+        """Sets the max_versions of this CreateSSHTarget.
+
+        Set the maximum number of versions, limited by the account settings defaults.  # noqa: E501
+
+        :param max_versions: The max_versions of this CreateSSHTarget.  # noqa: E501
+        :type: str
+        """
+
+        self._max_versions = max_versions
 
     @property
     def name(self):

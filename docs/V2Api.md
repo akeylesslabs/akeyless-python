@@ -154,10 +154,14 @@ Method | HTTP request | Description
 [**esm_update**](V2Api.md#esm_update) | **POST** /esm-update | 
 [**event_action**](V2Api.md#event_action) | **POST** /event-action | 
 [**event_forwarder_create_email**](V2Api.md#event_forwarder_create_email) | **POST** /event-forwarder-create-email | 
+[**event_forwarder_create_service_now**](V2Api.md#event_forwarder_create_service_now) | **POST** /event-forwarder-create-servicenow | 
+[**event_forwarder_create_slack**](V2Api.md#event_forwarder_create_slack) | **POST** /event-forwarder-create-slack | 
 [**event_forwarder_create_webhook**](V2Api.md#event_forwarder_create_webhook) | **POST** /event-forwarder-create-webhook | 
 [**event_forwarder_delete**](V2Api.md#event_forwarder_delete) | **POST** /event-forwarder-delete | 
 [**event_forwarder_get**](V2Api.md#event_forwarder_get) | **POST** /event-forwarder-get | 
 [**event_forwarder_update_email**](V2Api.md#event_forwarder_update_email) | **POST** /event-forwarder-update-email | 
+[**event_forwarder_update_service_now**](V2Api.md#event_forwarder_update_service_now) | **POST** /event-forwarder-update-servicenow | 
+[**event_forwarder_update_slack**](V2Api.md#event_forwarder_update_slack) | **POST** /event-forwarder-update-slack | 
 [**event_forwarder_update_webhook**](V2Api.md#event_forwarder_update_webhook) | **POST** /event-forwarder-update-webhook | 
 [**export_classic_key**](V2Api.md#export_classic_key) | **POST** /export-classic-key | 
 [**gateway_create_allowed_access**](V2Api.md#gateway_create_allowed_access) | **POST** /gateway-create-allowed-access | 
@@ -246,6 +250,7 @@ Method | HTTP request | Description
 [**generate_csr**](V2Api.md#generate_csr) | **POST** /generate-csr | 
 [**get_account_logo**](V2Api.md#get_account_logo) | **POST** /get-account-logo | 
 [**get_account_settings**](V2Api.md#get_account_settings) | **POST** /get-account-settings | 
+[**get_analytics_data**](V2Api.md#get_analytics_data) | **POST** /get-analytics-data | 
 [**get_auth_method**](V2Api.md#get_auth_method) | **POST** /get-auth-method | 
 [**get_certificate_value**](V2Api.md#get_certificate_value) | **POST** /get-certificate-value | 
 [**get_dynamic_secret_value**](V2Api.md#get_dynamic_secret_value) | **POST** /get-dynamic-secret-value | 
@@ -292,6 +297,7 @@ Method | HTTP request | Description
 [**renew_certificate**](V2Api.md#renew_certificate) | **POST** /renew-certificate | 
 [**request_access**](V2Api.md#request_access) | **POST** /request-access | 
 [**reverse_rbac**](V2Api.md#reverse_rbac) | **POST** /reverse-rbac | 
+[**revoke_certificate**](V2Api.md#revoke_certificate) | **POST** /revoke-certificate | 
 [**revoke_creds**](V2Api.md#revoke_creds) | **POST** /revoke-creds | 
 [**rollback_secret**](V2Api.md#rollback_secret) | **POST** /rollback-secret | 
 [**rotate_key**](V2Api.md#rotate_key) | **POST** /rotate-key | 
@@ -9421,6 +9427,126 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **event_forwarder_create_service_now**
+> EventForwarderCreateUpdateOutput event_forwarder_create_service_now(body)
+
+
+
+### Example
+
+```python
+from __future__ import print_function
+import time
+import akeyless
+from akeyless.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.akeyless.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = akeyless.Configuration(
+    host = "https://api.akeyless.io"
+)
+
+
+# Enter a context with an instance of the API client
+with akeyless.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = akeyless.V2Api(api_client)
+    body = akeyless.EventForwarderCreateServiceNow() # EventForwarderCreateServiceNow | 
+
+    try:
+        api_response = api_instance.event_forwarder_create_service_now(body)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling V2Api->event_forwarder_create_service_now: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**EventForwarderCreateServiceNow**](EventForwarderCreateServiceNow.md)|  | 
+
+### Return type
+
+[**EventForwarderCreateUpdateOutput**](EventForwarderCreateUpdateOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**201** | eventForwarderCreateServiceNowResponse wraps response body. |  -  |
+**0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **event_forwarder_create_slack**
+> EventForwarderCreateUpdateOutput event_forwarder_create_slack(body)
+
+
+
+### Example
+
+```python
+from __future__ import print_function
+import time
+import akeyless
+from akeyless.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.akeyless.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = akeyless.Configuration(
+    host = "https://api.akeyless.io"
+)
+
+
+# Enter a context with an instance of the API client
+with akeyless.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = akeyless.V2Api(api_client)
+    body = akeyless.EventForwarderCreateSlack() # EventForwarderCreateSlack | 
+
+    try:
+        api_response = api_instance.event_forwarder_create_slack(body)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling V2Api->event_forwarder_create_slack: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**EventForwarderCreateSlack**](EventForwarderCreateSlack.md)|  | 
+
+### Return type
+
+[**EventForwarderCreateUpdateOutput**](EventForwarderCreateUpdateOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**201** | eventForwarderCreateSlackResponse wraps response body. |  -  |
+**0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **event_forwarder_create_webhook**
 > EventForwarderCreateUpdateOutput event_forwarder_create_webhook(body)
 
@@ -9657,6 +9783,126 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | eventForwarderUpdateEmailResponse wraps response body. |  -  |
+**0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **event_forwarder_update_service_now**
+> EventForwarderCreateUpdateOutput event_forwarder_update_service_now(body)
+
+
+
+### Example
+
+```python
+from __future__ import print_function
+import time
+import akeyless
+from akeyless.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.akeyless.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = akeyless.Configuration(
+    host = "https://api.akeyless.io"
+)
+
+
+# Enter a context with an instance of the API client
+with akeyless.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = akeyless.V2Api(api_client)
+    body = akeyless.EventForwarderUpdateServiceNow() # EventForwarderUpdateServiceNow | 
+
+    try:
+        api_response = api_instance.event_forwarder_update_service_now(body)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling V2Api->event_forwarder_update_service_now: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**EventForwarderUpdateServiceNow**](EventForwarderUpdateServiceNow.md)|  | 
+
+### Return type
+
+[**EventForwarderCreateUpdateOutput**](EventForwarderCreateUpdateOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**201** | eventForwarderUpdateServiceNowResponse wraps response body. |  -  |
+**0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **event_forwarder_update_slack**
+> EventForwarderCreateUpdateOutput event_forwarder_update_slack(body)
+
+
+
+### Example
+
+```python
+from __future__ import print_function
+import time
+import akeyless
+from akeyless.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.akeyless.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = akeyless.Configuration(
+    host = "https://api.akeyless.io"
+)
+
+
+# Enter a context with an instance of the API client
+with akeyless.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = akeyless.V2Api(api_client)
+    body = akeyless.EventForwarderUpdateSlack() # EventForwarderUpdateSlack | 
+
+    try:
+        api_response = api_instance.event_forwarder_update_slack(body)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling V2Api->event_forwarder_update_slack: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**EventForwarderUpdateSlack**](EventForwarderUpdateSlack.md)|  | 
+
+### Return type
+
+[**EventForwarderCreateUpdateOutput**](EventForwarderCreateUpdateOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**201** | eventForwarderUpdateSlackResponse wraps response body. |  -  |
 **0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -14935,6 +15181,66 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **get_analytics_data**
+> AllAnalyticsData get_analytics_data(body)
+
+
+
+### Example
+
+```python
+from __future__ import print_function
+import time
+import akeyless
+from akeyless.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.akeyless.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = akeyless.Configuration(
+    host = "https://api.akeyless.io"
+)
+
+
+# Enter a context with an instance of the API client
+with akeyless.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = akeyless.V2Api(api_client)
+    body = akeyless.GetAnalyticsData() # GetAnalyticsData | 
+
+    try:
+        api_response = api_instance.get_analytics_data(body)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling V2Api->get_analytics_data: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**GetAnalyticsData**](GetAnalyticsData.md)|  | 
+
+### Return type
+
+[**AllAnalyticsData**](AllAnalyticsData.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | getAnalyticsDataResponse wraps response body. |  -  |
+**0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **get_auth_method**
 > AuthMethod get_auth_method(body)
 
@@ -17690,6 +17996,66 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | reverseRBACResponse wraps response body. |  -  |
+**0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **revoke_certificate**
+> object revoke_certificate(body)
+
+
+
+### Example
+
+```python
+from __future__ import print_function
+import time
+import akeyless
+from akeyless.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.akeyless.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = akeyless.Configuration(
+    host = "https://api.akeyless.io"
+)
+
+
+# Enter a context with an instance of the API client
+with akeyless.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = akeyless.V2Api(api_client)
+    body = akeyless.RevokeCertificate() # RevokeCertificate | 
+
+    try:
+        api_response = api_instance.revoke_certificate(body)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling V2Api->revoke_certificate: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**RevokeCertificate**](RevokeCertificate.md)|  | 
+
+### Return type
+
+**object**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | RevokeCertificateResponse wraps response body. |  -  |
 **0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

@@ -36,6 +36,7 @@ class CacheConfigPart(object):
     openapi_types = {
         'cache_enable': 'bool',
         'cache_ttl': 'str',
+        'new_proactive_cache_enable': 'bool',
         'proactive_cache_dump_interval': 'str',
         'proactive_cache_enable': 'bool',
         'proactive_cache_minimum_fetching_time': 'str'
@@ -44,12 +45,13 @@ class CacheConfigPart(object):
     attribute_map = {
         'cache_enable': 'cache_enable',
         'cache_ttl': 'cache_ttl',
+        'new_proactive_cache_enable': 'new_proactive_cache_enable',
         'proactive_cache_dump_interval': 'proactive_cache_dump_interval',
         'proactive_cache_enable': 'proactive_cache_enable',
         'proactive_cache_minimum_fetching_time': 'proactive_cache_minimum_fetching_time'
     }
 
-    def __init__(self, cache_enable=None, cache_ttl=None, proactive_cache_dump_interval=None, proactive_cache_enable=None, proactive_cache_minimum_fetching_time=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, cache_enable=None, cache_ttl=None, new_proactive_cache_enable=None, proactive_cache_dump_interval=None, proactive_cache_enable=None, proactive_cache_minimum_fetching_time=None, local_vars_configuration=None):  # noqa: E501
         """CacheConfigPart - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -57,6 +59,7 @@ class CacheConfigPart(object):
 
         self._cache_enable = None
         self._cache_ttl = None
+        self._new_proactive_cache_enable = None
         self._proactive_cache_dump_interval = None
         self._proactive_cache_enable = None
         self._proactive_cache_minimum_fetching_time = None
@@ -66,6 +69,8 @@ class CacheConfigPart(object):
             self.cache_enable = cache_enable
         if cache_ttl is not None:
             self.cache_ttl = cache_ttl
+        if new_proactive_cache_enable is not None:
+            self.new_proactive_cache_enable = new_proactive_cache_enable
         if proactive_cache_dump_interval is not None:
             self.proactive_cache_dump_interval = proactive_cache_dump_interval
         if proactive_cache_enable is not None:
@@ -114,6 +119,27 @@ class CacheConfigPart(object):
         """
 
         self._cache_ttl = cache_ttl
+
+    @property
+    def new_proactive_cache_enable(self):
+        """Gets the new_proactive_cache_enable of this CacheConfigPart.  # noqa: E501
+
+
+        :return: The new_proactive_cache_enable of this CacheConfigPart.  # noqa: E501
+        :rtype: bool
+        """
+        return self._new_proactive_cache_enable
+
+    @new_proactive_cache_enable.setter
+    def new_proactive_cache_enable(self, new_proactive_cache_enable):
+        """Sets the new_proactive_cache_enable of this CacheConfigPart.
+
+
+        :param new_proactive_cache_enable: The new_proactive_cache_enable of this CacheConfigPart.  # noqa: E501
+        :type: bool
+        """
+
+        self._new_proactive_cache_enable = new_proactive_cache_enable
 
     @property
     def proactive_cache_dump_interval(self):

@@ -1,5 +1,6 @@
 # UpdateEventForwarder
 
+updateEventForwarder is a command that updates an event forwarder [Deprecated - please use event-forwarder-update-* command]
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

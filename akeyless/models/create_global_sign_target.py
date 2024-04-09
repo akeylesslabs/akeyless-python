@@ -42,6 +42,7 @@ class CreateGlobalSignTarget(object):
         'description': 'str',
         'json': 'bool',
         'key': 'str',
+        'max_versions': 'str',
         'name': 'str',
         'password': 'str',
         'profile_id': 'str',
@@ -60,6 +61,7 @@ class CreateGlobalSignTarget(object):
         'description': 'description',
         'json': 'json',
         'key': 'key',
+        'max_versions': 'max-versions',
         'name': 'name',
         'password': 'password',
         'profile_id': 'profile-id',
@@ -69,7 +71,7 @@ class CreateGlobalSignTarget(object):
         'username': 'username'
     }
 
-    def __init__(self, comment=None, contact_email=None, contact_first_name=None, contact_last_name=None, contact_phone=None, description=None, json=False, key=None, name=None, password=None, profile_id=None, timeout='5m', token=None, uid_token=None, username=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, comment=None, contact_email=None, contact_first_name=None, contact_last_name=None, contact_phone=None, description=None, json=False, key=None, max_versions=None, name=None, password=None, profile_id=None, timeout='5m', token=None, uid_token=None, username=None, local_vars_configuration=None):  # noqa: E501
         """CreateGlobalSignTarget - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -83,6 +85,7 @@ class CreateGlobalSignTarget(object):
         self._description = None
         self._json = None
         self._key = None
+        self._max_versions = None
         self._name = None
         self._password = None
         self._profile_id = None
@@ -104,6 +107,8 @@ class CreateGlobalSignTarget(object):
             self.json = json
         if key is not None:
             self.key = key
+        if max_versions is not None:
+            self.max_versions = max_versions
         self.name = name
         self.password = password
         self.profile_id = profile_id
@@ -306,6 +311,29 @@ class CreateGlobalSignTarget(object):
         """
 
         self._key = key
+
+    @property
+    def max_versions(self):
+        """Gets the max_versions of this CreateGlobalSignTarget.  # noqa: E501
+
+        Set the maximum number of versions, limited by the account settings defaults.  # noqa: E501
+
+        :return: The max_versions of this CreateGlobalSignTarget.  # noqa: E501
+        :rtype: str
+        """
+        return self._max_versions
+
+    @max_versions.setter
+    def max_versions(self, max_versions):
+        """Sets the max_versions of this CreateGlobalSignTarget.
+
+        Set the maximum number of versions, limited by the account settings defaults.  # noqa: E501
+
+        :param max_versions: The max_versions of this CreateGlobalSignTarget.  # noqa: E501
+        :type: str
+        """
+
+        self._max_versions = max_versions
 
     @property
     def name(self):

@@ -44,6 +44,7 @@ class UpdateGodaddyTarget(object):
         'json': 'bool',
         'keep_prev_version': 'str',
         'key': 'str',
+        'max_versions': 'str',
         'name': 'str',
         'new_name': 'str',
         'secret': 'str',
@@ -64,6 +65,7 @@ class UpdateGodaddyTarget(object):
         'json': 'json',
         'keep_prev_version': 'keep-prev-version',
         'key': 'key',
+        'max_versions': 'max-versions',
         'name': 'name',
         'new_name': 'new-name',
         'secret': 'secret',
@@ -73,7 +75,7 @@ class UpdateGodaddyTarget(object):
         'update_version': 'update-version'
     }
 
-    def __init__(self, api_key=None, comment=None, description=None, imap_fqdn=None, imap_password=None, imap_port='993', imap_username=None, json=False, keep_prev_version=None, key=None, name=None, new_name=None, secret=None, timeout='5m', token=None, uid_token=None, update_version=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, api_key=None, comment=None, description=None, imap_fqdn=None, imap_password=None, imap_port='993', imap_username=None, json=False, keep_prev_version=None, key=None, max_versions=None, name=None, new_name=None, secret=None, timeout='5m', token=None, uid_token=None, update_version=None, local_vars_configuration=None):  # noqa: E501
         """UpdateGodaddyTarget - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -89,6 +91,7 @@ class UpdateGodaddyTarget(object):
         self._json = None
         self._keep_prev_version = None
         self._key = None
+        self._max_versions = None
         self._name = None
         self._new_name = None
         self._secret = None
@@ -114,6 +117,8 @@ class UpdateGodaddyTarget(object):
             self.keep_prev_version = keep_prev_version
         if key is not None:
             self.key = key
+        if max_versions is not None:
+            self.max_versions = max_versions
         self.name = name
         if new_name is not None:
             self.new_name = new_name
@@ -364,6 +369,29 @@ class UpdateGodaddyTarget(object):
         """
 
         self._key = key
+
+    @property
+    def max_versions(self):
+        """Gets the max_versions of this UpdateGodaddyTarget.  # noqa: E501
+
+        Set the maximum number of versions, limited by the account settings defaults.  # noqa: E501
+
+        :return: The max_versions of this UpdateGodaddyTarget.  # noqa: E501
+        :rtype: str
+        """
+        return self._max_versions
+
+    @max_versions.setter
+    def max_versions(self, max_versions):
+        """Sets the max_versions of this UpdateGodaddyTarget.
+
+        Set the maximum number of versions, limited by the account settings defaults.  # noqa: E501
+
+        :param max_versions: The max_versions of this UpdateGodaddyTarget.  # noqa: E501
+        :type: str
+        """
+
+        self._max_versions = max_versions
 
     @property
     def name(self):

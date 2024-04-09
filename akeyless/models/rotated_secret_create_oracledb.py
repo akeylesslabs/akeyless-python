@@ -40,6 +40,7 @@ class RotatedSecretCreateOracledb(object):
         'description': 'str',
         'json': 'bool',
         'key': 'str',
+        'max_versions': 'str',
         'name': 'str',
         'password_length': 'str',
         'rotate_after_disconnect': 'str',
@@ -65,6 +66,7 @@ class RotatedSecretCreateOracledb(object):
         'description': 'description',
         'json': 'json',
         'key': 'key',
+        'max_versions': 'max-versions',
         'name': 'name',
         'password_length': 'password-length',
         'rotate_after_disconnect': 'rotate-after-disconnect',
@@ -83,7 +85,7 @@ class RotatedSecretCreateOracledb(object):
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, authentication_credentials='use-user-creds', auto_rotate=None, delete_protection=None, description=None, json=False, key=None, name=None, password_length=None, rotate_after_disconnect='false', rotated_password=None, rotated_username=None, rotation_hour=None, rotation_interval=None, rotator_type=None, secure_access_db_name=None, secure_access_enable=None, secure_access_host=None, secure_access_web=False, tags=None, target_name=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, authentication_credentials='use-user-creds', auto_rotate=None, delete_protection=None, description=None, json=False, key=None, max_versions=None, name=None, password_length=None, rotate_after_disconnect='false', rotated_password=None, rotated_username=None, rotation_hour=None, rotation_interval=None, rotator_type=None, secure_access_db_name=None, secure_access_enable=None, secure_access_host=None, secure_access_web=False, tags=None, target_name=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """RotatedSecretCreateOracledb - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -95,6 +97,7 @@ class RotatedSecretCreateOracledb(object):
         self._description = None
         self._json = None
         self._key = None
+        self._max_versions = None
         self._name = None
         self._password_length = None
         self._rotate_after_disconnect = None
@@ -125,6 +128,8 @@ class RotatedSecretCreateOracledb(object):
             self.json = json
         if key is not None:
             self.key = key
+        if max_versions is not None:
+            self.max_versions = max_versions
         self.name = name
         if password_length is not None:
             self.password_length = password_length
@@ -292,6 +297,29 @@ class RotatedSecretCreateOracledb(object):
         """
 
         self._key = key
+
+    @property
+    def max_versions(self):
+        """Gets the max_versions of this RotatedSecretCreateOracledb.  # noqa: E501
+
+        Set the maximum number of versions, limited by the account settings defaults.  # noqa: E501
+
+        :return: The max_versions of this RotatedSecretCreateOracledb.  # noqa: E501
+        :rtype: str
+        """
+        return self._max_versions
+
+    @max_versions.setter
+    def max_versions(self, max_versions):
+        """Sets the max_versions of this RotatedSecretCreateOracledb.
+
+        Set the maximum number of versions, limited by the account settings defaults.  # noqa: E501
+
+        :param max_versions: The max_versions of this RotatedSecretCreateOracledb.  # noqa: E501
+        :type: str
+        """
+
+        self._max_versions = max_versions
 
     @property
     def name(self):

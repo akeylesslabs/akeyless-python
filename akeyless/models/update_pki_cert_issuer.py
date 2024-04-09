@@ -44,6 +44,8 @@ class UpdatePKICertIssuer(object):
         'client_flag': 'bool',
         'code_signing_flag': 'bool',
         'country': 'str',
+        'create_private_crl': 'bool',
+        'create_public_crl': 'bool',
         'delete_protection': 'str',
         'description': 'str',
         'destination_path': 'str',
@@ -83,6 +85,8 @@ class UpdatePKICertIssuer(object):
         'client_flag': 'client-flag',
         'code_signing_flag': 'code-signing-flag',
         'country': 'country',
+        'create_private_crl': 'create-private-crl',
+        'create_public_crl': 'create-public-crl',
         'delete_protection': 'delete_protection',
         'description': 'description',
         'destination_path': 'destination-path',
@@ -111,7 +115,7 @@ class UpdatePKICertIssuer(object):
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, add_tag=None, allow_any_name=None, allow_copy_ext_from_csr=None, allow_subdomains=None, allowed_domains=None, allowed_extra_extensions=None, allowed_uri_sans=None, client_flag=None, code_signing_flag=None, country=None, delete_protection=None, description=None, destination_path=None, expiration_event_in=None, gw_cluster_url=None, is_ca=None, json=False, key_usage='DigitalSignature,KeyAgreement,KeyEncipherment', locality=None, metadata=None, name=None, new_name=None, not_enforce_hostnames=None, not_require_cn=None, organizational_units=None, organizations=None, postal_code=None, protect_certificates=None, province=None, rm_tag=None, server_flag=None, signer_key_name='dummy_signer_key', street_address=None, token=None, ttl=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, add_tag=None, allow_any_name=None, allow_copy_ext_from_csr=None, allow_subdomains=None, allowed_domains=None, allowed_extra_extensions=None, allowed_uri_sans=None, client_flag=None, code_signing_flag=None, country=None, create_private_crl=None, create_public_crl=None, delete_protection=None, description=None, destination_path=None, expiration_event_in=None, gw_cluster_url=None, is_ca=None, json=False, key_usage='DigitalSignature,KeyAgreement,KeyEncipherment', locality=None, metadata=None, name=None, new_name=None, not_enforce_hostnames=None, not_require_cn=None, organizational_units=None, organizations=None, postal_code=None, protect_certificates=None, province=None, rm_tag=None, server_flag=None, signer_key_name='dummy_signer_key', street_address=None, token=None, ttl=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """UpdatePKICertIssuer - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -127,6 +131,8 @@ class UpdatePKICertIssuer(object):
         self._client_flag = None
         self._code_signing_flag = None
         self._country = None
+        self._create_private_crl = None
+        self._create_public_crl = None
         self._delete_protection = None
         self._description = None
         self._destination_path = None
@@ -175,6 +181,10 @@ class UpdatePKICertIssuer(object):
             self.code_signing_flag = code_signing_flag
         if country is not None:
             self.country = country
+        if create_private_crl is not None:
+            self.create_private_crl = create_private_crl
+        if create_public_crl is not None:
+            self.create_public_crl = create_public_crl
         if delete_protection is not None:
             self.delete_protection = delete_protection
         if description is not None:
@@ -456,6 +466,52 @@ class UpdatePKICertIssuer(object):
         self._country = country
 
     @property
+    def create_private_crl(self):
+        """Gets the create_private_crl of this UpdatePKICertIssuer.  # noqa: E501
+
+        Set this to allow the issuer will expose a CRL endpoint in the Gateway  # noqa: E501
+
+        :return: The create_private_crl of this UpdatePKICertIssuer.  # noqa: E501
+        :rtype: bool
+        """
+        return self._create_private_crl
+
+    @create_private_crl.setter
+    def create_private_crl(self, create_private_crl):
+        """Sets the create_private_crl of this UpdatePKICertIssuer.
+
+        Set this to allow the issuer will expose a CRL endpoint in the Gateway  # noqa: E501
+
+        :param create_private_crl: The create_private_crl of this UpdatePKICertIssuer.  # noqa: E501
+        :type: bool
+        """
+
+        self._create_private_crl = create_private_crl
+
+    @property
+    def create_public_crl(self):
+        """Gets the create_public_crl of this UpdatePKICertIssuer.  # noqa: E501
+
+        Set this to allow the cert issuer will expose a public CRL endpoint  # noqa: E501
+
+        :return: The create_public_crl of this UpdatePKICertIssuer.  # noqa: E501
+        :rtype: bool
+        """
+        return self._create_public_crl
+
+    @create_public_crl.setter
+    def create_public_crl(self, create_public_crl):
+        """Sets the create_public_crl of this UpdatePKICertIssuer.
+
+        Set this to allow the cert issuer will expose a public CRL endpoint  # noqa: E501
+
+        :param create_public_crl: The create_public_crl of this UpdatePKICertIssuer.  # noqa: E501
+        :type: bool
+        """
+
+        self._create_public_crl = create_public_crl
+
+    @property
     def delete_protection(self):
         """Gets the delete_protection of this UpdatePKICertIssuer.  # noqa: E501
 
@@ -551,7 +607,7 @@ class UpdatePKICertIssuer(object):
     def gw_cluster_url(self):
         """Gets the gw_cluster_url of this UpdatePKICertIssuer.  # noqa: E501
 
-        The GW cluster URL to issue the certificate from, required in Public CA mode  # noqa: E501
+        The GW cluster URL to issue the certificate from, required in Public CA mode or to allow CRLs on private CA  # noqa: E501
 
         :return: The gw_cluster_url of this UpdatePKICertIssuer.  # noqa: E501
         :rtype: str
@@ -562,7 +618,7 @@ class UpdatePKICertIssuer(object):
     def gw_cluster_url(self, gw_cluster_url):
         """Sets the gw_cluster_url of this UpdatePKICertIssuer.
 
-        The GW cluster URL to issue the certificate from, required in Public CA mode  # noqa: E501
+        The GW cluster URL to issue the certificate from, required in Public CA mode or to allow CRLs on private CA  # noqa: E501
 
         :param gw_cluster_url: The gw_cluster_url of this UpdatePKICertIssuer.  # noqa: E501
         :type: str

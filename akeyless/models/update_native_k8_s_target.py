@@ -45,6 +45,7 @@ class UpdateNativeK8STarget(object):
         'k8s_cluster_token': 'str',
         'keep_prev_version': 'str',
         'key': 'str',
+        'max_versions': 'str',
         'name': 'str',
         'new_name': 'str',
         'token': 'str',
@@ -65,6 +66,7 @@ class UpdateNativeK8STarget(object):
         'k8s_cluster_token': 'k8s-cluster-token',
         'keep_prev_version': 'keep-prev-version',
         'key': 'key',
+        'max_versions': 'max-versions',
         'name': 'name',
         'new_name': 'new-name',
         'token': 'token',
@@ -73,7 +75,7 @@ class UpdateNativeK8STarget(object):
         'use_gw_service_account': 'use-gw-service-account'
     }
 
-    def __init__(self, comment=None, description=None, json=False, k8s_auth_type='token', k8s_client_certificate=None, k8s_client_key=None, k8s_cluster_ca_cert='dummy_val', k8s_cluster_endpoint='dummy_val', k8s_cluster_token='dummy_val', keep_prev_version=None, key=None, name=None, new_name=None, token=None, uid_token=None, update_version=None, use_gw_service_account=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, comment=None, description=None, json=False, k8s_auth_type='token', k8s_client_certificate=None, k8s_client_key=None, k8s_cluster_ca_cert='dummy_val', k8s_cluster_endpoint='dummy_val', k8s_cluster_token='dummy_val', keep_prev_version=None, key=None, max_versions=None, name=None, new_name=None, token=None, uid_token=None, update_version=None, use_gw_service_account=None, local_vars_configuration=None):  # noqa: E501
         """UpdateNativeK8STarget - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -90,6 +92,7 @@ class UpdateNativeK8STarget(object):
         self._k8s_cluster_token = None
         self._keep_prev_version = None
         self._key = None
+        self._max_versions = None
         self._name = None
         self._new_name = None
         self._token = None
@@ -117,6 +120,8 @@ class UpdateNativeK8STarget(object):
             self.keep_prev_version = keep_prev_version
         if key is not None:
             self.key = key
+        if max_versions is not None:
+            self.max_versions = max_versions
         self.name = name
         if new_name is not None:
             self.new_name = new_name
@@ -387,6 +392,29 @@ class UpdateNativeK8STarget(object):
         """
 
         self._key = key
+
+    @property
+    def max_versions(self):
+        """Gets the max_versions of this UpdateNativeK8STarget.  # noqa: E501
+
+        Set the maximum number of versions, limited by the account settings defaults.  # noqa: E501
+
+        :return: The max_versions of this UpdateNativeK8STarget.  # noqa: E501
+        :rtype: str
+        """
+        return self._max_versions
+
+    @max_versions.setter
+    def max_versions(self, max_versions):
+        """Sets the max_versions of this UpdateNativeK8STarget.
+
+        Set the maximum number of versions, limited by the account settings defaults.  # noqa: E501
+
+        :param max_versions: The max_versions of this UpdateNativeK8STarget.  # noqa: E501
+        :type: str
+        """
+
+        self._max_versions = max_versions
 
     @property
     def name(self):

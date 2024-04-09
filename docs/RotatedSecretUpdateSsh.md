@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **json** | **bool** | Set output format to JSON | [optional] [default to False]
 **keep_prev_version** | **str** | Whether to keep previous version [true/false]. If not set, use default according to account settings | [optional] 
 **key** | **str** | The name of a key that used to encrypt the secret value (if empty, the account default protectionKey key will be used) | [optional] 
+**max_versions** | **str** | Set the maximum number of versions, limited by the account settings defaults. | [optional] 
 **name** | **str** | Rotated secret name | 
 **new_name** | **str** | New item name | [optional] 
 **password_length** | **str** | The length of the password to be generated | [optional] 
@@ -27,7 +28,7 @@ Name | Type | Description | Notes
 **secure_access_bastion_issuer** | **str** | Path to the SSH Certificate Issuer for your Akeyless Bastion | [optional] 
 **secure_access_enable** | **str** | Enable/Disable secure remote access [true/false] | [optional] 
 **secure_access_host** | **list[str]** | Target servers for connections (In case of Linked Target association, host(s) will inherit Linked Target hosts - Relevant only for Dynamic Secrets/producers) | [optional] 
-**secure_access_rdp_domain** | **str** | Required when the Dynamic Secret is used for a domain user | [optional] 
+**secure_access_rdp_domain** | **str** | Default domain name server. i.e. microsoft.com | [optional] 
 **secure_access_rdp_user** | **str** | Override the RDP Domain username | [optional] 
 **secure_access_ssh_user** | **str** | Override the SSH username as indicated in SSH Certificate Issuer | [optional] 
 **token** | **str** | Authentication token (see &#x60;/auth&#x60; and &#x60;/configure&#x60;) | [optional] 

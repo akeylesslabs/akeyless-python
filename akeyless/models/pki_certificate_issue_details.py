@@ -45,9 +45,12 @@ class PKICertificateIssueDetails(object):
         'client_flag': 'bool',
         'code_signing_flag': 'bool',
         'country': 'list[str]',
+        'create_private_crl': 'bool',
+        'create_public_crl': 'bool',
         'destination_path': 'str',
         'enforce_hostnames': 'bool',
         'expiration_events': 'list[CertificateExpirationEvent]',
+        'gw_cluster_id': 'int',
         'gw_cluster_url': 'str',
         'is_ca': 'bool',
         'key_bits': 'int',
@@ -77,9 +80,12 @@ class PKICertificateIssueDetails(object):
         'client_flag': 'client_flag',
         'code_signing_flag': 'code_signing_flag',
         'country': 'country',
+        'create_private_crl': 'create_private_crl',
+        'create_public_crl': 'create_public_crl',
         'destination_path': 'destination_path',
         'enforce_hostnames': 'enforce_hostnames',
         'expiration_events': 'expiration_events',
+        'gw_cluster_id': 'gw_cluster_id',
         'gw_cluster_url': 'gw_cluster_url',
         'is_ca': 'is_ca',
         'key_bits': 'key_bits',
@@ -97,7 +103,7 @@ class PKICertificateIssueDetails(object):
         'street_address': 'street_address'
     }
 
-    def __init__(self, allow_any_name=None, allow_copy_ext_from_csr=None, allow_subdomains=None, allowed_domains_list=None, allowed_extra_extensions=None, allowed_uri_sans=None, basic_constraints_valid_for_non_ca=None, certificate_authority_mode=None, client_flag=None, code_signing_flag=None, country=None, destination_path=None, enforce_hostnames=None, expiration_events=None, gw_cluster_url=None, is_ca=None, key_bits=None, key_type=None, key_usage_list=None, locality=None, not_before_duration=None, organization_list=None, organization_unit_list=None, postal_code=None, protect_generated_certificates=None, province=None, require_cn=None, server_flag=None, street_address=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, allow_any_name=None, allow_copy_ext_from_csr=None, allow_subdomains=None, allowed_domains_list=None, allowed_extra_extensions=None, allowed_uri_sans=None, basic_constraints_valid_for_non_ca=None, certificate_authority_mode=None, client_flag=None, code_signing_flag=None, country=None, create_private_crl=None, create_public_crl=None, destination_path=None, enforce_hostnames=None, expiration_events=None, gw_cluster_id=None, gw_cluster_url=None, is_ca=None, key_bits=None, key_type=None, key_usage_list=None, locality=None, not_before_duration=None, organization_list=None, organization_unit_list=None, postal_code=None, protect_generated_certificates=None, province=None, require_cn=None, server_flag=None, street_address=None, local_vars_configuration=None):  # noqa: E501
         """PKICertificateIssueDetails - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -114,9 +120,12 @@ class PKICertificateIssueDetails(object):
         self._client_flag = None
         self._code_signing_flag = None
         self._country = None
+        self._create_private_crl = None
+        self._create_public_crl = None
         self._destination_path = None
         self._enforce_hostnames = None
         self._expiration_events = None
+        self._gw_cluster_id = None
         self._gw_cluster_url = None
         self._is_ca = None
         self._key_bits = None
@@ -156,12 +165,18 @@ class PKICertificateIssueDetails(object):
             self.code_signing_flag = code_signing_flag
         if country is not None:
             self.country = country
+        if create_private_crl is not None:
+            self.create_private_crl = create_private_crl
+        if create_public_crl is not None:
+            self.create_public_crl = create_public_crl
         if destination_path is not None:
             self.destination_path = destination_path
         if enforce_hostnames is not None:
             self.enforce_hostnames = enforce_hostnames
         if expiration_events is not None:
             self.expiration_events = expiration_events
+        if gw_cluster_id is not None:
+            self.gw_cluster_id = gw_cluster_id
         if gw_cluster_url is not None:
             self.gw_cluster_url = gw_cluster_url
         if is_ca is not None:
@@ -425,6 +440,48 @@ class PKICertificateIssueDetails(object):
         self._country = country
 
     @property
+    def create_private_crl(self):
+        """Gets the create_private_crl of this PKICertificateIssueDetails.  # noqa: E501
+
+
+        :return: The create_private_crl of this PKICertificateIssueDetails.  # noqa: E501
+        :rtype: bool
+        """
+        return self._create_private_crl
+
+    @create_private_crl.setter
+    def create_private_crl(self, create_private_crl):
+        """Sets the create_private_crl of this PKICertificateIssueDetails.
+
+
+        :param create_private_crl: The create_private_crl of this PKICertificateIssueDetails.  # noqa: E501
+        :type: bool
+        """
+
+        self._create_private_crl = create_private_crl
+
+    @property
+    def create_public_crl(self):
+        """Gets the create_public_crl of this PKICertificateIssueDetails.  # noqa: E501
+
+
+        :return: The create_public_crl of this PKICertificateIssueDetails.  # noqa: E501
+        :rtype: bool
+        """
+        return self._create_public_crl
+
+    @create_public_crl.setter
+    def create_public_crl(self, create_public_crl):
+        """Sets the create_public_crl of this PKICertificateIssueDetails.
+
+
+        :param create_public_crl: The create_public_crl of this PKICertificateIssueDetails.  # noqa: E501
+        :type: bool
+        """
+
+        self._create_public_crl = create_public_crl
+
+    @property
     def destination_path(self):
         """Gets the destination_path of this PKICertificateIssueDetails.  # noqa: E501
 
@@ -490,6 +547,27 @@ class PKICertificateIssueDetails(object):
         """
 
         self._expiration_events = expiration_events
+
+    @property
+    def gw_cluster_id(self):
+        """Gets the gw_cluster_id of this PKICertificateIssueDetails.  # noqa: E501
+
+
+        :return: The gw_cluster_id of this PKICertificateIssueDetails.  # noqa: E501
+        :rtype: int
+        """
+        return self._gw_cluster_id
+
+    @gw_cluster_id.setter
+    def gw_cluster_id(self, gw_cluster_id):
+        """Sets the gw_cluster_id of this PKICertificateIssueDetails.
+
+
+        :param gw_cluster_id: The gw_cluster_id of this PKICertificateIssueDetails.  # noqa: E501
+        :type: int
+        """
+
+        self._gw_cluster_id = gw_cluster_id
 
     @property
     def gw_cluster_url(self):

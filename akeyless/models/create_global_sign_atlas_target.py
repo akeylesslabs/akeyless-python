@@ -40,6 +40,7 @@ class CreateGlobalSignAtlasTarget(object):
         'description': 'str',
         'json': 'bool',
         'key': 'str',
+        'max_versions': 'str',
         'mtls_cert_data_base64': 'str',
         'mtls_key_data_base64': 'str',
         'name': 'str',
@@ -55,6 +56,7 @@ class CreateGlobalSignAtlasTarget(object):
         'description': 'description',
         'json': 'json',
         'key': 'key',
+        'max_versions': 'max-versions',
         'mtls_cert_data_base64': 'mtls-cert-data-base64',
         'mtls_key_data_base64': 'mtls-key-data-base64',
         'name': 'name',
@@ -63,7 +65,7 @@ class CreateGlobalSignAtlasTarget(object):
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, api_key=None, api_secret=None, comment=None, description=None, json=False, key=None, mtls_cert_data_base64=None, mtls_key_data_base64=None, name=None, timeout='5m', token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, api_key=None, api_secret=None, comment=None, description=None, json=False, key=None, max_versions=None, mtls_cert_data_base64=None, mtls_key_data_base64=None, name=None, timeout='5m', token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """CreateGlobalSignAtlasTarget - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -75,6 +77,7 @@ class CreateGlobalSignAtlasTarget(object):
         self._description = None
         self._json = None
         self._key = None
+        self._max_versions = None
         self._mtls_cert_data_base64 = None
         self._mtls_key_data_base64 = None
         self._name = None
@@ -93,6 +96,8 @@ class CreateGlobalSignAtlasTarget(object):
             self.json = json
         if key is not None:
             self.key = key
+        if max_versions is not None:
+            self.max_versions = max_versions
         if mtls_cert_data_base64 is not None:
             self.mtls_cert_data_base64 = mtls_cert_data_base64
         if mtls_key_data_base64 is not None:
@@ -246,6 +251,29 @@ class CreateGlobalSignAtlasTarget(object):
         """
 
         self._key = key
+
+    @property
+    def max_versions(self):
+        """Gets the max_versions of this CreateGlobalSignAtlasTarget.  # noqa: E501
+
+        Set the maximum number of versions, limited by the account settings defaults.  # noqa: E501
+
+        :return: The max_versions of this CreateGlobalSignAtlasTarget.  # noqa: E501
+        :rtype: str
+        """
+        return self._max_versions
+
+    @max_versions.setter
+    def max_versions(self, max_versions):
+        """Sets the max_versions of this CreateGlobalSignAtlasTarget.
+
+        Set the maximum number of versions, limited by the account settings defaults.  # noqa: E501
+
+        :param max_versions: The max_versions of this CreateGlobalSignAtlasTarget.  # noqa: E501
+        :type: str
+        """
+
+        self._max_versions = max_versions
 
     @property
     def mtls_cert_data_base64(self):

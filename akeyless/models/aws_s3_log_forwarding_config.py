@@ -36,7 +36,9 @@ class AwsS3LogForwardingConfig(object):
     openapi_types = {
         'aws_access_id': 'str',
         'aws_access_key': 'str',
+        'aws_auth_type': 'str',
         'aws_region': 'str',
+        'aws_role_arn': 'str',
         'aws_use_gateway_cloud_identity': 'bool',
         'bucket_name': 'str',
         'log_folder': 'str'
@@ -45,13 +47,15 @@ class AwsS3LogForwardingConfig(object):
     attribute_map = {
         'aws_access_id': 'aws_access_id',
         'aws_access_key': 'aws_access_key',
+        'aws_auth_type': 'aws_auth_type',
         'aws_region': 'aws_region',
+        'aws_role_arn': 'aws_role_arn',
         'aws_use_gateway_cloud_identity': 'aws_use_gateway_cloud_identity',
         'bucket_name': 'bucket_name',
         'log_folder': 'log_folder'
     }
 
-    def __init__(self, aws_access_id=None, aws_access_key=None, aws_region=None, aws_use_gateway_cloud_identity=None, bucket_name=None, log_folder=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, aws_access_id=None, aws_access_key=None, aws_auth_type=None, aws_region=None, aws_role_arn=None, aws_use_gateway_cloud_identity=None, bucket_name=None, log_folder=None, local_vars_configuration=None):  # noqa: E501
         """AwsS3LogForwardingConfig - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -59,7 +63,9 @@ class AwsS3LogForwardingConfig(object):
 
         self._aws_access_id = None
         self._aws_access_key = None
+        self._aws_auth_type = None
         self._aws_region = None
+        self._aws_role_arn = None
         self._aws_use_gateway_cloud_identity = None
         self._bucket_name = None
         self._log_folder = None
@@ -69,8 +75,12 @@ class AwsS3LogForwardingConfig(object):
             self.aws_access_id = aws_access_id
         if aws_access_key is not None:
             self.aws_access_key = aws_access_key
+        if aws_auth_type is not None:
+            self.aws_auth_type = aws_auth_type
         if aws_region is not None:
             self.aws_region = aws_region
+        if aws_role_arn is not None:
+            self.aws_role_arn = aws_role_arn
         if aws_use_gateway_cloud_identity is not None:
             self.aws_use_gateway_cloud_identity = aws_use_gateway_cloud_identity
         if bucket_name is not None:
@@ -121,6 +131,27 @@ class AwsS3LogForwardingConfig(object):
         self._aws_access_key = aws_access_key
 
     @property
+    def aws_auth_type(self):
+        """Gets the aws_auth_type of this AwsS3LogForwardingConfig.  # noqa: E501
+
+
+        :return: The aws_auth_type of this AwsS3LogForwardingConfig.  # noqa: E501
+        :rtype: str
+        """
+        return self._aws_auth_type
+
+    @aws_auth_type.setter
+    def aws_auth_type(self, aws_auth_type):
+        """Sets the aws_auth_type of this AwsS3LogForwardingConfig.
+
+
+        :param aws_auth_type: The aws_auth_type of this AwsS3LogForwardingConfig.  # noqa: E501
+        :type: str
+        """
+
+        self._aws_auth_type = aws_auth_type
+
+    @property
     def aws_region(self):
         """Gets the aws_region of this AwsS3LogForwardingConfig.  # noqa: E501
 
@@ -142,9 +173,31 @@ class AwsS3LogForwardingConfig(object):
         self._aws_region = aws_region
 
     @property
+    def aws_role_arn(self):
+        """Gets the aws_role_arn of this AwsS3LogForwardingConfig.  # noqa: E501
+
+
+        :return: The aws_role_arn of this AwsS3LogForwardingConfig.  # noqa: E501
+        :rtype: str
+        """
+        return self._aws_role_arn
+
+    @aws_role_arn.setter
+    def aws_role_arn(self, aws_role_arn):
+        """Sets the aws_role_arn of this AwsS3LogForwardingConfig.
+
+
+        :param aws_role_arn: The aws_role_arn of this AwsS3LogForwardingConfig.  # noqa: E501
+        :type: str
+        """
+
+        self._aws_role_arn = aws_role_arn
+
+    @property
     def aws_use_gateway_cloud_identity(self):
         """Gets the aws_use_gateway_cloud_identity of this AwsS3LogForwardingConfig.  # noqa: E501
 
+        deprecated  # noqa: E501
 
         :return: The aws_use_gateway_cloud_identity of this AwsS3LogForwardingConfig.  # noqa: E501
         :rtype: bool
@@ -155,6 +208,7 @@ class AwsS3LogForwardingConfig(object):
     def aws_use_gateway_cloud_identity(self, aws_use_gateway_cloud_identity):
         """Sets the aws_use_gateway_cloud_identity of this AwsS3LogForwardingConfig.
 
+        deprecated  # noqa: E501
 
         :param aws_use_gateway_cloud_identity: The aws_use_gateway_cloud_identity of this AwsS3LogForwardingConfig.  # noqa: E501
         :type: bool

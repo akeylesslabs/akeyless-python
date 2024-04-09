@@ -15,7 +15,7 @@
 
 from __future__ import absolute_import
 
-__version__ = "3.6.2"
+__version__ = "3.6.3"
 
 # import apis into sdk package
 from akeyless.api.v2_api import V2Api
@@ -43,6 +43,7 @@ from akeyless.models.active_directory_payload import ActiveDirectoryPayload
 from akeyless.models.add_gateway_allowed_access_id import AddGatewayAllowedAccessId
 from akeyless.models.admins_config_part import AdminsConfigPart
 from akeyless.models.akeyless_gateway_config import AkeylessGatewayConfig
+from akeyless.models.all_analytics_data import AllAnalyticsData
 from akeyless.models.allowed_access import AllowedAccess
 from akeyless.models.allowed_access_old import AllowedAccessOld
 from akeyless.models.artifactory_target_details import ArtifactoryTargetDetails
@@ -65,6 +66,7 @@ from akeyless.models.bastions_list import BastionsList
 from akeyless.models.cf_config_part import CFConfigPart
 from akeyless.models.cache_config_part import CacheConfigPart
 from akeyless.models.cert_access_rules import CertAccessRules
+from akeyless.models.certificate_analytic_aggregation import CertificateAnalyticAggregation
 from akeyless.models.certificate_chain_info import CertificateChainInfo
 from akeyless.models.certificate_expiration_event import CertificateExpirationEvent
 from akeyless.models.certificate_info import CertificateInfo
@@ -77,6 +79,8 @@ from akeyless.models.classic_key_details_info import ClassicKeyDetailsInfo
 from akeyless.models.classic_key_status_info import ClassicKeyStatusInfo
 from akeyless.models.classic_key_target_info import ClassicKeyTargetInfo
 from akeyless.models.client_data import ClientData
+from akeyless.models.client_usage_info import ClientUsageInfo
+from akeyless.models.clients_usage_report import ClientsUsageReport
 from akeyless.models.config_change import ConfigChange
 from akeyless.models.config_hash import ConfigHash
 from akeyless.models.configure import Configure
@@ -328,6 +332,8 @@ from akeyless.models.esm_update import EsmUpdate
 from akeyless.models.esm_update_secret_output import EsmUpdateSecretOutput
 from akeyless.models.event_action import EventAction
 from akeyless.models.event_forwarder_create_email import EventForwarderCreateEmail
+from akeyless.models.event_forwarder_create_service_now import EventForwarderCreateServiceNow
+from akeyless.models.event_forwarder_create_slack import EventForwarderCreateSlack
 from akeyless.models.event_forwarder_create_update_output import EventForwarderCreateUpdateOutput
 from akeyless.models.event_forwarder_create_webhook import EventForwarderCreateWebhook
 from akeyless.models.event_forwarder_delete import EventForwarderDelete
@@ -335,6 +341,8 @@ from akeyless.models.event_forwarder_delete_output import EventForwarderDeleteOu
 from akeyless.models.event_forwarder_get import EventForwarderGet
 from akeyless.models.event_forwarder_get_output import EventForwarderGetOutput
 from akeyless.models.event_forwarder_update_email import EventForwarderUpdateEmail
+from akeyless.models.event_forwarder_update_service_now import EventForwarderUpdateServiceNow
+from akeyless.models.event_forwarder_update_slack import EventForwarderUpdateSlack
 from akeyless.models.event_forwarder_update_webhook import EventForwarderUpdateWebhook
 from akeyless.models.export_classic_key import ExportClassicKey
 from akeyless.models.export_classic_key_output import ExportClassicKeyOutput
@@ -509,6 +517,7 @@ from akeyless.models.generate_csr import GenerateCsr
 from akeyless.models.generate_csr_output import GenerateCsrOutput
 from akeyless.models.get_account_settings import GetAccountSettings
 from akeyless.models.get_account_settings_command_output import GetAccountSettingsCommandOutput
+from akeyless.models.get_analytics_data import GetAnalyticsData
 from akeyless.models.get_auth_method import GetAuthMethod
 from akeyless.models.get_certificate_value import GetCertificateValue
 from akeyless.models.get_certificate_value_output import GetCertificateValueOutput
@@ -552,6 +561,7 @@ from akeyless.models.import_passwords_output import ImportPasswordsOutput
 from akeyless.models.importer_info import ImporterInfo
 from akeyless.models.item import Item
 from akeyless.models.item_general_info import ItemGeneralInfo
+from akeyless.models.item_sra_status import ItemSraStatus
 from akeyless.models.item_target_association import ItemTargetAssociation
 from akeyless.models.item_version import ItemVersion
 from akeyless.models.json_error import JSONError
@@ -655,6 +665,7 @@ from akeyless.models.required_activity import RequiredActivity
 from akeyless.models.reverse_rbac import ReverseRBAC
 from akeyless.models.reverse_rbac_client import ReverseRBACClient
 from akeyless.models.reverse_rbac_output import ReverseRBACOutput
+from akeyless.models.revoke_certificate import RevokeCertificate
 from akeyless.models.revoke_creds import RevokeCreds
 from akeyless.models.role import Role
 from akeyless.models.role_association_details import RoleAssociationDetails
@@ -867,6 +878,7 @@ from akeyless.models.update_zero_ssl_target_output import UpdateZeroSSLTargetOut
 from akeyless.models.upload_pkcs12 import UploadPKCS12
 from akeyless.models.upload_rsa import UploadRSA
 from akeyless.models.usage_event_setting import UsageEventSetting
+from akeyless.models.usage_report_summary import UsageReportSummary
 from akeyless.models.usc_create import UscCreate
 from akeyless.models.usc_create_secret_output import UscCreateSecretOutput
 from akeyless.models.usc_delete import UscDelete

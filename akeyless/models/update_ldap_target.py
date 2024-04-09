@@ -43,6 +43,7 @@ class UpdateLdapTarget(object):
         'key': 'str',
         'ldap_ca_cert': 'str',
         'ldap_url': 'str',
+        'max_versions': 'str',
         'name': 'str',
         'new_name': 'str',
         'server_type': 'str',
@@ -62,6 +63,7 @@ class UpdateLdapTarget(object):
         'key': 'key',
         'ldap_ca_cert': 'ldap-ca-cert',
         'ldap_url': 'ldap-url',
+        'max_versions': 'max-versions',
         'name': 'name',
         'new_name': 'new-name',
         'server_type': 'server-type',
@@ -71,7 +73,7 @@ class UpdateLdapTarget(object):
         'update_version': 'update-version'
     }
 
-    def __init__(self, bind_dn=None, bind_dn_password=None, comment=None, description=None, json=False, keep_prev_version=None, key=None, ldap_ca_cert=None, ldap_url=None, name=None, new_name=None, server_type=None, token=None, token_expiration=None, uid_token=None, update_version=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, bind_dn=None, bind_dn_password=None, comment=None, description=None, json=False, keep_prev_version=None, key=None, ldap_ca_cert=None, ldap_url=None, max_versions=None, name=None, new_name=None, server_type=None, token=None, token_expiration=None, uid_token=None, update_version=None, local_vars_configuration=None):  # noqa: E501
         """UpdateLdapTarget - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -86,6 +88,7 @@ class UpdateLdapTarget(object):
         self._key = None
         self._ldap_ca_cert = None
         self._ldap_url = None
+        self._max_versions = None
         self._name = None
         self._new_name = None
         self._server_type = None
@@ -113,6 +116,8 @@ class UpdateLdapTarget(object):
             self.ldap_ca_cert = ldap_ca_cert
         if ldap_url is not None:
             self.ldap_url = ldap_url
+        if max_versions is not None:
+            self.max_versions = max_versions
         self.name = name
         if new_name is not None:
             self.new_name = new_name
@@ -325,6 +330,29 @@ class UpdateLdapTarget(object):
         """
 
         self._ldap_url = ldap_url
+
+    @property
+    def max_versions(self):
+        """Gets the max_versions of this UpdateLdapTarget.  # noqa: E501
+
+        Set the maximum number of versions, limited by the account settings defaults.  # noqa: E501
+
+        :return: The max_versions of this UpdateLdapTarget.  # noqa: E501
+        :rtype: str
+        """
+        return self._max_versions
+
+    @max_versions.setter
+    def max_versions(self, max_versions):
+        """Sets the max_versions of this UpdateLdapTarget.
+
+        Set the maximum number of versions, limited by the account settings defaults.  # noqa: E501
+
+        :param max_versions: The max_versions of this UpdateLdapTarget.  # noqa: E501
+        :type: str
+        """
+
+        self._max_versions = max_versions
 
     @property
     def name(self):

@@ -40,6 +40,7 @@ class AzureTargetDetails(object):
         'azure_resource_name': 'str',
         'azure_subscription_id': 'str',
         'azure_tenant_id': 'str',
+        'azure_username': 'str',
         'use_gw_cloud_identity': 'bool'
     }
 
@@ -50,10 +51,11 @@ class AzureTargetDetails(object):
         'azure_resource_name': 'azure_resource_name',
         'azure_subscription_id': 'azure_subscription_id',
         'azure_tenant_id': 'azure_tenant_id',
+        'azure_username': 'azure_username',
         'use_gw_cloud_identity': 'use_gw_cloud_identity'
     }
 
-    def __init__(self, azure_client_id=None, azure_client_secret=None, azure_resource_group_name=None, azure_resource_name=None, azure_subscription_id=None, azure_tenant_id=None, use_gw_cloud_identity=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, azure_client_id=None, azure_client_secret=None, azure_resource_group_name=None, azure_resource_name=None, azure_subscription_id=None, azure_tenant_id=None, azure_username=None, use_gw_cloud_identity=None, local_vars_configuration=None):  # noqa: E501
         """AzureTargetDetails - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -65,6 +67,7 @@ class AzureTargetDetails(object):
         self._azure_resource_name = None
         self._azure_subscription_id = None
         self._azure_tenant_id = None
+        self._azure_username = None
         self._use_gw_cloud_identity = None
         self.discriminator = None
 
@@ -80,6 +83,8 @@ class AzureTargetDetails(object):
             self.azure_subscription_id = azure_subscription_id
         if azure_tenant_id is not None:
             self.azure_tenant_id = azure_tenant_id
+        if azure_username is not None:
+            self.azure_username = azure_username
         if use_gw_cloud_identity is not None:
             self.use_gw_cloud_identity = use_gw_cloud_identity
 
@@ -208,6 +213,27 @@ class AzureTargetDetails(object):
         """
 
         self._azure_tenant_id = azure_tenant_id
+
+    @property
+    def azure_username(self):
+        """Gets the azure_username of this AzureTargetDetails.  # noqa: E501
+
+
+        :return: The azure_username of this AzureTargetDetails.  # noqa: E501
+        :rtype: str
+        """
+        return self._azure_username
+
+    @azure_username.setter
+    def azure_username(self, azure_username):
+        """Sets the azure_username of this AzureTargetDetails.
+
+
+        :param azure_username: The azure_username of this AzureTargetDetails.  # noqa: E501
+        :type: str
+        """
+
+        self._azure_username = azure_username
 
     @property
     def use_gw_cloud_identity(self):

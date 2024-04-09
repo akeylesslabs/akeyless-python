@@ -43,16 +43,24 @@ class RotatedSecretCreateAzure(object):
         'description': 'str',
         'json': 'bool',
         'key': 'str',
+        'max_versions': 'str',
         'name': 'str',
         'password_length': 'str',
+        'rotate_after_disconnect': 'str',
         'rotation_hour': 'int',
         'rotation_interval': 'str',
         'rotator_type': 'str',
+        'secure_access_enable': 'str',
+        'secure_access_url': 'str',
+        'secure_access_web': 'bool',
+        'secure_access_web_browsing': 'bool',
+        'secure_access_web_proxy': 'bool',
         'storage_account_key_name': 'str',
         'tags': 'list[str]',
         'target_name': 'str',
         'token': 'str',
-        'uid_token': 'str'
+        'uid_token': 'str',
+        'username': 'str'
     }
 
     attribute_map = {
@@ -65,19 +73,27 @@ class RotatedSecretCreateAzure(object):
         'description': 'description',
         'json': 'json',
         'key': 'key',
+        'max_versions': 'max-versions',
         'name': 'name',
         'password_length': 'password-length',
+        'rotate_after_disconnect': 'rotate-after-disconnect',
         'rotation_hour': 'rotation-hour',
         'rotation_interval': 'rotation-interval',
         'rotator_type': 'rotator-type',
+        'secure_access_enable': 'secure-access-enable',
+        'secure_access_url': 'secure-access-url',
+        'secure_access_web': 'secure-access-web',
+        'secure_access_web_browsing': 'secure-access-web-browsing',
+        'secure_access_web_proxy': 'secure-access-web-proxy',
         'storage_account_key_name': 'storage-account-key-name',
         'tags': 'tags',
         'target_name': 'target-name',
         'token': 'token',
-        'uid_token': 'uid-token'
+        'uid_token': 'uid-token',
+        'username': 'username'
     }
 
-    def __init__(self, api_id=None, api_key=None, application_id=None, authentication_credentials='use-user-creds', auto_rotate=None, delete_protection=None, description=None, json=False, key=None, name=None, password_length=None, rotation_hour=None, rotation_interval=None, rotator_type=None, storage_account_key_name=None, tags=None, target_name=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, api_id=None, api_key=None, application_id=None, authentication_credentials='use-user-creds', auto_rotate=None, delete_protection=None, description=None, json=False, key=None, max_versions=None, name=None, password_length=None, rotate_after_disconnect='false', rotation_hour=None, rotation_interval=None, rotator_type=None, secure_access_enable=None, secure_access_url=None, secure_access_web=False, secure_access_web_browsing=False, secure_access_web_proxy=False, storage_account_key_name=None, tags=None, target_name=None, token=None, uid_token=None, username=None, local_vars_configuration=None):  # noqa: E501
         """RotatedSecretCreateAzure - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -92,16 +108,24 @@ class RotatedSecretCreateAzure(object):
         self._description = None
         self._json = None
         self._key = None
+        self._max_versions = None
         self._name = None
         self._password_length = None
+        self._rotate_after_disconnect = None
         self._rotation_hour = None
         self._rotation_interval = None
         self._rotator_type = None
+        self._secure_access_enable = None
+        self._secure_access_url = None
+        self._secure_access_web = None
+        self._secure_access_web_browsing = None
+        self._secure_access_web_proxy = None
         self._storage_account_key_name = None
         self._tags = None
         self._target_name = None
         self._token = None
         self._uid_token = None
+        self._username = None
         self.discriminator = None
 
         if api_id is not None:
@@ -122,14 +146,28 @@ class RotatedSecretCreateAzure(object):
             self.json = json
         if key is not None:
             self.key = key
+        if max_versions is not None:
+            self.max_versions = max_versions
         self.name = name
         if password_length is not None:
             self.password_length = password_length
+        if rotate_after_disconnect is not None:
+            self.rotate_after_disconnect = rotate_after_disconnect
         if rotation_hour is not None:
             self.rotation_hour = rotation_hour
         if rotation_interval is not None:
             self.rotation_interval = rotation_interval
         self.rotator_type = rotator_type
+        if secure_access_enable is not None:
+            self.secure_access_enable = secure_access_enable
+        if secure_access_url is not None:
+            self.secure_access_url = secure_access_url
+        if secure_access_web is not None:
+            self.secure_access_web = secure_access_web
+        if secure_access_web_browsing is not None:
+            self.secure_access_web_browsing = secure_access_web_browsing
+        if secure_access_web_proxy is not None:
+            self.secure_access_web_proxy = secure_access_web_proxy
         if storage_account_key_name is not None:
             self.storage_account_key_name = storage_account_key_name
         if tags is not None:
@@ -139,6 +177,8 @@ class RotatedSecretCreateAzure(object):
             self.token = token
         if uid_token is not None:
             self.uid_token = uid_token
+        if username is not None:
+            self.username = username
 
     @property
     def api_id(self):
@@ -348,6 +388,29 @@ class RotatedSecretCreateAzure(object):
         self._key = key
 
     @property
+    def max_versions(self):
+        """Gets the max_versions of this RotatedSecretCreateAzure.  # noqa: E501
+
+        Set the maximum number of versions, limited by the account settings defaults.  # noqa: E501
+
+        :return: The max_versions of this RotatedSecretCreateAzure.  # noqa: E501
+        :rtype: str
+        """
+        return self._max_versions
+
+    @max_versions.setter
+    def max_versions(self, max_versions):
+        """Sets the max_versions of this RotatedSecretCreateAzure.
+
+        Set the maximum number of versions, limited by the account settings defaults.  # noqa: E501
+
+        :param max_versions: The max_versions of this RotatedSecretCreateAzure.  # noqa: E501
+        :type: str
+        """
+
+        self._max_versions = max_versions
+
+    @property
     def name(self):
         """Gets the name of this RotatedSecretCreateAzure.  # noqa: E501
 
@@ -394,6 +457,29 @@ class RotatedSecretCreateAzure(object):
         """
 
         self._password_length = password_length
+
+    @property
+    def rotate_after_disconnect(self):
+        """Gets the rotate_after_disconnect of this RotatedSecretCreateAzure.  # noqa: E501
+
+        Rotate the value of the secret after SRA session ends [true/false]  # noqa: E501
+
+        :return: The rotate_after_disconnect of this RotatedSecretCreateAzure.  # noqa: E501
+        :rtype: str
+        """
+        return self._rotate_after_disconnect
+
+    @rotate_after_disconnect.setter
+    def rotate_after_disconnect(self, rotate_after_disconnect):
+        """Sets the rotate_after_disconnect of this RotatedSecretCreateAzure.
+
+        Rotate the value of the secret after SRA session ends [true/false]  # noqa: E501
+
+        :param rotate_after_disconnect: The rotate_after_disconnect of this RotatedSecretCreateAzure.  # noqa: E501
+        :type: str
+        """
+
+        self._rotate_after_disconnect = rotate_after_disconnect
 
     @property
     def rotation_hour(self):
@@ -445,7 +531,7 @@ class RotatedSecretCreateAzure(object):
     def rotator_type(self):
         """Gets the rotator_type of this RotatedSecretCreateAzure.  # noqa: E501
 
-        The rotator type. options: [target/api-key/azure-storage-account]  # noqa: E501
+        The rotator type. options: [target/password/api-key/azure-storage-account]  # noqa: E501
 
         :return: The rotator_type of this RotatedSecretCreateAzure.  # noqa: E501
         :rtype: str
@@ -456,7 +542,7 @@ class RotatedSecretCreateAzure(object):
     def rotator_type(self, rotator_type):
         """Sets the rotator_type of this RotatedSecretCreateAzure.
 
-        The rotator type. options: [target/api-key/azure-storage-account]  # noqa: E501
+        The rotator type. options: [target/password/api-key/azure-storage-account]  # noqa: E501
 
         :param rotator_type: The rotator_type of this RotatedSecretCreateAzure.  # noqa: E501
         :type: str
@@ -465,6 +551,121 @@ class RotatedSecretCreateAzure(object):
             raise ValueError("Invalid value for `rotator_type`, must not be `None`")  # noqa: E501
 
         self._rotator_type = rotator_type
+
+    @property
+    def secure_access_enable(self):
+        """Gets the secure_access_enable of this RotatedSecretCreateAzure.  # noqa: E501
+
+        Enable/Disable secure remote access [true/false]  # noqa: E501
+
+        :return: The secure_access_enable of this RotatedSecretCreateAzure.  # noqa: E501
+        :rtype: str
+        """
+        return self._secure_access_enable
+
+    @secure_access_enable.setter
+    def secure_access_enable(self, secure_access_enable):
+        """Sets the secure_access_enable of this RotatedSecretCreateAzure.
+
+        Enable/Disable secure remote access [true/false]  # noqa: E501
+
+        :param secure_access_enable: The secure_access_enable of this RotatedSecretCreateAzure.  # noqa: E501
+        :type: str
+        """
+
+        self._secure_access_enable = secure_access_enable
+
+    @property
+    def secure_access_url(self):
+        """Gets the secure_access_url of this RotatedSecretCreateAzure.  # noqa: E501
+
+        Destination URL to inject secrets  # noqa: E501
+
+        :return: The secure_access_url of this RotatedSecretCreateAzure.  # noqa: E501
+        :rtype: str
+        """
+        return self._secure_access_url
+
+    @secure_access_url.setter
+    def secure_access_url(self, secure_access_url):
+        """Sets the secure_access_url of this RotatedSecretCreateAzure.
+
+        Destination URL to inject secrets  # noqa: E501
+
+        :param secure_access_url: The secure_access_url of this RotatedSecretCreateAzure.  # noqa: E501
+        :type: str
+        """
+
+        self._secure_access_url = secure_access_url
+
+    @property
+    def secure_access_web(self):
+        """Gets the secure_access_web of this RotatedSecretCreateAzure.  # noqa: E501
+
+        Enable Web Secure Remote Access  # noqa: E501
+
+        :return: The secure_access_web of this RotatedSecretCreateAzure.  # noqa: E501
+        :rtype: bool
+        """
+        return self._secure_access_web
+
+    @secure_access_web.setter
+    def secure_access_web(self, secure_access_web):
+        """Sets the secure_access_web of this RotatedSecretCreateAzure.
+
+        Enable Web Secure Remote Access  # noqa: E501
+
+        :param secure_access_web: The secure_access_web of this RotatedSecretCreateAzure.  # noqa: E501
+        :type: bool
+        """
+
+        self._secure_access_web = secure_access_web
+
+    @property
+    def secure_access_web_browsing(self):
+        """Gets the secure_access_web_browsing of this RotatedSecretCreateAzure.  # noqa: E501
+
+        Secure browser via Akeyless Web Access Bastion  # noqa: E501
+
+        :return: The secure_access_web_browsing of this RotatedSecretCreateAzure.  # noqa: E501
+        :rtype: bool
+        """
+        return self._secure_access_web_browsing
+
+    @secure_access_web_browsing.setter
+    def secure_access_web_browsing(self, secure_access_web_browsing):
+        """Sets the secure_access_web_browsing of this RotatedSecretCreateAzure.
+
+        Secure browser via Akeyless Web Access Bastion  # noqa: E501
+
+        :param secure_access_web_browsing: The secure_access_web_browsing of this RotatedSecretCreateAzure.  # noqa: E501
+        :type: bool
+        """
+
+        self._secure_access_web_browsing = secure_access_web_browsing
+
+    @property
+    def secure_access_web_proxy(self):
+        """Gets the secure_access_web_proxy of this RotatedSecretCreateAzure.  # noqa: E501
+
+        Web-Proxy via Akeyless Web Access Bastion  # noqa: E501
+
+        :return: The secure_access_web_proxy of this RotatedSecretCreateAzure.  # noqa: E501
+        :rtype: bool
+        """
+        return self._secure_access_web_proxy
+
+    @secure_access_web_proxy.setter
+    def secure_access_web_proxy(self, secure_access_web_proxy):
+        """Sets the secure_access_web_proxy of this RotatedSecretCreateAzure.
+
+        Web-Proxy via Akeyless Web Access Bastion  # noqa: E501
+
+        :param secure_access_web_proxy: The secure_access_web_proxy of this RotatedSecretCreateAzure.  # noqa: E501
+        :type: bool
+        """
+
+        self._secure_access_web_proxy = secure_access_web_proxy
 
     @property
     def storage_account_key_name(self):
@@ -582,6 +783,29 @@ class RotatedSecretCreateAzure(object):
         """
 
         self._uid_token = uid_token
+
+    @property
+    def username(self):
+        """Gets the username of this RotatedSecretCreateAzure.  # noqa: E501
+
+        The user principal name to rotate his password (relevant only for rotator-type=password)  # noqa: E501
+
+        :return: The username of this RotatedSecretCreateAzure.  # noqa: E501
+        :rtype: str
+        """
+        return self._username
+
+    @username.setter
+    def username(self, username):
+        """Sets the username of this RotatedSecretCreateAzure.
+
+        The user principal name to rotate his password (relevant only for rotator-type=password)  # noqa: E501
+
+        :param username: The username of this RotatedSecretCreateAzure.  # noqa: E501
+        :type: str
+        """
+
+        self._username = username
 
     def to_dict(self):
         """Returns the model properties as a dict"""

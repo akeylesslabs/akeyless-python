@@ -44,6 +44,7 @@ class EventForwarderCreateEmail(object):
         'json': 'bool',
         'key': 'str',
         'name': 'str',
+        'override_url': 'str',
         'runner_type': 'str',
         'targets_event_source_locations': 'list[str]',
         'token': 'str',
@@ -61,13 +62,14 @@ class EventForwarderCreateEmail(object):
         'json': 'json',
         'key': 'key',
         'name': 'name',
+        'override_url': 'override-url',
         'runner_type': 'runner-type',
         'targets_event_source_locations': 'targets-event-source-locations',
         'token': 'token',
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, auth_methods_event_source_locations=None, description=None, email_to=None, event_types=None, every=None, gateways_event_source_locations=None, items_event_source_locations=None, json=False, key=None, name=None, runner_type=None, targets_event_source_locations=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, auth_methods_event_source_locations=None, description=None, email_to=None, event_types=None, every=None, gateways_event_source_locations=None, items_event_source_locations=None, json=False, key=None, name=None, override_url=None, runner_type=None, targets_event_source_locations=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """EventForwarderCreateEmail - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -83,6 +85,7 @@ class EventForwarderCreateEmail(object):
         self._json = None
         self._key = None
         self._name = None
+        self._override_url = None
         self._runner_type = None
         self._targets_event_source_locations = None
         self._token = None
@@ -107,6 +110,8 @@ class EventForwarderCreateEmail(object):
         if key is not None:
             self.key = key
         self.name = name
+        if override_url is not None:
+            self.override_url = override_url
         self.runner_type = runner_type
         if targets_event_source_locations is not None:
             self.targets_event_source_locations = targets_event_source_locations
@@ -348,6 +353,29 @@ class EventForwarderCreateEmail(object):
             raise ValueError("Invalid value for `name`, must not be `None`")  # noqa: E501
 
         self._name = name
+
+    @property
+    def override_url(self):
+        """Gets the override_url of this EventForwarderCreateEmail.  # noqa: E501
+
+        Override Akeyless default URL with your Gateway url (port 18888)  # noqa: E501
+
+        :return: The override_url of this EventForwarderCreateEmail.  # noqa: E501
+        :rtype: str
+        """
+        return self._override_url
+
+    @override_url.setter
+    def override_url(self, override_url):
+        """Sets the override_url of this EventForwarderCreateEmail.
+
+        Override Akeyless default URL with your Gateway url (port 18888)  # noqa: E501
+
+        :param override_url: The override_url of this EventForwarderCreateEmail.  # noqa: E501
+        :type: str
+        """
+
+        self._override_url = override_url
 
     @property
     def runner_type(self):

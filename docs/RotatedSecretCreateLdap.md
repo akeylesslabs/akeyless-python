@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **host_provider** | **str** | Host provider type [explicit/target], Relevant only for Secure Remote Access of ssh cert issuer and ldap rotated secret | [optional] [default to 'explicit']
 **json** | **bool** | Set output format to JSON | [optional] [default to False]
 **key** | **str** | The name of a key that used to encrypt the secret value (if empty, the account default protectionKey key will be used) | [optional] 
+**max_versions** | **str** | Set the maximum number of versions, limited by the account settings defaults. | [optional] 
 **name** | **str** | Rotated secret name | 
 **password_length** | **str** | The length of the password to be generated | [optional] 
 **rotate_after_disconnect** | **str** | Rotate the value of the secret after SRA session ends [true/false] | [optional] [default to 'false']
@@ -21,9 +22,11 @@ Name | Type | Description | Notes
 **rotator_type** | **str** | The rotator type. options: [target/ldap] | 
 **secure_access_enable** | **str** | Enable/Disable secure remote access [true/false] | [optional] 
 **secure_access_host** | **list[str]** | Target servers for connections (In case of Linked Target association, host(s) will inherit Linked Target hosts - Relevant only for Dynamic Secrets/producers) | [optional] 
-**secure_access_rdp_domain** | **str** | Required when the Dynamic Secret is used for a domain user | [optional] 
+**secure_access_rdp_domain** | **str** | Default domain name server. i.e. microsoft.com | [optional] 
 **secure_access_url** | **str** | Destination URL to inject secrets | [optional] 
 **secure_access_web** | **bool** | Enable Web Secure Remote Access | [optional] [default to False]
+**secure_access_web_browsing** | **bool** | Secure browser via Akeyless Web Access Bastion | [optional] [default to False]
+**secure_access_web_proxy** | **bool** | Web-Proxy via Akeyless Web Access Bastion | [optional] [default to False]
 **tags** | **list[str]** | Add tags attached to this object | [optional] 
 **target** | **list[str]** | A list of linked targets to be associated, Relevant only for Secure Remote Access for ssh cert issuer and ldap rotated secret, To specify multiple targets use argument multiple times | [optional] 
 **target_name** | **str** | Target name | 

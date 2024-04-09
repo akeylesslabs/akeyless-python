@@ -38,6 +38,7 @@ class RotatedSecretDetailsInfo(object):
         'grace_rotation': 'bool',
         'gw_cluster_id': 'int',
         'last_rotation_error': 'str',
+        'max_versions': 'int',
         'number_of_versions_to_save': 'int',
         'rotation_hour': 'int',
         'rotation_interval_min': 'bool',
@@ -54,6 +55,7 @@ class RotatedSecretDetailsInfo(object):
         'grace_rotation': 'grace_rotation',
         'gw_cluster_id': 'gw_cluster_id',
         'last_rotation_error': 'last_rotation_error',
+        'max_versions': 'max_versions',
         'number_of_versions_to_save': 'number_of_versions_to_save',
         'rotation_hour': 'rotation_hour',
         'rotation_interval_min': 'rotation_interval_min',
@@ -65,7 +67,7 @@ class RotatedSecretDetailsInfo(object):
         'services_details': 'services_details'
     }
 
-    def __init__(self, delete_previous_version_in_days=None, grace_rotation=None, gw_cluster_id=None, last_rotation_error=None, number_of_versions_to_save=None, rotation_hour=None, rotation_interval_min=None, rotation_statement=None, rotator_creds_type=None, rotator_status=None, rotator_type=None, same_password=None, services_details=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, delete_previous_version_in_days=None, grace_rotation=None, gw_cluster_id=None, last_rotation_error=None, max_versions=None, number_of_versions_to_save=None, rotation_hour=None, rotation_interval_min=None, rotation_statement=None, rotator_creds_type=None, rotator_status=None, rotator_type=None, same_password=None, services_details=None, local_vars_configuration=None):  # noqa: E501
         """RotatedSecretDetailsInfo - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -75,6 +77,7 @@ class RotatedSecretDetailsInfo(object):
         self._grace_rotation = None
         self._gw_cluster_id = None
         self._last_rotation_error = None
+        self._max_versions = None
         self._number_of_versions_to_save = None
         self._rotation_hour = None
         self._rotation_interval_min = None
@@ -94,6 +97,8 @@ class RotatedSecretDetailsInfo(object):
             self.gw_cluster_id = gw_cluster_id
         if last_rotation_error is not None:
             self.last_rotation_error = last_rotation_error
+        if max_versions is not None:
+            self.max_versions = max_versions
         if number_of_versions_to_save is not None:
             self.number_of_versions_to_save = number_of_versions_to_save
         if rotation_hour is not None:
@@ -196,6 +201,27 @@ class RotatedSecretDetailsInfo(object):
         """
 
         self._last_rotation_error = last_rotation_error
+
+    @property
+    def max_versions(self):
+        """Gets the max_versions of this RotatedSecretDetailsInfo.  # noqa: E501
+
+
+        :return: The max_versions of this RotatedSecretDetailsInfo.  # noqa: E501
+        :rtype: int
+        """
+        return self._max_versions
+
+    @max_versions.setter
+    def max_versions(self, max_versions):
+        """Sets the max_versions of this RotatedSecretDetailsInfo.
+
+
+        :param max_versions: The max_versions of this RotatedSecretDetailsInfo.  # noqa: E501
+        :type: int
+        """
+
+        self._max_versions = max_versions
 
     @property
     def number_of_versions_to_save(self):

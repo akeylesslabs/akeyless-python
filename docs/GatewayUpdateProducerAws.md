@@ -18,6 +18,7 @@ Name | Type | Description | Notes
 **json** | **bool** | Set output format to JSON | [optional] [default to False]
 **name** | **str** | Dynamic secret name | 
 **new_name** | **str** | Dynamic secret name | [optional] 
+**password_length** | **str** | The length of the password to be generated | [optional] 
 **producer_encryption_key_name** | **str** | Dynamic producer encryption key | [optional] 
 **region** | **str** | Region | [optional] [default to 'us-east-2']
 **secure_access_aws_account_id** | **str** | The AWS account id | [optional] 

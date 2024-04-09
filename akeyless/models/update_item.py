@@ -43,6 +43,7 @@ class UpdateItem(object):
         'description': 'str',
         'host_provider': 'str',
         'json': 'bool',
+        'max_versions': 'str',
         'name': 'str',
         'new_metadata': 'str',
         'new_name': 'str',
@@ -87,6 +88,7 @@ class UpdateItem(object):
         'description': 'description',
         'host_provider': 'host-provider',
         'json': 'json',
+        'max_versions': 'max-versions',
         'name': 'name',
         'new_metadata': 'new-metadata',
         'new_name': 'new-name',
@@ -121,7 +123,7 @@ class UpdateItem(object):
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, provider_type=None, accessibility='regular', add_tag=None, cert_file_data=None, change_event=None, delete_protection=None, description='default_metadata', host_provider='explicit', json=False, name=None, new_metadata='default_metadata', new_name=None, rm_tag=None, rotate_after_disconnect='false', secure_access_add_host=None, secure_access_allow_external_user=None, secure_access_allow_port_forwading=None, secure_access_aws_account_id=None, secure_access_aws_native_cli=None, secure_access_aws_region=None, secure_access_bastion_api=None, secure_access_bastion_issuer=None, secure_access_bastion_ssh=None, secure_access_cluster_endpoint=None, secure_access_dashboard_url=None, secure_access_db_name=None, secure_access_db_schema=None, secure_access_enable=None, secure_access_host=None, secure_access_rd_gateway_server=None, secure_access_rdp_domain=None, secure_access_rdp_user=None, secure_access_rm_host=None, secure_access_ssh_creds=None, secure_access_ssh_creds_user=None, secure_access_url=None, secure_access_use_internal_bastion=None, secure_access_web_browsing=False, secure_access_web_proxy=False, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, provider_type=None, accessibility='regular', add_tag=None, cert_file_data=None, change_event=None, delete_protection=None, description='default_metadata', host_provider='explicit', json=False, max_versions=None, name=None, new_metadata='default_metadata', new_name=None, rm_tag=None, rotate_after_disconnect='false', secure_access_add_host=None, secure_access_allow_external_user=None, secure_access_allow_port_forwading=None, secure_access_aws_account_id=None, secure_access_aws_native_cli=None, secure_access_aws_region=None, secure_access_bastion_api=None, secure_access_bastion_issuer=None, secure_access_bastion_ssh=None, secure_access_cluster_endpoint=None, secure_access_dashboard_url=None, secure_access_db_name=None, secure_access_db_schema=None, secure_access_enable=None, secure_access_host=None, secure_access_rd_gateway_server=None, secure_access_rdp_domain=None, secure_access_rdp_user=None, secure_access_rm_host=None, secure_access_ssh_creds=None, secure_access_ssh_creds_user=None, secure_access_url=None, secure_access_use_internal_bastion=None, secure_access_web_browsing=False, secure_access_web_proxy=False, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """UpdateItem - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -136,6 +138,7 @@ class UpdateItem(object):
         self._description = None
         self._host_provider = None
         self._json = None
+        self._max_versions = None
         self._name = None
         self._new_metadata = None
         self._new_name = None
@@ -188,6 +191,8 @@ class UpdateItem(object):
             self.host_provider = host_provider
         if json is not None:
             self.json = json
+        if max_versions is not None:
+            self.max_versions = max_versions
         self.name = name
         if new_metadata is not None:
             self.new_metadata = new_metadata
@@ -456,6 +461,29 @@ class UpdateItem(object):
         """
 
         self._json = json
+
+    @property
+    def max_versions(self):
+        """Gets the max_versions of this UpdateItem.  # noqa: E501
+
+        Set the maximum number of versions, limited by the account settings defaults.  # noqa: E501
+
+        :return: The max_versions of this UpdateItem.  # noqa: E501
+        :rtype: str
+        """
+        return self._max_versions
+
+    @max_versions.setter
+    def max_versions(self, max_versions):
+        """Sets the max_versions of this UpdateItem.
+
+        Set the maximum number of versions, limited by the account settings defaults.  # noqa: E501
+
+        :param max_versions: The max_versions of this UpdateItem.  # noqa: E501
+        :type: str
+        """
+
+        self._max_versions = max_versions
 
     @property
     def name(self):

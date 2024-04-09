@@ -5,6 +5,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **ext_key_usage** | **list[int]** |  | [optional] 
 **key_usage** | **int** | KeyUsage represents the set of actions that are valid for a given key. It&#39;s a bitmap of the KeyUsage* constants. | [optional] 
+**crl_distribution_points** | **list[str]** |  | [optional] 
 **dns_names** | **list[str]** |  | [optional] 
 **email_addresses** | **list[str]** |  | [optional] 
 **extensions** | [**list[Extension]**](Extension.md) |  | [optional] 

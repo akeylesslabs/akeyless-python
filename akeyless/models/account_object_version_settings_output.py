@@ -35,26 +35,31 @@ class AccountObjectVersionSettingsOutput(object):
     """
     openapi_types = {
         'default_versioning': 'bool',
+        'force_new_versions': 'bool',
         'items': 'list[ObjectVersionSettingsOutput]'
     }
 
     attribute_map = {
         'default_versioning': 'default-versioning',
+        'force_new_versions': 'force_new_versions',
         'items': 'items'
     }
 
-    def __init__(self, default_versioning=None, items=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, default_versioning=None, force_new_versions=None, items=None, local_vars_configuration=None):  # noqa: E501
         """AccountObjectVersionSettingsOutput - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._default_versioning = None
+        self._force_new_versions = None
         self._items = None
         self.discriminator = None
 
         if default_versioning is not None:
             self.default_versioning = default_versioning
+        if force_new_versions is not None:
+            self.force_new_versions = force_new_versions
         if items is not None:
             self.items = items
 
@@ -78,6 +83,27 @@ class AccountObjectVersionSettingsOutput(object):
         """
 
         self._default_versioning = default_versioning
+
+    @property
+    def force_new_versions(self):
+        """Gets the force_new_versions of this AccountObjectVersionSettingsOutput.  # noqa: E501
+
+
+        :return: The force_new_versions of this AccountObjectVersionSettingsOutput.  # noqa: E501
+        :rtype: bool
+        """
+        return self._force_new_versions
+
+    @force_new_versions.setter
+    def force_new_versions(self, force_new_versions):
+        """Sets the force_new_versions of this AccountObjectVersionSettingsOutput.
+
+
+        :param force_new_versions: The force_new_versions of this AccountObjectVersionSettingsOutput.  # noqa: E501
+        :type: bool
+        """
+
+        self._force_new_versions = force_new_versions
 
     @property
     def items(self):

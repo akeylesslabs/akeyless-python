@@ -49,9 +49,11 @@ class NotiForwarder(object):
         'noti_forwarder_name': 'str',
         'noti_forwarder_type': 'str',
         'noti_forwarder_versions': 'list[ItemVersion]',
+        'override_url': 'str',
         'paths': 'list[str]',
         'protection_key': 'str',
         'runner_type': 'str',
+        'slack_noti_forwarder_public_details': 'object',
         'timespan_in_seconds': 'int',
         'to_emails': 'list[EmailEntry]',
         'user_email': 'str',
@@ -76,9 +78,11 @@ class NotiForwarder(object):
         'noti_forwarder_name': 'noti_forwarder_name',
         'noti_forwarder_type': 'noti_forwarder_type',
         'noti_forwarder_versions': 'noti_forwarder_versions',
+        'override_url': 'override_url',
         'paths': 'paths',
         'protection_key': 'protection_key',
         'runner_type': 'runner_type',
+        'slack_noti_forwarder_public_details': 'slack_noti_forwarder_public_details',
         'timespan_in_seconds': 'timespan_in_seconds',
         'to_emails': 'to_emails',
         'user_email': 'user_email',
@@ -87,7 +91,7 @@ class NotiForwarder(object):
         'with_customer_fragment': 'with_customer_fragment'
     }
 
-    def __init__(self, auth_type=None, client_id=None, client_permissions=None, comment=None, creation_date=None, endpoint=None, event_types=None, gateway_cluster_id=None, is_enabled=None, last_version=None, modification_date=None, noti_forwarder_id=None, noti_forwarder_name=None, noti_forwarder_type=None, noti_forwarder_versions=None, paths=None, protection_key=None, runner_type=None, timespan_in_seconds=None, to_emails=None, user_email=None, username=None, webhook_noti_forwarder_public_details=None, with_customer_fragment=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, auth_type=None, client_id=None, client_permissions=None, comment=None, creation_date=None, endpoint=None, event_types=None, gateway_cluster_id=None, is_enabled=None, last_version=None, modification_date=None, noti_forwarder_id=None, noti_forwarder_name=None, noti_forwarder_type=None, noti_forwarder_versions=None, override_url=None, paths=None, protection_key=None, runner_type=None, slack_noti_forwarder_public_details=None, timespan_in_seconds=None, to_emails=None, user_email=None, username=None, webhook_noti_forwarder_public_details=None, with_customer_fragment=None, local_vars_configuration=None):  # noqa: E501
         """NotiForwarder - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -108,9 +112,11 @@ class NotiForwarder(object):
         self._noti_forwarder_name = None
         self._noti_forwarder_type = None
         self._noti_forwarder_versions = None
+        self._override_url = None
         self._paths = None
         self._protection_key = None
         self._runner_type = None
+        self._slack_noti_forwarder_public_details = None
         self._timespan_in_seconds = None
         self._to_emails = None
         self._user_email = None
@@ -149,12 +155,16 @@ class NotiForwarder(object):
             self.noti_forwarder_type = noti_forwarder_type
         if noti_forwarder_versions is not None:
             self.noti_forwarder_versions = noti_forwarder_versions
+        if override_url is not None:
+            self.override_url = override_url
         if paths is not None:
             self.paths = paths
         if protection_key is not None:
             self.protection_key = protection_key
         if runner_type is not None:
             self.runner_type = runner_type
+        if slack_noti_forwarder_public_details is not None:
+            self.slack_noti_forwarder_public_details = slack_noti_forwarder_public_details
         if timespan_in_seconds is not None:
             self.timespan_in_seconds = timespan_in_seconds
         if to_emails is not None:
@@ -486,6 +496,27 @@ class NotiForwarder(object):
         self._noti_forwarder_versions = noti_forwarder_versions
 
     @property
+    def override_url(self):
+        """Gets the override_url of this NotiForwarder.  # noqa: E501
+
+
+        :return: The override_url of this NotiForwarder.  # noqa: E501
+        :rtype: str
+        """
+        return self._override_url
+
+    @override_url.setter
+    def override_url(self, override_url):
+        """Sets the override_url of this NotiForwarder.
+
+
+        :param override_url: The override_url of this NotiForwarder.  # noqa: E501
+        :type: str
+        """
+
+        self._override_url = override_url
+
+    @property
     def paths(self):
         """Gets the paths of this NotiForwarder.  # noqa: E501
 
@@ -547,6 +578,27 @@ class NotiForwarder(object):
         """
 
         self._runner_type = runner_type
+
+    @property
+    def slack_noti_forwarder_public_details(self):
+        """Gets the slack_noti_forwarder_public_details of this NotiForwarder.  # noqa: E501
+
+
+        :return: The slack_noti_forwarder_public_details of this NotiForwarder.  # noqa: E501
+        :rtype: object
+        """
+        return self._slack_noti_forwarder_public_details
+
+    @slack_noti_forwarder_public_details.setter
+    def slack_noti_forwarder_public_details(self, slack_noti_forwarder_public_details):
+        """Sets the slack_noti_forwarder_public_details of this NotiForwarder.
+
+
+        :param slack_noti_forwarder_public_details: The slack_noti_forwarder_public_details of this NotiForwarder.  # noqa: E501
+        :type: object
+        """
+
+        self._slack_noti_forwarder_public_details = slack_noti_forwarder_public_details
 
     @property
     def timespan_in_seconds(self):

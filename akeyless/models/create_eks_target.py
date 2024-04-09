@@ -44,6 +44,7 @@ class CreateEKSTarget(object):
         'eks_secret_access_key': 'str',
         'json': 'bool',
         'key': 'str',
+        'max_versions': 'str',
         'name': 'str',
         'token': 'str',
         'uid_token': 'str',
@@ -61,13 +62,14 @@ class CreateEKSTarget(object):
         'eks_secret_access_key': 'eks-secret-access-key',
         'json': 'json',
         'key': 'key',
+        'max_versions': 'max-versions',
         'name': 'name',
         'token': 'token',
         'uid_token': 'uid-token',
         'use_gw_cloud_identity': 'use-gw-cloud-identity'
     }
 
-    def __init__(self, comment=None, description=None, eks_access_key_id=None, eks_cluster_ca_cert=None, eks_cluster_endpoint=None, eks_cluster_name=None, eks_region='us-east-2', eks_secret_access_key=None, json=False, key=None, name=None, token=None, uid_token=None, use_gw_cloud_identity=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, comment=None, description=None, eks_access_key_id=None, eks_cluster_ca_cert=None, eks_cluster_endpoint=None, eks_cluster_name=None, eks_region='us-east-2', eks_secret_access_key=None, json=False, key=None, max_versions=None, name=None, token=None, uid_token=None, use_gw_cloud_identity=None, local_vars_configuration=None):  # noqa: E501
         """CreateEKSTarget - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -83,6 +85,7 @@ class CreateEKSTarget(object):
         self._eks_secret_access_key = None
         self._json = None
         self._key = None
+        self._max_versions = None
         self._name = None
         self._token = None
         self._uid_token = None
@@ -104,6 +107,8 @@ class CreateEKSTarget(object):
             self.json = json
         if key is not None:
             self.key = key
+        if max_versions is not None:
+            self.max_versions = max_versions
         self.name = name
         if token is not None:
             self.token = token
@@ -351,6 +356,29 @@ class CreateEKSTarget(object):
         """
 
         self._key = key
+
+    @property
+    def max_versions(self):
+        """Gets the max_versions of this CreateEKSTarget.  # noqa: E501
+
+        Set the maximum number of versions, limited by the account settings defaults.  # noqa: E501
+
+        :return: The max_versions of this CreateEKSTarget.  # noqa: E501
+        :rtype: str
+        """
+        return self._max_versions
+
+    @max_versions.setter
+    def max_versions(self, max_versions):
+        """Sets the max_versions of this CreateEKSTarget.
+
+        Set the maximum number of versions, limited by the account settings defaults.  # noqa: E501
+
+        :param max_versions: The max_versions of this CreateEKSTarget.  # noqa: E501
+        :type: str
+        """
+
+        self._max_versions = max_versions
 
     @property
     def name(self):

@@ -43,6 +43,7 @@ class GatewayCreateMigration(object):
         'ad_discovery_types': 'list[str]',
         'ad_os_filter': 'str',
         'ad_ssh_port': 'str',
+        'ad_target_format': 'str',
         'ad_targets_type': 'str',
         'ad_winrm_over_http': 'str',
         'ad_winrm_port': 'str',
@@ -108,6 +109,7 @@ class GatewayCreateMigration(object):
         'ad_discovery_types': 'ad-discovery-types',
         'ad_os_filter': 'ad-os-filter',
         'ad_ssh_port': 'ad-ssh-port',
+        'ad_target_format': 'ad-target-format',
         'ad_targets_type': 'ad-targets-type',
         'ad_winrm_over_http': 'ad-winrm-over-http',
         'ad_winrm_port': 'ad-winrm-port',
@@ -163,7 +165,7 @@ class GatewayCreateMigration(object):
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, _1password_email=None, _1password_password=None, _1password_secret_key=None, _1password_url=None, _1password_vaults=None, ad_discover_services='false', ad_discovery_types=None, ad_os_filter=None, ad_ssh_port='22', ad_targets_type='windows', ad_winrm_over_http='false', ad_winrm_port='5986', ad_auto_rotate=None, ad_computer_base_dn=None, ad_discover_local_users=None, ad_domain_name=None, ad_domain_users_path_template=None, ad_local_users_ignore=None, ad_local_users_path_template=None, ad_rotation_hour=None, ad_rotation_interval=None, ad_sra_enable_rdp=None, ad_target_name=None, ad_targets_path_template=None, ad_user_base_dn=None, ad_user_groups=None, aws_key=None, aws_key_id=None, aws_region='us-east-2', azure_client_id=None, azure_kv_name=None, azure_secret=None, azure_tenant_id=None, gcp_key=None, hashi_json='true', hashi_ns=None, hashi_token=None, hashi_url=None, json=False, k8s_ca_certificate=None, k8s_client_certificate=None, k8s_client_key=None, k8s_namespace=None, k8s_password=None, k8s_skip_system=None, k8s_token=None, k8s_url=None, k8s_username=None, name=None, protection_key=None, si_auto_rotate=None, si_rotation_hour=None, si_rotation_interval=None, si_sra_enable_rdp='false', si_target_name=None, si_user_groups=None, si_users_ignore=None, si_users_path_template=None, target_location=None, token=None, type=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, _1password_email=None, _1password_password=None, _1password_secret_key=None, _1password_url=None, _1password_vaults=None, ad_discover_services='false', ad_discovery_types=None, ad_os_filter=None, ad_ssh_port='22', ad_target_format='linked', ad_targets_type='windows', ad_winrm_over_http='false', ad_winrm_port='5986', ad_auto_rotate=None, ad_computer_base_dn=None, ad_discover_local_users=None, ad_domain_name=None, ad_domain_users_path_template=None, ad_local_users_ignore=None, ad_local_users_path_template=None, ad_rotation_hour=None, ad_rotation_interval=None, ad_sra_enable_rdp=None, ad_target_name=None, ad_targets_path_template=None, ad_user_base_dn=None, ad_user_groups=None, aws_key=None, aws_key_id=None, aws_region='us-east-2', azure_client_id=None, azure_kv_name=None, azure_secret=None, azure_tenant_id=None, gcp_key=None, hashi_json='true', hashi_ns=None, hashi_token=None, hashi_url=None, json=False, k8s_ca_certificate=None, k8s_client_certificate=None, k8s_client_key=None, k8s_namespace=None, k8s_password=None, k8s_skip_system=None, k8s_token=None, k8s_url=None, k8s_username=None, name=None, protection_key=None, si_auto_rotate=None, si_rotation_hour=None, si_rotation_interval=None, si_sra_enable_rdp='false', si_target_name=None, si_user_groups=None, si_users_ignore=None, si_users_path_template=None, target_location=None, token=None, type=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """GatewayCreateMigration - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -178,6 +180,7 @@ class GatewayCreateMigration(object):
         self._ad_discovery_types = None
         self._ad_os_filter = None
         self._ad_ssh_port = None
+        self._ad_target_format = None
         self._ad_targets_type = None
         self._ad_winrm_over_http = None
         self._ad_winrm_port = None
@@ -251,6 +254,8 @@ class GatewayCreateMigration(object):
             self.ad_os_filter = ad_os_filter
         if ad_ssh_port is not None:
             self.ad_ssh_port = ad_ssh_port
+        if ad_target_format is not None:
+            self.ad_target_format = ad_target_format
         if ad_targets_type is not None:
             self.ad_targets_type = ad_targets_type
         if ad_winrm_over_http is not None:
@@ -560,6 +565,29 @@ class GatewayCreateMigration(object):
         """
 
         self._ad_ssh_port = ad_ssh_port
+
+    @property
+    def ad_target_format(self):
+        """Gets the ad_target_format of this GatewayCreateMigration.  # noqa: E501
+
+        Relevant only for ad-discovery-types=computers. For linked, all computers will be migrated into a linked target(s). if set with regular, the migration will create a target for each computer.  # noqa: E501
+
+        :return: The ad_target_format of this GatewayCreateMigration.  # noqa: E501
+        :rtype: str
+        """
+        return self._ad_target_format
+
+    @ad_target_format.setter
+    def ad_target_format(self, ad_target_format):
+        """Sets the ad_target_format of this GatewayCreateMigration.
+
+        Relevant only for ad-discovery-types=computers. For linked, all computers will be migrated into a linked target(s). if set with regular, the migration will create a target for each computer.  # noqa: E501
+
+        :param ad_target_format: The ad_target_format of this GatewayCreateMigration.  # noqa: E501
+        :type: str
+        """
+
+        self._ad_target_format = ad_target_format
 
     @property
     def ad_targets_type(self):

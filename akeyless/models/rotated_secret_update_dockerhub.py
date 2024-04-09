@@ -42,6 +42,7 @@ class RotatedSecretUpdateDockerhub(object):
         'json': 'bool',
         'keep_prev_version': 'str',
         'key': 'str',
+        'max_versions': 'str',
         'name': 'str',
         'new_name': 'str',
         'password_length': 'str',
@@ -61,6 +62,7 @@ class RotatedSecretUpdateDockerhub(object):
         'json': 'json',
         'keep_prev_version': 'keep-prev-version',
         'key': 'key',
+        'max_versions': 'max-versions',
         'name': 'name',
         'new_name': 'new-name',
         'password_length': 'password-length',
@@ -71,7 +73,7 @@ class RotatedSecretUpdateDockerhub(object):
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, add_tag=None, authentication_credentials='use-user-creds', auto_rotate=None, delete_protection=None, description='default_metadata', json=False, keep_prev_version=None, key=None, name=None, new_name=None, password_length=None, rm_tag=None, rotation_hour=None, rotation_interval=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, add_tag=None, authentication_credentials='use-user-creds', auto_rotate=None, delete_protection=None, description='default_metadata', json=False, keep_prev_version=None, key=None, max_versions=None, name=None, new_name=None, password_length=None, rm_tag=None, rotation_hour=None, rotation_interval=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """RotatedSecretUpdateDockerhub - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -85,6 +87,7 @@ class RotatedSecretUpdateDockerhub(object):
         self._json = None
         self._keep_prev_version = None
         self._key = None
+        self._max_versions = None
         self._name = None
         self._new_name = None
         self._password_length = None
@@ -111,6 +114,8 @@ class RotatedSecretUpdateDockerhub(object):
             self.keep_prev_version = keep_prev_version
         if key is not None:
             self.key = key
+        if max_versions is not None:
+            self.max_versions = max_versions
         self.name = name
         if new_name is not None:
             self.new_name = new_name
@@ -310,6 +315,29 @@ class RotatedSecretUpdateDockerhub(object):
         """
 
         self._key = key
+
+    @property
+    def max_versions(self):
+        """Gets the max_versions of this RotatedSecretUpdateDockerhub.  # noqa: E501
+
+        Set the maximum number of versions, limited by the account settings defaults.  # noqa: E501
+
+        :return: The max_versions of this RotatedSecretUpdateDockerhub.  # noqa: E501
+        :rtype: str
+        """
+        return self._max_versions
+
+    @max_versions.setter
+    def max_versions(self, max_versions):
+        """Sets the max_versions of this RotatedSecretUpdateDockerhub.
+
+        Set the maximum number of versions, limited by the account settings defaults.  # noqa: E501
+
+        :param max_versions: The max_versions of this RotatedSecretUpdateDockerhub.  # noqa: E501
+        :type: str
+        """
+
+        self._max_versions = max_versions
 
     @property
     def name(self):

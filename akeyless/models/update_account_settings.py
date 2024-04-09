@@ -44,6 +44,7 @@ class UpdateAccountSettings(object):
         'dp_enable_classic_key_protection': 'str',
         'dynamic_secret_max_ttl': 'int',
         'dynamic_secret_max_ttl_enable': 'str',
+        'force_new_versions': 'str',
         'invalid_characters': 'str',
         'item_type': 'str',
         'items_deletion_protection': 'str',
@@ -80,6 +81,7 @@ class UpdateAccountSettings(object):
         'dp_enable_classic_key_protection': 'dp-enable-classic-key-protection',
         'dynamic_secret_max_ttl': 'dynamic-secret-max-ttl',
         'dynamic_secret_max_ttl_enable': 'dynamic-secret-max-ttl-enable',
+        'force_new_versions': 'force-new-versions',
         'invalid_characters': 'invalid-characters',
         'item_type': 'item-type',
         'items_deletion_protection': 'items-deletion-protection',
@@ -105,7 +107,7 @@ class UpdateAccountSettings(object):
         'use_capital_letters': 'use_capital-letters'
     }
 
-    def __init__(self, address=None, city=None, company_name=None, country=None, default_key_name=None, default_share_link_ttl_minutes=None, default_versioning=None, dp_enable_classic_key_protection=None, dynamic_secret_max_ttl=None, dynamic_secret_max_ttl_enable=None, invalid_characters='notReceivedInvalidCharacter', item_type=None, items_deletion_protection=None, json=False, jwt_ttl_default=None, jwt_ttl_max=None, jwt_ttl_min=None, lock_default_key=None, max_rotation_interval=None, max_rotation_interval_enable=None, max_versions=None, password_length=None, phone=None, postal_code=None, token=None, uid_token=None, usage_event_enable=None, usage_event_interval=None, usage_event_object_type=None, use_lower_letters=None, use_numbers=None, use_special_characters=None, use_capital_letters=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, address=None, city=None, company_name=None, country=None, default_key_name=None, default_share_link_ttl_minutes=None, default_versioning=None, dp_enable_classic_key_protection=None, dynamic_secret_max_ttl=None, dynamic_secret_max_ttl_enable=None, force_new_versions=None, invalid_characters='notReceivedInvalidCharacter', item_type=None, items_deletion_protection=None, json=False, jwt_ttl_default=None, jwt_ttl_max=None, jwt_ttl_min=None, lock_default_key=None, max_rotation_interval=None, max_rotation_interval_enable=None, max_versions=None, password_length=None, phone=None, postal_code=None, token=None, uid_token=None, usage_event_enable=None, usage_event_interval=None, usage_event_object_type=None, use_lower_letters=None, use_numbers=None, use_special_characters=None, use_capital_letters=None, local_vars_configuration=None):  # noqa: E501
         """UpdateAccountSettings - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -121,6 +123,7 @@ class UpdateAccountSettings(object):
         self._dp_enable_classic_key_protection = None
         self._dynamic_secret_max_ttl = None
         self._dynamic_secret_max_ttl_enable = None
+        self._force_new_versions = None
         self._invalid_characters = None
         self._item_type = None
         self._items_deletion_protection = None
@@ -166,6 +169,8 @@ class UpdateAccountSettings(object):
             self.dynamic_secret_max_ttl = dynamic_secret_max_ttl
         if dynamic_secret_max_ttl_enable is not None:
             self.dynamic_secret_max_ttl_enable = dynamic_secret_max_ttl_enable
+        if force_new_versions is not None:
+            self.force_new_versions = force_new_versions
         if invalid_characters is not None:
             self.invalid_characters = invalid_characters
         if item_type is not None:
@@ -355,7 +360,7 @@ class UpdateAccountSettings(object):
     def default_versioning(self):
         """Gets the default_versioning of this UpdateAccountSettings.  # noqa: E501
 
-        If set to true, new item version will be created on each update [true/false]  # noqa: E501
+        If set to true, new versions is enabled by default  # noqa: E501
 
         :return: The default_versioning of this UpdateAccountSettings.  # noqa: E501
         :rtype: str
@@ -366,7 +371,7 @@ class UpdateAccountSettings(object):
     def default_versioning(self, default_versioning):
         """Sets the default_versioning of this UpdateAccountSettings.
 
-        If set to true, new item version will be created on each update [true/false]  # noqa: E501
+        If set to true, new versions is enabled by default  # noqa: E501
 
         :param default_versioning: The default_versioning of this UpdateAccountSettings.  # noqa: E501
         :type: str
@@ -442,6 +447,29 @@ class UpdateAccountSettings(object):
         """
 
         self._dynamic_secret_max_ttl_enable = dynamic_secret_max_ttl_enable
+
+    @property
+    def force_new_versions(self):
+        """Gets the force_new_versions of this UpdateAccountSettings.  # noqa: E501
+
+        If set to true, new version will be created on update  # noqa: E501
+
+        :return: The force_new_versions of this UpdateAccountSettings.  # noqa: E501
+        :rtype: str
+        """
+        return self._force_new_versions
+
+    @force_new_versions.setter
+    def force_new_versions(self, force_new_versions):
+        """Sets the force_new_versions of this UpdateAccountSettings.
+
+        If set to true, new version will be created on update  # noqa: E501
+
+        :param force_new_versions: The force_new_versions of this UpdateAccountSettings.  # noqa: E501
+        :type: str
+        """
+
+        self._force_new_versions = force_new_versions
 
     @property
     def invalid_characters(self):

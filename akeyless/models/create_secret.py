@@ -42,6 +42,7 @@ class CreateSecret(object):
         'format': 'str',
         'inject_url': 'list[str]',
         'json': 'bool',
+        'max_versions': 'str',
         'metadata': 'str',
         'multiline_value': 'bool',
         'name': 'str',
@@ -73,6 +74,7 @@ class CreateSecret(object):
         'format': 'format',
         'inject_url': 'inject-url',
         'json': 'json',
+        'max_versions': 'max-versions',
         'metadata': 'metadata',
         'multiline_value': 'multiline_value',
         'name': 'name',
@@ -95,7 +97,7 @@ class CreateSecret(object):
         'value': 'value'
     }
 
-    def __init__(self, accessibility='regular', change_event=None, custom_field=None, delete_protection=None, description=None, format='text', inject_url=None, json=False, metadata=None, multiline_value=None, name=None, password=None, protection_key=None, secure_access_bastion_issuer=None, secure_access_enable=None, secure_access_host=None, secure_access_rdp_user=None, secure_access_ssh_creds=None, secure_access_ssh_user=None, secure_access_url=None, secure_access_web_browsing=False, secure_access_web_proxy=False, tags=None, token=None, type='generic', uid_token=None, username=None, value=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, accessibility='regular', change_event=None, custom_field=None, delete_protection=None, description=None, format='text', inject_url=None, json=False, max_versions=None, metadata=None, multiline_value=None, name=None, password=None, protection_key=None, secure_access_bastion_issuer=None, secure_access_enable=None, secure_access_host=None, secure_access_rdp_user=None, secure_access_ssh_creds=None, secure_access_ssh_user=None, secure_access_url=None, secure_access_web_browsing=False, secure_access_web_proxy=False, tags=None, token=None, type='generic', uid_token=None, username=None, value=None, local_vars_configuration=None):  # noqa: E501
         """CreateSecret - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -109,6 +111,7 @@ class CreateSecret(object):
         self._format = None
         self._inject_url = None
         self._json = None
+        self._max_versions = None
         self._metadata = None
         self._multiline_value = None
         self._name = None
@@ -147,6 +150,8 @@ class CreateSecret(object):
             self.inject_url = inject_url
         if json is not None:
             self.json = json
+        if max_versions is not None:
+            self.max_versions = max_versions
         if metadata is not None:
             self.metadata = metadata
         if multiline_value is not None:
@@ -369,6 +374,29 @@ class CreateSecret(object):
         """
 
         self._json = json
+
+    @property
+    def max_versions(self):
+        """Gets the max_versions of this CreateSecret.  # noqa: E501
+
+        Set the maximum number of versions, limited by the account settings defaults.  # noqa: E501
+
+        :return: The max_versions of this CreateSecret.  # noqa: E501
+        :rtype: str
+        """
+        return self._max_versions
+
+    @max_versions.setter
+    def max_versions(self, max_versions):
+        """Sets the max_versions of this CreateSecret.
+
+        Set the maximum number of versions, limited by the account settings defaults.  # noqa: E501
+
+        :param max_versions: The max_versions of this CreateSecret.  # noqa: E501
+        :type: str
+        """
+
+        self._max_versions = max_versions
 
     @property
     def metadata(self):

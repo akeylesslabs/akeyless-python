@@ -44,6 +44,7 @@ class AssocTargetItem(object):
         'location_id': 'str',
         'multi_region': 'str',
         'name': 'str',
+        'post_provision_command': 'str',
         'private_key_path': 'str',
         'project_id': 'str',
         'purpose': 'str',
@@ -67,6 +68,7 @@ class AssocTargetItem(object):
         'location_id': 'location-id',
         'multi_region': 'multi-region',
         'name': 'name',
+        'post_provision_command': 'post-provision-command',
         'private_key_path': 'private-key-path',
         'project_id': 'project-id',
         'purpose': 'purpose',
@@ -79,7 +81,7 @@ class AssocTargetItem(object):
         'vault_name': 'vault-name'
     }
 
-    def __init__(self, certificate_path=None, chain_path=None, disable_previous_key_version=False, json=False, key_operations=None, keyring_name=None, kms_algorithm=None, location_id=None, multi_region='false', name=None, private_key_path=None, project_id=None, purpose=None, regions=None, sra_association=False, target_name=None, tenant_secret_type=None, token=None, uid_token=None, vault_name=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, certificate_path=None, chain_path=None, disable_previous_key_version=False, json=False, key_operations=None, keyring_name=None, kms_algorithm=None, location_id=None, multi_region='false', name=None, post_provision_command=None, private_key_path=None, project_id=None, purpose=None, regions=None, sra_association=False, target_name=None, tenant_secret_type=None, token=None, uid_token=None, vault_name=None, local_vars_configuration=None):  # noqa: E501
         """AssocTargetItem - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -95,6 +97,7 @@ class AssocTargetItem(object):
         self._location_id = None
         self._multi_region = None
         self._name = None
+        self._post_provision_command = None
         self._private_key_path = None
         self._project_id = None
         self._purpose = None
@@ -126,6 +129,8 @@ class AssocTargetItem(object):
         if multi_region is not None:
             self.multi_region = multi_region
         self.name = name
+        if post_provision_command is not None:
+            self.post_provision_command = post_provision_command
         if private_key_path is not None:
             self.private_key_path = private_key_path
         if project_id is not None:
@@ -377,6 +382,29 @@ class AssocTargetItem(object):
             raise ValueError("Invalid value for `name`, must not be `None`")  # noqa: E501
 
         self._name = name
+
+    @property
+    def post_provision_command(self):
+        """Gets the post_provision_command of this AssocTargetItem.  # noqa: E501
+
+        A custom command to run on the remote target after successful provisioning (relevant only for certificate provisioning)  # noqa: E501
+
+        :return: The post_provision_command of this AssocTargetItem.  # noqa: E501
+        :rtype: str
+        """
+        return self._post_provision_command
+
+    @post_provision_command.setter
+    def post_provision_command(self, post_provision_command):
+        """Sets the post_provision_command of this AssocTargetItem.
+
+        A custom command to run on the remote target after successful provisioning (relevant only for certificate provisioning)  # noqa: E501
+
+        :param post_provision_command: The post_provision_command of this AssocTargetItem.  # noqa: E501
+        :type: str
+        """
+
+        self._post_provision_command = post_provision_command
 
     @property
     def private_key_path(self):

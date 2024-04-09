@@ -436,7 +436,7 @@ class GatewayUpdateProducerAzure(object):
     def producer_encryption_key_name(self):
         """Gets the producer_encryption_key_name of this GatewayUpdateProducerAzure.  # noqa: E501
 
-        Dynamic producer encryption key  # noqa: E501
+        Dynamic secret encryption key  # noqa: E501
 
         :return: The producer_encryption_key_name of this GatewayUpdateProducerAzure.  # noqa: E501
         :rtype: str
@@ -447,7 +447,7 @@ class GatewayUpdateProducerAzure(object):
     def producer_encryption_key_name(self, producer_encryption_key_name):
         """Sets the producer_encryption_key_name of this GatewayUpdateProducerAzure.
 
-        Dynamic producer encryption key  # noqa: E501
+        Dynamic secret encryption key  # noqa: E501
 
         :param producer_encryption_key_name: The producer_encryption_key_name of this GatewayUpdateProducerAzure.  # noqa: E501
         :type: str

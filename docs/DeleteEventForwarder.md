@@ -1,5 +1,6 @@
 # DeleteEventForwarder
 
+deleteEventForwarder is a command that creates a new event forwarder [Deprecated - please use event-forwarder-delete command]
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

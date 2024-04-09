@@ -19,6 +19,7 @@ Name | Type | Description | Notes
 **local_users_rotated_secrets_path_template** | **str** |  | [optional] 
 **os_filter** | **str** |  | [optional] 
 **ssh_port** | **str** |  | [optional] 
+**target_format** | **str** |  | [optional] 
 **targets_type** | **str** |  | [optional] 
 **user_base_dn** | **str** |  | [optional] 
 **user_groups** | **list[str]** |  | [optional] 

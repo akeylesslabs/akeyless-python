@@ -42,6 +42,7 @@ class RotatedSecretUpdateWindows(object):
         'json': 'bool',
         'keep_prev_version': 'str',
         'key': 'str',
+        'max_versions': 'str',
         'name': 'str',
         'new_name': 'str',
         'password_length': 'str',
@@ -71,6 +72,7 @@ class RotatedSecretUpdateWindows(object):
         'json': 'json',
         'keep_prev_version': 'keep-prev-version',
         'key': 'key',
+        'max_versions': 'max-versions',
         'name': 'name',
         'new_name': 'new-name',
         'password_length': 'password-length',
@@ -91,7 +93,7 @@ class RotatedSecretUpdateWindows(object):
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, add_tag=None, authentication_credentials='use-user-creds', auto_rotate=None, delete_protection=None, description='default_metadata', json=False, keep_prev_version=None, key=None, name=None, new_name=None, password_length=None, rm_tag=None, rotate_after_disconnect='false', rotated_password=None, rotated_username=None, rotation_hour=None, rotation_interval=None, rotator_type=None, same_password=None, secure_access_allow_external_user=False, secure_access_enable=None, secure_access_host=None, secure_access_rdp_domain=None, secure_access_rdp_user=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, add_tag=None, authentication_credentials='use-user-creds', auto_rotate=None, delete_protection=None, description='default_metadata', json=False, keep_prev_version=None, key=None, max_versions=None, name=None, new_name=None, password_length=None, rm_tag=None, rotate_after_disconnect='false', rotated_password=None, rotated_username=None, rotation_hour=None, rotation_interval=None, rotator_type=None, same_password=None, secure_access_allow_external_user=False, secure_access_enable=None, secure_access_host=None, secure_access_rdp_domain=None, secure_access_rdp_user=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """RotatedSecretUpdateWindows - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -105,6 +107,7 @@ class RotatedSecretUpdateWindows(object):
         self._json = None
         self._keep_prev_version = None
         self._key = None
+        self._max_versions = None
         self._name = None
         self._new_name = None
         self._password_length = None
@@ -141,6 +144,8 @@ class RotatedSecretUpdateWindows(object):
             self.keep_prev_version = keep_prev_version
         if key is not None:
             self.key = key
+        if max_versions is not None:
+            self.max_versions = max_versions
         self.name = name
         if new_name is not None:
             self.new_name = new_name
@@ -359,6 +364,29 @@ class RotatedSecretUpdateWindows(object):
         """
 
         self._key = key
+
+    @property
+    def max_versions(self):
+        """Gets the max_versions of this RotatedSecretUpdateWindows.  # noqa: E501
+
+        Set the maximum number of versions, limited by the account settings defaults.  # noqa: E501
+
+        :return: The max_versions of this RotatedSecretUpdateWindows.  # noqa: E501
+        :rtype: str
+        """
+        return self._max_versions
+
+    @max_versions.setter
+    def max_versions(self, max_versions):
+        """Sets the max_versions of this RotatedSecretUpdateWindows.
+
+        Set the maximum number of versions, limited by the account settings defaults.  # noqa: E501
+
+        :param max_versions: The max_versions of this RotatedSecretUpdateWindows.  # noqa: E501
+        :type: str
+        """
+
+        self._max_versions = max_versions
 
     @property
     def name(self):
@@ -690,7 +718,7 @@ class RotatedSecretUpdateWindows(object):
     def secure_access_rdp_domain(self):
         """Gets the secure_access_rdp_domain of this RotatedSecretUpdateWindows.  # noqa: E501
 
-        Required when the Dynamic Secret is used for a domain user  # noqa: E501
+        Default domain name server. i.e. microsoft.com  # noqa: E501
 
         :return: The secure_access_rdp_domain of this RotatedSecretUpdateWindows.  # noqa: E501
         :rtype: str
@@ -701,7 +729,7 @@ class RotatedSecretUpdateWindows(object):
     def secure_access_rdp_domain(self, secure_access_rdp_domain):
         """Sets the secure_access_rdp_domain of this RotatedSecretUpdateWindows.
 
-        Required when the Dynamic Secret is used for a domain user  # noqa: E501
+        Default domain name server. i.e. microsoft.com  # noqa: E501
 
         :param secure_access_rdp_domain: The secure_access_rdp_domain of this RotatedSecretUpdateWindows.  # noqa: E501
         :type: str

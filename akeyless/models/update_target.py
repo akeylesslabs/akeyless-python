@@ -36,6 +36,7 @@ class UpdateTarget(object):
     openapi_types = {
         'description': 'str',
         'json': 'bool',
+        'max_versions': 'str',
         'name': 'str',
         'new_comment': 'str',
         'new_name': 'str',
@@ -46,6 +47,7 @@ class UpdateTarget(object):
     attribute_map = {
         'description': 'description',
         'json': 'json',
+        'max_versions': 'max-versions',
         'name': 'name',
         'new_comment': 'new-comment',
         'new_name': 'new-name',
@@ -53,7 +55,7 @@ class UpdateTarget(object):
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, description='default_comment', json=False, name=None, new_comment='default_comment', new_name=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, description='default_comment', json=False, max_versions=None, name=None, new_comment='default_comment', new_name=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """UpdateTarget - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -61,6 +63,7 @@ class UpdateTarget(object):
 
         self._description = None
         self._json = None
+        self._max_versions = None
         self._name = None
         self._new_comment = None
         self._new_name = None
@@ -72,6 +75,8 @@ class UpdateTarget(object):
             self.description = description
         if json is not None:
             self.json = json
+        if max_versions is not None:
+            self.max_versions = max_versions
         self.name = name
         if new_comment is not None:
             self.new_comment = new_comment
@@ -127,6 +132,29 @@ class UpdateTarget(object):
         """
 
         self._json = json
+
+    @property
+    def max_versions(self):
+        """Gets the max_versions of this UpdateTarget.  # noqa: E501
+
+        Set the maximum number of versions, limited by the account settings defaults.  # noqa: E501
+
+        :return: The max_versions of this UpdateTarget.  # noqa: E501
+        :rtype: str
+        """
+        return self._max_versions
+
+    @max_versions.setter
+    def max_versions(self, max_versions):
+        """Sets the max_versions of this UpdateTarget.
+
+        Set the maximum number of versions, limited by the account settings defaults.  # noqa: E501
+
+        :param max_versions: The max_versions of this UpdateTarget.  # noqa: E501
+        :type: str
+        """
+
+        self._max_versions = max_versions
 
     @property
     def name(self):

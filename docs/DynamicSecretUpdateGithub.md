@@ -9,9 +9,9 @@ Name | Type | Description | Notes
 **github_app_id** | **int** | Github app id | [optional] 
 **github_app_private_key** | **str** | App private key | [optional] 
 **github_base_url** | **str** | Base URL | [optional] [default to 'https://api.github.com/']
-**installation_id** | **int** | Github app installation id | [optional] 
-**installation_organization** | **str** | Optional, instead of installation id, set a GitHub organization name | [optional] 
-**installation_repository** | **str** | Optional, instead of installation id, set a GitHub repository &#39;&lt;owner&gt;/&lt;repo-name&gt; | [optional] 
+**installation_id** | **int** | GitHub application installation id | [optional] 
+**installation_organization** | **str** | Optional, mutually exclusive with installation id, GitHub organization name | [optional] 
+**installation_repository** | **str** | Optional, mutually exclusive with installation id, GitHub repository &#39;&lt;owner&gt;/&lt;repo-name&gt;&#39; | [optional] 
 **json** | **bool** | Set output format to JSON | [optional] [default to False]
 **name** | **str** | Dynamic secret name | 
 **new_name** | **str** | Dynamic secret new name | [optional] 

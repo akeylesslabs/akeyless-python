@@ -223,7 +223,7 @@ class GatewayUpdateProducerGithub(object):
     def installation_id(self):
         """Gets the installation_id of this GatewayUpdateProducerGithub.  # noqa: E501
 
-        Github app installation id  # noqa: E501
+        GitHub application installation id  # noqa: E501
 
         :return: The installation_id of this GatewayUpdateProducerGithub.  # noqa: E501
         :rtype: int
@@ -234,7 +234,7 @@ class GatewayUpdateProducerGithub(object):
     def installation_id(self, installation_id):
         """Sets the installation_id of this GatewayUpdateProducerGithub.
 
-        Github app installation id  # noqa: E501
+        GitHub application installation id  # noqa: E501
 
         :param installation_id: The installation_id of this GatewayUpdateProducerGithub.  # noqa: E501
         :type: int
@@ -246,7 +246,7 @@ class GatewayUpdateProducerGithub(object):
     def installation_organization(self):
         """Gets the installation_organization of this GatewayUpdateProducerGithub.  # noqa: E501
 
-        Optional, instead of installation id, set a GitHub organization name  # noqa: E501
+        Optional, mutually exclusive with installation id, GitHub organization name  # noqa: E501
 
         :return: The installation_organization of this GatewayUpdateProducerGithub.  # noqa: E501
         :rtype: str
@@ -257,7 +257,7 @@ class GatewayUpdateProducerGithub(object):
     def installation_organization(self, installation_organization):
         """Sets the installation_organization of this GatewayUpdateProducerGithub.
 
-        Optional, instead of installation id, set a GitHub organization name  # noqa: E501
+        Optional, mutually exclusive with installation id, GitHub organization name  # noqa: E501
 
         :param installation_organization: The installation_organization of this GatewayUpdateProducerGithub.  # noqa: E501
         :type: str
@@ -269,7 +269,7 @@ class GatewayUpdateProducerGithub(object):
     def installation_repository(self):
         """Gets the installation_repository of this GatewayUpdateProducerGithub.  # noqa: E501
 
-        Optional, instead of installation id, set a GitHub repository '<owner>/<repo-name>  # noqa: E501
+        Optional, mutually exclusive with installation id, GitHub repository '<owner>/<repo-name>'  # noqa: E501
 
         :return: The installation_repository of this GatewayUpdateProducerGithub.  # noqa: E501
         :rtype: str
@@ -280,7 +280,7 @@ class GatewayUpdateProducerGithub(object):
     def installation_repository(self, installation_repository):
         """Sets the installation_repository of this GatewayUpdateProducerGithub.
 
-        Optional, instead of installation id, set a GitHub repository '<owner>/<repo-name>  # noqa: E501
+        Optional, mutually exclusive with installation id, GitHub repository '<owner>/<repo-name>'  # noqa: E501
 
         :param installation_repository: The installation_repository of this GatewayUpdateProducerGithub.  # noqa: E501
         :type: str

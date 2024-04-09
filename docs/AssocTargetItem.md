@@ -14,6 +14,7 @@ Name | Type | Description | Notes
 **location_id** | **str** | Location id of the GCP KMS (required for gcp targets) | [optional] 
 **multi_region** | **str** | Set to &#39;true&#39; to create a multi-region managed key. (Relevant only for Classic Key AWS targets) | [optional] [default to 'false']
 **name** | **str** | The item to associate | 
+**post_provision_command** | **str** | A custom command to run on the remote target after successful provisioning (relevant only for certificate provisioning) | [optional] 
 **private_key_path** | **str** | A path on the target to store the private key (relevant only for certificate provisioning) | [optional] 
 **project_id** | **str** | Project id of the GCP KMS (required for gcp targets) | [optional] 
 **purpose** | **str** | Purpose of the key in GCP KMS (required for gcp targets) | [optional] 

@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **format** | **str** | Secret format [text/json] (relevant only for type &#39;generic&#39;) | [optional] [default to 'text']
 **inject_url** | **list[str]** | For Password Management use, reflect the website context | [optional] 
 **json** | **bool** | Set output format to JSON | [optional] [default to False]
+**max_versions** | **str** | Set the maximum number of versions, limited by the account settings defaults. | [optional] 
 **metadata** | **str** | Deprecated - use description | [optional] 
 **multiline_value** | **bool** | The provided value is a multiline value (separated by &#39;\\n&#39;) | [optional] 
 **name** | **str** | Secret name | 

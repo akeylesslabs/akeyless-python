@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **key** | **str** | The name of a key that used to encrypt the target secret value (if empty, the account default protectionKey key will be used) | [optional] 
 **ldap_ca_cert** | **str** | CA Certificate File Content | [optional] 
 **ldap_url** | **str** | LDAP Server URL | 
+**max_versions** | **str** | Set the maximum number of versions, limited by the account settings defaults. | [optional] 
 **name** | **str** | Target name | 
 **server_type** | **str** | Set Ldap server type, Options:[OpenLDAP, ActiveDirectory]. Default is OpenLDAP | [optional] [default to 'OpenLDAP']
 **token** | **str** | Authentication token (see &#x60;/auth&#x60; and &#x60;/configure&#x60;) | [optional] 

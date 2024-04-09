@@ -35,6 +35,7 @@ class StaticSecretDetailsInfo(object):
     """
     openapi_types = {
         'format': 'str',
+        'max_versions': 'int',
         'notify_on_change_event': 'bool',
         'username': 'str',
         'website': 'str',
@@ -43,19 +44,21 @@ class StaticSecretDetailsInfo(object):
 
     attribute_map = {
         'format': 'format',
+        'max_versions': 'max_versions',
         'notify_on_change_event': 'notify_on_change_event',
         'username': 'username',
         'website': 'website',
         'websites': 'websites'
     }
 
-    def __init__(self, format=None, notify_on_change_event=None, username=None, website=None, websites=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, format=None, max_versions=None, notify_on_change_event=None, username=None, website=None, websites=None, local_vars_configuration=None):  # noqa: E501
         """StaticSecretDetailsInfo - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._format = None
+        self._max_versions = None
         self._notify_on_change_event = None
         self._username = None
         self._website = None
@@ -64,6 +67,8 @@ class StaticSecretDetailsInfo(object):
 
         if format is not None:
             self.format = format
+        if max_versions is not None:
+            self.max_versions = max_versions
         if notify_on_change_event is not None:
             self.notify_on_change_event = notify_on_change_event
         if username is not None:
@@ -95,6 +100,27 @@ class StaticSecretDetailsInfo(object):
         """
 
         self._format = format
+
+    @property
+    def max_versions(self):
+        """Gets the max_versions of this StaticSecretDetailsInfo.  # noqa: E501
+
+
+        :return: The max_versions of this StaticSecretDetailsInfo.  # noqa: E501
+        :rtype: int
+        """
+        return self._max_versions
+
+    @max_versions.setter
+    def max_versions(self, max_versions):
+        """Sets the max_versions of this StaticSecretDetailsInfo.
+
+
+        :param max_versions: The max_versions of this StaticSecretDetailsInfo.  # noqa: E501
+        :type: int
+        """
+
+        self._max_versions = max_versions
 
     @property
     def notify_on_change_event(self):

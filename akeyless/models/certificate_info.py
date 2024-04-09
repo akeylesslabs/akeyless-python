@@ -36,6 +36,7 @@ class CertificateInfo(object):
     openapi_types = {
         'ext_key_usage': 'list[int]',
         'key_usage': 'int',
+        'crl_distribution_points': 'list[str]',
         'dns_names': 'list[str]',
         'email_addresses': 'list[str]',
         'extensions': 'list[Extension]',
@@ -62,6 +63,7 @@ class CertificateInfo(object):
     attribute_map = {
         'ext_key_usage': 'ExtKeyUsage',
         'key_usage': 'KeyUsage',
+        'crl_distribution_points': 'crl_distribution_points',
         'dns_names': 'dns_names',
         'email_addresses': 'email_addresses',
         'extensions': 'extensions',
@@ -85,7 +87,7 @@ class CertificateInfo(object):
         'version': 'version'
     }
 
-    def __init__(self, ext_key_usage=None, key_usage=None, dns_names=None, email_addresses=None, extensions=None, ip_addresses=None, is_ca=None, issuer=None, issuing_certificate_url=None, key_size=None, not_after=None, not_before=None, ocsp_server=None, public_key_algorithm_name=None, serial_number=None, sha_1_fingerprint=None, sha_256_fingerprint=None, signature=None, signature_algorithm_name=None, subject=None, subject_public_key=None, uris=None, version=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, ext_key_usage=None, key_usage=None, crl_distribution_points=None, dns_names=None, email_addresses=None, extensions=None, ip_addresses=None, is_ca=None, issuer=None, issuing_certificate_url=None, key_size=None, not_after=None, not_before=None, ocsp_server=None, public_key_algorithm_name=None, serial_number=None, sha_1_fingerprint=None, sha_256_fingerprint=None, signature=None, signature_algorithm_name=None, subject=None, subject_public_key=None, uris=None, version=None, local_vars_configuration=None):  # noqa: E501
         """CertificateInfo - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -93,6 +95,7 @@ class CertificateInfo(object):
 
         self._ext_key_usage = None
         self._key_usage = None
+        self._crl_distribution_points = None
         self._dns_names = None
         self._email_addresses = None
         self._extensions = None
@@ -120,6 +123,8 @@ class CertificateInfo(object):
             self.ext_key_usage = ext_key_usage
         if key_usage is not None:
             self.key_usage = key_usage
+        if crl_distribution_points is not None:
+            self.crl_distribution_points = crl_distribution_points
         if dns_names is not None:
             self.dns_names = dns_names
         if email_addresses is not None:
@@ -206,6 +211,27 @@ class CertificateInfo(object):
         """
 
         self._key_usage = key_usage
+
+    @property
+    def crl_distribution_points(self):
+        """Gets the crl_distribution_points of this CertificateInfo.  # noqa: E501
+
+
+        :return: The crl_distribution_points of this CertificateInfo.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._crl_distribution_points
+
+    @crl_distribution_points.setter
+    def crl_distribution_points(self, crl_distribution_points):
+        """Sets the crl_distribution_points of this CertificateInfo.
+
+
+        :param crl_distribution_points: The crl_distribution_points of this CertificateInfo.  # noqa: E501
+        :type: list[str]
+        """
+
+        self._crl_distribution_points = crl_distribution_points
 
     @property
     def dns_names(self):

@@ -49,6 +49,7 @@ class CreateDBTarget(object):
         'host': 'str',
         'json': 'bool',
         'key': 'str',
+        'max_versions': 'str',
         'mongodb_atlas': 'bool',
         'mongodb_atlas_api_private_key': 'str',
         'mongodb_atlas_api_public_key': 'str',
@@ -85,6 +86,7 @@ class CreateDBTarget(object):
         'host': 'host',
         'json': 'json',
         'key': 'key',
+        'max_versions': 'max-versions',
         'mongodb_atlas': 'mongodb-atlas',
         'mongodb_atlas_api_private_key': 'mongodb-atlas-api-private-key',
         'mongodb_atlas_api_public_key': 'mongodb-atlas-api-public-key',
@@ -105,7 +107,7 @@ class CreateDBTarget(object):
         'user_name': 'user-name'
     }
 
-    def __init__(self, db_defined_connection_type=None, azure_client_id=None, azure_client_secret=None, azure_tenant_id=None, cloud_service_provider=None, comment=None, connection_type='credentials', db_name=None, db_server_certificates=None, db_server_name=None, db_type=None, description=None, host=None, json=False, key=None, mongodb_atlas=None, mongodb_atlas_api_private_key=None, mongodb_atlas_api_public_key=None, mongodb_atlas_project_id=None, mongodb_default_auth_db=None, mongodb_uri_options=None, name=None, oracle_service_name=None, port=None, pwd=None, snowflake_account=None, snowflake_api_private_key=None, snowflake_api_private_key_password=None, ssl=False, ssl_certificate=None, token=None, uid_token=None, user_name=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, db_defined_connection_type=None, azure_client_id=None, azure_client_secret=None, azure_tenant_id=None, cloud_service_provider=None, comment=None, connection_type='credentials', db_name=None, db_server_certificates=None, db_server_name=None, db_type=None, description=None, host=None, json=False, key=None, max_versions=None, mongodb_atlas=None, mongodb_atlas_api_private_key=None, mongodb_atlas_api_public_key=None, mongodb_atlas_project_id=None, mongodb_default_auth_db=None, mongodb_uri_options=None, name=None, oracle_service_name=None, port=None, pwd=None, snowflake_account=None, snowflake_api_private_key=None, snowflake_api_private_key_password=None, ssl=False, ssl_certificate=None, token=None, uid_token=None, user_name=None, local_vars_configuration=None):  # noqa: E501
         """CreateDBTarget - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -126,6 +128,7 @@ class CreateDBTarget(object):
         self._host = None
         self._json = None
         self._key = None
+        self._max_versions = None
         self._mongodb_atlas = None
         self._mongodb_atlas_api_private_key = None
         self._mongodb_atlas_api_public_key = None
@@ -174,6 +177,8 @@ class CreateDBTarget(object):
             self.json = json
         if key is not None:
             self.key = key
+        if max_versions is not None:
+            self.max_versions = max_versions
         if mongodb_atlas is not None:
             self.mongodb_atlas = mongodb_atlas
         if mongodb_atlas_api_private_key is not None:
@@ -550,6 +555,29 @@ class CreateDBTarget(object):
         """
 
         self._key = key
+
+    @property
+    def max_versions(self):
+        """Gets the max_versions of this CreateDBTarget.  # noqa: E501
+
+        Set the maximum number of versions, limited by the account settings defaults.  # noqa: E501
+
+        :return: The max_versions of this CreateDBTarget.  # noqa: E501
+        :rtype: str
+        """
+        return self._max_versions
+
+    @max_versions.setter
+    def max_versions(self, max_versions):
+        """Sets the max_versions of this CreateDBTarget.
+
+        Set the maximum number of versions, limited by the account settings defaults.  # noqa: E501
+
+        :param max_versions: The max_versions of this CreateDBTarget.  # noqa: E501
+        :type: str
+        """
+
+        self._max_versions = max_versions
 
     @property
     def mongodb_atlas(self):

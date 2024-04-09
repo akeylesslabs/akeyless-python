@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **host** | **str** | SSH host name | [optional] 
 **json** | **bool** | Set output format to JSON | [optional] [default to False]
 **key** | **str** | The name of a key that used to encrypt the target secret value (if empty, the account default protectionKey key will be used) | [optional] 
+**max_versions** | **str** | Set the maximum number of versions, limited by the account settings defaults. | [optional] 
 **name** | **str** | Target name | 
 **port** | **str** | SSH port | [optional] [default to '22']
 **private_key** | **str** | SSH private key | [optional] 

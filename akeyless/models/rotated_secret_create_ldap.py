@@ -42,6 +42,7 @@ class RotatedSecretCreateLdap(object):
         'host_provider': 'str',
         'json': 'bool',
         'key': 'str',
+        'max_versions': 'str',
         'name': 'str',
         'password_length': 'str',
         'rotate_after_disconnect': 'str',
@@ -55,6 +56,8 @@ class RotatedSecretCreateLdap(object):
         'secure_access_rdp_domain': 'str',
         'secure_access_url': 'str',
         'secure_access_web': 'bool',
+        'secure_access_web_browsing': 'bool',
+        'secure_access_web_proxy': 'bool',
         'tags': 'list[str]',
         'target': 'list[str]',
         'target_name': 'str',
@@ -73,6 +76,7 @@ class RotatedSecretCreateLdap(object):
         'host_provider': 'host-provider',
         'json': 'json',
         'key': 'key',
+        'max_versions': 'max-versions',
         'name': 'name',
         'password_length': 'password-length',
         'rotate_after_disconnect': 'rotate-after-disconnect',
@@ -86,6 +90,8 @@ class RotatedSecretCreateLdap(object):
         'secure_access_rdp_domain': 'secure-access-rdp-domain',
         'secure_access_url': 'secure-access-url',
         'secure_access_web': 'secure-access-web',
+        'secure_access_web_browsing': 'secure-access-web-browsing',
+        'secure_access_web_proxy': 'secure-access-web-proxy',
         'tags': 'tags',
         'target': 'target',
         'target_name': 'target-name',
@@ -95,7 +101,7 @@ class RotatedSecretCreateLdap(object):
         'user_dn': 'user-dn'
     }
 
-    def __init__(self, provider_type=None, authentication_credentials='use-user-creds', auto_rotate=None, delete_protection=None, description=None, host_provider='explicit', json=False, key=None, name=None, password_length=None, rotate_after_disconnect='false', rotated_password=None, rotated_username=None, rotation_hour=None, rotation_interval=None, rotator_type=None, secure_access_enable=None, secure_access_host=None, secure_access_rdp_domain=None, secure_access_url=None, secure_access_web=False, tags=None, target=None, target_name=None, token=None, uid_token=None, user_attribute='cn', user_dn=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, provider_type=None, authentication_credentials='use-user-creds', auto_rotate=None, delete_protection=None, description=None, host_provider='explicit', json=False, key=None, max_versions=None, name=None, password_length=None, rotate_after_disconnect='false', rotated_password=None, rotated_username=None, rotation_hour=None, rotation_interval=None, rotator_type=None, secure_access_enable=None, secure_access_host=None, secure_access_rdp_domain=None, secure_access_url=None, secure_access_web=False, secure_access_web_browsing=False, secure_access_web_proxy=False, tags=None, target=None, target_name=None, token=None, uid_token=None, user_attribute='cn', user_dn=None, local_vars_configuration=None):  # noqa: E501
         """RotatedSecretCreateLdap - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -109,6 +115,7 @@ class RotatedSecretCreateLdap(object):
         self._host_provider = None
         self._json = None
         self._key = None
+        self._max_versions = None
         self._name = None
         self._password_length = None
         self._rotate_after_disconnect = None
@@ -122,6 +129,8 @@ class RotatedSecretCreateLdap(object):
         self._secure_access_rdp_domain = None
         self._secure_access_url = None
         self._secure_access_web = None
+        self._secure_access_web_browsing = None
+        self._secure_access_web_proxy = None
         self._tags = None
         self._target = None
         self._target_name = None
@@ -147,6 +156,8 @@ class RotatedSecretCreateLdap(object):
             self.json = json
         if key is not None:
             self.key = key
+        if max_versions is not None:
+            self.max_versions = max_versions
         self.name = name
         if password_length is not None:
             self.password_length = password_length
@@ -171,6 +182,10 @@ class RotatedSecretCreateLdap(object):
             self.secure_access_url = secure_access_url
         if secure_access_web is not None:
             self.secure_access_web = secure_access_web
+        if secure_access_web_browsing is not None:
+            self.secure_access_web_browsing = secure_access_web_browsing
+        if secure_access_web_proxy is not None:
+            self.secure_access_web_proxy = secure_access_web_proxy
         if tags is not None:
             self.tags = tags
         if target is not None:
@@ -366,6 +381,29 @@ class RotatedSecretCreateLdap(object):
         """
 
         self._key = key
+
+    @property
+    def max_versions(self):
+        """Gets the max_versions of this RotatedSecretCreateLdap.  # noqa: E501
+
+        Set the maximum number of versions, limited by the account settings defaults.  # noqa: E501
+
+        :return: The max_versions of this RotatedSecretCreateLdap.  # noqa: E501
+        :rtype: str
+        """
+        return self._max_versions
+
+    @max_versions.setter
+    def max_versions(self, max_versions):
+        """Sets the max_versions of this RotatedSecretCreateLdap.
+
+        Set the maximum number of versions, limited by the account settings defaults.  # noqa: E501
+
+        :param max_versions: The max_versions of this RotatedSecretCreateLdap.  # noqa: E501
+        :type: str
+        """
+
+        self._max_versions = max_versions
 
     @property
     def name(self):
@@ -605,7 +643,7 @@ class RotatedSecretCreateLdap(object):
     def secure_access_rdp_domain(self):
         """Gets the secure_access_rdp_domain of this RotatedSecretCreateLdap.  # noqa: E501
 
-        Required when the Dynamic Secret is used for a domain user  # noqa: E501
+        Default domain name server. i.e. microsoft.com  # noqa: E501
 
         :return: The secure_access_rdp_domain of this RotatedSecretCreateLdap.  # noqa: E501
         :rtype: str
@@ -616,7 +654,7 @@ class RotatedSecretCreateLdap(object):
     def secure_access_rdp_domain(self, secure_access_rdp_domain):
         """Sets the secure_access_rdp_domain of this RotatedSecretCreateLdap.
 
-        Required when the Dynamic Secret is used for a domain user  # noqa: E501
+        Default domain name server. i.e. microsoft.com  # noqa: E501
 
         :param secure_access_rdp_domain: The secure_access_rdp_domain of this RotatedSecretCreateLdap.  # noqa: E501
         :type: str
@@ -669,6 +707,52 @@ class RotatedSecretCreateLdap(object):
         """
 
         self._secure_access_web = secure_access_web
+
+    @property
+    def secure_access_web_browsing(self):
+        """Gets the secure_access_web_browsing of this RotatedSecretCreateLdap.  # noqa: E501
+
+        Secure browser via Akeyless Web Access Bastion  # noqa: E501
+
+        :return: The secure_access_web_browsing of this RotatedSecretCreateLdap.  # noqa: E501
+        :rtype: bool
+        """
+        return self._secure_access_web_browsing
+
+    @secure_access_web_browsing.setter
+    def secure_access_web_browsing(self, secure_access_web_browsing):
+        """Sets the secure_access_web_browsing of this RotatedSecretCreateLdap.
+
+        Secure browser via Akeyless Web Access Bastion  # noqa: E501
+
+        :param secure_access_web_browsing: The secure_access_web_browsing of this RotatedSecretCreateLdap.  # noqa: E501
+        :type: bool
+        """
+
+        self._secure_access_web_browsing = secure_access_web_browsing
+
+    @property
+    def secure_access_web_proxy(self):
+        """Gets the secure_access_web_proxy of this RotatedSecretCreateLdap.  # noqa: E501
+
+        Web-Proxy via Akeyless Web Access Bastion  # noqa: E501
+
+        :return: The secure_access_web_proxy of this RotatedSecretCreateLdap.  # noqa: E501
+        :rtype: bool
+        """
+        return self._secure_access_web_proxy
+
+    @secure_access_web_proxy.setter
+    def secure_access_web_proxy(self, secure_access_web_proxy):
+        """Sets the secure_access_web_proxy of this RotatedSecretCreateLdap.
+
+        Web-Proxy via Akeyless Web Access Bastion  # noqa: E501
+
+        :param secure_access_web_proxy: The secure_access_web_proxy of this RotatedSecretCreateLdap.  # noqa: E501
+        :type: bool
+        """
+
+        self._secure_access_web_proxy = secure_access_web_proxy
 
     @property
     def tags(self):

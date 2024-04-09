@@ -44,6 +44,7 @@ class RotatedSecretCreateAws(object):
         'grace_rotation': 'str',
         'json': 'bool',
         'key': 'str',
+        'max_versions': 'str',
         'name': 'str',
         'password_length': 'str',
         'rotate_after_disconnect': 'str',
@@ -71,6 +72,7 @@ class RotatedSecretCreateAws(object):
         'grace_rotation': 'grace-rotation',
         'json': 'json',
         'key': 'key',
+        'max_versions': 'max-versions',
         'name': 'name',
         'password_length': 'password-length',
         'rotate_after_disconnect': 'rotate-after-disconnect',
@@ -87,7 +89,7 @@ class RotatedSecretCreateAws(object):
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, api_id=None, api_key=None, authentication_credentials='use-user-creds', auto_rotate=None, aws_region='us-east-2', delete_protection=None, description=None, grace_rotation=None, json=False, key=None, name=None, password_length=None, rotate_after_disconnect='false', rotation_hour=None, rotation_interval=None, rotator_type=None, secure_access_aws_account_id=None, secure_access_aws_native_cli=None, secure_access_bastion_issuer=None, secure_access_enable=None, tags=None, target_name=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, api_id=None, api_key=None, authentication_credentials='use-user-creds', auto_rotate=None, aws_region='us-east-2', delete_protection=None, description=None, grace_rotation=None, json=False, key=None, max_versions=None, name=None, password_length=None, rotate_after_disconnect='false', rotation_hour=None, rotation_interval=None, rotator_type=None, secure_access_aws_account_id=None, secure_access_aws_native_cli=None, secure_access_bastion_issuer=None, secure_access_enable=None, tags=None, target_name=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """RotatedSecretCreateAws - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -103,6 +105,7 @@ class RotatedSecretCreateAws(object):
         self._grace_rotation = None
         self._json = None
         self._key = None
+        self._max_versions = None
         self._name = None
         self._password_length = None
         self._rotate_after_disconnect = None
@@ -139,6 +142,8 @@ class RotatedSecretCreateAws(object):
             self.json = json
         if key is not None:
             self.key = key
+        if max_versions is not None:
+            self.max_versions = max_versions
         self.name = name
         if password_length is not None:
             self.password_length = password_length
@@ -394,6 +399,29 @@ class RotatedSecretCreateAws(object):
         """
 
         self._key = key
+
+    @property
+    def max_versions(self):
+        """Gets the max_versions of this RotatedSecretCreateAws.  # noqa: E501
+
+        Set the maximum number of versions, limited by the account settings defaults.  # noqa: E501
+
+        :return: The max_versions of this RotatedSecretCreateAws.  # noqa: E501
+        :rtype: str
+        """
+        return self._max_versions
+
+    @max_versions.setter
+    def max_versions(self, max_versions):
+        """Sets the max_versions of this RotatedSecretCreateAws.
+
+        Set the maximum number of versions, limited by the account settings defaults.  # noqa: E501
+
+        :param max_versions: The max_versions of this RotatedSecretCreateAws.  # noqa: E501
+        :type: str
+        """
+
+        self._max_versions = max_versions
 
     @property
     def name(self):

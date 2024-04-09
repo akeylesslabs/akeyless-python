@@ -5,6 +5,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **cache_enable** | **bool** |  | [optional] 
 **cache_ttl** | **str** |  | [optional] 
+**new_proactive_cache_enable** | **bool** |  | [optional] 
 **proactive_cache_dump_interval** | **str** |  | [optional] 
 **proactive_cache_enable** | **bool** |  | [optional] 
 **proactive_cache_minimum_fetching_time** | **str** |  | [optional] 
