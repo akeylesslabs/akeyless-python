@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **k8s_client_key** | **str** | Content of the k8 client private key (PEM format) in a Base64 format | [optional] 
 **k8s_cluster_ca_cert** | **str** | K8S cluster CA certificate | [default to 'dummy_val']
 **k8s_cluster_endpoint** | **str** | K8S cluster URL endpoint | [default to 'dummy_val']
+**k8s_cluster_name** | **str** | K8S cluster name | [optional] 
 **k8s_cluster_token** | **str** | K8S cluster Bearer token | [default to 'dummy_val']
 **keep_prev_version** | **str** | Whether to keep previous version [true/false]. If not set, use default according to account settings | [optional] 
 **key** | **str** | The name of a key that used to encrypt the target secret value (if empty, the account default protectionKey key will be used) | [optional] 

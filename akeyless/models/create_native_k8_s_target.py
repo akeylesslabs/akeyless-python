@@ -42,6 +42,7 @@ class CreateNativeK8STarget(object):
         'k8s_client_key': 'str',
         'k8s_cluster_ca_cert': 'str',
         'k8s_cluster_endpoint': 'str',
+        'k8s_cluster_name': 'str',
         'k8s_cluster_token': 'str',
         'key': 'str',
         'max_versions': 'str',
@@ -60,6 +61,7 @@ class CreateNativeK8STarget(object):
         'k8s_client_key': 'k8s-client-key',
         'k8s_cluster_ca_cert': 'k8s-cluster-ca-cert',
         'k8s_cluster_endpoint': 'k8s-cluster-endpoint',
+        'k8s_cluster_name': 'k8s-cluster-name',
         'k8s_cluster_token': 'k8s-cluster-token',
         'key': 'key',
         'max_versions': 'max-versions',
@@ -69,7 +71,7 @@ class CreateNativeK8STarget(object):
         'use_gw_service_account': 'use-gw-service-account'
     }
 
-    def __init__(self, comment=None, description=None, json=False, k8s_auth_type='token', k8s_client_certificate=None, k8s_client_key=None, k8s_cluster_ca_cert='dummy_val', k8s_cluster_endpoint='dummy_val', k8s_cluster_token='dummy_val', key=None, max_versions=None, name=None, token=None, uid_token=None, use_gw_service_account=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, comment=None, description=None, json=False, k8s_auth_type='token', k8s_client_certificate=None, k8s_client_key=None, k8s_cluster_ca_cert='dummy_val', k8s_cluster_endpoint='dummy_val', k8s_cluster_name=None, k8s_cluster_token='dummy_val', key=None, max_versions=None, name=None, token=None, uid_token=None, use_gw_service_account=None, local_vars_configuration=None):  # noqa: E501
         """CreateNativeK8STarget - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -83,6 +85,7 @@ class CreateNativeK8STarget(object):
         self._k8s_client_key = None
         self._k8s_cluster_ca_cert = None
         self._k8s_cluster_endpoint = None
+        self._k8s_cluster_name = None
         self._k8s_cluster_token = None
         self._key = None
         self._max_versions = None
@@ -106,6 +109,8 @@ class CreateNativeK8STarget(object):
             self.k8s_client_key = k8s_client_key
         self.k8s_cluster_ca_cert = k8s_cluster_ca_cert
         self.k8s_cluster_endpoint = k8s_cluster_endpoint
+        if k8s_cluster_name is not None:
+            self.k8s_cluster_name = k8s_cluster_name
         self.k8s_cluster_token = k8s_cluster_token
         if key is not None:
             self.key = key
@@ -306,6 +311,29 @@ class CreateNativeK8STarget(object):
             raise ValueError("Invalid value for `k8s_cluster_endpoint`, must not be `None`")  # noqa: E501
 
         self._k8s_cluster_endpoint = k8s_cluster_endpoint
+
+    @property
+    def k8s_cluster_name(self):
+        """Gets the k8s_cluster_name of this CreateNativeK8STarget.  # noqa: E501
+
+        K8S cluster name  # noqa: E501
+
+        :return: The k8s_cluster_name of this CreateNativeK8STarget.  # noqa: E501
+        :rtype: str
+        """
+        return self._k8s_cluster_name
+
+    @k8s_cluster_name.setter
+    def k8s_cluster_name(self, k8s_cluster_name):
+        """Sets the k8s_cluster_name of this CreateNativeK8STarget.
+
+        K8S cluster name  # noqa: E501
+
+        :param k8s_cluster_name: The k8s_cluster_name of this CreateNativeK8STarget.  # noqa: E501
+        :type: str
+        """
+
+        self._k8s_cluster_name = k8s_cluster_name
 
     @property
     def k8s_cluster_token(self):

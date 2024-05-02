@@ -97,6 +97,7 @@ Method | HTTP request | Description
 [**dynamic_secret_create_gcp**](V2Api.md#dynamic_secret_create_gcp) | **POST** /dynamic-secret-create-gcp | 
 [**dynamic_secret_create_github**](V2Api.md#dynamic_secret_create_github) | **POST** /dynamic-secret-create-github | 
 [**dynamic_secret_create_gke**](V2Api.md#dynamic_secret_create_gke) | **POST** /dynamic-secret-create-gke | 
+[**dynamic_secret_create_google_workspace**](V2Api.md#dynamic_secret_create_google_workspace) | **POST** /dynamic-secret-create-google-workspace | 
 [**dynamic_secret_create_hana_db**](V2Api.md#dynamic_secret_create_hana_db) | **POST** /dynamic-secret-create-hanadb | 
 [**dynamic_secret_create_k8s**](V2Api.md#dynamic_secret_create_k8s) | **POST** /dynamic-secret-create-k8s | 
 [**dynamic_secret_create_ldap**](V2Api.md#dynamic_secret_create_ldap) | **POST** /dynamic-secret-create-ldap | 
@@ -129,6 +130,7 @@ Method | HTTP request | Description
 [**dynamic_secret_update_gcp**](V2Api.md#dynamic_secret_update_gcp) | **POST** /dynamic-secret-update-gcp | 
 [**dynamic_secret_update_github**](V2Api.md#dynamic_secret_update_github) | **POST** /dynamic-secret-update-github | 
 [**dynamic_secret_update_gke**](V2Api.md#dynamic_secret_update_gke) | **POST** /dynamic-secret-update-gke | 
+[**dynamic_secret_update_google_workspace**](V2Api.md#dynamic_secret_update_google_workspace) | **POST** /dynamic-secret-update-google-workspace | 
 [**dynamic_secret_update_hana_db**](V2Api.md#dynamic_secret_update_hana_db) | **POST** /dynamic-secret-update-hana | 
 [**dynamic_secret_update_k8s**](V2Api.md#dynamic_secret_update_k8s) | **POST** /dynamic-secret-update-k8s | 
 [**dynamic_secret_update_ldap**](V2Api.md#dynamic_secret_update_ldap) | **POST** /dynamic-secret-update-ldap | 
@@ -6013,6 +6015,66 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **dynamic_secret_create_google_workspace**
+> DynamicSecretCreateOutput dynamic_secret_create_google_workspace(body)
+
+
+
+### Example
+
+```python
+from __future__ import print_function
+import time
+import akeyless
+from akeyless.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.akeyless.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = akeyless.Configuration(
+    host = "https://api.akeyless.io"
+)
+
+
+# Enter a context with an instance of the API client
+with akeyless.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = akeyless.V2Api(api_client)
+    body = akeyless.DynamicSecretCreateGoogleWorkspace() # DynamicSecretCreateGoogleWorkspace | 
+
+    try:
+        api_response = api_instance.dynamic_secret_create_google_workspace(body)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling V2Api->dynamic_secret_create_google_workspace: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**DynamicSecretCreateGoogleWorkspace**](DynamicSecretCreateGoogleWorkspace.md)|  | 
+
+### Return type
+
+[**DynamicSecretCreateOutput**](DynamicSecretCreateOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**201** | dynamicSecretCreateGoogleWorkspaceResponse wraps response body. |  -  |
+**0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **dynamic_secret_create_hana_db**
 > DynamicSecretCreateOutput dynamic_secret_create_hana_db(body)
 
@@ -6974,7 +7036,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **dynamic_secret_get**
-> DSProducerDetails dynamic_secret_get()
+> DSProducerDetails dynamic_secret_get(body)
 
 
 
@@ -6997,16 +7059,20 @@ configuration = akeyless.Configuration(
 with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
-    
+    body = akeyless.DynamicSecretGet() # DynamicSecretGet | 
+
     try:
-        api_response = api_instance.dynamic_secret_get()
+        api_response = api_instance.dynamic_secret_get(body)
         pprint(api_response)
     except ApiException as e:
         print("Exception when calling V2Api->dynamic_secret_get: %s\n" % e)
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**DynamicSecretGet**](DynamicSecretGet.md)|  | 
 
 ### Return type
 
@@ -7018,7 +7084,7 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 ### HTTP response details
@@ -7923,6 +7989,66 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | dynamicSecretUpdateGkeResponse wraps response body. |  -  |
+**0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **dynamic_secret_update_google_workspace**
+> DynamicSecretUpdateOutput dynamic_secret_update_google_workspace(body)
+
+
+
+### Example
+
+```python
+from __future__ import print_function
+import time
+import akeyless
+from akeyless.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.akeyless.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = akeyless.Configuration(
+    host = "https://api.akeyless.io"
+)
+
+
+# Enter a context with an instance of the API client
+with akeyless.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = akeyless.V2Api(api_client)
+    body = akeyless.DynamicSecretUpdateGoogleWorkspace() # DynamicSecretUpdateGoogleWorkspace | 
+
+    try:
+        api_response = api_instance.dynamic_secret_update_google_workspace(body)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling V2Api->dynamic_secret_update_google_workspace: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**DynamicSecretUpdateGoogleWorkspace**](DynamicSecretUpdateGoogleWorkspace.md)|  | 
+
+### Return type
+
+[**DynamicSecretUpdateOutput**](DynamicSecretUpdateOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**201** | dynamicSecretUpdateGoogleWorkspaceResponse wraps response body. |  -  |
 **0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -15362,7 +15488,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_dynamic_secret_value**
-> dict(str, str) get_dynamic_secret_value(body)
+> dict(str, object) get_dynamic_secret_value(body)
 
 
 
@@ -15402,7 +15528,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**dict(str, str)**
+**dict(str, object)**
 
 ### Authorization
 
@@ -15902,7 +16028,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_secret_value**
-> dict(str, str) get_secret_value(body)
+> dict(str, object) get_secret_value(body)
 
 
 
@@ -15942,7 +16068,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**dict(str, str)**
+**dict(str, object)**
 
 ### Authorization
 
@@ -19437,7 +19563,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **rotated_secret_get_value**
-> dict(str, str) rotated_secret_get_value(body)
+> dict(str, object) rotated_secret_get_value(body)
 
 
 
@@ -19477,7 +19603,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**dict(str, str)**
+**dict(str, object)**
 
 ### Authorization
 

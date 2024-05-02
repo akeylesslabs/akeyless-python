@@ -5,6 +5,7 @@ DbTargetDetails
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **cloud_service_provider** | **str** |  | [optional] 
+**cluster_mode** | **bool** |  | [optional] 
 **connection_type** | **str** |  | [optional] 
 **db_client_id** | **str** |  | [optional] 
 **db_client_secret** | **str** |  | [optional] 

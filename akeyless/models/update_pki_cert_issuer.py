@@ -70,7 +70,7 @@ class UpdatePKICertIssuer(object):
         'signer_key_name': 'str',
         'street_address': 'str',
         'token': 'str',
-        'ttl': 'int',
+        'ttl': 'str',
         'uid_token': 'str'
     }
 
@@ -1074,7 +1074,7 @@ class UpdatePKICertIssuer(object):
         The maximum requested Time To Live for issued certificates, in seconds. In case of Public CA, this is based on the CA target's supported maximum TTLs  # noqa: E501
 
         :return: The ttl of this UpdatePKICertIssuer.  # noqa: E501
-        :rtype: int
+        :rtype: str
         """
         return self._ttl
 
@@ -1085,7 +1085,7 @@ class UpdatePKICertIssuer(object):
         The maximum requested Time To Live for issued certificates, in seconds. In case of Public CA, this is based on the CA target's supported maximum TTLs  # noqa: E501
 
         :param ttl: The ttl of this UpdatePKICertIssuer.  # noqa: E501
-        :type: int
+        :type: str
         """
         if self.local_vars_configuration.client_side_validation and ttl is None:  # noqa: E501
             raise ValueError("Invalid value for `ttl`, must not be `None`")  # noqa: E501

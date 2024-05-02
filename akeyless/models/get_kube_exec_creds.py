@@ -44,7 +44,7 @@ class GetKubeExecCreds(object):
         'json': 'bool',
         'key_data_base64': 'str',
         'token': 'str',
-        'ttl': 'int',
+        'ttl': 'str',
         'uid_token': 'str',
         'uri_sans': 'str'
     }
@@ -351,7 +351,7 @@ class GetKubeExecCreds(object):
         Updated certificate lifetime in seconds (must be less than the Certificate Issuer default TTL)  # noqa: E501
 
         :return: The ttl of this GetKubeExecCreds.  # noqa: E501
-        :rtype: int
+        :rtype: str
         """
         return self._ttl
 
@@ -362,7 +362,7 @@ class GetKubeExecCreds(object):
         Updated certificate lifetime in seconds (must be less than the Certificate Issuer default TTL)  # noqa: E501
 
         :param ttl: The ttl of this GetKubeExecCreds.  # noqa: E501
-        :type: int
+        :type: str
         """
 
         self._ttl = ttl

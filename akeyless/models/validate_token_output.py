@@ -36,16 +36,20 @@ class ValidateTokenOutput(object):
     openapi_types = {
         'expiration': 'str',
         'is_valid': 'bool',
-        'reason': 'str'
+        'last_rotate': 'str',
+        'reason': 'str',
+        'ttl': 'int'
     }
 
     attribute_map = {
         'expiration': 'expiration',
         'is_valid': 'is_valid',
-        'reason': 'reason'
+        'last_rotate': 'last_rotate',
+        'reason': 'reason',
+        'ttl': 'ttl'
     }
 
-    def __init__(self, expiration=None, is_valid=None, reason=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, expiration=None, is_valid=None, last_rotate=None, reason=None, ttl=None, local_vars_configuration=None):  # noqa: E501
         """ValidateTokenOutput - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -53,15 +57,21 @@ class ValidateTokenOutput(object):
 
         self._expiration = None
         self._is_valid = None
+        self._last_rotate = None
         self._reason = None
+        self._ttl = None
         self.discriminator = None
 
         if expiration is not None:
             self.expiration = expiration
         if is_valid is not None:
             self.is_valid = is_valid
+        if last_rotate is not None:
+            self.last_rotate = last_rotate
         if reason is not None:
             self.reason = reason
+        if ttl is not None:
+            self.ttl = ttl
 
     @property
     def expiration(self):
@@ -106,6 +116,27 @@ class ValidateTokenOutput(object):
         self._is_valid = is_valid
 
     @property
+    def last_rotate(self):
+        """Gets the last_rotate of this ValidateTokenOutput.  # noqa: E501
+
+
+        :return: The last_rotate of this ValidateTokenOutput.  # noqa: E501
+        :rtype: str
+        """
+        return self._last_rotate
+
+    @last_rotate.setter
+    def last_rotate(self, last_rotate):
+        """Sets the last_rotate of this ValidateTokenOutput.
+
+
+        :param last_rotate: The last_rotate of this ValidateTokenOutput.  # noqa: E501
+        :type: str
+        """
+
+        self._last_rotate = last_rotate
+
+    @property
     def reason(self):
         """Gets the reason of this ValidateTokenOutput.  # noqa: E501
 
@@ -125,6 +156,27 @@ class ValidateTokenOutput(object):
         """
 
         self._reason = reason
+
+    @property
+    def ttl(self):
+        """Gets the ttl of this ValidateTokenOutput.  # noqa: E501
+
+
+        :return: The ttl of this ValidateTokenOutput.  # noqa: E501
+        :rtype: int
+        """
+        return self._ttl
+
+    @ttl.setter
+    def ttl(self, ttl):
+        """Sets the ttl of this ValidateTokenOutput.
+
+
+        :param ttl: The ttl of this ValidateTokenOutput.  # noqa: E501
+        :type: int
+        """
+
+        self._ttl = ttl
 
     def to_dict(self):
         """Returns the model properties as a dict"""

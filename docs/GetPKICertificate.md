@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **json** | **bool** | Set output format to JSON | [optional] [default to False]
 **key_data_base64** | **str** | PKI key file contents. If this option is used, the certificate will be printed to stdout | [optional] 
 **token** | **str** | Authentication token (see &#x60;/auth&#x60; and &#x60;/configure&#x60;) | [optional] 
-**ttl** | **int** | Updated certificate lifetime in seconds (must be less than the Certificate Issuer default TTL) | [optional] 
+**ttl** | **str** | Updated certificate lifetime in seconds (must be less than the Certificate Issuer default TTL) | [optional] 
 **uid_token** | **str** | The universal identity token, Required only for universal_identity authentication | [optional] 
 **uri_sans** | **str** | The URI Subject Alternative Names to be included in the PKI certificate (in a comma-separated list) (if CSR is supplied this flag is ignored and any URI.* names are taken from it) | [optional] 
 

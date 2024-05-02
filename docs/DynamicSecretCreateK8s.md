@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **k8s_allowed_namespaces** | **str** | Comma-separated list of allowed K8S namespaces for the generated ServiceAccount (relevant only for k8s-service-account-type&#x3D;dynamic) | [optional] 
 **k8s_cluster_ca_cert** | **str** | K8S cluster CA certificate | [optional] 
 **k8s_cluster_endpoint** | **str** | K8S cluster URL endpoint | [optional] 
+**k8s_cluster_name** | **str** | K8S cluster name | [optional] 
 **k8s_cluster_token** | **str** | K8S cluster Bearer token | [optional] 
 **k8s_namespace** | **str** | K8S Namespace where the ServiceAccount exists. | [optional] 
 **k8s_predefined_role_name** | **str** | The pre-existing Role or ClusterRole name to bind the generated ServiceAccount to (relevant only for k8s-service-account-type&#x3D;dynamic) | [optional] 

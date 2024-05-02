@@ -34,175 +34,97 @@ class ItemSraStatus(object):
                             and the value is json key in definition.
     """
     openapi_types = {
-        'bastion_access_id': 'str',
-        'bastion_cluster_name': 'str',
-        'bastion_instance_id': 'str',
-        'is_in_used': 'bool',
-        'session_id': 'str',
-        'time': 'datetime'
+        'count_info': 'dict(str, dict(str, int))',
+        'is_in_use': 'bool',
+        'last_used_item': 'datetime'
     }
 
     attribute_map = {
-        'bastion_access_id': 'bastion_access_id',
-        'bastion_cluster_name': 'bastion_cluster_name',
-        'bastion_instance_id': 'bastion_instance_id',
-        'is_in_used': 'is_in_used',
-        'session_id': 'session_id',
-        'time': 'time'
+        'count_info': 'count_info',
+        'is_in_use': 'is_in_use',
+        'last_used_item': 'last_used_item'
     }
 
-    def __init__(self, bastion_access_id=None, bastion_cluster_name=None, bastion_instance_id=None, is_in_used=None, session_id=None, time=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, count_info=None, is_in_use=None, last_used_item=None, local_vars_configuration=None):  # noqa: E501
         """ItemSraStatus - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
-        self._bastion_access_id = None
-        self._bastion_cluster_name = None
-        self._bastion_instance_id = None
-        self._is_in_used = None
-        self._session_id = None
-        self._time = None
+        self._count_info = None
+        self._is_in_use = None
+        self._last_used_item = None
         self.discriminator = None
 
-        if bastion_access_id is not None:
-            self.bastion_access_id = bastion_access_id
-        if bastion_cluster_name is not None:
-            self.bastion_cluster_name = bastion_cluster_name
-        if bastion_instance_id is not None:
-            self.bastion_instance_id = bastion_instance_id
-        if is_in_used is not None:
-            self.is_in_used = is_in_used
-        if session_id is not None:
-            self.session_id = session_id
-        if time is not None:
-            self.time = time
+        if count_info is not None:
+            self.count_info = count_info
+        if is_in_use is not None:
+            self.is_in_use = is_in_use
+        if last_used_item is not None:
+            self.last_used_item = last_used_item
 
     @property
-    def bastion_access_id(self):
-        """Gets the bastion_access_id of this ItemSraStatus.  # noqa: E501
+    def count_info(self):
+        """Gets the count_info of this ItemSraStatus.  # noqa: E501
 
 
-        :return: The bastion_access_id of this ItemSraStatus.  # noqa: E501
-        :rtype: str
+        :return: The count_info of this ItemSraStatus.  # noqa: E501
+        :rtype: dict(str, dict(str, int))
         """
-        return self._bastion_access_id
+        return self._count_info
 
-    @bastion_access_id.setter
-    def bastion_access_id(self, bastion_access_id):
-        """Sets the bastion_access_id of this ItemSraStatus.
+    @count_info.setter
+    def count_info(self, count_info):
+        """Sets the count_info of this ItemSraStatus.
 
 
-        :param bastion_access_id: The bastion_access_id of this ItemSraStatus.  # noqa: E501
-        :type: str
+        :param count_info: The count_info of this ItemSraStatus.  # noqa: E501
+        :type: dict(str, dict(str, int))
         """
 
-        self._bastion_access_id = bastion_access_id
+        self._count_info = count_info
 
     @property
-    def bastion_cluster_name(self):
-        """Gets the bastion_cluster_name of this ItemSraStatus.  # noqa: E501
+    def is_in_use(self):
+        """Gets the is_in_use of this ItemSraStatus.  # noqa: E501
 
 
-        :return: The bastion_cluster_name of this ItemSraStatus.  # noqa: E501
-        :rtype: str
-        """
-        return self._bastion_cluster_name
-
-    @bastion_cluster_name.setter
-    def bastion_cluster_name(self, bastion_cluster_name):
-        """Sets the bastion_cluster_name of this ItemSraStatus.
-
-
-        :param bastion_cluster_name: The bastion_cluster_name of this ItemSraStatus.  # noqa: E501
-        :type: str
-        """
-
-        self._bastion_cluster_name = bastion_cluster_name
-
-    @property
-    def bastion_instance_id(self):
-        """Gets the bastion_instance_id of this ItemSraStatus.  # noqa: E501
-
-
-        :return: The bastion_instance_id of this ItemSraStatus.  # noqa: E501
-        :rtype: str
-        """
-        return self._bastion_instance_id
-
-    @bastion_instance_id.setter
-    def bastion_instance_id(self, bastion_instance_id):
-        """Sets the bastion_instance_id of this ItemSraStatus.
-
-
-        :param bastion_instance_id: The bastion_instance_id of this ItemSraStatus.  # noqa: E501
-        :type: str
-        """
-
-        self._bastion_instance_id = bastion_instance_id
-
-    @property
-    def is_in_used(self):
-        """Gets the is_in_used of this ItemSraStatus.  # noqa: E501
-
-
-        :return: The is_in_used of this ItemSraStatus.  # noqa: E501
+        :return: The is_in_use of this ItemSraStatus.  # noqa: E501
         :rtype: bool
         """
-        return self._is_in_used
+        return self._is_in_use
 
-    @is_in_used.setter
-    def is_in_used(self, is_in_used):
-        """Sets the is_in_used of this ItemSraStatus.
+    @is_in_use.setter
+    def is_in_use(self, is_in_use):
+        """Sets the is_in_use of this ItemSraStatus.
 
 
-        :param is_in_used: The is_in_used of this ItemSraStatus.  # noqa: E501
+        :param is_in_use: The is_in_use of this ItemSraStatus.  # noqa: E501
         :type: bool
         """
 
-        self._is_in_used = is_in_used
+        self._is_in_use = is_in_use
 
     @property
-    def session_id(self):
-        """Gets the session_id of this ItemSraStatus.  # noqa: E501
+    def last_used_item(self):
+        """Gets the last_used_item of this ItemSraStatus.  # noqa: E501
 
 
-        :return: The session_id of this ItemSraStatus.  # noqa: E501
-        :rtype: str
-        """
-        return self._session_id
-
-    @session_id.setter
-    def session_id(self, session_id):
-        """Sets the session_id of this ItemSraStatus.
-
-
-        :param session_id: The session_id of this ItemSraStatus.  # noqa: E501
-        :type: str
-        """
-
-        self._session_id = session_id
-
-    @property
-    def time(self):
-        """Gets the time of this ItemSraStatus.  # noqa: E501
-
-
-        :return: The time of this ItemSraStatus.  # noqa: E501
+        :return: The last_used_item of this ItemSraStatus.  # noqa: E501
         :rtype: datetime
         """
-        return self._time
+        return self._last_used_item
 
-    @time.setter
-    def time(self, time):
-        """Sets the time of this ItemSraStatus.
+    @last_used_item.setter
+    def last_used_item(self, last_used_item):
+        """Sets the last_used_item of this ItemSraStatus.
 
 
-        :param time: The time of this ItemSraStatus.  # noqa: E501
+        :param last_used_item: The last_used_item of this ItemSraStatus.  # noqa: E501
         :type: datetime
         """
 
-        self._time = time
+        self._last_used_item = last_used_item
 
     def to_dict(self):
         """Returns the model properties as a dict"""

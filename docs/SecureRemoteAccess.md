@@ -30,7 +30,7 @@ Name | Type | Description | Notes
 **ssh_password** | **bool** |  | [optional] 
 **ssh_private_key** | **bool** |  | [optional] 
 **ssh_user** | **str** |  | [optional] 
-**status** | [**ItemSraStatus**](ItemSraStatus.md) |  | [optional] 
+**status_info** | [**ItemSraStatus**](ItemSraStatus.md) |  | [optional] 
 **target_hosts** | [**list[TargetNameWithHosts]**](TargetNameWithHosts.md) |  | [optional] 
 **targets** | **list[str]** |  | [optional] 
 **url** | **str** |  | [optional] 

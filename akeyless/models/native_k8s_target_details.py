@@ -40,6 +40,7 @@ class NativeK8sTargetDetails(object):
         'k8s_client_key_data': 'str',
         'k8s_cluster_ca_certificate': 'str',
         'k8s_cluster_endpoint': 'str',
+        'k8s_cluster_name': 'str',
         'use_gw_service_account': 'bool'
     }
 
@@ -50,10 +51,11 @@ class NativeK8sTargetDetails(object):
         'k8s_client_key_data': 'k8s_client_key_data',
         'k8s_cluster_ca_certificate': 'k8s_cluster_ca_certificate',
         'k8s_cluster_endpoint': 'k8s_cluster_endpoint',
+        'k8s_cluster_name': 'k8s_cluster_name',
         'use_gw_service_account': 'use_gw_service_account'
     }
 
-    def __init__(self, k8s_auth_type=None, k8s_bearer_token=None, k8s_client_cert_data=None, k8s_client_key_data=None, k8s_cluster_ca_certificate=None, k8s_cluster_endpoint=None, use_gw_service_account=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, k8s_auth_type=None, k8s_bearer_token=None, k8s_client_cert_data=None, k8s_client_key_data=None, k8s_cluster_ca_certificate=None, k8s_cluster_endpoint=None, k8s_cluster_name=None, use_gw_service_account=None, local_vars_configuration=None):  # noqa: E501
         """NativeK8sTargetDetails - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -65,6 +67,7 @@ class NativeK8sTargetDetails(object):
         self._k8s_client_key_data = None
         self._k8s_cluster_ca_certificate = None
         self._k8s_cluster_endpoint = None
+        self._k8s_cluster_name = None
         self._use_gw_service_account = None
         self.discriminator = None
 
@@ -80,6 +83,8 @@ class NativeK8sTargetDetails(object):
             self.k8s_cluster_ca_certificate = k8s_cluster_ca_certificate
         if k8s_cluster_endpoint is not None:
             self.k8s_cluster_endpoint = k8s_cluster_endpoint
+        if k8s_cluster_name is not None:
+            self.k8s_cluster_name = k8s_cluster_name
         if use_gw_service_account is not None:
             self.use_gw_service_account = use_gw_service_account
 
@@ -210,6 +215,27 @@ class NativeK8sTargetDetails(object):
         """
 
         self._k8s_cluster_endpoint = k8s_cluster_endpoint
+
+    @property
+    def k8s_cluster_name(self):
+        """Gets the k8s_cluster_name of this NativeK8sTargetDetails.  # noqa: E501
+
+
+        :return: The k8s_cluster_name of this NativeK8sTargetDetails.  # noqa: E501
+        :rtype: str
+        """
+        return self._k8s_cluster_name
+
+    @k8s_cluster_name.setter
+    def k8s_cluster_name(self, k8s_cluster_name):
+        """Sets the k8s_cluster_name of this NativeK8sTargetDetails.
+
+
+        :param k8s_cluster_name: The k8s_cluster_name of this NativeK8sTargetDetails.  # noqa: E501
+        :type: str
+        """
+
+        self._k8s_cluster_name = k8s_cluster_name
 
     @property
     def use_gw_service_account(self):

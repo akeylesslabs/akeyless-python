@@ -82,6 +82,7 @@ class DSProducerDetails(object):
         'chef_skip_ssl': 'bool',
         'client_authentication_type': 'str',
         'cloud_service_provider': 'str',
+        'cluster_mode': 'bool',
         'connection_type': 'str',
         'create_sync_url': 'str',
         'db_client_id': 'str',
@@ -141,6 +142,12 @@ class DSProducerDetails(object):
         'gke_cluster_name': 'str',
         'gke_service_account_key': 'str',
         'gke_service_account_name': 'str',
+        'google_workspace_access_mode': 'str',
+        'google_workspace_admin_name': 'str',
+        'google_workspace_group_name': 'str',
+        'google_workspace_group_role': 'str',
+        'google_workspace_role_name': 'str',
+        'google_workspace_role_scope': 'str',
         'grant_types': 'list[str]',
         'groups': 'str',
         'hanadb_creation_statements': 'str',
@@ -160,6 +167,7 @@ class DSProducerDetails(object):
         'k8s_client_key_data': 'str',
         'k8s_cluster_ca_certificate': 'str',
         'k8s_cluster_endpoint': 'str',
+        'k8s_cluster_name': 'str',
         'k8s_dynamic_mode': 'bool',
         'k8s_multiple_doc_yaml_temp_definition': 'list[int]',
         'k8s_namespace': 'str',
@@ -306,6 +314,7 @@ class DSProducerDetails(object):
         'chef_skip_ssl': 'chef_skip_ssl',
         'client_authentication_type': 'client_authentication_type',
         'cloud_service_provider': 'cloud_service_provider',
+        'cluster_mode': 'cluster_mode',
         'connection_type': 'connection_type',
         'create_sync_url': 'create_sync_url',
         'db_client_id': 'db_client_id',
@@ -365,6 +374,12 @@ class DSProducerDetails(object):
         'gke_cluster_name': 'gke_cluster_name',
         'gke_service_account_key': 'gke_service_account_key',
         'gke_service_account_name': 'gke_service_account_name',
+        'google_workspace_access_mode': 'google_workspace_access_mode',
+        'google_workspace_admin_name': 'google_workspace_admin_name',
+        'google_workspace_group_name': 'google_workspace_group_name',
+        'google_workspace_group_role': 'google_workspace_group_role',
+        'google_workspace_role_name': 'google_workspace_role_name',
+        'google_workspace_role_scope': 'google_workspace_role_scope',
         'grant_types': 'grant_types',
         'groups': 'groups',
         'hanadb_creation_statements': 'hanadb_creation_statements',
@@ -384,6 +399,7 @@ class DSProducerDetails(object):
         'k8s_client_key_data': 'k8s_client_key_data',
         'k8s_cluster_ca_certificate': 'k8s_cluster_ca_certificate',
         'k8s_cluster_endpoint': 'k8s_cluster_endpoint',
+        'k8s_cluster_name': 'k8s_cluster_name',
         'k8s_dynamic_mode': 'k8s_dynamic_mode',
         'k8s_multiple_doc_yaml_temp_definition': 'k8s_multiple_doc_yaml_temp_definition',
         'k8s_namespace': 'k8s_namespace',
@@ -481,7 +497,7 @@ class DSProducerDetails(object):
         'warn_before_user_expiration_min': 'warn_before_user_expiration_min'
     }
 
-    def __init__(self, access_token_manager_id=None, acl_rules=None, active=None, admin_name=None, admin_pwd=None, admin_rotation_interval_days=None, administrative_port=None, artifactory_admin_apikey=None, artifactory_admin_username=None, artifactory_base_url=None, artifactory_token_audience=None, artifactory_token_scope=None, authorization_port=None, aws_access_key_id=None, aws_access_mode=None, aws_region=None, aws_role_arns=None, aws_secret_access_key=None, aws_session_token=None, aws_user_console_access=None, aws_user_groups=None, aws_user_policies=None, aws_user_programmatic_access=None, azure_app_object_id=None, azure_client_id=None, azure_client_secret=None, azure_fixed_user_name_sub_claim_key=None, azure_fixed_user_only=None, azure_resource_group_name=None, azure_resource_name=None, azure_subscription_id=None, azure_tenant_id=None, azure_user_groups_obj_id=None, azure_user_portal_access=None, azure_user_programmatic_access=None, azure_user_roles_template_id=None, azure_username=None, cassandra_creation_statements=None, chef_organizations=None, chef_server_access_mode=None, chef_server_host_name=None, chef_server_key=None, chef_server_port=None, chef_server_url=None, chef_server_username=None, chef_skip_ssl=None, client_authentication_type=None, cloud_service_provider=None, connection_type=None, create_sync_url=None, db_client_id=None, db_client_secret=None, db_host_name=None, db_isolation_level=None, db_max_idle_conns=None, db_max_open_conns=None, db_name=None, db_port=None, db_private_key=None, db_private_key_passphrase=None, db_pwd=None, db_server_certificates=None, db_server_name=None, db_tenant_id=None, db_user_name=None, delete_protection=None, dynamic_secret_id=None, dynamic_secret_key=None, dynamic_secret_name=None, dynamic_secret_type=None, eks_access_key_id=None, eks_assume_role=None, eks_cluster_ca_certificate=None, eks_cluster_endpoint=None, eks_cluster_name=None, eks_region=None, eks_secret_access_key=None, enable_admin_rotation=None, enforce_replay_prevention=None, externally_provided_user=None, failure_message=None, fixed_user_only=None, gcp_key_algo=None, gcp_role_bindings=None, gcp_service_account_email=None, gcp_service_account_key=None, gcp_service_account_key_base64=None, gcp_service_account_key_id=None, gcp_service_account_type=None, gcp_tmp_service_account_name=None, gcp_token_lifetime=None, gcp_token_scope=None, gcp_token_type=None, github_app_id=None, github_app_private_key=None, github_base_url=None, github_installation_id=None, github_installation_token_permissions=None, github_installation_token_repositories=None, github_installation_token_repositories_ids=None, github_organization_name=None, github_repository_path=None, gke_cluster_ca_certificate=None, gke_cluster_endpoint=None, gke_cluster_name=None, gke_service_account_key=None, gke_service_account_name=None, grant_types=None, groups=None, hanadb_creation_statements=None, hanadb_revocation_statements=None, host_name=None, host_port=None, implementation_type=None, is_fixed_user=None, issuer=None, item_targets_assoc=None, jwks=None, jwks_url=None, k8s_allowed_namespaces=None, k8s_auth_type=None, k8s_bearer_token=None, k8s_client_cert_data=None, k8s_client_key_data=None, k8s_cluster_ca_certificate=None, k8s_cluster_endpoint=None, k8s_dynamic_mode=None, k8s_multiple_doc_yaml_temp_definition=None, k8s_namespace=None, k8s_role_name=None, k8s_role_type=None, k8s_service_account=None, last_admin_rotation=None, ldap_audience=None, ldap_bind_dn=None, ldap_bind_password=None, ldap_certificate=None, ldap_group_dn=None, ldap_token_expiration=None, ldap_url=None, ldap_user_attr=None, ldap_user_dn=None, metadata=None, mongodb_atlas_api_private_key=None, mongodb_atlas_api_public_key=None, mongodb_atlas_project_id=None, mongodb_custom_data=None, mongodb_db_name=None, mongodb_default_auth_db=None, mongodb_host_port=None, mongodb_is_atlas=None, mongodb_password=None, mongodb_roles=None, mongodb_uri_connection=None, mongodb_uri_options=None, mongodb_username=None, mssql_creation_statements=None, mssql_revocation_statements=None, mysql_creation_statements=None, mysql_revocation_statements=None, oracle_creation_statements=None, oracle_revocation_statements=None, password=None, password_length=None, password_policy=None, payload=None, ping_url=None, postgres_creation_statements=None, postgres_revocation_statements=None, privileged_user=None, rabbitmq_server_password=None, rabbitmq_server_uri=None, rabbitmq_server_user=None, rabbitmq_user_conf_permission=None, rabbitmq_user_read_permission=None, rabbitmq_user_tags=None, rabbitmq_user_vhost=None, rabbitmq_user_write_permission=None, redirect_uris=None, redshift_creation_statements=None, restricted_scopes=None, revoke_sync_url=None, rotate_sync_url=None, scopes=None, secure_remote_access_details=None, session_extension_warn_interval_min=None, sf_account=None, sf_user_role=None, sf_warehouse_name=None, should_stop=None, signing_algorithm=None, ssl_connection_certificate=None, ssl_connection_mode=None, subject_dn=None, tags=None, timeout_seconds=None, use_gw_cloud_identity=None, use_gw_service_account=None, user_name=None, user_password=None, user_principal_name=None, user_ttl=None, username_length=None, username_policy=None, venafi_allow_subdomains=None, venafi_allowed_domains=None, venafi_api_key=None, venafi_auto_generated_folder=None, venafi_base_url=None, venafi_root_first_in_chain=None, venafi_sign_using_akeyless_pki=None, venafi_signer_key_name=None, venafi_store_private_key=None, venafi_tpp_access_token=None, venafi_tpp_client_id=None, venafi_tpp_password=None, venafi_tpp_refresh_token=None, venafi_tpp_username=None, venafi_use_tpp=None, venafi_zone=None, warn_before_user_expiration_min=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, access_token_manager_id=None, acl_rules=None, active=None, admin_name=None, admin_pwd=None, admin_rotation_interval_days=None, administrative_port=None, artifactory_admin_apikey=None, artifactory_admin_username=None, artifactory_base_url=None, artifactory_token_audience=None, artifactory_token_scope=None, authorization_port=None, aws_access_key_id=None, aws_access_mode=None, aws_region=None, aws_role_arns=None, aws_secret_access_key=None, aws_session_token=None, aws_user_console_access=None, aws_user_groups=None, aws_user_policies=None, aws_user_programmatic_access=None, azure_app_object_id=None, azure_client_id=None, azure_client_secret=None, azure_fixed_user_name_sub_claim_key=None, azure_fixed_user_only=None, azure_resource_group_name=None, azure_resource_name=None, azure_subscription_id=None, azure_tenant_id=None, azure_user_groups_obj_id=None, azure_user_portal_access=None, azure_user_programmatic_access=None, azure_user_roles_template_id=None, azure_username=None, cassandra_creation_statements=None, chef_organizations=None, chef_server_access_mode=None, chef_server_host_name=None, chef_server_key=None, chef_server_port=None, chef_server_url=None, chef_server_username=None, chef_skip_ssl=None, client_authentication_type=None, cloud_service_provider=None, cluster_mode=None, connection_type=None, create_sync_url=None, db_client_id=None, db_client_secret=None, db_host_name=None, db_isolation_level=None, db_max_idle_conns=None, db_max_open_conns=None, db_name=None, db_port=None, db_private_key=None, db_private_key_passphrase=None, db_pwd=None, db_server_certificates=None, db_server_name=None, db_tenant_id=None, db_user_name=None, delete_protection=None, dynamic_secret_id=None, dynamic_secret_key=None, dynamic_secret_name=None, dynamic_secret_type=None, eks_access_key_id=None, eks_assume_role=None, eks_cluster_ca_certificate=None, eks_cluster_endpoint=None, eks_cluster_name=None, eks_region=None, eks_secret_access_key=None, enable_admin_rotation=None, enforce_replay_prevention=None, externally_provided_user=None, failure_message=None, fixed_user_only=None, gcp_key_algo=None, gcp_role_bindings=None, gcp_service_account_email=None, gcp_service_account_key=None, gcp_service_account_key_base64=None, gcp_service_account_key_id=None, gcp_service_account_type=None, gcp_tmp_service_account_name=None, gcp_token_lifetime=None, gcp_token_scope=None, gcp_token_type=None, github_app_id=None, github_app_private_key=None, github_base_url=None, github_installation_id=None, github_installation_token_permissions=None, github_installation_token_repositories=None, github_installation_token_repositories_ids=None, github_organization_name=None, github_repository_path=None, gke_cluster_ca_certificate=None, gke_cluster_endpoint=None, gke_cluster_name=None, gke_service_account_key=None, gke_service_account_name=None, google_workspace_access_mode=None, google_workspace_admin_name=None, google_workspace_group_name=None, google_workspace_group_role=None, google_workspace_role_name=None, google_workspace_role_scope=None, grant_types=None, groups=None, hanadb_creation_statements=None, hanadb_revocation_statements=None, host_name=None, host_port=None, implementation_type=None, is_fixed_user=None, issuer=None, item_targets_assoc=None, jwks=None, jwks_url=None, k8s_allowed_namespaces=None, k8s_auth_type=None, k8s_bearer_token=None, k8s_client_cert_data=None, k8s_client_key_data=None, k8s_cluster_ca_certificate=None, k8s_cluster_endpoint=None, k8s_cluster_name=None, k8s_dynamic_mode=None, k8s_multiple_doc_yaml_temp_definition=None, k8s_namespace=None, k8s_role_name=None, k8s_role_type=None, k8s_service_account=None, last_admin_rotation=None, ldap_audience=None, ldap_bind_dn=None, ldap_bind_password=None, ldap_certificate=None, ldap_group_dn=None, ldap_token_expiration=None, ldap_url=None, ldap_user_attr=None, ldap_user_dn=None, metadata=None, mongodb_atlas_api_private_key=None, mongodb_atlas_api_public_key=None, mongodb_atlas_project_id=None, mongodb_custom_data=None, mongodb_db_name=None, mongodb_default_auth_db=None, mongodb_host_port=None, mongodb_is_atlas=None, mongodb_password=None, mongodb_roles=None, mongodb_uri_connection=None, mongodb_uri_options=None, mongodb_username=None, mssql_creation_statements=None, mssql_revocation_statements=None, mysql_creation_statements=None, mysql_revocation_statements=None, oracle_creation_statements=None, oracle_revocation_statements=None, password=None, password_length=None, password_policy=None, payload=None, ping_url=None, postgres_creation_statements=None, postgres_revocation_statements=None, privileged_user=None, rabbitmq_server_password=None, rabbitmq_server_uri=None, rabbitmq_server_user=None, rabbitmq_user_conf_permission=None, rabbitmq_user_read_permission=None, rabbitmq_user_tags=None, rabbitmq_user_vhost=None, rabbitmq_user_write_permission=None, redirect_uris=None, redshift_creation_statements=None, restricted_scopes=None, revoke_sync_url=None, rotate_sync_url=None, scopes=None, secure_remote_access_details=None, session_extension_warn_interval_min=None, sf_account=None, sf_user_role=None, sf_warehouse_name=None, should_stop=None, signing_algorithm=None, ssl_connection_certificate=None, ssl_connection_mode=None, subject_dn=None, tags=None, timeout_seconds=None, use_gw_cloud_identity=None, use_gw_service_account=None, user_name=None, user_password=None, user_principal_name=None, user_ttl=None, username_length=None, username_policy=None, venafi_allow_subdomains=None, venafi_allowed_domains=None, venafi_api_key=None, venafi_auto_generated_folder=None, venafi_base_url=None, venafi_root_first_in_chain=None, venafi_sign_using_akeyless_pki=None, venafi_signer_key_name=None, venafi_store_private_key=None, venafi_tpp_access_token=None, venafi_tpp_client_id=None, venafi_tpp_password=None, venafi_tpp_refresh_token=None, venafi_tpp_username=None, venafi_use_tpp=None, venafi_zone=None, warn_before_user_expiration_min=None, local_vars_configuration=None):  # noqa: E501
         """DSProducerDetails - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -535,6 +551,7 @@ class DSProducerDetails(object):
         self._chef_skip_ssl = None
         self._client_authentication_type = None
         self._cloud_service_provider = None
+        self._cluster_mode = None
         self._connection_type = None
         self._create_sync_url = None
         self._db_client_id = None
@@ -594,6 +611,12 @@ class DSProducerDetails(object):
         self._gke_cluster_name = None
         self._gke_service_account_key = None
         self._gke_service_account_name = None
+        self._google_workspace_access_mode = None
+        self._google_workspace_admin_name = None
+        self._google_workspace_group_name = None
+        self._google_workspace_group_role = None
+        self._google_workspace_role_name = None
+        self._google_workspace_role_scope = None
         self._grant_types = None
         self._groups = None
         self._hanadb_creation_statements = None
@@ -613,6 +636,7 @@ class DSProducerDetails(object):
         self._k8s_client_key_data = None
         self._k8s_cluster_ca_certificate = None
         self._k8s_cluster_endpoint = None
+        self._k8s_cluster_name = None
         self._k8s_dynamic_mode = None
         self._k8s_multiple_doc_yaml_temp_definition = None
         self._k8s_namespace = None
@@ -806,6 +830,8 @@ class DSProducerDetails(object):
             self.client_authentication_type = client_authentication_type
         if cloud_service_provider is not None:
             self.cloud_service_provider = cloud_service_provider
+        if cluster_mode is not None:
+            self.cluster_mode = cluster_mode
         if connection_type is not None:
             self.connection_type = connection_type
         if create_sync_url is not None:
@@ -924,6 +950,18 @@ class DSProducerDetails(object):
             self.gke_service_account_key = gke_service_account_key
         if gke_service_account_name is not None:
             self.gke_service_account_name = gke_service_account_name
+        if google_workspace_access_mode is not None:
+            self.google_workspace_access_mode = google_workspace_access_mode
+        if google_workspace_admin_name is not None:
+            self.google_workspace_admin_name = google_workspace_admin_name
+        if google_workspace_group_name is not None:
+            self.google_workspace_group_name = google_workspace_group_name
+        if google_workspace_group_role is not None:
+            self.google_workspace_group_role = google_workspace_group_role
+        if google_workspace_role_name is not None:
+            self.google_workspace_role_name = google_workspace_role_name
+        if google_workspace_role_scope is not None:
+            self.google_workspace_role_scope = google_workspace_role_scope
         if grant_types is not None:
             self.grant_types = grant_types
         if groups is not None:
@@ -962,6 +1000,8 @@ class DSProducerDetails(object):
             self.k8s_cluster_ca_certificate = k8s_cluster_ca_certificate
         if k8s_cluster_endpoint is not None:
             self.k8s_cluster_endpoint = k8s_cluster_endpoint
+        if k8s_cluster_name is not None:
+            self.k8s_cluster_name = k8s_cluster_name
         if k8s_dynamic_mode is not None:
             self.k8s_dynamic_mode = k8s_dynamic_mode
         if k8s_multiple_doc_yaml_temp_definition is not None:
@@ -2160,6 +2200,27 @@ class DSProducerDetails(object):
         """
 
         self._cloud_service_provider = cloud_service_provider
+
+    @property
+    def cluster_mode(self):
+        """Gets the cluster_mode of this DSProducerDetails.  # noqa: E501
+
+
+        :return: The cluster_mode of this DSProducerDetails.  # noqa: E501
+        :rtype: bool
+        """
+        return self._cluster_mode
+
+    @cluster_mode.setter
+    def cluster_mode(self, cluster_mode):
+        """Sets the cluster_mode of this DSProducerDetails.
+
+
+        :param cluster_mode: The cluster_mode of this DSProducerDetails.  # noqa: E501
+        :type: bool
+        """
+
+        self._cluster_mode = cluster_mode
 
     @property
     def connection_type(self):
@@ -3411,6 +3472,132 @@ class DSProducerDetails(object):
         self._gke_service_account_name = gke_service_account_name
 
     @property
+    def google_workspace_access_mode(self):
+        """Gets the google_workspace_access_mode of this DSProducerDetails.  # noqa: E501
+
+
+        :return: The google_workspace_access_mode of this DSProducerDetails.  # noqa: E501
+        :rtype: str
+        """
+        return self._google_workspace_access_mode
+
+    @google_workspace_access_mode.setter
+    def google_workspace_access_mode(self, google_workspace_access_mode):
+        """Sets the google_workspace_access_mode of this DSProducerDetails.
+
+
+        :param google_workspace_access_mode: The google_workspace_access_mode of this DSProducerDetails.  # noqa: E501
+        :type: str
+        """
+
+        self._google_workspace_access_mode = google_workspace_access_mode
+
+    @property
+    def google_workspace_admin_name(self):
+        """Gets the google_workspace_admin_name of this DSProducerDetails.  # noqa: E501
+
+
+        :return: The google_workspace_admin_name of this DSProducerDetails.  # noqa: E501
+        :rtype: str
+        """
+        return self._google_workspace_admin_name
+
+    @google_workspace_admin_name.setter
+    def google_workspace_admin_name(self, google_workspace_admin_name):
+        """Sets the google_workspace_admin_name of this DSProducerDetails.
+
+
+        :param google_workspace_admin_name: The google_workspace_admin_name of this DSProducerDetails.  # noqa: E501
+        :type: str
+        """
+
+        self._google_workspace_admin_name = google_workspace_admin_name
+
+    @property
+    def google_workspace_group_name(self):
+        """Gets the google_workspace_group_name of this DSProducerDetails.  # noqa: E501
+
+
+        :return: The google_workspace_group_name of this DSProducerDetails.  # noqa: E501
+        :rtype: str
+        """
+        return self._google_workspace_group_name
+
+    @google_workspace_group_name.setter
+    def google_workspace_group_name(self, google_workspace_group_name):
+        """Sets the google_workspace_group_name of this DSProducerDetails.
+
+
+        :param google_workspace_group_name: The google_workspace_group_name of this DSProducerDetails.  # noqa: E501
+        :type: str
+        """
+
+        self._google_workspace_group_name = google_workspace_group_name
+
+    @property
+    def google_workspace_group_role(self):
+        """Gets the google_workspace_group_role of this DSProducerDetails.  # noqa: E501
+
+
+        :return: The google_workspace_group_role of this DSProducerDetails.  # noqa: E501
+        :rtype: str
+        """
+        return self._google_workspace_group_role
+
+    @google_workspace_group_role.setter
+    def google_workspace_group_role(self, google_workspace_group_role):
+        """Sets the google_workspace_group_role of this DSProducerDetails.
+
+
+        :param google_workspace_group_role: The google_workspace_group_role of this DSProducerDetails.  # noqa: E501
+        :type: str
+        """
+
+        self._google_workspace_group_role = google_workspace_group_role
+
+    @property
+    def google_workspace_role_name(self):
+        """Gets the google_workspace_role_name of this DSProducerDetails.  # noqa: E501
+
+
+        :return: The google_workspace_role_name of this DSProducerDetails.  # noqa: E501
+        :rtype: str
+        """
+        return self._google_workspace_role_name
+
+    @google_workspace_role_name.setter
+    def google_workspace_role_name(self, google_workspace_role_name):
+        """Sets the google_workspace_role_name of this DSProducerDetails.
+
+
+        :param google_workspace_role_name: The google_workspace_role_name of this DSProducerDetails.  # noqa: E501
+        :type: str
+        """
+
+        self._google_workspace_role_name = google_workspace_role_name
+
+    @property
+    def google_workspace_role_scope(self):
+        """Gets the google_workspace_role_scope of this DSProducerDetails.  # noqa: E501
+
+
+        :return: The google_workspace_role_scope of this DSProducerDetails.  # noqa: E501
+        :rtype: str
+        """
+        return self._google_workspace_role_scope
+
+    @google_workspace_role_scope.setter
+    def google_workspace_role_scope(self, google_workspace_role_scope):
+        """Sets the google_workspace_role_scope of this DSProducerDetails.
+
+
+        :param google_workspace_role_scope: The google_workspace_role_scope of this DSProducerDetails.  # noqa: E501
+        :type: str
+        """
+
+        self._google_workspace_role_scope = google_workspace_role_scope
+
+    @property
     def grant_types(self):
         """Gets the grant_types of this DSProducerDetails.  # noqa: E501
 
@@ -3814,6 +4001,27 @@ class DSProducerDetails(object):
         """
 
         self._k8s_cluster_endpoint = k8s_cluster_endpoint
+
+    @property
+    def k8s_cluster_name(self):
+        """Gets the k8s_cluster_name of this DSProducerDetails.  # noqa: E501
+
+
+        :return: The k8s_cluster_name of this DSProducerDetails.  # noqa: E501
+        :rtype: str
+        """
+        return self._k8s_cluster_name
+
+    @k8s_cluster_name.setter
+    def k8s_cluster_name(self, k8s_cluster_name):
+        """Sets the k8s_cluster_name of this DSProducerDetails.
+
+
+        :param k8s_cluster_name: The k8s_cluster_name of this DSProducerDetails.  # noqa: E501
+        :type: str
+        """
+
+        self._k8s_cluster_name = k8s_cluster_name
 
     @property
     def k8s_dynamic_mode(self):

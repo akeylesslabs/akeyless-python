@@ -35,6 +35,7 @@ class DbTargetDetails(object):
     """
     openapi_types = {
         'cloud_service_provider': 'str',
+        'cluster_mode': 'bool',
         'connection_type': 'str',
         'db_client_id': 'str',
         'db_client_secret': 'str',
@@ -55,6 +56,7 @@ class DbTargetDetails(object):
 
     attribute_map = {
         'cloud_service_provider': 'cloud_service_provider',
+        'cluster_mode': 'cluster_mode',
         'connection_type': 'connection_type',
         'db_client_id': 'db_client_id',
         'db_client_secret': 'db_client_secret',
@@ -73,13 +75,14 @@ class DbTargetDetails(object):
         'ssl_connection_mode': 'ssl_connection_mode'
     }
 
-    def __init__(self, cloud_service_provider=None, connection_type=None, db_client_id=None, db_client_secret=None, db_host_name=None, db_name=None, db_port=None, db_private_key=None, db_private_key_passphrase=None, db_pwd=None, db_server_certificates=None, db_server_name=None, db_tenant_id=None, db_user_name=None, sf_account=None, ssl_connection_certificate=None, ssl_connection_mode=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, cloud_service_provider=None, cluster_mode=None, connection_type=None, db_client_id=None, db_client_secret=None, db_host_name=None, db_name=None, db_port=None, db_private_key=None, db_private_key_passphrase=None, db_pwd=None, db_server_certificates=None, db_server_name=None, db_tenant_id=None, db_user_name=None, sf_account=None, ssl_connection_certificate=None, ssl_connection_mode=None, local_vars_configuration=None):  # noqa: E501
         """DbTargetDetails - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._cloud_service_provider = None
+        self._cluster_mode = None
         self._connection_type = None
         self._db_client_id = None
         self._db_client_secret = None
@@ -100,6 +103,8 @@ class DbTargetDetails(object):
 
         if cloud_service_provider is not None:
             self.cloud_service_provider = cloud_service_provider
+        if cluster_mode is not None:
+            self.cluster_mode = cluster_mode
         if connection_type is not None:
             self.connection_type = connection_type
         if db_client_id is not None:
@@ -153,6 +158,27 @@ class DbTargetDetails(object):
         """
 
         self._cloud_service_provider = cloud_service_provider
+
+    @property
+    def cluster_mode(self):
+        """Gets the cluster_mode of this DbTargetDetails.  # noqa: E501
+
+
+        :return: The cluster_mode of this DbTargetDetails.  # noqa: E501
+        :rtype: bool
+        """
+        return self._cluster_mode
+
+    @cluster_mode.setter
+    def cluster_mode(self, cluster_mode):
+        """Sets the cluster_mode of this DbTargetDetails.
+
+
+        :param cluster_mode: The cluster_mode of this DbTargetDetails.  # noqa: E501
+        :type: bool
+        """
+
+        self._cluster_mode = cluster_mode
 
     @property
     def connection_type(self):

@@ -40,6 +40,7 @@ class DynamicSecretCreateK8s(object):
         'k8s_allowed_namespaces': 'str',
         'k8s_cluster_ca_cert': 'str',
         'k8s_cluster_endpoint': 'str',
+        'k8s_cluster_name': 'str',
         'k8s_cluster_token': 'str',
         'k8s_namespace': 'str',
         'k8s_predefined_role_name': 'str',
@@ -72,6 +73,7 @@ class DynamicSecretCreateK8s(object):
         'k8s_allowed_namespaces': 'k8s-allowed-namespaces',
         'k8s_cluster_ca_cert': 'k8s-cluster-ca-cert',
         'k8s_cluster_endpoint': 'k8s-cluster-endpoint',
+        'k8s_cluster_name': 'k8s-cluster-name',
         'k8s_cluster_token': 'k8s-cluster-token',
         'k8s_namespace': 'k8s-namespace',
         'k8s_predefined_role_name': 'k8s-predefined-role-name',
@@ -97,7 +99,7 @@ class DynamicSecretCreateK8s(object):
         'user_ttl': 'user-ttl'
     }
 
-    def __init__(self, delete_protection=None, description=None, json=False, k8s_allowed_namespaces=None, k8s_cluster_ca_cert=None, k8s_cluster_endpoint=None, k8s_cluster_token=None, k8s_namespace=None, k8s_predefined_role_name=None, k8s_predefined_role_type=None, k8s_rolebinding_yaml_def=None, k8s_service_account=None, k8s_service_account_type=None, name=None, producer_encryption_key_name=None, secure_access_allow_port_forwading=None, secure_access_bastion_issuer=None, secure_access_cluster_endpoint=None, secure_access_dashboard_url=None, secure_access_enable=None, secure_access_web=False, secure_access_web_browsing=False, secure_access_web_proxy=False, tags=None, target_name=None, token=None, uid_token=None, use_gw_service_account=None, user_ttl='60m', local_vars_configuration=None):  # noqa: E501
+    def __init__(self, delete_protection=None, description=None, json=False, k8s_allowed_namespaces=None, k8s_cluster_ca_cert=None, k8s_cluster_endpoint=None, k8s_cluster_name=None, k8s_cluster_token=None, k8s_namespace=None, k8s_predefined_role_name=None, k8s_predefined_role_type=None, k8s_rolebinding_yaml_def=None, k8s_service_account=None, k8s_service_account_type=None, name=None, producer_encryption_key_name=None, secure_access_allow_port_forwading=None, secure_access_bastion_issuer=None, secure_access_cluster_endpoint=None, secure_access_dashboard_url=None, secure_access_enable=None, secure_access_web=False, secure_access_web_browsing=False, secure_access_web_proxy=False, tags=None, target_name=None, token=None, uid_token=None, use_gw_service_account=None, user_ttl='60m', local_vars_configuration=None):  # noqa: E501
         """DynamicSecretCreateK8s - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -109,6 +111,7 @@ class DynamicSecretCreateK8s(object):
         self._k8s_allowed_namespaces = None
         self._k8s_cluster_ca_cert = None
         self._k8s_cluster_endpoint = None
+        self._k8s_cluster_name = None
         self._k8s_cluster_token = None
         self._k8s_namespace = None
         self._k8s_predefined_role_name = None
@@ -146,6 +149,8 @@ class DynamicSecretCreateK8s(object):
             self.k8s_cluster_ca_cert = k8s_cluster_ca_cert
         if k8s_cluster_endpoint is not None:
             self.k8s_cluster_endpoint = k8s_cluster_endpoint
+        if k8s_cluster_name is not None:
+            self.k8s_cluster_name = k8s_cluster_name
         if k8s_cluster_token is not None:
             self.k8s_cluster_token = k8s_cluster_token
         if k8s_namespace is not None:
@@ -329,6 +334,29 @@ class DynamicSecretCreateK8s(object):
         """
 
         self._k8s_cluster_endpoint = k8s_cluster_endpoint
+
+    @property
+    def k8s_cluster_name(self):
+        """Gets the k8s_cluster_name of this DynamicSecretCreateK8s.  # noqa: E501
+
+        K8S cluster name  # noqa: E501
+
+        :return: The k8s_cluster_name of this DynamicSecretCreateK8s.  # noqa: E501
+        :rtype: str
+        """
+        return self._k8s_cluster_name
+
+    @k8s_cluster_name.setter
+    def k8s_cluster_name(self, k8s_cluster_name):
+        """Sets the k8s_cluster_name of this DynamicSecretCreateK8s.
+
+        K8S cluster name  # noqa: E501
+
+        :param k8s_cluster_name: The k8s_cluster_name of this DynamicSecretCreateK8s.  # noqa: E501
+        :type: str
+        """
+
+        self._k8s_cluster_name = k8s_cluster_name
 
     @property
     def k8s_cluster_token(self):

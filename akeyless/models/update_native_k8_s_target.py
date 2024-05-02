@@ -42,6 +42,7 @@ class UpdateNativeK8STarget(object):
         'k8s_client_key': 'str',
         'k8s_cluster_ca_cert': 'str',
         'k8s_cluster_endpoint': 'str',
+        'k8s_cluster_name': 'str',
         'k8s_cluster_token': 'str',
         'keep_prev_version': 'str',
         'key': 'str',
@@ -63,6 +64,7 @@ class UpdateNativeK8STarget(object):
         'k8s_client_key': 'k8s-client-key',
         'k8s_cluster_ca_cert': 'k8s-cluster-ca-cert',
         'k8s_cluster_endpoint': 'k8s-cluster-endpoint',
+        'k8s_cluster_name': 'k8s-cluster-name',
         'k8s_cluster_token': 'k8s-cluster-token',
         'keep_prev_version': 'keep-prev-version',
         'key': 'key',
@@ -75,7 +77,7 @@ class UpdateNativeK8STarget(object):
         'use_gw_service_account': 'use-gw-service-account'
     }
 
-    def __init__(self, comment=None, description=None, json=False, k8s_auth_type='token', k8s_client_certificate=None, k8s_client_key=None, k8s_cluster_ca_cert='dummy_val', k8s_cluster_endpoint='dummy_val', k8s_cluster_token='dummy_val', keep_prev_version=None, key=None, max_versions=None, name=None, new_name=None, token=None, uid_token=None, update_version=None, use_gw_service_account=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, comment=None, description=None, json=False, k8s_auth_type='token', k8s_client_certificate=None, k8s_client_key=None, k8s_cluster_ca_cert='dummy_val', k8s_cluster_endpoint='dummy_val', k8s_cluster_name=None, k8s_cluster_token='dummy_val', keep_prev_version=None, key=None, max_versions=None, name=None, new_name=None, token=None, uid_token=None, update_version=None, use_gw_service_account=None, local_vars_configuration=None):  # noqa: E501
         """UpdateNativeK8STarget - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -89,6 +91,7 @@ class UpdateNativeK8STarget(object):
         self._k8s_client_key = None
         self._k8s_cluster_ca_cert = None
         self._k8s_cluster_endpoint = None
+        self._k8s_cluster_name = None
         self._k8s_cluster_token = None
         self._keep_prev_version = None
         self._key = None
@@ -115,6 +118,8 @@ class UpdateNativeK8STarget(object):
             self.k8s_client_key = k8s_client_key
         self.k8s_cluster_ca_cert = k8s_cluster_ca_cert
         self.k8s_cluster_endpoint = k8s_cluster_endpoint
+        if k8s_cluster_name is not None:
+            self.k8s_cluster_name = k8s_cluster_name
         self.k8s_cluster_token = k8s_cluster_token
         if keep_prev_version is not None:
             self.keep_prev_version = keep_prev_version
@@ -321,6 +326,29 @@ class UpdateNativeK8STarget(object):
             raise ValueError("Invalid value for `k8s_cluster_endpoint`, must not be `None`")  # noqa: E501
 
         self._k8s_cluster_endpoint = k8s_cluster_endpoint
+
+    @property
+    def k8s_cluster_name(self):
+        """Gets the k8s_cluster_name of this UpdateNativeK8STarget.  # noqa: E501
+
+        K8S cluster name  # noqa: E501
+
+        :return: The k8s_cluster_name of this UpdateNativeK8STarget.  # noqa: E501
+        :rtype: str
+        """
+        return self._k8s_cluster_name
+
+    @k8s_cluster_name.setter
+    def k8s_cluster_name(self, k8s_cluster_name):
+        """Sets the k8s_cluster_name of this UpdateNativeK8STarget.
+
+        K8S cluster name  # noqa: E501
+
+        :param k8s_cluster_name: The k8s_cluster_name of this UpdateNativeK8STarget.  # noqa: E501
+        :type: str
+        """
+
+        self._k8s_cluster_name = k8s_cluster_name
 
     @property
     def k8s_cluster_token(self):

@@ -39,6 +39,7 @@ class CreateDBTarget(object):
         'azure_client_secret': 'str',
         'azure_tenant_id': 'str',
         'cloud_service_provider': 'str',
+        'cluster_mode': 'bool',
         'comment': 'str',
         'connection_type': 'str',
         'db_name': 'str',
@@ -76,6 +77,7 @@ class CreateDBTarget(object):
         'azure_client_secret': 'azure-client-secret',
         'azure_tenant_id': 'azure-tenant-id',
         'cloud_service_provider': 'cloud-service-provider',
+        'cluster_mode': 'cluster-mode',
         'comment': 'comment',
         'connection_type': 'connection-type',
         'db_name': 'db-name',
@@ -107,7 +109,7 @@ class CreateDBTarget(object):
         'user_name': 'user-name'
     }
 
-    def __init__(self, db_defined_connection_type=None, azure_client_id=None, azure_client_secret=None, azure_tenant_id=None, cloud_service_provider=None, comment=None, connection_type='credentials', db_name=None, db_server_certificates=None, db_server_name=None, db_type=None, description=None, host=None, json=False, key=None, max_versions=None, mongodb_atlas=None, mongodb_atlas_api_private_key=None, mongodb_atlas_api_public_key=None, mongodb_atlas_project_id=None, mongodb_default_auth_db=None, mongodb_uri_options=None, name=None, oracle_service_name=None, port=None, pwd=None, snowflake_account=None, snowflake_api_private_key=None, snowflake_api_private_key_password=None, ssl=False, ssl_certificate=None, token=None, uid_token=None, user_name=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, db_defined_connection_type=None, azure_client_id=None, azure_client_secret=None, azure_tenant_id=None, cloud_service_provider=None, cluster_mode=None, comment=None, connection_type='credentials', db_name=None, db_server_certificates=None, db_server_name=None, db_type=None, description=None, host=None, json=False, key=None, max_versions=None, mongodb_atlas=None, mongodb_atlas_api_private_key=None, mongodb_atlas_api_public_key=None, mongodb_atlas_project_id=None, mongodb_default_auth_db=None, mongodb_uri_options=None, name=None, oracle_service_name=None, port=None, pwd=None, snowflake_account=None, snowflake_api_private_key=None, snowflake_api_private_key_password=None, ssl=False, ssl_certificate=None, token=None, uid_token=None, user_name=None, local_vars_configuration=None):  # noqa: E501
         """CreateDBTarget - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -118,6 +120,7 @@ class CreateDBTarget(object):
         self._azure_client_secret = None
         self._azure_tenant_id = None
         self._cloud_service_provider = None
+        self._cluster_mode = None
         self._comment = None
         self._connection_type = None
         self._db_name = None
@@ -159,6 +162,8 @@ class CreateDBTarget(object):
             self.azure_tenant_id = azure_tenant_id
         if cloud_service_provider is not None:
             self.cloud_service_provider = cloud_service_provider
+        if cluster_mode is not None:
+            self.cluster_mode = cluster_mode
         if comment is not None:
             self.comment = comment
         self.connection_type = connection_type
@@ -327,6 +332,29 @@ class CreateDBTarget(object):
         """
 
         self._cloud_service_provider = cloud_service_provider
+
+    @property
+    def cluster_mode(self):
+        """Gets the cluster_mode of this CreateDBTarget.  # noqa: E501
+
+        Cluster Mode  # noqa: E501
+
+        :return: The cluster_mode of this CreateDBTarget.  # noqa: E501
+        :rtype: bool
+        """
+        return self._cluster_mode
+
+    @cluster_mode.setter
+    def cluster_mode(self, cluster_mode):
+        """Sets the cluster_mode of this CreateDBTarget.
+
+        Cluster Mode  # noqa: E501
+
+        :param cluster_mode: The cluster_mode of this CreateDBTarget.  # noqa: E501
+        :type: bool
+        """
+
+        self._cluster_mode = cluster_mode
 
     @property
     def comment(self):

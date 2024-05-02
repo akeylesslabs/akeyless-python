@@ -61,7 +61,7 @@ class SecureRemoteAccess(object):
         'ssh_password': 'bool',
         'ssh_private_key': 'bool',
         'ssh_user': 'str',
-        'status': 'ItemSraStatus',
+        'status_info': 'ItemSraStatus',
         'target_hosts': 'list[TargetNameWithHosts]',
         'targets': 'list[str]',
         'url': 'str',
@@ -97,7 +97,7 @@ class SecureRemoteAccess(object):
         'ssh_password': 'ssh_password',
         'ssh_private_key': 'ssh_private_key',
         'ssh_user': 'ssh_user',
-        'status': 'status',
+        'status_info': 'status_info',
         'target_hosts': 'target_hosts',
         'targets': 'targets',
         'url': 'url',
@@ -105,7 +105,7 @@ class SecureRemoteAccess(object):
         'web_proxy': 'web_proxy'
     }
 
-    def __init__(self, account_id=None, allow_port_forwarding=None, allow_providing_external_username=None, bastion_api=None, bastion_issuer=None, bastion_issuer_id=None, bastion_ssh=None, category=None, dashboard_url=None, db_name=None, domain=None, enable=None, endpoint=None, host=None, host_provider_type=None, is_cli=None, is_web=None, isolated=None, native=None, rd_gateway_server=None, rdp_user=None, region=None, rotate_after_disconnect=None, schema=None, ssh_password=None, ssh_private_key=None, ssh_user=None, status=None, target_hosts=None, targets=None, url=None, use_internal_bastion=None, web_proxy=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, account_id=None, allow_port_forwarding=None, allow_providing_external_username=None, bastion_api=None, bastion_issuer=None, bastion_issuer_id=None, bastion_ssh=None, category=None, dashboard_url=None, db_name=None, domain=None, enable=None, endpoint=None, host=None, host_provider_type=None, is_cli=None, is_web=None, isolated=None, native=None, rd_gateway_server=None, rdp_user=None, region=None, rotate_after_disconnect=None, schema=None, ssh_password=None, ssh_private_key=None, ssh_user=None, status_info=None, target_hosts=None, targets=None, url=None, use_internal_bastion=None, web_proxy=None, local_vars_configuration=None):  # noqa: E501
         """SecureRemoteAccess - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -138,7 +138,7 @@ class SecureRemoteAccess(object):
         self._ssh_password = None
         self._ssh_private_key = None
         self._ssh_user = None
-        self._status = None
+        self._status_info = None
         self._target_hosts = None
         self._targets = None
         self._url = None
@@ -200,8 +200,8 @@ class SecureRemoteAccess(object):
             self.ssh_private_key = ssh_private_key
         if ssh_user is not None:
             self.ssh_user = ssh_user
-        if status is not None:
-            self.status = status
+        if status_info is not None:
+            self.status_info = status_info
         if target_hosts is not None:
             self.target_hosts = target_hosts
         if targets is not None:
@@ -781,25 +781,25 @@ class SecureRemoteAccess(object):
         self._ssh_user = ssh_user
 
     @property
-    def status(self):
-        """Gets the status of this SecureRemoteAccess.  # noqa: E501
+    def status_info(self):
+        """Gets the status_info of this SecureRemoteAccess.  # noqa: E501
 
 
-        :return: The status of this SecureRemoteAccess.  # noqa: E501
+        :return: The status_info of this SecureRemoteAccess.  # noqa: E501
         :rtype: ItemSraStatus
         """
-        return self._status
+        return self._status_info
 
-    @status.setter
-    def status(self, status):
-        """Sets the status of this SecureRemoteAccess.
+    @status_info.setter
+    def status_info(self, status_info):
+        """Sets the status_info of this SecureRemoteAccess.
 
 
-        :param status: The status of this SecureRemoteAccess.  # noqa: E501
+        :param status_info: The status_info of this SecureRemoteAccess.  # noqa: E501
         :type: ItemSraStatus
         """
 
-        self._status = status
+        self._status_info = status_info
 
     @property
     def target_hosts(self):
