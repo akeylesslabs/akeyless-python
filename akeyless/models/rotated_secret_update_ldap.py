@@ -103,7 +103,7 @@ class RotatedSecretUpdateLdap(object):
         'user_dn': 'user-dn'
     }
 
-    def __init__(self, provider_type=None, add_tag=None, authentication_credentials='use-user-creds', auto_rotate=None, delete_protection=None, description='default_metadata', host_provider='explicit', json=False, keep_prev_version=None, key=None, max_versions=None, name=None, new_name=None, password_length=None, rm_tag=None, rotate_after_disconnect='false', rotated_password=None, rotated_username=None, rotation_hour=None, rotation_interval=None, secure_access_enable=None, secure_access_host=None, secure_access_rdp_domain=None, secure_access_url=None, secure_access_web=False, secure_access_web_browsing=False, secure_access_web_proxy=False, target=None, token=None, uid_token=None, user_attribute='cn', user_dn=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, provider_type=None, add_tag=None, authentication_credentials='use-user-creds', auto_rotate=None, delete_protection=None, description='default_metadata', host_provider=None, json=False, keep_prev_version=None, key=None, max_versions=None, name=None, new_name=None, password_length=None, rm_tag=None, rotate_after_disconnect='false', rotated_password=None, rotated_username=None, rotation_hour=None, rotation_interval=None, secure_access_enable=None, secure_access_host=None, secure_access_rdp_domain=None, secure_access_url=None, secure_access_web=False, secure_access_web_browsing=False, secure_access_web_proxy=False, target=None, token=None, uid_token=None, user_attribute='cn', user_dn=None, local_vars_configuration=None):  # noqa: E501
         """RotatedSecretUpdateLdap - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -347,7 +347,7 @@ class RotatedSecretUpdateLdap(object):
     def host_provider(self):
         """Gets the host_provider of this RotatedSecretUpdateLdap.  # noqa: E501
 
-        Host provider type [explicit/target], Relevant only for Secure Remote Access of ssh cert issuer and ldap rotated secret  # noqa: E501
+        Host provider type [explicit/target], Default Host provider is explicit, Relevant only for Secure Remote Access of ssh cert issuer, ldap rotated secret and ldap dynamic secret  # noqa: E501
 
         :return: The host_provider of this RotatedSecretUpdateLdap.  # noqa: E501
         :rtype: str
@@ -358,7 +358,7 @@ class RotatedSecretUpdateLdap(object):
     def host_provider(self, host_provider):
         """Sets the host_provider of this RotatedSecretUpdateLdap.
 
-        Host provider type [explicit/target], Relevant only for Secure Remote Access of ssh cert issuer and ldap rotated secret  # noqa: E501
+        Host provider type [explicit/target], Default Host provider is explicit, Relevant only for Secure Remote Access of ssh cert issuer, ldap rotated secret and ldap dynamic secret  # noqa: E501
 
         :param host_provider: The host_provider of this RotatedSecretUpdateLdap.  # noqa: E501
         :type: str
@@ -832,7 +832,7 @@ class RotatedSecretUpdateLdap(object):
     def target(self):
         """Gets the target of this RotatedSecretUpdateLdap.  # noqa: E501
 
-        A list of linked targets to be associated, Relevant only for Secure Remote Access for ssh cert issuer and ldap rotated secret, To specify multiple targets use argument multiple times  # noqa: E501
+        A list of linked targets to be associated, Relevant only for Secure Remote Access for ssh cert issuer, ldap rotated secret and ldap dynamic secret, To specify multiple targets use argument multiple times  # noqa: E501
 
         :return: The target of this RotatedSecretUpdateLdap.  # noqa: E501
         :rtype: list[str]
@@ -843,7 +843,7 @@ class RotatedSecretUpdateLdap(object):
     def target(self, target):
         """Sets the target of this RotatedSecretUpdateLdap.
 
-        A list of linked targets to be associated, Relevant only for Secure Remote Access for ssh cert issuer and ldap rotated secret, To specify multiple targets use argument multiple times  # noqa: E501
+        A list of linked targets to be associated, Relevant only for Secure Remote Access for ssh cert issuer, ldap rotated secret and ldap dynamic secret, To specify multiple targets use argument multiple times  # noqa: E501
 
         :param target: The target of this RotatedSecretUpdateLdap.  # noqa: E501
         :type: list[str]

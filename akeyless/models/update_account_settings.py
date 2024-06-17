@@ -44,6 +44,7 @@ class UpdateAccountSettings(object):
         'dp_enable_classic_key_protection': 'str',
         'dynamic_secret_max_ttl': 'int',
         'dynamic_secret_max_ttl_enable': 'str',
+        'enable_item_sharing': 'str',
         'force_new_versions': 'str',
         'invalid_characters': 'str',
         'item_type': 'str',
@@ -81,6 +82,7 @@ class UpdateAccountSettings(object):
         'dp_enable_classic_key_protection': 'dp-enable-classic-key-protection',
         'dynamic_secret_max_ttl': 'dynamic-secret-max-ttl',
         'dynamic_secret_max_ttl_enable': 'dynamic-secret-max-ttl-enable',
+        'enable_item_sharing': 'enable-item-sharing',
         'force_new_versions': 'force-new-versions',
         'invalid_characters': 'invalid-characters',
         'item_type': 'item-type',
@@ -107,7 +109,7 @@ class UpdateAccountSettings(object):
         'use_capital_letters': 'use_capital-letters'
     }
 
-    def __init__(self, address=None, city=None, company_name=None, country=None, default_key_name=None, default_share_link_ttl_minutes=None, default_versioning=None, dp_enable_classic_key_protection=None, dynamic_secret_max_ttl=None, dynamic_secret_max_ttl_enable=None, force_new_versions=None, invalid_characters='notReceivedInvalidCharacter', item_type=None, items_deletion_protection=None, json=False, jwt_ttl_default=None, jwt_ttl_max=None, jwt_ttl_min=None, lock_default_key=None, max_rotation_interval=None, max_rotation_interval_enable=None, max_versions=None, password_length=None, phone=None, postal_code=None, token=None, uid_token=None, usage_event_enable=None, usage_event_interval=None, usage_event_object_type=None, use_lower_letters=None, use_numbers=None, use_special_characters=None, use_capital_letters=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, address=None, city=None, company_name=None, country=None, default_key_name=None, default_share_link_ttl_minutes=None, default_versioning=None, dp_enable_classic_key_protection=None, dynamic_secret_max_ttl=None, dynamic_secret_max_ttl_enable=None, enable_item_sharing=None, force_new_versions=None, invalid_characters='notReceivedInvalidCharacter', item_type=None, items_deletion_protection=None, json=False, jwt_ttl_default=None, jwt_ttl_max=None, jwt_ttl_min=None, lock_default_key=None, max_rotation_interval=None, max_rotation_interval_enable=None, max_versions=None, password_length=None, phone=None, postal_code=None, token=None, uid_token=None, usage_event_enable=None, usage_event_interval=None, usage_event_object_type=None, use_lower_letters=None, use_numbers=None, use_special_characters=None, use_capital_letters=None, local_vars_configuration=None):  # noqa: E501
         """UpdateAccountSettings - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -123,6 +125,7 @@ class UpdateAccountSettings(object):
         self._dp_enable_classic_key_protection = None
         self._dynamic_secret_max_ttl = None
         self._dynamic_secret_max_ttl_enable = None
+        self._enable_item_sharing = None
         self._force_new_versions = None
         self._invalid_characters = None
         self._item_type = None
@@ -169,6 +172,8 @@ class UpdateAccountSettings(object):
             self.dynamic_secret_max_ttl = dynamic_secret_max_ttl
         if dynamic_secret_max_ttl_enable is not None:
             self.dynamic_secret_max_ttl_enable = dynamic_secret_max_ttl_enable
+        if enable_item_sharing is not None:
+            self.enable_item_sharing = enable_item_sharing
         if force_new_versions is not None:
             self.force_new_versions = force_new_versions
         if invalid_characters is not None:
@@ -447,6 +452,29 @@ class UpdateAccountSettings(object):
         """
 
         self._dynamic_secret_max_ttl_enable = dynamic_secret_max_ttl_enable
+
+    @property
+    def enable_item_sharing(self):
+        """Gets the enable_item_sharing of this UpdateAccountSettings.  # noqa: E501
+
+        Enable sharing items [true/false]  # noqa: E501
+
+        :return: The enable_item_sharing of this UpdateAccountSettings.  # noqa: E501
+        :rtype: str
+        """
+        return self._enable_item_sharing
+
+    @enable_item_sharing.setter
+    def enable_item_sharing(self, enable_item_sharing):
+        """Sets the enable_item_sharing of this UpdateAccountSettings.
+
+        Enable sharing items [true/false]  # noqa: E501
+
+        :param enable_item_sharing: The enable_item_sharing of this UpdateAccountSettings.  # noqa: E501
+        :type: str
+        """
+
+        self._enable_item_sharing = enable_item_sharing
 
     @property
     def force_new_versions(self):

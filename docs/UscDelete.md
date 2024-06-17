@@ -5,7 +5,8 @@ uscDelete is a command that deletes a secret from a Universal Secrets Connector
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **json** | **bool** | Set output format to JSON | [optional] [default to False]
-**secret_id** | **str** | The universal secrets id (or name, for AWS, Azure or K8s targets) to delete | 
+**namespace** | **str** | The namespace (relevant for Hashi vault target) | [optional] 
+**secret_id** | **str** | The universal secrets id (or name, for AWS, Azure, K8s or Hashi vault targets) to delete | 
 **token** | **str** | Authentication token (see &#x60;/auth&#x60; and &#x60;/configure&#x60;) | [optional] 
 **uid_token** | **str** | The universal identity token, Required only for universal_identity authentication | [optional] 
 **usc_name** | **str** | Name of the Universal Secrets Connector item | 

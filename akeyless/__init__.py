@@ -15,7 +15,7 @@
 
 from __future__ import absolute_import
 
-__version__ = "4.0.0"
+__version__ = "4.1.0"
 
 # import apis into sdk package
 from akeyless.api.v2_api import V2Api
@@ -151,6 +151,8 @@ from akeyless.models.create_godaddy_target import CreateGodaddyTarget
 from akeyless.models.create_godaddy_target_output import CreateGodaddyTargetOutput
 from akeyless.models.create_group import CreateGroup
 from akeyless.models.create_group_output import CreateGroupOutput
+from akeyless.models.create_hashi_vault_target import CreateHashiVaultTarget
+from akeyless.models.create_hashi_vault_target_output import CreateHashiVaultTargetOutput
 from akeyless.models.create_key import CreateKey
 from akeyless.models.create_key_output import CreateKeyOutput
 from akeyless.models.create_ldap_target import CreateLdapTarget
@@ -422,14 +424,19 @@ from akeyless.models.gateway_delete_producer_output import GatewayDeleteProducer
 from akeyless.models.gateway_download_customer_fragments import GatewayDownloadCustomerFragments
 from akeyless.models.gateway_download_customer_fragments_output import GatewayDownloadCustomerFragmentsOutput
 from akeyless.models.gateway_get_allowed_access import GatewayGetAllowedAccess
+from akeyless.models.gateway_get_cache import GatewayGetCache
 from akeyless.models.gateway_get_config import GatewayGetConfig
+from akeyless.models.gateway_get_defaults import GatewayGetDefaults
+from akeyless.models.gateway_get_defaults_output import GatewayGetDefaultsOutput
 from akeyless.models.gateway_get_k8_s_auth_config import GatewayGetK8SAuthConfig
 from akeyless.models.gateway_get_k8_s_auth_config_output import GatewayGetK8SAuthConfigOutput
 from akeyless.models.gateway_get_ldap_auth_config import GatewayGetLdapAuthConfig
 from akeyless.models.gateway_get_ldap_auth_config_output import GatewayGetLdapAuthConfigOutput
+from akeyless.models.gateway_get_log_forwarding import GatewayGetLogForwarding
 from akeyless.models.gateway_get_migration import GatewayGetMigration
 from akeyless.models.gateway_get_producer import GatewayGetProducer
 from akeyless.models.gateway_get_tmp_users import GatewayGetTmpUsers
+from akeyless.models.gateway_list_customer_fragments import GatewayListCustomerFragments
 from akeyless.models.gateway_list_migration import GatewayListMigration
 from akeyless.models.gateway_list_producers import GatewayListProducers
 from akeyless.models.gateway_list_rotated_secrets import GatewayListRotatedSecrets
@@ -452,13 +459,28 @@ from akeyless.models.gateway_stop_producer import GatewayStopProducer
 from akeyless.models.gateway_stop_producer_output import GatewayStopProducerOutput
 from akeyless.models.gateway_sync_migration import GatewaySyncMigration
 from akeyless.models.gateway_update_allowed_access import GatewayUpdateAllowedAccess
+from akeyless.models.gateway_update_cache import GatewayUpdateCache
+from akeyless.models.gateway_update_defaults import GatewayUpdateDefaults
 from akeyless.models.gateway_update_item import GatewayUpdateItem
 from akeyless.models.gateway_update_item_output import GatewayUpdateItemOutput
 from akeyless.models.gateway_update_k8_s_auth_config import GatewayUpdateK8SAuthConfig
 from akeyless.models.gateway_update_k8_s_auth_config_output import GatewayUpdateK8SAuthConfigOutput
 from akeyless.models.gateway_update_ldap_auth_config import GatewayUpdateLdapAuthConfig
 from akeyless.models.gateway_update_ldap_auth_config_output import GatewayUpdateLdapAuthConfigOutput
+from akeyless.models.gateway_update_log_forwarding_aws_s3 import GatewayUpdateLogForwardingAwsS3
+from akeyless.models.gateway_update_log_forwarding_azure_analytics import GatewayUpdateLogForwardingAzureAnalytics
+from akeyless.models.gateway_update_log_forwarding_datadog import GatewayUpdateLogForwardingDatadog
+from akeyless.models.gateway_update_log_forwarding_elasticsearch import GatewayUpdateLogForwardingElasticsearch
+from akeyless.models.gateway_update_log_forwarding_google_chronicle import GatewayUpdateLogForwardingGoogleChronicle
+from akeyless.models.gateway_update_log_forwarding_logstash import GatewayUpdateLogForwardingLogstash
+from akeyless.models.gateway_update_log_forwarding_logz_io import GatewayUpdateLogForwardingLogzIo
+from akeyless.models.gateway_update_log_forwarding_output import GatewayUpdateLogForwardingOutput
+from akeyless.models.gateway_update_log_forwarding_splunk import GatewayUpdateLogForwardingSplunk
+from akeyless.models.gateway_update_log_forwarding_stdout import GatewayUpdateLogForwardingStdout
+from akeyless.models.gateway_update_log_forwarding_sumologic import GatewayUpdateLogForwardingSumologic
+from akeyless.models.gateway_update_log_forwarding_syslog import GatewayUpdateLogForwardingSyslog
 from akeyless.models.gateway_update_migration import GatewayUpdateMigration
+from akeyless.models.gateway_update_output import GatewayUpdateOutput
 from akeyless.models.gateway_update_producer_artifactory import GatewayUpdateProducerArtifactory
 from akeyless.models.gateway_update_producer_artifactory_output import GatewayUpdateProducerArtifactoryOutput
 from akeyless.models.gateway_update_producer_aws import GatewayUpdateProducerAws
@@ -558,6 +580,7 @@ from akeyless.models.group import Group
 from akeyless.models.gw_cluster_identity import GwClusterIdentity
 from akeyless.models.hashi_migration import HashiMigration
 from akeyless.models.hashi_payload import HashiPayload
+from akeyless.models.hashi_vault_target_details import HashiVaultTargetDetails
 from akeyless.models.hmac import Hmac
 from akeyless.models.hmac_output import HmacOutput
 from akeyless.models.huawei_access_rules import HuaweiAccessRules
@@ -839,6 +862,8 @@ from akeyless.models.update_godaddy_target import UpdateGodaddyTarget
 from akeyless.models.update_godaddy_target_output import UpdateGodaddyTargetOutput
 from akeyless.models.update_group import UpdateGroup
 from akeyless.models.update_group_output import UpdateGroupOutput
+from akeyless.models.update_hashi_vault_target import UpdateHashiVaultTarget
+from akeyless.models.update_hashi_vault_target_output import UpdateHashiVaultTargetOutput
 from akeyless.models.update_item import UpdateItem
 from akeyless.models.update_item_output import UpdateItemOutput
 from akeyless.models.update_ldap_target import UpdateLdapTarget

@@ -35,41 +35,51 @@ class UscGet(object):
     """
     openapi_types = {
         'json': 'bool',
+        'namespace': 'str',
         'secret_id': 'str',
         'token': 'str',
         'uid_token': 'str',
-        'usc_name': 'str'
+        'usc_name': 'str',
+        'version_id': 'str'
     }
 
     attribute_map = {
         'json': 'json',
+        'namespace': 'namespace',
         'secret_id': 'secret-id',
         'token': 'token',
         'uid_token': 'uid-token',
-        'usc_name': 'usc-name'
+        'usc_name': 'usc-name',
+        'version_id': 'version-id'
     }
 
-    def __init__(self, json=False, secret_id=None, token=None, uid_token=None, usc_name=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, json=False, namespace=None, secret_id=None, token=None, uid_token=None, usc_name=None, version_id=None, local_vars_configuration=None):  # noqa: E501
         """UscGet - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._json = None
+        self._namespace = None
         self._secret_id = None
         self._token = None
         self._uid_token = None
         self._usc_name = None
+        self._version_id = None
         self.discriminator = None
 
         if json is not None:
             self.json = json
+        if namespace is not None:
+            self.namespace = namespace
         self.secret_id = secret_id
         if token is not None:
             self.token = token
         if uid_token is not None:
             self.uid_token = uid_token
         self.usc_name = usc_name
+        if version_id is not None:
+            self.version_id = version_id
 
     @property
     def json(self):
@@ -95,10 +105,33 @@ class UscGet(object):
         self._json = json
 
     @property
+    def namespace(self):
+        """Gets the namespace of this UscGet.  # noqa: E501
+
+        The namespace (relevant for Hashi vault target)  # noqa: E501
+
+        :return: The namespace of this UscGet.  # noqa: E501
+        :rtype: str
+        """
+        return self._namespace
+
+    @namespace.setter
+    def namespace(self, namespace):
+        """Sets the namespace of this UscGet.
+
+        The namespace (relevant for Hashi vault target)  # noqa: E501
+
+        :param namespace: The namespace of this UscGet.  # noqa: E501
+        :type: str
+        """
+
+        self._namespace = namespace
+
+    @property
     def secret_id(self):
         """Gets the secret_id of this UscGet.  # noqa: E501
 
-        The secret id (or name, for AWS, Azure or K8s targets) to get from the Universal Secrets Connector  # noqa: E501
+        The secret id (or name, for AWS, Azure, K8s or Hashi vault targets) to get from the Universal Secrets Connector  # noqa: E501
 
         :return: The secret_id of this UscGet.  # noqa: E501
         :rtype: str
@@ -109,7 +142,7 @@ class UscGet(object):
     def secret_id(self, secret_id):
         """Sets the secret_id of this UscGet.
 
-        The secret id (or name, for AWS, Azure or K8s targets) to get from the Universal Secrets Connector  # noqa: E501
+        The secret id (or name, for AWS, Azure, K8s or Hashi vault targets) to get from the Universal Secrets Connector  # noqa: E501
 
         :param secret_id: The secret_id of this UscGet.  # noqa: E501
         :type: str
@@ -189,6 +222,29 @@ class UscGet(object):
             raise ValueError("Invalid value for `usc_name`, must not be `None`")  # noqa: E501
 
         self._usc_name = usc_name
+
+    @property
+    def version_id(self):
+        """Gets the version_id of this UscGet.  # noqa: E501
+
+        The version id (if not specified, will retrieve the last version)  # noqa: E501
+
+        :return: The version_id of this UscGet.  # noqa: E501
+        :rtype: str
+        """
+        return self._version_id
+
+    @version_id.setter
+    def version_id(self, version_id):
+        """Sets the version_id of this UscGet.
+
+        The version id (if not specified, will retrieve the last version)  # noqa: E501
+
+        :param version_id: The version_id of this UscGet.  # noqa: E501
+        :type: str
+        """
+
+        self._version_id = version_id
 
     def to_dict(self):
         """Returns the model properties as a dict"""

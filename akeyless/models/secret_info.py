@@ -43,7 +43,8 @@ class SecretInfo(object):
         'secret_id': 'str',
         'status': 'bool',
         'tags': 'dict(str, str)',
-        'type': 'str'
+        'type': 'str',
+        'version': 'int'
     }
 
     attribute_map = {
@@ -56,10 +57,11 @@ class SecretInfo(object):
         'secret_id': 'secret_id',
         'status': 'status',
         'tags': 'tags',
-        'type': 'type'
+        'type': 'type',
+        'version': 'version'
     }
 
-    def __init__(self, created=None, description=None, expiration=None, last_retrieved=None, location=None, name=None, secret_id=None, status=None, tags=None, type=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, created=None, description=None, expiration=None, last_retrieved=None, location=None, name=None, secret_id=None, status=None, tags=None, type=None, version=None, local_vars_configuration=None):  # noqa: E501
         """SecretInfo - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -75,6 +77,7 @@ class SecretInfo(object):
         self._status = None
         self._tags = None
         self._type = None
+        self._version = None
         self.discriminator = None
 
         if created is not None:
@@ -97,6 +100,8 @@ class SecretInfo(object):
             self.tags = tags
         if type is not None:
             self.type = type
+        if version is not None:
+            self.version = version
 
     @property
     def created(self):
@@ -307,6 +312,27 @@ class SecretInfo(object):
         """
 
         self._type = type
+
+    @property
+    def version(self):
+        """Gets the version of this SecretInfo.  # noqa: E501
+
+
+        :return: The version of this SecretInfo.  # noqa: E501
+        :rtype: int
+        """
+        return self._version
+
+    @version.setter
+    def version(self, version):
+        """Sets the version of this SecretInfo.
+
+
+        :param version: The version of this SecretInfo.  # noqa: E501
+        :type: int
+        """
+
+        self._version = version
 
     def to_dict(self):
         """Returns the model properties as a dict"""

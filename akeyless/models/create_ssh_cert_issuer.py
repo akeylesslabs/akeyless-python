@@ -83,7 +83,7 @@ class CreateSSHCertIssuer(object):
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, provider_type=None, allowed_users=None, delete_protection=None, description=None, extensions=None, host_provider='explicit', json=False, metadata=None, name=None, principals=None, secure_access_bastion_api=None, secure_access_bastion_ssh=None, secure_access_enable=None, secure_access_host=None, secure_access_ssh_creds_user=None, secure_access_use_internal_bastion=None, signer_key_name=None, tag=None, target=None, token=None, ttl=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, provider_type=None, allowed_users=None, delete_protection=None, description=None, extensions=None, host_provider=None, json=False, metadata=None, name=None, principals=None, secure_access_bastion_api=None, secure_access_bastion_ssh=None, secure_access_enable=None, secure_access_host=None, secure_access_ssh_creds_user=None, secure_access_use_internal_bastion=None, signer_key_name=None, tag=None, target=None, token=None, ttl=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """CreateSSHCertIssuer - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -273,7 +273,7 @@ class CreateSSHCertIssuer(object):
     def host_provider(self):
         """Gets the host_provider of this CreateSSHCertIssuer.  # noqa: E501
 
-        Host provider type [explicit/target], Relevant only for Secure Remote Access of ssh cert issuer and ldap rotated secret  # noqa: E501
+        Host provider type [explicit/target], Default Host provider is explicit, Relevant only for Secure Remote Access of ssh cert issuer, ldap rotated secret and ldap dynamic secret  # noqa: E501
 
         :return: The host_provider of this CreateSSHCertIssuer.  # noqa: E501
         :rtype: str
@@ -284,7 +284,7 @@ class CreateSSHCertIssuer(object):
     def host_provider(self, host_provider):
         """Sets the host_provider of this CreateSSHCertIssuer.
 
-        Host provider type [explicit/target], Relevant only for Secure Remote Access of ssh cert issuer and ldap rotated secret  # noqa: E501
+        Host provider type [explicit/target], Default Host provider is explicit, Relevant only for Secure Remote Access of ssh cert issuer, ldap rotated secret and ldap dynamic secret  # noqa: E501
 
         :param host_provider: The host_provider of this CreateSSHCertIssuer.  # noqa: E501
         :type: str
@@ -576,7 +576,7 @@ class CreateSSHCertIssuer(object):
     def target(self):
         """Gets the target of this CreateSSHCertIssuer.  # noqa: E501
 
-        A list of linked targets to be associated, Relevant only for Secure Remote Access for ssh cert issuer and ldap rotated secret, To specify multiple targets use argument multiple times  # noqa: E501
+        A list of linked targets to be associated, Relevant only for Secure Remote Access for ssh cert issuer, ldap rotated secret and ldap dynamic secret, To specify multiple targets use argument multiple times  # noqa: E501
 
         :return: The target of this CreateSSHCertIssuer.  # noqa: E501
         :rtype: list[str]
@@ -587,7 +587,7 @@ class CreateSSHCertIssuer(object):
     def target(self, target):
         """Sets the target of this CreateSSHCertIssuer.
 
-        A list of linked targets to be associated, Relevant only for Secure Remote Access for ssh cert issuer and ldap rotated secret, To specify multiple targets use argument multiple times  # noqa: E501
+        A list of linked targets to be associated, Relevant only for Secure Remote Access for ssh cert issuer, ldap rotated secret and ldap dynamic secret, To specify multiple targets use argument multiple times  # noqa: E501
 
         :param target: The target of this CreateSSHCertIssuer.  # noqa: E501
         :type: list[str]

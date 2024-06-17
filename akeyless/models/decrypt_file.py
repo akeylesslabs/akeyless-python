@@ -42,7 +42,8 @@ class DecryptFile(object):
         'key_name': 'str',
         'out': 'str',
         'token': 'str',
-        'uid_token': 'str'
+        'uid_token': 'str',
+        'version': 'int'
     }
 
     attribute_map = {
@@ -54,10 +55,11 @@ class DecryptFile(object):
         'key_name': 'key-name',
         'out': 'out',
         'token': 'token',
-        'uid_token': 'uid-token'
+        'uid_token': 'uid-token',
+        'version': 'version'
     }
 
-    def __init__(self, cyphertext_header=None, display_id=None, _in=None, item_id=None, json=False, key_name=None, out=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, cyphertext_header=None, display_id=None, _in=None, item_id=None, json=False, key_name=None, out=None, token=None, uid_token=None, version=None, local_vars_configuration=None):  # noqa: E501
         """DecryptFile - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -72,6 +74,7 @@ class DecryptFile(object):
         self._out = None
         self._token = None
         self._uid_token = None
+        self._version = None
         self.discriminator = None
 
         if cyphertext_header is not None:
@@ -90,6 +93,8 @@ class DecryptFile(object):
             self.token = token
         if uid_token is not None:
             self.uid_token = uid_token
+        if version is not None:
+            self.version = version
 
     @property
     def cyphertext_header(self):
@@ -299,6 +304,29 @@ class DecryptFile(object):
         """
 
         self._uid_token = uid_token
+
+    @property
+    def version(self):
+        """Gets the version of this DecryptFile.  # noqa: E501
+
+        key version (relevant only for classic key)  # noqa: E501
+
+        :return: The version of this DecryptFile.  # noqa: E501
+        :rtype: int
+        """
+        return self._version
+
+    @version.setter
+    def version(self, version):
+        """Sets the version of this DecryptFile.
+
+        key version (relevant only for classic key)  # noqa: E501
+
+        :param version: The version of this DecryptFile.  # noqa: E501
+        :type: int
+        """
+
+        self._version = version
 
     def to_dict(self):
         """Returns the model properties as a dict"""

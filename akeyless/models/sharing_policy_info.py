@@ -34,24 +34,29 @@ class SharingPolicyInfo(object):
                             and the value is json key in definition.
     """
     openapi_types = {
-        'default_share_link_ttl': 'int'
+        'default_share_link_ttl': 'int',
+        'enable': 'bool'
     }
 
     attribute_map = {
-        'default_share_link_ttl': 'default_share_link_ttl'
+        'default_share_link_ttl': 'default_share_link_ttl',
+        'enable': 'enable'
     }
 
-    def __init__(self, default_share_link_ttl=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, default_share_link_ttl=None, enable=None, local_vars_configuration=None):  # noqa: E501
         """SharingPolicyInfo - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._default_share_link_ttl = None
+        self._enable = None
         self.discriminator = None
 
         if default_share_link_ttl is not None:
             self.default_share_link_ttl = default_share_link_ttl
+        if enable is not None:
+            self.enable = enable
 
     @property
     def default_share_link_ttl(self):
@@ -73,6 +78,27 @@ class SharingPolicyInfo(object):
         """
 
         self._default_share_link_ttl = default_share_link_ttl
+
+    @property
+    def enable(self):
+        """Gets the enable of this SharingPolicyInfo.  # noqa: E501
+
+
+        :return: The enable of this SharingPolicyInfo.  # noqa: E501
+        :rtype: bool
+        """
+        return self._enable
+
+    @enable.setter
+    def enable(self, enable):
+        """Sets the enable of this SharingPolicyInfo.
+
+
+        :param enable: The enable of this SharingPolicyInfo.  # noqa: E501
+        :type: bool
+        """
+
+        self._enable = enable
 
     def to_dict(self):
         """Returns the model properties as a dict"""

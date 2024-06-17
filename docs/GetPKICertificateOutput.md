@@ -4,6 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **cert_display_id** | **str** |  | [optional] 
+**cert_item_id** | **int** |  | [optional] 
 **data** | **str** |  | [optional] 
 **parent_cert** | **str** |  | [optional] 
 **path** | **str** |  | [optional] 

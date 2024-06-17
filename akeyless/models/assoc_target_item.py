@@ -47,6 +47,7 @@ class AssocTargetItem(object):
         'post_provision_command': 'str',
         'private_key_path': 'str',
         'project_id': 'str',
+        'protection_level': 'str',
         'purpose': 'str',
         'regions': 'list[str]',
         'sra_association': 'bool',
@@ -71,6 +72,7 @@ class AssocTargetItem(object):
         'post_provision_command': 'post-provision-command',
         'private_key_path': 'private-key-path',
         'project_id': 'project-id',
+        'protection_level': 'protection-level',
         'purpose': 'purpose',
         'regions': 'regions',
         'sra_association': 'sra-association',
@@ -81,7 +83,7 @@ class AssocTargetItem(object):
         'vault_name': 'vault-name'
     }
 
-    def __init__(self, certificate_path=None, chain_path=None, disable_previous_key_version=False, json=False, key_operations=None, keyring_name=None, kms_algorithm=None, location_id=None, multi_region='false', name=None, post_provision_command=None, private_key_path=None, project_id=None, purpose=None, regions=None, sra_association=False, target_name=None, tenant_secret_type=None, token=None, uid_token=None, vault_name=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, certificate_path=None, chain_path=None, disable_previous_key_version=False, json=False, key_operations=None, keyring_name=None, kms_algorithm=None, location_id=None, multi_region='false', name=None, post_provision_command=None, private_key_path=None, project_id=None, protection_level='software', purpose=None, regions=None, sra_association=False, target_name=None, tenant_secret_type=None, token=None, uid_token=None, vault_name=None, local_vars_configuration=None):  # noqa: E501
         """AssocTargetItem - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -100,6 +102,7 @@ class AssocTargetItem(object):
         self._post_provision_command = None
         self._private_key_path = None
         self._project_id = None
+        self._protection_level = None
         self._purpose = None
         self._regions = None
         self._sra_association = None
@@ -135,6 +138,8 @@ class AssocTargetItem(object):
             self.private_key_path = private_key_path
         if project_id is not None:
             self.project_id = project_id
+        if protection_level is not None:
+            self.protection_level = protection_level
         if purpose is not None:
             self.purpose = purpose
         if regions is not None:
@@ -451,6 +456,29 @@ class AssocTargetItem(object):
         """
 
         self._project_id = project_id
+
+    @property
+    def protection_level(self):
+        """Gets the protection_level of this AssocTargetItem.  # noqa: E501
+
+        Protection level of the key [software/hardware] (relevant for gcp targets)  # noqa: E501
+
+        :return: The protection_level of this AssocTargetItem.  # noqa: E501
+        :rtype: str
+        """
+        return self._protection_level
+
+    @protection_level.setter
+    def protection_level(self, protection_level):
+        """Sets the protection_level of this AssocTargetItem.
+
+        Protection level of the key [software/hardware] (relevant for gcp targets)  # noqa: E501
+
+        :param protection_level: The protection_level of this AssocTargetItem.  # noqa: E501
+        :type: str
+        """
+
+        self._protection_level = protection_level
 
     @property
     def purpose(self):

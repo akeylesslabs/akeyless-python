@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **status** | **bool** |  | [optional] 
 **tags** | **dict(str, str)** |  | [optional] 
 **type** | **str** |  | [optional] 
+**version** | **int** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

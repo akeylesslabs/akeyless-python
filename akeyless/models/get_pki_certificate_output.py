@@ -35,6 +35,7 @@ class GetPKICertificateOutput(object):
     """
     openapi_types = {
         'cert_display_id': 'str',
+        'cert_item_id': 'int',
         'data': 'str',
         'parent_cert': 'str',
         'path': 'str',
@@ -43,19 +44,21 @@ class GetPKICertificateOutput(object):
 
     attribute_map = {
         'cert_display_id': 'cert_display_id',
+        'cert_item_id': 'cert_item_id',
         'data': 'data',
         'parent_cert': 'parent_cert',
         'path': 'path',
         'reading_token': 'reading_token'
     }
 
-    def __init__(self, cert_display_id=None, data=None, parent_cert=None, path=None, reading_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, cert_display_id=None, cert_item_id=None, data=None, parent_cert=None, path=None, reading_token=None, local_vars_configuration=None):  # noqa: E501
         """GetPKICertificateOutput - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._cert_display_id = None
+        self._cert_item_id = None
         self._data = None
         self._parent_cert = None
         self._path = None
@@ -64,6 +67,8 @@ class GetPKICertificateOutput(object):
 
         if cert_display_id is not None:
             self.cert_display_id = cert_display_id
+        if cert_item_id is not None:
+            self.cert_item_id = cert_item_id
         if data is not None:
             self.data = data
         if parent_cert is not None:
@@ -93,6 +98,27 @@ class GetPKICertificateOutput(object):
         """
 
         self._cert_display_id = cert_display_id
+
+    @property
+    def cert_item_id(self):
+        """Gets the cert_item_id of this GetPKICertificateOutput.  # noqa: E501
+
+
+        :return: The cert_item_id of this GetPKICertificateOutput.  # noqa: E501
+        :rtype: int
+        """
+        return self._cert_item_id
+
+    @cert_item_id.setter
+    def cert_item_id(self, cert_item_id):
+        """Sets the cert_item_id of this GetPKICertificateOutput.
+
+
+        :param cert_item_id: The cert_item_id of this GetPKICertificateOutput.  # noqa: E501
+        :type: int
+        """
+
+        self._cert_item_id = cert_item_id
 
     @property
     def data(self):

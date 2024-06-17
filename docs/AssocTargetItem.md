@@ -17,6 +17,7 @@ Name | Type | Description | Notes
 **post_provision_command** | **str** | A custom command to run on the remote target after successful provisioning (relevant only for certificate provisioning) | [optional] 
 **private_key_path** | **str** | A path on the target to store the private key (relevant only for certificate provisioning) | [optional] 
 **project_id** | **str** | Project id of the GCP KMS (required for gcp targets) | [optional] 
+**protection_level** | **str** | Protection level of the key [software/hardware] (relevant for gcp targets) | [optional] [default to 'software']
 **purpose** | **str** | Purpose of the key in GCP KMS (required for gcp targets) | [optional] 
 **regions** | **list[str]** | The list of regions to create a copy of the key in (relevant for aws targets) | [optional] 
 **sra_association** | **bool** | Is the target to associate is for sra, relevant only for linked target association for ldap rotated secret | [optional] [default to False]

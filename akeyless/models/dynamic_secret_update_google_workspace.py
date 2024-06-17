@@ -35,12 +35,12 @@ class DynamicSecretUpdateGoogleWorkspace(object):
     """
     openapi_types = {
         'access_mode': 'str',
-        'admin_name': 'str',
+        'admin_email': 'str',
         'delete_protection': 'str',
         'description': 'str',
         'gcp_key': 'str',
-        'group_name': 'str',
-        'group_role_type': 'str',
+        'group_email': 'str',
+        'group_role': 'str',
         'json': 'bool',
         'name': 'str',
         'new_name': 'str',
@@ -56,12 +56,12 @@ class DynamicSecretUpdateGoogleWorkspace(object):
 
     attribute_map = {
         'access_mode': 'access-mode',
-        'admin_name': 'admin-name',
+        'admin_email': 'admin-email',
         'delete_protection': 'delete_protection',
         'description': 'description',
         'gcp_key': 'gcp-key',
-        'group_name': 'group-name',
-        'group_role_type': 'group-role-type',
+        'group_email': 'group-email',
+        'group_role': 'group-role',
         'json': 'json',
         'name': 'name',
         'new_name': 'new-name',
@@ -75,19 +75,19 @@ class DynamicSecretUpdateGoogleWorkspace(object):
         'user_ttl': 'user-ttl'
     }
 
-    def __init__(self, access_mode=None, admin_name=None, delete_protection=None, description=None, gcp_key=None, group_name=None, group_role_type=None, json=False, name=None, new_name=None, producer_encryption_key_name=None, role_name=None, role_scope=None, tags=None, target_name=None, token=None, uid_token=None, user_ttl='60m', local_vars_configuration=None):  # noqa: E501
+    def __init__(self, access_mode=None, admin_email=None, delete_protection=None, description=None, gcp_key=None, group_email=None, group_role=None, json=False, name=None, new_name=None, producer_encryption_key_name=None, role_name=None, role_scope=None, tags=None, target_name=None, token=None, uid_token=None, user_ttl='60m', local_vars_configuration=None):  # noqa: E501
         """DynamicSecretUpdateGoogleWorkspace - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._access_mode = None
-        self._admin_name = None
+        self._admin_email = None
         self._delete_protection = None
         self._description = None
         self._gcp_key = None
-        self._group_name = None
-        self._group_role_type = None
+        self._group_email = None
+        self._group_role = None
         self._json = None
         self._name = None
         self._new_name = None
@@ -102,17 +102,17 @@ class DynamicSecretUpdateGoogleWorkspace(object):
         self.discriminator = None
 
         self.access_mode = access_mode
-        self.admin_name = admin_name
+        self.admin_email = admin_email
         if delete_protection is not None:
             self.delete_protection = delete_protection
         if description is not None:
             self.description = description
         if gcp_key is not None:
             self.gcp_key = gcp_key
-        if group_name is not None:
-            self.group_name = group_name
-        if group_role_type is not None:
-            self.group_role_type = group_role_type
+        if group_email is not None:
+            self.group_email = group_email
+        if group_role is not None:
+            self.group_role = group_role
         if json is not None:
             self.json = json
         self.name = name
@@ -159,29 +159,29 @@ class DynamicSecretUpdateGoogleWorkspace(object):
         self._access_mode = access_mode
 
     @property
-    def admin_name(self):
-        """Gets the admin_name of this DynamicSecretUpdateGoogleWorkspace.  # noqa: E501
+    def admin_email(self):
+        """Gets the admin_email of this DynamicSecretUpdateGoogleWorkspace.  # noqa: E501
 
         Admin user email  # noqa: E501
 
-        :return: The admin_name of this DynamicSecretUpdateGoogleWorkspace.  # noqa: E501
+        :return: The admin_email of this DynamicSecretUpdateGoogleWorkspace.  # noqa: E501
         :rtype: str
         """
-        return self._admin_name
+        return self._admin_email
 
-    @admin_name.setter
-    def admin_name(self, admin_name):
-        """Sets the admin_name of this DynamicSecretUpdateGoogleWorkspace.
+    @admin_email.setter
+    def admin_email(self, admin_email):
+        """Sets the admin_email of this DynamicSecretUpdateGoogleWorkspace.
 
         Admin user email  # noqa: E501
 
-        :param admin_name: The admin_name of this DynamicSecretUpdateGoogleWorkspace.  # noqa: E501
+        :param admin_email: The admin_email of this DynamicSecretUpdateGoogleWorkspace.  # noqa: E501
         :type: str
         """
-        if self.local_vars_configuration.client_side_validation and admin_name is None:  # noqa: E501
-            raise ValueError("Invalid value for `admin_name`, must not be `None`")  # noqa: E501
+        if self.local_vars_configuration.client_side_validation and admin_email is None:  # noqa: E501
+            raise ValueError("Invalid value for `admin_email`, must not be `None`")  # noqa: E501
 
-        self._admin_name = admin_name
+        self._admin_email = admin_email
 
     @property
     def delete_protection(self):
@@ -253,48 +253,48 @@ class DynamicSecretUpdateGoogleWorkspace(object):
         self._gcp_key = gcp_key
 
     @property
-    def group_name(self):
-        """Gets the group_name of this DynamicSecretUpdateGoogleWorkspace.  # noqa: E501
+    def group_email(self):
+        """Gets the group_email of this DynamicSecretUpdateGoogleWorkspace.  # noqa: E501
 
         A group email, relevant only for group access-mode  # noqa: E501
 
-        :return: The group_name of this DynamicSecretUpdateGoogleWorkspace.  # noqa: E501
+        :return: The group_email of this DynamicSecretUpdateGoogleWorkspace.  # noqa: E501
         :rtype: str
         """
-        return self._group_name
+        return self._group_email
 
-    @group_name.setter
-    def group_name(self, group_name):
-        """Sets the group_name of this DynamicSecretUpdateGoogleWorkspace.
+    @group_email.setter
+    def group_email(self, group_email):
+        """Sets the group_email of this DynamicSecretUpdateGoogleWorkspace.
 
         A group email, relevant only for group access-mode  # noqa: E501
 
-        :param group_name: The group_name of this DynamicSecretUpdateGoogleWorkspace.  # noqa: E501
+        :param group_email: The group_email of this DynamicSecretUpdateGoogleWorkspace.  # noqa: E501
         :type: str
         """
 
-        self._group_name = group_name
+        self._group_email = group_email
 
     @property
-    def group_role_type(self):
-        """Gets the group_role_type of this DynamicSecretUpdateGoogleWorkspace.  # noqa: E501
+    def group_role(self):
+        """Gets the group_role of this DynamicSecretUpdateGoogleWorkspace.  # noqa: E501
 
 
-        :return: The group_role_type of this DynamicSecretUpdateGoogleWorkspace.  # noqa: E501
+        :return: The group_role of this DynamicSecretUpdateGoogleWorkspace.  # noqa: E501
         :rtype: str
         """
-        return self._group_role_type
+        return self._group_role
 
-    @group_role_type.setter
-    def group_role_type(self, group_role_type):
-        """Sets the group_role_type of this DynamicSecretUpdateGoogleWorkspace.
+    @group_role.setter
+    def group_role(self, group_role):
+        """Sets the group_role of this DynamicSecretUpdateGoogleWorkspace.
 
 
-        :param group_role_type: The group_role_type of this DynamicSecretUpdateGoogleWorkspace.  # noqa: E501
+        :param group_role: The group_role of this DynamicSecretUpdateGoogleWorkspace.  # noqa: E501
         :type: str
         """
 
-        self._group_role_type = group_role_type
+        self._group_role = group_role
 
     @property
     def json(self):
@@ -461,7 +461,7 @@ class DynamicSecretUpdateGoogleWorkspace(object):
     def target_name(self):
         """Gets the target_name of this DynamicSecretUpdateGoogleWorkspace.  # noqa: E501
 
-        Name of existing target to use in producer creation  # noqa: E501
+        Name of existing target to use in dynamic secret creation  # noqa: E501
 
         :return: The target_name of this DynamicSecretUpdateGoogleWorkspace.  # noqa: E501
         :rtype: str
@@ -472,7 +472,7 @@ class DynamicSecretUpdateGoogleWorkspace(object):
     def target_name(self, target_name):
         """Sets the target_name of this DynamicSecretUpdateGoogleWorkspace.
 
-        Name of existing target to use in producer creation  # noqa: E501
+        Name of existing target to use in dynamic secret creation  # noqa: E501
 
         :param target_name: The target_name of this DynamicSecretUpdateGoogleWorkspace.  # noqa: E501
         :type: str

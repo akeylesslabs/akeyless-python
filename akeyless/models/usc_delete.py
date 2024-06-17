@@ -35,6 +35,7 @@ class UscDelete(object):
     """
     openapi_types = {
         'json': 'bool',
+        'namespace': 'str',
         'secret_id': 'str',
         'token': 'str',
         'uid_token': 'str',
@@ -43,19 +44,21 @@ class UscDelete(object):
 
     attribute_map = {
         'json': 'json',
+        'namespace': 'namespace',
         'secret_id': 'secret-id',
         'token': 'token',
         'uid_token': 'uid-token',
         'usc_name': 'usc-name'
     }
 
-    def __init__(self, json=False, secret_id=None, token=None, uid_token=None, usc_name=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, json=False, namespace=None, secret_id=None, token=None, uid_token=None, usc_name=None, local_vars_configuration=None):  # noqa: E501
         """UscDelete - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._json = None
+        self._namespace = None
         self._secret_id = None
         self._token = None
         self._uid_token = None
@@ -64,6 +67,8 @@ class UscDelete(object):
 
         if json is not None:
             self.json = json
+        if namespace is not None:
+            self.namespace = namespace
         self.secret_id = secret_id
         if token is not None:
             self.token = token
@@ -95,10 +100,33 @@ class UscDelete(object):
         self._json = json
 
     @property
+    def namespace(self):
+        """Gets the namespace of this UscDelete.  # noqa: E501
+
+        The namespace (relevant for Hashi vault target)  # noqa: E501
+
+        :return: The namespace of this UscDelete.  # noqa: E501
+        :rtype: str
+        """
+        return self._namespace
+
+    @namespace.setter
+    def namespace(self, namespace):
+        """Sets the namespace of this UscDelete.
+
+        The namespace (relevant for Hashi vault target)  # noqa: E501
+
+        :param namespace: The namespace of this UscDelete.  # noqa: E501
+        :type: str
+        """
+
+        self._namespace = namespace
+
+    @property
     def secret_id(self):
         """Gets the secret_id of this UscDelete.  # noqa: E501
 
-        The universal secrets id (or name, for AWS, Azure or K8s targets) to delete  # noqa: E501
+        The universal secrets id (or name, for AWS, Azure, K8s or Hashi vault targets) to delete  # noqa: E501
 
         :return: The secret_id of this UscDelete.  # noqa: E501
         :rtype: str
@@ -109,7 +137,7 @@ class UscDelete(object):
     def secret_id(self, secret_id):
         """Sets the secret_id of this UscDelete.
 
-        The universal secrets id (or name, for AWS, Azure or K8s targets) to delete  # noqa: E501
+        The universal secrets id (or name, for AWS, Azure, K8s or Hashi vault targets) to delete  # noqa: E501
 
         :param secret_id: The secret_id of this UscDelete.  # noqa: E501
         :type: str

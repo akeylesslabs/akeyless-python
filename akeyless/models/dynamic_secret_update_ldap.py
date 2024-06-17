@@ -34,12 +34,14 @@ class DynamicSecretUpdateLdap(object):
                             and the value is json key in definition.
     """
     openapi_types = {
+        'provider_type': 'str',
         'bind_dn': 'str',
         'bind_dn_password': 'str',
         'delete_protection': 'str',
         'description': 'str',
         'external_username': 'str',
         'group_dn': 'str',
+        'host_provider': 'str',
         'json': 'bool',
         'ldap_ca_cert': 'str',
         'ldap_url': 'str',
@@ -47,7 +49,12 @@ class DynamicSecretUpdateLdap(object):
         'new_name': 'str',
         'password_length': 'str',
         'producer_encryption_key_name': 'str',
+        'secure_access_enable': 'str',
+        'secure_access_host': 'list[str]',
+        'secure_access_rd_gateway_server': 'str',
+        'secure_access_rdp_domain': 'str',
         'tags': 'list[str]',
+        'target': 'list[str]',
         'target_name': 'str',
         'token': 'str',
         'token_expiration': 'str',
@@ -58,12 +65,14 @@ class DynamicSecretUpdateLdap(object):
     }
 
     attribute_map = {
+        'provider_type': 'ProviderType',
         'bind_dn': 'bind-dn',
         'bind_dn_password': 'bind-dn-password',
         'delete_protection': 'delete_protection',
         'description': 'description',
         'external_username': 'external-username',
         'group_dn': 'group-dn',
+        'host_provider': 'host-provider',
         'json': 'json',
         'ldap_ca_cert': 'ldap-ca-cert',
         'ldap_url': 'ldap-url',
@@ -71,7 +80,12 @@ class DynamicSecretUpdateLdap(object):
         'new_name': 'new-name',
         'password_length': 'password-length',
         'producer_encryption_key_name': 'producer-encryption-key-name',
+        'secure_access_enable': 'secure-access-enable',
+        'secure_access_host': 'secure-access-host',
+        'secure_access_rd_gateway_server': 'secure-access-rd-gateway-server',
+        'secure_access_rdp_domain': 'secure-access-rdp-domain',
         'tags': 'tags',
+        'target': 'target',
         'target_name': 'target-name',
         'token': 'token',
         'token_expiration': 'token-expiration',
@@ -81,18 +95,20 @@ class DynamicSecretUpdateLdap(object):
         'user_ttl': 'user-ttl'
     }
 
-    def __init__(self, bind_dn=None, bind_dn_password=None, delete_protection=None, description=None, external_username='false', group_dn=None, json=False, ldap_ca_cert=None, ldap_url=None, name=None, new_name=None, password_length=None, producer_encryption_key_name=None, tags=None, target_name=None, token=None, token_expiration=None, uid_token=None, user_attribute=None, user_dn=None, user_ttl='60m', local_vars_configuration=None):  # noqa: E501
+    def __init__(self, provider_type=None, bind_dn=None, bind_dn_password=None, delete_protection=None, description=None, external_username='false', group_dn=None, host_provider=None, json=False, ldap_ca_cert=None, ldap_url=None, name=None, new_name=None, password_length=None, producer_encryption_key_name=None, secure_access_enable=None, secure_access_host=None, secure_access_rd_gateway_server=None, secure_access_rdp_domain=None, tags=None, target=None, target_name=None, token=None, token_expiration=None, uid_token=None, user_attribute=None, user_dn=None, user_ttl='60m', local_vars_configuration=None):  # noqa: E501
         """DynamicSecretUpdateLdap - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
+        self._provider_type = None
         self._bind_dn = None
         self._bind_dn_password = None
         self._delete_protection = None
         self._description = None
         self._external_username = None
         self._group_dn = None
+        self._host_provider = None
         self._json = None
         self._ldap_ca_cert = None
         self._ldap_url = None
@@ -100,7 +116,12 @@ class DynamicSecretUpdateLdap(object):
         self._new_name = None
         self._password_length = None
         self._producer_encryption_key_name = None
+        self._secure_access_enable = None
+        self._secure_access_host = None
+        self._secure_access_rd_gateway_server = None
+        self._secure_access_rdp_domain = None
         self._tags = None
+        self._target = None
         self._target_name = None
         self._token = None
         self._token_expiration = None
@@ -110,6 +131,8 @@ class DynamicSecretUpdateLdap(object):
         self._user_ttl = None
         self.discriminator = None
 
+        if provider_type is not None:
+            self.provider_type = provider_type
         if bind_dn is not None:
             self.bind_dn = bind_dn
         if bind_dn_password is not None:
@@ -122,6 +145,8 @@ class DynamicSecretUpdateLdap(object):
             self.external_username = external_username
         if group_dn is not None:
             self.group_dn = group_dn
+        if host_provider is not None:
+            self.host_provider = host_provider
         if json is not None:
             self.json = json
         if ldap_ca_cert is not None:
@@ -135,8 +160,18 @@ class DynamicSecretUpdateLdap(object):
             self.password_length = password_length
         if producer_encryption_key_name is not None:
             self.producer_encryption_key_name = producer_encryption_key_name
+        if secure_access_enable is not None:
+            self.secure_access_enable = secure_access_enable
+        if secure_access_host is not None:
+            self.secure_access_host = secure_access_host
+        if secure_access_rd_gateway_server is not None:
+            self.secure_access_rd_gateway_server = secure_access_rd_gateway_server
+        if secure_access_rdp_domain is not None:
+            self.secure_access_rdp_domain = secure_access_rdp_domain
         if tags is not None:
             self.tags = tags
+        if target is not None:
+            self.target = target
         if target_name is not None:
             self.target_name = target_name
         if token is not None:
@@ -151,6 +186,27 @@ class DynamicSecretUpdateLdap(object):
             self.user_dn = user_dn
         if user_ttl is not None:
             self.user_ttl = user_ttl
+
+    @property
+    def provider_type(self):
+        """Gets the provider_type of this DynamicSecretUpdateLdap.  # noqa: E501
+
+
+        :return: The provider_type of this DynamicSecretUpdateLdap.  # noqa: E501
+        :rtype: str
+        """
+        return self._provider_type
+
+    @provider_type.setter
+    def provider_type(self, provider_type):
+        """Sets the provider_type of this DynamicSecretUpdateLdap.
+
+
+        :param provider_type: The provider_type of this DynamicSecretUpdateLdap.  # noqa: E501
+        :type: str
+        """
+
+        self._provider_type = provider_type
 
     @property
     def bind_dn(self):
@@ -289,6 +345,29 @@ class DynamicSecretUpdateLdap(object):
         """
 
         self._group_dn = group_dn
+
+    @property
+    def host_provider(self):
+        """Gets the host_provider of this DynamicSecretUpdateLdap.  # noqa: E501
+
+        Host provider type [explicit/target], Default Host provider is explicit, Relevant only for Secure Remote Access of ssh cert issuer, ldap rotated secret and ldap dynamic secret  # noqa: E501
+
+        :return: The host_provider of this DynamicSecretUpdateLdap.  # noqa: E501
+        :rtype: str
+        """
+        return self._host_provider
+
+    @host_provider.setter
+    def host_provider(self, host_provider):
+        """Sets the host_provider of this DynamicSecretUpdateLdap.
+
+        Host provider type [explicit/target], Default Host provider is explicit, Relevant only for Secure Remote Access of ssh cert issuer, ldap rotated secret and ldap dynamic secret  # noqa: E501
+
+        :param host_provider: The host_provider of this DynamicSecretUpdateLdap.  # noqa: E501
+        :type: str
+        """
+
+        self._host_provider = host_provider
 
     @property
     def json(self):
@@ -454,6 +533,98 @@ class DynamicSecretUpdateLdap(object):
         self._producer_encryption_key_name = producer_encryption_key_name
 
     @property
+    def secure_access_enable(self):
+        """Gets the secure_access_enable of this DynamicSecretUpdateLdap.  # noqa: E501
+
+        Enable/Disable secure remote access [true/false]  # noqa: E501
+
+        :return: The secure_access_enable of this DynamicSecretUpdateLdap.  # noqa: E501
+        :rtype: str
+        """
+        return self._secure_access_enable
+
+    @secure_access_enable.setter
+    def secure_access_enable(self, secure_access_enable):
+        """Sets the secure_access_enable of this DynamicSecretUpdateLdap.
+
+        Enable/Disable secure remote access [true/false]  # noqa: E501
+
+        :param secure_access_enable: The secure_access_enable of this DynamicSecretUpdateLdap.  # noqa: E501
+        :type: str
+        """
+
+        self._secure_access_enable = secure_access_enable
+
+    @property
+    def secure_access_host(self):
+        """Gets the secure_access_host of this DynamicSecretUpdateLdap.  # noqa: E501
+
+        Target servers for connections (In case of Linked Target association, host(s) will inherit Linked Target hosts - Relevant only for Dynamic Secrets/producers)  # noqa: E501
+
+        :return: The secure_access_host of this DynamicSecretUpdateLdap.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._secure_access_host
+
+    @secure_access_host.setter
+    def secure_access_host(self, secure_access_host):
+        """Sets the secure_access_host of this DynamicSecretUpdateLdap.
+
+        Target servers for connections (In case of Linked Target association, host(s) will inherit Linked Target hosts - Relevant only for Dynamic Secrets/producers)  # noqa: E501
+
+        :param secure_access_host: The secure_access_host of this DynamicSecretUpdateLdap.  # noqa: E501
+        :type: list[str]
+        """
+
+        self._secure_access_host = secure_access_host
+
+    @property
+    def secure_access_rd_gateway_server(self):
+        """Gets the secure_access_rd_gateway_server of this DynamicSecretUpdateLdap.  # noqa: E501
+
+        RD Gateway server  # noqa: E501
+
+        :return: The secure_access_rd_gateway_server of this DynamicSecretUpdateLdap.  # noqa: E501
+        :rtype: str
+        """
+        return self._secure_access_rd_gateway_server
+
+    @secure_access_rd_gateway_server.setter
+    def secure_access_rd_gateway_server(self, secure_access_rd_gateway_server):
+        """Sets the secure_access_rd_gateway_server of this DynamicSecretUpdateLdap.
+
+        RD Gateway server  # noqa: E501
+
+        :param secure_access_rd_gateway_server: The secure_access_rd_gateway_server of this DynamicSecretUpdateLdap.  # noqa: E501
+        :type: str
+        """
+
+        self._secure_access_rd_gateway_server = secure_access_rd_gateway_server
+
+    @property
+    def secure_access_rdp_domain(self):
+        """Gets the secure_access_rdp_domain of this DynamicSecretUpdateLdap.  # noqa: E501
+
+        Required when the Dynamic Secret is used for a domain user  # noqa: E501
+
+        :return: The secure_access_rdp_domain of this DynamicSecretUpdateLdap.  # noqa: E501
+        :rtype: str
+        """
+        return self._secure_access_rdp_domain
+
+    @secure_access_rdp_domain.setter
+    def secure_access_rdp_domain(self, secure_access_rdp_domain):
+        """Sets the secure_access_rdp_domain of this DynamicSecretUpdateLdap.
+
+        Required when the Dynamic Secret is used for a domain user  # noqa: E501
+
+        :param secure_access_rdp_domain: The secure_access_rdp_domain of this DynamicSecretUpdateLdap.  # noqa: E501
+        :type: str
+        """
+
+        self._secure_access_rdp_domain = secure_access_rdp_domain
+
+    @property
     def tags(self):
         """Gets the tags of this DynamicSecretUpdateLdap.  # noqa: E501
 
@@ -475,6 +646,29 @@ class DynamicSecretUpdateLdap(object):
         """
 
         self._tags = tags
+
+    @property
+    def target(self):
+        """Gets the target of this DynamicSecretUpdateLdap.  # noqa: E501
+
+        A list of linked targets to be associated, Relevant only for Secure Remote Access for ssh cert issuer, ldap rotated secret and ldap dynamic secret, To specify multiple targets use argument multiple times  # noqa: E501
+
+        :return: The target of this DynamicSecretUpdateLdap.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._target
+
+    @target.setter
+    def target(self, target):
+        """Sets the target of this DynamicSecretUpdateLdap.
+
+        A list of linked targets to be associated, Relevant only for Secure Remote Access for ssh cert issuer, ldap rotated secret and ldap dynamic secret, To specify multiple targets use argument multiple times  # noqa: E501
+
+        :param target: The target of this DynamicSecretUpdateLdap.  # noqa: E501
+        :type: list[str]
+        """
+
+        self._target = target
 
     @property
     def target_name(self):

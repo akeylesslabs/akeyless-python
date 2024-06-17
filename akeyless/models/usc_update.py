@@ -37,6 +37,7 @@ class UscUpdate(object):
         'binary_value': 'bool',
         'description': 'str',
         'json': 'bool',
+        'namespace': 'str',
         'secret_id': 'str',
         'tags': 'dict(str, str)',
         'token': 'str',
@@ -49,6 +50,7 @@ class UscUpdate(object):
         'binary_value': 'binary-value',
         'description': 'description',
         'json': 'json',
+        'namespace': 'namespace',
         'secret_id': 'secret-id',
         'tags': 'tags',
         'token': 'token',
@@ -57,7 +59,7 @@ class UscUpdate(object):
         'value': 'value'
     }
 
-    def __init__(self, binary_value=None, description=None, json=False, secret_id=None, tags=None, token=None, uid_token=None, usc_name=None, value=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, binary_value=None, description=None, json=False, namespace=None, secret_id=None, tags=None, token=None, uid_token=None, usc_name=None, value=None, local_vars_configuration=None):  # noqa: E501
         """UscUpdate - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -66,6 +68,7 @@ class UscUpdate(object):
         self._binary_value = None
         self._description = None
         self._json = None
+        self._namespace = None
         self._secret_id = None
         self._tags = None
         self._token = None
@@ -80,6 +83,8 @@ class UscUpdate(object):
             self.description = description
         if json is not None:
             self.json = json
+        if namespace is not None:
+            self.namespace = namespace
         self.secret_id = secret_id
         if tags is not None:
             self.tags = tags
@@ -160,10 +165,33 @@ class UscUpdate(object):
         self._json = json
 
     @property
+    def namespace(self):
+        """Gets the namespace of this UscUpdate.  # noqa: E501
+
+        The namespace (relevant for Hashi vault target)  # noqa: E501
+
+        :return: The namespace of this UscUpdate.  # noqa: E501
+        :rtype: str
+        """
+        return self._namespace
+
+    @namespace.setter
+    def namespace(self, namespace):
+        """Sets the namespace of this UscUpdate.
+
+        The namespace (relevant for Hashi vault target)  # noqa: E501
+
+        :param namespace: The namespace of this UscUpdate.  # noqa: E501
+        :type: str
+        """
+
+        self._namespace = namespace
+
+    @property
     def secret_id(self):
         """Gets the secret_id of this UscUpdate.  # noqa: E501
 
-        The universal secrets id (or name, for AWS, Azure or K8s targets) to update  # noqa: E501
+        The universal secrets id (or name, for AWS, Azure, K8s or Hashi vault targets) to update  # noqa: E501
 
         :return: The secret_id of this UscUpdate.  # noqa: E501
         :rtype: str
@@ -174,7 +202,7 @@ class UscUpdate(object):
     def secret_id(self, secret_id):
         """Sets the secret_id of this UscUpdate.
 
-        The universal secrets id (or name, for AWS, Azure or K8s targets) to update  # noqa: E501
+        The universal secrets id (or name, for AWS, Azure, K8s or Hashi vault targets) to update  # noqa: E501
 
         :param secret_id: The secret_id of this UscUpdate.  # noqa: E501
         :type: str

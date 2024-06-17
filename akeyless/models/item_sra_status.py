@@ -34,34 +34,65 @@ class ItemSraStatus(object):
                             and the value is json key in definition.
     """
     openapi_types = {
+        'count_by_host_info': 'dict(str, int)',
         'count_info': 'dict(str, dict(str, int))',
+        'hosts_in_use': 'list[str]',
         'is_in_use': 'bool',
         'last_used_item': 'datetime'
     }
 
     attribute_map = {
+        'count_by_host_info': 'count_by_host_info',
         'count_info': 'count_info',
+        'hosts_in_use': 'hosts_in_use',
         'is_in_use': 'is_in_use',
         'last_used_item': 'last_used_item'
     }
 
-    def __init__(self, count_info=None, is_in_use=None, last_used_item=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, count_by_host_info=None, count_info=None, hosts_in_use=None, is_in_use=None, last_used_item=None, local_vars_configuration=None):  # noqa: E501
         """ItemSraStatus - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
+        self._count_by_host_info = None
         self._count_info = None
+        self._hosts_in_use = None
         self._is_in_use = None
         self._last_used_item = None
         self.discriminator = None
 
+        if count_by_host_info is not None:
+            self.count_by_host_info = count_by_host_info
         if count_info is not None:
             self.count_info = count_info
+        if hosts_in_use is not None:
+            self.hosts_in_use = hosts_in_use
         if is_in_use is not None:
             self.is_in_use = is_in_use
         if last_used_item is not None:
             self.last_used_item = last_used_item
+
+    @property
+    def count_by_host_info(self):
+        """Gets the count_by_host_info of this ItemSraStatus.  # noqa: E501
+
+
+        :return: The count_by_host_info of this ItemSraStatus.  # noqa: E501
+        :rtype: dict(str, int)
+        """
+        return self._count_by_host_info
+
+    @count_by_host_info.setter
+    def count_by_host_info(self, count_by_host_info):
+        """Sets the count_by_host_info of this ItemSraStatus.
+
+
+        :param count_by_host_info: The count_by_host_info of this ItemSraStatus.  # noqa: E501
+        :type: dict(str, int)
+        """
+
+        self._count_by_host_info = count_by_host_info
 
     @property
     def count_info(self):
@@ -83,6 +114,27 @@ class ItemSraStatus(object):
         """
 
         self._count_info = count_info
+
+    @property
+    def hosts_in_use(self):
+        """Gets the hosts_in_use of this ItemSraStatus.  # noqa: E501
+
+
+        :return: The hosts_in_use of this ItemSraStatus.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._hosts_in_use
+
+    @hosts_in_use.setter
+    def hosts_in_use(self, hosts_in_use):
+        """Sets the hosts_in_use of this ItemSraStatus.
+
+
+        :param hosts_in_use: The hosts_in_use of this ItemSraStatus.  # noqa: E501
+        :type: list[str]
+        """
+
+        self._hosts_in_use = hosts_in_use
 
     @property
     def is_in_use(self):
