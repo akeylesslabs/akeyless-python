@@ -1,5 +1,6 @@
 # ListTargets
 
+listTargets is a command that returns a list of targets. [Deprecated: Use target-list command]
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

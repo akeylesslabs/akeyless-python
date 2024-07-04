@@ -1,5 +1,6 @@
 # CreateSSHTarget
 
+createSSHTarget is a command that creates a new target. [Deprecated: Use target-create-ssh command]
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

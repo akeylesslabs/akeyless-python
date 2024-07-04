@@ -10,6 +10,8 @@ Name | Type | Description | Notes
 **bastion_issuer** | **str** |  | [optional] 
 **bastion_issuer_id** | **int** |  | [optional] 
 **bastion_ssh** | **str** |  | [optional] 
+**block_concurrent_connections** | **bool** |  | [optional] 
+**block_concurrent_connections_level** | **str** |  | [optional] 
 **category** | **str** |  | [optional] 
 **dashboard_url** | **str** |  | [optional] 
 **db_name** | **str** |  | [optional] 

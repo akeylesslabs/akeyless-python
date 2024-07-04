@@ -1,5 +1,6 @@
 # UpdateWindowsTarget
 
+updateWindowsTarget is a command that updates an existing windows target. [Deprecated: Use target-update-windows command]
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

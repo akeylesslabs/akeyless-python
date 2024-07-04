@@ -1,11 +1,12 @@
 # CreateAuthMethodOAuth2
 
-createAuthMethodOAuth2 is a command that creates a new auth method that will be able to authenticate using Oauth2.
+createAuthMethodOAuth2 is a command that creates a new auth method that will be able to authenticate using Oauth2. [Deprecated: Use auth-method-create-oauth2 command]
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **access_expires** | **int** | Access expiration date in Unix timestamp (select 0 for access without expiry date) | [optional] [default to 0]
 **audience** | **str** | The audience in the JWT | [optional] 
+**audit_logs_claims** | **list[str]** | Subclaims to include in audit logs, e.g \&quot;--audit-logs-claims email --audit-logs-claims username\&quot; | [optional] 
 **bound_client_ids** | **list[str]** | The clients ids that the access is restricted to | [optional] 
 **bound_ips** | **list[str]** | A CIDR whitelist with the IPs that the access is restricted to | [optional] 
 **cert** | **str** | CertificateFile Path to a file that contain the certificate in a PEM format. | [optional] 

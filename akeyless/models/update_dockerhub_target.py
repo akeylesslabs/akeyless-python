@@ -162,6 +162,7 @@ class UpdateDockerhubTarget(object):
     def dockerhub_password(self):
         """Gets the dockerhub_password of this UpdateDockerhubTarget.  # noqa: E501
 
+        Password for docker repository  # noqa: E501
 
         :return: The dockerhub_password of this UpdateDockerhubTarget.  # noqa: E501
         :rtype: str
@@ -172,6 +173,7 @@ class UpdateDockerhubTarget(object):
     def dockerhub_password(self, dockerhub_password):
         """Sets the dockerhub_password of this UpdateDockerhubTarget.
 
+        Password for docker repository  # noqa: E501
 
         :param dockerhub_password: The dockerhub_password of this UpdateDockerhubTarget.  # noqa: E501
         :type: str
@@ -183,6 +185,7 @@ class UpdateDockerhubTarget(object):
     def dockerhub_username(self):
         """Gets the dockerhub_username of this UpdateDockerhubTarget.  # noqa: E501
 
+        Username for docker repository  # noqa: E501
 
         :return: The dockerhub_username of this UpdateDockerhubTarget.  # noqa: E501
         :rtype: str
@@ -193,6 +196,7 @@ class UpdateDockerhubTarget(object):
     def dockerhub_username(self, dockerhub_username):
         """Sets the dockerhub_username of this UpdateDockerhubTarget.
 
+        Username for docker repository  # noqa: E501
 
         :param dockerhub_username: The dockerhub_username of this UpdateDockerhubTarget.  # noqa: E501
         :type: str

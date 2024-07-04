@@ -1,5 +1,6 @@
 # CreateLdapTarget
 
+createldapTarget is a command that creates a new target. [Deprecated: Use target-create-ldap command]
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

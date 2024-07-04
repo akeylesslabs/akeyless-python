@@ -1,12 +1,13 @@
 # UpdateDockerhubTarget
 
+updateDockerhubTarget is a command that updates a new target. [Deprecated: Use target-update-dockerhub command]
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **comment** | **str** | Deprecated - use description | [optional] 
 **description** | **str** | Description of the object | [optional] 
-**dockerhub_password** | **str** |  | [optional] 
-**dockerhub_username** | **str** |  | [optional] 
+**dockerhub_password** | **str** | Password for docker repository | [optional] 
+**dockerhub_username** | **str** | Username for docker repository | [optional] 
 **json** | **bool** | Set output format to JSON | [optional] [default to False]
 **keep_prev_version** | **str** | Whether to keep previous version [true/false]. If not set, use default according to account settings | [optional] 
 **key** | **str** | The name of a key that used to encrypt the target secret value (if empty, the account default protectionKey key will be used) | [optional] 

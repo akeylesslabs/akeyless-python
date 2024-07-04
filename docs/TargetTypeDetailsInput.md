@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **eks_target_details** | [**EKSTargetDetails**](EKSTargetDetails.md) |  | [optional] 
 **gcp_target_details** | [**GcpTargetDetails**](GcpTargetDetails.md) |  | [optional] 
 **github_target_details** | [**GithubTargetDetails**](GithubTargetDetails.md) |  | [optional] 
+**gitlab_target_details** | [**GitlabTargetDetails**](GitlabTargetDetails.md) |  | [optional] 
 **gke_target_details** | [**GKETargetDetails**](GKETargetDetails.md) |  | [optional] 
 **globalsign_atlas_target_details** | [**GlobalSignAtlasTargetDetails**](GlobalSignAtlasTargetDetails.md) |  | [optional] 
 **globalsign_target_details** | [**GlobalSignGCCTargetDetails**](GlobalSignGCCTargetDetails.md) |  | [optional] 

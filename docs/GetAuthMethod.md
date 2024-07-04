@@ -1,5 +1,6 @@
 # GetAuthMethod
 
+getAuthMethod is a command that returns information about the auth method. [Deprecated: Use auth-method-get command]
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **critical** | **bool** | Add critical to the key usage extension (will be false if not added) | [optional] 
 **dep** | **str** | The department to be included in the CSR certificate | [optional] 
 **email_addresses** | **str** | A comma-separated list of email addresses alternative names | [optional] 
+**export_private_key** | **bool** | The flag to indicate if the private key should be exported | [optional] [default to False]
 **generate_key** | **bool** | Generate a new classic key for the csr | [optional] 
 **ip_addresses** | **str** | A comma-separated list of ip addresses alternative names | [optional] 
 **json** | **bool** | Set output format to JSON | [optional] [default to False]

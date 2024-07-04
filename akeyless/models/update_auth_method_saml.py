@@ -36,6 +36,7 @@ class UpdateAuthMethodSAML(object):
     openapi_types = {
         'access_expires': 'int',
         'allowed_redirect_uri': 'list[str]',
+        'audit_logs_claims': 'list[str]',
         'bound_ips': 'list[str]',
         'description': 'str',
         'force_sub_claims': 'bool',
@@ -56,6 +57,7 @@ class UpdateAuthMethodSAML(object):
     attribute_map = {
         'access_expires': 'access-expires',
         'allowed_redirect_uri': 'allowed-redirect-uri',
+        'audit_logs_claims': 'audit-logs-claims',
         'bound_ips': 'bound-ips',
         'description': 'description',
         'force_sub_claims': 'force-sub-claims',
@@ -73,7 +75,7 @@ class UpdateAuthMethodSAML(object):
         'unique_identifier': 'unique-identifier'
     }
 
-    def __init__(self, access_expires=0, allowed_redirect_uri=None, bound_ips=None, description=None, force_sub_claims=None, gw_bound_ips=None, idp_metadata_url=None, idp_metadata_xml_data=None, json=False, jwt_ttl=0, name=None, new_name=None, product_type=None, subclaims_delimiters=None, token=None, uid_token=None, unique_identifier=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, access_expires=0, allowed_redirect_uri=None, audit_logs_claims=None, bound_ips=None, description=None, force_sub_claims=None, gw_bound_ips=None, idp_metadata_url=None, idp_metadata_xml_data=None, json=False, jwt_ttl=0, name=None, new_name=None, product_type=None, subclaims_delimiters=None, token=None, uid_token=None, unique_identifier=None, local_vars_configuration=None):  # noqa: E501
         """UpdateAuthMethodSAML - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -81,6 +83,7 @@ class UpdateAuthMethodSAML(object):
 
         self._access_expires = None
         self._allowed_redirect_uri = None
+        self._audit_logs_claims = None
         self._bound_ips = None
         self._description = None
         self._force_sub_claims = None
@@ -102,6 +105,8 @@ class UpdateAuthMethodSAML(object):
             self.access_expires = access_expires
         if allowed_redirect_uri is not None:
             self.allowed_redirect_uri = allowed_redirect_uri
+        if audit_logs_claims is not None:
+            self.audit_logs_claims = audit_logs_claims
         if bound_ips is not None:
             self.bound_ips = bound_ips
         if description is not None:
@@ -176,6 +181,29 @@ class UpdateAuthMethodSAML(object):
         """
 
         self._allowed_redirect_uri = allowed_redirect_uri
+
+    @property
+    def audit_logs_claims(self):
+        """Gets the audit_logs_claims of this UpdateAuthMethodSAML.  # noqa: E501
+
+        Subclaims to include in audit logs, e.g \"--audit-logs-claims email --audit-logs-claims username\"  # noqa: E501
+
+        :return: The audit_logs_claims of this UpdateAuthMethodSAML.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._audit_logs_claims
+
+    @audit_logs_claims.setter
+    def audit_logs_claims(self, audit_logs_claims):
+        """Sets the audit_logs_claims of this UpdateAuthMethodSAML.
+
+        Subclaims to include in audit logs, e.g \"--audit-logs-claims email --audit-logs-claims username\"  # noqa: E501
+
+        :param audit_logs_claims: The audit_logs_claims of this UpdateAuthMethodSAML.  # noqa: E501
+        :type: list[str]
+        """
+
+        self._audit_logs_claims = audit_logs_claims
 
     @property
     def bound_ips(self):

@@ -1,5 +1,6 @@
 # UpdateArtifactoryTarget
 
+updateArtifactoryTarget is a command that updates a new target. [Deprecated: Use target-update-artifactory command]
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

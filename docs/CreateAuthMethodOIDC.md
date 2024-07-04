@@ -1,12 +1,13 @@
 # CreateAuthMethodOIDC
 
-createAuthMethodOIDC is a command that creates a new auth method that will be available to authenticate using OIDC.
+createAuthMethodOIDC is a command that creates a new auth method that will be available to authenticate using OIDC. [Deprecated: Use auth-method-create-oidc command]
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **access_expires** | **int** | Access expiration date in Unix timestamp (select 0 for access without expiry date) | [optional] [default to 0]
 **allowed_redirect_uri** | **list[str]** | Allowed redirect URIs after the authentication | [optional] 
 **audience** | **str** | Audience claim to be used as part of the authentication flow. In case set, it must match the one configured on the Identity Provider&#39;s Application | [optional] 
+**audit_logs_claims** | **list[str]** | Subclaims to include in audit logs, e.g \&quot;--audit-logs-claims email --audit-logs-claims username\&quot; | [optional] 
 **bound_ips** | **list[str]** | A CIDR whitelist with the IPs that the access is restricted to | [optional] 
 **client_id** | **str** | Client ID | [optional] 
 **client_secret** | **str** | Client Secret | [optional] 

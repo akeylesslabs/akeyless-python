@@ -1,5 +1,6 @@
 # CreateAWSTarget
 
+createAWSTarget is a command that creates a new target. [Deprecated: Use target-create-aws command]
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

@@ -1,5 +1,6 @@
 # CreateLinkedTarget
 
+createLinkedTarget is a command that creates a new Linked Target which can inherit credentials from existing Targets. [Deprecated: Use target-create-linked command]
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

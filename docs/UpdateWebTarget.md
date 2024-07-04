@@ -1,5 +1,6 @@
 # UpdateWebTarget
 
+updateWebTarget is a command that updates an existing target. [Deprecated: Use target-update-web command]
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

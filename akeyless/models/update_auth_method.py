@@ -35,6 +35,7 @@ class UpdateAuthMethod(object):
     """
     openapi_types = {
         'access_expires': 'int',
+        'audit_logs_claims': 'list[str]',
         'bound_ips': 'list[str]',
         'description': 'str',
         'force_sub_claims': 'bool',
@@ -50,6 +51,7 @@ class UpdateAuthMethod(object):
 
     attribute_map = {
         'access_expires': 'access-expires',
+        'audit_logs_claims': 'audit-logs-claims',
         'bound_ips': 'bound-ips',
         'description': 'description',
         'force_sub_claims': 'force-sub-claims',
@@ -63,13 +65,14 @@ class UpdateAuthMethod(object):
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, access_expires=0, bound_ips=None, description=None, force_sub_claims=None, gw_bound_ips=None, json=False, jwt_ttl=0, name=None, new_name=None, product_type=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, access_expires=0, audit_logs_claims=None, bound_ips=None, description=None, force_sub_claims=None, gw_bound_ips=None, json=False, jwt_ttl=0, name=None, new_name=None, product_type=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """UpdateAuthMethod - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._access_expires = None
+        self._audit_logs_claims = None
         self._bound_ips = None
         self._description = None
         self._force_sub_claims = None
@@ -85,6 +88,8 @@ class UpdateAuthMethod(object):
 
         if access_expires is not None:
             self.access_expires = access_expires
+        if audit_logs_claims is not None:
+            self.audit_logs_claims = audit_logs_claims
         if bound_ips is not None:
             self.bound_ips = bound_ips
         if description is not None:
@@ -129,6 +134,29 @@ class UpdateAuthMethod(object):
         """
 
         self._access_expires = access_expires
+
+    @property
+    def audit_logs_claims(self):
+        """Gets the audit_logs_claims of this UpdateAuthMethod.  # noqa: E501
+
+        Subclaims to include in audit logs, e.g \"--audit-logs-claims email --audit-logs-claims username\"  # noqa: E501
+
+        :return: The audit_logs_claims of this UpdateAuthMethod.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._audit_logs_claims
+
+    @audit_logs_claims.setter
+    def audit_logs_claims(self, audit_logs_claims):
+        """Sets the audit_logs_claims of this UpdateAuthMethod.
+
+        Subclaims to include in audit logs, e.g \"--audit-logs-claims email --audit-logs-claims username\"  # noqa: E501
+
+        :param audit_logs_claims: The audit_logs_claims of this UpdateAuthMethod.  # noqa: E501
+        :type: list[str]
+        """
+
+        self._audit_logs_claims = audit_logs_claims
 
     @property
     def bound_ips(self):

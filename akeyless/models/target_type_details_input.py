@@ -44,6 +44,7 @@ class TargetTypeDetailsInput(object):
         'eks_target_details': 'EKSTargetDetails',
         'gcp_target_details': 'GcpTargetDetails',
         'github_target_details': 'GithubTargetDetails',
+        'gitlab_target_details': 'GitlabTargetDetails',
         'gke_target_details': 'GKETargetDetails',
         'globalsign_atlas_target_details': 'GlobalSignAtlasTargetDetails',
         'globalsign_target_details': 'GlobalSignGCCTargetDetails',
@@ -74,6 +75,7 @@ class TargetTypeDetailsInput(object):
         'eks_target_details': 'eks_target_details',
         'gcp_target_details': 'gcp_target_details',
         'github_target_details': 'github_target_details',
+        'gitlab_target_details': 'gitlab_target_details',
         'gke_target_details': 'gke_target_details',
         'globalsign_atlas_target_details': 'globalsign_atlas_target_details',
         'globalsign_target_details': 'globalsign_target_details',
@@ -93,7 +95,7 @@ class TargetTypeDetailsInput(object):
         'zerossl_target_details': 'zerossl_target_details'
     }
 
-    def __init__(self, artifactory_target_details=None, aws_target_details=None, azure_target_details=None, chef_target_details=None, custom_target_details=None, db_target_details=None, dockerhub_target_details=None, eks_target_details=None, gcp_target_details=None, github_target_details=None, gke_target_details=None, globalsign_atlas_target_details=None, globalsign_target_details=None, godaddy_target_details=None, hashi_vault_target_details=None, ldap_target_details=None, linked_target_details=None, mongo_db_target_details=None, native_k8s_target_details=None, ping_target_details=None, rabbit_mq_target_details=None, salesforce_target_details=None, ssh_target_details=None, venafi_target_details=None, web_target_details=None, windows_target_details=None, zerossl_target_details=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, artifactory_target_details=None, aws_target_details=None, azure_target_details=None, chef_target_details=None, custom_target_details=None, db_target_details=None, dockerhub_target_details=None, eks_target_details=None, gcp_target_details=None, github_target_details=None, gitlab_target_details=None, gke_target_details=None, globalsign_atlas_target_details=None, globalsign_target_details=None, godaddy_target_details=None, hashi_vault_target_details=None, ldap_target_details=None, linked_target_details=None, mongo_db_target_details=None, native_k8s_target_details=None, ping_target_details=None, rabbit_mq_target_details=None, salesforce_target_details=None, ssh_target_details=None, venafi_target_details=None, web_target_details=None, windows_target_details=None, zerossl_target_details=None, local_vars_configuration=None):  # noqa: E501
         """TargetTypeDetailsInput - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -109,6 +111,7 @@ class TargetTypeDetailsInput(object):
         self._eks_target_details = None
         self._gcp_target_details = None
         self._github_target_details = None
+        self._gitlab_target_details = None
         self._gke_target_details = None
         self._globalsign_atlas_target_details = None
         self._globalsign_target_details = None
@@ -148,6 +151,8 @@ class TargetTypeDetailsInput(object):
             self.gcp_target_details = gcp_target_details
         if github_target_details is not None:
             self.github_target_details = github_target_details
+        if gitlab_target_details is not None:
+            self.gitlab_target_details = gitlab_target_details
         if gke_target_details is not None:
             self.gke_target_details = gke_target_details
         if globalsign_atlas_target_details is not None:
@@ -392,6 +397,27 @@ class TargetTypeDetailsInput(object):
         """
 
         self._github_target_details = github_target_details
+
+    @property
+    def gitlab_target_details(self):
+        """Gets the gitlab_target_details of this TargetTypeDetailsInput.  # noqa: E501
+
+
+        :return: The gitlab_target_details of this TargetTypeDetailsInput.  # noqa: E501
+        :rtype: GitlabTargetDetails
+        """
+        return self._gitlab_target_details
+
+    @gitlab_target_details.setter
+    def gitlab_target_details(self, gitlab_target_details):
+        """Sets the gitlab_target_details of this TargetTypeDetailsInput.
+
+
+        :param gitlab_target_details: The gitlab_target_details of this TargetTypeDetailsInput.  # noqa: E501
+        :type: GitlabTargetDetails
+        """
+
+        self._gitlab_target_details = gitlab_target_details
 
     @property
     def gke_target_details(self):

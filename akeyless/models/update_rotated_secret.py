@@ -67,6 +67,7 @@ class UpdateRotatedSecret(object):
         'secure_access_bastion_issuer': 'str',
         'secure_access_db_name': 'str',
         'secure_access_db_schema': 'str',
+        'secure_access_disable_concurrent_connections': 'bool',
         'secure_access_enable': 'str',
         'secure_access_host': 'list[str]',
         'secure_access_rdp_domain': 'str',
@@ -118,6 +119,7 @@ class UpdateRotatedSecret(object):
         'secure_access_bastion_issuer': 'secure-access-bastion-issuer',
         'secure_access_db_name': 'secure-access-db-name',
         'secure_access_db_schema': 'secure-access-db-schema',
+        'secure_access_disable_concurrent_connections': 'secure-access-disable-concurrent-connections',
         'secure_access_enable': 'secure-access-enable',
         'secure_access_host': 'secure-access-host',
         'secure_access_rdp_domain': 'secure-access-rdp-domain',
@@ -135,7 +137,7 @@ class UpdateRotatedSecret(object):
         'user_dn': 'user-dn'
     }
 
-    def __init__(self, provider_type=None, add_tag=None, api_id=None, api_key=None, auto_rotate=None, aws_region='us-east-2', custom_payload=None, description='default_metadata', gcp_key=None, grace_rotation=None, host_provider=None, json=False, keep_prev_version=None, key=None, name=None, new_metadata='default_metadata', new_name=None, new_version=None, rm_tag=None, rotate_after_disconnect='false', rotated_password=None, rotated_username=None, rotation_hour=None, rotation_interval=None, rotator_creds_type='use-self-creds', rotator_custom_cmd=None, same_password=None, secure_access_allow_external_user=False, secure_access_aws_account_id=None, secure_access_aws_native_cli=None, secure_access_bastion_issuer=None, secure_access_db_name=None, secure_access_db_schema=None, secure_access_enable=None, secure_access_host=None, secure_access_rdp_domain=None, secure_access_rdp_user=None, secure_access_url=None, secure_access_web=False, secure_access_web_browsing=False, secure_access_web_proxy=False, ssh_password=None, ssh_username=None, storage_account_key_name=None, token=None, uid_token=None, user_attribute='cn', user_dn=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, provider_type=None, add_tag=None, api_id=None, api_key=None, auto_rotate=None, aws_region='us-east-2', custom_payload=None, description='default_metadata', gcp_key=None, grace_rotation=None, host_provider=None, json=False, keep_prev_version=None, key=None, name=None, new_metadata='default_metadata', new_name=None, new_version=None, rm_tag=None, rotate_after_disconnect='false', rotated_password=None, rotated_username=None, rotation_hour=None, rotation_interval=None, rotator_creds_type='use-self-creds', rotator_custom_cmd=None, same_password=None, secure_access_allow_external_user=False, secure_access_aws_account_id=None, secure_access_aws_native_cli=None, secure_access_bastion_issuer=None, secure_access_db_name=None, secure_access_db_schema=None, secure_access_disable_concurrent_connections=None, secure_access_enable=None, secure_access_host=None, secure_access_rdp_domain=None, secure_access_rdp_user=None, secure_access_url=None, secure_access_web=False, secure_access_web_browsing=False, secure_access_web_proxy=False, ssh_password=None, ssh_username=None, storage_account_key_name=None, token=None, uid_token=None, user_attribute='cn', user_dn=None, local_vars_configuration=None):  # noqa: E501
         """UpdateRotatedSecret - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -174,6 +176,7 @@ class UpdateRotatedSecret(object):
         self._secure_access_bastion_issuer = None
         self._secure_access_db_name = None
         self._secure_access_db_schema = None
+        self._secure_access_disable_concurrent_connections = None
         self._secure_access_enable = None
         self._secure_access_host = None
         self._secure_access_rdp_domain = None
@@ -256,6 +259,8 @@ class UpdateRotatedSecret(object):
             self.secure_access_db_name = secure_access_db_name
         if secure_access_db_schema is not None:
             self.secure_access_db_schema = secure_access_db_schema
+        if secure_access_disable_concurrent_connections is not None:
+            self.secure_access_disable_concurrent_connections = secure_access_disable_concurrent_connections
         if secure_access_enable is not None:
             self.secure_access_enable = secure_access_enable
         if secure_access_host is not None:
@@ -1045,6 +1050,29 @@ class UpdateRotatedSecret(object):
         """
 
         self._secure_access_db_schema = secure_access_db_schema
+
+    @property
+    def secure_access_disable_concurrent_connections(self):
+        """Gets the secure_access_disable_concurrent_connections of this UpdateRotatedSecret.  # noqa: E501
+
+        Enable this flag to prevent simultaneous use of the same secret  # noqa: E501
+
+        :return: The secure_access_disable_concurrent_connections of this UpdateRotatedSecret.  # noqa: E501
+        :rtype: bool
+        """
+        return self._secure_access_disable_concurrent_connections
+
+    @secure_access_disable_concurrent_connections.setter
+    def secure_access_disable_concurrent_connections(self, secure_access_disable_concurrent_connections):
+        """Sets the secure_access_disable_concurrent_connections of this UpdateRotatedSecret.
+
+        Enable this flag to prevent simultaneous use of the same secret  # noqa: E501
+
+        :param secure_access_disable_concurrent_connections: The secure_access_disable_concurrent_connections of this UpdateRotatedSecret.  # noqa: E501
+        :type: bool
+        """
+
+        self._secure_access_disable_concurrent_connections = secure_access_disable_concurrent_connections
 
     @property
     def secure_access_enable(self):

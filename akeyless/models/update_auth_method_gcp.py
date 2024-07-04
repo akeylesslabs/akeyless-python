@@ -36,6 +36,7 @@ class UpdateAuthMethodGCP(object):
     openapi_types = {
         'access_expires': 'int',
         'audience': 'str',
+        'audit_logs_claims': 'list[str]',
         'bound_ips': 'list[str]',
         'bound_labels': 'list[str]',
         'bound_projects': 'list[str]',
@@ -59,6 +60,7 @@ class UpdateAuthMethodGCP(object):
     attribute_map = {
         'access_expires': 'access-expires',
         'audience': 'audience',
+        'audit_logs_claims': 'audit-logs-claims',
         'bound_ips': 'bound-ips',
         'bound_labels': 'bound-labels',
         'bound_projects': 'bound-projects',
@@ -79,7 +81,7 @@ class UpdateAuthMethodGCP(object):
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, access_expires=0, audience='akeyless.io', bound_ips=None, bound_labels=None, bound_projects=None, bound_regions=None, bound_service_accounts=None, bound_zones=None, description=None, force_sub_claims=None, gw_bound_ips=None, json=False, jwt_ttl=0, name=None, new_name=None, product_type=None, service_account_creds_data=None, token=None, type=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, access_expires=0, audience='akeyless.io', audit_logs_claims=None, bound_ips=None, bound_labels=None, bound_projects=None, bound_regions=None, bound_service_accounts=None, bound_zones=None, description=None, force_sub_claims=None, gw_bound_ips=None, json=False, jwt_ttl=0, name=None, new_name=None, product_type=None, service_account_creds_data=None, token=None, type=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """UpdateAuthMethodGCP - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -87,6 +89,7 @@ class UpdateAuthMethodGCP(object):
 
         self._access_expires = None
         self._audience = None
+        self._audit_logs_claims = None
         self._bound_ips = None
         self._bound_labels = None
         self._bound_projects = None
@@ -110,6 +113,8 @@ class UpdateAuthMethodGCP(object):
         if access_expires is not None:
             self.access_expires = access_expires
         self.audience = audience
+        if audit_logs_claims is not None:
+            self.audit_logs_claims = audit_logs_claims
         if bound_ips is not None:
             self.bound_ips = bound_ips
         if bound_labels is not None:
@@ -192,6 +197,29 @@ class UpdateAuthMethodGCP(object):
             raise ValueError("Invalid value for `audience`, must not be `None`")  # noqa: E501
 
         self._audience = audience
+
+    @property
+    def audit_logs_claims(self):
+        """Gets the audit_logs_claims of this UpdateAuthMethodGCP.  # noqa: E501
+
+        Subclaims to include in audit logs, e.g \"--audit-logs-claims email --audit-logs-claims username\"  # noqa: E501
+
+        :return: The audit_logs_claims of this UpdateAuthMethodGCP.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._audit_logs_claims
+
+    @audit_logs_claims.setter
+    def audit_logs_claims(self, audit_logs_claims):
+        """Sets the audit_logs_claims of this UpdateAuthMethodGCP.
+
+        Subclaims to include in audit logs, e.g \"--audit-logs-claims email --audit-logs-claims username\"  # noqa: E501
+
+        :param audit_logs_claims: The audit_logs_claims of this UpdateAuthMethodGCP.  # noqa: E501
+        :type: list[str]
+        """
+
+        self._audit_logs_claims = audit_logs_claims
 
     @property
     def bound_ips(self):

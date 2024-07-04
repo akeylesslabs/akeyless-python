@@ -36,6 +36,8 @@ class AccountGeneralSettings(object):
     openapi_types = {
         'account_default_key_item_id': 'int',
         'account_default_key_name': 'str',
+        'allowed_clients_ips': 'AllowedIpSettings',
+        'allowed_gateways_ips': 'AllowedIpSettings',
         'auth_usage_event': 'UsageEventSetting',
         'data_protection_section': 'DataProtectionSection',
         'dynamic_secret_max_ttl': 'DynamicSecretMaxTtl',
@@ -52,6 +54,8 @@ class AccountGeneralSettings(object):
     attribute_map = {
         'account_default_key_item_id': 'account_default_key_item_id',
         'account_default_key_name': 'account_default_key_name',
+        'allowed_clients_ips': 'allowed_clients_ips',
+        'allowed_gateways_ips': 'allowed_gateways_ips',
         'auth_usage_event': 'auth_usage_event',
         'data_protection_section': 'data_protection_section',
         'dynamic_secret_max_ttl': 'dynamic_secret_max_ttl',
@@ -65,7 +69,7 @@ class AccountGeneralSettings(object):
         'sharing_policy': 'sharing_policy'
     }
 
-    def __init__(self, account_default_key_item_id=None, account_default_key_name=None, auth_usage_event=None, data_protection_section=None, dynamic_secret_max_ttl=None, enable_request_for_access=None, invalid_characters=None, item_usage_event=None, lock_default_key=None, password_policy=None, protect_items_by_default=None, rotation_secret_max_interval=None, sharing_policy=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, account_default_key_item_id=None, account_default_key_name=None, allowed_clients_ips=None, allowed_gateways_ips=None, auth_usage_event=None, data_protection_section=None, dynamic_secret_max_ttl=None, enable_request_for_access=None, invalid_characters=None, item_usage_event=None, lock_default_key=None, password_policy=None, protect_items_by_default=None, rotation_secret_max_interval=None, sharing_policy=None, local_vars_configuration=None):  # noqa: E501
         """AccountGeneralSettings - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -73,6 +77,8 @@ class AccountGeneralSettings(object):
 
         self._account_default_key_item_id = None
         self._account_default_key_name = None
+        self._allowed_clients_ips = None
+        self._allowed_gateways_ips = None
         self._auth_usage_event = None
         self._data_protection_section = None
         self._dynamic_secret_max_ttl = None
@@ -90,6 +96,10 @@ class AccountGeneralSettings(object):
             self.account_default_key_item_id = account_default_key_item_id
         if account_default_key_name is not None:
             self.account_default_key_name = account_default_key_name
+        if allowed_clients_ips is not None:
+            self.allowed_clients_ips = allowed_clients_ips
+        if allowed_gateways_ips is not None:
+            self.allowed_gateways_ips = allowed_gateways_ips
         if auth_usage_event is not None:
             self.auth_usage_event = auth_usage_event
         if data_protection_section is not None:
@@ -158,6 +168,48 @@ class AccountGeneralSettings(object):
         """
 
         self._account_default_key_name = account_default_key_name
+
+    @property
+    def allowed_clients_ips(self):
+        """Gets the allowed_clients_ips of this AccountGeneralSettings.  # noqa: E501
+
+
+        :return: The allowed_clients_ips of this AccountGeneralSettings.  # noqa: E501
+        :rtype: AllowedIpSettings
+        """
+        return self._allowed_clients_ips
+
+    @allowed_clients_ips.setter
+    def allowed_clients_ips(self, allowed_clients_ips):
+        """Sets the allowed_clients_ips of this AccountGeneralSettings.
+
+
+        :param allowed_clients_ips: The allowed_clients_ips of this AccountGeneralSettings.  # noqa: E501
+        :type: AllowedIpSettings
+        """
+
+        self._allowed_clients_ips = allowed_clients_ips
+
+    @property
+    def allowed_gateways_ips(self):
+        """Gets the allowed_gateways_ips of this AccountGeneralSettings.  # noqa: E501
+
+
+        :return: The allowed_gateways_ips of this AccountGeneralSettings.  # noqa: E501
+        :rtype: AllowedIpSettings
+        """
+        return self._allowed_gateways_ips
+
+    @allowed_gateways_ips.setter
+    def allowed_gateways_ips(self, allowed_gateways_ips):
+        """Sets the allowed_gateways_ips of this AccountGeneralSettings.
+
+
+        :param allowed_gateways_ips: The allowed_gateways_ips of this AccountGeneralSettings.  # noqa: E501
+        :type: AllowedIpSettings
+        """
+
+        self._allowed_gateways_ips = allowed_gateways_ips
 
     @property
     def auth_usage_event(self):

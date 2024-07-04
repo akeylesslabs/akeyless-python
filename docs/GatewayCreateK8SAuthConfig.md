@@ -6,7 +6,6 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **access_id** | **str** | The access ID of the Kubernetes auth method | 
 **cluster_api_type** | **str** | Cluster access type. options: [native_k8s, rancher] | [optional] [default to 'native_k8s']
-**config_encryption_key_name** | **str** | Config encryption key | [optional] 
 **disable_issuer_validation** | **str** | Disable issuer validation [true/false] | [optional] 
 **json** | **bool** | Set output format to JSON | [optional] [default to False]
 **k8s_auth_type** | **str** | K8S auth type [token/certificate]. (relevant for \&quot;native_k8s\&quot; only) | [optional] [default to 'token']

@@ -147,7 +147,7 @@ class CreateDockerhubTarget(object):
     def dockerhub_password(self):
         """Gets the dockerhub_password of this CreateDockerhubTarget.  # noqa: E501
 
-        DockerhubPassword is either the user's password to manage the repository  # noqa: E501
+        Password for docker repository  # noqa: E501
 
         :return: The dockerhub_password of this CreateDockerhubTarget.  # noqa: E501
         :rtype: str
@@ -158,7 +158,7 @@ class CreateDockerhubTarget(object):
     def dockerhub_password(self, dockerhub_password):
         """Sets the dockerhub_password of this CreateDockerhubTarget.
 
-        DockerhubPassword is either the user's password to manage the repository  # noqa: E501
+        Password for docker repository  # noqa: E501
 
         :param dockerhub_password: The dockerhub_password of this CreateDockerhubTarget.  # noqa: E501
         :type: str
@@ -170,7 +170,7 @@ class CreateDockerhubTarget(object):
     def dockerhub_username(self):
         """Gets the dockerhub_username of this CreateDockerhubTarget.  # noqa: E501
 
-        DockerhubUsername is the name of the user in dockerhub  # noqa: E501
+        Username for docker repository  # noqa: E501
 
         :return: The dockerhub_username of this CreateDockerhubTarget.  # noqa: E501
         :rtype: str
@@ -181,7 +181,7 @@ class CreateDockerhubTarget(object):
     def dockerhub_username(self, dockerhub_username):
         """Sets the dockerhub_username of this CreateDockerhubTarget.
 
-        DockerhubUsername is the name of the user in dockerhub  # noqa: E501
+        Username for docker repository  # noqa: E501
 
         :param dockerhub_username: The dockerhub_username of this CreateDockerhubTarget.  # noqa: E501
         :type: str

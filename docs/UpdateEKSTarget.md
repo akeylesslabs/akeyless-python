@@ -1,5 +1,6 @@
 # UpdateEKSTarget
 
+updateEKSTarget is a command that updates an existing target. [Deprecated: Use target-update-eks command]
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

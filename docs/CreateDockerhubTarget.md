@@ -1,12 +1,13 @@
 # CreateDockerhubTarget
 
+createDockerhubTarget is a command that creates a new target. [Deprecated: Use target-create-dockerhub command]
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **comment** | **str** | Deprecated - use description | [optional] 
 **description** | **str** | Description of the object | [optional] 
-**dockerhub_password** | **str** | DockerhubPassword is either the user&#39;s password to manage the repository | [optional] 
-**dockerhub_username** | **str** | DockerhubUsername is the name of the user in dockerhub | [optional] 
+**dockerhub_password** | **str** | Password for docker repository | [optional] 
+**dockerhub_username** | **str** | Username for docker repository | [optional] 
 **json** | **bool** | Set output format to JSON | [optional] [default to False]
 **key** | **str** | The name of a key that used to encrypt the target secret value (if empty, the account default protectionKey key will be used) | [optional] 
 **max_versions** | **str** | Set the maximum number of versions, limited by the account settings defaults. | [optional] 

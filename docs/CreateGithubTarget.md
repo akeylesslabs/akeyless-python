@@ -1,5 +1,6 @@
 # CreateGithubTarget
 
+createGithubTarget is a command that creates a new target. [Deprecated: Use target-create-github command]
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

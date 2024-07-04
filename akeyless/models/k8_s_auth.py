@@ -49,7 +49,6 @@ class K8SAuth(object):
         'k8s_pub_keys_pem': 'list[str]',
         'k8s_token_reviewer_jwt': 'str',
         'name': 'str',
-        'protection_key': 'str',
         'rancher_api_key': 'str',
         'rancher_cluster_id': 'str',
         'use_local_ca_jwt': 'bool'
@@ -71,13 +70,12 @@ class K8SAuth(object):
         'k8s_pub_keys_pem': 'k8s_pub_keys_pem',
         'k8s_token_reviewer_jwt': 'k8s_token_reviewer_jwt',
         'name': 'name',
-        'protection_key': 'protection_key',
         'rancher_api_key': 'rancher_api_key',
         'rancher_cluster_id': 'rancher_cluster_id',
         'use_local_ca_jwt': 'use_local_ca_jwt'
     }
 
-    def __init__(self, am_token_expiration=None, auth_method_access_id=None, auth_method_prv_key_pem=None, cluster_api_type=None, disable_iss_validation=None, id=None, k8s_auth_type=None, k8s_ca_cert=None, k8s_client_cert_data=None, k8s_client_key_data=None, k8s_host=None, k8s_issuer=None, k8s_pub_keys_pem=None, k8s_token_reviewer_jwt=None, name=None, protection_key=None, rancher_api_key=None, rancher_cluster_id=None, use_local_ca_jwt=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, am_token_expiration=None, auth_method_access_id=None, auth_method_prv_key_pem=None, cluster_api_type=None, disable_iss_validation=None, id=None, k8s_auth_type=None, k8s_ca_cert=None, k8s_client_cert_data=None, k8s_client_key_data=None, k8s_host=None, k8s_issuer=None, k8s_pub_keys_pem=None, k8s_token_reviewer_jwt=None, name=None, rancher_api_key=None, rancher_cluster_id=None, use_local_ca_jwt=None, local_vars_configuration=None):  # noqa: E501
         """K8SAuth - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -98,7 +96,6 @@ class K8SAuth(object):
         self._k8s_pub_keys_pem = None
         self._k8s_token_reviewer_jwt = None
         self._name = None
-        self._protection_key = None
         self._rancher_api_key = None
         self._rancher_cluster_id = None
         self._use_local_ca_jwt = None
@@ -134,8 +131,6 @@ class K8SAuth(object):
             self.k8s_token_reviewer_jwt = k8s_token_reviewer_jwt
         if name is not None:
             self.name = name
-        if protection_key is not None:
-            self.protection_key = protection_key
         if rancher_api_key is not None:
             self.rancher_api_key = rancher_api_key
         if rancher_cluster_id is not None:
@@ -481,27 +476,6 @@ class K8SAuth(object):
         """
 
         self._name = name
-
-    @property
-    def protection_key(self):
-        """Gets the protection_key of this K8SAuth.  # noqa: E501
-
-
-        :return: The protection_key of this K8SAuth.  # noqa: E501
-        :rtype: str
-        """
-        return self._protection_key
-
-    @protection_key.setter
-    def protection_key(self, protection_key):
-        """Sets the protection_key of this K8SAuth.
-
-
-        :param protection_key: The protection_key of this K8SAuth.  # noqa: E501
-        :type: str
-        """
-
-        self._protection_key = protection_key
 
     @property
     def rancher_api_key(self):

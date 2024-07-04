@@ -36,6 +36,7 @@ class UpdateAuthMethodK8S(object):
     openapi_types = {
         'access_expires': 'int',
         'audience': 'str',
+        'audit_logs_claims': 'list[str]',
         'bound_ips': 'list[str]',
         'bound_namespaces': 'list[str]',
         'bound_pod_names': 'list[str]',
@@ -57,6 +58,7 @@ class UpdateAuthMethodK8S(object):
     attribute_map = {
         'access_expires': 'access-expires',
         'audience': 'audience',
+        'audit_logs_claims': 'audit-logs-claims',
         'bound_ips': 'bound-ips',
         'bound_namespaces': 'bound-namespaces',
         'bound_pod_names': 'bound-pod-names',
@@ -75,7 +77,7 @@ class UpdateAuthMethodK8S(object):
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, access_expires=0, audience=None, bound_ips=None, bound_namespaces=None, bound_pod_names=None, bound_sa_names=None, description=None, force_sub_claims=None, gen_key=None, gw_bound_ips=None, json=False, jwt_ttl=0, name=None, new_name=None, product_type=None, public_key=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, access_expires=0, audience=None, audit_logs_claims=None, bound_ips=None, bound_namespaces=None, bound_pod_names=None, bound_sa_names=None, description=None, force_sub_claims=None, gen_key=None, gw_bound_ips=None, json=False, jwt_ttl=0, name=None, new_name=None, product_type=None, public_key=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """UpdateAuthMethodK8S - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -83,6 +85,7 @@ class UpdateAuthMethodK8S(object):
 
         self._access_expires = None
         self._audience = None
+        self._audit_logs_claims = None
         self._bound_ips = None
         self._bound_namespaces = None
         self._bound_pod_names = None
@@ -105,6 +108,8 @@ class UpdateAuthMethodK8S(object):
             self.access_expires = access_expires
         if audience is not None:
             self.audience = audience
+        if audit_logs_claims is not None:
+            self.audit_logs_claims = audit_logs_claims
         if bound_ips is not None:
             self.bound_ips = bound_ips
         if bound_namespaces is not None:
@@ -182,6 +187,29 @@ class UpdateAuthMethodK8S(object):
         """
 
         self._audience = audience
+
+    @property
+    def audit_logs_claims(self):
+        """Gets the audit_logs_claims of this UpdateAuthMethodK8S.  # noqa: E501
+
+        Subclaims to include in audit logs, e.g \"--audit-logs-claims email --audit-logs-claims username\"  # noqa: E501
+
+        :return: The audit_logs_claims of this UpdateAuthMethodK8S.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._audit_logs_claims
+
+    @audit_logs_claims.setter
+    def audit_logs_claims(self, audit_logs_claims):
+        """Sets the audit_logs_claims of this UpdateAuthMethodK8S.
+
+        Subclaims to include in audit logs, e.g \"--audit-logs-claims email --audit-logs-claims username\"  # noqa: E501
+
+        :param audit_logs_claims: The audit_logs_claims of this UpdateAuthMethodK8S.  # noqa: E501
+        :type: list[str]
+        """
+
+        self._audit_logs_claims = audit_logs_claims
 
     @property
     def bound_ips(self):

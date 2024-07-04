@@ -1,5 +1,6 @@
 # DeleteTarget
 
+deleteTarget is a command that deletes a target. [Deprecated: Use target-delete command]
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

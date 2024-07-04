@@ -41,6 +41,8 @@ class SecureRemoteAccess(object):
         'bastion_issuer': 'str',
         'bastion_issuer_id': 'int',
         'bastion_ssh': 'str',
+        'block_concurrent_connections': 'bool',
+        'block_concurrent_connections_level': 'str',
         'category': 'str',
         'dashboard_url': 'str',
         'db_name': 'str',
@@ -77,6 +79,8 @@ class SecureRemoteAccess(object):
         'bastion_issuer': 'bastion_issuer',
         'bastion_issuer_id': 'bastion_issuer_id',
         'bastion_ssh': 'bastion_ssh',
+        'block_concurrent_connections': 'block_concurrent_connections',
+        'block_concurrent_connections_level': 'block_concurrent_connections_level',
         'category': 'category',
         'dashboard_url': 'dashboard_url',
         'db_name': 'db_name',
@@ -105,7 +109,7 @@ class SecureRemoteAccess(object):
         'web_proxy': 'web_proxy'
     }
 
-    def __init__(self, account_id=None, allow_port_forwarding=None, allow_providing_external_username=None, bastion_api=None, bastion_issuer=None, bastion_issuer_id=None, bastion_ssh=None, category=None, dashboard_url=None, db_name=None, domain=None, enable=None, endpoint=None, host=None, host_provider_type=None, is_cli=None, is_web=None, isolated=None, native=None, rd_gateway_server=None, rdp_user=None, region=None, rotate_after_disconnect=None, schema=None, ssh_password=None, ssh_private_key=None, ssh_user=None, status_info=None, target_hosts=None, targets=None, url=None, use_internal_bastion=None, web_proxy=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, account_id=None, allow_port_forwarding=None, allow_providing_external_username=None, bastion_api=None, bastion_issuer=None, bastion_issuer_id=None, bastion_ssh=None, block_concurrent_connections=None, block_concurrent_connections_level=None, category=None, dashboard_url=None, db_name=None, domain=None, enable=None, endpoint=None, host=None, host_provider_type=None, is_cli=None, is_web=None, isolated=None, native=None, rd_gateway_server=None, rdp_user=None, region=None, rotate_after_disconnect=None, schema=None, ssh_password=None, ssh_private_key=None, ssh_user=None, status_info=None, target_hosts=None, targets=None, url=None, use_internal_bastion=None, web_proxy=None, local_vars_configuration=None):  # noqa: E501
         """SecureRemoteAccess - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -118,6 +122,8 @@ class SecureRemoteAccess(object):
         self._bastion_issuer = None
         self._bastion_issuer_id = None
         self._bastion_ssh = None
+        self._block_concurrent_connections = None
+        self._block_concurrent_connections_level = None
         self._category = None
         self._dashboard_url = None
         self._db_name = None
@@ -160,6 +166,10 @@ class SecureRemoteAccess(object):
             self.bastion_issuer_id = bastion_issuer_id
         if bastion_ssh is not None:
             self.bastion_ssh = bastion_ssh
+        if block_concurrent_connections is not None:
+            self.block_concurrent_connections = block_concurrent_connections
+        if block_concurrent_connections_level is not None:
+            self.block_concurrent_connections_level = block_concurrent_connections_level
         if category is not None:
             self.category = category
         if dashboard_url is not None:
@@ -359,6 +369,48 @@ class SecureRemoteAccess(object):
         """
 
         self._bastion_ssh = bastion_ssh
+
+    @property
+    def block_concurrent_connections(self):
+        """Gets the block_concurrent_connections of this SecureRemoteAccess.  # noqa: E501
+
+
+        :return: The block_concurrent_connections of this SecureRemoteAccess.  # noqa: E501
+        :rtype: bool
+        """
+        return self._block_concurrent_connections
+
+    @block_concurrent_connections.setter
+    def block_concurrent_connections(self, block_concurrent_connections):
+        """Sets the block_concurrent_connections of this SecureRemoteAccess.
+
+
+        :param block_concurrent_connections: The block_concurrent_connections of this SecureRemoteAccess.  # noqa: E501
+        :type: bool
+        """
+
+        self._block_concurrent_connections = block_concurrent_connections
+
+    @property
+    def block_concurrent_connections_level(self):
+        """Gets the block_concurrent_connections_level of this SecureRemoteAccess.  # noqa: E501
+
+
+        :return: The block_concurrent_connections_level of this SecureRemoteAccess.  # noqa: E501
+        :rtype: str
+        """
+        return self._block_concurrent_connections_level
+
+    @block_concurrent_connections_level.setter
+    def block_concurrent_connections_level(self, block_concurrent_connections_level):
+        """Sets the block_concurrent_connections_level of this SecureRemoteAccess.
+
+
+        :param block_concurrent_connections_level: The block_concurrent_connections_level of this SecureRemoteAccess.  # noqa: E501
+        :type: str
+        """
+
+        self._block_concurrent_connections_level = block_concurrent_connections_level
 
     @property
     def category(self):

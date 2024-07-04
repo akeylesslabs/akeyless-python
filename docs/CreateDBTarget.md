@@ -1,5 +1,6 @@
 # CreateDBTarget
 
+createDBTarget is a command that creates a new target. [Deprecated: Use target-create-db command]
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

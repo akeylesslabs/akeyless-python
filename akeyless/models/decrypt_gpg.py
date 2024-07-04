@@ -36,6 +36,7 @@ class DecryptGPG(object):
     openapi_types = {
         'ciphertext': 'str',
         'display_id': 'str',
+        'input_format': 'str',
         'item_id': 'int',
         'json': 'bool',
         'key_name': 'str',
@@ -48,6 +49,7 @@ class DecryptGPG(object):
     attribute_map = {
         'ciphertext': 'ciphertext',
         'display_id': 'display-id',
+        'input_format': 'input-format',
         'item_id': 'item-id',
         'json': 'json',
         'key_name': 'key-name',
@@ -57,7 +59,7 @@ class DecryptGPG(object):
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, ciphertext=None, display_id=None, item_id=None, json=False, key_name=None, output_format=None, passphrase=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, ciphertext=None, display_id=None, input_format='base64', item_id=None, json=False, key_name=None, output_format=None, passphrase=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """DecryptGPG - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -65,6 +67,7 @@ class DecryptGPG(object):
 
         self._ciphertext = None
         self._display_id = None
+        self._input_format = None
         self._item_id = None
         self._json = None
         self._key_name = None
@@ -77,6 +80,8 @@ class DecryptGPG(object):
         self.ciphertext = ciphertext
         if display_id is not None:
             self.display_id = display_id
+        if input_format is not None:
+            self.input_format = input_format
         if item_id is not None:
             self.item_id = item_id
         if json is not None:
@@ -95,7 +100,7 @@ class DecryptGPG(object):
     def ciphertext(self):
         """Gets the ciphertext of this DecryptGPG.  # noqa: E501
 
-        Ciphertext to be decrypted in base64 encoded format  # noqa: E501
+        Ciphertext to be decrypted  # noqa: E501
 
         :return: The ciphertext of this DecryptGPG.  # noqa: E501
         :rtype: str
@@ -106,7 +111,7 @@ class DecryptGPG(object):
     def ciphertext(self, ciphertext):
         """Sets the ciphertext of this DecryptGPG.
 
-        Ciphertext to be decrypted in base64 encoded format  # noqa: E501
+        Ciphertext to be decrypted  # noqa: E501
 
         :param ciphertext: The ciphertext of this DecryptGPG.  # noqa: E501
         :type: str
@@ -138,6 +143,29 @@ class DecryptGPG(object):
         """
 
         self._display_id = display_id
+
+    @property
+    def input_format(self):
+        """Gets the input_format of this DecryptGPG.  # noqa: E501
+
+        Select default assumed format for the ciphertext. Currently supported options: [base64,raw]  # noqa: E501
+
+        :return: The input_format of this DecryptGPG.  # noqa: E501
+        :rtype: str
+        """
+        return self._input_format
+
+    @input_format.setter
+    def input_format(self, input_format):
+        """Sets the input_format of this DecryptGPG.
+
+        Select default assumed format for the ciphertext. Currently supported options: [base64,raw]  # noqa: E501
+
+        :param input_format: The input_format of this DecryptGPG.  # noqa: E501
+        :type: str
+        """
+
+        self._input_format = input_format
 
     @property
     def item_id(self):

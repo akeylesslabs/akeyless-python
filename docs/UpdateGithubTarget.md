@@ -1,5 +1,6 @@
 # UpdateGithubTarget
 
+updateGithubTarget is a command that updates a new target. [Deprecated: Use target-update-github command]
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

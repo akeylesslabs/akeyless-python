@@ -35,6 +35,7 @@ class CreateAuthMethodHuawei(object):
     """
     openapi_types = {
         'access_expires': 'int',
+        'audit_logs_claims': 'list[str]',
         'auth_url': 'str',
         'bound_domain_id': 'list[str]',
         'bound_domain_name': 'list[str]',
@@ -56,6 +57,7 @@ class CreateAuthMethodHuawei(object):
 
     attribute_map = {
         'access_expires': 'access-expires',
+        'audit_logs_claims': 'audit-logs-claims',
         'auth_url': 'auth-url',
         'bound_domain_id': 'bound-domain-id',
         'bound_domain_name': 'bound-domain-name',
@@ -75,13 +77,14 @@ class CreateAuthMethodHuawei(object):
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, access_expires=0, auth_url='https://iam.myhwclouds.com:443/v3', bound_domain_id=None, bound_domain_name=None, bound_ips=None, bound_tenant_id=None, bound_tenant_name=None, bound_user_id=None, bound_user_name=None, description=None, force_sub_claims=None, gw_bound_ips=None, json=False, jwt_ttl=0, name=None, product_type=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, access_expires=0, audit_logs_claims=None, auth_url='https://iam.myhwclouds.com:443/v3', bound_domain_id=None, bound_domain_name=None, bound_ips=None, bound_tenant_id=None, bound_tenant_name=None, bound_user_id=None, bound_user_name=None, description=None, force_sub_claims=None, gw_bound_ips=None, json=False, jwt_ttl=0, name=None, product_type=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """CreateAuthMethodHuawei - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._access_expires = None
+        self._audit_logs_claims = None
         self._auth_url = None
         self._bound_domain_id = None
         self._bound_domain_name = None
@@ -103,6 +106,8 @@ class CreateAuthMethodHuawei(object):
 
         if access_expires is not None:
             self.access_expires = access_expires
+        if audit_logs_claims is not None:
+            self.audit_logs_claims = audit_logs_claims
         if auth_url is not None:
             self.auth_url = auth_url
         if bound_domain_id is not None:
@@ -159,6 +164,29 @@ class CreateAuthMethodHuawei(object):
         """
 
         self._access_expires = access_expires
+
+    @property
+    def audit_logs_claims(self):
+        """Gets the audit_logs_claims of this CreateAuthMethodHuawei.  # noqa: E501
+
+        Subclaims to include in audit logs, e.g \"--audit-logs-claims email --audit-logs-claims username\"  # noqa: E501
+
+        :return: The audit_logs_claims of this CreateAuthMethodHuawei.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._audit_logs_claims
+
+    @audit_logs_claims.setter
+    def audit_logs_claims(self, audit_logs_claims):
+        """Sets the audit_logs_claims of this CreateAuthMethodHuawei.
+
+        Subclaims to include in audit logs, e.g \"--audit-logs-claims email --audit-logs-claims username\"  # noqa: E501
+
+        :param audit_logs_claims: The audit_logs_claims of this CreateAuthMethodHuawei.  # noqa: E501
+        :type: list[str]
+        """
+
+        self._audit_logs_claims = audit_logs_claims
 
     @property
     def auth_url(self):

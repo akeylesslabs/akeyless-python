@@ -36,7 +36,6 @@ class GatewayPartialUpdateK8SAuthConfig(object):
     openapi_types = {
         'use_default_identity_bool': 'bool',
         'access_id': 'str',
-        'config_encryption_key_name': 'str',
         'disable_issuer_validation': 'str',
         'json': 'bool',
         'k8s_auth_type': 'str',
@@ -60,7 +59,6 @@ class GatewayPartialUpdateK8SAuthConfig(object):
     attribute_map = {
         'use_default_identity_bool': 'UseDefaultIdentityBool',
         'access_id': 'access-id',
-        'config_encryption_key_name': 'config-encryption-key-name',
         'disable_issuer_validation': 'disable-issuer-validation',
         'json': 'json',
         'k8s_auth_type': 'k8s-auth-type',
@@ -81,7 +79,7 @@ class GatewayPartialUpdateK8SAuthConfig(object):
         'use_gw_service_account': 'use-gw-service-account'
     }
 
-    def __init__(self, use_default_identity_bool=None, access_id=None, config_encryption_key_name=None, disable_issuer_validation=None, json=False, k8s_auth_type='token', k8s_ca_cert=None, k8s_client_certificate=None, k8s_client_key=None, k8s_host=None, k8s_issuer=None, name=None, new_name=None, rancher_api_key=None, rancher_cluster_id=None, signing_key=None, token=None, token_exp=None, token_reviewer_jwt=None, uid_token=None, use_gw_service_account=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, use_default_identity_bool=None, access_id=None, disable_issuer_validation=None, json=False, k8s_auth_type='token', k8s_ca_cert=None, k8s_client_certificate=None, k8s_client_key=None, k8s_host=None, k8s_issuer=None, name=None, new_name=None, rancher_api_key=None, rancher_cluster_id=None, signing_key=None, token=None, token_exp=None, token_reviewer_jwt=None, uid_token=None, use_gw_service_account=None, local_vars_configuration=None):  # noqa: E501
         """GatewayPartialUpdateK8SAuthConfig - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -89,7 +87,6 @@ class GatewayPartialUpdateK8SAuthConfig(object):
 
         self._use_default_identity_bool = None
         self._access_id = None
-        self._config_encryption_key_name = None
         self._disable_issuer_validation = None
         self._json = None
         self._k8s_auth_type = None
@@ -114,8 +111,6 @@ class GatewayPartialUpdateK8SAuthConfig(object):
             self.use_default_identity_bool = use_default_identity_bool
         if access_id is not None:
             self.access_id = access_id
-        if config_encryption_key_name is not None:
-            self.config_encryption_key_name = config_encryption_key_name
         if disable_issuer_validation is not None:
             self.disable_issuer_validation = disable_issuer_validation
         if json is not None:
@@ -196,29 +191,6 @@ class GatewayPartialUpdateK8SAuthConfig(object):
         """
 
         self._access_id = access_id
-
-    @property
-    def config_encryption_key_name(self):
-        """Gets the config_encryption_key_name of this GatewayPartialUpdateK8SAuthConfig.  # noqa: E501
-
-        Config encryption key  # noqa: E501
-
-        :return: The config_encryption_key_name of this GatewayPartialUpdateK8SAuthConfig.  # noqa: E501
-        :rtype: str
-        """
-        return self._config_encryption_key_name
-
-    @config_encryption_key_name.setter
-    def config_encryption_key_name(self, config_encryption_key_name):
-        """Sets the config_encryption_key_name of this GatewayPartialUpdateK8SAuthConfig.
-
-        Config encryption key  # noqa: E501
-
-        :param config_encryption_key_name: The config_encryption_key_name of this GatewayPartialUpdateK8SAuthConfig.  # noqa: E501
-        :type: str
-        """
-
-        self._config_encryption_key_name = config_encryption_key_name
 
     @property
     def disable_issuer_validation(self):

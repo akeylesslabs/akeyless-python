@@ -1,5 +1,6 @@
 # UpdateGlobalSignAtlasTarget
 
+updateGlobalSignAtlasTarget is a command that updates an existing target. [Deprecated: Use target-update-globalsign-atlas command]
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

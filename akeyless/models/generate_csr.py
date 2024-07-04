@@ -43,6 +43,7 @@ class GenerateCsr(object):
         'critical': 'bool',
         'dep': 'str',
         'email_addresses': 'str',
+        'export_private_key': 'bool',
         'generate_key': 'bool',
         'ip_addresses': 'str',
         'json': 'bool',
@@ -66,6 +67,7 @@ class GenerateCsr(object):
         'critical': 'critical',
         'dep': 'dep',
         'email_addresses': 'email-addresses',
+        'export_private_key': 'export-private-key',
         'generate_key': 'generate-key',
         'ip_addresses': 'ip-addresses',
         'json': 'json',
@@ -79,7 +81,7 @@ class GenerateCsr(object):
         'uri_sans': 'uri-sans'
     }
 
-    def __init__(self, alg=None, alt_names=None, certificate_type=None, city=None, common_name=None, country=None, critical=None, dep=None, email_addresses=None, generate_key=None, ip_addresses=None, json=False, key_type='classic-key', name=None, org=None, split_level=3, state=None, token=None, uid_token=None, uri_sans=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, alg=None, alt_names=None, certificate_type=None, city=None, common_name=None, country=None, critical=None, dep=None, email_addresses=None, export_private_key=False, generate_key=None, ip_addresses=None, json=False, key_type='classic-key', name=None, org=None, split_level=3, state=None, token=None, uid_token=None, uri_sans=None, local_vars_configuration=None):  # noqa: E501
         """GenerateCsr - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -94,6 +96,7 @@ class GenerateCsr(object):
         self._critical = None
         self._dep = None
         self._email_addresses = None
+        self._export_private_key = None
         self._generate_key = None
         self._ip_addresses = None
         self._json = None
@@ -124,6 +127,8 @@ class GenerateCsr(object):
             self.dep = dep
         if email_addresses is not None:
             self.email_addresses = email_addresses
+        if export_private_key is not None:
+            self.export_private_key = export_private_key
         if generate_key is not None:
             self.generate_key = generate_key
         if ip_addresses is not None:
@@ -351,6 +356,29 @@ class GenerateCsr(object):
         """
 
         self._email_addresses = email_addresses
+
+    @property
+    def export_private_key(self):
+        """Gets the export_private_key of this GenerateCsr.  # noqa: E501
+
+        The flag to indicate if the private key should be exported  # noqa: E501
+
+        :return: The export_private_key of this GenerateCsr.  # noqa: E501
+        :rtype: bool
+        """
+        return self._export_private_key
+
+    @export_private_key.setter
+    def export_private_key(self, export_private_key):
+        """Sets the export_private_key of this GenerateCsr.
+
+        The flag to indicate if the private key should be exported  # noqa: E501
+
+        :param export_private_key: The export_private_key of this GenerateCsr.  # noqa: E501
+        :type: bool
+        """
+
+        self._export_private_key = export_private_key
 
     @property
     def generate_key(self):

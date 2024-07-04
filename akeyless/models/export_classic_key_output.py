@@ -35,15 +35,17 @@ class ExportClassicKeyOutput(object):
     """
     openapi_types = {
         'certificate_pem': 'str',
-        'key': 'str'
+        'key': 'str',
+        'ssh': 'str'
     }
 
     attribute_map = {
         'certificate_pem': 'certificatePem',
-        'key': 'key'
+        'key': 'key',
+        'ssh': 'ssh'
     }
 
-    def __init__(self, certificate_pem=None, key=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, certificate_pem=None, key=None, ssh=None, local_vars_configuration=None):  # noqa: E501
         """ExportClassicKeyOutput - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -51,12 +53,15 @@ class ExportClassicKeyOutput(object):
 
         self._certificate_pem = None
         self._key = None
+        self._ssh = None
         self.discriminator = None
 
         if certificate_pem is not None:
             self.certificate_pem = certificate_pem
         if key is not None:
             self.key = key
+        if ssh is not None:
+            self.ssh = ssh
 
     @property
     def certificate_pem(self):
@@ -99,6 +104,27 @@ class ExportClassicKeyOutput(object):
         """
 
         self._key = key
+
+    @property
+    def ssh(self):
+        """Gets the ssh of this ExportClassicKeyOutput.  # noqa: E501
+
+
+        :return: The ssh of this ExportClassicKeyOutput.  # noqa: E501
+        :rtype: str
+        """
+        return self._ssh
+
+    @ssh.setter
+    def ssh(self, ssh):
+        """Sets the ssh of this ExportClassicKeyOutput.
+
+
+        :param ssh: The ssh of this ExportClassicKeyOutput.  # noqa: E501
+        :type: str
+        """
+
+        self._ssh = ssh
 
     def to_dict(self):
         """Returns the model properties as a dict"""

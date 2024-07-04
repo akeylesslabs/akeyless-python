@@ -5,7 +5,6 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **use_default_identity_bool** | **bool** |  | [optional] 
 **access_id** | **str** | The access ID of the Kubernetes auth method | [optional] 
-**config_encryption_key_name** | **str** | Config encryption key | [optional] 
 **disable_issuer_validation** | **str** | Disable issuer validation [true/false] | [optional] 
 **json** | **bool** | Set output format to JSON | [optional] [default to False]
 **k8s_auth_type** | **str** | K8S auth type [token/certificate]. (relevant for \&quot;native_k8s\&quot; only) | [optional] [default to 'token']

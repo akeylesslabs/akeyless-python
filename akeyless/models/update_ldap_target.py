@@ -98,10 +98,8 @@ class UpdateLdapTarget(object):
         self._update_version = None
         self.discriminator = None
 
-        if bind_dn is not None:
-            self.bind_dn = bind_dn
-        if bind_dn_password is not None:
-            self.bind_dn_password = bind_dn_password
+        self.bind_dn = bind_dn
+        self.bind_dn_password = bind_dn_password
         if comment is not None:
             self.comment = comment
         if description is not None:
@@ -114,8 +112,7 @@ class UpdateLdapTarget(object):
             self.key = key
         if ldap_ca_cert is not None:
             self.ldap_ca_cert = ldap_ca_cert
-        if ldap_url is not None:
-            self.ldap_url = ldap_url
+        self.ldap_url = ldap_url
         if max_versions is not None:
             self.max_versions = max_versions
         self.name = name
@@ -136,6 +133,7 @@ class UpdateLdapTarget(object):
     def bind_dn(self):
         """Gets the bind_dn of this UpdateLdapTarget.  # noqa: E501
 
+        Bind DN  # noqa: E501
 
         :return: The bind_dn of this UpdateLdapTarget.  # noqa: E501
         :rtype: str
@@ -146,10 +144,13 @@ class UpdateLdapTarget(object):
     def bind_dn(self, bind_dn):
         """Sets the bind_dn of this UpdateLdapTarget.
 
+        Bind DN  # noqa: E501
 
         :param bind_dn: The bind_dn of this UpdateLdapTarget.  # noqa: E501
         :type: str
         """
+        if self.local_vars_configuration.client_side_validation and bind_dn is None:  # noqa: E501
+            raise ValueError("Invalid value for `bind_dn`, must not be `None`")  # noqa: E501
 
         self._bind_dn = bind_dn
 
@@ -157,6 +158,7 @@ class UpdateLdapTarget(object):
     def bind_dn_password(self):
         """Gets the bind_dn_password of this UpdateLdapTarget.  # noqa: E501
 
+        Bind DN Password  # noqa: E501
 
         :return: The bind_dn_password of this UpdateLdapTarget.  # noqa: E501
         :rtype: str
@@ -167,10 +169,13 @@ class UpdateLdapTarget(object):
     def bind_dn_password(self, bind_dn_password):
         """Sets the bind_dn_password of this UpdateLdapTarget.
 
+        Bind DN Password  # noqa: E501
 
         :param bind_dn_password: The bind_dn_password of this UpdateLdapTarget.  # noqa: E501
         :type: str
         """
+        if self.local_vars_configuration.client_side_validation and bind_dn_password is None:  # noqa: E501
+            raise ValueError("Invalid value for `bind_dn_password`, must not be `None`")  # noqa: E501
 
         self._bind_dn_password = bind_dn_password
 
@@ -293,6 +298,7 @@ class UpdateLdapTarget(object):
     def ldap_ca_cert(self):
         """Gets the ldap_ca_cert of this UpdateLdapTarget.  # noqa: E501
 
+        CA Certificate File Content  # noqa: E501
 
         :return: The ldap_ca_cert of this UpdateLdapTarget.  # noqa: E501
         :rtype: str
@@ -303,6 +309,7 @@ class UpdateLdapTarget(object):
     def ldap_ca_cert(self, ldap_ca_cert):
         """Sets the ldap_ca_cert of this UpdateLdapTarget.
 
+        CA Certificate File Content  # noqa: E501
 
         :param ldap_ca_cert: The ldap_ca_cert of this UpdateLdapTarget.  # noqa: E501
         :type: str
@@ -314,6 +321,7 @@ class UpdateLdapTarget(object):
     def ldap_url(self):
         """Gets the ldap_url of this UpdateLdapTarget.  # noqa: E501
 
+        LDAP Server URL  # noqa: E501
 
         :return: The ldap_url of this UpdateLdapTarget.  # noqa: E501
         :rtype: str
@@ -324,10 +332,13 @@ class UpdateLdapTarget(object):
     def ldap_url(self, ldap_url):
         """Sets the ldap_url of this UpdateLdapTarget.
 
+        LDAP Server URL  # noqa: E501
 
         :param ldap_url: The ldap_url of this UpdateLdapTarget.  # noqa: E501
         :type: str
         """
+        if self.local_vars_configuration.client_side_validation and ldap_url is None:  # noqa: E501
+            raise ValueError("Invalid value for `ldap_url`, must not be `None`")  # noqa: E501
 
         self._ldap_url = ldap_url
 
@@ -452,6 +463,7 @@ class UpdateLdapTarget(object):
     def token_expiration(self):
         """Gets the token_expiration of this UpdateLdapTarget.  # noqa: E501
 
+        Token expiration  # noqa: E501
 
         :return: The token_expiration of this UpdateLdapTarget.  # noqa: E501
         :rtype: str
@@ -462,6 +474,7 @@ class UpdateLdapTarget(object):
     def token_expiration(self, token_expiration):
         """Sets the token_expiration of this UpdateLdapTarget.
 
+        Token expiration  # noqa: E501
 
         :param token_expiration: The token_expiration of this UpdateLdapTarget.  # noqa: E501
         :type: str

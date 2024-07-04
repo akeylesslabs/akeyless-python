@@ -36,6 +36,7 @@ class UpdateAuthMethodAzureAD(object):
     openapi_types = {
         'access_expires': 'int',
         'audience': 'str',
+        'audit_logs_claims': 'list[str]',
         'bound_group_id': 'list[str]',
         'bound_ips': 'list[str]',
         'bound_providers': 'list[str]',
@@ -63,6 +64,7 @@ class UpdateAuthMethodAzureAD(object):
     attribute_map = {
         'access_expires': 'access-expires',
         'audience': 'audience',
+        'audit_logs_claims': 'audit-logs-claims',
         'bound_group_id': 'bound-group-id',
         'bound_ips': 'bound-ips',
         'bound_providers': 'bound-providers',
@@ -87,7 +89,7 @@ class UpdateAuthMethodAzureAD(object):
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, access_expires=0, audience='https://management.azure.com/', bound_group_id=None, bound_ips=None, bound_providers=None, bound_resource_id=None, bound_resource_names=None, bound_resource_types=None, bound_rg_id=None, bound_spid=None, bound_sub_id=None, bound_tenant_id=None, description=None, force_sub_claims=None, gw_bound_ips=None, issuer='https://sts.windows.net/---bound_tenant_id---', json=False, jwks_uri='https://login.microsoftonline.com/common/discovery/keys', jwt_ttl=0, name=None, new_name=None, product_type=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, access_expires=0, audience='https://management.azure.com/', audit_logs_claims=None, bound_group_id=None, bound_ips=None, bound_providers=None, bound_resource_id=None, bound_resource_names=None, bound_resource_types=None, bound_rg_id=None, bound_spid=None, bound_sub_id=None, bound_tenant_id=None, description=None, force_sub_claims=None, gw_bound_ips=None, issuer='https://sts.windows.net/---bound_tenant_id---', json=False, jwks_uri='https://login.microsoftonline.com/common/discovery/keys', jwt_ttl=0, name=None, new_name=None, product_type=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """UpdateAuthMethodAzureAD - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -95,6 +97,7 @@ class UpdateAuthMethodAzureAD(object):
 
         self._access_expires = None
         self._audience = None
+        self._audit_logs_claims = None
         self._bound_group_id = None
         self._bound_ips = None
         self._bound_providers = None
@@ -123,6 +126,8 @@ class UpdateAuthMethodAzureAD(object):
             self.access_expires = access_expires
         if audience is not None:
             self.audience = audience
+        if audit_logs_claims is not None:
+            self.audit_logs_claims = audit_logs_claims
         if bound_group_id is not None:
             self.bound_group_id = bound_group_id
         if bound_ips is not None:
@@ -211,6 +216,29 @@ class UpdateAuthMethodAzureAD(object):
         """
 
         self._audience = audience
+
+    @property
+    def audit_logs_claims(self):
+        """Gets the audit_logs_claims of this UpdateAuthMethodAzureAD.  # noqa: E501
+
+        Subclaims to include in audit logs, e.g \"--audit-logs-claims email --audit-logs-claims username\"  # noqa: E501
+
+        :return: The audit_logs_claims of this UpdateAuthMethodAzureAD.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._audit_logs_claims
+
+    @audit_logs_claims.setter
+    def audit_logs_claims(self, audit_logs_claims):
+        """Sets the audit_logs_claims of this UpdateAuthMethodAzureAD.
+
+        Subclaims to include in audit logs, e.g \"--audit-logs-claims email --audit-logs-claims username\"  # noqa: E501
+
+        :param audit_logs_claims: The audit_logs_claims of this UpdateAuthMethodAzureAD.  # noqa: E501
+        :type: list[str]
+        """
+
+        self._audit_logs_claims = audit_logs_claims
 
     @property
     def bound_group_id(self):

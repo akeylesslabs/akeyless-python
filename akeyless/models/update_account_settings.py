@@ -35,6 +35,7 @@ class UpdateAccountSettings(object):
     """
     openapi_types = {
         'address': 'str',
+        'bound_ips': 'list[str]',
         'city': 'str',
         'company_name': 'str',
         'country': 'str',
@@ -46,6 +47,7 @@ class UpdateAccountSettings(object):
         'dynamic_secret_max_ttl_enable': 'str',
         'enable_item_sharing': 'str',
         'force_new_versions': 'str',
+        'gw_bound_ips': 'list[str]',
         'invalid_characters': 'str',
         'item_type': 'str',
         'items_deletion_protection': 'str',
@@ -53,7 +55,9 @@ class UpdateAccountSettings(object):
         'jwt_ttl_default': 'int',
         'jwt_ttl_max': 'int',
         'jwt_ttl_min': 'int',
+        'lock_bound_ips': 'str',
         'lock_default_key': 'str',
+        'lock_gw_bound_ips': 'str',
         'max_rotation_interval': 'int',
         'max_rotation_interval_enable': 'str',
         'max_versions': 'str',
@@ -73,6 +77,7 @@ class UpdateAccountSettings(object):
 
     attribute_map = {
         'address': 'address',
+        'bound_ips': 'bound-ips',
         'city': 'city',
         'company_name': 'company-name',
         'country': 'country',
@@ -84,6 +89,7 @@ class UpdateAccountSettings(object):
         'dynamic_secret_max_ttl_enable': 'dynamic-secret-max-ttl-enable',
         'enable_item_sharing': 'enable-item-sharing',
         'force_new_versions': 'force-new-versions',
+        'gw_bound_ips': 'gw-bound-ips',
         'invalid_characters': 'invalid-characters',
         'item_type': 'item-type',
         'items_deletion_protection': 'items-deletion-protection',
@@ -91,7 +97,9 @@ class UpdateAccountSettings(object):
         'jwt_ttl_default': 'jwt-ttl-default',
         'jwt_ttl_max': 'jwt-ttl-max',
         'jwt_ttl_min': 'jwt-ttl-min',
+        'lock_bound_ips': 'lock-bound-ips',
         'lock_default_key': 'lock-default-key',
+        'lock_gw_bound_ips': 'lock-gw-bound-ips',
         'max_rotation_interval': 'max-rotation-interval',
         'max_rotation_interval_enable': 'max-rotation-interval-enable',
         'max_versions': 'max-versions',
@@ -109,13 +117,14 @@ class UpdateAccountSettings(object):
         'use_capital_letters': 'use_capital-letters'
     }
 
-    def __init__(self, address=None, city=None, company_name=None, country=None, default_key_name=None, default_share_link_ttl_minutes=None, default_versioning=None, dp_enable_classic_key_protection=None, dynamic_secret_max_ttl=None, dynamic_secret_max_ttl_enable=None, enable_item_sharing=None, force_new_versions=None, invalid_characters='notReceivedInvalidCharacter', item_type=None, items_deletion_protection=None, json=False, jwt_ttl_default=None, jwt_ttl_max=None, jwt_ttl_min=None, lock_default_key=None, max_rotation_interval=None, max_rotation_interval_enable=None, max_versions=None, password_length=None, phone=None, postal_code=None, token=None, uid_token=None, usage_event_enable=None, usage_event_interval=None, usage_event_object_type=None, use_lower_letters=None, use_numbers=None, use_special_characters=None, use_capital_letters=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, address=None, bound_ips=None, city=None, company_name=None, country=None, default_key_name=None, default_share_link_ttl_minutes=None, default_versioning=None, dp_enable_classic_key_protection=None, dynamic_secret_max_ttl=None, dynamic_secret_max_ttl_enable=None, enable_item_sharing=None, force_new_versions=None, gw_bound_ips=None, invalid_characters='notReceivedInvalidCharacter', item_type=None, items_deletion_protection=None, json=False, jwt_ttl_default=None, jwt_ttl_max=None, jwt_ttl_min=None, lock_bound_ips=None, lock_default_key=None, lock_gw_bound_ips=None, max_rotation_interval=None, max_rotation_interval_enable=None, max_versions=None, password_length=None, phone=None, postal_code=None, token=None, uid_token=None, usage_event_enable=None, usage_event_interval=None, usage_event_object_type=None, use_lower_letters=None, use_numbers=None, use_special_characters=None, use_capital_letters=None, local_vars_configuration=None):  # noqa: E501
         """UpdateAccountSettings - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._address = None
+        self._bound_ips = None
         self._city = None
         self._company_name = None
         self._country = None
@@ -127,6 +136,7 @@ class UpdateAccountSettings(object):
         self._dynamic_secret_max_ttl_enable = None
         self._enable_item_sharing = None
         self._force_new_versions = None
+        self._gw_bound_ips = None
         self._invalid_characters = None
         self._item_type = None
         self._items_deletion_protection = None
@@ -134,7 +144,9 @@ class UpdateAccountSettings(object):
         self._jwt_ttl_default = None
         self._jwt_ttl_max = None
         self._jwt_ttl_min = None
+        self._lock_bound_ips = None
         self._lock_default_key = None
+        self._lock_gw_bound_ips = None
         self._max_rotation_interval = None
         self._max_rotation_interval_enable = None
         self._max_versions = None
@@ -154,6 +166,8 @@ class UpdateAccountSettings(object):
 
         if address is not None:
             self.address = address
+        if bound_ips is not None:
+            self.bound_ips = bound_ips
         if city is not None:
             self.city = city
         if company_name is not None:
@@ -176,6 +190,8 @@ class UpdateAccountSettings(object):
             self.enable_item_sharing = enable_item_sharing
         if force_new_versions is not None:
             self.force_new_versions = force_new_versions
+        if gw_bound_ips is not None:
+            self.gw_bound_ips = gw_bound_ips
         if invalid_characters is not None:
             self.invalid_characters = invalid_characters
         if item_type is not None:
@@ -190,8 +206,12 @@ class UpdateAccountSettings(object):
             self.jwt_ttl_max = jwt_ttl_max
         if jwt_ttl_min is not None:
             self.jwt_ttl_min = jwt_ttl_min
+        if lock_bound_ips is not None:
+            self.lock_bound_ips = lock_bound_ips
         if lock_default_key is not None:
             self.lock_default_key = lock_default_key
+        if lock_gw_bound_ips is not None:
+            self.lock_gw_bound_ips = lock_gw_bound_ips
         if max_rotation_interval is not None:
             self.max_rotation_interval = max_rotation_interval
         if max_rotation_interval_enable is not None:
@@ -245,6 +265,29 @@ class UpdateAccountSettings(object):
         """
 
         self._address = address
+
+    @property
+    def bound_ips(self):
+        """Gets the bound_ips of this UpdateAccountSettings.  # noqa: E501
+
+        A default list of comma-separated CIDR block that are allowed to authenticate.  # noqa: E501
+
+        :return: The bound_ips of this UpdateAccountSettings.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._bound_ips
+
+    @bound_ips.setter
+    def bound_ips(self, bound_ips):
+        """Sets the bound_ips of this UpdateAccountSettings.
+
+        A default list of comma-separated CIDR block that are allowed to authenticate.  # noqa: E501
+
+        :param bound_ips: The bound_ips of this UpdateAccountSettings.  # noqa: E501
+        :type: list[str]
+        """
+
+        self._bound_ips = bound_ips
 
     @property
     def city(self):
@@ -500,6 +543,29 @@ class UpdateAccountSettings(object):
         self._force_new_versions = force_new_versions
 
     @property
+    def gw_bound_ips(self):
+        """Gets the gw_bound_ips of this UpdateAccountSettings.  # noqa: E501
+
+        A default list of comma-separated CIDR block that acts as a trusted Gateway entity.  # noqa: E501
+
+        :return: The gw_bound_ips of this UpdateAccountSettings.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._gw_bound_ips
+
+    @gw_bound_ips.setter
+    def gw_bound_ips(self, gw_bound_ips):
+        """Sets the gw_bound_ips of this UpdateAccountSettings.
+
+        A default list of comma-separated CIDR block that acts as a trusted Gateway entity.  # noqa: E501
+
+        :param gw_bound_ips: The gw_bound_ips of this UpdateAccountSettings.  # noqa: E501
+        :type: list[str]
+        """
+
+        self._gw_bound_ips = gw_bound_ips
+
+    @property
     def invalid_characters(self):
         """Gets the invalid_characters of this UpdateAccountSettings.  # noqa: E501
 
@@ -661,6 +727,29 @@ class UpdateAccountSettings(object):
         self._jwt_ttl_min = jwt_ttl_min
 
     @property
+    def lock_bound_ips(self):
+        """Gets the lock_bound_ips of this UpdateAccountSettings.  # noqa: E501
+
+        Lock bound-ips setting globally in the account.  # noqa: E501
+
+        :return: The lock_bound_ips of this UpdateAccountSettings.  # noqa: E501
+        :rtype: str
+        """
+        return self._lock_bound_ips
+
+    @lock_bound_ips.setter
+    def lock_bound_ips(self, lock_bound_ips):
+        """Sets the lock_bound_ips of this UpdateAccountSettings.
+
+        Lock bound-ips setting globally in the account.  # noqa: E501
+
+        :param lock_bound_ips: The lock_bound_ips of this UpdateAccountSettings.  # noqa: E501
+        :type: str
+        """
+
+        self._lock_bound_ips = lock_bound_ips
+
+    @property
     def lock_default_key(self):
         """Gets the lock_default_key of this UpdateAccountSettings.  # noqa: E501
 
@@ -682,6 +771,29 @@ class UpdateAccountSettings(object):
         """
 
         self._lock_default_key = lock_default_key
+
+    @property
+    def lock_gw_bound_ips(self):
+        """Gets the lock_gw_bound_ips of this UpdateAccountSettings.  # noqa: E501
+
+        Lock gw-bound-ips setting in the account.  # noqa: E501
+
+        :return: The lock_gw_bound_ips of this UpdateAccountSettings.  # noqa: E501
+        :rtype: str
+        """
+        return self._lock_gw_bound_ips
+
+    @lock_gw_bound_ips.setter
+    def lock_gw_bound_ips(self, lock_gw_bound_ips):
+        """Sets the lock_gw_bound_ips of this UpdateAccountSettings.
+
+        Lock gw-bound-ips setting in the account.  # noqa: E501
+
+        :param lock_gw_bound_ips: The lock_gw_bound_ips of this UpdateAccountSettings.  # noqa: E501
+        :type: str
+        """
+
+        self._lock_gw_bound_ips = lock_gw_bound_ips
 
     @property
     def max_rotation_interval(self):

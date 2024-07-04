@@ -36,6 +36,7 @@ class CreateAuthMethodOAuth2(object):
     openapi_types = {
         'access_expires': 'int',
         'audience': 'str',
+        'audit_logs_claims': 'list[str]',
         'bound_client_ids': 'list[str]',
         'bound_ips': 'list[str]',
         'cert': 'str',
@@ -60,6 +61,7 @@ class CreateAuthMethodOAuth2(object):
     attribute_map = {
         'access_expires': 'access-expires',
         'audience': 'audience',
+        'audit_logs_claims': 'audit-logs-claims',
         'bound_client_ids': 'bound-client-ids',
         'bound_ips': 'bound-ips',
         'cert': 'cert',
@@ -81,7 +83,7 @@ class CreateAuthMethodOAuth2(object):
         'unique_identifier': 'unique-identifier'
     }
 
-    def __init__(self, access_expires=0, audience=None, bound_client_ids=None, bound_ips=None, cert=None, cert_file_data=None, description=None, force_sub_claims=None, gateway_url=None, gw_bound_ips=None, issuer=None, json=False, jwks_json_data=None, jwks_uri='default_jwks_url', jwt_ttl=0, name=None, product_type=None, subclaims_delimiters=None, token=None, uid_token=None, unique_identifier=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, access_expires=0, audience=None, audit_logs_claims=None, bound_client_ids=None, bound_ips=None, cert=None, cert_file_data=None, description=None, force_sub_claims=None, gateway_url=None, gw_bound_ips=None, issuer=None, json=False, jwks_json_data=None, jwks_uri='default_jwks_url', jwt_ttl=0, name=None, product_type=None, subclaims_delimiters=None, token=None, uid_token=None, unique_identifier=None, local_vars_configuration=None):  # noqa: E501
         """CreateAuthMethodOAuth2 - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -89,6 +91,7 @@ class CreateAuthMethodOAuth2(object):
 
         self._access_expires = None
         self._audience = None
+        self._audit_logs_claims = None
         self._bound_client_ids = None
         self._bound_ips = None
         self._cert = None
@@ -114,6 +117,8 @@ class CreateAuthMethodOAuth2(object):
             self.access_expires = access_expires
         if audience is not None:
             self.audience = audience
+        if audit_logs_claims is not None:
+            self.audit_logs_claims = audit_logs_claims
         if bound_client_ids is not None:
             self.bound_client_ids = bound_client_ids
         if bound_ips is not None:
@@ -195,6 +200,29 @@ class CreateAuthMethodOAuth2(object):
         """
 
         self._audience = audience
+
+    @property
+    def audit_logs_claims(self):
+        """Gets the audit_logs_claims of this CreateAuthMethodOAuth2.  # noqa: E501
+
+        Subclaims to include in audit logs, e.g \"--audit-logs-claims email --audit-logs-claims username\"  # noqa: E501
+
+        :return: The audit_logs_claims of this CreateAuthMethodOAuth2.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._audit_logs_claims
+
+    @audit_logs_claims.setter
+    def audit_logs_claims(self, audit_logs_claims):
+        """Sets the audit_logs_claims of this CreateAuthMethodOAuth2.
+
+        Subclaims to include in audit logs, e.g \"--audit-logs-claims email --audit-logs-claims username\"  # noqa: E501
+
+        :param audit_logs_claims: The audit_logs_claims of this CreateAuthMethodOAuth2.  # noqa: E501
+        :type: list[str]
+        """
+
+        self._audit_logs_claims = audit_logs_claims
 
     @property
     def bound_client_ids(self):
