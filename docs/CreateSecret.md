@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 **accessibility** | **str** | for personal password manager | [optional] [default to 'regular']
 **change_event** | **str** | Trigger an event when a secret value changed [true/false] (Relevant only for Static Secret) | [optional] 
 **custom_field** | **dict(str, str)** | For Password Management use, additional fields | [optional] 
-**delete_protection** | **str** | Protection from accidental deletion of this item [true/false] | [optional] 
+**delete_protection** | **str** | Protection from accidental deletion of this object [true/false] | [optional] 
 **description** | **str** | Description of the object | [optional] 
 **format** | **str** | Secret format [text/json] (relevant only for type &#39;generic&#39;) | [optional] [default to 'text']
 **inject_url** | **list[str]** | For Password Management use, reflect the website context | [optional] 

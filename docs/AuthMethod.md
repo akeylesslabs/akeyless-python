@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **auth_method_roles_assoc** | [**list[AuthMethodRoleAssociation]**](AuthMethodRoleAssociation.md) |  | [optional] 
 **client_permissions** | **list[str]** |  | [optional] 
 **creation_date** | **datetime** |  | [optional] 
+**delete_protection** | **bool** |  | [optional] 
 **description** | **str** |  | [optional] 
 **is_approved** | **bool** |  | [optional] 
 **modification_date** | **datetime** |  | [optional] 

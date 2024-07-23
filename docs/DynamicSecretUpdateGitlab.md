@@ -4,7 +4,7 @@ dynamicSecretUpdateGitlab is a command that updates gitlab dynamic secret
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**delete_protection** | **str** | Protection from accidental deletion of this item [true/false] | [optional] 
+**delete_protection** | **str** | Protection from accidental deletion of this object [true/false] | [optional] 
 **description** | **str** | Description of the object | [optional] 
 **gitlab_access_token** | **str** | Gitlab access token | [optional] 
 **gitlab_access_type** | **str** | Gitlab access token type [project,group] | 

@@ -5,7 +5,7 @@ dynamicSecretUpdatePostgreSql is a command that updates postgresql dynamic secre
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **creation_statements** | **str** | PostgreSQL Creation statements | [optional] 
-**delete_protection** | **str** | Protection from accidental deletion of this item [true/false] | [optional] 
+**delete_protection** | **str** | Protection from accidental deletion of this object [true/false] | [optional] 
 **description** | **str** | Description of the object | [optional] 
 **json** | **bool** | Set output format to JSON | [optional] [default to False]
 **name** | **str** | Dynamic secret name | 

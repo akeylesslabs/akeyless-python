@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **cassandra_password** | **str** | Cassandra superuser password | [optional] 
 **cassandra_port** | **str** | Cassandra port | [optional] [default to '9042']
 **cassandra_username** | **str** | Cassandra superuser username | [optional] 
-**delete_protection** | **str** | Protection from accidental deletion of this item [true/false] | [optional] 
+**delete_protection** | **str** | Protection from accidental deletion of this object [true/false] | [optional] 
 **json** | **bool** | Set output format to JSON | [optional] [default to False]
 **name** | **str** | Dynamic secret name | 
 **password_length** | **str** | The length of the password to be generated | [optional] 

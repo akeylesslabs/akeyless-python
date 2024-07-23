@@ -41,6 +41,7 @@ class AuthMethodCreateOIDC(object):
         'bound_ips': 'list[str]',
         'client_id': 'str',
         'client_secret': 'str',
+        'delete_protection': 'str',
         'description': 'str',
         'force_sub_claims': 'bool',
         'gw_bound_ips': 'list[str]',
@@ -65,6 +66,7 @@ class AuthMethodCreateOIDC(object):
         'bound_ips': 'bound-ips',
         'client_id': 'client-id',
         'client_secret': 'client-secret',
+        'delete_protection': 'delete_protection',
         'description': 'description',
         'force_sub_claims': 'force-sub-claims',
         'gw_bound_ips': 'gw-bound-ips',
@@ -81,7 +83,7 @@ class AuthMethodCreateOIDC(object):
         'unique_identifier': 'unique-identifier'
     }
 
-    def __init__(self, access_expires=0, allowed_redirect_uri=None, audience=None, audit_logs_claims=None, bound_ips=None, client_id=None, client_secret=None, description=None, force_sub_claims=None, gw_bound_ips=None, issuer=None, json=False, jwt_ttl=0, name=None, product_type=None, required_scopes=None, required_scopes_prefix=None, subclaims_delimiters=None, token=None, uid_token=None, unique_identifier=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, access_expires=0, allowed_redirect_uri=None, audience=None, audit_logs_claims=None, bound_ips=None, client_id=None, client_secret=None, delete_protection=None, description=None, force_sub_claims=None, gw_bound_ips=None, issuer=None, json=False, jwt_ttl=0, name=None, product_type=None, required_scopes=None, required_scopes_prefix=None, subclaims_delimiters=None, token=None, uid_token=None, unique_identifier=None, local_vars_configuration=None):  # noqa: E501
         """AuthMethodCreateOIDC - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -94,6 +96,7 @@ class AuthMethodCreateOIDC(object):
         self._bound_ips = None
         self._client_id = None
         self._client_secret = None
+        self._delete_protection = None
         self._description = None
         self._force_sub_claims = None
         self._gw_bound_ips = None
@@ -124,6 +127,8 @@ class AuthMethodCreateOIDC(object):
             self.client_id = client_id
         if client_secret is not None:
             self.client_secret = client_secret
+        if delete_protection is not None:
+            self.delete_protection = delete_protection
         if description is not None:
             self.description = description
         if force_sub_claims is not None:
@@ -311,6 +316,29 @@ class AuthMethodCreateOIDC(object):
         """
 
         self._client_secret = client_secret
+
+    @property
+    def delete_protection(self):
+        """Gets the delete_protection of this AuthMethodCreateOIDC.  # noqa: E501
+
+        Protection from accidental deletion of this object [true/false]  # noqa: E501
+
+        :return: The delete_protection of this AuthMethodCreateOIDC.  # noqa: E501
+        :rtype: str
+        """
+        return self._delete_protection
+
+    @delete_protection.setter
+    def delete_protection(self, delete_protection):
+        """Sets the delete_protection of this AuthMethodCreateOIDC.
+
+        Protection from accidental deletion of this object [true/false]  # noqa: E501
+
+        :param delete_protection: The delete_protection of this AuthMethodCreateOIDC.  # noqa: E501
+        :type: str
+        """
+
+        self._delete_protection = delete_protection
 
     @property
     def description(self):

@@ -34,6 +34,7 @@ class RenewCertificate(object):
                             and the value is json key in definition.
     """
     openapi_types = {
+        'cert_issuer_name': 'str',
         'generate_key': 'bool',
         'item_id': 'int',
         'json': 'bool',
@@ -43,6 +44,7 @@ class RenewCertificate(object):
     }
 
     attribute_map = {
+        'cert_issuer_name': 'cert-issuer-name',
         'generate_key': 'generate-key',
         'item_id': 'item-id',
         'json': 'json',
@@ -51,12 +53,13 @@ class RenewCertificate(object):
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, generate_key=None, item_id=None, json=False, name=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, cert_issuer_name=None, generate_key=None, item_id=None, json=False, name=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """RenewCertificate - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
+        self._cert_issuer_name = None
         self._generate_key = None
         self._item_id = None
         self._json = None
@@ -65,6 +68,8 @@ class RenewCertificate(object):
         self._uid_token = None
         self.discriminator = None
 
+        if cert_issuer_name is not None:
+            self.cert_issuer_name = cert_issuer_name
         if generate_key is not None:
             self.generate_key = generate_key
         if item_id is not None:
@@ -77,6 +82,29 @@ class RenewCertificate(object):
             self.token = token
         if uid_token is not None:
             self.uid_token = uid_token
+
+    @property
+    def cert_issuer_name(self):
+        """Gets the cert_issuer_name of this RenewCertificate.  # noqa: E501
+
+        The name of the PKI certificate issuer  # noqa: E501
+
+        :return: The cert_issuer_name of this RenewCertificate.  # noqa: E501
+        :rtype: str
+        """
+        return self._cert_issuer_name
+
+    @cert_issuer_name.setter
+    def cert_issuer_name(self, cert_issuer_name):
+        """Sets the cert_issuer_name of this RenewCertificate.
+
+        The name of the PKI certificate issuer  # noqa: E501
+
+        :param cert_issuer_name: The cert_issuer_name of this RenewCertificate.  # noqa: E501
+        :type: str
+        """
+
+        self._cert_issuer_name = cert_issuer_name
 
     @property
     def generate_key(self):

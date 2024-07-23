@@ -39,6 +39,7 @@ class Role(object):
         'client_permissions': 'list[str]',
         'comment': 'str',
         'creation_date': 'datetime',
+        'delete_protection': 'bool',
         'modification_date': 'datetime',
         'role_auth_methods_assoc': 'list[RoleAuthMethodAssociation]',
         'role_name': 'str',
@@ -51,13 +52,14 @@ class Role(object):
         'client_permissions': 'client_permissions',
         'comment': 'comment',
         'creation_date': 'creation_date',
+        'delete_protection': 'delete_protection',
         'modification_date': 'modification_date',
         'role_auth_methods_assoc': 'role_auth_methods_assoc',
         'role_name': 'role_name',
         'rules': 'rules'
     }
 
-    def __init__(self, access_date=None, access_date_display=None, client_permissions=None, comment=None, creation_date=None, modification_date=None, role_auth_methods_assoc=None, role_name=None, rules=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, access_date=None, access_date_display=None, client_permissions=None, comment=None, creation_date=None, delete_protection=None, modification_date=None, role_auth_methods_assoc=None, role_name=None, rules=None, local_vars_configuration=None):  # noqa: E501
         """Role - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -68,6 +70,7 @@ class Role(object):
         self._client_permissions = None
         self._comment = None
         self._creation_date = None
+        self._delete_protection = None
         self._modification_date = None
         self._role_auth_methods_assoc = None
         self._role_name = None
@@ -84,6 +87,8 @@ class Role(object):
             self.comment = comment
         if creation_date is not None:
             self.creation_date = creation_date
+        if delete_protection is not None:
+            self.delete_protection = delete_protection
         if modification_date is not None:
             self.modification_date = modification_date
         if role_auth_methods_assoc is not None:
@@ -197,6 +202,27 @@ class Role(object):
         """
 
         self._creation_date = creation_date
+
+    @property
+    def delete_protection(self):
+        """Gets the delete_protection of this Role.  # noqa: E501
+
+
+        :return: The delete_protection of this Role.  # noqa: E501
+        :rtype: bool
+        """
+        return self._delete_protection
+
+    @delete_protection.setter
+    def delete_protection(self, delete_protection):
+        """Sets the delete_protection of this Role.
+
+
+        :param delete_protection: The delete_protection of this Role.  # noqa: E501
+        :type: bool
+        """
+
+        self._delete_protection = delete_protection
 
     @property
     def modification_date(self):

@@ -5,7 +5,7 @@ CreateESM is a command that creates an External Secrets Manager. [Deprecated: Us
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **azure_kv_name** | **str** | Azure Key Vault name (Relevant only for Azure targets) | [optional] 
-**delete_protection** | **str** | Protection from accidental deletion of this item [true/false] | [optional] 
+**delete_protection** | **str** | Protection from accidental deletion of this object [true/false] | [optional] 
 **description** | **str** | Description of the External Secrets Manager | [optional] 
 **json** | **bool** | Set output format to JSON | [optional] [default to False]
 **k8s_namespace** | **str** | K8s namespace (Relevant to Kubernetes targets) | [optional] 

@@ -36,6 +36,7 @@ class UpdateRole(object):
     openapi_types = {
         'analytics_access': 'str',
         'audit_access': 'str',
+        'delete_protection': 'str',
         'description': 'str',
         'event_center_access': 'str',
         'event_forwarder_access': 'str',
@@ -53,6 +54,7 @@ class UpdateRole(object):
     attribute_map = {
         'analytics_access': 'analytics-access',
         'audit_access': 'audit-access',
+        'delete_protection': 'delete_protection',
         'description': 'description',
         'event_center_access': 'event-center-access',
         'event_forwarder_access': 'event-forwarder-access',
@@ -67,7 +69,7 @@ class UpdateRole(object):
         'usage_reports_access': 'usage-reports-access'
     }
 
-    def __init__(self, analytics_access=None, audit_access=None, description='default_comment', event_center_access=None, event_forwarder_access=None, gw_analytics_access=None, json=False, name=None, new_comment='default_comment', new_name=None, sra_reports_access=None, token=None, uid_token=None, usage_reports_access=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, analytics_access=None, audit_access=None, delete_protection=None, description='default_comment', event_center_access=None, event_forwarder_access=None, gw_analytics_access=None, json=False, name=None, new_comment='default_comment', new_name=None, sra_reports_access=None, token=None, uid_token=None, usage_reports_access=None, local_vars_configuration=None):  # noqa: E501
         """UpdateRole - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -75,6 +77,7 @@ class UpdateRole(object):
 
         self._analytics_access = None
         self._audit_access = None
+        self._delete_protection = None
         self._description = None
         self._event_center_access = None
         self._event_forwarder_access = None
@@ -93,6 +96,8 @@ class UpdateRole(object):
             self.analytics_access = analytics_access
         if audit_access is not None:
             self.audit_access = audit_access
+        if delete_protection is not None:
+            self.delete_protection = delete_protection
         if description is not None:
             self.description = description
         if event_center_access is not None:
@@ -162,6 +167,29 @@ class UpdateRole(object):
         """
 
         self._audit_access = audit_access
+
+    @property
+    def delete_protection(self):
+        """Gets the delete_protection of this UpdateRole.  # noqa: E501
+
+        Protection from accidental deletion of this object [true/false]  # noqa: E501
+
+        :return: The delete_protection of this UpdateRole.  # noqa: E501
+        :rtype: str
+        """
+        return self._delete_protection
+
+    @delete_protection.setter
+    def delete_protection(self, delete_protection):
+        """Sets the delete_protection of this UpdateRole.
+
+        Protection from accidental deletion of this object [true/false]  # noqa: E501
+
+        :param delete_protection: The delete_protection of this UpdateRole.  # noqa: E501
+        :type: str
+        """
+
+        self._delete_protection = delete_protection
 
     @property
     def description(self):

@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **chef_server_key** | **str** | Server key | [optional] 
 **chef_server_url** | **str** | Server URL | [optional] 
 **chef_server_username** | **str** | Server username | [optional] 
-**delete_protection** | **str** | Protection from accidental deletion of this item [true/false] | [optional] 
+**delete_protection** | **str** | Protection from accidental deletion of this object [true/false] | [optional] 
 **json** | **bool** | Set output format to JSON | [optional] [default to False]
 **name** | **str** | Dynamic secret name | 
 **new_name** | **str** | Dynamic secret name | [optional] 

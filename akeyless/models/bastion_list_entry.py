@@ -40,6 +40,7 @@ class BastionListEntry(object):
         'allowed_urls_per_instance': 'dict(str, list[str])',
         'cluster_name': 'str',
         'display_name': 'str',
+        'has_gateway_identity': 'bool',
         'last_report': 'datetime'
     }
 
@@ -50,10 +51,11 @@ class BastionListEntry(object):
         'allowed_urls_per_instance': 'allowed_urls_per_instance',
         'cluster_name': 'cluster_name',
         'display_name': 'display_name',
+        'has_gateway_identity': 'has_gateway_identity',
         'last_report': 'last_report'
     }
 
-    def __init__(self, access_id=None, allowed_access_ids=None, allowed_urls=None, allowed_urls_per_instance=None, cluster_name=None, display_name=None, last_report=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, access_id=None, allowed_access_ids=None, allowed_urls=None, allowed_urls_per_instance=None, cluster_name=None, display_name=None, has_gateway_identity=None, last_report=None, local_vars_configuration=None):  # noqa: E501
         """BastionListEntry - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -65,6 +67,7 @@ class BastionListEntry(object):
         self._allowed_urls_per_instance = None
         self._cluster_name = None
         self._display_name = None
+        self._has_gateway_identity = None
         self._last_report = None
         self.discriminator = None
 
@@ -80,6 +83,8 @@ class BastionListEntry(object):
             self.cluster_name = cluster_name
         if display_name is not None:
             self.display_name = display_name
+        if has_gateway_identity is not None:
+            self.has_gateway_identity = has_gateway_identity
         if last_report is not None:
             self.last_report = last_report
 
@@ -208,6 +213,27 @@ class BastionListEntry(object):
         """
 
         self._display_name = display_name
+
+    @property
+    def has_gateway_identity(self):
+        """Gets the has_gateway_identity of this BastionListEntry.  # noqa: E501
+
+
+        :return: The has_gateway_identity of this BastionListEntry.  # noqa: E501
+        :rtype: bool
+        """
+        return self._has_gateway_identity
+
+    @has_gateway_identity.setter
+    def has_gateway_identity(self, has_gateway_identity):
+        """Sets the has_gateway_identity of this BastionListEntry.
+
+
+        :param has_gateway_identity: The has_gateway_identity of this BastionListEntry.  # noqa: E501
+        :type: bool
+        """
+
+        self._has_gateway_identity = has_gateway_identity
 
     @property
     def last_report(self):

@@ -38,6 +38,7 @@ class CreateAuthMethodSAML(object):
         'allowed_redirect_uri': 'list[str]',
         'audit_logs_claims': 'list[str]',
         'bound_ips': 'list[str]',
+        'delete_protection': 'str',
         'description': 'str',
         'force_sub_claims': 'bool',
         'gw_bound_ips': 'list[str]',
@@ -58,6 +59,7 @@ class CreateAuthMethodSAML(object):
         'allowed_redirect_uri': 'allowed-redirect-uri',
         'audit_logs_claims': 'audit-logs-claims',
         'bound_ips': 'bound-ips',
+        'delete_protection': 'delete_protection',
         'description': 'description',
         'force_sub_claims': 'force-sub-claims',
         'gw_bound_ips': 'gw-bound-ips',
@@ -73,7 +75,7 @@ class CreateAuthMethodSAML(object):
         'unique_identifier': 'unique-identifier'
     }
 
-    def __init__(self, access_expires=0, allowed_redirect_uri=None, audit_logs_claims=None, bound_ips=None, description=None, force_sub_claims=None, gw_bound_ips=None, idp_metadata_url=None, idp_metadata_xml_data=None, json=False, jwt_ttl=0, name=None, product_type=None, subclaims_delimiters=None, token=None, uid_token=None, unique_identifier=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, access_expires=0, allowed_redirect_uri=None, audit_logs_claims=None, bound_ips=None, delete_protection=None, description=None, force_sub_claims=None, gw_bound_ips=None, idp_metadata_url=None, idp_metadata_xml_data=None, json=False, jwt_ttl=0, name=None, product_type=None, subclaims_delimiters=None, token=None, uid_token=None, unique_identifier=None, local_vars_configuration=None):  # noqa: E501
         """CreateAuthMethodSAML - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -83,6 +85,7 @@ class CreateAuthMethodSAML(object):
         self._allowed_redirect_uri = None
         self._audit_logs_claims = None
         self._bound_ips = None
+        self._delete_protection = None
         self._description = None
         self._force_sub_claims = None
         self._gw_bound_ips = None
@@ -106,6 +109,8 @@ class CreateAuthMethodSAML(object):
             self.audit_logs_claims = audit_logs_claims
         if bound_ips is not None:
             self.bound_ips = bound_ips
+        if delete_protection is not None:
+            self.delete_protection = delete_protection
         if description is not None:
             self.description = description
         if force_sub_claims is not None:
@@ -222,6 +227,29 @@ class CreateAuthMethodSAML(object):
         """
 
         self._bound_ips = bound_ips
+
+    @property
+    def delete_protection(self):
+        """Gets the delete_protection of this CreateAuthMethodSAML.  # noqa: E501
+
+        Protection from accidental deletion of this object [true/false]  # noqa: E501
+
+        :return: The delete_protection of this CreateAuthMethodSAML.  # noqa: E501
+        :rtype: str
+        """
+        return self._delete_protection
+
+    @delete_protection.setter
+    def delete_protection(self, delete_protection):
+        """Sets the delete_protection of this CreateAuthMethodSAML.
+
+        Protection from accidental deletion of this object [true/false]  # noqa: E501
+
+        :param delete_protection: The delete_protection of this CreateAuthMethodSAML.  # noqa: E501
+        :type: str
+        """
+
+        self._delete_protection = delete_protection
 
     @property
     def description(self):

@@ -44,6 +44,7 @@ class AuthMethod(object):
         'auth_method_roles_assoc': 'list[AuthMethodRoleAssociation]',
         'client_permissions': 'list[str]',
         'creation_date': 'datetime',
+        'delete_protection': 'bool',
         'description': 'str',
         'is_approved': 'bool',
         'modification_date': 'datetime'
@@ -60,12 +61,13 @@ class AuthMethod(object):
         'auth_method_roles_assoc': 'auth_method_roles_assoc',
         'client_permissions': 'client_permissions',
         'creation_date': 'creation_date',
+        'delete_protection': 'delete_protection',
         'description': 'description',
         'is_approved': 'is_approved',
         'modification_date': 'modification_date'
     }
 
-    def __init__(self, access_date=None, access_date_display=None, access_info=None, account_id=None, associated_gw_ids=None, auth_method_access_id=None, auth_method_name=None, auth_method_roles_assoc=None, client_permissions=None, creation_date=None, description=None, is_approved=None, modification_date=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, access_date=None, access_date_display=None, access_info=None, account_id=None, associated_gw_ids=None, auth_method_access_id=None, auth_method_name=None, auth_method_roles_assoc=None, client_permissions=None, creation_date=None, delete_protection=None, description=None, is_approved=None, modification_date=None, local_vars_configuration=None):  # noqa: E501
         """AuthMethod - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -81,6 +83,7 @@ class AuthMethod(object):
         self._auth_method_roles_assoc = None
         self._client_permissions = None
         self._creation_date = None
+        self._delete_protection = None
         self._description = None
         self._is_approved = None
         self._modification_date = None
@@ -106,6 +109,8 @@ class AuthMethod(object):
             self.client_permissions = client_permissions
         if creation_date is not None:
             self.creation_date = creation_date
+        if delete_protection is not None:
+            self.delete_protection = delete_protection
         if description is not None:
             self.description = description
         if is_approved is not None:
@@ -322,6 +327,27 @@ class AuthMethod(object):
         """
 
         self._creation_date = creation_date
+
+    @property
+    def delete_protection(self):
+        """Gets the delete_protection of this AuthMethod.  # noqa: E501
+
+
+        :return: The delete_protection of this AuthMethod.  # noqa: E501
+        :rtype: bool
+        """
+        return self._delete_protection
+
+    @delete_protection.setter
+    def delete_protection(self, delete_protection):
+        """Sets the delete_protection of this AuthMethod.
+
+
+        :param delete_protection: The delete_protection of this AuthMethod.  # noqa: E501
+        :type: bool
+        """
+
+        self._delete_protection = delete_protection
 
     @property
     def description(self):

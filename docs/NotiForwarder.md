@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **endpoint** | **str** |  | [optional] 
 **event_types** | **list[str]** |  | [optional] 
 **gateway_cluster_id** | **int** |  | [optional] 
+**include_error** | **bool** |  | [optional] 
 **is_enabled** | **bool** |  | [optional] 
 **last_version** | **int** |  | [optional] 
 **modification_date** | **datetime** |  | [optional] 

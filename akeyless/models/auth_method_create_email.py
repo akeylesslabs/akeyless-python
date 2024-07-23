@@ -37,6 +37,7 @@ class AuthMethodCreateEmail(object):
         'access_expires': 'int',
         'audit_logs_claims': 'list[str]',
         'bound_ips': 'list[str]',
+        'delete_protection': 'str',
         'description': 'str',
         'email': 'str',
         'force_sub_claims': 'bool',
@@ -53,6 +54,7 @@ class AuthMethodCreateEmail(object):
         'access_expires': 'access-expires',
         'audit_logs_claims': 'audit-logs-claims',
         'bound_ips': 'bound-ips',
+        'delete_protection': 'delete_protection',
         'description': 'description',
         'email': 'email',
         'force_sub_claims': 'force-sub-claims',
@@ -65,7 +67,7 @@ class AuthMethodCreateEmail(object):
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, access_expires=0, audit_logs_claims=None, bound_ips=None, description=None, email=None, force_sub_claims=None, gw_bound_ips=None, json=False, jwt_ttl=0, name=None, product_type=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, access_expires=0, audit_logs_claims=None, bound_ips=None, delete_protection=None, description=None, email=None, force_sub_claims=None, gw_bound_ips=None, json=False, jwt_ttl=0, name=None, product_type=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """AuthMethodCreateEmail - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -74,6 +76,7 @@ class AuthMethodCreateEmail(object):
         self._access_expires = None
         self._audit_logs_claims = None
         self._bound_ips = None
+        self._delete_protection = None
         self._description = None
         self._email = None
         self._force_sub_claims = None
@@ -92,6 +95,8 @@ class AuthMethodCreateEmail(object):
             self.audit_logs_claims = audit_logs_claims
         if bound_ips is not None:
             self.bound_ips = bound_ips
+        if delete_protection is not None:
+            self.delete_protection = delete_protection
         if description is not None:
             self.description = description
         self.email = email
@@ -179,6 +184,29 @@ class AuthMethodCreateEmail(object):
         """
 
         self._bound_ips = bound_ips
+
+    @property
+    def delete_protection(self):
+        """Gets the delete_protection of this AuthMethodCreateEmail.  # noqa: E501
+
+        Protection from accidental deletion of this object [true/false]  # noqa: E501
+
+        :return: The delete_protection of this AuthMethodCreateEmail.  # noqa: E501
+        :rtype: str
+        """
+        return self._delete_protection
+
+    @delete_protection.setter
+    def delete_protection(self, delete_protection):
+        """Sets the delete_protection of this AuthMethodCreateEmail.
+
+        Protection from accidental deletion of this object [true/false]  # noqa: E501
+
+        :param delete_protection: The delete_protection of this AuthMethodCreateEmail.  # noqa: E501
+        :type: str
+        """
+
+        self._delete_protection = delete_protection
 
     @property
     def description(self):

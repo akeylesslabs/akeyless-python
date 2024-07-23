@@ -39,6 +39,7 @@ class GatewayUpdateMigration(object):
         '_1password_secret_key': 'str',
         '_1password_url': 'str',
         '_1password_vaults': 'list[str]',
+        'service_account_key_decoded': 'str',
         'ad_discover_services': 'str',
         'ad_discovery_types': 'list[str]',
         'ad_os_filter': 'str',
@@ -106,6 +107,7 @@ class GatewayUpdateMigration(object):
         '_1password_secret_key': '1password-secret-key',
         '_1password_url': '1password-url',
         '_1password_vaults': '1password-vaults',
+        'service_account_key_decoded': 'ServiceAccountKeyDecoded',
         'ad_discover_services': 'ad-discover-services',
         'ad_discovery_types': 'ad-discovery-types',
         'ad_os_filter': 'ad-os-filter',
@@ -167,7 +169,7 @@ class GatewayUpdateMigration(object):
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, _1password_email=None, _1password_password=None, _1password_secret_key=None, _1password_url=None, _1password_vaults=None, ad_discover_services='false', ad_discovery_types=None, ad_os_filter=None, ad_ssh_port='22', ad_target_format='linked', ad_targets_type='windows', ad_winrm_over_http='false', ad_winrm_port='5986', ad_auto_rotate=None, ad_computer_base_dn=None, ad_discover_local_users=None, ad_domain_name=None, ad_domain_users_path_template=None, ad_local_users_ignore=None, ad_local_users_path_template=None, ad_rotation_hour=None, ad_rotation_interval=None, ad_sra_enable_rdp=None, ad_target_name=None, ad_targets_path_template=None, ad_user_base_dn=None, ad_user_groups=None, aws_key=None, aws_key_id=None, aws_region='us-east-2', azure_client_id=None, azure_kv_name=None, azure_secret=None, azure_tenant_id=None, gcp_key=None, hashi_json='true', hashi_ns=None, hashi_token=None, hashi_url=None, id=None, json=False, k8s_ca_certificate=None, k8s_client_certificate=None, k8s_client_key=None, k8s_namespace=None, k8s_password=None, k8s_skip_system=None, k8s_token=None, k8s_url=None, k8s_username=None, name=None, new_name=None, protection_key=None, si_auto_rotate=None, si_rotation_hour=None, si_rotation_interval=None, si_sra_enable_rdp='false', si_target_name=None, si_user_groups=None, si_users_ignore=None, si_users_path_template=None, target_location=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, _1password_email=None, _1password_password=None, _1password_secret_key=None, _1password_url=None, _1password_vaults=None, service_account_key_decoded=None, ad_discover_services='false', ad_discovery_types=None, ad_os_filter=None, ad_ssh_port='22', ad_target_format='linked', ad_targets_type='windows', ad_winrm_over_http='false', ad_winrm_port='5986', ad_auto_rotate=None, ad_computer_base_dn=None, ad_discover_local_users=None, ad_domain_name=None, ad_domain_users_path_template=None, ad_local_users_ignore=None, ad_local_users_path_template=None, ad_rotation_hour=None, ad_rotation_interval=None, ad_sra_enable_rdp=None, ad_target_name=None, ad_targets_path_template=None, ad_user_base_dn=None, ad_user_groups=None, aws_key=None, aws_key_id=None, aws_region='us-east-2', azure_client_id=None, azure_kv_name=None, azure_secret=None, azure_tenant_id=None, gcp_key=None, hashi_json='true', hashi_ns=None, hashi_token=None, hashi_url=None, id=None, json=False, k8s_ca_certificate=None, k8s_client_certificate=None, k8s_client_key=None, k8s_namespace=None, k8s_password=None, k8s_skip_system=None, k8s_token=None, k8s_url=None, k8s_username=None, name=None, new_name=None, protection_key=None, si_auto_rotate=None, si_rotation_hour=None, si_rotation_interval=None, si_sra_enable_rdp='false', si_target_name=None, si_user_groups=None, si_users_ignore=None, si_users_path_template=None, target_location=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """GatewayUpdateMigration - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -178,6 +180,7 @@ class GatewayUpdateMigration(object):
         self.__1password_secret_key = None
         self.__1password_url = None
         self.__1password_vaults = None
+        self._service_account_key_decoded = None
         self._ad_discover_services = None
         self._ad_discovery_types = None
         self._ad_os_filter = None
@@ -249,6 +252,8 @@ class GatewayUpdateMigration(object):
             self._1password_url = _1password_url
         if _1password_vaults is not None:
             self._1password_vaults = _1password_vaults
+        if service_account_key_decoded is not None:
+            self.service_account_key_decoded = service_account_key_decoded
         if ad_discover_services is not None:
             self.ad_discover_services = ad_discover_services
         if ad_discovery_types is not None:
@@ -479,6 +484,27 @@ class GatewayUpdateMigration(object):
         """
 
         self.__1password_vaults = _1password_vaults
+
+    @property
+    def service_account_key_decoded(self):
+        """Gets the service_account_key_decoded of this GatewayUpdateMigration.  # noqa: E501
+
+
+        :return: The service_account_key_decoded of this GatewayUpdateMigration.  # noqa: E501
+        :rtype: str
+        """
+        return self._service_account_key_decoded
+
+    @service_account_key_decoded.setter
+    def service_account_key_decoded(self, service_account_key_decoded):
+        """Sets the service_account_key_decoded of this GatewayUpdateMigration.
+
+
+        :param service_account_key_decoded: The service_account_key_decoded of this GatewayUpdateMigration.  # noqa: E501
+        :type: str
+        """
+
+        self._service_account_key_decoded = service_account_key_decoded
 
     @property
     def ad_discover_services(self):

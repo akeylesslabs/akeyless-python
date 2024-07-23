@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **allow_subdomains** | **bool** | Allow subdomains | [optional] 
 **allowed_domains** | **list[str]** | Allowed domains | [optional] 
 **auto_generated_folder** | **str** | Auto generated folder | [optional] 
-**delete_protection** | **str** | Protection from accidental deletion of this item [true/false] | [optional] 
+**delete_protection** | **str** | Protection from accidental deletion of this object [true/false] | [optional] 
 **enable_admin_rotation** | **bool** | Automatic admin credentials rotation | [optional] [default to False]
 **json** | **bool** | Set output format to JSON | [optional] [default to False]
 **name** | **str** | Dynamic secret name | 

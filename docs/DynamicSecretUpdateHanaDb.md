@@ -4,7 +4,7 @@ dynamicSecretUpdateHanaDb is a command that updates hanadb dynamic secret
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**delete_protection** | **str** | Protection from accidental deletion of this item [true/false] | [optional] 
+**delete_protection** | **str** | Protection from accidental deletion of this object [true/false] | [optional] 
 **description** | **str** | Description of the object | [optional] 
 **hana_dbname** | **str** | HanaDb Name | [optional] 
 **hanadb_create_statements** | **str** | HanaDb Creation statements | [optional] 

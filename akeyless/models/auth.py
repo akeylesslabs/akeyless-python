@@ -54,7 +54,8 @@ class Auth(object):
         'ldap_username': 'str',
         'oci_auth_type': 'str',
         'oci_group_ocid': 'list[str]',
-        'uid_token': 'str'
+        'uid_token': 'str',
+        'use_remote_browser': 'bool'
     }
 
     attribute_map = {
@@ -78,10 +79,11 @@ class Auth(object):
         'ldap_username': 'ldap_username',
         'oci_auth_type': 'oci-auth-type',
         'oci_group_ocid': 'oci-group-ocid',
-        'uid_token': 'uid_token'
+        'uid_token': 'uid_token',
+        'use_remote_browser': 'use-remote-browser'
     }
 
-    def __init__(self, access_id=None, access_key=None, access_type='access_key', account_id=None, admin_email=None, admin_password=None, cert_data=None, cloud_id=None, debug=None, gateway_url=None, gcp_audience='akeyless.io', json=False, jwt=None, k8s_auth_config_name=None, k8s_service_account_token=None, key_data=None, ldap_password=None, ldap_username=None, oci_auth_type='apikey', oci_group_ocid=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, access_id=None, access_key=None, access_type='access_key', account_id=None, admin_email=None, admin_password=None, cert_data=None, cloud_id=None, debug=None, gateway_url=None, gcp_audience='akeyless.io', json=False, jwt=None, k8s_auth_config_name=None, k8s_service_account_token=None, key_data=None, ldap_password=None, ldap_username=None, oci_auth_type='apikey', oci_group_ocid=None, uid_token=None, use_remote_browser=None, local_vars_configuration=None):  # noqa: E501
         """Auth - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -108,6 +110,7 @@ class Auth(object):
         self._oci_auth_type = None
         self._oci_group_ocid = None
         self._uid_token = None
+        self._use_remote_browser = None
         self.discriminator = None
 
         if access_id is not None:
@@ -152,6 +155,8 @@ class Auth(object):
             self.oci_group_ocid = oci_group_ocid
         if uid_token is not None:
             self.uid_token = uid_token
+        if use_remote_browser is not None:
+            self.use_remote_browser = use_remote_browser
 
     @property
     def access_id(self):
@@ -362,7 +367,7 @@ class Auth(object):
     def gateway_url(self):
         """Gets the gateway_url of this Auth.  # noqa: E501
 
-        Gateway URL for the K8S/OAUTH2 authenticated (relevant only for access-type=k8s/oauth2)  # noqa: E501
+        Gateway URL relevant only for access-type=k8s/oauth2/saml/oidc  # noqa: E501
 
         :return: The gateway_url of this Auth.  # noqa: E501
         :rtype: str
@@ -373,7 +378,7 @@ class Auth(object):
     def gateway_url(self, gateway_url):
         """Sets the gateway_url of this Auth.
 
-        Gateway URL for the K8S/OAUTH2 authenticated (relevant only for access-type=k8s/oauth2)  # noqa: E501
+        Gateway URL relevant only for access-type=k8s/oauth2/saml/oidc  # noqa: E501
 
         :param gateway_url: The gateway_url of this Auth.  # noqa: E501
         :type: str
@@ -633,6 +638,29 @@ class Auth(object):
         """
 
         self._uid_token = uid_token
+
+    @property
+    def use_remote_browser(self):
+        """Gets the use_remote_browser of this Auth.  # noqa: E501
+
+        Returns a link to complete the authentication remotely (relevant only for access-type=saml/oidc)  # noqa: E501
+
+        :return: The use_remote_browser of this Auth.  # noqa: E501
+        :rtype: bool
+        """
+        return self._use_remote_browser
+
+    @use_remote_browser.setter
+    def use_remote_browser(self, use_remote_browser):
+        """Sets the use_remote_browser of this Auth.
+
+        Returns a link to complete the authentication remotely (relevant only for access-type=saml/oidc)  # noqa: E501
+
+        :param use_remote_browser: The use_remote_browser of this Auth.  # noqa: E501
+        :type: bool
+        """
+
+        self._use_remote_browser = use_remote_browser
 
     def to_dict(self):
         """Returns the model properties as a dict"""

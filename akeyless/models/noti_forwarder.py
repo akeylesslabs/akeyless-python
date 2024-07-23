@@ -42,6 +42,7 @@ class NotiForwarder(object):
         'endpoint': 'str',
         'event_types': 'list[str]',
         'gateway_cluster_id': 'int',
+        'include_error': 'bool',
         'is_enabled': 'bool',
         'last_version': 'int',
         'modification_date': 'datetime',
@@ -71,6 +72,7 @@ class NotiForwarder(object):
         'endpoint': 'endpoint',
         'event_types': 'event_types',
         'gateway_cluster_id': 'gateway_cluster_id',
+        'include_error': 'include_error',
         'is_enabled': 'is_enabled',
         'last_version': 'last_version',
         'modification_date': 'modification_date',
@@ -91,7 +93,7 @@ class NotiForwarder(object):
         'with_customer_fragment': 'with_customer_fragment'
     }
 
-    def __init__(self, auth_type=None, client_id=None, client_permissions=None, comment=None, creation_date=None, endpoint=None, event_types=None, gateway_cluster_id=None, is_enabled=None, last_version=None, modification_date=None, noti_forwarder_id=None, noti_forwarder_name=None, noti_forwarder_type=None, noti_forwarder_versions=None, override_url=None, paths=None, protection_key=None, runner_type=None, slack_noti_forwarder_public_details=None, timespan_in_seconds=None, to_emails=None, user_email=None, username=None, webhook_noti_forwarder_public_details=None, with_customer_fragment=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, auth_type=None, client_id=None, client_permissions=None, comment=None, creation_date=None, endpoint=None, event_types=None, gateway_cluster_id=None, include_error=None, is_enabled=None, last_version=None, modification_date=None, noti_forwarder_id=None, noti_forwarder_name=None, noti_forwarder_type=None, noti_forwarder_versions=None, override_url=None, paths=None, protection_key=None, runner_type=None, slack_noti_forwarder_public_details=None, timespan_in_seconds=None, to_emails=None, user_email=None, username=None, webhook_noti_forwarder_public_details=None, with_customer_fragment=None, local_vars_configuration=None):  # noqa: E501
         """NotiForwarder - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -105,6 +107,7 @@ class NotiForwarder(object):
         self._endpoint = None
         self._event_types = None
         self._gateway_cluster_id = None
+        self._include_error = None
         self._is_enabled = None
         self._last_version = None
         self._modification_date = None
@@ -141,6 +144,8 @@ class NotiForwarder(object):
             self.event_types = event_types
         if gateway_cluster_id is not None:
             self.gateway_cluster_id = gateway_cluster_id
+        if include_error is not None:
+            self.include_error = include_error
         if is_enabled is not None:
             self.is_enabled = is_enabled
         if last_version is not None:
@@ -347,6 +352,27 @@ class NotiForwarder(object):
         """
 
         self._gateway_cluster_id = gateway_cluster_id
+
+    @property
+    def include_error(self):
+        """Gets the include_error of this NotiForwarder.  # noqa: E501
+
+
+        :return: The include_error of this NotiForwarder.  # noqa: E501
+        :rtype: bool
+        """
+        return self._include_error
+
+    @include_error.setter
+    def include_error(self, include_error):
+        """Sets the include_error of this NotiForwarder.
+
+
+        :param include_error: The include_error of this NotiForwarder.  # noqa: E501
+        :type: bool
+        """
+
+        self._include_error = include_error
 
     @property
     def is_enabled(self):

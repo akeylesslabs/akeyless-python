@@ -4,7 +4,7 @@ dynamicSecretCreateGcp is a command that creates a GCP dynamic secret
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**delete_protection** | **str** | Protection from accidental deletion of this item [true/false] | [optional] 
+**delete_protection** | **str** | Protection from accidental deletion of this object [true/false] | [optional] 
 **description** | **str** | Description of the object | [optional] 
 **gcp_cred_type** | **str** |  | [optional] 
 **gcp_key** | **str** | Base64-encoded service account private key text | [optional] 

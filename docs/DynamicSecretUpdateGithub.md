@@ -4,7 +4,7 @@ dynamicSecretUpdateGithub is a command that updates github dynamic secret
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**delete_protection** | **str** | Protection from accidental deletion of this item [true/false] | [optional] 
+**delete_protection** | **str** | Protection from accidental deletion of this object [true/false] | [optional] 
 **description** | **str** | Description of the object | [optional] 
 **github_app_id** | **int** | Github app id | [optional] 
 **github_app_private_key** | **str** | App private key | [optional] 

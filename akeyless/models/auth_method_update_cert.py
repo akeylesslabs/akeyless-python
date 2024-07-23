@@ -45,6 +45,7 @@ class AuthMethodUpdateCert(object):
         'bound_organizational_units': 'list[str]',
         'bound_uri_sans': 'list[str]',
         'certificate_data': 'str',
+        'delete_protection': 'str',
         'description': 'str',
         'force_sub_claims': 'bool',
         'gw_bound_ips': 'list[str]',
@@ -71,6 +72,7 @@ class AuthMethodUpdateCert(object):
         'bound_organizational_units': 'bound-organizational-units',
         'bound_uri_sans': 'bound-uri-sans',
         'certificate_data': 'certificate-data',
+        'delete_protection': 'delete_protection',
         'description': 'description',
         'force_sub_claims': 'force-sub-claims',
         'gw_bound_ips': 'gw-bound-ips',
@@ -85,7 +87,7 @@ class AuthMethodUpdateCert(object):
         'unique_identifier': 'unique-identifier'
     }
 
-    def __init__(self, access_expires=0, allowed_cors=None, audit_logs_claims=None, bound_common_names=None, bound_dns_sans=None, bound_email_sans=None, bound_extensions=None, bound_ips=None, bound_organizational_units=None, bound_uri_sans=None, certificate_data=None, description=None, force_sub_claims=None, gw_bound_ips=None, json=False, jwt_ttl=0, name=None, new_name=None, product_type=None, revoked_cert_ids=None, token=None, uid_token=None, unique_identifier=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, access_expires=0, allowed_cors=None, audit_logs_claims=None, bound_common_names=None, bound_dns_sans=None, bound_email_sans=None, bound_extensions=None, bound_ips=None, bound_organizational_units=None, bound_uri_sans=None, certificate_data=None, delete_protection=None, description=None, force_sub_claims=None, gw_bound_ips=None, json=False, jwt_ttl=0, name=None, new_name=None, product_type=None, revoked_cert_ids=None, token=None, uid_token=None, unique_identifier=None, local_vars_configuration=None):  # noqa: E501
         """AuthMethodUpdateCert - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -102,6 +104,7 @@ class AuthMethodUpdateCert(object):
         self._bound_organizational_units = None
         self._bound_uri_sans = None
         self._certificate_data = None
+        self._delete_protection = None
         self._description = None
         self._force_sub_claims = None
         self._gw_bound_ips = None
@@ -138,6 +141,8 @@ class AuthMethodUpdateCert(object):
             self.bound_uri_sans = bound_uri_sans
         if certificate_data is not None:
             self.certificate_data = certificate_data
+        if delete_protection is not None:
+            self.delete_protection = delete_protection
         if description is not None:
             self.description = description
         if force_sub_claims is not None:
@@ -413,6 +418,29 @@ class AuthMethodUpdateCert(object):
         """
 
         self._certificate_data = certificate_data
+
+    @property
+    def delete_protection(self):
+        """Gets the delete_protection of this AuthMethodUpdateCert.  # noqa: E501
+
+        Protection from accidental deletion of this object [true/false]  # noqa: E501
+
+        :return: The delete_protection of this AuthMethodUpdateCert.  # noqa: E501
+        :rtype: str
+        """
+        return self._delete_protection
+
+    @delete_protection.setter
+    def delete_protection(self, delete_protection):
+        """Sets the delete_protection of this AuthMethodUpdateCert.
+
+        Protection from accidental deletion of this object [true/false]  # noqa: E501
+
+        :param delete_protection: The delete_protection of this AuthMethodUpdateCert.  # noqa: E501
+        :type: str
+        """
+
+        self._delete_protection = delete_protection
 
     @property
     def description(self):

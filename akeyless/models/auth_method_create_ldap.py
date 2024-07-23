@@ -37,6 +37,7 @@ class AuthMethodCreateLdap(object):
         'access_expires': 'int',
         'audit_logs_claims': 'list[str]',
         'bound_ips': 'list[str]',
+        'delete_protection': 'str',
         'description': 'str',
         'force_sub_claims': 'bool',
         'gen_key': 'str',
@@ -55,6 +56,7 @@ class AuthMethodCreateLdap(object):
         'access_expires': 'access-expires',
         'audit_logs_claims': 'audit-logs-claims',
         'bound_ips': 'bound-ips',
+        'delete_protection': 'delete_protection',
         'description': 'description',
         'force_sub_claims': 'force-sub-claims',
         'gen_key': 'gen-key',
@@ -69,7 +71,7 @@ class AuthMethodCreateLdap(object):
         'unique_identifier': 'unique-identifier'
     }
 
-    def __init__(self, access_expires=0, audit_logs_claims=None, bound_ips=None, description=None, force_sub_claims=None, gen_key='true', gw_bound_ips=None, json=False, jwt_ttl=0, name=None, product_type=None, public_key_data=None, token=None, uid_token=None, unique_identifier='users', local_vars_configuration=None):  # noqa: E501
+    def __init__(self, access_expires=0, audit_logs_claims=None, bound_ips=None, delete_protection=None, description=None, force_sub_claims=None, gen_key='true', gw_bound_ips=None, json=False, jwt_ttl=0, name=None, product_type=None, public_key_data=None, token=None, uid_token=None, unique_identifier='users', local_vars_configuration=None):  # noqa: E501
         """AuthMethodCreateLdap - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -78,6 +80,7 @@ class AuthMethodCreateLdap(object):
         self._access_expires = None
         self._audit_logs_claims = None
         self._bound_ips = None
+        self._delete_protection = None
         self._description = None
         self._force_sub_claims = None
         self._gen_key = None
@@ -98,6 +101,8 @@ class AuthMethodCreateLdap(object):
             self.audit_logs_claims = audit_logs_claims
         if bound_ips is not None:
             self.bound_ips = bound_ips
+        if delete_protection is not None:
+            self.delete_protection = delete_protection
         if description is not None:
             self.description = description
         if force_sub_claims is not None:
@@ -190,6 +195,29 @@ class AuthMethodCreateLdap(object):
         """
 
         self._bound_ips = bound_ips
+
+    @property
+    def delete_protection(self):
+        """Gets the delete_protection of this AuthMethodCreateLdap.  # noqa: E501
+
+        Protection from accidental deletion of this object [true/false]  # noqa: E501
+
+        :return: The delete_protection of this AuthMethodCreateLdap.  # noqa: E501
+        :rtype: str
+        """
+        return self._delete_protection
+
+    @delete_protection.setter
+    def delete_protection(self, delete_protection):
+        """Sets the delete_protection of this AuthMethodCreateLdap.
+
+        Protection from accidental deletion of this object [true/false]  # noqa: E501
+
+        :param delete_protection: The delete_protection of this AuthMethodCreateLdap.  # noqa: E501
+        :type: str
+        """
+
+        self._delete_protection = delete_protection
 
     @property
     def description(self):

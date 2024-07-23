@@ -37,6 +37,7 @@ class AuthMethodUpdateUniversalIdentity(object):
         'access_expires': 'int',
         'audit_logs_claims': 'list[str]',
         'bound_ips': 'list[str]',
+        'delete_protection': 'str',
         'deny_inheritance': 'bool',
         'deny_rotate': 'bool',
         'description': 'str',
@@ -56,6 +57,7 @@ class AuthMethodUpdateUniversalIdentity(object):
         'access_expires': 'access-expires',
         'audit_logs_claims': 'audit-logs-claims',
         'bound_ips': 'bound-ips',
+        'delete_protection': 'delete_protection',
         'deny_inheritance': 'deny-inheritance',
         'deny_rotate': 'deny-rotate',
         'description': 'description',
@@ -71,7 +73,7 @@ class AuthMethodUpdateUniversalIdentity(object):
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, access_expires=0, audit_logs_claims=None, bound_ips=None, deny_inheritance=None, deny_rotate=None, description=None, force_sub_claims=None, gw_bound_ips=None, json=False, jwt_ttl=0, name=None, new_name=None, product_type=None, token=None, ttl=60, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, access_expires=0, audit_logs_claims=None, bound_ips=None, delete_protection=None, deny_inheritance=None, deny_rotate=None, description=None, force_sub_claims=None, gw_bound_ips=None, json=False, jwt_ttl=0, name=None, new_name=None, product_type=None, token=None, ttl=60, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """AuthMethodUpdateUniversalIdentity - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -80,6 +82,7 @@ class AuthMethodUpdateUniversalIdentity(object):
         self._access_expires = None
         self._audit_logs_claims = None
         self._bound_ips = None
+        self._delete_protection = None
         self._deny_inheritance = None
         self._deny_rotate = None
         self._description = None
@@ -101,6 +104,8 @@ class AuthMethodUpdateUniversalIdentity(object):
             self.audit_logs_claims = audit_logs_claims
         if bound_ips is not None:
             self.bound_ips = bound_ips
+        if delete_protection is not None:
+            self.delete_protection = delete_protection
         if deny_inheritance is not None:
             self.deny_inheritance = deny_inheritance
         if deny_rotate is not None:
@@ -195,6 +200,29 @@ class AuthMethodUpdateUniversalIdentity(object):
         """
 
         self._bound_ips = bound_ips
+
+    @property
+    def delete_protection(self):
+        """Gets the delete_protection of this AuthMethodUpdateUniversalIdentity.  # noqa: E501
+
+        Protection from accidental deletion of this object [true/false]  # noqa: E501
+
+        :return: The delete_protection of this AuthMethodUpdateUniversalIdentity.  # noqa: E501
+        :rtype: str
+        """
+        return self._delete_protection
+
+    @delete_protection.setter
+    def delete_protection(self, delete_protection):
+        """Sets the delete_protection of this AuthMethodUpdateUniversalIdentity.
+
+        Protection from accidental deletion of this object [true/false]  # noqa: E501
+
+        :param delete_protection: The delete_protection of this AuthMethodUpdateUniversalIdentity.  # noqa: E501
+        :type: str
+        """
+
+        self._delete_protection = delete_protection
 
     @property
     def deny_inheritance(self):

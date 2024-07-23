@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 **aws_user_groups** | **str** | AWS User groups | [optional] 
 **aws_user_policies** | **str** | AWS User policies | [optional] 
 **aws_user_programmatic_access** | **bool** | Enable AWS User programmatic access | [optional] [default to True]
-**delete_protection** | **str** | Protection from accidental deletion of this item [true/false] | [optional] 
+**delete_protection** | **str** | Protection from accidental deletion of this object [true/false] | [optional] 
 **enable_admin_rotation** | **bool** | Automatic admin credentials rotation | [optional] [default to False]
 **json** | **bool** | Set output format to JSON | [optional] [default to False]
 **name** | **str** | Dynamic secret name | 
@@ -28,9 +28,11 @@ Name | Type | Description | Notes
 **secure_access_web** | **bool** | Enable Web Secure Remote Access | [optional] [default to True]
 **secure_access_web_browsing** | **bool** | Secure browser via Akeyless Web Access Bastion | [optional] [default to False]
 **secure_access_web_proxy** | **bool** | Web-Proxy via Akeyless Web Access Bastion | [optional] [default to False]
+**session_tags** | **str** | String of Key value session tags comma separated, relevant only for Assumed Role | [optional] 
 **tags** | **list[str]** | Add tags attached to this object | [optional] 
 **target_name** | **str** | Target name | [optional] 
 **token** | **str** | Authentication token (see &#x60;/auth&#x60; and &#x60;/configure&#x60;) | [optional] 
+**transitive_tag_keys** | **str** | String of transitive tag keys space separated, relevant only for Assumed Role | [optional] 
 **uid_token** | **str** | The universal identity token, Required only for universal_identity authentication | [optional] 
 **user_ttl** | **str** | User TTL | [optional] [default to '60m']
 

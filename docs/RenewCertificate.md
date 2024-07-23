@@ -3,6 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**cert_issuer_name** | **str** | The name of the PKI certificate issuer | [optional] 
 **generate_key** | **bool** | Generate a new key as part of the certificate renewal | [optional] 
 **item_id** | **int** | Certificate item id | [optional] 
 **json** | **bool** | Set output format to JSON | [optional] [default to False]

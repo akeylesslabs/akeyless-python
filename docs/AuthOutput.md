@@ -3,6 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**complete_auth_link** | **str** |  | [optional] 
 **creds** | [**SystemAccessCredentialsReplyObj**](SystemAccessCredentialsReplyObj.md) |  | [optional] 
 **token** | **str** |  | [optional] 
 

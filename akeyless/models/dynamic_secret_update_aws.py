@@ -59,9 +59,11 @@ class DynamicSecretUpdateAws(object):
         'secure_access_web': 'bool',
         'secure_access_web_browsing': 'bool',
         'secure_access_web_proxy': 'bool',
+        'session_tags': 'str',
         'tags': 'list[str]',
         'target_name': 'str',
         'token': 'str',
+        'transitive_tag_keys': 'str',
         'uid_token': 'str',
         'user_ttl': 'str'
     }
@@ -92,14 +94,16 @@ class DynamicSecretUpdateAws(object):
         'secure_access_web': 'secure-access-web',
         'secure_access_web_browsing': 'secure-access-web-browsing',
         'secure_access_web_proxy': 'secure-access-web-proxy',
+        'session_tags': 'session-tags',
         'tags': 'tags',
         'target_name': 'target-name',
         'token': 'token',
+        'transitive_tag_keys': 'transitive-tag-keys',
         'uid_token': 'uid-token',
         'user_ttl': 'user-ttl'
     }
 
-    def __init__(self, access_mode=None, admin_rotation_interval_days=0, aws_access_key_id=None, aws_access_secret_key=None, aws_role_arns=None, aws_user_console_access=False, aws_user_groups=None, aws_user_policies=None, aws_user_programmatic_access=True, delete_protection=None, description=None, enable_admin_rotation=False, json=False, name=None, new_name=None, password_length=None, producer_encryption_key_name=None, region='us-east-2', secure_access_aws_account_id=None, secure_access_aws_native_cli=None, secure_access_bastion_issuer=None, secure_access_enable=None, secure_access_web=True, secure_access_web_browsing=False, secure_access_web_proxy=False, tags=None, target_name=None, token=None, uid_token=None, user_ttl='60m', local_vars_configuration=None):  # noqa: E501
+    def __init__(self, access_mode=None, admin_rotation_interval_days=0, aws_access_key_id=None, aws_access_secret_key=None, aws_role_arns=None, aws_user_console_access=False, aws_user_groups=None, aws_user_policies=None, aws_user_programmatic_access=True, delete_protection=None, description=None, enable_admin_rotation=False, json=False, name=None, new_name=None, password_length=None, producer_encryption_key_name=None, region='us-east-2', secure_access_aws_account_id=None, secure_access_aws_native_cli=None, secure_access_bastion_issuer=None, secure_access_enable=None, secure_access_web=True, secure_access_web_browsing=False, secure_access_web_proxy=False, session_tags=None, tags=None, target_name=None, token=None, transitive_tag_keys=None, uid_token=None, user_ttl='60m', local_vars_configuration=None):  # noqa: E501
         """DynamicSecretUpdateAws - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -130,9 +134,11 @@ class DynamicSecretUpdateAws(object):
         self._secure_access_web = None
         self._secure_access_web_browsing = None
         self._secure_access_web_proxy = None
+        self._session_tags = None
         self._tags = None
         self._target_name = None
         self._token = None
+        self._transitive_tag_keys = None
         self._uid_token = None
         self._user_ttl = None
         self.discriminator = None
@@ -186,12 +192,16 @@ class DynamicSecretUpdateAws(object):
             self.secure_access_web_browsing = secure_access_web_browsing
         if secure_access_web_proxy is not None:
             self.secure_access_web_proxy = secure_access_web_proxy
+        if session_tags is not None:
+            self.session_tags = session_tags
         if tags is not None:
             self.tags = tags
         if target_name is not None:
             self.target_name = target_name
         if token is not None:
             self.token = token
+        if transitive_tag_keys is not None:
+            self.transitive_tag_keys = transitive_tag_keys
         if uid_token is not None:
             self.uid_token = uid_token
         if user_ttl is not None:
@@ -406,7 +416,7 @@ class DynamicSecretUpdateAws(object):
     def delete_protection(self):
         """Gets the delete_protection of this DynamicSecretUpdateAws.  # noqa: E501
 
-        Protection from accidental deletion of this item [true/false]  # noqa: E501
+        Protection from accidental deletion of this object [true/false]  # noqa: E501
 
         :return: The delete_protection of this DynamicSecretUpdateAws.  # noqa: E501
         :rtype: str
@@ -417,7 +427,7 @@ class DynamicSecretUpdateAws(object):
     def delete_protection(self, delete_protection):
         """Sets the delete_protection of this DynamicSecretUpdateAws.
 
-        Protection from accidental deletion of this item [true/false]  # noqa: E501
+        Protection from accidental deletion of this object [true/false]  # noqa: E501
 
         :param delete_protection: The delete_protection of this DynamicSecretUpdateAws.  # noqa: E501
         :type: str
@@ -773,6 +783,29 @@ class DynamicSecretUpdateAws(object):
         self._secure_access_web_proxy = secure_access_web_proxy
 
     @property
+    def session_tags(self):
+        """Gets the session_tags of this DynamicSecretUpdateAws.  # noqa: E501
+
+        String of Key value session tags comma separated, relevant only for Assumed Role  # noqa: E501
+
+        :return: The session_tags of this DynamicSecretUpdateAws.  # noqa: E501
+        :rtype: str
+        """
+        return self._session_tags
+
+    @session_tags.setter
+    def session_tags(self, session_tags):
+        """Sets the session_tags of this DynamicSecretUpdateAws.
+
+        String of Key value session tags comma separated, relevant only for Assumed Role  # noqa: E501
+
+        :param session_tags: The session_tags of this DynamicSecretUpdateAws.  # noqa: E501
+        :type: str
+        """
+
+        self._session_tags = session_tags
+
+    @property
     def tags(self):
         """Gets the tags of this DynamicSecretUpdateAws.  # noqa: E501
 
@@ -840,6 +873,29 @@ class DynamicSecretUpdateAws(object):
         """
 
         self._token = token
+
+    @property
+    def transitive_tag_keys(self):
+        """Gets the transitive_tag_keys of this DynamicSecretUpdateAws.  # noqa: E501
+
+        String of transitive tag keys space separated, relevant only for Assumed Role  # noqa: E501
+
+        :return: The transitive_tag_keys of this DynamicSecretUpdateAws.  # noqa: E501
+        :rtype: str
+        """
+        return self._transitive_tag_keys
+
+    @transitive_tag_keys.setter
+    def transitive_tag_keys(self, transitive_tag_keys):
+        """Sets the transitive_tag_keys of this DynamicSecretUpdateAws.
+
+        String of transitive tag keys space separated, relevant only for Assumed Role  # noqa: E501
+
+        :param transitive_tag_keys: The transitive_tag_keys of this DynamicSecretUpdateAws.  # noqa: E501
+        :type: str
+        """
+
+        self._transitive_tag_keys = transitive_tag_keys
 
     @property
     def uid_token(self):

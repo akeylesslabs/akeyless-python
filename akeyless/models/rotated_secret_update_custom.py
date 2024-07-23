@@ -62,6 +62,7 @@ class RotatedSecretUpdateCustom(object):
         'secure_access_web': 'bool',
         'secure_access_web_browsing': 'bool',
         'secure_access_web_proxy': 'bool',
+        'timeout_sec': 'int',
         'token': 'str',
         'uid_token': 'str'
     }
@@ -95,11 +96,12 @@ class RotatedSecretUpdateCustom(object):
         'secure_access_web': 'secure-access-web',
         'secure_access_web_browsing': 'secure-access-web-browsing',
         'secure_access_web_proxy': 'secure-access-web-proxy',
+        'timeout_sec': 'timeout-sec',
         'token': 'token',
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, add_tag=None, authentication_credentials='use-user-creds', auto_rotate=None, custom_payload=None, delete_protection=None, description='default_metadata', json=False, keep_prev_version=None, key=None, max_versions=None, name=None, new_name=None, password_length=None, rm_tag=None, rotate_after_disconnect='false', rotation_hour=None, rotation_interval=None, secure_access_allow_external_user=False, secure_access_bastion_issuer=None, secure_access_enable=None, secure_access_host=None, secure_access_rdp_domain=None, secure_access_rdp_user=None, secure_access_ssh_user=None, secure_access_url=None, secure_access_web=False, secure_access_web_browsing=False, secure_access_web_proxy=False, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, add_tag=None, authentication_credentials='use-user-creds', auto_rotate=None, custom_payload=None, delete_protection=None, description='default_metadata', json=False, keep_prev_version=None, key=None, max_versions=None, name=None, new_name=None, password_length=None, rm_tag=None, rotate_after_disconnect='false', rotation_hour=None, rotation_interval=None, secure_access_allow_external_user=False, secure_access_bastion_issuer=None, secure_access_enable=None, secure_access_host=None, secure_access_rdp_domain=None, secure_access_rdp_user=None, secure_access_ssh_user=None, secure_access_url=None, secure_access_web=False, secure_access_web_browsing=False, secure_access_web_proxy=False, timeout_sec=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """RotatedSecretUpdateCustom - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -133,6 +135,7 @@ class RotatedSecretUpdateCustom(object):
         self._secure_access_web = None
         self._secure_access_web_browsing = None
         self._secure_access_web_proxy = None
+        self._timeout_sec = None
         self._token = None
         self._uid_token = None
         self.discriminator = None
@@ -192,6 +195,8 @@ class RotatedSecretUpdateCustom(object):
             self.secure_access_web_browsing = secure_access_web_browsing
         if secure_access_web_proxy is not None:
             self.secure_access_web_proxy = secure_access_web_proxy
+        if timeout_sec is not None:
+            self.timeout_sec = timeout_sec
         if token is not None:
             self.token = token
         if uid_token is not None:
@@ -293,7 +298,7 @@ class RotatedSecretUpdateCustom(object):
     def delete_protection(self):
         """Gets the delete_protection of this RotatedSecretUpdateCustom.  # noqa: E501
 
-        Protection from accidental deletion of this item [true/false]  # noqa: E501
+        Protection from accidental deletion of this object [true/false]  # noqa: E501
 
         :return: The delete_protection of this RotatedSecretUpdateCustom.  # noqa: E501
         :rtype: str
@@ -304,7 +309,7 @@ class RotatedSecretUpdateCustom(object):
     def delete_protection(self, delete_protection):
         """Sets the delete_protection of this RotatedSecretUpdateCustom.
 
-        Protection from accidental deletion of this item [true/false]  # noqa: E501
+        Protection from accidental deletion of this object [true/false]  # noqa: E501
 
         :param delete_protection: The delete_protection of this RotatedSecretUpdateCustom.  # noqa: E501
         :type: str
@@ -842,6 +847,29 @@ class RotatedSecretUpdateCustom(object):
         """
 
         self._secure_access_web_proxy = secure_access_web_proxy
+
+    @property
+    def timeout_sec(self):
+        """Gets the timeout_sec of this RotatedSecretUpdateCustom.  # noqa: E501
+
+        Maximum allowed time in seconds for the custom rotator to return the results  # noqa: E501
+
+        :return: The timeout_sec of this RotatedSecretUpdateCustom.  # noqa: E501
+        :rtype: int
+        """
+        return self._timeout_sec
+
+    @timeout_sec.setter
+    def timeout_sec(self, timeout_sec):
+        """Sets the timeout_sec of this RotatedSecretUpdateCustom.
+
+        Maximum allowed time in seconds for the custom rotator to return the results  # noqa: E501
+
+        :param timeout_sec: The timeout_sec of this RotatedSecretUpdateCustom.  # noqa: E501
+        :type: int
+        """
+
+        self._timeout_sec = timeout_sec
 
     @property
     def token(self):

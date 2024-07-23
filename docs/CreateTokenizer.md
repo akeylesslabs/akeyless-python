@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **alphabet** | **str** | Alphabet to use in regexp vaultless tokenization | [optional] 
 **decoding_template** | **str** | The Decoding output template to use in regexp vaultless tokenization | [optional] 
-**delete_protection** | **str** | Protection from accidental deletion of this item [true/false] | [optional] 
+**delete_protection** | **str** | Protection from accidental deletion of this object [true/false] | [optional] 
 **description** | **str** | Description of the object | [optional] 
 **encoding_template** | **str** | The Encoding output template to use in regexp vaultless tokenization | [optional] 
 **encryption_key_name** | **str** | AES key name to use in vaultless tokenization | [optional] 

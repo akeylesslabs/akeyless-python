@@ -4,7 +4,7 @@ dynamicSecretUpdateGke is a command that updates gke dynamic secret
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**delete_protection** | **str** | Protection from accidental deletion of this item [true/false] | [optional] 
+**delete_protection** | **str** | Protection from accidental deletion of this object [true/false] | [optional] 
 **description** | **str** | Description of the object | [optional] 
 **gke_account_key** | **str** | GKE Service Account key file path | [optional] 
 **gke_cluster_cert** | **str** | GKE cluster CA certificate | [optional] 

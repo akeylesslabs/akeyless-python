@@ -172,7 +172,7 @@ class UpdateCertificateValue(object):
     def delete_protection(self):
         """Gets the delete_protection of this UpdateCertificateValue.  # noqa: E501
 
-        Protection from accidental deletion of this item [true/false]  # noqa: E501
+        Protection from accidental deletion of this object [true/false]  # noqa: E501
 
         :return: The delete_protection of this UpdateCertificateValue.  # noqa: E501
         :rtype: str
@@ -183,7 +183,7 @@ class UpdateCertificateValue(object):
     def delete_protection(self, delete_protection):
         """Sets the delete_protection of this UpdateCertificateValue.
 
-        Protection from accidental deletion of this item [true/false]  # noqa: E501
+        Protection from accidental deletion of this object [true/false]  # noqa: E501
 
         :param delete_protection: The delete_protection of this UpdateCertificateValue.  # noqa: E501
         :type: str

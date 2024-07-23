@@ -53,6 +53,7 @@ class RotatedSecretUpdateAzure(object):
         'rotate_after_disconnect': 'str',
         'rotation_hour': 'int',
         'rotation_interval': 'str',
+        'secure_access_disable_concurrent_connections': 'bool',
         'secure_access_enable': 'str',
         'secure_access_url': 'str',
         'secure_access_web': 'bool',
@@ -84,6 +85,7 @@ class RotatedSecretUpdateAzure(object):
         'rotate_after_disconnect': 'rotate-after-disconnect',
         'rotation_hour': 'rotation-hour',
         'rotation_interval': 'rotation-interval',
+        'secure_access_disable_concurrent_connections': 'secure-access-disable-concurrent-connections',
         'secure_access_enable': 'secure-access-enable',
         'secure_access_url': 'secure-access-url',
         'secure_access_web': 'secure-access-web',
@@ -95,7 +97,7 @@ class RotatedSecretUpdateAzure(object):
         'username': 'username'
     }
 
-    def __init__(self, add_tag=None, api_id=None, api_key=None, application_id=None, authentication_credentials='use-user-creds', auto_rotate=None, delete_protection=None, description='default_metadata', json=False, keep_prev_version=None, key=None, max_versions=None, name=None, new_name=None, password_length=None, rm_tag=None, rotate_after_disconnect='false', rotation_hour=None, rotation_interval=None, secure_access_enable=None, secure_access_url=None, secure_access_web=False, secure_access_web_browsing=False, secure_access_web_proxy=False, storage_account_key_name=None, token=None, uid_token=None, username=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, add_tag=None, api_id=None, api_key=None, application_id=None, authentication_credentials='use-user-creds', auto_rotate=None, delete_protection=None, description='default_metadata', json=False, keep_prev_version=None, key=None, max_versions=None, name=None, new_name=None, password_length=None, rm_tag=None, rotate_after_disconnect='false', rotation_hour=None, rotation_interval=None, secure_access_disable_concurrent_connections=None, secure_access_enable=None, secure_access_url=None, secure_access_web=False, secure_access_web_browsing=False, secure_access_web_proxy=False, storage_account_key_name=None, token=None, uid_token=None, username=None, local_vars_configuration=None):  # noqa: E501
         """RotatedSecretUpdateAzure - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -120,6 +122,7 @@ class RotatedSecretUpdateAzure(object):
         self._rotate_after_disconnect = None
         self._rotation_hour = None
         self._rotation_interval = None
+        self._secure_access_disable_concurrent_connections = None
         self._secure_access_enable = None
         self._secure_access_url = None
         self._secure_access_web = None
@@ -168,6 +171,8 @@ class RotatedSecretUpdateAzure(object):
             self.rotation_hour = rotation_hour
         if rotation_interval is not None:
             self.rotation_interval = rotation_interval
+        if secure_access_disable_concurrent_connections is not None:
+            self.secure_access_disable_concurrent_connections = secure_access_disable_concurrent_connections
         if secure_access_enable is not None:
             self.secure_access_enable = secure_access_enable
         if secure_access_url is not None:
@@ -329,7 +334,7 @@ class RotatedSecretUpdateAzure(object):
     def delete_protection(self):
         """Gets the delete_protection of this RotatedSecretUpdateAzure.  # noqa: E501
 
-        Protection from accidental deletion of this item [true/false]  # noqa: E501
+        Protection from accidental deletion of this object [true/false]  # noqa: E501
 
         :return: The delete_protection of this RotatedSecretUpdateAzure.  # noqa: E501
         :rtype: str
@@ -340,7 +345,7 @@ class RotatedSecretUpdateAzure(object):
     def delete_protection(self, delete_protection):
         """Sets the delete_protection of this RotatedSecretUpdateAzure.
 
-        Protection from accidental deletion of this item [true/false]  # noqa: E501
+        Protection from accidental deletion of this object [true/false]  # noqa: E501
 
         :param delete_protection: The delete_protection of this RotatedSecretUpdateAzure.  # noqa: E501
         :type: str
@@ -625,6 +630,29 @@ class RotatedSecretUpdateAzure(object):
         """
 
         self._rotation_interval = rotation_interval
+
+    @property
+    def secure_access_disable_concurrent_connections(self):
+        """Gets the secure_access_disable_concurrent_connections of this RotatedSecretUpdateAzure.  # noqa: E501
+
+        Enable this flag to prevent simultaneous use of the same secret  # noqa: E501
+
+        :return: The secure_access_disable_concurrent_connections of this RotatedSecretUpdateAzure.  # noqa: E501
+        :rtype: bool
+        """
+        return self._secure_access_disable_concurrent_connections
+
+    @secure_access_disable_concurrent_connections.setter
+    def secure_access_disable_concurrent_connections(self, secure_access_disable_concurrent_connections):
+        """Sets the secure_access_disable_concurrent_connections of this RotatedSecretUpdateAzure.
+
+        Enable this flag to prevent simultaneous use of the same secret  # noqa: E501
+
+        :param secure_access_disable_concurrent_connections: The secure_access_disable_concurrent_connections of this RotatedSecretUpdateAzure.  # noqa: E501
+        :type: bool
+        """
+
+        self._secure_access_disable_concurrent_connections = secure_access_disable_concurrent_connections
 
     @property
     def secure_access_enable(self):

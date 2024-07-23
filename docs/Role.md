@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **client_permissions** | **list[str]** |  | [optional] 
 **comment** | **str** |  | [optional] 
 **creation_date** | **datetime** |  | [optional] 
+**delete_protection** | **bool** |  | [optional] 
 **modification_date** | **datetime** |  | [optional] 
 **role_auth_methods_assoc** | [**list[RoleAuthMethodAssociation]**](RoleAuthMethodAssociation.md) |  | [optional] 
 **role_name** | **str** |  | [optional] 

@@ -41,6 +41,7 @@ class AuthMethodUpdateK8s(object):
         'bound_namespaces': 'list[str]',
         'bound_pod_names': 'list[str]',
         'bound_sa_names': 'list[str]',
+        'delete_protection': 'str',
         'description': 'str',
         'force_sub_claims': 'bool',
         'gen_key': 'str',
@@ -63,6 +64,7 @@ class AuthMethodUpdateK8s(object):
         'bound_namespaces': 'bound-namespaces',
         'bound_pod_names': 'bound-pod-names',
         'bound_sa_names': 'bound-sa-names',
+        'delete_protection': 'delete_protection',
         'description': 'description',
         'force_sub_claims': 'force-sub-claims',
         'gen_key': 'gen-key',
@@ -77,7 +79,7 @@ class AuthMethodUpdateK8s(object):
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, access_expires=0, audience=None, audit_logs_claims=None, bound_ips=None, bound_namespaces=None, bound_pod_names=None, bound_sa_names=None, description=None, force_sub_claims=None, gen_key=None, gw_bound_ips=None, json=False, jwt_ttl=0, name=None, new_name=None, product_type=None, public_key=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, access_expires=0, audience=None, audit_logs_claims=None, bound_ips=None, bound_namespaces=None, bound_pod_names=None, bound_sa_names=None, delete_protection=None, description=None, force_sub_claims=None, gen_key=None, gw_bound_ips=None, json=False, jwt_ttl=0, name=None, new_name=None, product_type=None, public_key=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """AuthMethodUpdateK8s - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -90,6 +92,7 @@ class AuthMethodUpdateK8s(object):
         self._bound_namespaces = None
         self._bound_pod_names = None
         self._bound_sa_names = None
+        self._delete_protection = None
         self._description = None
         self._force_sub_claims = None
         self._gen_key = None
@@ -118,6 +121,8 @@ class AuthMethodUpdateK8s(object):
             self.bound_pod_names = bound_pod_names
         if bound_sa_names is not None:
             self.bound_sa_names = bound_sa_names
+        if delete_protection is not None:
+            self.delete_protection = delete_protection
         if description is not None:
             self.description = description
         if force_sub_claims is not None:
@@ -302,6 +307,29 @@ class AuthMethodUpdateK8s(object):
         """
 
         self._bound_sa_names = bound_sa_names
+
+    @property
+    def delete_protection(self):
+        """Gets the delete_protection of this AuthMethodUpdateK8s.  # noqa: E501
+
+        Protection from accidental deletion of this object [true/false]  # noqa: E501
+
+        :return: The delete_protection of this AuthMethodUpdateK8s.  # noqa: E501
+        :rtype: str
+        """
+        return self._delete_protection
+
+    @delete_protection.setter
+    def delete_protection(self, delete_protection):
+        """Sets the delete_protection of this AuthMethodUpdateK8s.
+
+        Protection from accidental deletion of this object [true/false]  # noqa: E501
+
+        :param delete_protection: The delete_protection of this AuthMethodUpdateK8s.  # noqa: E501
+        :type: str
+        """
+
+        self._delete_protection = delete_protection
 
     @property
     def description(self):

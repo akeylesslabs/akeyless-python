@@ -47,6 +47,7 @@ class AuthMethodCreateAzureAD(object):
         'bound_spid': 'list[str]',
         'bound_sub_id': 'list[str]',
         'bound_tenant_id': 'str',
+        'delete_protection': 'str',
         'description': 'str',
         'force_sub_claims': 'bool',
         'gw_bound_ips': 'list[str]',
@@ -74,6 +75,7 @@ class AuthMethodCreateAzureAD(object):
         'bound_spid': 'bound-spid',
         'bound_sub_id': 'bound-sub-id',
         'bound_tenant_id': 'bound-tenant-id',
+        'delete_protection': 'delete_protection',
         'description': 'description',
         'force_sub_claims': 'force-sub-claims',
         'gw_bound_ips': 'gw-bound-ips',
@@ -87,7 +89,7 @@ class AuthMethodCreateAzureAD(object):
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, access_expires=0, audience='https://management.azure.com/', audit_logs_claims=None, bound_group_id=None, bound_ips=None, bound_providers=None, bound_resource_id=None, bound_resource_names=None, bound_resource_types=None, bound_rg_id=None, bound_spid=None, bound_sub_id=None, bound_tenant_id=None, description=None, force_sub_claims=None, gw_bound_ips=None, issuer='https://sts.windows.net/---bound_tenant_id---', json=False, jwks_uri='https://login.microsoftonline.com/common/discovery/keys', jwt_ttl=0, name=None, product_type=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, access_expires=0, audience='https://management.azure.com/', audit_logs_claims=None, bound_group_id=None, bound_ips=None, bound_providers=None, bound_resource_id=None, bound_resource_names=None, bound_resource_types=None, bound_rg_id=None, bound_spid=None, bound_sub_id=None, bound_tenant_id=None, delete_protection=None, description=None, force_sub_claims=None, gw_bound_ips=None, issuer='https://sts.windows.net/---bound_tenant_id---', json=False, jwks_uri='https://login.microsoftonline.com/common/discovery/keys', jwt_ttl=0, name=None, product_type=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """AuthMethodCreateAzureAD - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -106,6 +108,7 @@ class AuthMethodCreateAzureAD(object):
         self._bound_spid = None
         self._bound_sub_id = None
         self._bound_tenant_id = None
+        self._delete_protection = None
         self._description = None
         self._force_sub_claims = None
         self._gw_bound_ips = None
@@ -144,6 +147,8 @@ class AuthMethodCreateAzureAD(object):
         if bound_sub_id is not None:
             self.bound_sub_id = bound_sub_id
         self.bound_tenant_id = bound_tenant_id
+        if delete_protection is not None:
+            self.delete_protection = delete_protection
         if description is not None:
             self.description = description
         if force_sub_claims is not None:
@@ -466,6 +471,29 @@ class AuthMethodCreateAzureAD(object):
             raise ValueError("Invalid value for `bound_tenant_id`, must not be `None`")  # noqa: E501
 
         self._bound_tenant_id = bound_tenant_id
+
+    @property
+    def delete_protection(self):
+        """Gets the delete_protection of this AuthMethodCreateAzureAD.  # noqa: E501
+
+        Protection from accidental deletion of this object [true/false]  # noqa: E501
+
+        :return: The delete_protection of this AuthMethodCreateAzureAD.  # noqa: E501
+        :rtype: str
+        """
+        return self._delete_protection
+
+    @delete_protection.setter
+    def delete_protection(self, delete_protection):
+        """Sets the delete_protection of this AuthMethodCreateAzureAD.
+
+        Protection from accidental deletion of this object [true/false]  # noqa: E501
+
+        :param delete_protection: The delete_protection of this AuthMethodCreateAzureAD.  # noqa: E501
+        :type: str
+        """
+
+        self._delete_protection = delete_protection
 
     @property
     def description(self):

@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **cert_data** | **str** | Certificate data encoded in base64. Used if file was not provided. (relevant only for access-type&#x3D;cert) | [optional] 
 **cloud_id** | **str** | The cloud identity (relevant only for access-type&#x3D;azure_ad,aws_iam,gcp) | [optional] 
 **debug** | **bool** |  | [optional] 
-**gateway_url** | **str** | Gateway URL for the K8S/OAUTH2 authenticated (relevant only for access-type&#x3D;k8s/oauth2) | [optional] 
+**gateway_url** | **str** | Gateway URL relevant only for access-type&#x3D;k8s/oauth2/saml/oidc | [optional] 
 **gcp_audience** | **str** | GCP JWT audience | [optional] [default to 'akeyless.io']
 **json** | **bool** | Set output format to JSON | [optional] [default to False]
 **jwt** | **str** | The Json Web Token (relevant only for access-type&#x3D;jwt/oidc) | [optional] 
@@ -24,6 +24,7 @@ Name | Type | Description | Notes
 **oci_auth_type** | **str** | The type of the OCI configuration to use [instance/apikey/resource] (relevant only for access-type&#x3D;oci) | [optional] [default to 'apikey']
 **oci_group_ocid** | **list[str]** | A list of Oracle Cloud IDs groups (relevant only for access-type&#x3D;oci) | [optional] 
 **uid_token** | **str** | The universal_identity token (relevant only for access-type&#x3D;universal_identity) | [optional] 
+**use_remote_browser** | **bool** | Returns a link to complete the authentication remotely (relevant only for access-type&#x3D;saml/oidc) | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -41,6 +41,7 @@ class UpdateAuthMethodOAuth2(object):
         'bound_ips': 'list[str]',
         'cert': 'str',
         'cert_file_data': 'str',
+        'delete_protection': 'str',
         'description': 'str',
         'force_sub_claims': 'bool',
         'gateway_url': 'str',
@@ -67,6 +68,7 @@ class UpdateAuthMethodOAuth2(object):
         'bound_ips': 'bound-ips',
         'cert': 'cert',
         'cert_file_data': 'cert-file-data',
+        'delete_protection': 'delete_protection',
         'description': 'description',
         'force_sub_claims': 'force-sub-claims',
         'gateway_url': 'gateway-url',
@@ -85,7 +87,7 @@ class UpdateAuthMethodOAuth2(object):
         'unique_identifier': 'unique-identifier'
     }
 
-    def __init__(self, access_expires=0, audience=None, audit_logs_claims=None, bound_client_ids=None, bound_ips=None, cert=None, cert_file_data=None, description=None, force_sub_claims=None, gateway_url=None, gw_bound_ips=None, issuer=None, json=False, jwks_json_data=None, jwks_uri='default_jwks_url', jwt_ttl=0, name=None, new_name=None, product_type=None, subclaims_delimiters=None, token=None, uid_token=None, unique_identifier=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, access_expires=0, audience=None, audit_logs_claims=None, bound_client_ids=None, bound_ips=None, cert=None, cert_file_data=None, delete_protection=None, description=None, force_sub_claims=None, gateway_url=None, gw_bound_ips=None, issuer=None, json=False, jwks_json_data=None, jwks_uri='default_jwks_url', jwt_ttl=0, name=None, new_name=None, product_type=None, subclaims_delimiters=None, token=None, uid_token=None, unique_identifier=None, local_vars_configuration=None):  # noqa: E501
         """UpdateAuthMethodOAuth2 - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -98,6 +100,7 @@ class UpdateAuthMethodOAuth2(object):
         self._bound_ips = None
         self._cert = None
         self._cert_file_data = None
+        self._delete_protection = None
         self._description = None
         self._force_sub_claims = None
         self._gateway_url = None
@@ -130,6 +133,8 @@ class UpdateAuthMethodOAuth2(object):
             self.cert = cert
         if cert_file_data is not None:
             self.cert_file_data = cert_file_data
+        if delete_protection is not None:
+            self.delete_protection = delete_protection
         if description is not None:
             self.description = description
         if force_sub_claims is not None:
@@ -320,6 +325,29 @@ class UpdateAuthMethodOAuth2(object):
         """
 
         self._cert_file_data = cert_file_data
+
+    @property
+    def delete_protection(self):
+        """Gets the delete_protection of this UpdateAuthMethodOAuth2.  # noqa: E501
+
+        Protection from accidental deletion of this object [true/false]  # noqa: E501
+
+        :return: The delete_protection of this UpdateAuthMethodOAuth2.  # noqa: E501
+        :rtype: str
+        """
+        return self._delete_protection
+
+    @delete_protection.setter
+    def delete_protection(self, delete_protection):
+        """Sets the delete_protection of this UpdateAuthMethodOAuth2.
+
+        Protection from accidental deletion of this object [true/false]  # noqa: E501
+
+        :param delete_protection: The delete_protection of this UpdateAuthMethodOAuth2.  # noqa: E501
+        :type: str
+        """
+
+        self._delete_protection = delete_protection
 
     @property
     def description(self):

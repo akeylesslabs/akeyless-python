@@ -18,6 +18,7 @@ Name | Type | Description | Notes
 **rotator_type** | **str** |  | [optional] 
 **same_password** | **bool** |  | [optional] 
 **services_details** | [**list[WindowsService]**](WindowsService.md) |  | [optional] 
+**timeout_seconds** | **int** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

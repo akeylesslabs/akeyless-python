@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **access_mode** | **str** |  | 
 **admin_email** | **str** | Admin user email | 
-**delete_protection** | **str** | Protection from accidental deletion of this item [true/false] | [optional] 
+**delete_protection** | **str** | Protection from accidental deletion of this object [true/false] | [optional] 
 **description** | **str** | Description of the object | [optional] 
 **gcp_key** | **str** | Base64-encoded service account private key text | [optional] 
 **group_email** | **str** | A group email, relevant only for group access-mode | [optional] 

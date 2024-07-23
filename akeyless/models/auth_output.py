@@ -34,29 +34,55 @@ class AuthOutput(object):
                             and the value is json key in definition.
     """
     openapi_types = {
+        'complete_auth_link': 'str',
         'creds': 'SystemAccessCredentialsReplyObj',
         'token': 'str'
     }
 
     attribute_map = {
+        'complete_auth_link': 'complete_auth_link',
         'creds': 'creds',
         'token': 'token'
     }
 
-    def __init__(self, creds=None, token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, complete_auth_link=None, creds=None, token=None, local_vars_configuration=None):  # noqa: E501
         """AuthOutput - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
+        self._complete_auth_link = None
         self._creds = None
         self._token = None
         self.discriminator = None
 
+        if complete_auth_link is not None:
+            self.complete_auth_link = complete_auth_link
         if creds is not None:
             self.creds = creds
         if token is not None:
             self.token = token
+
+    @property
+    def complete_auth_link(self):
+        """Gets the complete_auth_link of this AuthOutput.  # noqa: E501
+
+
+        :return: The complete_auth_link of this AuthOutput.  # noqa: E501
+        :rtype: str
+        """
+        return self._complete_auth_link
+
+    @complete_auth_link.setter
+    def complete_auth_link(self, complete_auth_link):
+        """Sets the complete_auth_link of this AuthOutput.
+
+
+        :param complete_auth_link: The complete_auth_link of this AuthOutput.  # noqa: E501
+        :type: str
+        """
+
+        self._complete_auth_link = complete_auth_link
 
     @property
     def creds(self):

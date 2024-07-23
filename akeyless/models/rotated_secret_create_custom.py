@@ -60,6 +60,7 @@ class RotatedSecretCreateCustom(object):
         'secure_access_web_proxy': 'bool',
         'tags': 'list[str]',
         'target_name': 'str',
+        'timeout_sec': 'int',
         'token': 'str',
         'uid_token': 'str'
     }
@@ -91,11 +92,12 @@ class RotatedSecretCreateCustom(object):
         'secure_access_web_proxy': 'secure-access-web-proxy',
         'tags': 'tags',
         'target_name': 'target-name',
+        'timeout_sec': 'timeout-sec',
         'token': 'token',
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, authentication_credentials='use-user-creds', auto_rotate=None, custom_payload=None, delete_protection=None, description=None, json=False, key=None, max_versions=None, name=None, password_length=None, rotate_after_disconnect='false', rotation_hour=None, rotation_interval=None, secure_access_allow_external_user=False, secure_access_bastion_issuer=None, secure_access_enable=None, secure_access_host=None, secure_access_rdp_domain=None, secure_access_rdp_user=None, secure_access_ssh_user=None, secure_access_url=None, secure_access_web=False, secure_access_web_browsing=False, secure_access_web_proxy=False, tags=None, target_name=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, authentication_credentials='use-user-creds', auto_rotate=None, custom_payload=None, delete_protection=None, description=None, json=False, key=None, max_versions=None, name=None, password_length=None, rotate_after_disconnect='false', rotation_hour=None, rotation_interval=None, secure_access_allow_external_user=False, secure_access_bastion_issuer=None, secure_access_enable=None, secure_access_host=None, secure_access_rdp_domain=None, secure_access_rdp_user=None, secure_access_ssh_user=None, secure_access_url=None, secure_access_web=False, secure_access_web_browsing=False, secure_access_web_proxy=False, tags=None, target_name=None, timeout_sec=40, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """RotatedSecretCreateCustom - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -127,6 +129,7 @@ class RotatedSecretCreateCustom(object):
         self._secure_access_web_proxy = None
         self._tags = None
         self._target_name = None
+        self._timeout_sec = None
         self._token = None
         self._uid_token = None
         self.discriminator = None
@@ -181,6 +184,8 @@ class RotatedSecretCreateCustom(object):
         if tags is not None:
             self.tags = tags
         self.target_name = target_name
+        if timeout_sec is not None:
+            self.timeout_sec = timeout_sec
         if token is not None:
             self.token = token
         if uid_token is not None:
@@ -259,7 +264,7 @@ class RotatedSecretCreateCustom(object):
     def delete_protection(self):
         """Gets the delete_protection of this RotatedSecretCreateCustom.  # noqa: E501
 
-        Protection from accidental deletion of this item [true/false]  # noqa: E501
+        Protection from accidental deletion of this object [true/false]  # noqa: E501
 
         :return: The delete_protection of this RotatedSecretCreateCustom.  # noqa: E501
         :rtype: str
@@ -270,7 +275,7 @@ class RotatedSecretCreateCustom(object):
     def delete_protection(self, delete_protection):
         """Sets the delete_protection of this RotatedSecretCreateCustom.
 
-        Protection from accidental deletion of this item [true/false]  # noqa: E501
+        Protection from accidental deletion of this object [true/false]  # noqa: E501
 
         :param delete_protection: The delete_protection of this RotatedSecretCreateCustom.  # noqa: E501
         :type: str
@@ -787,6 +792,29 @@ class RotatedSecretCreateCustom(object):
             raise ValueError("Invalid value for `target_name`, must not be `None`")  # noqa: E501
 
         self._target_name = target_name
+
+    @property
+    def timeout_sec(self):
+        """Gets the timeout_sec of this RotatedSecretCreateCustom.  # noqa: E501
+
+        Maximum allowed time in seconds for the custom rotator to return the results  # noqa: E501
+
+        :return: The timeout_sec of this RotatedSecretCreateCustom.  # noqa: E501
+        :rtype: int
+        """
+        return self._timeout_sec
+
+    @timeout_sec.setter
+    def timeout_sec(self, timeout_sec):
+        """Sets the timeout_sec of this RotatedSecretCreateCustom.
+
+        Maximum allowed time in seconds for the custom rotator to return the results  # noqa: E501
+
+        :param timeout_sec: The timeout_sec of this RotatedSecretCreateCustom.  # noqa: E501
+        :type: int
+        """
+
+        self._timeout_sec = timeout_sec
 
     @property
     def token(self):

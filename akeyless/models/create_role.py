@@ -37,6 +37,7 @@ class CreateRole(object):
         'analytics_access': 'str',
         'audit_access': 'str',
         'comment': 'str',
+        'delete_protection': 'str',
         'description': 'str',
         'event_center_access': 'str',
         'event_forwarders_access': 'str',
@@ -53,6 +54,7 @@ class CreateRole(object):
         'analytics_access': 'analytics-access',
         'audit_access': 'audit-access',
         'comment': 'comment',
+        'delete_protection': 'delete_protection',
         'description': 'description',
         'event_center_access': 'event-center-access',
         'event_forwarders_access': 'event-forwarders-access',
@@ -65,7 +67,7 @@ class CreateRole(object):
         'usage_reports_access': 'usage-reports-access'
     }
 
-    def __init__(self, analytics_access=None, audit_access=None, comment=None, description=None, event_center_access=None, event_forwarders_access=None, gw_analytics_access=None, json=False, name=None, sra_reports_access=None, token=None, uid_token=None, usage_reports_access=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, analytics_access=None, audit_access=None, comment=None, delete_protection=None, description=None, event_center_access=None, event_forwarders_access=None, gw_analytics_access=None, json=False, name=None, sra_reports_access=None, token=None, uid_token=None, usage_reports_access=None, local_vars_configuration=None):  # noqa: E501
         """CreateRole - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -74,6 +76,7 @@ class CreateRole(object):
         self._analytics_access = None
         self._audit_access = None
         self._comment = None
+        self._delete_protection = None
         self._description = None
         self._event_center_access = None
         self._event_forwarders_access = None
@@ -92,6 +95,8 @@ class CreateRole(object):
             self.audit_access = audit_access
         if comment is not None:
             self.comment = comment
+        if delete_protection is not None:
+            self.delete_protection = delete_protection
         if description is not None:
             self.description = description
         if event_center_access is not None:
@@ -180,6 +185,29 @@ class CreateRole(object):
         """
 
         self._comment = comment
+
+    @property
+    def delete_protection(self):
+        """Gets the delete_protection of this CreateRole.  # noqa: E501
+
+        Protection from accidental deletion of this object [true/false]  # noqa: E501
+
+        :return: The delete_protection of this CreateRole.  # noqa: E501
+        :rtype: str
+        """
+        return self._delete_protection
+
+    @delete_protection.setter
+    def delete_protection(self, delete_protection):
+        """Sets the delete_protection of this CreateRole.
+
+        Protection from accidental deletion of this object [true/false]  # noqa: E501
+
+        :param delete_protection: The delete_protection of this CreateRole.  # noqa: E501
+        :type: str
+        """
+
+        self._delete_protection = delete_protection
 
     @property
     def description(self):

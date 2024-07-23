@@ -47,7 +47,8 @@ class RotatedSecretDetailsInfo(object):
         'rotator_status': 'str',
         'rotator_type': 'str',
         'same_password': 'bool',
-        'services_details': 'list[WindowsService]'
+        'services_details': 'list[WindowsService]',
+        'timeout_seconds': 'int'
     }
 
     attribute_map = {
@@ -64,10 +65,11 @@ class RotatedSecretDetailsInfo(object):
         'rotator_status': 'rotator_status',
         'rotator_type': 'rotator_type',
         'same_password': 'same_password',
-        'services_details': 'services_details'
+        'services_details': 'services_details',
+        'timeout_seconds': 'timeout_seconds'
     }
 
-    def __init__(self, delete_previous_version_in_days=None, grace_rotation=None, gw_cluster_id=None, last_rotation_error=None, max_versions=None, number_of_versions_to_save=None, rotation_hour=None, rotation_interval_min=None, rotation_statement=None, rotator_creds_type=None, rotator_status=None, rotator_type=None, same_password=None, services_details=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, delete_previous_version_in_days=None, grace_rotation=None, gw_cluster_id=None, last_rotation_error=None, max_versions=None, number_of_versions_to_save=None, rotation_hour=None, rotation_interval_min=None, rotation_statement=None, rotator_creds_type=None, rotator_status=None, rotator_type=None, same_password=None, services_details=None, timeout_seconds=None, local_vars_configuration=None):  # noqa: E501
         """RotatedSecretDetailsInfo - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -87,6 +89,7 @@ class RotatedSecretDetailsInfo(object):
         self._rotator_type = None
         self._same_password = None
         self._services_details = None
+        self._timeout_seconds = None
         self.discriminator = None
 
         if delete_previous_version_in_days is not None:
@@ -117,6 +120,8 @@ class RotatedSecretDetailsInfo(object):
             self.same_password = same_password
         if services_details is not None:
             self.services_details = services_details
+        if timeout_seconds is not None:
+            self.timeout_seconds = timeout_seconds
 
     @property
     def delete_previous_version_in_days(self):
@@ -413,6 +418,27 @@ class RotatedSecretDetailsInfo(object):
         """
 
         self._services_details = services_details
+
+    @property
+    def timeout_seconds(self):
+        """Gets the timeout_seconds of this RotatedSecretDetailsInfo.  # noqa: E501
+
+
+        :return: The timeout_seconds of this RotatedSecretDetailsInfo.  # noqa: E501
+        :rtype: int
+        """
+        return self._timeout_seconds
+
+    @timeout_seconds.setter
+    def timeout_seconds(self, timeout_seconds):
+        """Sets the timeout_seconds of this RotatedSecretDetailsInfo.
+
+
+        :param timeout_seconds: The timeout_seconds of this RotatedSecretDetailsInfo.  # noqa: E501
+        :type: int
+        """
+
+        self._timeout_seconds = timeout_seconds
 
     def to_dict(self):
         """Returns the model properties as a dict"""

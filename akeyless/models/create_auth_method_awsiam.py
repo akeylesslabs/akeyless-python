@@ -44,6 +44,7 @@ class CreateAuthMethodAWSIAM(object):
         'bound_role_name': 'list[str]',
         'bound_user_id': 'list[str]',
         'bound_user_name': 'list[str]',
+        'delete_protection': 'str',
         'description': 'str',
         'force_sub_claims': 'bool',
         'gw_bound_ips': 'list[str]',
@@ -67,6 +68,7 @@ class CreateAuthMethodAWSIAM(object):
         'bound_role_name': 'bound-role-name',
         'bound_user_id': 'bound-user-id',
         'bound_user_name': 'bound-user-name',
+        'delete_protection': 'delete_protection',
         'description': 'description',
         'force_sub_claims': 'force-sub-claims',
         'gw_bound_ips': 'gw-bound-ips',
@@ -79,7 +81,7 @@ class CreateAuthMethodAWSIAM(object):
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, access_expires=0, audit_logs_claims=None, bound_arn=None, bound_aws_account_id=None, bound_ips=None, bound_resource_id=None, bound_role_id=None, bound_role_name=None, bound_user_id=None, bound_user_name=None, description=None, force_sub_claims=None, gw_bound_ips=None, json=False, jwt_ttl=0, name=None, product_type=None, sts_url='https://sts.amazonaws.com', token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, access_expires=0, audit_logs_claims=None, bound_arn=None, bound_aws_account_id=None, bound_ips=None, bound_resource_id=None, bound_role_id=None, bound_role_name=None, bound_user_id=None, bound_user_name=None, delete_protection=None, description=None, force_sub_claims=None, gw_bound_ips=None, json=False, jwt_ttl=0, name=None, product_type=None, sts_url='https://sts.amazonaws.com', token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """CreateAuthMethodAWSIAM - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -95,6 +97,7 @@ class CreateAuthMethodAWSIAM(object):
         self._bound_role_name = None
         self._bound_user_id = None
         self._bound_user_name = None
+        self._delete_protection = None
         self._description = None
         self._force_sub_claims = None
         self._gw_bound_ips = None
@@ -126,6 +129,8 @@ class CreateAuthMethodAWSIAM(object):
             self.bound_user_id = bound_user_id
         if bound_user_name is not None:
             self.bound_user_name = bound_user_name
+        if delete_protection is not None:
+            self.delete_protection = delete_protection
         if description is not None:
             self.description = description
         if force_sub_claims is not None:
@@ -377,6 +382,29 @@ class CreateAuthMethodAWSIAM(object):
         """
 
         self._bound_user_name = bound_user_name
+
+    @property
+    def delete_protection(self):
+        """Gets the delete_protection of this CreateAuthMethodAWSIAM.  # noqa: E501
+
+        Protection from accidental deletion of this object [true/false]  # noqa: E501
+
+        :return: The delete_protection of this CreateAuthMethodAWSIAM.  # noqa: E501
+        :rtype: str
+        """
+        return self._delete_protection
+
+    @delete_protection.setter
+    def delete_protection(self, delete_protection):
+        """Sets the delete_protection of this CreateAuthMethodAWSIAM.
+
+        Protection from accidental deletion of this object [true/false]  # noqa: E501
+
+        :param delete_protection: The delete_protection of this CreateAuthMethodAWSIAM.  # noqa: E501
+        :type: str
+        """
+
+        self._delete_protection = delete_protection
 
     @property
     def description(self):
