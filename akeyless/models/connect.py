@@ -34,6 +34,7 @@ class Connect(object):
                             and the value is json key in definition.
     """
     openapi_types = {
+        'bastion_gateway_url': 'str',
         'helper': 'object',
         'rc_file_override': 'str',
         'bastion_ctrl_path': 'str',
@@ -56,6 +57,7 @@ class Connect(object):
     }
 
     attribute_map = {
+        'bastion_gateway_url': 'BastionGatewayUrl',
         'helper': 'Helper',
         'rc_file_override': 'RcFileOverride',
         'bastion_ctrl_path': 'bastion-ctrl-path',
@@ -77,12 +79,13 @@ class Connect(object):
         'via_bastion': 'via-bastion'
     }
 
-    def __init__(self, helper=None, rc_file_override=None, bastion_ctrl_path=None, bastion_ctrl_port='9900', bastion_ctrl_proto='http', bastion_ctrl_subdomain=None, cert_issuer_name=None, identity_file=None, json=False, justification=None, name=None, ssh_command=None, ssh_extra_args=None, ssh_legacy_signing_alg=False, target=None, token=None, uid_token=None, use_ssh_agent=None, via_bastion=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, bastion_gateway_url=None, helper=None, rc_file_override=None, bastion_ctrl_path=None, bastion_ctrl_port='9900', bastion_ctrl_proto='http', bastion_ctrl_subdomain=None, cert_issuer_name=None, identity_file=None, json=False, justification=None, name=None, ssh_command=None, ssh_extra_args=None, ssh_legacy_signing_alg=False, target=None, token=None, uid_token=None, use_ssh_agent=None, via_bastion=None, local_vars_configuration=None):  # noqa: E501
         """Connect - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
+        self._bastion_gateway_url = None
         self._helper = None
         self._rc_file_override = None
         self._bastion_ctrl_path = None
@@ -104,6 +107,8 @@ class Connect(object):
         self._via_bastion = None
         self.discriminator = None
 
+        if bastion_gateway_url is not None:
+            self.bastion_gateway_url = bastion_gateway_url
         if helper is not None:
             self.helper = helper
         if rc_file_override is not None:
@@ -142,6 +147,29 @@ class Connect(object):
             self.use_ssh_agent = use_ssh_agent
         if via_bastion is not None:
             self.via_bastion = via_bastion
+
+    @property
+    def bastion_gateway_url(self):
+        """Gets the bastion_gateway_url of this Connect.  # noqa: E501
+
+        todo - enable when gw-sra unification is done The Gateway URL (configuration management) address, e.g. http://localhost:8000  # noqa: E501
+
+        :return: The bastion_gateway_url of this Connect.  # noqa: E501
+        :rtype: str
+        """
+        return self._bastion_gateway_url
+
+    @bastion_gateway_url.setter
+    def bastion_gateway_url(self, bastion_gateway_url):
+        """Sets the bastion_gateway_url of this Connect.
+
+        todo - enable when gw-sra unification is done The Gateway URL (configuration management) address, e.g. http://localhost:8000  # noqa: E501
+
+        :param bastion_gateway_url: The bastion_gateway_url of this Connect.  # noqa: E501
+        :type: str
+        """
+
+        self._bastion_gateway_url = bastion_gateway_url
 
     @property
     def helper(self):

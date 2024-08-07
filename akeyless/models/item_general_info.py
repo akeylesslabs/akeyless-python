@@ -36,6 +36,7 @@ class ItemGeneralInfo(object):
     openapi_types = {
         'cert_issue_details': 'CertificateIssueInfo',
         'certificate_chain_info': 'CertificateChainInfo',
+        'certificate_format': 'str',
         'certificates_template_info': 'CertificateTemplateInfo',
         'classic_key_details': 'ClassicKeyDetailsInfo',
         'cluster_gw_url': 'str',
@@ -53,6 +54,7 @@ class ItemGeneralInfo(object):
     attribute_map = {
         'cert_issue_details': 'cert_issue_details',
         'certificate_chain_info': 'certificate_chain_info',
+        'certificate_format': 'certificate_format',
         'certificates_template_info': 'certificates_template_info',
         'classic_key_details': 'classic_key_details',
         'cluster_gw_url': 'cluster_gw_url',
@@ -67,7 +69,7 @@ class ItemGeneralInfo(object):
         'tokenizer_info': 'tokenizer_info'
     }
 
-    def __init__(self, cert_issue_details=None, certificate_chain_info=None, certificates_template_info=None, classic_key_details=None, cluster_gw_url=None, display_metadata=None, dynamic_secret_producer_details=None, importer_info=None, oidc_client_info=None, password_policy=None, rotated_secret_details=None, secure_remote_access_details=None, static_secret_info=None, tokenizer_info=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, cert_issue_details=None, certificate_chain_info=None, certificate_format=None, certificates_template_info=None, classic_key_details=None, cluster_gw_url=None, display_metadata=None, dynamic_secret_producer_details=None, importer_info=None, oidc_client_info=None, password_policy=None, rotated_secret_details=None, secure_remote_access_details=None, static_secret_info=None, tokenizer_info=None, local_vars_configuration=None):  # noqa: E501
         """ItemGeneralInfo - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -75,6 +77,7 @@ class ItemGeneralInfo(object):
 
         self._cert_issue_details = None
         self._certificate_chain_info = None
+        self._certificate_format = None
         self._certificates_template_info = None
         self._classic_key_details = None
         self._cluster_gw_url = None
@@ -93,6 +96,8 @@ class ItemGeneralInfo(object):
             self.cert_issue_details = cert_issue_details
         if certificate_chain_info is not None:
             self.certificate_chain_info = certificate_chain_info
+        if certificate_format is not None:
+            self.certificate_format = certificate_format
         if certificates_template_info is not None:
             self.certificates_template_info = certificates_template_info
         if classic_key_details is not None:
@@ -159,6 +164,27 @@ class ItemGeneralInfo(object):
         """
 
         self._certificate_chain_info = certificate_chain_info
+
+    @property
+    def certificate_format(self):
+        """Gets the certificate_format of this ItemGeneralInfo.  # noqa: E501
+
+
+        :return: The certificate_format of this ItemGeneralInfo.  # noqa: E501
+        :rtype: str
+        """
+        return self._certificate_format
+
+    @certificate_format.setter
+    def certificate_format(self, certificate_format):
+        """Sets the certificate_format of this ItemGeneralInfo.
+
+
+        :param certificate_format: The certificate_format of this ItemGeneralInfo.  # noqa: E501
+        :type: str
+        """
+
+        self._certificate_format = certificate_format
 
     @property
     def certificates_template_info(self):

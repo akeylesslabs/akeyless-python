@@ -38,6 +38,7 @@ class CreateDFCKey(object):
         'certificate_common_name': 'str',
         'certificate_country': 'str',
         'certificate_digest_algo': 'str',
+        'certificate_format': 'str',
         'certificate_locality': 'str',
         'certificate_organization': 'str',
         'certificate_province': 'str',
@@ -61,6 +62,7 @@ class CreateDFCKey(object):
         'certificate_common_name': 'certificate-common-name',
         'certificate_country': 'certificate-country',
         'certificate_digest_algo': 'certificate-digest-algo',
+        'certificate_format': 'certificate-format',
         'certificate_locality': 'certificate-locality',
         'certificate_organization': 'certificate-organization',
         'certificate_province': 'certificate-province',
@@ -79,7 +81,7 @@ class CreateDFCKey(object):
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, alg=None, certificate_common_name=None, certificate_country=None, certificate_digest_algo=None, certificate_locality=None, certificate_organization=None, certificate_province=None, certificate_ttl=None, conf_file_data=None, customer_frg_id=None, delete_protection=None, description=None, generate_self_signed_certificate=None, json=False, metadata=None, name=None, split_level=3, tag=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, alg=None, certificate_common_name=None, certificate_country=None, certificate_digest_algo=None, certificate_format=None, certificate_locality=None, certificate_organization=None, certificate_province=None, certificate_ttl=None, conf_file_data=None, customer_frg_id=None, delete_protection=None, description=None, generate_self_signed_certificate=None, json=False, metadata=None, name=None, split_level=3, tag=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """CreateDFCKey - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -89,6 +91,7 @@ class CreateDFCKey(object):
         self._certificate_common_name = None
         self._certificate_country = None
         self._certificate_digest_algo = None
+        self._certificate_format = None
         self._certificate_locality = None
         self._certificate_organization = None
         self._certificate_province = None
@@ -114,6 +117,8 @@ class CreateDFCKey(object):
             self.certificate_country = certificate_country
         if certificate_digest_algo is not None:
             self.certificate_digest_algo = certificate_digest_algo
+        if certificate_format is not None:
+            self.certificate_format = certificate_format
         if certificate_locality is not None:
             self.certificate_locality = certificate_locality
         if certificate_organization is not None:
@@ -239,6 +244,27 @@ class CreateDFCKey(object):
         """
 
         self._certificate_digest_algo = certificate_digest_algo
+
+    @property
+    def certificate_format(self):
+        """Gets the certificate_format of this CreateDFCKey.  # noqa: E501
+
+
+        :return: The certificate_format of this CreateDFCKey.  # noqa: E501
+        :rtype: str
+        """
+        return self._certificate_format
+
+    @certificate_format.setter
+    def certificate_format(self, certificate_format):
+        """Sets the certificate_format of this CreateDFCKey.
+
+
+        :param certificate_format: The certificate_format of this CreateDFCKey.  # noqa: E501
+        :type: str
+        """
+
+        self._certificate_format = certificate_format
 
     @property
     def certificate_locality(self):

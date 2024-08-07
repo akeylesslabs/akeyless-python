@@ -4,6 +4,7 @@ Connect is a command that performs secure remote access
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**bastion_gateway_url** | **str** | todo - enable when gw-sra unification is done The Gateway URL (configuration management) address, e.g. http://localhost:8000 | [optional] 
 **helper** | [**object**](.md) |  | [optional] 
 **rc_file_override** | **str** | used to override .akeyless-connect.rc in tests | [optional] 
 **bastion_ctrl_path** | **str** | The Bastion API path | [optional] 

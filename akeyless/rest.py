@@ -13,6 +13,9 @@
 
 from __future__ import absolute_import
 
+import socket
+import ipaddress
+import psutil
 import io
 import json
 import logging
@@ -138,6 +141,8 @@ class RESTClientObject(object):
 
         post_params = post_params or {}
         headers = headers or {}
+        if 'X-Forwarded-For' not in headers:
+            headers['X-Forwarded-For'] = get_ip()
 
         timeout = None
         if _request_timeout:
@@ -289,3 +294,30 @@ class RESTClientObject(object):
                             _preload_content=_preload_content,
                             _request_timeout=_request_timeout,
                             body=body)
+
+
+def is_global_unicast(ip):
+    ip_obj = ipaddress.ip_address(ip)
+    return (
+            (ip_obj.version == 4 or ip_obj.version == 6) and
+            not ip_obj.is_multicast and
+            not ip_obj.is_unspecified and
+            not ip_obj.is_loopback and
+            not ip_obj.is_link_local and
+            not ip_obj == ipaddress.IPv4Address('255.255.255.255')
+    )
+
+
+def get_ip():
+    try:
+        addrs = psutil.net_if_addrs()
+        for iface_name, iface_addrs in addrs.items():
+            for addr in iface_addrs:
+                if addr.family == socket.AF_INET:
+                    ip = addr.address
+                    if is_global_unicast(ip):
+                        return ip
+    except Exception:
+        return ""
+
+    return ""

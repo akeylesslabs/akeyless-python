@@ -5,6 +5,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **cert_issue_details** | [**CertificateIssueInfo**](CertificateIssueInfo.md) |  | [optional] 
 **certificate_chain_info** | [**CertificateChainInfo**](CertificateChainInfo.md) |  | [optional] 
+**certificate_format** | **str** |  | [optional] 
 **certificates_template_info** | [**CertificateTemplateInfo**](CertificateTemplateInfo.md) |  | [optional] 
 **classic_key_details** | [**ClassicKeyDetailsInfo**](ClassicKeyDetailsInfo.md) |  | [optional] 
 **cluster_gw_url** | **str** |  | [optional] 

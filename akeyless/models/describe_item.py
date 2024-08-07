@@ -36,6 +36,7 @@ class DescribeItem(object):
     openapi_types = {
         'accessibility': 'str',
         'bastion_details': 'bool',
+        'der_certificate_format': 'bool',
         'display_id': 'str',
         'gateway_details': 'bool',
         'item_id': 'int',
@@ -50,6 +51,7 @@ class DescribeItem(object):
     attribute_map = {
         'accessibility': 'accessibility',
         'bastion_details': 'bastion-details',
+        'der_certificate_format': 'der-certificate-format',
         'display_id': 'display-id',
         'gateway_details': 'gateway-details',
         'item_id': 'item-id',
@@ -61,7 +63,7 @@ class DescribeItem(object):
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, accessibility='regular', bastion_details=False, display_id=None, gateway_details=False, item_id=None, json=False, name=None, services_details=False, show_versions=False, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, accessibility='regular', bastion_details=False, der_certificate_format=False, display_id=None, gateway_details=False, item_id=None, json=False, name=None, services_details=False, show_versions=False, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """DescribeItem - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -69,6 +71,7 @@ class DescribeItem(object):
 
         self._accessibility = None
         self._bastion_details = None
+        self._der_certificate_format = None
         self._display_id = None
         self._gateway_details = None
         self._item_id = None
@@ -84,6 +87,8 @@ class DescribeItem(object):
             self.accessibility = accessibility
         if bastion_details is not None:
             self.bastion_details = bastion_details
+        if der_certificate_format is not None:
+            self.der_certificate_format = der_certificate_format
         if display_id is not None:
             self.display_id = display_id
         if gateway_details is not None:
@@ -147,6 +152,29 @@ class DescribeItem(object):
         """
 
         self._bastion_details = bastion_details
+
+    @property
+    def der_certificate_format(self):
+        """Gets the der_certificate_format of this DescribeItem.  # noqa: E501
+
+        The certificate will be displayed in DER format  # noqa: E501
+
+        :return: The der_certificate_format of this DescribeItem.  # noqa: E501
+        :rtype: bool
+        """
+        return self._der_certificate_format
+
+    @der_certificate_format.setter
+    def der_certificate_format(self, der_certificate_format):
+        """Sets the der_certificate_format of this DescribeItem.
+
+        The certificate will be displayed in DER format  # noqa: E501
+
+        :param der_certificate_format: The der_certificate_format of this DescribeItem.  # noqa: E501
+        :type: bool
+        """
+
+        self._der_certificate_format = der_certificate_format
 
     @property
     def display_id(self):

@@ -15,7 +15,7 @@
 
 from __future__ import absolute_import
 
-__version__ = "4.2.1"
+__version__ = "4.2.2"
 
 # import apis into sdk package
 from akeyless.api.v2_api import V2Api
@@ -96,6 +96,8 @@ from akeyless.models.azure_payload import AzurePayload
 from akeyless.models.azure_target_details import AzureTargetDetails
 from akeyless.models.bastion_list_entry import BastionListEntry
 from akeyless.models.bastions_list import BastionsList
+from akeyless.models.batch_encryption_request_line import BatchEncryptionRequestLine
+from akeyless.models.batch_encryption_response_line import BatchEncryptionResponseLine
 from akeyless.models.cf_config_part import CFConfigPart
 from akeyless.models.cache_config_part import CacheConfigPart
 from akeyless.models.cert_access_rules import CertAccessRules
