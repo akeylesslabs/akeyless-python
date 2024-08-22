@@ -58,7 +58,8 @@ class AuthMethodCreateAzureAD(object):
         'name': 'str',
         'product_type': 'list[str]',
         'token': 'str',
-        'uid_token': 'str'
+        'uid_token': 'str',
+        'unique_identifier': 'str'
     }
 
     attribute_map = {
@@ -86,10 +87,11 @@ class AuthMethodCreateAzureAD(object):
         'name': 'name',
         'product_type': 'product-type',
         'token': 'token',
-        'uid_token': 'uid-token'
+        'uid_token': 'uid-token',
+        'unique_identifier': 'unique-identifier'
     }
 
-    def __init__(self, access_expires=0, audience='https://management.azure.com/', audit_logs_claims=None, bound_group_id=None, bound_ips=None, bound_providers=None, bound_resource_id=None, bound_resource_names=None, bound_resource_types=None, bound_rg_id=None, bound_spid=None, bound_sub_id=None, bound_tenant_id=None, delete_protection=None, description=None, force_sub_claims=None, gw_bound_ips=None, issuer='https://sts.windows.net/---bound_tenant_id---', json=False, jwks_uri='https://login.microsoftonline.com/common/discovery/keys', jwt_ttl=0, name=None, product_type=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, access_expires=0, audience='https://management.azure.com/', audit_logs_claims=None, bound_group_id=None, bound_ips=None, bound_providers=None, bound_resource_id=None, bound_resource_names=None, bound_resource_types=None, bound_rg_id=None, bound_spid=None, bound_sub_id=None, bound_tenant_id=None, delete_protection=None, description=None, force_sub_claims=None, gw_bound_ips=None, issuer='https://sts.windows.net/---bound_tenant_id---', json=False, jwks_uri='https://login.microsoftonline.com/common/discovery/keys', jwt_ttl=0, name=None, product_type=None, token=None, uid_token=None, unique_identifier=None, local_vars_configuration=None):  # noqa: E501
         """AuthMethodCreateAzureAD - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -120,6 +122,7 @@ class AuthMethodCreateAzureAD(object):
         self._product_type = None
         self._token = None
         self._uid_token = None
+        self._unique_identifier = None
         self.discriminator = None
 
         if access_expires is not None:
@@ -170,6 +173,8 @@ class AuthMethodCreateAzureAD(object):
             self.token = token
         if uid_token is not None:
             self.uid_token = uid_token
+        if unique_identifier is not None:
+            self.unique_identifier = unique_identifier
 
     @property
     def access_expires(self):
@@ -749,6 +754,29 @@ class AuthMethodCreateAzureAD(object):
         """
 
         self._uid_token = uid_token
+
+    @property
+    def unique_identifier(self):
+        """Gets the unique_identifier of this AuthMethodCreateAzureAD.  # noqa: E501
+
+        A unique identifier (ID) value which is a \"sub claim\" name that contains details uniquely identifying that resource. This \"sub claim\" is used to distinguish between different identities.  # noqa: E501
+
+        :return: The unique_identifier of this AuthMethodCreateAzureAD.  # noqa: E501
+        :rtype: str
+        """
+        return self._unique_identifier
+
+    @unique_identifier.setter
+    def unique_identifier(self, unique_identifier):
+        """Sets the unique_identifier of this AuthMethodCreateAzureAD.
+
+        A unique identifier (ID) value which is a \"sub claim\" name that contains details uniquely identifying that resource. This \"sub claim\" is used to distinguish between different identities.  # noqa: E501
+
+        :param unique_identifier: The unique_identifier of this AuthMethodCreateAzureAD.  # noqa: E501
+        :type: str
+        """
+
+        self._unique_identifier = unique_identifier
 
     def to_dict(self):
         """Returns the model properties as a dict"""

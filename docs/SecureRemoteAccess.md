@@ -18,6 +18,7 @@ Name | Type | Description | Notes
 **domain** | **str** |  | [optional] 
 **enable** | **bool** |  | [optional] 
 **endpoint** | **str** |  | [optional] 
+**enforce_hosts_restriction** | **bool** |  | [optional] 
 **host** | **list[str]** |  | [optional] 
 **host_provider_type** | **str** |  | [optional] 
 **is_cli** | **bool** |  | [optional] 

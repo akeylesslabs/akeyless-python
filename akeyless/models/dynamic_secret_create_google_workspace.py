@@ -46,6 +46,11 @@ class DynamicSecretCreateGoogleWorkspace(object):
         'producer_encryption_key_name': 'str',
         'role_name': 'str',
         'role_scope': 'str',
+        'secure_access_enable': 'str',
+        'secure_access_url': 'str',
+        'secure_access_web': 'bool',
+        'secure_access_web_browsing': 'bool',
+        'secure_access_web_proxy': 'bool',
         'tags': 'list[str]',
         'target_name': 'str',
         'token': 'str',
@@ -66,6 +71,11 @@ class DynamicSecretCreateGoogleWorkspace(object):
         'producer_encryption_key_name': 'producer-encryption-key-name',
         'role_name': 'role-name',
         'role_scope': 'role-scope',
+        'secure_access_enable': 'secure-access-enable',
+        'secure_access_url': 'secure-access-url',
+        'secure_access_web': 'secure-access-web',
+        'secure_access_web_browsing': 'secure-access-web-browsing',
+        'secure_access_web_proxy': 'secure-access-web-proxy',
         'tags': 'tags',
         'target_name': 'target-name',
         'token': 'token',
@@ -73,7 +83,7 @@ class DynamicSecretCreateGoogleWorkspace(object):
         'user_ttl': 'user-ttl'
     }
 
-    def __init__(self, access_mode=None, admin_email=None, delete_protection=None, description=None, gcp_key=None, group_email=None, group_role=None, json=False, name=None, producer_encryption_key_name=None, role_name=None, role_scope=None, tags=None, target_name=None, token=None, uid_token=None, user_ttl='60m', local_vars_configuration=None):  # noqa: E501
+    def __init__(self, access_mode=None, admin_email=None, delete_protection=None, description=None, gcp_key=None, group_email=None, group_role=None, json=False, name=None, producer_encryption_key_name=None, role_name=None, role_scope=None, secure_access_enable=None, secure_access_url=None, secure_access_web=True, secure_access_web_browsing=False, secure_access_web_proxy=False, tags=None, target_name=None, token=None, uid_token=None, user_ttl='60m', local_vars_configuration=None):  # noqa: E501
         """DynamicSecretCreateGoogleWorkspace - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -91,6 +101,11 @@ class DynamicSecretCreateGoogleWorkspace(object):
         self._producer_encryption_key_name = None
         self._role_name = None
         self._role_scope = None
+        self._secure_access_enable = None
+        self._secure_access_url = None
+        self._secure_access_web = None
+        self._secure_access_web_browsing = None
+        self._secure_access_web_proxy = None
         self._tags = None
         self._target_name = None
         self._token = None
@@ -119,6 +134,16 @@ class DynamicSecretCreateGoogleWorkspace(object):
             self.role_name = role_name
         if role_scope is not None:
             self.role_scope = role_scope
+        if secure_access_enable is not None:
+            self.secure_access_enable = secure_access_enable
+        if secure_access_url is not None:
+            self.secure_access_url = secure_access_url
+        if secure_access_web is not None:
+            self.secure_access_web = secure_access_web
+        if secure_access_web_browsing is not None:
+            self.secure_access_web_browsing = secure_access_web_browsing
+        if secure_access_web_proxy is not None:
+            self.secure_access_web_proxy = secure_access_web_proxy
         if tags is not None:
             self.tags = tags
         if target_name is not None:
@@ -405,6 +430,121 @@ class DynamicSecretCreateGoogleWorkspace(object):
         """
 
         self._role_scope = role_scope
+
+    @property
+    def secure_access_enable(self):
+        """Gets the secure_access_enable of this DynamicSecretCreateGoogleWorkspace.  # noqa: E501
+
+        Enable/Disable secure remote access [true/false]  # noqa: E501
+
+        :return: The secure_access_enable of this DynamicSecretCreateGoogleWorkspace.  # noqa: E501
+        :rtype: str
+        """
+        return self._secure_access_enable
+
+    @secure_access_enable.setter
+    def secure_access_enable(self, secure_access_enable):
+        """Sets the secure_access_enable of this DynamicSecretCreateGoogleWorkspace.
+
+        Enable/Disable secure remote access [true/false]  # noqa: E501
+
+        :param secure_access_enable: The secure_access_enable of this DynamicSecretCreateGoogleWorkspace.  # noqa: E501
+        :type: str
+        """
+
+        self._secure_access_enable = secure_access_enable
+
+    @property
+    def secure_access_url(self):
+        """Gets the secure_access_url of this DynamicSecretCreateGoogleWorkspace.  # noqa: E501
+
+        Destination URL to inject secrets  # noqa: E501
+
+        :return: The secure_access_url of this DynamicSecretCreateGoogleWorkspace.  # noqa: E501
+        :rtype: str
+        """
+        return self._secure_access_url
+
+    @secure_access_url.setter
+    def secure_access_url(self, secure_access_url):
+        """Sets the secure_access_url of this DynamicSecretCreateGoogleWorkspace.
+
+        Destination URL to inject secrets  # noqa: E501
+
+        :param secure_access_url: The secure_access_url of this DynamicSecretCreateGoogleWorkspace.  # noqa: E501
+        :type: str
+        """
+
+        self._secure_access_url = secure_access_url
+
+    @property
+    def secure_access_web(self):
+        """Gets the secure_access_web of this DynamicSecretCreateGoogleWorkspace.  # noqa: E501
+
+        Enable Web Secure Remote Access  # noqa: E501
+
+        :return: The secure_access_web of this DynamicSecretCreateGoogleWorkspace.  # noqa: E501
+        :rtype: bool
+        """
+        return self._secure_access_web
+
+    @secure_access_web.setter
+    def secure_access_web(self, secure_access_web):
+        """Sets the secure_access_web of this DynamicSecretCreateGoogleWorkspace.
+
+        Enable Web Secure Remote Access  # noqa: E501
+
+        :param secure_access_web: The secure_access_web of this DynamicSecretCreateGoogleWorkspace.  # noqa: E501
+        :type: bool
+        """
+
+        self._secure_access_web = secure_access_web
+
+    @property
+    def secure_access_web_browsing(self):
+        """Gets the secure_access_web_browsing of this DynamicSecretCreateGoogleWorkspace.  # noqa: E501
+
+        Secure browser via Akeyless Web Access Bastion  # noqa: E501
+
+        :return: The secure_access_web_browsing of this DynamicSecretCreateGoogleWorkspace.  # noqa: E501
+        :rtype: bool
+        """
+        return self._secure_access_web_browsing
+
+    @secure_access_web_browsing.setter
+    def secure_access_web_browsing(self, secure_access_web_browsing):
+        """Sets the secure_access_web_browsing of this DynamicSecretCreateGoogleWorkspace.
+
+        Secure browser via Akeyless Web Access Bastion  # noqa: E501
+
+        :param secure_access_web_browsing: The secure_access_web_browsing of this DynamicSecretCreateGoogleWorkspace.  # noqa: E501
+        :type: bool
+        """
+
+        self._secure_access_web_browsing = secure_access_web_browsing
+
+    @property
+    def secure_access_web_proxy(self):
+        """Gets the secure_access_web_proxy of this DynamicSecretCreateGoogleWorkspace.  # noqa: E501
+
+        Web-Proxy via Akeyless Web Access Bastion  # noqa: E501
+
+        :return: The secure_access_web_proxy of this DynamicSecretCreateGoogleWorkspace.  # noqa: E501
+        :rtype: bool
+        """
+        return self._secure_access_web_proxy
+
+    @secure_access_web_proxy.setter
+    def secure_access_web_proxy(self, secure_access_web_proxy):
+        """Sets the secure_access_web_proxy of this DynamicSecretCreateGoogleWorkspace.
+
+        Web-Proxy via Akeyless Web Access Bastion  # noqa: E501
+
+        :param secure_access_web_proxy: The secure_access_web_proxy of this DynamicSecretCreateGoogleWorkspace.  # noqa: E501
+        :type: bool
+        """
+
+        self._secure_access_web_proxy = secure_access_web_proxy
 
     @property
     def tags(self):

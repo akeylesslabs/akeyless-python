@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **custom_field** | **dict(str, str)** | For Password Management use, additional fields | [optional] 
 **delete_protection** | **str** | Protection from accidental deletion of this object [true/false] | [optional] 
 **description** | **str** | Description of the object | [optional] 
-**format** | **str** | Secret format [text/json] (relevant only for type &#39;generic&#39;) | [optional] [default to 'text']
+**format** | **str** | Secret format [text/json/key-value] (relevant only for type &#39;generic&#39;) | [optional] [default to 'text']
 **inject_url** | **list[str]** | For Password Management use, reflect the website context | [optional] 
 **json** | **bool** | Set output format to JSON | [optional] [default to False]
 **max_versions** | **str** | Set the maximum number of versions, limited by the account settings defaults. | [optional] 

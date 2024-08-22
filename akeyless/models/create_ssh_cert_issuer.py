@@ -47,6 +47,7 @@ class CreateSSHCertIssuer(object):
         'secure_access_bastion_api': 'str',
         'secure_access_bastion_ssh': 'str',
         'secure_access_enable': 'str',
+        'secure_access_enforce_hosts_restriction': 'bool',
         'secure_access_host': 'list[str]',
         'secure_access_ssh_creds_user': 'str',
         'secure_access_use_internal_bastion': 'bool',
@@ -72,6 +73,7 @@ class CreateSSHCertIssuer(object):
         'secure_access_bastion_api': 'secure-access-bastion-api',
         'secure_access_bastion_ssh': 'secure-access-bastion-ssh',
         'secure_access_enable': 'secure-access-enable',
+        'secure_access_enforce_hosts_restriction': 'secure-access-enforce-hosts-restriction',
         'secure_access_host': 'secure-access-host',
         'secure_access_ssh_creds_user': 'secure-access-ssh-creds-user',
         'secure_access_use_internal_bastion': 'secure-access-use-internal-bastion',
@@ -83,7 +85,7 @@ class CreateSSHCertIssuer(object):
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, provider_type=None, allowed_users=None, delete_protection=None, description=None, extensions=None, host_provider=None, json=False, metadata=None, name=None, principals=None, secure_access_bastion_api=None, secure_access_bastion_ssh=None, secure_access_enable=None, secure_access_host=None, secure_access_ssh_creds_user=None, secure_access_use_internal_bastion=None, signer_key_name=None, tag=None, target=None, token=None, ttl=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, provider_type=None, allowed_users=None, delete_protection=None, description=None, extensions=None, host_provider=None, json=False, metadata=None, name=None, principals=None, secure_access_bastion_api=None, secure_access_bastion_ssh=None, secure_access_enable=None, secure_access_enforce_hosts_restriction=None, secure_access_host=None, secure_access_ssh_creds_user=None, secure_access_use_internal_bastion=None, signer_key_name=None, tag=None, target=None, token=None, ttl=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """CreateSSHCertIssuer - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -102,6 +104,7 @@ class CreateSSHCertIssuer(object):
         self._secure_access_bastion_api = None
         self._secure_access_bastion_ssh = None
         self._secure_access_enable = None
+        self._secure_access_enforce_hosts_restriction = None
         self._secure_access_host = None
         self._secure_access_ssh_creds_user = None
         self._secure_access_use_internal_bastion = None
@@ -137,6 +140,8 @@ class CreateSSHCertIssuer(object):
             self.secure_access_bastion_ssh = secure_access_bastion_ssh
         if secure_access_enable is not None:
             self.secure_access_enable = secure_access_enable
+        if secure_access_enforce_hosts_restriction is not None:
+            self.secure_access_enforce_hosts_restriction = secure_access_enforce_hosts_restriction
         if secure_access_host is not None:
             self.secure_access_host = secure_access_host
         if secure_access_ssh_creds_user is not None:
@@ -454,6 +459,29 @@ class CreateSSHCertIssuer(object):
         """
 
         self._secure_access_enable = secure_access_enable
+
+    @property
+    def secure_access_enforce_hosts_restriction(self):
+        """Gets the secure_access_enforce_hosts_restriction of this CreateSSHCertIssuer.  # noqa: E501
+
+        Enable this flag to enforce connections only to the hosts listed in --secure-access-host  # noqa: E501
+
+        :return: The secure_access_enforce_hosts_restriction of this CreateSSHCertIssuer.  # noqa: E501
+        :rtype: bool
+        """
+        return self._secure_access_enforce_hosts_restriction
+
+    @secure_access_enforce_hosts_restriction.setter
+    def secure_access_enforce_hosts_restriction(self, secure_access_enforce_hosts_restriction):
+        """Sets the secure_access_enforce_hosts_restriction of this CreateSSHCertIssuer.
+
+        Enable this flag to enforce connections only to the hosts listed in --secure-access-host  # noqa: E501
+
+        :param secure_access_enforce_hosts_restriction: The secure_access_enforce_hosts_restriction of this CreateSSHCertIssuer.  # noqa: E501
+        :type: bool
+        """
+
+        self._secure_access_enforce_hosts_restriction = secure_access_enforce_hosts_restriction
 
     @property
     def secure_access_host(self):

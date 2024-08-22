@@ -40,6 +40,7 @@ class AWSIAMAccessRules(object):
         'role_id': 'list[str]',
         'role_name': 'list[str]',
         'sts_endpoint': 'str',
+        'unique_identifier': 'str',
         'user_id': 'list[str]',
         'user_name': 'list[str]'
     }
@@ -51,11 +52,12 @@ class AWSIAMAccessRules(object):
         'role_id': 'role_id',
         'role_name': 'role_name',
         'sts_endpoint': 'sts_endpoint',
+        'unique_identifier': 'unique_identifier',
         'user_id': 'user_id',
         'user_name': 'user_name'
     }
 
-    def __init__(self, account_id=None, arn=None, resource_id=None, role_id=None, role_name=None, sts_endpoint=None, user_id=None, user_name=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, account_id=None, arn=None, resource_id=None, role_id=None, role_name=None, sts_endpoint=None, unique_identifier=None, user_id=None, user_name=None, local_vars_configuration=None):  # noqa: E501
         """AWSIAMAccessRules - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -67,6 +69,7 @@ class AWSIAMAccessRules(object):
         self._role_id = None
         self._role_name = None
         self._sts_endpoint = None
+        self._unique_identifier = None
         self._user_id = None
         self._user_name = None
         self.discriminator = None
@@ -83,6 +86,8 @@ class AWSIAMAccessRules(object):
             self.role_name = role_name
         if sts_endpoint is not None:
             self.sts_endpoint = sts_endpoint
+        if unique_identifier is not None:
+            self.unique_identifier = unique_identifier
         if user_id is not None:
             self.user_id = user_id
         if user_name is not None:
@@ -225,6 +230,29 @@ class AWSIAMAccessRules(object):
         """
 
         self._sts_endpoint = sts_endpoint
+
+    @property
+    def unique_identifier(self):
+        """Gets the unique_identifier of this AWSIAMAccessRules.  # noqa: E501
+
+        A unique identifier to distinguish different users  # noqa: E501
+
+        :return: The unique_identifier of this AWSIAMAccessRules.  # noqa: E501
+        :rtype: str
+        """
+        return self._unique_identifier
+
+    @unique_identifier.setter
+    def unique_identifier(self, unique_identifier):
+        """Sets the unique_identifier of this AWSIAMAccessRules.
+
+        A unique identifier to distinguish different users  # noqa: E501
+
+        :param unique_identifier: The unique_identifier of this AWSIAMAccessRules.  # noqa: E501
+        :type: str
+        """
+
+        self._unique_identifier = unique_identifier
 
     @property
     def user_id(self):

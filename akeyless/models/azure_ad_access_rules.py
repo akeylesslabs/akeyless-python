@@ -45,7 +45,8 @@ class AzureADAccessRules(object):
         'bound_subscription_ids': 'list[str]',
         'bound_tenant_id': 'str',
         'issuer': 'str',
-        'jwks_uri': 'str'
+        'jwks_uri': 'str',
+        'unique_identifier': 'str'
     }
 
     attribute_map = {
@@ -60,10 +61,11 @@ class AzureADAccessRules(object):
         'bound_subscription_ids': 'bound_subscription_ids',
         'bound_tenant_id': 'bound_tenant_id',
         'issuer': 'issuer',
-        'jwks_uri': 'jwks_uri'
+        'jwks_uri': 'jwks_uri',
+        'unique_identifier': 'unique_identifier'
     }
 
-    def __init__(self, ad_endpoint=None, bound_group_ids=None, bound_resource_groups=None, bound_resource_ids=None, bound_resource_names=None, bound_resource_providers=None, bound_resource_types=None, bound_service_principal_ids=None, bound_subscription_ids=None, bound_tenant_id=None, issuer=None, jwks_uri=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, ad_endpoint=None, bound_group_ids=None, bound_resource_groups=None, bound_resource_ids=None, bound_resource_names=None, bound_resource_providers=None, bound_resource_types=None, bound_service_principal_ids=None, bound_subscription_ids=None, bound_tenant_id=None, issuer=None, jwks_uri=None, unique_identifier=None, local_vars_configuration=None):  # noqa: E501
         """AzureADAccessRules - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -81,6 +83,7 @@ class AzureADAccessRules(object):
         self._bound_tenant_id = None
         self._issuer = None
         self._jwks_uri = None
+        self._unique_identifier = None
         self.discriminator = None
 
         if ad_endpoint is not None:
@@ -107,6 +110,8 @@ class AzureADAccessRules(object):
             self.issuer = issuer
         if jwks_uri is not None:
             self.jwks_uri = jwks_uri
+        if unique_identifier is not None:
+            self.unique_identifier = unique_identifier
 
     @property
     def ad_endpoint(self):
@@ -383,6 +388,29 @@ class AzureADAccessRules(object):
         """
 
         self._jwks_uri = jwks_uri
+
+    @property
+    def unique_identifier(self):
+        """Gets the unique_identifier of this AzureADAccessRules.  # noqa: E501
+
+        A unique identifier to distinguish different users  # noqa: E501
+
+        :return: The unique_identifier of this AzureADAccessRules.  # noqa: E501
+        :rtype: str
+        """
+        return self._unique_identifier
+
+    @unique_identifier.setter
+    def unique_identifier(self, unique_identifier):
+        """Sets the unique_identifier of this AzureADAccessRules.
+
+        A unique identifier to distinguish different users  # noqa: E501
+
+        :param unique_identifier: The unique_identifier of this AzureADAccessRules.  # noqa: E501
+        :type: str
+        """
+
+        self._unique_identifier = unique_identifier
 
     def to_dict(self):
         """Returns the model properties as a dict"""

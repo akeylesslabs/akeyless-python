@@ -57,6 +57,7 @@ class TargetTypeDetailsInput(object):
         'ping_target_details': 'PingTargetDetails',
         'rabbit_mq_target_details': 'RabbitMQTargetDetails',
         'salesforce_target_details': 'SalesforceTargetDetails',
+        'sectigo_target_details': 'SectigoTargetDetails',
         'ssh_target_details': 'SSHTargetDetails',
         'venafi_target_details': 'VenafiTargetDetails',
         'web_target_details': 'WebTargetDetails',
@@ -88,6 +89,7 @@ class TargetTypeDetailsInput(object):
         'ping_target_details': 'ping_target_details',
         'rabbit_mq_target_details': 'rabbit_mq_target_details',
         'salesforce_target_details': 'salesforce_target_details',
+        'sectigo_target_details': 'sectigo_target_details',
         'ssh_target_details': 'ssh_target_details',
         'venafi_target_details': 'venafi_target_details',
         'web_target_details': 'web_target_details',
@@ -95,7 +97,7 @@ class TargetTypeDetailsInput(object):
         'zerossl_target_details': 'zerossl_target_details'
     }
 
-    def __init__(self, artifactory_target_details=None, aws_target_details=None, azure_target_details=None, chef_target_details=None, custom_target_details=None, db_target_details=None, dockerhub_target_details=None, eks_target_details=None, gcp_target_details=None, github_target_details=None, gitlab_target_details=None, gke_target_details=None, globalsign_atlas_target_details=None, globalsign_target_details=None, godaddy_target_details=None, hashi_vault_target_details=None, ldap_target_details=None, linked_target_details=None, mongo_db_target_details=None, native_k8s_target_details=None, ping_target_details=None, rabbit_mq_target_details=None, salesforce_target_details=None, ssh_target_details=None, venafi_target_details=None, web_target_details=None, windows_target_details=None, zerossl_target_details=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, artifactory_target_details=None, aws_target_details=None, azure_target_details=None, chef_target_details=None, custom_target_details=None, db_target_details=None, dockerhub_target_details=None, eks_target_details=None, gcp_target_details=None, github_target_details=None, gitlab_target_details=None, gke_target_details=None, globalsign_atlas_target_details=None, globalsign_target_details=None, godaddy_target_details=None, hashi_vault_target_details=None, ldap_target_details=None, linked_target_details=None, mongo_db_target_details=None, native_k8s_target_details=None, ping_target_details=None, rabbit_mq_target_details=None, salesforce_target_details=None, sectigo_target_details=None, ssh_target_details=None, venafi_target_details=None, web_target_details=None, windows_target_details=None, zerossl_target_details=None, local_vars_configuration=None):  # noqa: E501
         """TargetTypeDetailsInput - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -124,6 +126,7 @@ class TargetTypeDetailsInput(object):
         self._ping_target_details = None
         self._rabbit_mq_target_details = None
         self._salesforce_target_details = None
+        self._sectigo_target_details = None
         self._ssh_target_details = None
         self._venafi_target_details = None
         self._web_target_details = None
@@ -177,6 +180,8 @@ class TargetTypeDetailsInput(object):
             self.rabbit_mq_target_details = rabbit_mq_target_details
         if salesforce_target_details is not None:
             self.salesforce_target_details = salesforce_target_details
+        if sectigo_target_details is not None:
+            self.sectigo_target_details = sectigo_target_details
         if ssh_target_details is not None:
             self.ssh_target_details = ssh_target_details
         if venafi_target_details is not None:
@@ -670,6 +675,27 @@ class TargetTypeDetailsInput(object):
         """
 
         self._salesforce_target_details = salesforce_target_details
+
+    @property
+    def sectigo_target_details(self):
+        """Gets the sectigo_target_details of this TargetTypeDetailsInput.  # noqa: E501
+
+
+        :return: The sectigo_target_details of this TargetTypeDetailsInput.  # noqa: E501
+        :rtype: SectigoTargetDetails
+        """
+        return self._sectigo_target_details
+
+    @sectigo_target_details.setter
+    def sectigo_target_details(self, sectigo_target_details):
+        """Sets the sectigo_target_details of this TargetTypeDetailsInput.
+
+
+        :param sectigo_target_details: The sectigo_target_details of this TargetTypeDetailsInput.  # noqa: E501
+        :type: SectigoTargetDetails
+        """
+
+        self._sectigo_target_details = sectigo_target_details
 
     @property
     def ssh_target_details(self):

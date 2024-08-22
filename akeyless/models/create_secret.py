@@ -310,7 +310,7 @@ class CreateSecret(object):
     def format(self):
         """Gets the format of this CreateSecret.  # noqa: E501
 
-        Secret format [text/json] (relevant only for type 'generic')  # noqa: E501
+        Secret format [text/json/key-value] (relevant only for type 'generic')  # noqa: E501
 
         :return: The format of this CreateSecret.  # noqa: E501
         :rtype: str
@@ -321,7 +321,7 @@ class CreateSecret(object):
     def format(self, format):
         """Sets the format of this CreateSecret.
 
-        Secret format [text/json] (relevant only for type 'generic')  # noqa: E501
+        Secret format [text/json/key-value] (relevant only for type 'generic')  # noqa: E501
 
         :param format: The format of this CreateSecret.  # noqa: E501
         :type: str

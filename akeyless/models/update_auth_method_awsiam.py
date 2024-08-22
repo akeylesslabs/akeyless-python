@@ -55,7 +55,8 @@ class UpdateAuthMethodAWSIAM(object):
         'product_type': 'list[str]',
         'sts_url': 'str',
         'token': 'str',
-        'uid_token': 'str'
+        'uid_token': 'str',
+        'unique_identifier': 'str'
     }
 
     attribute_map = {
@@ -80,10 +81,11 @@ class UpdateAuthMethodAWSIAM(object):
         'product_type': 'product-type',
         'sts_url': 'sts-url',
         'token': 'token',
-        'uid_token': 'uid-token'
+        'uid_token': 'uid-token',
+        'unique_identifier': 'unique-identifier'
     }
 
-    def __init__(self, access_expires=0, audit_logs_claims=None, bound_arn=None, bound_aws_account_id=None, bound_ips=None, bound_resource_id=None, bound_role_id=None, bound_role_name=None, bound_user_id=None, bound_user_name=None, delete_protection=None, description=None, force_sub_claims=None, gw_bound_ips=None, json=False, jwt_ttl=0, name=None, new_name=None, product_type=None, sts_url='https://sts.amazonaws.com', token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, access_expires=0, audit_logs_claims=None, bound_arn=None, bound_aws_account_id=None, bound_ips=None, bound_resource_id=None, bound_role_id=None, bound_role_name=None, bound_user_id=None, bound_user_name=None, delete_protection=None, description=None, force_sub_claims=None, gw_bound_ips=None, json=False, jwt_ttl=0, name=None, new_name=None, product_type=None, sts_url='https://sts.amazonaws.com', token=None, uid_token=None, unique_identifier=None, local_vars_configuration=None):  # noqa: E501
         """UpdateAuthMethodAWSIAM - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -111,6 +113,7 @@ class UpdateAuthMethodAWSIAM(object):
         self._sts_url = None
         self._token = None
         self._uid_token = None
+        self._unique_identifier = None
         self.discriminator = None
 
         if access_expires is not None:
@@ -155,6 +158,8 @@ class UpdateAuthMethodAWSIAM(object):
             self.token = token
         if uid_token is not None:
             self.uid_token = uid_token
+        if unique_identifier is not None:
+            self.unique_identifier = unique_identifier
 
     @property
     def access_expires(self):
@@ -665,6 +670,29 @@ class UpdateAuthMethodAWSIAM(object):
         """
 
         self._uid_token = uid_token
+
+    @property
+    def unique_identifier(self):
+        """Gets the unique_identifier of this UpdateAuthMethodAWSIAM.  # noqa: E501
+
+        A unique identifier (ID) value which is a \"sub claim\" name that contains details uniquely identifying that resource. This \"sub claim\" is used to distinguish between different identities.  # noqa: E501
+
+        :return: The unique_identifier of this UpdateAuthMethodAWSIAM.  # noqa: E501
+        :rtype: str
+        """
+        return self._unique_identifier
+
+    @unique_identifier.setter
+    def unique_identifier(self, unique_identifier):
+        """Sets the unique_identifier of this UpdateAuthMethodAWSIAM.
+
+        A unique identifier (ID) value which is a \"sub claim\" name that contains details uniquely identifying that resource. This \"sub claim\" is used to distinguish between different identities.  # noqa: E501
+
+        :param unique_identifier: The unique_identifier of this UpdateAuthMethodAWSIAM.  # noqa: E501
+        :type: str
+        """
+
+        self._unique_identifier = unique_identifier
 
     def to_dict(self):
         """Returns the model properties as a dict"""

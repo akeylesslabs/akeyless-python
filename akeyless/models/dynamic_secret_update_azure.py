@@ -48,6 +48,7 @@ class DynamicSecretUpdateAzure(object):
         'password_length': 'str',
         'producer_encryption_key_name': 'str',
         'secure_access_enable': 'str',
+        'secure_access_url': 'str',
         'secure_access_web': 'bool',
         'secure_access_web_browsing': 'bool',
         'secure_access_web_proxy': 'bool',
@@ -78,6 +79,7 @@ class DynamicSecretUpdateAzure(object):
         'password_length': 'password-length',
         'producer_encryption_key_name': 'producer-encryption-key-name',
         'secure_access_enable': 'secure-access-enable',
+        'secure_access_url': 'secure-access-url',
         'secure_access_web': 'secure-access-web',
         'secure_access_web_browsing': 'secure-access-web-browsing',
         'secure_access_web_proxy': 'secure-access-web-proxy',
@@ -93,7 +95,7 @@ class DynamicSecretUpdateAzure(object):
         'user_ttl': 'user-ttl'
     }
 
-    def __init__(self, app_obj_id=None, azure_client_id=None, azure_client_secret=None, azure_tenant_id=None, delete_protection=None, description=None, fixed_user_claim_keyname='false', fixed_user_only=False, json=False, name=None, new_name=None, password_length=None, producer_encryption_key_name=None, secure_access_enable=None, secure_access_web=True, secure_access_web_browsing=False, secure_access_web_proxy=False, tags=None, target_name=None, token=None, uid_token=None, user_group_obj_id=None, user_portal_access=False, user_principal_name=None, user_programmatic_access=False, user_role_template_id=None, user_ttl='60m', local_vars_configuration=None):  # noqa: E501
+    def __init__(self, app_obj_id=None, azure_client_id=None, azure_client_secret=None, azure_tenant_id=None, delete_protection=None, description=None, fixed_user_claim_keyname='false', fixed_user_only=False, json=False, name=None, new_name=None, password_length=None, producer_encryption_key_name=None, secure_access_enable=None, secure_access_url=None, secure_access_web=True, secure_access_web_browsing=False, secure_access_web_proxy=False, tags=None, target_name=None, token=None, uid_token=None, user_group_obj_id=None, user_portal_access=False, user_principal_name=None, user_programmatic_access=False, user_role_template_id=None, user_ttl='60m', local_vars_configuration=None):  # noqa: E501
         """DynamicSecretUpdateAzure - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -113,6 +115,7 @@ class DynamicSecretUpdateAzure(object):
         self._password_length = None
         self._producer_encryption_key_name = None
         self._secure_access_enable = None
+        self._secure_access_url = None
         self._secure_access_web = None
         self._secure_access_web_browsing = None
         self._secure_access_web_proxy = None
@@ -155,6 +158,8 @@ class DynamicSecretUpdateAzure(object):
             self.producer_encryption_key_name = producer_encryption_key_name
         if secure_access_enable is not None:
             self.secure_access_enable = secure_access_enable
+        if secure_access_url is not None:
+            self.secure_access_url = secure_access_url
         if secure_access_web is not None:
             self.secure_access_web = secure_access_web
         if secure_access_web_browsing is not None:
@@ -505,6 +510,29 @@ class DynamicSecretUpdateAzure(object):
         """
 
         self._secure_access_enable = secure_access_enable
+
+    @property
+    def secure_access_url(self):
+        """Gets the secure_access_url of this DynamicSecretUpdateAzure.  # noqa: E501
+
+        Destination URL to inject secrets  # noqa: E501
+
+        :return: The secure_access_url of this DynamicSecretUpdateAzure.  # noqa: E501
+        :rtype: str
+        """
+        return self._secure_access_url
+
+    @secure_access_url.setter
+    def secure_access_url(self, secure_access_url):
+        """Sets the secure_access_url of this DynamicSecretUpdateAzure.
+
+        Destination URL to inject secrets  # noqa: E501
+
+        :param secure_access_url: The secure_access_url of this DynamicSecretUpdateAzure.  # noqa: E501
+        :type: str
+        """
+
+        self._secure_access_url = secure_access_url
 
     @property
     def secure_access_web(self):

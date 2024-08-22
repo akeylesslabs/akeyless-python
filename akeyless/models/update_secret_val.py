@@ -176,7 +176,7 @@ class UpdateSecretVal(object):
     def format(self):
         """Gets the format of this UpdateSecretVal.  # noqa: E501
 
-        Secret format [text/json] (relevant only for type 'generic')  # noqa: E501
+        Secret format [text/json/key-value] (relevant only for type 'generic')  # noqa: E501
 
         :return: The format of this UpdateSecretVal.  # noqa: E501
         :rtype: str
@@ -187,7 +187,7 @@ class UpdateSecretVal(object):
     def format(self, format):
         """Sets the format of this UpdateSecretVal.
 
-        Secret format [text/json] (relevant only for type 'generic')  # noqa: E501
+        Secret format [text/json/key-value] (relevant only for type 'generic')  # noqa: E501
 
         :param format: The format of this UpdateSecretVal.  # noqa: E501
         :type: str

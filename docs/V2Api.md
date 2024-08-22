@@ -4,11 +4,12 @@ All URIs are relative to *https://api.akeyless.io*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**alias_details**](V2Api.md#alias_details) | **GET** /alias-details | 
 [**assoc_role_auth_method**](V2Api.md#assoc_role_auth_method) | **POST** /assoc-role-am | 
 [**assoc_target_item**](V2Api.md#assoc_target_item) | **POST** /assoc-target-item | 
 [**auth**](V2Api.md#auth) | **POST** /auth | 
 [**auth_method_create_api_key**](V2Api.md#auth_method_create_api_key) | **POST** /auth-method-create-api-key | 
-[**auth_method_create_aws_iam**](V2Api.md#auth_method_create_aws_iam) | **POST** /auth-method-create-aws | 
+[**auth_method_create_aws_iam**](V2Api.md#auth_method_create_aws_iam) | **POST** /auth-method-create-aws-iam | 
 [**auth_method_create_azure_ad**](V2Api.md#auth_method_create_azure_ad) | **POST** /auth-method-create-azure-ad | 
 [**auth_method_create_cert**](V2Api.md#auth_method_create_cert) | **POST** /auth-method-create-cert | 
 [**auth_method_create_email**](V2Api.md#auth_method_create_email) | **POST** /auth-method-create-email | 
@@ -119,6 +120,7 @@ Method | HTTP request | Description
 [**describe_permissions**](V2Api.md#describe_permissions) | **POST** /describe-permissions | 
 [**describe_sub_claims**](V2Api.md#describe_sub_claims) | **POST** /describe-sub-claims | 
 [**detokenize**](V2Api.md#detokenize) | **POST** /detokenize | 
+[**detokenize_batch**](V2Api.md#detokenize_batch) | **POST** /detokenize-batch | 
 [**dynamic_secret_create_artifactory**](V2Api.md#dynamic_secret_create_artifactory) | **POST** /dynamic-secret-create-artifactory | 
 [**dynamic_secret_create_aws**](V2Api.md#dynamic_secret_create_aws) | **POST** /dynamic-secret-create-aws | 
 [**dynamic_secret_create_azure**](V2Api.md#dynamic_secret_create_azure) | **POST** /dynamic-secret-create-azure | 
@@ -426,6 +428,7 @@ Method | HTTP request | Description
 [**target_create_ping**](V2Api.md#target_create_ping) | **POST** /target-create-ping | 
 [**target_create_rabbit_mq**](V2Api.md#target_create_rabbit_mq) | **POST** /target-create-rabbitmq | 
 [**target_create_salesforce**](V2Api.md#target_create_salesforce) | **POST** /target-create-salesforce | 
+[**target_create_sectigo**](V2Api.md#target_create_sectigo) | **POST** /target-create-sectigo | 
 [**target_create_ssh**](V2Api.md#target_create_ssh) | **POST** /target-create-ssh | 
 [**target_create_web**](V2Api.md#target_create_web) | **POST** /target-create-web | 
 [**target_create_windows**](V2Api.md#target_create_windows) | **POST** /target-create-windows | 
@@ -454,11 +457,13 @@ Method | HTTP request | Description
 [**target_update_ping**](V2Api.md#target_update_ping) | **POST** /target-update-ping | 
 [**target_update_rabbit_mq**](V2Api.md#target_update_rabbit_mq) | **POST** /target-update-rabbitmq | 
 [**target_update_salesforce**](V2Api.md#target_update_salesforce) | **POST** /target-update-salesforce | 
+[**target_update_sectigo**](V2Api.md#target_update_sectigo) | **POST** /target-update-sectigo | 
 [**target_update_ssh**](V2Api.md#target_update_ssh) | **POST** /target-update-ssh | 
 [**target_update_web**](V2Api.md#target_update_web) | **POST** /target-update-web | 
 [**target_update_windows**](V2Api.md#target_update_windows) | **POST** /target-update-windows | 
 [**target_update_zero_ssl**](V2Api.md#target_update_zero_ssl) | **POST** /target-update-zerossl | 
 [**tokenize**](V2Api.md#tokenize) | **POST** /tokenize | 
+[**tokenize_batch**](V2Api.md#tokenize_batch) | **POST** /tokenize-batch | 
 [**uid_create_child_token**](V2Api.md#uid_create_child_token) | **POST** /uid-create-child-token | 
 [**uid_generate_token**](V2Api.md#uid_generate_token) | **POST** /uid-generate-token | 
 [**uid_list_children**](V2Api.md#uid_list_children) | **POST** /uid-list-children | 
@@ -538,6 +543,66 @@ Method | HTTP request | Description
 [**verify_pki_cert_with_classic_key**](V2Api.md#verify_pki_cert_with_classic_key) | **POST** /verify-pki-cert-with-classic-key | 
 [**verify_rsa_ssa_pss**](V2Api.md#verify_rsa_ssa_pss) | **POST** /verify-rsassa-pss | 
 
+
+# **alias_details**
+> object alias_details(body)
+
+
+
+### Example
+
+```python
+from __future__ import print_function
+import time
+import akeyless
+from akeyless.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.akeyless.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = akeyless.Configuration(
+    host = "https://api.akeyless.io"
+)
+
+
+# Enter a context with an instance of the API client
+with akeyless.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = akeyless.V2Api(api_client)
+    body = akeyless.AliasDetails() # AliasDetails | 
+
+    try:
+        api_response = api_instance.alias_details(body)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling V2Api->alias_details: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**AliasDetails**](AliasDetails.md)|  | 
+
+### Return type
+
+**object**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | deleteRoleResponse wraps response body. |  -  |
+**0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **assoc_role_auth_method**
 > CreateRoleAuthMethodAssocOutput assoc_role_auth_method(body)
@@ -7419,6 +7484,66 @@ with akeyless.ApiClient() as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **body** | [**Detokenize**](Detokenize.md)|  | 
+
+### Return type
+
+[**DetokenizeOutput**](DetokenizeOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | detokenizeResponse wraps response body. |  -  |
+**0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **detokenize_batch**
+> DetokenizeOutput detokenize_batch(body)
+
+
+
+### Example
+
+```python
+from __future__ import print_function
+import time
+import akeyless
+from akeyless.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.akeyless.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = akeyless.Configuration(
+    host = "https://api.akeyless.io"
+)
+
+
+# Enter a context with an instance of the API client
+with akeyless.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = akeyless.V2Api(api_client)
+    body = [akeyless.BatchTokenizationRequestLine()] # list[BatchTokenizationRequestLine] | 
+
+    try:
+        api_response = api_instance.detokenize_batch(body)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling V2Api->detokenize_batch: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**list[BatchTokenizationRequestLine]**](BatchTokenizationRequestLine.md)|  | 
 
 ### Return type
 
@@ -25847,6 +25972,66 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **target_create_sectigo**
+> TargetCreateOutput target_create_sectigo(body)
+
+
+
+### Example
+
+```python
+from __future__ import print_function
+import time
+import akeyless
+from akeyless.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.akeyless.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = akeyless.Configuration(
+    host = "https://api.akeyless.io"
+)
+
+
+# Enter a context with an instance of the API client
+with akeyless.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = akeyless.V2Api(api_client)
+    body = akeyless.TargetCreateSectigo() # TargetCreateSectigo | 
+
+    try:
+        api_response = api_instance.target_create_sectigo(body)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling V2Api->target_create_sectigo: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**TargetCreateSectigo**](TargetCreateSectigo.md)|  | 
+
+### Return type
+
+[**TargetCreateOutput**](TargetCreateOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**201** | targetCreateSectigoResponse wraps response body. |  -  |
+**0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **target_create_ssh**
 > TargetCreateOutput target_create_ssh(body)
 
@@ -27527,6 +27712,66 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **target_update_sectigo**
+> TargetUpdateOutput target_update_sectigo(body)
+
+
+
+### Example
+
+```python
+from __future__ import print_function
+import time
+import akeyless
+from akeyless.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.akeyless.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = akeyless.Configuration(
+    host = "https://api.akeyless.io"
+)
+
+
+# Enter a context with an instance of the API client
+with akeyless.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = akeyless.V2Api(api_client)
+    body = akeyless.TargetUpdateSectigo() # TargetUpdateSectigo | 
+
+    try:
+        api_response = api_instance.target_update_sectigo(body)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling V2Api->target_update_sectigo: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**TargetUpdateSectigo**](TargetUpdateSectigo.md)|  | 
+
+### Return type
+
+[**TargetUpdateOutput**](TargetUpdateOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**201** | targetUpdateSectigoResponse wraps response body. |  -  |
+**0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **target_update_ssh**
 > TargetUpdateOutput target_update_ssh(body)
 
@@ -27805,6 +28050,66 @@ with akeyless.ApiClient() as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **body** | [**Tokenize**](Tokenize.md)|  | 
+
+### Return type
+
+[**TokenizeOutput**](TokenizeOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | tokenizeResponse wraps response body. |  -  |
+**0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **tokenize_batch**
+> TokenizeOutput tokenize_batch(body)
+
+
+
+### Example
+
+```python
+from __future__ import print_function
+import time
+import akeyless
+from akeyless.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.akeyless.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = akeyless.Configuration(
+    host = "https://api.akeyless.io"
+)
+
+
+# Enter a context with an instance of the API client
+with akeyless.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = akeyless.V2Api(api_client)
+    body = [akeyless.BatchTokenizationRequestLine()] # list[BatchTokenizationRequestLine] | 
+
+    try:
+        api_response = api_instance.tokenize_batch(body)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling V2Api->tokenize_batch: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**list[BatchTokenizationRequestLine]**](BatchTokenizationRequestLine.md)|  | 
 
 ### Return type
 

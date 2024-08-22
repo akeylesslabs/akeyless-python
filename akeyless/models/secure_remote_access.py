@@ -49,6 +49,7 @@ class SecureRemoteAccess(object):
         'domain': 'str',
         'enable': 'bool',
         'endpoint': 'str',
+        'enforce_hosts_restriction': 'bool',
         'host': 'list[str]',
         'host_provider_type': 'str',
         'is_cli': 'bool',
@@ -87,6 +88,7 @@ class SecureRemoteAccess(object):
         'domain': 'domain',
         'enable': 'enable',
         'endpoint': 'endpoint',
+        'enforce_hosts_restriction': 'enforce_hosts_restriction',
         'host': 'host',
         'host_provider_type': 'host_provider_type',
         'is_cli': 'is_cli',
@@ -109,7 +111,7 @@ class SecureRemoteAccess(object):
         'web_proxy': 'web_proxy'
     }
 
-    def __init__(self, account_id=None, allow_port_forwarding=None, allow_providing_external_username=None, bastion_api=None, bastion_issuer=None, bastion_issuer_id=None, bastion_ssh=None, block_concurrent_connections=None, block_concurrent_connections_level=None, category=None, dashboard_url=None, db_name=None, domain=None, enable=None, endpoint=None, host=None, host_provider_type=None, is_cli=None, is_web=None, isolated=None, native=None, rd_gateway_server=None, rdp_user=None, region=None, rotate_after_disconnect=None, schema=None, ssh_password=None, ssh_private_key=None, ssh_user=None, status_info=None, target_hosts=None, targets=None, url=None, use_internal_bastion=None, web_proxy=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, account_id=None, allow_port_forwarding=None, allow_providing_external_username=None, bastion_api=None, bastion_issuer=None, bastion_issuer_id=None, bastion_ssh=None, block_concurrent_connections=None, block_concurrent_connections_level=None, category=None, dashboard_url=None, db_name=None, domain=None, enable=None, endpoint=None, enforce_hosts_restriction=None, host=None, host_provider_type=None, is_cli=None, is_web=None, isolated=None, native=None, rd_gateway_server=None, rdp_user=None, region=None, rotate_after_disconnect=None, schema=None, ssh_password=None, ssh_private_key=None, ssh_user=None, status_info=None, target_hosts=None, targets=None, url=None, use_internal_bastion=None, web_proxy=None, local_vars_configuration=None):  # noqa: E501
         """SecureRemoteAccess - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -130,6 +132,7 @@ class SecureRemoteAccess(object):
         self._domain = None
         self._enable = None
         self._endpoint = None
+        self._enforce_hosts_restriction = None
         self._host = None
         self._host_provider_type = None
         self._is_cli = None
@@ -182,6 +185,8 @@ class SecureRemoteAccess(object):
             self.enable = enable
         if endpoint is not None:
             self.endpoint = endpoint
+        if enforce_hosts_restriction is not None:
+            self.enforce_hosts_restriction = enforce_hosts_restriction
         if host is not None:
             self.host = host
         if host_provider_type is not None:
@@ -537,6 +542,27 @@ class SecureRemoteAccess(object):
         """
 
         self._endpoint = endpoint
+
+    @property
+    def enforce_hosts_restriction(self):
+        """Gets the enforce_hosts_restriction of this SecureRemoteAccess.  # noqa: E501
+
+
+        :return: The enforce_hosts_restriction of this SecureRemoteAccess.  # noqa: E501
+        :rtype: bool
+        """
+        return self._enforce_hosts_restriction
+
+    @enforce_hosts_restriction.setter
+    def enforce_hosts_restriction(self, enforce_hosts_restriction):
+        """Sets the enforce_hosts_restriction of this SecureRemoteAccess.
+
+
+        :param enforce_hosts_restriction: The enforce_hosts_restriction of this SecureRemoteAccess.  # noqa: E501
+        :type: bool
+        """
+
+        self._enforce_hosts_restriction = enforce_hosts_restriction
 
     @property
     def host(self):

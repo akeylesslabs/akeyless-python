@@ -55,7 +55,8 @@ class AuthMethodUpdateGcp(object):
         'service_account_creds_data': 'str',
         'token': 'str',
         'type': 'str',
-        'uid_token': 'str'
+        'uid_token': 'str',
+        'unique_identifier': 'str'
     }
 
     attribute_map = {
@@ -80,10 +81,11 @@ class AuthMethodUpdateGcp(object):
         'service_account_creds_data': 'service-account-creds-data',
         'token': 'token',
         'type': 'type',
-        'uid_token': 'uid-token'
+        'uid_token': 'uid-token',
+        'unique_identifier': 'unique-identifier'
     }
 
-    def __init__(self, access_expires=0, audience='akeyless.io', audit_logs_claims=None, bound_ips=None, bound_labels=None, bound_projects=None, bound_regions=None, bound_service_accounts=None, bound_zones=None, delete_protection=None, description=None, force_sub_claims=None, gw_bound_ips=None, json=False, jwt_ttl=0, name=None, new_name=None, product_type=None, service_account_creds_data=None, token=None, type=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, access_expires=0, audience='akeyless.io', audit_logs_claims=None, bound_ips=None, bound_labels=None, bound_projects=None, bound_regions=None, bound_service_accounts=None, bound_zones=None, delete_protection=None, description=None, force_sub_claims=None, gw_bound_ips=None, json=False, jwt_ttl=0, name=None, new_name=None, product_type=None, service_account_creds_data=None, token=None, type=None, uid_token=None, unique_identifier=None, local_vars_configuration=None):  # noqa: E501
         """AuthMethodUpdateGcp - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -111,6 +113,7 @@ class AuthMethodUpdateGcp(object):
         self._token = None
         self._type = None
         self._uid_token = None
+        self._unique_identifier = None
         self.discriminator = None
 
         if access_expires is not None:
@@ -154,6 +157,8 @@ class AuthMethodUpdateGcp(object):
         self.type = type
         if uid_token is not None:
             self.uid_token = uid_token
+        if unique_identifier is not None:
+            self.unique_identifier = unique_identifier
 
     @property
     def access_expires(self):
@@ -666,6 +671,29 @@ class AuthMethodUpdateGcp(object):
         """
 
         self._uid_token = uid_token
+
+    @property
+    def unique_identifier(self):
+        """Gets the unique_identifier of this AuthMethodUpdateGcp.  # noqa: E501
+
+        A unique identifier (ID) value which is a \"sub claim\" name that contains details uniquely identifying that resource. This \"sub claim\" is used to distinguish between different identities.  # noqa: E501
+
+        :return: The unique_identifier of this AuthMethodUpdateGcp.  # noqa: E501
+        :rtype: str
+        """
+        return self._unique_identifier
+
+    @unique_identifier.setter
+    def unique_identifier(self, unique_identifier):
+        """Sets the unique_identifier of this AuthMethodUpdateGcp.
+
+        A unique identifier (ID) value which is a \"sub claim\" name that contains details uniquely identifying that resource. This \"sub claim\" is used to distinguish between different identities.  # noqa: E501
+
+        :param unique_identifier: The unique_identifier of this AuthMethodUpdateGcp.  # noqa: E501
+        :type: str
+        """
+
+        self._unique_identifier = unique_identifier
 
     def to_dict(self):
         """Returns the model properties as a dict"""

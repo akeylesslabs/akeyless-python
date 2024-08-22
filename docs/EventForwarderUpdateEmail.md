@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **enable** | **str** | Enable/Disable Event Forwarder [true/false] | [optional] [default to 'true']
 **event_types** | **list[str]** | List of event types to notify about [request-access, certificate-pending-expiration, certificate-expired, certificate-provisioning-success, certificate-provisioning-failure, auth-method-pending-expiration, auth-method-expired, rotated-secret-success, rotated-secret-failure, dynamic-secret-failure, multi-auth-failure, uid-rotation-failure, apply-justification, email-auth-method-approved, usage, rotation-usage, gateway-inactive, static-secret-updated] | [optional] 
 **gateways_event_source_locations** | **list[str]** | Event sources | 
+**include_error** | **str** | Set this option to include event errors details [true\\false] | [optional] 
 **items_event_source_locations** | **list[str]** | Items Event sources | [optional] 
 **json** | **bool** | Set output format to JSON | [optional] [default to False]
 **keep_prev_version** | **str** | Whether to keep previous version [true/false]. If not set, use default according to account settings | [optional] 

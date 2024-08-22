@@ -29,6 +29,8 @@ from akeyless.models.active_directory_payload import ActiveDirectoryPayload
 from akeyless.models.add_gateway_allowed_access_id import AddGatewayAllowedAccessId
 from akeyless.models.admins_config_part import AdminsConfigPart
 from akeyless.models.akeyless_gateway_config import AkeylessGatewayConfig
+from akeyless.models.alias_details import AliasDetails
+from akeyless.models.alias_details_output import AliasDetailsOutput
 from akeyless.models.all_analytics_data import AllAnalyticsData
 from akeyless.models.allowed_access import AllowedAccess
 from akeyless.models.allowed_access_old import AllowedAccessOld
@@ -84,6 +86,8 @@ from akeyless.models.bastion_list_entry import BastionListEntry
 from akeyless.models.bastions_list import BastionsList
 from akeyless.models.batch_encryption_request_line import BatchEncryptionRequestLine
 from akeyless.models.batch_encryption_response_line import BatchEncryptionResponseLine
+from akeyless.models.batch_tokenization_request_line import BatchTokenizationRequestLine
+from akeyless.models.batch_tokenization_response_line import BatchTokenizationResponseLine
 from akeyless.models.cf_config_part import CFConfigPart
 from akeyless.models.cache_config_part import CacheConfigPart
 from akeyless.models.cert_access_rules import CertAccessRules
@@ -784,6 +788,7 @@ from akeyless.models.ssh_certificate_issue_details import SSHCertificateIssueDet
 from akeyless.models.ssh_target_details import SSHTargetDetails
 from akeyless.models.salesforce_target_details import SalesforceTargetDetails
 from akeyless.models.secret_info import SecretInfo
+from akeyless.models.sectigo_target_details import SectigoTargetDetails
 from akeyless.models.secure_remote_access import SecureRemoteAccess
 from akeyless.models.server_inventory_migration import ServerInventoryMigration
 from akeyless.models.server_inventory_payload import ServerInventoryPayload
@@ -837,6 +842,7 @@ from akeyless.models.target_create_output import TargetCreateOutput
 from akeyless.models.target_create_ping import TargetCreatePing
 from akeyless.models.target_create_rabbit_mq import TargetCreateRabbitMq
 from akeyless.models.target_create_salesforce import TargetCreateSalesforce
+from akeyless.models.target_create_sectigo import TargetCreateSectigo
 from akeyless.models.target_create_ssh import TargetCreateSsh
 from akeyless.models.target_create_web import TargetCreateWeb
 from akeyless.models.target_create_windows import TargetCreateWindows
@@ -870,6 +876,7 @@ from akeyless.models.target_update_output import TargetUpdateOutput
 from akeyless.models.target_update_ping import TargetUpdatePing
 from akeyless.models.target_update_rabbit_mq import TargetUpdateRabbitMq
 from akeyless.models.target_update_salesforce import TargetUpdateSalesforce
+from akeyless.models.target_update_sectigo import TargetUpdateSectigo
 from akeyless.models.target_update_ssh import TargetUpdateSsh
 from akeyless.models.target_update_web import TargetUpdateWeb
 from akeyless.models.target_update_windows import TargetUpdateWindows

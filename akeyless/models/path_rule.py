@@ -36,6 +36,7 @@ class PathRule(object):
     openapi_types = {
         'assigners': 'list[RuleAssigner]',
         'capabilities': 'list[str]',
+        'cb': 'int',
         'is_limit_access': 'bool',
         'number_of_access_used': 'int',
         'number_of_allowed_access': 'int',
@@ -48,6 +49,7 @@ class PathRule(object):
     attribute_map = {
         'assigners': 'assigners',
         'capabilities': 'capabilities',
+        'cb': 'cb',
         'is_limit_access': 'is_limit_access',
         'number_of_access_used': 'number_of_access_used',
         'number_of_allowed_access': 'number_of_allowed_access',
@@ -57,7 +59,7 @@ class PathRule(object):
         'type': 'type'
     }
 
-    def __init__(self, assigners=None, capabilities=None, is_limit_access=None, number_of_access_used=None, number_of_allowed_access=None, path=None, start_time=None, ttl=None, type=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, assigners=None, capabilities=None, cb=None, is_limit_access=None, number_of_access_used=None, number_of_allowed_access=None, path=None, start_time=None, ttl=None, type=None, local_vars_configuration=None):  # noqa: E501
         """PathRule - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -65,6 +67,7 @@ class PathRule(object):
 
         self._assigners = None
         self._capabilities = None
+        self._cb = None
         self._is_limit_access = None
         self._number_of_access_used = None
         self._number_of_allowed_access = None
@@ -78,6 +81,8 @@ class PathRule(object):
             self.assigners = assigners
         if capabilities is not None:
             self.capabilities = capabilities
+        if cb is not None:
+            self.cb = cb
         if is_limit_access is not None:
             self.is_limit_access = is_limit_access
         if number_of_access_used is not None:
@@ -136,6 +141,27 @@ class PathRule(object):
         """
 
         self._capabilities = capabilities
+
+    @property
+    def cb(self):
+        """Gets the cb of this PathRule.  # noqa: E501
+
+
+        :return: The cb of this PathRule.  # noqa: E501
+        :rtype: int
+        """
+        return self._cb
+
+    @cb.setter
+    def cb(self, cb):
+        """Sets the cb of this PathRule.
+
+
+        :param cb: The cb of this PathRule.  # noqa: E501
+        :type: int
+        """
+
+        self._cb = cb
 
     @property
     def is_limit_access(self):

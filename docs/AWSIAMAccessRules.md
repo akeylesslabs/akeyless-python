@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **role_id** | **list[str]** | The list of role ids that the login is restricted to. | [optional] 
 **role_name** | **list[str]** | The list of role names that the login is restricted to. | [optional] 
 **sts_endpoint** | **str** | The sts URL. | [optional] 
+**unique_identifier** | **str** | A unique identifier to distinguish different users | [optional] 
 **user_id** | **list[str]** | The list of user ids that the login is restricted to. | [optional] 
 **user_name** | **list[str]** | The list of user names that the login is restricted to. | [optional] 
 

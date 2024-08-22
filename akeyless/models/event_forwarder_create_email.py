@@ -40,6 +40,7 @@ class EventForwarderCreateEmail(object):
         'event_types': 'list[str]',
         'every': 'str',
         'gateways_event_source_locations': 'list[str]',
+        'include_error': 'str',
         'items_event_source_locations': 'list[str]',
         'json': 'bool',
         'key': 'str',
@@ -58,6 +59,7 @@ class EventForwarderCreateEmail(object):
         'event_types': 'event-types',
         'every': 'every',
         'gateways_event_source_locations': 'gateways-event-source-locations',
+        'include_error': 'include-error',
         'items_event_source_locations': 'items-event-source-locations',
         'json': 'json',
         'key': 'key',
@@ -69,7 +71,7 @@ class EventForwarderCreateEmail(object):
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, auth_methods_event_source_locations=None, description=None, email_to=None, event_types=None, every=None, gateways_event_source_locations=None, items_event_source_locations=None, json=False, key=None, name=None, override_url=None, runner_type=None, targets_event_source_locations=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, auth_methods_event_source_locations=None, description=None, email_to=None, event_types=None, every=None, gateways_event_source_locations=None, include_error=None, items_event_source_locations=None, json=False, key=None, name=None, override_url=None, runner_type=None, targets_event_source_locations=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """EventForwarderCreateEmail - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -81,6 +83,7 @@ class EventForwarderCreateEmail(object):
         self._event_types = None
         self._every = None
         self._gateways_event_source_locations = None
+        self._include_error = None
         self._items_event_source_locations = None
         self._json = None
         self._key = None
@@ -103,6 +106,8 @@ class EventForwarderCreateEmail(object):
         if every is not None:
             self.every = every
         self.gateways_event_source_locations = gateways_event_source_locations
+        if include_error is not None:
+            self.include_error = include_error
         if items_event_source_locations is not None:
             self.items_event_source_locations = items_event_source_locations
         if json is not None:
@@ -259,6 +264,29 @@ class EventForwarderCreateEmail(object):
             raise ValueError("Invalid value for `gateways_event_source_locations`, must not be `None`")  # noqa: E501
 
         self._gateways_event_source_locations = gateways_event_source_locations
+
+    @property
+    def include_error(self):
+        """Gets the include_error of this EventForwarderCreateEmail.  # noqa: E501
+
+        Set this option to include event errors details [true\\false]  # noqa: E501
+
+        :return: The include_error of this EventForwarderCreateEmail.  # noqa: E501
+        :rtype: str
+        """
+        return self._include_error
+
+    @include_error.setter
+    def include_error(self, include_error):
+        """Sets the include_error of this EventForwarderCreateEmail.
+
+        Set this option to include event errors details [true\\false]  # noqa: E501
+
+        :param include_error: The include_error of this EventForwarderCreateEmail.  # noqa: E501
+        :type: str
+        """
+
+        self._include_error = include_error
 
     @property
     def items_event_source_locations(self):

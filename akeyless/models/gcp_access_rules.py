@@ -41,7 +41,8 @@ class GCPAccessRules(object):
         'bound_service_accounts': 'list[str]',
         'bound_zones': 'list[str]',
         'service_account': 'str',
-        'type': 'str'
+        'type': 'str',
+        'unique_identifier': 'str'
     }
 
     attribute_map = {
@@ -52,10 +53,11 @@ class GCPAccessRules(object):
         'bound_service_accounts': 'bound_service_accounts',
         'bound_zones': 'bound_zones',
         'service_account': 'service_account',
-        'type': 'type'
+        'type': 'type',
+        'unique_identifier': 'unique_identifier'
     }
 
-    def __init__(self, audience='akeyless.io', bound_labels=None, bound_projects=None, bound_regions=None, bound_service_accounts=None, bound_zones=None, service_account=None, type=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, audience='akeyless.io', bound_labels=None, bound_projects=None, bound_regions=None, bound_service_accounts=None, bound_zones=None, service_account=None, type=None, unique_identifier=None, local_vars_configuration=None):  # noqa: E501
         """GCPAccessRules - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -69,6 +71,7 @@ class GCPAccessRules(object):
         self._bound_zones = None
         self._service_account = None
         self._type = None
+        self._unique_identifier = None
         self.discriminator = None
 
         if audience is not None:
@@ -87,6 +90,8 @@ class GCPAccessRules(object):
             self.service_account = service_account
         if type is not None:
             self.type = type
+        if unique_identifier is not None:
+            self.unique_identifier = unique_identifier
 
     @property
     def audience(self):
@@ -269,6 +274,29 @@ class GCPAccessRules(object):
         """
 
         self._type = type
+
+    @property
+    def unique_identifier(self):
+        """Gets the unique_identifier of this GCPAccessRules.  # noqa: E501
+
+        A unique identifier to distinguish different users  # noqa: E501
+
+        :return: The unique_identifier of this GCPAccessRules.  # noqa: E501
+        :rtype: str
+        """
+        return self._unique_identifier
+
+    @unique_identifier.setter
+    def unique_identifier(self, unique_identifier):
+        """Sets the unique_identifier of this GCPAccessRules.
+
+        A unique identifier to distinguish different users  # noqa: E501
+
+        :param unique_identifier: The unique_identifier of this GCPAccessRules.  # noqa: E501
+        :type: str
+        """
+
+        self._unique_identifier = unique_identifier
 
     def to_dict(self):
         """Returns the model properties as a dict"""
