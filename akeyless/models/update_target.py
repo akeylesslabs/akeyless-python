@@ -208,7 +208,7 @@ class UpdateTarget(object):
     def new_name(self):
         """Gets the new_name of this UpdateTarget.  # noqa: E501
 
-        New Target name  # noqa: E501
+        New target name  # noqa: E501
 
         :return: The new_name of this UpdateTarget.  # noqa: E501
         :rtype: str
@@ -219,7 +219,7 @@ class UpdateTarget(object):
     def new_name(self, new_name):
         """Sets the new_name of this UpdateTarget.
 
-        New Target name  # noqa: E501
+        New target name  # noqa: E501
 
         :param new_name: The new_name of this UpdateTarget.  # noqa: E501
         :type: str

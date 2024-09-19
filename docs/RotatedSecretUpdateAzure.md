@@ -20,6 +20,7 @@ Name | Type | Description | Notes
 **password_length** | **str** | The length of the password to be generated | [optional] 
 **rm_tag** | **list[str]** | List of the existent tags that will be removed from this item | [optional] 
 **rotate_after_disconnect** | **str** | Rotate the value of the secret after SRA session ends [true/false] | [optional] [default to 'false']
+**rotation_event_in** | **list[str]** | How many days before the rotation of the item would you like to be notified | [optional] 
 **rotation_hour** | **int** | The Hour of the rotation in UTC | [optional] 
 **rotation_interval** | **str** | The number of days to wait between every automatic key rotation (1-365) | [optional] 
 **secure_access_disable_concurrent_connections** | **bool** | Enable this flag to prevent simultaneous use of the same secret | [optional] 

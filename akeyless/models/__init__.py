@@ -77,11 +77,15 @@ from akeyless.models.auth_method_update_saml import AuthMethodUpdateSAML
 from akeyless.models.auth_method_update_universal_identity import AuthMethodUpdateUniversalIdentity
 from akeyless.models.auth_output import AuthOutput
 from akeyless.models.aws_s3_log_forwarding_config import AwsS3LogForwardingConfig
+from akeyless.models.aws_storage import AwsStorage
 from akeyless.models.azure_ad_access_rules import AzureADAccessRules
 from akeyless.models.azure_key_vault_migration import AzureKeyVaultMigration
 from akeyless.models.azure_log_analytics_forwarding_config import AzureLogAnalyticsForwardingConfig
 from akeyless.models.azure_payload import AzurePayload
+from akeyless.models.azure_storage import AzureStorage
 from akeyless.models.azure_target_details import AzureTargetDetails
+from akeyless.models.bastion_config_reply_obj import BastionConfigReplyObj
+from akeyless.models.bastion_global_conf import BastionGlobalConf
 from akeyless.models.bastion_list_entry import BastionListEntry
 from akeyless.models.bastions_list import BastionsList
 from akeyless.models.batch_encryption_request_line import BatchEncryptionRequestLine
@@ -464,6 +468,7 @@ from akeyless.models.gateway_get_ldap_auth_config_output import GatewayGetLdapAu
 from akeyless.models.gateway_get_log_forwarding import GatewayGetLogForwarding
 from akeyless.models.gateway_get_migration import GatewayGetMigration
 from akeyless.models.gateway_get_producer import GatewayGetProducer
+from akeyless.models.gateway_get_remote_access import GatewayGetRemoteAccess
 from akeyless.models.gateway_get_tmp_users import GatewayGetTmpUsers
 from akeyless.models.gateway_list_customer_fragments import GatewayListCustomerFragments
 from akeyless.models.gateway_list_migration import GatewayListMigration
@@ -562,6 +567,8 @@ from akeyless.models.gateway_update_producer_snowflake import GatewayUpdateProdu
 from akeyless.models.gateway_update_producer_snowflake_output import GatewayUpdateProducerSnowflakeOutput
 from akeyless.models.gateway_update_producer_venafi import GatewayUpdateProducerVenafi
 from akeyless.models.gateway_update_producer_venafi_output import GatewayUpdateProducerVenafiOutput
+from akeyless.models.gateway_update_remote_access import GatewayUpdateRemoteAccess
+from akeyless.models.gateway_update_remote_access_rdp_recordings import GatewayUpdateRemoteAccessRdpRecordings
 from akeyless.models.gateway_update_tls_cert import GatewayUpdateTlsCert
 from akeyless.models.gateway_update_tls_cert_output import GatewayUpdateTlsCertOutput
 from akeyless.models.gateway_update_tmp_users import GatewayUpdateTmpUsers
@@ -608,6 +615,17 @@ from akeyless.models.godaddy_target_details import GodaddyTargetDetails
 from akeyless.models.google_chronicle_forwarding_config import GoogleChronicleForwardingConfig
 from akeyless.models.group import Group
 from akeyless.models.gw_cluster_identity import GwClusterIdentity
+from akeyless.models.gw_update_remote_access_session_logs_aws_s3 import GwUpdateRemoteAccessSessionLogsAwsS3
+from akeyless.models.gw_update_remote_access_session_logs_azure_analytics import GwUpdateRemoteAccessSessionLogsAzureAnalytics
+from akeyless.models.gw_update_remote_access_session_logs_datadog import GwUpdateRemoteAccessSessionLogsDatadog
+from akeyless.models.gw_update_remote_access_session_logs_elasticsearch import GwUpdateRemoteAccessSessionLogsElasticsearch
+from akeyless.models.gw_update_remote_access_session_logs_google_chronicle import GwUpdateRemoteAccessSessionLogsGoogleChronicle
+from akeyless.models.gw_update_remote_access_session_logs_logstash import GwUpdateRemoteAccessSessionLogsLogstash
+from akeyless.models.gw_update_remote_access_session_logs_logz_io import GwUpdateRemoteAccessSessionLogsLogzIo
+from akeyless.models.gw_update_remote_access_session_logs_splunk import GwUpdateRemoteAccessSessionLogsSplunk
+from akeyless.models.gw_update_remote_access_session_logs_stdout import GwUpdateRemoteAccessSessionLogsStdout
+from akeyless.models.gw_update_remote_access_session_logs_sumologic import GwUpdateRemoteAccessSessionLogsSumologic
+from akeyless.models.gw_update_remote_access_session_logs_syslog import GwUpdateRemoteAccessSessionLogsSyslog
 from akeyless.models.hashi_migration import HashiMigration
 from akeyless.models.hashi_payload import HashiPayload
 from akeyless.models.hashi_vault_target_details import HashiVaultTargetDetails
@@ -692,6 +710,7 @@ from akeyless.models.mongo_db_target_details import MongoDBTargetDetails
 from akeyless.models.move_objects import MoveObjects
 from akeyless.models.name import Name
 from akeyless.models.native_k8s_target_details import NativeK8sTargetDetails
+from akeyless.models.next_auto_rotation_event import NextAutoRotationEvent
 from akeyless.models.noti_forwarder import NotiForwarder
 from akeyless.models.o_auth2_access_rules import OAuth2AccessRules
 from akeyless.models.o_auth2_custom_claim import OAuth2CustomClaim
@@ -703,6 +722,7 @@ from akeyless.models.oidc_client_info import OidcClientInfo
 from akeyless.models.one_password_migration import OnePasswordMigration
 from akeyless.models.one_password_payload import OnePasswordPayload
 from akeyless.models.pki_certificate_issue_details import PKICertificateIssueDetails
+from akeyless.models.password_expiration_info import PasswordExpirationInfo
 from akeyless.models.password_policy_info import PasswordPolicyInfo
 from akeyless.models.path_rule import PathRule
 from akeyless.models.ping_target_details import PingTargetDetails
@@ -720,6 +740,8 @@ from akeyless.models.renew_certificate_output import RenewCertificateOutput
 from akeyless.models.request_access import RequestAccess
 from akeyless.models.request_access_output import RequestAccessOutput
 from akeyless.models.required_activity import RequiredActivity
+from akeyless.models.reset_access_key import ResetAccessKey
+from akeyless.models.reset_auth_method_access_key_output import ResetAuthMethodAccessKeyOutput
 from akeyless.models.reverse_rbac import ReverseRBAC
 from akeyless.models.reverse_rbac_client import ReverseRBACClient
 from akeyless.models.reverse_rbac_output import ReverseRBACOutput
@@ -813,6 +835,8 @@ from akeyless.models.sign_rsa_ssa_pss_output import SignRsaSsaPssOutput
 from akeyless.models.sm_info import SmInfo
 from akeyless.models.splunk_log_forwarding_config import SplunkLogForwardingConfig
 from akeyless.models.sra_info import SraInfo
+from akeyless.models.ssh_bastion_conf import SshBastionConf
+from akeyless.models.ssh_bastion_session_termination import SshBastionSessionTermination
 from akeyless.models.static_creds_auth import StaticCredsAuth
 from akeyless.models.static_creds_auth_output import StaticCredsAuthOutput
 from akeyless.models.static_secret_details_info import StaticSecretDetailsInfo
@@ -1021,6 +1045,9 @@ from akeyless.models.verify_pkcs1 import VerifyPKCS1
 from akeyless.models.verify_pki_cert_output import VerifyPKICertOutput
 from akeyless.models.verify_pki_cert_with_classic_key import VerifyPKICertWithClassicKey
 from akeyless.models.verify_rsa_ssa_pss import VerifyRsaSsaPss
+from akeyless.models.web_bastion_conf import WebBastionConf
+from akeyless.models.web_bastion_guacamole import WebBastionGuacamole
+from akeyless.models.web_bastion_rdp_record import WebBastionRdpRecord
 from akeyless.models.web_hook_noti_forwarder_public_details import WebHookNotiForwarderPublicDetails
 from akeyless.models.web_target_details import WebTargetDetails
 from akeyless.models.windows_service import WindowsService

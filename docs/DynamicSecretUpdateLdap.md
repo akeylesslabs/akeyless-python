@@ -16,7 +16,7 @@ Name | Type | Description | Notes
 **ldap_ca_cert** | **str** | CA Certificate File Content | [optional] 
 **ldap_url** | **str** | LDAP Server URL | [optional] 
 **name** | **str** | Dynamic secret name | 
-**new_name** | **str** | Dynamic secret new name | [optional] 
+**new_name** | **str** | Dynamic secret name | [optional] 
 **password_length** | **str** | The length of the password to be generated | [optional] 
 **producer_encryption_key_name** | **str** | Dynamic producer encryption key | [optional] 
 **secure_access_enable** | **str** | Enable/Disable secure remote access [true/false] | [optional] 

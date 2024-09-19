@@ -37,17 +37,19 @@ class EmailPassAccessRules(object):
         'alg': 'str',
         'email': 'str',
         'enc_email_with_shared_key': 'str',
-        'hash_pass': 'str'
+        'hash_pass': 'str',
+        'last_reset_password': 'datetime'
     }
 
     attribute_map = {
         'alg': 'alg',
         'email': 'email',
         'enc_email_with_shared_key': 'enc_email_with_shared_key',
-        'hash_pass': 'hash_pass'
+        'hash_pass': 'hash_pass',
+        'last_reset_password': 'last_reset_password'
     }
 
-    def __init__(self, alg=None, email=None, enc_email_with_shared_key=None, hash_pass=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, alg=None, email=None, enc_email_with_shared_key=None, hash_pass=None, last_reset_password=None, local_vars_configuration=None):  # noqa: E501
         """EmailPassAccessRules - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -57,6 +59,7 @@ class EmailPassAccessRules(object):
         self._email = None
         self._enc_email_with_shared_key = None
         self._hash_pass = None
+        self._last_reset_password = None
         self.discriminator = None
 
         if alg is not None:
@@ -67,6 +70,8 @@ class EmailPassAccessRules(object):
             self.enc_email_with_shared_key = enc_email_with_shared_key
         if hash_pass is not None:
             self.hash_pass = hash_pass
+        if last_reset_password is not None:
+            self.last_reset_password = last_reset_password
 
     @property
     def alg(self):
@@ -157,6 +162,29 @@ class EmailPassAccessRules(object):
         """
 
         self._hash_pass = hash_pass
+
+    @property
+    def last_reset_password(self):
+        """Gets the last_reset_password of this EmailPassAccessRules.  # noqa: E501
+
+        The last password change date  # noqa: E501
+
+        :return: The last_reset_password of this EmailPassAccessRules.  # noqa: E501
+        :rtype: datetime
+        """
+        return self._last_reset_password
+
+    @last_reset_password.setter
+    def last_reset_password(self, last_reset_password):
+        """Sets the last_reset_password of this EmailPassAccessRules.
+
+        The last password change date  # noqa: E501
+
+        :param last_reset_password: The last_reset_password of this EmailPassAccessRules.  # noqa: E501
+        :type: datetime
+        """
+
+        self._last_reset_password = last_reset_password
 
     def to_dict(self):
         """Returns the model properties as a dict"""

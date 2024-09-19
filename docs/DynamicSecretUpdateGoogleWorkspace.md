@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 **group_role** | **str** |  | [optional] 
 **json** | **bool** | Set output format to JSON | [optional] [default to False]
 **name** | **str** | Dynamic secret name | 
-**new_name** | **str** | Dynamic secret new name | [optional] 
+**new_name** | **str** | Dynamic secret name | [optional] 
 **producer_encryption_key_name** | **str** | Dynamic producer encryption key | [optional] 
 **role_name** | **str** | Name of the admin role to assign to the user, relevant only for role access-mode | [optional] 
 **role_scope** | **str** |  | [optional] 

@@ -43,6 +43,7 @@ class RotatedSecretCreateDockerhub(object):
         'max_versions': 'str',
         'name': 'str',
         'password_length': 'str',
+        'rotation_event_in': 'list[str]',
         'rotation_hour': 'int',
         'rotation_interval': 'str',
         'tags': 'list[str]',
@@ -61,6 +62,7 @@ class RotatedSecretCreateDockerhub(object):
         'max_versions': 'max-versions',
         'name': 'name',
         'password_length': 'password-length',
+        'rotation_event_in': 'rotation-event-in',
         'rotation_hour': 'rotation-hour',
         'rotation_interval': 'rotation-interval',
         'tags': 'tags',
@@ -69,7 +71,7 @@ class RotatedSecretCreateDockerhub(object):
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, authentication_credentials='use-user-creds', auto_rotate=None, delete_protection=None, description=None, json=False, key=None, max_versions=None, name=None, password_length=None, rotation_hour=None, rotation_interval=None, tags=None, target_name=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, authentication_credentials='use-user-creds', auto_rotate=None, delete_protection=None, description=None, json=False, key=None, max_versions=None, name=None, password_length=None, rotation_event_in=None, rotation_hour=None, rotation_interval=None, tags=None, target_name=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """RotatedSecretCreateDockerhub - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -84,6 +86,7 @@ class RotatedSecretCreateDockerhub(object):
         self._max_versions = None
         self._name = None
         self._password_length = None
+        self._rotation_event_in = None
         self._rotation_hour = None
         self._rotation_interval = None
         self._tags = None
@@ -109,6 +112,8 @@ class RotatedSecretCreateDockerhub(object):
         self.name = name
         if password_length is not None:
             self.password_length = password_length
+        if rotation_event_in is not None:
+            self.rotation_event_in = rotation_event_in
         if rotation_hour is not None:
             self.rotation_hour = rotation_hour
         if rotation_interval is not None:
@@ -329,6 +334,29 @@ class RotatedSecretCreateDockerhub(object):
         """
 
         self._password_length = password_length
+
+    @property
+    def rotation_event_in(self):
+        """Gets the rotation_event_in of this RotatedSecretCreateDockerhub.  # noqa: E501
+
+        How many days before the rotation of the item would you like to be notified  # noqa: E501
+
+        :return: The rotation_event_in of this RotatedSecretCreateDockerhub.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._rotation_event_in
+
+    @rotation_event_in.setter
+    def rotation_event_in(self, rotation_event_in):
+        """Sets the rotation_event_in of this RotatedSecretCreateDockerhub.
+
+        How many days before the rotation of the item would you like to be notified  # noqa: E501
+
+        :param rotation_event_in: The rotation_event_in of this RotatedSecretCreateDockerhub.  # noqa: E501
+        :type: list[str]
+        """
+
+        self._rotation_event_in = rotation_event_in
 
     @property
     def rotation_hour(self):

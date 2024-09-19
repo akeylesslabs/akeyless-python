@@ -16,6 +16,7 @@ Name | Type | Description | Notes
 **new_name** | **str** | New item name | [optional] 
 **password_length** | **str** | The length of the password to be generated | [optional] 
 **rm_tag** | **list[str]** | List of the existent tags that will be removed from this item | [optional] 
+**rotation_event_in** | **list[str]** | How many days before the rotation of the item would you like to be notified | [optional] 
 **rotation_hour** | **int** | The Hour of the rotation in UTC | [optional] 
 **rotation_interval** | **str** | The number of days to wait between every automatic key rotation (1-365) | [optional] 
 **token** | **str** | Authentication token (see &#x60;/auth&#x60; and &#x60;/configure&#x60;) | [optional] 

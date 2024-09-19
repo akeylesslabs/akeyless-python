@@ -42,10 +42,14 @@ class Configure(object):
         'admin_password': 'str',
         'azure_ad_object_id': 'str',
         'cert_data': 'str',
+        'cert_issuer_name': 'str',
+        'cert_username': 'str',
+        'default_location_prefix': 'str',
         'gcp_audience': 'str',
         'json': 'bool',
         'k8s_auth_config_name': 'str',
         'key_data': 'str',
+        'legacy_signing_alg_name': 'bool',
         'oci_auth_type': 'str',
         'oci_group_ocid': 'list[str]'
     }
@@ -59,15 +63,19 @@ class Configure(object):
         'admin_password': 'admin-password',
         'azure_ad_object_id': 'azure_ad_object_id',
         'cert_data': 'cert-data',
+        'cert_issuer_name': 'cert-issuer-name',
+        'cert_username': 'cert-username',
+        'default_location_prefix': 'default-location-prefix',
         'gcp_audience': 'gcp-audience',
         'json': 'json',
         'k8s_auth_config_name': 'k8s-auth-config-name',
         'key_data': 'key-data',
+        'legacy_signing_alg_name': 'legacy-signing-alg-name',
         'oci_auth_type': 'oci-auth-type',
         'oci_group_ocid': 'oci-group-ocid'
     }
 
-    def __init__(self, access_id=None, access_key=None, access_type='access_key', account_id=None, admin_email=None, admin_password=None, azure_ad_object_id=None, cert_data=None, gcp_audience='akeyless.io', json=False, k8s_auth_config_name=None, key_data=None, oci_auth_type='apikey', oci_group_ocid=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, access_id=None, access_key=None, access_type='access_key', account_id=None, admin_email=None, admin_password=None, azure_ad_object_id=None, cert_data=None, cert_issuer_name=None, cert_username=None, default_location_prefix=None, gcp_audience='akeyless.io', json=False, k8s_auth_config_name=None, key_data=None, legacy_signing_alg_name=None, oci_auth_type='apikey', oci_group_ocid=None, local_vars_configuration=None):  # noqa: E501
         """Configure - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -81,10 +89,14 @@ class Configure(object):
         self._admin_password = None
         self._azure_ad_object_id = None
         self._cert_data = None
+        self._cert_issuer_name = None
+        self._cert_username = None
+        self._default_location_prefix = None
         self._gcp_audience = None
         self._json = None
         self._k8s_auth_config_name = None
         self._key_data = None
+        self._legacy_signing_alg_name = None
         self._oci_auth_type = None
         self._oci_group_ocid = None
         self.discriminator = None
@@ -105,6 +117,12 @@ class Configure(object):
             self.azure_ad_object_id = azure_ad_object_id
         if cert_data is not None:
             self.cert_data = cert_data
+        if cert_issuer_name is not None:
+            self.cert_issuer_name = cert_issuer_name
+        if cert_username is not None:
+            self.cert_username = cert_username
+        if default_location_prefix is not None:
+            self.default_location_prefix = default_location_prefix
         if gcp_audience is not None:
             self.gcp_audience = gcp_audience
         if json is not None:
@@ -113,6 +131,8 @@ class Configure(object):
             self.k8s_auth_config_name = k8s_auth_config_name
         if key_data is not None:
             self.key_data = key_data
+        if legacy_signing_alg_name is not None:
+            self.legacy_signing_alg_name = legacy_signing_alg_name
         if oci_auth_type is not None:
             self.oci_auth_type = oci_auth_type
         if oci_group_ocid is not None:
@@ -303,6 +323,75 @@ class Configure(object):
         self._cert_data = cert_data
 
     @property
+    def cert_issuer_name(self):
+        """Gets the cert_issuer_name of this Configure.  # noqa: E501
+
+        Certificate Issuer Name  # noqa: E501
+
+        :return: The cert_issuer_name of this Configure.  # noqa: E501
+        :rtype: str
+        """
+        return self._cert_issuer_name
+
+    @cert_issuer_name.setter
+    def cert_issuer_name(self, cert_issuer_name):
+        """Sets the cert_issuer_name of this Configure.
+
+        Certificate Issuer Name  # noqa: E501
+
+        :param cert_issuer_name: The cert_issuer_name of this Configure.  # noqa: E501
+        :type: str
+        """
+
+        self._cert_issuer_name = cert_issuer_name
+
+    @property
+    def cert_username(self):
+        """Gets the cert_username of this Configure.  # noqa: E501
+
+        The username to sign in the SSH certificate (use a comma-separated list for more than one username)  # noqa: E501
+
+        :return: The cert_username of this Configure.  # noqa: E501
+        :rtype: str
+        """
+        return self._cert_username
+
+    @cert_username.setter
+    def cert_username(self, cert_username):
+        """Sets the cert_username of this Configure.
+
+        The username to sign in the SSH certificate (use a comma-separated list for more than one username)  # noqa: E501
+
+        :param cert_username: The cert_username of this Configure.  # noqa: E501
+        :type: str
+        """
+
+        self._cert_username = cert_username
+
+    @property
+    def default_location_prefix(self):
+        """Gets the default_location_prefix of this Configure.  # noqa: E501
+
+        Default path prefix for name of items, targets and auth methods  # noqa: E501
+
+        :return: The default_location_prefix of this Configure.  # noqa: E501
+        :rtype: str
+        """
+        return self._default_location_prefix
+
+    @default_location_prefix.setter
+    def default_location_prefix(self, default_location_prefix):
+        """Sets the default_location_prefix of this Configure.
+
+        Default path prefix for name of items, targets and auth methods  # noqa: E501
+
+        :param default_location_prefix: The default_location_prefix of this Configure.  # noqa: E501
+        :type: str
+        """
+
+        self._default_location_prefix = default_location_prefix
+
+    @property
     def gcp_audience(self):
         """Gets the gcp_audience of this Configure.  # noqa: E501
 
@@ -393,6 +482,29 @@ class Configure(object):
         """
 
         self._key_data = key_data
+
+    @property
+    def legacy_signing_alg_name(self):
+        """Gets the legacy_signing_alg_name of this Configure.  # noqa: E501
+
+        Set this option to output legacy ('ssh-rsa-cert-v01@openssh.com') signing algorithm name in the certificate.  # noqa: E501
+
+        :return: The legacy_signing_alg_name of this Configure.  # noqa: E501
+        :rtype: bool
+        """
+        return self._legacy_signing_alg_name
+
+    @legacy_signing_alg_name.setter
+    def legacy_signing_alg_name(self, legacy_signing_alg_name):
+        """Sets the legacy_signing_alg_name of this Configure.
+
+        Set this option to output legacy ('ssh-rsa-cert-v01@openssh.com') signing algorithm name in the certificate.  # noqa: E501
+
+        :param legacy_signing_alg_name: The legacy_signing_alg_name of this Configure.  # noqa: E501
+        :type: bool
+        """
+
+        self._legacy_signing_alg_name = legacy_signing_alg_name
 
     @property
     def oci_auth_type(self):

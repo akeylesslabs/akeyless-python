@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **description** | **str** | Description of the object | [optional] 
 **json** | **bool** | Set output format to JSON | [optional] [default to False]
 **name** | **str** | Dynamic secret name | 
-**new_name** | **str** | Dynamic secret new name | [optional] 
+**new_name** | **str** | Dynamic secret name | [optional] 
 **oracle_host** | **str** | Oracle Host | [optional] [default to '127.0.0.1']
 **oracle_password** | **str** | Oracle Password | [optional] 
 **oracle_port** | **str** | Oracle Port | [optional] [default to '1521']

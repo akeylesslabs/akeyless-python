@@ -46,6 +46,7 @@ class UpdateAccountSettings(object):
         'dynamic_secret_max_ttl': 'int',
         'dynamic_secret_max_ttl_enable': 'str',
         'enable_item_sharing': 'str',
+        'enable_password_expiration': 'str',
         'force_new_versions': 'str',
         'gw_bound_ips': 'list[str]',
         'invalid_characters': 'str',
@@ -61,6 +62,8 @@ class UpdateAccountSettings(object):
         'max_rotation_interval': 'int',
         'max_rotation_interval_enable': 'str',
         'max_versions': 'str',
+        'password_expiration_days': 'str',
+        'password_expiration_notification_days': 'str',
         'password_length': 'int',
         'phone': 'str',
         'postal_code': 'str',
@@ -88,6 +91,7 @@ class UpdateAccountSettings(object):
         'dynamic_secret_max_ttl': 'dynamic-secret-max-ttl',
         'dynamic_secret_max_ttl_enable': 'dynamic-secret-max-ttl-enable',
         'enable_item_sharing': 'enable-item-sharing',
+        'enable_password_expiration': 'enable-password-expiration',
         'force_new_versions': 'force-new-versions',
         'gw_bound_ips': 'gw-bound-ips',
         'invalid_characters': 'invalid-characters',
@@ -103,6 +107,8 @@ class UpdateAccountSettings(object):
         'max_rotation_interval': 'max-rotation-interval',
         'max_rotation_interval_enable': 'max-rotation-interval-enable',
         'max_versions': 'max-versions',
+        'password_expiration_days': 'password-expiration-days',
+        'password_expiration_notification_days': 'password-expiration-notification-days',
         'password_length': 'password-length',
         'phone': 'phone',
         'postal_code': 'postal-code',
@@ -117,7 +123,7 @@ class UpdateAccountSettings(object):
         'use_capital_letters': 'use_capital-letters'
     }
 
-    def __init__(self, address=None, bound_ips=None, city=None, company_name=None, country=None, default_key_name=None, default_share_link_ttl_minutes=None, default_versioning=None, dp_enable_classic_key_protection=None, dynamic_secret_max_ttl=None, dynamic_secret_max_ttl_enable=None, enable_item_sharing=None, force_new_versions=None, gw_bound_ips=None, invalid_characters='notReceivedInvalidCharacter', item_type=None, items_deletion_protection=None, json=False, jwt_ttl_default=None, jwt_ttl_max=None, jwt_ttl_min=None, lock_bound_ips=None, lock_default_key=None, lock_gw_bound_ips=None, max_rotation_interval=None, max_rotation_interval_enable=None, max_versions=None, password_length=None, phone=None, postal_code=None, token=None, uid_token=None, usage_event_enable=None, usage_event_interval=None, usage_event_object_type=None, use_lower_letters=None, use_numbers=None, use_special_characters=None, use_capital_letters=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, address=None, bound_ips=None, city=None, company_name=None, country=None, default_key_name=None, default_share_link_ttl_minutes=None, default_versioning=None, dp_enable_classic_key_protection=None, dynamic_secret_max_ttl=None, dynamic_secret_max_ttl_enable=None, enable_item_sharing=None, enable_password_expiration=None, force_new_versions=None, gw_bound_ips=None, invalid_characters='notReceivedInvalidCharacter', item_type=None, items_deletion_protection=None, json=False, jwt_ttl_default=None, jwt_ttl_max=None, jwt_ttl_min=None, lock_bound_ips=None, lock_default_key=None, lock_gw_bound_ips=None, max_rotation_interval=None, max_rotation_interval_enable=None, max_versions=None, password_expiration_days=None, password_expiration_notification_days=None, password_length=None, phone=None, postal_code=None, token=None, uid_token=None, usage_event_enable=None, usage_event_interval=None, usage_event_object_type=None, use_lower_letters=None, use_numbers=None, use_special_characters=None, use_capital_letters=None, local_vars_configuration=None):  # noqa: E501
         """UpdateAccountSettings - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -135,6 +141,7 @@ class UpdateAccountSettings(object):
         self._dynamic_secret_max_ttl = None
         self._dynamic_secret_max_ttl_enable = None
         self._enable_item_sharing = None
+        self._enable_password_expiration = None
         self._force_new_versions = None
         self._gw_bound_ips = None
         self._invalid_characters = None
@@ -150,6 +157,8 @@ class UpdateAccountSettings(object):
         self._max_rotation_interval = None
         self._max_rotation_interval_enable = None
         self._max_versions = None
+        self._password_expiration_days = None
+        self._password_expiration_notification_days = None
         self._password_length = None
         self._phone = None
         self._postal_code = None
@@ -188,6 +197,8 @@ class UpdateAccountSettings(object):
             self.dynamic_secret_max_ttl_enable = dynamic_secret_max_ttl_enable
         if enable_item_sharing is not None:
             self.enable_item_sharing = enable_item_sharing
+        if enable_password_expiration is not None:
+            self.enable_password_expiration = enable_password_expiration
         if force_new_versions is not None:
             self.force_new_versions = force_new_versions
         if gw_bound_ips is not None:
@@ -218,6 +229,10 @@ class UpdateAccountSettings(object):
             self.max_rotation_interval_enable = max_rotation_interval_enable
         if max_versions is not None:
             self.max_versions = max_versions
+        if password_expiration_days is not None:
+            self.password_expiration_days = password_expiration_days
+        if password_expiration_notification_days is not None:
+            self.password_expiration_notification_days = password_expiration_notification_days
         if password_length is not None:
             self.password_length = password_length
         if phone is not None:
@@ -518,6 +533,29 @@ class UpdateAccountSettings(object):
         """
 
         self._enable_item_sharing = enable_item_sharing
+
+    @property
+    def enable_password_expiration(self):
+        """Gets the enable_password_expiration of this UpdateAccountSettings.  # noqa: E501
+
+        Enable password expiration policy [true/false]  # noqa: E501
+
+        :return: The enable_password_expiration of this UpdateAccountSettings.  # noqa: E501
+        :rtype: str
+        """
+        return self._enable_password_expiration
+
+    @enable_password_expiration.setter
+    def enable_password_expiration(self, enable_password_expiration):
+        """Sets the enable_password_expiration of this UpdateAccountSettings.
+
+        Enable password expiration policy [true/false]  # noqa: E501
+
+        :param enable_password_expiration: The enable_password_expiration of this UpdateAccountSettings.  # noqa: E501
+        :type: str
+        """
+
+        self._enable_password_expiration = enable_password_expiration
 
     @property
     def force_new_versions(self):
@@ -863,6 +901,52 @@ class UpdateAccountSettings(object):
         """
 
         self._max_versions = max_versions
+
+    @property
+    def password_expiration_days(self):
+        """Gets the password_expiration_days of this UpdateAccountSettings.  # noqa: E501
+
+        Specifies the number of days that a password is valid before it must be changed. A default value of 90 days is used.  # noqa: E501
+
+        :return: The password_expiration_days of this UpdateAccountSettings.  # noqa: E501
+        :rtype: str
+        """
+        return self._password_expiration_days
+
+    @password_expiration_days.setter
+    def password_expiration_days(self, password_expiration_days):
+        """Sets the password_expiration_days of this UpdateAccountSettings.
+
+        Specifies the number of days that a password is valid before it must be changed. A default value of 90 days is used.  # noqa: E501
+
+        :param password_expiration_days: The password_expiration_days of this UpdateAccountSettings.  # noqa: E501
+        :type: str
+        """
+
+        self._password_expiration_days = password_expiration_days
+
+    @property
+    def password_expiration_notification_days(self):
+        """Gets the password_expiration_notification_days of this UpdateAccountSettings.  # noqa: E501
+
+        Specifies the number of days before a user receives notification that their password will expire. A default value of 14 days is used.  # noqa: E501
+
+        :return: The password_expiration_notification_days of this UpdateAccountSettings.  # noqa: E501
+        :rtype: str
+        """
+        return self._password_expiration_notification_days
+
+    @password_expiration_notification_days.setter
+    def password_expiration_notification_days(self, password_expiration_notification_days):
+        """Sets the password_expiration_notification_days of this UpdateAccountSettings.
+
+        Specifies the number of days before a user receives notification that their password will expire. A default value of 14 days is used.  # noqa: E501
+
+        :param password_expiration_notification_days: The password_expiration_notification_days of this UpdateAccountSettings.  # noqa: E501
+        :type: str
+        """
+
+        self._password_expiration_notification_days = password_expiration_notification_days
 
     @property
     def password_length(self):

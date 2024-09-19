@@ -49,6 +49,7 @@ class RotatedSecretUpdateHanadb(object):
         'rm_tag': 'list[str]',
         'rotated_password': 'str',
         'rotated_username': 'str',
+        'rotation_event_in': 'list[str]',
         'rotation_hour': 'int',
         'rotation_interval': 'str',
         'token': 'str',
@@ -71,13 +72,14 @@ class RotatedSecretUpdateHanadb(object):
         'rm_tag': 'rm-tag',
         'rotated_password': 'rotated-password',
         'rotated_username': 'rotated-username',
+        'rotation_event_in': 'rotation-event-in',
         'rotation_hour': 'rotation-hour',
         'rotation_interval': 'rotation-interval',
         'token': 'token',
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, add_tag=None, authentication_credentials='use-user-creds', auto_rotate=None, delete_protection=None, description='default_metadata', json=False, keep_prev_version=None, key=None, max_versions=None, name=None, new_name=None, password_length=None, rm_tag=None, rotated_password=None, rotated_username=None, rotation_hour=None, rotation_interval=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, add_tag=None, authentication_credentials='use-user-creds', auto_rotate=None, delete_protection=None, description='default_metadata', json=False, keep_prev_version=None, key=None, max_versions=None, name=None, new_name=None, password_length=None, rm_tag=None, rotated_password=None, rotated_username=None, rotation_event_in=None, rotation_hour=None, rotation_interval=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """RotatedSecretUpdateHanadb - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -98,6 +100,7 @@ class RotatedSecretUpdateHanadb(object):
         self._rm_tag = None
         self._rotated_password = None
         self._rotated_username = None
+        self._rotation_event_in = None
         self._rotation_hour = None
         self._rotation_interval = None
         self._token = None
@@ -133,6 +136,8 @@ class RotatedSecretUpdateHanadb(object):
             self.rotated_password = rotated_password
         if rotated_username is not None:
             self.rotated_username = rotated_username
+        if rotation_event_in is not None:
+            self.rotation_event_in = rotation_event_in
         if rotation_hour is not None:
             self.rotation_hour = rotation_hour
         if rotation_interval is not None:
@@ -488,6 +493,29 @@ class RotatedSecretUpdateHanadb(object):
         """
 
         self._rotated_username = rotated_username
+
+    @property
+    def rotation_event_in(self):
+        """Gets the rotation_event_in of this RotatedSecretUpdateHanadb.  # noqa: E501
+
+        How many days before the rotation of the item would you like to be notified  # noqa: E501
+
+        :return: The rotation_event_in of this RotatedSecretUpdateHanadb.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._rotation_event_in
+
+    @rotation_event_in.setter
+    def rotation_event_in(self, rotation_event_in):
+        """Sets the rotation_event_in of this RotatedSecretUpdateHanadb.
+
+        How many days before the rotation of the item would you like to be notified  # noqa: E501
+
+        :param rotation_event_in: The rotation_event_in of this RotatedSecretUpdateHanadb.  # noqa: E501
+        :type: list[str]
+        """
+
+        self._rotation_event_in = rotation_event_in
 
     @property
     def rotation_hour(self):

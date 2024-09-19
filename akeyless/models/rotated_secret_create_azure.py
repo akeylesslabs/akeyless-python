@@ -47,6 +47,7 @@ class RotatedSecretCreateAzure(object):
         'name': 'str',
         'password_length': 'str',
         'rotate_after_disconnect': 'str',
+        'rotation_event_in': 'list[str]',
         'rotation_hour': 'int',
         'rotation_interval': 'str',
         'rotator_type': 'str',
@@ -78,6 +79,7 @@ class RotatedSecretCreateAzure(object):
         'name': 'name',
         'password_length': 'password-length',
         'rotate_after_disconnect': 'rotate-after-disconnect',
+        'rotation_event_in': 'rotation-event-in',
         'rotation_hour': 'rotation-hour',
         'rotation_interval': 'rotation-interval',
         'rotator_type': 'rotator-type',
@@ -95,7 +97,7 @@ class RotatedSecretCreateAzure(object):
         'username': 'username'
     }
 
-    def __init__(self, api_id=None, api_key=None, application_id=None, authentication_credentials='use-user-creds', auto_rotate=None, delete_protection=None, description=None, json=False, key=None, max_versions=None, name=None, password_length=None, rotate_after_disconnect='false', rotation_hour=None, rotation_interval=None, rotator_type=None, secure_access_disable_concurrent_connections=None, secure_access_enable=None, secure_access_url=None, secure_access_web=False, secure_access_web_browsing=False, secure_access_web_proxy=False, storage_account_key_name=None, tags=None, target_name=None, token=None, uid_token=None, username=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, api_id=None, api_key=None, application_id=None, authentication_credentials='use-user-creds', auto_rotate=None, delete_protection=None, description=None, json=False, key=None, max_versions=None, name=None, password_length=None, rotate_after_disconnect='false', rotation_event_in=None, rotation_hour=None, rotation_interval=None, rotator_type=None, secure_access_disable_concurrent_connections=None, secure_access_enable=None, secure_access_url=None, secure_access_web=False, secure_access_web_browsing=False, secure_access_web_proxy=False, storage_account_key_name=None, tags=None, target_name=None, token=None, uid_token=None, username=None, local_vars_configuration=None):  # noqa: E501
         """RotatedSecretCreateAzure - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -114,6 +116,7 @@ class RotatedSecretCreateAzure(object):
         self._name = None
         self._password_length = None
         self._rotate_after_disconnect = None
+        self._rotation_event_in = None
         self._rotation_hour = None
         self._rotation_interval = None
         self._rotator_type = None
@@ -156,6 +159,8 @@ class RotatedSecretCreateAzure(object):
             self.password_length = password_length
         if rotate_after_disconnect is not None:
             self.rotate_after_disconnect = rotate_after_disconnect
+        if rotation_event_in is not None:
+            self.rotation_event_in = rotation_event_in
         if rotation_hour is not None:
             self.rotation_hour = rotation_hour
         if rotation_interval is not None:
@@ -485,6 +490,29 @@ class RotatedSecretCreateAzure(object):
         """
 
         self._rotate_after_disconnect = rotate_after_disconnect
+
+    @property
+    def rotation_event_in(self):
+        """Gets the rotation_event_in of this RotatedSecretCreateAzure.  # noqa: E501
+
+        How many days before the rotation of the item would you like to be notified  # noqa: E501
+
+        :return: The rotation_event_in of this RotatedSecretCreateAzure.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._rotation_event_in
+
+    @rotation_event_in.setter
+    def rotation_event_in(self, rotation_event_in):
+        """Sets the rotation_event_in of this RotatedSecretCreateAzure.
+
+        How many days before the rotation of the item would you like to be notified  # noqa: E501
+
+        :param rotation_event_in: The rotation_event_in of this RotatedSecretCreateAzure.  # noqa: E501
+        :type: list[str]
+        """
+
+        self._rotation_event_in = rotation_event_in
 
     @property
     def rotation_hour(self):

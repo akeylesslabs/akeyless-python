@@ -298,7 +298,7 @@ class EventForwarderUpdateWebhook(object):
     def event_types(self):
         """Gets the event_types of this EventForwarderUpdateWebhook.  # noqa: E501
 
-        List of event types to notify about [request-access, certificate-pending-expiration, certificate-expired, certificate-provisioning-success, certificate-provisioning-failure, auth-method-pending-expiration, auth-method-expired, rotated-secret-success, rotated-secret-failure, dynamic-secret-failure, multi-auth-failure, uid-rotation-failure, apply-justification, email-auth-method-approved, usage, rotation-usage, gateway-inactive, static-secret-updated]  # noqa: E501
+        List of event types to notify about [request-access, certificate-pending-expiration, certificate-expired, certificate-provisioning-success, certificate-provisioning-failure, auth-method-pending-expiration, auth-method-expired, next-automatic-rotation, rotated-secret-success, rotated-secret-failure, dynamic-secret-failure, multi-auth-failure, uid-rotation-failure, apply-justification, email-auth-method-approved, usage, rotation-usage, gateway-inactive, static-secret-updated]  # noqa: E501
 
         :return: The event_types of this EventForwarderUpdateWebhook.  # noqa: E501
         :rtype: list[str]
@@ -309,7 +309,7 @@ class EventForwarderUpdateWebhook(object):
     def event_types(self, event_types):
         """Sets the event_types of this EventForwarderUpdateWebhook.
 
-        List of event types to notify about [request-access, certificate-pending-expiration, certificate-expired, certificate-provisioning-success, certificate-provisioning-failure, auth-method-pending-expiration, auth-method-expired, rotated-secret-success, rotated-secret-failure, dynamic-secret-failure, multi-auth-failure, uid-rotation-failure, apply-justification, email-auth-method-approved, usage, rotation-usage, gateway-inactive, static-secret-updated]  # noqa: E501
+        List of event types to notify about [request-access, certificate-pending-expiration, certificate-expired, certificate-provisioning-success, certificate-provisioning-failure, auth-method-pending-expiration, auth-method-expired, next-automatic-rotation, rotated-secret-success, rotated-secret-failure, dynamic-secret-failure, multi-auth-failure, uid-rotation-failure, apply-justification, email-auth-method-approved, usage, rotation-usage, gateway-inactive, static-secret-updated]  # noqa: E501
 
         :param event_types: The event_types of this EventForwarderUpdateWebhook.  # noqa: E501
         :type: list[str]

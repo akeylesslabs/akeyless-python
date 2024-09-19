@@ -45,6 +45,7 @@ class AccountGeneralSettings(object):
         'invalid_characters': 'str',
         'item_usage_event': 'UsageEventSetting',
         'lock_default_key': 'bool',
+        'password_expiration_info': 'PasswordExpirationInfo',
         'password_policy': 'PasswordPolicyInfo',
         'protect_items_by_default': 'bool',
         'rotation_secret_max_interval': 'RotationSecretMaxInterval',
@@ -63,13 +64,14 @@ class AccountGeneralSettings(object):
         'invalid_characters': 'invalid_characters',
         'item_usage_event': 'item_usage_event',
         'lock_default_key': 'lock_default_key',
+        'password_expiration_info': 'password_expiration_info',
         'password_policy': 'password_policy',
         'protect_items_by_default': 'protect_items_by_default',
         'rotation_secret_max_interval': 'rotation_secret_max_interval',
         'sharing_policy': 'sharing_policy'
     }
 
-    def __init__(self, account_default_key_item_id=None, account_default_key_name=None, allowed_clients_ips=None, allowed_gateways_ips=None, auth_usage_event=None, data_protection_section=None, dynamic_secret_max_ttl=None, enable_request_for_access=None, invalid_characters=None, item_usage_event=None, lock_default_key=None, password_policy=None, protect_items_by_default=None, rotation_secret_max_interval=None, sharing_policy=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, account_default_key_item_id=None, account_default_key_name=None, allowed_clients_ips=None, allowed_gateways_ips=None, auth_usage_event=None, data_protection_section=None, dynamic_secret_max_ttl=None, enable_request_for_access=None, invalid_characters=None, item_usage_event=None, lock_default_key=None, password_expiration_info=None, password_policy=None, protect_items_by_default=None, rotation_secret_max_interval=None, sharing_policy=None, local_vars_configuration=None):  # noqa: E501
         """AccountGeneralSettings - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -86,6 +88,7 @@ class AccountGeneralSettings(object):
         self._invalid_characters = None
         self._item_usage_event = None
         self._lock_default_key = None
+        self._password_expiration_info = None
         self._password_policy = None
         self._protect_items_by_default = None
         self._rotation_secret_max_interval = None
@@ -114,6 +117,8 @@ class AccountGeneralSettings(object):
             self.item_usage_event = item_usage_event
         if lock_default_key is not None:
             self.lock_default_key = lock_default_key
+        if password_expiration_info is not None:
+            self.password_expiration_info = password_expiration_info
         if password_policy is not None:
             self.password_policy = password_policy
         if protect_items_by_default is not None:
@@ -361,6 +366,27 @@ class AccountGeneralSettings(object):
         """
 
         self._lock_default_key = lock_default_key
+
+    @property
+    def password_expiration_info(self):
+        """Gets the password_expiration_info of this AccountGeneralSettings.  # noqa: E501
+
+
+        :return: The password_expiration_info of this AccountGeneralSettings.  # noqa: E501
+        :rtype: PasswordExpirationInfo
+        """
+        return self._password_expiration_info
+
+    @password_expiration_info.setter
+    def password_expiration_info(self, password_expiration_info):
+        """Sets the password_expiration_info of this AccountGeneralSettings.
+
+
+        :param password_expiration_info: The password_expiration_info of this AccountGeneralSettings.  # noqa: E501
+        :type: PasswordExpirationInfo
+        """
+
+        self._password_expiration_info = password_expiration_info
 
     @property
     def password_policy(self):

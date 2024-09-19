@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **customer_frg_id** | **str** | The customer fragment ID that will be used to split the key (if empty, the key will be created independently of a customer fragment) | [optional] 
 **delete_protection** | **str** | Protection from accidental deletion of this object [true/false] | [optional] 
 **description** | **str** | Description of the object | [optional] 
+**expiration_event_in** | **list[str]** | How many days before the expiration of the certificate would you like to be notified. | [optional] 
 **json** | **bool** | Set output format to JSON | [optional] [default to False]
 **metadata** | **str** | Deprecated - use description | [optional] 
 **name** | **str** | Name of key to be created | 

@@ -34,6 +34,7 @@ class RollbackSecret(object):
                             and the value is json key in definition.
     """
     openapi_types = {
+        'accessibility': 'str',
         'json': 'bool',
         'name': 'str',
         'old_version': 'int',
@@ -42,6 +43,7 @@ class RollbackSecret(object):
     }
 
     attribute_map = {
+        'accessibility': 'accessibility',
         'json': 'json',
         'name': 'name',
         'old_version': 'old-version',
@@ -49,12 +51,13 @@ class RollbackSecret(object):
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, json=False, name=None, old_version=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, accessibility='regular', json=False, name=None, old_version=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """RollbackSecret - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
+        self._accessibility = None
         self._json = None
         self._name = None
         self._old_version = None
@@ -62,6 +65,8 @@ class RollbackSecret(object):
         self._uid_token = None
         self.discriminator = None
 
+        if accessibility is not None:
+            self.accessibility = accessibility
         if json is not None:
             self.json = json
         self.name = name
@@ -70,6 +75,29 @@ class RollbackSecret(object):
             self.token = token
         if uid_token is not None:
             self.uid_token = uid_token
+
+    @property
+    def accessibility(self):
+        """Gets the accessibility of this RollbackSecret.  # noqa: E501
+
+        for personal password manager  # noqa: E501
+
+        :return: The accessibility of this RollbackSecret.  # noqa: E501
+        :rtype: str
+        """
+        return self._accessibility
+
+    @accessibility.setter
+    def accessibility(self, accessibility):
+        """Sets the accessibility of this RollbackSecret.
+
+        for personal password manager  # noqa: E501
+
+        :param accessibility: The accessibility of this RollbackSecret.  # noqa: E501
+        :type: str
+        """
+
+        self._accessibility = accessibility
 
     @property
     def json(self):

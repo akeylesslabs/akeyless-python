@@ -35,6 +35,7 @@ class CreateDFCKey(object):
     """
     openapi_types = {
         'alg': 'str',
+        'auto_rotate': 'str',
         'certificate_common_name': 'str',
         'certificate_country': 'str',
         'certificate_digest_algo': 'str',
@@ -47,10 +48,13 @@ class CreateDFCKey(object):
         'customer_frg_id': 'str',
         'delete_protection': 'str',
         'description': 'str',
+        'expiration_event_in': 'list[str]',
         'generate_self_signed_certificate': 'bool',
         'json': 'bool',
         'metadata': 'str',
         'name': 'str',
+        'rotation_event_in': 'list[str]',
+        'rotation_interval': 'str',
         'split_level': 'int',
         'tag': 'list[str]',
         'token': 'str',
@@ -59,6 +63,7 @@ class CreateDFCKey(object):
 
     attribute_map = {
         'alg': 'alg',
+        'auto_rotate': 'auto-rotate',
         'certificate_common_name': 'certificate-common-name',
         'certificate_country': 'certificate-country',
         'certificate_digest_algo': 'certificate-digest-algo',
@@ -71,23 +76,27 @@ class CreateDFCKey(object):
         'customer_frg_id': 'customer-frg-id',
         'delete_protection': 'delete_protection',
         'description': 'description',
+        'expiration_event_in': 'expiration-event-in',
         'generate_self_signed_certificate': 'generate-self-signed-certificate',
         'json': 'json',
         'metadata': 'metadata',
         'name': 'name',
+        'rotation_event_in': 'rotation-event-in',
+        'rotation_interval': 'rotation-interval',
         'split_level': 'split-level',
         'tag': 'tag',
         'token': 'token',
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, alg=None, certificate_common_name=None, certificate_country=None, certificate_digest_algo=None, certificate_format=None, certificate_locality=None, certificate_organization=None, certificate_province=None, certificate_ttl=None, conf_file_data=None, customer_frg_id=None, delete_protection=None, description=None, generate_self_signed_certificate=None, json=False, metadata=None, name=None, split_level=3, tag=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, alg=None, auto_rotate=None, certificate_common_name=None, certificate_country=None, certificate_digest_algo=None, certificate_format=None, certificate_locality=None, certificate_organization=None, certificate_province=None, certificate_ttl=None, conf_file_data=None, customer_frg_id=None, delete_protection=None, description=None, expiration_event_in=None, generate_self_signed_certificate=None, json=False, metadata=None, name=None, rotation_event_in=None, rotation_interval=None, split_level=3, tag=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """CreateDFCKey - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._alg = None
+        self._auto_rotate = None
         self._certificate_common_name = None
         self._certificate_country = None
         self._certificate_digest_algo = None
@@ -100,10 +109,13 @@ class CreateDFCKey(object):
         self._customer_frg_id = None
         self._delete_protection = None
         self._description = None
+        self._expiration_event_in = None
         self._generate_self_signed_certificate = None
         self._json = None
         self._metadata = None
         self._name = None
+        self._rotation_event_in = None
+        self._rotation_interval = None
         self._split_level = None
         self._tag = None
         self._token = None
@@ -111,6 +123,8 @@ class CreateDFCKey(object):
         self.discriminator = None
 
         self.alg = alg
+        if auto_rotate is not None:
+            self.auto_rotate = auto_rotate
         if certificate_common_name is not None:
             self.certificate_common_name = certificate_common_name
         if certificate_country is not None:
@@ -135,6 +149,8 @@ class CreateDFCKey(object):
             self.delete_protection = delete_protection
         if description is not None:
             self.description = description
+        if expiration_event_in is not None:
+            self.expiration_event_in = expiration_event_in
         if generate_self_signed_certificate is not None:
             self.generate_self_signed_certificate = generate_self_signed_certificate
         if json is not None:
@@ -142,6 +158,10 @@ class CreateDFCKey(object):
         if metadata is not None:
             self.metadata = metadata
         self.name = name
+        if rotation_event_in is not None:
+            self.rotation_event_in = rotation_event_in
+        if rotation_interval is not None:
+            self.rotation_interval = rotation_interval
         if split_level is not None:
             self.split_level = split_level
         if tag is not None:
@@ -175,6 +195,29 @@ class CreateDFCKey(object):
             raise ValueError("Invalid value for `alg`, must not be `None`")  # noqa: E501
 
         self._alg = alg
+
+    @property
+    def auto_rotate(self):
+        """Gets the auto_rotate of this CreateDFCKey.  # noqa: E501
+
+        Whether to automatically rotate every rotation_interval days, or disable existing automatic rotation [true/false]  # noqa: E501
+
+        :return: The auto_rotate of this CreateDFCKey.  # noqa: E501
+        :rtype: str
+        """
+        return self._auto_rotate
+
+    @auto_rotate.setter
+    def auto_rotate(self, auto_rotate):
+        """Sets the auto_rotate of this CreateDFCKey.
+
+        Whether to automatically rotate every rotation_interval days, or disable existing automatic rotation [true/false]  # noqa: E501
+
+        :param auto_rotate: The auto_rotate of this CreateDFCKey.  # noqa: E501
+        :type: str
+        """
+
+        self._auto_rotate = auto_rotate
 
     @property
     def certificate_common_name(self):
@@ -451,6 +494,29 @@ class CreateDFCKey(object):
         self._description = description
 
     @property
+    def expiration_event_in(self):
+        """Gets the expiration_event_in of this CreateDFCKey.  # noqa: E501
+
+        How many days before the expiration of the certificate would you like to be notified.  # noqa: E501
+
+        :return: The expiration_event_in of this CreateDFCKey.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._expiration_event_in
+
+    @expiration_event_in.setter
+    def expiration_event_in(self, expiration_event_in):
+        """Sets the expiration_event_in of this CreateDFCKey.
+
+        How many days before the expiration of the certificate would you like to be notified.  # noqa: E501
+
+        :param expiration_event_in: The expiration_event_in of this CreateDFCKey.  # noqa: E501
+        :type: list[str]
+        """
+
+        self._expiration_event_in = expiration_event_in
+
+    @property
     def generate_self_signed_certificate(self):
         """Gets the generate_self_signed_certificate of this CreateDFCKey.  # noqa: E501
 
@@ -543,6 +609,52 @@ class CreateDFCKey(object):
             raise ValueError("Invalid value for `name`, must not be `None`")  # noqa: E501
 
         self._name = name
+
+    @property
+    def rotation_event_in(self):
+        """Gets the rotation_event_in of this CreateDFCKey.  # noqa: E501
+
+        How many days before the rotation of the item would you like to be notified  # noqa: E501
+
+        :return: The rotation_event_in of this CreateDFCKey.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._rotation_event_in
+
+    @rotation_event_in.setter
+    def rotation_event_in(self, rotation_event_in):
+        """Sets the rotation_event_in of this CreateDFCKey.
+
+        How many days before the rotation of the item would you like to be notified  # noqa: E501
+
+        :param rotation_event_in: The rotation_event_in of this CreateDFCKey.  # noqa: E501
+        :type: list[str]
+        """
+
+        self._rotation_event_in = rotation_event_in
+
+    @property
+    def rotation_interval(self):
+        """Gets the rotation_interval of this CreateDFCKey.  # noqa: E501
+
+        The number of days to wait between every automatic rotation (7-365)  # noqa: E501
+
+        :return: The rotation_interval of this CreateDFCKey.  # noqa: E501
+        :rtype: str
+        """
+        return self._rotation_interval
+
+    @rotation_interval.setter
+    def rotation_interval(self, rotation_interval):
+        """Sets the rotation_interval of this CreateDFCKey.
+
+        The number of days to wait between every automatic rotation (7-365)  # noqa: E501
+
+        :param rotation_interval: The rotation_interval of this CreateDFCKey.  # noqa: E501
+        :type: str
+        """
+
+        self._rotation_interval = rotation_interval
 
     @property
     def split_level(self):

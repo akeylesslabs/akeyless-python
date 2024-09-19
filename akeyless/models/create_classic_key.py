@@ -35,6 +35,7 @@ class CreateClassicKey(object):
     """
     openapi_types = {
         'alg': 'str',
+        'auto_rotate': 'str',
         'cert_file_data': 'str',
         'certificate_common_name': 'str',
         'certificate_country': 'str',
@@ -47,6 +48,7 @@ class CreateClassicKey(object):
         'conf_file_data': 'str',
         'delete_protection': 'str',
         'description': 'str',
+        'expiration_event_in': 'list[str]',
         'generate_self_signed_certificate': 'bool',
         'gpg_alg': 'str',
         'json': 'bool',
@@ -54,6 +56,8 @@ class CreateClassicKey(object):
         'metadata': 'str',
         'name': 'str',
         'protection_key_name': 'str',
+        'rotation_event_in': 'list[str]',
+        'rotation_interval': 'str',
         'tags': 'list[str]',
         'token': 'str',
         'uid_token': 'str'
@@ -61,6 +65,7 @@ class CreateClassicKey(object):
 
     attribute_map = {
         'alg': 'alg',
+        'auto_rotate': 'auto-rotate',
         'cert_file_data': 'cert-file-data',
         'certificate_common_name': 'certificate-common-name',
         'certificate_country': 'certificate-country',
@@ -73,6 +78,7 @@ class CreateClassicKey(object):
         'conf_file_data': 'conf-file-data',
         'delete_protection': 'delete_protection',
         'description': 'description',
+        'expiration_event_in': 'expiration-event-in',
         'generate_self_signed_certificate': 'generate-self-signed-certificate',
         'gpg_alg': 'gpg-alg',
         'json': 'json',
@@ -80,18 +86,21 @@ class CreateClassicKey(object):
         'metadata': 'metadata',
         'name': 'name',
         'protection_key_name': 'protection-key-name',
+        'rotation_event_in': 'rotation-event-in',
+        'rotation_interval': 'rotation-interval',
         'tags': 'tags',
         'token': 'token',
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, alg=None, cert_file_data=None, certificate_common_name=None, certificate_country=None, certificate_digest_algo=None, certificate_format=None, certificate_locality=None, certificate_organization=None, certificate_province=None, certificate_ttl=None, conf_file_data=None, delete_protection=None, description=None, generate_self_signed_certificate=None, gpg_alg=None, json=False, key_data=None, metadata=None, name=None, protection_key_name=None, tags=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, alg=None, auto_rotate=None, cert_file_data=None, certificate_common_name=None, certificate_country=None, certificate_digest_algo=None, certificate_format=None, certificate_locality=None, certificate_organization=None, certificate_province=None, certificate_ttl=None, conf_file_data=None, delete_protection=None, description=None, expiration_event_in=None, generate_self_signed_certificate=None, gpg_alg=None, json=False, key_data=None, metadata=None, name=None, protection_key_name=None, rotation_event_in=None, rotation_interval=None, tags=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """CreateClassicKey - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._alg = None
+        self._auto_rotate = None
         self._cert_file_data = None
         self._certificate_common_name = None
         self._certificate_country = None
@@ -104,6 +113,7 @@ class CreateClassicKey(object):
         self._conf_file_data = None
         self._delete_protection = None
         self._description = None
+        self._expiration_event_in = None
         self._generate_self_signed_certificate = None
         self._gpg_alg = None
         self._json = None
@@ -111,12 +121,16 @@ class CreateClassicKey(object):
         self._metadata = None
         self._name = None
         self._protection_key_name = None
+        self._rotation_event_in = None
+        self._rotation_interval = None
         self._tags = None
         self._token = None
         self._uid_token = None
         self.discriminator = None
 
         self.alg = alg
+        if auto_rotate is not None:
+            self.auto_rotate = auto_rotate
         if cert_file_data is not None:
             self.cert_file_data = cert_file_data
         if certificate_common_name is not None:
@@ -141,6 +155,8 @@ class CreateClassicKey(object):
             self.delete_protection = delete_protection
         if description is not None:
             self.description = description
+        if expiration_event_in is not None:
+            self.expiration_event_in = expiration_event_in
         if generate_self_signed_certificate is not None:
             self.generate_self_signed_certificate = generate_self_signed_certificate
         if gpg_alg is not None:
@@ -154,6 +170,10 @@ class CreateClassicKey(object):
         self.name = name
         if protection_key_name is not None:
             self.protection_key_name = protection_key_name
+        if rotation_event_in is not None:
+            self.rotation_event_in = rotation_event_in
+        if rotation_interval is not None:
+            self.rotation_interval = rotation_interval
         if tags is not None:
             self.tags = tags
         if token is not None:
@@ -185,6 +205,29 @@ class CreateClassicKey(object):
             raise ValueError("Invalid value for `alg`, must not be `None`")  # noqa: E501
 
         self._alg = alg
+
+    @property
+    def auto_rotate(self):
+        """Gets the auto_rotate of this CreateClassicKey.  # noqa: E501
+
+        Whether to automatically rotate every rotation_interval days, or disable existing automatic rotation [true/false]  # noqa: E501
+
+        :return: The auto_rotate of this CreateClassicKey.  # noqa: E501
+        :rtype: str
+        """
+        return self._auto_rotate
+
+    @auto_rotate.setter
+    def auto_rotate(self, auto_rotate):
+        """Sets the auto_rotate of this CreateClassicKey.
+
+        Whether to automatically rotate every rotation_interval days, or disable existing automatic rotation [true/false]  # noqa: E501
+
+        :param auto_rotate: The auto_rotate of this CreateClassicKey.  # noqa: E501
+        :type: str
+        """
+
+        self._auto_rotate = auto_rotate
 
     @property
     def cert_file_data(self):
@@ -461,6 +504,29 @@ class CreateClassicKey(object):
         self._description = description
 
     @property
+    def expiration_event_in(self):
+        """Gets the expiration_event_in of this CreateClassicKey.  # noqa: E501
+
+        How many days before the expiration of the certificate would you like to be notified.  # noqa: E501
+
+        :return: The expiration_event_in of this CreateClassicKey.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._expiration_event_in
+
+    @expiration_event_in.setter
+    def expiration_event_in(self, expiration_event_in):
+        """Sets the expiration_event_in of this CreateClassicKey.
+
+        How many days before the expiration of the certificate would you like to be notified.  # noqa: E501
+
+        :param expiration_event_in: The expiration_event_in of this CreateClassicKey.  # noqa: E501
+        :type: list[str]
+        """
+
+        self._expiration_event_in = expiration_event_in
+
+    @property
     def generate_self_signed_certificate(self):
         """Gets the generate_self_signed_certificate of this CreateClassicKey.  # noqa: E501
 
@@ -622,6 +688,52 @@ class CreateClassicKey(object):
         """
 
         self._protection_key_name = protection_key_name
+
+    @property
+    def rotation_event_in(self):
+        """Gets the rotation_event_in of this CreateClassicKey.  # noqa: E501
+
+        How many days before the rotation of the item would you like to be notified  # noqa: E501
+
+        :return: The rotation_event_in of this CreateClassicKey.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._rotation_event_in
+
+    @rotation_event_in.setter
+    def rotation_event_in(self, rotation_event_in):
+        """Sets the rotation_event_in of this CreateClassicKey.
+
+        How many days before the rotation of the item would you like to be notified  # noqa: E501
+
+        :param rotation_event_in: The rotation_event_in of this CreateClassicKey.  # noqa: E501
+        :type: list[str]
+        """
+
+        self._rotation_event_in = rotation_event_in
+
+    @property
+    def rotation_interval(self):
+        """Gets the rotation_interval of this CreateClassicKey.  # noqa: E501
+
+        The number of days to wait between every automatic rotation (1-365)  # noqa: E501
+
+        :return: The rotation_interval of this CreateClassicKey.  # noqa: E501
+        :rtype: str
+        """
+        return self._rotation_interval
+
+    @rotation_interval.setter
+    def rotation_interval(self, rotation_interval):
+        """Sets the rotation_interval of this CreateClassicKey.
+
+        The number of days to wait between every automatic rotation (1-365)  # noqa: E501
+
+        :param rotation_interval: The rotation_interval of this CreateClassicKey.  # noqa: E501
+        :type: str
+        """
+
+        self._rotation_interval = rotation_interval
 
     @property
     def tags(self):

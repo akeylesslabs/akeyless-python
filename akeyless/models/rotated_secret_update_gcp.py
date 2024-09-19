@@ -50,6 +50,7 @@ class RotatedSecretUpdateGcp(object):
         'new_name': 'str',
         'password_length': 'str',
         'rm_tag': 'list[str]',
+        'rotation_event_in': 'list[str]',
         'rotation_hour': 'int',
         'rotation_interval': 'str',
         'rotator_type': 'str',
@@ -74,6 +75,7 @@ class RotatedSecretUpdateGcp(object):
         'new_name': 'new-name',
         'password_length': 'password-length',
         'rm_tag': 'rm-tag',
+        'rotation_event_in': 'rotation-event-in',
         'rotation_hour': 'rotation-hour',
         'rotation_interval': 'rotation-interval',
         'rotator_type': 'rotator-type',
@@ -81,7 +83,7 @@ class RotatedSecretUpdateGcp(object):
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, add_tag=None, authentication_credentials='use-user-creds', auto_rotate=None, delete_protection=None, description='default_metadata', gcp_key=None, gcp_service_account_email=None, gcp_service_account_key_id=None, json=False, keep_prev_version=None, key=None, max_versions=None, name=None, new_name=None, password_length=None, rm_tag=None, rotation_hour=None, rotation_interval=None, rotator_type=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, add_tag=None, authentication_credentials='use-user-creds', auto_rotate=None, delete_protection=None, description='default_metadata', gcp_key=None, gcp_service_account_email=None, gcp_service_account_key_id=None, json=False, keep_prev_version=None, key=None, max_versions=None, name=None, new_name=None, password_length=None, rm_tag=None, rotation_event_in=None, rotation_hour=None, rotation_interval=None, rotator_type=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """RotatedSecretUpdateGcp - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -103,6 +105,7 @@ class RotatedSecretUpdateGcp(object):
         self._new_name = None
         self._password_length = None
         self._rm_tag = None
+        self._rotation_event_in = None
         self._rotation_hour = None
         self._rotation_interval = None
         self._rotator_type = None
@@ -141,6 +144,8 @@ class RotatedSecretUpdateGcp(object):
             self.password_length = password_length
         if rm_tag is not None:
             self.rm_tag = rm_tag
+        if rotation_event_in is not None:
+            self.rotation_event_in = rotation_event_in
         if rotation_hour is not None:
             self.rotation_hour = rotation_hour
         if rotation_interval is not None:
@@ -520,6 +525,29 @@ class RotatedSecretUpdateGcp(object):
         """
 
         self._rm_tag = rm_tag
+
+    @property
+    def rotation_event_in(self):
+        """Gets the rotation_event_in of this RotatedSecretUpdateGcp.  # noqa: E501
+
+        How many days before the rotation of the item would you like to be notified  # noqa: E501
+
+        :return: The rotation_event_in of this RotatedSecretUpdateGcp.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._rotation_event_in
+
+    @rotation_event_in.setter
+    def rotation_event_in(self, rotation_event_in):
+        """Sets the rotation_event_in of this RotatedSecretUpdateGcp.
+
+        How many days before the rotation of the item would you like to be notified  # noqa: E501
+
+        :param rotation_event_in: The rotation_event_in of this RotatedSecretUpdateGcp.  # noqa: E501
+        :type: list[str]
+        """
+
+        self._rotation_event_in = rotation_event_in
 
     @property
     def rotation_hour(self):

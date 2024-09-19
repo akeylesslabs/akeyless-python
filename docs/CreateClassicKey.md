@@ -5,6 +5,7 @@ CreateClassicKey is a command that creates classic key
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **alg** | **str** | Classic Key type; options: [AES128GCM, AES256GCM, AES128SIV, AES256SIV, RSA1024, RSA2048, RSA3072, RSA4096, EC256, EC384, GPG] | 
+**auto_rotate** | **str** | Whether to automatically rotate every rotation_interval days, or disable existing automatic rotation [true/false] | [optional] 
 **cert_file_data** | **str** | Certificate in a PEM format. | [optional] 
 **certificate_common_name** | **str** | Common name for the generated certificate. Relevant only for generate-self-signed-certificate. | [optional] 
 **certificate_country** | **str** | Country name for the generated certificate. Relevant only for generate-self-signed-certificate. | [optional] 
@@ -17,6 +18,7 @@ Name | Type | Description | Notes
 **conf_file_data** | **str** | The csr config data in base64 encoding | [optional] 
 **delete_protection** | **str** | Protection from accidental deletion of this object [true/false] | [optional] 
 **description** | **str** | Description of the object | [optional] 
+**expiration_event_in** | **list[str]** | How many days before the expiration of the certificate would you like to be notified. | [optional] 
 **generate_self_signed_certificate** | **bool** | Whether to generate a self signed certificate with the key. If set, --certificate-ttl must be provided. | [optional] 
 **gpg_alg** | **str** | gpg alg: Relevant only if GPG key type selected; options: [RSA1024, RSA2048, RSA3072, RSA4096, Ed25519] | [optional] 
 **json** | **bool** | Set output format to JSON | [optional] [default to False]
@@ -24,6 +26,8 @@ Name | Type | Description | Notes
 **metadata** | **str** | Deprecated - use description | [optional] 
 **name** | **str** | ClassicKey name | 
 **protection_key_name** | **str** | The name of a key that used to encrypt the secret value (if empty, the account default protectionKey key will be used) | [optional] 
+**rotation_event_in** | **list[str]** | How many days before the rotation of the item would you like to be notified | [optional] 
+**rotation_interval** | **str** | The number of days to wait between every automatic rotation (1-365) | [optional] 
 **tags** | **list[str]** | Add tags attached to this object | [optional] 
 **token** | **str** | Authentication token (see &#x60;/auth&#x60; and &#x60;/configure&#x60;) | [optional] 
 **uid_token** | **str** | The universal identity token, Required only for universal_identity authentication | [optional] 

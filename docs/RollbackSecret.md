@@ -3,6 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**accessibility** | **str** | for personal password manager | [optional] [default to 'regular']
 **json** | **bool** | Set output format to JSON | [optional] [default to False]
 **name** | **str** | Secret name | 
 **old_version** | **int** | Old secret version to rollback to | 

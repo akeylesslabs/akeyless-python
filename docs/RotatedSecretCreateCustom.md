@@ -14,6 +14,7 @@ Name | Type | Description | Notes
 **name** | **str** | Rotated secret name | 
 **password_length** | **str** | The length of the password to be generated | [optional] 
 **rotate_after_disconnect** | **str** | Rotate the value of the secret after SRA session ends [true/false] | [optional] [default to 'false']
+**rotation_event_in** | **list[str]** | How many days before the rotation of the item would you like to be notified | [optional] 
 **rotation_hour** | **int** | The Hour of the rotation in UTC | [optional] 
 **rotation_interval** | **str** | The number of days to wait between every automatic key rotation (1-365) | [optional] 
 **secure_access_allow_external_user** | **bool** | Allow providing external user for a domain users | [optional] [default to False]

@@ -4,7 +4,7 @@ All URIs are relative to *https://api.akeyless.io*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**alias_details**](V2Api.md#alias_details) | **GET** /alias-details | 
+[**alias_details**](V2Api.md#alias_details) | **POST** /alias-details | 
 [**assoc_role_auth_method**](V2Api.md#assoc_role_auth_method) | **POST** /assoc-role-am | 
 [**assoc_target_item**](V2Api.md#assoc_target_item) | **POST** /assoc-target-item | 
 [**auth**](V2Api.md#auth) | **POST** /auth | 
@@ -246,6 +246,7 @@ Method | HTTP request | Description
 [**gateway_get_log_forwarding**](V2Api.md#gateway_get_log_forwarding) | **POST** /gateway-get-log-forwarding | 
 [**gateway_get_migration**](V2Api.md#gateway_get_migration) | **POST** /gateway-get-migration | 
 [**gateway_get_producer**](V2Api.md#gateway_get_producer) | **POST** /gateway-get-producer | 
+[**gateway_get_remote_access**](V2Api.md#gateway_get_remote_access) | **POST** /gateway-get-remote-access | 
 [**gateway_get_tmp_users**](V2Api.md#gateway_get_tmp_users) | **POST** /gateway-get-producer-tmp-creds | 
 [**gateway_list_customer_fragments**](V2Api.md#gateway_list_customer_fragments) | **POST** /gateway-list-customer-fragments | 
 [**gateway_list_migration**](V2Api.md#gateway_list_migration) | **POST** /gateway-list-migration | 
@@ -301,6 +302,8 @@ Method | HTTP request | Description
 [**gateway_update_producer_redshift**](V2Api.md#gateway_update_producer_redshift) | **POST** /gateway-update-producer-redshift | 
 [**gateway_update_producer_snowflake**](V2Api.md#gateway_update_producer_snowflake) | **POST** /gateway-update-producer-snowflake | 
 [**gateway_update_producer_venafi**](V2Api.md#gateway_update_producer_venafi) | **POST** /gateway-update-producer-certificate-automation | 
+[**gateway_update_remote_access**](V2Api.md#gateway_update_remote_access) | **POST** /gateway-update-remote-access | 
+[**gateway_update_remote_access_rdp_recordings**](V2Api.md#gateway_update_remote_access_rdp_recordings) | **POST** /gateway-update-remote-access-rdp-recording | 
 [**gateway_update_tls_cert**](V2Api.md#gateway_update_tls_cert) | **POST** /gateway-update-tls-cert | 
 [**gateway_update_tmp_users**](V2Api.md#gateway_update_tmp_users) | **POST** /gateway-update-producer-tmp-creds | 
 [**generate_csr**](V2Api.md#generate_csr) | **POST** /generate-csr | 
@@ -323,6 +326,17 @@ Method | HTTP request | Description
 [**get_tags**](V2Api.md#get_tags) | **POST** /get-tags | 
 [**get_target**](V2Api.md#get_target) | **POST** /get-target | 
 [**get_target_details**](V2Api.md#get_target_details) | **POST** /get-target-details | 
+[**gw_update_remote_access_session_logs_aws_s3**](V2Api.md#gw_update_remote_access_session_logs_aws_s3) | **POST** /gateway-update-remote-access-session-forwarding-aws-s3 | 
+[**gw_update_remote_access_session_logs_azure_analytics**](V2Api.md#gw_update_remote_access_session_logs_azure_analytics) | **POST** /gateway-update-remote-access-session-forwarding-azure-analytics | 
+[**gw_update_remote_access_session_logs_datadog**](V2Api.md#gw_update_remote_access_session_logs_datadog) | **POST** /gateway-update-remote-access-session-forwarding-datadog | 
+[**gw_update_remote_access_session_logs_elasticsearch**](V2Api.md#gw_update_remote_access_session_logs_elasticsearch) | **POST** /gateway-update-remote-access-session-forwarding-elasticsearch | 
+[**gw_update_remote_access_session_logs_google_chronicle**](V2Api.md#gw_update_remote_access_session_logs_google_chronicle) | **POST** /gateway-update-remote-access-session-forwarding-google-chronicle | 
+[**gw_update_remote_access_session_logs_logstash**](V2Api.md#gw_update_remote_access_session_logs_logstash) | **POST** /gateway-update-remote-access-session-forwarding-logstash | 
+[**gw_update_remote_access_session_logs_logz_io**](V2Api.md#gw_update_remote_access_session_logs_logz_io) | **POST** /gateway-update-remote-access-session-forwarding-logz-io | 
+[**gw_update_remote_access_session_logs_splunk**](V2Api.md#gw_update_remote_access_session_logs_splunk) | **POST** /gateway-update-remote-access-session-forwarding-splunk | 
+[**gw_update_remote_access_session_logs_stdout**](V2Api.md#gw_update_remote_access_session_logs_stdout) | **POST** /gateway-update-remote-access-session-forwarding-stdout | 
+[**gw_update_remote_access_session_logs_sumologic**](V2Api.md#gw_update_remote_access_session_logs_sumologic) | **POST** /gateway-update-remote-access-session-forwarding-sumologic | 
+[**gw_update_remote_access_session_logs_syslog**](V2Api.md#gw_update_remote_access_session_logs_syslog) | **POST** /gateway-update-remote-access-session-forwarding-syslog | 
 [**hmac**](V2Api.md#hmac) | **POST** /hmac | 
 [**import_passwords**](V2Api.md#import_passwords) | **POST** /import-passwords | 
 [**kmip_client_delete_rule**](V2Api.md#kmip_client_delete_rule) | **POST** /kmip-client-delete-rule | 
@@ -15064,6 +15078,66 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **gateway_get_remote_access**
+> BastionConfigReplyObj gateway_get_remote_access(body)
+
+
+
+### Example
+
+```python
+from __future__ import print_function
+import time
+import akeyless
+from akeyless.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.akeyless.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = akeyless.Configuration(
+    host = "https://api.akeyless.io"
+)
+
+
+# Enter a context with an instance of the API client
+with akeyless.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = akeyless.V2Api(api_client)
+    body = akeyless.GatewayGetRemoteAccess() # GatewayGetRemoteAccess | 
+
+    try:
+        api_response = api_instance.gateway_get_remote_access(body)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling V2Api->gateway_get_remote_access: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**GatewayGetRemoteAccess**](GatewayGetRemoteAccess.md)|  | 
+
+### Return type
+
+[**BastionConfigReplyObj**](BastionConfigReplyObj.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | gatewayGetRemoteAccessResponse wraps response body. |  -  |
+**0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **gateway_get_tmp_users**
 > list[TmpUserData] gateway_get_tmp_users(body)
 
@@ -18363,6 +18437,122 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **gateway_update_remote_access**
+> object gateway_update_remote_access()
+
+
+
+### Example
+
+```python
+from __future__ import print_function
+import time
+import akeyless
+from akeyless.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.akeyless.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = akeyless.Configuration(
+    host = "https://api.akeyless.io"
+)
+
+
+# Enter a context with an instance of the API client
+with akeyless.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = akeyless.V2Api(api_client)
+    
+    try:
+        api_response = api_instance.gateway_update_remote_access()
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling V2Api->gateway_update_remote_access: %s\n" % e)
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+**object**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | gatewayUpdateRemoteAccessResponse wraps response body. |  -  |
+**0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **gateway_update_remote_access_rdp_recordings**
+> object gateway_update_remote_access_rdp_recordings(body)
+
+
+
+### Example
+
+```python
+from __future__ import print_function
+import time
+import akeyless
+from akeyless.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.akeyless.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = akeyless.Configuration(
+    host = "https://api.akeyless.io"
+)
+
+
+# Enter a context with an instance of the API client
+with akeyless.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = akeyless.V2Api(api_client)
+    body = akeyless.GatewayUpdateRemoteAccessRdpRecordings() # GatewayUpdateRemoteAccessRdpRecordings | 
+
+    try:
+        api_response = api_instance.gateway_update_remote_access_rdp_recordings(body)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling V2Api->gateway_update_remote_access_rdp_recordings: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**GatewayUpdateRemoteAccessRdpRecordings**](GatewayUpdateRemoteAccessRdpRecordings.md)|  | 
+
+### Return type
+
+**object**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | gatewayUpdateRemoteAccessRdpRecordingsResponse wraps response body. |  -  |
+**0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **gateway_update_tls_cert**
 > GatewayUpdateTlsCertOutput gateway_update_tls_cert(body)
 
@@ -19674,6 +19864,666 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | getTargetDetailsResponse wraps response body. |  -  |
+**0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **gw_update_remote_access_session_logs_aws_s3**
+> GatewayUpdateLogForwardingOutput gw_update_remote_access_session_logs_aws_s3(body)
+
+
+
+### Example
+
+```python
+from __future__ import print_function
+import time
+import akeyless
+from akeyless.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.akeyless.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = akeyless.Configuration(
+    host = "https://api.akeyless.io"
+)
+
+
+# Enter a context with an instance of the API client
+with akeyless.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = akeyless.V2Api(api_client)
+    body = akeyless.GwUpdateRemoteAccessSessionLogsAwsS3() # GwUpdateRemoteAccessSessionLogsAwsS3 | 
+
+    try:
+        api_response = api_instance.gw_update_remote_access_session_logs_aws_s3(body)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling V2Api->gw_update_remote_access_session_logs_aws_s3: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**GwUpdateRemoteAccessSessionLogsAwsS3**](GwUpdateRemoteAccessSessionLogsAwsS3.md)|  | 
+
+### Return type
+
+[**GatewayUpdateLogForwardingOutput**](GatewayUpdateLogForwardingOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**201** | gwUpdateRemoteAccessSessionLogsResponse wraps response body. |  -  |
+**0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **gw_update_remote_access_session_logs_azure_analytics**
+> GatewayUpdateLogForwardingOutput gw_update_remote_access_session_logs_azure_analytics(body)
+
+
+
+### Example
+
+```python
+from __future__ import print_function
+import time
+import akeyless
+from akeyless.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.akeyless.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = akeyless.Configuration(
+    host = "https://api.akeyless.io"
+)
+
+
+# Enter a context with an instance of the API client
+with akeyless.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = akeyless.V2Api(api_client)
+    body = akeyless.GwUpdateRemoteAccessSessionLogsAzureAnalytics() # GwUpdateRemoteAccessSessionLogsAzureAnalytics | 
+
+    try:
+        api_response = api_instance.gw_update_remote_access_session_logs_azure_analytics(body)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling V2Api->gw_update_remote_access_session_logs_azure_analytics: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**GwUpdateRemoteAccessSessionLogsAzureAnalytics**](GwUpdateRemoteAccessSessionLogsAzureAnalytics.md)|  | 
+
+### Return type
+
+[**GatewayUpdateLogForwardingOutput**](GatewayUpdateLogForwardingOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**201** | gwUpdateRemoteAccessSessionLogsResponse wraps response body. |  -  |
+**0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **gw_update_remote_access_session_logs_datadog**
+> GatewayUpdateLogForwardingOutput gw_update_remote_access_session_logs_datadog(body)
+
+
+
+### Example
+
+```python
+from __future__ import print_function
+import time
+import akeyless
+from akeyless.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.akeyless.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = akeyless.Configuration(
+    host = "https://api.akeyless.io"
+)
+
+
+# Enter a context with an instance of the API client
+with akeyless.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = akeyless.V2Api(api_client)
+    body = akeyless.GwUpdateRemoteAccessSessionLogsDatadog() # GwUpdateRemoteAccessSessionLogsDatadog | 
+
+    try:
+        api_response = api_instance.gw_update_remote_access_session_logs_datadog(body)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling V2Api->gw_update_remote_access_session_logs_datadog: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**GwUpdateRemoteAccessSessionLogsDatadog**](GwUpdateRemoteAccessSessionLogsDatadog.md)|  | 
+
+### Return type
+
+[**GatewayUpdateLogForwardingOutput**](GatewayUpdateLogForwardingOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**201** | gwUpdateRemoteAccessSessionLogsResponse wraps response body. |  -  |
+**0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **gw_update_remote_access_session_logs_elasticsearch**
+> GatewayUpdateLogForwardingOutput gw_update_remote_access_session_logs_elasticsearch(body)
+
+
+
+### Example
+
+```python
+from __future__ import print_function
+import time
+import akeyless
+from akeyless.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.akeyless.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = akeyless.Configuration(
+    host = "https://api.akeyless.io"
+)
+
+
+# Enter a context with an instance of the API client
+with akeyless.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = akeyless.V2Api(api_client)
+    body = akeyless.GwUpdateRemoteAccessSessionLogsElasticsearch() # GwUpdateRemoteAccessSessionLogsElasticsearch | 
+
+    try:
+        api_response = api_instance.gw_update_remote_access_session_logs_elasticsearch(body)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling V2Api->gw_update_remote_access_session_logs_elasticsearch: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**GwUpdateRemoteAccessSessionLogsElasticsearch**](GwUpdateRemoteAccessSessionLogsElasticsearch.md)|  | 
+
+### Return type
+
+[**GatewayUpdateLogForwardingOutput**](GatewayUpdateLogForwardingOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**201** | gwUpdateRemoteAccessSessionLogsResponse wraps response body. |  -  |
+**0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **gw_update_remote_access_session_logs_google_chronicle**
+> GatewayUpdateLogForwardingOutput gw_update_remote_access_session_logs_google_chronicle(body)
+
+
+
+### Example
+
+```python
+from __future__ import print_function
+import time
+import akeyless
+from akeyless.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.akeyless.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = akeyless.Configuration(
+    host = "https://api.akeyless.io"
+)
+
+
+# Enter a context with an instance of the API client
+with akeyless.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = akeyless.V2Api(api_client)
+    body = akeyless.GwUpdateRemoteAccessSessionLogsGoogleChronicle() # GwUpdateRemoteAccessSessionLogsGoogleChronicle | 
+
+    try:
+        api_response = api_instance.gw_update_remote_access_session_logs_google_chronicle(body)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling V2Api->gw_update_remote_access_session_logs_google_chronicle: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**GwUpdateRemoteAccessSessionLogsGoogleChronicle**](GwUpdateRemoteAccessSessionLogsGoogleChronicle.md)|  | 
+
+### Return type
+
+[**GatewayUpdateLogForwardingOutput**](GatewayUpdateLogForwardingOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**201** | gwUpdateRemoteAccessSessionLogsResponse wraps response body. |  -  |
+**0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **gw_update_remote_access_session_logs_logstash**
+> GatewayUpdateLogForwardingOutput gw_update_remote_access_session_logs_logstash(body)
+
+
+
+### Example
+
+```python
+from __future__ import print_function
+import time
+import akeyless
+from akeyless.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.akeyless.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = akeyless.Configuration(
+    host = "https://api.akeyless.io"
+)
+
+
+# Enter a context with an instance of the API client
+with akeyless.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = akeyless.V2Api(api_client)
+    body = akeyless.GwUpdateRemoteAccessSessionLogsLogstash() # GwUpdateRemoteAccessSessionLogsLogstash | 
+
+    try:
+        api_response = api_instance.gw_update_remote_access_session_logs_logstash(body)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling V2Api->gw_update_remote_access_session_logs_logstash: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**GwUpdateRemoteAccessSessionLogsLogstash**](GwUpdateRemoteAccessSessionLogsLogstash.md)|  | 
+
+### Return type
+
+[**GatewayUpdateLogForwardingOutput**](GatewayUpdateLogForwardingOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**201** | gwUpdateRemoteAccessSessionLogsResponse wraps response body. |  -  |
+**0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **gw_update_remote_access_session_logs_logz_io**
+> GatewayUpdateLogForwardingOutput gw_update_remote_access_session_logs_logz_io(body)
+
+
+
+### Example
+
+```python
+from __future__ import print_function
+import time
+import akeyless
+from akeyless.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.akeyless.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = akeyless.Configuration(
+    host = "https://api.akeyless.io"
+)
+
+
+# Enter a context with an instance of the API client
+with akeyless.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = akeyless.V2Api(api_client)
+    body = akeyless.GwUpdateRemoteAccessSessionLogsLogzIo() # GwUpdateRemoteAccessSessionLogsLogzIo | 
+
+    try:
+        api_response = api_instance.gw_update_remote_access_session_logs_logz_io(body)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling V2Api->gw_update_remote_access_session_logs_logz_io: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**GwUpdateRemoteAccessSessionLogsLogzIo**](GwUpdateRemoteAccessSessionLogsLogzIo.md)|  | 
+
+### Return type
+
+[**GatewayUpdateLogForwardingOutput**](GatewayUpdateLogForwardingOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**201** | gwUpdateRemoteAccessSessionLogsResponse wraps response body. |  -  |
+**0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **gw_update_remote_access_session_logs_splunk**
+> GatewayUpdateLogForwardingOutput gw_update_remote_access_session_logs_splunk(body)
+
+
+
+### Example
+
+```python
+from __future__ import print_function
+import time
+import akeyless
+from akeyless.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.akeyless.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = akeyless.Configuration(
+    host = "https://api.akeyless.io"
+)
+
+
+# Enter a context with an instance of the API client
+with akeyless.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = akeyless.V2Api(api_client)
+    body = akeyless.GwUpdateRemoteAccessSessionLogsSplunk() # GwUpdateRemoteAccessSessionLogsSplunk | 
+
+    try:
+        api_response = api_instance.gw_update_remote_access_session_logs_splunk(body)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling V2Api->gw_update_remote_access_session_logs_splunk: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**GwUpdateRemoteAccessSessionLogsSplunk**](GwUpdateRemoteAccessSessionLogsSplunk.md)|  | 
+
+### Return type
+
+[**GatewayUpdateLogForwardingOutput**](GatewayUpdateLogForwardingOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**201** | gwUpdateRemoteAccessSessionLogsResponse wraps response body. |  -  |
+**0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **gw_update_remote_access_session_logs_stdout**
+> GatewayUpdateLogForwardingOutput gw_update_remote_access_session_logs_stdout(body)
+
+
+
+### Example
+
+```python
+from __future__ import print_function
+import time
+import akeyless
+from akeyless.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.akeyless.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = akeyless.Configuration(
+    host = "https://api.akeyless.io"
+)
+
+
+# Enter a context with an instance of the API client
+with akeyless.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = akeyless.V2Api(api_client)
+    body = akeyless.GwUpdateRemoteAccessSessionLogsStdout() # GwUpdateRemoteAccessSessionLogsStdout | 
+
+    try:
+        api_response = api_instance.gw_update_remote_access_session_logs_stdout(body)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling V2Api->gw_update_remote_access_session_logs_stdout: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**GwUpdateRemoteAccessSessionLogsStdout**](GwUpdateRemoteAccessSessionLogsStdout.md)|  | 
+
+### Return type
+
+[**GatewayUpdateLogForwardingOutput**](GatewayUpdateLogForwardingOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**201** | gwUpdateRemoteAccessSessionLogsResponse wraps response body. |  -  |
+**0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **gw_update_remote_access_session_logs_sumologic**
+> GatewayUpdateLogForwardingOutput gw_update_remote_access_session_logs_sumologic(body)
+
+
+
+### Example
+
+```python
+from __future__ import print_function
+import time
+import akeyless
+from akeyless.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.akeyless.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = akeyless.Configuration(
+    host = "https://api.akeyless.io"
+)
+
+
+# Enter a context with an instance of the API client
+with akeyless.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = akeyless.V2Api(api_client)
+    body = akeyless.GwUpdateRemoteAccessSessionLogsSumologic() # GwUpdateRemoteAccessSessionLogsSumologic | 
+
+    try:
+        api_response = api_instance.gw_update_remote_access_session_logs_sumologic(body)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling V2Api->gw_update_remote_access_session_logs_sumologic: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**GwUpdateRemoteAccessSessionLogsSumologic**](GwUpdateRemoteAccessSessionLogsSumologic.md)|  | 
+
+### Return type
+
+[**GatewayUpdateLogForwardingOutput**](GatewayUpdateLogForwardingOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**201** | gwUpdateRemoteAccessSessionLogsResponse wraps response body. |  -  |
+**0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **gw_update_remote_access_session_logs_syslog**
+> GatewayUpdateLogForwardingOutput gw_update_remote_access_session_logs_syslog(body)
+
+
+
+### Example
+
+```python
+from __future__ import print_function
+import time
+import akeyless
+from akeyless.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.akeyless.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = akeyless.Configuration(
+    host = "https://api.akeyless.io"
+)
+
+
+# Enter a context with an instance of the API client
+with akeyless.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = akeyless.V2Api(api_client)
+    body = akeyless.GwUpdateRemoteAccessSessionLogsSyslog() # GwUpdateRemoteAccessSessionLogsSyslog | 
+
+    try:
+        api_response = api_instance.gw_update_remote_access_session_logs_syslog(body)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling V2Api->gw_update_remote_access_session_logs_syslog: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**GwUpdateRemoteAccessSessionLogsSyslog**](GwUpdateRemoteAccessSessionLogsSyslog.md)|  | 
+
+### Return type
+
+[**GatewayUpdateLogForwardingOutput**](GatewayUpdateLogForwardingOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**201** | gwUpdateRemoteAccessSessionLogsResponse wraps response body. |  -  |
 **0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

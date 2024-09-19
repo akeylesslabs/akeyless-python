@@ -533,7 +533,7 @@ class DynamicSecretUpdateAws(object):
     def new_name(self):
         """Gets the new_name of this DynamicSecretUpdateAws.  # noqa: E501
 
-        Dynamic secret new name  # noqa: E501
+        Dynamic secret name  # noqa: E501
 
         :return: The new_name of this DynamicSecretUpdateAws.  # noqa: E501
         :rtype: str
@@ -544,7 +544,7 @@ class DynamicSecretUpdateAws(object):
     def new_name(self, new_name):
         """Sets the new_name of this DynamicSecretUpdateAws.
 
-        Dynamic secret new name  # noqa: E501
+        Dynamic secret name  # noqa: E501
 
         :param new_name: The new_name of this DynamicSecretUpdateAws.  # noqa: E501
         :type: str
