@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **assoc_id** | **str** |  | [optional] 
 **auth_method_sub_claims** | **dict(str, list[str])** |  | [optional] 
 **is_sub_claims_case_sensitive** | **bool** |  | [optional] 
+**is_subclaims_with_operator** | **bool** |  | [optional] 
 **role_name** | **str** |  | [optional] 
 **rules** | [**Rules**](Rules.md) |  | [optional] 
 

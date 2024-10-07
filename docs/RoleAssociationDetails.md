@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **assoc_id** | **str** |  | [optional] 
 **auth_method_name** | **str** |  | [optional] 
 **auth_method_sub_claims** | **dict(str, list[str])** |  | [optional] 
+**is_subclaims_with_operator** | **bool** |  | [optional] 
 **role_name** | **str** |  | [optional] 
 **sub_claims_case_sensitive** | **bool** |  | [optional] 
 

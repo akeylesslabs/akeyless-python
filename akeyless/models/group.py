@@ -40,6 +40,7 @@ class Group(object):
         'group_alias': 'str',
         'group_id': 'str',
         'group_name': 'str',
+        'is_subclaims_with_operator': 'bool',
         'modification_date': 'datetime',
         'user_assignments': 'list[AccessPermissionAssignment]'
     }
@@ -51,11 +52,12 @@ class Group(object):
         'group_alias': 'group_alias',
         'group_id': 'group_id',
         'group_name': 'group_name',
+        'is_subclaims_with_operator': 'is_subclaims_with_operator',
         'modification_date': 'modification_date',
         'user_assignments': 'user_assignments'
     }
 
-    def __init__(self, account_id=None, creation_date=None, description=None, group_alias=None, group_id=None, group_name=None, modification_date=None, user_assignments=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, account_id=None, creation_date=None, description=None, group_alias=None, group_id=None, group_name=None, is_subclaims_with_operator=None, modification_date=None, user_assignments=None, local_vars_configuration=None):  # noqa: E501
         """Group - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -67,6 +69,7 @@ class Group(object):
         self._group_alias = None
         self._group_id = None
         self._group_name = None
+        self._is_subclaims_with_operator = None
         self._modification_date = None
         self._user_assignments = None
         self.discriminator = None
@@ -83,6 +86,8 @@ class Group(object):
             self.group_id = group_id
         if group_name is not None:
             self.group_name = group_name
+        if is_subclaims_with_operator is not None:
+            self.is_subclaims_with_operator = is_subclaims_with_operator
         if modification_date is not None:
             self.modification_date = modification_date
         if user_assignments is not None:
@@ -213,6 +218,27 @@ class Group(object):
         """
 
         self._group_name = group_name
+
+    @property
+    def is_subclaims_with_operator(self):
+        """Gets the is_subclaims_with_operator of this Group.  # noqa: E501
+
+
+        :return: The is_subclaims_with_operator of this Group.  # noqa: E501
+        :rtype: bool
+        """
+        return self._is_subclaims_with_operator
+
+    @is_subclaims_with_operator.setter
+    def is_subclaims_with_operator(self, is_subclaims_with_operator):
+        """Sets the is_subclaims_with_operator of this Group.
+
+
+        :param is_subclaims_with_operator: The is_subclaims_with_operator of this Group.  # noqa: E501
+        :type: bool
+        """
+
+        self._is_subclaims_with_operator = is_subclaims_with_operator
 
     @property
     def modification_date(self):

@@ -15,7 +15,7 @@
 
 from __future__ import absolute_import
 
-__version__ = "4.2.4"
+__version__ = "4.2.5"
 
 # import apis into sdk package
 from akeyless.api.v2_api import V2Api
@@ -38,6 +38,7 @@ from akeyless.models.access_or_group_permission_assignment import AccessOrGroupP
 from akeyless.models.access_permission_assignment import AccessPermissionAssignment
 from akeyless.models.account_general_settings import AccountGeneralSettings
 from akeyless.models.account_object_version_settings_output import AccountObjectVersionSettingsOutput
+from akeyless.models.acme_account import AcmeAccount
 from akeyless.models.active_directory_migration import ActiveDirectoryMigration
 from akeyless.models.active_directory_payload import ActiveDirectoryPayload
 from akeyless.models.add_gateway_allowed_access_id import AddGatewayAllowedAccessId
@@ -117,6 +118,7 @@ from akeyless.models.certificate_issue_info import CertificateIssueInfo
 from akeyless.models.certificate_template_info import CertificateTemplateInfo
 from akeyless.models.certificate_version_info import CertificateVersionInfo
 from akeyless.models.cf_info import CfInfo
+from akeyless.models.change_admin_account_password import ChangeAdminAccountPassword
 from akeyless.models.chef_target_details import ChefTargetDetails
 from akeyless.models.classic_key_details_info import ClassicKeyDetailsInfo
 from akeyless.models.classic_key_status_info import ClassicKeyStatusInfo
@@ -247,6 +249,7 @@ from akeyless.models.ds_producer_details import DSProducerDetails
 from akeyless.models.data_protection_section import DataProtectionSection
 from akeyless.models.datadog_forwarding_config import DatadogForwardingConfig
 from akeyless.models.db_target_details import DbTargetDetails
+from akeyless.models.deactivate_acme_account import DeactivateAcmeAccount
 from akeyless.models.decrypt import Decrypt
 from akeyless.models.decrypt_file import DecryptFile
 from akeyless.models.decrypt_file_output import DecryptFileOutput
@@ -590,6 +593,8 @@ from akeyless.models.gateways_list_response import GatewaysListResponse
 from akeyless.models.gcp_target_details import GcpTargetDetails
 from akeyless.models.gen_customer_fragment import GenCustomerFragment
 from akeyless.models.general_config_part import GeneralConfigPart
+from akeyless.models.generate_acme_eab import GenerateAcmeEab
+from akeyless.models.generate_acme_eab_output import GenerateAcmeEabOutput
 from akeyless.models.generate_csr import GenerateCsr
 from akeyless.models.generate_csr_output import GenerateCsrOutput
 from akeyless.models.get_account_settings import GetAccountSettings
@@ -695,6 +700,8 @@ from akeyless.models.ldap_target_details import LdapTargetDetails
 from akeyless.models.leadership_config_part import LeadershipConfigPart
 from akeyless.models.linked_details import LinkedDetails
 from akeyless.models.linked_target_details import LinkedTargetDetails
+from akeyless.models.list_acme_accounts import ListAcmeAccounts
+from akeyless.models.list_acme_accounts_output import ListAcmeAccountsOutput
 from akeyless.models.list_auth_methods import ListAuthMethods
 from akeyless.models.list_auth_methods_output import ListAuthMethodsOutput
 from akeyless.models.list_gateways import ListGateways

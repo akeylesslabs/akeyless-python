@@ -34,6 +34,7 @@ class PKICertificateIssueDetails(object):
                             and the value is json key in definition.
     """
     openapi_types = {
+        'acme_enabled': 'bool',
         'allow_any_name': 'bool',
         'allow_copy_ext_from_csr': 'bool',
         'allow_subdomains': 'bool',
@@ -57,6 +58,7 @@ class PKICertificateIssueDetails(object):
         'key_type': 'str',
         'key_usage_list': 'list[str]',
         'locality': 'list[str]',
+        'non_critical_key_usage': 'bool',
         'not_before_duration': 'int',
         'organization_list': 'list[str]',
         'organization_unit_list': 'list[str]',
@@ -69,6 +71,7 @@ class PKICertificateIssueDetails(object):
     }
 
     attribute_map = {
+        'acme_enabled': 'acme_enabled',
         'allow_any_name': 'allow_any_name',
         'allow_copy_ext_from_csr': 'allow_copy_ext_from_csr',
         'allow_subdomains': 'allow_subdomains',
@@ -92,6 +95,7 @@ class PKICertificateIssueDetails(object):
         'key_type': 'key_type',
         'key_usage_list': 'key_usage_list',
         'locality': 'locality',
+        'non_critical_key_usage': 'non_critical_key_usage',
         'not_before_duration': 'not_before_duration',
         'organization_list': 'organization_list',
         'organization_unit_list': 'organization_unit_list',
@@ -103,12 +107,13 @@ class PKICertificateIssueDetails(object):
         'street_address': 'street_address'
     }
 
-    def __init__(self, allow_any_name=None, allow_copy_ext_from_csr=None, allow_subdomains=None, allowed_domains_list=None, allowed_extra_extensions=None, allowed_uri_sans=None, basic_constraints_valid_for_non_ca=None, certificate_authority_mode=None, client_flag=None, code_signing_flag=None, country=None, create_private_crl=None, create_public_crl=None, destination_path=None, enforce_hostnames=None, expiration_events=None, gw_cluster_id=None, gw_cluster_url=None, is_ca=None, key_bits=None, key_type=None, key_usage_list=None, locality=None, not_before_duration=None, organization_list=None, organization_unit_list=None, postal_code=None, protect_generated_certificates=None, province=None, require_cn=None, server_flag=None, street_address=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, acme_enabled=None, allow_any_name=None, allow_copy_ext_from_csr=None, allow_subdomains=None, allowed_domains_list=None, allowed_extra_extensions=None, allowed_uri_sans=None, basic_constraints_valid_for_non_ca=None, certificate_authority_mode=None, client_flag=None, code_signing_flag=None, country=None, create_private_crl=None, create_public_crl=None, destination_path=None, enforce_hostnames=None, expiration_events=None, gw_cluster_id=None, gw_cluster_url=None, is_ca=None, key_bits=None, key_type=None, key_usage_list=None, locality=None, non_critical_key_usage=None, not_before_duration=None, organization_list=None, organization_unit_list=None, postal_code=None, protect_generated_certificates=None, province=None, require_cn=None, server_flag=None, street_address=None, local_vars_configuration=None):  # noqa: E501
         """PKICertificateIssueDetails - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
+        self._acme_enabled = None
         self._allow_any_name = None
         self._allow_copy_ext_from_csr = None
         self._allow_subdomains = None
@@ -132,6 +137,7 @@ class PKICertificateIssueDetails(object):
         self._key_type = None
         self._key_usage_list = None
         self._locality = None
+        self._non_critical_key_usage = None
         self._not_before_duration = None
         self._organization_list = None
         self._organization_unit_list = None
@@ -143,6 +149,8 @@ class PKICertificateIssueDetails(object):
         self._street_address = None
         self.discriminator = None
 
+        if acme_enabled is not None:
+            self.acme_enabled = acme_enabled
         if allow_any_name is not None:
             self.allow_any_name = allow_any_name
         if allow_copy_ext_from_csr is not None:
@@ -189,6 +197,8 @@ class PKICertificateIssueDetails(object):
             self.key_usage_list = key_usage_list
         if locality is not None:
             self.locality = locality
+        if non_critical_key_usage is not None:
+            self.non_critical_key_usage = non_critical_key_usage
         if not_before_duration is not None:
             self.not_before_duration = not_before_duration
         if organization_list is not None:
@@ -207,6 +217,27 @@ class PKICertificateIssueDetails(object):
             self.server_flag = server_flag
         if street_address is not None:
             self.street_address = street_address
+
+    @property
+    def acme_enabled(self):
+        """Gets the acme_enabled of this PKICertificateIssueDetails.  # noqa: E501
+
+
+        :return: The acme_enabled of this PKICertificateIssueDetails.  # noqa: E501
+        :rtype: bool
+        """
+        return self._acme_enabled
+
+    @acme_enabled.setter
+    def acme_enabled(self, acme_enabled):
+        """Sets the acme_enabled of this PKICertificateIssueDetails.
+
+
+        :param acme_enabled: The acme_enabled of this PKICertificateIssueDetails.  # noqa: E501
+        :type: bool
+        """
+
+        self._acme_enabled = acme_enabled
 
     @property
     def allow_any_name(self):
@@ -696,6 +727,27 @@ class PKICertificateIssueDetails(object):
         """
 
         self._locality = locality
+
+    @property
+    def non_critical_key_usage(self):
+        """Gets the non_critical_key_usage of this PKICertificateIssueDetails.  # noqa: E501
+
+
+        :return: The non_critical_key_usage of this PKICertificateIssueDetails.  # noqa: E501
+        :rtype: bool
+        """
+        return self._non_critical_key_usage
+
+    @non_critical_key_usage.setter
+    def non_critical_key_usage(self, non_critical_key_usage):
+        """Sets the non_critical_key_usage of this PKICertificateIssueDetails.
+
+
+        :param non_critical_key_usage: The non_critical_key_usage of this PKICertificateIssueDetails.  # noqa: E501
+        :type: bool
+        """
+
+        self._non_critical_key_usage = non_critical_key_usage
 
     @property
     def not_before_duration(self):

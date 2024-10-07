@@ -46,9 +46,11 @@ class CreatePKICertIssuer(object):
         'country': 'str',
         'create_private_crl': 'bool',
         'create_public_crl': 'bool',
+        'critical_key_usage': 'str',
         'delete_protection': 'str',
         'description': 'str',
         'destination_path': 'str',
+        'enable_acme': 'bool',
         'expiration_event_in': 'list[str]',
         'gw_cluster_url': 'str',
         'is_ca': 'bool',
@@ -86,9 +88,11 @@ class CreatePKICertIssuer(object):
         'country': 'country',
         'create_private_crl': 'create-private-crl',
         'create_public_crl': 'create-public-crl',
+        'critical_key_usage': 'critical-key-usage',
         'delete_protection': 'delete_protection',
         'description': 'description',
         'destination_path': 'destination-path',
+        'enable_acme': 'enable-acme',
         'expiration_event_in': 'expiration-event-in',
         'gw_cluster_url': 'gw-cluster-url',
         'is_ca': 'is-ca',
@@ -113,7 +117,7 @@ class CreatePKICertIssuer(object):
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, allow_any_name=None, allow_copy_ext_from_csr=None, allow_subdomains=None, allowed_domains=None, allowed_extra_extensions=None, allowed_uri_sans=None, ca_target=None, client_flag=None, code_signing_flag=None, country=None, create_private_crl=None, create_public_crl=None, delete_protection=None, description=None, destination_path=None, expiration_event_in=None, gw_cluster_url=None, is_ca=None, json=False, key_usage='DigitalSignature,KeyAgreement,KeyEncipherment', locality=None, metadata=None, name=None, not_enforce_hostnames=None, not_require_cn=None, organizational_units=None, organizations=None, postal_code=None, protect_certificates=None, province=None, server_flag=None, signer_key_name='dummy_signer_key', street_address=None, tag=None, token=None, ttl=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, allow_any_name=None, allow_copy_ext_from_csr=None, allow_subdomains=None, allowed_domains=None, allowed_extra_extensions=None, allowed_uri_sans=None, ca_target=None, client_flag=None, code_signing_flag=None, country=None, create_private_crl=None, create_public_crl=None, critical_key_usage='true', delete_protection=None, description=None, destination_path=None, enable_acme=None, expiration_event_in=None, gw_cluster_url=None, is_ca=None, json=False, key_usage='DigitalSignature,KeyAgreement,KeyEncipherment', locality=None, metadata=None, name=None, not_enforce_hostnames=None, not_require_cn=None, organizational_units=None, organizations=None, postal_code=None, protect_certificates=None, province=None, server_flag=None, signer_key_name='dummy_signer_key', street_address=None, tag=None, token=None, ttl=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """CreatePKICertIssuer - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -131,9 +135,11 @@ class CreatePKICertIssuer(object):
         self._country = None
         self._create_private_crl = None
         self._create_public_crl = None
+        self._critical_key_usage = None
         self._delete_protection = None
         self._description = None
         self._destination_path = None
+        self._enable_acme = None
         self._expiration_event_in = None
         self._gw_cluster_url = None
         self._is_ca = None
@@ -182,12 +188,16 @@ class CreatePKICertIssuer(object):
             self.create_private_crl = create_private_crl
         if create_public_crl is not None:
             self.create_public_crl = create_public_crl
+        if critical_key_usage is not None:
+            self.critical_key_usage = critical_key_usage
         if delete_protection is not None:
             self.delete_protection = delete_protection
         if description is not None:
             self.description = description
         if destination_path is not None:
             self.destination_path = destination_path
+        if enable_acme is not None:
+            self.enable_acme = enable_acme
         if expiration_event_in is not None:
             self.expiration_event_in = expiration_event_in
         if gw_cluster_url is not None:
@@ -507,6 +517,29 @@ class CreatePKICertIssuer(object):
         self._create_public_crl = create_public_crl
 
     @property
+    def critical_key_usage(self):
+        """Gets the critical_key_usage of this CreatePKICertIssuer.  # noqa: E501
+
+        Mark key usage as critical [true/false]  # noqa: E501
+
+        :return: The critical_key_usage of this CreatePKICertIssuer.  # noqa: E501
+        :rtype: str
+        """
+        return self._critical_key_usage
+
+    @critical_key_usage.setter
+    def critical_key_usage(self, critical_key_usage):
+        """Sets the critical_key_usage of this CreatePKICertIssuer.
+
+        Mark key usage as critical [true/false]  # noqa: E501
+
+        :param critical_key_usage: The critical_key_usage of this CreatePKICertIssuer.  # noqa: E501
+        :type: str
+        """
+
+        self._critical_key_usage = critical_key_usage
+
+    @property
     def delete_protection(self):
         """Gets the delete_protection of this CreatePKICertIssuer.  # noqa: E501
 
@@ -576,6 +609,29 @@ class CreatePKICertIssuer(object):
         self._destination_path = destination_path
 
     @property
+    def enable_acme(self):
+        """Gets the enable_acme of this CreatePKICertIssuer.  # noqa: E501
+
+        If set, the cert issuer will support the acme protocol  # noqa: E501
+
+        :return: The enable_acme of this CreatePKICertIssuer.  # noqa: E501
+        :rtype: bool
+        """
+        return self._enable_acme
+
+    @enable_acme.setter
+    def enable_acme(self, enable_acme):
+        """Sets the enable_acme of this CreatePKICertIssuer.
+
+        If set, the cert issuer will support the acme protocol  # noqa: E501
+
+        :param enable_acme: The enable_acme of this CreatePKICertIssuer.  # noqa: E501
+        :type: bool
+        """
+
+        self._enable_acme = enable_acme
+
+    @property
     def expiration_event_in(self):
         """Gets the expiration_event_in of this CreatePKICertIssuer.  # noqa: E501
 
@@ -602,7 +658,7 @@ class CreatePKICertIssuer(object):
     def gw_cluster_url(self):
         """Gets the gw_cluster_url of this CreatePKICertIssuer.  # noqa: E501
 
-        The GW cluster URL to issue the certificate from, required in Public CA mode or to allow CRLs on private CA  # noqa: E501
+        The GW cluster URL to issue the certificate from. Required in Public CA mode, to allow CRLs on private CA, or to enable ACME  # noqa: E501
 
         :return: The gw_cluster_url of this CreatePKICertIssuer.  # noqa: E501
         :rtype: str
@@ -613,7 +669,7 @@ class CreatePKICertIssuer(object):
     def gw_cluster_url(self, gw_cluster_url):
         """Sets the gw_cluster_url of this CreatePKICertIssuer.
 
-        The GW cluster URL to issue the certificate from, required in Public CA mode or to allow CRLs on private CA  # noqa: E501
+        The GW cluster URL to issue the certificate from. Required in Public CA mode, to allow CRLs on private CA, or to enable ACME  # noqa: E501
 
         :param gw_cluster_url: The gw_cluster_url of this CreatePKICertIssuer.  # noqa: E501
         :type: str

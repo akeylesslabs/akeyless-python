@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **group_alias** | **str** |  | [optional] 
 **group_id** | **str** |  | [optional] 
 **group_name** | **str** |  | [optional] 
+**is_subclaims_with_operator** | **bool** |  | [optional] 
 **modification_date** | **datetime** |  | [optional] 
 **user_assignments** | [**list[AccessPermissionAssignment]**](AccessPermissionAssignment.md) |  | [optional] 
 

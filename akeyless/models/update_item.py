@@ -38,6 +38,7 @@ class UpdateItem(object):
         'accessibility': 'str',
         'add_tag': 'list[str]',
         'cert_file_data': 'str',
+        'certificate_format': 'str',
         'change_event': 'str',
         'delete_protection': 'str',
         'description': 'str',
@@ -84,6 +85,7 @@ class UpdateItem(object):
         'accessibility': 'accessibility',
         'add_tag': 'add-tag',
         'cert_file_data': 'cert-file-data',
+        'certificate_format': 'certificate-format',
         'change_event': 'change-event',
         'delete_protection': 'delete_protection',
         'description': 'description',
@@ -125,7 +127,7 @@ class UpdateItem(object):
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, provider_type=None, accessibility='regular', add_tag=None, cert_file_data=None, change_event=None, delete_protection=None, description='default_metadata', expiration_event_in=None, host_provider=None, json=False, max_versions=None, name=None, new_metadata='default_metadata', new_name=None, rm_tag=None, rotate_after_disconnect='false', secure_access_add_host=None, secure_access_allow_external_user=None, secure_access_allow_port_forwading=None, secure_access_aws_account_id=None, secure_access_aws_native_cli=None, secure_access_aws_region=None, secure_access_bastion_api=None, secure_access_bastion_issuer=None, secure_access_bastion_ssh=None, secure_access_cluster_endpoint=None, secure_access_dashboard_url=None, secure_access_db_name=None, secure_access_db_schema=None, secure_access_enable=None, secure_access_host=None, secure_access_rd_gateway_server=None, secure_access_rdp_domain=None, secure_access_rdp_user=None, secure_access_rm_host=None, secure_access_ssh_creds=None, secure_access_ssh_creds_user=None, secure_access_url=None, secure_access_use_internal_bastion=None, secure_access_web_browsing=False, secure_access_web_proxy=False, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, provider_type=None, accessibility='regular', add_tag=None, cert_file_data=None, certificate_format=None, change_event=None, delete_protection=None, description='default_metadata', expiration_event_in=None, host_provider=None, json=False, max_versions=None, name=None, new_metadata='default_metadata', new_name=None, rm_tag=None, rotate_after_disconnect='false', secure_access_add_host=None, secure_access_allow_external_user=None, secure_access_allow_port_forwading=None, secure_access_aws_account_id=None, secure_access_aws_native_cli=None, secure_access_aws_region=None, secure_access_bastion_api=None, secure_access_bastion_issuer=None, secure_access_bastion_ssh=None, secure_access_cluster_endpoint=None, secure_access_dashboard_url=None, secure_access_db_name=None, secure_access_db_schema=None, secure_access_enable=None, secure_access_host=None, secure_access_rd_gateway_server=None, secure_access_rdp_domain=None, secure_access_rdp_user=None, secure_access_rm_host=None, secure_access_ssh_creds=None, secure_access_ssh_creds_user=None, secure_access_url=None, secure_access_use_internal_bastion=None, secure_access_web_browsing=False, secure_access_web_proxy=False, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """UpdateItem - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -135,6 +137,7 @@ class UpdateItem(object):
         self._accessibility = None
         self._add_tag = None
         self._cert_file_data = None
+        self._certificate_format = None
         self._change_event = None
         self._delete_protection = None
         self._description = None
@@ -184,6 +187,8 @@ class UpdateItem(object):
             self.add_tag = add_tag
         if cert_file_data is not None:
             self.cert_file_data = cert_file_data
+        if certificate_format is not None:
+            self.certificate_format = certificate_format
         if change_event is not None:
             self.change_event = change_event
         if delete_protection is not None:
@@ -351,6 +356,27 @@ class UpdateItem(object):
         """
 
         self._cert_file_data = cert_file_data
+
+    @property
+    def certificate_format(self):
+        """Gets the certificate_format of this UpdateItem.  # noqa: E501
+
+
+        :return: The certificate_format of this UpdateItem.  # noqa: E501
+        :rtype: str
+        """
+        return self._certificate_format
+
+    @certificate_format.setter
+    def certificate_format(self, certificate_format):
+        """Sets the certificate_format of this UpdateItem.
+
+
+        :param certificate_format: The certificate_format of this UpdateItem.  # noqa: E501
+        :type: str
+        """
+
+        self._certificate_format = certificate_format
 
     @property
     def change_event(self):

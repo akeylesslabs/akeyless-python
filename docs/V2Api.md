@@ -37,6 +37,7 @@ Method | HTTP request | Description
 [**auth_method_update_oidc**](V2Api.md#auth_method_update_oidc) | **POST** /auth-method-update-oidc | 
 [**auth_method_update_saml**](V2Api.md#auth_method_update_saml) | **POST** /auth-method-update-saml | 
 [**auth_method_update_universal_identity**](V2Api.md#auth_method_update_universal_identity) | **POST** /auth-method-update-universal-identity | 
+[**change_admin_account_password**](V2Api.md#change_admin_account_password) | **POST** /change-admin-account-password | 
 [**configure**](V2Api.md#configure) | **POST** /configure | 
 [**connect**](V2Api.md#connect) | **POST** /connect | 
 [**create_artifactory_target**](V2Api.md#create_artifactory_target) | **POST** /create-artifactory-target | 
@@ -94,6 +95,7 @@ Method | HTTP request | Description
 [**create_windows_target**](V2Api.md#create_windows_target) | **POST** /create-windows-target | 
 [**create_zero_ssl_target**](V2Api.md#create_zero_ssl_target) | **POST** /create-zerossl-target | 
 [**createldap_target**](V2Api.md#createldap_target) | **POST** /create-ldap-target | 
+[**deactivate_acme_account**](V2Api.md#deactivate_acme_account) | **POST** /deactivate-acme-account | 
 [**decrypt**](V2Api.md#decrypt) | **POST** /decrypt | 
 [**decrypt_batch**](V2Api.md#decrypt_batch) | **POST** /decrypt-batch | 
 [**decrypt_gpg**](V2Api.md#decrypt_gpg) | **POST** /decrypt-gpg | 
@@ -306,6 +308,7 @@ Method | HTTP request | Description
 [**gateway_update_remote_access_rdp_recordings**](V2Api.md#gateway_update_remote_access_rdp_recordings) | **POST** /gateway-update-remote-access-rdp-recording | 
 [**gateway_update_tls_cert**](V2Api.md#gateway_update_tls_cert) | **POST** /gateway-update-tls-cert | 
 [**gateway_update_tmp_users**](V2Api.md#gateway_update_tmp_users) | **POST** /gateway-update-producer-tmp-creds | 
+[**generate_acme_eab**](V2Api.md#generate_acme_eab) | **POST** /generate-acme-eab | 
 [**generate_csr**](V2Api.md#generate_csr) | **POST** /generate-csr | 
 [**get_account_logo**](V2Api.md#get_account_logo) | **POST** /get-account-logo | 
 [**get_account_settings**](V2Api.md#get_account_settings) | **POST** /get-account-settings | 
@@ -352,6 +355,7 @@ Method | HTTP request | Description
 [**kmip_renew_server_certificate**](V2Api.md#kmip_renew_server_certificate) | **POST** /kmip-renew-environment | 
 [**kmip_server_setup**](V2Api.md#kmip_server_setup) | **POST** /kmip-create-environment | 
 [**kmip_set_server_state**](V2Api.md#kmip_set_server_state) | **POST** /kmip-set-environment-state | 
+[**list_acme_accounts**](V2Api.md#list_acme_accounts) | **POST** /list-acme-accounts | 
 [**list_auth_methods**](V2Api.md#list_auth_methods) | **POST** /list-auth-methods | 
 [**list_gateways**](V2Api.md#list_gateways) | **POST** /list-gateways | 
 [**list_groups**](V2Api.md#list_groups) | **POST** /list-group | 
@@ -2535,6 +2539,66 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | authMethodUpdateUniversalIdentityResponse wraps response body. |  -  |
+**0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **change_admin_account_password**
+> object change_admin_account_password(body)
+
+
+
+### Example
+
+```python
+from __future__ import print_function
+import time
+import akeyless
+from akeyless.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.akeyless.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = akeyless.Configuration(
+    host = "https://api.akeyless.io"
+)
+
+
+# Enter a context with an instance of the API client
+with akeyless.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = akeyless.V2Api(api_client)
+    body = akeyless.ChangeAdminAccountPassword() # ChangeAdminAccountPassword | 
+
+    try:
+        api_response = api_instance.change_admin_account_password(body)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling V2Api->change_admin_account_password: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**ChangeAdminAccountPassword**](ChangeAdminAccountPassword.md)|  | 
+
+### Return type
+
+**object**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | changeAdminAccountPasswordResponse wraps response body. |  -  |
 **0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -5955,6 +6019,66 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | createldapTargetResponse wraps response body. |  -  |
+**0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **deactivate_acme_account**
+> object deactivate_acme_account(body)
+
+
+
+### Example
+
+```python
+from __future__ import print_function
+import time
+import akeyless
+from akeyless.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.akeyless.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = akeyless.Configuration(
+    host = "https://api.akeyless.io"
+)
+
+
+# Enter a context with an instance of the API client
+with akeyless.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = akeyless.V2Api(api_client)
+    body = akeyless.DeactivateAcmeAccount() # DeactivateAcmeAccount | 
+
+    try:
+        api_response = api_instance.deactivate_acme_account(body)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling V2Api->deactivate_acme_account: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**DeactivateAcmeAccount**](DeactivateAcmeAccount.md)|  | 
+
+### Return type
+
+**object**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | deactivateAcmeAccountResponse wraps response body. |  -  |
 **0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -18672,6 +18796,66 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **generate_acme_eab**
+> GenerateAcmeEabOutput generate_acme_eab(body)
+
+
+
+### Example
+
+```python
+from __future__ import print_function
+import time
+import akeyless
+from akeyless.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.akeyless.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = akeyless.Configuration(
+    host = "https://api.akeyless.io"
+)
+
+
+# Enter a context with an instance of the API client
+with akeyless.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = akeyless.V2Api(api_client)
+    body = akeyless.GenerateAcmeEab() # GenerateAcmeEab | 
+
+    try:
+        api_response = api_instance.generate_acme_eab(body)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling V2Api->generate_acme_eab: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**GenerateAcmeEab**](GenerateAcmeEab.md)|  | 
+
+### Return type
+
+[**GenerateAcmeEabOutput**](GenerateAcmeEabOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | generateAcmeEabResponse wraps response body. |  -  |
+**0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **generate_csr**
 > GenerateCsrOutput generate_csr(body)
 
@@ -21424,6 +21608,66 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | kmipSetServerStateResponse wraps response body. |  -  |
+**0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **list_acme_accounts**
+> ListAcmeAccountsOutput list_acme_accounts(body)
+
+
+
+### Example
+
+```python
+from __future__ import print_function
+import time
+import akeyless
+from akeyless.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.akeyless.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = akeyless.Configuration(
+    host = "https://api.akeyless.io"
+)
+
+
+# Enter a context with an instance of the API client
+with akeyless.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = akeyless.V2Api(api_client)
+    body = akeyless.ListAcmeAccounts() # ListAcmeAccounts | 
+
+    try:
+        api_response = api_instance.list_acme_accounts(body)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling V2Api->list_acme_accounts: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**ListAcmeAccounts**](ListAcmeAccounts.md)|  | 
+
+### Return type
+
+[**ListAcmeAccountsOutput**](ListAcmeAccountsOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | listAcmeAccountsResponse wraps response body. |  -  |
 **0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

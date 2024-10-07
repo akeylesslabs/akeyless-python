@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **accessibility** | **str** | for personal password manager | [optional] [default to 'regular']
 **add_tag** | **list[str]** | List of the new tags that will be attached to this item | [optional] 
 **cert_file_data** | **str** | PEM Certificate in a Base64 format. Used for updating RSA keys&#39; certificates. | [optional] 
+**certificate_format** | **str** |  | [optional] 
 **change_event** | **str** | Trigger an event when a secret value changed [true/false] (Relevant only for Static Secret) | [optional] 
 **delete_protection** | **str** | Protection from accidental deletion of this object [true/false] | [optional] 
 **description** | **str** | Description of the object | [optional] [default to 'default_metadata']

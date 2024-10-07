@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **auth_method_access_id** | **str** |  | [optional] 
 **auth_method_name** | **str** |  | [optional] 
 **auth_method_sub_claims** | **dict(str, list[str])** |  | [optional] 
+**is_subclaims_with_operator** | **bool** |  | [optional] 
 **sub_claims_case_sensitive** | **bool** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
