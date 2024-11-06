@@ -15,7 +15,7 @@
 
 from __future__ import absolute_import
 
-__version__ = "4.2.5"
+__version__ = "4.3.0"
 
 # import apis into sdk package
 from akeyless.api.v2_api import V2Api
@@ -57,6 +57,7 @@ from akeyless.models.attribute_type_and_value import AttributeTypeAndValue
 from akeyless.models.auth import Auth
 from akeyless.models.auth_method import AuthMethod
 from akeyless.models.auth_method_access_info import AuthMethodAccessInfo
+from akeyless.models.auth_method_additional_data import AuthMethodAdditionalData
 from akeyless.models.auth_method_create_api_key import AuthMethodCreateApiKey
 from akeyless.models.auth_method_create_aws_iam import AuthMethodCreateAwsIam
 from akeyless.models.auth_method_create_azure_ad import AuthMethodCreateAzureAD
@@ -64,6 +65,7 @@ from akeyless.models.auth_method_create_cert import AuthMethodCreateCert
 from akeyless.models.auth_method_create_email import AuthMethodCreateEmail
 from akeyless.models.auth_method_create_gcp import AuthMethodCreateGcp
 from akeyless.models.auth_method_create_k8s import AuthMethodCreateK8s
+from akeyless.models.auth_method_create_kerberos import AuthMethodCreateKerberos
 from akeyless.models.auth_method_create_ldap import AuthMethodCreateLdap
 from akeyless.models.auth_method_create_oci import AuthMethodCreateOCI
 from akeyless.models.auth_method_create_oidc import AuthMethodCreateOIDC
@@ -83,6 +85,7 @@ from akeyless.models.auth_method_update_cert import AuthMethodUpdateCert
 from akeyless.models.auth_method_update_email import AuthMethodUpdateEmail
 from akeyless.models.auth_method_update_gcp import AuthMethodUpdateGcp
 from akeyless.models.auth_method_update_k8s import AuthMethodUpdateK8s
+from akeyless.models.auth_method_update_kerberos import AuthMethodUpdateKerberos
 from akeyless.models.auth_method_update_ldap import AuthMethodUpdateLdap
 from akeyless.models.auth_method_update_oci import AuthMethodUpdateOCI
 from akeyless.models.auth_method_update_oidc import AuthMethodUpdateOIDC
@@ -212,6 +215,8 @@ from akeyless.models.create_oidc_app import CreateOidcApp
 from akeyless.models.create_oidc_app_output import CreateOidcAppOutput
 from akeyless.models.create_pki_cert_issuer import CreatePKICertIssuer
 from akeyless.models.create_pki_cert_issuer_output import CreatePKICertIssuerOutput
+from akeyless.models.create_passkey import CreatePasskey
+from akeyless.models.create_passkey_output import CreatePasskeyOutput
 from akeyless.models.create_ping_target import CreatePingTarget
 from akeyless.models.create_ping_target_output import CreatePingTargetOutput
 from akeyless.models.create_rabbit_mq_target import CreateRabbitMQTarget
@@ -672,6 +677,9 @@ from akeyless.models.kmip_client_update_response import KMIPClientUpdateResponse
 from akeyless.models.kmip_config_part import KMIPConfigPart
 from akeyless.models.kmip_environment_create_response import KMIPEnvironmentCreateResponse
 from akeyless.models.kmip_server import KMIPServer
+from akeyless.models.kerberos_access_rules import KerberosAccessRules
+from akeyless.models.kerberos_auth_method_info import KerberosAuthMethodInfo
+from akeyless.models.kerberos_config_part import KerberosConfigPart
 from akeyless.models.kmip_client_delete_rule import KmipClientDeleteRule
 from akeyless.models.kmip_client_set_rule import KmipClientSetRule
 from akeyless.models.kmip_create_client import KmipCreateClient
@@ -691,6 +699,15 @@ from akeyless.models.kmip_renew_server_certificate_output import KmipRenewServer
 from akeyless.models.kmip_server_setup import KmipServerSetup
 from akeyless.models.kmip_set_server_state import KmipSetServerState
 from akeyless.models.kmip_set_server_state_output import KmipSetServerStateOutput
+from akeyless.models.kube_config_value import KubeConfigValue
+from akeyless.models.kubeconfig_cluster import KubeconfigCluster
+from akeyless.models.kubeconfig_context import KubeconfigContext
+from akeyless.models.kubeconfig_exec import KubeconfigExec
+from akeyless.models.kubeconfig_generate_output import KubeconfigGenerateOutput
+from akeyless.models.kubeconfig_named_cluster import KubeconfigNamedCluster
+from akeyless.models.kubeconfig_named_context import KubeconfigNamedContext
+from akeyless.models.kubeconfig_user import KubeconfigUser
+from akeyless.models.kubeconfig_user_exec import KubeconfigUserExec
 from akeyless.models.kubernetes_access_rules import KubernetesAccessRules
 from akeyless.models.ldap_access_rules import LDAPAccessRules
 from akeyless.models.last_config_change import LastConfigChange
@@ -713,7 +730,9 @@ from akeyless.models.list_items_output import ListItemsOutput
 from akeyless.models.list_roles import ListRoles
 from akeyless.models.list_roles_output import ListRolesOutput
 from akeyless.models.list_sra_bastions import ListSRABastions
+from akeyless.models.list_sra_sessions import ListSRASessions
 from akeyless.models.list_shared_items import ListSharedItems
+from akeyless.models.list_sra_sessions_output import ListSraSessionsOutput
 from akeyless.models.list_targets import ListTargets
 from akeyless.models.list_targets_output import ListTargetsOutput
 from akeyless.models.log_forwarding_config_part import LogForwardingConfigPart
@@ -856,6 +875,7 @@ from akeyless.models.sign_rsa_ssa_pss_output import SignRsaSsaPssOutput
 from akeyless.models.sm_info import SmInfo
 from akeyless.models.splunk_log_forwarding_config import SplunkLogForwardingConfig
 from akeyless.models.sra_info import SraInfo
+from akeyless.models.sra_session_entry_out import SraSessionEntryOut
 from akeyless.models.ssh_bastion_conf import SshBastionConf
 from akeyless.models.ssh_bastion_session_termination import SshBastionSessionTermination
 from akeyless.models.static_creds_auth import StaticCredsAuth

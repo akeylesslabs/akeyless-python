@@ -15,6 +15,7 @@ Method | HTTP request | Description
 [**auth_method_create_email**](V2Api.md#auth_method_create_email) | **POST** /auth-method-create-email | 
 [**auth_method_create_gcp**](V2Api.md#auth_method_create_gcp) | **POST** /auth-method-create-gcp | 
 [**auth_method_create_k8s**](V2Api.md#auth_method_create_k8s) | **POST** /auth-method-create-k8s | 
+[**auth_method_create_kerberos**](V2Api.md#auth_method_create_kerberos) | **POST** /auth-method-create-kerberos | 
 [**auth_method_create_ldap**](V2Api.md#auth_method_create_ldap) | **POST** /auth-method-create-ldap | 
 [**auth_method_create_oauth2**](V2Api.md#auth_method_create_oauth2) | **POST** /auth-method-create-oauth2 | 
 [**auth_method_create_oci**](V2Api.md#auth_method_create_oci) | **POST** /auth-method-create-oci | 
@@ -31,6 +32,7 @@ Method | HTTP request | Description
 [**auth_method_update_email**](V2Api.md#auth_method_update_email) | **POST** /auth-method-update-email | 
 [**auth_method_update_gcp**](V2Api.md#auth_method_update_gcp) | **POST** /auth-method-update-gcp | 
 [**auth_method_update_k8s**](V2Api.md#auth_method_update_k8s) | **POST** /auth-method-update-k8s | 
+[**auth_method_update_kerberos**](V2Api.md#auth_method_update_kerberos) | **POST** /auth-method-update-kerberos | 
 [**auth_method_update_ldap**](V2Api.md#auth_method_update_ldap) | **POST** /auth-method-update-ldap | 
 [**auth_method_update_oauth2**](V2Api.md#auth_method_update_oauth2) | **POST** /auth-method-update-oauth2 | 
 [**auth_method_update_oci**](V2Api.md#auth_method_update_oci) | **POST** /auth-method-update-oci | 
@@ -79,6 +81,7 @@ Method | HTTP request | Description
 [**create_linked_target**](V2Api.md#create_linked_target) | **POST** /create-linked-target | 
 [**create_native_k8_s_target**](V2Api.md#create_native_k8_s_target) | **POST** /create-k8s-target | 
 [**create_oidc_app**](V2Api.md#create_oidc_app) | **POST** /create-oidc-app | 
+[**create_passkey**](V2Api.md#create_passkey) | **POST** /create-passkey | 
 [**create_ping_target**](V2Api.md#create_ping_target) | **POST** /create-ping-target | 
 [**create_pki_cert_issuer**](V2Api.md#create_pki_cert_issuer) | **POST** /create-pki-cert-issuer | 
 [**create_rabbit_mq_target**](V2Api.md#create_rabbit_mq_target) | **POST** /create-rabbitmq-target | 
@@ -355,6 +358,7 @@ Method | HTTP request | Description
 [**kmip_renew_server_certificate**](V2Api.md#kmip_renew_server_certificate) | **POST** /kmip-renew-environment | 
 [**kmip_server_setup**](V2Api.md#kmip_server_setup) | **POST** /kmip-create-environment | 
 [**kmip_set_server_state**](V2Api.md#kmip_set_server_state) | **POST** /kmip-set-environment-state | 
+[**kubeconfig_generate**](V2Api.md#kubeconfig_generate) | **POST** /kubeconfig-generate | 
 [**list_acme_accounts**](V2Api.md#list_acme_accounts) | **POST** /list-acme-accounts | 
 [**list_auth_methods**](V2Api.md#list_auth_methods) | **POST** /list-auth-methods | 
 [**list_gateways**](V2Api.md#list_gateways) | **POST** /list-gateways | 
@@ -363,6 +367,7 @@ Method | HTTP request | Description
 [**list_roles**](V2Api.md#list_roles) | **POST** /list-roles | 
 [**list_shared_items**](V2Api.md#list_shared_items) | **POST** /list-shared-items | 
 [**list_sra_bastions**](V2Api.md#list_sra_bastions) | **POST** /list-sra-bastions | 
+[**list_sra_sessions**](V2Api.md#list_sra_sessions) | **POST** /list-sra-sessions | 
 [**list_targets**](V2Api.md#list_targets) | **POST** /list-targets | 
 [**move_objects**](V2Api.md#move_objects) | **POST** /move-objects | 
 [**provision_certificate**](V2Api.md#provision_certificate) | **POST** /provision-certificate | 
@@ -370,6 +375,7 @@ Method | HTTP request | Description
 [**refresh_key**](V2Api.md#refresh_key) | **POST** /refresh-key | 
 [**renew_certificate**](V2Api.md#renew_certificate) | **POST** /renew-certificate | 
 [**request_access**](V2Api.md#request_access) | **POST** /request-access | 
+[**reset_access_key**](V2Api.md#reset_access_key) | **POST** /reset-access-key | 
 [**reverse_rbac**](V2Api.md#reverse_rbac) | **POST** /reverse-rbac | 
 [**revoke_certificate**](V2Api.md#revoke_certificate) | **POST** /revoke-certificate | 
 [**revoke_creds**](V2Api.md#revoke_creds) | **POST** /revoke-creds | 
@@ -1223,6 +1229,66 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **auth_method_create_kerberos**
+> AuthMethodCreateOutput auth_method_create_kerberos(body)
+
+
+
+### Example
+
+```python
+from __future__ import print_function
+import time
+import akeyless
+from akeyless.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.akeyless.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = akeyless.Configuration(
+    host = "https://api.akeyless.io"
+)
+
+
+# Enter a context with an instance of the API client
+with akeyless.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = akeyless.V2Api(api_client)
+    body = akeyless.AuthMethodCreateKerberos() # AuthMethodCreateKerberos | 
+
+    try:
+        api_response = api_instance.auth_method_create_kerberos(body)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling V2Api->auth_method_create_kerberos: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**AuthMethodCreateKerberos**](AuthMethodCreateKerberos.md)|  | 
+
+### Return type
+
+[**AuthMethodCreateOutput**](AuthMethodCreateOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**201** |  |  -  |
+**0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **auth_method_create_ldap**
 > AuthMethodCreateOutput auth_method_create_ldap(body)
 
@@ -1578,7 +1644,7 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**201** | authMethodCreateUniversalIdentityResponse wraps response body. |  -  |
+**201** |  |  -  |
 **0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -2179,6 +2245,66 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | authMethodUpdateK8sResponse wraps response body. |  -  |
+**0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **auth_method_update_kerberos**
+> AuthMethodCreateOutput auth_method_update_kerberos(body)
+
+
+
+### Example
+
+```python
+from __future__ import print_function
+import time
+import akeyless
+from akeyless.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.akeyless.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = akeyless.Configuration(
+    host = "https://api.akeyless.io"
+)
+
+
+# Enter a context with an instance of the API client
+with akeyless.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = akeyless.V2Api(api_client)
+    body = akeyless.AuthMethodUpdateKerberos() # AuthMethodUpdateKerberos | 
+
+    try:
+        api_response = api_instance.auth_method_update_kerberos(body)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling V2Api->auth_method_update_kerberos: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**AuthMethodUpdateKerberos**](AuthMethodUpdateKerberos.md)|  | 
+
+### Return type
+
+[**AuthMethodCreateOutput**](AuthMethodCreateOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**201** |  |  -  |
 **0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -5059,6 +5185,66 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | createOidcAppResponse wraps response body. |  -  |
+**0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **create_passkey**
+> CreatePasskeyOutput create_passkey(body)
+
+
+
+### Example
+
+```python
+from __future__ import print_function
+import time
+import akeyless
+from akeyless.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.akeyless.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = akeyless.Configuration(
+    host = "https://api.akeyless.io"
+)
+
+
+# Enter a context with an instance of the API client
+with akeyless.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = akeyless.V2Api(api_client)
+    body = akeyless.CreatePasskey() # CreatePasskey | 
+
+    try:
+        api_response = api_instance.create_passkey(body)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling V2Api->create_passkey: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**CreatePasskey**](CreatePasskey.md)|  | 
+
+### Return type
+
+[**CreatePasskeyOutput**](CreatePasskeyOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**201** | CreatePasskeyResponse wraps response body. |  -  |
 **0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -18562,7 +18748,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **gateway_update_remote_access**
-> object gateway_update_remote_access()
+> object gateway_update_remote_access(body)
 
 
 
@@ -18585,16 +18771,20 @@ configuration = akeyless.Configuration(
 with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
-    
+    body = akeyless.GatewayUpdateRemoteAccess() # GatewayUpdateRemoteAccess | 
+
     try:
-        api_response = api_instance.gateway_update_remote_access()
+        api_response = api_instance.gateway_update_remote_access(body)
         pprint(api_response)
     except ApiException as e:
         print("Exception when calling V2Api->gateway_update_remote_access: %s\n" % e)
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**GatewayUpdateRemoteAccess**](GatewayUpdateRemoteAccess.md)|  | 
 
 ### Return type
 
@@ -18606,7 +18796,7 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 ### HTTP response details
@@ -21612,6 +21802,62 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **kubeconfig_generate**
+> KubeconfigGenerateOutput kubeconfig_generate()
+
+
+
+### Example
+
+```python
+from __future__ import print_function
+import time
+import akeyless
+from akeyless.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.akeyless.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = akeyless.Configuration(
+    host = "https://api.akeyless.io"
+)
+
+
+# Enter a context with an instance of the API client
+with akeyless.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = akeyless.V2Api(api_client)
+    
+    try:
+        api_response = api_instance.kubeconfig_generate()
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling V2Api->kubeconfig_generate: %s\n" % e)
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**KubeconfigGenerateOutput**](KubeconfigGenerateOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | kubeconfigGenerateResponse wraps response body. |  -  |
+**0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **list_acme_accounts**
 > ListAcmeAccountsOutput list_acme_accounts(body)
 
@@ -22091,6 +22337,66 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **list_sra_sessions**
+> ListSraSessionsOutput list_sra_sessions(body)
+
+
+
+### Example
+
+```python
+from __future__ import print_function
+import time
+import akeyless
+from akeyless.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.akeyless.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = akeyless.Configuration(
+    host = "https://api.akeyless.io"
+)
+
+
+# Enter a context with an instance of the API client
+with akeyless.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = akeyless.V2Api(api_client)
+    body = akeyless.ListSRASessions() # ListSRASessions | 
+
+    try:
+        api_response = api_instance.list_sra_sessions(body)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling V2Api->list_sra_sessions: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**ListSRASessions**](ListSRASessions.md)|  | 
+
+### Return type
+
+[**ListSraSessionsOutput**](ListSraSessionsOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | listSRASessionsResponse wraps response body. |  -  |
+**0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **list_targets**
 > ListTargetsOutput list_targets(body)
 
@@ -22507,6 +22813,66 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | requestAccessResponse wraps response body. |  -  |
+**0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **reset_access_key**
+> ResetAuthMethodAccessKeyOutput reset_access_key(body)
+
+
+
+### Example
+
+```python
+from __future__ import print_function
+import time
+import akeyless
+from akeyless.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.akeyless.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = akeyless.Configuration(
+    host = "https://api.akeyless.io"
+)
+
+
+# Enter a context with an instance of the API client
+with akeyless.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = akeyless.V2Api(api_client)
+    body = akeyless.ResetAccessKey() # ResetAccessKey | 
+
+    try:
+        api_response = api_instance.reset_access_key(body)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling V2Api->reset_access_key: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**ResetAccessKey**](ResetAccessKey.md)|  | 
+
+### Return type
+
+[**ResetAuthMethodAccessKeyOutput**](ResetAuthMethodAccessKeyOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | resetAccessKeyResponse wraps response body. |  -  |
 **0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

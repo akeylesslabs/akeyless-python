@@ -34,6 +34,7 @@ class ExportClassicKey(object):
                             and the value is json key in definition.
     """
     openapi_types = {
+        'accessibility': 'str',
         'export_public_key': 'bool',
         'ignore_cache': 'str',
         'json': 'bool',
@@ -44,6 +45,7 @@ class ExportClassicKey(object):
     }
 
     attribute_map = {
+        'accessibility': 'accessibility',
         'export_public_key': 'export-public-key',
         'ignore_cache': 'ignore-cache',
         'json': 'json',
@@ -53,12 +55,13 @@ class ExportClassicKey(object):
         'version': 'version'
     }
 
-    def __init__(self, export_public_key=False, ignore_cache='false', json=False, name=None, token=None, uid_token=None, version=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, accessibility='regular', export_public_key=False, ignore_cache='false', json=False, name=None, token=None, uid_token=None, version=None, local_vars_configuration=None):  # noqa: E501
         """ExportClassicKey - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
+        self._accessibility = None
         self._export_public_key = None
         self._ignore_cache = None
         self._json = None
@@ -68,6 +71,8 @@ class ExportClassicKey(object):
         self._version = None
         self.discriminator = None
 
+        if accessibility is not None:
+            self.accessibility = accessibility
         if export_public_key is not None:
             self.export_public_key = export_public_key
         if ignore_cache is not None:
@@ -81,6 +86,29 @@ class ExportClassicKey(object):
             self.uid_token = uid_token
         if version is not None:
             self.version = version
+
+    @property
+    def accessibility(self):
+        """Gets the accessibility of this ExportClassicKey.  # noqa: E501
+
+        for personal password manager  # noqa: E501
+
+        :return: The accessibility of this ExportClassicKey.  # noqa: E501
+        :rtype: str
+        """
+        return self._accessibility
+
+    @accessibility.setter
+    def accessibility(self, accessibility):
+        """Sets the accessibility of this ExportClassicKey.
+
+        for personal password manager  # noqa: E501
+
+        :param accessibility: The accessibility of this ExportClassicKey.  # noqa: E501
+        :type: str
+        """
+
+        self._accessibility = accessibility
 
     @property
     def export_public_key(self):

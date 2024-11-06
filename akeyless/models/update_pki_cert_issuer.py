@@ -41,6 +41,7 @@ class UpdatePKICertIssuer(object):
         'allowed_domains': 'str',
         'allowed_extra_extensions': 'str',
         'allowed_uri_sans': 'str',
+        'auto_renew': 'bool',
         'client_flag': 'bool',
         'code_signing_flag': 'bool',
         'country': 'str',
@@ -68,6 +69,7 @@ class UpdatePKICertIssuer(object):
         'protect_certificates': 'bool',
         'province': 'str',
         'rm_tag': 'list[str]',
+        'scheduled_renew': 'int',
         'server_flag': 'bool',
         'signer_key_name': 'str',
         'street_address': 'str',
@@ -84,6 +86,7 @@ class UpdatePKICertIssuer(object):
         'allowed_domains': 'allowed-domains',
         'allowed_extra_extensions': 'allowed-extra-extensions',
         'allowed_uri_sans': 'allowed-uri-sans',
+        'auto_renew': 'auto-renew',
         'client_flag': 'client-flag',
         'code_signing_flag': 'code-signing-flag',
         'country': 'country',
@@ -111,6 +114,7 @@ class UpdatePKICertIssuer(object):
         'protect_certificates': 'protect-certificates',
         'province': 'province',
         'rm_tag': 'rm-tag',
+        'scheduled_renew': 'scheduled-renew',
         'server_flag': 'server-flag',
         'signer_key_name': 'signer-key-name',
         'street_address': 'street-address',
@@ -119,7 +123,7 @@ class UpdatePKICertIssuer(object):
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, add_tag=None, allow_any_name=None, allow_copy_ext_from_csr=None, allow_subdomains=None, allowed_domains=None, allowed_extra_extensions=None, allowed_uri_sans=None, client_flag=None, code_signing_flag=None, country=None, create_private_crl=None, create_public_crl=None, critical_key_usage='true', delete_protection=None, description=None, destination_path=None, enable_acme=None, expiration_event_in=None, gw_cluster_url=None, is_ca=None, json=False, key_usage='DigitalSignature,KeyAgreement,KeyEncipherment', locality=None, metadata=None, name=None, new_name=None, not_enforce_hostnames=None, not_require_cn=None, organizational_units=None, organizations=None, postal_code=None, protect_certificates=None, province=None, rm_tag=None, server_flag=None, signer_key_name='dummy_signer_key', street_address=None, token=None, ttl=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, add_tag=None, allow_any_name=None, allow_copy_ext_from_csr=None, allow_subdomains=None, allowed_domains=None, allowed_extra_extensions=None, allowed_uri_sans=None, auto_renew=None, client_flag=None, code_signing_flag=None, country=None, create_private_crl=None, create_public_crl=None, critical_key_usage='true', delete_protection=None, description=None, destination_path=None, enable_acme=None, expiration_event_in=None, gw_cluster_url=None, is_ca=None, json=False, key_usage='DigitalSignature,KeyAgreement,KeyEncipherment', locality=None, metadata=None, name=None, new_name=None, not_enforce_hostnames=None, not_require_cn=None, organizational_units=None, organizations=None, postal_code=None, protect_certificates=None, province=None, rm_tag=None, scheduled_renew=None, server_flag=None, signer_key_name='dummy_signer_key', street_address=None, token=None, ttl=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """UpdatePKICertIssuer - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -132,6 +136,7 @@ class UpdatePKICertIssuer(object):
         self._allowed_domains = None
         self._allowed_extra_extensions = None
         self._allowed_uri_sans = None
+        self._auto_renew = None
         self._client_flag = None
         self._code_signing_flag = None
         self._country = None
@@ -159,6 +164,7 @@ class UpdatePKICertIssuer(object):
         self._protect_certificates = None
         self._province = None
         self._rm_tag = None
+        self._scheduled_renew = None
         self._server_flag = None
         self._signer_key_name = None
         self._street_address = None
@@ -181,6 +187,8 @@ class UpdatePKICertIssuer(object):
             self.allowed_extra_extensions = allowed_extra_extensions
         if allowed_uri_sans is not None:
             self.allowed_uri_sans = allowed_uri_sans
+        if auto_renew is not None:
+            self.auto_renew = auto_renew
         if client_flag is not None:
             self.client_flag = client_flag
         if code_signing_flag is not None:
@@ -234,6 +242,8 @@ class UpdatePKICertIssuer(object):
             self.province = province
         if rm_tag is not None:
             self.rm_tag = rm_tag
+        if scheduled_renew is not None:
+            self.scheduled_renew = scheduled_renew
         if server_flag is not None:
             self.server_flag = server_flag
         self.signer_key_name = signer_key_name
@@ -405,6 +415,29 @@ class UpdatePKICertIssuer(object):
         """
 
         self._allowed_uri_sans = allowed_uri_sans
+
+    @property
+    def auto_renew(self):
+        """Gets the auto_renew of this UpdatePKICertIssuer.  # noqa: E501
+
+        Automatically renew certificates before expiration  # noqa: E501
+
+        :return: The auto_renew of this UpdatePKICertIssuer.  # noqa: E501
+        :rtype: bool
+        """
+        return self._auto_renew
+
+    @auto_renew.setter
+    def auto_renew(self, auto_renew):
+        """Sets the auto_renew of this UpdatePKICertIssuer.
+
+        Automatically renew certificates before expiration  # noqa: E501
+
+        :param auto_renew: The auto_renew of this UpdatePKICertIssuer.  # noqa: E501
+        :type: bool
+        """
+
+        self._auto_renew = auto_renew
 
     @property
     def client_flag(self):
@@ -1028,6 +1061,29 @@ class UpdatePKICertIssuer(object):
         """
 
         self._rm_tag = rm_tag
+
+    @property
+    def scheduled_renew(self):
+        """Gets the scheduled_renew of this UpdatePKICertIssuer.  # noqa: E501
+
+        Number of days before expiration to renew certificates  # noqa: E501
+
+        :return: The scheduled_renew of this UpdatePKICertIssuer.  # noqa: E501
+        :rtype: int
+        """
+        return self._scheduled_renew
+
+    @scheduled_renew.setter
+    def scheduled_renew(self, scheduled_renew):
+        """Sets the scheduled_renew of this UpdatePKICertIssuer.
+
+        Number of days before expiration to renew certificates  # noqa: E501
+
+        :param scheduled_renew: The scheduled_renew of this UpdatePKICertIssuer.  # noqa: E501
+        :type: int
+        """
+
+        self._scheduled_renew = scheduled_renew
 
     @property
     def server_flag(self):

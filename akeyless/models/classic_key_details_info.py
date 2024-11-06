@@ -36,6 +36,7 @@ class ClassicKeyDetailsInfo(object):
     openapi_types = {
         'classic_key_attributes': 'dict(str, list[str])',
         'classic_key_id': 'str',
+        'credential_id': 'str',
         'gw_cluster_id': 'int',
         'has_certificate': 'bool',
         'is_provided_by_user': 'bool',
@@ -46,12 +47,15 @@ class ClassicKeyDetailsInfo(object):
         'public_key': 'str',
         'target_alias_helper': 'str',
         'target_types': 'list[str]',
-        'targets': 'list[ClassicKeyTargetInfo]'
+        'targets': 'list[ClassicKeyTargetInfo]',
+        'username': 'str',
+        'websites': 'list[str]'
     }
 
     attribute_map = {
         'classic_key_attributes': 'classic_key_attributes',
         'classic_key_id': 'classic_key_id',
+        'credential_id': 'credential_id',
         'gw_cluster_id': 'gw_cluster_id',
         'has_certificate': 'has_certificate',
         'is_provided_by_user': 'is_provided_by_user',
@@ -62,10 +66,12 @@ class ClassicKeyDetailsInfo(object):
         'public_key': 'public_key',
         'target_alias_helper': 'target_alias_helper',
         'target_types': 'target_types',
-        'targets': 'targets'
+        'targets': 'targets',
+        'username': 'username',
+        'websites': 'websites'
     }
 
-    def __init__(self, classic_key_attributes=None, classic_key_id=None, gw_cluster_id=None, has_certificate=None, is_provided_by_user=None, is_unexportable=None, key_state=None, key_type=None, last_error=None, public_key=None, target_alias_helper=None, target_types=None, targets=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, classic_key_attributes=None, classic_key_id=None, credential_id=None, gw_cluster_id=None, has_certificate=None, is_provided_by_user=None, is_unexportable=None, key_state=None, key_type=None, last_error=None, public_key=None, target_alias_helper=None, target_types=None, targets=None, username=None, websites=None, local_vars_configuration=None):  # noqa: E501
         """ClassicKeyDetailsInfo - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -73,6 +79,7 @@ class ClassicKeyDetailsInfo(object):
 
         self._classic_key_attributes = None
         self._classic_key_id = None
+        self._credential_id = None
         self._gw_cluster_id = None
         self._has_certificate = None
         self._is_provided_by_user = None
@@ -84,12 +91,16 @@ class ClassicKeyDetailsInfo(object):
         self._target_alias_helper = None
         self._target_types = None
         self._targets = None
+        self._username = None
+        self._websites = None
         self.discriminator = None
 
         if classic_key_attributes is not None:
             self.classic_key_attributes = classic_key_attributes
         if classic_key_id is not None:
             self.classic_key_id = classic_key_id
+        if credential_id is not None:
+            self.credential_id = credential_id
         if gw_cluster_id is not None:
             self.gw_cluster_id = gw_cluster_id
         if has_certificate is not None:
@@ -112,6 +123,10 @@ class ClassicKeyDetailsInfo(object):
             self.target_types = target_types
         if targets is not None:
             self.targets = targets
+        if username is not None:
+            self.username = username
+        if websites is not None:
+            self.websites = websites
 
     @property
     def classic_key_attributes(self):
@@ -154,6 +169,27 @@ class ClassicKeyDetailsInfo(object):
         """
 
         self._classic_key_id = classic_key_id
+
+    @property
+    def credential_id(self):
+        """Gets the credential_id of this ClassicKeyDetailsInfo.  # noqa: E501
+
+
+        :return: The credential_id of this ClassicKeyDetailsInfo.  # noqa: E501
+        :rtype: str
+        """
+        return self._credential_id
+
+    @credential_id.setter
+    def credential_id(self, credential_id):
+        """Sets the credential_id of this ClassicKeyDetailsInfo.
+
+
+        :param credential_id: The credential_id of this ClassicKeyDetailsInfo.  # noqa: E501
+        :type: str
+        """
+
+        self._credential_id = credential_id
 
     @property
     def gw_cluster_id(self):
@@ -387,6 +423,48 @@ class ClassicKeyDetailsInfo(object):
         """
 
         self._targets = targets
+
+    @property
+    def username(self):
+        """Gets the username of this ClassicKeyDetailsInfo.  # noqa: E501
+
+
+        :return: The username of this ClassicKeyDetailsInfo.  # noqa: E501
+        :rtype: str
+        """
+        return self._username
+
+    @username.setter
+    def username(self, username):
+        """Sets the username of this ClassicKeyDetailsInfo.
+
+
+        :param username: The username of this ClassicKeyDetailsInfo.  # noqa: E501
+        :type: str
+        """
+
+        self._username = username
+
+    @property
+    def websites(self):
+        """Gets the websites of this ClassicKeyDetailsInfo.  # noqa: E501
+
+
+        :return: The websites of this ClassicKeyDetailsInfo.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._websites
+
+    @websites.setter
+    def websites(self, websites):
+        """Sets the websites of this ClassicKeyDetailsInfo.
+
+
+        :param websites: The websites of this ClassicKeyDetailsInfo.  # noqa: E501
+        :type: list[str]
+        """
+
+        self._websites = websites
 
     def to_dict(self):
         """Returns the model properties as a dict"""

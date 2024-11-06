@@ -34,6 +34,7 @@ class CertificateChainInfo(object):
                             and the value is json key in definition.
     """
     openapi_types = {
+        'auto_renew_certificate': 'bool',
         'certificate_chain': 'list[CertificateInfo]',
         'certificate_format': 'str',
         'certificate_has_private_key': 'bool',
@@ -42,10 +43,13 @@ class CertificateChainInfo(object):
         'certificate_issuer_name': 'str',
         'certificate_pem': 'str',
         'certificate_status': 'str',
-        'expiration_events': 'list[CertificateExpirationEvent]'
+        'error_message': 'str',
+        'expiration_events': 'list[CertificateExpirationEvent]',
+        'renew_before_expiration_in_days': 'int'
     }
 
     attribute_map = {
+        'auto_renew_certificate': 'auto_renew_certificate',
         'certificate_chain': 'certificate_chain',
         'certificate_format': 'certificate_format',
         'certificate_has_private_key': 'certificate_has_private_key',
@@ -54,15 +58,18 @@ class CertificateChainInfo(object):
         'certificate_issuer_name': 'certificate_issuer_name',
         'certificate_pem': 'certificate_pem',
         'certificate_status': 'certificate_status',
-        'expiration_events': 'expiration_events'
+        'error_message': 'error_message',
+        'expiration_events': 'expiration_events',
+        'renew_before_expiration_in_days': 'renew_before_expiration_in_days'
     }
 
-    def __init__(self, certificate_chain=None, certificate_format=None, certificate_has_private_key=None, certificate_issuer_gw_cluster_url=None, certificate_issuer_item_id=None, certificate_issuer_name=None, certificate_pem=None, certificate_status=None, expiration_events=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, auto_renew_certificate=None, certificate_chain=None, certificate_format=None, certificate_has_private_key=None, certificate_issuer_gw_cluster_url=None, certificate_issuer_item_id=None, certificate_issuer_name=None, certificate_pem=None, certificate_status=None, error_message=None, expiration_events=None, renew_before_expiration_in_days=None, local_vars_configuration=None):  # noqa: E501
         """CertificateChainInfo - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
+        self._auto_renew_certificate = None
         self._certificate_chain = None
         self._certificate_format = None
         self._certificate_has_private_key = None
@@ -71,9 +78,13 @@ class CertificateChainInfo(object):
         self._certificate_issuer_name = None
         self._certificate_pem = None
         self._certificate_status = None
+        self._error_message = None
         self._expiration_events = None
+        self._renew_before_expiration_in_days = None
         self.discriminator = None
 
+        if auto_renew_certificate is not None:
+            self.auto_renew_certificate = auto_renew_certificate
         if certificate_chain is not None:
             self.certificate_chain = certificate_chain
         if certificate_format is not None:
@@ -90,8 +101,33 @@ class CertificateChainInfo(object):
             self.certificate_pem = certificate_pem
         if certificate_status is not None:
             self.certificate_status = certificate_status
+        if error_message is not None:
+            self.error_message = error_message
         if expiration_events is not None:
             self.expiration_events = expiration_events
+        if renew_before_expiration_in_days is not None:
+            self.renew_before_expiration_in_days = renew_before_expiration_in_days
+
+    @property
+    def auto_renew_certificate(self):
+        """Gets the auto_renew_certificate of this CertificateChainInfo.  # noqa: E501
+
+
+        :return: The auto_renew_certificate of this CertificateChainInfo.  # noqa: E501
+        :rtype: bool
+        """
+        return self._auto_renew_certificate
+
+    @auto_renew_certificate.setter
+    def auto_renew_certificate(self, auto_renew_certificate):
+        """Sets the auto_renew_certificate of this CertificateChainInfo.
+
+
+        :param auto_renew_certificate: The auto_renew_certificate of this CertificateChainInfo.  # noqa: E501
+        :type: bool
+        """
+
+        self._auto_renew_certificate = auto_renew_certificate
 
     @property
     def certificate_chain(self):
@@ -262,6 +298,27 @@ class CertificateChainInfo(object):
         self._certificate_status = certificate_status
 
     @property
+    def error_message(self):
+        """Gets the error_message of this CertificateChainInfo.  # noqa: E501
+
+
+        :return: The error_message of this CertificateChainInfo.  # noqa: E501
+        :rtype: str
+        """
+        return self._error_message
+
+    @error_message.setter
+    def error_message(self, error_message):
+        """Sets the error_message of this CertificateChainInfo.
+
+
+        :param error_message: The error_message of this CertificateChainInfo.  # noqa: E501
+        :type: str
+        """
+
+        self._error_message = error_message
+
+    @property
     def expiration_events(self):
         """Gets the expiration_events of this CertificateChainInfo.  # noqa: E501
 
@@ -281,6 +338,27 @@ class CertificateChainInfo(object):
         """
 
         self._expiration_events = expiration_events
+
+    @property
+    def renew_before_expiration_in_days(self):
+        """Gets the renew_before_expiration_in_days of this CertificateChainInfo.  # noqa: E501
+
+
+        :return: The renew_before_expiration_in_days of this CertificateChainInfo.  # noqa: E501
+        :rtype: int
+        """
+        return self._renew_before_expiration_in_days
+
+    @renew_before_expiration_in_days.setter
+    def renew_before_expiration_in_days(self, renew_before_expiration_in_days):
+        """Sets the renew_before_expiration_in_days of this CertificateChainInfo.
+
+
+        :param renew_before_expiration_in_days: The renew_before_expiration_in_days of this CertificateChainInfo.  # noqa: E501
+        :type: int
+        """
+
+        self._renew_before_expiration_in_days = renew_before_expiration_in_days
 
     def to_dict(self):
         """Returns the model properties as a dict"""

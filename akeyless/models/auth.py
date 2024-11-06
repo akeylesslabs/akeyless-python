@@ -43,13 +43,18 @@ class Auth(object):
         'cert_data': 'str',
         'cloud_id': 'str',
         'debug': 'bool',
+        'disable_pafxfast': 'str',
+        'gateway_spn': 'str',
         'gateway_url': 'str',
         'gcp_audience': 'str',
         'json': 'bool',
         'jwt': 'str',
         'k8s_auth_config_name': 'str',
         'k8s_service_account_token': 'str',
+        'kerberos_username': 'str',
         'key_data': 'str',
+        'keytab_data': 'str',
+        'krb5_conf_data': 'str',
         'ldap_password': 'str',
         'ldap_username': 'str',
         'oci_auth_type': 'str',
@@ -68,13 +73,18 @@ class Auth(object):
         'cert_data': 'cert-data',
         'cloud_id': 'cloud-id',
         'debug': 'debug',
+        'disable_pafxfast': 'disable-pafxfast',
+        'gateway_spn': 'gateway-spn',
         'gateway_url': 'gateway-url',
         'gcp_audience': 'gcp-audience',
         'json': 'json',
         'jwt': 'jwt',
         'k8s_auth_config_name': 'k8s-auth-config-name',
         'k8s_service_account_token': 'k8s-service-account-token',
+        'kerberos_username': 'kerberos-username',
         'key_data': 'key-data',
+        'keytab_data': 'keytab-data',
+        'krb5_conf_data': 'krb5-conf-data',
         'ldap_password': 'ldap_password',
         'ldap_username': 'ldap_username',
         'oci_auth_type': 'oci-auth-type',
@@ -83,7 +93,7 @@ class Auth(object):
         'use_remote_browser': 'use-remote-browser'
     }
 
-    def __init__(self, access_id=None, access_key=None, access_type='access_key', account_id=None, admin_email=None, admin_password=None, cert_data=None, cloud_id=None, debug=None, gateway_url=None, gcp_audience='akeyless.io', json=False, jwt=None, k8s_auth_config_name=None, k8s_service_account_token=None, key_data=None, ldap_password=None, ldap_username=None, oci_auth_type='apikey', oci_group_ocid=None, uid_token=None, use_remote_browser=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, access_id=None, access_key=None, access_type='access_key', account_id=None, admin_email=None, admin_password=None, cert_data=None, cloud_id=None, debug=None, disable_pafxfast=None, gateway_spn=None, gateway_url=None, gcp_audience='akeyless.io', json=False, jwt=None, k8s_auth_config_name=None, k8s_service_account_token=None, kerberos_username=None, key_data=None, keytab_data=None, krb5_conf_data=None, ldap_password=None, ldap_username=None, oci_auth_type='apikey', oci_group_ocid=None, uid_token=None, use_remote_browser=None, local_vars_configuration=None):  # noqa: E501
         """Auth - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -98,13 +108,18 @@ class Auth(object):
         self._cert_data = None
         self._cloud_id = None
         self._debug = None
+        self._disable_pafxfast = None
+        self._gateway_spn = None
         self._gateway_url = None
         self._gcp_audience = None
         self._json = None
         self._jwt = None
         self._k8s_auth_config_name = None
         self._k8s_service_account_token = None
+        self._kerberos_username = None
         self._key_data = None
+        self._keytab_data = None
+        self._krb5_conf_data = None
         self._ldap_password = None
         self._ldap_username = None
         self._oci_auth_type = None
@@ -131,6 +146,10 @@ class Auth(object):
             self.cloud_id = cloud_id
         if debug is not None:
             self.debug = debug
+        if disable_pafxfast is not None:
+            self.disable_pafxfast = disable_pafxfast
+        if gateway_spn is not None:
+            self.gateway_spn = gateway_spn
         if gateway_url is not None:
             self.gateway_url = gateway_url
         if gcp_audience is not None:
@@ -143,8 +162,14 @@ class Auth(object):
             self.k8s_auth_config_name = k8s_auth_config_name
         if k8s_service_account_token is not None:
             self.k8s_service_account_token = k8s_service_account_token
+        if kerberos_username is not None:
+            self.kerberos_username = kerberos_username
         if key_data is not None:
             self.key_data = key_data
+        if keytab_data is not None:
+            self.keytab_data = keytab_data
+        if krb5_conf_data is not None:
+            self.krb5_conf_data = krb5_conf_data
         if ldap_password is not None:
             self.ldap_password = ldap_password
         if ldap_username is not None:
@@ -364,6 +389,52 @@ class Auth(object):
         self._debug = debug
 
     @property
+    def disable_pafxfast(self):
+        """Gets the disable_pafxfast of this Auth.  # noqa: E501
+
+        Disable the FAST negotiation in the Kerberos authentication method  # noqa: E501
+
+        :return: The disable_pafxfast of this Auth.  # noqa: E501
+        :rtype: str
+        """
+        return self._disable_pafxfast
+
+    @disable_pafxfast.setter
+    def disable_pafxfast(self, disable_pafxfast):
+        """Sets the disable_pafxfast of this Auth.
+
+        Disable the FAST negotiation in the Kerberos authentication method  # noqa: E501
+
+        :param disable_pafxfast: The disable_pafxfast of this Auth.  # noqa: E501
+        :type: str
+        """
+
+        self._disable_pafxfast = disable_pafxfast
+
+    @property
+    def gateway_spn(self):
+        """Gets the gateway_spn of this Auth.  # noqa: E501
+
+        The service principal name of the gateway as registered in LDAP (i.e., HTTP/gateway)  # noqa: E501
+
+        :return: The gateway_spn of this Auth.  # noqa: E501
+        :rtype: str
+        """
+        return self._gateway_spn
+
+    @gateway_spn.setter
+    def gateway_spn(self, gateway_spn):
+        """Sets the gateway_spn of this Auth.
+
+        The service principal name of the gateway as registered in LDAP (i.e., HTTP/gateway)  # noqa: E501
+
+        :param gateway_spn: The gateway_spn of this Auth.  # noqa: E501
+        :type: str
+        """
+
+        self._gateway_spn = gateway_spn
+
+    @property
     def gateway_url(self):
         """Gets the gateway_url of this Auth.  # noqa: E501
 
@@ -502,6 +573,29 @@ class Auth(object):
         self._k8s_service_account_token = k8s_service_account_token
 
     @property
+    def kerberos_username(self):
+        """Gets the kerberos_username of this Auth.  # noqa: E501
+
+        TThe username for the entry within the keytab to authenticate via Kerberos  # noqa: E501
+
+        :return: The kerberos_username of this Auth.  # noqa: E501
+        :rtype: str
+        """
+        return self._kerberos_username
+
+    @kerberos_username.setter
+    def kerberos_username(self, kerberos_username):
+        """Sets the kerberos_username of this Auth.
+
+        TThe username for the entry within the keytab to authenticate via Kerberos  # noqa: E501
+
+        :param kerberos_username: The kerberos_username of this Auth.  # noqa: E501
+        :type: str
+        """
+
+        self._kerberos_username = kerberos_username
+
+    @property
     def key_data(self):
         """Gets the key_data of this Auth.  # noqa: E501
 
@@ -523,6 +617,52 @@ class Auth(object):
         """
 
         self._key_data = key_data
+
+    @property
+    def keytab_data(self):
+        """Gets the keytab_data of this Auth.  # noqa: E501
+
+        Base64-encoded content of a valid keytab file, containing the service account's entry.  # noqa: E501
+
+        :return: The keytab_data of this Auth.  # noqa: E501
+        :rtype: str
+        """
+        return self._keytab_data
+
+    @keytab_data.setter
+    def keytab_data(self, keytab_data):
+        """Sets the keytab_data of this Auth.
+
+        Base64-encoded content of a valid keytab file, containing the service account's entry.  # noqa: E501
+
+        :param keytab_data: The keytab_data of this Auth.  # noqa: E501
+        :type: str
+        """
+
+        self._keytab_data = keytab_data
+
+    @property
+    def krb5_conf_data(self):
+        """Gets the krb5_conf_data of this Auth.  # noqa: E501
+
+        Base64-encoded content of a valid krb5.conf file, specifying the settings and parameters required for Kerberos authentication.  # noqa: E501
+
+        :return: The krb5_conf_data of this Auth.  # noqa: E501
+        :rtype: str
+        """
+        return self._krb5_conf_data
+
+    @krb5_conf_data.setter
+    def krb5_conf_data(self, krb5_conf_data):
+        """Sets the krb5_conf_data of this Auth.
+
+        Base64-encoded content of a valid krb5.conf file, specifying the settings and parameters required for Kerberos authentication.  # noqa: E501
+
+        :param krb5_conf_data: The krb5_conf_data of this Auth.  # noqa: E501
+        :type: str
+        """
+
+        self._krb5_conf_data = krb5_conf_data
 
     @property
     def ldap_password(self):

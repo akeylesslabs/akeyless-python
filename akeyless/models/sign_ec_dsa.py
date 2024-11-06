@@ -34,6 +34,7 @@ class SignEcDsa(object):
                             and the value is json key in definition.
     """
     openapi_types = {
+        'accessibility': 'str',
         'display_id': 'str',
         'item_id': 'int',
         'json': 'bool',
@@ -46,6 +47,7 @@ class SignEcDsa(object):
     }
 
     attribute_map = {
+        'accessibility': 'accessibility',
         'display_id': 'display-id',
         'item_id': 'item-id',
         'json': 'json',
@@ -57,12 +59,13 @@ class SignEcDsa(object):
         'version': 'version'
     }
 
-    def __init__(self, display_id=None, item_id=None, json=False, key_name=None, message=None, prehashed=None, token=None, uid_token=None, version=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, accessibility='regular', display_id=None, item_id=None, json=False, key_name=None, message=None, prehashed=None, token=None, uid_token=None, version=None, local_vars_configuration=None):  # noqa: E501
         """SignEcDsa - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
+        self._accessibility = None
         self._display_id = None
         self._item_id = None
         self._json = None
@@ -74,6 +77,8 @@ class SignEcDsa(object):
         self._version = None
         self.discriminator = None
 
+        if accessibility is not None:
+            self.accessibility = accessibility
         if display_id is not None:
             self.display_id = display_id
         if item_id is not None:
@@ -91,6 +96,29 @@ class SignEcDsa(object):
             self.uid_token = uid_token
         if version is not None:
             self.version = version
+
+    @property
+    def accessibility(self):
+        """Gets the accessibility of this SignEcDsa.  # noqa: E501
+
+        for personal password manager  # noqa: E501
+
+        :return: The accessibility of this SignEcDsa.  # noqa: E501
+        :rtype: str
+        """
+        return self._accessibility
+
+    @accessibility.setter
+    def accessibility(self, accessibility):
+        """Sets the accessibility of this SignEcDsa.
+
+        for personal password manager  # noqa: E501
+
+        :param accessibility: The accessibility of this SignEcDsa.  # noqa: E501
+        :type: str
+        """
+
+        self._accessibility = accessibility
 
     @property
     def display_id(self):

@@ -45,10 +45,15 @@ class Configure(object):
         'cert_issuer_name': 'str',
         'cert_username': 'str',
         'default_location_prefix': 'str',
+        'disable_pafxfast': 'str',
+        'gateway_spn': 'str',
         'gcp_audience': 'str',
         'json': 'bool',
         'k8s_auth_config_name': 'str',
+        'kerberos_username': 'str',
         'key_data': 'str',
+        'keytab_data': 'str',
+        'krb5_conf_data': 'str',
         'legacy_signing_alg_name': 'bool',
         'oci_auth_type': 'str',
         'oci_group_ocid': 'list[str]'
@@ -66,16 +71,21 @@ class Configure(object):
         'cert_issuer_name': 'cert-issuer-name',
         'cert_username': 'cert-username',
         'default_location_prefix': 'default-location-prefix',
+        'disable_pafxfast': 'disable-pafxfast',
+        'gateway_spn': 'gateway-spn',
         'gcp_audience': 'gcp-audience',
         'json': 'json',
         'k8s_auth_config_name': 'k8s-auth-config-name',
+        'kerberos_username': 'kerberos-username',
         'key_data': 'key-data',
+        'keytab_data': 'keytab-data',
+        'krb5_conf_data': 'krb5-conf-data',
         'legacy_signing_alg_name': 'legacy-signing-alg-name',
         'oci_auth_type': 'oci-auth-type',
         'oci_group_ocid': 'oci-group-ocid'
     }
 
-    def __init__(self, access_id=None, access_key=None, access_type='access_key', account_id=None, admin_email=None, admin_password=None, azure_ad_object_id=None, cert_data=None, cert_issuer_name=None, cert_username=None, default_location_prefix=None, gcp_audience='akeyless.io', json=False, k8s_auth_config_name=None, key_data=None, legacy_signing_alg_name=None, oci_auth_type='apikey', oci_group_ocid=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, access_id=None, access_key=None, access_type='access_key', account_id=None, admin_email=None, admin_password=None, azure_ad_object_id=None, cert_data=None, cert_issuer_name=None, cert_username=None, default_location_prefix=None, disable_pafxfast=None, gateway_spn=None, gcp_audience='akeyless.io', json=False, k8s_auth_config_name=None, kerberos_username=None, key_data=None, keytab_data=None, krb5_conf_data=None, legacy_signing_alg_name=None, oci_auth_type='apikey', oci_group_ocid=None, local_vars_configuration=None):  # noqa: E501
         """Configure - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -92,10 +102,15 @@ class Configure(object):
         self._cert_issuer_name = None
         self._cert_username = None
         self._default_location_prefix = None
+        self._disable_pafxfast = None
+        self._gateway_spn = None
         self._gcp_audience = None
         self._json = None
         self._k8s_auth_config_name = None
+        self._kerberos_username = None
         self._key_data = None
+        self._keytab_data = None
+        self._krb5_conf_data = None
         self._legacy_signing_alg_name = None
         self._oci_auth_type = None
         self._oci_group_ocid = None
@@ -123,14 +138,24 @@ class Configure(object):
             self.cert_username = cert_username
         if default_location_prefix is not None:
             self.default_location_prefix = default_location_prefix
+        if disable_pafxfast is not None:
+            self.disable_pafxfast = disable_pafxfast
+        if gateway_spn is not None:
+            self.gateway_spn = gateway_spn
         if gcp_audience is not None:
             self.gcp_audience = gcp_audience
         if json is not None:
             self.json = json
         if k8s_auth_config_name is not None:
             self.k8s_auth_config_name = k8s_auth_config_name
+        if kerberos_username is not None:
+            self.kerberos_username = kerberos_username
         if key_data is not None:
             self.key_data = key_data
+        if keytab_data is not None:
+            self.keytab_data = keytab_data
+        if krb5_conf_data is not None:
+            self.krb5_conf_data = krb5_conf_data
         if legacy_signing_alg_name is not None:
             self.legacy_signing_alg_name = legacy_signing_alg_name
         if oci_auth_type is not None:
@@ -392,6 +417,52 @@ class Configure(object):
         self._default_location_prefix = default_location_prefix
 
     @property
+    def disable_pafxfast(self):
+        """Gets the disable_pafxfast of this Configure.  # noqa: E501
+
+        Disable the FAST negotiation in the Kerberos authentication method  # noqa: E501
+
+        :return: The disable_pafxfast of this Configure.  # noqa: E501
+        :rtype: str
+        """
+        return self._disable_pafxfast
+
+    @disable_pafxfast.setter
+    def disable_pafxfast(self, disable_pafxfast):
+        """Sets the disable_pafxfast of this Configure.
+
+        Disable the FAST negotiation in the Kerberos authentication method  # noqa: E501
+
+        :param disable_pafxfast: The disable_pafxfast of this Configure.  # noqa: E501
+        :type: str
+        """
+
+        self._disable_pafxfast = disable_pafxfast
+
+    @property
+    def gateway_spn(self):
+        """Gets the gateway_spn of this Configure.  # noqa: E501
+
+        The service principal name of the gateway as registered in LDAP (i.e., HTTP/gateway)  # noqa: E501
+
+        :return: The gateway_spn of this Configure.  # noqa: E501
+        :rtype: str
+        """
+        return self._gateway_spn
+
+    @gateway_spn.setter
+    def gateway_spn(self, gateway_spn):
+        """Sets the gateway_spn of this Configure.
+
+        The service principal name of the gateway as registered in LDAP (i.e., HTTP/gateway)  # noqa: E501
+
+        :param gateway_spn: The gateway_spn of this Configure.  # noqa: E501
+        :type: str
+        """
+
+        self._gateway_spn = gateway_spn
+
+    @property
     def gcp_audience(self):
         """Gets the gcp_audience of this Configure.  # noqa: E501
 
@@ -461,6 +532,29 @@ class Configure(object):
         self._k8s_auth_config_name = k8s_auth_config_name
 
     @property
+    def kerberos_username(self):
+        """Gets the kerberos_username of this Configure.  # noqa: E501
+
+        TThe username for the entry within the keytab to authenticate via Kerberos  # noqa: E501
+
+        :return: The kerberos_username of this Configure.  # noqa: E501
+        :rtype: str
+        """
+        return self._kerberos_username
+
+    @kerberos_username.setter
+    def kerberos_username(self, kerberos_username):
+        """Sets the kerberos_username of this Configure.
+
+        TThe username for the entry within the keytab to authenticate via Kerberos  # noqa: E501
+
+        :param kerberos_username: The kerberos_username of this Configure.  # noqa: E501
+        :type: str
+        """
+
+        self._kerberos_username = kerberos_username
+
+    @property
     def key_data(self):
         """Gets the key_data of this Configure.  # noqa: E501
 
@@ -482,6 +576,52 @@ class Configure(object):
         """
 
         self._key_data = key_data
+
+    @property
+    def keytab_data(self):
+        """Gets the keytab_data of this Configure.  # noqa: E501
+
+        Base64-encoded content of a valid keytab file, containing the service account's entry.  # noqa: E501
+
+        :return: The keytab_data of this Configure.  # noqa: E501
+        :rtype: str
+        """
+        return self._keytab_data
+
+    @keytab_data.setter
+    def keytab_data(self, keytab_data):
+        """Sets the keytab_data of this Configure.
+
+        Base64-encoded content of a valid keytab file, containing the service account's entry.  # noqa: E501
+
+        :param keytab_data: The keytab_data of this Configure.  # noqa: E501
+        :type: str
+        """
+
+        self._keytab_data = keytab_data
+
+    @property
+    def krb5_conf_data(self):
+        """Gets the krb5_conf_data of this Configure.  # noqa: E501
+
+        Base64-encoded content of a valid krb5.conf file, specifying the settings and parameters required for Kerberos authentication.  # noqa: E501
+
+        :return: The krb5_conf_data of this Configure.  # noqa: E501
+        :rtype: str
+        """
+        return self._krb5_conf_data
+
+    @krb5_conf_data.setter
+    def krb5_conf_data(self, krb5_conf_data):
+        """Sets the krb5_conf_data of this Configure.
+
+        Base64-encoded content of a valid krb5.conf file, specifying the settings and parameters required for Kerberos authentication.  # noqa: E501
+
+        :param krb5_conf_data: The krb5_conf_data of this Configure.  # noqa: E501
+        :type: str
+        """
+
+        self._krb5_conf_data = krb5_conf_data
 
     @property
     def legacy_signing_alg_name(self):

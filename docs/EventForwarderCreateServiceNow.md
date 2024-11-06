@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **client_id** | **str** | The client ID to use when connecting with jwt authentication | [optional] 
 **client_secret** | **str** | The client secret to use when connecting with jwt authentication | [optional] 
 **description** | **str** | Description of the object | [optional] 
-**event_types** | **list[str]** | List of event types to notify about [request-access, certificate-pending-expiration, certificate-expired, certificate-provisioning-success, certificate-provisioning-failure, auth-method-pending-expiration, auth-method-expired, next-automatic-rotation, rotated-secret-success, rotated-secret-failure, dynamic-secret-failure, multi-auth-failure, uid-rotation-failure, apply-justification, email-auth-method-approved, usage, rotation-usage, gateway-inactive, static-secret-updated] | [optional] 
+**event_types** | **list[str]** | List of event types to notify about [request-access, certificate-pending-expiration, certificate-expired, certificate-provisioning-success, certificate-provisioning-failure, auth-method-pending-expiration, auth-method-expired, next-automatic-rotation, rotated-secret-success, rotated-secret-failure, dynamic-secret-failure, multi-auth-failure, uid-rotation-failure, apply-justification, email-auth-method-approved, usage, rotation-usage, gateway-inactive, static-secret-updated, rate-limiting, usage-report] | [optional] 
 **every** | **str** | Rate of periodic runner repetition in hours | [optional] 
 **gateways_event_source_locations** | **list[str]** | Event sources | 
 **host** | **str** | Workstation Host | [optional] 

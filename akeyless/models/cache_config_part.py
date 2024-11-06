@@ -35,6 +35,7 @@ class CacheConfigPart(object):
     """
     openapi_types = {
         'cache_enable': 'bool',
+        'cache_encryption_key': 'str',
         'cache_ttl': 'str',
         'new_proactive_cache_enable': 'bool',
         'proactive_cache_dump_interval': 'str',
@@ -44,6 +45,7 @@ class CacheConfigPart(object):
 
     attribute_map = {
         'cache_enable': 'cache_enable',
+        'cache_encryption_key': 'cache_encryption_key',
         'cache_ttl': 'cache_ttl',
         'new_proactive_cache_enable': 'new_proactive_cache_enable',
         'proactive_cache_dump_interval': 'proactive_cache_dump_interval',
@@ -51,13 +53,14 @@ class CacheConfigPart(object):
         'proactive_cache_minimum_fetching_time': 'proactive_cache_minimum_fetching_time'
     }
 
-    def __init__(self, cache_enable=None, cache_ttl=None, new_proactive_cache_enable=None, proactive_cache_dump_interval=None, proactive_cache_enable=None, proactive_cache_minimum_fetching_time=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, cache_enable=None, cache_encryption_key=None, cache_ttl=None, new_proactive_cache_enable=None, proactive_cache_dump_interval=None, proactive_cache_enable=None, proactive_cache_minimum_fetching_time=None, local_vars_configuration=None):  # noqa: E501
         """CacheConfigPart - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._cache_enable = None
+        self._cache_encryption_key = None
         self._cache_ttl = None
         self._new_proactive_cache_enable = None
         self._proactive_cache_dump_interval = None
@@ -67,6 +70,8 @@ class CacheConfigPart(object):
 
         if cache_enable is not None:
             self.cache_enable = cache_enable
+        if cache_encryption_key is not None:
+            self.cache_encryption_key = cache_encryption_key
         if cache_ttl is not None:
             self.cache_ttl = cache_ttl
         if new_proactive_cache_enable is not None:
@@ -98,6 +103,27 @@ class CacheConfigPart(object):
         """
 
         self._cache_enable = cache_enable
+
+    @property
+    def cache_encryption_key(self):
+        """Gets the cache_encryption_key of this CacheConfigPart.  # noqa: E501
+
+
+        :return: The cache_encryption_key of this CacheConfigPart.  # noqa: E501
+        :rtype: str
+        """
+        return self._cache_encryption_key
+
+    @cache_encryption_key.setter
+    def cache_encryption_key(self, cache_encryption_key):
+        """Sets the cache_encryption_key of this CacheConfigPart.
+
+
+        :param cache_encryption_key: The cache_encryption_key of this CacheConfigPart.  # noqa: E501
+        :type: str
+        """
+
+        self._cache_encryption_key = cache_encryption_key
 
     @property
     def cache_ttl(self):

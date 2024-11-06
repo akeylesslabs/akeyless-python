@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **config_protection_key_name** | **str** |  | [optional] 
 **general** | [**GeneralConfigPart**](GeneralConfigPart.md) |  | [optional] 
 **k8s_auths** | [**K8SAuthsConfigPart**](K8SAuthsConfigPart.md) |  | [optional] 
+**kerberos** | [**KerberosConfigPart**](KerberosConfigPart.md) |  | [optional] 
 **kmip_clients** | [**KMIPConfigPart**](KMIPConfigPart.md) |  | [optional] 
 **ldap** | [**LdapConfigPart**](LdapConfigPart.md) |  | [optional] 
 **leadership** | [**LeadershipConfigPart**](LeadershipConfigPart.md) |  | [optional] 

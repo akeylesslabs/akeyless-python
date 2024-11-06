@@ -49,6 +49,7 @@ class AuthMethodAccessInfo(object):
         'huawei_access_rules': 'HuaweiAccessRules',
         'jwt_ttl': 'int',
         'k8s_access_rules': 'KubernetesAccessRules',
+        'kerberos_access_rules': 'KerberosAccessRules',
         'ldap_access_rules': 'LDAPAccessRules',
         'oauth2_access_rules': 'OAuth2AccessRules',
         'oci_access_rules': 'OCIAccessRules',
@@ -76,6 +77,7 @@ class AuthMethodAccessInfo(object):
         'huawei_access_rules': 'huawei_access_rules',
         'jwt_ttl': 'jwt_ttl',
         'k8s_access_rules': 'k8s_access_rules',
+        'kerberos_access_rules': 'kerberos_access_rules',
         'ldap_access_rules': 'ldap_access_rules',
         'oauth2_access_rules': 'oauth2_access_rules',
         'oci_access_rules': 'oci_access_rules',
@@ -87,7 +89,7 @@ class AuthMethodAccessInfo(object):
         'universal_identity_access_rules': 'universal_identity_access_rules'
     }
 
-    def __init__(self, access_expires=None, access_id_alias=None, api_key_access_rules=None, audit_logs_claims=None, aws_iam_access_rules=None, azure_ad_access_rules=None, cert_access_rules=None, cidr_whitelist=None, email_pass_access_rules=None, force_sub_claims=None, gcp_access_rules=None, gw_cidr_whitelist=None, huawei_access_rules=None, jwt_ttl=None, k8s_access_rules=None, ldap_access_rules=None, oauth2_access_rules=None, oci_access_rules=None, oidc_access_rules=None, product_types=None, rules_type=None, saml_access_rules=None, sub_claims_delimiters=None, universal_identity_access_rules=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, access_expires=None, access_id_alias=None, api_key_access_rules=None, audit_logs_claims=None, aws_iam_access_rules=None, azure_ad_access_rules=None, cert_access_rules=None, cidr_whitelist=None, email_pass_access_rules=None, force_sub_claims=None, gcp_access_rules=None, gw_cidr_whitelist=None, huawei_access_rules=None, jwt_ttl=None, k8s_access_rules=None, kerberos_access_rules=None, ldap_access_rules=None, oauth2_access_rules=None, oci_access_rules=None, oidc_access_rules=None, product_types=None, rules_type=None, saml_access_rules=None, sub_claims_delimiters=None, universal_identity_access_rules=None, local_vars_configuration=None):  # noqa: E501
         """AuthMethodAccessInfo - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -108,6 +110,7 @@ class AuthMethodAccessInfo(object):
         self._huawei_access_rules = None
         self._jwt_ttl = None
         self._k8s_access_rules = None
+        self._kerberos_access_rules = None
         self._ldap_access_rules = None
         self._oauth2_access_rules = None
         self._oci_access_rules = None
@@ -149,6 +152,8 @@ class AuthMethodAccessInfo(object):
             self.jwt_ttl = jwt_ttl
         if k8s_access_rules is not None:
             self.k8s_access_rules = k8s_access_rules
+        if kerberos_access_rules is not None:
+            self.kerberos_access_rules = kerberos_access_rules
         if ldap_access_rules is not None:
             self.ldap_access_rules = ldap_access_rules
         if oauth2_access_rules is not None:
@@ -486,6 +491,27 @@ class AuthMethodAccessInfo(object):
         """
 
         self._k8s_access_rules = k8s_access_rules
+
+    @property
+    def kerberos_access_rules(self):
+        """Gets the kerberos_access_rules of this AuthMethodAccessInfo.  # noqa: E501
+
+
+        :return: The kerberos_access_rules of this AuthMethodAccessInfo.  # noqa: E501
+        :rtype: KerberosAccessRules
+        """
+        return self._kerberos_access_rules
+
+    @kerberos_access_rules.setter
+    def kerberos_access_rules(self, kerberos_access_rules):
+        """Sets the kerberos_access_rules of this AuthMethodAccessInfo.
+
+
+        :param kerberos_access_rules: The kerberos_access_rules of this AuthMethodAccessInfo.  # noqa: E501
+        :type: KerberosAccessRules
+        """
+
+        self._kerberos_access_rules = kerberos_access_rules
 
     @property
     def ldap_access_rules(self):

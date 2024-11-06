@@ -206,7 +206,7 @@ class EventForwarderUpdateWebhook(object):
     def auth_type(self):
         """Gets the auth_type of this EventForwarderUpdateWebhook.  # noqa: E501
 
-        The Webhook authentication type [user-pass, token, certificate]  # noqa: E501
+        The Webhook authentication type [user-pass, bearer-token, certificate]  # noqa: E501
 
         :return: The auth_type of this EventForwarderUpdateWebhook.  # noqa: E501
         :rtype: str
@@ -217,7 +217,7 @@ class EventForwarderUpdateWebhook(object):
     def auth_type(self, auth_type):
         """Sets the auth_type of this EventForwarderUpdateWebhook.
 
-        The Webhook authentication type [user-pass, token, certificate]  # noqa: E501
+        The Webhook authentication type [user-pass, bearer-token, certificate]  # noqa: E501
 
         :param auth_type: The auth_type of this EventForwarderUpdateWebhook.  # noqa: E501
         :type: str
@@ -298,7 +298,7 @@ class EventForwarderUpdateWebhook(object):
     def event_types(self):
         """Gets the event_types of this EventForwarderUpdateWebhook.  # noqa: E501
 
-        List of event types to notify about [request-access, certificate-pending-expiration, certificate-expired, certificate-provisioning-success, certificate-provisioning-failure, auth-method-pending-expiration, auth-method-expired, next-automatic-rotation, rotated-secret-success, rotated-secret-failure, dynamic-secret-failure, multi-auth-failure, uid-rotation-failure, apply-justification, email-auth-method-approved, usage, rotation-usage, gateway-inactive, static-secret-updated]  # noqa: E501
+        List of event types to notify about [request-access, certificate-pending-expiration, certificate-expired, certificate-provisioning-success, certificate-provisioning-failure, auth-method-pending-expiration, auth-method-expired, next-automatic-rotation, rotated-secret-success, rotated-secret-failure, dynamic-secret-failure, multi-auth-failure, uid-rotation-failure, apply-justification, email-auth-method-approved, usage, rotation-usage, gateway-inactive, static-secret-updated, rate-limiting, usage-report]  # noqa: E501
 
         :return: The event_types of this EventForwarderUpdateWebhook.  # noqa: E501
         :rtype: list[str]
@@ -309,7 +309,7 @@ class EventForwarderUpdateWebhook(object):
     def event_types(self, event_types):
         """Sets the event_types of this EventForwarderUpdateWebhook.
 
-        List of event types to notify about [request-access, certificate-pending-expiration, certificate-expired, certificate-provisioning-success, certificate-provisioning-failure, auth-method-pending-expiration, auth-method-expired, next-automatic-rotation, rotated-secret-success, rotated-secret-failure, dynamic-secret-failure, multi-auth-failure, uid-rotation-failure, apply-justification, email-auth-method-approved, usage, rotation-usage, gateway-inactive, static-secret-updated]  # noqa: E501
+        List of event types to notify about [request-access, certificate-pending-expiration, certificate-expired, certificate-provisioning-success, certificate-provisioning-failure, auth-method-pending-expiration, auth-method-expired, next-automatic-rotation, rotated-secret-success, rotated-secret-failure, dynamic-secret-failure, multi-auth-failure, uid-rotation-failure, apply-justification, email-auth-method-approved, usage, rotation-usage, gateway-inactive, static-secret-updated, rate-limiting, usage-report]  # noqa: E501
 
         :param event_types: The event_types of this EventForwarderUpdateWebhook.  # noqa: E501
         :type: list[str]

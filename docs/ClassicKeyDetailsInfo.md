@@ -5,6 +5,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **classic_key_attributes** | **dict(str, list[str])** |  | [optional] 
 **classic_key_id** | **str** |  | [optional] 
+**credential_id** | **str** |  | [optional] 
 **gw_cluster_id** | **int** |  | [optional] 
 **has_certificate** | **bool** |  | [optional] 
 **is_provided_by_user** | **bool** |  | [optional] 
@@ -16,6 +17,8 @@ Name | Type | Description | Notes
 **target_alias_helper** | **str** |  | [optional] 
 **target_types** | **list[str]** |  | [optional] 
 **targets** | [**list[ClassicKeyTargetInfo]**](ClassicKeyTargetInfo.md) |  | [optional] 
+**username** | **str** |  | [optional] 
+**websites** | **list[str]** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

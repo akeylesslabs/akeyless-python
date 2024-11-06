@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **description** | **str** | Description of the object | [optional] 
 **email_to** | **str** | A comma seperated list of email addresses to send event to | [optional] 
 **enable** | **str** | Enable/Disable Event Forwarder [true/false] | [optional] [default to 'true']
-**event_types** | **list[str]** | List of event types to notify about [request-access, certificate-pending-expiration, certificate-expired, certificate-provisioning-success, certificate-provisioning-failure, auth-method-pending-expiration, auth-method-expired, next-automatic-rotation, rotated-secret-success, rotated-secret-failure, dynamic-secret-failure, multi-auth-failure, uid-rotation-failure, apply-justification, email-auth-method-approved, usage, rotation-usage, gateway-inactive, static-secret-updated] | [optional] 
+**event_types** | **list[str]** | List of event types to notify about [request-access, certificate-pending-expiration, certificate-expired, certificate-provisioning-success, certificate-provisioning-failure, auth-method-pending-expiration, auth-method-expired, next-automatic-rotation, rotated-secret-success, rotated-secret-failure, dynamic-secret-failure, multi-auth-failure, uid-rotation-failure, apply-justification, email-auth-method-approved, usage, rotation-usage, gateway-inactive, static-secret-updated, rate-limiting, usage-report] | [optional] 
 **gateways_event_source_locations** | **list[str]** | Event sources | 
 **include_error** | **str** | Set this option to include event errors details [true/false] | [optional] 
 **items_event_source_locations** | **list[str]** | Items Event sources | [optional] 

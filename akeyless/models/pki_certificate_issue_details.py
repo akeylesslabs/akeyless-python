@@ -41,6 +41,7 @@ class PKICertificateIssueDetails(object):
         'allowed_domains_list': 'list[str]',
         'allowed_extra_extensions': 'dict(str, list[str])',
         'allowed_uri_sans': 'list[str]',
+        'auto_renew_certificate': 'bool',
         'basic_constraints_valid_for_non_ca': 'bool',
         'certificate_authority_mode': 'str',
         'client_flag': 'bool',
@@ -65,6 +66,7 @@ class PKICertificateIssueDetails(object):
         'postal_code': 'list[str]',
         'protect_generated_certificates': 'bool',
         'province': 'list[str]',
+        'renew_before_expiration_in_days': 'int',
         'require_cn': 'bool',
         'server_flag': 'bool',
         'street_address': 'list[str]'
@@ -78,6 +80,7 @@ class PKICertificateIssueDetails(object):
         'allowed_domains_list': 'allowed_domains_list',
         'allowed_extra_extensions': 'allowed_extra_extensions',
         'allowed_uri_sans': 'allowed_uri_sans',
+        'auto_renew_certificate': 'auto_renew_certificate',
         'basic_constraints_valid_for_non_ca': 'basic_constraints_valid_for_non_ca',
         'certificate_authority_mode': 'certificate_authority_mode',
         'client_flag': 'client_flag',
@@ -102,12 +105,13 @@ class PKICertificateIssueDetails(object):
         'postal_code': 'postal_code',
         'protect_generated_certificates': 'protect_generated_certificates',
         'province': 'province',
+        'renew_before_expiration_in_days': 'renew_before_expiration_in_days',
         'require_cn': 'require_cn',
         'server_flag': 'server_flag',
         'street_address': 'street_address'
     }
 
-    def __init__(self, acme_enabled=None, allow_any_name=None, allow_copy_ext_from_csr=None, allow_subdomains=None, allowed_domains_list=None, allowed_extra_extensions=None, allowed_uri_sans=None, basic_constraints_valid_for_non_ca=None, certificate_authority_mode=None, client_flag=None, code_signing_flag=None, country=None, create_private_crl=None, create_public_crl=None, destination_path=None, enforce_hostnames=None, expiration_events=None, gw_cluster_id=None, gw_cluster_url=None, is_ca=None, key_bits=None, key_type=None, key_usage_list=None, locality=None, non_critical_key_usage=None, not_before_duration=None, organization_list=None, organization_unit_list=None, postal_code=None, protect_generated_certificates=None, province=None, require_cn=None, server_flag=None, street_address=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, acme_enabled=None, allow_any_name=None, allow_copy_ext_from_csr=None, allow_subdomains=None, allowed_domains_list=None, allowed_extra_extensions=None, allowed_uri_sans=None, auto_renew_certificate=None, basic_constraints_valid_for_non_ca=None, certificate_authority_mode=None, client_flag=None, code_signing_flag=None, country=None, create_private_crl=None, create_public_crl=None, destination_path=None, enforce_hostnames=None, expiration_events=None, gw_cluster_id=None, gw_cluster_url=None, is_ca=None, key_bits=None, key_type=None, key_usage_list=None, locality=None, non_critical_key_usage=None, not_before_duration=None, organization_list=None, organization_unit_list=None, postal_code=None, protect_generated_certificates=None, province=None, renew_before_expiration_in_days=None, require_cn=None, server_flag=None, street_address=None, local_vars_configuration=None):  # noqa: E501
         """PKICertificateIssueDetails - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -120,6 +124,7 @@ class PKICertificateIssueDetails(object):
         self._allowed_domains_list = None
         self._allowed_extra_extensions = None
         self._allowed_uri_sans = None
+        self._auto_renew_certificate = None
         self._basic_constraints_valid_for_non_ca = None
         self._certificate_authority_mode = None
         self._client_flag = None
@@ -144,6 +149,7 @@ class PKICertificateIssueDetails(object):
         self._postal_code = None
         self._protect_generated_certificates = None
         self._province = None
+        self._renew_before_expiration_in_days = None
         self._require_cn = None
         self._server_flag = None
         self._street_address = None
@@ -163,6 +169,8 @@ class PKICertificateIssueDetails(object):
             self.allowed_extra_extensions = allowed_extra_extensions
         if allowed_uri_sans is not None:
             self.allowed_uri_sans = allowed_uri_sans
+        if auto_renew_certificate is not None:
+            self.auto_renew_certificate = auto_renew_certificate
         if basic_constraints_valid_for_non_ca is not None:
             self.basic_constraints_valid_for_non_ca = basic_constraints_valid_for_non_ca
         if certificate_authority_mode is not None:
@@ -211,6 +219,8 @@ class PKICertificateIssueDetails(object):
             self.protect_generated_certificates = protect_generated_certificates
         if province is not None:
             self.province = province
+        if renew_before_expiration_in_days is not None:
+            self.renew_before_expiration_in_days = renew_before_expiration_in_days
         if require_cn is not None:
             self.require_cn = require_cn
         if server_flag is not None:
@@ -364,6 +374,27 @@ class PKICertificateIssueDetails(object):
         """
 
         self._allowed_uri_sans = allowed_uri_sans
+
+    @property
+    def auto_renew_certificate(self):
+        """Gets the auto_renew_certificate of this PKICertificateIssueDetails.  # noqa: E501
+
+
+        :return: The auto_renew_certificate of this PKICertificateIssueDetails.  # noqa: E501
+        :rtype: bool
+        """
+        return self._auto_renew_certificate
+
+    @auto_renew_certificate.setter
+    def auto_renew_certificate(self, auto_renew_certificate):
+        """Sets the auto_renew_certificate of this PKICertificateIssueDetails.
+
+
+        :param auto_renew_certificate: The auto_renew_certificate of this PKICertificateIssueDetails.  # noqa: E501
+        :type: bool
+        """
+
+        self._auto_renew_certificate = auto_renew_certificate
 
     @property
     def basic_constraints_valid_for_non_ca(self):
@@ -878,6 +909,27 @@ class PKICertificateIssueDetails(object):
         """
 
         self._province = province
+
+    @property
+    def renew_before_expiration_in_days(self):
+        """Gets the renew_before_expiration_in_days of this PKICertificateIssueDetails.  # noqa: E501
+
+
+        :return: The renew_before_expiration_in_days of this PKICertificateIssueDetails.  # noqa: E501
+        :rtype: int
+        """
+        return self._renew_before_expiration_in_days
+
+    @renew_before_expiration_in_days.setter
+    def renew_before_expiration_in_days(self, renew_before_expiration_in_days):
+        """Sets the renew_before_expiration_in_days of this PKICertificateIssueDetails.
+
+
+        :param renew_before_expiration_in_days: The renew_before_expiration_in_days of this PKICertificateIssueDetails.  # noqa: E501
+        :type: int
+        """
+
+        self._renew_before_expiration_in_days = renew_before_expiration_in_days
 
     @property
     def require_cn(self):

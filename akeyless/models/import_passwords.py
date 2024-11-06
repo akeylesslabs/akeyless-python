@@ -119,7 +119,7 @@ class ImportPasswords(object):
     def format(self):
         """Gets the format of this ImportPasswords.  # noqa: E501
 
-        Password format type [LastPass/Chrome/Firefox]  # noqa: E501
+        Password format type [LastPass/Chrome/Firefox/1password/keeper/bitwarden/dashlane]  # noqa: E501
 
         :return: The format of this ImportPasswords.  # noqa: E501
         :rtype: str
@@ -130,7 +130,7 @@ class ImportPasswords(object):
     def format(self, format):
         """Sets the format of this ImportPasswords.
 
-        Password format type [LastPass/Chrome/Firefox]  # noqa: E501
+        Password format type [LastPass/Chrome/Firefox/1password/keeper/bitwarden/dashlane]  # noqa: E501
 
         :param format: The format of this ImportPasswords.  # noqa: E501
         :type: str

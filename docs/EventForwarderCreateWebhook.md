@@ -6,10 +6,10 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **auth_methods_event_source_locations** | **list[str]** | Auth Method Event sources | [optional] 
 **auth_token** | **str** | Base64 encoded Token string for authentication type Token | [optional] 
-**auth_type** | **str** | The Webhook authentication type [user-pass, token, certificate] | [optional] [default to 'user-pass']
+**auth_type** | **str** | The Webhook authentication type [user-pass, bearer-token, certificate] | [optional] [default to 'user-pass']
 **client_cert_data** | **str** | Base64 encoded PEM certificate, relevant for certificate auth-type | [optional] 
 **description** | **str** | Description of the object | [optional] 
-**event_types** | **list[str]** | List of event types to notify about [request-access, certificate-pending-expiration, certificate-expired, certificate-provisioning-success, certificate-provisioning-failure, auth-method-pending-expiration, auth-method-expired, next-automatic-rotation, rotated-secret-success, rotated-secret-failure, dynamic-secret-failure, multi-auth-failure, uid-rotation-failure, apply-justification, email-auth-method-approved, usage, rotation-usage, gateway-inactive, static-secret-updated] | [optional] 
+**event_types** | **list[str]** | List of event types to notify about [request-access, certificate-pending-expiration, certificate-expired, certificate-provisioning-success, certificate-provisioning-failure, auth-method-pending-expiration, auth-method-expired, next-automatic-rotation, rotated-secret-success, rotated-secret-failure, dynamic-secret-failure, multi-auth-failure, uid-rotation-failure, apply-justification, email-auth-method-approved, usage, rotation-usage, gateway-inactive, static-secret-updated, rate-limiting, usage-report] | [optional] 
 **every** | **str** | Rate of periodic runner repetition in hours | [optional] 
 **gateways_event_source_locations** | **list[str]** | Event sources | 
 **items_event_source_locations** | **list[str]** | Items Event sources | [optional] 
