@@ -1,7 +1,9 @@
 # DynamicSecretCreateAzure
 
 dynamicSecretCreateAzure is a command that creates azure dynamic secret
+
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **app_obj_id** | **str** | Azure App Object Id | [optional] 
@@ -12,16 +14,16 @@ Name | Type | Description | Notes
 **description** | **str** | Description of the object | [optional] 
 **fixed_user_claim_keyname** | **str** | FixedUserClaimKeyname | [optional] [default to 'false']
 **fixed_user_only** | **bool** | Fixed user | [optional] [default to False]
-**json** | **bool** | Set output format to JSON | [optional] [default to False]
+**var_json** | **bool** | Set output format to JSON | [optional] [default to False]
 **name** | **str** | Dynamic secret name | 
 **password_length** | **str** | The length of the password to be generated | [optional] 
 **producer_encryption_key_name** | **str** | Dynamic secret encryption key | [optional] 
 **secure_access_enable** | **str** | Enable/Disable secure remote access [true/false] | [optional] 
 **secure_access_url** | **str** | Destination URL to inject secrets | [optional] 
 **secure_access_web** | **bool** | Enable Web Secure Remote Access | [optional] [default to True]
-**secure_access_web_browsing** | **bool** | Secure browser via Akeyless Web Access Bastion | [optional] [default to False]
-**secure_access_web_proxy** | **bool** | Web-Proxy via Akeyless Web Access Bastion | [optional] [default to False]
-**tags** | **list[str]** | Add tags attached to this object | [optional] 
+**secure_access_web_browsing** | **bool** | Secure browser via Akeyless&#39;s Secure Remote Access (SRA) | [optional] [default to False]
+**secure_access_web_proxy** | **bool** | Web-Proxy via Akeyless&#39;s Secure Remote Access (SRA) | [optional] [default to False]
+**tags** | **List[str]** | Add tags attached to this object | [optional] 
 **target_name** | **str** | Target name | [optional] 
 **token** | **str** | Authentication token (see &#x60;/auth&#x60; and &#x60;/configure&#x60;) | [optional] 
 **uid_token** | **str** | The universal identity token, Required only for universal_identity authentication | [optional] 
@@ -32,6 +34,23 @@ Name | Type | Description | Notes
 **user_role_template_id** | **str** | User Role Template Id | [optional] 
 **user_ttl** | **str** | User TTL | [optional] [default to '60m']
 
+## Example
+
+```python
+from akeyless.models.dynamic_secret_create_azure import DynamicSecretCreateAzure
+
+# TODO update the JSON string below
+json = "{}"
+# create an instance of DynamicSecretCreateAzure from a JSON string
+dynamic_secret_create_azure_instance = DynamicSecretCreateAzure.from_json(json)
+# print the JSON string representation of the object
+print(DynamicSecretCreateAzure.to_json())
+
+# convert the object into a dict
+dynamic_secret_create_azure_dict = dynamic_secret_create_azure_instance.to_dict()
+# create an instance of DynamicSecretCreateAzure from a dict
+dynamic_secret_create_azure_from_dict = DynamicSecretCreateAzure.from_dict(dynamic_secret_create_azure_dict)
+```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
 

@@ -1,11 +1,13 @@
 # UpdateRotatedSecret
 
 updateRotatedSecret is a command that updates rotated secret. [Deprecated: Use rotated-secret update commands]
+
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **provider_type** | **str** |  | [optional] 
-**add_tag** | **list[str]** | List of the new tags that will be attached to this item | [optional] 
+**add_tag** | **List[str]** | List of the new tags that will be attached to this item | [optional] 
 **api_id** | **str** | API ID to rotate | [optional] 
 **api_key** | **str** | API key to rotate | [optional] 
 **auto_rotate** | **str** | Whether to automatically rotate every --rotation-interval days, or disable existing automatic rotation [true/false] | [optional] 
@@ -15,14 +17,14 @@ Name | Type | Description | Notes
 **gcp_key** | **str** | Base64-encoded service account private key text | [optional] 
 **grace_rotation** | **str** | Create a new access key without deleting the old key from AWS for backup (relevant only for AWS) [true/false] | [optional] 
 **host_provider** | **str** | Host provider type [explicit/target], Default Host provider is explicit, Relevant only for Secure Remote Access of ssh cert issuer, ldap rotated secret and ldap dynamic secret | [optional] 
-**json** | **bool** | Set output format to JSON | [optional] [default to False]
+**var_json** | **bool** | Set output format to JSON | [optional] [default to False]
 **keep_prev_version** | **str** | Whether to keep previous version [true/false]. If not set, use default according to account settings | [optional] 
 **key** | **str** | The name of a key that used to encrypt the secret value (if empty, the account default protectionKey key will be used) | [optional] 
 **name** | **str** | Secret name | 
 **new_metadata** | **str** | Deprecated - use description | [optional] [default to 'default_metadata']
 **new_name** | **str** | New item name | [optional] 
 **new_version** | **bool** | Deprecated | [optional] 
-**rm_tag** | **list[str]** | List of the existent tags that will be removed from this item | [optional] 
+**rm_tag** | **List[str]** | List of the existent tags that will be removed from this item | [optional] 
 **rotate_after_disconnect** | **str** | Rotate the value of the secret after SRA session ends [true/false] | [optional] [default to 'false']
 **rotated_password** | **str** | rotated-username password | [optional] 
 **rotated_username** | **str** | username to be rotated, if selected use-self-creds at rotator-creds-type, this username will try to rotate it&#39;s own password, if use-target-creds is selected, target credentials will be use to rotate the rotated-password | [optional] 
@@ -34,18 +36,19 @@ Name | Type | Description | Notes
 **secure_access_allow_external_user** | **bool** | Allow providing external user for a domain users (relevant only for rdp) | [optional] [default to False]
 **secure_access_aws_account_id** | **str** | The AWS account id (relevant only for aws) | [optional] 
 **secure_access_aws_native_cli** | **bool** | The AWS native cli | [optional] 
-**secure_access_bastion_issuer** | **str** | Path to the SSH Certificate Issuer for your Akeyless Bastion | [optional] 
+**secure_access_bastion_issuer** | **str** | Deprecated. use secure-access-certificate-issuer | [optional] 
+**secure_access_certificate_issuer** | **str** | Path to the SSH Certificate Issuer for your Akeyless Secure Access | [optional] 
 **secure_access_db_name** | **str** | The DB name (relevant only for DB Dynamic-Secret) | [optional] 
 **secure_access_db_schema** | **str** | The db schema (relevant only for mssql or postgresql) | [optional] 
 **secure_access_disable_concurrent_connections** | **bool** | Enable this flag to prevent simultaneous use of the same secret | [optional] 
 **secure_access_enable** | **str** | Enable/Disable secure remote access [true/false] | [optional] 
-**secure_access_host** | **list[str]** | Target servers for connections (In case of Linked Target association, host(s) will inherit Linked Target hosts - Relevant only for Dynamic Secrets/producers) | [optional] 
+**secure_access_host** | **List[str]** | Target servers for connections (In case of Linked Target association, host(s) will inherit Linked Target hosts - Relevant only for Dynamic Secrets/producers) | [optional] 
 **secure_access_rdp_domain** | **str** | Required when the Dynamic Secret is used for a domain user (relevant only for RDP Dynamic-Secret) | [optional] 
 **secure_access_rdp_user** | **str** | Override the RDP Domain username (relevant only for rdp) | [optional] 
 **secure_access_url** | **str** | Destination URL to inject secrets | [optional] 
 **secure_access_web** | **bool** | Enable Web Secure Remote Access | [optional] [default to False]
-**secure_access_web_browsing** | **bool** | Secure browser via Akeyless Web Access Bastion (relevant only for aws or azure) | [optional] [default to False]
-**secure_access_web_proxy** | **bool** | Web-Proxy via Akeyless Web Access Bastion (relevant only for aws or azure) | [optional] [default to False]
+**secure_access_web_browsing** | **bool** | Secure browser viaAkeyless&#39;s Secure Remote Access (SRA) (relevant only for aws or azure) | [optional] [default to False]
+**secure_access_web_proxy** | **bool** | Web-Proxy via Akeyless&#39;s Secure Remote Access (SRA) (relevant only for aws or azure) | [optional] [default to False]
 **ssh_password** | **str** | Deprecated: use RotatedPassword | [optional] 
 **ssh_username** | **str** | Deprecated: use RotatedUser | [optional] 
 **storage_account_key_name** | **str** | The name of the storage account key to rotate [key1/key2/kerb1/kerb2] | [optional] 
@@ -54,6 +57,23 @@ Name | Type | Description | Notes
 **user_attribute** | **str** | LDAP User Attribute, Default value \&quot;cn\&quot; | [optional] [default to 'cn']
 **user_dn** | **str** | LDAP User Base DN | [optional] 
 
+## Example
+
+```python
+from akeyless.models.update_rotated_secret import UpdateRotatedSecret
+
+# TODO update the JSON string below
+json = "{}"
+# create an instance of UpdateRotatedSecret from a JSON string
+update_rotated_secret_instance = UpdateRotatedSecret.from_json(json)
+# print the JSON string representation of the object
+print(UpdateRotatedSecret.to_json())
+
+# convert the object into a dict
+update_rotated_secret_dict = update_rotated_secret_instance.to_dict()
+# create an instance of UpdateRotatedSecret from a dict
+update_rotated_secret_from_dict = UpdateRotatedSecret.from_dict(update_rotated_secret_dict)
+```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
 

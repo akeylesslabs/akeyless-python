@@ -1,6 +1,8 @@
 # TargetItemVersion
 
+
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **access_date** | **datetime** |  | [optional] 
@@ -17,6 +19,23 @@ Name | Type | Description | Notes
 **version** | **int** |  | [optional] 
 **with_customer_fragment** | **bool** |  | [optional] 
 
+## Example
+
+```python
+from akeyless.models.target_item_version import TargetItemVersion
+
+# TODO update the JSON string below
+json = "{}"
+# create an instance of TargetItemVersion from a JSON string
+target_item_version_instance = TargetItemVersion.from_json(json)
+# print the JSON string representation of the object
+print(TargetItemVersion.to_json())
+
+# convert the object into a dict
+target_item_version_dict = target_item_version_instance.to_dict()
+# create an instance of TargetItemVersion from a dict
+target_item_version_from_dict = TargetItemVersion.from_dict(target_item_version_dict)
+```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
 

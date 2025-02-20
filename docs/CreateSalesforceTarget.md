@@ -1,7 +1,9 @@
 # CreateSalesforceTarget
 
 createSalesforceTarget is a command that creates a new target. [Deprecated: Use target-create-salesforce command]
+
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **app_private_key_data** | **str** | Base64 encoded PEM of the connected app private key (relevant for JWT auth only) | [optional] 
@@ -13,7 +15,7 @@ Name | Type | Description | Notes
 **comment** | **str** | Deprecated - use description | [optional] 
 **description** | **str** | Description of the object | [optional] 
 **email** | **str** | The email of the user attached to the oauth2 app used for connecting to Salesforce | 
-**json** | **bool** | Set output format to JSON | [optional] [default to False]
+**var_json** | **bool** | Set output format to JSON | [optional] [default to False]
 **key** | **str** | The name of a key that used to encrypt the target secret value (if empty, the account default protectionKey key will be used) | [optional] 
 **max_versions** | **str** | Set the maximum number of versions, limited by the account settings defaults. | [optional] 
 **name** | **str** | Target name | 
@@ -23,6 +25,23 @@ Name | Type | Description | Notes
 **token** | **str** | Authentication token (see &#x60;/auth&#x60; and &#x60;/configure&#x60;) | [optional] 
 **uid_token** | **str** | The universal identity token, Required only for universal_identity authentication | [optional] 
 
+## Example
+
+```python
+from akeyless.models.create_salesforce_target import CreateSalesforceTarget
+
+# TODO update the JSON string below
+json = "{}"
+# create an instance of CreateSalesforceTarget from a JSON string
+create_salesforce_target_instance = CreateSalesforceTarget.from_json(json)
+# print the JSON string representation of the object
+print(CreateSalesforceTarget.to_json())
+
+# convert the object into a dict
+create_salesforce_target_dict = create_salesforce_target_instance.to_dict()
+# create an instance of CreateSalesforceTarget from a dict
+create_salesforce_target_from_dict = CreateSalesforceTarget.from_dict(create_salesforce_target_dict)
+```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
 

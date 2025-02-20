@@ -1,6 +1,8 @@
 # GeneralConfigPart
 
+
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **akeyless_url** | **str** | AkeylessUrl is here for BC only. Gator will still return it if it exists in the configuration, but new clients (&gt;&#x3D;2.34.0) will ignore it and override it with what exists in their local file. It will no longer be sent to Gator for update, so new clusters will only have the default value saved in the DB. | [optional] 
@@ -12,11 +14,29 @@ Name | Type | Description | Notes
 **enable_tls_curl** | **bool** |  | [optional] 
 **enable_tls_hvp** | **bool** |  | [optional] 
 **gw_cluster_url** | **str** |  | [optional] 
+**hvp_route_version** | **int** |  | [optional] 
 **notify_on_status_change** | **bool** |  | [optional] 
 **tcp_port** | **str** |  | [optional] 
 **tls_cert** | **str** |  | [optional] 
 **tls_key** | **str** |  | [optional] 
 
+## Example
+
+```python
+from akeyless.models.general_config_part import GeneralConfigPart
+
+# TODO update the JSON string below
+json = "{}"
+# create an instance of GeneralConfigPart from a JSON string
+general_config_part_instance = GeneralConfigPart.from_json(json)
+# print the JSON string representation of the object
+print(GeneralConfigPart.to_json())
+
+# convert the object into a dict
+general_config_part_dict = general_config_part_instance.to_dict()
+# create an instance of GeneralConfigPart from a dict
+general_config_part_from_dict = GeneralConfigPart.from_dict(general_config_part_dict)
+```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
 

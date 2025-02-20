@@ -1,6 +1,8 @@
 # UpdateRole
 
+
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **analytics_access** | **str** | Allow this role to view analytics. Currently only &#39;none&#39;, &#39;own&#39;, &#39;all&#39; values are supported, allowing associated auth methods to view reports produced by the same auth methods. | [optional] 
@@ -10,7 +12,7 @@ Name | Type | Description | Notes
 **event_center_access** | **str** | Allow this role to view Event Center. Currently only &#39;none&#39;, &#39;own&#39; and &#39;all&#39; values are supported | [optional] 
 **event_forwarder_access** | **str** | Allow this role to manage Event Forwarders. Currently only &#39;none&#39; and &#39;all&#39; values are supported. | [optional] 
 **gw_analytics_access** | **str** | Allow this role to view gw analytics. Currently only &#39;none&#39;, &#39;own&#39;, &#39;all&#39; values are supported, allowing associated auth methods to view reports produced by the same auth methods. | [optional] 
-**json** | **bool** | Set output format to JSON | [optional] [default to False]
+**var_json** | **bool** | Set output format to JSON | [optional] [default to False]
 **name** | **str** | Role name | 
 **new_comment** | **str** | Deprecated - use description | [optional] [default to 'default_comment']
 **new_name** | **str** | New Role name | [optional] 
@@ -19,6 +21,23 @@ Name | Type | Description | Notes
 **uid_token** | **str** | The universal identity token, Required only for universal_identity authentication | [optional] 
 **usage_reports_access** | **str** | Allow this role to view Usage Report. Currently only &#39;none&#39; and &#39;all&#39; values are supported. | [optional] 
 
+## Example
+
+```python
+from akeyless.models.update_role import UpdateRole
+
+# TODO update the JSON string below
+json = "{}"
+# create an instance of UpdateRole from a JSON string
+update_role_instance = UpdateRole.from_json(json)
+# print the JSON string representation of the object
+print(UpdateRole.to_json())
+
+# convert the object into a dict
+update_role_dict = update_role_instance.to_dict()
+# create an instance of UpdateRole from a dict
+update_role_from_dict = UpdateRole.from_dict(update_role_dict)
+```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
 

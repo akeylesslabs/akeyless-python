@@ -1,7 +1,9 @@
 # CreateDBTarget
 
 createDBTarget is a command that creates a new target. [Deprecated: Use target-create-db command]
+
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **db_defined_connection_type** | **str** |  | [optional] 
@@ -11,14 +13,14 @@ Name | Type | Description | Notes
 **cloud_service_provider** | **str** | (Optional) Cloud service provider (currently only supports Azure) | [optional] 
 **cluster_mode** | **bool** | Cluster Mode | [optional] 
 **comment** | **str** | Deprecated - use description | [optional] 
-**connection_type** | **str** | (Optional) Type of connection to mssql database [credentials/cloud-identity] | [default to 'credentials']
+**connection_type** | **str** | Type of connection to mssql/oracle database [credentials/cloud-identity/wallet] | [default to 'credentials']
 **db_name** | **str** |  | [optional] 
 **db_server_certificates** | **str** | (Optional) DB server certificates | [optional] 
 **db_server_name** | **str** | (Optional) Server name for certificate verification | [optional] 
 **db_type** | **str** |  | 
 **description** | **str** | Description of the object | [optional] 
 **host** | **str** |  | [optional] 
-**json** | **bool** | Set output format to JSON | [optional] [default to False]
+**var_json** | **bool** | Set output format to JSON | [optional] [default to False]
 **key** | **str** | The name of a key that used to encrypt the target secret value (if empty, the account default protectionKey key will be used) | [optional] 
 **max_versions** | **str** | Set the maximum number of versions, limited by the account settings defaults. | [optional] 
 **mongodb_atlas** | **bool** |  | [optional] 
@@ -28,7 +30,10 @@ Name | Type | Description | Notes
 **mongodb_default_auth_db** | **str** | MongoDB server default authentication database | [optional] 
 **mongodb_uri_options** | **str** | MongoDB server URI options | [optional] 
 **name** | **str** | Target name | 
-**oracle_service_name** | **str** |  | [optional] 
+**oracle_service_name** | **str** | Oracle db service name | [optional] 
+**oracle_wallet_login_type** | **str** | Oracle Wallet login type (password/mtls) | [optional] 
+**oracle_wallet_p12_file_data** | **str** | Oracle wallet p12 file data in base64 | [optional] 
+**oracle_wallet_sso_file_data** | **str** | Oracle wallet sso file data in base64 | [optional] 
 **port** | **str** |  | [optional] 
 **pwd** | **str** |  | [optional] 
 **snowflake_account** | **str** |  | [optional] 
@@ -40,6 +45,23 @@ Name | Type | Description | Notes
 **uid_token** | **str** | The universal identity token, Required only for universal_identity authentication | [optional] 
 **user_name** | **str** |  | [optional] 
 
+## Example
+
+```python
+from akeyless.models.create_db_target import CreateDBTarget
+
+# TODO update the JSON string below
+json = "{}"
+# create an instance of CreateDBTarget from a JSON string
+create_db_target_instance = CreateDBTarget.from_json(json)
+# print the JSON string representation of the object
+print(CreateDBTarget.to_json())
+
+# convert the object into a dict
+create_db_target_dict = create_db_target_instance.to_dict()
+# create an instance of CreateDBTarget from a dict
+create_db_target_from_dict = CreateDBTarget.from_dict(create_db_target_dict)
+```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
 

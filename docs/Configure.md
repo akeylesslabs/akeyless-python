@@ -1,6 +1,8 @@
 # Configure
 
+
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **access_id** | **str** | Access ID | [optional] 
@@ -17,16 +19,34 @@ Name | Type | Description | Notes
 **disable_pafxfast** | **str** | Disable the FAST negotiation in the Kerberos authentication method | [optional] 
 **gateway_spn** | **str** | The service principal name of the gateway as registered in LDAP (i.e., HTTP/gateway) | [optional] 
 **gcp_audience** | **str** | GCP JWT audience | [optional] [default to 'akeyless.io']
-**json** | **bool** | Set output format to JSON | [optional] [default to False]
+**var_json** | **bool** | Set output format to JSON | [optional] [default to False]
 **k8s_auth_config_name** | **str** | The K8S Auth config name (relevant only for access-type&#x3D;k8s) | [optional] 
+**kerberos_token** | **str** | KerberosToken represents a Kerberos token generated for the gateway SPN (Service Principal Name). | [optional] 
 **kerberos_username** | **str** | TThe username for the entry within the keytab to authenticate via Kerberos | [optional] 
 **key_data** | **str** | Private key data encoded in base64. Used if file was not provided.(relevant only for access-type&#x3D;cert in Curl Context) | [optional] 
 **keytab_data** | **str** | Base64-encoded content of a valid keytab file, containing the service account&#39;s entry. | [optional] 
 **krb5_conf_data** | **str** | Base64-encoded content of a valid krb5.conf file, specifying the settings and parameters required for Kerberos authentication. | [optional] 
 **legacy_signing_alg_name** | **bool** | Set this option to output legacy (&#39;ssh-rsa-cert-v01@openssh.com&#39;) signing algorithm name in the certificate. | [optional] 
 **oci_auth_type** | **str** | The type of the OCI configuration to use [instance/apikey/resource] (relevant only for access-type&#x3D;oci) | [optional] [default to 'apikey']
-**oci_group_ocid** | **list[str]** | A list of Oracle Cloud IDs groups (relevant only for access-type&#x3D;oci) | [optional] 
+**oci_group_ocid** | **List[str]** | A list of Oracle Cloud IDs groups (relevant only for access-type&#x3D;oci) | [optional] 
 
+## Example
+
+```python
+from akeyless.models.configure import Configure
+
+# TODO update the JSON string below
+json = "{}"
+# create an instance of Configure from a JSON string
+configure_instance = Configure.from_json(json)
+# print the JSON string representation of the object
+print(Configure.to_json())
+
+# convert the object into a dict
+configure_dict = configure_instance.to_dict()
+# create an instance of Configure from a dict
+configure_from_dict = Configure.from_dict(configure_dict)
+```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
 

@@ -1,13 +1,15 @@
 # SignPKICertWithClassicKey
 
+
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **common_name** | **str** | The common name to be included in the PKI certificate | [optional] 
 **country** | **str** | A comma-separated list of the country that will be set in the issued certificate | [optional] 
 **display_id** | **str** | The name of the key to use in the sign PKI Cert process | 
 **dns_names** | **str** | DNS Names to be included in the PKI certificate (in a comma-delimited list) | [optional] 
-**json** | **bool** | Set output format to JSON | [optional] [default to False]
+**var_json** | **bool** | Set output format to JSON | [optional] [default to False]
 **key_usage** | **str** | key-usage | [optional] [default to 'DigitalSignature,KeyAgreement,KeyEncipherment']
 **locality** | **str** | A comma-separated list of the locality that will be set in the issued certificate | [optional] 
 **organizational_units** | **str** | A comma-separated list of organizational units (OU) that will be set in the issued certificate | [optional] 
@@ -23,6 +25,23 @@ Name | Type | Description | Notes
 **uri_sans** | **str** | The URI Subject Alternative Names to be included in the PKI certificate (in a comma-delimited list) | [optional] 
 **version** | **int** | classic key version | 
 
+## Example
+
+```python
+from akeyless.models.sign_pki_cert_with_classic_key import SignPKICertWithClassicKey
+
+# TODO update the JSON string below
+json = "{}"
+# create an instance of SignPKICertWithClassicKey from a JSON string
+sign_pki_cert_with_classic_key_instance = SignPKICertWithClassicKey.from_json(json)
+# print the JSON string representation of the object
+print(SignPKICertWithClassicKey.to_json())
+
+# convert the object into a dict
+sign_pki_cert_with_classic_key_dict = sign_pki_cert_with_classic_key_instance.to_dict()
+# create an instance of SignPKICertWithClassicKey from a dict
+sign_pki_cert_with_classic_key_from_dict = SignPKICertWithClassicKey.from_dict(sign_pki_cert_with_classic_key_dict)
+```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
 

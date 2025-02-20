@@ -1,6 +1,8 @@
 # TargetUpdateDB
 
+
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **db_defined_connection_type** | **str** |  | [optional] 
@@ -10,14 +12,14 @@ Name | Type | Description | Notes
 **cloud_service_provider** | **str** | (Optional) Cloud service provider (currently only supports Azure) | [optional] 
 **cluster_mode** | **bool** | Cluster Mode | [optional] 
 **comment** | **str** | Deprecated - use description | [optional] 
-**connection_type** | **str** | (Optional) Type of connection to mssql database [credentials/cloud-identity] | [default to 'credentials']
+**connection_type** | **str** | Type of connection to mssql/oracle database [credentials/cloud-identity/wallet] | [default to 'credentials']
 **db_name** | **str** |  | [optional] 
 **db_server_certificates** | **str** | (Optional) DB server certificates | [optional] 
 **db_server_name** | **str** | (Optional) Server name for certificate verification | [optional] 
 **db_type** | **str** |  | 
 **description** | **str** | Description of the object | [optional] 
 **host** | **str** |  | [optional] 
-**json** | **bool** | Set output format to JSON | [optional] [default to False]
+**var_json** | **bool** | Set output format to JSON | [optional] [default to False]
 **keep_prev_version** | **str** | Whether to keep previous version [true/false]. If not set, use default according to account settings | [optional] 
 **key** | **str** | The name of a key that used to encrypt the target secret value (if empty, the account default protectionKey key will be used) | [optional] 
 **max_versions** | **str** | Set the maximum number of versions, limited by the account settings defaults. | [optional] 
@@ -29,7 +31,10 @@ Name | Type | Description | Notes
 **mongodb_uri_options** | **str** | MongoDB server URI options | [optional] 
 **name** | **str** | Target name | 
 **new_name** | **str** | New target name | [optional] 
-**oracle_service_name** | **str** |  | [optional] 
+**oracle_service_name** | **str** | Oracle db service name | [optional] 
+**oracle_wallet_login_type** | **str** | Oracle Wallet login type (password/mtls) | [optional] 
+**oracle_wallet_p12_file_data** | **str** | Oracle wallet p12 file data in base64 | [optional] 
+**oracle_wallet_sso_file_data** | **str** | Oracle wallet sso file data in base64 | [optional] 
 **port** | **str** |  | [optional] 
 **pwd** | **str** |  | [optional] 
 **snowflake_account** | **str** |  | [optional] 
@@ -41,6 +46,23 @@ Name | Type | Description | Notes
 **uid_token** | **str** | The universal identity token, Required only for universal_identity authentication | [optional] 
 **user_name** | **str** |  | [optional] 
 
+## Example
+
+```python
+from akeyless.models.target_update_db import TargetUpdateDB
+
+# TODO update the JSON string below
+json = "{}"
+# create an instance of TargetUpdateDB from a JSON string
+target_update_db_instance = TargetUpdateDB.from_json(json)
+# print the JSON string representation of the object
+print(TargetUpdateDB.to_json())
+
+# convert the object into a dict
+target_update_db_dict = target_update_db_instance.to_dict()
+# create an instance of TargetUpdateDB from a dict
+target_update_db_from_dict = TargetUpdateDB.from_dict(target_update_db_dict)
+```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
 

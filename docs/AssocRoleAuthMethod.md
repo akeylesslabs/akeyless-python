@@ -1,17 +1,36 @@
 # AssocRoleAuthMethod
 
 assocRoleAuthMethod is a command that creates an association between role and auth method.
+
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **am_name** | **str** | The auth method to associate | 
 **case_sensitive** | **str** | Treat sub claims as case-sensitive [true/false] | [optional] [default to 'true']
-**json** | **bool** | Set output format to JSON | [optional] [default to False]
+**var_json** | **bool** | Set output format to JSON | [optional] [default to False]
 **role_name** | **str** | The role to associate | 
-**sub_claims** | **dict(str, str)** | key/val of sub claims, e.g group&#x3D;admins,developers | [optional] 
+**sub_claims** | **Dict[str, str]** | key/val of sub claims, e.g group&#x3D;admins,developers | [optional] 
 **token** | **str** | Authentication token (see &#x60;/auth&#x60; and &#x60;/configure&#x60;) | [optional] 
 **uid_token** | **str** | The universal identity token, Required only for universal_identity authentication | [optional] 
 
+## Example
+
+```python
+from akeyless.models.assoc_role_auth_method import AssocRoleAuthMethod
+
+# TODO update the JSON string below
+json = "{}"
+# create an instance of AssocRoleAuthMethod from a JSON string
+assoc_role_auth_method_instance = AssocRoleAuthMethod.from_json(json)
+# print the JSON string representation of the object
+print(AssocRoleAuthMethod.to_json())
+
+# convert the object into a dict
+assoc_role_auth_method_dict = assoc_role_auth_method_instance.to_dict()
+# create an instance of AssocRoleAuthMethod from a dict
+assoc_role_auth_method_from_dict = AssocRoleAuthMethod.from_dict(assoc_role_auth_method_dict)
+```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
 
