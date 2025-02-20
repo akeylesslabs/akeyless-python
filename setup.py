@@ -29,7 +29,7 @@ REQUIRES = [
     "python-dateutil >= 2.8.2",
     "pydantic >= 2",
     "typing-extensions >= 4.7.1",
-, "psutil >= 6.0.0"]
+ "psutil >= 6.0.0"]
 
 setup(
     name=NAME,
