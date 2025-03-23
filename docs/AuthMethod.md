@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **associated_gw_ids** | **List[int]** |  | [optional] 
 **auth_method_access_id** | **str** |  | [optional] 
 **auth_method_additional_data** | [**AuthMethodAdditionalData**](AuthMethodAdditionalData.md) |  | [optional] 
+**auth_method_id** | **int** |  | [optional] 
 **auth_method_name** | **str** |  | [optional] 
 **auth_method_roles_assoc** | [**List[AuthMethodRoleAssociation]**](AuthMethodRoleAssociation.md) |  | [optional] 
 **client_permissions** | **List[str]** |  | [optional] 

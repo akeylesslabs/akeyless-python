@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **client_id** | **str** | Azure client/application id | [optional] 
 **client_secret** | **str** | Azure client secret | [optional] 
+**connection_type** | **str** | Type of connection [credentials/cloud-identity] | [optional] [default to 'credentials']
 **description** | **str** | Description of the object | [optional] 
 **var_json** | **bool** | Set output format to JSON | [optional] [default to False]
 **key** | **str** | The name of a key that used to encrypt the target secret value (if empty, the account default protectionKey key will be used) | [optional] 

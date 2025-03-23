@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **azure_subscription_id** | **str** |  | [optional] 
 **azure_tenant_id** | **str** |  | [optional] 
 **azure_username** | **str** |  | [optional] 
+**connection_type** | **str** |  | [optional] 
 **expiration_date** | **datetime** |  | [optional] 
 **use_gw_cloud_identity** | **bool** |  | [optional] 
 

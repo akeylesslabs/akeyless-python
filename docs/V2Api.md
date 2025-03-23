@@ -37679,7 +37679,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **usc_create**
-> UscCreateSecretOutput usc_create(usc_update)
+> UscCreateSecretOutput usc_create(usc_create)
 
 
 
@@ -37688,8 +37688,8 @@ No authorization required
 
 ```python
 import akeyless
+from akeyless.models.usc_create import UscCreate
 from akeyless.models.usc_create_secret_output import UscCreateSecretOutput
-from akeyless.models.usc_update import UscUpdate
 from akeyless.rest import ApiException
 from pprint import pprint
 
@@ -37704,10 +37704,10 @@ configuration = akeyless.Configuration(
 with akeyless.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
-    usc_update = akeyless.UscUpdate() # UscUpdate | 
+    usc_create = akeyless.UscCreate() # UscCreate | 
 
     try:
-        api_response = api_instance.usc_create(usc_update)
+        api_response = api_instance.usc_create(usc_create)
         print("The response of V2Api->usc_create:\n")
         pprint(api_response)
     except Exception as e:
@@ -37721,7 +37721,7 @@ with akeyless.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **usc_update** | [**UscUpdate**](UscUpdate.md)|  | 
+ **usc_create** | [**UscCreate**](UscCreate.md)|  | 
 
 ### Return type
 
@@ -37947,7 +37947,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **usc_update**
-> UscUpdateSecretOutput usc_update()
+> UscUpdateSecretOutput usc_update(usc_update)
 
 
 
@@ -37956,6 +37956,7 @@ No authorization required
 
 ```python
 import akeyless
+from akeyless.models.usc_update import UscUpdate
 from akeyless.models.usc_update_secret_output import UscUpdateSecretOutput
 from akeyless.rest import ApiException
 from pprint import pprint
@@ -37971,9 +37972,10 @@ configuration = akeyless.Configuration(
 with akeyless.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
+    usc_update = akeyless.UscUpdate() # UscUpdate | 
 
     try:
-        api_response = api_instance.usc_update()
+        api_response = api_instance.usc_update(usc_update)
         print("The response of V2Api->usc_update:\n")
         pprint(api_response)
     except Exception as e:
@@ -37984,7 +37986,10 @@ with akeyless.ApiClient(configuration) as api_client:
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **usc_update** | [**UscUpdate**](UscUpdate.md)|  | 
 
 ### Return type
 
@@ -37996,7 +38001,7 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 ### HTTP response details

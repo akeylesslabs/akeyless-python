@@ -6,6 +6,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **admins** | [**AdminsConfigPart**](AdminsConfigPart.md) |  | [optional] 
+**ca_certificates** | [**CaCertificatesConfigPart**](CaCertificatesConfigPart.md) |  | [optional] 
 **cache** | [**CacheConfigPart**](CacheConfigPart.md) |  | [optional] 
 **cf** | [**CFConfigPart**](CFConfigPart.md) |  | [optional] 
 **config_protection_key_name** | **str** |  | [optional] 

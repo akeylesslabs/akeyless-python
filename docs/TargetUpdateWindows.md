@@ -7,6 +7,7 @@ GatewayUpdateProducerWindowsCmd is a command that updates an existing windows ta
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **certificate** | **str** | SSL CA certificate in base64 encoding generated from a trusted Certificate Authority (CA) | [optional] 
+**connection_type** | **str** | Type of connection to Windows Server [credentials/parent-target] | [optional] [default to 'credentials']
 **description** | **str** | Description of the object | [optional] 
 **domain** | **str** | User domain name | [optional] 
 **hostname** | **str** | Server hostname | 
@@ -16,12 +17,13 @@ Name | Type | Description | Notes
 **max_versions** | **str** | Set the maximum number of versions, limited by the account settings defaults. | [optional] 
 **name** | **str** | Target name | 
 **new_name** | **str** | New target name | [optional] 
-**password** | **str** | Privileged user password | 
+**parent_target_name** | **str** | Name of the parent target, relevant only when connection-type is parent-target | [optional] 
+**password** | **str** | Privileged user password | [default to 'dummy_value']
 **port** | **str** | Server WinRM port | [optional] [default to '5986']
 **token** | **str** | Authentication token (see &#x60;/auth&#x60; and &#x60;/configure&#x60;) | [optional] 
 **uid_token** | **str** | The universal identity token, Required only for universal_identity authentication | [optional] 
 **use_tls** | **str** | Enable/Disable TLS for WinRM over HTTPS [true/false] | [optional] [default to 'true']
-**username** | **str** | Privileged username | 
+**username** | **str** | Privileged username | [default to 'dummy_value']
 
 ## Example
 

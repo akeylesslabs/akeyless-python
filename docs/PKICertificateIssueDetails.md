@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **allow_subdomains** | **bool** |  | [optional] 
 **allowed_domains_list** | **List[str]** |  | [optional] 
 **allowed_extra_extensions** | **Dict[str, List[str]]** |  | [optional] 
+**allowed_ip_sans** | **List[str]** |  | [optional] 
 **allowed_uri_sans** | **List[str]** |  | [optional] 
 **auto_renew_certificate** | **bool** |  | [optional] 
 **basic_constraints_valid_for_non_ca** | **bool** |  | [optional] 

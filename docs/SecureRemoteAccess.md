@@ -22,6 +22,7 @@ Name | Type | Description | Notes
 **enable** | **bool** |  | [optional] 
 **endpoint** | **str** |  | [optional] 
 **enforce_hosts_restriction** | **bool** |  | [optional] 
+**gw_cluster_id** | **int** |  | [optional] 
 **host** | **List[str]** |  | [optional] 
 **host_provider_type** | **str** |  | [optional] 
 **is_cli** | **bool** |  | [optional] 

@@ -93,6 +93,7 @@ akeyless/models/batch_encryption_request_line.py
 akeyless/models/batch_encryption_response_line.py
 akeyless/models/batch_tokenization_request_line.py
 akeyless/models/batch_tokenization_response_line.py
+akeyless/models/ca_certificates_config_part.py
 akeyless/models/cache_config_part.py
 akeyless/models/calc_password_security_info.py
 akeyless/models/cert_access_rules.py
@@ -101,6 +102,7 @@ akeyless/models/certificate_chain_info.py
 akeyless/models/certificate_expiration_event.py
 akeyless/models/certificate_info.py
 akeyless/models/certificate_issue_info.py
+akeyless/models/certificate_store.py
 akeyless/models/certificate_template_info.py
 akeyless/models/certificate_version_info.py
 akeyless/models/cf_config_part.py
@@ -249,6 +251,7 @@ akeyless/models/decrypt_pkcs1_output.py
 akeyless/models/decrypt_with_classic_key.py
 akeyless/models/decrypt_with_classic_key_output.py
 akeyless/models/default_config_part.py
+akeyless/models/default_home_page.py
 akeyless/models/delete_auth_method.py
 akeyless/models/delete_auth_method_output.py
 akeyless/models/delete_auth_methods.py
@@ -1183,6 +1186,7 @@ docs/BatchEncryptionResponseLine.md
 docs/BatchTokenizationRequestLine.md
 docs/BatchTokenizationResponseLine.md
 docs/CFConfigPart.md
+docs/CaCertificatesConfigPart.md
 docs/CacheConfigPart.md
 docs/CalcPasswordSecurityInfo.md
 docs/CertAccessRules.md
@@ -1191,6 +1195,7 @@ docs/CertificateChainInfo.md
 docs/CertificateExpirationEvent.md
 docs/CertificateInfo.md
 docs/CertificateIssueInfo.md
+docs/CertificateStore.md
 docs/CertificateTemplateInfo.md
 docs/CertificateVersionInfo.md
 docs/CfInfo.md
@@ -1339,6 +1344,7 @@ docs/DecryptPKCS1Output.md
 docs/DecryptWithClassicKey.md
 docs/DecryptWithClassicKeyOutput.md
 docs/DefaultConfigPart.md
+docs/DefaultHomePage.md
 docs/DeleteAuthMethod.md
 docs/DeleteAuthMethodOutput.md
 docs/DeleteAuthMethods.md
@@ -2195,4 +2201,7 @@ setup.cfg
 setup.py
 test-requirements.txt
 test/__init__.py
+test/test_ca_certificates_config_part.py
+test/test_certificate_store.py
+test/test_default_home_page.py
 tox.ini

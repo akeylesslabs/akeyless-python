@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "akeyless"
-version = "5.0.0"
+version = "5.0.1"
 description = "Akeyless API"
 authors = ["Akeyless <support@akeyless.io>"]
 license = "NoLicense"

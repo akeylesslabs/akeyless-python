@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **allowed_gateways_ips** | [**AllowedIpSettings**](AllowedIpSettings.md) |  | [optional] 
 **auth_usage_event** | [**UsageEventSetting**](UsageEventSetting.md) |  | [optional] 
 **data_protection_section** | [**DataProtectionSection**](DataProtectionSection.md) |  | [optional] 
+**default_home_page** | [**DefaultHomePage**](DefaultHomePage.md) |  | [optional] 
 **dynamic_secret_max_ttl** | [**DynamicSecretMaxTtl**](DynamicSecretMaxTtl.md) |  | [optional] 
 **enable_request_for_access** | **bool** |  | [optional] 
 **invalid_characters** | **str** | InvalidCharacters is the invalid characters for items/targets/roles/auths/notifier_forwarder naming convention | [optional] 

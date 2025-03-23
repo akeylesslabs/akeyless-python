@@ -9,6 +9,8 @@ Name | Type | Description | Notes
 **allowed_access_ids** | **List[str]** |  | [optional] 
 **allowed_urls** | **List[str]** |  | [optional] 
 **allowed_urls_per_instance** | **Dict[str, List[str]]** |  | [optional] 
+**bastion_ssh_port** | **int** |  | [optional] 
+**bastion_urls_per_type** | **Dict[str, str]** |  | [optional] 
 **cluster_name** | **str** |  | [optional] 
 **display_name** | **str** |  | [optional] 
 **has_gateway_identity** | **bool** |  | [optional] 
