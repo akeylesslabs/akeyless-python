@@ -1,13 +1,11 @@
 # GatewayCreateProducerNativeK8S
 
 gatewayCreateProducerNativeK8S is a command that creates k8s producer [Deprecated: Use dynamic-secret-create-k8s command]
-
 ## Properties
-
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **delete_protection** | **str** | Protection from accidental deletion of this object [true/false] | [optional] 
-**var_json** | **bool** | Set output format to JSON | [optional] [default to False]
+**json** | **bool** | Set output format to JSON | [optional] [default to False]
 **k8s_allowed_namespaces** | **str** | Comma-separated list of allowed K8S namespaces for the generated ServiceAccount (relevant only for k8s-service-account-type&#x3D;dynamic) | [optional] 
 **k8s_cluster_ca_cert** | **str** | K8S cluster CA certificate | [optional] 
 **k8s_cluster_endpoint** | **str** | K8S cluster URL endpoint | [optional] 
@@ -31,30 +29,13 @@ Name | Type | Description | Notes
 **secure_access_web** | **bool** | Enable Web Secure Remote Access | [optional] [default to False]
 **secure_access_web_browsing** | **bool** | Secure browser via Akeyless&#39;s Secure Remote Access (SRA) | [optional] [default to False]
 **secure_access_web_proxy** | **bool** | Web-Proxy via Akeyless&#39;s Secure Remote Access (SRA) | [optional] [default to False]
-**tags** | **List[str]** | Add tags attached to this object | [optional] 
+**tags** | **list[str]** | Add tags attached to this object | [optional] 
 **target_name** | **str** | Target name | [optional] 
 **token** | **str** | Authentication token (see &#x60;/auth&#x60; and &#x60;/configure&#x60;) | [optional] 
 **uid_token** | **str** | The universal identity token, Required only for universal_identity authentication | [optional] 
 **use_gw_service_account** | **bool** | Use the GW&#39;s service account | [optional] 
 **user_ttl** | **str** | User TTL | [optional] [default to '60m']
 
-## Example
-
-```python
-from akeyless.models.gateway_create_producer_native_k8_s import GatewayCreateProducerNativeK8S
-
-# TODO update the JSON string below
-json = "{}"
-# create an instance of GatewayCreateProducerNativeK8S from a JSON string
-gateway_create_producer_native_k8_s_instance = GatewayCreateProducerNativeK8S.from_json(json)
-# print the JSON string representation of the object
-print(GatewayCreateProducerNativeK8S.to_json())
-
-# convert the object into a dict
-gateway_create_producer_native_k8_s_dict = gateway_create_producer_native_k8_s_instance.to_dict()
-# create an instance of GatewayCreateProducerNativeK8S from a dict
-gateway_create_producer_native_k8_s_from_dict = GatewayCreateProducerNativeK8S.from_dict(gateway_create_producer_native_k8_s_dict)
-```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
 

@@ -1,8 +1,6 @@
 # TargetUpdateDB
 
-
 ## Properties
-
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **azure_client_id** | **str** | (Optional) Client id (relevant for \&quot;cloud-service-provider\&quot; only) | [optional] 
@@ -18,7 +16,7 @@ Name | Type | Description | Notes
 **db_type** | **str** |  | 
 **description** | **str** | Description of the object | [optional] 
 **host** | **str** |  | [optional] 
-**var_json** | **bool** | Set output format to JSON | [optional] [default to False]
+**json** | **bool** | Set output format to JSON | [optional] [default to False]
 **keep_prev_version** | **str** | Whether to keep previous version [true/false]. If not set, use default according to account settings | [optional] 
 **key** | **str** | The name of a key that used to encrypt the target secret value (if empty, the account default protectionKey key will be used) | [optional] 
 **max_versions** | **str** | Set the maximum number of versions, limited by the account settings defaults. | [optional] 
@@ -46,23 +44,6 @@ Name | Type | Description | Notes
 **uid_token** | **str** | The universal identity token, Required only for universal_identity authentication | [optional] 
 **user_name** | **str** |  | [optional] 
 
-## Example
-
-```python
-from akeyless.models.target_update_db import TargetUpdateDB
-
-# TODO update the JSON string below
-json = "{}"
-# create an instance of TargetUpdateDB from a JSON string
-target_update_db_instance = TargetUpdateDB.from_json(json)
-# print the JSON string representation of the object
-print(TargetUpdateDB.to_json())
-
-# convert the object into a dict
-target_update_db_dict = target_update_db_instance.to_dict()
-# create an instance of TargetUpdateDB from a dict
-target_update_db_from_dict = TargetUpdateDB.from_dict(target_update_db_dict)
-```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
 

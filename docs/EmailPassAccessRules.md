@@ -1,8 +1,6 @@
 # EmailPassAccessRules
 
-
 ## Properties
-
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **alg** | **str** |  | [optional] 
@@ -12,23 +10,6 @@ Name | Type | Description | Notes
 **last_reset_password** | **datetime** | The last password change date | [optional] 
 **mfa_type** | **str** |  | [optional] 
 
-## Example
-
-```python
-from akeyless.models.email_pass_access_rules import EmailPassAccessRules
-
-# TODO update the JSON string below
-json = "{}"
-# create an instance of EmailPassAccessRules from a JSON string
-email_pass_access_rules_instance = EmailPassAccessRules.from_json(json)
-# print the JSON string representation of the object
-print(EmailPassAccessRules.to_json())
-
-# convert the object into a dict
-email_pass_access_rules_dict = email_pass_access_rules_instance.to_dict()
-# create an instance of EmailPassAccessRules from a dict
-email_pass_access_rules_from_dict = EmailPassAccessRules.from_dict(email_pass_access_rules_dict)
-```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
 

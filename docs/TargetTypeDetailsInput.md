@@ -1,8 +1,6 @@
 # TargetTypeDetailsInput
 
-
 ## Properties
-
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **artifactory_target_details** | [**ArtifactoryTargetDetails**](ArtifactoryTargetDetails.md) |  | [optional] 
@@ -35,23 +33,6 @@ Name | Type | Description | Notes
 **windows_target_details** | [**WindowsTargetDetails**](WindowsTargetDetails.md) |  | [optional] 
 **zerossl_target_details** | [**ZeroSSLTargetDetails**](ZeroSSLTargetDetails.md) |  | [optional] 
 
-## Example
-
-```python
-from akeyless.models.target_type_details_input import TargetTypeDetailsInput
-
-# TODO update the JSON string below
-json = "{}"
-# create an instance of TargetTypeDetailsInput from a JSON string
-target_type_details_input_instance = TargetTypeDetailsInput.from_json(json)
-# print the JSON string representation of the object
-print(TargetTypeDetailsInput.to_json())
-
-# convert the object into a dict
-target_type_details_input_dict = target_type_details_input_instance.to_dict()
-# create an instance of TargetTypeDetailsInput from a dict
-target_type_details_input_from_dict = TargetTypeDetailsInput.from_dict(target_type_details_input_dict)
-```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
 

@@ -1,8 +1,6 @@
 # Auth
 
-
 ## Properties
-
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **access_id** | **str** | Access ID | [optional] 
@@ -18,7 +16,7 @@ Name | Type | Description | Notes
 **gateway_spn** | **str** | The service principal name of the gateway as registered in LDAP (i.e., HTTP/gateway) | [optional] 
 **gateway_url** | **str** | Gateway URL relevant only for access-type&#x3D;k8s/oauth2/saml/oidc | [optional] 
 **gcp_audience** | **str** | GCP JWT audience | [optional] [default to 'akeyless.io']
-**var_json** | **bool** | Set output format to JSON | [optional] [default to False]
+**json** | **bool** | Set output format to JSON | [optional] [default to False]
 **jwt** | **str** | The Json Web Token (relevant only for access-type&#x3D;jwt/oidc) | [optional] 
 **k8s_auth_config_name** | **str** | The K8S Auth config name (relevant only for access-type&#x3D;k8s) | [optional] 
 **k8s_service_account_token** | **str** | The K8S service account token. (relevant only for access-type&#x3D;k8s) | [optional] 
@@ -29,29 +27,12 @@ Name | Type | Description | Notes
 **krb5_conf_data** | **str** | Base64-encoded content of a valid krb5.conf file, specifying the settings and parameters required for Kerberos authentication. | [optional] 
 **ldap_password** | **str** | LDAP password (relevant only for access-type&#x3D;ldap) | [optional] 
 **oci_auth_type** | **str** | The type of the OCI configuration to use [instance/apikey/resource] (relevant only for access-type&#x3D;oci) | [optional] [default to 'apikey']
-**oci_group_ocid** | **List[str]** | A list of Oracle Cloud IDs groups (relevant only for access-type&#x3D;oci) | [optional] 
+**oci_group_ocid** | **list[str]** | A list of Oracle Cloud IDs groups (relevant only for access-type&#x3D;oci) | [optional] 
 **otp** | **str** |  | [optional] 
 **uid_token** | **str** | The universal_identity token (relevant only for access-type&#x3D;universal_identity) | [optional] 
 **use_remote_browser** | **bool** | Returns a link to complete the authentication remotely (relevant only for access-type&#x3D;saml/oidc) | [optional] 
 **username** | **str** | LDAP username (relevant only for access-type&#x3D;ldap) | [optional] 
 
-## Example
-
-```python
-from akeyless.models.auth import Auth
-
-# TODO update the JSON string below
-json = "{}"
-# create an instance of Auth from a JSON string
-auth_instance = Auth.from_json(json)
-# print the JSON string representation of the object
-print(Auth.to_json())
-
-# convert the object into a dict
-auth_dict = auth_instance.to_dict()
-# create an instance of Auth from a dict
-auth_from_dict = Auth.from_dict(auth_dict)
-```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
 

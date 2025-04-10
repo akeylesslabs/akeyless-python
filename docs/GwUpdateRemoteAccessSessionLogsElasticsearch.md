@@ -1,9 +1,7 @@
 # GwUpdateRemoteAccessSessionLogsElasticsearch
 
 gwUpdateRemoteAccessSessionLogsElasticsearch is a command that updates session log forwarding config (elasticsearch target)
-
 ## Properties
-
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **api_key** | **str** | Elasticsearch api key relevant only for api_key auth-type | [optional] 
@@ -12,7 +10,7 @@ Name | Type | Description | Notes
 **enable** | **str** | Enable Log Forwarding [true/false] | [optional] [default to 'true']
 **enable_tls** | **bool** | Enable tls | [optional] 
 **index** | **str** | Elasticsearch index | [optional] 
-**var_json** | **bool** | Set output format to JSON | [optional] [default to False]
+**json** | **bool** | Set output format to JSON | [optional] [default to False]
 **nodes** | **str** | Elasticsearch nodes relevant only for nodes server-type | [optional] 
 **output_format** | **str** | Logs format [text/json] | [optional] [default to 'text']
 **password** | **str** | Elasticsearch password relevant only for password auth-type | [optional] 
@@ -23,23 +21,6 @@ Name | Type | Description | Notes
 **uid_token** | **str** | The universal identity token, Required only for universal_identity authentication | [optional] 
 **user_name** | **str** | Elasticsearch user name relevant only for password auth-type | [optional] 
 
-## Example
-
-```python
-from akeyless.models.gw_update_remote_access_session_logs_elasticsearch import GwUpdateRemoteAccessSessionLogsElasticsearch
-
-# TODO update the JSON string below
-json = "{}"
-# create an instance of GwUpdateRemoteAccessSessionLogsElasticsearch from a JSON string
-gw_update_remote_access_session_logs_elasticsearch_instance = GwUpdateRemoteAccessSessionLogsElasticsearch.from_json(json)
-# print the JSON string representation of the object
-print(GwUpdateRemoteAccessSessionLogsElasticsearch.to_json())
-
-# convert the object into a dict
-gw_update_remote_access_session_logs_elasticsearch_dict = gw_update_remote_access_session_logs_elasticsearch_instance.to_dict()
-# create an instance of GwUpdateRemoteAccessSessionLogsElasticsearch from a dict
-gw_update_remote_access_session_logs_elasticsearch_from_dict = GwUpdateRemoteAccessSessionLogsElasticsearch.from_dict(gw_update_remote_access_session_logs_elasticsearch_dict)
-```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
 

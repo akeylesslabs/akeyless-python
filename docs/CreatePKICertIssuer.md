@@ -1,8 +1,6 @@
 # CreatePKICertIssuer
 
-
 ## Properties
-
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **allow_any_name** | **bool** | If set, clients can request certificates for any CN | [optional] 
@@ -24,10 +22,10 @@ Name | Type | Description | Notes
 **description** | **str** | Description of the object | [optional] 
 **destination_path** | **str** | A path in which to save generated certificates | [optional] 
 **enable_acme** | **bool** | If set, the cert issuer will support the acme protocol | [optional] 
-**expiration_event_in** | **List[str]** | How many days before the expiration of the certificate would you like to be notified. | [optional] 
+**expiration_event_in** | **list[str]** | How many days before the expiration of the certificate would you like to be notified. | [optional] 
 **gw_cluster_url** | **str** | The GW cluster URL to issue the certificate from. Required in Public CA mode, to allow CRLs on private CA, or to enable ACME | [optional] 
 **is_ca** | **bool** | If set, the basic constraints extension will be added to certificate | [optional] 
-**var_json** | **bool** | Set output format to JSON | [optional] [default to False]
+**json** | **bool** | Set output format to JSON | [optional] [default to False]
 **key_usage** | **str** | key-usage | [optional] [default to 'DigitalSignature,KeyAgreement,KeyEncipherment']
 **locality** | **str** | A comma-separated list of localities that will be set in the issued certificate | [optional] 
 **max_path_len** | **int** | The maximum path length for the generated certificate. -1, means unlimited | [optional] [default to -1]
@@ -44,28 +42,11 @@ Name | Type | Description | Notes
 **server_flag** | **bool** | If set, certificates will be flagged for server auth use | [optional] 
 **signer_key_name** | **str** | A key to sign the certificate with, required in Private CA mode | [optional] 
 **street_address** | **str** | A comma-separated list of street addresses that will be set in the issued certificate | [optional] 
-**tag** | **List[str]** | List of the tags attached to this key | [optional] 
+**tag** | **list[str]** | List of the tags attached to this key | [optional] 
 **token** | **str** | Authentication token (see &#x60;/auth&#x60; and &#x60;/configure&#x60;) | [optional] 
 **ttl** | **str** | The maximum requested Time To Live for issued certificates, in seconds. In case of Public CA, this is based on the CA target&#39;s supported maximum TTLs | 
 **uid_token** | **str** | The universal identity token, Required only for universal_identity authentication | [optional] 
 
-## Example
-
-```python
-from akeyless.models.create_pki_cert_issuer import CreatePKICertIssuer
-
-# TODO update the JSON string below
-json = "{}"
-# create an instance of CreatePKICertIssuer from a JSON string
-create_pki_cert_issuer_instance = CreatePKICertIssuer.from_json(json)
-# print the JSON string representation of the object
-print(CreatePKICertIssuer.to_json())
-
-# convert the object into a dict
-create_pki_cert_issuer_dict = create_pki_cert_issuer_instance.to_dict()
-# create an instance of CreatePKICertIssuer from a dict
-create_pki_cert_issuer_from_dict = CreatePKICertIssuer.from_dict(create_pki_cert_issuer_dict)
-```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
 

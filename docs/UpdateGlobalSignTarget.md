@@ -1,9 +1,7 @@
 # UpdateGlobalSignTarget
 
 updateGlobalSignTarget is a command that updates an existing target. [Deprecated: Use target-update-globalsign command]
-
 ## Properties
-
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **comment** | **str** | Deprecated - use description | [optional] 
@@ -12,7 +10,7 @@ Name | Type | Description | Notes
 **contact_last_name** | **str** | Last name of the GlobalSign GCC account contact | 
 **contact_phone** | **str** | Telephone of the GlobalSign GCC account contact | 
 **description** | **str** | Description of the object | [optional] 
-**var_json** | **bool** | Set output format to JSON | [optional] [default to False]
+**json** | **bool** | Set output format to JSON | [optional] [default to False]
 **keep_prev_version** | **str** | Whether to keep previous version [true/false]. If not set, use default according to account settings | [optional] 
 **key** | **str** | The name of a key that used to encrypt the target secret value (if empty, the account default protectionKey key will be used) | [optional] 
 **max_versions** | **str** | Set the maximum number of versions, limited by the account settings defaults. | [optional] 
@@ -26,23 +24,6 @@ Name | Type | Description | Notes
 **update_version** | **bool** | Deprecated | [optional] 
 **username** | **str** | Username of the GlobalSign GCC account | 
 
-## Example
-
-```python
-from akeyless.models.update_global_sign_target import UpdateGlobalSignTarget
-
-# TODO update the JSON string below
-json = "{}"
-# create an instance of UpdateGlobalSignTarget from a JSON string
-update_global_sign_target_instance = UpdateGlobalSignTarget.from_json(json)
-# print the JSON string representation of the object
-print(UpdateGlobalSignTarget.to_json())
-
-# convert the object into a dict
-update_global_sign_target_dict = update_global_sign_target_instance.to_dict()
-# create an instance of UpdateGlobalSignTarget from a dict
-update_global_sign_target_from_dict = UpdateGlobalSignTarget.from_dict(update_global_sign_target_dict)
-```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
 

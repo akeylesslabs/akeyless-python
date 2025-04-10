@@ -1,8 +1,6 @@
 # SraSessionEntryOut
 
-
 ## Properties
-
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **access_id** | **str** |  | [optional] 
@@ -21,23 +19,6 @@ Name | Type | Description | Notes
 **ttl** | **str** |  | [optional] 
 **user_identifier** | **str** |  | [optional] 
 
-## Example
-
-```python
-from akeyless.models.sra_session_entry_out import SraSessionEntryOut
-
-# TODO update the JSON string below
-json = "{}"
-# create an instance of SraSessionEntryOut from a JSON string
-sra_session_entry_out_instance = SraSessionEntryOut.from_json(json)
-# print the JSON string representation of the object
-print(SraSessionEntryOut.to_json())
-
-# convert the object into a dict
-sra_session_entry_out_dict = sra_session_entry_out_instance.to_dict()
-# create an instance of SraSessionEntryOut from a dict
-sra_session_entry_out_from_dict = SraSessionEntryOut.from_dict(sra_session_entry_out_dict)
-```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
 

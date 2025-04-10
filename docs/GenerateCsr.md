@@ -1,8 +1,6 @@
 # GenerateCsr
 
-
 ## Properties
-
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **alg** | **str** |  | [optional] 
@@ -17,7 +15,7 @@ Name | Type | Description | Notes
 **export_private_key** | **bool** | The flag to indicate if the private key should be exported | [optional] [default to False]
 **generate_key** | **bool** | Generate a new classic key for the csr | [optional] 
 **ip_addresses** | **str** | A comma-separated list of ip addresses alternative names | [optional] 
-**var_json** | **bool** | Set output format to JSON | [optional] [default to False]
+**json** | **bool** | Set output format to JSON | [optional] [default to False]
 **key_type** | **str** | The type of the key to generate (classic-key/dfc) | [default to 'classic-key']
 **name** | **str** | The key name | 
 **org** | **str** | The organization to be included in the CSR certificate | [optional] 
@@ -27,23 +25,6 @@ Name | Type | Description | Notes
 **uid_token** | **str** | The universal identity token, Required only for universal_identity authentication | [optional] 
 **uri_sans** | **str** | A comma-separated list of uri alternative names | [optional] 
 
-## Example
-
-```python
-from akeyless.models.generate_csr import GenerateCsr
-
-# TODO update the JSON string below
-json = "{}"
-# create an instance of GenerateCsr from a JSON string
-generate_csr_instance = GenerateCsr.from_json(json)
-# print the JSON string representation of the object
-print(GenerateCsr.to_json())
-
-# convert the object into a dict
-generate_csr_dict = generate_csr_instance.to_dict()
-# create an instance of GenerateCsr from a dict
-generate_csr_from_dict = GenerateCsr.from_dict(generate_csr_dict)
-```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
 

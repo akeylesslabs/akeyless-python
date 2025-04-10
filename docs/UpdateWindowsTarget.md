@@ -1,9 +1,7 @@
 # UpdateWindowsTarget
 
 updateWindowsTarget is a command that updates an existing windows target. [Deprecated: Use target-update-windows command]
-
 ## Properties
-
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **certificate** | **str** | SSL CA certificate in base64 encoding generated from a trusted Certificate Authority (CA) | [optional] 
@@ -11,7 +9,7 @@ Name | Type | Description | Notes
 **description** | **str** | Description of the object | [optional] 
 **domain** | **str** | User domain name | [optional] 
 **hostname** | **str** | Server hostname | 
-**var_json** | **bool** | Set output format to JSON | [optional] [default to False]
+**json** | **bool** | Set output format to JSON | [optional] [default to False]
 **keep_prev_version** | **str** | Whether to keep previous version [true/false]. If not set, use default according to account settings | [optional] 
 **key** | **str** | The name of a key that used to encrypt the target secret value (if empty, the account default protectionKey key will be used) | [optional] 
 **max_versions** | **str** | Set the maximum number of versions, limited by the account settings defaults. | [optional] 
@@ -26,23 +24,6 @@ Name | Type | Description | Notes
 **use_tls** | **str** | Enable/Disable TLS for WinRM over HTTPS [true/false] | [optional] [default to 'true']
 **username** | **str** | Privileged username | [default to 'dummy_value']
 
-## Example
-
-```python
-from akeyless.models.update_windows_target import UpdateWindowsTarget
-
-# TODO update the JSON string below
-json = "{}"
-# create an instance of UpdateWindowsTarget from a JSON string
-update_windows_target_instance = UpdateWindowsTarget.from_json(json)
-# print the JSON string representation of the object
-print(UpdateWindowsTarget.to_json())
-
-# convert the object into a dict
-update_windows_target_dict = update_windows_target_instance.to_dict()
-# create an instance of UpdateWindowsTarget from a dict
-update_windows_target_from_dict = UpdateWindowsTarget.from_dict(update_windows_target_dict)
-```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
 

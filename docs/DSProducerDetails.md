@@ -1,12 +1,10 @@
 # DSProducerDetails
 
-
 ## Properties
-
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **access_token_manager_id** | **str** |  | [optional] 
-**acl_rules** | **List[str]** |  | [optional] 
+**acl_rules** | **list[str]** |  | [optional] 
 **active** | **bool** |  | [optional] 
 **admin_name** | **str** |  | [optional] 
 **admin_pwd** | **str** |  | [optional] 
@@ -92,7 +90,7 @@ Name | Type | Description | Notes
 **failure_message** | **str** |  | [optional] 
 **fixed_user_only** | **str** |  | [optional] 
 **gcp_key_algo** | **str** |  | [optional] 
-**gcp_role_bindings** | **Dict[str, List[str]]** |  | [optional] 
+**gcp_role_bindings** | **dict(str, list[str])** |  | [optional] 
 **gcp_service_account_email** | **str** | GCPServiceAccountEmail overrides the deprecated field from the target | [optional] 
 **gcp_service_account_key** | **str** |  | [optional] 
 **gcp_service_account_key_base64** | **str** |  | [optional] 
@@ -106,9 +104,9 @@ Name | Type | Description | Notes
 **github_app_private_key** | **str** |  | [optional] 
 **github_base_url** | **str** |  | [optional] 
 **github_installation_id** | **int** |  | [optional] 
-**github_installation_token_permissions** | **Dict[str, str]** |  | [optional] 
-**github_installation_token_repositories** | **List[str]** |  | [optional] 
-**github_installation_token_repositories_ids** | **List[int]** |  | [optional] 
+**github_installation_token_permissions** | **dict(str, str)** |  | [optional] 
+**github_installation_token_repositories** | **list[str]** |  | [optional] 
+**github_installation_token_repositories_ids** | **list[int]** |  | [optional] 
 **github_organization_name** | **str** |  | [optional] 
 **github_repository_path** | **str** |  | [optional] 
 **gitlab_access_token** | **str** |  | [optional] 
@@ -117,7 +115,7 @@ Name | Type | Description | Notes
 **gitlab_group_name** | **str** |  | [optional] 
 **gitlab_project_name** | **str** |  | [optional] 
 **gitlab_role** | **str** |  | [optional] 
-**gitlab_token_scope** | **List[str]** |  | [optional] 
+**gitlab_token_scope** | **list[str]** |  | [optional] 
 **gitlab_url** | **str** |  | [optional] 
 **gke_cluster_ca_certificate** | **str** |  | [optional] 
 **gke_cluster_endpoint** | **str** |  | [optional] 
@@ -131,7 +129,7 @@ Name | Type | Description | Notes
 **google_workspace_group_role** | **str** |  | [optional] 
 **google_workspace_role_name** | **str** |  | [optional] 
 **google_workspace_role_scope** | **str** |  | [optional] 
-**grant_types** | **List[str]** |  | [optional] 
+**grant_types** | **list[str]** |  | [optional] 
 **groups** | **str** |  | [optional] 
 **hanadb_creation_statements** | **str** |  | [optional] 
 **hanadb_revocation_statements** | **str** |  | [optional] 
@@ -140,7 +138,7 @@ Name | Type | Description | Notes
 **implementation_type** | **str** |  | [optional] 
 **is_fixed_user** | **str** |  | [optional] 
 **issuer** | **str** | relevant for CLIENT_TLS_CERTIFICATE client authentication type | [optional] 
-**item_targets_assoc** | [**List[ItemTargetAssociation]**](ItemTargetAssociation.md) |  | [optional] 
+**item_targets_assoc** | [**list[ItemTargetAssociation]**](ItemTargetAssociation.md) |  | [optional] 
 **jwks** | **str** |  | [optional] 
 **jwks_url** | **str** |  | [optional] 
 **k8s_allowed_namespaces** | **str** | comma-separated list of allowed namespaces. Can hold just * which signifies that any namespace is allowed | [optional] 
@@ -152,7 +150,7 @@ Name | Type | Description | Notes
 **k8s_cluster_endpoint** | **str** |  | [optional] 
 **k8s_cluster_name** | **str** |  | [optional] 
 **k8s_dynamic_mode** | **bool** | when native k8s is in dynamic mode, user can define allowed namespaces, K8sServiceAccount doesn&#39;t exist from the start and will only be created at time of getting dynamic secret value By default dynamic mode is false and producer behaves like it did before | [optional] 
-**k8s_multiple_doc_yaml_temp_definition** | **List[int]** | Yaml definition for creation of temporary objects. Field that can hold multiple docs from which following will be extracted: ServiceAccount, Role/ClusterRole and RoleBinding/ClusterRoleBinding. If ServiceAccount not specified - it will be generated automatically | [optional] 
+**k8s_multiple_doc_yaml_temp_definition** | **list[int]** | Yaml definition for creation of temporary objects. Field that can hold multiple docs from which following will be extracted: ServiceAccount, Role/ClusterRole and RoleBinding/ClusterRoleBinding. If ServiceAccount not specified - it will be generated automatically | [optional] 
 **k8s_namespace** | **str** |  | [optional] 
 **k8s_role_name** | **str** | Name of the pre-existing Role or ClusterRole to bind a generated service account to. | [optional] 
 **k8s_role_type** | **str** |  | [optional] 
@@ -207,12 +205,12 @@ Name | Type | Description | Notes
 **rabbitmq_user_vhost** | **str** |  | [optional] 
 **rabbitmq_user_write_permission** | **str** |  | [optional] 
 **rdp_fixed_user_name_sub_claim_key** | **str** |  | [optional] 
-**redirect_uris** | **List[str]** |  | [optional] 
+**redirect_uris** | **list[str]** |  | [optional] 
 **redshift_creation_statements** | **str** |  | [optional] 
-**restricted_scopes** | **List[str]** |  | [optional] 
+**restricted_scopes** | **list[str]** |  | [optional] 
 **revoke_sync_url** | **str** |  | [optional] 
 **rotate_sync_url** | **str** |  | [optional] 
-**scopes** | **List[str]** |  | [optional] 
+**scopes** | **list[str]** |  | [optional] 
 **secure_remote_access_details** | [**SecureRemoteAccess**](SecureRemoteAccess.md) |  | [optional] 
 **session_extension_warn_interval_min** | **int** |  | [optional] 
 **sf_account** | **str** |  | [optional] 
@@ -223,7 +221,7 @@ Name | Type | Description | Notes
 **ssl_connection_certificate** | **str** | (Optional) SSLConnectionCertificate defines the certificate for SSL connection. Must be base64 certificate loaded by UI using file loader field | [optional] 
 **ssl_connection_mode** | **bool** | (Optional) SSLConnectionMode defines if SSL mode will be used to connect to DB | [optional] 
 **subject_dn** | **str** |  | [optional] 
-**tags** | **List[str]** |  | [optional] 
+**tags** | **list[str]** |  | [optional] 
 **timeout_seconds** | **int** |  | [optional] 
 **use_gw_cloud_identity** | **bool** |  | [optional] 
 **use_gw_service_account** | **bool** |  | [optional] 
@@ -234,7 +232,7 @@ Name | Type | Description | Notes
 **username_length** | **int** |  | [optional] 
 **username_policy** | **str** |  | [optional] 
 **venafi_allow_subdomains** | **bool** |  | [optional] 
-**venafi_allowed_domains** | **List[str]** |  | [optional] 
+**venafi_allowed_domains** | **list[str]** |  | [optional] 
 **venafi_api_key** | **str** |  | [optional] 
 **venafi_auto_generated_folder** | **str** |  | [optional] 
 **venafi_base_url** | **str** |  | [optional] 
@@ -251,23 +249,6 @@ Name | Type | Description | Notes
 **venafi_zone** | **str** |  | [optional] 
 **warn_before_user_expiration_min** | **int** |  | [optional] 
 
-## Example
-
-```python
-from akeyless.models.ds_producer_details import DSProducerDetails
-
-# TODO update the JSON string below
-json = "{}"
-# create an instance of DSProducerDetails from a JSON string
-ds_producer_details_instance = DSProducerDetails.from_json(json)
-# print the JSON string representation of the object
-print(DSProducerDetails.to_json())
-
-# convert the object into a dict
-ds_producer_details_dict = ds_producer_details_instance.to_dict()
-# create an instance of DSProducerDetails from a dict
-ds_producer_details_from_dict = DSProducerDetails.from_dict(ds_producer_details_dict)
-```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
 

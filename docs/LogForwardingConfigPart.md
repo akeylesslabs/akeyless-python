@@ -1,8 +1,6 @@
 # LogForwardingConfigPart
 
-
 ## Properties
-
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **aws_s3_config** | [**AwsS3LogForwardingConfig**](AwsS3LogForwardingConfig.md) |  | [optional] 
@@ -21,23 +19,6 @@ Name | Type | Description | Notes
 **syslog_config** | [**SyslogLogForwardingConfig**](SyslogLogForwardingConfig.md) |  | [optional] 
 **target_log_type** | **str** |  | [optional] 
 
-## Example
-
-```python
-from akeyless.models.log_forwarding_config_part import LogForwardingConfigPart
-
-# TODO update the JSON string below
-json = "{}"
-# create an instance of LogForwardingConfigPart from a JSON string
-log_forwarding_config_part_instance = LogForwardingConfigPart.from_json(json)
-# print the JSON string representation of the object
-print(LogForwardingConfigPart.to_json())
-
-# convert the object into a dict
-log_forwarding_config_part_dict = log_forwarding_config_part_instance.to_dict()
-# create an instance of LogForwardingConfigPart from a dict
-log_forwarding_config_part_from_dict = LogForwardingConfigPart.from_dict(log_forwarding_config_part_dict)
-```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
 

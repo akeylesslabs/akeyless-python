@@ -1,11 +1,9 @@
 # UpdatePKICertIssuer
 
-
 ## Properties
-
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**add_tag** | **List[str]** | List of the new tags that will be attached to this item | [optional] 
+**add_tag** | **list[str]** | List of the new tags that will be attached to this item | [optional] 
 **allow_any_name** | **bool** | If set, clients can request certificates for any CN | [optional] 
 **allow_copy_ext_from_csr** | **bool** | If set, will allow copying the extra extensions from the csr file (if given) | [optional] 
 **allow_subdomains** | **bool** | If set, clients can request certificates for subdomains and wildcard subdomains of the allowed domains | [optional] 
@@ -24,10 +22,10 @@ Name | Type | Description | Notes
 **description** | **str** | Description of the object | [optional] 
 **destination_path** | **str** | A path in which to save generated certificates | [optional] 
 **enable_acme** | **bool** | If set, the cert issuer will support the acme protocol | [optional] 
-**expiration_event_in** | **List[str]** | How many days before the expiration of the certificate would you like to be notified. | [optional] 
+**expiration_event_in** | **list[str]** | How many days before the expiration of the certificate would you like to be notified. | [optional] 
 **gw_cluster_url** | **str** | The GW cluster URL to issue the certificate from. Required in Public CA mode, to allow CRLs on private CA, or to enable ACME | [optional] 
 **is_ca** | **bool** | If set, the basic constraints extension will be added to certificate | [optional] 
-**var_json** | **bool** | Set output format to JSON | [optional] [default to False]
+**json** | **bool** | Set output format to JSON | [optional] [default to False]
 **key_usage** | **str** | key-usage | [optional] [default to 'DigitalSignature,KeyAgreement,KeyEncipherment']
 **locality** | **str** | A comma-separated list of localities that will be set in the issued certificate | [optional] 
 **max_path_len** | **int** | The maximum path length for the generated certificate. -1, means unlimited | [optional] [default to -1]
@@ -41,7 +39,7 @@ Name | Type | Description | Notes
 **postal_code** | **str** | A comma-separated list of postal codes that will be set in the issued certificate | [optional] 
 **protect_certificates** | **bool** | Whether to protect generated certificates from deletion | [optional] 
 **province** | **str** | A comma-separated list of provinces that will be set in the issued certificate | [optional] 
-**rm_tag** | **List[str]** | List of the existent tags that will be removed from this item | [optional] 
+**rm_tag** | **list[str]** | List of the existent tags that will be removed from this item | [optional] 
 **scheduled_renew** | **int** | Number of days before expiration to renew certificates | [optional] 
 **server_flag** | **bool** | If set, certificates will be flagged for server auth use | [optional] 
 **signer_key_name** | **str** | A key to sign the certificate with, required in Private CA mode | [optional] 
@@ -50,23 +48,6 @@ Name | Type | Description | Notes
 **ttl** | **str** | The maximum requested Time To Live for issued certificates, in seconds. In case of Public CA, this is based on the CA target&#39;s supported maximum TTLs | 
 **uid_token** | **str** | The universal identity token, Required only for universal_identity authentication | [optional] 
 
-## Example
-
-```python
-from akeyless.models.update_pki_cert_issuer import UpdatePKICertIssuer
-
-# TODO update the JSON string below
-json = "{}"
-# create an instance of UpdatePKICertIssuer from a JSON string
-update_pki_cert_issuer_instance = UpdatePKICertIssuer.from_json(json)
-# print the JSON string representation of the object
-print(UpdatePKICertIssuer.to_json())
-
-# convert the object into a dict
-update_pki_cert_issuer_dict = update_pki_cert_issuer_instance.to_dict()
-# create an instance of UpdatePKICertIssuer from a dict
-update_pki_cert_issuer_from_dict = UpdatePKICertIssuer.from_dict(update_pki_cert_issuer_dict)
-```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
 

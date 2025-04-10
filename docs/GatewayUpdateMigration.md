@@ -1,21 +1,19 @@
 # GatewayUpdateMigration
 
 gatewayUpdateMigration is a command that update migration
-
 ## Properties
-
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**var_1password_email** | **str** | 1Password user email to connect to the API | [optional] 
-**var_1password_password** | **str** | 1Password user password to connect to the API | [optional] 
-**var_1password_secret_key** | **str** | 1Password user secret key to connect to the API | [optional] 
-**var_1password_url** | **str** | 1Password api container url | [optional] 
-**var_1password_vaults** | **List[str]** | 1Password list of vault to get the items from | [optional] 
+**_1password_email** | **str** | 1Password user email to connect to the API | [optional] 
+**_1password_password** | **str** | 1Password user password to connect to the API | [optional] 
+**_1password_secret_key** | **str** | 1Password user secret key to connect to the API | [optional] 
+**_1password_url** | **str** | 1Password api container url | [optional] 
+**_1password_vaults** | **list[str]** | 1Password list of vault to get the items from | [optional] 
 **service_account_key_decoded** | **str** |  | [optional] 
 **ad_auto_rotate** | **str** | Enable/Disable automatic/recurrent rotation for migrated secrets. Default is false: only manual rotation is allowed for migrated secrets. If set to true, this command should be combined with --ad-rotation-interval and --ad-rotation-hour parameters (Relevant only for Active Directory migration) | [optional] 
 **ad_computer_base_dn** | **str** | Distinguished Name of Computer objects (servers) to search in Active Directory e.g.: CN&#x3D;Computers,DC&#x3D;example,DC&#x3D;com (Relevant only for Active Directory migration) | [optional] 
 **ad_discover_services** | **str** | Enable/Disable discovery of Windows services from each domain server as part of the SSH/Windows Rotated Secrets. Default is false. (Relevant only for Active Directory migration) | [optional] [default to 'false']
-**ad_discovery_types** | **List[str]** | Set migration discovery types (domain-users, computers, local-users). (Relevant only for Active Directory migration) | [optional] 
+**ad_discovery_types** | **list[str]** | Set migration discovery types (domain-users, computers, local-users). (Relevant only for Active Directory migration) | [optional] 
 **ad_domain_name** | **str** | Active Directory Domain Name (Relevant only for Active Directory migration) | [optional] 
 **ad_domain_users_path_template** | **str** | Path location template for migrating domain users as Rotated Secrets e.g.: .../DomainUsers/{{USERNAME}} (Relevant only for Active Directory migration) | [optional] 
 **ad_local_users_ignore** | **str** | Comma-separated list of Local Users which should not be migrated (Relevant only for Active Directory migration) | [optional] 
@@ -43,14 +41,14 @@ Name | Type | Description | Notes
 **azure_tenant_id** | **str** | Azure Key Vault Access tenant ID (relevant only for Azure Key Vault migration) | [optional] 
 **gcp_key** | **str** | Base64-encoded GCP Service Account private key text with sufficient permissions to Secrets Manager, Minimum required permission is Secret Manager Secret Accessor, e.g. &#39;roles/secretmanager.secretAccessor&#39; (relevant only for GCP migration) | [optional] 
 **hashi_json** | **str** | Import secret key as json value or independent secrets (relevant only for HasiCorp Vault migration) [true/false] | [optional] [default to 'true']
-**hashi_ns** | **List[str]** | HashiCorp Vault Namespaces is a comma-separated list of namespaces which need to be imported into Akeyless Vault. For every provided namespace, all its child namespaces are imported as well, e.g. nmsp/subnmsp1/subnmsp2,nmsp/anothernmsp. By default, import all namespaces (relevant only for HasiCorp Vault migration) | [optional] 
+**hashi_ns** | **list[str]** | HashiCorp Vault Namespaces is a comma-separated list of namespaces which need to be imported into Akeyless Vault. For every provided namespace, all its child namespaces are imported as well, e.g. nmsp/subnmsp1/subnmsp2,nmsp/anothernmsp. By default, import all namespaces (relevant only for HasiCorp Vault migration) | [optional] 
 **hashi_token** | **str** | HashiCorp Vault access token with sufficient permissions to preform list &amp; read operations on secrets objects (relevant only for HasiCorp Vault migration) | [optional] 
 **hashi_url** | **str** | HashiCorp Vault API URL, e.g. https://vault-mgr01:8200 (relevant only for HasiCorp Vault migration) | [optional] 
 **id** | **str** | Migration ID (Can be retrieved with gateway-list-migration command) | [optional] 
-**var_json** | **bool** | Set output format to JSON | [optional] [default to False]
-**k8s_ca_certificate** | **List[int]** | For Certificate Authentication method K8s Cluster CA certificate (relevant only for K8s migration with Certificate Authentication method) | [optional] 
-**k8s_client_certificate** | **List[int]** | K8s Client certificate with sufficient permission to list and get secrets in the namespace(s) you selected (relevant only for K8s migration with Certificate Authentication method) | [optional] 
-**k8s_client_key** | **List[int]** | K8s Client key (relevant only for K8s migration with Certificate Authentication method) | [optional] 
+**json** | **bool** | Set output format to JSON | [optional] [default to False]
+**k8s_ca_certificate** | **list[int]** | For Certificate Authentication method K8s Cluster CA certificate (relevant only for K8s migration with Certificate Authentication method) | [optional] 
+**k8s_client_certificate** | **list[int]** | K8s Client certificate with sufficient permission to list and get secrets in the namespace(s) you selected (relevant only for K8s migration with Certificate Authentication method) | [optional] 
+**k8s_client_key** | **list[int]** | K8s Client key (relevant only for K8s migration with Certificate Authentication method) | [optional] 
 **k8s_namespace** | **str** | K8s Namespace, Use this field to import secrets from a particular namespace only. By default, the secrets are imported from all namespaces (relevant only for K8s migration) | [optional] 
 **k8s_password** | **str** | K8s Client password (relevant only for K8s migration with Password Authentication method) | [optional] 
 **k8s_skip_system** | **bool** | K8s Skip Control Plane Secrets, This option allows to avoid importing secrets from system namespaces (relevant only for K8s migration) | [optional] 
@@ -72,23 +70,6 @@ Name | Type | Description | Notes
 **token** | **str** | Authentication token (see &#x60;/auth&#x60; and &#x60;/configure&#x60;) | [optional] 
 **uid_token** | **str** | The universal identity token, Required only for universal_identity authentication | [optional] 
 
-## Example
-
-```python
-from akeyless.models.gateway_update_migration import GatewayUpdateMigration
-
-# TODO update the JSON string below
-json = "{}"
-# create an instance of GatewayUpdateMigration from a JSON string
-gateway_update_migration_instance = GatewayUpdateMigration.from_json(json)
-# print the JSON string representation of the object
-print(GatewayUpdateMigration.to_json())
-
-# convert the object into a dict
-gateway_update_migration_dict = gateway_update_migration_instance.to_dict()
-# create an instance of GatewayUpdateMigration from a dict
-gateway_update_migration_from_dict = GatewayUpdateMigration.from_dict(gateway_update_migration_dict)
-```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
 

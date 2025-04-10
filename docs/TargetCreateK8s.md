@@ -1,13 +1,11 @@
 # TargetCreateK8s
 
 targetCreateK8s is a command that creates a new k8s target
-
 ## Properties
-
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **description** | **str** | Description of the object | [optional] 
-**var_json** | **bool** | Set output format to JSON | [optional] [default to False]
+**json** | **bool** | Set output format to JSON | [optional] [default to False]
 **k8s_auth_type** | **str** | K8S auth type [token/certificate] | [optional] [default to 'token']
 **k8s_client_certificate** | **str** | Content of the k8 client certificate (PEM format) in a Base64 format | [optional] 
 **k8s_client_key** | **str** | Content of the k8 client private key (PEM format) in a Base64 format | [optional] 
@@ -22,23 +20,6 @@ Name | Type | Description | Notes
 **uid_token** | **str** | The universal identity token, Required only for universal_identity authentication | [optional] 
 **use_gw_service_account** | **bool** | Use the GW&#39;s service account | [optional] 
 
-## Example
-
-```python
-from akeyless.models.target_create_k8s import TargetCreateK8s
-
-# TODO update the JSON string below
-json = "{}"
-# create an instance of TargetCreateK8s from a JSON string
-target_create_k8s_instance = TargetCreateK8s.from_json(json)
-# print the JSON string representation of the object
-print(TargetCreateK8s.to_json())
-
-# convert the object into a dict
-target_create_k8s_dict = target_create_k8s_instance.to_dict()
-# create an instance of TargetCreateK8s from a dict
-target_create_k8s_from_dict = TargetCreateK8s.from_dict(target_create_k8s_dict)
-```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
 

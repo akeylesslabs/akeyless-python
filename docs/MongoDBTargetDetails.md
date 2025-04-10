@@ -1,8 +1,6 @@
 # MongoDBTargetDetails
 
-
 ## Properties
-
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **mongodb_atlas_api_private_key** | **str** |  | [optional] 
@@ -17,23 +15,6 @@ Name | Type | Description | Notes
 **mongodb_uri_options** | **str** |  | [optional] 
 **mongodb_username** | **str** |  | [optional] 
 
-## Example
-
-```python
-from akeyless.models.mongo_db_target_details import MongoDBTargetDetails
-
-# TODO update the JSON string below
-json = "{}"
-# create an instance of MongoDBTargetDetails from a JSON string
-mongo_db_target_details_instance = MongoDBTargetDetails.from_json(json)
-# print the JSON string representation of the object
-print(MongoDBTargetDetails.to_json())
-
-# convert the object into a dict
-mongo_db_target_details_dict = mongo_db_target_details_instance.to_dict()
-# create an instance of MongoDBTargetDetails from a dict
-mongo_db_target_details_from_dict = MongoDBTargetDetails.from_dict(mongo_db_target_details_dict)
-```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
 

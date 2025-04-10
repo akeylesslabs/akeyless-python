@@ -309,6 +309,7 @@ Method | HTTP request | Description
 [**gateway_update_producer_snowflake**](V2Api.md#gateway_update_producer_snowflake) | **POST** /gateway-update-producer-snowflake | 
 [**gateway_update_producer_venafi**](V2Api.md#gateway_update_producer_venafi) | **POST** /gateway-update-producer-certificate-automation | 
 [**gateway_update_remote_access**](V2Api.md#gateway_update_remote_access) | **POST** /gateway-update-remote-access | 
+[**gateway_update_remote_access_desktop_app**](V2Api.md#gateway_update_remote_access_desktop_app) | **POST** /gateway-update-remote-access-desktop-app | 
 [**gateway_update_remote_access_rdp_recordings**](V2Api.md#gateway_update_remote_access_rdp_recordings) | **POST** /gateway-update-remote-access-rdp-recording | 
 [**gateway_update_tls_cert**](V2Api.md#gateway_update_tls_cert) | **POST** /gateway-update-tls-cert | 
 [**gateway_update_tmp_users**](V2Api.md#gateway_update_tmp_users) | **POST** /gateway-update-producer-tmp-creds | 
@@ -581,13 +582,12 @@ Method | HTTP request | Description
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.alias_details import AliasDetails
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -596,23 +596,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     alias_details = akeyless.AliasDetails() # AliasDetails | 
 
     try:
         api_response = api_instance.alias_details(alias_details)
-        print("The response of V2Api->alias_details:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->alias_details: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -632,7 +628,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | deleteRoleResponse wraps response body. |  -  |
@@ -647,14 +642,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.assoc_role_auth_method import AssocRoleAuthMethod
-from akeyless.models.create_role_auth_method_assoc_output import CreateRoleAuthMethodAssocOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -663,23 +656,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     assoc_role_auth_method = akeyless.AssocRoleAuthMethod() # AssocRoleAuthMethod | 
 
     try:
         api_response = api_instance.assoc_role_auth_method(assoc_role_auth_method)
-        print("The response of V2Api->assoc_role_auth_method:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->assoc_role_auth_method: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -699,7 +688,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | assocRoleAuthMethodResponse wraps response body. |  -  |
@@ -714,14 +702,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.assoc_target_item import AssocTargetItem
-from akeyless.models.create_target_item_assoc_output import CreateTargetItemAssocOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -730,23 +716,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     assoc_target_item = akeyless.AssocTargetItem() # AssocTargetItem | 
 
     try:
         api_response = api_instance.assoc_target_item(assoc_target_item)
-        print("The response of V2Api->assoc_target_item:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->assoc_target_item: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -766,7 +748,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | assocTargetItemResponse wraps response body. |  -  |
@@ -781,14 +762,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.auth import Auth
-from akeyless.models.auth_output import AuthOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -797,23 +776,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     auth = akeyless.Auth() # Auth | 
 
     try:
         api_response = api_instance.auth(auth)
-        print("The response of V2Api->auth:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->auth: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -833,7 +808,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | authResponse wraps response body. |  -  |
@@ -849,14 +823,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.auth_method_create_api_key import AuthMethodCreateApiKey
-from akeyless.models.auth_method_create_output import AuthMethodCreateOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -865,23 +837,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     auth_method_create_api_key = akeyless.AuthMethodCreateApiKey() # AuthMethodCreateApiKey | 
 
     try:
         api_response = api_instance.auth_method_create_api_key(auth_method_create_api_key)
-        print("The response of V2Api->auth_method_create_api_key:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->auth_method_create_api_key: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -901,7 +869,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | authMethodCreateApiKeyResponse wraps response body. |  -  |
@@ -916,14 +883,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.auth_method_create_aws_iam import AuthMethodCreateAwsIam
-from akeyless.models.auth_method_create_output import AuthMethodCreateOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -932,23 +897,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     auth_method_create_aws_iam = akeyless.AuthMethodCreateAwsIam() # AuthMethodCreateAwsIam | 
 
     try:
         api_response = api_instance.auth_method_create_aws_iam(auth_method_create_aws_iam)
-        print("The response of V2Api->auth_method_create_aws_iam:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->auth_method_create_aws_iam: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -968,7 +929,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | authMethodCreateAwsIamResponse wraps response body. |  -  |
@@ -983,14 +943,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.auth_method_create_azure_ad import AuthMethodCreateAzureAD
-from akeyless.models.auth_method_create_output import AuthMethodCreateOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -999,23 +957,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     auth_method_create_azure_ad = akeyless.AuthMethodCreateAzureAD() # AuthMethodCreateAzureAD | 
 
     try:
         api_response = api_instance.auth_method_create_azure_ad(auth_method_create_azure_ad)
-        print("The response of V2Api->auth_method_create_azure_ad:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->auth_method_create_azure_ad: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -1035,7 +989,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | authMethodCreateAzureADResponse wraps response body. |  -  |
@@ -1050,14 +1003,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.auth_method_create_cert import AuthMethodCreateCert
-from akeyless.models.auth_method_create_output import AuthMethodCreateOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -1066,23 +1017,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     auth_method_create_cert = akeyless.AuthMethodCreateCert() # AuthMethodCreateCert | 
 
     try:
         api_response = api_instance.auth_method_create_cert(auth_method_create_cert)
-        print("The response of V2Api->auth_method_create_cert:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->auth_method_create_cert: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -1102,7 +1049,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | authMethodCreateCertResponse wraps response body. |  -  |
@@ -1117,14 +1063,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.auth_method_create_email import AuthMethodCreateEmail
-from akeyless.models.auth_method_create_output import AuthMethodCreateOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -1133,23 +1077,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     auth_method_create_email = akeyless.AuthMethodCreateEmail() # AuthMethodCreateEmail | 
 
     try:
         api_response = api_instance.auth_method_create_email(auth_method_create_email)
-        print("The response of V2Api->auth_method_create_email:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->auth_method_create_email: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -1169,7 +1109,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | authMethodCreateEmailResponse wraps response body. |  -  |
@@ -1184,14 +1123,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.auth_method_create_gcp import AuthMethodCreateGcp
-from akeyless.models.auth_method_create_output import AuthMethodCreateOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -1200,23 +1137,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     auth_method_create_gcp = akeyless.AuthMethodCreateGcp() # AuthMethodCreateGcp | 
 
     try:
         api_response = api_instance.auth_method_create_gcp(auth_method_create_gcp)
-        print("The response of V2Api->auth_method_create_gcp:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->auth_method_create_gcp: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -1236,7 +1169,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | authMethodCreateGcpResponse wraps response body. |  -  |
@@ -1251,14 +1183,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.auth_method_create_k8s import AuthMethodCreateK8s
-from akeyless.models.auth_method_create_output import AuthMethodCreateOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -1267,23 +1197,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     auth_method_create_k8s = akeyless.AuthMethodCreateK8s() # AuthMethodCreateK8s | 
 
     try:
         api_response = api_instance.auth_method_create_k8s(auth_method_create_k8s)
-        print("The response of V2Api->auth_method_create_k8s:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->auth_method_create_k8s: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -1303,7 +1229,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | authMethodCreateK8sResponse wraps response body. |  -  |
@@ -1318,14 +1243,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.auth_method_create_kerberos import AuthMethodCreateKerberos
-from akeyless.models.auth_method_create_output import AuthMethodCreateOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -1334,23 +1257,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     auth_method_create_kerberos = akeyless.AuthMethodCreateKerberos() # AuthMethodCreateKerberos | 
 
     try:
         api_response = api_instance.auth_method_create_kerberos(auth_method_create_kerberos)
-        print("The response of V2Api->auth_method_create_kerberos:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->auth_method_create_kerberos: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -1370,7 +1289,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** |  |  -  |
@@ -1385,14 +1303,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.auth_method_create_ldap import AuthMethodCreateLdap
-from akeyless.models.auth_method_create_output import AuthMethodCreateOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -1401,23 +1317,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     auth_method_create_ldap = akeyless.AuthMethodCreateLdap() # AuthMethodCreateLdap | 
 
     try:
         api_response = api_instance.auth_method_create_ldap(auth_method_create_ldap)
-        print("The response of V2Api->auth_method_create_ldap:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->auth_method_create_ldap: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -1437,7 +1349,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | authMethodCreateLdapResponse wraps response body. |  -  |
@@ -1452,14 +1363,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.auth_method_create_oauth2 import AuthMethodCreateOauth2
-from akeyless.models.auth_method_create_output import AuthMethodCreateOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -1468,23 +1377,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     auth_method_create_oauth2 = akeyless.AuthMethodCreateOauth2() # AuthMethodCreateOauth2 | 
 
     try:
         api_response = api_instance.auth_method_create_oauth2(auth_method_create_oauth2)
-        print("The response of V2Api->auth_method_create_oauth2:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->auth_method_create_oauth2: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -1504,7 +1409,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | authMethodCreateOauth2Response wraps response body. |  -  |
@@ -1519,14 +1423,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.auth_method_create_oci import AuthMethodCreateOCI
-from akeyless.models.auth_method_create_output import AuthMethodCreateOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -1535,23 +1437,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     auth_method_create_oci = akeyless.AuthMethodCreateOCI() # AuthMethodCreateOCI | 
 
     try:
         api_response = api_instance.auth_method_create_oci(auth_method_create_oci)
-        print("The response of V2Api->auth_method_create_oci:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->auth_method_create_oci: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -1571,7 +1469,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | authMethodCreateOCIResponse wraps response body. |  -  |
@@ -1586,14 +1483,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.auth_method_create_oidc import AuthMethodCreateOIDC
-from akeyless.models.auth_method_create_output import AuthMethodCreateOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -1602,23 +1497,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     auth_method_create_oidc = akeyless.AuthMethodCreateOIDC() # AuthMethodCreateOIDC | 
 
     try:
         api_response = api_instance.auth_method_create_oidc(auth_method_create_oidc)
-        print("The response of V2Api->auth_method_create_oidc:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->auth_method_create_oidc: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -1638,7 +1529,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | authMethodCreateOIDCResponse wraps response body. |  -  |
@@ -1653,14 +1543,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.auth_method_create_output import AuthMethodCreateOutput
-from akeyless.models.auth_method_create_saml import AuthMethodCreateSAML
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -1669,23 +1557,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     auth_method_create_saml = akeyless.AuthMethodCreateSAML() # AuthMethodCreateSAML | 
 
     try:
         api_response = api_instance.auth_method_create_saml(auth_method_create_saml)
-        print("The response of V2Api->auth_method_create_saml:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->auth_method_create_saml: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -1705,7 +1589,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | authMethodCreateSAMLResponse wraps response body. |  -  |
@@ -1720,14 +1603,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.auth_method_create_output import AuthMethodCreateOutput
-from akeyless.models.auth_method_create_universal_identity import AuthMethodCreateUniversalIdentity
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -1736,23 +1617,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     auth_method_create_universal_identity = akeyless.AuthMethodCreateUniversalIdentity() # AuthMethodCreateUniversalIdentity | 
 
     try:
         api_response = api_instance.auth_method_create_universal_identity(auth_method_create_universal_identity)
-        print("The response of V2Api->auth_method_create_universal_identity:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->auth_method_create_universal_identity: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -1772,7 +1649,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** |  |  -  |
@@ -1787,14 +1663,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.auth_method_delete import AuthMethodDelete
-from akeyless.models.auth_method_delete_output import AuthMethodDeleteOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -1803,23 +1677,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     auth_method_delete = akeyless.AuthMethodDelete() # AuthMethodDelete | 
 
     try:
         api_response = api_instance.auth_method_delete(auth_method_delete)
-        print("The response of V2Api->auth_method_delete:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->auth_method_delete: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -1839,7 +1709,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | authMethodDeleteResponse wraps response body. |  -  |
@@ -1854,14 +1723,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.auth_method import AuthMethod
-from akeyless.models.auth_method_get import AuthMethodGet
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -1870,23 +1737,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     auth_method_get = akeyless.AuthMethodGet() # AuthMethodGet | 
 
     try:
         api_response = api_instance.auth_method_get(auth_method_get)
-        print("The response of V2Api->auth_method_get:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->auth_method_get: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -1906,7 +1769,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | authMethodGetResponse wraps response body. |  -  |
@@ -1921,14 +1783,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.auth_method_list import AuthMethodList
-from akeyless.models.list_auth_methods_output import ListAuthMethodsOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -1937,23 +1797,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     auth_method_list = akeyless.AuthMethodList() # AuthMethodList | 
 
     try:
         api_response = api_instance.auth_method_list(auth_method_list)
-        print("The response of V2Api->auth_method_list:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->auth_method_list: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -1973,7 +1829,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | authMethodListResponse wraps response body. |  -  |
@@ -1988,14 +1843,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.auth_method_update_api_key import AuthMethodUpdateApiKey
-from akeyless.models.auth_method_update_output import AuthMethodUpdateOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -2004,23 +1857,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     auth_method_update_api_key = akeyless.AuthMethodUpdateApiKey() # AuthMethodUpdateApiKey | 
 
     try:
         api_response = api_instance.auth_method_update_api_key(auth_method_update_api_key)
-        print("The response of V2Api->auth_method_update_api_key:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->auth_method_update_api_key: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -2040,7 +1889,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | authMethodUpdateApiKeyResponse wraps response body. |  -  |
@@ -2055,14 +1903,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.auth_method_update_aws_iam import AuthMethodUpdateAwsIam
-from akeyless.models.auth_method_update_output import AuthMethodUpdateOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -2071,23 +1917,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     auth_method_update_aws_iam = akeyless.AuthMethodUpdateAwsIam() # AuthMethodUpdateAwsIam | 
 
     try:
         api_response = api_instance.auth_method_update_aws_iam(auth_method_update_aws_iam)
-        print("The response of V2Api->auth_method_update_aws_iam:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->auth_method_update_aws_iam: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -2107,7 +1949,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | authMethodUpdateAwsIamResponse wraps response body. |  -  |
@@ -2122,14 +1963,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.auth_method_update_azure_ad import AuthMethodUpdateAzureAD
-from akeyless.models.auth_method_update_output import AuthMethodUpdateOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -2138,23 +1977,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     auth_method_update_azure_ad = akeyless.AuthMethodUpdateAzureAD() # AuthMethodUpdateAzureAD | 
 
     try:
         api_response = api_instance.auth_method_update_azure_ad(auth_method_update_azure_ad)
-        print("The response of V2Api->auth_method_update_azure_ad:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->auth_method_update_azure_ad: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -2174,7 +2009,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | authMethodUpdateAzureADResponse wraps response body. |  -  |
@@ -2189,14 +2023,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.auth_method_update_cert import AuthMethodUpdateCert
-from akeyless.models.auth_method_update_output import AuthMethodUpdateOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -2205,23 +2037,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     auth_method_update_cert = akeyless.AuthMethodUpdateCert() # AuthMethodUpdateCert | 
 
     try:
         api_response = api_instance.auth_method_update_cert(auth_method_update_cert)
-        print("The response of V2Api->auth_method_update_cert:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->auth_method_update_cert: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -2241,7 +2069,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | authMethodUpdateCertResponse wraps response body. |  -  |
@@ -2256,14 +2083,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.auth_method_update_email import AuthMethodUpdateEmail
-from akeyless.models.auth_method_update_output import AuthMethodUpdateOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -2272,23 +2097,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     auth_method_update_email = akeyless.AuthMethodUpdateEmail() # AuthMethodUpdateEmail | 
 
     try:
         api_response = api_instance.auth_method_update_email(auth_method_update_email)
-        print("The response of V2Api->auth_method_update_email:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->auth_method_update_email: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -2308,7 +2129,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | authMethodUpdateEmailResponse wraps response body. |  -  |
@@ -2323,14 +2143,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.auth_method_update_gcp import AuthMethodUpdateGcp
-from akeyless.models.auth_method_update_output import AuthMethodUpdateOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -2339,23 +2157,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     auth_method_update_gcp = akeyless.AuthMethodUpdateGcp() # AuthMethodUpdateGcp | 
 
     try:
         api_response = api_instance.auth_method_update_gcp(auth_method_update_gcp)
-        print("The response of V2Api->auth_method_update_gcp:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->auth_method_update_gcp: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -2375,7 +2189,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | authMethodUpdateGcpResponse wraps response body. |  -  |
@@ -2390,14 +2203,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.auth_method_update_k8s import AuthMethodUpdateK8s
-from akeyless.models.auth_method_update_output import AuthMethodUpdateOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -2406,23 +2217,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     auth_method_update_k8s = akeyless.AuthMethodUpdateK8s() # AuthMethodUpdateK8s | 
 
     try:
         api_response = api_instance.auth_method_update_k8s(auth_method_update_k8s)
-        print("The response of V2Api->auth_method_update_k8s:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->auth_method_update_k8s: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -2442,7 +2249,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | authMethodUpdateK8sResponse wraps response body. |  -  |
@@ -2457,14 +2263,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.auth_method_create_output import AuthMethodCreateOutput
-from akeyless.models.auth_method_update_kerberos import AuthMethodUpdateKerberos
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -2473,23 +2277,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     auth_method_update_kerberos = akeyless.AuthMethodUpdateKerberos() # AuthMethodUpdateKerberos | 
 
     try:
         api_response = api_instance.auth_method_update_kerberos(auth_method_update_kerberos)
-        print("The response of V2Api->auth_method_update_kerberos:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->auth_method_update_kerberos: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -2509,7 +2309,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** |  |  -  |
@@ -2524,14 +2323,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.auth_method_update_ldap import AuthMethodUpdateLdap
-from akeyless.models.auth_method_update_output import AuthMethodUpdateOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -2540,23 +2337,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     auth_method_update_ldap = akeyless.AuthMethodUpdateLdap() # AuthMethodUpdateLdap | 
 
     try:
         api_response = api_instance.auth_method_update_ldap(auth_method_update_ldap)
-        print("The response of V2Api->auth_method_update_ldap:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->auth_method_update_ldap: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -2576,7 +2369,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | authMethodUpdateLdapResponse wraps response body. |  -  |
@@ -2591,14 +2383,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.auth_method_update_oauth2 import AuthMethodUpdateOauth2
-from akeyless.models.auth_method_update_output import AuthMethodUpdateOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -2607,23 +2397,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     auth_method_update_oauth2 = akeyless.AuthMethodUpdateOauth2() # AuthMethodUpdateOauth2 | 
 
     try:
         api_response = api_instance.auth_method_update_oauth2(auth_method_update_oauth2)
-        print("The response of V2Api->auth_method_update_oauth2:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->auth_method_update_oauth2: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -2643,7 +2429,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | authMethodUpdateOauth2Response wraps response body. |  -  |
@@ -2658,14 +2443,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.auth_method_update_oci import AuthMethodUpdateOCI
-from akeyless.models.auth_method_update_output import AuthMethodUpdateOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -2674,23 +2457,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     auth_method_update_oci = akeyless.AuthMethodUpdateOCI() # AuthMethodUpdateOCI | 
 
     try:
         api_response = api_instance.auth_method_update_oci(auth_method_update_oci)
-        print("The response of V2Api->auth_method_update_oci:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->auth_method_update_oci: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -2710,7 +2489,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | authMethodUpdateOCIResponse wraps response body. |  -  |
@@ -2725,14 +2503,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.auth_method_update_oidc import AuthMethodUpdateOIDC
-from akeyless.models.auth_method_update_output import AuthMethodUpdateOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -2741,23 +2517,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     auth_method_update_oidc = akeyless.AuthMethodUpdateOIDC() # AuthMethodUpdateOIDC | 
 
     try:
         api_response = api_instance.auth_method_update_oidc(auth_method_update_oidc)
-        print("The response of V2Api->auth_method_update_oidc:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->auth_method_update_oidc: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -2777,7 +2549,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | authMethodUpdateOIDCResponse wraps response body. |  -  |
@@ -2792,14 +2563,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.auth_method_update_output import AuthMethodUpdateOutput
-from akeyless.models.auth_method_update_saml import AuthMethodUpdateSAML
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -2808,23 +2577,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     auth_method_update_saml = akeyless.AuthMethodUpdateSAML() # AuthMethodUpdateSAML | 
 
     try:
         api_response = api_instance.auth_method_update_saml(auth_method_update_saml)
-        print("The response of V2Api->auth_method_update_saml:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->auth_method_update_saml: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -2844,7 +2609,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | authMethodUpdateSAMLResponse wraps response body. |  -  |
@@ -2859,14 +2623,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.auth_method_update_output import AuthMethodUpdateOutput
-from akeyless.models.auth_method_update_universal_identity import AuthMethodUpdateUniversalIdentity
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -2875,23 +2637,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     auth_method_update_universal_identity = akeyless.AuthMethodUpdateUniversalIdentity() # AuthMethodUpdateUniversalIdentity | 
 
     try:
         api_response = api_instance.auth_method_update_universal_identity(auth_method_update_universal_identity)
-        print("The response of V2Api->auth_method_update_universal_identity:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->auth_method_update_universal_identity: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -2911,7 +2669,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | authMethodUpdateUniversalIdentityResponse wraps response body. |  -  |
@@ -2926,14 +2683,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.calc_password_security_info import CalcPasswordSecurityInfo
-from akeyless.models.password_security_info import PasswordSecurityInfo
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -2942,23 +2697,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     calc_password_security_info = akeyless.CalcPasswordSecurityInfo() # CalcPasswordSecurityInfo | 
 
     try:
         api_response = api_instance.calc_password_security_info(calc_password_security_info)
-        print("The response of V2Api->calc_password_security_info:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->calc_password_security_info: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -2978,7 +2729,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | calcPasswordSecurityInfoResponse wraps response body. |  -  |
@@ -2993,13 +2743,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.change_admin_account_password import ChangeAdminAccountPassword
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -3008,23 +2757,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     change_admin_account_password = akeyless.ChangeAdminAccountPassword() # ChangeAdminAccountPassword | 
 
     try:
         api_response = api_instance.change_admin_account_password(change_admin_account_password)
-        print("The response of V2Api->change_admin_account_password:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->change_admin_account_password: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -3044,7 +2789,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | changeAdminAccountPasswordResponse wraps response body. |  -  |
@@ -3059,14 +2803,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.configure import Configure
-from akeyless.models.configure_output import ConfigureOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -3075,23 +2817,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     configure = akeyless.Configure() # Configure | 
 
     try:
         api_response = api_instance.configure(configure)
-        print("The response of V2Api->configure:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->configure: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -3111,7 +2849,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | configureResponse wraps response body. |  -  |
@@ -3126,13 +2863,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.connect import Connect
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -3141,23 +2877,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     connect = akeyless.Connect() # Connect | 
 
     try:
         api_response = api_instance.connect(connect)
-        print("The response of V2Api->connect:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->connect: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -3177,7 +2909,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | connectResponse wraps response body. |  -  |
@@ -3192,14 +2923,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.create_artifactory_target import CreateArtifactoryTarget
-from akeyless.models.create_artifactory_target_output import CreateArtifactoryTargetOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -3208,23 +2937,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     create_artifactory_target = akeyless.CreateArtifactoryTarget() # CreateArtifactoryTarget | 
 
     try:
         api_response = api_instance.create_artifactory_target(create_artifactory_target)
-        print("The response of V2Api->create_artifactory_target:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->create_artifactory_target: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -3244,7 +2969,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | createArtifactoryTargetResponse wraps response body. |  -  |
@@ -3259,14 +2983,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.create_auth_method import CreateAuthMethod
-from akeyless.models.create_auth_method_output import CreateAuthMethodOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -3275,23 +2997,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     create_auth_method = akeyless.CreateAuthMethod() # CreateAuthMethod | 
 
     try:
         api_response = api_instance.create_auth_method(create_auth_method)
-        print("The response of V2Api->create_auth_method:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->create_auth_method: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -3311,7 +3029,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | createAuthMethodResponse wraps response body. |  -  |
@@ -3326,14 +3043,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.create_auth_method_awsiam import CreateAuthMethodAWSIAM
-from akeyless.models.create_auth_method_awsiam_output import CreateAuthMethodAWSIAMOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -3342,23 +3057,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     create_auth_method_awsiam = akeyless.CreateAuthMethodAWSIAM() # CreateAuthMethodAWSIAM | 
 
     try:
         api_response = api_instance.create_auth_method_awsiam(create_auth_method_awsiam)
-        print("The response of V2Api->create_auth_method_awsiam:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->create_auth_method_awsiam: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -3378,7 +3089,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | createAuthMethodAWSIAMResponse wraps response body. |  -  |
@@ -3393,14 +3103,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.create_auth_method_azure_ad import CreateAuthMethodAzureAD
-from akeyless.models.create_auth_method_azure_ad_output import CreateAuthMethodAzureADOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -3409,23 +3117,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     create_auth_method_azure_ad = akeyless.CreateAuthMethodAzureAD() # CreateAuthMethodAzureAD | 
 
     try:
         api_response = api_instance.create_auth_method_azure_ad(create_auth_method_azure_ad)
-        print("The response of V2Api->create_auth_method_azure_ad:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->create_auth_method_azure_ad: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -3445,7 +3149,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | createAuthMethodAzureADResponse wraps response body. |  -  |
@@ -3460,14 +3163,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.create_auth_method_cert import CreateAuthMethodCert
-from akeyless.models.create_auth_method_cert_output import CreateAuthMethodCertOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -3476,23 +3177,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     create_auth_method_cert = akeyless.CreateAuthMethodCert() # CreateAuthMethodCert | 
 
     try:
         api_response = api_instance.create_auth_method_cert(create_auth_method_cert)
-        print("The response of V2Api->create_auth_method_cert:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->create_auth_method_cert: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -3512,7 +3209,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | createAuthMethodCertResponse wraps response body. |  -  |
@@ -3527,14 +3223,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.create_auth_method_email import CreateAuthMethodEmail
-from akeyless.models.create_auth_method_email_output import CreateAuthMethodEmailOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -3543,23 +3237,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     create_auth_method_email = akeyless.CreateAuthMethodEmail() # CreateAuthMethodEmail | 
 
     try:
         api_response = api_instance.create_auth_method_email(create_auth_method_email)
-        print("The response of V2Api->create_auth_method_email:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->create_auth_method_email: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -3579,7 +3269,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | createAuthMethodEmailResponse wraps response body. |  -  |
@@ -3594,14 +3283,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.create_auth_method_gcp import CreateAuthMethodGCP
-from akeyless.models.create_auth_method_gcp_output import CreateAuthMethodGCPOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -3610,23 +3297,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     create_auth_method_gcp = akeyless.CreateAuthMethodGCP() # CreateAuthMethodGCP | 
 
     try:
         api_response = api_instance.create_auth_method_gcp(create_auth_method_gcp)
-        print("The response of V2Api->create_auth_method_gcp:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->create_auth_method_gcp: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -3646,7 +3329,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | createAuthMethodGCPResponse wraps response body. |  -  |
@@ -3661,14 +3343,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.create_auth_method_huawei import CreateAuthMethodHuawei
-from akeyless.models.create_auth_method_huawei_output import CreateAuthMethodHuaweiOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -3677,23 +3357,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     create_auth_method_huawei = akeyless.CreateAuthMethodHuawei() # CreateAuthMethodHuawei | 
 
     try:
         api_response = api_instance.create_auth_method_huawei(create_auth_method_huawei)
-        print("The response of V2Api->create_auth_method_huawei:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->create_auth_method_huawei: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -3713,7 +3389,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | createAuthMethodHuaweiResponse wraps response body. |  -  |
@@ -3728,14 +3403,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.create_auth_method_k8_s import CreateAuthMethodK8S
-from akeyless.models.create_auth_method_k8_s_output import CreateAuthMethodK8SOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -3744,23 +3417,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     create_auth_method_k8_s = akeyless.CreateAuthMethodK8S() # CreateAuthMethodK8S | 
 
     try:
         api_response = api_instance.create_auth_method_k8_s(create_auth_method_k8_s)
-        print("The response of V2Api->create_auth_method_k8_s:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->create_auth_method_k8_s: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -3780,7 +3449,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | createAuthMethodK8SResponse wraps response body. |  -  |
@@ -3795,14 +3463,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.create_auth_method_ldap import CreateAuthMethodLDAP
-from akeyless.models.create_auth_method_ldap_output import CreateAuthMethodLDAPOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -3811,23 +3477,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     create_auth_method_ldap = akeyless.CreateAuthMethodLDAP() # CreateAuthMethodLDAP | 
 
     try:
         api_response = api_instance.create_auth_method_ldap(create_auth_method_ldap)
-        print("The response of V2Api->create_auth_method_ldap:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->create_auth_method_ldap: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -3847,7 +3509,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | createAuthMethodLDAPResponse wraps response body. |  -  |
@@ -3862,14 +3523,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.create_auth_method_o_auth2 import CreateAuthMethodOAuth2
-from akeyless.models.create_auth_method_o_auth2_output import CreateAuthMethodOAuth2Output
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -3878,23 +3537,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     create_auth_method_o_auth2 = akeyless.CreateAuthMethodOAuth2() # CreateAuthMethodOAuth2 | 
 
     try:
         api_response = api_instance.create_auth_method_o_auth2(create_auth_method_o_auth2)
-        print("The response of V2Api->create_auth_method_o_auth2:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->create_auth_method_o_auth2: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -3914,7 +3569,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | createAuthMethodOAuth2Response wraps response body. |  -  |
@@ -3929,14 +3583,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.create_auth_method_oci import CreateAuthMethodOCI
-from akeyless.models.create_auth_method_oci_output import CreateAuthMethodOCIOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -3945,23 +3597,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     create_auth_method_oci = akeyless.CreateAuthMethodOCI() # CreateAuthMethodOCI | 
 
     try:
         api_response = api_instance.create_auth_method_oci(create_auth_method_oci)
-        print("The response of V2Api->create_auth_method_oci:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->create_auth_method_oci: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -3981,7 +3629,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | createAuthMethodOCIResponse wraps response body. |  -  |
@@ -3996,14 +3643,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.create_auth_method_oidc import CreateAuthMethodOIDC
-from akeyless.models.create_auth_method_oidc_output import CreateAuthMethodOIDCOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -4012,23 +3657,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     create_auth_method_oidc = akeyless.CreateAuthMethodOIDC() # CreateAuthMethodOIDC | 
 
     try:
         api_response = api_instance.create_auth_method_oidc(create_auth_method_oidc)
-        print("The response of V2Api->create_auth_method_oidc:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->create_auth_method_oidc: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -4048,7 +3689,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | createAuthMethodOIDCResponse wraps response body. |  -  |
@@ -4063,14 +3703,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.create_auth_method_saml import CreateAuthMethodSAML
-from akeyless.models.create_auth_method_saml_output import CreateAuthMethodSAMLOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -4079,23 +3717,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     create_auth_method_saml = akeyless.CreateAuthMethodSAML() # CreateAuthMethodSAML | 
 
     try:
         api_response = api_instance.create_auth_method_saml(create_auth_method_saml)
-        print("The response of V2Api->create_auth_method_saml:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->create_auth_method_saml: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -4115,7 +3749,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | createAuthMethodSAMLResponse wraps response body. |  -  |
@@ -4130,14 +3763,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.create_auth_method_universal_identity import CreateAuthMethodUniversalIdentity
-from akeyless.models.create_auth_method_universal_identity_output import CreateAuthMethodUniversalIdentityOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -4146,23 +3777,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     create_auth_method_universal_identity = akeyless.CreateAuthMethodUniversalIdentity() # CreateAuthMethodUniversalIdentity | 
 
     try:
         api_response = api_instance.create_auth_method_universal_identity(create_auth_method_universal_identity)
-        print("The response of V2Api->create_auth_method_universal_identity:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->create_auth_method_universal_identity: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -4182,7 +3809,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | createAuthMethodUniversalIdentityResponse wraps response body. |  -  |
@@ -4197,14 +3823,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.create_aws_target import CreateAWSTarget
-from akeyless.models.create_aws_target_output import CreateAWSTargetOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -4213,23 +3837,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     create_aws_target = akeyless.CreateAWSTarget() # CreateAWSTarget | 
 
     try:
         api_response = api_instance.create_aws_target(create_aws_target)
-        print("The response of V2Api->create_aws_target:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->create_aws_target: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -4249,7 +3869,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | createAWSTargetResponse wraps response body. |  -  |
@@ -4264,14 +3883,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.create_azure_target import CreateAzureTarget
-from akeyless.models.create_azure_target_output import CreateAzureTargetOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -4280,23 +3897,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     create_azure_target = akeyless.CreateAzureTarget() # CreateAzureTarget | 
 
     try:
         api_response = api_instance.create_azure_target(create_azure_target)
-        print("The response of V2Api->create_azure_target:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->create_azure_target: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -4316,7 +3929,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | createAzureTargetResponse wraps response body. |  -  |
@@ -4331,14 +3943,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.create_certificate import CreateCertificate
-from akeyless.models.create_certificate_output import CreateCertificateOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -4347,23 +3957,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     create_certificate = akeyless.CreateCertificate() # CreateCertificate | 
 
     try:
         api_response = api_instance.create_certificate(create_certificate)
-        print("The response of V2Api->create_certificate:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->create_certificate: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -4383,7 +3989,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | createCertificateResponse wraps response body. |  -  |
@@ -4398,14 +4003,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.create_classic_key import CreateClassicKey
-from akeyless.models.create_classic_key_output import CreateClassicKeyOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -4414,23 +4017,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     create_classic_key = akeyless.CreateClassicKey() # CreateClassicKey | 
 
     try:
         api_response = api_instance.create_classic_key(create_classic_key)
-        print("The response of V2Api->create_classic_key:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->create_classic_key: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -4450,7 +4049,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | CreateClassicKeyResponse wraps response body. |  -  |
@@ -4465,14 +4063,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.create_db_target import CreateDBTarget
-from akeyless.models.create_db_target_output import CreateDBTargetOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -4481,23 +4077,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     create_db_target = akeyless.CreateDBTarget() # CreateDBTarget | 
 
     try:
         api_response = api_instance.create_db_target(create_db_target)
-        print("The response of V2Api->create_db_target:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->create_db_target: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -4517,7 +4109,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | createDBTargetResponse wraps response body. |  -  |
@@ -4532,14 +4123,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.create_dfc_key import CreateDFCKey
-from akeyless.models.create_dfc_key_output import CreateDFCKeyOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -4548,23 +4137,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     create_dfc_key = akeyless.CreateDFCKey() # CreateDFCKey | 
 
     try:
         api_response = api_instance.create_dfc_key(create_dfc_key)
-        print("The response of V2Api->create_dfc_key:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->create_dfc_key: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -4584,7 +4169,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | createDFCKeyResponse wraps response body. |  -  |
@@ -4599,14 +4183,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.create_dockerhub_target import CreateDockerhubTarget
-from akeyless.models.create_dockerhub_target_output import CreateDockerhubTargetOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -4615,23 +4197,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     create_dockerhub_target = akeyless.CreateDockerhubTarget() # CreateDockerhubTarget | 
 
     try:
         api_response = api_instance.create_dockerhub_target(create_dockerhub_target)
-        print("The response of V2Api->create_dockerhub_target:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->create_dockerhub_target: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -4651,7 +4229,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | createDockerhubTargetResponse wraps response body. |  -  |
@@ -4666,13 +4243,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.create_dynamic_secret import CreateDynamicSecret
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -4681,23 +4257,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     create_dynamic_secret = akeyless.CreateDynamicSecret() # CreateDynamicSecret | 
 
     try:
         api_response = api_instance.create_dynamic_secret(create_dynamic_secret)
-        print("The response of V2Api->create_dynamic_secret:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->create_dynamic_secret: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -4717,7 +4289,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | createDynamicSecretResponse wraps response body. |  -  |
@@ -4732,14 +4303,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.create_eks_target import CreateEKSTarget
-from akeyless.models.create_eks_target_output import CreateEKSTargetOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -4748,23 +4317,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     create_eks_target = akeyless.CreateEKSTarget() # CreateEKSTarget | 
 
     try:
         api_response = api_instance.create_eks_target(create_eks_target)
-        print("The response of V2Api->create_eks_target:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->create_eks_target: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -4784,7 +4349,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | createEKSTargetResponse wraps response body. |  -  |
@@ -4799,14 +4363,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.create_esm import CreateESM
-from akeyless.models.create_esm_output import CreateESMOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -4815,23 +4377,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     create_esm = akeyless.CreateESM() # CreateESM | 
 
     try:
         api_response = api_instance.create_esm(create_esm)
-        print("The response of V2Api->create_esm:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->create_esm: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -4851,7 +4409,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | CreateExternalSecretsManagerResponse wraps response body. |  -  |
@@ -4866,14 +4423,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.create_event_forwarder import CreateEventForwarder
-from akeyless.models.create_event_forwarder_output import CreateEventForwarderOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -4882,23 +4437,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     create_event_forwarder = akeyless.CreateEventForwarder() # CreateEventForwarder | 
 
     try:
         api_response = api_instance.create_event_forwarder(create_event_forwarder)
-        print("The response of V2Api->create_event_forwarder:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->create_event_forwarder: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -4918,7 +4469,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | createEventForwarderResponse wraps response body. |  -  |
@@ -4933,14 +4483,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.create_gcp_target import CreateGcpTarget
-from akeyless.models.create_gcp_target_output import CreateGcpTargetOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -4949,23 +4497,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     create_gcp_target = akeyless.CreateGcpTarget() # CreateGcpTarget | 
 
     try:
         api_response = api_instance.create_gcp_target(create_gcp_target)
-        print("The response of V2Api->create_gcp_target:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->create_gcp_target: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -4985,7 +4529,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | createGcpTargetResponse wraps response body. |  -  |
@@ -5000,14 +4543,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.create_github_target import CreateGithubTarget
-from akeyless.models.create_github_target_output import CreateGithubTargetOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -5016,23 +4557,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     create_github_target = akeyless.CreateGithubTarget() # CreateGithubTarget | 
 
     try:
         api_response = api_instance.create_github_target(create_github_target)
-        print("The response of V2Api->create_github_target:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->create_github_target: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -5052,7 +4589,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | createGithubTargetResponse wraps response body. |  -  |
@@ -5067,14 +4603,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.create_gitlab_target import CreateGitlabTarget
-from akeyless.models.create_gitlab_target_output import CreateGitlabTargetOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -5083,23 +4617,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     create_gitlab_target = akeyless.CreateGitlabTarget() # CreateGitlabTarget | 
 
     try:
         api_response = api_instance.create_gitlab_target(create_gitlab_target)
-        print("The response of V2Api->create_gitlab_target:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->create_gitlab_target: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -5119,7 +4649,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | createGitlabTargetResponse wraps response body. |  -  |
@@ -5134,14 +4663,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.create_gke_target import CreateGKETarget
-from akeyless.models.create_gke_target_output import CreateGKETargetOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -5150,23 +4677,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     create_gke_target = akeyless.CreateGKETarget() # CreateGKETarget | 
 
     try:
         api_response = api_instance.create_gke_target(create_gke_target)
-        print("The response of V2Api->create_gke_target:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->create_gke_target: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -5186,7 +4709,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | createGKETargetResponse wraps response body. |  -  |
@@ -5201,14 +4723,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.create_global_sign_atlas_target import CreateGlobalSignAtlasTarget
-from akeyless.models.create_global_sign_atlas_target_output import CreateGlobalSignAtlasTargetOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -5217,23 +4737,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     create_global_sign_atlas_target = akeyless.CreateGlobalSignAtlasTarget() # CreateGlobalSignAtlasTarget | 
 
     try:
         api_response = api_instance.create_global_sign_atlas_target(create_global_sign_atlas_target)
-        print("The response of V2Api->create_global_sign_atlas_target:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->create_global_sign_atlas_target: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -5253,7 +4769,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | createGlobalSignAtlasTargetResponse wraps response body. |  -  |
@@ -5268,14 +4783,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.create_global_sign_target import CreateGlobalSignTarget
-from akeyless.models.create_global_sign_target_output import CreateGlobalSignTargetOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -5284,23 +4797,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     create_global_sign_target = akeyless.CreateGlobalSignTarget() # CreateGlobalSignTarget | 
 
     try:
         api_response = api_instance.create_global_sign_target(create_global_sign_target)
-        print("The response of V2Api->create_global_sign_target:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->create_global_sign_target: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -5320,7 +4829,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | createGlobalSignTargetResponse wraps response body. |  -  |
@@ -5335,14 +4843,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.create_godaddy_target import CreateGodaddyTarget
-from akeyless.models.create_godaddy_target_output import CreateGodaddyTargetOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -5351,23 +4857,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     create_godaddy_target = akeyless.CreateGodaddyTarget() # CreateGodaddyTarget | 
 
     try:
         api_response = api_instance.create_godaddy_target(create_godaddy_target)
-        print("The response of V2Api->create_godaddy_target:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->create_godaddy_target: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -5387,7 +4889,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | createGodaddyTargetResponse wraps response body. |  -  |
@@ -5402,14 +4903,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.create_group import CreateGroup
-from akeyless.models.create_group_output import CreateGroupOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -5418,23 +4917,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     create_group = akeyless.CreateGroup() # CreateGroup | 
 
     try:
         api_response = api_instance.create_group(create_group)
-        print("The response of V2Api->create_group:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->create_group: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -5454,7 +4949,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | createGroupResponse wraps response body. |  -  |
@@ -5469,14 +4963,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.create_hashi_vault_target import CreateHashiVaultTarget
-from akeyless.models.create_hashi_vault_target_output import CreateHashiVaultTargetOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -5485,23 +4977,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     create_hashi_vault_target = akeyless.CreateHashiVaultTarget() # CreateHashiVaultTarget | 
 
     try:
         api_response = api_instance.create_hashi_vault_target(create_hashi_vault_target)
-        print("The response of V2Api->create_hashi_vault_target:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->create_hashi_vault_target: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -5521,7 +5009,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | createHashiVaultTargetResponse wraps response body. |  -  |
@@ -5536,14 +5023,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.create_key import CreateKey
-from akeyless.models.create_key_output import CreateKeyOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -5552,23 +5037,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     create_key = akeyless.CreateKey() # CreateKey | 
 
     try:
         api_response = api_instance.create_key(create_key)
-        print("The response of V2Api->create_key:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->create_key: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -5588,7 +5069,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | createKeyResponse wraps response body. |  -  |
@@ -5603,14 +5083,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.create_linked_target import CreateLinkedTarget
-from akeyless.models.create_linked_target_output import CreateLinkedTargetOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -5619,23 +5097,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     create_linked_target = akeyless.CreateLinkedTarget() # CreateLinkedTarget | 
 
     try:
         api_response = api_instance.create_linked_target(create_linked_target)
-        print("The response of V2Api->create_linked_target:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->create_linked_target: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -5655,7 +5129,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | createLinkedTargetResponse wraps response body. |  -  |
@@ -5670,14 +5143,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.create_native_k8_s_target import CreateNativeK8STarget
-from akeyless.models.create_native_k8_s_target_output import CreateNativeK8STargetOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -5686,23 +5157,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     create_native_k8_s_target = akeyless.CreateNativeK8STarget() # CreateNativeK8STarget | 
 
     try:
         api_response = api_instance.create_native_k8_s_target(create_native_k8_s_target)
-        print("The response of V2Api->create_native_k8_s_target:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->create_native_k8_s_target: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -5722,7 +5189,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | createNativeK8STargetResponse wraps response body. |  -  |
@@ -5737,14 +5203,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.create_oidc_app import CreateOidcApp
-from akeyless.models.create_oidc_app_output import CreateOidcAppOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -5753,23 +5217,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     create_oidc_app = akeyless.CreateOidcApp() # CreateOidcApp | 
 
     try:
         api_response = api_instance.create_oidc_app(create_oidc_app)
-        print("The response of V2Api->create_oidc_app:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->create_oidc_app: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -5789,7 +5249,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | createOidcAppResponse wraps response body. |  -  |
@@ -5804,14 +5263,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.create_passkey import CreatePasskey
-from akeyless.models.create_passkey_output import CreatePasskeyOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -5820,23 +5277,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     create_passkey = akeyless.CreatePasskey() # CreatePasskey | 
 
     try:
         api_response = api_instance.create_passkey(create_passkey)
-        print("The response of V2Api->create_passkey:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->create_passkey: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -5856,7 +5309,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | CreatePasskeyResponse wraps response body. |  -  |
@@ -5871,14 +5323,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.create_ping_target import CreatePingTarget
-from akeyless.models.create_ping_target_output import CreatePingTargetOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -5887,23 +5337,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     create_ping_target = akeyless.CreatePingTarget() # CreatePingTarget | 
 
     try:
         api_response = api_instance.create_ping_target(create_ping_target)
-        print("The response of V2Api->create_ping_target:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->create_ping_target: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -5923,7 +5369,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | createPingTargetResponse wraps response body. |  -  |
@@ -5938,14 +5383,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.create_pki_cert_issuer import CreatePKICertIssuer
-from akeyless.models.create_pki_cert_issuer_output import CreatePKICertIssuerOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -5954,23 +5397,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     create_pki_cert_issuer = akeyless.CreatePKICertIssuer() # CreatePKICertIssuer | 
 
     try:
         api_response = api_instance.create_pki_cert_issuer(create_pki_cert_issuer)
-        print("The response of V2Api->create_pki_cert_issuer:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->create_pki_cert_issuer: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -5990,7 +5429,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | createPKICertIssuerResponse wraps response body. |  -  |
@@ -6005,14 +5443,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.create_rabbit_mq_target import CreateRabbitMQTarget
-from akeyless.models.create_rabbit_mq_target_output import CreateRabbitMQTargetOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -6021,23 +5457,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     create_rabbit_mq_target = akeyless.CreateRabbitMQTarget() # CreateRabbitMQTarget | 
 
     try:
         api_response = api_instance.create_rabbit_mq_target(create_rabbit_mq_target)
-        print("The response of V2Api->create_rabbit_mq_target:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->create_rabbit_mq_target: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -6057,7 +5489,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | createRabbitMQTargetResponse wraps response body. |  -  |
@@ -6072,13 +5503,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.create_role import CreateRole
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -6087,23 +5517,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     create_role = akeyless.CreateRole() # CreateRole | 
 
     try:
         api_response = api_instance.create_role(create_role)
-        print("The response of V2Api->create_role:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->create_role: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -6123,7 +5549,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | createRoleResponse wraps response body. |  -  |
@@ -6138,14 +5563,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.create_rotated_secret import CreateRotatedSecret
-from akeyless.models.create_rotated_secret_output import CreateRotatedSecretOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -6154,23 +5577,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     create_rotated_secret = akeyless.CreateRotatedSecret() # CreateRotatedSecret | 
 
     try:
         api_response = api_instance.create_rotated_secret(create_rotated_secret)
-        print("The response of V2Api->create_rotated_secret:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->create_rotated_secret: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -6190,7 +5609,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | createRotatedSecretResponse wraps response body. |  -  |
@@ -6205,14 +5623,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.create_salesforce_target import CreateSalesforceTarget
-from akeyless.models.create_salesforce_target_output import CreateSalesforceTargetOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -6221,23 +5637,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     create_salesforce_target = akeyless.CreateSalesforceTarget() # CreateSalesforceTarget | 
 
     try:
         api_response = api_instance.create_salesforce_target(create_salesforce_target)
-        print("The response of V2Api->create_salesforce_target:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->create_salesforce_target: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -6257,7 +5669,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | createSalesforceTargetResponse wraps response body. |  -  |
@@ -6272,14 +5683,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.create_secret import CreateSecret
-from akeyless.models.create_secret_output import CreateSecretOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -6288,23 +5697,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     create_secret = akeyless.CreateSecret() # CreateSecret | 
 
     try:
         api_response = api_instance.create_secret(create_secret)
-        print("The response of V2Api->create_secret:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->create_secret: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -6324,7 +5729,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | createSecretResponse wraps response body. |  -  |
@@ -6339,14 +5743,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.create_ssh_cert_issuer import CreateSSHCertIssuer
-from akeyless.models.create_ssh_cert_issuer_output import CreateSSHCertIssuerOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -6355,23 +5757,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     create_ssh_cert_issuer = akeyless.CreateSSHCertIssuer() # CreateSSHCertIssuer | 
 
     try:
         api_response = api_instance.create_ssh_cert_issuer(create_ssh_cert_issuer)
-        print("The response of V2Api->create_ssh_cert_issuer:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->create_ssh_cert_issuer: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -6391,7 +5789,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | createSSHCertIssuerResponse wraps response body. |  -  |
@@ -6406,14 +5803,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.create_ssh_target import CreateSSHTarget
-from akeyless.models.create_ssh_target_output import CreateSSHTargetOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -6422,23 +5817,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     create_ssh_target = akeyless.CreateSSHTarget() # CreateSSHTarget | 
 
     try:
         api_response = api_instance.create_ssh_target(create_ssh_target)
-        print("The response of V2Api->create_ssh_target:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->create_ssh_target: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -6458,7 +5849,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | createSSHTargetResponse wraps response body. |  -  |
@@ -6473,14 +5863,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.create_tokenizer import CreateTokenizer
-from akeyless.models.create_tokenizer_output import CreateTokenizerOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -6489,23 +5877,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     create_tokenizer = akeyless.CreateTokenizer() # CreateTokenizer | 
 
     try:
         api_response = api_instance.create_tokenizer(create_tokenizer)
-        print("The response of V2Api->create_tokenizer:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->create_tokenizer: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -6525,7 +5909,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | createTokenizerResponse wraps response body. |  -  |
@@ -6540,14 +5923,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.create_usc import CreateUSC
-from akeyless.models.create_usc_output import CreateUSCOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -6556,23 +5937,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     create_usc = akeyless.CreateUSC() # CreateUSC | 
 
     try:
         api_response = api_instance.create_usc(create_usc)
-        print("The response of V2Api->create_usc:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->create_usc: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -6592,7 +5969,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | CreateUniversalSecretsConnectorResponse wraps response body. |  -  |
@@ -6607,14 +5983,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.create_user_event import CreateUserEvent
-from akeyless.models.create_user_event_output import CreateUserEventOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -6623,23 +5997,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     create_user_event = akeyless.CreateUserEvent() # CreateUserEvent | 
 
     try:
         api_response = api_instance.create_user_event(create_user_event)
-        print("The response of V2Api->create_user_event:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->create_user_event: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -6659,7 +6029,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | createUserEventResponse wraps response body. |  -  |
@@ -6674,14 +6043,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.create_web_target import CreateWebTarget
-from akeyless.models.create_web_target_output import CreateWebTargetOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -6690,23 +6057,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     create_web_target = akeyless.CreateWebTarget() # CreateWebTarget | 
 
     try:
         api_response = api_instance.create_web_target(create_web_target)
-        print("The response of V2Api->create_web_target:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->create_web_target: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -6726,7 +6089,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | createWebTargetResponse wraps response body. |  -  |
@@ -6741,14 +6103,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.create_windows_target import CreateWindowsTarget
-from akeyless.models.create_windows_target_output import CreateWindowsTargetOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -6757,23 +6117,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     create_windows_target = akeyless.CreateWindowsTarget() # CreateWindowsTarget | 
 
     try:
         api_response = api_instance.create_windows_target(create_windows_target)
-        print("The response of V2Api->create_windows_target:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->create_windows_target: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -6793,7 +6149,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | createWindowsTargetResponse wraps response body. |  -  |
@@ -6808,14 +6163,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.create_zero_ssl_target import CreateZeroSSLTarget
-from akeyless.models.create_zero_ssl_target_output import CreateZeroSSLTargetOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -6824,23 +6177,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     create_zero_ssl_target = akeyless.CreateZeroSSLTarget() # CreateZeroSSLTarget | 
 
     try:
         api_response = api_instance.create_zero_ssl_target(create_zero_ssl_target)
-        print("The response of V2Api->create_zero_ssl_target:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->create_zero_ssl_target: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -6860,7 +6209,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | createZeroSSLTargetResponse wraps response body. |  -  |
@@ -6875,14 +6223,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.create_ldap_target import CreateLdapTarget
-from akeyless.models.create_ldap_target_output import CreateLdapTargetOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -6891,23 +6237,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     create_ldap_target = akeyless.CreateLdapTarget() # CreateLdapTarget | 
 
     try:
         api_response = api_instance.createldap_target(create_ldap_target)
-        print("The response of V2Api->createldap_target:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->createldap_target: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -6927,7 +6269,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | createldapTargetResponse wraps response body. |  -  |
@@ -6942,13 +6283,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.deactivate_acme_account import DeactivateAcmeAccount
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -6957,23 +6297,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     deactivate_acme_account = akeyless.DeactivateAcmeAccount() # DeactivateAcmeAccount | 
 
     try:
         api_response = api_instance.deactivate_acme_account(deactivate_acme_account)
-        print("The response of V2Api->deactivate_acme_account:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->deactivate_acme_account: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -6993,7 +6329,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | deactivateAcmeAccountResponse wraps response body. |  -  |
@@ -7008,14 +6343,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.decrypt import Decrypt
-from akeyless.models.decrypt_output import DecryptOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -7024,23 +6357,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     decrypt = akeyless.Decrypt() # Decrypt | 
 
     try:
         api_response = api_instance.decrypt(decrypt)
-        print("The response of V2Api->decrypt:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->decrypt: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -7060,7 +6389,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | decryptResponse wraps response body. |  -  |
@@ -7075,14 +6403,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.batch_encryption_request_line import BatchEncryptionRequestLine
-from akeyless.models.decrypt_output import DecryptOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -7091,27 +6417,23 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
-    batch_encryption_request_line = [akeyless.BatchEncryptionRequestLine()] # List[BatchEncryptionRequestLine] | 
+    batch_encryption_request_line = [akeyless.BatchEncryptionRequestLine()] # list[BatchEncryptionRequestLine] | 
 
     try:
         api_response = api_instance.decrypt_batch(batch_encryption_request_line)
-        print("The response of V2Api->decrypt_batch:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->decrypt_batch: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **batch_encryption_request_line** | [**List[BatchEncryptionRequestLine]**](BatchEncryptionRequestLine.md)|  | 
+ **batch_encryption_request_line** | [**list[BatchEncryptionRequestLine]**](BatchEncryptionRequestLine.md)|  | 
 
 ### Return type
 
@@ -7127,7 +6449,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | decryptResponse wraps response body. |  -  |
@@ -7142,14 +6463,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.decrypt_gpg import DecryptGPG
-from akeyless.models.decrypt_gpg_output import DecryptGPGOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -7158,23 +6477,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     decrypt_gpg = akeyless.DecryptGPG() # DecryptGPG | 
 
     try:
         api_response = api_instance.decrypt_gpg(decrypt_gpg)
-        print("The response of V2Api->decrypt_gpg:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->decrypt_gpg: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -7194,7 +6509,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | decryptGPGResponse wraps response body. |  -  |
@@ -7209,14 +6523,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.decrypt_pkcs1 import DecryptPKCS1
-from akeyless.models.decrypt_pkcs1_output import DecryptPKCS1Output
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -7225,23 +6537,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     decrypt_pkcs1 = akeyless.DecryptPKCS1() # DecryptPKCS1 | 
 
     try:
         api_response = api_instance.decrypt_pkcs1(decrypt_pkcs1)
-        print("The response of V2Api->decrypt_pkcs1:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->decrypt_pkcs1: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -7261,7 +6569,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | decryptPKCS1Response wraps response body. |  -  |
@@ -7276,14 +6583,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.decrypt_with_classic_key import DecryptWithClassicKey
-from akeyless.models.decrypt_with_classic_key_output import DecryptWithClassicKeyOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -7292,23 +6597,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     decrypt_with_classic_key = akeyless.DecryptWithClassicKey() # DecryptWithClassicKey | 
 
     try:
         api_response = api_instance.decrypt_with_classic_key(decrypt_with_classic_key)
-        print("The response of V2Api->decrypt_with_classic_key:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->decrypt_with_classic_key: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -7328,7 +6629,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | decryptWithClassicKeyResponse wraps response body. |  -  |
@@ -7343,14 +6643,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.delete_auth_method import DeleteAuthMethod
-from akeyless.models.delete_auth_method_output import DeleteAuthMethodOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -7359,23 +6657,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     delete_auth_method = akeyless.DeleteAuthMethod() # DeleteAuthMethod | 
 
     try:
         api_response = api_instance.delete_auth_method(delete_auth_method)
-        print("The response of V2Api->delete_auth_method:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->delete_auth_method: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -7395,7 +6689,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | deleteAuthMethodResponse wraps response body. |  -  |
@@ -7410,14 +6703,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.delete_auth_methods import DeleteAuthMethods
-from akeyless.models.delete_auth_methods_output import DeleteAuthMethodsOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -7426,23 +6717,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     delete_auth_methods = akeyless.DeleteAuthMethods() # DeleteAuthMethods | 
 
     try:
         api_response = api_instance.delete_auth_methods(delete_auth_methods)
-        print("The response of V2Api->delete_auth_methods:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->delete_auth_methods: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -7462,7 +6749,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | deleteAuthMethodsResponse wraps response body. |  -  |
@@ -7477,13 +6763,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.delete_event_forwarder import DeleteEventForwarder
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -7492,23 +6777,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     delete_event_forwarder = akeyless.DeleteEventForwarder() # DeleteEventForwarder | 
 
     try:
         api_response = api_instance.delete_event_forwarder(delete_event_forwarder)
-        print("The response of V2Api->delete_event_forwarder:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->delete_event_forwarder: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -7528,7 +6809,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | deleteEventForwarderResponse wraps response body. |  -  |
@@ -7543,13 +6823,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.delete_gateway_allowed_access_id import DeleteGatewayAllowedAccessId
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -7558,23 +6837,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     delete_gateway_allowed_access_id = akeyless.DeleteGatewayAllowedAccessId() # DeleteGatewayAllowedAccessId | 
 
     try:
         api_response = api_instance.delete_gateway_allowed_access_id(delete_gateway_allowed_access_id)
-        print("The response of V2Api->delete_gateway_allowed_access_id:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->delete_gateway_allowed_access_id: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -7594,7 +6869,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | deleteGatewayAllowedAccessIdResponse wraps response body. |  -  |
@@ -7609,14 +6883,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.delete_group import DeleteGroup
-from akeyless.models.delete_group_output import DeleteGroupOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -7625,23 +6897,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     delete_group = akeyless.DeleteGroup() # DeleteGroup | 
 
     try:
         api_response = api_instance.delete_group(delete_group)
-        print("The response of V2Api->delete_group:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->delete_group: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -7661,7 +6929,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | deleteGroupResponse wraps response body. |  -  |
@@ -7676,13 +6943,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.delete_gw_cluster import DeleteGwCluster
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -7691,23 +6957,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     delete_gw_cluster = akeyless.DeleteGwCluster() # DeleteGwCluster | 
 
     try:
         api_response = api_instance.delete_gw_cluster(delete_gw_cluster)
-        print("The response of V2Api->delete_gw_cluster:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->delete_gw_cluster: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -7727,7 +6989,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | deleteGwClusterResponse wraps response body. |  -  |
@@ -7742,14 +7003,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.delete_item import DeleteItem
-from akeyless.models.delete_item_output import DeleteItemOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -7758,23 +7017,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     delete_item = akeyless.DeleteItem() # DeleteItem | 
 
     try:
         api_response = api_instance.delete_item(delete_item)
-        print("The response of V2Api->delete_item:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->delete_item: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -7794,7 +7049,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | deleteItemResponse wraps response body. |  -  |
@@ -7809,14 +7063,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.delete_items import DeleteItems
-from akeyless.models.delete_items_output import DeleteItemsOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -7825,23 +7077,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     delete_items = akeyless.DeleteItems() # DeleteItems | 
 
     try:
         api_response = api_instance.delete_items(delete_items)
-        print("The response of V2Api->delete_items:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->delete_items: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -7861,7 +7109,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | deleteItemsResponse wraps response body. |  -  |
@@ -7876,13 +7123,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.delete_role import DeleteRole
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -7891,23 +7137,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     delete_role = akeyless.DeleteRole() # DeleteRole | 
 
     try:
         api_response = api_instance.delete_role(delete_role)
-        print("The response of V2Api->delete_role:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->delete_role: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -7927,7 +7169,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | deleteRoleResponse wraps response body. |  -  |
@@ -7942,13 +7183,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.delete_role_association import DeleteRoleAssociation
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -7957,23 +7197,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     delete_role_association = akeyless.DeleteRoleAssociation() # DeleteRoleAssociation | 
 
     try:
         api_response = api_instance.delete_role_association(delete_role_association)
-        print("The response of V2Api->delete_role_association:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->delete_role_association: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -7993,7 +7229,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | deleteRoleAssociationResponse wraps response body. |  -  |
@@ -8008,14 +7243,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.delete_role_rule import DeleteRoleRule
-from akeyless.models.delete_role_rule_output import DeleteRoleRuleOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -8024,23 +7257,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     delete_role_rule = akeyless.DeleteRoleRule() # DeleteRoleRule | 
 
     try:
         api_response = api_instance.delete_role_rule(delete_role_rule)
-        print("The response of V2Api->delete_role_rule:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->delete_role_rule: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -8060,7 +7289,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | deleteRoleRuleResponse wraps response body. |  -  |
@@ -8075,13 +7303,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.delete_roles import DeleteRoles
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -8090,23 +7317,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     delete_roles = akeyless.DeleteRoles() # DeleteRoles | 
 
     try:
         api_response = api_instance.delete_roles(delete_roles)
-        print("The response of V2Api->delete_roles:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->delete_roles: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -8126,7 +7349,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | deleteRolesResponse wraps response body. |  -  |
@@ -8141,13 +7363,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.delete_target import DeleteTarget
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -8156,23 +7377,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     delete_target = akeyless.DeleteTarget() # DeleteTarget | 
 
     try:
         api_response = api_instance.delete_target(delete_target)
-        print("The response of V2Api->delete_target:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->delete_target: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -8192,7 +7409,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | deleteTargetResponse wraps response body. |  -  |
@@ -8207,13 +7423,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.delete_target_association import DeleteTargetAssociation
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -8222,23 +7437,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     delete_target_association = akeyless.DeleteTargetAssociation() # DeleteTargetAssociation | 
 
     try:
         api_response = api_instance.delete_target_association(delete_target_association)
-        print("The response of V2Api->delete_target_association:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->delete_target_association: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -8258,7 +7469,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | deleteTargetAssociationResponse wraps response body. |  -  |
@@ -8273,13 +7483,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.delete_targets import DeleteTargets
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -8288,23 +7497,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     delete_targets = akeyless.DeleteTargets() # DeleteTargets | 
 
     try:
         api_response = api_instance.delete_targets(delete_targets)
-        print("The response of V2Api->delete_targets:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->delete_targets: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -8324,7 +7529,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | deleteTargetsResponse wraps response body. |  -  |
@@ -8339,14 +7543,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.derive_key import DeriveKey
-from akeyless.models.derive_key_output import DeriveKeyOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -8355,23 +7557,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     derive_key = akeyless.DeriveKey() # DeriveKey | 
 
     try:
         api_response = api_instance.derive_key(derive_key)
-        print("The response of V2Api->derive_key:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->derive_key: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -8391,7 +7589,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | DeriveKeyResponse wraps response body. |  -  |
@@ -8406,14 +7603,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.describe_assoc import DescribeAssoc
-from akeyless.models.role_association_details import RoleAssociationDetails
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -8422,23 +7617,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     describe_assoc = akeyless.DescribeAssoc() # DescribeAssoc | 
 
     try:
         api_response = api_instance.describe_assoc(describe_assoc)
-        print("The response of V2Api->describe_assoc:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->describe_assoc: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -8458,7 +7649,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | describeAssocResponse wraps response body. |  -  |
@@ -8473,14 +7663,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.describe_item import DescribeItem
-from akeyless.models.item import Item
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -8489,23 +7677,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     describe_item = akeyless.DescribeItem() # DescribeItem | 
 
     try:
         api_response = api_instance.describe_item(describe_item)
-        print("The response of V2Api->describe_item:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->describe_item: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -8525,7 +7709,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | describeItemResponse wraps response body. |  -  |
@@ -8540,14 +7723,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.describe_permissions import DescribePermissions
-from akeyless.models.describe_permissions_output import DescribePermissionsOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -8556,23 +7737,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     describe_permissions = akeyless.DescribePermissions() # DescribePermissions | 
 
     try:
         api_response = api_instance.describe_permissions(describe_permissions)
-        print("The response of V2Api->describe_permissions:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->describe_permissions: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -8592,7 +7769,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | DescribePermissionsResponse wraps response body. |  -  |
@@ -8607,14 +7783,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.describe_sub_claims import DescribeSubClaims
-from akeyless.models.describe_sub_claims_output import DescribeSubClaimsOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -8623,23 +7797,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     describe_sub_claims = akeyless.DescribeSubClaims() # DescribeSubClaims | 
 
     try:
         api_response = api_instance.describe_sub_claims(describe_sub_claims)
-        print("The response of V2Api->describe_sub_claims:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->describe_sub_claims: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -8659,7 +7829,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | describeSubClaimsResponse wraps response body. |  -  |
@@ -8675,14 +7844,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.detokenize import Detokenize
-from akeyless.models.detokenize_output import DetokenizeOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -8691,23 +7858,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     detokenize = akeyless.Detokenize() # Detokenize | 
 
     try:
         api_response = api_instance.detokenize(detokenize)
-        print("The response of V2Api->detokenize:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->detokenize: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -8727,7 +7890,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | detokenizeResponse wraps response body. |  -  |
@@ -8742,14 +7904,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.batch_tokenization_request_line import BatchTokenizationRequestLine
-from akeyless.models.detokenize_output import DetokenizeOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -8758,27 +7918,23 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
-    batch_tokenization_request_line = [akeyless.BatchTokenizationRequestLine()] # List[BatchTokenizationRequestLine] | 
+    batch_tokenization_request_line = [akeyless.BatchTokenizationRequestLine()] # list[BatchTokenizationRequestLine] | 
 
     try:
         api_response = api_instance.detokenize_batch(batch_tokenization_request_line)
-        print("The response of V2Api->detokenize_batch:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->detokenize_batch: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **batch_tokenization_request_line** | [**List[BatchTokenizationRequestLine]**](BatchTokenizationRequestLine.md)|  | 
+ **batch_tokenization_request_line** | [**list[BatchTokenizationRequestLine]**](BatchTokenizationRequestLine.md)|  | 
 
 ### Return type
 
@@ -8794,7 +7950,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | detokenizeResponse wraps response body. |  -  |
@@ -8809,14 +7964,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.dynamic_secret_create_artifactory import DynamicSecretCreateArtifactory
-from akeyless.models.dynamic_secret_create_output import DynamicSecretCreateOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -8825,23 +7978,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     dynamic_secret_create_artifactory = akeyless.DynamicSecretCreateArtifactory() # DynamicSecretCreateArtifactory | 
 
     try:
         api_response = api_instance.dynamic_secret_create_artifactory(dynamic_secret_create_artifactory)
-        print("The response of V2Api->dynamic_secret_create_artifactory:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->dynamic_secret_create_artifactory: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -8861,7 +8010,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | dynamicSecretCreateArtifactoryResponse wraps response body. |  -  |
@@ -8876,14 +8024,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.dynamic_secret_create_aws import DynamicSecretCreateAws
-from akeyless.models.dynamic_secret_create_output import DynamicSecretCreateOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -8892,23 +8038,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     dynamic_secret_create_aws = akeyless.DynamicSecretCreateAws() # DynamicSecretCreateAws | 
 
     try:
         api_response = api_instance.dynamic_secret_create_aws(dynamic_secret_create_aws)
-        print("The response of V2Api->dynamic_secret_create_aws:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->dynamic_secret_create_aws: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -8928,7 +8070,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | dynamicSecretCreateAwsResponse wraps response body. |  -  |
@@ -8943,14 +8084,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.dynamic_secret_create_azure import DynamicSecretCreateAzure
-from akeyless.models.dynamic_secret_create_output import DynamicSecretCreateOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -8959,23 +8098,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     dynamic_secret_create_azure = akeyless.DynamicSecretCreateAzure() # DynamicSecretCreateAzure | 
 
     try:
         api_response = api_instance.dynamic_secret_create_azure(dynamic_secret_create_azure)
-        print("The response of V2Api->dynamic_secret_create_azure:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->dynamic_secret_create_azure: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -8995,7 +8130,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | dynamicSecretCreateAzureResponse wraps response body. |  -  |
@@ -9010,14 +8144,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.dynamic_secret_create_cassandra import DynamicSecretCreateCassandra
-from akeyless.models.dynamic_secret_create_output import DynamicSecretCreateOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -9026,23 +8158,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     dynamic_secret_create_cassandra = akeyless.DynamicSecretCreateCassandra() # DynamicSecretCreateCassandra | 
 
     try:
         api_response = api_instance.dynamic_secret_create_cassandra(dynamic_secret_create_cassandra)
-        print("The response of V2Api->dynamic_secret_create_cassandra:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->dynamic_secret_create_cassandra: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -9062,7 +8190,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | dynamicSecretCreateCassandraResponse wraps response body. |  -  |
@@ -9077,14 +8204,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.dynamic_secret_create_custom import DynamicSecretCreateCustom
-from akeyless.models.dynamic_secret_create_output import DynamicSecretCreateOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -9093,23 +8218,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     dynamic_secret_create_custom = akeyless.DynamicSecretCreateCustom() # DynamicSecretCreateCustom |  (optional)
 
     try:
         api_response = api_instance.dynamic_secret_create_custom(dynamic_secret_create_custom=dynamic_secret_create_custom)
-        print("The response of V2Api->dynamic_secret_create_custom:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->dynamic_secret_create_custom: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -9129,7 +8250,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | dynamicSecretCreateCustomResponse wraps response body. |  -  |
@@ -9144,14 +8264,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.dynamic_secret_create_dockerhub import DynamicSecretCreateDockerhub
-from akeyless.models.dynamic_secret_create_output import DynamicSecretCreateOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -9160,23 +8278,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     dynamic_secret_create_dockerhub = akeyless.DynamicSecretCreateDockerhub() # DynamicSecretCreateDockerhub | 
 
     try:
         api_response = api_instance.dynamic_secret_create_dockerhub(dynamic_secret_create_dockerhub)
-        print("The response of V2Api->dynamic_secret_create_dockerhub:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->dynamic_secret_create_dockerhub: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -9196,7 +8310,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | dynamicSecretCreateDockerhubResponse wraps response body. |  -  |
@@ -9211,14 +8324,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.dynamic_secret_create_eks import DynamicSecretCreateEks
-from akeyless.models.dynamic_secret_create_output import DynamicSecretCreateOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -9227,23 +8338,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     dynamic_secret_create_eks = akeyless.DynamicSecretCreateEks() # DynamicSecretCreateEks | 
 
     try:
         api_response = api_instance.dynamic_secret_create_eks(dynamic_secret_create_eks)
-        print("The response of V2Api->dynamic_secret_create_eks:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->dynamic_secret_create_eks: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -9263,7 +8370,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | dynamicSecretCreateEksResponse wraps response body. |  -  |
@@ -9278,14 +8384,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.dynamic_secret_create_gcp import DynamicSecretCreateGcp
-from akeyless.models.dynamic_secret_create_output import DynamicSecretCreateOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -9294,23 +8398,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     dynamic_secret_create_gcp = akeyless.DynamicSecretCreateGcp() # DynamicSecretCreateGcp | 
 
     try:
         api_response = api_instance.dynamic_secret_create_gcp(dynamic_secret_create_gcp)
-        print("The response of V2Api->dynamic_secret_create_gcp:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->dynamic_secret_create_gcp: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -9330,7 +8430,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | dynamicSecretCreateGcpResponse wraps response body. |  -  |
@@ -9345,14 +8444,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.dynamic_secret_create_github import DynamicSecretCreateGithub
-from akeyless.models.dynamic_secret_create_output import DynamicSecretCreateOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -9361,23 +8458,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     dynamic_secret_create_github = akeyless.DynamicSecretCreateGithub() # DynamicSecretCreateGithub | 
 
     try:
         api_response = api_instance.dynamic_secret_create_github(dynamic_secret_create_github)
-        print("The response of V2Api->dynamic_secret_create_github:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->dynamic_secret_create_github: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -9397,7 +8490,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | dynamicSecretCreateGithubResponse wraps response body. |  -  |
@@ -9412,14 +8504,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.dynamic_secret_create_gitlab import DynamicSecretCreateGitlab
-from akeyless.models.dynamic_secret_create_output import DynamicSecretCreateOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -9428,23 +8518,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     dynamic_secret_create_gitlab = akeyless.DynamicSecretCreateGitlab() # DynamicSecretCreateGitlab | 
 
     try:
         api_response = api_instance.dynamic_secret_create_gitlab(dynamic_secret_create_gitlab)
-        print("The response of V2Api->dynamic_secret_create_gitlab:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->dynamic_secret_create_gitlab: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -9464,7 +8550,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | dynamicSecretCreateGitlabResponse wraps response body. |  -  |
@@ -9479,14 +8564,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.dynamic_secret_create_gke import DynamicSecretCreateGke
-from akeyless.models.dynamic_secret_create_output import DynamicSecretCreateOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -9495,23 +8578,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     dynamic_secret_create_gke = akeyless.DynamicSecretCreateGke() # DynamicSecretCreateGke | 
 
     try:
         api_response = api_instance.dynamic_secret_create_gke(dynamic_secret_create_gke)
-        print("The response of V2Api->dynamic_secret_create_gke:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->dynamic_secret_create_gke: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -9531,7 +8610,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | dynamicSecretCreateGkeResponse wraps response body. |  -  |
@@ -9546,14 +8624,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.dynamic_secret_create_google_workspace import DynamicSecretCreateGoogleWorkspace
-from akeyless.models.dynamic_secret_create_output import DynamicSecretCreateOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -9562,23 +8638,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     dynamic_secret_create_google_workspace = akeyless.DynamicSecretCreateGoogleWorkspace() # DynamicSecretCreateGoogleWorkspace | 
 
     try:
         api_response = api_instance.dynamic_secret_create_google_workspace(dynamic_secret_create_google_workspace)
-        print("The response of V2Api->dynamic_secret_create_google_workspace:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->dynamic_secret_create_google_workspace: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -9598,7 +8670,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | dynamicSecretCreateGoogleWorkspaceResponse wraps response body. |  -  |
@@ -9613,14 +8684,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.dynamic_secret_create_hana_db import DynamicSecretCreateHanaDb
-from akeyless.models.dynamic_secret_create_output import DynamicSecretCreateOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -9629,23 +8698,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     dynamic_secret_create_hana_db = akeyless.DynamicSecretCreateHanaDb() # DynamicSecretCreateHanaDb | 
 
     try:
         api_response = api_instance.dynamic_secret_create_hana_db(dynamic_secret_create_hana_db)
-        print("The response of V2Api->dynamic_secret_create_hana_db:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->dynamic_secret_create_hana_db: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -9665,7 +8730,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | dynamicSecretCreateHanaDbResponse wraps response body. |  -  |
@@ -9680,14 +8744,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.dynamic_secret_create_k8s import DynamicSecretCreateK8s
-from akeyless.models.dynamic_secret_create_output import DynamicSecretCreateOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -9696,23 +8758,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     dynamic_secret_create_k8s = akeyless.DynamicSecretCreateK8s() # DynamicSecretCreateK8s | 
 
     try:
         api_response = api_instance.dynamic_secret_create_k8s(dynamic_secret_create_k8s)
-        print("The response of V2Api->dynamic_secret_create_k8s:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->dynamic_secret_create_k8s: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -9732,7 +8790,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | dynamicSecretCreateK8sResponse wraps response body. |  -  |
@@ -9747,14 +8804,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.dynamic_secret_create_ldap import DynamicSecretCreateLdap
-from akeyless.models.dynamic_secret_create_output import DynamicSecretCreateOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -9763,23 +8818,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     dynamic_secret_create_ldap = akeyless.DynamicSecretCreateLdap() # DynamicSecretCreateLdap | 
 
     try:
         api_response = api_instance.dynamic_secret_create_ldap(dynamic_secret_create_ldap)
-        print("The response of V2Api->dynamic_secret_create_ldap:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->dynamic_secret_create_ldap: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -9799,7 +8850,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | dynamicSecretCreateLdapResponse wraps response body. |  -  |
@@ -9814,14 +8864,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.dynamic_secret_create_mongo_db import DynamicSecretCreateMongoDb
-from akeyless.models.dynamic_secret_create_output import DynamicSecretCreateOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -9830,23 +8878,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     dynamic_secret_create_mongo_db = akeyless.DynamicSecretCreateMongoDb() # DynamicSecretCreateMongoDb | 
 
     try:
         api_response = api_instance.dynamic_secret_create_mongo_db(dynamic_secret_create_mongo_db)
-        print("The response of V2Api->dynamic_secret_create_mongo_db:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->dynamic_secret_create_mongo_db: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -9866,7 +8910,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | dynamicSecretCreateMongoDbResponse wraps response body. |  -  |
@@ -9881,14 +8924,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.dynamic_secret_create_ms_sql import DynamicSecretCreateMsSql
-from akeyless.models.dynamic_secret_create_output import DynamicSecretCreateOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -9897,23 +8938,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     dynamic_secret_create_ms_sql = akeyless.DynamicSecretCreateMsSql() # DynamicSecretCreateMsSql | 
 
     try:
         api_response = api_instance.dynamic_secret_create_ms_sql(dynamic_secret_create_ms_sql)
-        print("The response of V2Api->dynamic_secret_create_ms_sql:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->dynamic_secret_create_ms_sql: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -9933,7 +8970,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | dynamicSecretCreateMsSqlResponse wraps response body. |  -  |
@@ -9948,14 +8984,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.dynamic_secret_create_my_sql import DynamicSecretCreateMySql
-from akeyless.models.dynamic_secret_create_output import DynamicSecretCreateOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -9964,23 +8998,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     dynamic_secret_create_my_sql = akeyless.DynamicSecretCreateMySql() # DynamicSecretCreateMySql | 
 
     try:
         api_response = api_instance.dynamic_secret_create_my_sql(dynamic_secret_create_my_sql)
-        print("The response of V2Api->dynamic_secret_create_my_sql:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->dynamic_secret_create_my_sql: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -10000,7 +9030,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | dynamicSecretCreateMySqlResponse wraps response body. |  -  |
@@ -10015,14 +9044,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.dynamic_secret_create_oracle_db import DynamicSecretCreateOracleDb
-from akeyless.models.dynamic_secret_create_output import DynamicSecretCreateOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -10031,23 +9058,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     dynamic_secret_create_oracle_db = akeyless.DynamicSecretCreateOracleDb() # DynamicSecretCreateOracleDb | 
 
     try:
         api_response = api_instance.dynamic_secret_create_oracle_db(dynamic_secret_create_oracle_db)
-        print("The response of V2Api->dynamic_secret_create_oracle_db:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->dynamic_secret_create_oracle_db: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -10067,7 +9090,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | dynamicSecretCreateOracleDbResponse wraps response body. |  -  |
@@ -10082,14 +9104,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.dynamic_secret_create_output import DynamicSecretCreateOutput
-from akeyless.models.dynamic_secret_create_ping import DynamicSecretCreatePing
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -10098,23 +9118,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     dynamic_secret_create_ping = akeyless.DynamicSecretCreatePing() # DynamicSecretCreatePing | 
 
     try:
         api_response = api_instance.dynamic_secret_create_ping(dynamic_secret_create_ping)
-        print("The response of V2Api->dynamic_secret_create_ping:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->dynamic_secret_create_ping: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -10134,7 +9150,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | dynamicSecretCreatePingResponse wraps response body. |  -  |
@@ -10149,14 +9164,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.dynamic_secret_create_output import DynamicSecretCreateOutput
-from akeyless.models.dynamic_secret_create_postgre_sql import DynamicSecretCreatePostgreSql
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -10165,23 +9178,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     dynamic_secret_create_postgre_sql = akeyless.DynamicSecretCreatePostgreSql() # DynamicSecretCreatePostgreSql | 
 
     try:
         api_response = api_instance.dynamic_secret_create_postgre_sql(dynamic_secret_create_postgre_sql)
-        print("The response of V2Api->dynamic_secret_create_postgre_sql:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->dynamic_secret_create_postgre_sql: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -10201,7 +9210,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | dynamicSecretCreatePostgreSqlResponse wraps response body. |  -  |
@@ -10216,14 +9224,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.dynamic_secret_create_output import DynamicSecretCreateOutput
-from akeyless.models.dynamic_secret_create_rabbit_mq import DynamicSecretCreateRabbitMq
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -10232,23 +9238,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     dynamic_secret_create_rabbit_mq = akeyless.DynamicSecretCreateRabbitMq() # DynamicSecretCreateRabbitMq | 
 
     try:
         api_response = api_instance.dynamic_secret_create_rabbit_mq(dynamic_secret_create_rabbit_mq)
-        print("The response of V2Api->dynamic_secret_create_rabbit_mq:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->dynamic_secret_create_rabbit_mq: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -10268,7 +9270,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | dynamicSecretCreateRabbitMqResponse wraps response body. |  -  |
@@ -10283,14 +9284,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.dynamic_secret_create_output import DynamicSecretCreateOutput
-from akeyless.models.dynamic_secret_create_rdp import DynamicSecretCreateRdp
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -10299,23 +9298,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     dynamic_secret_create_rdp = akeyless.DynamicSecretCreateRdp() # DynamicSecretCreateRdp | 
 
     try:
         api_response = api_instance.dynamic_secret_create_rdp(dynamic_secret_create_rdp)
-        print("The response of V2Api->dynamic_secret_create_rdp:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->dynamic_secret_create_rdp: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -10335,7 +9330,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | dynamicSecretCreateRdpResponse wraps response body. |  -  |
@@ -10350,14 +9344,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.dynamic_secret_create_output import DynamicSecretCreateOutput
-from akeyless.models.dynamic_secret_create_redis import DynamicSecretCreateRedis
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -10366,23 +9358,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     dynamic_secret_create_redis = akeyless.DynamicSecretCreateRedis() # DynamicSecretCreateRedis | 
 
     try:
         api_response = api_instance.dynamic_secret_create_redis(dynamic_secret_create_redis)
-        print("The response of V2Api->dynamic_secret_create_redis:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->dynamic_secret_create_redis: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -10402,7 +9390,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | dynamicSecretCreateRedisResponse wraps response body. |  -  |
@@ -10417,14 +9404,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.dynamic_secret_create_output import DynamicSecretCreateOutput
-from akeyless.models.dynamic_secret_create_redshift import DynamicSecretCreateRedshift
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -10433,23 +9418,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     dynamic_secret_create_redshift = akeyless.DynamicSecretCreateRedshift() # DynamicSecretCreateRedshift | 
 
     try:
         api_response = api_instance.dynamic_secret_create_redshift(dynamic_secret_create_redshift)
-        print("The response of V2Api->dynamic_secret_create_redshift:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->dynamic_secret_create_redshift: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -10469,7 +9450,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | dynamicSecretCreateRedshiftResponse wraps response body. |  -  |
@@ -10484,14 +9464,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.dynamic_secret_create_output import DynamicSecretCreateOutput
-from akeyless.models.dynamic_secret_create_snowflake import DynamicSecretCreateSnowflake
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -10500,23 +9478,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     dynamic_secret_create_snowflake = akeyless.DynamicSecretCreateSnowflake() # DynamicSecretCreateSnowflake | 
 
     try:
         api_response = api_instance.dynamic_secret_create_snowflake(dynamic_secret_create_snowflake)
-        print("The response of V2Api->dynamic_secret_create_snowflake:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->dynamic_secret_create_snowflake: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -10536,7 +9510,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | dynamicSecretCreateSnowflakeResponse wraps response body. |  -  |
@@ -10551,14 +9524,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.dynamic_secret_create_output import DynamicSecretCreateOutput
-from akeyless.models.dynamic_secret_create_venafi import DynamicSecretCreateVenafi
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -10567,23 +9538,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     dynamic_secret_create_venafi = akeyless.DynamicSecretCreateVenafi() # DynamicSecretCreateVenafi | 
 
     try:
         api_response = api_instance.dynamic_secret_create_venafi(dynamic_secret_create_venafi)
-        print("The response of V2Api->dynamic_secret_create_venafi:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->dynamic_secret_create_venafi: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -10603,7 +9570,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | dynamicSecretCreateVenafiResponse wraps response body. |  -  |
@@ -10618,14 +9584,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.dynamic_secret_delete import DynamicSecretDelete
-from akeyless.models.dynamic_secret_delete_output import DynamicSecretDeleteOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -10634,23 +9598,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     dynamic_secret_delete = akeyless.DynamicSecretDelete() # DynamicSecretDelete | 
 
     try:
         api_response = api_instance.dynamic_secret_delete(dynamic_secret_delete)
-        print("The response of V2Api->dynamic_secret_delete:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->dynamic_secret_delete: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -10670,7 +9630,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | dynamicSecretDeleteResponse wraps response body. |  -  |
@@ -10685,14 +9644,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.ds_producer_details import DSProducerDetails
-from akeyless.models.dynamic_secret_get import DynamicSecretGet
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -10701,23 +9658,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     dynamic_secret_get = akeyless.DynamicSecretGet() # DynamicSecretGet | 
 
     try:
         api_response = api_instance.dynamic_secret_get(dynamic_secret_get)
-        print("The response of V2Api->dynamic_secret_get:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->dynamic_secret_get: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -10737,7 +9690,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | dynamicSecretGetResponse wraps response body. |  -  |
@@ -10746,19 +9698,18 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **dynamic_secret_get_value**
-> Dict[str, str] dynamic_secret_get_value(dynamic_secret_get_value)
+> dict(str, str) dynamic_secret_get_value(dynamic_secret_get_value)
 
 
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.dynamic_secret_get_value import DynamicSecretGetValue
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -10767,23 +9718,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     dynamic_secret_get_value = akeyless.DynamicSecretGetValue() # DynamicSecretGetValue | 
 
     try:
         api_response = api_instance.dynamic_secret_get_value(dynamic_secret_get_value)
-        print("The response of V2Api->dynamic_secret_get_value:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->dynamic_secret_get_value: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -10791,7 +9738,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**Dict[str, str]**
+**dict(str, str)**
 
 ### Authorization
 
@@ -10803,7 +9750,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | dynamicSecretGetValueResponse wraps response body. |  -  |
@@ -10818,14 +9764,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.dynamic_secret_list import DynamicSecretList
-from akeyless.models.get_producers_list_reply_obj import GetProducersListReplyObj
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -10834,23 +9778,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     dynamic_secret_list = akeyless.DynamicSecretList() # DynamicSecretList | 
 
     try:
         api_response = api_instance.dynamic_secret_list(dynamic_secret_list)
-        print("The response of V2Api->dynamic_secret_list:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->dynamic_secret_list: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -10870,7 +9810,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | dynamicSecretListResponse wraps response body. |  -  |
@@ -10885,13 +9824,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.dynamic_secret_tmp_creds_delete import DynamicSecretTmpCredsDelete
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -10900,21 +9838,18 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     dynamic_secret_tmp_creds_delete = akeyless.DynamicSecretTmpCredsDelete() # DynamicSecretTmpCredsDelete | 
 
     try:
         api_instance.dynamic_secret_tmp_creds_delete(dynamic_secret_tmp_creds_delete)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->dynamic_secret_tmp_creds_delete: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -10934,7 +9869,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | dynamicSecretTmpCredsDeleteResponse wraps response body. |  -  |
@@ -10943,20 +9877,18 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **dynamic_secret_tmp_creds_get**
-> List[TmpUserData] dynamic_secret_tmp_creds_get(dynamic_secret_tmp_creds_get)
+> list[TmpUserData] dynamic_secret_tmp_creds_get(dynamic_secret_tmp_creds_get)
 
 
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.dynamic_secret_tmp_creds_get import DynamicSecretTmpCredsGet
-from akeyless.models.tmp_user_data import TmpUserData
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -10965,23 +9897,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     dynamic_secret_tmp_creds_get = akeyless.DynamicSecretTmpCredsGet() # DynamicSecretTmpCredsGet | 
 
     try:
         api_response = api_instance.dynamic_secret_tmp_creds_get(dynamic_secret_tmp_creds_get)
-        print("The response of V2Api->dynamic_secret_tmp_creds_get:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->dynamic_secret_tmp_creds_get: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -10989,7 +9917,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**List[TmpUserData]**](TmpUserData.md)
+[**list[TmpUserData]**](TmpUserData.md)
 
 ### Authorization
 
@@ -11001,7 +9929,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | dynamicSecretTmpCredsGetResponse wraps response body. |  -  |
@@ -11016,13 +9943,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.dynamic_secret_tmp_creds_update import DynamicSecretTmpCredsUpdate
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -11031,21 +9957,18 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     dynamic_secret_tmp_creds_update = akeyless.DynamicSecretTmpCredsUpdate() # DynamicSecretTmpCredsUpdate | 
 
     try:
         api_instance.dynamic_secret_tmp_creds_update(dynamic_secret_tmp_creds_update)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->dynamic_secret_tmp_creds_update: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -11065,7 +9988,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | dynamicSecretTmpCredsUpdateResponse wraps response body. |  -  |
@@ -11080,14 +10002,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.dynamic_secret_update_artifactory import DynamicSecretUpdateArtifactory
-from akeyless.models.dynamic_secret_update_output import DynamicSecretUpdateOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -11096,23 +10016,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     dynamic_secret_update_artifactory = akeyless.DynamicSecretUpdateArtifactory() # DynamicSecretUpdateArtifactory | 
 
     try:
         api_response = api_instance.dynamic_secret_update_artifactory(dynamic_secret_update_artifactory)
-        print("The response of V2Api->dynamic_secret_update_artifactory:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->dynamic_secret_update_artifactory: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -11132,7 +10048,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | dynamicSecretUpdateArtifactoryResponse wraps response body. |  -  |
@@ -11147,14 +10062,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.dynamic_secret_update_aws import DynamicSecretUpdateAws
-from akeyless.models.dynamic_secret_update_output import DynamicSecretUpdateOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -11163,23 +10076,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     dynamic_secret_update_aws = akeyless.DynamicSecretUpdateAws() # DynamicSecretUpdateAws | 
 
     try:
         api_response = api_instance.dynamic_secret_update_aws(dynamic_secret_update_aws)
-        print("The response of V2Api->dynamic_secret_update_aws:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->dynamic_secret_update_aws: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -11199,7 +10108,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | dynamicSecretUpdateAwsResponse wraps response body. |  -  |
@@ -11214,14 +10122,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.dynamic_secret_update_azure import DynamicSecretUpdateAzure
-from akeyless.models.dynamic_secret_update_output import DynamicSecretUpdateOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -11230,23 +10136,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     dynamic_secret_update_azure = akeyless.DynamicSecretUpdateAzure() # DynamicSecretUpdateAzure | 
 
     try:
         api_response = api_instance.dynamic_secret_update_azure(dynamic_secret_update_azure)
-        print("The response of V2Api->dynamic_secret_update_azure:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->dynamic_secret_update_azure: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -11266,7 +10168,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | dynamicSecretUpdateAzureResponse wraps response body. |  -  |
@@ -11281,14 +10182,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.dynamic_secret_update_cassandra import DynamicSecretUpdateCassandra
-from akeyless.models.dynamic_secret_update_output import DynamicSecretUpdateOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -11297,23 +10196,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     dynamic_secret_update_cassandra = akeyless.DynamicSecretUpdateCassandra() # DynamicSecretUpdateCassandra | 
 
     try:
         api_response = api_instance.dynamic_secret_update_cassandra(dynamic_secret_update_cassandra)
-        print("The response of V2Api->dynamic_secret_update_cassandra:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->dynamic_secret_update_cassandra: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -11333,7 +10228,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | dynamicSecretUpdateCassandraResponse wraps response body. |  -  |
@@ -11348,14 +10242,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.dynamic_secret_update_custom import DynamicSecretUpdateCustom
-from akeyless.models.dynamic_secret_update_output import DynamicSecretUpdateOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -11364,23 +10256,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     dynamic_secret_update_custom = akeyless.DynamicSecretUpdateCustom() # DynamicSecretUpdateCustom |  (optional)
 
     try:
         api_response = api_instance.dynamic_secret_update_custom(dynamic_secret_update_custom=dynamic_secret_update_custom)
-        print("The response of V2Api->dynamic_secret_update_custom:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->dynamic_secret_update_custom: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -11400,7 +10288,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | dynamicSecretUpdateCustomResponse wraps response body. |  -  |
@@ -11415,14 +10302,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.dynamic_secret_update_dockerhub import DynamicSecretUpdateDockerhub
-from akeyless.models.dynamic_secret_update_output import DynamicSecretUpdateOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -11431,23 +10316,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     dynamic_secret_update_dockerhub = akeyless.DynamicSecretUpdateDockerhub() # DynamicSecretUpdateDockerhub | 
 
     try:
         api_response = api_instance.dynamic_secret_update_dockerhub(dynamic_secret_update_dockerhub)
-        print("The response of V2Api->dynamic_secret_update_dockerhub:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->dynamic_secret_update_dockerhub: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -11467,7 +10348,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | dynamicSecretUpdateDockerhubResponse wraps response body. |  -  |
@@ -11482,14 +10362,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.dynamic_secret_update_eks import DynamicSecretUpdateEks
-from akeyless.models.dynamic_secret_update_output import DynamicSecretUpdateOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -11498,23 +10376,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     dynamic_secret_update_eks = akeyless.DynamicSecretUpdateEks() # DynamicSecretUpdateEks | 
 
     try:
         api_response = api_instance.dynamic_secret_update_eks(dynamic_secret_update_eks)
-        print("The response of V2Api->dynamic_secret_update_eks:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->dynamic_secret_update_eks: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -11534,7 +10408,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | dynamicSecretUpdateEksResponse wraps response body. |  -  |
@@ -11549,14 +10422,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.dynamic_secret_update_gcp import DynamicSecretUpdateGcp
-from akeyless.models.dynamic_secret_update_output import DynamicSecretUpdateOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -11565,23 +10436,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     dynamic_secret_update_gcp = akeyless.DynamicSecretUpdateGcp() # DynamicSecretUpdateGcp | 
 
     try:
         api_response = api_instance.dynamic_secret_update_gcp(dynamic_secret_update_gcp)
-        print("The response of V2Api->dynamic_secret_update_gcp:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->dynamic_secret_update_gcp: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -11601,7 +10468,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | dynamicSecretUpdateGcpResponse wraps response body. |  -  |
@@ -11616,14 +10482,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.dynamic_secret_update_github import DynamicSecretUpdateGithub
-from akeyless.models.dynamic_secret_update_output import DynamicSecretUpdateOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -11632,23 +10496,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     dynamic_secret_update_github = akeyless.DynamicSecretUpdateGithub() # DynamicSecretUpdateGithub | 
 
     try:
         api_response = api_instance.dynamic_secret_update_github(dynamic_secret_update_github)
-        print("The response of V2Api->dynamic_secret_update_github:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->dynamic_secret_update_github: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -11668,7 +10528,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | dynamicSecretUpdateGithubResponse wraps response body. |  -  |
@@ -11683,14 +10542,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.dynamic_secret_update_gitlab import DynamicSecretUpdateGitlab
-from akeyless.models.dynamic_secret_update_output import DynamicSecretUpdateOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -11699,23 +10556,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     dynamic_secret_update_gitlab = akeyless.DynamicSecretUpdateGitlab() # DynamicSecretUpdateGitlab | 
 
     try:
         api_response = api_instance.dynamic_secret_update_gitlab(dynamic_secret_update_gitlab)
-        print("The response of V2Api->dynamic_secret_update_gitlab:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->dynamic_secret_update_gitlab: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -11735,7 +10588,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | dynamicSecretUpdateGitlabResponse wraps response body. |  -  |
@@ -11750,14 +10602,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.dynamic_secret_update_gke import DynamicSecretUpdateGke
-from akeyless.models.dynamic_secret_update_output import DynamicSecretUpdateOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -11766,23 +10616,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     dynamic_secret_update_gke = akeyless.DynamicSecretUpdateGke() # DynamicSecretUpdateGke | 
 
     try:
         api_response = api_instance.dynamic_secret_update_gke(dynamic_secret_update_gke)
-        print("The response of V2Api->dynamic_secret_update_gke:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->dynamic_secret_update_gke: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -11802,7 +10648,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | dynamicSecretUpdateGkeResponse wraps response body. |  -  |
@@ -11817,14 +10662,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.dynamic_secret_update_google_workspace import DynamicSecretUpdateGoogleWorkspace
-from akeyless.models.dynamic_secret_update_output import DynamicSecretUpdateOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -11833,23 +10676,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     dynamic_secret_update_google_workspace = akeyless.DynamicSecretUpdateGoogleWorkspace() # DynamicSecretUpdateGoogleWorkspace | 
 
     try:
         api_response = api_instance.dynamic_secret_update_google_workspace(dynamic_secret_update_google_workspace)
-        print("The response of V2Api->dynamic_secret_update_google_workspace:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->dynamic_secret_update_google_workspace: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -11869,7 +10708,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | dynamicSecretUpdateGoogleWorkspaceResponse wraps response body. |  -  |
@@ -11884,14 +10722,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.dynamic_secret_update_hana_db import DynamicSecretUpdateHanaDb
-from akeyless.models.dynamic_secret_update_output import DynamicSecretUpdateOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -11900,23 +10736,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     dynamic_secret_update_hana_db = akeyless.DynamicSecretUpdateHanaDb() # DynamicSecretUpdateHanaDb | 
 
     try:
         api_response = api_instance.dynamic_secret_update_hana_db(dynamic_secret_update_hana_db)
-        print("The response of V2Api->dynamic_secret_update_hana_db:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->dynamic_secret_update_hana_db: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -11936,7 +10768,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | dynamicSecretUpdateHanaDbResponse wraps response body. |  -  |
@@ -11951,14 +10782,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.dynamic_secret_update_k8s import DynamicSecretUpdateK8s
-from akeyless.models.dynamic_secret_update_output import DynamicSecretUpdateOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -11967,23 +10796,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     dynamic_secret_update_k8s = akeyless.DynamicSecretUpdateK8s() # DynamicSecretUpdateK8s | 
 
     try:
         api_response = api_instance.dynamic_secret_update_k8s(dynamic_secret_update_k8s)
-        print("The response of V2Api->dynamic_secret_update_k8s:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->dynamic_secret_update_k8s: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -12003,7 +10828,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | dynamicSecretUpdateK8sResponse wraps response body. |  -  |
@@ -12018,14 +10842,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.dynamic_secret_update_ldap import DynamicSecretUpdateLdap
-from akeyless.models.dynamic_secret_update_output import DynamicSecretUpdateOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -12034,23 +10856,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     dynamic_secret_update_ldap = akeyless.DynamicSecretUpdateLdap() # DynamicSecretUpdateLdap | 
 
     try:
         api_response = api_instance.dynamic_secret_update_ldap(dynamic_secret_update_ldap)
-        print("The response of V2Api->dynamic_secret_update_ldap:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->dynamic_secret_update_ldap: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -12070,7 +10888,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | dynamicSecretUpdateLdapResponse wraps response body. |  -  |
@@ -12085,14 +10902,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.dynamic_secret_update_mongo_db import DynamicSecretUpdateMongoDb
-from akeyless.models.dynamic_secret_update_output import DynamicSecretUpdateOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -12101,23 +10916,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     dynamic_secret_update_mongo_db = akeyless.DynamicSecretUpdateMongoDb() # DynamicSecretUpdateMongoDb | 
 
     try:
         api_response = api_instance.dynamic_secret_update_mongo_db(dynamic_secret_update_mongo_db)
-        print("The response of V2Api->dynamic_secret_update_mongo_db:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->dynamic_secret_update_mongo_db: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -12137,7 +10948,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | dynamicSecretUpdateMongoDbResponse wraps response body. |  -  |
@@ -12152,14 +10962,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.dynamic_secret_update_ms_sql import DynamicSecretUpdateMsSql
-from akeyless.models.dynamic_secret_update_output import DynamicSecretUpdateOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -12168,23 +10976,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     dynamic_secret_update_ms_sql = akeyless.DynamicSecretUpdateMsSql() # DynamicSecretUpdateMsSql | 
 
     try:
         api_response = api_instance.dynamic_secret_update_ms_sql(dynamic_secret_update_ms_sql)
-        print("The response of V2Api->dynamic_secret_update_ms_sql:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->dynamic_secret_update_ms_sql: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -12204,7 +11008,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | dynamicSecretUpdateMsSqlResponse wraps response body. |  -  |
@@ -12219,14 +11022,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.dynamic_secret_update_my_sql import DynamicSecretUpdateMySql
-from akeyless.models.dynamic_secret_update_output import DynamicSecretUpdateOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -12235,23 +11036,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     dynamic_secret_update_my_sql = akeyless.DynamicSecretUpdateMySql() # DynamicSecretUpdateMySql | 
 
     try:
         api_response = api_instance.dynamic_secret_update_my_sql(dynamic_secret_update_my_sql)
-        print("The response of V2Api->dynamic_secret_update_my_sql:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->dynamic_secret_update_my_sql: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -12271,7 +11068,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | dynamicSecretUpdateMySqlResponse wraps response body. |  -  |
@@ -12286,14 +11082,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.dynamic_secret_update_oracle_db import DynamicSecretUpdateOracleDb
-from akeyless.models.dynamic_secret_update_output import DynamicSecretUpdateOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -12302,23 +11096,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     dynamic_secret_update_oracle_db = akeyless.DynamicSecretUpdateOracleDb() # DynamicSecretUpdateOracleDb | 
 
     try:
         api_response = api_instance.dynamic_secret_update_oracle_db(dynamic_secret_update_oracle_db)
-        print("The response of V2Api->dynamic_secret_update_oracle_db:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->dynamic_secret_update_oracle_db: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -12338,7 +11128,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | dynamicSecretUpdateOracleDbResponse wraps response body. |  -  |
@@ -12353,14 +11142,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.dynamic_secret_update_output import DynamicSecretUpdateOutput
-from akeyless.models.dynamic_secret_update_ping import DynamicSecretUpdatePing
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -12369,23 +11156,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     dynamic_secret_update_ping = akeyless.DynamicSecretUpdatePing() # DynamicSecretUpdatePing | 
 
     try:
         api_response = api_instance.dynamic_secret_update_ping(dynamic_secret_update_ping)
-        print("The response of V2Api->dynamic_secret_update_ping:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->dynamic_secret_update_ping: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -12405,7 +11188,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | dynamicSecretUpdatePingResponse wraps response body. |  -  |
@@ -12420,14 +11202,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.dynamic_secret_update_output import DynamicSecretUpdateOutput
-from akeyless.models.dynamic_secret_update_postgre_sql import DynamicSecretUpdatePostgreSql
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -12436,23 +11216,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     dynamic_secret_update_postgre_sql = akeyless.DynamicSecretUpdatePostgreSql() # DynamicSecretUpdatePostgreSql | 
 
     try:
         api_response = api_instance.dynamic_secret_update_postgre_sql(dynamic_secret_update_postgre_sql)
-        print("The response of V2Api->dynamic_secret_update_postgre_sql:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->dynamic_secret_update_postgre_sql: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -12472,7 +11248,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | dynamicSecretUpdatePostgreSqlResponse wraps response body. |  -  |
@@ -12487,14 +11262,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.dynamic_secret_update_output import DynamicSecretUpdateOutput
-from akeyless.models.dynamic_secret_update_rabbit_mq import DynamicSecretUpdateRabbitMq
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -12503,23 +11276,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     dynamic_secret_update_rabbit_mq = akeyless.DynamicSecretUpdateRabbitMq() # DynamicSecretUpdateRabbitMq | 
 
     try:
         api_response = api_instance.dynamic_secret_update_rabbit_mq(dynamic_secret_update_rabbit_mq)
-        print("The response of V2Api->dynamic_secret_update_rabbit_mq:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->dynamic_secret_update_rabbit_mq: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -12539,7 +11308,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | dynamicSecretUpdateRabbitMqResponse wraps response body. |  -  |
@@ -12554,14 +11322,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.dynamic_secret_update_output import DynamicSecretUpdateOutput
-from akeyless.models.dynamic_secret_update_rdp import DynamicSecretUpdateRdp
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -12570,23 +11336,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     dynamic_secret_update_rdp = akeyless.DynamicSecretUpdateRdp() # DynamicSecretUpdateRdp | 
 
     try:
         api_response = api_instance.dynamic_secret_update_rdp(dynamic_secret_update_rdp)
-        print("The response of V2Api->dynamic_secret_update_rdp:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->dynamic_secret_update_rdp: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -12606,7 +11368,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | dynamicSecretUpdateRdpResponse wraps response body. |  -  |
@@ -12621,14 +11382,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.dynamic_secret_update_output import DynamicSecretUpdateOutput
-from akeyless.models.dynamic_secret_update_redis import DynamicSecretUpdateRedis
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -12637,23 +11396,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     dynamic_secret_update_redis = akeyless.DynamicSecretUpdateRedis() # DynamicSecretUpdateRedis | 
 
     try:
         api_response = api_instance.dynamic_secret_update_redis(dynamic_secret_update_redis)
-        print("The response of V2Api->dynamic_secret_update_redis:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->dynamic_secret_update_redis: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -12673,7 +11428,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | dynamicSecretUpdateRedisResponse wraps response body. |  -  |
@@ -12688,14 +11442,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.dynamic_secret_update_output import DynamicSecretUpdateOutput
-from akeyless.models.dynamic_secret_update_redshift import DynamicSecretUpdateRedshift
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -12704,23 +11456,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     dynamic_secret_update_redshift = akeyless.DynamicSecretUpdateRedshift() # DynamicSecretUpdateRedshift | 
 
     try:
         api_response = api_instance.dynamic_secret_update_redshift(dynamic_secret_update_redshift)
-        print("The response of V2Api->dynamic_secret_update_redshift:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->dynamic_secret_update_redshift: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -12740,7 +11488,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | dynamicSecretUpdateRedshiftResponse wraps response body. |  -  |
@@ -12755,14 +11502,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.dynamic_secret_update_output import DynamicSecretUpdateOutput
-from akeyless.models.dynamic_secret_update_snowflake import DynamicSecretUpdateSnowflake
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -12771,23 +11516,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     dynamic_secret_update_snowflake = akeyless.DynamicSecretUpdateSnowflake() # DynamicSecretUpdateSnowflake | 
 
     try:
         api_response = api_instance.dynamic_secret_update_snowflake(dynamic_secret_update_snowflake)
-        print("The response of V2Api->dynamic_secret_update_snowflake:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->dynamic_secret_update_snowflake: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -12807,7 +11548,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | dynamicSecretUpdateSnowflakeResponse wraps response body. |  -  |
@@ -12822,14 +11562,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.dynamic_secret_update_output import DynamicSecretUpdateOutput
-from akeyless.models.dynamic_secret_update_venafi import DynamicSecretUpdateVenafi
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -12838,23 +11576,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     dynamic_secret_update_venafi = akeyless.DynamicSecretUpdateVenafi() # DynamicSecretUpdateVenafi | 
 
     try:
         api_response = api_instance.dynamic_secret_update_venafi(dynamic_secret_update_venafi)
-        print("The response of V2Api->dynamic_secret_update_venafi:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->dynamic_secret_update_venafi: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -12874,7 +11608,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | dynamicSecretUpdateVenafiResponse wraps response body. |  -  |
@@ -12889,14 +11622,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.encrypt import Encrypt
-from akeyless.models.encrypt_output import EncryptOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -12905,23 +11636,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     encrypt = akeyless.Encrypt() # Encrypt | 
 
     try:
         api_response = api_instance.encrypt(encrypt)
-        print("The response of V2Api->encrypt:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->encrypt: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -12941,7 +11668,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | encryptResponse wraps response body. |  -  |
@@ -12956,14 +11682,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.batch_encryption_request_line import BatchEncryptionRequestLine
-from akeyless.models.encrypt_output import EncryptOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -12972,27 +11696,23 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
-    batch_encryption_request_line = [akeyless.BatchEncryptionRequestLine()] # List[BatchEncryptionRequestLine] | 
+    batch_encryption_request_line = [akeyless.BatchEncryptionRequestLine()] # list[BatchEncryptionRequestLine] | 
 
     try:
         api_response = api_instance.encrypt_batch(batch_encryption_request_line)
-        print("The response of V2Api->encrypt_batch:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->encrypt_batch: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **batch_encryption_request_line** | [**List[BatchEncryptionRequestLine]**](BatchEncryptionRequestLine.md)|  | 
+ **batch_encryption_request_line** | [**list[BatchEncryptionRequestLine]**](BatchEncryptionRequestLine.md)|  | 
 
 ### Return type
 
@@ -13008,7 +11728,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | encryptResponse wraps response body. |  -  |
@@ -13023,14 +11742,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.encrypt_gpg import EncryptGPG
-from akeyless.models.encrypt_gpg_output import EncryptGPGOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -13039,23 +11756,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     encrypt_gpg = akeyless.EncryptGPG() # EncryptGPG | 
 
     try:
         api_response = api_instance.encrypt_gpg(encrypt_gpg)
-        print("The response of V2Api->encrypt_gpg:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->encrypt_gpg: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -13075,7 +11788,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | encryptGPGResponse wraps response body. |  -  |
@@ -13090,14 +11802,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.encrypt_output import EncryptOutput
-from akeyless.models.encrypt_with_classic_key import EncryptWithClassicKey
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -13106,23 +11816,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     encrypt_with_classic_key = akeyless.EncryptWithClassicKey() # EncryptWithClassicKey | 
 
     try:
         api_response = api_instance.encrypt_with_classic_key(encrypt_with_classic_key)
-        print("The response of V2Api->encrypt_with_classic_key:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->encrypt_with_classic_key: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -13142,7 +11848,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | encryptResponse wraps response body. |  -  |
@@ -13157,14 +11862,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.esm_create import EsmCreate
-from akeyless.models.esm_create_secret_output import EsmCreateSecretOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -13173,23 +11876,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     esm_create = akeyless.EsmCreate() # EsmCreate | 
 
     try:
         api_response = api_instance.esm_create(esm_create)
-        print("The response of V2Api->esm_create:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->esm_create: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -13209,7 +11908,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | esmCreateResponse wraps response body. |  -  |
@@ -13224,14 +11922,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.esm_delete import EsmDelete
-from akeyless.models.esm_delete_secret_output import EsmDeleteSecretOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -13240,23 +11936,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     esm_delete = akeyless.EsmDelete() # EsmDelete | 
 
     try:
         api_response = api_instance.esm_delete(esm_delete)
-        print("The response of V2Api->esm_delete:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->esm_delete: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -13276,7 +11968,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **202** | esmDeleteResponse wraps response body. |  -  |
@@ -13291,14 +11982,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.esm_get import EsmGet
-from akeyless.models.esm_get_secret_output import EsmGetSecretOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -13307,23 +11996,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     esm_get = akeyless.EsmGet() # EsmGet | 
 
     try:
         api_response = api_instance.esm_get(esm_get)
-        print("The response of V2Api->esm_get:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->esm_get: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -13343,7 +12028,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | esmGetResponse wraps response body. |  -  |
@@ -13358,14 +12042,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.esm_list import EsmList
-from akeyless.models.esm_list_secrets_output import EsmListSecretsOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -13374,23 +12056,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     esm_list = akeyless.EsmList() # EsmList | 
 
     try:
         api_response = api_instance.esm_list(esm_list)
-        print("The response of V2Api->esm_list:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->esm_list: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -13410,7 +12088,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | esmListResponse wraps response body. |  -  |
@@ -13425,14 +12102,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.esm_update import EsmUpdate
-from akeyless.models.esm_update_secret_output import EsmUpdateSecretOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -13441,23 +12116,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     esm_update = akeyless.EsmUpdate() # EsmUpdate | 
 
     try:
         api_response = api_instance.esm_update(esm_update)
-        print("The response of V2Api->esm_update:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->esm_update: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -13477,7 +12148,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | esmUpdateResponse wraps response body. |  -  |
@@ -13492,13 +12162,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.event_action import EventAction
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -13507,23 +12176,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     event_action = akeyless.EventAction() # EventAction | 
 
     try:
         api_response = api_instance.event_action(event_action)
-        print("The response of V2Api->event_action:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->event_action: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -13543,7 +12208,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | eventActionResponse wraps response body. |  -  |
@@ -13558,14 +12222,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.event_forwarder_create_email import EventForwarderCreateEmail
-from akeyless.models.event_forwarder_create_update_output import EventForwarderCreateUpdateOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -13574,23 +12236,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     event_forwarder_create_email = akeyless.EventForwarderCreateEmail() # EventForwarderCreateEmail | 
 
     try:
         api_response = api_instance.event_forwarder_create_email(event_forwarder_create_email)
-        print("The response of V2Api->event_forwarder_create_email:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->event_forwarder_create_email: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -13610,7 +12268,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | eventForwarderCreateEmailResponse wraps response body. |  -  |
@@ -13625,14 +12282,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.event_forwarder_create_service_now import EventForwarderCreateServiceNow
-from akeyless.models.event_forwarder_create_update_output import EventForwarderCreateUpdateOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -13641,23 +12296,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     event_forwarder_create_service_now = akeyless.EventForwarderCreateServiceNow() # EventForwarderCreateServiceNow | 
 
     try:
         api_response = api_instance.event_forwarder_create_service_now(event_forwarder_create_service_now)
-        print("The response of V2Api->event_forwarder_create_service_now:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->event_forwarder_create_service_now: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -13677,7 +12328,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | eventForwarderCreateServiceNowResponse wraps response body. |  -  |
@@ -13692,14 +12342,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.event_forwarder_create_slack import EventForwarderCreateSlack
-from akeyless.models.event_forwarder_create_update_output import EventForwarderCreateUpdateOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -13708,23 +12356,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     event_forwarder_create_slack = akeyless.EventForwarderCreateSlack() # EventForwarderCreateSlack | 
 
     try:
         api_response = api_instance.event_forwarder_create_slack(event_forwarder_create_slack)
-        print("The response of V2Api->event_forwarder_create_slack:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->event_forwarder_create_slack: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -13744,7 +12388,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | eventForwarderCreateSlackResponse wraps response body. |  -  |
@@ -13759,14 +12402,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.event_forwarder_create_update_output import EventForwarderCreateUpdateOutput
-from akeyless.models.event_forwarder_create_webhook import EventForwarderCreateWebhook
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -13775,23 +12416,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     event_forwarder_create_webhook = akeyless.EventForwarderCreateWebhook() # EventForwarderCreateWebhook | 
 
     try:
         api_response = api_instance.event_forwarder_create_webhook(event_forwarder_create_webhook)
-        print("The response of V2Api->event_forwarder_create_webhook:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->event_forwarder_create_webhook: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -13811,7 +12448,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | eventForwarderCreateWebhookResponse wraps response body. |  -  |
@@ -13826,14 +12462,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.event_forwarder_delete import EventForwarderDelete
-from akeyless.models.event_forwarder_delete_output import EventForwarderDeleteOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -13842,23 +12476,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     event_forwarder_delete = akeyless.EventForwarderDelete() # EventForwarderDelete | 
 
     try:
         api_response = api_instance.event_forwarder_delete(event_forwarder_delete)
-        print("The response of V2Api->event_forwarder_delete:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->event_forwarder_delete: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -13878,7 +12508,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | eventForwarderDeleteResponse wraps response body. |  -  |
@@ -13893,14 +12522,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.event_forwarder_get import EventForwarderGet
-from akeyless.models.event_forwarder_get_output import EventForwarderGetOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -13909,23 +12536,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     event_forwarder_get = akeyless.EventForwarderGet() # EventForwarderGet | 
 
     try:
         api_response = api_instance.event_forwarder_get(event_forwarder_get)
-        print("The response of V2Api->event_forwarder_get:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->event_forwarder_get: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -13945,7 +12568,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | eventForwarderGetResponse wraps response body. |  -  |
@@ -13960,14 +12582,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.event_forwarder_create_update_output import EventForwarderCreateUpdateOutput
-from akeyless.models.event_forwarder_update_email import EventForwarderUpdateEmail
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -13976,23 +12596,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     event_forwarder_update_email = akeyless.EventForwarderUpdateEmail() # EventForwarderUpdateEmail | 
 
     try:
         api_response = api_instance.event_forwarder_update_email(event_forwarder_update_email)
-        print("The response of V2Api->event_forwarder_update_email:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->event_forwarder_update_email: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -14012,7 +12628,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | eventForwarderUpdateEmailResponse wraps response body. |  -  |
@@ -14027,14 +12642,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.event_forwarder_create_update_output import EventForwarderCreateUpdateOutput
-from akeyless.models.event_forwarder_update_service_now import EventForwarderUpdateServiceNow
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -14043,23 +12656,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     event_forwarder_update_service_now = akeyless.EventForwarderUpdateServiceNow() # EventForwarderUpdateServiceNow | 
 
     try:
         api_response = api_instance.event_forwarder_update_service_now(event_forwarder_update_service_now)
-        print("The response of V2Api->event_forwarder_update_service_now:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->event_forwarder_update_service_now: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -14079,7 +12688,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | eventForwarderUpdateServiceNowResponse wraps response body. |  -  |
@@ -14094,14 +12702,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.event_forwarder_create_update_output import EventForwarderCreateUpdateOutput
-from akeyless.models.event_forwarder_update_slack import EventForwarderUpdateSlack
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -14110,23 +12716,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     event_forwarder_update_slack = akeyless.EventForwarderUpdateSlack() # EventForwarderUpdateSlack | 
 
     try:
         api_response = api_instance.event_forwarder_update_slack(event_forwarder_update_slack)
-        print("The response of V2Api->event_forwarder_update_slack:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->event_forwarder_update_slack: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -14146,7 +12748,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | eventForwarderUpdateSlackResponse wraps response body. |  -  |
@@ -14161,14 +12762,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.event_forwarder_create_update_output import EventForwarderCreateUpdateOutput
-from akeyless.models.event_forwarder_update_webhook import EventForwarderUpdateWebhook
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -14177,23 +12776,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     event_forwarder_update_webhook = akeyless.EventForwarderUpdateWebhook() # EventForwarderUpdateWebhook | 
 
     try:
         api_response = api_instance.event_forwarder_update_webhook(event_forwarder_update_webhook)
-        print("The response of V2Api->event_forwarder_update_webhook:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->event_forwarder_update_webhook: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -14213,7 +12808,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | eventForwarderUpdateWebhookResponse wraps response body. |  -  |
@@ -14228,14 +12822,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.export_classic_key import ExportClassicKey
-from akeyless.models.export_classic_key_output import ExportClassicKeyOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -14244,23 +12836,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     export_classic_key = akeyless.ExportClassicKey() # ExportClassicKey | 
 
     try:
         api_response = api_instance.export_classic_key(export_classic_key)
-        print("The response of V2Api->export_classic_key:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->export_classic_key: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -14280,7 +12868,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | ExportClassicKeyResponse wraps response body. |  -  |
@@ -14295,14 +12882,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.allowed_access import AllowedAccess
-from akeyless.models.gateway_create_allowed_access import GatewayCreateAllowedAccess
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -14311,23 +12896,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     gateway_create_allowed_access = akeyless.GatewayCreateAllowedAccess() # GatewayCreateAllowedAccess | 
 
     try:
         api_response = api_instance.gateway_create_allowed_access(gateway_create_allowed_access)
-        print("The response of V2Api->gateway_create_allowed_access:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->gateway_create_allowed_access: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -14347,7 +12928,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | gatewayCreateAllowedAccessResponse wraps response body. |  -  |
@@ -14362,14 +12942,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.gateway_create_k8_s_auth_config import GatewayCreateK8SAuthConfig
-from akeyless.models.gateway_create_k8_s_auth_config_output import GatewayCreateK8SAuthConfigOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -14378,23 +12956,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     gateway_create_k8_s_auth_config = akeyless.GatewayCreateK8SAuthConfig() # GatewayCreateK8SAuthConfig | 
 
     try:
         api_response = api_instance.gateway_create_k8_s_auth_config(gateway_create_k8_s_auth_config)
-        print("The response of V2Api->gateway_create_k8_s_auth_config:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->gateway_create_k8_s_auth_config: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -14414,7 +12988,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | gatewayCreateK8SAuthConfigResponse wraps response body. |  -  |
@@ -14429,14 +13002,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.gateway_create_migration import GatewayCreateMigration
-from akeyless.models.gateway_migration_create_output import GatewayMigrationCreateOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -14445,23 +13016,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     gateway_create_migration = akeyless.GatewayCreateMigration() # GatewayCreateMigration | 
 
     try:
         api_response = api_instance.gateway_create_migration(gateway_create_migration)
-        print("The response of V2Api->gateway_create_migration:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->gateway_create_migration: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -14481,7 +13048,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | gatewayMigrationCreateResponse wraps response body. |  -  |
@@ -14496,14 +13062,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.gateway_create_producer_artifactory import GatewayCreateProducerArtifactory
-from akeyless.models.gateway_create_producer_artifactory_output import GatewayCreateProducerArtifactoryOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -14512,23 +13076,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     gateway_create_producer_artifactory = akeyless.GatewayCreateProducerArtifactory() # GatewayCreateProducerArtifactory | 
 
     try:
         api_response = api_instance.gateway_create_producer_artifactory(gateway_create_producer_artifactory)
-        print("The response of V2Api->gateway_create_producer_artifactory:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->gateway_create_producer_artifactory: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -14548,7 +13108,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | gatewayCreateProducerArtifactoryResponse wraps response body. |  -  |
@@ -14563,14 +13122,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.gateway_create_producer_aws import GatewayCreateProducerAws
-from akeyless.models.gateway_create_producer_aws_output import GatewayCreateProducerAwsOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -14579,23 +13136,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     gateway_create_producer_aws = akeyless.GatewayCreateProducerAws() # GatewayCreateProducerAws | 
 
     try:
         api_response = api_instance.gateway_create_producer_aws(gateway_create_producer_aws)
-        print("The response of V2Api->gateway_create_producer_aws:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->gateway_create_producer_aws: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -14615,7 +13168,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | gatewayCreateProducerAwsResponse wraps response body. |  -  |
@@ -14630,14 +13182,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.gateway_create_producer_azure import GatewayCreateProducerAzure
-from akeyless.models.gateway_create_producer_azure_output import GatewayCreateProducerAzureOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -14646,23 +13196,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     gateway_create_producer_azure = akeyless.GatewayCreateProducerAzure() # GatewayCreateProducerAzure | 
 
     try:
         api_response = api_instance.gateway_create_producer_azure(gateway_create_producer_azure)
-        print("The response of V2Api->gateway_create_producer_azure:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->gateway_create_producer_azure: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -14682,7 +13228,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | gatewayCreateProducerAzureResponse wraps response body. |  -  |
@@ -14697,14 +13242,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.gateway_create_producer_cassandra import GatewayCreateProducerCassandra
-from akeyless.models.gateway_create_producer_cassandra_output import GatewayCreateProducerCassandraOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -14713,23 +13256,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     gateway_create_producer_cassandra = akeyless.GatewayCreateProducerCassandra() # GatewayCreateProducerCassandra | 
 
     try:
         api_response = api_instance.gateway_create_producer_cassandra(gateway_create_producer_cassandra)
-        print("The response of V2Api->gateway_create_producer_cassandra:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->gateway_create_producer_cassandra: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -14749,7 +13288,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | gatewayCreateProducerCassandraResponse wraps response body. |  -  |
@@ -14764,14 +13302,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.gateway_create_producer_chef import GatewayCreateProducerChef
-from akeyless.models.gateway_create_producer_chef_output import GatewayCreateProducerChefOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -14780,23 +13316,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     gateway_create_producer_chef = akeyless.GatewayCreateProducerChef() # GatewayCreateProducerChef | 
 
     try:
         api_response = api_instance.gateway_create_producer_chef(gateway_create_producer_chef)
-        print("The response of V2Api->gateway_create_producer_chef:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->gateway_create_producer_chef: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -14816,7 +13348,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | gatewayCreateProducerChefResponse wraps response body. |  -  |
@@ -14831,14 +13362,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.gateway_create_producer_custom import GatewayCreateProducerCustom
-from akeyless.models.gateway_create_producer_custom_output import GatewayCreateProducerCustomOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -14847,23 +13376,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     gateway_create_producer_custom = akeyless.GatewayCreateProducerCustom() # GatewayCreateProducerCustom |  (optional)
 
     try:
         api_response = api_instance.gateway_create_producer_custom(gateway_create_producer_custom=gateway_create_producer_custom)
-        print("The response of V2Api->gateway_create_producer_custom:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->gateway_create_producer_custom: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -14883,7 +13408,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | gatewayCreateProducerCustomResponse wraps response body. |  -  |
@@ -14898,14 +13422,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.gateway_create_producer_dockerhub import GatewayCreateProducerDockerhub
-from akeyless.models.gateway_create_producer_dockerhub_output import GatewayCreateProducerDockerhubOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -14914,23 +13436,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     gateway_create_producer_dockerhub = akeyless.GatewayCreateProducerDockerhub() # GatewayCreateProducerDockerhub | 
 
     try:
         api_response = api_instance.gateway_create_producer_dockerhub(gateway_create_producer_dockerhub)
-        print("The response of V2Api->gateway_create_producer_dockerhub:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->gateway_create_producer_dockerhub: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -14950,7 +13468,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | gatewayCreateProducerDockerhubResponse wraps response body. |  -  |
@@ -14965,14 +13482,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.gateway_create_producer_eks import GatewayCreateProducerEks
-from akeyless.models.gateway_create_producer_eks_output import GatewayCreateProducerEksOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -14981,23 +13496,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     gateway_create_producer_eks = akeyless.GatewayCreateProducerEks() # GatewayCreateProducerEks | 
 
     try:
         api_response = api_instance.gateway_create_producer_eks(gateway_create_producer_eks)
-        print("The response of V2Api->gateway_create_producer_eks:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->gateway_create_producer_eks: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -15017,7 +13528,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | gatewayCreateProducerEksResponse wraps response body. |  -  |
@@ -15032,14 +13542,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.gateway_create_producer_gcp import GatewayCreateProducerGcp
-from akeyless.models.gateway_create_producer_gcp_output import GatewayCreateProducerGcpOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -15048,23 +13556,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     gateway_create_producer_gcp = akeyless.GatewayCreateProducerGcp() # GatewayCreateProducerGcp | 
 
     try:
         api_response = api_instance.gateway_create_producer_gcp(gateway_create_producer_gcp)
-        print("The response of V2Api->gateway_create_producer_gcp:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->gateway_create_producer_gcp: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -15084,7 +13588,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | gatewayCreateProducerGcpResponse wraps response body. |  -  |
@@ -15099,14 +13602,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.gateway_create_producer_github import GatewayCreateProducerGithub
-from akeyless.models.gateway_create_producer_github_output import GatewayCreateProducerGithubOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -15115,23 +13616,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     gateway_create_producer_github = akeyless.GatewayCreateProducerGithub() # GatewayCreateProducerGithub | 
 
     try:
         api_response = api_instance.gateway_create_producer_github(gateway_create_producer_github)
-        print("The response of V2Api->gateway_create_producer_github:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->gateway_create_producer_github: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -15151,7 +13648,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | gatewayCreateProducerGithubResponse wraps response body. |  -  |
@@ -15166,14 +13662,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.gateway_create_producer_gke import GatewayCreateProducerGke
-from akeyless.models.gateway_create_producer_gke_output import GatewayCreateProducerGkeOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -15182,23 +13676,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     gateway_create_producer_gke = akeyless.GatewayCreateProducerGke() # GatewayCreateProducerGke | 
 
     try:
         api_response = api_instance.gateway_create_producer_gke(gateway_create_producer_gke)
-        print("The response of V2Api->gateway_create_producer_gke:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->gateway_create_producer_gke: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -15218,7 +13708,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | gatewayCreateProducerGkeResponse wraps response body. |  -  |
@@ -15233,14 +13722,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.gateway_create_producer_hana_db import GatewayCreateProducerHanaDb
-from akeyless.models.gateway_create_producer_hana_db_output import GatewayCreateProducerHanaDbOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -15249,23 +13736,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     gateway_create_producer_hana_db = akeyless.GatewayCreateProducerHanaDb() # GatewayCreateProducerHanaDb | 
 
     try:
         api_response = api_instance.gateway_create_producer_hana_db(gateway_create_producer_hana_db)
-        print("The response of V2Api->gateway_create_producer_hana_db:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->gateway_create_producer_hana_db: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -15285,7 +13768,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | gatewayCreateProducerHanaDbResponse wraps response body. |  -  |
@@ -15300,14 +13782,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.gateway_create_producer_ldap import GatewayCreateProducerLdap
-from akeyless.models.gateway_create_producer_ldap_output import GatewayCreateProducerLdapOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -15316,23 +13796,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     gateway_create_producer_ldap = akeyless.GatewayCreateProducerLdap() # GatewayCreateProducerLdap | 
 
     try:
         api_response = api_instance.gateway_create_producer_ldap(gateway_create_producer_ldap)
-        print("The response of V2Api->gateway_create_producer_ldap:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->gateway_create_producer_ldap: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -15352,7 +13828,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | gatewayCreateProducerLdapResponse wraps response body. |  -  |
@@ -15367,14 +13842,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.gateway_create_producer_mongo import GatewayCreateProducerMongo
-from akeyless.models.gateway_create_producer_mongo_output import GatewayCreateProducerMongoOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -15383,23 +13856,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     gateway_create_producer_mongo = akeyless.GatewayCreateProducerMongo() # GatewayCreateProducerMongo | 
 
     try:
         api_response = api_instance.gateway_create_producer_mongo(gateway_create_producer_mongo)
-        print("The response of V2Api->gateway_create_producer_mongo:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->gateway_create_producer_mongo: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -15419,7 +13888,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | gatewayCreateProducerMongoResponse wraps response body. |  -  |
@@ -15434,14 +13902,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.gateway_create_producer_mssql import GatewayCreateProducerMSSQL
-from akeyless.models.gateway_create_producer_mssql_output import GatewayCreateProducerMSSQLOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -15450,23 +13916,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     gateway_create_producer_mssql = akeyless.GatewayCreateProducerMSSQL() # GatewayCreateProducerMSSQL | 
 
     try:
         api_response = api_instance.gateway_create_producer_mssql(gateway_create_producer_mssql)
-        print("The response of V2Api->gateway_create_producer_mssql:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->gateway_create_producer_mssql: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -15486,7 +13948,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | gatewayCreateProducerMSSQLResponse wraps response body. |  -  |
@@ -15501,14 +13962,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.gateway_create_producer_my_sql import GatewayCreateProducerMySQL
-from akeyless.models.gateway_create_producer_my_sql_output import GatewayCreateProducerMySQLOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -15517,23 +13976,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     gateway_create_producer_my_sql = akeyless.GatewayCreateProducerMySQL() # GatewayCreateProducerMySQL | 
 
     try:
         api_response = api_instance.gateway_create_producer_my_sql(gateway_create_producer_my_sql)
-        print("The response of V2Api->gateway_create_producer_my_sql:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->gateway_create_producer_my_sql: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -15553,7 +14008,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | gatewayCreateProducerMySQLResponse wraps response body. |  -  |
@@ -15568,14 +14022,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.gateway_create_producer_native_k8_s import GatewayCreateProducerNativeK8S
-from akeyless.models.gateway_create_producer_native_k8_s_output import GatewayCreateProducerNativeK8SOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -15584,23 +14036,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     gateway_create_producer_native_k8_s = akeyless.GatewayCreateProducerNativeK8S() # GatewayCreateProducerNativeK8S | 
 
     try:
         api_response = api_instance.gateway_create_producer_native_k8_s(gateway_create_producer_native_k8_s)
-        print("The response of V2Api->gateway_create_producer_native_k8_s:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->gateway_create_producer_native_k8_s: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -15620,7 +14068,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | gatewayCreateProducerNativeK8SResponse wraps response body. |  -  |
@@ -15635,14 +14082,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.gateway_create_producer_oracle_db import GatewayCreateProducerOracleDb
-from akeyless.models.gateway_create_producer_oracle_db_output import GatewayCreateProducerOracleDbOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -15651,23 +14096,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     gateway_create_producer_oracle_db = akeyless.GatewayCreateProducerOracleDb() # GatewayCreateProducerOracleDb | 
 
     try:
         api_response = api_instance.gateway_create_producer_oracle_db(gateway_create_producer_oracle_db)
-        print("The response of V2Api->gateway_create_producer_oracle_db:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->gateway_create_producer_oracle_db: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -15687,7 +14128,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | gatewayCreateProducerOracleDbResponse wraps response body. |  -  |
@@ -15702,14 +14142,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.gateway_create_producer_ping import GatewayCreateProducerPing
-from akeyless.models.gateway_create_producer_ping_output import GatewayCreateProducerPingOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -15718,23 +14156,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     gateway_create_producer_ping = akeyless.GatewayCreateProducerPing() # GatewayCreateProducerPing | 
 
     try:
         api_response = api_instance.gateway_create_producer_ping(gateway_create_producer_ping)
-        print("The response of V2Api->gateway_create_producer_ping:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->gateway_create_producer_ping: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -15754,7 +14188,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | gatewayCreateProducerPingResponse wraps response body. |  -  |
@@ -15769,14 +14202,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.gateway_create_producer_postgre_sql import GatewayCreateProducerPostgreSQL
-from akeyless.models.gateway_create_producer_postgre_sql_output import GatewayCreateProducerPostgreSQLOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -15785,23 +14216,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     gateway_create_producer_postgre_sql = akeyless.GatewayCreateProducerPostgreSQL() # GatewayCreateProducerPostgreSQL | 
 
     try:
         api_response = api_instance.gateway_create_producer_postgre_sql(gateway_create_producer_postgre_sql)
-        print("The response of V2Api->gateway_create_producer_postgre_sql:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->gateway_create_producer_postgre_sql: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -15821,7 +14248,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | gatewayCreateProducerPostgreSQLResponse wraps response body. |  -  |
@@ -15836,14 +14262,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.gateway_create_producer_rabbit_mq import GatewayCreateProducerRabbitMQ
-from akeyless.models.gateway_create_producer_rabbit_mq_output import GatewayCreateProducerRabbitMQOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -15852,23 +14276,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     gateway_create_producer_rabbit_mq = akeyless.GatewayCreateProducerRabbitMQ() # GatewayCreateProducerRabbitMQ | 
 
     try:
         api_response = api_instance.gateway_create_producer_rabbit_mq(gateway_create_producer_rabbit_mq)
-        print("The response of V2Api->gateway_create_producer_rabbit_mq:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->gateway_create_producer_rabbit_mq: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -15888,7 +14308,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | gatewayCreateProducerRabbitMQResponse wraps response body. |  -  |
@@ -15903,14 +14322,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.gateway_create_producer_rdp import GatewayCreateProducerRdp
-from akeyless.models.gateway_create_producer_rdp_output import GatewayCreateProducerRdpOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -15919,23 +14336,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     gateway_create_producer_rdp = akeyless.GatewayCreateProducerRdp() # GatewayCreateProducerRdp | 
 
     try:
         api_response = api_instance.gateway_create_producer_rdp(gateway_create_producer_rdp)
-        print("The response of V2Api->gateway_create_producer_rdp:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->gateway_create_producer_rdp: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -15955,7 +14368,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | gatewayCreateProducerRdpResponse wraps response body. |  -  |
@@ -15970,14 +14382,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.gateway_create_producer_redis import GatewayCreateProducerRedis
-from akeyless.models.gateway_create_producer_redis_output import GatewayCreateProducerRedisOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -15986,23 +14396,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     gateway_create_producer_redis = akeyless.GatewayCreateProducerRedis() # GatewayCreateProducerRedis | 
 
     try:
         api_response = api_instance.gateway_create_producer_redis(gateway_create_producer_redis)
-        print("The response of V2Api->gateway_create_producer_redis:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->gateway_create_producer_redis: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -16022,7 +14428,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | gatewayCreateProducerRedisResponse wraps response body. |  -  |
@@ -16037,14 +14442,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.gateway_create_producer_redshift import GatewayCreateProducerRedshift
-from akeyless.models.gateway_create_producer_redshift_output import GatewayCreateProducerRedshiftOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -16053,23 +14456,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     gateway_create_producer_redshift = akeyless.GatewayCreateProducerRedshift() # GatewayCreateProducerRedshift | 
 
     try:
         api_response = api_instance.gateway_create_producer_redshift(gateway_create_producer_redshift)
-        print("The response of V2Api->gateway_create_producer_redshift:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->gateway_create_producer_redshift: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -16089,7 +14488,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | gatewayCreateProducerRedshiftResponse wraps response body. |  -  |
@@ -16104,14 +14502,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.gateway_create_producer_snowflake import GatewayCreateProducerSnowflake
-from akeyless.models.gateway_create_producer_snowflake_output import GatewayCreateProducerSnowflakeOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -16120,23 +14516,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     gateway_create_producer_snowflake = akeyless.GatewayCreateProducerSnowflake() # GatewayCreateProducerSnowflake | 
 
     try:
         api_response = api_instance.gateway_create_producer_snowflake(gateway_create_producer_snowflake)
-        print("The response of V2Api->gateway_create_producer_snowflake:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->gateway_create_producer_snowflake: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -16156,7 +14548,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | gatewayCreateProducerSnowflakeResponse wraps response body. |  -  |
@@ -16171,14 +14562,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.gateway_create_producer_venafi import GatewayCreateProducerVenafi
-from akeyless.models.gateway_create_producer_venafi_output import GatewayCreateProducerVenafiOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -16187,23 +14576,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     gateway_create_producer_venafi = akeyless.GatewayCreateProducerVenafi() # GatewayCreateProducerVenafi | 
 
     try:
         api_response = api_instance.gateway_create_producer_venafi(gateway_create_producer_venafi)
-        print("The response of V2Api->gateway_create_producer_venafi:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->gateway_create_producer_venafi: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -16223,7 +14608,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | gatewayCreateProducerVenafiResponse wraps response body. |  -  |
@@ -16238,14 +14622,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.gateway_delete_allowed_access import GatewayDeleteAllowedAccess
-from akeyless.models.gateway_delete_allowed_access_output import GatewayDeleteAllowedAccessOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -16254,23 +14636,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     gateway_delete_allowed_access = akeyless.GatewayDeleteAllowedAccess() # GatewayDeleteAllowedAccess | 
 
     try:
         api_response = api_instance.gateway_delete_allowed_access(gateway_delete_allowed_access)
-        print("The response of V2Api->gateway_delete_allowed_access:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->gateway_delete_allowed_access: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -16290,7 +14668,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | gatewayDeleteAllowedAccessResponse wraps response body. |  -  |
@@ -16305,14 +14682,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.gateway_delete_k8_s_auth_config import GatewayDeleteK8SAuthConfig
-from akeyless.models.gateway_delete_k8_s_auth_config_output import GatewayDeleteK8SAuthConfigOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -16321,23 +14696,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     gateway_delete_k8_s_auth_config = akeyless.GatewayDeleteK8SAuthConfig() # GatewayDeleteK8SAuthConfig | 
 
     try:
         api_response = api_instance.gateway_delete_k8_s_auth_config(gateway_delete_k8_s_auth_config)
-        print("The response of V2Api->gateway_delete_k8_s_auth_config:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->gateway_delete_k8_s_auth_config: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -16357,7 +14728,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | gatewayDeleteK8SAuthConfigResponse wraps response body. |  -  |
@@ -16372,14 +14742,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.gateway_delete_migration import GatewayDeleteMigration
-from akeyless.models.gateway_migration_delete_output import GatewayMigrationDeleteOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -16388,23 +14756,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     gateway_delete_migration = akeyless.GatewayDeleteMigration() # GatewayDeleteMigration | 
 
     try:
         api_response = api_instance.gateway_delete_migration(gateway_delete_migration)
-        print("The response of V2Api->gateway_delete_migration:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->gateway_delete_migration: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -16424,7 +14788,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | gatewayMigrationDeleteResponse wraps response body. |  -  |
@@ -16439,14 +14802,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.gateway_delete_producer import GatewayDeleteProducer
-from akeyless.models.gateway_delete_producer_output import GatewayDeleteProducerOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -16455,23 +14816,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     gateway_delete_producer = akeyless.GatewayDeleteProducer() # GatewayDeleteProducer | 
 
     try:
         api_response = api_instance.gateway_delete_producer(gateway_delete_producer)
-        print("The response of V2Api->gateway_delete_producer:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->gateway_delete_producer: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -16491,7 +14848,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | gatewayDeleteProducerResponse wraps response body. |  -  |
@@ -16506,14 +14862,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.gateway_download_customer_fragments import GatewayDownloadCustomerFragments
-from akeyless.models.gateway_download_customer_fragments_output import GatewayDownloadCustomerFragmentsOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -16522,23 +14876,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     gateway_download_customer_fragments = akeyless.GatewayDownloadCustomerFragments() # GatewayDownloadCustomerFragments | 
 
     try:
         api_response = api_instance.gateway_download_customer_fragments(gateway_download_customer_fragments)
-        print("The response of V2Api->gateway_download_customer_fragments:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->gateway_download_customer_fragments: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -16558,7 +14908,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | gatewayDownloadCustomerFragmentsResponse wraps response body. |  -  |
@@ -16573,14 +14922,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.allowed_access import AllowedAccess
-from akeyless.models.gateway_get_allowed_access import GatewayGetAllowedAccess
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -16589,23 +14936,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     gateway_get_allowed_access = akeyless.GatewayGetAllowedAccess() # GatewayGetAllowedAccess | 
 
     try:
         api_response = api_instance.gateway_get_allowed_access(gateway_get_allowed_access)
-        print("The response of V2Api->gateway_get_allowed_access:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->gateway_get_allowed_access: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -16625,7 +14968,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | gatewayGetAllowedAccessResponse wraps response body. |  -  |
@@ -16640,14 +14982,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.cache_config_part import CacheConfigPart
-from akeyless.models.gateway_get_cache import GatewayGetCache
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -16656,23 +14996,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     gateway_get_cache = akeyless.GatewayGetCache() # GatewayGetCache | 
 
     try:
         api_response = api_instance.gateway_get_cache(gateway_get_cache)
-        print("The response of V2Api->gateway_get_cache:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->gateway_get_cache: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -16692,7 +15028,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | gatewayGetCacheResponse wraps response body. |  -  |
@@ -16707,14 +15042,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.akeyless_gateway_config import AkeylessGatewayConfig
-from akeyless.models.gateway_get_config import GatewayGetConfig
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -16723,23 +15056,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     gateway_get_config = akeyless.GatewayGetConfig() # GatewayGetConfig | 
 
     try:
         api_response = api_instance.gateway_get_config(gateway_get_config)
-        print("The response of V2Api->gateway_get_config:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->gateway_get_config: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -16759,7 +15088,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | gatewayGetConfigResponse wraps response body. |  -  |
@@ -16774,14 +15102,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.gateway_get_defaults import GatewayGetDefaults
-from akeyless.models.gateway_get_defaults_output import GatewayGetDefaultsOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -16790,23 +15116,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     gateway_get_defaults = akeyless.GatewayGetDefaults() # GatewayGetDefaults | 
 
     try:
         api_response = api_instance.gateway_get_defaults(gateway_get_defaults)
-        print("The response of V2Api->gateway_get_defaults:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->gateway_get_defaults: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -16826,7 +15148,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | gatewayGetDefaultsResponse wraps response body. |  -  |
@@ -16841,14 +15162,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.gateway_get_k8_s_auth_config import GatewayGetK8SAuthConfig
-from akeyless.models.gateway_get_k8_s_auth_config_output import GatewayGetK8SAuthConfigOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -16857,23 +15176,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     gateway_get_k8_s_auth_config = akeyless.GatewayGetK8SAuthConfig() # GatewayGetK8SAuthConfig | 
 
     try:
         api_response = api_instance.gateway_get_k8_s_auth_config(gateway_get_k8_s_auth_config)
-        print("The response of V2Api->gateway_get_k8_s_auth_config:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->gateway_get_k8_s_auth_config: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -16893,7 +15208,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | gatewayGetK8SAuthConfigResponse wraps response body. |  -  |
@@ -16908,14 +15222,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.gateway_get_ldap_auth_config import GatewayGetLdapAuthConfig
-from akeyless.models.gateway_get_ldap_auth_config_output import GatewayGetLdapAuthConfigOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -16924,23 +15236,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     gateway_get_ldap_auth_config = akeyless.GatewayGetLdapAuthConfig() # GatewayGetLdapAuthConfig | 
 
     try:
         api_response = api_instance.gateway_get_ldap_auth_config(gateway_get_ldap_auth_config)
-        print("The response of V2Api->gateway_get_ldap_auth_config:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->gateway_get_ldap_auth_config: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -16960,7 +15268,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | gatewayGetLdapAuthConfigResponse wraps response body. |  -  |
@@ -16975,14 +15282,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.gateway_get_log_forwarding import GatewayGetLogForwarding
-from akeyless.models.log_forwarding_config_part import LogForwardingConfigPart
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -16991,23 +15296,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     gateway_get_log_forwarding = akeyless.GatewayGetLogForwarding() # GatewayGetLogForwarding | 
 
     try:
         api_response = api_instance.gateway_get_log_forwarding(gateway_get_log_forwarding)
-        print("The response of V2Api->gateway_get_log_forwarding:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->gateway_get_log_forwarding: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -17027,7 +15328,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | gatewayGetLogForwardingResponse wraps response body. |  -  |
@@ -17042,14 +15342,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.gateway_get_migration import GatewayGetMigration
-from akeyless.models.gateway_migration_get_output import GatewayMigrationGetOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -17058,23 +15356,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     gateway_get_migration = akeyless.GatewayGetMigration() # GatewayGetMigration | 
 
     try:
         api_response = api_instance.gateway_get_migration(gateway_get_migration)
-        print("The response of V2Api->gateway_get_migration:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->gateway_get_migration: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -17094,7 +15388,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | gatewayMigrationGetResponse wraps response body. |  -  |
@@ -17109,14 +15402,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.ds_producer_details import DSProducerDetails
-from akeyless.models.gateway_get_producer import GatewayGetProducer
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -17125,23 +15416,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     gateway_get_producer = akeyless.GatewayGetProducer() # GatewayGetProducer | 
 
     try:
         api_response = api_instance.gateway_get_producer(gateway_get_producer)
-        print("The response of V2Api->gateway_get_producer:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->gateway_get_producer: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -17161,7 +15448,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | gatewayGetProducerResponse wraps response body. |  -  |
@@ -17176,14 +15462,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.bastion_config_reply_obj import BastionConfigReplyObj
-from akeyless.models.gateway_get_remote_access import GatewayGetRemoteAccess
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -17192,23 +15476,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     gateway_get_remote_access = akeyless.GatewayGetRemoteAccess() # GatewayGetRemoteAccess | 
 
     try:
         api_response = api_instance.gateway_get_remote_access(gateway_get_remote_access)
-        print("The response of V2Api->gateway_get_remote_access:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->gateway_get_remote_access: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -17228,7 +15508,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | gatewayGetRemoteAccessResponse wraps response body. |  -  |
@@ -17237,20 +15516,18 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **gateway_get_tmp_users**
-> List[TmpUserData] gateway_get_tmp_users(gateway_get_tmp_users)
+> list[TmpUserData] gateway_get_tmp_users(gateway_get_tmp_users)
 
 
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.gateway_get_tmp_users import GatewayGetTmpUsers
-from akeyless.models.tmp_user_data import TmpUserData
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -17259,23 +15536,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     gateway_get_tmp_users = akeyless.GatewayGetTmpUsers() # GatewayGetTmpUsers | 
 
     try:
         api_response = api_instance.gateway_get_tmp_users(gateway_get_tmp_users)
-        print("The response of V2Api->gateway_get_tmp_users:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->gateway_get_tmp_users: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -17283,7 +15556,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**List[TmpUserData]**](TmpUserData.md)
+[**list[TmpUserData]**](TmpUserData.md)
 
 ### Authorization
 
@@ -17295,7 +15568,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | gatewayGetTmpUsersResponse wraps response body. |  -  |
@@ -17304,19 +15576,18 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **gateway_list_customer_fragments**
-> Dict[str, object] gateway_list_customer_fragments(gateway_list_customer_fragments)
+> dict(str, object) gateway_list_customer_fragments(gateway_list_customer_fragments)
 
 
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.gateway_list_customer_fragments import GatewayListCustomerFragments
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -17325,23 +15596,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     gateway_list_customer_fragments = akeyless.GatewayListCustomerFragments() # GatewayListCustomerFragments | 
 
     try:
         api_response = api_instance.gateway_list_customer_fragments(gateway_list_customer_fragments)
-        print("The response of V2Api->gateway_list_customer_fragments:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->gateway_list_customer_fragments: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -17349,7 +15616,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**Dict[str, object]**
+**dict(str, object)**
 
 ### Authorization
 
@@ -17361,7 +15628,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | gatewayListCustomerFragmentsResponse wraps response body. |  -  |
@@ -17376,14 +15642,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.gateway_list_migration import GatewayListMigration
-from akeyless.models.gateway_migration_list_output import GatewayMigrationListOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -17392,23 +15656,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     gateway_list_migration = akeyless.GatewayListMigration() # GatewayListMigration | 
 
     try:
         api_response = api_instance.gateway_list_migration(gateway_list_migration)
-        print("The response of V2Api->gateway_list_migration:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->gateway_list_migration: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -17428,7 +15688,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | gatewayMigrationListResponse wraps response body. |  -  |
@@ -17443,14 +15702,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.gateway_list_producers import GatewayListProducers
-from akeyless.models.get_producers_list_reply_obj import GetProducersListReplyObj
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -17459,23 +15716,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     gateway_list_producers = akeyless.GatewayListProducers() # GatewayListProducers | 
 
     try:
         api_response = api_instance.gateway_list_producers(gateway_list_producers)
-        print("The response of V2Api->gateway_list_producers:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->gateway_list_producers: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -17495,7 +15748,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | gatewayListProducersResponse wraps response body. |  -  |
@@ -17510,14 +15762,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.gateway_list_rotated_secrets import GatewayListRotatedSecrets
-from akeyless.models.list_items_output import ListItemsOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -17526,23 +15776,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     gateway_list_rotated_secrets = akeyless.GatewayListRotatedSecrets() # GatewayListRotatedSecrets | 
 
     try:
         api_response = api_instance.gateway_list_rotated_secrets(gateway_list_rotated_secrets)
-        print("The response of V2Api->gateway_list_rotated_secrets:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->gateway_list_rotated_secrets: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -17562,7 +15808,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | gatewayListRotatedSecretsResponse wraps response body. |  -  |
@@ -17577,14 +15822,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.gateway_migrate_personal_items import GatewayMigratePersonalItems
-from akeyless.models.gateway_migrate_personal_items_output import GatewayMigratePersonalItemsOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -17593,23 +15836,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     gateway_migrate_personal_items = akeyless.GatewayMigratePersonalItems() # GatewayMigratePersonalItems |  (optional)
 
     try:
         api_response = api_instance.gateway_migrate_personal_items(gateway_migrate_personal_items=gateway_migrate_personal_items)
-        print("The response of V2Api->gateway_migrate_personal_items:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->gateway_migrate_personal_items: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -17629,7 +15868,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | gatewayMigratePersonalItemsResponse wraps response body. |  -  |
@@ -17644,13 +15882,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.gateway_revoke_tmp_users import GatewayRevokeTmpUsers
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -17659,21 +15896,18 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     gateway_revoke_tmp_users = akeyless.GatewayRevokeTmpUsers() # GatewayRevokeTmpUsers | 
 
     try:
         api_instance.gateway_revoke_tmp_users(gateway_revoke_tmp_users)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->gateway_revoke_tmp_users: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -17693,7 +15927,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | gatewayRevokeTmpUsersResponse wraps response body. |  -  |
@@ -17708,14 +15941,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.gateway_start_producer import GatewayStartProducer
-from akeyless.models.gateway_start_producer_output import GatewayStartProducerOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -17724,23 +15955,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     gateway_start_producer = akeyless.GatewayStartProducer() # GatewayStartProducer | 
 
     try:
         api_response = api_instance.gateway_start_producer(gateway_start_producer)
-        print("The response of V2Api->gateway_start_producer:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->gateway_start_producer: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -17760,7 +15987,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | gatewayStartProducerResponse wraps response body. |  -  |
@@ -17775,14 +16001,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.gateway_status_migration import GatewayStatusMigration
-from akeyless.models.migration_status_reply_obj import MigrationStatusReplyObj
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -17791,23 +16015,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     gateway_status_migration = akeyless.GatewayStatusMigration() # GatewayStatusMigration | 
 
     try:
         api_response = api_instance.gateway_status_migration(gateway_status_migration)
-        print("The response of V2Api->gateway_status_migration:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->gateway_status_migration: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -17827,7 +16047,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | gatewayMigrationStatusResponse wraps response body. |  -  |
@@ -17842,14 +16061,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.gateway_stop_producer import GatewayStopProducer
-from akeyless.models.gateway_stop_producer_output import GatewayStopProducerOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -17858,23 +16075,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     gateway_stop_producer = akeyless.GatewayStopProducer() # GatewayStopProducer | 
 
     try:
         api_response = api_instance.gateway_stop_producer(gateway_stop_producer)
-        print("The response of V2Api->gateway_stop_producer:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->gateway_stop_producer: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -17894,7 +16107,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | gatewayStopProducerResponse wraps response body. |  -  |
@@ -17909,14 +16121,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.gateway_migration_sync_output import GatewayMigrationSyncOutput
-from akeyless.models.gateway_sync_migration import GatewaySyncMigration
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -17925,23 +16135,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     gateway_sync_migration = akeyless.GatewaySyncMigration() # GatewaySyncMigration | 
 
     try:
         api_response = api_instance.gateway_sync_migration(gateway_sync_migration)
-        print("The response of V2Api->gateway_sync_migration:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->gateway_sync_migration: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -17961,7 +16167,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | gatewayMigrationSyncResponse wraps response body. |  -  |
@@ -17976,14 +16181,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.allowed_access import AllowedAccess
-from akeyless.models.gateway_update_allowed_access import GatewayUpdateAllowedAccess
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -17992,23 +16195,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     gateway_update_allowed_access = akeyless.GatewayUpdateAllowedAccess() # GatewayUpdateAllowedAccess | 
 
     try:
         api_response = api_instance.gateway_update_allowed_access(gateway_update_allowed_access)
-        print("The response of V2Api->gateway_update_allowed_access:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->gateway_update_allowed_access: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -18028,7 +16227,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | gatewayCreateAllowedAccessResponse wraps response body. |  -  |
@@ -18043,14 +16241,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.gateway_update_cache import GatewayUpdateCache
-from akeyless.models.gateway_update_output import GatewayUpdateOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -18059,23 +16255,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     gateway_update_cache = akeyless.GatewayUpdateCache() # GatewayUpdateCache | 
 
     try:
         api_response = api_instance.gateway_update_cache(gateway_update_cache)
-        print("The response of V2Api->gateway_update_cache:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->gateway_update_cache: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -18095,7 +16287,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | gatewayUpdateCacheResponse wraps response body. |  -  |
@@ -18110,14 +16301,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.gateway_update_defaults import GatewayUpdateDefaults
-from akeyless.models.gateway_update_output import GatewayUpdateOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -18126,23 +16315,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     gateway_update_defaults = akeyless.GatewayUpdateDefaults() # GatewayUpdateDefaults | 
 
     try:
         api_response = api_instance.gateway_update_defaults(gateway_update_defaults)
-        print("The response of V2Api->gateway_update_defaults:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->gateway_update_defaults: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -18162,7 +16347,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | gatewayUpdateDefaultsResponse wraps response body. |  -  |
@@ -18177,14 +16361,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.gateway_update_item import GatewayUpdateItem
-from akeyless.models.gateway_update_item_output import GatewayUpdateItemOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -18193,23 +16375,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     gateway_update_item = akeyless.GatewayUpdateItem() # GatewayUpdateItem | 
 
     try:
         api_response = api_instance.gateway_update_item(gateway_update_item)
-        print("The response of V2Api->gateway_update_item:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->gateway_update_item: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -18229,7 +16407,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | gatewayUpdateItemResponse wraps response body. |  -  |
@@ -18244,14 +16421,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.gateway_update_k8_s_auth_config import GatewayUpdateK8SAuthConfig
-from akeyless.models.gateway_update_k8_s_auth_config_output import GatewayUpdateK8SAuthConfigOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -18260,23 +16435,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     gateway_update_k8_s_auth_config = akeyless.GatewayUpdateK8SAuthConfig() # GatewayUpdateK8SAuthConfig | 
 
     try:
         api_response = api_instance.gateway_update_k8_s_auth_config(gateway_update_k8_s_auth_config)
-        print("The response of V2Api->gateway_update_k8_s_auth_config:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->gateway_update_k8_s_auth_config: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -18296,7 +16467,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | gatewayUpdateK8SAuthConfigResponse wraps response body. |  -  |
@@ -18311,14 +16481,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.gateway_update_ldap_auth_config import GatewayUpdateLdapAuthConfig
-from akeyless.models.gateway_update_ldap_auth_config_output import GatewayUpdateLdapAuthConfigOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -18327,23 +16495,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     gateway_update_ldap_auth_config = akeyless.GatewayUpdateLdapAuthConfig() # GatewayUpdateLdapAuthConfig | 
 
     try:
         api_response = api_instance.gateway_update_ldap_auth_config(gateway_update_ldap_auth_config)
-        print("The response of V2Api->gateway_update_ldap_auth_config:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->gateway_update_ldap_auth_config: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -18363,7 +16527,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | GatewayUpdateLdapAuthConfigResponse wraps response body. |  -  |
@@ -18378,14 +16541,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.gateway_update_log_forwarding_aws_s3 import GatewayUpdateLogForwardingAwsS3
-from akeyless.models.gateway_update_log_forwarding_output import GatewayUpdateLogForwardingOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -18394,23 +16555,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     gateway_update_log_forwarding_aws_s3 = akeyless.GatewayUpdateLogForwardingAwsS3() # GatewayUpdateLogForwardingAwsS3 | 
 
     try:
         api_response = api_instance.gateway_update_log_forwarding_aws_s3(gateway_update_log_forwarding_aws_s3)
-        print("The response of V2Api->gateway_update_log_forwarding_aws_s3:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->gateway_update_log_forwarding_aws_s3: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -18430,7 +16587,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | gatewayUpdateLogForwardingResponse wraps response body. |  -  |
@@ -18445,14 +16601,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.gateway_update_log_forwarding_azure_analytics import GatewayUpdateLogForwardingAzureAnalytics
-from akeyless.models.gateway_update_log_forwarding_output import GatewayUpdateLogForwardingOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -18461,23 +16615,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     gateway_update_log_forwarding_azure_analytics = akeyless.GatewayUpdateLogForwardingAzureAnalytics() # GatewayUpdateLogForwardingAzureAnalytics | 
 
     try:
         api_response = api_instance.gateway_update_log_forwarding_azure_analytics(gateway_update_log_forwarding_azure_analytics)
-        print("The response of V2Api->gateway_update_log_forwarding_azure_analytics:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->gateway_update_log_forwarding_azure_analytics: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -18497,7 +16647,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | gatewayUpdateLogForwardingResponse wraps response body. |  -  |
@@ -18512,14 +16661,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.gateway_update_log_forwarding_datadog import GatewayUpdateLogForwardingDatadog
-from akeyless.models.gateway_update_log_forwarding_output import GatewayUpdateLogForwardingOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -18528,23 +16675,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     gateway_update_log_forwarding_datadog = akeyless.GatewayUpdateLogForwardingDatadog() # GatewayUpdateLogForwardingDatadog | 
 
     try:
         api_response = api_instance.gateway_update_log_forwarding_datadog(gateway_update_log_forwarding_datadog)
-        print("The response of V2Api->gateway_update_log_forwarding_datadog:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->gateway_update_log_forwarding_datadog: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -18564,7 +16707,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | gatewayUpdateLogForwardingResponse wraps response body. |  -  |
@@ -18579,14 +16721,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.gateway_update_log_forwarding_elasticsearch import GatewayUpdateLogForwardingElasticsearch
-from akeyless.models.gateway_update_log_forwarding_output import GatewayUpdateLogForwardingOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -18595,23 +16735,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     gateway_update_log_forwarding_elasticsearch = akeyless.GatewayUpdateLogForwardingElasticsearch() # GatewayUpdateLogForwardingElasticsearch | 
 
     try:
         api_response = api_instance.gateway_update_log_forwarding_elasticsearch(gateway_update_log_forwarding_elasticsearch)
-        print("The response of V2Api->gateway_update_log_forwarding_elasticsearch:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->gateway_update_log_forwarding_elasticsearch: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -18631,7 +16767,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | gatewayUpdateLogForwardingResponse wraps response body. |  -  |
@@ -18646,14 +16781,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.gateway_update_log_forwarding_google_chronicle import GatewayUpdateLogForwardingGoogleChronicle
-from akeyless.models.gateway_update_log_forwarding_output import GatewayUpdateLogForwardingOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -18662,23 +16795,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     gateway_update_log_forwarding_google_chronicle = akeyless.GatewayUpdateLogForwardingGoogleChronicle() # GatewayUpdateLogForwardingGoogleChronicle | 
 
     try:
         api_response = api_instance.gateway_update_log_forwarding_google_chronicle(gateway_update_log_forwarding_google_chronicle)
-        print("The response of V2Api->gateway_update_log_forwarding_google_chronicle:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->gateway_update_log_forwarding_google_chronicle: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -18698,7 +16827,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | gatewayUpdateLogForwardingResponse wraps response body. |  -  |
@@ -18713,14 +16841,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.gateway_update_log_forwarding_logstash import GatewayUpdateLogForwardingLogstash
-from akeyless.models.gateway_update_log_forwarding_output import GatewayUpdateLogForwardingOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -18729,23 +16855,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     gateway_update_log_forwarding_logstash = akeyless.GatewayUpdateLogForwardingLogstash() # GatewayUpdateLogForwardingLogstash | 
 
     try:
         api_response = api_instance.gateway_update_log_forwarding_logstash(gateway_update_log_forwarding_logstash)
-        print("The response of V2Api->gateway_update_log_forwarding_logstash:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->gateway_update_log_forwarding_logstash: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -18765,7 +16887,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | gatewayUpdateLogForwardingResponse wraps response body. |  -  |
@@ -18780,14 +16901,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.gateway_update_log_forwarding_logz_io import GatewayUpdateLogForwardingLogzIo
-from akeyless.models.gateway_update_log_forwarding_output import GatewayUpdateLogForwardingOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -18796,23 +16915,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     gateway_update_log_forwarding_logz_io = akeyless.GatewayUpdateLogForwardingLogzIo() # GatewayUpdateLogForwardingLogzIo | 
 
     try:
         api_response = api_instance.gateway_update_log_forwarding_logz_io(gateway_update_log_forwarding_logz_io)
-        print("The response of V2Api->gateway_update_log_forwarding_logz_io:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->gateway_update_log_forwarding_logz_io: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -18832,7 +16947,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | gatewayUpdateLogForwardingResponse wraps response body. |  -  |
@@ -18847,14 +16961,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.gateway_update_log_forwarding_output import GatewayUpdateLogForwardingOutput
-from akeyless.models.gateway_update_log_forwarding_splunk import GatewayUpdateLogForwardingSplunk
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -18863,23 +16975,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     gateway_update_log_forwarding_splunk = akeyless.GatewayUpdateLogForwardingSplunk() # GatewayUpdateLogForwardingSplunk | 
 
     try:
         api_response = api_instance.gateway_update_log_forwarding_splunk(gateway_update_log_forwarding_splunk)
-        print("The response of V2Api->gateway_update_log_forwarding_splunk:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->gateway_update_log_forwarding_splunk: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -18899,7 +17007,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | gatewayUpdateLogForwardingResponse wraps response body. |  -  |
@@ -18914,14 +17021,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.gateway_update_log_forwarding_output import GatewayUpdateLogForwardingOutput
-from akeyless.models.gateway_update_log_forwarding_stdout import GatewayUpdateLogForwardingStdout
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -18930,23 +17035,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     gateway_update_log_forwarding_stdout = akeyless.GatewayUpdateLogForwardingStdout() # GatewayUpdateLogForwardingStdout | 
 
     try:
         api_response = api_instance.gateway_update_log_forwarding_stdout(gateway_update_log_forwarding_stdout)
-        print("The response of V2Api->gateway_update_log_forwarding_stdout:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->gateway_update_log_forwarding_stdout: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -18966,7 +17067,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | gatewayUpdateLogForwardingResponse wraps response body. |  -  |
@@ -18981,14 +17081,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.gateway_update_log_forwarding_output import GatewayUpdateLogForwardingOutput
-from akeyless.models.gateway_update_log_forwarding_sumologic import GatewayUpdateLogForwardingSumologic
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -18997,23 +17095,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     gateway_update_log_forwarding_sumologic = akeyless.GatewayUpdateLogForwardingSumologic() # GatewayUpdateLogForwardingSumologic | 
 
     try:
         api_response = api_instance.gateway_update_log_forwarding_sumologic(gateway_update_log_forwarding_sumologic)
-        print("The response of V2Api->gateway_update_log_forwarding_sumologic:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->gateway_update_log_forwarding_sumologic: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -19033,7 +17127,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | gatewayUpdateLogForwardingResponse wraps response body. |  -  |
@@ -19048,14 +17141,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.gateway_update_log_forwarding_output import GatewayUpdateLogForwardingOutput
-from akeyless.models.gateway_update_log_forwarding_syslog import GatewayUpdateLogForwardingSyslog
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -19064,23 +17155,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     gateway_update_log_forwarding_syslog = akeyless.GatewayUpdateLogForwardingSyslog() # GatewayUpdateLogForwardingSyslog | 
 
     try:
         api_response = api_instance.gateway_update_log_forwarding_syslog(gateway_update_log_forwarding_syslog)
-        print("The response of V2Api->gateway_update_log_forwarding_syslog:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->gateway_update_log_forwarding_syslog: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -19100,7 +17187,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | gatewayUpdateLogForwardingResponse wraps response body. |  -  |
@@ -19115,14 +17201,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.gateway_migration_update_output import GatewayMigrationUpdateOutput
-from akeyless.models.gateway_update_migration import GatewayUpdateMigration
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -19131,23 +17215,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     gateway_update_migration = akeyless.GatewayUpdateMigration() # GatewayUpdateMigration | 
 
     try:
         api_response = api_instance.gateway_update_migration(gateway_update_migration)
-        print("The response of V2Api->gateway_update_migration:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->gateway_update_migration: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -19167,7 +17247,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | gatewayMigrationUpdateResponse wraps response body. |  -  |
@@ -19182,14 +17261,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.gateway_update_producer_artifactory import GatewayUpdateProducerArtifactory
-from akeyless.models.gateway_update_producer_artifactory_output import GatewayUpdateProducerArtifactoryOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -19198,23 +17275,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     gateway_update_producer_artifactory = akeyless.GatewayUpdateProducerArtifactory() # GatewayUpdateProducerArtifactory | 
 
     try:
         api_response = api_instance.gateway_update_producer_artifactory(gateway_update_producer_artifactory)
-        print("The response of V2Api->gateway_update_producer_artifactory:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->gateway_update_producer_artifactory: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -19234,7 +17307,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | gatewayUpdateProducerArtifactoryResponse wraps response body. |  -  |
@@ -19249,14 +17321,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.gateway_update_producer_aws import GatewayUpdateProducerAws
-from akeyless.models.gateway_update_producer_aws_output import GatewayUpdateProducerAwsOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -19265,23 +17335,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     gateway_update_producer_aws = akeyless.GatewayUpdateProducerAws() # GatewayUpdateProducerAws | 
 
     try:
         api_response = api_instance.gateway_update_producer_aws(gateway_update_producer_aws)
-        print("The response of V2Api->gateway_update_producer_aws:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->gateway_update_producer_aws: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -19301,7 +17367,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | gatewayUpdateProducerAwsResponse wraps response body. |  -  |
@@ -19316,14 +17381,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.gateway_update_producer_azure import GatewayUpdateProducerAzure
-from akeyless.models.gateway_update_producer_azure_output import GatewayUpdateProducerAzureOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -19332,23 +17395,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     gateway_update_producer_azure = akeyless.GatewayUpdateProducerAzure() # GatewayUpdateProducerAzure | 
 
     try:
         api_response = api_instance.gateway_update_producer_azure(gateway_update_producer_azure)
-        print("The response of V2Api->gateway_update_producer_azure:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->gateway_update_producer_azure: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -19368,7 +17427,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | gatewayUpdateProducerAzureResponse wraps response body. |  -  |
@@ -19383,14 +17441,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.gateway_update_producer_cassandra import GatewayUpdateProducerCassandra
-from akeyless.models.gateway_update_producer_cassandra_output import GatewayUpdateProducerCassandraOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -19399,23 +17455,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     gateway_update_producer_cassandra = akeyless.GatewayUpdateProducerCassandra() # GatewayUpdateProducerCassandra | 
 
     try:
         api_response = api_instance.gateway_update_producer_cassandra(gateway_update_producer_cassandra)
-        print("The response of V2Api->gateway_update_producer_cassandra:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->gateway_update_producer_cassandra: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -19435,7 +17487,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | gatewayUpdateProducerCassandraResponse wraps response body. |  -  |
@@ -19450,14 +17501,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.gateway_update_producer_chef import GatewayUpdateProducerChef
-from akeyless.models.gateway_update_producer_chef_output import GatewayUpdateProducerChefOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -19466,23 +17515,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     gateway_update_producer_chef = akeyless.GatewayUpdateProducerChef() # GatewayUpdateProducerChef | 
 
     try:
         api_response = api_instance.gateway_update_producer_chef(gateway_update_producer_chef)
-        print("The response of V2Api->gateway_update_producer_chef:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->gateway_update_producer_chef: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -19502,7 +17547,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | gatewayUpdateProducerChefResponse wraps response body. |  -  |
@@ -19517,14 +17561,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.gateway_update_producer_custom import GatewayUpdateProducerCustom
-from akeyless.models.gateway_update_producer_custom_output import GatewayUpdateProducerCustomOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -19533,23 +17575,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     gateway_update_producer_custom = akeyless.GatewayUpdateProducerCustom() # GatewayUpdateProducerCustom |  (optional)
 
     try:
         api_response = api_instance.gateway_update_producer_custom(gateway_update_producer_custom=gateway_update_producer_custom)
-        print("The response of V2Api->gateway_update_producer_custom:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->gateway_update_producer_custom: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -19569,7 +17607,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | gatewayUpdateProducerCustomResponse wraps response body. |  -  |
@@ -19584,14 +17621,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.gateway_update_producer_dockerhub import GatewayUpdateProducerDockerhub
-from akeyless.models.gateway_update_producer_dockerhub_output import GatewayUpdateProducerDockerhubOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -19600,23 +17635,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     gateway_update_producer_dockerhub = akeyless.GatewayUpdateProducerDockerhub() # GatewayUpdateProducerDockerhub | 
 
     try:
         api_response = api_instance.gateway_update_producer_dockerhub(gateway_update_producer_dockerhub)
-        print("The response of V2Api->gateway_update_producer_dockerhub:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->gateway_update_producer_dockerhub: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -19636,7 +17667,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | gatewayUpdateProducerDockerhubResponse wraps response body. |  -  |
@@ -19651,14 +17681,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.gateway_update_producer_eks import GatewayUpdateProducerEks
-from akeyless.models.gateway_update_producer_eks_output import GatewayUpdateProducerEksOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -19667,23 +17695,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     gateway_update_producer_eks = akeyless.GatewayUpdateProducerEks() # GatewayUpdateProducerEks | 
 
     try:
         api_response = api_instance.gateway_update_producer_eks(gateway_update_producer_eks)
-        print("The response of V2Api->gateway_update_producer_eks:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->gateway_update_producer_eks: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -19703,7 +17727,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | gatewayUpdateProducerEksResponse wraps response body. |  -  |
@@ -19718,14 +17741,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.gateway_update_producer_gcp import GatewayUpdateProducerGcp
-from akeyless.models.gateway_update_producer_gcp_output import GatewayUpdateProducerGcpOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -19734,23 +17755,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     gateway_update_producer_gcp = akeyless.GatewayUpdateProducerGcp() # GatewayUpdateProducerGcp | 
 
     try:
         api_response = api_instance.gateway_update_producer_gcp(gateway_update_producer_gcp)
-        print("The response of V2Api->gateway_update_producer_gcp:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->gateway_update_producer_gcp: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -19770,7 +17787,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | gatewayUpdateProducerGcpResponse wraps response body. |  -  |
@@ -19785,14 +17801,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.gateway_update_producer_github import GatewayUpdateProducerGithub
-from akeyless.models.gateway_update_producer_github_output import GatewayUpdateProducerGithubOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -19801,23 +17815,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     gateway_update_producer_github = akeyless.GatewayUpdateProducerGithub() # GatewayUpdateProducerGithub | 
 
     try:
         api_response = api_instance.gateway_update_producer_github(gateway_update_producer_github)
-        print("The response of V2Api->gateway_update_producer_github:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->gateway_update_producer_github: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -19837,7 +17847,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | gatewayUpdateProducerGithubResponse wraps response body. |  -  |
@@ -19852,14 +17861,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.gateway_update_producer_gke import GatewayUpdateProducerGke
-from akeyless.models.gateway_update_producer_gke_output import GatewayUpdateProducerGkeOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -19868,23 +17875,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     gateway_update_producer_gke = akeyless.GatewayUpdateProducerGke() # GatewayUpdateProducerGke | 
 
     try:
         api_response = api_instance.gateway_update_producer_gke(gateway_update_producer_gke)
-        print("The response of V2Api->gateway_update_producer_gke:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->gateway_update_producer_gke: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -19904,7 +17907,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | gatewayUpdateProducerGkeResponse wraps response body. |  -  |
@@ -19919,14 +17921,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.gateway_update_producer_hana_db import GatewayUpdateProducerHanaDb
-from akeyless.models.gateway_update_producer_hana_db_output import GatewayUpdateProducerHanaDbOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -19935,23 +17935,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     gateway_update_producer_hana_db = akeyless.GatewayUpdateProducerHanaDb() # GatewayUpdateProducerHanaDb | 
 
     try:
         api_response = api_instance.gateway_update_producer_hana_db(gateway_update_producer_hana_db)
-        print("The response of V2Api->gateway_update_producer_hana_db:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->gateway_update_producer_hana_db: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -19971,7 +17967,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | gatewayUpdateProducerHanaDbResponse wraps response body. |  -  |
@@ -19986,14 +17981,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.gateway_update_producer_ldap import GatewayUpdateProducerLdap
-from akeyless.models.gateway_update_producer_ldap_output import GatewayUpdateProducerLdapOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -20002,23 +17995,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     gateway_update_producer_ldap = akeyless.GatewayUpdateProducerLdap() # GatewayUpdateProducerLdap | 
 
     try:
         api_response = api_instance.gateway_update_producer_ldap(gateway_update_producer_ldap)
-        print("The response of V2Api->gateway_update_producer_ldap:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->gateway_update_producer_ldap: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -20038,7 +18027,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | gatewayUpdateProducerLdapResponse wraps response body. |  -  |
@@ -20053,14 +18041,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.gateway_update_producer_mongo import GatewayUpdateProducerMongo
-from akeyless.models.gateway_update_producer_mongo_output import GatewayUpdateProducerMongoOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -20069,23 +18055,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     gateway_update_producer_mongo = akeyless.GatewayUpdateProducerMongo() # GatewayUpdateProducerMongo | 
 
     try:
         api_response = api_instance.gateway_update_producer_mongo(gateway_update_producer_mongo)
-        print("The response of V2Api->gateway_update_producer_mongo:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->gateway_update_producer_mongo: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -20105,7 +18087,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | gatewayUpdateProducerMongoResponse wraps response body. |  -  |
@@ -20120,14 +18101,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.gateway_update_producer_mssql import GatewayUpdateProducerMSSQL
-from akeyless.models.gateway_update_producer_mssql_output import GatewayUpdateProducerMSSQLOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -20136,23 +18115,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     gateway_update_producer_mssql = akeyless.GatewayUpdateProducerMSSQL() # GatewayUpdateProducerMSSQL | 
 
     try:
         api_response = api_instance.gateway_update_producer_mssql(gateway_update_producer_mssql)
-        print("The response of V2Api->gateway_update_producer_mssql:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->gateway_update_producer_mssql: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -20172,7 +18147,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | gatewayUpdateProducerMSSQLResponse wraps response body. |  -  |
@@ -20187,14 +18161,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.gateway_update_producer_my_sql import GatewayUpdateProducerMySQL
-from akeyless.models.gateway_update_producer_my_sql_output import GatewayUpdateProducerMySQLOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -20203,23 +18175,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     gateway_update_producer_my_sql = akeyless.GatewayUpdateProducerMySQL() # GatewayUpdateProducerMySQL | 
 
     try:
         api_response = api_instance.gateway_update_producer_my_sql(gateway_update_producer_my_sql)
-        print("The response of V2Api->gateway_update_producer_my_sql:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->gateway_update_producer_my_sql: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -20239,7 +18207,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | gatewayUpdateProducerMySQLResponse wraps response body. |  -  |
@@ -20254,14 +18221,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.gateway_update_producer_native_k8_s import GatewayUpdateProducerNativeK8S
-from akeyless.models.gateway_update_producer_native_k8_s_output import GatewayUpdateProducerNativeK8SOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -20270,23 +18235,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     gateway_update_producer_native_k8_s = akeyless.GatewayUpdateProducerNativeK8S() # GatewayUpdateProducerNativeK8S | 
 
     try:
         api_response = api_instance.gateway_update_producer_native_k8_s(gateway_update_producer_native_k8_s)
-        print("The response of V2Api->gateway_update_producer_native_k8_s:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->gateway_update_producer_native_k8_s: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -20306,7 +18267,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | gatewayUpdateProducerNativeK8SResponse wraps response body. |  -  |
@@ -20321,14 +18281,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.gateway_update_producer_oracle_db import GatewayUpdateProducerOracleDb
-from akeyless.models.gateway_update_producer_oracle_db_output import GatewayUpdateProducerOracleDbOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -20337,23 +18295,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     gateway_update_producer_oracle_db = akeyless.GatewayUpdateProducerOracleDb() # GatewayUpdateProducerOracleDb | 
 
     try:
         api_response = api_instance.gateway_update_producer_oracle_db(gateway_update_producer_oracle_db)
-        print("The response of V2Api->gateway_update_producer_oracle_db:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->gateway_update_producer_oracle_db: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -20373,7 +18327,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | gatewayUpdateProducerOracleDbResponse wraps response body. |  -  |
@@ -20388,14 +18341,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.gateway_update_producer_ping import GatewayUpdateProducerPing
-from akeyless.models.gateway_update_producer_ping_output import GatewayUpdateProducerPingOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -20404,23 +18355,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     gateway_update_producer_ping = akeyless.GatewayUpdateProducerPing() # GatewayUpdateProducerPing | 
 
     try:
         api_response = api_instance.gateway_update_producer_ping(gateway_update_producer_ping)
-        print("The response of V2Api->gateway_update_producer_ping:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->gateway_update_producer_ping: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -20440,7 +18387,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | gatewayUpdateProducerPingResponse wraps response body. |  -  |
@@ -20455,14 +18401,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.gateway_update_producer_postgre_sql import GatewayUpdateProducerPostgreSQL
-from akeyless.models.gateway_update_producer_postgre_sql_output import GatewayUpdateProducerPostgreSQLOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -20471,23 +18415,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     gateway_update_producer_postgre_sql = akeyless.GatewayUpdateProducerPostgreSQL() # GatewayUpdateProducerPostgreSQL | 
 
     try:
         api_response = api_instance.gateway_update_producer_postgre_sql(gateway_update_producer_postgre_sql)
-        print("The response of V2Api->gateway_update_producer_postgre_sql:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->gateway_update_producer_postgre_sql: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -20507,7 +18447,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | gatewayUpdateProducerPostgreSQLResponse wraps response body. |  -  |
@@ -20522,14 +18461,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.gateway_update_producer_rabbit_mq import GatewayUpdateProducerRabbitMQ
-from akeyless.models.gateway_update_producer_rabbit_mq_output import GatewayUpdateProducerRabbitMQOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -20538,23 +18475,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     gateway_update_producer_rabbit_mq = akeyless.GatewayUpdateProducerRabbitMQ() # GatewayUpdateProducerRabbitMQ | 
 
     try:
         api_response = api_instance.gateway_update_producer_rabbit_mq(gateway_update_producer_rabbit_mq)
-        print("The response of V2Api->gateway_update_producer_rabbit_mq:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->gateway_update_producer_rabbit_mq: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -20574,7 +18507,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | gatewayUpdateProducerRabbitMQResponse wraps response body. |  -  |
@@ -20589,14 +18521,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.gateway_update_producer_rdp import GatewayUpdateProducerRdp
-from akeyless.models.gateway_update_producer_rdp_output import GatewayUpdateProducerRdpOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -20605,23 +18535,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     gateway_update_producer_rdp = akeyless.GatewayUpdateProducerRdp() # GatewayUpdateProducerRdp | 
 
     try:
         api_response = api_instance.gateway_update_producer_rdp(gateway_update_producer_rdp)
-        print("The response of V2Api->gateway_update_producer_rdp:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->gateway_update_producer_rdp: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -20641,7 +18567,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | gatewayUpdateProducerRdpResponse wraps response body. |  -  |
@@ -20656,14 +18581,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.gateway_update_producer_redis import GatewayUpdateProducerRedis
-from akeyless.models.gateway_update_producer_redis_output import GatewayUpdateProducerRedisOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -20672,23 +18595,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     gateway_update_producer_redis = akeyless.GatewayUpdateProducerRedis() # GatewayUpdateProducerRedis | 
 
     try:
         api_response = api_instance.gateway_update_producer_redis(gateway_update_producer_redis)
-        print("The response of V2Api->gateway_update_producer_redis:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->gateway_update_producer_redis: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -20708,7 +18627,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | gatewayUpdateProducerRedisResponse wraps response body. |  -  |
@@ -20723,14 +18641,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.gateway_update_producer_redshift import GatewayUpdateProducerRedshift
-from akeyless.models.gateway_update_producer_redshift_output import GatewayUpdateProducerRedshiftOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -20739,23 +18655,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     gateway_update_producer_redshift = akeyless.GatewayUpdateProducerRedshift() # GatewayUpdateProducerRedshift | 
 
     try:
         api_response = api_instance.gateway_update_producer_redshift(gateway_update_producer_redshift)
-        print("The response of V2Api->gateway_update_producer_redshift:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->gateway_update_producer_redshift: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -20775,7 +18687,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | gatewayUpdateProducerRedshiftResponse wraps response body. |  -  |
@@ -20790,14 +18701,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.gateway_update_producer_snowflake import GatewayUpdateProducerSnowflake
-from akeyless.models.gateway_update_producer_snowflake_output import GatewayUpdateProducerSnowflakeOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -20806,23 +18715,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     gateway_update_producer_snowflake = akeyless.GatewayUpdateProducerSnowflake() # GatewayUpdateProducerSnowflake | 
 
     try:
         api_response = api_instance.gateway_update_producer_snowflake(gateway_update_producer_snowflake)
-        print("The response of V2Api->gateway_update_producer_snowflake:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->gateway_update_producer_snowflake: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -20842,7 +18747,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | gatewayUpdateProducerSnowflakeResponse wraps response body. |  -  |
@@ -20857,14 +18761,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.gateway_update_producer_venafi import GatewayUpdateProducerVenafi
-from akeyless.models.gateway_update_producer_venafi_output import GatewayUpdateProducerVenafiOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -20873,23 +18775,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     gateway_update_producer_venafi = akeyless.GatewayUpdateProducerVenafi() # GatewayUpdateProducerVenafi | 
 
     try:
         api_response = api_instance.gateway_update_producer_venafi(gateway_update_producer_venafi)
-        print("The response of V2Api->gateway_update_producer_venafi:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->gateway_update_producer_venafi: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -20909,7 +18807,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | gatewayUpdateProducerVenafiResponse wraps response body. |  -  |
@@ -20924,13 +18821,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.gateway_update_remote_access import GatewayUpdateRemoteAccess
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -20939,23 +18835,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     gateway_update_remote_access = akeyless.GatewayUpdateRemoteAccess() # GatewayUpdateRemoteAccess | 
 
     try:
         api_response = api_instance.gateway_update_remote_access(gateway_update_remote_access)
-        print("The response of V2Api->gateway_update_remote_access:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->gateway_update_remote_access: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -20975,10 +18867,69 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | gatewayUpdateRemoteAccessResponse wraps response body. |  -  |
+**0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **gateway_update_remote_access_desktop_app**
+> object gateway_update_remote_access_desktop_app(gateway_update_remote_access_desktop_app)
+
+
+
+### Example
+
+```python
+from __future__ import print_function
+import time
+import akeyless
+from akeyless.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.akeyless.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = akeyless.Configuration(
+    host = "https://api.akeyless.io"
+)
+
+
+# Enter a context with an instance of the API client
+with akeyless.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = akeyless.V2Api(api_client)
+    gateway_update_remote_access_desktop_app = akeyless.GatewayUpdateRemoteAccessDesktopApp() # GatewayUpdateRemoteAccessDesktopApp | 
+
+    try:
+        api_response = api_instance.gateway_update_remote_access_desktop_app(gateway_update_remote_access_desktop_app)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling V2Api->gateway_update_remote_access_desktop_app: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **gateway_update_remote_access_desktop_app** | [**GatewayUpdateRemoteAccessDesktopApp**](GatewayUpdateRemoteAccessDesktopApp.md)|  | 
+
+### Return type
+
+**object**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | gatewayUpdateRemoteAccessDesktopAppResponse wraps response body. |  -  |
 **0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -20990,13 +18941,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.gateway_update_remote_access_rdp_recordings import GatewayUpdateRemoteAccessRdpRecordings
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -21005,23 +18955,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     gateway_update_remote_access_rdp_recordings = akeyless.GatewayUpdateRemoteAccessRdpRecordings() # GatewayUpdateRemoteAccessRdpRecordings | 
 
     try:
         api_response = api_instance.gateway_update_remote_access_rdp_recordings(gateway_update_remote_access_rdp_recordings)
-        print("The response of V2Api->gateway_update_remote_access_rdp_recordings:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->gateway_update_remote_access_rdp_recordings: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -21041,7 +18987,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | gatewayUpdateRemoteAccessRdpRecordingsResponse wraps response body. |  -  |
@@ -21056,14 +19001,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.gateway_update_tls_cert import GatewayUpdateTlsCert
-from akeyless.models.gateway_update_tls_cert_output import GatewayUpdateTlsCertOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -21072,23 +19015,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     gateway_update_tls_cert = akeyless.GatewayUpdateTlsCert() # GatewayUpdateTlsCert | 
 
     try:
         api_response = api_instance.gateway_update_tls_cert(gateway_update_tls_cert)
-        print("The response of V2Api->gateway_update_tls_cert:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->gateway_update_tls_cert: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -21108,7 +19047,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | GatewayUpdateTlsCertResponse wraps response body. |  -  |
@@ -21123,13 +19061,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.gateway_update_tmp_users import GatewayUpdateTmpUsers
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -21138,21 +19075,18 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     gateway_update_tmp_users = akeyless.GatewayUpdateTmpUsers() # GatewayUpdateTmpUsers | 
 
     try:
         api_instance.gateway_update_tmp_users(gateway_update_tmp_users)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->gateway_update_tmp_users: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -21172,7 +19106,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | gatewayUpdateTmpUsersResponse wraps response body. |  -  |
@@ -21187,14 +19120,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.generate_acme_eab import GenerateAcmeEab
-from akeyless.models.generate_acme_eab_output import GenerateAcmeEabOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -21203,23 +19134,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     generate_acme_eab = akeyless.GenerateAcmeEab() # GenerateAcmeEab | 
 
     try:
         api_response = api_instance.generate_acme_eab(generate_acme_eab)
-        print("The response of V2Api->generate_acme_eab:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->generate_acme_eab: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -21239,7 +19166,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | generateAcmeEabResponse wraps response body. |  -  |
@@ -21254,14 +19180,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.generate_ca import GenerateCA
-from akeyless.models.generate_ca_output import GenerateCAOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -21270,23 +19194,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     generate_ca = akeyless.GenerateCA() # GenerateCA | 
 
     try:
         api_response = api_instance.generate_ca(generate_ca)
-        print("The response of V2Api->generate_ca:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->generate_ca: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -21306,7 +19226,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | generateCAResponse wraps response body. |  -  |
@@ -21321,14 +19240,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.generate_csr import GenerateCsr
-from akeyless.models.generate_csr_output import GenerateCsrOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -21337,23 +19254,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     generate_csr = akeyless.GenerateCsr() # GenerateCsr | 
 
     try:
         api_response = api_instance.generate_csr(generate_csr)
-        print("The response of V2Api->generate_csr:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->generate_csr: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -21373,7 +19286,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | generateCsrResponse wraps response body. |  -  |
@@ -21382,18 +19294,18 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_account_logo**
-> Dict[str, str] get_account_logo()
+> dict(str, str) get_account_logo()
 
 
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -21402,27 +19314,23 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
-
+    
     try:
         api_response = api_instance.get_account_logo()
-        print("The response of V2Api->get_account_logo:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->get_account_logo: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 This endpoint does not need any parameter.
 
 ### Return type
 
-**Dict[str, str]**
+**dict(str, str)**
 
 ### Authorization
 
@@ -21434,7 +19342,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | getAccountLogoResponse wraps response body. |  -  |
@@ -21449,14 +19356,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.get_account_settings import GetAccountSettings
-from akeyless.models.get_account_settings_command_output import GetAccountSettingsCommandOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -21465,23 +19370,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     get_account_settings = akeyless.GetAccountSettings() # GetAccountSettings | 
 
     try:
         api_response = api_instance.get_account_settings(get_account_settings)
-        print("The response of V2Api->get_account_settings:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->get_account_settings: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -21501,7 +19402,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | getAccountSettingsResponse wraps response body. |  -  |
@@ -21516,14 +19416,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.all_analytics_data import AllAnalyticsData
-from akeyless.models.get_analytics_data import GetAnalyticsData
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -21532,23 +19430,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     get_analytics_data = akeyless.GetAnalyticsData() # GetAnalyticsData | 
 
     try:
         api_response = api_instance.get_analytics_data(get_analytics_data)
-        print("The response of V2Api->get_analytics_data:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->get_analytics_data: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -21568,7 +19462,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | getAnalyticsDataResponse wraps response body. |  -  |
@@ -21583,14 +19476,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.auth_method import AuthMethod
-from akeyless.models.get_auth_method import GetAuthMethod
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -21599,23 +19490,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     get_auth_method = akeyless.GetAuthMethod() # GetAuthMethod | 
 
     try:
         api_response = api_instance.get_auth_method(get_auth_method)
-        print("The response of V2Api->get_auth_method:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->get_auth_method: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -21635,7 +19522,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | getAuthMethodResponse wraps response body. |  -  |
@@ -21650,14 +19536,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.get_certificate_value import GetCertificateValue
-from akeyless.models.get_certificate_value_output import GetCertificateValueOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -21666,23 +19550,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     get_certificate_value = akeyless.GetCertificateValue() # GetCertificateValue | 
 
     try:
         api_response = api_instance.get_certificate_value(get_certificate_value)
-        print("The response of V2Api->get_certificate_value:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->get_certificate_value: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -21702,7 +19582,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | getCertificateValueResponse wraps response body. |  -  |
@@ -21711,19 +19590,18 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_dynamic_secret_value**
-> Dict[str, object] get_dynamic_secret_value(get_dynamic_secret_value)
+> dict(str, object) get_dynamic_secret_value(get_dynamic_secret_value)
 
 
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.get_dynamic_secret_value import GetDynamicSecretValue
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -21732,23 +19610,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     get_dynamic_secret_value = akeyless.GetDynamicSecretValue() # GetDynamicSecretValue | 
 
     try:
         api_response = api_instance.get_dynamic_secret_value(get_dynamic_secret_value)
-        print("The response of V2Api->get_dynamic_secret_value:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->get_dynamic_secret_value: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -21756,7 +19630,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**Dict[str, object]**
+**dict(str, object)**
 
 ### Authorization
 
@@ -21768,7 +19642,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | getDynamicSecretValueResponse wraps response body. |  -  |
@@ -21783,14 +19656,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.get_event_forwarder import GetEventForwarder
-from akeyless.models.get_event_forwarder_output import GetEventForwarderOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -21799,23 +19670,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     get_event_forwarder = akeyless.GetEventForwarder() # GetEventForwarder | 
 
     try:
         api_response = api_instance.get_event_forwarder(get_event_forwarder)
-        print("The response of V2Api->get_event_forwarder:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->get_event_forwarder: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -21835,7 +19702,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | getEventForwarderResponse wraps response body. |  -  |
@@ -21850,14 +19716,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.get_group import GetGroup
-from akeyless.models.get_group_output import GetGroupOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -21866,23 +19730,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     get_group = akeyless.GetGroup() # GetGroup | 
 
     try:
         api_response = api_instance.get_group(get_group)
-        print("The response of V2Api->get_group:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->get_group: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -21902,7 +19762,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | getGroupResponse wraps response body. |  -  |
@@ -21917,14 +19776,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.get_kube_exec_creds import GetKubeExecCreds
-from akeyless.models.get_kube_exec_creds_output import GetKubeExecCredsOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -21933,23 +19790,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     get_kube_exec_creds = akeyless.GetKubeExecCreds() # GetKubeExecCreds | 
 
     try:
         api_response = api_instance.get_kube_exec_creds(get_kube_exec_creds)
-        print("The response of V2Api->get_kube_exec_creds:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->get_kube_exec_creds: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -21969,7 +19822,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | getKubeExecCredsResponse wraps response body. |  -  |
@@ -21984,14 +19836,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.get_last_user_event_status import GetLastUserEventStatus
-from akeyless.models.get_user_event_status_output import GetUserEventStatusOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -22000,23 +19850,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     get_last_user_event_status = akeyless.GetLastUserEventStatus() # GetLastUserEventStatus | 
 
     try:
         api_response = api_instance.get_last_user_event_status(get_last_user_event_status)
-        print("The response of V2Api->get_last_user_event_status:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->get_last_user_event_status: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -22036,7 +19882,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | getLastUserEventStatusResponse wraps response body. |  -  |
@@ -22051,14 +19896,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.get_pki_certificate import GetPKICertificate
-from akeyless.models.get_pki_certificate_output import GetPKICertificateOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -22067,23 +19910,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     get_pki_certificate = akeyless.GetPKICertificate() # GetPKICertificate | 
 
     try:
         api_response = api_instance.get_pki_certificate(get_pki_certificate)
-        print("The response of V2Api->get_pki_certificate:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->get_pki_certificate: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -22103,7 +19942,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | getPKICertificateResponse wraps response body. |  -  |
@@ -22118,14 +19956,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.get_role import GetRole
-from akeyless.models.role import Role
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -22134,23 +19970,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     get_role = akeyless.GetRole() # GetRole | 
 
     try:
         api_response = api_instance.get_role(get_role)
-        print("The response of V2Api->get_role:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->get_role: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -22170,7 +20002,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | getRoleResponse wraps response body. |  -  |
@@ -22179,19 +20010,18 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_rotated_secret_value**
-> Dict[str, object] get_rotated_secret_value(get_rotated_secret_value)
+> dict(str, object) get_rotated_secret_value(get_rotated_secret_value)
 
 
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.get_rotated_secret_value import GetRotatedSecretValue
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -22200,23 +20030,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     get_rotated_secret_value = akeyless.GetRotatedSecretValue() # GetRotatedSecretValue | 
 
     try:
         api_response = api_instance.get_rotated_secret_value(get_rotated_secret_value)
-        print("The response of V2Api->get_rotated_secret_value:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->get_rotated_secret_value: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -22224,7 +20050,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**Dict[str, object]**
+**dict(str, object)**
 
 ### Authorization
 
@@ -22236,7 +20062,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | getRotatedSecretValueResponse wraps response body. |  -  |
@@ -22251,14 +20076,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.get_rsa_public import GetRSAPublic
-from akeyless.models.get_rsa_public_output import GetRSAPublicOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -22267,23 +20090,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     get_rsa_public = akeyless.GetRSAPublic() # GetRSAPublic | 
 
     try:
         api_response = api_instance.get_rsa_public(get_rsa_public)
-        print("The response of V2Api->get_rsa_public:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->get_rsa_public: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -22303,7 +20122,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | getRSAPublicResponse wraps response body. |  -  |
@@ -22312,19 +20130,18 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_secret_value**
-> Dict[str, object] get_secret_value(get_secret_value)
+> dict(str, object) get_secret_value(get_secret_value)
 
 
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.get_secret_value import GetSecretValue
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -22333,23 +20150,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     get_secret_value = akeyless.GetSecretValue() # GetSecretValue | 
 
     try:
         api_response = api_instance.get_secret_value(get_secret_value)
-        print("The response of V2Api->get_secret_value:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->get_secret_value: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -22357,7 +20170,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**Dict[str, object]**
+**dict(str, object)**
 
 ### Authorization
 
@@ -22369,7 +20182,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | getSecretValueResponse wraps response body. |  -  |
@@ -22384,14 +20196,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.get_ssh_certificate import GetSSHCertificate
-from akeyless.models.get_ssh_certificate_output import GetSSHCertificateOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -22400,23 +20210,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     get_ssh_certificate = akeyless.GetSSHCertificate() # GetSSHCertificate | 
 
     try:
         api_response = api_instance.get_ssh_certificate(get_ssh_certificate)
-        print("The response of V2Api->get_ssh_certificate:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->get_ssh_certificate: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -22436,7 +20242,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | getSSHCertificateResponse wraps response body. |  -  |
@@ -22445,19 +20250,18 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_tags**
-> List[str] get_tags(get_tags)
+> list[str] get_tags(get_tags)
 
 
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.get_tags import GetTags
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -22466,23 +20270,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     get_tags = akeyless.GetTags() # GetTags | 
 
     try:
         api_response = api_instance.get_tags(get_tags)
-        print("The response of V2Api->get_tags:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->get_tags: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -22490,7 +20290,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**List[str]**
+**list[str]**
 
 ### Authorization
 
@@ -22502,7 +20302,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | getTagsResponse wraps response body. |  -  |
@@ -22517,14 +20316,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.get_target import GetTarget
-from akeyless.models.target import Target
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -22533,23 +20330,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     get_target = akeyless.GetTarget() # GetTarget | 
 
     try:
         api_response = api_instance.get_target(get_target)
-        print("The response of V2Api->get_target:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->get_target: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -22569,7 +20362,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | getTargetResponse wraps response body. |  -  |
@@ -22584,14 +20376,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.get_target_details import GetTargetDetails
-from akeyless.models.get_target_details_output import GetTargetDetailsOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -22600,23 +20390,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     get_target_details = akeyless.GetTargetDetails() # GetTargetDetails | 
 
     try:
         api_response = api_instance.get_target_details(get_target_details)
-        print("The response of V2Api->get_target_details:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->get_target_details: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -22636,7 +20422,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | getTargetDetailsResponse wraps response body. |  -  |
@@ -22651,14 +20436,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.gateway_update_log_forwarding_output import GatewayUpdateLogForwardingOutput
-from akeyless.models.gw_update_remote_access_session_logs_aws_s3 import GwUpdateRemoteAccessSessionLogsAwsS3
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -22667,23 +20450,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     gw_update_remote_access_session_logs_aws_s3 = akeyless.GwUpdateRemoteAccessSessionLogsAwsS3() # GwUpdateRemoteAccessSessionLogsAwsS3 | 
 
     try:
         api_response = api_instance.gw_update_remote_access_session_logs_aws_s3(gw_update_remote_access_session_logs_aws_s3)
-        print("The response of V2Api->gw_update_remote_access_session_logs_aws_s3:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->gw_update_remote_access_session_logs_aws_s3: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -22703,7 +20482,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | gwUpdateRemoteAccessSessionLogsResponse wraps response body. |  -  |
@@ -22718,14 +20496,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.gateway_update_log_forwarding_output import GatewayUpdateLogForwardingOutput
-from akeyless.models.gw_update_remote_access_session_logs_azure_analytics import GwUpdateRemoteAccessSessionLogsAzureAnalytics
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -22734,23 +20510,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     gw_update_remote_access_session_logs_azure_analytics = akeyless.GwUpdateRemoteAccessSessionLogsAzureAnalytics() # GwUpdateRemoteAccessSessionLogsAzureAnalytics | 
 
     try:
         api_response = api_instance.gw_update_remote_access_session_logs_azure_analytics(gw_update_remote_access_session_logs_azure_analytics)
-        print("The response of V2Api->gw_update_remote_access_session_logs_azure_analytics:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->gw_update_remote_access_session_logs_azure_analytics: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -22770,7 +20542,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | gwUpdateRemoteAccessSessionLogsResponse wraps response body. |  -  |
@@ -22785,14 +20556,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.gateway_update_log_forwarding_output import GatewayUpdateLogForwardingOutput
-from akeyless.models.gw_update_remote_access_session_logs_datadog import GwUpdateRemoteAccessSessionLogsDatadog
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -22801,23 +20570,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     gw_update_remote_access_session_logs_datadog = akeyless.GwUpdateRemoteAccessSessionLogsDatadog() # GwUpdateRemoteAccessSessionLogsDatadog | 
 
     try:
         api_response = api_instance.gw_update_remote_access_session_logs_datadog(gw_update_remote_access_session_logs_datadog)
-        print("The response of V2Api->gw_update_remote_access_session_logs_datadog:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->gw_update_remote_access_session_logs_datadog: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -22837,7 +20602,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | gwUpdateRemoteAccessSessionLogsResponse wraps response body. |  -  |
@@ -22852,14 +20616,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.gateway_update_log_forwarding_output import GatewayUpdateLogForwardingOutput
-from akeyless.models.gw_update_remote_access_session_logs_elasticsearch import GwUpdateRemoteAccessSessionLogsElasticsearch
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -22868,23 +20630,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     gw_update_remote_access_session_logs_elasticsearch = akeyless.GwUpdateRemoteAccessSessionLogsElasticsearch() # GwUpdateRemoteAccessSessionLogsElasticsearch | 
 
     try:
         api_response = api_instance.gw_update_remote_access_session_logs_elasticsearch(gw_update_remote_access_session_logs_elasticsearch)
-        print("The response of V2Api->gw_update_remote_access_session_logs_elasticsearch:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->gw_update_remote_access_session_logs_elasticsearch: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -22904,7 +20662,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | gwUpdateRemoteAccessSessionLogsResponse wraps response body. |  -  |
@@ -22919,14 +20676,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.gateway_update_log_forwarding_output import GatewayUpdateLogForwardingOutput
-from akeyless.models.gw_update_remote_access_session_logs_google_chronicle import GwUpdateRemoteAccessSessionLogsGoogleChronicle
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -22935,23 +20690,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     gw_update_remote_access_session_logs_google_chronicle = akeyless.GwUpdateRemoteAccessSessionLogsGoogleChronicle() # GwUpdateRemoteAccessSessionLogsGoogleChronicle | 
 
     try:
         api_response = api_instance.gw_update_remote_access_session_logs_google_chronicle(gw_update_remote_access_session_logs_google_chronicle)
-        print("The response of V2Api->gw_update_remote_access_session_logs_google_chronicle:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->gw_update_remote_access_session_logs_google_chronicle: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -22971,7 +20722,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | gwUpdateRemoteAccessSessionLogsResponse wraps response body. |  -  |
@@ -22986,14 +20736,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.gateway_update_log_forwarding_output import GatewayUpdateLogForwardingOutput
-from akeyless.models.gw_update_remote_access_session_logs_logstash import GwUpdateRemoteAccessSessionLogsLogstash
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -23002,23 +20750,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     gw_update_remote_access_session_logs_logstash = akeyless.GwUpdateRemoteAccessSessionLogsLogstash() # GwUpdateRemoteAccessSessionLogsLogstash | 
 
     try:
         api_response = api_instance.gw_update_remote_access_session_logs_logstash(gw_update_remote_access_session_logs_logstash)
-        print("The response of V2Api->gw_update_remote_access_session_logs_logstash:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->gw_update_remote_access_session_logs_logstash: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -23038,7 +20782,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | gwUpdateRemoteAccessSessionLogsResponse wraps response body. |  -  |
@@ -23053,14 +20796,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.gateway_update_log_forwarding_output import GatewayUpdateLogForwardingOutput
-from akeyless.models.gw_update_remote_access_session_logs_logz_io import GwUpdateRemoteAccessSessionLogsLogzIo
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -23069,23 +20810,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     gw_update_remote_access_session_logs_logz_io = akeyless.GwUpdateRemoteAccessSessionLogsLogzIo() # GwUpdateRemoteAccessSessionLogsLogzIo | 
 
     try:
         api_response = api_instance.gw_update_remote_access_session_logs_logz_io(gw_update_remote_access_session_logs_logz_io)
-        print("The response of V2Api->gw_update_remote_access_session_logs_logz_io:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->gw_update_remote_access_session_logs_logz_io: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -23105,7 +20842,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | gwUpdateRemoteAccessSessionLogsResponse wraps response body. |  -  |
@@ -23120,14 +20856,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.gateway_update_log_forwarding_output import GatewayUpdateLogForwardingOutput
-from akeyless.models.gw_update_remote_access_session_logs_splunk import GwUpdateRemoteAccessSessionLogsSplunk
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -23136,23 +20870,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     gw_update_remote_access_session_logs_splunk = akeyless.GwUpdateRemoteAccessSessionLogsSplunk() # GwUpdateRemoteAccessSessionLogsSplunk | 
 
     try:
         api_response = api_instance.gw_update_remote_access_session_logs_splunk(gw_update_remote_access_session_logs_splunk)
-        print("The response of V2Api->gw_update_remote_access_session_logs_splunk:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->gw_update_remote_access_session_logs_splunk: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -23172,7 +20902,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | gwUpdateRemoteAccessSessionLogsResponse wraps response body. |  -  |
@@ -23187,14 +20916,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.gateway_update_log_forwarding_output import GatewayUpdateLogForwardingOutput
-from akeyless.models.gw_update_remote_access_session_logs_stdout import GwUpdateRemoteAccessSessionLogsStdout
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -23203,23 +20930,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     gw_update_remote_access_session_logs_stdout = akeyless.GwUpdateRemoteAccessSessionLogsStdout() # GwUpdateRemoteAccessSessionLogsStdout | 
 
     try:
         api_response = api_instance.gw_update_remote_access_session_logs_stdout(gw_update_remote_access_session_logs_stdout)
-        print("The response of V2Api->gw_update_remote_access_session_logs_stdout:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->gw_update_remote_access_session_logs_stdout: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -23239,7 +20962,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | gwUpdateRemoteAccessSessionLogsResponse wraps response body. |  -  |
@@ -23254,14 +20976,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.gateway_update_log_forwarding_output import GatewayUpdateLogForwardingOutput
-from akeyless.models.gw_update_remote_access_session_logs_sumologic import GwUpdateRemoteAccessSessionLogsSumologic
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -23270,23 +20990,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     gw_update_remote_access_session_logs_sumologic = akeyless.GwUpdateRemoteAccessSessionLogsSumologic() # GwUpdateRemoteAccessSessionLogsSumologic | 
 
     try:
         api_response = api_instance.gw_update_remote_access_session_logs_sumologic(gw_update_remote_access_session_logs_sumologic)
-        print("The response of V2Api->gw_update_remote_access_session_logs_sumologic:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->gw_update_remote_access_session_logs_sumologic: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -23306,7 +21022,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | gwUpdateRemoteAccessSessionLogsResponse wraps response body. |  -  |
@@ -23321,14 +21036,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.gateway_update_log_forwarding_output import GatewayUpdateLogForwardingOutput
-from akeyless.models.gw_update_remote_access_session_logs_syslog import GwUpdateRemoteAccessSessionLogsSyslog
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -23337,23 +21050,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     gw_update_remote_access_session_logs_syslog = akeyless.GwUpdateRemoteAccessSessionLogsSyslog() # GwUpdateRemoteAccessSessionLogsSyslog | 
 
     try:
         api_response = api_instance.gw_update_remote_access_session_logs_syslog(gw_update_remote_access_session_logs_syslog)
-        print("The response of V2Api->gw_update_remote_access_session_logs_syslog:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->gw_update_remote_access_session_logs_syslog: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -23373,7 +21082,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | gwUpdateRemoteAccessSessionLogsResponse wraps response body. |  -  |
@@ -23388,14 +21096,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.hmac import Hmac
-from akeyless.models.hmac_output import HmacOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -23404,23 +21110,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     hmac = akeyless.Hmac() # Hmac | 
 
     try:
         api_response = api_instance.hmac(hmac)
-        print("The response of V2Api->hmac:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->hmac: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -23440,7 +21142,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | hmacResponse wraps response body. |  -  |
@@ -23455,14 +21156,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.import_passwords import ImportPasswords
-from akeyless.models.import_passwords_output import ImportPasswordsOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -23471,23 +21170,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     import_passwords = akeyless.ImportPasswords() # ImportPasswords | 
 
     try:
         api_response = api_instance.import_passwords(import_passwords)
-        print("The response of V2Api->import_passwords:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->import_passwords: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -23507,7 +21202,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | importPasswordsResponse wraps response body. |  -  |
@@ -23522,14 +21216,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.kmip_client_update_response import KMIPClientUpdateResponse
-from akeyless.models.kmip_client_delete_rule import KmipClientDeleteRule
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -23538,23 +21230,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     kmip_client_delete_rule = akeyless.KmipClientDeleteRule() # KmipClientDeleteRule |  (optional)
 
     try:
         api_response = api_instance.kmip_client_delete_rule(kmip_client_delete_rule=kmip_client_delete_rule)
-        print("The response of V2Api->kmip_client_delete_rule:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->kmip_client_delete_rule: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -23574,7 +21262,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | kmipClientDeleteRuleResponse wraps response body. |  -  |
@@ -23589,14 +21276,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.kmip_client_update_response import KMIPClientUpdateResponse
-from akeyless.models.kmip_client_set_rule import KmipClientSetRule
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -23605,23 +21290,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     kmip_client_set_rule = akeyless.KmipClientSetRule() # KmipClientSetRule |  (optional)
 
     try:
         api_response = api_instance.kmip_client_set_rule(kmip_client_set_rule=kmip_client_set_rule)
-        print("The response of V2Api->kmip_client_set_rule:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->kmip_client_set_rule: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -23641,7 +21322,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | kmipClientSetRuleResponse wraps response body. |  -  |
@@ -23656,14 +21336,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.kmip_create_client import KmipCreateClient
-from akeyless.models.kmip_create_client_output import KmipCreateClientOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -23672,23 +21350,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     kmip_create_client = akeyless.KmipCreateClient() # KmipCreateClient |  (optional)
 
     try:
         api_response = api_instance.kmip_create_client(kmip_create_client=kmip_create_client)
-        print("The response of V2Api->kmip_create_client:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->kmip_create_client: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -23708,7 +21382,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | kmipCreateClientResponse wraps response body. |  -  |
@@ -23723,13 +21396,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.kmip_delete_client import KmipDeleteClient
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -23738,23 +21410,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     kmip_delete_client = akeyless.KmipDeleteClient() # KmipDeleteClient |  (optional)
 
     try:
         api_response = api_instance.kmip_delete_client(kmip_delete_client=kmip_delete_client)
-        print("The response of V2Api->kmip_delete_client:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->kmip_delete_client: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -23774,7 +21442,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | kmipDeleteClientResponse wraps response body. |  -  |
@@ -23789,13 +21456,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.kmip_delete_server import KmipDeleteServer
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -23804,23 +21470,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     kmip_delete_server = akeyless.KmipDeleteServer() # KmipDeleteServer |  (optional)
 
     try:
         api_response = api_instance.kmip_delete_server(kmip_delete_server=kmip_delete_server)
-        print("The response of V2Api->kmip_delete_server:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->kmip_delete_server: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -23840,7 +21502,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | kmipDeleteServerResponse wraps response body. |  -  |
@@ -23855,14 +21516,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.kmip_client_get_response import KMIPClientGetResponse
-from akeyless.models.kmip_describe_client import KmipDescribeClient
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -23871,23 +21530,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     kmip_describe_client = akeyless.KmipDescribeClient() # KmipDescribeClient |  (optional)
 
     try:
         api_response = api_instance.kmip_describe_client(kmip_describe_client=kmip_describe_client)
-        print("The response of V2Api->kmip_describe_client:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->kmip_describe_client: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -23907,7 +21562,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | kmipDescribeClientResponse wraps response body. |  -  |
@@ -23922,14 +21576,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.kmip_describe_server import KmipDescribeServer
-from akeyless.models.kmip_describe_server_output import KmipDescribeServerOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -23938,23 +21590,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     kmip_describe_server = akeyless.KmipDescribeServer() # KmipDescribeServer |  (optional)
 
     try:
         api_response = api_instance.kmip_describe_server(kmip_describe_server=kmip_describe_server)
-        print("The response of V2Api->kmip_describe_server:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->kmip_describe_server: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -23974,7 +21622,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | kmipDescribeServerResponse wraps response body. |  -  |
@@ -23989,14 +21636,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.kmip_client_list_response import KMIPClientListResponse
-from akeyless.models.kmip_list_clients import KmipListClients
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -24005,23 +21650,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     kmip_list_clients = akeyless.KmipListClients() # KmipListClients |  (optional)
 
     try:
         api_response = api_instance.kmip_list_clients(kmip_list_clients=kmip_list_clients)
-        print("The response of V2Api->kmip_list_clients:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->kmip_list_clients: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -24041,7 +21682,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | kmipListClientsResponse wraps response body. |  -  |
@@ -24056,14 +21696,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.kmip_move_server import KmipMoveServer
-from akeyless.models.kmip_move_server_output import KmipMoveServerOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -24072,23 +21710,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     kmip_move_server = akeyless.KmipMoveServer() # KmipMoveServer |  (optional)
 
     try:
         api_response = api_instance.kmip_move_server(kmip_move_server=kmip_move_server)
-        print("The response of V2Api->kmip_move_server:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->kmip_move_server: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -24108,7 +21742,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | kmipMoveServerResponse wraps response body. |  -  |
@@ -24123,14 +21756,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.kmip_renew_client_certificate import KmipRenewClientCertificate
-from akeyless.models.kmip_renew_client_certificate_output import KmipRenewClientCertificateOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -24139,23 +21770,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     kmip_renew_client_certificate = akeyless.KmipRenewClientCertificate() # KmipRenewClientCertificate |  (optional)
 
     try:
         api_response = api_instance.kmip_renew_client_certificate(kmip_renew_client_certificate=kmip_renew_client_certificate)
-        print("The response of V2Api->kmip_renew_client_certificate:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->kmip_renew_client_certificate: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -24175,7 +21802,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | kmipRenewClientCertificateResponse wraps response body. |  -  |
@@ -24190,14 +21816,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.kmip_renew_server_certificate import KmipRenewServerCertificate
-from akeyless.models.kmip_renew_server_certificate_output import KmipRenewServerCertificateOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -24206,23 +21830,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     kmip_renew_server_certificate = akeyless.KmipRenewServerCertificate() # KmipRenewServerCertificate |  (optional)
 
     try:
         api_response = api_instance.kmip_renew_server_certificate(kmip_renew_server_certificate=kmip_renew_server_certificate)
-        print("The response of V2Api->kmip_renew_server_certificate:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->kmip_renew_server_certificate: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -24242,7 +21862,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | kmipRenewServerCertificateResponse wraps response body. |  -  |
@@ -24257,14 +21876,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.kmip_environment_create_response import KMIPEnvironmentCreateResponse
-from akeyless.models.kmip_server_setup import KmipServerSetup
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -24273,23 +21890,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     kmip_server_setup = akeyless.KmipServerSetup() # KmipServerSetup |  (optional)
 
     try:
         api_response = api_instance.kmip_server_setup(kmip_server_setup=kmip_server_setup)
-        print("The response of V2Api->kmip_server_setup:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->kmip_server_setup: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -24309,7 +21922,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | kmipServerSetupResponse wraps response body. |  -  |
@@ -24324,14 +21936,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.kmip_set_server_state import KmipSetServerState
-from akeyless.models.kmip_set_server_state_output import KmipSetServerStateOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -24340,23 +21950,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     kmip_set_server_state = akeyless.KmipSetServerState() # KmipSetServerState |  (optional)
 
     try:
         api_response = api_instance.kmip_set_server_state(kmip_set_server_state=kmip_set_server_state)
-        print("The response of V2Api->kmip_set_server_state:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->kmip_set_server_state: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -24376,7 +21982,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | kmipSetServerStateResponse wraps response body. |  -  |
@@ -24391,13 +21996,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.kubeconfig_generate_output import KubeconfigGenerateOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -24406,22 +22010,18 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
-
+    
     try:
         api_response = api_instance.kubeconfig_generate()
-        print("The response of V2Api->kubeconfig_generate:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->kubeconfig_generate: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 This endpoint does not need any parameter.
 
 ### Return type
@@ -24438,7 +22038,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | kubeconfigGenerateResponse wraps response body. |  -  |
@@ -24453,14 +22052,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.list_acme_accounts import ListAcmeAccounts
-from akeyless.models.list_acme_accounts_output import ListAcmeAccountsOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -24469,23 +22066,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     list_acme_accounts = akeyless.ListAcmeAccounts() # ListAcmeAccounts | 
 
     try:
         api_response = api_instance.list_acme_accounts(list_acme_accounts)
-        print("The response of V2Api->list_acme_accounts:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->list_acme_accounts: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -24505,7 +22098,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | listAcmeAccountsResponse wraps response body. |  -  |
@@ -24520,14 +22112,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.list_auth_methods import ListAuthMethods
-from akeyless.models.list_auth_methods_output import ListAuthMethodsOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -24536,23 +22126,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     list_auth_methods = akeyless.ListAuthMethods() # ListAuthMethods | 
 
     try:
         api_response = api_instance.list_auth_methods(list_auth_methods)
-        print("The response of V2Api->list_auth_methods:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->list_auth_methods: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -24572,7 +22158,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | listAuthMethodsResponse wraps response body. |  -  |
@@ -24587,14 +22172,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.gateways_list_response import GatewaysListResponse
-from akeyless.models.list_gateways import ListGateways
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -24603,23 +22186,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     list_gateways = akeyless.ListGateways() # ListGateways | 
 
     try:
         api_response = api_instance.list_gateways(list_gateways)
-        print("The response of V2Api->list_gateways:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->list_gateways: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -24639,7 +22218,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | listGatewaysResponse wraps response body. |  -  |
@@ -24654,14 +22232,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.list_groups import ListGroups
-from akeyless.models.list_groups_output import ListGroupsOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -24670,23 +22246,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     list_groups = akeyless.ListGroups() # ListGroups | 
 
     try:
         api_response = api_instance.list_groups(list_groups)
-        print("The response of V2Api->list_groups:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->list_groups: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -24706,7 +22278,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | listGroupsResponse wraps response body. |  -  |
@@ -24721,14 +22292,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.list_items import ListItems
-from akeyless.models.list_items_in_path_output import ListItemsInPathOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -24737,23 +22306,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     list_items = akeyless.ListItems() # ListItems | 
 
     try:
         api_response = api_instance.list_items(list_items)
-        print("The response of V2Api->list_items:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->list_items: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -24773,7 +22338,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | listItemsResponse wraps response body. |  -  |
@@ -24788,14 +22352,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.list_roles import ListRoles
-from akeyless.models.list_roles_output import ListRolesOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -24804,23 +22366,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     list_roles = akeyless.ListRoles() # ListRoles | 
 
     try:
         api_response = api_instance.list_roles(list_roles)
-        print("The response of V2Api->list_roles:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->list_roles: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -24840,7 +22398,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | listRolesResponse wraps response body. |  -  |
@@ -24855,13 +22412,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.list_shared_items import ListSharedItems
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -24870,21 +22426,18 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     list_shared_items = akeyless.ListSharedItems() # ListSharedItems | 
 
     try:
         api_instance.list_shared_items(list_shared_items)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->list_shared_items: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -24904,7 +22457,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** |  |  -  |
@@ -24919,14 +22471,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.bastions_list import BastionsList
-from akeyless.models.list_sra_bastions import ListSRABastions
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -24935,23 +22485,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     list_sra_bastions = akeyless.ListSRABastions() # ListSRABastions | 
 
     try:
         api_response = api_instance.list_sra_bastions(list_sra_bastions)
-        print("The response of V2Api->list_sra_bastions:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->list_sra_bastions: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -24971,7 +22517,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | listSRABastionsResponse wraps response body. |  -  |
@@ -24986,14 +22531,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.list_sra_sessions import ListSRASessions
-from akeyless.models.list_sra_sessions_output import ListSraSessionsOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -25002,23 +22545,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     list_sra_sessions = akeyless.ListSRASessions() # ListSRASessions | 
 
     try:
         api_response = api_instance.list_sra_sessions(list_sra_sessions)
-        print("The response of V2Api->list_sra_sessions:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->list_sra_sessions: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -25038,7 +22577,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | listSRASessionsResponse wraps response body. |  -  |
@@ -25053,14 +22591,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.list_targets import ListTargets
-from akeyless.models.list_targets_output import ListTargetsOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -25069,23 +22605,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     list_targets = akeyless.ListTargets() # ListTargets | 
 
     try:
         api_response = api_instance.list_targets(list_targets)
-        print("The response of V2Api->list_targets:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->list_targets: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -25105,7 +22637,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | listTargetsResponse wraps response body. |  -  |
@@ -25120,13 +22651,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.move_objects import MoveObjects
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -25135,23 +22665,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     move_objects = akeyless.MoveObjects() # MoveObjects | 
 
     try:
         api_response = api_instance.move_objects(move_objects)
-        print("The response of V2Api->move_objects:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->move_objects: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -25171,7 +22697,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | moveObjectsResponse wraps response body. |  -  |
@@ -25186,14 +22711,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.provision_certificate import ProvisionCertificate
-from akeyless.models.provision_certificate_output import ProvisionCertificateOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -25202,23 +22725,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     provision_certificate = akeyless.ProvisionCertificate() # ProvisionCertificate | 
 
     try:
         api_response = api_instance.provision_certificate(provision_certificate)
-        print("The response of V2Api->provision_certificate:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->provision_certificate: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -25238,7 +22757,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | provisionCertificateResponse wraps response body. |  -  |
@@ -25253,14 +22771,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.raw_creds import RawCreds
-from akeyless.models.system_access_credentials_reply_obj import SystemAccessCredentialsReplyObj
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -25269,23 +22785,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     raw_creds = akeyless.RawCreds() # RawCreds |  (optional)
 
     try:
         api_response = api_instance.raw_creds(raw_creds=raw_creds)
-        print("The response of V2Api->raw_creds:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->raw_creds: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -25305,7 +22817,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | rawCredsResponse wraps response body. |  -  |
@@ -25320,14 +22831,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.refresh_key import RefreshKey
-from akeyless.models.refresh_key_output import RefreshKeyOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -25336,23 +22845,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     refresh_key = akeyless.RefreshKey() # RefreshKey | 
 
     try:
         api_response = api_instance.refresh_key(refresh_key)
-        print("The response of V2Api->refresh_key:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->refresh_key: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -25372,7 +22877,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | refreshKeyResponse wraps response body. |  -  |
@@ -25387,14 +22891,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.renew_certificate import RenewCertificate
-from akeyless.models.renew_certificate_output import RenewCertificateOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -25403,23 +22905,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     renew_certificate = akeyless.RenewCertificate() # RenewCertificate | 
 
     try:
         api_response = api_instance.renew_certificate(renew_certificate)
-        print("The response of V2Api->renew_certificate:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->renew_certificate: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -25439,7 +22937,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | renewCertificateResponse wraps response body. |  -  |
@@ -25454,14 +22951,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.request_access import RequestAccess
-from akeyless.models.request_access_output import RequestAccessOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -25470,23 +22965,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     request_access = akeyless.RequestAccess() # RequestAccess | 
 
     try:
         api_response = api_instance.request_access(request_access)
-        print("The response of V2Api->request_access:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->request_access: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -25506,7 +22997,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | requestAccessResponse wraps response body. |  -  |
@@ -25521,14 +23011,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.reset_access_key import ResetAccessKey
-from akeyless.models.reset_auth_method_access_key_output import ResetAuthMethodAccessKeyOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -25537,23 +23025,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     reset_access_key = akeyless.ResetAccessKey() # ResetAccessKey | 
 
     try:
         api_response = api_instance.reset_access_key(reset_access_key)
-        print("The response of V2Api->reset_access_key:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->reset_access_key: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -25573,7 +23057,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | resetAccessKeyResponse wraps response body. |  -  |
@@ -25588,14 +23071,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.reverse_rbac import ReverseRBAC
-from akeyless.models.reverse_rbac_output import ReverseRBACOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -25604,23 +23085,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     reverse_rbac = akeyless.ReverseRBAC() # ReverseRBAC | 
 
     try:
         api_response = api_instance.reverse_rbac(reverse_rbac)
-        print("The response of V2Api->reverse_rbac:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->reverse_rbac: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -25640,7 +23117,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | reverseRBACResponse wraps response body. |  -  |
@@ -25655,13 +23131,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.revoke_certificate import RevokeCertificate
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -25670,23 +23145,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     revoke_certificate = akeyless.RevokeCertificate() # RevokeCertificate | 
 
     try:
         api_response = api_instance.revoke_certificate(revoke_certificate)
-        print("The response of V2Api->revoke_certificate:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->revoke_certificate: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -25706,7 +23177,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | RevokeCertificateResponse wraps response body. |  -  |
@@ -25721,12 +23191,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -25735,22 +23205,18 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
-
+    
     try:
         api_response = api_instance.revoke_creds()
-        print("The response of V2Api->revoke_creds:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->revoke_creds: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 This endpoint does not need any parameter.
 
 ### Return type
@@ -25767,7 +23233,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | revokeCredsResponse wraps response body. |  -  |
@@ -25782,14 +23247,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.rollback_secret import RollbackSecret
-from akeyless.models.rollback_secret_output import RollbackSecretOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -25798,23 +23261,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     rollback_secret = akeyless.RollbackSecret() # RollbackSecret | 
 
     try:
         api_response = api_instance.rollback_secret(rollback_secret)
-        print("The response of V2Api->rollback_secret:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->rollback_secret: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -25834,7 +23293,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | rollbackSecretResponse wraps response body. |  -  |
@@ -25849,14 +23307,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.rotate_key import RotateKey
-from akeyless.models.rotate_key_output import RotateKeyOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -25865,23 +23321,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     rotate_key = akeyless.RotateKey() # RotateKey | 
 
     try:
         api_response = api_instance.rotate_key(rotate_key)
-        print("The response of V2Api->rotate_key:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->rotate_key: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -25901,7 +23353,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | rotateKeyResponse wraps response body. |  -  |
@@ -25916,14 +23367,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.rotate_oidc_client_output import RotateOidcClientOutput
-from akeyless.models.rotate_oidc_client_secret import RotateOidcClientSecret
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -25932,23 +23381,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     rotate_oidc_client_secret = akeyless.RotateOidcClientSecret() # RotateOidcClientSecret | 
 
     try:
         api_response = api_instance.rotate_oidc_client_secret(rotate_oidc_client_secret)
-        print("The response of V2Api->rotate_oidc_client_secret:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->rotate_oidc_client_secret: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -25968,7 +23413,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | rotateOidcClientResponse wraps response body. |  -  |
@@ -25983,14 +23427,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.rotate_secret import RotateSecret
-from akeyless.models.rotated_secret_output import RotatedSecretOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -25999,23 +23441,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     rotate_secret = akeyless.RotateSecret() # RotateSecret | 
 
     try:
         api_response = api_instance.rotate_secret(rotate_secret)
-        print("The response of V2Api->rotate_secret:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->rotate_secret: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -26035,7 +23473,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | rotateSecretResponse wraps response body. |  -  |
@@ -26050,14 +23487,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.rotated_secret_create_aws import RotatedSecretCreateAws
-from akeyless.models.rotated_secret_create_output import RotatedSecretCreateOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -26066,23 +23501,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     rotated_secret_create_aws = akeyless.RotatedSecretCreateAws() # RotatedSecretCreateAws | 
 
     try:
         api_response = api_instance.rotated_secret_create_aws(rotated_secret_create_aws)
-        print("The response of V2Api->rotated_secret_create_aws:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->rotated_secret_create_aws: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -26102,7 +23533,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | rotatedSecretCreateAwsResponse wraps response body. |  -  |
@@ -26117,14 +23547,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.rotated_secret_create_azure import RotatedSecretCreateAzure
-from akeyless.models.rotated_secret_create_output import RotatedSecretCreateOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -26133,23 +23561,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     rotated_secret_create_azure = akeyless.RotatedSecretCreateAzure() # RotatedSecretCreateAzure | 
 
     try:
         api_response = api_instance.rotated_secret_create_azure(rotated_secret_create_azure)
-        print("The response of V2Api->rotated_secret_create_azure:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->rotated_secret_create_azure: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -26169,7 +23593,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | rotatedSecretCreateAzureResponse wraps response body. |  -  |
@@ -26184,14 +23607,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.rotated_secret_create_cassandra import RotatedSecretCreateCassandra
-from akeyless.models.rotated_secret_create_output import RotatedSecretCreateOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -26200,23 +23621,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     rotated_secret_create_cassandra = akeyless.RotatedSecretCreateCassandra() # RotatedSecretCreateCassandra | 
 
     try:
         api_response = api_instance.rotated_secret_create_cassandra(rotated_secret_create_cassandra)
-        print("The response of V2Api->rotated_secret_create_cassandra:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->rotated_secret_create_cassandra: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -26236,7 +23653,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | rotatedSecretCreateCassandraResponse wraps response body. |  -  |
@@ -26251,14 +23667,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.rotated_secret_create_custom import RotatedSecretCreateCustom
-from akeyless.models.rotated_secret_create_output import RotatedSecretCreateOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -26267,23 +23681,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     rotated_secret_create_custom = akeyless.RotatedSecretCreateCustom() # RotatedSecretCreateCustom | 
 
     try:
         api_response = api_instance.rotated_secret_create_custom(rotated_secret_create_custom)
-        print("The response of V2Api->rotated_secret_create_custom:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->rotated_secret_create_custom: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -26303,7 +23713,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | rotatedSecretCreateCustomResponse wraps response body. |  -  |
@@ -26318,14 +23727,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.rotated_secret_create_dockerhub import RotatedSecretCreateDockerhub
-from akeyless.models.rotated_secret_create_output import RotatedSecretCreateOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -26334,23 +23741,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     rotated_secret_create_dockerhub = akeyless.RotatedSecretCreateDockerhub() # RotatedSecretCreateDockerhub | 
 
     try:
         api_response = api_instance.rotated_secret_create_dockerhub(rotated_secret_create_dockerhub)
-        print("The response of V2Api->rotated_secret_create_dockerhub:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->rotated_secret_create_dockerhub: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -26370,7 +23773,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | rotatedSecretCreateDockerhubResponse wraps response body. |  -  |
@@ -26385,14 +23787,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.rotated_secret_create_gcp import RotatedSecretCreateGcp
-from akeyless.models.rotated_secret_create_output import RotatedSecretCreateOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -26401,23 +23801,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     rotated_secret_create_gcp = akeyless.RotatedSecretCreateGcp() # RotatedSecretCreateGcp | 
 
     try:
         api_response = api_instance.rotated_secret_create_gcp(rotated_secret_create_gcp)
-        print("The response of V2Api->rotated_secret_create_gcp:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->rotated_secret_create_gcp: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -26437,7 +23833,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | rotatedSecretCreateGcpResponse wraps response body. |  -  |
@@ -26452,14 +23847,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.rotated_secret_create_hanadb import RotatedSecretCreateHanadb
-from akeyless.models.rotated_secret_create_output import RotatedSecretCreateOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -26468,23 +23861,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     rotated_secret_create_hanadb = akeyless.RotatedSecretCreateHanadb() # RotatedSecretCreateHanadb | 
 
     try:
         api_response = api_instance.rotated_secret_create_hanadb(rotated_secret_create_hanadb)
-        print("The response of V2Api->rotated_secret_create_hanadb:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->rotated_secret_create_hanadb: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -26504,7 +23893,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | rotatedSecretCreateHanadbResponse wraps response body. |  -  |
@@ -26519,14 +23907,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.rotated_secret_create_ldap import RotatedSecretCreateLdap
-from akeyless.models.rotated_secret_create_output import RotatedSecretCreateOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -26535,23 +23921,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     rotated_secret_create_ldap = akeyless.RotatedSecretCreateLdap() # RotatedSecretCreateLdap | 
 
     try:
         api_response = api_instance.rotated_secret_create_ldap(rotated_secret_create_ldap)
-        print("The response of V2Api->rotated_secret_create_ldap:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->rotated_secret_create_ldap: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -26571,7 +23953,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | rotatedSecretCreateLdapResponse wraps response body. |  -  |
@@ -26586,14 +23967,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.rotated_secret_create_mongodb import RotatedSecretCreateMongodb
-from akeyless.models.rotated_secret_create_output import RotatedSecretCreateOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -26602,23 +23981,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     rotated_secret_create_mongodb = akeyless.RotatedSecretCreateMongodb() # RotatedSecretCreateMongodb | 
 
     try:
         api_response = api_instance.rotated_secret_create_mongodb(rotated_secret_create_mongodb)
-        print("The response of V2Api->rotated_secret_create_mongodb:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->rotated_secret_create_mongodb: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -26638,7 +24013,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | rotatedSecretCreateMongodbResponse wraps response body. |  -  |
@@ -26653,14 +24027,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.rotated_secret_create_mssql import RotatedSecretCreateMssql
-from akeyless.models.rotated_secret_create_output import RotatedSecretCreateOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -26669,23 +24041,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     rotated_secret_create_mssql = akeyless.RotatedSecretCreateMssql() # RotatedSecretCreateMssql | 
 
     try:
         api_response = api_instance.rotated_secret_create_mssql(rotated_secret_create_mssql)
-        print("The response of V2Api->rotated_secret_create_mssql:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->rotated_secret_create_mssql: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -26705,7 +24073,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | rotatedSecretCreateMssqlResponse wraps response body. |  -  |
@@ -26720,14 +24087,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.rotated_secret_create_mysql import RotatedSecretCreateMysql
-from akeyless.models.rotated_secret_create_output import RotatedSecretCreateOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -26736,23 +24101,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     rotated_secret_create_mysql = akeyless.RotatedSecretCreateMysql() # RotatedSecretCreateMysql | 
 
     try:
         api_response = api_instance.rotated_secret_create_mysql(rotated_secret_create_mysql)
-        print("The response of V2Api->rotated_secret_create_mysql:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->rotated_secret_create_mysql: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -26772,7 +24133,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | rotatedSecretCreateMysqlResponse wraps response body. |  -  |
@@ -26787,14 +24147,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.rotated_secret_create_oracledb import RotatedSecretCreateOracledb
-from akeyless.models.rotated_secret_create_output import RotatedSecretCreateOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -26803,23 +24161,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     rotated_secret_create_oracledb = akeyless.RotatedSecretCreateOracledb() # RotatedSecretCreateOracledb | 
 
     try:
         api_response = api_instance.rotated_secret_create_oracledb(rotated_secret_create_oracledb)
-        print("The response of V2Api->rotated_secret_create_oracledb:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->rotated_secret_create_oracledb: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -26839,7 +24193,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | rotatedSecretCreateOracledbResponse wraps response body. |  -  |
@@ -26854,14 +24207,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.rotated_secret_create_output import RotatedSecretCreateOutput
-from akeyless.models.rotated_secret_create_postgresql import RotatedSecretCreatePostgresql
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -26870,23 +24221,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     rotated_secret_create_postgresql = akeyless.RotatedSecretCreatePostgresql() # RotatedSecretCreatePostgresql | 
 
     try:
         api_response = api_instance.rotated_secret_create_postgresql(rotated_secret_create_postgresql)
-        print("The response of V2Api->rotated_secret_create_postgresql:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->rotated_secret_create_postgresql: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -26906,7 +24253,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | rotatedSecretCreatePostgresqlResponse wraps response body. |  -  |
@@ -26921,14 +24267,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.rotated_secret_create_output import RotatedSecretCreateOutput
-from akeyless.models.rotated_secret_create_redis import RotatedSecretCreateRedis
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -26937,23 +24281,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     rotated_secret_create_redis = akeyless.RotatedSecretCreateRedis() # RotatedSecretCreateRedis | 
 
     try:
         api_response = api_instance.rotated_secret_create_redis(rotated_secret_create_redis)
-        print("The response of V2Api->rotated_secret_create_redis:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->rotated_secret_create_redis: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -26973,7 +24313,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | rotatedSecretCreateRedisResponse wraps response body. |  -  |
@@ -26988,14 +24327,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.rotated_secret_create_output import RotatedSecretCreateOutput
-from akeyless.models.rotated_secret_create_redshift import RotatedSecretCreateRedshift
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -27004,23 +24341,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     rotated_secret_create_redshift = akeyless.RotatedSecretCreateRedshift() # RotatedSecretCreateRedshift | 
 
     try:
         api_response = api_instance.rotated_secret_create_redshift(rotated_secret_create_redshift)
-        print("The response of V2Api->rotated_secret_create_redshift:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->rotated_secret_create_redshift: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -27040,7 +24373,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | rotatedSecretCreateRedshiftResponse wraps response body. |  -  |
@@ -27055,14 +24387,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.rotated_secret_create_output import RotatedSecretCreateOutput
-from akeyless.models.rotated_secret_create_snowflake import RotatedSecretCreateSnowflake
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -27071,23 +24401,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     rotated_secret_create_snowflake = akeyless.RotatedSecretCreateSnowflake() # RotatedSecretCreateSnowflake | 
 
     try:
         api_response = api_instance.rotated_secret_create_snowflake(rotated_secret_create_snowflake)
-        print("The response of V2Api->rotated_secret_create_snowflake:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->rotated_secret_create_snowflake: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -27107,7 +24433,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | rotatedSecretCreateSnowflakeResponse wraps response body. |  -  |
@@ -27122,14 +24447,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.rotated_secret_create_output import RotatedSecretCreateOutput
-from akeyless.models.rotated_secret_create_ssh import RotatedSecretCreateSsh
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -27138,23 +24461,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     rotated_secret_create_ssh = akeyless.RotatedSecretCreateSsh() # RotatedSecretCreateSsh | 
 
     try:
         api_response = api_instance.rotated_secret_create_ssh(rotated_secret_create_ssh)
-        print("The response of V2Api->rotated_secret_create_ssh:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->rotated_secret_create_ssh: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -27174,7 +24493,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | rotatedSecretCreateSshResponse wraps response body. |  -  |
@@ -27189,14 +24507,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.rotated_secret_create_output import RotatedSecretCreateOutput
-from akeyless.models.rotated_secret_create_windows import RotatedSecretCreateWindows
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -27205,23 +24521,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     rotated_secret_create_windows = akeyless.RotatedSecretCreateWindows() # RotatedSecretCreateWindows | 
 
     try:
         api_response = api_instance.rotated_secret_create_windows(rotated_secret_create_windows)
-        print("The response of V2Api->rotated_secret_create_windows:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->rotated_secret_create_windows: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -27241,7 +24553,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | rotatedSecretCreateWindowsResponse wraps response body. |  -  |
@@ -27256,14 +24567,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.delete_item_output import DeleteItemOutput
-from akeyless.models.rotated_secret_delete import RotatedSecretDelete
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -27272,23 +24581,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     rotated_secret_delete = akeyless.RotatedSecretDelete() # RotatedSecretDelete | 
 
     try:
         api_response = api_instance.rotated_secret_delete(rotated_secret_delete)
-        print("The response of V2Api->rotated_secret_delete:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->rotated_secret_delete: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -27308,7 +24613,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | rotatedSecretDeleteResponse wraps response body. |  -  |
@@ -27323,13 +24627,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.rotated_secret_delete_sync import RotatedSecretDeleteSync
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -27338,23 +24641,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     rotated_secret_delete_sync = akeyless.RotatedSecretDeleteSync() # RotatedSecretDeleteSync | 
 
     try:
         api_response = api_instance.rotated_secret_delete_sync(rotated_secret_delete_sync)
-        print("The response of V2Api->rotated_secret_delete_sync:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->rotated_secret_delete_sync: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -27374,7 +24673,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | rotatedSecretDeleteSyncResponse wraps response body. |  -  |
@@ -27383,19 +24681,18 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **rotated_secret_get_value**
-> Dict[str, object] rotated_secret_get_value(rotated_secret_get_value)
+> dict(str, object) rotated_secret_get_value(rotated_secret_get_value)
 
 
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.rotated_secret_get_value import RotatedSecretGetValue
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -27404,23 +24701,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     rotated_secret_get_value = akeyless.RotatedSecretGetValue() # RotatedSecretGetValue | 
 
     try:
         api_response = api_instance.rotated_secret_get_value(rotated_secret_get_value)
-        print("The response of V2Api->rotated_secret_get_value:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->rotated_secret_get_value: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -27428,7 +24721,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**Dict[str, object]**
+**dict(str, object)**
 
 ### Authorization
 
@@ -27440,7 +24733,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | rotatedSecretGetValueResponse wraps response body. |  -  |
@@ -27455,14 +24747,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.get_producers_list_reply_obj import GetProducersListReplyObj
-from akeyless.models.rotated_secret_list import RotatedSecretList
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -27471,23 +24761,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     rotated_secret_list = akeyless.RotatedSecretList() # RotatedSecretList | 
 
     try:
         api_response = api_instance.rotated_secret_list(rotated_secret_list)
-        print("The response of V2Api->rotated_secret_list:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->rotated_secret_list: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -27507,7 +24793,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | rotatedSecretListResponse wraps response body. |  -  |
@@ -27522,13 +24807,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.rotated_secret_sync import RotatedSecretSync
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -27537,23 +24821,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     rotated_secret_sync = akeyless.RotatedSecretSync() # RotatedSecretSync | 
 
     try:
         api_response = api_instance.rotated_secret_sync(rotated_secret_sync)
-        print("The response of V2Api->rotated_secret_sync:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->rotated_secret_sync: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -27573,7 +24853,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | rotatedSecretSyncResponse wraps response body. |  -  |
@@ -27588,14 +24867,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.rotated_secret_update_aws import RotatedSecretUpdateAws
-from akeyless.models.rotated_secret_update_output import RotatedSecretUpdateOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -27604,23 +24881,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     rotated_secret_update_aws = akeyless.RotatedSecretUpdateAws() # RotatedSecretUpdateAws | 
 
     try:
         api_response = api_instance.rotated_secret_update_aws(rotated_secret_update_aws)
-        print("The response of V2Api->rotated_secret_update_aws:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->rotated_secret_update_aws: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -27640,7 +24913,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | rotatedSecretUpdateAwsResponse wraps response body. |  -  |
@@ -27655,14 +24927,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.rotated_secret_update_azure import RotatedSecretUpdateAzure
-from akeyless.models.rotated_secret_update_output import RotatedSecretUpdateOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -27671,23 +24941,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     rotated_secret_update_azure = akeyless.RotatedSecretUpdateAzure() # RotatedSecretUpdateAzure | 
 
     try:
         api_response = api_instance.rotated_secret_update_azure(rotated_secret_update_azure)
-        print("The response of V2Api->rotated_secret_update_azure:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->rotated_secret_update_azure: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -27707,7 +24973,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | rotatedSecretUpdateAzureResponse wraps response body. |  -  |
@@ -27722,14 +24987,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.rotated_secret_update_cassandra import RotatedSecretUpdateCassandra
-from akeyless.models.rotated_secret_update_output import RotatedSecretUpdateOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -27738,23 +25001,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     rotated_secret_update_cassandra = akeyless.RotatedSecretUpdateCassandra() # RotatedSecretUpdateCassandra | 
 
     try:
         api_response = api_instance.rotated_secret_update_cassandra(rotated_secret_update_cassandra)
-        print("The response of V2Api->rotated_secret_update_cassandra:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->rotated_secret_update_cassandra: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -27774,7 +25033,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | rotatedSecretUpdateCassandraResponse wraps response body. |  -  |
@@ -27789,14 +25047,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.rotated_secret_update_custom import RotatedSecretUpdateCustom
-from akeyless.models.rotated_secret_update_output import RotatedSecretUpdateOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -27805,23 +25061,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     rotated_secret_update_custom = akeyless.RotatedSecretUpdateCustom() # RotatedSecretUpdateCustom | 
 
     try:
         api_response = api_instance.rotated_secret_update_custom(rotated_secret_update_custom)
-        print("The response of V2Api->rotated_secret_update_custom:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->rotated_secret_update_custom: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -27841,7 +25093,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | rotatedSecretUpdateCustomResponse wraps response body. |  -  |
@@ -27856,14 +25107,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.rotated_secret_update_dockerhub import RotatedSecretUpdateDockerhub
-from akeyless.models.rotated_secret_update_output import RotatedSecretUpdateOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -27872,23 +25121,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     rotated_secret_update_dockerhub = akeyless.RotatedSecretUpdateDockerhub() # RotatedSecretUpdateDockerhub | 
 
     try:
         api_response = api_instance.rotated_secret_update_dockerhub(rotated_secret_update_dockerhub)
-        print("The response of V2Api->rotated_secret_update_dockerhub:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->rotated_secret_update_dockerhub: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -27908,7 +25153,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | rotatedSecretUpdateDockerhubResponse wraps response body. |  -  |
@@ -27923,14 +25167,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.rotated_secret_update_gcp import RotatedSecretUpdateGcp
-from akeyless.models.rotated_secret_update_output import RotatedSecretUpdateOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -27939,23 +25181,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     rotated_secret_update_gcp = akeyless.RotatedSecretUpdateGcp() # RotatedSecretUpdateGcp | 
 
     try:
         api_response = api_instance.rotated_secret_update_gcp(rotated_secret_update_gcp)
-        print("The response of V2Api->rotated_secret_update_gcp:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->rotated_secret_update_gcp: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -27975,7 +25213,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | rotatedSecretUpdateGcpResponse wraps response body. |  -  |
@@ -27990,14 +25227,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.rotated_secret_update_hanadb import RotatedSecretUpdateHanadb
-from akeyless.models.rotated_secret_update_output import RotatedSecretUpdateOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -28006,23 +25241,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     rotated_secret_update_hanadb = akeyless.RotatedSecretUpdateHanadb() # RotatedSecretUpdateHanadb | 
 
     try:
         api_response = api_instance.rotated_secret_update_hanadb(rotated_secret_update_hanadb)
-        print("The response of V2Api->rotated_secret_update_hanadb:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->rotated_secret_update_hanadb: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -28042,7 +25273,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | rotatedSecretUpdateHanadbResponse wraps response body. |  -  |
@@ -28057,14 +25287,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.rotated_secret_update_ldap import RotatedSecretUpdateLdap
-from akeyless.models.rotated_secret_update_output import RotatedSecretUpdateOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -28073,23 +25301,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     rotated_secret_update_ldap = akeyless.RotatedSecretUpdateLdap() # RotatedSecretUpdateLdap | 
 
     try:
         api_response = api_instance.rotated_secret_update_ldap(rotated_secret_update_ldap)
-        print("The response of V2Api->rotated_secret_update_ldap:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->rotated_secret_update_ldap: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -28109,7 +25333,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | rotatedSecretUpdateLdapResponse wraps response body. |  -  |
@@ -28124,14 +25347,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.rotated_secret_update_mongodb import RotatedSecretUpdateMongodb
-from akeyless.models.rotated_secret_update_output import RotatedSecretUpdateOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -28140,23 +25361,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     rotated_secret_update_mongodb = akeyless.RotatedSecretUpdateMongodb() # RotatedSecretUpdateMongodb | 
 
     try:
         api_response = api_instance.rotated_secret_update_mongodb(rotated_secret_update_mongodb)
-        print("The response of V2Api->rotated_secret_update_mongodb:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->rotated_secret_update_mongodb: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -28176,7 +25393,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | rotatedSecretUpdateMongodbResponse wraps response body. |  -  |
@@ -28191,14 +25407,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.rotated_secret_update_mssql import RotatedSecretUpdateMssql
-from akeyless.models.rotated_secret_update_output import RotatedSecretUpdateOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -28207,23 +25421,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     rotated_secret_update_mssql = akeyless.RotatedSecretUpdateMssql() # RotatedSecretUpdateMssql | 
 
     try:
         api_response = api_instance.rotated_secret_update_mssql(rotated_secret_update_mssql)
-        print("The response of V2Api->rotated_secret_update_mssql:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->rotated_secret_update_mssql: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -28243,7 +25453,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | rotatedSecretUpdateMssqlResponse wraps response body. |  -  |
@@ -28258,14 +25467,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.rotated_secret_update_mysql import RotatedSecretUpdateMysql
-from akeyless.models.rotated_secret_update_output import RotatedSecretUpdateOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -28274,23 +25481,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     rotated_secret_update_mysql = akeyless.RotatedSecretUpdateMysql() # RotatedSecretUpdateMysql | 
 
     try:
         api_response = api_instance.rotated_secret_update_mysql(rotated_secret_update_mysql)
-        print("The response of V2Api->rotated_secret_update_mysql:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->rotated_secret_update_mysql: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -28310,7 +25513,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | rotatedSecretUpdateMysqlResponse wraps response body. |  -  |
@@ -28325,14 +25527,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.rotated_secret_update_oracledb import RotatedSecretUpdateOracledb
-from akeyless.models.rotated_secret_update_output import RotatedSecretUpdateOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -28341,23 +25541,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     rotated_secret_update_oracledb = akeyless.RotatedSecretUpdateOracledb() # RotatedSecretUpdateOracledb | 
 
     try:
         api_response = api_instance.rotated_secret_update_oracledb(rotated_secret_update_oracledb)
-        print("The response of V2Api->rotated_secret_update_oracledb:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->rotated_secret_update_oracledb: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -28377,7 +25573,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | rotatedSecretUpdateOracledbResponse wraps response body. |  -  |
@@ -28392,14 +25587,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.rotated_secret_update_output import RotatedSecretUpdateOutput
-from akeyless.models.rotated_secret_update_postgresql import RotatedSecretUpdatePostgresql
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -28408,23 +25601,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     rotated_secret_update_postgresql = akeyless.RotatedSecretUpdatePostgresql() # RotatedSecretUpdatePostgresql | 
 
     try:
         api_response = api_instance.rotated_secret_update_postgresql(rotated_secret_update_postgresql)
-        print("The response of V2Api->rotated_secret_update_postgresql:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->rotated_secret_update_postgresql: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -28444,7 +25633,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | rotatedSecretUpdatePostgresqlResponse wraps response body. |  -  |
@@ -28459,14 +25647,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.rotated_secret_update_output import RotatedSecretUpdateOutput
-from akeyless.models.rotated_secret_update_redis import RotatedSecretUpdateRedis
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -28475,23 +25661,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     rotated_secret_update_redis = akeyless.RotatedSecretUpdateRedis() # RotatedSecretUpdateRedis | 
 
     try:
         api_response = api_instance.rotated_secret_update_redis(rotated_secret_update_redis)
-        print("The response of V2Api->rotated_secret_update_redis:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->rotated_secret_update_redis: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -28511,7 +25693,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | rotatedSecretUpdateRedisResponse wraps response body. |  -  |
@@ -28526,14 +25707,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.rotated_secret_update_output import RotatedSecretUpdateOutput
-from akeyless.models.rotated_secret_update_redshift import RotatedSecretUpdateRedshift
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -28542,23 +25721,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     rotated_secret_update_redshift = akeyless.RotatedSecretUpdateRedshift() # RotatedSecretUpdateRedshift | 
 
     try:
         api_response = api_instance.rotated_secret_update_redshift(rotated_secret_update_redshift)
-        print("The response of V2Api->rotated_secret_update_redshift:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->rotated_secret_update_redshift: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -28578,7 +25753,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | rotatedSecretUpdateRedshiftResponse wraps response body. |  -  |
@@ -28593,14 +25767,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.rotated_secret_update_output import RotatedSecretUpdateOutput
-from akeyless.models.rotated_secret_update_snowflake import RotatedSecretUpdateSnowflake
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -28609,23 +25781,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     rotated_secret_update_snowflake = akeyless.RotatedSecretUpdateSnowflake() # RotatedSecretUpdateSnowflake | 
 
     try:
         api_response = api_instance.rotated_secret_update_snowflake(rotated_secret_update_snowflake)
-        print("The response of V2Api->rotated_secret_update_snowflake:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->rotated_secret_update_snowflake: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -28645,7 +25813,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | rotatedSecretUpdateSnowflakeResponse wraps response body. |  -  |
@@ -28660,14 +25827,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.rotated_secret_update_output import RotatedSecretUpdateOutput
-from akeyless.models.rotated_secret_update_ssh import RotatedSecretUpdateSsh
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -28676,23 +25841,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     rotated_secret_update_ssh = akeyless.RotatedSecretUpdateSsh() # RotatedSecretUpdateSsh | 
 
     try:
         api_response = api_instance.rotated_secret_update_ssh(rotated_secret_update_ssh)
-        print("The response of V2Api->rotated_secret_update_ssh:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->rotated_secret_update_ssh: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -28712,7 +25873,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | rotatedSecretUpdateSshResponse wraps response body. |  -  |
@@ -28727,14 +25887,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.rotated_secret_update_output import RotatedSecretUpdateOutput
-from akeyless.models.rotated_secret_update_windows import RotatedSecretUpdateWindows
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -28743,23 +25901,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     rotated_secret_update_windows = akeyless.RotatedSecretUpdateWindows() # RotatedSecretUpdateWindows | 
 
     try:
         api_response = api_instance.rotated_secret_update_windows(rotated_secret_update_windows)
-        print("The response of V2Api->rotated_secret_update_windows:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->rotated_secret_update_windows: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -28779,7 +25933,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | rotatedSecretUpdateWindowsResponse wraps response body. |  -  |
@@ -28794,13 +25947,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.set_item_state import SetItemState
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -28809,23 +25961,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     set_item_state = akeyless.SetItemState() # SetItemState | 
 
     try:
         api_response = api_instance.set_item_state(set_item_state)
-        print("The response of V2Api->set_item_state:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->set_item_state: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -28845,7 +25993,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | setItemStateResponse wraps response body. |  -  |
@@ -28860,13 +26007,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.set_role_rule import SetRoleRule
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -28875,23 +26021,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     set_role_rule = akeyless.SetRoleRule() # SetRoleRule | 
 
     try:
         api_response = api_instance.set_role_rule(set_role_rule)
-        print("The response of V2Api->set_role_rule:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->set_role_rule: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -28911,7 +26053,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | setRoleRuleResponse wraps response body. |  -  |
@@ -28926,14 +26067,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.share_item import ShareItem
-from akeyless.models.share_item_output import ShareItemOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -28942,23 +26081,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     share_item = akeyless.ShareItem() # ShareItem | 
 
     try:
         api_response = api_instance.share_item(share_item)
-        print("The response of V2Api->share_item:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->share_item: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -28978,7 +26113,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | shareItemResponse wraps response body. |  -  |
@@ -28993,14 +26127,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.sign_data_with_classic_key import SignDataWithClassicKey
-from akeyless.models.sign_output import SignOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -29009,23 +26141,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     sign_data_with_classic_key = akeyless.SignDataWithClassicKey() # SignDataWithClassicKey | 
 
     try:
         api_response = api_instance.sign_data_with_classic_key(sign_data_with_classic_key)
-        print("The response of V2Api->sign_data_with_classic_key:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->sign_data_with_classic_key: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -29045,7 +26173,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | signDataWithClassicKeyResponse wraps response body. |  -  |
@@ -29060,14 +26187,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.sign_ec_dsa import SignEcDsa
-from akeyless.models.sign_ec_dsa_output import SignEcDsaOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -29076,23 +26201,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     sign_ec_dsa = akeyless.SignEcDsa() # SignEcDsa | 
 
     try:
         api_response = api_instance.sign_ec_dsa(sign_ec_dsa)
-        print("The response of V2Api->sign_ec_dsa:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->sign_ec_dsa: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -29112,7 +26233,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | signEcDsaResponse wraps response body. |  -  |
@@ -29127,14 +26247,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.sign_gpg import SignGPG
-from akeyless.models.sign_gpg_output import SignGPGOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -29143,23 +26261,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     sign_gpg = akeyless.SignGPG() # SignGPG | 
 
     try:
         api_response = api_instance.sign_gpg(sign_gpg)
-        print("The response of V2Api->sign_gpg:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->sign_gpg: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -29179,7 +26293,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | signGPGResponse wraps response body. |  -  |
@@ -29194,14 +26307,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.sign_jwt_output import SignJWTOutput
-from akeyless.models.sign_jwt_with_classic_key import SignJWTWithClassicKey
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -29210,23 +26321,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     sign_jwt_with_classic_key = akeyless.SignJWTWithClassicKey() # SignJWTWithClassicKey | 
 
     try:
         api_response = api_instance.sign_jwt_with_classic_key(sign_jwt_with_classic_key)
-        print("The response of V2Api->sign_jwt_with_classic_key:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->sign_jwt_with_classic_key: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -29246,7 +26353,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | signJWTWithClassicKeyResponse wraps response body. |  -  |
@@ -29261,14 +26367,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.sign_pkcs1 import SignPKCS1
-from akeyless.models.sign_pkcs1_output import SignPKCS1Output
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -29277,23 +26381,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     sign_pkcs1 = akeyless.SignPKCS1() # SignPKCS1 | 
 
     try:
         api_response = api_instance.sign_pkcs1(sign_pkcs1)
-        print("The response of V2Api->sign_pkcs1:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->sign_pkcs1: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -29313,7 +26413,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | signPKCS1Response wraps response body. |  -  |
@@ -29328,14 +26427,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.sign_pki_cert_output import SignPKICertOutput
-from akeyless.models.sign_pki_cert_with_classic_key import SignPKICertWithClassicKey
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -29344,23 +26441,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     sign_pki_cert_with_classic_key = akeyless.SignPKICertWithClassicKey() # SignPKICertWithClassicKey | 
 
     try:
         api_response = api_instance.sign_pki_cert_with_classic_key(sign_pki_cert_with_classic_key)
-        print("The response of V2Api->sign_pki_cert_with_classic_key:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->sign_pki_cert_with_classic_key: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -29380,7 +26473,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | signPKICertWithClassicKeyResponse wraps response body. |  -  |
@@ -29395,14 +26487,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.sign_rsa_ssa_pss import SignRsaSsaPss
-from akeyless.models.sign_rsa_ssa_pss_output import SignRsaSsaPssOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -29411,23 +26501,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     sign_rsa_ssa_pss = akeyless.SignRsaSsaPss() # SignRsaSsaPss | 
 
     try:
         api_response = api_instance.sign_rsa_ssa_pss(sign_rsa_ssa_pss)
-        print("The response of V2Api->sign_rsa_ssa_pss:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->sign_rsa_ssa_pss: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -29447,7 +26533,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | signRsaSsaPssResponse wraps response body. |  -  |
@@ -29462,14 +26547,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.static_creds_auth import StaticCredsAuth
-from akeyless.models.static_creds_auth_output import StaticCredsAuthOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -29478,23 +26561,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     static_creds_auth = akeyless.StaticCredsAuth() # StaticCredsAuth | 
 
     try:
         api_response = api_instance.static_creds_auth(static_creds_auth)
-        print("The response of V2Api->static_creds_auth:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->static_creds_auth: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -29514,7 +26593,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | staticCredsAuthResponse wraps response body. |  -  |
@@ -29529,14 +26607,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.target_create_artifactory import TargetCreateArtifactory
-from akeyless.models.target_create_output import TargetCreateOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -29545,23 +26621,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     target_create_artifactory = akeyless.TargetCreateArtifactory() # TargetCreateArtifactory | 
 
     try:
         api_response = api_instance.target_create_artifactory(target_create_artifactory)
-        print("The response of V2Api->target_create_artifactory:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->target_create_artifactory: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -29581,7 +26653,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | targetCreateArtifactoryResponse wraps response body. |  -  |
@@ -29596,14 +26667,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.target_create_aws import TargetCreateAws
-from akeyless.models.target_create_output import TargetCreateOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -29612,23 +26681,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     target_create_aws = akeyless.TargetCreateAws() # TargetCreateAws | 
 
     try:
         api_response = api_instance.target_create_aws(target_create_aws)
-        print("The response of V2Api->target_create_aws:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->target_create_aws: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -29648,7 +26713,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | targetCreateAwsResponse wraps response body. |  -  |
@@ -29663,14 +26727,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.target_create_azure import TargetCreateAzure
-from akeyless.models.target_create_output import TargetCreateOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -29679,23 +26741,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     target_create_azure = akeyless.TargetCreateAzure() # TargetCreateAzure | 
 
     try:
         api_response = api_instance.target_create_azure(target_create_azure)
-        print("The response of V2Api->target_create_azure:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->target_create_azure: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -29715,7 +26773,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | targetCreateAzureResponse wraps response body. |  -  |
@@ -29730,14 +26787,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.target_create_db import TargetCreateDB
-from akeyless.models.target_create_output import TargetCreateOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -29746,23 +26801,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     target_create_db = akeyless.TargetCreateDB() # TargetCreateDB | 
 
     try:
         api_response = api_instance.target_create_db(target_create_db)
-        print("The response of V2Api->target_create_db:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->target_create_db: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -29782,7 +26833,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | targetCreateDBResponse wraps response body. |  -  |
@@ -29797,14 +26847,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.target_create_dockerhub import TargetCreateDockerhub
-from akeyless.models.target_create_output import TargetCreateOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -29813,23 +26861,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     target_create_dockerhub = akeyless.TargetCreateDockerhub() # TargetCreateDockerhub | 
 
     try:
         api_response = api_instance.target_create_dockerhub(target_create_dockerhub)
-        print("The response of V2Api->target_create_dockerhub:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->target_create_dockerhub: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -29849,7 +26893,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | targetCreateDockerhubResponse wraps response body. |  -  |
@@ -29864,14 +26907,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.target_create_eks import TargetCreateEks
-from akeyless.models.target_create_output import TargetCreateOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -29880,23 +26921,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     target_create_eks = akeyless.TargetCreateEks() # TargetCreateEks | 
 
     try:
         api_response = api_instance.target_create_eks(target_create_eks)
-        print("The response of V2Api->target_create_eks:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->target_create_eks: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -29916,7 +26953,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | targetCreateEksResponse wraps response body. |  -  |
@@ -29931,14 +26967,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.target_create_gcp import TargetCreateGcp
-from akeyless.models.target_create_output import TargetCreateOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -29947,23 +26981,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     target_create_gcp = akeyless.TargetCreateGcp() # TargetCreateGcp | 
 
     try:
         api_response = api_instance.target_create_gcp(target_create_gcp)
-        print("The response of V2Api->target_create_gcp:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->target_create_gcp: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -29983,7 +27013,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | targetCreateGcpResponse wraps response body. |  -  |
@@ -29998,14 +27027,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.target_create_github import TargetCreateGithub
-from akeyless.models.target_create_output import TargetCreateOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -30014,23 +27041,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     target_create_github = akeyless.TargetCreateGithub() # TargetCreateGithub | 
 
     try:
         api_response = api_instance.target_create_github(target_create_github)
-        print("The response of V2Api->target_create_github:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->target_create_github: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -30050,7 +27073,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | targetCreateGithubResponse wraps response body. |  -  |
@@ -30065,14 +27087,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.target_create_gitlab import TargetCreateGitlab
-from akeyless.models.target_create_output import TargetCreateOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -30081,23 +27101,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     target_create_gitlab = akeyless.TargetCreateGitlab() # TargetCreateGitlab | 
 
     try:
         api_response = api_instance.target_create_gitlab(target_create_gitlab)
-        print("The response of V2Api->target_create_gitlab:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->target_create_gitlab: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -30117,7 +27133,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | targetCreateGitlabResponse wraps response body. |  -  |
@@ -30132,14 +27147,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.target_create_gke import TargetCreateGke
-from akeyless.models.target_create_output import TargetCreateOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -30148,23 +27161,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     target_create_gke = akeyless.TargetCreateGke() # TargetCreateGke | 
 
     try:
         api_response = api_instance.target_create_gke(target_create_gke)
-        print("The response of V2Api->target_create_gke:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->target_create_gke: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -30184,7 +27193,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | targetCreateGkeResponse wraps response body. |  -  |
@@ -30199,14 +27207,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.target_create_global_sign import TargetCreateGlobalSign
-from akeyless.models.target_create_output import TargetCreateOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -30215,23 +27221,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     target_create_global_sign = akeyless.TargetCreateGlobalSign() # TargetCreateGlobalSign | 
 
     try:
         api_response = api_instance.target_create_global_sign(target_create_global_sign)
-        print("The response of V2Api->target_create_global_sign:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->target_create_global_sign: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -30251,7 +27253,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | targetCreateGlobalSignResponse wraps response body. |  -  |
@@ -30266,14 +27267,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.target_create_global_sign_atlas import TargetCreateGlobalSignAtlas
-from akeyless.models.target_create_output import TargetCreateOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -30282,23 +27281,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     target_create_global_sign_atlas = akeyless.TargetCreateGlobalSignAtlas() # TargetCreateGlobalSignAtlas | 
 
     try:
         api_response = api_instance.target_create_global_sign_atlas(target_create_global_sign_atlas)
-        print("The response of V2Api->target_create_global_sign_atlas:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->target_create_global_sign_atlas: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -30318,7 +27313,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | targetCreateGlobalSignAtlasResponse wraps response body. |  -  |
@@ -30333,14 +27327,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.target_create_godaddy import TargetCreateGodaddy
-from akeyless.models.target_create_output import TargetCreateOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -30349,23 +27341,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     target_create_godaddy = akeyless.TargetCreateGodaddy() # TargetCreateGodaddy | 
 
     try:
         api_response = api_instance.target_create_godaddy(target_create_godaddy)
-        print("The response of V2Api->target_create_godaddy:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->target_create_godaddy: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -30385,7 +27373,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | targetCreateGodaddyResponse wraps response body. |  -  |
@@ -30400,14 +27387,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.target_create_hashi_vault import TargetCreateHashiVault
-from akeyless.models.target_create_output import TargetCreateOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -30416,23 +27401,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     target_create_hashi_vault = akeyless.TargetCreateHashiVault() # TargetCreateHashiVault | 
 
     try:
         api_response = api_instance.target_create_hashi_vault(target_create_hashi_vault)
-        print("The response of V2Api->target_create_hashi_vault:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->target_create_hashi_vault: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -30452,7 +27433,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | targetCreateHashiVaultResponse wraps response body. |  -  |
@@ -30467,14 +27447,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.target_create_k8s import TargetCreateK8s
-from akeyless.models.target_create_output import TargetCreateOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -30483,23 +27461,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     target_create_k8s = akeyless.TargetCreateK8s() # TargetCreateK8s | 
 
     try:
         api_response = api_instance.target_create_k8s(target_create_k8s)
-        print("The response of V2Api->target_create_k8s:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->target_create_k8s: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -30519,7 +27493,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | targetCreateK8sResponse wraps response body. |  -  |
@@ -30534,14 +27507,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.target_create_ldap import TargetCreateLdap
-from akeyless.models.target_create_output import TargetCreateOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -30550,23 +27521,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     target_create_ldap = akeyless.TargetCreateLdap() # TargetCreateLdap | 
 
     try:
         api_response = api_instance.target_create_ldap(target_create_ldap)
-        print("The response of V2Api->target_create_ldap:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->target_create_ldap: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -30586,7 +27553,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | targetCreateLdapResponse wraps response body. |  -  |
@@ -30601,14 +27567,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.target_create_linked import TargetCreateLinked
-from akeyless.models.target_create_output import TargetCreateOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -30617,23 +27581,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     target_create_linked = akeyless.TargetCreateLinked() # TargetCreateLinked | 
 
     try:
         api_response = api_instance.target_create_linked(target_create_linked)
-        print("The response of V2Api->target_create_linked:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->target_create_linked: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -30653,7 +27613,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | targetCreateLinkedResponse wraps response body. |  -  |
@@ -30668,14 +27627,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.target_create_output import TargetCreateOutput
-from akeyless.models.target_create_ping import TargetCreatePing
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -30684,23 +27641,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     target_create_ping = akeyless.TargetCreatePing() # TargetCreatePing | 
 
     try:
         api_response = api_instance.target_create_ping(target_create_ping)
-        print("The response of V2Api->target_create_ping:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->target_create_ping: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -30720,7 +27673,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | targetCreatePingResponse wraps response body. |  -  |
@@ -30735,14 +27687,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.target_create_output import TargetCreateOutput
-from akeyless.models.target_create_rabbit_mq import TargetCreateRabbitMq
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -30751,23 +27701,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     target_create_rabbit_mq = akeyless.TargetCreateRabbitMq() # TargetCreateRabbitMq | 
 
     try:
         api_response = api_instance.target_create_rabbit_mq(target_create_rabbit_mq)
-        print("The response of V2Api->target_create_rabbit_mq:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->target_create_rabbit_mq: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -30787,7 +27733,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | targetCreateRabbitMqResponse wraps response body. |  -  |
@@ -30802,14 +27747,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.target_create_output import TargetCreateOutput
-from akeyless.models.target_create_salesforce import TargetCreateSalesforce
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -30818,23 +27761,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     target_create_salesforce = akeyless.TargetCreateSalesforce() # TargetCreateSalesforce | 
 
     try:
         api_response = api_instance.target_create_salesforce(target_create_salesforce)
-        print("The response of V2Api->target_create_salesforce:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->target_create_salesforce: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -30854,7 +27793,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | targetCreateSalesforceResponse wraps response body. |  -  |
@@ -30869,14 +27807,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.target_create_output import TargetCreateOutput
-from akeyless.models.target_create_sectigo import TargetCreateSectigo
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -30885,23 +27821,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     target_create_sectigo = akeyless.TargetCreateSectigo() # TargetCreateSectigo | 
 
     try:
         api_response = api_instance.target_create_sectigo(target_create_sectigo)
-        print("The response of V2Api->target_create_sectigo:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->target_create_sectigo: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -30921,7 +27853,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | targetCreateSectigoResponse wraps response body. |  -  |
@@ -30936,14 +27867,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.target_create_output import TargetCreateOutput
-from akeyless.models.target_create_ssh import TargetCreateSsh
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -30952,23 +27881,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     target_create_ssh = akeyless.TargetCreateSsh() # TargetCreateSsh | 
 
     try:
         api_response = api_instance.target_create_ssh(target_create_ssh)
-        print("The response of V2Api->target_create_ssh:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->target_create_ssh: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -30988,7 +27913,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | targetCreateSshResponse wraps response body. |  -  |
@@ -31003,14 +27927,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.target_create_output import TargetCreateOutput
-from akeyless.models.target_create_web import TargetCreateWeb
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -31019,23 +27941,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     target_create_web = akeyless.TargetCreateWeb() # TargetCreateWeb | 
 
     try:
         api_response = api_instance.target_create_web(target_create_web)
-        print("The response of V2Api->target_create_web:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->target_create_web: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -31055,7 +27973,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | targetCreateWebResponse wraps response body. |  -  |
@@ -31070,14 +27987,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.target_create_output import TargetCreateOutput
-from akeyless.models.target_create_windows import TargetCreateWindows
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -31086,23 +28001,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     target_create_windows = akeyless.TargetCreateWindows() # TargetCreateWindows | 
 
     try:
         api_response = api_instance.target_create_windows(target_create_windows)
-        print("The response of V2Api->target_create_windows:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->target_create_windows: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -31122,7 +28033,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | targetCreateWindowsResponse wraps response body. |  -  |
@@ -31137,14 +28047,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.target_create_output import TargetCreateOutput
-from akeyless.models.target_create_zero_ssl import TargetCreateZeroSSL
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -31153,23 +28061,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     target_create_zero_ssl = akeyless.TargetCreateZeroSSL() # TargetCreateZeroSSL | 
 
     try:
         api_response = api_instance.target_create_zero_ssl(target_create_zero_ssl)
-        print("The response of V2Api->target_create_zero_ssl:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->target_create_zero_ssl: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -31189,7 +28093,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | targetCreateZeroSSLResponse wraps response body. |  -  |
@@ -31204,13 +28107,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.target_delete import TargetDelete
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -31219,23 +28121,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     target_delete = akeyless.TargetDelete() # TargetDelete | 
 
     try:
         api_response = api_instance.target_delete(target_delete)
-        print("The response of V2Api->target_delete:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->target_delete: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -31255,7 +28153,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | targetDeleteResponse wraps response body. |  -  |
@@ -31270,14 +28167,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.target import Target
-from akeyless.models.target_get import TargetGet
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -31286,23 +28181,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     target_get = akeyless.TargetGet() # TargetGet | 
 
     try:
         api_response = api_instance.target_get(target_get)
-        print("The response of V2Api->target_get:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->target_get: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -31322,7 +28213,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | targetGetResponse wraps response body. |  -  |
@@ -31337,14 +28227,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.get_target_details_output import GetTargetDetailsOutput
-from akeyless.models.target_get_details import TargetGetDetails
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -31353,23 +28241,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     target_get_details = akeyless.TargetGetDetails() # TargetGetDetails | 
 
     try:
         api_response = api_instance.target_get_details(target_get_details)
-        print("The response of V2Api->target_get_details:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->target_get_details: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -31389,7 +28273,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | targetGetDetailsResponse wraps response body. |  -  |
@@ -31404,14 +28287,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.list_targets_output import ListTargetsOutput
-from akeyless.models.target_list import TargetList
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -31420,23 +28301,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     target_list = akeyless.TargetList() # TargetList | 
 
     try:
         api_response = api_instance.target_list(target_list)
-        print("The response of V2Api->target_list:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->target_list: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -31456,7 +28333,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | targetListResponse wraps response body. |  -  |
@@ -31471,14 +28347,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.target_update_artifactory import TargetUpdateArtifactory
-from akeyless.models.target_update_output import TargetUpdateOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -31487,23 +28361,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     target_update_artifactory = akeyless.TargetUpdateArtifactory() # TargetUpdateArtifactory | 
 
     try:
         api_response = api_instance.target_update_artifactory(target_update_artifactory)
-        print("The response of V2Api->target_update_artifactory:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->target_update_artifactory: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -31523,7 +28393,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | targetUpdateArtifactoryResponse wraps response body. |  -  |
@@ -31538,14 +28407,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.target_update_aws import TargetUpdateAws
-from akeyless.models.target_update_output import TargetUpdateOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -31554,23 +28421,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     target_update_aws = akeyless.TargetUpdateAws() # TargetUpdateAws | 
 
     try:
         api_response = api_instance.target_update_aws(target_update_aws)
-        print("The response of V2Api->target_update_aws:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->target_update_aws: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -31590,7 +28453,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | targetUpdateAwsResponse wraps response body. |  -  |
@@ -31605,14 +28467,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.target_update_azure import TargetUpdateAzure
-from akeyless.models.target_update_output import TargetUpdateOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -31621,23 +28481,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     target_update_azure = akeyless.TargetUpdateAzure() # TargetUpdateAzure | 
 
     try:
         api_response = api_instance.target_update_azure(target_update_azure)
-        print("The response of V2Api->target_update_azure:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->target_update_azure: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -31657,7 +28513,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | targetUpdateAzureResponse wraps response body. |  -  |
@@ -31672,14 +28527,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.target_update_db import TargetUpdateDB
-from akeyless.models.target_update_output import TargetUpdateOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -31688,23 +28541,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     target_update_db = akeyless.TargetUpdateDB() # TargetUpdateDB | 
 
     try:
         api_response = api_instance.target_update_db(target_update_db)
-        print("The response of V2Api->target_update_db:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->target_update_db: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -31724,7 +28573,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | targetUpdateDBResponse wraps response body. |  -  |
@@ -31739,14 +28587,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.target_update_dockerhub import TargetUpdateDockerhub
-from akeyless.models.target_update_output import TargetUpdateOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -31755,23 +28601,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     target_update_dockerhub = akeyless.TargetUpdateDockerhub() # TargetUpdateDockerhub | 
 
     try:
         api_response = api_instance.target_update_dockerhub(target_update_dockerhub)
-        print("The response of V2Api->target_update_dockerhub:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->target_update_dockerhub: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -31791,7 +28633,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | targetUpdateDockerhubResponse wraps response body. |  -  |
@@ -31806,14 +28647,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.target_update_eks import TargetUpdateEks
-from akeyless.models.target_update_output import TargetUpdateOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -31822,23 +28661,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     target_update_eks = akeyless.TargetUpdateEks() # TargetUpdateEks | 
 
     try:
         api_response = api_instance.target_update_eks(target_update_eks)
-        print("The response of V2Api->target_update_eks:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->target_update_eks: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -31858,7 +28693,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | targetUpdateEksResponse wraps response body. |  -  |
@@ -31873,14 +28707,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.target_update_gcp import TargetUpdateGcp
-from akeyless.models.target_update_output import TargetUpdateOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -31889,23 +28721,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     target_update_gcp = akeyless.TargetUpdateGcp() # TargetUpdateGcp | 
 
     try:
         api_response = api_instance.target_update_gcp(target_update_gcp)
-        print("The response of V2Api->target_update_gcp:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->target_update_gcp: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -31925,7 +28753,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | targetUpdateGcpResponse wraps response body. |  -  |
@@ -31940,14 +28767,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.target_update_github import TargetUpdateGithub
-from akeyless.models.target_update_output import TargetUpdateOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -31956,23 +28781,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     target_update_github = akeyless.TargetUpdateGithub() # TargetUpdateGithub | 
 
     try:
         api_response = api_instance.target_update_github(target_update_github)
-        print("The response of V2Api->target_update_github:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->target_update_github: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -31992,7 +28813,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | targetUpdateGithubResponse wraps response body. |  -  |
@@ -32007,14 +28827,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.target_update_gitlab import TargetUpdateGitlab
-from akeyless.models.target_update_output import TargetUpdateOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -32023,23 +28841,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     target_update_gitlab = akeyless.TargetUpdateGitlab() # TargetUpdateGitlab | 
 
     try:
         api_response = api_instance.target_update_gitlab(target_update_gitlab)
-        print("The response of V2Api->target_update_gitlab:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->target_update_gitlab: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -32059,7 +28873,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | targetUpdateGitlabResponse wraps response body. |  -  |
@@ -32074,14 +28887,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.target_update_gke import TargetUpdateGke
-from akeyless.models.target_update_output import TargetUpdateOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -32090,23 +28901,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     target_update_gke = akeyless.TargetUpdateGke() # TargetUpdateGke | 
 
     try:
         api_response = api_instance.target_update_gke(target_update_gke)
-        print("The response of V2Api->target_update_gke:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->target_update_gke: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -32126,7 +28933,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | targetUpdateGkeResponse wraps response body. |  -  |
@@ -32141,14 +28947,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.target_update_global_sign import TargetUpdateGlobalSign
-from akeyless.models.target_update_output import TargetUpdateOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -32157,23 +28961,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     target_update_global_sign = akeyless.TargetUpdateGlobalSign() # TargetUpdateGlobalSign | 
 
     try:
         api_response = api_instance.target_update_global_sign(target_update_global_sign)
-        print("The response of V2Api->target_update_global_sign:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->target_update_global_sign: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -32193,7 +28993,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | targetUpdateGlobalSignResponse wraps response body. |  -  |
@@ -32208,14 +29007,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.target_update_global_sign_atlas import TargetUpdateGlobalSignAtlas
-from akeyless.models.target_update_output import TargetUpdateOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -32224,23 +29021,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     target_update_global_sign_atlas = akeyless.TargetUpdateGlobalSignAtlas() # TargetUpdateGlobalSignAtlas | 
 
     try:
         api_response = api_instance.target_update_global_sign_atlas(target_update_global_sign_atlas)
-        print("The response of V2Api->target_update_global_sign_atlas:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->target_update_global_sign_atlas: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -32260,7 +29053,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | targetUpdateGlobalSignAtlasResponse wraps response body. |  -  |
@@ -32275,14 +29067,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.target_update_godaddy import TargetUpdateGodaddy
-from akeyless.models.target_update_output import TargetUpdateOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -32291,23 +29081,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     target_update_godaddy = akeyless.TargetUpdateGodaddy() # TargetUpdateGodaddy | 
 
     try:
         api_response = api_instance.target_update_godaddy(target_update_godaddy)
-        print("The response of V2Api->target_update_godaddy:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->target_update_godaddy: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -32327,7 +29113,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | targetUpdateGodaddyResponse wraps response body. |  -  |
@@ -32342,14 +29127,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.target_update_hashi_vault import TargetUpdateHashiVault
-from akeyless.models.target_update_output import TargetUpdateOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -32358,23 +29141,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     target_update_hashi_vault = akeyless.TargetUpdateHashiVault() # TargetUpdateHashiVault | 
 
     try:
         api_response = api_instance.target_update_hashi_vault(target_update_hashi_vault)
-        print("The response of V2Api->target_update_hashi_vault:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->target_update_hashi_vault: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -32394,7 +29173,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | targetUpdateHashiVaultResponse wraps response body. |  -  |
@@ -32409,14 +29187,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.target_update_k8s import TargetUpdateK8s
-from akeyless.models.target_update_output import TargetUpdateOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -32425,23 +29201,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     target_update_k8s = akeyless.TargetUpdateK8s() # TargetUpdateK8s | 
 
     try:
         api_response = api_instance.target_update_k8s(target_update_k8s)
-        print("The response of V2Api->target_update_k8s:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->target_update_k8s: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -32461,7 +29233,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | targetUpdateK8sResponse wraps response body. |  -  |
@@ -32476,14 +29247,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.target_update_ldap import TargetUpdateLdap
-from akeyless.models.target_update_output import TargetUpdateOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -32492,23 +29261,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     target_update_ldap = akeyless.TargetUpdateLdap() # TargetUpdateLdap | 
 
     try:
         api_response = api_instance.target_update_ldap(target_update_ldap)
-        print("The response of V2Api->target_update_ldap:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->target_update_ldap: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -32528,7 +29293,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | targetUpdateLdapResponse wraps response body. |  -  |
@@ -32543,14 +29307,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.target_update_linked import TargetUpdateLinked
-from akeyless.models.target_update_output import TargetUpdateOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -32559,23 +29321,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     target_update_linked = akeyless.TargetUpdateLinked() # TargetUpdateLinked | 
 
     try:
         api_response = api_instance.target_update_linked(target_update_linked)
-        print("The response of V2Api->target_update_linked:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->target_update_linked: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -32595,7 +29353,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | targetUpdateLinkedResponse wraps response body. |  -  |
@@ -32610,14 +29367,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.target_update_output import TargetUpdateOutput
-from akeyless.models.target_update_ping import TargetUpdatePing
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -32626,23 +29381,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     target_update_ping = akeyless.TargetUpdatePing() # TargetUpdatePing | 
 
     try:
         api_response = api_instance.target_update_ping(target_update_ping)
-        print("The response of V2Api->target_update_ping:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->target_update_ping: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -32662,7 +29413,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | targetUpdatePingResponse wraps response body. |  -  |
@@ -32677,14 +29427,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.target_update_output import TargetUpdateOutput
-from akeyless.models.target_update_rabbit_mq import TargetUpdateRabbitMq
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -32693,23 +29441,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     target_update_rabbit_mq = akeyless.TargetUpdateRabbitMq() # TargetUpdateRabbitMq | 
 
     try:
         api_response = api_instance.target_update_rabbit_mq(target_update_rabbit_mq)
-        print("The response of V2Api->target_update_rabbit_mq:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->target_update_rabbit_mq: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -32729,7 +29473,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | targetUpdateRabbitMqResponse wraps response body. |  -  |
@@ -32744,14 +29487,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.target_update_output import TargetUpdateOutput
-from akeyless.models.target_update_salesforce import TargetUpdateSalesforce
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -32760,23 +29501,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     target_update_salesforce = akeyless.TargetUpdateSalesforce() # TargetUpdateSalesforce | 
 
     try:
         api_response = api_instance.target_update_salesforce(target_update_salesforce)
-        print("The response of V2Api->target_update_salesforce:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->target_update_salesforce: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -32796,7 +29533,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | targetUpdateSalesforceResponse wraps response body. |  -  |
@@ -32811,14 +29547,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.target_update_output import TargetUpdateOutput
-from akeyless.models.target_update_sectigo import TargetUpdateSectigo
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -32827,23 +29561,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     target_update_sectigo = akeyless.TargetUpdateSectigo() # TargetUpdateSectigo | 
 
     try:
         api_response = api_instance.target_update_sectigo(target_update_sectigo)
-        print("The response of V2Api->target_update_sectigo:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->target_update_sectigo: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -32863,7 +29593,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | targetUpdateSectigoResponse wraps response body. |  -  |
@@ -32878,14 +29607,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.target_update_output import TargetUpdateOutput
-from akeyless.models.target_update_ssh import TargetUpdateSsh
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -32894,23 +29621,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     target_update_ssh = akeyless.TargetUpdateSsh() # TargetUpdateSsh | 
 
     try:
         api_response = api_instance.target_update_ssh(target_update_ssh)
-        print("The response of V2Api->target_update_ssh:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->target_update_ssh: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -32930,7 +29653,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | targetUpdateSshResponse wraps response body. |  -  |
@@ -32945,14 +29667,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.target_update_output import TargetUpdateOutput
-from akeyless.models.target_update_web import TargetUpdateWeb
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -32961,23 +29681,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     target_update_web = akeyless.TargetUpdateWeb() # TargetUpdateWeb | 
 
     try:
         api_response = api_instance.target_update_web(target_update_web)
-        print("The response of V2Api->target_update_web:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->target_update_web: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -32997,7 +29713,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | targetUpdateWebResponse wraps response body. |  -  |
@@ -33012,14 +29727,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.target_update_output import TargetUpdateOutput
-from akeyless.models.target_update_windows import TargetUpdateWindows
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -33028,23 +29741,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     target_update_windows = akeyless.TargetUpdateWindows() # TargetUpdateWindows | 
 
     try:
         api_response = api_instance.target_update_windows(target_update_windows)
-        print("The response of V2Api->target_update_windows:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->target_update_windows: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -33064,7 +29773,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | targetUpdateWindowsResponse wraps response body. |  -  |
@@ -33079,14 +29787,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.target_update_output import TargetUpdateOutput
-from akeyless.models.target_update_zero_ssl import TargetUpdateZeroSSL
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -33095,23 +29801,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     target_update_zero_ssl = akeyless.TargetUpdateZeroSSL() # TargetUpdateZeroSSL | 
 
     try:
         api_response = api_instance.target_update_zero_ssl(target_update_zero_ssl)
-        print("The response of V2Api->target_update_zero_ssl:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->target_update_zero_ssl: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -33131,7 +29833,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | targetUpdateZeroSSLResponse wraps response body. |  -  |
@@ -33146,14 +29847,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.tokenize import Tokenize
-from akeyless.models.tokenize_output import TokenizeOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -33162,23 +29861,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     tokenize = akeyless.Tokenize() # Tokenize | 
 
     try:
         api_response = api_instance.tokenize(tokenize)
-        print("The response of V2Api->tokenize:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->tokenize: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -33198,7 +29893,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | tokenizeResponse wraps response body. |  -  |
@@ -33213,14 +29907,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.batch_tokenization_request_line import BatchTokenizationRequestLine
-from akeyless.models.tokenize_output import TokenizeOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -33229,27 +29921,23 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
-    batch_tokenization_request_line = [akeyless.BatchTokenizationRequestLine()] # List[BatchTokenizationRequestLine] | 
+    batch_tokenization_request_line = [akeyless.BatchTokenizationRequestLine()] # list[BatchTokenizationRequestLine] | 
 
     try:
         api_response = api_instance.tokenize_batch(batch_tokenization_request_line)
-        print("The response of V2Api->tokenize_batch:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->tokenize_batch: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **batch_tokenization_request_line** | [**List[BatchTokenizationRequestLine]**](BatchTokenizationRequestLine.md)|  | 
+ **batch_tokenization_request_line** | [**list[BatchTokenizationRequestLine]**](BatchTokenizationRequestLine.md)|  | 
 
 ### Return type
 
@@ -33265,7 +29953,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | tokenizeResponse wraps response body. |  -  |
@@ -33280,14 +29967,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.uid_create_child_token import UidCreateChildToken
-from akeyless.models.uid_create_child_token_output import UidCreateChildTokenOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -33296,23 +29981,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     uid_create_child_token = akeyless.UidCreateChildToken() # UidCreateChildToken | 
 
     try:
         api_response = api_instance.uid_create_child_token(uid_create_child_token)
-        print("The response of V2Api->uid_create_child_token:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->uid_create_child_token: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -33332,7 +30013,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | uidCreateChildTokenResponse wraps response body. |  -  |
@@ -33347,14 +30027,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.uid_generate_token import UidGenerateToken
-from akeyless.models.uid_generate_token_output import UidGenerateTokenOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -33363,23 +30041,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     uid_generate_token = akeyless.UidGenerateToken() # UidGenerateToken | 
 
     try:
         api_response = api_instance.uid_generate_token(uid_generate_token)
-        print("The response of V2Api->uid_generate_token:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->uid_generate_token: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -33399,7 +30073,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | uidGenerateTokenResponse wraps response body. |  -  |
@@ -33414,14 +30087,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.uid_list_children import UidListChildren
-from akeyless.models.universal_identity_details import UniversalIdentityDetails
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -33430,23 +30101,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     uid_list_children = akeyless.UidListChildren() # UidListChildren | 
 
     try:
         api_response = api_instance.uid_list_children(uid_list_children)
-        print("The response of V2Api->uid_list_children:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->uid_list_children: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -33466,7 +30133,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | uidListChildrenResponse wraps response body. |  -  |
@@ -33481,13 +30147,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.uid_revoke_token import UidRevokeToken
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -33496,23 +30161,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     uid_revoke_token = akeyless.UidRevokeToken() # UidRevokeToken | 
 
     try:
         api_response = api_instance.uid_revoke_token(uid_revoke_token)
-        print("The response of V2Api->uid_revoke_token:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->uid_revoke_token: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -33532,7 +30193,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | uidRevokeTokenResponse wraps response body. |  -  |
@@ -33547,14 +30207,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.uid_rotate_token import UidRotateToken
-from akeyless.models.uid_rotate_token_output import UidRotateTokenOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -33563,23 +30221,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     uid_rotate_token = akeyless.UidRotateToken() # UidRotateToken | 
 
     try:
         api_response = api_instance.uid_rotate_token(uid_rotate_token)
-        print("The response of V2Api->uid_rotate_token:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->uid_rotate_token: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -33599,7 +30253,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | uidRotateTokenResponse wraps response body. |  -  |
@@ -33614,14 +30267,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.unwrap_token import UnwrapToken
-from akeyless.models.unwrap_token_output import UnwrapTokenOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -33630,23 +30281,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     unwrap_token = akeyless.UnwrapToken() # UnwrapToken | 
 
     try:
         api_response = api_instance.unwrap_token(unwrap_token)
-        print("The response of V2Api->unwrap_token:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->unwrap_token: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -33666,7 +30313,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | unwrapTokenResponse wraps response body. |  -  |
@@ -33681,14 +30327,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.update_account_settings import UpdateAccountSettings
-from akeyless.models.update_account_settings_output import UpdateAccountSettingsOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -33697,23 +30341,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     update_account_settings = akeyless.UpdateAccountSettings() # UpdateAccountSettings | 
 
     try:
         api_response = api_instance.update_account_settings(update_account_settings)
-        print("The response of V2Api->update_account_settings:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->update_account_settings: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -33733,7 +30373,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | updateAccountSettingsResponse wraps response body. |  -  |
@@ -33748,14 +30387,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.update_artifactory_target import UpdateArtifactoryTarget
-from akeyless.models.update_artifactory_target_output import UpdateArtifactoryTargetOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -33764,23 +30401,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     update_artifactory_target = akeyless.UpdateArtifactoryTarget() # UpdateArtifactoryTarget | 
 
     try:
         api_response = api_instance.update_artifactory_target(update_artifactory_target)
-        print("The response of V2Api->update_artifactory_target:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->update_artifactory_target: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -33800,7 +30433,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | updateArtifactoryTargetResponse wraps response body. |  -  |
@@ -33815,13 +30447,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.update_assoc import UpdateAssoc
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -33830,23 +30461,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     update_assoc = akeyless.UpdateAssoc() # UpdateAssoc | 
 
     try:
         api_response = api_instance.update_assoc(update_assoc)
-        print("The response of V2Api->update_assoc:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->update_assoc: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -33866,7 +30493,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | updateAssocResponse wraps response body. |  -  |
@@ -33881,14 +30507,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.update_auth_method import UpdateAuthMethod
-from akeyless.models.update_auth_method_output import UpdateAuthMethodOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -33897,23 +30521,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     update_auth_method = akeyless.UpdateAuthMethod() # UpdateAuthMethod | 
 
     try:
         api_response = api_instance.update_auth_method(update_auth_method)
-        print("The response of V2Api->update_auth_method:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->update_auth_method: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -33933,7 +30553,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | updateAuthMethodResponse wraps response body. |  -  |
@@ -33948,13 +30567,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.update_auth_method_awsiam import UpdateAuthMethodAWSIAM
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -33963,23 +30581,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     update_auth_method_awsiam = akeyless.UpdateAuthMethodAWSIAM() # UpdateAuthMethodAWSIAM | 
 
     try:
         api_response = api_instance.update_auth_method_awsiam(update_auth_method_awsiam)
-        print("The response of V2Api->update_auth_method_awsiam:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->update_auth_method_awsiam: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -33999,7 +30613,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | updateAuthMethodAWSIAMResponse wraps response body. |  -  |
@@ -34014,13 +30627,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.update_auth_method_azure_ad import UpdateAuthMethodAzureAD
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -34029,23 +30641,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     update_auth_method_azure_ad = akeyless.UpdateAuthMethodAzureAD() # UpdateAuthMethodAzureAD | 
 
     try:
         api_response = api_instance.update_auth_method_azure_ad(update_auth_method_azure_ad)
-        print("The response of V2Api->update_auth_method_azure_ad:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->update_auth_method_azure_ad: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -34065,7 +30673,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | updateAuthMethodAzureADResponse wraps response body. |  -  |
@@ -34080,14 +30687,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.update_auth_method_cert import UpdateAuthMethodCert
-from akeyless.models.update_auth_method_cert_output import UpdateAuthMethodCertOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -34096,23 +30701,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     update_auth_method_cert = akeyless.UpdateAuthMethodCert() # UpdateAuthMethodCert | 
 
     try:
         api_response = api_instance.update_auth_method_cert(update_auth_method_cert)
-        print("The response of V2Api->update_auth_method_cert:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->update_auth_method_cert: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -34132,7 +30733,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | updateAuthMethodCertResponse wraps response body. |  -  |
@@ -34147,13 +30747,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.update_auth_method_gcp import UpdateAuthMethodGCP
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -34162,23 +30761,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     update_auth_method_gcp = akeyless.UpdateAuthMethodGCP() # UpdateAuthMethodGCP | 
 
     try:
         api_response = api_instance.update_auth_method_gcp(update_auth_method_gcp)
-        print("The response of V2Api->update_auth_method_gcp:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->update_auth_method_gcp: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -34198,7 +30793,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | updateAuthMethodGCPResponse wraps response body. |  -  |
@@ -34213,14 +30807,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.update_auth_method_k8_s import UpdateAuthMethodK8S
-from akeyless.models.update_auth_method_k8_s_output import UpdateAuthMethodK8SOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -34229,23 +30821,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     update_auth_method_k8_s = akeyless.UpdateAuthMethodK8S() # UpdateAuthMethodK8S | 
 
     try:
         api_response = api_instance.update_auth_method_k8_s(update_auth_method_k8_s)
-        print("The response of V2Api->update_auth_method_k8_s:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->update_auth_method_k8_s: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -34265,7 +30853,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | updateAuthMethodK8SResponse wraps response body. |  -  |
@@ -34280,14 +30867,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.update_auth_method_ldap import UpdateAuthMethodLDAP
-from akeyless.models.update_auth_method_ldap_output import UpdateAuthMethodLDAPOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -34296,23 +30881,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     update_auth_method_ldap = akeyless.UpdateAuthMethodLDAP() # UpdateAuthMethodLDAP | 
 
     try:
         api_response = api_instance.update_auth_method_ldap(update_auth_method_ldap)
-        print("The response of V2Api->update_auth_method_ldap:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->update_auth_method_ldap: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -34332,7 +30913,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | updateAuthMethodLDAPResponse wraps response body. |  -  |
@@ -34347,13 +30927,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.update_auth_method_o_auth2 import UpdateAuthMethodOAuth2
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -34362,23 +30941,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     update_auth_method_o_auth2 = akeyless.UpdateAuthMethodOAuth2() # UpdateAuthMethodOAuth2 | 
 
     try:
         api_response = api_instance.update_auth_method_o_auth2(update_auth_method_o_auth2)
-        print("The response of V2Api->update_auth_method_o_auth2:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->update_auth_method_o_auth2: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -34398,7 +30973,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | updateAuthMethodOAuth2Response wraps response body. |  -  |
@@ -34413,14 +30987,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.update_auth_method_oci import UpdateAuthMethodOCI
-from akeyless.models.update_auth_method_oci_output import UpdateAuthMethodOCIOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -34429,23 +31001,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     update_auth_method_oci = akeyless.UpdateAuthMethodOCI() # UpdateAuthMethodOCI | 
 
     try:
         api_response = api_instance.update_auth_method_oci(update_auth_method_oci)
-        print("The response of V2Api->update_auth_method_oci:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->update_auth_method_oci: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -34465,7 +31033,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | updateAuthMethodOCIResponse wraps response body. |  -  |
@@ -34480,13 +31047,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.update_auth_method_oidc import UpdateAuthMethodOIDC
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -34495,23 +31061,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     update_auth_method_oidc = akeyless.UpdateAuthMethodOIDC() # UpdateAuthMethodOIDC | 
 
     try:
         api_response = api_instance.update_auth_method_oidc(update_auth_method_oidc)
-        print("The response of V2Api->update_auth_method_oidc:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->update_auth_method_oidc: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -34531,7 +31093,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | updateAuthMethodOIDCResponse wraps response body. |  -  |
@@ -34546,13 +31107,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.update_auth_method_saml import UpdateAuthMethodSAML
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -34561,23 +31121,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     update_auth_method_saml = akeyless.UpdateAuthMethodSAML() # UpdateAuthMethodSAML | 
 
     try:
         api_response = api_instance.update_auth_method_saml(update_auth_method_saml)
-        print("The response of V2Api->update_auth_method_saml:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->update_auth_method_saml: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -34597,7 +31153,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | updateAuthMethodSAMLResponse wraps response body. |  -  |
@@ -34612,13 +31167,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.update_auth_method_universal_identity import UpdateAuthMethodUniversalIdentity
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -34627,23 +31181,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     update_auth_method_universal_identity = akeyless.UpdateAuthMethodUniversalIdentity() # UpdateAuthMethodUniversalIdentity | 
 
     try:
         api_response = api_instance.update_auth_method_universal_identity(update_auth_method_universal_identity)
-        print("The response of V2Api->update_auth_method_universal_identity:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->update_auth_method_universal_identity: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -34663,7 +31213,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | updateAuthMethodUniversalIdentityResponse wraps response body. |  -  |
@@ -34678,13 +31227,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.update_aws_target import UpdateAWSTarget
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -34693,23 +31241,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     update_aws_target = akeyless.UpdateAWSTarget() # UpdateAWSTarget | 
 
     try:
         api_response = api_instance.update_aws_target(update_aws_target)
-        print("The response of V2Api->update_aws_target:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->update_aws_target: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -34729,7 +31273,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | updateAWSTargetResponse wraps response body. |  -  |
@@ -34744,14 +31287,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.update_aws_target_details import UpdateAWSTargetDetails
-from akeyless.models.update_target_output import UpdateTargetOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -34760,23 +31301,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     update_aws_target_details = akeyless.UpdateAWSTargetDetails() # UpdateAWSTargetDetails | 
 
     try:
         api_response = api_instance.update_aws_target_details(update_aws_target_details)
-        print("The response of V2Api->update_aws_target_details:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->update_aws_target_details: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -34796,7 +31333,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | updateTargetResponse wraps response body. |  -  |
@@ -34811,14 +31347,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.update_azure_target import UpdateAzureTarget
-from akeyless.models.update_azure_target_output import UpdateAzureTargetOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -34827,23 +31361,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     update_azure_target = akeyless.UpdateAzureTarget() # UpdateAzureTarget | 
 
     try:
         api_response = api_instance.update_azure_target(update_azure_target)
-        print("The response of V2Api->update_azure_target:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->update_azure_target: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -34863,7 +31393,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | updateAzureTargetResponse wraps response body. |  -  |
@@ -34878,14 +31407,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.update_certificate_output import UpdateCertificateOutput
-from akeyless.models.update_certificate_value import UpdateCertificateValue
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -34894,23 +31421,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     update_certificate_value = akeyless.UpdateCertificateValue() # UpdateCertificateValue | 
 
     try:
         api_response = api_instance.update_certificate_value(update_certificate_value)
-        print("The response of V2Api->update_certificate_value:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->update_certificate_value: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -34930,7 +31453,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | updateCertificateValueResponse wraps response body. |  -  |
@@ -34945,13 +31467,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.update_classic_key_certificate import UpdateClassicKeyCertificate
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -34960,23 +31481,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     update_classic_key_certificate = akeyless.UpdateClassicKeyCertificate() # UpdateClassicKeyCertificate | 
 
     try:
         api_response = api_instance.update_classic_key_certificate(update_classic_key_certificate)
-        print("The response of V2Api->update_classic_key_certificate:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->update_classic_key_certificate: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -34996,7 +31513,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | UpdateClassicKeyCertificateResponse wraps response body. |  -  |
@@ -35011,14 +31527,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.update_db_target import UpdateDBTarget
-from akeyless.models.update_db_target_output import UpdateDBTargetOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -35027,23 +31541,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     update_db_target = akeyless.UpdateDBTarget() # UpdateDBTarget | 
 
     try:
         api_response = api_instance.update_db_target(update_db_target)
-        print("The response of V2Api->update_db_target:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->update_db_target: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -35063,7 +31573,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | updateDBTargetResponse wraps response body. |  -  |
@@ -35078,14 +31587,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.update_db_target_details import UpdateDBTargetDetails
-from akeyless.models.update_target_output import UpdateTargetOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -35094,23 +31601,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     update_db_target_details = akeyless.UpdateDBTargetDetails() # UpdateDBTargetDetails | 
 
     try:
         api_response = api_instance.update_db_target_details(update_db_target_details)
-        print("The response of V2Api->update_db_target_details:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->update_db_target_details: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -35130,7 +31633,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | updateTargetResponse wraps response body. |  -  |
@@ -35145,14 +31647,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.update_dockerhub_target import UpdateDockerhubTarget
-from akeyless.models.update_dockerhub_target_output import UpdateDockerhubTargetOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -35161,23 +31661,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     update_dockerhub_target = akeyless.UpdateDockerhubTarget() # UpdateDockerhubTarget | 
 
     try:
         api_response = api_instance.update_dockerhub_target(update_dockerhub_target)
-        print("The response of V2Api->update_dockerhub_target:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->update_dockerhub_target: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -35197,7 +31693,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | updateDockerhubTargetResponse wraps response body. |  -  |
@@ -35212,14 +31707,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.update_eks_target import UpdateEKSTarget
-from akeyless.models.update_eks_target_output import UpdateEKSTargetOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -35228,23 +31721,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     update_eks_target = akeyless.UpdateEKSTarget() # UpdateEKSTarget | 
 
     try:
         api_response = api_instance.update_eks_target(update_eks_target)
-        print("The response of V2Api->update_eks_target:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->update_eks_target: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -35264,7 +31753,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | updateEKSTargetResponse wraps response body. |  -  |
@@ -35279,13 +31767,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.update_event_forwarder import UpdateEventForwarder
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -35294,23 +31781,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     update_event_forwarder = akeyless.UpdateEventForwarder() # UpdateEventForwarder | 
 
     try:
         api_response = api_instance.update_event_forwarder(update_event_forwarder)
-        print("The response of V2Api->update_event_forwarder:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->update_event_forwarder: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -35330,7 +31813,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | updateEventForwarderResponse wraps response body. |  -  |
@@ -35345,14 +31827,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.update_gcp_target import UpdateGcpTarget
-from akeyless.models.update_gcp_target_output import UpdateGcpTargetOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -35361,23 +31841,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     update_gcp_target = akeyless.UpdateGcpTarget() # UpdateGcpTarget | 
 
     try:
         api_response = api_instance.update_gcp_target(update_gcp_target)
-        print("The response of V2Api->update_gcp_target:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->update_gcp_target: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -35397,7 +31873,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | updateGcpTargetResponse wraps response body. |  -  |
@@ -35412,14 +31887,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.update_github_target import UpdateGithubTarget
-from akeyless.models.update_github_target_output import UpdateGithubTargetOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -35428,23 +31901,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     update_github_target = akeyless.UpdateGithubTarget() # UpdateGithubTarget | 
 
     try:
         api_response = api_instance.update_github_target(update_github_target)
-        print("The response of V2Api->update_github_target:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->update_github_target: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -35464,7 +31933,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | updateGithubTargetResponse wraps response body. |  -  |
@@ -35479,14 +31947,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.update_gitlab_target import UpdateGitlabTarget
-from akeyless.models.update_gitlab_target_output import UpdateGitlabTargetOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -35495,23 +31961,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     update_gitlab_target = akeyless.UpdateGitlabTarget() # UpdateGitlabTarget | 
 
     try:
         api_response = api_instance.update_gitlab_target(update_gitlab_target)
-        print("The response of V2Api->update_gitlab_target:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->update_gitlab_target: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -35531,7 +31993,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | updateGitlabTargetResponse wraps response body. |  -  |
@@ -35546,14 +32007,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.update_gke_target import UpdateGKETarget
-from akeyless.models.update_gke_target_output import UpdateGKETargetOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -35562,23 +32021,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     update_gke_target = akeyless.UpdateGKETarget() # UpdateGKETarget | 
 
     try:
         api_response = api_instance.update_gke_target(update_gke_target)
-        print("The response of V2Api->update_gke_target:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->update_gke_target: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -35598,7 +32053,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | updateGKETargetResponse wraps response body. |  -  |
@@ -35613,14 +32067,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.update_global_sign_atlas_target import UpdateGlobalSignAtlasTarget
-from akeyless.models.update_global_sign_atlas_target_output import UpdateGlobalSignAtlasTargetOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -35629,23 +32081,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     update_global_sign_atlas_target = akeyless.UpdateGlobalSignAtlasTarget() # UpdateGlobalSignAtlasTarget | 
 
     try:
         api_response = api_instance.update_global_sign_atlas_target(update_global_sign_atlas_target)
-        print("The response of V2Api->update_global_sign_atlas_target:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->update_global_sign_atlas_target: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -35665,7 +32113,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | updateGlobalSignAtlasTargetResponse wraps response body. |  -  |
@@ -35680,14 +32127,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.update_global_sign_target import UpdateGlobalSignTarget
-from akeyless.models.update_global_sign_target_output import UpdateGlobalSignTargetOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -35696,23 +32141,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     update_global_sign_target = akeyless.UpdateGlobalSignTarget() # UpdateGlobalSignTarget | 
 
     try:
         api_response = api_instance.update_global_sign_target(update_global_sign_target)
-        print("The response of V2Api->update_global_sign_target:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->update_global_sign_target: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -35732,7 +32173,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | updateGlobalSignTargetResponse wraps response body. |  -  |
@@ -35747,14 +32187,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.update_godaddy_target import UpdateGodaddyTarget
-from akeyless.models.update_godaddy_target_output import UpdateGodaddyTargetOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -35763,23 +32201,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     update_godaddy_target = akeyless.UpdateGodaddyTarget() # UpdateGodaddyTarget | 
 
     try:
         api_response = api_instance.update_godaddy_target(update_godaddy_target)
-        print("The response of V2Api->update_godaddy_target:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->update_godaddy_target: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -35799,7 +32233,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | updateGodaddyTargetResponse wraps response body. |  -  |
@@ -35814,14 +32247,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.update_group import UpdateGroup
-from akeyless.models.update_group_output import UpdateGroupOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -35830,23 +32261,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     update_group = akeyless.UpdateGroup() # UpdateGroup | 
 
     try:
         api_response = api_instance.update_group(update_group)
-        print("The response of V2Api->update_group:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->update_group: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -35866,7 +32293,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | updateGroupResponse wraps response body. |  -  |
@@ -35881,14 +32307,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.update_hashi_vault_target import UpdateHashiVaultTarget
-from akeyless.models.update_hashi_vault_target_output import UpdateHashiVaultTargetOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -35897,23 +32321,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     update_hashi_vault_target = akeyless.UpdateHashiVaultTarget() # UpdateHashiVaultTarget | 
 
     try:
         api_response = api_instance.update_hashi_vault_target(update_hashi_vault_target)
-        print("The response of V2Api->update_hashi_vault_target:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->update_hashi_vault_target: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -35933,7 +32353,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | updateHashiVaultTargetResponse wraps response body. |  -  |
@@ -35948,14 +32367,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.update_item import UpdateItem
-from akeyless.models.update_item_output import UpdateItemOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -35964,23 +32381,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     update_item = akeyless.UpdateItem() # UpdateItem | 
 
     try:
         api_response = api_instance.update_item(update_item)
-        print("The response of V2Api->update_item:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->update_item: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -36000,7 +32413,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | updateItemResponse wraps response body. |  -  |
@@ -36015,14 +32427,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.update_ldap_target import UpdateLdapTarget
-from akeyless.models.update_ldap_target_output import UpdateLdapTargetOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -36031,23 +32441,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     update_ldap_target = akeyless.UpdateLdapTarget() # UpdateLdapTarget | 
 
     try:
         api_response = api_instance.update_ldap_target(update_ldap_target)
-        print("The response of V2Api->update_ldap_target:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->update_ldap_target: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -36067,7 +32473,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | updateLdapTargetResponse wraps response body. |  -  |
@@ -36082,14 +32487,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.update_ldap_target_details import UpdateLdapTargetDetails
-from akeyless.models.update_target_output import UpdateTargetOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -36098,23 +32501,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     update_ldap_target_details = akeyless.UpdateLdapTargetDetails() # UpdateLdapTargetDetails | 
 
     try:
         api_response = api_instance.update_ldap_target_details(update_ldap_target_details)
-        print("The response of V2Api->update_ldap_target_details:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->update_ldap_target_details: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -36134,7 +32533,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | updateTargetResponse wraps response body. |  -  |
@@ -36149,13 +32547,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.update_linked_target import UpdateLinkedTarget
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -36164,23 +32561,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     update_linked_target = akeyless.UpdateLinkedTarget() # UpdateLinkedTarget | 
 
     try:
         api_response = api_instance.update_linked_target(update_linked_target)
-        print("The response of V2Api->update_linked_target:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->update_linked_target: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -36200,7 +32593,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | updateLinkedTargetResponse wraps response body. |  -  |
@@ -36215,14 +32607,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.update_native_k8_s_target import UpdateNativeK8STarget
-from akeyless.models.update_native_k8_s_target_output import UpdateNativeK8STargetOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -36231,23 +32621,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     update_native_k8_s_target = akeyless.UpdateNativeK8STarget() # UpdateNativeK8STarget | 
 
     try:
         api_response = api_instance.update_native_k8_s_target(update_native_k8_s_target)
-        print("The response of V2Api->update_native_k8_s_target:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->update_native_k8_s_target: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -36267,7 +32653,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | updateNativeK8STargetResponse wraps response body. |  -  |
@@ -36282,13 +32667,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.update_oidc_app import UpdateOidcApp
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -36297,23 +32681,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     update_oidc_app = akeyless.UpdateOidcApp() # UpdateOidcApp | 
 
     try:
         api_response = api_instance.update_oidc_app(update_oidc_app)
-        print("The response of V2Api->update_oidc_app:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->update_oidc_app: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -36333,7 +32713,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | updateOidcAppResponse wraps response body. |  -  |
@@ -36348,13 +32727,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.update_ping_target import UpdatePingTarget
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -36363,23 +32741,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     update_ping_target = akeyless.UpdatePingTarget() # UpdatePingTarget | 
 
     try:
         api_response = api_instance.update_ping_target(update_ping_target)
-        print("The response of V2Api->update_ping_target:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->update_ping_target: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -36399,7 +32773,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | updatePingTargetResponse wraps response body. |  -  |
@@ -36414,14 +32787,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.update_pki_cert_issuer import UpdatePKICertIssuer
-from akeyless.models.update_pki_cert_issuer_output import UpdatePKICertIssuerOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -36430,23 +32801,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     update_pki_cert_issuer = akeyless.UpdatePKICertIssuer() # UpdatePKICertIssuer | 
 
     try:
         api_response = api_instance.update_pki_cert_issuer(update_pki_cert_issuer)
-        print("The response of V2Api->update_pki_cert_issuer:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->update_pki_cert_issuer: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -36466,7 +32833,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | updatePKICertIssuerResponse wraps response body. |  -  |
@@ -36481,14 +32847,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.update_rabbit_mq_target import UpdateRabbitMQTarget
-from akeyless.models.update_rabbit_mq_target_output import UpdateRabbitMQTargetOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -36497,23 +32861,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     update_rabbit_mq_target = akeyless.UpdateRabbitMQTarget() # UpdateRabbitMQTarget | 
 
     try:
         api_response = api_instance.update_rabbit_mq_target(update_rabbit_mq_target)
-        print("The response of V2Api->update_rabbit_mq_target:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->update_rabbit_mq_target: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -36533,7 +32893,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | updateRabbitMQTargetResponse wraps response body. |  -  |
@@ -36548,14 +32907,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.update_rabbit_mq_target_details import UpdateRabbitMQTargetDetails
-from akeyless.models.update_target_output import UpdateTargetOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -36564,23 +32921,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     update_rabbit_mq_target_details = akeyless.UpdateRabbitMQTargetDetails() # UpdateRabbitMQTargetDetails | 
 
     try:
         api_response = api_instance.update_rabbit_mq_target_details(update_rabbit_mq_target_details)
-        print("The response of V2Api->update_rabbit_mq_target_details:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->update_rabbit_mq_target_details: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -36600,7 +32953,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | updateTargetResponse wraps response body. |  -  |
@@ -36615,14 +32967,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.update_rdp_target_details import UpdateRDPTargetDetails
-from akeyless.models.update_target_output import UpdateTargetOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -36631,23 +32981,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     update_rdp_target_details = akeyless.UpdateRDPTargetDetails() # UpdateRDPTargetDetails | 
 
     try:
         api_response = api_instance.update_rdp_target_details(update_rdp_target_details)
-        print("The response of V2Api->update_rdp_target_details:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->update_rdp_target_details: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -36667,7 +33013,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | updateTargetResponse wraps response body. |  -  |
@@ -36682,14 +33027,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.update_role import UpdateRole
-from akeyless.models.update_role_output import UpdateRoleOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -36698,23 +33041,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     update_role = akeyless.UpdateRole() # UpdateRole | 
 
     try:
         api_response = api_instance.update_role(update_role)
-        print("The response of V2Api->update_role:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->update_role: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -36734,7 +33073,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | updateRoleResponse wraps response body. |  -  |
@@ -36749,14 +33087,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.update_rotated_secret import UpdateRotatedSecret
-from akeyless.models.update_rotated_secret_output import UpdateRotatedSecretOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -36765,23 +33101,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     update_rotated_secret = akeyless.UpdateRotatedSecret() # UpdateRotatedSecret | 
 
     try:
         api_response = api_instance.update_rotated_secret(update_rotated_secret)
-        print("The response of V2Api->update_rotated_secret:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->update_rotated_secret: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -36801,7 +33133,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | updateRotatedSecretResponse wraps response body. |  -  |
@@ -36816,14 +33147,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.rotate_key_output import RotateKeyOutput
-from akeyless.models.update_rotation_settings import UpdateRotationSettings
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -36832,23 +33161,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     update_rotation_settings = akeyless.UpdateRotationSettings() # UpdateRotationSettings | 
 
     try:
         api_response = api_instance.update_rotation_settings(update_rotation_settings)
-        print("The response of V2Api->update_rotation_settings:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->update_rotation_settings: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -36868,7 +33193,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | rotateKeyResponse wraps response body. |  -  |
@@ -36883,14 +33207,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.update_salesforce_target import UpdateSalesforceTarget
-from akeyless.models.update_salesforce_target_output import UpdateSalesforceTargetOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -36899,23 +33221,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     update_salesforce_target = akeyless.UpdateSalesforceTarget() # UpdateSalesforceTarget | 
 
     try:
         api_response = api_instance.update_salesforce_target(update_salesforce_target)
-        print("The response of V2Api->update_salesforce_target:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->update_salesforce_target: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -36935,7 +33253,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | updateSalesforceTargetResponse wraps response body. |  -  |
@@ -36950,14 +33267,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.update_secret_val import UpdateSecretVal
-from akeyless.models.update_secret_val_output import UpdateSecretValOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -36966,23 +33281,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     update_secret_val = akeyless.UpdateSecretVal() # UpdateSecretVal | 
 
     try:
         api_response = api_instance.update_secret_val(update_secret_val)
-        print("The response of V2Api->update_secret_val:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->update_secret_val: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -37002,7 +33313,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | updateSecretValResponse wraps response body. |  -  |
@@ -37017,14 +33327,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.update_ssh_cert_issuer import UpdateSSHCertIssuer
-from akeyless.models.update_ssh_cert_issuer_output import UpdateSSHCertIssuerOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -37033,23 +33341,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     update_ssh_cert_issuer = akeyless.UpdateSSHCertIssuer() # UpdateSSHCertIssuer | 
 
     try:
         api_response = api_instance.update_ssh_cert_issuer(update_ssh_cert_issuer)
-        print("The response of V2Api->update_ssh_cert_issuer:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->update_ssh_cert_issuer: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -37069,7 +33373,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | updateSSHCertIssuerResponse wraps response body. |  -  |
@@ -37084,14 +33387,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.update_ssh_target import UpdateSSHTarget
-from akeyless.models.update_ssh_target_output import UpdateSSHTargetOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -37100,23 +33401,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     update_ssh_target = akeyless.UpdateSSHTarget() # UpdateSSHTarget | 
 
     try:
         api_response = api_instance.update_ssh_target(update_ssh_target)
-        print("The response of V2Api->update_ssh_target:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->update_ssh_target: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -37136,7 +33433,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | updateSSHTargetResponse wraps response body. |  -  |
@@ -37151,14 +33447,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.update_ssh_target_details import UpdateSSHTargetDetails
-from akeyless.models.update_target_output import UpdateTargetOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -37167,23 +33461,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     update_ssh_target_details = akeyless.UpdateSSHTargetDetails() # UpdateSSHTargetDetails | 
 
     try:
         api_response = api_instance.update_ssh_target_details(update_ssh_target_details)
-        print("The response of V2Api->update_ssh_target_details:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->update_ssh_target_details: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -37203,7 +33493,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | updateTargetResponse wraps response body. |  -  |
@@ -37218,14 +33507,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.update_target import UpdateTarget
-from akeyless.models.update_target_output import UpdateTargetOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -37234,23 +33521,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     update_target = akeyless.UpdateTarget() # UpdateTarget | 
 
     try:
         api_response = api_instance.update_target(update_target)
-        print("The response of V2Api->update_target:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->update_target: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -37270,7 +33553,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | updateTargetResponse wraps response body. |  -  |
@@ -37285,14 +33567,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.update_target_details import UpdateTargetDetails
-from akeyless.models.update_target_output import UpdateTargetOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -37301,23 +33581,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     update_target_details = akeyless.UpdateTargetDetails() # UpdateTargetDetails | 
 
     try:
         api_response = api_instance.update_target_details(update_target_details)
-        print("The response of V2Api->update_target_details:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->update_target_details: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -37337,7 +33613,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | updateTargetResponse wraps response body. |  -  |
@@ -37352,14 +33627,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.update_web_target import UpdateWebTarget
-from akeyless.models.update_web_target_output import UpdateWebTargetOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -37368,23 +33641,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     update_web_target = akeyless.UpdateWebTarget() # UpdateWebTarget | 
 
     try:
         api_response = api_instance.update_web_target(update_web_target)
-        print("The response of V2Api->update_web_target:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->update_web_target: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -37404,7 +33673,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | updateWebTargetResponse wraps response body. |  -  |
@@ -37419,14 +33687,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.update_target_output import UpdateTargetOutput
-from akeyless.models.update_web_target_details import UpdateWebTargetDetails
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -37435,23 +33701,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     update_web_target_details = akeyless.UpdateWebTargetDetails() # UpdateWebTargetDetails | 
 
     try:
         api_response = api_instance.update_web_target_details(update_web_target_details)
-        print("The response of V2Api->update_web_target_details:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->update_web_target_details: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -37471,7 +33733,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | updateTargetResponse wraps response body. |  -  |
@@ -37486,13 +33747,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.update_windows_target import UpdateWindowsTarget
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -37501,23 +33761,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     update_windows_target = akeyless.UpdateWindowsTarget() # UpdateWindowsTarget | 
 
     try:
         api_response = api_instance.update_windows_target(update_windows_target)
-        print("The response of V2Api->update_windows_target:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->update_windows_target: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -37537,7 +33793,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | updateWindowsTargetResponse wraps response body. |  -  |
@@ -37552,14 +33807,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.update_zero_ssl_target import UpdateZeroSSLTarget
-from akeyless.models.update_zero_ssl_target_output import UpdateZeroSSLTargetOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -37568,23 +33821,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     update_zero_ssl_target = akeyless.UpdateZeroSSLTarget() # UpdateZeroSSLTarget | 
 
     try:
         api_response = api_instance.update_zero_ssl_target(update_zero_ssl_target)
-        print("The response of V2Api->update_zero_ssl_target:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->update_zero_ssl_target: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -37604,7 +33853,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | updateZeroSSLTargetResponse wraps response body. |  -  |
@@ -37619,13 +33867,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.upload_rsa import UploadRSA
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -37634,23 +33881,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     upload_rsa = akeyless.UploadRSA() # UploadRSA | 
 
     try:
         api_response = api_instance.upload_rsa(upload_rsa)
-        print("The response of V2Api->upload_rsa:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->upload_rsa: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -37670,7 +33913,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | uploadRSAResponse wraps response body. |  -  |
@@ -37685,14 +33927,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.usc_create import UscCreate
-from akeyless.models.usc_create_secret_output import UscCreateSecretOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -37701,23 +33941,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     usc_create = akeyless.UscCreate() # UscCreate | 
 
     try:
         api_response = api_instance.usc_create(usc_create)
-        print("The response of V2Api->usc_create:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->usc_create: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -37737,7 +33973,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | uscCreateResponse wraps response body. |  -  |
@@ -37752,14 +33987,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.usc_delete import UscDelete
-from akeyless.models.usc_delete_secret_output import UscDeleteSecretOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -37768,23 +34001,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     usc_delete = akeyless.UscDelete() # UscDelete | 
 
     try:
         api_response = api_instance.usc_delete(usc_delete)
-        print("The response of V2Api->usc_delete:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->usc_delete: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -37804,7 +34033,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **202** | uscDeleteResponse wraps response body. |  -  |
@@ -37819,14 +34047,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.usc_get import UscGet
-from akeyless.models.usc_get_secret_output import UscGetSecretOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -37835,23 +34061,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     usc_get = akeyless.UscGet() # UscGet | 
 
     try:
         api_response = api_instance.usc_get(usc_get)
-        print("The response of V2Api->usc_get:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->usc_get: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -37871,7 +34093,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | uscGetResponse wraps response body. |  -  |
@@ -37886,14 +34107,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.usc_list import UscList
-from akeyless.models.usc_list_secrets_output import UscListSecretsOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -37902,23 +34121,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     usc_list = akeyless.UscList() # UscList | 
 
     try:
         api_response = api_instance.usc_list(usc_list)
-        print("The response of V2Api->usc_list:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->usc_list: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -37938,7 +34153,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | uscListResponse wraps response body. |  -  |
@@ -37953,14 +34167,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.usc_update import UscUpdate
-from akeyless.models.usc_update_secret_output import UscUpdateSecretOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -37969,23 +34181,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     usc_update = akeyless.UscUpdate() # UscUpdate | 
 
     try:
         api_response = api_instance.usc_update(usc_update)
-        print("The response of V2Api->usc_update:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->usc_update: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -38005,7 +34213,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | uscUpdateResponse wraps response body. |  -  |
@@ -38020,14 +34227,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.validate_token import ValidateToken
-from akeyless.models.validate_token_output import ValidateTokenOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -38036,23 +34241,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     validate_token = akeyless.ValidateToken() # ValidateToken | 
 
     try:
         api_response = api_instance.validate_token(validate_token)
-        print("The response of V2Api->validate_token:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->validate_token: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -38072,7 +34273,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | validateTokenResponse wraps response body. |  -  |
@@ -38088,14 +34288,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.verify_data_with_classic_key import VerifyDataWithClassicKey
-from akeyless.models.verify_pki_cert_output import VerifyPKICertOutput
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -38104,23 +34302,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     verify_data_with_classic_key = akeyless.VerifyDataWithClassicKey() # VerifyDataWithClassicKey | 
 
     try:
         api_response = api_instance.verify_data_with_classic_key(verify_data_with_classic_key)
-        print("The response of V2Api->verify_data_with_classic_key:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->verify_data_with_classic_key: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -38140,7 +34334,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | verifyDataWithClassicKeyResponse wraps response body. |  -  |
@@ -38155,13 +34348,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.verify_ec_dsa import VerifyEcDsa
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -38170,23 +34362,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     verify_ec_dsa = akeyless.VerifyEcDsa() # VerifyEcDsa | 
 
     try:
         api_response = api_instance.verify_ec_dsa(verify_ec_dsa)
-        print("The response of V2Api->verify_ec_dsa:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->verify_ec_dsa: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -38206,7 +34394,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | verifyEcDsaResponse wraps response body. |  -  |
@@ -38221,13 +34408,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.verify_gpg import VerifyGPG
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -38236,23 +34422,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     verify_gpg = akeyless.VerifyGPG() # VerifyGPG | 
 
     try:
         api_response = api_instance.verify_gpg(verify_gpg)
-        print("The response of V2Api->verify_gpg:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->verify_gpg: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -38272,7 +34454,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | verifyGPGResponse wraps response body. |  -  |
@@ -38287,14 +34468,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.verify_jwt_output import VerifyJWTOutput
-from akeyless.models.verify_jwt_with_classic_key import VerifyJWTWithClassicKey
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -38303,23 +34482,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     verify_jwt_with_classic_key = akeyless.VerifyJWTWithClassicKey() # VerifyJWTWithClassicKey | 
 
     try:
         api_response = api_instance.verify_jwt_with_classic_key(verify_jwt_with_classic_key)
-        print("The response of V2Api->verify_jwt_with_classic_key:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->verify_jwt_with_classic_key: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -38339,7 +34514,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | verifyJWTWithClassicKeyResponse wraps response body. |  -  |
@@ -38354,13 +34528,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.verify_pkcs1 import VerifyPKCS1
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -38369,23 +34542,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     verify_pkcs1 = akeyless.VerifyPKCS1() # VerifyPKCS1 | 
 
     try:
         api_response = api_instance.verify_pkcs1(verify_pkcs1)
-        print("The response of V2Api->verify_pkcs1:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->verify_pkcs1: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -38405,7 +34574,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | verifyPKCS1Response wraps response body. |  -  |
@@ -38420,14 +34588,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.verify_pki_cert_output import VerifyPKICertOutput
-from akeyless.models.verify_pki_cert_with_classic_key import VerifyPKICertWithClassicKey
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -38436,23 +34602,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     verify_pki_cert_with_classic_key = akeyless.VerifyPKICertWithClassicKey() # VerifyPKICertWithClassicKey | 
 
     try:
         api_response = api_instance.verify_pki_cert_with_classic_key(verify_pki_cert_with_classic_key)
-        print("The response of V2Api->verify_pki_cert_with_classic_key:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->verify_pki_cert_with_classic_key: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -38472,7 +34634,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | verifyPKICertWithClassicKeyResponse wraps response body. |  -  |
@@ -38487,13 +34648,12 @@ No authorization required
 
 ### Example
 
-
 ```python
+from __future__ import print_function
+import time
 import akeyless
-from akeyless.models.verify_rsa_ssa_pss import VerifyRsaSsaPss
 from akeyless.rest import ApiException
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.akeyless.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = akeyless.Configuration(
@@ -38502,23 +34662,19 @@ configuration = akeyless.Configuration(
 
 
 # Enter a context with an instance of the API client
-with akeyless.ApiClient(configuration) as api_client:
+with akeyless.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = akeyless.V2Api(api_client)
     verify_rsa_ssa_pss = akeyless.VerifyRsaSsaPss() # VerifyRsaSsaPss | 
 
     try:
         api_response = api_instance.verify_rsa_ssa_pss(verify_rsa_ssa_pss)
-        print("The response of V2Api->verify_rsa_ssa_pss:\n")
         pprint(api_response)
-    except Exception as e:
+    except ApiException as e:
         print("Exception when calling V2Api->verify_rsa_ssa_pss: %s\n" % e)
 ```
 
-
-
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -38538,7 +34694,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | verifyRsaSsaPssResponse wraps response body. |  -  |

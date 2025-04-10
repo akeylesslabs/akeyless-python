@@ -1,14 +1,12 @@
 # GatewayPartialUpdateK8SAuthConfig
 
-
 ## Properties
-
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **use_default_identity_bool** | **bool** |  | [optional] 
 **access_id** | **str** | The access ID of the Kubernetes auth method | [optional] 
 **disable_issuer_validation** | **str** | Disable issuer validation [true/false] | [optional] 
-**var_json** | **bool** | Set output format to JSON | [optional] [default to False]
+**json** | **bool** | Set output format to JSON | [optional] [default to False]
 **k8s_auth_type** | **str** | K8S auth type [token/certificate]. (relevant for \&quot;native_k8s\&quot; only) | [optional] [default to 'token']
 **k8s_ca_cert** | **str** | The CA Certificate (base64 encoded) to use to call into the kubernetes API server | [optional] 
 **k8s_client_certificate** | **str** | Content of the k8 client certificate (PEM format) in a Base64 format (relevant for \&quot;native_k8s\&quot; only) | [optional] 
@@ -26,23 +24,6 @@ Name | Type | Description | Notes
 **uid_token** | **str** | The universal identity token, Required only for universal_identity authentication | [optional] 
 **use_gw_service_account** | **str** | Use the GW&#39;s service account | [optional] 
 
-## Example
-
-```python
-from akeyless.models.gateway_partial_update_k8_s_auth_config import GatewayPartialUpdateK8SAuthConfig
-
-# TODO update the JSON string below
-json = "{}"
-# create an instance of GatewayPartialUpdateK8SAuthConfig from a JSON string
-gateway_partial_update_k8_s_auth_config_instance = GatewayPartialUpdateK8SAuthConfig.from_json(json)
-# print the JSON string representation of the object
-print(GatewayPartialUpdateK8SAuthConfig.to_json())
-
-# convert the object into a dict
-gateway_partial_update_k8_s_auth_config_dict = gateway_partial_update_k8_s_auth_config_instance.to_dict()
-# create an instance of GatewayPartialUpdateK8SAuthConfig from a dict
-gateway_partial_update_k8_s_auth_config_from_dict = GatewayPartialUpdateK8SAuthConfig.from_dict(gateway_partial_update_k8_s_auth_config_dict)
-```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
 

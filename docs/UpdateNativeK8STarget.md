@@ -1,14 +1,12 @@
 # UpdateNativeK8STarget
 
 updateNativeK8STarget is a command that updates an existing target. [Deprecated: Use target-update-k8s command]
-
 ## Properties
-
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **comment** | **str** | Deprecated - use description | [optional] 
 **description** | **str** | Description of the object | [optional] 
-**var_json** | **bool** | Set output format to JSON | [optional] [default to False]
+**json** | **bool** | Set output format to JSON | [optional] [default to False]
 **k8s_auth_type** | **str** | K8S auth type [token/certificate] | [optional] [default to 'token']
 **k8s_client_certificate** | **str** | Content of the k8 client certificate (PEM format) in a Base64 format | [optional] 
 **k8s_client_key** | **str** | Content of the k8 client private key (PEM format) in a Base64 format | [optional] 
@@ -26,23 +24,6 @@ Name | Type | Description | Notes
 **update_version** | **bool** | Deprecated | [optional] 
 **use_gw_service_account** | **bool** | Use the GW&#39;s service account | [optional] 
 
-## Example
-
-```python
-from akeyless.models.update_native_k8_s_target import UpdateNativeK8STarget
-
-# TODO update the JSON string below
-json = "{}"
-# create an instance of UpdateNativeK8STarget from a JSON string
-update_native_k8_s_target_instance = UpdateNativeK8STarget.from_json(json)
-# print the JSON string representation of the object
-print(UpdateNativeK8STarget.to_json())
-
-# convert the object into a dict
-update_native_k8_s_target_dict = update_native_k8_s_target_instance.to_dict()
-# create an instance of UpdateNativeK8STarget from a dict
-update_native_k8_s_target_from_dict = UpdateNativeK8STarget.from_dict(update_native_k8_s_target_dict)
-```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
 

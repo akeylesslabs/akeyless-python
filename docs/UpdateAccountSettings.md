@@ -1,12 +1,10 @@
 # UpdateAccountSettings
 
-
 ## Properties
-
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **address** | **str** | Address | [optional] 
-**bound_ips** | **List[str]** | A default list of comma-separated CIDR block that are allowed to authenticate. | [optional] 
+**bound_ips** | **list[str]** | A default list of comma-separated CIDR block that are allowed to authenticate. | [optional] 
 **city** | **str** | City | [optional] 
 **company_name** | **str** | Company name | [optional] 
 **country** | **str** | Country | [optional] 
@@ -19,11 +17,11 @@ Name | Type | Description | Notes
 **enable_item_sharing** | **str** | Enable sharing items [true/false] | [optional] 
 **enable_password_expiration** | **str** | Enable password expiration policy [true/false] | [optional] 
 **force_new_versions** | **str** | If set to true, new version will be created on update | [optional] 
-**gw_bound_ips** | **List[str]** | A default list of comma-separated CIDR block that acts as a trusted Gateway entity. | [optional] 
+**gw_bound_ips** | **list[str]** | A default list of comma-separated CIDR block that acts as a trusted Gateway entity. | [optional] 
 **invalid_characters** | **str** | Characters that cannot be used for items/targets/roles/auths/event_forwarder names. Empty string will enforce nothing. | [optional] [default to 'notReceivedInvalidCharacter']
 **item_type** | **str** | VersionSettingsObjectType defines object types for account version settings | [optional] 
 **items_deletion_protection** | **str** | Set or unset the default behaviour of items deletion protection [true/false] | [optional] 
-**var_json** | **bool** | Set output format to JSON | [optional] [default to False]
+**json** | **bool** | Set output format to JSON | [optional] [default to False]
 **jwt_ttl_default** | **int** | Default ttl | [optional] 
 **jwt_ttl_max** | **int** | Maximum ttl | [optional] 
 **jwt_ttl_min** | **int** | Minimum ttl | [optional] 
@@ -48,23 +46,6 @@ Name | Type | Description | Notes
 **use_numbers** | **str** | Password must contain numbers [true/false] | [optional] 
 **use_special_characters** | **str** | Password must contain special characters [true/false] | [optional] 
 
-## Example
-
-```python
-from akeyless.models.update_account_settings import UpdateAccountSettings
-
-# TODO update the JSON string below
-json = "{}"
-# create an instance of UpdateAccountSettings from a JSON string
-update_account_settings_instance = UpdateAccountSettings.from_json(json)
-# print the JSON string representation of the object
-print(UpdateAccountSettings.to_json())
-
-# convert the object into a dict
-update_account_settings_dict = update_account_settings_instance.to_dict()
-# create an instance of UpdateAccountSettings from a dict
-update_account_settings_from_dict = UpdateAccountSettings.from_dict(update_account_settings_dict)
-```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
 

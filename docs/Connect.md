@@ -1,12 +1,10 @@
 # Connect
 
 Connect is a command that performs secure remote access
-
 ## Properties
-
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**helper** | **object** |  | [optional] 
+**helper** | [**object**](.md) |  | [optional] 
 **rc_file_override** | **str** | used to override .akeyless-connect.rc in tests | [optional] 
 **bastion_ctrl_path** | **str** | Deprecated. use bastion-ctrl-path | [optional] 
 **bastion_ctrl_port** | **str** | Deprecated. use sra-ctrl-port | [optional] 
@@ -15,7 +13,7 @@ Name | Type | Description | Notes
 **cert_issuer_name** | **str** | The Akeyless certificate issuer name | [optional] 
 **gateway_url** | **str** | The Gateway URL (configuration management) address, e.g. http://localhost:8000 | [optional] 
 **identity_file** | **str** | The file from which the identity (private key) for public key authentication is read | [optional] 
-**var_json** | **bool** | Set output format to JSON | [optional] [default to False]
+**json** | **bool** | Set output format to JSON | [optional] [default to False]
 **justification** | **str** |  | [optional] 
 **name** | **str** | The Secret name (for database and AWS producers - producer name) | [optional] 
 **sra_ctrl_path** | **str** | The Bastion API path | [optional] 
@@ -28,27 +26,10 @@ Name | Type | Description | Notes
 **target** | **str** | The target | [optional] 
 **token** | **str** | Authentication token (see &#x60;/auth&#x60; and &#x60;/configure&#x60;) | [optional] 
 **uid_token** | **str** | The universal identity token, Required only for universal_identity authentication | [optional] 
-**use_ssh_agent** | **bool** | Enable ssh-agent | [optional] 
+**use_ssh_agent** | **bool** | Deprecated | [optional] 
 **via_bastion** | **str** | Deprecated. Use via-sra | [optional] 
 **via_sra** | **str** | The jump box server | [optional] 
 
-## Example
-
-```python
-from akeyless.models.connect import Connect
-
-# TODO update the JSON string below
-json = "{}"
-# create an instance of Connect from a JSON string
-connect_instance = Connect.from_json(json)
-# print the JSON string representation of the object
-print(Connect.to_json())
-
-# convert the object into a dict
-connect_dict = connect_instance.to_dict()
-# create an instance of Connect from a dict
-connect_from_dict = Connect.from_dict(connect_dict)
-```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
 

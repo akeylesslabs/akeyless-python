@@ -1,8 +1,6 @@
 # AkeylessGatewayConfig
 
-
 ## Properties
-
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **admins** | [**AdminsConfigPart**](AdminsConfigPart.md) |  | [optional] 
@@ -24,23 +22,6 @@ Name | Type | Description | Notes
 **saml** | [**DefaultConfigPart**](DefaultConfigPart.md) |  | [optional] 
 **version** | **int** |  | [optional] 
 
-## Example
-
-```python
-from akeyless.models.akeyless_gateway_config import AkeylessGatewayConfig
-
-# TODO update the JSON string below
-json = "{}"
-# create an instance of AkeylessGatewayConfig from a JSON string
-akeyless_gateway_config_instance = AkeylessGatewayConfig.from_json(json)
-# print the JSON string representation of the object
-print(AkeylessGatewayConfig.to_json())
-
-# convert the object into a dict
-akeyless_gateway_config_dict = akeyless_gateway_config_instance.to_dict()
-# create an instance of AkeylessGatewayConfig from a dict
-akeyless_gateway_config_from_dict = AkeylessGatewayConfig.from_dict(akeyless_gateway_config_dict)
-```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
 
