@@ -13,6 +13,8 @@ Name | Type | Description | Notes
 **default_home_page** | [**DefaultHomePage**](DefaultHomePage.md) |  | [optional] 
 **dynamic_secret_max_ttl** | [**DynamicSecretMaxTtl**](DynamicSecretMaxTtl.md) |  | [optional] 
 **enable_request_for_access** | **bool** |  | [optional] 
+**hide_personal_folder** | **bool** |  | [optional] 
+**hide_static_password** | **bool** |  | [optional] 
 **invalid_characters** | **str** | InvalidCharacters is the invalid characters for items/targets/roles/auths/notifier_forwarder naming convention | [optional] 
 **item_usage_event** | [**UsageEventSetting**](UsageEventSetting.md) |  | [optional] 
 **lock_default_key** | **bool** | LockDefaultKey determines whether the configured default key can be updated by end-users on a per-request basis true - all requests use the configured default key false - every request can determine its protection key (default) nil - change nothing (every request can determine its protection key (default)) This parameter is only relevant if AccountDefaultKeyItemID is not empty | [optional] 

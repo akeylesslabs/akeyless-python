@@ -129,6 +129,7 @@ Name | Type | Description | Notes
 **google_workspace_group_role** | **str** |  | [optional] 
 **google_workspace_role_name** | **str** |  | [optional] 
 **google_workspace_role_scope** | **str** |  | [optional] 
+**grace_rotated_secret_key** | **str** |  | [optional] 
 **grant_types** | **list[str]** |  | [optional] 
 **groups** | **str** |  | [optional] 
 **hanadb_creation_statements** | **str** |  | [optional] 

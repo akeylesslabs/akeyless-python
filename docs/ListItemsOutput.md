@@ -3,6 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**has_next** | **bool** |  | [optional] 
 **items** | [**list[Item]**](Item.md) |  | [optional] 
 **next_page** | **str** |  | [optional] 
 

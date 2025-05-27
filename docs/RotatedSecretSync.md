@@ -3,6 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**filter_secret_value** | **str** | JQ expression to filter or transform the secret value | [optional] 
 **json** | **bool** | Set output format to JSON | [optional] [default to False]
 **name** | **str** | Rotated secret name | 
 **namespace** | **str** | Vault namespace, releavnt only for Hashicorp Vault Target | [optional] 

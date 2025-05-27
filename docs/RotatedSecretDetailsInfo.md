@@ -5,11 +5,15 @@ RotatedSecretDetailsInfo The rotated secret rotator info
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **delete_previous_version_in_days** | **int** |  | [optional] 
+**enable_custom_password_policy** | **bool** |  | [optional] 
 **grace_rotation** | **bool** |  | [optional] 
+**grace_rotation_hour** | **int** |  | [optional] 
+**grace_rotation_interval** | **int** |  | [optional] 
 **gw_cluster_id** | **int** |  | [optional] 
 **last_rotation_error** | **str** |  | [optional] 
 **managed_by_akeyless** | **bool** |  | [optional] 
 **max_versions** | **int** |  | [optional] 
+**next_auto_rotate_type** | **str** |  | [optional] 
 **number_of_versions_to_save** | **int** |  | [optional] 
 **rotation_hour** | **int** |  | [optional] 
 **rotation_interval_min** | **bool** |  | [optional] 

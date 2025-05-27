@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **azure_username** | **str** |  | [optional] 
 **connection_type** | **str** |  | [optional] 
 **expiration_date** | **datetime** |  | [optional] 
+**grace_rotated_secret_key** | **str** |  | [optional] 
 **use_gw_cloud_identity** | **bool** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

@@ -4,6 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **folders** | **list[str]** |  | [optional] 
+**has_next** | **bool** |  | [optional] 
 **items** | [**list[Item]**](Item.md) |  | [optional] 
 **next_page** | **str** |  | [optional] 
 
