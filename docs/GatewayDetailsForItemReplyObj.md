@@ -3,6 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**cluster_id** | **int** |  | [optional] 
 **cluster_name** | **str** |  | [optional] 
 **cluster_url** | **str** |  | [optional] 
 **desktop_app** | [**DesktopAppConf**](DesktopAppConf.md) |  | [optional] 

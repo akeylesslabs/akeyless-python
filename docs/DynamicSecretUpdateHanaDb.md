@@ -4,6 +4,7 @@ dynamicSecretUpdateHanaDb is a command that updates hanadb dynamic secret
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**custom_username_template** | **str** | Customize how temporary usernames are generated using go template | [optional] 
 **delete_protection** | **str** | Protection from accidental deletion of this object [true/false] | [optional] 
 **description** | **str** | Description of the object | [optional] 
 **hana_dbname** | **str** | HanaDb Name | [optional] 

@@ -4,6 +4,7 @@ gatewayCreateProducerMongo is a command that creates either mongodb  producer or
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**custom_username_template** | **str** | Customize how temporary usernames are generated using go template | [optional] 
 **delete_protection** | **str** | Protection from accidental deletion of this object [true/false] | [optional] 
 **json** | **bool** | Set output format to JSON | [optional] [default to False]
 **mongodb_atlas_api_private_key** | **str** | MongoDB Atlas private key | [optional] 

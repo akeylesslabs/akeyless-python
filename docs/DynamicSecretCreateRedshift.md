@@ -5,6 +5,7 @@ dynamicSecretCreateRedshift is a command that creates redshift dynamic secret
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **creation_statements** | **str** | Redshift Creation statements | [optional] 
+**custom_username_template** | **str** | Customize how temporary usernames are generated using go template | [optional] 
 **delete_protection** | **str** | Protection from accidental deletion of this object [true/false] | [optional] 
 **description** | **str** | Description of the object | [optional] 
 **json** | **bool** | Set output format to JSON | [optional] [default to False]

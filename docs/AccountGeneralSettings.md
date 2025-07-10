@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **allowed_clients_ips** | [**AllowedIpSettings**](AllowedIpSettings.md) |  | [optional] 
 **allowed_gateways_ips** | [**AllowedIpSettings**](AllowedIpSettings.md) |  | [optional] 
 **auth_usage_event** | [**UsageEventSetting**](UsageEventSetting.md) |  | [optional] 
+**certificate_expiration_events** | [**CertificateExpirationEventsSettings**](CertificateExpirationEventsSettings.md) |  | [optional] 
 **data_protection_section** | [**DataProtectionSection**](DataProtectionSection.md) |  | [optional] 
 **default_home_page** | [**DefaultHomePage**](DefaultHomePage.md) |  | [optional] 
 **dynamic_secret_max_ttl** | [**DynamicSecretMaxTtl**](DynamicSecretMaxTtl.md) |  | [optional] 

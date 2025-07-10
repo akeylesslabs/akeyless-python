@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **json** | **bool** | Set output format to JSON | [optional] [default to False]
 **namespace** | **str** | The namespace (relevant for Hashi vault target) | [optional] 
 **object_type** | **str** |  | [optional] 
+**pfx_password** | **str** | Optional, the passphrase that protects the private key within the pfx certificate (Relevant only for Azure KV certificates) | [optional] 
 **secret_name** | **str** | Name for the new universal secrets | 
 **tags** | **dict(str, str)** | Tags for the universal secrets | [optional] 
 **token** | **str** | Authentication token (see &#x60;/auth&#x60; and &#x60;/configure&#x60;) | [optional] 

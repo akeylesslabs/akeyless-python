@@ -4,6 +4,7 @@ gatewayUpdateProducerOracleDb is a command that updates oracle db producer [Depr
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**custom_username_template** | **str** | Customize how temporary usernames are generated using go template | [optional] 
 **db_server_certificates** | **str** | (Optional) DB server certificates | [optional] 
 **db_server_name** | **str** | (Optional) Server name for certificate verification | [optional] 
 **delete_protection** | **str** | Protection from accidental deletion of this object [true/false] | [optional] 

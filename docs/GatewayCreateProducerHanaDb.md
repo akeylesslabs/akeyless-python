@@ -4,6 +4,7 @@ gatewayCreateProducerHanaDb is a command that creates hanadb producer [Deprecate
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**custom_username_template** | **str** | Customize how temporary usernames are generated using go template | [optional] 
 **delete_protection** | **str** | Protection from accidental deletion of this object [true/false] | [optional] 
 **hana_dbname** | **str** | HanaDb Name | [optional] 
 **hanadb_create_statements** | **str** | HanaDb Creation statements | [optional] 

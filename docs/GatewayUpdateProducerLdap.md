@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **provider_type** | **str** |  | [optional] 
 **bind_dn** | **str** | Bind DN | [optional] 
 **bind_dn_password** | **str** | Bind DN Password | [optional] 
+**custom_username_template** | **str** | Customize how temporary usernames are generated using go template | [optional] 
 **delete_protection** | **str** | Protection from accidental deletion of this object [true/false] | [optional] 
 **external_username** | **str** | Externally provided username [true/false] | [optional] [default to 'false']
 **fixed_user_claim_keyname** | **str** | For externally provided users, denotes the key-name of IdP claim to extract the username from (relevant only for external-username&#x3D;true) | [optional] [default to 'ext_username']

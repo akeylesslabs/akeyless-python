@@ -5,9 +5,11 @@ dynamicSecretUpdateAzure is a command that updates azure dynamic secret
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **app_obj_id** | **str** | Azure App Object Id | [optional] 
+**azure_administrative_unit** | **str** | Azure AD administrative unit (relevant only when azure-user-portal-access&#x3D;true) | [optional] 
 **azure_client_id** | **str** | Azure Client ID | [optional] 
 **azure_client_secret** | **str** | Azure Client Secret | [optional] 
 **azure_tenant_id** | **str** | Azure Tenant ID | [optional] 
+**custom_username_template** | **str** | Customize how temporary usernames are generated using go template | [optional] 
 **delete_protection** | **str** | Protection from accidental deletion of this object [true/false] | [optional] 
 **description** | **str** | Description of the object | [optional] 
 **fixed_user_claim_keyname** | **str** | FixedUserClaimKeyname | [optional] [default to 'false']

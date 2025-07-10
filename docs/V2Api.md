@@ -438,6 +438,8 @@ Method | HTTP request | Description
 [**sign_pki_cert_with_classic_key**](V2Api.md#sign_pki_cert_with_classic_key) | **POST** /sign-pki-cert-with-classic-key | 
 [**sign_rsa_ssa_pss**](V2Api.md#sign_rsa_ssa_pss) | **POST** /sign-rsassa-pss | 
 [**static_creds_auth**](V2Api.md#static_creds_auth) | **POST** /static-creds-auth | 
+[**static_secret_delete_sync**](V2Api.md#static_secret_delete_sync) | **POST** /static-secret-delete-sync | 
+[**static_secret_sync**](V2Api.md#static_secret_sync) | **POST** /static-secret-sync | 
 [**target_create_artifactory**](V2Api.md#target_create_artifactory) | **POST** /target-create-artifactory | 
 [**target_create_aws**](V2Api.md#target_create_aws) | **POST** /target-create-aws | 
 [**target_create_azure**](V2Api.md#target_create_azure) | **POST** /target-create-azure | 
@@ -24621,7 +24623,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **rotated_secret_delete_sync**
-> object rotated_secret_delete_sync(rotated_secret_delete_sync)
+> RotatedSecretDeleteSyncOutput rotated_secret_delete_sync(rotated_secret_delete_sync)
 
 
 
@@ -24661,7 +24663,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**object**
+[**RotatedSecretDeleteSyncOutput**](RotatedSecretDeleteSyncOutput.md)
 
 ### Authorization
 
@@ -26596,6 +26598,126 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | staticCredsAuthResponse wraps response body. |  -  |
+**0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **static_secret_delete_sync**
+> StaticSecretDeleteSyncOutput static_secret_delete_sync(static_secret_delete_sync)
+
+
+
+### Example
+
+```python
+from __future__ import print_function
+import time
+import akeyless
+from akeyless.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.akeyless.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = akeyless.Configuration(
+    host = "https://api.akeyless.io"
+)
+
+
+# Enter a context with an instance of the API client
+with akeyless.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = akeyless.V2Api(api_client)
+    static_secret_delete_sync = akeyless.StaticSecretDeleteSync() # StaticSecretDeleteSync | 
+
+    try:
+        api_response = api_instance.static_secret_delete_sync(static_secret_delete_sync)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling V2Api->static_secret_delete_sync: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **static_secret_delete_sync** | [**StaticSecretDeleteSync**](StaticSecretDeleteSync.md)|  | 
+
+### Return type
+
+[**StaticSecretDeleteSyncOutput**](StaticSecretDeleteSyncOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | staticSecretDeleteSyncResponse wraps response body. |  -  |
+**0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **static_secret_sync**
+> SecretSyncOutput static_secret_sync(static_secret_sync)
+
+
+
+### Example
+
+```python
+from __future__ import print_function
+import time
+import akeyless
+from akeyless.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.akeyless.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = akeyless.Configuration(
+    host = "https://api.akeyless.io"
+)
+
+
+# Enter a context with an instance of the API client
+with akeyless.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = akeyless.V2Api(api_client)
+    static_secret_sync = akeyless.StaticSecretSync() # StaticSecretSync | 
+
+    try:
+        api_response = api_instance.static_secret_sync(static_secret_sync)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling V2Api->static_secret_sync: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **static_secret_sync** | [**StaticSecretSync**](StaticSecretSync.md)|  | 
+
+### Return type
+
+[**SecretSyncOutput**](SecretSyncOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | staticSecretSyncResponse wraps response body. |  -  |
 **0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

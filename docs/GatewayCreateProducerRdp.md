@@ -5,6 +5,7 @@ gatewayCreateProducerRdp is a command that creates rdp producer [Deprecated: Use
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **allow_user_extend_session** | **int** | AllowUserExtendSession | [optional] 
+**custom_username_template** | **str** | Customize how temporary usernames are generated using go template | [optional] 
 **delete_protection** | **str** | Protection from accidental deletion of this object [true/false] | [optional] 
 **fixed_user_claim_keyname** | **str** | For externally provided users, denotes the key-name of IdP claim to extract the username from (relevant only for fixed-user-only&#x3D;true) | [optional] [default to 'ext_username']
 **fixed_user_only** | **str** | Allow access using externally (IdP) provided username [true/false] | [optional] [default to 'false']

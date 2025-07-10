@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **description** | **str** | Description of the universal secrets | [optional] 
 **json** | **bool** | Set output format to JSON | [optional] [default to False]
 **namespace** | **str** | The namespace (relevant for Hashi vault target) | [optional] 
+**pfx_password** | **str** | Optional, the passphrase that protects the private key within the pfx certificate (Relevant only for Azure KV certificates) | [optional] 
 **secret_id** | **str** | The universal secrets id (or name, for AWS, Azure, K8s or Hashi vault targets) to update | 
 **tags** | **dict(str, str)** | Tags for the universal secrets | [optional] 
 **token** | **str** | Authentication token (see &#x60;/auth&#x60; and &#x60;/configure&#x60;) | [optional] 

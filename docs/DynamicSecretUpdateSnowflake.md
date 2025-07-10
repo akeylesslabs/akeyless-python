@@ -7,10 +7,13 @@ Name | Type | Description | Notes
 **account** | **str** | Account name | [optional] 
 **account_password** | **str** | Database Password | [optional] 
 **account_username** | **str** | Database Username | [optional] 
+**auth_mode** | **str** | The authentication mode for the temporary user [password/key] | [optional] [default to 'password']
+**custom_username_template** | **str** | Customize how temporary usernames are generated using go template | [optional] 
 **db_name** | **str** | Database name | [optional] 
 **delete_protection** | **str** | Protection from accidental deletion of this object [true/false] | [optional] 
 **description** | **str** | Description of the object | [optional] 
 **json** | **bool** | Set output format to JSON | [optional] [default to False]
+**key_algo** | **str** |  | [optional] 
 **name** | **str** | Dynamic secret name | 
 **new_name** | **str** | Dynamic secret name | [optional] 
 **password_length** | **str** | The length of the password to be generated | [optional] 

@@ -15,9 +15,11 @@ Name | Type | Description | Notes
 **name** | **str** | Rotated secret name | 
 **new_name** | **str** | New item name | [optional] 
 **password_length** | **str** | The length of the password to be generated | [optional] 
+**private_key** | **str** | RSA Private key (base64 encoded) to rotate (relevant only for rotator-type&#x3D;key) | [optional] 
+**private_key_file_name** | **str** | The path to the file containing the private key (relevant only for rotator-type&#x3D;key) | [optional] 
 **rm_tag** | **list[str]** | List of the existent tags that will be removed from this item | [optional] 
 **rotated_password** | **str** | rotated-username password (relevant only for rotator-type&#x3D;password) | [optional] 
-**rotated_username** | **str** | username to be rotated, if selected use-self-creds at rotator-creds-type, this username will try to rotate it&#39;s own password, if use-target-creds is selected, target credentials will be use to rotate the rotated-password (relevant only for rotator-type&#x3D;password) | [optional] 
+**rotated_username** | **str** | username to be rotated, if selected use-self-creds at rotator-creds-type, this username will try to rotate it&#39;s own password, if use-target-creds is selected, target credentials will be use to rotate the rotated-password (relevant only for rotator-type&#x3D;password or rotator-type&#x3D;key) | [optional] 
 **rotation_event_in** | **list[str]** | How many days before the rotation of the item would you like to be notified | [optional] 
 **rotation_hour** | **int** | The Hour of the rotation in UTC | [optional] 
 **rotation_interval** | **str** | The number of days to wait between every automatic key rotation (1-365) | [optional] 

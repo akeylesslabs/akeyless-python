@@ -5,6 +5,7 @@ gatewayUpdateProducerPostgreSQL is a command that updates postgresql producer [D
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **creation_statements** | **str** | PostgreSQL Creation statements | [optional] 
+**custom_username_template** | **str** | Customize how temporary usernames are generated using go template | [optional] 
 **delete_protection** | **str** | Protection from accidental deletion of this object [true/false] | [optional] 
 **json** | **bool** | Set output format to JSON | [optional] [default to False]
 **name** | **str** | Dynamic secret name | 

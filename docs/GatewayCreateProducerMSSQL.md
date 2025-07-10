@@ -4,6 +4,7 @@ gatewayCreateProducerMSSQL is a command that creates mssql producer [Deprecated:
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**custom_username_template** | **str** | Customize how temporary usernames are generated using go template | [optional] 
 **delete_protection** | **str** | Protection from accidental deletion of this object [true/false] | [optional] 
 **json** | **bool** | Set output format to JSON | [optional] [default to False]
 **mssql_create_statements** | **str** | MSSQL Creation statements | [optional] 
