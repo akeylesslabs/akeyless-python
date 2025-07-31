@@ -36,16 +36,22 @@ class WebBastionRdpRecord(object):
     openapi_types = {
         'aws': 'AwsStorage',
         'azure': 'AzureStorage',
+        'compress': 'bool',
+        'encryption_key': 'str',
+        'recording_quality': 'str',
         'storage_type': 'str'
     }
 
     attribute_map = {
         'aws': 'aws',
         'azure': 'azure',
+        'compress': 'compress',
+        'encryption_key': 'encryption_key',
+        'recording_quality': 'recording_quality',
         'storage_type': 'storage_type'
     }
 
-    def __init__(self, aws=None, azure=None, storage_type=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, aws=None, azure=None, compress=None, encryption_key=None, recording_quality=None, storage_type=None, local_vars_configuration=None):  # noqa: E501
         """WebBastionRdpRecord - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -53,6 +59,9 @@ class WebBastionRdpRecord(object):
 
         self._aws = None
         self._azure = None
+        self._compress = None
+        self._encryption_key = None
+        self._recording_quality = None
         self._storage_type = None
         self.discriminator = None
 
@@ -60,6 +69,12 @@ class WebBastionRdpRecord(object):
             self.aws = aws
         if azure is not None:
             self.azure = azure
+        if compress is not None:
+            self.compress = compress
+        if encryption_key is not None:
+            self.encryption_key = encryption_key
+        if recording_quality is not None:
+            self.recording_quality = recording_quality
         if storage_type is not None:
             self.storage_type = storage_type
 
@@ -104,6 +119,69 @@ class WebBastionRdpRecord(object):
         """
 
         self._azure = azure
+
+    @property
+    def compress(self):
+        """Gets the compress of this WebBastionRdpRecord.  # noqa: E501
+
+
+        :return: The compress of this WebBastionRdpRecord.  # noqa: E501
+        :rtype: bool
+        """
+        return self._compress
+
+    @compress.setter
+    def compress(self, compress):
+        """Sets the compress of this WebBastionRdpRecord.
+
+
+        :param compress: The compress of this WebBastionRdpRecord.  # noqa: E501
+        :type: bool
+        """
+
+        self._compress = compress
+
+    @property
+    def encryption_key(self):
+        """Gets the encryption_key of this WebBastionRdpRecord.  # noqa: E501
+
+
+        :return: The encryption_key of this WebBastionRdpRecord.  # noqa: E501
+        :rtype: str
+        """
+        return self._encryption_key
+
+    @encryption_key.setter
+    def encryption_key(self, encryption_key):
+        """Sets the encryption_key of this WebBastionRdpRecord.
+
+
+        :param encryption_key: The encryption_key of this WebBastionRdpRecord.  # noqa: E501
+        :type: str
+        """
+
+        self._encryption_key = encryption_key
+
+    @property
+    def recording_quality(self):
+        """Gets the recording_quality of this WebBastionRdpRecord.  # noqa: E501
+
+
+        :return: The recording_quality of this WebBastionRdpRecord.  # noqa: E501
+        :rtype: str
+        """
+        return self._recording_quality
+
+    @recording_quality.setter
+    def recording_quality(self, recording_quality):
+        """Sets the recording_quality of this WebBastionRdpRecord.
+
+
+        :param recording_quality: The recording_quality of this WebBastionRdpRecord.  # noqa: E501
+        :type: str
+        """
+
+        self._recording_quality = recording_quality
 
     @property
     def storage_type(self):

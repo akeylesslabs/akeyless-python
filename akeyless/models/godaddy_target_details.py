@@ -40,6 +40,7 @@ class GodaddyTargetDetails(object):
         'imap_user': 'str',
         'key': 'str',
         'secret': 'str',
+        'shopper_id': 'str',
         'timeout': 'int',
         'validation_email': 'str'
     }
@@ -51,11 +52,12 @@ class GodaddyTargetDetails(object):
         'imap_user': 'imap_user',
         'key': 'key',
         'secret': 'secret',
+        'shopper_id': 'shopper_id',
         'timeout': 'timeout',
         'validation_email': 'validation_email'
     }
 
-    def __init__(self, imap_fqdn=None, imap_password=None, imap_port=None, imap_user=None, key=None, secret=None, timeout=None, validation_email=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, imap_fqdn=None, imap_password=None, imap_port=None, imap_user=None, key=None, secret=None, shopper_id=None, timeout=None, validation_email=None, local_vars_configuration=None):  # noqa: E501
         """GodaddyTargetDetails - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -67,6 +69,7 @@ class GodaddyTargetDetails(object):
         self._imap_user = None
         self._key = None
         self._secret = None
+        self._shopper_id = None
         self._timeout = None
         self._validation_email = None
         self.discriminator = None
@@ -83,6 +86,8 @@ class GodaddyTargetDetails(object):
             self.key = key
         if secret is not None:
             self.secret = secret
+        if shopper_id is not None:
+            self.shopper_id = shopper_id
         if timeout is not None:
             self.timeout = timeout
         if validation_email is not None:
@@ -213,6 +218,29 @@ class GodaddyTargetDetails(object):
         """
 
         self._secret = secret
+
+    @property
+    def shopper_id(self):
+        """Gets the shopper_id of this GodaddyTargetDetails.  # noqa: E501
+
+        Optional, used to find the certificate ID in GoDaddy's API  # noqa: E501
+
+        :return: The shopper_id of this GodaddyTargetDetails.  # noqa: E501
+        :rtype: str
+        """
+        return self._shopper_id
+
+    @shopper_id.setter
+    def shopper_id(self, shopper_id):
+        """Sets the shopper_id of this GodaddyTargetDetails.
+
+        Optional, used to find the certificate ID in GoDaddy's API  # noqa: E501
+
+        :param shopper_id: The shopper_id of this GodaddyTargetDetails.  # noqa: E501
+        :type: str
+        """
+
+        self._shopper_id = shopper_id
 
     @property
     def timeout(self):

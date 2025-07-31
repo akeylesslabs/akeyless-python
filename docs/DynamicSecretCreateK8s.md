@@ -16,6 +16,7 @@ Name | Type | Description | Notes
 **k8s_namespace** | **str** | K8S Namespace where the ServiceAccount exists. | [optional] 
 **k8s_predefined_role_name** | **str** | The pre-existing Role or ClusterRole name to bind the generated ServiceAccount to (relevant only for k8s-service-account-type&#x3D;dynamic) | [optional] 
 **k8s_predefined_role_type** | **str** | Specifies the type of the pre-existing K8S role [Role, ClusterRole] (relevant only for k8s-service-account-type&#x3D;dynamic) | [optional] 
+**k8s_rolebinding_yaml_data** | **str** | Content of the yaml in a Base64 format. | [optional] 
 **k8s_rolebinding_yaml_def** | **str** | Path to yaml file that contains definitions of K8S role and role binding (relevant only for k8s-service-account-type&#x3D;dynamic) | [optional] 
 **k8s_service_account** | **str** | K8S ServiceAccount to extract token from. | [optional] 
 **k8s_service_account_type** | **str** | K8S ServiceAccount type [fixed, dynamic]. | [optional] 

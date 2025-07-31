@@ -46,6 +46,7 @@ class DynamicSecretUpdateK8s(object):
         'k8s_namespace': 'str',
         'k8s_predefined_role_name': 'str',
         'k8s_predefined_role_type': 'str',
+        'k8s_rolebinding_yaml_data': 'str',
         'k8s_rolebinding_yaml_def': 'str',
         'k8s_service_account': 'str',
         'k8s_service_account_type': 'str',
@@ -83,6 +84,7 @@ class DynamicSecretUpdateK8s(object):
         'k8s_namespace': 'k8s-namespace',
         'k8s_predefined_role_name': 'k8s-predefined-role-name',
         'k8s_predefined_role_type': 'k8s-predefined-role-type',
+        'k8s_rolebinding_yaml_data': 'k8s-rolebinding-yaml-data',
         'k8s_rolebinding_yaml_def': 'k8s-rolebinding-yaml-def',
         'k8s_service_account': 'k8s-service-account',
         'k8s_service_account_type': 'k8s-service-account-type',
@@ -107,7 +109,7 @@ class DynamicSecretUpdateK8s(object):
         'user_ttl': 'user-ttl'
     }
 
-    def __init__(self, custom_username_template=None, delete_protection=None, description=None, json=False, k8s_allowed_namespaces=None, k8s_cluster_ca_cert=None, k8s_cluster_endpoint=None, k8s_cluster_name=None, k8s_cluster_token=None, k8s_namespace=None, k8s_predefined_role_name=None, k8s_predefined_role_type=None, k8s_rolebinding_yaml_def=None, k8s_service_account=None, k8s_service_account_type=None, name=None, new_name=None, producer_encryption_key_name=None, secure_access_allow_port_forwading=None, secure_access_bastion_issuer=None, secure_access_certificate_issuer=None, secure_access_cluster_endpoint=None, secure_access_dashboard_url=None, secure_access_delay=None, secure_access_enable=None, secure_access_web=False, secure_access_web_browsing=False, secure_access_web_proxy=False, tags=None, target_name=None, token=None, uid_token=None, use_gw_service_account=None, user_ttl='60m', local_vars_configuration=None):  # noqa: E501
+    def __init__(self, custom_username_template=None, delete_protection=None, description=None, json=False, k8s_allowed_namespaces=None, k8s_cluster_ca_cert=None, k8s_cluster_endpoint=None, k8s_cluster_name=None, k8s_cluster_token=None, k8s_namespace=None, k8s_predefined_role_name=None, k8s_predefined_role_type=None, k8s_rolebinding_yaml_data=None, k8s_rolebinding_yaml_def=None, k8s_service_account=None, k8s_service_account_type=None, name=None, new_name=None, producer_encryption_key_name=None, secure_access_allow_port_forwading=None, secure_access_bastion_issuer=None, secure_access_certificate_issuer=None, secure_access_cluster_endpoint=None, secure_access_dashboard_url=None, secure_access_delay=None, secure_access_enable=None, secure_access_web=False, secure_access_web_browsing=False, secure_access_web_proxy=False, tags=None, target_name=None, token=None, uid_token=None, use_gw_service_account=None, user_ttl='60m', local_vars_configuration=None):  # noqa: E501
         """DynamicSecretUpdateK8s - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -125,6 +127,7 @@ class DynamicSecretUpdateK8s(object):
         self._k8s_namespace = None
         self._k8s_predefined_role_name = None
         self._k8s_predefined_role_type = None
+        self._k8s_rolebinding_yaml_data = None
         self._k8s_rolebinding_yaml_def = None
         self._k8s_service_account = None
         self._k8s_service_account_type = None
@@ -173,6 +176,8 @@ class DynamicSecretUpdateK8s(object):
             self.k8s_predefined_role_name = k8s_predefined_role_name
         if k8s_predefined_role_type is not None:
             self.k8s_predefined_role_type = k8s_predefined_role_type
+        if k8s_rolebinding_yaml_data is not None:
+            self.k8s_rolebinding_yaml_data = k8s_rolebinding_yaml_data
         if k8s_rolebinding_yaml_def is not None:
             self.k8s_rolebinding_yaml_def = k8s_rolebinding_yaml_def
         if k8s_service_account is not None:
@@ -492,6 +497,29 @@ class DynamicSecretUpdateK8s(object):
         """
 
         self._k8s_predefined_role_type = k8s_predefined_role_type
+
+    @property
+    def k8s_rolebinding_yaml_data(self):
+        """Gets the k8s_rolebinding_yaml_data of this DynamicSecretUpdateK8s.  # noqa: E501
+
+        Content of the yaml in a Base64 format.  # noqa: E501
+
+        :return: The k8s_rolebinding_yaml_data of this DynamicSecretUpdateK8s.  # noqa: E501
+        :rtype: str
+        """
+        return self._k8s_rolebinding_yaml_data
+
+    @k8s_rolebinding_yaml_data.setter
+    def k8s_rolebinding_yaml_data(self, k8s_rolebinding_yaml_data):
+        """Sets the k8s_rolebinding_yaml_data of this DynamicSecretUpdateK8s.
+
+        Content of the yaml in a Base64 format.  # noqa: E501
+
+        :param k8s_rolebinding_yaml_data: The k8s_rolebinding_yaml_data of this DynamicSecretUpdateK8s.  # noqa: E501
+        :type: str
+        """
+
+        self._k8s_rolebinding_yaml_data = k8s_rolebinding_yaml_data
 
     @property
     def k8s_rolebinding_yaml_def(self):

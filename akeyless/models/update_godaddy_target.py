@@ -36,6 +36,7 @@ class UpdateGodaddyTarget(object):
     openapi_types = {
         'api_key': 'str',
         'comment': 'str',
+        'customer_id': 'str',
         'description': 'str',
         'imap_fqdn': 'str',
         'imap_password': 'str',
@@ -57,6 +58,7 @@ class UpdateGodaddyTarget(object):
     attribute_map = {
         'api_key': 'api-key',
         'comment': 'comment',
+        'customer_id': 'customer_id',
         'description': 'description',
         'imap_fqdn': 'imap-fqdn',
         'imap_password': 'imap-password',
@@ -75,7 +77,7 @@ class UpdateGodaddyTarget(object):
         'update_version': 'update-version'
     }
 
-    def __init__(self, api_key=None, comment=None, description=None, imap_fqdn=None, imap_password=None, imap_port='993', imap_username=None, json=False, keep_prev_version=None, key=None, max_versions=None, name=None, new_name=None, secret=None, timeout='5m', token=None, uid_token=None, update_version=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, api_key=None, comment=None, customer_id=None, description=None, imap_fqdn=None, imap_password=None, imap_port='993', imap_username=None, json=False, keep_prev_version=None, key=None, max_versions=None, name=None, new_name=None, secret=None, timeout='5m', token=None, uid_token=None, update_version=None, local_vars_configuration=None):  # noqa: E501
         """UpdateGodaddyTarget - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -83,6 +85,7 @@ class UpdateGodaddyTarget(object):
 
         self._api_key = None
         self._comment = None
+        self._customer_id = None
         self._description = None
         self._imap_fqdn = None
         self._imap_password = None
@@ -104,6 +107,8 @@ class UpdateGodaddyTarget(object):
         self.api_key = api_key
         if comment is not None:
             self.comment = comment
+        if customer_id is not None:
+            self.customer_id = customer_id
         if description is not None:
             self.description = description
         self.imap_fqdn = imap_fqdn
@@ -179,6 +184,29 @@ class UpdateGodaddyTarget(object):
         """
 
         self._comment = comment
+
+    @property
+    def customer_id(self):
+        """Gets the customer_id of this UpdateGodaddyTarget.  # noqa: E501
+
+        Customer ID (ShopperId) required for renewal of imported certificates  # noqa: E501
+
+        :return: The customer_id of this UpdateGodaddyTarget.  # noqa: E501
+        :rtype: str
+        """
+        return self._customer_id
+
+    @customer_id.setter
+    def customer_id(self, customer_id):
+        """Sets the customer_id of this UpdateGodaddyTarget.
+
+        Customer ID (ShopperId) required for renewal of imported certificates  # noqa: E501
+
+        :param customer_id: The customer_id of this UpdateGodaddyTarget.  # noqa: E501
+        :type: str
+        """
+
+        self._customer_id = customer_id
 
     @property
     def description(self):

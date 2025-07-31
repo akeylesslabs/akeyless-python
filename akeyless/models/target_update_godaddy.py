@@ -35,6 +35,7 @@ class TargetUpdateGodaddy(object):
     """
     openapi_types = {
         'api_key': 'str',
+        'customer_id': 'str',
         'description': 'str',
         'imap_fqdn': 'str',
         'imap_password': 'str',
@@ -54,6 +55,7 @@ class TargetUpdateGodaddy(object):
 
     attribute_map = {
         'api_key': 'api-key',
+        'customer_id': 'customer_id',
         'description': 'description',
         'imap_fqdn': 'imap-fqdn',
         'imap_password': 'imap-password',
@@ -71,13 +73,14 @@ class TargetUpdateGodaddy(object):
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, api_key=None, description=None, imap_fqdn=None, imap_password=None, imap_port='993', imap_username=None, json=False, keep_prev_version=None, key=None, max_versions=None, name=None, new_name=None, secret=None, timeout='5m', token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, api_key=None, customer_id=None, description=None, imap_fqdn=None, imap_password=None, imap_port='993', imap_username=None, json=False, keep_prev_version=None, key=None, max_versions=None, name=None, new_name=None, secret=None, timeout='5m', token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """TargetUpdateGodaddy - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._api_key = None
+        self._customer_id = None
         self._description = None
         self._imap_fqdn = None
         self._imap_password = None
@@ -96,6 +99,8 @@ class TargetUpdateGodaddy(object):
         self.discriminator = None
 
         self.api_key = api_key
+        if customer_id is not None:
+            self.customer_id = customer_id
         if description is not None:
             self.description = description
         self.imap_fqdn = imap_fqdn
@@ -146,6 +151,29 @@ class TargetUpdateGodaddy(object):
             raise ValueError("Invalid value for `api_key`, must not be `None`")  # noqa: E501
 
         self._api_key = api_key
+
+    @property
+    def customer_id(self):
+        """Gets the customer_id of this TargetUpdateGodaddy.  # noqa: E501
+
+        Customer ID (ShopperId) required for renewal of imported certificates  # noqa: E501
+
+        :return: The customer_id of this TargetUpdateGodaddy.  # noqa: E501
+        :rtype: str
+        """
+        return self._customer_id
+
+    @customer_id.setter
+    def customer_id(self, customer_id):
+        """Sets the customer_id of this TargetUpdateGodaddy.
+
+        Customer ID (ShopperId) required for renewal of imported certificates  # noqa: E501
+
+        :param customer_id: The customer_id of this TargetUpdateGodaddy.  # noqa: E501
+        :type: str
+        """
+
+        self._customer_id = customer_id
 
     @property
     def description(self):

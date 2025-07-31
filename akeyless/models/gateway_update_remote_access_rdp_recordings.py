@@ -46,6 +46,9 @@ class GatewayUpdateRemoteAccessRdpRecordings(object):
         'azure_storage_tenant_id': 'str',
         'json': 'bool',
         'rdp_session_recording': 'str',
+        'rdp_session_recording_compress': 'bool',
+        'rdp_session_recording_encryption_key': 'str',
+        'rdp_session_recording_quality': 'str',
         'rdp_session_storage': 'str',
         'token': 'str',
         'uid_token': 'str'
@@ -64,12 +67,15 @@ class GatewayUpdateRemoteAccessRdpRecordings(object):
         'azure_storage_tenant_id': 'azure-storage-tenant-id',
         'json': 'json',
         'rdp_session_recording': 'rdp-session-recording',
+        'rdp_session_recording_compress': 'rdp-session-recording-compress',
+        'rdp_session_recording_encryption_key': 'rdp-session-recording-encryption-key',
+        'rdp_session_recording_quality': 'rdp-session-recording-quality',
         'rdp_session_storage': 'rdp-session-storage',
         'token': 'token',
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, aws_storage_access_key_id=None, aws_storage_bucket_name=None, aws_storage_bucket_prefix=None, aws_storage_region=None, aws_storage_secret_access_key=None, azure_storage_account_name=None, azure_storage_client_id=None, azure_storage_client_secret=None, azure_storage_container_name=None, azure_storage_tenant_id=None, json=False, rdp_session_recording=None, rdp_session_storage=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, aws_storage_access_key_id=None, aws_storage_bucket_name=None, aws_storage_bucket_prefix=None, aws_storage_region=None, aws_storage_secret_access_key=None, azure_storage_account_name=None, azure_storage_client_id=None, azure_storage_client_secret=None, azure_storage_container_name=None, azure_storage_tenant_id=None, json=False, rdp_session_recording=None, rdp_session_recording_compress=None, rdp_session_recording_encryption_key=None, rdp_session_recording_quality=None, rdp_session_storage=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """GatewayUpdateRemoteAccessRdpRecordings - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -87,6 +93,9 @@ class GatewayUpdateRemoteAccessRdpRecordings(object):
         self._azure_storage_tenant_id = None
         self._json = None
         self._rdp_session_recording = None
+        self._rdp_session_recording_compress = None
+        self._rdp_session_recording_encryption_key = None
+        self._rdp_session_recording_quality = None
         self._rdp_session_storage = None
         self._token = None
         self._uid_token = None
@@ -116,6 +125,12 @@ class GatewayUpdateRemoteAccessRdpRecordings(object):
             self.json = json
         if rdp_session_recording is not None:
             self.rdp_session_recording = rdp_session_recording
+        if rdp_session_recording_compress is not None:
+            self.rdp_session_recording_compress = rdp_session_recording_compress
+        if rdp_session_recording_encryption_key is not None:
+            self.rdp_session_recording_encryption_key = rdp_session_recording_encryption_key
+        if rdp_session_recording_quality is not None:
+            self.rdp_session_recording_quality = rdp_session_recording_quality
         if rdp_session_storage is not None:
             self.rdp_session_storage = rdp_session_storage
         if token is not None:
@@ -398,6 +413,75 @@ class GatewayUpdateRemoteAccessRdpRecordings(object):
         """
 
         self._rdp_session_recording = rdp_session_recording
+
+    @property
+    def rdp_session_recording_compress(self):
+        """Gets the rdp_session_recording_compress of this GatewayUpdateRemoteAccessRdpRecordings.  # noqa: E501
+
+        Whether to compress recording files before upload  # noqa: E501
+
+        :return: The rdp_session_recording_compress of this GatewayUpdateRemoteAccessRdpRecordings.  # noqa: E501
+        :rtype: bool
+        """
+        return self._rdp_session_recording_compress
+
+    @rdp_session_recording_compress.setter
+    def rdp_session_recording_compress(self, rdp_session_recording_compress):
+        """Sets the rdp_session_recording_compress of this GatewayUpdateRemoteAccessRdpRecordings.
+
+        Whether to compress recording files before upload  # noqa: E501
+
+        :param rdp_session_recording_compress: The rdp_session_recording_compress of this GatewayUpdateRemoteAccessRdpRecordings.  # noqa: E501
+        :type: bool
+        """
+
+        self._rdp_session_recording_compress = rdp_session_recording_compress
+
+    @property
+    def rdp_session_recording_encryption_key(self):
+        """Gets the rdp_session_recording_encryption_key of this GatewayUpdateRemoteAccessRdpRecordings.  # noqa: E501
+
+        If provided, this key will be used to encrypt uploaded recordings.  # noqa: E501
+
+        :return: The rdp_session_recording_encryption_key of this GatewayUpdateRemoteAccessRdpRecordings.  # noqa: E501
+        :rtype: str
+        """
+        return self._rdp_session_recording_encryption_key
+
+    @rdp_session_recording_encryption_key.setter
+    def rdp_session_recording_encryption_key(self, rdp_session_recording_encryption_key):
+        """Sets the rdp_session_recording_encryption_key of this GatewayUpdateRemoteAccessRdpRecordings.
+
+        If provided, this key will be used to encrypt uploaded recordings.  # noqa: E501
+
+        :param rdp_session_recording_encryption_key: The rdp_session_recording_encryption_key of this GatewayUpdateRemoteAccessRdpRecordings.  # noqa: E501
+        :type: str
+        """
+
+        self._rdp_session_recording_encryption_key = rdp_session_recording_encryption_key
+
+    @property
+    def rdp_session_recording_quality(self):
+        """Gets the rdp_session_recording_quality of this GatewayUpdateRemoteAccessRdpRecordings.  # noqa: E501
+
+        RDP session recording quality [low/medium/high]  # noqa: E501
+
+        :return: The rdp_session_recording_quality of this GatewayUpdateRemoteAccessRdpRecordings.  # noqa: E501
+        :rtype: str
+        """
+        return self._rdp_session_recording_quality
+
+    @rdp_session_recording_quality.setter
+    def rdp_session_recording_quality(self, rdp_session_recording_quality):
+        """Sets the rdp_session_recording_quality of this GatewayUpdateRemoteAccessRdpRecordings.
+
+        RDP session recording quality [low/medium/high]  # noqa: E501
+
+        :param rdp_session_recording_quality: The rdp_session_recording_quality of this GatewayUpdateRemoteAccessRdpRecordings.  # noqa: E501
+        :type: str
+        """
+
+        self._rdp_session_recording_quality = rdp_session_recording_quality
 
     @property
     def rdp_session_storage(self):
