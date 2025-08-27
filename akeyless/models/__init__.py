@@ -593,6 +593,7 @@ from akeyless.models.gateway_update_tls_cert_output import GatewayUpdateTlsCertO
 from akeyless.models.gateway_update_tmp_users import GatewayUpdateTmpUsers
 from akeyless.models.gateways_list_response import GatewaysListResponse
 from akeyless.models.gcp_target_details import GcpTargetDetails
+from akeyless.models.gemini_target_details import GeminiTargetDetails
 from akeyless.models.gen_customer_fragment import GenCustomerFragment
 from akeyless.models.general_config_part import GeneralConfigPart
 from akeyless.models.generate_acme_eab import GenerateAcmeEab
@@ -762,6 +763,7 @@ from akeyless.models.object_version_settings_output import ObjectVersionSettings
 from akeyless.models.oidc_client_info import OidcClientInfo
 from akeyless.models.one_password_migration import OnePasswordMigration
 from akeyless.models.one_password_payload import OnePasswordPayload
+from akeyless.models.open_ai_target_details import OpenAITargetDetails
 from akeyless.models.pki_certificate_issue_details import PKICertificateIssueDetails
 from akeyless.models.password_breach_info import PasswordBreachInfo
 from akeyless.models.password_expiration_info import PasswordExpirationInfo
@@ -910,6 +912,7 @@ from akeyless.models.target_create_db import TargetCreateDB
 from akeyless.models.target_create_dockerhub import TargetCreateDockerhub
 from akeyless.models.target_create_eks import TargetCreateEks
 from akeyless.models.target_create_gcp import TargetCreateGcp
+from akeyless.models.target_create_gemini import TargetCreateGemini
 from akeyless.models.target_create_github import TargetCreateGithub
 from akeyless.models.target_create_gitlab import TargetCreateGitlab
 from akeyless.models.target_create_gke import TargetCreateGke
@@ -920,6 +923,7 @@ from akeyless.models.target_create_hashi_vault import TargetCreateHashiVault
 from akeyless.models.target_create_k8s import TargetCreateK8s
 from akeyless.models.target_create_ldap import TargetCreateLdap
 from akeyless.models.target_create_linked import TargetCreateLinked
+from akeyless.models.target_create_open_ai import TargetCreateOpenAI
 from akeyless.models.target_create_output import TargetCreateOutput
 from akeyless.models.target_create_ping import TargetCreatePing
 from akeyless.models.target_create_rabbit_mq import TargetCreateRabbitMq
@@ -944,6 +948,7 @@ from akeyless.models.target_update_db import TargetUpdateDB
 from akeyless.models.target_update_dockerhub import TargetUpdateDockerhub
 from akeyless.models.target_update_eks import TargetUpdateEks
 from akeyless.models.target_update_gcp import TargetUpdateGcp
+from akeyless.models.target_update_gemini import TargetUpdateGemini
 from akeyless.models.target_update_github import TargetUpdateGithub
 from akeyless.models.target_update_gitlab import TargetUpdateGitlab
 from akeyless.models.target_update_gke import TargetUpdateGke
@@ -954,6 +959,7 @@ from akeyless.models.target_update_hashi_vault import TargetUpdateHashiVault
 from akeyless.models.target_update_k8s import TargetUpdateK8s
 from akeyless.models.target_update_ldap import TargetUpdateLdap
 from akeyless.models.target_update_linked import TargetUpdateLinked
+from akeyless.models.target_update_open_ai import TargetUpdateOpenAI
 from akeyless.models.target_update_output import TargetUpdateOutput
 from akeyless.models.target_update_ping import TargetUpdatePing
 from akeyless.models.target_update_rabbit_mq import TargetUpdateRabbitMq

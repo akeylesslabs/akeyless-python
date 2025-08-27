@@ -5,6 +5,7 @@ gwUpdateRemoteAccessSessionLogsSplunk is a command that updates session log forw
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **enable** | **str** | Enable Log Forwarding [true/false] | [optional] [default to 'true']
+**enable_batch** | **str** | Enable batch forwarding [true/false] | [optional] [default to 'true']
 **enable_tls** | **bool** | Enable tls | [optional] 
 **index** | **str** | Splunk index | [optional] 
 **json** | **bool** | Set output format to JSON | [optional] [default to False]

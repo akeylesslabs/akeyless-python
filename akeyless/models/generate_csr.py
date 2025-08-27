@@ -45,6 +45,7 @@ class GenerateCsr(object):
         'email_addresses': 'str',
         'export_private_key': 'bool',
         'generate_key': 'bool',
+        'hash_algorithm': 'str',
         'ip_addresses': 'str',
         'json': 'bool',
         'key_type': 'str',
@@ -69,6 +70,7 @@ class GenerateCsr(object):
         'email_addresses': 'email-addresses',
         'export_private_key': 'export-private-key',
         'generate_key': 'generate-key',
+        'hash_algorithm': 'hash-algorithm',
         'ip_addresses': 'ip-addresses',
         'json': 'json',
         'key_type': 'key-type',
@@ -81,7 +83,7 @@ class GenerateCsr(object):
         'uri_sans': 'uri-sans'
     }
 
-    def __init__(self, alg=None, alt_names=None, certificate_type=None, city=None, common_name=None, country=None, critical=None, dep=None, email_addresses=None, export_private_key=False, generate_key=None, ip_addresses=None, json=False, key_type='classic-key', name=None, org=None, split_level=3, state=None, token=None, uid_token=None, uri_sans=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, alg=None, alt_names=None, certificate_type=None, city=None, common_name=None, country=None, critical=None, dep=None, email_addresses=None, export_private_key=False, generate_key=None, hash_algorithm='SHA256', ip_addresses=None, json=False, key_type='classic-key', name=None, org=None, split_level=3, state=None, token=None, uid_token=None, uri_sans=None, local_vars_configuration=None):  # noqa: E501
         """GenerateCsr - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -98,6 +100,7 @@ class GenerateCsr(object):
         self._email_addresses = None
         self._export_private_key = None
         self._generate_key = None
+        self._hash_algorithm = None
         self._ip_addresses = None
         self._json = None
         self._key_type = None
@@ -131,6 +134,8 @@ class GenerateCsr(object):
             self.export_private_key = export_private_key
         if generate_key is not None:
             self.generate_key = generate_key
+        if hash_algorithm is not None:
+            self.hash_algorithm = hash_algorithm
         if ip_addresses is not None:
             self.ip_addresses = ip_addresses
         if json is not None:
@@ -402,6 +407,29 @@ class GenerateCsr(object):
         """
 
         self._generate_key = generate_key
+
+    @property
+    def hash_algorithm(self):
+        """Gets the hash_algorithm of this GenerateCsr.  # noqa: E501
+
+        Specifies the hash algorithm used for the encryption key's operations, available options: SHA256, SHA384, SHA512  # noqa: E501
+
+        :return: The hash_algorithm of this GenerateCsr.  # noqa: E501
+        :rtype: str
+        """
+        return self._hash_algorithm
+
+    @hash_algorithm.setter
+    def hash_algorithm(self, hash_algorithm):
+        """Sets the hash_algorithm of this GenerateCsr.
+
+        Specifies the hash algorithm used for the encryption key's operations, available options: SHA256, SHA384, SHA512  # noqa: E501
+
+        :param hash_algorithm: The hash_algorithm of this GenerateCsr.  # noqa: E501
+        :type: str
+        """
+
+        self._hash_algorithm = hash_algorithm
 
     @property
     def ip_addresses(self):

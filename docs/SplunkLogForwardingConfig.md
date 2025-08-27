@@ -3,6 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**splunk_enable_batch** | **str** |  | [optional] 
 **splunk_enable_tls** | **bool** |  | [optional] 
 **splunk_index** | **str** |  | [optional] 
 **splunk_source** | **str** |  | [optional] 

@@ -5,6 +5,7 @@ gatewayUpdateLogForwardingAzureAnalytics is a command that updates log forwardin
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **enable** | **str** | Enable Log Forwarding [true/false] | [optional] [default to 'true']
+**enable_batch** | **str** | Enable batch forwarding [true/false] | [optional] [default to 'true']
 **json** | **bool** | Set output format to JSON | [optional] [default to False]
 **output_format** | **str** | Logs format [text/json] | [optional] [default to 'text']
 **pull_interval** | **str** | Pull interval in seconds | [optional] [default to '10']

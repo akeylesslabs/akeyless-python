@@ -447,6 +447,7 @@ Method | HTTP request | Description
 [**target_create_dockerhub**](V2Api.md#target_create_dockerhub) | **POST** /target-create-dockerhub | 
 [**target_create_eks**](V2Api.md#target_create_eks) | **POST** /target-create-eks | 
 [**target_create_gcp**](V2Api.md#target_create_gcp) | **POST** /target-create-gcp | 
+[**target_create_gemini**](V2Api.md#target_create_gemini) | **POST** /target-create-gemini | 
 [**target_create_github**](V2Api.md#target_create_github) | **POST** /target-create-github | 
 [**target_create_gitlab**](V2Api.md#target_create_gitlab) | **POST** /target-create-gitlab | 
 [**target_create_gke**](V2Api.md#target_create_gke) | **POST** /target-create-gke | 
@@ -457,6 +458,7 @@ Method | HTTP request | Description
 [**target_create_k8s**](V2Api.md#target_create_k8s) | **POST** /target-create-k8s | 
 [**target_create_ldap**](V2Api.md#target_create_ldap) | **POST** /target-create-ldap | 
 [**target_create_linked**](V2Api.md#target_create_linked) | **POST** /target-create-linked | 
+[**target_create_open_ai**](V2Api.md#target_create_open_ai) | **POST** /target-create-openai | 
 [**target_create_ping**](V2Api.md#target_create_ping) | **POST** /target-create-ping | 
 [**target_create_rabbit_mq**](V2Api.md#target_create_rabbit_mq) | **POST** /target-create-rabbitmq | 
 [**target_create_salesforce**](V2Api.md#target_create_salesforce) | **POST** /target-create-salesforce | 
@@ -476,6 +478,7 @@ Method | HTTP request | Description
 [**target_update_dockerhub**](V2Api.md#target_update_dockerhub) | **POST** /target-update-dockerhub | 
 [**target_update_eks**](V2Api.md#target_update_eks) | **POST** /target-update-eks | 
 [**target_update_gcp**](V2Api.md#target_update_gcp) | **POST** /target-update-gcp | 
+[**target_update_gemini**](V2Api.md#target_update_gemini) | **POST** /target-update-gemini | 
 [**target_update_github**](V2Api.md#target_update_github) | **POST** /target-update-github | 
 [**target_update_gitlab**](V2Api.md#target_update_gitlab) | **POST** /target-update-gitlab | 
 [**target_update_gke**](V2Api.md#target_update_gke) | **POST** /target-update-gke | 
@@ -486,6 +489,7 @@ Method | HTTP request | Description
 [**target_update_k8s**](V2Api.md#target_update_k8s) | **POST** /target-update-k8s | 
 [**target_update_ldap**](V2Api.md#target_update_ldap) | **POST** /target-update-ldap | 
 [**target_update_linked**](V2Api.md#target_update_linked) | **POST** /target-update-linked | 
+[**target_update_open_ai**](V2Api.md#target_update_open_ai) | **POST** /target-update-openai | 
 [**target_update_ping**](V2Api.md#target_update_ping) | **POST** /target-update-ping | 
 [**target_update_rabbit_mq**](V2Api.md#target_update_rabbit_mq) | **POST** /target-update-rabbitmq | 
 [**target_update_salesforce**](V2Api.md#target_update_salesforce) | **POST** /target-update-salesforce | 
@@ -27142,6 +27146,66 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **target_create_gemini**
+> TargetCreateOutput target_create_gemini(target_create_gemini)
+
+
+
+### Example
+
+```python
+from __future__ import print_function
+import time
+import akeyless
+from akeyless.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.akeyless.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = akeyless.Configuration(
+    host = "https://api.akeyless.io"
+)
+
+
+# Enter a context with an instance of the API client
+with akeyless.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = akeyless.V2Api(api_client)
+    target_create_gemini = akeyless.TargetCreateGemini() # TargetCreateGemini | 
+
+    try:
+        api_response = api_instance.target_create_gemini(target_create_gemini)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling V2Api->target_create_gemini: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **target_create_gemini** | [**TargetCreateGemini**](TargetCreateGemini.md)|  | 
+
+### Return type
+
+[**TargetCreateOutput**](TargetCreateOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**201** | targetCreateGeminiResponse wraps response body. |  -  |
+**0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **target_create_github**
 > TargetCreateOutput target_create_github(target_create_github)
 
@@ -27738,6 +27802,66 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | targetCreateLinkedResponse wraps response body. |  -  |
+**0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **target_create_open_ai**
+> TargetCreateOutput target_create_open_ai(target_create_open_ai)
+
+
+
+### Example
+
+```python
+from __future__ import print_function
+import time
+import akeyless
+from akeyless.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.akeyless.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = akeyless.Configuration(
+    host = "https://api.akeyless.io"
+)
+
+
+# Enter a context with an instance of the API client
+with akeyless.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = akeyless.V2Api(api_client)
+    target_create_open_ai = akeyless.TargetCreateOpenAI() # TargetCreateOpenAI | 
+
+    try:
+        api_response = api_instance.target_create_open_ai(target_create_open_ai)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling V2Api->target_create_open_ai: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **target_create_open_ai** | [**TargetCreateOpenAI**](TargetCreateOpenAI.md)|  | 
+
+### Return type
+
+[**TargetCreateOutput**](TargetCreateOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**201** | targetCreateOpenAIResponse wraps response body. |  -  |
 **0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -28882,6 +29006,66 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **target_update_gemini**
+> TargetUpdateOutput target_update_gemini(target_update_gemini)
+
+
+
+### Example
+
+```python
+from __future__ import print_function
+import time
+import akeyless
+from akeyless.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.akeyless.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = akeyless.Configuration(
+    host = "https://api.akeyless.io"
+)
+
+
+# Enter a context with an instance of the API client
+with akeyless.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = akeyless.V2Api(api_client)
+    target_update_gemini = akeyless.TargetUpdateGemini() # TargetUpdateGemini | 
+
+    try:
+        api_response = api_instance.target_update_gemini(target_update_gemini)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling V2Api->target_update_gemini: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **target_update_gemini** | [**TargetUpdateGemini**](TargetUpdateGemini.md)|  | 
+
+### Return type
+
+[**TargetUpdateOutput**](TargetUpdateOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**201** | targetUpdateGeminiResponse wraps response body. |  -  |
+**0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **target_update_github**
 > TargetUpdateOutput target_update_github(target_update_github)
 
@@ -29478,6 +29662,66 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | targetUpdateLinkedResponse wraps response body. |  -  |
+**0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **target_update_open_ai**
+> TargetUpdateOutput target_update_open_ai(target_update_open_ai)
+
+
+
+### Example
+
+```python
+from __future__ import print_function
+import time
+import akeyless
+from akeyless.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.akeyless.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = akeyless.Configuration(
+    host = "https://api.akeyless.io"
+)
+
+
+# Enter a context with an instance of the API client
+with akeyless.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = akeyless.V2Api(api_client)
+    target_update_open_ai = akeyless.TargetUpdateOpenAI() # TargetUpdateOpenAI | 
+
+    try:
+        api_response = api_instance.target_update_open_ai(target_update_open_ai)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling V2Api->target_update_open_ai: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **target_update_open_ai** | [**TargetUpdateOpenAI**](TargetUpdateOpenAI.md)|  | 
+
+### Return type
+
+[**TargetUpdateOutput**](TargetUpdateOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**201** | targetUpdateOpenAIResponse wraps response body. |  -  |
 **0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

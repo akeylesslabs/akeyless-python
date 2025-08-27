@@ -50,6 +50,7 @@ class CreateDFCKey(object):
         'description': 'str',
         'expiration_event_in': 'list[str]',
         'generate_self_signed_certificate': 'bool',
+        'hash_algorithm': 'str',
         'json': 'bool',
         'metadata': 'str',
         'name': 'str',
@@ -78,6 +79,7 @@ class CreateDFCKey(object):
         'description': 'description',
         'expiration_event_in': 'expiration-event-in',
         'generate_self_signed_certificate': 'generate-self-signed-certificate',
+        'hash_algorithm': 'hash-algorithm',
         'json': 'json',
         'metadata': 'metadata',
         'name': 'name',
@@ -89,7 +91,7 @@ class CreateDFCKey(object):
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, alg=None, auto_rotate=None, certificate_common_name=None, certificate_country=None, certificate_digest_algo=None, certificate_format=None, certificate_locality=None, certificate_organization=None, certificate_province=None, certificate_ttl=None, conf_file_data=None, customer_frg_id=None, delete_protection=None, description=None, expiration_event_in=None, generate_self_signed_certificate=None, json=False, metadata=None, name=None, rotation_event_in=None, rotation_interval=None, split_level=3, tag=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, alg=None, auto_rotate=None, certificate_common_name=None, certificate_country=None, certificate_digest_algo=None, certificate_format=None, certificate_locality=None, certificate_organization=None, certificate_province=None, certificate_ttl=None, conf_file_data=None, customer_frg_id=None, delete_protection=None, description=None, expiration_event_in=None, generate_self_signed_certificate=None, hash_algorithm='SHA256', json=False, metadata=None, name=None, rotation_event_in=None, rotation_interval=None, split_level=3, tag=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """CreateDFCKey - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -111,6 +113,7 @@ class CreateDFCKey(object):
         self._description = None
         self._expiration_event_in = None
         self._generate_self_signed_certificate = None
+        self._hash_algorithm = None
         self._json = None
         self._metadata = None
         self._name = None
@@ -153,6 +156,8 @@ class CreateDFCKey(object):
             self.expiration_event_in = expiration_event_in
         if generate_self_signed_certificate is not None:
             self.generate_self_signed_certificate = generate_self_signed_certificate
+        if hash_algorithm is not None:
+            self.hash_algorithm = hash_algorithm
         if json is not None:
             self.json = json
         if metadata is not None:
@@ -269,7 +274,7 @@ class CreateDFCKey(object):
     def certificate_digest_algo(self):
         """Gets the certificate_digest_algo of this CreateDFCKey.  # noqa: E501
 
-        Digest algorithm to be used for the certificate key signing. Currently, we support only \"sha256\" so we hide this option for CLI.  # noqa: E501
+        Digest algorithm to be used for the certificate key signing.  # noqa: E501
 
         :return: The certificate_digest_algo of this CreateDFCKey.  # noqa: E501
         :rtype: str
@@ -280,7 +285,7 @@ class CreateDFCKey(object):
     def certificate_digest_algo(self, certificate_digest_algo):
         """Sets the certificate_digest_algo of this CreateDFCKey.
 
-        Digest algorithm to be used for the certificate key signing. Currently, we support only \"sha256\" so we hide this option for CLI.  # noqa: E501
+        Digest algorithm to be used for the certificate key signing.  # noqa: E501
 
         :param certificate_digest_algo: The certificate_digest_algo of this CreateDFCKey.  # noqa: E501
         :type: str
@@ -538,6 +543,29 @@ class CreateDFCKey(object):
         """
 
         self._generate_self_signed_certificate = generate_self_signed_certificate
+
+    @property
+    def hash_algorithm(self):
+        """Gets the hash_algorithm of this CreateDFCKey.  # noqa: E501
+
+        Specifies the hash algorithm used for the encryption key's operations, available options: [SHA256, SHA384, SHA512]  # noqa: E501
+
+        :return: The hash_algorithm of this CreateDFCKey.  # noqa: E501
+        :rtype: str
+        """
+        return self._hash_algorithm
+
+    @hash_algorithm.setter
+    def hash_algorithm(self, hash_algorithm):
+        """Sets the hash_algorithm of this CreateDFCKey.
+
+        Specifies the hash algorithm used for the encryption key's operations, available options: [SHA256, SHA384, SHA512]  # noqa: E501
+
+        :param hash_algorithm: The hash_algorithm of this CreateDFCKey.  # noqa: E501
+        :type: str
+        """
+
+        self._hash_algorithm = hash_algorithm
 
     @property
     def json(self):

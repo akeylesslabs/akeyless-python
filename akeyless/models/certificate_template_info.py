@@ -38,6 +38,7 @@ class CertificateTemplateInfo(object):
         'country': 'str',
         'csr_cnf_base_64': 'str',
         'digest_algo': 'str',
+        'hash_algorithm': 'str',
         'locality': 'str',
         'organization': 'str',
         'province': 'str',
@@ -50,6 +51,7 @@ class CertificateTemplateInfo(object):
         'country': 'country',
         'csr_cnf_base_64': 'csr_cnf_base_64',
         'digest_algo': 'digest_algo',
+        'hash_algorithm': 'hash_algorithm',
         'locality': 'locality',
         'organization': 'organization',
         'province': 'province',
@@ -57,7 +59,7 @@ class CertificateTemplateInfo(object):
         'ttl': 'ttl'
     }
 
-    def __init__(self, common_name=None, country=None, csr_cnf_base_64=None, digest_algo=None, locality=None, organization=None, province=None, self_signed_enabled=None, ttl=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, common_name=None, country=None, csr_cnf_base_64=None, digest_algo=None, hash_algorithm=None, locality=None, organization=None, province=None, self_signed_enabled=None, ttl=None, local_vars_configuration=None):  # noqa: E501
         """CertificateTemplateInfo - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -67,6 +69,7 @@ class CertificateTemplateInfo(object):
         self._country = None
         self._csr_cnf_base_64 = None
         self._digest_algo = None
+        self._hash_algorithm = None
         self._locality = None
         self._organization = None
         self._province = None
@@ -82,6 +85,8 @@ class CertificateTemplateInfo(object):
             self.csr_cnf_base_64 = csr_cnf_base_64
         if digest_algo is not None:
             self.digest_algo = digest_algo
+        if hash_algorithm is not None:
+            self.hash_algorithm = hash_algorithm
         if locality is not None:
             self.locality = locality
         if organization is not None:
@@ -176,6 +181,27 @@ class CertificateTemplateInfo(object):
         """
 
         self._digest_algo = digest_algo
+
+    @property
+    def hash_algorithm(self):
+        """Gets the hash_algorithm of this CertificateTemplateInfo.  # noqa: E501
+
+
+        :return: The hash_algorithm of this CertificateTemplateInfo.  # noqa: E501
+        :rtype: str
+        """
+        return self._hash_algorithm
+
+    @hash_algorithm.setter
+    def hash_algorithm(self, hash_algorithm):
+        """Sets the hash_algorithm of this CertificateTemplateInfo.
+
+
+        :param hash_algorithm: The hash_algorithm of this CertificateTemplateInfo.  # noqa: E501
+        :type: str
+        """
+
+        self._hash_algorithm = hash_algorithm
 
     @property
     def locality(self):

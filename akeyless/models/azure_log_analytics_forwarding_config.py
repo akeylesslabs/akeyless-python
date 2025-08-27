@@ -34,29 +34,55 @@ class AzureLogAnalyticsForwardingConfig(object):
                             and the value is json key in definition.
     """
     openapi_types = {
+        'azure_enable_batch': 'str',
         'azure_workspace_id': 'str',
         'azure_workspace_key': 'str'
     }
 
     attribute_map = {
+        'azure_enable_batch': 'azure_enable_batch',
         'azure_workspace_id': 'azure_workspace_id',
         'azure_workspace_key': 'azure_workspace_key'
     }
 
-    def __init__(self, azure_workspace_id=None, azure_workspace_key=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, azure_enable_batch=None, azure_workspace_id=None, azure_workspace_key=None, local_vars_configuration=None):  # noqa: E501
         """AzureLogAnalyticsForwardingConfig - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
+        self._azure_enable_batch = None
         self._azure_workspace_id = None
         self._azure_workspace_key = None
         self.discriminator = None
 
+        if azure_enable_batch is not None:
+            self.azure_enable_batch = azure_enable_batch
         if azure_workspace_id is not None:
             self.azure_workspace_id = azure_workspace_id
         if azure_workspace_key is not None:
             self.azure_workspace_key = azure_workspace_key
+
+    @property
+    def azure_enable_batch(self):
+        """Gets the azure_enable_batch of this AzureLogAnalyticsForwardingConfig.  # noqa: E501
+
+
+        :return: The azure_enable_batch of this AzureLogAnalyticsForwardingConfig.  # noqa: E501
+        :rtype: str
+        """
+        return self._azure_enable_batch
+
+    @azure_enable_batch.setter
+    def azure_enable_batch(self, azure_enable_batch):
+        """Sets the azure_enable_batch of this AzureLogAnalyticsForwardingConfig.
+
+
+        :param azure_enable_batch: The azure_enable_batch of this AzureLogAnalyticsForwardingConfig.  # noqa: E501
+        :type: str
+        """
+
+        self._azure_enable_batch = azure_enable_batch
 
     @property
     def azure_workspace_id(self):

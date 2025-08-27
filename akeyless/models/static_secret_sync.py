@@ -34,6 +34,7 @@ class StaticSecretSync(object):
                             and the value is json key in definition.
     """
     openapi_types = {
+        'filter_secret_value': 'str',
         'json': 'bool',
         'name': 'str',
         'namespace': 'str',
@@ -44,6 +45,7 @@ class StaticSecretSync(object):
     }
 
     attribute_map = {
+        'filter_secret_value': 'filter-secret-value',
         'json': 'json',
         'name': 'name',
         'namespace': 'namespace',
@@ -53,12 +55,13 @@ class StaticSecretSync(object):
         'usc_name': 'usc-name'
     }
 
-    def __init__(self, json=False, name=None, namespace=None, remote_secret_name=None, token=None, uid_token=None, usc_name=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, filter_secret_value=None, json=False, name=None, namespace=None, remote_secret_name=None, token=None, uid_token=None, usc_name=None, local_vars_configuration=None):  # noqa: E501
         """StaticSecretSync - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
+        self._filter_secret_value = None
         self._json = None
         self._name = None
         self._namespace = None
@@ -68,6 +71,8 @@ class StaticSecretSync(object):
         self._usc_name = None
         self.discriminator = None
 
+        if filter_secret_value is not None:
+            self.filter_secret_value = filter_secret_value
         if json is not None:
             self.json = json
         self.name = name
@@ -81,6 +86,29 @@ class StaticSecretSync(object):
             self.uid_token = uid_token
         if usc_name is not None:
             self.usc_name = usc_name
+
+    @property
+    def filter_secret_value(self):
+        """Gets the filter_secret_value of this StaticSecretSync.  # noqa: E501
+
+        JQ expression to filter or transform the secret value  # noqa: E501
+
+        :return: The filter_secret_value of this StaticSecretSync.  # noqa: E501
+        :rtype: str
+        """
+        return self._filter_secret_value
+
+    @filter_secret_value.setter
+    def filter_secret_value(self, filter_secret_value):
+        """Sets the filter_secret_value of this StaticSecretSync.
+
+        JQ expression to filter or transform the secret value  # noqa: E501
+
+        :param filter_secret_value: The filter_secret_value of this StaticSecretSync.  # noqa: E501
+        :type: str
+        """
+
+        self._filter_secret_value = filter_secret_value
 
     @property
     def json(self):

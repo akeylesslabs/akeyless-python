@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **auto_rotate** | **str** | Whether to automatically rotate every rotation_interval days, or disable existing automatic rotation [true/false] | [optional] 
 **certificate_common_name** | **str** | Common name for the generated certificate. Relevant only for generate-self-signed-certificate. | [optional] 
 **certificate_country** | **str** | Country name for the generated certificate. Relevant only for generate-self-signed-certificate. | [optional] 
-**certificate_digest_algo** | **str** | Digest algorithm to be used for the certificate key signing. Currently, we support only \&quot;sha256\&quot; so we hide this option for CLI. | [optional] 
+**certificate_digest_algo** | **str** | Digest algorithm to be used for the certificate key signing. | [optional] 
 **certificate_format** | **str** |  | [optional] 
 **certificate_locality** | **str** | Locality for the generated certificate. Relevant only for generate-self-signed-certificate. | [optional] 
 **certificate_organization** | **str** | Organization name for the generated certificate. Relevant only for generate-self-signed-certificate. | [optional] 
@@ -19,6 +19,7 @@ Name | Type | Description | Notes
 **description** | **str** | Description of the object | [optional] 
 **expiration_event_in** | **list[str]** | How many days before the expiration of the certificate would you like to be notified. | [optional] 
 **generate_self_signed_certificate** | **bool** | Whether to generate a self signed certificate with the key. If set, --certificate-ttl must be provided. | [optional] 
+**hash_algorithm** | **str** | Specifies the hash algorithm used for the encryption key&#39;s operations, available options: [SHA256, SHA384, SHA512] | [optional] [default to 'SHA256']
 **json** | **bool** | Set output format to JSON | [optional] [default to False]
 **metadata** | **str** | Deprecated - use description | [optional] 
 **name** | **str** | DFCKey name | 

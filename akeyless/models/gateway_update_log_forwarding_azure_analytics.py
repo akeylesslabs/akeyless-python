@@ -35,6 +35,7 @@ class GatewayUpdateLogForwardingAzureAnalytics(object):
     """
     openapi_types = {
         'enable': 'str',
+        'enable_batch': 'str',
         'json': 'bool',
         'output_format': 'str',
         'pull_interval': 'str',
@@ -46,6 +47,7 @@ class GatewayUpdateLogForwardingAzureAnalytics(object):
 
     attribute_map = {
         'enable': 'enable',
+        'enable_batch': 'enable-batch',
         'json': 'json',
         'output_format': 'output-format',
         'pull_interval': 'pull-interval',
@@ -55,13 +57,14 @@ class GatewayUpdateLogForwardingAzureAnalytics(object):
         'workspace_key': 'workspace-key'
     }
 
-    def __init__(self, enable='true', json=False, output_format='text', pull_interval='10', token=None, uid_token=None, workspace_id=None, workspace_key=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, enable='true', enable_batch='true', json=False, output_format='text', pull_interval='10', token=None, uid_token=None, workspace_id=None, workspace_key=None, local_vars_configuration=None):  # noqa: E501
         """GatewayUpdateLogForwardingAzureAnalytics - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._enable = None
+        self._enable_batch = None
         self._json = None
         self._output_format = None
         self._pull_interval = None
@@ -73,6 +76,8 @@ class GatewayUpdateLogForwardingAzureAnalytics(object):
 
         if enable is not None:
             self.enable = enable
+        if enable_batch is not None:
+            self.enable_batch = enable_batch
         if json is not None:
             self.json = json
         if output_format is not None:
@@ -110,6 +115,29 @@ class GatewayUpdateLogForwardingAzureAnalytics(object):
         """
 
         self._enable = enable
+
+    @property
+    def enable_batch(self):
+        """Gets the enable_batch of this GatewayUpdateLogForwardingAzureAnalytics.  # noqa: E501
+
+        Enable batch forwarding [true/false]  # noqa: E501
+
+        :return: The enable_batch of this GatewayUpdateLogForwardingAzureAnalytics.  # noqa: E501
+        :rtype: str
+        """
+        return self._enable_batch
+
+    @enable_batch.setter
+    def enable_batch(self, enable_batch):
+        """Sets the enable_batch of this GatewayUpdateLogForwardingAzureAnalytics.
+
+        Enable batch forwarding [true/false]  # noqa: E501
+
+        :param enable_batch: The enable_batch of this GatewayUpdateLogForwardingAzureAnalytics.  # noqa: E501
+        :type: str
+        """
+
+        self._enable_batch = enable_batch
 
     @property
     def json(self):

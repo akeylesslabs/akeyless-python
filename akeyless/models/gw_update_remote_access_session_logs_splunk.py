@@ -35,6 +35,7 @@ class GwUpdateRemoteAccessSessionLogsSplunk(object):
     """
     openapi_types = {
         'enable': 'str',
+        'enable_batch': 'str',
         'enable_tls': 'bool',
         'index': 'str',
         'json': 'bool',
@@ -51,6 +52,7 @@ class GwUpdateRemoteAccessSessionLogsSplunk(object):
 
     attribute_map = {
         'enable': 'enable',
+        'enable_batch': 'enable-batch',
         'enable_tls': 'enable-tls',
         'index': 'index',
         'json': 'json',
@@ -65,13 +67,14 @@ class GwUpdateRemoteAccessSessionLogsSplunk(object):
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, enable='true', enable_tls=None, index=None, json=False, output_format='text', pull_interval='10', source='use-existing', source_type='use-existing', splunk_token=None, splunk_url=None, tls_certificate='use-existing', token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, enable='true', enable_batch='true', enable_tls=None, index=None, json=False, output_format='text', pull_interval='10', source='use-existing', source_type='use-existing', splunk_token=None, splunk_url=None, tls_certificate='use-existing', token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """GwUpdateRemoteAccessSessionLogsSplunk - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._enable = None
+        self._enable_batch = None
         self._enable_tls = None
         self._index = None
         self._json = None
@@ -88,6 +91,8 @@ class GwUpdateRemoteAccessSessionLogsSplunk(object):
 
         if enable is not None:
             self.enable = enable
+        if enable_batch is not None:
+            self.enable_batch = enable_batch
         if enable_tls is not None:
             self.enable_tls = enable_tls
         if index is not None:
@@ -135,6 +140,29 @@ class GwUpdateRemoteAccessSessionLogsSplunk(object):
         """
 
         self._enable = enable
+
+    @property
+    def enable_batch(self):
+        """Gets the enable_batch of this GwUpdateRemoteAccessSessionLogsSplunk.  # noqa: E501
+
+        Enable batch forwarding [true/false]  # noqa: E501
+
+        :return: The enable_batch of this GwUpdateRemoteAccessSessionLogsSplunk.  # noqa: E501
+        :rtype: str
+        """
+        return self._enable_batch
+
+    @enable_batch.setter
+    def enable_batch(self, enable_batch):
+        """Sets the enable_batch of this GwUpdateRemoteAccessSessionLogsSplunk.
+
+        Enable batch forwarding [true/false]  # noqa: E501
+
+        :param enable_batch: The enable_batch of this GwUpdateRemoteAccessSessionLogsSplunk.  # noqa: E501
+        :type: str
+        """
+
+        self._enable_batch = enable_batch
 
     @property
     def enable_tls(self):

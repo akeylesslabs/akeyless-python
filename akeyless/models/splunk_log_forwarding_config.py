@@ -34,6 +34,7 @@ class SplunkLogForwardingConfig(object):
                             and the value is json key in definition.
     """
     openapi_types = {
+        'splunk_enable_batch': 'str',
         'splunk_enable_tls': 'bool',
         'splunk_index': 'str',
         'splunk_source': 'str',
@@ -44,6 +45,7 @@ class SplunkLogForwardingConfig(object):
     }
 
     attribute_map = {
+        'splunk_enable_batch': 'splunk_enable_batch',
         'splunk_enable_tls': 'splunk_enable_tls',
         'splunk_index': 'splunk_index',
         'splunk_source': 'splunk_source',
@@ -53,12 +55,13 @@ class SplunkLogForwardingConfig(object):
         'splunk_url': 'splunk_url'
     }
 
-    def __init__(self, splunk_enable_tls=None, splunk_index=None, splunk_source=None, splunk_sourcetype=None, splunk_tls_certificate=None, splunk_token=None, splunk_url=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, splunk_enable_batch=None, splunk_enable_tls=None, splunk_index=None, splunk_source=None, splunk_sourcetype=None, splunk_tls_certificate=None, splunk_token=None, splunk_url=None, local_vars_configuration=None):  # noqa: E501
         """SplunkLogForwardingConfig - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
+        self._splunk_enable_batch = None
         self._splunk_enable_tls = None
         self._splunk_index = None
         self._splunk_source = None
@@ -68,6 +71,8 @@ class SplunkLogForwardingConfig(object):
         self._splunk_url = None
         self.discriminator = None
 
+        if splunk_enable_batch is not None:
+            self.splunk_enable_batch = splunk_enable_batch
         if splunk_enable_tls is not None:
             self.splunk_enable_tls = splunk_enable_tls
         if splunk_index is not None:
@@ -82,6 +87,27 @@ class SplunkLogForwardingConfig(object):
             self.splunk_token = splunk_token
         if splunk_url is not None:
             self.splunk_url = splunk_url
+
+    @property
+    def splunk_enable_batch(self):
+        """Gets the splunk_enable_batch of this SplunkLogForwardingConfig.  # noqa: E501
+
+
+        :return: The splunk_enable_batch of this SplunkLogForwardingConfig.  # noqa: E501
+        :rtype: str
+        """
+        return self._splunk_enable_batch
+
+    @splunk_enable_batch.setter
+    def splunk_enable_batch(self, splunk_enable_batch):
+        """Sets the splunk_enable_batch of this SplunkLogForwardingConfig.
+
+
+        :param splunk_enable_batch: The splunk_enable_batch of this SplunkLogForwardingConfig.  # noqa: E501
+        :type: str
+        """
+
+        self._splunk_enable_batch = splunk_enable_batch
 
     @property
     def splunk_enable_tls(self):

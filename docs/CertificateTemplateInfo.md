@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **country** | **str** |  | [optional] 
 **csr_cnf_base_64** | **str** |  | [optional] 
 **digest_algo** | **str** |  | [optional] 
+**hash_algorithm** | **str** |  | [optional] 
 **locality** | **str** |  | [optional] 
 **organization** | **str** |  | [optional] 
 **province** | **str** |  | [optional] 

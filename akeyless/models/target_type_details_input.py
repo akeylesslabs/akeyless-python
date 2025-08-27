@@ -43,6 +43,7 @@ class TargetTypeDetailsInput(object):
         'dockerhub_target_details': 'DockerhubTargetDetails',
         'eks_target_details': 'EKSTargetDetails',
         'gcp_target_details': 'GcpTargetDetails',
+        'gemini_target_details': 'GeminiTargetDetails',
         'github_target_details': 'GithubTargetDetails',
         'gitlab_target_details': 'GitlabTargetDetails',
         'gke_target_details': 'GKETargetDetails',
@@ -54,6 +55,7 @@ class TargetTypeDetailsInput(object):
         'linked_target_details': 'LinkedTargetDetails',
         'mongo_db_target_details': 'MongoDBTargetDetails',
         'native_k8s_target_details': 'NativeK8sTargetDetails',
+        'openai_target_details': 'OpenAITargetDetails',
         'ping_target_details': 'PingTargetDetails',
         'rabbit_mq_target_details': 'RabbitMQTargetDetails',
         'salesforce_target_details': 'SalesforceTargetDetails',
@@ -75,6 +77,7 @@ class TargetTypeDetailsInput(object):
         'dockerhub_target_details': 'dockerhub_target_details',
         'eks_target_details': 'eks_target_details',
         'gcp_target_details': 'gcp_target_details',
+        'gemini_target_details': 'gemini_target_details',
         'github_target_details': 'github_target_details',
         'gitlab_target_details': 'gitlab_target_details',
         'gke_target_details': 'gke_target_details',
@@ -86,6 +89,7 @@ class TargetTypeDetailsInput(object):
         'linked_target_details': 'linked_target_details',
         'mongo_db_target_details': 'mongo_db_target_details',
         'native_k8s_target_details': 'native_k8s_target_details',
+        'openai_target_details': 'openai_target_details',
         'ping_target_details': 'ping_target_details',
         'rabbit_mq_target_details': 'rabbit_mq_target_details',
         'salesforce_target_details': 'salesforce_target_details',
@@ -97,7 +101,7 @@ class TargetTypeDetailsInput(object):
         'zerossl_target_details': 'zerossl_target_details'
     }
 
-    def __init__(self, artifactory_target_details=None, aws_target_details=None, azure_target_details=None, chef_target_details=None, custom_target_details=None, db_target_details=None, dockerhub_target_details=None, eks_target_details=None, gcp_target_details=None, github_target_details=None, gitlab_target_details=None, gke_target_details=None, globalsign_atlas_target_details=None, globalsign_target_details=None, godaddy_target_details=None, hashi_vault_target_details=None, ldap_target_details=None, linked_target_details=None, mongo_db_target_details=None, native_k8s_target_details=None, ping_target_details=None, rabbit_mq_target_details=None, salesforce_target_details=None, sectigo_target_details=None, ssh_target_details=None, venafi_target_details=None, web_target_details=None, windows_target_details=None, zerossl_target_details=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, artifactory_target_details=None, aws_target_details=None, azure_target_details=None, chef_target_details=None, custom_target_details=None, db_target_details=None, dockerhub_target_details=None, eks_target_details=None, gcp_target_details=None, gemini_target_details=None, github_target_details=None, gitlab_target_details=None, gke_target_details=None, globalsign_atlas_target_details=None, globalsign_target_details=None, godaddy_target_details=None, hashi_vault_target_details=None, ldap_target_details=None, linked_target_details=None, mongo_db_target_details=None, native_k8s_target_details=None, openai_target_details=None, ping_target_details=None, rabbit_mq_target_details=None, salesforce_target_details=None, sectigo_target_details=None, ssh_target_details=None, venafi_target_details=None, web_target_details=None, windows_target_details=None, zerossl_target_details=None, local_vars_configuration=None):  # noqa: E501
         """TargetTypeDetailsInput - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -112,6 +116,7 @@ class TargetTypeDetailsInput(object):
         self._dockerhub_target_details = None
         self._eks_target_details = None
         self._gcp_target_details = None
+        self._gemini_target_details = None
         self._github_target_details = None
         self._gitlab_target_details = None
         self._gke_target_details = None
@@ -123,6 +128,7 @@ class TargetTypeDetailsInput(object):
         self._linked_target_details = None
         self._mongo_db_target_details = None
         self._native_k8s_target_details = None
+        self._openai_target_details = None
         self._ping_target_details = None
         self._rabbit_mq_target_details = None
         self._salesforce_target_details = None
@@ -152,6 +158,8 @@ class TargetTypeDetailsInput(object):
             self.eks_target_details = eks_target_details
         if gcp_target_details is not None:
             self.gcp_target_details = gcp_target_details
+        if gemini_target_details is not None:
+            self.gemini_target_details = gemini_target_details
         if github_target_details is not None:
             self.github_target_details = github_target_details
         if gitlab_target_details is not None:
@@ -174,6 +182,8 @@ class TargetTypeDetailsInput(object):
             self.mongo_db_target_details = mongo_db_target_details
         if native_k8s_target_details is not None:
             self.native_k8s_target_details = native_k8s_target_details
+        if openai_target_details is not None:
+            self.openai_target_details = openai_target_details
         if ping_target_details is not None:
             self.ping_target_details = ping_target_details
         if rabbit_mq_target_details is not None:
@@ -381,6 +391,27 @@ class TargetTypeDetailsInput(object):
         """
 
         self._gcp_target_details = gcp_target_details
+
+    @property
+    def gemini_target_details(self):
+        """Gets the gemini_target_details of this TargetTypeDetailsInput.  # noqa: E501
+
+
+        :return: The gemini_target_details of this TargetTypeDetailsInput.  # noqa: E501
+        :rtype: GeminiTargetDetails
+        """
+        return self._gemini_target_details
+
+    @gemini_target_details.setter
+    def gemini_target_details(self, gemini_target_details):
+        """Sets the gemini_target_details of this TargetTypeDetailsInput.
+
+
+        :param gemini_target_details: The gemini_target_details of this TargetTypeDetailsInput.  # noqa: E501
+        :type: GeminiTargetDetails
+        """
+
+        self._gemini_target_details = gemini_target_details
 
     @property
     def github_target_details(self):
@@ -612,6 +643,27 @@ class TargetTypeDetailsInput(object):
         """
 
         self._native_k8s_target_details = native_k8s_target_details
+
+    @property
+    def openai_target_details(self):
+        """Gets the openai_target_details of this TargetTypeDetailsInput.  # noqa: E501
+
+
+        :return: The openai_target_details of this TargetTypeDetailsInput.  # noqa: E501
+        :rtype: OpenAITargetDetails
+        """
+        return self._openai_target_details
+
+    @openai_target_details.setter
+    def openai_target_details(self, openai_target_details):
+        """Sets the openai_target_details of this TargetTypeDetailsInput.
+
+
+        :param openai_target_details: The openai_target_details of this TargetTypeDetailsInput.  # noqa: E501
+        :type: OpenAITargetDetails
+        """
+
+        self._openai_target_details = openai_target_details
 
     @property
     def ping_target_details(self):
