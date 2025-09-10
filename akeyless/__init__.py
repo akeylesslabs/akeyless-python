@@ -15,7 +15,7 @@
 
 from __future__ import absolute_import
 
-__version__ = "5.0.7"
+__version__ = "5.0.8"
 
 # import apis into sdk package
 from akeyless.api.v2_api import V2Api
@@ -620,6 +620,8 @@ from akeyless.models.get_account_settings import GetAccountSettings
 from akeyless.models.get_account_settings_command_output import GetAccountSettingsCommandOutput
 from akeyless.models.get_analytics_data import GetAnalyticsData
 from akeyless.models.get_auth_method import GetAuthMethod
+from akeyless.models.get_cert_challenge import GetCertChallenge
+from akeyless.models.get_cert_challenge_output import GetCertChallengeOutput
 from akeyless.models.get_certificate_value import GetCertificateValue
 from akeyless.models.get_certificate_value_output import GetCertificateValueOutput
 from akeyless.models.get_dynamic_secret_value import GetDynamicSecretValue

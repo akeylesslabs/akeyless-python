@@ -268,7 +268,7 @@ class GatewayUpdateAllowedAccess(object):
     def permissions(self):
         """Gets the permissions of this GatewayUpdateAllowedAccess.  # noqa: E501
 
-        Permissions  Comma-seperated list of permissions for this allowed access. Available permissions: [defaults,targets,classic_keys,automatic_migration,ldap_auth,dynamic_secret,k8s_auth,log_forwarding,zero_knowledge_encryption,rotated_secret,caching,event_forwarding,admin,kmip,general]  # noqa: E501
+        Permissions  Comma-seperated list of permissions for this allowed access. Available permissions: [defaults,targets,classic_keys,automatic_migration,ldap_auth,dynamic_secret,k8s_auth,log_forwarding,zero_knowledge_encryption,rotated_secret,caching,event_forwarding,admin,kmip,general,rotate_secret_value]  # noqa: E501
 
         :return: The permissions of this GatewayUpdateAllowedAccess.  # noqa: E501
         :rtype: str
@@ -279,7 +279,7 @@ class GatewayUpdateAllowedAccess(object):
     def permissions(self, permissions):
         """Sets the permissions of this GatewayUpdateAllowedAccess.
 
-        Permissions  Comma-seperated list of permissions for this allowed access. Available permissions: [defaults,targets,classic_keys,automatic_migration,ldap_auth,dynamic_secret,k8s_auth,log_forwarding,zero_knowledge_encryption,rotated_secret,caching,event_forwarding,admin,kmip,general]  # noqa: E501
+        Permissions  Comma-seperated list of permissions for this allowed access. Available permissions: [defaults,targets,classic_keys,automatic_migration,ldap_auth,dynamic_secret,k8s_auth,log_forwarding,zero_knowledge_encryption,rotated_secret,caching,event_forwarding,admin,kmip,general,rotate_secret_value]  # noqa: E501
 
         :param permissions: The permissions of this GatewayUpdateAllowedAccess.  # noqa: E501
         :type: str

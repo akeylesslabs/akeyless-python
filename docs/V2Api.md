@@ -320,6 +320,7 @@ Method | HTTP request | Description
 [**get_account_settings**](V2Api.md#get_account_settings) | **POST** /get-account-settings | 
 [**get_analytics_data**](V2Api.md#get_analytics_data) | **POST** /get-analytics-data | 
 [**get_auth_method**](V2Api.md#get_auth_method) | **POST** /get-auth-method | 
+[**get_cert_challenge**](V2Api.md#get_cert_challenge) | **POST** /get-cert-challenge | 
 [**get_certificate_value**](V2Api.md#get_certificate_value) | **POST** /get-certificate-value | 
 [**get_dynamic_secret_value**](V2Api.md#get_dynamic_secret_value) | **POST** /get-dynamic-secret-value | 
 [**get_event_forwarder**](V2Api.md#get_event_forwarder) | **POST** /get-event-forwarder | 
@@ -19531,6 +19532,67 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | getAuthMethodResponse wraps response body. |  -  |
+**0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_cert_challenge**
+> GetCertChallengeOutput get_cert_challenge(get_cert_challenge)
+
+
+
+### Example
+
+```python
+from __future__ import print_function
+import time
+import akeyless
+from akeyless.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.akeyless.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = akeyless.Configuration(
+    host = "https://api.akeyless.io"
+)
+
+
+# Enter a context with an instance of the API client
+with akeyless.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = akeyless.V2Api(api_client)
+    get_cert_challenge = akeyless.GetCertChallenge() # GetCertChallenge | 
+
+    try:
+        api_response = api_instance.get_cert_challenge(get_cert_challenge)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling V2Api->get_cert_challenge: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **get_cert_challenge** | [**GetCertChallenge**](GetCertChallenge.md)|  | 
+
+### Return type
+
+[**GetCertChallengeOutput**](GetCertChallengeOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | getCertChallengeResponse wraps response body. |  -  |
+**400** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
 **0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

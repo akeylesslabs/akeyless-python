@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **assoc_id** | **str** |  | [optional] 
 **auth_method_access_id** | **str** |  | [optional] 
+**auth_method_id** | **int** |  | [optional] 
 **auth_method_name** | **str** |  | [optional] 
 **auth_method_sub_claims** | **dict(str, list[str])** |  | [optional] 
 **is_subclaims_with_operator** | **bool** |  | [optional] 

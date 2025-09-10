@@ -37,6 +37,7 @@ class TargetItemAssociation(object):
         'assoc_id': 'str',
         'attributes': 'dict(str, str)',
         'cluster_id': 'int',
+        'item_id': 'int',
         'item_name': 'str',
         'item_type': 'str',
         'relationship': 'str'
@@ -46,12 +47,13 @@ class TargetItemAssociation(object):
         'assoc_id': 'assoc_id',
         'attributes': 'attributes',
         'cluster_id': 'cluster_id',
+        'item_id': 'item_id',
         'item_name': 'item_name',
         'item_type': 'item_type',
         'relationship': 'relationship'
     }
 
-    def __init__(self, assoc_id=None, attributes=None, cluster_id=None, item_name=None, item_type=None, relationship=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, assoc_id=None, attributes=None, cluster_id=None, item_id=None, item_name=None, item_type=None, relationship=None, local_vars_configuration=None):  # noqa: E501
         """TargetItemAssociation - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -60,6 +62,7 @@ class TargetItemAssociation(object):
         self._assoc_id = None
         self._attributes = None
         self._cluster_id = None
+        self._item_id = None
         self._item_name = None
         self._item_type = None
         self._relationship = None
@@ -71,6 +74,8 @@ class TargetItemAssociation(object):
             self.attributes = attributes
         if cluster_id is not None:
             self.cluster_id = cluster_id
+        if item_id is not None:
+            self.item_id = item_id
         if item_name is not None:
             self.item_name = item_name
         if item_type is not None:
@@ -140,6 +145,27 @@ class TargetItemAssociation(object):
         """
 
         self._cluster_id = cluster_id
+
+    @property
+    def item_id(self):
+        """Gets the item_id of this TargetItemAssociation.  # noqa: E501
+
+
+        :return: The item_id of this TargetItemAssociation.  # noqa: E501
+        :rtype: int
+        """
+        return self._item_id
+
+    @item_id.setter
+    def item_id(self, item_id):
+        """Sets the item_id of this TargetItemAssociation.
+
+
+        :param item_id: The item_id of this TargetItemAssociation.  # noqa: E501
+        :type: int
+        """
+
+        self._item_id = item_id
 
     @property
     def item_name(self):

@@ -38,6 +38,7 @@ class PathRule(object):
         'capabilities': 'list[str]',
         'cb': 'int',
         'is_limit_access': 'bool',
+        'item_id': 'int',
         'number_of_access_used': 'int',
         'number_of_allowed_access': 'int',
         'path': 'str',
@@ -51,6 +52,7 @@ class PathRule(object):
         'capabilities': 'capabilities',
         'cb': 'cb',
         'is_limit_access': 'is_limit_access',
+        'item_id': 'item_id',
         'number_of_access_used': 'number_of_access_used',
         'number_of_allowed_access': 'number_of_allowed_access',
         'path': 'path',
@@ -59,7 +61,7 @@ class PathRule(object):
         'type': 'type'
     }
 
-    def __init__(self, assigners=None, capabilities=None, cb=None, is_limit_access=None, number_of_access_used=None, number_of_allowed_access=None, path=None, start_time=None, ttl=None, type=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, assigners=None, capabilities=None, cb=None, is_limit_access=None, item_id=None, number_of_access_used=None, number_of_allowed_access=None, path=None, start_time=None, ttl=None, type=None, local_vars_configuration=None):  # noqa: E501
         """PathRule - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -69,6 +71,7 @@ class PathRule(object):
         self._capabilities = None
         self._cb = None
         self._is_limit_access = None
+        self._item_id = None
         self._number_of_access_used = None
         self._number_of_allowed_access = None
         self._path = None
@@ -85,6 +88,8 @@ class PathRule(object):
             self.cb = cb
         if is_limit_access is not None:
             self.is_limit_access = is_limit_access
+        if item_id is not None:
+            self.item_id = item_id
         if number_of_access_used is not None:
             self.number_of_access_used = number_of_access_used
         if number_of_allowed_access is not None:
@@ -185,6 +190,29 @@ class PathRule(object):
         """
 
         self._is_limit_access = is_limit_access
+
+    @property
+    def item_id(self):
+        """Gets the item_id of this PathRule.  # noqa: E501
+
+        The item id this rule directly refers to (when applicable)  # noqa: E501
+
+        :return: The item_id of this PathRule.  # noqa: E501
+        :rtype: int
+        """
+        return self._item_id
+
+    @item_id.setter
+    def item_id(self, item_id):
+        """Sets the item_id of this PathRule.
+
+        The item id this rule directly refers to (when applicable)  # noqa: E501
+
+        :param item_id: The item_id of this PathRule.  # noqa: E501
+        :type: int
+        """
+
+        self._item_id = item_id
 
     @property
     def number_of_access_used(self):

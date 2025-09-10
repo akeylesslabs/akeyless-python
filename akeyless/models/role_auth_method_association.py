@@ -36,6 +36,7 @@ class RoleAuthMethodAssociation(object):
     openapi_types = {
         'assoc_id': 'str',
         'auth_method_access_id': 'str',
+        'auth_method_id': 'int',
         'auth_method_name': 'str',
         'auth_method_sub_claims': 'dict(str, list[str])',
         'is_subclaims_with_operator': 'bool',
@@ -45,13 +46,14 @@ class RoleAuthMethodAssociation(object):
     attribute_map = {
         'assoc_id': 'assoc_id',
         'auth_method_access_id': 'auth_method_access_id',
+        'auth_method_id': 'auth_method_id',
         'auth_method_name': 'auth_method_name',
         'auth_method_sub_claims': 'auth_method_sub_claims',
         'is_subclaims_with_operator': 'is_subclaims_with_operator',
         'sub_claims_case_sensitive': 'sub_claims_case_sensitive'
     }
 
-    def __init__(self, assoc_id=None, auth_method_access_id=None, auth_method_name=None, auth_method_sub_claims=None, is_subclaims_with_operator=None, sub_claims_case_sensitive=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, assoc_id=None, auth_method_access_id=None, auth_method_id=None, auth_method_name=None, auth_method_sub_claims=None, is_subclaims_with_operator=None, sub_claims_case_sensitive=None, local_vars_configuration=None):  # noqa: E501
         """RoleAuthMethodAssociation - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -59,6 +61,7 @@ class RoleAuthMethodAssociation(object):
 
         self._assoc_id = None
         self._auth_method_access_id = None
+        self._auth_method_id = None
         self._auth_method_name = None
         self._auth_method_sub_claims = None
         self._is_subclaims_with_operator = None
@@ -69,6 +72,8 @@ class RoleAuthMethodAssociation(object):
             self.assoc_id = assoc_id
         if auth_method_access_id is not None:
             self.auth_method_access_id = auth_method_access_id
+        if auth_method_id is not None:
+            self.auth_method_id = auth_method_id
         if auth_method_name is not None:
             self.auth_method_name = auth_method_name
         if auth_method_sub_claims is not None:
@@ -119,6 +124,27 @@ class RoleAuthMethodAssociation(object):
         """
 
         self._auth_method_access_id = auth_method_access_id
+
+    @property
+    def auth_method_id(self):
+        """Gets the auth_method_id of this RoleAuthMethodAssociation.  # noqa: E501
+
+
+        :return: The auth_method_id of this RoleAuthMethodAssociation.  # noqa: E501
+        :rtype: int
+        """
+        return self._auth_method_id
+
+    @auth_method_id.setter
+    def auth_method_id(self, auth_method_id):
+        """Sets the auth_method_id of this RoleAuthMethodAssociation.
+
+
+        :param auth_method_id: The auth_method_id of this RoleAuthMethodAssociation.  # noqa: E501
+        :type: int
+        """
+
+        self._auth_method_id = auth_method_id
 
     @property
     def auth_method_name(self):

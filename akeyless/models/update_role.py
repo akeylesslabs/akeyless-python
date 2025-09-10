@@ -45,6 +45,7 @@ class UpdateRole(object):
         'name': 'str',
         'new_comment': 'str',
         'new_name': 'str',
+        'reverse_rbac_access': 'str',
         'sra_reports_access': 'str',
         'token': 'str',
         'uid_token': 'str',
@@ -63,13 +64,14 @@ class UpdateRole(object):
         'name': 'name',
         'new_comment': 'new-comment',
         'new_name': 'new-name',
+        'reverse_rbac_access': 'reverse-rbac-access',
         'sra_reports_access': 'sra-reports-access',
         'token': 'token',
         'uid_token': 'uid-token',
         'usage_reports_access': 'usage-reports-access'
     }
 
-    def __init__(self, analytics_access=None, audit_access=None, delete_protection=None, description='default_comment', event_center_access=None, event_forwarder_access=None, gw_analytics_access=None, json=False, name=None, new_comment='default_comment', new_name=None, sra_reports_access=None, token=None, uid_token=None, usage_reports_access=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, analytics_access=None, audit_access=None, delete_protection=None, description='default_comment', event_center_access=None, event_forwarder_access=None, gw_analytics_access=None, json=False, name=None, new_comment='default_comment', new_name=None, reverse_rbac_access=None, sra_reports_access=None, token=None, uid_token=None, usage_reports_access=None, local_vars_configuration=None):  # noqa: E501
         """UpdateRole - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -86,6 +88,7 @@ class UpdateRole(object):
         self._name = None
         self._new_comment = None
         self._new_name = None
+        self._reverse_rbac_access = None
         self._sra_reports_access = None
         self._token = None
         self._uid_token = None
@@ -113,6 +116,8 @@ class UpdateRole(object):
             self.new_comment = new_comment
         if new_name is not None:
             self.new_name = new_name
+        if reverse_rbac_access is not None:
+            self.reverse_rbac_access = reverse_rbac_access
         if sra_reports_access is not None:
             self.sra_reports_access = sra_reports_access
         if token is not None:
@@ -376,6 +381,29 @@ class UpdateRole(object):
         """
 
         self._new_name = new_name
+
+    @property
+    def reverse_rbac_access(self):
+        """Gets the reverse_rbac_access of this UpdateRole.  # noqa: E501
+
+        Allow this role to view Reverse RBAC. Supported values: 'own', 'all'.  # noqa: E501
+
+        :return: The reverse_rbac_access of this UpdateRole.  # noqa: E501
+        :rtype: str
+        """
+        return self._reverse_rbac_access
+
+    @reverse_rbac_access.setter
+    def reverse_rbac_access(self, reverse_rbac_access):
+        """Sets the reverse_rbac_access of this UpdateRole.
+
+        Allow this role to view Reverse RBAC. Supported values: 'own', 'all'.  # noqa: E501
+
+        :param reverse_rbac_access: The reverse_rbac_access of this UpdateRole.  # noqa: E501
+        :type: str
+        """
+
+        self._reverse_rbac_access = reverse_rbac_access
 
     @property
     def sra_reports_access(self):

@@ -36,20 +36,20 @@ class OpenAITargetDetails(object):
     openapi_types = {
         'api_key': 'str',
         'api_key_id': 'str',
-        'base_url': 'str',
         'model': 'str',
+        'openai_url': 'str',
         'organization_id': 'str'
     }
 
     attribute_map = {
         'api_key': 'api_key',
         'api_key_id': 'api_key_id',
-        'base_url': 'base_url',
         'model': 'model',
+        'openai_url': 'openai_url',
         'organization_id': 'organization_id'
     }
 
-    def __init__(self, api_key=None, api_key_id=None, base_url=None, model=None, organization_id=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, api_key=None, api_key_id=None, model=None, openai_url=None, organization_id=None, local_vars_configuration=None):  # noqa: E501
         """OpenAITargetDetails - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -57,8 +57,8 @@ class OpenAITargetDetails(object):
 
         self._api_key = None
         self._api_key_id = None
-        self._base_url = None
         self._model = None
+        self._openai_url = None
         self._organization_id = None
         self.discriminator = None
 
@@ -66,10 +66,10 @@ class OpenAITargetDetails(object):
             self.api_key = api_key
         if api_key_id is not None:
             self.api_key_id = api_key_id
-        if base_url is not None:
-            self.base_url = base_url
         if model is not None:
             self.model = model
+        if openai_url is not None:
+            self.openai_url = openai_url
         if organization_id is not None:
             self.organization_id = organization_id
 
@@ -116,27 +116,6 @@ class OpenAITargetDetails(object):
         self._api_key_id = api_key_id
 
     @property
-    def base_url(self):
-        """Gets the base_url of this OpenAITargetDetails.  # noqa: E501
-
-
-        :return: The base_url of this OpenAITargetDetails.  # noqa: E501
-        :rtype: str
-        """
-        return self._base_url
-
-    @base_url.setter
-    def base_url(self, base_url):
-        """Sets the base_url of this OpenAITargetDetails.
-
-
-        :param base_url: The base_url of this OpenAITargetDetails.  # noqa: E501
-        :type: str
-        """
-
-        self._base_url = base_url
-
-    @property
     def model(self):
         """Gets the model of this OpenAITargetDetails.  # noqa: E501
 
@@ -156,6 +135,27 @@ class OpenAITargetDetails(object):
         """
 
         self._model = model
+
+    @property
+    def openai_url(self):
+        """Gets the openai_url of this OpenAITargetDetails.  # noqa: E501
+
+
+        :return: The openai_url of this OpenAITargetDetails.  # noqa: E501
+        :rtype: str
+        """
+        return self._openai_url
+
+    @openai_url.setter
+    def openai_url(self, openai_url):
+        """Sets the openai_url of this OpenAITargetDetails.
+
+
+        :param openai_url: The openai_url of this OpenAITargetDetails.  # noqa: E501
+        :type: str
+        """
+
+        self._openai_url = openai_url
 
     @property
     def organization_id(self):

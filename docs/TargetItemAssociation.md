@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **assoc_id** | **str** |  | [optional] 
 **attributes** | **dict(str, str)** |  | [optional] 
 **cluster_id** | **int** |  | [optional] 
+**item_id** | **int** |  | [optional] 
 **item_name** | **str** |  | [optional] 
 **item_type** | **str** |  | [optional] 
 **relationship** | **str** |  | [optional] 

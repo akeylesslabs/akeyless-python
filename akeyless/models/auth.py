@@ -40,6 +40,7 @@ class Auth(object):
         'account_id': 'str',
         'admin_email': 'str',
         'admin_password': 'str',
+        'cert_challenge': 'str',
         'cert_data': 'str',
         'cloud_id': 'str',
         'debug': 'bool',
@@ -60,6 +61,7 @@ class Auth(object):
         'oci_auth_type': 'str',
         'oci_group_ocid': 'list[str]',
         'otp': 'str',
+        'signed_cert_challenge': 'str',
         'uid_token': 'str',
         'use_remote_browser': 'bool',
         'username': 'str'
@@ -72,6 +74,7 @@ class Auth(object):
         'account_id': 'account-id',
         'admin_email': 'admin-email',
         'admin_password': 'admin-password',
+        'cert_challenge': 'cert-challenge',
         'cert_data': 'cert-data',
         'cloud_id': 'cloud-id',
         'debug': 'debug',
@@ -92,12 +95,13 @@ class Auth(object):
         'oci_auth_type': 'oci-auth-type',
         'oci_group_ocid': 'oci-group-ocid',
         'otp': 'otp',
+        'signed_cert_challenge': 'signed-cert-challenge',
         'uid_token': 'uid-token',
         'use_remote_browser': 'use-remote-browser',
         'username': 'username'
     }
 
-    def __init__(self, access_id=None, access_key=None, access_type='access_key', account_id=None, admin_email=None, admin_password=None, cert_data=None, cloud_id=None, debug=None, disable_pafxfast=None, gateway_spn=None, gateway_url=None, gcp_audience='akeyless.io', json=False, jwt=None, k8s_auth_config_name=None, k8s_service_account_token=None, kerberos_token=None, kerberos_username=None, key_data=None, keytab_data=None, krb5_conf_data=None, ldap_password=None, oci_auth_type='apikey', oci_group_ocid=None, otp=None, uid_token=None, use_remote_browser=None, username=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, access_id=None, access_key=None, access_type='access_key', account_id=None, admin_email=None, admin_password=None, cert_challenge=None, cert_data=None, cloud_id=None, debug=None, disable_pafxfast=None, gateway_spn=None, gateway_url=None, gcp_audience='akeyless.io', json=False, jwt=None, k8s_auth_config_name=None, k8s_service_account_token=None, kerberos_token=None, kerberos_username=None, key_data=None, keytab_data=None, krb5_conf_data=None, ldap_password=None, oci_auth_type='apikey', oci_group_ocid=None, otp=None, signed_cert_challenge=None, uid_token=None, use_remote_browser=None, username=None, local_vars_configuration=None):  # noqa: E501
         """Auth - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -109,6 +113,7 @@ class Auth(object):
         self._account_id = None
         self._admin_email = None
         self._admin_password = None
+        self._cert_challenge = None
         self._cert_data = None
         self._cloud_id = None
         self._debug = None
@@ -129,6 +134,7 @@ class Auth(object):
         self._oci_auth_type = None
         self._oci_group_ocid = None
         self._otp = None
+        self._signed_cert_challenge = None
         self._uid_token = None
         self._use_remote_browser = None
         self._username = None
@@ -146,6 +152,8 @@ class Auth(object):
             self.admin_email = admin_email
         if admin_password is not None:
             self.admin_password = admin_password
+        if cert_challenge is not None:
+            self.cert_challenge = cert_challenge
         if cert_data is not None:
             self.cert_data = cert_data
         if cloud_id is not None:
@@ -186,6 +194,8 @@ class Auth(object):
             self.oci_group_ocid = oci_group_ocid
         if otp is not None:
             self.otp = otp
+        if signed_cert_challenge is not None:
+            self.signed_cert_challenge = signed_cert_challenge
         if uid_token is not None:
             self.uid_token = uid_token
         if use_remote_browser is not None:
@@ -330,6 +340,29 @@ class Auth(object):
         """
 
         self._admin_password = admin_password
+
+    @property
+    def cert_challenge(self):
+        """Gets the cert_challenge of this Auth.  # noqa: E501
+
+        Certificate challenge encoded in base64. (relevant only for access-type=cert)  # noqa: E501
+
+        :return: The cert_challenge of this Auth.  # noqa: E501
+        :rtype: str
+        """
+        return self._cert_challenge
+
+    @cert_challenge.setter
+    def cert_challenge(self, cert_challenge):
+        """Sets the cert_challenge of this Auth.
+
+        Certificate challenge encoded in base64. (relevant only for access-type=cert)  # noqa: E501
+
+        :param cert_challenge: The cert_challenge of this Auth.  # noqa: E501
+        :type: str
+        """
+
+        self._cert_challenge = cert_challenge
 
     @property
     def cert_data(self):
@@ -786,6 +819,29 @@ class Auth(object):
         """
 
         self._otp = otp
+
+    @property
+    def signed_cert_challenge(self):
+        """Gets the signed_cert_challenge of this Auth.  # noqa: E501
+
+        Signed certificate challenge encoded in base64. (relevant only for access-type=cert)  # noqa: E501
+
+        :return: The signed_cert_challenge of this Auth.  # noqa: E501
+        :rtype: str
+        """
+        return self._signed_cert_challenge
+
+    @signed_cert_challenge.setter
+    def signed_cert_challenge(self, signed_cert_challenge):
+        """Sets the signed_cert_challenge of this Auth.
+
+        Signed certificate challenge encoded in base64. (relevant only for access-type=cert)  # noqa: E501
+
+        :param signed_cert_challenge: The signed_cert_challenge of this Auth.  # noqa: E501
+        :type: str
+        """
+
+        self._signed_cert_challenge = signed_cert_challenge
 
     @property
     def uid_token(self):

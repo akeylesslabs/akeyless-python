@@ -44,6 +44,7 @@ class CreateRole(object):
         'gw_analytics_access': 'str',
         'json': 'bool',
         'name': 'str',
+        'reverse_rbac_access': 'str',
         'sra_reports_access': 'str',
         'token': 'str',
         'uid_token': 'str',
@@ -61,13 +62,14 @@ class CreateRole(object):
         'gw_analytics_access': 'gw-analytics-access',
         'json': 'json',
         'name': 'name',
+        'reverse_rbac_access': 'reverse-rbac-access',
         'sra_reports_access': 'sra-reports-access',
         'token': 'token',
         'uid_token': 'uid-token',
         'usage_reports_access': 'usage-reports-access'
     }
 
-    def __init__(self, analytics_access=None, audit_access=None, comment=None, delete_protection=None, description=None, event_center_access=None, event_forwarders_access=None, gw_analytics_access=None, json=False, name=None, sra_reports_access=None, token=None, uid_token=None, usage_reports_access=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, analytics_access=None, audit_access=None, comment=None, delete_protection=None, description=None, event_center_access=None, event_forwarders_access=None, gw_analytics_access=None, json=False, name=None, reverse_rbac_access=None, sra_reports_access=None, token=None, uid_token=None, usage_reports_access=None, local_vars_configuration=None):  # noqa: E501
         """CreateRole - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -83,6 +85,7 @@ class CreateRole(object):
         self._gw_analytics_access = None
         self._json = None
         self._name = None
+        self._reverse_rbac_access = None
         self._sra_reports_access = None
         self._token = None
         self._uid_token = None
@@ -108,6 +111,8 @@ class CreateRole(object):
         if json is not None:
             self.json = json
         self.name = name
+        if reverse_rbac_access is not None:
+            self.reverse_rbac_access = reverse_rbac_access
         if sra_reports_access is not None:
             self.sra_reports_access = sra_reports_access
         if token is not None:
@@ -348,6 +353,29 @@ class CreateRole(object):
             raise ValueError("Invalid value for `name`, must not be `None`")  # noqa: E501
 
         self._name = name
+
+    @property
+    def reverse_rbac_access(self):
+        """Gets the reverse_rbac_access of this CreateRole.  # noqa: E501
+
+        Allow this role to view Reverse RBAC. Supported values: 'own', 'all'.  # noqa: E501
+
+        :return: The reverse_rbac_access of this CreateRole.  # noqa: E501
+        :rtype: str
+        """
+        return self._reverse_rbac_access
+
+    @reverse_rbac_access.setter
+    def reverse_rbac_access(self, reverse_rbac_access):
+        """Sets the reverse_rbac_access of this CreateRole.
+
+        Allow this role to view Reverse RBAC. Supported values: 'own', 'all'.  # noqa: E501
+
+        :param reverse_rbac_access: The reverse_rbac_access of this CreateRole.  # noqa: E501
+        :type: str
+        """
+
+        self._reverse_rbac_access = reverse_rbac_access
 
     @property
     def sra_reports_access(self):

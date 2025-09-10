@@ -36,16 +36,18 @@ class AuthOutput(object):
     openapi_types = {
         'complete_auth_link': 'str',
         'creds': 'SystemAccessCredentialsReplyObj',
+        'expiration': 'str',
         'token': 'str'
     }
 
     attribute_map = {
         'complete_auth_link': 'complete_auth_link',
         'creds': 'creds',
+        'expiration': 'expiration',
         'token': 'token'
     }
 
-    def __init__(self, complete_auth_link=None, creds=None, token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, complete_auth_link=None, creds=None, expiration=None, token=None, local_vars_configuration=None):  # noqa: E501
         """AuthOutput - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -53,6 +55,7 @@ class AuthOutput(object):
 
         self._complete_auth_link = None
         self._creds = None
+        self._expiration = None
         self._token = None
         self.discriminator = None
 
@@ -60,6 +63,8 @@ class AuthOutput(object):
             self.complete_auth_link = complete_auth_link
         if creds is not None:
             self.creds = creds
+        if expiration is not None:
+            self.expiration = expiration
         if token is not None:
             self.token = token
 
@@ -104,6 +109,27 @@ class AuthOutput(object):
         """
 
         self._creds = creds
+
+    @property
+    def expiration(self):
+        """Gets the expiration of this AuthOutput.  # noqa: E501
+
+
+        :return: The expiration of this AuthOutput.  # noqa: E501
+        :rtype: str
+        """
+        return self._expiration
+
+    @expiration.setter
+    def expiration(self, expiration):
+        """Sets the expiration of this AuthOutput.
+
+
+        :param expiration: The expiration of this AuthOutput.  # noqa: E501
+        :type: str
+        """
+
+        self._expiration = expiration
 
     @property
     def token(self):

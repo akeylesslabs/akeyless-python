@@ -38,6 +38,7 @@ class SharingItemFullInfo(object):
         'capabilities': 'list[str]',
         'cb': 'int',
         'is_limit_access': 'bool',
+        'item_id': 'int',
         'name': 'str',
         'number_of_access_used': 'int',
         'number_of_allowed_access': 'int',
@@ -52,6 +53,7 @@ class SharingItemFullInfo(object):
         'capabilities': 'capabilities',
         'cb': 'cb',
         'is_limit_access': 'is_limit_access',
+        'item_id': 'item_id',
         'name': 'name',
         'number_of_access_used': 'number_of_access_used',
         'number_of_allowed_access': 'number_of_allowed_access',
@@ -61,7 +63,7 @@ class SharingItemFullInfo(object):
         'type': 'type'
     }
 
-    def __init__(self, assigners=None, capabilities=None, cb=None, is_limit_access=None, name=None, number_of_access_used=None, number_of_allowed_access=None, path=None, start_time=None, ttl=None, type=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, assigners=None, capabilities=None, cb=None, is_limit_access=None, item_id=None, name=None, number_of_access_used=None, number_of_allowed_access=None, path=None, start_time=None, ttl=None, type=None, local_vars_configuration=None):  # noqa: E501
         """SharingItemFullInfo - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -71,6 +73,7 @@ class SharingItemFullInfo(object):
         self._capabilities = None
         self._cb = None
         self._is_limit_access = None
+        self._item_id = None
         self._name = None
         self._number_of_access_used = None
         self._number_of_allowed_access = None
@@ -88,6 +91,8 @@ class SharingItemFullInfo(object):
             self.cb = cb
         if is_limit_access is not None:
             self.is_limit_access = is_limit_access
+        if item_id is not None:
+            self.item_id = item_id
         if name is not None:
             self.name = name
         if number_of_access_used is not None:
@@ -190,6 +195,29 @@ class SharingItemFullInfo(object):
         """
 
         self._is_limit_access = is_limit_access
+
+    @property
+    def item_id(self):
+        """Gets the item_id of this SharingItemFullInfo.  # noqa: E501
+
+        The item id this rule directly refers to (when applicable)  # noqa: E501
+
+        :return: The item_id of this SharingItemFullInfo.  # noqa: E501
+        :rtype: int
+        """
+        return self._item_id
+
+    @item_id.setter
+    def item_id(self, item_id):
+        """Sets the item_id of this SharingItemFullInfo.
+
+        The item id this rule directly refers to (when applicable)  # noqa: E501
+
+        :param item_id: The item_id of this SharingItemFullInfo.  # noqa: E501
+        :type: int
+        """
+
+        self._item_id = item_id
 
     @property
     def name(self):

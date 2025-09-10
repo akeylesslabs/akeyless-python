@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **capabilities** | **list[str]** | The approved/denied capabilities in the path | [optional] 
 **cb** | **int** |  | [optional] 
 **is_limit_access** | **bool** | flag that indicate that this rule is allowed to be access RemainingAccess of times. | [optional] 
+**item_id** | **int** | The item id this rule directly refers to (when applicable) | [optional] 
 **name** | **str** |  | [optional] 
 **number_of_access_used** | **int** |  | [optional] 
 **number_of_allowed_access** | **int** |  | [optional] 

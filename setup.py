@@ -14,7 +14,7 @@
 from setuptools import setup, find_packages  # noqa: H301
 
 NAME = "akeyless"
-VERSION = "5.0.7"
+VERSION = "5.0.8"
 # To install the library, run the following
 #
 # python setup.py install
