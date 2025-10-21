@@ -94,6 +94,7 @@ Name | Type | Description | Notes
 **failure_message** | **str** |  | [optional] 
 **fixed_user_only** | **str** |  | [optional] 
 **gcp_key_algo** | **str** |  | [optional] 
+**gcp_project_id** | **str** |  | [optional] 
 **gcp_role_bindings** | **dict(str, list[str])** |  | [optional] 
 **gcp_service_account_email** | **str** | GCPServiceAccountEmail overrides the deprecated field from the target | [optional] 
 **gcp_service_account_key** | **str** |  | [optional] 

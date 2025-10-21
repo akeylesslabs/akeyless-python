@@ -34,11 +34,6 @@ class GatewayCreateMigration(object):
                             and the value is json key in definition.
     """
     openapi_types = {
-        '_1password_email': 'str',
-        '_1password_password': 'str',
-        '_1password_secret_key': 'str',
-        '_1password_url': 'str',
-        '_1password_vaults': 'list[str]',
         'service_account_key_decoded': 'str',
         'ad_auto_rotate': 'str',
         'ad_computer_base_dn': 'str',
@@ -101,11 +96,6 @@ class GatewayCreateMigration(object):
     }
 
     attribute_map = {
-        '_1password_email': '1password-email',
-        '_1password_password': '1password-password',
-        '_1password_secret_key': '1password-secret-key',
-        '_1password_url': '1password-url',
-        '_1password_vaults': '1password-vaults',
         'service_account_key_decoded': 'ServiceAccountKeyDecoded',
         'ad_auto_rotate': 'ad-auto-rotate',
         'ad_computer_base_dn': 'ad-computer-base-dn',
@@ -167,17 +157,12 @@ class GatewayCreateMigration(object):
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, _1password_email=None, _1password_password=None, _1password_secret_key=None, _1password_url=None, _1password_vaults=None, service_account_key_decoded=None, ad_auto_rotate=None, ad_computer_base_dn=None, ad_discover_services='false', ad_discovery_types=None, ad_domain_name=None, ad_domain_users_path_template=None, ad_local_users_ignore=None, ad_local_users_path_template=None, ad_os_filter=None, ad_rotation_hour=None, ad_rotation_interval=None, ad_sra_enable_rdp=None, ad_ssh_port='22', ad_target_format='linked', ad_target_name=None, ad_targets_path_template=None, ad_targets_type='windows', ad_user_base_dn=None, ad_user_groups=None, ad_winrm_over_http='false', ad_winrm_port='5986', ad_discover_local_users=None, aws_key=None, aws_key_id=None, aws_region='us-east-2', azure_client_id=None, azure_kv_name=None, azure_secret=None, azure_tenant_id=None, gcp_key=None, hashi_json='true', hashi_ns=None, hashi_token=None, hashi_url=None, json=False, k8s_ca_certificate=None, k8s_client_certificate=None, k8s_client_key=None, k8s_namespace=None, k8s_password=None, k8s_skip_system=None, k8s_token=None, k8s_url=None, k8s_username=None, name=None, protection_key=None, si_auto_rotate=None, si_rotation_hour=None, si_rotation_interval=None, si_sra_enable_rdp='false', si_target_name=None, si_user_groups=None, si_users_ignore=None, si_users_path_template=None, target_location=None, token=None, type=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, service_account_key_decoded=None, ad_auto_rotate=None, ad_computer_base_dn=None, ad_discover_services='false', ad_discovery_types=None, ad_domain_name=None, ad_domain_users_path_template=None, ad_local_users_ignore=None, ad_local_users_path_template=None, ad_os_filter=None, ad_rotation_hour=None, ad_rotation_interval=None, ad_sra_enable_rdp=None, ad_ssh_port='22', ad_target_format='linked', ad_target_name=None, ad_targets_path_template=None, ad_targets_type='windows', ad_user_base_dn=None, ad_user_groups=None, ad_winrm_over_http='false', ad_winrm_port='5986', ad_discover_local_users=None, aws_key=None, aws_key_id=None, aws_region='us-east-2', azure_client_id=None, azure_kv_name=None, azure_secret=None, azure_tenant_id=None, gcp_key=None, hashi_json='true', hashi_ns=None, hashi_token=None, hashi_url=None, json=False, k8s_ca_certificate=None, k8s_client_certificate=None, k8s_client_key=None, k8s_namespace=None, k8s_password=None, k8s_skip_system=None, k8s_token=None, k8s_url=None, k8s_username=None, name=None, protection_key=None, si_auto_rotate=None, si_rotation_hour=None, si_rotation_interval=None, si_sra_enable_rdp='false', si_target_name=None, si_user_groups=None, si_users_ignore=None, si_users_path_template=None, target_location=None, token=None, type=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """GatewayCreateMigration - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
-        self.__1password_email = None
-        self.__1password_password = None
-        self.__1password_secret_key = None
-        self.__1password_url = None
-        self.__1password_vaults = None
         self._service_account_key_decoded = None
         self._ad_auto_rotate = None
         self._ad_computer_base_dn = None
@@ -239,16 +224,6 @@ class GatewayCreateMigration(object):
         self._uid_token = None
         self.discriminator = None
 
-        if _1password_email is not None:
-            self._1password_email = _1password_email
-        if _1password_password is not None:
-            self._1password_password = _1password_password
-        if _1password_secret_key is not None:
-            self._1password_secret_key = _1password_secret_key
-        if _1password_url is not None:
-            self._1password_url = _1password_url
-        if _1password_vaults is not None:
-            self._1password_vaults = _1password_vaults
         if service_account_key_decoded is not None:
             self.service_account_key_decoded = service_account_key_decoded
         if ad_auto_rotate is not None:
@@ -363,121 +338,6 @@ class GatewayCreateMigration(object):
             self.type = type
         if uid_token is not None:
             self.uid_token = uid_token
-
-    @property
-    def _1password_email(self):
-        """Gets the _1password_email of this GatewayCreateMigration.  # noqa: E501
-
-        1Password user email to connect to the API  # noqa: E501
-
-        :return: The _1password_email of this GatewayCreateMigration.  # noqa: E501
-        :rtype: str
-        """
-        return self.__1password_email
-
-    @_1password_email.setter
-    def _1password_email(self, _1password_email):
-        """Sets the _1password_email of this GatewayCreateMigration.
-
-        1Password user email to connect to the API  # noqa: E501
-
-        :param _1password_email: The _1password_email of this GatewayCreateMigration.  # noqa: E501
-        :type: str
-        """
-
-        self.__1password_email = _1password_email
-
-    @property
-    def _1password_password(self):
-        """Gets the _1password_password of this GatewayCreateMigration.  # noqa: E501
-
-        1Password user password to connect to the API  # noqa: E501
-
-        :return: The _1password_password of this GatewayCreateMigration.  # noqa: E501
-        :rtype: str
-        """
-        return self.__1password_password
-
-    @_1password_password.setter
-    def _1password_password(self, _1password_password):
-        """Sets the _1password_password of this GatewayCreateMigration.
-
-        1Password user password to connect to the API  # noqa: E501
-
-        :param _1password_password: The _1password_password of this GatewayCreateMigration.  # noqa: E501
-        :type: str
-        """
-
-        self.__1password_password = _1password_password
-
-    @property
-    def _1password_secret_key(self):
-        """Gets the _1password_secret_key of this GatewayCreateMigration.  # noqa: E501
-
-        1Password user secret key to connect to the API  # noqa: E501
-
-        :return: The _1password_secret_key of this GatewayCreateMigration.  # noqa: E501
-        :rtype: str
-        """
-        return self.__1password_secret_key
-
-    @_1password_secret_key.setter
-    def _1password_secret_key(self, _1password_secret_key):
-        """Sets the _1password_secret_key of this GatewayCreateMigration.
-
-        1Password user secret key to connect to the API  # noqa: E501
-
-        :param _1password_secret_key: The _1password_secret_key of this GatewayCreateMigration.  # noqa: E501
-        :type: str
-        """
-
-        self.__1password_secret_key = _1password_secret_key
-
-    @property
-    def _1password_url(self):
-        """Gets the _1password_url of this GatewayCreateMigration.  # noqa: E501
-
-        1Password api container url  # noqa: E501
-
-        :return: The _1password_url of this GatewayCreateMigration.  # noqa: E501
-        :rtype: str
-        """
-        return self.__1password_url
-
-    @_1password_url.setter
-    def _1password_url(self, _1password_url):
-        """Sets the _1password_url of this GatewayCreateMigration.
-
-        1Password api container url  # noqa: E501
-
-        :param _1password_url: The _1password_url of this GatewayCreateMigration.  # noqa: E501
-        :type: str
-        """
-
-        self.__1password_url = _1password_url
-
-    @property
-    def _1password_vaults(self):
-        """Gets the _1password_vaults of this GatewayCreateMigration.  # noqa: E501
-
-        1Password list of vault to get the items from  # noqa: E501
-
-        :return: The _1password_vaults of this GatewayCreateMigration.  # noqa: E501
-        :rtype: list[str]
-        """
-        return self.__1password_vaults
-
-    @_1password_vaults.setter
-    def _1password_vaults(self, _1password_vaults):
-        """Sets the _1password_vaults of this GatewayCreateMigration.
-
-        1Password list of vault to get the items from  # noqa: E501
-
-        :param _1password_vaults: The _1password_vaults of this GatewayCreateMigration.  # noqa: E501
-        :type: list[str]
-        """
-
-        self.__1password_vaults = _1password_vaults
 
     @property
     def service_account_key_decoded(self):
@@ -1800,7 +1660,7 @@ class GatewayCreateMigration(object):
     def type(self):
         """Gets the type of this GatewayCreateMigration.  # noqa: E501
 
-        Migration type (hashi/aws/gcp/k8s/azure_kv/1password/active_directory)  # noqa: E501
+        Migration type (hashi/aws/gcp/k8s/azure_kv/active_directory)  # noqa: E501
 
         :return: The type of this GatewayCreateMigration.  # noqa: E501
         :rtype: str
@@ -1811,7 +1671,7 @@ class GatewayCreateMigration(object):
     def type(self, type):
         """Sets the type of this GatewayCreateMigration.
 
-        Migration type (hashi/aws/gcp/k8s/azure_kv/1password/active_directory)  # noqa: E501
+        Migration type (hashi/aws/gcp/k8s/azure_kv/active_directory)  # noqa: E501
 
         :param type: The type of this GatewayCreateMigration.  # noqa: E501
         :type: str
