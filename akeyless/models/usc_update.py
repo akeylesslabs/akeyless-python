@@ -43,6 +43,7 @@ class UscUpdate(object):
         'tags': 'dict(str, str)',
         'token': 'str',
         'uid_token': 'str',
+        'usc_encryption_key': 'str',
         'usc_name': 'str',
         'value': 'str'
     }
@@ -57,11 +58,12 @@ class UscUpdate(object):
         'tags': 'tags',
         'token': 'token',
         'uid_token': 'uid-token',
+        'usc_encryption_key': 'usc-encryption-key',
         'usc_name': 'usc-name',
         'value': 'value'
     }
 
-    def __init__(self, binary_value=None, description=None, json=False, namespace=None, pfx_password=None, secret_id=None, tags=None, token=None, uid_token=None, usc_name=None, value=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, binary_value=None, description=None, json=False, namespace=None, pfx_password=None, secret_id=None, tags=None, token=None, uid_token=None, usc_encryption_key=None, usc_name=None, value=None, local_vars_configuration=None):  # noqa: E501
         """UscUpdate - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -76,6 +78,7 @@ class UscUpdate(object):
         self._tags = None
         self._token = None
         self._uid_token = None
+        self._usc_encryption_key = None
         self._usc_name = None
         self._value = None
         self.discriminator = None
@@ -97,6 +100,8 @@ class UscUpdate(object):
             self.token = token
         if uid_token is not None:
             self.uid_token = uid_token
+        if usc_encryption_key is not None:
+            self.usc_encryption_key = usc_encryption_key
         self.usc_name = usc_name
         self.value = value
 
@@ -308,6 +313,29 @@ class UscUpdate(object):
         """
 
         self._uid_token = uid_token
+
+    @property
+    def usc_encryption_key(self):
+        """Gets the usc_encryption_key of this UscUpdate.  # noqa: E501
+
+        Optional, The name of the remote key that used to encrypt the secret value (if empty, the default key will be used)  # noqa: E501
+
+        :return: The usc_encryption_key of this UscUpdate.  # noqa: E501
+        :rtype: str
+        """
+        return self._usc_encryption_key
+
+    @usc_encryption_key.setter
+    def usc_encryption_key(self, usc_encryption_key):
+        """Sets the usc_encryption_key of this UscUpdate.
+
+        Optional, The name of the remote key that used to encrypt the secret value (if empty, the default key will be used)  # noqa: E501
+
+        :param usc_encryption_key: The usc_encryption_key of this UscUpdate.  # noqa: E501
+        :type: str
+        """
+
+        self._usc_encryption_key = usc_encryption_key
 
     @property
     def usc_name(self):

@@ -145,6 +145,7 @@ Method | HTTP request | Description
 [**dynamic_secret_create_mongo_db**](V2Api.md#dynamic_secret_create_mongo_db) | **POST** /dynamic-secret-create-mongodb | 
 [**dynamic_secret_create_ms_sql**](V2Api.md#dynamic_secret_create_ms_sql) | **POST** /dynamic-secret-create-mssql | 
 [**dynamic_secret_create_my_sql**](V2Api.md#dynamic_secret_create_my_sql) | **POST** /dynamic-secret-create-mysql | 
+[**dynamic_secret_create_open_ai**](V2Api.md#dynamic_secret_create_open_ai) | **POST** /dynamic-secret-create-openai | 
 [**dynamic_secret_create_oracle_db**](V2Api.md#dynamic_secret_create_oracle_db) | **POST** /dynamic-secret-create-oracle | 
 [**dynamic_secret_create_ping**](V2Api.md#dynamic_secret_create_ping) | **POST** /dynamic-secret-create-ping | 
 [**dynamic_secret_create_postgre_sql**](V2Api.md#dynamic_secret_create_postgre_sql) | **POST** /dynamic-secret-create-postgresql | 
@@ -179,6 +180,7 @@ Method | HTTP request | Description
 [**dynamic_secret_update_mongo_db**](V2Api.md#dynamic_secret_update_mongo_db) | **POST** /dynamic-secret-update-mongo | 
 [**dynamic_secret_update_ms_sql**](V2Api.md#dynamic_secret_update_ms_sql) | **POST** /dynamic-secret-update-mssql | 
 [**dynamic_secret_update_my_sql**](V2Api.md#dynamic_secret_update_my_sql) | **POST** /dynamic-secret-update-mysql | 
+[**dynamic_secret_update_open_ai**](V2Api.md#dynamic_secret_update_open_ai) | **POST** /dynamic-secret-update-openai | 
 [**dynamic_secret_update_oracle_db**](V2Api.md#dynamic_secret_update_oracle_db) | **POST** /dynamic-secret-update-oracle | 
 [**dynamic_secret_update_ping**](V2Api.md#dynamic_secret_update_ping) | **POST** /dynamic-secret-update-ping | 
 [**dynamic_secret_update_postgre_sql**](V2Api.md#dynamic_secret_update_postgre_sql) | **POST** /dynamic-secret-update-postgresql | 
@@ -201,12 +203,14 @@ Method | HTTP request | Description
 [**event_forwarder_create_email**](V2Api.md#event_forwarder_create_email) | **POST** /event-forwarder-create-email | 
 [**event_forwarder_create_service_now**](V2Api.md#event_forwarder_create_service_now) | **POST** /event-forwarder-create-servicenow | 
 [**event_forwarder_create_slack**](V2Api.md#event_forwarder_create_slack) | **POST** /event-forwarder-create-slack | 
+[**event_forwarder_create_teams**](V2Api.md#event_forwarder_create_teams) | **POST** /event-forwarder-create-teams | 
 [**event_forwarder_create_webhook**](V2Api.md#event_forwarder_create_webhook) | **POST** /event-forwarder-create-webhook | 
 [**event_forwarder_delete**](V2Api.md#event_forwarder_delete) | **POST** /event-forwarder-delete | 
 [**event_forwarder_get**](V2Api.md#event_forwarder_get) | **POST** /event-forwarder-get | 
 [**event_forwarder_update_email**](V2Api.md#event_forwarder_update_email) | **POST** /event-forwarder-update-email | 
 [**event_forwarder_update_service_now**](V2Api.md#event_forwarder_update_service_now) | **POST** /event-forwarder-update-servicenow | 
 [**event_forwarder_update_slack**](V2Api.md#event_forwarder_update_slack) | **POST** /event-forwarder-update-slack | 
+[**event_forwarder_update_teams**](V2Api.md#event_forwarder_update_teams) | **POST** /event-forwarder-update-teams | 
 [**event_forwarder_update_webhook**](V2Api.md#event_forwarder_update_webhook) | **POST** /event-forwarder-update-webhook | 
 [**export_classic_key**](V2Api.md#export_classic_key) | **POST** /export-classic-key | 
 [**gateway_create_allowed_access**](V2Api.md#gateway_create_allowed_access) | **POST** /gateway-create-allowed-access | 
@@ -9044,6 +9048,66 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **dynamic_secret_create_open_ai**
+> DynamicSecretCreateOutput dynamic_secret_create_open_ai(dynamic_secret_create_open_ai)
+
+
+
+### Example
+
+```python
+from __future__ import print_function
+import time
+import akeyless
+from akeyless.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.akeyless.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = akeyless.Configuration(
+    host = "https://api.akeyless.io"
+)
+
+
+# Enter a context with an instance of the API client
+with akeyless.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = akeyless.V2Api(api_client)
+    dynamic_secret_create_open_ai = akeyless.DynamicSecretCreateOpenAI() # DynamicSecretCreateOpenAI | 
+
+    try:
+        api_response = api_instance.dynamic_secret_create_open_ai(dynamic_secret_create_open_ai)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling V2Api->dynamic_secret_create_open_ai: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **dynamic_secret_create_open_ai** | [**DynamicSecretCreateOpenAI**](DynamicSecretCreateOpenAI.md)|  | 
+
+### Return type
+
+[**DynamicSecretCreateOutput**](DynamicSecretCreateOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**201** | dynamicSecretCreateOpenAIResponse wraps response body. |  -  |
+**0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **dynamic_secret_create_oracle_db**
 > DynamicSecretCreateOutput dynamic_secret_create_oracle_db(dynamic_secret_create_oracle_db)
 
@@ -11082,6 +11146,66 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **dynamic_secret_update_open_ai**
+> DynamicSecretUpdateOutput dynamic_secret_update_open_ai(dynamic_secret_update_open_ai)
+
+
+
+### Example
+
+```python
+from __future__ import print_function
+import time
+import akeyless
+from akeyless.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.akeyless.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = akeyless.Configuration(
+    host = "https://api.akeyless.io"
+)
+
+
+# Enter a context with an instance of the API client
+with akeyless.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = akeyless.V2Api(api_client)
+    dynamic_secret_update_open_ai = akeyless.DynamicSecretUpdateOpenAI() # DynamicSecretUpdateOpenAI | 
+
+    try:
+        api_response = api_instance.dynamic_secret_update_open_ai(dynamic_secret_update_open_ai)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling V2Api->dynamic_secret_update_open_ai: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **dynamic_secret_update_open_ai** | [**DynamicSecretUpdateOpenAI**](DynamicSecretUpdateOpenAI.md)|  | 
+
+### Return type
+
+[**DynamicSecretUpdateOutput**](DynamicSecretUpdateOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**201** | dynamicSecretUpdateOpenAIResponse wraps response body. |  -  |
+**0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **dynamic_secret_update_oracle_db**
 > DynamicSecretUpdateOutput dynamic_secret_update_oracle_db(dynamic_secret_update_oracle_db)
 
@@ -12402,6 +12526,66 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **event_forwarder_create_teams**
+> EventForwarderCreateUpdateOutput event_forwarder_create_teams(event_forwarder_create_teams)
+
+
+
+### Example
+
+```python
+from __future__ import print_function
+import time
+import akeyless
+from akeyless.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.akeyless.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = akeyless.Configuration(
+    host = "https://api.akeyless.io"
+)
+
+
+# Enter a context with an instance of the API client
+with akeyless.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = akeyless.V2Api(api_client)
+    event_forwarder_create_teams = akeyless.EventForwarderCreateTeams() # EventForwarderCreateTeams | 
+
+    try:
+        api_response = api_instance.event_forwarder_create_teams(event_forwarder_create_teams)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling V2Api->event_forwarder_create_teams: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **event_forwarder_create_teams** | [**EventForwarderCreateTeams**](EventForwarderCreateTeams.md)|  | 
+
+### Return type
+
+[**EventForwarderCreateUpdateOutput**](EventForwarderCreateUpdateOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**201** |  |  -  |
+**0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **event_forwarder_create_webhook**
 > EventForwarderCreateUpdateOutput event_forwarder_create_webhook(event_forwarder_create_webhook)
 
@@ -12758,6 +12942,66 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | eventForwarderUpdateSlackResponse wraps response body. |  -  |
+**0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **event_forwarder_update_teams**
+> EventForwarderCreateUpdateOutput event_forwarder_update_teams(event_forwarder_update_teams)
+
+
+
+### Example
+
+```python
+from __future__ import print_function
+import time
+import akeyless
+from akeyless.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.akeyless.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = akeyless.Configuration(
+    host = "https://api.akeyless.io"
+)
+
+
+# Enter a context with an instance of the API client
+with akeyless.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = akeyless.V2Api(api_client)
+    event_forwarder_update_teams = akeyless.EventForwarderUpdateTeams() # EventForwarderUpdateTeams | 
+
+    try:
+        api_response = api_instance.event_forwarder_update_teams(event_forwarder_update_teams)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling V2Api->event_forwarder_update_teams: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **event_forwarder_update_teams** | [**EventForwarderUpdateTeams**](EventForwarderUpdateTeams.md)|  | 
+
+### Return type
+
+[**EventForwarderCreateUpdateOutput**](EventForwarderCreateUpdateOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**201** | eventForwarderUpdateTeamsResponse wraps response body. |  -  |
 **0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

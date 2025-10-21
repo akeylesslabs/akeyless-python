@@ -24,6 +24,7 @@ Name | Type | Description | Notes
 **protection_key** | **str** |  | [optional] 
 **runner_type** | **str** |  | [optional] 
 **slack_noti_forwarder_public_details** | [**object**](.md) |  | [optional] 
+**teams_noti_forwarder_public_details** | [**object**](.md) |  | [optional] 
 **timespan_in_seconds** | **int** |  | [optional] 
 **to_emails** | [**list[EmailEntry]**](EmailEntry.md) |  | [optional] 
 **user_email** | **str** |  | [optional] 

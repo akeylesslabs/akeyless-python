@@ -36,20 +36,20 @@ class OpenAITargetDetails(object):
     openapi_types = {
         'api_key': 'str',
         'api_key_id': 'str',
-        'model': 'str',
         'openai_url': 'str',
-        'organization_id': 'str'
+        'organization_id': 'str',
+        'project_id': 'str'
     }
 
     attribute_map = {
         'api_key': 'api_key',
         'api_key_id': 'api_key_id',
-        'model': 'model',
         'openai_url': 'openai_url',
-        'organization_id': 'organization_id'
+        'organization_id': 'organization_id',
+        'project_id': 'project_id'
     }
 
-    def __init__(self, api_key=None, api_key_id=None, model=None, openai_url=None, organization_id=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, api_key=None, api_key_id=None, openai_url=None, organization_id=None, project_id=None, local_vars_configuration=None):  # noqa: E501
         """OpenAITargetDetails - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -57,21 +57,21 @@ class OpenAITargetDetails(object):
 
         self._api_key = None
         self._api_key_id = None
-        self._model = None
         self._openai_url = None
         self._organization_id = None
+        self._project_id = None
         self.discriminator = None
 
         if api_key is not None:
             self.api_key = api_key
         if api_key_id is not None:
             self.api_key_id = api_key_id
-        if model is not None:
-            self.model = model
         if openai_url is not None:
             self.openai_url = openai_url
         if organization_id is not None:
             self.organization_id = organization_id
+        if project_id is not None:
+            self.project_id = project_id
 
     @property
     def api_key(self):
@@ -116,27 +116,6 @@ class OpenAITargetDetails(object):
         self._api_key_id = api_key_id
 
     @property
-    def model(self):
-        """Gets the model of this OpenAITargetDetails.  # noqa: E501
-
-
-        :return: The model of this OpenAITargetDetails.  # noqa: E501
-        :rtype: str
-        """
-        return self._model
-
-    @model.setter
-    def model(self, model):
-        """Sets the model of this OpenAITargetDetails.
-
-
-        :param model: The model of this OpenAITargetDetails.  # noqa: E501
-        :type: str
-        """
-
-        self._model = model
-
-    @property
     def openai_url(self):
         """Gets the openai_url of this OpenAITargetDetails.  # noqa: E501
 
@@ -177,6 +156,27 @@ class OpenAITargetDetails(object):
         """
 
         self._organization_id = organization_id
+
+    @property
+    def project_id(self):
+        """Gets the project_id of this OpenAITargetDetails.  # noqa: E501
+
+
+        :return: The project_id of this OpenAITargetDetails.  # noqa: E501
+        :rtype: str
+        """
+        return self._project_id
+
+    @project_id.setter
+    def project_id(self, project_id):
+        """Sets the project_id of this OpenAITargetDetails.
+
+
+        :param project_id: The project_id of this OpenAITargetDetails.  # noqa: E501
+        :type: str
+        """
+
+        self._project_id = project_id
 
     def to_dict(self):
         """Returns the model properties as a dict"""

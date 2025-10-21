@@ -4,6 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **binary_value** | **bool** |  | [optional] 
+**encryption_key** | **str** |  | [optional] 
 **id** | **str** |  | [optional] 
 **metadata** | [**object**](.md) |  | [optional] 
 **name** | **str** |  | [optional] 

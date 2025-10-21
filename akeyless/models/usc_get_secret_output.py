@@ -35,6 +35,7 @@ class UscGetSecretOutput(object):
     """
     openapi_types = {
         'binary_value': 'bool',
+        'encryption_key': 'str',
         'id': 'str',
         'metadata': 'object',
         'name': 'str',
@@ -43,19 +44,21 @@ class UscGetSecretOutput(object):
 
     attribute_map = {
         'binary_value': 'binary_value',
+        'encryption_key': 'encryption_key',
         'id': 'id',
         'metadata': 'metadata',
         'name': 'name',
         'value': 'value'
     }
 
-    def __init__(self, binary_value=None, id=None, metadata=None, name=None, value=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, binary_value=None, encryption_key=None, id=None, metadata=None, name=None, value=None, local_vars_configuration=None):  # noqa: E501
         """UscGetSecretOutput - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._binary_value = None
+        self._encryption_key = None
         self._id = None
         self._metadata = None
         self._name = None
@@ -64,6 +67,8 @@ class UscGetSecretOutput(object):
 
         if binary_value is not None:
             self.binary_value = binary_value
+        if encryption_key is not None:
+            self.encryption_key = encryption_key
         if id is not None:
             self.id = id
         if metadata is not None:
@@ -93,6 +98,27 @@ class UscGetSecretOutput(object):
         """
 
         self._binary_value = binary_value
+
+    @property
+    def encryption_key(self):
+        """Gets the encryption_key of this UscGetSecretOutput.  # noqa: E501
+
+
+        :return: The encryption_key of this UscGetSecretOutput.  # noqa: E501
+        :rtype: str
+        """
+        return self._encryption_key
+
+    @encryption_key.setter
+    def encryption_key(self, encryption_key):
+        """Sets the encryption_key of this UscGetSecretOutput.
+
+
+        :param encryption_key: The encryption_key of this UscGetSecretOutput.  # noqa: E501
+        :type: str
+        """
+
+        self._encryption_key = encryption_key
 
     @property
     def id(self):

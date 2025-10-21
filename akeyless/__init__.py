@@ -15,7 +15,7 @@
 
 from __future__ import absolute_import
 
-__version__ = "5.0.8"
+__version__ = "5.0.9"
 
 # import apis into sdk package
 from akeyless.api.v2_api import V2Api
@@ -325,6 +325,7 @@ from akeyless.models.dynamic_secret_create_ldap import DynamicSecretCreateLdap
 from akeyless.models.dynamic_secret_create_mongo_db import DynamicSecretCreateMongoDb
 from akeyless.models.dynamic_secret_create_ms_sql import DynamicSecretCreateMsSql
 from akeyless.models.dynamic_secret_create_my_sql import DynamicSecretCreateMySql
+from akeyless.models.dynamic_secret_create_open_ai import DynamicSecretCreateOpenAI
 from akeyless.models.dynamic_secret_create_oracle_db import DynamicSecretCreateOracleDb
 from akeyless.models.dynamic_secret_create_output import DynamicSecretCreateOutput
 from akeyless.models.dynamic_secret_create_ping import DynamicSecretCreatePing
@@ -364,6 +365,7 @@ from akeyless.models.dynamic_secret_update_ldap import DynamicSecretUpdateLdap
 from akeyless.models.dynamic_secret_update_mongo_db import DynamicSecretUpdateMongoDb
 from akeyless.models.dynamic_secret_update_ms_sql import DynamicSecretUpdateMsSql
 from akeyless.models.dynamic_secret_update_my_sql import DynamicSecretUpdateMySql
+from akeyless.models.dynamic_secret_update_open_ai import DynamicSecretUpdateOpenAI
 from akeyless.models.dynamic_secret_update_oracle_db import DynamicSecretUpdateOracleDb
 from akeyless.models.dynamic_secret_update_output import DynamicSecretUpdateOutput
 from akeyless.models.dynamic_secret_update_ping import DynamicSecretUpdatePing
@@ -402,6 +404,7 @@ from akeyless.models.event_action import EventAction
 from akeyless.models.event_forwarder_create_email import EventForwarderCreateEmail
 from akeyless.models.event_forwarder_create_service_now import EventForwarderCreateServiceNow
 from akeyless.models.event_forwarder_create_slack import EventForwarderCreateSlack
+from akeyless.models.event_forwarder_create_teams import EventForwarderCreateTeams
 from akeyless.models.event_forwarder_create_update_output import EventForwarderCreateUpdateOutput
 from akeyless.models.event_forwarder_create_webhook import EventForwarderCreateWebhook
 from akeyless.models.event_forwarder_delete import EventForwarderDelete
@@ -411,6 +414,7 @@ from akeyless.models.event_forwarder_get_output import EventForwarderGetOutput
 from akeyless.models.event_forwarder_update_email import EventForwarderUpdateEmail
 from akeyless.models.event_forwarder_update_service_now import EventForwarderUpdateServiceNow
 from akeyless.models.event_forwarder_update_slack import EventForwarderUpdateSlack
+from akeyless.models.event_forwarder_update_teams import EventForwarderUpdateTeams
 from akeyless.models.event_forwarder_update_webhook import EventForwarderUpdateWebhook
 from akeyless.models.export_classic_key import ExportClassicKey
 from akeyless.models.export_classic_key_output import ExportClassicKeyOutput

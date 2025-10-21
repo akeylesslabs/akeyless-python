@@ -37,6 +37,7 @@ class SecretInfo(object):
         'created': 'datetime',
         'description': 'str',
         'expiration': 'datetime',
+        'key_id': 'str',
         'last_retrieved': 'datetime',
         'location': 'object',
         'name': 'str',
@@ -52,6 +53,7 @@ class SecretInfo(object):
         'created': 'created',
         'description': 'description',
         'expiration': 'expiration',
+        'key_id': 'key_id',
         'last_retrieved': 'last_retrieved',
         'location': 'location',
         'name': 'name',
@@ -63,7 +65,7 @@ class SecretInfo(object):
         'version': 'version'
     }
 
-    def __init__(self, created=None, description=None, expiration=None, last_retrieved=None, location=None, name=None, secret_id=None, status=None, tags=None, thumbprint=None, type=None, version=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, created=None, description=None, expiration=None, key_id=None, last_retrieved=None, location=None, name=None, secret_id=None, status=None, tags=None, thumbprint=None, type=None, version=None, local_vars_configuration=None):  # noqa: E501
         """SecretInfo - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -72,6 +74,7 @@ class SecretInfo(object):
         self._created = None
         self._description = None
         self._expiration = None
+        self._key_id = None
         self._last_retrieved = None
         self._location = None
         self._name = None
@@ -89,6 +92,8 @@ class SecretInfo(object):
             self.description = description
         if expiration is not None:
             self.expiration = expiration
+        if key_id is not None:
+            self.key_id = key_id
         if last_retrieved is not None:
             self.last_retrieved = last_retrieved
         if location is not None:
@@ -170,6 +175,27 @@ class SecretInfo(object):
         """
 
         self._expiration = expiration
+
+    @property
+    def key_id(self):
+        """Gets the key_id of this SecretInfo.  # noqa: E501
+
+
+        :return: The key_id of this SecretInfo.  # noqa: E501
+        :rtype: str
+        """
+        return self._key_id
+
+    @key_id.setter
+    def key_id(self, key_id):
+        """Sets the key_id of this SecretInfo.
+
+
+        :param key_id: The key_id of this SecretInfo.  # noqa: E501
+        :type: str
+        """
+
+        self._key_id = key_id
 
     @property
     def last_retrieved(self):
