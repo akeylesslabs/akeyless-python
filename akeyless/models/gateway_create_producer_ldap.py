@@ -43,6 +43,7 @@ class GatewayCreateProducerLdap(object):
         'fixed_user_claim_keyname': 'str',
         'group_dn': 'str',
         'host_provider': 'str',
+        'item_custom_fields': 'dict(str, str)',
         'json': 'bool',
         'ldap_ca_cert': 'str',
         'ldap_url': 'str',
@@ -77,6 +78,7 @@ class GatewayCreateProducerLdap(object):
         'fixed_user_claim_keyname': 'fixed-user-claim-keyname',
         'group_dn': 'group-dn',
         'host_provider': 'host-provider',
+        'item_custom_fields': 'item-custom-fields',
         'json': 'json',
         'ldap_ca_cert': 'ldap-ca-cert',
         'ldap_url': 'ldap-url',
@@ -101,7 +103,7 @@ class GatewayCreateProducerLdap(object):
         'user_ttl': 'user-ttl'
     }
 
-    def __init__(self, provider_type=None, bind_dn=None, bind_dn_password=None, custom_username_template=None, delete_protection=None, external_username='false', fixed_user_claim_keyname='ext_username', group_dn=None, host_provider=None, json=False, ldap_ca_cert=None, ldap_url=None, name=None, password_length=None, producer_encryption_key_name=None, secure_access_bastion_issuer=None, secure_access_certificate_issuer=None, secure_access_delay=None, secure_access_enable=None, secure_access_host=None, secure_access_rd_gateway_server=None, secure_access_rdp_domain=None, tags=None, target=None, target_name=None, token=None, token_expiration=None, uid_token=None, user_attribute=None, user_dn=None, user_ttl='60m', local_vars_configuration=None):  # noqa: E501
+    def __init__(self, provider_type=None, bind_dn=None, bind_dn_password=None, custom_username_template=None, delete_protection=None, external_username='false', fixed_user_claim_keyname='ext_username', group_dn=None, host_provider=None, item_custom_fields=None, json=False, ldap_ca_cert=None, ldap_url=None, name=None, password_length=None, producer_encryption_key_name=None, secure_access_bastion_issuer=None, secure_access_certificate_issuer=None, secure_access_delay=None, secure_access_enable=None, secure_access_host=None, secure_access_rd_gateway_server=None, secure_access_rdp_domain=None, tags=None, target=None, target_name=None, token=None, token_expiration=None, uid_token=None, user_attribute=None, user_dn=None, user_ttl='60m', local_vars_configuration=None):  # noqa: E501
         """GatewayCreateProducerLdap - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -116,6 +118,7 @@ class GatewayCreateProducerLdap(object):
         self._fixed_user_claim_keyname = None
         self._group_dn = None
         self._host_provider = None
+        self._item_custom_fields = None
         self._json = None
         self._ldap_ca_cert = None
         self._ldap_url = None
@@ -158,6 +161,8 @@ class GatewayCreateProducerLdap(object):
             self.group_dn = group_dn
         if host_provider is not None:
             self.host_provider = host_provider
+        if item_custom_fields is not None:
+            self.item_custom_fields = item_custom_fields
         if json is not None:
             self.json = json
         if ldap_ca_cert is not None:
@@ -406,6 +411,29 @@ class GatewayCreateProducerLdap(object):
         """
 
         self._host_provider = host_provider
+
+    @property
+    def item_custom_fields(self):
+        """Gets the item_custom_fields of this GatewayCreateProducerLdap.  # noqa: E501
+
+        Additional custom fields to associate with the item  # noqa: E501
+
+        :return: The item_custom_fields of this GatewayCreateProducerLdap.  # noqa: E501
+        :rtype: dict(str, str)
+        """
+        return self._item_custom_fields
+
+    @item_custom_fields.setter
+    def item_custom_fields(self, item_custom_fields):
+        """Sets the item_custom_fields of this GatewayCreateProducerLdap.
+
+        Additional custom fields to associate with the item  # noqa: E501
+
+        :param item_custom_fields: The item_custom_fields of this GatewayCreateProducerLdap.  # noqa: E501
+        :type: dict(str, str)
+        """
+
+        self._item_custom_fields = item_custom_fields
 
     @property
     def json(self):

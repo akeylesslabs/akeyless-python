@@ -4,6 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **admins** | **str** |  | [optional] 
+**ai_insights** | **str** |  | [optional] 
 **cache** | **str** |  | [optional] 
 **customer_fragements** | **str** |  | [optional] 
 **general** | **str** |  | [optional] 

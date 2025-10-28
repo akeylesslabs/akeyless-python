@@ -35,17 +35,15 @@ class GeminiTargetDetails(object):
     """
     openapi_types = {
         'api_key': 'str',
-        'gemini_url': 'str',
-        'model': 'str'
+        'gemini_url': 'str'
     }
 
     attribute_map = {
         'api_key': 'api_key',
-        'gemini_url': 'gemini_url',
-        'model': 'model'
+        'gemini_url': 'gemini_url'
     }
 
-    def __init__(self, api_key=None, gemini_url=None, model=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, api_key=None, gemini_url=None, local_vars_configuration=None):  # noqa: E501
         """GeminiTargetDetails - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -53,15 +51,12 @@ class GeminiTargetDetails(object):
 
         self._api_key = None
         self._gemini_url = None
-        self._model = None
         self.discriminator = None
 
         if api_key is not None:
             self.api_key = api_key
         if gemini_url is not None:
             self.gemini_url = gemini_url
-        if model is not None:
-            self.model = model
 
     @property
     def api_key(self):
@@ -104,27 +99,6 @@ class GeminiTargetDetails(object):
         """
 
         self._gemini_url = gemini_url
-
-    @property
-    def model(self):
-        """Gets the model of this GeminiTargetDetails.  # noqa: E501
-
-
-        :return: The model of this GeminiTargetDetails.  # noqa: E501
-        :rtype: str
-        """
-        return self._model
-
-    @model.setter
-    def model(self, model):
-        """Sets the model of this GeminiTargetDetails.
-
-
-        :param model: The model of this GeminiTargetDetails.  # noqa: E501
-        :type: str
-        """
-
-        self._model = model
 
     def to_dict(self):
         """Returns the model properties as a dict"""

@@ -45,6 +45,7 @@ class RotatedSecretCreateAzure(object):
         'grace_rotation': 'str',
         'grace_rotation_hour': 'int',
         'grace_rotation_interval': 'str',
+        'item_custom_fields': 'dict(str, str)',
         'json': 'bool',
         'key': 'str',
         'max_versions': 'str',
@@ -83,6 +84,7 @@ class RotatedSecretCreateAzure(object):
         'grace_rotation': 'grace-rotation',
         'grace_rotation_hour': 'grace-rotation-hour',
         'grace_rotation_interval': 'grace-rotation-interval',
+        'item_custom_fields': 'item-custom-fields',
         'json': 'json',
         'key': 'key',
         'max_versions': 'max-versions',
@@ -109,7 +111,7 @@ class RotatedSecretCreateAzure(object):
         'username': 'username'
     }
 
-    def __init__(self, api_id=None, api_key=None, application_id=None, authentication_credentials='use-user-creds', auto_rotate=None, delete_protection=None, description=None, explicitly_set_sa='false', grace_rotation=None, grace_rotation_hour=None, grace_rotation_interval=None, json=False, key=None, max_versions=None, name=None, password_length=None, resource_group_name=None, resource_name=None, rotate_after_disconnect='false', rotation_event_in=None, rotation_hour=None, rotation_interval=None, rotator_type=None, secure_access_disable_concurrent_connections=None, secure_access_enable=None, secure_access_url=None, secure_access_web=False, secure_access_web_browsing=False, secure_access_web_proxy=False, storage_account_key_name=None, tags=None, target_name=None, token=None, uid_token=None, username=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, api_id=None, api_key=None, application_id=None, authentication_credentials='use-user-creds', auto_rotate=None, delete_protection=None, description=None, explicitly_set_sa='false', grace_rotation=None, grace_rotation_hour=None, grace_rotation_interval=None, item_custom_fields=None, json=False, key=None, max_versions=None, name=None, password_length=None, resource_group_name=None, resource_name=None, rotate_after_disconnect='false', rotation_event_in=None, rotation_hour=None, rotation_interval=None, rotator_type=None, secure_access_disable_concurrent_connections=None, secure_access_enable=None, secure_access_url=None, secure_access_web=False, secure_access_web_browsing=False, secure_access_web_proxy=False, storage_account_key_name=None, tags=None, target_name=None, token=None, uid_token=None, username=None, local_vars_configuration=None):  # noqa: E501
         """RotatedSecretCreateAzure - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -126,6 +128,7 @@ class RotatedSecretCreateAzure(object):
         self._grace_rotation = None
         self._grace_rotation_hour = None
         self._grace_rotation_interval = None
+        self._item_custom_fields = None
         self._json = None
         self._key = None
         self._max_versions = None
@@ -174,6 +177,8 @@ class RotatedSecretCreateAzure(object):
             self.grace_rotation_hour = grace_rotation_hour
         if grace_rotation_interval is not None:
             self.grace_rotation_interval = grace_rotation_interval
+        if item_custom_fields is not None:
+            self.item_custom_fields = item_custom_fields
         if json is not None:
             self.json = json
         if key is not None:
@@ -472,6 +477,29 @@ class RotatedSecretCreateAzure(object):
         """
 
         self._grace_rotation_interval = grace_rotation_interval
+
+    @property
+    def item_custom_fields(self):
+        """Gets the item_custom_fields of this RotatedSecretCreateAzure.  # noqa: E501
+
+        Additional custom fields to associate with the item  # noqa: E501
+
+        :return: The item_custom_fields of this RotatedSecretCreateAzure.  # noqa: E501
+        :rtype: dict(str, str)
+        """
+        return self._item_custom_fields
+
+    @item_custom_fields.setter
+    def item_custom_fields(self, item_custom_fields):
+        """Sets the item_custom_fields of this RotatedSecretCreateAzure.
+
+        Additional custom fields to associate with the item  # noqa: E501
+
+        :param item_custom_fields: The item_custom_fields of this RotatedSecretCreateAzure.  # noqa: E501
+        :type: dict(str, str)
+        """
+
+        self._item_custom_fields = item_custom_fields
 
     @property
     def json(self):

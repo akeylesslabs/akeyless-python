@@ -35,6 +35,7 @@ class AkeylessGatewayConfig(object):
     """
     openapi_types = {
         'admins': 'AdminsConfigPart',
+        'ai_insights': 'AiInsightsConfigPart',
         'ca_certificates': 'CaCertificatesConfigPart',
         'cache': 'CacheConfigPart',
         'cf': 'CFConfigPart',
@@ -56,6 +57,7 @@ class AkeylessGatewayConfig(object):
 
     attribute_map = {
         'admins': 'admins',
+        'ai_insights': 'ai_insights',
         'ca_certificates': 'ca_certificates',
         'cache': 'cache',
         'cf': 'cf',
@@ -75,13 +77,14 @@ class AkeylessGatewayConfig(object):
         'version': 'version'
     }
 
-    def __init__(self, admins=None, ca_certificates=None, cache=None, cf=None, config_protection_key_name=None, general=None, k8s_auths=None, kerberos=None, kmip_clients=None, ldap=None, leadership=None, log_forwarding=None, message_queue_info=None, migrations=None, producers=None, rotators=None, saml=None, version=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, admins=None, ai_insights=None, ca_certificates=None, cache=None, cf=None, config_protection_key_name=None, general=None, k8s_auths=None, kerberos=None, kmip_clients=None, ldap=None, leadership=None, log_forwarding=None, message_queue_info=None, migrations=None, producers=None, rotators=None, saml=None, version=None, local_vars_configuration=None):  # noqa: E501
         """AkeylessGatewayConfig - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._admins = None
+        self._ai_insights = None
         self._ca_certificates = None
         self._cache = None
         self._cf = None
@@ -103,6 +106,8 @@ class AkeylessGatewayConfig(object):
 
         if admins is not None:
             self.admins = admins
+        if ai_insights is not None:
+            self.ai_insights = ai_insights
         if ca_certificates is not None:
             self.ca_certificates = ca_certificates
         if cache is not None:
@@ -158,6 +163,27 @@ class AkeylessGatewayConfig(object):
         """
 
         self._admins = admins
+
+    @property
+    def ai_insights(self):
+        """Gets the ai_insights of this AkeylessGatewayConfig.  # noqa: E501
+
+
+        :return: The ai_insights of this AkeylessGatewayConfig.  # noqa: E501
+        :rtype: AiInsightsConfigPart
+        """
+        return self._ai_insights
+
+    @ai_insights.setter
+    def ai_insights(self, ai_insights):
+        """Sets the ai_insights of this AkeylessGatewayConfig.
+
+
+        :param ai_insights: The ai_insights of this AkeylessGatewayConfig.  # noqa: E501
+        :type: AiInsightsConfigPart
+        """
+
+        self._ai_insights = ai_insights
 
     @property
     def ca_certificates(self):

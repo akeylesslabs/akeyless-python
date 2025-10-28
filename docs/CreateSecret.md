@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **description** | **str** | Description of the object | [optional] 
 **format** | **str** | Secret format [text/json/key-value] (relevant only for type &#39;generic&#39;) | [optional] [default to 'text']
 **inject_url** | **list[str]** | For Password Management use, reflect the website context | [optional] 
+**item_custom_fields** | **dict(str, str)** | Additional custom fields to associate with the item | [optional] 
 **json** | **bool** | Set output format to JSON | [optional] [default to False]
 **max_versions** | **str** | Set the maximum number of versions, limited by the account settings defaults. | [optional] 
 **metadata** | **str** | Deprecated - use description | [optional] 

@@ -3,6 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**allowed_email_domains** | **list[str]** | AllowedEmailDomains limits email sharing to these domains. By default all domains are allowed. | [optional] 
 **default_share_link_ttl** | **int** |  | [optional] 
 **enable** | **bool** |  | [optional] 
 

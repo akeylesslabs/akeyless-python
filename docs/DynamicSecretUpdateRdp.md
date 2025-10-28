@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **description** | **str** | Description of the object | [optional] 
 **fixed_user_claim_keyname** | **str** | For externally provided users, denotes the key-name of IdP claim to extract the username from (relevant only for fixed-user-only&#x3D;true) | [optional] [default to 'ext_username']
 **fixed_user_only** | **str** | Allow access using externally (IdP) provided username [true/false] | [optional] [default to 'false']
+**item_custom_fields** | **dict(str, str)** | Additional custom fields to associate with the item | [optional] 
 **json** | **bool** | Set output format to JSON | [optional] [default to False]
 **name** | **str** | Dynamic secret name | 
 **new_name** | **str** | Dynamic secret name | [optional] 

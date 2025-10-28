@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **cassandra_username** | **str** | Cassandra superuser username | [optional] 
 **custom_username_template** | **str** | Customize how temporary usernames are generated using go template | [optional] 
 **delete_protection** | **str** | Protection from accidental deletion of this object [true/false] | [optional] 
+**item_custom_fields** | **dict(str, str)** | Additional custom fields to associate with the item | [optional] 
 **json** | **bool** | Set output format to JSON | [optional] [default to False]
 **name** | **str** | Dynamic secret name | 
 **password_length** | **str** | The length of the password to be generated | [optional] 

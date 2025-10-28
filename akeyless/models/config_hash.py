@@ -35,6 +35,7 @@ class ConfigHash(object):
     """
     openapi_types = {
         'admins': 'str',
+        'ai_insights': 'str',
         'cache': 'str',
         'customer_fragements': 'str',
         'general': 'str',
@@ -55,6 +56,7 @@ class ConfigHash(object):
 
     attribute_map = {
         'admins': 'admins',
+        'ai_insights': 'ai_insights',
         'cache': 'cache',
         'customer_fragements': 'customer_fragements',
         'general': 'general',
@@ -73,13 +75,14 @@ class ConfigHash(object):
         'universal_identity': 'universal_identity'
     }
 
-    def __init__(self, admins=None, cache=None, customer_fragements=None, general=None, k8s_auths=None, kmip=None, ldap=None, leadership=None, log_forwarding=None, m_queue=None, migration_status=None, migrations=None, producers=None, producers_status=None, rotators=None, saml=None, universal_identity=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, admins=None, ai_insights=None, cache=None, customer_fragements=None, general=None, k8s_auths=None, kmip=None, ldap=None, leadership=None, log_forwarding=None, m_queue=None, migration_status=None, migrations=None, producers=None, producers_status=None, rotators=None, saml=None, universal_identity=None, local_vars_configuration=None):  # noqa: E501
         """ConfigHash - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._admins = None
+        self._ai_insights = None
         self._cache = None
         self._customer_fragements = None
         self._general = None
@@ -100,6 +103,8 @@ class ConfigHash(object):
 
         if admins is not None:
             self.admins = admins
+        if ai_insights is not None:
+            self.ai_insights = ai_insights
         if cache is not None:
             self.cache = cache
         if customer_fragements is not None:
@@ -153,6 +158,27 @@ class ConfigHash(object):
         """
 
         self._admins = admins
+
+    @property
+    def ai_insights(self):
+        """Gets the ai_insights of this ConfigHash.  # noqa: E501
+
+
+        :return: The ai_insights of this ConfigHash.  # noqa: E501
+        :rtype: str
+        """
+        return self._ai_insights
+
+    @ai_insights.setter
+    def ai_insights(self, ai_insights):
+        """Sets the ai_insights of this ConfigHash.
+
+
+        :param ai_insights: The ai_insights of this ConfigHash.  # noqa: E501
+        :type: str
+        """
+
+        self._ai_insights = ai_insights
 
     @property
     def cache(self):

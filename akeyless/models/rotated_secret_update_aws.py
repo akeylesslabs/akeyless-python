@@ -45,6 +45,7 @@ class RotatedSecretUpdateAws(object):
         'grace_rotation': 'str',
         'grace_rotation_hour': 'int',
         'grace_rotation_interval': 'str',
+        'item_custom_fields': 'dict(str, str)',
         'json': 'bool',
         'keep_prev_version': 'str',
         'key': 'str',
@@ -78,6 +79,7 @@ class RotatedSecretUpdateAws(object):
         'grace_rotation': 'grace-rotation',
         'grace_rotation_hour': 'grace-rotation-hour',
         'grace_rotation_interval': 'grace-rotation-interval',
+        'item_custom_fields': 'item-custom-fields',
         'json': 'json',
         'keep_prev_version': 'keep-prev-version',
         'key': 'key',
@@ -99,7 +101,7 @@ class RotatedSecretUpdateAws(object):
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, add_tag=None, api_id=None, api_key=None, authentication_credentials='use-user-creds', auto_rotate=None, aws_region='us-east-2', delete_protection=None, description='default_metadata', grace_rotation=None, grace_rotation_hour=None, grace_rotation_interval=None, json=False, keep_prev_version=None, key=None, max_versions=None, name=None, new_name=None, password_length=None, rm_tag=None, rotate_after_disconnect='false', rotation_event_in=None, rotation_hour=None, rotation_interval=None, secure_access_aws_account_id=None, secure_access_aws_native_cli=None, secure_access_bastion_issuer=None, secure_access_certificate_issuer=None, secure_access_enable=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, add_tag=None, api_id=None, api_key=None, authentication_credentials='use-user-creds', auto_rotate=None, aws_region='us-east-2', delete_protection=None, description='default_metadata', grace_rotation=None, grace_rotation_hour=None, grace_rotation_interval=None, item_custom_fields=None, json=False, keep_prev_version=None, key=None, max_versions=None, name=None, new_name=None, password_length=None, rm_tag=None, rotate_after_disconnect='false', rotation_event_in=None, rotation_hour=None, rotation_interval=None, secure_access_aws_account_id=None, secure_access_aws_native_cli=None, secure_access_bastion_issuer=None, secure_access_certificate_issuer=None, secure_access_enable=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """RotatedSecretUpdateAws - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -116,6 +118,7 @@ class RotatedSecretUpdateAws(object):
         self._grace_rotation = None
         self._grace_rotation_hour = None
         self._grace_rotation_interval = None
+        self._item_custom_fields = None
         self._json = None
         self._keep_prev_version = None
         self._key = None
@@ -159,6 +162,8 @@ class RotatedSecretUpdateAws(object):
             self.grace_rotation_hour = grace_rotation_hour
         if grace_rotation_interval is not None:
             self.grace_rotation_interval = grace_rotation_interval
+        if item_custom_fields is not None:
+            self.item_custom_fields = item_custom_fields
         if json is not None:
             self.json = json
         if keep_prev_version is not None:
@@ -449,6 +454,29 @@ class RotatedSecretUpdateAws(object):
         """
 
         self._grace_rotation_interval = grace_rotation_interval
+
+    @property
+    def item_custom_fields(self):
+        """Gets the item_custom_fields of this RotatedSecretUpdateAws.  # noqa: E501
+
+        Additional custom fields to associate with the item  # noqa: E501
+
+        :return: The item_custom_fields of this RotatedSecretUpdateAws.  # noqa: E501
+        :rtype: dict(str, str)
+        """
+        return self._item_custom_fields
+
+    @item_custom_fields.setter
+    def item_custom_fields(self, item_custom_fields):
+        """Sets the item_custom_fields of this RotatedSecretUpdateAws.
+
+        Additional custom fields to associate with the item  # noqa: E501
+
+        :param item_custom_fields: The item_custom_fields of this RotatedSecretUpdateAws.  # noqa: E501
+        :type: dict(str, str)
+        """
+
+        self._item_custom_fields = item_custom_fields
 
     @property
     def json(self):

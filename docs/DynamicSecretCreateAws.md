@@ -18,6 +18,7 @@ Name | Type | Description | Notes
 **delete_protection** | **str** | Protection from accidental deletion of this object [true/false] | [optional] 
 **description** | **str** | Description of the object | [optional] 
 **enable_admin_rotation** | **bool** | Automatic admin credentials rotation | [optional] [default to False]
+**item_custom_fields** | **dict(str, str)** | Additional custom fields to associate with the item | [optional] 
 **json** | **bool** | Set output format to JSON | [optional] [default to False]
 **name** | **str** | Dynamic secret name | 
 **password_length** | **str** | The length of the password to be generated | [optional] 

@@ -37,6 +37,7 @@ class DynamicSecretUpdateK8s(object):
         'custom_username_template': 'str',
         'delete_protection': 'str',
         'description': 'str',
+        'item_custom_fields': 'dict(str, str)',
         'json': 'bool',
         'k8s_allowed_namespaces': 'str',
         'k8s_cluster_ca_cert': 'str',
@@ -75,6 +76,7 @@ class DynamicSecretUpdateK8s(object):
         'custom_username_template': 'custom-username-template',
         'delete_protection': 'delete_protection',
         'description': 'description',
+        'item_custom_fields': 'item-custom-fields',
         'json': 'json',
         'k8s_allowed_namespaces': 'k8s-allowed-namespaces',
         'k8s_cluster_ca_cert': 'k8s-cluster-ca-cert',
@@ -109,7 +111,7 @@ class DynamicSecretUpdateK8s(object):
         'user_ttl': 'user-ttl'
     }
 
-    def __init__(self, custom_username_template=None, delete_protection=None, description=None, json=False, k8s_allowed_namespaces=None, k8s_cluster_ca_cert=None, k8s_cluster_endpoint=None, k8s_cluster_name=None, k8s_cluster_token=None, k8s_namespace=None, k8s_predefined_role_name=None, k8s_predefined_role_type=None, k8s_rolebinding_yaml_data=None, k8s_rolebinding_yaml_def=None, k8s_service_account=None, k8s_service_account_type=None, name=None, new_name=None, producer_encryption_key_name=None, secure_access_allow_port_forwading=None, secure_access_bastion_issuer=None, secure_access_certificate_issuer=None, secure_access_cluster_endpoint=None, secure_access_dashboard_url=None, secure_access_delay=None, secure_access_enable=None, secure_access_web=False, secure_access_web_browsing=False, secure_access_web_proxy=False, tags=None, target_name=None, token=None, uid_token=None, use_gw_service_account=None, user_ttl='60m', local_vars_configuration=None):  # noqa: E501
+    def __init__(self, custom_username_template=None, delete_protection=None, description=None, item_custom_fields=None, json=False, k8s_allowed_namespaces=None, k8s_cluster_ca_cert=None, k8s_cluster_endpoint=None, k8s_cluster_name=None, k8s_cluster_token=None, k8s_namespace=None, k8s_predefined_role_name=None, k8s_predefined_role_type=None, k8s_rolebinding_yaml_data=None, k8s_rolebinding_yaml_def=None, k8s_service_account=None, k8s_service_account_type=None, name=None, new_name=None, producer_encryption_key_name=None, secure_access_allow_port_forwading=None, secure_access_bastion_issuer=None, secure_access_certificate_issuer=None, secure_access_cluster_endpoint=None, secure_access_dashboard_url=None, secure_access_delay=None, secure_access_enable=None, secure_access_web=False, secure_access_web_browsing=False, secure_access_web_proxy=False, tags=None, target_name=None, token=None, uid_token=None, use_gw_service_account=None, user_ttl='60m', local_vars_configuration=None):  # noqa: E501
         """DynamicSecretUpdateK8s - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -118,6 +120,7 @@ class DynamicSecretUpdateK8s(object):
         self._custom_username_template = None
         self._delete_protection = None
         self._description = None
+        self._item_custom_fields = None
         self._json = None
         self._k8s_allowed_namespaces = None
         self._k8s_cluster_ca_cert = None
@@ -158,6 +161,8 @@ class DynamicSecretUpdateK8s(object):
             self.delete_protection = delete_protection
         if description is not None:
             self.description = description
+        if item_custom_fields is not None:
+            self.item_custom_fields = item_custom_fields
         if json is not None:
             self.json = json
         if k8s_allowed_namespaces is not None:
@@ -290,6 +295,29 @@ class DynamicSecretUpdateK8s(object):
         """
 
         self._description = description
+
+    @property
+    def item_custom_fields(self):
+        """Gets the item_custom_fields of this DynamicSecretUpdateK8s.  # noqa: E501
+
+        Additional custom fields to associate with the item  # noqa: E501
+
+        :return: The item_custom_fields of this DynamicSecretUpdateK8s.  # noqa: E501
+        :rtype: dict(str, str)
+        """
+        return self._item_custom_fields
+
+    @item_custom_fields.setter
+    def item_custom_fields(self, item_custom_fields):
+        """Sets the item_custom_fields of this DynamicSecretUpdateK8s.
+
+        Additional custom fields to associate with the item  # noqa: E501
+
+        :param item_custom_fields: The item_custom_fields of this DynamicSecretUpdateK8s.  # noqa: E501
+        :type: dict(str, str)
+        """
+
+        self._item_custom_fields = item_custom_fields
 
     @property
     def json(self):

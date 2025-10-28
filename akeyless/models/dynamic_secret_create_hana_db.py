@@ -44,6 +44,7 @@ class DynamicSecretCreateHanaDb(object):
         'hanadb_port': 'str',
         'hanadb_revocation_statements': 'str',
         'hanadb_username': 'str',
+        'item_custom_fields': 'dict(str, str)',
         'json': 'bool',
         'name': 'str',
         'password_length': 'str',
@@ -73,6 +74,7 @@ class DynamicSecretCreateHanaDb(object):
         'hanadb_port': 'hanadb-port',
         'hanadb_revocation_statements': 'hanadb-revocation-statements',
         'hanadb_username': 'hanadb-username',
+        'item_custom_fields': 'item-custom-fields',
         'json': 'json',
         'name': 'name',
         'password_length': 'password-length',
@@ -91,7 +93,7 @@ class DynamicSecretCreateHanaDb(object):
         'user_ttl': 'user-ttl'
     }
 
-    def __init__(self, custom_username_template=None, delete_protection=None, description=None, hana_dbname=None, hanadb_create_statements=None, hanadb_host='127.0.0.1', hanadb_password=None, hanadb_port='443', hanadb_revocation_statements=None, hanadb_username=None, json=False, name=None, password_length=None, producer_encryption_key_name=None, secure_access_bastion_issuer=None, secure_access_certificate_issuer=None, secure_access_db_name=None, secure_access_db_schema=None, secure_access_enable=None, secure_access_host=None, secure_access_web=False, tags=None, target_name=None, token=None, uid_token=None, user_ttl='60m', local_vars_configuration=None):  # noqa: E501
+    def __init__(self, custom_username_template=None, delete_protection=None, description=None, hana_dbname=None, hanadb_create_statements=None, hanadb_host='127.0.0.1', hanadb_password=None, hanadb_port='443', hanadb_revocation_statements=None, hanadb_username=None, item_custom_fields=None, json=False, name=None, password_length=None, producer_encryption_key_name=None, secure_access_bastion_issuer=None, secure_access_certificate_issuer=None, secure_access_db_name=None, secure_access_db_schema=None, secure_access_enable=None, secure_access_host=None, secure_access_web=False, tags=None, target_name=None, token=None, uid_token=None, user_ttl='60m', local_vars_configuration=None):  # noqa: E501
         """DynamicSecretCreateHanaDb - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -107,6 +109,7 @@ class DynamicSecretCreateHanaDb(object):
         self._hanadb_port = None
         self._hanadb_revocation_statements = None
         self._hanadb_username = None
+        self._item_custom_fields = None
         self._json = None
         self._name = None
         self._password_length = None
@@ -145,6 +148,8 @@ class DynamicSecretCreateHanaDb(object):
             self.hanadb_revocation_statements = hanadb_revocation_statements
         if hanadb_username is not None:
             self.hanadb_username = hanadb_username
+        if item_custom_fields is not None:
+            self.item_custom_fields = item_custom_fields
         if json is not None:
             self.json = json
         self.name = name
@@ -406,6 +411,29 @@ class DynamicSecretCreateHanaDb(object):
         """
 
         self._hanadb_username = hanadb_username
+
+    @property
+    def item_custom_fields(self):
+        """Gets the item_custom_fields of this DynamicSecretCreateHanaDb.  # noqa: E501
+
+        Additional custom fields to associate with the item  # noqa: E501
+
+        :return: The item_custom_fields of this DynamicSecretCreateHanaDb.  # noqa: E501
+        :rtype: dict(str, str)
+        """
+        return self._item_custom_fields
+
+    @item_custom_fields.setter
+    def item_custom_fields(self, item_custom_fields):
+        """Sets the item_custom_fields of this DynamicSecretCreateHanaDb.
+
+        Additional custom fields to associate with the item  # noqa: E501
+
+        :param item_custom_fields: The item_custom_fields of this DynamicSecretCreateHanaDb.  # noqa: E501
+        :type: dict(str, str)
+        """
+
+        self._item_custom_fields = item_custom_fields
 
     @property
     def json(self):

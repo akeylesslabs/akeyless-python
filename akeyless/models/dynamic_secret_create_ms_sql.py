@@ -37,6 +37,7 @@ class DynamicSecretCreateMsSql(object):
         'custom_username_template': 'str',
         'delete_protection': 'str',
         'description': 'str',
+        'item_custom_fields': 'dict(str, str)',
         'json': 'bool',
         'mssql_create_statements': 'str',
         'mssql_dbname': 'str',
@@ -67,6 +68,7 @@ class DynamicSecretCreateMsSql(object):
         'custom_username_template': 'custom-username-template',
         'delete_protection': 'delete_protection',
         'description': 'description',
+        'item_custom_fields': 'item-custom-fields',
         'json': 'json',
         'mssql_create_statements': 'mssql-create-statements',
         'mssql_dbname': 'mssql-dbname',
@@ -93,7 +95,7 @@ class DynamicSecretCreateMsSql(object):
         'user_ttl': 'user-ttl'
     }
 
-    def __init__(self, custom_username_template=None, delete_protection=None, description=None, json=False, mssql_create_statements=None, mssql_dbname=None, mssql_host='127.0.0.1', mssql_password=None, mssql_port='1433', mssql_revocation_statements=None, mssql_username=None, name=None, password_length=None, producer_encryption_key_name=None, secure_access_bastion_issuer=None, secure_access_certificate_issuer=None, secure_access_db_name=None, secure_access_db_schema=None, secure_access_delay=None, secure_access_enable=None, secure_access_host=None, secure_access_web=False, tags=None, target_name=None, token=None, uid_token=None, user_ttl='60m', local_vars_configuration=None):  # noqa: E501
+    def __init__(self, custom_username_template=None, delete_protection=None, description=None, item_custom_fields=None, json=False, mssql_create_statements=None, mssql_dbname=None, mssql_host='127.0.0.1', mssql_password=None, mssql_port='1433', mssql_revocation_statements=None, mssql_username=None, name=None, password_length=None, producer_encryption_key_name=None, secure_access_bastion_issuer=None, secure_access_certificate_issuer=None, secure_access_db_name=None, secure_access_db_schema=None, secure_access_delay=None, secure_access_enable=None, secure_access_host=None, secure_access_web=False, tags=None, target_name=None, token=None, uid_token=None, user_ttl='60m', local_vars_configuration=None):  # noqa: E501
         """DynamicSecretCreateMsSql - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -102,6 +104,7 @@ class DynamicSecretCreateMsSql(object):
         self._custom_username_template = None
         self._delete_protection = None
         self._description = None
+        self._item_custom_fields = None
         self._json = None
         self._mssql_create_statements = None
         self._mssql_dbname = None
@@ -134,6 +137,8 @@ class DynamicSecretCreateMsSql(object):
             self.delete_protection = delete_protection
         if description is not None:
             self.description = description
+        if item_custom_fields is not None:
+            self.item_custom_fields = item_custom_fields
         if json is not None:
             self.json = json
         if mssql_create_statements is not None:
@@ -250,6 +255,29 @@ class DynamicSecretCreateMsSql(object):
         """
 
         self._description = description
+
+    @property
+    def item_custom_fields(self):
+        """Gets the item_custom_fields of this DynamicSecretCreateMsSql.  # noqa: E501
+
+        Additional custom fields to associate with the item  # noqa: E501
+
+        :return: The item_custom_fields of this DynamicSecretCreateMsSql.  # noqa: E501
+        :rtype: dict(str, str)
+        """
+        return self._item_custom_fields
+
+    @item_custom_fields.setter
+    def item_custom_fields(self, item_custom_fields):
+        """Sets the item_custom_fields of this DynamicSecretCreateMsSql.
+
+        Additional custom fields to associate with the item  # noqa: E501
+
+        :param item_custom_fields: The item_custom_fields of this DynamicSecretCreateMsSql.  # noqa: E501
+        :type: dict(str, str)
+        """
+
+        self._item_custom_fields = item_custom_fields
 
     @property
     def json(self):

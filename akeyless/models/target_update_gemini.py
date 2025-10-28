@@ -41,7 +41,6 @@ class TargetUpdateGemini(object):
         'keep_prev_version': 'str',
         'key': 'str',
         'max_versions': 'str',
-        'model': 'str',
         'name': 'str',
         'new_comment': 'str',
         'new_name': 'str',
@@ -57,7 +56,6 @@ class TargetUpdateGemini(object):
         'keep_prev_version': 'keep-prev-version',
         'key': 'key',
         'max_versions': 'max-versions',
-        'model': 'model',
         'name': 'name',
         'new_comment': 'new-comment',
         'new_name': 'new-name',
@@ -65,7 +63,7 @@ class TargetUpdateGemini(object):
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, api_key=None, description='default_comment', gemini_url='https://generativelanguage.googleapis.com', json=False, keep_prev_version=None, key=None, max_versions=None, model=None, name=None, new_comment='default_comment', new_name=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, api_key=None, description='default_comment', gemini_url='https://generativelanguage.googleapis.com', json=False, keep_prev_version=None, key=None, max_versions=None, name=None, new_comment='default_comment', new_name=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """TargetUpdateGemini - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -78,7 +76,6 @@ class TargetUpdateGemini(object):
         self._keep_prev_version = None
         self._key = None
         self._max_versions = None
-        self._model = None
         self._name = None
         self._new_comment = None
         self._new_name = None
@@ -100,8 +97,6 @@ class TargetUpdateGemini(object):
             self.key = key
         if max_versions is not None:
             self.max_versions = max_versions
-        if model is not None:
-            self.model = model
         self.name = name
         if new_comment is not None:
             self.new_comment = new_comment
@@ -272,29 +267,6 @@ class TargetUpdateGemini(object):
         """
 
         self._max_versions = max_versions
-
-    @property
-    def model(self):
-        """Gets the model of this TargetUpdateGemini.  # noqa: E501
-
-        Default model to use with Gemini  # noqa: E501
-
-        :return: The model of this TargetUpdateGemini.  # noqa: E501
-        :rtype: str
-        """
-        return self._model
-
-    @model.setter
-    def model(self, model):
-        """Sets the model of this TargetUpdateGemini.
-
-        Default model to use with Gemini  # noqa: E501
-
-        :param model: The model of this TargetUpdateGemini.  # noqa: E501
-        :type: str
-        """
-
-        self._model = model
 
     @property
     def name(self):

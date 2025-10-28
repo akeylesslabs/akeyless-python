@@ -41,6 +41,7 @@ class UploadRSA(object):
         'delete_protection': 'str',
         'description': 'str',
         'expiration_event_in': 'list[str]',
+        'item_custom_fields': 'dict(str, str)',
         'json': 'bool',
         'metadata': 'str',
         'name': 'str',
@@ -60,6 +61,7 @@ class UploadRSA(object):
         'delete_protection': 'delete_protection',
         'description': 'description',
         'expiration_event_in': 'expiration-event-in',
+        'item_custom_fields': 'item-custom-fields',
         'json': 'json',
         'metadata': 'metadata',
         'name': 'name',
@@ -71,7 +73,7 @@ class UploadRSA(object):
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, alg=None, cert_file_data=None, certificate_format=None, customer_frg_id=None, delete_protection=None, description=None, expiration_event_in=None, json=False, metadata=None, name=None, overwrite='false', rsa_file_data=None, split_level=3, tag=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, alg=None, cert_file_data=None, certificate_format=None, customer_frg_id=None, delete_protection=None, description=None, expiration_event_in=None, item_custom_fields=None, json=False, metadata=None, name=None, overwrite='false', rsa_file_data=None, split_level=3, tag=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """UploadRSA - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -84,6 +86,7 @@ class UploadRSA(object):
         self._delete_protection = None
         self._description = None
         self._expiration_event_in = None
+        self._item_custom_fields = None
         self._json = None
         self._metadata = None
         self._name = None
@@ -108,6 +111,8 @@ class UploadRSA(object):
             self.description = description
         if expiration_event_in is not None:
             self.expiration_event_in = expiration_event_in
+        if item_custom_fields is not None:
+            self.item_custom_fields = item_custom_fields
         if json is not None:
             self.json = json
         if metadata is not None:
@@ -286,6 +291,29 @@ class UploadRSA(object):
         """
 
         self._expiration_event_in = expiration_event_in
+
+    @property
+    def item_custom_fields(self):
+        """Gets the item_custom_fields of this UploadRSA.  # noqa: E501
+
+        Additional custom fields to associate with the item  # noqa: E501
+
+        :return: The item_custom_fields of this UploadRSA.  # noqa: E501
+        :rtype: dict(str, str)
+        """
+        return self._item_custom_fields
+
+    @item_custom_fields.setter
+    def item_custom_fields(self, item_custom_fields):
+        """Sets the item_custom_fields of this UploadRSA.
+
+        Additional custom fields to associate with the item  # noqa: E501
+
+        :param item_custom_fields: The item_custom_fields of this UploadRSA.  # noqa: E501
+        :type: dict(str, str)
+        """
+
+        self._item_custom_fields = item_custom_fields
 
     @property
     def json(self):

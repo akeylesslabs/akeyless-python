@@ -39,6 +39,7 @@ class CreateCertificate(object):
         'description': 'str',
         'expiration_event_in': 'list[str]',
         'format': 'str',
+        'item_custom_fields': 'dict(str, str)',
         'json': 'bool',
         'key': 'str',
         'key_data': 'str',
@@ -55,6 +56,7 @@ class CreateCertificate(object):
         'description': 'description',
         'expiration_event_in': 'expiration-event-in',
         'format': 'format',
+        'item_custom_fields': 'item-custom-fields',
         'json': 'json',
         'key': 'key',
         'key_data': 'key-data',
@@ -65,7 +67,7 @@ class CreateCertificate(object):
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, certificate_data=None, delete_protection=None, description=None, expiration_event_in=None, format=None, json=False, key=None, key_data=None, metadata=None, name=None, tags=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, certificate_data=None, delete_protection=None, description=None, expiration_event_in=None, format=None, item_custom_fields=None, json=False, key=None, key_data=None, metadata=None, name=None, tags=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """CreateCertificate - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -76,6 +78,7 @@ class CreateCertificate(object):
         self._description = None
         self._expiration_event_in = None
         self._format = None
+        self._item_custom_fields = None
         self._json = None
         self._key = None
         self._key_data = None
@@ -96,6 +99,8 @@ class CreateCertificate(object):
             self.expiration_event_in = expiration_event_in
         if format is not None:
             self.format = format
+        if item_custom_fields is not None:
+            self.item_custom_fields = item_custom_fields
         if json is not None:
             self.json = json
         if key is not None:
@@ -226,6 +231,29 @@ class CreateCertificate(object):
         """
 
         self._format = format
+
+    @property
+    def item_custom_fields(self):
+        """Gets the item_custom_fields of this CreateCertificate.  # noqa: E501
+
+        Additional custom fields to associate with the item  # noqa: E501
+
+        :return: The item_custom_fields of this CreateCertificate.  # noqa: E501
+        :rtype: dict(str, str)
+        """
+        return self._item_custom_fields
+
+    @item_custom_fields.setter
+    def item_custom_fields(self, item_custom_fields):
+        """Sets the item_custom_fields of this CreateCertificate.
+
+        Additional custom fields to associate with the item  # noqa: E501
+
+        :param item_custom_fields: The item_custom_fields of this CreateCertificate.  # noqa: E501
+        :type: dict(str, str)
+        """
+
+        self._item_custom_fields = item_custom_fields
 
     @property
     def json(self):

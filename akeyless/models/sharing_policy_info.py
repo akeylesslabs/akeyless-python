@@ -34,29 +34,57 @@ class SharingPolicyInfo(object):
                             and the value is json key in definition.
     """
     openapi_types = {
+        'allowed_email_domains': 'list[str]',
         'default_share_link_ttl': 'int',
         'enable': 'bool'
     }
 
     attribute_map = {
+        'allowed_email_domains': 'allowed_email_domains',
         'default_share_link_ttl': 'default_share_link_ttl',
         'enable': 'enable'
     }
 
-    def __init__(self, default_share_link_ttl=None, enable=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, allowed_email_domains=None, default_share_link_ttl=None, enable=None, local_vars_configuration=None):  # noqa: E501
         """SharingPolicyInfo - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
+        self._allowed_email_domains = None
         self._default_share_link_ttl = None
         self._enable = None
         self.discriminator = None
 
+        if allowed_email_domains is not None:
+            self.allowed_email_domains = allowed_email_domains
         if default_share_link_ttl is not None:
             self.default_share_link_ttl = default_share_link_ttl
         if enable is not None:
             self.enable = enable
+
+    @property
+    def allowed_email_domains(self):
+        """Gets the allowed_email_domains of this SharingPolicyInfo.  # noqa: E501
+
+        AllowedEmailDomains limits email sharing to these domains. By default all domains are allowed.  # noqa: E501
+
+        :return: The allowed_email_domains of this SharingPolicyInfo.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._allowed_email_domains
+
+    @allowed_email_domains.setter
+    def allowed_email_domains(self, allowed_email_domains):
+        """Sets the allowed_email_domains of this SharingPolicyInfo.
+
+        AllowedEmailDomains limits email sharing to these domains. By default all domains are allowed.  # noqa: E501
+
+        :param allowed_email_domains: The allowed_email_domains of this SharingPolicyInfo.  # noqa: E501
+        :type: list[str]
+        """
+
+        self._allowed_email_domains = allowed_email_domains
 
     @property
     def default_share_link_ttl(self):

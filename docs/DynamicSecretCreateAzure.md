@@ -14,6 +14,7 @@ Name | Type | Description | Notes
 **description** | **str** | Description of the object | [optional] 
 **fixed_user_claim_keyname** | **str** | FixedUserClaimKeyname | [optional] [default to 'false']
 **fixed_user_only** | **bool** | Fixed user | [optional] [default to False]
+**item_custom_fields** | **dict(str, str)** | Additional custom fields to associate with the item | [optional] 
 **json** | **bool** | Set output format to JSON | [optional] [default to False]
 **name** | **str** | Dynamic secret name | 
 **password_length** | **str** | The length of the password to be generated | [optional] 

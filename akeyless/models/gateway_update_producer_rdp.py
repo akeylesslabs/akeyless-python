@@ -39,6 +39,7 @@ class GatewayUpdateProducerRdp(object):
         'delete_protection': 'str',
         'fixed_user_claim_keyname': 'str',
         'fixed_user_only': 'str',
+        'item_custom_fields': 'dict(str, str)',
         'json': 'bool',
         'name': 'str',
         'new_name': 'str',
@@ -72,6 +73,7 @@ class GatewayUpdateProducerRdp(object):
         'delete_protection': 'delete_protection',
         'fixed_user_claim_keyname': 'fixed-user-claim-keyname',
         'fixed_user_only': 'fixed-user-only',
+        'item_custom_fields': 'item-custom-fields',
         'json': 'json',
         'name': 'name',
         'new_name': 'new-name',
@@ -99,7 +101,7 @@ class GatewayUpdateProducerRdp(object):
         'warn_user_before_expiration': 'warn-user-before-expiration'
     }
 
-    def __init__(self, allow_user_extend_session=None, custom_username_template=None, delete_protection=None, fixed_user_claim_keyname='ext_username', fixed_user_only='false', json=False, name=None, new_name=None, password_length=None, producer_encryption_key_name=None, rdp_admin_name=None, rdp_admin_pwd=None, rdp_host_name=None, rdp_host_port='22', rdp_user_groups=None, secure_access_allow_external_user=False, secure_access_bastion_issuer=None, secure_access_certificate_issuer=None, secure_access_delay=None, secure_access_enable=None, secure_access_host=None, secure_access_rd_gateway_server=None, secure_access_rdp_domain=None, secure_access_rdp_user=None, tags=None, target_name=None, token=None, uid_token=None, user_ttl='60m', warn_user_before_expiration=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, allow_user_extend_session=None, custom_username_template=None, delete_protection=None, fixed_user_claim_keyname='ext_username', fixed_user_only='false', item_custom_fields=None, json=False, name=None, new_name=None, password_length=None, producer_encryption_key_name=None, rdp_admin_name=None, rdp_admin_pwd=None, rdp_host_name=None, rdp_host_port='22', rdp_user_groups=None, secure_access_allow_external_user=False, secure_access_bastion_issuer=None, secure_access_certificate_issuer=None, secure_access_delay=None, secure_access_enable=None, secure_access_host=None, secure_access_rd_gateway_server=None, secure_access_rdp_domain=None, secure_access_rdp_user=None, tags=None, target_name=None, token=None, uid_token=None, user_ttl='60m', warn_user_before_expiration=None, local_vars_configuration=None):  # noqa: E501
         """GatewayUpdateProducerRdp - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -110,6 +112,7 @@ class GatewayUpdateProducerRdp(object):
         self._delete_protection = None
         self._fixed_user_claim_keyname = None
         self._fixed_user_only = None
+        self._item_custom_fields = None
         self._json = None
         self._name = None
         self._new_name = None
@@ -147,6 +150,8 @@ class GatewayUpdateProducerRdp(object):
             self.fixed_user_claim_keyname = fixed_user_claim_keyname
         if fixed_user_only is not None:
             self.fixed_user_only = fixed_user_only
+        if item_custom_fields is not None:
+            self.item_custom_fields = item_custom_fields
         if json is not None:
             self.json = json
         self.name = name
@@ -311,6 +316,29 @@ class GatewayUpdateProducerRdp(object):
         """
 
         self._fixed_user_only = fixed_user_only
+
+    @property
+    def item_custom_fields(self):
+        """Gets the item_custom_fields of this GatewayUpdateProducerRdp.  # noqa: E501
+
+        Additional custom fields to associate with the item  # noqa: E501
+
+        :return: The item_custom_fields of this GatewayUpdateProducerRdp.  # noqa: E501
+        :rtype: dict(str, str)
+        """
+        return self._item_custom_fields
+
+    @item_custom_fields.setter
+    def item_custom_fields(self, item_custom_fields):
+        """Sets the item_custom_fields of this GatewayUpdateProducerRdp.
+
+        Additional custom fields to associate with the item  # noqa: E501
+
+        :param item_custom_fields: The item_custom_fields of this GatewayUpdateProducerRdp.  # noqa: E501
+        :type: dict(str, str)
+        """
+
+        self._item_custom_fields = item_custom_fields
 
     @property
     def json(self):

@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **create_sync_url** | **str** | URL of an endpoint that implements /sync/create method, for example https://webhook.example.com/sync/create | 
 **delete_protection** | **str** | Protection from accidental deletion of this object [true/false] | [optional] 
 **enable_admin_rotation** | **bool** | Should admin credentials be rotated | [optional] [default to False]
+**item_custom_fields** | **dict(str, str)** | Additional custom fields to associate with the item | [optional] 
 **json** | **bool** | Set output format to JSON | [optional] [default to False]
 **name** | **str** | Dynamic secret name | 
 **payload** | **str** | Secret payload to be sent with each create/revoke webhook request | [optional] 

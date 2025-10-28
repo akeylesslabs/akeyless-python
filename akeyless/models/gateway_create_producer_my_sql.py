@@ -38,6 +38,7 @@ class GatewayCreateProducerMySQL(object):
         'db_server_certificates': 'str',
         'db_server_name': 'str',
         'delete_protection': 'str',
+        'item_custom_fields': 'dict(str, str)',
         'json': 'bool',
         'mysql_dbname': 'str',
         'mysql_host': 'str',
@@ -70,6 +71,7 @@ class GatewayCreateProducerMySQL(object):
         'db_server_certificates': 'db-server-certificates',
         'db_server_name': 'db-server-name',
         'delete_protection': 'delete_protection',
+        'item_custom_fields': 'item-custom-fields',
         'json': 'json',
         'mysql_dbname': 'mysql-dbname',
         'mysql_host': 'mysql-host',
@@ -97,7 +99,7 @@ class GatewayCreateProducerMySQL(object):
         'user_ttl': 'user-ttl'
     }
 
-    def __init__(self, custom_username_template=None, db_server_certificates=None, db_server_name=None, delete_protection=None, json=False, mysql_dbname=None, mysql_host='127.0.0.1', mysql_password=None, mysql_port='3306', mysql_revocation_statements=None, mysql_screation_statements=None, mysql_username=None, name=None, password_length=None, producer_encryption_key_name=None, secure_access_bastion_issuer=None, secure_access_certificate_issuer=None, secure_access_db_name=None, secure_access_delay=None, secure_access_enable=None, secure_access_host=None, secure_access_web=False, ssl=False, ssl_certificate=None, tags=None, target_name=None, token=None, uid_token=None, user_ttl='60m', local_vars_configuration=None):  # noqa: E501
+    def __init__(self, custom_username_template=None, db_server_certificates=None, db_server_name=None, delete_protection=None, item_custom_fields=None, json=False, mysql_dbname=None, mysql_host='127.0.0.1', mysql_password=None, mysql_port='3306', mysql_revocation_statements=None, mysql_screation_statements=None, mysql_username=None, name=None, password_length=None, producer_encryption_key_name=None, secure_access_bastion_issuer=None, secure_access_certificate_issuer=None, secure_access_db_name=None, secure_access_delay=None, secure_access_enable=None, secure_access_host=None, secure_access_web=False, ssl=False, ssl_certificate=None, tags=None, target_name=None, token=None, uid_token=None, user_ttl='60m', local_vars_configuration=None):  # noqa: E501
         """GatewayCreateProducerMySQL - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -107,6 +109,7 @@ class GatewayCreateProducerMySQL(object):
         self._db_server_certificates = None
         self._db_server_name = None
         self._delete_protection = None
+        self._item_custom_fields = None
         self._json = None
         self._mysql_dbname = None
         self._mysql_host = None
@@ -142,6 +145,8 @@ class GatewayCreateProducerMySQL(object):
             self.db_server_name = db_server_name
         if delete_protection is not None:
             self.delete_protection = delete_protection
+        if item_custom_fields is not None:
+            self.item_custom_fields = item_custom_fields
         if json is not None:
             self.json = json
         if mysql_dbname is not None:
@@ -283,6 +288,29 @@ class GatewayCreateProducerMySQL(object):
         """
 
         self._delete_protection = delete_protection
+
+    @property
+    def item_custom_fields(self):
+        """Gets the item_custom_fields of this GatewayCreateProducerMySQL.  # noqa: E501
+
+        Additional custom fields to associate with the item  # noqa: E501
+
+        :return: The item_custom_fields of this GatewayCreateProducerMySQL.  # noqa: E501
+        :rtype: dict(str, str)
+        """
+        return self._item_custom_fields
+
+    @item_custom_fields.setter
+    def item_custom_fields(self, item_custom_fields):
+        """Sets the item_custom_fields of this GatewayCreateProducerMySQL.
+
+        Additional custom fields to associate with the item  # noqa: E501
+
+        :param item_custom_fields: The item_custom_fields of this GatewayCreateProducerMySQL.  # noqa: E501
+        :type: dict(str, str)
+        """
+
+        self._item_custom_fields = item_custom_fields
 
     @property
     def json(self):

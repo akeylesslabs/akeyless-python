@@ -36,6 +36,7 @@ class GatewayUpdateProducerNativeK8S(object):
     openapi_types = {
         'custom_username_template': 'str',
         'delete_protection': 'str',
+        'item_custom_fields': 'dict(str, str)',
         'json': 'bool',
         'k8s_allowed_namespaces': 'str',
         'k8s_cluster_ca_cert': 'str',
@@ -73,6 +74,7 @@ class GatewayUpdateProducerNativeK8S(object):
     attribute_map = {
         'custom_username_template': 'custom-username-template',
         'delete_protection': 'delete_protection',
+        'item_custom_fields': 'item-custom-fields',
         'json': 'json',
         'k8s_allowed_namespaces': 'k8s-allowed-namespaces',
         'k8s_cluster_ca_cert': 'k8s-cluster-ca-cert',
@@ -107,7 +109,7 @@ class GatewayUpdateProducerNativeK8S(object):
         'user_ttl': 'user-ttl'
     }
 
-    def __init__(self, custom_username_template=None, delete_protection=None, json=False, k8s_allowed_namespaces=None, k8s_cluster_ca_cert=None, k8s_cluster_endpoint=None, k8s_cluster_name=None, k8s_cluster_token=None, k8s_namespace=None, k8s_predefined_role_name=None, k8s_predefined_role_type=None, k8s_rolebinding_yaml_data=None, k8s_rolebinding_yaml_def=None, k8s_service_account=None, k8s_service_account_type=None, name=None, new_name=None, producer_encryption_key_name=None, secure_access_allow_port_forwading=None, secure_access_bastion_issuer=None, secure_access_certificate_issuer=None, secure_access_cluster_endpoint=None, secure_access_dashboard_url=None, secure_access_delay=None, secure_access_enable=None, secure_access_web=False, secure_access_web_browsing=False, secure_access_web_proxy=False, tags=None, target_name=None, token=None, uid_token=None, use_gw_service_account=None, user_ttl='60m', local_vars_configuration=None):  # noqa: E501
+    def __init__(self, custom_username_template=None, delete_protection=None, item_custom_fields=None, json=False, k8s_allowed_namespaces=None, k8s_cluster_ca_cert=None, k8s_cluster_endpoint=None, k8s_cluster_name=None, k8s_cluster_token=None, k8s_namespace=None, k8s_predefined_role_name=None, k8s_predefined_role_type=None, k8s_rolebinding_yaml_data=None, k8s_rolebinding_yaml_def=None, k8s_service_account=None, k8s_service_account_type=None, name=None, new_name=None, producer_encryption_key_name=None, secure_access_allow_port_forwading=None, secure_access_bastion_issuer=None, secure_access_certificate_issuer=None, secure_access_cluster_endpoint=None, secure_access_dashboard_url=None, secure_access_delay=None, secure_access_enable=None, secure_access_web=False, secure_access_web_browsing=False, secure_access_web_proxy=False, tags=None, target_name=None, token=None, uid_token=None, use_gw_service_account=None, user_ttl='60m', local_vars_configuration=None):  # noqa: E501
         """GatewayUpdateProducerNativeK8S - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -115,6 +117,7 @@ class GatewayUpdateProducerNativeK8S(object):
 
         self._custom_username_template = None
         self._delete_protection = None
+        self._item_custom_fields = None
         self._json = None
         self._k8s_allowed_namespaces = None
         self._k8s_cluster_ca_cert = None
@@ -153,6 +156,8 @@ class GatewayUpdateProducerNativeK8S(object):
             self.custom_username_template = custom_username_template
         if delete_protection is not None:
             self.delete_protection = delete_protection
+        if item_custom_fields is not None:
+            self.item_custom_fields = item_custom_fields
         if json is not None:
             self.json = json
         if k8s_allowed_namespaces is not None:
@@ -262,6 +267,29 @@ class GatewayUpdateProducerNativeK8S(object):
         """
 
         self._delete_protection = delete_protection
+
+    @property
+    def item_custom_fields(self):
+        """Gets the item_custom_fields of this GatewayUpdateProducerNativeK8S.  # noqa: E501
+
+        Additional custom fields to associate with the item  # noqa: E501
+
+        :return: The item_custom_fields of this GatewayUpdateProducerNativeK8S.  # noqa: E501
+        :rtype: dict(str, str)
+        """
+        return self._item_custom_fields
+
+    @item_custom_fields.setter
+    def item_custom_fields(self, item_custom_fields):
+        """Sets the item_custom_fields of this GatewayUpdateProducerNativeK8S.
+
+        Additional custom fields to associate with the item  # noqa: E501
+
+        :param item_custom_fields: The item_custom_fields of this GatewayUpdateProducerNativeK8S.  # noqa: E501
+        :type: dict(str, str)
+        """
+
+        self._item_custom_fields = item_custom_fields
 
     @property
     def json(self):

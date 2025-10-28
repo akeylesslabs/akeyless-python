@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **db_name** | **str** | Database name | [optional] 
 **delete_protection** | **str** | Protection from accidental deletion of this object [true/false] | [optional] 
 **description** | **str** | Description of the object | [optional] 
+**item_custom_fields** | **dict(str, str)** | Additional custom fields to associate with the item | [optional] 
 **json** | **bool** | Set output format to JSON | [optional] [default to False]
 **key_algo** | **str** |  | [optional] 
 **name** | **str** | Dynamic secret name | 

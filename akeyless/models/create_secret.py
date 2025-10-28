@@ -41,6 +41,7 @@ class CreateSecret(object):
         'description': 'str',
         'format': 'str',
         'inject_url': 'list[str]',
+        'item_custom_fields': 'dict(str, str)',
         'json': 'bool',
         'max_versions': 'str',
         'metadata': 'str',
@@ -75,6 +76,7 @@ class CreateSecret(object):
         'description': 'description',
         'format': 'format',
         'inject_url': 'inject-url',
+        'item_custom_fields': 'item-custom-fields',
         'json': 'json',
         'max_versions': 'max-versions',
         'metadata': 'metadata',
@@ -101,7 +103,7 @@ class CreateSecret(object):
         'value': 'value'
     }
 
-    def __init__(self, accessibility='regular', change_event=None, custom_field=None, delete_protection=None, description=None, format='text', inject_url=None, json=False, max_versions=None, metadata=None, multiline_value=None, name=None, password=None, protection_key=None, secure_access_bastion_issuer=None, secure_access_certificate_issuer=None, secure_access_enable=None, secure_access_gateway=None, secure_access_host=None, secure_access_rdp_user=None, secure_access_ssh_creds=None, secure_access_ssh_user=None, secure_access_url=None, secure_access_web_browsing=False, secure_access_web_proxy=False, tags=None, token=None, type='generic', uid_token=None, username=None, value=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, accessibility='regular', change_event=None, custom_field=None, delete_protection=None, description=None, format='text', inject_url=None, item_custom_fields=None, json=False, max_versions=None, metadata=None, multiline_value=None, name=None, password=None, protection_key=None, secure_access_bastion_issuer=None, secure_access_certificate_issuer=None, secure_access_enable=None, secure_access_gateway=None, secure_access_host=None, secure_access_rdp_user=None, secure_access_ssh_creds=None, secure_access_ssh_user=None, secure_access_url=None, secure_access_web_browsing=False, secure_access_web_proxy=False, tags=None, token=None, type='generic', uid_token=None, username=None, value=None, local_vars_configuration=None):  # noqa: E501
         """CreateSecret - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -114,6 +116,7 @@ class CreateSecret(object):
         self._description = None
         self._format = None
         self._inject_url = None
+        self._item_custom_fields = None
         self._json = None
         self._max_versions = None
         self._metadata = None
@@ -154,6 +157,8 @@ class CreateSecret(object):
             self.format = format
         if inject_url is not None:
             self.inject_url = inject_url
+        if item_custom_fields is not None:
+            self.item_custom_fields = item_custom_fields
         if json is not None:
             self.json = json
         if max_versions is not None:
@@ -361,6 +366,29 @@ class CreateSecret(object):
         """
 
         self._inject_url = inject_url
+
+    @property
+    def item_custom_fields(self):
+        """Gets the item_custom_fields of this CreateSecret.  # noqa: E501
+
+        Additional custom fields to associate with the item  # noqa: E501
+
+        :return: The item_custom_fields of this CreateSecret.  # noqa: E501
+        :rtype: dict(str, str)
+        """
+        return self._item_custom_fields
+
+    @item_custom_fields.setter
+    def item_custom_fields(self, item_custom_fields):
+        """Sets the item_custom_fields of this CreateSecret.
+
+        Additional custom fields to associate with the item  # noqa: E501
+
+        :param item_custom_fields: The item_custom_fields of this CreateSecret.  # noqa: E501
+        :type: dict(str, str)
+        """
+
+        self._item_custom_fields = item_custom_fields
 
     @property
     def json(self):

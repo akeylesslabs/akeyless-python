@@ -39,6 +39,7 @@ class DynamicSecretCreateOracleDb(object):
         'db_server_name': 'str',
         'delete_protection': 'str',
         'description': 'str',
+        'item_custom_fields': 'dict(str, str)',
         'json': 'bool',
         'name': 'str',
         'oracle_host': 'str',
@@ -68,6 +69,7 @@ class DynamicSecretCreateOracleDb(object):
         'db_server_name': 'db-server-name',
         'delete_protection': 'delete_protection',
         'description': 'description',
+        'item_custom_fields': 'item-custom-fields',
         'json': 'json',
         'name': 'name',
         'oracle_host': 'oracle-host',
@@ -91,7 +93,7 @@ class DynamicSecretCreateOracleDb(object):
         'user_ttl': 'user-ttl'
     }
 
-    def __init__(self, custom_username_template=None, db_server_certificates=None, db_server_name=None, delete_protection=None, description=None, json=False, name=None, oracle_host='127.0.0.1', oracle_password=None, oracle_port='1521', oracle_revocation_statements=None, oracle_screation_statements=None, oracle_service_name=None, oracle_username=None, password_length=None, producer_encryption_key_name=None, secure_access_bastion_issuer=None, secure_access_certificate_issuer=None, secure_access_enable='false', secure_access_host=None, secure_access_web=False, tags=None, target_name=None, token=None, uid_token=None, user_ttl='60m', local_vars_configuration=None):  # noqa: E501
+    def __init__(self, custom_username_template=None, db_server_certificates=None, db_server_name=None, delete_protection=None, description=None, item_custom_fields=None, json=False, name=None, oracle_host='127.0.0.1', oracle_password=None, oracle_port='1521', oracle_revocation_statements=None, oracle_screation_statements=None, oracle_service_name=None, oracle_username=None, password_length=None, producer_encryption_key_name=None, secure_access_bastion_issuer=None, secure_access_certificate_issuer=None, secure_access_enable='false', secure_access_host=None, secure_access_web=False, tags=None, target_name=None, token=None, uid_token=None, user_ttl='60m', local_vars_configuration=None):  # noqa: E501
         """DynamicSecretCreateOracleDb - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -102,6 +104,7 @@ class DynamicSecretCreateOracleDb(object):
         self._db_server_name = None
         self._delete_protection = None
         self._description = None
+        self._item_custom_fields = None
         self._json = None
         self._name = None
         self._oracle_host = None
@@ -135,6 +138,8 @@ class DynamicSecretCreateOracleDb(object):
             self.delete_protection = delete_protection
         if description is not None:
             self.description = description
+        if item_custom_fields is not None:
+            self.item_custom_fields = item_custom_fields
         if json is not None:
             self.json = json
         self.name = name
@@ -291,6 +296,29 @@ class DynamicSecretCreateOracleDb(object):
         """
 
         self._description = description
+
+    @property
+    def item_custom_fields(self):
+        """Gets the item_custom_fields of this DynamicSecretCreateOracleDb.  # noqa: E501
+
+        Additional custom fields to associate with the item  # noqa: E501
+
+        :return: The item_custom_fields of this DynamicSecretCreateOracleDb.  # noqa: E501
+        :rtype: dict(str, str)
+        """
+        return self._item_custom_fields
+
+    @item_custom_fields.setter
+    def item_custom_fields(self, item_custom_fields):
+        """Sets the item_custom_fields of this DynamicSecretCreateOracleDb.
+
+        Additional custom fields to associate with the item  # noqa: E501
+
+        :param item_custom_fields: The item_custom_fields of this DynamicSecretCreateOracleDb.  # noqa: E501
+        :type: dict(str, str)
+        """
+
+        self._item_custom_fields = item_custom_fields
 
     @property
     def json(self):

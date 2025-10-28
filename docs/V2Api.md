@@ -4,6 +4,11 @@ All URIs are relative to *https://api.akeyless.io*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**account_custom_field_create**](V2Api.md#account_custom_field_create) | **POST** /account-custom-field-create | Create a new custom field.
+[**account_custom_field_delete**](V2Api.md#account_custom_field_delete) | **POST** /account-custom-field-delete | Delete a custom field.
+[**account_custom_field_get**](V2Api.md#account_custom_field_get) | **POST** /account-custom-field-get | Get an account custom field by ID.
+[**account_custom_field_list**](V2Api.md#account_custom_field_list) | **POST** /account-custom-field-list | List all account custom fields.
+[**account_custom_field_update**](V2Api.md#account_custom_field_update) | **POST** /account-custom-field-update | Update a custom field.
 [**alias_details**](V2Api.md#alias_details) | **POST** /alias-details | 
 [**assoc_role_auth_method**](V2Api.md#assoc_role_auth_method) | **POST** /assoc-role-am | 
 [**assoc_target_item**](V2Api.md#assoc_target_item) | **POST** /assoc-target-item | 
@@ -585,6 +590,313 @@ Method | HTTP request | Description
 [**verify_pki_cert_with_classic_key**](V2Api.md#verify_pki_cert_with_classic_key) | **POST** /verify-pki-cert-with-classic-key | 
 [**verify_rsa_ssa_pss**](V2Api.md#verify_rsa_ssa_pss) | **POST** /verify-rsassa-pss | 
 
+
+# **account_custom_field_create**
+> AccountCustomFieldCreateOutput account_custom_field_create(account_custom_field_create)
+
+Create a new custom field.
+
+### Example
+
+```python
+from __future__ import print_function
+import time
+import akeyless
+from akeyless.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.akeyless.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = akeyless.Configuration(
+    host = "https://api.akeyless.io"
+)
+
+
+# Enter a context with an instance of the API client
+with akeyless.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = akeyless.V2Api(api_client)
+    account_custom_field_create = akeyless.AccountCustomFieldCreate() # AccountCustomFieldCreate | 
+
+    try:
+        # Create a new custom field.
+        api_response = api_instance.account_custom_field_create(account_custom_field_create)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling V2Api->account_custom_field_create: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **account_custom_field_create** | [**AccountCustomFieldCreate**](AccountCustomFieldCreate.md)|  | 
+
+### Return type
+
+[**AccountCustomFieldCreateOutput**](AccountCustomFieldCreateOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | accountCustomFieldCreateResponse wraps response body. |  -  |
+**0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **account_custom_field_delete**
+> object account_custom_field_delete(account_custom_field_delete)
+
+Delete a custom field.
+
+### Example
+
+```python
+from __future__ import print_function
+import time
+import akeyless
+from akeyless.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.akeyless.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = akeyless.Configuration(
+    host = "https://api.akeyless.io"
+)
+
+
+# Enter a context with an instance of the API client
+with akeyless.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = akeyless.V2Api(api_client)
+    account_custom_field_delete = akeyless.AccountCustomFieldDelete() # AccountCustomFieldDelete | 
+
+    try:
+        # Delete a custom field.
+        api_response = api_instance.account_custom_field_delete(account_custom_field_delete)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling V2Api->account_custom_field_delete: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **account_custom_field_delete** | [**AccountCustomFieldDelete**](AccountCustomFieldDelete.md)|  | 
+
+### Return type
+
+**object**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | accountCustomFieldDeleteResponse wraps response body. |  -  |
+**0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **account_custom_field_get**
+> AccountCustomFieldGetOutput account_custom_field_get(account_custom_field_get)
+
+Get an account custom field by ID.
+
+### Example
+
+```python
+from __future__ import print_function
+import time
+import akeyless
+from akeyless.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.akeyless.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = akeyless.Configuration(
+    host = "https://api.akeyless.io"
+)
+
+
+# Enter a context with an instance of the API client
+with akeyless.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = akeyless.V2Api(api_client)
+    account_custom_field_get = akeyless.AccountCustomFieldGet() # AccountCustomFieldGet | 
+
+    try:
+        # Get an account custom field by ID.
+        api_response = api_instance.account_custom_field_get(account_custom_field_get)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling V2Api->account_custom_field_get: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **account_custom_field_get** | [**AccountCustomFieldGet**](AccountCustomFieldGet.md)|  | 
+
+### Return type
+
+[**AccountCustomFieldGetOutput**](AccountCustomFieldGetOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | accountCustomFieldGetResponse wraps response body. |  -  |
+**0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **account_custom_field_list**
+> object account_custom_field_list(account_custom_field_list)
+
+List all account custom fields.
+
+Returns a list of all custom fields configured for the account, optionally filtered by object and object type.
+
+### Example
+
+```python
+from __future__ import print_function
+import time
+import akeyless
+from akeyless.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.akeyless.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = akeyless.Configuration(
+    host = "https://api.akeyless.io"
+)
+
+
+# Enter a context with an instance of the API client
+with akeyless.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = akeyless.V2Api(api_client)
+    account_custom_field_list = akeyless.AccountCustomFieldList() # AccountCustomFieldList | 
+
+    try:
+        # List all account custom fields.
+        api_response = api_instance.account_custom_field_list(account_custom_field_list)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling V2Api->account_custom_field_list: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **account_custom_field_list** | [**AccountCustomFieldList**](AccountCustomFieldList.md)|  | 
+
+### Return type
+
+**object**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | accountCustomFieldListResponse wraps response body. |  -  |
+**0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **account_custom_field_update**
+> object account_custom_field_update(account_custom_field_update)
+
+Update a custom field.
+
+### Example
+
+```python
+from __future__ import print_function
+import time
+import akeyless
+from akeyless.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.akeyless.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = akeyless.Configuration(
+    host = "https://api.akeyless.io"
+)
+
+
+# Enter a context with an instance of the API client
+with akeyless.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = akeyless.V2Api(api_client)
+    account_custom_field_update = akeyless.AccountCustomFieldUpdate() # AccountCustomFieldUpdate | 
+
+    try:
+        # Update a custom field.
+        api_response = api_instance.account_custom_field_update(account_custom_field_update)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling V2Api->account_custom_field_update: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **account_custom_field_update** | [**AccountCustomFieldUpdate**](AccountCustomFieldUpdate.md)|  | 
+
+### Return type
+
+**object**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | accountCustomFieldUpdateResponse wraps response body. |  -  |
+**0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **alias_details**
 > object alias_details(alias_details)

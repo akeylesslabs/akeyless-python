@@ -52,6 +52,7 @@ class CreateClassicKey(object):
         'generate_self_signed_certificate': 'bool',
         'gpg_alg': 'str',
         'hash_algorithm': 'str',
+        'item_custom_fields': 'dict(str, str)',
         'json': 'bool',
         'key_data': 'str',
         'metadata': 'str',
@@ -83,6 +84,7 @@ class CreateClassicKey(object):
         'generate_self_signed_certificate': 'generate-self-signed-certificate',
         'gpg_alg': 'gpg-alg',
         'hash_algorithm': 'hash-algorithm',
+        'item_custom_fields': 'item-custom-fields',
         'json': 'json',
         'key_data': 'key-data',
         'metadata': 'metadata',
@@ -95,7 +97,7 @@ class CreateClassicKey(object):
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, alg=None, auto_rotate=None, cert_file_data=None, certificate_common_name=None, certificate_country=None, certificate_digest_algo=None, certificate_format=None, certificate_locality=None, certificate_organization=None, certificate_province=None, certificate_ttl=None, conf_file_data=None, delete_protection=None, description=None, expiration_event_in=None, generate_self_signed_certificate=None, gpg_alg=None, hash_algorithm='SHA256', json=False, key_data=None, metadata=None, name=None, protection_key_name=None, rotation_event_in=None, rotation_interval=None, tags=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, alg=None, auto_rotate=None, cert_file_data=None, certificate_common_name=None, certificate_country=None, certificate_digest_algo=None, certificate_format=None, certificate_locality=None, certificate_organization=None, certificate_province=None, certificate_ttl=None, conf_file_data=None, delete_protection=None, description=None, expiration_event_in=None, generate_self_signed_certificate=None, gpg_alg=None, hash_algorithm='SHA256', item_custom_fields=None, json=False, key_data=None, metadata=None, name=None, protection_key_name=None, rotation_event_in=None, rotation_interval=None, tags=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """CreateClassicKey - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -119,6 +121,7 @@ class CreateClassicKey(object):
         self._generate_self_signed_certificate = None
         self._gpg_alg = None
         self._hash_algorithm = None
+        self._item_custom_fields = None
         self._json = None
         self._key_data = None
         self._metadata = None
@@ -166,6 +169,8 @@ class CreateClassicKey(object):
             self.gpg_alg = gpg_alg
         if hash_algorithm is not None:
             self.hash_algorithm = hash_algorithm
+        if item_custom_fields is not None:
+            self.item_custom_fields = item_custom_fields
         if json is not None:
             self.json = json
         if key_data is not None:
@@ -599,6 +604,29 @@ class CreateClassicKey(object):
         """
 
         self._hash_algorithm = hash_algorithm
+
+    @property
+    def item_custom_fields(self):
+        """Gets the item_custom_fields of this CreateClassicKey.  # noqa: E501
+
+        Additional custom fields to associate with the item  # noqa: E501
+
+        :return: The item_custom_fields of this CreateClassicKey.  # noqa: E501
+        :rtype: dict(str, str)
+        """
+        return self._item_custom_fields
+
+    @item_custom_fields.setter
+    def item_custom_fields(self, item_custom_fields):
+        """Sets the item_custom_fields of this CreateClassicKey.
+
+        Additional custom fields to associate with the item  # noqa: E501
+
+        :param item_custom_fields: The item_custom_fields of this CreateClassicKey.  # noqa: E501
+        :type: dict(str, str)
+        """
+
+        self._item_custom_fields = item_custom_fields
 
     @property
     def json(self):

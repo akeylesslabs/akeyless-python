@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **delete_protection** | **str** | Protection from accidental deletion of this object [true/false] | [optional] 
 **fixed_user_claim_keyname** | **str** | FixedUserClaimKeyname | [optional] [default to 'false']
 **fixed_user_only** | **bool** | Fixed user | [optional] [default to False]
+**item_custom_fields** | **dict(str, str)** | Additional custom fields to associate with the item | [optional] 
 **json** | **bool** | Set output format to JSON | [optional] [default to False]
 **name** | **str** | Dynamic secret name | 
 **new_name** | **str** | Dynamic secret name | [optional] 

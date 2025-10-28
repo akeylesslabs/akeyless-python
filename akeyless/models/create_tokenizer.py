@@ -40,6 +40,7 @@ class CreateTokenizer(object):
         'description': 'str',
         'encoding_template': 'str',
         'encryption_key_name': 'str',
+        'item_custom_fields': 'dict(str, str)',
         'json': 'bool',
         'metadata': 'str',
         'name': 'str',
@@ -59,6 +60,7 @@ class CreateTokenizer(object):
         'description': 'description',
         'encoding_template': 'encoding-template',
         'encryption_key_name': 'encryption-key-name',
+        'item_custom_fields': 'item-custom-fields',
         'json': 'json',
         'metadata': 'metadata',
         'name': 'name',
@@ -71,7 +73,7 @@ class CreateTokenizer(object):
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, alphabet=None, decoding_template=None, delete_protection=None, description=None, encoding_template=None, encryption_key_name=None, json=False, metadata=None, name=None, pattern=None, tag=None, template_type=None, token=None, tokenizer_type='vaultless', tweak_type=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, alphabet=None, decoding_template=None, delete_protection=None, description=None, encoding_template=None, encryption_key_name=None, item_custom_fields=None, json=False, metadata=None, name=None, pattern=None, tag=None, template_type=None, token=None, tokenizer_type='vaultless', tweak_type=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """CreateTokenizer - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -83,6 +85,7 @@ class CreateTokenizer(object):
         self._description = None
         self._encoding_template = None
         self._encryption_key_name = None
+        self._item_custom_fields = None
         self._json = None
         self._metadata = None
         self._name = None
@@ -107,6 +110,8 @@ class CreateTokenizer(object):
             self.encoding_template = encoding_template
         if encryption_key_name is not None:
             self.encryption_key_name = encryption_key_name
+        if item_custom_fields is not None:
+            self.item_custom_fields = item_custom_fields
         if json is not None:
             self.json = json
         if metadata is not None:
@@ -262,6 +267,29 @@ class CreateTokenizer(object):
         """
 
         self._encryption_key_name = encryption_key_name
+
+    @property
+    def item_custom_fields(self):
+        """Gets the item_custom_fields of this CreateTokenizer.  # noqa: E501
+
+        Additional custom fields to associate with the item  # noqa: E501
+
+        :return: The item_custom_fields of this CreateTokenizer.  # noqa: E501
+        :rtype: dict(str, str)
+        """
+        return self._item_custom_fields
+
+    @item_custom_fields.setter
+    def item_custom_fields(self, item_custom_fields):
+        """Sets the item_custom_fields of this CreateTokenizer.
+
+        Additional custom fields to associate with the item  # noqa: E501
+
+        :param item_custom_fields: The item_custom_fields of this CreateTokenizer.  # noqa: E501
+        :type: dict(str, str)
+        """
+
+        self._item_custom_fields = item_custom_fields
 
     @property
     def json(self):

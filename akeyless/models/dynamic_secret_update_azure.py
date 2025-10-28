@@ -44,6 +44,7 @@ class DynamicSecretUpdateAzure(object):
         'description': 'str',
         'fixed_user_claim_keyname': 'str',
         'fixed_user_only': 'bool',
+        'item_custom_fields': 'dict(str, str)',
         'json': 'bool',
         'name': 'str',
         'new_name': 'str',
@@ -77,6 +78,7 @@ class DynamicSecretUpdateAzure(object):
         'description': 'description',
         'fixed_user_claim_keyname': 'fixed-user-claim-keyname',
         'fixed_user_only': 'fixed-user-only',
+        'item_custom_fields': 'item-custom-fields',
         'json': 'json',
         'name': 'name',
         'new_name': 'new-name',
@@ -99,7 +101,7 @@ class DynamicSecretUpdateAzure(object):
         'user_ttl': 'user-ttl'
     }
 
-    def __init__(self, app_obj_id=None, azure_administrative_unit=None, azure_client_id=None, azure_client_secret=None, azure_tenant_id=None, custom_username_template=None, delete_protection=None, description=None, fixed_user_claim_keyname='false', fixed_user_only=False, json=False, name=None, new_name=None, password_length=None, producer_encryption_key_name=None, secure_access_enable=None, secure_access_url=None, secure_access_web=True, secure_access_web_browsing=False, secure_access_web_proxy=False, tags=None, target_name=None, token=None, uid_token=None, user_group_obj_id=None, user_portal_access=False, user_principal_name=None, user_programmatic_access=False, user_role_template_id=None, user_ttl='60m', local_vars_configuration=None):  # noqa: E501
+    def __init__(self, app_obj_id=None, azure_administrative_unit=None, azure_client_id=None, azure_client_secret=None, azure_tenant_id=None, custom_username_template=None, delete_protection=None, description=None, fixed_user_claim_keyname='false', fixed_user_only=False, item_custom_fields=None, json=False, name=None, new_name=None, password_length=None, producer_encryption_key_name=None, secure_access_enable=None, secure_access_url=None, secure_access_web=True, secure_access_web_browsing=False, secure_access_web_proxy=False, tags=None, target_name=None, token=None, uid_token=None, user_group_obj_id=None, user_portal_access=False, user_principal_name=None, user_programmatic_access=False, user_role_template_id=None, user_ttl='60m', local_vars_configuration=None):  # noqa: E501
         """DynamicSecretUpdateAzure - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -115,6 +117,7 @@ class DynamicSecretUpdateAzure(object):
         self._description = None
         self._fixed_user_claim_keyname = None
         self._fixed_user_only = None
+        self._item_custom_fields = None
         self._json = None
         self._name = None
         self._new_name = None
@@ -157,6 +160,8 @@ class DynamicSecretUpdateAzure(object):
             self.fixed_user_claim_keyname = fixed_user_claim_keyname
         if fixed_user_only is not None:
             self.fixed_user_only = fixed_user_only
+        if item_custom_fields is not None:
+            self.item_custom_fields = item_custom_fields
         if json is not None:
             self.json = json
         self.name = name
@@ -426,6 +431,29 @@ class DynamicSecretUpdateAzure(object):
         """
 
         self._fixed_user_only = fixed_user_only
+
+    @property
+    def item_custom_fields(self):
+        """Gets the item_custom_fields of this DynamicSecretUpdateAzure.  # noqa: E501
+
+        Additional custom fields to associate with the item  # noqa: E501
+
+        :return: The item_custom_fields of this DynamicSecretUpdateAzure.  # noqa: E501
+        :rtype: dict(str, str)
+        """
+        return self._item_custom_fields
+
+    @item_custom_fields.setter
+    def item_custom_fields(self, item_custom_fields):
+        """Sets the item_custom_fields of this DynamicSecretUpdateAzure.
+
+        Additional custom fields to associate with the item  # noqa: E501
+
+        :param item_custom_fields: The item_custom_fields of this DynamicSecretUpdateAzure.  # noqa: E501
+        :type: dict(str, str)
+        """
+
+        self._item_custom_fields = item_custom_fields
 
     @property
     def json(self):

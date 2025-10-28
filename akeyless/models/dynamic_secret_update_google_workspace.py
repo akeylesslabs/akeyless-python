@@ -42,6 +42,7 @@ class DynamicSecretUpdateGoogleWorkspace(object):
         'gcp_key': 'str',
         'group_email': 'str',
         'group_role': 'str',
+        'item_custom_fields': 'dict(str, str)',
         'json': 'bool',
         'name': 'str',
         'new_name': 'str',
@@ -69,6 +70,7 @@ class DynamicSecretUpdateGoogleWorkspace(object):
         'gcp_key': 'gcp-key',
         'group_email': 'group-email',
         'group_role': 'group-role',
+        'item_custom_fields': 'item-custom-fields',
         'json': 'json',
         'name': 'name',
         'new_name': 'new-name',
@@ -87,7 +89,7 @@ class DynamicSecretUpdateGoogleWorkspace(object):
         'user_ttl': 'user-ttl'
     }
 
-    def __init__(self, access_mode=None, admin_email=None, delete_protection=None, description=None, fixed_user_claim_keyname='ext_email', gcp_key=None, group_email=None, group_role=None, json=False, name=None, new_name=None, producer_encryption_key_name=None, role_name=None, role_scope=None, secure_access_enable=None, secure_access_url=None, secure_access_web=True, secure_access_web_browsing=False, secure_access_web_proxy=False, tags=None, target_name=None, token=None, uid_token=None, user_ttl='60m', local_vars_configuration=None):  # noqa: E501
+    def __init__(self, access_mode=None, admin_email=None, delete_protection=None, description=None, fixed_user_claim_keyname='ext_email', gcp_key=None, group_email=None, group_role=None, item_custom_fields=None, json=False, name=None, new_name=None, producer_encryption_key_name=None, role_name=None, role_scope=None, secure_access_enable=None, secure_access_url=None, secure_access_web=True, secure_access_web_browsing=False, secure_access_web_proxy=False, tags=None, target_name=None, token=None, uid_token=None, user_ttl='60m', local_vars_configuration=None):  # noqa: E501
         """DynamicSecretUpdateGoogleWorkspace - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -101,6 +103,7 @@ class DynamicSecretUpdateGoogleWorkspace(object):
         self._gcp_key = None
         self._group_email = None
         self._group_role = None
+        self._item_custom_fields = None
         self._json = None
         self._name = None
         self._new_name = None
@@ -133,6 +136,8 @@ class DynamicSecretUpdateGoogleWorkspace(object):
             self.group_email = group_email
         if group_role is not None:
             self.group_role = group_role
+        if item_custom_fields is not None:
+            self.item_custom_fields = item_custom_fields
         if json is not None:
             self.json = json
         self.name = name
@@ -348,6 +353,29 @@ class DynamicSecretUpdateGoogleWorkspace(object):
         """
 
         self._group_role = group_role
+
+    @property
+    def item_custom_fields(self):
+        """Gets the item_custom_fields of this DynamicSecretUpdateGoogleWorkspace.  # noqa: E501
+
+        Additional custom fields to associate with the item  # noqa: E501
+
+        :return: The item_custom_fields of this DynamicSecretUpdateGoogleWorkspace.  # noqa: E501
+        :rtype: dict(str, str)
+        """
+        return self._item_custom_fields
+
+    @item_custom_fields.setter
+    def item_custom_fields(self, item_custom_fields):
+        """Sets the item_custom_fields of this DynamicSecretUpdateGoogleWorkspace.
+
+        Additional custom fields to associate with the item  # noqa: E501
+
+        :param item_custom_fields: The item_custom_fields of this DynamicSecretUpdateGoogleWorkspace.  # noqa: E501
+        :type: dict(str, str)
+        """
+
+        self._item_custom_fields = item_custom_fields
 
     @property
     def json(self):

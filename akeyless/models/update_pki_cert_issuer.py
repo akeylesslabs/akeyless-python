@@ -57,6 +57,7 @@ class UpdatePKICertIssuer(object):
         'expiration_event_in': 'list[str]',
         'gw_cluster_url': 'str',
         'is_ca': 'bool',
+        'item_custom_fields': 'dict(str, str)',
         'json': 'bool',
         'key_usage': 'str',
         'locality': 'str',
@@ -105,6 +106,7 @@ class UpdatePKICertIssuer(object):
         'expiration_event_in': 'expiration-event-in',
         'gw_cluster_url': 'gw-cluster-url',
         'is_ca': 'is-ca',
+        'item_custom_fields': 'item-custom-fields',
         'json': 'json',
         'key_usage': 'key-usage',
         'locality': 'locality',
@@ -129,7 +131,7 @@ class UpdatePKICertIssuer(object):
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, add_tag=None, allow_any_name=None, allow_copy_ext_from_csr=None, allow_subdomains=None, allowed_domains=None, allowed_extra_extensions=None, allowed_ip_sans=None, allowed_uri_sans=None, auto_renew=None, client_flag=None, code_signing_flag=None, country=None, create_private_crl=None, create_public_crl=None, critical_key_usage='true', delete_protection=None, description=None, destination_path=None, disable_wildcards=None, enable_acme=None, expiration_event_in=None, gw_cluster_url=None, is_ca=None, json=False, key_usage='DigitalSignature,KeyAgreement,KeyEncipherment', locality=None, max_path_len=-1, metadata=None, name=None, new_name=None, not_enforce_hostnames=None, not_require_cn=None, organizational_units=None, organizations=None, postal_code=None, protect_certificates=None, province=None, rm_tag=None, scheduled_renew=None, server_flag=None, signer_key_name=None, street_address=None, token=None, ttl=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, add_tag=None, allow_any_name=None, allow_copy_ext_from_csr=None, allow_subdomains=None, allowed_domains=None, allowed_extra_extensions=None, allowed_ip_sans=None, allowed_uri_sans=None, auto_renew=None, client_flag=None, code_signing_flag=None, country=None, create_private_crl=None, create_public_crl=None, critical_key_usage='true', delete_protection=None, description=None, destination_path=None, disable_wildcards=None, enable_acme=None, expiration_event_in=None, gw_cluster_url=None, is_ca=None, item_custom_fields=None, json=False, key_usage='DigitalSignature,KeyAgreement,KeyEncipherment', locality=None, max_path_len=-1, metadata=None, name=None, new_name=None, not_enforce_hostnames=None, not_require_cn=None, organizational_units=None, organizations=None, postal_code=None, protect_certificates=None, province=None, rm_tag=None, scheduled_renew=None, server_flag=None, signer_key_name=None, street_address=None, token=None, ttl=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """UpdatePKICertIssuer - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -158,6 +160,7 @@ class UpdatePKICertIssuer(object):
         self._expiration_event_in = None
         self._gw_cluster_url = None
         self._is_ca = None
+        self._item_custom_fields = None
         self._json = None
         self._key_usage = None
         self._locality = None
@@ -228,6 +231,8 @@ class UpdatePKICertIssuer(object):
             self.gw_cluster_url = gw_cluster_url
         if is_ca is not None:
             self.is_ca = is_ca
+        if item_custom_fields is not None:
+            self.item_custom_fields = item_custom_fields
         if json is not None:
             self.json = json
         if key_usage is not None:
@@ -799,6 +804,29 @@ class UpdatePKICertIssuer(object):
         """
 
         self._is_ca = is_ca
+
+    @property
+    def item_custom_fields(self):
+        """Gets the item_custom_fields of this UpdatePKICertIssuer.  # noqa: E501
+
+        Additional custom fields to associate with the item  # noqa: E501
+
+        :return: The item_custom_fields of this UpdatePKICertIssuer.  # noqa: E501
+        :rtype: dict(str, str)
+        """
+        return self._item_custom_fields
+
+    @item_custom_fields.setter
+    def item_custom_fields(self, item_custom_fields):
+        """Sets the item_custom_fields of this UpdatePKICertIssuer.
+
+        Additional custom fields to associate with the item  # noqa: E501
+
+        :param item_custom_fields: The item_custom_fields of this UpdatePKICertIssuer.  # noqa: E501
+        :type: dict(str, str)
+        """
+
+        self._item_custom_fields = item_custom_fields
 
     @property
     def json(self):

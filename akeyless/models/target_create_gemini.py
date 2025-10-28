@@ -40,7 +40,6 @@ class TargetCreateGemini(object):
         'json': 'bool',
         'key': 'str',
         'max_versions': 'str',
-        'model': 'str',
         'name': 'str',
         'token': 'str',
         'uid_token': 'str'
@@ -53,13 +52,12 @@ class TargetCreateGemini(object):
         'json': 'json',
         'key': 'key',
         'max_versions': 'max-versions',
-        'model': 'model',
         'name': 'name',
         'token': 'token',
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, api_key=None, description=None, gemini_url='https://generativelanguage.googleapis.com', json=False, key=None, max_versions=None, model=None, name=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, api_key=None, description=None, gemini_url='https://generativelanguage.googleapis.com', json=False, key=None, max_versions=None, name=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """TargetCreateGemini - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -71,7 +69,6 @@ class TargetCreateGemini(object):
         self._json = None
         self._key = None
         self._max_versions = None
-        self._model = None
         self._name = None
         self._token = None
         self._uid_token = None
@@ -89,8 +86,6 @@ class TargetCreateGemini(object):
             self.key = key
         if max_versions is not None:
             self.max_versions = max_versions
-        if model is not None:
-            self.model = model
         self.name = name
         if token is not None:
             self.token = token
@@ -234,29 +229,6 @@ class TargetCreateGemini(object):
         """
 
         self._max_versions = max_versions
-
-    @property
-    def model(self):
-        """Gets the model of this TargetCreateGemini.  # noqa: E501
-
-        Default model to use with Gemini  # noqa: E501
-
-        :return: The model of this TargetCreateGemini.  # noqa: E501
-        :rtype: str
-        """
-        return self._model
-
-    @model.setter
-    def model(self, model):
-        """Sets the model of this TargetCreateGemini.
-
-        Default model to use with Gemini  # noqa: E501
-
-        :param model: The model of this TargetCreateGemini.  # noqa: E501
-        :type: str
-        """
-
-        self._model = model
 
     @property
     def name(self):

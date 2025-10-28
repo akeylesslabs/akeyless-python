@@ -52,6 +52,7 @@ class Item(object):
         'is_access_request_enabled': 'bool',
         'is_enabled': 'bool',
         'item_accessibility': 'int',
+        'item_custom_fields_details': 'list[ItemCustomFieldsDetails]',
         'item_general_info': 'ItemGeneralInfo',
         'item_id': 'int',
         'item_metadata': 'str',
@@ -97,6 +98,7 @@ class Item(object):
         'is_access_request_enabled': 'is_access_request_enabled',
         'is_enabled': 'is_enabled',
         'item_accessibility': 'item_accessibility',
+        'item_custom_fields_details': 'item_custom_fields_details',
         'item_general_info': 'item_general_info',
         'item_id': 'item_id',
         'item_metadata': 'item_metadata',
@@ -123,7 +125,7 @@ class Item(object):
         'with_customer_fragment': 'with_customer_fragment'
     }
 
-    def __init__(self, access_date=None, access_date_display=None, access_request_status=None, auto_rotate=None, bastion_details=None, cert_issuer_signer_key_name=None, certificate_issue_details=None, certificates=None, client_permissions=None, creation_date=None, customer_fragment_id=None, delete_protection=None, deletion_date=None, display_id=None, gateway_details=None, is_access_request_enabled=None, is_enabled=None, item_accessibility=None, item_general_info=None, item_id=None, item_metadata=None, item_name=None, item_size=None, item_state=None, item_sub_type=None, item_tags=None, item_targets_assoc=None, item_type=None, item_versions=None, last_rotation_date=None, last_version=None, linked_details=None, modification_date=None, next_rotation_date=None, protection_key_name=None, protection_key_type=None, public_value=None, rotation_interval=None, shared_by=None, target_versions=None, usc_sync_associated_items=None, with_customer_fragment=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, access_date=None, access_date_display=None, access_request_status=None, auto_rotate=None, bastion_details=None, cert_issuer_signer_key_name=None, certificate_issue_details=None, certificates=None, client_permissions=None, creation_date=None, customer_fragment_id=None, delete_protection=None, deletion_date=None, display_id=None, gateway_details=None, is_access_request_enabled=None, is_enabled=None, item_accessibility=None, item_custom_fields_details=None, item_general_info=None, item_id=None, item_metadata=None, item_name=None, item_size=None, item_state=None, item_sub_type=None, item_tags=None, item_targets_assoc=None, item_type=None, item_versions=None, last_rotation_date=None, last_version=None, linked_details=None, modification_date=None, next_rotation_date=None, protection_key_name=None, protection_key_type=None, public_value=None, rotation_interval=None, shared_by=None, target_versions=None, usc_sync_associated_items=None, with_customer_fragment=None, local_vars_configuration=None):  # noqa: E501
         """Item - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -147,6 +149,7 @@ class Item(object):
         self._is_access_request_enabled = None
         self._is_enabled = None
         self._item_accessibility = None
+        self._item_custom_fields_details = None
         self._item_general_info = None
         self._item_id = None
         self._item_metadata = None
@@ -209,6 +212,8 @@ class Item(object):
             self.is_enabled = is_enabled
         if item_accessibility is not None:
             self.item_accessibility = item_accessibility
+        if item_custom_fields_details is not None:
+            self.item_custom_fields_details = item_custom_fields_details
         if item_general_info is not None:
             self.item_general_info = item_general_info
         if item_id is not None:
@@ -635,6 +640,27 @@ class Item(object):
         """
 
         self._item_accessibility = item_accessibility
+
+    @property
+    def item_custom_fields_details(self):
+        """Gets the item_custom_fields_details of this Item.  # noqa: E501
+
+
+        :return: The item_custom_fields_details of this Item.  # noqa: E501
+        :rtype: list[ItemCustomFieldsDetails]
+        """
+        return self._item_custom_fields_details
+
+    @item_custom_fields_details.setter
+    def item_custom_fields_details(self, item_custom_fields_details):
+        """Sets the item_custom_fields_details of this Item.
+
+
+        :param item_custom_fields_details: The item_custom_fields_details of this Item.  # noqa: E501
+        :type: list[ItemCustomFieldsDetails]
+        """
+
+        self._item_custom_fields_details = item_custom_fields_details
 
     @property
     def item_general_info(self):

@@ -41,6 +41,7 @@ class RotatedSecretUpdateLdap(object):
         'delete_protection': 'str',
         'description': 'str',
         'host_provider': 'str',
+        'item_custom_fields': 'dict(str, str)',
         'json': 'bool',
         'keep_prev_version': 'str',
         'key': 'str',
@@ -79,6 +80,7 @@ class RotatedSecretUpdateLdap(object):
         'delete_protection': 'delete_protection',
         'description': 'description',
         'host_provider': 'host-provider',
+        'item_custom_fields': 'item-custom-fields',
         'json': 'json',
         'keep_prev_version': 'keep-prev-version',
         'key': 'key',
@@ -109,7 +111,7 @@ class RotatedSecretUpdateLdap(object):
         'user_dn': 'user-dn'
     }
 
-    def __init__(self, provider_type=None, add_tag=None, authentication_credentials='use-user-creds', auto_rotate=None, delete_protection=None, description='default_metadata', host_provider=None, json=False, keep_prev_version=None, key=None, max_versions=None, name=None, new_name=None, password_length=None, rm_tag=None, rotate_after_disconnect='false', rotated_password=None, rotated_username=None, rotation_event_in=None, rotation_hour=None, rotation_interval=None, secure_access_bastion_issuer=None, secure_access_certificate_issuer=None, secure_access_enable=None, secure_access_host=None, secure_access_rdp_domain=None, secure_access_url=None, secure_access_web=False, secure_access_web_browsing=False, secure_access_web_proxy=False, target=None, token=None, uid_token=None, user_attribute='cn', user_dn=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, provider_type=None, add_tag=None, authentication_credentials='use-user-creds', auto_rotate=None, delete_protection=None, description='default_metadata', host_provider=None, item_custom_fields=None, json=False, keep_prev_version=None, key=None, max_versions=None, name=None, new_name=None, password_length=None, rm_tag=None, rotate_after_disconnect='false', rotated_password=None, rotated_username=None, rotation_event_in=None, rotation_hour=None, rotation_interval=None, secure_access_bastion_issuer=None, secure_access_certificate_issuer=None, secure_access_enable=None, secure_access_host=None, secure_access_rdp_domain=None, secure_access_url=None, secure_access_web=False, secure_access_web_browsing=False, secure_access_web_proxy=False, target=None, token=None, uid_token=None, user_attribute='cn', user_dn=None, local_vars_configuration=None):  # noqa: E501
         """RotatedSecretUpdateLdap - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -122,6 +124,7 @@ class RotatedSecretUpdateLdap(object):
         self._delete_protection = None
         self._description = None
         self._host_provider = None
+        self._item_custom_fields = None
         self._json = None
         self._keep_prev_version = None
         self._key = None
@@ -166,6 +169,8 @@ class RotatedSecretUpdateLdap(object):
             self.description = description
         if host_provider is not None:
             self.host_provider = host_provider
+        if item_custom_fields is not None:
+            self.item_custom_fields = item_custom_fields
         if json is not None:
             self.json = json
         if keep_prev_version is not None:
@@ -380,6 +385,29 @@ class RotatedSecretUpdateLdap(object):
         """
 
         self._host_provider = host_provider
+
+    @property
+    def item_custom_fields(self):
+        """Gets the item_custom_fields of this RotatedSecretUpdateLdap.  # noqa: E501
+
+        Additional custom fields to associate with the item  # noqa: E501
+
+        :return: The item_custom_fields of this RotatedSecretUpdateLdap.  # noqa: E501
+        :rtype: dict(str, str)
+        """
+        return self._item_custom_fields
+
+    @item_custom_fields.setter
+    def item_custom_fields(self, item_custom_fields):
+        """Sets the item_custom_fields of this RotatedSecretUpdateLdap.
+
+        Additional custom fields to associate with the item  # noqa: E501
+
+        :param item_custom_fields: The item_custom_fields of this RotatedSecretUpdateLdap.  # noqa: E501
+        :type: dict(str, str)
+        """
+
+        self._item_custom_fields = item_custom_fields
 
     @property
     def json(self):

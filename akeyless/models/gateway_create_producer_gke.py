@@ -40,6 +40,7 @@ class GatewayCreateProducerGke(object):
         'gke_cluster_endpoint': 'str',
         'gke_cluster_name': 'str',
         'gke_service_account_email': 'str',
+        'item_custom_fields': 'dict(str, str)',
         'json': 'bool',
         'name': 'str',
         'producer_encryption_key_name': 'str',
@@ -64,6 +65,7 @@ class GatewayCreateProducerGke(object):
         'gke_cluster_endpoint': 'gke-cluster-endpoint',
         'gke_cluster_name': 'gke-cluster-name',
         'gke_service_account_email': 'gke-service-account-email',
+        'item_custom_fields': 'item-custom-fields',
         'json': 'json',
         'name': 'name',
         'producer_encryption_key_name': 'producer-encryption-key-name',
@@ -81,7 +83,7 @@ class GatewayCreateProducerGke(object):
         'user_ttl': 'user-ttl'
     }
 
-    def __init__(self, delete_protection=None, gke_account_key=None, gke_cluster_cert=None, gke_cluster_endpoint=None, gke_cluster_name=None, gke_service_account_email=None, json=False, name=None, producer_encryption_key_name=None, secure_access_allow_port_forwading=None, secure_access_bastion_issuer=None, secure_access_certificate_issuer=None, secure_access_cluster_endpoint=None, secure_access_delay=None, secure_access_enable=None, secure_access_web=False, tags=None, target_name=None, token=None, uid_token=None, user_ttl='60m', local_vars_configuration=None):  # noqa: E501
+    def __init__(self, delete_protection=None, gke_account_key=None, gke_cluster_cert=None, gke_cluster_endpoint=None, gke_cluster_name=None, gke_service_account_email=None, item_custom_fields=None, json=False, name=None, producer_encryption_key_name=None, secure_access_allow_port_forwading=None, secure_access_bastion_issuer=None, secure_access_certificate_issuer=None, secure_access_cluster_endpoint=None, secure_access_delay=None, secure_access_enable=None, secure_access_web=False, tags=None, target_name=None, token=None, uid_token=None, user_ttl='60m', local_vars_configuration=None):  # noqa: E501
         """GatewayCreateProducerGke - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -93,6 +95,7 @@ class GatewayCreateProducerGke(object):
         self._gke_cluster_endpoint = None
         self._gke_cluster_name = None
         self._gke_service_account_email = None
+        self._item_custom_fields = None
         self._json = None
         self._name = None
         self._producer_encryption_key_name = None
@@ -122,6 +125,8 @@ class GatewayCreateProducerGke(object):
             self.gke_cluster_name = gke_cluster_name
         if gke_service_account_email is not None:
             self.gke_service_account_email = gke_service_account_email
+        if item_custom_fields is not None:
+            self.item_custom_fields = item_custom_fields
         if json is not None:
             self.json = json
         self.name = name
@@ -289,6 +294,29 @@ class GatewayCreateProducerGke(object):
         """
 
         self._gke_service_account_email = gke_service_account_email
+
+    @property
+    def item_custom_fields(self):
+        """Gets the item_custom_fields of this GatewayCreateProducerGke.  # noqa: E501
+
+        Additional custom fields to associate with the item  # noqa: E501
+
+        :return: The item_custom_fields of this GatewayCreateProducerGke.  # noqa: E501
+        :rtype: dict(str, str)
+        """
+        return self._item_custom_fields
+
+    @item_custom_fields.setter
+    def item_custom_fields(self, item_custom_fields):
+        """Sets the item_custom_fields of this GatewayCreateProducerGke.
+
+        Additional custom fields to associate with the item  # noqa: E501
+
+        :param item_custom_fields: The item_custom_fields of this GatewayCreateProducerGke.  # noqa: E501
+        :type: dict(str, str)
+        """
+
+        self._item_custom_fields = item_custom_fields
 
     @property
     def json(self):

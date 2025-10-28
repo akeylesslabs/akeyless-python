@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **db_server_name** | **str** | (Optional) Server name for certificate verification | [optional] 
 **delete_protection** | **str** | Protection from accidental deletion of this object [true/false] | [optional] 
 **description** | **str** | Description of the object | [optional] 
+**item_custom_fields** | **dict(str, str)** | Additional custom fields to associate with the item | [optional] 
 **json** | **bool** | Set output format to JSON | [optional] [default to False]
 **name** | **str** | Dynamic secret name | 
 **oracle_host** | **str** | Oracle Host | [optional] [default to '127.0.0.1']

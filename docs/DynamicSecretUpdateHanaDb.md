@@ -14,6 +14,7 @@ Name | Type | Description | Notes
 **hanadb_port** | **str** | HanaDb Port | [optional] [default to '443']
 **hanadb_revocation_statements** | **str** | HanaDb Revocation statements | [optional] 
 **hanadb_username** | **str** | HanaDb Username | [optional] 
+**item_custom_fields** | **dict(str, str)** | Additional custom fields to associate with the item | [optional] 
 **json** | **bool** | Set output format to JSON | [optional] [default to False]
 **name** | **str** | Dynamic secret name | 
 **new_name** | **str** | Dynamic secret name | [optional] 

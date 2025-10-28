@@ -37,6 +37,7 @@ class GatewayUpdateProducerRedshift(object):
         'creation_statements': 'str',
         'custom_username_template': 'str',
         'delete_protection': 'str',
+        'item_custom_fields': 'dict(str, str)',
         'json': 'bool',
         'name': 'str',
         'new_name': 'str',
@@ -61,6 +62,7 @@ class GatewayUpdateProducerRedshift(object):
         'creation_statements': 'creation-statements',
         'custom_username_template': 'custom-username-template',
         'delete_protection': 'delete_protection',
+        'item_custom_fields': 'item-custom-fields',
         'json': 'json',
         'name': 'name',
         'new_name': 'new-name',
@@ -81,7 +83,7 @@ class GatewayUpdateProducerRedshift(object):
         'user_ttl': 'user-ttl'
     }
 
-    def __init__(self, creation_statements=None, custom_username_template=None, delete_protection=None, json=False, name=None, new_name=None, password_length=None, producer_encryption_key=None, redshift_db_name=None, redshift_host='127.0.0.1', redshift_password=None, redshift_port='5439', redshift_username=None, secure_access_enable=None, secure_access_host=None, ssl=False, tags=None, target_name=None, token=None, uid_token=None, user_ttl='60m', local_vars_configuration=None):  # noqa: E501
+    def __init__(self, creation_statements=None, custom_username_template=None, delete_protection=None, item_custom_fields=None, json=False, name=None, new_name=None, password_length=None, producer_encryption_key=None, redshift_db_name=None, redshift_host='127.0.0.1', redshift_password=None, redshift_port='5439', redshift_username=None, secure_access_enable=None, secure_access_host=None, ssl=False, tags=None, target_name=None, token=None, uid_token=None, user_ttl='60m', local_vars_configuration=None):  # noqa: E501
         """GatewayUpdateProducerRedshift - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -90,6 +92,7 @@ class GatewayUpdateProducerRedshift(object):
         self._creation_statements = None
         self._custom_username_template = None
         self._delete_protection = None
+        self._item_custom_fields = None
         self._json = None
         self._name = None
         self._new_name = None
@@ -116,6 +119,8 @@ class GatewayUpdateProducerRedshift(object):
             self.custom_username_template = custom_username_template
         if delete_protection is not None:
             self.delete_protection = delete_protection
+        if item_custom_fields is not None:
+            self.item_custom_fields = item_custom_fields
         if json is not None:
             self.json = json
         self.name = name
@@ -220,6 +225,29 @@ class GatewayUpdateProducerRedshift(object):
         """
 
         self._delete_protection = delete_protection
+
+    @property
+    def item_custom_fields(self):
+        """Gets the item_custom_fields of this GatewayUpdateProducerRedshift.  # noqa: E501
+
+        Additional custom fields to associate with the item  # noqa: E501
+
+        :return: The item_custom_fields of this GatewayUpdateProducerRedshift.  # noqa: E501
+        :rtype: dict(str, str)
+        """
+        return self._item_custom_fields
+
+    @item_custom_fields.setter
+    def item_custom_fields(self, item_custom_fields):
+        """Sets the item_custom_fields of this GatewayUpdateProducerRedshift.
+
+        Additional custom fields to associate with the item  # noqa: E501
+
+        :param item_custom_fields: The item_custom_fields of this GatewayUpdateProducerRedshift.  # noqa: E501
+        :type: dict(str, str)
+        """
+
+        self._item_custom_fields = item_custom_fields
 
     @property
     def json(self):

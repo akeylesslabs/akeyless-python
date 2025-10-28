@@ -41,6 +41,7 @@ class GatewayUpdateProducerSnowflake(object):
         'custom_username_template': 'str',
         'db_name': 'str',
         'delete_protection': 'str',
+        'item_custom_fields': 'dict(str, str)',
         'json': 'bool',
         'key_algo': 'str',
         'name': 'str',
@@ -65,6 +66,7 @@ class GatewayUpdateProducerSnowflake(object):
         'custom_username_template': 'custom-username-template',
         'db_name': 'db-name',
         'delete_protection': 'delete_protection',
+        'item_custom_fields': 'item-custom-fields',
         'json': 'json',
         'key_algo': 'key-algo',
         'name': 'name',
@@ -81,7 +83,7 @@ class GatewayUpdateProducerSnowflake(object):
         'warehouse': 'warehouse'
     }
 
-    def __init__(self, account=None, account_password=None, account_username=None, auth_mode='password', custom_username_template=None, db_name=None, delete_protection=None, json=False, key_algo=None, name=None, new_name=None, password_length=None, private_key=None, private_key_passphrase=None, role=None, tags=None, target_name=None, token=None, uid_token=None, user_ttl='24h', warehouse=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, account=None, account_password=None, account_username=None, auth_mode='password', custom_username_template=None, db_name=None, delete_protection=None, item_custom_fields=None, json=False, key_algo=None, name=None, new_name=None, password_length=None, private_key=None, private_key_passphrase=None, role=None, tags=None, target_name=None, token=None, uid_token=None, user_ttl='24h', warehouse=None, local_vars_configuration=None):  # noqa: E501
         """GatewayUpdateProducerSnowflake - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -94,6 +96,7 @@ class GatewayUpdateProducerSnowflake(object):
         self._custom_username_template = None
         self._db_name = None
         self._delete_protection = None
+        self._item_custom_fields = None
         self._json = None
         self._key_algo = None
         self._name = None
@@ -124,6 +127,8 @@ class GatewayUpdateProducerSnowflake(object):
             self.db_name = db_name
         if delete_protection is not None:
             self.delete_protection = delete_protection
+        if item_custom_fields is not None:
+            self.item_custom_fields = item_custom_fields
         if json is not None:
             self.json = json
         if key_algo is not None:
@@ -312,6 +317,29 @@ class GatewayUpdateProducerSnowflake(object):
         """
 
         self._delete_protection = delete_protection
+
+    @property
+    def item_custom_fields(self):
+        """Gets the item_custom_fields of this GatewayUpdateProducerSnowflake.  # noqa: E501
+
+        Additional custom fields to associate with the item  # noqa: E501
+
+        :return: The item_custom_fields of this GatewayUpdateProducerSnowflake.  # noqa: E501
+        :rtype: dict(str, str)
+        """
+        return self._item_custom_fields
+
+    @item_custom_fields.setter
+    def item_custom_fields(self, item_custom_fields):
+        """Sets the item_custom_fields of this GatewayUpdateProducerSnowflake.
+
+        Additional custom fields to associate with the item  # noqa: E501
+
+        :param item_custom_fields: The item_custom_fields of this GatewayUpdateProducerSnowflake.  # noqa: E501
+        :type: dict(str, str)
+        """
+
+        self._item_custom_fields = item_custom_fields
 
     @property
     def json(self):

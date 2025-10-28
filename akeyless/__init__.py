@@ -15,7 +15,7 @@
 
 from __future__ import absolute_import
 
-__version__ = "5.0.12"
+__version__ = "5.0.13"
 
 # import apis into sdk package
 from akeyless.api.v2_api import V2Api
@@ -37,6 +37,13 @@ from akeyless.models.aws_secrets_migration import AWSSecretsMigration
 from akeyless.models.aws_target_details import AWSTargetDetails
 from akeyless.models.access_or_group_permission_assignment import AccessOrGroupPermissionAssignment
 from akeyless.models.access_permission_assignment import AccessPermissionAssignment
+from akeyless.models.account_custom_field_create import AccountCustomFieldCreate
+from akeyless.models.account_custom_field_create_output import AccountCustomFieldCreateOutput
+from akeyless.models.account_custom_field_delete import AccountCustomFieldDelete
+from akeyless.models.account_custom_field_get import AccountCustomFieldGet
+from akeyless.models.account_custom_field_get_output import AccountCustomFieldGetOutput
+from akeyless.models.account_custom_field_list import AccountCustomFieldList
+from akeyless.models.account_custom_field_update import AccountCustomFieldUpdate
 from akeyless.models.account_general_settings import AccountGeneralSettings
 from akeyless.models.account_object_version_settings_output import AccountObjectVersionSettingsOutput
 from akeyless.models.acme_account import AcmeAccount
@@ -44,6 +51,8 @@ from akeyless.models.active_directory_migration import ActiveDirectoryMigration
 from akeyless.models.active_directory_payload import ActiveDirectoryPayload
 from akeyless.models.add_gateway_allowed_access_id import AddGatewayAllowedAccessId
 from akeyless.models.admins_config_part import AdminsConfigPart
+from akeyless.models.ai_insights_config_part import AiInsightsConfigPart
+from akeyless.models.ai_insights_setting import AiInsightsSetting
 from akeyless.models.akeyless_gateway_config import AkeylessGatewayConfig
 from akeyless.models.alias_details import AliasDetails
 from akeyless.models.alias_details_output import AliasDetailsOutput
@@ -680,6 +689,7 @@ from akeyless.models.import_passwords import ImportPasswords
 from akeyless.models.import_passwords_output import ImportPasswordsOutput
 from akeyless.models.importer_info import ImporterInfo
 from akeyless.models.item import Item
+from akeyless.models.item_custom_fields_details import ItemCustomFieldsDetails
 from akeyless.models.item_general_info import ItemGeneralInfo
 from akeyless.models.item_sra_status import ItemSraStatus
 from akeyless.models.item_target_association import ItemTargetAssociation
@@ -774,6 +784,7 @@ from akeyless.models.native_k8s_target_details import NativeK8sTargetDetails
 from akeyless.models.next_auto_rotation_event import NextAutoRotationEvent
 from akeyless.models.noti_forwarder import NotiForwarder
 from akeyless.models.null_string import NullString
+from akeyless.models.null_time import NullTime
 from akeyless.models.o_auth2_access_rules import OAuth2AccessRules
 from akeyless.models.o_auth2_custom_claim import OAuth2CustomClaim
 from akeyless.models.oci_access_rules import OCIAccessRules

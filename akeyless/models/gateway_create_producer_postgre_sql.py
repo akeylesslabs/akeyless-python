@@ -37,6 +37,7 @@ class GatewayCreateProducerPostgreSQL(object):
         'creation_statements': 'str',
         'custom_username_template': 'str',
         'delete_protection': 'str',
+        'item_custom_fields': 'dict(str, str)',
         'json': 'bool',
         'name': 'str',
         'password_length': 'str',
@@ -67,6 +68,7 @@ class GatewayCreateProducerPostgreSQL(object):
         'creation_statements': 'creation-statements',
         'custom_username_template': 'custom-username-template',
         'delete_protection': 'delete_protection',
+        'item_custom_fields': 'item-custom-fields',
         'json': 'json',
         'name': 'name',
         'password_length': 'password-length',
@@ -93,7 +95,7 @@ class GatewayCreateProducerPostgreSQL(object):
         'user_ttl': 'user-ttl'
     }
 
-    def __init__(self, creation_statements=None, custom_username_template=None, delete_protection=None, json=False, name=None, password_length=None, postgresql_db_name=None, postgresql_host='127.0.0.1', postgresql_password=None, postgresql_port='5432', postgresql_username=None, producer_encryption_key=None, revocation_statement=None, secure_access_bastion_issuer=None, secure_access_certificate_issuer=None, secure_access_db_name=None, secure_access_db_schema=None, secure_access_delay=None, secure_access_enable=None, secure_access_host=None, secure_access_web=False, ssl=False, tags=None, target_name=None, token=None, uid_token=None, user_ttl='60m', local_vars_configuration=None):  # noqa: E501
+    def __init__(self, creation_statements=None, custom_username_template=None, delete_protection=None, item_custom_fields=None, json=False, name=None, password_length=None, postgresql_db_name=None, postgresql_host='127.0.0.1', postgresql_password=None, postgresql_port='5432', postgresql_username=None, producer_encryption_key=None, revocation_statement=None, secure_access_bastion_issuer=None, secure_access_certificate_issuer=None, secure_access_db_name=None, secure_access_db_schema=None, secure_access_delay=None, secure_access_enable=None, secure_access_host=None, secure_access_web=False, ssl=False, tags=None, target_name=None, token=None, uid_token=None, user_ttl='60m', local_vars_configuration=None):  # noqa: E501
         """GatewayCreateProducerPostgreSQL - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -102,6 +104,7 @@ class GatewayCreateProducerPostgreSQL(object):
         self._creation_statements = None
         self._custom_username_template = None
         self._delete_protection = None
+        self._item_custom_fields = None
         self._json = None
         self._name = None
         self._password_length = None
@@ -134,6 +137,8 @@ class GatewayCreateProducerPostgreSQL(object):
             self.custom_username_template = custom_username_template
         if delete_protection is not None:
             self.delete_protection = delete_protection
+        if item_custom_fields is not None:
+            self.item_custom_fields = item_custom_fields
         if json is not None:
             self.json = json
         self.name = name
@@ -250,6 +255,29 @@ class GatewayCreateProducerPostgreSQL(object):
         """
 
         self._delete_protection = delete_protection
+
+    @property
+    def item_custom_fields(self):
+        """Gets the item_custom_fields of this GatewayCreateProducerPostgreSQL.  # noqa: E501
+
+        Additional custom fields to associate with the item  # noqa: E501
+
+        :return: The item_custom_fields of this GatewayCreateProducerPostgreSQL.  # noqa: E501
+        :rtype: dict(str, str)
+        """
+        return self._item_custom_fields
+
+    @item_custom_fields.setter
+    def item_custom_fields(self, item_custom_fields):
+        """Sets the item_custom_fields of this GatewayCreateProducerPostgreSQL.
+
+        Additional custom fields to associate with the item  # noqa: E501
+
+        :param item_custom_fields: The item_custom_fields of this GatewayCreateProducerPostgreSQL.  # noqa: E501
+        :type: dict(str, str)
+        """
+
+        self._item_custom_fields = item_custom_fields
 
     @property
     def json(self):

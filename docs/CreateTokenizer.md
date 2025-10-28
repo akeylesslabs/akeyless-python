@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **description** | **str** | Description of the object | [optional] 
 **encoding_template** | **str** | The Encoding output template to use in regexp vaultless tokenization | [optional] 
 **encryption_key_name** | **str** | AES key name to use in vaultless tokenization | [optional] 
+**item_custom_fields** | **dict(str, str)** | Additional custom fields to associate with the item | [optional] 
 **json** | **bool** | Set output format to JSON | [optional] [default to False]
 **metadata** | **str** | Deprecated - use description | [optional] 
 **name** | **str** | Tokenizer name | 

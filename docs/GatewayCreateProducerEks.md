@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **eks_cluster_name** | **str** | EKS cluster name | [optional] 
 **eks_region** | **str** | Region | [optional] [default to 'us-east-2']
 **eks_secret_access_key** | **str** | Secret Access Key | [optional] 
+**item_custom_fields** | **dict(str, str)** | Additional custom fields to associate with the item | [optional] 
 **json** | **bool** | Set output format to JSON | [optional] [default to False]
 **name** | **str** | Dynamic secret name | 
 **producer_encryption_key_name** | **str** | Dynamic producer encryption key | [optional] 

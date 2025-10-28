@@ -41,6 +41,7 @@ class GatewayCreateProducerArtifactory(object):
         'base_url': 'str',
         'custom_username_template': 'str',
         'delete_protection': 'str',
+        'item_custom_fields': 'dict(str, str)',
         'json': 'bool',
         'name': 'str',
         'producer_encryption_key_name': 'str',
@@ -59,6 +60,7 @@ class GatewayCreateProducerArtifactory(object):
         'base_url': 'base-url',
         'custom_username_template': 'custom-username-template',
         'delete_protection': 'delete_protection',
+        'item_custom_fields': 'item-custom-fields',
         'json': 'json',
         'name': 'name',
         'producer_encryption_key_name': 'producer-encryption-key-name',
@@ -69,7 +71,7 @@ class GatewayCreateProducerArtifactory(object):
         'user_ttl': 'user-ttl'
     }
 
-    def __init__(self, artifactory_admin_name=None, artifactory_admin_pwd=None, artifactory_token_audience=None, artifactory_token_scope=None, base_url=None, custom_username_template=None, delete_protection=None, json=False, name=None, producer_encryption_key_name=None, tags=None, target_name=None, token=None, uid_token=None, user_ttl='60m', local_vars_configuration=None):  # noqa: E501
+    def __init__(self, artifactory_admin_name=None, artifactory_admin_pwd=None, artifactory_token_audience=None, artifactory_token_scope=None, base_url=None, custom_username_template=None, delete_protection=None, item_custom_fields=None, json=False, name=None, producer_encryption_key_name=None, tags=None, target_name=None, token=None, uid_token=None, user_ttl='60m', local_vars_configuration=None):  # noqa: E501
         """GatewayCreateProducerArtifactory - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -82,6 +84,7 @@ class GatewayCreateProducerArtifactory(object):
         self._base_url = None
         self._custom_username_template = None
         self._delete_protection = None
+        self._item_custom_fields = None
         self._json = None
         self._name = None
         self._producer_encryption_key_name = None
@@ -104,6 +107,8 @@ class GatewayCreateProducerArtifactory(object):
             self.custom_username_template = custom_username_template
         if delete_protection is not None:
             self.delete_protection = delete_protection
+        if item_custom_fields is not None:
+            self.item_custom_fields = item_custom_fields
         if json is not None:
             self.json = json
         self.name = name
@@ -284,6 +289,29 @@ class GatewayCreateProducerArtifactory(object):
         """
 
         self._delete_protection = delete_protection
+
+    @property
+    def item_custom_fields(self):
+        """Gets the item_custom_fields of this GatewayCreateProducerArtifactory.  # noqa: E501
+
+        Additional custom fields to associate with the item  # noqa: E501
+
+        :return: The item_custom_fields of this GatewayCreateProducerArtifactory.  # noqa: E501
+        :rtype: dict(str, str)
+        """
+        return self._item_custom_fields
+
+    @item_custom_fields.setter
+    def item_custom_fields(self, item_custom_fields):
+        """Sets the item_custom_fields of this GatewayCreateProducerArtifactory.
+
+        Additional custom fields to associate with the item  # noqa: E501
+
+        :param item_custom_fields: The item_custom_fields of this GatewayCreateProducerArtifactory.  # noqa: E501
+        :type: dict(str, str)
+        """
+
+        self._item_custom_fields = item_custom_fields
 
     @property
     def json(self):

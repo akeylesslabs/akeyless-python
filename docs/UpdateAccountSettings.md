@@ -4,6 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **address** | **str** | Address | [optional] 
+**allowed_email_domains** | **list[str]** | Limits email sharing to the specified domains. Relevant only when item sharing is enabled. By default, all domains are allowed. | [optional] 
 **bound_ips** | **list[str]** | A default list of comma-separated CIDR block that are allowed to authenticate. | [optional] 
 **city** | **str** | City | [optional] 
 **company_name** | **str** | Company name | [optional] 
@@ -15,6 +16,7 @@ Name | Type | Description | Notes
 **dp_enable_classic_key_protection** | **str** | Set to update protection with classic keys state [true/false] | [optional] 
 **dynamic_secret_max_ttl** | **int** | Set the maximum ttl for dynamic secrets | [optional] 
 **dynamic_secret_max_ttl_enable** | **str** | Set a maximum ttl for dynamic secrets [true/false] | [optional] 
+**enable_ai_insights** | **str** | Enable AI insights [true/false] | [optional] 
 **enable_default_certificate_expiration_event** | **str** | How many days before the expiration of the certificate would you like to be notified. [true/false] | [optional] 
 **enable_item_sharing** | **str** | Enable sharing items [true/false] | [optional] 
 **enable_password_expiration** | **str** | Enable password expiration policy [true/false] | [optional] 

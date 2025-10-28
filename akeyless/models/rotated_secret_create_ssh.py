@@ -38,6 +38,7 @@ class RotatedSecretCreateSsh(object):
         'auto_rotate': 'str',
         'delete_protection': 'str',
         'description': 'str',
+        'item_custom_fields': 'dict(str, str)',
         'json': 'bool',
         'key': 'str',
         'max_versions': 'str',
@@ -72,6 +73,7 @@ class RotatedSecretCreateSsh(object):
         'auto_rotate': 'auto-rotate',
         'delete_protection': 'delete_protection',
         'description': 'description',
+        'item_custom_fields': 'item-custom-fields',
         'json': 'json',
         'key': 'key',
         'max_versions': 'max-versions',
@@ -101,7 +103,7 @@ class RotatedSecretCreateSsh(object):
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, authentication_credentials='use-user-creds', auto_rotate=None, delete_protection=None, description=None, json=False, key=None, max_versions=None, name=None, password_length=None, rotate_after_disconnect='false', rotated_password=None, rotated_username=None, rotation_event_in=None, rotation_hour=None, rotation_interval=None, rotator_custom_cmd=None, rotator_type=None, same_password=None, secure_access_allow_external_user=False, secure_access_bastion_issuer=None, secure_access_certificate_issuer=None, secure_access_enable=None, secure_access_host=None, secure_access_rdp_domain=None, secure_access_rdp_user=None, secure_access_ssh_user=None, secure_access_target_type='false', tags=None, target_name=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, authentication_credentials='use-user-creds', auto_rotate=None, delete_protection=None, description=None, item_custom_fields=None, json=False, key=None, max_versions=None, name=None, password_length=None, rotate_after_disconnect='false', rotated_password=None, rotated_username=None, rotation_event_in=None, rotation_hour=None, rotation_interval=None, rotator_custom_cmd=None, rotator_type=None, same_password=None, secure_access_allow_external_user=False, secure_access_bastion_issuer=None, secure_access_certificate_issuer=None, secure_access_enable=None, secure_access_host=None, secure_access_rdp_domain=None, secure_access_rdp_user=None, secure_access_ssh_user=None, secure_access_target_type='false', tags=None, target_name=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """RotatedSecretCreateSsh - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -111,6 +113,7 @@ class RotatedSecretCreateSsh(object):
         self._auto_rotate = None
         self._delete_protection = None
         self._description = None
+        self._item_custom_fields = None
         self._json = None
         self._key = None
         self._max_versions = None
@@ -148,6 +151,8 @@ class RotatedSecretCreateSsh(object):
             self.delete_protection = delete_protection
         if description is not None:
             self.description = description
+        if item_custom_fields is not None:
+            self.item_custom_fields = item_custom_fields
         if json is not None:
             self.json = json
         if key is not None:
@@ -291,6 +296,29 @@ class RotatedSecretCreateSsh(object):
         """
 
         self._description = description
+
+    @property
+    def item_custom_fields(self):
+        """Gets the item_custom_fields of this RotatedSecretCreateSsh.  # noqa: E501
+
+        Additional custom fields to associate with the item  # noqa: E501
+
+        :return: The item_custom_fields of this RotatedSecretCreateSsh.  # noqa: E501
+        :rtype: dict(str, str)
+        """
+        return self._item_custom_fields
+
+    @item_custom_fields.setter
+    def item_custom_fields(self, item_custom_fields):
+        """Sets the item_custom_fields of this RotatedSecretCreateSsh.
+
+        Additional custom fields to associate with the item  # noqa: E501
+
+        :param item_custom_fields: The item_custom_fields of this RotatedSecretCreateSsh.  # noqa: E501
+        :type: dict(str, str)
+        """
+
+        self._item_custom_fields = item_custom_fields
 
     @property
     def json(self):

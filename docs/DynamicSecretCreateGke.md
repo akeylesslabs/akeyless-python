@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **gke_cluster_endpoint** | **str** | GKE cluster URL endpoint | [optional] 
 **gke_cluster_name** | **str** | GKE cluster name | [optional] 
 **gke_service_account_email** | **str** | GKE service account email | [optional] 
+**item_custom_fields** | **dict(str, str)** | Additional custom fields to associate with the item | [optional] 
 **json** | **bool** | Set output format to JSON | [optional] [default to False]
 **name** | **str** | Dynamic secret name | 
 **producer_encryption_key_name** | **str** | Dynamic producer encryption key | [optional] 

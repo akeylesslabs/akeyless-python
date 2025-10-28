@@ -5,6 +5,7 @@ gatewayCreateProducerPing is a command that creates ping producer [Deprecated: U
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **delete_protection** | **str** | Protection from accidental deletion of this object [true/false] | [optional] 
+**item_custom_fields** | **dict(str, str)** | Additional custom fields to associate with the item | [optional] 
 **json** | **bool** | Set output format to JSON | [optional] [default to False]
 **name** | **str** | Dynamic secret name | 
 **ping_administrative_port** | **str** | Ping Federate administrative port | [optional] [default to '9999']

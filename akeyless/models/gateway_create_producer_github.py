@@ -41,6 +41,7 @@ class GatewayCreateProducerGithub(object):
         'installation_id': 'int',
         'installation_organization': 'str',
         'installation_repository': 'str',
+        'item_custom_fields': 'dict(str, str)',
         'json': 'bool',
         'name': 'str',
         'tags': 'list[str]',
@@ -60,6 +61,7 @@ class GatewayCreateProducerGithub(object):
         'installation_id': 'installation-id',
         'installation_organization': 'installation-organization',
         'installation_repository': 'installation-repository',
+        'item_custom_fields': 'item-custom-fields',
         'json': 'json',
         'name': 'name',
         'tags': 'tags',
@@ -71,7 +73,7 @@ class GatewayCreateProducerGithub(object):
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, delete_protection=None, github_app_id=None, github_app_private_key=None, github_base_url='https://api.github.com/', installation_id=None, installation_organization=None, installation_repository=None, json=False, name=None, tags=None, target_name=None, token=None, token_permissions=None, token_repositories=None, token_ttl='60m', uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, delete_protection=None, github_app_id=None, github_app_private_key=None, github_base_url='https://api.github.com/', installation_id=None, installation_organization=None, installation_repository=None, item_custom_fields=None, json=False, name=None, tags=None, target_name=None, token=None, token_permissions=None, token_repositories=None, token_ttl='60m', uid_token=None, local_vars_configuration=None):  # noqa: E501
         """GatewayCreateProducerGithub - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -84,6 +86,7 @@ class GatewayCreateProducerGithub(object):
         self._installation_id = None
         self._installation_organization = None
         self._installation_repository = None
+        self._item_custom_fields = None
         self._json = None
         self._name = None
         self._tags = None
@@ -109,6 +112,8 @@ class GatewayCreateProducerGithub(object):
             self.installation_organization = installation_organization
         if installation_repository is not None:
             self.installation_repository = installation_repository
+        if item_custom_fields is not None:
+            self.item_custom_fields = item_custom_fields
         if json is not None:
             self.json = json
         self.name = name
@@ -287,6 +292,29 @@ class GatewayCreateProducerGithub(object):
         """
 
         self._installation_repository = installation_repository
+
+    @property
+    def item_custom_fields(self):
+        """Gets the item_custom_fields of this GatewayCreateProducerGithub.  # noqa: E501
+
+        Additional custom fields to associate with the item  # noqa: E501
+
+        :return: The item_custom_fields of this GatewayCreateProducerGithub.  # noqa: E501
+        :rtype: dict(str, str)
+        """
+        return self._item_custom_fields
+
+    @item_custom_fields.setter
+    def item_custom_fields(self, item_custom_fields):
+        """Sets the item_custom_fields of this GatewayCreateProducerGithub.
+
+        Additional custom fields to associate with the item  # noqa: E501
+
+        :param item_custom_fields: The item_custom_fields of this GatewayCreateProducerGithub.  # noqa: E501
+        :type: dict(str, str)
+        """
+
+        self._item_custom_fields = item_custom_fields
 
     @property
     def json(self):

@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **base_url** | **str** | Base URL | [optional] 
 **custom_username_template** | **str** | Customize how temporary usernames are generated using go template | [optional] 
 **delete_protection** | **str** | Protection from accidental deletion of this object [true/false] | [optional] 
+**item_custom_fields** | **dict(str, str)** | Additional custom fields to associate with the item | [optional] 
 **json** | **bool** | Set output format to JSON | [optional] [default to False]
 **name** | **str** | Dynamic secret name | 
 **producer_encryption_key_name** | **str** | Dynamic producer encryption key | [optional] 

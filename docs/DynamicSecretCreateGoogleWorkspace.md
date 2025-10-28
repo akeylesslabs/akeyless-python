@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **gcp_key** | **str** | Base64-encoded service account private key text | [optional] 
 **group_email** | **str** | A group email, relevant only for group access-mode | [optional] 
 **group_role** | **str** |  | [optional] 
+**item_custom_fields** | **dict(str, str)** | Additional custom fields to associate with the item | [optional] 
 **json** | **bool** | Set output format to JSON | [optional] [default to False]
 **name** | **str** | Dynamic secret name | 
 **producer_encryption_key_name** | **str** | Dynamic producer encryption key | [optional] 

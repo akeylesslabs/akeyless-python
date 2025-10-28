@@ -21,6 +21,7 @@ Name | Type | Description | Notes
 **is_access_request_enabled** | **bool** |  | [optional] 
 **is_enabled** | **bool** |  | [optional] 
 **item_accessibility** | **int** |  | [optional] 
+**item_custom_fields_details** | [**list[ItemCustomFieldsDetails]**](ItemCustomFieldsDetails.md) |  | [optional] 
 **item_general_info** | [**ItemGeneralInfo**](ItemGeneralInfo.md) |  | [optional] 
 **item_id** | **int** |  | [optional] 
 **item_metadata** | **str** |  | [optional] 

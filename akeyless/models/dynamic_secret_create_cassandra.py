@@ -42,6 +42,7 @@ class DynamicSecretCreateCassandra(object):
         'custom_username_template': 'str',
         'delete_protection': 'str',
         'description': 'str',
+        'item_custom_fields': 'dict(str, str)',
         'json': 'bool',
         'name': 'str',
         'password_length': 'str',
@@ -64,6 +65,7 @@ class DynamicSecretCreateCassandra(object):
         'custom_username_template': 'custom-username-template',
         'delete_protection': 'delete_protection',
         'description': 'description',
+        'item_custom_fields': 'item-custom-fields',
         'json': 'json',
         'name': 'name',
         'password_length': 'password-length',
@@ -77,7 +79,7 @@ class DynamicSecretCreateCassandra(object):
         'user_ttl': 'user-ttl'
     }
 
-    def __init__(self, cassandra_creation_statements=None, cassandra_hosts=None, cassandra_password=None, cassandra_port='9042', cassandra_username=None, custom_username_template=None, delete_protection=None, description=None, json=False, name=None, password_length=None, producer_encryption_key_name=None, ssl=False, ssl_certificate=None, tags=None, target_name=None, token=None, uid_token=None, user_ttl='60m', local_vars_configuration=None):  # noqa: E501
+    def __init__(self, cassandra_creation_statements=None, cassandra_hosts=None, cassandra_password=None, cassandra_port='9042', cassandra_username=None, custom_username_template=None, delete_protection=None, description=None, item_custom_fields=None, json=False, name=None, password_length=None, producer_encryption_key_name=None, ssl=False, ssl_certificate=None, tags=None, target_name=None, token=None, uid_token=None, user_ttl='60m', local_vars_configuration=None):  # noqa: E501
         """DynamicSecretCreateCassandra - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -91,6 +93,7 @@ class DynamicSecretCreateCassandra(object):
         self._custom_username_template = None
         self._delete_protection = None
         self._description = None
+        self._item_custom_fields = None
         self._json = None
         self._name = None
         self._password_length = None
@@ -120,6 +123,8 @@ class DynamicSecretCreateCassandra(object):
             self.delete_protection = delete_protection
         if description is not None:
             self.description = description
+        if item_custom_fields is not None:
+            self.item_custom_fields = item_custom_fields
         if json is not None:
             self.json = json
         self.name = name
@@ -325,6 +330,29 @@ class DynamicSecretCreateCassandra(object):
         """
 
         self._description = description
+
+    @property
+    def item_custom_fields(self):
+        """Gets the item_custom_fields of this DynamicSecretCreateCassandra.  # noqa: E501
+
+        Additional custom fields to associate with the item  # noqa: E501
+
+        :return: The item_custom_fields of this DynamicSecretCreateCassandra.  # noqa: E501
+        :rtype: dict(str, str)
+        """
+        return self._item_custom_fields
+
+    @item_custom_fields.setter
+    def item_custom_fields(self, item_custom_fields):
+        """Sets the item_custom_fields of this DynamicSecretCreateCassandra.
+
+        Additional custom fields to associate with the item  # noqa: E501
+
+        :param item_custom_fields: The item_custom_fields of this DynamicSecretCreateCassandra.  # noqa: E501
+        :type: dict(str, str)
+        """
+
+        self._item_custom_fields = item_custom_fields
 
     @property
     def json(self):

@@ -39,6 +39,7 @@ class DescribeItem(object):
         'der_certificate_format': 'bool',
         'display_id': 'str',
         'gateway_details': 'bool',
+        'item_custom_fields_details': 'bool',
         'item_id': 'int',
         'json': 'bool',
         'name': 'str',
@@ -54,6 +55,7 @@ class DescribeItem(object):
         'der_certificate_format': 'der-certificate-format',
         'display_id': 'display-id',
         'gateway_details': 'gateway-details',
+        'item_custom_fields_details': 'item-custom-fields-details',
         'item_id': 'item-id',
         'json': 'json',
         'name': 'name',
@@ -63,7 +65,7 @@ class DescribeItem(object):
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, accessibility='regular', bastion_details=False, der_certificate_format=False, display_id=None, gateway_details=False, item_id=None, json=False, name=None, services_details=False, show_versions=False, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, accessibility='regular', bastion_details=False, der_certificate_format=False, display_id=None, gateway_details=False, item_custom_fields_details=False, item_id=None, json=False, name=None, services_details=False, show_versions=False, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """DescribeItem - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -74,6 +76,7 @@ class DescribeItem(object):
         self._der_certificate_format = None
         self._display_id = None
         self._gateway_details = None
+        self._item_custom_fields_details = None
         self._item_id = None
         self._json = None
         self._name = None
@@ -93,6 +96,8 @@ class DescribeItem(object):
             self.display_id = display_id
         if gateway_details is not None:
             self.gateway_details = gateway_details
+        if item_custom_fields_details is not None:
+            self.item_custom_fields_details = item_custom_fields_details
         if item_id is not None:
             self.item_id = item_id
         if json is not None:
@@ -221,6 +226,29 @@ class DescribeItem(object):
         """
 
         self._gateway_details = gateway_details
+
+    @property
+    def item_custom_fields_details(self):
+        """Gets the item_custom_fields_details of this DescribeItem.  # noqa: E501
+
+        Include all item custom fields details  # noqa: E501
+
+        :return: The item_custom_fields_details of this DescribeItem.  # noqa: E501
+        :rtype: bool
+        """
+        return self._item_custom_fields_details
+
+    @item_custom_fields_details.setter
+    def item_custom_fields_details(self, item_custom_fields_details):
+        """Sets the item_custom_fields_details of this DescribeItem.
+
+        Include all item custom fields details  # noqa: E501
+
+        :param item_custom_fields_details: The item_custom_fields_details of this DescribeItem.  # noqa: E501
+        :type: bool
+        """
+
+        self._item_custom_fields_details = item_custom_fields_details
 
     @property
     def item_id(self):

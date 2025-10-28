@@ -38,6 +38,7 @@ class CreateOidcApp(object):
         'audience': 'str',
         'delete_protection': 'str',
         'description': 'str',
+        'item_custom_fields': 'dict(str, str)',
         'json': 'bool',
         'key': 'str',
         'metadata': 'str',
@@ -56,6 +57,7 @@ class CreateOidcApp(object):
         'audience': 'audience',
         'delete_protection': 'delete_protection',
         'description': 'description',
+        'item_custom_fields': 'item-custom-fields',
         'json': 'json',
         'key': 'key',
         'metadata': 'metadata',
@@ -69,7 +71,7 @@ class CreateOidcApp(object):
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, accessibility='regular', audience=None, delete_protection=None, description=None, json=False, key=None, metadata=None, name=None, permission_assignment=None, public=None, redirect_uris=None, scopes='openid', tags=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, accessibility='regular', audience=None, delete_protection=None, description=None, item_custom_fields=None, json=False, key=None, metadata=None, name=None, permission_assignment=None, public=None, redirect_uris=None, scopes='openid', tags=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """CreateOidcApp - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -79,6 +81,7 @@ class CreateOidcApp(object):
         self._audience = None
         self._delete_protection = None
         self._description = None
+        self._item_custom_fields = None
         self._json = None
         self._key = None
         self._metadata = None
@@ -100,6 +103,8 @@ class CreateOidcApp(object):
             self.delete_protection = delete_protection
         if description is not None:
             self.description = description
+        if item_custom_fields is not None:
+            self.item_custom_fields = item_custom_fields
         if json is not None:
             self.json = json
         if key is not None:
@@ -213,6 +218,29 @@ class CreateOidcApp(object):
         """
 
         self._description = description
+
+    @property
+    def item_custom_fields(self):
+        """Gets the item_custom_fields of this CreateOidcApp.  # noqa: E501
+
+        Additional custom fields to associate with the item  # noqa: E501
+
+        :return: The item_custom_fields of this CreateOidcApp.  # noqa: E501
+        :rtype: dict(str, str)
+        """
+        return self._item_custom_fields
+
+    @item_custom_fields.setter
+    def item_custom_fields(self, item_custom_fields):
+        """Sets the item_custom_fields of this CreateOidcApp.
+
+        Additional custom fields to associate with the item  # noqa: E501
+
+        :param item_custom_fields: The item_custom_fields of this CreateOidcApp.  # noqa: E501
+        :type: dict(str, str)
+        """
+
+        self._item_custom_fields = item_custom_fields
 
     @property
     def json(self):

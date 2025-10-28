@@ -40,6 +40,7 @@ class RotatedSecretCreateCustom(object):
         'delete_protection': 'str',
         'description': 'str',
         'enable_password_policy': 'str',
+        'item_custom_fields': 'dict(str, str)',
         'json': 'bool',
         'key': 'str',
         'max_versions': 'str',
@@ -79,6 +80,7 @@ class RotatedSecretCreateCustom(object):
         'delete_protection': 'delete_protection',
         'description': 'description',
         'enable_password_policy': 'enable-password-policy',
+        'item_custom_fields': 'item-custom-fields',
         'json': 'json',
         'key': 'key',
         'max_versions': 'max-versions',
@@ -111,7 +113,7 @@ class RotatedSecretCreateCustom(object):
         'use_special_characters': 'use-special-characters'
     }
 
-    def __init__(self, authentication_credentials='use-user-creds', auto_rotate=None, custom_payload=None, delete_protection=None, description=None, enable_password_policy=None, json=False, key=None, max_versions=None, name=None, password_length=None, rotate_after_disconnect='false', rotation_event_in=None, rotation_hour=None, rotation_interval=None, secure_access_allow_external_user=False, secure_access_bastion_issuer=None, secure_access_certificate_issuer=None, secure_access_enable=None, secure_access_host=None, secure_access_rdp_domain=None, secure_access_rdp_user=None, secure_access_ssh_user=None, secure_access_url=None, secure_access_web=False, secure_access_web_browsing=False, secure_access_web_proxy=False, tags=None, target_name=None, timeout_sec=40, token=None, uid_token=None, use_capital_letters=None, use_lower_letters=None, use_numbers=None, use_special_characters=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, authentication_credentials='use-user-creds', auto_rotate=None, custom_payload=None, delete_protection=None, description=None, enable_password_policy=None, item_custom_fields=None, json=False, key=None, max_versions=None, name=None, password_length=None, rotate_after_disconnect='false', rotation_event_in=None, rotation_hour=None, rotation_interval=None, secure_access_allow_external_user=False, secure_access_bastion_issuer=None, secure_access_certificate_issuer=None, secure_access_enable=None, secure_access_host=None, secure_access_rdp_domain=None, secure_access_rdp_user=None, secure_access_ssh_user=None, secure_access_url=None, secure_access_web=False, secure_access_web_browsing=False, secure_access_web_proxy=False, tags=None, target_name=None, timeout_sec=40, token=None, uid_token=None, use_capital_letters=None, use_lower_letters=None, use_numbers=None, use_special_characters=None, local_vars_configuration=None):  # noqa: E501
         """RotatedSecretCreateCustom - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -123,6 +125,7 @@ class RotatedSecretCreateCustom(object):
         self._delete_protection = None
         self._description = None
         self._enable_password_policy = None
+        self._item_custom_fields = None
         self._json = None
         self._key = None
         self._max_versions = None
@@ -167,6 +170,8 @@ class RotatedSecretCreateCustom(object):
             self.description = description
         if enable_password_policy is not None:
             self.enable_password_policy = enable_password_policy
+        if item_custom_fields is not None:
+            self.item_custom_fields = item_custom_fields
         if json is not None:
             self.json = json
         if key is not None:
@@ -363,6 +368,29 @@ class RotatedSecretCreateCustom(object):
         """
 
         self._enable_password_policy = enable_password_policy
+
+    @property
+    def item_custom_fields(self):
+        """Gets the item_custom_fields of this RotatedSecretCreateCustom.  # noqa: E501
+
+        Additional custom fields to associate with the item  # noqa: E501
+
+        :return: The item_custom_fields of this RotatedSecretCreateCustom.  # noqa: E501
+        :rtype: dict(str, str)
+        """
+        return self._item_custom_fields
+
+    @item_custom_fields.setter
+    def item_custom_fields(self, item_custom_fields):
+        """Sets the item_custom_fields of this RotatedSecretCreateCustom.
+
+        Additional custom fields to associate with the item  # noqa: E501
+
+        :param item_custom_fields: The item_custom_fields of this RotatedSecretCreateCustom.  # noqa: E501
+        :type: dict(str, str)
+        """
+
+        self._item_custom_fields = item_custom_fields
 
     @property
     def json(self):
