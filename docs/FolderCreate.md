@@ -1,15 +1,18 @@
-# EncryptWithClassicKey
+# FolderCreate
 
+folderCreate is a command that creates folder
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**display_id** | **str** | The name of the key to use in the encryption process | 
-**ignore_cache** | **str** | Retrieve the Secret value without checking the Gateway&#39;s cache [true/false]. This flag is only relevant when using the RestAPI | [optional] [default to 'false']
+**accessibility** | **str** | for personal password manager | [optional] [default to 'regular']
+**delete_protection** | **str** | Protection from accidental deletion of this object [true/false] | [optional] 
+**description** | **str** | Description of the object | [optional] 
 **json** | **bool** | Set output format to JSON | [optional] [default to False]
-**plaintext** | **str** | Data to be encrypted | 
+**name** | **str** | Folder name | 
+**tags** | **list[str]** | Add tags attached to this object | [optional] 
 **token** | **str** | Authentication token (see &#x60;/auth&#x60; and &#x60;/configure&#x60;) | [optional] 
+**type** | **str** |  | [optional] 
 **uid_token** | **str** | The universal identity token, Required only for universal_identity authentication | [optional] 
-**version** | **int** | classic key version | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

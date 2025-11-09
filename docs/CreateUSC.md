@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **azure_kv_name** | **str** | Azure Key Vault name (Relevant only for Azure targets) | [optional] 
 **delete_protection** | **str** | Protection from accidental deletion of this object [true/false] | [optional] 
 **description** | **str** | Description of the Universal Secrets Connector | [optional] 
+**gcp_project_id** | **str** | GCP Project ID (Relevant only for GCP targets) | [optional] 
 **item_custom_fields** | **dict(str, str)** | Additional custom fields to associate with the item | [optional] 
 **json** | **bool** | Set output format to JSON | [optional] [default to False]
 **k8s_namespace** | **str** | K8s namespace (Relevant to Kubernetes targets) | [optional] 

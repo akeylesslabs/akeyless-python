@@ -15,7 +15,7 @@
 
 from __future__ import absolute_import
 
-__version__ = "5.0.13"
+__version__ = "5.0.14"
 
 # import apis into sdk package
 from akeyless.api.v2_api import V2Api
@@ -429,6 +429,12 @@ from akeyless.models.export_classic_key import ExportClassicKey
 from akeyless.models.export_classic_key_output import ExportClassicKeyOutput
 from akeyless.models.extension import Extension
 from akeyless.models.external_kms_key_id import ExternalKMSKeyId
+from akeyless.models.folder_create import FolderCreate
+from akeyless.models.folder_create_output import FolderCreateOutput
+from akeyless.models.folder_delete import FolderDelete
+from akeyless.models.folder_get import FolderGet
+from akeyless.models.folder_get_output import FolderGetOutput
+from akeyless.models.folder_update import FolderUpdate
 from akeyless.models.gcp_access_rules import GCPAccessRules
 from akeyless.models.gcp_payload import GCPPayload
 from akeyless.models.gcp_secrets_migration import GCPSecretsMigration
@@ -640,6 +646,7 @@ from akeyless.models.get_certificate_value_output import GetCertificateValueOutp
 from akeyless.models.get_dynamic_secret_value import GetDynamicSecretValue
 from akeyless.models.get_event_forwarder import GetEventForwarder
 from akeyless.models.get_event_forwarder_output import GetEventForwarderOutput
+from akeyless.models.get_folder_output import GetFolderOutput
 from akeyless.models.get_group import GetGroup
 from akeyless.models.get_group_output import GetGroupOutput
 from akeyless.models.get_kube_exec_creds import GetKubeExecCreds

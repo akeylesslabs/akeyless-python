@@ -37,6 +37,7 @@ class CreateUSC(object):
         'azure_kv_name': 'str',
         'delete_protection': 'str',
         'description': 'str',
+        'gcp_project_id': 'str',
         'item_custom_fields': 'dict(str, str)',
         'json': 'bool',
         'k8s_namespace': 'str',
@@ -53,6 +54,7 @@ class CreateUSC(object):
         'azure_kv_name': 'azure-kv-name',
         'delete_protection': 'delete_protection',
         'description': 'description',
+        'gcp_project_id': 'gcp-project-id',
         'item_custom_fields': 'item-custom-fields',
         'json': 'json',
         'k8s_namespace': 'k8s-namespace',
@@ -65,7 +67,7 @@ class CreateUSC(object):
         'use_prefix_as_filter': 'use-prefix-as-filter'
     }
 
-    def __init__(self, azure_kv_name=None, delete_protection=None, description=None, item_custom_fields=None, json=False, k8s_namespace=None, name=None, tags=None, target_to_associate=None, token=None, uid_token=None, usc_prefix=None, use_prefix_as_filter='false', local_vars_configuration=None):  # noqa: E501
+    def __init__(self, azure_kv_name=None, delete_protection=None, description=None, gcp_project_id=None, item_custom_fields=None, json=False, k8s_namespace=None, name=None, tags=None, target_to_associate=None, token=None, uid_token=None, usc_prefix=None, use_prefix_as_filter='false', local_vars_configuration=None):  # noqa: E501
         """CreateUSC - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -74,6 +76,7 @@ class CreateUSC(object):
         self._azure_kv_name = None
         self._delete_protection = None
         self._description = None
+        self._gcp_project_id = None
         self._item_custom_fields = None
         self._json = None
         self._k8s_namespace = None
@@ -92,6 +95,8 @@ class CreateUSC(object):
             self.delete_protection = delete_protection
         if description is not None:
             self.description = description
+        if gcp_project_id is not None:
+            self.gcp_project_id = gcp_project_id
         if item_custom_fields is not None:
             self.item_custom_fields = item_custom_fields
         if json is not None:
@@ -179,6 +184,29 @@ class CreateUSC(object):
         """
 
         self._description = description
+
+    @property
+    def gcp_project_id(self):
+        """Gets the gcp_project_id of this CreateUSC.  # noqa: E501
+
+        GCP Project ID (Relevant only for GCP targets)  # noqa: E501
+
+        :return: The gcp_project_id of this CreateUSC.  # noqa: E501
+        :rtype: str
+        """
+        return self._gcp_project_id
+
+    @gcp_project_id.setter
+    def gcp_project_id(self, gcp_project_id):
+        """Sets the gcp_project_id of this CreateUSC.
+
+        GCP Project ID (Relevant only for GCP targets)  # noqa: E501
+
+        :param gcp_project_id: The gcp_project_id of this CreateUSC.  # noqa: E501
+        :type: str
+        """
+
+        self._gcp_project_id = gcp_project_id
 
     @property
     def item_custom_fields(self):

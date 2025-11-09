@@ -41,6 +41,7 @@ class CreateRole(object):
         'description': 'str',
         'event_center_access': 'str',
         'event_forwarders_access': 'str',
+        'event_forwarders_name': 'list[str]',
         'gw_analytics_access': 'str',
         'json': 'bool',
         'name': 'str',
@@ -59,6 +60,7 @@ class CreateRole(object):
         'description': 'description',
         'event_center_access': 'event-center-access',
         'event_forwarders_access': 'event-forwarders-access',
+        'event_forwarders_name': 'event-forwarders-name',
         'gw_analytics_access': 'gw-analytics-access',
         'json': 'json',
         'name': 'name',
@@ -69,7 +71,7 @@ class CreateRole(object):
         'usage_reports_access': 'usage-reports-access'
     }
 
-    def __init__(self, analytics_access=None, audit_access=None, comment=None, delete_protection=None, description=None, event_center_access=None, event_forwarders_access=None, gw_analytics_access=None, json=False, name=None, reverse_rbac_access=None, sra_reports_access=None, token=None, uid_token=None, usage_reports_access=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, analytics_access=None, audit_access=None, comment=None, delete_protection=None, description=None, event_center_access=None, event_forwarders_access=None, event_forwarders_name=None, gw_analytics_access=None, json=False, name=None, reverse_rbac_access=None, sra_reports_access=None, token=None, uid_token=None, usage_reports_access=None, local_vars_configuration=None):  # noqa: E501
         """CreateRole - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -82,6 +84,7 @@ class CreateRole(object):
         self._description = None
         self._event_center_access = None
         self._event_forwarders_access = None
+        self._event_forwarders_name = None
         self._gw_analytics_access = None
         self._json = None
         self._name = None
@@ -106,6 +109,8 @@ class CreateRole(object):
             self.event_center_access = event_center_access
         if event_forwarders_access is not None:
             self.event_forwarders_access = event_forwarders_access
+        if event_forwarders_name is not None:
+            self.event_forwarders_name = event_forwarders_name
         if gw_analytics_access is not None:
             self.gw_analytics_access = gw_analytics_access
         if json is not None:
@@ -282,6 +287,29 @@ class CreateRole(object):
         """
 
         self._event_forwarders_access = event_forwarders_access
+
+    @property
+    def event_forwarders_name(self):
+        """Gets the event_forwarders_name of this CreateRole.  # noqa: E501
+
+        Allow this role to manage the following Event Forwarders.  # noqa: E501
+
+        :return: The event_forwarders_name of this CreateRole.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._event_forwarders_name
+
+    @event_forwarders_name.setter
+    def event_forwarders_name(self, event_forwarders_name):
+        """Sets the event_forwarders_name of this CreateRole.
+
+        Allow this role to manage the following Event Forwarders.  # noqa: E501
+
+        :param event_forwarders_name: The event_forwarders_name of this CreateRole.  # noqa: E501
+        :type: list[str]
+        """
+
+        self._event_forwarders_name = event_forwarders_name
 
     @property
     def gw_analytics_access(self):

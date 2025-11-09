@@ -35,6 +35,7 @@ class EncryptWithClassicKey(object):
     """
     openapi_types = {
         'display_id': 'str',
+        'ignore_cache': 'str',
         'json': 'bool',
         'plaintext': 'str',
         'token': 'str',
@@ -44,6 +45,7 @@ class EncryptWithClassicKey(object):
 
     attribute_map = {
         'display_id': 'display-id',
+        'ignore_cache': 'ignore-cache',
         'json': 'json',
         'plaintext': 'plaintext',
         'token': 'token',
@@ -51,13 +53,14 @@ class EncryptWithClassicKey(object):
         'version': 'version'
     }
 
-    def __init__(self, display_id=None, json=False, plaintext=None, token=None, uid_token=None, version=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, display_id=None, ignore_cache='false', json=False, plaintext=None, token=None, uid_token=None, version=None, local_vars_configuration=None):  # noqa: E501
         """EncryptWithClassicKey - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._display_id = None
+        self._ignore_cache = None
         self._json = None
         self._plaintext = None
         self._token = None
@@ -66,6 +69,8 @@ class EncryptWithClassicKey(object):
         self.discriminator = None
 
         self.display_id = display_id
+        if ignore_cache is not None:
+            self.ignore_cache = ignore_cache
         if json is not None:
             self.json = json
         self.plaintext = plaintext
@@ -99,6 +104,29 @@ class EncryptWithClassicKey(object):
             raise ValueError("Invalid value for `display_id`, must not be `None`")  # noqa: E501
 
         self._display_id = display_id
+
+    @property
+    def ignore_cache(self):
+        """Gets the ignore_cache of this EncryptWithClassicKey.  # noqa: E501
+
+        Retrieve the Secret value without checking the Gateway's cache [true/false]. This flag is only relevant when using the RestAPI  # noqa: E501
+
+        :return: The ignore_cache of this EncryptWithClassicKey.  # noqa: E501
+        :rtype: str
+        """
+        return self._ignore_cache
+
+    @ignore_cache.setter
+    def ignore_cache(self, ignore_cache):
+        """Sets the ignore_cache of this EncryptWithClassicKey.
+
+        Retrieve the Secret value without checking the Gateway's cache [true/false]. This flag is only relevant when using the RestAPI  # noqa: E501
+
+        :param ignore_cache: The ignore_cache of this EncryptWithClassicKey.  # noqa: E501
+        :type: str
+        """
+
+        self._ignore_cache = ignore_cache
 
     @property
     def json(self):

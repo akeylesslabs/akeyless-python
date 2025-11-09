@@ -40,6 +40,7 @@ class DynamicSecretCreateGcp(object):
         'gcp_cred_type': 'str',
         'gcp_key': 'str',
         'gcp_key_algo': 'str',
+        'gcp_project_id': 'str',
         'gcp_sa_email': 'str',
         'gcp_token_scopes': 'str',
         'item_custom_fields': 'dict(str, str)',
@@ -62,6 +63,7 @@ class DynamicSecretCreateGcp(object):
         'gcp_cred_type': 'gcp-cred-type',
         'gcp_key': 'gcp-key',
         'gcp_key_algo': 'gcp-key-algo',
+        'gcp_project_id': 'gcp-project-id',
         'gcp_sa_email': 'gcp-sa-email',
         'gcp_token_scopes': 'gcp-token-scopes',
         'item_custom_fields': 'item-custom-fields',
@@ -77,7 +79,7 @@ class DynamicSecretCreateGcp(object):
         'user_ttl': 'user-ttl'
     }
 
-    def __init__(self, custom_username_template=None, delete_protection=None, description=None, gcp_cred_type=None, gcp_key=None, gcp_key_algo=None, gcp_sa_email=None, gcp_token_scopes=None, item_custom_fields=None, json=False, name=None, producer_encryption_key_name=None, role_binding=None, service_account_type='fixed', tags=None, target_name=None, token=None, uid_token=None, user_ttl='60m', local_vars_configuration=None):  # noqa: E501
+    def __init__(self, custom_username_template=None, delete_protection=None, description=None, gcp_cred_type=None, gcp_key=None, gcp_key_algo=None, gcp_project_id=None, gcp_sa_email=None, gcp_token_scopes=None, item_custom_fields=None, json=False, name=None, producer_encryption_key_name=None, role_binding=None, service_account_type='fixed', tags=None, target_name=None, token=None, uid_token=None, user_ttl='60m', local_vars_configuration=None):  # noqa: E501
         """DynamicSecretCreateGcp - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -89,6 +91,7 @@ class DynamicSecretCreateGcp(object):
         self._gcp_cred_type = None
         self._gcp_key = None
         self._gcp_key_algo = None
+        self._gcp_project_id = None
         self._gcp_sa_email = None
         self._gcp_token_scopes = None
         self._item_custom_fields = None
@@ -116,6 +119,8 @@ class DynamicSecretCreateGcp(object):
             self.gcp_key = gcp_key
         if gcp_key_algo is not None:
             self.gcp_key_algo = gcp_key_algo
+        if gcp_project_id is not None:
+            self.gcp_project_id = gcp_project_id
         if gcp_sa_email is not None:
             self.gcp_sa_email = gcp_sa_email
         if gcp_token_scopes is not None:
@@ -276,6 +281,29 @@ class DynamicSecretCreateGcp(object):
         """
 
         self._gcp_key_algo = gcp_key_algo
+
+    @property
+    def gcp_project_id(self):
+        """Gets the gcp_project_id of this DynamicSecretCreateGcp.  # noqa: E501
+
+        GCP Project ID override for dynamic secret operations (tmp service accounts)  # noqa: E501
+
+        :return: The gcp_project_id of this DynamicSecretCreateGcp.  # noqa: E501
+        :rtype: str
+        """
+        return self._gcp_project_id
+
+    @gcp_project_id.setter
+    def gcp_project_id(self, gcp_project_id):
+        """Sets the gcp_project_id of this DynamicSecretCreateGcp.
+
+        GCP Project ID override for dynamic secret operations (tmp service accounts)  # noqa: E501
+
+        :param gcp_project_id: The gcp_project_id of this DynamicSecretCreateGcp.  # noqa: E501
+        :type: str
+        """
+
+        self._gcp_project_id = gcp_project_id
 
     @property
     def gcp_sa_email(self):
