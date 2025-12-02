@@ -49,7 +49,9 @@ class PKICertificateIssueDetails(object):
         'code_signing_flag': 'bool',
         'country': 'list[str]',
         'create_private_crl': 'bool',
+        'create_private_ocsp': 'bool',
         'create_public_crl': 'bool',
+        'create_public_ocsp': 'bool',
         'destination_path': 'str',
         'disable_wildcards': 'bool',
         'enforce_hostnames': 'bool',
@@ -64,6 +66,7 @@ class PKICertificateIssueDetails(object):
         'max_path_len': 'int',
         'non_critical_key_usage': 'bool',
         'not_before_duration': 'int',
+        'ocsp_next_update': 'int',
         'organization_list': 'list[str]',
         'organization_unit_list': 'list[str]',
         'pki_issuer_type': 'str',
@@ -92,7 +95,9 @@ class PKICertificateIssueDetails(object):
         'code_signing_flag': 'code_signing_flag',
         'country': 'country',
         'create_private_crl': 'create_private_crl',
+        'create_private_ocsp': 'create_private_ocsp',
         'create_public_crl': 'create_public_crl',
+        'create_public_ocsp': 'create_public_ocsp',
         'destination_path': 'destination_path',
         'disable_wildcards': 'disable_wildcards',
         'enforce_hostnames': 'enforce_hostnames',
@@ -107,6 +112,7 @@ class PKICertificateIssueDetails(object):
         'max_path_len': 'max_path_len',
         'non_critical_key_usage': 'non_critical_key_usage',
         'not_before_duration': 'not_before_duration',
+        'ocsp_next_update': 'ocsp_next_update',
         'organization_list': 'organization_list',
         'organization_unit_list': 'organization_unit_list',
         'pki_issuer_type': 'pki_issuer_type',
@@ -119,7 +125,7 @@ class PKICertificateIssueDetails(object):
         'street_address': 'street_address'
     }
 
-    def __init__(self, acme_enabled=None, allow_any_name=None, allow_copy_ext_from_csr=None, allow_subdomains=None, allowed_domains_list=None, allowed_extra_extensions=None, allowed_ip_sans=None, allowed_uri_sans=None, auto_renew_certificate=None, basic_constraints_valid_for_non_ca=None, certificate_authority_mode=None, client_flag=None, code_signing_flag=None, country=None, create_private_crl=None, create_public_crl=None, destination_path=None, disable_wildcards=None, enforce_hostnames=None, expiration_events=None, gw_cluster_id=None, gw_cluster_url=None, is_ca=None, key_bits=None, key_type=None, key_usage_list=None, locality=None, max_path_len=None, non_critical_key_usage=None, not_before_duration=None, organization_list=None, organization_unit_list=None, pki_issuer_type=None, postal_code=None, protect_generated_certificates=None, province=None, renew_before_expiration_in_days=None, require_cn=None, server_flag=None, street_address=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, acme_enabled=None, allow_any_name=None, allow_copy_ext_from_csr=None, allow_subdomains=None, allowed_domains_list=None, allowed_extra_extensions=None, allowed_ip_sans=None, allowed_uri_sans=None, auto_renew_certificate=None, basic_constraints_valid_for_non_ca=None, certificate_authority_mode=None, client_flag=None, code_signing_flag=None, country=None, create_private_crl=None, create_private_ocsp=None, create_public_crl=None, create_public_ocsp=None, destination_path=None, disable_wildcards=None, enforce_hostnames=None, expiration_events=None, gw_cluster_id=None, gw_cluster_url=None, is_ca=None, key_bits=None, key_type=None, key_usage_list=None, locality=None, max_path_len=None, non_critical_key_usage=None, not_before_duration=None, ocsp_next_update=None, organization_list=None, organization_unit_list=None, pki_issuer_type=None, postal_code=None, protect_generated_certificates=None, province=None, renew_before_expiration_in_days=None, require_cn=None, server_flag=None, street_address=None, local_vars_configuration=None):  # noqa: E501
         """PKICertificateIssueDetails - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -140,7 +146,9 @@ class PKICertificateIssueDetails(object):
         self._code_signing_flag = None
         self._country = None
         self._create_private_crl = None
+        self._create_private_ocsp = None
         self._create_public_crl = None
+        self._create_public_ocsp = None
         self._destination_path = None
         self._disable_wildcards = None
         self._enforce_hostnames = None
@@ -155,6 +163,7 @@ class PKICertificateIssueDetails(object):
         self._max_path_len = None
         self._non_critical_key_usage = None
         self._not_before_duration = None
+        self._ocsp_next_update = None
         self._organization_list = None
         self._organization_unit_list = None
         self._pki_issuer_type = None
@@ -197,8 +206,12 @@ class PKICertificateIssueDetails(object):
             self.country = country
         if create_private_crl is not None:
             self.create_private_crl = create_private_crl
+        if create_private_ocsp is not None:
+            self.create_private_ocsp = create_private_ocsp
         if create_public_crl is not None:
             self.create_public_crl = create_public_crl
+        if create_public_ocsp is not None:
+            self.create_public_ocsp = create_public_ocsp
         if destination_path is not None:
             self.destination_path = destination_path
         if disable_wildcards is not None:
@@ -227,6 +240,8 @@ class PKICertificateIssueDetails(object):
             self.non_critical_key_usage = non_critical_key_usage
         if not_before_duration is not None:
             self.not_before_duration = not_before_duration
+        if ocsp_next_update is not None:
+            self.ocsp_next_update = ocsp_next_update
         if organization_list is not None:
             self.organization_list = organization_list
         if organization_unit_list is not None:
@@ -564,6 +579,29 @@ class PKICertificateIssueDetails(object):
         self._create_private_crl = create_private_crl
 
     @property
+    def create_private_ocsp(self):
+        """Gets the create_private_ocsp of this PKICertificateIssueDetails.  # noqa: E501
+
+        CreatePrivateOcsp enables exposing an OCSP endpoint on the Gateway and embedding its URL in the AIA extension of issued certificates.  # noqa: E501
+
+        :return: The create_private_ocsp of this PKICertificateIssueDetails.  # noqa: E501
+        :rtype: bool
+        """
+        return self._create_private_ocsp
+
+    @create_private_ocsp.setter
+    def create_private_ocsp(self, create_private_ocsp):
+        """Sets the create_private_ocsp of this PKICertificateIssueDetails.
+
+        CreatePrivateOcsp enables exposing an OCSP endpoint on the Gateway and embedding its URL in the AIA extension of issued certificates.  # noqa: E501
+
+        :param create_private_ocsp: The create_private_ocsp of this PKICertificateIssueDetails.  # noqa: E501
+        :type: bool
+        """
+
+        self._create_private_ocsp = create_private_ocsp
+
+    @property
     def create_public_crl(self):
         """Gets the create_public_crl of this PKICertificateIssueDetails.  # noqa: E501
 
@@ -583,6 +621,29 @@ class PKICertificateIssueDetails(object):
         """
 
         self._create_public_crl = create_public_crl
+
+    @property
+    def create_public_ocsp(self):
+        """Gets the create_public_ocsp of this PKICertificateIssueDetails.  # noqa: E501
+
+        CreatePublicOcsp enables exposing a public OCSP endpoint on the Gateway and embedding its URL in the AIA extension of issued certificates.  # noqa: E501
+
+        :return: The create_public_ocsp of this PKICertificateIssueDetails.  # noqa: E501
+        :rtype: bool
+        """
+        return self._create_public_ocsp
+
+    @create_public_ocsp.setter
+    def create_public_ocsp(self, create_public_ocsp):
+        """Sets the create_public_ocsp of this PKICertificateIssueDetails.
+
+        CreatePublicOcsp enables exposing a public OCSP endpoint on the Gateway and embedding its URL in the AIA extension of issued certificates.  # noqa: E501
+
+        :param create_public_ocsp: The create_public_ocsp of this PKICertificateIssueDetails.  # noqa: E501
+        :type: bool
+        """
+
+        self._create_public_ocsp = create_public_ocsp
 
     @property
     def destination_path(self):
@@ -885,6 +946,29 @@ class PKICertificateIssueDetails(object):
         """
 
         self._not_before_duration = not_before_duration
+
+    @property
+    def ocsp_next_update(self):
+        """Gets the ocsp_next_update of this PKICertificateIssueDetails.  # noqa: E501
+
+        OcspNextUpdate defines the desired NextUpdate window for OCSP responses. Value is in seconds; 0 means not set. Minimum enforced is 10 minutes.  # noqa: E501
+
+        :return: The ocsp_next_update of this PKICertificateIssueDetails.  # noqa: E501
+        :rtype: int
+        """
+        return self._ocsp_next_update
+
+    @ocsp_next_update.setter
+    def ocsp_next_update(self, ocsp_next_update):
+        """Sets the ocsp_next_update of this PKICertificateIssueDetails.
+
+        OcspNextUpdate defines the desired NextUpdate window for OCSP responses. Value is in seconds; 0 means not set. Minimum enforced is 10 minutes.  # noqa: E501
+
+        :param ocsp_next_update: The ocsp_next_update of this PKICertificateIssueDetails.  # noqa: E501
+        :type: int
+        """
+
+        self._ocsp_next_update = ocsp_next_update
 
     @property
     def organization_list(self):

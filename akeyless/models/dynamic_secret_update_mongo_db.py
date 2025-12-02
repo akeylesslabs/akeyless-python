@@ -48,6 +48,7 @@ class DynamicSecretUpdateMongoDb(object):
         'mongodb_name': 'str',
         'mongodb_password': 'str',
         'mongodb_roles': 'str',
+        'mongodb_scopes': 'str',
         'mongodb_server_uri': 'str',
         'mongodb_uri_options': 'str',
         'mongodb_username': 'str',
@@ -84,6 +85,7 @@ class DynamicSecretUpdateMongoDb(object):
         'mongodb_name': 'mongodb-name',
         'mongodb_password': 'mongodb-password',
         'mongodb_roles': 'mongodb-roles',
+        'mongodb_scopes': 'mongodb-scopes',
         'mongodb_server_uri': 'mongodb-server-uri',
         'mongodb_uri_options': 'mongodb-uri-options',
         'mongodb_username': 'mongodb-username',
@@ -105,7 +107,7 @@ class DynamicSecretUpdateMongoDb(object):
         'user_ttl': 'user-ttl'
     }
 
-    def __init__(self, custom_username_template=None, delete_protection=None, description=None, item_custom_fields=None, json=False, mongodb_atlas_api_private_key=None, mongodb_atlas_api_public_key=None, mongodb_atlas_project_id=None, mongodb_custom_data=None, mongodb_default_auth_db=None, mongodb_host_port=None, mongodb_name=None, mongodb_password=None, mongodb_roles='[]', mongodb_server_uri=None, mongodb_uri_options=None, mongodb_username=None, name=None, new_name=None, password_length=None, producer_encryption_key_name=None, secure_access_bastion_issuer=None, secure_access_certificate_issuer=None, secure_access_db_name=None, secure_access_delay=None, secure_access_enable=None, secure_access_host=None, secure_access_web=False, tags=None, target_name=None, token=None, uid_token=None, user_ttl='60m', local_vars_configuration=None):  # noqa: E501
+    def __init__(self, custom_username_template=None, delete_protection=None, description=None, item_custom_fields=None, json=False, mongodb_atlas_api_private_key=None, mongodb_atlas_api_public_key=None, mongodb_atlas_project_id=None, mongodb_custom_data=None, mongodb_default_auth_db=None, mongodb_host_port=None, mongodb_name=None, mongodb_password=None, mongodb_roles='[]', mongodb_scopes=None, mongodb_server_uri=None, mongodb_uri_options=None, mongodb_username=None, name=None, new_name=None, password_length=None, producer_encryption_key_name=None, secure_access_bastion_issuer=None, secure_access_certificate_issuer=None, secure_access_db_name=None, secure_access_delay=None, secure_access_enable=None, secure_access_host=None, secure_access_web=False, tags=None, target_name=None, token=None, uid_token=None, user_ttl='60m', local_vars_configuration=None):  # noqa: E501
         """DynamicSecretUpdateMongoDb - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -125,6 +127,7 @@ class DynamicSecretUpdateMongoDb(object):
         self._mongodb_name = None
         self._mongodb_password = None
         self._mongodb_roles = None
+        self._mongodb_scopes = None
         self._mongodb_server_uri = None
         self._mongodb_uri_options = None
         self._mongodb_username = None
@@ -174,6 +177,8 @@ class DynamicSecretUpdateMongoDb(object):
             self.mongodb_password = mongodb_password
         if mongodb_roles is not None:
             self.mongodb_roles = mongodb_roles
+        if mongodb_scopes is not None:
+            self.mongodb_scopes = mongodb_scopes
         if mongodb_server_uri is not None:
             self.mongodb_server_uri = mongodb_server_uri
         if mongodb_uri_options is not None:
@@ -533,6 +538,29 @@ class DynamicSecretUpdateMongoDb(object):
         """
 
         self._mongodb_roles = mongodb_roles
+
+    @property
+    def mongodb_scopes(self):
+        """Gets the mongodb_scopes of this DynamicSecretUpdateMongoDb.  # noqa: E501
+
+        MongoDB Scopes (Atlas only)  # noqa: E501
+
+        :return: The mongodb_scopes of this DynamicSecretUpdateMongoDb.  # noqa: E501
+        :rtype: str
+        """
+        return self._mongodb_scopes
+
+    @mongodb_scopes.setter
+    def mongodb_scopes(self, mongodb_scopes):
+        """Sets the mongodb_scopes of this DynamicSecretUpdateMongoDb.
+
+        MongoDB Scopes (Atlas only)  # noqa: E501
+
+        :param mongodb_scopes: The mongodb_scopes of this DynamicSecretUpdateMongoDb.  # noqa: E501
+        :type: str
+        """
+
+        self._mongodb_scopes = mongodb_scopes
 
     @property
     def mongodb_server_uri(self):

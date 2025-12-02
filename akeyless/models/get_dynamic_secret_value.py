@@ -35,6 +35,7 @@ class GetDynamicSecretValue(object):
     """
     openapi_types = {
         'args': 'list[str]',
+        'dbname': 'str',
         'host': 'str',
         'json': 'bool',
         'name': 'str',
@@ -46,6 +47,7 @@ class GetDynamicSecretValue(object):
 
     attribute_map = {
         'args': 'args',
+        'dbname': 'dbname',
         'host': 'host',
         'json': 'json',
         'name': 'name',
@@ -55,13 +57,14 @@ class GetDynamicSecretValue(object):
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, args=None, host=None, json=False, name=None, target=None, timeout=15, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, args=None, dbname=None, host=None, json=False, name=None, target=None, timeout=15, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """GetDynamicSecretValue - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._args = None
+        self._dbname = None
         self._host = None
         self._json = None
         self._name = None
@@ -73,6 +76,8 @@ class GetDynamicSecretValue(object):
 
         if args is not None:
             self.args = args
+        if dbname is not None:
+            self.dbname = dbname
         if host is not None:
             self.host = host
         if json is not None:
@@ -109,6 +114,29 @@ class GetDynamicSecretValue(object):
         """
 
         self._args = args
+
+    @property
+    def dbname(self):
+        """Gets the dbname of this GetDynamicSecretValue.  # noqa: E501
+
+        DBName: Optional override DB name (works only if DS allows it. only relevant for MSSQL)  # noqa: E501
+
+        :return: The dbname of this GetDynamicSecretValue.  # noqa: E501
+        :rtype: str
+        """
+        return self._dbname
+
+    @dbname.setter
+    def dbname(self, dbname):
+        """Sets the dbname of this GetDynamicSecretValue.
+
+        DBName: Optional override DB name (works only if DS allows it. only relevant for MSSQL)  # noqa: E501
+
+        :param dbname: The dbname of this GetDynamicSecretValue.  # noqa: E501
+        :type: str
+        """
+
+        self._dbname = dbname
 
     @property
     def host(self):

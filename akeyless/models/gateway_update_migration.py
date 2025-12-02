@@ -37,6 +37,7 @@ class GatewayUpdateMigration(object):
         'service_account_key_decoded': 'str',
         'ad_auto_rotate': 'str',
         'ad_computer_base_dn': 'str',
+        'ad_discover_iis_app': 'str',
         'ad_discover_services': 'str',
         'ad_discovery_types': 'list[str]',
         'ad_domain_name': 'str',
@@ -100,6 +101,7 @@ class GatewayUpdateMigration(object):
         'service_account_key_decoded': 'ServiceAccountKeyDecoded',
         'ad_auto_rotate': 'ad-auto-rotate',
         'ad_computer_base_dn': 'ad-computer-base-dn',
+        'ad_discover_iis_app': 'ad-discover-iis-app',
         'ad_discover_services': 'ad-discover-services',
         'ad_discovery_types': 'ad-discovery-types',
         'ad_domain_name': 'ad-domain-name',
@@ -159,7 +161,7 @@ class GatewayUpdateMigration(object):
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, service_account_key_decoded=None, ad_auto_rotate=None, ad_computer_base_dn=None, ad_discover_services='false', ad_discovery_types=None, ad_domain_name=None, ad_domain_users_path_template=None, ad_local_users_ignore=None, ad_local_users_path_template=None, ad_os_filter=None, ad_rotation_hour=None, ad_rotation_interval=None, ad_sra_enable_rdp=None, ad_ssh_port='22', ad_target_format='linked', ad_target_name=None, ad_targets_path_template=None, ad_targets_type='windows', ad_user_base_dn=None, ad_user_groups=None, ad_winrm_over_http='false', ad_winrm_port='5986', ad_discover_local_users=None, aws_key=None, aws_key_id=None, aws_region='us-east-2', azure_client_id=None, azure_kv_name=None, azure_secret=None, azure_tenant_id=None, gcp_key=None, hashi_json='true', hashi_ns=None, hashi_token=None, hashi_url=None, id=None, json=False, k8s_ca_certificate=None, k8s_client_certificate=None, k8s_client_key=None, k8s_namespace=None, k8s_password=None, k8s_skip_system=None, k8s_token=None, k8s_url=None, k8s_username=None, name=None, new_name=None, protection_key=None, si_auto_rotate=None, si_rotation_hour=None, si_rotation_interval=None, si_sra_enable_rdp='false', si_target_name=None, si_user_groups=None, si_users_ignore=None, si_users_path_template=None, target_location=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, service_account_key_decoded=None, ad_auto_rotate=None, ad_computer_base_dn=None, ad_discover_iis_app='false', ad_discover_services='false', ad_discovery_types=None, ad_domain_name=None, ad_domain_users_path_template=None, ad_local_users_ignore=None, ad_local_users_path_template=None, ad_os_filter=None, ad_rotation_hour=None, ad_rotation_interval=None, ad_sra_enable_rdp=None, ad_ssh_port='22', ad_target_format='linked', ad_target_name=None, ad_targets_path_template=None, ad_targets_type='windows', ad_user_base_dn=None, ad_user_groups=None, ad_winrm_over_http='false', ad_winrm_port='5986', ad_discover_local_users=None, aws_key=None, aws_key_id=None, aws_region='us-east-2', azure_client_id=None, azure_kv_name=None, azure_secret=None, azure_tenant_id=None, gcp_key=None, hashi_json='true', hashi_ns=None, hashi_token=None, hashi_url=None, id=None, json=False, k8s_ca_certificate=None, k8s_client_certificate=None, k8s_client_key=None, k8s_namespace=None, k8s_password=None, k8s_skip_system=None, k8s_token=None, k8s_url=None, k8s_username=None, name=None, new_name=None, protection_key=None, si_auto_rotate=None, si_rotation_hour=None, si_rotation_interval=None, si_sra_enable_rdp='false', si_target_name=None, si_user_groups=None, si_users_ignore=None, si_users_path_template=None, target_location=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """GatewayUpdateMigration - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -168,6 +170,7 @@ class GatewayUpdateMigration(object):
         self._service_account_key_decoded = None
         self._ad_auto_rotate = None
         self._ad_computer_base_dn = None
+        self._ad_discover_iis_app = None
         self._ad_discover_services = None
         self._ad_discovery_types = None
         self._ad_domain_name = None
@@ -233,6 +236,8 @@ class GatewayUpdateMigration(object):
             self.ad_auto_rotate = ad_auto_rotate
         if ad_computer_base_dn is not None:
             self.ad_computer_base_dn = ad_computer_base_dn
+        if ad_discover_iis_app is not None:
+            self.ad_discover_iis_app = ad_discover_iis_app
         if ad_discover_services is not None:
             self.ad_discover_services = ad_discover_services
         if ad_discovery_types is not None:
@@ -411,6 +416,29 @@ class GatewayUpdateMigration(object):
         """
 
         self._ad_computer_base_dn = ad_computer_base_dn
+
+    @property
+    def ad_discover_iis_app(self):
+        """Gets the ad_discover_iis_app of this GatewayUpdateMigration.  # noqa: E501
+
+        Enable/Disable discovery of IIS application from each domain server as part of the SSH/Windows Rotated Secrets. Default is false. (Relevant only for Active Directory migration)  # noqa: E501
+
+        :return: The ad_discover_iis_app of this GatewayUpdateMigration.  # noqa: E501
+        :rtype: str
+        """
+        return self._ad_discover_iis_app
+
+    @ad_discover_iis_app.setter
+    def ad_discover_iis_app(self, ad_discover_iis_app):
+        """Sets the ad_discover_iis_app of this GatewayUpdateMigration.
+
+        Enable/Disable discovery of IIS application from each domain server as part of the SSH/Windows Rotated Secrets. Default is false. (Relevant only for Active Directory migration)  # noqa: E501
+
+        :param ad_discover_iis_app: The ad_discover_iis_app of this GatewayUpdateMigration.  # noqa: E501
+        :type: str
+        """
+
+        self._ad_discover_iis_app = ad_discover_iis_app
 
     @property
     def ad_discover_services(self):

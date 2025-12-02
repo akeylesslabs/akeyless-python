@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **auto_rotate_interval_in_days** | **int** |  | [optional] 
 **auto_rotate_rotation_hour** | **int** |  | [optional] 
 **computer_base_dn** | **str** |  | [optional] 
+**discover_iis_apps** | **bool** |  | [optional] 
 **discover_local_users** | **bool** | Deprecated | [optional] 
 **discover_services** | **bool** |  | [optional] 
 **discovery_types** | **list[str]** |  | [optional] 

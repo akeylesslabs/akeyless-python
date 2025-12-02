@@ -47,7 +47,9 @@ class UpdatePKICertIssuer(object):
         'code_signing_flag': 'bool',
         'country': 'str',
         'create_private_crl': 'bool',
+        'create_private_ocsp': 'bool',
         'create_public_crl': 'bool',
+        'create_public_ocsp': 'bool',
         'critical_key_usage': 'str',
         'delete_protection': 'str',
         'description': 'str',
@@ -67,6 +69,7 @@ class UpdatePKICertIssuer(object):
         'new_name': 'str',
         'not_enforce_hostnames': 'bool',
         'not_require_cn': 'bool',
+        'ocsp_ttl': 'str',
         'organizational_units': 'str',
         'organizations': 'str',
         'postal_code': 'str',
@@ -96,7 +99,9 @@ class UpdatePKICertIssuer(object):
         'code_signing_flag': 'code-signing-flag',
         'country': 'country',
         'create_private_crl': 'create-private-crl',
+        'create_private_ocsp': 'create-private-ocsp',
         'create_public_crl': 'create-public-crl',
+        'create_public_ocsp': 'create-public-ocsp',
         'critical_key_usage': 'critical-key-usage',
         'delete_protection': 'delete_protection',
         'description': 'description',
@@ -116,6 +121,7 @@ class UpdatePKICertIssuer(object):
         'new_name': 'new-name',
         'not_enforce_hostnames': 'not-enforce-hostnames',
         'not_require_cn': 'not-require-cn',
+        'ocsp_ttl': 'ocsp-ttl',
         'organizational_units': 'organizational-units',
         'organizations': 'organizations',
         'postal_code': 'postal-code',
@@ -131,7 +137,7 @@ class UpdatePKICertIssuer(object):
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, add_tag=None, allow_any_name=None, allow_copy_ext_from_csr=None, allow_subdomains=None, allowed_domains=None, allowed_extra_extensions=None, allowed_ip_sans=None, allowed_uri_sans=None, auto_renew=None, client_flag=None, code_signing_flag=None, country=None, create_private_crl=None, create_public_crl=None, critical_key_usage='true', delete_protection=None, description=None, destination_path=None, disable_wildcards=None, enable_acme=None, expiration_event_in=None, gw_cluster_url=None, is_ca=None, item_custom_fields=None, json=False, key_usage='DigitalSignature,KeyAgreement,KeyEncipherment', locality=None, max_path_len=-1, metadata=None, name=None, new_name=None, not_enforce_hostnames=None, not_require_cn=None, organizational_units=None, organizations=None, postal_code=None, protect_certificates=None, province=None, rm_tag=None, scheduled_renew=None, server_flag=None, signer_key_name=None, street_address=None, token=None, ttl=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, add_tag=None, allow_any_name=None, allow_copy_ext_from_csr=None, allow_subdomains=None, allowed_domains=None, allowed_extra_extensions=None, allowed_ip_sans=None, allowed_uri_sans=None, auto_renew=None, client_flag=None, code_signing_flag=None, country=None, create_private_crl=None, create_private_ocsp=None, create_public_crl=None, create_public_ocsp=None, critical_key_usage='true', delete_protection=None, description=None, destination_path=None, disable_wildcards=None, enable_acme=None, expiration_event_in=None, gw_cluster_url=None, is_ca=None, item_custom_fields=None, json=False, key_usage='DigitalSignature,KeyAgreement,KeyEncipherment', locality=None, max_path_len=-1, metadata=None, name=None, new_name=None, not_enforce_hostnames=None, not_require_cn=None, ocsp_ttl=None, organizational_units=None, organizations=None, postal_code=None, protect_certificates=None, province=None, rm_tag=None, scheduled_renew=None, server_flag=None, signer_key_name=None, street_address=None, token=None, ttl=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """UpdatePKICertIssuer - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -150,7 +156,9 @@ class UpdatePKICertIssuer(object):
         self._code_signing_flag = None
         self._country = None
         self._create_private_crl = None
+        self._create_private_ocsp = None
         self._create_public_crl = None
+        self._create_public_ocsp = None
         self._critical_key_usage = None
         self._delete_protection = None
         self._description = None
@@ -170,6 +178,7 @@ class UpdatePKICertIssuer(object):
         self._new_name = None
         self._not_enforce_hostnames = None
         self._not_require_cn = None
+        self._ocsp_ttl = None
         self._organizational_units = None
         self._organizations = None
         self._postal_code = None
@@ -211,8 +220,12 @@ class UpdatePKICertIssuer(object):
             self.country = country
         if create_private_crl is not None:
             self.create_private_crl = create_private_crl
+        if create_private_ocsp is not None:
+            self.create_private_ocsp = create_private_ocsp
         if create_public_crl is not None:
             self.create_public_crl = create_public_crl
+        if create_public_ocsp is not None:
+            self.create_public_ocsp = create_public_ocsp
         if critical_key_usage is not None:
             self.critical_key_usage = critical_key_usage
         if delete_protection is not None:
@@ -250,6 +263,8 @@ class UpdatePKICertIssuer(object):
             self.not_enforce_hostnames = not_enforce_hostnames
         if not_require_cn is not None:
             self.not_require_cn = not_require_cn
+        if ocsp_ttl is not None:
+            self.ocsp_ttl = ocsp_ttl
         if organizational_units is not None:
             self.organizational_units = organizational_units
         if organizations is not None:
@@ -576,6 +591,27 @@ class UpdatePKICertIssuer(object):
         self._create_private_crl = create_private_crl
 
     @property
+    def create_private_ocsp(self):
+        """Gets the create_private_ocsp of this UpdatePKICertIssuer.  # noqa: E501
+
+
+        :return: The create_private_ocsp of this UpdatePKICertIssuer.  # noqa: E501
+        :rtype: bool
+        """
+        return self._create_private_ocsp
+
+    @create_private_ocsp.setter
+    def create_private_ocsp(self, create_private_ocsp):
+        """Sets the create_private_ocsp of this UpdatePKICertIssuer.
+
+
+        :param create_private_ocsp: The create_private_ocsp of this UpdatePKICertIssuer.  # noqa: E501
+        :type: bool
+        """
+
+        self._create_private_ocsp = create_private_ocsp
+
+    @property
     def create_public_crl(self):
         """Gets the create_public_crl of this UpdatePKICertIssuer.  # noqa: E501
 
@@ -597,6 +633,27 @@ class UpdatePKICertIssuer(object):
         """
 
         self._create_public_crl = create_public_crl
+
+    @property
+    def create_public_ocsp(self):
+        """Gets the create_public_ocsp of this UpdatePKICertIssuer.  # noqa: E501
+
+
+        :return: The create_public_ocsp of this UpdatePKICertIssuer.  # noqa: E501
+        :rtype: bool
+        """
+        return self._create_public_ocsp
+
+    @create_public_ocsp.setter
+    def create_public_ocsp(self, create_public_ocsp):
+        """Sets the create_public_ocsp of this UpdatePKICertIssuer.
+
+
+        :param create_public_ocsp: The create_public_ocsp of this UpdatePKICertIssuer.  # noqa: E501
+        :type: bool
+        """
+
+        self._create_public_ocsp = create_public_ocsp
 
     @property
     def critical_key_usage(self):
@@ -1036,6 +1093,27 @@ class UpdatePKICertIssuer(object):
         """
 
         self._not_require_cn = not_require_cn
+
+    @property
+    def ocsp_ttl(self):
+        """Gets the ocsp_ttl of this UpdatePKICertIssuer.  # noqa: E501
+
+
+        :return: The ocsp_ttl of this UpdatePKICertIssuer.  # noqa: E501
+        :rtype: str
+        """
+        return self._ocsp_ttl
+
+    @ocsp_ttl.setter
+    def ocsp_ttl(self, ocsp_ttl):
+        """Sets the ocsp_ttl of this UpdatePKICertIssuer.
+
+
+        :param ocsp_ttl: The ocsp_ttl of this UpdatePKICertIssuer.  # noqa: E501
+        :type: str
+        """
+
+        self._ocsp_ttl = ocsp_ttl
 
     @property
     def organizational_units(self):

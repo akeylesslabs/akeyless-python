@@ -5,6 +5,7 @@ updateAuthMethodAzureAD is a command that updates a new auth method that will be
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **access_expires** | **int** | Access expiration date in Unix timestamp (select 0 for access without expiry date) | [optional] [default to 0]
+**allowed_client_type** | **list[str]** |  | [optional] 
 **audience** | **str** | Deprecated (Deprecated) The audience in the JWT | [optional] [default to 'https://management.azure.com/']
 **audit_logs_claims** | **list[str]** | Subclaims to include in audit logs, e.g \&quot;--audit-logs-claims email --audit-logs-claims username\&quot; | [optional] 
 **bound_group_id** | **list[str]** | A list of group ids that the access is restricted to | [optional] 

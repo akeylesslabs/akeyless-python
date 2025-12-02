@@ -35,6 +35,7 @@ class AuthMethodCreateKerberos(object):
     """
     openapi_types = {
         'access_expires': 'int',
+        'allowed_client_type': 'list[str]',
         'audit_logs_claims': 'list[str]',
         'bind_dn': 'str',
         'bind_dn_password': 'str',
@@ -68,6 +69,7 @@ class AuthMethodCreateKerberos(object):
 
     attribute_map = {
         'access_expires': 'access-expires',
+        'allowed_client_type': 'allowed-client-type',
         'audit_logs_claims': 'audit-logs-claims',
         'bind_dn': 'bind-dn',
         'bind_dn_password': 'bind-dn-password',
@@ -99,13 +101,14 @@ class AuthMethodCreateKerberos(object):
         'user_dn': 'user-dn'
     }
 
-    def __init__(self, access_expires=0, audit_logs_claims=None, bind_dn=None, bind_dn_password=None, bound_ips=None, delete_protection=None, description=None, expiration_event_in=None, force_sub_claims=None, group_attr=None, group_dn=None, group_filter=None, gw_bound_ips=None, json=False, jwt_ttl=0, keytab_file_data=None, keytab_file_path=None, krb5_conf_data=None, krb5_conf_path=None, ldap_anonymous_search=None, ldap_ca_cert=None, ldap_url=None, name=None, product_type=None, subclaims_delimiters=None, token=None, uid_token=None, unique_identifier=None, user_attribute=None, user_dn=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, access_expires=0, allowed_client_type=None, audit_logs_claims=None, bind_dn=None, bind_dn_password=None, bound_ips=None, delete_protection=None, description=None, expiration_event_in=None, force_sub_claims=None, group_attr=None, group_dn=None, group_filter=None, gw_bound_ips=None, json=False, jwt_ttl=0, keytab_file_data=None, keytab_file_path=None, krb5_conf_data=None, krb5_conf_path=None, ldap_anonymous_search=None, ldap_ca_cert=None, ldap_url=None, name=None, product_type=None, subclaims_delimiters=None, token=None, uid_token=None, unique_identifier=None, user_attribute=None, user_dn=None, local_vars_configuration=None):  # noqa: E501
         """AuthMethodCreateKerberos - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._access_expires = None
+        self._allowed_client_type = None
         self._audit_logs_claims = None
         self._bind_dn = None
         self._bind_dn_password = None
@@ -139,6 +142,8 @@ class AuthMethodCreateKerberos(object):
 
         if access_expires is not None:
             self.access_expires = access_expires
+        if allowed_client_type is not None:
+            self.allowed_client_type = allowed_client_type
         if audit_logs_claims is not None:
             self.audit_logs_claims = audit_logs_claims
         if bind_dn is not None:
@@ -219,6 +224,27 @@ class AuthMethodCreateKerberos(object):
         """
 
         self._access_expires = access_expires
+
+    @property
+    def allowed_client_type(self):
+        """Gets the allowed_client_type of this AuthMethodCreateKerberos.  # noqa: E501
+
+
+        :return: The allowed_client_type of this AuthMethodCreateKerberos.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._allowed_client_type
+
+    @allowed_client_type.setter
+    def allowed_client_type(self, allowed_client_type):
+        """Sets the allowed_client_type of this AuthMethodCreateKerberos.
+
+
+        :param allowed_client_type: The allowed_client_type of this AuthMethodCreateKerberos.  # noqa: E501
+        :type: list[str]
+        """
+
+        self._allowed_client_type = allowed_client_type
 
     @property
     def audit_logs_claims(self):

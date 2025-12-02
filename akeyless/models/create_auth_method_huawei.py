@@ -35,6 +35,7 @@ class CreateAuthMethodHuawei(object):
     """
     openapi_types = {
         'access_expires': 'int',
+        'allowed_client_type': 'list[str]',
         'audit_logs_claims': 'list[str]',
         'auth_url': 'str',
         'bound_domain_id': 'list[str]',
@@ -59,6 +60,7 @@ class CreateAuthMethodHuawei(object):
 
     attribute_map = {
         'access_expires': 'access-expires',
+        'allowed_client_type': 'allowed-client-type',
         'audit_logs_claims': 'audit-logs-claims',
         'auth_url': 'auth-url',
         'bound_domain_id': 'bound-domain-id',
@@ -81,13 +83,14 @@ class CreateAuthMethodHuawei(object):
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, access_expires=0, audit_logs_claims=None, auth_url='https://iam.myhwclouds.com:443/v3', bound_domain_id=None, bound_domain_name=None, bound_ips=None, bound_tenant_id=None, bound_tenant_name=None, bound_user_id=None, bound_user_name=None, delete_protection=None, description=None, expiration_event_in=None, force_sub_claims=None, gw_bound_ips=None, json=False, jwt_ttl=0, name=None, product_type=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, access_expires=0, allowed_client_type=None, audit_logs_claims=None, auth_url='https://iam.myhwclouds.com:443/v3', bound_domain_id=None, bound_domain_name=None, bound_ips=None, bound_tenant_id=None, bound_tenant_name=None, bound_user_id=None, bound_user_name=None, delete_protection=None, description=None, expiration_event_in=None, force_sub_claims=None, gw_bound_ips=None, json=False, jwt_ttl=0, name=None, product_type=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """CreateAuthMethodHuawei - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._access_expires = None
+        self._allowed_client_type = None
         self._audit_logs_claims = None
         self._auth_url = None
         self._bound_domain_id = None
@@ -112,6 +115,8 @@ class CreateAuthMethodHuawei(object):
 
         if access_expires is not None:
             self.access_expires = access_expires
+        if allowed_client_type is not None:
+            self.allowed_client_type = allowed_client_type
         if audit_logs_claims is not None:
             self.audit_logs_claims = audit_logs_claims
         if auth_url is not None:
@@ -174,6 +179,27 @@ class CreateAuthMethodHuawei(object):
         """
 
         self._access_expires = access_expires
+
+    @property
+    def allowed_client_type(self):
+        """Gets the allowed_client_type of this CreateAuthMethodHuawei.  # noqa: E501
+
+
+        :return: The allowed_client_type of this CreateAuthMethodHuawei.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._allowed_client_type
+
+    @allowed_client_type.setter
+    def allowed_client_type(self, allowed_client_type):
+        """Sets the allowed_client_type of this CreateAuthMethodHuawei.
+
+
+        :param allowed_client_type: The allowed_client_type of this CreateAuthMethodHuawei.  # noqa: E501
+        :type: list[str]
+        """
+
+        self._allowed_client_type = allowed_client_type
 
     @property
     def audit_logs_claims(self):

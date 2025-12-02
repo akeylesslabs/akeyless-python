@@ -36,6 +36,7 @@ class StaticSecretDeleteSync(object):
     openapi_types = {
         'json': 'bool',
         'name': 'str',
+        'remote_secret_name': 'str',
         'token': 'str',
         'uid_token': 'str',
         'usc_name': 'str'
@@ -44,12 +45,13 @@ class StaticSecretDeleteSync(object):
     attribute_map = {
         'json': 'json',
         'name': 'name',
+        'remote_secret_name': 'remote-secret-name',
         'token': 'token',
         'uid_token': 'uid-token',
         'usc_name': 'usc-name'
     }
 
-    def __init__(self, json=False, name=None, token=None, uid_token=None, usc_name=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, json=False, name=None, remote_secret_name=None, token=None, uid_token=None, usc_name=None, local_vars_configuration=None):  # noqa: E501
         """StaticSecretDeleteSync - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -57,6 +59,7 @@ class StaticSecretDeleteSync(object):
 
         self._json = None
         self._name = None
+        self._remote_secret_name = None
         self._token = None
         self._uid_token = None
         self._usc_name = None
@@ -65,6 +68,8 @@ class StaticSecretDeleteSync(object):
         if json is not None:
             self.json = json
         self.name = name
+        if remote_secret_name is not None:
+            self.remote_secret_name = remote_secret_name
         if token is not None:
             self.token = token
         if uid_token is not None:
@@ -118,6 +123,29 @@ class StaticSecretDeleteSync(object):
             raise ValueError("Invalid value for `name`, must not be `None`")  # noqa: E501
 
         self._name = name
+
+    @property
+    def remote_secret_name(self):
+        """Gets the remote_secret_name of this StaticSecretDeleteSync.  # noqa: E501
+
+        Remote Secret Name to disambiguate when multiple syncs exist under the same USC  # noqa: E501
+
+        :return: The remote_secret_name of this StaticSecretDeleteSync.  # noqa: E501
+        :rtype: str
+        """
+        return self._remote_secret_name
+
+    @remote_secret_name.setter
+    def remote_secret_name(self, remote_secret_name):
+        """Sets the remote_secret_name of this StaticSecretDeleteSync.
+
+        Remote Secret Name to disambiguate when multiple syncs exist under the same USC  # noqa: E501
+
+        :param remote_secret_name: The remote_secret_name of this StaticSecretDeleteSync.  # noqa: E501
+        :type: str
+        """
+
+        self._remote_secret_name = remote_secret_name
 
     @property
     def token(self):

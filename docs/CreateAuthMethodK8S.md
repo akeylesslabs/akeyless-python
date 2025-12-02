@@ -5,6 +5,7 @@ createAuthMethodK8S is a command that creates a new auth method that will be abl
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **access_expires** | **int** | Access expiration date in Unix timestamp (select 0 for access without expiry date) | [optional] [default to 0]
+**allowed_client_type** | **list[str]** |  | [optional] 
 **audience** | **str** | The audience in the Kubernetes JWT that the access is restricted to | [optional] 
 **audit_logs_claims** | **list[str]** | Subclaims to include in audit logs, e.g \&quot;--audit-logs-claims email --audit-logs-claims username\&quot; | [optional] 
 **bound_ips** | **list[str]** | A CIDR whitelist with the IPs that the access is restricted to | [optional] 

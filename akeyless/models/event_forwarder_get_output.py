@@ -34,24 +34,29 @@ class EventForwarderGetOutput(object):
                             and the value is json key in definition.
     """
     openapi_types = {
-        'event_forwarder': 'NotiForwarder'
+        'event_forwarder': 'NotiForwarder',
+        'event_forwarder_details': 'NotiForwarderDetailsInput'
     }
 
     attribute_map = {
-        'event_forwarder': 'event_forwarder'
+        'event_forwarder': 'event_forwarder',
+        'event_forwarder_details': 'event_forwarder_details'
     }
 
-    def __init__(self, event_forwarder=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, event_forwarder=None, event_forwarder_details=None, local_vars_configuration=None):  # noqa: E501
         """EventForwarderGetOutput - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._event_forwarder = None
+        self._event_forwarder_details = None
         self.discriminator = None
 
         if event_forwarder is not None:
             self.event_forwarder = event_forwarder
+        if event_forwarder_details is not None:
+            self.event_forwarder_details = event_forwarder_details
 
     @property
     def event_forwarder(self):
@@ -73,6 +78,27 @@ class EventForwarderGetOutput(object):
         """
 
         self._event_forwarder = event_forwarder
+
+    @property
+    def event_forwarder_details(self):
+        """Gets the event_forwarder_details of this EventForwarderGetOutput.  # noqa: E501
+
+
+        :return: The event_forwarder_details of this EventForwarderGetOutput.  # noqa: E501
+        :rtype: NotiForwarderDetailsInput
+        """
+        return self._event_forwarder_details
+
+    @event_forwarder_details.setter
+    def event_forwarder_details(self, event_forwarder_details):
+        """Sets the event_forwarder_details of this EventForwarderGetOutput.
+
+
+        :param event_forwarder_details: The event_forwarder_details of this EventForwarderGetOutput.  # noqa: E501
+        :type: NotiForwarderDetailsInput
+        """
+
+        self._event_forwarder_details = event_forwarder_details
 
     def to_dict(self):
         """Returns the model properties as a dict"""

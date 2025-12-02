@@ -5,6 +5,7 @@ authMethodUpdateKerberos is a command that updates an auth method that will be a
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **access_expires** | **int** | Access expiration date in Unix timestamp (select 0 for access without expiry date) | [optional] [default to 0]
+**allowed_client_type** | **list[str]** |  | [optional] 
 **audit_logs_claims** | **list[str]** | Subclaims to include in audit logs, e.g \&quot;--audit-logs-claims email --audit-logs-claims username\&quot; | [optional] 
 **bind_dn** | **str** |  | [optional] 
 **bind_dn_password** | **str** |  | [optional] 

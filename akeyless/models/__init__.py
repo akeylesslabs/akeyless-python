@@ -45,6 +45,7 @@ from akeyless.models.alias_details_output import AliasDetailsOutput
 from akeyless.models.all_analytics_data import AllAnalyticsData
 from akeyless.models.allowed_access import AllowedAccess
 from akeyless.models.allowed_access_old import AllowedAccessOld
+from akeyless.models.allowed_client_type import AllowedClientType
 from akeyless.models.allowed_ip_settings import AllowedIpSettings
 from akeyless.models.artifactory_target_details import ArtifactoryTargetDetails
 from akeyless.models.assoc_role_auth_method import AssocRoleAuthMethod
@@ -776,6 +777,7 @@ from akeyless.models.name import Name
 from akeyless.models.native_k8s_target_details import NativeK8sTargetDetails
 from akeyless.models.next_auto_rotation_event import NextAutoRotationEvent
 from akeyless.models.noti_forwarder import NotiForwarder
+from akeyless.models.noti_forwarder_details_input import NotiForwarderDetailsInput
 from akeyless.models.null_string import NullString
 from akeyless.models.null_time import NullTime
 from akeyless.models.o_auth2_access_rules import OAuth2AccessRules
@@ -911,6 +913,7 @@ from akeyless.models.sign_pki_cert_output import SignPKICertOutput
 from akeyless.models.sign_pki_cert_with_classic_key import SignPKICertWithClassicKey
 from akeyless.models.sign_rsa_ssa_pss import SignRsaSsaPss
 from akeyless.models.sign_rsa_ssa_pss_output import SignRsaSsaPssOutput
+from akeyless.models.slack_noti_forwarder_details import SlackNotiForwarderDetails
 from akeyless.models.sm_info import SmInfo
 from akeyless.models.splunk_log_forwarding_config import SplunkLogForwardingConfig
 from akeyless.models.sra_desktop_app_conf import SraDesktopAppConf
@@ -993,6 +996,7 @@ from akeyless.models.target_update_ssh import TargetUpdateSsh
 from akeyless.models.target_update_web import TargetUpdateWeb
 from akeyless.models.target_update_windows import TargetUpdateWindows
 from akeyless.models.target_update_zero_ssl import TargetUpdateZeroSSL
+from akeyless.models.teams_noti_forwarder_details import TeamsNotiForwarderDetails
 from akeyless.models.tmp_user_data import TmpUserData
 from akeyless.models.tokenize import Tokenize
 from akeyless.models.tokenize_output import TokenizeOutput
@@ -1142,6 +1146,7 @@ from akeyless.models.web_bastion_guacamole import WebBastionGuacamole
 from akeyless.models.web_bastion_rdp_record import WebBastionRdpRecord
 from akeyless.models.web_hook_noti_forwarder_public_details import WebHookNotiForwarderPublicDetails
 from akeyless.models.web_target_details import WebTargetDetails
+from akeyless.models.webhook_noti_forwarder_details import WebhookNotiForwarderDetails
 from akeyless.models.windows_service import WindowsService
 from akeyless.models.windows_service_attributes import WindowsServiceAttributes
 from akeyless.models.windows_target_details import WindowsTargetDetails

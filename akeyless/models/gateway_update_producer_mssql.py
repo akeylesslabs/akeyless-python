@@ -38,6 +38,7 @@ class GatewayUpdateProducerMSSQL(object):
         'delete_protection': 'str',
         'item_custom_fields': 'dict(str, str)',
         'json': 'bool',
+        'mssql_allowed_db_names': 'str',
         'mssql_create_statements': 'str',
         'mssql_dbname': 'str',
         'mssql_host': 'str',
@@ -69,6 +70,7 @@ class GatewayUpdateProducerMSSQL(object):
         'delete_protection': 'delete_protection',
         'item_custom_fields': 'item-custom-fields',
         'json': 'json',
+        'mssql_allowed_db_names': 'mssql-allowed-db-names',
         'mssql_create_statements': 'mssql-create-statements',
         'mssql_dbname': 'mssql-dbname',
         'mssql_host': 'mssql-host',
@@ -95,7 +97,7 @@ class GatewayUpdateProducerMSSQL(object):
         'user_ttl': 'user-ttl'
     }
 
-    def __init__(self, custom_username_template=None, delete_protection=None, item_custom_fields=None, json=False, mssql_create_statements=None, mssql_dbname=None, mssql_host='127.0.0.1', mssql_password=None, mssql_port='1433', mssql_revocation_statements=None, mssql_username=None, name=None, new_name=None, password_length=None, producer_encryption_key_name=None, secure_access_bastion_issuer=None, secure_access_certificate_issuer=None, secure_access_db_name=None, secure_access_db_schema=None, secure_access_delay=None, secure_access_enable=None, secure_access_host=None, secure_access_web=False, tags=None, target_name=None, token=None, uid_token=None, user_ttl='60m', local_vars_configuration=None):  # noqa: E501
+    def __init__(self, custom_username_template=None, delete_protection=None, item_custom_fields=None, json=False, mssql_allowed_db_names=None, mssql_create_statements=None, mssql_dbname=None, mssql_host='127.0.0.1', mssql_password=None, mssql_port='1433', mssql_revocation_statements=None, mssql_username=None, name=None, new_name=None, password_length=None, producer_encryption_key_name=None, secure_access_bastion_issuer=None, secure_access_certificate_issuer=None, secure_access_db_name=None, secure_access_db_schema=None, secure_access_delay=None, secure_access_enable=None, secure_access_host=None, secure_access_web=False, tags=None, target_name=None, token=None, uid_token=None, user_ttl='60m', local_vars_configuration=None):  # noqa: E501
         """GatewayUpdateProducerMSSQL - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -105,6 +107,7 @@ class GatewayUpdateProducerMSSQL(object):
         self._delete_protection = None
         self._item_custom_fields = None
         self._json = None
+        self._mssql_allowed_db_names = None
         self._mssql_create_statements = None
         self._mssql_dbname = None
         self._mssql_host = None
@@ -139,6 +142,8 @@ class GatewayUpdateProducerMSSQL(object):
             self.item_custom_fields = item_custom_fields
         if json is not None:
             self.json = json
+        if mssql_allowed_db_names is not None:
+            self.mssql_allowed_db_names = mssql_allowed_db_names
         if mssql_create_statements is not None:
             self.mssql_create_statements = mssql_create_statements
         if mssql_dbname is not None:
@@ -278,6 +283,29 @@ class GatewayUpdateProducerMSSQL(object):
         """
 
         self._json = json
+
+    @property
+    def mssql_allowed_db_names(self):
+        """Gets the mssql_allowed_db_names of this GatewayUpdateProducerMSSQL.  # noqa: E501
+
+        CSV of allowed DB names for runtime selection when getting the secret value. Empty => use target DB only; \"*\" => any DB allowed; One or more names => user must choose from this list  # noqa: E501
+
+        :return: The mssql_allowed_db_names of this GatewayUpdateProducerMSSQL.  # noqa: E501
+        :rtype: str
+        """
+        return self._mssql_allowed_db_names
+
+    @mssql_allowed_db_names.setter
+    def mssql_allowed_db_names(self, mssql_allowed_db_names):
+        """Sets the mssql_allowed_db_names of this GatewayUpdateProducerMSSQL.
+
+        CSV of allowed DB names for runtime selection when getting the secret value. Empty => use target DB only; \"*\" => any DB allowed; One or more names => user must choose from this list  # noqa: E501
+
+        :param mssql_allowed_db_names: The mssql_allowed_db_names of this GatewayUpdateProducerMSSQL.  # noqa: E501
+        :type: str
+        """
+
+        self._mssql_allowed_db_names = mssql_allowed_db_names
 
     @property
     def mssql_create_statements(self):

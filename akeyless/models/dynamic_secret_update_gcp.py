@@ -34,9 +34,11 @@ class DynamicSecretUpdateGcp(object):
                             and the value is json key in definition.
     """
     openapi_types = {
+        'access_type': 'str',
         'custom_username_template': 'str',
         'delete_protection': 'str',
         'description': 'str',
+        'fixed_user_claim_keyname': 'str',
         'gcp_cred_type': 'str',
         'gcp_key': 'str',
         'gcp_key_algo': 'str',
@@ -49,6 +51,12 @@ class DynamicSecretUpdateGcp(object):
         'new_name': 'str',
         'producer_encryption_key_name': 'str',
         'role_binding': 'str',
+        'role_names': 'str',
+        'secure_access_delay': 'int',
+        'secure_access_enable': 'str',
+        'secure_access_url': 'str',
+        'secure_access_web_browsing': 'bool',
+        'secure_access_web_proxy': 'bool',
         'service_account_type': 'str',
         'tags': 'list[str]',
         'target_name': 'str',
@@ -58,9 +66,11 @@ class DynamicSecretUpdateGcp(object):
     }
 
     attribute_map = {
+        'access_type': 'access-type',
         'custom_username_template': 'custom-username-template',
         'delete_protection': 'delete_protection',
         'description': 'description',
+        'fixed_user_claim_keyname': 'fixed-user-claim-keyname',
         'gcp_cred_type': 'gcp-cred-type',
         'gcp_key': 'gcp-key',
         'gcp_key_algo': 'gcp-key-algo',
@@ -73,6 +83,12 @@ class DynamicSecretUpdateGcp(object):
         'new_name': 'new-name',
         'producer_encryption_key_name': 'producer-encryption-key-name',
         'role_binding': 'role-binding',
+        'role_names': 'role-names',
+        'secure_access_delay': 'secure-access-delay',
+        'secure_access_enable': 'secure-access-enable',
+        'secure_access_url': 'secure-access-url',
+        'secure_access_web_browsing': 'secure-access-web-browsing',
+        'secure_access_web_proxy': 'secure-access-web-proxy',
         'service_account_type': 'service-account-type',
         'tags': 'tags',
         'target_name': 'target-name',
@@ -81,15 +97,17 @@ class DynamicSecretUpdateGcp(object):
         'user_ttl': 'user-ttl'
     }
 
-    def __init__(self, custom_username_template=None, delete_protection=None, description=None, gcp_cred_type=None, gcp_key=None, gcp_key_algo=None, gcp_project_id=None, gcp_sa_email=None, gcp_token_scopes=None, item_custom_fields=None, json=False, name=None, new_name=None, producer_encryption_key_name=None, role_binding=None, service_account_type='fixed', tags=None, target_name=None, token=None, uid_token=None, user_ttl='60m', local_vars_configuration=None):  # noqa: E501
+    def __init__(self, access_type=None, custom_username_template=None, delete_protection=None, description=None, fixed_user_claim_keyname='ext_email', gcp_cred_type=None, gcp_key=None, gcp_key_algo=None, gcp_project_id=None, gcp_sa_email=None, gcp_token_scopes=None, item_custom_fields=None, json=False, name=None, new_name=None, producer_encryption_key_name=None, role_binding=None, role_names=None, secure_access_delay=None, secure_access_enable=None, secure_access_url=None, secure_access_web_browsing=False, secure_access_web_proxy=False, service_account_type='fixed', tags=None, target_name=None, token=None, uid_token=None, user_ttl='60m', local_vars_configuration=None):  # noqa: E501
         """DynamicSecretUpdateGcp - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
+        self._access_type = None
         self._custom_username_template = None
         self._delete_protection = None
         self._description = None
+        self._fixed_user_claim_keyname = None
         self._gcp_cred_type = None
         self._gcp_key = None
         self._gcp_key_algo = None
@@ -102,6 +120,12 @@ class DynamicSecretUpdateGcp(object):
         self._new_name = None
         self._producer_encryption_key_name = None
         self._role_binding = None
+        self._role_names = None
+        self._secure_access_delay = None
+        self._secure_access_enable = None
+        self._secure_access_url = None
+        self._secure_access_web_browsing = None
+        self._secure_access_web_proxy = None
         self._service_account_type = None
         self._tags = None
         self._target_name = None
@@ -110,12 +134,16 @@ class DynamicSecretUpdateGcp(object):
         self._user_ttl = None
         self.discriminator = None
 
+        if access_type is not None:
+            self.access_type = access_type
         if custom_username_template is not None:
             self.custom_username_template = custom_username_template
         if delete_protection is not None:
             self.delete_protection = delete_protection
         if description is not None:
             self.description = description
+        if fixed_user_claim_keyname is not None:
+            self.fixed_user_claim_keyname = fixed_user_claim_keyname
         if gcp_cred_type is not None:
             self.gcp_cred_type = gcp_cred_type
         if gcp_key is not None:
@@ -139,7 +167,20 @@ class DynamicSecretUpdateGcp(object):
             self.producer_encryption_key_name = producer_encryption_key_name
         if role_binding is not None:
             self.role_binding = role_binding
-        self.service_account_type = service_account_type
+        if role_names is not None:
+            self.role_names = role_names
+        if secure_access_delay is not None:
+            self.secure_access_delay = secure_access_delay
+        if secure_access_enable is not None:
+            self.secure_access_enable = secure_access_enable
+        if secure_access_url is not None:
+            self.secure_access_url = secure_access_url
+        if secure_access_web_browsing is not None:
+            self.secure_access_web_browsing = secure_access_web_browsing
+        if secure_access_web_proxy is not None:
+            self.secure_access_web_proxy = secure_access_web_proxy
+        if service_account_type is not None:
+            self.service_account_type = service_account_type
         if tags is not None:
             self.tags = tags
         if target_name is not None:
@@ -150,6 +191,27 @@ class DynamicSecretUpdateGcp(object):
             self.uid_token = uid_token
         if user_ttl is not None:
             self.user_ttl = user_ttl
+
+    @property
+    def access_type(self):
+        """Gets the access_type of this DynamicSecretUpdateGcp.  # noqa: E501
+
+
+        :return: The access_type of this DynamicSecretUpdateGcp.  # noqa: E501
+        :rtype: str
+        """
+        return self._access_type
+
+    @access_type.setter
+    def access_type(self, access_type):
+        """Sets the access_type of this DynamicSecretUpdateGcp.
+
+
+        :param access_type: The access_type of this DynamicSecretUpdateGcp.  # noqa: E501
+        :type: str
+        """
+
+        self._access_type = access_type
 
     @property
     def custom_username_template(self):
@@ -221,6 +283,29 @@ class DynamicSecretUpdateGcp(object):
         self._description = description
 
     @property
+    def fixed_user_claim_keyname(self):
+        """Gets the fixed_user_claim_keyname of this DynamicSecretUpdateGcp.  # noqa: E501
+
+        For externally provided users, denotes the key-name of IdP claim to extract the username from (Relevant only when --access-type=external)  # noqa: E501
+
+        :return: The fixed_user_claim_keyname of this DynamicSecretUpdateGcp.  # noqa: E501
+        :rtype: str
+        """
+        return self._fixed_user_claim_keyname
+
+    @fixed_user_claim_keyname.setter
+    def fixed_user_claim_keyname(self, fixed_user_claim_keyname):
+        """Sets the fixed_user_claim_keyname of this DynamicSecretUpdateGcp.
+
+        For externally provided users, denotes the key-name of IdP claim to extract the username from (Relevant only when --access-type=external)  # noqa: E501
+
+        :param fixed_user_claim_keyname: The fixed_user_claim_keyname of this DynamicSecretUpdateGcp.  # noqa: E501
+        :type: str
+        """
+
+        self._fixed_user_claim_keyname = fixed_user_claim_keyname
+
+    @property
     def gcp_cred_type(self):
         """Gets the gcp_cred_type of this DynamicSecretUpdateGcp.  # noqa: E501
 
@@ -268,7 +353,7 @@ class DynamicSecretUpdateGcp(object):
     def gcp_key_algo(self):
         """Gets the gcp_key_algo of this DynamicSecretUpdateGcp.  # noqa: E501
 
-        Service account key algorithm, e.g. KEY_ALG_RSA_1024  # noqa: E501
+        Service account key algorithm, e.g. KEY_ALG_RSA_1024 (Relevant only when --access-type=sa and --gcp-cred-type=key)  # noqa: E501
 
         :return: The gcp_key_algo of this DynamicSecretUpdateGcp.  # noqa: E501
         :rtype: str
@@ -279,7 +364,7 @@ class DynamicSecretUpdateGcp(object):
     def gcp_key_algo(self, gcp_key_algo):
         """Sets the gcp_key_algo of this DynamicSecretUpdateGcp.
 
-        Service account key algorithm, e.g. KEY_ALG_RSA_1024  # noqa: E501
+        Service account key algorithm, e.g. KEY_ALG_RSA_1024 (Relevant only when --access-type=sa and --gcp-cred-type=key)  # noqa: E501
 
         :param gcp_key_algo: The gcp_key_algo of this DynamicSecretUpdateGcp.  # noqa: E501
         :type: str
@@ -291,7 +376,7 @@ class DynamicSecretUpdateGcp(object):
     def gcp_project_id(self):
         """Gets the gcp_project_id of this DynamicSecretUpdateGcp.  # noqa: E501
 
-        GCP Project ID override for dynamic secret operations (tmp service accounts)  # noqa: E501
+        GCP Project ID override for dynamic secret operations  # noqa: E501
 
         :return: The gcp_project_id of this DynamicSecretUpdateGcp.  # noqa: E501
         :rtype: str
@@ -302,7 +387,7 @@ class DynamicSecretUpdateGcp(object):
     def gcp_project_id(self, gcp_project_id):
         """Sets the gcp_project_id of this DynamicSecretUpdateGcp.
 
-        GCP Project ID override for dynamic secret operations (tmp service accounts)  # noqa: E501
+        GCP Project ID override for dynamic secret operations  # noqa: E501
 
         :param gcp_project_id: The gcp_project_id of this DynamicSecretUpdateGcp.  # noqa: E501
         :type: str
@@ -314,7 +399,7 @@ class DynamicSecretUpdateGcp(object):
     def gcp_sa_email(self):
         """Gets the gcp_sa_email of this DynamicSecretUpdateGcp.  # noqa: E501
 
-        The email of the fixed service acocunt to generate keys or tokens for. (revelant for service-account-type=fixed)  # noqa: E501
+        The email of the fixed service account to generate keys or tokens for (Relevant only when --access-type=sa and --service-account-type=fixed)  # noqa: E501
 
         :return: The gcp_sa_email of this DynamicSecretUpdateGcp.  # noqa: E501
         :rtype: str
@@ -325,7 +410,7 @@ class DynamicSecretUpdateGcp(object):
     def gcp_sa_email(self, gcp_sa_email):
         """Sets the gcp_sa_email of this DynamicSecretUpdateGcp.
 
-        The email of the fixed service acocunt to generate keys or tokens for. (revelant for service-account-type=fixed)  # noqa: E501
+        The email of the fixed service account to generate keys or tokens for (Relevant only when --access-type=sa and --service-account-type=fixed)  # noqa: E501
 
         :param gcp_sa_email: The gcp_sa_email of this DynamicSecretUpdateGcp.  # noqa: E501
         :type: str
@@ -337,7 +422,7 @@ class DynamicSecretUpdateGcp(object):
     def gcp_token_scopes(self):
         """Gets the gcp_token_scopes of this DynamicSecretUpdateGcp.  # noqa: E501
 
-        Access token scopes list, e.g. scope1,scope2  # noqa: E501
+        Access token scopes list, e.g. scope1,scope2 (Relevant only when --access-type=sa; required when --gcp-cred-type=token)  # noqa: E501
 
         :return: The gcp_token_scopes of this DynamicSecretUpdateGcp.  # noqa: E501
         :rtype: str
@@ -348,7 +433,7 @@ class DynamicSecretUpdateGcp(object):
     def gcp_token_scopes(self, gcp_token_scopes):
         """Sets the gcp_token_scopes of this DynamicSecretUpdateGcp.
 
-        Access token scopes list, e.g. scope1,scope2  # noqa: E501
+        Access token scopes list, e.g. scope1,scope2 (Relevant only when --access-type=sa; required when --gcp-cred-type=token)  # noqa: E501
 
         :param gcp_token_scopes: The gcp_token_scopes of this DynamicSecretUpdateGcp.  # noqa: E501
         :type: str
@@ -477,7 +562,7 @@ class DynamicSecretUpdateGcp(object):
     def role_binding(self):
         """Gets the role_binding of this DynamicSecretUpdateGcp.  # noqa: E501
 
-        Role binding definitions in json format  # noqa: E501
+        Role binding definitions in JSON format (Relevant only when --access-type=sa and --service-account-type=dynamic)  # noqa: E501
 
         :return: The role_binding of this DynamicSecretUpdateGcp.  # noqa: E501
         :rtype: str
@@ -488,7 +573,7 @@ class DynamicSecretUpdateGcp(object):
     def role_binding(self, role_binding):
         """Sets the role_binding of this DynamicSecretUpdateGcp.
 
-        Role binding definitions in json format  # noqa: E501
+        Role binding definitions in JSON format (Relevant only when --access-type=sa and --service-account-type=dynamic)  # noqa: E501
 
         :param role_binding: The role_binding of this DynamicSecretUpdateGcp.  # noqa: E501
         :type: str
@@ -497,10 +582,148 @@ class DynamicSecretUpdateGcp(object):
         self._role_binding = role_binding
 
     @property
+    def role_names(self):
+        """Gets the role_names of this DynamicSecretUpdateGcp.  # noqa: E501
+
+        Comma-separated list of GCP roles to assign to the user (Relevant only when --access-type=external)  # noqa: E501
+
+        :return: The role_names of this DynamicSecretUpdateGcp.  # noqa: E501
+        :rtype: str
+        """
+        return self._role_names
+
+    @role_names.setter
+    def role_names(self, role_names):
+        """Sets the role_names of this DynamicSecretUpdateGcp.
+
+        Comma-separated list of GCP roles to assign to the user (Relevant only when --access-type=external)  # noqa: E501
+
+        :param role_names: The role_names of this DynamicSecretUpdateGcp.  # noqa: E501
+        :type: str
+        """
+
+        self._role_names = role_names
+
+    @property
+    def secure_access_delay(self):
+        """Gets the secure_access_delay of this DynamicSecretUpdateGcp.  # noqa: E501
+
+        The delay duration, in seconds, to wait after generating just-in-time credentials. Accepted range: 0-120 seconds  # noqa: E501
+
+        :return: The secure_access_delay of this DynamicSecretUpdateGcp.  # noqa: E501
+        :rtype: int
+        """
+        return self._secure_access_delay
+
+    @secure_access_delay.setter
+    def secure_access_delay(self, secure_access_delay):
+        """Sets the secure_access_delay of this DynamicSecretUpdateGcp.
+
+        The delay duration, in seconds, to wait after generating just-in-time credentials. Accepted range: 0-120 seconds  # noqa: E501
+
+        :param secure_access_delay: The secure_access_delay of this DynamicSecretUpdateGcp.  # noqa: E501
+        :type: int
+        """
+
+        self._secure_access_delay = secure_access_delay
+
+    @property
+    def secure_access_enable(self):
+        """Gets the secure_access_enable of this DynamicSecretUpdateGcp.  # noqa: E501
+
+        Enable/Disable secure remote access [true/false]  # noqa: E501
+
+        :return: The secure_access_enable of this DynamicSecretUpdateGcp.  # noqa: E501
+        :rtype: str
+        """
+        return self._secure_access_enable
+
+    @secure_access_enable.setter
+    def secure_access_enable(self, secure_access_enable):
+        """Sets the secure_access_enable of this DynamicSecretUpdateGcp.
+
+        Enable/Disable secure remote access [true/false]  # noqa: E501
+
+        :param secure_access_enable: The secure_access_enable of this DynamicSecretUpdateGcp.  # noqa: E501
+        :type: str
+        """
+
+        self._secure_access_enable = secure_access_enable
+
+    @property
+    def secure_access_url(self):
+        """Gets the secure_access_url of this DynamicSecretUpdateGcp.  # noqa: E501
+
+        Destination URL to inject secrets  # noqa: E501
+
+        :return: The secure_access_url of this DynamicSecretUpdateGcp.  # noqa: E501
+        :rtype: str
+        """
+        return self._secure_access_url
+
+    @secure_access_url.setter
+    def secure_access_url(self, secure_access_url):
+        """Sets the secure_access_url of this DynamicSecretUpdateGcp.
+
+        Destination URL to inject secrets  # noqa: E501
+
+        :param secure_access_url: The secure_access_url of this DynamicSecretUpdateGcp.  # noqa: E501
+        :type: str
+        """
+
+        self._secure_access_url = secure_access_url
+
+    @property
+    def secure_access_web_browsing(self):
+        """Gets the secure_access_web_browsing of this DynamicSecretUpdateGcp.  # noqa: E501
+
+        Secure browser via Akeyless's Secure Remote Access (SRA)  # noqa: E501
+
+        :return: The secure_access_web_browsing of this DynamicSecretUpdateGcp.  # noqa: E501
+        :rtype: bool
+        """
+        return self._secure_access_web_browsing
+
+    @secure_access_web_browsing.setter
+    def secure_access_web_browsing(self, secure_access_web_browsing):
+        """Sets the secure_access_web_browsing of this DynamicSecretUpdateGcp.
+
+        Secure browser via Akeyless's Secure Remote Access (SRA)  # noqa: E501
+
+        :param secure_access_web_browsing: The secure_access_web_browsing of this DynamicSecretUpdateGcp.  # noqa: E501
+        :type: bool
+        """
+
+        self._secure_access_web_browsing = secure_access_web_browsing
+
+    @property
+    def secure_access_web_proxy(self):
+        """Gets the secure_access_web_proxy of this DynamicSecretUpdateGcp.  # noqa: E501
+
+        Web-Proxy via Akeyless's Secure Remote Access (SRA)  # noqa: E501
+
+        :return: The secure_access_web_proxy of this DynamicSecretUpdateGcp.  # noqa: E501
+        :rtype: bool
+        """
+        return self._secure_access_web_proxy
+
+    @secure_access_web_proxy.setter
+    def secure_access_web_proxy(self, secure_access_web_proxy):
+        """Sets the secure_access_web_proxy of this DynamicSecretUpdateGcp.
+
+        Web-Proxy via Akeyless's Secure Remote Access (SRA)  # noqa: E501
+
+        :param secure_access_web_proxy: The secure_access_web_proxy of this DynamicSecretUpdateGcp.  # noqa: E501
+        :type: bool
+        """
+
+        self._secure_access_web_proxy = secure_access_web_proxy
+
+    @property
     def service_account_type(self):
         """Gets the service_account_type of this DynamicSecretUpdateGcp.  # noqa: E501
 
-        The type of the gcp dynamic secret. Options[fixed, dynamic]  # noqa: E501
+        The type of the GCP service account. Options [fixed, dynamic] (Relevant only when --access-type=sa)  # noqa: E501
 
         :return: The service_account_type of this DynamicSecretUpdateGcp.  # noqa: E501
         :rtype: str
@@ -511,13 +734,11 @@ class DynamicSecretUpdateGcp(object):
     def service_account_type(self, service_account_type):
         """Sets the service_account_type of this DynamicSecretUpdateGcp.
 
-        The type of the gcp dynamic secret. Options[fixed, dynamic]  # noqa: E501
+        The type of the GCP service account. Options [fixed, dynamic] (Relevant only when --access-type=sa)  # noqa: E501
 
         :param service_account_type: The service_account_type of this DynamicSecretUpdateGcp.  # noqa: E501
         :type: str
         """
-        if self.local_vars_configuration.client_side_validation and service_account_type is None:  # noqa: E501
-            raise ValueError("Invalid value for `service_account_type`, must not be `None`")  # noqa: E501
 
         self._service_account_type = service_account_type
 

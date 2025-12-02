@@ -36,6 +36,7 @@ class AuthMethodAccessInfo(object):
     openapi_types = {
         'access_expires': 'int',
         'access_id_alias': 'str',
+        'allowed_client_type': 'list[str]',
         'api_key_access_rules': 'APIKeyAccessRules',
         'audit_logs_claims': 'list[str]',
         'aws_iam_access_rules': 'AWSIAMAccessRules',
@@ -64,6 +65,7 @@ class AuthMethodAccessInfo(object):
     attribute_map = {
         'access_expires': 'access_expires',
         'access_id_alias': 'access_id_alias',
+        'allowed_client_type': 'allowed_client_type',
         'api_key_access_rules': 'api_key_access_rules',
         'audit_logs_claims': 'audit_logs_claims',
         'aws_iam_access_rules': 'aws_iam_access_rules',
@@ -89,7 +91,7 @@ class AuthMethodAccessInfo(object):
         'universal_identity_access_rules': 'universal_identity_access_rules'
     }
 
-    def __init__(self, access_expires=None, access_id_alias=None, api_key_access_rules=None, audit_logs_claims=None, aws_iam_access_rules=None, azure_ad_access_rules=None, cert_access_rules=None, cidr_whitelist=None, email_pass_access_rules=None, force_sub_claims=None, gcp_access_rules=None, gw_cidr_whitelist=None, huawei_access_rules=None, jwt_ttl=None, k8s_access_rules=None, kerberos_access_rules=None, ldap_access_rules=None, oauth2_access_rules=None, oci_access_rules=None, oidc_access_rules=None, product_types=None, rules_type=None, saml_access_rules=None, sub_claims_delimiters=None, universal_identity_access_rules=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, access_expires=None, access_id_alias=None, allowed_client_type=None, api_key_access_rules=None, audit_logs_claims=None, aws_iam_access_rules=None, azure_ad_access_rules=None, cert_access_rules=None, cidr_whitelist=None, email_pass_access_rules=None, force_sub_claims=None, gcp_access_rules=None, gw_cidr_whitelist=None, huawei_access_rules=None, jwt_ttl=None, k8s_access_rules=None, kerberos_access_rules=None, ldap_access_rules=None, oauth2_access_rules=None, oci_access_rules=None, oidc_access_rules=None, product_types=None, rules_type=None, saml_access_rules=None, sub_claims_delimiters=None, universal_identity_access_rules=None, local_vars_configuration=None):  # noqa: E501
         """AuthMethodAccessInfo - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -97,6 +99,7 @@ class AuthMethodAccessInfo(object):
 
         self._access_expires = None
         self._access_id_alias = None
+        self._allowed_client_type = None
         self._api_key_access_rules = None
         self._audit_logs_claims = None
         self._aws_iam_access_rules = None
@@ -126,6 +129,8 @@ class AuthMethodAccessInfo(object):
             self.access_expires = access_expires
         if access_id_alias is not None:
             self.access_id_alias = access_id_alias
+        if allowed_client_type is not None:
+            self.allowed_client_type = allowed_client_type
         if api_key_access_rules is not None:
             self.api_key_access_rules = api_key_access_rules
         if audit_logs_claims is not None:
@@ -216,6 +221,27 @@ class AuthMethodAccessInfo(object):
         """
 
         self._access_id_alias = access_id_alias
+
+    @property
+    def allowed_client_type(self):
+        """Gets the allowed_client_type of this AuthMethodAccessInfo.  # noqa: E501
+
+
+        :return: The allowed_client_type of this AuthMethodAccessInfo.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._allowed_client_type
+
+    @allowed_client_type.setter
+    def allowed_client_type(self, allowed_client_type):
+        """Sets the allowed_client_type of this AuthMethodAccessInfo.
+
+
+        :param allowed_client_type: The allowed_client_type of this AuthMethodAccessInfo.  # noqa: E501
+        :type: list[str]
+        """
+
+        self._allowed_client_type = allowed_client_type
 
     @property
     def api_key_access_rules(self):

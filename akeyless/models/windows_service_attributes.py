@@ -35,31 +35,41 @@ class WindowsServiceAttributes(object):
     """
     openapi_types = {
         'connection_type': 'str',
+        'iis_app_pool': 'bool',
         'port': 'str',
+        'skip_restart': 'bool',
         'use_tls': 'bool'
     }
 
     attribute_map = {
         'connection_type': 'connection_type',
+        'iis_app_pool': 'iis_app_pool',
         'port': 'port',
+        'skip_restart': 'skip_restart',
         'use_tls': 'use_tls'
     }
 
-    def __init__(self, connection_type=None, port=None, use_tls=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, connection_type=None, iis_app_pool=None, port=None, skip_restart=None, use_tls=None, local_vars_configuration=None):  # noqa: E501
         """WindowsServiceAttributes - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._connection_type = None
+        self._iis_app_pool = None
         self._port = None
+        self._skip_restart = None
         self._use_tls = None
         self.discriminator = None
 
         if connection_type is not None:
             self.connection_type = connection_type
+        if iis_app_pool is not None:
+            self.iis_app_pool = iis_app_pool
         if port is not None:
             self.port = port
+        if skip_restart is not None:
+            self.skip_restart = skip_restart
         if use_tls is not None:
             self.use_tls = use_tls
 
@@ -85,6 +95,29 @@ class WindowsServiceAttributes(object):
         self._connection_type = connection_type
 
     @property
+    def iis_app_pool(self):
+        """Gets the iis_app_pool of this WindowsServiceAttributes.  # noqa: E501
+
+        IISAppPool marks this entry as an IIS Application Pool rather than a Windows Service  # noqa: E501
+
+        :return: The iis_app_pool of this WindowsServiceAttributes.  # noqa: E501
+        :rtype: bool
+        """
+        return self._iis_app_pool
+
+    @iis_app_pool.setter
+    def iis_app_pool(self, iis_app_pool):
+        """Sets the iis_app_pool of this WindowsServiceAttributes.
+
+        IISAppPool marks this entry as an IIS Application Pool rather than a Windows Service  # noqa: E501
+
+        :param iis_app_pool: The iis_app_pool of this WindowsServiceAttributes.  # noqa: E501
+        :type: bool
+        """
+
+        self._iis_app_pool = iis_app_pool
+
+    @property
     def port(self):
         """Gets the port of this WindowsServiceAttributes.  # noqa: E501
 
@@ -104,6 +137,29 @@ class WindowsServiceAttributes(object):
         """
 
         self._port = port
+
+    @property
+    def skip_restart(self):
+        """Gets the skip_restart of this WindowsServiceAttributes.  # noqa: E501
+
+        SkipRestart allows skipping recycle/start of the IIS App Pool after credential update  # noqa: E501
+
+        :return: The skip_restart of this WindowsServiceAttributes.  # noqa: E501
+        :rtype: bool
+        """
+        return self._skip_restart
+
+    @skip_restart.setter
+    def skip_restart(self, skip_restart):
+        """Sets the skip_restart of this WindowsServiceAttributes.
+
+        SkipRestart allows skipping recycle/start of the IIS App Pool after credential update  # noqa: E501
+
+        :param skip_restart: The skip_restart of this WindowsServiceAttributes.  # noqa: E501
+        :type: bool
+        """
+
+        self._skip_restart = skip_restart
 
     @property
     def use_tls(self):

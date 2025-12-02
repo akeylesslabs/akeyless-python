@@ -18,6 +18,7 @@ Name | Type | Description | Notes
 **producer_encryption_key_name** | **str** | Dynamic producer encryption key | [optional] 
 **role_name** | **str** | Name of the admin role to assign to the user, relevant only for role access-mode | [optional] 
 **role_scope** | **str** |  | [optional] 
+**secure_access_delay** | **int** | The delay duration, in seconds, to wait after generating just-in-time credentials. Accepted range: 0-120 seconds | [optional] 
 **secure_access_enable** | **str** | Enable/Disable secure remote access [true/false] | [optional] 
 **secure_access_url** | **str** | Destination URL to inject secrets | [optional] 
 **secure_access_web** | **bool** | Enable Web Secure Remote Access | [optional] [default to True]

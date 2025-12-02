@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **description** | **str** | Description of the object | [optional] 
 **item_custom_fields** | **dict(str, str)** | Additional custom fields to associate with the item | [optional] 
 **json** | **bool** | Set output format to JSON | [optional] [default to False]
+**mssql_allowed_db_names** | **str** | CSV of allowed DB names for runtime selection when getting the secret value. Empty &#x3D;&gt; use target DB only; \&quot;*\&quot; &#x3D;&gt; any DB allowed; One or more names &#x3D;&gt; user must choose from this list | [optional] 
 **mssql_create_statements** | **str** | MSSQL Creation statements | [optional] 
 **mssql_dbname** | **str** | MSSQL Name | [optional] 
 **mssql_host** | **str** | MSSQL Host | [optional] [default to '127.0.0.1']

@@ -39,6 +39,7 @@ class ActiveDirectoryPayload(object):
         'auto_rotate_interval_in_days': 'int',
         'auto_rotate_rotation_hour': 'int',
         'computer_base_dn': 'str',
+        'discover_iis_apps': 'bool',
         'discover_local_users': 'bool',
         'discover_services': 'bool',
         'discovery_types': 'list[str]',
@@ -64,6 +65,7 @@ class ActiveDirectoryPayload(object):
         'auto_rotate_interval_in_days': 'auto_rotate_interval_in_days',
         'auto_rotate_rotation_hour': 'auto_rotate_rotation_hour',
         'computer_base_dn': 'computer_base_dn',
+        'discover_iis_apps': 'discover_iis_apps',
         'discover_local_users': 'discover_local_users',
         'discover_services': 'discover_services',
         'discovery_types': 'discovery_types',
@@ -83,7 +85,7 @@ class ActiveDirectoryPayload(object):
         'winrm_port': 'winrm_port'
     }
 
-    def __init__(self, active_directory_target_id=None, auto_rotate=None, auto_rotate_interval_in_days=None, auto_rotate_rotation_hour=None, computer_base_dn=None, discover_local_users=None, discover_services=None, discovery_types=None, domain_name=None, domain_server_targets_path_template=None, domain_users_rotated_secrets_path_template=None, enable_rdp_sra=None, local_users_ignore_list=None, local_users_rotated_secrets_path_template=None, os_filter=None, ssh_port=None, target_format=None, targets_type=None, user_base_dn=None, user_groups=None, winrm_over_http=None, winrm_port=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, active_directory_target_id=None, auto_rotate=None, auto_rotate_interval_in_days=None, auto_rotate_rotation_hour=None, computer_base_dn=None, discover_iis_apps=None, discover_local_users=None, discover_services=None, discovery_types=None, domain_name=None, domain_server_targets_path_template=None, domain_users_rotated_secrets_path_template=None, enable_rdp_sra=None, local_users_ignore_list=None, local_users_rotated_secrets_path_template=None, os_filter=None, ssh_port=None, target_format=None, targets_type=None, user_base_dn=None, user_groups=None, winrm_over_http=None, winrm_port=None, local_vars_configuration=None):  # noqa: E501
         """ActiveDirectoryPayload - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -94,6 +96,7 @@ class ActiveDirectoryPayload(object):
         self._auto_rotate_interval_in_days = None
         self._auto_rotate_rotation_hour = None
         self._computer_base_dn = None
+        self._discover_iis_apps = None
         self._discover_local_users = None
         self._discover_services = None
         self._discovery_types = None
@@ -123,6 +126,8 @@ class ActiveDirectoryPayload(object):
             self.auto_rotate_rotation_hour = auto_rotate_rotation_hour
         if computer_base_dn is not None:
             self.computer_base_dn = computer_base_dn
+        if discover_iis_apps is not None:
+            self.discover_iis_apps = discover_iis_apps
         if discover_local_users is not None:
             self.discover_local_users = discover_local_users
         if discover_services is not None:
@@ -262,6 +267,27 @@ class ActiveDirectoryPayload(object):
         """
 
         self._computer_base_dn = computer_base_dn
+
+    @property
+    def discover_iis_apps(self):
+        """Gets the discover_iis_apps of this ActiveDirectoryPayload.  # noqa: E501
+
+
+        :return: The discover_iis_apps of this ActiveDirectoryPayload.  # noqa: E501
+        :rtype: bool
+        """
+        return self._discover_iis_apps
+
+    @discover_iis_apps.setter
+    def discover_iis_apps(self, discover_iis_apps):
+        """Sets the discover_iis_apps of this ActiveDirectoryPayload.
+
+
+        :param discover_iis_apps: The discover_iis_apps of this ActiveDirectoryPayload.  # noqa: E501
+        :type: bool
+        """
+
+        self._discover_iis_apps = discover_iis_apps
 
     @property
     def discover_local_users(self):

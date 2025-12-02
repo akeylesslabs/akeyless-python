@@ -35,6 +35,7 @@ class UpdateAuthMethodCert(object):
     """
     openapi_types = {
         'access_expires': 'int',
+        'allowed_client_type': 'list[str]',
         'allowed_cors': 'str',
         'audit_logs_claims': 'list[str]',
         'bound_common_names': 'list[str]',
@@ -63,6 +64,7 @@ class UpdateAuthMethodCert(object):
 
     attribute_map = {
         'access_expires': 'access-expires',
+        'allowed_client_type': 'allowed-client-type',
         'allowed_cors': 'allowed-cors',
         'audit_logs_claims': 'audit-logs-claims',
         'bound_common_names': 'bound-common-names',
@@ -89,13 +91,14 @@ class UpdateAuthMethodCert(object):
         'unique_identifier': 'unique-identifier'
     }
 
-    def __init__(self, access_expires=0, allowed_cors=None, audit_logs_claims=None, bound_common_names=None, bound_dns_sans=None, bound_email_sans=None, bound_extensions=None, bound_ips=None, bound_organizational_units=None, bound_uri_sans=None, certificate_data=None, delete_protection=None, description=None, expiration_event_in=None, force_sub_claims=None, gw_bound_ips=None, json=False, jwt_ttl=0, name=None, new_name=None, product_type=None, revoked_cert_ids=None, token=None, uid_token=None, unique_identifier=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, access_expires=0, allowed_client_type=None, allowed_cors=None, audit_logs_claims=None, bound_common_names=None, bound_dns_sans=None, bound_email_sans=None, bound_extensions=None, bound_ips=None, bound_organizational_units=None, bound_uri_sans=None, certificate_data=None, delete_protection=None, description=None, expiration_event_in=None, force_sub_claims=None, gw_bound_ips=None, json=False, jwt_ttl=0, name=None, new_name=None, product_type=None, revoked_cert_ids=None, token=None, uid_token=None, unique_identifier=None, local_vars_configuration=None):  # noqa: E501
         """UpdateAuthMethodCert - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._access_expires = None
+        self._allowed_client_type = None
         self._allowed_cors = None
         self._audit_logs_claims = None
         self._bound_common_names = None
@@ -124,6 +127,8 @@ class UpdateAuthMethodCert(object):
 
         if access_expires is not None:
             self.access_expires = access_expires
+        if allowed_client_type is not None:
+            self.allowed_client_type = allowed_client_type
         if allowed_cors is not None:
             self.allowed_cors = allowed_cors
         if audit_logs_claims is not None:
@@ -193,6 +198,27 @@ class UpdateAuthMethodCert(object):
         """
 
         self._access_expires = access_expires
+
+    @property
+    def allowed_client_type(self):
+        """Gets the allowed_client_type of this UpdateAuthMethodCert.  # noqa: E501
+
+
+        :return: The allowed_client_type of this UpdateAuthMethodCert.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._allowed_client_type
+
+    @allowed_client_type.setter
+    def allowed_client_type(self, allowed_client_type):
+        """Sets the allowed_client_type of this UpdateAuthMethodCert.
+
+
+        :param allowed_client_type: The allowed_client_type of this UpdateAuthMethodCert.  # noqa: E501
+        :type: list[str]
+        """
+
+        self._allowed_client_type = allowed_client_type
 
     @property
     def allowed_cors(self):

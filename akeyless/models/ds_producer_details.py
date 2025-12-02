@@ -124,9 +124,12 @@ class DSProducerDetails(object):
         'externally_provided_user': 'str',
         'failure_message': 'str',
         'fixed_user_only': 'str',
+        'gcp_access_type': 'str',
+        'gcp_fixed_user_claim_keyname': 'str',
         'gcp_key_algo': 'str',
         'gcp_project_id': 'str',
         'gcp_role_bindings': 'dict(str, list[str])',
+        'gcp_role_names': 'str',
         'gcp_service_account_email': 'str',
         'gcp_service_account_key': 'str',
         'gcp_service_account_key_base64': 'str',
@@ -217,9 +220,11 @@ class DSProducerDetails(object):
         'mongodb_is_atlas': 'bool',
         'mongodb_password': 'str',
         'mongodb_roles': 'str',
+        'mongodb_scopes': 'str',
         'mongodb_uri_connection': 'str',
         'mongodb_uri_options': 'str',
         'mongodb_username': 'str',
+        'mssql_allowed_db_names': 'str',
         'mssql_creation_statements': 'str',
         'mssql_revocation_statements': 'str',
         'mysql_creation_statements': 'str',
@@ -386,9 +391,12 @@ class DSProducerDetails(object):
         'externally_provided_user': 'externally_provided_user',
         'failure_message': 'failure_message',
         'fixed_user_only': 'fixed_user_only',
+        'gcp_access_type': 'gcp_access_type',
+        'gcp_fixed_user_claim_keyname': 'gcp_fixed_user_claim_keyname',
         'gcp_key_algo': 'gcp_key_algo',
         'gcp_project_id': 'gcp_project_id',
         'gcp_role_bindings': 'gcp_role_bindings',
+        'gcp_role_names': 'gcp_role_names',
         'gcp_service_account_email': 'gcp_service_account_email',
         'gcp_service_account_key': 'gcp_service_account_key',
         'gcp_service_account_key_base64': 'gcp_service_account_key_base64',
@@ -479,9 +487,11 @@ class DSProducerDetails(object):
         'mongodb_is_atlas': 'mongodb_is_atlas',
         'mongodb_password': 'mongodb_password',
         'mongodb_roles': 'mongodb_roles',
+        'mongodb_scopes': 'mongodb_scopes',
         'mongodb_uri_connection': 'mongodb_uri_connection',
         'mongodb_uri_options': 'mongodb_uri_options',
         'mongodb_username': 'mongodb_username',
+        'mssql_allowed_db_names': 'mssql_allowed_db_names',
         'mssql_creation_statements': 'mssql_creation_statements',
         'mssql_revocation_statements': 'mssql_revocation_statements',
         'mysql_creation_statements': 'mysql_creation_statements',
@@ -557,7 +567,7 @@ class DSProducerDetails(object):
         'warn_before_user_expiration_min': 'warn_before_user_expiration_min'
     }
 
-    def __init__(self, access_token_manager_id=None, acl_rules=None, active=None, admin_name=None, admin_pwd=None, admin_rotation_interval_days=None, administrative_port=None, api_key=None, api_key_id=None, artifactory_admin_apikey=None, artifactory_admin_username=None, artifactory_base_url=None, artifactory_token_audience=None, artifactory_token_scope=None, authorization_port=None, aws_access_key_id=None, aws_access_mode=None, aws_external_id=None, aws_region=None, aws_role_arns=None, aws_secret_access_key=None, aws_session_tags=None, aws_session_token=None, aws_transitive_tag_keys=None, aws_user_console_access=None, aws_user_groups=None, aws_user_policies=None, aws_user_programmatic_access=None, azure_administrative_unit=None, azure_app_object_id=None, azure_client_id=None, azure_client_secret=None, azure_fixed_user_name_sub_claim_key=None, azure_fixed_user_only=None, azure_resource_group_name=None, azure_resource_name=None, azure_subscription_id=None, azure_tenant_id=None, azure_user_groups_obj_id=None, azure_user_portal_access=None, azure_user_programmatic_access=None, azure_user_roles_template_id=None, azure_username=None, cassandra_creation_statements=None, chef_organizations=None, chef_server_access_mode=None, chef_server_host_name=None, chef_server_key=None, chef_server_port=None, chef_server_url=None, chef_server_username=None, chef_skip_ssl=None, client_authentication_type=None, cloud_service_provider=None, cluster_mode=None, connection_type=None, create_sync_url=None, db_client_id=None, db_client_secret=None, db_host_name=None, db_isolation_level=None, db_max_idle_conns=None, db_max_open_conns=None, db_name=None, db_port=None, db_private_key=None, db_private_key_passphrase=None, db_pwd=None, db_server_certificates=None, db_server_name=None, db_tenant_id=None, db_user_name=None, delete_protection=None, dynamic_secret_id=None, dynamic_secret_key=None, dynamic_secret_name=None, dynamic_secret_type=None, eks_access_key_id=None, eks_assume_role=None, eks_cluster_ca_certificate=None, eks_cluster_endpoint=None, eks_cluster_name=None, eks_region=None, eks_secret_access_key=None, enable_admin_rotation=None, enforce_replay_prevention=None, expiration_date=None, externally_provided_user=None, failure_message=None, fixed_user_only=None, gcp_key_algo=None, gcp_project_id=None, gcp_role_bindings=None, gcp_service_account_email=None, gcp_service_account_key=None, gcp_service_account_key_base64=None, gcp_service_account_key_id=None, gcp_service_account_type=None, gcp_tmp_service_account_name=None, gcp_token_lifetime=None, gcp_token_scope=None, gcp_token_type=None, github_app_id=None, github_app_private_key=None, github_base_url=None, github_installation_id=None, github_installation_token_permissions=None, github_installation_token_repositories=None, github_installation_token_repositories_ids=None, github_organization_name=None, github_repository_path=None, gitlab_access_token=None, gitlab_access_type=None, gitlab_certificate=None, gitlab_group_name=None, gitlab_project_name=None, gitlab_role=None, gitlab_token_scope=None, gitlab_url=None, gke_cluster_ca_certificate=None, gke_cluster_endpoint=None, gke_cluster_name=None, gke_service_account_key=None, gke_service_account_name=None, google_workspace_access_mode=None, google_workspace_admin_name=None, google_workspace_fixed_user_name_sub_claim_key=None, google_workspace_group_name=None, google_workspace_group_role=None, google_workspace_role_name=None, google_workspace_role_scope=None, grace_rotated_secret_key=None, grant_types=None, groups=None, gw_cloud_identity_external_id_opt=None, hanadb_creation_statements=None, hanadb_revocation_statements=None, host_name=None, host_port=None, implementation_type=None, is_fixed_user=None, issuer=None, item_custom_fields_details=None, item_targets_assoc=None, jwks=None, jwks_url=None, k8s_allowed_namespaces=None, k8s_auth_type=None, k8s_bearer_token=None, k8s_client_cert_data=None, k8s_client_key_data=None, k8s_cluster_ca_certificate=None, k8s_cluster_endpoint=None, k8s_cluster_name=None, k8s_dynamic_mode=None, k8s_multiple_doc_yaml_temp_definition=None, k8s_namespace=None, k8s_role_name=None, k8s_role_type=None, k8s_service_account=None, last_admin_rotation=None, ldap_audience=None, ldap_bind_dn=None, ldap_bind_password=None, ldap_certificate=None, ldap_fixed_user_name_sub_claim_key=None, ldap_fixed_user_type=None, ldap_group_dn=None, ldap_token_expiration=None, ldap_url=None, ldap_user_attr=None, ldap_user_dn=None, metadata=None, mongodb_atlas_api_private_key=None, mongodb_atlas_api_public_key=None, mongodb_atlas_project_id=None, mongodb_custom_data=None, mongodb_db_name=None, mongodb_default_auth_db=None, mongodb_host_port=None, mongodb_is_atlas=None, mongodb_password=None, mongodb_roles=None, mongodb_uri_connection=None, mongodb_uri_options=None, mongodb_username=None, mssql_creation_statements=None, mssql_revocation_statements=None, mysql_creation_statements=None, mysql_revocation_statements=None, openai_url=None, oracle_creation_statements=None, oracle_revocation_statements=None, oracle_wallet_details=None, organization_id=None, password=None, password_length=None, password_policy=None, payload=None, ping_url=None, postgres_creation_statements=None, postgres_revocation_statements=None, privileged_user=None, project_id=None, rabbitmq_server_password=None, rabbitmq_server_uri=None, rabbitmq_server_user=None, rabbitmq_user_conf_permission=None, rabbitmq_user_read_permission=None, rabbitmq_user_tags=None, rabbitmq_user_vhost=None, rabbitmq_user_write_permission=None, rdp_fixed_user_name_sub_claim_key=None, redirect_uris=None, redshift_creation_statements=None, restricted_scopes=None, revoke_sync_url=None, rotate_sync_url=None, scopes=None, secure_remote_access_details=None, session_extension_warn_interval_min=None, sf_account=None, sf_auth_mode=None, sf_key_algo=None, sf_user_role=None, sf_warehouse_name=None, should_stop=None, signing_algorithm=None, ssl_connection_certificate=None, ssl_connection_mode=None, subject_dn=None, tags=None, timeout_seconds=None, use_gw_cloud_identity=None, use_gw_service_account=None, user_name=None, user_password=None, user_principal_name=None, user_ttl=None, username_length=None, username_policy=None, username_template=None, venafi_allow_subdomains=None, venafi_allowed_domains=None, venafi_api_key=None, venafi_auto_generated_folder=None, venafi_base_url=None, venafi_root_first_in_chain=None, venafi_sign_using_akeyless_pki=None, venafi_signer_key_name=None, venafi_store_private_key=None, venafi_tpp_access_token=None, venafi_tpp_client_id=None, venafi_tpp_password=None, venafi_tpp_refresh_token=None, venafi_tpp_username=None, venafi_use_tpp=None, venafi_zone=None, warn_before_user_expiration_min=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, access_token_manager_id=None, acl_rules=None, active=None, admin_name=None, admin_pwd=None, admin_rotation_interval_days=None, administrative_port=None, api_key=None, api_key_id=None, artifactory_admin_apikey=None, artifactory_admin_username=None, artifactory_base_url=None, artifactory_token_audience=None, artifactory_token_scope=None, authorization_port=None, aws_access_key_id=None, aws_access_mode=None, aws_external_id=None, aws_region=None, aws_role_arns=None, aws_secret_access_key=None, aws_session_tags=None, aws_session_token=None, aws_transitive_tag_keys=None, aws_user_console_access=None, aws_user_groups=None, aws_user_policies=None, aws_user_programmatic_access=None, azure_administrative_unit=None, azure_app_object_id=None, azure_client_id=None, azure_client_secret=None, azure_fixed_user_name_sub_claim_key=None, azure_fixed_user_only=None, azure_resource_group_name=None, azure_resource_name=None, azure_subscription_id=None, azure_tenant_id=None, azure_user_groups_obj_id=None, azure_user_portal_access=None, azure_user_programmatic_access=None, azure_user_roles_template_id=None, azure_username=None, cassandra_creation_statements=None, chef_organizations=None, chef_server_access_mode=None, chef_server_host_name=None, chef_server_key=None, chef_server_port=None, chef_server_url=None, chef_server_username=None, chef_skip_ssl=None, client_authentication_type=None, cloud_service_provider=None, cluster_mode=None, connection_type=None, create_sync_url=None, db_client_id=None, db_client_secret=None, db_host_name=None, db_isolation_level=None, db_max_idle_conns=None, db_max_open_conns=None, db_name=None, db_port=None, db_private_key=None, db_private_key_passphrase=None, db_pwd=None, db_server_certificates=None, db_server_name=None, db_tenant_id=None, db_user_name=None, delete_protection=None, dynamic_secret_id=None, dynamic_secret_key=None, dynamic_secret_name=None, dynamic_secret_type=None, eks_access_key_id=None, eks_assume_role=None, eks_cluster_ca_certificate=None, eks_cluster_endpoint=None, eks_cluster_name=None, eks_region=None, eks_secret_access_key=None, enable_admin_rotation=None, enforce_replay_prevention=None, expiration_date=None, externally_provided_user=None, failure_message=None, fixed_user_only=None, gcp_access_type=None, gcp_fixed_user_claim_keyname=None, gcp_key_algo=None, gcp_project_id=None, gcp_role_bindings=None, gcp_role_names=None, gcp_service_account_email=None, gcp_service_account_key=None, gcp_service_account_key_base64=None, gcp_service_account_key_id=None, gcp_service_account_type=None, gcp_tmp_service_account_name=None, gcp_token_lifetime=None, gcp_token_scope=None, gcp_token_type=None, github_app_id=None, github_app_private_key=None, github_base_url=None, github_installation_id=None, github_installation_token_permissions=None, github_installation_token_repositories=None, github_installation_token_repositories_ids=None, github_organization_name=None, github_repository_path=None, gitlab_access_token=None, gitlab_access_type=None, gitlab_certificate=None, gitlab_group_name=None, gitlab_project_name=None, gitlab_role=None, gitlab_token_scope=None, gitlab_url=None, gke_cluster_ca_certificate=None, gke_cluster_endpoint=None, gke_cluster_name=None, gke_service_account_key=None, gke_service_account_name=None, google_workspace_access_mode=None, google_workspace_admin_name=None, google_workspace_fixed_user_name_sub_claim_key=None, google_workspace_group_name=None, google_workspace_group_role=None, google_workspace_role_name=None, google_workspace_role_scope=None, grace_rotated_secret_key=None, grant_types=None, groups=None, gw_cloud_identity_external_id_opt=None, hanadb_creation_statements=None, hanadb_revocation_statements=None, host_name=None, host_port=None, implementation_type=None, is_fixed_user=None, issuer=None, item_custom_fields_details=None, item_targets_assoc=None, jwks=None, jwks_url=None, k8s_allowed_namespaces=None, k8s_auth_type=None, k8s_bearer_token=None, k8s_client_cert_data=None, k8s_client_key_data=None, k8s_cluster_ca_certificate=None, k8s_cluster_endpoint=None, k8s_cluster_name=None, k8s_dynamic_mode=None, k8s_multiple_doc_yaml_temp_definition=None, k8s_namespace=None, k8s_role_name=None, k8s_role_type=None, k8s_service_account=None, last_admin_rotation=None, ldap_audience=None, ldap_bind_dn=None, ldap_bind_password=None, ldap_certificate=None, ldap_fixed_user_name_sub_claim_key=None, ldap_fixed_user_type=None, ldap_group_dn=None, ldap_token_expiration=None, ldap_url=None, ldap_user_attr=None, ldap_user_dn=None, metadata=None, mongodb_atlas_api_private_key=None, mongodb_atlas_api_public_key=None, mongodb_atlas_project_id=None, mongodb_custom_data=None, mongodb_db_name=None, mongodb_default_auth_db=None, mongodb_host_port=None, mongodb_is_atlas=None, mongodb_password=None, mongodb_roles=None, mongodb_scopes=None, mongodb_uri_connection=None, mongodb_uri_options=None, mongodb_username=None, mssql_allowed_db_names=None, mssql_creation_statements=None, mssql_revocation_statements=None, mysql_creation_statements=None, mysql_revocation_statements=None, openai_url=None, oracle_creation_statements=None, oracle_revocation_statements=None, oracle_wallet_details=None, organization_id=None, password=None, password_length=None, password_policy=None, payload=None, ping_url=None, postgres_creation_statements=None, postgres_revocation_statements=None, privileged_user=None, project_id=None, rabbitmq_server_password=None, rabbitmq_server_uri=None, rabbitmq_server_user=None, rabbitmq_user_conf_permission=None, rabbitmq_user_read_permission=None, rabbitmq_user_tags=None, rabbitmq_user_vhost=None, rabbitmq_user_write_permission=None, rdp_fixed_user_name_sub_claim_key=None, redirect_uris=None, redshift_creation_statements=None, restricted_scopes=None, revoke_sync_url=None, rotate_sync_url=None, scopes=None, secure_remote_access_details=None, session_extension_warn_interval_min=None, sf_account=None, sf_auth_mode=None, sf_key_algo=None, sf_user_role=None, sf_warehouse_name=None, should_stop=None, signing_algorithm=None, ssl_connection_certificate=None, ssl_connection_mode=None, subject_dn=None, tags=None, timeout_seconds=None, use_gw_cloud_identity=None, use_gw_service_account=None, user_name=None, user_password=None, user_principal_name=None, user_ttl=None, username_length=None, username_policy=None, username_template=None, venafi_allow_subdomains=None, venafi_allowed_domains=None, venafi_api_key=None, venafi_auto_generated_folder=None, venafi_base_url=None, venafi_root_first_in_chain=None, venafi_sign_using_akeyless_pki=None, venafi_signer_key_name=None, venafi_store_private_key=None, venafi_tpp_access_token=None, venafi_tpp_client_id=None, venafi_tpp_password=None, venafi_tpp_refresh_token=None, venafi_tpp_username=None, venafi_use_tpp=None, venafi_zone=None, warn_before_user_expiration_min=None, local_vars_configuration=None):  # noqa: E501
         """DSProducerDetails - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -653,9 +663,12 @@ class DSProducerDetails(object):
         self._externally_provided_user = None
         self._failure_message = None
         self._fixed_user_only = None
+        self._gcp_access_type = None
+        self._gcp_fixed_user_claim_keyname = None
         self._gcp_key_algo = None
         self._gcp_project_id = None
         self._gcp_role_bindings = None
+        self._gcp_role_names = None
         self._gcp_service_account_email = None
         self._gcp_service_account_key = None
         self._gcp_service_account_key_base64 = None
@@ -746,9 +759,11 @@ class DSProducerDetails(object):
         self._mongodb_is_atlas = None
         self._mongodb_password = None
         self._mongodb_roles = None
+        self._mongodb_scopes = None
         self._mongodb_uri_connection = None
         self._mongodb_uri_options = None
         self._mongodb_username = None
+        self._mssql_allowed_db_names = None
         self._mssql_creation_statements = None
         self._mssql_revocation_statements = None
         self._mysql_creation_statements = None
@@ -1004,12 +1019,18 @@ class DSProducerDetails(object):
             self.failure_message = failure_message
         if fixed_user_only is not None:
             self.fixed_user_only = fixed_user_only
+        if gcp_access_type is not None:
+            self.gcp_access_type = gcp_access_type
+        if gcp_fixed_user_claim_keyname is not None:
+            self.gcp_fixed_user_claim_keyname = gcp_fixed_user_claim_keyname
         if gcp_key_algo is not None:
             self.gcp_key_algo = gcp_key_algo
         if gcp_project_id is not None:
             self.gcp_project_id = gcp_project_id
         if gcp_role_bindings is not None:
             self.gcp_role_bindings = gcp_role_bindings
+        if gcp_role_names is not None:
+            self.gcp_role_names = gcp_role_names
         if gcp_service_account_email is not None:
             self.gcp_service_account_email = gcp_service_account_email
         if gcp_service_account_key is not None:
@@ -1190,12 +1211,16 @@ class DSProducerDetails(object):
             self.mongodb_password = mongodb_password
         if mongodb_roles is not None:
             self.mongodb_roles = mongodb_roles
+        if mongodb_scopes is not None:
+            self.mongodb_scopes = mongodb_scopes
         if mongodb_uri_connection is not None:
             self.mongodb_uri_connection = mongodb_uri_connection
         if mongodb_uri_options is not None:
             self.mongodb_uri_options = mongodb_uri_options
         if mongodb_username is not None:
             self.mongodb_username = mongodb_username
+        if mssql_allowed_db_names is not None:
+            self.mssql_allowed_db_names = mssql_allowed_db_names
         if mssql_creation_statements is not None:
             self.mssql_creation_statements = mssql_creation_statements
         if mssql_revocation_statements is not None:
@@ -3242,6 +3267,48 @@ class DSProducerDetails(object):
         self._fixed_user_only = fixed_user_only
 
     @property
+    def gcp_access_type(self):
+        """Gets the gcp_access_type of this DSProducerDetails.  # noqa: E501
+
+
+        :return: The gcp_access_type of this DSProducerDetails.  # noqa: E501
+        :rtype: str
+        """
+        return self._gcp_access_type
+
+    @gcp_access_type.setter
+    def gcp_access_type(self, gcp_access_type):
+        """Sets the gcp_access_type of this DSProducerDetails.
+
+
+        :param gcp_access_type: The gcp_access_type of this DSProducerDetails.  # noqa: E501
+        :type: str
+        """
+
+        self._gcp_access_type = gcp_access_type
+
+    @property
+    def gcp_fixed_user_claim_keyname(self):
+        """Gets the gcp_fixed_user_claim_keyname of this DSProducerDetails.  # noqa: E501
+
+
+        :return: The gcp_fixed_user_claim_keyname of this DSProducerDetails.  # noqa: E501
+        :rtype: str
+        """
+        return self._gcp_fixed_user_claim_keyname
+
+    @gcp_fixed_user_claim_keyname.setter
+    def gcp_fixed_user_claim_keyname(self, gcp_fixed_user_claim_keyname):
+        """Sets the gcp_fixed_user_claim_keyname of this DSProducerDetails.
+
+
+        :param gcp_fixed_user_claim_keyname: The gcp_fixed_user_claim_keyname of this DSProducerDetails.  # noqa: E501
+        :type: str
+        """
+
+        self._gcp_fixed_user_claim_keyname = gcp_fixed_user_claim_keyname
+
+    @property
     def gcp_key_algo(self):
         """Gets the gcp_key_algo of this DSProducerDetails.  # noqa: E501
 
@@ -3303,6 +3370,27 @@ class DSProducerDetails(object):
         """
 
         self._gcp_role_bindings = gcp_role_bindings
+
+    @property
+    def gcp_role_names(self):
+        """Gets the gcp_role_names of this DSProducerDetails.  # noqa: E501
+
+
+        :return: The gcp_role_names of this DSProducerDetails.  # noqa: E501
+        :rtype: str
+        """
+        return self._gcp_role_names
+
+    @gcp_role_names.setter
+    def gcp_role_names(self, gcp_role_names):
+        """Sets the gcp_role_names of this DSProducerDetails.
+
+
+        :param gcp_role_names: The gcp_role_names of this DSProducerDetails.  # noqa: E501
+        :type: str
+        """
+
+        self._gcp_role_names = gcp_role_names
 
     @property
     def gcp_service_account_email(self):
@@ -5215,6 +5303,27 @@ class DSProducerDetails(object):
         self._mongodb_roles = mongodb_roles
 
     @property
+    def mongodb_scopes(self):
+        """Gets the mongodb_scopes of this DSProducerDetails.  # noqa: E501
+
+
+        :return: The mongodb_scopes of this DSProducerDetails.  # noqa: E501
+        :rtype: str
+        """
+        return self._mongodb_scopes
+
+    @mongodb_scopes.setter
+    def mongodb_scopes(self, mongodb_scopes):
+        """Sets the mongodb_scopes of this DSProducerDetails.
+
+
+        :param mongodb_scopes: The mongodb_scopes of this DSProducerDetails.  # noqa: E501
+        :type: str
+        """
+
+        self._mongodb_scopes = mongodb_scopes
+
+    @property
     def mongodb_uri_connection(self):
         """Gets the mongodb_uri_connection of this DSProducerDetails.  # noqa: E501
 
@@ -5278,6 +5387,29 @@ class DSProducerDetails(object):
         """
 
         self._mongodb_username = mongodb_username
+
+    @property
+    def mssql_allowed_db_names(self):
+        """Gets the mssql_allowed_db_names of this DSProducerDetails.  # noqa: E501
+
+        Comma-separated list of allowed DB names for runtime selection when fetching the secret value. Empty string => use target DB name only (no override allowed) \"*\" => any DB name is allowed One or more names => user must select one of the provided names  # noqa: E501
+
+        :return: The mssql_allowed_db_names of this DSProducerDetails.  # noqa: E501
+        :rtype: str
+        """
+        return self._mssql_allowed_db_names
+
+    @mssql_allowed_db_names.setter
+    def mssql_allowed_db_names(self, mssql_allowed_db_names):
+        """Sets the mssql_allowed_db_names of this DSProducerDetails.
+
+        Comma-separated list of allowed DB names for runtime selection when fetching the secret value. Empty string => use target DB name only (no override allowed) \"*\" => any DB name is allowed One or more names => user must select one of the provided names  # noqa: E501
+
+        :param mssql_allowed_db_names: The mssql_allowed_db_names of this DSProducerDetails.  # noqa: E501
+        :type: str
+        """
+
+        self._mssql_allowed_db_names = mssql_allowed_db_names
 
     @property
     def mssql_creation_statements(self):

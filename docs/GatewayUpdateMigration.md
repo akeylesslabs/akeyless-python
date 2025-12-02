@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **service_account_key_decoded** | **str** |  | [optional] 
 **ad_auto_rotate** | **str** | Enable/Disable automatic/recurrent rotation for migrated secrets. Default is false: only manual rotation is allowed for migrated secrets. If set to true, this command should be combined with --ad-rotation-interval and --ad-rotation-hour parameters (Relevant only for Active Directory migration) | [optional] 
 **ad_computer_base_dn** | **str** | Distinguished Name of Computer objects (servers) to search in Active Directory e.g.: CN&#x3D;Computers,DC&#x3D;example,DC&#x3D;com (Relevant only for Active Directory migration) | [optional] 
+**ad_discover_iis_app** | **str** | Enable/Disable discovery of IIS application from each domain server as part of the SSH/Windows Rotated Secrets. Default is false. (Relevant only for Active Directory migration) | [optional] [default to 'false']
 **ad_discover_services** | **str** | Enable/Disable discovery of Windows services from each domain server as part of the SSH/Windows Rotated Secrets. Default is false. (Relevant only for Active Directory migration) | [optional] [default to 'false']
 **ad_discovery_types** | **list[str]** | Set migration discovery types (domain-users, computers, local-users). (Relevant only for Active Directory migration) | [optional] 
 **ad_domain_name** | **str** | Active Directory Domain Name (Relevant only for Active Directory migration) | [optional] 

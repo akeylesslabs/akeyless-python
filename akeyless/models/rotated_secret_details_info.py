@@ -40,11 +40,13 @@ class RotatedSecretDetailsInfo(object):
         'grace_rotation_hour': 'int',
         'grace_rotation_interval': 'int',
         'gw_cluster_id': 'int',
+        'iis_apps_details': 'list[WindowsService]',
         'last_rotation_error': 'str',
         'managed_by_akeyless': 'bool',
         'max_versions': 'int',
         'next_auto_rotate_type': 'str',
         'number_of_versions_to_save': 'int',
+        'public_key_remote_path': 'str',
         'rotation_hour': 'int',
         'rotation_interval_min': 'bool',
         'rotation_statement': 'str',
@@ -63,11 +65,13 @@ class RotatedSecretDetailsInfo(object):
         'grace_rotation_hour': 'grace_rotation_hour',
         'grace_rotation_interval': 'grace_rotation_interval',
         'gw_cluster_id': 'gw_cluster_id',
+        'iis_apps_details': 'iis_apps_details',
         'last_rotation_error': 'last_rotation_error',
         'managed_by_akeyless': 'managed_by_akeyless',
         'max_versions': 'max_versions',
         'next_auto_rotate_type': 'next_auto_rotate_type',
         'number_of_versions_to_save': 'number_of_versions_to_save',
+        'public_key_remote_path': 'public_key_remote_path',
         'rotation_hour': 'rotation_hour',
         'rotation_interval_min': 'rotation_interval_min',
         'rotation_statement': 'rotation_statement',
@@ -79,7 +83,7 @@ class RotatedSecretDetailsInfo(object):
         'timeout_seconds': 'timeout_seconds'
     }
 
-    def __init__(self, delete_previous_version_in_days=None, enable_custom_password_policy=None, grace_rotation=None, grace_rotation_hour=None, grace_rotation_interval=None, gw_cluster_id=None, last_rotation_error=None, managed_by_akeyless=None, max_versions=None, next_auto_rotate_type=None, number_of_versions_to_save=None, rotation_hour=None, rotation_interval_min=None, rotation_statement=None, rotator_creds_type=None, rotator_status=None, rotator_type=None, same_password=None, services_details=None, timeout_seconds=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, delete_previous_version_in_days=None, enable_custom_password_policy=None, grace_rotation=None, grace_rotation_hour=None, grace_rotation_interval=None, gw_cluster_id=None, iis_apps_details=None, last_rotation_error=None, managed_by_akeyless=None, max_versions=None, next_auto_rotate_type=None, number_of_versions_to_save=None, public_key_remote_path=None, rotation_hour=None, rotation_interval_min=None, rotation_statement=None, rotator_creds_type=None, rotator_status=None, rotator_type=None, same_password=None, services_details=None, timeout_seconds=None, local_vars_configuration=None):  # noqa: E501
         """RotatedSecretDetailsInfo - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -91,11 +95,13 @@ class RotatedSecretDetailsInfo(object):
         self._grace_rotation_hour = None
         self._grace_rotation_interval = None
         self._gw_cluster_id = None
+        self._iis_apps_details = None
         self._last_rotation_error = None
         self._managed_by_akeyless = None
         self._max_versions = None
         self._next_auto_rotate_type = None
         self._number_of_versions_to_save = None
+        self._public_key_remote_path = None
         self._rotation_hour = None
         self._rotation_interval_min = None
         self._rotation_statement = None
@@ -119,6 +125,8 @@ class RotatedSecretDetailsInfo(object):
             self.grace_rotation_interval = grace_rotation_interval
         if gw_cluster_id is not None:
             self.gw_cluster_id = gw_cluster_id
+        if iis_apps_details is not None:
+            self.iis_apps_details = iis_apps_details
         if last_rotation_error is not None:
             self.last_rotation_error = last_rotation_error
         if managed_by_akeyless is not None:
@@ -129,6 +137,8 @@ class RotatedSecretDetailsInfo(object):
             self.next_auto_rotate_type = next_auto_rotate_type
         if number_of_versions_to_save is not None:
             self.number_of_versions_to_save = number_of_versions_to_save
+        if public_key_remote_path is not None:
+            self.public_key_remote_path = public_key_remote_path
         if rotation_hour is not None:
             self.rotation_hour = rotation_hour
         if rotation_interval_min is not None:
@@ -275,6 +285,27 @@ class RotatedSecretDetailsInfo(object):
         self._gw_cluster_id = gw_cluster_id
 
     @property
+    def iis_apps_details(self):
+        """Gets the iis_apps_details of this RotatedSecretDetailsInfo.  # noqa: E501
+
+
+        :return: The iis_apps_details of this RotatedSecretDetailsInfo.  # noqa: E501
+        :rtype: list[WindowsService]
+        """
+        return self._iis_apps_details
+
+    @iis_apps_details.setter
+    def iis_apps_details(self, iis_apps_details):
+        """Sets the iis_apps_details of this RotatedSecretDetailsInfo.
+
+
+        :param iis_apps_details: The iis_apps_details of this RotatedSecretDetailsInfo.  # noqa: E501
+        :type: list[WindowsService]
+        """
+
+        self._iis_apps_details = iis_apps_details
+
+    @property
     def last_rotation_error(self):
         """Gets the last_rotation_error of this RotatedSecretDetailsInfo.  # noqa: E501
 
@@ -378,6 +409,27 @@ class RotatedSecretDetailsInfo(object):
         """
 
         self._number_of_versions_to_save = number_of_versions_to_save
+
+    @property
+    def public_key_remote_path(self):
+        """Gets the public_key_remote_path of this RotatedSecretDetailsInfo.  # noqa: E501
+
+
+        :return: The public_key_remote_path of this RotatedSecretDetailsInfo.  # noqa: E501
+        :rtype: str
+        """
+        return self._public_key_remote_path
+
+    @public_key_remote_path.setter
+    def public_key_remote_path(self, public_key_remote_path):
+        """Sets the public_key_remote_path of this RotatedSecretDetailsInfo.
+
+
+        :param public_key_remote_path: The public_key_remote_path of this RotatedSecretDetailsInfo.  # noqa: E501
+        :type: str
+        """
+
+        self._public_key_remote_path = public_key_remote_path
 
     @property
     def rotation_hour(self):
