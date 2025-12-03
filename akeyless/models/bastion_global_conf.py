@@ -35,6 +35,8 @@ class BastionGlobalConf(object):
     """
     openapi_types = {
         'allowed_bastion_urls': 'list[str]',
+        'allowed_ssh_url': 'str',
+        'default_session_ttl_minutes': 'int',
         'legacy_signing_alg': 'bool',
         'rdp_username_sub_claim': 'str',
         'ssh_username_sub_claim': 'str'
@@ -42,18 +44,22 @@ class BastionGlobalConf(object):
 
     attribute_map = {
         'allowed_bastion_urls': 'allowed_bastion_urls',
+        'allowed_ssh_url': 'allowed_ssh_url',
+        'default_session_ttl_minutes': 'default_session_ttl_minutes',
         'legacy_signing_alg': 'legacy_signing_alg',
         'rdp_username_sub_claim': 'rdp_username_sub_claim',
         'ssh_username_sub_claim': 'ssh_username_sub_claim'
     }
 
-    def __init__(self, allowed_bastion_urls=None, legacy_signing_alg=None, rdp_username_sub_claim=None, ssh_username_sub_claim=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, allowed_bastion_urls=None, allowed_ssh_url=None, default_session_ttl_minutes=None, legacy_signing_alg=None, rdp_username_sub_claim=None, ssh_username_sub_claim=None, local_vars_configuration=None):  # noqa: E501
         """BastionGlobalConf - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._allowed_bastion_urls = None
+        self._allowed_ssh_url = None
+        self._default_session_ttl_minutes = None
         self._legacy_signing_alg = None
         self._rdp_username_sub_claim = None
         self._ssh_username_sub_claim = None
@@ -61,6 +67,10 @@ class BastionGlobalConf(object):
 
         if allowed_bastion_urls is not None:
             self.allowed_bastion_urls = allowed_bastion_urls
+        if allowed_ssh_url is not None:
+            self.allowed_ssh_url = allowed_ssh_url
+        if default_session_ttl_minutes is not None:
+            self.default_session_ttl_minutes = default_session_ttl_minutes
         if legacy_signing_alg is not None:
             self.legacy_signing_alg = legacy_signing_alg
         if rdp_username_sub_claim is not None:
@@ -88,6 +98,48 @@ class BastionGlobalConf(object):
         """
 
         self._allowed_bastion_urls = allowed_bastion_urls
+
+    @property
+    def allowed_ssh_url(self):
+        """Gets the allowed_ssh_url of this BastionGlobalConf.  # noqa: E501
+
+
+        :return: The allowed_ssh_url of this BastionGlobalConf.  # noqa: E501
+        :rtype: str
+        """
+        return self._allowed_ssh_url
+
+    @allowed_ssh_url.setter
+    def allowed_ssh_url(self, allowed_ssh_url):
+        """Sets the allowed_ssh_url of this BastionGlobalConf.
+
+
+        :param allowed_ssh_url: The allowed_ssh_url of this BastionGlobalConf.  # noqa: E501
+        :type: str
+        """
+
+        self._allowed_ssh_url = allowed_ssh_url
+
+    @property
+    def default_session_ttl_minutes(self):
+        """Gets the default_session_ttl_minutes of this BastionGlobalConf.  # noqa: E501
+
+
+        :return: The default_session_ttl_minutes of this BastionGlobalConf.  # noqa: E501
+        :rtype: int
+        """
+        return self._default_session_ttl_minutes
+
+    @default_session_ttl_minutes.setter
+    def default_session_ttl_minutes(self, default_session_ttl_minutes):
+        """Sets the default_session_ttl_minutes of this BastionGlobalConf.
+
+
+        :param default_session_ttl_minutes: The default_session_ttl_minutes of this BastionGlobalConf.  # noqa: E501
+        :type: int
+        """
+
+        self._default_session_ttl_minutes = default_session_ttl_minutes
 
     @property
     def legacy_signing_alg(self):

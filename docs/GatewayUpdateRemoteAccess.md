@@ -4,7 +4,9 @@ gatewayUpdateRemoteAccess is a command that update remote access config
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**allowed_ssh_url** | **str** | Specify a valid SSH-URL to tunnel to SSH session | [optional] [default to 'use-existing']
 **allowed_urls** | **str** | List of valid URLs to redirect from the Portal back to the remote access server (in a comma-delimited list) | [optional] [default to 'use-existing']
+**default_session_ttl_minutes** | **str** | Default session TTL in minutes | [optional] [default to 'use-existing']
 **hide_session_recording** | **str** | Specifies whether to show/hide if the session is currently recorded [true/false] | [optional] 
 **json** | **bool** | Set output format to JSON | [optional] [default to False]
 **kexalgs** | **str** | Decide which algorithm will be used as part of the SSH initial hand-shake process | [optional] [default to 'use-existing']

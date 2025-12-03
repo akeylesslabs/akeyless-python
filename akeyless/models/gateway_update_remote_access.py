@@ -34,7 +34,9 @@ class GatewayUpdateRemoteAccess(object):
                             and the value is json key in definition.
     """
     openapi_types = {
+        'allowed_ssh_url': 'str',
         'allowed_urls': 'str',
+        'default_session_ttl_minutes': 'str',
         'hide_session_recording': 'str',
         'json': 'bool',
         'kexalgs': 'str',
@@ -47,7 +49,9 @@ class GatewayUpdateRemoteAccess(object):
     }
 
     attribute_map = {
+        'allowed_ssh_url': 'allowed-ssh-url',
         'allowed_urls': 'allowed-urls',
+        'default_session_ttl_minutes': 'default-session-ttl-minutes',
         'hide_session_recording': 'hide-session-recording',
         'json': 'json',
         'kexalgs': 'kexalgs',
@@ -59,13 +63,15 @@ class GatewayUpdateRemoteAccess(object):
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, allowed_urls='use-existing', hide_session_recording=None, json=False, kexalgs='use-existing', keyboard_layout='use-existing', legacy_ssh_algorithm=None, rdp_target_configuration='use-existing', ssh_target_configuration='use-existing', token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, allowed_ssh_url='use-existing', allowed_urls='use-existing', default_session_ttl_minutes='use-existing', hide_session_recording=None, json=False, kexalgs='use-existing', keyboard_layout='use-existing', legacy_ssh_algorithm=None, rdp_target_configuration='use-existing', ssh_target_configuration='use-existing', token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """GatewayUpdateRemoteAccess - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
+        self._allowed_ssh_url = None
         self._allowed_urls = None
+        self._default_session_ttl_minutes = None
         self._hide_session_recording = None
         self._json = None
         self._kexalgs = None
@@ -77,8 +83,12 @@ class GatewayUpdateRemoteAccess(object):
         self._uid_token = None
         self.discriminator = None
 
+        if allowed_ssh_url is not None:
+            self.allowed_ssh_url = allowed_ssh_url
         if allowed_urls is not None:
             self.allowed_urls = allowed_urls
+        if default_session_ttl_minutes is not None:
+            self.default_session_ttl_minutes = default_session_ttl_minutes
         if hide_session_recording is not None:
             self.hide_session_recording = hide_session_recording
         if json is not None:
@@ -97,6 +107,29 @@ class GatewayUpdateRemoteAccess(object):
             self.token = token
         if uid_token is not None:
             self.uid_token = uid_token
+
+    @property
+    def allowed_ssh_url(self):
+        """Gets the allowed_ssh_url of this GatewayUpdateRemoteAccess.  # noqa: E501
+
+        Specify a valid SSH-URL to tunnel to SSH session  # noqa: E501
+
+        :return: The allowed_ssh_url of this GatewayUpdateRemoteAccess.  # noqa: E501
+        :rtype: str
+        """
+        return self._allowed_ssh_url
+
+    @allowed_ssh_url.setter
+    def allowed_ssh_url(self, allowed_ssh_url):
+        """Sets the allowed_ssh_url of this GatewayUpdateRemoteAccess.
+
+        Specify a valid SSH-URL to tunnel to SSH session  # noqa: E501
+
+        :param allowed_ssh_url: The allowed_ssh_url of this GatewayUpdateRemoteAccess.  # noqa: E501
+        :type: str
+        """
+
+        self._allowed_ssh_url = allowed_ssh_url
 
     @property
     def allowed_urls(self):
@@ -120,6 +153,29 @@ class GatewayUpdateRemoteAccess(object):
         """
 
         self._allowed_urls = allowed_urls
+
+    @property
+    def default_session_ttl_minutes(self):
+        """Gets the default_session_ttl_minutes of this GatewayUpdateRemoteAccess.  # noqa: E501
+
+        Default session TTL in minutes  # noqa: E501
+
+        :return: The default_session_ttl_minutes of this GatewayUpdateRemoteAccess.  # noqa: E501
+        :rtype: str
+        """
+        return self._default_session_ttl_minutes
+
+    @default_session_ttl_minutes.setter
+    def default_session_ttl_minutes(self, default_session_ttl_minutes):
+        """Sets the default_session_ttl_minutes of this GatewayUpdateRemoteAccess.
+
+        Default session TTL in minutes  # noqa: E501
+
+        :param default_session_ttl_minutes: The default_session_ttl_minutes of this GatewayUpdateRemoteAccess.  # noqa: E501
+        :type: str
+        """
+
+        self._default_session_ttl_minutes = default_session_ttl_minutes
 
     @property
     def hide_session_recording(self):
