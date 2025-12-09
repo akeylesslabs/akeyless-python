@@ -5,7 +5,7 @@ authMethodCreateAwsIam is a command that creates a new Auth Method that will be 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **access_expires** | **int** | Access expiration date in Unix timestamp (select 0 for access without expiry date) | [optional] [default to 0]
-**allowed_client_type** | **list[str]** |  | [optional] 
+**allowed_client_type** | **list[str]** | limit the auth method usage for specific client types [cli,ui,gateway-admin,sdk,mobile,extension] | [optional] 
 **audit_logs_claims** | **list[str]** | Subclaims to include in audit logs, e.g \&quot;--audit-logs-claims email --audit-logs-claims username\&quot; | [optional] 
 **bound_arn** | **list[str]** | A list of full arns that the access is restricted to | [optional] 
 **bound_aws_account_id** | **list[str]** | A list of AWS account-IDs that the access is restricted to | 

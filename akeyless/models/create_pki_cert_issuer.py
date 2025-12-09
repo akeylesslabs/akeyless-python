@@ -589,6 +589,7 @@ class CreatePKICertIssuer(object):
     def create_private_ocsp(self):
         """Gets the create_private_ocsp of this CreatePKICertIssuer.  # noqa: E501
 
+        Set this to enable an OCSP endpoint in the Gateway and include its URL in AIA  # noqa: E501
 
         :return: The create_private_ocsp of this CreatePKICertIssuer.  # noqa: E501
         :rtype: bool
@@ -599,6 +600,7 @@ class CreatePKICertIssuer(object):
     def create_private_ocsp(self, create_private_ocsp):
         """Sets the create_private_ocsp of this CreatePKICertIssuer.
 
+        Set this to enable an OCSP endpoint in the Gateway and include its URL in AIA  # noqa: E501
 
         :param create_private_ocsp: The create_private_ocsp of this CreatePKICertIssuer.  # noqa: E501
         :type: bool
@@ -633,6 +635,7 @@ class CreatePKICertIssuer(object):
     def create_public_ocsp(self):
         """Gets the create_public_ocsp of this CreatePKICertIssuer.  # noqa: E501
 
+        Set this to enable a public OCSP endpoint and include its URL in AIA (served by UAM and includes account id)  # noqa: E501
 
         :return: The create_public_ocsp of this CreatePKICertIssuer.  # noqa: E501
         :rtype: bool
@@ -643,6 +646,7 @@ class CreatePKICertIssuer(object):
     def create_public_ocsp(self, create_public_ocsp):
         """Sets the create_public_ocsp of this CreatePKICertIssuer.
 
+        Set this to enable a public OCSP endpoint and include its URL in AIA (served by UAM and includes account id)  # noqa: E501
 
         :param create_public_ocsp: The create_public_ocsp of this CreatePKICertIssuer.  # noqa: E501
         :type: bool
@@ -1070,6 +1074,7 @@ class CreatePKICertIssuer(object):
     def ocsp_ttl(self):
         """Gets the ocsp_ttl of this CreatePKICertIssuer.  # noqa: E501
 
+        OCSP NextUpdate window for OCSP responses (min 10m). Supports s,m,h,d suffix.  # noqa: E501
 
         :return: The ocsp_ttl of this CreatePKICertIssuer.  # noqa: E501
         :rtype: str
@@ -1080,6 +1085,7 @@ class CreatePKICertIssuer(object):
     def ocsp_ttl(self, ocsp_ttl):
         """Sets the ocsp_ttl of this CreatePKICertIssuer.
 
+        OCSP NextUpdate window for OCSP responses (min 10m). Supports s,m,h,d suffix.  # noqa: E501
 
         :param ocsp_ttl: The ocsp_ttl of this CreatePKICertIssuer.  # noqa: E501
         :type: str

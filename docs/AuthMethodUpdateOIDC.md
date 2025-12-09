@@ -5,7 +5,7 @@ authMethodUpdateOIDC is a command that updates a new auth method that will be av
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **access_expires** | **int** | Access expiration date in Unix timestamp (select 0 for access without expiry date) | [optional] [default to 0]
-**allowed_client_type** | **list[str]** |  | [optional] 
+**allowed_client_type** | **list[str]** | limit the auth method usage for specific client types [cli,ui,gateway-admin,sdk,mobile,extension] | [optional] 
 **allowed_redirect_uri** | **list[str]** | Allowed redirect URIs after the authentication | [optional] 
 **audience** | **str** | Audience claim to be used as part of the authentication flow. In case set, it must match the one configured on the Identity Provider&#39;s Application | [optional] 
 **audit_logs_claims** | **list[str]** | Subclaims to include in audit logs, e.g \&quot;--audit-logs-claims email --audit-logs-claims username\&quot; | [optional] 

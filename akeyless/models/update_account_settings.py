@@ -325,6 +325,7 @@ class UpdateAccountSettings(object):
     def allowed_client_type(self):
         """Gets the allowed_client_type of this UpdateAccountSettings.  # noqa: E501
 
+        A default list of client types that are allowed to authenticate [cli,ui,gateway-admin,sdk,mobile,extension].  # noqa: E501
 
         :return: The allowed_client_type of this UpdateAccountSettings.  # noqa: E501
         :rtype: list[str]
@@ -335,6 +336,7 @@ class UpdateAccountSettings(object):
     def allowed_client_type(self, allowed_client_type):
         """Sets the allowed_client_type of this UpdateAccountSettings.
 
+        A default list of client types that are allowed to authenticate [cli,ui,gateway-admin,sdk,mobile,extension].  # noqa: E501
 
         :param allowed_client_type: The allowed_client_type of this UpdateAccountSettings.  # noqa: E501
         :type: list[str]
@@ -967,6 +969,7 @@ class UpdateAccountSettings(object):
     def lock_allowed_client_type(self):
         """Gets the lock_allowed_client_type of this UpdateAccountSettings.  # noqa: E501
 
+        Lock allowed-client-type setting in the account [true/false].  # noqa: E501
 
         :return: The lock_allowed_client_type of this UpdateAccountSettings.  # noqa: E501
         :rtype: str
@@ -977,6 +980,7 @@ class UpdateAccountSettings(object):
     def lock_allowed_client_type(self, lock_allowed_client_type):
         """Sets the lock_allowed_client_type of this UpdateAccountSettings.
 
+        Lock allowed-client-type setting in the account [true/false].  # noqa: E501
 
         :param lock_allowed_client_type: The lock_allowed_client_type of this UpdateAccountSettings.  # noqa: E501
         :type: str

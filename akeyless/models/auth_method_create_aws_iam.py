@@ -193,6 +193,7 @@ class AuthMethodCreateAwsIam(object):
     def allowed_client_type(self):
         """Gets the allowed_client_type of this AuthMethodCreateAwsIam.  # noqa: E501
 
+        limit the auth method usage for specific client types [cli,ui,gateway-admin,sdk,mobile,extension]  # noqa: E501
 
         :return: The allowed_client_type of this AuthMethodCreateAwsIam.  # noqa: E501
         :rtype: list[str]
@@ -203,6 +204,7 @@ class AuthMethodCreateAwsIam(object):
     def allowed_client_type(self, allowed_client_type):
         """Sets the allowed_client_type of this AuthMethodCreateAwsIam.
 
+        limit the auth method usage for specific client types [cli,ui,gateway-admin,sdk,mobile,extension]  # noqa: E501
 
         :param allowed_client_type: The allowed_client_type of this AuthMethodCreateAwsIam.  # noqa: E501
         :type: list[str]
