@@ -34,6 +34,7 @@ class StaticSecretDeleteSync(object):
                             and the value is json key in definition.
     """
     openapi_types = {
+        'delete_from_usc': 'bool',
         'json': 'bool',
         'name': 'str',
         'remote_secret_name': 'str',
@@ -43,6 +44,7 @@ class StaticSecretDeleteSync(object):
     }
 
     attribute_map = {
+        'delete_from_usc': 'delete-from-usc',
         'json': 'json',
         'name': 'name',
         'remote_secret_name': 'remote-secret-name',
@@ -51,12 +53,13 @@ class StaticSecretDeleteSync(object):
         'usc_name': 'usc-name'
     }
 
-    def __init__(self, json=False, name=None, remote_secret_name=None, token=None, uid_token=None, usc_name=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, delete_from_usc=False, json=False, name=None, remote_secret_name=None, token=None, uid_token=None, usc_name=None, local_vars_configuration=None):  # noqa: E501
         """StaticSecretDeleteSync - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
+        self._delete_from_usc = None
         self._json = None
         self._name = None
         self._remote_secret_name = None
@@ -65,6 +68,8 @@ class StaticSecretDeleteSync(object):
         self._usc_name = None
         self.discriminator = None
 
+        if delete_from_usc is not None:
+            self.delete_from_usc = delete_from_usc
         if json is not None:
             self.json = json
         self.name = name
@@ -75,6 +80,29 @@ class StaticSecretDeleteSync(object):
         if uid_token is not None:
             self.uid_token = uid_token
         self.usc_name = usc_name
+
+    @property
+    def delete_from_usc(self):
+        """Gets the delete_from_usc of this StaticSecretDeleteSync.  # noqa: E501
+
+        Delete the secret from the remote target USC as well  # noqa: E501
+
+        :return: The delete_from_usc of this StaticSecretDeleteSync.  # noqa: E501
+        :rtype: bool
+        """
+        return self._delete_from_usc
+
+    @delete_from_usc.setter
+    def delete_from_usc(self, delete_from_usc):
+        """Sets the delete_from_usc of this StaticSecretDeleteSync.
+
+        Delete the secret from the remote target USC as well  # noqa: E501
+
+        :param delete_from_usc: The delete_from_usc of this StaticSecretDeleteSync.  # noqa: E501
+        :type: bool
+        """
+
+        self._delete_from_usc = delete_from_usc
 
     @property
     def json(self):

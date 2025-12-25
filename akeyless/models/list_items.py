@@ -37,6 +37,7 @@ class ListItems(object):
         'accessibility': 'str',
         'advanced_filter': 'str',
         'auto_pagination': 'str',
+        'current_folder': 'bool',
         'filter': 'str',
         'json': 'bool',
         'minimal_view': 'bool',
@@ -55,6 +56,7 @@ class ListItems(object):
         'accessibility': 'accessibility',
         'advanced_filter': 'advanced-filter',
         'auto_pagination': 'auto-pagination',
+        'current_folder': 'current-folder',
         'filter': 'filter',
         'json': 'json',
         'minimal_view': 'minimal-view',
@@ -69,7 +71,7 @@ class ListItems(object):
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, accessibility='regular', advanced_filter=None, auto_pagination='enabled', filter=None, json=False, minimal_view=None, modified_after=None, pagination_token=None, path=None, sra_only=False, sub_types=None, tag=None, token=None, type=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, accessibility='regular', advanced_filter=None, auto_pagination='enabled', current_folder=False, filter=None, json=False, minimal_view=None, modified_after=None, pagination_token=None, path=None, sra_only=False, sub_types=None, tag=None, token=None, type=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """ListItems - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -78,6 +80,7 @@ class ListItems(object):
         self._accessibility = None
         self._advanced_filter = None
         self._auto_pagination = None
+        self._current_folder = None
         self._filter = None
         self._json = None
         self._minimal_view = None
@@ -98,6 +101,8 @@ class ListItems(object):
             self.advanced_filter = advanced_filter
         if auto_pagination is not None:
             self.auto_pagination = auto_pagination
+        if current_folder is not None:
+            self.current_folder = current_folder
         if filter is not None:
             self.filter = filter
         if json is not None:
@@ -191,6 +196,29 @@ class ListItems(object):
         """
 
         self._auto_pagination = auto_pagination
+
+    @property
+    def current_folder(self):
+        """Gets the current_folder of this ListItems.  # noqa: E501
+
+        List only items in the current folder (excludes subfolders)  # noqa: E501
+
+        :return: The current_folder of this ListItems.  # noqa: E501
+        :rtype: bool
+        """
+        return self._current_folder
+
+    @current_folder.setter
+    def current_folder(self, current_folder):
+        """Sets the current_folder of this ListItems.
+
+        List only items in the current folder (excludes subfolders)  # noqa: E501
+
+        :param current_folder: The current_folder of this ListItems.  # noqa: E501
+        :type: bool
+        """
+
+        self._current_folder = current_folder
 
     @property
     def filter(self):

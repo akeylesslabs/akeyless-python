@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **assoc_id** | **str** |  | [optional] 
 **attributes** | [**UscSyncInfo**](UscSyncInfo.md) |  | [optional] 
+**delete_remote** | **bool** |  | [optional] 
 **item_id** | **int** |  | [optional] 
 **item_name** | **str** |  | [optional] 
 **item_type** | **str** |  | [optional] 

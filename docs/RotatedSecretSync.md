@@ -3,6 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**delete_remote** | **bool** | Delete the secret from remote secret manager (for association create/update) | [optional] 
 **filter_secret_value** | **str** | JQ expression to filter or transform the secret value | [optional] 
 **json** | **bool** | Set output format to JSON | [optional] [default to False]
 **name** | **str** | Rotated secret name | 

@@ -34,6 +34,7 @@ class UscSyncInfo(object):
                             and the value is json key in definition.
     """
     openapi_types = {
+        'delete_remote': 'bool',
         'jq_secret_filter': 'str',
         'last_error': 'str',
         'namespace': 'str',
@@ -42,6 +43,7 @@ class UscSyncInfo(object):
     }
 
     attribute_map = {
+        'delete_remote': 'delete_remote',
         'jq_secret_filter': 'jq_secret_filter',
         'last_error': 'last_error',
         'namespace': 'namespace',
@@ -49,12 +51,13 @@ class UscSyncInfo(object):
         'secret_name': 'secret_name'
     }
 
-    def __init__(self, jq_secret_filter=None, last_error=None, namespace=None, secret_id=None, secret_name=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, delete_remote=None, jq_secret_filter=None, last_error=None, namespace=None, secret_id=None, secret_name=None, local_vars_configuration=None):  # noqa: E501
         """UscSyncInfo - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
+        self._delete_remote = None
         self._jq_secret_filter = None
         self._last_error = None
         self._namespace = None
@@ -62,6 +65,8 @@ class UscSyncInfo(object):
         self._secret_name = None
         self.discriminator = None
 
+        if delete_remote is not None:
+            self.delete_remote = delete_remote
         if jq_secret_filter is not None:
             self.jq_secret_filter = jq_secret_filter
         if last_error is not None:
@@ -72,6 +77,27 @@ class UscSyncInfo(object):
             self.secret_id = secret_id
         if secret_name is not None:
             self.secret_name = secret_name
+
+    @property
+    def delete_remote(self):
+        """Gets the delete_remote of this UscSyncInfo.  # noqa: E501
+
+
+        :return: The delete_remote of this UscSyncInfo.  # noqa: E501
+        :rtype: bool
+        """
+        return self._delete_remote
+
+    @delete_remote.setter
+    def delete_remote(self, delete_remote):
+        """Sets the delete_remote of this UscSyncInfo.
+
+
+        :param delete_remote: The delete_remote of this UscSyncInfo.  # noqa: E501
+        :type: bool
+        """
+
+        self._delete_remote = delete_remote
 
     @property
     def jq_secret_filter(self):

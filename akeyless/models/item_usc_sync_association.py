@@ -36,6 +36,7 @@ class ItemUSCSyncAssociation(object):
     openapi_types = {
         'assoc_id': 'str',
         'attributes': 'UscSyncInfo',
+        'delete_remote': 'bool',
         'item_id': 'int',
         'item_name': 'str',
         'item_type': 'str'
@@ -44,12 +45,13 @@ class ItemUSCSyncAssociation(object):
     attribute_map = {
         'assoc_id': 'assoc_id',
         'attributes': 'attributes',
+        'delete_remote': 'delete_remote',
         'item_id': 'item_id',
         'item_name': 'item_name',
         'item_type': 'item_type'
     }
 
-    def __init__(self, assoc_id=None, attributes=None, item_id=None, item_name=None, item_type=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, assoc_id=None, attributes=None, delete_remote=None, item_id=None, item_name=None, item_type=None, local_vars_configuration=None):  # noqa: E501
         """ItemUSCSyncAssociation - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -57,6 +59,7 @@ class ItemUSCSyncAssociation(object):
 
         self._assoc_id = None
         self._attributes = None
+        self._delete_remote = None
         self._item_id = None
         self._item_name = None
         self._item_type = None
@@ -66,6 +69,8 @@ class ItemUSCSyncAssociation(object):
             self.assoc_id = assoc_id
         if attributes is not None:
             self.attributes = attributes
+        if delete_remote is not None:
+            self.delete_remote = delete_remote
         if item_id is not None:
             self.item_id = item_id
         if item_name is not None:
@@ -114,6 +119,27 @@ class ItemUSCSyncAssociation(object):
         """
 
         self._attributes = attributes
+
+    @property
+    def delete_remote(self):
+        """Gets the delete_remote of this ItemUSCSyncAssociation.  # noqa: E501
+
+
+        :return: The delete_remote of this ItemUSCSyncAssociation.  # noqa: E501
+        :rtype: bool
+        """
+        return self._delete_remote
+
+    @delete_remote.setter
+    def delete_remote(self, delete_remote):
+        """Sets the delete_remote of this ItemUSCSyncAssociation.
+
+
+        :param delete_remote: The delete_remote of this ItemUSCSyncAssociation.  # noqa: E501
+        :type: bool
+        """
+
+        self._delete_remote = delete_remote
 
     @property
     def item_id(self):

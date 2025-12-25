@@ -15,7 +15,7 @@
 
 from __future__ import absolute_import
 
-__version__ = "5.0.17"
+__version__ = "5.0.18"
 
 # import apis into sdk package
 from akeyless.api.v2_api import V2Api
@@ -856,6 +856,7 @@ from akeyless.models.rotated_secret_create_ldap import RotatedSecretCreateLdap
 from akeyless.models.rotated_secret_create_mongodb import RotatedSecretCreateMongodb
 from akeyless.models.rotated_secret_create_mssql import RotatedSecretCreateMssql
 from akeyless.models.rotated_secret_create_mysql import RotatedSecretCreateMysql
+from akeyless.models.rotated_secret_create_open_ai import RotatedSecretCreateOpenAI
 from akeyless.models.rotated_secret_create_oracledb import RotatedSecretCreateOracledb
 from akeyless.models.rotated_secret_create_output import RotatedSecretCreateOutput
 from akeyless.models.rotated_secret_create_postgresql import RotatedSecretCreatePostgresql
@@ -883,6 +884,7 @@ from akeyless.models.rotated_secret_update_ldap import RotatedSecretUpdateLdap
 from akeyless.models.rotated_secret_update_mongodb import RotatedSecretUpdateMongodb
 from akeyless.models.rotated_secret_update_mssql import RotatedSecretUpdateMssql
 from akeyless.models.rotated_secret_update_mysql import RotatedSecretUpdateMysql
+from akeyless.models.rotated_secret_update_open_ai import RotatedSecretUpdateOpenAI
 from akeyless.models.rotated_secret_update_oracledb import RotatedSecretUpdateOracledb
 from akeyless.models.rotated_secret_update_output import RotatedSecretUpdateOutput
 from akeyless.models.rotated_secret_update_postgresql import RotatedSecretUpdatePostgresql

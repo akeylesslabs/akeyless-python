@@ -1,9 +1,12 @@
-# RotatedSecretUpdateSsh
+# RotatedSecretUpdateOpenAI
 
+rotatedSecretUpdateOpenAI is a command that updates an OpenAI rotated secret.
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **add_tag** | **list[str]** | List of the new tags that will be attached to this item | [optional] 
+**api_key** | **str** | Admin API key value to update (relevant only for rotator-type&#x3D;api-key) | [optional] 
+**api_key_id** | **str** | Admin API key ID to update (relevant only for rotator-type&#x3D;api-key) | [optional] 
 **authentication_credentials** | **str** | The credentials to connect with use-user-creds/use-target-creds | [optional] [default to 'use-user-creds']
 **auto_rotate** | **str** | Whether to automatically rotate every --rotation-interval days, or disable existing automatic rotation [true/false] | [optional] 
 **delete_protection** | **str** | Protection from accidental deletion of this object [true/false] | [optional] 
@@ -12,31 +15,14 @@ Name | Type | Description | Notes
 **json** | **bool** | Set output format to JSON | [optional] [default to False]
 **keep_prev_version** | **str** | Whether to keep previous version [true/false]. If not set, use default according to account settings | [optional] 
 **key** | **str** | The name of a key that used to encrypt the secret value (if empty, the account default protectionKey key will be used) | [optional] 
-**key_data_base64** | **str** | Private key file contents encoded using base64 | [optional] 
 **max_versions** | **str** | Set the maximum number of versions, limited by the account settings defaults. | [optional] 
 **name** | **str** | Rotated secret name | 
 **new_name** | **str** | New item name | [optional] 
 **password_length** | **str** | The length of the password to be generated | [optional] 
-**public_key_remote_path** | **str** | The path to the public key that will be rotated on the server | [optional] 
 **rm_tag** | **list[str]** | List of the existent tags that will be removed from this item | [optional] 
-**rotate_after_disconnect** | **str** | Rotate the value of the secret after SRA session ends [true/false] | [optional] [default to 'false']
-**rotated_password** | **str** | rotated-username password (relevant only for rotator-type&#x3D;password) | [optional] 
-**rotated_username** | **str** | username to be rotated, if selected use-self-creds at rotator-creds-type, this username will try to rotate it&#39;s own password, if use-target-creds is selected, target credentials will be use to rotate the rotated-password (relevant only for rotator-type&#x3D;password) | [optional] 
 **rotation_event_in** | **list[str]** | How many days before the rotation of the item would you like to be notified | [optional] 
 **rotation_hour** | **int** | The Hour of the rotation in UTC | [optional] 
 **rotation_interval** | **str** | The number of days to wait between every automatic key rotation (1-365) | [optional] 
-**rotator_custom_cmd** | **str** | Custom rotation command | [optional] 
-**rotator_type** | **str** | The rotator type. options: [target/password/key] | 
-**same_password** | **str** | Rotate same password for each host from the Linked Target (relevant only for Linked Target) | [optional] 
-**secure_access_allow_external_user** | **bool** | Allow providing external user for a domain users | [optional] [default to False]
-**secure_access_bastion_issuer** | **str** | Deprecated. use secure-access-certificate-issuer | [optional] 
-**secure_access_certificate_issuer** | **str** | Path to the SSH Certificate Issuer for your Akeyless Secure Access | [optional] 
-**secure_access_enable** | **str** | Enable/Disable secure remote access [true/false] | [optional] 
-**secure_access_host** | **list[str]** | Target servers for connections (In case of Linked Target association, host(s) will inherit Linked Target hosts - Relevant only for Dynamic Secrets/producers) | [optional] 
-**secure_access_rdp_domain** | **str** | Default domain name server. i.e. microsoft.com | [optional] 
-**secure_access_rdp_user** | **str** | Override the RDP Domain username | [optional] 
-**secure_access_ssh_user** | **str** | Override the SSH username as indicated in SSH Certificate Issuer | [optional] 
-**secure_access_target_type** | **str** | Specify target type. Options are ssh or rdp | [optional] [default to 'false']
 **token** | **str** | Authentication token (see &#x60;/auth&#x60; and &#x60;/configure&#x60;) | [optional] 
 **uid_token** | **str** | The universal identity token, Required only for universal_identity authentication | [optional] 
 

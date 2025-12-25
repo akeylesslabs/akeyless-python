@@ -3,6 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**delete_remote** | **bool** |  | [optional] 
 **jq_secret_filter** | **str** |  | [optional] 
 **last_error** | **str** |  | [optional] 
 **namespace** | **str** |  | [optional] 

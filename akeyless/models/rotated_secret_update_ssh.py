@@ -761,7 +761,7 @@ class RotatedSecretUpdateSsh(object):
     def rotator_type(self):
         """Gets the rotator_type of this RotatedSecretUpdateSsh.  # noqa: E501
 
-        The rotator type. options: [target/password]  # noqa: E501
+        The rotator type. options: [target/password/key]  # noqa: E501
 
         :return: The rotator_type of this RotatedSecretUpdateSsh.  # noqa: E501
         :rtype: str
@@ -772,7 +772,7 @@ class RotatedSecretUpdateSsh(object):
     def rotator_type(self, rotator_type):
         """Sets the rotator_type of this RotatedSecretUpdateSsh.
 
-        The rotator type. options: [target/password]  # noqa: E501
+        The rotator type. options: [target/password/key]  # noqa: E501
 
         :param rotator_type: The rotator_type of this RotatedSecretUpdateSsh.  # noqa: E501
         :type: str

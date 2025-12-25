@@ -34,6 +34,7 @@ class RotatedSecretSync(object):
                             and the value is json key in definition.
     """
     openapi_types = {
+        'delete_remote': 'bool',
         'filter_secret_value': 'str',
         'json': 'bool',
         'name': 'str',
@@ -45,6 +46,7 @@ class RotatedSecretSync(object):
     }
 
     attribute_map = {
+        'delete_remote': 'DeleteRemote',
         'filter_secret_value': 'filter-secret-value',
         'json': 'json',
         'name': 'name',
@@ -55,12 +57,13 @@ class RotatedSecretSync(object):
         'usc_name': 'usc-name'
     }
 
-    def __init__(self, filter_secret_value=None, json=False, name=None, namespace=None, remote_secret_name=None, token=None, uid_token=None, usc_name=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, delete_remote=None, filter_secret_value=None, json=False, name=None, namespace=None, remote_secret_name=None, token=None, uid_token=None, usc_name=None, local_vars_configuration=None):  # noqa: E501
         """RotatedSecretSync - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
+        self._delete_remote = None
         self._filter_secret_value = None
         self._json = None
         self._name = None
@@ -71,6 +74,8 @@ class RotatedSecretSync(object):
         self._usc_name = None
         self.discriminator = None
 
+        if delete_remote is not None:
+            self.delete_remote = delete_remote
         if filter_secret_value is not None:
             self.filter_secret_value = filter_secret_value
         if json is not None:
@@ -86,6 +91,29 @@ class RotatedSecretSync(object):
             self.uid_token = uid_token
         if usc_name is not None:
             self.usc_name = usc_name
+
+    @property
+    def delete_remote(self):
+        """Gets the delete_remote of this RotatedSecretSync.  # noqa: E501
+
+        Delete the secret from remote secret manager (for association create/update)  # noqa: E501
+
+        :return: The delete_remote of this RotatedSecretSync.  # noqa: E501
+        :rtype: bool
+        """
+        return self._delete_remote
+
+    @delete_remote.setter
+    def delete_remote(self, delete_remote):
+        """Sets the delete_remote of this RotatedSecretSync.
+
+        Delete the secret from remote secret manager (for association create/update)  # noqa: E501
+
+        :param delete_remote: The delete_remote of this RotatedSecretSync.  # noqa: E501
+        :type: bool
+        """
+
+        self._delete_remote = delete_remote
 
     @property
     def filter_secret_value(self):
