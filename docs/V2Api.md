@@ -45,6 +45,7 @@ Method | HTTP request | Description
 [**auth_method_update_saml**](V2Api.md#auth_method_update_saml) | **POST** /auth-method-update-saml | 
 [**auth_method_update_universal_identity**](V2Api.md#auth_method_update_universal_identity) | **POST** /auth-method-update-universal-identity | 
 [**calc_password_security_info**](V2Api.md#calc_password_security_info) | **POST** /calc-password-security-info | 
+[**certificate_discovery**](V2Api.md#certificate_discovery) | **POST** /certificate-discovery | 
 [**change_admin_account_password**](V2Api.md#change_admin_account_password) | **POST** /change-admin-account-password | 
 [**configure**](V2Api.md#configure) | **POST** /configure | 
 [**connect**](V2Api.md#connect) | **POST** /connect | 
@@ -3061,6 +3062,66 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | calcPasswordSecurityInfoResponse wraps response body. |  -  |
+**0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **certificate_discovery**
+> CertificateDiscoveryOutput certificate_discovery(certificate_discovery)
+
+
+
+### Example
+
+```python
+from __future__ import print_function
+import time
+import akeyless
+from akeyless.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.akeyless.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = akeyless.Configuration(
+    host = "https://api.akeyless.io"
+)
+
+
+# Enter a context with an instance of the API client
+with akeyless.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = akeyless.V2Api(api_client)
+    certificate_discovery = akeyless.CertificateDiscovery() # CertificateDiscovery | 
+
+    try:
+        api_response = api_instance.certificate_discovery(certificate_discovery)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling V2Api->certificate_discovery: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **certificate_discovery** | [**CertificateDiscovery**](CertificateDiscovery.md)|  | 
+
+### Return type
+
+[**CertificateDiscoveryOutput**](CertificateDiscoveryOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | CertificateDiscoveryResponse wraps response body. |  -  |
 **0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

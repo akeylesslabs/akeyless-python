@@ -37,6 +37,7 @@ class MigrationsConfigPart(object):
         'active_directory_migrations': 'list[ActiveDirectoryMigration]',
         'aws_secrets_migrations': 'list[AWSSecretsMigration]',
         'azure_kv_migrations': 'list[AzureKeyVaultMigration]',
+        'certificate_migrations': 'list[CertificateMigration]',
         'gcp_secrets_migrations': 'list[GCPSecretsMigration]',
         'hashi_migrations': 'list[HashiMigration]',
         'k8s_migrations': 'list[K8SMigration]',
@@ -49,6 +50,7 @@ class MigrationsConfigPart(object):
         'active_directory_migrations': 'active_directory_migrations',
         'aws_secrets_migrations': 'aws_secrets_migrations',
         'azure_kv_migrations': 'azure_kv_migrations',
+        'certificate_migrations': 'certificate_migrations',
         'gcp_secrets_migrations': 'gcp_secrets_migrations',
         'hashi_migrations': 'hashi_migrations',
         'k8s_migrations': 'k8s_migrations',
@@ -57,7 +59,7 @@ class MigrationsConfigPart(object):
         'server_inventory_migrations': 'server_inventory_migrations'
     }
 
-    def __init__(self, active_directory_migrations=None, aws_secrets_migrations=None, azure_kv_migrations=None, gcp_secrets_migrations=None, hashi_migrations=None, k8s_migrations=None, mock_migrations=None, one_password_migrations=None, server_inventory_migrations=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, active_directory_migrations=None, aws_secrets_migrations=None, azure_kv_migrations=None, certificate_migrations=None, gcp_secrets_migrations=None, hashi_migrations=None, k8s_migrations=None, mock_migrations=None, one_password_migrations=None, server_inventory_migrations=None, local_vars_configuration=None):  # noqa: E501
         """MigrationsConfigPart - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -66,6 +68,7 @@ class MigrationsConfigPart(object):
         self._active_directory_migrations = None
         self._aws_secrets_migrations = None
         self._azure_kv_migrations = None
+        self._certificate_migrations = None
         self._gcp_secrets_migrations = None
         self._hashi_migrations = None
         self._k8s_migrations = None
@@ -80,6 +83,8 @@ class MigrationsConfigPart(object):
             self.aws_secrets_migrations = aws_secrets_migrations
         if azure_kv_migrations is not None:
             self.azure_kv_migrations = azure_kv_migrations
+        if certificate_migrations is not None:
+            self.certificate_migrations = certificate_migrations
         if gcp_secrets_migrations is not None:
             self.gcp_secrets_migrations = gcp_secrets_migrations
         if hashi_migrations is not None:
@@ -155,6 +160,27 @@ class MigrationsConfigPart(object):
         """
 
         self._azure_kv_migrations = azure_kv_migrations
+
+    @property
+    def certificate_migrations(self):
+        """Gets the certificate_migrations of this MigrationsConfigPart.  # noqa: E501
+
+
+        :return: The certificate_migrations of this MigrationsConfigPart.  # noqa: E501
+        :rtype: list[CertificateMigration]
+        """
+        return self._certificate_migrations
+
+    @certificate_migrations.setter
+    def certificate_migrations(self, certificate_migrations):
+        """Sets the certificate_migrations of this MigrationsConfigPart.
+
+
+        :param certificate_migrations: The certificate_migrations of this MigrationsConfigPart.  # noqa: E501
+        :type: list[CertificateMigration]
+        """
+
+        self._certificate_migrations = certificate_migrations
 
     @property
     def gcp_secrets_migrations(self):

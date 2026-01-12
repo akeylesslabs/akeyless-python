@@ -115,10 +115,15 @@ from akeyless.models.calc_password_security_info import CalcPasswordSecurityInfo
 from akeyless.models.cert_access_rules import CertAccessRules
 from akeyless.models.certificate_analytic_aggregation import CertificateAnalyticAggregation
 from akeyless.models.certificate_chain_info import CertificateChainInfo
+from akeyless.models.certificate_discovery import CertificateDiscovery
+from akeyless.models.certificate_discovery_output import CertificateDiscoveryOutput
 from akeyless.models.certificate_expiration_event import CertificateExpirationEvent
 from akeyless.models.certificate_expiration_events_settings import CertificateExpirationEventsSettings
 from akeyless.models.certificate_info import CertificateInfo
 from akeyless.models.certificate_issue_info import CertificateIssueInfo
+from akeyless.models.certificate_migration import CertificateMigration
+from akeyless.models.certificate_payload import CertificatePayload
+from akeyless.models.certificate_scan_target import CertificateScanTarget
 from akeyless.models.certificate_store import CertificateStore
 from akeyless.models.certificate_template_info import CertificateTemplateInfo
 from akeyless.models.certificate_version_info import CertificateVersionInfo
@@ -889,6 +894,7 @@ from akeyless.models.saml_attribute import SAMLAttribute
 from akeyless.models.ssh_certificate_issue_details import SSHCertificateIssueDetails
 from akeyless.models.ssh_target_details import SSHTargetDetails
 from akeyless.models.salesforce_target_details import SalesforceTargetDetails
+from akeyless.models.scan_results import ScanResults
 from akeyless.models.secret_info import SecretInfo
 from akeyless.models.secret_sync_output import SecretSyncOutput
 from akeyless.models.sectigo_target_details import SectigoTargetDetails
@@ -963,6 +969,7 @@ from akeyless.models.target_create_web import TargetCreateWeb
 from akeyless.models.target_create_windows import TargetCreateWindows
 from akeyless.models.target_create_zero_ssl import TargetCreateZeroSSL
 from akeyless.models.target_delete import TargetDelete
+from akeyless.models.target_error import TargetError
 from akeyless.models.target_get import TargetGet
 from akeyless.models.target_get_details import TargetGetDetails
 from akeyless.models.target_item_association import TargetItemAssociation

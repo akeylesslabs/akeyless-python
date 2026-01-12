@@ -154,7 +154,7 @@ class UpdateRole(object):
     def audit_access(self):
         """Gets the audit_access of this UpdateRole.  # noqa: E501
 
-        Allow this role to view audit logs. Currently only 'none', 'own' and 'all' values are supported, allowing associated auth methods to view audit logs produced by the same auth methods.  # noqa: E501
+        Allow this role to view audit logs. Currently only 'none', 'own', 'scoped' and 'all' values are supported, allowing associated auth methods to view audit logs produced by the same auth methods.  # noqa: E501
 
         :return: The audit_access of this UpdateRole.  # noqa: E501
         :rtype: str
@@ -165,7 +165,7 @@ class UpdateRole(object):
     def audit_access(self, audit_access):
         """Sets the audit_access of this UpdateRole.
 
-        Allow this role to view audit logs. Currently only 'none', 'own' and 'all' values are supported, allowing associated auth methods to view audit logs produced by the same auth methods.  # noqa: E501
+        Allow this role to view audit logs. Currently only 'none', 'own', 'scoped' and 'all' values are supported, allowing associated auth methods to view audit logs produced by the same auth methods.  # noqa: E501
 
         :param audit_access: The audit_access of this UpdateRole.  # noqa: E501
         :type: str
@@ -223,7 +223,7 @@ class UpdateRole(object):
     def event_center_access(self):
         """Gets the event_center_access of this UpdateRole.  # noqa: E501
 
-        Allow this role to view Event Center. Currently only 'none', 'own' and 'all' values are supported  # noqa: E501
+        Allow this role to view Event Center. Currently only 'none', 'scoped' and 'all' values are supported  # noqa: E501
 
         :return: The event_center_access of this UpdateRole.  # noqa: E501
         :rtype: str
@@ -234,7 +234,7 @@ class UpdateRole(object):
     def event_center_access(self, event_center_access):
         """Sets the event_center_access of this UpdateRole.
 
-        Allow this role to view Event Center. Currently only 'none', 'own' and 'all' values are supported  # noqa: E501
+        Allow this role to view Event Center. Currently only 'none', 'scoped' and 'all' values are supported  # noqa: E501
 
         :param event_center_access: The event_center_access of this UpdateRole.  # noqa: E501
         :type: str
@@ -269,7 +269,7 @@ class UpdateRole(object):
     def gw_analytics_access(self):
         """Gets the gw_analytics_access of this UpdateRole.  # noqa: E501
 
-        Allow this role to view gw analytics. Currently only 'none', 'own', 'all' values are supported, allowing associated auth methods to view reports produced by the same auth methods.  # noqa: E501
+        Allow this role to view gw analytics. Currently only 'none', 'scoped', 'all' values are supported, allowing associated auth methods to view reports produced by the same auth methods.  # noqa: E501
 
         :return: The gw_analytics_access of this UpdateRole.  # noqa: E501
         :rtype: str
@@ -280,7 +280,7 @@ class UpdateRole(object):
     def gw_analytics_access(self, gw_analytics_access):
         """Sets the gw_analytics_access of this UpdateRole.
 
-        Allow this role to view gw analytics. Currently only 'none', 'own', 'all' values are supported, allowing associated auth methods to view reports produced by the same auth methods.  # noqa: E501
+        Allow this role to view gw analytics. Currently only 'none', 'scoped', 'all' values are supported, allowing associated auth methods to view reports produced by the same auth methods.  # noqa: E501
 
         :param gw_analytics_access: The gw_analytics_access of this UpdateRole.  # noqa: E501
         :type: str
@@ -386,7 +386,7 @@ class UpdateRole(object):
     def reverse_rbac_access(self):
         """Gets the reverse_rbac_access of this UpdateRole.  # noqa: E501
 
-        Allow this role to view Reverse RBAC. Supported values: 'own', 'all'.  # noqa: E501
+        Allow this role to view Reverse RBAC. Supported values: 'scoped', 'all'.  # noqa: E501
 
         :return: The reverse_rbac_access of this UpdateRole.  # noqa: E501
         :rtype: str
@@ -397,7 +397,7 @@ class UpdateRole(object):
     def reverse_rbac_access(self, reverse_rbac_access):
         """Sets the reverse_rbac_access of this UpdateRole.
 
-        Allow this role to view Reverse RBAC. Supported values: 'own', 'all'.  # noqa: E501
+        Allow this role to view Reverse RBAC. Supported values: 'scoped', 'all'.  # noqa: E501
 
         :param reverse_rbac_access: The reverse_rbac_access of this UpdateRole.  # noqa: E501
         :type: str
@@ -409,7 +409,7 @@ class UpdateRole(object):
     def sra_reports_access(self):
         """Gets the sra_reports_access of this UpdateRole.  # noqa: E501
 
-        Allow this role to view SRA Clusters. Currently only 'none', 'own', 'all' values are supported.  # noqa: E501
+        Allow this role to view SRA Clusters. Currently only 'none', 'scoped', 'all' values are supported.  # noqa: E501
 
         :return: The sra_reports_access of this UpdateRole.  # noqa: E501
         :rtype: str
@@ -420,7 +420,7 @@ class UpdateRole(object):
     def sra_reports_access(self, sra_reports_access):
         """Sets the sra_reports_access of this UpdateRole.
 
-        Allow this role to view SRA Clusters. Currently only 'none', 'own', 'all' values are supported.  # noqa: E501
+        Allow this role to view SRA Clusters. Currently only 'none', 'scoped', 'all' values are supported.  # noqa: E501
 
         :param sra_reports_access: The sra_reports_access of this UpdateRole.  # noqa: E501
         :type: str

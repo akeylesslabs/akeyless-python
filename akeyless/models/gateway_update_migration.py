@@ -65,11 +65,13 @@ class GatewayUpdateMigration(object):
         'azure_kv_name': 'str',
         'azure_secret': 'str',
         'azure_tenant_id': 'str',
+        'expiration_event_in': 'list[str]',
         'gcp_key': 'str',
         'hashi_json': 'str',
         'hashi_ns': 'list[str]',
         'hashi_token': 'str',
         'hashi_url': 'str',
+        'hosts': 'str',
         'id': 'str',
         'json': 'bool',
         'k8s_ca_certificate': 'list[int]',
@@ -83,6 +85,7 @@ class GatewayUpdateMigration(object):
         'k8s_username': 'str',
         'name': 'str',
         'new_name': 'str',
+        'port_ranges': 'str',
         'protection_key': 'str',
         'si_auto_rotate': 'str',
         'si_rotation_hour': 'int',
@@ -129,11 +132,13 @@ class GatewayUpdateMigration(object):
         'azure_kv_name': 'azure-kv-name',
         'azure_secret': 'azure-secret',
         'azure_tenant_id': 'azure-tenant-id',
+        'expiration_event_in': 'expiration-event-in',
         'gcp_key': 'gcp-key',
         'hashi_json': 'hashi-json',
         'hashi_ns': 'hashi-ns',
         'hashi_token': 'hashi-token',
         'hashi_url': 'hashi-url',
+        'hosts': 'hosts',
         'id': 'id',
         'json': 'json',
         'k8s_ca_certificate': 'k8s-ca-certificate',
@@ -147,6 +152,7 @@ class GatewayUpdateMigration(object):
         'k8s_username': 'k8s-username',
         'name': 'name',
         'new_name': 'new-name',
+        'port_ranges': 'port-ranges',
         'protection_key': 'protection-key',
         'si_auto_rotate': 'si-auto-rotate',
         'si_rotation_hour': 'si-rotation-hour',
@@ -161,7 +167,7 @@ class GatewayUpdateMigration(object):
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, service_account_key_decoded=None, ad_auto_rotate=None, ad_computer_base_dn=None, ad_discover_iis_app='false', ad_discover_services='false', ad_discovery_types=None, ad_domain_name=None, ad_domain_users_path_template=None, ad_local_users_ignore=None, ad_local_users_path_template=None, ad_os_filter=None, ad_rotation_hour=None, ad_rotation_interval=None, ad_sra_enable_rdp=None, ad_ssh_port='22', ad_target_format='linked', ad_target_name=None, ad_targets_path_template=None, ad_targets_type='windows', ad_user_base_dn=None, ad_user_groups=None, ad_winrm_over_http='false', ad_winrm_port='5986', ad_discover_local_users=None, aws_key=None, aws_key_id=None, aws_region='us-east-2', azure_client_id=None, azure_kv_name=None, azure_secret=None, azure_tenant_id=None, gcp_key=None, hashi_json='true', hashi_ns=None, hashi_token=None, hashi_url=None, id=None, json=False, k8s_ca_certificate=None, k8s_client_certificate=None, k8s_client_key=None, k8s_namespace=None, k8s_password=None, k8s_skip_system=None, k8s_token=None, k8s_url=None, k8s_username=None, name=None, new_name=None, protection_key=None, si_auto_rotate=None, si_rotation_hour=None, si_rotation_interval=None, si_sra_enable_rdp='false', si_target_name=None, si_user_groups=None, si_users_ignore=None, si_users_path_template=None, target_location=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, service_account_key_decoded=None, ad_auto_rotate=None, ad_computer_base_dn=None, ad_discover_iis_app='false', ad_discover_services='false', ad_discovery_types=None, ad_domain_name=None, ad_domain_users_path_template=None, ad_local_users_ignore=None, ad_local_users_path_template=None, ad_os_filter=None, ad_rotation_hour=None, ad_rotation_interval=None, ad_sra_enable_rdp=None, ad_ssh_port='22', ad_target_format='linked', ad_target_name=None, ad_targets_path_template=None, ad_targets_type='windows', ad_user_base_dn=None, ad_user_groups=None, ad_winrm_over_http='false', ad_winrm_port='5986', ad_discover_local_users=None, aws_key=None, aws_key_id=None, aws_region='us-east-2', azure_client_id=None, azure_kv_name=None, azure_secret=None, azure_tenant_id=None, expiration_event_in=None, gcp_key=None, hashi_json='true', hashi_ns=None, hashi_token=None, hashi_url=None, hosts=None, id=None, json=False, k8s_ca_certificate=None, k8s_client_certificate=None, k8s_client_key=None, k8s_namespace=None, k8s_password=None, k8s_skip_system=None, k8s_token=None, k8s_url=None, k8s_username=None, name=None, new_name=None, port_ranges='443', protection_key=None, si_auto_rotate=None, si_rotation_hour=None, si_rotation_interval=None, si_sra_enable_rdp='false', si_target_name=None, si_user_groups=None, si_users_ignore=None, si_users_path_template=None, target_location=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """GatewayUpdateMigration - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -198,11 +204,13 @@ class GatewayUpdateMigration(object):
         self._azure_kv_name = None
         self._azure_secret = None
         self._azure_tenant_id = None
+        self._expiration_event_in = None
         self._gcp_key = None
         self._hashi_json = None
         self._hashi_ns = None
         self._hashi_token = None
         self._hashi_url = None
+        self._hosts = None
         self._id = None
         self._json = None
         self._k8s_ca_certificate = None
@@ -216,6 +224,7 @@ class GatewayUpdateMigration(object):
         self._k8s_username = None
         self._name = None
         self._new_name = None
+        self._port_ranges = None
         self._protection_key = None
         self._si_auto_rotate = None
         self._si_rotation_hour = None
@@ -292,6 +301,8 @@ class GatewayUpdateMigration(object):
             self.azure_secret = azure_secret
         if azure_tenant_id is not None:
             self.azure_tenant_id = azure_tenant_id
+        if expiration_event_in is not None:
+            self.expiration_event_in = expiration_event_in
         if gcp_key is not None:
             self.gcp_key = gcp_key
         if hashi_json is not None:
@@ -302,6 +313,7 @@ class GatewayUpdateMigration(object):
             self.hashi_token = hashi_token
         if hashi_url is not None:
             self.hashi_url = hashi_url
+        self.hosts = hosts
         if id is not None:
             self.id = id
         if json is not None:
@@ -328,6 +340,8 @@ class GatewayUpdateMigration(object):
             self.name = name
         if new_name is not None:
             self.new_name = new_name
+        if port_ranges is not None:
+            self.port_ranges = port_ranges
         if protection_key is not None:
             self.protection_key = protection_key
         if si_auto_rotate is not None:
@@ -1062,6 +1076,29 @@ class GatewayUpdateMigration(object):
         self._azure_tenant_id = azure_tenant_id
 
     @property
+    def expiration_event_in(self):
+        """Gets the expiration_event_in of this GatewayUpdateMigration.  # noqa: E501
+
+        How many days before the expiration of the certificate would you like to be notified.  # noqa: E501
+
+        :return: The expiration_event_in of this GatewayUpdateMigration.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._expiration_event_in
+
+    @expiration_event_in.setter
+    def expiration_event_in(self, expiration_event_in):
+        """Sets the expiration_event_in of this GatewayUpdateMigration.
+
+        How many days before the expiration of the certificate would you like to be notified.  # noqa: E501
+
+        :param expiration_event_in: The expiration_event_in of this GatewayUpdateMigration.  # noqa: E501
+        :type: list[str]
+        """
+
+        self._expiration_event_in = expiration_event_in
+
+    @property
     def gcp_key(self):
         """Gets the gcp_key of this GatewayUpdateMigration.  # noqa: E501
 
@@ -1175,6 +1212,31 @@ class GatewayUpdateMigration(object):
         """
 
         self._hashi_url = hashi_url
+
+    @property
+    def hosts(self):
+        """Gets the hosts of this GatewayUpdateMigration.  # noqa: E501
+
+        A comma separated list of IPs, CIDR ranges, or DNS names to scan  # noqa: E501
+
+        :return: The hosts of this GatewayUpdateMigration.  # noqa: E501
+        :rtype: str
+        """
+        return self._hosts
+
+    @hosts.setter
+    def hosts(self, hosts):
+        """Sets the hosts of this GatewayUpdateMigration.
+
+        A comma separated list of IPs, CIDR ranges, or DNS names to scan  # noqa: E501
+
+        :param hosts: The hosts of this GatewayUpdateMigration.  # noqa: E501
+        :type: str
+        """
+        if self.local_vars_configuration.client_side_validation and hosts is None:  # noqa: E501
+            raise ValueError("Invalid value for `hosts`, must not be `None`")  # noqa: E501
+
+        self._hosts = hosts
 
     @property
     def id(self):
@@ -1474,6 +1536,29 @@ class GatewayUpdateMigration(object):
         """
 
         self._new_name = new_name
+
+    @property
+    def port_ranges(self):
+        """Gets the port_ranges of this GatewayUpdateMigration.  # noqa: E501
+
+        A comma separated list of port ranges Examples: \"80,443\" or \"80,443,8080-8090\" or \"443\"  # noqa: E501
+
+        :return: The port_ranges of this GatewayUpdateMigration.  # noqa: E501
+        :rtype: str
+        """
+        return self._port_ranges
+
+    @port_ranges.setter
+    def port_ranges(self, port_ranges):
+        """Sets the port_ranges of this GatewayUpdateMigration.
+
+        A comma separated list of port ranges Examples: \"80,443\" or \"80,443,8080-8090\" or \"443\"  # noqa: E501
+
+        :param port_ranges: The port_ranges of this GatewayUpdateMigration.  # noqa: E501
+        :type: str
+        """
+
+        self._port_ranges = port_ranges
 
     @property
     def protection_key(self):

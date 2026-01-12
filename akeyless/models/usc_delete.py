@@ -34,6 +34,7 @@ class UscDelete(object):
                             and the value is json key in definition.
     """
     openapi_types = {
+        'force_delete': 'bool',
         'json': 'bool',
         'namespace': 'str',
         'secret_id': 'str',
@@ -43,6 +44,7 @@ class UscDelete(object):
     }
 
     attribute_map = {
+        'force_delete': 'force-delete',
         'json': 'json',
         'namespace': 'namespace',
         'secret_id': 'secret-id',
@@ -51,12 +53,13 @@ class UscDelete(object):
         'usc_name': 'usc-name'
     }
 
-    def __init__(self, json=False, namespace=None, secret_id=None, token=None, uid_token=None, usc_name=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, force_delete=None, json=False, namespace=None, secret_id=None, token=None, uid_token=None, usc_name=None, local_vars_configuration=None):  # noqa: E501
         """UscDelete - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
+        self._force_delete = None
         self._json = None
         self._namespace = None
         self._secret_id = None
@@ -65,6 +68,8 @@ class UscDelete(object):
         self._usc_name = None
         self.discriminator = None
 
+        if force_delete is not None:
+            self.force_delete = force_delete
         if json is not None:
             self.json = json
         if namespace is not None:
@@ -75,6 +80,29 @@ class UscDelete(object):
         if uid_token is not None:
             self.uid_token = uid_token
         self.usc_name = usc_name
+
+    @property
+    def force_delete(self):
+        """Gets the force_delete of this UscDelete.  # noqa: E501
+
+        Force delete objects that are soft deleted by default (relavent only for Azure target)  # noqa: E501
+
+        :return: The force_delete of this UscDelete.  # noqa: E501
+        :rtype: bool
+        """
+        return self._force_delete
+
+    @force_delete.setter
+    def force_delete(self, force_delete):
+        """Sets the force_delete of this UscDelete.
+
+        Force delete objects that are soft deleted by default (relavent only for Azure target)  # noqa: E501
+
+        :param force_delete: The force_delete of this UscDelete.  # noqa: E501
+        :type: bool
+        """
+
+        self._force_delete = force_delete
 
     @property
     def json(self):

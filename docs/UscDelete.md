@@ -4,6 +4,7 @@ uscDelete is a command that deletes a secret from a Universal Secrets Connector
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**force_delete** | **bool** | Force delete objects that are soft deleted by default (relavent only for Azure target) | [optional] 
 **json** | **bool** | Set output format to JSON | [optional] [default to False]
 **namespace** | **str** | The namespace (relevant for Hashi vault target) | [optional] 
 **secret_id** | **str** | The universal secrets id (or name, for AWS, Azure, K8s or Hashi vault targets) to delete | 
