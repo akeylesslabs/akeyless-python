@@ -40,6 +40,7 @@ class UscCreate(object):
         'namespace': 'str',
         'object_type': 'str',
         'pfx_password': 'str',
+        'region': 'str',
         'secret_name': 'str',
         'tags': 'dict(str, str)',
         'token': 'str',
@@ -56,6 +57,7 @@ class UscCreate(object):
         'namespace': 'namespace',
         'object_type': 'object-type',
         'pfx_password': 'pfx-password',
+        'region': 'region',
         'secret_name': 'secret-name',
         'tags': 'tags',
         'token': 'token',
@@ -65,7 +67,7 @@ class UscCreate(object):
         'value': 'value'
     }
 
-    def __init__(self, binary_value=None, description=None, json=False, namespace=None, object_type=None, pfx_password=None, secret_name=None, tags=None, token=None, uid_token=None, usc_encryption_key=None, usc_name=None, value=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, binary_value=None, description=None, json=False, namespace=None, object_type=None, pfx_password=None, region=None, secret_name=None, tags=None, token=None, uid_token=None, usc_encryption_key=None, usc_name=None, value=None, local_vars_configuration=None):  # noqa: E501
         """UscCreate - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -77,6 +79,7 @@ class UscCreate(object):
         self._namespace = None
         self._object_type = None
         self._pfx_password = None
+        self._region = None
         self._secret_name = None
         self._tags = None
         self._token = None
@@ -98,6 +101,8 @@ class UscCreate(object):
             self.object_type = object_type
         if pfx_password is not None:
             self.pfx_password = pfx_password
+        if region is not None:
+            self.region = region
         self.secret_name = secret_name
         if tags is not None:
             self.tags = tags
@@ -245,6 +250,29 @@ class UscCreate(object):
         """
 
         self._pfx_password = pfx_password
+
+    @property
+    def region(self):
+        """Gets the region of this UscCreate.  # noqa: E501
+
+        Optional, create secret in a specific region (GCP only). If empty, a global secret will be created (provider default).  # noqa: E501
+
+        :return: The region of this UscCreate.  # noqa: E501
+        :rtype: str
+        """
+        return self._region
+
+    @region.setter
+    def region(self, region):
+        """Sets the region of this UscCreate.
+
+        Optional, create secret in a specific region (GCP only). If empty, a global secret will be created (provider default).  # noqa: E501
+
+        :param region: The region of this UscCreate.  # noqa: E501
+        :type: str
+        """
+
+        self._region = region
 
     @property
     def secret_name(self):

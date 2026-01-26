@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **cert_issuer_name** | **str** | The name of the PKI certificate issuer | 
 **common_name** | **str** | The common name to be included in the PKI certificate (if CSR is supplied this flag is ignored and the CSR subject CN is taken) | [optional] 
 **csr_data_base64** | **str** | Certificate Signing Request contents encoded in base64 to generate the certificate with | [optional] 
-**extended_key_usage** | **str** | A comma-separated list of extended key usage requests which will be used for certificate issuance. Supported values: &#39;clientauth&#39;, &#39;serverauth&#39;. If critical is present the extension will be marked as critical | [optional] 
+**extended_key_usage** | **str** | A comma-separated list of extended key usage requests which will be used for certificate issuance. Supported values: &#39;clientauth&#39;, &#39;serverauth&#39;, &#39;codesigning&#39;. If critical is present the extension will be marked as critical | [optional] 
 **extra_extensions** | **str** | A json string that defines the requested extra extensions for the certificate | [optional] 
 **json** | **bool** | Set output format to JSON | [optional] [default to False]
 **key_data_base64** | **str** | PKI key file contents. If this option is used, the certificate will be printed to stdout | [optional] 

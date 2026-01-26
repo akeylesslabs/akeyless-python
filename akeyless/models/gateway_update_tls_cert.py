@@ -35,6 +35,7 @@ class GatewayUpdateTlsCert(object):
     """
     openapi_types = {
         'cert_data': 'str',
+        'expiration_event_in': 'list[str]',
         'json': 'bool',
         'key_data': 'str',
         'token': 'str',
@@ -43,19 +44,21 @@ class GatewayUpdateTlsCert(object):
 
     attribute_map = {
         'cert_data': 'cert-data',
+        'expiration_event_in': 'expiration-event-in',
         'json': 'json',
         'key_data': 'key-data',
         'token': 'token',
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, cert_data=None, json=False, key_data=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, cert_data=None, expiration_event_in=None, json=False, key_data=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """GatewayUpdateTlsCert - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._cert_data = None
+        self._expiration_event_in = None
         self._json = None
         self._key_data = None
         self._token = None
@@ -64,6 +67,8 @@ class GatewayUpdateTlsCert(object):
 
         if cert_data is not None:
             self.cert_data = cert_data
+        if expiration_event_in is not None:
+            self.expiration_event_in = expiration_event_in
         if json is not None:
             self.json = json
         if key_data is not None:
@@ -95,6 +100,29 @@ class GatewayUpdateTlsCert(object):
         """
 
         self._cert_data = cert_data
+
+    @property
+    def expiration_event_in(self):
+        """Gets the expiration_event_in of this GatewayUpdateTlsCert.  # noqa: E501
+
+        How many days before the expiration of the certificate would you like to be notified.  # noqa: E501
+
+        :return: The expiration_event_in of this GatewayUpdateTlsCert.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._expiration_event_in
+
+    @expiration_event_in.setter
+    def expiration_event_in(self, expiration_event_in):
+        """Sets the expiration_event_in of this GatewayUpdateTlsCert.
+
+        How many days before the expiration of the certificate would you like to be notified.  # noqa: E501
+
+        :param expiration_event_in: The expiration_event_in of this GatewayUpdateTlsCert.  # noqa: E501
+        :type: list[str]
+        """
+
+        self._expiration_event_in = expiration_event_in
 
     @property
     def json(self):

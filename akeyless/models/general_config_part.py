@@ -47,6 +47,9 @@ class GeneralConfigPart(object):
         'notify_on_status_change': 'bool',
         'tcp_port': 'str',
         'tls_cert': 'str',
+        'tls_cert_common_name': 'str',
+        'tls_cert_expiration_date': 'datetime',
+        'tls_cert_expiration_events': 'list[CertificateExpirationEvent]',
         'tls_key': 'str'
     }
 
@@ -64,10 +67,13 @@ class GeneralConfigPart(object):
         'notify_on_status_change': 'notify_on_status_change',
         'tcp_port': 'tcp_port',
         'tls_cert': 'tls_cert',
+        'tls_cert_common_name': 'tls_cert_common_name',
+        'tls_cert_expiration_date': 'tls_cert_expiration_date',
+        'tls_cert_expiration_events': 'tls_cert_expiration_events',
         'tls_key': 'tls_key'
     }
 
-    def __init__(self, akeyless_url=None, api_token_ttl=None, display_name=None, enable_sni_proxy=None, enable_tls=None, enable_tls_configure=None, enable_tls_curl=None, enable_tls_hvp=None, gw_cluster_url=None, hvp_route_version=None, notify_on_status_change=None, tcp_port=None, tls_cert=None, tls_key=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, akeyless_url=None, api_token_ttl=None, display_name=None, enable_sni_proxy=None, enable_tls=None, enable_tls_configure=None, enable_tls_curl=None, enable_tls_hvp=None, gw_cluster_url=None, hvp_route_version=None, notify_on_status_change=None, tcp_port=None, tls_cert=None, tls_cert_common_name=None, tls_cert_expiration_date=None, tls_cert_expiration_events=None, tls_key=None, local_vars_configuration=None):  # noqa: E501
         """GeneralConfigPart - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -86,6 +92,9 @@ class GeneralConfigPart(object):
         self._notify_on_status_change = None
         self._tcp_port = None
         self._tls_cert = None
+        self._tls_cert_common_name = None
+        self._tls_cert_expiration_date = None
+        self._tls_cert_expiration_events = None
         self._tls_key = None
         self.discriminator = None
 
@@ -115,6 +124,12 @@ class GeneralConfigPart(object):
             self.tcp_port = tcp_port
         if tls_cert is not None:
             self.tls_cert = tls_cert
+        if tls_cert_common_name is not None:
+            self.tls_cert_common_name = tls_cert_common_name
+        if tls_cert_expiration_date is not None:
+            self.tls_cert_expiration_date = tls_cert_expiration_date
+        if tls_cert_expiration_events is not None:
+            self.tls_cert_expiration_events = tls_cert_expiration_events
         if tls_key is not None:
             self.tls_key = tls_key
 
@@ -392,6 +407,69 @@ class GeneralConfigPart(object):
         """
 
         self._tls_cert = tls_cert
+
+    @property
+    def tls_cert_common_name(self):
+        """Gets the tls_cert_common_name of this GeneralConfigPart.  # noqa: E501
+
+
+        :return: The tls_cert_common_name of this GeneralConfigPart.  # noqa: E501
+        :rtype: str
+        """
+        return self._tls_cert_common_name
+
+    @tls_cert_common_name.setter
+    def tls_cert_common_name(self, tls_cert_common_name):
+        """Sets the tls_cert_common_name of this GeneralConfigPart.
+
+
+        :param tls_cert_common_name: The tls_cert_common_name of this GeneralConfigPart.  # noqa: E501
+        :type: str
+        """
+
+        self._tls_cert_common_name = tls_cert_common_name
+
+    @property
+    def tls_cert_expiration_date(self):
+        """Gets the tls_cert_expiration_date of this GeneralConfigPart.  # noqa: E501
+
+
+        :return: The tls_cert_expiration_date of this GeneralConfigPart.  # noqa: E501
+        :rtype: datetime
+        """
+        return self._tls_cert_expiration_date
+
+    @tls_cert_expiration_date.setter
+    def tls_cert_expiration_date(self, tls_cert_expiration_date):
+        """Sets the tls_cert_expiration_date of this GeneralConfigPart.
+
+
+        :param tls_cert_expiration_date: The tls_cert_expiration_date of this GeneralConfigPart.  # noqa: E501
+        :type: datetime
+        """
+
+        self._tls_cert_expiration_date = tls_cert_expiration_date
+
+    @property
+    def tls_cert_expiration_events(self):
+        """Gets the tls_cert_expiration_events of this GeneralConfigPart.  # noqa: E501
+
+
+        :return: The tls_cert_expiration_events of this GeneralConfigPart.  # noqa: E501
+        :rtype: list[CertificateExpirationEvent]
+        """
+        return self._tls_cert_expiration_events
+
+    @tls_cert_expiration_events.setter
+    def tls_cert_expiration_events(self, tls_cert_expiration_events):
+        """Sets the tls_cert_expiration_events of this GeneralConfigPart.
+
+
+        :param tls_cert_expiration_events: The tls_cert_expiration_events of this GeneralConfigPart.  # noqa: E501
+        :type: list[CertificateExpirationEvent]
+        """
+
+        self._tls_cert_expiration_events = tls_cert_expiration_events
 
     @property
     def tls_key(self):

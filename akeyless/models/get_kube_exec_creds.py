@@ -238,7 +238,7 @@ class GetKubeExecCreds(object):
     def extended_key_usage(self):
         """Gets the extended_key_usage of this GetKubeExecCreds.  # noqa: E501
 
-        A comma-separated list of extended key usage requests which will be used for certificate issuance. Supported values: 'clientauth', 'serverauth'. If critical is present the extension will be marked as critical  # noqa: E501
+        A comma-separated list of extended key usage requests which will be used for certificate issuance. Supported values: 'clientauth', 'serverauth', 'codesigning'. If critical is present the extension will be marked as critical  # noqa: E501
 
         :return: The extended_key_usage of this GetKubeExecCreds.  # noqa: E501
         :rtype: str
@@ -249,7 +249,7 @@ class GetKubeExecCreds(object):
     def extended_key_usage(self, extended_key_usage):
         """Sets the extended_key_usage of this GetKubeExecCreds.
 
-        A comma-separated list of extended key usage requests which will be used for certificate issuance. Supported values: 'clientauth', 'serverauth'. If critical is present the extension will be marked as critical  # noqa: E501
+        A comma-separated list of extended key usage requests which will be used for certificate issuance. Supported values: 'clientauth', 'serverauth', 'codesigning'. If critical is present the extension will be marked as critical  # noqa: E501
 
         :param extended_key_usage: The extended_key_usage of this GetKubeExecCreds.  # noqa: E501
         :type: str

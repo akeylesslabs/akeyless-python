@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **last_retrieved** | **datetime** |  | [optional] 
 **location** | [**object**](.md) |  | [optional] 
 **name** | **str** |  | [optional] 
+**region** | **str** |  | [optional] 
 **secret_id** | **str** |  | [optional] 
 **status** | **bool** |  | [optional] 
 **tags** | **dict(str, str)** |  | [optional] 

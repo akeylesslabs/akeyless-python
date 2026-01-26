@@ -43,6 +43,7 @@ class UpdateItem(object):
         'delete_protection': 'str',
         'description': 'str',
         'expiration_event_in': 'list[str]',
+        'gcp_sm_regions': 'str',
         'host_provider': 'str',
         'item_custom_fields': 'dict(str, str)',
         'json': 'bool',
@@ -96,6 +97,7 @@ class UpdateItem(object):
         'delete_protection': 'delete_protection',
         'description': 'description',
         'expiration_event_in': 'expiration-event-in',
+        'gcp_sm_regions': 'gcp-sm-regions',
         'host_provider': 'host-provider',
         'item_custom_fields': 'item-custom-fields',
         'json': 'json',
@@ -139,7 +141,7 @@ class UpdateItem(object):
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, provider_type=None, accessibility='regular', add_tag=None, cert_file_data=None, certificate_format=None, change_event=None, delete_protection=None, description='default_metadata', expiration_event_in=None, host_provider=None, item_custom_fields=None, json=False, max_versions=None, name=None, new_metadata='default_metadata', new_name=None, rm_tag=None, rotate_after_disconnect='false', secure_access_add_host=None, secure_access_allow_external_user=None, secure_access_allow_port_forwading=None, secure_access_api=None, secure_access_aws_account_id=None, secure_access_aws_native_cli=None, secure_access_aws_region=None, secure_access_bastion_api=None, secure_access_bastion_issuer=None, secure_access_bastion_ssh=None, secure_access_certificate_issuer=None, secure_access_cluster_endpoint=None, secure_access_dashboard_url=None, secure_access_db_name=None, secure_access_db_schema=None, secure_access_enable=None, secure_access_gateway=None, secure_access_host=None, secure_access_rd_gateway_server=None, secure_access_rdp_domain=None, secure_access_rdp_user=None, secure_access_rm_host=None, secure_access_ssh=None, secure_access_ssh_creds=None, secure_access_ssh_creds_user=None, secure_access_url=None, secure_access_use_internal_bastion=None, secure_access_use_internal_ssh_access=None, secure_access_web_browsing=False, secure_access_web_proxy=False, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, provider_type=None, accessibility='regular', add_tag=None, cert_file_data=None, certificate_format=None, change_event=None, delete_protection=None, description='default_metadata', expiration_event_in=None, gcp_sm_regions=None, host_provider=None, item_custom_fields=None, json=False, max_versions=None, name=None, new_metadata='default_metadata', new_name=None, rm_tag=None, rotate_after_disconnect='false', secure_access_add_host=None, secure_access_allow_external_user=None, secure_access_allow_port_forwading=None, secure_access_api=None, secure_access_aws_account_id=None, secure_access_aws_native_cli=None, secure_access_aws_region=None, secure_access_bastion_api=None, secure_access_bastion_issuer=None, secure_access_bastion_ssh=None, secure_access_certificate_issuer=None, secure_access_cluster_endpoint=None, secure_access_dashboard_url=None, secure_access_db_name=None, secure_access_db_schema=None, secure_access_enable=None, secure_access_gateway=None, secure_access_host=None, secure_access_rd_gateway_server=None, secure_access_rdp_domain=None, secure_access_rdp_user=None, secure_access_rm_host=None, secure_access_ssh=None, secure_access_ssh_creds=None, secure_access_ssh_creds_user=None, secure_access_url=None, secure_access_use_internal_bastion=None, secure_access_use_internal_ssh_access=None, secure_access_web_browsing=False, secure_access_web_proxy=False, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """UpdateItem - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -154,6 +156,7 @@ class UpdateItem(object):
         self._delete_protection = None
         self._description = None
         self._expiration_event_in = None
+        self._gcp_sm_regions = None
         self._host_provider = None
         self._item_custom_fields = None
         self._json = None
@@ -215,6 +218,8 @@ class UpdateItem(object):
             self.description = description
         if expiration_event_in is not None:
             self.expiration_event_in = expiration_event_in
+        if gcp_sm_regions is not None:
+            self.gcp_sm_regions = gcp_sm_regions
         if host_provider is not None:
             self.host_provider = host_provider
         if item_custom_fields is not None:
@@ -499,6 +504,29 @@ class UpdateItem(object):
         """
 
         self._expiration_event_in = expiration_event_in
+
+    @property
+    def gcp_sm_regions(self):
+        """Gets the gcp_sm_regions of this UpdateItem.  # noqa: E501
+
+        GCP Secret Manager regions to query for regional secrets (comma-separated, e.g., us-east1,us-west1). Max 12 regions. USC with GCP targets only.  # noqa: E501
+
+        :return: The gcp_sm_regions of this UpdateItem.  # noqa: E501
+        :rtype: str
+        """
+        return self._gcp_sm_regions
+
+    @gcp_sm_regions.setter
+    def gcp_sm_regions(self, gcp_sm_regions):
+        """Sets the gcp_sm_regions of this UpdateItem.
+
+        GCP Secret Manager regions to query for regional secrets (comma-separated, e.g., us-east1,us-west1). Max 12 regions. USC with GCP targets only.  # noqa: E501
+
+        :param gcp_sm_regions: The gcp_sm_regions of this UpdateItem.  # noqa: E501
+        :type: str
+        """
+
+        self._gcp_sm_regions = gcp_sm_regions
 
     @property
     def host_provider(self):

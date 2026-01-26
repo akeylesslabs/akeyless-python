@@ -37,6 +37,7 @@ class CertificateStore(object):
         'certificate_pem': 'str',
         'common_name': 'str',
         'expiration_date': 'datetime',
+        'expiration_events': 'list[CertificateExpirationEvent]',
         'name': 'str'
     }
 
@@ -44,10 +45,11 @@ class CertificateStore(object):
         'certificate_pem': 'certificate_pem',
         'common_name': 'common_name',
         'expiration_date': 'expiration_date',
+        'expiration_events': 'expiration_events',
         'name': 'name'
     }
 
-    def __init__(self, certificate_pem=None, common_name=None, expiration_date=None, name=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, certificate_pem=None, common_name=None, expiration_date=None, expiration_events=None, name=None, local_vars_configuration=None):  # noqa: E501
         """CertificateStore - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -56,6 +58,7 @@ class CertificateStore(object):
         self._certificate_pem = None
         self._common_name = None
         self._expiration_date = None
+        self._expiration_events = None
         self._name = None
         self.discriminator = None
 
@@ -65,6 +68,8 @@ class CertificateStore(object):
             self.common_name = common_name
         if expiration_date is not None:
             self.expiration_date = expiration_date
+        if expiration_events is not None:
+            self.expiration_events = expiration_events
         if name is not None:
             self.name = name
 
@@ -130,6 +135,27 @@ class CertificateStore(object):
         """
 
         self._expiration_date = expiration_date
+
+    @property
+    def expiration_events(self):
+        """Gets the expiration_events of this CertificateStore.  # noqa: E501
+
+
+        :return: The expiration_events of this CertificateStore.  # noqa: E501
+        :rtype: list[CertificateExpirationEvent]
+        """
+        return self._expiration_events
+
+    @expiration_events.setter
+    def expiration_events(self, expiration_events):
+        """Sets the expiration_events of this CertificateStore.
+
+
+        :param expiration_events: The expiration_events of this CertificateStore.  # noqa: E501
+        :type: list[CertificateExpirationEvent]
+        """
+
+        self._expiration_events = expiration_events
 
     @property
     def name(self):
