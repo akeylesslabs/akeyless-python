@@ -52,6 +52,7 @@ class TargetTypeDetailsInput(object):
         'godaddy_target_details': 'GodaddyTargetDetails',
         'hashi_vault_target_details': 'HashiVaultTargetDetails',
         'ldap_target_details': 'LdapTargetDetails',
+        'letsencrypt_target_details': 'LetsEncryptTargetDetails',
         'linked_target_details': 'LinkedTargetDetails',
         'mongo_db_target_details': 'MongoDBTargetDetails',
         'native_k8s_target_details': 'NativeK8sTargetDetails',
@@ -60,6 +61,7 @@ class TargetTypeDetailsInput(object):
         'rabbit_mq_target_details': 'RabbitMQTargetDetails',
         'salesforce_target_details': 'SalesforceTargetDetails',
         'sectigo_target_details': 'SectigoTargetDetails',
+        'splunk_target_details': 'SplunkTargetDetails',
         'ssh_target_details': 'SSHTargetDetails',
         'venafi_target_details': 'VenafiTargetDetails',
         'web_target_details': 'WebTargetDetails',
@@ -86,6 +88,7 @@ class TargetTypeDetailsInput(object):
         'godaddy_target_details': 'godaddy_target_details',
         'hashi_vault_target_details': 'hashi_vault_target_details',
         'ldap_target_details': 'ldap_target_details',
+        'letsencrypt_target_details': 'letsencrypt_target_details',
         'linked_target_details': 'linked_target_details',
         'mongo_db_target_details': 'mongo_db_target_details',
         'native_k8s_target_details': 'native_k8s_target_details',
@@ -94,6 +97,7 @@ class TargetTypeDetailsInput(object):
         'rabbit_mq_target_details': 'rabbit_mq_target_details',
         'salesforce_target_details': 'salesforce_target_details',
         'sectigo_target_details': 'sectigo_target_details',
+        'splunk_target_details': 'splunk_target_details',
         'ssh_target_details': 'ssh_target_details',
         'venafi_target_details': 'venafi_target_details',
         'web_target_details': 'web_target_details',
@@ -101,7 +105,7 @@ class TargetTypeDetailsInput(object):
         'zerossl_target_details': 'zerossl_target_details'
     }
 
-    def __init__(self, artifactory_target_details=None, aws_target_details=None, azure_target_details=None, chef_target_details=None, custom_target_details=None, db_target_details=None, dockerhub_target_details=None, eks_target_details=None, gcp_target_details=None, gemini_target_details=None, github_target_details=None, gitlab_target_details=None, gke_target_details=None, globalsign_atlas_target_details=None, globalsign_target_details=None, godaddy_target_details=None, hashi_vault_target_details=None, ldap_target_details=None, linked_target_details=None, mongo_db_target_details=None, native_k8s_target_details=None, openai_target_details=None, ping_target_details=None, rabbit_mq_target_details=None, salesforce_target_details=None, sectigo_target_details=None, ssh_target_details=None, venafi_target_details=None, web_target_details=None, windows_target_details=None, zerossl_target_details=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, artifactory_target_details=None, aws_target_details=None, azure_target_details=None, chef_target_details=None, custom_target_details=None, db_target_details=None, dockerhub_target_details=None, eks_target_details=None, gcp_target_details=None, gemini_target_details=None, github_target_details=None, gitlab_target_details=None, gke_target_details=None, globalsign_atlas_target_details=None, globalsign_target_details=None, godaddy_target_details=None, hashi_vault_target_details=None, ldap_target_details=None, letsencrypt_target_details=None, linked_target_details=None, mongo_db_target_details=None, native_k8s_target_details=None, openai_target_details=None, ping_target_details=None, rabbit_mq_target_details=None, salesforce_target_details=None, sectigo_target_details=None, splunk_target_details=None, ssh_target_details=None, venafi_target_details=None, web_target_details=None, windows_target_details=None, zerossl_target_details=None, local_vars_configuration=None):  # noqa: E501
         """TargetTypeDetailsInput - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -125,6 +129,7 @@ class TargetTypeDetailsInput(object):
         self._godaddy_target_details = None
         self._hashi_vault_target_details = None
         self._ldap_target_details = None
+        self._letsencrypt_target_details = None
         self._linked_target_details = None
         self._mongo_db_target_details = None
         self._native_k8s_target_details = None
@@ -133,6 +138,7 @@ class TargetTypeDetailsInput(object):
         self._rabbit_mq_target_details = None
         self._salesforce_target_details = None
         self._sectigo_target_details = None
+        self._splunk_target_details = None
         self._ssh_target_details = None
         self._venafi_target_details = None
         self._web_target_details = None
@@ -176,6 +182,8 @@ class TargetTypeDetailsInput(object):
             self.hashi_vault_target_details = hashi_vault_target_details
         if ldap_target_details is not None:
             self.ldap_target_details = ldap_target_details
+        if letsencrypt_target_details is not None:
+            self.letsencrypt_target_details = letsencrypt_target_details
         if linked_target_details is not None:
             self.linked_target_details = linked_target_details
         if mongo_db_target_details is not None:
@@ -192,6 +200,8 @@ class TargetTypeDetailsInput(object):
             self.salesforce_target_details = salesforce_target_details
         if sectigo_target_details is not None:
             self.sectigo_target_details = sectigo_target_details
+        if splunk_target_details is not None:
+            self.splunk_target_details = splunk_target_details
         if ssh_target_details is not None:
             self.ssh_target_details = ssh_target_details
         if venafi_target_details is not None:
@@ -582,6 +592,27 @@ class TargetTypeDetailsInput(object):
         self._ldap_target_details = ldap_target_details
 
     @property
+    def letsencrypt_target_details(self):
+        """Gets the letsencrypt_target_details of this TargetTypeDetailsInput.  # noqa: E501
+
+
+        :return: The letsencrypt_target_details of this TargetTypeDetailsInput.  # noqa: E501
+        :rtype: LetsEncryptTargetDetails
+        """
+        return self._letsencrypt_target_details
+
+    @letsencrypt_target_details.setter
+    def letsencrypt_target_details(self, letsencrypt_target_details):
+        """Sets the letsencrypt_target_details of this TargetTypeDetailsInput.
+
+
+        :param letsencrypt_target_details: The letsencrypt_target_details of this TargetTypeDetailsInput.  # noqa: E501
+        :type: LetsEncryptTargetDetails
+        """
+
+        self._letsencrypt_target_details = letsencrypt_target_details
+
+    @property
     def linked_target_details(self):
         """Gets the linked_target_details of this TargetTypeDetailsInput.  # noqa: E501
 
@@ -748,6 +779,27 @@ class TargetTypeDetailsInput(object):
         """
 
         self._sectigo_target_details = sectigo_target_details
+
+    @property
+    def splunk_target_details(self):
+        """Gets the splunk_target_details of this TargetTypeDetailsInput.  # noqa: E501
+
+
+        :return: The splunk_target_details of this TargetTypeDetailsInput.  # noqa: E501
+        :rtype: SplunkTargetDetails
+        """
+        return self._splunk_target_details
+
+    @splunk_target_details.setter
+    def splunk_target_details(self, splunk_target_details):
+        """Sets the splunk_target_details of this TargetTypeDetailsInput.
+
+
+        :param splunk_target_details: The splunk_target_details of this TargetTypeDetailsInput.  # noqa: E501
+        :type: SplunkTargetDetails
+        """
+
+        self._splunk_target_details = splunk_target_details
 
     @property
     def ssh_target_details(self):

@@ -45,6 +45,7 @@ class RotatedSecretCreateAzure(object):
         'grace_rotation': 'str',
         'grace_rotation_hour': 'int',
         'grace_rotation_interval': 'str',
+        'grace_rotation_timing': 'str',
         'item_custom_fields': 'dict(str, str)',
         'json': 'bool',
         'key': 'str',
@@ -84,6 +85,7 @@ class RotatedSecretCreateAzure(object):
         'grace_rotation': 'grace-rotation',
         'grace_rotation_hour': 'grace-rotation-hour',
         'grace_rotation_interval': 'grace-rotation-interval',
+        'grace_rotation_timing': 'grace-rotation-timing',
         'item_custom_fields': 'item-custom-fields',
         'json': 'json',
         'key': 'key',
@@ -111,7 +113,7 @@ class RotatedSecretCreateAzure(object):
         'username': 'username'
     }
 
-    def __init__(self, api_id=None, api_key=None, application_id=None, authentication_credentials='use-user-creds', auto_rotate=None, delete_protection=None, description=None, explicitly_set_sa='false', grace_rotation=None, grace_rotation_hour=None, grace_rotation_interval=None, item_custom_fields=None, json=False, key=None, max_versions=None, name=None, password_length=None, resource_group_name=None, resource_name=None, rotate_after_disconnect='false', rotation_event_in=None, rotation_hour=None, rotation_interval=None, rotator_type=None, secure_access_disable_concurrent_connections=None, secure_access_enable=None, secure_access_url=None, secure_access_web=False, secure_access_web_browsing=False, secure_access_web_proxy=False, storage_account_key_name=None, tags=None, target_name=None, token=None, uid_token=None, username=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, api_id=None, api_key=None, application_id=None, authentication_credentials='use-user-creds', auto_rotate=None, delete_protection=None, description=None, explicitly_set_sa='false', grace_rotation=None, grace_rotation_hour=None, grace_rotation_interval=None, grace_rotation_timing=None, item_custom_fields=None, json=False, key=None, max_versions=None, name=None, password_length=None, resource_group_name=None, resource_name=None, rotate_after_disconnect='false', rotation_event_in=None, rotation_hour=None, rotation_interval=None, rotator_type=None, secure_access_disable_concurrent_connections=None, secure_access_enable=None, secure_access_url=None, secure_access_web=False, secure_access_web_browsing=False, secure_access_web_proxy=False, storage_account_key_name=None, tags=None, target_name=None, token=None, uid_token=None, username=None, local_vars_configuration=None):  # noqa: E501
         """RotatedSecretCreateAzure - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -128,6 +130,7 @@ class RotatedSecretCreateAzure(object):
         self._grace_rotation = None
         self._grace_rotation_hour = None
         self._grace_rotation_interval = None
+        self._grace_rotation_timing = None
         self._item_custom_fields = None
         self._json = None
         self._key = None
@@ -177,6 +180,8 @@ class RotatedSecretCreateAzure(object):
             self.grace_rotation_hour = grace_rotation_hour
         if grace_rotation_interval is not None:
             self.grace_rotation_interval = grace_rotation_interval
+        if grace_rotation_timing is not None:
+            self.grace_rotation_timing = grace_rotation_timing
         if item_custom_fields is not None:
             self.item_custom_fields = item_custom_fields
         if json is not None:
@@ -413,7 +418,7 @@ class RotatedSecretCreateAzure(object):
     def grace_rotation(self):
         """Gets the grace_rotation of this RotatedSecretCreateAzure.  # noqa: E501
 
-        Create a new access key without deleting the old key from AWS/Azure/GCP for backup (relevant only for AWS/Azure/GCP) [true/false]  # noqa: E501
+        Enable graceful rotation (keep both versions temporarily). When enabled, a new secret version is created while the previous version is kept for the grace period, so both versions exist for a limited time. [true/false]  # noqa: E501
 
         :return: The grace_rotation of this RotatedSecretCreateAzure.  # noqa: E501
         :rtype: str
@@ -424,7 +429,7 @@ class RotatedSecretCreateAzure(object):
     def grace_rotation(self, grace_rotation):
         """Sets the grace_rotation of this RotatedSecretCreateAzure.
 
-        Create a new access key without deleting the old key from AWS/Azure/GCP for backup (relevant only for AWS/Azure/GCP) [true/false]  # noqa: E501
+        Enable graceful rotation (keep both versions temporarily). When enabled, a new secret version is created while the previous version is kept for the grace period, so both versions exist for a limited time. [true/false]  # noqa: E501
 
         :param grace_rotation: The grace_rotation of this RotatedSecretCreateAzure.  # noqa: E501
         :type: str
@@ -477,6 +482,29 @@ class RotatedSecretCreateAzure(object):
         """
 
         self._grace_rotation_interval = grace_rotation_interval
+
+    @property
+    def grace_rotation_timing(self):
+        """Gets the grace_rotation_timing of this RotatedSecretCreateAzure.  # noqa: E501
+
+        When to create the new version relative to the rotation date [after/before]  # noqa: E501
+
+        :return: The grace_rotation_timing of this RotatedSecretCreateAzure.  # noqa: E501
+        :rtype: str
+        """
+        return self._grace_rotation_timing
+
+    @grace_rotation_timing.setter
+    def grace_rotation_timing(self, grace_rotation_timing):
+        """Sets the grace_rotation_timing of this RotatedSecretCreateAzure.
+
+        When to create the new version relative to the rotation date [after/before]  # noqa: E501
+
+        :param grace_rotation_timing: The grace_rotation_timing of this RotatedSecretCreateAzure.  # noqa: E501
+        :type: str
+        """
+
+        self._grace_rotation_timing = grace_rotation_timing
 
     @property
     def item_custom_fields(self):
@@ -969,7 +997,7 @@ class RotatedSecretCreateAzure(object):
     def target_name(self):
         """Gets the target_name of this RotatedSecretCreateAzure.  # noqa: E501
 
-        Target name  # noqa: E501
+        The target name to associate  # noqa: E501
 
         :return: The target_name of this RotatedSecretCreateAzure.  # noqa: E501
         :rtype: str
@@ -980,7 +1008,7 @@ class RotatedSecretCreateAzure(object):
     def target_name(self, target_name):
         """Sets the target_name of this RotatedSecretCreateAzure.
 
-        Target name  # noqa: E501
+        The target name to associate  # noqa: E501
 
         :param target_name: The target_name of this RotatedSecretCreateAzure.  # noqa: E501
         :type: str

@@ -10,9 +10,10 @@ Name | Type | Description | Notes
 **aws_region** | **str** | Aws Region | [optional] [default to 'us-east-2']
 **delete_protection** | **str** | Protection from accidental deletion of this object [true/false] | [optional] 
 **description** | **str** | Description of the object | [optional] 
-**grace_rotation** | **str** | Create a new access key without deleting the old key from AWS/Azure/GCP for backup (relevant only for AWS/Azure/GCP) [true/false] | [optional] 
+**grace_rotation** | **str** | Enable graceful rotation (keep both versions temporarily). When enabled, a new secret version is created while the previous version is kept for the grace period, so both versions exist for a limited time. [true/false] | [optional] 
 **grace_rotation_hour** | **int** | The Hour of the grace rotation in UTC | [optional] 
 **grace_rotation_interval** | **str** | The number of days to wait before deleting the old key (must be bigger than rotation-interval) | [optional] 
+**grace_rotation_timing** | **str** | When to create the new version relative to the rotation date [after/before] | [optional] 
 **item_custom_fields** | **dict(str, str)** | Additional custom fields to associate with the item | [optional] 
 **json** | **bool** | Set output format to JSON | [optional] [default to False]
 **key** | **str** | The name of a key that used to encrypt the secret value (if empty, the account default protectionKey key will be used) | [optional] 
@@ -30,7 +31,7 @@ Name | Type | Description | Notes
 **secure_access_certificate_issuer** | **str** | Path to the SSH Certificate Issuer for your Akeyless Secure Access | [optional] 
 **secure_access_enable** | **str** | Enable/Disable secure remote access [true/false] | [optional] 
 **tags** | **list[str]** | Add tags attached to this object | [optional] 
-**target_name** | **str** | Target name | 
+**target_name** | **str** | The target name to associate | 
 **token** | **str** | Authentication token (see &#x60;/auth&#x60; and &#x60;/configure&#x60;) | [optional] 
 **uid_token** | **str** | The universal identity token, Required only for universal_identity authentication | [optional] 
 

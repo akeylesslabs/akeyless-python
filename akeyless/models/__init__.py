@@ -745,6 +745,7 @@ from akeyless.models.last_status_info import LastStatusInfo
 from akeyless.models.ldap_config_part import LdapConfigPart
 from akeyless.models.ldap_target_details import LdapTargetDetails
 from akeyless.models.leadership_config_part import LeadershipConfigPart
+from akeyless.models.lets_encrypt_target_details import LetsEncryptTargetDetails
 from akeyless.models.linked_details import LinkedDetails
 from akeyless.models.linked_target_details import LinkedTargetDetails
 from akeyless.models.list_acme_accounts import ListAcmeAccounts
@@ -804,6 +805,15 @@ from akeyless.models.password_score_setting import PasswordScoreSetting
 from akeyless.models.password_security_info import PasswordSecurityInfo
 from akeyless.models.path_rule import PathRule
 from akeyless.models.ping_target_details import PingTargetDetails
+from akeyless.models.policies_create_output import PoliciesCreateOutput
+from akeyless.models.policies_delete import PoliciesDelete
+from akeyless.models.policies_get import PoliciesGet
+from akeyless.models.policies_get_output import PoliciesGetOutput
+from akeyless.models.policies_list import PoliciesList
+from akeyless.models.policies_list_output import PoliciesListOutput
+from akeyless.models.policy_create_keys import PolicyCreateKeys
+from akeyless.models.policy_output import PolicyOutput
+from akeyless.models.policy_update_keys import PolicyUpdateKeys
 from akeyless.models.producer import Producer
 from akeyless.models.producers_config_part import ProducersConfigPart
 from akeyless.models.provision_certificate import ProvisionCertificate
@@ -854,6 +864,7 @@ from akeyless.models.rotated_secret_create_postgresql import RotatedSecretCreate
 from akeyless.models.rotated_secret_create_redis import RotatedSecretCreateRedis
 from akeyless.models.rotated_secret_create_redshift import RotatedSecretCreateRedshift
 from akeyless.models.rotated_secret_create_snowflake import RotatedSecretCreateSnowflake
+from akeyless.models.rotated_secret_create_splunk import RotatedSecretCreateSplunk
 from akeyless.models.rotated_secret_create_ssh import RotatedSecretCreateSsh
 from akeyless.models.rotated_secret_create_windows import RotatedSecretCreateWindows
 from akeyless.models.rotated_secret_delete import RotatedSecretDelete
@@ -882,6 +893,7 @@ from akeyless.models.rotated_secret_update_postgresql import RotatedSecretUpdate
 from akeyless.models.rotated_secret_update_redis import RotatedSecretUpdateRedis
 from akeyless.models.rotated_secret_update_redshift import RotatedSecretUpdateRedshift
 from akeyless.models.rotated_secret_update_snowflake import RotatedSecretUpdateSnowflake
+from akeyless.models.rotated_secret_update_splunk import RotatedSecretUpdateSplunk
 from akeyless.models.rotated_secret_update_ssh import RotatedSecretUpdateSsh
 from akeyless.models.rotated_secret_update_windows import RotatedSecretUpdateWindows
 from akeyless.models.rotation_secret_max_interval import RotationSecretMaxInterval
@@ -924,6 +936,8 @@ from akeyless.models.sign_rsa_ssa_pss_output import SignRsaSsaPssOutput
 from akeyless.models.slack_noti_forwarder_details import SlackNotiForwarderDetails
 from akeyless.models.sm_info import SmInfo
 from akeyless.models.splunk_log_forwarding_config import SplunkLogForwardingConfig
+from akeyless.models.splunk_payload import SplunkPayload
+from akeyless.models.splunk_target_details import SplunkTargetDetails
 from akeyless.models.sra_desktop_app_conf import SraDesktopAppConf
 from akeyless.models.sra_info import SraInfo
 from akeyless.models.sra_session_entry_out import SraSessionEntryOut
@@ -957,6 +971,7 @@ from akeyless.models.target_create_godaddy import TargetCreateGodaddy
 from akeyless.models.target_create_hashi_vault import TargetCreateHashiVault
 from akeyless.models.target_create_k8s import TargetCreateK8s
 from akeyless.models.target_create_ldap import TargetCreateLdap
+from akeyless.models.target_create_lets_encrypt import TargetCreateLetsEncrypt
 from akeyless.models.target_create_linked import TargetCreateLinked
 from akeyless.models.target_create_open_ai import TargetCreateOpenAI
 from akeyless.models.target_create_output import TargetCreateOutput
@@ -964,6 +979,7 @@ from akeyless.models.target_create_ping import TargetCreatePing
 from akeyless.models.target_create_rabbit_mq import TargetCreateRabbitMq
 from akeyless.models.target_create_salesforce import TargetCreateSalesforce
 from akeyless.models.target_create_sectigo import TargetCreateSectigo
+from akeyless.models.target_create_splunk import TargetCreateSplunk
 from akeyless.models.target_create_ssh import TargetCreateSsh
 from akeyless.models.target_create_web import TargetCreateWeb
 from akeyless.models.target_create_windows import TargetCreateWindows
@@ -994,6 +1010,7 @@ from akeyless.models.target_update_godaddy import TargetUpdateGodaddy
 from akeyless.models.target_update_hashi_vault import TargetUpdateHashiVault
 from akeyless.models.target_update_k8s import TargetUpdateK8s
 from akeyless.models.target_update_ldap import TargetUpdateLdap
+from akeyless.models.target_update_lets_encrypt import TargetUpdateLetsEncrypt
 from akeyless.models.target_update_linked import TargetUpdateLinked
 from akeyless.models.target_update_open_ai import TargetUpdateOpenAI
 from akeyless.models.target_update_output import TargetUpdateOutput

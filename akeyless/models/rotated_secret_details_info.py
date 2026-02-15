@@ -39,6 +39,7 @@ class RotatedSecretDetailsInfo(object):
         'grace_rotation': 'bool',
         'grace_rotation_hour': 'int',
         'grace_rotation_interval': 'int',
+        'grace_rotation_timing': 'str',
         'gw_cluster_id': 'int',
         'iis_apps_details': 'list[WindowsService]',
         'last_rotation_error': 'str',
@@ -64,6 +65,7 @@ class RotatedSecretDetailsInfo(object):
         'grace_rotation': 'grace_rotation',
         'grace_rotation_hour': 'grace_rotation_hour',
         'grace_rotation_interval': 'grace_rotation_interval',
+        'grace_rotation_timing': 'grace_rotation_timing',
         'gw_cluster_id': 'gw_cluster_id',
         'iis_apps_details': 'iis_apps_details',
         'last_rotation_error': 'last_rotation_error',
@@ -83,7 +85,7 @@ class RotatedSecretDetailsInfo(object):
         'timeout_seconds': 'timeout_seconds'
     }
 
-    def __init__(self, delete_previous_version_in_days=None, enable_custom_password_policy=None, grace_rotation=None, grace_rotation_hour=None, grace_rotation_interval=None, gw_cluster_id=None, iis_apps_details=None, last_rotation_error=None, managed_by_akeyless=None, max_versions=None, next_auto_rotate_type=None, number_of_versions_to_save=None, public_key_remote_path=None, rotation_hour=None, rotation_interval_min=None, rotation_statement=None, rotator_creds_type=None, rotator_status=None, rotator_type=None, same_password=None, services_details=None, timeout_seconds=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, delete_previous_version_in_days=None, enable_custom_password_policy=None, grace_rotation=None, grace_rotation_hour=None, grace_rotation_interval=None, grace_rotation_timing=None, gw_cluster_id=None, iis_apps_details=None, last_rotation_error=None, managed_by_akeyless=None, max_versions=None, next_auto_rotate_type=None, number_of_versions_to_save=None, public_key_remote_path=None, rotation_hour=None, rotation_interval_min=None, rotation_statement=None, rotator_creds_type=None, rotator_status=None, rotator_type=None, same_password=None, services_details=None, timeout_seconds=None, local_vars_configuration=None):  # noqa: E501
         """RotatedSecretDetailsInfo - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -94,6 +96,7 @@ class RotatedSecretDetailsInfo(object):
         self._grace_rotation = None
         self._grace_rotation_hour = None
         self._grace_rotation_interval = None
+        self._grace_rotation_timing = None
         self._gw_cluster_id = None
         self._iis_apps_details = None
         self._last_rotation_error = None
@@ -123,6 +126,8 @@ class RotatedSecretDetailsInfo(object):
             self.grace_rotation_hour = grace_rotation_hour
         if grace_rotation_interval is not None:
             self.grace_rotation_interval = grace_rotation_interval
+        if grace_rotation_timing is not None:
+            self.grace_rotation_timing = grace_rotation_timing
         if gw_cluster_id is not None:
             self.gw_cluster_id = gw_cluster_id
         if iis_apps_details is not None:
@@ -262,6 +267,27 @@ class RotatedSecretDetailsInfo(object):
         """
 
         self._grace_rotation_interval = grace_rotation_interval
+
+    @property
+    def grace_rotation_timing(self):
+        """Gets the grace_rotation_timing of this RotatedSecretDetailsInfo.  # noqa: E501
+
+
+        :return: The grace_rotation_timing of this RotatedSecretDetailsInfo.  # noqa: E501
+        :rtype: str
+        """
+        return self._grace_rotation_timing
+
+    @grace_rotation_timing.setter
+    def grace_rotation_timing(self, grace_rotation_timing):
+        """Sets the grace_rotation_timing of this RotatedSecretDetailsInfo.
+
+
+        :param grace_rotation_timing: The grace_rotation_timing of this RotatedSecretDetailsInfo.  # noqa: E501
+        :type: str
+        """
+
+        self._grace_rotation_timing = grace_rotation_timing
 
     @property
     def gw_cluster_id(self):

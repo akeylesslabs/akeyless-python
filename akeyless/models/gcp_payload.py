@@ -34,24 +34,34 @@ class GCPPayload(object):
                             and the value is json key in definition.
     """
     openapi_types = {
-        'gcp_credentials_json': 'str'
+        'gcp_credentials_json': 'str',
+        'project_id': 'str',
+        'use_gw_cloud_identity': 'bool'
     }
 
     attribute_map = {
-        'gcp_credentials_json': 'gcp_credentials_json'
+        'gcp_credentials_json': 'gcp_credentials_json',
+        'project_id': 'project_id',
+        'use_gw_cloud_identity': 'use_gw_cloud_identity'
     }
 
-    def __init__(self, gcp_credentials_json=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, gcp_credentials_json=None, project_id=None, use_gw_cloud_identity=None, local_vars_configuration=None):  # noqa: E501
         """GCPPayload - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._gcp_credentials_json = None
+        self._project_id = None
+        self._use_gw_cloud_identity = None
         self.discriminator = None
 
         if gcp_credentials_json is not None:
             self.gcp_credentials_json = gcp_credentials_json
+        if project_id is not None:
+            self.project_id = project_id
+        if use_gw_cloud_identity is not None:
+            self.use_gw_cloud_identity = use_gw_cloud_identity
 
     @property
     def gcp_credentials_json(self):
@@ -73,6 +83,48 @@ class GCPPayload(object):
         """
 
         self._gcp_credentials_json = gcp_credentials_json
+
+    @property
+    def project_id(self):
+        """Gets the project_id of this GCPPayload.  # noqa: E501
+
+
+        :return: The project_id of this GCPPayload.  # noqa: E501
+        :rtype: str
+        """
+        return self._project_id
+
+    @project_id.setter
+    def project_id(self, project_id):
+        """Sets the project_id of this GCPPayload.
+
+
+        :param project_id: The project_id of this GCPPayload.  # noqa: E501
+        :type: str
+        """
+
+        self._project_id = project_id
+
+    @property
+    def use_gw_cloud_identity(self):
+        """Gets the use_gw_cloud_identity of this GCPPayload.  # noqa: E501
+
+
+        :return: The use_gw_cloud_identity of this GCPPayload.  # noqa: E501
+        :rtype: bool
+        """
+        return self._use_gw_cloud_identity
+
+    @use_gw_cloud_identity.setter
+    def use_gw_cloud_identity(self, use_gw_cloud_identity):
+        """Sets the use_gw_cloud_identity of this GCPPayload.
+
+
+        :param use_gw_cloud_identity: The use_gw_cloud_identity of this GCPPayload.  # noqa: E501
+        :type: bool
+        """
+
+        self._use_gw_cloud_identity = use_gw_cloud_identity
 
     def to_dict(self):
         """Returns the model properties as a dict"""

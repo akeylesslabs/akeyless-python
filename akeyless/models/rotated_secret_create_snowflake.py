@@ -600,7 +600,7 @@ class RotatedSecretCreateSnowflake(object):
     def target_name(self):
         """Gets the target_name of this RotatedSecretCreateSnowflake.  # noqa: E501
 
-        Target name  # noqa: E501
+        The target name to associate  # noqa: E501
 
         :return: The target_name of this RotatedSecretCreateSnowflake.  # noqa: E501
         :rtype: str
@@ -611,7 +611,7 @@ class RotatedSecretCreateSnowflake(object):
     def target_name(self, target_name):
         """Sets the target_name of this RotatedSecretCreateSnowflake.
 
-        Target name  # noqa: E501
+        The target name to associate  # noqa: E501
 
         :param target_name: The target_name of this RotatedSecretCreateSnowflake.  # noqa: E501
         :type: str

@@ -388,6 +388,11 @@ Method | HTTP request | Description
 [**list_sra_sessions**](V2Api.md#list_sra_sessions) | **POST** /list-sra-sessions | 
 [**list_targets**](V2Api.md#list_targets) | **POST** /list-targets | 
 [**move_objects**](V2Api.md#move_objects) | **POST** /move-objects | 
+[**policies_delete**](V2Api.md#policies_delete) | **POST** /policy-delete | 
+[**policies_get**](V2Api.md#policies_get) | **POST** /policy-get | 
+[**policies_list**](V2Api.md#policies_list) | **POST** /policy-list | 
+[**policy_create_keys**](V2Api.md#policy_create_keys) | **POST** /policy-create-keys | 
+[**policy_update_keys**](V2Api.md#policy_update_keys) | **POST** /policy-update-keys | 
 [**provision_certificate**](V2Api.md#provision_certificate) | **POST** /provision-certificate | 
 [**raw_creds**](V2Api.md#raw_creds) | **POST** /raw-creds | 
 [**refresh_key**](V2Api.md#refresh_key) | **POST** /refresh-key | 
@@ -418,6 +423,7 @@ Method | HTTP request | Description
 [**rotated_secret_create_redis**](V2Api.md#rotated_secret_create_redis) | **POST** /rotated-secret-create-redis | 
 [**rotated_secret_create_redshift**](V2Api.md#rotated_secret_create_redshift) | **POST** /rotated-secret-create-redshift | 
 [**rotated_secret_create_snowflake**](V2Api.md#rotated_secret_create_snowflake) | **POST** /rotated-secret-create-snowflake | 
+[**rotated_secret_create_splunk**](V2Api.md#rotated_secret_create_splunk) | **POST** /rotated-secret-create-splunk | 
 [**rotated_secret_create_ssh**](V2Api.md#rotated_secret_create_ssh) | **POST** /rotated-secret-create-ssh | 
 [**rotated_secret_create_windows**](V2Api.md#rotated_secret_create_windows) | **POST** /rotated-secret-create-windows | 
 [**rotated_secret_delete**](V2Api.md#rotated_secret_delete) | **POST** /rotated-secret-delete | 
@@ -442,6 +448,7 @@ Method | HTTP request | Description
 [**rotated_secret_update_redis**](V2Api.md#rotated_secret_update_redis) | **POST** /rotated-secret-update-redis | 
 [**rotated_secret_update_redshift**](V2Api.md#rotated_secret_update_redshift) | **POST** /rotated-secret-update-redshift | 
 [**rotated_secret_update_snowflake**](V2Api.md#rotated_secret_update_snowflake) | **POST** /rotated-secret-update-snowflake | 
+[**rotated_secret_update_splunk**](V2Api.md#rotated_secret_update_splunk) | **POST** /rotated-secret-update-splunk | 
 [**rotated_secret_update_ssh**](V2Api.md#rotated_secret_update_ssh) | **POST** /rotated-secret-update-ssh | 
 [**rotated_secret_update_windows**](V2Api.md#rotated_secret_update_windows) | **POST** /rotated-secret-update-windows | 
 [**set_item_state**](V2Api.md#set_item_state) | **POST** /set-item-state | 
@@ -474,12 +481,14 @@ Method | HTTP request | Description
 [**target_create_hashi_vault**](V2Api.md#target_create_hashi_vault) | **POST** /target-create-hashi-vault | 
 [**target_create_k8s**](V2Api.md#target_create_k8s) | **POST** /target-create-k8s | 
 [**target_create_ldap**](V2Api.md#target_create_ldap) | **POST** /target-create-ldap | 
+[**target_create_lets_encrypt**](V2Api.md#target_create_lets_encrypt) | **POST** /target-create-lets-encrypt | 
 [**target_create_linked**](V2Api.md#target_create_linked) | **POST** /target-create-linked | 
 [**target_create_open_ai**](V2Api.md#target_create_open_ai) | **POST** /target-create-openai | 
 [**target_create_ping**](V2Api.md#target_create_ping) | **POST** /target-create-ping | 
 [**target_create_rabbit_mq**](V2Api.md#target_create_rabbit_mq) | **POST** /target-create-rabbitmq | 
 [**target_create_salesforce**](V2Api.md#target_create_salesforce) | **POST** /target-create-salesforce | 
 [**target_create_sectigo**](V2Api.md#target_create_sectigo) | **POST** /target-create-sectigo | 
+[**target_create_splunk**](V2Api.md#target_create_splunk) | **POST** /target-create-splunk | 
 [**target_create_ssh**](V2Api.md#target_create_ssh) | **POST** /target-create-ssh | 
 [**target_create_web**](V2Api.md#target_create_web) | **POST** /target-create-web | 
 [**target_create_windows**](V2Api.md#target_create_windows) | **POST** /target-create-windows | 
@@ -505,6 +514,7 @@ Method | HTTP request | Description
 [**target_update_hashi_vault**](V2Api.md#target_update_hashi_vault) | **POST** /target-update-hashi-vault | 
 [**target_update_k8s**](V2Api.md#target_update_k8s) | **POST** /target-update-k8s | 
 [**target_update_ldap**](V2Api.md#target_update_ldap) | **POST** /target-update-ldap | 
+[**target_update_lets_encrypt**](V2Api.md#target_update_lets_encrypt) | **POST** /target-update-lets-encrypt | 
 [**target_update_linked**](V2Api.md#target_update_linked) | **POST** /target-update-linked | 
 [**target_update_open_ai**](V2Api.md#target_update_open_ai) | **POST** /target-update-openai | 
 [**target_update_ping**](V2Api.md#target_update_ping) | **POST** /target-update-ping | 
@@ -23635,6 +23645,306 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **policies_delete**
+> object policies_delete(policies_delete)
+
+
+
+### Example
+
+```python
+from __future__ import print_function
+import time
+import akeyless
+from akeyless.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.akeyless.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = akeyless.Configuration(
+    host = "https://api.akeyless.io"
+)
+
+
+# Enter a context with an instance of the API client
+with akeyless.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = akeyless.V2Api(api_client)
+    policies_delete = akeyless.PoliciesDelete() # PoliciesDelete | 
+
+    try:
+        api_response = api_instance.policies_delete(policies_delete)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling V2Api->policies_delete: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **policies_delete** | [**PoliciesDelete**](PoliciesDelete.md)|  | 
+
+### Return type
+
+**object**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+**0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **policies_get**
+> PoliciesGetOutput policies_get(policies_get)
+
+
+
+### Example
+
+```python
+from __future__ import print_function
+import time
+import akeyless
+from akeyless.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.akeyless.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = akeyless.Configuration(
+    host = "https://api.akeyless.io"
+)
+
+
+# Enter a context with an instance of the API client
+with akeyless.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = akeyless.V2Api(api_client)
+    policies_get = akeyless.PoliciesGet() # PoliciesGet | 
+
+    try:
+        api_response = api_instance.policies_get(policies_get)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling V2Api->policies_get: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **policies_get** | [**PoliciesGet**](PoliciesGet.md)|  | 
+
+### Return type
+
+[**PoliciesGetOutput**](PoliciesGetOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+**0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **policies_list**
+> PoliciesListOutput policies_list(policies_list)
+
+
+
+### Example
+
+```python
+from __future__ import print_function
+import time
+import akeyless
+from akeyless.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.akeyless.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = akeyless.Configuration(
+    host = "https://api.akeyless.io"
+)
+
+
+# Enter a context with an instance of the API client
+with akeyless.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = akeyless.V2Api(api_client)
+    policies_list = akeyless.PoliciesList() # PoliciesList | 
+
+    try:
+        api_response = api_instance.policies_list(policies_list)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling V2Api->policies_list: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **policies_list** | [**PoliciesList**](PoliciesList.md)|  | 
+
+### Return type
+
+[**PoliciesListOutput**](PoliciesListOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+**0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **policy_create_keys**
+> PoliciesCreateOutput policy_create_keys(policy_create_keys)
+
+
+
+### Example
+
+```python
+from __future__ import print_function
+import time
+import akeyless
+from akeyless.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.akeyless.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = akeyless.Configuration(
+    host = "https://api.akeyless.io"
+)
+
+
+# Enter a context with an instance of the API client
+with akeyless.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = akeyless.V2Api(api_client)
+    policy_create_keys = akeyless.PolicyCreateKeys() # PolicyCreateKeys | 
+
+    try:
+        api_response = api_instance.policy_create_keys(policy_create_keys)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling V2Api->policy_create_keys: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **policy_create_keys** | [**PolicyCreateKeys**](PolicyCreateKeys.md)|  | 
+
+### Return type
+
+[**PoliciesCreateOutput**](PoliciesCreateOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**201** |  |  -  |
+**0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **policy_update_keys**
+> object policy_update_keys(policy_update_keys)
+
+
+
+### Example
+
+```python
+from __future__ import print_function
+import time
+import akeyless
+from akeyless.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.akeyless.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = akeyless.Configuration(
+    host = "https://api.akeyless.io"
+)
+
+
+# Enter a context with an instance of the API client
+with akeyless.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = akeyless.V2Api(api_client)
+    policy_update_keys = akeyless.PolicyUpdateKeys() # PolicyUpdateKeys | 
+
+    try:
+        api_response = api_instance.policy_update_keys(policy_update_keys)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling V2Api->policy_update_keys: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **policy_update_keys** | [**PolicyUpdateKeys**](PolicyUpdateKeys.md)|  | 
+
+### Return type
+
+**object**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+**0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **provision_certificate**
 > ProvisionCertificateOutput provision_certificate(provision_certificate)
 
@@ -25431,6 +25741,66 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **rotated_secret_create_splunk**
+> RotatedSecretCreateOutput rotated_secret_create_splunk(rotated_secret_create_splunk)
+
+
+
+### Example
+
+```python
+from __future__ import print_function
+import time
+import akeyless
+from akeyless.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.akeyless.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = akeyless.Configuration(
+    host = "https://api.akeyless.io"
+)
+
+
+# Enter a context with an instance of the API client
+with akeyless.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = akeyless.V2Api(api_client)
+    rotated_secret_create_splunk = akeyless.RotatedSecretCreateSplunk() # RotatedSecretCreateSplunk | 
+
+    try:
+        api_response = api_instance.rotated_secret_create_splunk(rotated_secret_create_splunk)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling V2Api->rotated_secret_create_splunk: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **rotated_secret_create_splunk** | [**RotatedSecretCreateSplunk**](RotatedSecretCreateSplunk.md)|  | 
+
+### Return type
+
+[**RotatedSecretCreateOutput**](RotatedSecretCreateOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | rotatedSecretCreateSplunkResponse wraps response body. |  -  |
+**0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **rotated_secret_create_ssh**
 > RotatedSecretCreateOutput rotated_secret_create_ssh(rotated_secret_create_ssh)
 
@@ -26867,6 +27237,66 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | rotatedSecretUpdateSnowflakeResponse wraps response body. |  -  |
+**0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **rotated_secret_update_splunk**
+> RotatedSecretUpdateOutput rotated_secret_update_splunk(rotated_secret_update_splunk)
+
+
+
+### Example
+
+```python
+from __future__ import print_function
+import time
+import akeyless
+from akeyless.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.akeyless.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = akeyless.Configuration(
+    host = "https://api.akeyless.io"
+)
+
+
+# Enter a context with an instance of the API client
+with akeyless.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = akeyless.V2Api(api_client)
+    rotated_secret_update_splunk = akeyless.RotatedSecretUpdateSplunk() # RotatedSecretUpdateSplunk | 
+
+    try:
+        api_response = api_instance.rotated_secret_update_splunk(rotated_secret_update_splunk)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling V2Api->rotated_secret_update_splunk: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **rotated_secret_update_splunk** | [**RotatedSecretUpdateSplunk**](RotatedSecretUpdateSplunk.md)|  | 
+
+### Return type
+
+[**RotatedSecretUpdateOutput**](RotatedSecretUpdateOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**201** | rotatedSecretUpdateSplunkResponse wraps response body. |  -  |
 **0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -28791,6 +29221,66 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **target_create_lets_encrypt**
+> TargetCreateOutput target_create_lets_encrypt(target_create_lets_encrypt)
+
+
+
+### Example
+
+```python
+from __future__ import print_function
+import time
+import akeyless
+from akeyless.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.akeyless.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = akeyless.Configuration(
+    host = "https://api.akeyless.io"
+)
+
+
+# Enter a context with an instance of the API client
+with akeyless.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = akeyless.V2Api(api_client)
+    target_create_lets_encrypt = akeyless.TargetCreateLetsEncrypt() # TargetCreateLetsEncrypt | 
+
+    try:
+        api_response = api_instance.target_create_lets_encrypt(target_create_lets_encrypt)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling V2Api->target_create_lets_encrypt: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **target_create_lets_encrypt** | [**TargetCreateLetsEncrypt**](TargetCreateLetsEncrypt.md)|  | 
+
+### Return type
+
+[**TargetCreateOutput**](TargetCreateOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**201** | targetCreateLetsEncryptResponse wraps response body. |  -  |
+**0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **target_create_linked**
 > TargetCreateOutput target_create_linked(target_create_linked)
 
@@ -29147,6 +29637,66 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | targetCreateSectigoResponse wraps response body. |  -  |
+**0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **target_create_splunk**
+> TargetCreateOutput target_create_splunk(target_create_splunk)
+
+
+
+### Example
+
+```python
+from __future__ import print_function
+import time
+import akeyless
+from akeyless.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.akeyless.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = akeyless.Configuration(
+    host = "https://api.akeyless.io"
+)
+
+
+# Enter a context with an instance of the API client
+with akeyless.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = akeyless.V2Api(api_client)
+    target_create_splunk = akeyless.TargetCreateSplunk() # TargetCreateSplunk | 
+
+    try:
+        api_response = api_instance.target_create_splunk(target_create_splunk)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling V2Api->target_create_splunk: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **target_create_splunk** | [**TargetCreateSplunk**](TargetCreateSplunk.md)|  | 
+
+### Return type
+
+[**TargetCreateOutput**](TargetCreateOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**201** | targetCreateSplunkResponse wraps response body. |  -  |
 **0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -30647,6 +31197,66 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | targetUpdateLdapResponse wraps response body. |  -  |
+**0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **target_update_lets_encrypt**
+> TargetUpdateOutput target_update_lets_encrypt(target_update_lets_encrypt)
+
+
+
+### Example
+
+```python
+from __future__ import print_function
+import time
+import akeyless
+from akeyless.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.akeyless.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = akeyless.Configuration(
+    host = "https://api.akeyless.io"
+)
+
+
+# Enter a context with an instance of the API client
+with akeyless.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = akeyless.V2Api(api_client)
+    target_update_lets_encrypt = akeyless.TargetUpdateLetsEncrypt() # TargetUpdateLetsEncrypt | 
+
+    try:
+        api_response = api_instance.target_update_lets_encrypt(target_update_lets_encrypt)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling V2Api->target_update_lets_encrypt: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **target_update_lets_encrypt** | [**TargetUpdateLetsEncrypt**](TargetUpdateLetsEncrypt.md)|  | 
+
+### Return type
+
+[**TargetUpdateOutput**](TargetUpdateOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**201** | targetUpdateLetsEncryptResponse wraps response body. |  -  |
 **0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

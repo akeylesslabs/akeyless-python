@@ -37,6 +37,7 @@ Name | Type | Description | Notes
 **azure_tenant_id** | **str** | Azure Key Vault Access tenant ID (relevant only for Azure Key Vault migration) | [optional] 
 **expiration_event_in** | **list[str]** | How many days before the expiration of the certificate would you like to be notified. | [optional] 
 **gcp_key** | **str** | Base64-encoded GCP Service Account private key text with sufficient permissions to Secrets Manager, Minimum required permission is Secret Manager Secret Accessor, e.g. &#39;roles/secretmanager.secretAccessor&#39; (relevant only for GCP migration) | [optional] 
+**gcp_project_id** | **str** | GCP Project ID (cross-project override) | [optional] 
 **hashi_json** | **str** | Import secret key as json value or independent secrets (relevant only for HasiCorp Vault migration) [true/false] | [optional] [default to 'true']
 **hashi_ns** | **list[str]** | HashiCorp Vault Namespaces is a comma-separated list of namespaces which need to be imported into Akeyless Vault. For every provided namespace, all its child namespaces are imported as well, e.g. nmsp/subnmsp1/subnmsp2,nmsp/anothernmsp. By default, import all namespaces (relevant only for HasiCorp Vault migration) | [optional] 
 **hashi_token** | **str** | HashiCorp Vault access token with sufficient permissions to preform list &amp; read operations on secrets objects (relevant only for HasiCorp Vault migration) | [optional] 
@@ -68,6 +69,7 @@ Name | Type | Description | Notes
 **target_location** | **str** | Target location in Akeyless for imported secrets | 
 **token** | **str** | Authentication token (see &#x60;/auth&#x60; and &#x60;/configure&#x60;) | [optional] 
 **uid_token** | **str** | The universal identity token, Required only for universal_identity authentication | [optional] 
+**use_gw_cloud_identity** | **bool** | Use the GW&#39;s Cloud IAM | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

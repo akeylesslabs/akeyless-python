@@ -67,6 +67,7 @@ class GatewayCreateMigration(object):
         'azure_tenant_id': 'str',
         'expiration_event_in': 'list[str]',
         'gcp_key': 'str',
+        'gcp_project_id': 'str',
         'hashi_json': 'str',
         'hashi_ns': 'list[str]',
         'hashi_token': 'str',
@@ -96,7 +97,8 @@ class GatewayCreateMigration(object):
         'target_location': 'str',
         'token': 'str',
         'type': 'str',
-        'uid_token': 'str'
+        'uid_token': 'str',
+        'use_gw_cloud_identity': 'bool'
     }
 
     attribute_map = {
@@ -133,6 +135,7 @@ class GatewayCreateMigration(object):
         'azure_tenant_id': 'azure-tenant-id',
         'expiration_event_in': 'expiration-event-in',
         'gcp_key': 'gcp-key',
+        'gcp_project_id': 'gcp-project-id',
         'hashi_json': 'hashi-json',
         'hashi_ns': 'hashi-ns',
         'hashi_token': 'hashi-token',
@@ -162,10 +165,11 @@ class GatewayCreateMigration(object):
         'target_location': 'target-location',
         'token': 'token',
         'type': 'type',
-        'uid_token': 'uid-token'
+        'uid_token': 'uid-token',
+        'use_gw_cloud_identity': 'use-gw-cloud-identity'
     }
 
-    def __init__(self, service_account_key_decoded=None, ad_auto_rotate=None, ad_computer_base_dn=None, ad_discover_iis_app='false', ad_discover_services='false', ad_discovery_types=None, ad_domain_name=None, ad_domain_users_path_template=None, ad_local_users_ignore=None, ad_local_users_path_template=None, ad_os_filter=None, ad_rotation_hour=None, ad_rotation_interval=None, ad_sra_enable_rdp=None, ad_ssh_port='22', ad_target_format='linked', ad_target_name=None, ad_targets_path_template=None, ad_targets_type='windows', ad_user_base_dn=None, ad_user_groups=None, ad_winrm_over_http='false', ad_winrm_port='5986', ad_discover_local_users=None, aws_key=None, aws_key_id=None, aws_region='us-east-2', azure_client_id=None, azure_kv_name=None, azure_secret=None, azure_tenant_id=None, expiration_event_in=None, gcp_key=None, hashi_json='true', hashi_ns=None, hashi_token=None, hashi_url=None, hosts=None, json=False, k8s_ca_certificate=None, k8s_client_certificate=None, k8s_client_key=None, k8s_namespace=None, k8s_password=None, k8s_skip_system=None, k8s_token=None, k8s_url=None, k8s_username=None, name=None, port_ranges='443', protection_key=None, si_auto_rotate=None, si_rotation_hour=None, si_rotation_interval=None, si_sra_enable_rdp='false', si_target_name=None, si_user_groups=None, si_users_ignore=None, si_users_path_template=None, target_location=None, token=None, type=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, service_account_key_decoded=None, ad_auto_rotate=None, ad_computer_base_dn=None, ad_discover_iis_app='false', ad_discover_services='false', ad_discovery_types=None, ad_domain_name=None, ad_domain_users_path_template=None, ad_local_users_ignore=None, ad_local_users_path_template=None, ad_os_filter=None, ad_rotation_hour=None, ad_rotation_interval=None, ad_sra_enable_rdp=None, ad_ssh_port='22', ad_target_format='linked', ad_target_name=None, ad_targets_path_template=None, ad_targets_type='windows', ad_user_base_dn=None, ad_user_groups=None, ad_winrm_over_http='false', ad_winrm_port='5986', ad_discover_local_users=None, aws_key=None, aws_key_id=None, aws_region='us-east-2', azure_client_id=None, azure_kv_name=None, azure_secret=None, azure_tenant_id=None, expiration_event_in=None, gcp_key=None, gcp_project_id=None, hashi_json='true', hashi_ns=None, hashi_token=None, hashi_url=None, hosts=None, json=False, k8s_ca_certificate=None, k8s_client_certificate=None, k8s_client_key=None, k8s_namespace=None, k8s_password=None, k8s_skip_system=None, k8s_token=None, k8s_url=None, k8s_username=None, name=None, port_ranges='443', protection_key=None, si_auto_rotate=None, si_rotation_hour=None, si_rotation_interval=None, si_sra_enable_rdp='false', si_target_name=None, si_user_groups=None, si_users_ignore=None, si_users_path_template=None, target_location=None, token=None, type=None, uid_token=None, use_gw_cloud_identity=None, local_vars_configuration=None):  # noqa: E501
         """GatewayCreateMigration - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -204,6 +208,7 @@ class GatewayCreateMigration(object):
         self._azure_tenant_id = None
         self._expiration_event_in = None
         self._gcp_key = None
+        self._gcp_project_id = None
         self._hashi_json = None
         self._hashi_ns = None
         self._hashi_token = None
@@ -234,6 +239,7 @@ class GatewayCreateMigration(object):
         self._token = None
         self._type = None
         self._uid_token = None
+        self._use_gw_cloud_identity = None
         self.discriminator = None
 
         if service_account_key_decoded is not None:
@@ -302,6 +308,8 @@ class GatewayCreateMigration(object):
             self.expiration_event_in = expiration_event_in
         if gcp_key is not None:
             self.gcp_key = gcp_key
+        if gcp_project_id is not None:
+            self.gcp_project_id = gcp_project_id
         if hashi_json is not None:
             self.hashi_json = hashi_json
         if hashi_ns is not None:
@@ -357,6 +365,8 @@ class GatewayCreateMigration(object):
             self.type = type
         if uid_token is not None:
             self.uid_token = uid_token
+        if use_gw_cloud_identity is not None:
+            self.use_gw_cloud_identity = use_gw_cloud_identity
 
     @property
     def service_account_key_decoded(self):
@@ -1116,6 +1126,29 @@ class GatewayCreateMigration(object):
         self._gcp_key = gcp_key
 
     @property
+    def gcp_project_id(self):
+        """Gets the gcp_project_id of this GatewayCreateMigration.  # noqa: E501
+
+        GCP Project ID (cross-project override)  # noqa: E501
+
+        :return: The gcp_project_id of this GatewayCreateMigration.  # noqa: E501
+        :rtype: str
+        """
+        return self._gcp_project_id
+
+    @gcp_project_id.setter
+    def gcp_project_id(self, gcp_project_id):
+        """Sets the gcp_project_id of this GatewayCreateMigration.
+
+        GCP Project ID (cross-project override)  # noqa: E501
+
+        :param gcp_project_id: The gcp_project_id of this GatewayCreateMigration.  # noqa: E501
+        :type: str
+        """
+
+        self._gcp_project_id = gcp_project_id
+
+    @property
     def hashi_json(self):
         """Gets the hashi_json of this GatewayCreateMigration.  # noqa: E501
 
@@ -1814,6 +1847,29 @@ class GatewayCreateMigration(object):
         """
 
         self._uid_token = uid_token
+
+    @property
+    def use_gw_cloud_identity(self):
+        """Gets the use_gw_cloud_identity of this GatewayCreateMigration.  # noqa: E501
+
+        Use the GW's Cloud IAM  # noqa: E501
+
+        :return: The use_gw_cloud_identity of this GatewayCreateMigration.  # noqa: E501
+        :rtype: bool
+        """
+        return self._use_gw_cloud_identity
+
+    @use_gw_cloud_identity.setter
+    def use_gw_cloud_identity(self, use_gw_cloud_identity):
+        """Sets the use_gw_cloud_identity of this GatewayCreateMigration.
+
+        Use the GW's Cloud IAM  # noqa: E501
+
+        :param use_gw_cloud_identity: The use_gw_cloud_identity of this GatewayCreateMigration.  # noqa: E501
+        :type: bool
+        """
+
+        self._use_gw_cloud_identity = use_gw_cloud_identity
 
     def to_dict(self):
         """Returns the model properties as a dict"""

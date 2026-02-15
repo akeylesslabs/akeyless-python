@@ -768,7 +768,7 @@ class RotatedSecretCreateMssql(object):
     def target_name(self):
         """Gets the target_name of this RotatedSecretCreateMssql.  # noqa: E501
 
-        Target name  # noqa: E501
+        The target name to associate  # noqa: E501
 
         :return: The target_name of this RotatedSecretCreateMssql.  # noqa: E501
         :rtype: str
@@ -779,7 +779,7 @@ class RotatedSecretCreateMssql(object):
     def target_name(self, target_name):
         """Sets the target_name of this RotatedSecretCreateMssql.
 
-        Target name  # noqa: E501
+        The target name to associate  # noqa: E501
 
         :param target_name: The target_name of this RotatedSecretCreateMssql.  # noqa: E501
         :type: str

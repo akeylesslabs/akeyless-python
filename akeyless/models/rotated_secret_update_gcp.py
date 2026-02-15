@@ -45,6 +45,7 @@ class RotatedSecretUpdateGcp(object):
         'grace_rotation': 'str',
         'grace_rotation_hour': 'int',
         'grace_rotation_interval': 'str',
+        'grace_rotation_timing': 'str',
         'item_custom_fields': 'dict(str, str)',
         'json': 'bool',
         'keep_prev_version': 'str',
@@ -74,6 +75,7 @@ class RotatedSecretUpdateGcp(object):
         'grace_rotation': 'grace-rotation',
         'grace_rotation_hour': 'grace-rotation-hour',
         'grace_rotation_interval': 'grace-rotation-interval',
+        'grace_rotation_timing': 'grace-rotation-timing',
         'item_custom_fields': 'item-custom-fields',
         'json': 'json',
         'keep_prev_version': 'keep-prev-version',
@@ -91,7 +93,7 @@ class RotatedSecretUpdateGcp(object):
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, add_tag=None, authentication_credentials='use-user-creds', auto_rotate=None, delete_protection=None, description='default_metadata', gcp_key=None, gcp_service_account_email=None, gcp_service_account_key_id=None, grace_rotation=None, grace_rotation_hour=None, grace_rotation_interval=None, item_custom_fields=None, json=False, keep_prev_version=None, key=None, max_versions=None, name=None, new_name=None, password_length=None, rm_tag=None, rotation_event_in=None, rotation_hour=None, rotation_interval=None, rotator_type=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, add_tag=None, authentication_credentials='use-user-creds', auto_rotate=None, delete_protection=None, description='default_metadata', gcp_key=None, gcp_service_account_email=None, gcp_service_account_key_id=None, grace_rotation=None, grace_rotation_hour=None, grace_rotation_interval=None, grace_rotation_timing=None, item_custom_fields=None, json=False, keep_prev_version=None, key=None, max_versions=None, name=None, new_name=None, password_length=None, rm_tag=None, rotation_event_in=None, rotation_hour=None, rotation_interval=None, rotator_type=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """RotatedSecretUpdateGcp - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -108,6 +110,7 @@ class RotatedSecretUpdateGcp(object):
         self._grace_rotation = None
         self._grace_rotation_hour = None
         self._grace_rotation_interval = None
+        self._grace_rotation_timing = None
         self._item_custom_fields = None
         self._json = None
         self._keep_prev_version = None
@@ -147,6 +150,8 @@ class RotatedSecretUpdateGcp(object):
             self.grace_rotation_hour = grace_rotation_hour
         if grace_rotation_interval is not None:
             self.grace_rotation_interval = grace_rotation_interval
+        if grace_rotation_timing is not None:
+            self.grace_rotation_timing = grace_rotation_timing
         if item_custom_fields is not None:
             self.item_custom_fields = item_custom_fields
         if json is not None:
@@ -364,7 +369,7 @@ class RotatedSecretUpdateGcp(object):
     def grace_rotation(self):
         """Gets the grace_rotation of this RotatedSecretUpdateGcp.  # noqa: E501
 
-        Create a new access key without deleting the old key from AWS/Azure/GCP for backup (relevant only for AWS/Azure/GCP) [true/false]  # noqa: E501
+        Enable graceful rotation (keep both versions temporarily). When enabled, a new secret version is created while the previous version is kept for the grace period, so both versions exist for a limited time. [true/false]  # noqa: E501
 
         :return: The grace_rotation of this RotatedSecretUpdateGcp.  # noqa: E501
         :rtype: str
@@ -375,7 +380,7 @@ class RotatedSecretUpdateGcp(object):
     def grace_rotation(self, grace_rotation):
         """Sets the grace_rotation of this RotatedSecretUpdateGcp.
 
-        Create a new access key without deleting the old key from AWS/Azure/GCP for backup (relevant only for AWS/Azure/GCP) [true/false]  # noqa: E501
+        Enable graceful rotation (keep both versions temporarily). When enabled, a new secret version is created while the previous version is kept for the grace period, so both versions exist for a limited time. [true/false]  # noqa: E501
 
         :param grace_rotation: The grace_rotation of this RotatedSecretUpdateGcp.  # noqa: E501
         :type: str
@@ -428,6 +433,29 @@ class RotatedSecretUpdateGcp(object):
         """
 
         self._grace_rotation_interval = grace_rotation_interval
+
+    @property
+    def grace_rotation_timing(self):
+        """Gets the grace_rotation_timing of this RotatedSecretUpdateGcp.  # noqa: E501
+
+        When to create the new version relative to the rotation date [after/before]  # noqa: E501
+
+        :return: The grace_rotation_timing of this RotatedSecretUpdateGcp.  # noqa: E501
+        :rtype: str
+        """
+        return self._grace_rotation_timing
+
+    @grace_rotation_timing.setter
+    def grace_rotation_timing(self, grace_rotation_timing):
+        """Sets the grace_rotation_timing of this RotatedSecretUpdateGcp.
+
+        When to create the new version relative to the rotation date [after/before]  # noqa: E501
+
+        :param grace_rotation_timing: The grace_rotation_timing of this RotatedSecretUpdateGcp.  # noqa: E501
+        :type: str
+        """
+
+        self._grace_rotation_timing = grace_rotation_timing
 
     @property
     def item_custom_fields(self):
