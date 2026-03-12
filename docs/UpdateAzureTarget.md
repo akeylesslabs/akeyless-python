@@ -4,6 +4,7 @@ updateAzureTarget is a command that updates an existing target. [Deprecated: Use
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**azure_cloud** | **str** | Azure cloud environment to use. Values: AzureCloud (default), AzureUSGovernment, AzureChinaCloud. | [optional] [default to 'AzureCloud']
 **client_id** | **str** | Azure client/application id | [optional] 
 **client_secret** | **str** | Azure client secret | [optional] 
 **comment** | **str** | Deprecated - use description | [optional] 

@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **account_id** | **str** | Account id (relevant only for access-type&#x3D;password where the email address is associated with more than one account) | [optional] 
 **admin_email** | **str** | Email (relevant only for access-type&#x3D;password) | [optional] 
 **admin_password** | **str** | Password (relevant only for access-type&#x3D;password) | [optional] 
+**azure_cloud** | **str** | Azure cloud environment to use. Values: AzureCloud (default), AzureUSGovernment, AzureChinaCloud. | [optional] [default to 'AzureCloud']
 **cert_challenge** | **str** | Certificate challenge encoded in base64. (relevant only for access-type&#x3D;cert) | [optional] 
 **cert_data** | **str** | Certificate data encoded in base64. Used if file was not provided. (relevant only for access-type&#x3D;cert) | [optional] 
 **cloud_id** | **str** | The cloud identity (relevant only for access-type&#x3D;azure_ad,aws_iam,gcp) | [optional] 

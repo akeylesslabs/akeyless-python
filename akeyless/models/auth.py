@@ -40,6 +40,7 @@ class Auth(object):
         'account_id': 'str',
         'admin_email': 'str',
         'admin_password': 'str',
+        'azure_cloud': 'str',
         'cert_challenge': 'str',
         'cert_data': 'str',
         'cloud_id': 'str',
@@ -74,6 +75,7 @@ class Auth(object):
         'account_id': 'account-id',
         'admin_email': 'admin-email',
         'admin_password': 'admin-password',
+        'azure_cloud': 'azure-cloud',
         'cert_challenge': 'cert-challenge',
         'cert_data': 'cert-data',
         'cloud_id': 'cloud-id',
@@ -101,7 +103,7 @@ class Auth(object):
         'username': 'username'
     }
 
-    def __init__(self, access_id=None, access_key=None, access_type='access_key', account_id=None, admin_email=None, admin_password=None, cert_challenge=None, cert_data=None, cloud_id=None, debug=None, disable_pafxfast=None, gateway_spn=None, gateway_url=None, gcp_audience='akeyless.io', json=False, jwt=None, k8s_auth_config_name=None, k8s_service_account_token=None, kerberos_token=None, kerberos_username=None, key_data=None, keytab_data=None, krb5_conf_data=None, ldap_password=None, oci_auth_type='apikey', oci_group_ocid=None, otp=None, signed_cert_challenge=None, uid_token=None, use_remote_browser=None, username=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, access_id=None, access_key=None, access_type='access_key', account_id=None, admin_email=None, admin_password=None, azure_cloud='AzureCloud', cert_challenge=None, cert_data=None, cloud_id=None, debug=None, disable_pafxfast=None, gateway_spn=None, gateway_url=None, gcp_audience='akeyless.io', json=False, jwt=None, k8s_auth_config_name=None, k8s_service_account_token=None, kerberos_token=None, kerberos_username=None, key_data=None, keytab_data=None, krb5_conf_data=None, ldap_password=None, oci_auth_type='apikey', oci_group_ocid=None, otp=None, signed_cert_challenge=None, uid_token=None, use_remote_browser=None, username=None, local_vars_configuration=None):  # noqa: E501
         """Auth - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -113,6 +115,7 @@ class Auth(object):
         self._account_id = None
         self._admin_email = None
         self._admin_password = None
+        self._azure_cloud = None
         self._cert_challenge = None
         self._cert_data = None
         self._cloud_id = None
@@ -152,6 +155,8 @@ class Auth(object):
             self.admin_email = admin_email
         if admin_password is not None:
             self.admin_password = admin_password
+        if azure_cloud is not None:
+            self.azure_cloud = azure_cloud
         if cert_challenge is not None:
             self.cert_challenge = cert_challenge
         if cert_data is not None:
@@ -340,6 +345,29 @@ class Auth(object):
         """
 
         self._admin_password = admin_password
+
+    @property
+    def azure_cloud(self):
+        """Gets the azure_cloud of this Auth.  # noqa: E501
+
+        Azure cloud environment to use. Values: AzureCloud (default), AzureUSGovernment, AzureChinaCloud.  # noqa: E501
+
+        :return: The azure_cloud of this Auth.  # noqa: E501
+        :rtype: str
+        """
+        return self._azure_cloud
+
+    @azure_cloud.setter
+    def azure_cloud(self, azure_cloud):
+        """Sets the azure_cloud of this Auth.
+
+        Azure cloud environment to use. Values: AzureCloud (default), AzureUSGovernment, AzureChinaCloud.  # noqa: E501
+
+        :param azure_cloud: The azure_cloud of this Auth.  # noqa: E501
+        :type: str
+        """
+
+        self._azure_cloud = azure_cloud
 
     @property
     def cert_challenge(self):

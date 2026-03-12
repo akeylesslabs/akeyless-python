@@ -35,9 +35,12 @@ class ActiveDirectoryPayload(object):
     """
     openapi_types = {
         'active_directory_target_id': 'int',
+        'ai_certificate_discovery': 'bool',
         'auto_rotate': 'bool',
         'auto_rotate_interval_in_days': 'int',
         'auto_rotate_rotation_hour': 'int',
+        'certificates_expiration_events': 'list[CertificateExpirationEvent]',
+        'certificates_path_template': 'str',
         'computer_base_dn': 'str',
         'discover_iis_apps': 'bool',
         'discover_local_users': 'bool',
@@ -61,9 +64,12 @@ class ActiveDirectoryPayload(object):
 
     attribute_map = {
         'active_directory_target_id': 'active_directory_target_id',
+        'ai_certificate_discovery': 'ai_certificate_discovery',
         'auto_rotate': 'auto_rotate',
         'auto_rotate_interval_in_days': 'auto_rotate_interval_in_days',
         'auto_rotate_rotation_hour': 'auto_rotate_rotation_hour',
+        'certificates_expiration_events': 'certificates_expiration_events',
+        'certificates_path_template': 'certificates_path_template',
         'computer_base_dn': 'computer_base_dn',
         'discover_iis_apps': 'discover_iis_apps',
         'discover_local_users': 'discover_local_users',
@@ -85,16 +91,19 @@ class ActiveDirectoryPayload(object):
         'winrm_port': 'winrm_port'
     }
 
-    def __init__(self, active_directory_target_id=None, auto_rotate=None, auto_rotate_interval_in_days=None, auto_rotate_rotation_hour=None, computer_base_dn=None, discover_iis_apps=None, discover_local_users=None, discover_services=None, discovery_types=None, domain_name=None, domain_server_targets_path_template=None, domain_users_rotated_secrets_path_template=None, enable_rdp_sra=None, local_users_ignore_list=None, local_users_rotated_secrets_path_template=None, os_filter=None, ssh_port=None, target_format=None, targets_type=None, user_base_dn=None, user_groups=None, winrm_over_http=None, winrm_port=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, active_directory_target_id=None, ai_certificate_discovery=None, auto_rotate=None, auto_rotate_interval_in_days=None, auto_rotate_rotation_hour=None, certificates_expiration_events=None, certificates_path_template=None, computer_base_dn=None, discover_iis_apps=None, discover_local_users=None, discover_services=None, discovery_types=None, domain_name=None, domain_server_targets_path_template=None, domain_users_rotated_secrets_path_template=None, enable_rdp_sra=None, local_users_ignore_list=None, local_users_rotated_secrets_path_template=None, os_filter=None, ssh_port=None, target_format=None, targets_type=None, user_base_dn=None, user_groups=None, winrm_over_http=None, winrm_port=None, local_vars_configuration=None):  # noqa: E501
         """ActiveDirectoryPayload - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._active_directory_target_id = None
+        self._ai_certificate_discovery = None
         self._auto_rotate = None
         self._auto_rotate_interval_in_days = None
         self._auto_rotate_rotation_hour = None
+        self._certificates_expiration_events = None
+        self._certificates_path_template = None
         self._computer_base_dn = None
         self._discover_iis_apps = None
         self._discover_local_users = None
@@ -118,12 +127,18 @@ class ActiveDirectoryPayload(object):
 
         if active_directory_target_id is not None:
             self.active_directory_target_id = active_directory_target_id
+        if ai_certificate_discovery is not None:
+            self.ai_certificate_discovery = ai_certificate_discovery
         if auto_rotate is not None:
             self.auto_rotate = auto_rotate
         if auto_rotate_interval_in_days is not None:
             self.auto_rotate_interval_in_days = auto_rotate_interval_in_days
         if auto_rotate_rotation_hour is not None:
             self.auto_rotate_rotation_hour = auto_rotate_rotation_hour
+        if certificates_expiration_events is not None:
+            self.certificates_expiration_events = certificates_expiration_events
+        if certificates_path_template is not None:
+            self.certificates_path_template = certificates_path_template
         if computer_base_dn is not None:
             self.computer_base_dn = computer_base_dn
         if discover_iis_apps is not None:
@@ -183,6 +198,27 @@ class ActiveDirectoryPayload(object):
         """
 
         self._active_directory_target_id = active_directory_target_id
+
+    @property
+    def ai_certificate_discovery(self):
+        """Gets the ai_certificate_discovery of this ActiveDirectoryPayload.  # noqa: E501
+
+
+        :return: The ai_certificate_discovery of this ActiveDirectoryPayload.  # noqa: E501
+        :rtype: bool
+        """
+        return self._ai_certificate_discovery
+
+    @ai_certificate_discovery.setter
+    def ai_certificate_discovery(self, ai_certificate_discovery):
+        """Sets the ai_certificate_discovery of this ActiveDirectoryPayload.
+
+
+        :param ai_certificate_discovery: The ai_certificate_discovery of this ActiveDirectoryPayload.  # noqa: E501
+        :type: bool
+        """
+
+        self._ai_certificate_discovery = ai_certificate_discovery
 
     @property
     def auto_rotate(self):
@@ -246,6 +282,48 @@ class ActiveDirectoryPayload(object):
         """
 
         self._auto_rotate_rotation_hour = auto_rotate_rotation_hour
+
+    @property
+    def certificates_expiration_events(self):
+        """Gets the certificates_expiration_events of this ActiveDirectoryPayload.  # noqa: E501
+
+
+        :return: The certificates_expiration_events of this ActiveDirectoryPayload.  # noqa: E501
+        :rtype: list[CertificateExpirationEvent]
+        """
+        return self._certificates_expiration_events
+
+    @certificates_expiration_events.setter
+    def certificates_expiration_events(self, certificates_expiration_events):
+        """Sets the certificates_expiration_events of this ActiveDirectoryPayload.
+
+
+        :param certificates_expiration_events: The certificates_expiration_events of this ActiveDirectoryPayload.  # noqa: E501
+        :type: list[CertificateExpirationEvent]
+        """
+
+        self._certificates_expiration_events = certificates_expiration_events
+
+    @property
+    def certificates_path_template(self):
+        """Gets the certificates_path_template of this ActiveDirectoryPayload.  # noqa: E501
+
+
+        :return: The certificates_path_template of this ActiveDirectoryPayload.  # noqa: E501
+        :rtype: str
+        """
+        return self._certificates_path_template
+
+    @certificates_path_template.setter
+    def certificates_path_template(self, certificates_path_template):
+        """Sets the certificates_path_template of this ActiveDirectoryPayload.
+
+
+        :param certificates_path_template: The certificates_path_template of this ActiveDirectoryPayload.  # noqa: E501
+        :type: str
+        """
+
+        self._certificates_path_template = certificates_path_template
 
     @property
     def computer_base_dn(self):

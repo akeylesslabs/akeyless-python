@@ -34,6 +34,7 @@ class MigrationStatusReplyObj(object):
                             and the value is json key in definition.
     """
     openapi_types = {
+        'certificates': 'MigrationItems',
         'computers': 'int',
         'duration_time': 'str',
         'error': 'str',
@@ -52,6 +53,7 @@ class MigrationStatusReplyObj(object):
     }
 
     attribute_map = {
+        'certificates': 'certificates',
         'computers': 'computers',
         'duration_time': 'duration_time',
         'error': 'error',
@@ -69,12 +71,13 @@ class MigrationStatusReplyObj(object):
         'targets': 'targets'
     }
 
-    def __init__(self, computers=None, duration_time=None, error=None, last_status_message=None, max_name_length=None, max_value_length=None, migration_id=None, migration_items=None, migration_name=None, migration_state=None, migration_type=None, migration_type_name=None, rotated_secrets=None, start_time=None, targets=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, certificates=None, computers=None, duration_time=None, error=None, last_status_message=None, max_name_length=None, max_value_length=None, migration_id=None, migration_items=None, migration_name=None, migration_state=None, migration_type=None, migration_type_name=None, rotated_secrets=None, start_time=None, targets=None, local_vars_configuration=None):  # noqa: E501
         """MigrationStatusReplyObj - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
+        self._certificates = None
         self._computers = None
         self._duration_time = None
         self._error = None
@@ -92,6 +95,8 @@ class MigrationStatusReplyObj(object):
         self._targets = None
         self.discriminator = None
 
+        if certificates is not None:
+            self.certificates = certificates
         if computers is not None:
             self.computers = computers
         if duration_time is not None:
@@ -122,6 +127,27 @@ class MigrationStatusReplyObj(object):
             self.start_time = start_time
         if targets is not None:
             self.targets = targets
+
+    @property
+    def certificates(self):
+        """Gets the certificates of this MigrationStatusReplyObj.  # noqa: E501
+
+
+        :return: The certificates of this MigrationStatusReplyObj.  # noqa: E501
+        :rtype: MigrationItems
+        """
+        return self._certificates
+
+    @certificates.setter
+    def certificates(self, certificates):
+        """Sets the certificates of this MigrationStatusReplyObj.
+
+
+        :param certificates: The certificates of this MigrationStatusReplyObj.  # noqa: E501
+        :type: MigrationItems
+        """
+
+        self._certificates = certificates
 
     @property
     def computers(self):

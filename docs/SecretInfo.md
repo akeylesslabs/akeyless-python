@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 **created** | **datetime** |  | [optional] 
 **description** | **str** |  | [optional] 
 **expiration** | **datetime** |  | [optional] 
+**github** | [**GithubMetadata**](GithubMetadata.md) |  | [optional] 
 **key_id** | **str** |  | [optional] 
 **last_retrieved** | **datetime** |  | [optional] 
 **location** | [**object**](.md) |  | [optional] 

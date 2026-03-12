@@ -14,6 +14,7 @@ Name | Type | Description | Notes
 **certificate_pem** | **str** |  | [optional] 
 **certificate_status** | **str** |  | [optional] 
 **common_name** | **str** |  | [optional] 
+**csr_pem** | **str** | CSRPEM contains the PEM-encoded CSR for pending certificates (HTTP-01 challenge) | [optional] 
 **error_message** | **str** |  | [optional] 
 **expiration_date** | **datetime** |  | [optional] 
 **expiration_events** | [**list[CertificateExpirationEvent]**](CertificateExpirationEvent.md) |  | [optional] 

@@ -34,6 +34,7 @@ class TargetCreateAzure(object):
                             and the value is json key in definition.
     """
     openapi_types = {
+        'azure_cloud': 'str',
         'client_id': 'str',
         'client_secret': 'str',
         'connection_type': 'str',
@@ -52,6 +53,7 @@ class TargetCreateAzure(object):
     }
 
     attribute_map = {
+        'azure_cloud': 'azure-cloud',
         'client_id': 'client-id',
         'client_secret': 'client-secret',
         'connection_type': 'connection-type',
@@ -69,12 +71,13 @@ class TargetCreateAzure(object):
         'use_gw_cloud_identity': 'use-gw-cloud-identity'
     }
 
-    def __init__(self, client_id=None, client_secret=None, connection_type='credentials', description=None, json=False, key=None, max_versions=None, name=None, resource_group_name=None, resource_name=None, subscription_id=None, tenant_id=None, token=None, uid_token=None, use_gw_cloud_identity=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, azure_cloud='AzureCloud', client_id=None, client_secret=None, connection_type='credentials', description=None, json=False, key=None, max_versions=None, name=None, resource_group_name=None, resource_name=None, subscription_id=None, tenant_id=None, token=None, uid_token=None, use_gw_cloud_identity=None, local_vars_configuration=None):  # noqa: E501
         """TargetCreateAzure - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
+        self._azure_cloud = None
         self._client_id = None
         self._client_secret = None
         self._connection_type = None
@@ -92,6 +95,8 @@ class TargetCreateAzure(object):
         self._use_gw_cloud_identity = None
         self.discriminator = None
 
+        if azure_cloud is not None:
+            self.azure_cloud = azure_cloud
         if client_id is not None:
             self.client_id = client_id
         if client_secret is not None:
@@ -121,6 +126,29 @@ class TargetCreateAzure(object):
             self.uid_token = uid_token
         if use_gw_cloud_identity is not None:
             self.use_gw_cloud_identity = use_gw_cloud_identity
+
+    @property
+    def azure_cloud(self):
+        """Gets the azure_cloud of this TargetCreateAzure.  # noqa: E501
+
+        Azure cloud environment to use. Values: AzureCloud (default), AzureUSGovernment, AzureChinaCloud.  # noqa: E501
+
+        :return: The azure_cloud of this TargetCreateAzure.  # noqa: E501
+        :rtype: str
+        """
+        return self._azure_cloud
+
+    @azure_cloud.setter
+    def azure_cloud(self, azure_cloud):
+        """Sets the azure_cloud of this TargetCreateAzure.
+
+        Azure cloud environment to use. Values: AzureCloud (default), AzureUSGovernment, AzureChinaCloud.  # noqa: E501
+
+        :param azure_cloud: The azure_cloud of this TargetCreateAzure.  # noqa: E501
+        :type: str
+        """
+
+        self._azure_cloud = azure_cloud
 
     @property
     def client_id(self):

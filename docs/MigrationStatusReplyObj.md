@@ -3,6 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**certificates** | [**MigrationItems**](MigrationItems.md) |  | [optional] 
 **computers** | **int** |  | [optional] 
 **duration_time** | **str** |  | [optional] 
 **error** | **str** |  | [optional] 

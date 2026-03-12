@@ -140,6 +140,8 @@ from akeyless.models.config_change import ConfigChange
 from akeyless.models.config_hash import ConfigHash
 from akeyless.models.configure import Configure
 from akeyless.models.configure_output import ConfigureOutput
+from akeyless.models.conjur_migration import ConjurMigration
+from akeyless.models.conjur_payload import ConjurPayload
 from akeyless.models.connect import Connect
 from akeyless.models.create_aws_target import CreateAWSTarget
 from akeyless.models.create_aws_target_output import CreateAWSTargetOutput
@@ -272,6 +274,7 @@ from akeyless.models.decrypt_pkcs1 import DecryptPKCS1
 from akeyless.models.decrypt_pkcs1_output import DecryptPKCS1Output
 from akeyless.models.decrypt_with_classic_key import DecryptWithClassicKey
 from akeyless.models.decrypt_with_classic_key_output import DecryptWithClassicKeyOutput
+from akeyless.models.default_auth_method_settings import DefaultAuthMethodSettings
 from akeyless.models.default_config_part import DefaultConfigPart
 from akeyless.models.default_home_page import DefaultHomePage
 from akeyless.models.delete_auth_method import DeleteAuthMethod
@@ -659,6 +662,7 @@ from akeyless.models.get_target import GetTarget
 from akeyless.models.get_target_details import GetTargetDetails
 from akeyless.models.get_target_details_output import GetTargetDetailsOutput
 from akeyless.models.get_user_event_status_output import GetUserEventStatusOutput
+from akeyless.models.github_metadata import GithubMetadata
 from akeyless.models.github_target_details import GithubTargetDetails
 from akeyless.models.gitlab_target_details import GitlabTargetDetails
 from akeyless.models.global_sign_atlas_target_details import GlobalSignAtlasTargetDetails
@@ -678,6 +682,7 @@ from akeyless.models.gw_update_remote_access_session_logs_splunk import GwUpdate
 from akeyless.models.gw_update_remote_access_session_logs_stdout import GwUpdateRemoteAccessSessionLogsStdout
 from akeyless.models.gw_update_remote_access_session_logs_sumologic import GwUpdateRemoteAccessSessionLogsSumologic
 from akeyless.models.gw_update_remote_access_session_logs_syslog import GwUpdateRemoteAccessSessionLogsSyslog
+from akeyless.models.http_challenge_info import HTTPChallengeInfo
 from akeyless.models.hashi_migration import HashiMigration
 from akeyless.models.hashi_payload import HashiPayload
 from akeyless.models.hashi_vault_target_details import HashiVaultTargetDetails
@@ -687,6 +692,7 @@ from akeyless.models.huawei_access_rules import HuaweiAccessRules
 from akeyless.models.import_passwords import ImportPasswords
 from akeyless.models.import_passwords_output import ImportPasswordsOutput
 from akeyless.models.importer_info import ImporterInfo
+from akeyless.models.issuer_overview_info import IssuerOverviewInfo
 from akeyless.models.item import Item
 from akeyless.models.item_custom_fields_details import ItemCustomFieldsDetails
 from akeyless.models.item_general_info import ItemGeneralInfo
@@ -1153,8 +1159,12 @@ from akeyless.models.usc_list_secrets_output import UscListSecretsOutput
 from akeyless.models.usc_sync_info import UscSyncInfo
 from akeyless.models.usc_update import UscUpdate
 from akeyless.models.usc_update_secret_output import UscUpdateSecretOutput
+from akeyless.models.validate_certificate_challenge import ValidateCertificateChallenge
+from akeyless.models.validate_certificate_challenge_output import ValidateCertificateChallengeOutput
 from akeyless.models.validate_token import ValidateToken
 from akeyless.models.validate_token_output import ValidateTokenOutput
+from akeyless.models.vault_address import VaultAddress
+from akeyless.models.vault_address_output import VaultAddressOutput
 from akeyless.models.vaultless_tokenizer_info import VaultlessTokenizerInfo
 from akeyless.models.venafi_target_details import VenafiTargetDetails
 from akeyless.models.verify_data_with_classic_key import VerifyDataWithClassicKey

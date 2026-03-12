@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 **cert_display_id** | **str** |  | [optional] 
 **cert_item_id** | **int** |  | [optional] 
 **data** | **str** |  | [optional] 
+**http_challenge_info** | [**HTTPChallengeInfo**](HTTPChallengeInfo.md) |  | [optional] 
 **parent_cert** | **str** |  | [optional] 
 **path** | **str** |  | [optional] 
 **reading_token** | **str** |  | [optional] 

@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **bound_organizational_units** | **list[str]** | A list of Organizational Units names. At least one must exist in the OU field. | [optional] 
 **bound_uri_sans** | **list[str]** | A list of URIs. At least one must exist in the SANs. Supports globbing. | [optional] 
 **certificate** | **str** | Base64 encdoed PEM certificate | [optional] 
+**require_crl_dp** | **bool** | RequireCrlDp indicates whether CRL distribution points are required on the leaf client certificate, and whether CRL validation must be enforced during authentication. | [optional] 
 **revoked_cert_ids** | **list[str]** | A list of revoked cert ids | [optional] 
 **unique_identifier** | **str** | A unique identifier to distinguish different users | [optional] 
 

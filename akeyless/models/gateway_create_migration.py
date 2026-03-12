@@ -36,6 +36,8 @@ class GatewayCreateMigration(object):
     openapi_types = {
         'service_account_key_decoded': 'str',
         'ad_auto_rotate': 'str',
+        'ad_cert_expiration_event_in': 'list[str]',
+        'ad_certificates_path_template': 'str',
         'ad_computer_base_dn': 'str',
         'ad_discover_iis_app': 'str',
         'ad_discover_services': 'str',
@@ -58,6 +60,7 @@ class GatewayCreateMigration(object):
         'ad_winrm_over_http': 'str',
         'ad_winrm_port': 'str',
         'ad_discover_local_users': 'str',
+        'ai_certificate_discovery': 'str',
         'aws_key': 'str',
         'aws_key_id': 'str',
         'aws_region': 'str',
@@ -65,6 +68,10 @@ class GatewayCreateMigration(object):
         'azure_kv_name': 'str',
         'azure_secret': 'str',
         'azure_tenant_id': 'str',
+        'conjur_account': 'str',
+        'conjur_api_key': 'str',
+        'conjur_url': 'str',
+        'conjur_username': 'str',
         'expiration_event_in': 'list[str]',
         'gcp_key': 'str',
         'gcp_project_id': 'str',
@@ -104,6 +111,8 @@ class GatewayCreateMigration(object):
     attribute_map = {
         'service_account_key_decoded': 'ServiceAccountKeyDecoded',
         'ad_auto_rotate': 'ad-auto-rotate',
+        'ad_cert_expiration_event_in': 'ad-cert-expiration-event-in',
+        'ad_certificates_path_template': 'ad-certificates-path-template',
         'ad_computer_base_dn': 'ad-computer-base-dn',
         'ad_discover_iis_app': 'ad-discover-iis-app',
         'ad_discover_services': 'ad-discover-services',
@@ -126,6 +135,7 @@ class GatewayCreateMigration(object):
         'ad_winrm_over_http': 'ad-winrm-over-http',
         'ad_winrm_port': 'ad-winrm-port',
         'ad_discover_local_users': 'ad_discover_local_users',
+        'ai_certificate_discovery': 'ai-certificate-discovery',
         'aws_key': 'aws-key',
         'aws_key_id': 'aws-key-id',
         'aws_region': 'aws-region',
@@ -133,6 +143,10 @@ class GatewayCreateMigration(object):
         'azure_kv_name': 'azure-kv-name',
         'azure_secret': 'azure-secret',
         'azure_tenant_id': 'azure-tenant-id',
+        'conjur_account': 'conjur-account',
+        'conjur_api_key': 'conjur-api-key',
+        'conjur_url': 'conjur-url',
+        'conjur_username': 'conjur-username',
         'expiration_event_in': 'expiration-event-in',
         'gcp_key': 'gcp-key',
         'gcp_project_id': 'gcp-project-id',
@@ -169,7 +183,7 @@ class GatewayCreateMigration(object):
         'use_gw_cloud_identity': 'use-gw-cloud-identity'
     }
 
-    def __init__(self, service_account_key_decoded=None, ad_auto_rotate=None, ad_computer_base_dn=None, ad_discover_iis_app='false', ad_discover_services='false', ad_discovery_types=None, ad_domain_name=None, ad_domain_users_path_template=None, ad_local_users_ignore=None, ad_local_users_path_template=None, ad_os_filter=None, ad_rotation_hour=None, ad_rotation_interval=None, ad_sra_enable_rdp=None, ad_ssh_port='22', ad_target_format='linked', ad_target_name=None, ad_targets_path_template=None, ad_targets_type='windows', ad_user_base_dn=None, ad_user_groups=None, ad_winrm_over_http='false', ad_winrm_port='5986', ad_discover_local_users=None, aws_key=None, aws_key_id=None, aws_region='us-east-2', azure_client_id=None, azure_kv_name=None, azure_secret=None, azure_tenant_id=None, expiration_event_in=None, gcp_key=None, gcp_project_id=None, hashi_json='true', hashi_ns=None, hashi_token=None, hashi_url=None, hosts=None, json=False, k8s_ca_certificate=None, k8s_client_certificate=None, k8s_client_key=None, k8s_namespace=None, k8s_password=None, k8s_skip_system=None, k8s_token=None, k8s_url=None, k8s_username=None, name=None, port_ranges='443', protection_key=None, si_auto_rotate=None, si_rotation_hour=None, si_rotation_interval=None, si_sra_enable_rdp='false', si_target_name=None, si_user_groups=None, si_users_ignore=None, si_users_path_template=None, target_location=None, token=None, type=None, uid_token=None, use_gw_cloud_identity=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, service_account_key_decoded=None, ad_auto_rotate=None, ad_cert_expiration_event_in=None, ad_certificates_path_template=None, ad_computer_base_dn=None, ad_discover_iis_app='false', ad_discover_services='false', ad_discovery_types=None, ad_domain_name=None, ad_domain_users_path_template=None, ad_local_users_ignore=None, ad_local_users_path_template=None, ad_os_filter=None, ad_rotation_hour=None, ad_rotation_interval=None, ad_sra_enable_rdp=None, ad_ssh_port='22', ad_target_format='linked', ad_target_name=None, ad_targets_path_template=None, ad_targets_type='windows', ad_user_base_dn=None, ad_user_groups=None, ad_winrm_over_http='false', ad_winrm_port='5986', ad_discover_local_users=None, ai_certificate_discovery=None, aws_key=None, aws_key_id=None, aws_region='us-east-2', azure_client_id=None, azure_kv_name=None, azure_secret=None, azure_tenant_id=None, conjur_account=None, conjur_api_key=None, conjur_url=None, conjur_username=None, expiration_event_in=None, gcp_key=None, gcp_project_id=None, hashi_json='true', hashi_ns=None, hashi_token=None, hashi_url=None, hosts=None, json=False, k8s_ca_certificate=None, k8s_client_certificate=None, k8s_client_key=None, k8s_namespace=None, k8s_password=None, k8s_skip_system=None, k8s_token=None, k8s_url=None, k8s_username=None, name=None, port_ranges='443', protection_key=None, si_auto_rotate=None, si_rotation_hour=None, si_rotation_interval=None, si_sra_enable_rdp='false', si_target_name=None, si_user_groups=None, si_users_ignore=None, si_users_path_template=None, target_location=None, token=None, type=None, uid_token=None, use_gw_cloud_identity=None, local_vars_configuration=None):  # noqa: E501
         """GatewayCreateMigration - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -177,6 +191,8 @@ class GatewayCreateMigration(object):
 
         self._service_account_key_decoded = None
         self._ad_auto_rotate = None
+        self._ad_cert_expiration_event_in = None
+        self._ad_certificates_path_template = None
         self._ad_computer_base_dn = None
         self._ad_discover_iis_app = None
         self._ad_discover_services = None
@@ -199,6 +215,7 @@ class GatewayCreateMigration(object):
         self._ad_winrm_over_http = None
         self._ad_winrm_port = None
         self._ad_discover_local_users = None
+        self._ai_certificate_discovery = None
         self._aws_key = None
         self._aws_key_id = None
         self._aws_region = None
@@ -206,6 +223,10 @@ class GatewayCreateMigration(object):
         self._azure_kv_name = None
         self._azure_secret = None
         self._azure_tenant_id = None
+        self._conjur_account = None
+        self._conjur_api_key = None
+        self._conjur_url = None
+        self._conjur_username = None
         self._expiration_event_in = None
         self._gcp_key = None
         self._gcp_project_id = None
@@ -246,6 +267,10 @@ class GatewayCreateMigration(object):
             self.service_account_key_decoded = service_account_key_decoded
         if ad_auto_rotate is not None:
             self.ad_auto_rotate = ad_auto_rotate
+        if ad_cert_expiration_event_in is not None:
+            self.ad_cert_expiration_event_in = ad_cert_expiration_event_in
+        if ad_certificates_path_template is not None:
+            self.ad_certificates_path_template = ad_certificates_path_template
         if ad_computer_base_dn is not None:
             self.ad_computer_base_dn = ad_computer_base_dn
         if ad_discover_iis_app is not None:
@@ -290,6 +315,8 @@ class GatewayCreateMigration(object):
             self.ad_winrm_port = ad_winrm_port
         if ad_discover_local_users is not None:
             self.ad_discover_local_users = ad_discover_local_users
+        if ai_certificate_discovery is not None:
+            self.ai_certificate_discovery = ai_certificate_discovery
         if aws_key is not None:
             self.aws_key = aws_key
         if aws_key_id is not None:
@@ -304,6 +331,14 @@ class GatewayCreateMigration(object):
             self.azure_secret = azure_secret
         if azure_tenant_id is not None:
             self.azure_tenant_id = azure_tenant_id
+        if conjur_account is not None:
+            self.conjur_account = conjur_account
+        if conjur_api_key is not None:
+            self.conjur_api_key = conjur_api_key
+        if conjur_url is not None:
+            self.conjur_url = conjur_url
+        if conjur_username is not None:
+            self.conjur_username = conjur_username
         if expiration_event_in is not None:
             self.expiration_event_in = expiration_event_in
         if gcp_key is not None:
@@ -411,6 +446,52 @@ class GatewayCreateMigration(object):
         """
 
         self._ad_auto_rotate = ad_auto_rotate
+
+    @property
+    def ad_cert_expiration_event_in(self):
+        """Gets the ad_cert_expiration_event_in of this GatewayCreateMigration.  # noqa: E501
+
+        How many days before the expiration of discovered certificates would you like to be notified (Relevant only for Active Directory migration with certificate discovery enabled)  # noqa: E501
+
+        :return: The ad_cert_expiration_event_in of this GatewayCreateMigration.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._ad_cert_expiration_event_in
+
+    @ad_cert_expiration_event_in.setter
+    def ad_cert_expiration_event_in(self, ad_cert_expiration_event_in):
+        """Sets the ad_cert_expiration_event_in of this GatewayCreateMigration.
+
+        How many days before the expiration of discovered certificates would you like to be notified (Relevant only for Active Directory migration with certificate discovery enabled)  # noqa: E501
+
+        :param ad_cert_expiration_event_in: The ad_cert_expiration_event_in of this GatewayCreateMigration.  # noqa: E501
+        :type: list[str]
+        """
+
+        self._ad_cert_expiration_event_in = ad_cert_expiration_event_in
+
+    @property
+    def ad_certificates_path_template(self):
+        """Gets the ad_certificates_path_template of this GatewayCreateMigration.  # noqa: E501
+
+        Path location template for migrating certificates e.g.: /Certificates/{{COMMON_NAME}} (Relevant only for Active Directory migration with certificate discovery enabled)  # noqa: E501
+
+        :return: The ad_certificates_path_template of this GatewayCreateMigration.  # noqa: E501
+        :rtype: str
+        """
+        return self._ad_certificates_path_template
+
+    @ad_certificates_path_template.setter
+    def ad_certificates_path_template(self, ad_certificates_path_template):
+        """Sets the ad_certificates_path_template of this GatewayCreateMigration.
+
+        Path location template for migrating certificates e.g.: /Certificates/{{COMMON_NAME}} (Relevant only for Active Directory migration with certificate discovery enabled)  # noqa: E501
+
+        :param ad_certificates_path_template: The ad_certificates_path_template of this GatewayCreateMigration.  # noqa: E501
+        :type: str
+        """
+
+        self._ad_certificates_path_template = ad_certificates_path_template
 
     @property
     def ad_computer_base_dn(self):
@@ -919,6 +1000,29 @@ class GatewayCreateMigration(object):
         self._ad_discover_local_users = ad_discover_local_users
 
     @property
+    def ai_certificate_discovery(self):
+        """Gets the ai_certificate_discovery of this GatewayCreateMigration.  # noqa: E501
+
+        Enable AI-assisted certificate discovery (only when AI Insight is enabled on the Gateway)  # noqa: E501
+
+        :return: The ai_certificate_discovery of this GatewayCreateMigration.  # noqa: E501
+        :rtype: str
+        """
+        return self._ai_certificate_discovery
+
+    @ai_certificate_discovery.setter
+    def ai_certificate_discovery(self, ai_certificate_discovery):
+        """Sets the ai_certificate_discovery of this GatewayCreateMigration.
+
+        Enable AI-assisted certificate discovery (only when AI Insight is enabled on the Gateway)  # noqa: E501
+
+        :param ai_certificate_discovery: The ai_certificate_discovery of this GatewayCreateMigration.  # noqa: E501
+        :type: str
+        """
+
+        self._ai_certificate_discovery = ai_certificate_discovery
+
+    @property
     def aws_key(self):
         """Gets the aws_key of this GatewayCreateMigration.  # noqa: E501
 
@@ -1078,6 +1182,98 @@ class GatewayCreateMigration(object):
         """
 
         self._azure_tenant_id = azure_tenant_id
+
+    @property
+    def conjur_account(self):
+        """Gets the conjur_account of this GatewayCreateMigration.  # noqa: E501
+
+        Conjur account name set on your Conjur server (relevant only for Conjur migration).  # noqa: E501
+
+        :return: The conjur_account of this GatewayCreateMigration.  # noqa: E501
+        :rtype: str
+        """
+        return self._conjur_account
+
+    @conjur_account.setter
+    def conjur_account(self, conjur_account):
+        """Sets the conjur_account of this GatewayCreateMigration.
+
+        Conjur account name set on your Conjur server (relevant only for Conjur migration).  # noqa: E501
+
+        :param conjur_account: The conjur_account of this GatewayCreateMigration.  # noqa: E501
+        :type: str
+        """
+
+        self._conjur_account = conjur_account
+
+    @property
+    def conjur_api_key(self):
+        """Gets the conjur_api_key of this GatewayCreateMigration.  # noqa: E501
+
+        Conjur API Key for the specified user (relevant only for Conjur migration).  # noqa: E501
+
+        :return: The conjur_api_key of this GatewayCreateMigration.  # noqa: E501
+        :rtype: str
+        """
+        return self._conjur_api_key
+
+    @conjur_api_key.setter
+    def conjur_api_key(self, conjur_api_key):
+        """Sets the conjur_api_key of this GatewayCreateMigration.
+
+        Conjur API Key for the specified user (relevant only for Conjur migration).  # noqa: E501
+
+        :param conjur_api_key: The conjur_api_key of this GatewayCreateMigration.  # noqa: E501
+        :type: str
+        """
+
+        self._conjur_api_key = conjur_api_key
+
+    @property
+    def conjur_url(self):
+        """Gets the conjur_url of this GatewayCreateMigration.  # noqa: E501
+
+        Conjur server base URL (relevant only for Conjur migration). If conjur-url is HTTPS and Conjur uses a private CA/self-signed certificate, make the CA bundle available on the Gateway and set CONJUR_SSL_CERT_PATH to its path.  # noqa: E501
+
+        :return: The conjur_url of this GatewayCreateMigration.  # noqa: E501
+        :rtype: str
+        """
+        return self._conjur_url
+
+    @conjur_url.setter
+    def conjur_url(self, conjur_url):
+        """Sets the conjur_url of this GatewayCreateMigration.
+
+        Conjur server base URL (relevant only for Conjur migration). If conjur-url is HTTPS and Conjur uses a private CA/self-signed certificate, make the CA bundle available on the Gateway and set CONJUR_SSL_CERT_PATH to its path.  # noqa: E501
+
+        :param conjur_url: The conjur_url of this GatewayCreateMigration.  # noqa: E501
+        :type: str
+        """
+
+        self._conjur_url = conjur_url
+
+    @property
+    def conjur_username(self):
+        """Gets the conjur_username of this GatewayCreateMigration.  # noqa: E501
+
+        Conjur username used to authenticate (relevant only for Conjur migration).  # noqa: E501
+
+        :return: The conjur_username of this GatewayCreateMigration.  # noqa: E501
+        :rtype: str
+        """
+        return self._conjur_username
+
+    @conjur_username.setter
+    def conjur_username(self, conjur_username):
+        """Sets the conjur_username of this GatewayCreateMigration.
+
+        Conjur username used to authenticate (relevant only for Conjur migration).  # noqa: E501
+
+        :param conjur_username: The conjur_username of this GatewayCreateMigration.  # noqa: E501
+        :type: str
+        """
+
+        self._conjur_username = conjur_username
 
     @property
     def expiration_event_in(self):
@@ -1806,7 +2002,7 @@ class GatewayCreateMigration(object):
     def type(self):
         """Gets the type of this GatewayCreateMigration.  # noqa: E501
 
-        Migration type (hashi/aws/gcp/k8s/azure_kv/active_directory/server_inventory/certificate)  # noqa: E501
+        Migration type (hashi/aws/gcp/k8s/azure_kv/conjur/active_directory/server_inventory/certificate)  # noqa: E501
 
         :return: The type of this GatewayCreateMigration.  # noqa: E501
         :rtype: str
@@ -1817,7 +2013,7 @@ class GatewayCreateMigration(object):
     def type(self, type):
         """Sets the type of this GatewayCreateMigration.
 
-        Migration type (hashi/aws/gcp/k8s/azure_kv/active_directory/server_inventory/certificate)  # noqa: E501
+        Migration type (hashi/aws/gcp/k8s/azure_kv/conjur/active_directory/server_inventory/certificate)  # noqa: E501
 
         :param type: The type of this GatewayCreateMigration.  # noqa: E501
         :type: str

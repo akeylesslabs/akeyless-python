@@ -41,6 +41,7 @@ class Configure(object):
         'admin_email': 'str',
         'admin_password': 'str',
         'azure_ad_object_id': 'str',
+        'azure_cloud': 'str',
         'cert_data': 'str',
         'cert_issuer_name': 'str',
         'cert_username': 'str',
@@ -68,6 +69,7 @@ class Configure(object):
         'admin_email': 'admin-email',
         'admin_password': 'admin-password',
         'azure_ad_object_id': 'azure-ad-object-id',
+        'azure_cloud': 'azure-cloud',
         'cert_data': 'cert-data',
         'cert_issuer_name': 'cert-issuer-name',
         'cert_username': 'cert-username',
@@ -87,7 +89,7 @@ class Configure(object):
         'oci_group_ocid': 'oci-group-ocid'
     }
 
-    def __init__(self, access_id=None, access_key=None, access_type='access_key', account_id=None, admin_email=None, admin_password=None, azure_ad_object_id=None, cert_data=None, cert_issuer_name=None, cert_username=None, default_location_prefix=None, disable_pafxfast=None, gateway_spn=None, gcp_audience='akeyless.io', json=False, k8s_auth_config_name=None, kerberos_token=None, kerberos_username=None, key_data=None, keytab_data=None, krb5_conf_data=None, legacy_signing_alg_name=None, oci_auth_type='apikey', oci_group_ocid=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, access_id=None, access_key=None, access_type='access_key', account_id=None, admin_email=None, admin_password=None, azure_ad_object_id=None, azure_cloud='AzureCloud', cert_data=None, cert_issuer_name=None, cert_username=None, default_location_prefix=None, disable_pafxfast=None, gateway_spn=None, gcp_audience='akeyless.io', json=False, k8s_auth_config_name=None, kerberos_token=None, kerberos_username=None, key_data=None, keytab_data=None, krb5_conf_data=None, legacy_signing_alg_name=None, oci_auth_type='apikey', oci_group_ocid=None, local_vars_configuration=None):  # noqa: E501
         """Configure - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -100,6 +102,7 @@ class Configure(object):
         self._admin_email = None
         self._admin_password = None
         self._azure_ad_object_id = None
+        self._azure_cloud = None
         self._cert_data = None
         self._cert_issuer_name = None
         self._cert_username = None
@@ -133,6 +136,8 @@ class Configure(object):
             self.admin_password = admin_password
         if azure_ad_object_id is not None:
             self.azure_ad_object_id = azure_ad_object_id
+        if azure_cloud is not None:
+            self.azure_cloud = azure_cloud
         if cert_data is not None:
             self.cert_data = cert_data
         if cert_issuer_name is not None:
@@ -328,6 +333,29 @@ class Configure(object):
         """
 
         self._azure_ad_object_id = azure_ad_object_id
+
+    @property
+    def azure_cloud(self):
+        """Gets the azure_cloud of this Configure.  # noqa: E501
+
+        Azure cloud environment to use. Values: AzureCloud (default), AzureUSGovernment, AzureChinaCloud.  # noqa: E501
+
+        :return: The azure_cloud of this Configure.  # noqa: E501
+        :rtype: str
+        """
+        return self._azure_cloud
+
+    @azure_cloud.setter
+    def azure_cloud(self, azure_cloud):
+        """Sets the azure_cloud of this Configure.
+
+        Azure cloud environment to use. Values: AzureCloud (default), AzureUSGovernment, AzureChinaCloud.  # noqa: E501
+
+        :param azure_cloud: The azure_cloud of this Configure.  # noqa: E501
+        :type: str
+        """
+
+        self._azure_cloud = azure_cloud
 
     @property
     def cert_data(self):

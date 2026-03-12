@@ -36,6 +36,7 @@ class AzureTargetDetails(object):
     openapi_types = {
         'azure_client_id': 'str',
         'azure_client_secret': 'str',
+        'azure_cloud': 'str',
         'azure_resource_group_name': 'str',
         'azure_resource_name': 'str',
         'azure_subscription_id': 'str',
@@ -50,6 +51,7 @@ class AzureTargetDetails(object):
     attribute_map = {
         'azure_client_id': 'azure_client_id',
         'azure_client_secret': 'azure_client_secret',
+        'azure_cloud': 'azure_cloud',
         'azure_resource_group_name': 'azure_resource_group_name',
         'azure_resource_name': 'azure_resource_name',
         'azure_subscription_id': 'azure_subscription_id',
@@ -61,7 +63,7 @@ class AzureTargetDetails(object):
         'use_gw_cloud_identity': 'use_gw_cloud_identity'
     }
 
-    def __init__(self, azure_client_id=None, azure_client_secret=None, azure_resource_group_name=None, azure_resource_name=None, azure_subscription_id=None, azure_tenant_id=None, azure_username=None, connection_type=None, expiration_date=None, grace_rotated_secret_key=None, use_gw_cloud_identity=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, azure_client_id=None, azure_client_secret=None, azure_cloud=None, azure_resource_group_name=None, azure_resource_name=None, azure_subscription_id=None, azure_tenant_id=None, azure_username=None, connection_type=None, expiration_date=None, grace_rotated_secret_key=None, use_gw_cloud_identity=None, local_vars_configuration=None):  # noqa: E501
         """AzureTargetDetails - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -69,6 +71,7 @@ class AzureTargetDetails(object):
 
         self._azure_client_id = None
         self._azure_client_secret = None
+        self._azure_cloud = None
         self._azure_resource_group_name = None
         self._azure_resource_name = None
         self._azure_subscription_id = None
@@ -84,6 +87,8 @@ class AzureTargetDetails(object):
             self.azure_client_id = azure_client_id
         if azure_client_secret is not None:
             self.azure_client_secret = azure_client_secret
+        if azure_cloud is not None:
+            self.azure_cloud = azure_cloud
         if azure_resource_group_name is not None:
             self.azure_resource_group_name = azure_resource_group_name
         if azure_resource_name is not None:
@@ -144,6 +149,27 @@ class AzureTargetDetails(object):
         """
 
         self._azure_client_secret = azure_client_secret
+
+    @property
+    def azure_cloud(self):
+        """Gets the azure_cloud of this AzureTargetDetails.  # noqa: E501
+
+
+        :return: The azure_cloud of this AzureTargetDetails.  # noqa: E501
+        :rtype: str
+        """
+        return self._azure_cloud
+
+    @azure_cloud.setter
+    def azure_cloud(self, azure_cloud):
+        """Sets the azure_cloud of this AzureTargetDetails.
+
+
+        :param azure_cloud: The azure_cloud of this AzureTargetDetails.  # noqa: E501
+        :type: str
+        """
+
+        self._azure_cloud = azure_cloud
 
     @property
     def azure_resource_group_name(self):

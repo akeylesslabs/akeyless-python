@@ -37,6 +37,7 @@ class GetPKICertificateOutput(object):
         'cert_display_id': 'str',
         'cert_item_id': 'int',
         'data': 'str',
+        'http_challenge_info': 'HTTPChallengeInfo',
         'parent_cert': 'str',
         'path': 'str',
         'reading_token': 'str'
@@ -46,12 +47,13 @@ class GetPKICertificateOutput(object):
         'cert_display_id': 'cert_display_id',
         'cert_item_id': 'cert_item_id',
         'data': 'data',
+        'http_challenge_info': 'http_challenge_info',
         'parent_cert': 'parent_cert',
         'path': 'path',
         'reading_token': 'reading_token'
     }
 
-    def __init__(self, cert_display_id=None, cert_item_id=None, data=None, parent_cert=None, path=None, reading_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, cert_display_id=None, cert_item_id=None, data=None, http_challenge_info=None, parent_cert=None, path=None, reading_token=None, local_vars_configuration=None):  # noqa: E501
         """GetPKICertificateOutput - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -60,6 +62,7 @@ class GetPKICertificateOutput(object):
         self._cert_display_id = None
         self._cert_item_id = None
         self._data = None
+        self._http_challenge_info = None
         self._parent_cert = None
         self._path = None
         self._reading_token = None
@@ -71,6 +74,8 @@ class GetPKICertificateOutput(object):
             self.cert_item_id = cert_item_id
         if data is not None:
             self.data = data
+        if http_challenge_info is not None:
+            self.http_challenge_info = http_challenge_info
         if parent_cert is not None:
             self.parent_cert = parent_cert
         if path is not None:
@@ -140,6 +145,27 @@ class GetPKICertificateOutput(object):
         """
 
         self._data = data
+
+    @property
+    def http_challenge_info(self):
+        """Gets the http_challenge_info of this GetPKICertificateOutput.  # noqa: E501
+
+
+        :return: The http_challenge_info of this GetPKICertificateOutput.  # noqa: E501
+        :rtype: HTTPChallengeInfo
+        """
+        return self._http_challenge_info
+
+    @http_challenge_info.setter
+    def http_challenge_info(self, http_challenge_info):
+        """Sets the http_challenge_info of this GetPKICertificateOutput.
+
+
+        :param http_challenge_info: The http_challenge_info of this GetPKICertificateOutput.  # noqa: E501
+        :type: HTTPChallengeInfo
+        """
+
+        self._http_challenge_info = http_challenge_info
 
     @property
     def parent_cert(self):

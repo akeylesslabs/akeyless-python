@@ -4,9 +4,12 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **active_directory_target_id** | **int** |  | [optional] 
+**ai_certificate_discovery** | **bool** |  | [optional] 
 **auto_rotate** | **bool** |  | [optional] 
 **auto_rotate_interval_in_days** | **int** |  | [optional] 
 **auto_rotate_rotation_hour** | **int** |  | [optional] 
+**certificates_expiration_events** | [**list[CertificateExpirationEvent]**](CertificateExpirationEvent.md) |  | [optional] 
+**certificates_path_template** | **str** |  | [optional] 
 **computer_base_dn** | **str** |  | [optional] 
 **discover_iis_apps** | **bool** |  | [optional] 
 **discover_local_users** | **bool** | Deprecated | [optional] 

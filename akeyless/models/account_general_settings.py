@@ -44,6 +44,7 @@ class AccountGeneralSettings(object):
         'auth_usage_event': 'UsageEventSetting',
         'certificate_expiration_events': 'CertificateExpirationEventsSettings',
         'data_protection_section': 'DataProtectionSection',
+        'default_auth_method': 'DefaultAuthMethodSettings',
         'default_home_page': 'DefaultHomePage',
         'dynamic_secret_max_ttl': 'DynamicSecretMaxTtl',
         'enable_request_for_access': 'bool',
@@ -71,6 +72,7 @@ class AccountGeneralSettings(object):
         'auth_usage_event': 'auth_usage_event',
         'certificate_expiration_events': 'certificate_expiration_events',
         'data_protection_section': 'data_protection_section',
+        'default_auth_method': 'default_auth_method',
         'default_home_page': 'default_home_page',
         'dynamic_secret_max_ttl': 'dynamic_secret_max_ttl',
         'enable_request_for_access': 'enable_request_for_access',
@@ -87,7 +89,7 @@ class AccountGeneralSettings(object):
         'sharing_policy': 'sharing_policy'
     }
 
-    def __init__(self, account_default_key_item_id=None, account_default_key_name=None, ai_insights=None, allow_auto_fill=None, allowed_client_types=None, allowed_clients_ips=None, allowed_gateways_ips=None, auth_usage_event=None, certificate_expiration_events=None, data_protection_section=None, default_home_page=None, dynamic_secret_max_ttl=None, enable_request_for_access=None, hide_personal_folder=None, hide_static_password=None, invalid_characters=None, item_usage_event=None, lock_default_key=None, password_expiration_info=None, password_policy=None, password_score=None, protect_items_by_default=None, rotation_secret_max_interval=None, sharing_policy=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, account_default_key_item_id=None, account_default_key_name=None, ai_insights=None, allow_auto_fill=None, allowed_client_types=None, allowed_clients_ips=None, allowed_gateways_ips=None, auth_usage_event=None, certificate_expiration_events=None, data_protection_section=None, default_auth_method=None, default_home_page=None, dynamic_secret_max_ttl=None, enable_request_for_access=None, hide_personal_folder=None, hide_static_password=None, invalid_characters=None, item_usage_event=None, lock_default_key=None, password_expiration_info=None, password_policy=None, password_score=None, protect_items_by_default=None, rotation_secret_max_interval=None, sharing_policy=None, local_vars_configuration=None):  # noqa: E501
         """AccountGeneralSettings - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -103,6 +105,7 @@ class AccountGeneralSettings(object):
         self._auth_usage_event = None
         self._certificate_expiration_events = None
         self._data_protection_section = None
+        self._default_auth_method = None
         self._default_home_page = None
         self._dynamic_secret_max_ttl = None
         self._enable_request_for_access = None
@@ -139,6 +142,8 @@ class AccountGeneralSettings(object):
             self.certificate_expiration_events = certificate_expiration_events
         if data_protection_section is not None:
             self.data_protection_section = data_protection_section
+        if default_auth_method is not None:
+            self.default_auth_method = default_auth_method
         if default_home_page is not None:
             self.default_home_page = default_home_page
         if dynamic_secret_max_ttl is not None:
@@ -381,6 +386,27 @@ class AccountGeneralSettings(object):
         """
 
         self._data_protection_section = data_protection_section
+
+    @property
+    def default_auth_method(self):
+        """Gets the default_auth_method of this AccountGeneralSettings.  # noqa: E501
+
+
+        :return: The default_auth_method of this AccountGeneralSettings.  # noqa: E501
+        :rtype: DefaultAuthMethodSettings
+        """
+        return self._default_auth_method
+
+    @default_auth_method.setter
+    def default_auth_method(self, default_auth_method):
+        """Sets the default_auth_method of this AccountGeneralSettings.
+
+
+        :param default_auth_method: The default_auth_method of this AccountGeneralSettings.  # noqa: E501
+        :type: DefaultAuthMethodSettings
+        """
+
+        self._default_auth_method = default_auth_method
 
     @property
     def default_home_page(self):

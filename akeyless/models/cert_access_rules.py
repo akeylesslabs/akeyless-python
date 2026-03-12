@@ -42,6 +42,7 @@ class CertAccessRules(object):
         'bound_organizational_units': 'list[str]',
         'bound_uri_sans': 'list[str]',
         'certificate': 'str',
+        'require_crl_dp': 'bool',
         'revoked_cert_ids': 'list[str]',
         'unique_identifier': 'str'
     }
@@ -55,11 +56,12 @@ class CertAccessRules(object):
         'bound_organizational_units': 'bound_organizational_units',
         'bound_uri_sans': 'bound_uri_sans',
         'certificate': 'certificate',
+        'require_crl_dp': 'require_crl_dp',
         'revoked_cert_ids': 'revoked_cert_ids',
         'unique_identifier': 'unique_identifier'
     }
 
-    def __init__(self, allowed_cors=None, bound_common_names=None, bound_dns_sans=None, bound_email_sans=None, bound_extensions=None, bound_organizational_units=None, bound_uri_sans=None, certificate=None, revoked_cert_ids=None, unique_identifier=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, allowed_cors=None, bound_common_names=None, bound_dns_sans=None, bound_email_sans=None, bound_extensions=None, bound_organizational_units=None, bound_uri_sans=None, certificate=None, require_crl_dp=None, revoked_cert_ids=None, unique_identifier=None, local_vars_configuration=None):  # noqa: E501
         """CertAccessRules - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -73,6 +75,7 @@ class CertAccessRules(object):
         self._bound_organizational_units = None
         self._bound_uri_sans = None
         self._certificate = None
+        self._require_crl_dp = None
         self._revoked_cert_ids = None
         self._unique_identifier = None
         self.discriminator = None
@@ -93,6 +96,8 @@ class CertAccessRules(object):
             self.bound_uri_sans = bound_uri_sans
         if certificate is not None:
             self.certificate = certificate
+        if require_crl_dp is not None:
+            self.require_crl_dp = require_crl_dp
         if revoked_cert_ids is not None:
             self.revoked_cert_ids = revoked_cert_ids
         if unique_identifier is not None:
@@ -281,6 +286,29 @@ class CertAccessRules(object):
         """
 
         self._certificate = certificate
+
+    @property
+    def require_crl_dp(self):
+        """Gets the require_crl_dp of this CertAccessRules.  # noqa: E501
+
+        RequireCrlDp indicates whether CRL distribution points are required on the leaf client certificate, and whether CRL validation must be enforced during authentication.  # noqa: E501
+
+        :return: The require_crl_dp of this CertAccessRules.  # noqa: E501
+        :rtype: bool
+        """
+        return self._require_crl_dp
+
+    @require_crl_dp.setter
+    def require_crl_dp(self, require_crl_dp):
+        """Sets the require_crl_dp of this CertAccessRules.
+
+        RequireCrlDp indicates whether CRL distribution points are required on the leaf client certificate, and whether CRL validation must be enforced during authentication.  # noqa: E501
+
+        :param require_crl_dp: The require_crl_dp of this CertAccessRules.  # noqa: E501
+        :type: bool
+        """
+
+        self._require_crl_dp = require_crl_dp
 
     @property
     def revoked_cert_ids(self):

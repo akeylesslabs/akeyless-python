@@ -5,6 +5,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **azure_client_id** | **str** |  | [optional] 
 **azure_client_secret** | **str** |  | [optional] 
+**azure_cloud** | **str** |  | [optional] 
 **azure_resource_group_name** | **str** |  | [optional] 
 **azure_resource_name** | **str** |  | [optional] 
 **azure_subscription_id** | **str** |  | [optional] 

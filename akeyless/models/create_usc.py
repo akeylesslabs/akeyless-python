@@ -37,12 +37,17 @@ class CreateUSC(object):
         'azure_kv_name': 'str',
         'delete_protection': 'str',
         'description': 'str',
+        'environment_names': 'str',
         'gcp_project_id': 'str',
         'gcp_sm_regions': 'str',
+        'github_scope': 'str',
         'item_custom_fields': 'dict(str, str)',
         'json': 'bool',
         'k8s_namespace': 'str',
         'name': 'str',
+        'organization_name': 'str',
+        'repository_access': 'str',
+        'repository_names': 'str',
         'tags': 'list[str]',
         'target_to_associate': 'str',
         'token': 'str',
@@ -55,12 +60,17 @@ class CreateUSC(object):
         'azure_kv_name': 'azure-kv-name',
         'delete_protection': 'delete_protection',
         'description': 'description',
+        'environment_names': 'environment-names',
         'gcp_project_id': 'gcp-project-id',
         'gcp_sm_regions': 'gcp-sm-regions',
+        'github_scope': 'github-scope',
         'item_custom_fields': 'item-custom-fields',
         'json': 'json',
         'k8s_namespace': 'k8s-namespace',
         'name': 'name',
+        'organization_name': 'organization-name',
+        'repository_access': 'repository-access',
+        'repository_names': 'repository-names',
         'tags': 'tags',
         'target_to_associate': 'target-to-associate',
         'token': 'token',
@@ -69,7 +79,7 @@ class CreateUSC(object):
         'use_prefix_as_filter': 'use-prefix-as-filter'
     }
 
-    def __init__(self, azure_kv_name=None, delete_protection=None, description=None, gcp_project_id=None, gcp_sm_regions=None, item_custom_fields=None, json=False, k8s_namespace=None, name=None, tags=None, target_to_associate=None, token=None, uid_token=None, usc_prefix=None, use_prefix_as_filter='false', local_vars_configuration=None):  # noqa: E501
+    def __init__(self, azure_kv_name=None, delete_protection=None, description=None, environment_names=None, gcp_project_id=None, gcp_sm_regions=None, github_scope='repository', item_custom_fields=None, json=False, k8s_namespace=None, name=None, organization_name=None, repository_access='public', repository_names=None, tags=None, target_to_associate=None, token=None, uid_token=None, usc_prefix=None, use_prefix_as_filter='false', local_vars_configuration=None):  # noqa: E501
         """CreateUSC - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -78,12 +88,17 @@ class CreateUSC(object):
         self._azure_kv_name = None
         self._delete_protection = None
         self._description = None
+        self._environment_names = None
         self._gcp_project_id = None
         self._gcp_sm_regions = None
+        self._github_scope = None
         self._item_custom_fields = None
         self._json = None
         self._k8s_namespace = None
         self._name = None
+        self._organization_name = None
+        self._repository_access = None
+        self._repository_names = None
         self._tags = None
         self._target_to_associate = None
         self._token = None
@@ -98,10 +113,14 @@ class CreateUSC(object):
             self.delete_protection = delete_protection
         if description is not None:
             self.description = description
+        if environment_names is not None:
+            self.environment_names = environment_names
         if gcp_project_id is not None:
             self.gcp_project_id = gcp_project_id
         if gcp_sm_regions is not None:
             self.gcp_sm_regions = gcp_sm_regions
+        if github_scope is not None:
+            self.github_scope = github_scope
         if item_custom_fields is not None:
             self.item_custom_fields = item_custom_fields
         if json is not None:
@@ -109,6 +128,12 @@ class CreateUSC(object):
         if k8s_namespace is not None:
             self.k8s_namespace = k8s_namespace
         self.name = name
+        if organization_name is not None:
+            self.organization_name = organization_name
+        if repository_access is not None:
+            self.repository_access = repository_access
+        if repository_names is not None:
+            self.repository_names = repository_names
         if tags is not None:
             self.tags = tags
         self.target_to_associate = target_to_associate
@@ -191,6 +216,29 @@ class CreateUSC(object):
         self._description = description
 
     @property
+    def environment_names(self):
+        """Gets the environment_names of this CreateUSC.  # noqa: E501
+
+        The environments in repo-name/environment-name format, comma-separated (only relevant for: github-scope=repository-environment)  # noqa: E501
+
+        :return: The environment_names of this CreateUSC.  # noqa: E501
+        :rtype: str
+        """
+        return self._environment_names
+
+    @environment_names.setter
+    def environment_names(self, environment_names):
+        """Sets the environment_names of this CreateUSC.
+
+        The environments in repo-name/environment-name format, comma-separated (only relevant for: github-scope=repository-environment)  # noqa: E501
+
+        :param environment_names: The environment_names of this CreateUSC.  # noqa: E501
+        :type: str
+        """
+
+        self._environment_names = environment_names
+
+    @property
     def gcp_project_id(self):
         """Gets the gcp_project_id of this CreateUSC.  # noqa: E501
 
@@ -235,6 +283,29 @@ class CreateUSC(object):
         """
 
         self._gcp_sm_regions = gcp_sm_regions
+
+    @property
+    def github_scope(self):
+        """Gets the github_scope of this CreateUSC.  # noqa: E501
+
+        The scope where secrets will be created, available options: [repository, organization, repository-environment]  # noqa: E501
+
+        :return: The github_scope of this CreateUSC.  # noqa: E501
+        :rtype: str
+        """
+        return self._github_scope
+
+    @github_scope.setter
+    def github_scope(self, github_scope):
+        """Sets the github_scope of this CreateUSC.
+
+        The scope where secrets will be created, available options: [repository, organization, repository-environment]  # noqa: E501
+
+        :param github_scope: The github_scope of this CreateUSC.  # noqa: E501
+        :type: str
+        """
+
+        self._github_scope = github_scope
 
     @property
     def item_custom_fields(self):
@@ -329,6 +400,73 @@ class CreateUSC(object):
             raise ValueError("Invalid value for `name`, must not be `None`")  # noqa: E501
 
         self._name = name
+
+    @property
+    def organization_name(self):
+        """Gets the organization_name of this CreateUSC.  # noqa: E501
+
+        The organization name to create the secret in (only relevant for: github-scope=organization)  # noqa: E501
+
+        :return: The organization_name of this CreateUSC.  # noqa: E501
+        :rtype: str
+        """
+        return self._organization_name
+
+    @organization_name.setter
+    def organization_name(self, organization_name):
+        """Sets the organization_name of this CreateUSC.
+
+        The organization name to create the secret in (only relevant for: github-scope=organization)  # noqa: E501
+
+        :param organization_name: The organization_name of this CreateUSC.  # noqa: E501
+        :type: str
+        """
+
+        self._organization_name = organization_name
+
+    @property
+    def repository_access(self):
+        """Gets the repository_access of this CreateUSC.  # noqa: E501
+
+
+        :return: The repository_access of this CreateUSC.  # noqa: E501
+        :rtype: str
+        """
+        return self._repository_access
+
+    @repository_access.setter
+    def repository_access(self, repository_access):
+        """Sets the repository_access of this CreateUSC.
+
+
+        :param repository_access: The repository_access of this CreateUSC.  # noqa: E501
+        :type: str
+        """
+
+        self._repository_access = repository_access
+
+    @property
+    def repository_names(self):
+        """Gets the repository_names of this CreateUSC.  # noqa: E501
+
+        The repository names, comma-separated (only relevant for: github-scope=repository)  # noqa: E501
+
+        :return: The repository_names of this CreateUSC.  # noqa: E501
+        :rtype: str
+        """
+        return self._repository_names
+
+    @repository_names.setter
+    def repository_names(self, repository_names):
+        """Sets the repository_names of this CreateUSC.
+
+        The repository names, comma-separated (only relevant for: github-scope=repository)  # noqa: E501
+
+        :param repository_names: The repository_names of this CreateUSC.  # noqa: E501
+        :type: str
+        """
+
+        self._repository_names = repository_names
 
     @property
     def tags(self):

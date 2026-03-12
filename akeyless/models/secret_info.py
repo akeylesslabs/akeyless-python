@@ -37,6 +37,7 @@ class SecretInfo(object):
         'created': 'datetime',
         'description': 'str',
         'expiration': 'datetime',
+        'github': 'GithubMetadata',
         'key_id': 'str',
         'last_retrieved': 'datetime',
         'location': 'object',
@@ -54,6 +55,7 @@ class SecretInfo(object):
         'created': 'created',
         'description': 'description',
         'expiration': 'expiration',
+        'github': 'github',
         'key_id': 'key_id',
         'last_retrieved': 'last_retrieved',
         'location': 'location',
@@ -67,7 +69,7 @@ class SecretInfo(object):
         'version': 'version'
     }
 
-    def __init__(self, created=None, description=None, expiration=None, key_id=None, last_retrieved=None, location=None, name=None, region=None, secret_id=None, status=None, tags=None, thumbprint=None, type=None, version=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, created=None, description=None, expiration=None, github=None, key_id=None, last_retrieved=None, location=None, name=None, region=None, secret_id=None, status=None, tags=None, thumbprint=None, type=None, version=None, local_vars_configuration=None):  # noqa: E501
         """SecretInfo - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -76,6 +78,7 @@ class SecretInfo(object):
         self._created = None
         self._description = None
         self._expiration = None
+        self._github = None
         self._key_id = None
         self._last_retrieved = None
         self._location = None
@@ -95,6 +98,8 @@ class SecretInfo(object):
             self.description = description
         if expiration is not None:
             self.expiration = expiration
+        if github is not None:
+            self.github = github
         if key_id is not None:
             self.key_id = key_id
         if last_retrieved is not None:
@@ -180,6 +185,27 @@ class SecretInfo(object):
         """
 
         self._expiration = expiration
+
+    @property
+    def github(self):
+        """Gets the github of this SecretInfo.  # noqa: E501
+
+
+        :return: The github of this SecretInfo.  # noqa: E501
+        :rtype: GithubMetadata
+        """
+        return self._github
+
+    @github.setter
+    def github(self, github):
+        """Sets the github of this SecretInfo.
+
+
+        :param github: The github of this SecretInfo.  # noqa: E501
+        :type: GithubMetadata
+        """
+
+        self._github = github
 
     @property
     def key_id(self):

@@ -35,6 +35,7 @@ Name | Type | Description | Notes
 **azure_app_object_id** | **str** |  | [optional] 
 **azure_client_id** | **str** |  | [optional] 
 **azure_client_secret** | **str** |  | [optional] 
+**azure_cloud** | **str** |  | [optional] 
 **azure_fixed_user_name_sub_claim_key** | **str** |  | [optional] 
 **azure_fixed_user_only** | **bool** |  | [optional] 
 **azure_resource_group_name** | **str** |  | [optional] 

@@ -55,6 +55,7 @@ class CreateAuthMethodCert(object):
         'jwt_ttl': 'int',
         'name': 'str',
         'product_type': 'list[str]',
+        'require_crl_dp': 'bool',
         'revoked_cert_ids': 'list[str]',
         'token': 'str',
         'uid_token': 'str',
@@ -83,13 +84,14 @@ class CreateAuthMethodCert(object):
         'jwt_ttl': 'jwt-ttl',
         'name': 'name',
         'product_type': 'product-type',
+        'require_crl_dp': 'require-crl-dp',
         'revoked_cert_ids': 'revoked-cert-ids',
         'token': 'token',
         'uid_token': 'uid-token',
         'unique_identifier': 'unique-identifier'
     }
 
-    def __init__(self, access_expires=0, allowed_client_type=None, allowed_cors=None, audit_logs_claims=None, bound_common_names=None, bound_dns_sans=None, bound_email_sans=None, bound_extensions=None, bound_ips=None, bound_organizational_units=None, bound_uri_sans=None, certificate_data=None, delete_protection=None, description=None, expiration_event_in=None, force_sub_claims=None, gw_bound_ips=None, json=False, jwt_ttl=0, name=None, product_type=None, revoked_cert_ids=None, token=None, uid_token=None, unique_identifier=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, access_expires=0, allowed_client_type=None, allowed_cors=None, audit_logs_claims=None, bound_common_names=None, bound_dns_sans=None, bound_email_sans=None, bound_extensions=None, bound_ips=None, bound_organizational_units=None, bound_uri_sans=None, certificate_data=None, delete_protection=None, description=None, expiration_event_in=None, force_sub_claims=None, gw_bound_ips=None, json=False, jwt_ttl=0, name=None, product_type=None, require_crl_dp=None, revoked_cert_ids=None, token=None, uid_token=None, unique_identifier=None, local_vars_configuration=None):  # noqa: E501
         """CreateAuthMethodCert - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -116,6 +118,7 @@ class CreateAuthMethodCert(object):
         self._jwt_ttl = None
         self._name = None
         self._product_type = None
+        self._require_crl_dp = None
         self._revoked_cert_ids = None
         self._token = None
         self._uid_token = None
@@ -163,6 +166,8 @@ class CreateAuthMethodCert(object):
         self.name = name
         if product_type is not None:
             self.product_type = product_type
+        if require_crl_dp is not None:
+            self.require_crl_dp = require_crl_dp
         if revoked_cert_ids is not None:
             self.revoked_cert_ids = revoked_cert_ids
         if token is not None:
@@ -655,6 +660,29 @@ class CreateAuthMethodCert(object):
         """
 
         self._product_type = product_type
+
+    @property
+    def require_crl_dp(self):
+        """Gets the require_crl_dp of this CreateAuthMethodCert.  # noqa: E501
+
+        Require certificate CRL distribution points (CDP) and enforce CRL validation during authentication.  # noqa: E501
+
+        :return: The require_crl_dp of this CreateAuthMethodCert.  # noqa: E501
+        :rtype: bool
+        """
+        return self._require_crl_dp
+
+    @require_crl_dp.setter
+    def require_crl_dp(self, require_crl_dp):
+        """Sets the require_crl_dp of this CreateAuthMethodCert.
+
+        Require certificate CRL distribution points (CDP) and enforce CRL validation during authentication.  # noqa: E501
+
+        :param require_crl_dp: The require_crl_dp of this CreateAuthMethodCert.  # noqa: E501
+        :type: bool
+        """
+
+        self._require_crl_dp = require_crl_dp
 
     @property
     def revoked_cert_ids(self):

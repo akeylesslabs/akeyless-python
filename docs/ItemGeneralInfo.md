@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **dynamic_secret_producer_details** | [**DynamicSecretProducerInfo**](DynamicSecretProducerInfo.md) |  | [optional] 
 **expiration_events** | [**list[CertificateExpirationEvent]**](CertificateExpirationEvent.md) |  | [optional] 
 **importer_info** | [**ImporterInfo**](ImporterInfo.md) |  | [optional] 
+**issuer_overview_info** | [**IssuerOverviewInfo**](IssuerOverviewInfo.md) |  | [optional] 
 **next_rotation_events** | [**list[NextAutoRotationEvent]**](NextAutoRotationEvent.md) |  | [optional] 
 **oidc_client_info** | [**OidcClientInfo**](OidcClientInfo.md) |  | [optional] 
 **password_policy** | [**PasswordPolicyInfo**](PasswordPolicyInfo.md) |  | [optional] 

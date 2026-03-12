@@ -598,7 +598,9 @@ Method | HTTP request | Description
 [**usc_get**](V2Api.md#usc_get) | **POST** /usc-get | 
 [**usc_list**](V2Api.md#usc_list) | **POST** /usc-list | 
 [**usc_update**](V2Api.md#usc_update) | **POST** /usc-update | 
+[**validate_certificate_challenge**](V2Api.md#validate_certificate_challenge) | **POST** /validate-certificate-challenge | 
 [**validate_token**](V2Api.md#validate_token) | **POST** /validate-token | 
+[**vault_address**](V2Api.md#vault_address) | **POST** /vault-address | 
 [**verify_data_with_classic_key**](V2Api.md#verify_data_with_classic_key) | **POST** /verify-data-with-classic-key | 
 [**verify_ec_dsa**](V2Api.md#verify_ec_dsa) | **POST** /verify-ecdsa | 
 [**verify_gpg**](V2Api.md#verify_gpg) | **POST** /verify-gpg | 
@@ -36241,6 +36243,66 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **validate_certificate_challenge**
+> ValidateCertificateChallengeOutput validate_certificate_challenge(validate_certificate_challenge)
+
+
+
+### Example
+
+```python
+from __future__ import print_function
+import time
+import akeyless
+from akeyless.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.akeyless.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = akeyless.Configuration(
+    host = "https://api.akeyless.io"
+)
+
+
+# Enter a context with an instance of the API client
+with akeyless.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = akeyless.V2Api(api_client)
+    validate_certificate_challenge = akeyless.ValidateCertificateChallenge() # ValidateCertificateChallenge | 
+
+    try:
+        api_response = api_instance.validate_certificate_challenge(validate_certificate_challenge)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling V2Api->validate_certificate_challenge: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **validate_certificate_challenge** | [**ValidateCertificateChallenge**](ValidateCertificateChallenge.md)|  | 
+
+### Return type
+
+[**ValidateCertificateChallengeOutput**](ValidateCertificateChallengeOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | validateCertificateChallengeResponse wraps response body. |  -  |
+**0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **validate_token**
 > ValidateTokenOutput validate_token(validate_token)
 
@@ -36298,6 +36360,66 @@ No authorization required
 |-------------|-------------|------------------|
 **200** | validateTokenResponse wraps response body. |  -  |
 **401** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
+**0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **vault_address**
+> VaultAddressOutput vault_address(vault_address)
+
+
+
+### Example
+
+```python
+from __future__ import print_function
+import time
+import akeyless
+from akeyless.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.akeyless.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = akeyless.Configuration(
+    host = "https://api.akeyless.io"
+)
+
+
+# Enter a context with an instance of the API client
+with akeyless.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = akeyless.V2Api(api_client)
+    vault_address = akeyless.VaultAddress() # VaultAddress | 
+
+    try:
+        api_response = api_instance.vault_address(vault_address)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling V2Api->vault_address: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **vault_address** | [**VaultAddress**](VaultAddress.md)|  | 
+
+### Return type
+
+[**VaultAddressOutput**](VaultAddressOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | vaultAddressResponse wraps response body. |  -  |
 **0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

@@ -45,6 +45,7 @@ class CertificateChainInfo(object):
         'certificate_pem': 'str',
         'certificate_status': 'str',
         'common_name': 'str',
+        'csr_pem': 'str',
         'error_message': 'str',
         'expiration_date': 'datetime',
         'expiration_events': 'list[CertificateExpirationEvent]',
@@ -66,6 +67,7 @@ class CertificateChainInfo(object):
         'certificate_pem': 'certificate_pem',
         'certificate_status': 'certificate_status',
         'common_name': 'common_name',
+        'csr_pem': 'csr_pem',
         'error_message': 'error_message',
         'expiration_date': 'expiration_date',
         'expiration_events': 'expiration_events',
@@ -75,7 +77,7 @@ class CertificateChainInfo(object):
         'renew_before_expiration_in_days': 'renew_before_expiration_in_days'
     }
 
-    def __init__(self, auto_renew_certificate=None, certificate_chain=None, certificate_format=None, certificate_has_private_key=None, certificate_issuer_gw_cluster_id=None, certificate_issuer_gw_cluster_url=None, certificate_issuer_item_id=None, certificate_issuer_name=None, certificate_pem=None, certificate_status=None, common_name=None, error_message=None, expiration_date=None, expiration_events=None, external_ca_id=None, issuance_status=None, not_before=None, renew_before_expiration_in_days=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, auto_renew_certificate=None, certificate_chain=None, certificate_format=None, certificate_has_private_key=None, certificate_issuer_gw_cluster_id=None, certificate_issuer_gw_cluster_url=None, certificate_issuer_item_id=None, certificate_issuer_name=None, certificate_pem=None, certificate_status=None, common_name=None, csr_pem=None, error_message=None, expiration_date=None, expiration_events=None, external_ca_id=None, issuance_status=None, not_before=None, renew_before_expiration_in_days=None, local_vars_configuration=None):  # noqa: E501
         """CertificateChainInfo - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -92,6 +94,7 @@ class CertificateChainInfo(object):
         self._certificate_pem = None
         self._certificate_status = None
         self._common_name = None
+        self._csr_pem = None
         self._error_message = None
         self._expiration_date = None
         self._expiration_events = None
@@ -123,6 +126,8 @@ class CertificateChainInfo(object):
             self.certificate_status = certificate_status
         if common_name is not None:
             self.common_name = common_name
+        if csr_pem is not None:
+            self.csr_pem = csr_pem
         if error_message is not None:
             self.error_message = error_message
         if expiration_date is not None:
@@ -368,6 +373,29 @@ class CertificateChainInfo(object):
         """
 
         self._common_name = common_name
+
+    @property
+    def csr_pem(self):
+        """Gets the csr_pem of this CertificateChainInfo.  # noqa: E501
+
+        CSRPEM contains the PEM-encoded CSR for pending certificates (HTTP-01 challenge)  # noqa: E501
+
+        :return: The csr_pem of this CertificateChainInfo.  # noqa: E501
+        :rtype: str
+        """
+        return self._csr_pem
+
+    @csr_pem.setter
+    def csr_pem(self, csr_pem):
+        """Sets the csr_pem of this CertificateChainInfo.
+
+        CSRPEM contains the PEM-encoded CSR for pending certificates (HTTP-01 challenge)  # noqa: E501
+
+        :param csr_pem: The csr_pem of this CertificateChainInfo.  # noqa: E501
+        :type: str
+        """
+
+        self._csr_pem = csr_pem
 
     @property
     def error_message(self):

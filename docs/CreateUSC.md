@@ -7,12 +7,17 @@ Name | Type | Description | Notes
 **azure_kv_name** | **str** | Azure Key Vault name (Relevant only for Azure targets) | [optional] 
 **delete_protection** | **str** | Protection from accidental deletion of this object [true/false] | [optional] 
 **description** | **str** | Description of the Universal Secrets Connector | [optional] 
+**environment_names** | **str** | The environments in repo-name/environment-name format, comma-separated (only relevant for: github-scope&#x3D;repository-environment) | [optional] 
 **gcp_project_id** | **str** | GCP Project ID (Relevant only for GCP targets) | [optional] 
 **gcp_sm_regions** | **str** | GCP Secret Manager regions to query for regional secrets (comma-separated, e.g., us-east1,us-west1). Max 12 regions. Required when listing with object-type&#x3D;regional-secrets. | [optional] 
+**github_scope** | **str** | The scope where secrets will be created, available options: [repository, organization, repository-environment] | [optional] [default to 'repository']
 **item_custom_fields** | **dict(str, str)** | Additional custom fields to associate with the item | [optional] 
 **json** | **bool** | Set output format to JSON | [optional] [default to False]
 **k8s_namespace** | **str** | K8s namespace (Relevant to Kubernetes targets) | [optional] 
 **name** | **str** | Universal Secrets Connector name | 
+**organization_name** | **str** | The organization name to create the secret in (only relevant for: github-scope&#x3D;organization) | [optional] 
+**repository_access** | **str** |  | [optional] [default to 'public']
+**repository_names** | **str** | The repository names, comma-separated (only relevant for: github-scope&#x3D;repository) | [optional] 
 **tags** | **list[str]** | List of the tags attached to this Universal Secrets Connector | [optional] 
 **target_to_associate** | **str** | Target Universal Secrets Connector to connect | 
 **token** | **str** | Authentication token (see &#x60;/auth&#x60; and &#x60;/configure&#x60;) | [optional] 

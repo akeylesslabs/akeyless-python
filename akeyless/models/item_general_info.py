@@ -44,6 +44,7 @@ class ItemGeneralInfo(object):
         'dynamic_secret_producer_details': 'DynamicSecretProducerInfo',
         'expiration_events': 'list[CertificateExpirationEvent]',
         'importer_info': 'ImporterInfo',
+        'issuer_overview_info': 'IssuerOverviewInfo',
         'next_rotation_events': 'list[NextAutoRotationEvent]',
         'oidc_client_info': 'OidcClientInfo',
         'password_policy': 'PasswordPolicyInfo',
@@ -64,6 +65,7 @@ class ItemGeneralInfo(object):
         'dynamic_secret_producer_details': 'dynamic_secret_producer_details',
         'expiration_events': 'expiration_events',
         'importer_info': 'importer_info',
+        'issuer_overview_info': 'issuer_overview_info',
         'next_rotation_events': 'next_rotation_events',
         'oidc_client_info': 'oidc_client_info',
         'password_policy': 'password_policy',
@@ -73,7 +75,7 @@ class ItemGeneralInfo(object):
         'tokenizer_info': 'tokenizer_info'
     }
 
-    def __init__(self, cert_issue_details=None, certificate_chain_info=None, certificate_format=None, certificates_template_info=None, classic_key_details=None, cluster_gw_url=None, display_metadata=None, dynamic_secret_producer_details=None, expiration_events=None, importer_info=None, next_rotation_events=None, oidc_client_info=None, password_policy=None, rotated_secret_details=None, secure_remote_access_details=None, static_secret_info=None, tokenizer_info=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, cert_issue_details=None, certificate_chain_info=None, certificate_format=None, certificates_template_info=None, classic_key_details=None, cluster_gw_url=None, display_metadata=None, dynamic_secret_producer_details=None, expiration_events=None, importer_info=None, issuer_overview_info=None, next_rotation_events=None, oidc_client_info=None, password_policy=None, rotated_secret_details=None, secure_remote_access_details=None, static_secret_info=None, tokenizer_info=None, local_vars_configuration=None):  # noqa: E501
         """ItemGeneralInfo - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -89,6 +91,7 @@ class ItemGeneralInfo(object):
         self._dynamic_secret_producer_details = None
         self._expiration_events = None
         self._importer_info = None
+        self._issuer_overview_info = None
         self._next_rotation_events = None
         self._oidc_client_info = None
         self._password_policy = None
@@ -118,6 +121,8 @@ class ItemGeneralInfo(object):
             self.expiration_events = expiration_events
         if importer_info is not None:
             self.importer_info = importer_info
+        if issuer_overview_info is not None:
+            self.issuer_overview_info = issuer_overview_info
         if next_rotation_events is not None:
             self.next_rotation_events = next_rotation_events
         if oidc_client_info is not None:
@@ -342,6 +347,27 @@ class ItemGeneralInfo(object):
         """
 
         self._importer_info = importer_info
+
+    @property
+    def issuer_overview_info(self):
+        """Gets the issuer_overview_info of this ItemGeneralInfo.  # noqa: E501
+
+
+        :return: The issuer_overview_info of this ItemGeneralInfo.  # noqa: E501
+        :rtype: IssuerOverviewInfo
+        """
+        return self._issuer_overview_info
+
+    @issuer_overview_info.setter
+    def issuer_overview_info(self, issuer_overview_info):
+        """Sets the issuer_overview_info of this ItemGeneralInfo.
+
+
+        :param issuer_overview_info: The issuer_overview_info of this ItemGeneralInfo.  # noqa: E501
+        :type: IssuerOverviewInfo
+        """
+
+        self._issuer_overview_info = issuer_overview_info
 
     @property
     def next_rotation_events(self):

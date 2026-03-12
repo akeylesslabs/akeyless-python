@@ -35,6 +35,7 @@ class AzureADAccessRules(object):
     """
     openapi_types = {
         'ad_endpoint': 'str',
+        'azure_cloud': 'str',
         'bound_group_ids': 'list[str]',
         'bound_resource_groups': 'list[str]',
         'bound_resource_ids': 'list[str]',
@@ -51,6 +52,7 @@ class AzureADAccessRules(object):
 
     attribute_map = {
         'ad_endpoint': 'ad_endpoint',
+        'azure_cloud': 'azure_cloud',
         'bound_group_ids': 'bound_group_ids',
         'bound_resource_groups': 'bound_resource_groups',
         'bound_resource_ids': 'bound_resource_ids',
@@ -65,13 +67,14 @@ class AzureADAccessRules(object):
         'unique_identifier': 'unique_identifier'
     }
 
-    def __init__(self, ad_endpoint=None, bound_group_ids=None, bound_resource_groups=None, bound_resource_ids=None, bound_resource_names=None, bound_resource_providers=None, bound_resource_types=None, bound_service_principal_ids=None, bound_subscription_ids=None, bound_tenant_id=None, issuer=None, jwks_uri=None, unique_identifier=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, ad_endpoint=None, azure_cloud=None, bound_group_ids=None, bound_resource_groups=None, bound_resource_ids=None, bound_resource_names=None, bound_resource_providers=None, bound_resource_types=None, bound_service_principal_ids=None, bound_subscription_ids=None, bound_tenant_id=None, issuer=None, jwks_uri=None, unique_identifier=None, local_vars_configuration=None):  # noqa: E501
         """AzureADAccessRules - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._ad_endpoint = None
+        self._azure_cloud = None
         self._bound_group_ids = None
         self._bound_resource_groups = None
         self._bound_resource_ids = None
@@ -88,6 +91,8 @@ class AzureADAccessRules(object):
 
         if ad_endpoint is not None:
             self.ad_endpoint = ad_endpoint
+        if azure_cloud is not None:
+            self.azure_cloud = azure_cloud
         if bound_group_ids is not None:
             self.bound_group_ids = bound_group_ids
         if bound_resource_groups is not None:
@@ -135,6 +140,29 @@ class AzureADAccessRules(object):
         """
 
         self._ad_endpoint = ad_endpoint
+
+    @property
+    def azure_cloud(self):
+        """Gets the azure_cloud of this AzureADAccessRules.  # noqa: E501
+
+        Azure cloud environment [AzureCloud/AzureUSGovernment/AzureChinaCloud]. For create/update, cloud is inferred from jwks_uri.  # noqa: E501
+
+        :return: The azure_cloud of this AzureADAccessRules.  # noqa: E501
+        :rtype: str
+        """
+        return self._azure_cloud
+
+    @azure_cloud.setter
+    def azure_cloud(self, azure_cloud):
+        """Sets the azure_cloud of this AzureADAccessRules.
+
+        Azure cloud environment [AzureCloud/AzureUSGovernment/AzureChinaCloud]. For create/update, cloud is inferred from jwks_uri.  # noqa: E501
+
+        :param azure_cloud: The azure_cloud of this AzureADAccessRules.  # noqa: E501
+        :type: str
+        """
+
+        self._azure_cloud = azure_cloud
 
     @property
     def bound_group_ids(self):
