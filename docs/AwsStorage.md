@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **access_key_secret** | **str** |  | [optional] 
 **auth_type** | **str** |  | [optional] 
 **bucket** | **str** |  | [optional] 
+**endpoint_url** | **str** |  | [optional] 
 **prefix** | **str** |  | [optional] 
 **region** | **str** |  | [optional] 
 

@@ -40,6 +40,7 @@ class TargetTypeDetailsInput(object):
         'chef_target_details': 'ChefTargetDetails',
         'custom_target_details': 'CustomTargetDetails',
         'db_target_details': 'DbTargetDetails',
+        'digicert_target_details': 'DigiCertTargetDetails',
         'dockerhub_target_details': 'DockerhubTargetDetails',
         'eks_target_details': 'EKSTargetDetails',
         'gcp_target_details': 'GcpTargetDetails',
@@ -50,6 +51,7 @@ class TargetTypeDetailsInput(object):
         'globalsign_atlas_target_details': 'GlobalSignAtlasTargetDetails',
         'globalsign_target_details': 'GlobalSignGCCTargetDetails',
         'godaddy_target_details': 'GodaddyTargetDetails',
+        'google_trust_target_details': 'GoogleTrustTargetDetails',
         'hashi_vault_target_details': 'HashiVaultTargetDetails',
         'ldap_target_details': 'LdapTargetDetails',
         'letsencrypt_target_details': 'LetsEncryptTargetDetails',
@@ -76,6 +78,7 @@ class TargetTypeDetailsInput(object):
         'chef_target_details': 'chef_target_details',
         'custom_target_details': 'custom_target_details',
         'db_target_details': 'db_target_details',
+        'digicert_target_details': 'digicert_target_details',
         'dockerhub_target_details': 'dockerhub_target_details',
         'eks_target_details': 'eks_target_details',
         'gcp_target_details': 'gcp_target_details',
@@ -86,6 +89,7 @@ class TargetTypeDetailsInput(object):
         'globalsign_atlas_target_details': 'globalsign_atlas_target_details',
         'globalsign_target_details': 'globalsign_target_details',
         'godaddy_target_details': 'godaddy_target_details',
+        'google_trust_target_details': 'google_trust_target_details',
         'hashi_vault_target_details': 'hashi_vault_target_details',
         'ldap_target_details': 'ldap_target_details',
         'letsencrypt_target_details': 'letsencrypt_target_details',
@@ -105,7 +109,7 @@ class TargetTypeDetailsInput(object):
         'zerossl_target_details': 'zerossl_target_details'
     }
 
-    def __init__(self, artifactory_target_details=None, aws_target_details=None, azure_target_details=None, chef_target_details=None, custom_target_details=None, db_target_details=None, dockerhub_target_details=None, eks_target_details=None, gcp_target_details=None, gemini_target_details=None, github_target_details=None, gitlab_target_details=None, gke_target_details=None, globalsign_atlas_target_details=None, globalsign_target_details=None, godaddy_target_details=None, hashi_vault_target_details=None, ldap_target_details=None, letsencrypt_target_details=None, linked_target_details=None, mongo_db_target_details=None, native_k8s_target_details=None, openai_target_details=None, ping_target_details=None, rabbit_mq_target_details=None, salesforce_target_details=None, sectigo_target_details=None, splunk_target_details=None, ssh_target_details=None, venafi_target_details=None, web_target_details=None, windows_target_details=None, zerossl_target_details=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, artifactory_target_details=None, aws_target_details=None, azure_target_details=None, chef_target_details=None, custom_target_details=None, db_target_details=None, digicert_target_details=None, dockerhub_target_details=None, eks_target_details=None, gcp_target_details=None, gemini_target_details=None, github_target_details=None, gitlab_target_details=None, gke_target_details=None, globalsign_atlas_target_details=None, globalsign_target_details=None, godaddy_target_details=None, google_trust_target_details=None, hashi_vault_target_details=None, ldap_target_details=None, letsencrypt_target_details=None, linked_target_details=None, mongo_db_target_details=None, native_k8s_target_details=None, openai_target_details=None, ping_target_details=None, rabbit_mq_target_details=None, salesforce_target_details=None, sectigo_target_details=None, splunk_target_details=None, ssh_target_details=None, venafi_target_details=None, web_target_details=None, windows_target_details=None, zerossl_target_details=None, local_vars_configuration=None):  # noqa: E501
         """TargetTypeDetailsInput - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -117,6 +121,7 @@ class TargetTypeDetailsInput(object):
         self._chef_target_details = None
         self._custom_target_details = None
         self._db_target_details = None
+        self._digicert_target_details = None
         self._dockerhub_target_details = None
         self._eks_target_details = None
         self._gcp_target_details = None
@@ -127,6 +132,7 @@ class TargetTypeDetailsInput(object):
         self._globalsign_atlas_target_details = None
         self._globalsign_target_details = None
         self._godaddy_target_details = None
+        self._google_trust_target_details = None
         self._hashi_vault_target_details = None
         self._ldap_target_details = None
         self._letsencrypt_target_details = None
@@ -158,6 +164,8 @@ class TargetTypeDetailsInput(object):
             self.custom_target_details = custom_target_details
         if db_target_details is not None:
             self.db_target_details = db_target_details
+        if digicert_target_details is not None:
+            self.digicert_target_details = digicert_target_details
         if dockerhub_target_details is not None:
             self.dockerhub_target_details = dockerhub_target_details
         if eks_target_details is not None:
@@ -178,6 +186,8 @@ class TargetTypeDetailsInput(object):
             self.globalsign_target_details = globalsign_target_details
         if godaddy_target_details is not None:
             self.godaddy_target_details = godaddy_target_details
+        if google_trust_target_details is not None:
+            self.google_trust_target_details = google_trust_target_details
         if hashi_vault_target_details is not None:
             self.hashi_vault_target_details = hashi_vault_target_details
         if ldap_target_details is not None:
@@ -338,6 +348,27 @@ class TargetTypeDetailsInput(object):
         """
 
         self._db_target_details = db_target_details
+
+    @property
+    def digicert_target_details(self):
+        """Gets the digicert_target_details of this TargetTypeDetailsInput.  # noqa: E501
+
+
+        :return: The digicert_target_details of this TargetTypeDetailsInput.  # noqa: E501
+        :rtype: DigiCertTargetDetails
+        """
+        return self._digicert_target_details
+
+    @digicert_target_details.setter
+    def digicert_target_details(self, digicert_target_details):
+        """Sets the digicert_target_details of this TargetTypeDetailsInput.
+
+
+        :param digicert_target_details: The digicert_target_details of this TargetTypeDetailsInput.  # noqa: E501
+        :type: DigiCertTargetDetails
+        """
+
+        self._digicert_target_details = digicert_target_details
 
     @property
     def dockerhub_target_details(self):
@@ -548,6 +579,27 @@ class TargetTypeDetailsInput(object):
         """
 
         self._godaddy_target_details = godaddy_target_details
+
+    @property
+    def google_trust_target_details(self):
+        """Gets the google_trust_target_details of this TargetTypeDetailsInput.  # noqa: E501
+
+
+        :return: The google_trust_target_details of this TargetTypeDetailsInput.  # noqa: E501
+        :rtype: GoogleTrustTargetDetails
+        """
+        return self._google_trust_target_details
+
+    @google_trust_target_details.setter
+    def google_trust_target_details(self, google_trust_target_details):
+        """Sets the google_trust_target_details of this TargetTypeDetailsInput.
+
+
+        :param google_trust_target_details: The google_trust_target_details of this TargetTypeDetailsInput.  # noqa: E501
+        :type: GoogleTrustTargetDetails
+        """
+
+        self._google_trust_target_details = google_trust_target_details
 
     @property
     def hashi_vault_target_details(self):

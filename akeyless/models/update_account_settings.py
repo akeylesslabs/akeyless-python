@@ -57,6 +57,7 @@ class UpdateAccountSettings(object):
         'hide_personal_folder': 'str',
         'hide_static_password': 'str',
         'invalid_characters': 'str',
+        'item_locking_enabled': 'str',
         'item_type': 'str',
         'items_deletion_protection': 'str',
         'json': 'bool',
@@ -67,6 +68,7 @@ class UpdateAccountSettings(object):
         'lock_bound_ips': 'str',
         'lock_default_key': 'str',
         'lock_gw_bound_ips': 'str',
+        'lock_max_ttl': 'int',
         'max_rotation_interval': 'int',
         'max_rotation_interval_enable': 'str',
         'max_versions': 'str',
@@ -110,6 +112,7 @@ class UpdateAccountSettings(object):
         'hide_personal_folder': 'hide-personal-folder',
         'hide_static_password': 'hide-static-password',
         'invalid_characters': 'invalid-characters',
+        'item_locking_enabled': 'item-locking-enabled',
         'item_type': 'item-type',
         'items_deletion_protection': 'items-deletion-protection',
         'json': 'json',
@@ -120,6 +123,7 @@ class UpdateAccountSettings(object):
         'lock_bound_ips': 'lock-bound-ips',
         'lock_default_key': 'lock-default-key',
         'lock_gw_bound_ips': 'lock-gw-bound-ips',
+        'lock_max_ttl': 'lock-max-ttl',
         'max_rotation_interval': 'max-rotation-interval',
         'max_rotation_interval_enable': 'max-rotation-interval-enable',
         'max_versions': 'max-versions',
@@ -139,7 +143,7 @@ class UpdateAccountSettings(object):
         'use_special_characters': 'use-special-characters'
     }
 
-    def __init__(self, address=None, allowed_client_type=None, allowed_email_domains=None, bound_ips=None, city=None, company_name=None, country=None, default_certificate_expiration_notification_days=None, default_key_name=None, default_share_link_ttl_minutes=None, default_versioning=None, dp_enable_classic_key_protection=None, dynamic_secret_max_ttl=None, dynamic_secret_max_ttl_enable=None, enable_ai_insights=None, enable_default_certificate_expiration_event=None, enable_item_sharing=None, enable_password_expiration=None, force_new_versions=None, gw_bound_ips=None, hide_personal_folder=None, hide_static_password=None, invalid_characters='notReceivedInvalidCharacter', item_type=None, items_deletion_protection=None, json=False, jwt_ttl_default=None, jwt_ttl_max=None, jwt_ttl_min=None, lock_allowed_client_type=None, lock_bound_ips=None, lock_default_key=None, lock_gw_bound_ips=None, max_rotation_interval=None, max_rotation_interval_enable=None, max_versions=None, password_expiration_days=None, password_expiration_notification_days=None, password_length=None, phone=None, postal_code=None, token=None, uid_token=None, usage_event_enable=None, usage_event_interval=None, usage_event_object_type=None, use_capital_letters=None, use_lower_letters=None, use_numbers=None, use_special_characters=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, address=None, allowed_client_type=None, allowed_email_domains=None, bound_ips=None, city=None, company_name=None, country=None, default_certificate_expiration_notification_days=None, default_key_name=None, default_share_link_ttl_minutes=None, default_versioning=None, dp_enable_classic_key_protection=None, dynamic_secret_max_ttl=None, dynamic_secret_max_ttl_enable=None, enable_ai_insights=None, enable_default_certificate_expiration_event=None, enable_item_sharing=None, enable_password_expiration=None, force_new_versions=None, gw_bound_ips=None, hide_personal_folder=None, hide_static_password=None, invalid_characters='notReceivedInvalidCharacter', item_locking_enabled=None, item_type=None, items_deletion_protection=None, json=False, jwt_ttl_default=None, jwt_ttl_max=None, jwt_ttl_min=None, lock_allowed_client_type=None, lock_bound_ips=None, lock_default_key=None, lock_gw_bound_ips=None, lock_max_ttl=None, max_rotation_interval=None, max_rotation_interval_enable=None, max_versions=None, password_expiration_days=None, password_expiration_notification_days=None, password_length=None, phone=None, postal_code=None, token=None, uid_token=None, usage_event_enable=None, usage_event_interval=None, usage_event_object_type=None, use_capital_letters=None, use_lower_letters=None, use_numbers=None, use_special_characters=None, local_vars_configuration=None):  # noqa: E501
         """UpdateAccountSettings - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -168,6 +172,7 @@ class UpdateAccountSettings(object):
         self._hide_personal_folder = None
         self._hide_static_password = None
         self._invalid_characters = None
+        self._item_locking_enabled = None
         self._item_type = None
         self._items_deletion_protection = None
         self._json = None
@@ -178,6 +183,7 @@ class UpdateAccountSettings(object):
         self._lock_bound_ips = None
         self._lock_default_key = None
         self._lock_gw_bound_ips = None
+        self._lock_max_ttl = None
         self._max_rotation_interval = None
         self._max_rotation_interval_enable = None
         self._max_versions = None
@@ -243,6 +249,8 @@ class UpdateAccountSettings(object):
             self.hide_static_password = hide_static_password
         if invalid_characters is not None:
             self.invalid_characters = invalid_characters
+        if item_locking_enabled is not None:
+            self.item_locking_enabled = item_locking_enabled
         if item_type is not None:
             self.item_type = item_type
         if items_deletion_protection is not None:
@@ -263,6 +271,8 @@ class UpdateAccountSettings(object):
             self.lock_default_key = lock_default_key
         if lock_gw_bound_ips is not None:
             self.lock_gw_bound_ips = lock_gw_bound_ips
+        if lock_max_ttl is not None:
+            self.lock_max_ttl = lock_max_ttl
         if max_rotation_interval is not None:
             self.max_rotation_interval = max_rotation_interval
         if max_rotation_interval_enable is not None:
@@ -828,6 +838,29 @@ class UpdateAccountSettings(object):
         self._invalid_characters = invalid_characters
 
     @property
+    def item_locking_enabled(self):
+        """Gets the item_locking_enabled of this UpdateAccountSettings.  # noqa: E501
+
+        Enable item locking feature [true/false]  # noqa: E501
+
+        :return: The item_locking_enabled of this UpdateAccountSettings.  # noqa: E501
+        :rtype: str
+        """
+        return self._item_locking_enabled
+
+    @item_locking_enabled.setter
+    def item_locking_enabled(self, item_locking_enabled):
+        """Sets the item_locking_enabled of this UpdateAccountSettings.
+
+        Enable item locking feature [true/false]  # noqa: E501
+
+        :param item_locking_enabled: The item_locking_enabled of this UpdateAccountSettings.  # noqa: E501
+        :type: str
+        """
+
+        self._item_locking_enabled = item_locking_enabled
+
+    @property
     def item_type(self):
         """Gets the item_type of this UpdateAccountSettings.  # noqa: E501
 
@@ -1056,6 +1089,29 @@ class UpdateAccountSettings(object):
         """
 
         self._lock_gw_bound_ips = lock_gw_bound_ips
+
+    @property
+    def lock_max_ttl(self):
+        """Gets the lock_max_ttl of this UpdateAccountSettings.  # noqa: E501
+
+        Set the maximum TTL for item/target locks in minutes  # noqa: E501
+
+        :return: The lock_max_ttl of this UpdateAccountSettings.  # noqa: E501
+        :rtype: int
+        """
+        return self._lock_max_ttl
+
+    @lock_max_ttl.setter
+    def lock_max_ttl(self, lock_max_ttl):
+        """Sets the lock_max_ttl of this UpdateAccountSettings.
+
+        Set the maximum TTL for item/target locks in minutes  # noqa: E501
+
+        :param lock_max_ttl: The lock_max_ttl of this UpdateAccountSettings.  # noqa: E501
+        :type: int
+        """
+
+        self._lock_max_ttl = lock_max_ttl
 
     @property
     def max_rotation_interval(self):

@@ -38,6 +38,7 @@ class AwsStorage(object):
         'access_key_secret': 'str',
         'auth_type': 'str',
         'bucket': 'str',
+        'endpoint_url': 'str',
         'prefix': 'str',
         'region': 'str'
     }
@@ -47,11 +48,12 @@ class AwsStorage(object):
         'access_key_secret': 'access_key_secret',
         'auth_type': 'auth_type',
         'bucket': 'bucket',
+        'endpoint_url': 'endpoint_url',
         'prefix': 'prefix',
         'region': 'region'
     }
 
-    def __init__(self, access_key_id=None, access_key_secret=None, auth_type=None, bucket=None, prefix=None, region=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, access_key_id=None, access_key_secret=None, auth_type=None, bucket=None, endpoint_url=None, prefix=None, region=None, local_vars_configuration=None):  # noqa: E501
         """AwsStorage - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -61,6 +63,7 @@ class AwsStorage(object):
         self._access_key_secret = None
         self._auth_type = None
         self._bucket = None
+        self._endpoint_url = None
         self._prefix = None
         self._region = None
         self.discriminator = None
@@ -73,6 +76,8 @@ class AwsStorage(object):
             self.auth_type = auth_type
         if bucket is not None:
             self.bucket = bucket
+        if endpoint_url is not None:
+            self.endpoint_url = endpoint_url
         if prefix is not None:
             self.prefix = prefix
         if region is not None:
@@ -163,6 +168,27 @@ class AwsStorage(object):
         """
 
         self._bucket = bucket
+
+    @property
+    def endpoint_url(self):
+        """Gets the endpoint_url of this AwsStorage.  # noqa: E501
+
+
+        :return: The endpoint_url of this AwsStorage.  # noqa: E501
+        :rtype: str
+        """
+        return self._endpoint_url
+
+    @endpoint_url.setter
+    def endpoint_url(self, endpoint_url):
+        """Sets the endpoint_url of this AwsStorage.
+
+
+        :param endpoint_url: The endpoint_url of this AwsStorage.  # noqa: E501
+        :type: str
+        """
+
+        self._endpoint_url = endpoint_url
 
     @property
     def prefix(self):

@@ -104,8 +104,7 @@ class TargetUpdateLetsEncrypt(object):
             self.description = description
         if dns_target_creds is not None:
             self.dns_target_creds = dns_target_creds
-        if email is not None:
-            self.email = email
+        self.email = email
         if gcp_project is not None:
             self.gcp_project = gcp_project
         if hosted_zone is not None:
@@ -219,6 +218,8 @@ class TargetUpdateLetsEncrypt(object):
         :param email: The email of this TargetUpdateLetsEncrypt.  # noqa: E501
         :type: str
         """
+        if self.local_vars_configuration.client_side_validation and email is None:  # noqa: E501
+            raise ValueError("Invalid value for `email`, must not be `None`")  # noqa: E501
 
         self._email = email
 

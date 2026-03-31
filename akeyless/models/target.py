@@ -43,6 +43,7 @@ class Target(object):
         'creation_date': 'datetime',
         'is_access_request_enabled': 'bool',
         'last_version': 'int',
+        'locking_info': 'LockingInfo',
         'modification_date': 'datetime',
         'parent_target_name': 'str',
         'protection_key_name': 'str',
@@ -66,6 +67,7 @@ class Target(object):
         'creation_date': 'creation_date',
         'is_access_request_enabled': 'is_access_request_enabled',
         'last_version': 'last_version',
+        'locking_info': 'locking_info',
         'modification_date': 'modification_date',
         'parent_target_name': 'parent_target_name',
         'protection_key_name': 'protection_key_name',
@@ -79,7 +81,7 @@ class Target(object):
         'with_customer_fragment': 'with_customer_fragment'
     }
 
-    def __init__(self, access_date=None, access_date_display=None, access_request_status=None, attributes=None, client_permissions=None, comment=None, creation_date=None, is_access_request_enabled=None, last_version=None, modification_date=None, parent_target_name=None, protection_key_name=None, target_details=None, target_id=None, target_items_assoc=None, target_name=None, target_sub_type=None, target_type=None, target_versions=None, with_customer_fragment=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, access_date=None, access_date_display=None, access_request_status=None, attributes=None, client_permissions=None, comment=None, creation_date=None, is_access_request_enabled=None, last_version=None, locking_info=None, modification_date=None, parent_target_name=None, protection_key_name=None, target_details=None, target_id=None, target_items_assoc=None, target_name=None, target_sub_type=None, target_type=None, target_versions=None, with_customer_fragment=None, local_vars_configuration=None):  # noqa: E501
         """Target - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -94,6 +96,7 @@ class Target(object):
         self._creation_date = None
         self._is_access_request_enabled = None
         self._last_version = None
+        self._locking_info = None
         self._modification_date = None
         self._parent_target_name = None
         self._protection_key_name = None
@@ -125,6 +128,8 @@ class Target(object):
             self.is_access_request_enabled = is_access_request_enabled
         if last_version is not None:
             self.last_version = last_version
+        if locking_info is not None:
+            self.locking_info = locking_info
         if modification_date is not None:
             self.modification_date = modification_date
         if parent_target_name is not None:
@@ -338,6 +343,27 @@ class Target(object):
         """
 
         self._last_version = last_version
+
+    @property
+    def locking_info(self):
+        """Gets the locking_info of this Target.  # noqa: E501
+
+
+        :return: The locking_info of this Target.  # noqa: E501
+        :rtype: LockingInfo
+        """
+        return self._locking_info
+
+    @locking_info.setter
+    def locking_info(self, locking_info):
+        """Sets the locking_info of this Target.
+
+
+        :param locking_info: The locking_info of this Target.  # noqa: E501
+        :type: LockingInfo
+        """
+
+        self._locking_info = locking_info
 
     @property
     def modification_date(self):

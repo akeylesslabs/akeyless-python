@@ -38,8 +38,10 @@ class UscUpdate(object):
         'description': 'str',
         'json': 'bool',
         'namespace': 'str',
+        'object_type': 'str',
         'pfx_password': 'str',
         'secret_id': 'str',
+        'selected_repositories': 'str',
         'tags': 'dict(str, str)',
         'token': 'str',
         'uid_token': 'str',
@@ -53,8 +55,10 @@ class UscUpdate(object):
         'description': 'description',
         'json': 'json',
         'namespace': 'namespace',
+        'object_type': 'object-type',
         'pfx_password': 'pfx-password',
         'secret_id': 'secret-id',
+        'selected_repositories': 'selected-repositories',
         'tags': 'tags',
         'token': 'token',
         'uid_token': 'uid-token',
@@ -63,7 +67,7 @@ class UscUpdate(object):
         'value': 'value'
     }
 
-    def __init__(self, binary_value=None, description=None, json=False, namespace=None, pfx_password=None, secret_id=None, tags=None, token=None, uid_token=None, usc_encryption_key=None, usc_name=None, value=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, binary_value=None, description=None, json=False, namespace=None, object_type=None, pfx_password=None, secret_id=None, selected_repositories=None, tags=None, token=None, uid_token=None, usc_encryption_key=None, usc_name=None, value=None, local_vars_configuration=None):  # noqa: E501
         """UscUpdate - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -73,8 +77,10 @@ class UscUpdate(object):
         self._description = None
         self._json = None
         self._namespace = None
+        self._object_type = None
         self._pfx_password = None
         self._secret_id = None
+        self._selected_repositories = None
         self._tags = None
         self._token = None
         self._uid_token = None
@@ -91,9 +97,13 @@ class UscUpdate(object):
             self.json = json
         if namespace is not None:
             self.namespace = namespace
+        if object_type is not None:
+            self.object_type = object_type
         if pfx_password is not None:
             self.pfx_password = pfx_password
         self.secret_id = secret_id
+        if selected_repositories is not None:
+            self.selected_repositories = selected_repositories
         if tags is not None:
             self.tags = tags
         if token is not None:
@@ -198,6 +208,27 @@ class UscUpdate(object):
         self._namespace = namespace
 
     @property
+    def object_type(self):
+        """Gets the object_type of this UscUpdate.  # noqa: E501
+
+
+        :return: The object_type of this UscUpdate.  # noqa: E501
+        :rtype: str
+        """
+        return self._object_type
+
+    @object_type.setter
+    def object_type(self, object_type):
+        """Sets the object_type of this UscUpdate.
+
+
+        :param object_type: The object_type of this UscUpdate.  # noqa: E501
+        :type: str
+        """
+
+        self._object_type = object_type
+
+    @property
     def pfx_password(self):
         """Gets the pfx_password of this UscUpdate.  # noqa: E501
 
@@ -244,6 +275,29 @@ class UscUpdate(object):
             raise ValueError("Invalid value for `secret_id`, must not be `None`")  # noqa: E501
 
         self._secret_id = secret_id
+
+    @property
+    def selected_repositories(self):
+        """Gets the selected_repositories of this UscUpdate.  # noqa: E501
+
+        GitHub selected repositories (required for GitHub USC when repository-access is 'selected' or for repository scope) Comma-separated repository names (e.g., \"repo1,repo2\")  # noqa: E501
+
+        :return: The selected_repositories of this UscUpdate.  # noqa: E501
+        :rtype: str
+        """
+        return self._selected_repositories
+
+    @selected_repositories.setter
+    def selected_repositories(self, selected_repositories):
+        """Sets the selected_repositories of this UscUpdate.
+
+        GitHub selected repositories (required for GitHub USC when repository-access is 'selected' or for repository scope) Comma-separated repository names (e.g., \"repo1,repo2\")  # noqa: E501
+
+        :param selected_repositories: The selected_repositories of this UscUpdate.  # noqa: E501
+        :type: str
+        """
+
+        self._selected_repositories = selected_repositories
 
     @property
     def tags(self):

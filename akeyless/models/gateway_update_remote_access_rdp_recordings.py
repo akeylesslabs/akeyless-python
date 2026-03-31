@@ -37,6 +37,7 @@ class GatewayUpdateRemoteAccessRdpRecordings(object):
         'aws_storage_access_key_id': 'str',
         'aws_storage_bucket_name': 'str',
         'aws_storage_bucket_prefix': 'str',
+        'aws_storage_endpoint_url': 'str',
         'aws_storage_region': 'str',
         'aws_storage_secret_access_key': 'str',
         'azure_storage_account_name': 'str',
@@ -58,6 +59,7 @@ class GatewayUpdateRemoteAccessRdpRecordings(object):
         'aws_storage_access_key_id': 'aws-storage-access-key-id',
         'aws_storage_bucket_name': 'aws-storage-bucket-name',
         'aws_storage_bucket_prefix': 'aws-storage-bucket-prefix',
+        'aws_storage_endpoint_url': 'aws-storage-endpoint-url',
         'aws_storage_region': 'aws-storage-region',
         'aws_storage_secret_access_key': 'aws-storage-secret-access-key',
         'azure_storage_account_name': 'azure-storage-account-name',
@@ -75,7 +77,7 @@ class GatewayUpdateRemoteAccessRdpRecordings(object):
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, aws_storage_access_key_id=None, aws_storage_bucket_name=None, aws_storage_bucket_prefix=None, aws_storage_region=None, aws_storage_secret_access_key=None, azure_storage_account_name=None, azure_storage_client_id=None, azure_storage_client_secret=None, azure_storage_container_name=None, azure_storage_tenant_id=None, json=False, rdp_session_recording=None, rdp_session_recording_compress=None, rdp_session_recording_encryption_key=None, rdp_session_recording_quality=None, rdp_session_storage=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, aws_storage_access_key_id=None, aws_storage_bucket_name=None, aws_storage_bucket_prefix=None, aws_storage_endpoint_url=None, aws_storage_region=None, aws_storage_secret_access_key=None, azure_storage_account_name=None, azure_storage_client_id=None, azure_storage_client_secret=None, azure_storage_container_name=None, azure_storage_tenant_id=None, json=False, rdp_session_recording=None, rdp_session_recording_compress=None, rdp_session_recording_encryption_key=None, rdp_session_recording_quality=None, rdp_session_storage=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """GatewayUpdateRemoteAccessRdpRecordings - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -84,6 +86,7 @@ class GatewayUpdateRemoteAccessRdpRecordings(object):
         self._aws_storage_access_key_id = None
         self._aws_storage_bucket_name = None
         self._aws_storage_bucket_prefix = None
+        self._aws_storage_endpoint_url = None
         self._aws_storage_region = None
         self._aws_storage_secret_access_key = None
         self._azure_storage_account_name = None
@@ -107,6 +110,8 @@ class GatewayUpdateRemoteAccessRdpRecordings(object):
             self.aws_storage_bucket_name = aws_storage_bucket_name
         if aws_storage_bucket_prefix is not None:
             self.aws_storage_bucket_prefix = aws_storage_bucket_prefix
+        if aws_storage_endpoint_url is not None:
+            self.aws_storage_endpoint_url = aws_storage_endpoint_url
         if aws_storage_region is not None:
             self.aws_storage_region = aws_storage_region
         if aws_storage_secret_access_key is not None:
@@ -206,6 +211,29 @@ class GatewayUpdateRemoteAccessRdpRecordings(object):
         """
 
         self._aws_storage_bucket_prefix = aws_storage_bucket_prefix
+
+    @property
+    def aws_storage_endpoint_url(self):
+        """Gets the aws_storage_endpoint_url of this GatewayUpdateRemoteAccessRdpRecordings.  # noqa: E501
+
+        Custom AWS endpoint URL for S3-compatible storage (e.g. a private AWS endpoint)  # noqa: E501
+
+        :return: The aws_storage_endpoint_url of this GatewayUpdateRemoteAccessRdpRecordings.  # noqa: E501
+        :rtype: str
+        """
+        return self._aws_storage_endpoint_url
+
+    @aws_storage_endpoint_url.setter
+    def aws_storage_endpoint_url(self, aws_storage_endpoint_url):
+        """Sets the aws_storage_endpoint_url of this GatewayUpdateRemoteAccessRdpRecordings.
+
+        Custom AWS endpoint URL for S3-compatible storage (e.g. a private AWS endpoint)  # noqa: E501
+
+        :param aws_storage_endpoint_url: The aws_storage_endpoint_url of this GatewayUpdateRemoteAccessRdpRecordings.  # noqa: E501
+        :type: str
+        """
+
+        self._aws_storage_endpoint_url = aws_storage_endpoint_url
 
     @property
     def aws_storage_region(self):

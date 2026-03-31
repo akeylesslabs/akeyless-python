@@ -34,31 +34,39 @@ class HashiPayload(object):
                             and the value is json key in definition.
     """
     openapi_types = {
+        'delete_sync_on_deletion': 'bool',
         'import_as_json': 'bool',
         'namespaces': 'list[str]',
         'token': 'str',
-        'url': 'str'
+        'url': 'str',
+        'usc_name': 'str'
     }
 
     attribute_map = {
+        'delete_sync_on_deletion': 'delete_sync_on_deletion',
         'import_as_json': 'import_as_json',
         'namespaces': 'namespaces',
         'token': 'token',
-        'url': 'url'
+        'url': 'url',
+        'usc_name': 'usc_name'
     }
 
-    def __init__(self, import_as_json=None, namespaces=None, token=None, url=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, delete_sync_on_deletion=None, import_as_json=None, namespaces=None, token=None, url=None, usc_name=None, local_vars_configuration=None):  # noqa: E501
         """HashiPayload - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
+        self._delete_sync_on_deletion = None
         self._import_as_json = None
         self._namespaces = None
         self._token = None
         self._url = None
+        self._usc_name = None
         self.discriminator = None
 
+        if delete_sync_on_deletion is not None:
+            self.delete_sync_on_deletion = delete_sync_on_deletion
         if import_as_json is not None:
             self.import_as_json = import_as_json
         if namespaces is not None:
@@ -67,6 +75,29 @@ class HashiPayload(object):
             self.token = token
         if url is not None:
             self.url = url
+        if usc_name is not None:
+            self.usc_name = usc_name
+
+    @property
+    def delete_sync_on_deletion(self):
+        """Gets the delete_sync_on_deletion of this HashiPayload.  # noqa: E501
+
+
+        :return: The delete_sync_on_deletion of this HashiPayload.  # noqa: E501
+        :rtype: bool
+        """
+        return self._delete_sync_on_deletion
+
+    @delete_sync_on_deletion.setter
+    def delete_sync_on_deletion(self, delete_sync_on_deletion):
+        """Sets the delete_sync_on_deletion of this HashiPayload.
+
+
+        :param delete_sync_on_deletion: The delete_sync_on_deletion of this HashiPayload.  # noqa: E501
+        :type: bool
+        """
+
+        self._delete_sync_on_deletion = delete_sync_on_deletion
 
     @property
     def import_as_json(self):
@@ -151,6 +182,27 @@ class HashiPayload(object):
         """
 
         self._url = url
+
+    @property
+    def usc_name(self):
+        """Gets the usc_name of this HashiPayload.  # noqa: E501
+
+
+        :return: The usc_name of this HashiPayload.  # noqa: E501
+        :rtype: str
+        """
+        return self._usc_name
+
+    @usc_name.setter
+    def usc_name(self, usc_name):
+        """Sets the usc_name of this HashiPayload.
+
+
+        :param usc_name: The usc_name of this HashiPayload.  # noqa: E501
+        :type: str
+        """
+
+        self._usc_name = usc_name
 
     def to_dict(self):
         """Returns the model properties as a dict"""

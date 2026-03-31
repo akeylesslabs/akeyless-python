@@ -37,6 +37,7 @@ class GeneralConfigPart(object):
         'akeyless_url': 'str',
         'api_token_ttl': 'str',
         'display_name': 'str',
+        'enable_json_body_limit': 'bool',
         'enable_sni_proxy': 'bool',
         'enable_tls': 'bool',
         'enable_tls_configure': 'bool',
@@ -44,6 +45,7 @@ class GeneralConfigPart(object):
         'enable_tls_hvp': 'bool',
         'gw_cluster_url': 'str',
         'hvp_route_version': 'int',
+        'json_body_limit_mb': 'int',
         'notify_on_status_change': 'bool',
         'tcp_port': 'str',
         'tls_cert': 'str',
@@ -57,6 +59,7 @@ class GeneralConfigPart(object):
         'akeyless_url': 'akeyless_url',
         'api_token_ttl': 'api_token_ttl',
         'display_name': 'display_name',
+        'enable_json_body_limit': 'enable_json_body_limit',
         'enable_sni_proxy': 'enable_sni_proxy',
         'enable_tls': 'enable_tls',
         'enable_tls_configure': 'enable_tls_configure',
@@ -64,6 +67,7 @@ class GeneralConfigPart(object):
         'enable_tls_hvp': 'enable_tls_hvp',
         'gw_cluster_url': 'gw_cluster_url',
         'hvp_route_version': 'hvp_route_version',
+        'json_body_limit_mb': 'json_body_limit_mb',
         'notify_on_status_change': 'notify_on_status_change',
         'tcp_port': 'tcp_port',
         'tls_cert': 'tls_cert',
@@ -73,7 +77,7 @@ class GeneralConfigPart(object):
         'tls_key': 'tls_key'
     }
 
-    def __init__(self, akeyless_url=None, api_token_ttl=None, display_name=None, enable_sni_proxy=None, enable_tls=None, enable_tls_configure=None, enable_tls_curl=None, enable_tls_hvp=None, gw_cluster_url=None, hvp_route_version=None, notify_on_status_change=None, tcp_port=None, tls_cert=None, tls_cert_common_name=None, tls_cert_expiration_date=None, tls_cert_expiration_events=None, tls_key=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, akeyless_url=None, api_token_ttl=None, display_name=None, enable_json_body_limit=None, enable_sni_proxy=None, enable_tls=None, enable_tls_configure=None, enable_tls_curl=None, enable_tls_hvp=None, gw_cluster_url=None, hvp_route_version=None, json_body_limit_mb=None, notify_on_status_change=None, tcp_port=None, tls_cert=None, tls_cert_common_name=None, tls_cert_expiration_date=None, tls_cert_expiration_events=None, tls_key=None, local_vars_configuration=None):  # noqa: E501
         """GeneralConfigPart - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -82,6 +86,7 @@ class GeneralConfigPart(object):
         self._akeyless_url = None
         self._api_token_ttl = None
         self._display_name = None
+        self._enable_json_body_limit = None
         self._enable_sni_proxy = None
         self._enable_tls = None
         self._enable_tls_configure = None
@@ -89,6 +94,7 @@ class GeneralConfigPart(object):
         self._enable_tls_hvp = None
         self._gw_cluster_url = None
         self._hvp_route_version = None
+        self._json_body_limit_mb = None
         self._notify_on_status_change = None
         self._tcp_port = None
         self._tls_cert = None
@@ -104,6 +110,8 @@ class GeneralConfigPart(object):
             self.api_token_ttl = api_token_ttl
         if display_name is not None:
             self.display_name = display_name
+        if enable_json_body_limit is not None:
+            self.enable_json_body_limit = enable_json_body_limit
         if enable_sni_proxy is not None:
             self.enable_sni_proxy = enable_sni_proxy
         if enable_tls is not None:
@@ -118,6 +126,8 @@ class GeneralConfigPart(object):
             self.gw_cluster_url = gw_cluster_url
         if hvp_route_version is not None:
             self.hvp_route_version = hvp_route_version
+        if json_body_limit_mb is not None:
+            self.json_body_limit_mb = json_body_limit_mb
         if notify_on_status_change is not None:
             self.notify_on_status_change = notify_on_status_change
         if tcp_port is not None:
@@ -197,6 +207,27 @@ class GeneralConfigPart(object):
         """
 
         self._display_name = display_name
+
+    @property
+    def enable_json_body_limit(self):
+        """Gets the enable_json_body_limit of this GeneralConfigPart.  # noqa: E501
+
+
+        :return: The enable_json_body_limit of this GeneralConfigPart.  # noqa: E501
+        :rtype: bool
+        """
+        return self._enable_json_body_limit
+
+    @enable_json_body_limit.setter
+    def enable_json_body_limit(self, enable_json_body_limit):
+        """Sets the enable_json_body_limit of this GeneralConfigPart.
+
+
+        :param enable_json_body_limit: The enable_json_body_limit of this GeneralConfigPart.  # noqa: E501
+        :type: bool
+        """
+
+        self._enable_json_body_limit = enable_json_body_limit
 
     @property
     def enable_sni_proxy(self):
@@ -344,6 +375,27 @@ class GeneralConfigPart(object):
         """
 
         self._hvp_route_version = hvp_route_version
+
+    @property
+    def json_body_limit_mb(self):
+        """Gets the json_body_limit_mb of this GeneralConfigPart.  # noqa: E501
+
+
+        :return: The json_body_limit_mb of this GeneralConfigPart.  # noqa: E501
+        :rtype: int
+        """
+        return self._json_body_limit_mb
+
+    @json_body_limit_mb.setter
+    def json_body_limit_mb(self, json_body_limit_mb):
+        """Sets the json_body_limit_mb of this GeneralConfigPart.
+
+
+        :param json_body_limit_mb: The json_body_limit_mb of this GeneralConfigPart.  # noqa: E501
+        :type: int
+        """
+
+        self._json_body_limit_mb = json_body_limit_mb
 
     @property
     def notify_on_status_change(self):

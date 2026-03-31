@@ -67,6 +67,7 @@ class Item(object):
         'last_rotation_date': 'datetime',
         'last_version': 'int',
         'linked_details': 'LinkedDetails',
+        'locking_info': 'LockingInfo',
         'modification_date': 'datetime',
         'next_rotation_date': 'datetime',
         'protection_key_name': 'str',
@@ -113,6 +114,7 @@ class Item(object):
         'last_rotation_date': 'last_rotation_date',
         'last_version': 'last_version',
         'linked_details': 'linked_details',
+        'locking_info': 'locking_info',
         'modification_date': 'modification_date',
         'next_rotation_date': 'next_rotation_date',
         'protection_key_name': 'protection_key_name',
@@ -125,7 +127,7 @@ class Item(object):
         'with_customer_fragment': 'with_customer_fragment'
     }
 
-    def __init__(self, access_date=None, access_date_display=None, access_request_status=None, auto_rotate=None, bastion_details=None, cert_issuer_signer_key_name=None, certificate_issue_details=None, certificates=None, client_permissions=None, creation_date=None, customer_fragment_id=None, delete_protection=None, deletion_date=None, display_id=None, gateway_details=None, is_access_request_enabled=None, is_enabled=None, item_accessibility=None, item_custom_fields_details=None, item_general_info=None, item_id=None, item_metadata=None, item_name=None, item_size=None, item_state=None, item_sub_type=None, item_tags=None, item_targets_assoc=None, item_type=None, item_versions=None, last_rotation_date=None, last_version=None, linked_details=None, modification_date=None, next_rotation_date=None, protection_key_name=None, protection_key_type=None, public_value=None, rotation_interval=None, shared_by=None, target_versions=None, usc_sync_associated_items=None, with_customer_fragment=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, access_date=None, access_date_display=None, access_request_status=None, auto_rotate=None, bastion_details=None, cert_issuer_signer_key_name=None, certificate_issue_details=None, certificates=None, client_permissions=None, creation_date=None, customer_fragment_id=None, delete_protection=None, deletion_date=None, display_id=None, gateway_details=None, is_access_request_enabled=None, is_enabled=None, item_accessibility=None, item_custom_fields_details=None, item_general_info=None, item_id=None, item_metadata=None, item_name=None, item_size=None, item_state=None, item_sub_type=None, item_tags=None, item_targets_assoc=None, item_type=None, item_versions=None, last_rotation_date=None, last_version=None, linked_details=None, locking_info=None, modification_date=None, next_rotation_date=None, protection_key_name=None, protection_key_type=None, public_value=None, rotation_interval=None, shared_by=None, target_versions=None, usc_sync_associated_items=None, with_customer_fragment=None, local_vars_configuration=None):  # noqa: E501
         """Item - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -164,6 +166,7 @@ class Item(object):
         self._last_rotation_date = None
         self._last_version = None
         self._linked_details = None
+        self._locking_info = None
         self._modification_date = None
         self._next_rotation_date = None
         self._protection_key_name = None
@@ -242,6 +245,8 @@ class Item(object):
             self.last_version = last_version
         if linked_details is not None:
             self.linked_details = linked_details
+        if locking_info is not None:
+            self.locking_info = locking_info
         if modification_date is not None:
             self.modification_date = modification_date
         if next_rotation_date is not None:
@@ -957,6 +962,27 @@ class Item(object):
         """
 
         self._linked_details = linked_details
+
+    @property
+    def locking_info(self):
+        """Gets the locking_info of this Item.  # noqa: E501
+
+
+        :return: The locking_info of this Item.  # noqa: E501
+        :rtype: LockingInfo
+        """
+        return self._locking_info
+
+    @locking_info.setter
+    def locking_info(self, locking_info):
+        """Sets the locking_info of this Item.
+
+
+        :param locking_info: The locking_info of this Item.  # noqa: E501
+        :type: LockingInfo
+        """
+
+        self._locking_info = locking_info
 
     @property
     def modification_date(self):

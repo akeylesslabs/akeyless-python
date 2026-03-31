@@ -15,7 +15,7 @@
 
 from __future__ import absolute_import
 
-__version__ = "5.0.22"
+__version__ = "5.0.23"
 
 # import apis into sdk package
 from akeyless.api.v2_api import V2Api
@@ -323,6 +323,7 @@ from akeyless.models.describe_sub_claims_output import DescribeSubClaimsOutput
 from akeyless.models.desktop_app_conf import DesktopAppConf
 from akeyless.models.detokenize import Detokenize
 from akeyless.models.detokenize_output import DetokenizeOutput
+from akeyless.models.digi_cert_target_details import DigiCertTargetDetails
 from akeyless.models.dockerhub_target_details import DockerhubTargetDetails
 from akeyless.models.dynamic_secret_create_artifactory import DynamicSecretCreateArtifactory
 from akeyless.models.dynamic_secret_create_aws import DynamicSecretCreateAws
@@ -683,6 +684,7 @@ from akeyless.models.global_sign_atlas_target_details import GlobalSignAtlasTarg
 from akeyless.models.global_sign_gcc_target_details import GlobalSignGCCTargetDetails
 from akeyless.models.godaddy_target_details import GodaddyTargetDetails
 from akeyless.models.google_chronicle_forwarding_config import GoogleChronicleForwardingConfig
+from akeyless.models.google_trust_target_details import GoogleTrustTargetDetails
 from akeyless.models.group import Group
 from akeyless.models.gw_cluster_identity import GwClusterIdentity
 from akeyless.models.gw_update_remote_access_session_logs_aws_s3 import GwUpdateRemoteAccessSessionLogsAwsS3
@@ -710,6 +712,7 @@ from akeyless.models.issuer_overview_info import IssuerOverviewInfo
 from akeyless.models.item import Item
 from akeyless.models.item_custom_fields_details import ItemCustomFieldsDetails
 from akeyless.models.item_general_info import ItemGeneralInfo
+from akeyless.models.item_locking_setting import ItemLockingSetting
 from akeyless.models.item_sra_status import ItemSraStatus
 from akeyless.models.item_target_association import ItemTargetAssociation
 from akeyless.models.item_usc_sync_association import ItemUSCSyncAssociation
@@ -786,6 +789,9 @@ from akeyless.models.list_shared_items import ListSharedItems
 from akeyless.models.list_sra_sessions_output import ListSraSessionsOutput
 from akeyless.models.list_targets import ListTargets
 from akeyless.models.list_targets_output import ListTargetsOutput
+from akeyless.models.lock_item import LockItem
+from akeyless.models.lock_target import LockTarget
+from akeyless.models.locking_info import LockingInfo
 from akeyless.models.log_forwarding_config_part import LogForwardingConfigPart
 from akeyless.models.logstash_log_forwarding_config import LogstashLogForwardingConfig
 from akeyless.models.logz_io_log_forwarding_config import LogzIoLogForwardingConfig
@@ -801,6 +807,7 @@ from akeyless.models.mongo_db_target_details import MongoDBTargetDetails
 from akeyless.models.move_objects import MoveObjects
 from akeyless.models.name import Name
 from akeyless.models.native_k8s_target_details import NativeK8sTargetDetails
+from akeyless.models.netapp_storage import NetappStorage
 from akeyless.models.next_auto_rotation_event import NextAutoRotationEvent
 from akeyless.models.noti_forwarder import NotiForwarder
 from akeyless.models.noti_forwarder_details_input import NotiForwarderDetailsInput
@@ -970,6 +977,7 @@ from akeyless.models.static_secret_delete_sync_output import StaticSecretDeleteS
 from akeyless.models.static_secret_details_info import StaticSecretDetailsInfo
 from akeyless.models.static_secret_sync import StaticSecretSync
 from akeyless.models.sumologic_log_forwarding_config import SumologicLogForwardingConfig
+from akeyless.models.sync_counters import SyncCounters
 from akeyless.models.syslog_log_forwarding_config import SyslogLogForwardingConfig
 from akeyless.models.system_access_credentials_reply_obj import SystemAccessCredentialsReplyObj
 from akeyless.models.system_access_creds_settings import SystemAccessCredsSettings
@@ -978,6 +986,7 @@ from akeyless.models.target_create_artifactory import TargetCreateArtifactory
 from akeyless.models.target_create_aws import TargetCreateAws
 from akeyless.models.target_create_azure import TargetCreateAzure
 from akeyless.models.target_create_db import TargetCreateDB
+from akeyless.models.target_create_digi_cert import TargetCreateDigiCert
 from akeyless.models.target_create_dockerhub import TargetCreateDockerhub
 from akeyless.models.target_create_eks import TargetCreateEks
 from akeyless.models.target_create_gcp import TargetCreateGcp
@@ -988,6 +997,7 @@ from akeyless.models.target_create_gke import TargetCreateGke
 from akeyless.models.target_create_global_sign import TargetCreateGlobalSign
 from akeyless.models.target_create_global_sign_atlas import TargetCreateGlobalSignAtlas
 from akeyless.models.target_create_godaddy import TargetCreateGodaddy
+from akeyless.models.target_create_google_trust import TargetCreateGoogleTrust
 from akeyless.models.target_create_hashi_vault import TargetCreateHashiVault
 from akeyless.models.target_create_k8s import TargetCreateK8s
 from akeyless.models.target_create_ldap import TargetCreateLdap
@@ -1017,6 +1027,7 @@ from akeyless.models.target_update_artifactory import TargetUpdateArtifactory
 from akeyless.models.target_update_aws import TargetUpdateAws
 from akeyless.models.target_update_azure import TargetUpdateAzure
 from akeyless.models.target_update_db import TargetUpdateDB
+from akeyless.models.target_update_digi_cert import TargetUpdateDigiCert
 from akeyless.models.target_update_dockerhub import TargetUpdateDockerhub
 from akeyless.models.target_update_eks import TargetUpdateEks
 from akeyless.models.target_update_gcp import TargetUpdateGcp
@@ -1027,6 +1038,7 @@ from akeyless.models.target_update_gke import TargetUpdateGke
 from akeyless.models.target_update_global_sign import TargetUpdateGlobalSign
 from akeyless.models.target_update_global_sign_atlas import TargetUpdateGlobalSignAtlas
 from akeyless.models.target_update_godaddy import TargetUpdateGodaddy
+from akeyless.models.target_update_google_trust import TargetUpdateGoogleTrust
 from akeyless.models.target_update_hashi_vault import TargetUpdateHashiVault
 from akeyless.models.target_update_k8s import TargetUpdateK8s
 from akeyless.models.target_update_ldap import TargetUpdateLdap
@@ -1059,6 +1071,8 @@ from akeyless.models.uid_rotate_token_output import UidRotateTokenOutput
 from akeyless.models.unconfigure import Unconfigure
 from akeyless.models.universal_identity_access_rules import UniversalIdentityAccessRules
 from akeyless.models.universal_identity_details import UniversalIdentityDetails
+from akeyless.models.unlock_item import UnlockItem
+from akeyless.models.unlock_target import UnlockTarget
 from akeyless.models.unwrap_token import UnwrapToken
 from akeyless.models.unwrap_token_output import UnwrapTokenOutput
 from akeyless.models.update import Update

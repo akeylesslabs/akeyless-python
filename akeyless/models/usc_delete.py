@@ -37,7 +37,9 @@ class UscDelete(object):
         'force_delete': 'bool',
         'json': 'bool',
         'namespace': 'str',
+        'object_type': 'str',
         'secret_id': 'str',
+        'selected_repositories': 'str',
         'token': 'str',
         'uid_token': 'str',
         'usc_name': 'str'
@@ -47,13 +49,15 @@ class UscDelete(object):
         'force_delete': 'force-delete',
         'json': 'json',
         'namespace': 'namespace',
+        'object_type': 'object-type',
         'secret_id': 'secret-id',
+        'selected_repositories': 'selected-repositories',
         'token': 'token',
         'uid_token': 'uid-token',
         'usc_name': 'usc-name'
     }
 
-    def __init__(self, force_delete=None, json=False, namespace=None, secret_id=None, token=None, uid_token=None, usc_name=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, force_delete=None, json=False, namespace=None, object_type=None, secret_id=None, selected_repositories=None, token=None, uid_token=None, usc_name=None, local_vars_configuration=None):  # noqa: E501
         """UscDelete - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -62,7 +66,9 @@ class UscDelete(object):
         self._force_delete = None
         self._json = None
         self._namespace = None
+        self._object_type = None
         self._secret_id = None
+        self._selected_repositories = None
         self._token = None
         self._uid_token = None
         self._usc_name = None
@@ -74,7 +80,11 @@ class UscDelete(object):
             self.json = json
         if namespace is not None:
             self.namespace = namespace
+        if object_type is not None:
+            self.object_type = object_type
         self.secret_id = secret_id
+        if selected_repositories is not None:
+            self.selected_repositories = selected_repositories
         if token is not None:
             self.token = token
         if uid_token is not None:
@@ -151,6 +161,27 @@ class UscDelete(object):
         self._namespace = namespace
 
     @property
+    def object_type(self):
+        """Gets the object_type of this UscDelete.  # noqa: E501
+
+
+        :return: The object_type of this UscDelete.  # noqa: E501
+        :rtype: str
+        """
+        return self._object_type
+
+    @object_type.setter
+    def object_type(self, object_type):
+        """Sets the object_type of this UscDelete.
+
+
+        :param object_type: The object_type of this UscDelete.  # noqa: E501
+        :type: str
+        """
+
+        self._object_type = object_type
+
+    @property
     def secret_id(self):
         """Gets the secret_id of this UscDelete.  # noqa: E501
 
@@ -174,6 +205,29 @@ class UscDelete(object):
             raise ValueError("Invalid value for `secret_id`, must not be `None`")  # noqa: E501
 
         self._secret_id = secret_id
+
+    @property
+    def selected_repositories(self):
+        """Gets the selected_repositories of this UscDelete.  # noqa: E501
+
+        GitHub selected repositories. For repository scope: repo name. For repository-environment scope: repo/env (format: repo-name/env-name). Required when multiple repos/envs configured.  # noqa: E501
+
+        :return: The selected_repositories of this UscDelete.  # noqa: E501
+        :rtype: str
+        """
+        return self._selected_repositories
+
+    @selected_repositories.setter
+    def selected_repositories(self, selected_repositories):
+        """Sets the selected_repositories of this UscDelete.
+
+        GitHub selected repositories. For repository scope: repo name. For repository-environment scope: repo/env (format: repo-name/env-name). Required when multiple repos/envs configured.  # noqa: E501
+
+        :param selected_repositories: The selected_repositories of this UscDelete.  # noqa: E501
+        :type: str
+        """
+
+        self._selected_repositories = selected_repositories
 
     @property
     def token(self):

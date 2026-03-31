@@ -48,6 +48,7 @@ class UpdateRotatedSecret(object):
         'json': 'bool',
         'keep_prev_version': 'str',
         'key': 'str',
+        'lock_during_sra_session': 'str',
         'name': 'str',
         'new_metadata': 'str',
         'new_name': 'str',
@@ -101,6 +102,7 @@ class UpdateRotatedSecret(object):
         'json': 'json',
         'keep_prev_version': 'keep-prev-version',
         'key': 'key',
+        'lock_during_sra_session': 'lock-during-sra-session',
         'name': 'name',
         'new_metadata': 'new-metadata',
         'new_name': 'new-name',
@@ -139,7 +141,7 @@ class UpdateRotatedSecret(object):
         'user_dn': 'user-dn'
     }
 
-    def __init__(self, provider_type=None, add_tag=None, api_id=None, api_key=None, auto_rotate=None, aws_region='us-east-2', custom_payload=None, description='default_metadata', gcp_key=None, grace_rotation=None, host_provider=None, json=False, keep_prev_version=None, key=None, name=None, new_metadata='default_metadata', new_name=None, new_version=None, rm_tag=None, rotate_after_disconnect='false', rotated_password=None, rotated_username=None, rotation_hour=None, rotation_interval=None, rotator_creds_type='use-self-creds', rotator_custom_cmd=None, same_password=None, secure_access_allow_external_user=False, secure_access_aws_account_id=None, secure_access_aws_native_cli=None, secure_access_bastion_issuer=None, secure_access_certificate_issuer=None, secure_access_db_name=None, secure_access_db_schema=None, secure_access_disable_concurrent_connections=None, secure_access_enable=None, secure_access_host=None, secure_access_rdp_domain=None, secure_access_rdp_user=None, secure_access_url=None, secure_access_web=False, secure_access_web_browsing=False, secure_access_web_proxy=False, ssh_password=None, ssh_username=None, storage_account_key_name=None, token=None, uid_token=None, user_attribute='cn', user_dn=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, provider_type=None, add_tag=None, api_id=None, api_key=None, auto_rotate=None, aws_region='us-east-2', custom_payload=None, description='default_metadata', gcp_key=None, grace_rotation=None, host_provider=None, json=False, keep_prev_version=None, key=None, lock_during_sra_session=None, name=None, new_metadata='default_metadata', new_name=None, new_version=None, rm_tag=None, rotate_after_disconnect=None, rotated_password=None, rotated_username=None, rotation_hour=None, rotation_interval=None, rotator_creds_type='use-self-creds', rotator_custom_cmd=None, same_password=None, secure_access_allow_external_user=False, secure_access_aws_account_id=None, secure_access_aws_native_cli=None, secure_access_bastion_issuer=None, secure_access_certificate_issuer=None, secure_access_db_name=None, secure_access_db_schema=None, secure_access_disable_concurrent_connections=None, secure_access_enable=None, secure_access_host=None, secure_access_rdp_domain=None, secure_access_rdp_user=None, secure_access_url=None, secure_access_web=False, secure_access_web_browsing=False, secure_access_web_proxy=False, ssh_password=None, ssh_username=None, storage_account_key_name=None, token=None, uid_token=None, user_attribute='cn', user_dn=None, local_vars_configuration=None):  # noqa: E501
         """UpdateRotatedSecret - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -159,6 +161,7 @@ class UpdateRotatedSecret(object):
         self._json = None
         self._keep_prev_version = None
         self._key = None
+        self._lock_during_sra_session = None
         self._name = None
         self._new_metadata = None
         self._new_name = None
@@ -225,6 +228,8 @@ class UpdateRotatedSecret(object):
             self.keep_prev_version = keep_prev_version
         if key is not None:
             self.key = key
+        if lock_during_sra_session is not None:
+            self.lock_during_sra_session = lock_during_sra_session
         self.name = name
         if new_metadata is not None:
             self.new_metadata = new_metadata
@@ -618,6 +623,29 @@ class UpdateRotatedSecret(object):
         self._key = key
 
     @property
+    def lock_during_sra_session(self):
+        """Gets the lock_during_sra_session of this UpdateRotatedSecret.  # noqa: E501
+
+        Lock this secret for read/update while an SRA session is active  # noqa: E501
+
+        :return: The lock_during_sra_session of this UpdateRotatedSecret.  # noqa: E501
+        :rtype: str
+        """
+        return self._lock_during_sra_session
+
+    @lock_during_sra_session.setter
+    def lock_during_sra_session(self, lock_during_sra_session):
+        """Sets the lock_during_sra_session of this UpdateRotatedSecret.
+
+        Lock this secret for read/update while an SRA session is active  # noqa: E501
+
+        :param lock_during_sra_session: The lock_during_sra_session of this UpdateRotatedSecret.  # noqa: E501
+        :type: str
+        """
+
+        self._lock_during_sra_session = lock_during_sra_session
+
+    @property
     def name(self):
         """Gets the name of this UpdateRotatedSecret.  # noqa: E501
 
@@ -738,7 +766,7 @@ class UpdateRotatedSecret(object):
     def rotate_after_disconnect(self):
         """Gets the rotate_after_disconnect of this UpdateRotatedSecret.  # noqa: E501
 
-        Rotate the value of the secret after SRA session ends [true/false]  # noqa: E501
+        StringOrBool accepts JSON strings, booleans, and numbers for backward compatibility with older SDK versions that send boolean values for rotate-after-disconnect.  # noqa: E501
 
         :return: The rotate_after_disconnect of this UpdateRotatedSecret.  # noqa: E501
         :rtype: str
@@ -749,7 +777,7 @@ class UpdateRotatedSecret(object):
     def rotate_after_disconnect(self, rotate_after_disconnect):
         """Sets the rotate_after_disconnect of this UpdateRotatedSecret.
 
-        Rotate the value of the secret after SRA session ends [true/false]  # noqa: E501
+        StringOrBool accepts JSON strings, booleans, and numbers for backward compatibility with older SDK versions that send boolean values for rotate-after-disconnect.  # noqa: E501
 
         :param rotate_after_disconnect: The rotate_after_disconnect of this UpdateRotatedSecret.  # noqa: E501
         :type: str

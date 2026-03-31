@@ -146,7 +146,7 @@ class DescribePermissions(object):
     def type(self):
         """Gets the type of this DescribePermissions.  # noqa: E501
 
-        Type of object (item, am, role, target)  # noqa: E501
+        Type of object (item, am, role, target, sra, ara)  # noqa: E501
 
         :return: The type of this DescribePermissions.  # noqa: E501
         :rtype: str
@@ -157,7 +157,7 @@ class DescribePermissions(object):
     def type(self, type):
         """Sets the type of this DescribePermissions.
 
-        Type of object (item, am, role, target)  # noqa: E501
+        Type of object (item, am, role, target, sra, ara)  # noqa: E501
 
         :param type: The type of this DescribePermissions.  # noqa: E501
         :type: str

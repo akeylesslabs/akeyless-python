@@ -34,24 +34,29 @@ class UscListSecretsOutput(object):
                             and the value is json key in definition.
     """
     openapi_types = {
-        'secrets_list': 'list[SecretInfo]'
+        'secrets_list': 'list[SecretInfo]',
+        'warnings': 'list[str]'
     }
 
     attribute_map = {
-        'secrets_list': 'secrets_list'
+        'secrets_list': 'secrets_list',
+        'warnings': 'warnings'
     }
 
-    def __init__(self, secrets_list=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, secrets_list=None, warnings=None, local_vars_configuration=None):  # noqa: E501
         """UscListSecretsOutput - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._secrets_list = None
+        self._warnings = None
         self.discriminator = None
 
         if secrets_list is not None:
             self.secrets_list = secrets_list
+        if warnings is not None:
+            self.warnings = warnings
 
     @property
     def secrets_list(self):
@@ -73,6 +78,27 @@ class UscListSecretsOutput(object):
         """
 
         self._secrets_list = secrets_list
+
+    @property
+    def warnings(self):
+        """Gets the warnings of this UscListSecretsOutput.  # noqa: E501
+
+
+        :return: The warnings of this UscListSecretsOutput.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._warnings
+
+    @warnings.setter
+    def warnings(self, warnings):
+        """Sets the warnings of this UscListSecretsOutput.
+
+
+        :param warnings: The warnings of this UscListSecretsOutput.  # noqa: E501
+        :type: list[str]
+        """
+
+        self._warnings = warnings
 
     def to_dict(self):
         """Returns the model properties as a dict"""

@@ -38,6 +38,7 @@ class AuthMethodUpdateUniversalIdentity(object):
         'allowed_client_type': 'list[str]',
         'audit_logs_claims': 'list[str]',
         'bound_ips': 'list[str]',
+        'child_ttl_limit': 'int',
         'delete_protection': 'str',
         'deny_inheritance': 'bool',
         'deny_rotate': 'bool',
@@ -51,6 +52,7 @@ class AuthMethodUpdateUniversalIdentity(object):
         'new_name': 'str',
         'product_type': 'list[str]',
         'token': 'str',
+        'tree_length': 'int',
         'ttl': 'int',
         'uid_token': 'str'
     }
@@ -60,6 +62,7 @@ class AuthMethodUpdateUniversalIdentity(object):
         'allowed_client_type': 'allowed-client-type',
         'audit_logs_claims': 'audit-logs-claims',
         'bound_ips': 'bound-ips',
+        'child_ttl_limit': 'child-ttl-limit',
         'delete_protection': 'delete_protection',
         'deny_inheritance': 'deny-inheritance',
         'deny_rotate': 'deny-rotate',
@@ -73,11 +76,12 @@ class AuthMethodUpdateUniversalIdentity(object):
         'new_name': 'new-name',
         'product_type': 'product-type',
         'token': 'token',
+        'tree_length': 'tree-length',
         'ttl': 'ttl',
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, access_expires=0, allowed_client_type=None, audit_logs_claims=None, bound_ips=None, delete_protection=None, deny_inheritance=None, deny_rotate=None, description=None, expiration_event_in=None, force_sub_claims=None, gw_bound_ips=None, json=False, jwt_ttl=0, name=None, new_name=None, product_type=None, token=None, ttl=60, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, access_expires=0, allowed_client_type=None, audit_logs_claims=None, bound_ips=None, child_ttl_limit=43200, delete_protection=None, deny_inheritance=None, deny_rotate=None, description=None, expiration_event_in=None, force_sub_claims=None, gw_bound_ips=None, json=False, jwt_ttl=0, name=None, new_name=None, product_type=None, token=None, tree_length=200, ttl=60, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """AuthMethodUpdateUniversalIdentity - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -87,6 +91,7 @@ class AuthMethodUpdateUniversalIdentity(object):
         self._allowed_client_type = None
         self._audit_logs_claims = None
         self._bound_ips = None
+        self._child_ttl_limit = None
         self._delete_protection = None
         self._deny_inheritance = None
         self._deny_rotate = None
@@ -100,6 +105,7 @@ class AuthMethodUpdateUniversalIdentity(object):
         self._new_name = None
         self._product_type = None
         self._token = None
+        self._tree_length = None
         self._ttl = None
         self._uid_token = None
         self.discriminator = None
@@ -112,6 +118,8 @@ class AuthMethodUpdateUniversalIdentity(object):
             self.audit_logs_claims = audit_logs_claims
         if bound_ips is not None:
             self.bound_ips = bound_ips
+        if child_ttl_limit is not None:
+            self.child_ttl_limit = child_ttl_limit
         if delete_protection is not None:
             self.delete_protection = delete_protection
         if deny_inheritance is not None:
@@ -137,6 +145,8 @@ class AuthMethodUpdateUniversalIdentity(object):
             self.product_type = product_type
         if token is not None:
             self.token = token
+        if tree_length is not None:
+            self.tree_length = tree_length
         if ttl is not None:
             self.ttl = ttl
         if uid_token is not None:
@@ -233,6 +243,29 @@ class AuthMethodUpdateUniversalIdentity(object):
         """
 
         self._bound_ips = bound_ips
+
+    @property
+    def child_ttl_limit(self):
+        """Gets the child_ttl_limit of this AuthMethodUpdateUniversalIdentity.  # noqa: E501
+
+        Maximum child token ttl allowed in uid-create-child-token  # noqa: E501
+
+        :return: The child_ttl_limit of this AuthMethodUpdateUniversalIdentity.  # noqa: E501
+        :rtype: int
+        """
+        return self._child_ttl_limit
+
+    @child_ttl_limit.setter
+    def child_ttl_limit(self, child_ttl_limit):
+        """Sets the child_ttl_limit of this AuthMethodUpdateUniversalIdentity.
+
+        Maximum child token ttl allowed in uid-create-child-token  # noqa: E501
+
+        :param child_ttl_limit: The child_ttl_limit of this AuthMethodUpdateUniversalIdentity.  # noqa: E501
+        :type: int
+        """
+
+        self._child_ttl_limit = child_ttl_limit
 
     @property
     def delete_protection(self):
@@ -534,6 +567,29 @@ class AuthMethodUpdateUniversalIdentity(object):
         """
 
         self._token = token
+
+    @property
+    def tree_length(self):
+        """Gets the tree_length of this AuthMethodUpdateUniversalIdentity.  # noqa: E501
+
+        Maximum UID tree depth allowed (child of child of ...)  # noqa: E501
+
+        :return: The tree_length of this AuthMethodUpdateUniversalIdentity.  # noqa: E501
+        :rtype: int
+        """
+        return self._tree_length
+
+    @tree_length.setter
+    def tree_length(self, tree_length):
+        """Sets the tree_length of this AuthMethodUpdateUniversalIdentity.
+
+        Maximum UID tree depth allowed (child of child of ...)  # noqa: E501
+
+        :param tree_length: The tree_length of this AuthMethodUpdateUniversalIdentity.  # noqa: E501
+        :type: int
+        """
+
+        self._tree_length = tree_length
 
     @property
     def ttl(self):

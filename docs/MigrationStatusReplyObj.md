@@ -18,6 +18,7 @@ Name | Type | Description | Notes
 **migration_type_name** | **str** |  | [optional] 
 **rotated_secrets** | [**MigrationItems**](MigrationItems.md) |  | [optional] 
 **start_time** | **str** |  | [optional] 
+**sync** | [**SyncCounters**](SyncCounters.md) |  | [optional] 
 **targets** | [**MigrationItems**](MigrationItems.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

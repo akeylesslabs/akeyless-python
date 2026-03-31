@@ -387,6 +387,8 @@ Method | HTTP request | Description
 [**list_sra_bastions**](V2Api.md#list_sra_bastions) | **POST** /list-sra-bastions | 
 [**list_sra_sessions**](V2Api.md#list_sra_sessions) | **POST** /list-sra-sessions | 
 [**list_targets**](V2Api.md#list_targets) | **POST** /list-targets | 
+[**lock_item**](V2Api.md#lock_item) | **POST** /lock-item | 
+[**lock_target**](V2Api.md#lock_target) | **POST** /lock-target | 
 [**move_objects**](V2Api.md#move_objects) | **POST** /move-objects | 
 [**policies_delete**](V2Api.md#policies_delete) | **POST** /policy-delete | 
 [**policies_get**](V2Api.md#policies_get) | **POST** /policy-get | 
@@ -468,6 +470,7 @@ Method | HTTP request | Description
 [**target_create_aws**](V2Api.md#target_create_aws) | **POST** /target-create-aws | 
 [**target_create_azure**](V2Api.md#target_create_azure) | **POST** /target-create-azure | 
 [**target_create_db**](V2Api.md#target_create_db) | **POST** /target-create-db | 
+[**target_create_digi_cert**](V2Api.md#target_create_digi_cert) | **POST** /target-create-digicert | 
 [**target_create_dockerhub**](V2Api.md#target_create_dockerhub) | **POST** /target-create-dockerhub | 
 [**target_create_eks**](V2Api.md#target_create_eks) | **POST** /target-create-eks | 
 [**target_create_gcp**](V2Api.md#target_create_gcp) | **POST** /target-create-gcp | 
@@ -478,6 +481,7 @@ Method | HTTP request | Description
 [**target_create_global_sign**](V2Api.md#target_create_global_sign) | **POST** /target-create-globalsign | 
 [**target_create_global_sign_atlas**](V2Api.md#target_create_global_sign_atlas) | **POST** /target-create-globalsign-atlas | 
 [**target_create_godaddy**](V2Api.md#target_create_godaddy) | **POST** /target-create-godaddy | 
+[**target_create_google_trust**](V2Api.md#target_create_google_trust) | **POST** /target-create-google-trust | 
 [**target_create_hashi_vault**](V2Api.md#target_create_hashi_vault) | **POST** /target-create-hashi-vault | 
 [**target_create_k8s**](V2Api.md#target_create_k8s) | **POST** /target-create-k8s | 
 [**target_create_ldap**](V2Api.md#target_create_ldap) | **POST** /target-create-ldap | 
@@ -501,6 +505,7 @@ Method | HTTP request | Description
 [**target_update_aws**](V2Api.md#target_update_aws) | **POST** /target-update-aws | 
 [**target_update_azure**](V2Api.md#target_update_azure) | **POST** /target-update-azure | 
 [**target_update_db**](V2Api.md#target_update_db) | **POST** /target-update-db | 
+[**target_update_digi_cert**](V2Api.md#target_update_digi_cert) | **POST** /target-update-digicert | 
 [**target_update_dockerhub**](V2Api.md#target_update_dockerhub) | **POST** /target-update-dockerhub | 
 [**target_update_eks**](V2Api.md#target_update_eks) | **POST** /target-update-eks | 
 [**target_update_gcp**](V2Api.md#target_update_gcp) | **POST** /target-update-gcp | 
@@ -511,6 +516,7 @@ Method | HTTP request | Description
 [**target_update_global_sign**](V2Api.md#target_update_global_sign) | **POST** /target-update-globalsign | 
 [**target_update_global_sign_atlas**](V2Api.md#target_update_global_sign_atlas) | **POST** /target-update-globalsign-atlas | 
 [**target_update_godaddy**](V2Api.md#target_update_godaddy) | **POST** /target-update-godaddy | 
+[**target_update_google_trust**](V2Api.md#target_update_google_trust) | **POST** /target-update-google-trust | 
 [**target_update_hashi_vault**](V2Api.md#target_update_hashi_vault) | **POST** /target-update-hashi-vault | 
 [**target_update_k8s**](V2Api.md#target_update_k8s) | **POST** /target-update-k8s | 
 [**target_update_ldap**](V2Api.md#target_update_ldap) | **POST** /target-update-ldap | 
@@ -532,6 +538,8 @@ Method | HTTP request | Description
 [**uid_list_children**](V2Api.md#uid_list_children) | **POST** /uid-list-children | 
 [**uid_revoke_token**](V2Api.md#uid_revoke_token) | **POST** /uid-revoke-token | 
 [**uid_rotate_token**](V2Api.md#uid_rotate_token) | **POST** /uid-rotate-token | 
+[**unlock_item**](V2Api.md#unlock_item) | **POST** /unlock-item | 
+[**unlock_target**](V2Api.md#unlock_target) | **POST** /unlock-target | 
 [**unwrap_token**](V2Api.md#unwrap_token) | **POST** /unwrap-token | 
 [**update_account_settings**](V2Api.md#update_account_settings) | **POST** /update-account-settings | 
 [**update_artifactory_target**](V2Api.md#update_artifactory_target) | **POST** /update-artifactory-target | 
@@ -23587,6 +23595,126 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **lock_item**
+> object lock_item(lock_item)
+
+
+
+### Example
+
+```python
+from __future__ import print_function
+import time
+import akeyless
+from akeyless.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.akeyless.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = akeyless.Configuration(
+    host = "https://api.akeyless.io"
+)
+
+
+# Enter a context with an instance of the API client
+with akeyless.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = akeyless.V2Api(api_client)
+    lock_item = akeyless.LockItem() # LockItem | 
+
+    try:
+        api_response = api_instance.lock_item(lock_item)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling V2Api->lock_item: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **lock_item** | [**LockItem**](LockItem.md)|  | 
+
+### Return type
+
+**object**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+**0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **lock_target**
+> object lock_target(lock_target)
+
+
+
+### Example
+
+```python
+from __future__ import print_function
+import time
+import akeyless
+from akeyless.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.akeyless.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = akeyless.Configuration(
+    host = "https://api.akeyless.io"
+)
+
+
+# Enter a context with an instance of the API client
+with akeyless.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = akeyless.V2Api(api_client)
+    lock_target = akeyless.LockTarget() # LockTarget | 
+
+    try:
+        api_response = api_instance.lock_target(lock_target)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling V2Api->lock_target: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **lock_target** | [**LockTarget**](LockTarget.md)|  | 
+
+### Return type
+
+**object**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+**0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **move_objects**
 > object move_objects(move_objects)
 
@@ -28443,6 +28571,66 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **target_create_digi_cert**
+> TargetCreateOutput target_create_digi_cert(target_create_digi_cert)
+
+
+
+### Example
+
+```python
+from __future__ import print_function
+import time
+import akeyless
+from akeyless.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.akeyless.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = akeyless.Configuration(
+    host = "https://api.akeyless.io"
+)
+
+
+# Enter a context with an instance of the API client
+with akeyless.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = akeyless.V2Api(api_client)
+    target_create_digi_cert = akeyless.TargetCreateDigiCert() # TargetCreateDigiCert | 
+
+    try:
+        api_response = api_instance.target_create_digi_cert(target_create_digi_cert)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling V2Api->target_create_digi_cert: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **target_create_digi_cert** | [**TargetCreateDigiCert**](TargetCreateDigiCert.md)|  | 
+
+### Return type
+
+[**TargetCreateOutput**](TargetCreateOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**201** | targetCreateDigiCertResponse wraps response body. |  -  |
+**0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **target_create_dockerhub**
 > TargetCreateOutput target_create_dockerhub(target_create_dockerhub)
 
@@ -29039,6 +29227,66 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | targetCreateGodaddyResponse wraps response body. |  -  |
+**0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **target_create_google_trust**
+> TargetCreateOutput target_create_google_trust(target_create_google_trust)
+
+
+
+### Example
+
+```python
+from __future__ import print_function
+import time
+import akeyless
+from akeyless.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.akeyless.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = akeyless.Configuration(
+    host = "https://api.akeyless.io"
+)
+
+
+# Enter a context with an instance of the API client
+with akeyless.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = akeyless.V2Api(api_client)
+    target_create_google_trust = akeyless.TargetCreateGoogleTrust() # TargetCreateGoogleTrust | 
+
+    try:
+        api_response = api_instance.target_create_google_trust(target_create_google_trust)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling V2Api->target_create_google_trust: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **target_create_google_trust** | [**TargetCreateGoogleTrust**](TargetCreateGoogleTrust.md)|  | 
+
+### Return type
+
+[**TargetCreateOutput**](TargetCreateOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**201** | targetCreateGoogleTrustResponse wraps response body. |  -  |
 **0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -30423,6 +30671,66 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **target_update_digi_cert**
+> TargetUpdateOutput target_update_digi_cert(target_update_digi_cert)
+
+
+
+### Example
+
+```python
+from __future__ import print_function
+import time
+import akeyless
+from akeyless.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.akeyless.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = akeyless.Configuration(
+    host = "https://api.akeyless.io"
+)
+
+
+# Enter a context with an instance of the API client
+with akeyless.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = akeyless.V2Api(api_client)
+    target_update_digi_cert = akeyless.TargetUpdateDigiCert() # TargetUpdateDigiCert | 
+
+    try:
+        api_response = api_instance.target_update_digi_cert(target_update_digi_cert)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling V2Api->target_update_digi_cert: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **target_update_digi_cert** | [**TargetUpdateDigiCert**](TargetUpdateDigiCert.md)|  | 
+
+### Return type
+
+[**TargetUpdateOutput**](TargetUpdateOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**201** | targetUpdateDigiCertResponse wraps response body. |  -  |
+**0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **target_update_dockerhub**
 > TargetUpdateOutput target_update_dockerhub(target_update_dockerhub)
 
@@ -31019,6 +31327,66 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | targetUpdateGodaddyResponse wraps response body. |  -  |
+**0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **target_update_google_trust**
+> TargetUpdateOutput target_update_google_trust(target_update_google_trust)
+
+
+
+### Example
+
+```python
+from __future__ import print_function
+import time
+import akeyless
+from akeyless.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.akeyless.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = akeyless.Configuration(
+    host = "https://api.akeyless.io"
+)
+
+
+# Enter a context with an instance of the API client
+with akeyless.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = akeyless.V2Api(api_client)
+    target_update_google_trust = akeyless.TargetUpdateGoogleTrust() # TargetUpdateGoogleTrust | 
+
+    try:
+        api_response = api_instance.target_update_google_trust(target_update_google_trust)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling V2Api->target_update_google_trust: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **target_update_google_trust** | [**TargetUpdateGoogleTrust**](TargetUpdateGoogleTrust.md)|  | 
+
+### Return type
+
+[**TargetUpdateOutput**](TargetUpdateOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**201** | targetUpdateGoogleTrustResponse wraps response body. |  -  |
 **0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -32279,6 +32647,126 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | uidRotateTokenResponse wraps response body. |  -  |
+**0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **unlock_item**
+> object unlock_item(unlock_item)
+
+
+
+### Example
+
+```python
+from __future__ import print_function
+import time
+import akeyless
+from akeyless.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.akeyless.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = akeyless.Configuration(
+    host = "https://api.akeyless.io"
+)
+
+
+# Enter a context with an instance of the API client
+with akeyless.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = akeyless.V2Api(api_client)
+    unlock_item = akeyless.UnlockItem() # UnlockItem | 
+
+    try:
+        api_response = api_instance.unlock_item(unlock_item)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling V2Api->unlock_item: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **unlock_item** | [**UnlockItem**](UnlockItem.md)|  | 
+
+### Return type
+
+**object**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+**0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **unlock_target**
+> object unlock_target(unlock_target)
+
+
+
+### Example
+
+```python
+from __future__ import print_function
+import time
+import akeyless
+from akeyless.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.akeyless.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = akeyless.Configuration(
+    host = "https://api.akeyless.io"
+)
+
+
+# Enter a context with an instance of the API client
+with akeyless.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = akeyless.V2Api(api_client)
+    unlock_target = akeyless.UnlockTarget() # UnlockTarget | 
+
+    try:
+        api_response = api_instance.unlock_target(unlock_target)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling V2Api->unlock_target: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **unlock_target** | [**UnlockTarget**](UnlockTarget.md)|  | 
+
+### Return type
+
+**object**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
 **0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

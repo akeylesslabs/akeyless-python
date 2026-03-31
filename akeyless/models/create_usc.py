@@ -405,7 +405,7 @@ class CreateUSC(object):
     def organization_name(self):
         """Gets the organization_name of this CreateUSC.  # noqa: E501
 
-        The organization name to create the secret in (only relevant for: github-scope=organization)  # noqa: E501
+        The organization name to create the secret in  # noqa: E501
 
         :return: The organization_name of this CreateUSC.  # noqa: E501
         :rtype: str
@@ -416,7 +416,7 @@ class CreateUSC(object):
     def organization_name(self, organization_name):
         """Sets the organization_name of this CreateUSC.
 
-        The organization name to create the secret in (only relevant for: github-scope=organization)  # noqa: E501
+        The organization name to create the secret in  # noqa: E501
 
         :param organization_name: The organization_name of this CreateUSC.  # noqa: E501
         :type: str

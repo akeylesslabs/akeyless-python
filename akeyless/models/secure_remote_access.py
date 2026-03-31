@@ -58,11 +58,13 @@ class SecureRemoteAccess(object):
         'is_desktop_app': 'bool',
         'is_web': 'bool',
         'isolated': 'bool',
+        'lock_during_sra_session': 'bool',
         'native': 'bool',
         'rd_gateway_server': 'str',
         'rdp_user': 'str',
         'region': 'str',
         'rotate_after_disconnect': 'bool',
+        'rotate_after_disconnect_delay_mins': 'int',
         'schema': 'str',
         'ssh_password': 'bool',
         'ssh_private_key': 'bool',
@@ -100,11 +102,13 @@ class SecureRemoteAccess(object):
         'is_desktop_app': 'is_desktop_app',
         'is_web': 'is_web',
         'isolated': 'isolated',
+        'lock_during_sra_session': 'lock_during_sra_session',
         'native': 'native',
         'rd_gateway_server': 'rd_gateway_server',
         'rdp_user': 'rdp_user',
         'region': 'region',
         'rotate_after_disconnect': 'rotate_after_disconnect',
+        'rotate_after_disconnect_delay_mins': 'rotate_after_disconnect_delay_mins',
         'schema': 'schema',
         'ssh_password': 'ssh_password',
         'ssh_private_key': 'ssh_private_key',
@@ -117,7 +121,7 @@ class SecureRemoteAccess(object):
         'web_proxy': 'web_proxy'
     }
 
-    def __init__(self, account_id=None, allow_port_forwarding=None, allow_providing_external_username=None, bastion_api=None, bastion_issuer=None, bastion_issuer_id=None, bastion_ssh=None, block_concurrent_connections=None, block_concurrent_connections_level=None, category=None, connection_delay_seconds=None, dashboard_url=None, db_name=None, domain=None, enable=None, endpoint=None, enforce_hosts_restriction=None, gw_cluster_id=None, host=None, host_provider_type=None, is_cli=None, is_desktop_app=None, is_web=None, isolated=None, native=None, rd_gateway_server=None, rdp_user=None, region=None, rotate_after_disconnect=None, schema=None, ssh_password=None, ssh_private_key=None, ssh_user=None, status_info=None, target_hosts=None, targets=None, url=None, use_internal_bastion=None, web_proxy=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, account_id=None, allow_port_forwarding=None, allow_providing_external_username=None, bastion_api=None, bastion_issuer=None, bastion_issuer_id=None, bastion_ssh=None, block_concurrent_connections=None, block_concurrent_connections_level=None, category=None, connection_delay_seconds=None, dashboard_url=None, db_name=None, domain=None, enable=None, endpoint=None, enforce_hosts_restriction=None, gw_cluster_id=None, host=None, host_provider_type=None, is_cli=None, is_desktop_app=None, is_web=None, isolated=None, lock_during_sra_session=None, native=None, rd_gateway_server=None, rdp_user=None, region=None, rotate_after_disconnect=None, rotate_after_disconnect_delay_mins=None, schema=None, ssh_password=None, ssh_private_key=None, ssh_user=None, status_info=None, target_hosts=None, targets=None, url=None, use_internal_bastion=None, web_proxy=None, local_vars_configuration=None):  # noqa: E501
         """SecureRemoteAccess - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -147,11 +151,13 @@ class SecureRemoteAccess(object):
         self._is_desktop_app = None
         self._is_web = None
         self._isolated = None
+        self._lock_during_sra_session = None
         self._native = None
         self._rd_gateway_server = None
         self._rdp_user = None
         self._region = None
         self._rotate_after_disconnect = None
+        self._rotate_after_disconnect_delay_mins = None
         self._schema = None
         self._ssh_password = None
         self._ssh_private_key = None
@@ -212,6 +218,8 @@ class SecureRemoteAccess(object):
             self.is_web = is_web
         if isolated is not None:
             self.isolated = isolated
+        if lock_during_sra_session is not None:
+            self.lock_during_sra_session = lock_during_sra_session
         if native is not None:
             self.native = native
         if rd_gateway_server is not None:
@@ -222,6 +230,8 @@ class SecureRemoteAccess(object):
             self.region = region
         if rotate_after_disconnect is not None:
             self.rotate_after_disconnect = rotate_after_disconnect
+        if rotate_after_disconnect_delay_mins is not None:
+            self.rotate_after_disconnect_delay_mins = rotate_after_disconnect_delay_mins
         if schema is not None:
             self.schema = schema
         if ssh_password is not None:
@@ -748,6 +758,27 @@ class SecureRemoteAccess(object):
         self._isolated = isolated
 
     @property
+    def lock_during_sra_session(self):
+        """Gets the lock_during_sra_session of this SecureRemoteAccess.  # noqa: E501
+
+
+        :return: The lock_during_sra_session of this SecureRemoteAccess.  # noqa: E501
+        :rtype: bool
+        """
+        return self._lock_during_sra_session
+
+    @lock_during_sra_session.setter
+    def lock_during_sra_session(self, lock_during_sra_session):
+        """Sets the lock_during_sra_session of this SecureRemoteAccess.
+
+
+        :param lock_during_sra_session: The lock_during_sra_session of this SecureRemoteAccess.  # noqa: E501
+        :type: bool
+        """
+
+        self._lock_during_sra_session = lock_during_sra_session
+
+    @property
     def native(self):
         """Gets the native of this SecureRemoteAccess.  # noqa: E501
 
@@ -851,6 +882,27 @@ class SecureRemoteAccess(object):
         """
 
         self._rotate_after_disconnect = rotate_after_disconnect
+
+    @property
+    def rotate_after_disconnect_delay_mins(self):
+        """Gets the rotate_after_disconnect_delay_mins of this SecureRemoteAccess.  # noqa: E501
+
+
+        :return: The rotate_after_disconnect_delay_mins of this SecureRemoteAccess.  # noqa: E501
+        :rtype: int
+        """
+        return self._rotate_after_disconnect_delay_mins
+
+    @rotate_after_disconnect_delay_mins.setter
+    def rotate_after_disconnect_delay_mins(self, rotate_after_disconnect_delay_mins):
+        """Sets the rotate_after_disconnect_delay_mins of this SecureRemoteAccess.
+
+
+        :param rotate_after_disconnect_delay_mins: The rotate_after_disconnect_delay_mins of this SecureRemoteAccess.  # noqa: E501
+        :type: int
+        """
+
+        self._rotate_after_disconnect_delay_mins = rotate_after_disconnect_delay_mins
 
     @property
     def schema(self):

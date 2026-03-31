@@ -45,6 +45,7 @@ class RotatedSecretUpdateCustom(object):
         'json': 'bool',
         'keep_prev_version': 'str',
         'key': 'str',
+        'lock_during_sra_session': 'str',
         'max_versions': 'str',
         'name': 'str',
         'new_name': 'str',
@@ -87,6 +88,7 @@ class RotatedSecretUpdateCustom(object):
         'json': 'json',
         'keep_prev_version': 'keep-prev-version',
         'key': 'key',
+        'lock_during_sra_session': 'lock-during-sra-session',
         'max_versions': 'max-versions',
         'name': 'name',
         'new_name': 'new-name',
@@ -117,7 +119,7 @@ class RotatedSecretUpdateCustom(object):
         'use_special_characters': 'use-special-characters'
     }
 
-    def __init__(self, add_tag=None, authentication_credentials='use-user-creds', auto_rotate=None, custom_payload=None, delete_protection=None, description='default_metadata', enable_password_policy=None, item_custom_fields=None, json=False, keep_prev_version=None, key=None, max_versions=None, name=None, new_name=None, password_length=None, rm_tag=None, rotate_after_disconnect='false', rotation_event_in=None, rotation_hour=None, rotation_interval=None, secure_access_allow_external_user=False, secure_access_bastion_issuer=None, secure_access_certificate_issuer=None, secure_access_enable=None, secure_access_host=None, secure_access_rdp_domain=None, secure_access_rdp_user=None, secure_access_ssh_user=None, secure_access_url=None, secure_access_web=False, secure_access_web_browsing=False, secure_access_web_proxy=False, timeout_sec=None, token=None, uid_token=None, use_capital_letters=None, use_lower_letters=None, use_numbers=None, use_special_characters=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, add_tag=None, authentication_credentials='use-user-creds', auto_rotate=None, custom_payload=None, delete_protection=None, description='default_metadata', enable_password_policy=None, item_custom_fields=None, json=False, keep_prev_version=None, key=None, lock_during_sra_session=None, max_versions=None, name=None, new_name=None, password_length=None, rm_tag=None, rotate_after_disconnect=None, rotation_event_in=None, rotation_hour=None, rotation_interval=None, secure_access_allow_external_user=False, secure_access_bastion_issuer=None, secure_access_certificate_issuer=None, secure_access_enable=None, secure_access_host=None, secure_access_rdp_domain=None, secure_access_rdp_user=None, secure_access_ssh_user=None, secure_access_url=None, secure_access_web=False, secure_access_web_browsing=False, secure_access_web_proxy=False, timeout_sec=None, token=None, uid_token=None, use_capital_letters=None, use_lower_letters=None, use_numbers=None, use_special_characters=None, local_vars_configuration=None):  # noqa: E501
         """RotatedSecretUpdateCustom - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -134,6 +136,7 @@ class RotatedSecretUpdateCustom(object):
         self._json = None
         self._keep_prev_version = None
         self._key = None
+        self._lock_during_sra_session = None
         self._max_versions = None
         self._name = None
         self._new_name = None
@@ -186,6 +189,8 @@ class RotatedSecretUpdateCustom(object):
             self.keep_prev_version = keep_prev_version
         if key is not None:
             self.key = key
+        if lock_during_sra_session is not None:
+            self.lock_during_sra_session = lock_during_sra_session
         if max_versions is not None:
             self.max_versions = max_versions
         self.name = name
@@ -496,6 +501,29 @@ class RotatedSecretUpdateCustom(object):
         self._key = key
 
     @property
+    def lock_during_sra_session(self):
+        """Gets the lock_during_sra_session of this RotatedSecretUpdateCustom.  # noqa: E501
+
+        Lock this secret for read/update while an SRA session is active  # noqa: E501
+
+        :return: The lock_during_sra_session of this RotatedSecretUpdateCustom.  # noqa: E501
+        :rtype: str
+        """
+        return self._lock_during_sra_session
+
+    @lock_during_sra_session.setter
+    def lock_during_sra_session(self, lock_during_sra_session):
+        """Sets the lock_during_sra_session of this RotatedSecretUpdateCustom.
+
+        Lock this secret for read/update while an SRA session is active  # noqa: E501
+
+        :param lock_during_sra_session: The lock_during_sra_session of this RotatedSecretUpdateCustom.  # noqa: E501
+        :type: str
+        """
+
+        self._lock_during_sra_session = lock_during_sra_session
+
+    @property
     def max_versions(self):
         """Gets the max_versions of this RotatedSecretUpdateCustom.  # noqa: E501
 
@@ -616,7 +644,7 @@ class RotatedSecretUpdateCustom(object):
     def rotate_after_disconnect(self):
         """Gets the rotate_after_disconnect of this RotatedSecretUpdateCustom.  # noqa: E501
 
-        Rotate the value of the secret after SRA session ends [true/false]  # noqa: E501
+        StringOrBool accepts JSON strings, booleans, and numbers for backward compatibility with older SDK versions that send boolean values for rotate-after-disconnect.  # noqa: E501
 
         :return: The rotate_after_disconnect of this RotatedSecretUpdateCustom.  # noqa: E501
         :rtype: str
@@ -627,7 +655,7 @@ class RotatedSecretUpdateCustom(object):
     def rotate_after_disconnect(self, rotate_after_disconnect):
         """Sets the rotate_after_disconnect of this RotatedSecretUpdateCustom.
 
-        Rotate the value of the secret after SRA session ends [true/false]  # noqa: E501
+        StringOrBool accepts JSON strings, booleans, and numbers for backward compatibility with older SDK versions that send boolean values for rotate-after-disconnect.  # noqa: E501
 
         :param rotate_after_disconnect: The rotate_after_disconnect of this RotatedSecretUpdateCustom.  # noqa: E501
         :type: str

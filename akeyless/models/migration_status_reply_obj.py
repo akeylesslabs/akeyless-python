@@ -49,6 +49,7 @@ class MigrationStatusReplyObj(object):
         'migration_type_name': 'str',
         'rotated_secrets': 'MigrationItems',
         'start_time': 'str',
+        'sync': 'SyncCounters',
         'targets': 'MigrationItems'
     }
 
@@ -68,10 +69,11 @@ class MigrationStatusReplyObj(object):
         'migration_type_name': 'migration_type_name',
         'rotated_secrets': 'rotated_secrets',
         'start_time': 'start_time',
+        'sync': 'sync',
         'targets': 'targets'
     }
 
-    def __init__(self, certificates=None, computers=None, duration_time=None, error=None, last_status_message=None, max_name_length=None, max_value_length=None, migration_id=None, migration_items=None, migration_name=None, migration_state=None, migration_type=None, migration_type_name=None, rotated_secrets=None, start_time=None, targets=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, certificates=None, computers=None, duration_time=None, error=None, last_status_message=None, max_name_length=None, max_value_length=None, migration_id=None, migration_items=None, migration_name=None, migration_state=None, migration_type=None, migration_type_name=None, rotated_secrets=None, start_time=None, sync=None, targets=None, local_vars_configuration=None):  # noqa: E501
         """MigrationStatusReplyObj - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -92,6 +94,7 @@ class MigrationStatusReplyObj(object):
         self._migration_type_name = None
         self._rotated_secrets = None
         self._start_time = None
+        self._sync = None
         self._targets = None
         self.discriminator = None
 
@@ -125,6 +128,8 @@ class MigrationStatusReplyObj(object):
             self.rotated_secrets = rotated_secrets
         if start_time is not None:
             self.start_time = start_time
+        if sync is not None:
+            self.sync = sync
         if targets is not None:
             self.targets = targets
 
@@ -442,6 +447,27 @@ class MigrationStatusReplyObj(object):
         """
 
         self._start_time = start_time
+
+    @property
+    def sync(self):
+        """Gets the sync of this MigrationStatusReplyObj.  # noqa: E501
+
+
+        :return: The sync of this MigrationStatusReplyObj.  # noqa: E501
+        :rtype: SyncCounters
+        """
+        return self._sync
+
+    @sync.setter
+    def sync(self, sync):
+        """Sets the sync of this MigrationStatusReplyObj.
+
+
+        :param sync: The sync of this MigrationStatusReplyObj.  # noqa: E501
+        :type: SyncCounters
+        """
+
+        self._sync = sync
 
     @property
     def targets(self):

@@ -41,6 +41,7 @@ class TargetCreateSplunk(object):
         'max_versions': 'str',
         'name': 'str',
         'password': 'str',
+        'splunk_token': 'str',
         'token': 'str',
         'token_owner': 'str',
         'uid_token': 'str',
@@ -57,6 +58,7 @@ class TargetCreateSplunk(object):
         'max_versions': 'max-versions',
         'name': 'name',
         'password': 'password',
+        'splunk_token': 'splunk-token',
         'token': 'token',
         'token_owner': 'token-owner',
         'uid_token': 'uid-token',
@@ -65,7 +67,7 @@ class TargetCreateSplunk(object):
         'username': 'username'
     }
 
-    def __init__(self, audience=None, description=None, json=False, key=None, max_versions=None, name=None, password=None, token=None, token_owner=None, uid_token=None, url=None, use_tls=True, username=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, audience=None, description=None, json=False, key=None, max_versions=None, name=None, password=None, splunk_token=None, token=None, token_owner=None, uid_token=None, url=None, use_tls=True, username=None, local_vars_configuration=None):  # noqa: E501
         """TargetCreateSplunk - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -78,6 +80,7 @@ class TargetCreateSplunk(object):
         self._max_versions = None
         self._name = None
         self._password = None
+        self._splunk_token = None
         self._token = None
         self._token_owner = None
         self._uid_token = None
@@ -99,6 +102,8 @@ class TargetCreateSplunk(object):
         self.name = name
         if password is not None:
             self.password = password
+        if splunk_token is not None:
+            self.splunk_token = splunk_token
         if token is not None:
             self.token = token
         if token_owner is not None:
@@ -275,10 +280,33 @@ class TargetCreateSplunk(object):
         self._password = password
 
     @property
+    def splunk_token(self):
+        """Gets the splunk_token of this TargetCreateSplunk.  # noqa: E501
+
+        Splunk Token (used when authenticating with token)  # noqa: E501
+
+        :return: The splunk_token of this TargetCreateSplunk.  # noqa: E501
+        :rtype: str
+        """
+        return self._splunk_token
+
+    @splunk_token.setter
+    def splunk_token(self, splunk_token):
+        """Sets the splunk_token of this TargetCreateSplunk.
+
+        Splunk Token (used when authenticating with token)  # noqa: E501
+
+        :param splunk_token: The splunk_token of this TargetCreateSplunk.  # noqa: E501
+        :type: str
+        """
+
+        self._splunk_token = splunk_token
+
+    @property
     def token(self):
         """Gets the token of this TargetCreateSplunk.  # noqa: E501
 
-        Splunk Token (used when authenticating with token)  # noqa: E501
+        Authentication token (see `/auth` and `/configure`)  # noqa: E501
 
         :return: The token of this TargetCreateSplunk.  # noqa: E501
         :rtype: str
@@ -289,7 +317,7 @@ class TargetCreateSplunk(object):
     def token(self, token):
         """Sets the token of this TargetCreateSplunk.
 
-        Splunk Token (used when authenticating with token)  # noqa: E501
+        Authentication token (see `/auth` and `/configure`)  # noqa: E501
 
         :param token: The token of this TargetCreateSplunk.  # noqa: E501
         :type: str

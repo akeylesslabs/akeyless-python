@@ -34,34 +34,65 @@ class UniversalIdentityAccessRules(object):
                             and the value is json key in definition.
     """
     openapi_types = {
+        'child_ttl_limit': 'int',
         'deny_inheritance': 'bool',
         'deny_rotate': 'bool',
+        'tree_length': 'int',
         'ttl': 'int'
     }
 
     attribute_map = {
+        'child_ttl_limit': 'child_ttl_limit',
         'deny_inheritance': 'deny_inheritance',
         'deny_rotate': 'deny_rotate',
+        'tree_length': 'tree_length',
         'ttl': 'ttl'
     }
 
-    def __init__(self, deny_inheritance=None, deny_rotate=None, ttl=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, child_ttl_limit=None, deny_inheritance=None, deny_rotate=None, tree_length=None, ttl=None, local_vars_configuration=None):  # noqa: E501
         """UniversalIdentityAccessRules - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
+        self._child_ttl_limit = None
         self._deny_inheritance = None
         self._deny_rotate = None
+        self._tree_length = None
         self._ttl = None
         self.discriminator = None
 
+        if child_ttl_limit is not None:
+            self.child_ttl_limit = child_ttl_limit
         if deny_inheritance is not None:
             self.deny_inheritance = deny_inheritance
         if deny_rotate is not None:
             self.deny_rotate = deny_rotate
+        if tree_length is not None:
+            self.tree_length = tree_length
         if ttl is not None:
             self.ttl = ttl
+
+    @property
+    def child_ttl_limit(self):
+        """Gets the child_ttl_limit of this UniversalIdentityAccessRules.  # noqa: E501
+
+
+        :return: The child_ttl_limit of this UniversalIdentityAccessRules.  # noqa: E501
+        :rtype: int
+        """
+        return self._child_ttl_limit
+
+    @child_ttl_limit.setter
+    def child_ttl_limit(self, child_ttl_limit):
+        """Sets the child_ttl_limit of this UniversalIdentityAccessRules.
+
+
+        :param child_ttl_limit: The child_ttl_limit of this UniversalIdentityAccessRules.  # noqa: E501
+        :type: int
+        """
+
+        self._child_ttl_limit = child_ttl_limit
 
     @property
     def deny_inheritance(self):
@@ -104,6 +135,27 @@ class UniversalIdentityAccessRules(object):
         """
 
         self._deny_rotate = deny_rotate
+
+    @property
+    def tree_length(self):
+        """Gets the tree_length of this UniversalIdentityAccessRules.  # noqa: E501
+
+
+        :return: The tree_length of this UniversalIdentityAccessRules.  # noqa: E501
+        :rtype: int
+        """
+        return self._tree_length
+
+    @tree_length.setter
+    def tree_length(self, tree_length):
+        """Sets the tree_length of this UniversalIdentityAccessRules.
+
+
+        :param tree_length: The tree_length of this UniversalIdentityAccessRules.  # noqa: E501
+        :type: int
+        """
+
+        self._tree_length = tree_length
 
     @property
     def ttl(self):

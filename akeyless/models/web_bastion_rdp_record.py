@@ -38,6 +38,7 @@ class WebBastionRdpRecord(object):
         'azure': 'AzureStorage',
         'compress': 'bool',
         'encryption_key': 'str',
+        'netapp': 'NetappStorage',
         'recording_quality': 'str',
         'storage_type': 'str'
     }
@@ -47,11 +48,12 @@ class WebBastionRdpRecord(object):
         'azure': 'azure',
         'compress': 'compress',
         'encryption_key': 'encryption_key',
+        'netapp': 'netapp',
         'recording_quality': 'recording_quality',
         'storage_type': 'storage_type'
     }
 
-    def __init__(self, aws=None, azure=None, compress=None, encryption_key=None, recording_quality=None, storage_type=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, aws=None, azure=None, compress=None, encryption_key=None, netapp=None, recording_quality=None, storage_type=None, local_vars_configuration=None):  # noqa: E501
         """WebBastionRdpRecord - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -61,6 +63,7 @@ class WebBastionRdpRecord(object):
         self._azure = None
         self._compress = None
         self._encryption_key = None
+        self._netapp = None
         self._recording_quality = None
         self._storage_type = None
         self.discriminator = None
@@ -73,6 +76,8 @@ class WebBastionRdpRecord(object):
             self.compress = compress
         if encryption_key is not None:
             self.encryption_key = encryption_key
+        if netapp is not None:
+            self.netapp = netapp
         if recording_quality is not None:
             self.recording_quality = recording_quality
         if storage_type is not None:
@@ -161,6 +166,27 @@ class WebBastionRdpRecord(object):
         """
 
         self._encryption_key = encryption_key
+
+    @property
+    def netapp(self):
+        """Gets the netapp of this WebBastionRdpRecord.  # noqa: E501
+
+
+        :return: The netapp of this WebBastionRdpRecord.  # noqa: E501
+        :rtype: NetappStorage
+        """
+        return self._netapp
+
+    @netapp.setter
+    def netapp(self, netapp):
+        """Sets the netapp of this WebBastionRdpRecord.
+
+
+        :param netapp: The netapp of this WebBastionRdpRecord.  # noqa: E501
+        :type: NetappStorage
+        """
+
+        self._netapp = netapp
 
     @property
     def recording_quality(self):

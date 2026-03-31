@@ -42,6 +42,7 @@ class UscCreate(object):
         'pfx_password': 'str',
         'region': 'str',
         'secret_name': 'str',
+        'selected_repositories': 'str',
         'tags': 'dict(str, str)',
         'token': 'str',
         'uid_token': 'str',
@@ -59,6 +60,7 @@ class UscCreate(object):
         'pfx_password': 'pfx-password',
         'region': 'region',
         'secret_name': 'secret-name',
+        'selected_repositories': 'selected-repositories',
         'tags': 'tags',
         'token': 'token',
         'uid_token': 'uid-token',
@@ -67,7 +69,7 @@ class UscCreate(object):
         'value': 'value'
     }
 
-    def __init__(self, binary_value=None, description=None, json=False, namespace=None, object_type=None, pfx_password=None, region=None, secret_name=None, tags=None, token=None, uid_token=None, usc_encryption_key=None, usc_name=None, value=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, binary_value=None, description=None, json=False, namespace=None, object_type=None, pfx_password=None, region=None, secret_name=None, selected_repositories=None, tags=None, token=None, uid_token=None, usc_encryption_key=None, usc_name=None, value=None, local_vars_configuration=None):  # noqa: E501
         """UscCreate - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -81,6 +83,7 @@ class UscCreate(object):
         self._pfx_password = None
         self._region = None
         self._secret_name = None
+        self._selected_repositories = None
         self._tags = None
         self._token = None
         self._uid_token = None
@@ -104,6 +107,8 @@ class UscCreate(object):
         if region is not None:
             self.region = region
         self.secret_name = secret_name
+        if selected_repositories is not None:
+            self.selected_repositories = selected_repositories
         if tags is not None:
             self.tags = tags
         if token is not None:
@@ -298,6 +303,27 @@ class UscCreate(object):
             raise ValueError("Invalid value for `secret_name`, must not be `None`")  # noqa: E501
 
         self._secret_name = secret_name
+
+    @property
+    def selected_repositories(self):
+        """Gets the selected_repositories of this UscCreate.  # noqa: E501
+
+
+        :return: The selected_repositories of this UscCreate.  # noqa: E501
+        :rtype: str
+        """
+        return self._selected_repositories
+
+    @selected_repositories.setter
+    def selected_repositories(self, selected_repositories):
+        """Sets the selected_repositories of this UscCreate.
+
+
+        :param selected_repositories: The selected_repositories of this UscCreate.  # noqa: E501
+        :type: str
+        """
+
+        self._selected_repositories = selected_repositories
 
     @property
     def tags(self):

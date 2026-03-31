@@ -72,6 +72,7 @@ class GatewayUpdateMigration(object):
         'conjur_api_key': 'str',
         'conjur_url': 'str',
         'conjur_username': 'str',
+        'delete_remote': 'bool',
         'expiration_event_in': 'list[str]',
         'gcp_key': 'str',
         'gcp_project_id': 'str',
@@ -106,6 +107,7 @@ class GatewayUpdateMigration(object):
         'target_location': 'str',
         'token': 'str',
         'uid_token': 'str',
+        'usc_name': 'str',
         'use_gw_cloud_identity': 'bool'
     }
 
@@ -148,6 +150,7 @@ class GatewayUpdateMigration(object):
         'conjur_api_key': 'conjur-api-key',
         'conjur_url': 'conjur-url',
         'conjur_username': 'conjur-username',
+        'delete_remote': 'delete-remote',
         'expiration_event_in': 'expiration-event-in',
         'gcp_key': 'gcp-key',
         'gcp_project_id': 'gcp-project-id',
@@ -182,10 +185,11 @@ class GatewayUpdateMigration(object):
         'target_location': 'target-location',
         'token': 'token',
         'uid_token': 'uid-token',
+        'usc_name': 'usc-name',
         'use_gw_cloud_identity': 'use-gw-cloud-identity'
     }
 
-    def __init__(self, service_account_key_decoded=None, ad_auto_rotate=None, ad_cert_expiration_event_in=None, ad_certificates_path_template=None, ad_computer_base_dn=None, ad_discover_iis_app='false', ad_discover_services='false', ad_discovery_types=None, ad_domain_name=None, ad_domain_users_path_template=None, ad_local_users_ignore=None, ad_local_users_path_template=None, ad_os_filter=None, ad_rotation_hour=None, ad_rotation_interval=None, ad_sra_enable_rdp=None, ad_ssh_port='22', ad_target_format='linked', ad_target_name=None, ad_targets_path_template=None, ad_targets_type='windows', ad_user_base_dn=None, ad_user_groups=None, ad_winrm_over_http='false', ad_winrm_port='5986', ad_discover_local_users=None, ai_certificate_discovery=None, aws_key=None, aws_key_id=None, aws_region='us-east-2', azure_client_id=None, azure_kv_name=None, azure_secret=None, azure_tenant_id=None, conjur_account=None, conjur_api_key=None, conjur_url=None, conjur_username=None, expiration_event_in=None, gcp_key=None, gcp_project_id=None, hashi_json='true', hashi_ns=None, hashi_token=None, hashi_url=None, hosts=None, id=None, json=False, k8s_ca_certificate=None, k8s_client_certificate=None, k8s_client_key=None, k8s_namespace=None, k8s_password=None, k8s_skip_system=None, k8s_token=None, k8s_url=None, k8s_username=None, name=None, new_name=None, port_ranges='443', protection_key=None, si_auto_rotate=None, si_rotation_hour=None, si_rotation_interval=None, si_sra_enable_rdp='false', si_target_name=None, si_user_groups=None, si_users_ignore=None, si_users_path_template=None, target_location=None, token=None, uid_token=None, use_gw_cloud_identity=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, service_account_key_decoded=None, ad_auto_rotate=None, ad_cert_expiration_event_in=None, ad_certificates_path_template=None, ad_computer_base_dn=None, ad_discover_iis_app='false', ad_discover_services='false', ad_discovery_types=None, ad_domain_name=None, ad_domain_users_path_template=None, ad_local_users_ignore=None, ad_local_users_path_template=None, ad_os_filter=None, ad_rotation_hour=None, ad_rotation_interval=None, ad_sra_enable_rdp=None, ad_ssh_port='22', ad_target_format='linked', ad_target_name=None, ad_targets_path_template=None, ad_targets_type='windows', ad_user_base_dn=None, ad_user_groups=None, ad_winrm_over_http='false', ad_winrm_port='5986', ad_discover_local_users=None, ai_certificate_discovery=None, aws_key=None, aws_key_id=None, aws_region='us-east-2', azure_client_id=None, azure_kv_name=None, azure_secret=None, azure_tenant_id=None, conjur_account=None, conjur_api_key=None, conjur_url=None, conjur_username=None, delete_remote=None, expiration_event_in=None, gcp_key=None, gcp_project_id=None, hashi_json='true', hashi_ns=None, hashi_token=None, hashi_url=None, hosts=None, id=None, json=False, k8s_ca_certificate=None, k8s_client_certificate=None, k8s_client_key=None, k8s_namespace=None, k8s_password=None, k8s_skip_system=None, k8s_token=None, k8s_url=None, k8s_username=None, name=None, new_name=None, port_ranges='443', protection_key=None, si_auto_rotate=None, si_rotation_hour=None, si_rotation_interval=None, si_sra_enable_rdp='false', si_target_name=None, si_user_groups=None, si_users_ignore=None, si_users_path_template=None, target_location=None, token=None, uid_token=None, usc_name=None, use_gw_cloud_identity=None, local_vars_configuration=None):  # noqa: E501
         """GatewayUpdateMigration - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -229,6 +233,7 @@ class GatewayUpdateMigration(object):
         self._conjur_api_key = None
         self._conjur_url = None
         self._conjur_username = None
+        self._delete_remote = None
         self._expiration_event_in = None
         self._gcp_key = None
         self._gcp_project_id = None
@@ -263,6 +268,7 @@ class GatewayUpdateMigration(object):
         self._target_location = None
         self._token = None
         self._uid_token = None
+        self._usc_name = None
         self._use_gw_cloud_identity = None
         self.discriminator = None
 
@@ -342,6 +348,8 @@ class GatewayUpdateMigration(object):
             self.conjur_url = conjur_url
         if conjur_username is not None:
             self.conjur_username = conjur_username
+        if delete_remote is not None:
+            self.delete_remote = delete_remote
         if expiration_event_in is not None:
             self.expiration_event_in = expiration_event_in
         if gcp_key is not None:
@@ -406,6 +414,8 @@ class GatewayUpdateMigration(object):
             self.token = token
         if uid_token is not None:
             self.uid_token = uid_token
+        if usc_name is not None:
+            self.usc_name = usc_name
         if use_gw_cloud_identity is not None:
             self.use_gw_cloud_identity = use_gw_cloud_identity
 
@@ -1282,6 +1292,29 @@ class GatewayUpdateMigration(object):
         self._conjur_username = conjur_username
 
     @property
+    def delete_remote(self):
+        """Gets the delete_remote of this GatewayUpdateMigration.  # noqa: E501
+
+        Delete the secret from the remote target as well, relevant only when usc-name is not empty (relevant only for HasiCorp Vault migration)  # noqa: E501
+
+        :return: The delete_remote of this GatewayUpdateMigration.  # noqa: E501
+        :rtype: bool
+        """
+        return self._delete_remote
+
+    @delete_remote.setter
+    def delete_remote(self, delete_remote):
+        """Sets the delete_remote of this GatewayUpdateMigration.
+
+        Delete the secret from the remote target as well, relevant only when usc-name is not empty (relevant only for HasiCorp Vault migration)  # noqa: E501
+
+        :param delete_remote: The delete_remote of this GatewayUpdateMigration.  # noqa: E501
+        :type: bool
+        """
+
+        self._delete_remote = delete_remote
+
+    @property
     def expiration_event_in(self):
         """Gets the expiration_event_in of this GatewayUpdateMigration.  # noqa: E501
 
@@ -2070,6 +2103,29 @@ class GatewayUpdateMigration(object):
         """
 
         self._uid_token = uid_token
+
+    @property
+    def usc_name(self):
+        """Gets the usc_name of this GatewayUpdateMigration.  # noqa: E501
+
+        Universal Secret Connector name  # noqa: E501
+
+        :return: The usc_name of this GatewayUpdateMigration.  # noqa: E501
+        :rtype: str
+        """
+        return self._usc_name
+
+    @usc_name.setter
+    def usc_name(self, usc_name):
+        """Sets the usc_name of this GatewayUpdateMigration.
+
+        Universal Secret Connector name  # noqa: E501
+
+        :param usc_name: The usc_name of this GatewayUpdateMigration.  # noqa: E501
+        :type: str
+        """
+
+        self._usc_name = usc_name
 
     @property
     def use_gw_cloud_identity(self):

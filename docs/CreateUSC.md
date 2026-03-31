@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 **json** | **bool** | Set output format to JSON | [optional] [default to False]
 **k8s_namespace** | **str** | K8s namespace (Relevant to Kubernetes targets) | [optional] 
 **name** | **str** | Universal Secrets Connector name | 
-**organization_name** | **str** | The organization name to create the secret in (only relevant for: github-scope&#x3D;organization) | [optional] 
+**organization_name** | **str** | The organization name to create the secret in | [optional] 
 **repository_access** | **str** |  | [optional] [default to 'public']
 **repository_names** | **str** | The repository names, comma-separated (only relevant for: github-scope&#x3D;repository) | [optional] 
 **tags** | **list[str]** | List of the tags attached to this Universal Secrets Connector | [optional] 

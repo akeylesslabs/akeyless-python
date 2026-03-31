@@ -43,6 +43,7 @@ class RotatedSecretCreateLdap(object):
         'item_custom_fields': 'dict(str, str)',
         'json': 'bool',
         'key': 'str',
+        'lock_during_sra_session': 'str',
         'max_versions': 'str',
         'name': 'str',
         'password_length': 'str',
@@ -81,6 +82,7 @@ class RotatedSecretCreateLdap(object):
         'item_custom_fields': 'item-custom-fields',
         'json': 'json',
         'key': 'key',
+        'lock_during_sra_session': 'lock-during-sra-session',
         'max_versions': 'max-versions',
         'name': 'name',
         'password_length': 'password-length',
@@ -109,7 +111,7 @@ class RotatedSecretCreateLdap(object):
         'user_dn': 'user-dn'
     }
 
-    def __init__(self, provider_type=None, authentication_credentials='use-user-creds', auto_rotate=None, delete_protection=None, description=None, host_provider=None, item_custom_fields=None, json=False, key=None, max_versions=None, name=None, password_length=None, rotate_after_disconnect='false', rotated_password=None, rotated_username=None, rotation_event_in=None, rotation_hour=None, rotation_interval=None, rotator_type=None, secure_access_bastion_issuer=None, secure_access_certificate_issuer=None, secure_access_enable=None, secure_access_host=None, secure_access_rdp_domain=None, secure_access_url=None, secure_access_web=False, secure_access_web_browsing=False, secure_access_web_proxy=False, tags=None, target=None, target_name=None, token=None, uid_token=None, user_attribute='cn', user_dn=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, provider_type=None, authentication_credentials='use-user-creds', auto_rotate=None, delete_protection=None, description=None, host_provider=None, item_custom_fields=None, json=False, key=None, lock_during_sra_session=None, max_versions=None, name=None, password_length=None, rotate_after_disconnect=None, rotated_password=None, rotated_username=None, rotation_event_in=None, rotation_hour=None, rotation_interval=None, rotator_type=None, secure_access_bastion_issuer=None, secure_access_certificate_issuer=None, secure_access_enable=None, secure_access_host=None, secure_access_rdp_domain=None, secure_access_url=None, secure_access_web=False, secure_access_web_browsing=False, secure_access_web_proxy=False, tags=None, target=None, target_name=None, token=None, uid_token=None, user_attribute='cn', user_dn=None, local_vars_configuration=None):  # noqa: E501
         """RotatedSecretCreateLdap - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -124,6 +126,7 @@ class RotatedSecretCreateLdap(object):
         self._item_custom_fields = None
         self._json = None
         self._key = None
+        self._lock_during_sra_session = None
         self._max_versions = None
         self._name = None
         self._password_length = None
@@ -170,6 +173,8 @@ class RotatedSecretCreateLdap(object):
             self.json = json
         if key is not None:
             self.key = key
+        if lock_during_sra_session is not None:
+            self.lock_during_sra_session = lock_during_sra_session
         if max_versions is not None:
             self.max_versions = max_versions
         self.name = name
@@ -426,6 +431,29 @@ class RotatedSecretCreateLdap(object):
         self._key = key
 
     @property
+    def lock_during_sra_session(self):
+        """Gets the lock_during_sra_session of this RotatedSecretCreateLdap.  # noqa: E501
+
+        Lock this secret for read/update while an SRA session is active  # noqa: E501
+
+        :return: The lock_during_sra_session of this RotatedSecretCreateLdap.  # noqa: E501
+        :rtype: str
+        """
+        return self._lock_during_sra_session
+
+    @lock_during_sra_session.setter
+    def lock_during_sra_session(self, lock_during_sra_session):
+        """Sets the lock_during_sra_session of this RotatedSecretCreateLdap.
+
+        Lock this secret for read/update while an SRA session is active  # noqa: E501
+
+        :param lock_during_sra_session: The lock_during_sra_session of this RotatedSecretCreateLdap.  # noqa: E501
+        :type: str
+        """
+
+        self._lock_during_sra_session = lock_during_sra_session
+
+    @property
     def max_versions(self):
         """Gets the max_versions of this RotatedSecretCreateLdap.  # noqa: E501
 
@@ -500,7 +528,7 @@ class RotatedSecretCreateLdap(object):
     def rotate_after_disconnect(self):
         """Gets the rotate_after_disconnect of this RotatedSecretCreateLdap.  # noqa: E501
 
-        Rotate the value of the secret after SRA session ends [true/false]  # noqa: E501
+        StringOrBool accepts JSON strings, booleans, and numbers for backward compatibility with older SDK versions that send boolean values for rotate-after-disconnect.  # noqa: E501
 
         :return: The rotate_after_disconnect of this RotatedSecretCreateLdap.  # noqa: E501
         :rtype: str
@@ -511,7 +539,7 @@ class RotatedSecretCreateLdap(object):
     def rotate_after_disconnect(self, rotate_after_disconnect):
         """Sets the rotate_after_disconnect of this RotatedSecretCreateLdap.
 
-        Rotate the value of the secret after SRA session ends [true/false]  # noqa: E501
+        StringOrBool accepts JSON strings, booleans, and numbers for backward compatibility with older SDK versions that send boolean values for rotate-after-disconnect.  # noqa: E501
 
         :param rotate_after_disconnect: The rotate_after_disconnect of this RotatedSecretCreateLdap.  # noqa: E501
         :type: str

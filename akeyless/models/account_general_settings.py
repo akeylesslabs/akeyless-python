@@ -49,8 +49,10 @@ class AccountGeneralSettings(object):
         'dynamic_secret_max_ttl': 'DynamicSecretMaxTtl',
         'enable_request_for_access': 'bool',
         'hide_personal_folder': 'bool',
+        'hide_secret_reveal_copy': 'bool',
         'hide_static_password': 'bool',
         'invalid_characters': 'str',
+        'item_locking': 'ItemLockingSetting',
         'item_usage_event': 'UsageEventSetting',
         'lock_default_key': 'bool',
         'password_expiration_info': 'PasswordExpirationInfo',
@@ -77,8 +79,10 @@ class AccountGeneralSettings(object):
         'dynamic_secret_max_ttl': 'dynamic_secret_max_ttl',
         'enable_request_for_access': 'enable_request_for_access',
         'hide_personal_folder': 'hide_personal_folder',
+        'hide_secret_reveal_copy': 'hide_secret_reveal_copy',
         'hide_static_password': 'hide_static_password',
         'invalid_characters': 'invalid_characters',
+        'item_locking': 'item_locking',
         'item_usage_event': 'item_usage_event',
         'lock_default_key': 'lock_default_key',
         'password_expiration_info': 'password_expiration_info',
@@ -89,7 +93,7 @@ class AccountGeneralSettings(object):
         'sharing_policy': 'sharing_policy'
     }
 
-    def __init__(self, account_default_key_item_id=None, account_default_key_name=None, ai_insights=None, allow_auto_fill=None, allowed_client_types=None, allowed_clients_ips=None, allowed_gateways_ips=None, auth_usage_event=None, certificate_expiration_events=None, data_protection_section=None, default_auth_method=None, default_home_page=None, dynamic_secret_max_ttl=None, enable_request_for_access=None, hide_personal_folder=None, hide_static_password=None, invalid_characters=None, item_usage_event=None, lock_default_key=None, password_expiration_info=None, password_policy=None, password_score=None, protect_items_by_default=None, rotation_secret_max_interval=None, sharing_policy=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, account_default_key_item_id=None, account_default_key_name=None, ai_insights=None, allow_auto_fill=None, allowed_client_types=None, allowed_clients_ips=None, allowed_gateways_ips=None, auth_usage_event=None, certificate_expiration_events=None, data_protection_section=None, default_auth_method=None, default_home_page=None, dynamic_secret_max_ttl=None, enable_request_for_access=None, hide_personal_folder=None, hide_secret_reveal_copy=None, hide_static_password=None, invalid_characters=None, item_locking=None, item_usage_event=None, lock_default_key=None, password_expiration_info=None, password_policy=None, password_score=None, protect_items_by_default=None, rotation_secret_max_interval=None, sharing_policy=None, local_vars_configuration=None):  # noqa: E501
         """AccountGeneralSettings - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -110,8 +114,10 @@ class AccountGeneralSettings(object):
         self._dynamic_secret_max_ttl = None
         self._enable_request_for_access = None
         self._hide_personal_folder = None
+        self._hide_secret_reveal_copy = None
         self._hide_static_password = None
         self._invalid_characters = None
+        self._item_locking = None
         self._item_usage_event = None
         self._lock_default_key = None
         self._password_expiration_info = None
@@ -152,10 +158,14 @@ class AccountGeneralSettings(object):
             self.enable_request_for_access = enable_request_for_access
         if hide_personal_folder is not None:
             self.hide_personal_folder = hide_personal_folder
+        if hide_secret_reveal_copy is not None:
+            self.hide_secret_reveal_copy = hide_secret_reveal_copy
         if hide_static_password is not None:
             self.hide_static_password = hide_static_password
         if invalid_characters is not None:
             self.invalid_characters = invalid_characters
+        if item_locking is not None:
+            self.item_locking = item_locking
         if item_usage_event is not None:
             self.item_usage_event = item_usage_event
         if lock_default_key is not None:
@@ -493,6 +503,27 @@ class AccountGeneralSettings(object):
         self._hide_personal_folder = hide_personal_folder
 
     @property
+    def hide_secret_reveal_copy(self):
+        """Gets the hide_secret_reveal_copy of this AccountGeneralSettings.  # noqa: E501
+
+
+        :return: The hide_secret_reveal_copy of this AccountGeneralSettings.  # noqa: E501
+        :rtype: bool
+        """
+        return self._hide_secret_reveal_copy
+
+    @hide_secret_reveal_copy.setter
+    def hide_secret_reveal_copy(self, hide_secret_reveal_copy):
+        """Sets the hide_secret_reveal_copy of this AccountGeneralSettings.
+
+
+        :param hide_secret_reveal_copy: The hide_secret_reveal_copy of this AccountGeneralSettings.  # noqa: E501
+        :type: bool
+        """
+
+        self._hide_secret_reveal_copy = hide_secret_reveal_copy
+
+    @property
     def hide_static_password(self):
         """Gets the hide_static_password of this AccountGeneralSettings.  # noqa: E501
 
@@ -535,6 +566,27 @@ class AccountGeneralSettings(object):
         """
 
         self._invalid_characters = invalid_characters
+
+    @property
+    def item_locking(self):
+        """Gets the item_locking of this AccountGeneralSettings.  # noqa: E501
+
+
+        :return: The item_locking of this AccountGeneralSettings.  # noqa: E501
+        :rtype: ItemLockingSetting
+        """
+        return self._item_locking
+
+    @item_locking.setter
+    def item_locking(self, item_locking):
+        """Sets the item_locking of this AccountGeneralSettings.
+
+
+        :param item_locking: The item_locking of this AccountGeneralSettings.  # noqa: E501
+        :type: ItemLockingSetting
+        """
+
+        self._item_locking = item_locking
 
     @property
     def item_usage_event(self):

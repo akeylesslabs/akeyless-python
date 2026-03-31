@@ -47,6 +47,7 @@ class UpdateItem(object):
         'host_provider': 'str',
         'item_custom_fields': 'dict(str, str)',
         'json': 'bool',
+        'lock_during_sra_session': 'str',
         'max_versions': 'str',
         'name': 'str',
         'new_metadata': 'str',
@@ -101,6 +102,7 @@ class UpdateItem(object):
         'host_provider': 'host-provider',
         'item_custom_fields': 'item-custom-fields',
         'json': 'json',
+        'lock_during_sra_session': 'lock-during-sra-session',
         'max_versions': 'max-versions',
         'name': 'name',
         'new_metadata': 'new-metadata',
@@ -141,7 +143,7 @@ class UpdateItem(object):
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, provider_type=None, accessibility='regular', add_tag=None, cert_file_data=None, certificate_format=None, change_event=None, delete_protection=None, description='default_metadata', expiration_event_in=None, gcp_sm_regions=None, host_provider=None, item_custom_fields=None, json=False, max_versions=None, name=None, new_metadata='default_metadata', new_name=None, rm_tag=None, rotate_after_disconnect='false', secure_access_add_host=None, secure_access_allow_external_user=None, secure_access_allow_port_forwading=None, secure_access_api=None, secure_access_aws_account_id=None, secure_access_aws_native_cli=None, secure_access_aws_region=None, secure_access_bastion_api=None, secure_access_bastion_issuer=None, secure_access_bastion_ssh=None, secure_access_certificate_issuer=None, secure_access_cluster_endpoint=None, secure_access_dashboard_url=None, secure_access_db_name=None, secure_access_db_schema=None, secure_access_enable=None, secure_access_gateway=None, secure_access_host=None, secure_access_rd_gateway_server=None, secure_access_rdp_domain=None, secure_access_rdp_user=None, secure_access_rm_host=None, secure_access_ssh=None, secure_access_ssh_creds=None, secure_access_ssh_creds_user=None, secure_access_url=None, secure_access_use_internal_bastion=None, secure_access_use_internal_ssh_access=None, secure_access_web_browsing=False, secure_access_web_proxy=False, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, provider_type=None, accessibility='regular', add_tag=None, cert_file_data=None, certificate_format=None, change_event=None, delete_protection=None, description='default_metadata', expiration_event_in=None, gcp_sm_regions=None, host_provider=None, item_custom_fields=None, json=False, lock_during_sra_session=None, max_versions=None, name=None, new_metadata='default_metadata', new_name=None, rm_tag=None, rotate_after_disconnect=None, secure_access_add_host=None, secure_access_allow_external_user=None, secure_access_allow_port_forwading=None, secure_access_api=None, secure_access_aws_account_id=None, secure_access_aws_native_cli=None, secure_access_aws_region=None, secure_access_bastion_api=None, secure_access_bastion_issuer=None, secure_access_bastion_ssh=None, secure_access_certificate_issuer=None, secure_access_cluster_endpoint=None, secure_access_dashboard_url=None, secure_access_db_name=None, secure_access_db_schema=None, secure_access_enable=None, secure_access_gateway=None, secure_access_host=None, secure_access_rd_gateway_server=None, secure_access_rdp_domain=None, secure_access_rdp_user=None, secure_access_rm_host=None, secure_access_ssh=None, secure_access_ssh_creds=None, secure_access_ssh_creds_user=None, secure_access_url=None, secure_access_use_internal_bastion=None, secure_access_use_internal_ssh_access=None, secure_access_web_browsing=False, secure_access_web_proxy=False, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """UpdateItem - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -160,6 +162,7 @@ class UpdateItem(object):
         self._host_provider = None
         self._item_custom_fields = None
         self._json = None
+        self._lock_during_sra_session = None
         self._max_versions = None
         self._name = None
         self._new_metadata = None
@@ -226,6 +229,8 @@ class UpdateItem(object):
             self.item_custom_fields = item_custom_fields
         if json is not None:
             self.json = json
+        if lock_during_sra_session is not None:
+            self.lock_during_sra_session = lock_during_sra_session
         if max_versions is not None:
             self.max_versions = max_versions
         self.name = name
@@ -598,6 +603,29 @@ class UpdateItem(object):
         self._json = json
 
     @property
+    def lock_during_sra_session(self):
+        """Gets the lock_during_sra_session of this UpdateItem.  # noqa: E501
+
+        Lock this secret for read/update while an SRA session is active  # noqa: E501
+
+        :return: The lock_during_sra_session of this UpdateItem.  # noqa: E501
+        :rtype: str
+        """
+        return self._lock_during_sra_session
+
+    @lock_during_sra_session.setter
+    def lock_during_sra_session(self, lock_during_sra_session):
+        """Sets the lock_during_sra_session of this UpdateItem.
+
+        Lock this secret for read/update while an SRA session is active  # noqa: E501
+
+        :param lock_during_sra_session: The lock_during_sra_session of this UpdateItem.  # noqa: E501
+        :type: str
+        """
+
+        self._lock_during_sra_session = lock_during_sra_session
+
+    @property
     def max_versions(self):
         """Gets the max_versions of this UpdateItem.  # noqa: E501
 
@@ -718,7 +746,7 @@ class UpdateItem(object):
     def rotate_after_disconnect(self):
         """Gets the rotate_after_disconnect of this UpdateItem.  # noqa: E501
 
-        Rotate the value of the secret after SRA session ends [true/false]  # noqa: E501
+        StringOrBool accepts JSON strings, booleans, and numbers for backward compatibility with older SDK versions that send boolean values for rotate-after-disconnect.  # noqa: E501
 
         :return: The rotate_after_disconnect of this UpdateItem.  # noqa: E501
         :rtype: str
@@ -729,7 +757,7 @@ class UpdateItem(object):
     def rotate_after_disconnect(self, rotate_after_disconnect):
         """Sets the rotate_after_disconnect of this UpdateItem.
 
-        Rotate the value of the secret after SRA session ends [true/false]  # noqa: E501
+        StringOrBool accepts JSON strings, booleans, and numbers for backward compatibility with older SDK versions that send boolean values for rotate-after-disconnect.  # noqa: E501
 
         :param rotate_after_disconnect: The rotate_after_disconnect of this UpdateItem.  # noqa: E501
         :type: str

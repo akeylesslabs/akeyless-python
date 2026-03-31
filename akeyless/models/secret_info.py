@@ -42,6 +42,7 @@ class SecretInfo(object):
         'last_retrieved': 'datetime',
         'location': 'object',
         'name': 'str',
+        'namespace': 'str',
         'region': 'str',
         'secret_id': 'str',
         'status': 'bool',
@@ -60,6 +61,7 @@ class SecretInfo(object):
         'last_retrieved': 'last_retrieved',
         'location': 'location',
         'name': 'name',
+        'namespace': 'namespace',
         'region': 'region',
         'secret_id': 'secret_id',
         'status': 'status',
@@ -69,7 +71,7 @@ class SecretInfo(object):
         'version': 'version'
     }
 
-    def __init__(self, created=None, description=None, expiration=None, github=None, key_id=None, last_retrieved=None, location=None, name=None, region=None, secret_id=None, status=None, tags=None, thumbprint=None, type=None, version=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, created=None, description=None, expiration=None, github=None, key_id=None, last_retrieved=None, location=None, name=None, namespace=None, region=None, secret_id=None, status=None, tags=None, thumbprint=None, type=None, version=None, local_vars_configuration=None):  # noqa: E501
         """SecretInfo - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -83,6 +85,7 @@ class SecretInfo(object):
         self._last_retrieved = None
         self._location = None
         self._name = None
+        self._namespace = None
         self._region = None
         self._secret_id = None
         self._status = None
@@ -108,6 +111,8 @@ class SecretInfo(object):
             self.location = location
         if name is not None:
             self.name = name
+        if namespace is not None:
+            self.namespace = namespace
         if region is not None:
             self.region = region
         if secret_id is not None:
@@ -290,6 +295,27 @@ class SecretInfo(object):
         """
 
         self._name = name
+
+    @property
+    def namespace(self):
+        """Gets the namespace of this SecretInfo.  # noqa: E501
+
+
+        :return: The namespace of this SecretInfo.  # noqa: E501
+        :rtype: str
+        """
+        return self._namespace
+
+    @namespace.setter
+    def namespace(self, namespace):
+        """Sets the namespace of this SecretInfo.
+
+
+        :param namespace: The namespace of this SecretInfo.  # noqa: E501
+        :type: str
+        """
+
+        self._namespace = namespace
 
     @property
     def region(self):
