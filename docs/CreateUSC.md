@@ -23,7 +23,9 @@ Name | Type | Description | Notes
 **token** | **str** | Authentication token (see &#x60;/auth&#x60; and &#x60;/configure&#x60;) | [optional] 
 **uid_token** | **str** | The universal identity token, Required only for universal_identity authentication | [optional] 
 **usc_prefix** | **str** | Prefix for all secrets created in AWS Secrets Manager | [optional] 
+**usc_tags** | **str** | Comma-separated list of tags to apply to all secrets created on the remote USC | [optional] 
 **use_prefix_as_filter** | **str** | Whether to filter the USC secret list using the specified usc-prefix [true/false] | [optional] [default to 'false']
+**use_tags_as_filter** | **bool** | Filter the USC secret list by the value(s) of --usc-tags. [true|false] | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -34,6 +34,7 @@ class TargetCreateWeb(object):
                             and the value is json key in definition.
     """
     openapi_types = {
+        'delete_protection': 'str',
         'description': 'str',
         'json': 'bool',
         'key': 'str',
@@ -45,6 +46,7 @@ class TargetCreateWeb(object):
     }
 
     attribute_map = {
+        'delete_protection': 'delete_protection',
         'description': 'description',
         'json': 'json',
         'key': 'key',
@@ -55,12 +57,13 @@ class TargetCreateWeb(object):
         'url': 'url'
     }
 
-    def __init__(self, description=None, json=False, key=None, max_versions=None, name=None, token=None, uid_token=None, url=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, delete_protection=None, description=None, json=False, key=None, max_versions=None, name=None, token=None, uid_token=None, url=None, local_vars_configuration=None):  # noqa: E501
         """TargetCreateWeb - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
+        self._delete_protection = None
         self._description = None
         self._json = None
         self._key = None
@@ -71,6 +74,8 @@ class TargetCreateWeb(object):
         self._url = None
         self.discriminator = None
 
+        if delete_protection is not None:
+            self.delete_protection = delete_protection
         if description is not None:
             self.description = description
         if json is not None:
@@ -86,6 +91,29 @@ class TargetCreateWeb(object):
             self.uid_token = uid_token
         if url is not None:
             self.url = url
+
+    @property
+    def delete_protection(self):
+        """Gets the delete_protection of this TargetCreateWeb.  # noqa: E501
+
+        Protection from accidental deletion of this object [true/false]  # noqa: E501
+
+        :return: The delete_protection of this TargetCreateWeb.  # noqa: E501
+        :rtype: str
+        """
+        return self._delete_protection
+
+    @delete_protection.setter
+    def delete_protection(self, delete_protection):
+        """Sets the delete_protection of this TargetCreateWeb.
+
+        Protection from accidental deletion of this object [true/false]  # noqa: E501
+
+        :param delete_protection: The delete_protection of this TargetCreateWeb.  # noqa: E501
+        :type: str
+        """
+
+        self._delete_protection = delete_protection
 
     @property
     def description(self):

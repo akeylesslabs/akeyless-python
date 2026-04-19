@@ -35,6 +35,7 @@ class TargetCreateDigiCert(object):
     """
     openapi_types = {
         'acme_challenge': 'str',
+        'delete_protection': 'str',
         'description': 'str',
         'digicert_url': 'str',
         'dns_target_creds': 'str',
@@ -55,6 +56,7 @@ class TargetCreateDigiCert(object):
 
     attribute_map = {
         'acme_challenge': 'acme-challenge',
+        'delete_protection': 'delete_protection',
         'description': 'description',
         'digicert_url': 'digicert-url',
         'dns_target_creds': 'dns-target-creds',
@@ -73,13 +75,14 @@ class TargetCreateDigiCert(object):
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, acme_challenge='dns', description=None, digicert_url='us-production', dns_target_creds=None, eab_hmac_key=None, eab_key_id=None, email=None, gcp_project=None, hosted_zone=None, json=False, key=None, max_versions=None, name=None, resource_group=None, timeout='5m', token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, acme_challenge='dns', delete_protection=None, description=None, digicert_url='us-production', dns_target_creds=None, eab_hmac_key=None, eab_key_id=None, email=None, gcp_project=None, hosted_zone=None, json=False, key=None, max_versions=None, name=None, resource_group=None, timeout='5m', token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """TargetCreateDigiCert - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._acme_challenge = None
+        self._delete_protection = None
         self._description = None
         self._digicert_url = None
         self._dns_target_creds = None
@@ -100,6 +103,8 @@ class TargetCreateDigiCert(object):
 
         if acme_challenge is not None:
             self.acme_challenge = acme_challenge
+        if delete_protection is not None:
+            self.delete_protection = delete_protection
         if description is not None:
             self.description = description
         if digicert_url is not None:
@@ -153,6 +158,29 @@ class TargetCreateDigiCert(object):
         """
 
         self._acme_challenge = acme_challenge
+
+    @property
+    def delete_protection(self):
+        """Gets the delete_protection of this TargetCreateDigiCert.  # noqa: E501
+
+        Protection from accidental deletion of this object [true/false]  # noqa: E501
+
+        :return: The delete_protection of this TargetCreateDigiCert.  # noqa: E501
+        :rtype: str
+        """
+        return self._delete_protection
+
+    @delete_protection.setter
+    def delete_protection(self, delete_protection):
+        """Sets the delete_protection of this TargetCreateDigiCert.
+
+        Protection from accidental deletion of this object [true/false]  # noqa: E501
+
+        :param delete_protection: The delete_protection of this TargetCreateDigiCert.  # noqa: E501
+        :type: str
+        """
+
+        self._delete_protection = delete_protection
 
     @property
     def description(self):

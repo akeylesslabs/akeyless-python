@@ -3,6 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**delete_protection** | **str** | Protection from accidental deletion of this object [true/false] | [optional] 
 **description** | **str** | Description of the object | [optional] 
 **dockerhub_password** | **str** | Password for docker repository | [optional] 
 **dockerhub_username** | **str** | Username for docker repository | [optional] 

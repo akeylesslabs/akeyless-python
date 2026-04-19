@@ -34,24 +34,50 @@ class GatewayMigrationCreateOutput(object):
                             and the value is json key in definition.
     """
     openapi_types = {
+        'migration_id': 'str',
         'migration_name': 'str'
     }
 
     attribute_map = {
+        'migration_id': 'migration_id',
         'migration_name': 'migration_name'
     }
 
-    def __init__(self, migration_name=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, migration_id=None, migration_name=None, local_vars_configuration=None):  # noqa: E501
         """GatewayMigrationCreateOutput - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
+        self._migration_id = None
         self._migration_name = None
         self.discriminator = None
 
+        if migration_id is not None:
+            self.migration_id = migration_id
         if migration_name is not None:
             self.migration_name = migration_name
+
+    @property
+    def migration_id(self):
+        """Gets the migration_id of this GatewayMigrationCreateOutput.  # noqa: E501
+
+
+        :return: The migration_id of this GatewayMigrationCreateOutput.  # noqa: E501
+        :rtype: str
+        """
+        return self._migration_id
+
+    @migration_id.setter
+    def migration_id(self, migration_id):
+        """Sets the migration_id of this GatewayMigrationCreateOutput.
+
+
+        :param migration_id: The migration_id of this GatewayMigrationCreateOutput.  # noqa: E501
+        :type: str
+        """
+
+        self._migration_id = migration_id
 
     @property
     def migration_name(self):

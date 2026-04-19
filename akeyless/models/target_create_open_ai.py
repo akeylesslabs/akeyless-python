@@ -36,6 +36,7 @@ class TargetCreateOpenAI(object):
     openapi_types = {
         'api_key': 'str',
         'api_key_id': 'str',
+        'delete_protection': 'str',
         'description': 'str',
         'json': 'bool',
         'key': 'str',
@@ -51,6 +52,7 @@ class TargetCreateOpenAI(object):
     attribute_map = {
         'api_key': 'api-key',
         'api_key_id': 'api-key-id',
+        'delete_protection': 'delete_protection',
         'description': 'description',
         'json': 'json',
         'key': 'key',
@@ -63,7 +65,7 @@ class TargetCreateOpenAI(object):
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, api_key=None, api_key_id=None, description=None, json=False, key=None, max_versions=None, model=None, name=None, openai_url='https://api.openai.com/v1', organization_id=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, api_key=None, api_key_id=None, delete_protection=None, description=None, json=False, key=None, max_versions=None, model=None, name=None, openai_url='https://api.openai.com/v1', organization_id=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """TargetCreateOpenAI - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -71,6 +73,7 @@ class TargetCreateOpenAI(object):
 
         self._api_key = None
         self._api_key_id = None
+        self._delete_protection = None
         self._description = None
         self._json = None
         self._key = None
@@ -87,6 +90,8 @@ class TargetCreateOpenAI(object):
             self.api_key = api_key
         if api_key_id is not None:
             self.api_key_id = api_key_id
+        if delete_protection is not None:
+            self.delete_protection = delete_protection
         if description is not None:
             self.description = description
         if json is not None:
@@ -152,6 +157,29 @@ class TargetCreateOpenAI(object):
         """
 
         self._api_key_id = api_key_id
+
+    @property
+    def delete_protection(self):
+        """Gets the delete_protection of this TargetCreateOpenAI.  # noqa: E501
+
+        Protection from accidental deletion of this object [true/false]  # noqa: E501
+
+        :return: The delete_protection of this TargetCreateOpenAI.  # noqa: E501
+        :rtype: str
+        """
+        return self._delete_protection
+
+    @delete_protection.setter
+    def delete_protection(self, delete_protection):
+        """Sets the delete_protection of this TargetCreateOpenAI.
+
+        Protection from accidental deletion of this object [true/false]  # noqa: E501
+
+        :param delete_protection: The delete_protection of this TargetCreateOpenAI.  # noqa: E501
+        :type: str
+        """
+
+        self._delete_protection = delete_protection
 
     @property
     def description(self):

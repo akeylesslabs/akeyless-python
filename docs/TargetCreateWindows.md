@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **certificate** | **str** | SSL CA certificate in base64 encoding generated from a trusted Certificate Authority (CA) | [optional] 
 **connection_type** | **str** | Type of connection to Windows Server [credentials/parent-target] | [optional] [default to 'credentials']
+**delete_protection** | **str** | Protection from accidental deletion of this object [true/false] | [optional] 
 **description** | **str** | Description of the object | [optional] 
 **domain** | **str** | User domain name | [optional] 
 **hostname** | **str** | Server hostname | 

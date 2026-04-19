@@ -36,6 +36,7 @@ class TargetUpdateGodaddy(object):
     openapi_types = {
         'api_key': 'str',
         'customer_id': 'str',
+        'delete_protection': 'str',
         'description': 'str',
         'imap_fqdn': 'str',
         'imap_password': 'str',
@@ -56,6 +57,7 @@ class TargetUpdateGodaddy(object):
     attribute_map = {
         'api_key': 'api-key',
         'customer_id': 'customer_id',
+        'delete_protection': 'delete_protection',
         'description': 'description',
         'imap_fqdn': 'imap-fqdn',
         'imap_password': 'imap-password',
@@ -73,7 +75,7 @@ class TargetUpdateGodaddy(object):
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, api_key=None, customer_id=None, description=None, imap_fqdn=None, imap_password=None, imap_port='993', imap_username=None, json=False, keep_prev_version=None, key=None, max_versions=None, name=None, new_name=None, secret=None, timeout='5m', token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, api_key=None, customer_id=None, delete_protection=None, description=None, imap_fqdn=None, imap_password=None, imap_port='993', imap_username=None, json=False, keep_prev_version=None, key=None, max_versions=None, name=None, new_name=None, secret=None, timeout='5m', token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """TargetUpdateGodaddy - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -81,6 +83,7 @@ class TargetUpdateGodaddy(object):
 
         self._api_key = None
         self._customer_id = None
+        self._delete_protection = None
         self._description = None
         self._imap_fqdn = None
         self._imap_password = None
@@ -101,6 +104,8 @@ class TargetUpdateGodaddy(object):
         self.api_key = api_key
         if customer_id is not None:
             self.customer_id = customer_id
+        if delete_protection is not None:
+            self.delete_protection = delete_protection
         if description is not None:
             self.description = description
         self.imap_fqdn = imap_fqdn
@@ -174,6 +179,29 @@ class TargetUpdateGodaddy(object):
         """
 
         self._customer_id = customer_id
+
+    @property
+    def delete_protection(self):
+        """Gets the delete_protection of this TargetUpdateGodaddy.  # noqa: E501
+
+        Protection from accidental deletion of this object [true/false]  # noqa: E501
+
+        :return: The delete_protection of this TargetUpdateGodaddy.  # noqa: E501
+        :rtype: str
+        """
+        return self._delete_protection
+
+    @delete_protection.setter
+    def delete_protection(self, delete_protection):
+        """Sets the delete_protection of this TargetUpdateGodaddy.
+
+        Protection from accidental deletion of this object [true/false]  # noqa: E501
+
+        :param delete_protection: The delete_protection of this TargetUpdateGodaddy.  # noqa: E501
+        :type: str
+        """
+
+        self._delete_protection = delete_protection
 
     @property
     def description(self):

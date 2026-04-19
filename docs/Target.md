@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **client_permissions** | **list[str]** |  | [optional] 
 **comment** | **str** |  | [optional] 
 **creation_date** | **datetime** |  | [optional] 
+**delete_protection** | **bool** |  | [optional] 
 **is_access_request_enabled** | **bool** |  | [optional] 
 **last_version** | **int** |  | [optional] 
 **locking_info** | [**LockingInfo**](LockingInfo.md) |  | [optional] 

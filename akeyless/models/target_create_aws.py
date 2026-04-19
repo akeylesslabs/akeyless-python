@@ -36,6 +36,7 @@ class TargetCreateAws(object):
     openapi_types = {
         'access_key': 'str',
         'access_key_id': 'str',
+        'delete_protection': 'str',
         'description': 'str',
         'generate_external_id': 'bool',
         'json': 'bool',
@@ -53,6 +54,7 @@ class TargetCreateAws(object):
     attribute_map = {
         'access_key': 'access-key',
         'access_key_id': 'access-key-id',
+        'delete_protection': 'delete_protection',
         'description': 'description',
         'generate_external_id': 'generate-external-id',
         'json': 'json',
@@ -67,7 +69,7 @@ class TargetCreateAws(object):
         'use_gw_cloud_identity': 'use-gw-cloud-identity'
     }
 
-    def __init__(self, access_key=None, access_key_id=None, description=None, generate_external_id=None, json=False, key=None, max_versions=None, name=None, region='us-east-2', role_arn=None, session_token=None, token=None, uid_token=None, use_gw_cloud_identity=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, access_key=None, access_key_id=None, delete_protection=None, description=None, generate_external_id=None, json=False, key=None, max_versions=None, name=None, region='us-east-2', role_arn=None, session_token=None, token=None, uid_token=None, use_gw_cloud_identity=None, local_vars_configuration=None):  # noqa: E501
         """TargetCreateAws - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -75,6 +77,7 @@ class TargetCreateAws(object):
 
         self._access_key = None
         self._access_key_id = None
+        self._delete_protection = None
         self._description = None
         self._generate_external_id = None
         self._json = None
@@ -91,6 +94,8 @@ class TargetCreateAws(object):
 
         self.access_key = access_key
         self.access_key_id = access_key_id
+        if delete_protection is not None:
+            self.delete_protection = delete_protection
         if description is not None:
             self.description = description
         if generate_external_id is not None:
@@ -164,6 +169,29 @@ class TargetCreateAws(object):
             raise ValueError("Invalid value for `access_key_id`, must not be `None`")  # noqa: E501
 
         self._access_key_id = access_key_id
+
+    @property
+    def delete_protection(self):
+        """Gets the delete_protection of this TargetCreateAws.  # noqa: E501
+
+        Protection from accidental deletion of this object [true/false]  # noqa: E501
+
+        :return: The delete_protection of this TargetCreateAws.  # noqa: E501
+        :rtype: str
+        """
+        return self._delete_protection
+
+    @delete_protection.setter
+    def delete_protection(self, delete_protection):
+        """Sets the delete_protection of this TargetCreateAws.
+
+        Protection from accidental deletion of this object [true/false]  # noqa: E501
+
+        :param delete_protection: The delete_protection of this TargetCreateAws.  # noqa: E501
+        :type: str
+        """
+
+        self._delete_protection = delete_protection
 
     @property
     def description(self):

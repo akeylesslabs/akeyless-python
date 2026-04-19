@@ -4,6 +4,7 @@ targetUpdateWeb is a command that updates an existing web target
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**delete_protection** | **str** | Protection from accidental deletion of this object [true/false] | [optional] 
 **description** | **str** | Description of the object | [optional] 
 **json** | **bool** | Set output format to JSON | [optional] [default to False]
 **keep_prev_version** | **str** | Whether to keep previous version [true/false]. If not set, use default according to account settings | [optional] 

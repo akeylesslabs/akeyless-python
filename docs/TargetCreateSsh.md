@@ -4,6 +4,7 @@ targetCreateSsh is a command that creates a new ssh target
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**delete_protection** | **str** | Protection from accidental deletion of this object [true/false] | [optional] 
 **description** | **str** | Description of the object | [optional] 
 **host** | **str** | SSH host name | [optional] 
 **json** | **bool** | Set output format to JSON | [optional] [default to False]

@@ -36,6 +36,7 @@ class TargetUpdateLdap(object):
     openapi_types = {
         'bind_dn': 'str',
         'bind_dn_password': 'str',
+        'delete_protection': 'str',
         'description': 'str',
         'json': 'bool',
         'keep_prev_version': 'str',
@@ -54,6 +55,7 @@ class TargetUpdateLdap(object):
     attribute_map = {
         'bind_dn': 'bind-dn',
         'bind_dn_password': 'bind-dn-password',
+        'delete_protection': 'delete_protection',
         'description': 'description',
         'json': 'json',
         'keep_prev_version': 'keep-prev-version',
@@ -69,7 +71,7 @@ class TargetUpdateLdap(object):
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, bind_dn=None, bind_dn_password=None, description=None, json=False, keep_prev_version=None, key=None, ldap_ca_cert=None, ldap_url=None, max_versions=None, name=None, new_name=None, server_type=None, token=None, token_expiration=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, bind_dn=None, bind_dn_password=None, delete_protection=None, description=None, json=False, keep_prev_version=None, key=None, ldap_ca_cert=None, ldap_url=None, max_versions=None, name=None, new_name=None, server_type=None, token=None, token_expiration=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """TargetUpdateLdap - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -77,6 +79,7 @@ class TargetUpdateLdap(object):
 
         self._bind_dn = None
         self._bind_dn_password = None
+        self._delete_protection = None
         self._description = None
         self._json = None
         self._keep_prev_version = None
@@ -94,6 +97,8 @@ class TargetUpdateLdap(object):
 
         self.bind_dn = bind_dn
         self.bind_dn_password = bind_dn_password
+        if delete_protection is not None:
+            self.delete_protection = delete_protection
         if description is not None:
             self.description = description
         if json is not None:
@@ -168,6 +173,29 @@ class TargetUpdateLdap(object):
             raise ValueError("Invalid value for `bind_dn_password`, must not be `None`")  # noqa: E501
 
         self._bind_dn_password = bind_dn_password
+
+    @property
+    def delete_protection(self):
+        """Gets the delete_protection of this TargetUpdateLdap.  # noqa: E501
+
+        Protection from accidental deletion of this object [true/false]  # noqa: E501
+
+        :return: The delete_protection of this TargetUpdateLdap.  # noqa: E501
+        :rtype: str
+        """
+        return self._delete_protection
+
+    @delete_protection.setter
+    def delete_protection(self, delete_protection):
+        """Sets the delete_protection of this TargetUpdateLdap.
+
+        Protection from accidental deletion of this object [true/false]  # noqa: E501
+
+        :param delete_protection: The delete_protection of this TargetUpdateLdap.  # noqa: E501
+        :type: str
+        """
+
+        self._delete_protection = delete_protection
 
     @property
     def description(self):

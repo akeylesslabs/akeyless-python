@@ -40,6 +40,7 @@ class TargetCreateSalesforce(object):
         'ca_cert_name': 'str',
         'client_id': 'str',
         'client_secret': 'str',
+        'delete_protection': 'str',
         'description': 'str',
         'email': 'str',
         'json': 'bool',
@@ -60,6 +61,7 @@ class TargetCreateSalesforce(object):
         'ca_cert_name': 'ca-cert-name',
         'client_id': 'client-id',
         'client_secret': 'client-secret',
+        'delete_protection': 'delete_protection',
         'description': 'description',
         'email': 'email',
         'json': 'json',
@@ -73,7 +75,7 @@ class TargetCreateSalesforce(object):
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, app_private_key_data=None, auth_flow=None, ca_cert_data=None, ca_cert_name=None, client_id=None, client_secret=None, description=None, email=None, json=False, key=None, max_versions=None, name=None, password=None, security_token=None, tenant_url=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, app_private_key_data=None, auth_flow=None, ca_cert_data=None, ca_cert_name=None, client_id=None, client_secret=None, delete_protection=None, description=None, email=None, json=False, key=None, max_versions=None, name=None, password=None, security_token=None, tenant_url=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """TargetCreateSalesforce - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -85,6 +87,7 @@ class TargetCreateSalesforce(object):
         self._ca_cert_name = None
         self._client_id = None
         self._client_secret = None
+        self._delete_protection = None
         self._description = None
         self._email = None
         self._json = None
@@ -108,6 +111,8 @@ class TargetCreateSalesforce(object):
         self.client_id = client_id
         if client_secret is not None:
             self.client_secret = client_secret
+        if delete_protection is not None:
+            self.delete_protection = delete_protection
         if description is not None:
             self.description = description
         self.email = email
@@ -269,6 +274,29 @@ class TargetCreateSalesforce(object):
         """
 
         self._client_secret = client_secret
+
+    @property
+    def delete_protection(self):
+        """Gets the delete_protection of this TargetCreateSalesforce.  # noqa: E501
+
+        Protection from accidental deletion of this object [true/false]  # noqa: E501
+
+        :return: The delete_protection of this TargetCreateSalesforce.  # noqa: E501
+        :rtype: str
+        """
+        return self._delete_protection
+
+    @delete_protection.setter
+    def delete_protection(self, delete_protection):
+        """Sets the delete_protection of this TargetCreateSalesforce.
+
+        Protection from accidental deletion of this object [true/false]  # noqa: E501
+
+        :param delete_protection: The delete_protection of this TargetCreateSalesforce.  # noqa: E501
+        :type: str
+        """
+
+        self._delete_protection = delete_protection
 
     @property
     def description(self):

@@ -34,6 +34,7 @@ class TargetUpdateWeb(object):
                             and the value is json key in definition.
     """
     openapi_types = {
+        'delete_protection': 'str',
         'description': 'str',
         'json': 'bool',
         'keep_prev_version': 'str',
@@ -47,6 +48,7 @@ class TargetUpdateWeb(object):
     }
 
     attribute_map = {
+        'delete_protection': 'delete_protection',
         'description': 'description',
         'json': 'json',
         'keep_prev_version': 'keep-prev-version',
@@ -59,12 +61,13 @@ class TargetUpdateWeb(object):
         'url': 'url'
     }
 
-    def __init__(self, description=None, json=False, keep_prev_version=None, key=None, max_versions=None, name=None, new_name=None, token=None, uid_token=None, url=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, delete_protection=None, description=None, json=False, keep_prev_version=None, key=None, max_versions=None, name=None, new_name=None, token=None, uid_token=None, url=None, local_vars_configuration=None):  # noqa: E501
         """TargetUpdateWeb - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
+        self._delete_protection = None
         self._description = None
         self._json = None
         self._keep_prev_version = None
@@ -77,6 +80,8 @@ class TargetUpdateWeb(object):
         self._url = None
         self.discriminator = None
 
+        if delete_protection is not None:
+            self.delete_protection = delete_protection
         if description is not None:
             self.description = description
         if json is not None:
@@ -96,6 +101,29 @@ class TargetUpdateWeb(object):
             self.uid_token = uid_token
         if url is not None:
             self.url = url
+
+    @property
+    def delete_protection(self):
+        """Gets the delete_protection of this TargetUpdateWeb.  # noqa: E501
+
+        Protection from accidental deletion of this object [true/false]  # noqa: E501
+
+        :return: The delete_protection of this TargetUpdateWeb.  # noqa: E501
+        :rtype: str
+        """
+        return self._delete_protection
+
+    @delete_protection.setter
+    def delete_protection(self, delete_protection):
+        """Sets the delete_protection of this TargetUpdateWeb.
+
+        Protection from accidental deletion of this object [true/false]  # noqa: E501
+
+        :param delete_protection: The delete_protection of this TargetUpdateWeb.  # noqa: E501
+        :type: str
+        """
+
+        self._delete_protection = delete_protection
 
     @property
     def description(self):

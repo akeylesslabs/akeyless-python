@@ -36,6 +36,7 @@ class TargetCreateWindows(object):
     openapi_types = {
         'certificate': 'str',
         'connection_type': 'str',
+        'delete_protection': 'str',
         'description': 'str',
         'domain': 'str',
         'hostname': 'str',
@@ -55,6 +56,7 @@ class TargetCreateWindows(object):
     attribute_map = {
         'certificate': 'certificate',
         'connection_type': 'connection-type',
+        'delete_protection': 'delete_protection',
         'description': 'description',
         'domain': 'domain',
         'hostname': 'hostname',
@@ -71,7 +73,7 @@ class TargetCreateWindows(object):
         'username': 'username'
     }
 
-    def __init__(self, certificate=None, connection_type='credentials', description=None, domain=None, hostname=None, json=False, key=None, max_versions=None, name=None, parent_target_name=None, password='dummy_value', port='5986', token=None, uid_token=None, use_tls='true', username='dummy_value', local_vars_configuration=None):  # noqa: E501
+    def __init__(self, certificate=None, connection_type='credentials', delete_protection=None, description=None, domain=None, hostname=None, json=False, key=None, max_versions=None, name=None, parent_target_name=None, password='dummy_value', port='5986', token=None, uid_token=None, use_tls='true', username='dummy_value', local_vars_configuration=None):  # noqa: E501
         """TargetCreateWindows - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -79,6 +81,7 @@ class TargetCreateWindows(object):
 
         self._certificate = None
         self._connection_type = None
+        self._delete_protection = None
         self._description = None
         self._domain = None
         self._hostname = None
@@ -99,6 +102,8 @@ class TargetCreateWindows(object):
             self.certificate = certificate
         if connection_type is not None:
             self.connection_type = connection_type
+        if delete_protection is not None:
+            self.delete_protection = delete_protection
         if description is not None:
             self.description = description
         if domain is not None:
@@ -169,6 +174,29 @@ class TargetCreateWindows(object):
         """
 
         self._connection_type = connection_type
+
+    @property
+    def delete_protection(self):
+        """Gets the delete_protection of this TargetCreateWindows.  # noqa: E501
+
+        Protection from accidental deletion of this object [true/false]  # noqa: E501
+
+        :return: The delete_protection of this TargetCreateWindows.  # noqa: E501
+        :rtype: str
+        """
+        return self._delete_protection
+
+    @delete_protection.setter
+    def delete_protection(self, delete_protection):
+        """Sets the delete_protection of this TargetCreateWindows.
+
+        Protection from accidental deletion of this object [true/false]  # noqa: E501
+
+        :param delete_protection: The delete_protection of this TargetCreateWindows.  # noqa: E501
+        :type: str
+        """
+
+        self._delete_protection = delete_protection
 
     @property
     def description(self):

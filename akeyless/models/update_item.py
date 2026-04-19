@@ -85,7 +85,9 @@ class UpdateItem(object):
         'secure_access_web_browsing': 'bool',
         'secure_access_web_proxy': 'bool',
         'token': 'str',
-        'uid_token': 'str'
+        'uid_token': 'str',
+        'usc_tags': 'str',
+        'use_tags_as_filter': 'str'
     }
 
     attribute_map = {
@@ -140,10 +142,12 @@ class UpdateItem(object):
         'secure_access_web_browsing': 'secure-access-web-browsing',
         'secure_access_web_proxy': 'secure-access-web-proxy',
         'token': 'token',
-        'uid_token': 'uid-token'
+        'uid_token': 'uid-token',
+        'usc_tags': 'usc-tags',
+        'use_tags_as_filter': 'use-tags-as-filter'
     }
 
-    def __init__(self, provider_type=None, accessibility='regular', add_tag=None, cert_file_data=None, certificate_format=None, change_event=None, delete_protection=None, description='default_metadata', expiration_event_in=None, gcp_sm_regions=None, host_provider=None, item_custom_fields=None, json=False, lock_during_sra_session=None, max_versions=None, name=None, new_metadata='default_metadata', new_name=None, rm_tag=None, rotate_after_disconnect=None, secure_access_add_host=None, secure_access_allow_external_user=None, secure_access_allow_port_forwading=None, secure_access_api=None, secure_access_aws_account_id=None, secure_access_aws_native_cli=None, secure_access_aws_region=None, secure_access_bastion_api=None, secure_access_bastion_issuer=None, secure_access_bastion_ssh=None, secure_access_certificate_issuer=None, secure_access_cluster_endpoint=None, secure_access_dashboard_url=None, secure_access_db_name=None, secure_access_db_schema=None, secure_access_enable=None, secure_access_gateway=None, secure_access_host=None, secure_access_rd_gateway_server=None, secure_access_rdp_domain=None, secure_access_rdp_user=None, secure_access_rm_host=None, secure_access_ssh=None, secure_access_ssh_creds=None, secure_access_ssh_creds_user=None, secure_access_url=None, secure_access_use_internal_bastion=None, secure_access_use_internal_ssh_access=None, secure_access_web_browsing=False, secure_access_web_proxy=False, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, provider_type=None, accessibility='regular', add_tag=None, cert_file_data=None, certificate_format=None, change_event=None, delete_protection=None, description='default_metadata', expiration_event_in=None, gcp_sm_regions=None, host_provider=None, item_custom_fields=None, json=False, lock_during_sra_session=None, max_versions=None, name=None, new_metadata='default_metadata', new_name=None, rm_tag=None, rotate_after_disconnect=None, secure_access_add_host=None, secure_access_allow_external_user=None, secure_access_allow_port_forwading=None, secure_access_api=None, secure_access_aws_account_id=None, secure_access_aws_native_cli=None, secure_access_aws_region=None, secure_access_bastion_api=None, secure_access_bastion_issuer=None, secure_access_bastion_ssh=None, secure_access_certificate_issuer=None, secure_access_cluster_endpoint=None, secure_access_dashboard_url=None, secure_access_db_name=None, secure_access_db_schema=None, secure_access_enable=None, secure_access_gateway=None, secure_access_host=None, secure_access_rd_gateway_server=None, secure_access_rdp_domain=None, secure_access_rdp_user=None, secure_access_rm_host=None, secure_access_ssh=None, secure_access_ssh_creds=None, secure_access_ssh_creds_user=None, secure_access_url=None, secure_access_use_internal_bastion=None, secure_access_use_internal_ssh_access=None, secure_access_web_browsing=False, secure_access_web_proxy=False, token=None, uid_token=None, usc_tags=None, use_tags_as_filter=None, local_vars_configuration=None):  # noqa: E501
         """UpdateItem - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -201,6 +205,8 @@ class UpdateItem(object):
         self._secure_access_web_proxy = None
         self._token = None
         self._uid_token = None
+        self._usc_tags = None
+        self._use_tags_as_filter = None
         self.discriminator = None
 
         if provider_type is not None:
@@ -306,6 +312,10 @@ class UpdateItem(object):
             self.token = token
         if uid_token is not None:
             self.uid_token = uid_token
+        if usc_tags is not None:
+            self.usc_tags = usc_tags
+        if use_tags_as_filter is not None:
+            self.use_tags_as_filter = use_tags_as_filter
 
     @property
     def provider_type(self):
@@ -1498,6 +1508,52 @@ class UpdateItem(object):
         """
 
         self._uid_token = uid_token
+
+    @property
+    def usc_tags(self):
+        """Gets the usc_tags of this UpdateItem.  # noqa: E501
+
+        Comma-separated list of tags to apply to all secrets created/synced on the remote USC  USC items only.  # noqa: E501
+
+        :return: The usc_tags of this UpdateItem.  # noqa: E501
+        :rtype: str
+        """
+        return self._usc_tags
+
+    @usc_tags.setter
+    def usc_tags(self, usc_tags):
+        """Sets the usc_tags of this UpdateItem.
+
+        Comma-separated list of tags to apply to all secrets created/synced on the remote USC  USC items only.  # noqa: E501
+
+        :param usc_tags: The usc_tags of this UpdateItem.  # noqa: E501
+        :type: str
+        """
+
+        self._usc_tags = usc_tags
+
+    @property
+    def use_tags_as_filter(self):
+        """Gets the use_tags_as_filter of this UpdateItem.  # noqa: E501
+
+        Whether to filter the USC secret list using the specified usc-tags [true/false]  USC items only.  # noqa: E501
+
+        :return: The use_tags_as_filter of this UpdateItem.  # noqa: E501
+        :rtype: str
+        """
+        return self._use_tags_as_filter
+
+    @use_tags_as_filter.setter
+    def use_tags_as_filter(self, use_tags_as_filter):
+        """Sets the use_tags_as_filter of this UpdateItem.
+
+        Whether to filter the USC secret list using the specified usc-tags [true/false]  USC items only.  # noqa: E501
+
+        :param use_tags_as_filter: The use_tags_as_filter of this UpdateItem.  # noqa: E501
+        :type: str
+        """
+
+        self._use_tags_as_filter = use_tags_as_filter
 
     def to_dict(self):
         """Returns the model properties as a dict"""

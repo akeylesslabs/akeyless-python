@@ -3,6 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**agentic_rules** | [**AgenticRules**](AgenticRules.md) |  | [optional] 
 **cert_issue_details** | [**CertificateIssueInfo**](CertificateIssueInfo.md) |  | [optional] 
 **certificate_chain_info** | [**CertificateChainInfo**](CertificateChainInfo.md) |  | [optional] 
 **certificate_format** | **str** |  | [optional] 

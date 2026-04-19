@@ -152,7 +152,7 @@ Method | HTTP request | Description
 [**dynamic_secret_create_ms_sql**](V2Api.md#dynamic_secret_create_ms_sql) | **POST** /dynamic-secret-create-mssql | 
 [**dynamic_secret_create_my_sql**](V2Api.md#dynamic_secret_create_my_sql) | **POST** /dynamic-secret-create-mysql | 
 [**dynamic_secret_create_open_ai**](V2Api.md#dynamic_secret_create_open_ai) | **POST** /dynamic-secret-create-openai | 
-[**dynamic_secret_create_oracle_db**](V2Api.md#dynamic_secret_create_oracle_db) | **POST** /dynamic-secret-create-oracle | 
+[**dynamic_secret_create_oracle_db**](V2Api.md#dynamic_secret_create_oracle_db) | **POST** /dynamic-secret-create-oracledb | 
 [**dynamic_secret_create_ping**](V2Api.md#dynamic_secret_create_ping) | **POST** /dynamic-secret-create-ping | 
 [**dynamic_secret_create_postgre_sql**](V2Api.md#dynamic_secret_create_postgre_sql) | **POST** /dynamic-secret-create-postgresql | 
 [**dynamic_secret_create_rabbit_mq**](V2Api.md#dynamic_secret_create_rabbit_mq) | **POST** /dynamic-secret-create-rabbitmq | 
@@ -166,7 +166,7 @@ Method | HTTP request | Description
 [**dynamic_secret_get_value**](V2Api.md#dynamic_secret_get_value) | **POST** /dynamic-secret-get-value | 
 [**dynamic_secret_list**](V2Api.md#dynamic_secret_list) | **POST** /dynamic-secret-list | 
 [**dynamic_secret_tmp_creds_delete**](V2Api.md#dynamic_secret_tmp_creds_delete) | **POST** /dynamic-secret-tmp-creds-delete | 
-[**dynamic_secret_tmp_creds_get**](V2Api.md#dynamic_secret_tmp_creds_get) | **POST** /dynamic-secret-tmp-creds-Get | 
+[**dynamic_secret_tmp_creds_get**](V2Api.md#dynamic_secret_tmp_creds_get) | **POST** /dynamic-secret-tmp-creds-get | 
 [**dynamic_secret_tmp_creds_update**](V2Api.md#dynamic_secret_tmp_creds_update) | **POST** /dynamic-secret-tmp-creds-update | 
 [**dynamic_secret_update_artifactory**](V2Api.md#dynamic_secret_update_artifactory) | **POST** /dynamic-secret-update-artifactory | 
 [**dynamic_secret_update_aws**](V2Api.md#dynamic_secret_update_aws) | **POST** /dynamic-secret-update-aws | 
@@ -180,10 +180,10 @@ Method | HTTP request | Description
 [**dynamic_secret_update_gitlab**](V2Api.md#dynamic_secret_update_gitlab) | **POST** /dynamic-secret-update-gitlab | 
 [**dynamic_secret_update_gke**](V2Api.md#dynamic_secret_update_gke) | **POST** /dynamic-secret-update-gke | 
 [**dynamic_secret_update_google_workspace**](V2Api.md#dynamic_secret_update_google_workspace) | **POST** /dynamic-secret-update-google-workspace | 
-[**dynamic_secret_update_hana_db**](V2Api.md#dynamic_secret_update_hana_db) | **POST** /dynamic-secret-update-hana | 
+[**dynamic_secret_update_hana_db**](V2Api.md#dynamic_secret_update_hana_db) | **POST** /dynamic-secret-update-hanadb | 
 [**dynamic_secret_update_k8s**](V2Api.md#dynamic_secret_update_k8s) | **POST** /dynamic-secret-update-k8s | 
 [**dynamic_secret_update_ldap**](V2Api.md#dynamic_secret_update_ldap) | **POST** /dynamic-secret-update-ldap | 
-[**dynamic_secret_update_mongo_db**](V2Api.md#dynamic_secret_update_mongo_db) | **POST** /dynamic-secret-update-mongo | 
+[**dynamic_secret_update_mongo_db**](V2Api.md#dynamic_secret_update_mongo_db) | **POST** /dynamic-secret-update-mongodb | 
 [**dynamic_secret_update_ms_sql**](V2Api.md#dynamic_secret_update_ms_sql) | **POST** /dynamic-secret-update-mssql | 
 [**dynamic_secret_update_my_sql**](V2Api.md#dynamic_secret_update_my_sql) | **POST** /dynamic-secret-update-mysql | 
 [**dynamic_secret_update_open_ai**](V2Api.md#dynamic_secret_update_open_ai) | **POST** /dynamic-secret-update-openai | 
@@ -453,6 +453,7 @@ Method | HTTP request | Description
 [**rotated_secret_update_splunk**](V2Api.md#rotated_secret_update_splunk) | **POST** /rotated-secret-update-splunk | 
 [**rotated_secret_update_ssh**](V2Api.md#rotated_secret_update_ssh) | **POST** /rotated-secret-update-ssh | 
 [**rotated_secret_update_windows**](V2Api.md#rotated_secret_update_windows) | **POST** /rotated-secret-update-windows | 
+[**runtime_authority**](V2Api.md#runtime_authority) | **POST** /runtime-authority | 
 [**set_item_state**](V2Api.md#set_item_state) | **POST** /set-item-state | 
 [**set_role_rule**](V2Api.md#set_role_rule) | **POST** /set-role-rule | 
 [**share_item**](V2Api.md#share_item) | **POST** /share-item | 
@@ -27547,6 +27548,65 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | rotatedSecretUpdateWindowsResponse wraps response body. |  -  |
+**0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **runtime_authority**
+> runtime_authority(runtime_authority_command)
+
+
+
+### Example
+
+```python
+from __future__ import print_function
+import time
+import akeyless
+from akeyless.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.akeyless.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = akeyless.Configuration(
+    host = "https://api.akeyless.io"
+)
+
+
+# Enter a context with an instance of the API client
+with akeyless.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = akeyless.V2Api(api_client)
+    runtime_authority_command = akeyless.RuntimeAuthorityCommand() # RuntimeAuthorityCommand | 
+
+    try:
+        api_instance.runtime_authority(runtime_authority_command)
+    except ApiException as e:
+        print("Exception when calling V2Api->runtime_authority: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **runtime_authority_command** | [**RuntimeAuthorityCommand**](RuntimeAuthorityCommand.md)|  | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
 **0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

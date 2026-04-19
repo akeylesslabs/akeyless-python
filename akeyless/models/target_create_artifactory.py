@@ -37,6 +37,7 @@ class TargetCreateArtifactory(object):
         'artifactory_admin_name': 'str',
         'artifactory_admin_pwd': 'str',
         'base_url': 'str',
+        'delete_protection': 'str',
         'description': 'str',
         'json': 'bool',
         'key': 'str',
@@ -50,6 +51,7 @@ class TargetCreateArtifactory(object):
         'artifactory_admin_name': 'artifactory-admin-name',
         'artifactory_admin_pwd': 'artifactory-admin-pwd',
         'base_url': 'base-url',
+        'delete_protection': 'delete_protection',
         'description': 'description',
         'json': 'json',
         'key': 'key',
@@ -59,7 +61,7 @@ class TargetCreateArtifactory(object):
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, artifactory_admin_name=None, artifactory_admin_pwd=None, base_url=None, description=None, json=False, key=None, max_versions=None, name=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, artifactory_admin_name=None, artifactory_admin_pwd=None, base_url=None, delete_protection=None, description=None, json=False, key=None, max_versions=None, name=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """TargetCreateArtifactory - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -68,6 +70,7 @@ class TargetCreateArtifactory(object):
         self._artifactory_admin_name = None
         self._artifactory_admin_pwd = None
         self._base_url = None
+        self._delete_protection = None
         self._description = None
         self._json = None
         self._key = None
@@ -80,6 +83,8 @@ class TargetCreateArtifactory(object):
         self.artifactory_admin_name = artifactory_admin_name
         self.artifactory_admin_pwd = artifactory_admin_pwd
         self.base_url = base_url
+        if delete_protection is not None:
+            self.delete_protection = delete_protection
         if description is not None:
             self.description = description
         if json is not None:
@@ -168,6 +173,29 @@ class TargetCreateArtifactory(object):
             raise ValueError("Invalid value for `base_url`, must not be `None`")  # noqa: E501
 
         self._base_url = base_url
+
+    @property
+    def delete_protection(self):
+        """Gets the delete_protection of this TargetCreateArtifactory.  # noqa: E501
+
+        Protection from accidental deletion of this object [true/false]  # noqa: E501
+
+        :return: The delete_protection of this TargetCreateArtifactory.  # noqa: E501
+        :rtype: str
+        """
+        return self._delete_protection
+
+    @delete_protection.setter
+    def delete_protection(self, delete_protection):
+        """Sets the delete_protection of this TargetCreateArtifactory.
+
+        Protection from accidental deletion of this object [true/false]  # noqa: E501
+
+        :param delete_protection: The delete_protection of this TargetCreateArtifactory.  # noqa: E501
+        :type: str
+        """
+
+        self._delete_protection = delete_protection
 
     @property
     def description(self):

@@ -36,6 +36,8 @@ class UscList(object):
     openapi_types = {
         'json': 'bool',
         'object_type': 'str',
+        'page_size': 'int',
+        'page_token': 'str',
         'token': 'str',
         'uid_token': 'str',
         'usc_name': 'str'
@@ -44,12 +46,14 @@ class UscList(object):
     attribute_map = {
         'json': 'json',
         'object_type': 'object-type',
+        'page_size': 'page-size',
+        'page_token': 'page-token',
         'token': 'token',
         'uid_token': 'uid-token',
         'usc_name': 'usc-name'
     }
 
-    def __init__(self, json=False, object_type=None, token=None, uid_token=None, usc_name=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, json=False, object_type=None, page_size=None, page_token=None, token=None, uid_token=None, usc_name=None, local_vars_configuration=None):  # noqa: E501
         """UscList - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -57,6 +61,8 @@ class UscList(object):
 
         self._json = None
         self._object_type = None
+        self._page_size = None
+        self._page_token = None
         self._token = None
         self._uid_token = None
         self._usc_name = None
@@ -66,6 +72,10 @@ class UscList(object):
             self.json = json
         if object_type is not None:
             self.object_type = object_type
+        if page_size is not None:
+            self.page_size = page_size
+        if page_token is not None:
+            self.page_token = page_token
         if token is not None:
             self.token = token
         if uid_token is not None:
@@ -115,6 +125,52 @@ class UscList(object):
         """
 
         self._object_type = object_type
+
+    @property
+    def page_size(self):
+        """Gets the page_size of this UscList.  # noqa: E501
+
+        Optional: number of items requested per response (Azure KV). When set, response may include next_token  # noqa: E501
+
+        :return: The page_size of this UscList.  # noqa: E501
+        :rtype: int
+        """
+        return self._page_size
+
+    @page_size.setter
+    def page_size(self, page_size):
+        """Sets the page_size of this UscList.
+
+        Optional: number of items requested per response (Azure KV). When set, response may include next_token  # noqa: E501
+
+        :param page_size: The page_size of this UscList.  # noqa: E501
+        :type: int
+        """
+
+        self._page_size = page_size
+
+    @property
+    def page_token(self):
+        """Gets the page_token of this UscList.  # noqa: E501
+
+        Optional: continuation token returned by a previous usc list --page-size call  # noqa: E501
+
+        :return: The page_token of this UscList.  # noqa: E501
+        :rtype: str
+        """
+        return self._page_token
+
+    @page_token.setter
+    def page_token(self, page_token):
+        """Sets the page_token of this UscList.
+
+        Optional: continuation token returned by a previous usc list --page-size call  # noqa: E501
+
+        :param page_token: The page_token of this UscList.  # noqa: E501
+        :type: str
+        """
+
+        self._page_token = page_token
 
     @property
     def token(self):

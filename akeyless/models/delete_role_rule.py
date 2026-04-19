@@ -153,7 +153,7 @@ class DeleteRoleRule(object):
     def rule_type(self):
         """Gets the rule_type of this DeleteRoleRule.  # noqa: E501
 
-        item-rule, role-rule, auth-method-rule, search-rule, reports-rule, gw-reports-rule, sra-reports-rule, sra-rule, ara-rule  # noqa: E501
+        item-rule, role-rule, auth-method-rule, search-rule, reports-rule, gw-reports-rule, sra-reports-rule, ara-reports-rule, sra-rule, ara-rule, usage-reports-rule, event-rule, event-forwarder-rule, reverse-rbac-rule  # noqa: E501
 
         :return: The rule_type of this DeleteRoleRule.  # noqa: E501
         :rtype: str
@@ -164,7 +164,7 @@ class DeleteRoleRule(object):
     def rule_type(self, rule_type):
         """Sets the rule_type of this DeleteRoleRule.
 
-        item-rule, role-rule, auth-method-rule, search-rule, reports-rule, gw-reports-rule, sra-reports-rule, sra-rule, ara-rule  # noqa: E501
+        item-rule, role-rule, auth-method-rule, search-rule, reports-rule, gw-reports-rule, sra-reports-rule, ara-reports-rule, sra-rule, ara-rule, usage-reports-rule, event-rule, event-forwarder-rule, reverse-rbac-rule  # noqa: E501
 
         :param rule_type: The rule_type of this DeleteRoleRule.  # noqa: E501
         :type: str

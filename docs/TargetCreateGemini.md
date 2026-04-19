@@ -5,6 +5,7 @@ targetCreateGemini is a command that creates a new gemini target
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **api_key** | **str** | API key for Gemini | [optional] 
+**delete_protection** | **str** | Protection from accidental deletion of this object [true/false] | [optional] 
 **description** | **str** | Description of the object | [optional] 
 **gemini_url** | **str** | Base URL of the Gemini API | [optional] [default to 'https://generativelanguage.googleapis.com']
 **json** | **bool** | Set output format to JSON | [optional] [default to False]

@@ -38,6 +38,7 @@ class TargetUpdateGlobalSign(object):
         'contact_first_name': 'str',
         'contact_last_name': 'str',
         'contact_phone': 'str',
+        'delete_protection': 'str',
         'description': 'str',
         'json': 'bool',
         'keep_prev_version': 'str',
@@ -58,6 +59,7 @@ class TargetUpdateGlobalSign(object):
         'contact_first_name': 'contact-first-name',
         'contact_last_name': 'contact-last-name',
         'contact_phone': 'contact-phone',
+        'delete_protection': 'delete_protection',
         'description': 'description',
         'json': 'json',
         'keep_prev_version': 'keep-prev-version',
@@ -73,7 +75,7 @@ class TargetUpdateGlobalSign(object):
         'username': 'username'
     }
 
-    def __init__(self, contact_email=None, contact_first_name=None, contact_last_name=None, contact_phone=None, description=None, json=False, keep_prev_version=None, key=None, max_versions=None, name=None, new_name=None, password=None, profile_id=None, timeout='5m', token=None, uid_token=None, username=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, contact_email=None, contact_first_name=None, contact_last_name=None, contact_phone=None, delete_protection=None, description=None, json=False, keep_prev_version=None, key=None, max_versions=None, name=None, new_name=None, password=None, profile_id=None, timeout='5m', token=None, uid_token=None, username=None, local_vars_configuration=None):  # noqa: E501
         """TargetUpdateGlobalSign - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -83,6 +85,7 @@ class TargetUpdateGlobalSign(object):
         self._contact_first_name = None
         self._contact_last_name = None
         self._contact_phone = None
+        self._delete_protection = None
         self._description = None
         self._json = None
         self._keep_prev_version = None
@@ -102,6 +105,8 @@ class TargetUpdateGlobalSign(object):
         self.contact_first_name = contact_first_name
         self.contact_last_name = contact_last_name
         self.contact_phone = contact_phone
+        if delete_protection is not None:
+            self.delete_protection = delete_protection
         if description is not None:
             self.description = description
         if json is not None:
@@ -224,6 +229,29 @@ class TargetUpdateGlobalSign(object):
             raise ValueError("Invalid value for `contact_phone`, must not be `None`")  # noqa: E501
 
         self._contact_phone = contact_phone
+
+    @property
+    def delete_protection(self):
+        """Gets the delete_protection of this TargetUpdateGlobalSign.  # noqa: E501
+
+        Protection from accidental deletion of this object [true/false]  # noqa: E501
+
+        :return: The delete_protection of this TargetUpdateGlobalSign.  # noqa: E501
+        :rtype: str
+        """
+        return self._delete_protection
+
+    @delete_protection.setter
+    def delete_protection(self, delete_protection):
+        """Sets the delete_protection of this TargetUpdateGlobalSign.
+
+        Protection from accidental deletion of this object [true/false]  # noqa: E501
+
+        :param delete_protection: The delete_protection of this TargetUpdateGlobalSign.  # noqa: E501
+        :type: str
+        """
+
+        self._delete_protection = delete_protection
 
     @property
     def description(self):

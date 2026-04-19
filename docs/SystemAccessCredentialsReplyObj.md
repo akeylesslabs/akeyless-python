@@ -5,6 +5,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **access_id** | **str** |  | [optional] 
 **auth_creds** | **str** | Temporary credentials for accessing Auth | [optional] 
+**csrf_token** | **str** | CSRF token for synchronizer-token pattern (only populated for WebUI clients) | [optional] 
 **expiry** | **int** | Credentials expiration date | [optional] 
 **kfm_creds** | **str** | Temporary credentials for accessing the KFMs instances | [optional] 
 **need_mfa_app_first_config** | **bool** | If the user didn&#39;t complete to configure the MFA app | [optional] 

@@ -3,6 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**delete_protection** | **str** | Protection from accidental deletion of this object [true/false] | [optional] 
 **description** | **str** | Description of the object | [optional] 
 **gcp_key** | **str** | Base64-encoded service account private key text | [optional] 
 **json** | **bool** | Set output format to JSON | [optional] [default to False]

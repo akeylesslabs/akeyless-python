@@ -4,6 +4,7 @@ targetUpdateK8s is a command that updates an existing k8s target
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**delete_protection** | **str** | Protection from accidental deletion of this object [true/false] | [optional] 
 **description** | **str** | Description of the object | [optional] 
 **json** | **bool** | Set output format to JSON | [optional] [default to False]
 **k8s_auth_type** | **str** | K8S auth type [token/certificate] | [optional] [default to 'token']

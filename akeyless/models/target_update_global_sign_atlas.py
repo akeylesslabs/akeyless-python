@@ -36,6 +36,7 @@ class TargetUpdateGlobalSignAtlas(object):
     openapi_types = {
         'api_key': 'str',
         'api_secret': 'str',
+        'delete_protection': 'str',
         'description': 'str',
         'json': 'bool',
         'keep_prev_version': 'str',
@@ -53,6 +54,7 @@ class TargetUpdateGlobalSignAtlas(object):
     attribute_map = {
         'api_key': 'api-key',
         'api_secret': 'api-secret',
+        'delete_protection': 'delete_protection',
         'description': 'description',
         'json': 'json',
         'keep_prev_version': 'keep-prev-version',
@@ -67,7 +69,7 @@ class TargetUpdateGlobalSignAtlas(object):
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, api_key=None, api_secret=None, description=None, json=False, keep_prev_version=None, key=None, max_versions=None, mtls_cert_data_base64=None, mtls_key_data_base64=None, name=None, new_name=None, timeout='5m', token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, api_key=None, api_secret=None, delete_protection=None, description=None, json=False, keep_prev_version=None, key=None, max_versions=None, mtls_cert_data_base64=None, mtls_key_data_base64=None, name=None, new_name=None, timeout='5m', token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """TargetUpdateGlobalSignAtlas - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -75,6 +77,7 @@ class TargetUpdateGlobalSignAtlas(object):
 
         self._api_key = None
         self._api_secret = None
+        self._delete_protection = None
         self._description = None
         self._json = None
         self._keep_prev_version = None
@@ -91,6 +94,8 @@ class TargetUpdateGlobalSignAtlas(object):
 
         self.api_key = api_key
         self.api_secret = api_secret
+        if delete_protection is not None:
+            self.delete_protection = delete_protection
         if description is not None:
             self.description = description
         if json is not None:
@@ -164,6 +169,29 @@ class TargetUpdateGlobalSignAtlas(object):
             raise ValueError("Invalid value for `api_secret`, must not be `None`")  # noqa: E501
 
         self._api_secret = api_secret
+
+    @property
+    def delete_protection(self):
+        """Gets the delete_protection of this TargetUpdateGlobalSignAtlas.  # noqa: E501
+
+        Protection from accidental deletion of this object [true/false]  # noqa: E501
+
+        :return: The delete_protection of this TargetUpdateGlobalSignAtlas.  # noqa: E501
+        :rtype: str
+        """
+        return self._delete_protection
+
+    @delete_protection.setter
+    def delete_protection(self, delete_protection):
+        """Sets the delete_protection of this TargetUpdateGlobalSignAtlas.
+
+        Protection from accidental deletion of this object [true/false]  # noqa: E501
+
+        :param delete_protection: The delete_protection of this TargetUpdateGlobalSignAtlas.  # noqa: E501
+        :type: str
+        """
+
+        self._delete_protection = delete_protection
 
     @property
     def description(self):

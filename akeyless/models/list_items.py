@@ -36,6 +36,7 @@ class ListItems(object):
     openapi_types = {
         'accessibility': 'str',
         'advanced_filter': 'str',
+        'ara_only': 'bool',
         'auto_pagination': 'str',
         'current_folder': 'bool',
         'filter': 'str',
@@ -55,6 +56,7 @@ class ListItems(object):
     attribute_map = {
         'accessibility': 'accessibility',
         'advanced_filter': 'advanced-filter',
+        'ara_only': 'ara-only',
         'auto_pagination': 'auto-pagination',
         'current_folder': 'current-folder',
         'filter': 'filter',
@@ -71,7 +73,7 @@ class ListItems(object):
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, accessibility='regular', advanced_filter=None, auto_pagination='enabled', current_folder=False, filter=None, json=False, minimal_view=None, modified_after=None, pagination_token=None, path=None, sra_only=False, sub_types=None, tag=None, token=None, type=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, accessibility='regular', advanced_filter=None, ara_only=False, auto_pagination='enabled', current_folder=False, filter=None, json=False, minimal_view=None, modified_after=None, pagination_token=None, path=None, sra_only=False, sub_types=None, tag=None, token=None, type=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """ListItems - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -79,6 +81,7 @@ class ListItems(object):
 
         self._accessibility = None
         self._advanced_filter = None
+        self._ara_only = None
         self._auto_pagination = None
         self._current_folder = None
         self._filter = None
@@ -99,6 +102,8 @@ class ListItems(object):
             self.accessibility = accessibility
         if advanced_filter is not None:
             self.advanced_filter = advanced_filter
+        if ara_only is not None:
+            self.ara_only = ara_only
         if auto_pagination is not None:
             self.auto_pagination = auto_pagination
         if current_folder is not None:
@@ -173,6 +178,29 @@ class ListItems(object):
         """
 
         self._advanced_filter = advanced_filter
+
+    @property
+    def ara_only(self):
+        """Gets the ara_only of this ListItems.  # noqa: E501
+
+        Filter by items with ARA functionality enabled  # noqa: E501
+
+        :return: The ara_only of this ListItems.  # noqa: E501
+        :rtype: bool
+        """
+        return self._ara_only
+
+    @ara_only.setter
+    def ara_only(self, ara_only):
+        """Sets the ara_only of this ListItems.
+
+        Filter by items with ARA functionality enabled  # noqa: E501
+
+        :param ara_only: The ara_only of this ListItems.  # noqa: E501
+        :type: bool
+        """
+
+        self._ara_only = ara_only
 
     @property
     def auto_pagination(self):

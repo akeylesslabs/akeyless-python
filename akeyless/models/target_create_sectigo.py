@@ -36,6 +36,7 @@ class TargetCreateSectigo(object):
     openapi_types = {
         'certificate_profile_id': 'int',
         'customer_uri': 'str',
+        'delete_protection': 'str',
         'description': 'str',
         'external_requester': 'str',
         'json': 'bool',
@@ -53,6 +54,7 @@ class TargetCreateSectigo(object):
     attribute_map = {
         'certificate_profile_id': 'certificate-profile-id',
         'customer_uri': 'customer-uri',
+        'delete_protection': 'delete_protection',
         'description': 'description',
         'external_requester': 'external-requester',
         'json': 'json',
@@ -67,7 +69,7 @@ class TargetCreateSectigo(object):
         'username': 'username'
     }
 
-    def __init__(self, certificate_profile_id=None, customer_uri=None, description=None, external_requester=None, json=False, key=None, max_versions=None, name=None, organization_id=None, password=None, timeout='5m', token=None, uid_token=None, username=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, certificate_profile_id=None, customer_uri=None, delete_protection=None, description=None, external_requester=None, json=False, key=None, max_versions=None, name=None, organization_id=None, password=None, timeout='5m', token=None, uid_token=None, username=None, local_vars_configuration=None):  # noqa: E501
         """TargetCreateSectigo - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -75,6 +77,7 @@ class TargetCreateSectigo(object):
 
         self._certificate_profile_id = None
         self._customer_uri = None
+        self._delete_protection = None
         self._description = None
         self._external_requester = None
         self._json = None
@@ -91,6 +94,8 @@ class TargetCreateSectigo(object):
 
         self.certificate_profile_id = certificate_profile_id
         self.customer_uri = customer_uri
+        if delete_protection is not None:
+            self.delete_protection = delete_protection
         if description is not None:
             self.description = description
         self.external_requester = external_requester
@@ -160,6 +165,29 @@ class TargetCreateSectigo(object):
             raise ValueError("Invalid value for `customer_uri`, must not be `None`")  # noqa: E501
 
         self._customer_uri = customer_uri
+
+    @property
+    def delete_protection(self):
+        """Gets the delete_protection of this TargetCreateSectigo.  # noqa: E501
+
+        Protection from accidental deletion of this object [true/false]  # noqa: E501
+
+        :return: The delete_protection of this TargetCreateSectigo.  # noqa: E501
+        :rtype: str
+        """
+        return self._delete_protection
+
+    @delete_protection.setter
+    def delete_protection(self, delete_protection):
+        """Sets the delete_protection of this TargetCreateSectigo.
+
+        Protection from accidental deletion of this object [true/false]  # noqa: E501
+
+        :param delete_protection: The delete_protection of this TargetCreateSectigo.  # noqa: E501
+        :type: str
+        """
+
+        self._delete_protection = delete_protection
 
     @property
     def description(self):

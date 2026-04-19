@@ -35,6 +35,7 @@ class TargetUpdateGoogleTrust(object):
     """
     openapi_types = {
         'acme_challenge': 'str',
+        'delete_protection': 'str',
         'description': 'str',
         'dns_target_creds': 'str',
         'eab_hmac_key': 'str',
@@ -57,6 +58,7 @@ class TargetUpdateGoogleTrust(object):
 
     attribute_map = {
         'acme_challenge': 'acme-challenge',
+        'delete_protection': 'delete_protection',
         'description': 'description',
         'dns_target_creds': 'dns-target-creds',
         'eab_hmac_key': 'eab-hmac-key',
@@ -77,13 +79,14 @@ class TargetUpdateGoogleTrust(object):
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, acme_challenge='dns', description=None, dns_target_creds=None, eab_hmac_key=None, eab_key_id=None, email=None, gcp_project=None, google_trust_url='production', hosted_zone=None, json=False, keep_prev_version=None, key=None, max_versions=None, name=None, new_name=None, resource_group=None, timeout='5m', token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, acme_challenge='dns', delete_protection=None, description=None, dns_target_creds=None, eab_hmac_key=None, eab_key_id=None, email=None, gcp_project=None, google_trust_url='production', hosted_zone=None, json=False, keep_prev_version=None, key=None, max_versions=None, name=None, new_name=None, resource_group=None, timeout='5m', token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """TargetUpdateGoogleTrust - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._acme_challenge = None
+        self._delete_protection = None
         self._description = None
         self._dns_target_creds = None
         self._eab_hmac_key = None
@@ -106,6 +109,8 @@ class TargetUpdateGoogleTrust(object):
 
         if acme_challenge is not None:
             self.acme_challenge = acme_challenge
+        if delete_protection is not None:
+            self.delete_protection = delete_protection
         if description is not None:
             self.description = description
         if dns_target_creds is not None:
@@ -163,6 +168,29 @@ class TargetUpdateGoogleTrust(object):
         """
 
         self._acme_challenge = acme_challenge
+
+    @property
+    def delete_protection(self):
+        """Gets the delete_protection of this TargetUpdateGoogleTrust.  # noqa: E501
+
+        Protection from accidental deletion of this object [true/false]  # noqa: E501
+
+        :return: The delete_protection of this TargetUpdateGoogleTrust.  # noqa: E501
+        :rtype: str
+        """
+        return self._delete_protection
+
+    @delete_protection.setter
+    def delete_protection(self, delete_protection):
+        """Sets the delete_protection of this TargetUpdateGoogleTrust.
+
+        Protection from accidental deletion of this object [true/false]  # noqa: E501
+
+        :param delete_protection: The delete_protection of this TargetUpdateGoogleTrust.  # noqa: E501
+        :type: str
+        """
+
+        self._delete_protection = delete_protection
 
     @property
     def description(self):

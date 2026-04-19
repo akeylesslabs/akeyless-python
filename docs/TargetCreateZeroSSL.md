@@ -5,6 +5,7 @@ targetCreateZeroSSL is a command that creates a new ZeroSSL target
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **api_key** | **str** | API Key of the ZeroSSLTarget account | 
+**delete_protection** | **str** | Protection from accidental deletion of this object [true/false] | [optional] 
 **description** | **str** | Description of the object | [optional] 
 **imap_fqdn** | **str** | ImapFQDN of the IMAP service, FQDN or IPv4 address. Must be FQDN if the IMAP is using TLS | 
 **imap_password** | **str** | ImapPassword to access the IMAP service | 

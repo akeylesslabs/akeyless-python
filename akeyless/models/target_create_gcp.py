@@ -34,6 +34,7 @@ class TargetCreateGcp(object):
                             and the value is json key in definition.
     """
     openapi_types = {
+        'delete_protection': 'str',
         'description': 'str',
         'gcp_key': 'str',
         'json': 'bool',
@@ -46,6 +47,7 @@ class TargetCreateGcp(object):
     }
 
     attribute_map = {
+        'delete_protection': 'delete_protection',
         'description': 'description',
         'gcp_key': 'gcp-key',
         'json': 'json',
@@ -57,12 +59,13 @@ class TargetCreateGcp(object):
         'use_gw_cloud_identity': 'use-gw-cloud-identity'
     }
 
-    def __init__(self, description=None, gcp_key=None, json=False, key=None, max_versions=None, name=None, token=None, uid_token=None, use_gw_cloud_identity=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, delete_protection=None, description=None, gcp_key=None, json=False, key=None, max_versions=None, name=None, token=None, uid_token=None, use_gw_cloud_identity=None, local_vars_configuration=None):  # noqa: E501
         """TargetCreateGcp - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
+        self._delete_protection = None
         self._description = None
         self._gcp_key = None
         self._json = None
@@ -74,6 +77,8 @@ class TargetCreateGcp(object):
         self._use_gw_cloud_identity = None
         self.discriminator = None
 
+        if delete_protection is not None:
+            self.delete_protection = delete_protection
         if description is not None:
             self.description = description
         if gcp_key is not None:
@@ -91,6 +96,29 @@ class TargetCreateGcp(object):
             self.uid_token = uid_token
         if use_gw_cloud_identity is not None:
             self.use_gw_cloud_identity = use_gw_cloud_identity
+
+    @property
+    def delete_protection(self):
+        """Gets the delete_protection of this TargetCreateGcp.  # noqa: E501
+
+        Protection from accidental deletion of this object [true/false]  # noqa: E501
+
+        :return: The delete_protection of this TargetCreateGcp.  # noqa: E501
+        :rtype: str
+        """
+        return self._delete_protection
+
+    @delete_protection.setter
+    def delete_protection(self, delete_protection):
+        """Sets the delete_protection of this TargetCreateGcp.
+
+        Protection from accidental deletion of this object [true/false]  # noqa: E501
+
+        :param delete_protection: The delete_protection of this TargetCreateGcp.  # noqa: E501
+        :type: str
+        """
+
+        self._delete_protection = delete_protection
 
     @property
     def description(self):

@@ -36,6 +36,7 @@ class TargetUpdatePing(object):
     openapi_types = {
         'administrative_port': 'str',
         'authorization_port': 'str',
+        'delete_protection': 'str',
         'description': 'str',
         'json': 'bool',
         'keep_prev_version': 'str',
@@ -53,6 +54,7 @@ class TargetUpdatePing(object):
     attribute_map = {
         'administrative_port': 'administrative-port',
         'authorization_port': 'authorization-port',
+        'delete_protection': 'delete_protection',
         'description': 'description',
         'json': 'json',
         'keep_prev_version': 'keep-prev-version',
@@ -67,7 +69,7 @@ class TargetUpdatePing(object):
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, administrative_port='9999', authorization_port='9031', description=None, json=False, keep_prev_version=None, key=None, max_versions=None, name=None, new_name=None, password=None, ping_url=None, privileged_user=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, administrative_port='9999', authorization_port='9031', delete_protection=None, description=None, json=False, keep_prev_version=None, key=None, max_versions=None, name=None, new_name=None, password=None, ping_url=None, privileged_user=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """TargetUpdatePing - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -75,6 +77,7 @@ class TargetUpdatePing(object):
 
         self._administrative_port = None
         self._authorization_port = None
+        self._delete_protection = None
         self._description = None
         self._json = None
         self._keep_prev_version = None
@@ -93,6 +96,8 @@ class TargetUpdatePing(object):
             self.administrative_port = administrative_port
         if authorization_port is not None:
             self.authorization_port = authorization_port
+        if delete_protection is not None:
+            self.delete_protection = delete_protection
         if description is not None:
             self.description = description
         if json is not None:
@@ -162,6 +167,29 @@ class TargetUpdatePing(object):
         """
 
         self._authorization_port = authorization_port
+
+    @property
+    def delete_protection(self):
+        """Gets the delete_protection of this TargetUpdatePing.  # noqa: E501
+
+        Protection from accidental deletion of this object [true/false]  # noqa: E501
+
+        :return: The delete_protection of this TargetUpdatePing.  # noqa: E501
+        :rtype: str
+        """
+        return self._delete_protection
+
+    @delete_protection.setter
+    def delete_protection(self, delete_protection):
+        """Sets the delete_protection of this TargetUpdatePing.
+
+        Protection from accidental deletion of this object [true/false]  # noqa: E501
+
+        :param delete_protection: The delete_protection of this TargetUpdatePing.  # noqa: E501
+        :type: str
+        """
+
+        self._delete_protection = delete_protection
 
     @property
     def description(self):

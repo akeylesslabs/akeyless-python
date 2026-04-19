@@ -5,6 +5,7 @@ targetCreateDigiCert is a command that creates a new DigiCert target
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **acme_challenge** | **str** | ACME challenge type. Options: [dns] | [optional] [default to 'dns']
+**delete_protection** | **str** | Protection from accidental deletion of this object [true/false] | [optional] 
 **description** | **str** | Description of the object | [optional] 
 **digicert_url** | **str** | DigiCert ACME endpoint selector. Options: [us-production/eu-production/us-demo/eu-demo] | [optional] [default to 'us-production']
 **dns_target_creds** | **str** | Name of existing cloud target for DNS credentials. Required when challenge type is dns. Supported providers: AWS, Azure, GCP | [optional] 

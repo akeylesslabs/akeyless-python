@@ -35,6 +35,7 @@ class CreateRole(object):
     """
     openapi_types = {
         'analytics_access': 'str',
+        'ara_reports_access': 'str',
         'audit_access': 'str',
         'comment': 'str',
         'delete_protection': 'str',
@@ -54,6 +55,7 @@ class CreateRole(object):
 
     attribute_map = {
         'analytics_access': 'analytics-access',
+        'ara_reports_access': 'ara-reports-access',
         'audit_access': 'audit-access',
         'comment': 'comment',
         'delete_protection': 'delete_protection',
@@ -71,13 +73,14 @@ class CreateRole(object):
         'usage_reports_access': 'usage-reports-access'
     }
 
-    def __init__(self, analytics_access=None, audit_access=None, comment=None, delete_protection=None, description=None, event_center_access=None, event_forwarders_access=None, event_forwarders_name=None, gw_analytics_access=None, json=False, name=None, reverse_rbac_access=None, sra_reports_access=None, token=None, uid_token=None, usage_reports_access=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, analytics_access=None, ara_reports_access=None, audit_access=None, comment=None, delete_protection=None, description=None, event_center_access=None, event_forwarders_access=None, event_forwarders_name=None, gw_analytics_access=None, json=False, name=None, reverse_rbac_access=None, sra_reports_access=None, token=None, uid_token=None, usage_reports_access=None, local_vars_configuration=None):  # noqa: E501
         """CreateRole - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._analytics_access = None
+        self._ara_reports_access = None
         self._audit_access = None
         self._comment = None
         self._delete_protection = None
@@ -97,6 +100,8 @@ class CreateRole(object):
 
         if analytics_access is not None:
             self.analytics_access = analytics_access
+        if ara_reports_access is not None:
+            self.ara_reports_access = ara_reports_access
         if audit_access is not None:
             self.audit_access = audit_access
         if comment is not None:
@@ -149,6 +154,29 @@ class CreateRole(object):
         """
 
         self._analytics_access = analytics_access
+
+    @property
+    def ara_reports_access(self):
+        """Gets the ara_reports_access of this CreateRole.  # noqa: E501
+
+        Allow this role to view Agentic Runtime Authority Dashboard. Currently only 'none', 'scoped', 'all' values are supported.  # noqa: E501
+
+        :return: The ara_reports_access of this CreateRole.  # noqa: E501
+        :rtype: str
+        """
+        return self._ara_reports_access
+
+    @ara_reports_access.setter
+    def ara_reports_access(self, ara_reports_access):
+        """Sets the ara_reports_access of this CreateRole.
+
+        Allow this role to view Agentic Runtime Authority Dashboard. Currently only 'none', 'scoped', 'all' values are supported.  # noqa: E501
+
+        :param ara_reports_access: The ara_reports_access of this CreateRole.  # noqa: E501
+        :type: str
+        """
+
+        self._ara_reports_access = ara_reports_access
 
     @property
     def audit_access(self):

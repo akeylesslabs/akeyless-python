@@ -35,6 +35,7 @@ class TargetCreateSplunk(object):
     """
     openapi_types = {
         'audience': 'str',
+        'delete_protection': 'str',
         'description': 'str',
         'json': 'bool',
         'key': 'str',
@@ -52,6 +53,7 @@ class TargetCreateSplunk(object):
 
     attribute_map = {
         'audience': 'audience',
+        'delete_protection': 'delete_protection',
         'description': 'description',
         'json': 'json',
         'key': 'key',
@@ -67,13 +69,14 @@ class TargetCreateSplunk(object):
         'username': 'username'
     }
 
-    def __init__(self, audience=None, description=None, json=False, key=None, max_versions=None, name=None, password=None, splunk_token=None, token=None, token_owner=None, uid_token=None, url=None, use_tls=True, username=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, audience=None, delete_protection=None, description=None, json=False, key=None, max_versions=None, name=None, password=None, splunk_token=None, token=None, token_owner=None, uid_token=None, url=None, use_tls=True, username=None, local_vars_configuration=None):  # noqa: E501
         """TargetCreateSplunk - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._audience = None
+        self._delete_protection = None
         self._description = None
         self._json = None
         self._key = None
@@ -91,6 +94,8 @@ class TargetCreateSplunk(object):
 
         if audience is not None:
             self.audience = audience
+        if delete_protection is not None:
+            self.delete_protection = delete_protection
         if description is not None:
             self.description = description
         if json is not None:
@@ -138,6 +143,29 @@ class TargetCreateSplunk(object):
         """
 
         self._audience = audience
+
+    @property
+    def delete_protection(self):
+        """Gets the delete_protection of this TargetCreateSplunk.  # noqa: E501
+
+        Protection from accidental deletion of this object [true/false]  # noqa: E501
+
+        :return: The delete_protection of this TargetCreateSplunk.  # noqa: E501
+        :rtype: str
+        """
+        return self._delete_protection
+
+    @delete_protection.setter
+    def delete_protection(self, delete_protection):
+        """Sets the delete_protection of this TargetCreateSplunk.
+
+        Protection from accidental deletion of this object [true/false]  # noqa: E501
+
+        :param delete_protection: The delete_protection of this TargetCreateSplunk.  # noqa: E501
+        :type: str
+        """
+
+        self._delete_protection = delete_protection
 
     @property
     def description(self):

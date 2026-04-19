@@ -6,6 +6,8 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **json** | **bool** | Set output format to JSON | [optional] [default to False]
 **object_type** | **str** |  | [optional] 
+**page_size** | **int** | Optional: number of items requested per response (Azure KV). When set, response may include next_token | [optional] 
+**page_token** | **str** | Optional: continuation token returned by a previous usc list --page-size call | [optional] 
 **token** | **str** | Authentication token (see &#x60;/auth&#x60; and &#x60;/configure&#x60;) | [optional] 
 **uid_token** | **str** | The universal identity token, Required only for universal_identity authentication | [optional] 
 **usc_name** | **str** | Name of the Universal Secrets Connector item | 

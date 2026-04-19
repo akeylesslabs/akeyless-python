@@ -34,6 +34,7 @@ class TargetCreateGithub(object):
                             and the value is json key in definition.
     """
     openapi_types = {
+        'delete_protection': 'str',
         'description': 'str',
         'github_app_id': 'int',
         'github_app_private_key': 'str',
@@ -47,6 +48,7 @@ class TargetCreateGithub(object):
     }
 
     attribute_map = {
+        'delete_protection': 'delete_protection',
         'description': 'description',
         'github_app_id': 'github-app-id',
         'github_app_private_key': 'github-app-private-key',
@@ -59,12 +61,13 @@ class TargetCreateGithub(object):
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, description=None, github_app_id=None, github_app_private_key=None, github_base_url='https://api.github.com/', json=False, key=None, max_versions=None, name=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, delete_protection=None, description=None, github_app_id=None, github_app_private_key=None, github_base_url='https://api.github.com/', json=False, key=None, max_versions=None, name=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """TargetCreateGithub - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
+        self._delete_protection = None
         self._description = None
         self._github_app_id = None
         self._github_app_private_key = None
@@ -77,6 +80,8 @@ class TargetCreateGithub(object):
         self._uid_token = None
         self.discriminator = None
 
+        if delete_protection is not None:
+            self.delete_protection = delete_protection
         if description is not None:
             self.description = description
         if github_app_id is not None:
@@ -96,6 +101,29 @@ class TargetCreateGithub(object):
             self.token = token
         if uid_token is not None:
             self.uid_token = uid_token
+
+    @property
+    def delete_protection(self):
+        """Gets the delete_protection of this TargetCreateGithub.  # noqa: E501
+
+        Protection from accidental deletion of this object [true/false]  # noqa: E501
+
+        :return: The delete_protection of this TargetCreateGithub.  # noqa: E501
+        :rtype: str
+        """
+        return self._delete_protection
+
+    @delete_protection.setter
+    def delete_protection(self, delete_protection):
+        """Sets the delete_protection of this TargetCreateGithub.
+
+        Protection from accidental deletion of this object [true/false]  # noqa: E501
+
+        :param delete_protection: The delete_protection of this TargetCreateGithub.  # noqa: E501
+        :type: str
+        """
+
+        self._delete_protection = delete_protection
 
     @property
     def description(self):

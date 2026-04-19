@@ -15,7 +15,7 @@
 
 from __future__ import absolute_import
 
-__version__ = "5.0.23"
+__version__ = "5.0.24"
 
 # import apis into sdk package
 from akeyless.api.v2_api import V2Api
@@ -51,6 +51,8 @@ from akeyless.models.active_directory_migration import ActiveDirectoryMigration
 from akeyless.models.active_directory_payload import ActiveDirectoryPayload
 from akeyless.models.add_gateway_allowed_access_id import AddGatewayAllowedAccessId
 from akeyless.models.admins_config_part import AdminsConfigPart
+from akeyless.models.agentic_rule import AgenticRule
+from akeyless.models.agentic_rules import AgenticRules
 from akeyless.models.ai_insights_config_part import AiInsightsConfigPart
 from akeyless.models.ai_insights_setting import AiInsightsSetting
 from akeyless.models.akeyless_gateway_config import AkeylessGatewayConfig
@@ -928,6 +930,7 @@ from akeyless.models.rotator import Rotator
 from akeyless.models.rotators_config_part import RotatorsConfigPart
 from akeyless.models.rule_assigner import RuleAssigner
 from akeyless.models.rules import Rules
+from akeyless.models.runtime_authority_command import RuntimeAuthorityCommand
 from akeyless.models.saml_access_rules import SAMLAccessRules
 from akeyless.models.saml_attribute import SAMLAttribute
 from akeyless.models.ssh_certificate_issue_details import SSHCertificateIssueDetails
@@ -940,6 +943,8 @@ from akeyless.models.sectigo_target_details import SectigoTargetDetails
 from akeyless.models.secure_remote_access import SecureRemoteAccess
 from akeyless.models.server_inventory_migration import ServerInventoryMigration
 from akeyless.models.server_inventory_payload import ServerInventoryPayload
+from akeyless.models.set_default_profile import SetDefaultProfile
+from akeyless.models.set_default_profile_output import SetDefaultProfileOutput
 from akeyless.models.set_item_state import SetItemState
 from akeyless.models.set_role_rule import SetRoleRule
 from akeyless.models.share_item import ShareItem

@@ -53,7 +53,9 @@ class CreateUSC(object):
         'token': 'str',
         'uid_token': 'str',
         'usc_prefix': 'str',
-        'use_prefix_as_filter': 'str'
+        'usc_tags': 'str',
+        'use_prefix_as_filter': 'str',
+        'use_tags_as_filter': 'bool'
     }
 
     attribute_map = {
@@ -76,10 +78,12 @@ class CreateUSC(object):
         'token': 'token',
         'uid_token': 'uid-token',
         'usc_prefix': 'usc-prefix',
-        'use_prefix_as_filter': 'use-prefix-as-filter'
+        'usc_tags': 'usc-tags',
+        'use_prefix_as_filter': 'use-prefix-as-filter',
+        'use_tags_as_filter': 'use-tags-as-filter'
     }
 
-    def __init__(self, azure_kv_name=None, delete_protection=None, description=None, environment_names=None, gcp_project_id=None, gcp_sm_regions=None, github_scope='repository', item_custom_fields=None, json=False, k8s_namespace=None, name=None, organization_name=None, repository_access='public', repository_names=None, tags=None, target_to_associate=None, token=None, uid_token=None, usc_prefix=None, use_prefix_as_filter='false', local_vars_configuration=None):  # noqa: E501
+    def __init__(self, azure_kv_name=None, delete_protection=None, description=None, environment_names=None, gcp_project_id=None, gcp_sm_regions=None, github_scope='repository', item_custom_fields=None, json=False, k8s_namespace=None, name=None, organization_name=None, repository_access='public', repository_names=None, tags=None, target_to_associate=None, token=None, uid_token=None, usc_prefix=None, usc_tags=None, use_prefix_as_filter='false', use_tags_as_filter=None, local_vars_configuration=None):  # noqa: E501
         """CreateUSC - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -104,7 +108,9 @@ class CreateUSC(object):
         self._token = None
         self._uid_token = None
         self._usc_prefix = None
+        self._usc_tags = None
         self._use_prefix_as_filter = None
+        self._use_tags_as_filter = None
         self.discriminator = None
 
         if azure_kv_name is not None:
@@ -143,8 +149,12 @@ class CreateUSC(object):
             self.uid_token = uid_token
         if usc_prefix is not None:
             self.usc_prefix = usc_prefix
+        if usc_tags is not None:
+            self.usc_tags = usc_tags
         if use_prefix_as_filter is not None:
             self.use_prefix_as_filter = use_prefix_as_filter
+        if use_tags_as_filter is not None:
+            self.use_tags_as_filter = use_tags_as_filter
 
     @property
     def azure_kv_name(self):
@@ -586,6 +596,29 @@ class CreateUSC(object):
         self._usc_prefix = usc_prefix
 
     @property
+    def usc_tags(self):
+        """Gets the usc_tags of this CreateUSC.  # noqa: E501
+
+        Comma-separated list of tags to apply to all secrets created on the remote USC  # noqa: E501
+
+        :return: The usc_tags of this CreateUSC.  # noqa: E501
+        :rtype: str
+        """
+        return self._usc_tags
+
+    @usc_tags.setter
+    def usc_tags(self, usc_tags):
+        """Sets the usc_tags of this CreateUSC.
+
+        Comma-separated list of tags to apply to all secrets created on the remote USC  # noqa: E501
+
+        :param usc_tags: The usc_tags of this CreateUSC.  # noqa: E501
+        :type: str
+        """
+
+        self._usc_tags = usc_tags
+
+    @property
     def use_prefix_as_filter(self):
         """Gets the use_prefix_as_filter of this CreateUSC.  # noqa: E501
 
@@ -607,6 +640,29 @@ class CreateUSC(object):
         """
 
         self._use_prefix_as_filter = use_prefix_as_filter
+
+    @property
+    def use_tags_as_filter(self):
+        """Gets the use_tags_as_filter of this CreateUSC.  # noqa: E501
+
+        Filter the USC secret list by the value(s) of --usc-tags. [true|false]  # noqa: E501
+
+        :return: The use_tags_as_filter of this CreateUSC.  # noqa: E501
+        :rtype: bool
+        """
+        return self._use_tags_as_filter
+
+    @use_tags_as_filter.setter
+    def use_tags_as_filter(self, use_tags_as_filter):
+        """Sets the use_tags_as_filter of this CreateUSC.
+
+        Filter the USC secret list by the value(s) of --usc-tags. [true|false]  # noqa: E501
+
+        :param use_tags_as_filter: The use_tags_as_filter of this CreateUSC.  # noqa: E501
+        :type: bool
+        """
+
+        self._use_tags_as_filter = use_tags_as_filter
 
     def to_dict(self):
         """Returns the model properties as a dict"""

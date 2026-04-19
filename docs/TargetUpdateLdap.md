@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **bind_dn** | **str** | Bind DN | 
 **bind_dn_password** | **str** | Bind DN Password | 
+**delete_protection** | **str** | Protection from accidental deletion of this object [true/false] | [optional] 
 **description** | **str** | Description of the object | [optional] 
 **json** | **bool** | Set output format to JSON | [optional] [default to False]
 **keep_prev_version** | **str** | Whether to keep previous version [true/false]. If not set, use default according to account settings | [optional] 

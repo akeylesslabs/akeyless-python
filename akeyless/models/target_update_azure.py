@@ -38,6 +38,7 @@ class TargetUpdateAzure(object):
         'client_id': 'str',
         'client_secret': 'str',
         'connection_type': 'str',
+        'delete_protection': 'str',
         'description': 'str',
         'json': 'bool',
         'keep_prev_version': 'str',
@@ -59,6 +60,7 @@ class TargetUpdateAzure(object):
         'client_id': 'client-id',
         'client_secret': 'client-secret',
         'connection_type': 'connection-type',
+        'delete_protection': 'delete_protection',
         'description': 'description',
         'json': 'json',
         'keep_prev_version': 'keep-prev-version',
@@ -75,7 +77,7 @@ class TargetUpdateAzure(object):
         'use_gw_cloud_identity': 'use-gw-cloud-identity'
     }
 
-    def __init__(self, azure_cloud='AzureCloud', client_id=None, client_secret=None, connection_type='credentials', description=None, json=False, keep_prev_version=None, key=None, max_versions=None, name=None, new_name=None, resource_group_name=None, resource_name=None, subscription_id=None, tenant_id=None, token=None, uid_token=None, use_gw_cloud_identity=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, azure_cloud='AzureCloud', client_id=None, client_secret=None, connection_type='credentials', delete_protection=None, description=None, json=False, keep_prev_version=None, key=None, max_versions=None, name=None, new_name=None, resource_group_name=None, resource_name=None, subscription_id=None, tenant_id=None, token=None, uid_token=None, use_gw_cloud_identity=None, local_vars_configuration=None):  # noqa: E501
         """TargetUpdateAzure - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -85,6 +87,7 @@ class TargetUpdateAzure(object):
         self._client_id = None
         self._client_secret = None
         self._connection_type = None
+        self._delete_protection = None
         self._description = None
         self._json = None
         self._keep_prev_version = None
@@ -109,6 +112,8 @@ class TargetUpdateAzure(object):
             self.client_secret = client_secret
         if connection_type is not None:
             self.connection_type = connection_type
+        if delete_protection is not None:
+            self.delete_protection = delete_protection
         if description is not None:
             self.description = description
         if json is not None:
@@ -228,6 +233,29 @@ class TargetUpdateAzure(object):
         """
 
         self._connection_type = connection_type
+
+    @property
+    def delete_protection(self):
+        """Gets the delete_protection of this TargetUpdateAzure.  # noqa: E501
+
+        Protection from accidental deletion of this object [true/false]  # noqa: E501
+
+        :return: The delete_protection of this TargetUpdateAzure.  # noqa: E501
+        :rtype: str
+        """
+        return self._delete_protection
+
+    @delete_protection.setter
+    def delete_protection(self, delete_protection):
+        """Sets the delete_protection of this TargetUpdateAzure.
+
+        Protection from accidental deletion of this object [true/false]  # noqa: E501
+
+        :param delete_protection: The delete_protection of this TargetUpdateAzure.  # noqa: E501
+        :type: str
+        """
+
+        self._delete_protection = delete_protection
 
     @property
     def description(self):

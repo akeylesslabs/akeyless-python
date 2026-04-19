@@ -5,6 +5,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **api_key** | **str** | API Key of the GlobalSign Atlas account | 
 **api_secret** | **str** | API Secret of the GlobalSign Atlas account | 
+**delete_protection** | **str** | Protection from accidental deletion of this object [true/false] | [optional] 
 **description** | **str** | Description of the object | [optional] 
 **json** | **bool** | Set output format to JSON | [optional] [default to False]
 **keep_prev_version** | **str** | Whether to keep previous version [true/false]. If not set, use default according to account settings | [optional] 

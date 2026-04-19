@@ -45,6 +45,7 @@ class TargetCreateDB(object):
         'db_server_certificates': 'str',
         'db_server_name': 'str',
         'db_type': 'str',
+        'delete_protection': 'str',
         'description': 'str',
         'host': 'str',
         'json': 'bool',
@@ -86,6 +87,7 @@ class TargetCreateDB(object):
         'db_server_certificates': 'db-server-certificates',
         'db_server_name': 'db-server-name',
         'db_type': 'db-type',
+        'delete_protection': 'delete_protection',
         'description': 'description',
         'host': 'host',
         'json': 'json',
@@ -115,7 +117,7 @@ class TargetCreateDB(object):
         'user_name': 'user-name'
     }
 
-    def __init__(self, azure_client_id=None, azure_client_secret=None, azure_tenant_id=None, cloud_service_provider=None, cluster_mode=None, comment=None, connection_type='credentials', db_name=None, db_server_certificates=None, db_server_name=None, db_type=None, description=None, host=None, json=False, key=None, max_versions=None, mongodb_atlas=None, mongodb_atlas_api_private_key=None, mongodb_atlas_api_public_key=None, mongodb_atlas_project_id=None, mongodb_default_auth_db=None, mongodb_uri_options=None, name=None, oracle_service_name=None, oracle_wallet_login_type=None, oracle_wallet_p12_file_data=None, oracle_wallet_sso_file_data=None, parent_target_name=None, port=None, pwd=None, snowflake_account=None, snowflake_api_private_key=None, snowflake_api_private_key_password=None, ssl=False, ssl_certificate=None, token=None, uid_token=None, user_name=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, azure_client_id=None, azure_client_secret=None, azure_tenant_id=None, cloud_service_provider=None, cluster_mode=None, comment=None, connection_type='credentials', db_name=None, db_server_certificates=None, db_server_name=None, db_type=None, delete_protection=None, description=None, host=None, json=False, key=None, max_versions=None, mongodb_atlas=None, mongodb_atlas_api_private_key=None, mongodb_atlas_api_public_key=None, mongodb_atlas_project_id=None, mongodb_default_auth_db=None, mongodb_uri_options=None, name=None, oracle_service_name=None, oracle_wallet_login_type=None, oracle_wallet_p12_file_data=None, oracle_wallet_sso_file_data=None, parent_target_name=None, port=None, pwd=None, snowflake_account=None, snowflake_api_private_key=None, snowflake_api_private_key_password=None, ssl=False, ssl_certificate=None, token=None, uid_token=None, user_name=None, local_vars_configuration=None):  # noqa: E501
         """TargetCreateDB - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -132,6 +134,7 @@ class TargetCreateDB(object):
         self._db_server_certificates = None
         self._db_server_name = None
         self._db_type = None
+        self._delete_protection = None
         self._description = None
         self._host = None
         self._json = None
@@ -181,6 +184,8 @@ class TargetCreateDB(object):
         if db_server_name is not None:
             self.db_server_name = db_server_name
         self.db_type = db_type
+        if delete_protection is not None:
+            self.delete_protection = delete_protection
         if description is not None:
             self.description = description
         if host is not None:
@@ -487,6 +492,29 @@ class TargetCreateDB(object):
             raise ValueError("Invalid value for `db_type`, must not be `None`")  # noqa: E501
 
         self._db_type = db_type
+
+    @property
+    def delete_protection(self):
+        """Gets the delete_protection of this TargetCreateDB.  # noqa: E501
+
+        Protection from accidental deletion of this object [true/false]  # noqa: E501
+
+        :return: The delete_protection of this TargetCreateDB.  # noqa: E501
+        :rtype: str
+        """
+        return self._delete_protection
+
+    @delete_protection.setter
+    def delete_protection(self, delete_protection):
+        """Sets the delete_protection of this TargetCreateDB.
+
+        Protection from accidental deletion of this object [true/false]  # noqa: E501
+
+        :param delete_protection: The delete_protection of this TargetCreateDB.  # noqa: E501
+        :type: str
+        """
+
+        self._delete_protection = delete_protection
 
     @property
     def description(self):

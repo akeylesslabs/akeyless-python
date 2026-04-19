@@ -34,6 +34,7 @@ class TargetCreateDockerhub(object):
                             and the value is json key in definition.
     """
     openapi_types = {
+        'delete_protection': 'str',
         'description': 'str',
         'dockerhub_password': 'str',
         'dockerhub_username': 'str',
@@ -46,6 +47,7 @@ class TargetCreateDockerhub(object):
     }
 
     attribute_map = {
+        'delete_protection': 'delete_protection',
         'description': 'description',
         'dockerhub_password': 'dockerhub-password',
         'dockerhub_username': 'dockerhub-username',
@@ -57,12 +59,13 @@ class TargetCreateDockerhub(object):
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, description=None, dockerhub_password=None, dockerhub_username=None, json=False, key=None, max_versions=None, name=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, delete_protection=None, description=None, dockerhub_password=None, dockerhub_username=None, json=False, key=None, max_versions=None, name=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """TargetCreateDockerhub - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
+        self._delete_protection = None
         self._description = None
         self._dockerhub_password = None
         self._dockerhub_username = None
@@ -74,6 +77,8 @@ class TargetCreateDockerhub(object):
         self._uid_token = None
         self.discriminator = None
 
+        if delete_protection is not None:
+            self.delete_protection = delete_protection
         if description is not None:
             self.description = description
         if dockerhub_password is not None:
@@ -91,6 +96,29 @@ class TargetCreateDockerhub(object):
             self.token = token
         if uid_token is not None:
             self.uid_token = uid_token
+
+    @property
+    def delete_protection(self):
+        """Gets the delete_protection of this TargetCreateDockerhub.  # noqa: E501
+
+        Protection from accidental deletion of this object [true/false]  # noqa: E501
+
+        :return: The delete_protection of this TargetCreateDockerhub.  # noqa: E501
+        :rtype: str
+        """
+        return self._delete_protection
+
+    @delete_protection.setter
+    def delete_protection(self, delete_protection):
+        """Sets the delete_protection of this TargetCreateDockerhub.
+
+        Protection from accidental deletion of this object [true/false]  # noqa: E501
+
+        :param delete_protection: The delete_protection of this TargetCreateDockerhub.  # noqa: E501
+        :type: str
+        """
+
+        self._delete_protection = delete_protection
 
     @property
     def description(self):

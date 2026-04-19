@@ -5,6 +5,7 @@ targetUpdateGoogleTrust is a command that updates an existing Google Trust targe
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **acme_challenge** | **str** | ACME challenge type. Options: [dns] | [optional] [default to 'dns']
+**delete_protection** | **str** | Protection from accidental deletion of this object [true/false] | [optional] 
 **description** | **str** | Description of the object | [optional] 
 **dns_target_creds** | **str** | Name of existing cloud target for DNS credentials. Required when challenge type is dns. Supported providers: AWS, Azure, GCP | [optional] 
 **eab_hmac_key** | **str** | External Account Binding HMAC key (required for ACME account bootstrap on create) | [optional] 

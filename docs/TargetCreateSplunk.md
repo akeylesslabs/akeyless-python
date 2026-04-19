@@ -5,6 +5,7 @@ targetCreateSplunk is a command that creates a new splunk target
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **audience** | **str** | Splunk token audience (required when using token authentication for rotation) | [optional] 
+**delete_protection** | **str** | Protection from accidental deletion of this object [true/false] | [optional] 
 **description** | **str** | Description of the object | [optional] 
 **json** | **bool** | Set output format to JSON | [optional] [default to False]
 **key** | **str** | The name of a key that used to encrypt the target secret value (if empty, the account default protectionKey key will be used) | [optional] 

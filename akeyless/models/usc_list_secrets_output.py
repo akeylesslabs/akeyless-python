@@ -34,29 +34,55 @@ class UscListSecretsOutput(object):
                             and the value is json key in definition.
     """
     openapi_types = {
+        'next_token': 'str',
         'secrets_list': 'list[SecretInfo]',
         'warnings': 'list[str]'
     }
 
     attribute_map = {
+        'next_token': 'next_token',
         'secrets_list': 'secrets_list',
         'warnings': 'warnings'
     }
 
-    def __init__(self, secrets_list=None, warnings=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, next_token=None, secrets_list=None, warnings=None, local_vars_configuration=None):  # noqa: E501
         """UscListSecretsOutput - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
+        self._next_token = None
         self._secrets_list = None
         self._warnings = None
         self.discriminator = None
 
+        if next_token is not None:
+            self.next_token = next_token
         if secrets_list is not None:
             self.secrets_list = secrets_list
         if warnings is not None:
             self.warnings = warnings
+
+    @property
+    def next_token(self):
+        """Gets the next_token of this UscListSecretsOutput.  # noqa: E501
+
+
+        :return: The next_token of this UscListSecretsOutput.  # noqa: E501
+        :rtype: str
+        """
+        return self._next_token
+
+    @next_token.setter
+    def next_token(self, next_token):
+        """Sets the next_token of this UscListSecretsOutput.
+
+
+        :param next_token: The next_token of this UscListSecretsOutput.  # noqa: E501
+        :type: str
+        """
+
+        self._next_token = next_token
 
     @property
     def secrets_list(self):

@@ -34,6 +34,7 @@ class TargetUpdateK8s(object):
                             and the value is json key in definition.
     """
     openapi_types = {
+        'delete_protection': 'str',
         'description': 'str',
         'json': 'bool',
         'k8s_auth_type': 'str',
@@ -54,6 +55,7 @@ class TargetUpdateK8s(object):
     }
 
     attribute_map = {
+        'delete_protection': 'delete_protection',
         'description': 'description',
         'json': 'json',
         'k8s_auth_type': 'k8s-auth-type',
@@ -73,12 +75,13 @@ class TargetUpdateK8s(object):
         'use_gw_service_account': 'use-gw-service-account'
     }
 
-    def __init__(self, description=None, json=False, k8s_auth_type='token', k8s_client_certificate=None, k8s_client_key=None, k8s_cluster_ca_cert=None, k8s_cluster_endpoint=None, k8s_cluster_name=None, k8s_cluster_token=None, keep_prev_version=None, key=None, max_versions=None, name=None, new_name=None, token=None, uid_token=None, use_gw_service_account=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, delete_protection=None, description=None, json=False, k8s_auth_type='token', k8s_client_certificate=None, k8s_client_key=None, k8s_cluster_ca_cert=None, k8s_cluster_endpoint=None, k8s_cluster_name=None, k8s_cluster_token=None, keep_prev_version=None, key=None, max_versions=None, name=None, new_name=None, token=None, uid_token=None, use_gw_service_account=None, local_vars_configuration=None):  # noqa: E501
         """TargetUpdateK8s - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
+        self._delete_protection = None
         self._description = None
         self._json = None
         self._k8s_auth_type = None
@@ -98,6 +101,8 @@ class TargetUpdateK8s(object):
         self._use_gw_service_account = None
         self.discriminator = None
 
+        if delete_protection is not None:
+            self.delete_protection = delete_protection
         if description is not None:
             self.description = description
         if json is not None:
@@ -131,6 +136,29 @@ class TargetUpdateK8s(object):
             self.uid_token = uid_token
         if use_gw_service_account is not None:
             self.use_gw_service_account = use_gw_service_account
+
+    @property
+    def delete_protection(self):
+        """Gets the delete_protection of this TargetUpdateK8s.  # noqa: E501
+
+        Protection from accidental deletion of this object [true/false]  # noqa: E501
+
+        :return: The delete_protection of this TargetUpdateK8s.  # noqa: E501
+        :rtype: str
+        """
+        return self._delete_protection
+
+    @delete_protection.setter
+    def delete_protection(self, delete_protection):
+        """Sets the delete_protection of this TargetUpdateK8s.
+
+        Protection from accidental deletion of this object [true/false]  # noqa: E501
+
+        :param delete_protection: The delete_protection of this TargetUpdateK8s.  # noqa: E501
+        :type: str
+        """
+
+        self._delete_protection = delete_protection
 
     @property
     def description(self):

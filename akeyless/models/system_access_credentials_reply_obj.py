@@ -36,6 +36,7 @@ class SystemAccessCredentialsReplyObj(object):
     openapi_types = {
         'access_id': 'str',
         'auth_creds': 'str',
+        'csrf_token': 'str',
         'expiry': 'int',
         'kfm_creds': 'str',
         'need_mfa_app_first_config': 'bool',
@@ -47,6 +48,7 @@ class SystemAccessCredentialsReplyObj(object):
     attribute_map = {
         'access_id': 'access_id',
         'auth_creds': 'auth_creds',
+        'csrf_token': 'csrf_token',
         'expiry': 'expiry',
         'kfm_creds': 'kfm_creds',
         'need_mfa_app_first_config': 'need_mfa_app_first_config',
@@ -55,7 +57,7 @@ class SystemAccessCredentialsReplyObj(object):
         'uam_creds': 'uam_creds'
     }
 
-    def __init__(self, access_id=None, auth_creds=None, expiry=None, kfm_creds=None, need_mfa_app_first_config=None, required_mfa=None, token=None, uam_creds=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, access_id=None, auth_creds=None, csrf_token=None, expiry=None, kfm_creds=None, need_mfa_app_first_config=None, required_mfa=None, token=None, uam_creds=None, local_vars_configuration=None):  # noqa: E501
         """SystemAccessCredentialsReplyObj - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -63,6 +65,7 @@ class SystemAccessCredentialsReplyObj(object):
 
         self._access_id = None
         self._auth_creds = None
+        self._csrf_token = None
         self._expiry = None
         self._kfm_creds = None
         self._need_mfa_app_first_config = None
@@ -75,6 +78,8 @@ class SystemAccessCredentialsReplyObj(object):
             self.access_id = access_id
         if auth_creds is not None:
             self.auth_creds = auth_creds
+        if csrf_token is not None:
+            self.csrf_token = csrf_token
         if expiry is not None:
             self.expiry = expiry
         if kfm_creds is not None:
@@ -131,6 +136,29 @@ class SystemAccessCredentialsReplyObj(object):
         """
 
         self._auth_creds = auth_creds
+
+    @property
+    def csrf_token(self):
+        """Gets the csrf_token of this SystemAccessCredentialsReplyObj.  # noqa: E501
+
+        CSRF token for synchronizer-token pattern (only populated for WebUI clients)  # noqa: E501
+
+        :return: The csrf_token of this SystemAccessCredentialsReplyObj.  # noqa: E501
+        :rtype: str
+        """
+        return self._csrf_token
+
+    @csrf_token.setter
+    def csrf_token(self, csrf_token):
+        """Sets the csrf_token of this SystemAccessCredentialsReplyObj.
+
+        CSRF token for synchronizer-token pattern (only populated for WebUI clients)  # noqa: E501
+
+        :param csrf_token: The csrf_token of this SystemAccessCredentialsReplyObj.  # noqa: E501
+        :type: str
+        """
+
+        self._csrf_token = csrf_token
 
     @property
     def expiry(self):

@@ -3,6 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**delete_protection** | **str** | Protection from accidental deletion of this object [true/false] | [optional] 
 **description** | **str** | Description of the object | [optional] [default to 'default_comment']
 **json** | **bool** | Set output format to JSON | [optional] [default to False]
 **max_versions** | **str** | Set the maximum number of versions, limited by the account settings defaults. | [optional] 

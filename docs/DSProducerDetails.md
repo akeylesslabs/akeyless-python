@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **admin_pwd** | **str** |  | [optional] 
 **admin_rotation_interval_days** | **int** |  | [optional] 
 **administrative_port** | **str** |  | [optional] 
+**agentic_rules** | [**AgenticRules**](AgenticRules.md) |  | [optional] 
 **api_key** | **str** |  | [optional] 
 **api_key_id** | **str** |  | [optional] 
 **artifactory_admin_apikey** | **str** |  | [optional] 

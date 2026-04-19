@@ -34,6 +34,7 @@ class TargetUpdateGke(object):
                             and the value is json key in definition.
     """
     openapi_types = {
+        'delete_protection': 'str',
         'description': 'str',
         'gke_account_key': 'str',
         'gke_cluster_cert': 'str',
@@ -52,6 +53,7 @@ class TargetUpdateGke(object):
     }
 
     attribute_map = {
+        'delete_protection': 'delete_protection',
         'description': 'description',
         'gke_account_key': 'gke-account-key',
         'gke_cluster_cert': 'gke-cluster-cert',
@@ -69,12 +71,13 @@ class TargetUpdateGke(object):
         'use_gw_cloud_identity': 'use-gw-cloud-identity'
     }
 
-    def __init__(self, description=None, gke_account_key=None, gke_cluster_cert=None, gke_cluster_endpoint=None, gke_cluster_name=None, gke_service_account_email=None, json=False, keep_prev_version=None, key=None, max_versions=None, name=None, new_name=None, token=None, uid_token=None, use_gw_cloud_identity=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, delete_protection=None, description=None, gke_account_key=None, gke_cluster_cert=None, gke_cluster_endpoint=None, gke_cluster_name=None, gke_service_account_email=None, json=False, keep_prev_version=None, key=None, max_versions=None, name=None, new_name=None, token=None, uid_token=None, use_gw_cloud_identity=None, local_vars_configuration=None):  # noqa: E501
         """TargetUpdateGke - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
+        self._delete_protection = None
         self._description = None
         self._gke_account_key = None
         self._gke_cluster_cert = None
@@ -92,6 +95,8 @@ class TargetUpdateGke(object):
         self._use_gw_cloud_identity = None
         self.discriminator = None
 
+        if delete_protection is not None:
+            self.delete_protection = delete_protection
         if description is not None:
             self.description = description
         if gke_account_key is not None:
@@ -121,6 +126,29 @@ class TargetUpdateGke(object):
             self.uid_token = uid_token
         if use_gw_cloud_identity is not None:
             self.use_gw_cloud_identity = use_gw_cloud_identity
+
+    @property
+    def delete_protection(self):
+        """Gets the delete_protection of this TargetUpdateGke.  # noqa: E501
+
+        Protection from accidental deletion of this object [true/false]  # noqa: E501
+
+        :return: The delete_protection of this TargetUpdateGke.  # noqa: E501
+        :rtype: str
+        """
+        return self._delete_protection
+
+    @delete_protection.setter
+    def delete_protection(self, delete_protection):
+        """Sets the delete_protection of this TargetUpdateGke.
+
+        Protection from accidental deletion of this object [true/false]  # noqa: E501
+
+        :param delete_protection: The delete_protection of this TargetUpdateGke.  # noqa: E501
+        :type: str
+        """
+
+        self._delete_protection = delete_protection
 
     @property
     def description(self):

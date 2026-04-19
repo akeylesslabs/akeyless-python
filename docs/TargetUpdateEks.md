@@ -3,6 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**delete_protection** | **str** | Protection from accidental deletion of this object [true/false] | [optional] 
 **description** | **str** | Description of the object | [optional] 
 **eks_access_key_id** | **str** | Access Key ID | 
 **eks_cluster_ca_cert** | **str** | EKS cluster CA certificate | 

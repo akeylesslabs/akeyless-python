@@ -34,6 +34,7 @@ class ItemGeneralInfo(object):
                             and the value is json key in definition.
     """
     openapi_types = {
+        'agentic_rules': 'AgenticRules',
         'cert_issue_details': 'CertificateIssueInfo',
         'certificate_chain_info': 'CertificateChainInfo',
         'certificate_format': 'str',
@@ -55,6 +56,7 @@ class ItemGeneralInfo(object):
     }
 
     attribute_map = {
+        'agentic_rules': 'agentic_rules',
         'cert_issue_details': 'cert_issue_details',
         'certificate_chain_info': 'certificate_chain_info',
         'certificate_format': 'certificate_format',
@@ -75,12 +77,13 @@ class ItemGeneralInfo(object):
         'tokenizer_info': 'tokenizer_info'
     }
 
-    def __init__(self, cert_issue_details=None, certificate_chain_info=None, certificate_format=None, certificates_template_info=None, classic_key_details=None, cluster_gw_url=None, display_metadata=None, dynamic_secret_producer_details=None, expiration_events=None, importer_info=None, issuer_overview_info=None, next_rotation_events=None, oidc_client_info=None, password_policy=None, rotated_secret_details=None, secure_remote_access_details=None, static_secret_info=None, tokenizer_info=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, agentic_rules=None, cert_issue_details=None, certificate_chain_info=None, certificate_format=None, certificates_template_info=None, classic_key_details=None, cluster_gw_url=None, display_metadata=None, dynamic_secret_producer_details=None, expiration_events=None, importer_info=None, issuer_overview_info=None, next_rotation_events=None, oidc_client_info=None, password_policy=None, rotated_secret_details=None, secure_remote_access_details=None, static_secret_info=None, tokenizer_info=None, local_vars_configuration=None):  # noqa: E501
         """ItemGeneralInfo - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
+        self._agentic_rules = None
         self._cert_issue_details = None
         self._certificate_chain_info = None
         self._certificate_format = None
@@ -101,6 +104,8 @@ class ItemGeneralInfo(object):
         self._tokenizer_info = None
         self.discriminator = None
 
+        if agentic_rules is not None:
+            self.agentic_rules = agentic_rules
         if cert_issue_details is not None:
             self.cert_issue_details = cert_issue_details
         if certificate_chain_info is not None:
@@ -137,6 +142,27 @@ class ItemGeneralInfo(object):
             self.static_secret_info = static_secret_info
         if tokenizer_info is not None:
             self.tokenizer_info = tokenizer_info
+
+    @property
+    def agentic_rules(self):
+        """Gets the agentic_rules of this ItemGeneralInfo.  # noqa: E501
+
+
+        :return: The agentic_rules of this ItemGeneralInfo.  # noqa: E501
+        :rtype: AgenticRules
+        """
+        return self._agentic_rules
+
+    @agentic_rules.setter
+    def agentic_rules(self, agentic_rules):
+        """Sets the agentic_rules of this ItemGeneralInfo.
+
+
+        :param agentic_rules: The agentic_rules of this ItemGeneralInfo.  # noqa: E501
+        :type: AgenticRules
+        """
+
+        self._agentic_rules = agentic_rules
 
     @property
     def cert_issue_details(self):

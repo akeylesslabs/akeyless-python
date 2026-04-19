@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 **artifactory_admin_name** | **str** | Artifactory Admin Name | 
 **artifactory_admin_pwd** | **str** | Artifactory Admin password | 
 **base_url** | **str** | Base URL | 
+**delete_protection** | **str** | Protection from accidental deletion of this object [true/false] | [optional] 
 **description** | **str** | Description of the object | [optional] 
 **json** | **bool** | Set output format to JSON | [optional] [default to False]
 **keep_prev_version** | **str** | Whether to keep previous version [true/false]. If not set, use default according to account settings | [optional] 

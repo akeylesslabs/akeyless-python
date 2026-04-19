@@ -3,6 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**delete_protection** | **str** | Protection from accidental deletion of this object [true/false] | [optional] 
 **description** | **str** | Description of the object | [optional] 
 **gitlab_access_token** | **str** | Gitlab access token | [optional] 
 **gitlab_certificate** | **str** | Gitlab tls certificate (base64 encoded) | [optional] 

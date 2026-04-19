@@ -34,6 +34,7 @@ class TargetUpdateSsh(object):
                             and the value is json key in definition.
     """
     openapi_types = {
+        'delete_protection': 'str',
         'description': 'str',
         'host': 'str',
         'json': 'bool',
@@ -52,6 +53,7 @@ class TargetUpdateSsh(object):
     }
 
     attribute_map = {
+        'delete_protection': 'delete_protection',
         'description': 'description',
         'host': 'host',
         'json': 'json',
@@ -69,12 +71,13 @@ class TargetUpdateSsh(object):
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, description=None, host=None, json=False, keep_prev_version=None, key=None, max_versions=None, name=None, new_name=None, port='22', private_key=None, private_key_password=None, ssh_password=None, ssh_username=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, delete_protection=None, description=None, host=None, json=False, keep_prev_version=None, key=None, max_versions=None, name=None, new_name=None, port='22', private_key=None, private_key_password=None, ssh_password=None, ssh_username=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """TargetUpdateSsh - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
+        self._delete_protection = None
         self._description = None
         self._host = None
         self._json = None
@@ -92,6 +95,8 @@ class TargetUpdateSsh(object):
         self._uid_token = None
         self.discriminator = None
 
+        if delete_protection is not None:
+            self.delete_protection = delete_protection
         if description is not None:
             self.description = description
         if host is not None:
@@ -121,6 +126,29 @@ class TargetUpdateSsh(object):
             self.token = token
         if uid_token is not None:
             self.uid_token = uid_token
+
+    @property
+    def delete_protection(self):
+        """Gets the delete_protection of this TargetUpdateSsh.  # noqa: E501
+
+        Protection from accidental deletion of this object [true/false]  # noqa: E501
+
+        :return: The delete_protection of this TargetUpdateSsh.  # noqa: E501
+        :rtype: str
+        """
+        return self._delete_protection
+
+    @delete_protection.setter
+    def delete_protection(self, delete_protection):
+        """Sets the delete_protection of this TargetUpdateSsh.
+
+        Protection from accidental deletion of this object [true/false]  # noqa: E501
+
+        :param delete_protection: The delete_protection of this TargetUpdateSsh.  # noqa: E501
+        :type: str
+        """
+
+        self._delete_protection = delete_protection
 
     @property
     def description(self):
