@@ -21360,7 +21360,7 @@ class V2Api(object):
         auth_settings = []  # noqa: E501
 
         return self.api_client.call_api(
-            '/dynamic-secret-update-oracle', 'POST',
+            '/dynamic-secret-update-oracledb', 'POST',
             path_params,
             query_params,
             header_params,

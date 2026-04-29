@@ -34,6 +34,9 @@ class DbTargetDetails(object):
                             and the value is json key in definition.
     """
     openapi_types = {
+        'client_certificate': 'str',
+        'client_key_passphrase': 'str',
+        'client_private_key': 'str',
         'cloud_service_provider': 'str',
         'cluster_mode': 'bool',
         'connection_type': 'str',
@@ -49,6 +52,7 @@ class DbTargetDetails(object):
         'db_server_name': 'str',
         'db_tenant_id': 'str',
         'db_user_name': 'str',
+        'enable_mtls': 'bool',
         'oracle_wallet_details': 'WalletDetails',
         'sf_account': 'str',
         'ssl_connection_certificate': 'str',
@@ -56,6 +60,9 @@ class DbTargetDetails(object):
     }
 
     attribute_map = {
+        'client_certificate': 'client_certificate',
+        'client_key_passphrase': 'client_key_passphrase',
+        'client_private_key': 'client_private_key',
         'cloud_service_provider': 'cloud_service_provider',
         'cluster_mode': 'cluster_mode',
         'connection_type': 'connection_type',
@@ -71,18 +78,22 @@ class DbTargetDetails(object):
         'db_server_name': 'db_server_name',
         'db_tenant_id': 'db_tenant_id',
         'db_user_name': 'db_user_name',
+        'enable_mtls': 'enable_mtls',
         'oracle_wallet_details': 'oracle_wallet_details',
         'sf_account': 'sf_account',
         'ssl_connection_certificate': 'ssl_connection_certificate',
         'ssl_connection_mode': 'ssl_connection_mode'
     }
 
-    def __init__(self, cloud_service_provider=None, cluster_mode=None, connection_type=None, db_client_id=None, db_client_secret=None, db_host_name=None, db_name=None, db_port=None, db_private_key=None, db_private_key_passphrase=None, db_pwd=None, db_server_certificates=None, db_server_name=None, db_tenant_id=None, db_user_name=None, oracle_wallet_details=None, sf_account=None, ssl_connection_certificate=None, ssl_connection_mode=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, client_certificate=None, client_key_passphrase=None, client_private_key=None, cloud_service_provider=None, cluster_mode=None, connection_type=None, db_client_id=None, db_client_secret=None, db_host_name=None, db_name=None, db_port=None, db_private_key=None, db_private_key_passphrase=None, db_pwd=None, db_server_certificates=None, db_server_name=None, db_tenant_id=None, db_user_name=None, enable_mtls=None, oracle_wallet_details=None, sf_account=None, ssl_connection_certificate=None, ssl_connection_mode=None, local_vars_configuration=None):  # noqa: E501
         """DbTargetDetails - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
+        self._client_certificate = None
+        self._client_key_passphrase = None
+        self._client_private_key = None
         self._cloud_service_provider = None
         self._cluster_mode = None
         self._connection_type = None
@@ -98,12 +109,19 @@ class DbTargetDetails(object):
         self._db_server_name = None
         self._db_tenant_id = None
         self._db_user_name = None
+        self._enable_mtls = None
         self._oracle_wallet_details = None
         self._sf_account = None
         self._ssl_connection_certificate = None
         self._ssl_connection_mode = None
         self.discriminator = None
 
+        if client_certificate is not None:
+            self.client_certificate = client_certificate
+        if client_key_passphrase is not None:
+            self.client_key_passphrase = client_key_passphrase
+        if client_private_key is not None:
+            self.client_private_key = client_private_key
         if cloud_service_provider is not None:
             self.cloud_service_provider = cloud_service_provider
         if cluster_mode is not None:
@@ -134,6 +152,8 @@ class DbTargetDetails(object):
             self.db_tenant_id = db_tenant_id
         if db_user_name is not None:
             self.db_user_name = db_user_name
+        if enable_mtls is not None:
+            self.enable_mtls = enable_mtls
         if oracle_wallet_details is not None:
             self.oracle_wallet_details = oracle_wallet_details
         if sf_account is not None:
@@ -142,6 +162,75 @@ class DbTargetDetails(object):
             self.ssl_connection_certificate = ssl_connection_certificate
         if ssl_connection_mode is not None:
             self.ssl_connection_mode = ssl_connection_mode
+
+    @property
+    def client_certificate(self):
+        """Gets the client_certificate of this DbTargetDetails.  # noqa: E501
+
+        (Optional) ClientCertificate defines the client certificate for mutual TLS. Must be base64 certificate loaded by UI using file loader field  # noqa: E501
+
+        :return: The client_certificate of this DbTargetDetails.  # noqa: E501
+        :rtype: str
+        """
+        return self._client_certificate
+
+    @client_certificate.setter
+    def client_certificate(self, client_certificate):
+        """Sets the client_certificate of this DbTargetDetails.
+
+        (Optional) ClientCertificate defines the client certificate for mutual TLS. Must be base64 certificate loaded by UI using file loader field  # noqa: E501
+
+        :param client_certificate: The client_certificate of this DbTargetDetails.  # noqa: E501
+        :type: str
+        """
+
+        self._client_certificate = client_certificate
+
+    @property
+    def client_key_passphrase(self):
+        """Gets the client_key_passphrase of this DbTargetDetails.  # noqa: E501
+
+        (Optional) ClientKeyPassphrase defines the passphrase for the client private key  # noqa: E501
+
+        :return: The client_key_passphrase of this DbTargetDetails.  # noqa: E501
+        :rtype: str
+        """
+        return self._client_key_passphrase
+
+    @client_key_passphrase.setter
+    def client_key_passphrase(self, client_key_passphrase):
+        """Sets the client_key_passphrase of this DbTargetDetails.
+
+        (Optional) ClientKeyPassphrase defines the passphrase for the client private key  # noqa: E501
+
+        :param client_key_passphrase: The client_key_passphrase of this DbTargetDetails.  # noqa: E501
+        :type: str
+        """
+
+        self._client_key_passphrase = client_key_passphrase
+
+    @property
+    def client_private_key(self):
+        """Gets the client_private_key of this DbTargetDetails.  # noqa: E501
+
+        (Optional) ClientPrivateKey defines the client private key for mutual TLS. Must be base64 private key loaded by UI using file loader field  # noqa: E501
+
+        :return: The client_private_key of this DbTargetDetails.  # noqa: E501
+        :rtype: str
+        """
+        return self._client_private_key
+
+    @client_private_key.setter
+    def client_private_key(self, client_private_key):
+        """Sets the client_private_key of this DbTargetDetails.
+
+        (Optional) ClientPrivateKey defines the client private key for mutual TLS. Must be base64 private key loaded by UI using file loader field  # noqa: E501
+
+        :param client_private_key: The client_private_key of this DbTargetDetails.  # noqa: E501
+        :type: str
+        """
+
+        self._client_private_key = client_private_key
 
     @property
     def cloud_service_provider(self):
@@ -463,6 +552,29 @@ class DbTargetDetails(object):
         """
 
         self._db_user_name = db_user_name
+
+    @property
+    def enable_mtls(self):
+        """Gets the enable_mtls of this DbTargetDetails.  # noqa: E501
+
+        (Optional) EnableMTLS defines if mutual TLS will be used to connect to DB  # noqa: E501
+
+        :return: The enable_mtls of this DbTargetDetails.  # noqa: E501
+        :rtype: bool
+        """
+        return self._enable_mtls
+
+    @enable_mtls.setter
+    def enable_mtls(self, enable_mtls):
+        """Sets the enable_mtls of this DbTargetDetails.
+
+        (Optional) EnableMTLS defines if mutual TLS will be used to connect to DB  # noqa: E501
+
+        :param enable_mtls: The enable_mtls of this DbTargetDetails.  # noqa: E501
+        :type: bool
+        """
+
+        self._enable_mtls = enable_mtls
 
     @property
     def oracle_wallet_details(self):

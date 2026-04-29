@@ -37,6 +37,9 @@ class CreateDBTarget(object):
         'azure_client_id': 'str',
         'azure_client_secret': 'str',
         'azure_tenant_id': 'str',
+        'client_certificate': 'str',
+        'client_key_passphrase': 'str',
+        'client_private_key': 'str',
         'cloud_service_provider': 'str',
         'cluster_mode': 'bool',
         'comment': 'str',
@@ -46,6 +49,7 @@ class CreateDBTarget(object):
         'db_server_name': 'str',
         'db_type': 'str',
         'description': 'str',
+        'enable_mtls': 'bool',
         'host': 'str',
         'json': 'bool',
         'key': 'str',
@@ -78,6 +82,9 @@ class CreateDBTarget(object):
         'azure_client_id': 'azure-client-id',
         'azure_client_secret': 'azure-client-secret',
         'azure_tenant_id': 'azure-tenant-id',
+        'client_certificate': 'client-certificate',
+        'client_key_passphrase': 'client-key-passphrase',
+        'client_private_key': 'client-private-key',
         'cloud_service_provider': 'cloud-service-provider',
         'cluster_mode': 'cluster-mode',
         'comment': 'comment',
@@ -87,6 +94,7 @@ class CreateDBTarget(object):
         'db_server_name': 'db-server-name',
         'db_type': 'db-type',
         'description': 'description',
+        'enable_mtls': 'enable-mtls',
         'host': 'host',
         'json': 'json',
         'key': 'key',
@@ -115,7 +123,7 @@ class CreateDBTarget(object):
         'user_name': 'user-name'
     }
 
-    def __init__(self, azure_client_id=None, azure_client_secret=None, azure_tenant_id=None, cloud_service_provider=None, cluster_mode=None, comment=None, connection_type='credentials', db_name=None, db_server_certificates=None, db_server_name=None, db_type=None, description=None, host=None, json=False, key=None, max_versions=None, mongodb_atlas=None, mongodb_atlas_api_private_key=None, mongodb_atlas_api_public_key=None, mongodb_atlas_project_id=None, mongodb_default_auth_db=None, mongodb_uri_options=None, name=None, oracle_service_name=None, oracle_wallet_login_type=None, oracle_wallet_p12_file_data=None, oracle_wallet_sso_file_data=None, parent_target_name=None, port=None, pwd=None, snowflake_account=None, snowflake_api_private_key=None, snowflake_api_private_key_password=None, ssl=False, ssl_certificate=None, token=None, uid_token=None, user_name=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, azure_client_id=None, azure_client_secret=None, azure_tenant_id=None, client_certificate=None, client_key_passphrase=None, client_private_key=None, cloud_service_provider=None, cluster_mode=None, comment=None, connection_type='credentials', db_name=None, db_server_certificates=None, db_server_name=None, db_type=None, description=None, enable_mtls=None, host=None, json=False, key=None, max_versions=None, mongodb_atlas=None, mongodb_atlas_api_private_key=None, mongodb_atlas_api_public_key=None, mongodb_atlas_project_id=None, mongodb_default_auth_db=None, mongodb_uri_options=None, name=None, oracle_service_name=None, oracle_wallet_login_type=None, oracle_wallet_p12_file_data=None, oracle_wallet_sso_file_data=None, parent_target_name=None, port=None, pwd=None, snowflake_account=None, snowflake_api_private_key=None, snowflake_api_private_key_password=None, ssl=False, ssl_certificate=None, token=None, uid_token=None, user_name=None, local_vars_configuration=None):  # noqa: E501
         """CreateDBTarget - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -124,6 +132,9 @@ class CreateDBTarget(object):
         self._azure_client_id = None
         self._azure_client_secret = None
         self._azure_tenant_id = None
+        self._client_certificate = None
+        self._client_key_passphrase = None
+        self._client_private_key = None
         self._cloud_service_provider = None
         self._cluster_mode = None
         self._comment = None
@@ -133,6 +144,7 @@ class CreateDBTarget(object):
         self._db_server_name = None
         self._db_type = None
         self._description = None
+        self._enable_mtls = None
         self._host = None
         self._json = None
         self._key = None
@@ -167,6 +179,12 @@ class CreateDBTarget(object):
             self.azure_client_secret = azure_client_secret
         if azure_tenant_id is not None:
             self.azure_tenant_id = azure_tenant_id
+        if client_certificate is not None:
+            self.client_certificate = client_certificate
+        if client_key_passphrase is not None:
+            self.client_key_passphrase = client_key_passphrase
+        if client_private_key is not None:
+            self.client_private_key = client_private_key
         if cloud_service_provider is not None:
             self.cloud_service_provider = cloud_service_provider
         if cluster_mode is not None:
@@ -183,6 +201,8 @@ class CreateDBTarget(object):
         self.db_type = db_type
         if description is not None:
             self.description = description
+        if enable_mtls is not None:
+            self.enable_mtls = enable_mtls
         if host is not None:
             self.host = host
         if json is not None:
@@ -303,6 +323,75 @@ class CreateDBTarget(object):
         """
 
         self._azure_tenant_id = azure_tenant_id
+
+    @property
+    def client_certificate(self):
+        """Gets the client_certificate of this CreateDBTarget.  # noqa: E501
+
+        Client certificate for mutual TLS  # noqa: E501
+
+        :return: The client_certificate of this CreateDBTarget.  # noqa: E501
+        :rtype: str
+        """
+        return self._client_certificate
+
+    @client_certificate.setter
+    def client_certificate(self, client_certificate):
+        """Sets the client_certificate of this CreateDBTarget.
+
+        Client certificate for mutual TLS  # noqa: E501
+
+        :param client_certificate: The client_certificate of this CreateDBTarget.  # noqa: E501
+        :type: str
+        """
+
+        self._client_certificate = client_certificate
+
+    @property
+    def client_key_passphrase(self):
+        """Gets the client_key_passphrase of this CreateDBTarget.  # noqa: E501
+
+        Client private key passphrase for mutual TLS  # noqa: E501
+
+        :return: The client_key_passphrase of this CreateDBTarget.  # noqa: E501
+        :rtype: str
+        """
+        return self._client_key_passphrase
+
+    @client_key_passphrase.setter
+    def client_key_passphrase(self, client_key_passphrase):
+        """Sets the client_key_passphrase of this CreateDBTarget.
+
+        Client private key passphrase for mutual TLS  # noqa: E501
+
+        :param client_key_passphrase: The client_key_passphrase of this CreateDBTarget.  # noqa: E501
+        :type: str
+        """
+
+        self._client_key_passphrase = client_key_passphrase
+
+    @property
+    def client_private_key(self):
+        """Gets the client_private_key of this CreateDBTarget.  # noqa: E501
+
+        Client private key for mutual TLS  # noqa: E501
+
+        :return: The client_private_key of this CreateDBTarget.  # noqa: E501
+        :rtype: str
+        """
+        return self._client_private_key
+
+    @client_private_key.setter
+    def client_private_key(self, client_private_key):
+        """Sets the client_private_key of this CreateDBTarget.
+
+        Client private key for mutual TLS  # noqa: E501
+
+        :param client_private_key: The client_private_key of this CreateDBTarget.  # noqa: E501
+        :type: str
+        """
+
+        self._client_private_key = client_private_key
 
     @property
     def cloud_service_provider(self):
@@ -510,6 +599,29 @@ class CreateDBTarget(object):
         """
 
         self._description = description
+
+    @property
+    def enable_mtls(self):
+        """Gets the enable_mtls of this CreateDBTarget.  # noqa: E501
+
+        Enable mutual TLS  # noqa: E501
+
+        :return: The enable_mtls of this CreateDBTarget.  # noqa: E501
+        :rtype: bool
+        """
+        return self._enable_mtls
+
+    @enable_mtls.setter
+    def enable_mtls(self, enable_mtls):
+        """Sets the enable_mtls of this CreateDBTarget.
+
+        Enable mutual TLS  # noqa: E501
+
+        :param enable_mtls: The enable_mtls of this CreateDBTarget.  # noqa: E501
+        :type: bool
+        """
+
+        self._enable_mtls = enable_mtls
 
     @property
     def host(self):

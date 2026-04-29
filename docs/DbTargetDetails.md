@@ -4,6 +4,9 @@ DbTargetDetails
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**client_certificate** | **str** | (Optional) ClientCertificate defines the client certificate for mutual TLS. Must be base64 certificate loaded by UI using file loader field | [optional] 
+**client_key_passphrase** | **str** | (Optional) ClientKeyPassphrase defines the passphrase for the client private key | [optional] 
+**client_private_key** | **str** | (Optional) ClientPrivateKey defines the client private key for mutual TLS. Must be base64 private key loaded by UI using file loader field | [optional] 
 **cloud_service_provider** | **str** |  | [optional] 
 **cluster_mode** | **bool** |  | [optional] 
 **connection_type** | **str** |  | [optional] 
@@ -19,6 +22,7 @@ Name | Type | Description | Notes
 **db_server_name** | **str** | (Optional) ServerName is used to verify the hostname on the returned certificates unless InsecureSkipVerify is given. It is also included in the client&#39;s handshake to support virtual hosting unless it is an IP address. | [optional] 
 **db_tenant_id** | **str** |  | [optional] 
 **db_user_name** | **str** |  | [optional] 
+**enable_mtls** | **bool** | (Optional) EnableMTLS defines if mutual TLS will be used to connect to DB | [optional] 
 **oracle_wallet_details** | [**WalletDetails**](WalletDetails.md) |  | [optional] 
 **sf_account** | **str** |  | [optional] 
 **ssl_connection_certificate** | **str** | (Optional) SSLConnectionCertificate defines the certificate for SSL connection. Must be base64 certificate loaded by UI using file loader field | [optional] 
