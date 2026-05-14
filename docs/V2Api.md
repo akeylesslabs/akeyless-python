@@ -365,6 +365,7 @@ Method | HTTP request | Description
 [**import_passwords**](V2Api.md#import_passwords) | **POST** /import-passwords | 
 [**kmip_client_delete_rule**](V2Api.md#kmip_client_delete_rule) | **POST** /kmip-client-delete-rule | 
 [**kmip_client_set_rule**](V2Api.md#kmip_client_set_rule) | **POST** /kmip-client-set-rule | 
+[**kmip_client_update**](V2Api.md#kmip_client_update) | **POST** /kmip-client-update | 
 [**kmip_create_client**](V2Api.md#kmip_create_client) | **POST** /kmip-create-client | 
 [**kmip_delete_client**](V2Api.md#kmip_delete_client) | **POST** /kmip-delete-client | 
 [**kmip_delete_server**](V2Api.md#kmip_delete_server) | **DELETE** /kmip-delete-environment | 
@@ -375,6 +376,7 @@ Method | HTTP request | Description
 [**kmip_renew_client_certificate**](V2Api.md#kmip_renew_client_certificate) | **POST** /kmip-renew-client | 
 [**kmip_renew_server_certificate**](V2Api.md#kmip_renew_server_certificate) | **POST** /kmip-renew-environment | 
 [**kmip_server_setup**](V2Api.md#kmip_server_setup) | **POST** /kmip-create-environment | 
+[**kmip_server_update**](V2Api.md#kmip_server_update) | **POST** /kmip-server-update | 
 [**kmip_set_server_state**](V2Api.md#kmip_set_server_state) | **POST** /kmip-set-environment-state | 
 [**kubeconfig_generate**](V2Api.md#kubeconfig_generate) | **POST** /kubeconfig-generate | 
 [**list_acme_accounts**](V2Api.md#list_acme_accounts) | **POST** /list-acme-accounts | 
@@ -470,6 +472,7 @@ Method | HTTP request | Description
 [**target_create_artifactory**](V2Api.md#target_create_artifactory) | **POST** /target-create-artifactory | 
 [**target_create_aws**](V2Api.md#target_create_aws) | **POST** /target-create-aws | 
 [**target_create_azure**](V2Api.md#target_create_azure) | **POST** /target-create-azure | 
+[**target_create_cloudflare**](V2Api.md#target_create_cloudflare) | **POST** /target-create-cloudflare | 
 [**target_create_db**](V2Api.md#target_create_db) | **POST** /target-create-db | 
 [**target_create_digi_cert**](V2Api.md#target_create_digi_cert) | **POST** /target-create-digicert | 
 [**target_create_dockerhub**](V2Api.md#target_create_dockerhub) | **POST** /target-create-dockerhub | 
@@ -505,6 +508,7 @@ Method | HTTP request | Description
 [**target_update_artifactory**](V2Api.md#target_update_artifactory) | **POST** /target-update-artifactory | 
 [**target_update_aws**](V2Api.md#target_update_aws) | **POST** /target-update-aws | 
 [**target_update_azure**](V2Api.md#target_update_azure) | **POST** /target-update-azure | 
+[**target_update_cloudflare**](V2Api.md#target_update_cloudflare) | **POST** /target-update-cloudflare | 
 [**target_update_db**](V2Api.md#target_update_db) | **POST** /target-update-db | 
 [**target_update_digi_cert**](V2Api.md#target_update_digi_cert) | **POST** /target-update-digicert | 
 [**target_update_dockerhub**](V2Api.md#target_update_dockerhub) | **POST** /target-update-dockerhub | 
@@ -803,7 +807,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **account_custom_field_list**
-> object account_custom_field_list(account_custom_field_list)
+> list[AccountCustomField] account_custom_field_list(account_custom_field_list)
 
 List all account custom fields.
 
@@ -846,7 +850,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**object**
+[**list[AccountCustomField]**](AccountCustomField.md)
 
 ### Authorization
 
@@ -22281,6 +22285,66 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **kmip_client_update**
+> KmipClientUpdateOutput kmip_client_update(kmip_client_update=kmip_client_update)
+
+
+
+### Example
+
+```python
+from __future__ import print_function
+import time
+import akeyless
+from akeyless.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.akeyless.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = akeyless.Configuration(
+    host = "https://api.akeyless.io"
+)
+
+
+# Enter a context with an instance of the API client
+with akeyless.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = akeyless.V2Api(api_client)
+    kmip_client_update = akeyless.KmipClientUpdate() # KmipClientUpdate |  (optional)
+
+    try:
+        api_response = api_instance.kmip_client_update(kmip_client_update=kmip_client_update)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling V2Api->kmip_client_update: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **kmip_client_update** | [**KmipClientUpdate**](KmipClientUpdate.md)|  | [optional] 
+
+### Return type
+
+[**KmipClientUpdateOutput**](KmipClientUpdateOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | kmipClientUpdateResponse wraps response body. |  -  |
+**0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **kmip_create_client**
 > KmipCreateClientOutput kmip_create_client(kmip_create_client=kmip_create_client)
 
@@ -22877,6 +22941,66 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | kmipServerSetupResponse wraps response body. |  -  |
+**0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **kmip_server_update**
+> KmipServerUpdateOutput kmip_server_update(kmip_server_update=kmip_server_update)
+
+
+
+### Example
+
+```python
+from __future__ import print_function
+import time
+import akeyless
+from akeyless.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.akeyless.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = akeyless.Configuration(
+    host = "https://api.akeyless.io"
+)
+
+
+# Enter a context with an instance of the API client
+with akeyless.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = akeyless.V2Api(api_client)
+    kmip_server_update = akeyless.KmipServerUpdate() # KmipServerUpdate |  (optional)
+
+    try:
+        api_response = api_instance.kmip_server_update(kmip_server_update=kmip_server_update)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling V2Api->kmip_server_update: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **kmip_server_update** | [**KmipServerUpdate**](KmipServerUpdate.md)|  | [optional] 
+
+### Return type
+
+[**KmipServerUpdateOutput**](KmipServerUpdateOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | kmipServerUpdateResponse wraps response body. |  -  |
 **0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -28571,6 +28695,66 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **target_create_cloudflare**
+> TargetCreateOutput target_create_cloudflare(target_create_cloudflare)
+
+
+
+### Example
+
+```python
+from __future__ import print_function
+import time
+import akeyless
+from akeyless.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.akeyless.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = akeyless.Configuration(
+    host = "https://api.akeyless.io"
+)
+
+
+# Enter a context with an instance of the API client
+with akeyless.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = akeyless.V2Api(api_client)
+    target_create_cloudflare = akeyless.TargetCreateCloudflare() # TargetCreateCloudflare | 
+
+    try:
+        api_response = api_instance.target_create_cloudflare(target_create_cloudflare)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling V2Api->target_create_cloudflare: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **target_create_cloudflare** | [**TargetCreateCloudflare**](TargetCreateCloudflare.md)|  | 
+
+### Return type
+
+[**TargetCreateOutput**](TargetCreateOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**201** | targetCreateCloudflareResponse wraps response body. |  -  |
+**0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **target_create_db**
 > TargetCreateOutput target_create_db(target_create_db)
 
@@ -30667,6 +30851,66 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | targetUpdateAzureResponse wraps response body. |  -  |
+**0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **target_update_cloudflare**
+> TargetUpdateOutput target_update_cloudflare(target_update_cloudflare)
+
+
+
+### Example
+
+```python
+from __future__ import print_function
+import time
+import akeyless
+from akeyless.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.akeyless.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = akeyless.Configuration(
+    host = "https://api.akeyless.io"
+)
+
+
+# Enter a context with an instance of the API client
+with akeyless.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = akeyless.V2Api(api_client)
+    target_update_cloudflare = akeyless.TargetUpdateCloudflare() # TargetUpdateCloudflare | 
+
+    try:
+        api_response = api_instance.target_update_cloudflare(target_update_cloudflare)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling V2Api->target_update_cloudflare: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **target_update_cloudflare** | [**TargetUpdateCloudflare**](TargetUpdateCloudflare.md)|  | 
+
+### Return type
+
+[**TargetUpdateOutput**](TargetUpdateOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**201** | targetUpdateCloudflareResponse wraps response body. |  -  |
 **0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

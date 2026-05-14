@@ -36,6 +36,7 @@ class KmipCreateClient(object):
     openapi_types = {
         'activate_keys_on_creation': 'str',
         'certificate_ttl': 'int',
+        'expiration_event_in': 'list[str]',
         'json': 'bool',
         'name': 'str',
         'token': 'str',
@@ -45,13 +46,14 @@ class KmipCreateClient(object):
     attribute_map = {
         'activate_keys_on_creation': 'activate-keys-on-creation',
         'certificate_ttl': 'certificate-ttl',
+        'expiration_event_in': 'expiration-event-in',
         'json': 'json',
         'name': 'name',
         'token': 'token',
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, activate_keys_on_creation='false', certificate_ttl=90, json=False, name=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, activate_keys_on_creation='false', certificate_ttl=90, expiration_event_in=None, json=False, name=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """KmipCreateClient - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -59,6 +61,7 @@ class KmipCreateClient(object):
 
         self._activate_keys_on_creation = None
         self._certificate_ttl = None
+        self._expiration_event_in = None
         self._json = None
         self._name = None
         self._token = None
@@ -69,6 +72,8 @@ class KmipCreateClient(object):
             self.activate_keys_on_creation = activate_keys_on_creation
         if certificate_ttl is not None:
             self.certificate_ttl = certificate_ttl
+        if expiration_event_in is not None:
+            self.expiration_event_in = expiration_event_in
         if json is not None:
             self.json = json
         self.name = name
@@ -122,6 +127,29 @@ class KmipCreateClient(object):
         """
 
         self._certificate_ttl = certificate_ttl
+
+    @property
+    def expiration_event_in(self):
+        """Gets the expiration_event_in of this KmipCreateClient.  # noqa: E501
+
+        How many days before the expiration of the certificate would you like to be notified.  # noqa: E501
+
+        :return: The expiration_event_in of this KmipCreateClient.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._expiration_event_in
+
+    @expiration_event_in.setter
+    def expiration_event_in(self, expiration_event_in):
+        """Sets the expiration_event_in of this KmipCreateClient.
+
+        How many days before the expiration of the certificate would you like to be notified.  # noqa: E501
+
+        :param expiration_event_in: The expiration_event_in of this KmipCreateClient.  # noqa: E501
+        :type: list[str]
+        """
+
+        self._expiration_event_in = expiration_event_in
 
     @property
     def json(self):

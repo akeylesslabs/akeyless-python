@@ -13,9 +13,11 @@ Name | Type | Description | Notes
 **eks_cluster_name** | **str** | EKS cluster name | [optional] 
 **eks_region** | **str** | Region | [optional] [default to 'us-east-2']
 **eks_secret_access_key** | **str** | Secret Access Key | [optional] 
+**input_rule** | **list[str]** | Agentic input rule in name&#x3D;...,rule&#x3D;... format (e.g. name&#x3D;rule1,rule&#x3D;Sanitize input) Mirrors commands.AgenticRulesParams — kept separate because ResourceDS cannot embed it (different package, different struct layout). | [optional] 
 **item_custom_fields** | **dict(str, str)** | Additional custom fields to associate with the item | [optional] 
 **json** | **bool** | Set output format to JSON | [optional] [default to False]
 **name** | **str** | Dynamic secret name | 
+**output_rule** | **list[str]** | Agentic output rule in name&#x3D;...,rule&#x3D;... format (e.g. name&#x3D;rule1,rule&#x3D;Mask secrets) | [optional] 
 **producer_encryption_key_name** | **str** | Dynamic producer encryption key | [optional] 
 **secure_access_allow_port_forwading** | **bool** | Enable Port forwarding while using CLI access | [optional] 
 **secure_access_bastion_issuer** | **str** | Deprecated. use secure-access-certificate-issuer | [optional] 

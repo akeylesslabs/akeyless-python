@@ -42,10 +42,12 @@ class DynamicSecretUpdateGoogleWorkspace(object):
         'gcp_key': 'str',
         'group_email': 'str',
         'group_role': 'str',
+        'input_rule': 'list[str]',
         'item_custom_fields': 'dict(str, str)',
         'json': 'bool',
         'name': 'str',
         'new_name': 'str',
+        'output_rule': 'list[str]',
         'producer_encryption_key_name': 'str',
         'role_name': 'str',
         'role_scope': 'str',
@@ -71,10 +73,12 @@ class DynamicSecretUpdateGoogleWorkspace(object):
         'gcp_key': 'gcp-key',
         'group_email': 'group-email',
         'group_role': 'group-role',
+        'input_rule': 'input-rule',
         'item_custom_fields': 'item-custom-fields',
         'json': 'json',
         'name': 'name',
         'new_name': 'new-name',
+        'output_rule': 'output-rule',
         'producer_encryption_key_name': 'producer-encryption-key-name',
         'role_name': 'role-name',
         'role_scope': 'role-scope',
@@ -91,7 +95,7 @@ class DynamicSecretUpdateGoogleWorkspace(object):
         'user_ttl': 'user-ttl'
     }
 
-    def __init__(self, access_mode=None, admin_email=None, delete_protection=None, description=None, fixed_user_claim_keyname='ext_email', gcp_key=None, group_email=None, group_role=None, item_custom_fields=None, json=False, name=None, new_name=None, producer_encryption_key_name=None, role_name=None, role_scope=None, secure_access_delay=None, secure_access_enable=None, secure_access_url=None, secure_access_web=True, secure_access_web_browsing=False, secure_access_web_proxy=False, tags=None, target_name=None, token=None, uid_token=None, user_ttl='60m', local_vars_configuration=None):  # noqa: E501
+    def __init__(self, access_mode=None, admin_email=None, delete_protection=None, description=None, fixed_user_claim_keyname='ext_email', gcp_key=None, group_email=None, group_role=None, input_rule=None, item_custom_fields=None, json=False, name=None, new_name=None, output_rule=None, producer_encryption_key_name=None, role_name=None, role_scope=None, secure_access_delay=None, secure_access_enable=None, secure_access_url=None, secure_access_web=True, secure_access_web_browsing=False, secure_access_web_proxy=False, tags=None, target_name=None, token=None, uid_token=None, user_ttl='60m', local_vars_configuration=None):  # noqa: E501
         """DynamicSecretUpdateGoogleWorkspace - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -105,10 +109,12 @@ class DynamicSecretUpdateGoogleWorkspace(object):
         self._gcp_key = None
         self._group_email = None
         self._group_role = None
+        self._input_rule = None
         self._item_custom_fields = None
         self._json = None
         self._name = None
         self._new_name = None
+        self._output_rule = None
         self._producer_encryption_key_name = None
         self._role_name = None
         self._role_scope = None
@@ -139,6 +145,8 @@ class DynamicSecretUpdateGoogleWorkspace(object):
             self.group_email = group_email
         if group_role is not None:
             self.group_role = group_role
+        if input_rule is not None:
+            self.input_rule = input_rule
         if item_custom_fields is not None:
             self.item_custom_fields = item_custom_fields
         if json is not None:
@@ -146,6 +154,8 @@ class DynamicSecretUpdateGoogleWorkspace(object):
         self.name = name
         if new_name is not None:
             self.new_name = new_name
+        if output_rule is not None:
+            self.output_rule = output_rule
         if producer_encryption_key_name is not None:
             self.producer_encryption_key_name = producer_encryption_key_name
         if role_name is not None:
@@ -360,6 +370,29 @@ class DynamicSecretUpdateGoogleWorkspace(object):
         self._group_role = group_role
 
     @property
+    def input_rule(self):
+        """Gets the input_rule of this DynamicSecretUpdateGoogleWorkspace.  # noqa: E501
+
+        Agentic input rule in name=...,rule=... format (e.g. name=rule1,rule=Sanitize input) Mirrors commands.AgenticRulesParams — kept separate because ResourceDS cannot embed it (different package, different struct layout).  # noqa: E501
+
+        :return: The input_rule of this DynamicSecretUpdateGoogleWorkspace.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._input_rule
+
+    @input_rule.setter
+    def input_rule(self, input_rule):
+        """Sets the input_rule of this DynamicSecretUpdateGoogleWorkspace.
+
+        Agentic input rule in name=...,rule=... format (e.g. name=rule1,rule=Sanitize input) Mirrors commands.AgenticRulesParams — kept separate because ResourceDS cannot embed it (different package, different struct layout).  # noqa: E501
+
+        :param input_rule: The input_rule of this DynamicSecretUpdateGoogleWorkspace.  # noqa: E501
+        :type: list[str]
+        """
+
+        self._input_rule = input_rule
+
+    @property
     def item_custom_fields(self):
         """Gets the item_custom_fields of this DynamicSecretUpdateGoogleWorkspace.  # noqa: E501
 
@@ -452,6 +485,29 @@ class DynamicSecretUpdateGoogleWorkspace(object):
         """
 
         self._new_name = new_name
+
+    @property
+    def output_rule(self):
+        """Gets the output_rule of this DynamicSecretUpdateGoogleWorkspace.  # noqa: E501
+
+        Agentic output rule in name=...,rule=... format (e.g. name=rule1,rule=Mask secrets)  # noqa: E501
+
+        :return: The output_rule of this DynamicSecretUpdateGoogleWorkspace.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._output_rule
+
+    @output_rule.setter
+    def output_rule(self, output_rule):
+        """Sets the output_rule of this DynamicSecretUpdateGoogleWorkspace.
+
+        Agentic output rule in name=...,rule=... format (e.g. name=rule1,rule=Mask secrets)  # noqa: E501
+
+        :param output_rule: The output_rule of this DynamicSecretUpdateGoogleWorkspace.  # noqa: E501
+        :type: list[str]
+        """
+
+        self._output_rule = output_rule
 
     @property
     def producer_encryption_key_name(self):

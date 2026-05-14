@@ -13,10 +13,12 @@ Name | Type | Description | Notes
 **hanadb_port** | **str** | HanaDb Port | [optional] [default to '443']
 **hanadb_revocation_statements** | **str** | HanaDb Revocation statements | [optional] 
 **hanadb_username** | **str** | HanaDb Username | [optional] 
+**input_rule** | **list[str]** | Agentic input rule in name&#x3D;...,rule&#x3D;... format (e.g. name&#x3D;rule1,rule&#x3D;Sanitize input) Mirrors commands.AgenticRulesParams — kept separate because ResourceDS cannot embed it (different package, different struct layout). | [optional] 
 **item_custom_fields** | **dict(str, str)** | Additional custom fields to associate with the item | [optional] 
 **json** | **bool** | Set output format to JSON | [optional] [default to False]
 **name** | **str** | Dynamic secret name | 
 **new_name** | **str** | Dynamic secret name | [optional] 
+**output_rule** | **list[str]** | Agentic output rule in name&#x3D;...,rule&#x3D;... format (e.g. name&#x3D;rule1,rule&#x3D;Mask secrets) | [optional] 
 **password_length** | **str** | The length of the password to be generated | [optional] 
 **producer_encryption_key_name** | **str** | Dynamic producer encryption key | [optional] 
 **secure_access_bastion_issuer** | **str** | Deprecated. use secure-access-certificate-issuer | [optional] 

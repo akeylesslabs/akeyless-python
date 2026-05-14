@@ -5,7 +5,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **account_id** | **str** |  | [optional] 
 **creation_date** | **datetime** |  | [optional] 
-**deletion_date** | [**NullTime**](NullTime.md) |  | [optional] 
+**deletion_date** | **datetime** |  | [optional] 
 **id** | **int** |  | [optional] 
 **modification_date** | **datetime** |  | [optional] 
 **name** | **str** |  | [optional] 

@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **event_center_access** | **str** | Allow this role to view Event Center. Currently only &#39;none&#39;, &#39;scoped&#39; and &#39;all&#39; values are supported | [optional] 
 **event_forwarder_access** | **str** | Allow this role to manage Event Forwarders. Currently only &#39;none&#39; and &#39;all&#39; values are supported. | [optional] 
 **gw_analytics_access** | **str** | Allow this role to view gw analytics. Currently only &#39;none&#39;, &#39;scoped&#39;, &#39;all&#39; values are supported, allowing associated auth methods to view reports produced by the same auth methods. | [optional] 
+**isi_access** | **str** | Allow this role to access Identity &amp; Secrets Intelligence. Currently only &#39;none&#39;, &#39;scoped&#39; and &#39;all&#39; values are supported. | [optional] 
 **json** | **bool** | Set output format to JSON | [optional] [default to False]
 **name** | **str** | Role name | 
 **new_comment** | **str** | Deprecated - use description | [optional] [default to 'default_comment']

@@ -15,9 +15,11 @@ Name | Type | Description | Notes
 **gcp_project_id** | **str** | GCP Project ID override for dynamic secret operations | [optional] 
 **gcp_sa_email** | **str** | The email of the fixed service account to generate keys or tokens for (Relevant only when --access-type&#x3D;sa and --service-account-type&#x3D;fixed) | [optional] 
 **gcp_token_scopes** | **str** | Access token scopes list, e.g. scope1,scope2 (Relevant only when --access-type&#x3D;sa; required when --gcp-cred-type&#x3D;token) | [optional] 
+**input_rule** | **list[str]** | Agentic input rule in name&#x3D;...,rule&#x3D;... format (e.g. name&#x3D;rule1,rule&#x3D;Sanitize input) Mirrors commands.AgenticRulesParams — kept separate because ResourceDS cannot embed it (different package, different struct layout). | [optional] 
 **item_custom_fields** | **dict(str, str)** | Additional custom fields to associate with the item | [optional] 
 **json** | **bool** | Set output format to JSON | [optional] [default to False]
 **name** | **str** | Dynamic secret name | 
+**output_rule** | **list[str]** | Agentic output rule in name&#x3D;...,rule&#x3D;... format (e.g. name&#x3D;rule1,rule&#x3D;Mask secrets) | [optional] 
 **producer_encryption_key_name** | **str** | Dynamic producer encryption key | [optional] 
 **role_binding** | **str** | Role binding definitions in JSON format (Relevant only when --access-type&#x3D;sa and --service-account-type&#x3D;dynamic) | [optional] 
 **role_names** | **str** | Comma-separated list of GCP roles to assign to the user (Relevant only when --access-type&#x3D;external) | [optional] 

@@ -40,6 +40,8 @@ class UscUpdate(object):
         'namespace': 'str',
         'object_type': 'str',
         'pfx_password': 'str',
+        'remote_secret_activation_date': 'str',
+        'remote_secret_expires': 'str',
         'secret_id': 'str',
         'selected_repositories': 'str',
         'tags': 'dict(str, str)',
@@ -57,6 +59,8 @@ class UscUpdate(object):
         'namespace': 'namespace',
         'object_type': 'object-type',
         'pfx_password': 'pfx-password',
+        'remote_secret_activation_date': 'remote-secret-activation-date',
+        'remote_secret_expires': 'remote-secret-expires',
         'secret_id': 'secret-id',
         'selected_repositories': 'selected-repositories',
         'tags': 'tags',
@@ -67,7 +71,7 @@ class UscUpdate(object):
         'value': 'value'
     }
 
-    def __init__(self, binary_value=None, description=None, json=False, namespace=None, object_type=None, pfx_password=None, secret_id=None, selected_repositories=None, tags=None, token=None, uid_token=None, usc_encryption_key=None, usc_name=None, value=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, binary_value=None, description=None, json=False, namespace=None, object_type=None, pfx_password=None, remote_secret_activation_date=None, remote_secret_expires=None, secret_id=None, selected_repositories=None, tags=None, token=None, uid_token=None, usc_encryption_key=None, usc_name=None, value=None, local_vars_configuration=None):  # noqa: E501
         """UscUpdate - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -79,6 +83,8 @@ class UscUpdate(object):
         self._namespace = None
         self._object_type = None
         self._pfx_password = None
+        self._remote_secret_activation_date = None
+        self._remote_secret_expires = None
         self._secret_id = None
         self._selected_repositories = None
         self._tags = None
@@ -101,6 +107,10 @@ class UscUpdate(object):
             self.object_type = object_type
         if pfx_password is not None:
             self.pfx_password = pfx_password
+        if remote_secret_activation_date is not None:
+            self.remote_secret_activation_date = remote_secret_activation_date
+        if remote_secret_expires is not None:
+            self.remote_secret_expires = remote_secret_expires
         self.secret_id = secret_id
         if selected_repositories is not None:
             self.selected_repositories = selected_repositories
@@ -250,6 +260,52 @@ class UscUpdate(object):
         """
 
         self._pfx_password = pfx_password
+
+    @property
+    def remote_secret_activation_date(self):
+        """Gets the remote_secret_activation_date of this UscUpdate.  # noqa: E501
+
+        Activation date for the secret on the remote endpoint, in UTC format: YYYY-MM-DDTHH:MM:SSZ  # noqa: E501
+
+        :return: The remote_secret_activation_date of this UscUpdate.  # noqa: E501
+        :rtype: str
+        """
+        return self._remote_secret_activation_date
+
+    @remote_secret_activation_date.setter
+    def remote_secret_activation_date(self, remote_secret_activation_date):
+        """Sets the remote_secret_activation_date of this UscUpdate.
+
+        Activation date for the secret on the remote endpoint, in UTC format: YYYY-MM-DDTHH:MM:SSZ  # noqa: E501
+
+        :param remote_secret_activation_date: The remote_secret_activation_date of this UscUpdate.  # noqa: E501
+        :type: str
+        """
+
+        self._remote_secret_activation_date = remote_secret_activation_date
+
+    @property
+    def remote_secret_expires(self):
+        """Gets the remote_secret_expires of this UscUpdate.  # noqa: E501
+
+        Expiration time for the secret on the remote endpoint, in UTC format: YYYY-MM-DDTHH:MM:SSZ  # noqa: E501
+
+        :return: The remote_secret_expires of this UscUpdate.  # noqa: E501
+        :rtype: str
+        """
+        return self._remote_secret_expires
+
+    @remote_secret_expires.setter
+    def remote_secret_expires(self, remote_secret_expires):
+        """Sets the remote_secret_expires of this UscUpdate.
+
+        Expiration time for the secret on the remote endpoint, in UTC format: YYYY-MM-DDTHH:MM:SSZ  # noqa: E501
+
+        :param remote_secret_expires: The remote_secret_expires of this UscUpdate.  # noqa: E501
+        :type: str
+        """
+
+        self._remote_secret_expires = remote_secret_expires
 
     @property
     def secret_id(self):

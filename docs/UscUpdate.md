@@ -10,6 +10,8 @@ Name | Type | Description | Notes
 **namespace** | **str** | The namespace (relevant for Hashi vault target) | [optional] 
 **object_type** | **str** |  | [optional] 
 **pfx_password** | **str** | Optional, the passphrase that protects the private key within the pfx certificate (Relevant only for Azure KV certificates) | [optional] 
+**remote_secret_activation_date** | **str** | Activation date for the secret on the remote endpoint, in UTC format: YYYY-MM-DDTHH:MM:SSZ | [optional] 
+**remote_secret_expires** | **str** | Expiration time for the secret on the remote endpoint, in UTC format: YYYY-MM-DDTHH:MM:SSZ | [optional] 
 **secret_id** | **str** | The universal secrets id (or name, for AWS, Azure, K8s or Hashi vault targets) to update | 
 **selected_repositories** | **str** | GitHub selected repositories (required for GitHub USC when repository-access is &#39;selected&#39; or for repository scope) Comma-separated repository names (e.g., \&quot;repo1,repo2\&quot;) | [optional] 
 **tags** | **dict(str, str)** | Tags for the universal secrets | [optional] 

@@ -43,10 +43,12 @@ class DynamicSecretUpdateEks(object):
         'eks_cluster_name': 'str',
         'eks_region': 'str',
         'eks_secret_access_key': 'str',
+        'input_rule': 'list[str]',
         'item_custom_fields': 'dict(str, str)',
         'json': 'bool',
         'name': 'str',
         'new_name': 'str',
+        'output_rule': 'list[str]',
         'producer_encryption_key_name': 'str',
         'secure_access_allow_port_forwading': 'bool',
         'secure_access_bastion_issuer': 'str',
@@ -72,10 +74,12 @@ class DynamicSecretUpdateEks(object):
         'eks_cluster_name': 'eks-cluster-name',
         'eks_region': 'eks-region',
         'eks_secret_access_key': 'eks-secret-access-key',
+        'input_rule': 'input-rule',
         'item_custom_fields': 'item-custom-fields',
         'json': 'json',
         'name': 'name',
         'new_name': 'new-name',
+        'output_rule': 'output-rule',
         'producer_encryption_key_name': 'producer-encryption-key-name',
         'secure_access_allow_port_forwading': 'secure-access-allow-port-forwading',
         'secure_access_bastion_issuer': 'secure-access-bastion-issuer',
@@ -91,7 +95,7 @@ class DynamicSecretUpdateEks(object):
         'user_ttl': 'user-ttl'
     }
 
-    def __init__(self, delete_protection=None, description=None, eks_access_key_id=None, eks_assume_role=None, eks_cluster_ca_cert=None, eks_cluster_endpoint=None, eks_cluster_name=None, eks_region='us-east-2', eks_secret_access_key=None, item_custom_fields=None, json=False, name=None, new_name=None, producer_encryption_key_name=None, secure_access_allow_port_forwading=None, secure_access_bastion_issuer=None, secure_access_certificate_issuer=None, secure_access_cluster_endpoint=None, secure_access_delay=None, secure_access_enable=None, secure_access_web=False, tags=None, target_name=None, token=None, uid_token=None, user_ttl='15m', local_vars_configuration=None):  # noqa: E501
+    def __init__(self, delete_protection=None, description=None, eks_access_key_id=None, eks_assume_role=None, eks_cluster_ca_cert=None, eks_cluster_endpoint=None, eks_cluster_name=None, eks_region='us-east-2', eks_secret_access_key=None, input_rule=None, item_custom_fields=None, json=False, name=None, new_name=None, output_rule=None, producer_encryption_key_name=None, secure_access_allow_port_forwading=None, secure_access_bastion_issuer=None, secure_access_certificate_issuer=None, secure_access_cluster_endpoint=None, secure_access_delay=None, secure_access_enable=None, secure_access_web=False, tags=None, target_name=None, token=None, uid_token=None, user_ttl='15m', local_vars_configuration=None):  # noqa: E501
         """DynamicSecretUpdateEks - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -106,10 +110,12 @@ class DynamicSecretUpdateEks(object):
         self._eks_cluster_name = None
         self._eks_region = None
         self._eks_secret_access_key = None
+        self._input_rule = None
         self._item_custom_fields = None
         self._json = None
         self._name = None
         self._new_name = None
+        self._output_rule = None
         self._producer_encryption_key_name = None
         self._secure_access_allow_port_forwading = None
         self._secure_access_bastion_issuer = None
@@ -143,6 +149,8 @@ class DynamicSecretUpdateEks(object):
             self.eks_region = eks_region
         if eks_secret_access_key is not None:
             self.eks_secret_access_key = eks_secret_access_key
+        if input_rule is not None:
+            self.input_rule = input_rule
         if item_custom_fields is not None:
             self.item_custom_fields = item_custom_fields
         if json is not None:
@@ -150,6 +158,8 @@ class DynamicSecretUpdateEks(object):
         self.name = name
         if new_name is not None:
             self.new_name = new_name
+        if output_rule is not None:
+            self.output_rule = output_rule
         if producer_encryption_key_name is not None:
             self.producer_encryption_key_name = producer_encryption_key_name
         if secure_access_allow_port_forwading is not None:
@@ -385,6 +395,29 @@ class DynamicSecretUpdateEks(object):
         self._eks_secret_access_key = eks_secret_access_key
 
     @property
+    def input_rule(self):
+        """Gets the input_rule of this DynamicSecretUpdateEks.  # noqa: E501
+
+        Agentic input rule in name=...,rule=... format (e.g. name=rule1,rule=Sanitize input) Mirrors commands.AgenticRulesParams — kept separate because ResourceDS cannot embed it (different package, different struct layout).  # noqa: E501
+
+        :return: The input_rule of this DynamicSecretUpdateEks.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._input_rule
+
+    @input_rule.setter
+    def input_rule(self, input_rule):
+        """Sets the input_rule of this DynamicSecretUpdateEks.
+
+        Agentic input rule in name=...,rule=... format (e.g. name=rule1,rule=Sanitize input) Mirrors commands.AgenticRulesParams — kept separate because ResourceDS cannot embed it (different package, different struct layout).  # noqa: E501
+
+        :param input_rule: The input_rule of this DynamicSecretUpdateEks.  # noqa: E501
+        :type: list[str]
+        """
+
+        self._input_rule = input_rule
+
+    @property
     def item_custom_fields(self):
         """Gets the item_custom_fields of this DynamicSecretUpdateEks.  # noqa: E501
 
@@ -477,6 +510,29 @@ class DynamicSecretUpdateEks(object):
         """
 
         self._new_name = new_name
+
+    @property
+    def output_rule(self):
+        """Gets the output_rule of this DynamicSecretUpdateEks.  # noqa: E501
+
+        Agentic output rule in name=...,rule=... format (e.g. name=rule1,rule=Mask secrets)  # noqa: E501
+
+        :return: The output_rule of this DynamicSecretUpdateEks.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._output_rule
+
+    @output_rule.setter
+    def output_rule(self, output_rule):
+        """Sets the output_rule of this DynamicSecretUpdateEks.
+
+        Agentic output rule in name=...,rule=... format (e.g. name=rule1,rule=Mask secrets)  # noqa: E501
+
+        :param output_rule: The output_rule of this DynamicSecretUpdateEks.  # noqa: E501
+        :type: list[str]
+        """
+
+        self._output_rule = output_rule
 
     @property
     def producer_encryption_key_name(self):

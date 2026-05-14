@@ -38,6 +38,7 @@ class KmipDescribeServerOutput(object):
         'ca_cert': 'list[int]',
         'certificate_issue_date': 'datetime',
         'certificate_ttl_in_seconds': 'int',
+        'expiration_events': 'list[CertificateExpirationEvent]',
         'hostname': 'str',
         'root': 'str'
     }
@@ -47,11 +48,12 @@ class KmipDescribeServerOutput(object):
         'ca_cert': 'ca_cert',
         'certificate_issue_date': 'certificate_issue_date',
         'certificate_ttl_in_seconds': 'certificate_ttl_in_seconds',
+        'expiration_events': 'expiration_events',
         'hostname': 'hostname',
         'root': 'root'
     }
 
-    def __init__(self, active=None, ca_cert=None, certificate_issue_date=None, certificate_ttl_in_seconds=None, hostname=None, root=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, active=None, ca_cert=None, certificate_issue_date=None, certificate_ttl_in_seconds=None, expiration_events=None, hostname=None, root=None, local_vars_configuration=None):  # noqa: E501
         """KmipDescribeServerOutput - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -61,6 +63,7 @@ class KmipDescribeServerOutput(object):
         self._ca_cert = None
         self._certificate_issue_date = None
         self._certificate_ttl_in_seconds = None
+        self._expiration_events = None
         self._hostname = None
         self._root = None
         self.discriminator = None
@@ -73,6 +76,8 @@ class KmipDescribeServerOutput(object):
             self.certificate_issue_date = certificate_issue_date
         if certificate_ttl_in_seconds is not None:
             self.certificate_ttl_in_seconds = certificate_ttl_in_seconds
+        if expiration_events is not None:
+            self.expiration_events = expiration_events
         if hostname is not None:
             self.hostname = hostname
         if root is not None:
@@ -161,6 +166,27 @@ class KmipDescribeServerOutput(object):
         """
 
         self._certificate_ttl_in_seconds = certificate_ttl_in_seconds
+
+    @property
+    def expiration_events(self):
+        """Gets the expiration_events of this KmipDescribeServerOutput.  # noqa: E501
+
+
+        :return: The expiration_events of this KmipDescribeServerOutput.  # noqa: E501
+        :rtype: list[CertificateExpirationEvent]
+        """
+        return self._expiration_events
+
+    @expiration_events.setter
+    def expiration_events(self, expiration_events):
+        """Sets the expiration_events of this KmipDescribeServerOutput.
+
+
+        :param expiration_events: The expiration_events of this KmipDescribeServerOutput.  # noqa: E501
+        :type: list[CertificateExpirationEvent]
+        """
+
+        self._expiration_events = expiration_events
 
     @property
     def hostname(self):

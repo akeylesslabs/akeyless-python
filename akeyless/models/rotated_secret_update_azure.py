@@ -47,6 +47,7 @@ class RotatedSecretUpdateAzure(object):
         'grace_rotation_hour': 'int',
         'grace_rotation_interval': 'str',
         'grace_rotation_timing': 'str',
+        'input_rule': 'list[str]',
         'item_custom_fields': 'dict(str, str)',
         'json': 'bool',
         'keep_prev_version': 'str',
@@ -55,6 +56,7 @@ class RotatedSecretUpdateAzure(object):
         'max_versions': 'str',
         'name': 'str',
         'new_name': 'str',
+        'output_rule': 'list[str]',
         'password_length': 'str',
         'resource_group_name': 'str',
         'resource_name': 'str',
@@ -89,6 +91,7 @@ class RotatedSecretUpdateAzure(object):
         'grace_rotation_hour': 'grace-rotation-hour',
         'grace_rotation_interval': 'grace-rotation-interval',
         'grace_rotation_timing': 'grace-rotation-timing',
+        'input_rule': 'input-rule',
         'item_custom_fields': 'item-custom-fields',
         'json': 'json',
         'keep_prev_version': 'keep-prev-version',
@@ -97,6 +100,7 @@ class RotatedSecretUpdateAzure(object):
         'max_versions': 'max-versions',
         'name': 'name',
         'new_name': 'new-name',
+        'output_rule': 'output-rule',
         'password_length': 'password-length',
         'resource_group_name': 'resource-group-name',
         'resource_name': 'resource-name',
@@ -117,7 +121,7 @@ class RotatedSecretUpdateAzure(object):
         'username': 'username'
     }
 
-    def __init__(self, add_tag=None, api_id=None, api_key=None, application_id=None, authentication_credentials='use-user-creds', auto_rotate=None, delete_protection=None, description='default_metadata', explicitly_set_sa='false', grace_rotation=None, grace_rotation_hour=None, grace_rotation_interval=None, grace_rotation_timing=None, item_custom_fields=None, json=False, keep_prev_version=None, key=None, lock_during_sra_session=None, max_versions=None, name=None, new_name=None, password_length=None, resource_group_name=None, resource_name=None, rm_tag=None, rotate_after_disconnect=None, rotation_event_in=None, rotation_hour=None, rotation_interval=None, secure_access_disable_concurrent_connections=None, secure_access_enable=None, secure_access_url=None, secure_access_web=False, secure_access_web_browsing=False, secure_access_web_proxy=False, storage_account_key_name=None, token=None, uid_token=None, username=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, add_tag=None, api_id=None, api_key=None, application_id=None, authentication_credentials='use-user-creds', auto_rotate=None, delete_protection=None, description='default_metadata', explicitly_set_sa='false', grace_rotation=None, grace_rotation_hour=None, grace_rotation_interval=None, grace_rotation_timing=None, input_rule=None, item_custom_fields=None, json=False, keep_prev_version=None, key=None, lock_during_sra_session=None, max_versions=None, name=None, new_name=None, output_rule=None, password_length=None, resource_group_name=None, resource_name=None, rm_tag=None, rotate_after_disconnect=None, rotation_event_in=None, rotation_hour=None, rotation_interval=None, secure_access_disable_concurrent_connections=None, secure_access_enable=None, secure_access_url=None, secure_access_web=False, secure_access_web_browsing=False, secure_access_web_proxy=False, storage_account_key_name=None, token=None, uid_token=None, username=None, local_vars_configuration=None):  # noqa: E501
         """RotatedSecretUpdateAzure - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -136,6 +140,7 @@ class RotatedSecretUpdateAzure(object):
         self._grace_rotation_hour = None
         self._grace_rotation_interval = None
         self._grace_rotation_timing = None
+        self._input_rule = None
         self._item_custom_fields = None
         self._json = None
         self._keep_prev_version = None
@@ -144,6 +149,7 @@ class RotatedSecretUpdateAzure(object):
         self._max_versions = None
         self._name = None
         self._new_name = None
+        self._output_rule = None
         self._password_length = None
         self._resource_group_name = None
         self._resource_name = None
@@ -190,6 +196,8 @@ class RotatedSecretUpdateAzure(object):
             self.grace_rotation_interval = grace_rotation_interval
         if grace_rotation_timing is not None:
             self.grace_rotation_timing = grace_rotation_timing
+        if input_rule is not None:
+            self.input_rule = input_rule
         if item_custom_fields is not None:
             self.item_custom_fields = item_custom_fields
         if json is not None:
@@ -205,6 +213,8 @@ class RotatedSecretUpdateAzure(object):
         self.name = name
         if new_name is not None:
             self.new_name = new_name
+        if output_rule is not None:
+            self.output_rule = output_rule
         if password_length is not None:
             self.password_length = password_length
         if resource_group_name is not None:
@@ -542,6 +552,29 @@ class RotatedSecretUpdateAzure(object):
         self._grace_rotation_timing = grace_rotation_timing
 
     @property
+    def input_rule(self):
+        """Gets the input_rule of this RotatedSecretUpdateAzure.  # noqa: E501
+
+        Agentic input rule in name=...,rule=... format (e.g. name=rule1,rule=Sanitize input)  # noqa: E501
+
+        :return: The input_rule of this RotatedSecretUpdateAzure.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._input_rule
+
+    @input_rule.setter
+    def input_rule(self, input_rule):
+        """Sets the input_rule of this RotatedSecretUpdateAzure.
+
+        Agentic input rule in name=...,rule=... format (e.g. name=rule1,rule=Sanitize input)  # noqa: E501
+
+        :param input_rule: The input_rule of this RotatedSecretUpdateAzure.  # noqa: E501
+        :type: list[str]
+        """
+
+        self._input_rule = input_rule
+
+    @property
     def item_custom_fields(self):
         """Gets the item_custom_fields of this RotatedSecretUpdateAzure.  # noqa: E501
 
@@ -726,6 +759,29 @@ class RotatedSecretUpdateAzure(object):
         """
 
         self._new_name = new_name
+
+    @property
+    def output_rule(self):
+        """Gets the output_rule of this RotatedSecretUpdateAzure.  # noqa: E501
+
+        Agentic output rule in name=...,rule=... format (e.g. name=rule1,rule=Mask secrets)  # noqa: E501
+
+        :return: The output_rule of this RotatedSecretUpdateAzure.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._output_rule
+
+    @output_rule.setter
+    def output_rule(self, output_rule):
+        """Sets the output_rule of this RotatedSecretUpdateAzure.
+
+        Agentic output rule in name=...,rule=... format (e.g. name=rule1,rule=Mask secrets)  # noqa: E501
+
+        :param output_rule: The output_rule of this RotatedSecretUpdateAzure.  # noqa: E501
+        :type: list[str]
+        """
+
+        self._output_rule = output_rule
 
     @property
     def password_length(self):

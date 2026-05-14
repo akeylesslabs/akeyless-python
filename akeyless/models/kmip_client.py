@@ -37,6 +37,7 @@ class KMIPClient(object):
         'activate_keys_on_creation': 'bool',
         'certificate_issue_date': 'datetime',
         'certificate_ttl_in_seconds': 'int',
+        'expiration_events': 'list[CertificateExpirationEvent]',
         'id': 'str',
         'name': 'str',
         'rules': 'list[PathRule]'
@@ -46,12 +47,13 @@ class KMIPClient(object):
         'activate_keys_on_creation': 'activate_keys_on_creation',
         'certificate_issue_date': 'certificate_issue_date',
         'certificate_ttl_in_seconds': 'certificate_ttl_in_seconds',
+        'expiration_events': 'expiration_events',
         'id': 'id',
         'name': 'name',
         'rules': 'rules'
     }
 
-    def __init__(self, activate_keys_on_creation=None, certificate_issue_date=None, certificate_ttl_in_seconds=None, id=None, name=None, rules=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, activate_keys_on_creation=None, certificate_issue_date=None, certificate_ttl_in_seconds=None, expiration_events=None, id=None, name=None, rules=None, local_vars_configuration=None):  # noqa: E501
         """KMIPClient - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -60,6 +62,7 @@ class KMIPClient(object):
         self._activate_keys_on_creation = None
         self._certificate_issue_date = None
         self._certificate_ttl_in_seconds = None
+        self._expiration_events = None
         self._id = None
         self._name = None
         self._rules = None
@@ -71,6 +74,8 @@ class KMIPClient(object):
             self.certificate_issue_date = certificate_issue_date
         if certificate_ttl_in_seconds is not None:
             self.certificate_ttl_in_seconds = certificate_ttl_in_seconds
+        if expiration_events is not None:
+            self.expiration_events = expiration_events
         if id is not None:
             self.id = id
         if name is not None:
@@ -140,6 +145,27 @@ class KMIPClient(object):
         """
 
         self._certificate_ttl_in_seconds = certificate_ttl_in_seconds
+
+    @property
+    def expiration_events(self):
+        """Gets the expiration_events of this KMIPClient.  # noqa: E501
+
+
+        :return: The expiration_events of this KMIPClient.  # noqa: E501
+        :rtype: list[CertificateExpirationEvent]
+        """
+        return self._expiration_events
+
+    @expiration_events.setter
+    def expiration_events(self, expiration_events):
+        """Sets the expiration_events of this KMIPClient.
+
+
+        :param expiration_events: The expiration_events of this KMIPClient.  # noqa: E501
+        :type: list[CertificateExpirationEvent]
+        """
+
+        self._expiration_events = expiration_events
 
     @property
     def id(self):

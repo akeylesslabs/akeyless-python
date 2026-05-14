@@ -38,6 +38,7 @@ class TargetUpdateGoogleTrust(object):
         'delete_protection': 'str',
         'description': 'str',
         'dns_target_creds': 'str',
+        'dns_zone': 'str',
         'eab_hmac_key': 'str',
         'eab_key_id': 'str',
         'email': 'str',
@@ -61,6 +62,7 @@ class TargetUpdateGoogleTrust(object):
         'delete_protection': 'delete_protection',
         'description': 'description',
         'dns_target_creds': 'dns-target-creds',
+        'dns_zone': 'dns-zone',
         'eab_hmac_key': 'eab-hmac-key',
         'eab_key_id': 'eab-key-id',
         'email': 'email',
@@ -79,7 +81,7 @@ class TargetUpdateGoogleTrust(object):
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, acme_challenge='dns', delete_protection=None, description=None, dns_target_creds=None, eab_hmac_key=None, eab_key_id=None, email=None, gcp_project=None, google_trust_url='production', hosted_zone=None, json=False, keep_prev_version=None, key=None, max_versions=None, name=None, new_name=None, resource_group=None, timeout='5m', token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, acme_challenge='dns', delete_protection=None, description=None, dns_target_creds=None, dns_zone=None, eab_hmac_key=None, eab_key_id=None, email=None, gcp_project=None, google_trust_url='production', hosted_zone=None, json=False, keep_prev_version=None, key=None, max_versions=None, name=None, new_name=None, resource_group=None, timeout='5m', token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """TargetUpdateGoogleTrust - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -89,6 +91,7 @@ class TargetUpdateGoogleTrust(object):
         self._delete_protection = None
         self._description = None
         self._dns_target_creds = None
+        self._dns_zone = None
         self._eab_hmac_key = None
         self._eab_key_id = None
         self._email = None
@@ -115,6 +118,8 @@ class TargetUpdateGoogleTrust(object):
             self.description = description
         if dns_target_creds is not None:
             self.dns_target_creds = dns_target_creds
+        if dns_zone is not None:
+            self.dns_zone = dns_zone
         if eab_hmac_key is not None:
             self.eab_hmac_key = eab_hmac_key
         if eab_key_id is not None:
@@ -219,7 +224,7 @@ class TargetUpdateGoogleTrust(object):
     def dns_target_creds(self):
         """Gets the dns_target_creds of this TargetUpdateGoogleTrust.  # noqa: E501
 
-        Name of existing cloud target for DNS credentials. Required when challenge type is dns. Supported providers: AWS, Azure, GCP  # noqa: E501
+        Name of existing cloud target for DNS credentials. Required when challenge type is dns. Supported providers: AWS, Azure, GCP, Cloudflare  # noqa: E501
 
         :return: The dns_target_creds of this TargetUpdateGoogleTrust.  # noqa: E501
         :rtype: str
@@ -230,13 +235,36 @@ class TargetUpdateGoogleTrust(object):
     def dns_target_creds(self, dns_target_creds):
         """Sets the dns_target_creds of this TargetUpdateGoogleTrust.
 
-        Name of existing cloud target for DNS credentials. Required when challenge type is dns. Supported providers: AWS, Azure, GCP  # noqa: E501
+        Name of existing cloud target for DNS credentials. Required when challenge type is dns. Supported providers: AWS, Azure, GCP, Cloudflare  # noqa: E501
 
         :param dns_target_creds: The dns_target_creds of this TargetUpdateGoogleTrust.  # noqa: E501
         :type: str
         """
 
         self._dns_target_creds = dns_target_creds
+
+    @property
+    def dns_zone(self):
+        """Gets the dns_zone of this TargetUpdateGoogleTrust.  # noqa: E501
+
+        Cloudflare DNS zone identifier. Required when DNS credentials target is Cloudflare  # noqa: E501
+
+        :return: The dns_zone of this TargetUpdateGoogleTrust.  # noqa: E501
+        :rtype: str
+        """
+        return self._dns_zone
+
+    @dns_zone.setter
+    def dns_zone(self, dns_zone):
+        """Sets the dns_zone of this TargetUpdateGoogleTrust.
+
+        Cloudflare DNS zone identifier. Required when DNS credentials target is Cloudflare  # noqa: E501
+
+        :param dns_zone: The dns_zone of this TargetUpdateGoogleTrust.  # noqa: E501
+        :type: str
+        """
+
+        self._dns_zone = dns_zone
 
     @property
     def eab_hmac_key(self):

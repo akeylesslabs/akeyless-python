@@ -42,10 +42,12 @@ class DynamicSecretCreateSnowflake(object):
         'db_name': 'str',
         'delete_protection': 'str',
         'description': 'str',
+        'input_rule': 'list[str]',
         'item_custom_fields': 'dict(str, str)',
         'json': 'bool',
         'key_algo': 'str',
         'name': 'str',
+        'output_rule': 'list[str]',
         'password_length': 'str',
         'private_key': 'str',
         'private_key_passphrase': 'str',
@@ -67,10 +69,12 @@ class DynamicSecretCreateSnowflake(object):
         'db_name': 'db-name',
         'delete_protection': 'delete_protection',
         'description': 'description',
+        'input_rule': 'input-rule',
         'item_custom_fields': 'item-custom-fields',
         'json': 'json',
         'key_algo': 'key-algo',
         'name': 'name',
+        'output_rule': 'output-rule',
         'password_length': 'password-length',
         'private_key': 'private-key',
         'private_key_passphrase': 'private-key-passphrase',
@@ -83,7 +87,7 @@ class DynamicSecretCreateSnowflake(object):
         'warehouse': 'warehouse'
     }
 
-    def __init__(self, account=None, account_password=None, account_username=None, auth_mode='password', custom_username_template=None, db_name=None, delete_protection=None, description=None, item_custom_fields=None, json=False, key_algo=None, name=None, password_length=None, private_key=None, private_key_passphrase=None, role=None, tags=None, target_name=None, token=None, uid_token=None, user_ttl='24h', warehouse=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, account=None, account_password=None, account_username=None, auth_mode='password', custom_username_template=None, db_name=None, delete_protection=None, description=None, input_rule=None, item_custom_fields=None, json=False, key_algo=None, name=None, output_rule=None, password_length=None, private_key=None, private_key_passphrase=None, role=None, tags=None, target_name=None, token=None, uid_token=None, user_ttl='24h', warehouse=None, local_vars_configuration=None):  # noqa: E501
         """DynamicSecretCreateSnowflake - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -97,10 +101,12 @@ class DynamicSecretCreateSnowflake(object):
         self._db_name = None
         self._delete_protection = None
         self._description = None
+        self._input_rule = None
         self._item_custom_fields = None
         self._json = None
         self._key_algo = None
         self._name = None
+        self._output_rule = None
         self._password_length = None
         self._private_key = None
         self._private_key_passphrase = None
@@ -129,6 +135,8 @@ class DynamicSecretCreateSnowflake(object):
             self.delete_protection = delete_protection
         if description is not None:
             self.description = description
+        if input_rule is not None:
+            self.input_rule = input_rule
         if item_custom_fields is not None:
             self.item_custom_fields = item_custom_fields
         if json is not None:
@@ -136,6 +144,8 @@ class DynamicSecretCreateSnowflake(object):
         if key_algo is not None:
             self.key_algo = key_algo
         self.name = name
+        if output_rule is not None:
+            self.output_rule = output_rule
         if password_length is not None:
             self.password_length = password_length
         if private_key is not None:
@@ -342,6 +352,29 @@ class DynamicSecretCreateSnowflake(object):
         self._description = description
 
     @property
+    def input_rule(self):
+        """Gets the input_rule of this DynamicSecretCreateSnowflake.  # noqa: E501
+
+        Agentic input rule in name=...,rule=... format (e.g. name=rule1,rule=Sanitize input) Mirrors commands.AgenticRulesParams — kept separate because ResourceDS cannot embed it (different package, different struct layout).  # noqa: E501
+
+        :return: The input_rule of this DynamicSecretCreateSnowflake.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._input_rule
+
+    @input_rule.setter
+    def input_rule(self, input_rule):
+        """Sets the input_rule of this DynamicSecretCreateSnowflake.
+
+        Agentic input rule in name=...,rule=... format (e.g. name=rule1,rule=Sanitize input) Mirrors commands.AgenticRulesParams — kept separate because ResourceDS cannot embed it (different package, different struct layout).  # noqa: E501
+
+        :param input_rule: The input_rule of this DynamicSecretCreateSnowflake.  # noqa: E501
+        :type: list[str]
+        """
+
+        self._input_rule = input_rule
+
+    @property
     def item_custom_fields(self):
         """Gets the item_custom_fields of this DynamicSecretCreateSnowflake.  # noqa: E501
 
@@ -432,6 +465,29 @@ class DynamicSecretCreateSnowflake(object):
             raise ValueError("Invalid value for `name`, must not be `None`")  # noqa: E501
 
         self._name = name
+
+    @property
+    def output_rule(self):
+        """Gets the output_rule of this DynamicSecretCreateSnowflake.  # noqa: E501
+
+        Agentic output rule in name=...,rule=... format (e.g. name=rule1,rule=Mask secrets)  # noqa: E501
+
+        :return: The output_rule of this DynamicSecretCreateSnowflake.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._output_rule
+
+    @output_rule.setter
+    def output_rule(self, output_rule):
+        """Sets the output_rule of this DynamicSecretCreateSnowflake.
+
+        Agentic output rule in name=...,rule=... format (e.g. name=rule1,rule=Mask secrets)  # noqa: E501
+
+        :param output_rule: The output_rule of this DynamicSecretCreateSnowflake.  # noqa: E501
+        :type: list[str]
+        """
+
+        self._output_rule = output_rule
 
     @property
     def password_length(self):

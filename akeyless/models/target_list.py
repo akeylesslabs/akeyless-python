@@ -174,7 +174,7 @@ class TargetList(object):
     def type(self):
         """Gets the type of this TargetList.  # noqa: E501
 
-        The target types list . In case it is empty, all types of targets will be returned. options: [hanadb cassandra aws ssh gke eks mysql mongodb snowflake mssql redshift artifactory azure rabbitmq k8s venafi gcp oracle dockerhub ldap github chef web salesforce postgres]  # noqa: E501
+        The target types list . In case it is empty, all types of targets will be returned. options: [hanadb cassandra aws ssh gke eks mysql mongodb snowflake mssql redshift artifactory azure rabbitmq k8s venafi gcp oracle dockerhub cloudflare ldap github chef web salesforce postgres]  # noqa: E501
 
         :return: The type of this TargetList.  # noqa: E501
         :rtype: list[str]
@@ -185,7 +185,7 @@ class TargetList(object):
     def type(self, type):
         """Sets the type of this TargetList.
 
-        The target types list . In case it is empty, all types of targets will be returned. options: [hanadb cassandra aws ssh gke eks mysql mongodb snowflake mssql redshift artifactory azure rabbitmq k8s venafi gcp oracle dockerhub ldap github chef web salesforce postgres]  # noqa: E501
+        The target types list . In case it is empty, all types of targets will be returned. options: [hanadb cassandra aws ssh gke eks mysql mongodb snowflake mssql redshift artifactory azure rabbitmq k8s venafi gcp oracle dockerhub cloudflare ldap github chef web salesforce postgres]  # noqa: E501
 
         :param type: The type of this TargetList.  # noqa: E501
         :type: list[str]

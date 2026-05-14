@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **db_server_name** | **str** | (Optional) Server name for certificate verification | [optional] 
 **delete_protection** | **str** | Protection from accidental deletion of this object [true/false] | [optional] 
 **description** | **str** | Description of the object | [optional] 
+**input_rule** | **list[str]** | Agentic input rule in name&#x3D;...,rule&#x3D;... format (e.g. name&#x3D;rule1,rule&#x3D;Sanitize input) Mirrors commands.AgenticRulesParams — kept separate because ResourceDS cannot embed it (different package, different struct layout). | [optional] 
 **item_custom_fields** | **dict(str, str)** | Additional custom fields to associate with the item | [optional] 
 **json** | **bool** | Set output format to JSON | [optional] [default to False]
 **name** | **str** | Dynamic secret name | 
@@ -19,6 +20,7 @@ Name | Type | Description | Notes
 **oracle_screation_statements** | **str** | Oracle Creation statements | [optional] 
 **oracle_service_name** | **str** | Oracle DB Name | [optional] 
 **oracle_username** | **str** | Oracle Username | [optional] 
+**output_rule** | **list[str]** | Agentic output rule in name&#x3D;...,rule&#x3D;... format (e.g. name&#x3D;rule1,rule&#x3D;Mask secrets) | [optional] 
 **password_length** | **str** | The length of the password to be generated | [optional] 
 **producer_encryption_key_name** | **str** | Dynamic producer encryption key | [optional] 
 **secure_access_bastion_issuer** | **str** | Deprecated. use secure-access-certificate-issuer | [optional] 

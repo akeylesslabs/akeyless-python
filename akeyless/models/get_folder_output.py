@@ -43,7 +43,8 @@ class GetFolderOutput(object):
         'folder_name': 'str',
         'metadata': 'str',
         'modification_date': 'datetime',
-        'tags': 'list[str]'
+        'tags': 'list[str]',
+        'usc_sync_configs': 'list[FolderUSCSyncConfig]'
     }
 
     attribute_map = {
@@ -56,10 +57,11 @@ class GetFolderOutput(object):
         'folder_name': 'folder_name',
         'metadata': 'metadata',
         'modification_date': 'modification_date',
-        'tags': 'tags'
+        'tags': 'tags',
+        'usc_sync_configs': 'usc_sync_configs'
     }
 
-    def __init__(self, access_date=None, access_date_display=None, accessibility=None, creation_date=None, delete_protection=None, folder_id=None, folder_name=None, metadata=None, modification_date=None, tags=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, access_date=None, access_date_display=None, accessibility=None, creation_date=None, delete_protection=None, folder_id=None, folder_name=None, metadata=None, modification_date=None, tags=None, usc_sync_configs=None, local_vars_configuration=None):  # noqa: E501
         """GetFolderOutput - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -75,6 +77,7 @@ class GetFolderOutput(object):
         self._metadata = None
         self._modification_date = None
         self._tags = None
+        self._usc_sync_configs = None
         self.discriminator = None
 
         if access_date is not None:
@@ -97,6 +100,8 @@ class GetFolderOutput(object):
             self.modification_date = modification_date
         if tags is not None:
             self.tags = tags
+        if usc_sync_configs is not None:
+            self.usc_sync_configs = usc_sync_configs
 
     @property
     def access_date(self):
@@ -307,6 +312,27 @@ class GetFolderOutput(object):
         """
 
         self._tags = tags
+
+    @property
+    def usc_sync_configs(self):
+        """Gets the usc_sync_configs of this GetFolderOutput.  # noqa: E501
+
+
+        :return: The usc_sync_configs of this GetFolderOutput.  # noqa: E501
+        :rtype: list[FolderUSCSyncConfig]
+        """
+        return self._usc_sync_configs
+
+    @usc_sync_configs.setter
+    def usc_sync_configs(self, usc_sync_configs):
+        """Sets the usc_sync_configs of this GetFolderOutput.
+
+
+        :param usc_sync_configs: The usc_sync_configs of this GetFolderOutput.  # noqa: E501
+        :type: list[FolderUSCSyncConfig]
+        """
+
+        self._usc_sync_configs = usc_sync_configs
 
     def to_dict(self):
         """Returns the model properties as a dict"""

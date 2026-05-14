@@ -15,7 +15,7 @@
 
 from __future__ import absolute_import
 
-__version__ = "5.0.25"
+__version__ = "5.0.26"
 
 # import apis into sdk package
 from akeyless.api.v2_api import V2Api
@@ -37,6 +37,7 @@ from akeyless.models.aws_secrets_migration import AWSSecretsMigration
 from akeyless.models.aws_target_details import AWSTargetDetails
 from akeyless.models.access_or_group_permission_assignment import AccessOrGroupPermissionAssignment
 from akeyless.models.access_permission_assignment import AccessPermissionAssignment
+from akeyless.models.account_custom_field import AccountCustomField
 from akeyless.models.account_custom_field_create import AccountCustomFieldCreate
 from akeyless.models.account_custom_field_create_output import AccountCustomFieldCreateOutput
 from akeyless.models.account_custom_field_delete import AccountCustomFieldDelete
@@ -152,6 +153,7 @@ from akeyless.models.classic_key_target_info import ClassicKeyTargetInfo
 from akeyless.models.client_data import ClientData
 from akeyless.models.client_usage_info import ClientUsageInfo
 from akeyless.models.clients_usage_report import ClientsUsageReport
+from akeyless.models.cloudflare_target_details import CloudflareTargetDetails
 from akeyless.models.config_change import ConfigChange
 from akeyless.models.config_hash import ConfigHash
 from akeyless.models.configure import Configure
@@ -446,6 +448,7 @@ from akeyless.models.folder_create_output import FolderCreateOutput
 from akeyless.models.folder_delete import FolderDelete
 from akeyless.models.folder_get import FolderGet
 from akeyless.models.folder_get_output import FolderGetOutput
+from akeyless.models.folder_usc_sync_config import FolderUSCSyncConfig
 from akeyless.models.folder_update import FolderUpdate
 from akeyless.models.gcp_access_rules import GCPAccessRules
 from akeyless.models.gcp_payload import GCPPayload
@@ -737,6 +740,8 @@ from akeyless.models.kerberos_auth_method_info import KerberosAuthMethodInfo
 from akeyless.models.kerberos_config_part import KerberosConfigPart
 from akeyless.models.kmip_client_delete_rule import KmipClientDeleteRule
 from akeyless.models.kmip_client_set_rule import KmipClientSetRule
+from akeyless.models.kmip_client_update import KmipClientUpdate
+from akeyless.models.kmip_client_update_output import KmipClientUpdateOutput
 from akeyless.models.kmip_create_client import KmipCreateClient
 from akeyless.models.kmip_create_client_output import KmipCreateClientOutput
 from akeyless.models.kmip_delete_client import KmipDeleteClient
@@ -752,6 +757,8 @@ from akeyless.models.kmip_renew_client_certificate_output import KmipRenewClient
 from akeyless.models.kmip_renew_server_certificate import KmipRenewServerCertificate
 from akeyless.models.kmip_renew_server_certificate_output import KmipRenewServerCertificateOutput
 from akeyless.models.kmip_server_setup import KmipServerSetup
+from akeyless.models.kmip_server_update import KmipServerUpdate
+from akeyless.models.kmip_server_update_output import KmipServerUpdateOutput
 from akeyless.models.kmip_set_server_state import KmipSetServerState
 from akeyless.models.kmip_set_server_state_output import KmipSetServerStateOutput
 from akeyless.models.kube_config_value import KubeConfigValue
@@ -814,7 +821,6 @@ from akeyless.models.next_auto_rotation_event import NextAutoRotationEvent
 from akeyless.models.noti_forwarder import NotiForwarder
 from akeyless.models.noti_forwarder_details_input import NotiForwarderDetailsInput
 from akeyless.models.null_string import NullString
-from akeyless.models.null_time import NullTime
 from akeyless.models.o_auth2_access_rules import OAuth2AccessRules
 from akeyless.models.o_auth2_custom_claim import OAuth2CustomClaim
 from akeyless.models.oci_access_rules import OCIAccessRules
@@ -990,6 +996,7 @@ from akeyless.models.target import Target
 from akeyless.models.target_create_artifactory import TargetCreateArtifactory
 from akeyless.models.target_create_aws import TargetCreateAws
 from akeyless.models.target_create_azure import TargetCreateAzure
+from akeyless.models.target_create_cloudflare import TargetCreateCloudflare
 from akeyless.models.target_create_db import TargetCreateDB
 from akeyless.models.target_create_digi_cert import TargetCreateDigiCert
 from akeyless.models.target_create_dockerhub import TargetCreateDockerhub
@@ -1031,6 +1038,7 @@ from akeyless.models.target_type_details_input import TargetTypeDetailsInput
 from akeyless.models.target_update_artifactory import TargetUpdateArtifactory
 from akeyless.models.target_update_aws import TargetUpdateAws
 from akeyless.models.target_update_azure import TargetUpdateAzure
+from akeyless.models.target_update_cloudflare import TargetUpdateCloudflare
 from akeyless.models.target_update_db import TargetUpdateDB
 from akeyless.models.target_update_digi_cert import TargetUpdateDigiCert
 from akeyless.models.target_update_dockerhub import TargetUpdateDockerhub

@@ -41,10 +41,12 @@ class DynamicSecretUpdateGke(object):
         'gke_cluster_endpoint': 'str',
         'gke_cluster_name': 'str',
         'gke_service_account_email': 'str',
+        'input_rule': 'list[str]',
         'item_custom_fields': 'dict(str, str)',
         'json': 'bool',
         'name': 'str',
         'new_name': 'str',
+        'output_rule': 'list[str]',
         'producer_encryption_key_name': 'str',
         'secure_access_allow_port_forwading': 'bool',
         'secure_access_bastion_issuer': 'str',
@@ -68,10 +70,12 @@ class DynamicSecretUpdateGke(object):
         'gke_cluster_endpoint': 'gke-cluster-endpoint',
         'gke_cluster_name': 'gke-cluster-name',
         'gke_service_account_email': 'gke-service-account-email',
+        'input_rule': 'input-rule',
         'item_custom_fields': 'item-custom-fields',
         'json': 'json',
         'name': 'name',
         'new_name': 'new-name',
+        'output_rule': 'output-rule',
         'producer_encryption_key_name': 'producer-encryption-key-name',
         'secure_access_allow_port_forwading': 'secure-access-allow-port-forwading',
         'secure_access_bastion_issuer': 'secure-access-bastion-issuer',
@@ -87,7 +91,7 @@ class DynamicSecretUpdateGke(object):
         'user_ttl': 'user-ttl'
     }
 
-    def __init__(self, delete_protection=None, description=None, gke_account_key=None, gke_cluster_cert=None, gke_cluster_endpoint=None, gke_cluster_name=None, gke_service_account_email=None, item_custom_fields=None, json=False, name=None, new_name=None, producer_encryption_key_name=None, secure_access_allow_port_forwading=None, secure_access_bastion_issuer=None, secure_access_certificate_issuer=None, secure_access_cluster_endpoint=None, secure_access_delay=None, secure_access_enable=None, secure_access_web=False, tags=None, target_name=None, token=None, uid_token=None, user_ttl='60m', local_vars_configuration=None):  # noqa: E501
+    def __init__(self, delete_protection=None, description=None, gke_account_key=None, gke_cluster_cert=None, gke_cluster_endpoint=None, gke_cluster_name=None, gke_service_account_email=None, input_rule=None, item_custom_fields=None, json=False, name=None, new_name=None, output_rule=None, producer_encryption_key_name=None, secure_access_allow_port_forwading=None, secure_access_bastion_issuer=None, secure_access_certificate_issuer=None, secure_access_cluster_endpoint=None, secure_access_delay=None, secure_access_enable=None, secure_access_web=False, tags=None, target_name=None, token=None, uid_token=None, user_ttl='60m', local_vars_configuration=None):  # noqa: E501
         """DynamicSecretUpdateGke - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -100,10 +104,12 @@ class DynamicSecretUpdateGke(object):
         self._gke_cluster_endpoint = None
         self._gke_cluster_name = None
         self._gke_service_account_email = None
+        self._input_rule = None
         self._item_custom_fields = None
         self._json = None
         self._name = None
         self._new_name = None
+        self._output_rule = None
         self._producer_encryption_key_name = None
         self._secure_access_allow_port_forwading = None
         self._secure_access_bastion_issuer = None
@@ -133,6 +139,8 @@ class DynamicSecretUpdateGke(object):
             self.gke_cluster_name = gke_cluster_name
         if gke_service_account_email is not None:
             self.gke_service_account_email = gke_service_account_email
+        if input_rule is not None:
+            self.input_rule = input_rule
         if item_custom_fields is not None:
             self.item_custom_fields = item_custom_fields
         if json is not None:
@@ -140,6 +148,8 @@ class DynamicSecretUpdateGke(object):
         self.name = name
         if new_name is not None:
             self.new_name = new_name
+        if output_rule is not None:
+            self.output_rule = output_rule
         if producer_encryption_key_name is not None:
             self.producer_encryption_key_name = producer_encryption_key_name
         if secure_access_allow_port_forwading is not None:
@@ -329,6 +339,29 @@ class DynamicSecretUpdateGke(object):
         self._gke_service_account_email = gke_service_account_email
 
     @property
+    def input_rule(self):
+        """Gets the input_rule of this DynamicSecretUpdateGke.  # noqa: E501
+
+        Agentic input rule in name=...,rule=... format (e.g. name=rule1,rule=Sanitize input) Mirrors commands.AgenticRulesParams — kept separate because ResourceDS cannot embed it (different package, different struct layout).  # noqa: E501
+
+        :return: The input_rule of this DynamicSecretUpdateGke.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._input_rule
+
+    @input_rule.setter
+    def input_rule(self, input_rule):
+        """Sets the input_rule of this DynamicSecretUpdateGke.
+
+        Agentic input rule in name=...,rule=... format (e.g. name=rule1,rule=Sanitize input) Mirrors commands.AgenticRulesParams — kept separate because ResourceDS cannot embed it (different package, different struct layout).  # noqa: E501
+
+        :param input_rule: The input_rule of this DynamicSecretUpdateGke.  # noqa: E501
+        :type: list[str]
+        """
+
+        self._input_rule = input_rule
+
+    @property
     def item_custom_fields(self):
         """Gets the item_custom_fields of this DynamicSecretUpdateGke.  # noqa: E501
 
@@ -421,6 +454,29 @@ class DynamicSecretUpdateGke(object):
         """
 
         self._new_name = new_name
+
+    @property
+    def output_rule(self):
+        """Gets the output_rule of this DynamicSecretUpdateGke.  # noqa: E501
+
+        Agentic output rule in name=...,rule=... format (e.g. name=rule1,rule=Mask secrets)  # noqa: E501
+
+        :return: The output_rule of this DynamicSecretUpdateGke.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._output_rule
+
+    @output_rule.setter
+    def output_rule(self, output_rule):
+        """Sets the output_rule of this DynamicSecretUpdateGke.
+
+        Agentic output rule in name=...,rule=... format (e.g. name=rule1,rule=Mask secrets)  # noqa: E501
+
+        :param output_rule: The output_rule of this DynamicSecretUpdateGke.  # noqa: E501
+        :type: list[str]
+        """
+
+        self._output_rule = output_rule
 
     @property
     def producer_encryption_key_name(self):

@@ -41,6 +41,7 @@ class CreateSecret(object):
         'description': 'str',
         'format': 'str',
         'inject_url': 'list[str]',
+        'input_rule': 'list[str]',
         'item_custom_fields': 'dict(str, str)',
         'json': 'bool',
         'lock_during_sra_session': 'str',
@@ -48,6 +49,7 @@ class CreateSecret(object):
         'metadata': 'str',
         'multiline_value': 'bool',
         'name': 'str',
+        'output_rule': 'list[str]',
         'password': 'str',
         'protection_key': 'str',
         'secure_access_bastion_issuer': 'str',
@@ -77,6 +79,7 @@ class CreateSecret(object):
         'description': 'description',
         'format': 'format',
         'inject_url': 'inject-url',
+        'input_rule': 'input-rule',
         'item_custom_fields': 'item-custom-fields',
         'json': 'json',
         'lock_during_sra_session': 'lock-during-sra-session',
@@ -84,6 +87,7 @@ class CreateSecret(object):
         'metadata': 'metadata',
         'multiline_value': 'multiline_value',
         'name': 'name',
+        'output_rule': 'output-rule',
         'password': 'password',
         'protection_key': 'protection_key',
         'secure_access_bastion_issuer': 'secure-access-bastion-issuer',
@@ -105,7 +109,7 @@ class CreateSecret(object):
         'value': 'value'
     }
 
-    def __init__(self, accessibility='regular', change_event=None, custom_field=None, delete_protection=None, description=None, format='text', inject_url=None, item_custom_fields=None, json=False, lock_during_sra_session=None, max_versions=None, metadata=None, multiline_value=None, name=None, password=None, protection_key=None, secure_access_bastion_issuer=None, secure_access_certificate_issuer=None, secure_access_enable=None, secure_access_gateway=None, secure_access_host=None, secure_access_rdp_user=None, secure_access_ssh_creds=None, secure_access_ssh_user=None, secure_access_url=None, secure_access_web_browsing=False, secure_access_web_proxy=False, tags=None, token=None, type='generic', uid_token=None, username=None, value=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, accessibility='regular', change_event=None, custom_field=None, delete_protection=None, description=None, format='text', inject_url=None, input_rule=None, item_custom_fields=None, json=False, lock_during_sra_session=None, max_versions=None, metadata=None, multiline_value=None, name=None, output_rule=None, password=None, protection_key=None, secure_access_bastion_issuer=None, secure_access_certificate_issuer=None, secure_access_enable=None, secure_access_gateway=None, secure_access_host=None, secure_access_rdp_user=None, secure_access_ssh_creds=None, secure_access_ssh_user=None, secure_access_url=None, secure_access_web_browsing=False, secure_access_web_proxy=False, tags=None, token=None, type='generic', uid_token=None, username=None, value=None, local_vars_configuration=None):  # noqa: E501
         """CreateSecret - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -118,6 +122,7 @@ class CreateSecret(object):
         self._description = None
         self._format = None
         self._inject_url = None
+        self._input_rule = None
         self._item_custom_fields = None
         self._json = None
         self._lock_during_sra_session = None
@@ -125,6 +130,7 @@ class CreateSecret(object):
         self._metadata = None
         self._multiline_value = None
         self._name = None
+        self._output_rule = None
         self._password = None
         self._protection_key = None
         self._secure_access_bastion_issuer = None
@@ -160,6 +166,8 @@ class CreateSecret(object):
             self.format = format
         if inject_url is not None:
             self.inject_url = inject_url
+        if input_rule is not None:
+            self.input_rule = input_rule
         if item_custom_fields is not None:
             self.item_custom_fields = item_custom_fields
         if json is not None:
@@ -173,6 +181,8 @@ class CreateSecret(object):
         if multiline_value is not None:
             self.multiline_value = multiline_value
         self.name = name
+        if output_rule is not None:
+            self.output_rule = output_rule
         if password is not None:
             self.password = password
         if protection_key is not None:
@@ -373,6 +383,29 @@ class CreateSecret(object):
         self._inject_url = inject_url
 
     @property
+    def input_rule(self):
+        """Gets the input_rule of this CreateSecret.  # noqa: E501
+
+        Agentic input rule in name=...,rule=... format (e.g. name=rule1,rule=Sanitize input)  # noqa: E501
+
+        :return: The input_rule of this CreateSecret.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._input_rule
+
+    @input_rule.setter
+    def input_rule(self, input_rule):
+        """Sets the input_rule of this CreateSecret.
+
+        Agentic input rule in name=...,rule=... format (e.g. name=rule1,rule=Sanitize input)  # noqa: E501
+
+        :param input_rule: The input_rule of this CreateSecret.  # noqa: E501
+        :type: list[str]
+        """
+
+        self._input_rule = input_rule
+
+    @property
     def item_custom_fields(self):
         """Gets the item_custom_fields of this CreateSecret.  # noqa: E501
 
@@ -534,6 +567,29 @@ class CreateSecret(object):
             raise ValueError("Invalid value for `name`, must not be `None`")  # noqa: E501
 
         self._name = name
+
+    @property
+    def output_rule(self):
+        """Gets the output_rule of this CreateSecret.  # noqa: E501
+
+        Agentic output rule in name=...,rule=... format (e.g. name=rule1,rule=Mask secrets)  # noqa: E501
+
+        :return: The output_rule of this CreateSecret.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._output_rule
+
+    @output_rule.setter
+    def output_rule(self, output_rule):
+        """Sets the output_rule of this CreateSecret.
+
+        Agentic output rule in name=...,rule=... format (e.g. name=rule1,rule=Mask secrets)  # noqa: E501
+
+        :param output_rule: The output_rule of this CreateSecret.  # noqa: E501
+        :type: list[str]
+        """
+
+        self._output_rule = output_rule
 
     @property
     def password(self):

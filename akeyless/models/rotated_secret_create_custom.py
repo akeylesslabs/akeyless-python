@@ -40,12 +40,14 @@ class RotatedSecretCreateCustom(object):
         'delete_protection': 'str',
         'description': 'str',
         'enable_password_policy': 'str',
+        'input_rule': 'list[str]',
         'item_custom_fields': 'dict(str, str)',
         'json': 'bool',
         'key': 'str',
         'lock_during_sra_session': 'str',
         'max_versions': 'str',
         'name': 'str',
+        'output_rule': 'list[str]',
         'password_length': 'str',
         'rotate_after_disconnect': 'str',
         'rotation_event_in': 'list[str]',
@@ -81,12 +83,14 @@ class RotatedSecretCreateCustom(object):
         'delete_protection': 'delete_protection',
         'description': 'description',
         'enable_password_policy': 'enable-password-policy',
+        'input_rule': 'input-rule',
         'item_custom_fields': 'item-custom-fields',
         'json': 'json',
         'key': 'key',
         'lock_during_sra_session': 'lock-during-sra-session',
         'max_versions': 'max-versions',
         'name': 'name',
+        'output_rule': 'output-rule',
         'password_length': 'password-length',
         'rotate_after_disconnect': 'rotate-after-disconnect',
         'rotation_event_in': 'rotation-event-in',
@@ -115,7 +119,7 @@ class RotatedSecretCreateCustom(object):
         'use_special_characters': 'use-special-characters'
     }
 
-    def __init__(self, authentication_credentials='use-user-creds', auto_rotate=None, custom_payload=None, delete_protection=None, description=None, enable_password_policy=None, item_custom_fields=None, json=False, key=None, lock_during_sra_session=None, max_versions=None, name=None, password_length=None, rotate_after_disconnect=None, rotation_event_in=None, rotation_hour=None, rotation_interval=None, secure_access_allow_external_user=False, secure_access_bastion_issuer=None, secure_access_certificate_issuer=None, secure_access_enable=None, secure_access_host=None, secure_access_rdp_domain=None, secure_access_rdp_user=None, secure_access_ssh_user=None, secure_access_url=None, secure_access_web=False, secure_access_web_browsing=False, secure_access_web_proxy=False, tags=None, target_name=None, timeout_sec=40, token=None, uid_token=None, use_capital_letters=None, use_lower_letters=None, use_numbers=None, use_special_characters=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, authentication_credentials='use-user-creds', auto_rotate=None, custom_payload=None, delete_protection=None, description=None, enable_password_policy=None, input_rule=None, item_custom_fields=None, json=False, key=None, lock_during_sra_session=None, max_versions=None, name=None, output_rule=None, password_length=None, rotate_after_disconnect=None, rotation_event_in=None, rotation_hour=None, rotation_interval=None, secure_access_allow_external_user=False, secure_access_bastion_issuer=None, secure_access_certificate_issuer=None, secure_access_enable=None, secure_access_host=None, secure_access_rdp_domain=None, secure_access_rdp_user=None, secure_access_ssh_user=None, secure_access_url=None, secure_access_web=False, secure_access_web_browsing=False, secure_access_web_proxy=False, tags=None, target_name=None, timeout_sec=40, token=None, uid_token=None, use_capital_letters=None, use_lower_letters=None, use_numbers=None, use_special_characters=None, local_vars_configuration=None):  # noqa: E501
         """RotatedSecretCreateCustom - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -127,12 +131,14 @@ class RotatedSecretCreateCustom(object):
         self._delete_protection = None
         self._description = None
         self._enable_password_policy = None
+        self._input_rule = None
         self._item_custom_fields = None
         self._json = None
         self._key = None
         self._lock_during_sra_session = None
         self._max_versions = None
         self._name = None
+        self._output_rule = None
         self._password_length = None
         self._rotate_after_disconnect = None
         self._rotation_event_in = None
@@ -173,6 +179,8 @@ class RotatedSecretCreateCustom(object):
             self.description = description
         if enable_password_policy is not None:
             self.enable_password_policy = enable_password_policy
+        if input_rule is not None:
+            self.input_rule = input_rule
         if item_custom_fields is not None:
             self.item_custom_fields = item_custom_fields
         if json is not None:
@@ -184,6 +192,8 @@ class RotatedSecretCreateCustom(object):
         if max_versions is not None:
             self.max_versions = max_versions
         self.name = name
+        if output_rule is not None:
+            self.output_rule = output_rule
         if password_length is not None:
             self.password_length = password_length
         if rotate_after_disconnect is not None:
@@ -375,6 +385,29 @@ class RotatedSecretCreateCustom(object):
         self._enable_password_policy = enable_password_policy
 
     @property
+    def input_rule(self):
+        """Gets the input_rule of this RotatedSecretCreateCustom.  # noqa: E501
+
+        Agentic input rule in name=...,rule=... format (e.g. name=rule1,rule=Sanitize input)  # noqa: E501
+
+        :return: The input_rule of this RotatedSecretCreateCustom.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._input_rule
+
+    @input_rule.setter
+    def input_rule(self, input_rule):
+        """Sets the input_rule of this RotatedSecretCreateCustom.
+
+        Agentic input rule in name=...,rule=... format (e.g. name=rule1,rule=Sanitize input)  # noqa: E501
+
+        :param input_rule: The input_rule of this RotatedSecretCreateCustom.  # noqa: E501
+        :type: list[str]
+        """
+
+        self._input_rule = input_rule
+
+    @property
     def item_custom_fields(self):
         """Gets the item_custom_fields of this RotatedSecretCreateCustom.  # noqa: E501
 
@@ -513,6 +546,29 @@ class RotatedSecretCreateCustom(object):
             raise ValueError("Invalid value for `name`, must not be `None`")  # noqa: E501
 
         self._name = name
+
+    @property
+    def output_rule(self):
+        """Gets the output_rule of this RotatedSecretCreateCustom.  # noqa: E501
+
+        Agentic output rule in name=...,rule=... format (e.g. name=rule1,rule=Mask secrets)  # noqa: E501
+
+        :return: The output_rule of this RotatedSecretCreateCustom.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._output_rule
+
+    @output_rule.setter
+    def output_rule(self, output_rule):
+        """Sets the output_rule of this RotatedSecretCreateCustom.
+
+        Agentic output rule in name=...,rule=... format (e.g. name=rule1,rule=Mask secrets)  # noqa: E501
+
+        :param output_rule: The output_rule of this RotatedSecretCreateCustom.  # noqa: E501
+        :type: list[str]
+        """
+
+        self._output_rule = output_rule
 
     @property
     def password_length(self):

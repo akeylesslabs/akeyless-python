@@ -39,10 +39,12 @@ class DynamicSecretUpdateRedis(object):
         'delete_protection': 'str',
         'description': 'str',
         'host': 'str',
+        'input_rule': 'list[str]',
         'item_custom_fields': 'dict(str, str)',
         'json': 'bool',
         'name': 'str',
         'new_name': 'str',
+        'output_rule': 'list[str]',
         'password': 'str',
         'password_length': 'str',
         'port': 'str',
@@ -63,10 +65,12 @@ class DynamicSecretUpdateRedis(object):
         'delete_protection': 'delete_protection',
         'description': 'description',
         'host': 'host',
+        'input_rule': 'input-rule',
         'item_custom_fields': 'item-custom-fields',
         'json': 'json',
         'name': 'name',
         'new_name': 'new-name',
+        'output_rule': 'output-rule',
         'password': 'password',
         'password_length': 'password-length',
         'port': 'port',
@@ -81,7 +85,7 @@ class DynamicSecretUpdateRedis(object):
         'username': 'username'
     }
 
-    def __init__(self, acl_rules=None, custom_username_template=None, delete_protection=None, description=None, host='127.0.0.1', item_custom_fields=None, json=False, name=None, new_name=None, password=None, password_length=None, port='6379', producer_encryption_key_name=None, ssl=False, ssl_certificate=None, tags=None, target_name=None, token=None, uid_token=None, user_ttl='60m', username=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, acl_rules=None, custom_username_template=None, delete_protection=None, description=None, host='127.0.0.1', input_rule=None, item_custom_fields=None, json=False, name=None, new_name=None, output_rule=None, password=None, password_length=None, port='6379', producer_encryption_key_name=None, ssl=False, ssl_certificate=None, tags=None, target_name=None, token=None, uid_token=None, user_ttl='60m', username=None, local_vars_configuration=None):  # noqa: E501
         """DynamicSecretUpdateRedis - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -92,10 +96,12 @@ class DynamicSecretUpdateRedis(object):
         self._delete_protection = None
         self._description = None
         self._host = None
+        self._input_rule = None
         self._item_custom_fields = None
         self._json = None
         self._name = None
         self._new_name = None
+        self._output_rule = None
         self._password = None
         self._password_length = None
         self._port = None
@@ -120,6 +126,8 @@ class DynamicSecretUpdateRedis(object):
             self.description = description
         if host is not None:
             self.host = host
+        if input_rule is not None:
+            self.input_rule = input_rule
         if item_custom_fields is not None:
             self.item_custom_fields = item_custom_fields
         if json is not None:
@@ -127,6 +135,8 @@ class DynamicSecretUpdateRedis(object):
         self.name = name
         if new_name is not None:
             self.new_name = new_name
+        if output_rule is not None:
+            self.output_rule = output_rule
         if password is not None:
             self.password = password
         if password_length is not None:
@@ -268,6 +278,29 @@ class DynamicSecretUpdateRedis(object):
         self._host = host
 
     @property
+    def input_rule(self):
+        """Gets the input_rule of this DynamicSecretUpdateRedis.  # noqa: E501
+
+        Agentic input rule in name=...,rule=... format (e.g. name=rule1,rule=Sanitize input) Mirrors commands.AgenticRulesParams — kept separate because ResourceDS cannot embed it (different package, different struct layout).  # noqa: E501
+
+        :return: The input_rule of this DynamicSecretUpdateRedis.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._input_rule
+
+    @input_rule.setter
+    def input_rule(self, input_rule):
+        """Sets the input_rule of this DynamicSecretUpdateRedis.
+
+        Agentic input rule in name=...,rule=... format (e.g. name=rule1,rule=Sanitize input) Mirrors commands.AgenticRulesParams — kept separate because ResourceDS cannot embed it (different package, different struct layout).  # noqa: E501
+
+        :param input_rule: The input_rule of this DynamicSecretUpdateRedis.  # noqa: E501
+        :type: list[str]
+        """
+
+        self._input_rule = input_rule
+
+    @property
     def item_custom_fields(self):
         """Gets the item_custom_fields of this DynamicSecretUpdateRedis.  # noqa: E501
 
@@ -360,6 +393,29 @@ class DynamicSecretUpdateRedis(object):
         """
 
         self._new_name = new_name
+
+    @property
+    def output_rule(self):
+        """Gets the output_rule of this DynamicSecretUpdateRedis.  # noqa: E501
+
+        Agentic output rule in name=...,rule=... format (e.g. name=rule1,rule=Mask secrets)  # noqa: E501
+
+        :return: The output_rule of this DynamicSecretUpdateRedis.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._output_rule
+
+    @output_rule.setter
+    def output_rule(self, output_rule):
+        """Sets the output_rule of this DynamicSecretUpdateRedis.
+
+        Agentic output rule in name=...,rule=... format (e.g. name=rule1,rule=Mask secrets)  # noqa: E501
+
+        :param output_rule: The output_rule of this DynamicSecretUpdateRedis.  # noqa: E501
+        :type: list[str]
+        """
+
+        self._output_rule = output_rule
 
     @property
     def password(self):

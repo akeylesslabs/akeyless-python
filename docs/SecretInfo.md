@@ -3,6 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**activation_date** | **datetime** |  | [optional] 
 **created** | **datetime** |  | [optional] 
 **description** | **str** |  | [optional] 
 **expiration** | **datetime** |  | [optional] 

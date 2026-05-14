@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **description** | **str** | Description of the object | [optional] 
 **format** | **str** | Secret format [text/json/key-value] (relevant only for type &#39;generic&#39;) | [optional] [default to 'text']
 **inject_url** | **list[str]** | For Password Management use, reflect the website context | [optional] 
+**input_rule** | **list[str]** | Agentic input rule in name&#x3D;...,rule&#x3D;... format (e.g. name&#x3D;rule1,rule&#x3D;Sanitize input) | [optional] 
 **item_custom_fields** | **dict(str, str)** | Additional custom fields to associate with the item | [optional] 
 **json** | **bool** | Set output format to JSON | [optional] [default to False]
 **lock_during_sra_session** | **str** | Lock this secret for read/update while an SRA session is active | [optional] 
@@ -17,6 +18,7 @@ Name | Type | Description | Notes
 **metadata** | **str** | Deprecated - use description | [optional] 
 **multiline_value** | **bool** | The provided value is a multiline value (separated by &#39;\\n&#39;) | [optional] 
 **name** | **str** | Secret name | 
+**output_rule** | **list[str]** | Agentic output rule in name&#x3D;...,rule&#x3D;... format (e.g. name&#x3D;rule1,rule&#x3D;Mask secrets) | [optional] 
 **password** | **str** | For Password Management use, additional fields | [optional] 
 **protection_key** | **str** | The name of a key that used to encrypt the secret value (if empty, the account default protectionKey key will be used) | [optional] 
 **secure_access_bastion_issuer** | **str** | Deprecated. use secure-access-certificate-issuer | [optional] 

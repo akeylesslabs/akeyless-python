@@ -35,8 +35,10 @@ class GatewayRevokeTmpUsers(object):
     """
     openapi_types = {
         'host': 'str',
+        'input_rule': 'list[str]',
         'json': 'bool',
         'name': 'str',
+        'output_rule': 'list[str]',
         'revoke_all': 'bool',
         'soft_delete': 'bool',
         'tmp_creds_id': 'str',
@@ -46,8 +48,10 @@ class GatewayRevokeTmpUsers(object):
 
     attribute_map = {
         'host': 'host',
+        'input_rule': 'input-rule',
         'json': 'json',
         'name': 'name',
+        'output_rule': 'output-rule',
         'revoke_all': 'revoke-all',
         'soft_delete': 'soft-delete',
         'tmp_creds_id': 'tmp-creds-id',
@@ -55,15 +59,17 @@ class GatewayRevokeTmpUsers(object):
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, host=None, json=False, name=None, revoke_all=None, soft_delete=None, tmp_creds_id=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, host=None, input_rule=None, json=False, name=None, output_rule=None, revoke_all=None, soft_delete=None, tmp_creds_id=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """GatewayRevokeTmpUsers - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._host = None
+        self._input_rule = None
         self._json = None
         self._name = None
+        self._output_rule = None
         self._revoke_all = None
         self._soft_delete = None
         self._tmp_creds_id = None
@@ -73,9 +79,13 @@ class GatewayRevokeTmpUsers(object):
 
         if host is not None:
             self.host = host
+        if input_rule is not None:
+            self.input_rule = input_rule
         if json is not None:
             self.json = json
         self.name = name
+        if output_rule is not None:
+            self.output_rule = output_rule
         if revoke_all is not None:
             self.revoke_all = revoke_all
         if soft_delete is not None:
@@ -109,6 +119,29 @@ class GatewayRevokeTmpUsers(object):
         """
 
         self._host = host
+
+    @property
+    def input_rule(self):
+        """Gets the input_rule of this GatewayRevokeTmpUsers.  # noqa: E501
+
+        Agentic input rule in name=...,rule=... format (e.g. name=rule1,rule=Sanitize input) Mirrors commands.AgenticRulesParams — kept separate because ResourceDS cannot embed it (different package, different struct layout).  # noqa: E501
+
+        :return: The input_rule of this GatewayRevokeTmpUsers.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._input_rule
+
+    @input_rule.setter
+    def input_rule(self, input_rule):
+        """Sets the input_rule of this GatewayRevokeTmpUsers.
+
+        Agentic input rule in name=...,rule=... format (e.g. name=rule1,rule=Sanitize input) Mirrors commands.AgenticRulesParams — kept separate because ResourceDS cannot embed it (different package, different struct layout).  # noqa: E501
+
+        :param input_rule: The input_rule of this GatewayRevokeTmpUsers.  # noqa: E501
+        :type: list[str]
+        """
+
+        self._input_rule = input_rule
 
     @property
     def json(self):
@@ -157,6 +190,29 @@ class GatewayRevokeTmpUsers(object):
             raise ValueError("Invalid value for `name`, must not be `None`")  # noqa: E501
 
         self._name = name
+
+    @property
+    def output_rule(self):
+        """Gets the output_rule of this GatewayRevokeTmpUsers.  # noqa: E501
+
+        Agentic output rule in name=...,rule=... format (e.g. name=rule1,rule=Mask secrets)  # noqa: E501
+
+        :return: The output_rule of this GatewayRevokeTmpUsers.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._output_rule
+
+    @output_rule.setter
+    def output_rule(self, output_rule):
+        """Sets the output_rule of this GatewayRevokeTmpUsers.
+
+        Agentic output rule in name=...,rule=... format (e.g. name=rule1,rule=Mask secrets)  # noqa: E501
+
+        :param output_rule: The output_rule of this GatewayRevokeTmpUsers.  # noqa: E501
+        :type: list[str]
+        """
+
+        self._output_rule = output_rule
 
     @property
     def revoke_all(self):

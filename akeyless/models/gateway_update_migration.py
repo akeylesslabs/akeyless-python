@@ -77,6 +77,7 @@ class GatewayUpdateMigration(object):
         'gcp_key': 'str',
         'gcp_project_id': 'str',
         'hashi_json': 'str',
+        'hashi_metadata_mode': 'str',
         'hashi_ns': 'list[str]',
         'hashi_token': 'str',
         'hashi_url': 'str',
@@ -155,6 +156,7 @@ class GatewayUpdateMigration(object):
         'gcp_key': 'gcp-key',
         'gcp_project_id': 'gcp-project-id',
         'hashi_json': 'hashi-json',
+        'hashi_metadata_mode': 'hashi-metadata-mode',
         'hashi_ns': 'hashi-ns',
         'hashi_token': 'hashi-token',
         'hashi_url': 'hashi-url',
@@ -189,7 +191,7 @@ class GatewayUpdateMigration(object):
         'use_gw_cloud_identity': 'use-gw-cloud-identity'
     }
 
-    def __init__(self, service_account_key_decoded=None, ad_auto_rotate=None, ad_cert_expiration_event_in=None, ad_certificates_path_template=None, ad_computer_base_dn=None, ad_discover_iis_app='false', ad_discover_services='false', ad_discovery_types=None, ad_domain_name=None, ad_domain_users_path_template=None, ad_local_users_ignore=None, ad_local_users_path_template=None, ad_os_filter=None, ad_rotation_hour=None, ad_rotation_interval=None, ad_sra_enable_rdp=None, ad_ssh_port='22', ad_target_format='linked', ad_target_name=None, ad_targets_path_template=None, ad_targets_type='windows', ad_user_base_dn=None, ad_user_groups=None, ad_winrm_over_http='false', ad_winrm_port='5986', ad_discover_local_users=None, ai_certificate_discovery=None, aws_key=None, aws_key_id=None, aws_region='us-east-2', azure_client_id=None, azure_kv_name=None, azure_secret=None, azure_tenant_id=None, conjur_account=None, conjur_api_key=None, conjur_url=None, conjur_username=None, delete_remote=None, expiration_event_in=None, gcp_key=None, gcp_project_id=None, hashi_json='true', hashi_ns=None, hashi_token=None, hashi_url=None, hosts=None, id=None, json=False, k8s_ca_certificate=None, k8s_client_certificate=None, k8s_client_key=None, k8s_namespace=None, k8s_password=None, k8s_skip_system=None, k8s_token=None, k8s_url=None, k8s_username=None, name=None, new_name=None, port_ranges='443', protection_key=None, si_auto_rotate=None, si_rotation_hour=None, si_rotation_interval=None, si_sra_enable_rdp='false', si_target_name=None, si_user_groups=None, si_users_ignore=None, si_users_path_template=None, target_location=None, token=None, uid_token=None, usc_name=None, use_gw_cloud_identity=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, service_account_key_decoded=None, ad_auto_rotate=None, ad_cert_expiration_event_in=None, ad_certificates_path_template=None, ad_computer_base_dn=None, ad_discover_iis_app='false', ad_discover_services='false', ad_discovery_types=None, ad_domain_name=None, ad_domain_users_path_template=None, ad_local_users_ignore=None, ad_local_users_path_template=None, ad_os_filter=None, ad_rotation_hour=None, ad_rotation_interval=None, ad_sra_enable_rdp=None, ad_ssh_port='22', ad_target_format='linked', ad_target_name=None, ad_targets_path_template=None, ad_targets_type='windows', ad_user_base_dn=None, ad_user_groups=None, ad_winrm_over_http='false', ad_winrm_port='5986', ad_discover_local_users=None, ai_certificate_discovery=None, aws_key=None, aws_key_id=None, aws_region='us-east-2', azure_client_id=None, azure_kv_name=None, azure_secret=None, azure_tenant_id=None, conjur_account=None, conjur_api_key=None, conjur_url=None, conjur_username=None, delete_remote=None, expiration_event_in=None, gcp_key=None, gcp_project_id=None, hashi_json='true', hashi_metadata_mode=None, hashi_ns=None, hashi_token=None, hashi_url=None, hosts=None, id=None, json=False, k8s_ca_certificate=None, k8s_client_certificate=None, k8s_client_key=None, k8s_namespace=None, k8s_password=None, k8s_skip_system=None, k8s_token=None, k8s_url=None, k8s_username=None, name=None, new_name=None, port_ranges='443', protection_key=None, si_auto_rotate=None, si_rotation_hour=None, si_rotation_interval=None, si_sra_enable_rdp='false', si_target_name=None, si_user_groups=None, si_users_ignore=None, si_users_path_template=None, target_location=None, token=None, uid_token=None, usc_name=None, use_gw_cloud_identity=None, local_vars_configuration=None):  # noqa: E501
         """GatewayUpdateMigration - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -238,6 +240,7 @@ class GatewayUpdateMigration(object):
         self._gcp_key = None
         self._gcp_project_id = None
         self._hashi_json = None
+        self._hashi_metadata_mode = None
         self._hashi_ns = None
         self._hashi_token = None
         self._hashi_url = None
@@ -358,6 +361,8 @@ class GatewayUpdateMigration(object):
             self.gcp_project_id = gcp_project_id
         if hashi_json is not None:
             self.hashi_json = hashi_json
+        if hashi_metadata_mode is not None:
+            self.hashi_metadata_mode = hashi_metadata_mode
         if hashi_ns is not None:
             self.hashi_ns = hashi_ns
         if hashi_token is not None:
@@ -1405,6 +1410,29 @@ class GatewayUpdateMigration(object):
         """
 
         self._hashi_json = hashi_json
+
+    @property
+    def hashi_metadata_mode(self):
+        """Gets the hashi_metadata_mode of this GatewayUpdateMigration.  # noqa: E501
+
+        Controls the amount of HashiCorp Vault secret metadata migrated with each secret value. Options: none|minimal|full  # noqa: E501
+
+        :return: The hashi_metadata_mode of this GatewayUpdateMigration.  # noqa: E501
+        :rtype: str
+        """
+        return self._hashi_metadata_mode
+
+    @hashi_metadata_mode.setter
+    def hashi_metadata_mode(self, hashi_metadata_mode):
+        """Sets the hashi_metadata_mode of this GatewayUpdateMigration.
+
+        Controls the amount of HashiCorp Vault secret metadata migrated with each secret value. Options: none|minimal|full  # noqa: E501
+
+        :param hashi_metadata_mode: The hashi_metadata_mode of this GatewayUpdateMigration.  # noqa: E501
+        :type: str
+        """
+
+        self._hashi_metadata_mode = hashi_metadata_mode
 
     @property
     def hashi_ns(self):

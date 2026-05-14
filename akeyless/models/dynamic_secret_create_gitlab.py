@@ -43,10 +43,12 @@ class DynamicSecretCreateGitlab(object):
         'gitlab_token_scopes': 'str',
         'gitlab_url': 'str',
         'group_name': 'str',
+        'input_rule': 'list[str]',
         'installation_organization': 'str',
         'item_custom_fields': 'dict(str, str)',
         'json': 'bool',
         'name': 'str',
+        'output_rule': 'list[str]',
         'tags': 'list[str]',
         'target_name': 'str',
         'token': 'str',
@@ -64,10 +66,12 @@ class DynamicSecretCreateGitlab(object):
         'gitlab_token_scopes': 'gitlab-token-scopes',
         'gitlab_url': 'gitlab-url',
         'group_name': 'group-name',
+        'input_rule': 'input-rule',
         'installation_organization': 'installation-organization',
         'item_custom_fields': 'item-custom-fields',
         'json': 'json',
         'name': 'name',
+        'output_rule': 'output-rule',
         'tags': 'tags',
         'target_name': 'target-name',
         'token': 'token',
@@ -75,7 +79,7 @@ class DynamicSecretCreateGitlab(object):
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, delete_protection=None, description=None, gitlab_access_token=None, gitlab_access_type=None, gitlab_certificate=None, gitlab_role=None, gitlab_token_scopes=None, gitlab_url='https://gitlab.com/', group_name=None, installation_organization=None, item_custom_fields=None, json=False, name=None, tags=None, target_name=None, token=None, ttl=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, delete_protection=None, description=None, gitlab_access_token=None, gitlab_access_type=None, gitlab_certificate=None, gitlab_role=None, gitlab_token_scopes=None, gitlab_url='https://gitlab.com/', group_name=None, input_rule=None, installation_organization=None, item_custom_fields=None, json=False, name=None, output_rule=None, tags=None, target_name=None, token=None, ttl=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """DynamicSecretCreateGitlab - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -90,10 +94,12 @@ class DynamicSecretCreateGitlab(object):
         self._gitlab_token_scopes = None
         self._gitlab_url = None
         self._group_name = None
+        self._input_rule = None
         self._installation_organization = None
         self._item_custom_fields = None
         self._json = None
         self._name = None
+        self._output_rule = None
         self._tags = None
         self._target_name = None
         self._token = None
@@ -117,6 +123,8 @@ class DynamicSecretCreateGitlab(object):
             self.gitlab_url = gitlab_url
         if group_name is not None:
             self.group_name = group_name
+        if input_rule is not None:
+            self.input_rule = input_rule
         if installation_organization is not None:
             self.installation_organization = installation_organization
         if item_custom_fields is not None:
@@ -124,6 +132,8 @@ class DynamicSecretCreateGitlab(object):
         if json is not None:
             self.json = json
         self.name = name
+        if output_rule is not None:
+            self.output_rule = output_rule
         if tags is not None:
             self.tags = tags
         if target_name is not None:
@@ -347,6 +357,29 @@ class DynamicSecretCreateGitlab(object):
         self._group_name = group_name
 
     @property
+    def input_rule(self):
+        """Gets the input_rule of this DynamicSecretCreateGitlab.  # noqa: E501
+
+        Agentic input rule in name=...,rule=... format (e.g. name=rule1,rule=Sanitize input) Mirrors commands.AgenticRulesParams — kept separate because ResourceDS cannot embed it (different package, different struct layout).  # noqa: E501
+
+        :return: The input_rule of this DynamicSecretCreateGitlab.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._input_rule
+
+    @input_rule.setter
+    def input_rule(self, input_rule):
+        """Sets the input_rule of this DynamicSecretCreateGitlab.
+
+        Agentic input rule in name=...,rule=... format (e.g. name=rule1,rule=Sanitize input) Mirrors commands.AgenticRulesParams — kept separate because ResourceDS cannot embed it (different package, different struct layout).  # noqa: E501
+
+        :param input_rule: The input_rule of this DynamicSecretCreateGitlab.  # noqa: E501
+        :type: list[str]
+        """
+
+        self._input_rule = input_rule
+
+    @property
     def installation_organization(self):
         """Gets the installation_organization of this DynamicSecretCreateGitlab.  # noqa: E501
 
@@ -439,6 +472,29 @@ class DynamicSecretCreateGitlab(object):
             raise ValueError("Invalid value for `name`, must not be `None`")  # noqa: E501
 
         self._name = name
+
+    @property
+    def output_rule(self):
+        """Gets the output_rule of this DynamicSecretCreateGitlab.  # noqa: E501
+
+        Agentic output rule in name=...,rule=... format (e.g. name=rule1,rule=Mask secrets)  # noqa: E501
+
+        :return: The output_rule of this DynamicSecretCreateGitlab.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._output_rule
+
+    @output_rule.setter
+    def output_rule(self, output_rule):
+        """Sets the output_rule of this DynamicSecretCreateGitlab.
+
+        Agentic output rule in name=...,rule=... format (e.g. name=rule1,rule=Mask secrets)  # noqa: E501
+
+        :param output_rule: The output_rule of this DynamicSecretCreateGitlab.  # noqa: E501
+        :type: list[str]
+        """
+
+        self._output_rule = output_rule
 
     @property
     def tags(self):

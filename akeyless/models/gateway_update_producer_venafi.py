@@ -40,10 +40,12 @@ class GatewayUpdateProducerVenafi(object):
         'auto_generated_folder': 'str',
         'delete_protection': 'str',
         'enable_admin_rotation': 'bool',
+        'input_rule': 'list[str]',
         'item_custom_fields': 'dict(str, str)',
         'json': 'bool',
         'name': 'str',
         'new_name': 'str',
+        'output_rule': 'list[str]',
         'producer_encryption_key_name': 'str',
         'root_first_in_chain': 'bool',
         'sign_using_akeyless_pki': 'bool',
@@ -70,10 +72,12 @@ class GatewayUpdateProducerVenafi(object):
         'auto_generated_folder': 'auto-generated-folder',
         'delete_protection': 'delete_protection',
         'enable_admin_rotation': 'enable-admin-rotation',
+        'input_rule': 'input-rule',
         'item_custom_fields': 'item-custom-fields',
         'json': 'json',
         'name': 'name',
         'new_name': 'new-name',
+        'output_rule': 'output-rule',
         'producer_encryption_key_name': 'producer-encryption-key-name',
         'root_first_in_chain': 'root-first-in-chain',
         'sign_using_akeyless_pki': 'sign-using-akeyless-pki',
@@ -93,7 +97,7 @@ class GatewayUpdateProducerVenafi(object):
         'venafi_zone': 'venafi-zone'
     }
 
-    def __init__(self, admin_rotation_interval_days=0, allow_subdomains=None, allowed_domains=None, auto_generated_folder=None, delete_protection=None, enable_admin_rotation=False, item_custom_fields=None, json=False, name=None, new_name=None, producer_encryption_key_name=None, root_first_in_chain=None, sign_using_akeyless_pki=None, signer_key_name=None, store_private_key=None, tags=None, target_name=None, token=None, uid_token=None, user_ttl='2160h', venafi_access_token=None, venafi_api_key=None, venafi_baseurl=None, venafi_client_id='akeyless', venafi_refresh_token=None, venafi_use_tpp=None, venafi_zone=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, admin_rotation_interval_days=0, allow_subdomains=None, allowed_domains=None, auto_generated_folder=None, delete_protection=None, enable_admin_rotation=False, input_rule=None, item_custom_fields=None, json=False, name=None, new_name=None, output_rule=None, producer_encryption_key_name=None, root_first_in_chain=None, sign_using_akeyless_pki=None, signer_key_name=None, store_private_key=None, tags=None, target_name=None, token=None, uid_token=None, user_ttl='2160h', venafi_access_token=None, venafi_api_key=None, venafi_baseurl=None, venafi_client_id='akeyless', venafi_refresh_token=None, venafi_use_tpp=None, venafi_zone=None, local_vars_configuration=None):  # noqa: E501
         """GatewayUpdateProducerVenafi - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -105,10 +109,12 @@ class GatewayUpdateProducerVenafi(object):
         self._auto_generated_folder = None
         self._delete_protection = None
         self._enable_admin_rotation = None
+        self._input_rule = None
         self._item_custom_fields = None
         self._json = None
         self._name = None
         self._new_name = None
+        self._output_rule = None
         self._producer_encryption_key_name = None
         self._root_first_in_chain = None
         self._sign_using_akeyless_pki = None
@@ -140,6 +146,8 @@ class GatewayUpdateProducerVenafi(object):
             self.delete_protection = delete_protection
         if enable_admin_rotation is not None:
             self.enable_admin_rotation = enable_admin_rotation
+        if input_rule is not None:
+            self.input_rule = input_rule
         if item_custom_fields is not None:
             self.item_custom_fields = item_custom_fields
         if json is not None:
@@ -147,6 +155,8 @@ class GatewayUpdateProducerVenafi(object):
         self.name = name
         if new_name is not None:
             self.new_name = new_name
+        if output_rule is not None:
+            self.output_rule = output_rule
         if producer_encryption_key_name is not None:
             self.producer_encryption_key_name = producer_encryption_key_name
         if root_first_in_chain is not None:
@@ -321,6 +331,29 @@ class GatewayUpdateProducerVenafi(object):
         self._enable_admin_rotation = enable_admin_rotation
 
     @property
+    def input_rule(self):
+        """Gets the input_rule of this GatewayUpdateProducerVenafi.  # noqa: E501
+
+        Agentic input rule in name=...,rule=... format (e.g. name=rule1,rule=Sanitize input) Mirrors commands.AgenticRulesParams — kept separate because ResourceDS cannot embed it (different package, different struct layout).  # noqa: E501
+
+        :return: The input_rule of this GatewayUpdateProducerVenafi.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._input_rule
+
+    @input_rule.setter
+    def input_rule(self, input_rule):
+        """Sets the input_rule of this GatewayUpdateProducerVenafi.
+
+        Agentic input rule in name=...,rule=... format (e.g. name=rule1,rule=Sanitize input) Mirrors commands.AgenticRulesParams — kept separate because ResourceDS cannot embed it (different package, different struct layout).  # noqa: E501
+
+        :param input_rule: The input_rule of this GatewayUpdateProducerVenafi.  # noqa: E501
+        :type: list[str]
+        """
+
+        self._input_rule = input_rule
+
+    @property
     def item_custom_fields(self):
         """Gets the item_custom_fields of this GatewayUpdateProducerVenafi.  # noqa: E501
 
@@ -413,6 +446,29 @@ class GatewayUpdateProducerVenafi(object):
         """
 
         self._new_name = new_name
+
+    @property
+    def output_rule(self):
+        """Gets the output_rule of this GatewayUpdateProducerVenafi.  # noqa: E501
+
+        Agentic output rule in name=...,rule=... format (e.g. name=rule1,rule=Mask secrets)  # noqa: E501
+
+        :return: The output_rule of this GatewayUpdateProducerVenafi.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._output_rule
+
+    @output_rule.setter
+    def output_rule(self, output_rule):
+        """Sets the output_rule of this GatewayUpdateProducerVenafi.
+
+        Agentic output rule in name=...,rule=... format (e.g. name=rule1,rule=Mask secrets)  # noqa: E501
+
+        :param output_rule: The output_rule of this GatewayUpdateProducerVenafi.  # noqa: E501
+        :type: list[str]
+        """
+
+        self._output_rule = output_rule
 
     @property
     def producer_encryption_key_name(self):

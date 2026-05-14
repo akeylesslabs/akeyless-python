@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **event_forwarders_access** | **str** | Allow this role to manage Event Forwarders. Currently only &#39;none&#39; and &#39;all&#39; values are supported. | [optional] 
 **event_forwarders_name** | **list[str]** | Allow this role to manage the following Event Forwarders. | [optional] 
 **gw_analytics_access** | **str** | Allow this role to view gw analytics. Currently only &#39;none&#39;, &#39;scoped&#39;, &#39;all&#39; values are supported, allowing associated auth methods to view reports produced by the same auth methods. | [optional] 
+**isi_access** | **str** | Allow this role to access Identity &amp; Secrets Intelligence. Currently only &#39;none&#39;, &#39;scoped&#39; and &#39;all&#39; values are supported. | [optional] 
 **json** | **bool** | Set output format to JSON | [optional] [default to False]
 **name** | **str** | Role name | 
 **reverse_rbac_access** | **str** | Allow this role to view Reverse RBAC. Supported values: &#39;scoped&#39;, &#39;all&#39;. | [optional] 

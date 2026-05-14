@@ -36,7 +36,7 @@ class AccountCustomFieldGetOutput(object):
     openapi_types = {
         'account_id': 'str',
         'creation_date': 'datetime',
-        'deletion_date': 'NullTime',
+        'deletion_date': 'datetime',
         'id': 'int',
         'modification_date': 'datetime',
         'name': 'str',
@@ -141,7 +141,7 @@ class AccountCustomFieldGetOutput(object):
 
 
         :return: The deletion_date of this AccountCustomFieldGetOutput.  # noqa: E501
-        :rtype: NullTime
+        :rtype: datetime
         """
         return self._deletion_date
 
@@ -151,7 +151,7 @@ class AccountCustomFieldGetOutput(object):
 
 
         :param deletion_date: The deletion_date of this AccountCustomFieldGetOutput.  # noqa: E501
-        :type: NullTime
+        :type: datetime
         """
 
         self._deletion_date = deletion_date

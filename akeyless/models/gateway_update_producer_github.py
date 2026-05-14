@@ -38,6 +38,7 @@ class GatewayUpdateProducerGithub(object):
         'github_app_id': 'int',
         'github_app_private_key': 'str',
         'github_base_url': 'str',
+        'input_rule': 'list[str]',
         'installation_id': 'int',
         'installation_organization': 'str',
         'installation_repository': 'str',
@@ -45,6 +46,7 @@ class GatewayUpdateProducerGithub(object):
         'json': 'bool',
         'name': 'str',
         'new_name': 'str',
+        'output_rule': 'list[str]',
         'tags': 'list[str]',
         'target_name': 'str',
         'token': 'str',
@@ -59,6 +61,7 @@ class GatewayUpdateProducerGithub(object):
         'github_app_id': 'github-app-id',
         'github_app_private_key': 'github-app-private-key',
         'github_base_url': 'github-base-url',
+        'input_rule': 'input-rule',
         'installation_id': 'installation-id',
         'installation_organization': 'installation-organization',
         'installation_repository': 'installation-repository',
@@ -66,6 +69,7 @@ class GatewayUpdateProducerGithub(object):
         'json': 'json',
         'name': 'name',
         'new_name': 'new-name',
+        'output_rule': 'output-rule',
         'tags': 'tags',
         'target_name': 'target-name',
         'token': 'token',
@@ -75,7 +79,7 @@ class GatewayUpdateProducerGithub(object):
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, delete_protection=None, github_app_id=None, github_app_private_key=None, github_base_url='https://api.github.com/', installation_id=None, installation_organization=None, installation_repository=None, item_custom_fields=None, json=False, name=None, new_name=None, tags=None, target_name=None, token=None, token_permissions=None, token_repositories=None, token_ttl='60m', uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, delete_protection=None, github_app_id=None, github_app_private_key=None, github_base_url='https://api.github.com/', input_rule=None, installation_id=None, installation_organization=None, installation_repository=None, item_custom_fields=None, json=False, name=None, new_name=None, output_rule=None, tags=None, target_name=None, token=None, token_permissions=None, token_repositories=None, token_ttl='60m', uid_token=None, local_vars_configuration=None):  # noqa: E501
         """GatewayUpdateProducerGithub - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -85,6 +89,7 @@ class GatewayUpdateProducerGithub(object):
         self._github_app_id = None
         self._github_app_private_key = None
         self._github_base_url = None
+        self._input_rule = None
         self._installation_id = None
         self._installation_organization = None
         self._installation_repository = None
@@ -92,6 +97,7 @@ class GatewayUpdateProducerGithub(object):
         self._json = None
         self._name = None
         self._new_name = None
+        self._output_rule = None
         self._tags = None
         self._target_name = None
         self._token = None
@@ -109,6 +115,8 @@ class GatewayUpdateProducerGithub(object):
             self.github_app_private_key = github_app_private_key
         if github_base_url is not None:
             self.github_base_url = github_base_url
+        if input_rule is not None:
+            self.input_rule = input_rule
         if installation_id is not None:
             self.installation_id = installation_id
         if installation_organization is not None:
@@ -122,6 +130,8 @@ class GatewayUpdateProducerGithub(object):
         self.name = name
         if new_name is not None:
             self.new_name = new_name
+        if output_rule is not None:
+            self.output_rule = output_rule
         if tags is not None:
             self.tags = tags
         if target_name is not None:
@@ -228,6 +238,29 @@ class GatewayUpdateProducerGithub(object):
         """
 
         self._github_base_url = github_base_url
+
+    @property
+    def input_rule(self):
+        """Gets the input_rule of this GatewayUpdateProducerGithub.  # noqa: E501
+
+        Agentic input rule in name=...,rule=... format (e.g. name=rule1,rule=Sanitize input) Mirrors commands.AgenticRulesParams — kept separate because ResourceDS cannot embed it (different package, different struct layout).  # noqa: E501
+
+        :return: The input_rule of this GatewayUpdateProducerGithub.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._input_rule
+
+    @input_rule.setter
+    def input_rule(self, input_rule):
+        """Sets the input_rule of this GatewayUpdateProducerGithub.
+
+        Agentic input rule in name=...,rule=... format (e.g. name=rule1,rule=Sanitize input) Mirrors commands.AgenticRulesParams — kept separate because ResourceDS cannot embed it (different package, different struct layout).  # noqa: E501
+
+        :param input_rule: The input_rule of this GatewayUpdateProducerGithub.  # noqa: E501
+        :type: list[str]
+        """
+
+        self._input_rule = input_rule
 
     @property
     def installation_id(self):
@@ -391,6 +424,29 @@ class GatewayUpdateProducerGithub(object):
         """
 
         self._new_name = new_name
+
+    @property
+    def output_rule(self):
+        """Gets the output_rule of this GatewayUpdateProducerGithub.  # noqa: E501
+
+        Agentic output rule in name=...,rule=... format (e.g. name=rule1,rule=Mask secrets)  # noqa: E501
+
+        :return: The output_rule of this GatewayUpdateProducerGithub.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._output_rule
+
+    @output_rule.setter
+    def output_rule(self, output_rule):
+        """Sets the output_rule of this GatewayUpdateProducerGithub.
+
+        Agentic output rule in name=...,rule=... format (e.g. name=rule1,rule=Mask secrets)  # noqa: E501
+
+        :param output_rule: The output_rule of this GatewayUpdateProducerGithub.  # noqa: E501
+        :type: list[str]
+        """
+
+        self._output_rule = output_rule
 
     @property
     def tags(self):

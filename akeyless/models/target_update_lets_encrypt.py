@@ -38,6 +38,7 @@ class TargetUpdateLetsEncrypt(object):
         'delete_protection': 'str',
         'description': 'str',
         'dns_target_creds': 'str',
+        'dns_zone': 'str',
         'email': 'str',
         'gcp_project': 'str',
         'hosted_zone': 'str',
@@ -59,6 +60,7 @@ class TargetUpdateLetsEncrypt(object):
         'delete_protection': 'delete_protection',
         'description': 'description',
         'dns_target_creds': 'dns-target-creds',
+        'dns_zone': 'dns-zone',
         'email': 'email',
         'gcp_project': 'gcp-project',
         'hosted_zone': 'hosted-zone',
@@ -75,7 +77,7 @@ class TargetUpdateLetsEncrypt(object):
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, acme_challenge='http', delete_protection=None, description=None, dns_target_creds=None, email=None, gcp_project=None, hosted_zone=None, json=False, keep_prev_version=None, key=None, lets_encrypt_url='production', max_versions=None, name=None, new_name=None, resource_group=None, timeout='5m', token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, acme_challenge='http', delete_protection=None, description=None, dns_target_creds=None, dns_zone=None, email=None, gcp_project=None, hosted_zone=None, json=False, keep_prev_version=None, key=None, lets_encrypt_url='production', max_versions=None, name=None, new_name=None, resource_group=None, timeout='5m', token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """TargetUpdateLetsEncrypt - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -85,6 +87,7 @@ class TargetUpdateLetsEncrypt(object):
         self._delete_protection = None
         self._description = None
         self._dns_target_creds = None
+        self._dns_zone = None
         self._email = None
         self._gcp_project = None
         self._hosted_zone = None
@@ -109,6 +112,8 @@ class TargetUpdateLetsEncrypt(object):
             self.description = description
         if dns_target_creds is not None:
             self.dns_target_creds = dns_target_creds
+        if dns_zone is not None:
+            self.dns_zone = dns_zone
         self.email = email
         if gcp_project is not None:
             self.gcp_project = gcp_project
@@ -207,7 +212,7 @@ class TargetUpdateLetsEncrypt(object):
     def dns_target_creds(self):
         """Gets the dns_target_creds of this TargetUpdateLetsEncrypt.  # noqa: E501
 
-        Name of existing cloud target for DNS credentials. Required when acme-challenge=dns. Supported: AWS, Azure, GCP targets  # noqa: E501
+        Name of existing cloud target for DNS credentials. Required when acme-challenge=dns. Supported: AWS, Azure, GCP, Cloudflare targets  # noqa: E501
 
         :return: The dns_target_creds of this TargetUpdateLetsEncrypt.  # noqa: E501
         :rtype: str
@@ -218,13 +223,36 @@ class TargetUpdateLetsEncrypt(object):
     def dns_target_creds(self, dns_target_creds):
         """Sets the dns_target_creds of this TargetUpdateLetsEncrypt.
 
-        Name of existing cloud target for DNS credentials. Required when acme-challenge=dns. Supported: AWS, Azure, GCP targets  # noqa: E501
+        Name of existing cloud target for DNS credentials. Required when acme-challenge=dns. Supported: AWS, Azure, GCP, Cloudflare targets  # noqa: E501
 
         :param dns_target_creds: The dns_target_creds of this TargetUpdateLetsEncrypt.  # noqa: E501
         :type: str
         """
 
         self._dns_target_creds = dns_target_creds
+
+    @property
+    def dns_zone(self):
+        """Gets the dns_zone of this TargetUpdateLetsEncrypt.  # noqa: E501
+
+        Cloudflare DNS zone identifier. Required when dns-target-creds points to Cloudflare target  # noqa: E501
+
+        :return: The dns_zone of this TargetUpdateLetsEncrypt.  # noqa: E501
+        :rtype: str
+        """
+        return self._dns_zone
+
+    @dns_zone.setter
+    def dns_zone(self, dns_zone):
+        """Sets the dns_zone of this TargetUpdateLetsEncrypt.
+
+        Cloudflare DNS zone identifier. Required when dns-target-creds points to Cloudflare target  # noqa: E501
+
+        :param dns_zone: The dns_zone of this TargetUpdateLetsEncrypt.  # noqa: E501
+        :type: str
+        """
+
+        self._dns_zone = dns_zone
 
     @property
     def email(self):

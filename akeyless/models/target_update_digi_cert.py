@@ -38,6 +38,7 @@ class TargetUpdateDigiCert(object):
         'description': 'str',
         'digicert_url': 'str',
         'dns_target_creds': 'str',
+        'dns_zone': 'str',
         'eab_hmac_key': 'str',
         'eab_key_id': 'str',
         'email': 'str',
@@ -60,6 +61,7 @@ class TargetUpdateDigiCert(object):
         'description': 'description',
         'digicert_url': 'digicert-url',
         'dns_target_creds': 'dns-target-creds',
+        'dns_zone': 'dns-zone',
         'eab_hmac_key': 'eab-hmac-key',
         'eab_key_id': 'eab-key-id',
         'email': 'email',
@@ -77,7 +79,7 @@ class TargetUpdateDigiCert(object):
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, acme_challenge='dns', description=None, digicert_url='us-production', dns_target_creds=None, eab_hmac_key=None, eab_key_id=None, email=None, gcp_project=None, hosted_zone=None, json=False, keep_prev_version=None, key=None, max_versions=None, name=None, new_name=None, resource_group=None, timeout='5m', token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, acme_challenge='dns', description=None, digicert_url='us-production', dns_target_creds=None, dns_zone=None, eab_hmac_key=None, eab_key_id=None, email=None, gcp_project=None, hosted_zone=None, json=False, keep_prev_version=None, key=None, max_versions=None, name=None, new_name=None, resource_group=None, timeout='5m', token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """TargetUpdateDigiCert - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -87,6 +89,7 @@ class TargetUpdateDigiCert(object):
         self._description = None
         self._digicert_url = None
         self._dns_target_creds = None
+        self._dns_zone = None
         self._eab_hmac_key = None
         self._eab_key_id = None
         self._email = None
@@ -112,6 +115,8 @@ class TargetUpdateDigiCert(object):
             self.digicert_url = digicert_url
         if dns_target_creds is not None:
             self.dns_target_creds = dns_target_creds
+        if dns_zone is not None:
+            self.dns_zone = dns_zone
         if eab_hmac_key is not None:
             self.eab_hmac_key = eab_hmac_key
         if eab_key_id is not None:
@@ -214,7 +219,7 @@ class TargetUpdateDigiCert(object):
     def dns_target_creds(self):
         """Gets the dns_target_creds of this TargetUpdateDigiCert.  # noqa: E501
 
-        Name of existing cloud target for DNS credentials. Required when challenge type is dns. Supported providers: AWS, Azure, GCP  # noqa: E501
+        Name of existing cloud target for DNS credentials. Required when challenge type is dns. Supported providers: AWS, Azure, GCP, Cloudflare  # noqa: E501
 
         :return: The dns_target_creds of this TargetUpdateDigiCert.  # noqa: E501
         :rtype: str
@@ -225,13 +230,36 @@ class TargetUpdateDigiCert(object):
     def dns_target_creds(self, dns_target_creds):
         """Sets the dns_target_creds of this TargetUpdateDigiCert.
 
-        Name of existing cloud target for DNS credentials. Required when challenge type is dns. Supported providers: AWS, Azure, GCP  # noqa: E501
+        Name of existing cloud target for DNS credentials. Required when challenge type is dns. Supported providers: AWS, Azure, GCP, Cloudflare  # noqa: E501
 
         :param dns_target_creds: The dns_target_creds of this TargetUpdateDigiCert.  # noqa: E501
         :type: str
         """
 
         self._dns_target_creds = dns_target_creds
+
+    @property
+    def dns_zone(self):
+        """Gets the dns_zone of this TargetUpdateDigiCert.  # noqa: E501
+
+        Cloudflare DNS zone identifier. Required when DNS credentials target is Cloudflare  # noqa: E501
+
+        :return: The dns_zone of this TargetUpdateDigiCert.  # noqa: E501
+        :rtype: str
+        """
+        return self._dns_zone
+
+    @dns_zone.setter
+    def dns_zone(self, dns_zone):
+        """Sets the dns_zone of this TargetUpdateDigiCert.
+
+        Cloudflare DNS zone identifier. Required when DNS credentials target is Cloudflare  # noqa: E501
+
+        :param dns_zone: The dns_zone of this TargetUpdateDigiCert.  # noqa: E501
+        :type: str
+        """
+
+        self._dns_zone = dns_zone
 
     @property
     def eab_hmac_key(self):

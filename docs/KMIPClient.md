@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 **activate_keys_on_creation** | **bool** |  | [optional] 
 **certificate_issue_date** | **datetime** |  | [optional] 
 **certificate_ttl_in_seconds** | **int** |  | [optional] 
+**expiration_events** | [**list[CertificateExpirationEvent]**](CertificateExpirationEvent.md) |  | [optional] 
 **id** | **str** |  | [optional] 
 **name** | **str** |  | [optional] 
 **rules** | [**list[PathRule]**](PathRule.md) |  | [optional] 

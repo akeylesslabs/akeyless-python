@@ -40,6 +40,7 @@ class DigiCertTargetDetails(object):
         'digicert_directory_type': 'str',
         'dns_target_name': 'str',
         'dns_target_type': 'str',
+        'dns_zone': 'str',
         'eab_hmac_key': 'str',
         'eab_key_id': 'str',
         'email': 'str',
@@ -56,6 +57,7 @@ class DigiCertTargetDetails(object):
         'digicert_directory_type': 'digicert_directory_type',
         'dns_target_name': 'dns_target_name',
         'dns_target_type': 'dns_target_type',
+        'dns_zone': 'dns_zone',
         'eab_hmac_key': 'eab_hmac_key',
         'eab_key_id': 'eab_key_id',
         'email': 'email',
@@ -65,7 +67,7 @@ class DigiCertTargetDetails(object):
         'timeout': 'timeout'
     }
 
-    def __init__(self, account_key_pem=None, account_url=None, challenge_type=None, digicert_directory_type=None, dns_target_name=None, dns_target_type=None, eab_hmac_key=None, eab_key_id=None, email=None, gcp_project=None, hosted_zone=None, resource_group=None, timeout=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, account_key_pem=None, account_url=None, challenge_type=None, digicert_directory_type=None, dns_target_name=None, dns_target_type=None, dns_zone=None, eab_hmac_key=None, eab_key_id=None, email=None, gcp_project=None, hosted_zone=None, resource_group=None, timeout=None, local_vars_configuration=None):  # noqa: E501
         """DigiCertTargetDetails - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -77,6 +79,7 @@ class DigiCertTargetDetails(object):
         self._digicert_directory_type = None
         self._dns_target_name = None
         self._dns_target_type = None
+        self._dns_zone = None
         self._eab_hmac_key = None
         self._eab_key_id = None
         self._email = None
@@ -98,6 +101,8 @@ class DigiCertTargetDetails(object):
             self.dns_target_name = dns_target_name
         if dns_target_type is not None:
             self.dns_target_type = dns_target_type
+        if dns_zone is not None:
+            self.dns_zone = dns_zone
         if eab_hmac_key is not None:
             self.eab_hmac_key = eab_hmac_key
         if eab_key_id is not None:
@@ -246,6 +251,29 @@ class DigiCertTargetDetails(object):
         """
 
         self._dns_target_type = dns_target_type
+
+    @property
+    def dns_zone(self):
+        """Gets the dns_zone of this DigiCertTargetDetails.  # noqa: E501
+
+        Cloudflare zone identifier. Required when DNSTargetType is Cloudflare.  # noqa: E501
+
+        :return: The dns_zone of this DigiCertTargetDetails.  # noqa: E501
+        :rtype: str
+        """
+        return self._dns_zone
+
+    @dns_zone.setter
+    def dns_zone(self, dns_zone):
+        """Sets the dns_zone of this DigiCertTargetDetails.
+
+        Cloudflare zone identifier. Required when DNSTargetType is Cloudflare.  # noqa: E501
+
+        :param dns_zone: The dns_zone of this DigiCertTargetDetails.  # noqa: E501
+        :type: str
+        """
+
+        self._dns_zone = dns_zone
 
     @property
     def eab_hmac_key(self):

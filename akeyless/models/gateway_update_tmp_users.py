@@ -35,9 +35,11 @@ class GatewayUpdateTmpUsers(object):
     """
     openapi_types = {
         'host': 'str',
+        'input_rule': 'list[str]',
         'json': 'bool',
         'name': 'str',
         'new_ttl_min': 'int',
+        'output_rule': 'list[str]',
         'tmp_creds_id': 'str',
         'token': 'str',
         'uid_token': 'str'
@@ -45,34 +47,42 @@ class GatewayUpdateTmpUsers(object):
 
     attribute_map = {
         'host': 'host',
+        'input_rule': 'input-rule',
         'json': 'json',
         'name': 'name',
         'new_ttl_min': 'new-ttl-min',
+        'output_rule': 'output-rule',
         'tmp_creds_id': 'tmp-creds-id',
         'token': 'token',
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, host=None, json=False, name=None, new_ttl_min=None, tmp_creds_id=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, host=None, input_rule=None, json=False, name=None, new_ttl_min=None, output_rule=None, tmp_creds_id=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """GatewayUpdateTmpUsers - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._host = None
+        self._input_rule = None
         self._json = None
         self._name = None
         self._new_ttl_min = None
+        self._output_rule = None
         self._tmp_creds_id = None
         self._token = None
         self._uid_token = None
         self.discriminator = None
 
         self.host = host
+        if input_rule is not None:
+            self.input_rule = input_rule
         if json is not None:
             self.json = json
         self.name = name
         self.new_ttl_min = new_ttl_min
+        if output_rule is not None:
+            self.output_rule = output_rule
         self.tmp_creds_id = tmp_creds_id
         if token is not None:
             self.token = token
@@ -103,6 +113,29 @@ class GatewayUpdateTmpUsers(object):
             raise ValueError("Invalid value for `host`, must not be `None`")  # noqa: E501
 
         self._host = host
+
+    @property
+    def input_rule(self):
+        """Gets the input_rule of this GatewayUpdateTmpUsers.  # noqa: E501
+
+        Agentic input rule in name=...,rule=... format (e.g. name=rule1,rule=Sanitize input) Mirrors commands.AgenticRulesParams — kept separate because ResourceDS cannot embed it (different package, different struct layout).  # noqa: E501
+
+        :return: The input_rule of this GatewayUpdateTmpUsers.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._input_rule
+
+    @input_rule.setter
+    def input_rule(self, input_rule):
+        """Sets the input_rule of this GatewayUpdateTmpUsers.
+
+        Agentic input rule in name=...,rule=... format (e.g. name=rule1,rule=Sanitize input) Mirrors commands.AgenticRulesParams — kept separate because ResourceDS cannot embed it (different package, different struct layout).  # noqa: E501
+
+        :param input_rule: The input_rule of this GatewayUpdateTmpUsers.  # noqa: E501
+        :type: list[str]
+        """
+
+        self._input_rule = input_rule
 
     @property
     def json(self):
@@ -176,6 +209,29 @@ class GatewayUpdateTmpUsers(object):
             raise ValueError("Invalid value for `new_ttl_min`, must not be `None`")  # noqa: E501
 
         self._new_ttl_min = new_ttl_min
+
+    @property
+    def output_rule(self):
+        """Gets the output_rule of this GatewayUpdateTmpUsers.  # noqa: E501
+
+        Agentic output rule in name=...,rule=... format (e.g. name=rule1,rule=Mask secrets)  # noqa: E501
+
+        :return: The output_rule of this GatewayUpdateTmpUsers.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._output_rule
+
+    @output_rule.setter
+    def output_rule(self, output_rule):
+        """Sets the output_rule of this GatewayUpdateTmpUsers.
+
+        Agentic output rule in name=...,rule=... format (e.g. name=rule1,rule=Mask secrets)  # noqa: E501
+
+        :param output_rule: The output_rule of this GatewayUpdateTmpUsers.  # noqa: E501
+        :type: list[str]
+        """
+
+        self._output_rule = output_rule
 
     @property
     def tmp_creds_id(self):

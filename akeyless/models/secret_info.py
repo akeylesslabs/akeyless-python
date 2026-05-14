@@ -34,6 +34,7 @@ class SecretInfo(object):
                             and the value is json key in definition.
     """
     openapi_types = {
+        'activation_date': 'datetime',
         'created': 'datetime',
         'description': 'str',
         'expiration': 'datetime',
@@ -53,6 +54,7 @@ class SecretInfo(object):
     }
 
     attribute_map = {
+        'activation_date': 'activation_date',
         'created': 'created',
         'description': 'description',
         'expiration': 'expiration',
@@ -71,12 +73,13 @@ class SecretInfo(object):
         'version': 'version'
     }
 
-    def __init__(self, created=None, description=None, expiration=None, github=None, key_id=None, last_retrieved=None, location=None, name=None, namespace=None, region=None, secret_id=None, status=None, tags=None, thumbprint=None, type=None, version=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, activation_date=None, created=None, description=None, expiration=None, github=None, key_id=None, last_retrieved=None, location=None, name=None, namespace=None, region=None, secret_id=None, status=None, tags=None, thumbprint=None, type=None, version=None, local_vars_configuration=None):  # noqa: E501
         """SecretInfo - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
+        self._activation_date = None
         self._created = None
         self._description = None
         self._expiration = None
@@ -95,6 +98,8 @@ class SecretInfo(object):
         self._version = None
         self.discriminator = None
 
+        if activation_date is not None:
+            self.activation_date = activation_date
         if created is not None:
             self.created = created
         if description is not None:
@@ -127,6 +132,27 @@ class SecretInfo(object):
             self.type = type
         if version is not None:
             self.version = version
+
+    @property
+    def activation_date(self):
+        """Gets the activation_date of this SecretInfo.  # noqa: E501
+
+
+        :return: The activation_date of this SecretInfo.  # noqa: E501
+        :rtype: datetime
+        """
+        return self._activation_date
+
+    @activation_date.setter
+    def activation_date(self, activation_date):
+        """Sets the activation_date of this SecretInfo.
+
+
+        :param activation_date: The activation_date of this SecretInfo.  # noqa: E501
+        :type: datetime
+        """
+
+        self._activation_date = activation_date
 
     @property
     def created(self):

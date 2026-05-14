@@ -36,6 +36,7 @@ class GatewayUpdateProducerMSSQL(object):
     openapi_types = {
         'custom_username_template': 'str',
         'delete_protection': 'str',
+        'input_rule': 'list[str]',
         'item_custom_fields': 'dict(str, str)',
         'json': 'bool',
         'mssql_allowed_db_names': 'str',
@@ -48,6 +49,7 @@ class GatewayUpdateProducerMSSQL(object):
         'mssql_username': 'str',
         'name': 'str',
         'new_name': 'str',
+        'output_rule': 'list[str]',
         'password_length': 'str',
         'producer_encryption_key_name': 'str',
         'secure_access_bastion_issuer': 'str',
@@ -68,6 +70,7 @@ class GatewayUpdateProducerMSSQL(object):
     attribute_map = {
         'custom_username_template': 'custom-username-template',
         'delete_protection': 'delete_protection',
+        'input_rule': 'input-rule',
         'item_custom_fields': 'item-custom-fields',
         'json': 'json',
         'mssql_allowed_db_names': 'mssql-allowed-db-names',
@@ -80,6 +83,7 @@ class GatewayUpdateProducerMSSQL(object):
         'mssql_username': 'mssql-username',
         'name': 'name',
         'new_name': 'new-name',
+        'output_rule': 'output-rule',
         'password_length': 'password-length',
         'producer_encryption_key_name': 'producer-encryption-key-name',
         'secure_access_bastion_issuer': 'secure-access-bastion-issuer',
@@ -97,7 +101,7 @@ class GatewayUpdateProducerMSSQL(object):
         'user_ttl': 'user-ttl'
     }
 
-    def __init__(self, custom_username_template=None, delete_protection=None, item_custom_fields=None, json=False, mssql_allowed_db_names=None, mssql_create_statements=None, mssql_dbname=None, mssql_host='127.0.0.1', mssql_password=None, mssql_port='1433', mssql_revocation_statements=None, mssql_username=None, name=None, new_name=None, password_length=None, producer_encryption_key_name=None, secure_access_bastion_issuer=None, secure_access_certificate_issuer=None, secure_access_db_name=None, secure_access_db_schema=None, secure_access_delay=None, secure_access_enable=None, secure_access_host=None, secure_access_web=False, tags=None, target_name=None, token=None, uid_token=None, user_ttl='60m', local_vars_configuration=None):  # noqa: E501
+    def __init__(self, custom_username_template=None, delete_protection=None, input_rule=None, item_custom_fields=None, json=False, mssql_allowed_db_names=None, mssql_create_statements=None, mssql_dbname=None, mssql_host='127.0.0.1', mssql_password=None, mssql_port='1433', mssql_revocation_statements=None, mssql_username=None, name=None, new_name=None, output_rule=None, password_length=None, producer_encryption_key_name=None, secure_access_bastion_issuer=None, secure_access_certificate_issuer=None, secure_access_db_name=None, secure_access_db_schema=None, secure_access_delay=None, secure_access_enable=None, secure_access_host=None, secure_access_web=False, tags=None, target_name=None, token=None, uid_token=None, user_ttl='60m', local_vars_configuration=None):  # noqa: E501
         """GatewayUpdateProducerMSSQL - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -105,6 +109,7 @@ class GatewayUpdateProducerMSSQL(object):
 
         self._custom_username_template = None
         self._delete_protection = None
+        self._input_rule = None
         self._item_custom_fields = None
         self._json = None
         self._mssql_allowed_db_names = None
@@ -117,6 +122,7 @@ class GatewayUpdateProducerMSSQL(object):
         self._mssql_username = None
         self._name = None
         self._new_name = None
+        self._output_rule = None
         self._password_length = None
         self._producer_encryption_key_name = None
         self._secure_access_bastion_issuer = None
@@ -138,6 +144,8 @@ class GatewayUpdateProducerMSSQL(object):
             self.custom_username_template = custom_username_template
         if delete_protection is not None:
             self.delete_protection = delete_protection
+        if input_rule is not None:
+            self.input_rule = input_rule
         if item_custom_fields is not None:
             self.item_custom_fields = item_custom_fields
         if json is not None:
@@ -161,6 +169,8 @@ class GatewayUpdateProducerMSSQL(object):
         self.name = name
         if new_name is not None:
             self.new_name = new_name
+        if output_rule is not None:
+            self.output_rule = output_rule
         if password_length is not None:
             self.password_length = password_length
         if producer_encryption_key_name is not None:
@@ -237,6 +247,29 @@ class GatewayUpdateProducerMSSQL(object):
         """
 
         self._delete_protection = delete_protection
+
+    @property
+    def input_rule(self):
+        """Gets the input_rule of this GatewayUpdateProducerMSSQL.  # noqa: E501
+
+        Agentic input rule in name=...,rule=... format (e.g. name=rule1,rule=Sanitize input) Mirrors commands.AgenticRulesParams — kept separate because ResourceDS cannot embed it (different package, different struct layout).  # noqa: E501
+
+        :return: The input_rule of this GatewayUpdateProducerMSSQL.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._input_rule
+
+    @input_rule.setter
+    def input_rule(self, input_rule):
+        """Sets the input_rule of this GatewayUpdateProducerMSSQL.
+
+        Agentic input rule in name=...,rule=... format (e.g. name=rule1,rule=Sanitize input) Mirrors commands.AgenticRulesParams — kept separate because ResourceDS cannot embed it (different package, different struct layout).  # noqa: E501
+
+        :param input_rule: The input_rule of this GatewayUpdateProducerMSSQL.  # noqa: E501
+        :type: list[str]
+        """
+
+        self._input_rule = input_rule
 
     @property
     def item_custom_fields(self):
@@ -515,6 +548,29 @@ class GatewayUpdateProducerMSSQL(object):
         """
 
         self._new_name = new_name
+
+    @property
+    def output_rule(self):
+        """Gets the output_rule of this GatewayUpdateProducerMSSQL.  # noqa: E501
+
+        Agentic output rule in name=...,rule=... format (e.g. name=rule1,rule=Mask secrets)  # noqa: E501
+
+        :return: The output_rule of this GatewayUpdateProducerMSSQL.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._output_rule
+
+    @output_rule.setter
+    def output_rule(self, output_rule):
+        """Sets the output_rule of this GatewayUpdateProducerMSSQL.
+
+        Agentic output rule in name=...,rule=... format (e.g. name=rule1,rule=Mask secrets)  # noqa: E501
+
+        :param output_rule: The output_rule of this GatewayUpdateProducerMSSQL.  # noqa: E501
+        :type: list[str]
+        """
+
+        self._output_rule = output_rule
 
     @property
     def password_length(self):

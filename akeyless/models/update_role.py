@@ -42,6 +42,7 @@ class UpdateRole(object):
         'event_center_access': 'str',
         'event_forwarder_access': 'str',
         'gw_analytics_access': 'str',
+        'isi_access': 'str',
         'json': 'bool',
         'name': 'str',
         'new_comment': 'str',
@@ -62,6 +63,7 @@ class UpdateRole(object):
         'event_center_access': 'event-center-access',
         'event_forwarder_access': 'event-forwarder-access',
         'gw_analytics_access': 'gw-analytics-access',
+        'isi_access': 'isi-access',
         'json': 'json',
         'name': 'name',
         'new_comment': 'new-comment',
@@ -73,7 +75,7 @@ class UpdateRole(object):
         'usage_reports_access': 'usage-reports-access'
     }
 
-    def __init__(self, analytics_access=None, ara_reports_access=None, audit_access=None, delete_protection=None, description='default_comment', event_center_access=None, event_forwarder_access=None, gw_analytics_access=None, json=False, name=None, new_comment='default_comment', new_name=None, reverse_rbac_access=None, sra_reports_access=None, token=None, uid_token=None, usage_reports_access=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, analytics_access=None, ara_reports_access=None, audit_access=None, delete_protection=None, description='default_comment', event_center_access=None, event_forwarder_access=None, gw_analytics_access=None, isi_access=None, json=False, name=None, new_comment='default_comment', new_name=None, reverse_rbac_access=None, sra_reports_access=None, token=None, uid_token=None, usage_reports_access=None, local_vars_configuration=None):  # noqa: E501
         """UpdateRole - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -87,6 +89,7 @@ class UpdateRole(object):
         self._event_center_access = None
         self._event_forwarder_access = None
         self._gw_analytics_access = None
+        self._isi_access = None
         self._json = None
         self._name = None
         self._new_comment = None
@@ -114,6 +117,8 @@ class UpdateRole(object):
             self.event_forwarder_access = event_forwarder_access
         if gw_analytics_access is not None:
             self.gw_analytics_access = gw_analytics_access
+        if isi_access is not None:
+            self.isi_access = isi_access
         if json is not None:
             self.json = json
         self.name = name
@@ -315,6 +320,29 @@ class UpdateRole(object):
         """
 
         self._gw_analytics_access = gw_analytics_access
+
+    @property
+    def isi_access(self):
+        """Gets the isi_access of this UpdateRole.  # noqa: E501
+
+        Allow this role to access Identity & Secrets Intelligence. Currently only 'none', 'scoped' and 'all' values are supported.  # noqa: E501
+
+        :return: The isi_access of this UpdateRole.  # noqa: E501
+        :rtype: str
+        """
+        return self._isi_access
+
+    @isi_access.setter
+    def isi_access(self, isi_access):
+        """Sets the isi_access of this UpdateRole.
+
+        Allow this role to access Identity & Secrets Intelligence. Currently only 'none', 'scoped' and 'all' values are supported.  # noqa: E501
+
+        :param isi_access: The isi_access of this UpdateRole.  # noqa: E501
+        :type: str
+        """
+
+        self._isi_access = isi_access
 
     @property
     def json(self):

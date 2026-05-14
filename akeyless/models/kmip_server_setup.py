@@ -35,6 +35,7 @@ class KmipServerSetup(object):
     """
     openapi_types = {
         'certificate_ttl': 'int',
+        'expiration_event_in': 'list[str]',
         'hostname': 'str',
         'json': 'bool',
         'root': 'str',
@@ -44,6 +45,7 @@ class KmipServerSetup(object):
 
     attribute_map = {
         'certificate_ttl': 'certificate-ttl',
+        'expiration_event_in': 'expiration-event-in',
         'hostname': 'hostname',
         'json': 'json',
         'root': 'root',
@@ -51,13 +53,14 @@ class KmipServerSetup(object):
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, certificate_ttl=90, hostname=None, json=False, root=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, certificate_ttl=90, expiration_event_in=None, hostname=None, json=False, root=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """KmipServerSetup - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._certificate_ttl = None
+        self._expiration_event_in = None
         self._hostname = None
         self._json = None
         self._root = None
@@ -67,6 +70,8 @@ class KmipServerSetup(object):
 
         if certificate_ttl is not None:
             self.certificate_ttl = certificate_ttl
+        if expiration_event_in is not None:
+            self.expiration_event_in = expiration_event_in
         self.hostname = hostname
         if json is not None:
             self.json = json
@@ -98,6 +103,29 @@ class KmipServerSetup(object):
         """
 
         self._certificate_ttl = certificate_ttl
+
+    @property
+    def expiration_event_in(self):
+        """Gets the expiration_event_in of this KmipServerSetup.  # noqa: E501
+
+        How many days before the expiration of the certificate would you like to be notified.  # noqa: E501
+
+        :return: The expiration_event_in of this KmipServerSetup.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._expiration_event_in
+
+    @expiration_event_in.setter
+    def expiration_event_in(self, expiration_event_in):
+        """Sets the expiration_event_in of this KmipServerSetup.
+
+        How many days before the expiration of the certificate would you like to be notified.  # noqa: E501
+
+        :param expiration_event_in: The expiration_event_in of this KmipServerSetup.  # noqa: E501
+        :type: list[str]
+        """
+
+        self._expiration_event_in = expiration_event_in
 
     @property
     def hostname(self):

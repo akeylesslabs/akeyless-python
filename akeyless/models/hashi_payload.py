@@ -36,6 +36,7 @@ class HashiPayload(object):
     openapi_types = {
         'delete_sync_on_deletion': 'bool',
         'import_as_json': 'bool',
+        'metadata_mode': 'str',
         'namespaces': 'list[str]',
         'token': 'str',
         'url': 'str',
@@ -45,13 +46,14 @@ class HashiPayload(object):
     attribute_map = {
         'delete_sync_on_deletion': 'delete_sync_on_deletion',
         'import_as_json': 'import_as_json',
+        'metadata_mode': 'metadata_mode',
         'namespaces': 'namespaces',
         'token': 'token',
         'url': 'url',
         'usc_name': 'usc_name'
     }
 
-    def __init__(self, delete_sync_on_deletion=None, import_as_json=None, namespaces=None, token=None, url=None, usc_name=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, delete_sync_on_deletion=None, import_as_json=None, metadata_mode=None, namespaces=None, token=None, url=None, usc_name=None, local_vars_configuration=None):  # noqa: E501
         """HashiPayload - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -59,6 +61,7 @@ class HashiPayload(object):
 
         self._delete_sync_on_deletion = None
         self._import_as_json = None
+        self._metadata_mode = None
         self._namespaces = None
         self._token = None
         self._url = None
@@ -69,6 +72,8 @@ class HashiPayload(object):
             self.delete_sync_on_deletion = delete_sync_on_deletion
         if import_as_json is not None:
             self.import_as_json = import_as_json
+        if metadata_mode is not None:
+            self.metadata_mode = metadata_mode
         if namespaces is not None:
             self.namespaces = namespaces
         if token is not None:
@@ -119,6 +124,27 @@ class HashiPayload(object):
         """
 
         self._import_as_json = import_as_json
+
+    @property
+    def metadata_mode(self):
+        """Gets the metadata_mode of this HashiPayload.  # noqa: E501
+
+
+        :return: The metadata_mode of this HashiPayload.  # noqa: E501
+        :rtype: str
+        """
+        return self._metadata_mode
+
+    @metadata_mode.setter
+    def metadata_mode(self, metadata_mode):
+        """Sets the metadata_mode of this HashiPayload.
+
+
+        :param metadata_mode: The metadata_mode of this HashiPayload.  # noqa: E501
+        :type: str
+        """
+
+        self._metadata_mode = metadata_mode
 
     @property
     def namespaces(self):

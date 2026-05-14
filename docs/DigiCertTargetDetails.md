@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **digicert_directory_type** | **str** |  | [optional] 
 **dns_target_name** | **str** | Name of DNS target (transient field - not stored in DB). Used by CLI to pass DNS target name to SDK for creating target_object_assoc. Retrieved from target_object_assoc when reading target. Required when ChallengeType is dns. | [optional] 
 **dns_target_type** | **str** |  | [optional] 
+**dns_zone** | **str** | Cloudflare zone identifier. Required when DNSTargetType is Cloudflare. | [optional] 
 **eab_hmac_key** | **str** | External Account Binding HMAC key. Required until ACME account is bootstrapped on first issuance. | [optional] 
 **eab_key_id** | **str** | External Account Binding key identifier. Required until ACME account is bootstrapped on first issuance. | [optional] 
 **email** | **str** | Email address for ACME account registration. Required. | [optional] 

@@ -44,6 +44,7 @@ class CreateRole(object):
         'event_forwarders_access': 'str',
         'event_forwarders_name': 'list[str]',
         'gw_analytics_access': 'str',
+        'isi_access': 'str',
         'json': 'bool',
         'name': 'str',
         'reverse_rbac_access': 'str',
@@ -64,6 +65,7 @@ class CreateRole(object):
         'event_forwarders_access': 'event-forwarders-access',
         'event_forwarders_name': 'event-forwarders-name',
         'gw_analytics_access': 'gw-analytics-access',
+        'isi_access': 'isi-access',
         'json': 'json',
         'name': 'name',
         'reverse_rbac_access': 'reverse-rbac-access',
@@ -73,7 +75,7 @@ class CreateRole(object):
         'usage_reports_access': 'usage-reports-access'
     }
 
-    def __init__(self, analytics_access=None, ara_reports_access=None, audit_access=None, comment=None, delete_protection=None, description=None, event_center_access=None, event_forwarders_access=None, event_forwarders_name=None, gw_analytics_access=None, json=False, name=None, reverse_rbac_access=None, sra_reports_access=None, token=None, uid_token=None, usage_reports_access=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, analytics_access=None, ara_reports_access=None, audit_access=None, comment=None, delete_protection=None, description=None, event_center_access=None, event_forwarders_access=None, event_forwarders_name=None, gw_analytics_access=None, isi_access=None, json=False, name=None, reverse_rbac_access=None, sra_reports_access=None, token=None, uid_token=None, usage_reports_access=None, local_vars_configuration=None):  # noqa: E501
         """CreateRole - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -89,6 +91,7 @@ class CreateRole(object):
         self._event_forwarders_access = None
         self._event_forwarders_name = None
         self._gw_analytics_access = None
+        self._isi_access = None
         self._json = None
         self._name = None
         self._reverse_rbac_access = None
@@ -118,6 +121,8 @@ class CreateRole(object):
             self.event_forwarders_name = event_forwarders_name
         if gw_analytics_access is not None:
             self.gw_analytics_access = gw_analytics_access
+        if isi_access is not None:
+            self.isi_access = isi_access
         if json is not None:
             self.json = json
         self.name = name
@@ -361,6 +366,29 @@ class CreateRole(object):
         """
 
         self._gw_analytics_access = gw_analytics_access
+
+    @property
+    def isi_access(self):
+        """Gets the isi_access of this CreateRole.  # noqa: E501
+
+        Allow this role to access Identity & Secrets Intelligence. Currently only 'none', 'scoped' and 'all' values are supported.  # noqa: E501
+
+        :return: The isi_access of this CreateRole.  # noqa: E501
+        :rtype: str
+        """
+        return self._isi_access
+
+    @isi_access.setter
+    def isi_access(self, isi_access):
+        """Sets the isi_access of this CreateRole.
+
+        Allow this role to access Identity & Secrets Intelligence. Currently only 'none', 'scoped' and 'all' values are supported.  # noqa: E501
+
+        :param isi_access: The isi_access of this CreateRole.  # noqa: E501
+        :type: str
+        """
+
+        self._isi_access = isi_access
 
     @property
     def json(self):

@@ -34,38 +34,71 @@ class GatewayGetProducer(object):
                             and the value is json key in definition.
     """
     openapi_types = {
+        'input_rule': 'list[str]',
         'json': 'bool',
         'name': 'str',
+        'output_rule': 'list[str]',
         'token': 'str',
         'uid_token': 'str'
     }
 
     attribute_map = {
+        'input_rule': 'input-rule',
         'json': 'json',
         'name': 'name',
+        'output_rule': 'output-rule',
         'token': 'token',
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, json=False, name=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, input_rule=None, json=False, name=None, output_rule=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """GatewayGetProducer - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
+        self._input_rule = None
         self._json = None
         self._name = None
+        self._output_rule = None
         self._token = None
         self._uid_token = None
         self.discriminator = None
 
+        if input_rule is not None:
+            self.input_rule = input_rule
         if json is not None:
             self.json = json
         self.name = name
+        if output_rule is not None:
+            self.output_rule = output_rule
         if token is not None:
             self.token = token
         if uid_token is not None:
             self.uid_token = uid_token
+
+    @property
+    def input_rule(self):
+        """Gets the input_rule of this GatewayGetProducer.  # noqa: E501
+
+        Agentic input rule in name=...,rule=... format (e.g. name=rule1,rule=Sanitize input) Mirrors commands.AgenticRulesParams — kept separate because ResourceDS cannot embed it (different package, different struct layout).  # noqa: E501
+
+        :return: The input_rule of this GatewayGetProducer.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._input_rule
+
+    @input_rule.setter
+    def input_rule(self, input_rule):
+        """Sets the input_rule of this GatewayGetProducer.
+
+        Agentic input rule in name=...,rule=... format (e.g. name=rule1,rule=Sanitize input) Mirrors commands.AgenticRulesParams — kept separate because ResourceDS cannot embed it (different package, different struct layout).  # noqa: E501
+
+        :param input_rule: The input_rule of this GatewayGetProducer.  # noqa: E501
+        :type: list[str]
+        """
+
+        self._input_rule = input_rule
 
     @property
     def json(self):
@@ -114,6 +147,29 @@ class GatewayGetProducer(object):
             raise ValueError("Invalid value for `name`, must not be `None`")  # noqa: E501
 
         self._name = name
+
+    @property
+    def output_rule(self):
+        """Gets the output_rule of this GatewayGetProducer.  # noqa: E501
+
+        Agentic output rule in name=...,rule=... format (e.g. name=rule1,rule=Mask secrets)  # noqa: E501
+
+        :return: The output_rule of this GatewayGetProducer.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._output_rule
+
+    @output_rule.setter
+    def output_rule(self, output_rule):
+        """Sets the output_rule of this GatewayGetProducer.
+
+        Agentic output rule in name=...,rule=... format (e.g. name=rule1,rule=Mask secrets)  # noqa: E501
+
+        :param output_rule: The output_rule of this GatewayGetProducer.  # noqa: E501
+        :type: list[str]
+        """
+
+        self._output_rule = output_rule
 
     @property
     def token(self):

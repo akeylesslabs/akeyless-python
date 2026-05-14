@@ -36,9 +36,11 @@ class DynamicSecretCreateRabbitMq(object):
     openapi_types = {
         'delete_protection': 'str',
         'description': 'str',
+        'input_rule': 'list[str]',
         'item_custom_fields': 'dict(str, str)',
         'json': 'bool',
         'name': 'str',
+        'output_rule': 'list[str]',
         'password_length': 'str',
         'producer_encryption_key_name': 'str',
         'rabbitmq_admin_pwd': 'str',
@@ -64,9 +66,11 @@ class DynamicSecretCreateRabbitMq(object):
     attribute_map = {
         'delete_protection': 'delete_protection',
         'description': 'description',
+        'input_rule': 'input-rule',
         'item_custom_fields': 'item-custom-fields',
         'json': 'json',
         'name': 'name',
+        'output_rule': 'output-rule',
         'password_length': 'password-length',
         'producer_encryption_key_name': 'producer-encryption-key-name',
         'rabbitmq_admin_pwd': 'rabbitmq-admin-pwd',
@@ -89,7 +93,7 @@ class DynamicSecretCreateRabbitMq(object):
         'user_ttl': 'user-ttl'
     }
 
-    def __init__(self, delete_protection=None, description=None, item_custom_fields=None, json=False, name=None, password_length=None, producer_encryption_key_name=None, rabbitmq_admin_pwd=None, rabbitmq_admin_user=None, rabbitmq_server_uri=None, rabbitmq_user_conf_permission=None, rabbitmq_user_read_permission=None, rabbitmq_user_tags=None, rabbitmq_user_vhost=None, rabbitmq_user_write_permission=None, secure_access_enable=None, secure_access_url=None, secure_access_web=True, secure_access_web_browsing=False, secure_access_web_proxy=False, tags=None, target_name=None, token=None, uid_token=None, user_ttl='60m', local_vars_configuration=None):  # noqa: E501
+    def __init__(self, delete_protection=None, description=None, input_rule=None, item_custom_fields=None, json=False, name=None, output_rule=None, password_length=None, producer_encryption_key_name=None, rabbitmq_admin_pwd=None, rabbitmq_admin_user=None, rabbitmq_server_uri=None, rabbitmq_user_conf_permission=None, rabbitmq_user_read_permission=None, rabbitmq_user_tags=None, rabbitmq_user_vhost=None, rabbitmq_user_write_permission=None, secure_access_enable=None, secure_access_url=None, secure_access_web=True, secure_access_web_browsing=False, secure_access_web_proxy=False, tags=None, target_name=None, token=None, uid_token=None, user_ttl='60m', local_vars_configuration=None):  # noqa: E501
         """DynamicSecretCreateRabbitMq - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -97,9 +101,11 @@ class DynamicSecretCreateRabbitMq(object):
 
         self._delete_protection = None
         self._description = None
+        self._input_rule = None
         self._item_custom_fields = None
         self._json = None
         self._name = None
+        self._output_rule = None
         self._password_length = None
         self._producer_encryption_key_name = None
         self._rabbitmq_admin_pwd = None
@@ -126,11 +132,15 @@ class DynamicSecretCreateRabbitMq(object):
             self.delete_protection = delete_protection
         if description is not None:
             self.description = description
+        if input_rule is not None:
+            self.input_rule = input_rule
         if item_custom_fields is not None:
             self.item_custom_fields = item_custom_fields
         if json is not None:
             self.json = json
         self.name = name
+        if output_rule is not None:
+            self.output_rule = output_rule
         if password_length is not None:
             self.password_length = password_length
         if producer_encryption_key_name is not None:
@@ -219,6 +229,29 @@ class DynamicSecretCreateRabbitMq(object):
         self._description = description
 
     @property
+    def input_rule(self):
+        """Gets the input_rule of this DynamicSecretCreateRabbitMq.  # noqa: E501
+
+        Agentic input rule in name=...,rule=... format (e.g. name=rule1,rule=Sanitize input) Mirrors commands.AgenticRulesParams — kept separate because ResourceDS cannot embed it (different package, different struct layout).  # noqa: E501
+
+        :return: The input_rule of this DynamicSecretCreateRabbitMq.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._input_rule
+
+    @input_rule.setter
+    def input_rule(self, input_rule):
+        """Sets the input_rule of this DynamicSecretCreateRabbitMq.
+
+        Agentic input rule in name=...,rule=... format (e.g. name=rule1,rule=Sanitize input) Mirrors commands.AgenticRulesParams — kept separate because ResourceDS cannot embed it (different package, different struct layout).  # noqa: E501
+
+        :param input_rule: The input_rule of this DynamicSecretCreateRabbitMq.  # noqa: E501
+        :type: list[str]
+        """
+
+        self._input_rule = input_rule
+
+    @property
     def item_custom_fields(self):
         """Gets the item_custom_fields of this DynamicSecretCreateRabbitMq.  # noqa: E501
 
@@ -288,6 +321,29 @@ class DynamicSecretCreateRabbitMq(object):
             raise ValueError("Invalid value for `name`, must not be `None`")  # noqa: E501
 
         self._name = name
+
+    @property
+    def output_rule(self):
+        """Gets the output_rule of this DynamicSecretCreateRabbitMq.  # noqa: E501
+
+        Agentic output rule in name=...,rule=... format (e.g. name=rule1,rule=Mask secrets)  # noqa: E501
+
+        :return: The output_rule of this DynamicSecretCreateRabbitMq.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._output_rule
+
+    @output_rule.setter
+    def output_rule(self, output_rule):
+        """Sets the output_rule of this DynamicSecretCreateRabbitMq.
+
+        Agentic output rule in name=...,rule=... format (e.g. name=rule1,rule=Mask secrets)  # noqa: E501
+
+        :param output_rule: The output_rule of this DynamicSecretCreateRabbitMq.  # noqa: E501
+        :type: list[str]
+        """
+
+        self._output_rule = output_rule
 
     @property
     def password_length(self):

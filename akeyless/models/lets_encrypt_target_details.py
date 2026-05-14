@@ -40,6 +40,7 @@ class LetsEncryptTargetDetails(object):
         'challenge_type': 'str',
         'dns_target_name': 'str',
         'dns_target_type': 'str',
+        'dns_zone': 'str',
         'email': 'str',
         'gcp_project': 'str',
         'hosted_zone': 'str',
@@ -54,6 +55,7 @@ class LetsEncryptTargetDetails(object):
         'challenge_type': 'challenge_type',
         'dns_target_name': 'dns_target_name',
         'dns_target_type': 'dns_target_type',
+        'dns_zone': 'dns_zone',
         'email': 'email',
         'gcp_project': 'gcp_project',
         'hosted_zone': 'hosted_zone',
@@ -61,7 +63,7 @@ class LetsEncryptTargetDetails(object):
         'timeout': 'timeout'
     }
 
-    def __init__(self, account_key_pem=None, account_url=None, acme_environment=None, challenge_type=None, dns_target_name=None, dns_target_type=None, email=None, gcp_project=None, hosted_zone=None, resource_group=None, timeout=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, account_key_pem=None, account_url=None, acme_environment=None, challenge_type=None, dns_target_name=None, dns_target_type=None, dns_zone=None, email=None, gcp_project=None, hosted_zone=None, resource_group=None, timeout=None, local_vars_configuration=None):  # noqa: E501
         """LetsEncryptTargetDetails - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -73,6 +75,7 @@ class LetsEncryptTargetDetails(object):
         self._challenge_type = None
         self._dns_target_name = None
         self._dns_target_type = None
+        self._dns_zone = None
         self._email = None
         self._gcp_project = None
         self._hosted_zone = None
@@ -92,6 +95,8 @@ class LetsEncryptTargetDetails(object):
             self.dns_target_name = dns_target_name
         if dns_target_type is not None:
             self.dns_target_type = dns_target_type
+        if dns_zone is not None:
+            self.dns_zone = dns_zone
         if email is not None:
             self.email = email
         if gcp_project is not None:
@@ -238,6 +243,29 @@ class LetsEncryptTargetDetails(object):
         """
 
         self._dns_target_type = dns_target_type
+
+    @property
+    def dns_zone(self):
+        """Gets the dns_zone of this LetsEncryptTargetDetails.  # noqa: E501
+
+        Cloudflare zone identifier Required when DNSTargetType is Cloudflare  # noqa: E501
+
+        :return: The dns_zone of this LetsEncryptTargetDetails.  # noqa: E501
+        :rtype: str
+        """
+        return self._dns_zone
+
+    @dns_zone.setter
+    def dns_zone(self, dns_zone):
+        """Sets the dns_zone of this LetsEncryptTargetDetails.
+
+        Cloudflare zone identifier Required when DNSTargetType is Cloudflare  # noqa: E501
+
+        :param dns_zone: The dns_zone of this LetsEncryptTargetDetails.  # noqa: E501
+        :type: str
+        """
+
+        self._dns_zone = dns_zone
 
     @property
     def email(self):

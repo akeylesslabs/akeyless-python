@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **certificate** | **list[int]** |  | [optional] 
 **certificate_issue_date** | **datetime** |  | [optional] 
 **certificate_ttl_in_seconds** | **int** |  | [optional] 
+**expiration_events** | [**list[CertificateExpirationEvent]**](CertificateExpirationEvent.md) |  | [optional] 
 **hostname** | **str** |  | [optional] 
 **root** | **str** |  | [optional] 
 
