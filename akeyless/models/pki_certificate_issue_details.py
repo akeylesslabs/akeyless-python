@@ -43,6 +43,8 @@ class PKICertificateIssueDetails(object):
         'allowed_ip_sans': 'list[str]',
         'allowed_uri_sans': 'list[str]',
         'auto_renew_certificate': 'bool',
+        'basic_constraints': 'str',
+        'basic_constraints_critical': 'bool',
         'basic_constraints_valid_for_non_ca': 'bool',
         'certificate_authority_mode': 'str',
         'client_flag': 'bool',
@@ -89,6 +91,8 @@ class PKICertificateIssueDetails(object):
         'allowed_ip_sans': 'allowed_ip_sans',
         'allowed_uri_sans': 'allowed_uri_sans',
         'auto_renew_certificate': 'auto_renew_certificate',
+        'basic_constraints': 'basic_constraints',
+        'basic_constraints_critical': 'basic_constraints_critical',
         'basic_constraints_valid_for_non_ca': 'basic_constraints_valid_for_non_ca',
         'certificate_authority_mode': 'certificate_authority_mode',
         'client_flag': 'client_flag',
@@ -125,7 +129,7 @@ class PKICertificateIssueDetails(object):
         'street_address': 'street_address'
     }
 
-    def __init__(self, acme_enabled=None, allow_any_name=None, allow_copy_ext_from_csr=None, allow_subdomains=None, allowed_domains_list=None, allowed_extra_extensions=None, allowed_ip_sans=None, allowed_uri_sans=None, auto_renew_certificate=None, basic_constraints_valid_for_non_ca=None, certificate_authority_mode=None, client_flag=None, code_signing_flag=None, country=None, create_private_crl=None, create_private_ocsp=None, create_public_crl=None, create_public_ocsp=None, destination_path=None, disable_wildcards=None, enforce_hostnames=None, expiration_events=None, gw_cluster_id=None, gw_cluster_url=None, is_ca=None, key_bits=None, key_type=None, key_usage_list=None, locality=None, max_path_len=None, non_critical_key_usage=None, not_before_duration=None, ocsp_next_update=None, organization_list=None, organization_unit_list=None, pki_issuer_type=None, postal_code=None, protect_generated_certificates=None, province=None, renew_before_expiration_in_days=None, require_cn=None, server_flag=None, street_address=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, acme_enabled=None, allow_any_name=None, allow_copy_ext_from_csr=None, allow_subdomains=None, allowed_domains_list=None, allowed_extra_extensions=None, allowed_ip_sans=None, allowed_uri_sans=None, auto_renew_certificate=None, basic_constraints=None, basic_constraints_critical=None, basic_constraints_valid_for_non_ca=None, certificate_authority_mode=None, client_flag=None, code_signing_flag=None, country=None, create_private_crl=None, create_private_ocsp=None, create_public_crl=None, create_public_ocsp=None, destination_path=None, disable_wildcards=None, enforce_hostnames=None, expiration_events=None, gw_cluster_id=None, gw_cluster_url=None, is_ca=None, key_bits=None, key_type=None, key_usage_list=None, locality=None, max_path_len=None, non_critical_key_usage=None, not_before_duration=None, ocsp_next_update=None, organization_list=None, organization_unit_list=None, pki_issuer_type=None, postal_code=None, protect_generated_certificates=None, province=None, renew_before_expiration_in_days=None, require_cn=None, server_flag=None, street_address=None, local_vars_configuration=None):  # noqa: E501
         """PKICertificateIssueDetails - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -140,6 +144,8 @@ class PKICertificateIssueDetails(object):
         self._allowed_ip_sans = None
         self._allowed_uri_sans = None
         self._auto_renew_certificate = None
+        self._basic_constraints = None
+        self._basic_constraints_critical = None
         self._basic_constraints_valid_for_non_ca = None
         self._certificate_authority_mode = None
         self._client_flag = None
@@ -194,6 +200,10 @@ class PKICertificateIssueDetails(object):
             self.allowed_uri_sans = allowed_uri_sans
         if auto_renew_certificate is not None:
             self.auto_renew_certificate = auto_renew_certificate
+        if basic_constraints is not None:
+            self.basic_constraints = basic_constraints
+        if basic_constraints_critical is not None:
+            self.basic_constraints_critical = basic_constraints_critical
         if basic_constraints_valid_for_non_ca is not None:
             self.basic_constraints_valid_for_non_ca = basic_constraints_valid_for_non_ca
         if certificate_authority_mode is not None:
@@ -451,6 +461,48 @@ class PKICertificateIssueDetails(object):
         """
 
         self._auto_renew_certificate = auto_renew_certificate
+
+    @property
+    def basic_constraints(self):
+        """Gets the basic_constraints of this PKICertificateIssueDetails.  # noqa: E501
+
+
+        :return: The basic_constraints of this PKICertificateIssueDetails.  # noqa: E501
+        :rtype: str
+        """
+        return self._basic_constraints
+
+    @basic_constraints.setter
+    def basic_constraints(self, basic_constraints):
+        """Sets the basic_constraints of this PKICertificateIssueDetails.
+
+
+        :param basic_constraints: The basic_constraints of this PKICertificateIssueDetails.  # noqa: E501
+        :type: str
+        """
+
+        self._basic_constraints = basic_constraints
+
+    @property
+    def basic_constraints_critical(self):
+        """Gets the basic_constraints_critical of this PKICertificateIssueDetails.  # noqa: E501
+
+
+        :return: The basic_constraints_critical of this PKICertificateIssueDetails.  # noqa: E501
+        :rtype: bool
+        """
+        return self._basic_constraints_critical
+
+    @basic_constraints_critical.setter
+    def basic_constraints_critical(self, basic_constraints_critical):
+        """Sets the basic_constraints_critical of this PKICertificateIssueDetails.
+
+
+        :param basic_constraints_critical: The basic_constraints_critical of this PKICertificateIssueDetails.  # noqa: E501
+        :type: bool
+        """
+
+        self._basic_constraints_critical = basic_constraints_critical
 
     @property
     def basic_constraints_valid_for_non_ca(self):

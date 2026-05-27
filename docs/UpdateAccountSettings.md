@@ -51,10 +51,10 @@ Name | Type | Description | Notes
 **usage_event_enable** | **str** | Enable event for objects that have not been used or changed [true/false] | [optional] 
 **usage_event_interval** | **int** | Interval by days for unused objects. Default and minimum interval is 90 days | [optional] 
 **usage_event_object_type** | **str** | Usage event is supported for auth method or secrets-and-keys [auth/item] | [optional] 
-**use_capital_letters** | **str** | Password must contain capital letters [true/false] | [optional] 
-**use_lower_letters** | **str** | Password must contain lower case letters [true/false] | [optional] 
-**use_numbers** | **str** | Password must contain numbers [true/false] | [optional] 
-**use_special_characters** | **str** | Password must contain special characters [true/false] | [optional] 
+**use_capital_letters** | **str** | Specifies whether the generated temporary password must contain at least one uppercase character from the ISO basic Latin alphabet (A to Z). [true/false] | [optional] 
+**use_lower_letters** | **str** | Specifies whether the generated temporary password must contain at least one lowercase character from the ISO basic Latin alphabet (a to z). [true/false] | [optional] 
+**use_numbers** | **str** | Specifies whether the generated temporary password must contain at least one numeric character (0 to 9). [true/false] | [optional] 
+**use_special_characters** | **str** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

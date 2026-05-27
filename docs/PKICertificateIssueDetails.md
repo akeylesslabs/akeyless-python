@@ -12,6 +12,8 @@ Name | Type | Description | Notes
 **allowed_ip_sans** | **list[str]** |  | [optional] 
 **allowed_uri_sans** | **list[str]** |  | [optional] 
 **auto_renew_certificate** | **bool** |  | [optional] 
+**basic_constraints** | **str** |  | [optional] 
+**basic_constraints_critical** | **bool** |  | [optional] 
 **basic_constraints_valid_for_non_ca** | **bool** |  | [optional] 
 **certificate_authority_mode** | **str** |  | [optional] 
 **client_flag** | **bool** |  | [optional] 

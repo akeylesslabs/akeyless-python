@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **allowed_ip_sans** | **str** | A list of the allowed CIDRs for ips that clients can request to be included in the certificate as part of the IP Subject Alternative Names (in a comma-delimited list) | [optional] 
 **allowed_uri_sans** | **str** | A list of the allowed URIs that clients can request to be included in the certificate as part of the URI Subject Alternative Names (in a comma-delimited list) | [optional] 
 **auto_renew** | **bool** | Automatically renew certificates before expiration | [optional] 
+**basic_constraints** | **str** | Defines the X.509 Basic Constraints extension for certificates issued by this PKI issuer template | [optional] 
 **client_flag** | **bool** | If set, certificates will be flagged for client auth use | [optional] 
 **code_signing_flag** | **bool** | If set, certificates will be flagged for code signing use | [optional] 
 **country** | **str** | A comma-separated list of countries that will be set in the issued certificate | [optional] 

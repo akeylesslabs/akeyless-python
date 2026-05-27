@@ -1416,7 +1416,7 @@ class UpdateAccountSettings(object):
     def use_capital_letters(self):
         """Gets the use_capital_letters of this UpdateAccountSettings.  # noqa: E501
 
-        Password must contain capital letters [true/false]  # noqa: E501
+        Specifies whether the generated temporary password must contain at least one uppercase character from the ISO basic Latin alphabet (A to Z). [true/false]  # noqa: E501
 
         :return: The use_capital_letters of this UpdateAccountSettings.  # noqa: E501
         :rtype: str
@@ -1427,7 +1427,7 @@ class UpdateAccountSettings(object):
     def use_capital_letters(self, use_capital_letters):
         """Sets the use_capital_letters of this UpdateAccountSettings.
 
-        Password must contain capital letters [true/false]  # noqa: E501
+        Specifies whether the generated temporary password must contain at least one uppercase character from the ISO basic Latin alphabet (A to Z). [true/false]  # noqa: E501
 
         :param use_capital_letters: The use_capital_letters of this UpdateAccountSettings.  # noqa: E501
         :type: str
@@ -1439,7 +1439,7 @@ class UpdateAccountSettings(object):
     def use_lower_letters(self):
         """Gets the use_lower_letters of this UpdateAccountSettings.  # noqa: E501
 
-        Password must contain lower case letters [true/false]  # noqa: E501
+        Specifies whether the generated temporary password must contain at least one lowercase character from the ISO basic Latin alphabet (a to z). [true/false]  # noqa: E501
 
         :return: The use_lower_letters of this UpdateAccountSettings.  # noqa: E501
         :rtype: str
@@ -1450,7 +1450,7 @@ class UpdateAccountSettings(object):
     def use_lower_letters(self, use_lower_letters):
         """Sets the use_lower_letters of this UpdateAccountSettings.
 
-        Password must contain lower case letters [true/false]  # noqa: E501
+        Specifies whether the generated temporary password must contain at least one lowercase character from the ISO basic Latin alphabet (a to z). [true/false]  # noqa: E501
 
         :param use_lower_letters: The use_lower_letters of this UpdateAccountSettings.  # noqa: E501
         :type: str
@@ -1462,7 +1462,7 @@ class UpdateAccountSettings(object):
     def use_numbers(self):
         """Gets the use_numbers of this UpdateAccountSettings.  # noqa: E501
 
-        Password must contain numbers [true/false]  # noqa: E501
+        Specifies whether the generated temporary password must contain at least one numeric character (0 to 9). [true/false]  # noqa: E501
 
         :return: The use_numbers of this UpdateAccountSettings.  # noqa: E501
         :rtype: str
@@ -1473,7 +1473,7 @@ class UpdateAccountSettings(object):
     def use_numbers(self, use_numbers):
         """Sets the use_numbers of this UpdateAccountSettings.
 
-        Password must contain numbers [true/false]  # noqa: E501
+        Specifies whether the generated temporary password must contain at least one numeric character (0 to 9). [true/false]  # noqa: E501
 
         :param use_numbers: The use_numbers of this UpdateAccountSettings.  # noqa: E501
         :type: str
@@ -1485,7 +1485,6 @@ class UpdateAccountSettings(object):
     def use_special_characters(self):
         """Gets the use_special_characters of this UpdateAccountSettings.  # noqa: E501
 
-        Password must contain special characters [true/false]  # noqa: E501
 
         :return: The use_special_characters of this UpdateAccountSettings.  # noqa: E501
         :rtype: str
@@ -1496,7 +1495,6 @@ class UpdateAccountSettings(object):
     def use_special_characters(self, use_special_characters):
         """Sets the use_special_characters of this UpdateAccountSettings.
 
-        Password must contain special characters [true/false]  # noqa: E501
 
         :param use_special_characters: The use_special_characters of this UpdateAccountSettings.  # noqa: E501
         :type: str

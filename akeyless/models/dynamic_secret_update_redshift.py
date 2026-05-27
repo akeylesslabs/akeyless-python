@@ -58,6 +58,10 @@ class DynamicSecretUpdateRedshift(object):
         'target_name': 'str',
         'token': 'str',
         'uid_token': 'str',
+        'use_capital_letters': 'str',
+        'use_lower_letters': 'str',
+        'use_numbers': 'str',
+        'use_special_characters': 'str',
         'user_ttl': 'str'
     }
 
@@ -86,10 +90,14 @@ class DynamicSecretUpdateRedshift(object):
         'target_name': 'target-name',
         'token': 'token',
         'uid_token': 'uid-token',
+        'use_capital_letters': 'use-capital-letters',
+        'use_lower_letters': 'use-lower-letters',
+        'use_numbers': 'use-numbers',
+        'use_special_characters': 'use-special-characters',
         'user_ttl': 'user-ttl'
     }
 
-    def __init__(self, creation_statements=None, custom_username_template=None, delete_protection=None, description=None, input_rule=None, item_custom_fields=None, json=False, name=None, new_name=None, output_rule=None, password_length=None, producer_encryption_key=None, redshift_db_name=None, redshift_host='127.0.0.1', redshift_password=None, redshift_port='5439', redshift_username=None, secure_access_enable=None, secure_access_host=None, ssl=False, tags=None, target_name=None, token=None, uid_token=None, user_ttl='60m', local_vars_configuration=None):  # noqa: E501
+    def __init__(self, creation_statements=None, custom_username_template=None, delete_protection=None, description=None, input_rule=None, item_custom_fields=None, json=False, name=None, new_name=None, output_rule=None, password_length=None, producer_encryption_key=None, redshift_db_name=None, redshift_host='127.0.0.1', redshift_password=None, redshift_port='5439', redshift_username=None, secure_access_enable=None, secure_access_host=None, ssl=False, tags=None, target_name=None, token=None, uid_token=None, use_capital_letters=None, use_lower_letters=None, use_numbers=None, use_special_characters=None, user_ttl='60m', local_vars_configuration=None):  # noqa: E501
         """DynamicSecretUpdateRedshift - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -119,6 +127,10 @@ class DynamicSecretUpdateRedshift(object):
         self._target_name = None
         self._token = None
         self._uid_token = None
+        self._use_capital_letters = None
+        self._use_lower_letters = None
+        self._use_numbers = None
+        self._use_special_characters = None
         self._user_ttl = None
         self.discriminator = None
 
@@ -169,6 +181,14 @@ class DynamicSecretUpdateRedshift(object):
             self.token = token
         if uid_token is not None:
             self.uid_token = uid_token
+        if use_capital_letters is not None:
+            self.use_capital_letters = use_capital_letters
+        if use_lower_letters is not None:
+            self.use_lower_letters = use_lower_letters
+        if use_numbers is not None:
+            self.use_numbers = use_numbers
+        if use_special_characters is not None:
+            self.use_special_characters = use_special_characters
         if user_ttl is not None:
             self.user_ttl = user_ttl
 
@@ -725,6 +745,96 @@ class DynamicSecretUpdateRedshift(object):
         """
 
         self._uid_token = uid_token
+
+    @property
+    def use_capital_letters(self):
+        """Gets the use_capital_letters of this DynamicSecretUpdateRedshift.  # noqa: E501
+
+        Specifies whether the generated temporary password must contain at least one uppercase character from the ISO basic Latin alphabet (A to Z). [true/false]  # noqa: E501
+
+        :return: The use_capital_letters of this DynamicSecretUpdateRedshift.  # noqa: E501
+        :rtype: str
+        """
+        return self._use_capital_letters
+
+    @use_capital_letters.setter
+    def use_capital_letters(self, use_capital_letters):
+        """Sets the use_capital_letters of this DynamicSecretUpdateRedshift.
+
+        Specifies whether the generated temporary password must contain at least one uppercase character from the ISO basic Latin alphabet (A to Z). [true/false]  # noqa: E501
+
+        :param use_capital_letters: The use_capital_letters of this DynamicSecretUpdateRedshift.  # noqa: E501
+        :type: str
+        """
+
+        self._use_capital_letters = use_capital_letters
+
+    @property
+    def use_lower_letters(self):
+        """Gets the use_lower_letters of this DynamicSecretUpdateRedshift.  # noqa: E501
+
+        Specifies whether the generated temporary password must contain at least one lowercase character from the ISO basic Latin alphabet (a to z). [true/false]  # noqa: E501
+
+        :return: The use_lower_letters of this DynamicSecretUpdateRedshift.  # noqa: E501
+        :rtype: str
+        """
+        return self._use_lower_letters
+
+    @use_lower_letters.setter
+    def use_lower_letters(self, use_lower_letters):
+        """Sets the use_lower_letters of this DynamicSecretUpdateRedshift.
+
+        Specifies whether the generated temporary password must contain at least one lowercase character from the ISO basic Latin alphabet (a to z). [true/false]  # noqa: E501
+
+        :param use_lower_letters: The use_lower_letters of this DynamicSecretUpdateRedshift.  # noqa: E501
+        :type: str
+        """
+
+        self._use_lower_letters = use_lower_letters
+
+    @property
+    def use_numbers(self):
+        """Gets the use_numbers of this DynamicSecretUpdateRedshift.  # noqa: E501
+
+        Specifies whether the generated temporary password must contain at least one numeric character (0 to 9). [true/false]  # noqa: E501
+
+        :return: The use_numbers of this DynamicSecretUpdateRedshift.  # noqa: E501
+        :rtype: str
+        """
+        return self._use_numbers
+
+    @use_numbers.setter
+    def use_numbers(self, use_numbers):
+        """Sets the use_numbers of this DynamicSecretUpdateRedshift.
+
+        Specifies whether the generated temporary password must contain at least one numeric character (0 to 9). [true/false]  # noqa: E501
+
+        :param use_numbers: The use_numbers of this DynamicSecretUpdateRedshift.  # noqa: E501
+        :type: str
+        """
+
+        self._use_numbers = use_numbers
+
+    @property
+    def use_special_characters(self):
+        """Gets the use_special_characters of this DynamicSecretUpdateRedshift.  # noqa: E501
+
+
+        :return: The use_special_characters of this DynamicSecretUpdateRedshift.  # noqa: E501
+        :rtype: str
+        """
+        return self._use_special_characters
+
+    @use_special_characters.setter
+    def use_special_characters(self, use_special_characters):
+        """Sets the use_special_characters of this DynamicSecretUpdateRedshift.
+
+
+        :param use_special_characters: The use_special_characters of this DynamicSecretUpdateRedshift.  # noqa: E501
+        :type: str
+        """
+
+        self._use_special_characters = use_special_characters
 
     @property
     def user_ttl(self):

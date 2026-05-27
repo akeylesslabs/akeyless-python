@@ -42,6 +42,7 @@ class CreatePKICertIssuer(object):
         'allowed_ip_sans': 'str',
         'allowed_uri_sans': 'str',
         'auto_renew': 'bool',
+        'basic_constraints': 'str',
         'ca_target': 'str',
         'client_flag': 'bool',
         'code_signing_flag': 'bool',
@@ -93,6 +94,7 @@ class CreatePKICertIssuer(object):
         'allowed_ip_sans': 'allowed-ip-sans',
         'allowed_uri_sans': 'allowed-uri-sans',
         'auto_renew': 'auto-renew',
+        'basic_constraints': 'basic-constraints',
         'ca_target': 'ca-target',
         'client_flag': 'client-flag',
         'code_signing_flag': 'code-signing-flag',
@@ -135,7 +137,7 @@ class CreatePKICertIssuer(object):
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, allow_any_name=None, allow_copy_ext_from_csr=None, allow_subdomains=None, allowed_domains=None, allowed_extra_extensions=None, allowed_ip_sans=None, allowed_uri_sans=None, auto_renew=None, ca_target=None, client_flag=None, code_signing_flag=None, country=None, create_private_crl=None, create_private_ocsp=None, create_public_crl=None, create_public_ocsp=None, critical_key_usage='true', delete_protection=None, description=None, destination_path=None, disable_wildcards=None, enable_acme=None, expiration_event_in=None, gw_cluster_url=None, is_ca=None, item_custom_fields=None, json=False, key_usage='DigitalSignature,KeyAgreement,KeyEncipherment', locality=None, max_path_len=-1, metadata=None, name=None, not_enforce_hostnames=None, not_require_cn=None, ocsp_ttl=None, organizational_units=None, organizations=None, postal_code=None, protect_certificates=None, province=None, scheduled_renew=None, server_flag=None, signer_key_name=None, street_address=None, tag=None, token=None, ttl=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, allow_any_name=None, allow_copy_ext_from_csr=None, allow_subdomains=None, allowed_domains=None, allowed_extra_extensions=None, allowed_ip_sans=None, allowed_uri_sans=None, auto_renew=None, basic_constraints=None, ca_target=None, client_flag=None, code_signing_flag=None, country=None, create_private_crl=None, create_private_ocsp=None, create_public_crl=None, create_public_ocsp=None, critical_key_usage='true', delete_protection=None, description=None, destination_path=None, disable_wildcards=None, enable_acme=None, expiration_event_in=None, gw_cluster_url=None, is_ca=None, item_custom_fields=None, json=False, key_usage='DigitalSignature,KeyAgreement,KeyEncipherment', locality=None, max_path_len=-1, metadata=None, name=None, not_enforce_hostnames=None, not_require_cn=None, ocsp_ttl=None, organizational_units=None, organizations=None, postal_code=None, protect_certificates=None, province=None, scheduled_renew=None, server_flag=None, signer_key_name=None, street_address=None, tag=None, token=None, ttl=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """CreatePKICertIssuer - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -149,6 +151,7 @@ class CreatePKICertIssuer(object):
         self._allowed_ip_sans = None
         self._allowed_uri_sans = None
         self._auto_renew = None
+        self._basic_constraints = None
         self._ca_target = None
         self._client_flag = None
         self._code_signing_flag = None
@@ -207,6 +210,8 @@ class CreatePKICertIssuer(object):
             self.allowed_uri_sans = allowed_uri_sans
         if auto_renew is not None:
             self.auto_renew = auto_renew
+        if basic_constraints is not None:
+            self.basic_constraints = basic_constraints
         if ca_target is not None:
             self.ca_target = ca_target
         if client_flag is not None:
@@ -469,6 +474,29 @@ class CreatePKICertIssuer(object):
         """
 
         self._auto_renew = auto_renew
+
+    @property
+    def basic_constraints(self):
+        """Gets the basic_constraints of this CreatePKICertIssuer.  # noqa: E501
+
+        Defines the X.509 Basic Constraints extension for certificates issued by this PKI issuer template  # noqa: E501
+
+        :return: The basic_constraints of this CreatePKICertIssuer.  # noqa: E501
+        :rtype: str
+        """
+        return self._basic_constraints
+
+    @basic_constraints.setter
+    def basic_constraints(self, basic_constraints):
+        """Sets the basic_constraints of this CreatePKICertIssuer.
+
+        Defines the X.509 Basic Constraints extension for certificates issued by this PKI issuer template  # noqa: E501
+
+        :param basic_constraints: The basic_constraints of this CreatePKICertIssuer.  # noqa: E501
+        :type: str
+        """
+
+        self._basic_constraints = basic_constraints
 
     @property
     def ca_target(self):

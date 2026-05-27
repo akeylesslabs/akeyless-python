@@ -66,6 +66,10 @@ class DynamicSecretCreateLdap(object):
         'token': 'str',
         'token_expiration': 'str',
         'uid_token': 'str',
+        'use_capital_letters': 'str',
+        'use_lower_letters': 'str',
+        'use_numbers': 'str',
+        'use_special_characters': 'str',
         'user_attribute': 'str',
         'user_dn': 'str',
         'user_ttl': 'str'
@@ -104,12 +108,16 @@ class DynamicSecretCreateLdap(object):
         'token': 'token',
         'token_expiration': 'token-expiration',
         'uid_token': 'uid-token',
+        'use_capital_letters': 'use-capital-letters',
+        'use_lower_letters': 'use-lower-letters',
+        'use_numbers': 'use-numbers',
+        'use_special_characters': 'use-special-characters',
         'user_attribute': 'user-attribute',
         'user_dn': 'user-dn',
         'user_ttl': 'user-ttl'
     }
 
-    def __init__(self, provider_type=None, bind_dn=None, bind_dn_password=None, custom_username_template=None, delete_protection=None, description=None, external_username='false', fixed_user_claim_keyname='ext_username', group_dn=None, host_provider=None, input_rule=None, item_custom_fields=None, json=False, ldap_ca_cert=None, ldap_url=None, name=None, output_rule=None, password_length=None, producer_encryption_key_name=None, secure_access_bastion_issuer=None, secure_access_certificate_issuer=None, secure_access_delay=None, secure_access_enable=None, secure_access_host=None, secure_access_rd_gateway_server=None, secure_access_rdp_domain=None, tags=None, target=None, target_name=None, token=None, token_expiration=None, uid_token=None, user_attribute=None, user_dn=None, user_ttl='60m', local_vars_configuration=None):  # noqa: E501
+    def __init__(self, provider_type=None, bind_dn=None, bind_dn_password=None, custom_username_template=None, delete_protection=None, description=None, external_username='false', fixed_user_claim_keyname='ext_username', group_dn=None, host_provider=None, input_rule=None, item_custom_fields=None, json=False, ldap_ca_cert=None, ldap_url=None, name=None, output_rule=None, password_length=None, producer_encryption_key_name=None, secure_access_bastion_issuer=None, secure_access_certificate_issuer=None, secure_access_delay=None, secure_access_enable=None, secure_access_host=None, secure_access_rd_gateway_server=None, secure_access_rdp_domain=None, tags=None, target=None, target_name=None, token=None, token_expiration=None, uid_token=None, use_capital_letters=None, use_lower_letters=None, use_numbers=None, use_special_characters=None, user_attribute=None, user_dn=None, user_ttl='60m', local_vars_configuration=None):  # noqa: E501
         """DynamicSecretCreateLdap - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -147,6 +155,10 @@ class DynamicSecretCreateLdap(object):
         self._token = None
         self._token_expiration = None
         self._uid_token = None
+        self._use_capital_letters = None
+        self._use_lower_letters = None
+        self._use_numbers = None
+        self._use_special_characters = None
         self._user_attribute = None
         self._user_dn = None
         self._user_ttl = None
@@ -215,6 +227,14 @@ class DynamicSecretCreateLdap(object):
             self.token_expiration = token_expiration
         if uid_token is not None:
             self.uid_token = uid_token
+        if use_capital_letters is not None:
+            self.use_capital_letters = use_capital_letters
+        if use_lower_letters is not None:
+            self.use_lower_letters = use_lower_letters
+        if use_numbers is not None:
+            self.use_numbers = use_numbers
+        if use_special_characters is not None:
+            self.use_special_characters = use_special_characters
         if user_attribute is not None:
             self.user_attribute = user_attribute
         if user_dn is not None:
@@ -957,6 +977,96 @@ class DynamicSecretCreateLdap(object):
         """
 
         self._uid_token = uid_token
+
+    @property
+    def use_capital_letters(self):
+        """Gets the use_capital_letters of this DynamicSecretCreateLdap.  # noqa: E501
+
+        Specifies whether the generated temporary password must contain at least one uppercase character from the ISO basic Latin alphabet (A to Z). [true/false]  # noqa: E501
+
+        :return: The use_capital_letters of this DynamicSecretCreateLdap.  # noqa: E501
+        :rtype: str
+        """
+        return self._use_capital_letters
+
+    @use_capital_letters.setter
+    def use_capital_letters(self, use_capital_letters):
+        """Sets the use_capital_letters of this DynamicSecretCreateLdap.
+
+        Specifies whether the generated temporary password must contain at least one uppercase character from the ISO basic Latin alphabet (A to Z). [true/false]  # noqa: E501
+
+        :param use_capital_letters: The use_capital_letters of this DynamicSecretCreateLdap.  # noqa: E501
+        :type: str
+        """
+
+        self._use_capital_letters = use_capital_letters
+
+    @property
+    def use_lower_letters(self):
+        """Gets the use_lower_letters of this DynamicSecretCreateLdap.  # noqa: E501
+
+        Specifies whether the generated temporary password must contain at least one lowercase character from the ISO basic Latin alphabet (a to z). [true/false]  # noqa: E501
+
+        :return: The use_lower_letters of this DynamicSecretCreateLdap.  # noqa: E501
+        :rtype: str
+        """
+        return self._use_lower_letters
+
+    @use_lower_letters.setter
+    def use_lower_letters(self, use_lower_letters):
+        """Sets the use_lower_letters of this DynamicSecretCreateLdap.
+
+        Specifies whether the generated temporary password must contain at least one lowercase character from the ISO basic Latin alphabet (a to z). [true/false]  # noqa: E501
+
+        :param use_lower_letters: The use_lower_letters of this DynamicSecretCreateLdap.  # noqa: E501
+        :type: str
+        """
+
+        self._use_lower_letters = use_lower_letters
+
+    @property
+    def use_numbers(self):
+        """Gets the use_numbers of this DynamicSecretCreateLdap.  # noqa: E501
+
+        Specifies whether the generated temporary password must contain at least one numeric character (0 to 9). [true/false]  # noqa: E501
+
+        :return: The use_numbers of this DynamicSecretCreateLdap.  # noqa: E501
+        :rtype: str
+        """
+        return self._use_numbers
+
+    @use_numbers.setter
+    def use_numbers(self, use_numbers):
+        """Sets the use_numbers of this DynamicSecretCreateLdap.
+
+        Specifies whether the generated temporary password must contain at least one numeric character (0 to 9). [true/false]  # noqa: E501
+
+        :param use_numbers: The use_numbers of this DynamicSecretCreateLdap.  # noqa: E501
+        :type: str
+        """
+
+        self._use_numbers = use_numbers
+
+    @property
+    def use_special_characters(self):
+        """Gets the use_special_characters of this DynamicSecretCreateLdap.  # noqa: E501
+
+
+        :return: The use_special_characters of this DynamicSecretCreateLdap.  # noqa: E501
+        :rtype: str
+        """
+        return self._use_special_characters
+
+    @use_special_characters.setter
+    def use_special_characters(self, use_special_characters):
+        """Sets the use_special_characters of this DynamicSecretCreateLdap.
+
+
+        :param use_special_characters: The use_special_characters of this DynamicSecretCreateLdap.  # noqa: E501
+        :type: str
+        """
+
+        self._use_special_characters = use_special_characters
 
     @property
     def user_attribute(self):

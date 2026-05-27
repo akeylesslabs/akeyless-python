@@ -60,6 +60,10 @@ class GatewayUpdateProducerAzure(object):
         'target_name': 'str',
         'token': 'str',
         'uid_token': 'str',
+        'use_capital_letters': 'str',
+        'use_lower_letters': 'str',
+        'use_numbers': 'str',
+        'use_special_characters': 'str',
         'user_group_obj_id': 'str',
         'user_portal_access': 'bool',
         'user_principal_name': 'str',
@@ -95,6 +99,10 @@ class GatewayUpdateProducerAzure(object):
         'target_name': 'target-name',
         'token': 'token',
         'uid_token': 'uid-token',
+        'use_capital_letters': 'use-capital-letters',
+        'use_lower_letters': 'use-lower-letters',
+        'use_numbers': 'use-numbers',
+        'use_special_characters': 'use-special-characters',
         'user_group_obj_id': 'user-group-obj-id',
         'user_portal_access': 'user-portal-access',
         'user_principal_name': 'user-principal-name',
@@ -103,7 +111,7 @@ class GatewayUpdateProducerAzure(object):
         'user_ttl': 'user-ttl'
     }
 
-    def __init__(self, app_obj_id=None, azure_administrative_unit=None, azure_client_id=None, azure_client_secret=None, azure_tenant_id=None, custom_username_template=None, delete_protection=None, fixed_user_claim_keyname='false', fixed_user_only=False, input_rule=None, item_custom_fields=None, json=False, name=None, new_name=None, output_rule=None, password_length=None, producer_encryption_key_name=None, secure_access_enable=None, secure_access_url=None, secure_access_web=True, secure_access_web_browsing=False, secure_access_web_proxy=False, tags=None, target_name=None, token=None, uid_token=None, user_group_obj_id=None, user_portal_access=False, user_principal_name=None, user_programmatic_access=False, user_role_template_id=None, user_ttl='60m', local_vars_configuration=None):  # noqa: E501
+    def __init__(self, app_obj_id=None, azure_administrative_unit=None, azure_client_id=None, azure_client_secret=None, azure_tenant_id=None, custom_username_template=None, delete_protection=None, fixed_user_claim_keyname='false', fixed_user_only=False, input_rule=None, item_custom_fields=None, json=False, name=None, new_name=None, output_rule=None, password_length=None, producer_encryption_key_name=None, secure_access_enable=None, secure_access_url=None, secure_access_web=True, secure_access_web_browsing=False, secure_access_web_proxy=False, tags=None, target_name=None, token=None, uid_token=None, use_capital_letters=None, use_lower_letters=None, use_numbers=None, use_special_characters=None, user_group_obj_id=None, user_portal_access=False, user_principal_name=None, user_programmatic_access=False, user_role_template_id=None, user_ttl='60m', local_vars_configuration=None):  # noqa: E501
         """GatewayUpdateProducerAzure - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -135,6 +143,10 @@ class GatewayUpdateProducerAzure(object):
         self._target_name = None
         self._token = None
         self._uid_token = None
+        self._use_capital_letters = None
+        self._use_lower_letters = None
+        self._use_numbers = None
+        self._use_special_characters = None
         self._user_group_obj_id = None
         self._user_portal_access = None
         self._user_principal_name = None
@@ -194,6 +206,14 @@ class GatewayUpdateProducerAzure(object):
             self.token = token
         if uid_token is not None:
             self.uid_token = uid_token
+        if use_capital_letters is not None:
+            self.use_capital_letters = use_capital_letters
+        if use_lower_letters is not None:
+            self.use_lower_letters = use_lower_letters
+        if use_numbers is not None:
+            self.use_numbers = use_numbers
+        if use_special_characters is not None:
+            self.use_special_characters = use_special_characters
         if user_group_obj_id is not None:
             self.user_group_obj_id = user_group_obj_id
         if user_portal_access is not None:
@@ -806,6 +826,96 @@ class GatewayUpdateProducerAzure(object):
         """
 
         self._uid_token = uid_token
+
+    @property
+    def use_capital_letters(self):
+        """Gets the use_capital_letters of this GatewayUpdateProducerAzure.  # noqa: E501
+
+        Specifies whether the generated temporary password must contain at least one uppercase character from the ISO basic Latin alphabet (A to Z). [true/false]  # noqa: E501
+
+        :return: The use_capital_letters of this GatewayUpdateProducerAzure.  # noqa: E501
+        :rtype: str
+        """
+        return self._use_capital_letters
+
+    @use_capital_letters.setter
+    def use_capital_letters(self, use_capital_letters):
+        """Sets the use_capital_letters of this GatewayUpdateProducerAzure.
+
+        Specifies whether the generated temporary password must contain at least one uppercase character from the ISO basic Latin alphabet (A to Z). [true/false]  # noqa: E501
+
+        :param use_capital_letters: The use_capital_letters of this GatewayUpdateProducerAzure.  # noqa: E501
+        :type: str
+        """
+
+        self._use_capital_letters = use_capital_letters
+
+    @property
+    def use_lower_letters(self):
+        """Gets the use_lower_letters of this GatewayUpdateProducerAzure.  # noqa: E501
+
+        Specifies whether the generated temporary password must contain at least one lowercase character from the ISO basic Latin alphabet (a to z). [true/false]  # noqa: E501
+
+        :return: The use_lower_letters of this GatewayUpdateProducerAzure.  # noqa: E501
+        :rtype: str
+        """
+        return self._use_lower_letters
+
+    @use_lower_letters.setter
+    def use_lower_letters(self, use_lower_letters):
+        """Sets the use_lower_letters of this GatewayUpdateProducerAzure.
+
+        Specifies whether the generated temporary password must contain at least one lowercase character from the ISO basic Latin alphabet (a to z). [true/false]  # noqa: E501
+
+        :param use_lower_letters: The use_lower_letters of this GatewayUpdateProducerAzure.  # noqa: E501
+        :type: str
+        """
+
+        self._use_lower_letters = use_lower_letters
+
+    @property
+    def use_numbers(self):
+        """Gets the use_numbers of this GatewayUpdateProducerAzure.  # noqa: E501
+
+        Specifies whether the generated temporary password must contain at least one numeric character (0 to 9). [true/false]  # noqa: E501
+
+        :return: The use_numbers of this GatewayUpdateProducerAzure.  # noqa: E501
+        :rtype: str
+        """
+        return self._use_numbers
+
+    @use_numbers.setter
+    def use_numbers(self, use_numbers):
+        """Sets the use_numbers of this GatewayUpdateProducerAzure.
+
+        Specifies whether the generated temporary password must contain at least one numeric character (0 to 9). [true/false]  # noqa: E501
+
+        :param use_numbers: The use_numbers of this GatewayUpdateProducerAzure.  # noqa: E501
+        :type: str
+        """
+
+        self._use_numbers = use_numbers
+
+    @property
+    def use_special_characters(self):
+        """Gets the use_special_characters of this GatewayUpdateProducerAzure.  # noqa: E501
+
+
+        :return: The use_special_characters of this GatewayUpdateProducerAzure.  # noqa: E501
+        :rtype: str
+        """
+        return self._use_special_characters
+
+    @use_special_characters.setter
+    def use_special_characters(self, use_special_characters):
+        """Sets the use_special_characters of this GatewayUpdateProducerAzure.
+
+
+        :param use_special_characters: The use_special_characters of this GatewayUpdateProducerAzure.  # noqa: E501
+        :type: str
+        """
+
+        self._use_special_characters = use_special_characters
 
     @property
     def user_group_obj_id(self):

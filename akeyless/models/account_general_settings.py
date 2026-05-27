@@ -49,6 +49,7 @@ class AccountGeneralSettings(object):
         'default_home_page': 'DefaultHomePage',
         'dynamic_secret_max_ttl': 'DynamicSecretMaxTtl',
         'enable_request_for_access': 'bool',
+        'enable_search_history': 'bool',
         'hide_personal_folder': 'bool',
         'hide_secret_reveal_copy': 'bool',
         'hide_static_password': 'bool',
@@ -80,6 +81,7 @@ class AccountGeneralSettings(object):
         'default_home_page': 'default_home_page',
         'dynamic_secret_max_ttl': 'dynamic_secret_max_ttl',
         'enable_request_for_access': 'enable_request_for_access',
+        'enable_search_history': 'enable_search_history',
         'hide_personal_folder': 'hide_personal_folder',
         'hide_secret_reveal_copy': 'hide_secret_reveal_copy',
         'hide_static_password': 'hide_static_password',
@@ -95,7 +97,7 @@ class AccountGeneralSettings(object):
         'sharing_policy': 'sharing_policy'
     }
 
-    def __init__(self, account_default_key_item_id=None, account_default_key_name=None, ai_insights=None, allow_auto_fill=None, allow_passkeys=None, allowed_client_types=None, allowed_clients_ips=None, allowed_gateways_ips=None, auth_usage_event=None, certificate_expiration_events=None, data_protection_section=None, default_auth_method=None, default_home_page=None, dynamic_secret_max_ttl=None, enable_request_for_access=None, hide_personal_folder=None, hide_secret_reveal_copy=None, hide_static_password=None, invalid_characters=None, item_locking=None, item_usage_event=None, lock_default_key=None, password_expiration_info=None, password_policy=None, password_score=None, protect_items_by_default=None, rotation_secret_max_interval=None, sharing_policy=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, account_default_key_item_id=None, account_default_key_name=None, ai_insights=None, allow_auto_fill=None, allow_passkeys=None, allowed_client_types=None, allowed_clients_ips=None, allowed_gateways_ips=None, auth_usage_event=None, certificate_expiration_events=None, data_protection_section=None, default_auth_method=None, default_home_page=None, dynamic_secret_max_ttl=None, enable_request_for_access=None, enable_search_history=None, hide_personal_folder=None, hide_secret_reveal_copy=None, hide_static_password=None, invalid_characters=None, item_locking=None, item_usage_event=None, lock_default_key=None, password_expiration_info=None, password_policy=None, password_score=None, protect_items_by_default=None, rotation_secret_max_interval=None, sharing_policy=None, local_vars_configuration=None):  # noqa: E501
         """AccountGeneralSettings - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -116,6 +118,7 @@ class AccountGeneralSettings(object):
         self._default_home_page = None
         self._dynamic_secret_max_ttl = None
         self._enable_request_for_access = None
+        self._enable_search_history = None
         self._hide_personal_folder = None
         self._hide_secret_reveal_copy = None
         self._hide_static_password = None
@@ -161,6 +164,8 @@ class AccountGeneralSettings(object):
             self.dynamic_secret_max_ttl = dynamic_secret_max_ttl
         if enable_request_for_access is not None:
             self.enable_request_for_access = enable_request_for_access
+        if enable_search_history is not None:
+            self.enable_search_history = enable_search_history
         if hide_personal_folder is not None:
             self.hide_personal_folder = hide_personal_folder
         if hide_secret_reveal_copy is not None:
@@ -506,6 +511,27 @@ class AccountGeneralSettings(object):
         """
 
         self._enable_request_for_access = enable_request_for_access
+
+    @property
+    def enable_search_history(self):
+        """Gets the enable_search_history of this AccountGeneralSettings.  # noqa: E501
+
+
+        :return: The enable_search_history of this AccountGeneralSettings.  # noqa: E501
+        :rtype: bool
+        """
+        return self._enable_search_history
+
+    @enable_search_history.setter
+    def enable_search_history(self, enable_search_history):
+        """Sets the enable_search_history of this AccountGeneralSettings.
+
+
+        :param enable_search_history: The enable_search_history of this AccountGeneralSettings.  # noqa: E501
+        :type: bool
+        """
+
+        self._enable_search_history = enable_search_history
 
     @property
     def hide_personal_folder(self):
