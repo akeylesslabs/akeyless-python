@@ -221,7 +221,10 @@ Method | HTTP request | Description
 [**export_classic_key**](V2Api.md#export_classic_key) | **POST** /export-classic-key | 
 [**folder_create**](V2Api.md#folder_create) | **POST** /folder-create | 
 [**folder_delete**](V2Api.md#folder_delete) | **POST** /folder-delete | 
+[**folder_delete_sync**](V2Api.md#folder_delete_sync) | **POST** /folder-delete-sync | 
 [**folder_get**](V2Api.md#folder_get) | **POST** /folder-get | 
+[**folder_sync**](V2Api.md#folder_sync) | **POST** /folder-sync | 
+[**folder_sync_all**](V2Api.md#folder_sync_all) | **POST** /folder-sync-all | 
 [**folder_update**](V2Api.md#folder_update) | **POST** /folder-update | 
 [**gateway_create_allowed_access**](V2Api.md#gateway_create_allowed_access) | **POST** /gateway-create-allowed-access | 
 [**gateway_create_k8_s_auth_config**](V2Api.md#gateway_create_k8_s_auth_config) | **POST** /gateway-create-k8s-auth-config | 
@@ -417,6 +420,7 @@ Method | HTTP request | Description
 [**rotated_secret_create_dockerhub**](V2Api.md#rotated_secret_create_dockerhub) | **POST** /rotated-secret-create-dockerhub | 
 [**rotated_secret_create_gcp**](V2Api.md#rotated_secret_create_gcp) | **POST** /rotated-secret-create-gcp | 
 [**rotated_secret_create_hanadb**](V2Api.md#rotated_secret_create_hanadb) | **POST** /rotated-secret-create-hanadb | 
+[**rotated_secret_create_hashi_vault**](V2Api.md#rotated_secret_create_hashi_vault) | **POST** /rotated-secret-create-hashi-vault | 
 [**rotated_secret_create_ldap**](V2Api.md#rotated_secret_create_ldap) | **POST** /rotated-secret-create-ldap | 
 [**rotated_secret_create_mongodb**](V2Api.md#rotated_secret_create_mongodb) | **POST** /rotated-secret-create-mongodb | 
 [**rotated_secret_create_mssql**](V2Api.md#rotated_secret_create_mssql) | **POST** /rotated-secret-create-mssql | 
@@ -442,6 +446,7 @@ Method | HTTP request | Description
 [**rotated_secret_update_dockerhub**](V2Api.md#rotated_secret_update_dockerhub) | **POST** /rotated-secret-update-dockerhub | 
 [**rotated_secret_update_gcp**](V2Api.md#rotated_secret_update_gcp) | **POST** /rotated-secret-update-gcp | 
 [**rotated_secret_update_hanadb**](V2Api.md#rotated_secret_update_hanadb) | **POST** /rotated-secret-update-hanadb | 
+[**rotated_secret_update_hashi_vault**](V2Api.md#rotated_secret_update_hashi_vault) | **POST** /rotated-secret-update-hashi-vault | 
 [**rotated_secret_update_ldap**](V2Api.md#rotated_secret_update_ldap) | **POST** /rotated-secret-update-ldap | 
 [**rotated_secret_update_mongodb**](V2Api.md#rotated_secret_update_mongodb) | **POST** /rotated-secret-update-mongodb | 
 [**rotated_secret_update_mssql**](V2Api.md#rotated_secret_update_mssql) | **POST** /rotated-secret-update-mssql | 
@@ -13650,6 +13655,66 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **folder_delete_sync**
+> FolderDeleteSyncOutput folder_delete_sync(folder_delete_sync)
+
+
+
+### Example
+
+```python
+from __future__ import print_function
+import time
+import akeyless
+from akeyless.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.akeyless.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = akeyless.Configuration(
+    host = "https://api.akeyless.io"
+)
+
+
+# Enter a context with an instance of the API client
+with akeyless.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = akeyless.V2Api(api_client)
+    folder_delete_sync = akeyless.FolderDeleteSync() # FolderDeleteSync | 
+
+    try:
+        api_response = api_instance.folder_delete_sync(folder_delete_sync)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling V2Api->folder_delete_sync: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **folder_delete_sync** | [**FolderDeleteSync**](FolderDeleteSync.md)|  | 
+
+### Return type
+
+[**FolderDeleteSyncOutput**](FolderDeleteSyncOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+**0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **folder_get**
 > FolderGetOutput folder_get(folder_get)
 
@@ -13706,6 +13771,126 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | folderGetResponse wraps response body. |  -  |
+**0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **folder_sync**
+> FolderSyncOutput folder_sync(folder_sync)
+
+
+
+### Example
+
+```python
+from __future__ import print_function
+import time
+import akeyless
+from akeyless.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.akeyless.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = akeyless.Configuration(
+    host = "https://api.akeyless.io"
+)
+
+
+# Enter a context with an instance of the API client
+with akeyless.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = akeyless.V2Api(api_client)
+    folder_sync = akeyless.FolderSync() # FolderSync | 
+
+    try:
+        api_response = api_instance.folder_sync(folder_sync)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling V2Api->folder_sync: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **folder_sync** | [**FolderSync**](FolderSync.md)|  | 
+
+### Return type
+
+[**FolderSyncOutput**](FolderSyncOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+**0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **folder_sync_all**
+> FolderSyncAllOutput folder_sync_all(folder_sync_all)
+
+
+
+### Example
+
+```python
+from __future__ import print_function
+import time
+import akeyless
+from akeyless.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.akeyless.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = akeyless.Configuration(
+    host = "https://api.akeyless.io"
+)
+
+
+# Enter a context with an instance of the API client
+with akeyless.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = akeyless.V2Api(api_client)
+    folder_sync_all = akeyless.FolderSyncAll() # FolderSyncAll | 
+
+    try:
+        api_response = api_instance.folder_sync_all(folder_sync_all)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling V2Api->folder_sync_all: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **folder_sync_all** | [**FolderSyncAll**](FolderSyncAll.md)|  | 
+
+### Return type
+
+[**FolderSyncAllOutput**](FolderSyncAllOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
 **0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -25396,6 +25581,66 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **rotated_secret_create_hashi_vault**
+> RotatedSecretCreateOutput rotated_secret_create_hashi_vault(rotated_secret_create_hashi_vault)
+
+
+
+### Example
+
+```python
+from __future__ import print_function
+import time
+import akeyless
+from akeyless.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.akeyless.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = akeyless.Configuration(
+    host = "https://api.akeyless.io"
+)
+
+
+# Enter a context with an instance of the API client
+with akeyless.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = akeyless.V2Api(api_client)
+    rotated_secret_create_hashi_vault = akeyless.RotatedSecretCreateHashiVault() # RotatedSecretCreateHashiVault | 
+
+    try:
+        api_response = api_instance.rotated_secret_create_hashi_vault(rotated_secret_create_hashi_vault)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling V2Api->rotated_secret_create_hashi_vault: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **rotated_secret_create_hashi_vault** | [**RotatedSecretCreateHashiVault**](RotatedSecretCreateHashiVault.md)|  | 
+
+### Return type
+
+[**RotatedSecretCreateOutput**](RotatedSecretCreateOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | rotatedSecretCreateHashiVaultResponse wraps response body. |  -  |
+**0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **rotated_secret_create_ldap**
 > RotatedSecretCreateOutput rotated_secret_create_ldap(rotated_secret_create_ldap)
 
@@ -26892,6 +27137,66 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | rotatedSecretUpdateHanadbResponse wraps response body. |  -  |
+**0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **rotated_secret_update_hashi_vault**
+> RotatedSecretUpdateOutput rotated_secret_update_hashi_vault(rotated_secret_update_hashi_vault)
+
+
+
+### Example
+
+```python
+from __future__ import print_function
+import time
+import akeyless
+from akeyless.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.akeyless.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = akeyless.Configuration(
+    host = "https://api.akeyless.io"
+)
+
+
+# Enter a context with an instance of the API client
+with akeyless.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = akeyless.V2Api(api_client)
+    rotated_secret_update_hashi_vault = akeyless.RotatedSecretUpdateHashiVault() # RotatedSecretUpdateHashiVault | 
+
+    try:
+        api_response = api_instance.rotated_secret_update_hashi_vault(rotated_secret_update_hashi_vault)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling V2Api->rotated_secret_update_hashi_vault: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **rotated_secret_update_hashi_vault** | [**RotatedSecretUpdateHashiVault**](RotatedSecretUpdateHashiVault.md)|  | 
+
+### Return type
+
+[**RotatedSecretUpdateOutput**](RotatedSecretUpdateOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**201** | rotatedSecretUpdateHashiVaultResponse wraps response body. |  -  |
 **0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

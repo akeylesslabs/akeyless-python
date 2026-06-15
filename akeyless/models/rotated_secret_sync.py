@@ -46,7 +46,7 @@ class RotatedSecretSync(object):
     }
 
     attribute_map = {
-        'delete_remote': 'DeleteRemote',
+        'delete_remote': 'delete-remote',
         'filter_secret_value': 'filter-secret-value',
         'json': 'json',
         'name': 'name',

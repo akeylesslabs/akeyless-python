@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **audience** | **str** | Token audience for Splunk token creation (required for rotator-type&#x3D;token) | [optional] 
 **authentication_credentials** | **str** | The credentials to connect with use-user-creds/use-target-creds | [optional] [default to 'use-user-creds']
-**auto_rotate** | **str** | Whether to automatically rotate every --rotation-interval days, or disable existing automatic rotation [true/false] | [optional] 
+**auto_rotate** | **str** |  | [optional] 
 **delete_protection** | **str** | Protection from accidental deletion of this object [true/false] | [optional] 
 **description** | **str** | Description of the object | [optional] 
 **expiration_date** | **str** | Token expiration date in YYYY-MM-DD format (required for rotator-type&#x3D;token when manual rotation is selected and no existing token is provided). Time will be set to 00:00 UTC. | [optional] 
@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 **input_rule** | **list[str]** | Agentic input rule in name&#x3D;...,rule&#x3D;... format (e.g. name&#x3D;rule1,rule&#x3D;Sanitize input) | [optional] 
 **item_custom_fields** | **dict(str, str)** | Additional custom fields to associate with the item | [optional] 
 **json** | **bool** | Set output format to JSON | [optional] [default to False]
-**key** | **str** | The name of a key that used to encrypt the secret value (if empty, the account default protectionKey key will be used) | [optional] 
+**key** | **str** |  | [optional] 
 **max_versions** | **str** | Set the maximum number of versions, limited by the account settings defaults. | [optional] 
 **name** | **str** | Rotated secret name | 
 **output_rule** | **list[str]** | Agentic output rule in name&#x3D;...,rule&#x3D;... format (e.g. name&#x3D;rule1,rule&#x3D;Mask secrets) | [optional] 
@@ -23,8 +23,8 @@ Name | Type | Description | Notes
 **rotated_password** | **str** | rotated-username password (relevant only for rotator-type&#x3D;password) | [optional] 
 **rotated_username** | **str** | username to be rotated, if selected use-self-creds at rotator-creds-type, this username will try to rotate it&#39;s own password, if use-target-creds is selected, target credentials will be use to rotate the rotated-password (relevant only for rotator-type&#x3D;password) | [optional] 
 **rotation_event_in** | **list[str]** | How many days before the rotation of the item would you like to be notified | [optional] 
-**rotation_hour** | **int** | The Hour of the rotation in UTC | [optional] 
-**rotation_interval** | **str** | The number of days to wait between every automatic key rotation (1-365) | [optional] 
+**rotation_hour** | **int** |  | [optional] 
+**rotation_interval** | **str** |  | [optional] 
 **rotator_type** | **str** | The rotator type. options: [target/password/token/hec-token] | 
 **splunk_token** | **str** | Current Splunk authentication token to store (relevant only for rotator-type&#x3D;token). If not provided, a new token will be created in Splunk. | [optional] 
 **tags** | **list[str]** | Add tags attached to this object | [optional] 

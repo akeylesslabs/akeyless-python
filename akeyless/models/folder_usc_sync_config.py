@@ -35,6 +35,7 @@ class FolderUSCSyncConfig(object):
     """
     openapi_types = {
         'delete_remote': 'bool',
+        'engine_name': 'str',
         'namespace': 'str',
         'usc_item_id': 'int',
         'usc_item_name': 'str'
@@ -42,18 +43,20 @@ class FolderUSCSyncConfig(object):
 
     attribute_map = {
         'delete_remote': 'delete_remote',
+        'engine_name': 'engine_name',
         'namespace': 'namespace',
         'usc_item_id': 'usc_item_id',
         'usc_item_name': 'usc_item_name'
     }
 
-    def __init__(self, delete_remote=None, namespace=None, usc_item_id=None, usc_item_name=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, delete_remote=None, engine_name=None, namespace=None, usc_item_id=None, usc_item_name=None, local_vars_configuration=None):  # noqa: E501
         """FolderUSCSyncConfig - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._delete_remote = None
+        self._engine_name = None
         self._namespace = None
         self._usc_item_id = None
         self._usc_item_name = None
@@ -61,6 +64,8 @@ class FolderUSCSyncConfig(object):
 
         if delete_remote is not None:
             self.delete_remote = delete_remote
+        if engine_name is not None:
+            self.engine_name = engine_name
         if namespace is not None:
             self.namespace = namespace
         if usc_item_id is not None:
@@ -88,6 +93,27 @@ class FolderUSCSyncConfig(object):
         """
 
         self._delete_remote = delete_remote
+
+    @property
+    def engine_name(self):
+        """Gets the engine_name of this FolderUSCSyncConfig.  # noqa: E501
+
+
+        :return: The engine_name of this FolderUSCSyncConfig.  # noqa: E501
+        :rtype: str
+        """
+        return self._engine_name
+
+    @engine_name.setter
+    def engine_name(self, engine_name):
+        """Sets the engine_name of this FolderUSCSyncConfig.
+
+
+        :param engine_name: The engine_name of this FolderUSCSyncConfig.  # noqa: E501
+        :type: str
+        """
+
+        self._engine_name = engine_name
 
     @property
     def namespace(self):

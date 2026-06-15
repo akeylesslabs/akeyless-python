@@ -57,6 +57,7 @@ class RotatedSecretUpdateAzure(object):
         'name': 'str',
         'new_name': 'str',
         'output_rule': 'list[str]',
+        'password': 'str',
         'password_length': 'str',
         'resource_group_name': 'str',
         'resource_name': 'str',
@@ -105,6 +106,7 @@ class RotatedSecretUpdateAzure(object):
         'name': 'name',
         'new_name': 'new-name',
         'output_rule': 'output-rule',
+        'password': 'password',
         'password_length': 'password-length',
         'resource_group_name': 'resource-group-name',
         'resource_name': 'resource-name',
@@ -129,7 +131,7 @@ class RotatedSecretUpdateAzure(object):
         'username': 'username'
     }
 
-    def __init__(self, add_tag=None, api_id=None, api_key=None, application_id=None, authentication_credentials='use-user-creds', auto_rotate=None, delete_protection=None, description='default_metadata', explicitly_set_sa='false', grace_rotation=None, grace_rotation_hour=None, grace_rotation_interval=None, grace_rotation_timing=None, input_rule=None, item_custom_fields=None, json=False, keep_prev_version=None, key=None, lock_during_sra_session=None, max_versions=None, name=None, new_name=None, output_rule=None, password_length=None, resource_group_name=None, resource_name=None, rm_tag=None, rotate_after_disconnect=None, rotation_event_in=None, rotation_hour=None, rotation_interval=None, secure_access_disable_concurrent_connections=None, secure_access_enable=None, secure_access_url=None, secure_access_web=False, secure_access_web_browsing=False, secure_access_web_proxy=False, storage_account_key_name=None, token=None, uid_token=None, use_capital_letters=None, use_lower_letters=None, use_numbers=None, use_special_characters=None, username=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, add_tag=None, api_id=None, api_key=None, application_id=None, authentication_credentials='use-user-creds', auto_rotate=None, delete_protection=None, description='default_metadata', explicitly_set_sa='false', grace_rotation=None, grace_rotation_hour=None, grace_rotation_interval=None, grace_rotation_timing=None, input_rule=None, item_custom_fields=None, json=False, keep_prev_version=None, key=None, lock_during_sra_session=None, max_versions=None, name=None, new_name=None, output_rule=None, password=None, password_length=None, resource_group_name=None, resource_name=None, rm_tag=None, rotate_after_disconnect=None, rotation_event_in=None, rotation_hour=None, rotation_interval=None, secure_access_disable_concurrent_connections=None, secure_access_enable=None, secure_access_url=None, secure_access_web=False, secure_access_web_browsing=False, secure_access_web_proxy=False, storage_account_key_name=None, token=None, uid_token=None, use_capital_letters=None, use_lower_letters=None, use_numbers=None, use_special_characters=None, username=None, local_vars_configuration=None):  # noqa: E501
         """RotatedSecretUpdateAzure - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -158,6 +160,7 @@ class RotatedSecretUpdateAzure(object):
         self._name = None
         self._new_name = None
         self._output_rule = None
+        self._password = None
         self._password_length = None
         self._resource_group_name = None
         self._resource_name = None
@@ -227,6 +230,8 @@ class RotatedSecretUpdateAzure(object):
             self.new_name = new_name
         if output_rule is not None:
             self.output_rule = output_rule
+        if password is not None:
+            self.password = password
         if password_length is not None:
             self.password_length = password_length
         if resource_group_name is not None:
@@ -391,7 +396,6 @@ class RotatedSecretUpdateAzure(object):
     def auto_rotate(self):
         """Gets the auto_rotate of this RotatedSecretUpdateAzure.  # noqa: E501
 
-        Whether to automatically rotate every --rotation-interval days, or disable existing automatic rotation [true/false]  # noqa: E501
 
         :return: The auto_rotate of this RotatedSecretUpdateAzure.  # noqa: E501
         :rtype: str
@@ -402,7 +406,6 @@ class RotatedSecretUpdateAzure(object):
     def auto_rotate(self, auto_rotate):
         """Sets the auto_rotate of this RotatedSecretUpdateAzure.
 
-        Whether to automatically rotate every --rotation-interval days, or disable existing automatic rotation [true/false]  # noqa: E501
 
         :param auto_rotate: The auto_rotate of this RotatedSecretUpdateAzure.  # noqa: E501
         :type: str
@@ -667,7 +670,6 @@ class RotatedSecretUpdateAzure(object):
     def key(self):
         """Gets the key of this RotatedSecretUpdateAzure.  # noqa: E501
 
-        The name of a key that used to encrypt the secret value (if empty, the account default protectionKey key will be used)  # noqa: E501
 
         :return: The key of this RotatedSecretUpdateAzure.  # noqa: E501
         :rtype: str
@@ -678,7 +680,6 @@ class RotatedSecretUpdateAzure(object):
     def key(self, key):
         """Sets the key of this RotatedSecretUpdateAzure.
 
-        The name of a key that used to encrypt the secret value (if empty, the account default protectionKey key will be used)  # noqa: E501
 
         :param key: The key of this RotatedSecretUpdateAzure.  # noqa: E501
         :type: str
@@ -802,6 +803,29 @@ class RotatedSecretUpdateAzure(object):
         """
 
         self._output_rule = output_rule
+
+    @property
+    def password(self):
+        """Gets the password of this RotatedSecretUpdateAzure.  # noqa: E501
+
+        The password for the user principal name to rotate (relevant only for rotator-type=password)  # noqa: E501
+
+        :return: The password of this RotatedSecretUpdateAzure.  # noqa: E501
+        :rtype: str
+        """
+        return self._password
+
+    @password.setter
+    def password(self, password):
+        """Sets the password of this RotatedSecretUpdateAzure.
+
+        The password for the user principal name to rotate (relevant only for rotator-type=password)  # noqa: E501
+
+        :param password: The password of this RotatedSecretUpdateAzure.  # noqa: E501
+        :type: str
+        """
+
+        self._password = password
 
     @property
     def password_length(self):
@@ -945,7 +969,6 @@ class RotatedSecretUpdateAzure(object):
     def rotation_hour(self):
         """Gets the rotation_hour of this RotatedSecretUpdateAzure.  # noqa: E501
 
-        The Hour of the rotation in UTC  # noqa: E501
 
         :return: The rotation_hour of this RotatedSecretUpdateAzure.  # noqa: E501
         :rtype: int
@@ -956,7 +979,6 @@ class RotatedSecretUpdateAzure(object):
     def rotation_hour(self, rotation_hour):
         """Sets the rotation_hour of this RotatedSecretUpdateAzure.
 
-        The Hour of the rotation in UTC  # noqa: E501
 
         :param rotation_hour: The rotation_hour of this RotatedSecretUpdateAzure.  # noqa: E501
         :type: int
@@ -968,7 +990,6 @@ class RotatedSecretUpdateAzure(object):
     def rotation_interval(self):
         """Gets the rotation_interval of this RotatedSecretUpdateAzure.  # noqa: E501
 
-        The number of days to wait between every automatic key rotation (1-365)  # noqa: E501
 
         :return: The rotation_interval of this RotatedSecretUpdateAzure.  # noqa: E501
         :rtype: str
@@ -979,7 +1000,6 @@ class RotatedSecretUpdateAzure(object):
     def rotation_interval(self, rotation_interval):
         """Sets the rotation_interval of this RotatedSecretUpdateAzure.
 
-        The number of days to wait between every automatic key rotation (1-365)  # noqa: E501
 
         :param rotation_interval: The rotation_interval of this RotatedSecretUpdateAzure.  # noqa: E501
         :type: str

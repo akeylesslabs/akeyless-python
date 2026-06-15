@@ -39,7 +39,10 @@ class UscGetSecretOutput(object):
         'id': 'str',
         'metadata': 'object',
         'name': 'str',
-        'value': 'str'
+        'value': 'str',
+        'version_id': 'str',
+        'version_ids': 'list[str]',
+        'warnings': 'list[str]'
     }
 
     attribute_map = {
@@ -48,10 +51,13 @@ class UscGetSecretOutput(object):
         'id': 'id',
         'metadata': 'metadata',
         'name': 'name',
-        'value': 'value'
+        'value': 'value',
+        'version_id': 'version_id',
+        'version_ids': 'version_ids',
+        'warnings': 'warnings'
     }
 
-    def __init__(self, binary_value=None, encryption_key=None, id=None, metadata=None, name=None, value=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, binary_value=None, encryption_key=None, id=None, metadata=None, name=None, value=None, version_id=None, version_ids=None, warnings=None, local_vars_configuration=None):  # noqa: E501
         """UscGetSecretOutput - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -63,6 +69,9 @@ class UscGetSecretOutput(object):
         self._metadata = None
         self._name = None
         self._value = None
+        self._version_id = None
+        self._version_ids = None
+        self._warnings = None
         self.discriminator = None
 
         if binary_value is not None:
@@ -77,6 +86,12 @@ class UscGetSecretOutput(object):
             self.name = name
         if value is not None:
             self.value = value
+        if version_id is not None:
+            self.version_id = version_id
+        if version_ids is not None:
+            self.version_ids = version_ids
+        if warnings is not None:
+            self.warnings = warnings
 
     @property
     def binary_value(self):
@@ -203,6 +218,69 @@ class UscGetSecretOutput(object):
         """
 
         self._value = value
+
+    @property
+    def version_id(self):
+        """Gets the version_id of this UscGetSecretOutput.  # noqa: E501
+
+
+        :return: The version_id of this UscGetSecretOutput.  # noqa: E501
+        :rtype: str
+        """
+        return self._version_id
+
+    @version_id.setter
+    def version_id(self, version_id):
+        """Sets the version_id of this UscGetSecretOutput.
+
+
+        :param version_id: The version_id of this UscGetSecretOutput.  # noqa: E501
+        :type: str
+        """
+
+        self._version_id = version_id
+
+    @property
+    def version_ids(self):
+        """Gets the version_ids of this UscGetSecretOutput.  # noqa: E501
+
+
+        :return: The version_ids of this UscGetSecretOutput.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._version_ids
+
+    @version_ids.setter
+    def version_ids(self, version_ids):
+        """Sets the version_ids of this UscGetSecretOutput.
+
+
+        :param version_ids: The version_ids of this UscGetSecretOutput.  # noqa: E501
+        :type: list[str]
+        """
+
+        self._version_ids = version_ids
+
+    @property
+    def warnings(self):
+        """Gets the warnings of this UscGetSecretOutput.  # noqa: E501
+
+
+        :return: The warnings of this UscGetSecretOutput.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._warnings
+
+    @warnings.setter
+    def warnings(self, warnings):
+        """Sets the warnings of this UscGetSecretOutput.
+
+
+        :param warnings: The warnings of this UscGetSecretOutput.  # noqa: E501
+        :type: list[str]
+        """
+
+        self._warnings = warnings
 
     def to_dict(self):
         """Returns the model properties as a dict"""

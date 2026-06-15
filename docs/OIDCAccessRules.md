@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **allowed_redirect_ur_is** | **list[str]** | Allowed redirect URIs after the authentication | [optional] 
 **audience** | **str** | Audience claim to be used as part of the authentication flow. In case set, it must match the one configured on the Identity Provider&#39;s Application | [optional] 
+**authorized_gw_cluster_name** | **str** | AuthorizedGwClusterName binds the access method to a single GW cluster. When empty (or whitespace-only), GW-driven auth is disabled. | [optional] 
 **bound_claims** | [**list[OIDCCustomClaim]**](OIDCCustomClaim.md) | The claims that login is restricted to. | [optional] 
 **client_id** | **str** | Client ID | [optional] 
 **client_secret** | **str** | Client Secret | [optional] 

@@ -20,6 +20,8 @@ Name | Type | Description | Notes
 **thumbprint** | **str** |  | [optional] 
 **type** | **str** |  | [optional] 
 **version** | **int** |  | [optional] 
+**version_id** | **str** |  | [optional] 
+**version_ids** | **list[str]** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

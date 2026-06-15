@@ -50,7 +50,9 @@ class SecretInfo(object):
         'tags': 'dict(str, str)',
         'thumbprint': 'str',
         'type': 'str',
-        'version': 'int'
+        'version': 'int',
+        'version_id': 'str',
+        'version_ids': 'list[str]'
     }
 
     attribute_map = {
@@ -70,10 +72,12 @@ class SecretInfo(object):
         'tags': 'tags',
         'thumbprint': 'thumbprint',
         'type': 'type',
-        'version': 'version'
+        'version': 'version',
+        'version_id': 'version_id',
+        'version_ids': 'version_ids'
     }
 
-    def __init__(self, activation_date=None, created=None, description=None, expiration=None, github=None, key_id=None, last_retrieved=None, location=None, name=None, namespace=None, region=None, secret_id=None, status=None, tags=None, thumbprint=None, type=None, version=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, activation_date=None, created=None, description=None, expiration=None, github=None, key_id=None, last_retrieved=None, location=None, name=None, namespace=None, region=None, secret_id=None, status=None, tags=None, thumbprint=None, type=None, version=None, version_id=None, version_ids=None, local_vars_configuration=None):  # noqa: E501
         """SecretInfo - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -96,6 +100,8 @@ class SecretInfo(object):
         self._thumbprint = None
         self._type = None
         self._version = None
+        self._version_id = None
+        self._version_ids = None
         self.discriminator = None
 
         if activation_date is not None:
@@ -132,6 +138,10 @@ class SecretInfo(object):
             self.type = type
         if version is not None:
             self.version = version
+        if version_id is not None:
+            self.version_id = version_id
+        if version_ids is not None:
+            self.version_ids = version_ids
 
     @property
     def activation_date(self):
@@ -489,6 +499,48 @@ class SecretInfo(object):
         """
 
         self._version = version
+
+    @property
+    def version_id(self):
+        """Gets the version_id of this SecretInfo.  # noqa: E501
+
+
+        :return: The version_id of this SecretInfo.  # noqa: E501
+        :rtype: str
+        """
+        return self._version_id
+
+    @version_id.setter
+    def version_id(self, version_id):
+        """Sets the version_id of this SecretInfo.
+
+
+        :param version_id: The version_id of this SecretInfo.  # noqa: E501
+        :type: str
+        """
+
+        self._version_id = version_id
+
+    @property
+    def version_ids(self):
+        """Gets the version_ids of this SecretInfo.  # noqa: E501
+
+
+        :return: The version_ids of this SecretInfo.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._version_ids
+
+    @version_ids.setter
+    def version_ids(self, version_ids):
+        """Sets the version_ids of this SecretInfo.
+
+
+        :param version_ids: The version_ids of this SecretInfo.  # noqa: E501
+        :type: list[str]
+        """
+
+        self._version_ids = version_ids
 
     def to_dict(self):
         """Returns the model properties as a dict"""

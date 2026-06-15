@@ -4,6 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **delete_remote** | **bool** |  | [optional] 
+**engine_name** | **str** |  | [optional] 
 **namespace** | **str** |  | [optional] 
 **usc_item_id** | **int** |  | [optional] 
 **usc_item_name** | **str** |  | [optional] 

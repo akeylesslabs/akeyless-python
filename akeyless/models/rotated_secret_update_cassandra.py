@@ -232,7 +232,6 @@ class RotatedSecretUpdateCassandra(object):
     def auto_rotate(self):
         """Gets the auto_rotate of this RotatedSecretUpdateCassandra.  # noqa: E501
 
-        Whether to automatically rotate every --rotation-interval days, or disable existing automatic rotation [true/false]  # noqa: E501
 
         :return: The auto_rotate of this RotatedSecretUpdateCassandra.  # noqa: E501
         :rtype: str
@@ -243,7 +242,6 @@ class RotatedSecretUpdateCassandra(object):
     def auto_rotate(self, auto_rotate):
         """Sets the auto_rotate of this RotatedSecretUpdateCassandra.
 
-        Whether to automatically rotate every --rotation-interval days, or disable existing automatic rotation [true/false]  # noqa: E501
 
         :param auto_rotate: The auto_rotate of this RotatedSecretUpdateCassandra.  # noqa: E501
         :type: str
@@ -393,7 +391,6 @@ class RotatedSecretUpdateCassandra(object):
     def key(self):
         """Gets the key of this RotatedSecretUpdateCassandra.  # noqa: E501
 
-        The name of a key that used to encrypt the secret value (if empty, the account default protectionKey key will be used)  # noqa: E501
 
         :return: The key of this RotatedSecretUpdateCassandra.  # noqa: E501
         :rtype: str
@@ -404,7 +401,6 @@ class RotatedSecretUpdateCassandra(object):
     def key(self, key):
         """Sets the key of this RotatedSecretUpdateCassandra.
 
-        The name of a key that used to encrypt the secret value (if empty, the account default protectionKey key will be used)  # noqa: E501
 
         :param key: The key of this RotatedSecretUpdateCassandra.  # noqa: E501
         :type: str
@@ -625,7 +621,6 @@ class RotatedSecretUpdateCassandra(object):
     def rotation_hour(self):
         """Gets the rotation_hour of this RotatedSecretUpdateCassandra.  # noqa: E501
 
-        The Hour of the rotation in UTC  # noqa: E501
 
         :return: The rotation_hour of this RotatedSecretUpdateCassandra.  # noqa: E501
         :rtype: int
@@ -636,7 +631,6 @@ class RotatedSecretUpdateCassandra(object):
     def rotation_hour(self, rotation_hour):
         """Sets the rotation_hour of this RotatedSecretUpdateCassandra.
 
-        The Hour of the rotation in UTC  # noqa: E501
 
         :param rotation_hour: The rotation_hour of this RotatedSecretUpdateCassandra.  # noqa: E501
         :type: int
@@ -648,7 +642,6 @@ class RotatedSecretUpdateCassandra(object):
     def rotation_interval(self):
         """Gets the rotation_interval of this RotatedSecretUpdateCassandra.  # noqa: E501
 
-        The number of days to wait between every automatic key rotation (1-365)  # noqa: E501
 
         :return: The rotation_interval of this RotatedSecretUpdateCassandra.  # noqa: E501
         :rtype: str
@@ -659,7 +652,6 @@ class RotatedSecretUpdateCassandra(object):
     def rotation_interval(self, rotation_interval):
         """Sets the rotation_interval of this RotatedSecretUpdateCassandra.
 
-        The number of days to wait between every automatic key rotation (1-365)  # noqa: E501
 
         :param rotation_interval: The rotation_interval of this RotatedSecretUpdateCassandra.  # noqa: E501
         :type: str

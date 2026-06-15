@@ -36,6 +36,7 @@ class OIDCAccessRules(object):
     openapi_types = {
         'allowed_redirect_ur_is': 'list[str]',
         'audience': 'str',
+        'authorized_gw_cluster_name': 'str',
         'bound_claims': 'list[OIDCCustomClaim]',
         'client_id': 'str',
         'client_secret': 'str',
@@ -49,6 +50,7 @@ class OIDCAccessRules(object):
     attribute_map = {
         'allowed_redirect_ur_is': 'allowed_redirect_URIs',
         'audience': 'audience',
+        'authorized_gw_cluster_name': 'authorized_gw_cluster_name',
         'bound_claims': 'bound_claims',
         'client_id': 'client_id',
         'client_secret': 'client_secret',
@@ -59,7 +61,7 @@ class OIDCAccessRules(object):
         'unique_identifier': 'unique_identifier'
     }
 
-    def __init__(self, allowed_redirect_ur_is=None, audience=None, bound_claims=None, client_id=None, client_secret=None, is_internal=None, issuer=None, required_scopes=None, required_scopes_prefix=None, unique_identifier=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, allowed_redirect_ur_is=None, audience=None, authorized_gw_cluster_name=None, bound_claims=None, client_id=None, client_secret=None, is_internal=None, issuer=None, required_scopes=None, required_scopes_prefix=None, unique_identifier=None, local_vars_configuration=None):  # noqa: E501
         """OIDCAccessRules - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -67,6 +69,7 @@ class OIDCAccessRules(object):
 
         self._allowed_redirect_ur_is = None
         self._audience = None
+        self._authorized_gw_cluster_name = None
         self._bound_claims = None
         self._client_id = None
         self._client_secret = None
@@ -81,6 +84,8 @@ class OIDCAccessRules(object):
             self.allowed_redirect_ur_is = allowed_redirect_ur_is
         if audience is not None:
             self.audience = audience
+        if authorized_gw_cluster_name is not None:
+            self.authorized_gw_cluster_name = authorized_gw_cluster_name
         if bound_claims is not None:
             self.bound_claims = bound_claims
         if client_id is not None:
@@ -143,6 +148,29 @@ class OIDCAccessRules(object):
         """
 
         self._audience = audience
+
+    @property
+    def authorized_gw_cluster_name(self):
+        """Gets the authorized_gw_cluster_name of this OIDCAccessRules.  # noqa: E501
+
+        AuthorizedGwClusterName binds the access method to a single GW cluster. When empty (or whitespace-only), GW-driven auth is disabled.  # noqa: E501
+
+        :return: The authorized_gw_cluster_name of this OIDCAccessRules.  # noqa: E501
+        :rtype: str
+        """
+        return self._authorized_gw_cluster_name
+
+    @authorized_gw_cluster_name.setter
+    def authorized_gw_cluster_name(self, authorized_gw_cluster_name):
+        """Sets the authorized_gw_cluster_name of this OIDCAccessRules.
+
+        AuthorizedGwClusterName binds the access method to a single GW cluster. When empty (or whitespace-only), GW-driven auth is disabled.  # noqa: E501
+
+        :param authorized_gw_cluster_name: The authorized_gw_cluster_name of this OIDCAccessRules.  # noqa: E501
+        :type: str
+        """
+
+        self._authorized_gw_cluster_name = authorized_gw_cluster_name
 
     @property
     def bound_claims(self):

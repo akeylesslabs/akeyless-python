@@ -432,8 +432,14 @@ from akeyless.models.external_kms_key_id import ExternalKMSKeyId
 from akeyless.models.folder_create import FolderCreate
 from akeyless.models.folder_create_output import FolderCreateOutput
 from akeyless.models.folder_delete import FolderDelete
+from akeyless.models.folder_delete_sync import FolderDeleteSync
+from akeyless.models.folder_delete_sync_output import FolderDeleteSyncOutput
 from akeyless.models.folder_get import FolderGet
 from akeyless.models.folder_get_output import FolderGetOutput
+from akeyless.models.folder_sync import FolderSync
+from akeyless.models.folder_sync_all import FolderSyncAll
+from akeyless.models.folder_sync_all_output import FolderSyncAllOutput
+from akeyless.models.folder_sync_output import FolderSyncOutput
 from akeyless.models.folder_usc_sync_config import FolderUSCSyncConfig
 from akeyless.models.folder_update import FolderUpdate
 from akeyless.models.gcp_access_rules import GCPAccessRules
@@ -825,6 +831,7 @@ from akeyless.models.password_score_info import PasswordScoreInfo
 from akeyless.models.password_score_setting import PasswordScoreSetting
 from akeyless.models.password_security_info import PasswordSecurityInfo
 from akeyless.models.path_rule import PathRule
+from akeyless.models.personal_folder_global_mapping_settings import PersonalFolderGlobalMappingSettings
 from akeyless.models.ping_target_details import PingTargetDetails
 from akeyless.models.policies_create_output import PoliciesCreateOutput
 from akeyless.models.policies_delete import PoliciesDelete
@@ -874,6 +881,7 @@ from akeyless.models.rotated_secret_create_custom import RotatedSecretCreateCust
 from akeyless.models.rotated_secret_create_dockerhub import RotatedSecretCreateDockerhub
 from akeyless.models.rotated_secret_create_gcp import RotatedSecretCreateGcp
 from akeyless.models.rotated_secret_create_hanadb import RotatedSecretCreateHanadb
+from akeyless.models.rotated_secret_create_hashi_vault import RotatedSecretCreateHashiVault
 from akeyless.models.rotated_secret_create_ldap import RotatedSecretCreateLdap
 from akeyless.models.rotated_secret_create_mongodb import RotatedSecretCreateMongodb
 from akeyless.models.rotated_secret_create_mssql import RotatedSecretCreateMssql
@@ -903,6 +911,7 @@ from akeyless.models.rotated_secret_update_custom import RotatedSecretUpdateCust
 from akeyless.models.rotated_secret_update_dockerhub import RotatedSecretUpdateDockerhub
 from akeyless.models.rotated_secret_update_gcp import RotatedSecretUpdateGcp
 from akeyless.models.rotated_secret_update_hanadb import RotatedSecretUpdateHanadb
+from akeyless.models.rotated_secret_update_hashi_vault import RotatedSecretUpdateHashiVault
 from akeyless.models.rotated_secret_update_ldap import RotatedSecretUpdateLdap
 from akeyless.models.rotated_secret_update_mongodb import RotatedSecretUpdateMongodb
 from akeyless.models.rotated_secret_update_mssql import RotatedSecretUpdateMssql

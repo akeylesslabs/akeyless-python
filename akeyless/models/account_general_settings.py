@@ -60,6 +60,7 @@ class AccountGeneralSettings(object):
         'password_expiration_info': 'PasswordExpirationInfo',
         'password_policy': 'PasswordPolicyInfo',
         'password_score': 'PasswordScoreSetting',
+        'personal_folder_global_mapping': 'PersonalFolderGlobalMappingSettings',
         'protect_items_by_default': 'bool',
         'rotation_secret_max_interval': 'RotationSecretMaxInterval',
         'sharing_policy': 'SharingPolicyInfo'
@@ -92,12 +93,13 @@ class AccountGeneralSettings(object):
         'password_expiration_info': 'password_expiration_info',
         'password_policy': 'password_policy',
         'password_score': 'password_score',
+        'personal_folder_global_mapping': 'personal_folder_global_mapping',
         'protect_items_by_default': 'protect_items_by_default',
         'rotation_secret_max_interval': 'rotation_secret_max_interval',
         'sharing_policy': 'sharing_policy'
     }
 
-    def __init__(self, account_default_key_item_id=None, account_default_key_name=None, ai_insights=None, allow_auto_fill=None, allow_passkeys=None, allowed_client_types=None, allowed_clients_ips=None, allowed_gateways_ips=None, auth_usage_event=None, certificate_expiration_events=None, data_protection_section=None, default_auth_method=None, default_home_page=None, dynamic_secret_max_ttl=None, enable_request_for_access=None, enable_search_history=None, hide_personal_folder=None, hide_secret_reveal_copy=None, hide_static_password=None, invalid_characters=None, item_locking=None, item_usage_event=None, lock_default_key=None, password_expiration_info=None, password_policy=None, password_score=None, protect_items_by_default=None, rotation_secret_max_interval=None, sharing_policy=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, account_default_key_item_id=None, account_default_key_name=None, ai_insights=None, allow_auto_fill=None, allow_passkeys=None, allowed_client_types=None, allowed_clients_ips=None, allowed_gateways_ips=None, auth_usage_event=None, certificate_expiration_events=None, data_protection_section=None, default_auth_method=None, default_home_page=None, dynamic_secret_max_ttl=None, enable_request_for_access=None, enable_search_history=None, hide_personal_folder=None, hide_secret_reveal_copy=None, hide_static_password=None, invalid_characters=None, item_locking=None, item_usage_event=None, lock_default_key=None, password_expiration_info=None, password_policy=None, password_score=None, personal_folder_global_mapping=None, protect_items_by_default=None, rotation_secret_max_interval=None, sharing_policy=None, local_vars_configuration=None):  # noqa: E501
         """AccountGeneralSettings - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -129,6 +131,7 @@ class AccountGeneralSettings(object):
         self._password_expiration_info = None
         self._password_policy = None
         self._password_score = None
+        self._personal_folder_global_mapping = None
         self._protect_items_by_default = None
         self._rotation_secret_max_interval = None
         self._sharing_policy = None
@@ -186,6 +189,8 @@ class AccountGeneralSettings(object):
             self.password_policy = password_policy
         if password_score is not None:
             self.password_score = password_score
+        if personal_folder_global_mapping is not None:
+            self.personal_folder_global_mapping = personal_folder_global_mapping
         if protect_items_by_default is not None:
             self.protect_items_by_default = protect_items_by_default
         if rotation_secret_max_interval is not None:
@@ -746,6 +751,27 @@ class AccountGeneralSettings(object):
         """
 
         self._password_score = password_score
+
+    @property
+    def personal_folder_global_mapping(self):
+        """Gets the personal_folder_global_mapping of this AccountGeneralSettings.  # noqa: E501
+
+
+        :return: The personal_folder_global_mapping of this AccountGeneralSettings.  # noqa: E501
+        :rtype: PersonalFolderGlobalMappingSettings
+        """
+        return self._personal_folder_global_mapping
+
+    @personal_folder_global_mapping.setter
+    def personal_folder_global_mapping(self, personal_folder_global_mapping):
+        """Sets the personal_folder_global_mapping of this AccountGeneralSettings.
+
+
+        :param personal_folder_global_mapping: The personal_folder_global_mapping of this AccountGeneralSettings.  # noqa: E501
+        :type: PersonalFolderGlobalMappingSettings
+        """
+
+        self._personal_folder_global_mapping = personal_folder_global_mapping
 
     @property
     def protect_items_by_default(self):
