@@ -17,6 +17,7 @@ Name | Type | Description | Notes
 **delete_protection** | **bool** |  | [optional] 
 **deletion_date** | **datetime** |  | [optional] 
 **display_id** | **str** |  | [optional] 
+**file_download** | [**FileDownloadInstructions**](FileDownloadInstructions.md) |  | [optional] 
 **gateway_details** | [**list[GatewayDetailsForItemReplyObj]**](GatewayDetailsForItemReplyObj.md) |  | [optional] 
 **is_access_request_enabled** | **bool** |  | [optional] 
 **is_enabled** | **bool** |  | [optional] 

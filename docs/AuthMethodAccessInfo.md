@@ -28,6 +28,7 @@ Name | Type | Description | Notes
 **rules_type** | **str** |  | [optional] 
 **saml_access_rules** | [**SAMLAccessRules**](SAMLAccessRules.md) |  | [optional] 
 **sub_claims_delimiters** | **list[str]** |  | [optional] 
+**uid_expiration_events** | [**list[UidExpirationEvent]**](UidExpirationEvent.md) | Relevant only for Universal Identity auth methods: token about-to-expire notification thresholds. | [optional] 
 **universal_identity_access_rules** | [**UniversalIdentityAccessRules**](UniversalIdentityAccessRules.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

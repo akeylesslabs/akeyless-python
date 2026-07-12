@@ -70,6 +70,7 @@ class UpdateDBTarget(object):
         'parent_target_name': 'str',
         'port': 'str',
         'pwd': 'str',
+        'skip_server_name_validation': 'str',
         'snowflake_account': 'str',
         'snowflake_api_private_key': 'str',
         'snowflake_api_private_key_password': 'str',
@@ -118,6 +119,7 @@ class UpdateDBTarget(object):
         'parent_target_name': 'parent-target-name',
         'port': 'port',
         'pwd': 'pwd',
+        'skip_server_name_validation': 'skip-server-name-validation',
         'snowflake_account': 'snowflake-account',
         'snowflake_api_private_key': 'snowflake-api-private-key',
         'snowflake_api_private_key_password': 'snowflake-api-private-key-password',
@@ -129,7 +131,7 @@ class UpdateDBTarget(object):
         'user_name': 'user-name'
     }
 
-    def __init__(self, azure_client_id=None, azure_client_secret=None, azure_tenant_id=None, client_certificate=None, client_key_passphrase=None, client_private_key=None, cloud_service_provider=None, cluster_mode=None, comment=None, connection_type='credentials', db_name=None, db_server_certificates=None, db_server_name=None, db_type=None, description=None, enable_mtls=None, host=None, json=False, keep_prev_version=None, key=None, max_versions=None, mongodb_atlas=None, mongodb_atlas_api_private_key=None, mongodb_atlas_api_public_key=None, mongodb_atlas_project_id=None, mongodb_default_auth_db=None, mongodb_uri_options=None, name=None, new_name=None, oracle_service_name=None, oracle_wallet_login_type=None, oracle_wallet_p12_file_data=None, oracle_wallet_sso_file_data=None, parent_target_name=None, port=None, pwd=None, snowflake_account=None, snowflake_api_private_key=None, snowflake_api_private_key_password=None, ssl=False, ssl_certificate=None, token=None, uid_token=None, update_version=None, user_name=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, azure_client_id=None, azure_client_secret=None, azure_tenant_id=None, client_certificate=None, client_key_passphrase=None, client_private_key=None, cloud_service_provider=None, cluster_mode=None, comment=None, connection_type='credentials', db_name=None, db_server_certificates=None, db_server_name=None, db_type=None, description=None, enable_mtls=None, host=None, json=False, keep_prev_version=None, key=None, max_versions=None, mongodb_atlas=None, mongodb_atlas_api_private_key=None, mongodb_atlas_api_public_key=None, mongodb_atlas_project_id=None, mongodb_default_auth_db=None, mongodb_uri_options=None, name=None, new_name=None, oracle_service_name=None, oracle_wallet_login_type=None, oracle_wallet_p12_file_data=None, oracle_wallet_sso_file_data=None, parent_target_name=None, port=None, pwd=None, skip_server_name_validation=None, snowflake_account=None, snowflake_api_private_key=None, snowflake_api_private_key_password=None, ssl=False, ssl_certificate=None, token=None, uid_token=None, update_version=None, user_name=None, local_vars_configuration=None):  # noqa: E501
         """UpdateDBTarget - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -171,6 +173,7 @@ class UpdateDBTarget(object):
         self._parent_target_name = None
         self._port = None
         self._pwd = None
+        self._skip_server_name_validation = None
         self._snowflake_account = None
         self._snowflake_api_private_key = None
         self._snowflake_api_private_key_password = None
@@ -251,6 +254,8 @@ class UpdateDBTarget(object):
             self.port = port
         if pwd is not None:
             self.pwd = pwd
+        if skip_server_name_validation is not None:
+            self.skip_server_name_validation = skip_server_name_validation
         if snowflake_account is not None:
             self.snowflake_account = snowflake_account
         if snowflake_api_private_key is not None:
@@ -1091,6 +1096,29 @@ class UpdateDBTarget(object):
         """
 
         self._pwd = pwd
+
+    @property
+    def skip_server_name_validation(self):
+        """Gets the skip_server_name_validation of this UpdateDBTarget.  # noqa: E501
+
+        (Optional) Skip server name verification  # noqa: E501
+
+        :return: The skip_server_name_validation of this UpdateDBTarget.  # noqa: E501
+        :rtype: str
+        """
+        return self._skip_server_name_validation
+
+    @skip_server_name_validation.setter
+    def skip_server_name_validation(self, skip_server_name_validation):
+        """Sets the skip_server_name_validation of this UpdateDBTarget.
+
+        (Optional) Skip server name verification  # noqa: E501
+
+        :param skip_server_name_validation: The skip_server_name_validation of this UpdateDBTarget.  # noqa: E501
+        :type: str
+        """
+
+        self._skip_server_name_validation = skip_server_name_validation
 
     @property
     def snowflake_account(self):

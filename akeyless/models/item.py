@@ -48,6 +48,7 @@ class Item(object):
         'delete_protection': 'bool',
         'deletion_date': 'datetime',
         'display_id': 'str',
+        'file_download': 'FileDownloadInstructions',
         'gateway_details': 'list[GatewayDetailsForItemReplyObj]',
         'is_access_request_enabled': 'bool',
         'is_enabled': 'bool',
@@ -95,6 +96,7 @@ class Item(object):
         'delete_protection': 'delete_protection',
         'deletion_date': 'deletion_date',
         'display_id': 'display_id',
+        'file_download': 'file_download',
         'gateway_details': 'gateway_details',
         'is_access_request_enabled': 'is_access_request_enabled',
         'is_enabled': 'is_enabled',
@@ -127,7 +129,7 @@ class Item(object):
         'with_customer_fragment': 'with_customer_fragment'
     }
 
-    def __init__(self, access_date=None, access_date_display=None, access_request_status=None, auto_rotate=None, bastion_details=None, cert_issuer_signer_key_name=None, certificate_issue_details=None, certificates=None, client_permissions=None, creation_date=None, customer_fragment_id=None, delete_protection=None, deletion_date=None, display_id=None, gateway_details=None, is_access_request_enabled=None, is_enabled=None, item_accessibility=None, item_custom_fields_details=None, item_general_info=None, item_id=None, item_metadata=None, item_name=None, item_size=None, item_state=None, item_sub_type=None, item_tags=None, item_targets_assoc=None, item_type=None, item_versions=None, last_rotation_date=None, last_version=None, linked_details=None, locking_info=None, modification_date=None, next_rotation_date=None, protection_key_name=None, protection_key_type=None, public_value=None, rotation_interval=None, shared_by=None, target_versions=None, usc_sync_associated_items=None, with_customer_fragment=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, access_date=None, access_date_display=None, access_request_status=None, auto_rotate=None, bastion_details=None, cert_issuer_signer_key_name=None, certificate_issue_details=None, certificates=None, client_permissions=None, creation_date=None, customer_fragment_id=None, delete_protection=None, deletion_date=None, display_id=None, file_download=None, gateway_details=None, is_access_request_enabled=None, is_enabled=None, item_accessibility=None, item_custom_fields_details=None, item_general_info=None, item_id=None, item_metadata=None, item_name=None, item_size=None, item_state=None, item_sub_type=None, item_tags=None, item_targets_assoc=None, item_type=None, item_versions=None, last_rotation_date=None, last_version=None, linked_details=None, locking_info=None, modification_date=None, next_rotation_date=None, protection_key_name=None, protection_key_type=None, public_value=None, rotation_interval=None, shared_by=None, target_versions=None, usc_sync_associated_items=None, with_customer_fragment=None, local_vars_configuration=None):  # noqa: E501
         """Item - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -147,6 +149,7 @@ class Item(object):
         self._delete_protection = None
         self._deletion_date = None
         self._display_id = None
+        self._file_download = None
         self._gateway_details = None
         self._is_access_request_enabled = None
         self._is_enabled = None
@@ -207,6 +210,8 @@ class Item(object):
             self.deletion_date = deletion_date
         if display_id is not None:
             self.display_id = display_id
+        if file_download is not None:
+            self.file_download = file_download
         if gateway_details is not None:
             self.gateway_details = gateway_details
         if is_access_request_enabled is not None:
@@ -561,6 +566,27 @@ class Item(object):
         """
 
         self._display_id = display_id
+
+    @property
+    def file_download(self):
+        """Gets the file_download of this Item.  # noqa: E501
+
+
+        :return: The file_download of this Item.  # noqa: E501
+        :rtype: FileDownloadInstructions
+        """
+        return self._file_download
+
+    @file_download.setter
+    def file_download(self, file_download):
+        """Sets the file_download of this Item.
+
+
+        :param file_download: The file_download of this Item.  # noqa: E501
+        :type: FileDownloadInstructions
+        """
+
+        self._file_download = file_download
 
     @property
     def gateway_details(self):

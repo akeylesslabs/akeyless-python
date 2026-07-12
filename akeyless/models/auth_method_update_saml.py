@@ -54,7 +54,8 @@ class AuthMethodUpdateSAML(object):
         'subclaims_delimiters': 'list[str]',
         'token': 'str',
         'uid_token': 'str',
-        'unique_identifier': 'str'
+        'unique_identifier': 'str',
+        'use_dedicated_saml_urls': 'bool'
     }
 
     attribute_map = {
@@ -78,10 +79,11 @@ class AuthMethodUpdateSAML(object):
         'subclaims_delimiters': 'subclaims-delimiters',
         'token': 'token',
         'uid_token': 'uid-token',
-        'unique_identifier': 'unique-identifier'
+        'unique_identifier': 'unique-identifier',
+        'use_dedicated_saml_urls': 'use-dedicated-saml-urls'
     }
 
-    def __init__(self, access_expires=0, allowed_client_type=None, allowed_redirect_uri=None, audit_logs_claims=None, bound_ips=None, delete_protection=None, description=None, expiration_event_in=None, force_sub_claims=None, gw_bound_ips=None, idp_metadata_url=None, idp_metadata_xml_data=None, json=False, jwt_ttl=0, name=None, new_name=None, product_type=None, subclaims_delimiters=None, token=None, uid_token=None, unique_identifier=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, access_expires=0, allowed_client_type=None, allowed_redirect_uri=None, audit_logs_claims=None, bound_ips=None, delete_protection=None, description=None, expiration_event_in=None, force_sub_claims=None, gw_bound_ips=None, idp_metadata_url=None, idp_metadata_xml_data=None, json=False, jwt_ttl=0, name=None, new_name=None, product_type=None, subclaims_delimiters=None, token=None, uid_token=None, unique_identifier=None, use_dedicated_saml_urls=None, local_vars_configuration=None):  # noqa: E501
         """AuthMethodUpdateSAML - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -108,6 +110,7 @@ class AuthMethodUpdateSAML(object):
         self._token = None
         self._uid_token = None
         self._unique_identifier = None
+        self._use_dedicated_saml_urls = None
         self.discriminator = None
 
         if access_expires is not None:
@@ -150,6 +153,8 @@ class AuthMethodUpdateSAML(object):
         if uid_token is not None:
             self.uid_token = uid_token
         self.unique_identifier = unique_identifier
+        if use_dedicated_saml_urls is not None:
+            self.use_dedicated_saml_urls = use_dedicated_saml_urls
 
     @property
     def access_expires(self):
@@ -637,6 +642,29 @@ class AuthMethodUpdateSAML(object):
             raise ValueError("Invalid value for `unique_identifier`, must not be `None`")  # noqa: E501
 
         self._unique_identifier = unique_identifier
+
+    @property
+    def use_dedicated_saml_urls(self):
+        """Gets the use_dedicated_saml_urls of this AuthMethodUpdateSAML.  # noqa: E501
+
+        Use dedicated per-access-id SP URLs for login  # noqa: E501
+
+        :return: The use_dedicated_saml_urls of this AuthMethodUpdateSAML.  # noqa: E501
+        :rtype: bool
+        """
+        return self._use_dedicated_saml_urls
+
+    @use_dedicated_saml_urls.setter
+    def use_dedicated_saml_urls(self, use_dedicated_saml_urls):
+        """Sets the use_dedicated_saml_urls of this AuthMethodUpdateSAML.
+
+        Use dedicated per-access-id SP URLs for login  # noqa: E501
+
+        :param use_dedicated_saml_urls: The use_dedicated_saml_urls of this AuthMethodUpdateSAML.  # noqa: E501
+        :type: bool
+        """
+
+        self._use_dedicated_saml_urls = use_dedicated_saml_urls
 
     def to_dict(self):
         """Returns the model properties as a dict"""

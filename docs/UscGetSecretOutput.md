@@ -3,8 +3,10 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**activation_date** | **datetime** |  | [optional] 
 **binary_value** | **bool** |  | [optional] 
 **encryption_key** | **str** |  | [optional] 
+**expiration** | **datetime** |  | [optional] 
 **id** | **str** |  | [optional] 
 **metadata** | [**object**](.md) |  | [optional] 
 **name** | **str** |  | [optional] 

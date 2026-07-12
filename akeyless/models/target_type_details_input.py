@@ -34,11 +34,14 @@ class TargetTypeDetailsInput(object):
                             and the value is json key in definition.
     """
     openapi_types = {
+        'anthropic_target_details': 'AnthropicTargetDetails',
         'artifactory_target_details': 'ArtifactoryTargetDetails',
         'aws_target_details': 'AWSTargetDetails',
         'azure_target_details': 'AzureTargetDetails',
+        'bedrock_target_details': 'BedrockTargetDetails',
         'chef_target_details': 'ChefTargetDetails',
         'cloudflare_target_details': 'CloudflareTargetDetails',
+        'custom_dns_target_details': 'CustomDnsTargetDetails',
         'custom_target_details': 'CustomTargetDetails',
         'db_target_details': 'DbTargetDetails',
         'digicert_target_details': 'DigiCertTargetDetails',
@@ -53,12 +56,15 @@ class TargetTypeDetailsInput(object):
         'globalsign_target_details': 'GlobalSignGCCTargetDetails',
         'godaddy_target_details': 'GodaddyTargetDetails',
         'google_trust_target_details': 'GoogleTrustTargetDetails',
+        'grok_target_details': 'GrokTargetDetails',
         'hashi_vault_target_details': 'HashiVaultTargetDetails',
+        'keycloak_target_details': 'KeycloakTargetDetails',
         'ldap_target_details': 'LdapTargetDetails',
         'letsencrypt_target_details': 'LetsEncryptTargetDetails',
         'linked_target_details': 'LinkedTargetDetails',
         'mongo_db_target_details': 'MongoDBTargetDetails',
         'native_k8s_target_details': 'NativeK8sTargetDetails',
+        'okta_target_details': 'OktaTargetDetails',
         'openai_target_details': 'OpenAITargetDetails',
         'ping_target_details': 'PingTargetDetails',
         'rabbit_mq_target_details': 'RabbitMQTargetDetails',
@@ -73,11 +79,14 @@ class TargetTypeDetailsInput(object):
     }
 
     attribute_map = {
+        'anthropic_target_details': 'anthropic_target_details',
         'artifactory_target_details': 'artifactory_target_details',
         'aws_target_details': 'aws_target_details',
         'azure_target_details': 'azure_target_details',
+        'bedrock_target_details': 'bedrock_target_details',
         'chef_target_details': 'chef_target_details',
         'cloudflare_target_details': 'cloudflare_target_details',
+        'custom_dns_target_details': 'custom_dns_target_details',
         'custom_target_details': 'custom_target_details',
         'db_target_details': 'db_target_details',
         'digicert_target_details': 'digicert_target_details',
@@ -92,12 +101,15 @@ class TargetTypeDetailsInput(object):
         'globalsign_target_details': 'globalsign_target_details',
         'godaddy_target_details': 'godaddy_target_details',
         'google_trust_target_details': 'google_trust_target_details',
+        'grok_target_details': 'grok_target_details',
         'hashi_vault_target_details': 'hashi_vault_target_details',
+        'keycloak_target_details': 'keycloak_target_details',
         'ldap_target_details': 'ldap_target_details',
         'letsencrypt_target_details': 'letsencrypt_target_details',
         'linked_target_details': 'linked_target_details',
         'mongo_db_target_details': 'mongo_db_target_details',
         'native_k8s_target_details': 'native_k8s_target_details',
+        'okta_target_details': 'okta_target_details',
         'openai_target_details': 'openai_target_details',
         'ping_target_details': 'ping_target_details',
         'rabbit_mq_target_details': 'rabbit_mq_target_details',
@@ -111,17 +123,20 @@ class TargetTypeDetailsInput(object):
         'zerossl_target_details': 'zerossl_target_details'
     }
 
-    def __init__(self, artifactory_target_details=None, aws_target_details=None, azure_target_details=None, chef_target_details=None, cloudflare_target_details=None, custom_target_details=None, db_target_details=None, digicert_target_details=None, dockerhub_target_details=None, eks_target_details=None, gcp_target_details=None, gemini_target_details=None, github_target_details=None, gitlab_target_details=None, gke_target_details=None, globalsign_atlas_target_details=None, globalsign_target_details=None, godaddy_target_details=None, google_trust_target_details=None, hashi_vault_target_details=None, ldap_target_details=None, letsencrypt_target_details=None, linked_target_details=None, mongo_db_target_details=None, native_k8s_target_details=None, openai_target_details=None, ping_target_details=None, rabbit_mq_target_details=None, salesforce_target_details=None, sectigo_target_details=None, splunk_target_details=None, ssh_target_details=None, venafi_target_details=None, web_target_details=None, windows_target_details=None, zerossl_target_details=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, anthropic_target_details=None, artifactory_target_details=None, aws_target_details=None, azure_target_details=None, bedrock_target_details=None, chef_target_details=None, cloudflare_target_details=None, custom_dns_target_details=None, custom_target_details=None, db_target_details=None, digicert_target_details=None, dockerhub_target_details=None, eks_target_details=None, gcp_target_details=None, gemini_target_details=None, github_target_details=None, gitlab_target_details=None, gke_target_details=None, globalsign_atlas_target_details=None, globalsign_target_details=None, godaddy_target_details=None, google_trust_target_details=None, grok_target_details=None, hashi_vault_target_details=None, keycloak_target_details=None, ldap_target_details=None, letsencrypt_target_details=None, linked_target_details=None, mongo_db_target_details=None, native_k8s_target_details=None, okta_target_details=None, openai_target_details=None, ping_target_details=None, rabbit_mq_target_details=None, salesforce_target_details=None, sectigo_target_details=None, splunk_target_details=None, ssh_target_details=None, venafi_target_details=None, web_target_details=None, windows_target_details=None, zerossl_target_details=None, local_vars_configuration=None):  # noqa: E501
         """TargetTypeDetailsInput - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
+        self._anthropic_target_details = None
         self._artifactory_target_details = None
         self._aws_target_details = None
         self._azure_target_details = None
+        self._bedrock_target_details = None
         self._chef_target_details = None
         self._cloudflare_target_details = None
+        self._custom_dns_target_details = None
         self._custom_target_details = None
         self._db_target_details = None
         self._digicert_target_details = None
@@ -136,12 +151,15 @@ class TargetTypeDetailsInput(object):
         self._globalsign_target_details = None
         self._godaddy_target_details = None
         self._google_trust_target_details = None
+        self._grok_target_details = None
         self._hashi_vault_target_details = None
+        self._keycloak_target_details = None
         self._ldap_target_details = None
         self._letsencrypt_target_details = None
         self._linked_target_details = None
         self._mongo_db_target_details = None
         self._native_k8s_target_details = None
+        self._okta_target_details = None
         self._openai_target_details = None
         self._ping_target_details = None
         self._rabbit_mq_target_details = None
@@ -155,16 +173,22 @@ class TargetTypeDetailsInput(object):
         self._zerossl_target_details = None
         self.discriminator = None
 
+        if anthropic_target_details is not None:
+            self.anthropic_target_details = anthropic_target_details
         if artifactory_target_details is not None:
             self.artifactory_target_details = artifactory_target_details
         if aws_target_details is not None:
             self.aws_target_details = aws_target_details
         if azure_target_details is not None:
             self.azure_target_details = azure_target_details
+        if bedrock_target_details is not None:
+            self.bedrock_target_details = bedrock_target_details
         if chef_target_details is not None:
             self.chef_target_details = chef_target_details
         if cloudflare_target_details is not None:
             self.cloudflare_target_details = cloudflare_target_details
+        if custom_dns_target_details is not None:
+            self.custom_dns_target_details = custom_dns_target_details
         if custom_target_details is not None:
             self.custom_target_details = custom_target_details
         if db_target_details is not None:
@@ -193,8 +217,12 @@ class TargetTypeDetailsInput(object):
             self.godaddy_target_details = godaddy_target_details
         if google_trust_target_details is not None:
             self.google_trust_target_details = google_trust_target_details
+        if grok_target_details is not None:
+            self.grok_target_details = grok_target_details
         if hashi_vault_target_details is not None:
             self.hashi_vault_target_details = hashi_vault_target_details
+        if keycloak_target_details is not None:
+            self.keycloak_target_details = keycloak_target_details
         if ldap_target_details is not None:
             self.ldap_target_details = ldap_target_details
         if letsencrypt_target_details is not None:
@@ -205,6 +233,8 @@ class TargetTypeDetailsInput(object):
             self.mongo_db_target_details = mongo_db_target_details
         if native_k8s_target_details is not None:
             self.native_k8s_target_details = native_k8s_target_details
+        if okta_target_details is not None:
+            self.okta_target_details = okta_target_details
         if openai_target_details is not None:
             self.openai_target_details = openai_target_details
         if ping_target_details is not None:
@@ -227,6 +257,27 @@ class TargetTypeDetailsInput(object):
             self.windows_target_details = windows_target_details
         if zerossl_target_details is not None:
             self.zerossl_target_details = zerossl_target_details
+
+    @property
+    def anthropic_target_details(self):
+        """Gets the anthropic_target_details of this TargetTypeDetailsInput.  # noqa: E501
+
+
+        :return: The anthropic_target_details of this TargetTypeDetailsInput.  # noqa: E501
+        :rtype: AnthropicTargetDetails
+        """
+        return self._anthropic_target_details
+
+    @anthropic_target_details.setter
+    def anthropic_target_details(self, anthropic_target_details):
+        """Sets the anthropic_target_details of this TargetTypeDetailsInput.
+
+
+        :param anthropic_target_details: The anthropic_target_details of this TargetTypeDetailsInput.  # noqa: E501
+        :type: AnthropicTargetDetails
+        """
+
+        self._anthropic_target_details = anthropic_target_details
 
     @property
     def artifactory_target_details(self):
@@ -292,6 +343,27 @@ class TargetTypeDetailsInput(object):
         self._azure_target_details = azure_target_details
 
     @property
+    def bedrock_target_details(self):
+        """Gets the bedrock_target_details of this TargetTypeDetailsInput.  # noqa: E501
+
+
+        :return: The bedrock_target_details of this TargetTypeDetailsInput.  # noqa: E501
+        :rtype: BedrockTargetDetails
+        """
+        return self._bedrock_target_details
+
+    @bedrock_target_details.setter
+    def bedrock_target_details(self, bedrock_target_details):
+        """Sets the bedrock_target_details of this TargetTypeDetailsInput.
+
+
+        :param bedrock_target_details: The bedrock_target_details of this TargetTypeDetailsInput.  # noqa: E501
+        :type: BedrockTargetDetails
+        """
+
+        self._bedrock_target_details = bedrock_target_details
+
+    @property
     def chef_target_details(self):
         """Gets the chef_target_details of this TargetTypeDetailsInput.  # noqa: E501
 
@@ -332,6 +404,27 @@ class TargetTypeDetailsInput(object):
         """
 
         self._cloudflare_target_details = cloudflare_target_details
+
+    @property
+    def custom_dns_target_details(self):
+        """Gets the custom_dns_target_details of this TargetTypeDetailsInput.  # noqa: E501
+
+
+        :return: The custom_dns_target_details of this TargetTypeDetailsInput.  # noqa: E501
+        :rtype: CustomDnsTargetDetails
+        """
+        return self._custom_dns_target_details
+
+    @custom_dns_target_details.setter
+    def custom_dns_target_details(self, custom_dns_target_details):
+        """Sets the custom_dns_target_details of this TargetTypeDetailsInput.
+
+
+        :param custom_dns_target_details: The custom_dns_target_details of this TargetTypeDetailsInput.  # noqa: E501
+        :type: CustomDnsTargetDetails
+        """
+
+        self._custom_dns_target_details = custom_dns_target_details
 
     @property
     def custom_target_details(self):
@@ -628,6 +721,27 @@ class TargetTypeDetailsInput(object):
         self._google_trust_target_details = google_trust_target_details
 
     @property
+    def grok_target_details(self):
+        """Gets the grok_target_details of this TargetTypeDetailsInput.  # noqa: E501
+
+
+        :return: The grok_target_details of this TargetTypeDetailsInput.  # noqa: E501
+        :rtype: GrokTargetDetails
+        """
+        return self._grok_target_details
+
+    @grok_target_details.setter
+    def grok_target_details(self, grok_target_details):
+        """Sets the grok_target_details of this TargetTypeDetailsInput.
+
+
+        :param grok_target_details: The grok_target_details of this TargetTypeDetailsInput.  # noqa: E501
+        :type: GrokTargetDetails
+        """
+
+        self._grok_target_details = grok_target_details
+
+    @property
     def hashi_vault_target_details(self):
         """Gets the hashi_vault_target_details of this TargetTypeDetailsInput.  # noqa: E501
 
@@ -647,6 +761,27 @@ class TargetTypeDetailsInput(object):
         """
 
         self._hashi_vault_target_details = hashi_vault_target_details
+
+    @property
+    def keycloak_target_details(self):
+        """Gets the keycloak_target_details of this TargetTypeDetailsInput.  # noqa: E501
+
+
+        :return: The keycloak_target_details of this TargetTypeDetailsInput.  # noqa: E501
+        :rtype: KeycloakTargetDetails
+        """
+        return self._keycloak_target_details
+
+    @keycloak_target_details.setter
+    def keycloak_target_details(self, keycloak_target_details):
+        """Sets the keycloak_target_details of this TargetTypeDetailsInput.
+
+
+        :param keycloak_target_details: The keycloak_target_details of this TargetTypeDetailsInput.  # noqa: E501
+        :type: KeycloakTargetDetails
+        """
+
+        self._keycloak_target_details = keycloak_target_details
 
     @property
     def ldap_target_details(self):
@@ -752,6 +887,27 @@ class TargetTypeDetailsInput(object):
         """
 
         self._native_k8s_target_details = native_k8s_target_details
+
+    @property
+    def okta_target_details(self):
+        """Gets the okta_target_details of this TargetTypeDetailsInput.  # noqa: E501
+
+
+        :return: The okta_target_details of this TargetTypeDetailsInput.  # noqa: E501
+        :rtype: OktaTargetDetails
+        """
+        return self._okta_target_details
+
+    @okta_target_details.setter
+    def okta_target_details(self, okta_target_details):
+        """Sets the okta_target_details of this TargetTypeDetailsInput.
+
+
+        :param okta_target_details: The okta_target_details of this TargetTypeDetailsInput.  # noqa: E501
+        :type: OktaTargetDetails
+        """
+
+        self._okta_target_details = okta_target_details
 
     @property
     def openai_target_details(self):

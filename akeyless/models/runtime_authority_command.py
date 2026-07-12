@@ -37,6 +37,8 @@ class RuntimeAuthorityCommand(object):
         'agent_id': 'str',
         'json': 'bool',
         'name': 'str',
+        'original_prompt': 'str',
+        'original_user': 'str',
         'payload': 'str',
         'token': 'str',
         'uid_token': 'str'
@@ -46,12 +48,14 @@ class RuntimeAuthorityCommand(object):
         'agent_id': 'agent-id',
         'json': 'json',
         'name': 'name',
+        'original_prompt': 'original-prompt',
+        'original_user': 'original-user',
         'payload': 'payload',
         'token': 'token',
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, agent_id=None, json=False, name=None, payload=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, agent_id=None, json=False, name=None, original_prompt=None, original_user=None, payload=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """RuntimeAuthorityCommand - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -60,6 +64,8 @@ class RuntimeAuthorityCommand(object):
         self._agent_id = None
         self._json = None
         self._name = None
+        self._original_prompt = None
+        self._original_user = None
         self._payload = None
         self._token = None
         self._uid_token = None
@@ -69,6 +75,10 @@ class RuntimeAuthorityCommand(object):
         if json is not None:
             self.json = json
         self.name = name
+        if original_prompt is not None:
+            self.original_prompt = original_prompt
+        if original_user is not None:
+            self.original_user = original_user
         self.payload = payload
         if token is not None:
             self.token = token
@@ -147,6 +157,52 @@ class RuntimeAuthorityCommand(object):
             raise ValueError("Invalid value for `name`, must not be `None`")  # noqa: E501
 
         self._name = name
+
+    @property
+    def original_prompt(self):
+        """Gets the original_prompt of this RuntimeAuthorityCommand.  # noqa: E501
+
+        Original natural-language prompt from the user (optional, for auditing)  # noqa: E501
+
+        :return: The original_prompt of this RuntimeAuthorityCommand.  # noqa: E501
+        :rtype: str
+        """
+        return self._original_prompt
+
+    @original_prompt.setter
+    def original_prompt(self, original_prompt):
+        """Sets the original_prompt of this RuntimeAuthorityCommand.
+
+        Original natural-language prompt from the user (optional, for auditing)  # noqa: E501
+
+        :param original_prompt: The original_prompt of this RuntimeAuthorityCommand.  # noqa: E501
+        :type: str
+        """
+
+        self._original_prompt = original_prompt
+
+    @property
+    def original_user(self):
+        """Gets the original_user of this RuntimeAuthorityCommand.  # noqa: E501
+
+        Human end-user behind the agent (optional, for auditing)  # noqa: E501
+
+        :return: The original_user of this RuntimeAuthorityCommand.  # noqa: E501
+        :rtype: str
+        """
+        return self._original_user
+
+    @original_user.setter
+    def original_user(self, original_user):
+        """Sets the original_user of this RuntimeAuthorityCommand.
+
+        Human end-user behind the agent (optional, for auditing)  # noqa: E501
+
+        :param original_user: The original_user of this RuntimeAuthorityCommand.  # noqa: E501
+        :type: str
+        """
+
+        self._original_user = original_user
 
     @property
     def payload(self):

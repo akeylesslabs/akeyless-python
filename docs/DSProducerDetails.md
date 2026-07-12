@@ -244,6 +244,7 @@ Name | Type | Description | Notes
 **sf_warehouse_name** | **str** |  | [optional] 
 **should_stop** | **str** | TODO delete this after migration | [optional] 
 **signing_algorithm** | **str** |  | [optional] 
+**skip_server_name_validation** | **str** | (Optional) SkipServerNameValidation disables server name verification while still validating the certificate chain. Postgres treats empty as legacy \&quot;skip hostname validation\&quot;; MySQL treats empty as false. | [optional] 
 **ssl_connection_certificate** | **str** | (Optional) SSLConnectionCertificate defines the certificate for SSL connection. Must be base64 certificate loaded by UI using file loader field | [optional] 
 **ssl_connection_mode** | **bool** | (Optional) SSLConnectionMode defines if SSL mode will be used to connect to DB | [optional] 
 **subject_dn** | **str** |  | [optional] 

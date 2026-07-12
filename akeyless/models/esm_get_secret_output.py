@@ -34,8 +34,10 @@ class EsmGetSecretOutput(object):
                             and the value is json key in definition.
     """
     openapi_types = {
+        'activation_date': 'datetime',
         'binary_value': 'bool',
         'encryption_key': 'str',
+        'expiration': 'datetime',
         'id': 'str',
         'metadata': 'object',
         'name': 'str',
@@ -46,8 +48,10 @@ class EsmGetSecretOutput(object):
     }
 
     attribute_map = {
+        'activation_date': 'activation_date',
         'binary_value': 'binary_value',
         'encryption_key': 'encryption_key',
+        'expiration': 'expiration',
         'id': 'id',
         'metadata': 'metadata',
         'name': 'name',
@@ -57,14 +61,16 @@ class EsmGetSecretOutput(object):
         'warnings': 'warnings'
     }
 
-    def __init__(self, binary_value=None, encryption_key=None, id=None, metadata=None, name=None, value=None, version_id=None, version_ids=None, warnings=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, activation_date=None, binary_value=None, encryption_key=None, expiration=None, id=None, metadata=None, name=None, value=None, version_id=None, version_ids=None, warnings=None, local_vars_configuration=None):  # noqa: E501
         """EsmGetSecretOutput - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
+        self._activation_date = None
         self._binary_value = None
         self._encryption_key = None
+        self._expiration = None
         self._id = None
         self._metadata = None
         self._name = None
@@ -74,10 +80,14 @@ class EsmGetSecretOutput(object):
         self._warnings = None
         self.discriminator = None
 
+        if activation_date is not None:
+            self.activation_date = activation_date
         if binary_value is not None:
             self.binary_value = binary_value
         if encryption_key is not None:
             self.encryption_key = encryption_key
+        if expiration is not None:
+            self.expiration = expiration
         if id is not None:
             self.id = id
         if metadata is not None:
@@ -92,6 +102,27 @@ class EsmGetSecretOutput(object):
             self.version_ids = version_ids
         if warnings is not None:
             self.warnings = warnings
+
+    @property
+    def activation_date(self):
+        """Gets the activation_date of this EsmGetSecretOutput.  # noqa: E501
+
+
+        :return: The activation_date of this EsmGetSecretOutput.  # noqa: E501
+        :rtype: datetime
+        """
+        return self._activation_date
+
+    @activation_date.setter
+    def activation_date(self, activation_date):
+        """Sets the activation_date of this EsmGetSecretOutput.
+
+
+        :param activation_date: The activation_date of this EsmGetSecretOutput.  # noqa: E501
+        :type: datetime
+        """
+
+        self._activation_date = activation_date
 
     @property
     def binary_value(self):
@@ -134,6 +165,27 @@ class EsmGetSecretOutput(object):
         """
 
         self._encryption_key = encryption_key
+
+    @property
+    def expiration(self):
+        """Gets the expiration of this EsmGetSecretOutput.  # noqa: E501
+
+
+        :return: The expiration of this EsmGetSecretOutput.  # noqa: E501
+        :rtype: datetime
+        """
+        return self._expiration
+
+    @expiration.setter
+    def expiration(self, expiration):
+        """Sets the expiration of this EsmGetSecretOutput.
+
+
+        :param expiration: The expiration of this EsmGetSecretOutput.  # noqa: E501
+        :type: datetime
+        """
+
+        self._expiration = expiration
 
     @property
     def id(self):

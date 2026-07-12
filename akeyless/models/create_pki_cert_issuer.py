@@ -1378,7 +1378,7 @@ class CreatePKICertIssuer(object):
     def ttl(self):
         """Gets the ttl of this CreatePKICertIssuer.  # noqa: E501
 
-        The maximum requested Time To Live for issued certificates, in seconds. In case of Public CA, this is based on the CA target's supported maximum TTLs  # noqa: E501
+        The maximum requested Time To Live for issued certificates, in seconds. In case of Public CA, this is based on the CA target's supported maximum TTLs. Not supported for Let's Encrypt, which always uses the CA default lifetime (about 90 days).  # noqa: E501
 
         :return: The ttl of this CreatePKICertIssuer.  # noqa: E501
         :rtype: str
@@ -1389,7 +1389,7 @@ class CreatePKICertIssuer(object):
     def ttl(self, ttl):
         """Sets the ttl of this CreatePKICertIssuer.
 
-        The maximum requested Time To Live for issued certificates, in seconds. In case of Public CA, this is based on the CA target's supported maximum TTLs  # noqa: E501
+        The maximum requested Time To Live for issued certificates, in seconds. In case of Public CA, this is based on the CA target's supported maximum TTLs. Not supported for Let's Encrypt, which always uses the CA default lifetime (about 90 days).  # noqa: E501
 
         :param ttl: The ttl of this CreatePKICertIssuer.  # noqa: E501
         :type: str

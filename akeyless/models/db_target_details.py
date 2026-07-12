@@ -55,6 +55,7 @@ class DbTargetDetails(object):
         'enable_mtls': 'bool',
         'oracle_wallet_details': 'WalletDetails',
         'sf_account': 'str',
+        'skip_server_name_validation': 'str',
         'ssl_connection_certificate': 'str',
         'ssl_connection_mode': 'bool'
     }
@@ -81,11 +82,12 @@ class DbTargetDetails(object):
         'enable_mtls': 'enable_mtls',
         'oracle_wallet_details': 'oracle_wallet_details',
         'sf_account': 'sf_account',
+        'skip_server_name_validation': 'skip_server_name_validation',
         'ssl_connection_certificate': 'ssl_connection_certificate',
         'ssl_connection_mode': 'ssl_connection_mode'
     }
 
-    def __init__(self, client_certificate=None, client_key_passphrase=None, client_private_key=None, cloud_service_provider=None, cluster_mode=None, connection_type=None, db_client_id=None, db_client_secret=None, db_host_name=None, db_name=None, db_port=None, db_private_key=None, db_private_key_passphrase=None, db_pwd=None, db_server_certificates=None, db_server_name=None, db_tenant_id=None, db_user_name=None, enable_mtls=None, oracle_wallet_details=None, sf_account=None, ssl_connection_certificate=None, ssl_connection_mode=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, client_certificate=None, client_key_passphrase=None, client_private_key=None, cloud_service_provider=None, cluster_mode=None, connection_type=None, db_client_id=None, db_client_secret=None, db_host_name=None, db_name=None, db_port=None, db_private_key=None, db_private_key_passphrase=None, db_pwd=None, db_server_certificates=None, db_server_name=None, db_tenant_id=None, db_user_name=None, enable_mtls=None, oracle_wallet_details=None, sf_account=None, skip_server_name_validation=None, ssl_connection_certificate=None, ssl_connection_mode=None, local_vars_configuration=None):  # noqa: E501
         """DbTargetDetails - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -112,6 +114,7 @@ class DbTargetDetails(object):
         self._enable_mtls = None
         self._oracle_wallet_details = None
         self._sf_account = None
+        self._skip_server_name_validation = None
         self._ssl_connection_certificate = None
         self._ssl_connection_mode = None
         self.discriminator = None
@@ -158,6 +161,8 @@ class DbTargetDetails(object):
             self.oracle_wallet_details = oracle_wallet_details
         if sf_account is not None:
             self.sf_account = sf_account
+        if skip_server_name_validation is not None:
+            self.skip_server_name_validation = skip_server_name_validation
         if ssl_connection_certificate is not None:
             self.ssl_connection_certificate = ssl_connection_certificate
         if ssl_connection_mode is not None:
@@ -617,6 +622,29 @@ class DbTargetDetails(object):
         """
 
         self._sf_account = sf_account
+
+    @property
+    def skip_server_name_validation(self):
+        """Gets the skip_server_name_validation of this DbTargetDetails.  # noqa: E501
+
+        (Optional) SkipServerNameValidation disables server name verification while still validating the certificate chain. Postgres treats empty as legacy \"skip hostname validation\"; MySQL treats empty as false.  # noqa: E501
+
+        :return: The skip_server_name_validation of this DbTargetDetails.  # noqa: E501
+        :rtype: str
+        """
+        return self._skip_server_name_validation
+
+    @skip_server_name_validation.setter
+    def skip_server_name_validation(self, skip_server_name_validation):
+        """Sets the skip_server_name_validation of this DbTargetDetails.
+
+        (Optional) SkipServerNameValidation disables server name verification while still validating the certificate chain. Postgres treats empty as legacy \"skip hostname validation\"; MySQL treats empty as false.  # noqa: E501
+
+        :param skip_server_name_validation: The skip_server_name_validation of this DbTargetDetails.  # noqa: E501
+        :type: str
+        """
+
+        self._skip_server_name_validation = skip_server_name_validation
 
     @property
     def ssl_connection_certificate(self):

@@ -54,6 +54,7 @@ class AuthMethodUpdateUniversalIdentity(object):
         'token': 'str',
         'tree_length': 'int',
         'ttl': 'int',
+        'uid_expiration_event_at': 'list[str]',
         'uid_token': 'str'
     }
 
@@ -78,10 +79,11 @@ class AuthMethodUpdateUniversalIdentity(object):
         'token': 'token',
         'tree_length': 'tree-length',
         'ttl': 'ttl',
+        'uid_expiration_event_at': 'uid-expiration-event-at',
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, access_expires=0, allowed_client_type=None, audit_logs_claims=None, bound_ips=None, child_ttl_limit=43200, delete_protection=None, deny_inheritance=None, deny_rotate=None, description=None, expiration_event_in=None, force_sub_claims=None, gw_bound_ips=None, json=False, jwt_ttl=0, name=None, new_name=None, product_type=None, token=None, tree_length=200, ttl=60, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, access_expires=0, allowed_client_type=None, audit_logs_claims=None, bound_ips=None, child_ttl_limit=43200, delete_protection=None, deny_inheritance=None, deny_rotate=None, description=None, expiration_event_in=None, force_sub_claims=None, gw_bound_ips=None, json=False, jwt_ttl=0, name=None, new_name=None, product_type=None, token=None, tree_length=200, ttl=60, uid_expiration_event_at=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """AuthMethodUpdateUniversalIdentity - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -107,6 +109,7 @@ class AuthMethodUpdateUniversalIdentity(object):
         self._token = None
         self._tree_length = None
         self._ttl = None
+        self._uid_expiration_event_at = None
         self._uid_token = None
         self.discriminator = None
 
@@ -149,6 +152,8 @@ class AuthMethodUpdateUniversalIdentity(object):
             self.tree_length = tree_length
         if ttl is not None:
             self.ttl = ttl
+        if uid_expiration_event_at is not None:
+            self.uid_expiration_event_at = uid_expiration_event_at
         if uid_token is not None:
             self.uid_token = uid_token
 
@@ -613,6 +618,29 @@ class AuthMethodUpdateUniversalIdentity(object):
         """
 
         self._ttl = ttl
+
+    @property
+    def uid_expiration_event_at(self):
+        """Gets the uid_expiration_event_at of this AuthMethodUpdateUniversalIdentity.  # noqa: E501
+
+        Notify when this percent of the token TTL has elapsed (1-99).  # noqa: E501
+
+        :return: The uid_expiration_event_at of this AuthMethodUpdateUniversalIdentity.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._uid_expiration_event_at
+
+    @uid_expiration_event_at.setter
+    def uid_expiration_event_at(self, uid_expiration_event_at):
+        """Sets the uid_expiration_event_at of this AuthMethodUpdateUniversalIdentity.
+
+        Notify when this percent of the token TTL has elapsed (1-99).  # noqa: E501
+
+        :param uid_expiration_event_at: The uid_expiration_event_at of this AuthMethodUpdateUniversalIdentity.  # noqa: E501
+        :type: list[str]
+        """
+
+        self._uid_expiration_event_at = uid_expiration_event_at
 
     @property
     def uid_token(self):

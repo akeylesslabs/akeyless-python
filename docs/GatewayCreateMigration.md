@@ -74,6 +74,7 @@ Name | Type | Description | Notes
 **si_users_ignore** | **str** | Comma-separated list of Local Users which should not be migrated (Relevant only for Server Inventory migration) | [optional] 
 **si_users_path_template** | **str** | Path location template for migrating users as Rotated Secrets e.g.: .../Users/{{COMPUTER_NAME}}/{{USERNAME}} (Relevant only for Server Inventory migration) | 
 **target_location** | **str** | Target location in Akeyless for imported secrets | 
+**target_name** | **str** | Name of existing target to use to create the migration | [optional] 
 **token** | **str** | Authentication token (see &#x60;/auth&#x60; and &#x60;/configure&#x60;) | [optional] 
 **type** | **str** | Migration type (hashi/aws/gcp/k8s/azure_kv/conjur/active_directory/server_inventory/certificate) | [optional] 
 **uid_token** | **str** | The universal identity token, Required only for universal_identity authentication | [optional] 

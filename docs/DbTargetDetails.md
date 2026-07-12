@@ -25,6 +25,7 @@ Name | Type | Description | Notes
 **enable_mtls** | **bool** | (Optional) EnableMTLS defines if mutual TLS will be used to connect to DB | [optional] 
 **oracle_wallet_details** | [**WalletDetails**](WalletDetails.md) |  | [optional] 
 **sf_account** | **str** |  | [optional] 
+**skip_server_name_validation** | **str** | (Optional) SkipServerNameValidation disables server name verification while still validating the certificate chain. Postgres treats empty as legacy \&quot;skip hostname validation\&quot;; MySQL treats empty as false. | [optional] 
 **ssl_connection_certificate** | **str** | (Optional) SSLConnectionCertificate defines the certificate for SSL connection. Must be base64 certificate loaded by UI using file loader field | [optional] 
 **ssl_connection_mode** | **bool** | (Optional) SSLConnectionMode defines if SSL mode will be used to connect to DB | [optional] 
 

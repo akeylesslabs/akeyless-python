@@ -20,6 +20,7 @@ Name | Type | Description | Notes
 **expiration_events** | [**list[AuthExpirationEvent]**](AuthExpirationEvent.md) |  | [optional] 
 **is_approved** | **bool** |  | [optional] 
 **modification_date** | **datetime** |  | [optional] 
+**uid_expiration_events** | [**list[UidExpirationEvent]**](UidExpirationEvent.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -36,6 +36,7 @@ class AccountGeneralSettings(object):
     openapi_types = {
         'account_default_key_item_id': 'int',
         'account_default_key_name': 'str',
+        'account_file_bytes_used': 'int',
         'ai_insights': 'AiInsightsSetting',
         'allow_auto_fill': 'bool',
         'allow_passkeys': 'bool',
@@ -48,6 +49,7 @@ class AccountGeneralSettings(object):
         'default_auth_method': 'DefaultAuthMethodSettings',
         'default_home_page': 'DefaultHomePage',
         'dynamic_secret_max_ttl': 'DynamicSecretMaxTtl',
+        'email_customization': 'EmailCustomization',
         'enable_request_for_access': 'bool',
         'enable_search_history': 'bool',
         'hide_personal_folder': 'bool',
@@ -69,6 +71,7 @@ class AccountGeneralSettings(object):
     attribute_map = {
         'account_default_key_item_id': 'account_default_key_item_id',
         'account_default_key_name': 'account_default_key_name',
+        'account_file_bytes_used': 'account_file_bytes_used',
         'ai_insights': 'ai_insights',
         'allow_auto_fill': 'allow_auto_fill',
         'allow_passkeys': 'allow_passkeys',
@@ -81,6 +84,7 @@ class AccountGeneralSettings(object):
         'default_auth_method': 'default_auth_method',
         'default_home_page': 'default_home_page',
         'dynamic_secret_max_ttl': 'dynamic_secret_max_ttl',
+        'email_customization': 'email_customization',
         'enable_request_for_access': 'enable_request_for_access',
         'enable_search_history': 'enable_search_history',
         'hide_personal_folder': 'hide_personal_folder',
@@ -99,7 +103,7 @@ class AccountGeneralSettings(object):
         'sharing_policy': 'sharing_policy'
     }
 
-    def __init__(self, account_default_key_item_id=None, account_default_key_name=None, ai_insights=None, allow_auto_fill=None, allow_passkeys=None, allowed_client_types=None, allowed_clients_ips=None, allowed_gateways_ips=None, auth_usage_event=None, certificate_expiration_events=None, data_protection_section=None, default_auth_method=None, default_home_page=None, dynamic_secret_max_ttl=None, enable_request_for_access=None, enable_search_history=None, hide_personal_folder=None, hide_secret_reveal_copy=None, hide_static_password=None, invalid_characters=None, item_locking=None, item_usage_event=None, lock_default_key=None, password_expiration_info=None, password_policy=None, password_score=None, personal_folder_global_mapping=None, protect_items_by_default=None, rotation_secret_max_interval=None, sharing_policy=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, account_default_key_item_id=None, account_default_key_name=None, account_file_bytes_used=None, ai_insights=None, allow_auto_fill=None, allow_passkeys=None, allowed_client_types=None, allowed_clients_ips=None, allowed_gateways_ips=None, auth_usage_event=None, certificate_expiration_events=None, data_protection_section=None, default_auth_method=None, default_home_page=None, dynamic_secret_max_ttl=None, email_customization=None, enable_request_for_access=None, enable_search_history=None, hide_personal_folder=None, hide_secret_reveal_copy=None, hide_static_password=None, invalid_characters=None, item_locking=None, item_usage_event=None, lock_default_key=None, password_expiration_info=None, password_policy=None, password_score=None, personal_folder_global_mapping=None, protect_items_by_default=None, rotation_secret_max_interval=None, sharing_policy=None, local_vars_configuration=None):  # noqa: E501
         """AccountGeneralSettings - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -107,6 +111,7 @@ class AccountGeneralSettings(object):
 
         self._account_default_key_item_id = None
         self._account_default_key_name = None
+        self._account_file_bytes_used = None
         self._ai_insights = None
         self._allow_auto_fill = None
         self._allow_passkeys = None
@@ -119,6 +124,7 @@ class AccountGeneralSettings(object):
         self._default_auth_method = None
         self._default_home_page = None
         self._dynamic_secret_max_ttl = None
+        self._email_customization = None
         self._enable_request_for_access = None
         self._enable_search_history = None
         self._hide_personal_folder = None
@@ -141,6 +147,8 @@ class AccountGeneralSettings(object):
             self.account_default_key_item_id = account_default_key_item_id
         if account_default_key_name is not None:
             self.account_default_key_name = account_default_key_name
+        if account_file_bytes_used is not None:
+            self.account_file_bytes_used = account_file_bytes_used
         if ai_insights is not None:
             self.ai_insights = ai_insights
         if allow_auto_fill is not None:
@@ -165,6 +173,8 @@ class AccountGeneralSettings(object):
             self.default_home_page = default_home_page
         if dynamic_secret_max_ttl is not None:
             self.dynamic_secret_max_ttl = dynamic_secret_max_ttl
+        if email_customization is not None:
+            self.email_customization = email_customization
         if enable_request_for_access is not None:
             self.enable_request_for_access = enable_request_for_access
         if enable_search_history is not None:
@@ -243,6 +253,29 @@ class AccountGeneralSettings(object):
         """
 
         self._account_default_key_name = account_default_key_name
+
+    @property
+    def account_file_bytes_used(self):
+        """Gets the account_file_bytes_used of this AccountGeneralSettings.  # noqa: E501
+
+        AccountFileBytesUsed tracks active + pending file-item plain bytes for quota enforcement.  # noqa: E501
+
+        :return: The account_file_bytes_used of this AccountGeneralSettings.  # noqa: E501
+        :rtype: int
+        """
+        return self._account_file_bytes_used
+
+    @account_file_bytes_used.setter
+    def account_file_bytes_used(self, account_file_bytes_used):
+        """Sets the account_file_bytes_used of this AccountGeneralSettings.
+
+        AccountFileBytesUsed tracks active + pending file-item plain bytes for quota enforcement.  # noqa: E501
+
+        :param account_file_bytes_used: The account_file_bytes_used of this AccountGeneralSettings.  # noqa: E501
+        :type: int
+        """
+
+        self._account_file_bytes_used = account_file_bytes_used
 
     @property
     def ai_insights(self):
@@ -495,6 +528,27 @@ class AccountGeneralSettings(object):
         """
 
         self._dynamic_secret_max_ttl = dynamic_secret_max_ttl
+
+    @property
+    def email_customization(self):
+        """Gets the email_customization of this AccountGeneralSettings.  # noqa: E501
+
+
+        :return: The email_customization of this AccountGeneralSettings.  # noqa: E501
+        :rtype: EmailCustomization
+        """
+        return self._email_customization
+
+    @email_customization.setter
+    def email_customization(self, email_customization):
+        """Sets the email_customization of this AccountGeneralSettings.
+
+
+        :param email_customization: The email_customization of this AccountGeneralSettings.  # noqa: E501
+        :type: EmailCustomization
+        """
+
+        self._email_customization = email_customization
 
     @property
     def enable_request_for_access(self):

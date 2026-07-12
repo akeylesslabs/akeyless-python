@@ -34,6 +34,7 @@ class StaticSecretDetailsInfo(object):
                             and the value is json key in definition.
     """
     openapi_types = {
+        'file_info': 'FileInfo',
         'format': 'str',
         'max_versions': 'int',
         'notify_on_change_event': 'bool',
@@ -44,6 +45,7 @@ class StaticSecretDetailsInfo(object):
     }
 
     attribute_map = {
+        'file_info': 'file_info',
         'format': 'format',
         'max_versions': 'max_versions',
         'notify_on_change_event': 'notify_on_change_event',
@@ -53,12 +55,13 @@ class StaticSecretDetailsInfo(object):
         'websites': 'websites'
     }
 
-    def __init__(self, format=None, max_versions=None, notify_on_change_event=None, password_security_info=None, username=None, website=None, websites=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, file_info=None, format=None, max_versions=None, notify_on_change_event=None, password_security_info=None, username=None, website=None, websites=None, local_vars_configuration=None):  # noqa: E501
         """StaticSecretDetailsInfo - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
+        self._file_info = None
         self._format = None
         self._max_versions = None
         self._notify_on_change_event = None
@@ -68,6 +71,8 @@ class StaticSecretDetailsInfo(object):
         self._websites = None
         self.discriminator = None
 
+        if file_info is not None:
+            self.file_info = file_info
         if format is not None:
             self.format = format
         if max_versions is not None:
@@ -82,6 +87,27 @@ class StaticSecretDetailsInfo(object):
             self.website = website
         if websites is not None:
             self.websites = websites
+
+    @property
+    def file_info(self):
+        """Gets the file_info of this StaticSecretDetailsInfo.  # noqa: E501
+
+
+        :return: The file_info of this StaticSecretDetailsInfo.  # noqa: E501
+        :rtype: FileInfo
+        """
+        return self._file_info
+
+    @file_info.setter
+    def file_info(self, file_info):
+        """Sets the file_info of this StaticSecretDetailsInfo.
+
+
+        :param file_info: The file_info of this StaticSecretDetailsInfo.  # noqa: E501
+        :type: FileInfo
+        """
+
+        self._file_info = file_info
 
     @property
     def format(self):

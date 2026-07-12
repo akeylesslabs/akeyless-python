@@ -59,6 +59,7 @@ class AuthMethodAccessInfo(object):
         'rules_type': 'str',
         'saml_access_rules': 'SAMLAccessRules',
         'sub_claims_delimiters': 'list[str]',
+        'uid_expiration_events': 'list[UidExpirationEvent]',
         'universal_identity_access_rules': 'UniversalIdentityAccessRules'
     }
 
@@ -88,10 +89,11 @@ class AuthMethodAccessInfo(object):
         'rules_type': 'rules_type',
         'saml_access_rules': 'saml_access_rules',
         'sub_claims_delimiters': 'sub_claims_delimiters',
+        'uid_expiration_events': 'uid_expiration_events',
         'universal_identity_access_rules': 'universal_identity_access_rules'
     }
 
-    def __init__(self, access_expires=None, access_id_alias=None, allowed_client_type=None, api_key_access_rules=None, audit_logs_claims=None, aws_iam_access_rules=None, azure_ad_access_rules=None, cert_access_rules=None, cidr_whitelist=None, email_pass_access_rules=None, force_sub_claims=None, gcp_access_rules=None, gw_cidr_whitelist=None, huawei_access_rules=None, jwt_ttl=None, k8s_access_rules=None, kerberos_access_rules=None, ldap_access_rules=None, oauth2_access_rules=None, oci_access_rules=None, oidc_access_rules=None, product_types=None, rules_type=None, saml_access_rules=None, sub_claims_delimiters=None, universal_identity_access_rules=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, access_expires=None, access_id_alias=None, allowed_client_type=None, api_key_access_rules=None, audit_logs_claims=None, aws_iam_access_rules=None, azure_ad_access_rules=None, cert_access_rules=None, cidr_whitelist=None, email_pass_access_rules=None, force_sub_claims=None, gcp_access_rules=None, gw_cidr_whitelist=None, huawei_access_rules=None, jwt_ttl=None, k8s_access_rules=None, kerberos_access_rules=None, ldap_access_rules=None, oauth2_access_rules=None, oci_access_rules=None, oidc_access_rules=None, product_types=None, rules_type=None, saml_access_rules=None, sub_claims_delimiters=None, uid_expiration_events=None, universal_identity_access_rules=None, local_vars_configuration=None):  # noqa: E501
         """AuthMethodAccessInfo - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -122,6 +124,7 @@ class AuthMethodAccessInfo(object):
         self._rules_type = None
         self._saml_access_rules = None
         self._sub_claims_delimiters = None
+        self._uid_expiration_events = None
         self._universal_identity_access_rules = None
         self.discriminator = None
 
@@ -175,6 +178,8 @@ class AuthMethodAccessInfo(object):
             self.saml_access_rules = saml_access_rules
         if sub_claims_delimiters is not None:
             self.sub_claims_delimiters = sub_claims_delimiters
+        if uid_expiration_events is not None:
+            self.uid_expiration_events = uid_expiration_events
         if universal_identity_access_rules is not None:
             self.universal_identity_access_rules = universal_identity_access_rules
 
@@ -708,6 +713,29 @@ class AuthMethodAccessInfo(object):
         """
 
         self._sub_claims_delimiters = sub_claims_delimiters
+
+    @property
+    def uid_expiration_events(self):
+        """Gets the uid_expiration_events of this AuthMethodAccessInfo.  # noqa: E501
+
+        Relevant only for Universal Identity auth methods: token about-to-expire notification thresholds.  # noqa: E501
+
+        :return: The uid_expiration_events of this AuthMethodAccessInfo.  # noqa: E501
+        :rtype: list[UidExpirationEvent]
+        """
+        return self._uid_expiration_events
+
+    @uid_expiration_events.setter
+    def uid_expiration_events(self, uid_expiration_events):
+        """Sets the uid_expiration_events of this AuthMethodAccessInfo.
+
+        Relevant only for Universal Identity auth methods: token about-to-expire notification thresholds.  # noqa: E501
+
+        :param uid_expiration_events: The uid_expiration_events of this AuthMethodAccessInfo.  # noqa: E501
+        :type: list[UidExpirationEvent]
+        """
+
+        self._uid_expiration_events = uid_expiration_events
 
     @property
     def universal_identity_access_rules(self):

@@ -104,6 +104,7 @@ class GatewayCreateMigration(object):
         'si_users_ignore': 'str',
         'si_users_path_template': 'str',
         'target_location': 'str',
+        'target_name': 'str',
         'token': 'str',
         'type': 'str',
         'uid_token': 'str',
@@ -182,6 +183,7 @@ class GatewayCreateMigration(object):
         'si_users_ignore': 'si-users-ignore',
         'si_users_path_template': 'si-users-path-template',
         'target_location': 'target-location',
+        'target_name': 'target-name',
         'token': 'token',
         'type': 'type',
         'uid_token': 'uid-token',
@@ -189,7 +191,7 @@ class GatewayCreateMigration(object):
         'use_gw_cloud_identity': 'use-gw-cloud-identity'
     }
 
-    def __init__(self, service_account_key_decoded=None, ad_auto_rotate=None, ad_cert_expiration_event_in=None, ad_certificates_path_template=None, ad_computer_base_dn=None, ad_discover_iis_app='false', ad_discover_services='false', ad_discovery_types=None, ad_domain_name=None, ad_domain_users_path_template=None, ad_local_users_ignore=None, ad_local_users_path_template=None, ad_os_filter=None, ad_rotation_hour=None, ad_rotation_interval=None, ad_sra_enable_rdp=None, ad_ssh_port='22', ad_target_format='linked', ad_target_name=None, ad_targets_path_template=None, ad_targets_type='windows', ad_user_base_dn=None, ad_user_groups=None, ad_winrm_over_http='false', ad_winrm_port='5986', ad_discover_local_users=None, ai_certificate_discovery=None, aws_key=None, aws_key_id=None, aws_region='us-east-2', azure_client_id=None, azure_kv_name=None, azure_secret=None, azure_tenant_id=None, conjur_account=None, conjur_api_key=None, conjur_url=None, conjur_username=None, delete_remote=None, expiration_event_in=None, gcp_key=None, gcp_project_id=None, hashi_json='true', hashi_metadata_mode=None, hashi_ns=None, hashi_token=None, hashi_url=None, hosts=None, json=False, k8s_ca_certificate=None, k8s_client_certificate=None, k8s_client_key=None, k8s_namespace=None, k8s_password=None, k8s_skip_system=None, k8s_token=None, k8s_url=None, k8s_username=None, name=None, port_ranges='443', protection_key=None, si_auto_rotate=None, si_rotation_hour=None, si_rotation_interval=None, si_sra_enable_rdp='false', si_target_name=None, si_user_groups=None, si_users_ignore=None, si_users_path_template=None, target_location=None, token=None, type=None, uid_token=None, usc_name=None, use_gw_cloud_identity=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, service_account_key_decoded=None, ad_auto_rotate=None, ad_cert_expiration_event_in=None, ad_certificates_path_template=None, ad_computer_base_dn=None, ad_discover_iis_app='false', ad_discover_services='false', ad_discovery_types=None, ad_domain_name=None, ad_domain_users_path_template=None, ad_local_users_ignore=None, ad_local_users_path_template=None, ad_os_filter=None, ad_rotation_hour=None, ad_rotation_interval=None, ad_sra_enable_rdp=None, ad_ssh_port='22', ad_target_format='linked', ad_target_name=None, ad_targets_path_template=None, ad_targets_type='windows', ad_user_base_dn=None, ad_user_groups=None, ad_winrm_over_http='false', ad_winrm_port='5986', ad_discover_local_users=None, ai_certificate_discovery=None, aws_key=None, aws_key_id=None, aws_region='us-east-2', azure_client_id=None, azure_kv_name=None, azure_secret=None, azure_tenant_id=None, conjur_account=None, conjur_api_key=None, conjur_url=None, conjur_username=None, delete_remote=None, expiration_event_in=None, gcp_key=None, gcp_project_id=None, hashi_json='true', hashi_metadata_mode=None, hashi_ns=None, hashi_token=None, hashi_url=None, hosts=None, json=False, k8s_ca_certificate=None, k8s_client_certificate=None, k8s_client_key=None, k8s_namespace=None, k8s_password=None, k8s_skip_system=None, k8s_token=None, k8s_url=None, k8s_username=None, name=None, port_ranges='443', protection_key=None, si_auto_rotate=None, si_rotation_hour=None, si_rotation_interval=None, si_sra_enable_rdp='false', si_target_name=None, si_user_groups=None, si_users_ignore=None, si_users_path_template=None, target_location=None, target_name=None, token=None, type=None, uid_token=None, usc_name=None, use_gw_cloud_identity=None, local_vars_configuration=None):  # noqa: E501
         """GatewayCreateMigration - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -265,6 +267,7 @@ class GatewayCreateMigration(object):
         self._si_users_ignore = None
         self._si_users_path_template = None
         self._target_location = None
+        self._target_name = None
         self._token = None
         self._type = None
         self._uid_token = None
@@ -407,6 +410,8 @@ class GatewayCreateMigration(object):
             self.si_users_ignore = si_users_ignore
         self.si_users_path_template = si_users_path_template
         self.target_location = target_location
+        if target_name is not None:
+            self.target_name = target_name
         if token is not None:
             self.token = token
         if type is not None:
@@ -2035,6 +2040,29 @@ class GatewayCreateMigration(object):
             raise ValueError("Invalid value for `target_location`, must not be `None`")  # noqa: E501
 
         self._target_location = target_location
+
+    @property
+    def target_name(self):
+        """Gets the target_name of this GatewayCreateMigration.  # noqa: E501
+
+        Name of existing target to use to create the migration  # noqa: E501
+
+        :return: The target_name of this GatewayCreateMigration.  # noqa: E501
+        :rtype: str
+        """
+        return self._target_name
+
+    @target_name.setter
+    def target_name(self, target_name):
+        """Sets the target_name of this GatewayCreateMigration.
+
+        Name of existing target to use to create the migration  # noqa: E501
+
+        :param target_name: The target_name of this GatewayCreateMigration.  # noqa: E501
+        :type: str
+        """
+
+        self._target_name = target_name
 
     @property
     def token(self):

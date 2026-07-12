@@ -50,7 +50,8 @@ class AuthMethod(object):
         'description': 'str',
         'expiration_events': 'list[AuthExpirationEvent]',
         'is_approved': 'bool',
-        'modification_date': 'datetime'
+        'modification_date': 'datetime',
+        'uid_expiration_events': 'list[UidExpirationEvent]'
     }
 
     attribute_map = {
@@ -70,10 +71,11 @@ class AuthMethod(object):
         'description': 'description',
         'expiration_events': 'expiration_events',
         'is_approved': 'is_approved',
-        'modification_date': 'modification_date'
+        'modification_date': 'modification_date',
+        'uid_expiration_events': 'uid_expiration_events'
     }
 
-    def __init__(self, access_date=None, access_date_display=None, access_info=None, account_id=None, associated_gw_ids=None, auth_method_access_id=None, auth_method_additional_data=None, auth_method_id=None, auth_method_name=None, auth_method_roles_assoc=None, client_permissions=None, creation_date=None, delete_protection=None, description=None, expiration_events=None, is_approved=None, modification_date=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, access_date=None, access_date_display=None, access_info=None, account_id=None, associated_gw_ids=None, auth_method_access_id=None, auth_method_additional_data=None, auth_method_id=None, auth_method_name=None, auth_method_roles_assoc=None, client_permissions=None, creation_date=None, delete_protection=None, description=None, expiration_events=None, is_approved=None, modification_date=None, uid_expiration_events=None, local_vars_configuration=None):  # noqa: E501
         """AuthMethod - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -96,6 +98,7 @@ class AuthMethod(object):
         self._expiration_events = None
         self._is_approved = None
         self._modification_date = None
+        self._uid_expiration_events = None
         self.discriminator = None
 
         if access_date is not None:
@@ -132,6 +135,8 @@ class AuthMethod(object):
             self.is_approved = is_approved
         if modification_date is not None:
             self.modification_date = modification_date
+        if uid_expiration_events is not None:
+            self.uid_expiration_events = uid_expiration_events
 
     @property
     def access_date(self):
@@ -489,6 +494,27 @@ class AuthMethod(object):
         """
 
         self._modification_date = modification_date
+
+    @property
+    def uid_expiration_events(self):
+        """Gets the uid_expiration_events of this AuthMethod.  # noqa: E501
+
+
+        :return: The uid_expiration_events of this AuthMethod.  # noqa: E501
+        :rtype: list[UidExpirationEvent]
+        """
+        return self._uid_expiration_events
+
+    @uid_expiration_events.setter
+    def uid_expiration_events(self, uid_expiration_events):
+        """Sets the uid_expiration_events of this AuthMethod.
+
+
+        :param uid_expiration_events: The uid_expiration_events of this AuthMethod.  # noqa: E501
+        :type: list[UidExpirationEvent]
+        """
+
+        self._uid_expiration_events = uid_expiration_events
 
     def to_dict(self):
         """Returns the model properties as a dict"""

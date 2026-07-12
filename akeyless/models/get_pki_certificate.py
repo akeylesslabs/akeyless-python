@@ -348,7 +348,7 @@ class GetPKICertificate(object):
     def ttl(self):
         """Gets the ttl of this GetPKICertificate.  # noqa: E501
 
-        Updated certificate lifetime in seconds (must be less than the Certificate Issuer default TTL)  # noqa: E501
+        Updated certificate lifetime in seconds (must be less than the Certificate Issuer default TTL). Ignored for Let's Encrypt public CA issuers, which always use the CA default lifetime (about 90 days).  # noqa: E501
 
         :return: The ttl of this GetPKICertificate.  # noqa: E501
         :rtype: str
@@ -359,7 +359,7 @@ class GetPKICertificate(object):
     def ttl(self, ttl):
         """Sets the ttl of this GetPKICertificate.
 
-        Updated certificate lifetime in seconds (must be less than the Certificate Issuer default TTL)  # noqa: E501
+        Updated certificate lifetime in seconds (must be less than the Certificate Issuer default TTL). Ignored for Let's Encrypt public CA issuers, which always use the CA default lifetime (about 90 days).  # noqa: E501
 
         :param ttl: The ttl of this GetPKICertificate.  # noqa: E501
         :type: str
