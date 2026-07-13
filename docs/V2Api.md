@@ -477,6 +477,7 @@ Method | HTTP request | Description
 [**static_creds_auth**](V2Api.md#static_creds_auth) | **POST** /static-creds-auth | 
 [**static_secret_delete_sync**](V2Api.md#static_secret_delete_sync) | **POST** /static-secret-delete-sync | 
 [**static_secret_sync**](V2Api.md#static_secret_sync) | **POST** /static-secret-sync | 
+[**target_create_aerospike**](V2Api.md#target_create_aerospike) | **POST** /target-create-aerospike | 
 [**target_create_anthropic**](V2Api.md#target_create_anthropic) | **POST** /target-create-anthropic | 
 [**target_create_artifactory**](V2Api.md#target_create_artifactory) | **POST** /target-create-artifactory | 
 [**target_create_aws**](V2Api.md#target_create_aws) | **POST** /target-create-aws | 
@@ -519,6 +520,7 @@ Method | HTTP request | Description
 [**target_get**](V2Api.md#target_get) | **POST** /target-get | 
 [**target_get_details**](V2Api.md#target_get_details) | **POST** /target-get-details | 
 [**target_list**](V2Api.md#target_list) | **POST** /target-list | 
+[**target_update_aerospike**](V2Api.md#target_update_aerospike) | **POST** /target-update-aerospike | 
 [**target_update_anthropic**](V2Api.md#target_update_anthropic) | **POST** /target-update-anthropic | 
 [**target_update_artifactory**](V2Api.md#target_update_artifactory) | **POST** /target-update-artifactory | 
 [**target_update_aws**](V2Api.md#target_update_aws) | **POST** /target-update-aws | 
@@ -29018,6 +29020,66 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **target_create_aerospike**
+> TargetCreateOutput target_create_aerospike(target_create_aerospike)
+
+
+
+### Example
+
+```python
+from __future__ import print_function
+import time
+import akeyless
+from akeyless.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.akeyless.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = akeyless.Configuration(
+    host = "https://api.akeyless.io"
+)
+
+
+# Enter a context with an instance of the API client
+with akeyless.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = akeyless.V2Api(api_client)
+    target_create_aerospike = akeyless.TargetCreateAerospike() # TargetCreateAerospike | 
+
+    try:
+        api_response = api_instance.target_create_aerospike(target_create_aerospike)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling V2Api->target_create_aerospike: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **target_create_aerospike** | [**TargetCreateAerospike**](TargetCreateAerospike.md)|  | 
+
+### Return type
+
+[**TargetCreateOutput**](TargetCreateOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**201** | targetCreateAerospikeResponse wraps response body. |  -  |
+**0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **target_create_anthropic**
 > TargetCreateOutput target_create_anthropic(target_create_anthropic)
 
@@ -31534,6 +31596,66 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | targetListResponse wraps response body. |  -  |
+**0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **target_update_aerospike**
+> TargetUpdateOutput target_update_aerospike(target_update_aerospike)
+
+
+
+### Example
+
+```python
+from __future__ import print_function
+import time
+import akeyless
+from akeyless.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.akeyless.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = akeyless.Configuration(
+    host = "https://api.akeyless.io"
+)
+
+
+# Enter a context with an instance of the API client
+with akeyless.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = akeyless.V2Api(api_client)
+    target_update_aerospike = akeyless.TargetUpdateAerospike() # TargetUpdateAerospike | 
+
+    try:
+        api_response = api_instance.target_update_aerospike(target_update_aerospike)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling V2Api->target_update_aerospike: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **target_update_aerospike** | [**TargetUpdateAerospike**](TargetUpdateAerospike.md)|  | 
+
+### Return type
+
+[**TargetUpdateOutput**](TargetUpdateOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**201** | targetUpdateAerospikeResponse wraps response body. |  -  |
 **0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

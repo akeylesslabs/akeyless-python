@@ -3,6 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**aerospike_target_details** | [**AerospikeTargetDetails**](AerospikeTargetDetails.md) |  | [optional] 
 **anthropic_target_details** | [**AnthropicTargetDetails**](AnthropicTargetDetails.md) |  | [optional] 
 **artifactory_target_details** | [**ArtifactoryTargetDetails**](ArtifactoryTargetDetails.md) |  | [optional] 
 **aws_target_details** | [**AWSTargetDetails**](AWSTargetDetails.md) |  | [optional] 

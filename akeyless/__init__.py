@@ -52,6 +52,7 @@ from akeyless.models.active_directory_migration import ActiveDirectoryMigration
 from akeyless.models.active_directory_payload import ActiveDirectoryPayload
 from akeyless.models.add_gateway_allowed_access_id import AddGatewayAllowedAccessId
 from akeyless.models.admins_config_part import AdminsConfigPart
+from akeyless.models.aerospike_target_details import AerospikeTargetDetails
 from akeyless.models.agentic_rule import AgenticRule
 from akeyless.models.agentic_rules import AgenticRules
 from akeyless.models.ai_insights_config_part import AiInsightsConfigPart
@@ -1016,6 +1017,7 @@ from akeyless.models.syslog_log_forwarding_config import SyslogLogForwardingConf
 from akeyless.models.system_access_credentials_reply_obj import SystemAccessCredentialsReplyObj
 from akeyless.models.system_access_creds_settings import SystemAccessCredsSettings
 from akeyless.models.target import Target
+from akeyless.models.target_create_aerospike import TargetCreateAerospike
 from akeyless.models.target_create_anthropic import TargetCreateAnthropic
 from akeyless.models.target_create_artifactory import TargetCreateArtifactory
 from akeyless.models.target_create_aws import TargetCreateAws
@@ -1064,6 +1066,7 @@ from akeyless.models.target_item_version import TargetItemVersion
 from akeyless.models.target_list import TargetList
 from akeyless.models.target_name_with_hosts import TargetNameWithHosts
 from akeyless.models.target_type_details_input import TargetTypeDetailsInput
+from akeyless.models.target_update_aerospike import TargetUpdateAerospike
 from akeyless.models.target_update_anthropic import TargetUpdateAnthropic
 from akeyless.models.target_update_artifactory import TargetUpdateArtifactory
 from akeyless.models.target_update_aws import TargetUpdateAws

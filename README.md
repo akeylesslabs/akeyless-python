@@ -556,6 +556,7 @@ Class | Method | HTTP request | Description
 *V2Api* | [**static_creds_auth**](docs/V2Api.md#static_creds_auth) | **POST** /static-creds-auth | 
 *V2Api* | [**static_secret_delete_sync**](docs/V2Api.md#static_secret_delete_sync) | **POST** /static-secret-delete-sync | 
 *V2Api* | [**static_secret_sync**](docs/V2Api.md#static_secret_sync) | **POST** /static-secret-sync | 
+*V2Api* | [**target_create_aerospike**](docs/V2Api.md#target_create_aerospike) | **POST** /target-create-aerospike | 
 *V2Api* | [**target_create_anthropic**](docs/V2Api.md#target_create_anthropic) | **POST** /target-create-anthropic | 
 *V2Api* | [**target_create_artifactory**](docs/V2Api.md#target_create_artifactory) | **POST** /target-create-artifactory | 
 *V2Api* | [**target_create_aws**](docs/V2Api.md#target_create_aws) | **POST** /target-create-aws | 
@@ -598,6 +599,7 @@ Class | Method | HTTP request | Description
 *V2Api* | [**target_get**](docs/V2Api.md#target_get) | **POST** /target-get | 
 *V2Api* | [**target_get_details**](docs/V2Api.md#target_get_details) | **POST** /target-get-details | 
 *V2Api* | [**target_list**](docs/V2Api.md#target_list) | **POST** /target-list | 
+*V2Api* | [**target_update_aerospike**](docs/V2Api.md#target_update_aerospike) | **POST** /target-update-aerospike | 
 *V2Api* | [**target_update_anthropic**](docs/V2Api.md#target_update_anthropic) | **POST** /target-update-anthropic | 
 *V2Api* | [**target_update_artifactory**](docs/V2Api.md#target_update_artifactory) | **POST** /target-update-artifactory | 
 *V2Api* | [**target_update_aws**](docs/V2Api.md#target_update_aws) | **POST** /target-update-aws | 
@@ -750,6 +752,7 @@ Class | Method | HTTP request | Description
  - [ActiveDirectoryPayload](docs/ActiveDirectoryPayload.md)
  - [AddGatewayAllowedAccessId](docs/AddGatewayAllowedAccessId.md)
  - [AdminsConfigPart](docs/AdminsConfigPart.md)
+ - [AerospikeTargetDetails](docs/AerospikeTargetDetails.md)
  - [AgenticRule](docs/AgenticRule.md)
  - [AgenticRules](docs/AgenticRules.md)
  - [AiInsightsConfigPart](docs/AiInsightsConfigPart.md)
@@ -1714,6 +1717,7 @@ Class | Method | HTTP request | Description
  - [SystemAccessCredentialsReplyObj](docs/SystemAccessCredentialsReplyObj.md)
  - [SystemAccessCredsSettings](docs/SystemAccessCredsSettings.md)
  - [Target](docs/Target.md)
+ - [TargetCreateAerospike](docs/TargetCreateAerospike.md)
  - [TargetCreateAnthropic](docs/TargetCreateAnthropic.md)
  - [TargetCreateArtifactory](docs/TargetCreateArtifactory.md)
  - [TargetCreateAws](docs/TargetCreateAws.md)
@@ -1762,6 +1766,7 @@ Class | Method | HTTP request | Description
  - [TargetList](docs/TargetList.md)
  - [TargetNameWithHosts](docs/TargetNameWithHosts.md)
  - [TargetTypeDetailsInput](docs/TargetTypeDetailsInput.md)
+ - [TargetUpdateAerospike](docs/TargetUpdateAerospike.md)
  - [TargetUpdateAnthropic](docs/TargetUpdateAnthropic.md)
  - [TargetUpdateArtifactory](docs/TargetUpdateArtifactory.md)
  - [TargetUpdateAws](docs/TargetUpdateAws.md)
