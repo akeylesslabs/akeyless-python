@@ -3,6 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**exclude_hosts** | **list[str]** |  | [optional] 
 **expiration_events** | [**list[CertificateExpirationEvent]**](CertificateExpirationEvent.md) |  | [optional] 
 **folder** | **str** |  | [optional] 
 **max_dial_timeout** | **int** |  | [optional] 

@@ -34,6 +34,7 @@ class CertificatePayload(object):
                             and the value is json key in definition.
     """
     openapi_types = {
+        'exclude_hosts': 'list[str]',
         'expiration_events': 'list[CertificateExpirationEvent]',
         'folder': 'str',
         'max_dial_timeout': 'int',
@@ -44,6 +45,7 @@ class CertificatePayload(object):
     }
 
     attribute_map = {
+        'exclude_hosts': 'exclude_hosts',
         'expiration_events': 'expiration_events',
         'folder': 'folder',
         'max_dial_timeout': 'max_dial_timeout',
@@ -53,12 +55,13 @@ class CertificatePayload(object):
         'targets': 'targets'
     }
 
-    def __init__(self, expiration_events=None, folder=None, max_dial_timeout=None, max_scan_duration=None, max_workers=None, port_ranges=None, targets=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, exclude_hosts=None, expiration_events=None, folder=None, max_dial_timeout=None, max_scan_duration=None, max_workers=None, port_ranges=None, targets=None, local_vars_configuration=None):  # noqa: E501
         """CertificatePayload - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
+        self._exclude_hosts = None
         self._expiration_events = None
         self._folder = None
         self._max_dial_timeout = None
@@ -68,6 +71,8 @@ class CertificatePayload(object):
         self._targets = None
         self.discriminator = None
 
+        if exclude_hosts is not None:
+            self.exclude_hosts = exclude_hosts
         if expiration_events is not None:
             self.expiration_events = expiration_events
         if folder is not None:
@@ -82,6 +87,27 @@ class CertificatePayload(object):
             self.port_ranges = port_ranges
         if targets is not None:
             self.targets = targets
+
+    @property
+    def exclude_hosts(self):
+        """Gets the exclude_hosts of this CertificatePayload.  # noqa: E501
+
+
+        :return: The exclude_hosts of this CertificatePayload.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._exclude_hosts
+
+    @exclude_hosts.setter
+    def exclude_hosts(self, exclude_hosts):
+        """Sets the exclude_hosts of this CertificatePayload.
+
+
+        :param exclude_hosts: The exclude_hosts of this CertificatePayload.  # noqa: E501
+        :type: list[str]
+        """
+
+        self._exclude_hosts = exclude_hosts
 
     @property
     def expiration_events(self):

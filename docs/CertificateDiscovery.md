@@ -5,6 +5,7 @@ CertificateDiscovery is a command that discovery certificates
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **debug** | **bool** | Debug mode | [optional] [default to False]
+**exclude_hosts** | **str** | A comma separated list of IP addresses, CIDR ranges, or DNS names to exclude from the scan | [optional] 
 **expiration_event_in** | **list[str]** | How many days before the expiration of the certificate would you like to be notified. | [optional] 
 **hosts** | **str** | A comma separated list of IPs, CIDR ranges, or DNS names to discovery | 
 **json** | **bool** | Set output format to JSON | [optional] [default to False]

@@ -35,6 +35,7 @@ class CertificateDiscovery(object):
     """
     openapi_types = {
         'debug': 'bool',
+        'exclude_hosts': 'str',
         'expiration_event_in': 'list[str]',
         'hosts': 'str',
         'json': 'bool',
@@ -47,6 +48,7 @@ class CertificateDiscovery(object):
 
     attribute_map = {
         'debug': 'debug',
+        'exclude_hosts': 'exclude-hosts',
         'expiration_event_in': 'expiration-event-in',
         'hosts': 'hosts',
         'json': 'json',
@@ -57,13 +59,14 @@ class CertificateDiscovery(object):
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, debug=False, expiration_event_in=None, hosts=None, json=False, port_ranges='443', protection_key=None, target_location=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, debug=False, exclude_hosts=None, expiration_event_in=None, hosts=None, json=False, port_ranges='443', protection_key=None, target_location=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """CertificateDiscovery - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._debug = None
+        self._exclude_hosts = None
         self._expiration_event_in = None
         self._hosts = None
         self._json = None
@@ -76,6 +79,8 @@ class CertificateDiscovery(object):
 
         if debug is not None:
             self.debug = debug
+        if exclude_hosts is not None:
+            self.exclude_hosts = exclude_hosts
         if expiration_event_in is not None:
             self.expiration_event_in = expiration_event_in
         self.hosts = hosts
@@ -113,6 +118,29 @@ class CertificateDiscovery(object):
         """
 
         self._debug = debug
+
+    @property
+    def exclude_hosts(self):
+        """Gets the exclude_hosts of this CertificateDiscovery.  # noqa: E501
+
+        A comma separated list of IP addresses, CIDR ranges, or DNS names to exclude from the scan  # noqa: E501
+
+        :return: The exclude_hosts of this CertificateDiscovery.  # noqa: E501
+        :rtype: str
+        """
+        return self._exclude_hosts
+
+    @exclude_hosts.setter
+    def exclude_hosts(self, exclude_hosts):
+        """Sets the exclude_hosts of this CertificateDiscovery.
+
+        A comma separated list of IP addresses, CIDR ranges, or DNS names to exclude from the scan  # noqa: E501
+
+        :param exclude_hosts: The exclude_hosts of this CertificateDiscovery.  # noqa: E501
+        :type: str
+        """
+
+        self._exclude_hosts = exclude_hosts
 
     @property
     def expiration_event_in(self):

@@ -41,7 +41,8 @@ class EncryptGPG(object):
         'key_name': 'str',
         'plaintext': 'str',
         'token': 'str',
-        'uid_token': 'str'
+        'uid_token': 'str',
+        'version': 'int'
     }
 
     attribute_map = {
@@ -52,10 +53,11 @@ class EncryptGPG(object):
         'key_name': 'key-name',
         'plaintext': 'plaintext',
         'token': 'token',
-        'uid_token': 'uid-token'
+        'uid_token': 'uid-token',
+        'version': 'version'
     }
 
-    def __init__(self, display_id=None, input_format=None, item_id=None, json=False, key_name=None, plaintext=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, display_id=None, input_format=None, item_id=None, json=False, key_name=None, plaintext=None, token=None, uid_token=None, version=None, local_vars_configuration=None):  # noqa: E501
         """EncryptGPG - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -69,6 +71,7 @@ class EncryptGPG(object):
         self._plaintext = None
         self._token = None
         self._uid_token = None
+        self._version = None
         self.discriminator = None
 
         if display_id is not None:
@@ -85,6 +88,8 @@ class EncryptGPG(object):
             self.token = token
         if uid_token is not None:
             self.uid_token = uid_token
+        if version is not None:
+            self.version = version
 
     @property
     def display_id(self):
@@ -273,6 +278,29 @@ class EncryptGPG(object):
         """
 
         self._uid_token = uid_token
+
+    @property
+    def version(self):
+        """Gets the version of this EncryptGPG.  # noqa: E501
+
+        key version (relevant only for classic key)  # noqa: E501
+
+        :return: The version of this EncryptGPG.  # noqa: E501
+        :rtype: int
+        """
+        return self._version
+
+    @version.setter
+    def version(self, version):
+        """Sets the version of this EncryptGPG.
+
+        key version (relevant only for classic key)  # noqa: E501
+
+        :param version: The version of this EncryptGPG.  # noqa: E501
+        :type: int
+        """
+
+        self._version = version
 
     def to_dict(self):
         """Returns the model properties as a dict"""
