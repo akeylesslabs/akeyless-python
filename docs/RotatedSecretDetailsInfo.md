@@ -4,6 +4,7 @@ RotatedSecretDetailsInfo The rotated secret rotator info
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**aws_user_name** | **str** |  | [optional] 
 **delete_previous_version_in_days** | **int** |  | [optional] 
 **enable_custom_password_policy** | **bool** |  | [optional] 
 **grace_rotation** | **bool** |  | [optional] 
@@ -26,6 +27,7 @@ Name | Type | Description | Notes
 **rotator_type** | **str** |  | [optional] 
 **same_password** | **bool** |  | [optional] 
 **services_details** | [**list[WindowsService]**](WindowsService.md) |  | [optional] 
+**skip_dry_run** | **bool** |  | [optional] 
 **timeout_seconds** | **int** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

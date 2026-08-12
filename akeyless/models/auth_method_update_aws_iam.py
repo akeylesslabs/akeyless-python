@@ -639,7 +639,7 @@ class AuthMethodUpdateAwsIam(object):
     def product_type(self):
         """Gets the product_type of this AuthMethodUpdateAwsIam.  # noqa: E501
 
-        Choose the relevant product type for the auth method [sm, sra, pm, dp, ca]  # noqa: E501
+        Choose the relevant product type for the auth method [sm, sra, pm, dp, ca, ara]  # noqa: E501
 
         :return: The product_type of this AuthMethodUpdateAwsIam.  # noqa: E501
         :rtype: list[str]
@@ -650,7 +650,7 @@ class AuthMethodUpdateAwsIam(object):
     def product_type(self, product_type):
         """Sets the product_type of this AuthMethodUpdateAwsIam.
 
-        Choose the relevant product type for the auth method [sm, sra, pm, dp, ca]  # noqa: E501
+        Choose the relevant product type for the auth method [sm, sra, pm, dp, ca, ara]  # noqa: E501
 
         :param product_type: The product_type of this AuthMethodUpdateAwsIam.  # noqa: E501
         :type: list[str]

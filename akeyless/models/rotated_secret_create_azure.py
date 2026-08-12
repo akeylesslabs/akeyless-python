@@ -37,6 +37,7 @@ class RotatedSecretCreateAzure(object):
         'api_id': 'str',
         'api_key': 'str',
         'application_id': 'str',
+        'ara_enabled': 'bool',
         'authentication_credentials': 'str',
         'auto_rotate': 'str',
         'delete_protection': 'str',
@@ -69,6 +70,7 @@ class RotatedSecretCreateAzure(object):
         'secure_access_web': 'bool',
         'secure_access_web_browsing': 'bool',
         'secure_access_web_proxy': 'bool',
+        'skip_dry_run': 'str',
         'storage_account_key_name': 'str',
         'tags': 'list[str]',
         'target_name': 'str',
@@ -85,6 +87,7 @@ class RotatedSecretCreateAzure(object):
         'api_id': 'api-id',
         'api_key': 'api-key',
         'application_id': 'application-id',
+        'ara_enabled': 'ara-enabled',
         'authentication_credentials': 'authentication-credentials',
         'auto_rotate': 'auto-rotate',
         'delete_protection': 'delete_protection',
@@ -117,6 +120,7 @@ class RotatedSecretCreateAzure(object):
         'secure_access_web': 'secure-access-web',
         'secure_access_web_browsing': 'secure-access-web-browsing',
         'secure_access_web_proxy': 'secure-access-web-proxy',
+        'skip_dry_run': 'skip_dry_run',
         'storage_account_key_name': 'storage-account-key-name',
         'tags': 'tags',
         'target_name': 'target-name',
@@ -129,7 +133,7 @@ class RotatedSecretCreateAzure(object):
         'username': 'username'
     }
 
-    def __init__(self, api_id=None, api_key=None, application_id=None, authentication_credentials='use-user-creds', auto_rotate=None, delete_protection=None, description=None, explicitly_set_sa='false', grace_rotation=None, grace_rotation_hour=None, grace_rotation_interval=None, grace_rotation_timing=None, input_rule=None, item_custom_fields=None, json=False, key=None, lock_during_sra_session=None, max_versions=None, name=None, output_rule=None, password=None, password_length=None, resource_group_name=None, resource_name=None, rotate_after_disconnect=None, rotation_event_in=None, rotation_hour=None, rotation_interval=None, rotator_type=None, secure_access_disable_concurrent_connections=None, secure_access_enable=None, secure_access_url=None, secure_access_web=False, secure_access_web_browsing=False, secure_access_web_proxy=False, storage_account_key_name=None, tags=None, target_name=None, token=None, uid_token=None, use_capital_letters=None, use_lower_letters=None, use_numbers=None, use_special_characters=None, username=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, api_id=None, api_key=None, application_id=None, ara_enabled=None, authentication_credentials='use-user-creds', auto_rotate=None, delete_protection=None, description=None, explicitly_set_sa='false', grace_rotation=None, grace_rotation_hour=None, grace_rotation_interval=None, grace_rotation_timing=None, input_rule=None, item_custom_fields=None, json=False, key=None, lock_during_sra_session=None, max_versions=None, name=None, output_rule=None, password=None, password_length=None, resource_group_name=None, resource_name=None, rotate_after_disconnect=None, rotation_event_in=None, rotation_hour=None, rotation_interval=None, rotator_type=None, secure_access_disable_concurrent_connections=None, secure_access_enable=None, secure_access_url=None, secure_access_web=False, secure_access_web_browsing=False, secure_access_web_proxy=False, skip_dry_run=None, storage_account_key_name=None, tags=None, target_name=None, token=None, uid_token=None, use_capital_letters=None, use_lower_letters=None, use_numbers=None, use_special_characters=None, username=None, local_vars_configuration=None):  # noqa: E501
         """RotatedSecretCreateAzure - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -138,6 +142,7 @@ class RotatedSecretCreateAzure(object):
         self._api_id = None
         self._api_key = None
         self._application_id = None
+        self._ara_enabled = None
         self._authentication_credentials = None
         self._auto_rotate = None
         self._delete_protection = None
@@ -170,6 +175,7 @@ class RotatedSecretCreateAzure(object):
         self._secure_access_web = None
         self._secure_access_web_browsing = None
         self._secure_access_web_proxy = None
+        self._skip_dry_run = None
         self._storage_account_key_name = None
         self._tags = None
         self._target_name = None
@@ -188,6 +194,8 @@ class RotatedSecretCreateAzure(object):
             self.api_key = api_key
         if application_id is not None:
             self.application_id = application_id
+        if ara_enabled is not None:
+            self.ara_enabled = ara_enabled
         if authentication_credentials is not None:
             self.authentication_credentials = authentication_credentials
         if auto_rotate is not None:
@@ -250,6 +258,8 @@ class RotatedSecretCreateAzure(object):
             self.secure_access_web_browsing = secure_access_web_browsing
         if secure_access_web_proxy is not None:
             self.secure_access_web_proxy = secure_access_web_proxy
+        if skip_dry_run is not None:
+            self.skip_dry_run = skip_dry_run
         if storage_account_key_name is not None:
             self.storage_account_key_name = storage_account_key_name
         if tags is not None:
@@ -338,6 +348,29 @@ class RotatedSecretCreateAzure(object):
         """
 
         self._application_id = application_id
+
+    @property
+    def ara_enabled(self):
+        """Gets the ara_enabled of this RotatedSecretCreateAzure.  # noqa: E501
+
+        Enable or disable Agentic Runtime Authority rule enforcement for this item. When false, user-defined input/output rules are stored but not enforced; the base security validation still runs.  AraEnabled is tri-state (nil/true/false), not a plain bool: it self-encodes its wire value (see akl.OptionalBool) so an explicit false survives the curl-proxy relay instead of being dropped like a default-false bool flag.  # noqa: E501
+
+        :return: The ara_enabled of this RotatedSecretCreateAzure.  # noqa: E501
+        :rtype: bool
+        """
+        return self._ara_enabled
+
+    @ara_enabled.setter
+    def ara_enabled(self, ara_enabled):
+        """Sets the ara_enabled of this RotatedSecretCreateAzure.
+
+        Enable or disable Agentic Runtime Authority rule enforcement for this item. When false, user-defined input/output rules are stored but not enforced; the base security validation still runs.  AraEnabled is tri-state (nil/true/false), not a plain bool: it self-encodes its wire value (see akl.OptionalBool) so an explicit false survives the curl-proxy relay instead of being dropped like a default-false bool flag.  # noqa: E501
+
+        :param ara_enabled: The ara_enabled of this RotatedSecretCreateAzure.  # noqa: E501
+        :type: bool
+        """
+
+        self._ara_enabled = ara_enabled
 
     @property
     def authentication_credentials(self):
@@ -1070,6 +1103,29 @@ class RotatedSecretCreateAzure(object):
         """
 
         self._secure_access_web_proxy = secure_access_web_proxy
+
+    @property
+    def skip_dry_run(self):
+        """Gets the skip_dry_run of this RotatedSecretCreateAzure.  # noqa: E501
+
+        If set, dry-run will be skipped  # noqa: E501
+
+        :return: The skip_dry_run of this RotatedSecretCreateAzure.  # noqa: E501
+        :rtype: str
+        """
+        return self._skip_dry_run
+
+    @skip_dry_run.setter
+    def skip_dry_run(self, skip_dry_run):
+        """Sets the skip_dry_run of this RotatedSecretCreateAzure.
+
+        If set, dry-run will be skipped  # noqa: E501
+
+        :param skip_dry_run: The skip_dry_run of this RotatedSecretCreateAzure.  # noqa: E501
+        :type: str
+        """
+
+        self._skip_dry_run = skip_dry_run
 
     @property
     def storage_account_key_name(self):

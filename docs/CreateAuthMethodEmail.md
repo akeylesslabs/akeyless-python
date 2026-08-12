@@ -19,7 +19,7 @@ Name | Type | Description | Notes
 **jwt_ttl** | **int** | Jwt TTL | [optional] [default to 0]
 **mfa_type** | **str** | Enable two-factor-authentication via [email/auth app] | [optional] [default to 'email']
 **name** | **str** | Auth Method name | 
-**product_type** | **list[str]** | Choose the relevant product type for the auth method [sm, sra, pm, dp, ca] | [optional] 
+**product_type** | **list[str]** | Choose the relevant product type for the auth method [sm, sra, pm, dp, ca, ara] | [optional] 
 **token** | **str** | Authentication token (see &#x60;/auth&#x60; and &#x60;/configure&#x60;) | [optional] 
 **uid_token** | **str** | The universal identity token, Required only for universal_identity authentication | [optional] 
 

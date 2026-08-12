@@ -39,6 +39,7 @@ class KMIPClient(object):
         'certificate_ttl_in_seconds': 'int',
         'expiration_events': 'list[CertificateExpirationEvent]',
         'id': 'str',
+        'issuing_ca_id': 'str',
         'name': 'str',
         'rules': 'list[PathRule]'
     }
@@ -49,11 +50,12 @@ class KMIPClient(object):
         'certificate_ttl_in_seconds': 'certificate_ttl_in_seconds',
         'expiration_events': 'expiration_events',
         'id': 'id',
+        'issuing_ca_id': 'issuing_ca_id',
         'name': 'name',
         'rules': 'rules'
     }
 
-    def __init__(self, activate_keys_on_creation=None, certificate_issue_date=None, certificate_ttl_in_seconds=None, expiration_events=None, id=None, name=None, rules=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, activate_keys_on_creation=None, certificate_issue_date=None, certificate_ttl_in_seconds=None, expiration_events=None, id=None, issuing_ca_id=None, name=None, rules=None, local_vars_configuration=None):  # noqa: E501
         """KMIPClient - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -64,6 +66,7 @@ class KMIPClient(object):
         self._certificate_ttl_in_seconds = None
         self._expiration_events = None
         self._id = None
+        self._issuing_ca_id = None
         self._name = None
         self._rules = None
         self.discriminator = None
@@ -78,6 +81,8 @@ class KMIPClient(object):
             self.expiration_events = expiration_events
         if id is not None:
             self.id = id
+        if issuing_ca_id is not None:
+            self.issuing_ca_id = issuing_ca_id
         if name is not None:
             self.name = name
         if rules is not None:
@@ -187,6 +192,27 @@ class KMIPClient(object):
         """
 
         self._id = id
+
+    @property
+    def issuing_ca_id(self):
+        """Gets the issuing_ca_id of this KMIPClient.  # noqa: E501
+
+
+        :return: The issuing_ca_id of this KMIPClient.  # noqa: E501
+        :rtype: str
+        """
+        return self._issuing_ca_id
+
+    @issuing_ca_id.setter
+    def issuing_ca_id(self, issuing_ca_id):
+        """Sets the issuing_ca_id of this KMIPClient.
+
+
+        :param issuing_ca_id: The issuing_ca_id of this KMIPClient.  # noqa: E501
+        :type: str
+        """
+
+        self._issuing_ca_id = issuing_ca_id
 
     @property
     def name(self):

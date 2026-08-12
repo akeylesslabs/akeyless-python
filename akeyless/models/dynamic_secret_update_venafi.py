@@ -37,6 +37,7 @@ class DynamicSecretUpdateVenafi(object):
         'admin_rotation_interval_days': 'int',
         'allow_subdomains': 'bool',
         'allowed_domains': 'list[str]',
+        'ara_enabled': 'bool',
         'auto_generated_folder': 'str',
         'delete_protection': 'str',
         'description': 'str',
@@ -51,6 +52,7 @@ class DynamicSecretUpdateVenafi(object):
         'root_first_in_chain': 'bool',
         'sign_using_akeyless_pki': 'bool',
         'signer_key_name': 'str',
+        'skip_dry_run': 'str',
         'store_private_key': 'bool',
         'tags': 'list[str]',
         'target_name': 'str',
@@ -70,6 +72,7 @@ class DynamicSecretUpdateVenafi(object):
         'admin_rotation_interval_days': 'admin-rotation-interval-days',
         'allow_subdomains': 'allow-subdomains',
         'allowed_domains': 'allowed-domains',
+        'ara_enabled': 'ara-enabled',
         'auto_generated_folder': 'auto-generated-folder',
         'delete_protection': 'delete_protection',
         'description': 'description',
@@ -84,6 +87,7 @@ class DynamicSecretUpdateVenafi(object):
         'root_first_in_chain': 'root-first-in-chain',
         'sign_using_akeyless_pki': 'sign-using-akeyless-pki',
         'signer_key_name': 'signer-key-name',
+        'skip_dry_run': 'skip_dry_run',
         'store_private_key': 'store-private-key',
         'tags': 'tags',
         'target_name': 'target-name',
@@ -99,7 +103,7 @@ class DynamicSecretUpdateVenafi(object):
         'venafi_zone': 'venafi-zone'
     }
 
-    def __init__(self, admin_rotation_interval_days=0, allow_subdomains=None, allowed_domains=None, auto_generated_folder=None, delete_protection=None, description=None, enable_admin_rotation=False, input_rule=None, item_custom_fields=None, json=False, name=None, new_name=None, output_rule=None, producer_encryption_key_name=None, root_first_in_chain=None, sign_using_akeyless_pki=None, signer_key_name=None, store_private_key=None, tags=None, target_name=None, token=None, uid_token=None, user_ttl='2160h', venafi_access_token=None, venafi_api_key=None, venafi_baseurl=None, venafi_client_id='akeyless', venafi_refresh_token=None, venafi_use_tpp=None, venafi_zone=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, admin_rotation_interval_days=0, allow_subdomains=None, allowed_domains=None, ara_enabled=None, auto_generated_folder=None, delete_protection=None, description=None, enable_admin_rotation=False, input_rule=None, item_custom_fields=None, json=False, name=None, new_name=None, output_rule=None, producer_encryption_key_name=None, root_first_in_chain=None, sign_using_akeyless_pki=None, signer_key_name=None, skip_dry_run=None, store_private_key=None, tags=None, target_name=None, token=None, uid_token=None, user_ttl='2160h', venafi_access_token=None, venafi_api_key=None, venafi_baseurl=None, venafi_client_id='akeyless', venafi_refresh_token=None, venafi_use_tpp=None, venafi_zone=None, local_vars_configuration=None):  # noqa: E501
         """DynamicSecretUpdateVenafi - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -108,6 +112,7 @@ class DynamicSecretUpdateVenafi(object):
         self._admin_rotation_interval_days = None
         self._allow_subdomains = None
         self._allowed_domains = None
+        self._ara_enabled = None
         self._auto_generated_folder = None
         self._delete_protection = None
         self._description = None
@@ -122,6 +127,7 @@ class DynamicSecretUpdateVenafi(object):
         self._root_first_in_chain = None
         self._sign_using_akeyless_pki = None
         self._signer_key_name = None
+        self._skip_dry_run = None
         self._store_private_key = None
         self._tags = None
         self._target_name = None
@@ -143,6 +149,8 @@ class DynamicSecretUpdateVenafi(object):
             self.allow_subdomains = allow_subdomains
         if allowed_domains is not None:
             self.allowed_domains = allowed_domains
+        if ara_enabled is not None:
+            self.ara_enabled = ara_enabled
         if auto_generated_folder is not None:
             self.auto_generated_folder = auto_generated_folder
         if delete_protection is not None:
@@ -170,6 +178,8 @@ class DynamicSecretUpdateVenafi(object):
             self.sign_using_akeyless_pki = sign_using_akeyless_pki
         if signer_key_name is not None:
             self.signer_key_name = signer_key_name
+        if skip_dry_run is not None:
+            self.skip_dry_run = skip_dry_run
         if store_private_key is not None:
             self.store_private_key = store_private_key
         if tags is not None:
@@ -265,6 +275,29 @@ class DynamicSecretUpdateVenafi(object):
         """
 
         self._allowed_domains = allowed_domains
+
+    @property
+    def ara_enabled(self):
+        """Gets the ara_enabled of this DynamicSecretUpdateVenafi.  # noqa: E501
+
+        Enable or disable Agentic Runtime Authority rule enforcement for this item. Mirrors commands.AgenticRulesParams.AraEnabled.  # noqa: E501
+
+        :return: The ara_enabled of this DynamicSecretUpdateVenafi.  # noqa: E501
+        :rtype: bool
+        """
+        return self._ara_enabled
+
+    @ara_enabled.setter
+    def ara_enabled(self, ara_enabled):
+        """Sets the ara_enabled of this DynamicSecretUpdateVenafi.
+
+        Enable or disable Agentic Runtime Authority rule enforcement for this item. Mirrors commands.AgenticRulesParams.AraEnabled.  # noqa: E501
+
+        :param ara_enabled: The ara_enabled of this DynamicSecretUpdateVenafi.  # noqa: E501
+        :type: bool
+        """
+
+        self._ara_enabled = ara_enabled
 
     @property
     def auto_generated_folder(self):
@@ -589,6 +622,29 @@ class DynamicSecretUpdateVenafi(object):
         """
 
         self._signer_key_name = signer_key_name
+
+    @property
+    def skip_dry_run(self):
+        """Gets the skip_dry_run of this DynamicSecretUpdateVenafi.  # noqa: E501
+
+        If set, dry-run will be skipped  # noqa: E501
+
+        :return: The skip_dry_run of this DynamicSecretUpdateVenafi.  # noqa: E501
+        :rtype: str
+        """
+        return self._skip_dry_run
+
+    @skip_dry_run.setter
+    def skip_dry_run(self, skip_dry_run):
+        """Sets the skip_dry_run of this DynamicSecretUpdateVenafi.
+
+        If set, dry-run will be skipped  # noqa: E501
+
+        :param skip_dry_run: The skip_dry_run of this DynamicSecretUpdateVenafi.  # noqa: E501
+        :type: str
+        """
+
+        self._skip_dry_run = skip_dry_run
 
     @property
     def store_private_key(self):

@@ -34,6 +34,7 @@ class DynamicSecretUpdateGitlab(object):
                             and the value is json key in definition.
     """
     openapi_types = {
+        'ara_enabled': 'bool',
         'delete_protection': 'str',
         'description': 'str',
         'gitlab_access_token': 'str',
@@ -50,6 +51,7 @@ class DynamicSecretUpdateGitlab(object):
         'name': 'str',
         'new_name': 'str',
         'output_rule': 'list[str]',
+        'skip_dry_run': 'str',
         'tags': 'list[str]',
         'target_name': 'str',
         'token': 'str',
@@ -58,6 +60,7 @@ class DynamicSecretUpdateGitlab(object):
     }
 
     attribute_map = {
+        'ara_enabled': 'ara-enabled',
         'delete_protection': 'delete_protection',
         'description': 'description',
         'gitlab_access_token': 'gitlab-access-token',
@@ -74,6 +77,7 @@ class DynamicSecretUpdateGitlab(object):
         'name': 'name',
         'new_name': 'new-name',
         'output_rule': 'output-rule',
+        'skip_dry_run': 'skip_dry_run',
         'tags': 'tags',
         'target_name': 'target-name',
         'token': 'token',
@@ -81,12 +85,13 @@ class DynamicSecretUpdateGitlab(object):
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, delete_protection=None, description=None, gitlab_access_token=None, gitlab_access_type=None, gitlab_certificate=None, gitlab_role=None, gitlab_token_scopes=None, gitlab_url='https://gitlab.com/', group_name=None, input_rule=None, installation_organization=None, item_custom_fields=None, json=False, name=None, new_name=None, output_rule=None, tags=None, target_name=None, token=None, ttl=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, ara_enabled=None, delete_protection=None, description=None, gitlab_access_token=None, gitlab_access_type=None, gitlab_certificate=None, gitlab_role=None, gitlab_token_scopes=None, gitlab_url='https://gitlab.com/', group_name=None, input_rule=None, installation_organization=None, item_custom_fields=None, json=False, name=None, new_name=None, output_rule=None, skip_dry_run=None, tags=None, target_name=None, token=None, ttl=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """DynamicSecretUpdateGitlab - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
+        self._ara_enabled = None
         self._delete_protection = None
         self._description = None
         self._gitlab_access_token = None
@@ -103,6 +108,7 @@ class DynamicSecretUpdateGitlab(object):
         self._name = None
         self._new_name = None
         self._output_rule = None
+        self._skip_dry_run = None
         self._tags = None
         self._target_name = None
         self._token = None
@@ -110,6 +116,8 @@ class DynamicSecretUpdateGitlab(object):
         self._uid_token = None
         self.discriminator = None
 
+        if ara_enabled is not None:
+            self.ara_enabled = ara_enabled
         if delete_protection is not None:
             self.delete_protection = delete_protection
         if description is not None:
@@ -139,6 +147,8 @@ class DynamicSecretUpdateGitlab(object):
             self.new_name = new_name
         if output_rule is not None:
             self.output_rule = output_rule
+        if skip_dry_run is not None:
+            self.skip_dry_run = skip_dry_run
         if tags is not None:
             self.tags = tags
         if target_name is not None:
@@ -149,6 +159,29 @@ class DynamicSecretUpdateGitlab(object):
             self.ttl = ttl
         if uid_token is not None:
             self.uid_token = uid_token
+
+    @property
+    def ara_enabled(self):
+        """Gets the ara_enabled of this DynamicSecretUpdateGitlab.  # noqa: E501
+
+        Enable or disable Agentic Runtime Authority rule enforcement for this item. Mirrors commands.AgenticRulesParams.AraEnabled.  # noqa: E501
+
+        :return: The ara_enabled of this DynamicSecretUpdateGitlab.  # noqa: E501
+        :rtype: bool
+        """
+        return self._ara_enabled
+
+    @ara_enabled.setter
+    def ara_enabled(self, ara_enabled):
+        """Sets the ara_enabled of this DynamicSecretUpdateGitlab.
+
+        Enable or disable Agentic Runtime Authority rule enforcement for this item. Mirrors commands.AgenticRulesParams.AraEnabled.  # noqa: E501
+
+        :param ara_enabled: The ara_enabled of this DynamicSecretUpdateGitlab.  # noqa: E501
+        :type: bool
+        """
+
+        self._ara_enabled = ara_enabled
 
     @property
     def delete_protection(self):
@@ -523,6 +556,29 @@ class DynamicSecretUpdateGitlab(object):
         """
 
         self._output_rule = output_rule
+
+    @property
+    def skip_dry_run(self):
+        """Gets the skip_dry_run of this DynamicSecretUpdateGitlab.  # noqa: E501
+
+        If set, dry-run will be skipped  # noqa: E501
+
+        :return: The skip_dry_run of this DynamicSecretUpdateGitlab.  # noqa: E501
+        :rtype: str
+        """
+        return self._skip_dry_run
+
+    @skip_dry_run.setter
+    def skip_dry_run(self, skip_dry_run):
+        """Sets the skip_dry_run of this DynamicSecretUpdateGitlab.
+
+        If set, dry-run will be skipped  # noqa: E501
+
+        :param skip_dry_run: The skip_dry_run of this DynamicSecretUpdateGitlab.  # noqa: E501
+        :type: str
+        """
+
+        self._skip_dry_run = skip_dry_run
 
     @property
     def tags(self):

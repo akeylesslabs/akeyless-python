@@ -42,6 +42,7 @@ class DynamicSecretProducerInfo(object):
         'producer_metadata': 'str',
         'producer_status': 'str',
         'producer_type': 'str',
+        'skip_dry_run': 'bool',
         'user_ttl': 'str'
     }
 
@@ -54,10 +55,11 @@ class DynamicSecretProducerInfo(object):
         'producer_metadata': 'producer_metadata',
         'producer_status': 'producer_status',
         'producer_type': 'producer_type',
+        'skip_dry_run': 'skip_dry_run',
         'user_ttl': 'user_ttl'
     }
 
-    def __init__(self, failure_message=None, gw_cluster_id=None, k8s_allowed_namespaces=None, k8s_dynamic_mode=None, producer_last_keep_alive=None, producer_metadata=None, producer_status=None, producer_type=None, user_ttl=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, failure_message=None, gw_cluster_id=None, k8s_allowed_namespaces=None, k8s_dynamic_mode=None, producer_last_keep_alive=None, producer_metadata=None, producer_status=None, producer_type=None, skip_dry_run=None, user_ttl=None, local_vars_configuration=None):  # noqa: E501
         """DynamicSecretProducerInfo - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -71,6 +73,7 @@ class DynamicSecretProducerInfo(object):
         self._producer_metadata = None
         self._producer_status = None
         self._producer_type = None
+        self._skip_dry_run = None
         self._user_ttl = None
         self.discriminator = None
 
@@ -90,6 +93,8 @@ class DynamicSecretProducerInfo(object):
             self.producer_status = producer_status
         if producer_type is not None:
             self.producer_type = producer_type
+        if skip_dry_run is not None:
+            self.skip_dry_run = skip_dry_run
         if user_ttl is not None:
             self.user_ttl = user_ttl
 
@@ -266,6 +271,27 @@ class DynamicSecretProducerInfo(object):
         """
 
         self._producer_type = producer_type
+
+    @property
+    def skip_dry_run(self):
+        """Gets the skip_dry_run of this DynamicSecretProducerInfo.  # noqa: E501
+
+
+        :return: The skip_dry_run of this DynamicSecretProducerInfo.  # noqa: E501
+        :rtype: bool
+        """
+        return self._skip_dry_run
+
+    @skip_dry_run.setter
+    def skip_dry_run(self, skip_dry_run):
+        """Sets the skip_dry_run of this DynamicSecretProducerInfo.
+
+
+        :param skip_dry_run: The skip_dry_run of this DynamicSecretProducerInfo.  # noqa: E501
+        :type: bool
+        """
+
+        self._skip_dry_run = skip_dry_run
 
     @property
     def user_ttl(self):

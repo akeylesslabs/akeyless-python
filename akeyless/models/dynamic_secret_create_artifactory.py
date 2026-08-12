@@ -34,6 +34,7 @@ class DynamicSecretCreateArtifactory(object):
                             and the value is json key in definition.
     """
     openapi_types = {
+        'ara_enabled': 'bool',
         'artifactory_admin_name': 'str',
         'artifactory_admin_pwd': 'str',
         'artifactory_token_audience': 'str',
@@ -48,6 +49,7 @@ class DynamicSecretCreateArtifactory(object):
         'name': 'str',
         'output_rule': 'list[str]',
         'producer_encryption_key_name': 'str',
+        'skip_dry_run': 'str',
         'tags': 'list[str]',
         'target_name': 'str',
         'token': 'str',
@@ -56,6 +58,7 @@ class DynamicSecretCreateArtifactory(object):
     }
 
     attribute_map = {
+        'ara_enabled': 'ara-enabled',
         'artifactory_admin_name': 'artifactory-admin-name',
         'artifactory_admin_pwd': 'artifactory-admin-pwd',
         'artifactory_token_audience': 'artifactory-token-audience',
@@ -70,6 +73,7 @@ class DynamicSecretCreateArtifactory(object):
         'name': 'name',
         'output_rule': 'output-rule',
         'producer_encryption_key_name': 'producer-encryption-key-name',
+        'skip_dry_run': 'skip_dry_run',
         'tags': 'tags',
         'target_name': 'target-name',
         'token': 'token',
@@ -77,12 +81,13 @@ class DynamicSecretCreateArtifactory(object):
         'user_ttl': 'user-ttl'
     }
 
-    def __init__(self, artifactory_admin_name=None, artifactory_admin_pwd=None, artifactory_token_audience=None, artifactory_token_scope=None, base_url=None, custom_username_template=None, delete_protection=None, description=None, input_rule=None, item_custom_fields=None, json=False, name=None, output_rule=None, producer_encryption_key_name=None, tags=None, target_name=None, token=None, uid_token=None, user_ttl='60m', local_vars_configuration=None):  # noqa: E501
+    def __init__(self, ara_enabled=None, artifactory_admin_name=None, artifactory_admin_pwd=None, artifactory_token_audience=None, artifactory_token_scope=None, base_url=None, custom_username_template=None, delete_protection=None, description=None, input_rule=None, item_custom_fields=None, json=False, name=None, output_rule=None, producer_encryption_key_name=None, skip_dry_run=None, tags=None, target_name=None, token=None, uid_token=None, user_ttl='60m', local_vars_configuration=None):  # noqa: E501
         """DynamicSecretCreateArtifactory - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
+        self._ara_enabled = None
         self._artifactory_admin_name = None
         self._artifactory_admin_pwd = None
         self._artifactory_token_audience = None
@@ -97,6 +102,7 @@ class DynamicSecretCreateArtifactory(object):
         self._name = None
         self._output_rule = None
         self._producer_encryption_key_name = None
+        self._skip_dry_run = None
         self._tags = None
         self._target_name = None
         self._token = None
@@ -104,6 +110,8 @@ class DynamicSecretCreateArtifactory(object):
         self._user_ttl = None
         self.discriminator = None
 
+        if ara_enabled is not None:
+            self.ara_enabled = ara_enabled
         if artifactory_admin_name is not None:
             self.artifactory_admin_name = artifactory_admin_name
         if artifactory_admin_pwd is not None:
@@ -129,6 +137,8 @@ class DynamicSecretCreateArtifactory(object):
             self.output_rule = output_rule
         if producer_encryption_key_name is not None:
             self.producer_encryption_key_name = producer_encryption_key_name
+        if skip_dry_run is not None:
+            self.skip_dry_run = skip_dry_run
         if tags is not None:
             self.tags = tags
         if target_name is not None:
@@ -139,6 +149,29 @@ class DynamicSecretCreateArtifactory(object):
             self.uid_token = uid_token
         if user_ttl is not None:
             self.user_ttl = user_ttl
+
+    @property
+    def ara_enabled(self):
+        """Gets the ara_enabled of this DynamicSecretCreateArtifactory.  # noqa: E501
+
+        Enable or disable Agentic Runtime Authority rule enforcement for this item. Mirrors commands.AgenticRulesParams.AraEnabled.  # noqa: E501
+
+        :return: The ara_enabled of this DynamicSecretCreateArtifactory.  # noqa: E501
+        :rtype: bool
+        """
+        return self._ara_enabled
+
+    @ara_enabled.setter
+    def ara_enabled(self, ara_enabled):
+        """Sets the ara_enabled of this DynamicSecretCreateArtifactory.
+
+        Enable or disable Agentic Runtime Authority rule enforcement for this item. Mirrors commands.AgenticRulesParams.AraEnabled.  # noqa: E501
+
+        :param ara_enabled: The ara_enabled of this DynamicSecretCreateArtifactory.  # noqa: E501
+        :type: bool
+        """
+
+        self._ara_enabled = ara_enabled
 
     @property
     def artifactory_admin_name(self):
@@ -467,6 +500,29 @@ class DynamicSecretCreateArtifactory(object):
         """
 
         self._producer_encryption_key_name = producer_encryption_key_name
+
+    @property
+    def skip_dry_run(self):
+        """Gets the skip_dry_run of this DynamicSecretCreateArtifactory.  # noqa: E501
+
+        If set, dry-run will be skipped  # noqa: E501
+
+        :return: The skip_dry_run of this DynamicSecretCreateArtifactory.  # noqa: E501
+        :rtype: str
+        """
+        return self._skip_dry_run
+
+    @skip_dry_run.setter
+    def skip_dry_run(self, skip_dry_run):
+        """Sets the skip_dry_run of this DynamicSecretCreateArtifactory.
+
+        If set, dry-run will be skipped  # noqa: E501
+
+        :param skip_dry_run: The skip_dry_run of this DynamicSecretCreateArtifactory.  # noqa: E501
+        :type: str
+        """
+
+        self._skip_dry_run = skip_dry_run
 
     @property
     def tags(self):

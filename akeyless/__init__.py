@@ -15,7 +15,7 @@
 
 from __future__ import absolute_import
 
-__version__ = "5.0.31"
+__version__ = "5.0.32"
 
 # import apis into sdk package
 from akeyless.api.v2_api import V2Api
@@ -215,6 +215,8 @@ from akeyless.models.create_esm import CreateESM
 from akeyless.models.create_esm_output import CreateESMOutput
 from akeyless.models.create_event_forwarder import CreateEventForwarder
 from akeyless.models.create_event_forwarder_output import CreateEventForwarderOutput
+from akeyless.models.create_f5_big_ip_target import CreateF5BigIpTarget
+from akeyless.models.create_f5_big_ip_target_output import CreateF5BigIpTargetOutput
 from akeyless.models.create_gke_target import CreateGKETarget
 from akeyless.models.create_gke_target_output import CreateGKETargetOutput
 from akeyless.models.create_gcp_target import CreateGcpTarget
@@ -336,6 +338,7 @@ from akeyless.models.detokenize import Detokenize
 from akeyless.models.detokenize_output import DetokenizeOutput
 from akeyless.models.digi_cert_target_details import DigiCertTargetDetails
 from akeyless.models.dockerhub_target_details import DockerhubTargetDetails
+from akeyless.models.dynamic_secret_create_aerospike import DynamicSecretCreateAerospike
 from akeyless.models.dynamic_secret_create_artifactory import DynamicSecretCreateArtifactory
 from akeyless.models.dynamic_secret_create_aws import DynamicSecretCreateAws
 from akeyless.models.dynamic_secret_create_azure import DynamicSecretCreateAzure
@@ -376,6 +379,7 @@ from akeyless.models.dynamic_secret_producer_info import DynamicSecretProducerIn
 from akeyless.models.dynamic_secret_tmp_creds_delete import DynamicSecretTmpCredsDelete
 from akeyless.models.dynamic_secret_tmp_creds_get import DynamicSecretTmpCredsGet
 from akeyless.models.dynamic_secret_tmp_creds_update import DynamicSecretTmpCredsUpdate
+from akeyless.models.dynamic_secret_update_aerospike import DynamicSecretUpdateAerospike
 from akeyless.models.dynamic_secret_update_artifactory import DynamicSecretUpdateArtifactory
 from akeyless.models.dynamic_secret_update_aws import DynamicSecretUpdateAws
 from akeyless.models.dynamic_secret_update_azure import DynamicSecretUpdateAzure
@@ -453,6 +457,7 @@ from akeyless.models.export_classic_key import ExportClassicKey
 from akeyless.models.export_classic_key_output import ExportClassicKeyOutput
 from akeyless.models.extension import Extension
 from akeyless.models.external_kms_key_id import ExternalKMSKeyId
+from akeyless.models.f5_big_ip_target_details import F5BigIpTargetDetails
 from akeyless.models.file_download_instructions import FileDownloadInstructions
 from akeyless.models.file_info import FileInfo
 from akeyless.models.folder_create import FolderCreate
@@ -747,6 +752,7 @@ from akeyless.models.k8_s_auths_config_last_change import K8SAuthsConfigLastChan
 from akeyless.models.k8_s_auths_config_part import K8SAuthsConfigPart
 from akeyless.models.k8_s_migration import K8SMigration
 from akeyless.models.k8_s_payload import K8SPayload
+from akeyless.models.kmipca import KMIPCA
 from akeyless.models.kmip_client import KMIPClient
 from akeyless.models.kmip_client_get_response import KMIPClientGetResponse
 from akeyless.models.kmip_client_list_response import KMIPClientListResponse
@@ -903,11 +909,13 @@ from akeyless.models.rotate_key_output import RotateKeyOutput
 from akeyless.models.rotate_oidc_client_output import RotateOidcClientOutput
 from akeyless.models.rotate_oidc_client_secret import RotateOidcClientSecret
 from akeyless.models.rotate_secret import RotateSecret
+from akeyless.models.rotated_secret_create_aerospike import RotatedSecretCreateAerospike
 from akeyless.models.rotated_secret_create_aws import RotatedSecretCreateAws
 from akeyless.models.rotated_secret_create_azure import RotatedSecretCreateAzure
 from akeyless.models.rotated_secret_create_cassandra import RotatedSecretCreateCassandra
 from akeyless.models.rotated_secret_create_custom import RotatedSecretCreateCustom
 from akeyless.models.rotated_secret_create_dockerhub import RotatedSecretCreateDockerhub
+from akeyless.models.rotated_secret_create_f5_big_ip import RotatedSecretCreateF5BigIp
 from akeyless.models.rotated_secret_create_gcp import RotatedSecretCreateGcp
 from akeyless.models.rotated_secret_create_hanadb import RotatedSecretCreateHanadb
 from akeyless.models.rotated_secret_create_hashi_vault import RotatedSecretCreateHashiVault
@@ -933,6 +941,7 @@ from akeyless.models.rotated_secret_get_value import RotatedSecretGetValue
 from akeyless.models.rotated_secret_list import RotatedSecretList
 from akeyless.models.rotated_secret_output import RotatedSecretOutput
 from akeyless.models.rotated_secret_sync import RotatedSecretSync
+from akeyless.models.rotated_secret_update_aerospike import RotatedSecretUpdateAerospike
 from akeyless.models.rotated_secret_update_aws import RotatedSecretUpdateAws
 from akeyless.models.rotated_secret_update_azure import RotatedSecretUpdateAzure
 from akeyless.models.rotated_secret_update_cassandra import RotatedSecretUpdateCassandra
@@ -1029,6 +1038,7 @@ from akeyless.models.target_create_db import TargetCreateDB
 from akeyless.models.target_create_digi_cert import TargetCreateDigiCert
 from akeyless.models.target_create_dockerhub import TargetCreateDockerhub
 from akeyless.models.target_create_eks import TargetCreateEks
+from akeyless.models.target_create_f5_big_ip import TargetCreateF5BigIp
 from akeyless.models.target_create_gcp import TargetCreateGcp
 from akeyless.models.target_create_gemini import TargetCreateGemini
 from akeyless.models.target_create_github import TargetCreateGithub
@@ -1078,6 +1088,7 @@ from akeyless.models.target_update_db import TargetUpdateDB
 from akeyless.models.target_update_digi_cert import TargetUpdateDigiCert
 from akeyless.models.target_update_dockerhub import TargetUpdateDockerhub
 from akeyless.models.target_update_eks import TargetUpdateEks
+from akeyless.models.target_update_f5_big_ip import TargetUpdateF5BigIp
 from akeyless.models.target_update_gcp import TargetUpdateGcp
 from akeyless.models.target_update_gemini import TargetUpdateGemini
 from akeyless.models.target_update_github import TargetUpdateGithub
@@ -1165,6 +1176,8 @@ from akeyless.models.update_dockerhub_target_output import UpdateDockerhubTarget
 from akeyless.models.update_eks_target import UpdateEKSTarget
 from akeyless.models.update_eks_target_output import UpdateEKSTargetOutput
 from akeyless.models.update_event_forwarder import UpdateEventForwarder
+from akeyless.models.update_f5_big_ip_target import UpdateF5BigIpTarget
+from akeyless.models.update_f5_big_ip_target_output import UpdateF5BigIpTargetOutput
 from akeyless.models.update_gke_target import UpdateGKETarget
 from akeyless.models.update_gke_target_output import UpdateGKETargetOutput
 from akeyless.models.update_gcp_target import UpdateGcpTarget

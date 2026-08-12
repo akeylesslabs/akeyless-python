@@ -4,6 +4,7 @@ dynamicSecretUpdateCassandra is a command that updates a Cassandra dynamic secre
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**ara_enabled** | **bool** | Enable or disable Agentic Runtime Authority rule enforcement for this item. Mirrors commands.AgenticRulesParams.AraEnabled. | [optional] 
 **cassandra_creation_statements** | **str** | Cassandra creation statements | [optional] 
 **cassandra_hosts** | **str** | Cassandra hosts IP or addresses, comma separated | [optional] 
 **cassandra_password** | **str** | Cassandra superuser password | [optional] 
@@ -20,6 +21,7 @@ Name | Type | Description | Notes
 **output_rule** | **list[str]** | Agentic output rule in name&#x3D;...,rule&#x3D;... format (e.g. name&#x3D;rule1,rule&#x3D;Mask secrets) | [optional] 
 **password_length** | **str** | The length of the password to be generated | [optional] 
 **producer_encryption_key_name** | **str** | Dynamic producer encryption key | [optional] 
+**skip_dry_run** | **str** | If set, dry-run will be skipped | [optional] 
 **ssl** | **bool** | Enable/Disable SSL [true/false] | [optional] [default to False]
 **ssl_certificate** | **str** | SSL CA certificate in base64 encoding generated from a trusted Certificate Authority (CA) | [optional] 
 **tags** | **list[str]** | Add tags attached to this object | [optional] 

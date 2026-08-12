@@ -36,6 +36,11 @@ class OpenAITargetDetails(object):
     openapi_types = {
         'api_key': 'str',
         'api_key_id': 'str',
+        'auth_mode': 'str',
+        'oauth_access_token': 'str',
+        'oauth_account_id': 'str',
+        'oauth_last_refresh': 'str',
+        'oauth_refresh_token': 'str',
         'openai_url': 'str',
         'organization_id': 'str',
         'project_id': 'str'
@@ -44,12 +49,17 @@ class OpenAITargetDetails(object):
     attribute_map = {
         'api_key': 'api_key',
         'api_key_id': 'api_key_id',
+        'auth_mode': 'auth_mode',
+        'oauth_access_token': 'oauth_access_token',
+        'oauth_account_id': 'oauth_account_id',
+        'oauth_last_refresh': 'oauth_last_refresh',
+        'oauth_refresh_token': 'oauth_refresh_token',
         'openai_url': 'openai_url',
         'organization_id': 'organization_id',
         'project_id': 'project_id'
     }
 
-    def __init__(self, api_key=None, api_key_id=None, openai_url=None, organization_id=None, project_id=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, api_key=None, api_key_id=None, auth_mode=None, oauth_access_token=None, oauth_account_id=None, oauth_last_refresh=None, oauth_refresh_token=None, openai_url=None, organization_id=None, project_id=None, local_vars_configuration=None):  # noqa: E501
         """OpenAITargetDetails - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -57,6 +67,11 @@ class OpenAITargetDetails(object):
 
         self._api_key = None
         self._api_key_id = None
+        self._auth_mode = None
+        self._oauth_access_token = None
+        self._oauth_account_id = None
+        self._oauth_last_refresh = None
+        self._oauth_refresh_token = None
         self._openai_url = None
         self._organization_id = None
         self._project_id = None
@@ -66,6 +81,16 @@ class OpenAITargetDetails(object):
             self.api_key = api_key
         if api_key_id is not None:
             self.api_key_id = api_key_id
+        if auth_mode is not None:
+            self.auth_mode = auth_mode
+        if oauth_access_token is not None:
+            self.oauth_access_token = oauth_access_token
+        if oauth_account_id is not None:
+            self.oauth_account_id = oauth_account_id
+        if oauth_last_refresh is not None:
+            self.oauth_last_refresh = oauth_last_refresh
+        if oauth_refresh_token is not None:
+            self.oauth_refresh_token = oauth_refresh_token
         if openai_url is not None:
             self.openai_url = openai_url
         if organization_id is not None:
@@ -114,6 +139,121 @@ class OpenAITargetDetails(object):
         """
 
         self._api_key_id = api_key_id
+
+    @property
+    def auth_mode(self):
+        """Gets the auth_mode of this OpenAITargetDetails.  # noqa: E501
+
+        AuthMode selects how this target authenticates. Empty (default) uses ApiKey as a static bearer token against BaseURL, matching all pre-existing behavior. OpenAIAuthModeChatGPTOAuth instead uses the OAuth* fields below.  # noqa: E501
+
+        :return: The auth_mode of this OpenAITargetDetails.  # noqa: E501
+        :rtype: str
+        """
+        return self._auth_mode
+
+    @auth_mode.setter
+    def auth_mode(self, auth_mode):
+        """Sets the auth_mode of this OpenAITargetDetails.
+
+        AuthMode selects how this target authenticates. Empty (default) uses ApiKey as a static bearer token against BaseURL, matching all pre-existing behavior. OpenAIAuthModeChatGPTOAuth instead uses the OAuth* fields below.  # noqa: E501
+
+        :param auth_mode: The auth_mode of this OpenAITargetDetails.  # noqa: E501
+        :type: str
+        """
+
+        self._auth_mode = auth_mode
+
+    @property
+    def oauth_access_token(self):
+        """Gets the oauth_access_token of this OpenAITargetDetails.  # noqa: E501
+
+        OAuthAccessToken is the current ChatGPT-issued access token (the `tokens.access_token` field of the customer's local auth.json). Akeyless refreshes this automatically; do not treat it as long-lived.  # noqa: E501
+
+        :return: The oauth_access_token of this OpenAITargetDetails.  # noqa: E501
+        :rtype: str
+        """
+        return self._oauth_access_token
+
+    @oauth_access_token.setter
+    def oauth_access_token(self, oauth_access_token):
+        """Sets the oauth_access_token of this OpenAITargetDetails.
+
+        OAuthAccessToken is the current ChatGPT-issued access token (the `tokens.access_token` field of the customer's local auth.json). Akeyless refreshes this automatically; do not treat it as long-lived.  # noqa: E501
+
+        :param oauth_access_token: The oauth_access_token of this OpenAITargetDetails.  # noqa: E501
+        :type: str
+        """
+
+        self._oauth_access_token = oauth_access_token
+
+    @property
+    def oauth_account_id(self):
+        """Gets the oauth_account_id of this OpenAITargetDetails.  # noqa: E501
+
+        OAuthAccountID is the ChatGPT workspace/account id (`tokens.account_id` in auth.json), required on every request to the ChatGPT backend.  # noqa: E501
+
+        :return: The oauth_account_id of this OpenAITargetDetails.  # noqa: E501
+        :rtype: str
+        """
+        return self._oauth_account_id
+
+    @oauth_account_id.setter
+    def oauth_account_id(self, oauth_account_id):
+        """Sets the oauth_account_id of this OpenAITargetDetails.
+
+        OAuthAccountID is the ChatGPT workspace/account id (`tokens.account_id` in auth.json), required on every request to the ChatGPT backend.  # noqa: E501
+
+        :param oauth_account_id: The oauth_account_id of this OpenAITargetDetails.  # noqa: E501
+        :type: str
+        """
+
+        self._oauth_account_id = oauth_account_id
+
+    @property
+    def oauth_last_refresh(self):
+        """Gets the oauth_last_refresh of this OpenAITargetDetails.  # noqa: E501
+
+        OAuthLastRefresh is the RFC3339 timestamp of the last successful Akeyless-performed refresh; used as a fallback expiry heuristic when the access token's JWT exp claim can't be parsed.  # noqa: E501
+
+        :return: The oauth_last_refresh of this OpenAITargetDetails.  # noqa: E501
+        :rtype: str
+        """
+        return self._oauth_last_refresh
+
+    @oauth_last_refresh.setter
+    def oauth_last_refresh(self, oauth_last_refresh):
+        """Sets the oauth_last_refresh of this OpenAITargetDetails.
+
+        OAuthLastRefresh is the RFC3339 timestamp of the last successful Akeyless-performed refresh; used as a fallback expiry heuristic when the access token's JWT exp claim can't be parsed.  # noqa: E501
+
+        :param oauth_last_refresh: The oauth_last_refresh of this OpenAITargetDetails.  # noqa: E501
+        :type: str
+        """
+
+        self._oauth_last_refresh = oauth_last_refresh
+
+    @property
+    def oauth_refresh_token(self):
+        """Gets the oauth_refresh_token of this OpenAITargetDetails.  # noqa: E501
+
+        OAuthRefreshToken mints new access tokens. It rotates on every refresh - Akeyless persists the new value after each successful refresh, so the previous value becomes invalid.  # noqa: E501
+
+        :return: The oauth_refresh_token of this OpenAITargetDetails.  # noqa: E501
+        :rtype: str
+        """
+        return self._oauth_refresh_token
+
+    @oauth_refresh_token.setter
+    def oauth_refresh_token(self, oauth_refresh_token):
+        """Sets the oauth_refresh_token of this OpenAITargetDetails.
+
+        OAuthRefreshToken mints new access tokens. It rotates on every refresh - Akeyless persists the new value after each successful refresh, so the previous value becomes invalid.  # noqa: E501
+
+        :param oauth_refresh_token: The oauth_refresh_token of this OpenAITargetDetails.  # noqa: E501
+        :type: str
+        """
+
+        self._oauth_refresh_token = oauth_refresh_token
 
     @property
     def openai_url(self):

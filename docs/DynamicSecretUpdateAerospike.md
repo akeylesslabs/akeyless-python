@@ -1,0 +1,31 @@
+# DynamicSecretUpdateAerospike
+
+dynamicSecretUpdateAerospike is a command that updates Aerospike dynamic secret
+## Properties
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**aerospike_roles** | **list[str]** |  | [optional] 
+**ara_enabled** | **bool** | Enable or disable Agentic Runtime Authority rule enforcement for this item. Mirrors commands.AgenticRulesParams.AraEnabled. | [optional] 
+**custom_username_template** | **str** | Customize how temporary usernames are generated using go template | [optional] 
+**delete_protection** | **str** | Protection from accidental deletion of this object [true/false] | [optional] 
+**description** | **str** | Description of the object | [optional] 
+**input_rule** | **list[str]** | Agentic input rule in name&#x3D;...,rule&#x3D;... format (e.g. name&#x3D;rule1,rule&#x3D;Sanitize input) Mirrors commands.AgenticRulesParams — kept separate because ResourceDS cannot embed it (different package, different struct layout). | [optional] 
+**item_custom_fields** | **dict(str, str)** | Additional custom fields to associate with the item | [optional] 
+**json** | **bool** | Set output format to JSON | [optional] [default to False]
+**name** | **str** | Dynamic secret name | 
+**new_name** | **str** | Dynamic secret name | [optional] 
+**output_rule** | **list[str]** | Agentic output rule in name&#x3D;...,rule&#x3D;... format (e.g. name&#x3D;rule1,rule&#x3D;Mask secrets) | [optional] 
+**password_length** | **str** | The length of the password to be generated | [optional] 
+**skip_dry_run** | **str** | If set, dry-run will be skipped | [optional] 
+**target_name** | **str** |  | [optional] 
+**token** | **str** | Authentication token (see &#x60;/auth&#x60; and &#x60;/configure&#x60;) | [optional] 
+**uid_token** | **str** | The universal identity token, Required only for universal_identity authentication | [optional] 
+**use_capital_letters** | **str** | Specifies whether the generated temporary password must contain at least one uppercase character from the ISO basic Latin alphabet (A to Z). [true/false] | [optional] 
+**use_lower_letters** | **str** | Specifies whether the generated temporary password must contain at least one lowercase character from the ISO basic Latin alphabet (a to z). [true/false] | [optional] 
+**use_numbers** | **str** | Specifies whether the generated temporary password must contain at least one numeric character (0 to 9). [true/false] | [optional] 
+**use_special_characters** | **str** |  | [optional] 
+**user_ttl** | **str** |  | [optional] 
+
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+
+

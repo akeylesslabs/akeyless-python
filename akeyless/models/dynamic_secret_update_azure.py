@@ -35,6 +35,7 @@ class DynamicSecretUpdateAzure(object):
     """
     openapi_types = {
         'app_obj_id': 'str',
+        'ara_enabled': 'bool',
         'azure_administrative_unit': 'str',
         'azure_client_id': 'str',
         'azure_client_secret': 'str',
@@ -57,6 +58,7 @@ class DynamicSecretUpdateAzure(object):
         'secure_access_web': 'bool',
         'secure_access_web_browsing': 'bool',
         'secure_access_web_proxy': 'bool',
+        'skip_dry_run': 'str',
         'tags': 'list[str]',
         'target_name': 'str',
         'token': 'str',
@@ -75,6 +77,7 @@ class DynamicSecretUpdateAzure(object):
 
     attribute_map = {
         'app_obj_id': 'app-obj-id',
+        'ara_enabled': 'ara-enabled',
         'azure_administrative_unit': 'azure-administrative-unit',
         'azure_client_id': 'azure-client-id',
         'azure_client_secret': 'azure-client-secret',
@@ -97,6 +100,7 @@ class DynamicSecretUpdateAzure(object):
         'secure_access_web': 'secure-access-web',
         'secure_access_web_browsing': 'secure-access-web-browsing',
         'secure_access_web_proxy': 'secure-access-web-proxy',
+        'skip_dry_run': 'skip_dry_run',
         'tags': 'tags',
         'target_name': 'target-name',
         'token': 'token',
@@ -113,13 +117,14 @@ class DynamicSecretUpdateAzure(object):
         'user_ttl': 'user-ttl'
     }
 
-    def __init__(self, app_obj_id=None, azure_administrative_unit=None, azure_client_id=None, azure_client_secret=None, azure_tenant_id=None, custom_username_template=None, delete_protection=None, description=None, fixed_user_claim_keyname='false', fixed_user_only=False, input_rule=None, item_custom_fields=None, json=False, name=None, new_name=None, output_rule=None, password_length=None, producer_encryption_key_name=None, secure_access_enable=None, secure_access_url=None, secure_access_web=True, secure_access_web_browsing=False, secure_access_web_proxy=False, tags=None, target_name=None, token=None, uid_token=None, use_capital_letters=None, use_lower_letters=None, use_numbers=None, use_special_characters=None, user_group_obj_id=None, user_portal_access=False, user_principal_name=None, user_programmatic_access=False, user_role_template_id=None, user_ttl='60m', local_vars_configuration=None):  # noqa: E501
+    def __init__(self, app_obj_id=None, ara_enabled=None, azure_administrative_unit=None, azure_client_id=None, azure_client_secret=None, azure_tenant_id=None, custom_username_template=None, delete_protection=None, description=None, fixed_user_claim_keyname='false', fixed_user_only=False, input_rule=None, item_custom_fields=None, json=False, name=None, new_name=None, output_rule=None, password_length=None, producer_encryption_key_name=None, secure_access_enable=None, secure_access_url=None, secure_access_web=True, secure_access_web_browsing=False, secure_access_web_proxy=False, skip_dry_run=None, tags=None, target_name=None, token=None, uid_token=None, use_capital_letters=None, use_lower_letters=None, use_numbers=None, use_special_characters=None, user_group_obj_id=None, user_portal_access=False, user_principal_name=None, user_programmatic_access=False, user_role_template_id=None, user_ttl='60m', local_vars_configuration=None):  # noqa: E501
         """DynamicSecretUpdateAzure - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._app_obj_id = None
+        self._ara_enabled = None
         self._azure_administrative_unit = None
         self._azure_client_id = None
         self._azure_client_secret = None
@@ -142,6 +147,7 @@ class DynamicSecretUpdateAzure(object):
         self._secure_access_web = None
         self._secure_access_web_browsing = None
         self._secure_access_web_proxy = None
+        self._skip_dry_run = None
         self._tags = None
         self._target_name = None
         self._token = None
@@ -160,6 +166,8 @@ class DynamicSecretUpdateAzure(object):
 
         if app_obj_id is not None:
             self.app_obj_id = app_obj_id
+        if ara_enabled is not None:
+            self.ara_enabled = ara_enabled
         if azure_administrative_unit is not None:
             self.azure_administrative_unit = azure_administrative_unit
         if azure_client_id is not None:
@@ -203,6 +211,8 @@ class DynamicSecretUpdateAzure(object):
             self.secure_access_web_browsing = secure_access_web_browsing
         if secure_access_web_proxy is not None:
             self.secure_access_web_proxy = secure_access_web_proxy
+        if skip_dry_run is not None:
+            self.skip_dry_run = skip_dry_run
         if tags is not None:
             self.tags = tags
         if target_name is not None:
@@ -254,6 +264,29 @@ class DynamicSecretUpdateAzure(object):
         """
 
         self._app_obj_id = app_obj_id
+
+    @property
+    def ara_enabled(self):
+        """Gets the ara_enabled of this DynamicSecretUpdateAzure.  # noqa: E501
+
+        Enable or disable Agentic Runtime Authority rule enforcement for this item. Mirrors commands.AgenticRulesParams.AraEnabled.  # noqa: E501
+
+        :return: The ara_enabled of this DynamicSecretUpdateAzure.  # noqa: E501
+        :rtype: bool
+        """
+        return self._ara_enabled
+
+    @ara_enabled.setter
+    def ara_enabled(self, ara_enabled):
+        """Sets the ara_enabled of this DynamicSecretUpdateAzure.
+
+        Enable or disable Agentic Runtime Authority rule enforcement for this item. Mirrors commands.AgenticRulesParams.AraEnabled.  # noqa: E501
+
+        :param ara_enabled: The ara_enabled of this DynamicSecretUpdateAzure.  # noqa: E501
+        :type: bool
+        """
+
+        self._ara_enabled = ara_enabled
 
     @property
     def azure_administrative_unit(self):
@@ -762,6 +795,29 @@ class DynamicSecretUpdateAzure(object):
         """
 
         self._secure_access_web_proxy = secure_access_web_proxy
+
+    @property
+    def skip_dry_run(self):
+        """Gets the skip_dry_run of this DynamicSecretUpdateAzure.  # noqa: E501
+
+        If set, dry-run will be skipped  # noqa: E501
+
+        :return: The skip_dry_run of this DynamicSecretUpdateAzure.  # noqa: E501
+        :rtype: str
+        """
+        return self._skip_dry_run
+
+    @skip_dry_run.setter
+    def skip_dry_run(self, skip_dry_run):
+        """Sets the skip_dry_run of this DynamicSecretUpdateAzure.
+
+        If set, dry-run will be skipped  # noqa: E501
+
+        :param skip_dry_run: The skip_dry_run of this DynamicSecretUpdateAzure.  # noqa: E501
+        :type: str
+        """
+
+        self._skip_dry_run = skip_dry_run
 
     @property
     def tags(self):

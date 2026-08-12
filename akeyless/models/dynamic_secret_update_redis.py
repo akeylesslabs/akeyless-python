@@ -35,6 +35,7 @@ class DynamicSecretUpdateRedis(object):
     """
     openapi_types = {
         'acl_rules': 'str',
+        'ara_enabled': 'bool',
         'custom_username_template': 'str',
         'delete_protection': 'str',
         'description': 'str',
@@ -49,6 +50,7 @@ class DynamicSecretUpdateRedis(object):
         'password_length': 'str',
         'port': 'str',
         'producer_encryption_key_name': 'str',
+        'skip_dry_run': 'str',
         'ssl': 'bool',
         'ssl_certificate': 'str',
         'tags': 'list[str]',
@@ -65,6 +67,7 @@ class DynamicSecretUpdateRedis(object):
 
     attribute_map = {
         'acl_rules': 'acl-rules',
+        'ara_enabled': 'ara-enabled',
         'custom_username_template': 'custom-username-template',
         'delete_protection': 'delete_protection',
         'description': 'description',
@@ -79,6 +82,7 @@ class DynamicSecretUpdateRedis(object):
         'password_length': 'password-length',
         'port': 'port',
         'producer_encryption_key_name': 'producer-encryption-key-name',
+        'skip_dry_run': 'skip_dry_run',
         'ssl': 'ssl',
         'ssl_certificate': 'ssl-certificate',
         'tags': 'tags',
@@ -93,13 +97,14 @@ class DynamicSecretUpdateRedis(object):
         'username': 'username'
     }
 
-    def __init__(self, acl_rules=None, custom_username_template=None, delete_protection=None, description=None, host='127.0.0.1', input_rule=None, item_custom_fields=None, json=False, name=None, new_name=None, output_rule=None, password=None, password_length=None, port='6379', producer_encryption_key_name=None, ssl=False, ssl_certificate=None, tags=None, target_name=None, token=None, uid_token=None, use_capital_letters=None, use_lower_letters=None, use_numbers=None, use_special_characters=None, user_ttl='60m', username=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, acl_rules=None, ara_enabled=None, custom_username_template=None, delete_protection=None, description=None, host='127.0.0.1', input_rule=None, item_custom_fields=None, json=False, name=None, new_name=None, output_rule=None, password=None, password_length=None, port='6379', producer_encryption_key_name=None, skip_dry_run=None, ssl=False, ssl_certificate=None, tags=None, target_name=None, token=None, uid_token=None, use_capital_letters=None, use_lower_letters=None, use_numbers=None, use_special_characters=None, user_ttl='60m', username=None, local_vars_configuration=None):  # noqa: E501
         """DynamicSecretUpdateRedis - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._acl_rules = None
+        self._ara_enabled = None
         self._custom_username_template = None
         self._delete_protection = None
         self._description = None
@@ -114,6 +119,7 @@ class DynamicSecretUpdateRedis(object):
         self._password_length = None
         self._port = None
         self._producer_encryption_key_name = None
+        self._skip_dry_run = None
         self._ssl = None
         self._ssl_certificate = None
         self._tags = None
@@ -130,6 +136,8 @@ class DynamicSecretUpdateRedis(object):
 
         if acl_rules is not None:
             self.acl_rules = acl_rules
+        if ara_enabled is not None:
+            self.ara_enabled = ara_enabled
         if custom_username_template is not None:
             self.custom_username_template = custom_username_template
         if delete_protection is not None:
@@ -157,6 +165,8 @@ class DynamicSecretUpdateRedis(object):
             self.port = port
         if producer_encryption_key_name is not None:
             self.producer_encryption_key_name = producer_encryption_key_name
+        if skip_dry_run is not None:
+            self.skip_dry_run = skip_dry_run
         if ssl is not None:
             self.ssl = ssl
         if ssl_certificate is not None:
@@ -204,6 +214,29 @@ class DynamicSecretUpdateRedis(object):
         """
 
         self._acl_rules = acl_rules
+
+    @property
+    def ara_enabled(self):
+        """Gets the ara_enabled of this DynamicSecretUpdateRedis.  # noqa: E501
+
+        Enable or disable Agentic Runtime Authority rule enforcement for this item. Mirrors commands.AgenticRulesParams.AraEnabled.  # noqa: E501
+
+        :return: The ara_enabled of this DynamicSecretUpdateRedis.  # noqa: E501
+        :rtype: bool
+        """
+        return self._ara_enabled
+
+    @ara_enabled.setter
+    def ara_enabled(self, ara_enabled):
+        """Sets the ara_enabled of this DynamicSecretUpdateRedis.
+
+        Enable or disable Agentic Runtime Authority rule enforcement for this item. Mirrors commands.AgenticRulesParams.AraEnabled.  # noqa: E501
+
+        :param ara_enabled: The ara_enabled of this DynamicSecretUpdateRedis.  # noqa: E501
+        :type: bool
+        """
+
+        self._ara_enabled = ara_enabled
 
     @property
     def custom_username_template(self):
@@ -528,6 +561,29 @@ class DynamicSecretUpdateRedis(object):
         """
 
         self._producer_encryption_key_name = producer_encryption_key_name
+
+    @property
+    def skip_dry_run(self):
+        """Gets the skip_dry_run of this DynamicSecretUpdateRedis.  # noqa: E501
+
+        If set, dry-run will be skipped  # noqa: E501
+
+        :return: The skip_dry_run of this DynamicSecretUpdateRedis.  # noqa: E501
+        :rtype: str
+        """
+        return self._skip_dry_run
+
+    @skip_dry_run.setter
+    def skip_dry_run(self, skip_dry_run):
+        """Sets the skip_dry_run of this DynamicSecretUpdateRedis.
+
+        If set, dry-run will be skipped  # noqa: E501
+
+        :param skip_dry_run: The skip_dry_run of this DynamicSecretUpdateRedis.  # noqa: E501
+        :type: str
+        """
+
+        self._skip_dry_run = skip_dry_run
 
     @property
     def ssl(self):

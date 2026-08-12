@@ -4,6 +4,7 @@ rotatedSecretCreateSplunk is a command that creates a rotated secret for a Splun
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**ara_enabled** | **bool** | Enable or disable Agentic Runtime Authority rule enforcement for this item. When false, user-defined input/output rules are stored but not enforced; the base security validation still runs.  AraEnabled is tri-state (nil/true/false), not a plain bool: it self-encodes its wire value (see akl.OptionalBool) so an explicit false survives the curl-proxy relay instead of being dropped like a default-false bool flag. | [optional] 
 **audience** | **str** | Token audience for Splunk token creation (required for rotator-type&#x3D;token) | [optional] 
 **authentication_credentials** | **str** | The credentials to connect with use-user-creds/use-target-creds | [optional] [default to 'use-user-creds']
 **auto_rotate** | **str** |  | [optional] 
@@ -26,6 +27,7 @@ Name | Type | Description | Notes
 **rotation_hour** | **int** |  | [optional] 
 **rotation_interval** | **str** |  | [optional] 
 **rotator_type** | **str** | The rotator type. options: [target/password/token/hec-token] | 
+**skip_dry_run** | **str** | If set, dry-run will be skipped | [optional] 
 **splunk_token** | **str** | Current Splunk authentication token to store (relevant only for rotator-type&#x3D;token). If not provided, a new token will be created in Splunk. | [optional] 
 **tags** | **list[str]** | Add tags attached to this object | [optional] 
 **target_name** | **str** | The target name to associate | 

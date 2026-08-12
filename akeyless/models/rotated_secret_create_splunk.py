@@ -34,6 +34,7 @@ class RotatedSecretCreateSplunk(object):
                             and the value is json key in definition.
     """
     openapi_types = {
+        'ara_enabled': 'bool',
         'audience': 'str',
         'authentication_credentials': 'str',
         'auto_rotate': 'str',
@@ -56,6 +57,7 @@ class RotatedSecretCreateSplunk(object):
         'rotation_hour': 'int',
         'rotation_interval': 'str',
         'rotator_type': 'str',
+        'skip_dry_run': 'str',
         'splunk_token': 'str',
         'tags': 'list[str]',
         'target_name': 'str',
@@ -69,6 +71,7 @@ class RotatedSecretCreateSplunk(object):
     }
 
     attribute_map = {
+        'ara_enabled': 'ara-enabled',
         'audience': 'audience',
         'authentication_credentials': 'authentication-credentials',
         'auto_rotate': 'auto-rotate',
@@ -91,6 +94,7 @@ class RotatedSecretCreateSplunk(object):
         'rotation_hour': 'rotation-hour',
         'rotation_interval': 'rotation-interval',
         'rotator_type': 'rotator-type',
+        'skip_dry_run': 'skip_dry_run',
         'splunk_token': 'splunk-token',
         'tags': 'tags',
         'target_name': 'target-name',
@@ -103,12 +107,13 @@ class RotatedSecretCreateSplunk(object):
         'use_special_characters': 'use-special-characters'
     }
 
-    def __init__(self, audience=None, authentication_credentials='use-user-creds', auto_rotate=None, delete_protection=None, description=None, expiration_date=None, hec_token=None, hec_token_name=None, input_rule=None, item_custom_fields=None, json=False, key=None, max_versions=None, name=None, output_rule=None, password_length=None, rotated_password=None, rotated_username=None, rotation_event_in=None, rotation_hour=None, rotation_interval=None, rotator_type=None, splunk_token=None, tags=None, target_name=None, token=None, token_owner=None, uid_token=None, use_capital_letters=None, use_lower_letters=None, use_numbers=None, use_special_characters=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, ara_enabled=None, audience=None, authentication_credentials='use-user-creds', auto_rotate=None, delete_protection=None, description=None, expiration_date=None, hec_token=None, hec_token_name=None, input_rule=None, item_custom_fields=None, json=False, key=None, max_versions=None, name=None, output_rule=None, password_length=None, rotated_password=None, rotated_username=None, rotation_event_in=None, rotation_hour=None, rotation_interval=None, rotator_type=None, skip_dry_run=None, splunk_token=None, tags=None, target_name=None, token=None, token_owner=None, uid_token=None, use_capital_letters=None, use_lower_letters=None, use_numbers=None, use_special_characters=None, local_vars_configuration=None):  # noqa: E501
         """RotatedSecretCreateSplunk - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
+        self._ara_enabled = None
         self._audience = None
         self._authentication_credentials = None
         self._auto_rotate = None
@@ -131,6 +136,7 @@ class RotatedSecretCreateSplunk(object):
         self._rotation_hour = None
         self._rotation_interval = None
         self._rotator_type = None
+        self._skip_dry_run = None
         self._splunk_token = None
         self._tags = None
         self._target_name = None
@@ -143,6 +149,8 @@ class RotatedSecretCreateSplunk(object):
         self._use_special_characters = None
         self.discriminator = None
 
+        if ara_enabled is not None:
+            self.ara_enabled = ara_enabled
         if audience is not None:
             self.audience = audience
         if authentication_credentials is not None:
@@ -185,6 +193,8 @@ class RotatedSecretCreateSplunk(object):
         if rotation_interval is not None:
             self.rotation_interval = rotation_interval
         self.rotator_type = rotator_type
+        if skip_dry_run is not None:
+            self.skip_dry_run = skip_dry_run
         if splunk_token is not None:
             self.splunk_token = splunk_token
         if tags is not None:
@@ -204,6 +214,29 @@ class RotatedSecretCreateSplunk(object):
             self.use_numbers = use_numbers
         if use_special_characters is not None:
             self.use_special_characters = use_special_characters
+
+    @property
+    def ara_enabled(self):
+        """Gets the ara_enabled of this RotatedSecretCreateSplunk.  # noqa: E501
+
+        Enable or disable Agentic Runtime Authority rule enforcement for this item. When false, user-defined input/output rules are stored but not enforced; the base security validation still runs.  AraEnabled is tri-state (nil/true/false), not a plain bool: it self-encodes its wire value (see akl.OptionalBool) so an explicit false survives the curl-proxy relay instead of being dropped like a default-false bool flag.  # noqa: E501
+
+        :return: The ara_enabled of this RotatedSecretCreateSplunk.  # noqa: E501
+        :rtype: bool
+        """
+        return self._ara_enabled
+
+    @ara_enabled.setter
+    def ara_enabled(self, ara_enabled):
+        """Sets the ara_enabled of this RotatedSecretCreateSplunk.
+
+        Enable or disable Agentic Runtime Authority rule enforcement for this item. When false, user-defined input/output rules are stored but not enforced; the base security validation still runs.  AraEnabled is tri-state (nil/true/false), not a plain bool: it self-encodes its wire value (see akl.OptionalBool) so an explicit false survives the curl-proxy relay instead of being dropped like a default-false bool flag.  # noqa: E501
+
+        :param ara_enabled: The ara_enabled of this RotatedSecretCreateSplunk.  # noqa: E501
+        :type: bool
+        """
+
+        self._ara_enabled = ara_enabled
 
     @property
     def audience(self):
@@ -706,6 +739,29 @@ class RotatedSecretCreateSplunk(object):
             raise ValueError("Invalid value for `rotator_type`, must not be `None`")  # noqa: E501
 
         self._rotator_type = rotator_type
+
+    @property
+    def skip_dry_run(self):
+        """Gets the skip_dry_run of this RotatedSecretCreateSplunk.  # noqa: E501
+
+        If set, dry-run will be skipped  # noqa: E501
+
+        :return: The skip_dry_run of this RotatedSecretCreateSplunk.  # noqa: E501
+        :rtype: str
+        """
+        return self._skip_dry_run
+
+    @skip_dry_run.setter
+    def skip_dry_run(self, skip_dry_run):
+        """Sets the skip_dry_run of this RotatedSecretCreateSplunk.
+
+        If set, dry-run will be skipped  # noqa: E501
+
+        :param skip_dry_run: The skip_dry_run of this RotatedSecretCreateSplunk.  # noqa: E501
+        :type: str
+        """
+
+        self._skip_dry_run = skip_dry_run
 
     @property
     def splunk_token(self):

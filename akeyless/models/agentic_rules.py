@@ -34,29 +34,57 @@ class AgenticRules(object):
                             and the value is json key in definition.
     """
     openapi_types = {
+        'enabled': 'bool',
         'input_rules': 'list[AgenticRule]',
         'output_rules': 'list[AgenticRule]'
     }
 
     attribute_map = {
+        'enabled': 'enabled',
         'input_rules': 'input_rules',
         'output_rules': 'output_rules'
     }
 
-    def __init__(self, input_rules=None, output_rules=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, enabled=None, input_rules=None, output_rules=None, local_vars_configuration=None):  # noqa: E501
         """AgenticRules - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
+        self._enabled = None
         self._input_rules = None
         self._output_rules = None
         self.discriminator = None
 
+        if enabled is not None:
+            self.enabled = enabled
         if input_rules is not None:
             self.input_rules = input_rules
         if output_rules is not None:
             self.output_rules = output_rules
+
+    @property
+    def enabled(self):
+        """Gets the enabled of this AgenticRules.  # noqa: E501
+
+        Enabled is a pointer so rules persisted before this field existed (nil) keep enforcing, rather than silently switching off.  # noqa: E501
+
+        :return: The enabled of this AgenticRules.  # noqa: E501
+        :rtype: bool
+        """
+        return self._enabled
+
+    @enabled.setter
+    def enabled(self, enabled):
+        """Sets the enabled of this AgenticRules.
+
+        Enabled is a pointer so rules persisted before this field existed (nil) keep enforcing, rather than silently switching off.  # noqa: E501
+
+        :param enabled: The enabled of this AgenticRules.  # noqa: E501
+        :type: bool
+        """
+
+        self._enabled = enabled
 
     @property
     def input_rules(self):

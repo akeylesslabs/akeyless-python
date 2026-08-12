@@ -4,6 +4,7 @@ dynamicSecretCreateGke is a command that creates gke dynamic secret
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**ara_enabled** | **bool** | Enable or disable Agentic Runtime Authority rule enforcement for this item. Mirrors commands.AgenticRulesParams.AraEnabled. | [optional] 
 **delete_protection** | **str** | Protection from accidental deletion of this object [true/false] | [optional] 
 **description** | **str** | Description of the object | [optional] 
 **gke_account_key** | **str** | GKE Service Account key file path | [optional] 
@@ -24,6 +25,7 @@ Name | Type | Description | Notes
 **secure_access_delay** | **int** | The delay duration, in seconds, to wait after generating just-in-time credentials. Accepted range: 0-120 seconds | [optional] 
 **secure_access_enable** | **str** | Enable/Disable secure remote access [true/false] | [optional] 
 **secure_access_web** | **bool** | Enable Web Secure Remote Access | [optional] [default to False]
+**skip_dry_run** | **str** | If set, dry-run will be skipped | [optional] 
 **tags** | **list[str]** | Add tags attached to this object | [optional] 
 **target_name** | **str** | Target name | [optional] 
 **token** | **str** | Authentication token (see &#x60;/auth&#x60; and &#x60;/configure&#x60;) | [optional] 

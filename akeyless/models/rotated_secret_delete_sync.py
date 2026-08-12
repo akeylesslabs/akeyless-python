@@ -35,9 +35,11 @@ class RotatedSecretDeleteSync(object):
     """
     openapi_types = {
         'delete_from_usc': 'bool',
+        'environments': 'str',
         'json': 'bool',
         'name': 'str',
         'remote_secret_name': 'str',
+        'repositories': 'str',
         'token': 'str',
         'uid_token': 'str',
         'usc_name': 'str'
@@ -45,24 +47,28 @@ class RotatedSecretDeleteSync(object):
 
     attribute_map = {
         'delete_from_usc': 'delete-from-usc',
+        'environments': 'environments',
         'json': 'json',
         'name': 'name',
         'remote_secret_name': 'remote-secret-name',
+        'repositories': 'repositories',
         'token': 'token',
         'uid_token': 'uid-token',
         'usc_name': 'usc-name'
     }
 
-    def __init__(self, delete_from_usc=False, json=False, name=None, remote_secret_name=None, token=None, uid_token=None, usc_name=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, delete_from_usc=False, environments=None, json=False, name=None, remote_secret_name=None, repositories=None, token=None, uid_token=None, usc_name=None, local_vars_configuration=None):  # noqa: E501
         """RotatedSecretDeleteSync - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._delete_from_usc = None
+        self._environments = None
         self._json = None
         self._name = None
         self._remote_secret_name = None
+        self._repositories = None
         self._token = None
         self._uid_token = None
         self._usc_name = None
@@ -70,11 +76,15 @@ class RotatedSecretDeleteSync(object):
 
         if delete_from_usc is not None:
             self.delete_from_usc = delete_from_usc
+        if environments is not None:
+            self.environments = environments
         if json is not None:
             self.json = json
         self.name = name
         if remote_secret_name is not None:
             self.remote_secret_name = remote_secret_name
+        if repositories is not None:
+            self.repositories = repositories
         if token is not None:
             self.token = token
         if uid_token is not None:
@@ -103,6 +113,29 @@ class RotatedSecretDeleteSync(object):
         """
 
         self._delete_from_usc = delete_from_usc
+
+    @property
+    def environments(self):
+        """Gets the environments of this RotatedSecretDeleteSync.  # noqa: E501
+
+        GitHub environments to sync to. Relevant only for GitHub targets. Syncs to all environments defined on the selected USC by default, or to one or more specific repositories associated with that USC item when specified (e.g. --environments repo1/env1,repo2/env2).  # noqa: E501
+
+        :return: The environments of this RotatedSecretDeleteSync.  # noqa: E501
+        :rtype: str
+        """
+        return self._environments
+
+    @environments.setter
+    def environments(self, environments):
+        """Sets the environments of this RotatedSecretDeleteSync.
+
+        GitHub environments to sync to. Relevant only for GitHub targets. Syncs to all environments defined on the selected USC by default, or to one or more specific repositories associated with that USC item when specified (e.g. --environments repo1/env1,repo2/env2).  # noqa: E501
+
+        :param environments: The environments of this RotatedSecretDeleteSync.  # noqa: E501
+        :type: str
+        """
+
+        self._environments = environments
 
     @property
     def json(self):
@@ -174,6 +207,29 @@ class RotatedSecretDeleteSync(object):
         """
 
         self._remote_secret_name = remote_secret_name
+
+    @property
+    def repositories(self):
+        """Gets the repositories of this RotatedSecretDeleteSync.  # noqa: E501
+
+        GitHub repositories to delete from. Defaults to all repositories available on the selected USC. GitHub repositories to sync to. Relevant only for GitHub targets. Syncs to all repositories defined on the selected USC by default, or to one or more specific repositories associated with that USC item when specified (e.g. --repositories repo1,repo2).  # noqa: E501
+
+        :return: The repositories of this RotatedSecretDeleteSync.  # noqa: E501
+        :rtype: str
+        """
+        return self._repositories
+
+    @repositories.setter
+    def repositories(self, repositories):
+        """Sets the repositories of this RotatedSecretDeleteSync.
+
+        GitHub repositories to delete from. Defaults to all repositories available on the selected USC. GitHub repositories to sync to. Relevant only for GitHub targets. Syncs to all repositories defined on the selected USC by default, or to one or more specific repositories associated with that USC item when specified (e.g. --repositories repo1,repo2).  # noqa: E501
+
+        :param repositories: The repositories of this RotatedSecretDeleteSync.  # noqa: E501
+        :type: str
+        """
+
+        self._repositories = repositories
 
     @property
     def token(self):

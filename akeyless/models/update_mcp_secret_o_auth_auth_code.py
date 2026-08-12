@@ -35,6 +35,7 @@ class UpdateMcpSecretOAuthAuthCode(object):
     """
     openapi_types = {
         'accessibility': 'str',
+        'ara_enabled': 'bool',
         'input_rule': 'list[str]',
         'json': 'bool',
         'keep_prev_version': 'str',
@@ -55,6 +56,7 @@ class UpdateMcpSecretOAuthAuthCode(object):
 
     attribute_map = {
         'accessibility': 'accessibility',
+        'ara_enabled': 'ara-enabled',
         'input_rule': 'input-rule',
         'json': 'json',
         'keep_prev_version': 'keep-prev-version',
@@ -73,13 +75,14 @@ class UpdateMcpSecretOAuthAuthCode(object):
         'url': 'url'
     }
 
-    def __init__(self, accessibility='regular', input_rule=None, json=False, keep_prev_version=None, key=None, last_version=None, name=None, oauth_client_id=None, oauth_client_secret=None, oauth_redirect_uri=None, oauth_refresh_token=None, oauth_scopes=None, oauth_token_url=None, output_rule=None, token=None, uid_token=None, url=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, accessibility='regular', ara_enabled=None, input_rule=None, json=False, keep_prev_version=None, key=None, last_version=None, name=None, oauth_client_id=None, oauth_client_secret=None, oauth_redirect_uri=None, oauth_refresh_token=None, oauth_scopes=None, oauth_token_url=None, output_rule=None, token=None, uid_token=None, url=None, local_vars_configuration=None):  # noqa: E501
         """UpdateMcpSecretOAuthAuthCode - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._accessibility = None
+        self._ara_enabled = None
         self._input_rule = None
         self._json = None
         self._keep_prev_version = None
@@ -100,6 +103,8 @@ class UpdateMcpSecretOAuthAuthCode(object):
 
         if accessibility is not None:
             self.accessibility = accessibility
+        if ara_enabled is not None:
+            self.ara_enabled = ara_enabled
         if input_rule is not None:
             self.input_rule = input_rule
         if json is not None:
@@ -154,6 +159,29 @@ class UpdateMcpSecretOAuthAuthCode(object):
         """
 
         self._accessibility = accessibility
+
+    @property
+    def ara_enabled(self):
+        """Gets the ara_enabled of this UpdateMcpSecretOAuthAuthCode.  # noqa: E501
+
+        Enable or disable Agentic Runtime Authority rule enforcement for this item. When false, user-defined input/output rules are stored but not enforced; the base security validation still runs.  AraEnabled is tri-state (nil/true/false), not a plain bool: it self-encodes its wire value (see akl.OptionalBool) so an explicit false survives the curl-proxy relay instead of being dropped like a default-false bool flag.  # noqa: E501
+
+        :return: The ara_enabled of this UpdateMcpSecretOAuthAuthCode.  # noqa: E501
+        :rtype: bool
+        """
+        return self._ara_enabled
+
+    @ara_enabled.setter
+    def ara_enabled(self, ara_enabled):
+        """Sets the ara_enabled of this UpdateMcpSecretOAuthAuthCode.
+
+        Enable or disable Agentic Runtime Authority rule enforcement for this item. When false, user-defined input/output rules are stored but not enforced; the base security validation still runs.  AraEnabled is tri-state (nil/true/false), not a plain bool: it self-encodes its wire value (see akl.OptionalBool) so an explicit false survives the curl-proxy relay instead of being dropped like a default-false bool flag.  # noqa: E501
+
+        :param ara_enabled: The ara_enabled of this UpdateMcpSecretOAuthAuthCode.  # noqa: E501
+        :type: bool
+        """
+
+        self._ara_enabled = ara_enabled
 
     @property
     def input_rule(self):

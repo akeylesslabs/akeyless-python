@@ -34,6 +34,7 @@ class GatewayUpdateProducerCassandra(object):
                             and the value is json key in definition.
     """
     openapi_types = {
+        'ara_enabled': 'bool',
         'cassandra_creation_statements': 'str',
         'cassandra_hosts': 'str',
         'cassandra_password': 'str',
@@ -49,6 +50,7 @@ class GatewayUpdateProducerCassandra(object):
         'output_rule': 'list[str]',
         'password_length': 'str',
         'producer_encryption_key_name': 'str',
+        'skip_dry_run': 'str',
         'ssl': 'bool',
         'ssl_certificate': 'str',
         'tags': 'list[str]',
@@ -63,6 +65,7 @@ class GatewayUpdateProducerCassandra(object):
     }
 
     attribute_map = {
+        'ara_enabled': 'ara-enabled',
         'cassandra_creation_statements': 'cassandra-creation-statements',
         'cassandra_hosts': 'cassandra-hosts',
         'cassandra_password': 'cassandra-password',
@@ -78,6 +81,7 @@ class GatewayUpdateProducerCassandra(object):
         'output_rule': 'output-rule',
         'password_length': 'password-length',
         'producer_encryption_key_name': 'producer-encryption-key-name',
+        'skip_dry_run': 'skip_dry_run',
         'ssl': 'ssl',
         'ssl_certificate': 'ssl-certificate',
         'tags': 'tags',
@@ -91,12 +95,13 @@ class GatewayUpdateProducerCassandra(object):
         'user_ttl': 'user-ttl'
     }
 
-    def __init__(self, cassandra_creation_statements=None, cassandra_hosts=None, cassandra_password=None, cassandra_port='9042', cassandra_username=None, custom_username_template=None, delete_protection=None, input_rule=None, item_custom_fields=None, json=False, name=None, new_name=None, output_rule=None, password_length=None, producer_encryption_key_name=None, ssl=False, ssl_certificate=None, tags=None, target_name=None, token=None, uid_token=None, use_capital_letters=None, use_lower_letters=None, use_numbers=None, use_special_characters=None, user_ttl='60m', local_vars_configuration=None):  # noqa: E501
+    def __init__(self, ara_enabled=None, cassandra_creation_statements=None, cassandra_hosts=None, cassandra_password=None, cassandra_port='9042', cassandra_username=None, custom_username_template=None, delete_protection=None, input_rule=None, item_custom_fields=None, json=False, name=None, new_name=None, output_rule=None, password_length=None, producer_encryption_key_name=None, skip_dry_run=None, ssl=False, ssl_certificate=None, tags=None, target_name=None, token=None, uid_token=None, use_capital_letters=None, use_lower_letters=None, use_numbers=None, use_special_characters=None, user_ttl='60m', local_vars_configuration=None):  # noqa: E501
         """GatewayUpdateProducerCassandra - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
+        self._ara_enabled = None
         self._cassandra_creation_statements = None
         self._cassandra_hosts = None
         self._cassandra_password = None
@@ -112,6 +117,7 @@ class GatewayUpdateProducerCassandra(object):
         self._output_rule = None
         self._password_length = None
         self._producer_encryption_key_name = None
+        self._skip_dry_run = None
         self._ssl = None
         self._ssl_certificate = None
         self._tags = None
@@ -125,6 +131,8 @@ class GatewayUpdateProducerCassandra(object):
         self._user_ttl = None
         self.discriminator = None
 
+        if ara_enabled is not None:
+            self.ara_enabled = ara_enabled
         if cassandra_creation_statements is not None:
             self.cassandra_creation_statements = cassandra_creation_statements
         if cassandra_hosts is not None:
@@ -154,6 +162,8 @@ class GatewayUpdateProducerCassandra(object):
             self.password_length = password_length
         if producer_encryption_key_name is not None:
             self.producer_encryption_key_name = producer_encryption_key_name
+        if skip_dry_run is not None:
+            self.skip_dry_run = skip_dry_run
         if ssl is not None:
             self.ssl = ssl
         if ssl_certificate is not None:
@@ -176,6 +186,29 @@ class GatewayUpdateProducerCassandra(object):
             self.use_special_characters = use_special_characters
         if user_ttl is not None:
             self.user_ttl = user_ttl
+
+    @property
+    def ara_enabled(self):
+        """Gets the ara_enabled of this GatewayUpdateProducerCassandra.  # noqa: E501
+
+        Enable or disable Agentic Runtime Authority rule enforcement for this item. Mirrors commands.AgenticRulesParams.AraEnabled.  # noqa: E501
+
+        :return: The ara_enabled of this GatewayUpdateProducerCassandra.  # noqa: E501
+        :rtype: bool
+        """
+        return self._ara_enabled
+
+    @ara_enabled.setter
+    def ara_enabled(self, ara_enabled):
+        """Sets the ara_enabled of this GatewayUpdateProducerCassandra.
+
+        Enable or disable Agentic Runtime Authority rule enforcement for this item. Mirrors commands.AgenticRulesParams.AraEnabled.  # noqa: E501
+
+        :param ara_enabled: The ara_enabled of this GatewayUpdateProducerCassandra.  # noqa: E501
+        :type: bool
+        """
+
+        self._ara_enabled = ara_enabled
 
     @property
     def cassandra_creation_statements(self):
@@ -523,6 +556,29 @@ class GatewayUpdateProducerCassandra(object):
         """
 
         self._producer_encryption_key_name = producer_encryption_key_name
+
+    @property
+    def skip_dry_run(self):
+        """Gets the skip_dry_run of this GatewayUpdateProducerCassandra.  # noqa: E501
+
+        If set, dry-run will be skipped  # noqa: E501
+
+        :return: The skip_dry_run of this GatewayUpdateProducerCassandra.  # noqa: E501
+        :rtype: str
+        """
+        return self._skip_dry_run
+
+    @skip_dry_run.setter
+    def skip_dry_run(self, skip_dry_run):
+        """Sets the skip_dry_run of this GatewayUpdateProducerCassandra.
+
+        If set, dry-run will be skipped  # noqa: E501
+
+        :param skip_dry_run: The skip_dry_run of this GatewayUpdateProducerCassandra.  # noqa: E501
+        :type: str
+        """
+
+        self._skip_dry_run = skip_dry_run
 
     @property
     def ssl(self):

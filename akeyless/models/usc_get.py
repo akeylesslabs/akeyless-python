@@ -34,6 +34,7 @@ class UscGet(object):
                             and the value is json key in definition.
     """
     openapi_types = {
+        'gcp_project_id': 'str',
         'json': 'bool',
         'namespace': 'str',
         'object_type': 'str',
@@ -46,6 +47,7 @@ class UscGet(object):
     }
 
     attribute_map = {
+        'gcp_project_id': 'gcp-project-id',
         'json': 'json',
         'namespace': 'namespace',
         'object_type': 'object-type',
@@ -57,12 +59,13 @@ class UscGet(object):
         'version_id': 'version-id'
     }
 
-    def __init__(self, json=False, namespace=None, object_type=None, secret_id=None, selected_repositories=None, token=None, uid_token=None, usc_name=None, version_id=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, gcp_project_id=None, json=False, namespace=None, object_type=None, secret_id=None, selected_repositories=None, token=None, uid_token=None, usc_name=None, version_id=None, local_vars_configuration=None):  # noqa: E501
         """UscGet - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
+        self._gcp_project_id = None
         self._json = None
         self._namespace = None
         self._object_type = None
@@ -74,6 +77,8 @@ class UscGet(object):
         self._version_id = None
         self.discriminator = None
 
+        if gcp_project_id is not None:
+            self.gcp_project_id = gcp_project_id
         if json is not None:
             self.json = json
         if namespace is not None:
@@ -90,6 +95,29 @@ class UscGet(object):
         self.usc_name = usc_name
         if version_id is not None:
             self.version_id = version_id
+
+    @property
+    def gcp_project_id(self):
+        """Gets the gcp_project_id of this UscGet.  # noqa: E501
+
+        GCP Project ID (Relevant only for GCP targets)  # noqa: E501
+
+        :return: The gcp_project_id of this UscGet.  # noqa: E501
+        :rtype: str
+        """
+        return self._gcp_project_id
+
+    @gcp_project_id.setter
+    def gcp_project_id(self, gcp_project_id):
+        """Sets the gcp_project_id of this UscGet.
+
+        GCP Project ID (Relevant only for GCP targets)  # noqa: E501
+
+        :param gcp_project_id: The gcp_project_id of this UscGet.  # noqa: E501
+        :type: str
+        """
+
+        self._gcp_project_id = gcp_project_id
 
     @property
     def json(self):

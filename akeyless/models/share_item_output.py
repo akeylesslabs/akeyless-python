@@ -37,6 +37,7 @@ class ShareItemOutput(object):
         'email_error': 'dict(str, str)',
         'items_error': 'list[ResponseStopShareItem]',
         's_token': 'str',
+        'shared_token_id': 'str',
         'shared_users': 'list[str]',
         'shared_users_full_info': 'list[SharingItemFullInfo]',
         'sharing_url': 'str'
@@ -46,12 +47,13 @@ class ShareItemOutput(object):
         'email_error': 'email_error',
         'items_error': 'items_error',
         's_token': 's_token',
+        'shared_token_id': 'shared_token_id',
         'shared_users': 'shared_users',
         'shared_users_full_info': 'shared_users_full_info',
         'sharing_url': 'sharing_url'
     }
 
-    def __init__(self, email_error=None, items_error=None, s_token=None, shared_users=None, shared_users_full_info=None, sharing_url=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, email_error=None, items_error=None, s_token=None, shared_token_id=None, shared_users=None, shared_users_full_info=None, sharing_url=None, local_vars_configuration=None):  # noqa: E501
         """ShareItemOutput - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -60,6 +62,7 @@ class ShareItemOutput(object):
         self._email_error = None
         self._items_error = None
         self._s_token = None
+        self._shared_token_id = None
         self._shared_users = None
         self._shared_users_full_info = None
         self._sharing_url = None
@@ -71,6 +74,8 @@ class ShareItemOutput(object):
             self.items_error = items_error
         if s_token is not None:
             self.s_token = s_token
+        if shared_token_id is not None:
+            self.shared_token_id = shared_token_id
         if shared_users is not None:
             self.shared_users = shared_users
         if shared_users_full_info is not None:
@@ -140,6 +145,27 @@ class ShareItemOutput(object):
         """
 
         self._s_token = s_token
+
+    @property
+    def shared_token_id(self):
+        """Gets the shared_token_id of this ShareItemOutput.  # noqa: E501
+
+
+        :return: The shared_token_id of this ShareItemOutput.  # noqa: E501
+        :rtype: str
+        """
+        return self._shared_token_id
+
+    @shared_token_id.setter
+    def shared_token_id(self, shared_token_id):
+        """Sets the shared_token_id of this ShareItemOutput.
+
+
+        :param shared_token_id: The shared_token_id of this ShareItemOutput.  # noqa: E501
+        :type: str
+        """
+
+        self._shared_token_id = shared_token_id
 
     @property
     def shared_users(self):

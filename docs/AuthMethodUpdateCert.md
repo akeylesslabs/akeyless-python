@@ -25,7 +25,7 @@ Name | Type | Description | Notes
 **jwt_ttl** | **int** | Jwt TTL | [optional] [default to 0]
 **name** | **str** | Auth Method name | 
 **new_name** | **str** | Auth Method new name | [optional] 
-**product_type** | **list[str]** | Choose the relevant product type for the auth method [sm, sra, pm, dp, ca] | [optional] 
+**product_type** | **list[str]** | Choose the relevant product type for the auth method [sm, sra, pm, dp, ca, ara] | [optional] 
 **require_crl_dp** | **bool** | Require certificate CRL distribution points (CDP) and enforce CRL validation during authentication. | [optional] 
 **revoked_cert_ids** | **list[str]** | A list of revoked cert ids | [optional] 
 **token** | **str** | Authentication token (see &#x60;/auth&#x60; and &#x60;/configure&#x60;) | [optional] 

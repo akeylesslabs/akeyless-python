@@ -35,6 +35,7 @@ class GatewayCreateProducerCustom(object):
     """
     openapi_types = {
         'admin_rotation_interval_days': 'int',
+        'ara_enabled': 'bool',
         'create_sync_url': 'str',
         'delete_protection': 'str',
         'enable_admin_rotation': 'bool',
@@ -47,6 +48,7 @@ class GatewayCreateProducerCustom(object):
         'producer_encryption_key_name': 'str',
         'revoke_sync_url': 'str',
         'rotate_sync_url': 'str',
+        'skip_dry_run': 'str',
         'tags': 'list[str]',
         'timeout_sec': 'int',
         'token': 'str',
@@ -56,6 +58,7 @@ class GatewayCreateProducerCustom(object):
 
     attribute_map = {
         'admin_rotation_interval_days': 'admin-rotation-interval-days',
+        'ara_enabled': 'ara-enabled',
         'create_sync_url': 'create-sync-url',
         'delete_protection': 'delete_protection',
         'enable_admin_rotation': 'enable-admin-rotation',
@@ -68,6 +71,7 @@ class GatewayCreateProducerCustom(object):
         'producer_encryption_key_name': 'producer-encryption-key-name',
         'revoke_sync_url': 'revoke-sync-url',
         'rotate_sync_url': 'rotate-sync-url',
+        'skip_dry_run': 'skip_dry_run',
         'tags': 'tags',
         'timeout_sec': 'timeout-sec',
         'token': 'token',
@@ -75,13 +79,14 @@ class GatewayCreateProducerCustom(object):
         'user_ttl': 'user-ttl'
     }
 
-    def __init__(self, admin_rotation_interval_days=None, create_sync_url=None, delete_protection=None, enable_admin_rotation=False, input_rule=None, item_custom_fields=None, json=False, name=None, output_rule=None, payload=None, producer_encryption_key_name=None, revoke_sync_url=None, rotate_sync_url=None, tags=None, timeout_sec=60, token=None, uid_token=None, user_ttl='60m', local_vars_configuration=None):  # noqa: E501
+    def __init__(self, admin_rotation_interval_days=None, ara_enabled=None, create_sync_url=None, delete_protection=None, enable_admin_rotation=False, input_rule=None, item_custom_fields=None, json=False, name=None, output_rule=None, payload=None, producer_encryption_key_name=None, revoke_sync_url=None, rotate_sync_url=None, skip_dry_run=None, tags=None, timeout_sec=60, token=None, uid_token=None, user_ttl='60m', local_vars_configuration=None):  # noqa: E501
         """GatewayCreateProducerCustom - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._admin_rotation_interval_days = None
+        self._ara_enabled = None
         self._create_sync_url = None
         self._delete_protection = None
         self._enable_admin_rotation = None
@@ -94,6 +99,7 @@ class GatewayCreateProducerCustom(object):
         self._producer_encryption_key_name = None
         self._revoke_sync_url = None
         self._rotate_sync_url = None
+        self._skip_dry_run = None
         self._tags = None
         self._timeout_sec = None
         self._token = None
@@ -103,6 +109,8 @@ class GatewayCreateProducerCustom(object):
 
         if admin_rotation_interval_days is not None:
             self.admin_rotation_interval_days = admin_rotation_interval_days
+        if ara_enabled is not None:
+            self.ara_enabled = ara_enabled
         self.create_sync_url = create_sync_url
         if delete_protection is not None:
             self.delete_protection = delete_protection
@@ -124,6 +132,8 @@ class GatewayCreateProducerCustom(object):
         self.revoke_sync_url = revoke_sync_url
         if rotate_sync_url is not None:
             self.rotate_sync_url = rotate_sync_url
+        if skip_dry_run is not None:
+            self.skip_dry_run = skip_dry_run
         if tags is not None:
             self.tags = tags
         if timeout_sec is not None:
@@ -157,6 +167,29 @@ class GatewayCreateProducerCustom(object):
         """
 
         self._admin_rotation_interval_days = admin_rotation_interval_days
+
+    @property
+    def ara_enabled(self):
+        """Gets the ara_enabled of this GatewayCreateProducerCustom.  # noqa: E501
+
+        Enable or disable Agentic Runtime Authority rule enforcement for this item. Mirrors commands.AgenticRulesParams.AraEnabled.  # noqa: E501
+
+        :return: The ara_enabled of this GatewayCreateProducerCustom.  # noqa: E501
+        :rtype: bool
+        """
+        return self._ara_enabled
+
+    @ara_enabled.setter
+    def ara_enabled(self, ara_enabled):
+        """Sets the ara_enabled of this GatewayCreateProducerCustom.
+
+        Enable or disable Agentic Runtime Authority rule enforcement for this item. Mirrors commands.AgenticRulesParams.AraEnabled.  # noqa: E501
+
+        :param ara_enabled: The ara_enabled of this GatewayCreateProducerCustom.  # noqa: E501
+        :type: bool
+        """
+
+        self._ara_enabled = ara_enabled
 
     @property
     def create_sync_url(self):
@@ -439,6 +472,29 @@ class GatewayCreateProducerCustom(object):
         """
 
         self._rotate_sync_url = rotate_sync_url
+
+    @property
+    def skip_dry_run(self):
+        """Gets the skip_dry_run of this GatewayCreateProducerCustom.  # noqa: E501
+
+        If set, dry-run will be skipped  # noqa: E501
+
+        :return: The skip_dry_run of this GatewayCreateProducerCustom.  # noqa: E501
+        :rtype: str
+        """
+        return self._skip_dry_run
+
+    @skip_dry_run.setter
+    def skip_dry_run(self, skip_dry_run):
+        """Sets the skip_dry_run of this GatewayCreateProducerCustom.
+
+        If set, dry-run will be skipped  # noqa: E501
+
+        :param skip_dry_run: The skip_dry_run of this GatewayCreateProducerCustom.  # noqa: E501
+        :type: str
+        """
+
+        self._skip_dry_run = skip_dry_run
 
     @property
     def tags(self):

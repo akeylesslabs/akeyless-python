@@ -36,6 +36,7 @@ class DynamicSecretUpdateGoogleWorkspace(object):
     openapi_types = {
         'access_mode': 'str',
         'admin_email': 'str',
+        'ara_enabled': 'bool',
         'delete_protection': 'str',
         'description': 'str',
         'fixed_user_claim_keyname': 'str',
@@ -57,6 +58,7 @@ class DynamicSecretUpdateGoogleWorkspace(object):
         'secure_access_web': 'bool',
         'secure_access_web_browsing': 'bool',
         'secure_access_web_proxy': 'bool',
+        'skip_dry_run': 'str',
         'tags': 'list[str]',
         'target_name': 'str',
         'token': 'str',
@@ -67,6 +69,7 @@ class DynamicSecretUpdateGoogleWorkspace(object):
     attribute_map = {
         'access_mode': 'access-mode',
         'admin_email': 'admin-email',
+        'ara_enabled': 'ara-enabled',
         'delete_protection': 'delete_protection',
         'description': 'description',
         'fixed_user_claim_keyname': 'fixed-user-claim-keyname',
@@ -88,6 +91,7 @@ class DynamicSecretUpdateGoogleWorkspace(object):
         'secure_access_web': 'secure-access-web',
         'secure_access_web_browsing': 'secure-access-web-browsing',
         'secure_access_web_proxy': 'secure-access-web-proxy',
+        'skip_dry_run': 'skip_dry_run',
         'tags': 'tags',
         'target_name': 'target-name',
         'token': 'token',
@@ -95,7 +99,7 @@ class DynamicSecretUpdateGoogleWorkspace(object):
         'user_ttl': 'user-ttl'
     }
 
-    def __init__(self, access_mode=None, admin_email=None, delete_protection=None, description=None, fixed_user_claim_keyname='ext_email', gcp_key=None, group_email=None, group_role=None, input_rule=None, item_custom_fields=None, json=False, name=None, new_name=None, output_rule=None, producer_encryption_key_name=None, role_name=None, role_scope=None, secure_access_delay=None, secure_access_enable=None, secure_access_url=None, secure_access_web=True, secure_access_web_browsing=False, secure_access_web_proxy=False, tags=None, target_name=None, token=None, uid_token=None, user_ttl='60m', local_vars_configuration=None):  # noqa: E501
+    def __init__(self, access_mode=None, admin_email=None, ara_enabled=None, delete_protection=None, description=None, fixed_user_claim_keyname='ext_email', gcp_key=None, group_email=None, group_role=None, input_rule=None, item_custom_fields=None, json=False, name=None, new_name=None, output_rule=None, producer_encryption_key_name=None, role_name=None, role_scope=None, secure_access_delay=None, secure_access_enable=None, secure_access_url=None, secure_access_web=True, secure_access_web_browsing=False, secure_access_web_proxy=False, skip_dry_run=None, tags=None, target_name=None, token=None, uid_token=None, user_ttl='60m', local_vars_configuration=None):  # noqa: E501
         """DynamicSecretUpdateGoogleWorkspace - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -103,6 +107,7 @@ class DynamicSecretUpdateGoogleWorkspace(object):
 
         self._access_mode = None
         self._admin_email = None
+        self._ara_enabled = None
         self._delete_protection = None
         self._description = None
         self._fixed_user_claim_keyname = None
@@ -124,6 +129,7 @@ class DynamicSecretUpdateGoogleWorkspace(object):
         self._secure_access_web = None
         self._secure_access_web_browsing = None
         self._secure_access_web_proxy = None
+        self._skip_dry_run = None
         self._tags = None
         self._target_name = None
         self._token = None
@@ -133,6 +139,8 @@ class DynamicSecretUpdateGoogleWorkspace(object):
 
         self.access_mode = access_mode
         self.admin_email = admin_email
+        if ara_enabled is not None:
+            self.ara_enabled = ara_enabled
         if delete_protection is not None:
             self.delete_protection = delete_protection
         if description is not None:
@@ -174,6 +182,8 @@ class DynamicSecretUpdateGoogleWorkspace(object):
             self.secure_access_web_browsing = secure_access_web_browsing
         if secure_access_web_proxy is not None:
             self.secure_access_web_proxy = secure_access_web_proxy
+        if skip_dry_run is not None:
+            self.skip_dry_run = skip_dry_run
         if tags is not None:
             self.tags = tags
         if target_name is not None:
@@ -232,6 +242,29 @@ class DynamicSecretUpdateGoogleWorkspace(object):
             raise ValueError("Invalid value for `admin_email`, must not be `None`")  # noqa: E501
 
         self._admin_email = admin_email
+
+    @property
+    def ara_enabled(self):
+        """Gets the ara_enabled of this DynamicSecretUpdateGoogleWorkspace.  # noqa: E501
+
+        Enable or disable Agentic Runtime Authority rule enforcement for this item. Mirrors commands.AgenticRulesParams.AraEnabled.  # noqa: E501
+
+        :return: The ara_enabled of this DynamicSecretUpdateGoogleWorkspace.  # noqa: E501
+        :rtype: bool
+        """
+        return self._ara_enabled
+
+    @ara_enabled.setter
+    def ara_enabled(self, ara_enabled):
+        """Sets the ara_enabled of this DynamicSecretUpdateGoogleWorkspace.
+
+        Enable or disable Agentic Runtime Authority rule enforcement for this item. Mirrors commands.AgenticRulesParams.AraEnabled.  # noqa: E501
+
+        :param ara_enabled: The ara_enabled of this DynamicSecretUpdateGoogleWorkspace.  # noqa: E501
+        :type: bool
+        """
+
+        self._ara_enabled = ara_enabled
 
     @property
     def delete_protection(self):
@@ -713,6 +746,29 @@ class DynamicSecretUpdateGoogleWorkspace(object):
         """
 
         self._secure_access_web_proxy = secure_access_web_proxy
+
+    @property
+    def skip_dry_run(self):
+        """Gets the skip_dry_run of this DynamicSecretUpdateGoogleWorkspace.  # noqa: E501
+
+        If set, dry-run will be skipped  # noqa: E501
+
+        :return: The skip_dry_run of this DynamicSecretUpdateGoogleWorkspace.  # noqa: E501
+        :rtype: str
+        """
+        return self._skip_dry_run
+
+    @skip_dry_run.setter
+    def skip_dry_run(self, skip_dry_run):
+        """Sets the skip_dry_run of this DynamicSecretUpdateGoogleWorkspace.
+
+        If set, dry-run will be skipped  # noqa: E501
+
+        :param skip_dry_run: The skip_dry_run of this DynamicSecretUpdateGoogleWorkspace.  # noqa: E501
+        :type: str
+        """
+
+        self._skip_dry_run = skip_dry_run
 
     @property
     def tags(self):

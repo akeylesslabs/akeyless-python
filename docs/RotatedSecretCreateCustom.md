@@ -3,12 +3,15 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**provider_type** | **str** |  | [optional] 
+**ara_enabled** | **bool** | Enable or disable Agentic Runtime Authority rule enforcement for this item. When false, user-defined input/output rules are stored but not enforced; the base security validation still runs.  AraEnabled is tri-state (nil/true/false), not a plain bool: it self-encodes its wire value (see akl.OptionalBool) so an explicit false survives the curl-proxy relay instead of being dropped like a default-false bool flag. | [optional] 
 **authentication_credentials** | **str** | The credentials to connect with use-user-creds/use-target-creds | [optional] [default to 'use-user-creds']
 **auto_rotate** | **str** |  | [optional] 
 **custom_payload** | **str** | Secret payload to be sent with rotation request | [optional] 
 **delete_protection** | **str** | Protection from accidental deletion of this object [true/false] | [optional] 
 **description** | **str** | Description of the object | [optional] 
 **enable_password_policy** | **str** | Enable password policy | [optional] 
+**host_provider** | **str** | Host provider type [explicit/target], Default Host provider is explicit, Relevant only for SRA items. | [optional] 
 **input_rule** | **list[str]** | Agentic input rule in name&#x3D;...,rule&#x3D;... format (e.g. name&#x3D;rule1,rule&#x3D;Sanitize input) | [optional] 
 **item_custom_fields** | **dict(str, str)** | Additional custom fields to associate with the item | [optional] 
 **json** | **bool** | Set output format to JSON | [optional] [default to False]
@@ -26,6 +29,7 @@ Name | Type | Description | Notes
 **secure_access_bastion_issuer** | **str** | Deprecated. use secure-access-certificate-issuer | [optional] 
 **secure_access_certificate_issuer** | **str** | Path to the SSH Certificate Issuer for your Akeyless Secure Access | [optional] 
 **secure_access_enable** | **str** | Enable/Disable secure remote access [true/false] | [optional] 
+**secure_access_enforce_hosts_restriction** | **bool** | Enforce connections only to allowed SRA hosts | [optional] 
 **secure_access_host** | **list[str]** | Target servers for connections (In case of Linked Target association, host(s) will inherit Linked Target hosts - Relevant only for Dynamic Secrets/producers) | [optional] 
 **secure_access_rdp_domain** | **str** | Default domain name server. i.e. microsoft.com | [optional] 
 **secure_access_rdp_user** | **str** | Override the RDP Domain username | [optional] 
@@ -34,7 +38,9 @@ Name | Type | Description | Notes
 **secure_access_web** | **bool** | Enable Web Secure Remote Access | [optional] [default to False]
 **secure_access_web_browsing** | **bool** | Secure browser via Akeyless&#39;s Secure Remote Access (SRA) | [optional] [default to False]
 **secure_access_web_proxy** | **bool** | Web-Proxy via Akeyless&#39;s Secure Remote Access (SRA) | [optional] [default to False]
+**skip_dry_run** | **str** | If set, dry-run will be skipped | [optional] 
 **tags** | **list[str]** | Add tags attached to this object | [optional] 
+**target** | **list[str]** | A list of targets to be associated with an SRA item, To specify multiple targets use argument multiple times | [optional] 
 **target_name** | **str** | The target name to associate | 
 **timeout_sec** | **int** | Maximum allowed time in seconds for the custom rotator to return the results | [optional] [default to 40]
 **token** | **str** | Authentication token (see &#x60;/auth&#x60; and &#x60;/configure&#x60;) | [optional] 

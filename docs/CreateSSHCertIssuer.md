@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **extensions** | **dict(str, str)** | Signed certificates with extensions, e.g permit-port-forwarding&#x3D;\\\&quot;\\\&quot; | [optional] 
 **external_username** | **str** | Externally provided username [true/false] | [optional] [default to 'false']
 **fixed_user_claim_keyname** | **str** | For externally provided users, denotes the key-name of IdP claim to extract the username from (relevant only for external-username&#x3D;true) | [optional] 
-**host_provider** | **str** | Host provider type [explicit/target], Default Host provider is explicit, Relevant only for Secure Remote Access of ssh cert issuer, ldap rotated secret and ldap dynamic secret | [optional] 
+**host_provider** | **str** | Host provider type [explicit/target], Default Host provider is explicit, Relevant only for SRA items. | [optional] 
 **item_custom_fields** | **dict(str, str)** | Additional custom fields to associate with the item | [optional] 
 **json** | **bool** | Set output format to JSON | [optional] [default to False]
 **metadata** | **str** | Deprecated - use description | [optional] 
@@ -20,7 +20,7 @@ Name | Type | Description | Notes
 **secure_access_bastion_api** | **str** | Deprecated. use secure-access-api | [optional] 
 **secure_access_bastion_ssh** | **str** | Deprecated. use secure-access-ssh | [optional] 
 **secure_access_enable** | **str** | Enable/Disable secure remote access [true/false] | [optional] 
-**secure_access_enforce_hosts_restriction** | **bool** | Enable this flag to enforce connections only to the hosts listed in --secure-access-host | [optional] 
+**secure_access_enforce_hosts_restriction** | **bool** | Enforce connections only to allowed SRA hosts | [optional] 
 **secure_access_gateway** | **str** |  | [optional] 
 **secure_access_host** | **list[str]** | Target servers for connections (In case of Linked Target association, host(s) will inherit Linked Target hosts - Relevant only for Dynamic Secrets/producers) | [optional] 
 **secure_access_ssh** | **str** | Bastion&#39;s SSH server. E.g. my.sra-server:22 | [optional] 
@@ -29,7 +29,7 @@ Name | Type | Description | Notes
 **secure_access_use_internal_ssh_access** | **bool** | Use internal SSH Access | [optional] 
 **signer_key_name** | **str** | A key to sign the certificate with | 
 **tag** | **list[str]** | List of the tags attached to this key | [optional] 
-**target** | **list[str]** | A list of linked targets to be associated, Relevant only for Secure Remote Access for ssh cert issuer, ldap rotated secret and ldap dynamic secret, To specify multiple targets use argument multiple times | [optional] 
+**target** | **list[str]** | A list of targets to be associated with an SRA item, To specify multiple targets use argument multiple times | [optional] 
 **token** | **str** | Authentication token (see &#x60;/auth&#x60; and &#x60;/configure&#x60;) | [optional] 
 **ttl** | **int** | The requested Time To Live for the certificate, in seconds | 
 **uid_token** | **str** | The universal identity token, Required only for universal_identity authentication | [optional] 

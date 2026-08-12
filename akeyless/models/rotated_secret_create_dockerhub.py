@@ -34,6 +34,7 @@ class RotatedSecretCreateDockerhub(object):
                             and the value is json key in definition.
     """
     openapi_types = {
+        'ara_enabled': 'bool',
         'authentication_credentials': 'str',
         'auto_rotate': 'str',
         'delete_protection': 'str',
@@ -49,6 +50,7 @@ class RotatedSecretCreateDockerhub(object):
         'rotation_event_in': 'list[str]',
         'rotation_hour': 'int',
         'rotation_interval': 'str',
+        'skip_dry_run': 'str',
         'tags': 'list[str]',
         'target_name': 'str',
         'token': 'str',
@@ -60,6 +62,7 @@ class RotatedSecretCreateDockerhub(object):
     }
 
     attribute_map = {
+        'ara_enabled': 'ara-enabled',
         'authentication_credentials': 'authentication-credentials',
         'auto_rotate': 'auto-rotate',
         'delete_protection': 'delete_protection',
@@ -75,6 +78,7 @@ class RotatedSecretCreateDockerhub(object):
         'rotation_event_in': 'rotation-event-in',
         'rotation_hour': 'rotation-hour',
         'rotation_interval': 'rotation-interval',
+        'skip_dry_run': 'skip_dry_run',
         'tags': 'tags',
         'target_name': 'target-name',
         'token': 'token',
@@ -85,12 +89,13 @@ class RotatedSecretCreateDockerhub(object):
         'use_special_characters': 'use-special-characters'
     }
 
-    def __init__(self, authentication_credentials='use-user-creds', auto_rotate=None, delete_protection=None, description=None, input_rule=None, item_custom_fields=None, json=False, key=None, max_versions=None, name=None, output_rule=None, password_length=None, rotation_event_in=None, rotation_hour=None, rotation_interval=None, tags=None, target_name=None, token=None, uid_token=None, use_capital_letters=None, use_lower_letters=None, use_numbers=None, use_special_characters=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, ara_enabled=None, authentication_credentials='use-user-creds', auto_rotate=None, delete_protection=None, description=None, input_rule=None, item_custom_fields=None, json=False, key=None, max_versions=None, name=None, output_rule=None, password_length=None, rotation_event_in=None, rotation_hour=None, rotation_interval=None, skip_dry_run=None, tags=None, target_name=None, token=None, uid_token=None, use_capital_letters=None, use_lower_letters=None, use_numbers=None, use_special_characters=None, local_vars_configuration=None):  # noqa: E501
         """RotatedSecretCreateDockerhub - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
+        self._ara_enabled = None
         self._authentication_credentials = None
         self._auto_rotate = None
         self._delete_protection = None
@@ -106,6 +111,7 @@ class RotatedSecretCreateDockerhub(object):
         self._rotation_event_in = None
         self._rotation_hour = None
         self._rotation_interval = None
+        self._skip_dry_run = None
         self._tags = None
         self._target_name = None
         self._token = None
@@ -116,6 +122,8 @@ class RotatedSecretCreateDockerhub(object):
         self._use_special_characters = None
         self.discriminator = None
 
+        if ara_enabled is not None:
+            self.ara_enabled = ara_enabled
         if authentication_credentials is not None:
             self.authentication_credentials = authentication_credentials
         if auto_rotate is not None:
@@ -145,6 +153,8 @@ class RotatedSecretCreateDockerhub(object):
             self.rotation_hour = rotation_hour
         if rotation_interval is not None:
             self.rotation_interval = rotation_interval
+        if skip_dry_run is not None:
+            self.skip_dry_run = skip_dry_run
         if tags is not None:
             self.tags = tags
         self.target_name = target_name
@@ -160,6 +170,29 @@ class RotatedSecretCreateDockerhub(object):
             self.use_numbers = use_numbers
         if use_special_characters is not None:
             self.use_special_characters = use_special_characters
+
+    @property
+    def ara_enabled(self):
+        """Gets the ara_enabled of this RotatedSecretCreateDockerhub.  # noqa: E501
+
+        Enable or disable Agentic Runtime Authority rule enforcement for this item. When false, user-defined input/output rules are stored but not enforced; the base security validation still runs.  AraEnabled is tri-state (nil/true/false), not a plain bool: it self-encodes its wire value (see akl.OptionalBool) so an explicit false survives the curl-proxy relay instead of being dropped like a default-false bool flag.  # noqa: E501
+
+        :return: The ara_enabled of this RotatedSecretCreateDockerhub.  # noqa: E501
+        :rtype: bool
+        """
+        return self._ara_enabled
+
+    @ara_enabled.setter
+    def ara_enabled(self, ara_enabled):
+        """Sets the ara_enabled of this RotatedSecretCreateDockerhub.
+
+        Enable or disable Agentic Runtime Authority rule enforcement for this item. When false, user-defined input/output rules are stored but not enforced; the base security validation still runs.  AraEnabled is tri-state (nil/true/false), not a plain bool: it self-encodes its wire value (see akl.OptionalBool) so an explicit false survives the curl-proxy relay instead of being dropped like a default-false bool flag.  # noqa: E501
+
+        :param ara_enabled: The ara_enabled of this RotatedSecretCreateDockerhub.  # noqa: E501
+        :type: bool
+        """
+
+        self._ara_enabled = ara_enabled
 
     @property
     def authentication_credentials(self):
@@ -499,6 +532,29 @@ class RotatedSecretCreateDockerhub(object):
         """
 
         self._rotation_interval = rotation_interval
+
+    @property
+    def skip_dry_run(self):
+        """Gets the skip_dry_run of this RotatedSecretCreateDockerhub.  # noqa: E501
+
+        If set, dry-run will be skipped  # noqa: E501
+
+        :return: The skip_dry_run of this RotatedSecretCreateDockerhub.  # noqa: E501
+        :rtype: str
+        """
+        return self._skip_dry_run
+
+    @skip_dry_run.setter
+    def skip_dry_run(self, skip_dry_run):
+        """Sets the skip_dry_run of this RotatedSecretCreateDockerhub.
+
+        If set, dry-run will be skipped  # noqa: E501
+
+        :param skip_dry_run: The skip_dry_run of this RotatedSecretCreateDockerhub.  # noqa: E501
+        :type: str
+        """
+
+        self._skip_dry_run = skip_dry_run
 
     @property
     def tags(self):

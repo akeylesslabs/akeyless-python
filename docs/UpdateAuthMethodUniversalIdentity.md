@@ -20,7 +20,7 @@ Name | Type | Description | Notes
 **jwt_ttl** | **int** | Jwt TTL | [optional] [default to 0]
 **name** | **str** | Auth Method name | 
 **new_name** | **str** | Auth Method new name | [optional] 
-**product_type** | **list[str]** | Choose the relevant product type for the auth method [sm, sra, pm, dp, ca] | [optional] 
+**product_type** | **list[str]** | Choose the relevant product type for the auth method [sm, sra, pm, dp, ca, ara] | [optional] 
 **token** | **str** | Authentication token (see &#x60;/auth&#x60; and &#x60;/configure&#x60;) | [optional] 
 **tree_length** | **int** | Maximum UID tree depth allowed (child of child of ...) | [optional] [default to 200]
 **ttl** | **int** | Token ttl | [optional] [default to 60]

@@ -3,12 +3,15 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**provider_type** | **str** |  | [optional] 
 **accessibility** | **str** | for personal password manager | [optional] [default to 'regular']
+**ara_enabled** | **bool** | Enable or disable Agentic Runtime Authority rule enforcement for this item. When false, user-defined input/output rules are stored but not enforced; the base security validation still runs.  AraEnabled is tri-state (nil/true/false), not a plain bool: it self-encodes its wire value (see akl.OptionalBool) so an explicit false survives the curl-proxy relay instead of being dropped like a default-false bool flag. | [optional] 
 **change_event** | **str** | Trigger an event when a secret value changed [true/false] (Relevant only for Static Secret) | [optional] 
 **custom_field** | **dict(str, str)** | For Password Management use, additional fields | [optional] 
 **delete_protection** | **str** | Protection from accidental deletion of this object [true/false] | [optional] 
 **description** | **str** | Description of the object | [optional] 
 **format** | **str** | Secret format [text/json/key-value] (relevant only for type &#39;generic&#39;) | [optional] [default to 'text']
+**host_provider** | **str** | Host provider type [explicit/target], Default Host provider is explicit, Relevant only for SRA items. | [optional] 
 **inject_url** | **list[str]** | For Password Management use, reflect the website context | [optional] 
 **input_rule** | **list[str]** | Agentic input rule in name&#x3D;...,rule&#x3D;... format (e.g. name&#x3D;rule1,rule&#x3D;Sanitize input) | [optional] 
 **item_custom_fields** | **dict(str, str)** | Additional custom fields to associate with the item | [optional] 
@@ -24,6 +27,7 @@ Name | Type | Description | Notes
 **secure_access_bastion_issuer** | **str** | Deprecated. use secure-access-certificate-issuer | [optional] 
 **secure_access_certificate_issuer** | **str** | Path to the SSH Certificate Issuer for your Akeyless Secure Access | [optional] 
 **secure_access_enable** | **str** | Enable/Disable secure remote access [true/false] | [optional] 
+**secure_access_enforce_hosts_restriction** | **bool** | Enforce connections only to allowed SRA hosts | [optional] 
 **secure_access_gateway** | **str** |  | [optional] 
 **secure_access_host** | **list[str]** | Target servers for connections (In case of Linked Target association, host(s) will inherit Linked Target hosts - Relevant only for Dynamic Secrets/producers) | [optional] 
 **secure_access_rdp_user** | **str** | Remote Desktop Username | [optional] 
@@ -33,6 +37,7 @@ Name | Type | Description | Notes
 **secure_access_web_browsing** | **bool** | Secure browser via Akeyless&#39;s Secure Remote Access (SRA) | [optional] [default to False]
 **secure_access_web_proxy** | **bool** | Web-Proxy via Akeyless&#39;s Secure Remote Access (SRA) | [optional] [default to False]
 **tags** | **list[str]** | Add tags attached to this object | [optional] 
+**target** | **list[str]** | A list of targets to be associated with an SRA item, To specify multiple targets use argument multiple times | [optional] 
 **token** | **str** | Authentication token (see &#x60;/auth&#x60; and &#x60;/configure&#x60;) | [optional] 
 **type** | **str** | The secret sub type [generic/password] | [optional] [default to 'generic']
 **uid_token** | **str** | The universal identity token, Required only for universal_identity authentication | [optional] 

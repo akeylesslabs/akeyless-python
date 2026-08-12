@@ -35,6 +35,7 @@ class GatewayUpdateProducerGcp(object):
     """
     openapi_types = {
         'access_type': 'str',
+        'ara_enabled': 'bool',
         'custom_username_template': 'str',
         'delete_protection': 'str',
         'fixed_user_claim_keyname': 'str',
@@ -59,6 +60,7 @@ class GatewayUpdateProducerGcp(object):
         'secure_access_web_browsing': 'bool',
         'secure_access_web_proxy': 'bool',
         'service_account_type': 'str',
+        'skip_dry_run': 'str',
         'tags': 'list[str]',
         'target_name': 'str',
         'token': 'str',
@@ -68,6 +70,7 @@ class GatewayUpdateProducerGcp(object):
 
     attribute_map = {
         'access_type': 'access-type',
+        'ara_enabled': 'ara-enabled',
         'custom_username_template': 'custom-username-template',
         'delete_protection': 'delete_protection',
         'fixed_user_claim_keyname': 'fixed-user-claim-keyname',
@@ -92,6 +95,7 @@ class GatewayUpdateProducerGcp(object):
         'secure_access_web_browsing': 'secure-access-web-browsing',
         'secure_access_web_proxy': 'secure-access-web-proxy',
         'service_account_type': 'service-account-type',
+        'skip_dry_run': 'skip_dry_run',
         'tags': 'tags',
         'target_name': 'target-name',
         'token': 'token',
@@ -99,13 +103,14 @@ class GatewayUpdateProducerGcp(object):
         'user_ttl': 'user-ttl'
     }
 
-    def __init__(self, access_type=None, custom_username_template=None, delete_protection=None, fixed_user_claim_keyname='ext_email', gcp_cred_type=None, gcp_key=None, gcp_key_algo=None, gcp_project_id=None, gcp_sa_email=None, gcp_token_scopes=None, input_rule=None, item_custom_fields=None, json=False, name=None, new_name=None, output_rule=None, producer_encryption_key_name=None, role_binding=None, role_names=None, secure_access_delay=None, secure_access_enable=None, secure_access_url=None, secure_access_web_browsing=False, secure_access_web_proxy=False, service_account_type='fixed', tags=None, target_name=None, token=None, uid_token=None, user_ttl='60m', local_vars_configuration=None):  # noqa: E501
+    def __init__(self, access_type=None, ara_enabled=None, custom_username_template=None, delete_protection=None, fixed_user_claim_keyname='ext_email', gcp_cred_type=None, gcp_key=None, gcp_key_algo=None, gcp_project_id=None, gcp_sa_email=None, gcp_token_scopes=None, input_rule=None, item_custom_fields=None, json=False, name=None, new_name=None, output_rule=None, producer_encryption_key_name=None, role_binding=None, role_names=None, secure_access_delay=None, secure_access_enable=None, secure_access_url=None, secure_access_web_browsing=False, secure_access_web_proxy=False, service_account_type='fixed', skip_dry_run=None, tags=None, target_name=None, token=None, uid_token=None, user_ttl='60m', local_vars_configuration=None):  # noqa: E501
         """GatewayUpdateProducerGcp - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._access_type = None
+        self._ara_enabled = None
         self._custom_username_template = None
         self._delete_protection = None
         self._fixed_user_claim_keyname = None
@@ -130,6 +135,7 @@ class GatewayUpdateProducerGcp(object):
         self._secure_access_web_browsing = None
         self._secure_access_web_proxy = None
         self._service_account_type = None
+        self._skip_dry_run = None
         self._tags = None
         self._target_name = None
         self._token = None
@@ -139,6 +145,8 @@ class GatewayUpdateProducerGcp(object):
 
         if access_type is not None:
             self.access_type = access_type
+        if ara_enabled is not None:
+            self.ara_enabled = ara_enabled
         if custom_username_template is not None:
             self.custom_username_template = custom_username_template
         if delete_protection is not None:
@@ -186,6 +194,8 @@ class GatewayUpdateProducerGcp(object):
             self.secure_access_web_proxy = secure_access_web_proxy
         if service_account_type is not None:
             self.service_account_type = service_account_type
+        if skip_dry_run is not None:
+            self.skip_dry_run = skip_dry_run
         if tags is not None:
             self.tags = tags
         if target_name is not None:
@@ -217,6 +227,29 @@ class GatewayUpdateProducerGcp(object):
         """
 
         self._access_type = access_type
+
+    @property
+    def ara_enabled(self):
+        """Gets the ara_enabled of this GatewayUpdateProducerGcp.  # noqa: E501
+
+        Enable or disable Agentic Runtime Authority rule enforcement for this item. Mirrors commands.AgenticRulesParams.AraEnabled.  # noqa: E501
+
+        :return: The ara_enabled of this GatewayUpdateProducerGcp.  # noqa: E501
+        :rtype: bool
+        """
+        return self._ara_enabled
+
+    @ara_enabled.setter
+    def ara_enabled(self, ara_enabled):
+        """Sets the ara_enabled of this GatewayUpdateProducerGcp.
+
+        Enable or disable Agentic Runtime Authority rule enforcement for this item. Mirrors commands.AgenticRulesParams.AraEnabled.  # noqa: E501
+
+        :param ara_enabled: The ara_enabled of this GatewayUpdateProducerGcp.  # noqa: E501
+        :type: bool
+        """
+
+        self._ara_enabled = ara_enabled
 
     @property
     def custom_username_template(self):
@@ -769,6 +802,29 @@ class GatewayUpdateProducerGcp(object):
         """
 
         self._service_account_type = service_account_type
+
+    @property
+    def skip_dry_run(self):
+        """Gets the skip_dry_run of this GatewayUpdateProducerGcp.  # noqa: E501
+
+        If set, dry-run will be skipped  # noqa: E501
+
+        :return: The skip_dry_run of this GatewayUpdateProducerGcp.  # noqa: E501
+        :rtype: str
+        """
+        return self._skip_dry_run
+
+    @skip_dry_run.setter
+    def skip_dry_run(self, skip_dry_run):
+        """Sets the skip_dry_run of this GatewayUpdateProducerGcp.
+
+        If set, dry-run will be skipped  # noqa: E501
+
+        :param skip_dry_run: The skip_dry_run of this GatewayUpdateProducerGcp.  # noqa: E501
+        :type: str
+        """
+
+        self._skip_dry_run = skip_dry_run
 
     @property
     def tags(self):

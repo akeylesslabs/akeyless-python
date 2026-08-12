@@ -34,29 +34,67 @@ class UscCreateSecretOutput(object):
                             and the value is json key in definition.
     """
     openapi_types = {
+        'partial_failure': 'str',
         'secret_id': 'str',
+        'selected_environments': 'str',
+        'selected_repositories': 'str',
         'version_id': 'str'
     }
 
     attribute_map = {
+        'partial_failure': 'partial_failure',
         'secret_id': 'secret_id',
+        'selected_environments': 'selected_environments',
+        'selected_repositories': 'selected_repositories',
         'version_id': 'version_id'
     }
 
-    def __init__(self, secret_id=None, version_id=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, partial_failure=None, secret_id=None, selected_environments=None, selected_repositories=None, version_id=None, local_vars_configuration=None):  # noqa: E501
         """UscCreateSecretOutput - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
+        self._partial_failure = None
         self._secret_id = None
+        self._selected_environments = None
+        self._selected_repositories = None
         self._version_id = None
         self.discriminator = None
 
+        if partial_failure is not None:
+            self.partial_failure = partial_failure
         if secret_id is not None:
             self.secret_id = secret_id
+        if selected_environments is not None:
+            self.selected_environments = selected_environments
+        if selected_repositories is not None:
+            self.selected_repositories = selected_repositories
         if version_id is not None:
             self.version_id = version_id
+
+    @property
+    def partial_failure(self):
+        """Gets the partial_failure of this UscCreateSecretOutput.  # noqa: E501
+
+        PartialFailure aggregates per-target create failures when some targets still succeeded.  # noqa: E501
+
+        :return: The partial_failure of this UscCreateSecretOutput.  # noqa: E501
+        :rtype: str
+        """
+        return self._partial_failure
+
+    @partial_failure.setter
+    def partial_failure(self, partial_failure):
+        """Sets the partial_failure of this UscCreateSecretOutput.
+
+        PartialFailure aggregates per-target create failures when some targets still succeeded.  # noqa: E501
+
+        :param partial_failure: The partial_failure of this UscCreateSecretOutput.  # noqa: E501
+        :type: str
+        """
+
+        self._partial_failure = partial_failure
 
     @property
     def secret_id(self):
@@ -78,6 +116,52 @@ class UscCreateSecretOutput(object):
         """
 
         self._secret_id = secret_id
+
+    @property
+    def selected_environments(self):
+        """Gets the selected_environments of this UscCreateSecretOutput.  # noqa: E501
+
+        SelectedEnvironments is the subset of GitHub environments where create succeeded (comma-separated).  # noqa: E501
+
+        :return: The selected_environments of this UscCreateSecretOutput.  # noqa: E501
+        :rtype: str
+        """
+        return self._selected_environments
+
+    @selected_environments.setter
+    def selected_environments(self, selected_environments):
+        """Sets the selected_environments of this UscCreateSecretOutput.
+
+        SelectedEnvironments is the subset of GitHub environments where create succeeded (comma-separated).  # noqa: E501
+
+        :param selected_environments: The selected_environments of this UscCreateSecretOutput.  # noqa: E501
+        :type: str
+        """
+
+        self._selected_environments = selected_environments
+
+    @property
+    def selected_repositories(self):
+        """Gets the selected_repositories of this UscCreateSecretOutput.  # noqa: E501
+
+        SelectedRepositories is the subset of GitHub repositories where create succeeded (comma-separated).  # noqa: E501
+
+        :return: The selected_repositories of this UscCreateSecretOutput.  # noqa: E501
+        :rtype: str
+        """
+        return self._selected_repositories
+
+    @selected_repositories.setter
+    def selected_repositories(self, selected_repositories):
+        """Sets the selected_repositories of this UscCreateSecretOutput.
+
+        SelectedRepositories is the subset of GitHub repositories where create succeeded (comma-separated).  # noqa: E501
+
+        :param selected_repositories: The selected_repositories of this UscCreateSecretOutput.  # noqa: E501
+        :type: str
+        """
+
+        self._selected_repositories = selected_repositories
 
     @property
     def version_id(self):

@@ -49,10 +49,13 @@ class ActiveDirectoryPayload(object):
         'domain_name': 'str',
         'domain_server_targets_path_template': 'str',
         'domain_users_rotated_secrets_path_template': 'str',
+        'enable_password_policy': 'bool',
         'enable_rdp_sra': 'bool',
         'local_users_ignore_list': 'dict(str, bool)',
         'local_users_rotated_secrets_path_template': 'str',
         'os_filter': 'str',
+        'password_policy': 'PasswordPolicyInfo',
+        'skip_dry_run': 'bool',
         'ssh_port': 'str',
         'target_format': 'str',
         'targets_type': 'str',
@@ -78,10 +81,13 @@ class ActiveDirectoryPayload(object):
         'domain_name': 'domain_name',
         'domain_server_targets_path_template': 'domain_server_targets_path_template',
         'domain_users_rotated_secrets_path_template': 'domain_users_rotated_secrets_path_template',
+        'enable_password_policy': 'enable_password_policy',
         'enable_rdp_sra': 'enable_rdp_sra',
         'local_users_ignore_list': 'local_users_ignore_list',
         'local_users_rotated_secrets_path_template': 'local_users_rotated_secrets_path_template',
         'os_filter': 'os_filter',
+        'password_policy': 'password_policy',
+        'skip_dry_run': 'skip_dry_run',
         'ssh_port': 'ssh_port',
         'target_format': 'target_format',
         'targets_type': 'targets_type',
@@ -91,7 +97,7 @@ class ActiveDirectoryPayload(object):
         'winrm_port': 'winrm_port'
     }
 
-    def __init__(self, active_directory_target_id=None, ai_certificate_discovery=None, auto_rotate=None, auto_rotate_interval_in_days=None, auto_rotate_rotation_hour=None, certificates_expiration_events=None, certificates_path_template=None, computer_base_dn=None, discover_iis_apps=None, discover_local_users=None, discover_services=None, discovery_types=None, domain_name=None, domain_server_targets_path_template=None, domain_users_rotated_secrets_path_template=None, enable_rdp_sra=None, local_users_ignore_list=None, local_users_rotated_secrets_path_template=None, os_filter=None, ssh_port=None, target_format=None, targets_type=None, user_base_dn=None, user_groups=None, winrm_over_http=None, winrm_port=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, active_directory_target_id=None, ai_certificate_discovery=None, auto_rotate=None, auto_rotate_interval_in_days=None, auto_rotate_rotation_hour=None, certificates_expiration_events=None, certificates_path_template=None, computer_base_dn=None, discover_iis_apps=None, discover_local_users=None, discover_services=None, discovery_types=None, domain_name=None, domain_server_targets_path_template=None, domain_users_rotated_secrets_path_template=None, enable_password_policy=None, enable_rdp_sra=None, local_users_ignore_list=None, local_users_rotated_secrets_path_template=None, os_filter=None, password_policy=None, skip_dry_run=None, ssh_port=None, target_format=None, targets_type=None, user_base_dn=None, user_groups=None, winrm_over_http=None, winrm_port=None, local_vars_configuration=None):  # noqa: E501
         """ActiveDirectoryPayload - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -112,10 +118,13 @@ class ActiveDirectoryPayload(object):
         self._domain_name = None
         self._domain_server_targets_path_template = None
         self._domain_users_rotated_secrets_path_template = None
+        self._enable_password_policy = None
         self._enable_rdp_sra = None
         self._local_users_ignore_list = None
         self._local_users_rotated_secrets_path_template = None
         self._os_filter = None
+        self._password_policy = None
+        self._skip_dry_run = None
         self._ssh_port = None
         self._target_format = None
         self._targets_type = None
@@ -155,6 +164,8 @@ class ActiveDirectoryPayload(object):
             self.domain_server_targets_path_template = domain_server_targets_path_template
         if domain_users_rotated_secrets_path_template is not None:
             self.domain_users_rotated_secrets_path_template = domain_users_rotated_secrets_path_template
+        if enable_password_policy is not None:
+            self.enable_password_policy = enable_password_policy
         if enable_rdp_sra is not None:
             self.enable_rdp_sra = enable_rdp_sra
         if local_users_ignore_list is not None:
@@ -163,6 +174,10 @@ class ActiveDirectoryPayload(object):
             self.local_users_rotated_secrets_path_template = local_users_rotated_secrets_path_template
         if os_filter is not None:
             self.os_filter = os_filter
+        if password_policy is not None:
+            self.password_policy = password_policy
+        if skip_dry_run is not None:
+            self.skip_dry_run = skip_dry_run
         if ssh_port is not None:
             self.ssh_port = ssh_port
         if target_format is not None:
@@ -496,6 +511,29 @@ class ActiveDirectoryPayload(object):
         self._domain_users_rotated_secrets_path_template = domain_users_rotated_secrets_path_template
 
     @property
+    def enable_password_policy(self):
+        """Gets the enable_password_policy of this ActiveDirectoryPayload.  # noqa: E501
+
+        EnablePasswordPolicy enables applying PasswordPolicy to newly created domain/local user rotated secrets. Pointer so omitted values are preserved on partial update (nil = not provided).  # noqa: E501
+
+        :return: The enable_password_policy of this ActiveDirectoryPayload.  # noqa: E501
+        :rtype: bool
+        """
+        return self._enable_password_policy
+
+    @enable_password_policy.setter
+    def enable_password_policy(self, enable_password_policy):
+        """Sets the enable_password_policy of this ActiveDirectoryPayload.
+
+        EnablePasswordPolicy enables applying PasswordPolicy to newly created domain/local user rotated secrets. Pointer so omitted values are preserved on partial update (nil = not provided).  # noqa: E501
+
+        :param enable_password_policy: The enable_password_policy of this ActiveDirectoryPayload.  # noqa: E501
+        :type: bool
+        """
+
+        self._enable_password_policy = enable_password_policy
+
+    @property
     def enable_rdp_sra(self):
         """Gets the enable_rdp_sra of this ActiveDirectoryPayload.  # noqa: E501
 
@@ -578,6 +616,50 @@ class ActiveDirectoryPayload(object):
         """
 
         self._os_filter = os_filter
+
+    @property
+    def password_policy(self):
+        """Gets the password_policy of this ActiveDirectoryPayload.  # noqa: E501
+
+
+        :return: The password_policy of this ActiveDirectoryPayload.  # noqa: E501
+        :rtype: PasswordPolicyInfo
+        """
+        return self._password_policy
+
+    @password_policy.setter
+    def password_policy(self, password_policy):
+        """Sets the password_policy of this ActiveDirectoryPayload.
+
+
+        :param password_policy: The password_policy of this ActiveDirectoryPayload.  # noqa: E501
+        :type: PasswordPolicyInfo
+        """
+
+        self._password_policy = password_policy
+
+    @property
+    def skip_dry_run(self):
+        """Gets the skip_dry_run of this ActiveDirectoryPayload.  # noqa: E501
+
+        SkipDryRun enables skip_dry_run on newly created domain/local user rotated secrets. Pointer so omitted values are preserved on partial update (nil = not provided). When false/unset, existing rotated-secret SkipDryRun values are left unchanged on sync.  # noqa: E501
+
+        :return: The skip_dry_run of this ActiveDirectoryPayload.  # noqa: E501
+        :rtype: bool
+        """
+        return self._skip_dry_run
+
+    @skip_dry_run.setter
+    def skip_dry_run(self, skip_dry_run):
+        """Sets the skip_dry_run of this ActiveDirectoryPayload.
+
+        SkipDryRun enables skip_dry_run on newly created domain/local user rotated secrets. Pointer so omitted values are preserved on partial update (nil = not provided). When false/unset, existing rotated-secret SkipDryRun values are left unchanged on sync.  # noqa: E501
+
+        :param skip_dry_run: The skip_dry_run of this ActiveDirectoryPayload.  # noqa: E501
+        :type: bool
+        """
+
+        self._skip_dry_run = skip_dry_run
 
     @property
     def ssh_port(self):

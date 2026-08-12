@@ -73,6 +73,7 @@ class CreateRotatedSecret(object):
         'secure_access_db_schema': 'str',
         'secure_access_disable_concurrent_connections': 'bool',
         'secure_access_enable': 'str',
+        'secure_access_enforce_hosts_restriction': 'bool',
         'secure_access_host': 'list[str]',
         'secure_access_rdp_domain': 'str',
         'secure_access_rdp_user': 'str',
@@ -132,6 +133,7 @@ class CreateRotatedSecret(object):
         'secure_access_db_schema': 'secure-access-db-schema',
         'secure_access_disable_concurrent_connections': 'secure-access-disable-concurrent-connections',
         'secure_access_enable': 'secure-access-enable',
+        'secure_access_enforce_hosts_restriction': 'secure-access-enforce-hosts-restriction',
         'secure_access_host': 'secure-access-host',
         'secure_access_rdp_domain': 'secure-access-rdp-domain',
         'secure_access_rdp_user': 'secure-access-rdp-user',
@@ -151,7 +153,7 @@ class CreateRotatedSecret(object):
         'user_dn': 'user-dn'
     }
 
-    def __init__(self, provider_type=None, api_id=None, api_key=None, application_id=None, authentication_credentials='use-user-creds', auto_rotate=None, aws_region='us-east-2', custom_payload=None, delete_protection=None, description=None, gcp_key=None, gcp_service_account_email=None, gcp_service_account_key_id=None, grace_rotation=None, host_provider=None, json=False, key=None, lock_during_sra_session=None, metadata=None, name=None, password_length=None, rotate_after_disconnect=None, rotated_password=None, rotated_username=None, rotation_hour=None, rotation_interval=None, rotator_creds_type=None, rotator_custom_cmd=None, rotator_type=None, same_password=None, secure_access_allow_external_user=False, secure_access_aws_account_id=None, secure_access_aws_native_cli=None, secure_access_bastion_issuer=None, secure_access_certificate_issuer=None, secure_access_db_name=None, secure_access_db_schema=None, secure_access_disable_concurrent_connections=None, secure_access_enable=None, secure_access_host=None, secure_access_rdp_domain=None, secure_access_rdp_user=None, secure_access_url=None, secure_access_web=False, secure_access_web_browsing=False, secure_access_web_proxy=False, ssh_password=None, ssh_username=None, storage_account_key_name=None, tags=None, target=None, target_name=None, token=None, uid_token=None, user_attribute='cn', user_dn=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, provider_type=None, api_id=None, api_key=None, application_id=None, authentication_credentials='use-user-creds', auto_rotate=None, aws_region='us-east-2', custom_payload=None, delete_protection=None, description=None, gcp_key=None, gcp_service_account_email=None, gcp_service_account_key_id=None, grace_rotation=None, host_provider=None, json=False, key=None, lock_during_sra_session=None, metadata=None, name=None, password_length=None, rotate_after_disconnect=None, rotated_password=None, rotated_username=None, rotation_hour=None, rotation_interval=None, rotator_creds_type=None, rotator_custom_cmd=None, rotator_type=None, same_password=None, secure_access_allow_external_user=False, secure_access_aws_account_id=None, secure_access_aws_native_cli=None, secure_access_bastion_issuer=None, secure_access_certificate_issuer=None, secure_access_db_name=None, secure_access_db_schema=None, secure_access_disable_concurrent_connections=None, secure_access_enable=None, secure_access_enforce_hosts_restriction=None, secure_access_host=None, secure_access_rdp_domain=None, secure_access_rdp_user=None, secure_access_url=None, secure_access_web=False, secure_access_web_browsing=False, secure_access_web_proxy=False, ssh_password=None, ssh_username=None, storage_account_key_name=None, tags=None, target=None, target_name=None, token=None, uid_token=None, user_attribute='cn', user_dn=None, local_vars_configuration=None):  # noqa: E501
         """CreateRotatedSecret - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -196,6 +198,7 @@ class CreateRotatedSecret(object):
         self._secure_access_db_schema = None
         self._secure_access_disable_concurrent_connections = None
         self._secure_access_enable = None
+        self._secure_access_enforce_hosts_restriction = None
         self._secure_access_host = None
         self._secure_access_rdp_domain = None
         self._secure_access_rdp_user = None
@@ -291,6 +294,8 @@ class CreateRotatedSecret(object):
             self.secure_access_disable_concurrent_connections = secure_access_disable_concurrent_connections
         if secure_access_enable is not None:
             self.secure_access_enable = secure_access_enable
+        if secure_access_enforce_hosts_restriction is not None:
+            self.secure_access_enforce_hosts_restriction = secure_access_enforce_hosts_restriction
         if secure_access_host is not None:
             self.secure_access_host = secure_access_host
         if secure_access_rdp_domain is not None:
@@ -649,7 +654,7 @@ class CreateRotatedSecret(object):
     def host_provider(self):
         """Gets the host_provider of this CreateRotatedSecret.  # noqa: E501
 
-        Host provider type [explicit/target], Default Host provider is explicit, Relevant only for Secure Remote Access of ssh cert issuer, ldap rotated secret and ldap dynamic secret  # noqa: E501
+        Host provider type [explicit/target], Default Host provider is explicit, Relevant only for SRA items.  # noqa: E501
 
         :return: The host_provider of this CreateRotatedSecret.  # noqa: E501
         :rtype: str
@@ -660,7 +665,7 @@ class CreateRotatedSecret(object):
     def host_provider(self, host_provider):
         """Sets the host_provider of this CreateRotatedSecret.
 
-        Host provider type [explicit/target], Default Host provider is explicit, Relevant only for Secure Remote Access of ssh cert issuer, ldap rotated secret and ldap dynamic secret  # noqa: E501
+        Host provider type [explicit/target], Default Host provider is explicit, Relevant only for SRA items.  # noqa: E501
 
         :param host_provider: The host_provider of this CreateRotatedSecret.  # noqa: E501
         :type: str
@@ -1223,6 +1228,29 @@ class CreateRotatedSecret(object):
         self._secure_access_enable = secure_access_enable
 
     @property
+    def secure_access_enforce_hosts_restriction(self):
+        """Gets the secure_access_enforce_hosts_restriction of this CreateRotatedSecret.  # noqa: E501
+
+        Enforce connections only to allowed SRA hosts  # noqa: E501
+
+        :return: The secure_access_enforce_hosts_restriction of this CreateRotatedSecret.  # noqa: E501
+        :rtype: bool
+        """
+        return self._secure_access_enforce_hosts_restriction
+
+    @secure_access_enforce_hosts_restriction.setter
+    def secure_access_enforce_hosts_restriction(self, secure_access_enforce_hosts_restriction):
+        """Sets the secure_access_enforce_hosts_restriction of this CreateRotatedSecret.
+
+        Enforce connections only to allowed SRA hosts  # noqa: E501
+
+        :param secure_access_enforce_hosts_restriction: The secure_access_enforce_hosts_restriction of this CreateRotatedSecret.  # noqa: E501
+        :type: bool
+        """
+
+        self._secure_access_enforce_hosts_restriction = secure_access_enforce_hosts_restriction
+
+    @property
     def secure_access_host(self):
         """Gets the secure_access_host of this CreateRotatedSecret.  # noqa: E501
 
@@ -1479,7 +1507,7 @@ class CreateRotatedSecret(object):
     def target(self):
         """Gets the target of this CreateRotatedSecret.  # noqa: E501
 
-        A list of linked targets to be associated, Relevant only for Secure Remote Access for ssh cert issuer, ldap rotated secret and ldap dynamic secret, To specify multiple targets use argument multiple times  # noqa: E501
+        A list of targets to be associated with an SRA item, To specify multiple targets use argument multiple times  # noqa: E501
 
         :return: The target of this CreateRotatedSecret.  # noqa: E501
         :rtype: list[str]
@@ -1490,7 +1518,7 @@ class CreateRotatedSecret(object):
     def target(self, target):
         """Sets the target of this CreateRotatedSecret.
 
-        A list of linked targets to be associated, Relevant only for Secure Remote Access for ssh cert issuer, ldap rotated secret and ldap dynamic secret, To specify multiple targets use argument multiple times  # noqa: E501
+        A list of targets to be associated with an SRA item, To specify multiple targets use argument multiple times  # noqa: E501
 
         :param target: The target of this CreateRotatedSecret.  # noqa: E501
         :type: list[str]

@@ -38,7 +38,10 @@ class CreateUSC(object):
         'delete_protection': 'str',
         'description': 'str',
         'environment_names': 'str',
+        'gcp_folder_id': 'str',
+        'gcp_organization_id': 'str',
         'gcp_project_id': 'str',
+        'gcp_scope': 'str',
         'gcp_sm_regions': 'str',
         'github_scope': 'str',
         'item_custom_fields': 'dict(str, str)',
@@ -63,7 +66,10 @@ class CreateUSC(object):
         'delete_protection': 'delete_protection',
         'description': 'description',
         'environment_names': 'environment-names',
+        'gcp_folder_id': 'gcp-folder-id',
+        'gcp_organization_id': 'gcp-organization-id',
         'gcp_project_id': 'gcp-project-id',
+        'gcp_scope': 'gcp-scope',
         'gcp_sm_regions': 'gcp-sm-regions',
         'github_scope': 'github-scope',
         'item_custom_fields': 'item-custom-fields',
@@ -83,7 +89,7 @@ class CreateUSC(object):
         'use_tags_as_filter': 'use-tags-as-filter'
     }
 
-    def __init__(self, azure_kv_name=None, delete_protection=None, description=None, environment_names=None, gcp_project_id=None, gcp_sm_regions=None, github_scope='repository', item_custom_fields=None, json=False, k8s_namespace=None, name=None, organization_name=None, repository_access='public', repository_names=None, tags=None, target_to_associate=None, token=None, uid_token=None, usc_prefix=None, usc_tags=None, use_prefix_as_filter='false', use_tags_as_filter=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, azure_kv_name=None, delete_protection=None, description=None, environment_names=None, gcp_folder_id=None, gcp_organization_id=None, gcp_project_id=None, gcp_scope='project', gcp_sm_regions=None, github_scope='repository', item_custom_fields=None, json=False, k8s_namespace=None, name=None, organization_name=None, repository_access='public', repository_names=None, tags=None, target_to_associate=None, token=None, uid_token=None, usc_prefix=None, usc_tags=None, use_prefix_as_filter='false', use_tags_as_filter=None, local_vars_configuration=None):  # noqa: E501
         """CreateUSC - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -93,7 +99,10 @@ class CreateUSC(object):
         self._delete_protection = None
         self._description = None
         self._environment_names = None
+        self._gcp_folder_id = None
+        self._gcp_organization_id = None
         self._gcp_project_id = None
+        self._gcp_scope = None
         self._gcp_sm_regions = None
         self._github_scope = None
         self._item_custom_fields = None
@@ -121,8 +130,14 @@ class CreateUSC(object):
             self.description = description
         if environment_names is not None:
             self.environment_names = environment_names
+        if gcp_folder_id is not None:
+            self.gcp_folder_id = gcp_folder_id
+        if gcp_organization_id is not None:
+            self.gcp_organization_id = gcp_organization_id
         if gcp_project_id is not None:
             self.gcp_project_id = gcp_project_id
+        if gcp_scope is not None:
+            self.gcp_scope = gcp_scope
         if gcp_sm_regions is not None:
             self.gcp_sm_regions = gcp_sm_regions
         if github_scope is not None:
@@ -249,6 +264,52 @@ class CreateUSC(object):
         self._environment_names = environment_names
 
     @property
+    def gcp_folder_id(self):
+        """Gets the gcp_folder_id of this CreateUSC.  # noqa: E501
+
+        GCP Folder ID (Relevant only for GCP targets with folder scope)  # noqa: E501
+
+        :return: The gcp_folder_id of this CreateUSC.  # noqa: E501
+        :rtype: str
+        """
+        return self._gcp_folder_id
+
+    @gcp_folder_id.setter
+    def gcp_folder_id(self, gcp_folder_id):
+        """Sets the gcp_folder_id of this CreateUSC.
+
+        GCP Folder ID (Relevant only for GCP targets with folder scope)  # noqa: E501
+
+        :param gcp_folder_id: The gcp_folder_id of this CreateUSC.  # noqa: E501
+        :type: str
+        """
+
+        self._gcp_folder_id = gcp_folder_id
+
+    @property
+    def gcp_organization_id(self):
+        """Gets the gcp_organization_id of this CreateUSC.  # noqa: E501
+
+        GCP Organization ID (Relevant only for GCP targets)  # noqa: E501
+
+        :return: The gcp_organization_id of this CreateUSC.  # noqa: E501
+        :rtype: str
+        """
+        return self._gcp_organization_id
+
+    @gcp_organization_id.setter
+    def gcp_organization_id(self, gcp_organization_id):
+        """Sets the gcp_organization_id of this CreateUSC.
+
+        GCP Organization ID (Relevant only for GCP targets)  # noqa: E501
+
+        :param gcp_organization_id: The gcp_organization_id of this CreateUSC.  # noqa: E501
+        :type: str
+        """
+
+        self._gcp_organization_id = gcp_organization_id
+
+    @property
     def gcp_project_id(self):
         """Gets the gcp_project_id of this CreateUSC.  # noqa: E501
 
@@ -270,6 +331,29 @@ class CreateUSC(object):
         """
 
         self._gcp_project_id = gcp_project_id
+
+    @property
+    def gcp_scope(self):
+        """Gets the gcp_scope of this CreateUSC.  # noqa: E501
+
+        The gcp usc scope [ project / organization / folder]  # noqa: E501
+
+        :return: The gcp_scope of this CreateUSC.  # noqa: E501
+        :rtype: str
+        """
+        return self._gcp_scope
+
+    @gcp_scope.setter
+    def gcp_scope(self, gcp_scope):
+        """Sets the gcp_scope of this CreateUSC.
+
+        The gcp usc scope [ project / organization / folder]  # noqa: E501
+
+        :param gcp_scope: The gcp_scope of this CreateUSC.  # noqa: E501
+        :type: str
+        """
+
+        self._gcp_scope = gcp_scope
 
     @property
     def gcp_sm_regions(self):

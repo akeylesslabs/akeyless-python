@@ -5,6 +5,7 @@ gatewayUpdateProducerCustom is a command that updates a custom producer. [Deprec
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **admin_rotation_interval_days** | **int** | Define rotation interval in days | [optional] 
+**ara_enabled** | **bool** | Enable or disable Agentic Runtime Authority rule enforcement for this item. Mirrors commands.AgenticRulesParams.AraEnabled. | [optional] 
 **create_sync_url** | **str** | URL of an endpoint that implements /sync/create method, for example https://webhook.example.com/sync/create | 
 **delete_protection** | **str** | Protection from accidental deletion of this object [true/false] | [optional] 
 **enable_admin_rotation** | **bool** | Should admin credentials be rotated | [optional] [default to False]
@@ -18,6 +19,7 @@ Name | Type | Description | Notes
 **producer_encryption_key_name** | **str** | Dynamic producer encryption key | [optional] 
 **revoke_sync_url** | **str** | URL of an endpoint that implements /sync/revoke method, for example https://webhook.example.com/sync/revoke | 
 **rotate_sync_url** | **str** | URL of an endpoint that implements /sync/rotate method, for example https://webhook.example.com/sync/rotate | [optional] 
+**skip_dry_run** | **str** | If set, dry-run will be skipped | [optional] 
 **tags** | **list[str]** | Add tags attached to this object | [optional] 
 **timeout_sec** | **int** | Maximum allowed time in seconds for the webhook to return the results | [optional] [default to 60]
 **token** | **str** | Authentication token (see &#x60;/auth&#x60; and &#x60;/configure&#x60;) | [optional] 

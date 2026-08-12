@@ -4,6 +4,7 @@ dynamicSecretCreatePing is a command that creates ping dynamic secret
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**ara_enabled** | **bool** | Enable or disable Agentic Runtime Authority rule enforcement for this item. Mirrors commands.AgenticRulesParams.AraEnabled. | [optional] 
 **delete_protection** | **str** | Protection from accidental deletion of this object [true/false] | [optional] 
 **description** | **str** | Description of the object | [optional] 
 **input_rule** | **list[str]** | Agentic input rule in name&#x3D;...,rule&#x3D;... format (e.g. name&#x3D;rule1,rule&#x3D;Sanitize input) Mirrors commands.AgenticRulesParams — kept separate because ResourceDS cannot embed it (different package, different struct layout). | [optional] 
@@ -28,6 +29,7 @@ Name | Type | Description | Notes
 **ping_signing_algo** | **str** | The signing algorithm that the client must use to sign its request objects [RS256,RS384,RS512,ES256,ES384,ES512,PS256,PS384,PS512] If no explicit value is given, the client can use any of the supported signing algorithms (relevant for PRIVATE_KEY_JWT authentication method) | [optional] 
 **ping_url** | **str** | Ping URL | [optional] 
 **producer_encryption_key_name** | **str** | Dynamic producer encryption key | [optional] 
+**skip_dry_run** | **str** | If set, dry-run will be skipped | [optional] 
 **tags** | **list[str]** | Add tags attached to this object | [optional] 
 **target_name** | **str** | Target name | [optional] 
 **token** | **str** | Authentication token (see &#x60;/auth&#x60; and &#x60;/configure&#x60;) | [optional] 

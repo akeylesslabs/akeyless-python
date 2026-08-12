@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **expiry** | **int** | Credentials expiration date | [optional] 
 **kfm_creds** | **str** | Temporary credentials for accessing the KFMs instances | [optional] 
 **need_mfa_app_first_config** | **bool** | If the user didn&#39;t complete to configure the MFA app | [optional] 
+**recovery_key_id** | **str** | RecoveryKeyID identifies the DPoP-bound recovery key for WebUI session recovery. | [optional] 
 **required_mfa** | **str** |  | [optional] 
 **token** | **str** | Credentials tmp token | [optional] 
 **uam_creds** | **str** | Temporary credentials for accessing the UAM service | [optional] 

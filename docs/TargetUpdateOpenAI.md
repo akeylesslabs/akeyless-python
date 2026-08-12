@@ -6,6 +6,10 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **api_key** | **str** | API key for OpenAI | [optional] 
 **api_key_id** | **str** | API key ID | [optional] 
+**codex_oauth_access_token** | **str** | Codex OAuth access token (auth.json tokens.access_token), used when codex-oauth-mode&#x3D;chatgpt_oauth | [optional] 
+**codex_oauth_account_id** | **str** | Codex OAuth account id (auth.json tokens.account_id), used when codex-oauth-mode&#x3D;chatgpt_oauth | [optional] 
+**codex_oauth_mode** | **str** | Auth mode: empty (default, static api-key) or chatgpt_oauth | [optional] 
+**codex_oauth_refresh_token** | **str** | Codex OAuth refresh token (auth.json tokens.refresh_token), used when codex-oauth-mode&#x3D;chatgpt_oauth | [optional] 
 **delete_protection** | **str** | Protection from accidental deletion of this object [true/false] | [optional] 
 **description** | **str** | Description of the object | [optional] [default to 'default_comment']
 **json** | **bool** | Set output format to JSON | [optional] [default to False]

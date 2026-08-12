@@ -75,6 +75,7 @@ Method | HTTP request | Description
 [**create_eks_target**](V2Api.md#create_eks_target) | **POST** /create-eks-target | 
 [**create_esm**](V2Api.md#create_esm) | **POST** /create-esm | 
 [**create_event_forwarder**](V2Api.md#create_event_forwarder) | **POST** /create-event-forwarder | 
+[**create_f5_big_ip_target**](V2Api.md#create_f5_big_ip_target) | **POST** /create-f5-big-ip-target | 
 [**create_gcp_target**](V2Api.md#create_gcp_target) | **POST** /create-gcp-target | 
 [**create_github_target**](V2Api.md#create_github_target) | **POST** /create-github-target | 
 [**create_gitlab_target**](V2Api.md#create_gitlab_target) | **POST** /create-gitlab-target | 
@@ -136,6 +137,7 @@ Method | HTTP request | Description
 [**describe_sub_claims**](V2Api.md#describe_sub_claims) | **POST** /describe-sub-claims | 
 [**detokenize**](V2Api.md#detokenize) | **POST** /detokenize | 
 [**detokenize_batch**](V2Api.md#detokenize_batch) | **POST** /detokenize-batch | 
+[**dynamic_secret_create_aerospike**](V2Api.md#dynamic_secret_create_aerospike) | **POST** /dynamic-secret-create-aerospike | 
 [**dynamic_secret_create_artifactory**](V2Api.md#dynamic_secret_create_artifactory) | **POST** /dynamic-secret-create-artifactory | 
 [**dynamic_secret_create_aws**](V2Api.md#dynamic_secret_create_aws) | **POST** /dynamic-secret-create-aws | 
 [**dynamic_secret_create_azure**](V2Api.md#dynamic_secret_create_azure) | **POST** /dynamic-secret-create-azure | 
@@ -171,6 +173,7 @@ Method | HTTP request | Description
 [**dynamic_secret_tmp_creds_delete**](V2Api.md#dynamic_secret_tmp_creds_delete) | **POST** /dynamic-secret-tmp-creds-delete | 
 [**dynamic_secret_tmp_creds_get**](V2Api.md#dynamic_secret_tmp_creds_get) | **POST** /dynamic-secret-tmp-creds-get | 
 [**dynamic_secret_tmp_creds_update**](V2Api.md#dynamic_secret_tmp_creds_update) | **POST** /dynamic-secret-tmp-creds-update | 
+[**dynamic_secret_update_aerospike**](V2Api.md#dynamic_secret_update_aerospike) | **POST** /dynamic-secret-update-aerospike | 
 [**dynamic_secret_update_artifactory**](V2Api.md#dynamic_secret_update_artifactory) | **POST** /dynamic-secret-update-artifactory | 
 [**dynamic_secret_update_aws**](V2Api.md#dynamic_secret_update_aws) | **POST** /dynamic-secret-update-aws | 
 [**dynamic_secret_update_azure**](V2Api.md#dynamic_secret_update_azure) | **POST** /dynamic-secret-update-azure | 
@@ -416,11 +419,13 @@ Method | HTTP request | Description
 [**rotate_key**](V2Api.md#rotate_key) | **POST** /rotate-key | 
 [**rotate_oidc_client_secret**](V2Api.md#rotate_oidc_client_secret) | **POST** /rotate-oidc-client-secret | 
 [**rotate_secret**](V2Api.md#rotate_secret) | **POST** /gateway-rotate-secret | 
+[**rotated_secret_create_aerospike**](V2Api.md#rotated_secret_create_aerospike) | **POST** /rotated-secret-create-aerospike | 
 [**rotated_secret_create_aws**](V2Api.md#rotated_secret_create_aws) | **POST** /rotated-secret-create-aws | 
 [**rotated_secret_create_azure**](V2Api.md#rotated_secret_create_azure) | **POST** /rotated-secret-create-azure | 
 [**rotated_secret_create_cassandra**](V2Api.md#rotated_secret_create_cassandra) | **POST** /rotated-secret-create-cassandra | 
 [**rotated_secret_create_custom**](V2Api.md#rotated_secret_create_custom) | **POST** /rotated-secret-create-custom | 
 [**rotated_secret_create_dockerhub**](V2Api.md#rotated_secret_create_dockerhub) | **POST** /rotated-secret-create-dockerhub | 
+[**rotated_secret_create_f5_big_ip**](V2Api.md#rotated_secret_create_f5_big_ip) | **POST** /rotated-secret-create-f5-big-ip | 
 [**rotated_secret_create_gcp**](V2Api.md#rotated_secret_create_gcp) | **POST** /rotated-secret-create-gcp | 
 [**rotated_secret_create_hanadb**](V2Api.md#rotated_secret_create_hanadb) | **POST** /rotated-secret-create-hanadb | 
 [**rotated_secret_create_hashi_vault**](V2Api.md#rotated_secret_create_hashi_vault) | **POST** /rotated-secret-create-hashi-vault | 
@@ -442,6 +447,7 @@ Method | HTTP request | Description
 [**rotated_secret_get_value**](V2Api.md#rotated_secret_get_value) | **POST** /rotated-secret-get-value | 
 [**rotated_secret_list**](V2Api.md#rotated_secret_list) | **POST** /rotated-secret-list | 
 [**rotated_secret_sync**](V2Api.md#rotated_secret_sync) | **POST** /rotated-secret-sync | 
+[**rotated_secret_update_aerospike**](V2Api.md#rotated_secret_update_aerospike) | **POST** /rotated-secret-update-aerospike | 
 [**rotated_secret_update_aws**](V2Api.md#rotated_secret_update_aws) | **POST** /rotated-secret-update-aws | 
 [**rotated_secret_update_azure**](V2Api.md#rotated_secret_update_azure) | **POST** /rotated-secret-update-azure | 
 [**rotated_secret_update_cassandra**](V2Api.md#rotated_secret_update_cassandra) | **POST** /rotated-secret-update-cassandra | 
@@ -489,6 +495,7 @@ Method | HTTP request | Description
 [**target_create_digi_cert**](V2Api.md#target_create_digi_cert) | **POST** /target-create-digicert | 
 [**target_create_dockerhub**](V2Api.md#target_create_dockerhub) | **POST** /target-create-dockerhub | 
 [**target_create_eks**](V2Api.md#target_create_eks) | **POST** /target-create-eks | 
+[**target_create_f5_big_ip**](V2Api.md#target_create_f5_big_ip) | **POST** /target-create-f5-big-ip | 
 [**target_create_gcp**](V2Api.md#target_create_gcp) | **POST** /target-create-gcp | 
 [**target_create_gemini**](V2Api.md#target_create_gemini) | **POST** /target-create-gemini | 
 [**target_create_github**](V2Api.md#target_create_github) | **POST** /target-create-github | 
@@ -532,6 +539,7 @@ Method | HTTP request | Description
 [**target_update_digi_cert**](V2Api.md#target_update_digi_cert) | **POST** /target-update-digicert | 
 [**target_update_dockerhub**](V2Api.md#target_update_dockerhub) | **POST** /target-update-dockerhub | 
 [**target_update_eks**](V2Api.md#target_update_eks) | **POST** /target-update-eks | 
+[**target_update_f5_big_ip**](V2Api.md#target_update_f5_big_ip) | **POST** /target-update-f5-big-ip | 
 [**target_update_gcp**](V2Api.md#target_update_gcp) | **POST** /target-update-gcp | 
 [**target_update_gemini**](V2Api.md#target_update_gemini) | **POST** /target-update-gemini | 
 [**target_update_github**](V2Api.md#target_update_github) | **POST** /target-update-github | 
@@ -593,6 +601,7 @@ Method | HTTP request | Description
 [**update_dockerhub_target**](V2Api.md#update_dockerhub_target) | **POST** /update-dockerhub-target | 
 [**update_eks_target**](V2Api.md#update_eks_target) | **POST** /update-eks-target | 
 [**update_event_forwarder**](V2Api.md#update_event_forwarder) | **POST** /update-event-forwarder | 
+[**update_f5_big_ip_target**](V2Api.md#update_f5_big_ip_target) | **POST** /update-f5-big-ip-target | 
 [**update_gcp_target**](V2Api.md#update_gcp_target) | **POST** /update-gcp-target | 
 [**update_github_target**](V2Api.md#update_github_target) | **POST** /update-github-target | 
 [**update_gitlab_target**](V2Api.md#update_gitlab_target) | **POST** /update-gitlab-target | 
@@ -4916,6 +4925,66 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **create_f5_big_ip_target**
+> CreateF5BigIpTargetOutput create_f5_big_ip_target(create_f5_big_ip_target)
+
+
+
+### Example
+
+```python
+from __future__ import print_function
+import time
+import akeyless
+from akeyless.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.akeyless.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = akeyless.Configuration(
+    host = "https://api.akeyless.io"
+)
+
+
+# Enter a context with an instance of the API client
+with akeyless.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = akeyless.V2Api(api_client)
+    create_f5_big_ip_target = akeyless.CreateF5BigIpTarget() # CreateF5BigIpTarget | 
+
+    try:
+        api_response = api_instance.create_f5_big_ip_target(create_f5_big_ip_target)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling V2Api->create_f5_big_ip_target: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **create_f5_big_ip_target** | [**CreateF5BigIpTarget**](CreateF5BigIpTarget.md)|  | 
+
+### Return type
+
+[**CreateF5BigIpTargetOutput**](CreateF5BigIpTargetOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | createF5BigIpTargetResponse wraps response body. |  -  |
+**0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **create_gcp_target**
 > CreateGcpTargetOutput create_gcp_target(create_gcp_target)
 
@@ -8577,6 +8646,66 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **dynamic_secret_create_aerospike**
+> DynamicSecretCreateOutput dynamic_secret_create_aerospike(dynamic_secret_create_aerospike)
+
+
+
+### Example
+
+```python
+from __future__ import print_function
+import time
+import akeyless
+from akeyless.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.akeyless.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = akeyless.Configuration(
+    host = "https://api.akeyless.io"
+)
+
+
+# Enter a context with an instance of the API client
+with akeyless.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = akeyless.V2Api(api_client)
+    dynamic_secret_create_aerospike = akeyless.DynamicSecretCreateAerospike() # DynamicSecretCreateAerospike | 
+
+    try:
+        api_response = api_instance.dynamic_secret_create_aerospike(dynamic_secret_create_aerospike)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling V2Api->dynamic_secret_create_aerospike: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **dynamic_secret_create_aerospike** | [**DynamicSecretCreateAerospike**](DynamicSecretCreateAerospike.md)|  | 
+
+### Return type
+
+[**DynamicSecretCreateOutput**](DynamicSecretCreateOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**201** | dynamicSecretCreateAerospikeResponse wraps response body. |  -  |
+**0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **dynamic_secret_create_artifactory**
 > DynamicSecretCreateOutput dynamic_secret_create_artifactory(dynamic_secret_create_artifactory)
 
@@ -10671,6 +10800,66 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | dynamicSecretTmpCredsUpdateResponse wraps response body. |  -  |
+**0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **dynamic_secret_update_aerospike**
+> DynamicSecretUpdateOutput dynamic_secret_update_aerospike(dynamic_secret_update_aerospike)
+
+
+
+### Example
+
+```python
+from __future__ import print_function
+import time
+import akeyless
+from akeyless.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.akeyless.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = akeyless.Configuration(
+    host = "https://api.akeyless.io"
+)
+
+
+# Enter a context with an instance of the API client
+with akeyless.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = akeyless.V2Api(api_client)
+    dynamic_secret_update_aerospike = akeyless.DynamicSecretUpdateAerospike() # DynamicSecretUpdateAerospike | 
+
+    try:
+        api_response = api_instance.dynamic_secret_update_aerospike(dynamic_secret_update_aerospike)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling V2Api->dynamic_secret_update_aerospike: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **dynamic_secret_update_aerospike** | [**DynamicSecretUpdateAerospike**](DynamicSecretUpdateAerospike.md)|  | 
+
+### Return type
+
+[**DynamicSecretUpdateOutput**](DynamicSecretUpdateOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | dynamicSecretUpdateAerospikeResponse wraps response body. |  -  |
 **0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -25361,6 +25550,66 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **rotated_secret_create_aerospike**
+> RotatedSecretCreateOutput rotated_secret_create_aerospike(rotated_secret_create_aerospike)
+
+
+
+### Example
+
+```python
+from __future__ import print_function
+import time
+import akeyless
+from akeyless.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.akeyless.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = akeyless.Configuration(
+    host = "https://api.akeyless.io"
+)
+
+
+# Enter a context with an instance of the API client
+with akeyless.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = akeyless.V2Api(api_client)
+    rotated_secret_create_aerospike = akeyless.RotatedSecretCreateAerospike() # RotatedSecretCreateAerospike | 
+
+    try:
+        api_response = api_instance.rotated_secret_create_aerospike(rotated_secret_create_aerospike)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling V2Api->rotated_secret_create_aerospike: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **rotated_secret_create_aerospike** | [**RotatedSecretCreateAerospike**](RotatedSecretCreateAerospike.md)|  | 
+
+### Return type
+
+[**RotatedSecretCreateOutput**](RotatedSecretCreateOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**201** | rotatedSecretCreateAerospikeResponse wraps response body. |  -  |
+**0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **rotated_secret_create_aws**
 > RotatedSecretCreateOutput rotated_secret_create_aws(rotated_secret_create_aws)
 
@@ -25657,6 +25906,66 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | rotatedSecretCreateDockerhubResponse wraps response body. |  -  |
+**0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **rotated_secret_create_f5_big_ip**
+> RotatedSecretCreateOutput rotated_secret_create_f5_big_ip(rotated_secret_create_f5_big_ip)
+
+
+
+### Example
+
+```python
+from __future__ import print_function
+import time
+import akeyless
+from akeyless.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.akeyless.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = akeyless.Configuration(
+    host = "https://api.akeyless.io"
+)
+
+
+# Enter a context with an instance of the API client
+with akeyless.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = akeyless.V2Api(api_client)
+    rotated_secret_create_f5_big_ip = akeyless.RotatedSecretCreateF5BigIp() # RotatedSecretCreateF5BigIp | 
+
+    try:
+        api_response = api_instance.rotated_secret_create_f5_big_ip(rotated_secret_create_f5_big_ip)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling V2Api->rotated_secret_create_f5_big_ip: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **rotated_secret_create_f5_big_ip** | [**RotatedSecretCreateF5BigIp**](RotatedSecretCreateF5BigIp.md)|  | 
+
+### Return type
+
+[**RotatedSecretCreateOutput**](RotatedSecretCreateOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | rotatedSecretCreateF5BigIpResponse wraps response body. |  -  |
 **0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -26917,6 +27226,66 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | rotatedSecretSyncResponse wraps response body. |  -  |
+**0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **rotated_secret_update_aerospike**
+> RotatedSecretUpdateOutput rotated_secret_update_aerospike(rotated_secret_update_aerospike)
+
+
+
+### Example
+
+```python
+from __future__ import print_function
+import time
+import akeyless
+from akeyless.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.akeyless.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = akeyless.Configuration(
+    host = "https://api.akeyless.io"
+)
+
+
+# Enter a context with an instance of the API client
+with akeyless.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = akeyless.V2Api(api_client)
+    rotated_secret_update_aerospike = akeyless.RotatedSecretUpdateAerospike() # RotatedSecretUpdateAerospike | 
+
+    try:
+        api_response = api_instance.rotated_secret_update_aerospike(rotated_secret_update_aerospike)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling V2Api->rotated_secret_update_aerospike: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **rotated_secret_update_aerospike** | [**RotatedSecretUpdateAerospike**](RotatedSecretUpdateAerospike.md)|  | 
+
+### Return type
+
+[**RotatedSecretUpdateOutput**](RotatedSecretUpdateOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | rotatedSecretUpdateAerospikeResponse wraps response body. |  -  |
 **0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -29740,6 +30109,66 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **target_create_f5_big_ip**
+> TargetCreateOutput target_create_f5_big_ip(target_create_f5_big_ip)
+
+
+
+### Example
+
+```python
+from __future__ import print_function
+import time
+import akeyless
+from akeyless.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.akeyless.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = akeyless.Configuration(
+    host = "https://api.akeyless.io"
+)
+
+
+# Enter a context with an instance of the API client
+with akeyless.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = akeyless.V2Api(api_client)
+    target_create_f5_big_ip = akeyless.TargetCreateF5BigIp() # TargetCreateF5BigIp | 
+
+    try:
+        api_response = api_instance.target_create_f5_big_ip(target_create_f5_big_ip)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling V2Api->target_create_f5_big_ip: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **target_create_f5_big_ip** | [**TargetCreateF5BigIp**](TargetCreateF5BigIp.md)|  | 
+
+### Return type
+
+[**TargetCreateOutput**](TargetCreateOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**201** | targetCreateF5BigIpResponse wraps response body. |  -  |
+**0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **target_create_gcp**
 > TargetCreateOutput target_create_gcp(target_create_gcp)
 
@@ -32316,6 +32745,66 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | targetUpdateEksResponse wraps response body. |  -  |
+**0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **target_update_f5_big_ip**
+> TargetUpdateOutput target_update_f5_big_ip(target_update_f5_big_ip)
+
+
+
+### Example
+
+```python
+from __future__ import print_function
+import time
+import akeyless
+from akeyless.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.akeyless.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = akeyless.Configuration(
+    host = "https://api.akeyless.io"
+)
+
+
+# Enter a context with an instance of the API client
+with akeyless.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = akeyless.V2Api(api_client)
+    target_update_f5_big_ip = akeyless.TargetUpdateF5BigIp() # TargetUpdateF5BigIp | 
+
+    try:
+        api_response = api_instance.target_update_f5_big_ip(target_update_f5_big_ip)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling V2Api->target_update_f5_big_ip: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **target_update_f5_big_ip** | [**TargetUpdateF5BigIp**](TargetUpdateF5BigIp.md)|  | 
+
+### Return type
+
+[**TargetUpdateOutput**](TargetUpdateOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**201** | targetUpdateF5BigIpResponse wraps response body. |  -  |
 **0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -35976,6 +36465,66 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | updateEventForwarderResponse wraps response body. |  -  |
+**0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **update_f5_big_ip_target**
+> UpdateF5BigIpTargetOutput update_f5_big_ip_target(update_f5_big_ip_target)
+
+
+
+### Example
+
+```python
+from __future__ import print_function
+import time
+import akeyless
+from akeyless.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.akeyless.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = akeyless.Configuration(
+    host = "https://api.akeyless.io"
+)
+
+
+# Enter a context with an instance of the API client
+with akeyless.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = akeyless.V2Api(api_client)
+    update_f5_big_ip_target = akeyless.UpdateF5BigIpTarget() # UpdateF5BigIpTarget | 
+
+    try:
+        api_response = api_instance.update_f5_big_ip_target(update_f5_big_ip_target)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling V2Api->update_f5_big_ip_target: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **update_f5_big_ip_target** | [**UpdateF5BigIpTarget**](UpdateF5BigIpTarget.md)|  | 
+
+### Return type
+
+[**UpdateF5BigIpTargetOutput**](UpdateF5BigIpTargetOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | updateF5BigIpTargetResponse wraps response body. |  -  |
 **0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

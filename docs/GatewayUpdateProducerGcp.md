@@ -5,6 +5,7 @@ gatewayUpdateProducerGcp is a command that updates a GCP producer [Deprecated: U
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **access_type** | **str** |  | [optional] 
+**ara_enabled** | **bool** | Enable or disable Agentic Runtime Authority rule enforcement for this item. Mirrors commands.AgenticRulesParams.AraEnabled. | [optional] 
 **custom_username_template** | **str** | Customize how temporary usernames are generated using go template | [optional] 
 **delete_protection** | **str** | Protection from accidental deletion of this object [true/false] | [optional] 
 **fixed_user_claim_keyname** | **str** | For externally provided users, denotes the key-name of IdP claim to extract the username from (Relevant only when --access-type&#x3D;external) | [optional] [default to 'ext_email']
@@ -29,6 +30,7 @@ Name | Type | Description | Notes
 **secure_access_web_browsing** | **bool** | Secure browser via Akeyless&#39;s Secure Remote Access (SRA) | [optional] [default to False]
 **secure_access_web_proxy** | **bool** | Web-Proxy via Akeyless&#39;s Secure Remote Access (SRA) | [optional] [default to False]
 **service_account_type** | **str** | The type of the GCP service account. Options [fixed, dynamic] (Relevant only when --access-type&#x3D;sa) | [optional] [default to 'fixed']
+**skip_dry_run** | **str** | If set, dry-run will be skipped | [optional] 
 **tags** | **list[str]** | Add tags attached to this object | [optional] 
 **target_name** | **str** | Target name | [optional] 
 **token** | **str** | Authentication token (see &#x60;/auth&#x60; and &#x60;/configure&#x60;) | [optional] 

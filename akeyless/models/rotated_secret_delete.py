@@ -34,6 +34,7 @@ class RotatedSecretDelete(object):
                             and the value is json key in definition.
     """
     openapi_types = {
+        'force_delete': 'bool',
         'json': 'bool',
         'name': 'str',
         'token': 'str',
@@ -42,6 +43,7 @@ class RotatedSecretDelete(object):
     }
 
     attribute_map = {
+        'force_delete': 'force-delete',
         'json': 'json',
         'name': 'name',
         'token': 'token',
@@ -49,12 +51,13 @@ class RotatedSecretDelete(object):
         'version': 'version'
     }
 
-    def __init__(self, json=False, name=None, token=None, uid_token=None, version=-1, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, force_delete=None, json=False, name=None, token=None, uid_token=None, version=-1, local_vars_configuration=None):  # noqa: E501
         """RotatedSecretDelete - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
+        self._force_delete = None
         self._json = None
         self._name = None
         self._token = None
@@ -62,6 +65,8 @@ class RotatedSecretDelete(object):
         self._version = None
         self.discriminator = None
 
+        if force_delete is not None:
+            self.force_delete = force_delete
         if json is not None:
             self.json = json
         self.name = name
@@ -71,6 +76,29 @@ class RotatedSecretDelete(object):
             self.uid_token = uid_token
         if version is not None:
             self.version = version
+
+    @property
+    def force_delete(self):
+        """Gets the force_delete of this RotatedSecretDelete.  # noqa: E501
+
+        Delete the rotated secret only from Akeyless if failed to delete it from the third-party provider  # noqa: E501
+
+        :return: The force_delete of this RotatedSecretDelete.  # noqa: E501
+        :rtype: bool
+        """
+        return self._force_delete
+
+    @force_delete.setter
+    def force_delete(self, force_delete):
+        """Sets the force_delete of this RotatedSecretDelete.
+
+        Delete the rotated secret only from Akeyless if failed to delete it from the third-party provider  # noqa: E501
+
+        :param force_delete: The force_delete of this RotatedSecretDelete.  # noqa: E501
+        :type: bool
+        """
+
+        self._force_delete = force_delete
 
     @property
     def json(self):

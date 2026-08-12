@@ -4,6 +4,7 @@ gatewayCreateProducerPostgreSQL is a command that creates postgresql producer [D
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**ara_enabled** | **bool** | Enable or disable Agentic Runtime Authority rule enforcement for this item. Mirrors commands.AgenticRulesParams.AraEnabled. | [optional] 
 **creation_statements** | **str** | PostgreSQL Creation statements | [optional] 
 **custom_username_template** | **str** | Customize how temporary usernames are generated using go template | [optional] 
 **delete_protection** | **str** | Protection from accidental deletion of this object [true/false] | [optional] 
@@ -28,6 +29,7 @@ Name | Type | Description | Notes
 **secure_access_enable** | **str** | Enable/Disable secure remote access [true/false] | [optional] 
 **secure_access_host** | **list[str]** | Target DB servers for connections (In case of Linked Target association, host(s) will inherit Linked Target hosts) | [optional] 
 **secure_access_web** | **bool** | Enable Web Secure Remote Access | [optional] [default to False]
+**skip_dry_run** | **str** | If set, dry-run will be skipped | [optional] 
 **ssl** | **bool** | Enable/Disable SSL [true/false] | [optional] [default to False]
 **tags** | **list[str]** | Add tags attached to this object | [optional] 
 **target_name** | **str** | Target name | [optional] 

@@ -35,127 +35,84 @@ class AerospikeTargetDetails(object):
     """
     openapi_types = {
         'aerospike_admin_username': 'str',
+        'aerospike_client_certificate': 'str',
         'aerospike_client_id': 'str',
+        'aerospike_client_private_key': 'str',
         'aerospike_client_secret': 'str',
         'aerospike_cloud': 'bool',
         'aerospike_cluster_id': 'str',
+        'aerospike_db_server_name': 'str',
+        'aerospike_enable_mtls': 'bool',
         'aerospike_hostname': 'str',
         'aerospike_namespace': 'str',
         'aerospike_password': 'str',
         'aerospike_port': 'str',
-        'client_certificate': 'str',
-        'client_key_passphrase': 'str',
-        'client_private_key': 'str',
-        'cloud_service_provider': 'str',
-        'cluster_mode': 'bool',
-        'connection_type': 'str',
-        'db_client_id': 'str',
-        'db_client_secret': 'str',
-        'db_host_name': 'str',
-        'db_name': 'str',
-        'db_port': 'str',
-        'db_private_key': 'str',
-        'db_private_key_passphrase': 'str',
-        'db_pwd': 'str',
-        'db_server_certificates': 'str',
-        'db_server_name': 'str',
-        'db_tenant_id': 'str',
-        'db_user_name': 'str',
-        'enable_mtls': 'bool',
-        'oracle_wallet_details': 'WalletDetails',
-        'sf_account': 'str',
-        'skip_server_name_validation': 'str',
-        'ssl_connection_certificate': 'str',
-        'ssl_connection_mode': 'bool'
+        'aerospike_skip_server_name_validation': 'str',
+        'aerospike_ssl_connection_certificate': 'str',
+        'aerospike_ssl_connection_mode': 'bool'
     }
 
     attribute_map = {
         'aerospike_admin_username': 'aerospike_admin_username',
+        'aerospike_client_certificate': 'aerospike_client_certificate',
         'aerospike_client_id': 'aerospike_client_id',
+        'aerospike_client_private_key': 'aerospike_client_private_key',
         'aerospike_client_secret': 'aerospike_client_secret',
         'aerospike_cloud': 'aerospike_cloud',
         'aerospike_cluster_id': 'aerospike_cluster_id',
+        'aerospike_db_server_name': 'aerospike_db_server_name',
+        'aerospike_enable_mtls': 'aerospike_enable_mtls',
         'aerospike_hostname': 'aerospike_hostname',
         'aerospike_namespace': 'aerospike_namespace',
         'aerospike_password': 'aerospike_password',
         'aerospike_port': 'aerospike_port',
-        'client_certificate': 'client_certificate',
-        'client_key_passphrase': 'client_key_passphrase',
-        'client_private_key': 'client_private_key',
-        'cloud_service_provider': 'cloud_service_provider',
-        'cluster_mode': 'cluster_mode',
-        'connection_type': 'connection_type',
-        'db_client_id': 'db_client_id',
-        'db_client_secret': 'db_client_secret',
-        'db_host_name': 'db_host_name',
-        'db_name': 'db_name',
-        'db_port': 'db_port',
-        'db_private_key': 'db_private_key',
-        'db_private_key_passphrase': 'db_private_key_passphrase',
-        'db_pwd': 'db_pwd',
-        'db_server_certificates': 'db_server_certificates',
-        'db_server_name': 'db_server_name',
-        'db_tenant_id': 'db_tenant_id',
-        'db_user_name': 'db_user_name',
-        'enable_mtls': 'enable_mtls',
-        'oracle_wallet_details': 'oracle_wallet_details',
-        'sf_account': 'sf_account',
-        'skip_server_name_validation': 'skip_server_name_validation',
-        'ssl_connection_certificate': 'ssl_connection_certificate',
-        'ssl_connection_mode': 'ssl_connection_mode'
+        'aerospike_skip_server_name_validation': 'aerospike_skip_server_name_validation',
+        'aerospike_ssl_connection_certificate': 'aerospike_ssl_connection_certificate',
+        'aerospike_ssl_connection_mode': 'aerospike_ssl_connection_mode'
     }
 
-    def __init__(self, aerospike_admin_username=None, aerospike_client_id=None, aerospike_client_secret=None, aerospike_cloud=None, aerospike_cluster_id=None, aerospike_hostname=None, aerospike_namespace=None, aerospike_password=None, aerospike_port=None, client_certificate=None, client_key_passphrase=None, client_private_key=None, cloud_service_provider=None, cluster_mode=None, connection_type=None, db_client_id=None, db_client_secret=None, db_host_name=None, db_name=None, db_port=None, db_private_key=None, db_private_key_passphrase=None, db_pwd=None, db_server_certificates=None, db_server_name=None, db_tenant_id=None, db_user_name=None, enable_mtls=None, oracle_wallet_details=None, sf_account=None, skip_server_name_validation=None, ssl_connection_certificate=None, ssl_connection_mode=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, aerospike_admin_username=None, aerospike_client_certificate=None, aerospike_client_id=None, aerospike_client_private_key=None, aerospike_client_secret=None, aerospike_cloud=None, aerospike_cluster_id=None, aerospike_db_server_name=None, aerospike_enable_mtls=None, aerospike_hostname=None, aerospike_namespace=None, aerospike_password=None, aerospike_port=None, aerospike_skip_server_name_validation=None, aerospike_ssl_connection_certificate=None, aerospike_ssl_connection_mode=None, local_vars_configuration=None):  # noqa: E501
         """AerospikeTargetDetails - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._aerospike_admin_username = None
+        self._aerospike_client_certificate = None
         self._aerospike_client_id = None
+        self._aerospike_client_private_key = None
         self._aerospike_client_secret = None
         self._aerospike_cloud = None
         self._aerospike_cluster_id = None
+        self._aerospike_db_server_name = None
+        self._aerospike_enable_mtls = None
         self._aerospike_hostname = None
         self._aerospike_namespace = None
         self._aerospike_password = None
         self._aerospike_port = None
-        self._client_certificate = None
-        self._client_key_passphrase = None
-        self._client_private_key = None
-        self._cloud_service_provider = None
-        self._cluster_mode = None
-        self._connection_type = None
-        self._db_client_id = None
-        self._db_client_secret = None
-        self._db_host_name = None
-        self._db_name = None
-        self._db_port = None
-        self._db_private_key = None
-        self._db_private_key_passphrase = None
-        self._db_pwd = None
-        self._db_server_certificates = None
-        self._db_server_name = None
-        self._db_tenant_id = None
-        self._db_user_name = None
-        self._enable_mtls = None
-        self._oracle_wallet_details = None
-        self._sf_account = None
-        self._skip_server_name_validation = None
-        self._ssl_connection_certificate = None
-        self._ssl_connection_mode = None
+        self._aerospike_skip_server_name_validation = None
+        self._aerospike_ssl_connection_certificate = None
+        self._aerospike_ssl_connection_mode = None
         self.discriminator = None
 
         if aerospike_admin_username is not None:
             self.aerospike_admin_username = aerospike_admin_username
+        if aerospike_client_certificate is not None:
+            self.aerospike_client_certificate = aerospike_client_certificate
         if aerospike_client_id is not None:
             self.aerospike_client_id = aerospike_client_id
+        if aerospike_client_private_key is not None:
+            self.aerospike_client_private_key = aerospike_client_private_key
         if aerospike_client_secret is not None:
             self.aerospike_client_secret = aerospike_client_secret
         if aerospike_cloud is not None:
             self.aerospike_cloud = aerospike_cloud
         if aerospike_cluster_id is not None:
             self.aerospike_cluster_id = aerospike_cluster_id
+        if aerospike_db_server_name is not None:
+            self.aerospike_db_server_name = aerospike_db_server_name
+        if aerospike_enable_mtls is not None:
+            self.aerospike_enable_mtls = aerospike_enable_mtls
         if aerospike_hostname is not None:
             self.aerospike_hostname = aerospike_hostname
         if aerospike_namespace is not None:
@@ -164,54 +121,12 @@ class AerospikeTargetDetails(object):
             self.aerospike_password = aerospike_password
         if aerospike_port is not None:
             self.aerospike_port = aerospike_port
-        if client_certificate is not None:
-            self.client_certificate = client_certificate
-        if client_key_passphrase is not None:
-            self.client_key_passphrase = client_key_passphrase
-        if client_private_key is not None:
-            self.client_private_key = client_private_key
-        if cloud_service_provider is not None:
-            self.cloud_service_provider = cloud_service_provider
-        if cluster_mode is not None:
-            self.cluster_mode = cluster_mode
-        if connection_type is not None:
-            self.connection_type = connection_type
-        if db_client_id is not None:
-            self.db_client_id = db_client_id
-        if db_client_secret is not None:
-            self.db_client_secret = db_client_secret
-        if db_host_name is not None:
-            self.db_host_name = db_host_name
-        if db_name is not None:
-            self.db_name = db_name
-        if db_port is not None:
-            self.db_port = db_port
-        if db_private_key is not None:
-            self.db_private_key = db_private_key
-        if db_private_key_passphrase is not None:
-            self.db_private_key_passphrase = db_private_key_passphrase
-        if db_pwd is not None:
-            self.db_pwd = db_pwd
-        if db_server_certificates is not None:
-            self.db_server_certificates = db_server_certificates
-        if db_server_name is not None:
-            self.db_server_name = db_server_name
-        if db_tenant_id is not None:
-            self.db_tenant_id = db_tenant_id
-        if db_user_name is not None:
-            self.db_user_name = db_user_name
-        if enable_mtls is not None:
-            self.enable_mtls = enable_mtls
-        if oracle_wallet_details is not None:
-            self.oracle_wallet_details = oracle_wallet_details
-        if sf_account is not None:
-            self.sf_account = sf_account
-        if skip_server_name_validation is not None:
-            self.skip_server_name_validation = skip_server_name_validation
-        if ssl_connection_certificate is not None:
-            self.ssl_connection_certificate = ssl_connection_certificate
-        if ssl_connection_mode is not None:
-            self.ssl_connection_mode = ssl_connection_mode
+        if aerospike_skip_server_name_validation is not None:
+            self.aerospike_skip_server_name_validation = aerospike_skip_server_name_validation
+        if aerospike_ssl_connection_certificate is not None:
+            self.aerospike_ssl_connection_certificate = aerospike_ssl_connection_certificate
+        if aerospike_ssl_connection_mode is not None:
+            self.aerospike_ssl_connection_mode = aerospike_ssl_connection_mode
 
     @property
     def aerospike_admin_username(self):
@@ -235,6 +150,27 @@ class AerospikeTargetDetails(object):
         self._aerospike_admin_username = aerospike_admin_username
 
     @property
+    def aerospike_client_certificate(self):
+        """Gets the aerospike_client_certificate of this AerospikeTargetDetails.  # noqa: E501
+
+
+        :return: The aerospike_client_certificate of this AerospikeTargetDetails.  # noqa: E501
+        :rtype: str
+        """
+        return self._aerospike_client_certificate
+
+    @aerospike_client_certificate.setter
+    def aerospike_client_certificate(self, aerospike_client_certificate):
+        """Sets the aerospike_client_certificate of this AerospikeTargetDetails.
+
+
+        :param aerospike_client_certificate: The aerospike_client_certificate of this AerospikeTargetDetails.  # noqa: E501
+        :type: str
+        """
+
+        self._aerospike_client_certificate = aerospike_client_certificate
+
+    @property
     def aerospike_client_id(self):
         """Gets the aerospike_client_id of this AerospikeTargetDetails.  # noqa: E501
 
@@ -254,6 +190,27 @@ class AerospikeTargetDetails(object):
         """
 
         self._aerospike_client_id = aerospike_client_id
+
+    @property
+    def aerospike_client_private_key(self):
+        """Gets the aerospike_client_private_key of this AerospikeTargetDetails.  # noqa: E501
+
+
+        :return: The aerospike_client_private_key of this AerospikeTargetDetails.  # noqa: E501
+        :rtype: str
+        """
+        return self._aerospike_client_private_key
+
+    @aerospike_client_private_key.setter
+    def aerospike_client_private_key(self, aerospike_client_private_key):
+        """Sets the aerospike_client_private_key of this AerospikeTargetDetails.
+
+
+        :param aerospike_client_private_key: The aerospike_client_private_key of this AerospikeTargetDetails.  # noqa: E501
+        :type: str
+        """
+
+        self._aerospike_client_private_key = aerospike_client_private_key
 
     @property
     def aerospike_client_secret(self):
@@ -317,6 +274,48 @@ class AerospikeTargetDetails(object):
         """
 
         self._aerospike_cluster_id = aerospike_cluster_id
+
+    @property
+    def aerospike_db_server_name(self):
+        """Gets the aerospike_db_server_name of this AerospikeTargetDetails.  # noqa: E501
+
+
+        :return: The aerospike_db_server_name of this AerospikeTargetDetails.  # noqa: E501
+        :rtype: str
+        """
+        return self._aerospike_db_server_name
+
+    @aerospike_db_server_name.setter
+    def aerospike_db_server_name(self, aerospike_db_server_name):
+        """Sets the aerospike_db_server_name of this AerospikeTargetDetails.
+
+
+        :param aerospike_db_server_name: The aerospike_db_server_name of this AerospikeTargetDetails.  # noqa: E501
+        :type: str
+        """
+
+        self._aerospike_db_server_name = aerospike_db_server_name
+
+    @property
+    def aerospike_enable_mtls(self):
+        """Gets the aerospike_enable_mtls of this AerospikeTargetDetails.  # noqa: E501
+
+
+        :return: The aerospike_enable_mtls of this AerospikeTargetDetails.  # noqa: E501
+        :rtype: bool
+        """
+        return self._aerospike_enable_mtls
+
+    @aerospike_enable_mtls.setter
+    def aerospike_enable_mtls(self, aerospike_enable_mtls):
+        """Sets the aerospike_enable_mtls of this AerospikeTargetDetails.
+
+
+        :param aerospike_enable_mtls: The aerospike_enable_mtls of this AerospikeTargetDetails.  # noqa: E501
+        :type: bool
+        """
+
+        self._aerospike_enable_mtls = aerospike_enable_mtls
 
     @property
     def aerospike_hostname(self):
@@ -403,528 +402,67 @@ class AerospikeTargetDetails(object):
         self._aerospike_port = aerospike_port
 
     @property
-    def client_certificate(self):
-        """Gets the client_certificate of this AerospikeTargetDetails.  # noqa: E501
+    def aerospike_skip_server_name_validation(self):
+        """Gets the aerospike_skip_server_name_validation of this AerospikeTargetDetails.  # noqa: E501
 
-        (Optional) ClientCertificate defines the client certificate for mutual TLS. Must be base64 certificate loaded by UI using file loader field  # noqa: E501
 
-        :return: The client_certificate of this AerospikeTargetDetails.  # noqa: E501
+        :return: The aerospike_skip_server_name_validation of this AerospikeTargetDetails.  # noqa: E501
         :rtype: str
         """
-        return self._client_certificate
+        return self._aerospike_skip_server_name_validation
 
-    @client_certificate.setter
-    def client_certificate(self, client_certificate):
-        """Sets the client_certificate of this AerospikeTargetDetails.
+    @aerospike_skip_server_name_validation.setter
+    def aerospike_skip_server_name_validation(self, aerospike_skip_server_name_validation):
+        """Sets the aerospike_skip_server_name_validation of this AerospikeTargetDetails.
 
-        (Optional) ClientCertificate defines the client certificate for mutual TLS. Must be base64 certificate loaded by UI using file loader field  # noqa: E501
 
-        :param client_certificate: The client_certificate of this AerospikeTargetDetails.  # noqa: E501
+        :param aerospike_skip_server_name_validation: The aerospike_skip_server_name_validation of this AerospikeTargetDetails.  # noqa: E501
         :type: str
         """
 
-        self._client_certificate = client_certificate
+        self._aerospike_skip_server_name_validation = aerospike_skip_server_name_validation
 
     @property
-    def client_key_passphrase(self):
-        """Gets the client_key_passphrase of this AerospikeTargetDetails.  # noqa: E501
+    def aerospike_ssl_connection_certificate(self):
+        """Gets the aerospike_ssl_connection_certificate of this AerospikeTargetDetails.  # noqa: E501
 
-        (Optional) ClientKeyPassphrase defines the passphrase for the client private key  # noqa: E501
 
-        :return: The client_key_passphrase of this AerospikeTargetDetails.  # noqa: E501
+        :return: The aerospike_ssl_connection_certificate of this AerospikeTargetDetails.  # noqa: E501
         :rtype: str
         """
-        return self._client_key_passphrase
+        return self._aerospike_ssl_connection_certificate
 
-    @client_key_passphrase.setter
-    def client_key_passphrase(self, client_key_passphrase):
-        """Sets the client_key_passphrase of this AerospikeTargetDetails.
+    @aerospike_ssl_connection_certificate.setter
+    def aerospike_ssl_connection_certificate(self, aerospike_ssl_connection_certificate):
+        """Sets the aerospike_ssl_connection_certificate of this AerospikeTargetDetails.
 
-        (Optional) ClientKeyPassphrase defines the passphrase for the client private key  # noqa: E501
 
-        :param client_key_passphrase: The client_key_passphrase of this AerospikeTargetDetails.  # noqa: E501
+        :param aerospike_ssl_connection_certificate: The aerospike_ssl_connection_certificate of this AerospikeTargetDetails.  # noqa: E501
         :type: str
         """
 
-        self._client_key_passphrase = client_key_passphrase
+        self._aerospike_ssl_connection_certificate = aerospike_ssl_connection_certificate
 
     @property
-    def client_private_key(self):
-        """Gets the client_private_key of this AerospikeTargetDetails.  # noqa: E501
-
-        (Optional) ClientPrivateKey defines the client private key for mutual TLS. Must be base64 private key loaded by UI using file loader field  # noqa: E501
-
-        :return: The client_private_key of this AerospikeTargetDetails.  # noqa: E501
-        :rtype: str
-        """
-        return self._client_private_key
-
-    @client_private_key.setter
-    def client_private_key(self, client_private_key):
-        """Sets the client_private_key of this AerospikeTargetDetails.
-
-        (Optional) ClientPrivateKey defines the client private key for mutual TLS. Must be base64 private key loaded by UI using file loader field  # noqa: E501
-
-        :param client_private_key: The client_private_key of this AerospikeTargetDetails.  # noqa: E501
-        :type: str
-        """
-
-        self._client_private_key = client_private_key
-
-    @property
-    def cloud_service_provider(self):
-        """Gets the cloud_service_provider of this AerospikeTargetDetails.  # noqa: E501
+    def aerospike_ssl_connection_mode(self):
+        """Gets the aerospike_ssl_connection_mode of this AerospikeTargetDetails.  # noqa: E501
 
 
-        :return: The cloud_service_provider of this AerospikeTargetDetails.  # noqa: E501
-        :rtype: str
-        """
-        return self._cloud_service_provider
-
-    @cloud_service_provider.setter
-    def cloud_service_provider(self, cloud_service_provider):
-        """Sets the cloud_service_provider of this AerospikeTargetDetails.
-
-
-        :param cloud_service_provider: The cloud_service_provider of this AerospikeTargetDetails.  # noqa: E501
-        :type: str
-        """
-
-        self._cloud_service_provider = cloud_service_provider
-
-    @property
-    def cluster_mode(self):
-        """Gets the cluster_mode of this AerospikeTargetDetails.  # noqa: E501
-
-
-        :return: The cluster_mode of this AerospikeTargetDetails.  # noqa: E501
+        :return: The aerospike_ssl_connection_mode of this AerospikeTargetDetails.  # noqa: E501
         :rtype: bool
         """
-        return self._cluster_mode
+        return self._aerospike_ssl_connection_mode
 
-    @cluster_mode.setter
-    def cluster_mode(self, cluster_mode):
-        """Sets the cluster_mode of this AerospikeTargetDetails.
+    @aerospike_ssl_connection_mode.setter
+    def aerospike_ssl_connection_mode(self, aerospike_ssl_connection_mode):
+        """Sets the aerospike_ssl_connection_mode of this AerospikeTargetDetails.
 
 
-        :param cluster_mode: The cluster_mode of this AerospikeTargetDetails.  # noqa: E501
+        :param aerospike_ssl_connection_mode: The aerospike_ssl_connection_mode of this AerospikeTargetDetails.  # noqa: E501
         :type: bool
         """
 
-        self._cluster_mode = cluster_mode
-
-    @property
-    def connection_type(self):
-        """Gets the connection_type of this AerospikeTargetDetails.  # noqa: E501
-
-
-        :return: The connection_type of this AerospikeTargetDetails.  # noqa: E501
-        :rtype: str
-        """
-        return self._connection_type
-
-    @connection_type.setter
-    def connection_type(self, connection_type):
-        """Sets the connection_type of this AerospikeTargetDetails.
-
-
-        :param connection_type: The connection_type of this AerospikeTargetDetails.  # noqa: E501
-        :type: str
-        """
-
-        self._connection_type = connection_type
-
-    @property
-    def db_client_id(self):
-        """Gets the db_client_id of this AerospikeTargetDetails.  # noqa: E501
-
-
-        :return: The db_client_id of this AerospikeTargetDetails.  # noqa: E501
-        :rtype: str
-        """
-        return self._db_client_id
-
-    @db_client_id.setter
-    def db_client_id(self, db_client_id):
-        """Sets the db_client_id of this AerospikeTargetDetails.
-
-
-        :param db_client_id: The db_client_id of this AerospikeTargetDetails.  # noqa: E501
-        :type: str
-        """
-
-        self._db_client_id = db_client_id
-
-    @property
-    def db_client_secret(self):
-        """Gets the db_client_secret of this AerospikeTargetDetails.  # noqa: E501
-
-
-        :return: The db_client_secret of this AerospikeTargetDetails.  # noqa: E501
-        :rtype: str
-        """
-        return self._db_client_secret
-
-    @db_client_secret.setter
-    def db_client_secret(self, db_client_secret):
-        """Sets the db_client_secret of this AerospikeTargetDetails.
-
-
-        :param db_client_secret: The db_client_secret of this AerospikeTargetDetails.  # noqa: E501
-        :type: str
-        """
-
-        self._db_client_secret = db_client_secret
-
-    @property
-    def db_host_name(self):
-        """Gets the db_host_name of this AerospikeTargetDetails.  # noqa: E501
-
-
-        :return: The db_host_name of this AerospikeTargetDetails.  # noqa: E501
-        :rtype: str
-        """
-        return self._db_host_name
-
-    @db_host_name.setter
-    def db_host_name(self, db_host_name):
-        """Sets the db_host_name of this AerospikeTargetDetails.
-
-
-        :param db_host_name: The db_host_name of this AerospikeTargetDetails.  # noqa: E501
-        :type: str
-        """
-
-        self._db_host_name = db_host_name
-
-    @property
-    def db_name(self):
-        """Gets the db_name of this AerospikeTargetDetails.  # noqa: E501
-
-
-        :return: The db_name of this AerospikeTargetDetails.  # noqa: E501
-        :rtype: str
-        """
-        return self._db_name
-
-    @db_name.setter
-    def db_name(self, db_name):
-        """Sets the db_name of this AerospikeTargetDetails.
-
-
-        :param db_name: The db_name of this AerospikeTargetDetails.  # noqa: E501
-        :type: str
-        """
-
-        self._db_name = db_name
-
-    @property
-    def db_port(self):
-        """Gets the db_port of this AerospikeTargetDetails.  # noqa: E501
-
-
-        :return: The db_port of this AerospikeTargetDetails.  # noqa: E501
-        :rtype: str
-        """
-        return self._db_port
-
-    @db_port.setter
-    def db_port(self, db_port):
-        """Sets the db_port of this AerospikeTargetDetails.
-
-
-        :param db_port: The db_port of this AerospikeTargetDetails.  # noqa: E501
-        :type: str
-        """
-
-        self._db_port = db_port
-
-    @property
-    def db_private_key(self):
-        """Gets the db_private_key of this AerospikeTargetDetails.  # noqa: E501
-
-        (Optional) Private Key in PEM format  # noqa: E501
-
-        :return: The db_private_key of this AerospikeTargetDetails.  # noqa: E501
-        :rtype: str
-        """
-        return self._db_private_key
-
-    @db_private_key.setter
-    def db_private_key(self, db_private_key):
-        """Sets the db_private_key of this AerospikeTargetDetails.
-
-        (Optional) Private Key in PEM format  # noqa: E501
-
-        :param db_private_key: The db_private_key of this AerospikeTargetDetails.  # noqa: E501
-        :type: str
-        """
-
-        self._db_private_key = db_private_key
-
-    @property
-    def db_private_key_passphrase(self):
-        """Gets the db_private_key_passphrase of this AerospikeTargetDetails.  # noqa: E501
-
-
-        :return: The db_private_key_passphrase of this AerospikeTargetDetails.  # noqa: E501
-        :rtype: str
-        """
-        return self._db_private_key_passphrase
-
-    @db_private_key_passphrase.setter
-    def db_private_key_passphrase(self, db_private_key_passphrase):
-        """Sets the db_private_key_passphrase of this AerospikeTargetDetails.
-
-
-        :param db_private_key_passphrase: The db_private_key_passphrase of this AerospikeTargetDetails.  # noqa: E501
-        :type: str
-        """
-
-        self._db_private_key_passphrase = db_private_key_passphrase
-
-    @property
-    def db_pwd(self):
-        """Gets the db_pwd of this AerospikeTargetDetails.  # noqa: E501
-
-
-        :return: The db_pwd of this AerospikeTargetDetails.  # noqa: E501
-        :rtype: str
-        """
-        return self._db_pwd
-
-    @db_pwd.setter
-    def db_pwd(self, db_pwd):
-        """Sets the db_pwd of this AerospikeTargetDetails.
-
-
-        :param db_pwd: The db_pwd of this AerospikeTargetDetails.  # noqa: E501
-        :type: str
-        """
-
-        self._db_pwd = db_pwd
-
-    @property
-    def db_server_certificates(self):
-        """Gets the db_server_certificates of this AerospikeTargetDetails.  # noqa: E501
-
-        (Optional) DBServerCertificates defines the set of root certificate authorities that clients use when verifying server certificates. If DBServerCertificates is empty, TLS uses the host's root CA set.  # noqa: E501
-
-        :return: The db_server_certificates of this AerospikeTargetDetails.  # noqa: E501
-        :rtype: str
-        """
-        return self._db_server_certificates
-
-    @db_server_certificates.setter
-    def db_server_certificates(self, db_server_certificates):
-        """Sets the db_server_certificates of this AerospikeTargetDetails.
-
-        (Optional) DBServerCertificates defines the set of root certificate authorities that clients use when verifying server certificates. If DBServerCertificates is empty, TLS uses the host's root CA set.  # noqa: E501
-
-        :param db_server_certificates: The db_server_certificates of this AerospikeTargetDetails.  # noqa: E501
-        :type: str
-        """
-
-        self._db_server_certificates = db_server_certificates
-
-    @property
-    def db_server_name(self):
-        """Gets the db_server_name of this AerospikeTargetDetails.  # noqa: E501
-
-        (Optional) ServerName is used to verify the hostname on the returned certificates unless InsecureSkipVerify is given. It is also included in the client's handshake to support virtual hosting unless it is an IP address.  # noqa: E501
-
-        :return: The db_server_name of this AerospikeTargetDetails.  # noqa: E501
-        :rtype: str
-        """
-        return self._db_server_name
-
-    @db_server_name.setter
-    def db_server_name(self, db_server_name):
-        """Sets the db_server_name of this AerospikeTargetDetails.
-
-        (Optional) ServerName is used to verify the hostname on the returned certificates unless InsecureSkipVerify is given. It is also included in the client's handshake to support virtual hosting unless it is an IP address.  # noqa: E501
-
-        :param db_server_name: The db_server_name of this AerospikeTargetDetails.  # noqa: E501
-        :type: str
-        """
-
-        self._db_server_name = db_server_name
-
-    @property
-    def db_tenant_id(self):
-        """Gets the db_tenant_id of this AerospikeTargetDetails.  # noqa: E501
-
-
-        :return: The db_tenant_id of this AerospikeTargetDetails.  # noqa: E501
-        :rtype: str
-        """
-        return self._db_tenant_id
-
-    @db_tenant_id.setter
-    def db_tenant_id(self, db_tenant_id):
-        """Sets the db_tenant_id of this AerospikeTargetDetails.
-
-
-        :param db_tenant_id: The db_tenant_id of this AerospikeTargetDetails.  # noqa: E501
-        :type: str
-        """
-
-        self._db_tenant_id = db_tenant_id
-
-    @property
-    def db_user_name(self):
-        """Gets the db_user_name of this AerospikeTargetDetails.  # noqa: E501
-
-
-        :return: The db_user_name of this AerospikeTargetDetails.  # noqa: E501
-        :rtype: str
-        """
-        return self._db_user_name
-
-    @db_user_name.setter
-    def db_user_name(self, db_user_name):
-        """Sets the db_user_name of this AerospikeTargetDetails.
-
-
-        :param db_user_name: The db_user_name of this AerospikeTargetDetails.  # noqa: E501
-        :type: str
-        """
-
-        self._db_user_name = db_user_name
-
-    @property
-    def enable_mtls(self):
-        """Gets the enable_mtls of this AerospikeTargetDetails.  # noqa: E501
-
-        (Optional) EnableMTLS defines if mutual TLS will be used to connect to DB  # noqa: E501
-
-        :return: The enable_mtls of this AerospikeTargetDetails.  # noqa: E501
-        :rtype: bool
-        """
-        return self._enable_mtls
-
-    @enable_mtls.setter
-    def enable_mtls(self, enable_mtls):
-        """Sets the enable_mtls of this AerospikeTargetDetails.
-
-        (Optional) EnableMTLS defines if mutual TLS will be used to connect to DB  # noqa: E501
-
-        :param enable_mtls: The enable_mtls of this AerospikeTargetDetails.  # noqa: E501
-        :type: bool
-        """
-
-        self._enable_mtls = enable_mtls
-
-    @property
-    def oracle_wallet_details(self):
-        """Gets the oracle_wallet_details of this AerospikeTargetDetails.  # noqa: E501
-
-
-        :return: The oracle_wallet_details of this AerospikeTargetDetails.  # noqa: E501
-        :rtype: WalletDetails
-        """
-        return self._oracle_wallet_details
-
-    @oracle_wallet_details.setter
-    def oracle_wallet_details(self, oracle_wallet_details):
-        """Sets the oracle_wallet_details of this AerospikeTargetDetails.
-
-
-        :param oracle_wallet_details: The oracle_wallet_details of this AerospikeTargetDetails.  # noqa: E501
-        :type: WalletDetails
-        """
-
-        self._oracle_wallet_details = oracle_wallet_details
-
-    @property
-    def sf_account(self):
-        """Gets the sf_account of this AerospikeTargetDetails.  # noqa: E501
-
-
-        :return: The sf_account of this AerospikeTargetDetails.  # noqa: E501
-        :rtype: str
-        """
-        return self._sf_account
-
-    @sf_account.setter
-    def sf_account(self, sf_account):
-        """Sets the sf_account of this AerospikeTargetDetails.
-
-
-        :param sf_account: The sf_account of this AerospikeTargetDetails.  # noqa: E501
-        :type: str
-        """
-
-        self._sf_account = sf_account
-
-    @property
-    def skip_server_name_validation(self):
-        """Gets the skip_server_name_validation of this AerospikeTargetDetails.  # noqa: E501
-
-        (Optional) SkipServerNameValidation disables server name verification while still validating the certificate chain. Postgres treats empty as legacy \"skip hostname validation\"; MySQL treats empty as false.  # noqa: E501
-
-        :return: The skip_server_name_validation of this AerospikeTargetDetails.  # noqa: E501
-        :rtype: str
-        """
-        return self._skip_server_name_validation
-
-    @skip_server_name_validation.setter
-    def skip_server_name_validation(self, skip_server_name_validation):
-        """Sets the skip_server_name_validation of this AerospikeTargetDetails.
-
-        (Optional) SkipServerNameValidation disables server name verification while still validating the certificate chain. Postgres treats empty as legacy \"skip hostname validation\"; MySQL treats empty as false.  # noqa: E501
-
-        :param skip_server_name_validation: The skip_server_name_validation of this AerospikeTargetDetails.  # noqa: E501
-        :type: str
-        """
-
-        self._skip_server_name_validation = skip_server_name_validation
-
-    @property
-    def ssl_connection_certificate(self):
-        """Gets the ssl_connection_certificate of this AerospikeTargetDetails.  # noqa: E501
-
-        (Optional) SSLConnectionCertificate defines the certificate for SSL connection. Must be base64 certificate loaded by UI using file loader field  # noqa: E501
-
-        :return: The ssl_connection_certificate of this AerospikeTargetDetails.  # noqa: E501
-        :rtype: str
-        """
-        return self._ssl_connection_certificate
-
-    @ssl_connection_certificate.setter
-    def ssl_connection_certificate(self, ssl_connection_certificate):
-        """Sets the ssl_connection_certificate of this AerospikeTargetDetails.
-
-        (Optional) SSLConnectionCertificate defines the certificate for SSL connection. Must be base64 certificate loaded by UI using file loader field  # noqa: E501
-
-        :param ssl_connection_certificate: The ssl_connection_certificate of this AerospikeTargetDetails.  # noqa: E501
-        :type: str
-        """
-
-        self._ssl_connection_certificate = ssl_connection_certificate
-
-    @property
-    def ssl_connection_mode(self):
-        """Gets the ssl_connection_mode of this AerospikeTargetDetails.  # noqa: E501
-
-        (Optional) SSLConnectionMode defines if SSL mode will be used to connect to DB  # noqa: E501
-
-        :return: The ssl_connection_mode of this AerospikeTargetDetails.  # noqa: E501
-        :rtype: bool
-        """
-        return self._ssl_connection_mode
-
-    @ssl_connection_mode.setter
-    def ssl_connection_mode(self, ssl_connection_mode):
-        """Sets the ssl_connection_mode of this AerospikeTargetDetails.
-
-        (Optional) SSLConnectionMode defines if SSL mode will be used to connect to DB  # noqa: E501
-
-        :param ssl_connection_mode: The ssl_connection_mode of this AerospikeTargetDetails.  # noqa: E501
-        :type: bool
-        """
-
-        self._ssl_connection_mode = ssl_connection_mode
+        self._aerospike_ssl_connection_mode = aerospike_ssl_connection_mode
 
     def to_dict(self):
         """Returns the model properties as a dict"""

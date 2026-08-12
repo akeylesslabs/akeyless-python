@@ -34,6 +34,7 @@ class GatewayCreateProducerMongo(object):
                             and the value is json key in definition.
     """
     openapi_types = {
+        'ara_enabled': 'bool',
         'custom_username_template': 'str',
         'delete_protection': 'str',
         'input_rule': 'list[str]',
@@ -63,6 +64,7 @@ class GatewayCreateProducerMongo(object):
         'secure_access_enable': 'str',
         'secure_access_host': 'list[str]',
         'secure_access_web': 'bool',
+        'skip_dry_run': 'str',
         'tags': 'list[str]',
         'target_name': 'str',
         'token': 'str',
@@ -75,6 +77,7 @@ class GatewayCreateProducerMongo(object):
     }
 
     attribute_map = {
+        'ara_enabled': 'ara-enabled',
         'custom_username_template': 'custom-username-template',
         'delete_protection': 'delete_protection',
         'input_rule': 'input-rule',
@@ -104,6 +107,7 @@ class GatewayCreateProducerMongo(object):
         'secure_access_enable': 'secure-access-enable',
         'secure_access_host': 'secure-access-host',
         'secure_access_web': 'secure-access-web',
+        'skip_dry_run': 'skip_dry_run',
         'tags': 'tags',
         'target_name': 'target-name',
         'token': 'token',
@@ -115,12 +119,13 @@ class GatewayCreateProducerMongo(object):
         'user_ttl': 'user-ttl'
     }
 
-    def __init__(self, custom_username_template=None, delete_protection=None, input_rule=None, item_custom_fields=None, json=False, mongodb_atlas_api_private_key=None, mongodb_atlas_api_public_key=None, mongodb_atlas_project_id=None, mongodb_custom_data=None, mongodb_default_auth_db=None, mongodb_host_port=None, mongodb_name=None, mongodb_password=None, mongodb_roles='[]', mongodb_scopes=None, mongodb_server_uri=None, mongodb_uri_options=None, mongodb_username=None, name=None, output_rule=None, password_length=None, producer_encryption_key_name=None, secure_access_bastion_issuer=None, secure_access_certificate_issuer=None, secure_access_db_name=None, secure_access_delay=None, secure_access_enable=None, secure_access_host=None, secure_access_web=False, tags=None, target_name=None, token=None, uid_token=None, use_capital_letters=None, use_lower_letters=None, use_numbers=None, use_special_characters=None, user_ttl='60m', local_vars_configuration=None):  # noqa: E501
+    def __init__(self, ara_enabled=None, custom_username_template=None, delete_protection=None, input_rule=None, item_custom_fields=None, json=False, mongodb_atlas_api_private_key=None, mongodb_atlas_api_public_key=None, mongodb_atlas_project_id=None, mongodb_custom_data=None, mongodb_default_auth_db=None, mongodb_host_port=None, mongodb_name=None, mongodb_password=None, mongodb_roles='[]', mongodb_scopes=None, mongodb_server_uri=None, mongodb_uri_options=None, mongodb_username=None, name=None, output_rule=None, password_length=None, producer_encryption_key_name=None, secure_access_bastion_issuer=None, secure_access_certificate_issuer=None, secure_access_db_name=None, secure_access_delay=None, secure_access_enable=None, secure_access_host=None, secure_access_web=False, skip_dry_run=None, tags=None, target_name=None, token=None, uid_token=None, use_capital_letters=None, use_lower_letters=None, use_numbers=None, use_special_characters=None, user_ttl='60m', local_vars_configuration=None):  # noqa: E501
         """GatewayCreateProducerMongo - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
+        self._ara_enabled = None
         self._custom_username_template = None
         self._delete_protection = None
         self._input_rule = None
@@ -150,6 +155,7 @@ class GatewayCreateProducerMongo(object):
         self._secure_access_enable = None
         self._secure_access_host = None
         self._secure_access_web = None
+        self._skip_dry_run = None
         self._tags = None
         self._target_name = None
         self._token = None
@@ -161,6 +167,8 @@ class GatewayCreateProducerMongo(object):
         self._user_ttl = None
         self.discriminator = None
 
+        if ara_enabled is not None:
+            self.ara_enabled = ara_enabled
         if custom_username_template is not None:
             self.custom_username_template = custom_username_template
         if delete_protection is not None:
@@ -218,6 +226,8 @@ class GatewayCreateProducerMongo(object):
             self.secure_access_host = secure_access_host
         if secure_access_web is not None:
             self.secure_access_web = secure_access_web
+        if skip_dry_run is not None:
+            self.skip_dry_run = skip_dry_run
         if tags is not None:
             self.tags = tags
         if target_name is not None:
@@ -236,6 +246,29 @@ class GatewayCreateProducerMongo(object):
             self.use_special_characters = use_special_characters
         if user_ttl is not None:
             self.user_ttl = user_ttl
+
+    @property
+    def ara_enabled(self):
+        """Gets the ara_enabled of this GatewayCreateProducerMongo.  # noqa: E501
+
+        Enable or disable Agentic Runtime Authority rule enforcement for this item. Mirrors commands.AgenticRulesParams.AraEnabled.  # noqa: E501
+
+        :return: The ara_enabled of this GatewayCreateProducerMongo.  # noqa: E501
+        :rtype: bool
+        """
+        return self._ara_enabled
+
+    @ara_enabled.setter
+    def ara_enabled(self, ara_enabled):
+        """Sets the ara_enabled of this GatewayCreateProducerMongo.
+
+        Enable or disable Agentic Runtime Authority rule enforcement for this item. Mirrors commands.AgenticRulesParams.AraEnabled.  # noqa: E501
+
+        :param ara_enabled: The ara_enabled of this GatewayCreateProducerMongo.  # noqa: E501
+        :type: bool
+        """
+
+        self._ara_enabled = ara_enabled
 
     @property
     def custom_username_template(self):
@@ -905,6 +938,29 @@ class GatewayCreateProducerMongo(object):
         """
 
         self._secure_access_web = secure_access_web
+
+    @property
+    def skip_dry_run(self):
+        """Gets the skip_dry_run of this GatewayCreateProducerMongo.  # noqa: E501
+
+        If set, dry-run will be skipped  # noqa: E501
+
+        :return: The skip_dry_run of this GatewayCreateProducerMongo.  # noqa: E501
+        :rtype: str
+        """
+        return self._skip_dry_run
+
+    @skip_dry_run.setter
+    def skip_dry_run(self, skip_dry_run):
+        """Sets the skip_dry_run of this GatewayCreateProducerMongo.
+
+        If set, dry-run will be skipped  # noqa: E501
+
+        :param skip_dry_run: The skip_dry_run of this GatewayCreateProducerMongo.  # noqa: E501
+        :type: str
+        """
+
+        self._skip_dry_run = skip_dry_run
 
     @property
     def tags(self):

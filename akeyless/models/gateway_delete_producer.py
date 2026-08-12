@@ -34,37 +34,45 @@ class GatewayDeleteProducer(object):
                             and the value is json key in definition.
     """
     openapi_types = {
+        'ara_enabled': 'bool',
         'input_rule': 'list[str]',
         'json': 'bool',
         'name': 'str',
         'output_rule': 'list[str]',
+        'skip_dry_run': 'str',
         'token': 'str',
         'uid_token': 'str'
     }
 
     attribute_map = {
+        'ara_enabled': 'ara-enabled',
         'input_rule': 'input-rule',
         'json': 'json',
         'name': 'name',
         'output_rule': 'output-rule',
+        'skip_dry_run': 'skip_dry_run',
         'token': 'token',
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, input_rule=None, json=False, name=None, output_rule=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, ara_enabled=None, input_rule=None, json=False, name=None, output_rule=None, skip_dry_run=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """GatewayDeleteProducer - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
+        self._ara_enabled = None
         self._input_rule = None
         self._json = None
         self._name = None
         self._output_rule = None
+        self._skip_dry_run = None
         self._token = None
         self._uid_token = None
         self.discriminator = None
 
+        if ara_enabled is not None:
+            self.ara_enabled = ara_enabled
         if input_rule is not None:
             self.input_rule = input_rule
         if json is not None:
@@ -72,10 +80,35 @@ class GatewayDeleteProducer(object):
         self.name = name
         if output_rule is not None:
             self.output_rule = output_rule
+        if skip_dry_run is not None:
+            self.skip_dry_run = skip_dry_run
         if token is not None:
             self.token = token
         if uid_token is not None:
             self.uid_token = uid_token
+
+    @property
+    def ara_enabled(self):
+        """Gets the ara_enabled of this GatewayDeleteProducer.  # noqa: E501
+
+        Enable or disable Agentic Runtime Authority rule enforcement for this item. Mirrors commands.AgenticRulesParams.AraEnabled.  # noqa: E501
+
+        :return: The ara_enabled of this GatewayDeleteProducer.  # noqa: E501
+        :rtype: bool
+        """
+        return self._ara_enabled
+
+    @ara_enabled.setter
+    def ara_enabled(self, ara_enabled):
+        """Sets the ara_enabled of this GatewayDeleteProducer.
+
+        Enable or disable Agentic Runtime Authority rule enforcement for this item. Mirrors commands.AgenticRulesParams.AraEnabled.  # noqa: E501
+
+        :param ara_enabled: The ara_enabled of this GatewayDeleteProducer.  # noqa: E501
+        :type: bool
+        """
+
+        self._ara_enabled = ara_enabled
 
     @property
     def input_rule(self):
@@ -170,6 +203,29 @@ class GatewayDeleteProducer(object):
         """
 
         self._output_rule = output_rule
+
+    @property
+    def skip_dry_run(self):
+        """Gets the skip_dry_run of this GatewayDeleteProducer.  # noqa: E501
+
+        If set, dry-run will be skipped  # noqa: E501
+
+        :return: The skip_dry_run of this GatewayDeleteProducer.  # noqa: E501
+        :rtype: str
+        """
+        return self._skip_dry_run
+
+    @skip_dry_run.setter
+    def skip_dry_run(self, skip_dry_run):
+        """Sets the skip_dry_run of this GatewayDeleteProducer.
+
+        If set, dry-run will be skipped  # noqa: E501
+
+        :param skip_dry_run: The skip_dry_run of this GatewayDeleteProducer.  # noqa: E501
+        :type: str
+        """
+
+        self._skip_dry_run = skip_dry_run
 
     @property
     def token(self):

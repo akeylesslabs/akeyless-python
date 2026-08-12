@@ -34,6 +34,7 @@ class UscList(object):
                             and the value is json key in definition.
     """
     openapi_types = {
+        'gcp_project_id': 'str',
         'json': 'bool',
         'object_type': 'str',
         'page_size': 'int',
@@ -44,6 +45,7 @@ class UscList(object):
     }
 
     attribute_map = {
+        'gcp_project_id': 'gcp-project-id',
         'json': 'json',
         'object_type': 'object-type',
         'page_size': 'page-size',
@@ -53,12 +55,13 @@ class UscList(object):
         'usc_name': 'usc-name'
     }
 
-    def __init__(self, json=False, object_type=None, page_size=None, page_token=None, token=None, uid_token=None, usc_name=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, gcp_project_id=None, json=False, object_type=None, page_size=None, page_token=None, token=None, uid_token=None, usc_name=None, local_vars_configuration=None):  # noqa: E501
         """UscList - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
+        self._gcp_project_id = None
         self._json = None
         self._object_type = None
         self._page_size = None
@@ -68,6 +71,8 @@ class UscList(object):
         self._usc_name = None
         self.discriminator = None
 
+        if gcp_project_id is not None:
+            self.gcp_project_id = gcp_project_id
         if json is not None:
             self.json = json
         if object_type is not None:
@@ -81,6 +86,29 @@ class UscList(object):
         if uid_token is not None:
             self.uid_token = uid_token
         self.usc_name = usc_name
+
+    @property
+    def gcp_project_id(self):
+        """Gets the gcp_project_id of this UscList.  # noqa: E501
+
+        The GCP project to list secrets from (GCP only). Required when the connector spans multiple projects or uses folder/organization scope.  # noqa: E501
+
+        :return: The gcp_project_id of this UscList.  # noqa: E501
+        :rtype: str
+        """
+        return self._gcp_project_id
+
+    @gcp_project_id.setter
+    def gcp_project_id(self, gcp_project_id):
+        """Sets the gcp_project_id of this UscList.
+
+        The GCP project to list secrets from (GCP only). Required when the connector spans multiple projects or uses folder/organization scope.  # noqa: E501
+
+        :param gcp_project_id: The gcp_project_id of this UscList.  # noqa: E501
+        :type: str
+        """
+
+        self._gcp_project_id = gcp_project_id
 
     @property
     def json(self):

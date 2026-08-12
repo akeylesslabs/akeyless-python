@@ -34,6 +34,7 @@ class RotatedSecretDetailsInfo(object):
                             and the value is json key in definition.
     """
     openapi_types = {
+        'aws_user_name': 'str',
         'delete_previous_version_in_days': 'int',
         'enable_custom_password_policy': 'bool',
         'grace_rotation': 'bool',
@@ -56,10 +57,12 @@ class RotatedSecretDetailsInfo(object):
         'rotator_type': 'str',
         'same_password': 'bool',
         'services_details': 'list[WindowsService]',
+        'skip_dry_run': 'bool',
         'timeout_seconds': 'int'
     }
 
     attribute_map = {
+        'aws_user_name': 'aws_user_name',
         'delete_previous_version_in_days': 'delete_previous_version_in_days',
         'enable_custom_password_policy': 'enable_custom_password_policy',
         'grace_rotation': 'grace_rotation',
@@ -82,15 +85,17 @@ class RotatedSecretDetailsInfo(object):
         'rotator_type': 'rotator_type',
         'same_password': 'same_password',
         'services_details': 'services_details',
+        'skip_dry_run': 'skip_dry_run',
         'timeout_seconds': 'timeout_seconds'
     }
 
-    def __init__(self, delete_previous_version_in_days=None, enable_custom_password_policy=None, grace_rotation=None, grace_rotation_hour=None, grace_rotation_interval=None, grace_rotation_timing=None, gw_cluster_id=None, iis_apps_details=None, last_rotation_error=None, managed_by_akeyless=None, max_versions=None, next_auto_rotate_type=None, number_of_versions_to_save=None, public_key_remote_path=None, rotation_hour=None, rotation_interval_min=None, rotation_statement=None, rotator_creds_type=None, rotator_status=None, rotator_type=None, same_password=None, services_details=None, timeout_seconds=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, aws_user_name=None, delete_previous_version_in_days=None, enable_custom_password_policy=None, grace_rotation=None, grace_rotation_hour=None, grace_rotation_interval=None, grace_rotation_timing=None, gw_cluster_id=None, iis_apps_details=None, last_rotation_error=None, managed_by_akeyless=None, max_versions=None, next_auto_rotate_type=None, number_of_versions_to_save=None, public_key_remote_path=None, rotation_hour=None, rotation_interval_min=None, rotation_statement=None, rotator_creds_type=None, rotator_status=None, rotator_type=None, same_password=None, services_details=None, skip_dry_run=None, timeout_seconds=None, local_vars_configuration=None):  # noqa: E501
         """RotatedSecretDetailsInfo - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
+        self._aws_user_name = None
         self._delete_previous_version_in_days = None
         self._enable_custom_password_policy = None
         self._grace_rotation = None
@@ -113,9 +118,12 @@ class RotatedSecretDetailsInfo(object):
         self._rotator_type = None
         self._same_password = None
         self._services_details = None
+        self._skip_dry_run = None
         self._timeout_seconds = None
         self.discriminator = None
 
+        if aws_user_name is not None:
+            self.aws_user_name = aws_user_name
         if delete_previous_version_in_days is not None:
             self.delete_previous_version_in_days = delete_previous_version_in_days
         if enable_custom_password_policy is not None:
@@ -160,8 +168,31 @@ class RotatedSecretDetailsInfo(object):
             self.same_password = same_password
         if services_details is not None:
             self.services_details = services_details
+        if skip_dry_run is not None:
+            self.skip_dry_run = skip_dry_run
         if timeout_seconds is not None:
             self.timeout_seconds = timeout_seconds
+
+    @property
+    def aws_user_name(self):
+        """Gets the aws_user_name of this RotatedSecretDetailsInfo.  # noqa: E501
+
+
+        :return: The aws_user_name of this RotatedSecretDetailsInfo.  # noqa: E501
+        :rtype: str
+        """
+        return self._aws_user_name
+
+    @aws_user_name.setter
+    def aws_user_name(self, aws_user_name):
+        """Sets the aws_user_name of this RotatedSecretDetailsInfo.
+
+
+        :param aws_user_name: The aws_user_name of this RotatedSecretDetailsInfo.  # noqa: E501
+        :type: str
+        """
+
+        self._aws_user_name = aws_user_name
 
     @property
     def delete_previous_version_in_days(self):
@@ -626,6 +657,27 @@ class RotatedSecretDetailsInfo(object):
         """
 
         self._services_details = services_details
+
+    @property
+    def skip_dry_run(self):
+        """Gets the skip_dry_run of this RotatedSecretDetailsInfo.  # noqa: E501
+
+
+        :return: The skip_dry_run of this RotatedSecretDetailsInfo.  # noqa: E501
+        :rtype: bool
+        """
+        return self._skip_dry_run
+
+    @skip_dry_run.setter
+    def skip_dry_run(self, skip_dry_run):
+        """Sets the skip_dry_run of this RotatedSecretDetailsInfo.
+
+
+        :param skip_dry_run: The skip_dry_run of this RotatedSecretDetailsInfo.  # noqa: E501
+        :type: bool
+        """
+
+        self._skip_dry_run = skip_dry_run
 
     @property
     def timeout_seconds(self):

@@ -37,6 +37,7 @@ class RotatedSecretUpdateAws(object):
         'add_tag': 'list[str]',
         'api_id': 'str',
         'api_key': 'str',
+        'ara_enabled': 'bool',
         'authentication_credentials': 'str',
         'auto_rotate': 'str',
         'aws_region': 'str',
@@ -67,6 +68,7 @@ class RotatedSecretUpdateAws(object):
         'secure_access_bastion_issuer': 'str',
         'secure_access_certificate_issuer': 'str',
         'secure_access_enable': 'str',
+        'skip_dry_run': 'str',
         'token': 'str',
         'uid_token': 'str',
         'use_capital_letters': 'str',
@@ -79,6 +81,7 @@ class RotatedSecretUpdateAws(object):
         'add_tag': 'add-tag',
         'api_id': 'api-id',
         'api_key': 'api-key',
+        'ara_enabled': 'ara-enabled',
         'authentication_credentials': 'authentication-credentials',
         'auto_rotate': 'auto-rotate',
         'aws_region': 'aws-region',
@@ -109,6 +112,7 @@ class RotatedSecretUpdateAws(object):
         'secure_access_bastion_issuer': 'secure-access-bastion-issuer',
         'secure_access_certificate_issuer': 'secure-access-certificate-issuer',
         'secure_access_enable': 'secure-access-enable',
+        'skip_dry_run': 'skip_dry_run',
         'token': 'token',
         'uid_token': 'uid-token',
         'use_capital_letters': 'use-capital-letters',
@@ -117,7 +121,7 @@ class RotatedSecretUpdateAws(object):
         'use_special_characters': 'use-special-characters'
     }
 
-    def __init__(self, add_tag=None, api_id=None, api_key=None, authentication_credentials='use-user-creds', auto_rotate=None, aws_region='us-east-2', delete_protection=None, description='default_metadata', grace_rotation=None, grace_rotation_hour=None, grace_rotation_interval=None, grace_rotation_timing=None, input_rule=None, item_custom_fields=None, json=False, keep_prev_version=None, key=None, lock_during_sra_session=None, max_versions=None, name=None, new_name=None, output_rule=None, password_length=None, rm_tag=None, rotate_after_disconnect=None, rotation_event_in=None, rotation_hour=None, rotation_interval=None, secure_access_aws_account_id=None, secure_access_aws_native_cli=None, secure_access_bastion_issuer=None, secure_access_certificate_issuer=None, secure_access_enable=None, token=None, uid_token=None, use_capital_letters=None, use_lower_letters=None, use_numbers=None, use_special_characters=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, add_tag=None, api_id=None, api_key=None, ara_enabled=None, authentication_credentials='use-user-creds', auto_rotate=None, aws_region='us-east-2', delete_protection=None, description='default_metadata', grace_rotation=None, grace_rotation_hour=None, grace_rotation_interval=None, grace_rotation_timing=None, input_rule=None, item_custom_fields=None, json=False, keep_prev_version=None, key=None, lock_during_sra_session=None, max_versions=None, name=None, new_name=None, output_rule=None, password_length=None, rm_tag=None, rotate_after_disconnect=None, rotation_event_in=None, rotation_hour=None, rotation_interval=None, secure_access_aws_account_id=None, secure_access_aws_native_cli=None, secure_access_bastion_issuer=None, secure_access_certificate_issuer=None, secure_access_enable=None, skip_dry_run=None, token=None, uid_token=None, use_capital_letters=None, use_lower_letters=None, use_numbers=None, use_special_characters=None, local_vars_configuration=None):  # noqa: E501
         """RotatedSecretUpdateAws - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -126,6 +130,7 @@ class RotatedSecretUpdateAws(object):
         self._add_tag = None
         self._api_id = None
         self._api_key = None
+        self._ara_enabled = None
         self._authentication_credentials = None
         self._auto_rotate = None
         self._aws_region = None
@@ -156,6 +161,7 @@ class RotatedSecretUpdateAws(object):
         self._secure_access_bastion_issuer = None
         self._secure_access_certificate_issuer = None
         self._secure_access_enable = None
+        self._skip_dry_run = None
         self._token = None
         self._uid_token = None
         self._use_capital_letters = None
@@ -170,6 +176,8 @@ class RotatedSecretUpdateAws(object):
             self.api_id = api_id
         if api_key is not None:
             self.api_key = api_key
+        if ara_enabled is not None:
+            self.ara_enabled = ara_enabled
         if authentication_credentials is not None:
             self.authentication_credentials = authentication_credentials
         if auto_rotate is not None:
@@ -229,6 +237,8 @@ class RotatedSecretUpdateAws(object):
             self.secure_access_certificate_issuer = secure_access_certificate_issuer
         if secure_access_enable is not None:
             self.secure_access_enable = secure_access_enable
+        if skip_dry_run is not None:
+            self.skip_dry_run = skip_dry_run
         if token is not None:
             self.token = token
         if uid_token is not None:
@@ -310,6 +320,29 @@ class RotatedSecretUpdateAws(object):
         """
 
         self._api_key = api_key
+
+    @property
+    def ara_enabled(self):
+        """Gets the ara_enabled of this RotatedSecretUpdateAws.  # noqa: E501
+
+        Enable or disable Agentic Runtime Authority rule enforcement for this item. When false, user-defined input/output rules are stored but not enforced; the base security validation still runs.  AraEnabled is tri-state (nil/true/false), not a plain bool: it self-encodes its wire value (see akl.OptionalBool) so an explicit false survives the curl-proxy relay instead of being dropped like a default-false bool flag.  # noqa: E501
+
+        :return: The ara_enabled of this RotatedSecretUpdateAws.  # noqa: E501
+        :rtype: bool
+        """
+        return self._ara_enabled
+
+    @ara_enabled.setter
+    def ara_enabled(self, ara_enabled):
+        """Sets the ara_enabled of this RotatedSecretUpdateAws.
+
+        Enable or disable Agentic Runtime Authority rule enforcement for this item. When false, user-defined input/output rules are stored but not enforced; the base security validation still runs.  AraEnabled is tri-state (nil/true/false), not a plain bool: it self-encodes its wire value (see akl.OptionalBool) so an explicit false survives the curl-proxy relay instead of being dropped like a default-false bool flag.  # noqa: E501
+
+        :param ara_enabled: The ara_enabled of this RotatedSecretUpdateAws.  # noqa: E501
+        :type: bool
+        """
+
+        self._ara_enabled = ara_enabled
 
     @property
     def authentication_credentials(self):
@@ -994,6 +1027,29 @@ class RotatedSecretUpdateAws(object):
         """
 
         self._secure_access_enable = secure_access_enable
+
+    @property
+    def skip_dry_run(self):
+        """Gets the skip_dry_run of this RotatedSecretUpdateAws.  # noqa: E501
+
+        If set, dry-run will be skipped  # noqa: E501
+
+        :return: The skip_dry_run of this RotatedSecretUpdateAws.  # noqa: E501
+        :rtype: str
+        """
+        return self._skip_dry_run
+
+    @skip_dry_run.setter
+    def skip_dry_run(self, skip_dry_run):
+        """Sets the skip_dry_run of this RotatedSecretUpdateAws.
+
+        If set, dry-run will be skipped  # noqa: E501
+
+        :param skip_dry_run: The skip_dry_run of this RotatedSecretUpdateAws.  # noqa: E501
+        :type: str
+        """
+
+        self._skip_dry_run = skip_dry_run
 
     @property
     def token(self):

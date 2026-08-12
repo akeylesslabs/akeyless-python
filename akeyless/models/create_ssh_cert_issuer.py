@@ -359,7 +359,7 @@ class CreateSSHCertIssuer(object):
     def host_provider(self):
         """Gets the host_provider of this CreateSSHCertIssuer.  # noqa: E501
 
-        Host provider type [explicit/target], Default Host provider is explicit, Relevant only for Secure Remote Access of ssh cert issuer, ldap rotated secret and ldap dynamic secret  # noqa: E501
+        Host provider type [explicit/target], Default Host provider is explicit, Relevant only for SRA items.  # noqa: E501
 
         :return: The host_provider of this CreateSSHCertIssuer.  # noqa: E501
         :rtype: str
@@ -370,7 +370,7 @@ class CreateSSHCertIssuer(object):
     def host_provider(self, host_provider):
         """Sets the host_provider of this CreateSSHCertIssuer.
 
-        Host provider type [explicit/target], Default Host provider is explicit, Relevant only for Secure Remote Access of ssh cert issuer, ldap rotated secret and ldap dynamic secret  # noqa: E501
+        Host provider type [explicit/target], Default Host provider is explicit, Relevant only for SRA items.  # noqa: E501
 
         :param host_provider: The host_provider of this CreateSSHCertIssuer.  # noqa: E501
         :type: str
@@ -591,7 +591,7 @@ class CreateSSHCertIssuer(object):
     def secure_access_enforce_hosts_restriction(self):
         """Gets the secure_access_enforce_hosts_restriction of this CreateSSHCertIssuer.  # noqa: E501
 
-        Enable this flag to enforce connections only to the hosts listed in --secure-access-host  # noqa: E501
+        Enforce connections only to allowed SRA hosts  # noqa: E501
 
         :return: The secure_access_enforce_hosts_restriction of this CreateSSHCertIssuer.  # noqa: E501
         :rtype: bool
@@ -602,7 +602,7 @@ class CreateSSHCertIssuer(object):
     def secure_access_enforce_hosts_restriction(self, secure_access_enforce_hosts_restriction):
         """Sets the secure_access_enforce_hosts_restriction of this CreateSSHCertIssuer.
 
-        Enable this flag to enforce connections only to the hosts listed in --secure-access-host  # noqa: E501
+        Enforce connections only to allowed SRA hosts  # noqa: E501
 
         :param secure_access_enforce_hosts_restriction: The secure_access_enforce_hosts_restriction of this CreateSSHCertIssuer.  # noqa: E501
         :type: bool
@@ -798,7 +798,7 @@ class CreateSSHCertIssuer(object):
     def target(self):
         """Gets the target of this CreateSSHCertIssuer.  # noqa: E501
 
-        A list of linked targets to be associated, Relevant only for Secure Remote Access for ssh cert issuer, ldap rotated secret and ldap dynamic secret, To specify multiple targets use argument multiple times  # noqa: E501
+        A list of targets to be associated with an SRA item, To specify multiple targets use argument multiple times  # noqa: E501
 
         :return: The target of this CreateSSHCertIssuer.  # noqa: E501
         :rtype: list[str]
@@ -809,7 +809,7 @@ class CreateSSHCertIssuer(object):
     def target(self, target):
         """Sets the target of this CreateSSHCertIssuer.
 
-        A list of linked targets to be associated, Relevant only for Secure Remote Access for ssh cert issuer, ldap rotated secret and ldap dynamic secret, To specify multiple targets use argument multiple times  # noqa: E501
+        A list of targets to be associated with an SRA item, To specify multiple targets use argument multiple times  # noqa: E501
 
         :param target: The target of this CreateSSHCertIssuer.  # noqa: E501
         :type: list[str]

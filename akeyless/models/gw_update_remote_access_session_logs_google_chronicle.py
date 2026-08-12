@@ -263,7 +263,7 @@ class GwUpdateRemoteAccessSessionLogsGoogleChronicle(object):
     def region(self):
         """Gets the region of this GwUpdateRemoteAccessSessionLogsGoogleChronicle.  # noqa: E501
 
-        Google chronicle region [eu_multi_region/london/us_multi_region/singapore/tel_aviv]  # noqa: E501
+        Google chronicle region [eu_multi_region/london/us_multi_region/singapore/tel_aviv/toronto/sydney/frankfurt/zurich/dammam/mumbai/tokyo]  # noqa: E501
 
         :return: The region of this GwUpdateRemoteAccessSessionLogsGoogleChronicle.  # noqa: E501
         :rtype: str
@@ -274,7 +274,7 @@ class GwUpdateRemoteAccessSessionLogsGoogleChronicle(object):
     def region(self, region):
         """Sets the region of this GwUpdateRemoteAccessSessionLogsGoogleChronicle.
 
-        Google chronicle region [eu_multi_region/london/us_multi_region/singapore/tel_aviv]  # noqa: E501
+        Google chronicle region [eu_multi_region/london/us_multi_region/singapore/tel_aviv/toronto/sydney/frankfurt/zurich/dammam/mumbai/tokyo]  # noqa: E501
 
         :param region: The region of this GwUpdateRemoteAccessSessionLogsGoogleChronicle.  # noqa: E501
         :type: str

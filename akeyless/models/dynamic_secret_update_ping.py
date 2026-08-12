@@ -34,6 +34,7 @@ class DynamicSecretUpdatePing(object):
                             and the value is json key in definition.
     """
     openapi_types = {
+        'ara_enabled': 'bool',
         'delete_protection': 'str',
         'description': 'str',
         'input_rule': 'list[str]',
@@ -59,6 +60,7 @@ class DynamicSecretUpdatePing(object):
         'ping_signing_algo': 'str',
         'ping_url': 'str',
         'producer_encryption_key_name': 'str',
+        'skip_dry_run': 'str',
         'tags': 'list[str]',
         'target_name': 'str',
         'token': 'str',
@@ -67,6 +69,7 @@ class DynamicSecretUpdatePing(object):
     }
 
     attribute_map = {
+        'ara_enabled': 'ara-enabled',
         'delete_protection': 'delete_protection',
         'description': 'description',
         'input_rule': 'input-rule',
@@ -92,6 +95,7 @@ class DynamicSecretUpdatePing(object):
         'ping_signing_algo': 'ping-signing-algo',
         'ping_url': 'ping-url',
         'producer_encryption_key_name': 'producer-encryption-key-name',
+        'skip_dry_run': 'skip_dry_run',
         'tags': 'tags',
         'target_name': 'target-name',
         'token': 'token',
@@ -99,12 +103,13 @@ class DynamicSecretUpdatePing(object):
         'user_ttl': 'user-ttl'
     }
 
-    def __init__(self, delete_protection=None, description=None, input_rule=None, item_custom_fields=None, json=False, name=None, new_name=None, output_rule=None, ping_administrative_port='9999', ping_atm_id=None, ping_authorization_port='9031', ping_cert_subject_dn=None, ping_client_authentication_type='CLIENT_SECRET', ping_enforce_replay_prevention='false', ping_grant_types=None, ping_issuer_dn=None, ping_jwks=None, ping_jwks_url=None, ping_password=None, ping_privileged_user=None, ping_redirect_uris=None, ping_restricted_scopes=None, ping_signing_algo=None, ping_url=None, producer_encryption_key_name=None, tags=None, target_name=None, token=None, uid_token=None, user_ttl='60m', local_vars_configuration=None):  # noqa: E501
+    def __init__(self, ara_enabled=None, delete_protection=None, description=None, input_rule=None, item_custom_fields=None, json=False, name=None, new_name=None, output_rule=None, ping_administrative_port='9999', ping_atm_id=None, ping_authorization_port='9031', ping_cert_subject_dn=None, ping_client_authentication_type='CLIENT_SECRET', ping_enforce_replay_prevention='false', ping_grant_types=None, ping_issuer_dn=None, ping_jwks=None, ping_jwks_url=None, ping_password=None, ping_privileged_user=None, ping_redirect_uris=None, ping_restricted_scopes=None, ping_signing_algo=None, ping_url=None, producer_encryption_key_name=None, skip_dry_run=None, tags=None, target_name=None, token=None, uid_token=None, user_ttl='60m', local_vars_configuration=None):  # noqa: E501
         """DynamicSecretUpdatePing - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
+        self._ara_enabled = None
         self._delete_protection = None
         self._description = None
         self._input_rule = None
@@ -130,6 +135,7 @@ class DynamicSecretUpdatePing(object):
         self._ping_signing_algo = None
         self._ping_url = None
         self._producer_encryption_key_name = None
+        self._skip_dry_run = None
         self._tags = None
         self._target_name = None
         self._token = None
@@ -137,6 +143,8 @@ class DynamicSecretUpdatePing(object):
         self._user_ttl = None
         self.discriminator = None
 
+        if ara_enabled is not None:
+            self.ara_enabled = ara_enabled
         if delete_protection is not None:
             self.delete_protection = delete_protection
         if description is not None:
@@ -186,6 +194,8 @@ class DynamicSecretUpdatePing(object):
             self.ping_url = ping_url
         if producer_encryption_key_name is not None:
             self.producer_encryption_key_name = producer_encryption_key_name
+        if skip_dry_run is not None:
+            self.skip_dry_run = skip_dry_run
         if tags is not None:
             self.tags = tags
         if target_name is not None:
@@ -196,6 +206,29 @@ class DynamicSecretUpdatePing(object):
             self.uid_token = uid_token
         if user_ttl is not None:
             self.user_ttl = user_ttl
+
+    @property
+    def ara_enabled(self):
+        """Gets the ara_enabled of this DynamicSecretUpdatePing.  # noqa: E501
+
+        Enable or disable Agentic Runtime Authority rule enforcement for this item. Mirrors commands.AgenticRulesParams.AraEnabled.  # noqa: E501
+
+        :return: The ara_enabled of this DynamicSecretUpdatePing.  # noqa: E501
+        :rtype: bool
+        """
+        return self._ara_enabled
+
+    @ara_enabled.setter
+    def ara_enabled(self, ara_enabled):
+        """Sets the ara_enabled of this DynamicSecretUpdatePing.
+
+        Enable or disable Agentic Runtime Authority rule enforcement for this item. Mirrors commands.AgenticRulesParams.AraEnabled.  # noqa: E501
+
+        :param ara_enabled: The ara_enabled of this DynamicSecretUpdatePing.  # noqa: E501
+        :type: bool
+        """
+
+        self._ara_enabled = ara_enabled
 
     @property
     def delete_protection(self):
@@ -773,6 +806,29 @@ class DynamicSecretUpdatePing(object):
         """
 
         self._producer_encryption_key_name = producer_encryption_key_name
+
+    @property
+    def skip_dry_run(self):
+        """Gets the skip_dry_run of this DynamicSecretUpdatePing.  # noqa: E501
+
+        If set, dry-run will be skipped  # noqa: E501
+
+        :return: The skip_dry_run of this DynamicSecretUpdatePing.  # noqa: E501
+        :rtype: str
+        """
+        return self._skip_dry_run
+
+    @skip_dry_run.setter
+    def skip_dry_run(self, skip_dry_run):
+        """Sets the skip_dry_run of this DynamicSecretUpdatePing.
+
+        If set, dry-run will be skipped  # noqa: E501
+
+        :param skip_dry_run: The skip_dry_run of this DynamicSecretUpdatePing.  # noqa: E501
+        :type: str
+        """
+
+        self._skip_dry_run = skip_dry_run
 
     @property
     def tags(self):

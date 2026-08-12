@@ -41,14 +41,17 @@ class GenerateCsr(object):
         'common_name': 'str',
         'country': 'str',
         'critical': 'bool',
+        'customer_frg_id': 'str',
         'dep': 'str',
         'email_addresses': 'str',
         'export_private_key': 'bool',
+        'ext_key_usage': 'str',
         'generate_key': 'bool',
         'hash_algorithm': 'str',
         'ip_addresses': 'str',
         'json': 'bool',
         'key_type': 'str',
+        'key_usage': 'str',
         'name': 'str',
         'org': 'str',
         'split_level': 'int',
@@ -66,14 +69,17 @@ class GenerateCsr(object):
         'common_name': 'common-name',
         'country': 'country',
         'critical': 'critical',
+        'customer_frg_id': 'customer-frg-id',
         'dep': 'dep',
         'email_addresses': 'email-addresses',
         'export_private_key': 'export-private-key',
+        'ext_key_usage': 'ext-key-usage',
         'generate_key': 'generate-key',
         'hash_algorithm': 'hash-algorithm',
         'ip_addresses': 'ip-addresses',
         'json': 'json',
         'key_type': 'key-type',
+        'key_usage': 'key-usage',
         'name': 'name',
         'org': 'org',
         'split_level': 'split-level',
@@ -83,7 +89,7 @@ class GenerateCsr(object):
         'uri_sans': 'uri-sans'
     }
 
-    def __init__(self, alg=None, alt_names=None, certificate_type=None, city=None, common_name=None, country=None, critical=None, dep=None, email_addresses=None, export_private_key=False, generate_key=None, hash_algorithm='SHA256', ip_addresses=None, json=False, key_type='classic-key', name=None, org=None, split_level=3, state=None, token=None, uid_token=None, uri_sans=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, alg=None, alt_names=None, certificate_type=None, city=None, common_name=None, country=None, critical=None, customer_frg_id=None, dep=None, email_addresses=None, export_private_key=False, ext_key_usage=None, generate_key=None, hash_algorithm='SHA256', ip_addresses=None, json=False, key_type='classic-key', key_usage=None, name=None, org=None, split_level=3, state=None, token=None, uid_token=None, uri_sans=None, local_vars_configuration=None):  # noqa: E501
         """GenerateCsr - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -96,14 +102,17 @@ class GenerateCsr(object):
         self._common_name = None
         self._country = None
         self._critical = None
+        self._customer_frg_id = None
         self._dep = None
         self._email_addresses = None
         self._export_private_key = None
+        self._ext_key_usage = None
         self._generate_key = None
         self._hash_algorithm = None
         self._ip_addresses = None
         self._json = None
         self._key_type = None
+        self._key_usage = None
         self._name = None
         self._org = None
         self._split_level = None
@@ -126,12 +135,16 @@ class GenerateCsr(object):
             self.country = country
         if critical is not None:
             self.critical = critical
+        if customer_frg_id is not None:
+            self.customer_frg_id = customer_frg_id
         if dep is not None:
             self.dep = dep
         if email_addresses is not None:
             self.email_addresses = email_addresses
         if export_private_key is not None:
             self.export_private_key = export_private_key
+        if ext_key_usage is not None:
+            self.ext_key_usage = ext_key_usage
         if generate_key is not None:
             self.generate_key = generate_key
         if hash_algorithm is not None:
@@ -141,6 +154,8 @@ class GenerateCsr(object):
         if json is not None:
             self.json = json
         self.key_type = key_type
+        if key_usage is not None:
+            self.key_usage = key_usage
         self.name = name
         if org is not None:
             self.org = org
@@ -203,7 +218,7 @@ class GenerateCsr(object):
     def certificate_type(self):
         """Gets the certificate_type of this GenerateCsr.  # noqa: E501
 
-        The certificate type to be included in the CSR certificate (ssl-client/ssl-server/certificate-signing)  # noqa: E501
+        A comma-separated list of certificate types to include in the CSR certificate (ssl-client/ssl-server/certificate-signing)  # noqa: E501
 
         :return: The certificate_type of this GenerateCsr.  # noqa: E501
         :rtype: str
@@ -214,7 +229,7 @@ class GenerateCsr(object):
     def certificate_type(self, certificate_type):
         """Sets the certificate_type of this GenerateCsr.
 
-        The certificate type to be included in the CSR certificate (ssl-client/ssl-server/certificate-signing)  # noqa: E501
+        A comma-separated list of certificate types to include in the CSR certificate (ssl-client/ssl-server/certificate-signing)  # noqa: E501
 
         :param certificate_type: The certificate_type of this GenerateCsr.  # noqa: E501
         :type: str
@@ -317,6 +332,29 @@ class GenerateCsr(object):
         self._critical = critical
 
     @property
+    def customer_frg_id(self):
+        """Gets the customer_frg_id of this GenerateCsr.  # noqa: E501
+
+        The customer fragment ID that will be used to create the key (if empty, the key will be created independently of a customer fragment)  # noqa: E501
+
+        :return: The customer_frg_id of this GenerateCsr.  # noqa: E501
+        :rtype: str
+        """
+        return self._customer_frg_id
+
+    @customer_frg_id.setter
+    def customer_frg_id(self, customer_frg_id):
+        """Sets the customer_frg_id of this GenerateCsr.
+
+        The customer fragment ID that will be used to create the key (if empty, the key will be created independently of a customer fragment)  # noqa: E501
+
+        :param customer_frg_id: The customer_frg_id of this GenerateCsr.  # noqa: E501
+        :type: str
+        """
+
+        self._customer_frg_id = customer_frg_id
+
+    @property
     def dep(self):
         """Gets the dep of this GenerateCsr.  # noqa: E501
 
@@ -384,6 +422,29 @@ class GenerateCsr(object):
         """
 
         self._export_private_key = export_private_key
+
+    @property
+    def ext_key_usage(self):
+        """Gets the ext_key_usage of this GenerateCsr.  # noqa: E501
+
+        A comma-separated list of extended key usages to include in the CSR certificate  # noqa: E501
+
+        :return: The ext_key_usage of this GenerateCsr.  # noqa: E501
+        :rtype: str
+        """
+        return self._ext_key_usage
+
+    @ext_key_usage.setter
+    def ext_key_usage(self, ext_key_usage):
+        """Sets the ext_key_usage of this GenerateCsr.
+
+        A comma-separated list of extended key usages to include in the CSR certificate  # noqa: E501
+
+        :param ext_key_usage: The ext_key_usage of this GenerateCsr.  # noqa: E501
+        :type: str
+        """
+
+        self._ext_key_usage = ext_key_usage
 
     @property
     def generate_key(self):
@@ -501,6 +562,29 @@ class GenerateCsr(object):
             raise ValueError("Invalid value for `key_type`, must not be `None`")  # noqa: E501
 
         self._key_type = key_type
+
+    @property
+    def key_usage(self):
+        """Gets the key_usage of this GenerateCsr.  # noqa: E501
+
+        A comma-separated list of key usages to include in the CSR certificate  # noqa: E501
+
+        :return: The key_usage of this GenerateCsr.  # noqa: E501
+        :rtype: str
+        """
+        return self._key_usage
+
+    @key_usage.setter
+    def key_usage(self, key_usage):
+        """Sets the key_usage of this GenerateCsr.
+
+        A comma-separated list of key usages to include in the CSR certificate  # noqa: E501
+
+        :param key_usage: The key_usage of this GenerateCsr.  # noqa: E501
+        :type: str
+        """
+
+        self._key_usage = key_usage
 
     @property
     def name(self):

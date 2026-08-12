@@ -4,6 +4,7 @@ gatewayCreateProducerChef is a command that creates chef producer [Deprecated: U
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**ara_enabled** | **bool** | Enable or disable Agentic Runtime Authority rule enforcement for this item. Mirrors commands.AgenticRulesParams.AraEnabled. | [optional] 
 **chef_orgs** | **str** | Organizations | [optional] 
 **chef_server_key** | **str** | Server key | [optional] 
 **chef_server_url** | **str** | Server URL | [optional] 
@@ -18,6 +19,7 @@ Name | Type | Description | Notes
 **password_length** | **str** | The length of the password to be generated | [optional] 
 **producer_encryption_key_name** | **str** | Dynamic producer encryption key | [optional] 
 **skip_ssl** | **bool** | Skip SSL | [optional] [default to True]
+**skip_dry_run** | **str** | If set, dry-run will be skipped | [optional] 
 **tags** | **list[str]** | Add tags attached to this object | [optional] 
 **target_name** | **str** | Target name | [optional] 
 **token** | **str** | Authentication token (see &#x60;/auth&#x60; and &#x60;/configure&#x60;) | [optional] 

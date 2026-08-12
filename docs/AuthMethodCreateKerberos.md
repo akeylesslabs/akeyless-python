@@ -28,7 +28,7 @@ Name | Type | Description | Notes
 **ldap_ca_cert** | **str** |  | [optional] 
 **ldap_url** | **str** |  | [optional] 
 **name** | **str** | Auth Method name | 
-**product_type** | **list[str]** | Choose the relevant product type for the auth method [sm, sra, pm, dp, ca] | [optional] 
+**product_type** | **list[str]** | Choose the relevant product type for the auth method [sm, sra, pm, dp, ca, ara] | [optional] 
 **subclaims_delimiters** | **list[str]** | A list of additional sub claims delimiters (relevant only for SAML, OIDC, OAuth2/JWT) | [optional] 
 **token** | **str** | Authentication token (see &#x60;/auth&#x60; and &#x60;/configure&#x60;) | [optional] 
 **uid_token** | **str** | The universal identity token, Required only for universal_identity authentication | [optional] 

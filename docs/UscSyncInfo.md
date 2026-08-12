@@ -9,6 +9,8 @@ Name | Type | Description | Notes
 **namespace** | **str** |  | [optional] 
 **secret_id** | **str** |  | [optional] 
 **secret_name** | **str** |  | [optional] 
+**selected_environments** | **str** |  | [optional] 
+**selected_repositories** | **str** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

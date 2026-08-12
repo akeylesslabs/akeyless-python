@@ -28,7 +28,7 @@ Name | Type | Description | Notes
 **jwks_uri** | **str** | The URL to the JSON Web Key Set (JWKS) that containing the public keys that should be used to verify any JSON Web Token (JWT) issued by the authorization server. | [optional] [default to 'https://login.microsoftonline.com/common/discovery/keys']
 **jwt_ttl** | **int** | Jwt TTL | [optional] [default to 0]
 **name** | **str** | Auth Method name | 
-**product_type** | **list[str]** | Choose the relevant product type for the auth method [sm, sra, pm, dp, ca] | [optional] 
+**product_type** | **list[str]** | Choose the relevant product type for the auth method [sm, sra, pm, dp, ca, ara] | [optional] 
 **token** | **str** | Authentication token (see &#x60;/auth&#x60; and &#x60;/configure&#x60;) | [optional] 
 **uid_token** | **str** | The universal identity token, Required only for universal_identity authentication | [optional] 
 **unique_identifier** | **str** | A unique identifier (ID) value which is a \&quot;sub claim\&quot; name that contains details uniquely identifying that resource. This \&quot;sub claim\&quot; is used to distinguish between different identities. | [optional] 

@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **certificate_ttl_in_seconds** | **int** |  | [optional] 
 **expiration_events** | [**list[CertificateExpirationEvent]**](CertificateExpirationEvent.md) |  | [optional] 
 **id** | **str** |  | [optional] 
+**issuing_ca_id** | **str** |  | [optional] 
 **name** | **str** |  | [optional] 
 **rules** | [**list[PathRule]**](PathRule.md) |  | [optional] 
 

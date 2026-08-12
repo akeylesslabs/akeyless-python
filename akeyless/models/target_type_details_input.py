@@ -48,6 +48,7 @@ class TargetTypeDetailsInput(object):
         'digicert_target_details': 'DigiCertTargetDetails',
         'dockerhub_target_details': 'DockerhubTargetDetails',
         'eks_target_details': 'EKSTargetDetails',
+        'f5_big_ip_target_details': 'F5BigIpTargetDetails',
         'gcp_target_details': 'GcpTargetDetails',
         'gemini_target_details': 'GeminiTargetDetails',
         'github_target_details': 'GithubTargetDetails',
@@ -94,6 +95,7 @@ class TargetTypeDetailsInput(object):
         'digicert_target_details': 'digicert_target_details',
         'dockerhub_target_details': 'dockerhub_target_details',
         'eks_target_details': 'eks_target_details',
+        'f5_big_ip_target_details': 'f5_big_ip_target_details',
         'gcp_target_details': 'gcp_target_details',
         'gemini_target_details': 'gemini_target_details',
         'github_target_details': 'github_target_details',
@@ -125,7 +127,7 @@ class TargetTypeDetailsInput(object):
         'zerossl_target_details': 'zerossl_target_details'
     }
 
-    def __init__(self, aerospike_target_details=None, anthropic_target_details=None, artifactory_target_details=None, aws_target_details=None, azure_target_details=None, bedrock_target_details=None, chef_target_details=None, cloudflare_target_details=None, custom_dns_target_details=None, custom_target_details=None, db_target_details=None, digicert_target_details=None, dockerhub_target_details=None, eks_target_details=None, gcp_target_details=None, gemini_target_details=None, github_target_details=None, gitlab_target_details=None, gke_target_details=None, globalsign_atlas_target_details=None, globalsign_target_details=None, godaddy_target_details=None, google_trust_target_details=None, grok_target_details=None, hashi_vault_target_details=None, keycloak_target_details=None, ldap_target_details=None, letsencrypt_target_details=None, linked_target_details=None, mongo_db_target_details=None, native_k8s_target_details=None, okta_target_details=None, openai_target_details=None, ping_target_details=None, rabbit_mq_target_details=None, salesforce_target_details=None, sectigo_target_details=None, splunk_target_details=None, ssh_target_details=None, venafi_target_details=None, web_target_details=None, windows_target_details=None, zerossl_target_details=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, aerospike_target_details=None, anthropic_target_details=None, artifactory_target_details=None, aws_target_details=None, azure_target_details=None, bedrock_target_details=None, chef_target_details=None, cloudflare_target_details=None, custom_dns_target_details=None, custom_target_details=None, db_target_details=None, digicert_target_details=None, dockerhub_target_details=None, eks_target_details=None, f5_big_ip_target_details=None, gcp_target_details=None, gemini_target_details=None, github_target_details=None, gitlab_target_details=None, gke_target_details=None, globalsign_atlas_target_details=None, globalsign_target_details=None, godaddy_target_details=None, google_trust_target_details=None, grok_target_details=None, hashi_vault_target_details=None, keycloak_target_details=None, ldap_target_details=None, letsencrypt_target_details=None, linked_target_details=None, mongo_db_target_details=None, native_k8s_target_details=None, okta_target_details=None, openai_target_details=None, ping_target_details=None, rabbit_mq_target_details=None, salesforce_target_details=None, sectigo_target_details=None, splunk_target_details=None, ssh_target_details=None, venafi_target_details=None, web_target_details=None, windows_target_details=None, zerossl_target_details=None, local_vars_configuration=None):  # noqa: E501
         """TargetTypeDetailsInput - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -145,6 +147,7 @@ class TargetTypeDetailsInput(object):
         self._digicert_target_details = None
         self._dockerhub_target_details = None
         self._eks_target_details = None
+        self._f5_big_ip_target_details = None
         self._gcp_target_details = None
         self._gemini_target_details = None
         self._github_target_details = None
@@ -204,6 +207,8 @@ class TargetTypeDetailsInput(object):
             self.dockerhub_target_details = dockerhub_target_details
         if eks_target_details is not None:
             self.eks_target_details = eks_target_details
+        if f5_big_ip_target_details is not None:
+            self.f5_big_ip_target_details = f5_big_ip_target_details
         if gcp_target_details is not None:
             self.gcp_target_details = gcp_target_details
         if gemini_target_details is not None:
@@ -556,6 +561,27 @@ class TargetTypeDetailsInput(object):
         """
 
         self._eks_target_details = eks_target_details
+
+    @property
+    def f5_big_ip_target_details(self):
+        """Gets the f5_big_ip_target_details of this TargetTypeDetailsInput.  # noqa: E501
+
+
+        :return: The f5_big_ip_target_details of this TargetTypeDetailsInput.  # noqa: E501
+        :rtype: F5BigIpTargetDetails
+        """
+        return self._f5_big_ip_target_details
+
+    @f5_big_ip_target_details.setter
+    def f5_big_ip_target_details(self, f5_big_ip_target_details):
+        """Sets the f5_big_ip_target_details of this TargetTypeDetailsInput.
+
+
+        :param f5_big_ip_target_details: The f5_big_ip_target_details of this TargetTypeDetailsInput.  # noqa: E501
+        :type: F5BigIpTargetDetails
+        """
+
+        self._f5_big_ip_target_details = f5_big_ip_target_details
 
     @property
     def gcp_target_details(self):

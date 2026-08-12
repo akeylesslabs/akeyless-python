@@ -36,6 +36,7 @@ class RotatedSecretUpdateLdap(object):
     openapi_types = {
         'provider_type': 'str',
         'add_tag': 'list[str]',
+        'ara_enabled': 'bool',
         'authentication_credentials': 'str',
         'auto_rotate': 'str',
         'delete_protection': 'str',
@@ -62,12 +63,14 @@ class RotatedSecretUpdateLdap(object):
         'secure_access_bastion_issuer': 'str',
         'secure_access_certificate_issuer': 'str',
         'secure_access_enable': 'str',
+        'secure_access_enforce_hosts_restriction': 'bool',
         'secure_access_host': 'list[str]',
         'secure_access_rdp_domain': 'str',
         'secure_access_url': 'str',
         'secure_access_web': 'bool',
         'secure_access_web_browsing': 'bool',
         'secure_access_web_proxy': 'bool',
+        'skip_dry_run': 'str',
         'target': 'list[str]',
         'token': 'str',
         'uid_token': 'str',
@@ -82,6 +85,7 @@ class RotatedSecretUpdateLdap(object):
     attribute_map = {
         'provider_type': 'ProviderType',
         'add_tag': 'add-tag',
+        'ara_enabled': 'ara-enabled',
         'authentication_credentials': 'authentication-credentials',
         'auto_rotate': 'auto-rotate',
         'delete_protection': 'delete_protection',
@@ -108,12 +112,14 @@ class RotatedSecretUpdateLdap(object):
         'secure_access_bastion_issuer': 'secure-access-bastion-issuer',
         'secure_access_certificate_issuer': 'secure-access-certificate-issuer',
         'secure_access_enable': 'secure-access-enable',
+        'secure_access_enforce_hosts_restriction': 'secure-access-enforce-hosts-restriction',
         'secure_access_host': 'secure-access-host',
         'secure_access_rdp_domain': 'secure-access-rdp-domain',
         'secure_access_url': 'secure-access-url',
         'secure_access_web': 'secure-access-web',
         'secure_access_web_browsing': 'secure-access-web-browsing',
         'secure_access_web_proxy': 'secure-access-web-proxy',
+        'skip_dry_run': 'skip_dry_run',
         'target': 'target',
         'token': 'token',
         'uid_token': 'uid-token',
@@ -125,7 +131,7 @@ class RotatedSecretUpdateLdap(object):
         'user_dn': 'user-dn'
     }
 
-    def __init__(self, provider_type=None, add_tag=None, authentication_credentials='use-user-creds', auto_rotate=None, delete_protection=None, description='default_metadata', host_provider=None, input_rule=None, item_custom_fields=None, json=False, keep_prev_version=None, key=None, lock_during_sra_session=None, max_versions=None, name=None, new_name=None, output_rule=None, password_length=None, rm_tag=None, rotate_after_disconnect=None, rotated_password=None, rotated_username=None, rotation_event_in=None, rotation_hour=None, rotation_interval=None, secure_access_bastion_issuer=None, secure_access_certificate_issuer=None, secure_access_enable=None, secure_access_host=None, secure_access_rdp_domain=None, secure_access_url=None, secure_access_web=False, secure_access_web_browsing=False, secure_access_web_proxy=False, target=None, token=None, uid_token=None, use_capital_letters=None, use_lower_letters=None, use_numbers=None, use_special_characters=None, user_attribute='cn', user_dn=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, provider_type=None, add_tag=None, ara_enabled=None, authentication_credentials='use-user-creds', auto_rotate=None, delete_protection=None, description='default_metadata', host_provider=None, input_rule=None, item_custom_fields=None, json=False, keep_prev_version=None, key=None, lock_during_sra_session=None, max_versions=None, name=None, new_name=None, output_rule=None, password_length=None, rm_tag=None, rotate_after_disconnect=None, rotated_password=None, rotated_username=None, rotation_event_in=None, rotation_hour=None, rotation_interval=None, secure_access_bastion_issuer=None, secure_access_certificate_issuer=None, secure_access_enable=None, secure_access_enforce_hosts_restriction=None, secure_access_host=None, secure_access_rdp_domain=None, secure_access_url=None, secure_access_web=False, secure_access_web_browsing=False, secure_access_web_proxy=False, skip_dry_run=None, target=None, token=None, uid_token=None, use_capital_letters=None, use_lower_letters=None, use_numbers=None, use_special_characters=None, user_attribute='cn', user_dn=None, local_vars_configuration=None):  # noqa: E501
         """RotatedSecretUpdateLdap - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -133,6 +139,7 @@ class RotatedSecretUpdateLdap(object):
 
         self._provider_type = None
         self._add_tag = None
+        self._ara_enabled = None
         self._authentication_credentials = None
         self._auto_rotate = None
         self._delete_protection = None
@@ -159,12 +166,14 @@ class RotatedSecretUpdateLdap(object):
         self._secure_access_bastion_issuer = None
         self._secure_access_certificate_issuer = None
         self._secure_access_enable = None
+        self._secure_access_enforce_hosts_restriction = None
         self._secure_access_host = None
         self._secure_access_rdp_domain = None
         self._secure_access_url = None
         self._secure_access_web = None
         self._secure_access_web_browsing = None
         self._secure_access_web_proxy = None
+        self._skip_dry_run = None
         self._target = None
         self._token = None
         self._uid_token = None
@@ -180,6 +189,8 @@ class RotatedSecretUpdateLdap(object):
             self.provider_type = provider_type
         if add_tag is not None:
             self.add_tag = add_tag
+        if ara_enabled is not None:
+            self.ara_enabled = ara_enabled
         if authentication_credentials is not None:
             self.authentication_credentials = authentication_credentials
         if auto_rotate is not None:
@@ -231,6 +242,8 @@ class RotatedSecretUpdateLdap(object):
             self.secure_access_certificate_issuer = secure_access_certificate_issuer
         if secure_access_enable is not None:
             self.secure_access_enable = secure_access_enable
+        if secure_access_enforce_hosts_restriction is not None:
+            self.secure_access_enforce_hosts_restriction = secure_access_enforce_hosts_restriction
         if secure_access_host is not None:
             self.secure_access_host = secure_access_host
         if secure_access_rdp_domain is not None:
@@ -243,6 +256,8 @@ class RotatedSecretUpdateLdap(object):
             self.secure_access_web_browsing = secure_access_web_browsing
         if secure_access_web_proxy is not None:
             self.secure_access_web_proxy = secure_access_web_proxy
+        if skip_dry_run is not None:
+            self.skip_dry_run = skip_dry_run
         if target is not None:
             self.target = target
         if token is not None:
@@ -305,6 +320,29 @@ class RotatedSecretUpdateLdap(object):
         """
 
         self._add_tag = add_tag
+
+    @property
+    def ara_enabled(self):
+        """Gets the ara_enabled of this RotatedSecretUpdateLdap.  # noqa: E501
+
+        Enable or disable Agentic Runtime Authority rule enforcement for this item. When false, user-defined input/output rules are stored but not enforced; the base security validation still runs.  AraEnabled is tri-state (nil/true/false), not a plain bool: it self-encodes its wire value (see akl.OptionalBool) so an explicit false survives the curl-proxy relay instead of being dropped like a default-false bool flag.  # noqa: E501
+
+        :return: The ara_enabled of this RotatedSecretUpdateLdap.  # noqa: E501
+        :rtype: bool
+        """
+        return self._ara_enabled
+
+    @ara_enabled.setter
+    def ara_enabled(self, ara_enabled):
+        """Sets the ara_enabled of this RotatedSecretUpdateLdap.
+
+        Enable or disable Agentic Runtime Authority rule enforcement for this item. When false, user-defined input/output rules are stored but not enforced; the base security validation still runs.  AraEnabled is tri-state (nil/true/false), not a plain bool: it self-encodes its wire value (see akl.OptionalBool) so an explicit false survives the curl-proxy relay instead of being dropped like a default-false bool flag.  # noqa: E501
+
+        :param ara_enabled: The ara_enabled of this RotatedSecretUpdateLdap.  # noqa: E501
+        :type: bool
+        """
+
+        self._ara_enabled = ara_enabled
 
     @property
     def authentication_credentials(self):
@@ -400,7 +438,7 @@ class RotatedSecretUpdateLdap(object):
     def host_provider(self):
         """Gets the host_provider of this RotatedSecretUpdateLdap.  # noqa: E501
 
-        Host provider type [explicit/target], Default Host provider is explicit, Relevant only for Secure Remote Access of ssh cert issuer, ldap rotated secret and ldap dynamic secret  # noqa: E501
+        Host provider type [explicit/target], Default Host provider is explicit, Relevant only for SRA items.  # noqa: E501
 
         :return: The host_provider of this RotatedSecretUpdateLdap.  # noqa: E501
         :rtype: str
@@ -411,7 +449,7 @@ class RotatedSecretUpdateLdap(object):
     def host_provider(self, host_provider):
         """Sets the host_provider of this RotatedSecretUpdateLdap.
 
-        Host provider type [explicit/target], Default Host provider is explicit, Relevant only for Secure Remote Access of ssh cert issuer, ldap rotated secret and ldap dynamic secret  # noqa: E501
+        Host provider type [explicit/target], Default Host provider is explicit, Relevant only for SRA items.  # noqa: E501
 
         :param host_provider: The host_provider of this RotatedSecretUpdateLdap.  # noqa: E501
         :type: str
@@ -899,6 +937,29 @@ class RotatedSecretUpdateLdap(object):
         self._secure_access_enable = secure_access_enable
 
     @property
+    def secure_access_enforce_hosts_restriction(self):
+        """Gets the secure_access_enforce_hosts_restriction of this RotatedSecretUpdateLdap.  # noqa: E501
+
+        Enforce connections only to allowed SRA hosts  # noqa: E501
+
+        :return: The secure_access_enforce_hosts_restriction of this RotatedSecretUpdateLdap.  # noqa: E501
+        :rtype: bool
+        """
+        return self._secure_access_enforce_hosts_restriction
+
+    @secure_access_enforce_hosts_restriction.setter
+    def secure_access_enforce_hosts_restriction(self, secure_access_enforce_hosts_restriction):
+        """Sets the secure_access_enforce_hosts_restriction of this RotatedSecretUpdateLdap.
+
+        Enforce connections only to allowed SRA hosts  # noqa: E501
+
+        :param secure_access_enforce_hosts_restriction: The secure_access_enforce_hosts_restriction of this RotatedSecretUpdateLdap.  # noqa: E501
+        :type: bool
+        """
+
+        self._secure_access_enforce_hosts_restriction = secure_access_enforce_hosts_restriction
+
+    @property
     def secure_access_host(self):
         """Gets the secure_access_host of this RotatedSecretUpdateLdap.  # noqa: E501
 
@@ -1037,10 +1098,33 @@ class RotatedSecretUpdateLdap(object):
         self._secure_access_web_proxy = secure_access_web_proxy
 
     @property
+    def skip_dry_run(self):
+        """Gets the skip_dry_run of this RotatedSecretUpdateLdap.  # noqa: E501
+
+        If set, dry-run will be skipped  # noqa: E501
+
+        :return: The skip_dry_run of this RotatedSecretUpdateLdap.  # noqa: E501
+        :rtype: str
+        """
+        return self._skip_dry_run
+
+    @skip_dry_run.setter
+    def skip_dry_run(self, skip_dry_run):
+        """Sets the skip_dry_run of this RotatedSecretUpdateLdap.
+
+        If set, dry-run will be skipped  # noqa: E501
+
+        :param skip_dry_run: The skip_dry_run of this RotatedSecretUpdateLdap.  # noqa: E501
+        :type: str
+        """
+
+        self._skip_dry_run = skip_dry_run
+
+    @property
     def target(self):
         """Gets the target of this RotatedSecretUpdateLdap.  # noqa: E501
 
-        A list of linked targets to be associated, Relevant only for Secure Remote Access for ssh cert issuer, ldap rotated secret and ldap dynamic secret, To specify multiple targets use argument multiple times  # noqa: E501
+        A list of targets to be associated with an SRA item, To specify multiple targets use argument multiple times  # noqa: E501
 
         :return: The target of this RotatedSecretUpdateLdap.  # noqa: E501
         :rtype: list[str]
@@ -1051,7 +1135,7 @@ class RotatedSecretUpdateLdap(object):
     def target(self, target):
         """Sets the target of this RotatedSecretUpdateLdap.
 
-        A list of linked targets to be associated, Relevant only for Secure Remote Access for ssh cert issuer, ldap rotated secret and ldap dynamic secret, To specify multiple targets use argument multiple times  # noqa: E501
+        A list of targets to be associated with an SRA item, To specify multiple targets use argument multiple times  # noqa: E501
 
         :param target: The target of this RotatedSecretUpdateLdap.  # noqa: E501
         :type: list[str]

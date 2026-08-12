@@ -36,6 +36,7 @@ class UscCreate(object):
     openapi_types = {
         'binary_value': 'bool',
         'description': 'str',
+        'gcp_project_id': 'str',
         'json': 'bool',
         'namespace': 'str',
         'object_type': 'str',
@@ -56,6 +57,7 @@ class UscCreate(object):
     attribute_map = {
         'binary_value': 'binary-value',
         'description': 'description',
+        'gcp_project_id': 'gcp-project-id',
         'json': 'json',
         'namespace': 'namespace',
         'object_type': 'object-type',
@@ -73,7 +75,7 @@ class UscCreate(object):
         'value': 'value'
     }
 
-    def __init__(self, binary_value=None, description=None, json=False, namespace=None, object_type=None, pfx_password=None, region=None, remote_secret_activation_date=None, remote_secret_expires=None, secret_name=None, selected_repositories=None, tags=None, token=None, uid_token=None, usc_encryption_key=None, usc_name=None, value=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, binary_value=None, description=None, gcp_project_id=None, json=False, namespace=None, object_type=None, pfx_password=None, region=None, remote_secret_activation_date=None, remote_secret_expires=None, secret_name=None, selected_repositories=None, tags=None, token=None, uid_token=None, usc_encryption_key=None, usc_name=None, value=None, local_vars_configuration=None):  # noqa: E501
         """UscCreate - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -81,6 +83,7 @@ class UscCreate(object):
 
         self._binary_value = None
         self._description = None
+        self._gcp_project_id = None
         self._json = None
         self._namespace = None
         self._object_type = None
@@ -102,6 +105,8 @@ class UscCreate(object):
             self.binary_value = binary_value
         if description is not None:
             self.description = description
+        if gcp_project_id is not None:
+            self.gcp_project_id = gcp_project_id
         if json is not None:
             self.json = json
         if namespace is not None:
@@ -175,6 +180,29 @@ class UscCreate(object):
         """
 
         self._description = description
+
+    @property
+    def gcp_project_id(self):
+        """Gets the gcp_project_id of this UscCreate.  # noqa: E501
+
+        The GCP project to create the secret in (GCP only). Required when the connector spans multiple projects or uses folder/organization scope.  # noqa: E501
+
+        :return: The gcp_project_id of this UscCreate.  # noqa: E501
+        :rtype: str
+        """
+        return self._gcp_project_id
+
+    @gcp_project_id.setter
+    def gcp_project_id(self, gcp_project_id):
+        """Sets the gcp_project_id of this UscCreate.
+
+        The GCP project to create the secret in (GCP only). Required when the connector spans multiple projects or uses folder/organization scope.  # noqa: E501
+
+        :param gcp_project_id: The gcp_project_id of this UscCreate.  # noqa: E501
+        :type: str
+        """
+
+        self._gcp_project_id = gcp_project_id
 
     @property
     def json(self):

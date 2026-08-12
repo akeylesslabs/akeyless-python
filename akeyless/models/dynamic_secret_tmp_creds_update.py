@@ -34,46 +34,54 @@ class DynamicSecretTmpCredsUpdate(object):
                             and the value is json key in definition.
     """
     openapi_types = {
+        'ara_enabled': 'bool',
         'host': 'str',
         'input_rule': 'list[str]',
         'json': 'bool',
         'name': 'str',
         'new_ttl_min': 'int',
         'output_rule': 'list[str]',
+        'skip_dry_run': 'str',
         'tmp_creds_id': 'str',
         'token': 'str',
         'uid_token': 'str'
     }
 
     attribute_map = {
+        'ara_enabled': 'ara-enabled',
         'host': 'host',
         'input_rule': 'input-rule',
         'json': 'json',
         'name': 'name',
         'new_ttl_min': 'new-ttl-min',
         'output_rule': 'output-rule',
+        'skip_dry_run': 'skip_dry_run',
         'tmp_creds_id': 'tmp-creds-id',
         'token': 'token',
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, host=None, input_rule=None, json=False, name=None, new_ttl_min=None, output_rule=None, tmp_creds_id=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, ara_enabled=None, host=None, input_rule=None, json=False, name=None, new_ttl_min=None, output_rule=None, skip_dry_run=None, tmp_creds_id=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """DynamicSecretTmpCredsUpdate - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
+        self._ara_enabled = None
         self._host = None
         self._input_rule = None
         self._json = None
         self._name = None
         self._new_ttl_min = None
         self._output_rule = None
+        self._skip_dry_run = None
         self._tmp_creds_id = None
         self._token = None
         self._uid_token = None
         self.discriminator = None
 
+        if ara_enabled is not None:
+            self.ara_enabled = ara_enabled
         self.host = host
         if input_rule is not None:
             self.input_rule = input_rule
@@ -83,11 +91,36 @@ class DynamicSecretTmpCredsUpdate(object):
         self.new_ttl_min = new_ttl_min
         if output_rule is not None:
             self.output_rule = output_rule
+        if skip_dry_run is not None:
+            self.skip_dry_run = skip_dry_run
         self.tmp_creds_id = tmp_creds_id
         if token is not None:
             self.token = token
         if uid_token is not None:
             self.uid_token = uid_token
+
+    @property
+    def ara_enabled(self):
+        """Gets the ara_enabled of this DynamicSecretTmpCredsUpdate.  # noqa: E501
+
+        Enable or disable Agentic Runtime Authority rule enforcement for this item. Mirrors commands.AgenticRulesParams.AraEnabled.  # noqa: E501
+
+        :return: The ara_enabled of this DynamicSecretTmpCredsUpdate.  # noqa: E501
+        :rtype: bool
+        """
+        return self._ara_enabled
+
+    @ara_enabled.setter
+    def ara_enabled(self, ara_enabled):
+        """Sets the ara_enabled of this DynamicSecretTmpCredsUpdate.
+
+        Enable or disable Agentic Runtime Authority rule enforcement for this item. Mirrors commands.AgenticRulesParams.AraEnabled.  # noqa: E501
+
+        :param ara_enabled: The ara_enabled of this DynamicSecretTmpCredsUpdate.  # noqa: E501
+        :type: bool
+        """
+
+        self._ara_enabled = ara_enabled
 
     @property
     def host(self):
@@ -232,6 +265,29 @@ class DynamicSecretTmpCredsUpdate(object):
         """
 
         self._output_rule = output_rule
+
+    @property
+    def skip_dry_run(self):
+        """Gets the skip_dry_run of this DynamicSecretTmpCredsUpdate.  # noqa: E501
+
+        If set, dry-run will be skipped  # noqa: E501
+
+        :return: The skip_dry_run of this DynamicSecretTmpCredsUpdate.  # noqa: E501
+        :rtype: str
+        """
+        return self._skip_dry_run
+
+    @skip_dry_run.setter
+    def skip_dry_run(self, skip_dry_run):
+        """Sets the skip_dry_run of this DynamicSecretTmpCredsUpdate.
+
+        If set, dry-run will be skipped  # noqa: E501
+
+        :param skip_dry_run: The skip_dry_run of this DynamicSecretTmpCredsUpdate.  # noqa: E501
+        :type: str
+        """
+
+        self._skip_dry_run = skip_dry_run
 
     @property
     def tmp_creds_id(self):

@@ -36,6 +36,7 @@ class KMIPServer(object):
     openapi_types = {
         'active': 'bool',
         'ca': 'list[int]',
+        'cas': 'list[KMIPCA]',
         'certificate': 'list[int]',
         'certificate_issue_date': 'datetime',
         'certificate_ttl_in_seconds': 'int',
@@ -47,6 +48,7 @@ class KMIPServer(object):
     attribute_map = {
         'active': 'active',
         'ca': 'ca',
+        'cas': 'cas',
         'certificate': 'certificate',
         'certificate_issue_date': 'certificate_issue_date',
         'certificate_ttl_in_seconds': 'certificate_ttl_in_seconds',
@@ -55,7 +57,7 @@ class KMIPServer(object):
         'root': 'root'
     }
 
-    def __init__(self, active=None, ca=None, certificate=None, certificate_issue_date=None, certificate_ttl_in_seconds=None, expiration_events=None, hostname=None, root=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, active=None, ca=None, cas=None, certificate=None, certificate_issue_date=None, certificate_ttl_in_seconds=None, expiration_events=None, hostname=None, root=None, local_vars_configuration=None):  # noqa: E501
         """KMIPServer - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -63,6 +65,7 @@ class KMIPServer(object):
 
         self._active = None
         self._ca = None
+        self._cas = None
         self._certificate = None
         self._certificate_issue_date = None
         self._certificate_ttl_in_seconds = None
@@ -75,6 +78,8 @@ class KMIPServer(object):
             self.active = active
         if ca is not None:
             self.ca = ca
+        if cas is not None:
+            self.cas = cas
         if certificate is not None:
             self.certificate = certificate
         if certificate_issue_date is not None:
@@ -129,6 +134,27 @@ class KMIPServer(object):
         """
 
         self._ca = ca
+
+    @property
+    def cas(self):
+        """Gets the cas of this KMIPServer.  # noqa: E501
+
+
+        :return: The cas of this KMIPServer.  # noqa: E501
+        :rtype: list[KMIPCA]
+        """
+        return self._cas
+
+    @cas.setter
+    def cas(self, cas):
+        """Sets the cas of this KMIPServer.
+
+
+        :param cas: The cas of this KMIPServer.  # noqa: E501
+        :type: list[KMIPCA]
+        """
+
+        self._cas = cas
 
     @property
     def certificate(self):

@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **aws_region** | **str** |  | [optional] 
 **aws_secret_access_key** | **str** |  | [optional] 
 **aws_session_token** | **str** |  | [optional] 
+**aws_user_name** | **str** |  | [optional] 
 **gw_cloud_identity_external_id_opt** | [**AWSGatewayCloudIdentityExternalIdOpt**](AWSGatewayCloudIdentityExternalIdOpt.md) |  | [optional] 
 **use_gw_cloud_identity** | **bool** |  | [optional] 
 

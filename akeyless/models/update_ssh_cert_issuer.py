@@ -387,7 +387,7 @@ class UpdateSSHCertIssuer(object):
     def host_provider(self):
         """Gets the host_provider of this UpdateSSHCertIssuer.  # noqa: E501
 
-        Host provider type [explicit/target], Default Host provider is explicit, Relevant only for Secure Remote Access of ssh cert issuer, ldap rotated secret and ldap dynamic secret  # noqa: E501
+        Host provider type [explicit/target], Default Host provider is explicit, Relevant only for SRA items.  # noqa: E501
 
         :return: The host_provider of this UpdateSSHCertIssuer.  # noqa: E501
         :rtype: str
@@ -398,7 +398,7 @@ class UpdateSSHCertIssuer(object):
     def host_provider(self, host_provider):
         """Sets the host_provider of this UpdateSSHCertIssuer.
 
-        Host provider type [explicit/target], Default Host provider is explicit, Relevant only for Secure Remote Access of ssh cert issuer, ldap rotated secret and ldap dynamic secret  # noqa: E501
+        Host provider type [explicit/target], Default Host provider is explicit, Relevant only for SRA items.  # noqa: E501
 
         :param host_provider: The host_provider of this UpdateSSHCertIssuer.  # noqa: E501
         :type: str
@@ -665,7 +665,7 @@ class UpdateSSHCertIssuer(object):
     def secure_access_enforce_hosts_restriction(self):
         """Gets the secure_access_enforce_hosts_restriction of this UpdateSSHCertIssuer.  # noqa: E501
 
-        Enable this flag to enforce connections only to the hosts listed in --secure-access-host  # noqa: E501
+        Enforce connections only to allowed SRA hosts  # noqa: E501
 
         :return: The secure_access_enforce_hosts_restriction of this UpdateSSHCertIssuer.  # noqa: E501
         :rtype: bool
@@ -676,7 +676,7 @@ class UpdateSSHCertIssuer(object):
     def secure_access_enforce_hosts_restriction(self, secure_access_enforce_hosts_restriction):
         """Sets the secure_access_enforce_hosts_restriction of this UpdateSSHCertIssuer.
 
-        Enable this flag to enforce connections only to the hosts listed in --secure-access-host  # noqa: E501
+        Enforce connections only to allowed SRA hosts  # noqa: E501
 
         :param secure_access_enforce_hosts_restriction: The secure_access_enforce_hosts_restriction of this UpdateSSHCertIssuer.  # noqa: E501
         :type: bool

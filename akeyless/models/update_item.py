@@ -70,6 +70,7 @@ class UpdateItem(object):
         'secure_access_db_name': 'str',
         'secure_access_db_schema': 'str',
         'secure_access_enable': 'str',
+        'secure_access_enforce_hosts_restriction': 'bool',
         'secure_access_gateway': 'str',
         'secure_access_host': 'list[str]',
         'secure_access_rd_gateway_server': 'str',
@@ -84,6 +85,7 @@ class UpdateItem(object):
         'secure_access_use_internal_ssh_access': 'bool',
         'secure_access_web_browsing': 'bool',
         'secure_access_web_proxy': 'bool',
+        'target': 'list[str]',
         'token': 'str',
         'uid_token': 'str',
         'usc_tags': 'str',
@@ -127,6 +129,7 @@ class UpdateItem(object):
         'secure_access_db_name': 'secure-access-db-name',
         'secure_access_db_schema': 'secure-access-db-schema',
         'secure_access_enable': 'secure-access-enable',
+        'secure_access_enforce_hosts_restriction': 'secure-access-enforce-hosts-restriction',
         'secure_access_gateway': 'secure-access-gateway',
         'secure_access_host': 'secure-access-host',
         'secure_access_rd_gateway_server': 'secure-access-rd-gateway-server',
@@ -141,13 +144,14 @@ class UpdateItem(object):
         'secure_access_use_internal_ssh_access': 'secure-access-use-internal-ssh-access',
         'secure_access_web_browsing': 'secure-access-web-browsing',
         'secure_access_web_proxy': 'secure-access-web-proxy',
+        'target': 'target',
         'token': 'token',
         'uid_token': 'uid-token',
         'usc_tags': 'usc-tags',
         'use_tags_as_filter': 'use-tags-as-filter'
     }
 
-    def __init__(self, provider_type=None, accessibility='regular', add_tag=None, cert_file_data=None, certificate_format=None, change_event=None, delete_protection=None, description='default_metadata', expiration_event_in=None, gcp_sm_regions=None, host_provider=None, item_custom_fields=None, json=False, lock_during_sra_session=None, max_versions=None, name=None, new_metadata='default_metadata', new_name=None, rm_tag=None, rotate_after_disconnect=None, secure_access_add_host=None, secure_access_allow_external_user=None, secure_access_allow_port_forwading=None, secure_access_api=None, secure_access_aws_account_id=None, secure_access_aws_native_cli=None, secure_access_aws_region=None, secure_access_bastion_api=None, secure_access_bastion_issuer=None, secure_access_bastion_ssh=None, secure_access_certificate_issuer=None, secure_access_cluster_endpoint=None, secure_access_dashboard_url=None, secure_access_db_name=None, secure_access_db_schema=None, secure_access_enable=None, secure_access_gateway=None, secure_access_host=None, secure_access_rd_gateway_server=None, secure_access_rdp_domain=None, secure_access_rdp_user=None, secure_access_rm_host=None, secure_access_ssh=None, secure_access_ssh_creds=None, secure_access_ssh_creds_user=None, secure_access_url=None, secure_access_use_internal_bastion=None, secure_access_use_internal_ssh_access=None, secure_access_web_browsing=False, secure_access_web_proxy=False, token=None, uid_token=None, usc_tags=None, use_tags_as_filter=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, provider_type=None, accessibility='regular', add_tag=None, cert_file_data=None, certificate_format=None, change_event=None, delete_protection=None, description='default_metadata', expiration_event_in=None, gcp_sm_regions=None, host_provider=None, item_custom_fields=None, json=False, lock_during_sra_session=None, max_versions=None, name=None, new_metadata='default_metadata', new_name=None, rm_tag=None, rotate_after_disconnect=None, secure_access_add_host=None, secure_access_allow_external_user=None, secure_access_allow_port_forwading=None, secure_access_api=None, secure_access_aws_account_id=None, secure_access_aws_native_cli=None, secure_access_aws_region=None, secure_access_bastion_api=None, secure_access_bastion_issuer=None, secure_access_bastion_ssh=None, secure_access_certificate_issuer=None, secure_access_cluster_endpoint=None, secure_access_dashboard_url=None, secure_access_db_name=None, secure_access_db_schema=None, secure_access_enable=None, secure_access_enforce_hosts_restriction=None, secure_access_gateway=None, secure_access_host=None, secure_access_rd_gateway_server=None, secure_access_rdp_domain=None, secure_access_rdp_user=None, secure_access_rm_host=None, secure_access_ssh=None, secure_access_ssh_creds=None, secure_access_ssh_creds_user=None, secure_access_url=None, secure_access_use_internal_bastion=None, secure_access_use_internal_ssh_access=None, secure_access_web_browsing=None, secure_access_web_proxy=None, target=None, token=None, uid_token=None, usc_tags=None, use_tags_as_filter=None, local_vars_configuration=None):  # noqa: E501
         """UpdateItem - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -189,6 +193,7 @@ class UpdateItem(object):
         self._secure_access_db_name = None
         self._secure_access_db_schema = None
         self._secure_access_enable = None
+        self._secure_access_enforce_hosts_restriction = None
         self._secure_access_gateway = None
         self._secure_access_host = None
         self._secure_access_rd_gateway_server = None
@@ -203,6 +208,7 @@ class UpdateItem(object):
         self._secure_access_use_internal_ssh_access = None
         self._secure_access_web_browsing = None
         self._secure_access_web_proxy = None
+        self._target = None
         self._token = None
         self._uid_token = None
         self._usc_tags = None
@@ -280,6 +286,8 @@ class UpdateItem(object):
             self.secure_access_db_schema = secure_access_db_schema
         if secure_access_enable is not None:
             self.secure_access_enable = secure_access_enable
+        if secure_access_enforce_hosts_restriction is not None:
+            self.secure_access_enforce_hosts_restriction = secure_access_enforce_hosts_restriction
         if secure_access_gateway is not None:
             self.secure_access_gateway = secure_access_gateway
         if secure_access_host is not None:
@@ -308,6 +316,8 @@ class UpdateItem(object):
             self.secure_access_web_browsing = secure_access_web_browsing
         if secure_access_web_proxy is not None:
             self.secure_access_web_proxy = secure_access_web_proxy
+        if target is not None:
+            self.target = target
         if token is not None:
             self.token = token
         if uid_token is not None:
@@ -547,7 +557,7 @@ class UpdateItem(object):
     def host_provider(self):
         """Gets the host_provider of this UpdateItem.  # noqa: E501
 
-        Host provider type [explicit/target], Default Host provider is explicit, Relevant only for Secure Remote Access of ssh cert issuer, ldap rotated secret and ldap dynamic secret  # noqa: E501
+        Host provider type [explicit/target], Default Host provider is explicit, Relevant only for SRA items.  # noqa: E501
 
         :return: The host_provider of this UpdateItem.  # noqa: E501
         :rtype: str
@@ -558,7 +568,7 @@ class UpdateItem(object):
     def host_provider(self, host_provider):
         """Sets the host_provider of this UpdateItem.
 
-        Host provider type [explicit/target], Default Host provider is explicit, Relevant only for Secure Remote Access of ssh cert issuer, ldap rotated secret and ldap dynamic secret  # noqa: E501
+        Host provider type [explicit/target], Default Host provider is explicit, Relevant only for SRA items.  # noqa: E501
 
         :param host_provider: The host_provider of this UpdateItem.  # noqa: E501
         :type: str
@@ -1144,6 +1154,29 @@ class UpdateItem(object):
         self._secure_access_enable = secure_access_enable
 
     @property
+    def secure_access_enforce_hosts_restriction(self):
+        """Gets the secure_access_enforce_hosts_restriction of this UpdateItem.  # noqa: E501
+
+        Enforce connections only to allowed SRA hosts  # noqa: E501
+
+        :return: The secure_access_enforce_hosts_restriction of this UpdateItem.  # noqa: E501
+        :rtype: bool
+        """
+        return self._secure_access_enforce_hosts_restriction
+
+    @secure_access_enforce_hosts_restriction.setter
+    def secure_access_enforce_hosts_restriction(self, secure_access_enforce_hosts_restriction):
+        """Sets the secure_access_enforce_hosts_restriction of this UpdateItem.
+
+        Enforce connections only to allowed SRA hosts  # noqa: E501
+
+        :param secure_access_enforce_hosts_restriction: The secure_access_enforce_hosts_restriction of this UpdateItem.  # noqa: E501
+        :type: bool
+        """
+
+        self._secure_access_enforce_hosts_restriction = secure_access_enforce_hosts_restriction
+
+    @property
     def secure_access_gateway(self):
         """Gets the secure_access_gateway of this UpdateItem.  # noqa: E501
 
@@ -1462,6 +1495,29 @@ class UpdateItem(object):
         """
 
         self._secure_access_web_proxy = secure_access_web_proxy
+
+    @property
+    def target(self):
+        """Gets the target of this UpdateItem.  # noqa: E501
+
+        A list of targets to be associated with an SRA item, To specify multiple targets use argument multiple times  # noqa: E501
+
+        :return: The target of this UpdateItem.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._target
+
+    @target.setter
+    def target(self, target):
+        """Sets the target of this UpdateItem.
+
+        A list of targets to be associated with an SRA item, To specify multiple targets use argument multiple times  # noqa: E501
+
+        :param target: The target of this UpdateItem.  # noqa: E501
+        :type: list[str]
+        """
+
+        self._target = target
 
     @property
     def token(self):

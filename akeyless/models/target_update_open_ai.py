@@ -36,6 +36,10 @@ class TargetUpdateOpenAI(object):
     openapi_types = {
         'api_key': 'str',
         'api_key_id': 'str',
+        'codex_oauth_access_token': 'str',
+        'codex_oauth_account_id': 'str',
+        'codex_oauth_mode': 'str',
+        'codex_oauth_refresh_token': 'str',
         'delete_protection': 'str',
         'description': 'str',
         'json': 'bool',
@@ -55,6 +59,10 @@ class TargetUpdateOpenAI(object):
     attribute_map = {
         'api_key': 'api-key',
         'api_key_id': 'api-key-id',
+        'codex_oauth_access_token': 'codex-oauth-access-token',
+        'codex_oauth_account_id': 'codex-oauth-account-id',
+        'codex_oauth_mode': 'codex-oauth-mode',
+        'codex_oauth_refresh_token': 'codex-oauth-refresh-token',
         'delete_protection': 'delete_protection',
         'description': 'description',
         'json': 'json',
@@ -71,7 +79,7 @@ class TargetUpdateOpenAI(object):
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, api_key=None, api_key_id=None, delete_protection=None, description='default_comment', json=False, keep_prev_version=None, key=None, max_versions=None, model=None, name=None, new_comment='default_comment', new_name=None, openai_url='https://api.openai.com/v1', organization_id=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, api_key=None, api_key_id=None, codex_oauth_access_token=None, codex_oauth_account_id=None, codex_oauth_mode=None, codex_oauth_refresh_token=None, delete_protection=None, description='default_comment', json=False, keep_prev_version=None, key=None, max_versions=None, model=None, name=None, new_comment='default_comment', new_name=None, openai_url='https://api.openai.com/v1', organization_id=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """TargetUpdateOpenAI - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -79,6 +87,10 @@ class TargetUpdateOpenAI(object):
 
         self._api_key = None
         self._api_key_id = None
+        self._codex_oauth_access_token = None
+        self._codex_oauth_account_id = None
+        self._codex_oauth_mode = None
+        self._codex_oauth_refresh_token = None
         self._delete_protection = None
         self._description = None
         self._json = None
@@ -99,6 +111,14 @@ class TargetUpdateOpenAI(object):
             self.api_key = api_key
         if api_key_id is not None:
             self.api_key_id = api_key_id
+        if codex_oauth_access_token is not None:
+            self.codex_oauth_access_token = codex_oauth_access_token
+        if codex_oauth_account_id is not None:
+            self.codex_oauth_account_id = codex_oauth_account_id
+        if codex_oauth_mode is not None:
+            self.codex_oauth_mode = codex_oauth_mode
+        if codex_oauth_refresh_token is not None:
+            self.codex_oauth_refresh_token = codex_oauth_refresh_token
         if delete_protection is not None:
             self.delete_protection = delete_protection
         if description is not None:
@@ -172,6 +192,98 @@ class TargetUpdateOpenAI(object):
         """
 
         self._api_key_id = api_key_id
+
+    @property
+    def codex_oauth_access_token(self):
+        """Gets the codex_oauth_access_token of this TargetUpdateOpenAI.  # noqa: E501
+
+        Codex OAuth access token (auth.json tokens.access_token), used when codex-oauth-mode=chatgpt_oauth  # noqa: E501
+
+        :return: The codex_oauth_access_token of this TargetUpdateOpenAI.  # noqa: E501
+        :rtype: str
+        """
+        return self._codex_oauth_access_token
+
+    @codex_oauth_access_token.setter
+    def codex_oauth_access_token(self, codex_oauth_access_token):
+        """Sets the codex_oauth_access_token of this TargetUpdateOpenAI.
+
+        Codex OAuth access token (auth.json tokens.access_token), used when codex-oauth-mode=chatgpt_oauth  # noqa: E501
+
+        :param codex_oauth_access_token: The codex_oauth_access_token of this TargetUpdateOpenAI.  # noqa: E501
+        :type: str
+        """
+
+        self._codex_oauth_access_token = codex_oauth_access_token
+
+    @property
+    def codex_oauth_account_id(self):
+        """Gets the codex_oauth_account_id of this TargetUpdateOpenAI.  # noqa: E501
+
+        Codex OAuth account id (auth.json tokens.account_id), used when codex-oauth-mode=chatgpt_oauth  # noqa: E501
+
+        :return: The codex_oauth_account_id of this TargetUpdateOpenAI.  # noqa: E501
+        :rtype: str
+        """
+        return self._codex_oauth_account_id
+
+    @codex_oauth_account_id.setter
+    def codex_oauth_account_id(self, codex_oauth_account_id):
+        """Sets the codex_oauth_account_id of this TargetUpdateOpenAI.
+
+        Codex OAuth account id (auth.json tokens.account_id), used when codex-oauth-mode=chatgpt_oauth  # noqa: E501
+
+        :param codex_oauth_account_id: The codex_oauth_account_id of this TargetUpdateOpenAI.  # noqa: E501
+        :type: str
+        """
+
+        self._codex_oauth_account_id = codex_oauth_account_id
+
+    @property
+    def codex_oauth_mode(self):
+        """Gets the codex_oauth_mode of this TargetUpdateOpenAI.  # noqa: E501
+
+        Auth mode: empty (default, static api-key) or chatgpt_oauth  # noqa: E501
+
+        :return: The codex_oauth_mode of this TargetUpdateOpenAI.  # noqa: E501
+        :rtype: str
+        """
+        return self._codex_oauth_mode
+
+    @codex_oauth_mode.setter
+    def codex_oauth_mode(self, codex_oauth_mode):
+        """Sets the codex_oauth_mode of this TargetUpdateOpenAI.
+
+        Auth mode: empty (default, static api-key) or chatgpt_oauth  # noqa: E501
+
+        :param codex_oauth_mode: The codex_oauth_mode of this TargetUpdateOpenAI.  # noqa: E501
+        :type: str
+        """
+
+        self._codex_oauth_mode = codex_oauth_mode
+
+    @property
+    def codex_oauth_refresh_token(self):
+        """Gets the codex_oauth_refresh_token of this TargetUpdateOpenAI.  # noqa: E501
+
+        Codex OAuth refresh token (auth.json tokens.refresh_token), used when codex-oauth-mode=chatgpt_oauth  # noqa: E501
+
+        :return: The codex_oauth_refresh_token of this TargetUpdateOpenAI.  # noqa: E501
+        :rtype: str
+        """
+        return self._codex_oauth_refresh_token
+
+    @codex_oauth_refresh_token.setter
+    def codex_oauth_refresh_token(self, codex_oauth_refresh_token):
+        """Sets the codex_oauth_refresh_token of this TargetUpdateOpenAI.
+
+        Codex OAuth refresh token (auth.json tokens.refresh_token), used when codex-oauth-mode=chatgpt_oauth  # noqa: E501
+
+        :param codex_oauth_refresh_token: The codex_oauth_refresh_token of this TargetUpdateOpenAI.  # noqa: E501
+        :type: str
+        """
+
+        self._codex_oauth_refresh_token = codex_oauth_refresh_token
 
     @property
     def delete_protection(self):

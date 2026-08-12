@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 **email_error** | **dict(str, str)** |  | [optional] 
 **items_error** | [**list[ResponseStopShareItem]**](ResponseStopShareItem.md) |  | [optional] 
 **s_token** | **str** |  | [optional] 
+**shared_token_id** | **str** |  | [optional] 
 **shared_users** | **list[str]** |  | [optional] 
 **shared_users_full_info** | [**list[SharingItemFullInfo]**](SharingItemFullInfo.md) |  | [optional] 
 **sharing_url** | **str** |  | [optional] 

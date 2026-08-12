@@ -38,6 +38,7 @@ class AWSTargetDetails(object):
         'aws_region': 'str',
         'aws_secret_access_key': 'str',
         'aws_session_token': 'str',
+        'aws_user_name': 'str',
         'gw_cloud_identity_external_id_opt': 'AWSGatewayCloudIdentityExternalIdOpt',
         'use_gw_cloud_identity': 'bool'
     }
@@ -47,11 +48,12 @@ class AWSTargetDetails(object):
         'aws_region': 'aws_region',
         'aws_secret_access_key': 'aws_secret_access_key',
         'aws_session_token': 'aws_session_token',
+        'aws_user_name': 'aws_user_name',
         'gw_cloud_identity_external_id_opt': 'gw_cloud_identity_external_id_opt',
         'use_gw_cloud_identity': 'use_gw_cloud_identity'
     }
 
-    def __init__(self, aws_access_key_id=None, aws_region=None, aws_secret_access_key=None, aws_session_token=None, gw_cloud_identity_external_id_opt=None, use_gw_cloud_identity=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, aws_access_key_id=None, aws_region=None, aws_secret_access_key=None, aws_session_token=None, aws_user_name=None, gw_cloud_identity_external_id_opt=None, use_gw_cloud_identity=None, local_vars_configuration=None):  # noqa: E501
         """AWSTargetDetails - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -61,6 +63,7 @@ class AWSTargetDetails(object):
         self._aws_region = None
         self._aws_secret_access_key = None
         self._aws_session_token = None
+        self._aws_user_name = None
         self._gw_cloud_identity_external_id_opt = None
         self._use_gw_cloud_identity = None
         self.discriminator = None
@@ -73,6 +76,8 @@ class AWSTargetDetails(object):
             self.aws_secret_access_key = aws_secret_access_key
         if aws_session_token is not None:
             self.aws_session_token = aws_session_token
+        if aws_user_name is not None:
+            self.aws_user_name = aws_user_name
         if gw_cloud_identity_external_id_opt is not None:
             self.gw_cloud_identity_external_id_opt = gw_cloud_identity_external_id_opt
         if use_gw_cloud_identity is not None:
@@ -161,6 +166,27 @@ class AWSTargetDetails(object):
         """
 
         self._aws_session_token = aws_session_token
+
+    @property
+    def aws_user_name(self):
+        """Gets the aws_user_name of this AWSTargetDetails.  # noqa: E501
+
+
+        :return: The aws_user_name of this AWSTargetDetails.  # noqa: E501
+        :rtype: str
+        """
+        return self._aws_user_name
+
+    @aws_user_name.setter
+    def aws_user_name(self, aws_user_name):
+        """Sets the aws_user_name of this AWSTargetDetails.
+
+
+        :param aws_user_name: The aws_user_name of this AWSTargetDetails.  # noqa: E501
+        :type: str
+        """
+
+        self._aws_user_name = aws_user_name
 
     @property
     def gw_cloud_identity_external_id_opt(self):

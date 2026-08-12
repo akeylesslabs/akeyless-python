@@ -35,6 +35,7 @@ class UpdateMcpSecretBearerToken(object):
     """
     openapi_types = {
         'accessibility': 'str',
+        'ara_enabled': 'bool',
         'bearer_token': 'str',
         'input_rule': 'list[str]',
         'json': 'bool',
@@ -50,6 +51,7 @@ class UpdateMcpSecretBearerToken(object):
 
     attribute_map = {
         'accessibility': 'accessibility',
+        'ara_enabled': 'ara-enabled',
         'bearer_token': 'bearer-token',
         'input_rule': 'input-rule',
         'json': 'json',
@@ -63,13 +65,14 @@ class UpdateMcpSecretBearerToken(object):
         'url': 'url'
     }
 
-    def __init__(self, accessibility='regular', bearer_token=None, input_rule=None, json=False, keep_prev_version=None, key=None, last_version=None, name=None, output_rule=None, token=None, uid_token=None, url=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, accessibility='regular', ara_enabled=None, bearer_token=None, input_rule=None, json=False, keep_prev_version=None, key=None, last_version=None, name=None, output_rule=None, token=None, uid_token=None, url=None, local_vars_configuration=None):  # noqa: E501
         """UpdateMcpSecretBearerToken - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._accessibility = None
+        self._ara_enabled = None
         self._bearer_token = None
         self._input_rule = None
         self._json = None
@@ -85,6 +88,8 @@ class UpdateMcpSecretBearerToken(object):
 
         if accessibility is not None:
             self.accessibility = accessibility
+        if ara_enabled is not None:
+            self.ara_enabled = ara_enabled
         if bearer_token is not None:
             self.bearer_token = bearer_token
         if input_rule is not None:
@@ -129,6 +134,29 @@ class UpdateMcpSecretBearerToken(object):
         """
 
         self._accessibility = accessibility
+
+    @property
+    def ara_enabled(self):
+        """Gets the ara_enabled of this UpdateMcpSecretBearerToken.  # noqa: E501
+
+        Enable or disable Agentic Runtime Authority rule enforcement for this item. When false, user-defined input/output rules are stored but not enforced; the base security validation still runs.  AraEnabled is tri-state (nil/true/false), not a plain bool: it self-encodes its wire value (see akl.OptionalBool) so an explicit false survives the curl-proxy relay instead of being dropped like a default-false bool flag.  # noqa: E501
+
+        :return: The ara_enabled of this UpdateMcpSecretBearerToken.  # noqa: E501
+        :rtype: bool
+        """
+        return self._ara_enabled
+
+    @ara_enabled.setter
+    def ara_enabled(self, ara_enabled):
+        """Sets the ara_enabled of this UpdateMcpSecretBearerToken.
+
+        Enable or disable Agentic Runtime Authority rule enforcement for this item. When false, user-defined input/output rules are stored but not enforced; the base security validation still runs.  AraEnabled is tri-state (nil/true/false), not a plain bool: it self-encodes its wire value (see akl.OptionalBool) so an explicit false survives the curl-proxy relay instead of being dropped like a default-false bool flag.  # noqa: E501
+
+        :param ara_enabled: The ara_enabled of this UpdateMcpSecretBearerToken.  # noqa: E501
+        :type: bool
+        """
+
+        self._ara_enabled = ara_enabled
 
     @property
     def bearer_token(self):

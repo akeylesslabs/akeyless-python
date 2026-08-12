@@ -34,6 +34,7 @@ class GatewayUpdateProducerDockerhub(object):
                             and the value is json key in definition.
     """
     openapi_types = {
+        'ara_enabled': 'bool',
         'delete_protection': 'str',
         'dockerhub_password': 'str',
         'dockerhub_token_scopes': 'str',
@@ -45,6 +46,7 @@ class GatewayUpdateProducerDockerhub(object):
         'new_name': 'str',
         'output_rule': 'list[str]',
         'producer_encryption_key_name': 'str',
+        'skip_dry_run': 'str',
         'tags': 'list[str]',
         'target_name': 'str',
         'token': 'str',
@@ -53,6 +55,7 @@ class GatewayUpdateProducerDockerhub(object):
     }
 
     attribute_map = {
+        'ara_enabled': 'ara-enabled',
         'delete_protection': 'delete_protection',
         'dockerhub_password': 'dockerhub-password',
         'dockerhub_token_scopes': 'dockerhub-token-scopes',
@@ -64,6 +67,7 @@ class GatewayUpdateProducerDockerhub(object):
         'new_name': 'new-name',
         'output_rule': 'output-rule',
         'producer_encryption_key_name': 'producer-encryption-key-name',
+        'skip_dry_run': 'skip_dry_run',
         'tags': 'tags',
         'target_name': 'target-name',
         'token': 'token',
@@ -71,12 +75,13 @@ class GatewayUpdateProducerDockerhub(object):
         'user_ttl': 'user-ttl'
     }
 
-    def __init__(self, delete_protection=None, dockerhub_password=None, dockerhub_token_scopes=None, dockerhub_username=None, input_rule=None, item_custom_fields=None, json=False, name=None, new_name=None, output_rule=None, producer_encryption_key_name=None, tags=None, target_name=None, token=None, uid_token=None, user_ttl='60m', local_vars_configuration=None):  # noqa: E501
+    def __init__(self, ara_enabled=None, delete_protection=None, dockerhub_password=None, dockerhub_token_scopes=None, dockerhub_username=None, input_rule=None, item_custom_fields=None, json=False, name=None, new_name=None, output_rule=None, producer_encryption_key_name=None, skip_dry_run=None, tags=None, target_name=None, token=None, uid_token=None, user_ttl='60m', local_vars_configuration=None):  # noqa: E501
         """GatewayUpdateProducerDockerhub - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
+        self._ara_enabled = None
         self._delete_protection = None
         self._dockerhub_password = None
         self._dockerhub_token_scopes = None
@@ -88,6 +93,7 @@ class GatewayUpdateProducerDockerhub(object):
         self._new_name = None
         self._output_rule = None
         self._producer_encryption_key_name = None
+        self._skip_dry_run = None
         self._tags = None
         self._target_name = None
         self._token = None
@@ -95,6 +101,8 @@ class GatewayUpdateProducerDockerhub(object):
         self._user_ttl = None
         self.discriminator = None
 
+        if ara_enabled is not None:
+            self.ara_enabled = ara_enabled
         if delete_protection is not None:
             self.delete_protection = delete_protection
         if dockerhub_password is not None:
@@ -116,6 +124,8 @@ class GatewayUpdateProducerDockerhub(object):
             self.output_rule = output_rule
         if producer_encryption_key_name is not None:
             self.producer_encryption_key_name = producer_encryption_key_name
+        if skip_dry_run is not None:
+            self.skip_dry_run = skip_dry_run
         if tags is not None:
             self.tags = tags
         if target_name is not None:
@@ -126,6 +136,29 @@ class GatewayUpdateProducerDockerhub(object):
             self.uid_token = uid_token
         if user_ttl is not None:
             self.user_ttl = user_ttl
+
+    @property
+    def ara_enabled(self):
+        """Gets the ara_enabled of this GatewayUpdateProducerDockerhub.  # noqa: E501
+
+        Enable or disable Agentic Runtime Authority rule enforcement for this item. Mirrors commands.AgenticRulesParams.AraEnabled.  # noqa: E501
+
+        :return: The ara_enabled of this GatewayUpdateProducerDockerhub.  # noqa: E501
+        :rtype: bool
+        """
+        return self._ara_enabled
+
+    @ara_enabled.setter
+    def ara_enabled(self, ara_enabled):
+        """Sets the ara_enabled of this GatewayUpdateProducerDockerhub.
+
+        Enable or disable Agentic Runtime Authority rule enforcement for this item. Mirrors commands.AgenticRulesParams.AraEnabled.  # noqa: E501
+
+        :param ara_enabled: The ara_enabled of this GatewayUpdateProducerDockerhub.  # noqa: E501
+        :type: bool
+        """
+
+        self._ara_enabled = ara_enabled
 
     @property
     def delete_protection(self):
@@ -381,6 +414,29 @@ class GatewayUpdateProducerDockerhub(object):
         """
 
         self._producer_encryption_key_name = producer_encryption_key_name
+
+    @property
+    def skip_dry_run(self):
+        """Gets the skip_dry_run of this GatewayUpdateProducerDockerhub.  # noqa: E501
+
+        If set, dry-run will be skipped  # noqa: E501
+
+        :return: The skip_dry_run of this GatewayUpdateProducerDockerhub.  # noqa: E501
+        :rtype: str
+        """
+        return self._skip_dry_run
+
+    @skip_dry_run.setter
+    def skip_dry_run(self, skip_dry_run):
+        """Sets the skip_dry_run of this GatewayUpdateProducerDockerhub.
+
+        If set, dry-run will be skipped  # noqa: E501
+
+        :param skip_dry_run: The skip_dry_run of this GatewayUpdateProducerDockerhub.  # noqa: E501
+        :type: str
+        """
+
+        self._skip_dry_run = skip_dry_run
 
     @property
     def tags(self):

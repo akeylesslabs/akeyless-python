@@ -5,6 +5,7 @@ gatewayUpdateProducerRedis is a command that updates redis producer [Deprecated:
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **acl_rules** | **str** | A JSON array list of redis ACL rules to attach to the created user. For available rules see the ACL CAT command https://redis.io/commands/acl-cat By default the user will have permissions to read all keys &#39;[\&quot;~*\&quot;, \&quot;+@read\&quot;]&#39; | [optional] 
+**ara_enabled** | **bool** | Enable or disable Agentic Runtime Authority rule enforcement for this item. Mirrors commands.AgenticRulesParams.AraEnabled. | [optional] 
 **custom_username_template** | **str** | Customize how temporary usernames are generated using go template | [optional] 
 **delete_protection** | **str** | Protection from accidental deletion of this object [true/false] | [optional] 
 **host** | **str** | Redis Host | [optional] [default to '127.0.0.1']
@@ -18,6 +19,7 @@ Name | Type | Description | Notes
 **password_length** | **str** | The length of the password to be generated | [optional] 
 **port** | **str** | Redis Port | [optional] [default to '6379']
 **producer_encryption_key_name** | **str** | Dynamic producer encryption key | [optional] 
+**skip_dry_run** | **str** | If set, dry-run will be skipped | [optional] 
 **ssl** | **bool** | Enable/Disable SSL [true/false] | [optional] [default to False]
 **ssl_certificate** | **str** | SSL CA certificate in base64 encoding generated from a trusted Certificate Authority (CA) | [optional] 
 **tags** | **list[str]** | Add tags attached to this object | [optional] 

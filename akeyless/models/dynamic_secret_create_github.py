@@ -34,6 +34,7 @@ class DynamicSecretCreateGithub(object):
                             and the value is json key in definition.
     """
     openapi_types = {
+        'ara_enabled': 'bool',
         'delete_protection': 'str',
         'description': 'str',
         'github_app_id': 'int',
@@ -47,6 +48,7 @@ class DynamicSecretCreateGithub(object):
         'json': 'bool',
         'name': 'str',
         'output_rule': 'list[str]',
+        'skip_dry_run': 'str',
         'tags': 'list[str]',
         'target_name': 'str',
         'token': 'str',
@@ -57,6 +59,7 @@ class DynamicSecretCreateGithub(object):
     }
 
     attribute_map = {
+        'ara_enabled': 'ara-enabled',
         'delete_protection': 'delete_protection',
         'description': 'description',
         'github_app_id': 'github-app-id',
@@ -70,6 +73,7 @@ class DynamicSecretCreateGithub(object):
         'json': 'json',
         'name': 'name',
         'output_rule': 'output-rule',
+        'skip_dry_run': 'skip_dry_run',
         'tags': 'tags',
         'target_name': 'target-name',
         'token': 'token',
@@ -79,12 +83,13 @@ class DynamicSecretCreateGithub(object):
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, delete_protection=None, description=None, github_app_id=None, github_app_private_key=None, github_base_url='https://api.github.com/', input_rule=None, installation_id=None, installation_organization=None, installation_repository=None, item_custom_fields=None, json=False, name=None, output_rule=None, tags=None, target_name=None, token=None, token_permissions=None, token_repositories=None, token_ttl='60m', uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, ara_enabled=None, delete_protection=None, description=None, github_app_id=None, github_app_private_key=None, github_base_url='https://api.github.com/', input_rule=None, installation_id=None, installation_organization=None, installation_repository=None, item_custom_fields=None, json=False, name=None, output_rule=None, skip_dry_run=None, tags=None, target_name=None, token=None, token_permissions=None, token_repositories=None, token_ttl='60m', uid_token=None, local_vars_configuration=None):  # noqa: E501
         """DynamicSecretCreateGithub - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
+        self._ara_enabled = None
         self._delete_protection = None
         self._description = None
         self._github_app_id = None
@@ -98,6 +103,7 @@ class DynamicSecretCreateGithub(object):
         self._json = None
         self._name = None
         self._output_rule = None
+        self._skip_dry_run = None
         self._tags = None
         self._target_name = None
         self._token = None
@@ -107,6 +113,8 @@ class DynamicSecretCreateGithub(object):
         self._uid_token = None
         self.discriminator = None
 
+        if ara_enabled is not None:
+            self.ara_enabled = ara_enabled
         if delete_protection is not None:
             self.delete_protection = delete_protection
         if description is not None:
@@ -132,6 +140,8 @@ class DynamicSecretCreateGithub(object):
         self.name = name
         if output_rule is not None:
             self.output_rule = output_rule
+        if skip_dry_run is not None:
+            self.skip_dry_run = skip_dry_run
         if tags is not None:
             self.tags = tags
         if target_name is not None:
@@ -146,6 +156,29 @@ class DynamicSecretCreateGithub(object):
             self.token_ttl = token_ttl
         if uid_token is not None:
             self.uid_token = uid_token
+
+    @property
+    def ara_enabled(self):
+        """Gets the ara_enabled of this DynamicSecretCreateGithub.  # noqa: E501
+
+        Enable or disable Agentic Runtime Authority rule enforcement for this item. Mirrors commands.AgenticRulesParams.AraEnabled.  # noqa: E501
+
+        :return: The ara_enabled of this DynamicSecretCreateGithub.  # noqa: E501
+        :rtype: bool
+        """
+        return self._ara_enabled
+
+    @ara_enabled.setter
+    def ara_enabled(self, ara_enabled):
+        """Sets the ara_enabled of this DynamicSecretCreateGithub.
+
+        Enable or disable Agentic Runtime Authority rule enforcement for this item. Mirrors commands.AgenticRulesParams.AraEnabled.  # noqa: E501
+
+        :param ara_enabled: The ara_enabled of this DynamicSecretCreateGithub.  # noqa: E501
+        :type: bool
+        """
+
+        self._ara_enabled = ara_enabled
 
     @property
     def delete_protection(self):
@@ -447,6 +480,29 @@ class DynamicSecretCreateGithub(object):
         """
 
         self._output_rule = output_rule
+
+    @property
+    def skip_dry_run(self):
+        """Gets the skip_dry_run of this DynamicSecretCreateGithub.  # noqa: E501
+
+        If set, dry-run will be skipped  # noqa: E501
+
+        :return: The skip_dry_run of this DynamicSecretCreateGithub.  # noqa: E501
+        :rtype: str
+        """
+        return self._skip_dry_run
+
+    @skip_dry_run.setter
+    def skip_dry_run(self, skip_dry_run):
+        """Sets the skip_dry_run of this DynamicSecretCreateGithub.
+
+        If set, dry-run will be skipped  # noqa: E501
+
+        :param skip_dry_run: The skip_dry_run of this DynamicSecretCreateGithub.  # noqa: E501
+        :type: str
+        """
+
+        self._skip_dry_run = skip_dry_run
 
     @property
     def tags(self):

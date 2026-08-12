@@ -41,6 +41,23 @@ class DSProducerDetails(object):
         'admin_pwd': 'str',
         'admin_rotation_interval_days': 'int',
         'administrative_port': 'str',
+        'aerospike_admin_username': 'str',
+        'aerospike_client_certificate': 'str',
+        'aerospike_client_id': 'str',
+        'aerospike_client_private_key': 'str',
+        'aerospike_client_secret': 'str',
+        'aerospike_cloud': 'bool',
+        'aerospike_cluster_id': 'str',
+        'aerospike_db_server_name': 'str',
+        'aerospike_enable_mtls': 'bool',
+        'aerospike_hostname': 'str',
+        'aerospike_namespace': 'str',
+        'aerospike_password': 'str',
+        'aerospike_port': 'str',
+        'aerospike_roles': 'list[str]',
+        'aerospike_skip_server_name_validation': 'str',
+        'aerospike_ssl_connection_certificate': 'str',
+        'aerospike_ssl_connection_mode': 'bool',
         'agentic_rules': 'AgenticRules',
         'api_key': 'str',
         'api_key_id': 'str',
@@ -49,6 +66,7 @@ class DSProducerDetails(object):
         'artifactory_base_url': 'str',
         'artifactory_token_audience': 'str',
         'artifactory_token_scope': 'str',
+        'auth_mode': 'str',
         'authorization_port': 'str',
         'aws_access_key_id': 'str',
         'aws_access_mode': 'str',
@@ -61,6 +79,7 @@ class DSProducerDetails(object):
         'aws_transitive_tag_keys': 'str',
         'aws_user_console_access': 'bool',
         'aws_user_groups': 'str',
+        'aws_user_name': 'str',
         'aws_user_policies': 'str',
         'aws_user_programmatic_access': 'bool',
         'azure_administrative_unit': 'str',
@@ -235,6 +254,10 @@ class DSProducerDetails(object):
         'mssql_revocation_statements': 'str',
         'mysql_creation_statements': 'str',
         'mysql_revocation_statements': 'str',
+        'oauth_access_token': 'str',
+        'oauth_account_id': 'str',
+        'oauth_last_refresh': 'str',
+        'oauth_refresh_token': 'str',
         'openai_url': 'str',
         'oracle_creation_statements': 'str',
         'oracle_revocation_statements': 'str',
@@ -275,6 +298,7 @@ class DSProducerDetails(object):
         'sf_warehouse_name': 'str',
         'should_stop': 'str',
         'signing_algorithm': 'str',
+        'skip_dry_run': 'bool',
         'skip_server_name_validation': 'str',
         'ssl_connection_certificate': 'str',
         'ssl_connection_mode': 'bool',
@@ -317,6 +341,23 @@ class DSProducerDetails(object):
         'admin_pwd': 'admin_pwd',
         'admin_rotation_interval_days': 'admin_rotation_interval_days',
         'administrative_port': 'administrative_port',
+        'aerospike_admin_username': 'aerospike_admin_username',
+        'aerospike_client_certificate': 'aerospike_client_certificate',
+        'aerospike_client_id': 'aerospike_client_id',
+        'aerospike_client_private_key': 'aerospike_client_private_key',
+        'aerospike_client_secret': 'aerospike_client_secret',
+        'aerospike_cloud': 'aerospike_cloud',
+        'aerospike_cluster_id': 'aerospike_cluster_id',
+        'aerospike_db_server_name': 'aerospike_db_server_name',
+        'aerospike_enable_mtls': 'aerospike_enable_mtls',
+        'aerospike_hostname': 'aerospike_hostname',
+        'aerospike_namespace': 'aerospike_namespace',
+        'aerospike_password': 'aerospike_password',
+        'aerospike_port': 'aerospike_port',
+        'aerospike_roles': 'aerospike_roles',
+        'aerospike_skip_server_name_validation': 'aerospike_skip_server_name_validation',
+        'aerospike_ssl_connection_certificate': 'aerospike_ssl_connection_certificate',
+        'aerospike_ssl_connection_mode': 'aerospike_ssl_connection_mode',
         'agentic_rules': 'agentic_rules',
         'api_key': 'api_key',
         'api_key_id': 'api_key_id',
@@ -325,6 +366,7 @@ class DSProducerDetails(object):
         'artifactory_base_url': 'artifactory_base_url',
         'artifactory_token_audience': 'artifactory_token_audience',
         'artifactory_token_scope': 'artifactory_token_scope',
+        'auth_mode': 'auth_mode',
         'authorization_port': 'authorization_port',
         'aws_access_key_id': 'aws_access_key_id',
         'aws_access_mode': 'aws_access_mode',
@@ -337,6 +379,7 @@ class DSProducerDetails(object):
         'aws_transitive_tag_keys': 'aws_transitive_tag_keys',
         'aws_user_console_access': 'aws_user_console_access',
         'aws_user_groups': 'aws_user_groups',
+        'aws_user_name': 'aws_user_name',
         'aws_user_policies': 'aws_user_policies',
         'aws_user_programmatic_access': 'aws_user_programmatic_access',
         'azure_administrative_unit': 'azure_administrative_unit',
@@ -511,6 +554,10 @@ class DSProducerDetails(object):
         'mssql_revocation_statements': 'mssql_revocation_statements',
         'mysql_creation_statements': 'mysql_creation_statements',
         'mysql_revocation_statements': 'mysql_revocation_statements',
+        'oauth_access_token': 'oauth_access_token',
+        'oauth_account_id': 'oauth_account_id',
+        'oauth_last_refresh': 'oauth_last_refresh',
+        'oauth_refresh_token': 'oauth_refresh_token',
         'openai_url': 'openai_url',
         'oracle_creation_statements': 'oracle_creation_statements',
         'oracle_revocation_statements': 'oracle_revocation_statements',
@@ -551,6 +598,7 @@ class DSProducerDetails(object):
         'sf_warehouse_name': 'sf_warehouse_name',
         'should_stop': 'should_stop',
         'signing_algorithm': 'signing_algorithm',
+        'skip_dry_run': 'skip_dry_run',
         'skip_server_name_validation': 'skip_server_name_validation',
         'ssl_connection_certificate': 'ssl_connection_certificate',
         'ssl_connection_mode': 'ssl_connection_mode',
@@ -585,7 +633,7 @@ class DSProducerDetails(object):
         'warn_before_user_expiration_min': 'warn_before_user_expiration_min'
     }
 
-    def __init__(self, access_token_manager_id=None, acl_rules=None, active=None, admin_name=None, admin_pwd=None, admin_rotation_interval_days=None, administrative_port=None, agentic_rules=None, api_key=None, api_key_id=None, artifactory_admin_apikey=None, artifactory_admin_username=None, artifactory_base_url=None, artifactory_token_audience=None, artifactory_token_scope=None, authorization_port=None, aws_access_key_id=None, aws_access_mode=None, aws_external_id=None, aws_region=None, aws_role_arns=None, aws_secret_access_key=None, aws_session_tags=None, aws_session_token=None, aws_transitive_tag_keys=None, aws_user_console_access=None, aws_user_groups=None, aws_user_policies=None, aws_user_programmatic_access=None, azure_administrative_unit=None, azure_app_object_id=None, azure_client_id=None, azure_client_secret=None, azure_cloud=None, azure_fixed_user_name_sub_claim_key=None, azure_fixed_user_only=None, azure_resource_group_name=None, azure_resource_name=None, azure_subscription_id=None, azure_tenant_id=None, azure_user_groups_obj_id=None, azure_user_portal_access=None, azure_user_programmatic_access=None, azure_user_roles_template_id=None, azure_username=None, cassandra_creation_statements=None, chef_organizations=None, chef_server_access_mode=None, chef_server_host_name=None, chef_server_key=None, chef_server_port=None, chef_server_url=None, chef_server_username=None, chef_skip_ssl=None, client_authentication_type=None, client_certificate=None, client_key_passphrase=None, client_private_key=None, cloud_service_provider=None, cluster_mode=None, connection_type=None, create_sync_url=None, db_client_id=None, db_client_secret=None, db_host_name=None, db_isolation_level=None, db_max_idle_conns=None, db_max_open_conns=None, db_name=None, db_port=None, db_private_key=None, db_private_key_passphrase=None, db_pwd=None, db_server_certificates=None, db_server_name=None, db_tenant_id=None, db_user_name=None, delete_protection=None, dynamic_secret_id=None, dynamic_secret_key=None, dynamic_secret_name=None, dynamic_secret_type=None, eks_access_key_id=None, eks_assume_role=None, eks_cluster_ca_certificate=None, eks_cluster_endpoint=None, eks_cluster_name=None, eks_region=None, eks_secret_access_key=None, enable_admin_rotation=None, enable_mtls=None, enforce_replay_prevention=None, expiration_date=None, externally_provided_user=None, failure_message=None, fixed_user_only=None, gcp_access_type=None, gcp_fixed_user_claim_keyname=None, gcp_key_algo=None, gcp_project_id=None, gcp_role_bindings=None, gcp_role_names=None, gcp_service_account_email=None, gcp_service_account_key=None, gcp_service_account_key_base64=None, gcp_service_account_key_id=None, gcp_service_account_type=None, gcp_tmp_service_account_name=None, gcp_token_lifetime=None, gcp_token_scope=None, gcp_token_type=None, github_app_id=None, github_app_private_key=None, github_base_url=None, github_installation_id=None, github_installation_token_permissions=None, github_installation_token_repositories=None, github_installation_token_repositories_ids=None, github_organization_name=None, github_repository_path=None, gitlab_access_token=None, gitlab_access_type=None, gitlab_certificate=None, gitlab_group_name=None, gitlab_project_name=None, gitlab_role=None, gitlab_token_scope=None, gitlab_url=None, gke_cluster_ca_certificate=None, gke_cluster_endpoint=None, gke_cluster_name=None, gke_service_account_key=None, gke_service_account_name=None, google_workspace_access_mode=None, google_workspace_admin_name=None, google_workspace_fixed_user_name_sub_claim_key=None, google_workspace_group_name=None, google_workspace_group_role=None, google_workspace_role_name=None, google_workspace_role_scope=None, grace_rotated_secret_key=None, grant_types=None, groups=None, gw_cloud_identity_external_id_opt=None, hanadb_creation_statements=None, hanadb_revocation_statements=None, host_name=None, host_port=None, implementation_type=None, is_fixed_user=None, issuer=None, item_custom_fields_details=None, item_targets_assoc=None, jwks=None, jwks_url=None, k8s_allowed_namespaces=None, k8s_auth_type=None, k8s_bearer_token=None, k8s_client_cert_data=None, k8s_client_key_data=None, k8s_cluster_ca_certificate=None, k8s_cluster_endpoint=None, k8s_cluster_name=None, k8s_dynamic_mode=None, k8s_multiple_doc_yaml_temp_definition=None, k8s_namespace=None, k8s_role_name=None, k8s_role_type=None, k8s_service_account=None, last_admin_rotation=None, ldap_audience=None, ldap_bind_dn=None, ldap_bind_password=None, ldap_certificate=None, ldap_fixed_user_name_sub_claim_key=None, ldap_fixed_user_type=None, ldap_group_dn=None, ldap_token_expiration=None, ldap_url=None, ldap_user_attr=None, ldap_user_dn=None, metadata=None, mongodb_atlas_api_private_key=None, mongodb_atlas_api_public_key=None, mongodb_atlas_project_id=None, mongodb_custom_data=None, mongodb_db_name=None, mongodb_default_auth_db=None, mongodb_host_port=None, mongodb_is_atlas=None, mongodb_password=None, mongodb_roles=None, mongodb_scopes=None, mongodb_uri_connection=None, mongodb_uri_options=None, mongodb_username=None, mssql_allowed_db_names=None, mssql_creation_statements=None, mssql_revocation_statements=None, mysql_creation_statements=None, mysql_revocation_statements=None, openai_url=None, oracle_creation_statements=None, oracle_revocation_statements=None, oracle_wallet_details=None, organization_id=None, password=None, password_length=None, password_policy=None, password_policy_info=None, payload=None, ping_url=None, postgres_creation_statements=None, postgres_revocation_statements=None, preserve_existing_password_settings=None, privileged_user=None, project_id=None, rabbitmq_server_password=None, rabbitmq_server_uri=None, rabbitmq_server_user=None, rabbitmq_user_conf_permission=None, rabbitmq_user_read_permission=None, rabbitmq_user_tags=None, rabbitmq_user_vhost=None, rabbitmq_user_write_permission=None, rdp_fixed_user_name_sub_claim_key=None, redirect_uris=None, redshift_creation_statements=None, restricted_scopes=None, revoke_sync_url=None, rotate_sync_url=None, scopes=None, secure_remote_access_details=None, session_extension_warn_interval_min=None, sf_account=None, sf_auth_mode=None, sf_key_algo=None, sf_user_role=None, sf_warehouse_name=None, should_stop=None, signing_algorithm=None, skip_server_name_validation=None, ssl_connection_certificate=None, ssl_connection_mode=None, subject_dn=None, tags=None, timeout_seconds=None, use_gw_cloud_identity=None, use_gw_service_account=None, user_name=None, user_password=None, user_principal_name=None, user_ttl=None, username_length=None, username_policy=None, username_template=None, venafi_allow_subdomains=None, venafi_allowed_domains=None, venafi_api_key=None, venafi_auto_generated_folder=None, venafi_base_url=None, venafi_root_first_in_chain=None, venafi_sign_using_akeyless_pki=None, venafi_signer_key_name=None, venafi_store_private_key=None, venafi_tpp_access_token=None, venafi_tpp_client_id=None, venafi_tpp_password=None, venafi_tpp_refresh_token=None, venafi_tpp_username=None, venafi_use_tpp=None, venafi_zone=None, warn_before_user_expiration_min=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, access_token_manager_id=None, acl_rules=None, active=None, admin_name=None, admin_pwd=None, admin_rotation_interval_days=None, administrative_port=None, aerospike_admin_username=None, aerospike_client_certificate=None, aerospike_client_id=None, aerospike_client_private_key=None, aerospike_client_secret=None, aerospike_cloud=None, aerospike_cluster_id=None, aerospike_db_server_name=None, aerospike_enable_mtls=None, aerospike_hostname=None, aerospike_namespace=None, aerospike_password=None, aerospike_port=None, aerospike_roles=None, aerospike_skip_server_name_validation=None, aerospike_ssl_connection_certificate=None, aerospike_ssl_connection_mode=None, agentic_rules=None, api_key=None, api_key_id=None, artifactory_admin_apikey=None, artifactory_admin_username=None, artifactory_base_url=None, artifactory_token_audience=None, artifactory_token_scope=None, auth_mode=None, authorization_port=None, aws_access_key_id=None, aws_access_mode=None, aws_external_id=None, aws_region=None, aws_role_arns=None, aws_secret_access_key=None, aws_session_tags=None, aws_session_token=None, aws_transitive_tag_keys=None, aws_user_console_access=None, aws_user_groups=None, aws_user_name=None, aws_user_policies=None, aws_user_programmatic_access=None, azure_administrative_unit=None, azure_app_object_id=None, azure_client_id=None, azure_client_secret=None, azure_cloud=None, azure_fixed_user_name_sub_claim_key=None, azure_fixed_user_only=None, azure_resource_group_name=None, azure_resource_name=None, azure_subscription_id=None, azure_tenant_id=None, azure_user_groups_obj_id=None, azure_user_portal_access=None, azure_user_programmatic_access=None, azure_user_roles_template_id=None, azure_username=None, cassandra_creation_statements=None, chef_organizations=None, chef_server_access_mode=None, chef_server_host_name=None, chef_server_key=None, chef_server_port=None, chef_server_url=None, chef_server_username=None, chef_skip_ssl=None, client_authentication_type=None, client_certificate=None, client_key_passphrase=None, client_private_key=None, cloud_service_provider=None, cluster_mode=None, connection_type=None, create_sync_url=None, db_client_id=None, db_client_secret=None, db_host_name=None, db_isolation_level=None, db_max_idle_conns=None, db_max_open_conns=None, db_name=None, db_port=None, db_private_key=None, db_private_key_passphrase=None, db_pwd=None, db_server_certificates=None, db_server_name=None, db_tenant_id=None, db_user_name=None, delete_protection=None, dynamic_secret_id=None, dynamic_secret_key=None, dynamic_secret_name=None, dynamic_secret_type=None, eks_access_key_id=None, eks_assume_role=None, eks_cluster_ca_certificate=None, eks_cluster_endpoint=None, eks_cluster_name=None, eks_region=None, eks_secret_access_key=None, enable_admin_rotation=None, enable_mtls=None, enforce_replay_prevention=None, expiration_date=None, externally_provided_user=None, failure_message=None, fixed_user_only=None, gcp_access_type=None, gcp_fixed_user_claim_keyname=None, gcp_key_algo=None, gcp_project_id=None, gcp_role_bindings=None, gcp_role_names=None, gcp_service_account_email=None, gcp_service_account_key=None, gcp_service_account_key_base64=None, gcp_service_account_key_id=None, gcp_service_account_type=None, gcp_tmp_service_account_name=None, gcp_token_lifetime=None, gcp_token_scope=None, gcp_token_type=None, github_app_id=None, github_app_private_key=None, github_base_url=None, github_installation_id=None, github_installation_token_permissions=None, github_installation_token_repositories=None, github_installation_token_repositories_ids=None, github_organization_name=None, github_repository_path=None, gitlab_access_token=None, gitlab_access_type=None, gitlab_certificate=None, gitlab_group_name=None, gitlab_project_name=None, gitlab_role=None, gitlab_token_scope=None, gitlab_url=None, gke_cluster_ca_certificate=None, gke_cluster_endpoint=None, gke_cluster_name=None, gke_service_account_key=None, gke_service_account_name=None, google_workspace_access_mode=None, google_workspace_admin_name=None, google_workspace_fixed_user_name_sub_claim_key=None, google_workspace_group_name=None, google_workspace_group_role=None, google_workspace_role_name=None, google_workspace_role_scope=None, grace_rotated_secret_key=None, grant_types=None, groups=None, gw_cloud_identity_external_id_opt=None, hanadb_creation_statements=None, hanadb_revocation_statements=None, host_name=None, host_port=None, implementation_type=None, is_fixed_user=None, issuer=None, item_custom_fields_details=None, item_targets_assoc=None, jwks=None, jwks_url=None, k8s_allowed_namespaces=None, k8s_auth_type=None, k8s_bearer_token=None, k8s_client_cert_data=None, k8s_client_key_data=None, k8s_cluster_ca_certificate=None, k8s_cluster_endpoint=None, k8s_cluster_name=None, k8s_dynamic_mode=None, k8s_multiple_doc_yaml_temp_definition=None, k8s_namespace=None, k8s_role_name=None, k8s_role_type=None, k8s_service_account=None, last_admin_rotation=None, ldap_audience=None, ldap_bind_dn=None, ldap_bind_password=None, ldap_certificate=None, ldap_fixed_user_name_sub_claim_key=None, ldap_fixed_user_type=None, ldap_group_dn=None, ldap_token_expiration=None, ldap_url=None, ldap_user_attr=None, ldap_user_dn=None, metadata=None, mongodb_atlas_api_private_key=None, mongodb_atlas_api_public_key=None, mongodb_atlas_project_id=None, mongodb_custom_data=None, mongodb_db_name=None, mongodb_default_auth_db=None, mongodb_host_port=None, mongodb_is_atlas=None, mongodb_password=None, mongodb_roles=None, mongodb_scopes=None, mongodb_uri_connection=None, mongodb_uri_options=None, mongodb_username=None, mssql_allowed_db_names=None, mssql_creation_statements=None, mssql_revocation_statements=None, mysql_creation_statements=None, mysql_revocation_statements=None, oauth_access_token=None, oauth_account_id=None, oauth_last_refresh=None, oauth_refresh_token=None, openai_url=None, oracle_creation_statements=None, oracle_revocation_statements=None, oracle_wallet_details=None, organization_id=None, password=None, password_length=None, password_policy=None, password_policy_info=None, payload=None, ping_url=None, postgres_creation_statements=None, postgres_revocation_statements=None, preserve_existing_password_settings=None, privileged_user=None, project_id=None, rabbitmq_server_password=None, rabbitmq_server_uri=None, rabbitmq_server_user=None, rabbitmq_user_conf_permission=None, rabbitmq_user_read_permission=None, rabbitmq_user_tags=None, rabbitmq_user_vhost=None, rabbitmq_user_write_permission=None, rdp_fixed_user_name_sub_claim_key=None, redirect_uris=None, redshift_creation_statements=None, restricted_scopes=None, revoke_sync_url=None, rotate_sync_url=None, scopes=None, secure_remote_access_details=None, session_extension_warn_interval_min=None, sf_account=None, sf_auth_mode=None, sf_key_algo=None, sf_user_role=None, sf_warehouse_name=None, should_stop=None, signing_algorithm=None, skip_dry_run=None, skip_server_name_validation=None, ssl_connection_certificate=None, ssl_connection_mode=None, subject_dn=None, tags=None, timeout_seconds=None, use_gw_cloud_identity=None, use_gw_service_account=None, user_name=None, user_password=None, user_principal_name=None, user_ttl=None, username_length=None, username_policy=None, username_template=None, venafi_allow_subdomains=None, venafi_allowed_domains=None, venafi_api_key=None, venafi_auto_generated_folder=None, venafi_base_url=None, venafi_root_first_in_chain=None, venafi_sign_using_akeyless_pki=None, venafi_signer_key_name=None, venafi_store_private_key=None, venafi_tpp_access_token=None, venafi_tpp_client_id=None, venafi_tpp_password=None, venafi_tpp_refresh_token=None, venafi_tpp_username=None, venafi_use_tpp=None, venafi_zone=None, warn_before_user_expiration_min=None, local_vars_configuration=None):  # noqa: E501
         """DSProducerDetails - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -598,6 +646,23 @@ class DSProducerDetails(object):
         self._admin_pwd = None
         self._admin_rotation_interval_days = None
         self._administrative_port = None
+        self._aerospike_admin_username = None
+        self._aerospike_client_certificate = None
+        self._aerospike_client_id = None
+        self._aerospike_client_private_key = None
+        self._aerospike_client_secret = None
+        self._aerospike_cloud = None
+        self._aerospike_cluster_id = None
+        self._aerospike_db_server_name = None
+        self._aerospike_enable_mtls = None
+        self._aerospike_hostname = None
+        self._aerospike_namespace = None
+        self._aerospike_password = None
+        self._aerospike_port = None
+        self._aerospike_roles = None
+        self._aerospike_skip_server_name_validation = None
+        self._aerospike_ssl_connection_certificate = None
+        self._aerospike_ssl_connection_mode = None
         self._agentic_rules = None
         self._api_key = None
         self._api_key_id = None
@@ -606,6 +671,7 @@ class DSProducerDetails(object):
         self._artifactory_base_url = None
         self._artifactory_token_audience = None
         self._artifactory_token_scope = None
+        self._auth_mode = None
         self._authorization_port = None
         self._aws_access_key_id = None
         self._aws_access_mode = None
@@ -618,6 +684,7 @@ class DSProducerDetails(object):
         self._aws_transitive_tag_keys = None
         self._aws_user_console_access = None
         self._aws_user_groups = None
+        self._aws_user_name = None
         self._aws_user_policies = None
         self._aws_user_programmatic_access = None
         self._azure_administrative_unit = None
@@ -792,6 +859,10 @@ class DSProducerDetails(object):
         self._mssql_revocation_statements = None
         self._mysql_creation_statements = None
         self._mysql_revocation_statements = None
+        self._oauth_access_token = None
+        self._oauth_account_id = None
+        self._oauth_last_refresh = None
+        self._oauth_refresh_token = None
         self._openai_url = None
         self._oracle_creation_statements = None
         self._oracle_revocation_statements = None
@@ -832,6 +903,7 @@ class DSProducerDetails(object):
         self._sf_warehouse_name = None
         self._should_stop = None
         self._signing_algorithm = None
+        self._skip_dry_run = None
         self._skip_server_name_validation = None
         self._ssl_connection_certificate = None
         self._ssl_connection_mode = None
@@ -880,6 +952,40 @@ class DSProducerDetails(object):
             self.admin_rotation_interval_days = admin_rotation_interval_days
         if administrative_port is not None:
             self.administrative_port = administrative_port
+        if aerospike_admin_username is not None:
+            self.aerospike_admin_username = aerospike_admin_username
+        if aerospike_client_certificate is not None:
+            self.aerospike_client_certificate = aerospike_client_certificate
+        if aerospike_client_id is not None:
+            self.aerospike_client_id = aerospike_client_id
+        if aerospike_client_private_key is not None:
+            self.aerospike_client_private_key = aerospike_client_private_key
+        if aerospike_client_secret is not None:
+            self.aerospike_client_secret = aerospike_client_secret
+        if aerospike_cloud is not None:
+            self.aerospike_cloud = aerospike_cloud
+        if aerospike_cluster_id is not None:
+            self.aerospike_cluster_id = aerospike_cluster_id
+        if aerospike_db_server_name is not None:
+            self.aerospike_db_server_name = aerospike_db_server_name
+        if aerospike_enable_mtls is not None:
+            self.aerospike_enable_mtls = aerospike_enable_mtls
+        if aerospike_hostname is not None:
+            self.aerospike_hostname = aerospike_hostname
+        if aerospike_namespace is not None:
+            self.aerospike_namespace = aerospike_namespace
+        if aerospike_password is not None:
+            self.aerospike_password = aerospike_password
+        if aerospike_port is not None:
+            self.aerospike_port = aerospike_port
+        if aerospike_roles is not None:
+            self.aerospike_roles = aerospike_roles
+        if aerospike_skip_server_name_validation is not None:
+            self.aerospike_skip_server_name_validation = aerospike_skip_server_name_validation
+        if aerospike_ssl_connection_certificate is not None:
+            self.aerospike_ssl_connection_certificate = aerospike_ssl_connection_certificate
+        if aerospike_ssl_connection_mode is not None:
+            self.aerospike_ssl_connection_mode = aerospike_ssl_connection_mode
         if agentic_rules is not None:
             self.agentic_rules = agentic_rules
         if api_key is not None:
@@ -896,6 +1002,8 @@ class DSProducerDetails(object):
             self.artifactory_token_audience = artifactory_token_audience
         if artifactory_token_scope is not None:
             self.artifactory_token_scope = artifactory_token_scope
+        if auth_mode is not None:
+            self.auth_mode = auth_mode
         if authorization_port is not None:
             self.authorization_port = authorization_port
         if aws_access_key_id is not None:
@@ -920,6 +1028,8 @@ class DSProducerDetails(object):
             self.aws_user_console_access = aws_user_console_access
         if aws_user_groups is not None:
             self.aws_user_groups = aws_user_groups
+        if aws_user_name is not None:
+            self.aws_user_name = aws_user_name
         if aws_user_policies is not None:
             self.aws_user_policies = aws_user_policies
         if aws_user_programmatic_access is not None:
@@ -1268,6 +1378,14 @@ class DSProducerDetails(object):
             self.mysql_creation_statements = mysql_creation_statements
         if mysql_revocation_statements is not None:
             self.mysql_revocation_statements = mysql_revocation_statements
+        if oauth_access_token is not None:
+            self.oauth_access_token = oauth_access_token
+        if oauth_account_id is not None:
+            self.oauth_account_id = oauth_account_id
+        if oauth_last_refresh is not None:
+            self.oauth_last_refresh = oauth_last_refresh
+        if oauth_refresh_token is not None:
+            self.oauth_refresh_token = oauth_refresh_token
         if openai_url is not None:
             self.openai_url = openai_url
         if oracle_creation_statements is not None:
@@ -1348,6 +1466,8 @@ class DSProducerDetails(object):
             self.should_stop = should_stop
         if signing_algorithm is not None:
             self.signing_algorithm = signing_algorithm
+        if skip_dry_run is not None:
+            self.skip_dry_run = skip_dry_run
         if skip_server_name_validation is not None:
             self.skip_server_name_validation = skip_server_name_validation
         if ssl_connection_certificate is not None:
@@ -1561,6 +1681,363 @@ class DSProducerDetails(object):
         self._administrative_port = administrative_port
 
     @property
+    def aerospike_admin_username(self):
+        """Gets the aerospike_admin_username of this DSProducerDetails.  # noqa: E501
+
+
+        :return: The aerospike_admin_username of this DSProducerDetails.  # noqa: E501
+        :rtype: str
+        """
+        return self._aerospike_admin_username
+
+    @aerospike_admin_username.setter
+    def aerospike_admin_username(self, aerospike_admin_username):
+        """Sets the aerospike_admin_username of this DSProducerDetails.
+
+
+        :param aerospike_admin_username: The aerospike_admin_username of this DSProducerDetails.  # noqa: E501
+        :type: str
+        """
+
+        self._aerospike_admin_username = aerospike_admin_username
+
+    @property
+    def aerospike_client_certificate(self):
+        """Gets the aerospike_client_certificate of this DSProducerDetails.  # noqa: E501
+
+
+        :return: The aerospike_client_certificate of this DSProducerDetails.  # noqa: E501
+        :rtype: str
+        """
+        return self._aerospike_client_certificate
+
+    @aerospike_client_certificate.setter
+    def aerospike_client_certificate(self, aerospike_client_certificate):
+        """Sets the aerospike_client_certificate of this DSProducerDetails.
+
+
+        :param aerospike_client_certificate: The aerospike_client_certificate of this DSProducerDetails.  # noqa: E501
+        :type: str
+        """
+
+        self._aerospike_client_certificate = aerospike_client_certificate
+
+    @property
+    def aerospike_client_id(self):
+        """Gets the aerospike_client_id of this DSProducerDetails.  # noqa: E501
+
+
+        :return: The aerospike_client_id of this DSProducerDetails.  # noqa: E501
+        :rtype: str
+        """
+        return self._aerospike_client_id
+
+    @aerospike_client_id.setter
+    def aerospike_client_id(self, aerospike_client_id):
+        """Sets the aerospike_client_id of this DSProducerDetails.
+
+
+        :param aerospike_client_id: The aerospike_client_id of this DSProducerDetails.  # noqa: E501
+        :type: str
+        """
+
+        self._aerospike_client_id = aerospike_client_id
+
+    @property
+    def aerospike_client_private_key(self):
+        """Gets the aerospike_client_private_key of this DSProducerDetails.  # noqa: E501
+
+
+        :return: The aerospike_client_private_key of this DSProducerDetails.  # noqa: E501
+        :rtype: str
+        """
+        return self._aerospike_client_private_key
+
+    @aerospike_client_private_key.setter
+    def aerospike_client_private_key(self, aerospike_client_private_key):
+        """Sets the aerospike_client_private_key of this DSProducerDetails.
+
+
+        :param aerospike_client_private_key: The aerospike_client_private_key of this DSProducerDetails.  # noqa: E501
+        :type: str
+        """
+
+        self._aerospike_client_private_key = aerospike_client_private_key
+
+    @property
+    def aerospike_client_secret(self):
+        """Gets the aerospike_client_secret of this DSProducerDetails.  # noqa: E501
+
+
+        :return: The aerospike_client_secret of this DSProducerDetails.  # noqa: E501
+        :rtype: str
+        """
+        return self._aerospike_client_secret
+
+    @aerospike_client_secret.setter
+    def aerospike_client_secret(self, aerospike_client_secret):
+        """Sets the aerospike_client_secret of this DSProducerDetails.
+
+
+        :param aerospike_client_secret: The aerospike_client_secret of this DSProducerDetails.  # noqa: E501
+        :type: str
+        """
+
+        self._aerospike_client_secret = aerospike_client_secret
+
+    @property
+    def aerospike_cloud(self):
+        """Gets the aerospike_cloud of this DSProducerDetails.  # noqa: E501
+
+
+        :return: The aerospike_cloud of this DSProducerDetails.  # noqa: E501
+        :rtype: bool
+        """
+        return self._aerospike_cloud
+
+    @aerospike_cloud.setter
+    def aerospike_cloud(self, aerospike_cloud):
+        """Sets the aerospike_cloud of this DSProducerDetails.
+
+
+        :param aerospike_cloud: The aerospike_cloud of this DSProducerDetails.  # noqa: E501
+        :type: bool
+        """
+
+        self._aerospike_cloud = aerospike_cloud
+
+    @property
+    def aerospike_cluster_id(self):
+        """Gets the aerospike_cluster_id of this DSProducerDetails.  # noqa: E501
+
+
+        :return: The aerospike_cluster_id of this DSProducerDetails.  # noqa: E501
+        :rtype: str
+        """
+        return self._aerospike_cluster_id
+
+    @aerospike_cluster_id.setter
+    def aerospike_cluster_id(self, aerospike_cluster_id):
+        """Sets the aerospike_cluster_id of this DSProducerDetails.
+
+
+        :param aerospike_cluster_id: The aerospike_cluster_id of this DSProducerDetails.  # noqa: E501
+        :type: str
+        """
+
+        self._aerospike_cluster_id = aerospike_cluster_id
+
+    @property
+    def aerospike_db_server_name(self):
+        """Gets the aerospike_db_server_name of this DSProducerDetails.  # noqa: E501
+
+
+        :return: The aerospike_db_server_name of this DSProducerDetails.  # noqa: E501
+        :rtype: str
+        """
+        return self._aerospike_db_server_name
+
+    @aerospike_db_server_name.setter
+    def aerospike_db_server_name(self, aerospike_db_server_name):
+        """Sets the aerospike_db_server_name of this DSProducerDetails.
+
+
+        :param aerospike_db_server_name: The aerospike_db_server_name of this DSProducerDetails.  # noqa: E501
+        :type: str
+        """
+
+        self._aerospike_db_server_name = aerospike_db_server_name
+
+    @property
+    def aerospike_enable_mtls(self):
+        """Gets the aerospike_enable_mtls of this DSProducerDetails.  # noqa: E501
+
+
+        :return: The aerospike_enable_mtls of this DSProducerDetails.  # noqa: E501
+        :rtype: bool
+        """
+        return self._aerospike_enable_mtls
+
+    @aerospike_enable_mtls.setter
+    def aerospike_enable_mtls(self, aerospike_enable_mtls):
+        """Sets the aerospike_enable_mtls of this DSProducerDetails.
+
+
+        :param aerospike_enable_mtls: The aerospike_enable_mtls of this DSProducerDetails.  # noqa: E501
+        :type: bool
+        """
+
+        self._aerospike_enable_mtls = aerospike_enable_mtls
+
+    @property
+    def aerospike_hostname(self):
+        """Gets the aerospike_hostname of this DSProducerDetails.  # noqa: E501
+
+
+        :return: The aerospike_hostname of this DSProducerDetails.  # noqa: E501
+        :rtype: str
+        """
+        return self._aerospike_hostname
+
+    @aerospike_hostname.setter
+    def aerospike_hostname(self, aerospike_hostname):
+        """Sets the aerospike_hostname of this DSProducerDetails.
+
+
+        :param aerospike_hostname: The aerospike_hostname of this DSProducerDetails.  # noqa: E501
+        :type: str
+        """
+
+        self._aerospike_hostname = aerospike_hostname
+
+    @property
+    def aerospike_namespace(self):
+        """Gets the aerospike_namespace of this DSProducerDetails.  # noqa: E501
+
+
+        :return: The aerospike_namespace of this DSProducerDetails.  # noqa: E501
+        :rtype: str
+        """
+        return self._aerospike_namespace
+
+    @aerospike_namespace.setter
+    def aerospike_namespace(self, aerospike_namespace):
+        """Sets the aerospike_namespace of this DSProducerDetails.
+
+
+        :param aerospike_namespace: The aerospike_namespace of this DSProducerDetails.  # noqa: E501
+        :type: str
+        """
+
+        self._aerospike_namespace = aerospike_namespace
+
+    @property
+    def aerospike_password(self):
+        """Gets the aerospike_password of this DSProducerDetails.  # noqa: E501
+
+
+        :return: The aerospike_password of this DSProducerDetails.  # noqa: E501
+        :rtype: str
+        """
+        return self._aerospike_password
+
+    @aerospike_password.setter
+    def aerospike_password(self, aerospike_password):
+        """Sets the aerospike_password of this DSProducerDetails.
+
+
+        :param aerospike_password: The aerospike_password of this DSProducerDetails.  # noqa: E501
+        :type: str
+        """
+
+        self._aerospike_password = aerospike_password
+
+    @property
+    def aerospike_port(self):
+        """Gets the aerospike_port of this DSProducerDetails.  # noqa: E501
+
+
+        :return: The aerospike_port of this DSProducerDetails.  # noqa: E501
+        :rtype: str
+        """
+        return self._aerospike_port
+
+    @aerospike_port.setter
+    def aerospike_port(self, aerospike_port):
+        """Sets the aerospike_port of this DSProducerDetails.
+
+
+        :param aerospike_port: The aerospike_port of this DSProducerDetails.  # noqa: E501
+        :type: str
+        """
+
+        self._aerospike_port = aerospike_port
+
+    @property
+    def aerospike_roles(self):
+        """Gets the aerospike_roles of this DSProducerDetails.  # noqa: E501
+
+
+        :return: The aerospike_roles of this DSProducerDetails.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._aerospike_roles
+
+    @aerospike_roles.setter
+    def aerospike_roles(self, aerospike_roles):
+        """Sets the aerospike_roles of this DSProducerDetails.
+
+
+        :param aerospike_roles: The aerospike_roles of this DSProducerDetails.  # noqa: E501
+        :type: list[str]
+        """
+
+        self._aerospike_roles = aerospike_roles
+
+    @property
+    def aerospike_skip_server_name_validation(self):
+        """Gets the aerospike_skip_server_name_validation of this DSProducerDetails.  # noqa: E501
+
+
+        :return: The aerospike_skip_server_name_validation of this DSProducerDetails.  # noqa: E501
+        :rtype: str
+        """
+        return self._aerospike_skip_server_name_validation
+
+    @aerospike_skip_server_name_validation.setter
+    def aerospike_skip_server_name_validation(self, aerospike_skip_server_name_validation):
+        """Sets the aerospike_skip_server_name_validation of this DSProducerDetails.
+
+
+        :param aerospike_skip_server_name_validation: The aerospike_skip_server_name_validation of this DSProducerDetails.  # noqa: E501
+        :type: str
+        """
+
+        self._aerospike_skip_server_name_validation = aerospike_skip_server_name_validation
+
+    @property
+    def aerospike_ssl_connection_certificate(self):
+        """Gets the aerospike_ssl_connection_certificate of this DSProducerDetails.  # noqa: E501
+
+
+        :return: The aerospike_ssl_connection_certificate of this DSProducerDetails.  # noqa: E501
+        :rtype: str
+        """
+        return self._aerospike_ssl_connection_certificate
+
+    @aerospike_ssl_connection_certificate.setter
+    def aerospike_ssl_connection_certificate(self, aerospike_ssl_connection_certificate):
+        """Sets the aerospike_ssl_connection_certificate of this DSProducerDetails.
+
+
+        :param aerospike_ssl_connection_certificate: The aerospike_ssl_connection_certificate of this DSProducerDetails.  # noqa: E501
+        :type: str
+        """
+
+        self._aerospike_ssl_connection_certificate = aerospike_ssl_connection_certificate
+
+    @property
+    def aerospike_ssl_connection_mode(self):
+        """Gets the aerospike_ssl_connection_mode of this DSProducerDetails.  # noqa: E501
+
+
+        :return: The aerospike_ssl_connection_mode of this DSProducerDetails.  # noqa: E501
+        :rtype: bool
+        """
+        return self._aerospike_ssl_connection_mode
+
+    @aerospike_ssl_connection_mode.setter
+    def aerospike_ssl_connection_mode(self, aerospike_ssl_connection_mode):
+        """Sets the aerospike_ssl_connection_mode of this DSProducerDetails.
+
+
+        :param aerospike_ssl_connection_mode: The aerospike_ssl_connection_mode of this DSProducerDetails.  # noqa: E501
+        :type: bool
+        """
+
+        self._aerospike_ssl_connection_mode = aerospike_ssl_connection_mode
+
+    @property
     def agentic_rules(self):
         """Gets the agentic_rules of this DSProducerDetails.  # noqa: E501
 
@@ -1727,6 +2204,29 @@ class DSProducerDetails(object):
         """
 
         self._artifactory_token_scope = artifactory_token_scope
+
+    @property
+    def auth_mode(self):
+        """Gets the auth_mode of this DSProducerDetails.  # noqa: E501
+
+        AuthMode selects how this target authenticates. Empty (default) uses ApiKey as a static bearer token against BaseURL, matching all pre-existing behavior. OpenAIAuthModeChatGPTOAuth instead uses the OAuth* fields below.  # noqa: E501
+
+        :return: The auth_mode of this DSProducerDetails.  # noqa: E501
+        :rtype: str
+        """
+        return self._auth_mode
+
+    @auth_mode.setter
+    def auth_mode(self, auth_mode):
+        """Sets the auth_mode of this DSProducerDetails.
+
+        AuthMode selects how this target authenticates. Empty (default) uses ApiKey as a static bearer token against BaseURL, matching all pre-existing behavior. OpenAIAuthModeChatGPTOAuth instead uses the OAuth* fields below.  # noqa: E501
+
+        :param auth_mode: The auth_mode of this DSProducerDetails.  # noqa: E501
+        :type: str
+        """
+
+        self._auth_mode = auth_mode
 
     @property
     def authorization_port(self):
@@ -1979,6 +2479,27 @@ class DSProducerDetails(object):
         """
 
         self._aws_user_groups = aws_user_groups
+
+    @property
+    def aws_user_name(self):
+        """Gets the aws_user_name of this DSProducerDetails.  # noqa: E501
+
+
+        :return: The aws_user_name of this DSProducerDetails.  # noqa: E501
+        :rtype: str
+        """
+        return self._aws_user_name
+
+    @aws_user_name.setter
+    def aws_user_name(self, aws_user_name):
+        """Sets the aws_user_name of this DSProducerDetails.
+
+
+        :param aws_user_name: The aws_user_name of this DSProducerDetails.  # noqa: E501
+        :type: str
+        """
+
+        self._aws_user_name = aws_user_name
 
     @property
     def aws_user_policies(self):
@@ -5675,6 +6196,98 @@ class DSProducerDetails(object):
         self._mysql_revocation_statements = mysql_revocation_statements
 
     @property
+    def oauth_access_token(self):
+        """Gets the oauth_access_token of this DSProducerDetails.  # noqa: E501
+
+        OAuthAccessToken is the current ChatGPT-issued access token (the `tokens.access_token` field of the customer's local auth.json). Akeyless refreshes this automatically; do not treat it as long-lived.  # noqa: E501
+
+        :return: The oauth_access_token of this DSProducerDetails.  # noqa: E501
+        :rtype: str
+        """
+        return self._oauth_access_token
+
+    @oauth_access_token.setter
+    def oauth_access_token(self, oauth_access_token):
+        """Sets the oauth_access_token of this DSProducerDetails.
+
+        OAuthAccessToken is the current ChatGPT-issued access token (the `tokens.access_token` field of the customer's local auth.json). Akeyless refreshes this automatically; do not treat it as long-lived.  # noqa: E501
+
+        :param oauth_access_token: The oauth_access_token of this DSProducerDetails.  # noqa: E501
+        :type: str
+        """
+
+        self._oauth_access_token = oauth_access_token
+
+    @property
+    def oauth_account_id(self):
+        """Gets the oauth_account_id of this DSProducerDetails.  # noqa: E501
+
+        OAuthAccountID is the ChatGPT workspace/account id (`tokens.account_id` in auth.json), required on every request to the ChatGPT backend.  # noqa: E501
+
+        :return: The oauth_account_id of this DSProducerDetails.  # noqa: E501
+        :rtype: str
+        """
+        return self._oauth_account_id
+
+    @oauth_account_id.setter
+    def oauth_account_id(self, oauth_account_id):
+        """Sets the oauth_account_id of this DSProducerDetails.
+
+        OAuthAccountID is the ChatGPT workspace/account id (`tokens.account_id` in auth.json), required on every request to the ChatGPT backend.  # noqa: E501
+
+        :param oauth_account_id: The oauth_account_id of this DSProducerDetails.  # noqa: E501
+        :type: str
+        """
+
+        self._oauth_account_id = oauth_account_id
+
+    @property
+    def oauth_last_refresh(self):
+        """Gets the oauth_last_refresh of this DSProducerDetails.  # noqa: E501
+
+        OAuthLastRefresh is the RFC3339 timestamp of the last successful Akeyless-performed refresh; used as a fallback expiry heuristic when the access token's JWT exp claim can't be parsed.  # noqa: E501
+
+        :return: The oauth_last_refresh of this DSProducerDetails.  # noqa: E501
+        :rtype: str
+        """
+        return self._oauth_last_refresh
+
+    @oauth_last_refresh.setter
+    def oauth_last_refresh(self, oauth_last_refresh):
+        """Sets the oauth_last_refresh of this DSProducerDetails.
+
+        OAuthLastRefresh is the RFC3339 timestamp of the last successful Akeyless-performed refresh; used as a fallback expiry heuristic when the access token's JWT exp claim can't be parsed.  # noqa: E501
+
+        :param oauth_last_refresh: The oauth_last_refresh of this DSProducerDetails.  # noqa: E501
+        :type: str
+        """
+
+        self._oauth_last_refresh = oauth_last_refresh
+
+    @property
+    def oauth_refresh_token(self):
+        """Gets the oauth_refresh_token of this DSProducerDetails.  # noqa: E501
+
+        OAuthRefreshToken mints new access tokens. It rotates on every refresh - Akeyless persists the new value after each successful refresh, so the previous value becomes invalid.  # noqa: E501
+
+        :return: The oauth_refresh_token of this DSProducerDetails.  # noqa: E501
+        :rtype: str
+        """
+        return self._oauth_refresh_token
+
+    @oauth_refresh_token.setter
+    def oauth_refresh_token(self, oauth_refresh_token):
+        """Sets the oauth_refresh_token of this DSProducerDetails.
+
+        OAuthRefreshToken mints new access tokens. It rotates on every refresh - Akeyless persists the new value after each successful refresh, so the previous value becomes invalid.  # noqa: E501
+
+        :param oauth_refresh_token: The oauth_refresh_token of this DSProducerDetails.  # noqa: E501
+        :type: str
+        """
+
+        self._oauth_refresh_token = oauth_refresh_token
+
+    @property
     def openai_url(self):
         """Gets the openai_url of this DSProducerDetails.  # noqa: E501
 
@@ -6519,6 +7132,27 @@ class DSProducerDetails(object):
         """
 
         self._signing_algorithm = signing_algorithm
+
+    @property
+    def skip_dry_run(self):
+        """Gets the skip_dry_run of this DSProducerDetails.  # noqa: E501
+
+
+        :return: The skip_dry_run of this DSProducerDetails.  # noqa: E501
+        :rtype: bool
+        """
+        return self._skip_dry_run
+
+    @skip_dry_run.setter
+    def skip_dry_run(self, skip_dry_run):
+        """Sets the skip_dry_run of this DSProducerDetails.
+
+
+        :param skip_dry_run: The skip_dry_run of this DSProducerDetails.  # noqa: E501
+        :type: bool
+        """
+
+        self._skip_dry_run = skip_dry_run
 
     @property
     def skip_server_name_validation(self):

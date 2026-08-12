@@ -34,60 +34,24 @@ class FolderSyncOutput(object):
                             and the value is json key in definition.
     """
     openapi_types = {
-        'failed_items': 'dict(str, str)',
-        'folder_name': 'str',
-        'skipped_items': 'list[str]',
-        'synced_items': 'list[str]'
+        'folder_name': 'str'
     }
 
     attribute_map = {
-        'failed_items': 'failed_items',
-        'folder_name': 'folder_name',
-        'skipped_items': 'skipped_items',
-        'synced_items': 'synced_items'
+        'folder_name': 'folder_name'
     }
 
-    def __init__(self, failed_items=None, folder_name=None, skipped_items=None, synced_items=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, folder_name=None, local_vars_configuration=None):  # noqa: E501
         """FolderSyncOutput - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
-        self._failed_items = None
         self._folder_name = None
-        self._skipped_items = None
-        self._synced_items = None
         self.discriminator = None
 
-        if failed_items is not None:
-            self.failed_items = failed_items
         if folder_name is not None:
             self.folder_name = folder_name
-        if skipped_items is not None:
-            self.skipped_items = skipped_items
-        if synced_items is not None:
-            self.synced_items = synced_items
-
-    @property
-    def failed_items(self):
-        """Gets the failed_items of this FolderSyncOutput.  # noqa: E501
-
-
-        :return: The failed_items of this FolderSyncOutput.  # noqa: E501
-        :rtype: dict(str, str)
-        """
-        return self._failed_items
-
-    @failed_items.setter
-    def failed_items(self, failed_items):
-        """Sets the failed_items of this FolderSyncOutput.
-
-
-        :param failed_items: The failed_items of this FolderSyncOutput.  # noqa: E501
-        :type: dict(str, str)
-        """
-
-        self._failed_items = failed_items
 
     @property
     def folder_name(self):
@@ -109,48 +73,6 @@ class FolderSyncOutput(object):
         """
 
         self._folder_name = folder_name
-
-    @property
-    def skipped_items(self):
-        """Gets the skipped_items of this FolderSyncOutput.  # noqa: E501
-
-
-        :return: The skipped_items of this FolderSyncOutput.  # noqa: E501
-        :rtype: list[str]
-        """
-        return self._skipped_items
-
-    @skipped_items.setter
-    def skipped_items(self, skipped_items):
-        """Sets the skipped_items of this FolderSyncOutput.
-
-
-        :param skipped_items: The skipped_items of this FolderSyncOutput.  # noqa: E501
-        :type: list[str]
-        """
-
-        self._skipped_items = skipped_items
-
-    @property
-    def synced_items(self):
-        """Gets the synced_items of this FolderSyncOutput.  # noqa: E501
-
-
-        :return: The synced_items of this FolderSyncOutput.  # noqa: E501
-        :rtype: list[str]
-        """
-        return self._synced_items
-
-    @synced_items.setter
-    def synced_items(self, synced_items):
-        """Sets the synced_items of this FolderSyncOutput.
-
-
-        :param synced_items: The synced_items of this FolderSyncOutput.  # noqa: E501
-        :type: list[str]
-        """
-
-        self._synced_items = synced_items
 
     def to_dict(self):
         """Returns the model properties as a dict"""

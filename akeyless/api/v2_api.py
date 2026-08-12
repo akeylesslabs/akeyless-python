@@ -8275,6 +8275,122 @@ class V2Api(object):
             _request_timeout=local_var_params.get('_request_timeout'),
             collection_formats=collection_formats)
 
+    def create_f5_big_ip_target(self, create_f5_big_ip_target, **kwargs):  # noqa: E501
+        """create_f5_big_ip_target  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.create_f5_big_ip_target(create_f5_big_ip_target, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool: execute request asynchronously
+        :param CreateF5BigIpTarget create_f5_big_ip_target: (required)
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :return: CreateF5BigIpTargetOutput
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        return self.create_f5_big_ip_target_with_http_info(create_f5_big_ip_target, **kwargs)  # noqa: E501
+
+    def create_f5_big_ip_target_with_http_info(self, create_f5_big_ip_target, **kwargs):  # noqa: E501
+        """create_f5_big_ip_target  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.create_f5_big_ip_target_with_http_info(create_f5_big_ip_target, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool: execute request asynchronously
+        :param CreateF5BigIpTarget create_f5_big_ip_target: (required)
+        :param _return_http_data_only: response data without head status code
+                                       and headers
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :return: tuple(CreateF5BigIpTargetOutput, status_code(int), headers(HTTPHeaderDict))
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        local_var_params = locals()
+
+        all_params = [
+            'create_f5_big_ip_target'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
+
+        for key, val in six.iteritems(local_var_params['kwargs']):
+            if key not in all_params:
+                raise ApiTypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method create_f5_big_ip_target" % key
+                )
+            local_var_params[key] = val
+        del local_var_params['kwargs']
+        # verify the required parameter 'create_f5_big_ip_target' is set
+        if self.api_client.client_side_validation and ('create_f5_big_ip_target' not in local_var_params or  # noqa: E501
+                                                        local_var_params['create_f5_big_ip_target'] is None):  # noqa: E501
+            raise ApiValueError("Missing the required parameter `create_f5_big_ip_target` when calling `create_f5_big_ip_target`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'create_f5_big_ip_target' in local_var_params:
+            body_params = local_var_params['create_f5_big_ip_target']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
+            '/create-f5-big-ip-target', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='CreateF5BigIpTargetOutput',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=local_var_params.get('async_req'),
+            _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
+            _preload_content=local_var_params.get('_preload_content', True),
+            _request_timeout=local_var_params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
     def create_gcp_target(self, create_gcp_target, **kwargs):  # noqa: E501
         """create_gcp_target  # noqa: E501
 
@@ -15351,6 +15467,122 @@ class V2Api(object):
             _request_timeout=local_var_params.get('_request_timeout'),
             collection_formats=collection_formats)
 
+    def dynamic_secret_create_aerospike(self, dynamic_secret_create_aerospike, **kwargs):  # noqa: E501
+        """dynamic_secret_create_aerospike  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.dynamic_secret_create_aerospike(dynamic_secret_create_aerospike, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool: execute request asynchronously
+        :param DynamicSecretCreateAerospike dynamic_secret_create_aerospike: (required)
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :return: DynamicSecretCreateOutput
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        return self.dynamic_secret_create_aerospike_with_http_info(dynamic_secret_create_aerospike, **kwargs)  # noqa: E501
+
+    def dynamic_secret_create_aerospike_with_http_info(self, dynamic_secret_create_aerospike, **kwargs):  # noqa: E501
+        """dynamic_secret_create_aerospike  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.dynamic_secret_create_aerospike_with_http_info(dynamic_secret_create_aerospike, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool: execute request asynchronously
+        :param DynamicSecretCreateAerospike dynamic_secret_create_aerospike: (required)
+        :param _return_http_data_only: response data without head status code
+                                       and headers
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :return: tuple(DynamicSecretCreateOutput, status_code(int), headers(HTTPHeaderDict))
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        local_var_params = locals()
+
+        all_params = [
+            'dynamic_secret_create_aerospike'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
+
+        for key, val in six.iteritems(local_var_params['kwargs']):
+            if key not in all_params:
+                raise ApiTypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method dynamic_secret_create_aerospike" % key
+                )
+            local_var_params[key] = val
+        del local_var_params['kwargs']
+        # verify the required parameter 'dynamic_secret_create_aerospike' is set
+        if self.api_client.client_side_validation and ('dynamic_secret_create_aerospike' not in local_var_params or  # noqa: E501
+                                                        local_var_params['dynamic_secret_create_aerospike'] is None):  # noqa: E501
+            raise ApiValueError("Missing the required parameter `dynamic_secret_create_aerospike` when calling `dynamic_secret_create_aerospike`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'dynamic_secret_create_aerospike' in local_var_params:
+            body_params = local_var_params['dynamic_secret_create_aerospike']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
+            '/dynamic-secret-create-aerospike', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='DynamicSecretCreateOutput',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=local_var_params.get('async_req'),
+            _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
+            _preload_content=local_var_params.get('_preload_content', True),
+            _request_timeout=local_var_params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
     def dynamic_secret_create_artifactory(self, dynamic_secret_create_artifactory, **kwargs):  # noqa: E501
         """dynamic_secret_create_artifactory  # noqa: E501
 
@@ -19400,6 +19632,122 @@ class V2Api(object):
             post_params=form_params,
             files=local_var_files,
             response_type=None,  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=local_var_params.get('async_req'),
+            _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
+            _preload_content=local_var_params.get('_preload_content', True),
+            _request_timeout=local_var_params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def dynamic_secret_update_aerospike(self, dynamic_secret_update_aerospike, **kwargs):  # noqa: E501
+        """dynamic_secret_update_aerospike  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.dynamic_secret_update_aerospike(dynamic_secret_update_aerospike, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool: execute request asynchronously
+        :param DynamicSecretUpdateAerospike dynamic_secret_update_aerospike: (required)
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :return: DynamicSecretUpdateOutput
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        return self.dynamic_secret_update_aerospike_with_http_info(dynamic_secret_update_aerospike, **kwargs)  # noqa: E501
+
+    def dynamic_secret_update_aerospike_with_http_info(self, dynamic_secret_update_aerospike, **kwargs):  # noqa: E501
+        """dynamic_secret_update_aerospike  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.dynamic_secret_update_aerospike_with_http_info(dynamic_secret_update_aerospike, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool: execute request asynchronously
+        :param DynamicSecretUpdateAerospike dynamic_secret_update_aerospike: (required)
+        :param _return_http_data_only: response data without head status code
+                                       and headers
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :return: tuple(DynamicSecretUpdateOutput, status_code(int), headers(HTTPHeaderDict))
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        local_var_params = locals()
+
+        all_params = [
+            'dynamic_secret_update_aerospike'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
+
+        for key, val in six.iteritems(local_var_params['kwargs']):
+            if key not in all_params:
+                raise ApiTypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method dynamic_secret_update_aerospike" % key
+                )
+            local_var_params[key] = val
+        del local_var_params['kwargs']
+        # verify the required parameter 'dynamic_secret_update_aerospike' is set
+        if self.api_client.client_side_validation and ('dynamic_secret_update_aerospike' not in local_var_params or  # noqa: E501
+                                                        local_var_params['dynamic_secret_update_aerospike'] is None):  # noqa: E501
+            raise ApiValueError("Missing the required parameter `dynamic_secret_update_aerospike` when calling `dynamic_secret_update_aerospike`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'dynamic_secret_update_aerospike' in local_var_params:
+            body_params = local_var_params['dynamic_secret_update_aerospike']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
+            '/dynamic-secret-update-aerospike', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='DynamicSecretUpdateOutput',  # noqa: E501
             auth_settings=auth_settings,
             async_req=local_var_params.get('async_req'),
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
@@ -47708,6 +48056,122 @@ class V2Api(object):
             _request_timeout=local_var_params.get('_request_timeout'),
             collection_formats=collection_formats)
 
+    def rotated_secret_create_aerospike(self, rotated_secret_create_aerospike, **kwargs):  # noqa: E501
+        """rotated_secret_create_aerospike  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.rotated_secret_create_aerospike(rotated_secret_create_aerospike, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool: execute request asynchronously
+        :param RotatedSecretCreateAerospike rotated_secret_create_aerospike: (required)
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :return: RotatedSecretCreateOutput
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        return self.rotated_secret_create_aerospike_with_http_info(rotated_secret_create_aerospike, **kwargs)  # noqa: E501
+
+    def rotated_secret_create_aerospike_with_http_info(self, rotated_secret_create_aerospike, **kwargs):  # noqa: E501
+        """rotated_secret_create_aerospike  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.rotated_secret_create_aerospike_with_http_info(rotated_secret_create_aerospike, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool: execute request asynchronously
+        :param RotatedSecretCreateAerospike rotated_secret_create_aerospike: (required)
+        :param _return_http_data_only: response data without head status code
+                                       and headers
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :return: tuple(RotatedSecretCreateOutput, status_code(int), headers(HTTPHeaderDict))
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        local_var_params = locals()
+
+        all_params = [
+            'rotated_secret_create_aerospike'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
+
+        for key, val in six.iteritems(local_var_params['kwargs']):
+            if key not in all_params:
+                raise ApiTypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method rotated_secret_create_aerospike" % key
+                )
+            local_var_params[key] = val
+        del local_var_params['kwargs']
+        # verify the required parameter 'rotated_secret_create_aerospike' is set
+        if self.api_client.client_side_validation and ('rotated_secret_create_aerospike' not in local_var_params or  # noqa: E501
+                                                        local_var_params['rotated_secret_create_aerospike'] is None):  # noqa: E501
+            raise ApiValueError("Missing the required parameter `rotated_secret_create_aerospike` when calling `rotated_secret_create_aerospike`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'rotated_secret_create_aerospike' in local_var_params:
+            body_params = local_var_params['rotated_secret_create_aerospike']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
+            '/rotated-secret-create-aerospike', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='RotatedSecretCreateOutput',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=local_var_params.get('async_req'),
+            _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
+            _preload_content=local_var_params.get('_preload_content', True),
+            _request_timeout=local_var_params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
     def rotated_secret_create_aws(self, rotated_secret_create_aws, **kwargs):  # noqa: E501
         """rotated_secret_create_aws  # noqa: E501
 
@@ -48274,6 +48738,122 @@ class V2Api(object):
 
         return self.api_client.call_api(
             '/rotated-secret-create-dockerhub', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='RotatedSecretCreateOutput',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=local_var_params.get('async_req'),
+            _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
+            _preload_content=local_var_params.get('_preload_content', True),
+            _request_timeout=local_var_params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def rotated_secret_create_f5_big_ip(self, rotated_secret_create_f5_big_ip, **kwargs):  # noqa: E501
+        """rotated_secret_create_f5_big_ip  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.rotated_secret_create_f5_big_ip(rotated_secret_create_f5_big_ip, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool: execute request asynchronously
+        :param RotatedSecretCreateF5BigIp rotated_secret_create_f5_big_ip: (required)
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :return: RotatedSecretCreateOutput
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        return self.rotated_secret_create_f5_big_ip_with_http_info(rotated_secret_create_f5_big_ip, **kwargs)  # noqa: E501
+
+    def rotated_secret_create_f5_big_ip_with_http_info(self, rotated_secret_create_f5_big_ip, **kwargs):  # noqa: E501
+        """rotated_secret_create_f5_big_ip  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.rotated_secret_create_f5_big_ip_with_http_info(rotated_secret_create_f5_big_ip, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool: execute request asynchronously
+        :param RotatedSecretCreateF5BigIp rotated_secret_create_f5_big_ip: (required)
+        :param _return_http_data_only: response data without head status code
+                                       and headers
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :return: tuple(RotatedSecretCreateOutput, status_code(int), headers(HTTPHeaderDict))
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        local_var_params = locals()
+
+        all_params = [
+            'rotated_secret_create_f5_big_ip'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
+
+        for key, val in six.iteritems(local_var_params['kwargs']):
+            if key not in all_params:
+                raise ApiTypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method rotated_secret_create_f5_big_ip" % key
+                )
+            local_var_params[key] = val
+        del local_var_params['kwargs']
+        # verify the required parameter 'rotated_secret_create_f5_big_ip' is set
+        if self.api_client.client_side_validation and ('rotated_secret_create_f5_big_ip' not in local_var_params or  # noqa: E501
+                                                        local_var_params['rotated_secret_create_f5_big_ip'] is None):  # noqa: E501
+            raise ApiValueError("Missing the required parameter `rotated_secret_create_f5_big_ip` when calling `rotated_secret_create_f5_big_ip`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'rotated_secret_create_f5_big_ip' in local_var_params:
+            body_params = local_var_params['rotated_secret_create_f5_big_ip']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
+            '/rotated-secret-create-f5-big-ip', 'POST',
             path_params,
             query_params,
             header_params,
@@ -50717,6 +51297,122 @@ class V2Api(object):
             post_params=form_params,
             files=local_var_files,
             response_type='object',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=local_var_params.get('async_req'),
+            _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
+            _preload_content=local_var_params.get('_preload_content', True),
+            _request_timeout=local_var_params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def rotated_secret_update_aerospike(self, rotated_secret_update_aerospike, **kwargs):  # noqa: E501
+        """rotated_secret_update_aerospike  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.rotated_secret_update_aerospike(rotated_secret_update_aerospike, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool: execute request asynchronously
+        :param RotatedSecretUpdateAerospike rotated_secret_update_aerospike: (required)
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :return: RotatedSecretUpdateOutput
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        return self.rotated_secret_update_aerospike_with_http_info(rotated_secret_update_aerospike, **kwargs)  # noqa: E501
+
+    def rotated_secret_update_aerospike_with_http_info(self, rotated_secret_update_aerospike, **kwargs):  # noqa: E501
+        """rotated_secret_update_aerospike  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.rotated_secret_update_aerospike_with_http_info(rotated_secret_update_aerospike, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool: execute request asynchronously
+        :param RotatedSecretUpdateAerospike rotated_secret_update_aerospike: (required)
+        :param _return_http_data_only: response data without head status code
+                                       and headers
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :return: tuple(RotatedSecretUpdateOutput, status_code(int), headers(HTTPHeaderDict))
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        local_var_params = locals()
+
+        all_params = [
+            'rotated_secret_update_aerospike'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
+
+        for key, val in six.iteritems(local_var_params['kwargs']):
+            if key not in all_params:
+                raise ApiTypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method rotated_secret_update_aerospike" % key
+                )
+            local_var_params[key] = val
+        del local_var_params['kwargs']
+        # verify the required parameter 'rotated_secret_update_aerospike' is set
+        if self.api_client.client_side_validation and ('rotated_secret_update_aerospike' not in local_var_params or  # noqa: E501
+                                                        local_var_params['rotated_secret_update_aerospike'] is None):  # noqa: E501
+            raise ApiValueError("Missing the required parameter `rotated_secret_update_aerospike` when calling `rotated_secret_update_aerospike`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'rotated_secret_update_aerospike' in local_var_params:
+            body_params = local_var_params['rotated_secret_update_aerospike']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
+            '/rotated-secret-update-aerospike', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='RotatedSecretUpdateOutput',  # noqa: E501
             auth_settings=auth_settings,
             async_req=local_var_params.get('async_req'),
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
@@ -56176,6 +56872,122 @@ class V2Api(object):
             _request_timeout=local_var_params.get('_request_timeout'),
             collection_formats=collection_formats)
 
+    def target_create_f5_big_ip(self, target_create_f5_big_ip, **kwargs):  # noqa: E501
+        """target_create_f5_big_ip  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.target_create_f5_big_ip(target_create_f5_big_ip, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool: execute request asynchronously
+        :param TargetCreateF5BigIp target_create_f5_big_ip: (required)
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :return: TargetCreateOutput
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        return self.target_create_f5_big_ip_with_http_info(target_create_f5_big_ip, **kwargs)  # noqa: E501
+
+    def target_create_f5_big_ip_with_http_info(self, target_create_f5_big_ip, **kwargs):  # noqa: E501
+        """target_create_f5_big_ip  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.target_create_f5_big_ip_with_http_info(target_create_f5_big_ip, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool: execute request asynchronously
+        :param TargetCreateF5BigIp target_create_f5_big_ip: (required)
+        :param _return_http_data_only: response data without head status code
+                                       and headers
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :return: tuple(TargetCreateOutput, status_code(int), headers(HTTPHeaderDict))
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        local_var_params = locals()
+
+        all_params = [
+            'target_create_f5_big_ip'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
+
+        for key, val in six.iteritems(local_var_params['kwargs']):
+            if key not in all_params:
+                raise ApiTypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method target_create_f5_big_ip" % key
+                )
+            local_var_params[key] = val
+        del local_var_params['kwargs']
+        # verify the required parameter 'target_create_f5_big_ip' is set
+        if self.api_client.client_side_validation and ('target_create_f5_big_ip' not in local_var_params or  # noqa: E501
+                                                        local_var_params['target_create_f5_big_ip'] is None):  # noqa: E501
+            raise ApiValueError("Missing the required parameter `target_create_f5_big_ip` when calling `target_create_f5_big_ip`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'target_create_f5_big_ip' in local_var_params:
+            body_params = local_var_params['target_create_f5_big_ip']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
+            '/target-create-f5-big-ip', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='TargetCreateOutput',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=local_var_params.get('async_req'),
+            _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
+            _preload_content=local_var_params.get('_preload_content', True),
+            _request_timeout=local_var_params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
     def target_create_gcp(self, target_create_gcp, **kwargs):  # noqa: E501
         """target_create_gcp  # noqa: E501
 
@@ -61150,6 +61962,122 @@ class V2Api(object):
 
         return self.api_client.call_api(
             '/target-update-eks', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='TargetUpdateOutput',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=local_var_params.get('async_req'),
+            _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
+            _preload_content=local_var_params.get('_preload_content', True),
+            _request_timeout=local_var_params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def target_update_f5_big_ip(self, target_update_f5_big_ip, **kwargs):  # noqa: E501
+        """target_update_f5_big_ip  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.target_update_f5_big_ip(target_update_f5_big_ip, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool: execute request asynchronously
+        :param TargetUpdateF5BigIp target_update_f5_big_ip: (required)
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :return: TargetUpdateOutput
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        return self.target_update_f5_big_ip_with_http_info(target_update_f5_big_ip, **kwargs)  # noqa: E501
+
+    def target_update_f5_big_ip_with_http_info(self, target_update_f5_big_ip, **kwargs):  # noqa: E501
+        """target_update_f5_big_ip  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.target_update_f5_big_ip_with_http_info(target_update_f5_big_ip, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool: execute request asynchronously
+        :param TargetUpdateF5BigIp target_update_f5_big_ip: (required)
+        :param _return_http_data_only: response data without head status code
+                                       and headers
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :return: tuple(TargetUpdateOutput, status_code(int), headers(HTTPHeaderDict))
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        local_var_params = locals()
+
+        all_params = [
+            'target_update_f5_big_ip'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
+
+        for key, val in six.iteritems(local_var_params['kwargs']):
+            if key not in all_params:
+                raise ApiTypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method target_update_f5_big_ip" % key
+                )
+            local_var_params[key] = val
+        del local_var_params['kwargs']
+        # verify the required parameter 'target_update_f5_big_ip' is set
+        if self.api_client.client_side_validation and ('target_update_f5_big_ip' not in local_var_params or  # noqa: E501
+                                                        local_var_params['target_update_f5_big_ip'] is None):  # noqa: E501
+            raise ApiValueError("Missing the required parameter `target_update_f5_big_ip` when calling `target_update_f5_big_ip`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'target_update_f5_big_ip' in local_var_params:
+            body_params = local_var_params['target_update_f5_big_ip']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
+            '/target-update-f5-big-ip', 'POST',
             path_params,
             query_params,
             header_params,
@@ -68233,6 +69161,122 @@ class V2Api(object):
             post_params=form_params,
             files=local_var_files,
             response_type='object',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=local_var_params.get('async_req'),
+            _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
+            _preload_content=local_var_params.get('_preload_content', True),
+            _request_timeout=local_var_params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def update_f5_big_ip_target(self, update_f5_big_ip_target, **kwargs):  # noqa: E501
+        """update_f5_big_ip_target  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.update_f5_big_ip_target(update_f5_big_ip_target, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool: execute request asynchronously
+        :param UpdateF5BigIpTarget update_f5_big_ip_target: (required)
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :return: UpdateF5BigIpTargetOutput
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        return self.update_f5_big_ip_target_with_http_info(update_f5_big_ip_target, **kwargs)  # noqa: E501
+
+    def update_f5_big_ip_target_with_http_info(self, update_f5_big_ip_target, **kwargs):  # noqa: E501
+        """update_f5_big_ip_target  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.update_f5_big_ip_target_with_http_info(update_f5_big_ip_target, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool: execute request asynchronously
+        :param UpdateF5BigIpTarget update_f5_big_ip_target: (required)
+        :param _return_http_data_only: response data without head status code
+                                       and headers
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :return: tuple(UpdateF5BigIpTargetOutput, status_code(int), headers(HTTPHeaderDict))
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        local_var_params = locals()
+
+        all_params = [
+            'update_f5_big_ip_target'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
+
+        for key, val in six.iteritems(local_var_params['kwargs']):
+            if key not in all_params:
+                raise ApiTypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method update_f5_big_ip_target" % key
+                )
+            local_var_params[key] = val
+        del local_var_params['kwargs']
+        # verify the required parameter 'update_f5_big_ip_target' is set
+        if self.api_client.client_side_validation and ('update_f5_big_ip_target' not in local_var_params or  # noqa: E501
+                                                        local_var_params['update_f5_big_ip_target'] is None):  # noqa: E501
+            raise ApiValueError("Missing the required parameter `update_f5_big_ip_target` when calling `update_f5_big_ip_target`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'update_f5_big_ip_target' in local_var_params:
+            body_params = local_var_params['update_f5_big_ip_target']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
+            '/update-f5-big-ip-target', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='UpdateF5BigIpTargetOutput',  # noqa: E501
             auth_settings=auth_settings,
             async_req=local_var_params.get('async_req'),
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501

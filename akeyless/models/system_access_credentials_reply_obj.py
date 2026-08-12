@@ -40,6 +40,7 @@ class SystemAccessCredentialsReplyObj(object):
         'expiry': 'int',
         'kfm_creds': 'str',
         'need_mfa_app_first_config': 'bool',
+        'recovery_key_id': 'str',
         'required_mfa': 'str',
         'token': 'str',
         'uam_creds': 'str'
@@ -52,12 +53,13 @@ class SystemAccessCredentialsReplyObj(object):
         'expiry': 'expiry',
         'kfm_creds': 'kfm_creds',
         'need_mfa_app_first_config': 'need_mfa_app_first_config',
+        'recovery_key_id': 'recovery_key_id',
         'required_mfa': 'required_mfa',
         'token': 'token',
         'uam_creds': 'uam_creds'
     }
 
-    def __init__(self, access_id=None, auth_creds=None, csrf_token=None, expiry=None, kfm_creds=None, need_mfa_app_first_config=None, required_mfa=None, token=None, uam_creds=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, access_id=None, auth_creds=None, csrf_token=None, expiry=None, kfm_creds=None, need_mfa_app_first_config=None, recovery_key_id=None, required_mfa=None, token=None, uam_creds=None, local_vars_configuration=None):  # noqa: E501
         """SystemAccessCredentialsReplyObj - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -69,6 +71,7 @@ class SystemAccessCredentialsReplyObj(object):
         self._expiry = None
         self._kfm_creds = None
         self._need_mfa_app_first_config = None
+        self._recovery_key_id = None
         self._required_mfa = None
         self._token = None
         self._uam_creds = None
@@ -86,6 +89,8 @@ class SystemAccessCredentialsReplyObj(object):
             self.kfm_creds = kfm_creds
         if need_mfa_app_first_config is not None:
             self.need_mfa_app_first_config = need_mfa_app_first_config
+        if recovery_key_id is not None:
+            self.recovery_key_id = recovery_key_id
         if required_mfa is not None:
             self.required_mfa = required_mfa
         if token is not None:
@@ -228,6 +233,29 @@ class SystemAccessCredentialsReplyObj(object):
         """
 
         self._need_mfa_app_first_config = need_mfa_app_first_config
+
+    @property
+    def recovery_key_id(self):
+        """Gets the recovery_key_id of this SystemAccessCredentialsReplyObj.  # noqa: E501
+
+        RecoveryKeyID identifies the DPoP-bound recovery key for WebUI session recovery.  # noqa: E501
+
+        :return: The recovery_key_id of this SystemAccessCredentialsReplyObj.  # noqa: E501
+        :rtype: str
+        """
+        return self._recovery_key_id
+
+    @recovery_key_id.setter
+    def recovery_key_id(self, recovery_key_id):
+        """Sets the recovery_key_id of this SystemAccessCredentialsReplyObj.
+
+        RecoveryKeyID identifies the DPoP-bound recovery key for WebUI session recovery.  # noqa: E501
+
+        :param recovery_key_id: The recovery_key_id of this SystemAccessCredentialsReplyObj.  # noqa: E501
+        :type: str
+        """
+
+        self._recovery_key_id = recovery_key_id
 
     @property
     def required_mfa(self):
