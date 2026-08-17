@@ -380,13 +380,17 @@ Method | HTTP request | Description
 [**kmip_delete_server**](V2Api.md#kmip_delete_server) | **DELETE** /kmip-delete-environment | 
 [**kmip_describe_client**](V2Api.md#kmip_describe_client) | **POST** /kmip-get-client | 
 [**kmip_describe_server**](V2Api.md#kmip_describe_server) | **POST** /kmip-get-environment | 
+[**kmip_get_ca_bundle**](V2Api.md#kmip_get_ca_bundle) | **POST** /kmip-get-ca-bundle | 
+[**kmip_list_c_as**](V2Api.md#kmip_list_c_as) | **POST** /kmip-list-cas | 
 [**kmip_list_clients**](V2Api.md#kmip_list_clients) | **POST** /kmip-list-clients | 
 [**kmip_move_server**](V2Api.md#kmip_move_server) | **POST** /kmip-move-environment | 
-[**kmip_renew_client_certificate**](V2Api.md#kmip_renew_client_certificate) | **POST** /kmip-renew-client | 
+[**kmip_renew_client_certificate**](V2Api.md#kmip_renew_client_certificate) | **POST** /kmip-renew-client-certificate | 
 [**kmip_renew_server_certificate**](V2Api.md#kmip_renew_server_certificate) | **POST** /kmip-renew-environment | 
+[**kmip_rotate_ca**](V2Api.md#kmip_rotate_ca) | **POST** /kmip-rotate-ca | 
 [**kmip_server_setup**](V2Api.md#kmip_server_setup) | **POST** /kmip-create-environment | 
 [**kmip_server_update**](V2Api.md#kmip_server_update) | **POST** /kmip-server-update | 
 [**kmip_set_server_state**](V2Api.md#kmip_set_server_state) | **POST** /kmip-set-environment-state | 
+[**kmip_sunset_ca**](V2Api.md#kmip_sunset_ca) | **POST** /kmip-sunset-ca | 
 [**kubeconfig_generate**](V2Api.md#kubeconfig_generate) | **POST** /kubeconfig-generate | 
 [**list_acme_accounts**](V2Api.md#list_acme_accounts) | **POST** /list-acme-accounts | 
 [**list_auth_methods**](V2Api.md#list_auth_methods) | **POST** /list-auth-methods | 
@@ -23219,6 +23223,126 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **kmip_get_ca_bundle**
+> KmipGetCABundleOutput kmip_get_ca_bundle(kmip_get_ca_bundle=kmip_get_ca_bundle)
+
+
+
+### Example
+
+```python
+from __future__ import print_function
+import time
+import akeyless
+from akeyless.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.akeyless.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = akeyless.Configuration(
+    host = "https://api.akeyless.io"
+)
+
+
+# Enter a context with an instance of the API client
+with akeyless.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = akeyless.V2Api(api_client)
+    kmip_get_ca_bundle = akeyless.KmipGetCABundle() # KmipGetCABundle |  (optional)
+
+    try:
+        api_response = api_instance.kmip_get_ca_bundle(kmip_get_ca_bundle=kmip_get_ca_bundle)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling V2Api->kmip_get_ca_bundle: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **kmip_get_ca_bundle** | [**KmipGetCABundle**](KmipGetCABundle.md)|  | [optional] 
+
+### Return type
+
+[**KmipGetCABundleOutput**](KmipGetCABundleOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | kmipGetCABundleResponse wraps response body. |  -  |
+**0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **kmip_list_c_as**
+> KmipListCAsOutput kmip_list_c_as(kmip_list_c_as=kmip_list_c_as)
+
+
+
+### Example
+
+```python
+from __future__ import print_function
+import time
+import akeyless
+from akeyless.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.akeyless.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = akeyless.Configuration(
+    host = "https://api.akeyless.io"
+)
+
+
+# Enter a context with an instance of the API client
+with akeyless.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = akeyless.V2Api(api_client)
+    kmip_list_c_as = akeyless.KmipListCAs() # KmipListCAs |  (optional)
+
+    try:
+        api_response = api_instance.kmip_list_c_as(kmip_list_c_as=kmip_list_c_as)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling V2Api->kmip_list_c_as: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **kmip_list_c_as** | [**KmipListCAs**](KmipListCAs.md)|  | [optional] 
+
+### Return type
+
+[**KmipListCAsOutput**](KmipListCAsOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | kmipListCAsResponse wraps response body. |  -  |
+**0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **kmip_list_clients**
 > KMIPClientListResponse kmip_list_clients(kmip_list_clients=kmip_list_clients)
 
@@ -23459,6 +23583,66 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **kmip_rotate_ca**
+> KmipRotateCAOutput kmip_rotate_ca(kmip_rotate_ca=kmip_rotate_ca)
+
+
+
+### Example
+
+```python
+from __future__ import print_function
+import time
+import akeyless
+from akeyless.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.akeyless.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = akeyless.Configuration(
+    host = "https://api.akeyless.io"
+)
+
+
+# Enter a context with an instance of the API client
+with akeyless.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = akeyless.V2Api(api_client)
+    kmip_rotate_ca = akeyless.KmipRotateCA() # KmipRotateCA |  (optional)
+
+    try:
+        api_response = api_instance.kmip_rotate_ca(kmip_rotate_ca=kmip_rotate_ca)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling V2Api->kmip_rotate_ca: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **kmip_rotate_ca** | [**KmipRotateCA**](KmipRotateCA.md)|  | [optional] 
+
+### Return type
+
+[**KmipRotateCAOutput**](KmipRotateCAOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | kmipRotateCAResponse wraps response body. |  -  |
+**0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **kmip_server_setup**
 > KMIPEnvironmentCreateResponse kmip_server_setup(kmip_server_setup=kmip_server_setup)
 
@@ -23635,6 +23819,66 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | kmipSetServerStateResponse wraps response body. |  -  |
+**0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **kmip_sunset_ca**
+> KmipSunsetCAOutput kmip_sunset_ca(kmip_sunset_ca=kmip_sunset_ca)
+
+
+
+### Example
+
+```python
+from __future__ import print_function
+import time
+import akeyless
+from akeyless.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.akeyless.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = akeyless.Configuration(
+    host = "https://api.akeyless.io"
+)
+
+
+# Enter a context with an instance of the API client
+with akeyless.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = akeyless.V2Api(api_client)
+    kmip_sunset_ca = akeyless.KmipSunsetCA() # KmipSunsetCA |  (optional)
+
+    try:
+        api_response = api_instance.kmip_sunset_ca(kmip_sunset_ca=kmip_sunset_ca)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling V2Api->kmip_sunset_ca: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **kmip_sunset_ca** | [**KmipSunsetCA**](KmipSunsetCA.md)|  | [optional] 
+
+### Return type
+
+[**KmipSunsetCAOutput**](KmipSunsetCAOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | kmipSunsetCAResponse wraps response body. |  -  |
 **0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

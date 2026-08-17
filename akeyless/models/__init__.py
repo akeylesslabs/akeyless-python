@@ -739,6 +739,7 @@ from akeyless.models.k8_s_auths_config_part import K8SAuthsConfigPart
 from akeyless.models.k8_s_migration import K8SMigration
 from akeyless.models.k8_s_payload import K8SPayload
 from akeyless.models.kmipca import KMIPCA
+from akeyless.models.kmipca_list_entry import KMIPCAListEntry
 from akeyless.models.kmip_client import KMIPClient
 from akeyless.models.kmip_client_get_response import KMIPClientGetResponse
 from akeyless.models.kmip_client_list_response import KMIPClientListResponse
@@ -761,6 +762,10 @@ from akeyless.models.kmip_delete_server import KmipDeleteServer
 from akeyless.models.kmip_describe_client import KmipDescribeClient
 from akeyless.models.kmip_describe_server import KmipDescribeServer
 from akeyless.models.kmip_describe_server_output import KmipDescribeServerOutput
+from akeyless.models.kmip_get_ca_bundle import KmipGetCABundle
+from akeyless.models.kmip_get_ca_bundle_output import KmipGetCABundleOutput
+from akeyless.models.kmip_list_c_as import KmipListCAs
+from akeyless.models.kmip_list_c_as_output import KmipListCAsOutput
 from akeyless.models.kmip_list_clients import KmipListClients
 from akeyless.models.kmip_move_server import KmipMoveServer
 from akeyless.models.kmip_move_server_output import KmipMoveServerOutput
@@ -768,11 +773,15 @@ from akeyless.models.kmip_renew_client_certificate import KmipRenewClientCertifi
 from akeyless.models.kmip_renew_client_certificate_output import KmipRenewClientCertificateOutput
 from akeyless.models.kmip_renew_server_certificate import KmipRenewServerCertificate
 from akeyless.models.kmip_renew_server_certificate_output import KmipRenewServerCertificateOutput
+from akeyless.models.kmip_rotate_ca import KmipRotateCA
+from akeyless.models.kmip_rotate_ca_output import KmipRotateCAOutput
 from akeyless.models.kmip_server_setup import KmipServerSetup
 from akeyless.models.kmip_server_update import KmipServerUpdate
 from akeyless.models.kmip_server_update_output import KmipServerUpdateOutput
 from akeyless.models.kmip_set_server_state import KmipSetServerState
 from akeyless.models.kmip_set_server_state_output import KmipSetServerStateOutput
+from akeyless.models.kmip_sunset_ca import KmipSunsetCA
+from akeyless.models.kmip_sunset_ca_output import KmipSunsetCAOutput
 from akeyless.models.kube_config_value import KubeConfigValue
 from akeyless.models.kubeconfig_cluster import KubeconfigCluster
 from akeyless.models.kubeconfig_context import KubeconfigContext

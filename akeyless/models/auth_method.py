@@ -44,6 +44,7 @@ class AuthMethod(object):
         'auth_method_id': 'int',
         'auth_method_name': 'str',
         'auth_method_roles_assoc': 'list[AuthMethodRoleAssociation]',
+        'bookmark_login_url_template': 'str',
         'client_permissions': 'list[str]',
         'creation_date': 'datetime',
         'delete_protection': 'bool',
@@ -65,6 +66,7 @@ class AuthMethod(object):
         'auth_method_id': 'auth_method_id',
         'auth_method_name': 'auth_method_name',
         'auth_method_roles_assoc': 'auth_method_roles_assoc',
+        'bookmark_login_url_template': 'bookmark_login_url_template',
         'client_permissions': 'client_permissions',
         'creation_date': 'creation_date',
         'delete_protection': 'delete_protection',
@@ -75,7 +77,7 @@ class AuthMethod(object):
         'uid_expiration_events': 'uid_expiration_events'
     }
 
-    def __init__(self, access_date=None, access_date_display=None, access_info=None, account_id=None, associated_gw_ids=None, auth_method_access_id=None, auth_method_additional_data=None, auth_method_id=None, auth_method_name=None, auth_method_roles_assoc=None, client_permissions=None, creation_date=None, delete_protection=None, description=None, expiration_events=None, is_approved=None, modification_date=None, uid_expiration_events=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, access_date=None, access_date_display=None, access_info=None, account_id=None, associated_gw_ids=None, auth_method_access_id=None, auth_method_additional_data=None, auth_method_id=None, auth_method_name=None, auth_method_roles_assoc=None, bookmark_login_url_template=None, client_permissions=None, creation_date=None, delete_protection=None, description=None, expiration_events=None, is_approved=None, modification_date=None, uid_expiration_events=None, local_vars_configuration=None):  # noqa: E501
         """AuthMethod - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -91,6 +93,7 @@ class AuthMethod(object):
         self._auth_method_id = None
         self._auth_method_name = None
         self._auth_method_roles_assoc = None
+        self._bookmark_login_url_template = None
         self._client_permissions = None
         self._creation_date = None
         self._delete_protection = None
@@ -121,6 +124,8 @@ class AuthMethod(object):
             self.auth_method_name = auth_method_name
         if auth_method_roles_assoc is not None:
             self.auth_method_roles_assoc = auth_method_roles_assoc
+        if bookmark_login_url_template is not None:
+            self.bookmark_login_url_template = bookmark_login_url_template
         if client_permissions is not None:
             self.client_permissions = client_permissions
         if creation_date is not None:
@@ -347,6 +352,29 @@ class AuthMethod(object):
         """
 
         self._auth_method_roles_assoc = auth_method_roles_assoc
+
+    @property
+    def bookmark_login_url_template(self):
+        """Gets the bookmark_login_url_template of this AuthMethod.  # noqa: E501
+
+        BookmarkLoginURLTemplate is an OIDC login URL template for console bookmarks. SaaS-owned methods use {redirect_uri} for client substitution; AuthViaGw embeds the GW console callback.  # noqa: E501
+
+        :return: The bookmark_login_url_template of this AuthMethod.  # noqa: E501
+        :rtype: str
+        """
+        return self._bookmark_login_url_template
+
+    @bookmark_login_url_template.setter
+    def bookmark_login_url_template(self, bookmark_login_url_template):
+        """Sets the bookmark_login_url_template of this AuthMethod.
+
+        BookmarkLoginURLTemplate is an OIDC login URL template for console bookmarks. SaaS-owned methods use {redirect_uri} for client substitution; AuthViaGw embeds the GW console callback.  # noqa: E501
+
+        :param bookmark_login_url_template: The bookmark_login_url_template of this AuthMethod.  # noqa: E501
+        :type: str
+        """
+
+        self._bookmark_login_url_template = bookmark_login_url_template
 
     @property
     def client_permissions(self):

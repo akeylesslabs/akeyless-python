@@ -4,6 +4,7 @@ assocTargetItem is a command that creates an association between target and item
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**bind_ssl_profiles** | **list[str]** | Bind the provisioned certificate to an existing client-ssl/server-ssl profile, in the format &lt;type&gt;:&lt;partition&gt;:&lt;name&gt; (relevant only for F5 BIG-IP certificate provisioning). Leave the partition empty to use the certificate&#39;s partition. Repeat the parameter to bind several profiles. | [optional] 
 **certificate_path** | **str** | A path on the target to store the certificate pem file (relevant only for certificate provisioning) | [optional] 
 **chain_path** | **str** | A path on the target to store the full chain pem file (relevant only for certificate provisioning) | [optional] 
 **disable_previous_key_version** | **bool** | Automatically disable previous key version (required for azure targets) | [optional] [default to False]
@@ -15,7 +16,7 @@ Name | Type | Description | Notes
 **location_id** | **str** | Location id of the GCP KMS (required for gcp targets) | [optional] 
 **multi_region** | **str** | Set to &#39;true&#39; to create a multi-region managed key. (Relevant only for Classic Key AWS targets) | [optional] [default to 'false']
 **name** | **str** | The item to associate | 
-**post_provision_command** | **str** | A custom command to run on the remote target after successful provisioning (relevant only for certificate provisioning) | [optional] 
+**post_provision_command** | **str** | A custom command to run on the remote target after successful provisioning (relevant only for SSH and Windows certificate provisioning, not supported for F5 BIG-IP) | [optional] 
 **private_key_path** | **str** | A path on the target to store the private key (relevant only for certificate provisioning) | [optional] 
 **project_id** | **str** | Project id of the GCP KMS (required for gcp targets) | [optional] 
 **protection_level** | **str** | Protection level of the key [software/hardware] (relevant for gcp targets) | [optional] [default to 'software']

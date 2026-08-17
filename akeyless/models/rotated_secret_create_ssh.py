@@ -45,6 +45,7 @@ class RotatedSecretCreateSsh(object):
         'item_custom_fields': 'dict(str, str)',
         'json': 'bool',
         'key': 'str',
+        'key_algorithm': 'str',
         'key_data_base64': 'str',
         'lock_during_sra_session': 'str',
         'max_versions': 'str',
@@ -69,8 +70,13 @@ class RotatedSecretCreateSsh(object):
         'secure_access_host': 'list[str]',
         'secure_access_rdp_domain': 'str',
         'secure_access_rdp_user': 'str',
+        'secure_access_ssh_creds': 'str',
         'secure_access_ssh_user': 'str',
         'secure_access_target_type': 'str',
+        'secure_access_url': 'str',
+        'secure_access_web': 'bool',
+        'secure_access_web_browsing': 'bool',
+        'secure_access_web_proxy': 'bool',
         'skip_dry_run': 'str',
         'tags': 'list[str]',
         'target': 'list[str]',
@@ -95,6 +101,7 @@ class RotatedSecretCreateSsh(object):
         'item_custom_fields': 'item-custom-fields',
         'json': 'json',
         'key': 'key',
+        'key_algorithm': 'key-algorithm',
         'key_data_base64': 'key-data-base64',
         'lock_during_sra_session': 'lock-during-sra-session',
         'max_versions': 'max-versions',
@@ -119,8 +126,13 @@ class RotatedSecretCreateSsh(object):
         'secure_access_host': 'secure-access-host',
         'secure_access_rdp_domain': 'secure-access-rdp-domain',
         'secure_access_rdp_user': 'secure-access-rdp-user',
+        'secure_access_ssh_creds': 'secure-access-ssh-creds',
         'secure_access_ssh_user': 'secure-access-ssh-user',
         'secure_access_target_type': 'secure-access-target-type',
+        'secure_access_url': 'secure-access-url',
+        'secure_access_web': 'secure-access-web',
+        'secure_access_web_browsing': 'secure-access-web-browsing',
+        'secure_access_web_proxy': 'secure-access-web-proxy',
         'skip_dry_run': 'skip_dry_run',
         'tags': 'tags',
         'target': 'target',
@@ -133,7 +145,7 @@ class RotatedSecretCreateSsh(object):
         'use_special_characters': 'use-special-characters'
     }
 
-    def __init__(self, provider_type=None, ara_enabled=None, authentication_credentials='use-user-creds', auto_rotate=None, delete_protection=None, description=None, host_provider=None, input_rule=None, item_custom_fields=None, json=False, key=None, key_data_base64=None, lock_during_sra_session=None, max_versions=None, name=None, output_rule=None, password_length=None, public_key_remote_path=None, rotate_after_disconnect=None, rotated_password=None, rotated_username=None, rotation_event_in=None, rotation_hour=None, rotation_interval=None, rotator_custom_cmd=None, rotator_type=None, same_password=None, secure_access_allow_external_user=False, secure_access_bastion_issuer=None, secure_access_certificate_issuer=None, secure_access_enable=None, secure_access_enforce_hosts_restriction=None, secure_access_host=None, secure_access_rdp_domain=None, secure_access_rdp_user=None, secure_access_ssh_user=None, secure_access_target_type='false', skip_dry_run=None, tags=None, target=None, target_name=None, token=None, uid_token=None, use_capital_letters=None, use_lower_letters=None, use_numbers=None, use_special_characters=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, provider_type=None, ara_enabled=None, authentication_credentials='use-user-creds', auto_rotate=None, delete_protection=None, description=None, host_provider=None, input_rule=None, item_custom_fields=None, json=False, key=None, key_algorithm=None, key_data_base64=None, lock_during_sra_session=None, max_versions=None, name=None, output_rule=None, password_length=None, public_key_remote_path=None, rotate_after_disconnect=None, rotated_password=None, rotated_username=None, rotation_event_in=None, rotation_hour=None, rotation_interval=None, rotator_custom_cmd=None, rotator_type=None, same_password=None, secure_access_allow_external_user=False, secure_access_bastion_issuer=None, secure_access_certificate_issuer=None, secure_access_enable=None, secure_access_enforce_hosts_restriction=None, secure_access_host=None, secure_access_rdp_domain=None, secure_access_rdp_user=None, secure_access_ssh_creds=None, secure_access_ssh_user=None, secure_access_target_type='false', secure_access_url=None, secure_access_web=True, secure_access_web_browsing=False, secure_access_web_proxy=False, skip_dry_run=None, tags=None, target=None, target_name=None, token=None, uid_token=None, use_capital_letters=None, use_lower_letters=None, use_numbers=None, use_special_characters=None, local_vars_configuration=None):  # noqa: E501
         """RotatedSecretCreateSsh - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -150,6 +162,7 @@ class RotatedSecretCreateSsh(object):
         self._item_custom_fields = None
         self._json = None
         self._key = None
+        self._key_algorithm = None
         self._key_data_base64 = None
         self._lock_during_sra_session = None
         self._max_versions = None
@@ -174,8 +187,13 @@ class RotatedSecretCreateSsh(object):
         self._secure_access_host = None
         self._secure_access_rdp_domain = None
         self._secure_access_rdp_user = None
+        self._secure_access_ssh_creds = None
         self._secure_access_ssh_user = None
         self._secure_access_target_type = None
+        self._secure_access_url = None
+        self._secure_access_web = None
+        self._secure_access_web_browsing = None
+        self._secure_access_web_proxy = None
         self._skip_dry_run = None
         self._tags = None
         self._target = None
@@ -210,6 +228,8 @@ class RotatedSecretCreateSsh(object):
             self.json = json
         if key is not None:
             self.key = key
+        if key_algorithm is not None:
+            self.key_algorithm = key_algorithm
         if key_data_base64 is not None:
             self.key_data_base64 = key_data_base64
         if lock_during_sra_session is not None:
@@ -256,10 +276,20 @@ class RotatedSecretCreateSsh(object):
             self.secure_access_rdp_domain = secure_access_rdp_domain
         if secure_access_rdp_user is not None:
             self.secure_access_rdp_user = secure_access_rdp_user
+        if secure_access_ssh_creds is not None:
+            self.secure_access_ssh_creds = secure_access_ssh_creds
         if secure_access_ssh_user is not None:
             self.secure_access_ssh_user = secure_access_ssh_user
         if secure_access_target_type is not None:
             self.secure_access_target_type = secure_access_target_type
+        if secure_access_url is not None:
+            self.secure_access_url = secure_access_url
+        if secure_access_web is not None:
+            self.secure_access_web = secure_access_web
+        if secure_access_web_browsing is not None:
+            self.secure_access_web_browsing = secure_access_web_browsing
+        if secure_access_web_proxy is not None:
+            self.secure_access_web_proxy = secure_access_web_proxy
         if skip_dry_run is not None:
             self.skip_dry_run = skip_dry_run
         if tags is not None:
@@ -526,6 +556,29 @@ class RotatedSecretCreateSsh(object):
         """
 
         self._key = key
+
+    @property
+    def key_algorithm(self):
+        """Gets the key_algorithm of this RotatedSecretCreateSsh.  # noqa: E501
+
+        The key algorithm to generate with when no private key is supplied. options: [ED25519/RSA2048/RSA3072/RSA4096/ECDSA256/ECDSA384/ECDSA521]  # noqa: E501
+
+        :return: The key_algorithm of this RotatedSecretCreateSsh.  # noqa: E501
+        :rtype: str
+        """
+        return self._key_algorithm
+
+    @key_algorithm.setter
+    def key_algorithm(self, key_algorithm):
+        """Sets the key_algorithm of this RotatedSecretCreateSsh.
+
+        The key algorithm to generate with when no private key is supplied. options: [ED25519/RSA2048/RSA3072/RSA4096/ECDSA256/ECDSA384/ECDSA521]  # noqa: E501
+
+        :param key_algorithm: The key_algorithm of this RotatedSecretCreateSsh.  # noqa: E501
+        :type: str
+        """
+
+        self._key_algorithm = key_algorithm
 
     @property
     def key_data_base64(self):
@@ -1080,6 +1133,29 @@ class RotatedSecretCreateSsh(object):
         self._secure_access_rdp_user = secure_access_rdp_user
 
     @property
+    def secure_access_ssh_creds(self):
+        """Gets the secure_access_ssh_creds of this RotatedSecretCreateSsh.  # noqa: E501
+
+        Secret values contains SSH Credentials, either Private Key or Password [password/private-key] (relevant only for Static-Secret or Rotated-secret)  # noqa: E501
+
+        :return: The secure_access_ssh_creds of this RotatedSecretCreateSsh.  # noqa: E501
+        :rtype: str
+        """
+        return self._secure_access_ssh_creds
+
+    @secure_access_ssh_creds.setter
+    def secure_access_ssh_creds(self, secure_access_ssh_creds):
+        """Sets the secure_access_ssh_creds of this RotatedSecretCreateSsh.
+
+        Secret values contains SSH Credentials, either Private Key or Password [password/private-key] (relevant only for Static-Secret or Rotated-secret)  # noqa: E501
+
+        :param secure_access_ssh_creds: The secure_access_ssh_creds of this RotatedSecretCreateSsh.  # noqa: E501
+        :type: str
+        """
+
+        self._secure_access_ssh_creds = secure_access_ssh_creds
+
+    @property
     def secure_access_ssh_user(self):
         """Gets the secure_access_ssh_user of this RotatedSecretCreateSsh.  # noqa: E501
 
@@ -1124,6 +1200,98 @@ class RotatedSecretCreateSsh(object):
         """
 
         self._secure_access_target_type = secure_access_target_type
+
+    @property
+    def secure_access_url(self):
+        """Gets the secure_access_url of this RotatedSecretCreateSsh.  # noqa: E501
+
+        Destination URL to inject secrets  # noqa: E501
+
+        :return: The secure_access_url of this RotatedSecretCreateSsh.  # noqa: E501
+        :rtype: str
+        """
+        return self._secure_access_url
+
+    @secure_access_url.setter
+    def secure_access_url(self, secure_access_url):
+        """Sets the secure_access_url of this RotatedSecretCreateSsh.
+
+        Destination URL to inject secrets  # noqa: E501
+
+        :param secure_access_url: The secure_access_url of this RotatedSecretCreateSsh.  # noqa: E501
+        :type: str
+        """
+
+        self._secure_access_url = secure_access_url
+
+    @property
+    def secure_access_web(self):
+        """Gets the secure_access_web of this RotatedSecretCreateSsh.  # noqa: E501
+
+        Enable Web Secure Remote Access  # noqa: E501
+
+        :return: The secure_access_web of this RotatedSecretCreateSsh.  # noqa: E501
+        :rtype: bool
+        """
+        return self._secure_access_web
+
+    @secure_access_web.setter
+    def secure_access_web(self, secure_access_web):
+        """Sets the secure_access_web of this RotatedSecretCreateSsh.
+
+        Enable Web Secure Remote Access  # noqa: E501
+
+        :param secure_access_web: The secure_access_web of this RotatedSecretCreateSsh.  # noqa: E501
+        :type: bool
+        """
+
+        self._secure_access_web = secure_access_web
+
+    @property
+    def secure_access_web_browsing(self):
+        """Gets the secure_access_web_browsing of this RotatedSecretCreateSsh.  # noqa: E501
+
+        Secure browser via Akeyless's Secure Remote Access (SRA)  # noqa: E501
+
+        :return: The secure_access_web_browsing of this RotatedSecretCreateSsh.  # noqa: E501
+        :rtype: bool
+        """
+        return self._secure_access_web_browsing
+
+    @secure_access_web_browsing.setter
+    def secure_access_web_browsing(self, secure_access_web_browsing):
+        """Sets the secure_access_web_browsing of this RotatedSecretCreateSsh.
+
+        Secure browser via Akeyless's Secure Remote Access (SRA)  # noqa: E501
+
+        :param secure_access_web_browsing: The secure_access_web_browsing of this RotatedSecretCreateSsh.  # noqa: E501
+        :type: bool
+        """
+
+        self._secure_access_web_browsing = secure_access_web_browsing
+
+    @property
+    def secure_access_web_proxy(self):
+        """Gets the secure_access_web_proxy of this RotatedSecretCreateSsh.  # noqa: E501
+
+        Web-Proxy via Akeyless's Secure Remote Access (SRA)  # noqa: E501
+
+        :return: The secure_access_web_proxy of this RotatedSecretCreateSsh.  # noqa: E501
+        :rtype: bool
+        """
+        return self._secure_access_web_proxy
+
+    @secure_access_web_proxy.setter
+    def secure_access_web_proxy(self, secure_access_web_proxy):
+        """Sets the secure_access_web_proxy of this RotatedSecretCreateSsh.
+
+        Web-Proxy via Akeyless's Secure Remote Access (SRA)  # noqa: E501
+
+        :param secure_access_web_proxy: The secure_access_web_proxy of this RotatedSecretCreateSsh.  # noqa: E501
+        :type: bool
+        """
+
+        self._secure_access_web_proxy = secure_access_web_proxy
 
     @property
     def skip_dry_run(self):

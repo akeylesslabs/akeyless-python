@@ -34,6 +34,7 @@ class AssocTargetItem(object):
                             and the value is json key in definition.
     """
     openapi_types = {
+        'bind_ssl_profiles': 'list[str]',
         'certificate_path': 'str',
         'chain_path': 'str',
         'disable_previous_key_version': 'bool',
@@ -60,6 +61,7 @@ class AssocTargetItem(object):
     }
 
     attribute_map = {
+        'bind_ssl_profiles': 'bind-ssl-profiles',
         'certificate_path': 'certificate-path',
         'chain_path': 'chain-path',
         'disable_previous_key_version': 'disable-previous-key-version',
@@ -85,12 +87,13 @@ class AssocTargetItem(object):
         'vault_name': 'vault-name'
     }
 
-    def __init__(self, certificate_path=None, chain_path=None, disable_previous_key_version=False, external_key_name=None, json=False, key_operations=None, keyring_name=None, kms_algorithm=None, location_id=None, multi_region='false', name=None, post_provision_command=None, private_key_path=None, project_id=None, protection_level='software', purpose=None, regions=None, sra_association=False, target_name=None, tenant_secret_type=None, token=None, uid_token=None, vault_name=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, bind_ssl_profiles=None, certificate_path=None, chain_path=None, disable_previous_key_version=False, external_key_name=None, json=False, key_operations=None, keyring_name=None, kms_algorithm=None, location_id=None, multi_region='false', name=None, post_provision_command=None, private_key_path=None, project_id=None, protection_level='software', purpose=None, regions=None, sra_association=False, target_name=None, tenant_secret_type=None, token=None, uid_token=None, vault_name=None, local_vars_configuration=None):  # noqa: E501
         """AssocTargetItem - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
+        self._bind_ssl_profiles = None
         self._certificate_path = None
         self._chain_path = None
         self._disable_previous_key_version = None
@@ -116,6 +119,8 @@ class AssocTargetItem(object):
         self._vault_name = None
         self.discriminator = None
 
+        if bind_ssl_profiles is not None:
+            self.bind_ssl_profiles = bind_ssl_profiles
         if certificate_path is not None:
             self.certificate_path = certificate_path
         if chain_path is not None:
@@ -160,6 +165,29 @@ class AssocTargetItem(object):
             self.uid_token = uid_token
         if vault_name is not None:
             self.vault_name = vault_name
+
+    @property
+    def bind_ssl_profiles(self):
+        """Gets the bind_ssl_profiles of this AssocTargetItem.  # noqa: E501
+
+        Bind the provisioned certificate to an existing client-ssl/server-ssl profile, in the format <type>:<partition>:<name> (relevant only for F5 BIG-IP certificate provisioning). Leave the partition empty to use the certificate's partition. Repeat the parameter to bind several profiles.  # noqa: E501
+
+        :return: The bind_ssl_profiles of this AssocTargetItem.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._bind_ssl_profiles
+
+    @bind_ssl_profiles.setter
+    def bind_ssl_profiles(self, bind_ssl_profiles):
+        """Sets the bind_ssl_profiles of this AssocTargetItem.
+
+        Bind the provisioned certificate to an existing client-ssl/server-ssl profile, in the format <type>:<partition>:<name> (relevant only for F5 BIG-IP certificate provisioning). Leave the partition empty to use the certificate's partition. Repeat the parameter to bind several profiles.  # noqa: E501
+
+        :param bind_ssl_profiles: The bind_ssl_profiles of this AssocTargetItem.  # noqa: E501
+        :type: list[str]
+        """
+
+        self._bind_ssl_profiles = bind_ssl_profiles
 
     @property
     def certificate_path(self):
@@ -420,7 +448,7 @@ class AssocTargetItem(object):
     def post_provision_command(self):
         """Gets the post_provision_command of this AssocTargetItem.  # noqa: E501
 
-        A custom command to run on the remote target after successful provisioning (relevant only for certificate provisioning)  # noqa: E501
+        A custom command to run on the remote target after successful provisioning (relevant only for SSH and Windows certificate provisioning, not supported for F5 BIG-IP)  # noqa: E501
 
         :return: The post_provision_command of this AssocTargetItem.  # noqa: E501
         :rtype: str
@@ -431,7 +459,7 @@ class AssocTargetItem(object):
     def post_provision_command(self, post_provision_command):
         """Sets the post_provision_command of this AssocTargetItem.
 
-        A custom command to run on the remote target after successful provisioning (relevant only for certificate provisioning)  # noqa: E501
+        A custom command to run on the remote target after successful provisioning (relevant only for SSH and Windows certificate provisioning, not supported for F5 BIG-IP)  # noqa: E501
 
         :param post_provision_command: The post_provision_command of this AssocTargetItem.  # noqa: E501
         :type: str

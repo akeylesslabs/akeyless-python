@@ -35,6 +35,7 @@ class SAMLAccessRules(object):
     """
     openapi_types = {
         'allowed_redirect_ur_is': 'list[str]',
+        'authorized_gw_cluster_name': 'str',
         'bound_attributes': 'list[SAMLAttribute]',
         'idp_metadata_url': 'str',
         'idp_metadata_xml': 'str',
@@ -44,6 +45,7 @@ class SAMLAccessRules(object):
 
     attribute_map = {
         'allowed_redirect_ur_is': 'allowed_redirect_URIs',
+        'authorized_gw_cluster_name': 'authorized_gw_cluster_name',
         'bound_attributes': 'bound_attributes',
         'idp_metadata_url': 'idp_metadata_url',
         'idp_metadata_xml': 'idp_metadata_xml',
@@ -51,13 +53,14 @@ class SAMLAccessRules(object):
         'use_dedicated_saml_urls': 'use_dedicated_saml_urls'
     }
 
-    def __init__(self, allowed_redirect_ur_is=None, bound_attributes=None, idp_metadata_url=None, idp_metadata_xml=None, unique_identifier=None, use_dedicated_saml_urls=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, allowed_redirect_ur_is=None, authorized_gw_cluster_name=None, bound_attributes=None, idp_metadata_url=None, idp_metadata_xml=None, unique_identifier=None, use_dedicated_saml_urls=None, local_vars_configuration=None):  # noqa: E501
         """SAMLAccessRules - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._allowed_redirect_ur_is = None
+        self._authorized_gw_cluster_name = None
         self._bound_attributes = None
         self._idp_metadata_url = None
         self._idp_metadata_xml = None
@@ -67,6 +70,8 @@ class SAMLAccessRules(object):
 
         if allowed_redirect_ur_is is not None:
             self.allowed_redirect_ur_is = allowed_redirect_ur_is
+        if authorized_gw_cluster_name is not None:
+            self.authorized_gw_cluster_name = authorized_gw_cluster_name
         if bound_attributes is not None:
             self.bound_attributes = bound_attributes
         if idp_metadata_url is not None:
@@ -100,6 +105,29 @@ class SAMLAccessRules(object):
         """
 
         self._allowed_redirect_ur_is = allowed_redirect_ur_is
+
+    @property
+    def authorized_gw_cluster_name(self):
+        """Gets the authorized_gw_cluster_name of this SAMLAccessRules.  # noqa: E501
+
+        AuthorizedGwClusterName binds the access method to a single GW cluster. When empty (or whitespace-only), GW-driven auth is disabled.  # noqa: E501
+
+        :return: The authorized_gw_cluster_name of this SAMLAccessRules.  # noqa: E501
+        :rtype: str
+        """
+        return self._authorized_gw_cluster_name
+
+    @authorized_gw_cluster_name.setter
+    def authorized_gw_cluster_name(self, authorized_gw_cluster_name):
+        """Sets the authorized_gw_cluster_name of this SAMLAccessRules.
+
+        AuthorizedGwClusterName binds the access method to a single GW cluster. When empty (or whitespace-only), GW-driven auth is disabled.  # noqa: E501
+
+        :param authorized_gw_cluster_name: The authorized_gw_cluster_name of this SAMLAccessRules.  # noqa: E501
+        :type: str
+        """
+
+        self._authorized_gw_cluster_name = authorized_gw_cluster_name
 
     @property
     def bound_attributes(self):

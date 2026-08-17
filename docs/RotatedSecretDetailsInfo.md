@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **grace_rotation_timing** | **str** |  | [optional] 
 **gw_cluster_id** | **int** |  | [optional] 
 **iis_apps_details** | [**list[WindowsService]**](WindowsService.md) |  | [optional] 
+**key_algorithm** | **str** | SSHKeyAlgorithm identifies the key algorithm an SSH rotated secret uses. Kept apart from Algorithm, which is an encryption-key enum and has no ECDSA-384 or ECDSA-521. | [optional] 
 **last_rotation_error** | **str** |  | [optional] 
 **managed_by_akeyless** | **bool** |  | [optional] 
 **max_versions** | **int** |  | [optional] 
