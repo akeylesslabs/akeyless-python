@@ -43,7 +43,10 @@ from akeyless.models.agentic_rule import AgenticRule
 from akeyless.models.agentic_rules import AgenticRules
 from akeyless.models.ai_insights_config_part import AiInsightsConfigPart
 from akeyless.models.ai_insights_setting import AiInsightsSetting
+from akeyless.models.ai_model_entry import AiModelEntry
+from akeyless.models.ai_quorum_setting import AiQuorumSetting
 from akeyless.models.akeyless_gateway_config import AkeylessGatewayConfig
+from akeyless.models.ali_cloud_access_rules import AliCloudAccessRules
 from akeyless.models.alias_details import AliasDetails
 from akeyless.models.alias_details_output import AliasDetailsOutput
 from akeyless.models.all_analytics_data import AllAnalyticsData
@@ -61,6 +64,7 @@ from akeyless.models.auth_expiration_event import AuthExpirationEvent
 from akeyless.models.auth_method import AuthMethod
 from akeyless.models.auth_method_access_info import AuthMethodAccessInfo
 from akeyless.models.auth_method_additional_data import AuthMethodAdditionalData
+from akeyless.models.auth_method_create_ali_cloud import AuthMethodCreateAliCloud
 from akeyless.models.auth_method_create_api_key import AuthMethodCreateApiKey
 from akeyless.models.auth_method_create_aws_iam import AuthMethodCreateAwsIam
 from akeyless.models.auth_method_create_azure_ad import AuthMethodCreateAzureAD
@@ -81,6 +85,7 @@ from akeyless.models.auth_method_delete_output import AuthMethodDeleteOutput
 from akeyless.models.auth_method_get import AuthMethodGet
 from akeyless.models.auth_method_list import AuthMethodList
 from akeyless.models.auth_method_role_association import AuthMethodRoleAssociation
+from akeyless.models.auth_method_update_ali_cloud import AuthMethodUpdateAliCloud
 from akeyless.models.auth_method_update_api_key import AuthMethodUpdateApiKey
 from akeyless.models.auth_method_update_aws_iam import AuthMethodUpdateAwsIam
 from akeyless.models.auth_method_update_azure_ad import AuthMethodUpdateAzureAD
@@ -825,6 +830,10 @@ from akeyless.models.locking_info import LockingInfo
 from akeyless.models.log_forwarding_config_part import LogForwardingConfigPart
 from akeyless.models.logstash_log_forwarding_config import LogstashLogForwardingConfig
 from akeyless.models.logz_io_log_forwarding_config import LogzIoLogForwardingConfig
+from akeyless.models.migration_download_job import MigrationDownloadJob
+from akeyless.models.migration_download_report import MigrationDownloadReport
+from akeyless.models.migration_download_secret import MigrationDownloadSecret
+from akeyless.models.migration_download_summary import MigrationDownloadSummary
 from akeyless.models.migration_general import MigrationGeneral
 from akeyless.models.migration_items import MigrationItems
 from akeyless.models.migration_status import MigrationStatus
@@ -970,6 +979,7 @@ from akeyless.models.saml_attribute import SAMLAttribute
 from akeyless.models.ssh_certificate_issue_details import SSHCertificateIssueDetails
 from akeyless.models.ssh_target_details import SSHTargetDetails
 from akeyless.models.salesforce_target_details import SalesforceTargetDetails
+from akeyless.models.saml_sp_config_part import SamlSpConfigPart
 from akeyless.models.scan_results import ScanResults
 from akeyless.models.secret_info import SecretInfo
 from akeyless.models.secret_sync_output import SecretSyncOutput

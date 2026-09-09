@@ -49,6 +49,7 @@ class UpdateAccountSettings(object):
         'dynamic_secret_max_ttl': 'int',
         'dynamic_secret_max_ttl_enable': 'str',
         'enable_ai_insights': 'str',
+        'enable_ai_quorum': 'str',
         'enable_default_certificate_expiration_event': 'str',
         'enable_item_sharing': 'str',
         'enable_password_expiration': 'str',
@@ -104,6 +105,7 @@ class UpdateAccountSettings(object):
         'dynamic_secret_max_ttl': 'dynamic-secret-max-ttl',
         'dynamic_secret_max_ttl_enable': 'dynamic-secret-max-ttl-enable',
         'enable_ai_insights': 'enable-ai-insights',
+        'enable_ai_quorum': 'enable-ai-quorum',
         'enable_default_certificate_expiration_event': 'enable-default-certificate-expiration-event',
         'enable_item_sharing': 'enable-item-sharing',
         'enable_password_expiration': 'enable-password-expiration',
@@ -143,7 +145,7 @@ class UpdateAccountSettings(object):
         'use_special_characters': 'use-special-characters'
     }
 
-    def __init__(self, address=None, allowed_client_type=None, allowed_email_domains=None, bound_ips=None, city=None, company_name=None, country=None, default_certificate_expiration_notification_days=None, default_key_name=None, default_share_link_ttl_minutes=None, default_versioning=None, dp_enable_classic_key_protection=None, dynamic_secret_max_ttl=None, dynamic_secret_max_ttl_enable=None, enable_ai_insights=None, enable_default_certificate_expiration_event=None, enable_item_sharing=None, enable_password_expiration=None, force_new_versions=None, gw_bound_ips=None, hide_personal_folder=None, hide_static_password=None, invalid_characters='notReceivedInvalidCharacter', item_locking_enabled=None, item_type=None, items_deletion_protection=None, json=False, jwt_ttl_default=None, jwt_ttl_max=None, jwt_ttl_min=None, lock_allowed_client_type=None, lock_bound_ips=None, lock_default_key=None, lock_gw_bound_ips=None, lock_max_ttl=None, max_rotation_interval=None, max_rotation_interval_enable=None, max_versions=None, password_expiration_days=None, password_expiration_notification_days=None, password_length=None, phone=None, postal_code=None, token=None, uid_token=None, usage_event_enable=None, usage_event_interval=None, usage_event_object_type=None, use_capital_letters=None, use_lower_letters=None, use_numbers=None, use_special_characters=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, address=None, allowed_client_type=None, allowed_email_domains=None, bound_ips=None, city=None, company_name=None, country=None, default_certificate_expiration_notification_days=None, default_key_name=None, default_share_link_ttl_minutes=None, default_versioning=None, dp_enable_classic_key_protection=None, dynamic_secret_max_ttl=None, dynamic_secret_max_ttl_enable=None, enable_ai_insights=None, enable_ai_quorum=None, enable_default_certificate_expiration_event=None, enable_item_sharing=None, enable_password_expiration=None, force_new_versions=None, gw_bound_ips=None, hide_personal_folder=None, hide_static_password=None, invalid_characters='notReceivedInvalidCharacter', item_locking_enabled=None, item_type=None, items_deletion_protection=None, json=False, jwt_ttl_default=None, jwt_ttl_max=None, jwt_ttl_min=None, lock_allowed_client_type=None, lock_bound_ips=None, lock_default_key=None, lock_gw_bound_ips=None, lock_max_ttl=None, max_rotation_interval=None, max_rotation_interval_enable=None, max_versions=None, password_expiration_days=None, password_expiration_notification_days=None, password_length=None, phone=None, postal_code=None, token=None, uid_token=None, usage_event_enable=None, usage_event_interval=None, usage_event_object_type=None, use_capital_letters=None, use_lower_letters=None, use_numbers=None, use_special_characters=None, local_vars_configuration=None):  # noqa: E501
         """UpdateAccountSettings - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -164,6 +166,7 @@ class UpdateAccountSettings(object):
         self._dynamic_secret_max_ttl = None
         self._dynamic_secret_max_ttl_enable = None
         self._enable_ai_insights = None
+        self._enable_ai_quorum = None
         self._enable_default_certificate_expiration_event = None
         self._enable_item_sharing = None
         self._enable_password_expiration = None
@@ -233,6 +236,8 @@ class UpdateAccountSettings(object):
             self.dynamic_secret_max_ttl_enable = dynamic_secret_max_ttl_enable
         if enable_ai_insights is not None:
             self.enable_ai_insights = enable_ai_insights
+        if enable_ai_quorum is not None:
+            self.enable_ai_quorum = enable_ai_quorum
         if enable_default_certificate_expiration_event is not None:
             self.enable_default_certificate_expiration_event = enable_default_certificate_expiration_event
         if enable_item_sharing is not None:
@@ -652,6 +657,29 @@ class UpdateAccountSettings(object):
         """
 
         self._enable_ai_insights = enable_ai_insights
+
+    @property
+    def enable_ai_quorum(self):
+        """Gets the enable_ai_quorum of this UpdateAccountSettings.  # noqa: E501
+
+        Enable AI Quorum checks account-wide [true/false]  # noqa: E501
+
+        :return: The enable_ai_quorum of this UpdateAccountSettings.  # noqa: E501
+        :rtype: str
+        """
+        return self._enable_ai_quorum
+
+    @enable_ai_quorum.setter
+    def enable_ai_quorum(self, enable_ai_quorum):
+        """Sets the enable_ai_quorum of this UpdateAccountSettings.
+
+        Enable AI Quorum checks account-wide [true/false]  # noqa: E501
+
+        :param enable_ai_quorum: The enable_ai_quorum of this UpdateAccountSettings.  # noqa: E501
+        :type: str
+        """
+
+        self._enable_ai_quorum = enable_ai_quorum
 
     @property
     def enable_default_certificate_expiration_event(self):

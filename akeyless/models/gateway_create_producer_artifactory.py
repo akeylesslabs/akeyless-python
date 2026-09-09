@@ -42,6 +42,8 @@ class GatewayCreateProducerArtifactory(object):
         'base_url': 'str',
         'custom_username_template': 'str',
         'delete_protection': 'str',
+        'enable_agentic_runtime_authority': 'bool',
+        'enable_ai_quorum': 'bool',
         'input_rule': 'list[str]',
         'item_custom_fields': 'dict(str, str)',
         'json': 'bool',
@@ -65,6 +67,8 @@ class GatewayCreateProducerArtifactory(object):
         'base_url': 'base-url',
         'custom_username_template': 'custom-username-template',
         'delete_protection': 'delete_protection',
+        'enable_agentic_runtime_authority': 'enable-agentic-runtime-authority',
+        'enable_ai_quorum': 'enable-ai-quorum',
         'input_rule': 'input-rule',
         'item_custom_fields': 'item-custom-fields',
         'json': 'json',
@@ -79,7 +83,7 @@ class GatewayCreateProducerArtifactory(object):
         'user_ttl': 'user-ttl'
     }
 
-    def __init__(self, ara_enabled=None, artifactory_admin_name=None, artifactory_admin_pwd=None, artifactory_token_audience=None, artifactory_token_scope=None, base_url=None, custom_username_template=None, delete_protection=None, input_rule=None, item_custom_fields=None, json=False, name=None, output_rule=None, producer_encryption_key_name=None, skip_dry_run=None, tags=None, target_name=None, token=None, uid_token=None, user_ttl='60m', local_vars_configuration=None):  # noqa: E501
+    def __init__(self, ara_enabled=None, artifactory_admin_name=None, artifactory_admin_pwd=None, artifactory_token_audience=None, artifactory_token_scope=None, base_url=None, custom_username_template=None, delete_protection=None, enable_agentic_runtime_authority=None, enable_ai_quorum=None, input_rule=None, item_custom_fields=None, json=False, name=None, output_rule=None, producer_encryption_key_name=None, skip_dry_run=None, tags=None, target_name=None, token=None, uid_token=None, user_ttl='60m', local_vars_configuration=None):  # noqa: E501
         """GatewayCreateProducerArtifactory - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -93,6 +97,8 @@ class GatewayCreateProducerArtifactory(object):
         self._base_url = None
         self._custom_username_template = None
         self._delete_protection = None
+        self._enable_agentic_runtime_authority = None
+        self._enable_ai_quorum = None
         self._input_rule = None
         self._item_custom_fields = None
         self._json = None
@@ -121,6 +127,10 @@ class GatewayCreateProducerArtifactory(object):
             self.custom_username_template = custom_username_template
         if delete_protection is not None:
             self.delete_protection = delete_protection
+        if enable_agentic_runtime_authority is not None:
+            self.enable_agentic_runtime_authority = enable_agentic_runtime_authority
+        if enable_ai_quorum is not None:
+            self.enable_ai_quorum = enable_ai_quorum
         if input_rule is not None:
             self.input_rule = input_rule
         if item_custom_fields is not None:
@@ -332,6 +342,52 @@ class GatewayCreateProducerArtifactory(object):
         """
 
         self._delete_protection = delete_protection
+
+    @property
+    def enable_agentic_runtime_authority(self):
+        """Gets the enable_agentic_runtime_authority of this GatewayCreateProducerArtifactory.  # noqa: E501
+
+        EnableAra is the documented spelling of AraEnabled; --ara-enabled shipped first and stays as an undocumented alias.  # noqa: E501
+
+        :return: The enable_agentic_runtime_authority of this GatewayCreateProducerArtifactory.  # noqa: E501
+        :rtype: bool
+        """
+        return self._enable_agentic_runtime_authority
+
+    @enable_agentic_runtime_authority.setter
+    def enable_agentic_runtime_authority(self, enable_agentic_runtime_authority):
+        """Sets the enable_agentic_runtime_authority of this GatewayCreateProducerArtifactory.
+
+        EnableAra is the documented spelling of AraEnabled; --ara-enabled shipped first and stays as an undocumented alias.  # noqa: E501
+
+        :param enable_agentic_runtime_authority: The enable_agentic_runtime_authority of this GatewayCreateProducerArtifactory.  # noqa: E501
+        :type: bool
+        """
+
+        self._enable_agentic_runtime_authority = enable_agentic_runtime_authority
+
+    @property
+    def enable_ai_quorum(self):
+        """Gets the enable_ai_quorum of this GatewayCreateProducerArtifactory.  # noqa: E501
+
+        Turns on AI Quorum checks for this item.  # noqa: E501
+
+        :return: The enable_ai_quorum of this GatewayCreateProducerArtifactory.  # noqa: E501
+        :rtype: bool
+        """
+        return self._enable_ai_quorum
+
+    @enable_ai_quorum.setter
+    def enable_ai_quorum(self, enable_ai_quorum):
+        """Sets the enable_ai_quorum of this GatewayCreateProducerArtifactory.
+
+        Turns on AI Quorum checks for this item.  # noqa: E501
+
+        :param enable_ai_quorum: The enable_ai_quorum of this GatewayCreateProducerArtifactory.  # noqa: E501
+        :type: bool
+        """
+
+        self._enable_ai_quorum = enable_ai_quorum
 
     @property
     def input_rule(self):

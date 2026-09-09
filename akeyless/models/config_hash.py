@@ -51,6 +51,7 @@ class ConfigHash(object):
         'producers_status': 'str',
         'rotators': 'object',
         'saml': 'str',
+        'saml_sp': 'str',
         'universal_identity': 'str'
     }
 
@@ -72,10 +73,11 @@ class ConfigHash(object):
         'producers_status': 'producers_status',
         'rotators': 'rotators',
         'saml': 'saml',
+        'saml_sp': 'saml_sp',
         'universal_identity': 'universal_identity'
     }
 
-    def __init__(self, admins=None, ai_insights=None, cache=None, customer_fragements=None, general=None, k8s_auths=None, kmip=None, ldap=None, leadership=None, log_forwarding=None, m_queue=None, migration_status=None, migrations=None, producers=None, producers_status=None, rotators=None, saml=None, universal_identity=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, admins=None, ai_insights=None, cache=None, customer_fragements=None, general=None, k8s_auths=None, kmip=None, ldap=None, leadership=None, log_forwarding=None, m_queue=None, migration_status=None, migrations=None, producers=None, producers_status=None, rotators=None, saml=None, saml_sp=None, universal_identity=None, local_vars_configuration=None):  # noqa: E501
         """ConfigHash - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -98,6 +100,7 @@ class ConfigHash(object):
         self._producers_status = None
         self._rotators = None
         self._saml = None
+        self._saml_sp = None
         self._universal_identity = None
         self.discriminator = None
 
@@ -135,6 +138,8 @@ class ConfigHash(object):
             self.rotators = rotators
         if saml is not None:
             self.saml = saml
+        if saml_sp is not None:
+            self.saml_sp = saml_sp
         if universal_identity is not None:
             self.universal_identity = universal_identity
 
@@ -494,6 +499,27 @@ class ConfigHash(object):
         """
 
         self._saml = saml
+
+    @property
+    def saml_sp(self):
+        """Gets the saml_sp of this ConfigHash.  # noqa: E501
+
+
+        :return: The saml_sp of this ConfigHash.  # noqa: E501
+        :rtype: str
+        """
+        return self._saml_sp
+
+    @saml_sp.setter
+    def saml_sp(self, saml_sp):
+        """Sets the saml_sp of this ConfigHash.
+
+
+        :param saml_sp: The saml_sp of this ConfigHash.  # noqa: E501
+        :type: str
+        """
+
+        self._saml_sp = saml_sp
 
     @property
     def universal_identity(self):

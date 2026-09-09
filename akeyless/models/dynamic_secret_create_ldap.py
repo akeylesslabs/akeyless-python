@@ -41,6 +41,8 @@ class DynamicSecretCreateLdap(object):
         'custom_username_template': 'str',
         'delete_protection': 'str',
         'description': 'str',
+        'enable_agentic_runtime_authority': 'bool',
+        'enable_ai_quorum': 'bool',
         'external_username': 'str',
         'fixed_user_claim_keyname': 'str',
         'group_dn': 'str',
@@ -86,6 +88,8 @@ class DynamicSecretCreateLdap(object):
         'custom_username_template': 'custom-username-template',
         'delete_protection': 'delete_protection',
         'description': 'description',
+        'enable_agentic_runtime_authority': 'enable-agentic-runtime-authority',
+        'enable_ai_quorum': 'enable-ai-quorum',
         'external_username': 'external-username',
         'fixed_user_claim_keyname': 'fixed-user-claim-keyname',
         'group_dn': 'group-dn',
@@ -123,7 +127,7 @@ class DynamicSecretCreateLdap(object):
         'user_ttl': 'user-ttl'
     }
 
-    def __init__(self, provider_type=None, ara_enabled=None, bind_dn=None, bind_dn_password=None, custom_username_template=None, delete_protection=None, description=None, external_username='false', fixed_user_claim_keyname='ext_username', group_dn=None, host_provider=None, input_rule=None, item_custom_fields=None, json=False, ldap_ca_cert=None, ldap_url=None, name=None, output_rule=None, password_length=None, producer_encryption_key_name=None, secure_access_bastion_issuer=None, secure_access_certificate_issuer=None, secure_access_delay=None, secure_access_enable=None, secure_access_enforce_hosts_restriction=None, secure_access_host=None, secure_access_rd_gateway_server=None, secure_access_rdp_domain=None, skip_dry_run=None, tags=None, target=None, target_name=None, token=None, token_expiration=None, uid_token=None, use_capital_letters=None, use_lower_letters=None, use_numbers=None, use_special_characters=None, user_attribute=None, user_dn=None, user_ttl='60m', local_vars_configuration=None):  # noqa: E501
+    def __init__(self, provider_type=None, ara_enabled=None, bind_dn=None, bind_dn_password=None, custom_username_template=None, delete_protection=None, description=None, enable_agentic_runtime_authority=None, enable_ai_quorum=None, external_username='false', fixed_user_claim_keyname='ext_username', group_dn=None, host_provider=None, input_rule=None, item_custom_fields=None, json=False, ldap_ca_cert=None, ldap_url=None, name=None, output_rule=None, password_length=None, producer_encryption_key_name=None, secure_access_bastion_issuer=None, secure_access_certificate_issuer=None, secure_access_delay=None, secure_access_enable=None, secure_access_enforce_hosts_restriction=None, secure_access_host=None, secure_access_rd_gateway_server=None, secure_access_rdp_domain=None, skip_dry_run=None, tags=None, target=None, target_name=None, token=None, token_expiration=None, uid_token=None, use_capital_letters=None, use_lower_letters=None, use_numbers=None, use_special_characters=None, user_attribute=None, user_dn=None, user_ttl='60m', local_vars_configuration=None):  # noqa: E501
         """DynamicSecretCreateLdap - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -136,6 +140,8 @@ class DynamicSecretCreateLdap(object):
         self._custom_username_template = None
         self._delete_protection = None
         self._description = None
+        self._enable_agentic_runtime_authority = None
+        self._enable_ai_quorum = None
         self._external_username = None
         self._fixed_user_claim_keyname = None
         self._group_dn = None
@@ -187,6 +193,10 @@ class DynamicSecretCreateLdap(object):
             self.delete_protection = delete_protection
         if description is not None:
             self.description = description
+        if enable_agentic_runtime_authority is not None:
+            self.enable_agentic_runtime_authority = enable_agentic_runtime_authority
+        if enable_ai_quorum is not None:
+            self.enable_ai_quorum = enable_ai_quorum
         if external_username is not None:
             self.external_username = external_username
         if fixed_user_claim_keyname is not None:
@@ -415,6 +425,52 @@ class DynamicSecretCreateLdap(object):
         """
 
         self._description = description
+
+    @property
+    def enable_agentic_runtime_authority(self):
+        """Gets the enable_agentic_runtime_authority of this DynamicSecretCreateLdap.  # noqa: E501
+
+        EnableAra is the documented spelling of AraEnabled; --ara-enabled shipped first and stays as an undocumented alias.  # noqa: E501
+
+        :return: The enable_agentic_runtime_authority of this DynamicSecretCreateLdap.  # noqa: E501
+        :rtype: bool
+        """
+        return self._enable_agentic_runtime_authority
+
+    @enable_agentic_runtime_authority.setter
+    def enable_agentic_runtime_authority(self, enable_agentic_runtime_authority):
+        """Sets the enable_agentic_runtime_authority of this DynamicSecretCreateLdap.
+
+        EnableAra is the documented spelling of AraEnabled; --ara-enabled shipped first and stays as an undocumented alias.  # noqa: E501
+
+        :param enable_agentic_runtime_authority: The enable_agentic_runtime_authority of this DynamicSecretCreateLdap.  # noqa: E501
+        :type: bool
+        """
+
+        self._enable_agentic_runtime_authority = enable_agentic_runtime_authority
+
+    @property
+    def enable_ai_quorum(self):
+        """Gets the enable_ai_quorum of this DynamicSecretCreateLdap.  # noqa: E501
+
+        Turns on AI Quorum checks for this item.  # noqa: E501
+
+        :return: The enable_ai_quorum of this DynamicSecretCreateLdap.  # noqa: E501
+        :rtype: bool
+        """
+        return self._enable_ai_quorum
+
+    @enable_ai_quorum.setter
+    def enable_ai_quorum(self, enable_ai_quorum):
+        """Sets the enable_ai_quorum of this DynamicSecretCreateLdap.
+
+        Turns on AI Quorum checks for this item.  # noqa: E501
+
+        :param enable_ai_quorum: The enable_ai_quorum of this DynamicSecretCreateLdap.  # noqa: E501
+        :type: bool
+        """
+
+        self._enable_ai_quorum = enable_ai_quorum
 
     @property
     def external_username(self):

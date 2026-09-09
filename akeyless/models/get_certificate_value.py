@@ -36,10 +36,14 @@ class GetCertificateValue(object):
     openapi_types = {
         'cert_issuer_name': 'str',
         'display_id': 'str',
+        'format': 'str',
         'ignore_cache': 'str',
+        'include_private_key': 'bool',
         'issuance_token': 'str',
         'json': 'bool',
+        'leaf_only': 'bool',
         'name': 'str',
+        'password': 'str',
         'token': 'str',
         'uid_token': 'str',
         'version': 'int'
@@ -48,16 +52,20 @@ class GetCertificateValue(object):
     attribute_map = {
         'cert_issuer_name': 'cert-issuer-name',
         'display_id': 'display-id',
+        'format': 'format',
         'ignore_cache': 'ignore-cache',
+        'include_private_key': 'include-private-key',
         'issuance_token': 'issuance-token',
         'json': 'json',
+        'leaf_only': 'leaf-only',
         'name': 'name',
+        'password': 'password',
         'token': 'token',
         'uid_token': 'uid-token',
         'version': 'version'
     }
 
-    def __init__(self, cert_issuer_name=None, display_id=None, ignore_cache='false', issuance_token=None, json=False, name=None, token=None, uid_token=None, version=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, cert_issuer_name=None, display_id=None, format='pem', ignore_cache='false', include_private_key=None, issuance_token=None, json=False, leaf_only=None, name=None, password=None, token=None, uid_token=None, version=None, local_vars_configuration=None):  # noqa: E501
         """GetCertificateValue - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -65,10 +73,14 @@ class GetCertificateValue(object):
 
         self._cert_issuer_name = None
         self._display_id = None
+        self._format = None
         self._ignore_cache = None
+        self._include_private_key = None
         self._issuance_token = None
         self._json = None
+        self._leaf_only = None
         self._name = None
+        self._password = None
         self._token = None
         self._uid_token = None
         self._version = None
@@ -78,14 +90,22 @@ class GetCertificateValue(object):
             self.cert_issuer_name = cert_issuer_name
         if display_id is not None:
             self.display_id = display_id
+        if format is not None:
+            self.format = format
         if ignore_cache is not None:
             self.ignore_cache = ignore_cache
+        if include_private_key is not None:
+            self.include_private_key = include_private_key
         if issuance_token is not None:
             self.issuance_token = issuance_token
         if json is not None:
             self.json = json
+        if leaf_only is not None:
+            self.leaf_only = leaf_only
         if name is not None:
             self.name = name
+        if password is not None:
+            self.password = password
         if token is not None:
             self.token = token
         if uid_token is not None:
@@ -140,6 +160,29 @@ class GetCertificateValue(object):
         self._display_id = display_id
 
     @property
+    def format(self):
+        """Gets the format of this GetCertificateValue.  # noqa: E501
+
+        Format to download the certificate in [pem/pfx/jks], pfx/jks require a password  # noqa: E501
+
+        :return: The format of this GetCertificateValue.  # noqa: E501
+        :rtype: str
+        """
+        return self._format
+
+    @format.setter
+    def format(self, format):
+        """Sets the format of this GetCertificateValue.
+
+        Format to download the certificate in [pem/pfx/jks], pfx/jks require a password  # noqa: E501
+
+        :param format: The format of this GetCertificateValue.  # noqa: E501
+        :type: str
+        """
+
+        self._format = format
+
+    @property
     def ignore_cache(self):
         """Gets the ignore_cache of this GetCertificateValue.  # noqa: E501
 
@@ -161,6 +204,29 @@ class GetCertificateValue(object):
         """
 
         self._ignore_cache = ignore_cache
+
+    @property
+    def include_private_key(self):
+        """Gets the include_private_key of this GetCertificateValue.  # noqa: E501
+
+        If set, includes the private key in the pfx/jks file, only relevant when format is pfx or jks  # noqa: E501
+
+        :return: The include_private_key of this GetCertificateValue.  # noqa: E501
+        :rtype: bool
+        """
+        return self._include_private_key
+
+    @include_private_key.setter
+    def include_private_key(self, include_private_key):
+        """Sets the include_private_key of this GetCertificateValue.
+
+        If set, includes the private key in the pfx/jks file, only relevant when format is pfx or jks  # noqa: E501
+
+        :param include_private_key: The include_private_key of this GetCertificateValue.  # noqa: E501
+        :type: bool
+        """
+
+        self._include_private_key = include_private_key
 
     @property
     def issuance_token(self):
@@ -209,6 +275,29 @@ class GetCertificateValue(object):
         self._json = json
 
     @property
+    def leaf_only(self):
+        """Gets the leaf_only of this GetCertificateValue.  # noqa: E501
+
+        If set, downloads only the leaf certificate instead of the full chain, only available for certificates issued with split certificate chain enabled  # noqa: E501
+
+        :return: The leaf_only of this GetCertificateValue.  # noqa: E501
+        :rtype: bool
+        """
+        return self._leaf_only
+
+    @leaf_only.setter
+    def leaf_only(self, leaf_only):
+        """Sets the leaf_only of this GetCertificateValue.
+
+        If set, downloads only the leaf certificate instead of the full chain, only available for certificates issued with split certificate chain enabled  # noqa: E501
+
+        :param leaf_only: The leaf_only of this GetCertificateValue.  # noqa: E501
+        :type: bool
+        """
+
+        self._leaf_only = leaf_only
+
+    @property
     def name(self):
         """Gets the name of this GetCertificateValue.  # noqa: E501
 
@@ -230,6 +319,29 @@ class GetCertificateValue(object):
         """
 
         self._name = name
+
+    @property
+    def password(self):
+        """Gets the password of this GetCertificateValue.  # noqa: E501
+
+        Password to protect the pfx/jks file, required when format is pfx or jks  # noqa: E501
+
+        :return: The password of this GetCertificateValue.  # noqa: E501
+        :rtype: str
+        """
+        return self._password
+
+    @password.setter
+    def password(self, password):
+        """Sets the password of this GetCertificateValue.
+
+        Password to protect the pfx/jks file, required when format is pfx or jks  # noqa: E501
+
+        :param password: The password of this GetCertificateValue.  # noqa: E501
+        :type: str
+        """
+
+        self._password = password
 
     @property
     def token(self):

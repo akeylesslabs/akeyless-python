@@ -37,6 +37,7 @@ class StaticSecretSync(object):
         'delete_remote': 'bool',
         'environments': 'str',
         'filter_secret_value': 'str',
+        'gcp_project_id': 'str',
         'json': 'bool',
         'name': 'str',
         'namespace': 'str',
@@ -51,6 +52,7 @@ class StaticSecretSync(object):
         'delete_remote': 'delete-remote',
         'environments': 'environments',
         'filter_secret_value': 'filter-secret-value',
+        'gcp_project_id': 'gcp-project-id',
         'json': 'json',
         'name': 'name',
         'namespace': 'namespace',
@@ -61,7 +63,7 @@ class StaticSecretSync(object):
         'usc_name': 'usc-name'
     }
 
-    def __init__(self, delete_remote=None, environments=None, filter_secret_value=None, json=False, name=None, namespace=None, remote_secret_name=None, repositories=None, token=None, uid_token=None, usc_name=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, delete_remote=None, environments=None, filter_secret_value=None, gcp_project_id=None, json=False, name=None, namespace=None, remote_secret_name=None, repositories=None, token=None, uid_token=None, usc_name=None, local_vars_configuration=None):  # noqa: E501
         """StaticSecretSync - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -70,6 +72,7 @@ class StaticSecretSync(object):
         self._delete_remote = None
         self._environments = None
         self._filter_secret_value = None
+        self._gcp_project_id = None
         self._json = None
         self._name = None
         self._namespace = None
@@ -86,6 +89,8 @@ class StaticSecretSync(object):
             self.environments = environments
         if filter_secret_value is not None:
             self.filter_secret_value = filter_secret_value
+        if gcp_project_id is not None:
+            self.gcp_project_id = gcp_project_id
         if json is not None:
             self.json = json
         self.name = name
@@ -170,6 +175,29 @@ class StaticSecretSync(object):
         """
 
         self._filter_secret_value = filter_secret_value
+
+    @property
+    def gcp_project_id(self):
+        """Gets the gcp_project_id of this StaticSecretSync.  # noqa: E501
+
+        GCP project to sync the secret to. Relevant only for GCP USCs; must be a project available on the USC  # noqa: E501
+
+        :return: The gcp_project_id of this StaticSecretSync.  # noqa: E501
+        :rtype: str
+        """
+        return self._gcp_project_id
+
+    @gcp_project_id.setter
+    def gcp_project_id(self, gcp_project_id):
+        """Sets the gcp_project_id of this StaticSecretSync.
+
+        GCP project to sync the secret to. Relevant only for GCP USCs; must be a project available on the USC  # noqa: E501
+
+        :param gcp_project_id: The gcp_project_id of this StaticSecretSync.  # noqa: E501
+        :type: str
+        """
+
+        self._gcp_project_id = gcp_project_id
 
     @property
     def json(self):

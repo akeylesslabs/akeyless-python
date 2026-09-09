@@ -10,8 +10,11 @@ Name | Type | Description | Notes
 **grok_url** | **str** | Base URL of the xAI API | [optional] [default to 'https://api.x.ai/v1']
 **json** | **bool** | Set output format to JSON | [optional] [default to False]
 **key** | **str** | The name of a key that used to encrypt the target secret value (if empty, the account default protectionKey key will be used) | [optional] 
+**lock_on_read** | **str** | Lock this secret after each successful value read | [optional] 
+**lock_ttl** | **str** | Lock TTL in minutes | [optional] 
 **max_versions** | **str** | Set the maximum number of versions, limited by the account settings defaults. | [optional] 
 **name** | **str** | Target name | 
+**rotate_on_unlock** | **str** | Rotate this secret after it is unlocked | [optional] 
 **team_id** | **str** | ID of the team this API key belongs to | [optional] 
 **token** | **str** | Authentication token (see &#x60;/auth&#x60; and &#x60;/configure&#x60;) | [optional] 
 **uid_token** | **str** | The universal identity token, Required only for universal_identity authentication | [optional] 

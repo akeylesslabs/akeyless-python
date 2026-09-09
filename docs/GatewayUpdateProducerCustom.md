@@ -9,6 +9,8 @@ Name | Type | Description | Notes
 **create_sync_url** | **str** | URL of an endpoint that implements /sync/create method, for example https://webhook.example.com/sync/create | 
 **delete_protection** | **str** | Protection from accidental deletion of this object [true/false] | [optional] 
 **enable_admin_rotation** | **bool** | Should admin credentials be rotated | [optional] [default to False]
+**enable_agentic_runtime_authority** | **bool** | EnableAra is the documented spelling of AraEnabled; --ara-enabled shipped first and stays as an undocumented alias. | [optional] 
+**enable_ai_quorum** | **bool** | Turns on AI Quorum checks for this item. | [optional] 
 **input_rule** | **list[str]** | Agentic input rule in name&#x3D;...,rule&#x3D;... format (e.g. name&#x3D;rule1,rule&#x3D;Sanitize input) Mirrors commands.AgenticRulesParams — kept separate because ResourceDS cannot embed it (different package, different struct layout). | [optional] 
 **item_custom_fields** | **dict(str, str)** | Additional custom fields to associate with the item | [optional] 
 **json** | **bool** | Set output format to JSON | [optional] [default to False]

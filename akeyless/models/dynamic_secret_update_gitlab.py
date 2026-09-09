@@ -37,6 +37,8 @@ class DynamicSecretUpdateGitlab(object):
         'ara_enabled': 'bool',
         'delete_protection': 'str',
         'description': 'str',
+        'enable_agentic_runtime_authority': 'bool',
+        'enable_ai_quorum': 'bool',
         'gitlab_access_token': 'str',
         'gitlab_access_type': 'str',
         'gitlab_certificate': 'str',
@@ -63,6 +65,8 @@ class DynamicSecretUpdateGitlab(object):
         'ara_enabled': 'ara-enabled',
         'delete_protection': 'delete_protection',
         'description': 'description',
+        'enable_agentic_runtime_authority': 'enable-agentic-runtime-authority',
+        'enable_ai_quorum': 'enable-ai-quorum',
         'gitlab_access_token': 'gitlab-access-token',
         'gitlab_access_type': 'gitlab-access-type',
         'gitlab_certificate': 'gitlab-certificate',
@@ -85,7 +89,7 @@ class DynamicSecretUpdateGitlab(object):
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, ara_enabled=None, delete_protection=None, description=None, gitlab_access_token=None, gitlab_access_type=None, gitlab_certificate=None, gitlab_role=None, gitlab_token_scopes=None, gitlab_url='https://gitlab.com/', group_name=None, input_rule=None, installation_organization=None, item_custom_fields=None, json=False, name=None, new_name=None, output_rule=None, skip_dry_run=None, tags=None, target_name=None, token=None, ttl=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, ara_enabled=None, delete_protection=None, description=None, enable_agentic_runtime_authority=None, enable_ai_quorum=None, gitlab_access_token=None, gitlab_access_type=None, gitlab_certificate=None, gitlab_role=None, gitlab_token_scopes=None, gitlab_url='https://gitlab.com/', group_name=None, input_rule=None, installation_organization=None, item_custom_fields=None, json=False, name=None, new_name=None, output_rule=None, skip_dry_run=None, tags=None, target_name=None, token=None, ttl=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """DynamicSecretUpdateGitlab - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -94,6 +98,8 @@ class DynamicSecretUpdateGitlab(object):
         self._ara_enabled = None
         self._delete_protection = None
         self._description = None
+        self._enable_agentic_runtime_authority = None
+        self._enable_ai_quorum = None
         self._gitlab_access_token = None
         self._gitlab_access_type = None
         self._gitlab_certificate = None
@@ -122,6 +128,10 @@ class DynamicSecretUpdateGitlab(object):
             self.delete_protection = delete_protection
         if description is not None:
             self.description = description
+        if enable_agentic_runtime_authority is not None:
+            self.enable_agentic_runtime_authority = enable_agentic_runtime_authority
+        if enable_ai_quorum is not None:
+            self.enable_ai_quorum = enable_ai_quorum
         if gitlab_access_token is not None:
             self.gitlab_access_token = gitlab_access_token
         self.gitlab_access_type = gitlab_access_type
@@ -228,6 +238,52 @@ class DynamicSecretUpdateGitlab(object):
         """
 
         self._description = description
+
+    @property
+    def enable_agentic_runtime_authority(self):
+        """Gets the enable_agentic_runtime_authority of this DynamicSecretUpdateGitlab.  # noqa: E501
+
+        EnableAra is the documented spelling of AraEnabled; --ara-enabled shipped first and stays as an undocumented alias.  # noqa: E501
+
+        :return: The enable_agentic_runtime_authority of this DynamicSecretUpdateGitlab.  # noqa: E501
+        :rtype: bool
+        """
+        return self._enable_agentic_runtime_authority
+
+    @enable_agentic_runtime_authority.setter
+    def enable_agentic_runtime_authority(self, enable_agentic_runtime_authority):
+        """Sets the enable_agentic_runtime_authority of this DynamicSecretUpdateGitlab.
+
+        EnableAra is the documented spelling of AraEnabled; --ara-enabled shipped first and stays as an undocumented alias.  # noqa: E501
+
+        :param enable_agentic_runtime_authority: The enable_agentic_runtime_authority of this DynamicSecretUpdateGitlab.  # noqa: E501
+        :type: bool
+        """
+
+        self._enable_agentic_runtime_authority = enable_agentic_runtime_authority
+
+    @property
+    def enable_ai_quorum(self):
+        """Gets the enable_ai_quorum of this DynamicSecretUpdateGitlab.  # noqa: E501
+
+        Turns on AI Quorum checks for this item.  # noqa: E501
+
+        :return: The enable_ai_quorum of this DynamicSecretUpdateGitlab.  # noqa: E501
+        :rtype: bool
+        """
+        return self._enable_ai_quorum
+
+    @enable_ai_quorum.setter
+    def enable_ai_quorum(self, enable_ai_quorum):
+        """Sets the enable_ai_quorum of this DynamicSecretUpdateGitlab.
+
+        Turns on AI Quorum checks for this item.  # noqa: E501
+
+        :param enable_ai_quorum: The enable_ai_quorum of this DynamicSecretUpdateGitlab.  # noqa: E501
+        :type: bool
+        """
+
+        self._enable_ai_quorum = enable_ai_quorum
 
     @property
     def gitlab_access_token(self):

@@ -47,6 +47,9 @@ class SraSessionEntryOut(object):
         'start_time': 'datetime',
         'status': 'str',
         'target_host': 'str',
+        'target_id': 'int',
+        'target_name': 'str',
+        'target_type': 'str',
         'ttl': 'str',
         'user_identifier': 'str'
     }
@@ -65,11 +68,14 @@ class SraSessionEntryOut(object):
         'start_time': 'start_time',
         'status': 'status',
         'target_host': 'target_host',
+        'target_id': 'target_id',
+        'target_name': 'target_name',
+        'target_type': 'target_type',
         'ttl': 'ttl',
         'user_identifier': 'user_identifier'
     }
 
-    def __init__(self, access_id=None, client_type=None, cluster_unique_id=None, connection_type=None, end_time=None, error_msg=None, gateway_info=None, instance_id=None, secret_name=None, session_id=None, start_time=None, status=None, target_host=None, ttl=None, user_identifier=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, access_id=None, client_type=None, cluster_unique_id=None, connection_type=None, end_time=None, error_msg=None, gateway_info=None, instance_id=None, secret_name=None, session_id=None, start_time=None, status=None, target_host=None, target_id=None, target_name=None, target_type=None, ttl=None, user_identifier=None, local_vars_configuration=None):  # noqa: E501
         """SraSessionEntryOut - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -88,6 +94,9 @@ class SraSessionEntryOut(object):
         self._start_time = None
         self._status = None
         self._target_host = None
+        self._target_id = None
+        self._target_name = None
+        self._target_type = None
         self._ttl = None
         self._user_identifier = None
         self.discriminator = None
@@ -118,6 +127,12 @@ class SraSessionEntryOut(object):
             self.status = status
         if target_host is not None:
             self.target_host = target_host
+        if target_id is not None:
+            self.target_id = target_id
+        if target_name is not None:
+            self.target_name = target_name
+        if target_type is not None:
+            self.target_type = target_type
         if ttl is not None:
             self.ttl = ttl
         if user_identifier is not None:
@@ -395,6 +410,69 @@ class SraSessionEntryOut(object):
         """
 
         self._target_host = target_host
+
+    @property
+    def target_id(self):
+        """Gets the target_id of this SraSessionEntryOut.  # noqa: E501
+
+
+        :return: The target_id of this SraSessionEntryOut.  # noqa: E501
+        :rtype: int
+        """
+        return self._target_id
+
+    @target_id.setter
+    def target_id(self, target_id):
+        """Sets the target_id of this SraSessionEntryOut.
+
+
+        :param target_id: The target_id of this SraSessionEntryOut.  # noqa: E501
+        :type: int
+        """
+
+        self._target_id = target_id
+
+    @property
+    def target_name(self):
+        """Gets the target_name of this SraSessionEntryOut.  # noqa: E501
+
+
+        :return: The target_name of this SraSessionEntryOut.  # noqa: E501
+        :rtype: str
+        """
+        return self._target_name
+
+    @target_name.setter
+    def target_name(self, target_name):
+        """Sets the target_name of this SraSessionEntryOut.
+
+
+        :param target_name: The target_name of this SraSessionEntryOut.  # noqa: E501
+        :type: str
+        """
+
+        self._target_name = target_name
+
+    @property
+    def target_type(self):
+        """Gets the target_type of this SraSessionEntryOut.  # noqa: E501
+
+
+        :return: The target_type of this SraSessionEntryOut.  # noqa: E501
+        :rtype: str
+        """
+        return self._target_type
+
+    @target_type.setter
+    def target_type(self, target_type):
+        """Sets the target_type of this SraSessionEntryOut.
+
+
+        :param target_type: The target_type of this SraSessionEntryOut.  # noqa: E501
+        :type: str
+        """
+
+        self._target_type = target_type
 
     @property
     def ttl(self):

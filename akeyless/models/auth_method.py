@@ -357,7 +357,7 @@ class AuthMethod(object):
     def bookmark_login_url_template(self):
         """Gets the bookmark_login_url_template of this AuthMethod.  # noqa: E501
 
-        BookmarkLoginURLTemplate is an OIDC login URL template for console bookmarks. SaaS-owned methods use {redirect_uri} for client substitution; AuthViaGw embeds the GW console callback.  # noqa: E501
+        BookmarkLoginURLTemplate is an OIDC/SAML login URL template for console bookmarks. SaaS-owned methods use {redirect_uri} for client substitution; AuthViaGw embeds the GW console callback.  # noqa: E501
 
         :return: The bookmark_login_url_template of this AuthMethod.  # noqa: E501
         :rtype: str
@@ -368,7 +368,7 @@ class AuthMethod(object):
     def bookmark_login_url_template(self, bookmark_login_url_template):
         """Sets the bookmark_login_url_template of this AuthMethod.
 
-        BookmarkLoginURLTemplate is an OIDC login URL template for console bookmarks. SaaS-owned methods use {redirect_uri} for client substitution; AuthViaGw embeds the GW console callback.  # noqa: E501
+        BookmarkLoginURLTemplate is an OIDC/SAML login URL template for console bookmarks. SaaS-owned methods use {redirect_uri} for client substitution; AuthViaGw embeds the GW console callback.  # noqa: E501
 
         :param bookmark_login_url_template: The bookmark_login_url_template of this AuthMethod.  # noqa: E501
         :type: str

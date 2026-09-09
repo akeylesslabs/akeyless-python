@@ -6,6 +6,8 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **ara_enabled** | **bool** | Enable or disable Agentic Runtime Authority rule enforcement for this item. Mirrors commands.AgenticRulesParams.AraEnabled. | [optional] 
 **delete_protection** | **str** | Protection from accidental deletion of this object [true/false] | [optional] 
+**enable_agentic_runtime_authority** | **bool** | EnableAra is the documented spelling of AraEnabled; --ara-enabled shipped first and stays as an undocumented alias. | [optional] 
+**enable_ai_quorum** | **bool** | Turns on AI Quorum checks for this item. | [optional] 
 **github_app_id** | **int** | Github app id | [optional] 
 **github_app_private_key** | **str** | App private key | [optional] 
 **github_base_url** | **str** | Base URL | [optional] [default to 'https://api.github.com/']

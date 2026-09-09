@@ -10,6 +10,8 @@ Name | Type | Description | Notes
 **bind_dn_password** | **str** | Bind DN Password | [optional] 
 **custom_username_template** | **str** | Customize how temporary usernames are generated using go template | [optional] 
 **delete_protection** | **str** | Protection from accidental deletion of this object [true/false] | [optional] 
+**enable_agentic_runtime_authority** | **bool** | EnableAra is the documented spelling of AraEnabled; --ara-enabled shipped first and stays as an undocumented alias. | [optional] 
+**enable_ai_quorum** | **bool** | Turns on AI Quorum checks for this item. | [optional] 
 **external_username** | **str** | Externally provided username [true/false] | [optional] [default to 'false']
 **fixed_user_claim_keyname** | **str** | For externally provided users, denotes the key-name of IdP claim to extract the username from (relevant only for external-username&#x3D;true) | [optional] [default to 'ext_username']
 **group_dn** | **str** | Group DN which the temporary user should be added | [optional] 

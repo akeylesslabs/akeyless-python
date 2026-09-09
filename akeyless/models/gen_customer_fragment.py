@@ -36,6 +36,8 @@ class GenCustomerFragment(object):
     openapi_types = {
         'description': 'str',
         'hsm_key_label': 'str',
+        'hsm_provider': 'str',
+        'hsm_wrap_alg': 'str',
         'json': 'bool',
         'metadata': 'str',
         'name': 'str',
@@ -45,13 +47,15 @@ class GenCustomerFragment(object):
     attribute_map = {
         'description': 'description',
         'hsm_key_label': 'hsm-key-label',
+        'hsm_provider': 'hsm-provider',
+        'hsm_wrap_alg': 'hsm-wrap-alg',
         'json': 'json',
         'metadata': 'metadata',
         'name': 'name',
         'type': 'type'
     }
 
-    def __init__(self, description=None, hsm_key_label=None, json=False, metadata=None, name=None, type='standard', local_vars_configuration=None):  # noqa: E501
+    def __init__(self, description=None, hsm_key_label=None, hsm_provider='pkcs11', hsm_wrap_alg=None, json=False, metadata=None, name=None, type='standard', local_vars_configuration=None):  # noqa: E501
         """GenCustomerFragment - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -59,6 +63,8 @@ class GenCustomerFragment(object):
 
         self._description = None
         self._hsm_key_label = None
+        self._hsm_provider = None
+        self._hsm_wrap_alg = None
         self._json = None
         self._metadata = None
         self._name = None
@@ -69,6 +75,10 @@ class GenCustomerFragment(object):
             self.description = description
         if hsm_key_label is not None:
             self.hsm_key_label = hsm_key_label
+        if hsm_provider is not None:
+            self.hsm_provider = hsm_provider
+        if hsm_wrap_alg is not None:
+            self.hsm_wrap_alg = hsm_wrap_alg
         if json is not None:
             self.json = json
         if metadata is not None:
@@ -105,7 +115,7 @@ class GenCustomerFragment(object):
     def hsm_key_label(self):
         """Gets the hsm_key_label of this GenCustomerFragment.  # noqa: E501
 
-        The label of the hsm key to use for customer fragment operations (relevant for hsm_wrapped/hsm_protected customer fragments)  # noqa: E501
+        The label of the hsm key to use for customer fragment operations (relevant for hsm wrap customer fragments)  # noqa: E501
 
         :return: The hsm_key_label of this GenCustomerFragment.  # noqa: E501
         :rtype: str
@@ -116,13 +126,59 @@ class GenCustomerFragment(object):
     def hsm_key_label(self, hsm_key_label):
         """Sets the hsm_key_label of this GenCustomerFragment.
 
-        The label of the hsm key to use for customer fragment operations (relevant for hsm_wrapped/hsm_protected customer fragments)  # noqa: E501
+        The label of the hsm key to use for customer fragment operations (relevant for hsm wrap customer fragments)  # noqa: E501
 
         :param hsm_key_label: The hsm_key_label of this GenCustomerFragment.  # noqa: E501
         :type: str
         """
 
         self._hsm_key_label = hsm_key_label
+
+    @property
+    def hsm_provider(self):
+        """Gets the hsm_provider of this GenCustomerFragment.  # noqa: E501
+
+        The HSM provider to use for hsm wrap customer fragments  # noqa: E501
+
+        :return: The hsm_provider of this GenCustomerFragment.  # noqa: E501
+        :rtype: str
+        """
+        return self._hsm_provider
+
+    @hsm_provider.setter
+    def hsm_provider(self, hsm_provider):
+        """Sets the hsm_provider of this GenCustomerFragment.
+
+        The HSM provider to use for hsm wrap customer fragments  # noqa: E501
+
+        :param hsm_provider: The hsm_provider of this GenCustomerFragment.  # noqa: E501
+        :type: str
+        """
+
+        self._hsm_provider = hsm_provider
+
+    @property
+    def hsm_wrap_alg(self):
+        """Gets the hsm_wrap_alg of this GenCustomerFragment.  # noqa: E501
+
+        The HSM wrap algorithm to use for hsm_wrap_encrypt  default for hsm_wrap_encrypt: rsa-oaep-sha256  # noqa: E501
+
+        :return: The hsm_wrap_alg of this GenCustomerFragment.  # noqa: E501
+        :rtype: str
+        """
+        return self._hsm_wrap_alg
+
+    @hsm_wrap_alg.setter
+    def hsm_wrap_alg(self, hsm_wrap_alg):
+        """Sets the hsm_wrap_alg of this GenCustomerFragment.
+
+        The HSM wrap algorithm to use for hsm_wrap_encrypt  default for hsm_wrap_encrypt: rsa-oaep-sha256  # noqa: E501
+
+        :param hsm_wrap_alg: The hsm_wrap_alg of this GenCustomerFragment.  # noqa: E501
+        :type: str
+        """
+
+        self._hsm_wrap_alg = hsm_wrap_alg
 
     @property
     def json(self):
@@ -197,7 +253,7 @@ class GenCustomerFragment(object):
     def type(self):
         """Gets the type of this GenCustomerFragment.  # noqa: E501
 
-        Customer fragment type [standard/hsm_wrapped/hsm_secured]  # noqa: E501
+        Customer fragment type [standard/hsm_wrap_hmac/hsm_wrap_encrypt/hsm_secured]  # noqa: E501
 
         :return: The type of this GenCustomerFragment.  # noqa: E501
         :rtype: str
@@ -208,7 +264,7 @@ class GenCustomerFragment(object):
     def type(self, type):
         """Sets the type of this GenCustomerFragment.
 
-        Customer fragment type [standard/hsm_wrapped/hsm_secured]  # noqa: E501
+        Customer fragment type [standard/hsm_wrap_hmac/hsm_wrap_encrypt/hsm_secured]  # noqa: E501
 
         :param type: The type of this GenCustomerFragment.  # noqa: E501
         :type: str

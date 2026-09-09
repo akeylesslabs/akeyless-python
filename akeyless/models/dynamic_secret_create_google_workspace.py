@@ -39,6 +39,8 @@ class DynamicSecretCreateGoogleWorkspace(object):
         'ara_enabled': 'bool',
         'delete_protection': 'str',
         'description': 'str',
+        'enable_agentic_runtime_authority': 'bool',
+        'enable_ai_quorum': 'bool',
         'fixed_user_claim_keyname': 'str',
         'gcp_key': 'str',
         'group_email': 'str',
@@ -71,6 +73,8 @@ class DynamicSecretCreateGoogleWorkspace(object):
         'ara_enabled': 'ara-enabled',
         'delete_protection': 'delete_protection',
         'description': 'description',
+        'enable_agentic_runtime_authority': 'enable-agentic-runtime-authority',
+        'enable_ai_quorum': 'enable-ai-quorum',
         'fixed_user_claim_keyname': 'fixed-user-claim-keyname',
         'gcp_key': 'gcp-key',
         'group_email': 'group-email',
@@ -97,7 +101,7 @@ class DynamicSecretCreateGoogleWorkspace(object):
         'user_ttl': 'user-ttl'
     }
 
-    def __init__(self, access_mode=None, admin_email=None, ara_enabled=None, delete_protection=None, description=None, fixed_user_claim_keyname='ext_email', gcp_key=None, group_email=None, group_role=None, input_rule=None, item_custom_fields=None, json=False, name=None, output_rule=None, producer_encryption_key_name=None, role_name=None, role_scope=None, secure_access_delay=None, secure_access_enable=None, secure_access_url=None, secure_access_web=True, secure_access_web_browsing=False, secure_access_web_proxy=False, skip_dry_run=None, tags=None, target_name=None, token=None, uid_token=None, user_ttl='60m', local_vars_configuration=None):  # noqa: E501
+    def __init__(self, access_mode=None, admin_email=None, ara_enabled=None, delete_protection=None, description=None, enable_agentic_runtime_authority=None, enable_ai_quorum=None, fixed_user_claim_keyname='ext_email', gcp_key=None, group_email=None, group_role=None, input_rule=None, item_custom_fields=None, json=False, name=None, output_rule=None, producer_encryption_key_name=None, role_name=None, role_scope=None, secure_access_delay=None, secure_access_enable=None, secure_access_url=None, secure_access_web=True, secure_access_web_browsing=False, secure_access_web_proxy=False, skip_dry_run=None, tags=None, target_name=None, token=None, uid_token=None, user_ttl='60m', local_vars_configuration=None):  # noqa: E501
         """DynamicSecretCreateGoogleWorkspace - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -108,6 +112,8 @@ class DynamicSecretCreateGoogleWorkspace(object):
         self._ara_enabled = None
         self._delete_protection = None
         self._description = None
+        self._enable_agentic_runtime_authority = None
+        self._enable_ai_quorum = None
         self._fixed_user_claim_keyname = None
         self._gcp_key = None
         self._group_email = None
@@ -142,6 +148,10 @@ class DynamicSecretCreateGoogleWorkspace(object):
             self.delete_protection = delete_protection
         if description is not None:
             self.description = description
+        if enable_agentic_runtime_authority is not None:
+            self.enable_agentic_runtime_authority = enable_agentic_runtime_authority
+        if enable_ai_quorum is not None:
+            self.enable_ai_quorum = enable_ai_quorum
         if fixed_user_claim_keyname is not None:
             self.fixed_user_claim_keyname = fixed_user_claim_keyname
         if gcp_key is not None:
@@ -306,6 +316,52 @@ class DynamicSecretCreateGoogleWorkspace(object):
         """
 
         self._description = description
+
+    @property
+    def enable_agentic_runtime_authority(self):
+        """Gets the enable_agentic_runtime_authority of this DynamicSecretCreateGoogleWorkspace.  # noqa: E501
+
+        EnableAra is the documented spelling of AraEnabled; --ara-enabled shipped first and stays as an undocumented alias.  # noqa: E501
+
+        :return: The enable_agentic_runtime_authority of this DynamicSecretCreateGoogleWorkspace.  # noqa: E501
+        :rtype: bool
+        """
+        return self._enable_agentic_runtime_authority
+
+    @enable_agentic_runtime_authority.setter
+    def enable_agentic_runtime_authority(self, enable_agentic_runtime_authority):
+        """Sets the enable_agentic_runtime_authority of this DynamicSecretCreateGoogleWorkspace.
+
+        EnableAra is the documented spelling of AraEnabled; --ara-enabled shipped first and stays as an undocumented alias.  # noqa: E501
+
+        :param enable_agentic_runtime_authority: The enable_agentic_runtime_authority of this DynamicSecretCreateGoogleWorkspace.  # noqa: E501
+        :type: bool
+        """
+
+        self._enable_agentic_runtime_authority = enable_agentic_runtime_authority
+
+    @property
+    def enable_ai_quorum(self):
+        """Gets the enable_ai_quorum of this DynamicSecretCreateGoogleWorkspace.  # noqa: E501
+
+        Turns on AI Quorum checks for this item.  # noqa: E501
+
+        :return: The enable_ai_quorum of this DynamicSecretCreateGoogleWorkspace.  # noqa: E501
+        :rtype: bool
+        """
+        return self._enable_ai_quorum
+
+    @enable_ai_quorum.setter
+    def enable_ai_quorum(self, enable_ai_quorum):
+        """Sets the enable_ai_quorum of this DynamicSecretCreateGoogleWorkspace.
+
+        Turns on AI Quorum checks for this item.  # noqa: E501
+
+        :param enable_ai_quorum: The enable_ai_quorum of this DynamicSecretCreateGoogleWorkspace.  # noqa: E501
+        :type: bool
+        """
+
+        self._enable_ai_quorum = enable_ai_quorum
 
     @property
     def fixed_user_claim_keyname(self):

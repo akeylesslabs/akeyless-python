@@ -49,12 +49,15 @@ class UpdateRotatedSecret(object):
         'keep_prev_version': 'str',
         'key': 'str',
         'lock_during_sra_session': 'str',
+        'lock_on_read': 'str',
+        'lock_ttl': 'str',
         'name': 'str',
         'new_metadata': 'str',
         'new_name': 'str',
         'new_version': 'bool',
         'rm_tag': 'list[str]',
         'rotate_after_disconnect': 'str',
+        'rotate_on_unlock': 'str',
         'rotated_password': 'str',
         'rotated_username': 'str',
         'rotation_hour': 'int',
@@ -108,12 +111,15 @@ class UpdateRotatedSecret(object):
         'keep_prev_version': 'keep-prev-version',
         'key': 'key',
         'lock_during_sra_session': 'lock-during-sra-session',
+        'lock_on_read': 'lock-on-read',
+        'lock_ttl': 'lock-ttl',
         'name': 'name',
         'new_metadata': 'new-metadata',
         'new_name': 'new-name',
         'new_version': 'new-version',
         'rm_tag': 'rm-tag',
         'rotate_after_disconnect': 'rotate-after-disconnect',
+        'rotate_on_unlock': 'rotate-on-unlock',
         'rotated_password': 'rotated-password',
         'rotated_username': 'rotated-username',
         'rotation_hour': 'rotation-hour',
@@ -151,7 +157,7 @@ class UpdateRotatedSecret(object):
         'user_dn': 'user-dn'
     }
 
-    def __init__(self, provider_type=None, add_tag=None, api_id=None, api_key=None, auto_rotate=None, aws_region=None, custom_payload=None, description='default_metadata', gcp_key=None, grace_rotation=None, host_provider=None, json=False, keep_prev_version=None, key=None, lock_during_sra_session=None, name=None, new_metadata='default_metadata', new_name=None, new_version=None, rm_tag=None, rotate_after_disconnect=None, rotated_password=None, rotated_username=None, rotation_hour=None, rotation_interval=None, rotator_creds_type='use-self-creds', rotator_custom_cmd=None, same_password=None, secure_access_allow_external_user=None, secure_access_allow_port_forwading=None, secure_access_aws_account_id=None, secure_access_aws_native_cli=None, secure_access_bastion_issuer=None, secure_access_certificate_issuer=None, secure_access_db_name=None, secure_access_db_schema=None, secure_access_disable_concurrent_connections=None, secure_access_enable=None, secure_access_enforce_hosts_restriction=None, secure_access_host=None, secure_access_rdp_domain=None, secure_access_rdp_user=None, secure_access_url=None, secure_access_use_internal_bastion=None, secure_access_use_internal_ssh_access=None, secure_access_web=False, secure_access_web_browsing=None, secure_access_web_proxy=None, ssh_password=None, ssh_username=None, storage_account_key_name=None, target=None, token=None, uid_token=None, user_attribute='cn', user_dn=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, provider_type=None, add_tag=None, api_id=None, api_key=None, auto_rotate=None, aws_region=None, custom_payload=None, description='default_metadata', gcp_key=None, grace_rotation=None, host_provider=None, json=False, keep_prev_version=None, key=None, lock_during_sra_session=None, lock_on_read=None, lock_ttl=None, name=None, new_metadata='default_metadata', new_name=None, new_version=None, rm_tag=None, rotate_after_disconnect=None, rotate_on_unlock=None, rotated_password=None, rotated_username=None, rotation_hour=None, rotation_interval=None, rotator_creds_type='use-self-creds', rotator_custom_cmd=None, same_password=None, secure_access_allow_external_user=None, secure_access_allow_port_forwading=None, secure_access_aws_account_id=None, secure_access_aws_native_cli=None, secure_access_bastion_issuer=None, secure_access_certificate_issuer=None, secure_access_db_name=None, secure_access_db_schema=None, secure_access_disable_concurrent_connections=None, secure_access_enable=None, secure_access_enforce_hosts_restriction=None, secure_access_host=None, secure_access_rdp_domain=None, secure_access_rdp_user=None, secure_access_url=None, secure_access_use_internal_bastion=None, secure_access_use_internal_ssh_access=None, secure_access_web=False, secure_access_web_browsing=None, secure_access_web_proxy=None, ssh_password=None, ssh_username=None, storage_account_key_name=None, target=None, token=None, uid_token=None, user_attribute='cn', user_dn=None, local_vars_configuration=None):  # noqa: E501
         """UpdateRotatedSecret - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -172,12 +178,15 @@ class UpdateRotatedSecret(object):
         self._keep_prev_version = None
         self._key = None
         self._lock_during_sra_session = None
+        self._lock_on_read = None
+        self._lock_ttl = None
         self._name = None
         self._new_metadata = None
         self._new_name = None
         self._new_version = None
         self._rm_tag = None
         self._rotate_after_disconnect = None
+        self._rotate_on_unlock = None
         self._rotated_password = None
         self._rotated_username = None
         self._rotation_hour = None
@@ -245,6 +254,10 @@ class UpdateRotatedSecret(object):
             self.key = key
         if lock_during_sra_session is not None:
             self.lock_during_sra_session = lock_during_sra_session
+        if lock_on_read is not None:
+            self.lock_on_read = lock_on_read
+        if lock_ttl is not None:
+            self.lock_ttl = lock_ttl
         self.name = name
         if new_metadata is not None:
             self.new_metadata = new_metadata
@@ -256,6 +269,8 @@ class UpdateRotatedSecret(object):
             self.rm_tag = rm_tag
         if rotate_after_disconnect is not None:
             self.rotate_after_disconnect = rotate_after_disconnect
+        if rotate_on_unlock is not None:
+            self.rotate_on_unlock = rotate_on_unlock
         if rotated_password is not None:
             self.rotated_password = rotated_password
         if rotated_username is not None:
@@ -671,6 +686,52 @@ class UpdateRotatedSecret(object):
         self._lock_during_sra_session = lock_during_sra_session
 
     @property
+    def lock_on_read(self):
+        """Gets the lock_on_read of this UpdateRotatedSecret.  # noqa: E501
+
+        Lock this secret after each successful value read  # noqa: E501
+
+        :return: The lock_on_read of this UpdateRotatedSecret.  # noqa: E501
+        :rtype: str
+        """
+        return self._lock_on_read
+
+    @lock_on_read.setter
+    def lock_on_read(self, lock_on_read):
+        """Sets the lock_on_read of this UpdateRotatedSecret.
+
+        Lock this secret after each successful value read  # noqa: E501
+
+        :param lock_on_read: The lock_on_read of this UpdateRotatedSecret.  # noqa: E501
+        :type: str
+        """
+
+        self._lock_on_read = lock_on_read
+
+    @property
+    def lock_ttl(self):
+        """Gets the lock_ttl of this UpdateRotatedSecret.  # noqa: E501
+
+        Lock TTL in minutes  # noqa: E501
+
+        :return: The lock_ttl of this UpdateRotatedSecret.  # noqa: E501
+        :rtype: str
+        """
+        return self._lock_ttl
+
+    @lock_ttl.setter
+    def lock_ttl(self, lock_ttl):
+        """Sets the lock_ttl of this UpdateRotatedSecret.
+
+        Lock TTL in minutes  # noqa: E501
+
+        :param lock_ttl: The lock_ttl of this UpdateRotatedSecret.  # noqa: E501
+        :type: str
+        """
+
+        self._lock_ttl = lock_ttl
+
+    @property
     def name(self):
         """Gets the name of this UpdateRotatedSecret.  # noqa: E501
 
@@ -809,6 +870,29 @@ class UpdateRotatedSecret(object):
         """
 
         self._rotate_after_disconnect = rotate_after_disconnect
+
+    @property
+    def rotate_on_unlock(self):
+        """Gets the rotate_on_unlock of this UpdateRotatedSecret.  # noqa: E501
+
+        Rotate this secret after it is unlocked  # noqa: E501
+
+        :return: The rotate_on_unlock of this UpdateRotatedSecret.  # noqa: E501
+        :rtype: str
+        """
+        return self._rotate_on_unlock
+
+    @rotate_on_unlock.setter
+    def rotate_on_unlock(self, rotate_on_unlock):
+        """Sets the rotate_on_unlock of this UpdateRotatedSecret.
+
+        Rotate this secret after it is unlocked  # noqa: E501
+
+        :param rotate_on_unlock: The rotate_on_unlock of this UpdateRotatedSecret.  # noqa: E501
+        :type: str
+        """
+
+        self._rotate_on_unlock = rotate_on_unlock
 
     @property
     def rotated_password(self):

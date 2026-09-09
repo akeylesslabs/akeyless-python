@@ -37,23 +37,31 @@ class UpdateItem(object):
         'provider_type': 'str',
         'accessibility': 'str',
         'add_tag': 'list[str]',
+        'ara_enabled': 'bool',
         'cert_file_data': 'str',
         'certificate_format': 'str',
         'change_event': 'str',
         'delete_protection': 'str',
         'description': 'str',
+        'enable_agentic_runtime_authority': 'bool',
+        'enable_ai_quorum': 'bool',
         'expiration_event_in': 'list[str]',
         'gcp_sm_regions': 'str',
         'host_provider': 'str',
+        'input_rule': 'list[str]',
         'item_custom_fields': 'dict(str, str)',
         'json': 'bool',
         'lock_during_sra_session': 'str',
+        'lock_on_read': 'str',
+        'lock_ttl': 'str',
         'max_versions': 'str',
         'name': 'str',
         'new_metadata': 'str',
         'new_name': 'str',
+        'output_rule': 'list[str]',
         'rm_tag': 'list[str]',
         'rotate_after_disconnect': 'str',
+        'rotate_on_unlock': 'str',
         'secure_access_add_host': 'list[str]',
         'secure_access_allow_external_user': 'str',
         'secure_access_allow_port_forwading': 'bool',
@@ -96,23 +104,31 @@ class UpdateItem(object):
         'provider_type': 'ProviderType',
         'accessibility': 'accessibility',
         'add_tag': 'add-tag',
+        'ara_enabled': 'ara-enabled',
         'cert_file_data': 'cert-file-data',
         'certificate_format': 'certificate-format',
         'change_event': 'change-event',
         'delete_protection': 'delete_protection',
         'description': 'description',
+        'enable_agentic_runtime_authority': 'enable-agentic-runtime-authority',
+        'enable_ai_quorum': 'enable-ai-quorum',
         'expiration_event_in': 'expiration-event-in',
         'gcp_sm_regions': 'gcp-sm-regions',
         'host_provider': 'host-provider',
+        'input_rule': 'input-rule',
         'item_custom_fields': 'item-custom-fields',
         'json': 'json',
         'lock_during_sra_session': 'lock-during-sra-session',
+        'lock_on_read': 'lock-on-read',
+        'lock_ttl': 'lock-ttl',
         'max_versions': 'max-versions',
         'name': 'name',
         'new_metadata': 'new-metadata',
         'new_name': 'new-name',
+        'output_rule': 'output-rule',
         'rm_tag': 'rm-tag',
         'rotate_after_disconnect': 'rotate-after-disconnect',
+        'rotate_on_unlock': 'rotate-on-unlock',
         'secure_access_add_host': 'secure-access-add-host',
         'secure_access_allow_external_user': 'secure-access-allow-external-user',
         'secure_access_allow_port_forwading': 'secure-access-allow-port-forwading',
@@ -151,7 +167,7 @@ class UpdateItem(object):
         'use_tags_as_filter': 'use-tags-as-filter'
     }
 
-    def __init__(self, provider_type=None, accessibility='regular', add_tag=None, cert_file_data=None, certificate_format=None, change_event=None, delete_protection=None, description='default_metadata', expiration_event_in=None, gcp_sm_regions=None, host_provider=None, item_custom_fields=None, json=False, lock_during_sra_session=None, max_versions=None, name=None, new_metadata='default_metadata', new_name=None, rm_tag=None, rotate_after_disconnect=None, secure_access_add_host=None, secure_access_allow_external_user=None, secure_access_allow_port_forwading=None, secure_access_api=None, secure_access_aws_account_id=None, secure_access_aws_native_cli=None, secure_access_aws_region=None, secure_access_bastion_api=None, secure_access_bastion_issuer=None, secure_access_bastion_ssh=None, secure_access_certificate_issuer=None, secure_access_cluster_endpoint=None, secure_access_dashboard_url=None, secure_access_db_name=None, secure_access_db_schema=None, secure_access_enable=None, secure_access_enforce_hosts_restriction=None, secure_access_gateway=None, secure_access_host=None, secure_access_rd_gateway_server=None, secure_access_rdp_domain=None, secure_access_rdp_user=None, secure_access_rm_host=None, secure_access_ssh=None, secure_access_ssh_creds=None, secure_access_ssh_creds_user=None, secure_access_url=None, secure_access_use_internal_bastion=None, secure_access_use_internal_ssh_access=None, secure_access_web_browsing=None, secure_access_web_proxy=None, target=None, token=None, uid_token=None, usc_tags=None, use_tags_as_filter=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, provider_type=None, accessibility='regular', add_tag=None, ara_enabled=None, cert_file_data=None, certificate_format=None, change_event=None, delete_protection=None, description='default_metadata', enable_agentic_runtime_authority=None, enable_ai_quorum=None, expiration_event_in=None, gcp_sm_regions=None, host_provider=None, input_rule=None, item_custom_fields=None, json=False, lock_during_sra_session=None, lock_on_read=None, lock_ttl=None, max_versions=None, name=None, new_metadata='default_metadata', new_name=None, output_rule=None, rm_tag=None, rotate_after_disconnect=None, rotate_on_unlock=None, secure_access_add_host=None, secure_access_allow_external_user=None, secure_access_allow_port_forwading=None, secure_access_api=None, secure_access_aws_account_id=None, secure_access_aws_native_cli=None, secure_access_aws_region=None, secure_access_bastion_api=None, secure_access_bastion_issuer=None, secure_access_bastion_ssh=None, secure_access_certificate_issuer=None, secure_access_cluster_endpoint=None, secure_access_dashboard_url=None, secure_access_db_name=None, secure_access_db_schema=None, secure_access_enable=None, secure_access_enforce_hosts_restriction=None, secure_access_gateway=None, secure_access_host=None, secure_access_rd_gateway_server=None, secure_access_rdp_domain=None, secure_access_rdp_user=None, secure_access_rm_host=None, secure_access_ssh=None, secure_access_ssh_creds=None, secure_access_ssh_creds_user=None, secure_access_url=None, secure_access_use_internal_bastion=None, secure_access_use_internal_ssh_access=None, secure_access_web_browsing=None, secure_access_web_proxy=None, target=None, token=None, uid_token=None, usc_tags=None, use_tags_as_filter=None, local_vars_configuration=None):  # noqa: E501
         """UpdateItem - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -160,23 +176,31 @@ class UpdateItem(object):
         self._provider_type = None
         self._accessibility = None
         self._add_tag = None
+        self._ara_enabled = None
         self._cert_file_data = None
         self._certificate_format = None
         self._change_event = None
         self._delete_protection = None
         self._description = None
+        self._enable_agentic_runtime_authority = None
+        self._enable_ai_quorum = None
         self._expiration_event_in = None
         self._gcp_sm_regions = None
         self._host_provider = None
+        self._input_rule = None
         self._item_custom_fields = None
         self._json = None
         self._lock_during_sra_session = None
+        self._lock_on_read = None
+        self._lock_ttl = None
         self._max_versions = None
         self._name = None
         self._new_metadata = None
         self._new_name = None
+        self._output_rule = None
         self._rm_tag = None
         self._rotate_after_disconnect = None
+        self._rotate_on_unlock = None
         self._secure_access_add_host = None
         self._secure_access_allow_external_user = None
         self._secure_access_allow_port_forwading = None
@@ -221,6 +245,8 @@ class UpdateItem(object):
             self.accessibility = accessibility
         if add_tag is not None:
             self.add_tag = add_tag
+        if ara_enabled is not None:
+            self.ara_enabled = ara_enabled
         if cert_file_data is not None:
             self.cert_file_data = cert_file_data
         if certificate_format is not None:
@@ -231,18 +257,28 @@ class UpdateItem(object):
             self.delete_protection = delete_protection
         if description is not None:
             self.description = description
+        if enable_agentic_runtime_authority is not None:
+            self.enable_agentic_runtime_authority = enable_agentic_runtime_authority
+        if enable_ai_quorum is not None:
+            self.enable_ai_quorum = enable_ai_quorum
         if expiration_event_in is not None:
             self.expiration_event_in = expiration_event_in
         if gcp_sm_regions is not None:
             self.gcp_sm_regions = gcp_sm_regions
         if host_provider is not None:
             self.host_provider = host_provider
+        if input_rule is not None:
+            self.input_rule = input_rule
         if item_custom_fields is not None:
             self.item_custom_fields = item_custom_fields
         if json is not None:
             self.json = json
         if lock_during_sra_session is not None:
             self.lock_during_sra_session = lock_during_sra_session
+        if lock_on_read is not None:
+            self.lock_on_read = lock_on_read
+        if lock_ttl is not None:
+            self.lock_ttl = lock_ttl
         if max_versions is not None:
             self.max_versions = max_versions
         self.name = name
@@ -250,10 +286,14 @@ class UpdateItem(object):
             self.new_metadata = new_metadata
         if new_name is not None:
             self.new_name = new_name
+        if output_rule is not None:
+            self.output_rule = output_rule
         if rm_tag is not None:
             self.rm_tag = rm_tag
         if rotate_after_disconnect is not None:
             self.rotate_after_disconnect = rotate_after_disconnect
+        if rotate_on_unlock is not None:
+            self.rotate_on_unlock = rotate_on_unlock
         if secure_access_add_host is not None:
             self.secure_access_add_host = secure_access_add_host
         if secure_access_allow_external_user is not None:
@@ -395,6 +435,29 @@ class UpdateItem(object):
         self._add_tag = add_tag
 
     @property
+    def ara_enabled(self):
+        """Gets the ara_enabled of this UpdateItem.  # noqa: E501
+
+        Enable or disable Agentic Runtime Authority rule enforcement for this item. When false, user-defined input/output rules are stored but not enforced; the base security validation still runs.  AraEnabled is tri-state (nil/true/false), not a plain bool: it self-encodes its wire value (see akl.OptionalBool) so an explicit false survives the curl-proxy relay instead of being dropped like a default-false bool flag.  # noqa: E501
+
+        :return: The ara_enabled of this UpdateItem.  # noqa: E501
+        :rtype: bool
+        """
+        return self._ara_enabled
+
+    @ara_enabled.setter
+    def ara_enabled(self, ara_enabled):
+        """Sets the ara_enabled of this UpdateItem.
+
+        Enable or disable Agentic Runtime Authority rule enforcement for this item. When false, user-defined input/output rules are stored but not enforced; the base security validation still runs.  AraEnabled is tri-state (nil/true/false), not a plain bool: it self-encodes its wire value (see akl.OptionalBool) so an explicit false survives the curl-proxy relay instead of being dropped like a default-false bool flag.  # noqa: E501
+
+        :param ara_enabled: The ara_enabled of this UpdateItem.  # noqa: E501
+        :type: bool
+        """
+
+        self._ara_enabled = ara_enabled
+
+    @property
     def cert_file_data(self):
         """Gets the cert_file_data of this UpdateItem.  # noqa: E501
 
@@ -508,6 +571,52 @@ class UpdateItem(object):
         self._description = description
 
     @property
+    def enable_agentic_runtime_authority(self):
+        """Gets the enable_agentic_runtime_authority of this UpdateItem.  # noqa: E501
+
+        EnableAra is the documented spelling of AraEnabled. Both set the same field; --ara-enabled shipped first and stays as an undocumented alias so existing scripts and the Terraform provider keep working.  # noqa: E501
+
+        :return: The enable_agentic_runtime_authority of this UpdateItem.  # noqa: E501
+        :rtype: bool
+        """
+        return self._enable_agentic_runtime_authority
+
+    @enable_agentic_runtime_authority.setter
+    def enable_agentic_runtime_authority(self, enable_agentic_runtime_authority):
+        """Sets the enable_agentic_runtime_authority of this UpdateItem.
+
+        EnableAra is the documented spelling of AraEnabled. Both set the same field; --ara-enabled shipped first and stays as an undocumented alias so existing scripts and the Terraform provider keep working.  # noqa: E501
+
+        :param enable_agentic_runtime_authority: The enable_agentic_runtime_authority of this UpdateItem.  # noqa: E501
+        :type: bool
+        """
+
+        self._enable_agentic_runtime_authority = enable_agentic_runtime_authority
+
+    @property
+    def enable_ai_quorum(self):
+        """Gets the enable_ai_quorum of this UpdateItem.  # noqa: E501
+
+        Turns on AI Quorum checks for this item.  # noqa: E501
+
+        :return: The enable_ai_quorum of this UpdateItem.  # noqa: E501
+        :rtype: bool
+        """
+        return self._enable_ai_quorum
+
+    @enable_ai_quorum.setter
+    def enable_ai_quorum(self, enable_ai_quorum):
+        """Sets the enable_ai_quorum of this UpdateItem.
+
+        Turns on AI Quorum checks for this item.  # noqa: E501
+
+        :param enable_ai_quorum: The enable_ai_quorum of this UpdateItem.  # noqa: E501
+        :type: bool
+        """
+
+        self._enable_ai_quorum = enable_ai_quorum
+
+    @property
     def expiration_event_in(self):
         """Gets the expiration_event_in of this UpdateItem.  # noqa: E501
 
@@ -577,6 +686,29 @@ class UpdateItem(object):
         self._host_provider = host_provider
 
     @property
+    def input_rule(self):
+        """Gets the input_rule of this UpdateItem.  # noqa: E501
+
+        Agentic input rule in name=...,rule=... format (e.g. name=rule1,rule=Sanitize input)  # noqa: E501
+
+        :return: The input_rule of this UpdateItem.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._input_rule
+
+    @input_rule.setter
+    def input_rule(self, input_rule):
+        """Sets the input_rule of this UpdateItem.
+
+        Agentic input rule in name=...,rule=... format (e.g. name=rule1,rule=Sanitize input)  # noqa: E501
+
+        :param input_rule: The input_rule of this UpdateItem.  # noqa: E501
+        :type: list[str]
+        """
+
+        self._input_rule = input_rule
+
+    @property
     def item_custom_fields(self):
         """Gets the item_custom_fields of this UpdateItem.  # noqa: E501
 
@@ -644,6 +776,52 @@ class UpdateItem(object):
         """
 
         self._lock_during_sra_session = lock_during_sra_session
+
+    @property
+    def lock_on_read(self):
+        """Gets the lock_on_read of this UpdateItem.  # noqa: E501
+
+        Lock this secret after each successful value read  # noqa: E501
+
+        :return: The lock_on_read of this UpdateItem.  # noqa: E501
+        :rtype: str
+        """
+        return self._lock_on_read
+
+    @lock_on_read.setter
+    def lock_on_read(self, lock_on_read):
+        """Sets the lock_on_read of this UpdateItem.
+
+        Lock this secret after each successful value read  # noqa: E501
+
+        :param lock_on_read: The lock_on_read of this UpdateItem.  # noqa: E501
+        :type: str
+        """
+
+        self._lock_on_read = lock_on_read
+
+    @property
+    def lock_ttl(self):
+        """Gets the lock_ttl of this UpdateItem.  # noqa: E501
+
+        Lock TTL in minutes  # noqa: E501
+
+        :return: The lock_ttl of this UpdateItem.  # noqa: E501
+        :rtype: str
+        """
+        return self._lock_ttl
+
+    @lock_ttl.setter
+    def lock_ttl(self, lock_ttl):
+        """Sets the lock_ttl of this UpdateItem.
+
+        Lock TTL in minutes  # noqa: E501
+
+        :param lock_ttl: The lock_ttl of this UpdateItem.  # noqa: E501
+        :type: str
+        """
+
+        self._lock_ttl = lock_ttl
 
     @property
     def max_versions(self):
@@ -740,6 +918,29 @@ class UpdateItem(object):
         self._new_name = new_name
 
     @property
+    def output_rule(self):
+        """Gets the output_rule of this UpdateItem.  # noqa: E501
+
+        Agentic output rule in name=...,rule=... format (e.g. name=rule1,rule=Mask secrets)  # noqa: E501
+
+        :return: The output_rule of this UpdateItem.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._output_rule
+
+    @output_rule.setter
+    def output_rule(self, output_rule):
+        """Sets the output_rule of this UpdateItem.
+
+        Agentic output rule in name=...,rule=... format (e.g. name=rule1,rule=Mask secrets)  # noqa: E501
+
+        :param output_rule: The output_rule of this UpdateItem.  # noqa: E501
+        :type: list[str]
+        """
+
+        self._output_rule = output_rule
+
+    @property
     def rm_tag(self):
         """Gets the rm_tag of this UpdateItem.  # noqa: E501
 
@@ -784,6 +985,29 @@ class UpdateItem(object):
         """
 
         self._rotate_after_disconnect = rotate_after_disconnect
+
+    @property
+    def rotate_on_unlock(self):
+        """Gets the rotate_on_unlock of this UpdateItem.  # noqa: E501
+
+        Rotate this secret after it is unlocked  # noqa: E501
+
+        :return: The rotate_on_unlock of this UpdateItem.  # noqa: E501
+        :rtype: str
+        """
+        return self._rotate_on_unlock
+
+    @rotate_on_unlock.setter
+    def rotate_on_unlock(self, rotate_on_unlock):
+        """Sets the rotate_on_unlock of this UpdateItem.
+
+        Rotate this secret after it is unlocked  # noqa: E501
+
+        :param rotate_on_unlock: The rotate_on_unlock of this UpdateItem.  # noqa: E501
+        :type: str
+        """
+
+        self._rotate_on_unlock = rotate_on_unlock
 
     @property
     def secure_access_add_host(self):

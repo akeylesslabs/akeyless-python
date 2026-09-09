@@ -40,6 +40,8 @@ class RotatedSecretUpdateGcp(object):
         'auto_rotate': 'str',
         'delete_protection': 'str',
         'description': 'str',
+        'enable_agentic_runtime_authority': 'bool',
+        'enable_ai_quorum': 'bool',
         'gcp_key': 'str',
         'gcp_service_account_email': 'str',
         'gcp_service_account_key_id': 'str',
@@ -52,12 +54,15 @@ class RotatedSecretUpdateGcp(object):
         'json': 'bool',
         'keep_prev_version': 'str',
         'key': 'str',
+        'lock_on_read': 'str',
+        'lock_ttl': 'str',
         'max_versions': 'str',
         'name': 'str',
         'new_name': 'str',
         'output_rule': 'list[str]',
         'password_length': 'str',
         'rm_tag': 'list[str]',
+        'rotate_on_unlock': 'str',
         'rotation_event_in': 'list[str]',
         'rotation_hour': 'int',
         'rotation_interval': 'str',
@@ -78,6 +83,8 @@ class RotatedSecretUpdateGcp(object):
         'auto_rotate': 'auto-rotate',
         'delete_protection': 'delete_protection',
         'description': 'description',
+        'enable_agentic_runtime_authority': 'enable-agentic-runtime-authority',
+        'enable_ai_quorum': 'enable-ai-quorum',
         'gcp_key': 'gcp-key',
         'gcp_service_account_email': 'gcp-service-account-email',
         'gcp_service_account_key_id': 'gcp-service-account-key-id',
@@ -90,12 +97,15 @@ class RotatedSecretUpdateGcp(object):
         'json': 'json',
         'keep_prev_version': 'keep-prev-version',
         'key': 'key',
+        'lock_on_read': 'lock-on-read',
+        'lock_ttl': 'lock-ttl',
         'max_versions': 'max-versions',
         'name': 'name',
         'new_name': 'new-name',
         'output_rule': 'output-rule',
         'password_length': 'password-length',
         'rm_tag': 'rm-tag',
+        'rotate_on_unlock': 'rotate-on-unlock',
         'rotation_event_in': 'rotation-event-in',
         'rotation_hour': 'rotation-hour',
         'rotation_interval': 'rotation-interval',
@@ -109,7 +119,7 @@ class RotatedSecretUpdateGcp(object):
         'use_special_characters': 'use-special-characters'
     }
 
-    def __init__(self, add_tag=None, ara_enabled=None, authentication_credentials='use-user-creds', auto_rotate=None, delete_protection=None, description='default_metadata', gcp_key=None, gcp_service_account_email=None, gcp_service_account_key_id=None, grace_rotation=None, grace_rotation_hour=None, grace_rotation_interval=None, grace_rotation_timing=None, input_rule=None, item_custom_fields=None, json=False, keep_prev_version=None, key=None, max_versions=None, name=None, new_name=None, output_rule=None, password_length=None, rm_tag=None, rotation_event_in=None, rotation_hour=None, rotation_interval=None, rotator_type=None, skip_dry_run=None, token=None, uid_token=None, use_capital_letters=None, use_lower_letters=None, use_numbers=None, use_special_characters=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, add_tag=None, ara_enabled=None, authentication_credentials='use-user-creds', auto_rotate=None, delete_protection=None, description='default_metadata', enable_agentic_runtime_authority=None, enable_ai_quorum=None, gcp_key=None, gcp_service_account_email=None, gcp_service_account_key_id=None, grace_rotation=None, grace_rotation_hour=None, grace_rotation_interval=None, grace_rotation_timing=None, input_rule=None, item_custom_fields=None, json=False, keep_prev_version=None, key=None, lock_on_read=None, lock_ttl=None, max_versions=None, name=None, new_name=None, output_rule=None, password_length=None, rm_tag=None, rotate_on_unlock=None, rotation_event_in=None, rotation_hour=None, rotation_interval=None, rotator_type=None, skip_dry_run=None, token=None, uid_token=None, use_capital_letters=None, use_lower_letters=None, use_numbers=None, use_special_characters=None, local_vars_configuration=None):  # noqa: E501
         """RotatedSecretUpdateGcp - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -121,6 +131,8 @@ class RotatedSecretUpdateGcp(object):
         self._auto_rotate = None
         self._delete_protection = None
         self._description = None
+        self._enable_agentic_runtime_authority = None
+        self._enable_ai_quorum = None
         self._gcp_key = None
         self._gcp_service_account_email = None
         self._gcp_service_account_key_id = None
@@ -133,12 +145,15 @@ class RotatedSecretUpdateGcp(object):
         self._json = None
         self._keep_prev_version = None
         self._key = None
+        self._lock_on_read = None
+        self._lock_ttl = None
         self._max_versions = None
         self._name = None
         self._new_name = None
         self._output_rule = None
         self._password_length = None
         self._rm_tag = None
+        self._rotate_on_unlock = None
         self._rotation_event_in = None
         self._rotation_hour = None
         self._rotation_interval = None
@@ -164,6 +179,10 @@ class RotatedSecretUpdateGcp(object):
             self.delete_protection = delete_protection
         if description is not None:
             self.description = description
+        if enable_agentic_runtime_authority is not None:
+            self.enable_agentic_runtime_authority = enable_agentic_runtime_authority
+        if enable_ai_quorum is not None:
+            self.enable_ai_quorum = enable_ai_quorum
         if gcp_key is not None:
             self.gcp_key = gcp_key
         if gcp_service_account_email is not None:
@@ -188,6 +207,10 @@ class RotatedSecretUpdateGcp(object):
             self.keep_prev_version = keep_prev_version
         if key is not None:
             self.key = key
+        if lock_on_read is not None:
+            self.lock_on_read = lock_on_read
+        if lock_ttl is not None:
+            self.lock_ttl = lock_ttl
         if max_versions is not None:
             self.max_versions = max_versions
         self.name = name
@@ -199,6 +222,8 @@ class RotatedSecretUpdateGcp(object):
             self.password_length = password_length
         if rm_tag is not None:
             self.rm_tag = rm_tag
+        if rotate_on_unlock is not None:
+            self.rotate_on_unlock = rotate_on_unlock
         if rotation_event_in is not None:
             self.rotation_event_in = rotation_event_in
         if rotation_hour is not None:
@@ -356,6 +381,52 @@ class RotatedSecretUpdateGcp(object):
         """
 
         self._description = description
+
+    @property
+    def enable_agentic_runtime_authority(self):
+        """Gets the enable_agentic_runtime_authority of this RotatedSecretUpdateGcp.  # noqa: E501
+
+        EnableAra is the documented spelling of AraEnabled. Both set the same field; --ara-enabled shipped first and stays as an undocumented alias so existing scripts and the Terraform provider keep working.  # noqa: E501
+
+        :return: The enable_agentic_runtime_authority of this RotatedSecretUpdateGcp.  # noqa: E501
+        :rtype: bool
+        """
+        return self._enable_agentic_runtime_authority
+
+    @enable_agentic_runtime_authority.setter
+    def enable_agentic_runtime_authority(self, enable_agentic_runtime_authority):
+        """Sets the enable_agentic_runtime_authority of this RotatedSecretUpdateGcp.
+
+        EnableAra is the documented spelling of AraEnabled. Both set the same field; --ara-enabled shipped first and stays as an undocumented alias so existing scripts and the Terraform provider keep working.  # noqa: E501
+
+        :param enable_agentic_runtime_authority: The enable_agentic_runtime_authority of this RotatedSecretUpdateGcp.  # noqa: E501
+        :type: bool
+        """
+
+        self._enable_agentic_runtime_authority = enable_agentic_runtime_authority
+
+    @property
+    def enable_ai_quorum(self):
+        """Gets the enable_ai_quorum of this RotatedSecretUpdateGcp.  # noqa: E501
+
+        Turns on AI Quorum checks for this item.  # noqa: E501
+
+        :return: The enable_ai_quorum of this RotatedSecretUpdateGcp.  # noqa: E501
+        :rtype: bool
+        """
+        return self._enable_ai_quorum
+
+    @enable_ai_quorum.setter
+    def enable_ai_quorum(self, enable_ai_quorum):
+        """Sets the enable_ai_quorum of this RotatedSecretUpdateGcp.
+
+        Turns on AI Quorum checks for this item.  # noqa: E501
+
+        :param enable_ai_quorum: The enable_ai_quorum of this RotatedSecretUpdateGcp.  # noqa: E501
+        :type: bool
+        """
+
+        self._enable_ai_quorum = enable_ai_quorum
 
     @property
     def gcp_key(self):
@@ -632,6 +703,52 @@ class RotatedSecretUpdateGcp(object):
         self._key = key
 
     @property
+    def lock_on_read(self):
+        """Gets the lock_on_read of this RotatedSecretUpdateGcp.  # noqa: E501
+
+        Lock this secret after each successful value read  # noqa: E501
+
+        :return: The lock_on_read of this RotatedSecretUpdateGcp.  # noqa: E501
+        :rtype: str
+        """
+        return self._lock_on_read
+
+    @lock_on_read.setter
+    def lock_on_read(self, lock_on_read):
+        """Sets the lock_on_read of this RotatedSecretUpdateGcp.
+
+        Lock this secret after each successful value read  # noqa: E501
+
+        :param lock_on_read: The lock_on_read of this RotatedSecretUpdateGcp.  # noqa: E501
+        :type: str
+        """
+
+        self._lock_on_read = lock_on_read
+
+    @property
+    def lock_ttl(self):
+        """Gets the lock_ttl of this RotatedSecretUpdateGcp.  # noqa: E501
+
+        Lock TTL in minutes  # noqa: E501
+
+        :return: The lock_ttl of this RotatedSecretUpdateGcp.  # noqa: E501
+        :rtype: str
+        """
+        return self._lock_ttl
+
+    @lock_ttl.setter
+    def lock_ttl(self, lock_ttl):
+        """Sets the lock_ttl of this RotatedSecretUpdateGcp.
+
+        Lock TTL in minutes  # noqa: E501
+
+        :param lock_ttl: The lock_ttl of this RotatedSecretUpdateGcp.  # noqa: E501
+        :type: str
+        """
+
+        self._lock_ttl = lock_ttl
+
+    @property
     def max_versions(self):
         """Gets the max_versions of this RotatedSecretUpdateGcp.  # noqa: E501
 
@@ -770,6 +887,29 @@ class RotatedSecretUpdateGcp(object):
         """
 
         self._rm_tag = rm_tag
+
+    @property
+    def rotate_on_unlock(self):
+        """Gets the rotate_on_unlock of this RotatedSecretUpdateGcp.  # noqa: E501
+
+        Rotate this secret after it is unlocked  # noqa: E501
+
+        :return: The rotate_on_unlock of this RotatedSecretUpdateGcp.  # noqa: E501
+        :rtype: str
+        """
+        return self._rotate_on_unlock
+
+    @rotate_on_unlock.setter
+    def rotate_on_unlock(self, rotate_on_unlock):
+        """Sets the rotate_on_unlock of this RotatedSecretUpdateGcp.
+
+        Rotate this secret after it is unlocked  # noqa: E501
+
+        :param rotate_on_unlock: The rotate_on_unlock of this RotatedSecretUpdateGcp.  # noqa: E501
+        :type: str
+        """
+
+        self._rotate_on_unlock = rotate_on_unlock
 
     @property
     def rotation_event_in(self):

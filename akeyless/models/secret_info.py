@@ -44,6 +44,7 @@ class SecretInfo(object):
         'location': 'object',
         'name': 'str',
         'namespace': 'str',
+        'project': 'str',
         'region': 'str',
         'secret_id': 'str',
         'status': 'bool',
@@ -66,6 +67,7 @@ class SecretInfo(object):
         'location': 'location',
         'name': 'name',
         'namespace': 'namespace',
+        'project': 'project',
         'region': 'region',
         'secret_id': 'secret_id',
         'status': 'status',
@@ -77,7 +79,7 @@ class SecretInfo(object):
         'version_ids': 'version_ids'
     }
 
-    def __init__(self, activation_date=None, created=None, description=None, expiration=None, github=None, key_id=None, last_retrieved=None, location=None, name=None, namespace=None, region=None, secret_id=None, status=None, tags=None, thumbprint=None, type=None, version=None, version_id=None, version_ids=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, activation_date=None, created=None, description=None, expiration=None, github=None, key_id=None, last_retrieved=None, location=None, name=None, namespace=None, project=None, region=None, secret_id=None, status=None, tags=None, thumbprint=None, type=None, version=None, version_id=None, version_ids=None, local_vars_configuration=None):  # noqa: E501
         """SecretInfo - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -93,6 +95,7 @@ class SecretInfo(object):
         self._location = None
         self._name = None
         self._namespace = None
+        self._project = None
         self._region = None
         self._secret_id = None
         self._status = None
@@ -124,6 +127,8 @@ class SecretInfo(object):
             self.name = name
         if namespace is not None:
             self.namespace = namespace
+        if project is not None:
+            self.project = project
         if region is not None:
             self.region = region
         if secret_id is not None:
@@ -352,6 +357,27 @@ class SecretInfo(object):
         """
 
         self._namespace = namespace
+
+    @property
+    def project(self):
+        """Gets the project of this SecretInfo.  # noqa: E501
+
+
+        :return: The project of this SecretInfo.  # noqa: E501
+        :rtype: str
+        """
+        return self._project
+
+    @project.setter
+    def project(self, project):
+        """Sets the project of this SecretInfo.
+
+
+        :param project: The project of this SecretInfo.  # noqa: E501
+        :type: str
+        """
+
+        self._project = project
 
     @property
     def region(self):

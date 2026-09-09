@@ -35,6 +35,7 @@ class CreateRole(object):
     """
     openapi_types = {
         'analytics_access': 'str',
+        'approve_access_request': 'str',
         'ara_reports_access': 'str',
         'audit_access': 'str',
         'comment': 'str',
@@ -51,11 +52,13 @@ class CreateRole(object):
         'sra_reports_access': 'str',
         'token': 'str',
         'uid_token': 'str',
+        'unlock_secrets': 'str',
         'usage_reports_access': 'str'
     }
 
     attribute_map = {
         'analytics_access': 'analytics-access',
+        'approve_access_request': 'approve-access-request',
         'ara_reports_access': 'ara-reports-access',
         'audit_access': 'audit-access',
         'comment': 'comment',
@@ -72,16 +75,18 @@ class CreateRole(object):
         'sra_reports_access': 'sra-reports-access',
         'token': 'token',
         'uid_token': 'uid-token',
+        'unlock_secrets': 'unlock-secrets',
         'usage_reports_access': 'usage-reports-access'
     }
 
-    def __init__(self, analytics_access=None, ara_reports_access=None, audit_access=None, comment=None, delete_protection=None, description=None, event_center_access=None, event_forwarders_access=None, event_forwarders_name=None, gw_analytics_access=None, isi_access=None, json=False, name=None, reverse_rbac_access=None, sra_reports_access=None, token=None, uid_token=None, usage_reports_access=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, analytics_access=None, approve_access_request=None, ara_reports_access=None, audit_access=None, comment=None, delete_protection=None, description=None, event_center_access=None, event_forwarders_access=None, event_forwarders_name=None, gw_analytics_access=None, isi_access=None, json=False, name=None, reverse_rbac_access=None, sra_reports_access=None, token=None, uid_token=None, unlock_secrets=None, usage_reports_access=None, local_vars_configuration=None):  # noqa: E501
         """CreateRole - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._analytics_access = None
+        self._approve_access_request = None
         self._ara_reports_access = None
         self._audit_access = None
         self._comment = None
@@ -98,11 +103,14 @@ class CreateRole(object):
         self._sra_reports_access = None
         self._token = None
         self._uid_token = None
+        self._unlock_secrets = None
         self._usage_reports_access = None
         self.discriminator = None
 
         if analytics_access is not None:
             self.analytics_access = analytics_access
+        if approve_access_request is not None:
+            self.approve_access_request = approve_access_request
         if ara_reports_access is not None:
             self.ara_reports_access = ara_reports_access
         if audit_access is not None:
@@ -134,6 +142,8 @@ class CreateRole(object):
             self.token = token
         if uid_token is not None:
             self.uid_token = uid_token
+        if unlock_secrets is not None:
+            self.unlock_secrets = unlock_secrets
         if usage_reports_access is not None:
             self.usage_reports_access = usage_reports_access
 
@@ -159,6 +169,29 @@ class CreateRole(object):
         """
 
         self._analytics_access = analytics_access
+
+    @property
+    def approve_access_request(self):
+        """Gets the approve_access_request of this CreateRole.  # noqa: E501
+
+        Allow this role to approve Access Requests for items. Currently only 'none', 'scoped' and 'all' values are supported. The tier controls how broadly the approver may list Auth Methods; neither tier lets them grant permissions they do not already hold on the requested item or target.  # noqa: E501
+
+        :return: The approve_access_request of this CreateRole.  # noqa: E501
+        :rtype: str
+        """
+        return self._approve_access_request
+
+    @approve_access_request.setter
+    def approve_access_request(self, approve_access_request):
+        """Sets the approve_access_request of this CreateRole.
+
+        Allow this role to approve Access Requests for items. Currently only 'none', 'scoped' and 'all' values are supported. The tier controls how broadly the approver may list Auth Methods; neither tier lets them grant permissions they do not already hold on the requested item or target.  # noqa: E501
+
+        :param approve_access_request: The approve_access_request of this CreateRole.  # noqa: E501
+        :type: str
+        """
+
+        self._approve_access_request = approve_access_request
 
     @property
     def ara_reports_access(self):
@@ -529,6 +562,29 @@ class CreateRole(object):
         """
 
         self._uid_token = uid_token
+
+    @property
+    def unlock_secrets(self):
+        """Gets the unlock_secrets of this CreateRole.  # noqa: E501
+
+        Allow this role to force-unlock locked secrets. Currently only 'none', 'scoped' and 'all' values are supported.  # noqa: E501
+
+        :return: The unlock_secrets of this CreateRole.  # noqa: E501
+        :rtype: str
+        """
+        return self._unlock_secrets
+
+    @unlock_secrets.setter
+    def unlock_secrets(self, unlock_secrets):
+        """Sets the unlock_secrets of this CreateRole.
+
+        Allow this role to force-unlock locked secrets. Currently only 'none', 'scoped' and 'all' values are supported.  # noqa: E501
+
+        :param unlock_secrets: The unlock_secrets of this CreateRole.  # noqa: E501
+        :type: str
+        """
+
+        self._unlock_secrets = unlock_secrets
 
     @property
     def usage_reports_access(self):

@@ -10,6 +10,8 @@ Name | Type | Description | Notes
 **dockerhub_password** | **str** | DockerhubPassword is either the user&#39;s password access token to manage the repository | [optional] 
 **dockerhub_token_scopes** | **str** | Access token scopes list (comma-separated) to give the dynamic secret valid options are in \&quot;repo:admin\&quot;, \&quot;repo:write\&quot;, \&quot;repo:read\&quot;, \&quot;repo:public_read\&quot; | [optional] 
 **dockerhub_username** | **str** | DockerhubUsername is the name of the user in dockerhub | [optional] 
+**enable_agentic_runtime_authority** | **bool** | EnableAra is the documented spelling of AraEnabled; --ara-enabled shipped first and stays as an undocumented alias. | [optional] 
+**enable_ai_quorum** | **bool** | Turns on AI Quorum checks for this item. | [optional] 
 **input_rule** | **list[str]** | Agentic input rule in name&#x3D;...,rule&#x3D;... format (e.g. name&#x3D;rule1,rule&#x3D;Sanitize input) Mirrors commands.AgenticRulesParams — kept separate because ResourceDS cannot embed it (different package, different struct layout). | [optional] 
 **item_custom_fields** | **dict(str, str)** | Additional custom fields to associate with the item | [optional] 
 **json** | **bool** | Set output format to JSON | [optional] [default to False]

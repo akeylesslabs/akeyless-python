@@ -54,6 +54,8 @@ class UpdateDBTarget(object):
         'json': 'bool',
         'keep_prev_version': 'str',
         'key': 'str',
+        'lock_on_read': 'str',
+        'lock_ttl': 'str',
         'max_versions': 'str',
         'mongodb_atlas': 'bool',
         'mongodb_atlas_api_private_key': 'str',
@@ -70,6 +72,7 @@ class UpdateDBTarget(object):
         'parent_target_name': 'str',
         'port': 'str',
         'pwd': 'str',
+        'rotate_on_unlock': 'str',
         'skip_server_name_validation': 'str',
         'snowflake_account': 'str',
         'snowflake_api_private_key': 'str',
@@ -103,6 +106,8 @@ class UpdateDBTarget(object):
         'json': 'json',
         'keep_prev_version': 'keep-prev-version',
         'key': 'key',
+        'lock_on_read': 'lock-on-read',
+        'lock_ttl': 'lock-ttl',
         'max_versions': 'max-versions',
         'mongodb_atlas': 'mongodb-atlas',
         'mongodb_atlas_api_private_key': 'mongodb-atlas-api-private-key',
@@ -119,6 +124,7 @@ class UpdateDBTarget(object):
         'parent_target_name': 'parent-target-name',
         'port': 'port',
         'pwd': 'pwd',
+        'rotate_on_unlock': 'rotate-on-unlock',
         'skip_server_name_validation': 'skip-server-name-validation',
         'snowflake_account': 'snowflake-account',
         'snowflake_api_private_key': 'snowflake-api-private-key',
@@ -131,7 +137,7 @@ class UpdateDBTarget(object):
         'user_name': 'user-name'
     }
 
-    def __init__(self, azure_client_id=None, azure_client_secret=None, azure_tenant_id=None, client_certificate=None, client_key_passphrase=None, client_private_key=None, cloud_service_provider=None, cluster_mode=None, comment=None, connection_type='credentials', db_name=None, db_server_certificates=None, db_server_name=None, db_type=None, description=None, enable_mtls=None, host=None, json=False, keep_prev_version=None, key=None, max_versions=None, mongodb_atlas=None, mongodb_atlas_api_private_key=None, mongodb_atlas_api_public_key=None, mongodb_atlas_project_id=None, mongodb_default_auth_db=None, mongodb_uri_options=None, name=None, new_name=None, oracle_service_name=None, oracle_wallet_login_type=None, oracle_wallet_p12_file_data=None, oracle_wallet_sso_file_data=None, parent_target_name=None, port=None, pwd=None, skip_server_name_validation=None, snowflake_account=None, snowflake_api_private_key=None, snowflake_api_private_key_password=None, ssl=False, ssl_certificate=None, token=None, uid_token=None, update_version=None, user_name=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, azure_client_id=None, azure_client_secret=None, azure_tenant_id=None, client_certificate=None, client_key_passphrase=None, client_private_key=None, cloud_service_provider=None, cluster_mode=None, comment=None, connection_type='credentials', db_name=None, db_server_certificates=None, db_server_name=None, db_type=None, description=None, enable_mtls=None, host=None, json=False, keep_prev_version=None, key=None, lock_on_read=None, lock_ttl=None, max_versions=None, mongodb_atlas=None, mongodb_atlas_api_private_key=None, mongodb_atlas_api_public_key=None, mongodb_atlas_project_id=None, mongodb_default_auth_db=None, mongodb_uri_options=None, name=None, new_name=None, oracle_service_name=None, oracle_wallet_login_type=None, oracle_wallet_p12_file_data=None, oracle_wallet_sso_file_data=None, parent_target_name=None, port=None, pwd=None, rotate_on_unlock=None, skip_server_name_validation=None, snowflake_account=None, snowflake_api_private_key=None, snowflake_api_private_key_password=None, ssl=False, ssl_certificate=None, token=None, uid_token=None, update_version=None, user_name=None, local_vars_configuration=None):  # noqa: E501
         """UpdateDBTarget - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -157,6 +163,8 @@ class UpdateDBTarget(object):
         self._json = None
         self._keep_prev_version = None
         self._key = None
+        self._lock_on_read = None
+        self._lock_ttl = None
         self._max_versions = None
         self._mongodb_atlas = None
         self._mongodb_atlas_api_private_key = None
@@ -173,6 +181,7 @@ class UpdateDBTarget(object):
         self._parent_target_name = None
         self._port = None
         self._pwd = None
+        self._rotate_on_unlock = None
         self._skip_server_name_validation = None
         self._snowflake_account = None
         self._snowflake_api_private_key = None
@@ -223,6 +232,10 @@ class UpdateDBTarget(object):
             self.keep_prev_version = keep_prev_version
         if key is not None:
             self.key = key
+        if lock_on_read is not None:
+            self.lock_on_read = lock_on_read
+        if lock_ttl is not None:
+            self.lock_ttl = lock_ttl
         if max_versions is not None:
             self.max_versions = max_versions
         if mongodb_atlas is not None:
@@ -254,6 +267,8 @@ class UpdateDBTarget(object):
             self.port = port
         if pwd is not None:
             self.pwd = pwd
+        if rotate_on_unlock is not None:
+            self.rotate_on_unlock = rotate_on_unlock
         if skip_server_name_validation is not None:
             self.skip_server_name_validation = skip_server_name_validation
         if snowflake_account is not None:
@@ -734,6 +749,52 @@ class UpdateDBTarget(object):
         self._key = key
 
     @property
+    def lock_on_read(self):
+        """Gets the lock_on_read of this UpdateDBTarget.  # noqa: E501
+
+        Lock this secret after each successful value read  # noqa: E501
+
+        :return: The lock_on_read of this UpdateDBTarget.  # noqa: E501
+        :rtype: str
+        """
+        return self._lock_on_read
+
+    @lock_on_read.setter
+    def lock_on_read(self, lock_on_read):
+        """Sets the lock_on_read of this UpdateDBTarget.
+
+        Lock this secret after each successful value read  # noqa: E501
+
+        :param lock_on_read: The lock_on_read of this UpdateDBTarget.  # noqa: E501
+        :type: str
+        """
+
+        self._lock_on_read = lock_on_read
+
+    @property
+    def lock_ttl(self):
+        """Gets the lock_ttl of this UpdateDBTarget.  # noqa: E501
+
+        Lock TTL in minutes  # noqa: E501
+
+        :return: The lock_ttl of this UpdateDBTarget.  # noqa: E501
+        :rtype: str
+        """
+        return self._lock_ttl
+
+    @lock_ttl.setter
+    def lock_ttl(self, lock_ttl):
+        """Sets the lock_ttl of this UpdateDBTarget.
+
+        Lock TTL in minutes  # noqa: E501
+
+        :param lock_ttl: The lock_ttl of this UpdateDBTarget.  # noqa: E501
+        :type: str
+        """
+
+        self._lock_ttl = lock_ttl
+
+    @property
     def max_versions(self):
         """Gets the max_versions of this UpdateDBTarget.  # noqa: E501
 
@@ -1096,6 +1157,29 @@ class UpdateDBTarget(object):
         """
 
         self._pwd = pwd
+
+    @property
+    def rotate_on_unlock(self):
+        """Gets the rotate_on_unlock of this UpdateDBTarget.  # noqa: E501
+
+        Rotate this secret after it is unlocked  # noqa: E501
+
+        :return: The rotate_on_unlock of this UpdateDBTarget.  # noqa: E501
+        :rtype: str
+        """
+        return self._rotate_on_unlock
+
+    @rotate_on_unlock.setter
+    def rotate_on_unlock(self, rotate_on_unlock):
+        """Sets the rotate_on_unlock of this UpdateDBTarget.
+
+        Rotate this secret after it is unlocked  # noqa: E501
+
+        :param rotate_on_unlock: The rotate_on_unlock of this UpdateDBTarget.  # noqa: E501
+        :type: str
+        """
+
+        self._rotate_on_unlock = rotate_on_unlock
 
     @property
     def skip_server_name_validation(self):

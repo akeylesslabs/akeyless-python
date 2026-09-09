@@ -7,6 +7,8 @@ Name | Type | Description | Notes
 **ara_enabled** | **bool** | Enable or disable Agentic Runtime Authority rule enforcement for this item. Mirrors commands.AgenticRulesParams.AraEnabled. | [optional] 
 **delete_protection** | **str** | Protection from accidental deletion of this object [true/false] | [optional] 
 **description** | **str** | Description of the object | [optional] 
+**enable_agentic_runtime_authority** | **bool** | EnableAra is the documented spelling of AraEnabled; --ara-enabled shipped first and stays as an undocumented alias. | [optional] 
+**enable_ai_quorum** | **bool** | Turns on AI Quorum checks for this item. | [optional] 
 **gitlab_access_token** | **str** | Gitlab access token | [optional] 
 **gitlab_access_type** | **str** | Gitlab access token type [project,group] | 
 **gitlab_certificate** | **str** | Gitlab tls certificate (base64 encoded) | [optional] 

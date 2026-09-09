@@ -38,6 +38,7 @@ class EventAction(object):
         'event_id': 'int',
         'json': 'bool',
         'token': 'str',
+        'ttl_in_min': 'int',
         'uid_token': 'str'
     }
 
@@ -46,10 +47,11 @@ class EventAction(object):
         'event_id': 'event-id',
         'json': 'json',
         'token': 'token',
+        'ttl_in_min': 'ttl-in-min',
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, action=None, event_id=None, json=False, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, action=None, event_id=None, json=False, token=None, ttl_in_min=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """EventAction - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -59,6 +61,7 @@ class EventAction(object):
         self._event_id = None
         self._json = None
         self._token = None
+        self._ttl_in_min = None
         self._uid_token = None
         self.discriminator = None
 
@@ -68,6 +71,8 @@ class EventAction(object):
             self.json = json
         if token is not None:
             self.token = token
+        if ttl_in_min is not None:
+            self.ttl_in_min = ttl_in_min
         if uid_token is not None:
             self.uid_token = uid_token
 
@@ -166,6 +171,29 @@ class EventAction(object):
         """
 
         self._token = token
+
+    @property
+    def ttl_in_min(self):
+        """Gets the ttl_in_min of this EventAction.  # noqa: E501
+
+        The access TTL in minutes granted by the approver, overriding the requested one  # noqa: E501
+
+        :return: The ttl_in_min of this EventAction.  # noqa: E501
+        :rtype: int
+        """
+        return self._ttl_in_min
+
+    @ttl_in_min.setter
+    def ttl_in_min(self, ttl_in_min):
+        """Sets the ttl_in_min of this EventAction.
+
+        The access TTL in minutes granted by the approver, overriding the requested one  # noqa: E501
+
+        :param ttl_in_min: The ttl_in_min of this EventAction.  # noqa: E501
+        :type: int
+        """
+
+        self._ttl_in_min = ttl_in_min
 
     @property
     def uid_token(self):

@@ -38,6 +38,7 @@ class AccountGeneralSettings(object):
         'account_default_key_name': 'str',
         'account_file_bytes_used': 'int',
         'ai_insights': 'AiInsightsSetting',
+        'ai_quorum': 'AiQuorumSetting',
         'allow_auto_fill': 'bool',
         'allow_passkeys': 'bool',
         'allowed_client_types': 'AllowedClientType',
@@ -73,6 +74,7 @@ class AccountGeneralSettings(object):
         'account_default_key_name': 'account_default_key_name',
         'account_file_bytes_used': 'account_file_bytes_used',
         'ai_insights': 'ai_insights',
+        'ai_quorum': 'ai_quorum',
         'allow_auto_fill': 'allow_auto_fill',
         'allow_passkeys': 'allow_passkeys',
         'allowed_client_types': 'allowed_client_types',
@@ -103,7 +105,7 @@ class AccountGeneralSettings(object):
         'sharing_policy': 'sharing_policy'
     }
 
-    def __init__(self, account_default_key_item_id=None, account_default_key_name=None, account_file_bytes_used=None, ai_insights=None, allow_auto_fill=None, allow_passkeys=None, allowed_client_types=None, allowed_clients_ips=None, allowed_gateways_ips=None, auth_usage_event=None, certificate_expiration_events=None, data_protection_section=None, default_auth_method=None, default_home_page=None, dynamic_secret_max_ttl=None, email_customization=None, enable_request_for_access=None, enable_search_history=None, hide_personal_folder=None, hide_secret_reveal_copy=None, hide_static_password=None, invalid_characters=None, item_locking=None, item_usage_event=None, lock_default_key=None, password_expiration_info=None, password_policy=None, password_score=None, personal_folder_global_mapping=None, protect_items_by_default=None, rotation_secret_max_interval=None, sharing_policy=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, account_default_key_item_id=None, account_default_key_name=None, account_file_bytes_used=None, ai_insights=None, ai_quorum=None, allow_auto_fill=None, allow_passkeys=None, allowed_client_types=None, allowed_clients_ips=None, allowed_gateways_ips=None, auth_usage_event=None, certificate_expiration_events=None, data_protection_section=None, default_auth_method=None, default_home_page=None, dynamic_secret_max_ttl=None, email_customization=None, enable_request_for_access=None, enable_search_history=None, hide_personal_folder=None, hide_secret_reveal_copy=None, hide_static_password=None, invalid_characters=None, item_locking=None, item_usage_event=None, lock_default_key=None, password_expiration_info=None, password_policy=None, password_score=None, personal_folder_global_mapping=None, protect_items_by_default=None, rotation_secret_max_interval=None, sharing_policy=None, local_vars_configuration=None):  # noqa: E501
         """AccountGeneralSettings - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -113,6 +115,7 @@ class AccountGeneralSettings(object):
         self._account_default_key_name = None
         self._account_file_bytes_used = None
         self._ai_insights = None
+        self._ai_quorum = None
         self._allow_auto_fill = None
         self._allow_passkeys = None
         self._allowed_client_types = None
@@ -151,6 +154,8 @@ class AccountGeneralSettings(object):
             self.account_file_bytes_used = account_file_bytes_used
         if ai_insights is not None:
             self.ai_insights = ai_insights
+        if ai_quorum is not None:
+            self.ai_quorum = ai_quorum
         if allow_auto_fill is not None:
             self.allow_auto_fill = allow_auto_fill
         if allow_passkeys is not None:
@@ -297,6 +302,27 @@ class AccountGeneralSettings(object):
         """
 
         self._ai_insights = ai_insights
+
+    @property
+    def ai_quorum(self):
+        """Gets the ai_quorum of this AccountGeneralSettings.  # noqa: E501
+
+
+        :return: The ai_quorum of this AccountGeneralSettings.  # noqa: E501
+        :rtype: AiQuorumSetting
+        """
+        return self._ai_quorum
+
+    @ai_quorum.setter
+    def ai_quorum(self, ai_quorum):
+        """Sets the ai_quorum of this AccountGeneralSettings.
+
+
+        :param ai_quorum: The ai_quorum of this AccountGeneralSettings.  # noqa: E501
+        :type: AiQuorumSetting
+        """
+
+        self._ai_quorum = ai_quorum
 
     @property
     def allow_auto_fill(self):

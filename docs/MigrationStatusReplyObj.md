@@ -5,6 +5,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **certificates** | [**MigrationItems**](MigrationItems.md) |  | [optional] 
 **computers** | **int** |  | [optional] 
+**download_report** | [**MigrationDownloadReport**](MigrationDownloadReport.md) |  | [optional] 
 **duration_time** | **str** |  | [optional] 
 **error** | **str** |  | [optional] 
 **last_status_message** | **str** |  | [optional] 

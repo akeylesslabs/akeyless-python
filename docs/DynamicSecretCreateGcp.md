@@ -9,6 +9,8 @@ Name | Type | Description | Notes
 **custom_username_template** | **str** | Customize how temporary usernames are generated using go template | [optional] 
 **delete_protection** | **str** | Protection from accidental deletion of this object [true/false] | [optional] 
 **description** | **str** | Description of the object | [optional] 
+**enable_agentic_runtime_authority** | **bool** | EnableAra is the documented spelling of AraEnabled; --ara-enabled shipped first and stays as an undocumented alias. | [optional] 
+**enable_ai_quorum** | **bool** | Turns on AI Quorum checks for this item. | [optional] 
 **fixed_user_claim_keyname** | **str** | For externally provided users, denotes the key-name of IdP claim to extract the username from (Relevant only when --access-type&#x3D;external) | [optional] [default to 'ext_email']
 **gcp_cred_type** | **str** |  | [optional] 
 **gcp_key** | **str** | Base64-encoded service account private key text | [optional] 

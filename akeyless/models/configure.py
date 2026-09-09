@@ -223,7 +223,7 @@ class Configure(object):
     def access_type(self):
         """Gets the access_type of this Configure.  # noqa: E501
 
-        Access Type (access_key/password/azure_ad/saml/oidc/aws_iam/gcp/k8s/cert)  # noqa: E501
+        Access Type (access_key/password/azure_ad/saml/oidc/aws_iam/alicloud/gcp/k8s/cert/oci/kerberos)  # noqa: E501
 
         :return: The access_type of this Configure.  # noqa: E501
         :rtype: str
@@ -234,7 +234,7 @@ class Configure(object):
     def access_type(self, access_type):
         """Sets the access_type of this Configure.
 
-        Access Type (access_key/password/azure_ad/saml/oidc/aws_iam/gcp/k8s/cert)  # noqa: E501
+        Access Type (access_key/password/azure_ad/saml/oidc/aws_iam/alicloud/gcp/k8s/cert/oci/kerberos)  # noqa: E501
 
         :param access_type: The access_type of this Configure.  # noqa: E501
         :type: str

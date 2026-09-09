@@ -42,6 +42,8 @@ class DynamicSecretUpdateVenafi(object):
         'delete_protection': 'str',
         'description': 'str',
         'enable_admin_rotation': 'bool',
+        'enable_agentic_runtime_authority': 'bool',
+        'enable_ai_quorum': 'bool',
         'input_rule': 'list[str]',
         'item_custom_fields': 'dict(str, str)',
         'json': 'bool',
@@ -77,6 +79,8 @@ class DynamicSecretUpdateVenafi(object):
         'delete_protection': 'delete_protection',
         'description': 'description',
         'enable_admin_rotation': 'enable-admin-rotation',
+        'enable_agentic_runtime_authority': 'enable-agentic-runtime-authority',
+        'enable_ai_quorum': 'enable-ai-quorum',
         'input_rule': 'input-rule',
         'item_custom_fields': 'item-custom-fields',
         'json': 'json',
@@ -103,7 +107,7 @@ class DynamicSecretUpdateVenafi(object):
         'venafi_zone': 'venafi-zone'
     }
 
-    def __init__(self, admin_rotation_interval_days=0, allow_subdomains=None, allowed_domains=None, ara_enabled=None, auto_generated_folder=None, delete_protection=None, description=None, enable_admin_rotation=False, input_rule=None, item_custom_fields=None, json=False, name=None, new_name=None, output_rule=None, producer_encryption_key_name=None, root_first_in_chain=None, sign_using_akeyless_pki=None, signer_key_name=None, skip_dry_run=None, store_private_key=None, tags=None, target_name=None, token=None, uid_token=None, user_ttl='2160h', venafi_access_token=None, venafi_api_key=None, venafi_baseurl=None, venafi_client_id='akeyless', venafi_refresh_token=None, venafi_use_tpp=None, venafi_zone=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, admin_rotation_interval_days=0, allow_subdomains=None, allowed_domains=None, ara_enabled=None, auto_generated_folder=None, delete_protection=None, description=None, enable_admin_rotation=False, enable_agentic_runtime_authority=None, enable_ai_quorum=None, input_rule=None, item_custom_fields=None, json=False, name=None, new_name=None, output_rule=None, producer_encryption_key_name=None, root_first_in_chain=None, sign_using_akeyless_pki=None, signer_key_name=None, skip_dry_run=None, store_private_key=None, tags=None, target_name=None, token=None, uid_token=None, user_ttl='2160h', venafi_access_token=None, venafi_api_key=None, venafi_baseurl=None, venafi_client_id='akeyless', venafi_refresh_token=None, venafi_use_tpp=None, venafi_zone=None, local_vars_configuration=None):  # noqa: E501
         """DynamicSecretUpdateVenafi - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -117,6 +121,8 @@ class DynamicSecretUpdateVenafi(object):
         self._delete_protection = None
         self._description = None
         self._enable_admin_rotation = None
+        self._enable_agentic_runtime_authority = None
+        self._enable_ai_quorum = None
         self._input_rule = None
         self._item_custom_fields = None
         self._json = None
@@ -159,6 +165,10 @@ class DynamicSecretUpdateVenafi(object):
             self.description = description
         if enable_admin_rotation is not None:
             self.enable_admin_rotation = enable_admin_rotation
+        if enable_agentic_runtime_authority is not None:
+            self.enable_agentic_runtime_authority = enable_agentic_runtime_authority
+        if enable_ai_quorum is not None:
+            self.enable_ai_quorum = enable_ai_quorum
         if input_rule is not None:
             self.input_rule = input_rule
         if item_custom_fields is not None:
@@ -390,6 +400,52 @@ class DynamicSecretUpdateVenafi(object):
         """
 
         self._enable_admin_rotation = enable_admin_rotation
+
+    @property
+    def enable_agentic_runtime_authority(self):
+        """Gets the enable_agentic_runtime_authority of this DynamicSecretUpdateVenafi.  # noqa: E501
+
+        EnableAra is the documented spelling of AraEnabled; --ara-enabled shipped first and stays as an undocumented alias.  # noqa: E501
+
+        :return: The enable_agentic_runtime_authority of this DynamicSecretUpdateVenafi.  # noqa: E501
+        :rtype: bool
+        """
+        return self._enable_agentic_runtime_authority
+
+    @enable_agentic_runtime_authority.setter
+    def enable_agentic_runtime_authority(self, enable_agentic_runtime_authority):
+        """Sets the enable_agentic_runtime_authority of this DynamicSecretUpdateVenafi.
+
+        EnableAra is the documented spelling of AraEnabled; --ara-enabled shipped first and stays as an undocumented alias.  # noqa: E501
+
+        :param enable_agentic_runtime_authority: The enable_agentic_runtime_authority of this DynamicSecretUpdateVenafi.  # noqa: E501
+        :type: bool
+        """
+
+        self._enable_agentic_runtime_authority = enable_agentic_runtime_authority
+
+    @property
+    def enable_ai_quorum(self):
+        """Gets the enable_ai_quorum of this DynamicSecretUpdateVenafi.  # noqa: E501
+
+        Turns on AI Quorum checks for this item.  # noqa: E501
+
+        :return: The enable_ai_quorum of this DynamicSecretUpdateVenafi.  # noqa: E501
+        :rtype: bool
+        """
+        return self._enable_ai_quorum
+
+    @enable_ai_quorum.setter
+    def enable_ai_quorum(self, enable_ai_quorum):
+        """Sets the enable_ai_quorum of this DynamicSecretUpdateVenafi.
+
+        Turns on AI Quorum checks for this item.  # noqa: E501
+
+        :param enable_ai_quorum: The enable_ai_quorum of this DynamicSecretUpdateVenafi.  # noqa: E501
+        :type: bool
+        """
+
+        self._enable_ai_quorum = enable_ai_quorum
 
     @property
     def input_rule(self):

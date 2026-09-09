@@ -258,7 +258,7 @@ class Auth(object):
     def access_type(self):
         """Gets the access_type of this Auth.  # noqa: E501
 
-        Access Type (access_key/password/saml/ldap/k8s/azure_ad/oidc/aws_iam/universal_identity/jwt/gcp/cert/oci/kerberos)  # noqa: E501
+        Access Type (access_key/password/saml/ldap/k8s/azure_ad/oidc/aws_iam/alicloud/universal_identity/jwt/gcp/cert/oci/kerberos)  # noqa: E501
 
         :return: The access_type of this Auth.  # noqa: E501
         :rtype: str
@@ -269,7 +269,7 @@ class Auth(object):
     def access_type(self, access_type):
         """Sets the access_type of this Auth.
 
-        Access Type (access_key/password/saml/ldap/k8s/azure_ad/oidc/aws_iam/universal_identity/jwt/gcp/cert/oci/kerberos)  # noqa: E501
+        Access Type (access_key/password/saml/ldap/k8s/azure_ad/oidc/aws_iam/alicloud/universal_identity/jwt/gcp/cert/oci/kerberos)  # noqa: E501
 
         :param access_type: The access_type of this Auth.  # noqa: E501
         :type: str
@@ -419,7 +419,7 @@ class Auth(object):
     def cloud_id(self):
         """Gets the cloud_id of this Auth.  # noqa: E501
 
-        The cloud identity (relevant only for access-type=azure_ad,aws_iam,gcp)  # noqa: E501
+        The cloud identity (relevant only for access-type=azure_ad,aws_iam,alicloud,gcp,oci)  # noqa: E501
 
         :return: The cloud_id of this Auth.  # noqa: E501
         :rtype: str
@@ -430,7 +430,7 @@ class Auth(object):
     def cloud_id(self, cloud_id):
         """Sets the cloud_id of this Auth.
 
-        The cloud identity (relevant only for access-type=azure_ad,aws_iam,gcp)  # noqa: E501
+        The cloud identity (relevant only for access-type=azure_ad,aws_iam,alicloud,gcp,oci)  # noqa: E501
 
         :param cloud_id: The cloud_id of this Auth.  # noqa: E501
         :type: str

@@ -4,7 +4,7 @@ uscGet is a command that gets the value and internal details of a secret from a 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**gcp_project_id** | **str** | GCP Project ID (Relevant only for GCP targets) | [optional] 
+**gcp_project_id** | **str** | The GCP project the secret resides in (GCP only). Used when getting a secret by name in a connector that spans multiple projects or uses folder/organization scope. | [optional] 
 **json** | **bool** | Set output format to JSON | [optional] [default to False]
 **namespace** | **str** | The namespace (relevant for Hashi vault target) | [optional] 
 **object_type** | **str** |  | [optional] 

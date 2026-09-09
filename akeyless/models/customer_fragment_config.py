@@ -39,7 +39,10 @@ class CustomerFragmentConfig(object):
         'id': 'str',
         'key_label': 'str',
         'name': 'str',
-        'value': 'str'
+        'value': 'str',
+        'wrap_alg': 'str',
+        'wrap_iv': 'str',
+        'wrap_tag': 'str'
     }
 
     attribute_map = {
@@ -48,10 +51,13 @@ class CustomerFragmentConfig(object):
         'id': 'id',
         'key_label': 'key_label',
         'name': 'name',
-        'value': 'value'
+        'value': 'value',
+        'wrap_alg': 'wrap_alg',
+        'wrap_iv': 'wrap_iv',
+        'wrap_tag': 'wrap_tag'
     }
 
-    def __init__(self, description=None, fragment_type=None, id=None, key_label=None, name=None, value=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, description=None, fragment_type=None, id=None, key_label=None, name=None, value=None, wrap_alg=None, wrap_iv=None, wrap_tag=None, local_vars_configuration=None):  # noqa: E501
         """CustomerFragmentConfig - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -63,6 +69,9 @@ class CustomerFragmentConfig(object):
         self._key_label = None
         self._name = None
         self._value = None
+        self._wrap_alg = None
+        self._wrap_iv = None
+        self._wrap_tag = None
         self.discriminator = None
 
         if description is not None:
@@ -77,6 +86,12 @@ class CustomerFragmentConfig(object):
             self.name = name
         if value is not None:
             self.value = value
+        if wrap_alg is not None:
+            self.wrap_alg = wrap_alg
+        if wrap_iv is not None:
+            self.wrap_iv = wrap_iv
+        if wrap_tag is not None:
+            self.wrap_tag = wrap_tag
 
     @property
     def description(self):
@@ -203,6 +218,75 @@ class CustomerFragmentConfig(object):
         """
 
         self._value = value
+
+    @property
+    def wrap_alg(self):
+        """Gets the wrap_alg of this CustomerFragmentConfig.  # noqa: E501
+
+        WrapAlg selects the HSM wrap algorithm for hsm_wrap_encrypt (e.g. rsa-oaep-sha256, aes-gcm, aes-cbc, aes-cbc-pad). RSA uses only WrapAlg; AES modes may require WrapIV and/or WrapTag.  # noqa: E501
+
+        :return: The wrap_alg of this CustomerFragmentConfig.  # noqa: E501
+        :rtype: str
+        """
+        return self._wrap_alg
+
+    @wrap_alg.setter
+    def wrap_alg(self, wrap_alg):
+        """Sets the wrap_alg of this CustomerFragmentConfig.
+
+        WrapAlg selects the HSM wrap algorithm for hsm_wrap_encrypt (e.g. rsa-oaep-sha256, aes-gcm, aes-cbc, aes-cbc-pad). RSA uses only WrapAlg; AES modes may require WrapIV and/or WrapTag.  # noqa: E501
+
+        :param wrap_alg: The wrap_alg of this CustomerFragmentConfig.  # noqa: E501
+        :type: str
+        """
+
+        self._wrap_alg = wrap_alg
+
+    @property
+    def wrap_iv(self):
+        """Gets the wrap_iv of this CustomerFragmentConfig.  # noqa: E501
+
+        WrapIV is the base64 IV for AES modes that require it (GCM/CBC). Empty for RSA and modes without IV metadata.  # noqa: E501
+
+        :return: The wrap_iv of this CustomerFragmentConfig.  # noqa: E501
+        :rtype: str
+        """
+        return self._wrap_iv
+
+    @wrap_iv.setter
+    def wrap_iv(self, wrap_iv):
+        """Sets the wrap_iv of this CustomerFragmentConfig.
+
+        WrapIV is the base64 IV for AES modes that require it (GCM/CBC). Empty for RSA and modes without IV metadata.  # noqa: E501
+
+        :param wrap_iv: The wrap_iv of this CustomerFragmentConfig.  # noqa: E501
+        :type: str
+        """
+
+        self._wrap_iv = wrap_iv
+
+    @property
+    def wrap_tag(self):
+        """Gets the wrap_tag of this CustomerFragmentConfig.  # noqa: E501
+
+        WrapTag is the base64 auth tag for AES-GCM only. Empty for RSA and other modes.  # noqa: E501
+
+        :return: The wrap_tag of this CustomerFragmentConfig.  # noqa: E501
+        :rtype: str
+        """
+        return self._wrap_tag
+
+    @wrap_tag.setter
+    def wrap_tag(self, wrap_tag):
+        """Sets the wrap_tag of this CustomerFragmentConfig.
+
+        WrapTag is the base64 auth tag for AES-GCM only. Empty for RSA and other modes.  # noqa: E501
+
+        :param wrap_tag: The wrap_tag of this CustomerFragmentConfig.  # noqa: E501
+        :type: str
+        """
+
+        self._wrap_tag = wrap_tag
 
     def to_dict(self):
         """Returns the model properties as a dict"""

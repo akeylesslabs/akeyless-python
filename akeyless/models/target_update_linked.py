@@ -35,14 +35,19 @@ class TargetUpdateLinked(object):
     """
     openapi_types = {
         'add_hosts': 'str',
+        'delete_protection': 'str',
         'description': 'str',
         'hosts': 'str',
         'json': 'bool',
         'keep_prev_version': 'str',
+        'lock_on_read': 'str',
+        'lock_ttl': 'str',
+        'max_versions': 'str',
         'name': 'str',
         'new_name': 'str',
         'parent_target_name': 'str',
         'rm_hosts': 'str',
+        'rotate_on_unlock': 'str',
         'token': 'str',
         'type': 'str',
         'uid_token': 'str'
@@ -50,34 +55,44 @@ class TargetUpdateLinked(object):
 
     attribute_map = {
         'add_hosts': 'add-hosts',
+        'delete_protection': 'delete_protection',
         'description': 'description',
         'hosts': 'hosts',
         'json': 'json',
         'keep_prev_version': 'keep-prev-version',
+        'lock_on_read': 'lock-on-read',
+        'lock_ttl': 'lock-ttl',
+        'max_versions': 'max-versions',
         'name': 'name',
         'new_name': 'new-name',
         'parent_target_name': 'parent-target-name',
         'rm_hosts': 'rm-hosts',
+        'rotate_on_unlock': 'rotate-on-unlock',
         'token': 'token',
         'type': 'type',
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, add_hosts=None, description=None, hosts=None, json=False, keep_prev_version=None, name=None, new_name=None, parent_target_name=None, rm_hosts=None, token=None, type=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, add_hosts=None, delete_protection=None, description=None, hosts=None, json=False, keep_prev_version=None, lock_on_read=None, lock_ttl=None, max_versions=None, name=None, new_name=None, parent_target_name=None, rm_hosts=None, rotate_on_unlock=None, token=None, type=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """TargetUpdateLinked - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._add_hosts = None
+        self._delete_protection = None
         self._description = None
         self._hosts = None
         self._json = None
         self._keep_prev_version = None
+        self._lock_on_read = None
+        self._lock_ttl = None
+        self._max_versions = None
         self._name = None
         self._new_name = None
         self._parent_target_name = None
         self._rm_hosts = None
+        self._rotate_on_unlock = None
         self._token = None
         self._type = None
         self._uid_token = None
@@ -85,6 +100,8 @@ class TargetUpdateLinked(object):
 
         if add_hosts is not None:
             self.add_hosts = add_hosts
+        if delete_protection is not None:
+            self.delete_protection = delete_protection
         if description is not None:
             self.description = description
         if hosts is not None:
@@ -93,6 +110,12 @@ class TargetUpdateLinked(object):
             self.json = json
         if keep_prev_version is not None:
             self.keep_prev_version = keep_prev_version
+        if lock_on_read is not None:
+            self.lock_on_read = lock_on_read
+        if lock_ttl is not None:
+            self.lock_ttl = lock_ttl
+        if max_versions is not None:
+            self.max_versions = max_versions
         self.name = name
         if new_name is not None:
             self.new_name = new_name
@@ -100,6 +123,8 @@ class TargetUpdateLinked(object):
             self.parent_target_name = parent_target_name
         if rm_hosts is not None:
             self.rm_hosts = rm_hosts
+        if rotate_on_unlock is not None:
+            self.rotate_on_unlock = rotate_on_unlock
         if token is not None:
             self.token = token
         if type is not None:
@@ -129,6 +154,29 @@ class TargetUpdateLinked(object):
         """
 
         self._add_hosts = add_hosts
+
+    @property
+    def delete_protection(self):
+        """Gets the delete_protection of this TargetUpdateLinked.  # noqa: E501
+
+        Protection from accidental deletion of this object [true/false]  # noqa: E501
+
+        :return: The delete_protection of this TargetUpdateLinked.  # noqa: E501
+        :rtype: str
+        """
+        return self._delete_protection
+
+    @delete_protection.setter
+    def delete_protection(self, delete_protection):
+        """Sets the delete_protection of this TargetUpdateLinked.
+
+        Protection from accidental deletion of this object [true/false]  # noqa: E501
+
+        :param delete_protection: The delete_protection of this TargetUpdateLinked.  # noqa: E501
+        :type: str
+        """
+
+        self._delete_protection = delete_protection
 
     @property
     def description(self):
@@ -223,6 +271,75 @@ class TargetUpdateLinked(object):
         self._keep_prev_version = keep_prev_version
 
     @property
+    def lock_on_read(self):
+        """Gets the lock_on_read of this TargetUpdateLinked.  # noqa: E501
+
+        Lock this secret after each successful value read  # noqa: E501
+
+        :return: The lock_on_read of this TargetUpdateLinked.  # noqa: E501
+        :rtype: str
+        """
+        return self._lock_on_read
+
+    @lock_on_read.setter
+    def lock_on_read(self, lock_on_read):
+        """Sets the lock_on_read of this TargetUpdateLinked.
+
+        Lock this secret after each successful value read  # noqa: E501
+
+        :param lock_on_read: The lock_on_read of this TargetUpdateLinked.  # noqa: E501
+        :type: str
+        """
+
+        self._lock_on_read = lock_on_read
+
+    @property
+    def lock_ttl(self):
+        """Gets the lock_ttl of this TargetUpdateLinked.  # noqa: E501
+
+        Lock TTL in minutes  # noqa: E501
+
+        :return: The lock_ttl of this TargetUpdateLinked.  # noqa: E501
+        :rtype: str
+        """
+        return self._lock_ttl
+
+    @lock_ttl.setter
+    def lock_ttl(self, lock_ttl):
+        """Sets the lock_ttl of this TargetUpdateLinked.
+
+        Lock TTL in minutes  # noqa: E501
+
+        :param lock_ttl: The lock_ttl of this TargetUpdateLinked.  # noqa: E501
+        :type: str
+        """
+
+        self._lock_ttl = lock_ttl
+
+    @property
+    def max_versions(self):
+        """Gets the max_versions of this TargetUpdateLinked.  # noqa: E501
+
+        Set the maximum number of versions, limited by the account settings defaults.  # noqa: E501
+
+        :return: The max_versions of this TargetUpdateLinked.  # noqa: E501
+        :rtype: str
+        """
+        return self._max_versions
+
+    @max_versions.setter
+    def max_versions(self, max_versions):
+        """Sets the max_versions of this TargetUpdateLinked.
+
+        Set the maximum number of versions, limited by the account settings defaults.  # noqa: E501
+
+        :param max_versions: The max_versions of this TargetUpdateLinked.  # noqa: E501
+        :type: str
+        """
+
+        self._max_versions = max_versions
+
+    @property
     def name(self):
         """Gets the name of this TargetUpdateLinked.  # noqa: E501
 
@@ -315,6 +432,29 @@ class TargetUpdateLinked(object):
         """
 
         self._rm_hosts = rm_hosts
+
+    @property
+    def rotate_on_unlock(self):
+        """Gets the rotate_on_unlock of this TargetUpdateLinked.  # noqa: E501
+
+        Rotate this secret after it is unlocked  # noqa: E501
+
+        :return: The rotate_on_unlock of this TargetUpdateLinked.  # noqa: E501
+        :rtype: str
+        """
+        return self._rotate_on_unlock
+
+    @rotate_on_unlock.setter
+    def rotate_on_unlock(self, rotate_on_unlock):
+        """Sets the rotate_on_unlock of this TargetUpdateLinked.
+
+        Rotate this secret after it is unlocked  # noqa: E501
+
+        :param rotate_on_unlock: The rotate_on_unlock of this TargetUpdateLinked.  # noqa: E501
+        :type: str
+        """
+
+        self._rotate_on_unlock = rotate_on_unlock
 
     @property
     def token(self):

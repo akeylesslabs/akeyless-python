@@ -36,6 +36,7 @@ class MigrationStatusReplyObj(object):
     openapi_types = {
         'certificates': 'MigrationItems',
         'computers': 'int',
+        'download_report': 'MigrationDownloadReport',
         'duration_time': 'str',
         'error': 'str',
         'last_status_message': 'str',
@@ -56,6 +57,7 @@ class MigrationStatusReplyObj(object):
     attribute_map = {
         'certificates': 'certificates',
         'computers': 'computers',
+        'download_report': 'download_report',
         'duration_time': 'duration_time',
         'error': 'error',
         'last_status_message': 'last_status_message',
@@ -73,7 +75,7 @@ class MigrationStatusReplyObj(object):
         'targets': 'targets'
     }
 
-    def __init__(self, certificates=None, computers=None, duration_time=None, error=None, last_status_message=None, max_name_length=None, max_value_length=None, migration_id=None, migration_items=None, migration_name=None, migration_state=None, migration_type=None, migration_type_name=None, rotated_secrets=None, start_time=None, sync=None, targets=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, certificates=None, computers=None, download_report=None, duration_time=None, error=None, last_status_message=None, max_name_length=None, max_value_length=None, migration_id=None, migration_items=None, migration_name=None, migration_state=None, migration_type=None, migration_type_name=None, rotated_secrets=None, start_time=None, sync=None, targets=None, local_vars_configuration=None):  # noqa: E501
         """MigrationStatusReplyObj - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -81,6 +83,7 @@ class MigrationStatusReplyObj(object):
 
         self._certificates = None
         self._computers = None
+        self._download_report = None
         self._duration_time = None
         self._error = None
         self._last_status_message = None
@@ -102,6 +105,8 @@ class MigrationStatusReplyObj(object):
             self.certificates = certificates
         if computers is not None:
             self.computers = computers
+        if download_report is not None:
+            self.download_report = download_report
         if duration_time is not None:
             self.duration_time = duration_time
         if error is not None:
@@ -174,6 +179,27 @@ class MigrationStatusReplyObj(object):
         """
 
         self._computers = computers
+
+    @property
+    def download_report(self):
+        """Gets the download_report of this MigrationStatusReplyObj.  # noqa: E501
+
+
+        :return: The download_report of this MigrationStatusReplyObj.  # noqa: E501
+        :rtype: MigrationDownloadReport
+        """
+        return self._download_report
+
+    @download_report.setter
+    def download_report(self, download_report):
+        """Sets the download_report of this MigrationStatusReplyObj.
+
+
+        :param download_report: The download_report of this MigrationStatusReplyObj.  # noqa: E501
+        :type: MigrationDownloadReport
+        """
+
+        self._download_report = download_report
 
     @property
     def duration_time(self):

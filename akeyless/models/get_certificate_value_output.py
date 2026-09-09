@@ -35,26 +35,31 @@ class GetCertificateValueOutput(object):
     """
     openapi_types = {
         'certificate_pem': 'str',
+        'encoded_certificate': 'str',
         'private_key_pem': 'str'
     }
 
     attribute_map = {
         'certificate_pem': 'certificate_pem',
+        'encoded_certificate': 'encoded_certificate',
         'private_key_pem': 'private_key_pem'
     }
 
-    def __init__(self, certificate_pem=None, private_key_pem=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, certificate_pem=None, encoded_certificate=None, private_key_pem=None, local_vars_configuration=None):  # noqa: E501
         """GetCertificateValueOutput - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._certificate_pem = None
+        self._encoded_certificate = None
         self._private_key_pem = None
         self.discriminator = None
 
         if certificate_pem is not None:
             self.certificate_pem = certificate_pem
+        if encoded_certificate is not None:
+            self.encoded_certificate = encoded_certificate
         if private_key_pem is not None:
             self.private_key_pem = private_key_pem
 
@@ -78,6 +83,27 @@ class GetCertificateValueOutput(object):
         """
 
         self._certificate_pem = certificate_pem
+
+    @property
+    def encoded_certificate(self):
+        """Gets the encoded_certificate of this GetCertificateValueOutput.  # noqa: E501
+
+
+        :return: The encoded_certificate of this GetCertificateValueOutput.  # noqa: E501
+        :rtype: str
+        """
+        return self._encoded_certificate
+
+    @encoded_certificate.setter
+    def encoded_certificate(self, encoded_certificate):
+        """Sets the encoded_certificate of this GetCertificateValueOutput.
+
+
+        :param encoded_certificate: The encoded_certificate of this GetCertificateValueOutput.  # noqa: E501
+        :type: str
+        """
+
+        self._encoded_certificate = encoded_certificate
 
     @property
     def private_key_pem(self):

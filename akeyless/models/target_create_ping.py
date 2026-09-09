@@ -40,11 +40,14 @@ class TargetCreatePing(object):
         'description': 'str',
         'json': 'bool',
         'key': 'str',
+        'lock_on_read': 'str',
+        'lock_ttl': 'str',
         'max_versions': 'str',
         'name': 'str',
         'password': 'str',
         'ping_url': 'str',
         'privileged_user': 'str',
+        'rotate_on_unlock': 'str',
         'token': 'str',
         'uid_token': 'str'
     }
@@ -56,16 +59,19 @@ class TargetCreatePing(object):
         'description': 'description',
         'json': 'json',
         'key': 'key',
+        'lock_on_read': 'lock-on-read',
+        'lock_ttl': 'lock-ttl',
         'max_versions': 'max-versions',
         'name': 'name',
         'password': 'password',
         'ping_url': 'ping-url',
         'privileged_user': 'privileged-user',
+        'rotate_on_unlock': 'rotate-on-unlock',
         'token': 'token',
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, administrative_port='9999', authorization_port='9031', delete_protection=None, description=None, json=False, key=None, max_versions=None, name=None, password=None, ping_url=None, privileged_user=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, administrative_port='9999', authorization_port='9031', delete_protection=None, description=None, json=False, key=None, lock_on_read=None, lock_ttl=None, max_versions=None, name=None, password=None, ping_url=None, privileged_user=None, rotate_on_unlock=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """TargetCreatePing - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -77,11 +83,14 @@ class TargetCreatePing(object):
         self._description = None
         self._json = None
         self._key = None
+        self._lock_on_read = None
+        self._lock_ttl = None
         self._max_versions = None
         self._name = None
         self._password = None
         self._ping_url = None
         self._privileged_user = None
+        self._rotate_on_unlock = None
         self._token = None
         self._uid_token = None
         self.discriminator = None
@@ -98,6 +107,10 @@ class TargetCreatePing(object):
             self.json = json
         if key is not None:
             self.key = key
+        if lock_on_read is not None:
+            self.lock_on_read = lock_on_read
+        if lock_ttl is not None:
+            self.lock_ttl = lock_ttl
         if max_versions is not None:
             self.max_versions = max_versions
         self.name = name
@@ -107,6 +120,8 @@ class TargetCreatePing(object):
             self.ping_url = ping_url
         if privileged_user is not None:
             self.privileged_user = privileged_user
+        if rotate_on_unlock is not None:
+            self.rotate_on_unlock = rotate_on_unlock
         if token is not None:
             self.token = token
         if uid_token is not None:
@@ -251,6 +266,52 @@ class TargetCreatePing(object):
         self._key = key
 
     @property
+    def lock_on_read(self):
+        """Gets the lock_on_read of this TargetCreatePing.  # noqa: E501
+
+        Lock this secret after each successful value read  # noqa: E501
+
+        :return: The lock_on_read of this TargetCreatePing.  # noqa: E501
+        :rtype: str
+        """
+        return self._lock_on_read
+
+    @lock_on_read.setter
+    def lock_on_read(self, lock_on_read):
+        """Sets the lock_on_read of this TargetCreatePing.
+
+        Lock this secret after each successful value read  # noqa: E501
+
+        :param lock_on_read: The lock_on_read of this TargetCreatePing.  # noqa: E501
+        :type: str
+        """
+
+        self._lock_on_read = lock_on_read
+
+    @property
+    def lock_ttl(self):
+        """Gets the lock_ttl of this TargetCreatePing.  # noqa: E501
+
+        Lock TTL in minutes  # noqa: E501
+
+        :return: The lock_ttl of this TargetCreatePing.  # noqa: E501
+        :rtype: str
+        """
+        return self._lock_ttl
+
+    @lock_ttl.setter
+    def lock_ttl(self, lock_ttl):
+        """Sets the lock_ttl of this TargetCreatePing.
+
+        Lock TTL in minutes  # noqa: E501
+
+        :param lock_ttl: The lock_ttl of this TargetCreatePing.  # noqa: E501
+        :type: str
+        """
+
+        self._lock_ttl = lock_ttl
+
+    @property
     def max_versions(self):
         """Gets the max_versions of this TargetCreatePing.  # noqa: E501
 
@@ -366,6 +427,29 @@ class TargetCreatePing(object):
         """
 
         self._privileged_user = privileged_user
+
+    @property
+    def rotate_on_unlock(self):
+        """Gets the rotate_on_unlock of this TargetCreatePing.  # noqa: E501
+
+        Rotate this secret after it is unlocked  # noqa: E501
+
+        :return: The rotate_on_unlock of this TargetCreatePing.  # noqa: E501
+        :rtype: str
+        """
+        return self._rotate_on_unlock
+
+    @rotate_on_unlock.setter
+    def rotate_on_unlock(self, rotate_on_unlock):
+        """Sets the rotate_on_unlock of this TargetCreatePing.
+
+        Rotate this secret after it is unlocked  # noqa: E501
+
+        :param rotate_on_unlock: The rotate_on_unlock of this TargetCreatePing.  # noqa: E501
+        :type: str
+        """
+
+        self._rotate_on_unlock = rotate_on_unlock
 
     @property
     def token(self):

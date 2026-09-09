@@ -78,6 +78,7 @@ class CreatePKICertIssuer(object):
         'scheduled_renew': 'int',
         'server_flag': 'bool',
         'signer_key_name': 'str',
+        'split_certificate_chain': 'bool',
         'street_address': 'str',
         'tag': 'list[str]',
         'token': 'str',
@@ -130,6 +131,7 @@ class CreatePKICertIssuer(object):
         'scheduled_renew': 'scheduled-renew',
         'server_flag': 'server-flag',
         'signer_key_name': 'signer-key-name',
+        'split_certificate_chain': 'split-certificate-chain',
         'street_address': 'street-address',
         'tag': 'tag',
         'token': 'token',
@@ -137,7 +139,7 @@ class CreatePKICertIssuer(object):
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, allow_any_name=None, allow_copy_ext_from_csr=None, allow_subdomains=None, allowed_domains=None, allowed_extra_extensions=None, allowed_ip_sans=None, allowed_uri_sans=None, auto_renew=None, basic_constraints=None, ca_target=None, client_flag=None, code_signing_flag=None, country=None, create_private_crl=None, create_private_ocsp=None, create_public_crl=None, create_public_ocsp=None, critical_key_usage='true', delete_protection=None, description=None, destination_path=None, disable_wildcards=None, enable_acme=None, expiration_event_in=None, gw_cluster_url=None, is_ca=None, item_custom_fields=None, json=False, key_usage='DigitalSignature,KeyAgreement,KeyEncipherment', locality=None, max_path_len=-1, metadata=None, name=None, not_enforce_hostnames=None, not_require_cn=None, ocsp_ttl=None, organizational_units=None, organizations=None, postal_code=None, protect_certificates=None, province=None, scheduled_renew=None, server_flag=None, signer_key_name=None, street_address=None, tag=None, token=None, ttl=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, allow_any_name=None, allow_copy_ext_from_csr=None, allow_subdomains=None, allowed_domains=None, allowed_extra_extensions=None, allowed_ip_sans=None, allowed_uri_sans=None, auto_renew=None, basic_constraints=None, ca_target=None, client_flag=None, code_signing_flag=None, country=None, create_private_crl=None, create_private_ocsp=None, create_public_crl=None, create_public_ocsp=None, critical_key_usage='true', delete_protection=None, description=None, destination_path=None, disable_wildcards=None, enable_acme=None, expiration_event_in=None, gw_cluster_url=None, is_ca=None, item_custom_fields=None, json=False, key_usage='DigitalSignature,KeyAgreement,KeyEncipherment', locality=None, max_path_len=-1, metadata=None, name=None, not_enforce_hostnames=None, not_require_cn=None, ocsp_ttl=None, organizational_units=None, organizations=None, postal_code=None, protect_certificates=None, province=None, scheduled_renew=None, server_flag=None, signer_key_name=None, split_certificate_chain=None, street_address=None, tag=None, token=None, ttl=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """CreatePKICertIssuer - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -187,6 +189,7 @@ class CreatePKICertIssuer(object):
         self._scheduled_renew = None
         self._server_flag = None
         self._signer_key_name = None
+        self._split_certificate_chain = None
         self._street_address = None
         self._tag = None
         self._token = None
@@ -281,6 +284,8 @@ class CreatePKICertIssuer(object):
             self.server_flag = server_flag
         if signer_key_name is not None:
             self.signer_key_name = signer_key_name
+        if split_certificate_chain is not None:
+            self.split_certificate_chain = split_certificate_chain
         if street_address is not None:
             self.street_address = street_address
         if tag is not None:
@@ -1304,6 +1309,29 @@ class CreatePKICertIssuer(object):
         """
 
         self._signer_key_name = signer_key_name
+
+    @property
+    def split_certificate_chain(self):
+        """Gets the split_certificate_chain of this CreatePKICertIssuer.  # noqa: E501
+
+        If set, separates the leaf certificate from the certificate chain.  # noqa: E501
+
+        :return: The split_certificate_chain of this CreatePKICertIssuer.  # noqa: E501
+        :rtype: bool
+        """
+        return self._split_certificate_chain
+
+    @split_certificate_chain.setter
+    def split_certificate_chain(self, split_certificate_chain):
+        """Sets the split_certificate_chain of this CreatePKICertIssuer.
+
+        If set, separates the leaf certificate from the certificate chain.  # noqa: E501
+
+        :param split_certificate_chain: The split_certificate_chain of this CreatePKICertIssuer.  # noqa: E501
+        :type: bool
+        """
+
+        self._split_certificate_chain = split_certificate_chain
 
     @property
     def street_address(self):

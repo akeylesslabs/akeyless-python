@@ -20,8 +20,10 @@ Name | Type | Description | Notes
 **expiration_events** | [**list[CertificateExpirationEvent]**](CertificateExpirationEvent.md) |  | [optional] 
 **external_ca_id** | [**NullString**](NullString.md) |  | [optional] 
 **issuance_status** | **str** |  | [optional] 
+**leaf_certificate_pem** | **str** | LeafCertificatePem contains only the leaf certificate, derived from CertificatePem. Populated only when the certificate was issued with SplitCertificateChain enabled. | [optional] 
 **not_before** | **datetime** |  | [optional] 
 **renew_before_expiration_in_days** | **int** |  | [optional] 
+**split_certificate_chain** | **bool** | SplitCertificateChain reflects whether this certificate was issued while its PKI Cert Issuer had split-certificate-chain enabled. When true, LeafCertificatePem is populated in addition to CertificatePem (which always holds the full chain). | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

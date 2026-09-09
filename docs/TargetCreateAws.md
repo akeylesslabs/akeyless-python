@@ -10,10 +10,13 @@ Name | Type | Description | Notes
 **generate_external_id** | **bool** | A unique auto-generated value used in your AWS account when configuring your AWS IAM role to securely delegate access to Akeyless. Relevant only when using GW cloud ID | [optional] 
 **json** | **bool** | Set output format to JSON | [optional] [default to False]
 **key** | **str** | The name of a key that used to encrypt the target secret value (if empty, the account default protectionKey key will be used) | [optional] 
+**lock_on_read** | **str** | Lock this secret after each successful value read | [optional] 
+**lock_ttl** | **str** | Lock TTL in minutes | [optional] 
 **max_versions** | **str** | Set the maximum number of versions, limited by the account settings defaults. | [optional] 
 **name** | **str** | Target name | 
 **region** | **str** | AWS region | [optional] [default to 'us-east-2']
 **role_arn** | **str** | AWS IAM role identifier that Gateway will assume in your AWS account, relevant only when using external ID | [optional] 
+**rotate_on_unlock** | **str** | Rotate this secret after it is unlocked | [optional] 
 **session_token** | **str** | Required only for temporary security credentials retrieved using STS | [optional] 
 **token** | **str** | Authentication token (see &#x60;/auth&#x60; and &#x60;/configure&#x60;) | [optional] 
 **uid_token** | **str** | The universal identity token, Required only for universal_identity authentication | [optional] 

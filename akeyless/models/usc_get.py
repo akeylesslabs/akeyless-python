@@ -100,7 +100,7 @@ class UscGet(object):
     def gcp_project_id(self):
         """Gets the gcp_project_id of this UscGet.  # noqa: E501
 
-        GCP Project ID (Relevant only for GCP targets)  # noqa: E501
+        The GCP project the secret resides in (GCP only). Used when getting a secret by name in a connector that spans multiple projects or uses folder/organization scope.  # noqa: E501
 
         :return: The gcp_project_id of this UscGet.  # noqa: E501
         :rtype: str
@@ -111,7 +111,7 @@ class UscGet(object):
     def gcp_project_id(self, gcp_project_id):
         """Sets the gcp_project_id of this UscGet.
 
-        GCP Project ID (Relevant only for GCP targets)  # noqa: E501
+        The GCP project the secret resides in (GCP only). Used when getting a secret by name in a connector that spans multiple projects or uses folder/organization scope.  # noqa: E501
 
         :param gcp_project_id: The gcp_project_id of this UscGet.  # noqa: E501
         :type: str

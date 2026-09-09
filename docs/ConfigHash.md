@@ -20,6 +20,7 @@ Name | Type | Description | Notes
 **producers_status** | **str** |  | [optional] 
 **rotators** | [**object**](.md) |  | [optional] 
 **saml** | **str** |  | [optional] 
+**saml_sp** | **str** |  | [optional] 
 **universal_identity** | **str** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

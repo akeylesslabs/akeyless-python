@@ -38,6 +38,8 @@ class CreateMcpSecretOAuthClientCreds(object):
         'ara_enabled': 'bool',
         'delete_protection': 'str',
         'description': 'str',
+        'enable_agentic_runtime_authority': 'bool',
+        'enable_ai_quorum': 'bool',
         'input_rule': 'list[str]',
         'json': 'bool',
         'max_versions': 'str',
@@ -60,6 +62,8 @@ class CreateMcpSecretOAuthClientCreds(object):
         'ara_enabled': 'ara-enabled',
         'delete_protection': 'delete_protection',
         'description': 'description',
+        'enable_agentic_runtime_authority': 'enable-agentic-runtime-authority',
+        'enable_ai_quorum': 'enable-ai-quorum',
         'input_rule': 'input-rule',
         'json': 'json',
         'max_versions': 'max-versions',
@@ -77,7 +81,7 @@ class CreateMcpSecretOAuthClientCreds(object):
         'url': 'url'
     }
 
-    def __init__(self, accessibility='regular', ara_enabled=None, delete_protection=None, description=None, input_rule=None, json=False, max_versions=None, metadata=None, name=None, oauth_client_id=None, oauth_client_secret=None, oauth_scopes=None, oauth_token_url=None, output_rule=None, protection_key=None, tags=None, token=None, uid_token=None, url=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, accessibility='regular', ara_enabled=None, delete_protection=None, description=None, enable_agentic_runtime_authority=None, enable_ai_quorum=None, input_rule=None, json=False, max_versions=None, metadata=None, name=None, oauth_client_id=None, oauth_client_secret=None, oauth_scopes=None, oauth_token_url=None, output_rule=None, protection_key=None, tags=None, token=None, uid_token=None, url=None, local_vars_configuration=None):  # noqa: E501
         """CreateMcpSecretOAuthClientCreds - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -87,6 +91,8 @@ class CreateMcpSecretOAuthClientCreds(object):
         self._ara_enabled = None
         self._delete_protection = None
         self._description = None
+        self._enable_agentic_runtime_authority = None
+        self._enable_ai_quorum = None
         self._input_rule = None
         self._json = None
         self._max_versions = None
@@ -112,6 +118,10 @@ class CreateMcpSecretOAuthClientCreds(object):
             self.delete_protection = delete_protection
         if description is not None:
             self.description = description
+        if enable_agentic_runtime_authority is not None:
+            self.enable_agentic_runtime_authority = enable_agentic_runtime_authority
+        if enable_ai_quorum is not None:
+            self.enable_ai_quorum = enable_ai_quorum
         if input_rule is not None:
             self.input_rule = input_rule
         if json is not None:
@@ -233,6 +243,52 @@ class CreateMcpSecretOAuthClientCreds(object):
         """
 
         self._description = description
+
+    @property
+    def enable_agentic_runtime_authority(self):
+        """Gets the enable_agentic_runtime_authority of this CreateMcpSecretOAuthClientCreds.  # noqa: E501
+
+        EnableAra is the documented spelling of AraEnabled. Both set the same field; --ara-enabled shipped first and stays as an undocumented alias so existing scripts and the Terraform provider keep working.  # noqa: E501
+
+        :return: The enable_agentic_runtime_authority of this CreateMcpSecretOAuthClientCreds.  # noqa: E501
+        :rtype: bool
+        """
+        return self._enable_agentic_runtime_authority
+
+    @enable_agentic_runtime_authority.setter
+    def enable_agentic_runtime_authority(self, enable_agentic_runtime_authority):
+        """Sets the enable_agentic_runtime_authority of this CreateMcpSecretOAuthClientCreds.
+
+        EnableAra is the documented spelling of AraEnabled. Both set the same field; --ara-enabled shipped first and stays as an undocumented alias so existing scripts and the Terraform provider keep working.  # noqa: E501
+
+        :param enable_agentic_runtime_authority: The enable_agentic_runtime_authority of this CreateMcpSecretOAuthClientCreds.  # noqa: E501
+        :type: bool
+        """
+
+        self._enable_agentic_runtime_authority = enable_agentic_runtime_authority
+
+    @property
+    def enable_ai_quorum(self):
+        """Gets the enable_ai_quorum of this CreateMcpSecretOAuthClientCreds.  # noqa: E501
+
+        Turns on AI Quorum checks for this item.  # noqa: E501
+
+        :return: The enable_ai_quorum of this CreateMcpSecretOAuthClientCreds.  # noqa: E501
+        :rtype: bool
+        """
+        return self._enable_ai_quorum
+
+    @enable_ai_quorum.setter
+    def enable_ai_quorum(self, enable_ai_quorum):
+        """Sets the enable_ai_quorum of this CreateMcpSecretOAuthClientCreds.
+
+        Turns on AI Quorum checks for this item.  # noqa: E501
+
+        :param enable_ai_quorum: The enable_ai_quorum of this CreateMcpSecretOAuthClientCreds.  # noqa: E501
+        :type: bool
+        """
+
+        self._enable_ai_quorum = enable_ai_quorum
 
     @property
     def input_rule(self):

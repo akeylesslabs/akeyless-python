@@ -49,6 +49,8 @@ class TargetUpdateAerospike(object):
         'json': 'bool',
         'keep_prev_version': 'str',
         'key': 'str',
+        'lock_on_read': 'str',
+        'lock_ttl': 'str',
         'max_versions': 'str',
         'name': 'str',
         'namespace': 'str',
@@ -56,6 +58,7 @@ class TargetUpdateAerospike(object):
         'new_name': 'str',
         'password': 'str',
         'port': 'str',
+        'rotate_on_unlock': 'str',
         'skip_server_name_validation': 'str',
         'ssl': 'bool',
         'ssl_certificate': 'str',
@@ -79,6 +82,8 @@ class TargetUpdateAerospike(object):
         'json': 'json',
         'keep_prev_version': 'keep-prev-version',
         'key': 'key',
+        'lock_on_read': 'lock-on-read',
+        'lock_ttl': 'lock-ttl',
         'max_versions': 'max-versions',
         'name': 'name',
         'namespace': 'namespace',
@@ -86,6 +91,7 @@ class TargetUpdateAerospike(object):
         'new_name': 'new-name',
         'password': 'password',
         'port': 'port',
+        'rotate_on_unlock': 'rotate-on-unlock',
         'skip_server_name_validation': 'skip-server-name-validation',
         'ssl': 'ssl',
         'ssl_certificate': 'ssl-certificate',
@@ -93,7 +99,7 @@ class TargetUpdateAerospike(object):
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, admin_username=None, aerospike_client_id=None, aerospike_client_secret=None, aerospike_cloud=None, aerospike_cluster_id=None, client_certificate=None, client_private_key=None, db_server_name=None, delete_protection=None, description='default_comment', enable_mtls=None, hostname=None, json=False, keep_prev_version=None, key=None, max_versions=None, name=None, namespace=None, new_comment='default_comment', new_name=None, password=None, port=None, skip_server_name_validation=None, ssl=None, ssl_certificate=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, admin_username=None, aerospike_client_id=None, aerospike_client_secret=None, aerospike_cloud=None, aerospike_cluster_id=None, client_certificate=None, client_private_key=None, db_server_name=None, delete_protection=None, description='default_comment', enable_mtls=None, hostname=None, json=False, keep_prev_version=None, key=None, lock_on_read=None, lock_ttl=None, max_versions=None, name=None, namespace=None, new_comment='default_comment', new_name=None, password=None, port=None, rotate_on_unlock=None, skip_server_name_validation=None, ssl=None, ssl_certificate=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """TargetUpdateAerospike - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -114,6 +120,8 @@ class TargetUpdateAerospike(object):
         self._json = None
         self._keep_prev_version = None
         self._key = None
+        self._lock_on_read = None
+        self._lock_ttl = None
         self._max_versions = None
         self._name = None
         self._namespace = None
@@ -121,6 +129,7 @@ class TargetUpdateAerospike(object):
         self._new_name = None
         self._password = None
         self._port = None
+        self._rotate_on_unlock = None
         self._skip_server_name_validation = None
         self._ssl = None
         self._ssl_certificate = None
@@ -158,6 +167,10 @@ class TargetUpdateAerospike(object):
             self.keep_prev_version = keep_prev_version
         if key is not None:
             self.key = key
+        if lock_on_read is not None:
+            self.lock_on_read = lock_on_read
+        if lock_ttl is not None:
+            self.lock_ttl = lock_ttl
         if max_versions is not None:
             self.max_versions = max_versions
         self.name = name
@@ -171,6 +184,8 @@ class TargetUpdateAerospike(object):
             self.password = password
         if port is not None:
             self.port = port
+        if rotate_on_unlock is not None:
+            self.rotate_on_unlock = rotate_on_unlock
         if skip_server_name_validation is not None:
             self.skip_server_name_validation = skip_server_name_validation
         if ssl is not None:
@@ -528,6 +543,52 @@ class TargetUpdateAerospike(object):
         self._key = key
 
     @property
+    def lock_on_read(self):
+        """Gets the lock_on_read of this TargetUpdateAerospike.  # noqa: E501
+
+        Lock this secret after each successful value read  # noqa: E501
+
+        :return: The lock_on_read of this TargetUpdateAerospike.  # noqa: E501
+        :rtype: str
+        """
+        return self._lock_on_read
+
+    @lock_on_read.setter
+    def lock_on_read(self, lock_on_read):
+        """Sets the lock_on_read of this TargetUpdateAerospike.
+
+        Lock this secret after each successful value read  # noqa: E501
+
+        :param lock_on_read: The lock_on_read of this TargetUpdateAerospike.  # noqa: E501
+        :type: str
+        """
+
+        self._lock_on_read = lock_on_read
+
+    @property
+    def lock_ttl(self):
+        """Gets the lock_ttl of this TargetUpdateAerospike.  # noqa: E501
+
+        Lock TTL in minutes  # noqa: E501
+
+        :return: The lock_ttl of this TargetUpdateAerospike.  # noqa: E501
+        :rtype: str
+        """
+        return self._lock_ttl
+
+    @lock_ttl.setter
+    def lock_ttl(self, lock_ttl):
+        """Sets the lock_ttl of this TargetUpdateAerospike.
+
+        Lock TTL in minutes  # noqa: E501
+
+        :param lock_ttl: The lock_ttl of this TargetUpdateAerospike.  # noqa: E501
+        :type: str
+        """
+
+        self._lock_ttl = lock_ttl
+
+    @property
     def max_versions(self):
         """Gets the max_versions of this TargetUpdateAerospike.  # noqa: E501
 
@@ -689,6 +750,29 @@ class TargetUpdateAerospike(object):
         """
 
         self._port = port
+
+    @property
+    def rotate_on_unlock(self):
+        """Gets the rotate_on_unlock of this TargetUpdateAerospike.  # noqa: E501
+
+        Rotate this secret after it is unlocked  # noqa: E501
+
+        :return: The rotate_on_unlock of this TargetUpdateAerospike.  # noqa: E501
+        :rtype: str
+        """
+        return self._rotate_on_unlock
+
+    @rotate_on_unlock.setter
+    def rotate_on_unlock(self, rotate_on_unlock):
+        """Sets the rotate_on_unlock of this TargetUpdateAerospike.
+
+        Rotate this secret after it is unlocked  # noqa: E501
+
+        :param rotate_on_unlock: The rotate_on_unlock of this TargetUpdateAerospike.  # noqa: E501
+        :type: str
+        """
+
+        self._rotate_on_unlock = rotate_on_unlock
 
     @property
     def skip_server_name_validation(self):

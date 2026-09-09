@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 **delete_remote** | **bool** | Delete the secret from remote secret manager (for association create/update) | [optional] 
 **environments** | **str** | GitHub environments to sync to. Relevant only for GitHub targets. Syncs to all environments defined on the selected USC by default, or to one or more specific repositories associated with that USC item when specified (e.g. --environments repo1/env1,repo2/env2). | [optional] 
 **filter_secret_value** | **str** | JQ expression to filter or transform the secret value | [optional] 
+**gcp_project_id** | **str** | GCP project to sync the secret to. Relevant only for GCP USCs; must be a project available on the USC | [optional] 
 **json** | **bool** | Set output format to JSON | [optional] [default to False]
 **name** | **str** | Rotated secret name | 
 **namespace** | **str** | Vault namespace, releavnt only for Hashicorp Vault Target | [optional] 

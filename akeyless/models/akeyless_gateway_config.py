@@ -52,6 +52,7 @@ class AkeylessGatewayConfig(object):
         'producers': 'ProducersConfigPart',
         'rotators': 'RotatorsConfigPart',
         'saml': 'DefaultConfigPart',
+        'saml_sp': 'SamlSpConfigPart',
         'version': 'int'
     }
 
@@ -74,10 +75,11 @@ class AkeylessGatewayConfig(object):
         'producers': 'producers',
         'rotators': 'rotators',
         'saml': 'saml',
+        'saml_sp': 'saml_sp',
         'version': 'version'
     }
 
-    def __init__(self, admins=None, ai_insights=None, ca_certificates=None, cache=None, cf=None, config_protection_key_name=None, general=None, k8s_auths=None, kerberos=None, kmip_clients=None, ldap=None, leadership=None, log_forwarding=None, message_queue_info=None, migrations=None, producers=None, rotators=None, saml=None, version=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, admins=None, ai_insights=None, ca_certificates=None, cache=None, cf=None, config_protection_key_name=None, general=None, k8s_auths=None, kerberos=None, kmip_clients=None, ldap=None, leadership=None, log_forwarding=None, message_queue_info=None, migrations=None, producers=None, rotators=None, saml=None, saml_sp=None, version=None, local_vars_configuration=None):  # noqa: E501
         """AkeylessGatewayConfig - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -101,6 +103,7 @@ class AkeylessGatewayConfig(object):
         self._producers = None
         self._rotators = None
         self._saml = None
+        self._saml_sp = None
         self._version = None
         self.discriminator = None
 
@@ -140,6 +143,8 @@ class AkeylessGatewayConfig(object):
             self.rotators = rotators
         if saml is not None:
             self.saml = saml
+        if saml_sp is not None:
+            self.saml_sp = saml_sp
         if version is not None:
             self.version = version
 
@@ -520,6 +525,27 @@ class AkeylessGatewayConfig(object):
         """
 
         self._saml = saml
+
+    @property
+    def saml_sp(self):
+        """Gets the saml_sp of this AkeylessGatewayConfig.  # noqa: E501
+
+
+        :return: The saml_sp of this AkeylessGatewayConfig.  # noqa: E501
+        :rtype: SamlSpConfigPart
+        """
+        return self._saml_sp
+
+    @saml_sp.setter
+    def saml_sp(self, saml_sp):
+        """Sets the saml_sp of this AkeylessGatewayConfig.
+
+
+        :param saml_sp: The saml_sp of this AkeylessGatewayConfig.  # noqa: E501
+        :type: SamlSpConfigPart
+        """
+
+        self._saml_sp = saml_sp
 
     @property
     def version(self):

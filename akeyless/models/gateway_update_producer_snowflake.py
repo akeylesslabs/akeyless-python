@@ -42,6 +42,8 @@ class GatewayUpdateProducerSnowflake(object):
         'custom_username_template': 'str',
         'db_name': 'str',
         'delete_protection': 'str',
+        'enable_agentic_runtime_authority': 'bool',
+        'enable_ai_quorum': 'bool',
         'input_rule': 'list[str]',
         'item_custom_fields': 'dict(str, str)',
         'json': 'bool',
@@ -75,6 +77,8 @@ class GatewayUpdateProducerSnowflake(object):
         'custom_username_template': 'custom-username-template',
         'db_name': 'db-name',
         'delete_protection': 'delete_protection',
+        'enable_agentic_runtime_authority': 'enable-agentic-runtime-authority',
+        'enable_ai_quorum': 'enable-ai-quorum',
         'input_rule': 'input-rule',
         'item_custom_fields': 'item-custom-fields',
         'json': 'json',
@@ -99,7 +103,7 @@ class GatewayUpdateProducerSnowflake(object):
         'warehouse': 'warehouse'
     }
 
-    def __init__(self, account=None, account_password=None, account_username=None, ara_enabled=None, auth_mode='password', custom_username_template=None, db_name=None, delete_protection=None, input_rule=None, item_custom_fields=None, json=False, key_algo=None, name=None, new_name=None, output_rule=None, password_length=None, private_key=None, private_key_passphrase=None, role=None, skip_dry_run=None, tags=None, target_name=None, token=None, uid_token=None, use_capital_letters=None, use_lower_letters=None, use_numbers=None, use_special_characters=None, user_ttl='24h', warehouse=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, account=None, account_password=None, account_username=None, ara_enabled=None, auth_mode='password', custom_username_template=None, db_name=None, delete_protection=None, enable_agentic_runtime_authority=None, enable_ai_quorum=None, input_rule=None, item_custom_fields=None, json=False, key_algo=None, name=None, new_name=None, output_rule=None, password_length=None, private_key=None, private_key_passphrase=None, role=None, skip_dry_run=None, tags=None, target_name=None, token=None, uid_token=None, use_capital_letters=None, use_lower_letters=None, use_numbers=None, use_special_characters=None, user_ttl='24h', warehouse=None, local_vars_configuration=None):  # noqa: E501
         """GatewayUpdateProducerSnowflake - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -113,6 +117,8 @@ class GatewayUpdateProducerSnowflake(object):
         self._custom_username_template = None
         self._db_name = None
         self._delete_protection = None
+        self._enable_agentic_runtime_authority = None
+        self._enable_ai_quorum = None
         self._input_rule = None
         self._item_custom_fields = None
         self._json = None
@@ -153,6 +159,10 @@ class GatewayUpdateProducerSnowflake(object):
             self.db_name = db_name
         if delete_protection is not None:
             self.delete_protection = delete_protection
+        if enable_agentic_runtime_authority is not None:
+            self.enable_agentic_runtime_authority = enable_agentic_runtime_authority
+        if enable_ai_quorum is not None:
+            self.enable_ai_quorum = enable_ai_quorum
         if input_rule is not None:
             self.input_rule = input_rule
         if item_custom_fields is not None:
@@ -380,6 +390,52 @@ class GatewayUpdateProducerSnowflake(object):
         """
 
         self._delete_protection = delete_protection
+
+    @property
+    def enable_agentic_runtime_authority(self):
+        """Gets the enable_agentic_runtime_authority of this GatewayUpdateProducerSnowflake.  # noqa: E501
+
+        EnableAra is the documented spelling of AraEnabled; --ara-enabled shipped first and stays as an undocumented alias.  # noqa: E501
+
+        :return: The enable_agentic_runtime_authority of this GatewayUpdateProducerSnowflake.  # noqa: E501
+        :rtype: bool
+        """
+        return self._enable_agentic_runtime_authority
+
+    @enable_agentic_runtime_authority.setter
+    def enable_agentic_runtime_authority(self, enable_agentic_runtime_authority):
+        """Sets the enable_agentic_runtime_authority of this GatewayUpdateProducerSnowflake.
+
+        EnableAra is the documented spelling of AraEnabled; --ara-enabled shipped first and stays as an undocumented alias.  # noqa: E501
+
+        :param enable_agentic_runtime_authority: The enable_agentic_runtime_authority of this GatewayUpdateProducerSnowflake.  # noqa: E501
+        :type: bool
+        """
+
+        self._enable_agentic_runtime_authority = enable_agentic_runtime_authority
+
+    @property
+    def enable_ai_quorum(self):
+        """Gets the enable_ai_quorum of this GatewayUpdateProducerSnowflake.  # noqa: E501
+
+        Turns on AI Quorum checks for this item.  # noqa: E501
+
+        :return: The enable_ai_quorum of this GatewayUpdateProducerSnowflake.  # noqa: E501
+        :rtype: bool
+        """
+        return self._enable_ai_quorum
+
+    @enable_ai_quorum.setter
+    def enable_ai_quorum(self, enable_ai_quorum):
+        """Sets the enable_ai_quorum of this GatewayUpdateProducerSnowflake.
+
+        Turns on AI Quorum checks for this item.  # noqa: E501
+
+        :param enable_ai_quorum: The enable_ai_quorum of this GatewayUpdateProducerSnowflake.  # noqa: E501
+        :type: bool
+        """
+
+        self._enable_ai_quorum = enable_ai_quorum
 
     @property
     def input_rule(self):

@@ -8,6 +8,8 @@ Name | Type | Description | Notes
 **custom_username_template** | **str** | Customize how temporary usernames are generated using go template | [optional] 
 **delete_protection** | **str** | Protection from accidental deletion of this object [true/false] | [optional] 
 **description** | **str** | Description of the object | [optional] 
+**enable_agentic_runtime_authority** | **bool** | EnableAra is the documented spelling of AraEnabled; --ara-enabled shipped first and stays as an undocumented alias. | [optional] 
+**enable_ai_quorum** | **bool** | Turns on AI Quorum checks for this item. | [optional] 
 **hana_dbname** | **str** | HanaDb Name | [optional] 
 **hanadb_create_statements** | **str** | HanaDb Creation statements | [optional] 
 **hanadb_host** | **str** | HanaDb Host | [optional] [default to '127.0.0.1']

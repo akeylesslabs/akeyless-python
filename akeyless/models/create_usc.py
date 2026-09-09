@@ -290,7 +290,7 @@ class CreateUSC(object):
     def gcp_organization_id(self):
         """Gets the gcp_organization_id of this CreateUSC.  # noqa: E501
 
-        GCP Organization ID (Relevant only for GCP targets)  # noqa: E501
+        GCP Organization ID (Relevant only for GCP targets with folder or organization scope)  # noqa: E501
 
         :return: The gcp_organization_id of this CreateUSC.  # noqa: E501
         :rtype: str
@@ -301,7 +301,7 @@ class CreateUSC(object):
     def gcp_organization_id(self, gcp_organization_id):
         """Sets the gcp_organization_id of this CreateUSC.
 
-        GCP Organization ID (Relevant only for GCP targets)  # noqa: E501
+        GCP Organization ID (Relevant only for GCP targets with folder or organization scope)  # noqa: E501
 
         :param gcp_organization_id: The gcp_organization_id of this CreateUSC.  # noqa: E501
         :type: str
@@ -313,7 +313,7 @@ class CreateUSC(object):
     def gcp_project_id(self):
         """Gets the gcp_project_id of this CreateUSC.  # noqa: E501
 
-        GCP Project ID (Relevant only for GCP targets)  # noqa: E501
+        GCP Project ID to manage secrets in (Relevant only for GCP targets with project scope). If empty, the project is taken from the target.  # noqa: E501
 
         :return: The gcp_project_id of this CreateUSC.  # noqa: E501
         :rtype: str
@@ -324,7 +324,7 @@ class CreateUSC(object):
     def gcp_project_id(self, gcp_project_id):
         """Sets the gcp_project_id of this CreateUSC.
 
-        GCP Project ID (Relevant only for GCP targets)  # noqa: E501
+        GCP Project ID to manage secrets in (Relevant only for GCP targets with project scope). If empty, the project is taken from the target.  # noqa: E501
 
         :param gcp_project_id: The gcp_project_id of this CreateUSC.  # noqa: E501
         :type: str
@@ -336,7 +336,7 @@ class CreateUSC(object):
     def gcp_scope(self):
         """Gets the gcp_scope of this CreateUSC.  # noqa: E501
 
-        The gcp usc scope [ project / organization / folder]  # noqa: E501
+        The GCP USC scope [project/folder/organization]. With folder/organization, all projects under the folder/org are manageable. Relevant only for GCP targets. Defaults to project when empty.  # noqa: E501
 
         :return: The gcp_scope of this CreateUSC.  # noqa: E501
         :rtype: str
@@ -347,7 +347,7 @@ class CreateUSC(object):
     def gcp_scope(self, gcp_scope):
         """Sets the gcp_scope of this CreateUSC.
 
-        The gcp usc scope [ project / organization / folder]  # noqa: E501
+        The GCP USC scope [project/folder/organization]. With folder/organization, all projects under the folder/org are manageable. Relevant only for GCP targets. Defaults to project when empty.  # noqa: E501
 
         :param gcp_scope: The gcp_scope of this CreateUSC.  # noqa: E501
         :type: str

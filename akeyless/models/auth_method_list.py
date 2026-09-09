@@ -174,7 +174,7 @@ class AuthMethodList(object):
     def type(self):
         """Gets the type of this AuthMethodList.  # noqa: E501
 
-        The Auth method types list of the requested method. In case it is empty, all types of auth methods will be returned. options: [api_key, azure_ad, oauth2/jwt, saml2, ldap, aws_iam, oidc, universal_identity, gcp, k8s, cert]  # noqa: E501
+        The Auth method types list of the requested method. In case it is empty, all types of auth methods will be returned. options: [api_key, azure_ad, oauth2/jwt, saml2, ldap, aws_iam, alicloud, oidc, universal_identity, gcp, k8s, cert]  # noqa: E501
 
         :return: The type of this AuthMethodList.  # noqa: E501
         :rtype: list[str]
@@ -185,7 +185,7 @@ class AuthMethodList(object):
     def type(self, type):
         """Sets the type of this AuthMethodList.
 
-        The Auth method types list of the requested method. In case it is empty, all types of auth methods will be returned. options: [api_key, azure_ad, oauth2/jwt, saml2, ldap, aws_iam, oidc, universal_identity, gcp, k8s, cert]  # noqa: E501
+        The Auth method types list of the requested method. In case it is empty, all types of auth methods will be returned. options: [api_key, azure_ad, oauth2/jwt, saml2, ldap, aws_iam, alicloud, oidc, universal_identity, gcp, k8s, cert]  # noqa: E501
 
         :param type: The type of this AuthMethodList.  # noqa: E501
         :type: list[str]

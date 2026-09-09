@@ -5,6 +5,8 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **actions** | **list[str]** |  | [optional] 
 **expire_at** | **int** |  | [optional] 
+**lock_origin** | **str** |  | [optional] 
+**locked_at** | **int** |  | [optional] 
 **locked_by** | **str** |  | [optional] 
 **unique_identifier** | **str** |  | [optional] 
 

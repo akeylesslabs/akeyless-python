@@ -22,10 +22,13 @@ Name | Type | Description | Notes
 **json** | **bool** | Set output format to JSON | [optional] [default to False]
 **key** | **str** | The name of a key that used to encrypt the secret value (if empty, the account default protectionKey key will be used) | [optional] 
 **lock_during_sra_session** | **str** | Lock this secret for read/update while an SRA session is active | [optional] 
+**lock_on_read** | **str** | Lock this secret after each successful value read | [optional] 
+**lock_ttl** | **str** | Lock TTL in minutes | [optional] 
 **metadata** | **str** | Deprecated - use description | [optional] 
 **name** | **str** | Secret name | 
 **password_length** | **str** | The length of the password to be generated | [optional] 
 **rotate_after_disconnect** | **str** | StringOrBool accepts JSON strings, booleans, and numbers for backward compatibility with older SDK versions that send boolean values for rotate-after-disconnect. | [optional] 
+**rotate_on_unlock** | **str** | Rotate this secret after it is unlocked | [optional] 
 **rotated_password** | **str** | rotated-username password (relevant only for rotator-type&#x3D;password) | [optional] 
 **rotated_username** | **str** | username to be rotated, if selected use-self-creds at rotator-creds-type, this username will try to rotate it&#39;s own password, if use-target-creds is selected, target credentials will be use to rotate the rotated-password (relevant only for rotator-type&#x3D;password) | [optional] 
 **rotation_hour** | **int** | The Hour of the rotation in UTC. Default rotation-hour is 14:00 | [optional] 

@@ -36,6 +36,7 @@ class AuthMethodAccessInfo(object):
     openapi_types = {
         'access_expires': 'int',
         'access_id_alias': 'str',
+        'alicloud_access_rules': 'AliCloudAccessRules',
         'allowed_client_type': 'list[str]',
         'api_key_access_rules': 'APIKeyAccessRules',
         'audit_logs_claims': 'list[str]',
@@ -66,6 +67,7 @@ class AuthMethodAccessInfo(object):
     attribute_map = {
         'access_expires': 'access_expires',
         'access_id_alias': 'access_id_alias',
+        'alicloud_access_rules': 'alicloud_access_rules',
         'allowed_client_type': 'allowed_client_type',
         'api_key_access_rules': 'api_key_access_rules',
         'audit_logs_claims': 'audit_logs_claims',
@@ -93,7 +95,7 @@ class AuthMethodAccessInfo(object):
         'universal_identity_access_rules': 'universal_identity_access_rules'
     }
 
-    def __init__(self, access_expires=None, access_id_alias=None, allowed_client_type=None, api_key_access_rules=None, audit_logs_claims=None, aws_iam_access_rules=None, azure_ad_access_rules=None, cert_access_rules=None, cidr_whitelist=None, email_pass_access_rules=None, force_sub_claims=None, gcp_access_rules=None, gw_cidr_whitelist=None, huawei_access_rules=None, jwt_ttl=None, k8s_access_rules=None, kerberos_access_rules=None, ldap_access_rules=None, oauth2_access_rules=None, oci_access_rules=None, oidc_access_rules=None, product_types=None, rules_type=None, saml_access_rules=None, sub_claims_delimiters=None, uid_expiration_events=None, universal_identity_access_rules=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, access_expires=None, access_id_alias=None, alicloud_access_rules=None, allowed_client_type=None, api_key_access_rules=None, audit_logs_claims=None, aws_iam_access_rules=None, azure_ad_access_rules=None, cert_access_rules=None, cidr_whitelist=None, email_pass_access_rules=None, force_sub_claims=None, gcp_access_rules=None, gw_cidr_whitelist=None, huawei_access_rules=None, jwt_ttl=None, k8s_access_rules=None, kerberos_access_rules=None, ldap_access_rules=None, oauth2_access_rules=None, oci_access_rules=None, oidc_access_rules=None, product_types=None, rules_type=None, saml_access_rules=None, sub_claims_delimiters=None, uid_expiration_events=None, universal_identity_access_rules=None, local_vars_configuration=None):  # noqa: E501
         """AuthMethodAccessInfo - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -101,6 +103,7 @@ class AuthMethodAccessInfo(object):
 
         self._access_expires = None
         self._access_id_alias = None
+        self._alicloud_access_rules = None
         self._allowed_client_type = None
         self._api_key_access_rules = None
         self._audit_logs_claims = None
@@ -132,6 +135,8 @@ class AuthMethodAccessInfo(object):
             self.access_expires = access_expires
         if access_id_alias is not None:
             self.access_id_alias = access_id_alias
+        if alicloud_access_rules is not None:
+            self.alicloud_access_rules = alicloud_access_rules
         if allowed_client_type is not None:
             self.allowed_client_type = allowed_client_type
         if api_key_access_rules is not None:
@@ -226,6 +231,27 @@ class AuthMethodAccessInfo(object):
         """
 
         self._access_id_alias = access_id_alias
+
+    @property
+    def alicloud_access_rules(self):
+        """Gets the alicloud_access_rules of this AuthMethodAccessInfo.  # noqa: E501
+
+
+        :return: The alicloud_access_rules of this AuthMethodAccessInfo.  # noqa: E501
+        :rtype: AliCloudAccessRules
+        """
+        return self._alicloud_access_rules
+
+    @alicloud_access_rules.setter
+    def alicloud_access_rules(self, alicloud_access_rules):
+        """Sets the alicloud_access_rules of this AuthMethodAccessInfo.
+
+
+        :param alicloud_access_rules: The alicloud_access_rules of this AuthMethodAccessInfo.  # noqa: E501
+        :type: AliCloudAccessRules
+        """
+
+        self._alicloud_access_rules = alicloud_access_rules
 
     @property
     def allowed_client_type(self):

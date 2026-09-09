@@ -13,6 +13,7 @@ Method | HTTP request | Description
 [**assoc_role_auth_method**](V2Api.md#assoc_role_auth_method) | **POST** /assoc-role-am | 
 [**assoc_target_item**](V2Api.md#assoc_target_item) | **POST** /assoc-target-item | 
 [**auth**](V2Api.md#auth) | **POST** /auth | 
+[**auth_method_create_ali_cloud**](V2Api.md#auth_method_create_ali_cloud) | **POST** /auth-method-create-alicloud | 
 [**auth_method_create_api_key**](V2Api.md#auth_method_create_api_key) | **POST** /auth-method-create-api-key | 
 [**auth_method_create_aws_iam**](V2Api.md#auth_method_create_aws_iam) | **POST** /auth-method-create-aws-iam | 
 [**auth_method_create_azure_ad**](V2Api.md#auth_method_create_azure_ad) | **POST** /auth-method-create-azure-ad | 
@@ -30,6 +31,7 @@ Method | HTTP request | Description
 [**auth_method_delete**](V2Api.md#auth_method_delete) | **POST** /auth-method-delete | 
 [**auth_method_get**](V2Api.md#auth_method_get) | **POST** /auth-method-get | 
 [**auth_method_list**](V2Api.md#auth_method_list) | **POST** /auth-method-list | 
+[**auth_method_update_ali_cloud**](V2Api.md#auth_method_update_ali_cloud) | **POST** /auth-method-update-alicloud | 
 [**auth_method_update_api_key**](V2Api.md#auth_method_update_api_key) | **POST** /auth-method-update-api-key | 
 [**auth_method_update_aws_iam**](V2Api.md#auth_method_update_aws_iam) | **POST** /auth-method-update-aws-iam | 
 [**auth_method_update_azure_ad**](V2Api.md#auth_method_update_azure_ad) | **POST** /auth-method-update-azure-ad | 
@@ -1209,6 +1211,66 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **auth_method_create_ali_cloud**
+> AuthMethodCreateOutput auth_method_create_ali_cloud(auth_method_create_ali_cloud)
+
+
+
+### Example
+
+```python
+from __future__ import print_function
+import time
+import akeyless
+from akeyless.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.akeyless.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = akeyless.Configuration(
+    host = "https://api.akeyless.io"
+)
+
+
+# Enter a context with an instance of the API client
+with akeyless.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = akeyless.V2Api(api_client)
+    auth_method_create_ali_cloud = akeyless.AuthMethodCreateAliCloud() # AuthMethodCreateAliCloud | 
+
+    try:
+        api_response = api_instance.auth_method_create_ali_cloud(auth_method_create_ali_cloud)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling V2Api->auth_method_create_ali_cloud: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **auth_method_create_ali_cloud** | [**AuthMethodCreateAliCloud**](AuthMethodCreateAliCloud.md)|  | 
+
+### Return type
+
+[**AuthMethodCreateOutput**](AuthMethodCreateOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**201** | authMethodCreateAliCloudResponse wraps response body. |  -  |
+**0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **auth_method_create_api_key**
 > AuthMethodCreateOutput auth_method_create_api_key(auth_method_create_api_key)
 
@@ -2225,6 +2287,66 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | authMethodListResponse wraps response body. |  -  |
+**0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **auth_method_update_ali_cloud**
+> AuthMethodUpdateOutput auth_method_update_ali_cloud(auth_method_update_ali_cloud)
+
+
+
+### Example
+
+```python
+from __future__ import print_function
+import time
+import akeyless
+from akeyless.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.akeyless.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = akeyless.Configuration(
+    host = "https://api.akeyless.io"
+)
+
+
+# Enter a context with an instance of the API client
+with akeyless.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = akeyless.V2Api(api_client)
+    auth_method_update_ali_cloud = akeyless.AuthMethodUpdateAliCloud() # AuthMethodUpdateAliCloud | 
+
+    try:
+        api_response = api_instance.auth_method_update_ali_cloud(auth_method_update_ali_cloud)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling V2Api->auth_method_update_ali_cloud: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **auth_method_update_ali_cloud** | [**AuthMethodUpdateAliCloud**](AuthMethodUpdateAliCloud.md)|  | 
+
+### Return type
+
+[**AuthMethodUpdateOutput**](AuthMethodUpdateOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**201** | authMethodUpdateAliCloudResponse wraps response body. |  -  |
 **0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

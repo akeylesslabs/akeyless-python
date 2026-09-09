@@ -16,6 +16,9 @@ Name | Type | Description | Notes
 **start_time** | **datetime** |  | [optional] 
 **status** | **str** |  | [optional] 
 **target_host** | **str** |  | [optional] 
+**target_id** | **int** |  | [optional] 
+**target_name** | **str** |  | [optional] 
+**target_type** | **str** |  | [optional] 
 **ttl** | **str** |  | [optional] 
 **user_identifier** | **str** |  | [optional] 
 

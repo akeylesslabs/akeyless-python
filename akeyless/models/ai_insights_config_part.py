@@ -36,18 +36,22 @@ class AiInsightsConfigPart(object):
     openapi_types = {
         'enable': 'bool',
         'model': 'str',
+        'models': 'list[AiModelEntry]',
         'target_id': 'int',
-        'target_name': 'str'
+        'target_name': 'str',
+        'version': 'int'
     }
 
     attribute_map = {
         'enable': 'enable',
         'model': 'model',
+        'models': 'models',
         'target_id': 'target_id',
-        'target_name': 'target_name'
+        'target_name': 'target_name',
+        'version': 'version'
     }
 
-    def __init__(self, enable=None, model=None, target_id=None, target_name=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, enable=None, model=None, models=None, target_id=None, target_name=None, version=None, local_vars_configuration=None):  # noqa: E501
         """AiInsightsConfigPart - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -55,18 +59,24 @@ class AiInsightsConfigPart(object):
 
         self._enable = None
         self._model = None
+        self._models = None
         self._target_id = None
         self._target_name = None
+        self._version = None
         self.discriminator = None
 
         if enable is not None:
             self.enable = enable
         if model is not None:
             self.model = model
+        if models is not None:
+            self.models = models
         if target_id is not None:
             self.target_id = target_id
         if target_name is not None:
             self.target_name = target_name
+        if version is not None:
+            self.version = version
 
     @property
     def enable(self):
@@ -111,6 +121,29 @@ class AiInsightsConfigPart(object):
         self._model = model
 
     @property
+    def models(self):
+        """Gets the models of this AiInsightsConfigPart.  # noqa: E501
+
+        Models holds every configured model, in whatever order and with whatever Default flag was stored - it is NOT canonicalized on write, so nothing may assume the Default sits at index 0. Empty on configs written before multi-model support. Never read it directly: use EffectiveModels for the list as stored (which also handles the legacy case), or PolicyModels for exactly one Default in row 1 followed by the Quorum models.  # noqa: E501
+
+        :return: The models of this AiInsightsConfigPart.  # noqa: E501
+        :rtype: list[AiModelEntry]
+        """
+        return self._models
+
+    @models.setter
+    def models(self, models):
+        """Sets the models of this AiInsightsConfigPart.
+
+        Models holds every configured model, in whatever order and with whatever Default flag was stored - it is NOT canonicalized on write, so nothing may assume the Default sits at index 0. Empty on configs written before multi-model support. Never read it directly: use EffectiveModels for the list as stored (which also handles the legacy case), or PolicyModels for exactly one Default in row 1 followed by the Quorum models.  # noqa: E501
+
+        :param models: The models of this AiInsightsConfigPart.  # noqa: E501
+        :type: list[AiModelEntry]
+        """
+
+        self._models = models
+
+    @property
     def target_id(self):
         """Gets the target_id of this AiInsightsConfigPart.  # noqa: E501
 
@@ -151,6 +184,29 @@ class AiInsightsConfigPart(object):
         """
 
         self._target_name = target_name
+
+    @property
+    def version(self):
+        """Gets the version of this AiInsightsConfigPart.  # noqa: E501
+
+        Version is an optimistic-concurrency token, bumped by gator on every accepted write.  Every mutation of this part is a read-modify-write across the network (the gateway reads the whole part, edits one entry, writes it back), and the write replaces the part wholesale. Without a token, two admins adding a quorum model at the same time silently lose one of the two - which, since the list must always carry exactly one Default, can also change which model serves every other AI feature.  Zero means \"unversioned\": a client that predates this field, whose write gator accepts rather than rejecting outright. See updateGatewayAiInsightsConfig.  # noqa: E501
+
+        :return: The version of this AiInsightsConfigPart.  # noqa: E501
+        :rtype: int
+        """
+        return self._version
+
+    @version.setter
+    def version(self, version):
+        """Sets the version of this AiInsightsConfigPart.
+
+        Version is an optimistic-concurrency token, bumped by gator on every accepted write.  Every mutation of this part is a read-modify-write across the network (the gateway reads the whole part, edits one entry, writes it back), and the write replaces the part wholesale. Without a token, two admins adding a quorum model at the same time silently lose one of the two - which, since the list must always carry exactly one Default, can also change which model serves every other AI feature.  Zero means \"unversioned\": a client that predates this field, whose write gator accepts rather than rejecting outright. See updateGatewayAiInsightsConfig.  # noqa: E501
+
+        :param version: The version of this AiInsightsConfigPart.  # noqa: E501
+        :type: int
+        """
+
+        self._version = version
 
     def to_dict(self):
         """Returns the model properties as a dict"""

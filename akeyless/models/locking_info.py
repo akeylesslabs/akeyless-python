@@ -36,6 +36,8 @@ class LockingInfo(object):
     openapi_types = {
         'actions': 'list[str]',
         'expire_at': 'int',
+        'lock_origin': 'str',
+        'locked_at': 'int',
         'locked_by': 'str',
         'unique_identifier': 'str'
     }
@@ -43,11 +45,13 @@ class LockingInfo(object):
     attribute_map = {
         'actions': 'actions',
         'expire_at': 'expire_at',
+        'lock_origin': 'lock_origin',
+        'locked_at': 'locked_at',
         'locked_by': 'locked_by',
         'unique_identifier': 'unique_identifier'
     }
 
-    def __init__(self, actions=None, expire_at=None, locked_by=None, unique_identifier=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, actions=None, expire_at=None, lock_origin=None, locked_at=None, locked_by=None, unique_identifier=None, local_vars_configuration=None):  # noqa: E501
         """LockingInfo - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -55,6 +59,8 @@ class LockingInfo(object):
 
         self._actions = None
         self._expire_at = None
+        self._lock_origin = None
+        self._locked_at = None
         self._locked_by = None
         self._unique_identifier = None
         self.discriminator = None
@@ -63,6 +69,10 @@ class LockingInfo(object):
             self.actions = actions
         if expire_at is not None:
             self.expire_at = expire_at
+        if lock_origin is not None:
+            self.lock_origin = lock_origin
+        if locked_at is not None:
+            self.locked_at = locked_at
         if locked_by is not None:
             self.locked_by = locked_by
         if unique_identifier is not None:
@@ -109,6 +119,48 @@ class LockingInfo(object):
         """
 
         self._expire_at = expire_at
+
+    @property
+    def lock_origin(self):
+        """Gets the lock_origin of this LockingInfo.  # noqa: E501
+
+
+        :return: The lock_origin of this LockingInfo.  # noqa: E501
+        :rtype: str
+        """
+        return self._lock_origin
+
+    @lock_origin.setter
+    def lock_origin(self, lock_origin):
+        """Sets the lock_origin of this LockingInfo.
+
+
+        :param lock_origin: The lock_origin of this LockingInfo.  # noqa: E501
+        :type: str
+        """
+
+        self._lock_origin = lock_origin
+
+    @property
+    def locked_at(self):
+        """Gets the locked_at of this LockingInfo.  # noqa: E501
+
+
+        :return: The locked_at of this LockingInfo.  # noqa: E501
+        :rtype: int
+        """
+        return self._locked_at
+
+    @locked_at.setter
+    def locked_at(self, locked_at):
+        """Sets the locked_at of this LockingInfo.
+
+
+        :param locked_at: The locked_at of this LockingInfo.  # noqa: E501
+        :type: int
+        """
+
+        self._locked_at = locked_at
 
     @property
     def locked_by(self):

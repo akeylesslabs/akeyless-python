@@ -37,6 +37,8 @@ class GatewayUpdateProducerHanaDb(object):
         'ara_enabled': 'bool',
         'custom_username_template': 'str',
         'delete_protection': 'str',
+        'enable_agentic_runtime_authority': 'bool',
+        'enable_ai_quorum': 'bool',
         'hana_dbname': 'str',
         'hanadb_create_statements': 'str',
         'hanadb_host': 'str',
@@ -75,6 +77,8 @@ class GatewayUpdateProducerHanaDb(object):
         'ara_enabled': 'ara-enabled',
         'custom_username_template': 'custom-username-template',
         'delete_protection': 'delete_protection',
+        'enable_agentic_runtime_authority': 'enable-agentic-runtime-authority',
+        'enable_ai_quorum': 'enable-ai-quorum',
         'hana_dbname': 'hana-dbname',
         'hanadb_create_statements': 'hanadb-create-statements',
         'hanadb_host': 'hanadb-host',
@@ -109,7 +113,7 @@ class GatewayUpdateProducerHanaDb(object):
         'user_ttl': 'user-ttl'
     }
 
-    def __init__(self, ara_enabled=None, custom_username_template=None, delete_protection=None, hana_dbname=None, hanadb_create_statements=None, hanadb_host='127.0.0.1', hanadb_password=None, hanadb_port='443', hanadb_revocation_statements=None, hanadb_username=None, input_rule=None, item_custom_fields=None, json=False, name=None, new_name=None, output_rule=None, password_length=None, producer_encryption_key_name=None, secure_access_bastion_issuer=None, secure_access_certificate_issuer=None, secure_access_db_name=None, secure_access_db_schema=None, secure_access_enable=None, secure_access_host=None, secure_access_web=False, skip_dry_run=None, tags=None, target_name=None, token=None, uid_token=None, use_capital_letters=None, use_lower_letters=None, use_numbers=None, use_special_characters=None, user_ttl='60m', local_vars_configuration=None):  # noqa: E501
+    def __init__(self, ara_enabled=None, custom_username_template=None, delete_protection=None, enable_agentic_runtime_authority=None, enable_ai_quorum=None, hana_dbname=None, hanadb_create_statements=None, hanadb_host='127.0.0.1', hanadb_password=None, hanadb_port='443', hanadb_revocation_statements=None, hanadb_username=None, input_rule=None, item_custom_fields=None, json=False, name=None, new_name=None, output_rule=None, password_length=None, producer_encryption_key_name=None, secure_access_bastion_issuer=None, secure_access_certificate_issuer=None, secure_access_db_name=None, secure_access_db_schema=None, secure_access_enable=None, secure_access_host=None, secure_access_web=False, skip_dry_run=None, tags=None, target_name=None, token=None, uid_token=None, use_capital_letters=None, use_lower_letters=None, use_numbers=None, use_special_characters=None, user_ttl='60m', local_vars_configuration=None):  # noqa: E501
         """GatewayUpdateProducerHanaDb - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -118,6 +122,8 @@ class GatewayUpdateProducerHanaDb(object):
         self._ara_enabled = None
         self._custom_username_template = None
         self._delete_protection = None
+        self._enable_agentic_runtime_authority = None
+        self._enable_ai_quorum = None
         self._hana_dbname = None
         self._hanadb_create_statements = None
         self._hanadb_host = None
@@ -158,6 +164,10 @@ class GatewayUpdateProducerHanaDb(object):
             self.custom_username_template = custom_username_template
         if delete_protection is not None:
             self.delete_protection = delete_protection
+        if enable_agentic_runtime_authority is not None:
+            self.enable_agentic_runtime_authority = enable_agentic_runtime_authority
+        if enable_ai_quorum is not None:
+            self.enable_ai_quorum = enable_ai_quorum
         if hana_dbname is not None:
             self.hana_dbname = hana_dbname
         if hanadb_create_statements is not None:
@@ -290,6 +300,52 @@ class GatewayUpdateProducerHanaDb(object):
         """
 
         self._delete_protection = delete_protection
+
+    @property
+    def enable_agentic_runtime_authority(self):
+        """Gets the enable_agentic_runtime_authority of this GatewayUpdateProducerHanaDb.  # noqa: E501
+
+        EnableAra is the documented spelling of AraEnabled; --ara-enabled shipped first and stays as an undocumented alias.  # noqa: E501
+
+        :return: The enable_agentic_runtime_authority of this GatewayUpdateProducerHanaDb.  # noqa: E501
+        :rtype: bool
+        """
+        return self._enable_agentic_runtime_authority
+
+    @enable_agentic_runtime_authority.setter
+    def enable_agentic_runtime_authority(self, enable_agentic_runtime_authority):
+        """Sets the enable_agentic_runtime_authority of this GatewayUpdateProducerHanaDb.
+
+        EnableAra is the documented spelling of AraEnabled; --ara-enabled shipped first and stays as an undocumented alias.  # noqa: E501
+
+        :param enable_agentic_runtime_authority: The enable_agentic_runtime_authority of this GatewayUpdateProducerHanaDb.  # noqa: E501
+        :type: bool
+        """
+
+        self._enable_agentic_runtime_authority = enable_agentic_runtime_authority
+
+    @property
+    def enable_ai_quorum(self):
+        """Gets the enable_ai_quorum of this GatewayUpdateProducerHanaDb.  # noqa: E501
+
+        Turns on AI Quorum checks for this item.  # noqa: E501
+
+        :return: The enable_ai_quorum of this GatewayUpdateProducerHanaDb.  # noqa: E501
+        :rtype: bool
+        """
+        return self._enable_ai_quorum
+
+    @enable_ai_quorum.setter
+    def enable_ai_quorum(self, enable_ai_quorum):
+        """Sets the enable_ai_quorum of this GatewayUpdateProducerHanaDb.
+
+        Turns on AI Quorum checks for this item.  # noqa: E501
+
+        :param enable_ai_quorum: The enable_ai_quorum of this GatewayUpdateProducerHanaDb.  # noqa: E501
+        :type: bool
+        """
+
+        self._enable_ai_quorum = enable_ai_quorum
 
     @property
     def hana_dbname(self):

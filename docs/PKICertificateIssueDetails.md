@@ -47,6 +47,7 @@ Name | Type | Description | Notes
 **renew_before_expiration_in_days** | **int** |  | [optional] 
 **require_cn** | **bool** |  | [optional] 
 **server_flag** | **bool** |  | [optional] 
+**split_certificate_chain** | **bool** | SplitCertificateChain, when enabled, separates the leaf certificate from the certificate chain. | [optional] 
 **street_address** | **list[str]** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

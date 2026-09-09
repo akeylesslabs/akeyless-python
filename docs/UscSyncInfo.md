@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **jq_secret_filter** | **str** |  | [optional] 
 **last_error** | **str** |  | [optional] 
 **namespace** | **str** |  | [optional] 
+**project** | **str** |  | [optional] 
 **secret_id** | **str** |  | [optional] 
 **secret_name** | **str** |  | [optional] 
 **selected_environments** | **str** |  | [optional] 

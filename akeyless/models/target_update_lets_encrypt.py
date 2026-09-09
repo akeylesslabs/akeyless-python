@@ -46,10 +46,13 @@ class TargetUpdateLetsEncrypt(object):
         'keep_prev_version': 'str',
         'key': 'str',
         'lets_encrypt_url': 'str',
+        'lock_on_read': 'str',
+        'lock_ttl': 'str',
         'max_versions': 'str',
         'name': 'str',
         'new_name': 'str',
         'resource_group': 'str',
+        'rotate_on_unlock': 'str',
         'timeout': 'str',
         'token': 'str',
         'uid_token': 'str'
@@ -68,16 +71,19 @@ class TargetUpdateLetsEncrypt(object):
         'keep_prev_version': 'keep-prev-version',
         'key': 'key',
         'lets_encrypt_url': 'lets-encrypt-url',
+        'lock_on_read': 'lock-on-read',
+        'lock_ttl': 'lock-ttl',
         'max_versions': 'max-versions',
         'name': 'name',
         'new_name': 'new-name',
         'resource_group': 'resource-group',
+        'rotate_on_unlock': 'rotate-on-unlock',
         'timeout': 'timeout',
         'token': 'token',
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, acme_challenge='http', delete_protection=None, description=None, dns_target_creds=None, dns_zone=None, email=None, gcp_project=None, hosted_zone=None, json=False, keep_prev_version=None, key=None, lets_encrypt_url='production', max_versions=None, name=None, new_name=None, resource_group=None, timeout='5m', token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, acme_challenge='http', delete_protection=None, description=None, dns_target_creds=None, dns_zone=None, email=None, gcp_project=None, hosted_zone=None, json=False, keep_prev_version=None, key=None, lets_encrypt_url='production', lock_on_read=None, lock_ttl=None, max_versions=None, name=None, new_name=None, resource_group=None, rotate_on_unlock=None, timeout='5m', token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """TargetUpdateLetsEncrypt - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -95,10 +101,13 @@ class TargetUpdateLetsEncrypt(object):
         self._keep_prev_version = None
         self._key = None
         self._lets_encrypt_url = None
+        self._lock_on_read = None
+        self._lock_ttl = None
         self._max_versions = None
         self._name = None
         self._new_name = None
         self._resource_group = None
+        self._rotate_on_unlock = None
         self._timeout = None
         self._token = None
         self._uid_token = None
@@ -127,6 +136,10 @@ class TargetUpdateLetsEncrypt(object):
             self.key = key
         if lets_encrypt_url is not None:
             self.lets_encrypt_url = lets_encrypt_url
+        if lock_on_read is not None:
+            self.lock_on_read = lock_on_read
+        if lock_ttl is not None:
+            self.lock_ttl = lock_ttl
         if max_versions is not None:
             self.max_versions = max_versions
         self.name = name
@@ -134,6 +147,8 @@ class TargetUpdateLetsEncrypt(object):
             self.new_name = new_name
         if resource_group is not None:
             self.resource_group = resource_group
+        if rotate_on_unlock is not None:
+            self.rotate_on_unlock = rotate_on_unlock
         if timeout is not None:
             self.timeout = timeout
         if token is not None:
@@ -416,6 +431,52 @@ class TargetUpdateLetsEncrypt(object):
         self._lets_encrypt_url = lets_encrypt_url
 
     @property
+    def lock_on_read(self):
+        """Gets the lock_on_read of this TargetUpdateLetsEncrypt.  # noqa: E501
+
+        Lock this secret after each successful value read  # noqa: E501
+
+        :return: The lock_on_read of this TargetUpdateLetsEncrypt.  # noqa: E501
+        :rtype: str
+        """
+        return self._lock_on_read
+
+    @lock_on_read.setter
+    def lock_on_read(self, lock_on_read):
+        """Sets the lock_on_read of this TargetUpdateLetsEncrypt.
+
+        Lock this secret after each successful value read  # noqa: E501
+
+        :param lock_on_read: The lock_on_read of this TargetUpdateLetsEncrypt.  # noqa: E501
+        :type: str
+        """
+
+        self._lock_on_read = lock_on_read
+
+    @property
+    def lock_ttl(self):
+        """Gets the lock_ttl of this TargetUpdateLetsEncrypt.  # noqa: E501
+
+        Lock TTL in minutes  # noqa: E501
+
+        :return: The lock_ttl of this TargetUpdateLetsEncrypt.  # noqa: E501
+        :rtype: str
+        """
+        return self._lock_ttl
+
+    @lock_ttl.setter
+    def lock_ttl(self, lock_ttl):
+        """Sets the lock_ttl of this TargetUpdateLetsEncrypt.
+
+        Lock TTL in minutes  # noqa: E501
+
+        :param lock_ttl: The lock_ttl of this TargetUpdateLetsEncrypt.  # noqa: E501
+        :type: str
+        """
+
+        self._lock_ttl = lock_ttl
+
+    @property
     def max_versions(self):
         """Gets the max_versions of this TargetUpdateLetsEncrypt.  # noqa: E501
 
@@ -508,6 +569,29 @@ class TargetUpdateLetsEncrypt(object):
         """
 
         self._resource_group = resource_group
+
+    @property
+    def rotate_on_unlock(self):
+        """Gets the rotate_on_unlock of this TargetUpdateLetsEncrypt.  # noqa: E501
+
+        Rotate this secret after it is unlocked  # noqa: E501
+
+        :return: The rotate_on_unlock of this TargetUpdateLetsEncrypt.  # noqa: E501
+        :rtype: str
+        """
+        return self._rotate_on_unlock
+
+    @rotate_on_unlock.setter
+    def rotate_on_unlock(self, rotate_on_unlock):
+        """Sets the rotate_on_unlock of this TargetUpdateLetsEncrypt.
+
+        Rotate this secret after it is unlocked  # noqa: E501
+
+        :param rotate_on_unlock: The rotate_on_unlock of this TargetUpdateLetsEncrypt.  # noqa: E501
+        :type: str
+        """
+
+        self._rotate_on_unlock = rotate_on_unlock
 
     @property
     def timeout(self):

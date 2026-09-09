@@ -47,6 +47,7 @@ Name | Type | Description | Notes
 **scheduled_renew** | **int** | Number of days before expiration to renew certificates | [optional] 
 **server_flag** | **bool** | If set, certificates will be flagged for server auth use | [optional] 
 **signer_key_name** | **str** | A key to sign the certificate with, required in Private CA mode | [optional] 
+**split_certificate_chain** | **bool** | If set, separates the leaf certificate from the certificate chain. | [optional] 
 **street_address** | **str** | A comma-separated list of street addresses that will be set in the issued certificate | [optional] 
 **tag** | **list[str]** | List of the tags attached to this key | [optional] 
 **token** | **str** | Authentication token (see &#x60;/auth&#x60; and &#x60;/configure&#x60;) | [optional] 

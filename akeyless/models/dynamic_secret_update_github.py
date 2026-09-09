@@ -37,6 +37,8 @@ class DynamicSecretUpdateGithub(object):
         'ara_enabled': 'bool',
         'delete_protection': 'str',
         'description': 'str',
+        'enable_agentic_runtime_authority': 'bool',
+        'enable_ai_quorum': 'bool',
         'github_app_id': 'int',
         'github_app_private_key': 'str',
         'github_base_url': 'str',
@@ -63,6 +65,8 @@ class DynamicSecretUpdateGithub(object):
         'ara_enabled': 'ara-enabled',
         'delete_protection': 'delete_protection',
         'description': 'description',
+        'enable_agentic_runtime_authority': 'enable-agentic-runtime-authority',
+        'enable_ai_quorum': 'enable-ai-quorum',
         'github_app_id': 'github-app-id',
         'github_app_private_key': 'github-app-private-key',
         'github_base_url': 'github-base-url',
@@ -85,7 +89,7 @@ class DynamicSecretUpdateGithub(object):
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, ara_enabled=None, delete_protection=None, description=None, github_app_id=None, github_app_private_key=None, github_base_url='https://api.github.com/', input_rule=None, installation_id=None, installation_organization=None, installation_repository=None, item_custom_fields=None, json=False, name=None, new_name=None, output_rule=None, skip_dry_run=None, tags=None, target_name=None, token=None, token_permissions=None, token_repositories=None, token_ttl='60m', uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, ara_enabled=None, delete_protection=None, description=None, enable_agentic_runtime_authority=None, enable_ai_quorum=None, github_app_id=None, github_app_private_key=None, github_base_url='https://api.github.com/', input_rule=None, installation_id=None, installation_organization=None, installation_repository=None, item_custom_fields=None, json=False, name=None, new_name=None, output_rule=None, skip_dry_run=None, tags=None, target_name=None, token=None, token_permissions=None, token_repositories=None, token_ttl='60m', uid_token=None, local_vars_configuration=None):  # noqa: E501
         """DynamicSecretUpdateGithub - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -94,6 +98,8 @@ class DynamicSecretUpdateGithub(object):
         self._ara_enabled = None
         self._delete_protection = None
         self._description = None
+        self._enable_agentic_runtime_authority = None
+        self._enable_ai_quorum = None
         self._github_app_id = None
         self._github_app_private_key = None
         self._github_base_url = None
@@ -122,6 +128,10 @@ class DynamicSecretUpdateGithub(object):
             self.delete_protection = delete_protection
         if description is not None:
             self.description = description
+        if enable_agentic_runtime_authority is not None:
+            self.enable_agentic_runtime_authority = enable_agentic_runtime_authority
+        if enable_ai_quorum is not None:
+            self.enable_ai_quorum = enable_ai_quorum
         if github_app_id is not None:
             self.github_app_id = github_app_id
         if github_app_private_key is not None:
@@ -230,6 +240,52 @@ class DynamicSecretUpdateGithub(object):
         """
 
         self._description = description
+
+    @property
+    def enable_agentic_runtime_authority(self):
+        """Gets the enable_agentic_runtime_authority of this DynamicSecretUpdateGithub.  # noqa: E501
+
+        EnableAra is the documented spelling of AraEnabled; --ara-enabled shipped first and stays as an undocumented alias.  # noqa: E501
+
+        :return: The enable_agentic_runtime_authority of this DynamicSecretUpdateGithub.  # noqa: E501
+        :rtype: bool
+        """
+        return self._enable_agentic_runtime_authority
+
+    @enable_agentic_runtime_authority.setter
+    def enable_agentic_runtime_authority(self, enable_agentic_runtime_authority):
+        """Sets the enable_agentic_runtime_authority of this DynamicSecretUpdateGithub.
+
+        EnableAra is the documented spelling of AraEnabled; --ara-enabled shipped first and stays as an undocumented alias.  # noqa: E501
+
+        :param enable_agentic_runtime_authority: The enable_agentic_runtime_authority of this DynamicSecretUpdateGithub.  # noqa: E501
+        :type: bool
+        """
+
+        self._enable_agentic_runtime_authority = enable_agentic_runtime_authority
+
+    @property
+    def enable_ai_quorum(self):
+        """Gets the enable_ai_quorum of this DynamicSecretUpdateGithub.  # noqa: E501
+
+        Turns on AI Quorum checks for this item.  # noqa: E501
+
+        :return: The enable_ai_quorum of this DynamicSecretUpdateGithub.  # noqa: E501
+        :rtype: bool
+        """
+        return self._enable_ai_quorum
+
+    @enable_ai_quorum.setter
+    def enable_ai_quorum(self, enable_ai_quorum):
+        """Sets the enable_ai_quorum of this DynamicSecretUpdateGithub.
+
+        Turns on AI Quorum checks for this item.  # noqa: E501
+
+        :param enable_ai_quorum: The enable_ai_quorum of this DynamicSecretUpdateGithub.  # noqa: E501
+        :type: bool
+        """
+
+        self._enable_ai_quorum = enable_ai_quorum
 
     @property
     def github_app_id(self):

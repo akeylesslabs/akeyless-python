@@ -41,6 +41,8 @@ class CreateSecret(object):
         'custom_field': 'dict(str, str)',
         'delete_protection': 'str',
         'description': 'str',
+        'enable_agentic_runtime_authority': 'bool',
+        'enable_ai_quorum': 'bool',
         'format': 'str',
         'host_provider': 'str',
         'inject_url': 'list[str]',
@@ -48,6 +50,8 @@ class CreateSecret(object):
         'item_custom_fields': 'dict(str, str)',
         'json': 'bool',
         'lock_during_sra_session': 'str',
+        'lock_on_read': 'str',
+        'lock_ttl': 'str',
         'max_versions': 'str',
         'metadata': 'str',
         'multiline_value': 'bool',
@@ -84,6 +88,8 @@ class CreateSecret(object):
         'custom_field': 'custom-field',
         'delete_protection': 'delete_protection',
         'description': 'description',
+        'enable_agentic_runtime_authority': 'enable-agentic-runtime-authority',
+        'enable_ai_quorum': 'enable-ai-quorum',
         'format': 'format',
         'host_provider': 'host-provider',
         'inject_url': 'inject-url',
@@ -91,6 +97,8 @@ class CreateSecret(object):
         'item_custom_fields': 'item-custom-fields',
         'json': 'json',
         'lock_during_sra_session': 'lock-during-sra-session',
+        'lock_on_read': 'lock-on-read',
+        'lock_ttl': 'lock-ttl',
         'max_versions': 'max-versions',
         'metadata': 'metadata',
         'multiline_value': 'multiline_value',
@@ -119,7 +127,7 @@ class CreateSecret(object):
         'value': 'value'
     }
 
-    def __init__(self, provider_type=None, accessibility='regular', ara_enabled=None, change_event=None, custom_field=None, delete_protection=None, description=None, format='text', host_provider=None, inject_url=None, input_rule=None, item_custom_fields=None, json=False, lock_during_sra_session=None, max_versions=None, metadata=None, multiline_value=None, name=None, output_rule=None, password=None, protection_key=None, secure_access_bastion_issuer=None, secure_access_certificate_issuer=None, secure_access_enable=None, secure_access_enforce_hosts_restriction=None, secure_access_gateway=None, secure_access_host=None, secure_access_rdp_user=None, secure_access_ssh_creds=None, secure_access_ssh_user=None, secure_access_url=None, secure_access_web_browsing=False, secure_access_web_proxy=False, tags=None, target=None, token=None, type='generic', uid_token=None, username=None, value=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, provider_type=None, accessibility='regular', ara_enabled=None, change_event=None, custom_field=None, delete_protection=None, description=None, enable_agentic_runtime_authority=None, enable_ai_quorum=None, format='text', host_provider=None, inject_url=None, input_rule=None, item_custom_fields=None, json=False, lock_during_sra_session=None, lock_on_read=None, lock_ttl=None, max_versions=None, metadata=None, multiline_value=None, name=None, output_rule=None, password=None, protection_key=None, secure_access_bastion_issuer=None, secure_access_certificate_issuer=None, secure_access_enable=None, secure_access_enforce_hosts_restriction=None, secure_access_gateway=None, secure_access_host=None, secure_access_rdp_user=None, secure_access_ssh_creds=None, secure_access_ssh_user=None, secure_access_url=None, secure_access_web_browsing=False, secure_access_web_proxy=False, tags=None, target=None, token=None, type='generic', uid_token=None, username=None, value=None, local_vars_configuration=None):  # noqa: E501
         """CreateSecret - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -132,6 +140,8 @@ class CreateSecret(object):
         self._custom_field = None
         self._delete_protection = None
         self._description = None
+        self._enable_agentic_runtime_authority = None
+        self._enable_ai_quorum = None
         self._format = None
         self._host_provider = None
         self._inject_url = None
@@ -139,6 +149,8 @@ class CreateSecret(object):
         self._item_custom_fields = None
         self._json = None
         self._lock_during_sra_session = None
+        self._lock_on_read = None
+        self._lock_ttl = None
         self._max_versions = None
         self._metadata = None
         self._multiline_value = None
@@ -181,6 +193,10 @@ class CreateSecret(object):
             self.delete_protection = delete_protection
         if description is not None:
             self.description = description
+        if enable_agentic_runtime_authority is not None:
+            self.enable_agentic_runtime_authority = enable_agentic_runtime_authority
+        if enable_ai_quorum is not None:
+            self.enable_ai_quorum = enable_ai_quorum
         if format is not None:
             self.format = format
         if host_provider is not None:
@@ -195,6 +211,10 @@ class CreateSecret(object):
             self.json = json
         if lock_during_sra_session is not None:
             self.lock_during_sra_session = lock_during_sra_session
+        if lock_on_read is not None:
+            self.lock_on_read = lock_on_read
+        if lock_ttl is not None:
+            self.lock_ttl = lock_ttl
         if max_versions is not None:
             self.max_versions = max_versions
         if metadata is not None:
@@ -406,6 +426,52 @@ class CreateSecret(object):
         self._description = description
 
     @property
+    def enable_agentic_runtime_authority(self):
+        """Gets the enable_agentic_runtime_authority of this CreateSecret.  # noqa: E501
+
+        EnableAra is the documented spelling of AraEnabled. Both set the same field; --ara-enabled shipped first and stays as an undocumented alias so existing scripts and the Terraform provider keep working.  # noqa: E501
+
+        :return: The enable_agentic_runtime_authority of this CreateSecret.  # noqa: E501
+        :rtype: bool
+        """
+        return self._enable_agentic_runtime_authority
+
+    @enable_agentic_runtime_authority.setter
+    def enable_agentic_runtime_authority(self, enable_agentic_runtime_authority):
+        """Sets the enable_agentic_runtime_authority of this CreateSecret.
+
+        EnableAra is the documented spelling of AraEnabled. Both set the same field; --ara-enabled shipped first and stays as an undocumented alias so existing scripts and the Terraform provider keep working.  # noqa: E501
+
+        :param enable_agentic_runtime_authority: The enable_agentic_runtime_authority of this CreateSecret.  # noqa: E501
+        :type: bool
+        """
+
+        self._enable_agentic_runtime_authority = enable_agentic_runtime_authority
+
+    @property
+    def enable_ai_quorum(self):
+        """Gets the enable_ai_quorum of this CreateSecret.  # noqa: E501
+
+        Turns on AI Quorum checks for this item.  # noqa: E501
+
+        :return: The enable_ai_quorum of this CreateSecret.  # noqa: E501
+        :rtype: bool
+        """
+        return self._enable_ai_quorum
+
+    @enable_ai_quorum.setter
+    def enable_ai_quorum(self, enable_ai_quorum):
+        """Sets the enable_ai_quorum of this CreateSecret.
+
+        Turns on AI Quorum checks for this item.  # noqa: E501
+
+        :param enable_ai_quorum: The enable_ai_quorum of this CreateSecret.  # noqa: E501
+        :type: bool
+        """
+
+        self._enable_ai_quorum = enable_ai_quorum
+
+    @property
     def format(self):
         """Gets the format of this CreateSecret.  # noqa: E501
 
@@ -565,6 +631,52 @@ class CreateSecret(object):
         """
 
         self._lock_during_sra_session = lock_during_sra_session
+
+    @property
+    def lock_on_read(self):
+        """Gets the lock_on_read of this CreateSecret.  # noqa: E501
+
+        Lock this secret after each successful value read  # noqa: E501
+
+        :return: The lock_on_read of this CreateSecret.  # noqa: E501
+        :rtype: str
+        """
+        return self._lock_on_read
+
+    @lock_on_read.setter
+    def lock_on_read(self, lock_on_read):
+        """Sets the lock_on_read of this CreateSecret.
+
+        Lock this secret after each successful value read  # noqa: E501
+
+        :param lock_on_read: The lock_on_read of this CreateSecret.  # noqa: E501
+        :type: str
+        """
+
+        self._lock_on_read = lock_on_read
+
+    @property
+    def lock_ttl(self):
+        """Gets the lock_ttl of this CreateSecret.  # noqa: E501
+
+        Lock TTL in minutes  # noqa: E501
+
+        :return: The lock_ttl of this CreateSecret.  # noqa: E501
+        :rtype: str
+        """
+        return self._lock_ttl
+
+    @lock_ttl.setter
+    def lock_ttl(self, lock_ttl):
+        """Sets the lock_ttl of this CreateSecret.
+
+        Lock TTL in minutes  # noqa: E501
+
+        :param lock_ttl: The lock_ttl of this CreateSecret.  # noqa: E501
+        :type: str
+        """
+
+        self._lock_ttl = lock_ttl
 
     @property
     def max_versions(self):

@@ -40,6 +40,8 @@ class DynamicSecretCreateCustom(object):
         'delete_protection': 'str',
         'description': 'str',
         'enable_admin_rotation': 'bool',
+        'enable_agentic_runtime_authority': 'bool',
+        'enable_ai_quorum': 'bool',
         'input_rule': 'list[str]',
         'item_custom_fields': 'dict(str, str)',
         'json': 'bool',
@@ -64,6 +66,8 @@ class DynamicSecretCreateCustom(object):
         'delete_protection': 'delete_protection',
         'description': 'description',
         'enable_admin_rotation': 'enable-admin-rotation',
+        'enable_agentic_runtime_authority': 'enable-agentic-runtime-authority',
+        'enable_ai_quorum': 'enable-ai-quorum',
         'input_rule': 'input-rule',
         'item_custom_fields': 'item-custom-fields',
         'json': 'json',
@@ -81,7 +85,7 @@ class DynamicSecretCreateCustom(object):
         'user_ttl': 'user-ttl'
     }
 
-    def __init__(self, admin_rotation_interval_days=None, ara_enabled=None, create_sync_url=None, delete_protection=None, description=None, enable_admin_rotation=False, input_rule=None, item_custom_fields=None, json=False, name=None, output_rule=None, payload=None, producer_encryption_key_name=None, revoke_sync_url=None, rotate_sync_url=None, skip_dry_run=None, tags=None, timeout_sec=60, token=None, uid_token=None, user_ttl='60m', local_vars_configuration=None):  # noqa: E501
+    def __init__(self, admin_rotation_interval_days=None, ara_enabled=None, create_sync_url=None, delete_protection=None, description=None, enable_admin_rotation=False, enable_agentic_runtime_authority=None, enable_ai_quorum=None, input_rule=None, item_custom_fields=None, json=False, name=None, output_rule=None, payload=None, producer_encryption_key_name=None, revoke_sync_url=None, rotate_sync_url=None, skip_dry_run=None, tags=None, timeout_sec=60, token=None, uid_token=None, user_ttl='60m', local_vars_configuration=None):  # noqa: E501
         """DynamicSecretCreateCustom - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -93,6 +97,8 @@ class DynamicSecretCreateCustom(object):
         self._delete_protection = None
         self._description = None
         self._enable_admin_rotation = None
+        self._enable_agentic_runtime_authority = None
+        self._enable_ai_quorum = None
         self._input_rule = None
         self._item_custom_fields = None
         self._json = None
@@ -121,6 +127,10 @@ class DynamicSecretCreateCustom(object):
             self.description = description
         if enable_admin_rotation is not None:
             self.enable_admin_rotation = enable_admin_rotation
+        if enable_agentic_runtime_authority is not None:
+            self.enable_agentic_runtime_authority = enable_agentic_runtime_authority
+        if enable_ai_quorum is not None:
+            self.enable_ai_quorum = enable_ai_quorum
         if input_rule is not None:
             self.input_rule = input_rule
         if item_custom_fields is not None:
@@ -289,6 +299,52 @@ class DynamicSecretCreateCustom(object):
         """
 
         self._enable_admin_rotation = enable_admin_rotation
+
+    @property
+    def enable_agentic_runtime_authority(self):
+        """Gets the enable_agentic_runtime_authority of this DynamicSecretCreateCustom.  # noqa: E501
+
+        EnableAra is the documented spelling of AraEnabled; --ara-enabled shipped first and stays as an undocumented alias.  # noqa: E501
+
+        :return: The enable_agentic_runtime_authority of this DynamicSecretCreateCustom.  # noqa: E501
+        :rtype: bool
+        """
+        return self._enable_agentic_runtime_authority
+
+    @enable_agentic_runtime_authority.setter
+    def enable_agentic_runtime_authority(self, enable_agentic_runtime_authority):
+        """Sets the enable_agentic_runtime_authority of this DynamicSecretCreateCustom.
+
+        EnableAra is the documented spelling of AraEnabled; --ara-enabled shipped first and stays as an undocumented alias.  # noqa: E501
+
+        :param enable_agentic_runtime_authority: The enable_agentic_runtime_authority of this DynamicSecretCreateCustom.  # noqa: E501
+        :type: bool
+        """
+
+        self._enable_agentic_runtime_authority = enable_agentic_runtime_authority
+
+    @property
+    def enable_ai_quorum(self):
+        """Gets the enable_ai_quorum of this DynamicSecretCreateCustom.  # noqa: E501
+
+        Turns on AI Quorum checks for this item.  # noqa: E501
+
+        :return: The enable_ai_quorum of this DynamicSecretCreateCustom.  # noqa: E501
+        :rtype: bool
+        """
+        return self._enable_ai_quorum
+
+    @enable_ai_quorum.setter
+    def enable_ai_quorum(self, enable_ai_quorum):
+        """Sets the enable_ai_quorum of this DynamicSecretCreateCustom.
+
+        Turns on AI Quorum checks for this item.  # noqa: E501
+
+        :param enable_ai_quorum: The enable_ai_quorum of this DynamicSecretCreateCustom.  # noqa: E501
+        :type: bool
+        """
+
+        self._enable_ai_quorum = enable_ai_quorum
 
     @property
     def input_rule(self):

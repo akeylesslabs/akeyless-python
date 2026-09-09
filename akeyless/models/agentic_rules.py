@@ -36,16 +36,18 @@ class AgenticRules(object):
     openapi_types = {
         'enabled': 'bool',
         'input_rules': 'list[AgenticRule]',
-        'output_rules': 'list[AgenticRule]'
+        'output_rules': 'list[AgenticRule]',
+        'quorum_enabled': 'bool'
     }
 
     attribute_map = {
         'enabled': 'enabled',
         'input_rules': 'input_rules',
-        'output_rules': 'output_rules'
+        'output_rules': 'output_rules',
+        'quorum_enabled': 'quorum_enabled'
     }
 
-    def __init__(self, enabled=None, input_rules=None, output_rules=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, enabled=None, input_rules=None, output_rules=None, quorum_enabled=None, local_vars_configuration=None):  # noqa: E501
         """AgenticRules - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -54,6 +56,7 @@ class AgenticRules(object):
         self._enabled = None
         self._input_rules = None
         self._output_rules = None
+        self._quorum_enabled = None
         self.discriminator = None
 
         if enabled is not None:
@@ -62,6 +65,8 @@ class AgenticRules(object):
             self.input_rules = input_rules
         if output_rules is not None:
             self.output_rules = output_rules
+        if quorum_enabled is not None:
+            self.quorum_enabled = quorum_enabled
 
     @property
     def enabled(self):
@@ -127,6 +132,29 @@ class AgenticRules(object):
         """
 
         self._output_rules = output_rules
+
+    @property
+    def quorum_enabled(self):
+        """Gets the quorum_enabled of this AgenticRules.  # noqa: E501
+
+        QuorumEnabled asks for this item's policy decisions to be evaluated by every model configured on the gateway rather than the Default alone.  Also a pointer, but with the opposite nil meaning to Enabled above: nil is OFF. Enabled defaults on because it governs rules that were already being enforced before the field existed, whereas quorum is new behavior that multiplies latency and denies fail-closed - an item that never asked for it must not acquire it by upgrade.  # noqa: E501
+
+        :return: The quorum_enabled of this AgenticRules.  # noqa: E501
+        :rtype: bool
+        """
+        return self._quorum_enabled
+
+    @quorum_enabled.setter
+    def quorum_enabled(self, quorum_enabled):
+        """Sets the quorum_enabled of this AgenticRules.
+
+        QuorumEnabled asks for this item's policy decisions to be evaluated by every model configured on the gateway rather than the Default alone.  Also a pointer, but with the opposite nil meaning to Enabled above: nil is OFF. Enabled defaults on because it governs rules that were already being enforced before the field existed, whereas quorum is new behavior that multiplies latency and denies fail-closed - an item that never asked for it must not acquire it by upgrade.  # noqa: E501
+
+        :param quorum_enabled: The quorum_enabled of this AgenticRules.  # noqa: E501
+        :type: bool
+        """
+
+        self._quorum_enabled = quorum_enabled
 
     def to_dict(self):
         """Returns the model properties as a dict"""

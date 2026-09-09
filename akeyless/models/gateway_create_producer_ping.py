@@ -36,6 +36,8 @@ class GatewayCreateProducerPing(object):
     openapi_types = {
         'ara_enabled': 'bool',
         'delete_protection': 'str',
+        'enable_agentic_runtime_authority': 'bool',
+        'enable_ai_quorum': 'bool',
         'input_rule': 'list[str]',
         'item_custom_fields': 'dict(str, str)',
         'json': 'bool',
@@ -69,6 +71,8 @@ class GatewayCreateProducerPing(object):
     attribute_map = {
         'ara_enabled': 'ara-enabled',
         'delete_protection': 'delete_protection',
+        'enable_agentic_runtime_authority': 'enable-agentic-runtime-authority',
+        'enable_ai_quorum': 'enable-ai-quorum',
         'input_rule': 'input-rule',
         'item_custom_fields': 'item-custom-fields',
         'json': 'json',
@@ -99,7 +103,7 @@ class GatewayCreateProducerPing(object):
         'user_ttl': 'user-ttl'
     }
 
-    def __init__(self, ara_enabled=None, delete_protection=None, input_rule=None, item_custom_fields=None, json=False, name=None, output_rule=None, ping_administrative_port='9999', ping_atm_id=None, ping_authorization_port='9031', ping_cert_subject_dn=None, ping_client_authentication_type='CLIENT_SECRET', ping_enforce_replay_prevention='false', ping_grant_types=None, ping_issuer_dn=None, ping_jwks=None, ping_jwks_url=None, ping_password=None, ping_privileged_user=None, ping_redirect_uris=None, ping_restricted_scopes=None, ping_signing_algo=None, ping_url=None, producer_encryption_key_name=None, skip_dry_run=None, tags=None, target_name=None, token=None, uid_token=None, user_ttl='60m', local_vars_configuration=None):  # noqa: E501
+    def __init__(self, ara_enabled=None, delete_protection=None, enable_agentic_runtime_authority=None, enable_ai_quorum=None, input_rule=None, item_custom_fields=None, json=False, name=None, output_rule=None, ping_administrative_port='9999', ping_atm_id=None, ping_authorization_port='9031', ping_cert_subject_dn=None, ping_client_authentication_type='CLIENT_SECRET', ping_enforce_replay_prevention='false', ping_grant_types=None, ping_issuer_dn=None, ping_jwks=None, ping_jwks_url=None, ping_password=None, ping_privileged_user=None, ping_redirect_uris=None, ping_restricted_scopes=None, ping_signing_algo=None, ping_url=None, producer_encryption_key_name=None, skip_dry_run=None, tags=None, target_name=None, token=None, uid_token=None, user_ttl='60m', local_vars_configuration=None):  # noqa: E501
         """GatewayCreateProducerPing - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -107,6 +111,8 @@ class GatewayCreateProducerPing(object):
 
         self._ara_enabled = None
         self._delete_protection = None
+        self._enable_agentic_runtime_authority = None
+        self._enable_ai_quorum = None
         self._input_rule = None
         self._item_custom_fields = None
         self._json = None
@@ -141,6 +147,10 @@ class GatewayCreateProducerPing(object):
             self.ara_enabled = ara_enabled
         if delete_protection is not None:
             self.delete_protection = delete_protection
+        if enable_agentic_runtime_authority is not None:
+            self.enable_agentic_runtime_authority = enable_agentic_runtime_authority
+        if enable_ai_quorum is not None:
+            self.enable_ai_quorum = enable_ai_quorum
         if input_rule is not None:
             self.input_rule = input_rule
         if item_custom_fields is not None:
@@ -242,6 +252,52 @@ class GatewayCreateProducerPing(object):
         """
 
         self._delete_protection = delete_protection
+
+    @property
+    def enable_agentic_runtime_authority(self):
+        """Gets the enable_agentic_runtime_authority of this GatewayCreateProducerPing.  # noqa: E501
+
+        EnableAra is the documented spelling of AraEnabled; --ara-enabled shipped first and stays as an undocumented alias.  # noqa: E501
+
+        :return: The enable_agentic_runtime_authority of this GatewayCreateProducerPing.  # noqa: E501
+        :rtype: bool
+        """
+        return self._enable_agentic_runtime_authority
+
+    @enable_agentic_runtime_authority.setter
+    def enable_agentic_runtime_authority(self, enable_agentic_runtime_authority):
+        """Sets the enable_agentic_runtime_authority of this GatewayCreateProducerPing.
+
+        EnableAra is the documented spelling of AraEnabled; --ara-enabled shipped first and stays as an undocumented alias.  # noqa: E501
+
+        :param enable_agentic_runtime_authority: The enable_agentic_runtime_authority of this GatewayCreateProducerPing.  # noqa: E501
+        :type: bool
+        """
+
+        self._enable_agentic_runtime_authority = enable_agentic_runtime_authority
+
+    @property
+    def enable_ai_quorum(self):
+        """Gets the enable_ai_quorum of this GatewayCreateProducerPing.  # noqa: E501
+
+        Turns on AI Quorum checks for this item.  # noqa: E501
+
+        :return: The enable_ai_quorum of this GatewayCreateProducerPing.  # noqa: E501
+        :rtype: bool
+        """
+        return self._enable_ai_quorum
+
+    @enable_ai_quorum.setter
+    def enable_ai_quorum(self, enable_ai_quorum):
+        """Sets the enable_ai_quorum of this GatewayCreateProducerPing.
+
+        Turns on AI Quorum checks for this item.  # noqa: E501
+
+        :param enable_ai_quorum: The enable_ai_quorum of this GatewayCreateProducerPing.  # noqa: E501
+        :type: bool
+        """
+
+        self._enable_ai_quorum = enable_ai_quorum
 
     @property
     def input_rule(self):

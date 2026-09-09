@@ -39,12 +39,15 @@ class UpdateSSHTarget(object):
         'json': 'bool',
         'keep_prev_version': 'str',
         'key': 'str',
+        'lock_on_read': 'str',
+        'lock_ttl': 'str',
         'max_versions': 'str',
         'name': 'str',
         'new_name': 'str',
         'port': 'str',
         'private_key': 'str',
         'private_key_password': 'str',
+        'rotate_on_unlock': 'str',
         'ssh_password': 'str',
         'ssh_username': 'str',
         'token': 'str',
@@ -58,12 +61,15 @@ class UpdateSSHTarget(object):
         'json': 'json',
         'keep_prev_version': 'keep-prev-version',
         'key': 'key',
+        'lock_on_read': 'lock-on-read',
+        'lock_ttl': 'lock-ttl',
         'max_versions': 'max-versions',
         'name': 'name',
         'new_name': 'new-name',
         'port': 'port',
         'private_key': 'private-key',
         'private_key_password': 'private-key-password',
+        'rotate_on_unlock': 'rotate-on-unlock',
         'ssh_password': 'ssh-password',
         'ssh_username': 'ssh-username',
         'token': 'token',
@@ -71,7 +77,7 @@ class UpdateSSHTarget(object):
         'update_version': 'update-version'
     }
 
-    def __init__(self, description=None, host=None, json=False, keep_prev_version=None, key=None, max_versions=None, name=None, new_name=None, port='22', private_key=None, private_key_password=None, ssh_password=None, ssh_username=None, token=None, uid_token=None, update_version=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, description=None, host=None, json=False, keep_prev_version=None, key=None, lock_on_read=None, lock_ttl=None, max_versions=None, name=None, new_name=None, port='22', private_key=None, private_key_password=None, rotate_on_unlock=None, ssh_password=None, ssh_username=None, token=None, uid_token=None, update_version=None, local_vars_configuration=None):  # noqa: E501
         """UpdateSSHTarget - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -82,12 +88,15 @@ class UpdateSSHTarget(object):
         self._json = None
         self._keep_prev_version = None
         self._key = None
+        self._lock_on_read = None
+        self._lock_ttl = None
         self._max_versions = None
         self._name = None
         self._new_name = None
         self._port = None
         self._private_key = None
         self._private_key_password = None
+        self._rotate_on_unlock = None
         self._ssh_password = None
         self._ssh_username = None
         self._token = None
@@ -105,6 +114,10 @@ class UpdateSSHTarget(object):
             self.keep_prev_version = keep_prev_version
         if key is not None:
             self.key = key
+        if lock_on_read is not None:
+            self.lock_on_read = lock_on_read
+        if lock_ttl is not None:
+            self.lock_ttl = lock_ttl
         if max_versions is not None:
             self.max_versions = max_versions
         self.name = name
@@ -116,6 +129,8 @@ class UpdateSSHTarget(object):
             self.private_key = private_key
         if private_key_password is not None:
             self.private_key_password = private_key_password
+        if rotate_on_unlock is not None:
+            self.rotate_on_unlock = rotate_on_unlock
         if ssh_password is not None:
             self.ssh_password = ssh_password
         if ssh_username is not None:
@@ -241,6 +256,52 @@ class UpdateSSHTarget(object):
         """
 
         self._key = key
+
+    @property
+    def lock_on_read(self):
+        """Gets the lock_on_read of this UpdateSSHTarget.  # noqa: E501
+
+        Lock this secret after each successful value read  # noqa: E501
+
+        :return: The lock_on_read of this UpdateSSHTarget.  # noqa: E501
+        :rtype: str
+        """
+        return self._lock_on_read
+
+    @lock_on_read.setter
+    def lock_on_read(self, lock_on_read):
+        """Sets the lock_on_read of this UpdateSSHTarget.
+
+        Lock this secret after each successful value read  # noqa: E501
+
+        :param lock_on_read: The lock_on_read of this UpdateSSHTarget.  # noqa: E501
+        :type: str
+        """
+
+        self._lock_on_read = lock_on_read
+
+    @property
+    def lock_ttl(self):
+        """Gets the lock_ttl of this UpdateSSHTarget.  # noqa: E501
+
+        Lock TTL in minutes  # noqa: E501
+
+        :return: The lock_ttl of this UpdateSSHTarget.  # noqa: E501
+        :rtype: str
+        """
+        return self._lock_ttl
+
+    @lock_ttl.setter
+    def lock_ttl(self, lock_ttl):
+        """Sets the lock_ttl of this UpdateSSHTarget.
+
+        Lock TTL in minutes  # noqa: E501
+
+        :param lock_ttl: The lock_ttl of this UpdateSSHTarget.  # noqa: E501
+        :type: str
+        """
+
+        self._lock_ttl = lock_ttl
 
     @property
     def max_versions(self):
@@ -381,6 +442,29 @@ class UpdateSSHTarget(object):
         """
 
         self._private_key_password = private_key_password
+
+    @property
+    def rotate_on_unlock(self):
+        """Gets the rotate_on_unlock of this UpdateSSHTarget.  # noqa: E501
+
+        Rotate this secret after it is unlocked  # noqa: E501
+
+        :return: The rotate_on_unlock of this UpdateSSHTarget.  # noqa: E501
+        :rtype: str
+        """
+        return self._rotate_on_unlock
+
+    @rotate_on_unlock.setter
+    def rotate_on_unlock(self, rotate_on_unlock):
+        """Sets the rotate_on_unlock of this UpdateSSHTarget.
+
+        Rotate this secret after it is unlocked  # noqa: E501
+
+        :param rotate_on_unlock: The rotate_on_unlock of this UpdateSSHTarget.  # noqa: E501
+        :type: str
+        """
+
+        self._rotate_on_unlock = rotate_on_unlock
 
     @property
     def ssh_password(self):

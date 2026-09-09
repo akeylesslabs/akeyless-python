@@ -36,6 +36,8 @@ class UpdateMcpSecretOAuthAuthCode(object):
     openapi_types = {
         'accessibility': 'str',
         'ara_enabled': 'bool',
+        'enable_agentic_runtime_authority': 'bool',
+        'enable_ai_quorum': 'bool',
         'input_rule': 'list[str]',
         'json': 'bool',
         'keep_prev_version': 'str',
@@ -57,6 +59,8 @@ class UpdateMcpSecretOAuthAuthCode(object):
     attribute_map = {
         'accessibility': 'accessibility',
         'ara_enabled': 'ara-enabled',
+        'enable_agentic_runtime_authority': 'enable-agentic-runtime-authority',
+        'enable_ai_quorum': 'enable-ai-quorum',
         'input_rule': 'input-rule',
         'json': 'json',
         'keep_prev_version': 'keep-prev-version',
@@ -75,7 +79,7 @@ class UpdateMcpSecretOAuthAuthCode(object):
         'url': 'url'
     }
 
-    def __init__(self, accessibility='regular', ara_enabled=None, input_rule=None, json=False, keep_prev_version=None, key=None, last_version=None, name=None, oauth_client_id=None, oauth_client_secret=None, oauth_redirect_uri=None, oauth_refresh_token=None, oauth_scopes=None, oauth_token_url=None, output_rule=None, token=None, uid_token=None, url=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, accessibility='regular', ara_enabled=None, enable_agentic_runtime_authority=None, enable_ai_quorum=None, input_rule=None, json=False, keep_prev_version=None, key=None, last_version=None, name=None, oauth_client_id=None, oauth_client_secret=None, oauth_redirect_uri=None, oauth_refresh_token=None, oauth_scopes=None, oauth_token_url=None, output_rule=None, token=None, uid_token=None, url=None, local_vars_configuration=None):  # noqa: E501
         """UpdateMcpSecretOAuthAuthCode - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -83,6 +87,8 @@ class UpdateMcpSecretOAuthAuthCode(object):
 
         self._accessibility = None
         self._ara_enabled = None
+        self._enable_agentic_runtime_authority = None
+        self._enable_ai_quorum = None
         self._input_rule = None
         self._json = None
         self._keep_prev_version = None
@@ -105,6 +111,10 @@ class UpdateMcpSecretOAuthAuthCode(object):
             self.accessibility = accessibility
         if ara_enabled is not None:
             self.ara_enabled = ara_enabled
+        if enable_agentic_runtime_authority is not None:
+            self.enable_agentic_runtime_authority = enable_agentic_runtime_authority
+        if enable_ai_quorum is not None:
+            self.enable_ai_quorum = enable_ai_quorum
         if input_rule is not None:
             self.input_rule = input_rule
         if json is not None:
@@ -182,6 +192,52 @@ class UpdateMcpSecretOAuthAuthCode(object):
         """
 
         self._ara_enabled = ara_enabled
+
+    @property
+    def enable_agentic_runtime_authority(self):
+        """Gets the enable_agentic_runtime_authority of this UpdateMcpSecretOAuthAuthCode.  # noqa: E501
+
+        EnableAra is the documented spelling of AraEnabled. Both set the same field; --ara-enabled shipped first and stays as an undocumented alias so existing scripts and the Terraform provider keep working.  # noqa: E501
+
+        :return: The enable_agentic_runtime_authority of this UpdateMcpSecretOAuthAuthCode.  # noqa: E501
+        :rtype: bool
+        """
+        return self._enable_agentic_runtime_authority
+
+    @enable_agentic_runtime_authority.setter
+    def enable_agentic_runtime_authority(self, enable_agentic_runtime_authority):
+        """Sets the enable_agentic_runtime_authority of this UpdateMcpSecretOAuthAuthCode.
+
+        EnableAra is the documented spelling of AraEnabled. Both set the same field; --ara-enabled shipped first and stays as an undocumented alias so existing scripts and the Terraform provider keep working.  # noqa: E501
+
+        :param enable_agentic_runtime_authority: The enable_agentic_runtime_authority of this UpdateMcpSecretOAuthAuthCode.  # noqa: E501
+        :type: bool
+        """
+
+        self._enable_agentic_runtime_authority = enable_agentic_runtime_authority
+
+    @property
+    def enable_ai_quorum(self):
+        """Gets the enable_ai_quorum of this UpdateMcpSecretOAuthAuthCode.  # noqa: E501
+
+        Turns on AI Quorum checks for this item.  # noqa: E501
+
+        :return: The enable_ai_quorum of this UpdateMcpSecretOAuthAuthCode.  # noqa: E501
+        :rtype: bool
+        """
+        return self._enable_ai_quorum
+
+    @enable_ai_quorum.setter
+    def enable_ai_quorum(self, enable_ai_quorum):
+        """Sets the enable_ai_quorum of this UpdateMcpSecretOAuthAuthCode.
+
+        Turns on AI Quorum checks for this item.  # noqa: E501
+
+        :param enable_ai_quorum: The enable_ai_quorum of this UpdateMcpSecretOAuthAuthCode.  # noqa: E501
+        :type: bool
+        """
+
+        self._enable_ai_quorum = enable_ai_quorum
 
     @property
     def input_rule(self):

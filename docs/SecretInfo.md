@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **location** | [**object**](.md) |  | [optional] 
 **name** | **str** |  | [optional] 
 **namespace** | **str** |  | [optional] 
+**project** | **str** |  | [optional] 
 **region** | **str** |  | [optional] 
 **secret_id** | **str** |  | [optional] 
 **status** | **bool** |  | [optional] 

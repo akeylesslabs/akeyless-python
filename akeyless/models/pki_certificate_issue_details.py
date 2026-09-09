@@ -78,6 +78,7 @@ class PKICertificateIssueDetails(object):
         'renew_before_expiration_in_days': 'int',
         'require_cn': 'bool',
         'server_flag': 'bool',
+        'split_certificate_chain': 'bool',
         'street_address': 'list[str]'
     }
 
@@ -126,10 +127,11 @@ class PKICertificateIssueDetails(object):
         'renew_before_expiration_in_days': 'renew_before_expiration_in_days',
         'require_cn': 'require_cn',
         'server_flag': 'server_flag',
+        'split_certificate_chain': 'split_certificate_chain',
         'street_address': 'street_address'
     }
 
-    def __init__(self, acme_enabled=None, allow_any_name=None, allow_copy_ext_from_csr=None, allow_subdomains=None, allowed_domains_list=None, allowed_extra_extensions=None, allowed_ip_sans=None, allowed_uri_sans=None, auto_renew_certificate=None, basic_constraints=None, basic_constraints_critical=None, basic_constraints_valid_for_non_ca=None, certificate_authority_mode=None, client_flag=None, code_signing_flag=None, country=None, create_private_crl=None, create_private_ocsp=None, create_public_crl=None, create_public_ocsp=None, destination_path=None, disable_wildcards=None, enforce_hostnames=None, expiration_events=None, gw_cluster_id=None, gw_cluster_url=None, is_ca=None, key_bits=None, key_type=None, key_usage_list=None, locality=None, max_path_len=None, non_critical_key_usage=None, not_before_duration=None, ocsp_next_update=None, organization_list=None, organization_unit_list=None, pki_issuer_type=None, postal_code=None, protect_generated_certificates=None, province=None, renew_before_expiration_in_days=None, require_cn=None, server_flag=None, street_address=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, acme_enabled=None, allow_any_name=None, allow_copy_ext_from_csr=None, allow_subdomains=None, allowed_domains_list=None, allowed_extra_extensions=None, allowed_ip_sans=None, allowed_uri_sans=None, auto_renew_certificate=None, basic_constraints=None, basic_constraints_critical=None, basic_constraints_valid_for_non_ca=None, certificate_authority_mode=None, client_flag=None, code_signing_flag=None, country=None, create_private_crl=None, create_private_ocsp=None, create_public_crl=None, create_public_ocsp=None, destination_path=None, disable_wildcards=None, enforce_hostnames=None, expiration_events=None, gw_cluster_id=None, gw_cluster_url=None, is_ca=None, key_bits=None, key_type=None, key_usage_list=None, locality=None, max_path_len=None, non_critical_key_usage=None, not_before_duration=None, ocsp_next_update=None, organization_list=None, organization_unit_list=None, pki_issuer_type=None, postal_code=None, protect_generated_certificates=None, province=None, renew_before_expiration_in_days=None, require_cn=None, server_flag=None, split_certificate_chain=None, street_address=None, local_vars_configuration=None):  # noqa: E501
         """PKICertificateIssueDetails - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -179,6 +181,7 @@ class PKICertificateIssueDetails(object):
         self._renew_before_expiration_in_days = None
         self._require_cn = None
         self._server_flag = None
+        self._split_certificate_chain = None
         self._street_address = None
         self.discriminator = None
 
@@ -270,6 +273,8 @@ class PKICertificateIssueDetails(object):
             self.require_cn = require_cn
         if server_flag is not None:
             self.server_flag = server_flag
+        if split_certificate_chain is not None:
+            self.split_certificate_chain = split_certificate_chain
         if street_address is not None:
             self.street_address = street_address
 
@@ -1212,6 +1217,29 @@ class PKICertificateIssueDetails(object):
         """
 
         self._server_flag = server_flag
+
+    @property
+    def split_certificate_chain(self):
+        """Gets the split_certificate_chain of this PKICertificateIssueDetails.  # noqa: E501
+
+        SplitCertificateChain, when enabled, separates the leaf certificate from the certificate chain.  # noqa: E501
+
+        :return: The split_certificate_chain of this PKICertificateIssueDetails.  # noqa: E501
+        :rtype: bool
+        """
+        return self._split_certificate_chain
+
+    @split_certificate_chain.setter
+    def split_certificate_chain(self, split_certificate_chain):
+        """Sets the split_certificate_chain of this PKICertificateIssueDetails.
+
+        SplitCertificateChain, when enabled, separates the leaf certificate from the certificate chain.  # noqa: E501
+
+        :param split_certificate_chain: The split_certificate_chain of this PKICertificateIssueDetails.  # noqa: E501
+        :type: bool
+        """
+
+        self._split_certificate_chain = split_certificate_chain
 
     @property
     def street_address(self):
