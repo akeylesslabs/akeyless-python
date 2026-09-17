@@ -23,7 +23,7 @@ Name | Type | Description | Notes
 **root_first_in_chain** | **bool** | Root first in chain | [optional] 
 **sign_using_akeyless_pki** | **bool** | Use Akeyless PKI issuer or Venafi issuer | [optional] 
 **signer_key_name** | **str** | Signer key name | [optional] 
-**skip_dry_run** | **str** | If set, dry-run will be skipped | [optional] 
+**skip_dry_run** | **bool** | If set, dry-run will be skipped [true/false] | [optional] 
 **store_private_key** | **bool** | Store private key | [optional] 
 **tags** | **list[str]** | Add tags attached to this object | [optional] 
 **target_name** | **str** | Target name | [optional] 

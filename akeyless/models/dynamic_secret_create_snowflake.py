@@ -55,7 +55,7 @@ class DynamicSecretCreateSnowflake(object):
         'private_key': 'str',
         'private_key_passphrase': 'str',
         'role': 'str',
-        'skip_dry_run': 'str',
+        'skip_dry_run': 'bool',
         'tags': 'list[str]',
         'target_name': 'str',
         'token': 'str',
@@ -90,7 +90,7 @@ class DynamicSecretCreateSnowflake(object):
         'private_key': 'private-key',
         'private_key_passphrase': 'private-key-passphrase',
         'role': 'role',
-        'skip_dry_run': 'skip_dry_run',
+        'skip_dry_run': 'skip-dry-run',
         'tags': 'tags',
         'target_name': 'target-name',
         'token': 'token',
@@ -694,10 +694,10 @@ class DynamicSecretCreateSnowflake(object):
     def skip_dry_run(self):
         """Gets the skip_dry_run of this DynamicSecretCreateSnowflake.  # noqa: E501
 
-        If set, dry-run will be skipped  # noqa: E501
+        If set, dry-run will be skipped [true/false]  # noqa: E501
 
         :return: The skip_dry_run of this DynamicSecretCreateSnowflake.  # noqa: E501
-        :rtype: str
+        :rtype: bool
         """
         return self._skip_dry_run
 
@@ -705,10 +705,10 @@ class DynamicSecretCreateSnowflake(object):
     def skip_dry_run(self, skip_dry_run):
         """Sets the skip_dry_run of this DynamicSecretCreateSnowflake.
 
-        If set, dry-run will be skipped  # noqa: E501
+        If set, dry-run will be skipped [true/false]  # noqa: E501
 
         :param skip_dry_run: The skip_dry_run of this DynamicSecretCreateSnowflake.  # noqa: E501
-        :type: str
+        :type: bool
         """
 
         self._skip_dry_run = skip_dry_run

@@ -69,7 +69,7 @@ class DynamicSecretCreateAws(object):
         'secure_access_web_browsing': 'bool',
         'secure_access_web_proxy': 'bool',
         'session_tags': 'str',
-        'skip_dry_run': 'str',
+        'skip_dry_run': 'bool',
         'tags': 'list[str]',
         'target_name': 'str',
         'token': 'str',
@@ -118,7 +118,7 @@ class DynamicSecretCreateAws(object):
         'secure_access_web_browsing': 'secure-access-web-browsing',
         'secure_access_web_proxy': 'secure-access-web-proxy',
         'session_tags': 'session-tags',
-        'skip_dry_run': 'skip_dry_run',
+        'skip_dry_run': 'skip-dry-run',
         'tags': 'tags',
         'target_name': 'target-name',
         'token': 'token',
@@ -1086,10 +1086,10 @@ class DynamicSecretCreateAws(object):
     def skip_dry_run(self):
         """Gets the skip_dry_run of this DynamicSecretCreateAws.  # noqa: E501
 
-        If set, dry-run will be skipped  # noqa: E501
+        If set, dry-run will be skipped [true/false]  # noqa: E501
 
         :return: The skip_dry_run of this DynamicSecretCreateAws.  # noqa: E501
-        :rtype: str
+        :rtype: bool
         """
         return self._skip_dry_run
 
@@ -1097,10 +1097,10 @@ class DynamicSecretCreateAws(object):
     def skip_dry_run(self, skip_dry_run):
         """Sets the skip_dry_run of this DynamicSecretCreateAws.
 
-        If set, dry-run will be skipped  # noqa: E501
+        If set, dry-run will be skipped [true/false]  # noqa: E501
 
         :param skip_dry_run: The skip_dry_run of this DynamicSecretCreateAws.  # noqa: E501
-        :type: str
+        :type: bool
         """
 
         self._skip_dry_run = skip_dry_run

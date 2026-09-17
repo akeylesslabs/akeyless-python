@@ -32,7 +32,7 @@ Name | Type | Description | Notes
 **secure_access_db_name** | **str** | The DB name (relevant only for DB Dynamic-Secret) | [optional] 
 **secure_access_enable** | **str** | Enable/Disable secure remote access [true/false] | [optional] 
 **secure_access_host** | **list[str]** | Target servers for connections (In case of Linked Target association, host(s) will inherit Linked Target hosts - Relevant only for Dynamic Secrets/producers) | [optional] 
-**skip_dry_run** | **str** | If set, dry-run will be skipped | [optional] 
+**skip_dry_run** | **bool** | If set, dry-run will be skipped [true/false] | [optional] 
 **tags** | **list[str]** | Add tags attached to this object | [optional] 
 **target_name** | **str** | The target name to associate | 
 **token** | **str** | Authentication token (see &#x60;/auth&#x60; and &#x60;/configure&#x60;) | [optional] 

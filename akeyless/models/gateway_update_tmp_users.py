@@ -43,7 +43,7 @@ class GatewayUpdateTmpUsers(object):
         'name': 'str',
         'new_ttl_min': 'int',
         'output_rule': 'list[str]',
-        'skip_dry_run': 'str',
+        'skip_dry_run': 'bool',
         'tmp_creds_id': 'str',
         'token': 'str',
         'uid_token': 'str'
@@ -59,7 +59,7 @@ class GatewayUpdateTmpUsers(object):
         'name': 'name',
         'new_ttl_min': 'new-ttl-min',
         'output_rule': 'output-rule',
-        'skip_dry_run': 'skip_dry_run',
+        'skip_dry_run': 'skip-dry-run',
         'tmp_creds_id': 'tmp-creds-id',
         'token': 'token',
         'uid_token': 'uid-token'
@@ -326,10 +326,10 @@ class GatewayUpdateTmpUsers(object):
     def skip_dry_run(self):
         """Gets the skip_dry_run of this GatewayUpdateTmpUsers.  # noqa: E501
 
-        If set, dry-run will be skipped  # noqa: E501
+        If set, dry-run will be skipped [true/false]  # noqa: E501
 
         :return: The skip_dry_run of this GatewayUpdateTmpUsers.  # noqa: E501
-        :rtype: str
+        :rtype: bool
         """
         return self._skip_dry_run
 
@@ -337,10 +337,10 @@ class GatewayUpdateTmpUsers(object):
     def skip_dry_run(self, skip_dry_run):
         """Sets the skip_dry_run of this GatewayUpdateTmpUsers.
 
-        If set, dry-run will be skipped  # noqa: E501
+        If set, dry-run will be skipped [true/false]  # noqa: E501
 
         :param skip_dry_run: The skip_dry_run of this GatewayUpdateTmpUsers.  # noqa: E501
-        :type: str
+        :type: bool
         """
 
         self._skip_dry_run = skip_dry_run

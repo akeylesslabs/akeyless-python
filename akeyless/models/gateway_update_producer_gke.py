@@ -57,7 +57,7 @@ class GatewayUpdateProducerGke(object):
         'secure_access_delay': 'int',
         'secure_access_enable': 'str',
         'secure_access_web': 'bool',
-        'skip_dry_run': 'str',
+        'skip_dry_run': 'bool',
         'tags': 'list[str]',
         'target_name': 'str',
         'token': 'str',
@@ -89,7 +89,7 @@ class GatewayUpdateProducerGke(object):
         'secure_access_delay': 'secure-access-delay',
         'secure_access_enable': 'secure-access-enable',
         'secure_access_web': 'secure-access-web',
-        'skip_dry_run': 'skip_dry_run',
+        'skip_dry_run': 'skip-dry-run',
         'tags': 'tags',
         'target_name': 'target-name',
         'token': 'token',
@@ -727,10 +727,10 @@ class GatewayUpdateProducerGke(object):
     def skip_dry_run(self):
         """Gets the skip_dry_run of this GatewayUpdateProducerGke.  # noqa: E501
 
-        If set, dry-run will be skipped  # noqa: E501
+        If set, dry-run will be skipped [true/false]  # noqa: E501
 
         :return: The skip_dry_run of this GatewayUpdateProducerGke.  # noqa: E501
-        :rtype: str
+        :rtype: bool
         """
         return self._skip_dry_run
 
@@ -738,10 +738,10 @@ class GatewayUpdateProducerGke(object):
     def skip_dry_run(self, skip_dry_run):
         """Sets the skip_dry_run of this GatewayUpdateProducerGke.
 
-        If set, dry-run will be skipped  # noqa: E501
+        If set, dry-run will be skipped [true/false]  # noqa: E501
 
         :param skip_dry_run: The skip_dry_run of this GatewayUpdateProducerGke.  # noqa: E501
-        :type: str
+        :type: bool
         """
 
         self._skip_dry_run = skip_dry_run

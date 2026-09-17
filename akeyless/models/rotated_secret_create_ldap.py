@@ -72,7 +72,7 @@ class RotatedSecretCreateLdap(object):
         'secure_access_web': 'bool',
         'secure_access_web_browsing': 'bool',
         'secure_access_web_proxy': 'bool',
-        'skip_dry_run': 'str',
+        'skip_dry_run': 'bool',
         'tags': 'list[str]',
         'target': 'list[str]',
         'target_name': 'str',
@@ -125,7 +125,7 @@ class RotatedSecretCreateLdap(object):
         'secure_access_web': 'secure-access-web',
         'secure_access_web_browsing': 'secure-access-web-browsing',
         'secure_access_web_proxy': 'secure-access-web-proxy',
-        'skip_dry_run': 'skip_dry_run',
+        'skip_dry_run': 'skip-dry-run',
         'tags': 'tags',
         'target': 'target',
         'target_name': 'target-name',
@@ -1167,10 +1167,10 @@ class RotatedSecretCreateLdap(object):
     def skip_dry_run(self):
         """Gets the skip_dry_run of this RotatedSecretCreateLdap.  # noqa: E501
 
-        If set, dry-run will be skipped  # noqa: E501
+        If set, dry-run will be skipped [true/false]  # noqa: E501
 
         :return: The skip_dry_run of this RotatedSecretCreateLdap.  # noqa: E501
-        :rtype: str
+        :rtype: bool
         """
         return self._skip_dry_run
 
@@ -1178,10 +1178,10 @@ class RotatedSecretCreateLdap(object):
     def skip_dry_run(self, skip_dry_run):
         """Sets the skip_dry_run of this RotatedSecretCreateLdap.
 
-        If set, dry-run will be skipped  # noqa: E501
+        If set, dry-run will be skipped [true/false]  # noqa: E501
 
         :param skip_dry_run: The skip_dry_run of this RotatedSecretCreateLdap.  # noqa: E501
-        :type: str
+        :type: bool
         """
 
         self._skip_dry_run = skip_dry_run

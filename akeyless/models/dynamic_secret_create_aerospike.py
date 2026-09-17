@@ -47,7 +47,7 @@ class DynamicSecretCreateAerospike(object):
         'name': 'str',
         'output_rule': 'list[str]',
         'password_length': 'str',
-        'skip_dry_run': 'str',
+        'skip_dry_run': 'bool',
         'target_name': 'str',
         'token': 'str',
         'uid_token': 'str',
@@ -72,7 +72,7 @@ class DynamicSecretCreateAerospike(object):
         'name': 'name',
         'output_rule': 'output-rule',
         'password_length': 'password-length',
-        'skip_dry_run': 'skip_dry_run',
+        'skip_dry_run': 'skip-dry-run',
         'target_name': 'target-name',
         'token': 'token',
         'uid_token': 'uid-token',
@@ -460,10 +460,10 @@ class DynamicSecretCreateAerospike(object):
     def skip_dry_run(self):
         """Gets the skip_dry_run of this DynamicSecretCreateAerospike.  # noqa: E501
 
-        If set, dry-run will be skipped  # noqa: E501
+        If set, dry-run will be skipped [true/false]  # noqa: E501
 
         :return: The skip_dry_run of this DynamicSecretCreateAerospike.  # noqa: E501
-        :rtype: str
+        :rtype: bool
         """
         return self._skip_dry_run
 
@@ -471,10 +471,10 @@ class DynamicSecretCreateAerospike(object):
     def skip_dry_run(self, skip_dry_run):
         """Sets the skip_dry_run of this DynamicSecretCreateAerospike.
 
-        If set, dry-run will be skipped  # noqa: E501
+        If set, dry-run will be skipped [true/false]  # noqa: E501
 
         :param skip_dry_run: The skip_dry_run of this DynamicSecretCreateAerospike.  # noqa: E501
-        :type: str
+        :type: bool
         """
 
         self._skip_dry_run = skip_dry_run

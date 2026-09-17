@@ -44,7 +44,7 @@ Name | Type | Description | Notes
 **secure_access_host** | **list[str]** | Target servers for connections (In case of Linked Target association, host(s) will inherit Linked Target hosts - Relevant only for Dynamic Secrets/producers) | [optional] 
 **secure_access_rdp_domain** | **str** | Default domain name server. i.e. microsoft.com | [optional] 
 **secure_access_rdp_user** | **str** | Override the RDP Domain username | [optional] 
-**skip_dry_run** | **str** | If set, dry-run will be skipped | [optional] 
+**skip_dry_run** | **bool** | If set, dry-run will be skipped [true/false] | [optional] 
 **target** | **list[str]** | A list of targets to be associated with an SRA item, To specify multiple targets use argument multiple times | [optional] 
 **token** | **str** | Authentication token (see &#x60;/auth&#x60; and &#x60;/configure&#x60;) | [optional] 
 **uid_token** | **str** | The universal identity token, Required only for universal_identity authentication | [optional] 

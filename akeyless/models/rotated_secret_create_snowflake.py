@@ -61,7 +61,7 @@ class RotatedSecretCreateSnowflake(object):
         'rotation_interval': 'str',
         'rotation_statement': 'str',
         'rotator_type': 'str',
-        'skip_dry_run': 'str',
+        'skip_dry_run': 'bool',
         'tags': 'list[str]',
         'target_name': 'str',
         'token': 'str',
@@ -100,7 +100,7 @@ class RotatedSecretCreateSnowflake(object):
         'rotation_interval': 'rotation-interval',
         'rotation_statement': 'rotation-statement',
         'rotator_type': 'rotator-type',
-        'skip_dry_run': 'skip_dry_run',
+        'skip_dry_run': 'skip-dry-run',
         'tags': 'tags',
         'target_name': 'target-name',
         'token': 'token',
@@ -846,10 +846,10 @@ class RotatedSecretCreateSnowflake(object):
     def skip_dry_run(self):
         """Gets the skip_dry_run of this RotatedSecretCreateSnowflake.  # noqa: E501
 
-        If set, dry-run will be skipped  # noqa: E501
+        If set, dry-run will be skipped [true/false]  # noqa: E501
 
         :return: The skip_dry_run of this RotatedSecretCreateSnowflake.  # noqa: E501
-        :rtype: str
+        :rtype: bool
         """
         return self._skip_dry_run
 
@@ -857,10 +857,10 @@ class RotatedSecretCreateSnowflake(object):
     def skip_dry_run(self, skip_dry_run):
         """Sets the skip_dry_run of this RotatedSecretCreateSnowflake.
 
-        If set, dry-run will be skipped  # noqa: E501
+        If set, dry-run will be skipped [true/false]  # noqa: E501
 
         :param skip_dry_run: The skip_dry_run of this RotatedSecretCreateSnowflake.  # noqa: E501
-        :type: str
+        :type: bool
         """
 
         self._skip_dry_run = skip_dry_run

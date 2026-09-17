@@ -53,7 +53,7 @@ class DynamicSecretUpdateCassandra(object):
         'output_rule': 'list[str]',
         'password_length': 'str',
         'producer_encryption_key_name': 'str',
-        'skip_dry_run': 'str',
+        'skip_dry_run': 'bool',
         'ssl': 'bool',
         'ssl_certificate': 'str',
         'tags': 'list[str]',
@@ -87,7 +87,7 @@ class DynamicSecretUpdateCassandra(object):
         'output_rule': 'output-rule',
         'password_length': 'password-length',
         'producer_encryption_key_name': 'producer-encryption-key-name',
-        'skip_dry_run': 'skip_dry_run',
+        'skip_dry_run': 'skip-dry-run',
         'ssl': 'ssl',
         'ssl_certificate': 'ssl-certificate',
         'tags': 'tags',
@@ -645,10 +645,10 @@ class DynamicSecretUpdateCassandra(object):
     def skip_dry_run(self):
         """Gets the skip_dry_run of this DynamicSecretUpdateCassandra.  # noqa: E501
 
-        If set, dry-run will be skipped  # noqa: E501
+        If set, dry-run will be skipped [true/false]  # noqa: E501
 
         :return: The skip_dry_run of this DynamicSecretUpdateCassandra.  # noqa: E501
-        :rtype: str
+        :rtype: bool
         """
         return self._skip_dry_run
 
@@ -656,10 +656,10 @@ class DynamicSecretUpdateCassandra(object):
     def skip_dry_run(self, skip_dry_run):
         """Sets the skip_dry_run of this DynamicSecretUpdateCassandra.
 
-        If set, dry-run will be skipped  # noqa: E501
+        If set, dry-run will be skipped [true/false]  # noqa: E501
 
         :param skip_dry_run: The skip_dry_run of this DynamicSecretUpdateCassandra.  # noqa: E501
-        :type: str
+        :type: bool
         """
 
         self._skip_dry_run = skip_dry_run

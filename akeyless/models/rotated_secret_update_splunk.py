@@ -62,7 +62,7 @@ class RotatedSecretUpdateSplunk(object):
         'rotation_event_in': 'list[str]',
         'rotation_hour': 'int',
         'rotation_interval': 'str',
-        'skip_dry_run': 'str',
+        'skip_dry_run': 'bool',
         'splunk_token': 'str',
         'token': 'str',
         'token_owner': 'str',
@@ -102,7 +102,7 @@ class RotatedSecretUpdateSplunk(object):
         'rotation_event_in': 'rotation-event-in',
         'rotation_hour': 'rotation-hour',
         'rotation_interval': 'rotation-interval',
-        'skip_dry_run': 'skip_dry_run',
+        'skip_dry_run': 'skip-dry-run',
         'splunk_token': 'splunk-token',
         'token': 'token',
         'token_owner': 'token-owner',
@@ -874,10 +874,10 @@ class RotatedSecretUpdateSplunk(object):
     def skip_dry_run(self):
         """Gets the skip_dry_run of this RotatedSecretUpdateSplunk.  # noqa: E501
 
-        If set, dry-run will be skipped  # noqa: E501
+        If set, dry-run will be skipped [true/false]  # noqa: E501
 
         :return: The skip_dry_run of this RotatedSecretUpdateSplunk.  # noqa: E501
-        :rtype: str
+        :rtype: bool
         """
         return self._skip_dry_run
 
@@ -885,10 +885,10 @@ class RotatedSecretUpdateSplunk(object):
     def skip_dry_run(self, skip_dry_run):
         """Sets the skip_dry_run of this RotatedSecretUpdateSplunk.
 
-        If set, dry-run will be skipped  # noqa: E501
+        If set, dry-run will be skipped [true/false]  # noqa: E501
 
         :param skip_dry_run: The skip_dry_run of this RotatedSecretUpdateSplunk.  # noqa: E501
-        :type: str
+        :type: bool
         """
 
         self._skip_dry_run = skip_dry_run

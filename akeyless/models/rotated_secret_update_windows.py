@@ -75,7 +75,7 @@ class RotatedSecretUpdateWindows(object):
         'secure_access_host': 'list[str]',
         'secure_access_rdp_domain': 'str',
         'secure_access_rdp_user': 'str',
-        'skip_dry_run': 'str',
+        'skip_dry_run': 'bool',
         'target': 'list[str]',
         'token': 'str',
         'uid_token': 'str',
@@ -127,7 +127,7 @@ class RotatedSecretUpdateWindows(object):
         'secure_access_host': 'secure-access-host',
         'secure_access_rdp_domain': 'secure-access-rdp-domain',
         'secure_access_rdp_user': 'secure-access-rdp-user',
-        'skip_dry_run': 'skip_dry_run',
+        'skip_dry_run': 'skip-dry-run',
         'target': 'target',
         'token': 'token',
         'uid_token': 'uid-token',
@@ -1232,10 +1232,10 @@ class RotatedSecretUpdateWindows(object):
     def skip_dry_run(self):
         """Gets the skip_dry_run of this RotatedSecretUpdateWindows.  # noqa: E501
 
-        If set, dry-run will be skipped  # noqa: E501
+        If set, dry-run will be skipped [true/false]  # noqa: E501
 
         :return: The skip_dry_run of this RotatedSecretUpdateWindows.  # noqa: E501
-        :rtype: str
+        :rtype: bool
         """
         return self._skip_dry_run
 
@@ -1243,10 +1243,10 @@ class RotatedSecretUpdateWindows(object):
     def skip_dry_run(self, skip_dry_run):
         """Sets the skip_dry_run of this RotatedSecretUpdateWindows.
 
-        If set, dry-run will be skipped  # noqa: E501
+        If set, dry-run will be skipped [true/false]  # noqa: E501
 
         :param skip_dry_run: The skip_dry_run of this RotatedSecretUpdateWindows.  # noqa: E501
-        :type: str
+        :type: bool
         """
 
         self._skip_dry_run = skip_dry_run

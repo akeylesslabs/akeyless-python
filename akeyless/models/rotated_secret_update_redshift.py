@@ -66,7 +66,7 @@ class RotatedSecretUpdateRedshift(object):
         'secure_access_db_name': 'str',
         'secure_access_enable': 'str',
         'secure_access_host': 'list[str]',
-        'skip_dry_run': 'str',
+        'skip_dry_run': 'bool',
         'token': 'str',
         'uid_token': 'str',
         'use_capital_letters': 'str',
@@ -108,7 +108,7 @@ class RotatedSecretUpdateRedshift(object):
         'secure_access_db_name': 'secure-access-db-name',
         'secure_access_enable': 'secure-access-enable',
         'secure_access_host': 'secure-access-host',
-        'skip_dry_run': 'skip_dry_run',
+        'skip_dry_run': 'skip-dry-run',
         'token': 'token',
         'uid_token': 'uid-token',
         'use_capital_letters': 'use-capital-letters',
@@ -976,10 +976,10 @@ class RotatedSecretUpdateRedshift(object):
     def skip_dry_run(self):
         """Gets the skip_dry_run of this RotatedSecretUpdateRedshift.  # noqa: E501
 
-        If set, dry-run will be skipped  # noqa: E501
+        If set, dry-run will be skipped [true/false]  # noqa: E501
 
         :return: The skip_dry_run of this RotatedSecretUpdateRedshift.  # noqa: E501
-        :rtype: str
+        :rtype: bool
         """
         return self._skip_dry_run
 
@@ -987,10 +987,10 @@ class RotatedSecretUpdateRedshift(object):
     def skip_dry_run(self, skip_dry_run):
         """Sets the skip_dry_run of this RotatedSecretUpdateRedshift.
 
-        If set, dry-run will be skipped  # noqa: E501
+        If set, dry-run will be skipped [true/false]  # noqa: E501
 
         :param skip_dry_run: The skip_dry_run of this RotatedSecretUpdateRedshift.  # noqa: E501
-        :type: str
+        :type: bool
         """
 
         self._skip_dry_run = skip_dry_run

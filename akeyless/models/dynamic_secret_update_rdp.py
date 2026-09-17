@@ -69,7 +69,7 @@ class DynamicSecretUpdateRdp(object):
         'secure_access_rd_gateway_server': 'str',
         'secure_access_rdp_domain': 'str',
         'secure_access_rdp_user': 'str',
-        'skip_dry_run': 'str',
+        'skip_dry_run': 'bool',
         'tags': 'list[str]',
         'target': 'list[str]',
         'target_name': 'str',
@@ -119,7 +119,7 @@ class DynamicSecretUpdateRdp(object):
         'secure_access_rd_gateway_server': 'secure-access-rd-gateway-server',
         'secure_access_rdp_domain': 'secure-access-rdp-domain',
         'secure_access_rdp_user': 'secure-access-rdp-user',
-        'skip_dry_run': 'skip_dry_run',
+        'skip_dry_run': 'skip-dry-run',
         'tags': 'tags',
         'target': 'target',
         'target_name': 'target-name',
@@ -1091,10 +1091,10 @@ class DynamicSecretUpdateRdp(object):
     def skip_dry_run(self):
         """Gets the skip_dry_run of this DynamicSecretUpdateRdp.  # noqa: E501
 
-        If set, dry-run will be skipped  # noqa: E501
+        If set, dry-run will be skipped [true/false]  # noqa: E501
 
         :return: The skip_dry_run of this DynamicSecretUpdateRdp.  # noqa: E501
-        :rtype: str
+        :rtype: bool
         """
         return self._skip_dry_run
 
@@ -1102,10 +1102,10 @@ class DynamicSecretUpdateRdp(object):
     def skip_dry_run(self, skip_dry_run):
         """Sets the skip_dry_run of this DynamicSecretUpdateRdp.
 
-        If set, dry-run will be skipped  # noqa: E501
+        If set, dry-run will be skipped [true/false]  # noqa: E501
 
         :param skip_dry_run: The skip_dry_run of this DynamicSecretUpdateRdp.  # noqa: E501
-        :type: str
+        :type: bool
         """
 
         self._skip_dry_run = skip_dry_run

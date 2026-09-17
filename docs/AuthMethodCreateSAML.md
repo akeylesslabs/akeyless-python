@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **description** | **str** | Auth Method description | [optional] 
 **expiration_event_in** | **list[str]** | How many days before the expiration of the auth method would you like to be notified. | [optional] 
 **force_sub_claims** | **bool** | if true: enforce role-association must include sub claims | [optional] 
+**gateway_url** | **str** | Akeyless Gateway URL (Configuration Management port). Relevant only when working with Gateway mode | [optional] 
 **gw_bound_ips** | **list[str]** | A CIDR whitelist with the GW IPs that the access is restricted to | [optional] 
 **idp_metadata_url** | **str** | IDP metadata url | [optional] 
 **idp_metadata_xml_data** | **str** | IDP metadata xml data | [optional] 

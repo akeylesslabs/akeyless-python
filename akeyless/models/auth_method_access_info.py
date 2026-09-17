@@ -45,6 +45,7 @@ class AuthMethodAccessInfo(object):
         'cert_access_rules': 'CertAccessRules',
         'cidr_whitelist': 'str',
         'email_pass_access_rules': 'EmailPassAccessRules',
+        'enforce_client_type': 'bool',
         'force_sub_claims': 'bool',
         'gcp_access_rules': 'GCPAccessRules',
         'gw_cidr_whitelist': 'str',
@@ -76,6 +77,7 @@ class AuthMethodAccessInfo(object):
         'cert_access_rules': 'cert_access_rules',
         'cidr_whitelist': 'cidr_whitelist',
         'email_pass_access_rules': 'email_pass_access_rules',
+        'enforce_client_type': 'enforce_client_type',
         'force_sub_claims': 'force_sub_claims',
         'gcp_access_rules': 'gcp_access_rules',
         'gw_cidr_whitelist': 'gw_cidr_whitelist',
@@ -95,7 +97,7 @@ class AuthMethodAccessInfo(object):
         'universal_identity_access_rules': 'universal_identity_access_rules'
     }
 
-    def __init__(self, access_expires=None, access_id_alias=None, alicloud_access_rules=None, allowed_client_type=None, api_key_access_rules=None, audit_logs_claims=None, aws_iam_access_rules=None, azure_ad_access_rules=None, cert_access_rules=None, cidr_whitelist=None, email_pass_access_rules=None, force_sub_claims=None, gcp_access_rules=None, gw_cidr_whitelist=None, huawei_access_rules=None, jwt_ttl=None, k8s_access_rules=None, kerberos_access_rules=None, ldap_access_rules=None, oauth2_access_rules=None, oci_access_rules=None, oidc_access_rules=None, product_types=None, rules_type=None, saml_access_rules=None, sub_claims_delimiters=None, uid_expiration_events=None, universal_identity_access_rules=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, access_expires=None, access_id_alias=None, alicloud_access_rules=None, allowed_client_type=None, api_key_access_rules=None, audit_logs_claims=None, aws_iam_access_rules=None, azure_ad_access_rules=None, cert_access_rules=None, cidr_whitelist=None, email_pass_access_rules=None, enforce_client_type=None, force_sub_claims=None, gcp_access_rules=None, gw_cidr_whitelist=None, huawei_access_rules=None, jwt_ttl=None, k8s_access_rules=None, kerberos_access_rules=None, ldap_access_rules=None, oauth2_access_rules=None, oci_access_rules=None, oidc_access_rules=None, product_types=None, rules_type=None, saml_access_rules=None, sub_claims_delimiters=None, uid_expiration_events=None, universal_identity_access_rules=None, local_vars_configuration=None):  # noqa: E501
         """AuthMethodAccessInfo - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -112,6 +114,7 @@ class AuthMethodAccessInfo(object):
         self._cert_access_rules = None
         self._cidr_whitelist = None
         self._email_pass_access_rules = None
+        self._enforce_client_type = None
         self._force_sub_claims = None
         self._gcp_access_rules = None
         self._gw_cidr_whitelist = None
@@ -153,6 +156,8 @@ class AuthMethodAccessInfo(object):
             self.cidr_whitelist = cidr_whitelist
         if email_pass_access_rules is not None:
             self.email_pass_access_rules = email_pass_access_rules
+        if enforce_client_type is not None:
+            self.enforce_client_type = enforce_client_type
         if force_sub_claims is not None:
             self.force_sub_claims = force_sub_claims
         if gcp_access_rules is not None:
@@ -420,6 +425,29 @@ class AuthMethodAccessInfo(object):
         """
 
         self._email_pass_access_rules = email_pass_access_rules
+
+    @property
+    def enforce_client_type(self):
+        """Gets the enforce_client_type of this AuthMethodAccessInfo.  # noqa: E501
+
+        EnforceClientType mirrors the SaaS Auth client-type enforcement decision (GwAuthEligibilityReply.EnforceClientType) captured online, so Gateway-owned offline auth and cached-creds usage honor the same enforce flag SaaS uses (see base_access.AuthenticateClientType). When false, client-type mismatches are not rejected.  # noqa: E501
+
+        :return: The enforce_client_type of this AuthMethodAccessInfo.  # noqa: E501
+        :rtype: bool
+        """
+        return self._enforce_client_type
+
+    @enforce_client_type.setter
+    def enforce_client_type(self, enforce_client_type):
+        """Sets the enforce_client_type of this AuthMethodAccessInfo.
+
+        EnforceClientType mirrors the SaaS Auth client-type enforcement decision (GwAuthEligibilityReply.EnforceClientType) captured online, so Gateway-owned offline auth and cached-creds usage honor the same enforce flag SaaS uses (see base_access.AuthenticateClientType). When false, client-type mismatches are not rejected.  # noqa: E501
+
+        :param enforce_client_type: The enforce_client_type of this AuthMethodAccessInfo.  # noqa: E501
+        :type: bool
+        """
+
+        self._enforce_client_type = enforce_client_type
 
     @property
     def force_sub_claims(self):

@@ -42,8 +42,10 @@ class SystemAccessCredentialsReplyObj(object):
         'need_mfa_app_first_config': 'bool',
         'recovery_key_id': 'str',
         'required_mfa': 'str',
+        'sub_claims': 'dict(str, list[str])',
         'token': 'str',
-        'uam_creds': 'str'
+        'uam_creds': 'str',
+        'unique_id': 'str'
     }
 
     attribute_map = {
@@ -55,11 +57,13 @@ class SystemAccessCredentialsReplyObj(object):
         'need_mfa_app_first_config': 'need_mfa_app_first_config',
         'recovery_key_id': 'recovery_key_id',
         'required_mfa': 'required_mfa',
+        'sub_claims': 'sub_claims',
         'token': 'token',
-        'uam_creds': 'uam_creds'
+        'uam_creds': 'uam_creds',
+        'unique_id': 'unique_id'
     }
 
-    def __init__(self, access_id=None, auth_creds=None, csrf_token=None, expiry=None, kfm_creds=None, need_mfa_app_first_config=None, recovery_key_id=None, required_mfa=None, token=None, uam_creds=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, access_id=None, auth_creds=None, csrf_token=None, expiry=None, kfm_creds=None, need_mfa_app_first_config=None, recovery_key_id=None, required_mfa=None, sub_claims=None, token=None, uam_creds=None, unique_id=None, local_vars_configuration=None):  # noqa: E501
         """SystemAccessCredentialsReplyObj - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -73,8 +77,10 @@ class SystemAccessCredentialsReplyObj(object):
         self._need_mfa_app_first_config = None
         self._recovery_key_id = None
         self._required_mfa = None
+        self._sub_claims = None
         self._token = None
         self._uam_creds = None
+        self._unique_id = None
         self.discriminator = None
 
         if access_id is not None:
@@ -93,10 +99,14 @@ class SystemAccessCredentialsReplyObj(object):
             self.recovery_key_id = recovery_key_id
         if required_mfa is not None:
             self.required_mfa = required_mfa
+        if sub_claims is not None:
+            self.sub_claims = sub_claims
         if token is not None:
             self.token = token
         if uam_creds is not None:
             self.uam_creds = uam_creds
+        if unique_id is not None:
+            self.unique_id = unique_id
 
     @property
     def access_id(self):
@@ -279,6 +289,29 @@ class SystemAccessCredentialsReplyObj(object):
         self._required_mfa = required_mfa
 
     @property
+    def sub_claims(self):
+        """Gets the sub_claims of this SystemAccessCredentialsReplyObj.  # noqa: E501
+
+        SubClaims carries the IdP-verified RBAC claims for offline placeholder creds (empty UAM JWT); parsed from the ID token at callback time.  # noqa: E501
+
+        :return: The sub_claims of this SystemAccessCredentialsReplyObj.  # noqa: E501
+        :rtype: dict(str, list[str])
+        """
+        return self._sub_claims
+
+    @sub_claims.setter
+    def sub_claims(self, sub_claims):
+        """Sets the sub_claims of this SystemAccessCredentialsReplyObj.
+
+        SubClaims carries the IdP-verified RBAC claims for offline placeholder creds (empty UAM JWT); parsed from the ID token at callback time.  # noqa: E501
+
+        :param sub_claims: The sub_claims of this SystemAccessCredentialsReplyObj.  # noqa: E501
+        :type: dict(str, list[str])
+        """
+
+        self._sub_claims = sub_claims
+
+    @property
     def token(self):
         """Gets the token of this SystemAccessCredentialsReplyObj.  # noqa: E501
 
@@ -323,6 +356,29 @@ class SystemAccessCredentialsReplyObj(object):
         """
 
         self._uam_creds = uam_creds
+
+    @property
+    def unique_id(self):
+        """Gets the unique_id of this SystemAccessCredentialsReplyObj.  # noqa: E501
+
+        UniqueId is set only on Gateway-minted offline placeholder creds (empty UAM JWT), carrying the IdP unique identifier so usage-time RBAC can resolve identity.  # noqa: E501
+
+        :return: The unique_id of this SystemAccessCredentialsReplyObj.  # noqa: E501
+        :rtype: str
+        """
+        return self._unique_id
+
+    @unique_id.setter
+    def unique_id(self, unique_id):
+        """Sets the unique_id of this SystemAccessCredentialsReplyObj.
+
+        UniqueId is set only on Gateway-minted offline placeholder creds (empty UAM JWT), carrying the IdP unique identifier so usage-time RBAC can resolve identity.  # noqa: E501
+
+        :param unique_id: The unique_id of this SystemAccessCredentialsReplyObj.  # noqa: E501
+        :type: str
+        """
+
+        self._unique_id = unique_id
 
     def to_dict(self):
         """Returns the model properties as a dict"""

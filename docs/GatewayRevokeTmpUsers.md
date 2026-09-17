@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 **name** | **str** | Dynamic secret name | 
 **output_rule** | **list[str]** | Agentic output rule in name&#x3D;...,rule&#x3D;... format (e.g. name&#x3D;rule1,rule&#x3D;Mask secrets) | [optional] 
 **revoke_all** | **bool** | Revoke All Temp Creds | [optional] 
-**skip_dry_run** | **str** | If set, dry-run will be skipped | [optional] 
+**skip_dry_run** | **bool** | If set, dry-run will be skipped [true/false] | [optional] 
 **soft_delete** | **bool** | Soft Delete | [optional] 
 **tmp_creds_id** | **str** | Tmp Creds ID | [optional] 
 **token** | **str** | Authentication token (see &#x60;/auth&#x60; and &#x60;/configure&#x60;) | [optional] 

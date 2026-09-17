@@ -54,7 +54,7 @@ class RotatedSecretCreateHashiVault(object):
         'rotation_event_in': 'list[str]',
         'rotation_hour': 'int',
         'rotation_interval': 'str',
-        'skip_dry_run': 'str',
+        'skip_dry_run': 'bool',
         'tags': 'list[str]',
         'target_name': 'str',
         'token': 'str',
@@ -86,7 +86,7 @@ class RotatedSecretCreateHashiVault(object):
         'rotation_event_in': 'rotation-event-in',
         'rotation_hour': 'rotation-hour',
         'rotation_interval': 'rotation-interval',
-        'skip_dry_run': 'skip_dry_run',
+        'skip_dry_run': 'skip-dry-run',
         'tags': 'tags',
         'target_name': 'target-name',
         'token': 'token',
@@ -649,10 +649,10 @@ class RotatedSecretCreateHashiVault(object):
     def skip_dry_run(self):
         """Gets the skip_dry_run of this RotatedSecretCreateHashiVault.  # noqa: E501
 
-        If set, dry-run will be skipped  # noqa: E501
+        If set, dry-run will be skipped [true/false]  # noqa: E501
 
         :return: The skip_dry_run of this RotatedSecretCreateHashiVault.  # noqa: E501
-        :rtype: str
+        :rtype: bool
         """
         return self._skip_dry_run
 
@@ -660,10 +660,10 @@ class RotatedSecretCreateHashiVault(object):
     def skip_dry_run(self, skip_dry_run):
         """Sets the skip_dry_run of this RotatedSecretCreateHashiVault.
 
-        If set, dry-run will be skipped  # noqa: E501
+        If set, dry-run will be skipped [true/false]  # noqa: E501
 
         :param skip_dry_run: The skip_dry_run of this RotatedSecretCreateHashiVault.  # noqa: E501
-        :type: str
+        :type: bool
         """
 
         self._skip_dry_run = skip_dry_run

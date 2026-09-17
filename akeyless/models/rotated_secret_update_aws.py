@@ -73,7 +73,7 @@ class RotatedSecretUpdateAws(object):
         'secure_access_bastion_issuer': 'str',
         'secure_access_certificate_issuer': 'str',
         'secure_access_enable': 'str',
-        'skip_dry_run': 'str',
+        'skip_dry_run': 'bool',
         'token': 'str',
         'uid_token': 'str',
         'use_capital_letters': 'str',
@@ -122,7 +122,7 @@ class RotatedSecretUpdateAws(object):
         'secure_access_bastion_issuer': 'secure-access-bastion-issuer',
         'secure_access_certificate_issuer': 'secure-access-certificate-issuer',
         'secure_access_enable': 'secure-access-enable',
-        'skip_dry_run': 'skip_dry_run',
+        'skip_dry_run': 'skip-dry-run',
         'token': 'token',
         'uid_token': 'uid-token',
         'use_capital_letters': 'use-capital-letters',
@@ -1172,10 +1172,10 @@ class RotatedSecretUpdateAws(object):
     def skip_dry_run(self):
         """Gets the skip_dry_run of this RotatedSecretUpdateAws.  # noqa: E501
 
-        If set, dry-run will be skipped  # noqa: E501
+        If set, dry-run will be skipped [true/false]  # noqa: E501
 
         :return: The skip_dry_run of this RotatedSecretUpdateAws.  # noqa: E501
-        :rtype: str
+        :rtype: bool
         """
         return self._skip_dry_run
 
@@ -1183,10 +1183,10 @@ class RotatedSecretUpdateAws(object):
     def skip_dry_run(self, skip_dry_run):
         """Sets the skip_dry_run of this RotatedSecretUpdateAws.
 
-        If set, dry-run will be skipped  # noqa: E501
+        If set, dry-run will be skipped [true/false]  # noqa: E501
 
         :param skip_dry_run: The skip_dry_run of this RotatedSecretUpdateAws.  # noqa: E501
-        :type: str
+        :type: bool
         """
 
         self._skip_dry_run = skip_dry_run

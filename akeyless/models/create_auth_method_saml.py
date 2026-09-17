@@ -43,6 +43,7 @@ class CreateAuthMethodSAML(object):
         'description': 'str',
         'expiration_event_in': 'list[str]',
         'force_sub_claims': 'bool',
+        'gateway_url': 'str',
         'gw_bound_ips': 'list[str]',
         'idp_metadata_url': 'str',
         'idp_metadata_xml_data': 'str',
@@ -67,6 +68,7 @@ class CreateAuthMethodSAML(object):
         'description': 'description',
         'expiration_event_in': 'expiration-event-in',
         'force_sub_claims': 'force-sub-claims',
+        'gateway_url': 'gateway-url',
         'gw_bound_ips': 'gw-bound-ips',
         'idp_metadata_url': 'idp-metadata-url',
         'idp_metadata_xml_data': 'idp-metadata-xml-data',
@@ -81,7 +83,7 @@ class CreateAuthMethodSAML(object):
         'use_dedicated_saml_urls': 'use-dedicated-saml-urls'
     }
 
-    def __init__(self, access_expires=0, allowed_client_type=None, allowed_redirect_uri=None, audit_logs_claims=None, bound_ips=None, delete_protection=None, description=None, expiration_event_in=None, force_sub_claims=None, gw_bound_ips=None, idp_metadata_url=None, idp_metadata_xml_data=None, json=False, jwt_ttl=0, name=None, product_type=None, subclaims_delimiters=None, token=None, uid_token=None, unique_identifier=None, use_dedicated_saml_urls=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, access_expires=0, allowed_client_type=None, allowed_redirect_uri=None, audit_logs_claims=None, bound_ips=None, delete_protection=None, description=None, expiration_event_in=None, force_sub_claims=None, gateway_url=None, gw_bound_ips=None, idp_metadata_url=None, idp_metadata_xml_data=None, json=False, jwt_ttl=0, name=None, product_type=None, subclaims_delimiters=None, token=None, uid_token=None, unique_identifier=None, use_dedicated_saml_urls=None, local_vars_configuration=None):  # noqa: E501
         """CreateAuthMethodSAML - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -96,6 +98,7 @@ class CreateAuthMethodSAML(object):
         self._description = None
         self._expiration_event_in = None
         self._force_sub_claims = None
+        self._gateway_url = None
         self._gw_bound_ips = None
         self._idp_metadata_url = None
         self._idp_metadata_xml_data = None
@@ -128,6 +131,8 @@ class CreateAuthMethodSAML(object):
             self.expiration_event_in = expiration_event_in
         if force_sub_claims is not None:
             self.force_sub_claims = force_sub_claims
+        if gateway_url is not None:
+            self.gateway_url = gateway_url
         if gw_bound_ips is not None:
             self.gw_bound_ips = gw_bound_ips
         if idp_metadata_url is not None:
@@ -357,6 +362,29 @@ class CreateAuthMethodSAML(object):
         """
 
         self._force_sub_claims = force_sub_claims
+
+    @property
+    def gateway_url(self):
+        """Gets the gateway_url of this CreateAuthMethodSAML.  # noqa: E501
+
+        Akeyless Gateway URL (Configuration Management port). Relevant only when working with Gateway mode  # noqa: E501
+
+        :return: The gateway_url of this CreateAuthMethodSAML.  # noqa: E501
+        :rtype: str
+        """
+        return self._gateway_url
+
+    @gateway_url.setter
+    def gateway_url(self, gateway_url):
+        """Sets the gateway_url of this CreateAuthMethodSAML.
+
+        Akeyless Gateway URL (Configuration Management port). Relevant only when working with Gateway mode  # noqa: E501
+
+        :param gateway_url: The gateway_url of this CreateAuthMethodSAML.  # noqa: E501
+        :type: str
+        """
+
+        self._gateway_url = gateway_url
 
     @property
     def gw_bound_ips(self):

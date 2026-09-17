@@ -63,7 +63,7 @@ class DynamicSecretCreateMySql(object):
         'secure_access_enable': 'str',
         'secure_access_host': 'list[str]',
         'secure_access_web': 'bool',
-        'skip_dry_run': 'str',
+        'skip_dry_run': 'bool',
         'ssl': 'bool',
         'ssl_certificate': 'str',
         'tags': 'list[str]',
@@ -107,7 +107,7 @@ class DynamicSecretCreateMySql(object):
         'secure_access_enable': 'secure-access-enable',
         'secure_access_host': 'secure-access-host',
         'secure_access_web': 'secure-access-web',
-        'skip_dry_run': 'skip_dry_run',
+        'skip_dry_run': 'skip-dry-run',
         'ssl': 'ssl',
         'ssl_certificate': 'ssl-certificate',
         'tags': 'tags',
@@ -925,10 +925,10 @@ class DynamicSecretCreateMySql(object):
     def skip_dry_run(self):
         """Gets the skip_dry_run of this DynamicSecretCreateMySql.  # noqa: E501
 
-        If set, dry-run will be skipped  # noqa: E501
+        If set, dry-run will be skipped [true/false]  # noqa: E501
 
         :return: The skip_dry_run of this DynamicSecretCreateMySql.  # noqa: E501
-        :rtype: str
+        :rtype: bool
         """
         return self._skip_dry_run
 
@@ -936,10 +936,10 @@ class DynamicSecretCreateMySql(object):
     def skip_dry_run(self, skip_dry_run):
         """Sets the skip_dry_run of this DynamicSecretCreateMySql.
 
-        If set, dry-run will be skipped  # noqa: E501
+        If set, dry-run will be skipped [true/false]  # noqa: E501
 
         :param skip_dry_run: The skip_dry_run of this DynamicSecretCreateMySql.  # noqa: E501
-        :type: str
+        :type: bool
         """
 
         self._skip_dry_run = skip_dry_run

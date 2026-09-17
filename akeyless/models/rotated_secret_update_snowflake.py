@@ -64,7 +64,7 @@ class RotatedSecretUpdateSnowflake(object):
         'rotation_hour': 'int',
         'rotation_interval': 'str',
         'rotation_statement': 'str',
-        'skip_dry_run': 'str',
+        'skip_dry_run': 'bool',
         'token': 'str',
         'uid_token': 'str',
         'use_capital_letters': 'str',
@@ -104,7 +104,7 @@ class RotatedSecretUpdateSnowflake(object):
         'rotation_hour': 'rotation-hour',
         'rotation_interval': 'rotation-interval',
         'rotation_statement': 'rotation-statement',
-        'skip_dry_run': 'skip_dry_run',
+        'skip_dry_run': 'skip-dry-run',
         'token': 'token',
         'uid_token': 'uid-token',
         'use_capital_letters': 'use-capital-letters',
@@ -920,10 +920,10 @@ class RotatedSecretUpdateSnowflake(object):
     def skip_dry_run(self):
         """Gets the skip_dry_run of this RotatedSecretUpdateSnowflake.  # noqa: E501
 
-        If set, dry-run will be skipped  # noqa: E501
+        If set, dry-run will be skipped [true/false]  # noqa: E501
 
         :return: The skip_dry_run of this RotatedSecretUpdateSnowflake.  # noqa: E501
-        :rtype: str
+        :rtype: bool
         """
         return self._skip_dry_run
 
@@ -931,10 +931,10 @@ class RotatedSecretUpdateSnowflake(object):
     def skip_dry_run(self, skip_dry_run):
         """Sets the skip_dry_run of this RotatedSecretUpdateSnowflake.
 
-        If set, dry-run will be skipped  # noqa: E501
+        If set, dry-run will be skipped [true/false]  # noqa: E501
 
         :param skip_dry_run: The skip_dry_run of this RotatedSecretUpdateSnowflake.  # noqa: E501
-        :type: str
+        :type: bool
         """
 
         self._skip_dry_run = skip_dry_run

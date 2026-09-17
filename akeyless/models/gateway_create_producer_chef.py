@@ -50,8 +50,8 @@ class GatewayCreateProducerChef(object):
         'output_rule': 'list[str]',
         'password_length': 'str',
         'producer_encryption_key_name': 'str',
+        'skip_dry_run': 'bool',
         'skip_ssl': 'bool',
-        'skip_dry_run': 'str',
         'tags': 'list[str]',
         'target_name': 'str',
         'token': 'str',
@@ -80,8 +80,8 @@ class GatewayCreateProducerChef(object):
         'output_rule': 'output-rule',
         'password_length': 'password-length',
         'producer_encryption_key_name': 'producer-encryption-key-name',
+        'skip_dry_run': 'skip-dry-run',
         'skip_ssl': 'skip-ssl',
-        'skip_dry_run': 'skip_dry_run',
         'tags': 'tags',
         'target_name': 'target-name',
         'token': 'token',
@@ -93,7 +93,7 @@ class GatewayCreateProducerChef(object):
         'user_ttl': 'user-ttl'
     }
 
-    def __init__(self, ara_enabled=None, chef_orgs=None, chef_server_key=None, chef_server_url=None, chef_server_username=None, custom_username_template=None, delete_protection=None, enable_agentic_runtime_authority=None, enable_ai_quorum=None, input_rule=None, item_custom_fields=None, json=False, name=None, output_rule=None, password_length=None, producer_encryption_key_name=None, skip_ssl=True, skip_dry_run=None, tags=None, target_name=None, token=None, uid_token=None, use_capital_letters=None, use_lower_letters=None, use_numbers=None, use_special_characters=None, user_ttl='60m', local_vars_configuration=None):  # noqa: E501
+    def __init__(self, ara_enabled=None, chef_orgs=None, chef_server_key=None, chef_server_url=None, chef_server_username=None, custom_username_template=None, delete_protection=None, enable_agentic_runtime_authority=None, enable_ai_quorum=None, input_rule=None, item_custom_fields=None, json=False, name=None, output_rule=None, password_length=None, producer_encryption_key_name=None, skip_dry_run=None, skip_ssl=True, tags=None, target_name=None, token=None, uid_token=None, use_capital_letters=None, use_lower_letters=None, use_numbers=None, use_special_characters=None, user_ttl='60m', local_vars_configuration=None):  # noqa: E501
         """GatewayCreateProducerChef - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -115,8 +115,8 @@ class GatewayCreateProducerChef(object):
         self._output_rule = None
         self._password_length = None
         self._producer_encryption_key_name = None
-        self._skip_ssl = None
         self._skip_dry_run = None
+        self._skip_ssl = None
         self._tags = None
         self._target_name = None
         self._token = None
@@ -159,10 +159,10 @@ class GatewayCreateProducerChef(object):
             self.password_length = password_length
         if producer_encryption_key_name is not None:
             self.producer_encryption_key_name = producer_encryption_key_name
-        if skip_ssl is not None:
-            self.skip_ssl = skip_ssl
         if skip_dry_run is not None:
             self.skip_dry_run = skip_dry_run
+        if skip_ssl is not None:
+            self.skip_ssl = skip_ssl
         if tags is not None:
             self.tags = tags
         if target_name is not None:
@@ -553,6 +553,29 @@ class GatewayCreateProducerChef(object):
         self._producer_encryption_key_name = producer_encryption_key_name
 
     @property
+    def skip_dry_run(self):
+        """Gets the skip_dry_run of this GatewayCreateProducerChef.  # noqa: E501
+
+        If set, dry-run will be skipped [true/false]  # noqa: E501
+
+        :return: The skip_dry_run of this GatewayCreateProducerChef.  # noqa: E501
+        :rtype: bool
+        """
+        return self._skip_dry_run
+
+    @skip_dry_run.setter
+    def skip_dry_run(self, skip_dry_run):
+        """Sets the skip_dry_run of this GatewayCreateProducerChef.
+
+        If set, dry-run will be skipped [true/false]  # noqa: E501
+
+        :param skip_dry_run: The skip_dry_run of this GatewayCreateProducerChef.  # noqa: E501
+        :type: bool
+        """
+
+        self._skip_dry_run = skip_dry_run
+
+    @property
     def skip_ssl(self):
         """Gets the skip_ssl of this GatewayCreateProducerChef.  # noqa: E501
 
@@ -574,29 +597,6 @@ class GatewayCreateProducerChef(object):
         """
 
         self._skip_ssl = skip_ssl
-
-    @property
-    def skip_dry_run(self):
-        """Gets the skip_dry_run of this GatewayCreateProducerChef.  # noqa: E501
-
-        If set, dry-run will be skipped  # noqa: E501
-
-        :return: The skip_dry_run of this GatewayCreateProducerChef.  # noqa: E501
-        :rtype: str
-        """
-        return self._skip_dry_run
-
-    @skip_dry_run.setter
-    def skip_dry_run(self, skip_dry_run):
-        """Sets the skip_dry_run of this GatewayCreateProducerChef.
-
-        If set, dry-run will be skipped  # noqa: E501
-
-        :param skip_dry_run: The skip_dry_run of this GatewayCreateProducerChef.  # noqa: E501
-        :type: str
-        """
-
-        self._skip_dry_run = skip_dry_run
 
     @property
     def tags(self):

@@ -43,7 +43,7 @@ class GatewayRevokeTmpUsers(object):
         'name': 'str',
         'output_rule': 'list[str]',
         'revoke_all': 'bool',
-        'skip_dry_run': 'str',
+        'skip_dry_run': 'bool',
         'soft_delete': 'bool',
         'tmp_creds_id': 'str',
         'token': 'str',
@@ -60,7 +60,7 @@ class GatewayRevokeTmpUsers(object):
         'name': 'name',
         'output_rule': 'output-rule',
         'revoke_all': 'revoke-all',
-        'skip_dry_run': 'skip_dry_run',
+        'skip_dry_run': 'skip-dry-run',
         'soft_delete': 'soft-delete',
         'tmp_creds_id': 'tmp-creds-id',
         'token': 'token',
@@ -330,10 +330,10 @@ class GatewayRevokeTmpUsers(object):
     def skip_dry_run(self):
         """Gets the skip_dry_run of this GatewayRevokeTmpUsers.  # noqa: E501
 
-        If set, dry-run will be skipped  # noqa: E501
+        If set, dry-run will be skipped [true/false]  # noqa: E501
 
         :return: The skip_dry_run of this GatewayRevokeTmpUsers.  # noqa: E501
-        :rtype: str
+        :rtype: bool
         """
         return self._skip_dry_run
 
@@ -341,10 +341,10 @@ class GatewayRevokeTmpUsers(object):
     def skip_dry_run(self, skip_dry_run):
         """Sets the skip_dry_run of this GatewayRevokeTmpUsers.
 
-        If set, dry-run will be skipped  # noqa: E501
+        If set, dry-run will be skipped [true/false]  # noqa: E501
 
         :param skip_dry_run: The skip_dry_run of this GatewayRevokeTmpUsers.  # noqa: E501
-        :type: str
+        :type: bool
         """
 
         self._skip_dry_run = skip_dry_run

@@ -60,7 +60,7 @@ class GatewayCreateProducerPing(object):
         'ping_signing_algo': 'str',
         'ping_url': 'str',
         'producer_encryption_key_name': 'str',
-        'skip_dry_run': 'str',
+        'skip_dry_run': 'bool',
         'tags': 'list[str]',
         'target_name': 'str',
         'token': 'str',
@@ -95,7 +95,7 @@ class GatewayCreateProducerPing(object):
         'ping_signing_algo': 'ping-signing-algo',
         'ping_url': 'ping-url',
         'producer_encryption_key_name': 'producer-encryption-key-name',
-        'skip_dry_run': 'skip_dry_run',
+        'skip_dry_run': 'skip-dry-run',
         'tags': 'tags',
         'target_name': 'target-name',
         'token': 'token',
@@ -811,10 +811,10 @@ class GatewayCreateProducerPing(object):
     def skip_dry_run(self):
         """Gets the skip_dry_run of this GatewayCreateProducerPing.  # noqa: E501
 
-        If set, dry-run will be skipped  # noqa: E501
+        If set, dry-run will be skipped [true/false]  # noqa: E501
 
         :return: The skip_dry_run of this GatewayCreateProducerPing.  # noqa: E501
-        :rtype: str
+        :rtype: bool
         """
         return self._skip_dry_run
 
@@ -822,10 +822,10 @@ class GatewayCreateProducerPing(object):
     def skip_dry_run(self, skip_dry_run):
         """Sets the skip_dry_run of this GatewayCreateProducerPing.
 
-        If set, dry-run will be skipped  # noqa: E501
+        If set, dry-run will be skipped [true/false]  # noqa: E501
 
         :param skip_dry_run: The skip_dry_run of this GatewayCreateProducerPing.  # noqa: E501
-        :type: str
+        :type: bool
         """
 
         self._skip_dry_run = skip_dry_run

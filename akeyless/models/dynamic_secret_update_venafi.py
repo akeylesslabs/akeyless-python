@@ -54,7 +54,7 @@ class DynamicSecretUpdateVenafi(object):
         'root_first_in_chain': 'bool',
         'sign_using_akeyless_pki': 'bool',
         'signer_key_name': 'str',
-        'skip_dry_run': 'str',
+        'skip_dry_run': 'bool',
         'store_private_key': 'bool',
         'tags': 'list[str]',
         'target_name': 'str',
@@ -91,7 +91,7 @@ class DynamicSecretUpdateVenafi(object):
         'root_first_in_chain': 'root-first-in-chain',
         'sign_using_akeyless_pki': 'sign-using-akeyless-pki',
         'signer_key_name': 'signer-key-name',
-        'skip_dry_run': 'skip_dry_run',
+        'skip_dry_run': 'skip-dry-run',
         'store_private_key': 'store-private-key',
         'tags': 'tags',
         'target_name': 'target-name',
@@ -683,10 +683,10 @@ class DynamicSecretUpdateVenafi(object):
     def skip_dry_run(self):
         """Gets the skip_dry_run of this DynamicSecretUpdateVenafi.  # noqa: E501
 
-        If set, dry-run will be skipped  # noqa: E501
+        If set, dry-run will be skipped [true/false]  # noqa: E501
 
         :return: The skip_dry_run of this DynamicSecretUpdateVenafi.  # noqa: E501
-        :rtype: str
+        :rtype: bool
         """
         return self._skip_dry_run
 
@@ -694,10 +694,10 @@ class DynamicSecretUpdateVenafi(object):
     def skip_dry_run(self, skip_dry_run):
         """Sets the skip_dry_run of this DynamicSecretUpdateVenafi.
 
-        If set, dry-run will be skipped  # noqa: E501
+        If set, dry-run will be skipped [true/false]  # noqa: E501
 
         :param skip_dry_run: The skip_dry_run of this DynamicSecretUpdateVenafi.  # noqa: E501
-        :type: str
+        :type: bool
         """
 
         self._skip_dry_run = skip_dry_run
