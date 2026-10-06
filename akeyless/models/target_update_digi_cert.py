@@ -38,7 +38,11 @@ class TargetUpdateDigiCert(object):
         'delete_protection': 'str',
         'description': 'str',
         'digicert_url': 'str',
+        'dns_propagation_wait': 'str',
+        'dns_resolvers': 'list[str]',
+        'dns_skip_precheck': 'bool',
         'dns_target_creds': 'str',
+        'dns_timeout': 'str',
         'dns_zone': 'str',
         'eab_hmac_key': 'str',
         'eab_key_id': 'str',
@@ -65,7 +69,11 @@ class TargetUpdateDigiCert(object):
         'delete_protection': 'delete_protection',
         'description': 'description',
         'digicert_url': 'digicert-url',
+        'dns_propagation_wait': 'dns-propagation-wait',
+        'dns_resolvers': 'dns-resolvers',
+        'dns_skip_precheck': 'dns-skip-precheck',
         'dns_target_creds': 'dns-target-creds',
+        'dns_timeout': 'dns-timeout',
         'dns_zone': 'dns-zone',
         'eab_hmac_key': 'eab-hmac-key',
         'eab_key_id': 'eab-key-id',
@@ -87,7 +95,7 @@ class TargetUpdateDigiCert(object):
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, acme_challenge='dns', delete_protection=None, description=None, digicert_url='us-production', dns_target_creds=None, dns_zone=None, eab_hmac_key=None, eab_key_id=None, email=None, gcp_project=None, hosted_zone=None, json=False, keep_prev_version=None, key=None, lock_on_read=None, lock_ttl=None, max_versions=None, name=None, new_name=None, resource_group=None, rotate_on_unlock=None, timeout='5m', token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, acme_challenge='dns', delete_protection=None, description=None, digicert_url='us-production', dns_propagation_wait=None, dns_resolvers=None, dns_skip_precheck=None, dns_target_creds=None, dns_timeout=None, dns_zone=None, eab_hmac_key=None, eab_key_id=None, email=None, gcp_project=None, hosted_zone=None, json=False, keep_prev_version=None, key=None, lock_on_read=None, lock_ttl=None, max_versions=None, name=None, new_name=None, resource_group=None, rotate_on_unlock=None, timeout='5m', token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """TargetUpdateDigiCert - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -97,7 +105,11 @@ class TargetUpdateDigiCert(object):
         self._delete_protection = None
         self._description = None
         self._digicert_url = None
+        self._dns_propagation_wait = None
+        self._dns_resolvers = None
+        self._dns_skip_precheck = None
         self._dns_target_creds = None
+        self._dns_timeout = None
         self._dns_zone = None
         self._eab_hmac_key = None
         self._eab_key_id = None
@@ -127,8 +139,16 @@ class TargetUpdateDigiCert(object):
             self.description = description
         if digicert_url is not None:
             self.digicert_url = digicert_url
+        if dns_propagation_wait is not None:
+            self.dns_propagation_wait = dns_propagation_wait
+        if dns_resolvers is not None:
+            self.dns_resolvers = dns_resolvers
+        if dns_skip_precheck is not None:
+            self.dns_skip_precheck = dns_skip_precheck
         if dns_target_creds is not None:
             self.dns_target_creds = dns_target_creds
+        if dns_timeout is not None:
+            self.dns_timeout = dns_timeout
         if dns_zone is not None:
             self.dns_zone = dns_zone
         if eab_hmac_key is not None:
@@ -259,6 +279,75 @@ class TargetUpdateDigiCert(object):
         self._digicert_url = digicert_url
 
     @property
+    def dns_propagation_wait(self):
+        """Gets the dns_propagation_wait of this TargetUpdateDigiCert.  # noqa: E501
+
+        Fixed wait after TXT publish (e.g. 30s, 2m). If omitted with pre-check on, no extra sleep (polling only). If omitted with --dns-skip-precheck, gateway uses 30s. DNS challenge only  # noqa: E501
+
+        :return: The dns_propagation_wait of this TargetUpdateDigiCert.  # noqa: E501
+        :rtype: str
+        """
+        return self._dns_propagation_wait
+
+    @dns_propagation_wait.setter
+    def dns_propagation_wait(self, dns_propagation_wait):
+        """Sets the dns_propagation_wait of this TargetUpdateDigiCert.
+
+        Fixed wait after TXT publish (e.g. 30s, 2m). If omitted with pre-check on, no extra sleep (polling only). If omitted with --dns-skip-precheck, gateway uses 30s. DNS challenge only  # noqa: E501
+
+        :param dns_propagation_wait: The dns_propagation_wait of this TargetUpdateDigiCert.  # noqa: E501
+        :type: str
+        """
+
+        self._dns_propagation_wait = dns_propagation_wait
+
+    @property
+    def dns_resolvers(self):
+        """Gets the dns_resolvers of this TargetUpdateDigiCert.  # noqa: E501
+
+        Custom DNS resolvers (ip:port) for DNS-01. Repeat for multiple. If omitted, Lego uses /etc/resolv.conf or Google Public DNS. DNS challenge only  # noqa: E501
+
+        :return: The dns_resolvers of this TargetUpdateDigiCert.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._dns_resolvers
+
+    @dns_resolvers.setter
+    def dns_resolvers(self, dns_resolvers):
+        """Sets the dns_resolvers of this TargetUpdateDigiCert.
+
+        Custom DNS resolvers (ip:port) for DNS-01. Repeat for multiple. If omitted, Lego uses /etc/resolv.conf or Google Public DNS. DNS challenge only  # noqa: E501
+
+        :param dns_resolvers: The dns_resolvers of this TargetUpdateDigiCert.  # noqa: E501
+        :type: list[str]
+        """
+
+        self._dns_resolvers = dns_resolvers
+
+    @property
+    def dns_skip_precheck(self):
+        """Gets the dns_skip_precheck of this TargetUpdateDigiCert.  # noqa: E501
+
+        Skip DNS TXT pre-check before CA validation. If --dns-propagation-wait is omitted and this flag is set, gateway waits 30s before CA validation. DNS challenge only  # noqa: E501
+
+        :return: The dns_skip_precheck of this TargetUpdateDigiCert.  # noqa: E501
+        :rtype: bool
+        """
+        return self._dns_skip_precheck
+
+    @dns_skip_precheck.setter
+    def dns_skip_precheck(self, dns_skip_precheck):
+        """Sets the dns_skip_precheck of this TargetUpdateDigiCert.
+
+        Skip DNS TXT pre-check before CA validation. If --dns-propagation-wait is omitted and this flag is set, gateway waits 30s before CA validation. DNS challenge only  # noqa: E501
+
+        :param dns_skip_precheck: The dns_skip_precheck of this TargetUpdateDigiCert.  # noqa: E501
+        :type: bool
+        """
+
+        self._dns_skip_precheck = dns_skip_precheck
+
+    @property
     def dns_target_creds(self):
         """Gets the dns_target_creds of this TargetUpdateDigiCert.  # noqa: E501
 
@@ -280,6 +369,29 @@ class TargetUpdateDigiCert(object):
         """
 
         self._dns_target_creds = dns_target_creds
+
+    @property
+    def dns_timeout(self):
+        """Gets the dns_timeout of this TargetUpdateDigiCert.  # noqa: E501
+
+        Per-query DNS lookup timeout during pre-check (e.g. 10s), not total poll time. If omitted with pre-check on, Lego library default applies (10s per query on Linux). Ignored when --dns-skip-precheck is set. DNS challenge only  # noqa: E501
+
+        :return: The dns_timeout of this TargetUpdateDigiCert.  # noqa: E501
+        :rtype: str
+        """
+        return self._dns_timeout
+
+    @dns_timeout.setter
+    def dns_timeout(self, dns_timeout):
+        """Sets the dns_timeout of this TargetUpdateDigiCert.
+
+        Per-query DNS lookup timeout during pre-check (e.g. 10s), not total poll time. If omitted with pre-check on, Lego library default applies (10s per query on Linux). Ignored when --dns-skip-precheck is set. DNS challenge only  # noqa: E501
+
+        :param dns_timeout: The dns_timeout of this TargetUpdateDigiCert.  # noqa: E501
+        :type: str
+        """
+
+        self._dns_timeout = dns_timeout
 
     @property
     def dns_zone(self):

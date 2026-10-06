@@ -39,6 +39,7 @@ class RequestAccess(object):
         'description': 'str',
         'json': 'bool',
         'name': 'str',
+        'requested_ttl': 'int',
         'token': 'str',
         'type': 'str',
         'uid_token': 'str'
@@ -50,12 +51,13 @@ class RequestAccess(object):
         'description': 'description',
         'json': 'json',
         'name': 'name',
+        'requested_ttl': 'requested_ttl',
         'token': 'token',
         'type': 'type',
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, capability=None, comment=None, description=None, json=False, name=None, token=None, type=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, capability=None, comment=None, description=None, json=False, name=None, requested_ttl=None, token=None, type=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """RequestAccess - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -66,6 +68,7 @@ class RequestAccess(object):
         self._description = None
         self._json = None
         self._name = None
+        self._requested_ttl = None
         self._token = None
         self._type = None
         self._uid_token = None
@@ -79,6 +82,8 @@ class RequestAccess(object):
         if json is not None:
             self.json = json
         self.name = name
+        if requested_ttl is not None:
+            self.requested_ttl = requested_ttl
         if token is not None:
             self.token = token
         self.type = type
@@ -203,6 +208,29 @@ class RequestAccess(object):
             raise ValueError("Invalid value for `name`, must not be `None`")  # noqa: E501
 
         self._name = name
+
+    @property
+    def requested_ttl(self):
+        """Gets the requested_ttl of this RequestAccess.  # noqa: E501
+
+        Requested access TTL in minutes. Allowed range is 1 to 1440. Defaults to 60 when omitted.  # noqa: E501
+
+        :return: The requested_ttl of this RequestAccess.  # noqa: E501
+        :rtype: int
+        """
+        return self._requested_ttl
+
+    @requested_ttl.setter
+    def requested_ttl(self, requested_ttl):
+        """Sets the requested_ttl of this RequestAccess.
+
+        Requested access TTL in minutes. Allowed range is 1 to 1440. Defaults to 60 when omitted.  # noqa: E501
+
+        :param requested_ttl: The requested_ttl of this RequestAccess.  # noqa: E501
+        :type: int
+        """
+
+        self._requested_ttl = requested_ttl
 
     @property
     def token(self):

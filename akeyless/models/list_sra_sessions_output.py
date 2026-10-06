@@ -67,6 +67,7 @@ class ListSraSessionsOutput(object):
     def allowed_gateways(self):
         """Gets the allowed_gateways of this ListSraSessionsOutput.  # noqa: E501
 
+        Gateways whose sessions the caller may see in full. Omitted when the request asks for own sessions only, and when it carries a pagination token  # noqa: E501
 
         :return: The allowed_gateways of this ListSraSessionsOutput.  # noqa: E501
         :rtype: list[GatewayNameInfo]
@@ -77,6 +78,7 @@ class ListSraSessionsOutput(object):
     def allowed_gateways(self, allowed_gateways):
         """Sets the allowed_gateways of this ListSraSessionsOutput.
 
+        Gateways whose sessions the caller may see in full. Omitted when the request asks for own sessions only, and when it carries a pagination token  # noqa: E501
 
         :param allowed_gateways: The allowed_gateways of this ListSraSessionsOutput.  # noqa: E501
         :type: list[GatewayNameInfo]
@@ -88,6 +90,7 @@ class ListSraSessionsOutput(object):
     def next_page(self):
         """Gets the next_page of this ListSraSessionsOutput.  # noqa: E501
 
+        Cursor for the following page, sent back as the pagination token. Empty when the result set is exhausted, so stop when it is empty rather than waiting for the field to disappear  # noqa: E501
 
         :return: The next_page of this ListSraSessionsOutput.  # noqa: E501
         :rtype: str
@@ -98,6 +101,7 @@ class ListSraSessionsOutput(object):
     def next_page(self, next_page):
         """Sets the next_page of this ListSraSessionsOutput.
 
+        Cursor for the following page, sent back as the pagination token. Empty when the result set is exhausted, so stop when it is empty rather than waiting for the field to disappear  # noqa: E501
 
         :param next_page: The next_page of this ListSraSessionsOutput.  # noqa: E501
         :type: str
@@ -109,6 +113,7 @@ class ListSraSessionsOutput(object):
     def sessions(self):
         """Gets the sessions of this ListSraSessionsOutput.  # noqa: E501
 
+        The requested page of sessions, newest first by start time then session id  # noqa: E501
 
         :return: The sessions of this ListSraSessionsOutput.  # noqa: E501
         :rtype: list[SraSessionEntryOut]
@@ -119,6 +124,7 @@ class ListSraSessionsOutput(object):
     def sessions(self, sessions):
         """Sets the sessions of this ListSraSessionsOutput.
 
+        The requested page of sessions, newest first by start time then session id  # noqa: E501
 
         :param sessions: The sessions of this ListSraSessionsOutput.  # noqa: E501
         :type: list[SraSessionEntryOut]

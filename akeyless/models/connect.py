@@ -46,6 +46,7 @@ class Connect(object):
         'json': 'bool',
         'justification': 'str',
         'name': 'str',
+        'requested_ttl': 'int',
         'sra_ctrl_path': 'str',
         'sra_ctrl_port': 'str',
         'sra_ctrl_proto': 'str',
@@ -74,6 +75,7 @@ class Connect(object):
         'json': 'json',
         'justification': 'justification',
         'name': 'name',
+        'requested_ttl': 'requested-ttl',
         'sra_ctrl_path': 'sra-ctrl-path',
         'sra_ctrl_port': 'sra-ctrl-port',
         'sra_ctrl_proto': 'sra-ctrl-proto',
@@ -89,7 +91,7 @@ class Connect(object):
         'via_sra': 'via-sra'
     }
 
-    def __init__(self, helper=None, rc_file_override=None, bastion_ctrl_path=None, bastion_ctrl_port=None, bastion_ctrl_proto=None, bastion_ctrl_subdomain=None, cert_issuer_name=None, gateway_url=None, identity_file=None, json=False, justification=None, name=None, sra_ctrl_path=None, sra_ctrl_port='9900', sra_ctrl_proto='http', sra_ctrl_subdomain=None, ssh_command=None, ssh_extra_args=None, ssh_legacy_signing_alg=False, target=None, token=None, uid_token=None, use_ssh_agent=None, via_bastion=None, via_sra=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, helper=None, rc_file_override=None, bastion_ctrl_path=None, bastion_ctrl_port=None, bastion_ctrl_proto=None, bastion_ctrl_subdomain=None, cert_issuer_name=None, gateway_url=None, identity_file=None, json=False, justification=None, name=None, requested_ttl=None, sra_ctrl_path=None, sra_ctrl_port='9900', sra_ctrl_proto='http', sra_ctrl_subdomain=None, ssh_command=None, ssh_extra_args=None, ssh_legacy_signing_alg=False, target=None, token=None, uid_token=None, use_ssh_agent=None, via_bastion=None, via_sra=None, local_vars_configuration=None):  # noqa: E501
         """Connect - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -107,6 +109,7 @@ class Connect(object):
         self._json = None
         self._justification = None
         self._name = None
+        self._requested_ttl = None
         self._sra_ctrl_path = None
         self._sra_ctrl_port = None
         self._sra_ctrl_proto = None
@@ -146,6 +149,8 @@ class Connect(object):
             self.justification = justification
         if name is not None:
             self.name = name
+        if requested_ttl is not None:
+            self.requested_ttl = requested_ttl
         if sra_ctrl_path is not None:
             self.sra_ctrl_path = sra_ctrl_path
         if sra_ctrl_port is not None:
@@ -444,6 +449,29 @@ class Connect(object):
         """
 
         self._name = name
+
+    @property
+    def requested_ttl(self):
+        """Gets the requested_ttl of this Connect.  # noqa: E501
+
+        For how long to grant the requested access, in minutes  # noqa: E501
+
+        :return: The requested_ttl of this Connect.  # noqa: E501
+        :rtype: int
+        """
+        return self._requested_ttl
+
+    @requested_ttl.setter
+    def requested_ttl(self, requested_ttl):
+        """Sets the requested_ttl of this Connect.
+
+        For how long to grant the requested access, in minutes  # noqa: E501
+
+        :param requested_ttl: The requested_ttl of this Connect.  # noqa: E501
+        :type: int
+        """
+
+        self._requested_ttl = requested_ttl
 
     @property
     def sra_ctrl_path(self):

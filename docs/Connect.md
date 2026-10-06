@@ -16,6 +16,7 @@ Name | Type | Description | Notes
 **json** | **bool** | Set output format to JSON | [optional] [default to False]
 **justification** | **str** |  | [optional] 
 **name** | **str** | The Secret name (for database and AWS producers - producer name) | [optional] 
+**requested_ttl** | **int** | For how long to grant the requested access, in minutes | [optional] 
 **sra_ctrl_path** | **str** | The Bastion API path | [optional] 
 **sra_ctrl_port** | **str** | The Bastion API Port | [optional] [default to '9900']
 **sra_ctrl_proto** | **str** | The SRA API protocol | [optional] [default to 'http']

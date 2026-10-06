@@ -35,6 +35,7 @@ class ListSRASessions(object):
     """
     openapi_types = {
         'json': 'bool',
+        'pagination_token': 'str',
         'resource_type': 'list[str]',
         'status_type': 'list[str]',
         'token': 'str',
@@ -43,19 +44,21 @@ class ListSRASessions(object):
 
     attribute_map = {
         'json': 'json',
+        'pagination_token': 'pagination-token',
         'resource_type': 'resource-type',
         'status_type': 'status-type',
         'token': 'token',
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, json=False, resource_type=None, status_type=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, json=False, pagination_token=None, resource_type=None, status_type=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """ListSRASessions - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._json = None
+        self._pagination_token = None
         self._resource_type = None
         self._status_type = None
         self._token = None
@@ -64,6 +67,8 @@ class ListSRASessions(object):
 
         if json is not None:
             self.json = json
+        if pagination_token is not None:
+            self.pagination_token = pagination_token
         if resource_type is not None:
             self.resource_type = resource_type
         if status_type is not None:
@@ -95,6 +100,29 @@ class ListSRASessions(object):
         """
 
         self._json = json
+
+    @property
+    def pagination_token(self):
+        """Gets the pagination_token of this ListSRASessions.  # noqa: E501
+
+        Next page reference  # noqa: E501
+
+        :return: The pagination_token of this ListSRASessions.  # noqa: E501
+        :rtype: str
+        """
+        return self._pagination_token
+
+    @pagination_token.setter
+    def pagination_token(self, pagination_token):
+        """Sets the pagination_token of this ListSRASessions.
+
+        Next page reference  # noqa: E501
+
+        :param pagination_token: The pagination_token of this ListSRASessions.  # noqa: E501
+        :type: str
+        """
+
+        self._pagination_token = pagination_token
 
     @property
     def resource_type(self):

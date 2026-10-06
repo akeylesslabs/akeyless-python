@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **ldap_certificate** | **str** |  | [optional] 
 **ldap_token_expiration** | **str** |  | [optional] 
 **ldap_url** | **str** |  | [optional] 
+**ldap_username** | **str** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -38,8 +38,12 @@ class DigiCertTargetDetails(object):
         'account_url': 'str',
         'challenge_type': 'str',
         'digicert_directory_type': 'str',
+        'dns_propagation_wait': 'int',
+        'dns_resolvers': 'list[str]',
+        'dns_skip_precheck': 'bool',
         'dns_target_name': 'str',
         'dns_target_type': 'str',
+        'dns_timeout': 'int',
         'dns_zone': 'str',
         'eab_hmac_key': 'str',
         'eab_key_id': 'str',
@@ -55,8 +59,12 @@ class DigiCertTargetDetails(object):
         'account_url': 'account_url',
         'challenge_type': 'challenge_type',
         'digicert_directory_type': 'digicert_directory_type',
+        'dns_propagation_wait': 'dns_propagation_wait',
+        'dns_resolvers': 'dns_resolvers',
+        'dns_skip_precheck': 'dns_skip_precheck',
         'dns_target_name': 'dns_target_name',
         'dns_target_type': 'dns_target_type',
+        'dns_timeout': 'dns_timeout',
         'dns_zone': 'dns_zone',
         'eab_hmac_key': 'eab_hmac_key',
         'eab_key_id': 'eab_key_id',
@@ -67,7 +75,7 @@ class DigiCertTargetDetails(object):
         'timeout': 'timeout'
     }
 
-    def __init__(self, account_key_pem=None, account_url=None, challenge_type=None, digicert_directory_type=None, dns_target_name=None, dns_target_type=None, dns_zone=None, eab_hmac_key=None, eab_key_id=None, email=None, gcp_project=None, hosted_zone=None, resource_group=None, timeout=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, account_key_pem=None, account_url=None, challenge_type=None, digicert_directory_type=None, dns_propagation_wait=None, dns_resolvers=None, dns_skip_precheck=None, dns_target_name=None, dns_target_type=None, dns_timeout=None, dns_zone=None, eab_hmac_key=None, eab_key_id=None, email=None, gcp_project=None, hosted_zone=None, resource_group=None, timeout=None, local_vars_configuration=None):  # noqa: E501
         """DigiCertTargetDetails - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -77,8 +85,12 @@ class DigiCertTargetDetails(object):
         self._account_url = None
         self._challenge_type = None
         self._digicert_directory_type = None
+        self._dns_propagation_wait = None
+        self._dns_resolvers = None
+        self._dns_skip_precheck = None
         self._dns_target_name = None
         self._dns_target_type = None
+        self._dns_timeout = None
         self._dns_zone = None
         self._eab_hmac_key = None
         self._eab_key_id = None
@@ -97,10 +109,18 @@ class DigiCertTargetDetails(object):
             self.challenge_type = challenge_type
         if digicert_directory_type is not None:
             self.digicert_directory_type = digicert_directory_type
+        if dns_propagation_wait is not None:
+            self.dns_propagation_wait = dns_propagation_wait
+        if dns_resolvers is not None:
+            self.dns_resolvers = dns_resolvers
+        if dns_skip_precheck is not None:
+            self.dns_skip_precheck = dns_skip_precheck
         if dns_target_name is not None:
             self.dns_target_name = dns_target_name
         if dns_target_type is not None:
             self.dns_target_type = dns_target_type
+        if dns_timeout is not None:
+            self.dns_timeout = dns_timeout
         if dns_zone is not None:
             self.dns_zone = dns_zone
         if eab_hmac_key is not None:
@@ -209,6 +229,75 @@ class DigiCertTargetDetails(object):
         self._digicert_directory_type = digicert_directory_type
 
     @property
+    def dns_propagation_wait(self):
+        """Gets the dns_propagation_wait of this DigiCertTargetDetails.  # noqa: E501
+
+        A Duration represents the elapsed time between two instants as an int64 nanosecond count. The representation limits the largest representable duration to approximately 290 years.  # noqa: E501
+
+        :return: The dns_propagation_wait of this DigiCertTargetDetails.  # noqa: E501
+        :rtype: int
+        """
+        return self._dns_propagation_wait
+
+    @dns_propagation_wait.setter
+    def dns_propagation_wait(self, dns_propagation_wait):
+        """Sets the dns_propagation_wait of this DigiCertTargetDetails.
+
+        A Duration represents the elapsed time between two instants as an int64 nanosecond count. The representation limits the largest representable duration to approximately 290 years.  # noqa: E501
+
+        :param dns_propagation_wait: The dns_propagation_wait of this DigiCertTargetDetails.  # noqa: E501
+        :type: int
+        """
+
+        self._dns_propagation_wait = dns_propagation_wait
+
+    @property
+    def dns_resolvers(self):
+        """Gets the dns_resolvers of this DigiCertTargetDetails.  # noqa: E501
+
+        Custom recursive DNS resolvers (ip:port) for propagation checks.  # noqa: E501
+
+        :return: The dns_resolvers of this DigiCertTargetDetails.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._dns_resolvers
+
+    @dns_resolvers.setter
+    def dns_resolvers(self, dns_resolvers):
+        """Sets the dns_resolvers of this DigiCertTargetDetails.
+
+        Custom recursive DNS resolvers (ip:port) for propagation checks.  # noqa: E501
+
+        :param dns_resolvers: The dns_resolvers of this DigiCertTargetDetails.  # noqa: E501
+        :type: list[str]
+        """
+
+        self._dns_resolvers = dns_resolvers
+
+    @property
+    def dns_skip_precheck(self):
+        """Gets the dns_skip_precheck of this DigiCertTargetDetails.  # noqa: E501
+
+        Skip authoritative nameserver propagation pre-check.  # noqa: E501
+
+        :return: The dns_skip_precheck of this DigiCertTargetDetails.  # noqa: E501
+        :rtype: bool
+        """
+        return self._dns_skip_precheck
+
+    @dns_skip_precheck.setter
+    def dns_skip_precheck(self, dns_skip_precheck):
+        """Sets the dns_skip_precheck of this DigiCertTargetDetails.
+
+        Skip authoritative nameserver propagation pre-check.  # noqa: E501
+
+        :param dns_skip_precheck: The dns_skip_precheck of this DigiCertTargetDetails.  # noqa: E501
+        :type: bool
+        """
+
+        self._dns_skip_precheck = dns_skip_precheck
+
+    @property
     def dns_target_name(self):
         """Gets the dns_target_name of this DigiCertTargetDetails.  # noqa: E501
 
@@ -251,6 +340,29 @@ class DigiCertTargetDetails(object):
         """
 
         self._dns_target_type = dns_target_type
+
+    @property
+    def dns_timeout(self):
+        """Gets the dns_timeout of this DigiCertTargetDetails.  # noqa: E501
+
+        A Duration represents the elapsed time between two instants as an int64 nanosecond count. The representation limits the largest representable duration to approximately 290 years.  # noqa: E501
+
+        :return: The dns_timeout of this DigiCertTargetDetails.  # noqa: E501
+        :rtype: int
+        """
+        return self._dns_timeout
+
+    @dns_timeout.setter
+    def dns_timeout(self, dns_timeout):
+        """Sets the dns_timeout of this DigiCertTargetDetails.
+
+        A Duration represents the elapsed time between two instants as an int64 nanosecond count. The representation limits the largest representable duration to approximately 290 years.  # noqa: E501
+
+        :param dns_timeout: The dns_timeout of this DigiCertTargetDetails.  # noqa: E501
+        :type: int
+        """
+
+        self._dns_timeout = dns_timeout
 
     @property
     def dns_zone(self):

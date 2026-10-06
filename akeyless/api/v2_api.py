@@ -5259,6 +5259,122 @@ class V2Api(object):
             _request_timeout=local_var_params.get('_request_timeout'),
             collection_formats=collection_formats)
 
+    def client_event(self, client_event, **kwargs):  # noqa: E501
+        """client_event  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.client_event(client_event, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool: execute request asynchronously
+        :param ClientEvent client_event: (required)
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :return: ClientEventOutput
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        return self.client_event_with_http_info(client_event, **kwargs)  # noqa: E501
+
+    def client_event_with_http_info(self, client_event, **kwargs):  # noqa: E501
+        """client_event  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.client_event_with_http_info(client_event, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool: execute request asynchronously
+        :param ClientEvent client_event: (required)
+        :param _return_http_data_only: response data without head status code
+                                       and headers
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :return: tuple(ClientEventOutput, status_code(int), headers(HTTPHeaderDict))
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        local_var_params = locals()
+
+        all_params = [
+            'client_event'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
+
+        for key, val in six.iteritems(local_var_params['kwargs']):
+            if key not in all_params:
+                raise ApiTypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method client_event" % key
+                )
+            local_var_params[key] = val
+        del local_var_params['kwargs']
+        # verify the required parameter 'client_event' is set
+        if self.api_client.client_side_validation and ('client_event' not in local_var_params or  # noqa: E501
+                                                        local_var_params['client_event'] is None):  # noqa: E501
+            raise ApiValueError("Missing the required parameter `client_event` when calling `client_event`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'client_event' in local_var_params:
+            body_params = local_var_params['client_event']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
+            '/client-event', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='ClientEventOutput',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=local_var_params.get('async_req'),
+            _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
+            _preload_content=local_var_params.get('_preload_content', True),
+            _request_timeout=local_var_params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
     def configure(self, configure, **kwargs):  # noqa: E501
         """configure  # noqa: E501
 
@@ -39111,6 +39227,122 @@ class V2Api(object):
             _request_timeout=local_var_params.get('_request_timeout'),
             collection_formats=collection_formats)
 
+    def generate_intermediate_ca(self, generate_intermediate_ca, **kwargs):  # noqa: E501
+        """generate_intermediate_ca  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.generate_intermediate_ca(generate_intermediate_ca, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool: execute request asynchronously
+        :param GenerateIntermediateCA generate_intermediate_ca: (required)
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :return: GenerateIntermediateCAOutput
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        return self.generate_intermediate_ca_with_http_info(generate_intermediate_ca, **kwargs)  # noqa: E501
+
+    def generate_intermediate_ca_with_http_info(self, generate_intermediate_ca, **kwargs):  # noqa: E501
+        """generate_intermediate_ca  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.generate_intermediate_ca_with_http_info(generate_intermediate_ca, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool: execute request asynchronously
+        :param GenerateIntermediateCA generate_intermediate_ca: (required)
+        :param _return_http_data_only: response data without head status code
+                                       and headers
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :return: tuple(GenerateIntermediateCAOutput, status_code(int), headers(HTTPHeaderDict))
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        local_var_params = locals()
+
+        all_params = [
+            'generate_intermediate_ca'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
+
+        for key, val in six.iteritems(local_var_params['kwargs']):
+            if key not in all_params:
+                raise ApiTypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method generate_intermediate_ca" % key
+                )
+            local_var_params[key] = val
+        del local_var_params['kwargs']
+        # verify the required parameter 'generate_intermediate_ca' is set
+        if self.api_client.client_side_validation and ('generate_intermediate_ca' not in local_var_params or  # noqa: E501
+                                                        local_var_params['generate_intermediate_ca'] is None):  # noqa: E501
+            raise ApiValueError("Missing the required parameter `generate_intermediate_ca` when calling `generate_intermediate_ca`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'generate_intermediate_ca' in local_var_params:
+            body_params = local_var_params['generate_intermediate_ca']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
+            '/generate-intermediate-ca', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='GenerateIntermediateCAOutput',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=local_var_params.get('async_req'),
+            _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
+            _preload_content=local_var_params.get('_preload_content', True),
+            _request_timeout=local_var_params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
     def get_account_logo(self, **kwargs):  # noqa: E501
         """get_account_logo  # noqa: E501
 
@@ -46086,8 +46318,9 @@ class V2Api(object):
             collection_formats=collection_formats)
 
     def list_sra_sessions(self, list_sra_sessions, **kwargs):  # noqa: E501
-        """list_sra_sessions  # noqa: E501
+        """Lists SRA sessions.  # noqa: E501
 
+        Results are returned newest first, ordered by start time, then by session ID. Responses contain up to 1000 sessions.  Pagination: Pass the response's `next_page` value as the `pagination-token` in subsequent requests to fetch the next page. Pagination is complete when `next_page` is empty. Sending an empty `pagination-token` retrieves the first page. Filters must remain identical across paginated requests to maintain cursor validity.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.list_sra_sessions(list_sra_sessions, async_req=True)
@@ -46110,8 +46343,9 @@ class V2Api(object):
         return self.list_sra_sessions_with_http_info(list_sra_sessions, **kwargs)  # noqa: E501
 
     def list_sra_sessions_with_http_info(self, list_sra_sessions, **kwargs):  # noqa: E501
-        """list_sra_sessions  # noqa: E501
+        """Lists SRA sessions.  # noqa: E501
 
+        Results are returned newest first, ordered by start time, then by session ID. Responses contain up to 1000 sessions.  Pagination: Pass the response's `next_page` value as the `pagination-token` in subsequent requests to fetch the next page. Pagination is complete when `next_page` is empty. Sending an empty `pagination-token` retrieves the first page. Filters must remain identical across paginated requests to maintain cursor validity.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.list_sra_sessions_with_http_info(list_sra_sessions, async_req=True)
@@ -50360,6 +50594,122 @@ class V2Api(object):
             _request_timeout=local_var_params.get('_request_timeout'),
             collection_formats=collection_formats)
 
+    def rotated_secret_create_okta(self, rotated_secret_create_okta, **kwargs):  # noqa: E501
+        """rotated_secret_create_okta  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.rotated_secret_create_okta(rotated_secret_create_okta, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool: execute request asynchronously
+        :param RotatedSecretCreateOkta rotated_secret_create_okta: (required)
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :return: RotatedSecretCreateOutput
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        return self.rotated_secret_create_okta_with_http_info(rotated_secret_create_okta, **kwargs)  # noqa: E501
+
+    def rotated_secret_create_okta_with_http_info(self, rotated_secret_create_okta, **kwargs):  # noqa: E501
+        """rotated_secret_create_okta  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.rotated_secret_create_okta_with_http_info(rotated_secret_create_okta, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool: execute request asynchronously
+        :param RotatedSecretCreateOkta rotated_secret_create_okta: (required)
+        :param _return_http_data_only: response data without head status code
+                                       and headers
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :return: tuple(RotatedSecretCreateOutput, status_code(int), headers(HTTPHeaderDict))
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        local_var_params = locals()
+
+        all_params = [
+            'rotated_secret_create_okta'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
+
+        for key, val in six.iteritems(local_var_params['kwargs']):
+            if key not in all_params:
+                raise ApiTypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method rotated_secret_create_okta" % key
+                )
+            local_var_params[key] = val
+        del local_var_params['kwargs']
+        # verify the required parameter 'rotated_secret_create_okta' is set
+        if self.api_client.client_side_validation and ('rotated_secret_create_okta' not in local_var_params or  # noqa: E501
+                                                        local_var_params['rotated_secret_create_okta'] is None):  # noqa: E501
+            raise ApiValueError("Missing the required parameter `rotated_secret_create_okta` when calling `rotated_secret_create_okta`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'rotated_secret_create_okta' in local_var_params:
+            body_params = local_var_params['rotated_secret_create_okta']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
+            '/rotated-secret-create-okta', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='RotatedSecretCreateOutput',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=local_var_params.get('async_req'),
+            _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
+            _preload_content=local_var_params.get('_preload_content', True),
+            _request_timeout=local_var_params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
     def rotated_secret_create_open_ai(self, rotated_secret_create_open_ai, **kwargs):  # noqa: E501
         """rotated_secret_create_open_ai  # noqa: E501
 
@@ -53478,6 +53828,122 @@ class V2Api(object):
 
         return self.api_client.call_api(
             '/rotated-secret-update-mysql', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='RotatedSecretUpdateOutput',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=local_var_params.get('async_req'),
+            _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
+            _preload_content=local_var_params.get('_preload_content', True),
+            _request_timeout=local_var_params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def rotated_secret_update_okta(self, rotated_secret_update_okta, **kwargs):  # noqa: E501
+        """rotated_secret_update_okta  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.rotated_secret_update_okta(rotated_secret_update_okta, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool: execute request asynchronously
+        :param RotatedSecretUpdateOkta rotated_secret_update_okta: (required)
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :return: RotatedSecretUpdateOutput
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        return self.rotated_secret_update_okta_with_http_info(rotated_secret_update_okta, **kwargs)  # noqa: E501
+
+    def rotated_secret_update_okta_with_http_info(self, rotated_secret_update_okta, **kwargs):  # noqa: E501
+        """rotated_secret_update_okta  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.rotated_secret_update_okta_with_http_info(rotated_secret_update_okta, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool: execute request asynchronously
+        :param RotatedSecretUpdateOkta rotated_secret_update_okta: (required)
+        :param _return_http_data_only: response data without head status code
+                                       and headers
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :return: tuple(RotatedSecretUpdateOutput, status_code(int), headers(HTTPHeaderDict))
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        local_var_params = locals()
+
+        all_params = [
+            'rotated_secret_update_okta'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
+
+        for key, val in six.iteritems(local_var_params['kwargs']):
+            if key not in all_params:
+                raise ApiTypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method rotated_secret_update_okta" % key
+                )
+            local_var_params[key] = val
+        del local_var_params['kwargs']
+        # verify the required parameter 'rotated_secret_update_okta' is set
+        if self.api_client.client_side_validation and ('rotated_secret_update_okta' not in local_var_params or  # noqa: E501
+                                                        local_var_params['rotated_secret_update_okta'] is None):  # noqa: E501
+            raise ApiValueError("Missing the required parameter `rotated_secret_update_okta` when calling `rotated_secret_update_okta`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'rotated_secret_update_okta' in local_var_params:
+            body_params = local_var_params['rotated_secret_update_okta']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
+            '/rotated-secret-update-okta', 'POST',
             path_params,
             query_params,
             header_params,

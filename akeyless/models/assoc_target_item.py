@@ -35,6 +35,7 @@ class AssocTargetItem(object):
     """
     openapi_types = {
         'bind_ssl_profiles': 'list[str]',
+        'certificate_format': 'str',
         'certificate_path': 'str',
         'chain_path': 'str',
         'disable_previous_key_version': 'bool',
@@ -46,6 +47,7 @@ class AssocTargetItem(object):
         'location_id': 'str',
         'multi_region': 'str',
         'name': 'str',
+        'pfx_password': 'str',
         'post_provision_command': 'str',
         'private_key_path': 'str',
         'project_id': 'str',
@@ -62,6 +64,7 @@ class AssocTargetItem(object):
 
     attribute_map = {
         'bind_ssl_profiles': 'bind-ssl-profiles',
+        'certificate_format': 'certificate-format',
         'certificate_path': 'certificate-path',
         'chain_path': 'chain-path',
         'disable_previous_key_version': 'disable-previous-key-version',
@@ -73,6 +76,7 @@ class AssocTargetItem(object):
         'location_id': 'location-id',
         'multi_region': 'multi-region',
         'name': 'name',
+        'pfx_password': 'pfx-password',
         'post_provision_command': 'post-provision-command',
         'private_key_path': 'private-key-path',
         'project_id': 'project-id',
@@ -87,13 +91,14 @@ class AssocTargetItem(object):
         'vault_name': 'vault-name'
     }
 
-    def __init__(self, bind_ssl_profiles=None, certificate_path=None, chain_path=None, disable_previous_key_version=False, external_key_name=None, json=False, key_operations=None, keyring_name=None, kms_algorithm=None, location_id=None, multi_region='false', name=None, post_provision_command=None, private_key_path=None, project_id=None, protection_level='software', purpose=None, regions=None, sra_association=False, target_name=None, tenant_secret_type=None, token=None, uid_token=None, vault_name=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, bind_ssl_profiles=None, certificate_format='pem', certificate_path=None, chain_path=None, disable_previous_key_version=False, external_key_name=None, json=False, key_operations=None, keyring_name=None, kms_algorithm=None, location_id=None, multi_region='false', name=None, pfx_password=None, post_provision_command=None, private_key_path=None, project_id=None, protection_level='software', purpose=None, regions=None, sra_association=False, target_name=None, tenant_secret_type=None, token=None, uid_token=None, vault_name=None, local_vars_configuration=None):  # noqa: E501
         """AssocTargetItem - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._bind_ssl_profiles = None
+        self._certificate_format = None
         self._certificate_path = None
         self._chain_path = None
         self._disable_previous_key_version = None
@@ -105,6 +110,7 @@ class AssocTargetItem(object):
         self._location_id = None
         self._multi_region = None
         self._name = None
+        self._pfx_password = None
         self._post_provision_command = None
         self._private_key_path = None
         self._project_id = None
@@ -121,6 +127,8 @@ class AssocTargetItem(object):
 
         if bind_ssl_profiles is not None:
             self.bind_ssl_profiles = bind_ssl_profiles
+        if certificate_format is not None:
+            self.certificate_format = certificate_format
         if certificate_path is not None:
             self.certificate_path = certificate_path
         if chain_path is not None:
@@ -142,6 +150,8 @@ class AssocTargetItem(object):
         if multi_region is not None:
             self.multi_region = multi_region
         self.name = name
+        if pfx_password is not None:
+            self.pfx_password = pfx_password
         if post_provision_command is not None:
             self.post_provision_command = post_provision_command
         if private_key_path is not None:
@@ -170,7 +180,7 @@ class AssocTargetItem(object):
     def bind_ssl_profiles(self):
         """Gets the bind_ssl_profiles of this AssocTargetItem.  # noqa: E501
 
-        Bind the provisioned certificate to an existing client-ssl/server-ssl profile, in the format <type>:<partition>:<name> (relevant only for F5 BIG-IP certificate provisioning). Leave the partition empty to use the certificate's partition. Repeat the parameter to bind several profiles.  # noqa: E501
+        Bind the provisioned certificate to an existing client-ssl/server-ssl profile, in the format <type>:<partition>:<name> (relevant only for F5 BIG-IP certificate provisioning). Leave the partition empty to use the certificate's partition. For a profile in a folder, add the folder to the partition, for example client-ssl:Common/Shared:my-profile. Repeat the parameter to bind several profiles.  # noqa: E501
 
         :return: The bind_ssl_profiles of this AssocTargetItem.  # noqa: E501
         :rtype: list[str]
@@ -181,13 +191,36 @@ class AssocTargetItem(object):
     def bind_ssl_profiles(self, bind_ssl_profiles):
         """Sets the bind_ssl_profiles of this AssocTargetItem.
 
-        Bind the provisioned certificate to an existing client-ssl/server-ssl profile, in the format <type>:<partition>:<name> (relevant only for F5 BIG-IP certificate provisioning). Leave the partition empty to use the certificate's partition. Repeat the parameter to bind several profiles.  # noqa: E501
+        Bind the provisioned certificate to an existing client-ssl/server-ssl profile, in the format <type>:<partition>:<name> (relevant only for F5 BIG-IP certificate provisioning). Leave the partition empty to use the certificate's partition. For a profile in a folder, add the folder to the partition, for example client-ssl:Common/Shared:my-profile. Repeat the parameter to bind several profiles.  # noqa: E501
 
         :param bind_ssl_profiles: The bind_ssl_profiles of this AssocTargetItem.  # noqa: E501
         :type: list[str]
         """
 
         self._bind_ssl_profiles = bind_ssl_profiles
+
+    @property
+    def certificate_format(self):
+        """Gets the certificate_format of this AssocTargetItem.  # noqa: E501
+
+        The format the certificate will be provisioned with, available options: pem,pfx (relevant only for certificate provisioning)  # noqa: E501
+
+        :return: The certificate_format of this AssocTargetItem.  # noqa: E501
+        :rtype: str
+        """
+        return self._certificate_format
+
+    @certificate_format.setter
+    def certificate_format(self, certificate_format):
+        """Sets the certificate_format of this AssocTargetItem.
+
+        The format the certificate will be provisioned with, available options: pem,pfx (relevant only for certificate provisioning)  # noqa: E501
+
+        :param certificate_format: The certificate_format of this AssocTargetItem.  # noqa: E501
+        :type: str
+        """
+
+        self._certificate_format = certificate_format
 
     @property
     def certificate_path(self):
@@ -443,6 +476,29 @@ class AssocTargetItem(object):
             raise ValueError("Invalid value for `name`, must not be `None`")  # noqa: E501
 
         self._name = name
+
+    @property
+    def pfx_password(self):
+        """Gets the pfx_password of this AssocTargetItem.  # noqa: E501
+
+        Password used to protect the provisioned PFX file. Required when --certificate-format=pfx (relevant only for certificate provisioning)  # noqa: E501
+
+        :return: The pfx_password of this AssocTargetItem.  # noqa: E501
+        :rtype: str
+        """
+        return self._pfx_password
+
+    @pfx_password.setter
+    def pfx_password(self, pfx_password):
+        """Sets the pfx_password of this AssocTargetItem.
+
+        Password used to protect the provisioned PFX file. Required when --certificate-format=pfx (relevant only for certificate provisioning)  # noqa: E501
+
+        :param pfx_password: The pfx_password of this AssocTargetItem.  # noqa: E501
+        :type: str
+        """
+
+        self._pfx_password = pfx_password
 
     @property
     def post_provision_command(self):

@@ -127,7 +127,7 @@ class LockItem(object):
     def lock_ttl(self):
         """Gets the lock_ttl of this LockItem.  # noqa: E501
 
-        Lock TTL in minutes  # noqa: E501
+        Lock TTL in minutes.  # noqa: E501
 
         :return: The lock_ttl of this LockItem.  # noqa: E501
         :rtype: int
@@ -138,7 +138,7 @@ class LockItem(object):
     def lock_ttl(self, lock_ttl):
         """Sets the lock_ttl of this LockItem.
 
-        Lock TTL in minutes  # noqa: E501
+        Lock TTL in minutes.  # noqa: E501
 
         :param lock_ttl: The lock_ttl of this LockItem.  # noqa: E501
         :type: int

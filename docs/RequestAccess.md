@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **description** | **str** | Description of the object | [optional] 
 **json** | **bool** | Set output format to JSON | [optional] [default to False]
 **name** | **str** | Item name | 
+**requested_ttl** | **int** | Requested access TTL in minutes. Allowed range is 1 to 1440. Defaults to 60 when omitted. | [optional] 
 **token** | **str** | Authentication token (see &#x60;/auth&#x60; and &#x60;/configure&#x60;) | [optional] 
 **type** | **str** | Item type | 
 **uid_token** | **str** | The universal identity token, Required only for universal_identity authentication | [optional] 

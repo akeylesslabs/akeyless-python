@@ -15,7 +15,7 @@
 
 from __future__ import absolute_import
 
-__version__ = "5.0.38"
+__version__ = "5.0.39"
 
 # import apis into sdk package
 from akeyless.api.v2_api import V2Api
@@ -159,6 +159,8 @@ from akeyless.models.classic_key_details_info import ClassicKeyDetailsInfo
 from akeyless.models.classic_key_status_info import ClassicKeyStatusInfo
 from akeyless.models.classic_key_target_info import ClassicKeyTargetInfo
 from akeyless.models.client_data import ClientData
+from akeyless.models.client_event import ClientEvent
+from akeyless.models.client_event_output import ClientEventOutput
 from akeyless.models.client_usage_info import ClientUsageInfo
 from akeyless.models.clients_usage_report import ClientsUsageReport
 from akeyless.models.cloudflare_target_details import CloudflareTargetDetails
@@ -678,6 +680,8 @@ from akeyless.models.generate_ca import GenerateCA
 from akeyless.models.generate_ca_output import GenerateCAOutput
 from akeyless.models.generate_csr import GenerateCsr
 from akeyless.models.generate_csr_output import GenerateCsrOutput
+from akeyless.models.generate_intermediate_ca import GenerateIntermediateCA
+from akeyless.models.generate_intermediate_ca_output import GenerateIntermediateCAOutput
 from akeyless.models.get_account_settings import GetAccountSettings
 from akeyless.models.get_account_settings_command_output import GetAccountSettingsCommandOutput
 from akeyless.models.get_analytics_data import GetAnalyticsData
@@ -742,6 +746,7 @@ from akeyless.models.huawei_access_rules import HuaweiAccessRules
 from akeyless.models.import_passwords import ImportPasswords
 from akeyless.models.import_passwords_output import ImportPasswordsOutput
 from akeyless.models.importer_info import ImporterInfo
+from akeyless.models.injector_certificate_event import InjectorCertificateEvent
 from akeyless.models.issuer_overview_info import IssuerOverviewInfo
 from akeyless.models.item import Item
 from akeyless.models.item_custom_fields_details import ItemCustomFieldsDetails
@@ -941,6 +946,7 @@ from akeyless.models.rotated_secret_create_ldap import RotatedSecretCreateLdap
 from akeyless.models.rotated_secret_create_mongodb import RotatedSecretCreateMongodb
 from akeyless.models.rotated_secret_create_mssql import RotatedSecretCreateMssql
 from akeyless.models.rotated_secret_create_mysql import RotatedSecretCreateMysql
+from akeyless.models.rotated_secret_create_okta import RotatedSecretCreateOkta
 from akeyless.models.rotated_secret_create_open_ai import RotatedSecretCreateOpenAI
 from akeyless.models.rotated_secret_create_oracledb import RotatedSecretCreateOracledb
 from akeyless.models.rotated_secret_create_output import RotatedSecretCreateOutput
@@ -972,6 +978,7 @@ from akeyless.models.rotated_secret_update_ldap import RotatedSecretUpdateLdap
 from akeyless.models.rotated_secret_update_mongodb import RotatedSecretUpdateMongodb
 from akeyless.models.rotated_secret_update_mssql import RotatedSecretUpdateMssql
 from akeyless.models.rotated_secret_update_mysql import RotatedSecretUpdateMysql
+from akeyless.models.rotated_secret_update_okta import RotatedSecretUpdateOkta
 from akeyless.models.rotated_secret_update_open_ai import RotatedSecretUpdateOpenAI
 from akeyless.models.rotated_secret_update_oracledb import RotatedSecretUpdateOracledb
 from akeyless.models.rotated_secret_update_output import RotatedSecretUpdateOutput

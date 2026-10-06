@@ -34,6 +34,7 @@ Name | Type | Description | Notes
 **item_targets_assoc** | [**list[ItemTargetAssociation]**](ItemTargetAssociation.md) |  | [optional] 
 **item_type** | **str** |  | [optional] 
 **item_versions** | [**list[ItemVersion]**](ItemVersion.md) |  | [optional] 
+**last_access_request_status** | **str** |  | [optional] 
 **last_rotation_date** | **datetime** |  | [optional] 
 **last_version** | **int** |  | [optional] 
 **linked_details** | [**LinkedDetails**](LinkedDetails.md) |  | [optional] 

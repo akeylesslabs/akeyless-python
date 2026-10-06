@@ -5,7 +5,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **actions** | **str** | Comma-separated blocked actions (read, update) | [optional] 
 **json** | **bool** | Set output format to JSON | [optional] [default to False]
-**lock_ttl** | **int** | Lock TTL in minutes | [optional] 
+**lock_ttl** | **int** | Lock TTL in minutes. | [optional] 
 **name** | **str** | Item name | 
 **token** | **str** | Authentication token (see &#x60;/auth&#x60; and &#x60;/configure&#x60;) | [optional] 
 **uid_token** | **str** | The universal identity token, Required only for universal_identity authentication | [optional] 

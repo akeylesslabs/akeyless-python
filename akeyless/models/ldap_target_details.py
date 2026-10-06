@@ -40,7 +40,8 @@ class LdapTargetDetails(object):
         'ldap_bind_password': 'str',
         'ldap_certificate': 'str',
         'ldap_token_expiration': 'str',
-        'ldap_url': 'str'
+        'ldap_url': 'str',
+        'ldap_username': 'str'
     }
 
     attribute_map = {
@@ -50,10 +51,11 @@ class LdapTargetDetails(object):
         'ldap_bind_password': 'ldap_bind_password',
         'ldap_certificate': 'ldap_certificate',
         'ldap_token_expiration': 'ldap_token_expiration',
-        'ldap_url': 'ldap_url'
+        'ldap_url': 'ldap_url',
+        'ldap_username': 'ldap_username'
     }
 
-    def __init__(self, implementation_type=None, ldap_audience=None, ldap_bind_dn=None, ldap_bind_password=None, ldap_certificate=None, ldap_token_expiration=None, ldap_url=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, implementation_type=None, ldap_audience=None, ldap_bind_dn=None, ldap_bind_password=None, ldap_certificate=None, ldap_token_expiration=None, ldap_url=None, ldap_username=None, local_vars_configuration=None):  # noqa: E501
         """LdapTargetDetails - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -66,6 +68,7 @@ class LdapTargetDetails(object):
         self._ldap_certificate = None
         self._ldap_token_expiration = None
         self._ldap_url = None
+        self._ldap_username = None
         self.discriminator = None
 
         if implementation_type is not None:
@@ -82,6 +85,8 @@ class LdapTargetDetails(object):
             self.ldap_token_expiration = ldap_token_expiration
         if ldap_url is not None:
             self.ldap_url = ldap_url
+        if ldap_username is not None:
+            self.ldap_username = ldap_username
 
     @property
     def implementation_type(self):
@@ -229,6 +234,27 @@ class LdapTargetDetails(object):
         """
 
         self._ldap_url = ldap_url
+
+    @property
+    def ldap_username(self):
+        """Gets the ldap_username of this LdapTargetDetails.  # noqa: E501
+
+
+        :return: The ldap_username of this LdapTargetDetails.  # noqa: E501
+        :rtype: str
+        """
+        return self._ldap_username
+
+    @ldap_username.setter
+    def ldap_username(self, ldap_username):
+        """Sets the ldap_username of this LdapTargetDetails.
+
+
+        :param ldap_username: The ldap_username of this LdapTargetDetails.  # noqa: E501
+        :type: str
+        """
+
+        self._ldap_username = ldap_username
 
     def to_dict(self):
         """Returns the model properties as a dict"""

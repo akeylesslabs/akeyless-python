@@ -36,10 +36,13 @@ class MigrationGeneral(object):
     openapi_types = {
         'id': 'str',
         'last_migration': 'str',
+        'last_modified': 'datetime',
+        'message': 'str',
         'name': 'str',
         'new_name': 'str',
         'prefix': 'str',
         'protection_key': 'str',
+        'schedule': 'str',
         'status': 'str',
         'type': 'str'
     }
@@ -47,15 +50,18 @@ class MigrationGeneral(object):
     attribute_map = {
         'id': 'id',
         'last_migration': 'last_migration',
+        'last_modified': 'last_modified',
+        'message': 'message',
         'name': 'name',
         'new_name': 'new_name',
         'prefix': 'prefix',
         'protection_key': 'protection_key',
+        'schedule': 'schedule',
         'status': 'status',
         'type': 'type'
     }
 
-    def __init__(self, id=None, last_migration=None, name=None, new_name=None, prefix=None, protection_key=None, status=None, type=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, id=None, last_migration=None, last_modified=None, message=None, name=None, new_name=None, prefix=None, protection_key=None, schedule=None, status=None, type=None, local_vars_configuration=None):  # noqa: E501
         """MigrationGeneral - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -63,10 +69,13 @@ class MigrationGeneral(object):
 
         self._id = None
         self._last_migration = None
+        self._last_modified = None
+        self._message = None
         self._name = None
         self._new_name = None
         self._prefix = None
         self._protection_key = None
+        self._schedule = None
         self._status = None
         self._type = None
         self.discriminator = None
@@ -75,6 +84,10 @@ class MigrationGeneral(object):
             self.id = id
         if last_migration is not None:
             self.last_migration = last_migration
+        if last_modified is not None:
+            self.last_modified = last_modified
+        if message is not None:
+            self.message = message
         if name is not None:
             self.name = name
         if new_name is not None:
@@ -83,6 +96,8 @@ class MigrationGeneral(object):
             self.prefix = prefix
         if protection_key is not None:
             self.protection_key = protection_key
+        if schedule is not None:
+            self.schedule = schedule
         if status is not None:
             self.status = status
         if type is not None:
@@ -129,6 +144,48 @@ class MigrationGeneral(object):
         """
 
         self._last_migration = last_migration
+
+    @property
+    def last_modified(self):
+        """Gets the last_modified of this MigrationGeneral.  # noqa: E501
+
+
+        :return: The last_modified of this MigrationGeneral.  # noqa: E501
+        :rtype: datetime
+        """
+        return self._last_modified
+
+    @last_modified.setter
+    def last_modified(self, last_modified):
+        """Sets the last_modified of this MigrationGeneral.
+
+
+        :param last_modified: The last_modified of this MigrationGeneral.  # noqa: E501
+        :type: datetime
+        """
+
+        self._last_modified = last_modified
+
+    @property
+    def message(self):
+        """Gets the message of this MigrationGeneral.  # noqa: E501
+
+
+        :return: The message of this MigrationGeneral.  # noqa: E501
+        :rtype: str
+        """
+        return self._message
+
+    @message.setter
+    def message(self, message):
+        """Sets the message of this MigrationGeneral.
+
+
+        :param message: The message of this MigrationGeneral.  # noqa: E501
+        :type: str
+        """
+
+        self._message = message
 
     @property
     def name(self):
@@ -213,6 +270,27 @@ class MigrationGeneral(object):
         """
 
         self._protection_key = protection_key
+
+    @property
+    def schedule(self):
+        """Gets the schedule of this MigrationGeneral.  # noqa: E501
+
+
+        :return: The schedule of this MigrationGeneral.  # noqa: E501
+        :rtype: str
+        """
+        return self._schedule
+
+    @schedule.setter
+    def schedule(self, schedule):
+        """Sets the schedule of this MigrationGeneral.
+
+
+        :param schedule: The schedule of this MigrationGeneral.  # noqa: E501
+        :type: str
+        """
+
+        self._schedule = schedule
 
     @property
     def status(self):

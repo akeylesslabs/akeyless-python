@@ -52,7 +52,8 @@ class TargetUpdateLdap(object):
         'server_type': 'str',
         'token': 'str',
         'token_expiration': 'str',
-        'uid_token': 'str'
+        'uid_token': 'str',
+        'username': 'str'
     }
 
     attribute_map = {
@@ -74,10 +75,11 @@ class TargetUpdateLdap(object):
         'server_type': 'server-type',
         'token': 'token',
         'token_expiration': 'token-expiration',
-        'uid_token': 'uid-token'
+        'uid_token': 'uid-token',
+        'username': 'username'
     }
 
-    def __init__(self, bind_dn=None, bind_dn_password=None, delete_protection=None, description=None, json=False, keep_prev_version=None, key=None, ldap_ca_cert=None, ldap_url=None, lock_on_read=None, lock_ttl=None, max_versions=None, name=None, new_name=None, rotate_on_unlock=None, server_type=None, token=None, token_expiration=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, bind_dn=None, bind_dn_password=None, delete_protection=None, description=None, json=False, keep_prev_version=None, key=None, ldap_ca_cert=None, ldap_url=None, lock_on_read=None, lock_ttl=None, max_versions=None, name=None, new_name=None, rotate_on_unlock=None, server_type=None, token=None, token_expiration=None, uid_token=None, username=None, local_vars_configuration=None):  # noqa: E501
         """TargetUpdateLdap - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -102,6 +104,7 @@ class TargetUpdateLdap(object):
         self._token = None
         self._token_expiration = None
         self._uid_token = None
+        self._username = None
         self.discriminator = None
 
         self.bind_dn = bind_dn
@@ -138,6 +141,8 @@ class TargetUpdateLdap(object):
             self.token_expiration = token_expiration
         if uid_token is not None:
             self.uid_token = uid_token
+        if username is not None:
+            self.username = username
 
     @property
     def bind_dn(self):
@@ -583,6 +588,29 @@ class TargetUpdateLdap(object):
         """
 
         self._uid_token = uid_token
+
+    @property
+    def username(self):
+        """Gets the username of this TargetUpdateLdap.  # noqa: E501
+
+        Username returned for Rotated Secrets. Use the format required by your application, such as sAMAccountName, with or without the domain.  # noqa: E501
+
+        :return: The username of this TargetUpdateLdap.  # noqa: E501
+        :rtype: str
+        """
+        return self._username
+
+    @username.setter
+    def username(self, username):
+        """Sets the username of this TargetUpdateLdap.
+
+        Username returned for Rotated Secrets. Use the format required by your application, such as sAMAccountName, with or without the domain.  # noqa: E501
+
+        :param username: The username of this TargetUpdateLdap.  # noqa: E501
+        :type: str
+        """
+
+        self._username = username
 
     def to_dict(self):
         """Returns the model properties as a dict"""

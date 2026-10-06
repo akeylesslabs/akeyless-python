@@ -204,6 +204,7 @@ Name | Type | Description | Notes
 **ldap_url** | **str** |  | [optional] 
 **ldap_user_attr** | **str** |  | [optional] 
 **ldap_user_dn** | **str** |  | [optional] 
+**ldap_username** | **str** |  | [optional] 
 **metadata** | **str** |  | [optional] 
 **mongodb_atlas_api_private_key** | **str** |  | [optional] 
 **mongodb_atlas_api_public_key** | **str** |  | [optional] 

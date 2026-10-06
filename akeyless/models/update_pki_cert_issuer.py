@@ -57,6 +57,7 @@ class UpdatePKICertIssuer(object):
         'destination_path': 'str',
         'disable_wildcards': 'bool',
         'enable_acme': 'bool',
+        'enable_scep': 'bool',
         'expiration_event_in': 'list[str]',
         'gw_cluster_url': 'str',
         'is_ca': 'bool',
@@ -77,6 +78,8 @@ class UpdatePKICertIssuer(object):
         'protect_certificates': 'bool',
         'province': 'str',
         'rm_tag': 'list[str]',
+        'scep_challenge_type': 'str',
+        'scep_password': 'str',
         'scheduled_renew': 'int',
         'server_flag': 'bool',
         'signer_key_name': 'str',
@@ -111,6 +114,7 @@ class UpdatePKICertIssuer(object):
         'destination_path': 'destination-path',
         'disable_wildcards': 'disable-wildcards',
         'enable_acme': 'enable-acme',
+        'enable_scep': 'enable-scep',
         'expiration_event_in': 'expiration-event-in',
         'gw_cluster_url': 'gw-cluster-url',
         'is_ca': 'is-ca',
@@ -131,6 +135,8 @@ class UpdatePKICertIssuer(object):
         'protect_certificates': 'protect-certificates',
         'province': 'province',
         'rm_tag': 'rm-tag',
+        'scep_challenge_type': 'scep-challenge-type',
+        'scep_password': 'scep-password',
         'scheduled_renew': 'scheduled-renew',
         'server_flag': 'server-flag',
         'signer_key_name': 'signer-key-name',
@@ -141,7 +147,7 @@ class UpdatePKICertIssuer(object):
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, add_tag=None, allow_any_name=None, allow_copy_ext_from_csr=None, allow_subdomains=None, allowed_domains=None, allowed_extra_extensions=None, allowed_ip_sans=None, allowed_uri_sans=None, auto_renew=None, basic_constraints=None, client_flag=None, code_signing_flag=None, country=None, create_private_crl=None, create_private_ocsp=None, create_public_crl=None, create_public_ocsp=None, critical_key_usage='true', delete_protection=None, description=None, destination_path=None, disable_wildcards=None, enable_acme=None, expiration_event_in=None, gw_cluster_url=None, is_ca=None, item_custom_fields=None, json=False, key_usage='DigitalSignature,KeyAgreement,KeyEncipherment', locality=None, max_path_len=-1, metadata=None, name=None, new_name=None, not_enforce_hostnames=None, not_require_cn=None, ocsp_ttl=None, organizational_units=None, organizations=None, postal_code=None, protect_certificates=None, province=None, rm_tag=None, scheduled_renew=None, server_flag=None, signer_key_name=None, split_certificate_chain=None, street_address=None, token=None, ttl=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, add_tag=None, allow_any_name=None, allow_copy_ext_from_csr=None, allow_subdomains=None, allowed_domains=None, allowed_extra_extensions=None, allowed_ip_sans=None, allowed_uri_sans=None, auto_renew=None, basic_constraints=None, client_flag=None, code_signing_flag=None, country=None, create_private_crl=None, create_private_ocsp=None, create_public_crl=None, create_public_ocsp=None, critical_key_usage='true', delete_protection=None, description=None, destination_path=None, disable_wildcards=None, enable_acme=None, enable_scep=None, expiration_event_in=None, gw_cluster_url=None, is_ca=None, item_custom_fields=None, json=False, key_usage='DigitalSignature,KeyAgreement,KeyEncipherment', locality=None, max_path_len=-1, metadata=None, name=None, new_name=None, not_enforce_hostnames=None, not_require_cn=None, ocsp_ttl=None, organizational_units=None, organizations=None, postal_code=None, protect_certificates=None, province=None, rm_tag=None, scep_challenge_type=None, scep_password=None, scheduled_renew=None, server_flag=None, signer_key_name=None, split_certificate_chain=None, street_address=None, token=None, ttl=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """UpdatePKICertIssuer - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -170,6 +176,7 @@ class UpdatePKICertIssuer(object):
         self._destination_path = None
         self._disable_wildcards = None
         self._enable_acme = None
+        self._enable_scep = None
         self._expiration_event_in = None
         self._gw_cluster_url = None
         self._is_ca = None
@@ -190,6 +197,8 @@ class UpdatePKICertIssuer(object):
         self._protect_certificates = None
         self._province = None
         self._rm_tag = None
+        self._scep_challenge_type = None
+        self._scep_password = None
         self._scheduled_renew = None
         self._server_flag = None
         self._signer_key_name = None
@@ -246,6 +255,8 @@ class UpdatePKICertIssuer(object):
             self.disable_wildcards = disable_wildcards
         if enable_acme is not None:
             self.enable_acme = enable_acme
+        if enable_scep is not None:
+            self.enable_scep = enable_scep
         if expiration_event_in is not None:
             self.expiration_event_in = expiration_event_in
         if gw_cluster_url is not None:
@@ -285,6 +296,10 @@ class UpdatePKICertIssuer(object):
             self.province = province
         if rm_tag is not None:
             self.rm_tag = rm_tag
+        if scep_challenge_type is not None:
+            self.scep_challenge_type = scep_challenge_type
+        if scep_password is not None:
+            self.scep_password = scep_password
         if scheduled_renew is not None:
             self.scheduled_renew = scheduled_renew
         if server_flag is not None:
@@ -831,6 +846,29 @@ class UpdatePKICertIssuer(object):
         self._enable_acme = enable_acme
 
     @property
+    def enable_scep(self):
+        """Gets the enable_scep of this UpdatePKICertIssuer.  # noqa: E501
+
+        If set, the cert issuer will support the scep protocol  # noqa: E501
+
+        :return: The enable_scep of this UpdatePKICertIssuer.  # noqa: E501
+        :rtype: bool
+        """
+        return self._enable_scep
+
+    @enable_scep.setter
+    def enable_scep(self, enable_scep):
+        """Sets the enable_scep of this UpdatePKICertIssuer.
+
+        If set, the cert issuer will support the scep protocol  # noqa: E501
+
+        :param enable_scep: The enable_scep of this UpdatePKICertIssuer.  # noqa: E501
+        :type: bool
+        """
+
+        self._enable_scep = enable_scep
+
+    @property
     def expiration_event_in(self):
         """Gets the expiration_event_in of this UpdatePKICertIssuer.  # noqa: E501
 
@@ -1291,6 +1329,52 @@ class UpdatePKICertIssuer(object):
         """
 
         self._rm_tag = rm_tag
+
+    @property
+    def scep_challenge_type(self):
+        """Gets the scep_challenge_type of this UpdatePKICertIssuer.  # noqa: E501
+
+        SCEP challenge type. Only static is supported in this stage  # noqa: E501
+
+        :return: The scep_challenge_type of this UpdatePKICertIssuer.  # noqa: E501
+        :rtype: str
+        """
+        return self._scep_challenge_type
+
+    @scep_challenge_type.setter
+    def scep_challenge_type(self, scep_challenge_type):
+        """Sets the scep_challenge_type of this UpdatePKICertIssuer.
+
+        SCEP challenge type. Only static is supported in this stage  # noqa: E501
+
+        :param scep_challenge_type: The scep_challenge_type of this UpdatePKICertIssuer.  # noqa: E501
+        :type: str
+        """
+
+        self._scep_challenge_type = scep_challenge_type
+
+    @property
+    def scep_password(self):
+        """Gets the scep_password of this UpdatePKICertIssuer.  # noqa: E501
+
+        SCEP static challenge password. Request-only; never returned by Describe  # noqa: E501
+
+        :return: The scep_password of this UpdatePKICertIssuer.  # noqa: E501
+        :rtype: str
+        """
+        return self._scep_password
+
+    @scep_password.setter
+    def scep_password(self, scep_password):
+        """Sets the scep_password of this UpdatePKICertIssuer.
+
+        SCEP static challenge password. Request-only; never returned by Describe  # noqa: E501
+
+        :param scep_password: The scep_password of this UpdatePKICertIssuer.  # noqa: E501
+        :type: str
+        """
+
+        self._scep_password = scep_password
 
     @property
     def scheduled_renew(self):

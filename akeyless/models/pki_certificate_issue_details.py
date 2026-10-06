@@ -77,6 +77,8 @@ class PKICertificateIssueDetails(object):
         'province': 'list[str]',
         'renew_before_expiration_in_days': 'int',
         'require_cn': 'bool',
+        'scep_challenge_mode': 'str',
+        'scep_enabled': 'bool',
         'server_flag': 'bool',
         'split_certificate_chain': 'bool',
         'street_address': 'list[str]'
@@ -126,12 +128,14 @@ class PKICertificateIssueDetails(object):
         'province': 'province',
         'renew_before_expiration_in_days': 'renew_before_expiration_in_days',
         'require_cn': 'require_cn',
+        'scep_challenge_mode': 'scep_challenge_mode',
+        'scep_enabled': 'scep_enabled',
         'server_flag': 'server_flag',
         'split_certificate_chain': 'split_certificate_chain',
         'street_address': 'street_address'
     }
 
-    def __init__(self, acme_enabled=None, allow_any_name=None, allow_copy_ext_from_csr=None, allow_subdomains=None, allowed_domains_list=None, allowed_extra_extensions=None, allowed_ip_sans=None, allowed_uri_sans=None, auto_renew_certificate=None, basic_constraints=None, basic_constraints_critical=None, basic_constraints_valid_for_non_ca=None, certificate_authority_mode=None, client_flag=None, code_signing_flag=None, country=None, create_private_crl=None, create_private_ocsp=None, create_public_crl=None, create_public_ocsp=None, destination_path=None, disable_wildcards=None, enforce_hostnames=None, expiration_events=None, gw_cluster_id=None, gw_cluster_url=None, is_ca=None, key_bits=None, key_type=None, key_usage_list=None, locality=None, max_path_len=None, non_critical_key_usage=None, not_before_duration=None, ocsp_next_update=None, organization_list=None, organization_unit_list=None, pki_issuer_type=None, postal_code=None, protect_generated_certificates=None, province=None, renew_before_expiration_in_days=None, require_cn=None, server_flag=None, split_certificate_chain=None, street_address=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, acme_enabled=None, allow_any_name=None, allow_copy_ext_from_csr=None, allow_subdomains=None, allowed_domains_list=None, allowed_extra_extensions=None, allowed_ip_sans=None, allowed_uri_sans=None, auto_renew_certificate=None, basic_constraints=None, basic_constraints_critical=None, basic_constraints_valid_for_non_ca=None, certificate_authority_mode=None, client_flag=None, code_signing_flag=None, country=None, create_private_crl=None, create_private_ocsp=None, create_public_crl=None, create_public_ocsp=None, destination_path=None, disable_wildcards=None, enforce_hostnames=None, expiration_events=None, gw_cluster_id=None, gw_cluster_url=None, is_ca=None, key_bits=None, key_type=None, key_usage_list=None, locality=None, max_path_len=None, non_critical_key_usage=None, not_before_duration=None, ocsp_next_update=None, organization_list=None, organization_unit_list=None, pki_issuer_type=None, postal_code=None, protect_generated_certificates=None, province=None, renew_before_expiration_in_days=None, require_cn=None, scep_challenge_mode=None, scep_enabled=None, server_flag=None, split_certificate_chain=None, street_address=None, local_vars_configuration=None):  # noqa: E501
         """PKICertificateIssueDetails - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -180,6 +184,8 @@ class PKICertificateIssueDetails(object):
         self._province = None
         self._renew_before_expiration_in_days = None
         self._require_cn = None
+        self._scep_challenge_mode = None
+        self._scep_enabled = None
         self._server_flag = None
         self._split_certificate_chain = None
         self._street_address = None
@@ -271,6 +277,10 @@ class PKICertificateIssueDetails(object):
             self.renew_before_expiration_in_days = renew_before_expiration_in_days
         if require_cn is not None:
             self.require_cn = require_cn
+        if scep_challenge_mode is not None:
+            self.scep_challenge_mode = scep_challenge_mode
+        if scep_enabled is not None:
+            self.scep_enabled = scep_enabled
         if server_flag is not None:
             self.server_flag = server_flag
         if split_certificate_chain is not None:
@@ -1196,6 +1206,52 @@ class PKICertificateIssueDetails(object):
         """
 
         self._require_cn = require_cn
+
+    @property
+    def scep_challenge_mode(self):
+        """Gets the scep_challenge_mode of this PKICertificateIssueDetails.  # noqa: E501
+
+        ScepChallengeMode is the SCEP challenge mode. Stage 1 supports only \"static\".  # noqa: E501
+
+        :return: The scep_challenge_mode of this PKICertificateIssueDetails.  # noqa: E501
+        :rtype: str
+        """
+        return self._scep_challenge_mode
+
+    @scep_challenge_mode.setter
+    def scep_challenge_mode(self, scep_challenge_mode):
+        """Sets the scep_challenge_mode of this PKICertificateIssueDetails.
+
+        ScepChallengeMode is the SCEP challenge mode. Stage 1 supports only \"static\".  # noqa: E501
+
+        :param scep_challenge_mode: The scep_challenge_mode of this PKICertificateIssueDetails.  # noqa: E501
+        :type: str
+        """
+
+        self._scep_challenge_mode = scep_challenge_mode
+
+    @property
+    def scep_enabled(self):
+        """Gets the scep_enabled of this PKICertificateIssueDetails.  # noqa: E501
+
+        ScepEnabled turns on SCEP enrollment for this dedicated PKI issuer.  # noqa: E501
+
+        :return: The scep_enabled of this PKICertificateIssueDetails.  # noqa: E501
+        :rtype: bool
+        """
+        return self._scep_enabled
+
+    @scep_enabled.setter
+    def scep_enabled(self, scep_enabled):
+        """Sets the scep_enabled of this PKICertificateIssueDetails.
+
+        ScepEnabled turns on SCEP enrollment for this dedicated PKI issuer.  # noqa: E501
+
+        :param scep_enabled: The scep_enabled of this PKICertificateIssueDetails.  # noqa: E501
+        :type: bool
+        """
+
+        self._scep_enabled = scep_enabled
 
     @property
     def server_flag(self):

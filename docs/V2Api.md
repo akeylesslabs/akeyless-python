@@ -49,6 +49,7 @@ Method | HTTP request | Description
 [**calc_password_security_info**](V2Api.md#calc_password_security_info) | **POST** /calc-password-security-info | 
 [**certificate_discovery**](V2Api.md#certificate_discovery) | **POST** /certificate-discovery | 
 [**change_admin_account_password**](V2Api.md#change_admin_account_password) | **POST** /change-admin-account-password | 
+[**client_event**](V2Api.md#client_event) | **POST** /client-event | 
 [**configure**](V2Api.md#configure) | **POST** /configure | 
 [**connect**](V2Api.md#connect) | **POST** /connect | 
 [**create_artifactory_target**](V2Api.md#create_artifactory_target) | **POST** /create-artifactory-target | 
@@ -341,6 +342,7 @@ Method | HTTP request | Description
 [**generate_acme_eab**](V2Api.md#generate_acme_eab) | **POST** /generate-acme-eab | 
 [**generate_ca**](V2Api.md#generate_ca) | **POST** /generate-ca | 
 [**generate_csr**](V2Api.md#generate_csr) | **POST** /generate-csr | 
+[**generate_intermediate_ca**](V2Api.md#generate_intermediate_ca) | **POST** /generate-intermediate-ca | 
 [**get_account_logo**](V2Api.md#get_account_logo) | **POST** /get-account-logo | 
 [**get_account_settings**](V2Api.md#get_account_settings) | **POST** /get-account-settings | 
 [**get_analytics_data**](V2Api.md#get_analytics_data) | **POST** /get-analytics-data | 
@@ -402,7 +404,7 @@ Method | HTTP request | Description
 [**list_roles**](V2Api.md#list_roles) | **POST** /list-roles | 
 [**list_shared_items**](V2Api.md#list_shared_items) | **POST** /list-shared-items | 
 [**list_sra_bastions**](V2Api.md#list_sra_bastions) | **POST** /list-sra-bastions | 
-[**list_sra_sessions**](V2Api.md#list_sra_sessions) | **POST** /list-sra-sessions | 
+[**list_sra_sessions**](V2Api.md#list_sra_sessions) | **POST** /list-sra-sessions | Lists SRA sessions.
 [**list_targets**](V2Api.md#list_targets) | **POST** /list-targets | 
 [**lock_item**](V2Api.md#lock_item) | **POST** /lock-item | 
 [**lock_target**](V2Api.md#lock_target) | **POST** /lock-target | 
@@ -439,6 +441,7 @@ Method | HTTP request | Description
 [**rotated_secret_create_mongodb**](V2Api.md#rotated_secret_create_mongodb) | **POST** /rotated-secret-create-mongodb | 
 [**rotated_secret_create_mssql**](V2Api.md#rotated_secret_create_mssql) | **POST** /rotated-secret-create-mssql | 
 [**rotated_secret_create_mysql**](V2Api.md#rotated_secret_create_mysql) | **POST** /rotated-secret-create-mysql | 
+[**rotated_secret_create_okta**](V2Api.md#rotated_secret_create_okta) | **POST** /rotated-secret-create-okta | 
 [**rotated_secret_create_open_ai**](V2Api.md#rotated_secret_create_open_ai) | **POST** /rotated-secret-create-openai | 
 [**rotated_secret_create_oracledb**](V2Api.md#rotated_secret_create_oracledb) | **POST** /rotated-secret-create-oracledb | 
 [**rotated_secret_create_postgresql**](V2Api.md#rotated_secret_create_postgresql) | **POST** /rotated-secret-create-postgresql | 
@@ -466,6 +469,7 @@ Method | HTTP request | Description
 [**rotated_secret_update_mongodb**](V2Api.md#rotated_secret_update_mongodb) | **POST** /rotated-secret-update-mongodb | 
 [**rotated_secret_update_mssql**](V2Api.md#rotated_secret_update_mssql) | **POST** /rotated-secret-update-mssql | 
 [**rotated_secret_update_mysql**](V2Api.md#rotated_secret_update_mysql) | **POST** /rotated-secret-update-mysql | 
+[**rotated_secret_update_okta**](V2Api.md#rotated_secret_update_okta) | **POST** /rotated-secret-update-okta | 
 [**rotated_secret_update_open_ai**](V2Api.md#rotated_secret_update_open_ai) | **POST** /rotated-secret-update-openai | 
 [**rotated_secret_update_oracledb**](V2Api.md#rotated_secret_update_oracledb) | **POST** /rotated-secret-update-oracledb | 
 [**rotated_secret_update_postgresql**](V2Api.md#rotated_secret_update_postgresql) | **POST** /rotated-secret-update-postgresql | 
@@ -3367,6 +3371,66 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | changeAdminAccountPasswordResponse wraps response body. |  -  |
+**0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **client_event**
+> ClientEventOutput client_event(client_event)
+
+
+
+### Example
+
+```python
+from __future__ import print_function
+import time
+import akeyless
+from akeyless.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.akeyless.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = akeyless.Configuration(
+    host = "https://api.akeyless.io"
+)
+
+
+# Enter a context with an instance of the API client
+with akeyless.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = akeyless.V2Api(api_client)
+    client_event = akeyless.ClientEvent() # ClientEvent | 
+
+    try:
+        api_response = api_instance.client_event(client_event)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling V2Api->client_event: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **client_event** | [**ClientEvent**](ClientEvent.md)|  | 
+
+### Return type
+
+[**ClientEventOutput**](ClientEventOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | clientEventResponse wraps response body. |  -  |
 **0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -20888,6 +20952,66 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **generate_intermediate_ca**
+> GenerateIntermediateCAOutput generate_intermediate_ca(generate_intermediate_ca)
+
+
+
+### Example
+
+```python
+from __future__ import print_function
+import time
+import akeyless
+from akeyless.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.akeyless.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = akeyless.Configuration(
+    host = "https://api.akeyless.io"
+)
+
+
+# Enter a context with an instance of the API client
+with akeyless.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = akeyless.V2Api(api_client)
+    generate_intermediate_ca = akeyless.GenerateIntermediateCA() # GenerateIntermediateCA | 
+
+    try:
+        api_response = api_instance.generate_intermediate_ca(generate_intermediate_ca)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling V2Api->generate_intermediate_ca: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **generate_intermediate_ca** | [**GenerateIntermediateCA**](GenerateIntermediateCA.md)|  | 
+
+### Return type
+
+[**GenerateIntermediateCAOutput**](GenerateIntermediateCAOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | GenerateIntermediateCAResponse wraps the response body. |  -  |
+**0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **get_account_logo**
 > dict(str, str) get_account_logo()
 
@@ -24543,7 +24667,9 @@ No authorization required
 # **list_sra_sessions**
 > ListSraSessionsOutput list_sra_sessions(list_sra_sessions)
 
+Lists SRA sessions.
 
+Results are returned newest first, ordered by start time, then by session ID. Responses contain up to 1000 sessions.  Pagination: Pass the response's `next_page` value as the `pagination-token` in subsequent requests to fetch the next page. Pagination is complete when `next_page` is empty. Sending an empty `pagination-token` retrieves the first page. Filters must remain identical across paginated requests to maintain cursor validity.
 
 ### Example
 
@@ -24567,6 +24693,7 @@ with akeyless.ApiClient() as api_client:
     list_sra_sessions = akeyless.ListSRASessions() # ListSRASessions | 
 
     try:
+        # Lists SRA sessions.
         api_response = api_instance.list_sra_sessions(list_sra_sessions)
         pprint(api_response)
     except ApiException as e:
@@ -26756,6 +26883,66 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **rotated_secret_create_okta**
+> RotatedSecretCreateOutput rotated_secret_create_okta(rotated_secret_create_okta)
+
+
+
+### Example
+
+```python
+from __future__ import print_function
+import time
+import akeyless
+from akeyless.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.akeyless.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = akeyless.Configuration(
+    host = "https://api.akeyless.io"
+)
+
+
+# Enter a context with an instance of the API client
+with akeyless.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = akeyless.V2Api(api_client)
+    rotated_secret_create_okta = akeyless.RotatedSecretCreateOkta() # RotatedSecretCreateOkta | 
+
+    try:
+        api_response = api_instance.rotated_secret_create_okta(rotated_secret_create_okta)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling V2Api->rotated_secret_create_okta: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **rotated_secret_create_okta** | [**RotatedSecretCreateOkta**](RotatedSecretCreateOkta.md)|  | 
+
+### Return type
+
+[**RotatedSecretCreateOutput**](RotatedSecretCreateOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | rotatedSecretCreateOktaResponse wraps response body. |  -  |
+**0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **rotated_secret_create_open_ai**
 > RotatedSecretCreateOutput rotated_secret_create_open_ai(rotated_secret_create_open_ai)
 
@@ -28372,6 +28559,66 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | rotatedSecretUpdateMysqlResponse wraps response body. |  -  |
+**0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **rotated_secret_update_okta**
+> RotatedSecretUpdateOutput rotated_secret_update_okta(rotated_secret_update_okta)
+
+
+
+### Example
+
+```python
+from __future__ import print_function
+import time
+import akeyless
+from akeyless.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.akeyless.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = akeyless.Configuration(
+    host = "https://api.akeyless.io"
+)
+
+
+# Enter a context with an instance of the API client
+with akeyless.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = akeyless.V2Api(api_client)
+    rotated_secret_update_okta = akeyless.RotatedSecretUpdateOkta() # RotatedSecretUpdateOkta | 
+
+    try:
+        api_response = api_instance.rotated_secret_update_okta(rotated_secret_update_okta)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling V2Api->rotated_secret_update_okta: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **rotated_secret_update_okta** | [**RotatedSecretUpdateOkta**](RotatedSecretUpdateOkta.md)|  | 
+
+### Return type
+
+[**RotatedSecretUpdateOutput**](RotatedSecretUpdateOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | rotatedSecretUpdateOktaResponse wraps response body. |  -  |
 **0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
