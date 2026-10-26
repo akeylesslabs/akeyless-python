@@ -98,6 +98,7 @@ class GatewayCreateMigration(object):
         'password_length': 'str',
         'port_ranges': 'str',
         'protection_key': 'str',
+        'schedule_sync': 'str',
         'si_auto_rotate': 'str',
         'si_rotation_hour': 'int',
         'si_rotation_interval': 'int',
@@ -181,6 +182,7 @@ class GatewayCreateMigration(object):
         'password_length': 'password-length',
         'port_ranges': 'port-ranges',
         'protection_key': 'protection-key',
+        'schedule_sync': 'schedule-sync',
         'si_auto_rotate': 'si-auto-rotate',
         'si_rotation_hour': 'si-rotation-hour',
         'si_rotation_interval': 'si-rotation-interval',
@@ -199,7 +201,7 @@ class GatewayCreateMigration(object):
         'use_gw_cloud_identity': 'use-gw-cloud-identity'
     }
 
-    def __init__(self, service_account_key_decoded=None, ad_auto_rotate=None, ad_cert_expiration_event_in=None, ad_certificates_path_template=None, ad_computer_base_dn=None, ad_discover_iis_app='false', ad_discover_services='false', ad_discovery_types=None, ad_domain_name=None, ad_domain_users_path_template=None, ad_local_users_ignore=None, ad_local_users_path_template=None, ad_os_filter=None, ad_rotation_hour=None, ad_rotation_interval=None, ad_sra_enable_rdp=None, ad_ssh_port='22', ad_target_format='linked', ad_target_name=None, ad_targets_path_template=None, ad_targets_type='windows', ad_user_base_dn=None, ad_user_groups=None, ad_winrm_over_http='false', ad_winrm_port='5986', ad_discover_local_users=None, ai_certificate_discovery=None, aws_key=None, aws_key_id=None, aws_region='us-east-2', azure_client_id=None, azure_kv_name=None, azure_secret=None, azure_tenant_id=None, conjur_account=None, conjur_api_key=None, conjur_url=None, conjur_username=None, delete_remote=None, enable_password_policy='false', exclude_hosts=None, expiration_event_in=None, gcp_key=None, gcp_project_id=None, hashi_json='true', hashi_metadata_mode=None, hashi_ns=None, hashi_token=None, hashi_url=None, hosts=None, json=False, k8s_ca_certificate=None, k8s_client_certificate=None, k8s_client_key=None, k8s_namespace=None, k8s_password=None, k8s_skip_system=None, k8s_token=None, k8s_url=None, k8s_username=None, name=None, password_length=None, port_ranges='443', protection_key=None, si_auto_rotate=None, si_rotation_hour=None, si_rotation_interval=None, si_sra_enable_rdp='false', si_target_name=None, si_user_groups=None, si_users_ignore=None, si_users_path_template=None, skip_dry_run='false', target_location=None, target_name=None, token=None, type=None, uid_token=None, usc_name=None, use_gw_cloud_identity=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, service_account_key_decoded=None, ad_auto_rotate=None, ad_cert_expiration_event_in=None, ad_certificates_path_template=None, ad_computer_base_dn=None, ad_discover_iis_app='false', ad_discover_services='false', ad_discovery_types=None, ad_domain_name=None, ad_domain_users_path_template=None, ad_local_users_ignore=None, ad_local_users_path_template=None, ad_os_filter=None, ad_rotation_hour=None, ad_rotation_interval=None, ad_sra_enable_rdp=None, ad_ssh_port='22', ad_target_format='linked', ad_target_name=None, ad_targets_path_template=None, ad_targets_type='windows', ad_user_base_dn=None, ad_user_groups=None, ad_winrm_over_http='false', ad_winrm_port='5986', ad_discover_local_users=None, ai_certificate_discovery=None, aws_key=None, aws_key_id=None, aws_region='us-east-2', azure_client_id=None, azure_kv_name=None, azure_secret=None, azure_tenant_id=None, conjur_account=None, conjur_api_key=None, conjur_url=None, conjur_username=None, delete_remote=None, enable_password_policy='false', exclude_hosts=None, expiration_event_in=None, gcp_key=None, gcp_project_id=None, hashi_json='true', hashi_metadata_mode=None, hashi_ns=None, hashi_token=None, hashi_url=None, hosts=None, json=False, k8s_ca_certificate=None, k8s_client_certificate=None, k8s_client_key=None, k8s_namespace=None, k8s_password=None, k8s_skip_system=None, k8s_token=None, k8s_url=None, k8s_username=None, name=None, password_length=None, port_ranges='443', protection_key=None, schedule_sync=None, si_auto_rotate=None, si_rotation_hour=None, si_rotation_interval=None, si_sra_enable_rdp='false', si_target_name=None, si_user_groups=None, si_users_ignore=None, si_users_path_template=None, skip_dry_run='false', target_location=None, target_name=None, token=None, type=None, uid_token=None, usc_name=None, use_gw_cloud_identity=None, local_vars_configuration=None):  # noqa: E501
         """GatewayCreateMigration - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -269,6 +271,7 @@ class GatewayCreateMigration(object):
         self._password_length = None
         self._port_ranges = None
         self._protection_key = None
+        self._schedule_sync = None
         self._si_auto_rotate = None
         self._si_rotation_hour = None
         self._si_rotation_interval = None
@@ -413,6 +416,7 @@ class GatewayCreateMigration(object):
             self.port_ranges = port_ranges
         if protection_key is not None:
             self.protection_key = protection_key
+        self.schedule_sync = schedule_sync
         if si_auto_rotate is not None:
             self.si_auto_rotate = si_auto_rotate
         if si_rotation_hour is not None:
@@ -1916,6 +1920,29 @@ class GatewayCreateMigration(object):
         """
 
         self._protection_key = protection_key
+
+    @property
+    def schedule_sync(self):
+        """Gets the schedule_sync of this GatewayCreateMigration.  # noqa: E501
+
+        Runs the migration automatically on the specified schedule in UTC. Accepts standard cron syntax. Limited to at most once every 24 hours.  # noqa: E501
+
+        :return: The schedule_sync of this GatewayCreateMigration.  # noqa: E501
+        :rtype: str
+        """
+        return self._schedule_sync
+
+    @schedule_sync.setter
+    def schedule_sync(self, schedule_sync):
+        """Sets the schedule_sync of this GatewayCreateMigration.
+
+        Runs the migration automatically on the specified schedule in UTC. Accepts standard cron syntax. Limited to at most once every 24 hours.  # noqa: E501
+
+        :param schedule_sync: The schedule_sync of this GatewayCreateMigration.  # noqa: E501
+        :type: str
+        """
+
+        self._schedule_sync = schedule_sync
 
     @property
     def si_auto_rotate(self):

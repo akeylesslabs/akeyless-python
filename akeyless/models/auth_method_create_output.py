@@ -37,17 +37,19 @@ class AuthMethodCreateOutput(object):
         'access_id': 'str',
         'access_key': 'str',
         'name': 'str',
-        'prv_key': 'str'
+        'prv_key': 'str',
+        'scim_base_url': 'str'
     }
 
     attribute_map = {
         'access_id': 'access_id',
         'access_key': 'access_key',
         'name': 'name',
-        'prv_key': 'prv_key'
+        'prv_key': 'prv_key',
+        'scim_base_url': 'scim_base_url'
     }
 
-    def __init__(self, access_id=None, access_key=None, name=None, prv_key=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, access_id=None, access_key=None, name=None, prv_key=None, scim_base_url=None, local_vars_configuration=None):  # noqa: E501
         """AuthMethodCreateOutput - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -57,6 +59,7 @@ class AuthMethodCreateOutput(object):
         self._access_key = None
         self._name = None
         self._prv_key = None
+        self._scim_base_url = None
         self.discriminator = None
 
         if access_id is not None:
@@ -67,6 +70,8 @@ class AuthMethodCreateOutput(object):
             self.name = name
         if prv_key is not None:
             self.prv_key = prv_key
+        if scim_base_url is not None:
+            self.scim_base_url = scim_base_url
 
     @property
     def access_id(self):
@@ -151,6 +156,29 @@ class AuthMethodCreateOutput(object):
         """
 
         self._prv_key = prv_key
+
+    @property
+    def scim_base_url(self):
+        """Gets the scim_base_url of this AuthMethodCreateOutput.  # noqa: E501
+
+        SCIM Base URL the IdP calls, set when SCIM flags were given  # noqa: E501
+
+        :return: The scim_base_url of this AuthMethodCreateOutput.  # noqa: E501
+        :rtype: str
+        """
+        return self._scim_base_url
+
+    @scim_base_url.setter
+    def scim_base_url(self, scim_base_url):
+        """Sets the scim_base_url of this AuthMethodCreateOutput.
+
+        SCIM Base URL the IdP calls, set when SCIM flags were given  # noqa: E501
+
+        :param scim_base_url: The scim_base_url of this AuthMethodCreateOutput.  # noqa: E501
+        :type: str
+        """
+
+        self._scim_base_url = scim_base_url
 
     def to_dict(self):
         """Returns the model properties as a dict"""

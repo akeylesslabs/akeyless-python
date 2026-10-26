@@ -149,8 +149,7 @@ class GatewayUpdateProducerSnowflake(object):
             self.account_password = account_password
         if account_username is not None:
             self.account_username = account_username
-        if ara_enabled is not None:
-            self.ara_enabled = ara_enabled
+        self.ara_enabled = ara_enabled
         if auth_mode is not None:
             self.auth_mode = auth_mode
         if custom_username_template is not None:
@@ -159,10 +158,8 @@ class GatewayUpdateProducerSnowflake(object):
             self.db_name = db_name
         if delete_protection is not None:
             self.delete_protection = delete_protection
-        if enable_agentic_runtime_authority is not None:
-            self.enable_agentic_runtime_authority = enable_agentic_runtime_authority
-        if enable_ai_quorum is not None:
-            self.enable_ai_quorum = enable_ai_quorum
+        self.enable_agentic_runtime_authority = enable_agentic_runtime_authority
+        self.enable_ai_quorum = enable_ai_quorum
         if input_rule is not None:
             self.input_rule = input_rule
         if item_custom_fields is not None:
@@ -184,8 +181,7 @@ class GatewayUpdateProducerSnowflake(object):
             self.private_key_passphrase = private_key_passphrase
         if role is not None:
             self.role = role
-        if skip_dry_run is not None:
-            self.skip_dry_run = skip_dry_run
+        self.skip_dry_run = skip_dry_run
         if tags is not None:
             self.tags = tags
         if target_name is not None:

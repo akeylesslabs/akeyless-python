@@ -34,6 +34,7 @@ class UscCreate(object):
                             and the value is json key in definition.
     """
     openapi_types = {
+        'aws_account_id': 'str',
         'binary_value': 'bool',
         'description': 'str',
         'gcp_project_id': 'str',
@@ -55,6 +56,7 @@ class UscCreate(object):
     }
 
     attribute_map = {
+        'aws_account_id': 'aws-account-id',
         'binary_value': 'binary-value',
         'description': 'description',
         'gcp_project_id': 'gcp-project-id',
@@ -75,12 +77,13 @@ class UscCreate(object):
         'value': 'value'
     }
 
-    def __init__(self, binary_value=None, description=None, gcp_project_id=None, json=False, namespace=None, object_type=None, pfx_password=None, region=None, remote_secret_activation_date=None, remote_secret_expires=None, secret_name=None, selected_repositories=None, tags=None, token=None, uid_token=None, usc_encryption_key=None, usc_name=None, value=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, aws_account_id=None, binary_value=None, description=None, gcp_project_id=None, json=False, namespace=None, object_type=None, pfx_password=None, region=None, remote_secret_activation_date=None, remote_secret_expires=None, secret_name=None, selected_repositories=None, tags=None, token=None, uid_token=None, usc_encryption_key=None, usc_name=None, value=None, local_vars_configuration=None):  # noqa: E501
         """UscCreate - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
+        self._aws_account_id = None
         self._binary_value = None
         self._description = None
         self._gcp_project_id = None
@@ -101,6 +104,8 @@ class UscCreate(object):
         self._value = None
         self.discriminator = None
 
+        if aws_account_id is not None:
+            self.aws_account_id = aws_account_id
         if binary_value is not None:
             self.binary_value = binary_value
         if description is not None:
@@ -134,6 +139,29 @@ class UscCreate(object):
             self.usc_encryption_key = usc_encryption_key
         self.usc_name = usc_name
         self.value = value
+
+    @property
+    def aws_account_id(self):
+        """Gets the aws_account_id of this UscCreate.  # noqa: E501
+
+        The AWS account ID to create the secret in. Required when the connector spans multiple account IDs.  # noqa: E501
+
+        :return: The aws_account_id of this UscCreate.  # noqa: E501
+        :rtype: str
+        """
+        return self._aws_account_id
+
+    @aws_account_id.setter
+    def aws_account_id(self, aws_account_id):
+        """Sets the aws_account_id of this UscCreate.
+
+        The AWS account ID to create the secret in. Required when the connector spans multiple account IDs.  # noqa: E501
+
+        :param aws_account_id: The aws_account_id of this UscCreate.  # noqa: E501
+        :type: str
+        """
+
+        self._aws_account_id = aws_account_id
 
     @property
     def binary_value(self):
@@ -298,7 +326,7 @@ class UscCreate(object):
     def region(self):
         """Gets the region of this UscCreate.  # noqa: E501
 
-        Optional, create secret in a specific region (GCP only). If empty, a global secret will be created (provider default).  # noqa: E501
+        AWS Organization scope region or GCP regional secret location. GCP creates a global secret when empty.  # noqa: E501
 
         :return: The region of this UscCreate.  # noqa: E501
         :rtype: str
@@ -309,7 +337,7 @@ class UscCreate(object):
     def region(self, region):
         """Sets the region of this UscCreate.
 
-        Optional, create secret in a specific region (GCP only). If empty, a global secret will be created (provider default).  # noqa: E501
+        AWS Organization scope region or GCP regional secret location. GCP creates a global secret when empty.  # noqa: E501
 
         :param region: The region of this UscCreate.  # noqa: E501
         :type: str

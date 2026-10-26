@@ -34,10 +34,12 @@ class UscDelete(object):
                             and the value is json key in definition.
     """
     openapi_types = {
+        'aws_account_id': 'str',
         'force_delete': 'bool',
         'json': 'bool',
         'namespace': 'str',
         'object_type': 'str',
+        'region': 'str',
         'secret_id': 'str',
         'selected_repositories': 'str',
         'token': 'str',
@@ -46,10 +48,12 @@ class UscDelete(object):
     }
 
     attribute_map = {
+        'aws_account_id': 'aws-account-id',
         'force_delete': 'force-delete',
         'json': 'json',
         'namespace': 'namespace',
         'object_type': 'object-type',
+        'region': 'region',
         'secret_id': 'secret-id',
         'selected_repositories': 'selected-repositories',
         'token': 'token',
@@ -57,16 +61,18 @@ class UscDelete(object):
         'usc_name': 'usc-name'
     }
 
-    def __init__(self, force_delete=None, json=False, namespace=None, object_type=None, secret_id=None, selected_repositories=None, token=None, uid_token=None, usc_name=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, aws_account_id=None, force_delete=None, json=False, namespace=None, object_type=None, region=None, secret_id=None, selected_repositories=None, token=None, uid_token=None, usc_name=None, local_vars_configuration=None):  # noqa: E501
         """UscDelete - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
+        self._aws_account_id = None
         self._force_delete = None
         self._json = None
         self._namespace = None
         self._object_type = None
+        self._region = None
         self._secret_id = None
         self._selected_repositories = None
         self._token = None
@@ -74,6 +80,8 @@ class UscDelete(object):
         self._usc_name = None
         self.discriminator = None
 
+        if aws_account_id is not None:
+            self.aws_account_id = aws_account_id
         if force_delete is not None:
             self.force_delete = force_delete
         if json is not None:
@@ -82,6 +90,8 @@ class UscDelete(object):
             self.namespace = namespace
         if object_type is not None:
             self.object_type = object_type
+        if region is not None:
+            self.region = region
         self.secret_id = secret_id
         if selected_repositories is not None:
             self.selected_repositories = selected_repositories
@@ -90,6 +100,29 @@ class UscDelete(object):
         if uid_token is not None:
             self.uid_token = uid_token
         self.usc_name = usc_name
+
+    @property
+    def aws_account_id(self):
+        """Gets the aws_account_id of this UscDelete.  # noqa: E501
+
+        The AWS account ID that contains the secret. Required when the connector spans multiple account IDs.  # noqa: E501
+
+        :return: The aws_account_id of this UscDelete.  # noqa: E501
+        :rtype: str
+        """
+        return self._aws_account_id
+
+    @aws_account_id.setter
+    def aws_account_id(self, aws_account_id):
+        """Sets the aws_account_id of this UscDelete.
+
+        The AWS account ID that contains the secret. Required when the connector spans multiple account IDs.  # noqa: E501
+
+        :param aws_account_id: The aws_account_id of this UscDelete.  # noqa: E501
+        :type: str
+        """
+
+        self._aws_account_id = aws_account_id
 
     @property
     def force_delete(self):
@@ -180,6 +213,29 @@ class UscDelete(object):
         """
 
         self._object_type = object_type
+
+    @property
+    def region(self):
+        """Gets the region of this UscDelete.  # noqa: E501
+
+        The AWS region that contains the secret (AWS only). If empty, uses the target region.  # noqa: E501
+
+        :return: The region of this UscDelete.  # noqa: E501
+        :rtype: str
+        """
+        return self._region
+
+    @region.setter
+    def region(self, region):
+        """Sets the region of this UscDelete.
+
+        The AWS region that contains the secret (AWS only). If empty, uses the target region.  # noqa: E501
+
+        :param region: The region of this UscDelete.  # noqa: E501
+        :type: str
+        """
+
+        self._region = region
 
     @property
     def secret_id(self):

@@ -47,6 +47,7 @@ from akeyless.models.ai_model_entry import AiModelEntry
 from akeyless.models.ai_quorum_setting import AiQuorumSetting
 from akeyless.models.akeyless_gateway_config import AkeylessGatewayConfig
 from akeyless.models.ali_cloud_access_rules import AliCloudAccessRules
+from akeyless.models.ali_cloud_target_details import AliCloudTargetDetails
 from akeyless.models.alias_details import AliasDetails
 from akeyless.models.alias_details_output import AliasDetailsOutput
 from akeyless.models.all_analytics_data import AllAnalyticsData
@@ -694,6 +695,7 @@ from akeyless.models.get_role import GetRole
 from akeyless.models.get_rotated_secret_value import GetRotatedSecretValue
 from akeyless.models.get_ssh_certificate import GetSSHCertificate
 from akeyless.models.get_ssh_certificate_output import GetSSHCertificateOutput
+from akeyless.models.get_scim_status import GetScimStatus
 from akeyless.models.get_secret_value import GetSecretValue
 from akeyless.models.get_tags import GetTags
 from akeyless.models.get_target import GetTarget
@@ -708,6 +710,7 @@ from akeyless.models.global_sign_gcc_target_details import GlobalSignGCCTargetDe
 from akeyless.models.godaddy_target_details import GodaddyTargetDetails
 from akeyless.models.google_chronicle_forwarding_config import GoogleChronicleForwardingConfig
 from akeyless.models.google_trust_target_details import GoogleTrustTargetDetails
+from akeyless.models.granted_role import GrantedRole
 from akeyless.models.grok_target_details import GrokTargetDetails
 from akeyless.models.group import Group
 from akeyless.models.gw_cluster_identity import GwClusterIdentity
@@ -919,6 +922,7 @@ from akeyless.models.rotate_oidc_client_output import RotateOidcClientOutput
 from akeyless.models.rotate_oidc_client_secret import RotateOidcClientSecret
 from akeyless.models.rotate_secret import RotateSecret
 from akeyless.models.rotated_secret_create_aerospike import RotatedSecretCreateAerospike
+from akeyless.models.rotated_secret_create_ali_cloud import RotatedSecretCreateAliCloud
 from akeyless.models.rotated_secret_create_aws import RotatedSecretCreateAws
 from akeyless.models.rotated_secret_create_azure import RotatedSecretCreateAzure
 from akeyless.models.rotated_secret_create_cassandra import RotatedSecretCreateCassandra
@@ -952,6 +956,7 @@ from akeyless.models.rotated_secret_list import RotatedSecretList
 from akeyless.models.rotated_secret_output import RotatedSecretOutput
 from akeyless.models.rotated_secret_sync import RotatedSecretSync
 from akeyless.models.rotated_secret_update_aerospike import RotatedSecretUpdateAerospike
+from akeyless.models.rotated_secret_update_ali_cloud import RotatedSecretUpdateAliCloud
 from akeyless.models.rotated_secret_update_aws import RotatedSecretUpdateAws
 from akeyless.models.rotated_secret_update_azure import RotatedSecretUpdateAzure
 from akeyless.models.rotated_secret_update_cassandra import RotatedSecretUpdateCassandra
@@ -988,6 +993,8 @@ from akeyless.models.ssh_target_details import SSHTargetDetails
 from akeyless.models.salesforce_target_details import SalesforceTargetDetails
 from akeyless.models.saml_sp_config_part import SamlSpConfigPart
 from akeyless.models.scan_results import ScanResults
+from akeyless.models.scim_settings import ScimSettings
+from akeyless.models.scim_status import ScimStatus
 from akeyless.models.secret_info import SecretInfo
 from akeyless.models.secret_sync_output import SecretSyncOutput
 from akeyless.models.sectigo_target_details import SectigoTargetDetails
@@ -1039,6 +1046,7 @@ from akeyless.models.system_access_credentials_reply_obj import SystemAccessCred
 from akeyless.models.system_access_creds_settings import SystemAccessCredsSettings
 from akeyless.models.target import Target
 from akeyless.models.target_create_aerospike import TargetCreateAerospike
+from akeyless.models.target_create_ali_cloud import TargetCreateAliCloud
 from akeyless.models.target_create_anthropic import TargetCreateAnthropic
 from akeyless.models.target_create_artifactory import TargetCreateArtifactory
 from akeyless.models.target_create_aws import TargetCreateAws
@@ -1089,6 +1097,7 @@ from akeyless.models.target_list import TargetList
 from akeyless.models.target_name_with_hosts import TargetNameWithHosts
 from akeyless.models.target_type_details_input import TargetTypeDetailsInput
 from akeyless.models.target_update_aerospike import TargetUpdateAerospike
+from akeyless.models.target_update_ali_cloud import TargetUpdateAliCloud
 from akeyless.models.target_update_anthropic import TargetUpdateAnthropic
 from akeyless.models.target_update_artifactory import TargetUpdateArtifactory
 from akeyless.models.target_update_aws import TargetUpdateAws

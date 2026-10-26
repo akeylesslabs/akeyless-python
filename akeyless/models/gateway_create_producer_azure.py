@@ -166,8 +166,7 @@ class GatewayCreateProducerAzure(object):
 
         if app_obj_id is not None:
             self.app_obj_id = app_obj_id
-        if ara_enabled is not None:
-            self.ara_enabled = ara_enabled
+        self.ara_enabled = ara_enabled
         if azure_administrative_unit is not None:
             self.azure_administrative_unit = azure_administrative_unit
         if azure_client_id is not None:
@@ -180,10 +179,8 @@ class GatewayCreateProducerAzure(object):
             self.custom_username_template = custom_username_template
         if delete_protection is not None:
             self.delete_protection = delete_protection
-        if enable_agentic_runtime_authority is not None:
-            self.enable_agentic_runtime_authority = enable_agentic_runtime_authority
-        if enable_ai_quorum is not None:
-            self.enable_ai_quorum = enable_ai_quorum
+        self.enable_agentic_runtime_authority = enable_agentic_runtime_authority
+        self.enable_ai_quorum = enable_ai_quorum
         if fixed_user_claim_keyname is not None:
             self.fixed_user_claim_keyname = fixed_user_claim_keyname
         if fixed_user_only is not None:
@@ -211,8 +208,7 @@ class GatewayCreateProducerAzure(object):
             self.secure_access_web_browsing = secure_access_web_browsing
         if secure_access_web_proxy is not None:
             self.secure_access_web_proxy = secure_access_web_proxy
-        if skip_dry_run is not None:
-            self.skip_dry_run = skip_dry_run
+        self.skip_dry_run = skip_dry_run
         if tags is not None:
             self.tags = tags
         if target_name is not None:

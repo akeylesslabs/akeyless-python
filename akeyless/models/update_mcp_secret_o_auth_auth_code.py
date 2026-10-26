@@ -109,12 +109,9 @@ class UpdateMcpSecretOAuthAuthCode(object):
 
         if accessibility is not None:
             self.accessibility = accessibility
-        if ara_enabled is not None:
-            self.ara_enabled = ara_enabled
-        if enable_agentic_runtime_authority is not None:
-            self.enable_agentic_runtime_authority = enable_agentic_runtime_authority
-        if enable_ai_quorum is not None:
-            self.enable_ai_quorum = enable_ai_quorum
+        self.ara_enabled = ara_enabled
+        self.enable_agentic_runtime_authority = enable_agentic_runtime_authority
+        self.enable_ai_quorum = enable_ai_quorum
         if input_rule is not None:
             self.input_rule = input_rule
         if json is not None:

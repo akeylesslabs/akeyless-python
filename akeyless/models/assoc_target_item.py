@@ -35,16 +35,22 @@ class AssocTargetItem(object):
     """
     openapi_types = {
         'bind_ssl_profiles': 'list[str]',
+        'certificate_arn': 'str',
         'certificate_format': 'str',
+        'certificate_name': 'str',
         'certificate_path': 'str',
         'chain_path': 'str',
         'disable_previous_key_version': 'bool',
         'external_key_name': 'str',
+        'f5_save_config': 'bool',
+        'f5_sync_device_group': 'str',
         'json': 'bool',
         'key_operations': 'list[str]',
+        'key_vault': 'str',
         'keyring_name': 'str',
         'kms_algorithm': 'str',
         'location_id': 'str',
+        'location_scope': 'str',
         'multi_region': 'str',
         'name': 'str',
         'pfx_password': 'str',
@@ -64,16 +70,22 @@ class AssocTargetItem(object):
 
     attribute_map = {
         'bind_ssl_profiles': 'bind-ssl-profiles',
+        'certificate_arn': 'certificate-arn',
         'certificate_format': 'certificate-format',
+        'certificate_name': 'certificate-name',
         'certificate_path': 'certificate-path',
         'chain_path': 'chain-path',
         'disable_previous_key_version': 'disable-previous-key-version',
         'external_key_name': 'external-key-name',
+        'f5_save_config': 'f5-save-config',
+        'f5_sync_device_group': 'f5-sync-device-group',
         'json': 'json',
         'key_operations': 'key-operations',
+        'key_vault': 'key-vault',
         'keyring_name': 'keyring-name',
         'kms_algorithm': 'kms-algorithm',
         'location_id': 'location-id',
+        'location_scope': 'location-scope',
         'multi_region': 'multi-region',
         'name': 'name',
         'pfx_password': 'pfx-password',
@@ -91,23 +103,29 @@ class AssocTargetItem(object):
         'vault_name': 'vault-name'
     }
 
-    def __init__(self, bind_ssl_profiles=None, certificate_format='pem', certificate_path=None, chain_path=None, disable_previous_key_version=False, external_key_name=None, json=False, key_operations=None, keyring_name=None, kms_algorithm=None, location_id=None, multi_region='false', name=None, pfx_password=None, post_provision_command=None, private_key_path=None, project_id=None, protection_level='software', purpose=None, regions=None, sra_association=False, target_name=None, tenant_secret_type=None, token=None, uid_token=None, vault_name=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, bind_ssl_profiles=None, certificate_arn=None, certificate_format='pem', certificate_name=None, certificate_path=None, chain_path=None, disable_previous_key_version=False, external_key_name=None, f5_save_config=False, f5_sync_device_group=None, json=False, key_operations=None, key_vault=None, keyring_name=None, kms_algorithm=None, location_id=None, location_scope=None, multi_region='false', name=None, pfx_password=None, post_provision_command=None, private_key_path=None, project_id=None, protection_level='software', purpose=None, regions=None, sra_association=False, target_name=None, tenant_secret_type=None, token=None, uid_token=None, vault_name=None, local_vars_configuration=None):  # noqa: E501
         """AssocTargetItem - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._bind_ssl_profiles = None
+        self._certificate_arn = None
         self._certificate_format = None
+        self._certificate_name = None
         self._certificate_path = None
         self._chain_path = None
         self._disable_previous_key_version = None
         self._external_key_name = None
+        self._f5_save_config = None
+        self._f5_sync_device_group = None
         self._json = None
         self._key_operations = None
+        self._key_vault = None
         self._keyring_name = None
         self._kms_algorithm = None
         self._location_id = None
+        self._location_scope = None
         self._multi_region = None
         self._name = None
         self._pfx_password = None
@@ -127,8 +145,12 @@ class AssocTargetItem(object):
 
         if bind_ssl_profiles is not None:
             self.bind_ssl_profiles = bind_ssl_profiles
+        if certificate_arn is not None:
+            self.certificate_arn = certificate_arn
         if certificate_format is not None:
             self.certificate_format = certificate_format
+        if certificate_name is not None:
+            self.certificate_name = certificate_name
         if certificate_path is not None:
             self.certificate_path = certificate_path
         if chain_path is not None:
@@ -137,16 +159,24 @@ class AssocTargetItem(object):
             self.disable_previous_key_version = disable_previous_key_version
         if external_key_name is not None:
             self.external_key_name = external_key_name
+        if f5_save_config is not None:
+            self.f5_save_config = f5_save_config
+        if f5_sync_device_group is not None:
+            self.f5_sync_device_group = f5_sync_device_group
         if json is not None:
             self.json = json
         if key_operations is not None:
             self.key_operations = key_operations
+        if key_vault is not None:
+            self.key_vault = key_vault
         if keyring_name is not None:
             self.keyring_name = keyring_name
         if kms_algorithm is not None:
             self.kms_algorithm = kms_algorithm
         if location_id is not None:
             self.location_id = location_id
+        if location_scope is not None:
+            self.location_scope = location_scope
         if multi_region is not None:
             self.multi_region = multi_region
         self.name = name
@@ -200,6 +230,29 @@ class AssocTargetItem(object):
         self._bind_ssl_profiles = bind_ssl_profiles
 
     @property
+    def certificate_arn(self):
+        """Gets the certificate_arn of this AssocTargetItem.  # noqa: E501
+
+        The ARN of an existing imported ACM certificate to re-import into, which replaces its certificate and key; if empty, a new ACM certificate is created on every provisioning, including after renewal (relevant only for AWS certificate provisioning)  # noqa: E501
+
+        :return: The certificate_arn of this AssocTargetItem.  # noqa: E501
+        :rtype: str
+        """
+        return self._certificate_arn
+
+    @certificate_arn.setter
+    def certificate_arn(self, certificate_arn):
+        """Sets the certificate_arn of this AssocTargetItem.
+
+        The ARN of an existing imported ACM certificate to re-import into, which replaces its certificate and key; if empty, a new ACM certificate is created on every provisioning, including after renewal (relevant only for AWS certificate provisioning)  # noqa: E501
+
+        :param certificate_arn: The certificate_arn of this AssocTargetItem.  # noqa: E501
+        :type: str
+        """
+
+        self._certificate_arn = certificate_arn
+
+    @property
     def certificate_format(self):
         """Gets the certificate_format of this AssocTargetItem.  # noqa: E501
 
@@ -221,6 +274,29 @@ class AssocTargetItem(object):
         """
 
         self._certificate_format = certificate_format
+
+    @property
+    def certificate_name(self):
+        """Gets the certificate_name of this AssocTargetItem.  # noqa: E501
+
+        The name of the certificate object in the cloud provider (relevant only for AWS, Azure, and GCP certificate provisioning)  # noqa: E501
+
+        :return: The certificate_name of this AssocTargetItem.  # noqa: E501
+        :rtype: str
+        """
+        return self._certificate_name
+
+    @certificate_name.setter
+    def certificate_name(self, certificate_name):
+        """Sets the certificate_name of this AssocTargetItem.
+
+        The name of the certificate object in the cloud provider (relevant only for AWS, Azure, and GCP certificate provisioning)  # noqa: E501
+
+        :param certificate_name: The certificate_name of this AssocTargetItem.  # noqa: E501
+        :type: str
+        """
+
+        self._certificate_name = certificate_name
 
     @property
     def certificate_path(self):
@@ -315,6 +391,52 @@ class AssocTargetItem(object):
         self._external_key_name = external_key_name
 
     @property
+    def f5_save_config(self):
+        """Gets the f5_save_config of this AssocTargetItem.  # noqa: E501
+
+        Save the F5 running configuration after each successful provisioning, so the certificate survives a reboot. This also saves any other unsaved change on the device (relevant only for F5 BIG-IP certificate provisioning)  # noqa: E501
+
+        :return: The f5_save_config of this AssocTargetItem.  # noqa: E501
+        :rtype: bool
+        """
+        return self._f5_save_config
+
+    @f5_save_config.setter
+    def f5_save_config(self, f5_save_config):
+        """Sets the f5_save_config of this AssocTargetItem.
+
+        Save the F5 running configuration after each successful provisioning, so the certificate survives a reboot. This also saves any other unsaved change on the device (relevant only for F5 BIG-IP certificate provisioning)  # noqa: E501
+
+        :param f5_save_config: The f5_save_config of this AssocTargetItem.  # noqa: E501
+        :type: bool
+        """
+
+        self._f5_save_config = f5_save_config
+
+    @property
+    def f5_sync_device_group(self):
+        """Gets the f5_sync_device_group of this AssocTargetItem.  # noqa: E501
+
+        Sync the F5 configuration to this device group after each successful provisioning, so the HA peer serves the same certificate. This overwrites unsynced changes on the other members of the group. Implies f5-save-config (relevant only for F5 BIG-IP certificate provisioning)  # noqa: E501
+
+        :return: The f5_sync_device_group of this AssocTargetItem.  # noqa: E501
+        :rtype: str
+        """
+        return self._f5_sync_device_group
+
+    @f5_sync_device_group.setter
+    def f5_sync_device_group(self, f5_sync_device_group):
+        """Sets the f5_sync_device_group of this AssocTargetItem.
+
+        Sync the F5 configuration to this device group after each successful provisioning, so the HA peer serves the same certificate. This overwrites unsynced changes on the other members of the group. Implies f5-save-config (relevant only for F5 BIG-IP certificate provisioning)  # noqa: E501
+
+        :param f5_sync_device_group: The f5_sync_device_group of this AssocTargetItem.  # noqa: E501
+        :type: str
+        """
+
+        self._f5_sync_device_group = f5_sync_device_group
+
+    @property
     def json(self):
         """Gets the json of this AssocTargetItem.  # noqa: E501
 
@@ -359,6 +481,29 @@ class AssocTargetItem(object):
         """
 
         self._key_operations = key_operations
+
+    @property
+    def key_vault(self):
+        """Gets the key_vault of this AssocTargetItem.  # noqa: E501
+
+        The Azure Key Vault name to provision the certificate to (relevant only for Azure certificate provisioning)  # noqa: E501
+
+        :return: The key_vault of this AssocTargetItem.  # noqa: E501
+        :rtype: str
+        """
+        return self._key_vault
+
+    @key_vault.setter
+    def key_vault(self, key_vault):
+        """Sets the key_vault of this AssocTargetItem.
+
+        The Azure Key Vault name to provision the certificate to (relevant only for Azure certificate provisioning)  # noqa: E501
+
+        :param key_vault: The key_vault of this AssocTargetItem.  # noqa: E501
+        :type: str
+        """
+
+        self._key_vault = key_vault
 
     @property
     def keyring_name(self):
@@ -428,6 +573,29 @@ class AssocTargetItem(object):
         """
 
         self._location_id = location_id
+
+    @property
+    def location_scope(self):
+        """Gets the location_scope of this AssocTargetItem.  # noqa: E501
+
+        The GCP Certificate Manager location to provision the certificate to: global or a region such as us-central1 (relevant only for GCP certificate provisioning)  # noqa: E501
+
+        :return: The location_scope of this AssocTargetItem.  # noqa: E501
+        :rtype: str
+        """
+        return self._location_scope
+
+    @location_scope.setter
+    def location_scope(self, location_scope):
+        """Sets the location_scope of this AssocTargetItem.
+
+        The GCP Certificate Manager location to provision the certificate to: global or a region such as us-central1 (relevant only for GCP certificate provisioning)  # noqa: E501
+
+        :param location_scope: The location_scope of this AssocTargetItem.  # noqa: E501
+        :type: str
+        """
+
+        self._location_scope = location_scope
 
     @property
     def multi_region(self):

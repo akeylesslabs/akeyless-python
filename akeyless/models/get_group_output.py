@@ -37,27 +37,39 @@ class GetGroupOutput(object):
         'account_id': 'str',
         'creation_date': 'datetime',
         'description': 'str',
+        'granted_roles': 'list[GrantedRole]',
+        'granted_roles_known': 'bool',
         'group_alias': 'str',
         'group_id': 'str',
         'group_name': 'str',
         'is_subclaims_with_operator': 'bool',
         'modification_date': 'datetime',
-        'user_assignments': 'list[AccessPermissionAssignment]'
+        'scim_external_id': 'str',
+        'scim_managed': 'bool',
+        'scim_provisioned_access_id': 'str',
+        'user_assignments': 'list[AccessPermissionAssignment]',
+        'version': 'str'
     }
 
     attribute_map = {
         'account_id': 'account_id',
         'creation_date': 'creation_date',
         'description': 'description',
+        'granted_roles': 'granted_roles',
+        'granted_roles_known': 'granted_roles_known',
         'group_alias': 'group_alias',
         'group_id': 'group_id',
         'group_name': 'group_name',
         'is_subclaims_with_operator': 'is_subclaims_with_operator',
         'modification_date': 'modification_date',
-        'user_assignments': 'user_assignments'
+        'scim_external_id': 'scim_external_id',
+        'scim_managed': 'scim_managed',
+        'scim_provisioned_access_id': 'scim_provisioned_access_id',
+        'user_assignments': 'user_assignments',
+        'version': 'version'
     }
 
-    def __init__(self, account_id=None, creation_date=None, description=None, group_alias=None, group_id=None, group_name=None, is_subclaims_with_operator=None, modification_date=None, user_assignments=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, account_id=None, creation_date=None, description=None, granted_roles=None, granted_roles_known=None, group_alias=None, group_id=None, group_name=None, is_subclaims_with_operator=None, modification_date=None, scim_external_id=None, scim_managed=None, scim_provisioned_access_id=None, user_assignments=None, version=None, local_vars_configuration=None):  # noqa: E501
         """GetGroupOutput - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -66,12 +78,18 @@ class GetGroupOutput(object):
         self._account_id = None
         self._creation_date = None
         self._description = None
+        self._granted_roles = None
+        self._granted_roles_known = None
         self._group_alias = None
         self._group_id = None
         self._group_name = None
         self._is_subclaims_with_operator = None
         self._modification_date = None
+        self._scim_external_id = None
+        self._scim_managed = None
+        self._scim_provisioned_access_id = None
         self._user_assignments = None
+        self._version = None
         self.discriminator = None
 
         if account_id is not None:
@@ -80,6 +98,10 @@ class GetGroupOutput(object):
             self.creation_date = creation_date
         if description is not None:
             self.description = description
+        if granted_roles is not None:
+            self.granted_roles = granted_roles
+        if granted_roles_known is not None:
+            self.granted_roles_known = granted_roles_known
         if group_alias is not None:
             self.group_alias = group_alias
         if group_id is not None:
@@ -90,8 +112,16 @@ class GetGroupOutput(object):
             self.is_subclaims_with_operator = is_subclaims_with_operator
         if modification_date is not None:
             self.modification_date = modification_date
+        if scim_external_id is not None:
+            self.scim_external_id = scim_external_id
+        if scim_managed is not None:
+            self.scim_managed = scim_managed
+        if scim_provisioned_access_id is not None:
+            self.scim_provisioned_access_id = scim_provisioned_access_id
         if user_assignments is not None:
             self.user_assignments = user_assignments
+        if version is not None:
+            self.version = version
 
     @property
     def account_id(self):
@@ -155,6 +185,52 @@ class GetGroupOutput(object):
         """
 
         self._description = description
+
+    @property
+    def granted_roles(self):
+        """Gets the granted_roles of this GetGroupOutput.  # noqa: E501
+
+        GrantedRoles are the roles a member of this group gets at login, through the group's akeyless_groups claim. Read-only, and filled only for the SCIM bearer that owns the group: a group name on its own says nothing about the access it carries, which is what a reviewer certifying the entitlement has to judge.  # noqa: E501
+
+        :return: The granted_roles of this GetGroupOutput.  # noqa: E501
+        :rtype: list[GrantedRole]
+        """
+        return self._granted_roles
+
+    @granted_roles.setter
+    def granted_roles(self, granted_roles):
+        """Sets the granted_roles of this GetGroupOutput.
+
+        GrantedRoles are the roles a member of this group gets at login, through the group's akeyless_groups claim. Read-only, and filled only for the SCIM bearer that owns the group: a group name on its own says nothing about the access it carries, which is what a reviewer certifying the entitlement has to judge.  # noqa: E501
+
+        :param granted_roles: The granted_roles of this GetGroupOutput.  # noqa: E501
+        :type: list[GrantedRole]
+        """
+
+        self._granted_roles = granted_roles
+
+    @property
+    def granted_roles_known(self):
+        """Gets the granted_roles_known of this GetGroupOutput.  # noqa: E501
+
+        GrantedRolesKnown is set when GrantedRoles was computed, so an empty list means \"grants no role\" rather than \"not computed\" (another caller, or an older UAM).  # noqa: E501
+
+        :return: The granted_roles_known of this GetGroupOutput.  # noqa: E501
+        :rtype: bool
+        """
+        return self._granted_roles_known
+
+    @granted_roles_known.setter
+    def granted_roles_known(self, granted_roles_known):
+        """Sets the granted_roles_known of this GetGroupOutput.
+
+        GrantedRolesKnown is set when GrantedRoles was computed, so an empty list means \"grants no role\" rather than \"not computed\" (another caller, or an older UAM).  # noqa: E501
+
+        :param granted_roles_known: The granted_roles_known of this GetGroupOutput.  # noqa: E501
+        :type: bool
+        """
+
+        self._granted_roles_known = granted_roles_known
 
     @property
     def group_alias(self):
@@ -262,6 +338,69 @@ class GetGroupOutput(object):
         self._modification_date = modification_date
 
     @property
+    def scim_external_id(self):
+        """Gets the scim_external_id of this GetGroupOutput.  # noqa: E501
+
+
+        :return: The scim_external_id of this GetGroupOutput.  # noqa: E501
+        :rtype: str
+        """
+        return self._scim_external_id
+
+    @scim_external_id.setter
+    def scim_external_id(self, scim_external_id):
+        """Sets the scim_external_id of this GetGroupOutput.
+
+
+        :param scim_external_id: The scim_external_id of this GetGroupOutput.  # noqa: E501
+        :type: str
+        """
+
+        self._scim_external_id = scim_external_id
+
+    @property
+    def scim_managed(self):
+        """Gets the scim_managed of this GetGroupOutput.  # noqa: E501
+
+
+        :return: The scim_managed of this GetGroupOutput.  # noqa: E501
+        :rtype: bool
+        """
+        return self._scim_managed
+
+    @scim_managed.setter
+    def scim_managed(self, scim_managed):
+        """Sets the scim_managed of this GetGroupOutput.
+
+
+        :param scim_managed: The scim_managed of this GetGroupOutput.  # noqa: E501
+        :type: bool
+        """
+
+        self._scim_managed = scim_managed
+
+    @property
+    def scim_provisioned_access_id(self):
+        """Gets the scim_provisioned_access_id of this GetGroupOutput.  # noqa: E501
+
+
+        :return: The scim_provisioned_access_id of this GetGroupOutput.  # noqa: E501
+        :rtype: str
+        """
+        return self._scim_provisioned_access_id
+
+    @scim_provisioned_access_id.setter
+    def scim_provisioned_access_id(self, scim_provisioned_access_id):
+        """Sets the scim_provisioned_access_id of this GetGroupOutput.
+
+
+        :param scim_provisioned_access_id: The scim_provisioned_access_id of this GetGroupOutput.  # noqa: E501
+        :type: str
+        """
+
+        self._scim_provisioned_access_id = scim_provisioned_access_id
+
+    @property
     def user_assignments(self):
         """Gets the user_assignments of this GetGroupOutput.  # noqa: E501
 
@@ -281,6 +420,29 @@ class GetGroupOutput(object):
         """
 
         self._user_assignments = user_assignments
+
+    @property
+    def version(self):
+        """Gets the version of this GetGroupOutput.  # noqa: E501
+
+        Version identifies the member assignments this group was read with. Pass it back as UpdateGroupInput.ExpectedVersion to make the update conditional.  # noqa: E501
+
+        :return: The version of this GetGroupOutput.  # noqa: E501
+        :rtype: str
+        """
+        return self._version
+
+    @version.setter
+    def version(self, version):
+        """Sets the version of this GetGroupOutput.
+
+        Version identifies the member assignments this group was read with. Pass it back as UpdateGroupInput.ExpectedVersion to make the update conditional.  # noqa: E501
+
+        :param version: The version of this GetGroupOutput.  # noqa: E501
+        :type: str
+        """
+
+        self._version = version
 
     def to_dict(self):
         """Returns the model properties as a dict"""

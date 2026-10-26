@@ -385,7 +385,7 @@ class RotatedSecretUpdateAzure(object):
     def application_id(self):
         """Gets the application_id of this RotatedSecretUpdateAzure.  # noqa: E501
 
-        Id of the azure app that hold the serect to be rotated (relevant only for rotator-type=api-key & authentication-credentials=use-target-creds)  # noqa: E501
+        Id of the azure app that hold the serect to be rotated (relevant only for rotator-type=api-key)  # noqa: E501
 
         :return: The application_id of this RotatedSecretUpdateAzure.  # noqa: E501
         :rtype: str
@@ -396,7 +396,7 @@ class RotatedSecretUpdateAzure(object):
     def application_id(self, application_id):
         """Sets the application_id of this RotatedSecretUpdateAzure.
 
-        Id of the azure app that hold the serect to be rotated (relevant only for rotator-type=api-key & authentication-credentials=use-target-creds)  # noqa: E501
+        Id of the azure app that hold the serect to be rotated (relevant only for rotator-type=api-key)  # noqa: E501
 
         :param application_id: The application_id of this RotatedSecretUpdateAzure.  # noqa: E501
         :type: str

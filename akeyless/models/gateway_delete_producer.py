@@ -77,12 +77,9 @@ class GatewayDeleteProducer(object):
         self._uid_token = None
         self.discriminator = None
 
-        if ara_enabled is not None:
-            self.ara_enabled = ara_enabled
-        if enable_agentic_runtime_authority is not None:
-            self.enable_agentic_runtime_authority = enable_agentic_runtime_authority
-        if enable_ai_quorum is not None:
-            self.enable_ai_quorum = enable_ai_quorum
+        self.ara_enabled = ara_enabled
+        self.enable_agentic_runtime_authority = enable_agentic_runtime_authority
+        self.enable_ai_quorum = enable_ai_quorum
         if input_rule is not None:
             self.input_rule = input_rule
         if json is not None:
@@ -90,8 +87,7 @@ class GatewayDeleteProducer(object):
         self.name = name
         if output_rule is not None:
             self.output_rule = output_rule
-        if skip_dry_run is not None:
-            self.skip_dry_run = skip_dry_run
+        self.skip_dry_run = skip_dry_run
         if token is not None:
             self.token = token
         if uid_token is not None:

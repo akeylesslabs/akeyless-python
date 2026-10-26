@@ -4,11 +4,13 @@ uscList is a command that lists the secrets of a Universal Secrets Connector
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**aws_account_id** | **str** | The AWS account ID to list secrets from. Required when the connector spans multiple account IDs. | [optional] 
 **gcp_project_id** | **str** | The GCP project to list secrets from (GCP only). Required when the connector spans multiple projects or uses folder/organization scope. | [optional] 
 **json** | **bool** | Set output format to JSON | [optional] [default to False]
 **object_type** | **str** |  | [optional] 
 **page_size** | **int** | Optional: number of items requested per response. When set, response may include next_token | [optional] 
 **page_token** | **str** | Optional: continuation token returned by a previous usc list --page-size call | [optional] 
+**region** | **str** | The AWS region to list secrets from (AWS only). If empty, the target&#39;s region is used. | [optional] 
 **search** | **str** | Search query used to match secret names and paths. | [optional] 
 **token** | **str** | Authentication token (see &#x60;/auth&#x60; and &#x60;/configure&#x60;) | [optional] 
 **uid_token** | **str** | The universal identity token, Required only for universal_identity authentication | [optional] 

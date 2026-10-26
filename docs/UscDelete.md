@@ -4,10 +4,12 @@ uscDelete is a command that deletes a secret from a Universal Secrets Connector
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**aws_account_id** | **str** | The AWS account ID that contains the secret. Required when the connector spans multiple account IDs. | [optional] 
 **force_delete** | **bool** | Force delete objects that are soft deleted by default (relavent only for Azure target) | [optional] 
 **json** | **bool** | Set output format to JSON | [optional] [default to False]
 **namespace** | **str** | The namespace (relevant for Hashi vault target) | [optional] 
 **object_type** | **str** |  | [optional] 
+**region** | **str** | The AWS region that contains the secret (AWS only). If empty, uses the target region. | [optional] 
 **secret_id** | **str** | The universal secrets id (or name, for AWS, Azure, K8s or Hashi vault targets) to delete | 
 **selected_repositories** | **str** | GitHub selected repositories. For repository scope: repo name. For repository-environment scope: repo/env (format: repo-name/env-name). Required when multiple repos/envs configured. | [optional] 
 **token** | **str** | Authentication token (see &#x60;/auth&#x60; and &#x60;/configure&#x60;) | [optional] 

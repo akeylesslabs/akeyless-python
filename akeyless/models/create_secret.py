@@ -183,8 +183,7 @@ class CreateSecret(object):
             self.provider_type = provider_type
         if accessibility is not None:
             self.accessibility = accessibility
-        if ara_enabled is not None:
-            self.ara_enabled = ara_enabled
+        self.ara_enabled = ara_enabled
         if change_event is not None:
             self.change_event = change_event
         if custom_field is not None:
@@ -193,10 +192,8 @@ class CreateSecret(object):
             self.delete_protection = delete_protection
         if description is not None:
             self.description = description
-        if enable_agentic_runtime_authority is not None:
-            self.enable_agentic_runtime_authority = enable_agentic_runtime_authority
-        if enable_ai_quorum is not None:
-            self.enable_ai_quorum = enable_ai_quorum
+        self.enable_agentic_runtime_authority = enable_agentic_runtime_authority
+        self.enable_ai_quorum = enable_ai_quorum
         if format is not None:
             self.format = format
         if host_provider is not None:

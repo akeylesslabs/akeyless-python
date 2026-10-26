@@ -65,6 +65,7 @@ class UpdateItem(object):
         'secure_access_add_host': 'list[str]',
         'secure_access_allow_external_user': 'str',
         'secure_access_allow_port_forwading': 'bool',
+        'secure_access_allow_port_forwarding': 'bool',
         'secure_access_api': 'str',
         'secure_access_aws_account_id': 'str',
         'secure_access_aws_native_cli': 'bool',
@@ -132,6 +133,7 @@ class UpdateItem(object):
         'secure_access_add_host': 'secure-access-add-host',
         'secure_access_allow_external_user': 'secure-access-allow-external-user',
         'secure_access_allow_port_forwading': 'secure-access-allow-port-forwading',
+        'secure_access_allow_port_forwarding': 'secure-access-allow-port-forwarding',
         'secure_access_api': 'secure-access-api',
         'secure_access_aws_account_id': 'secure-access-aws-account-id',
         'secure_access_aws_native_cli': 'secure-access-aws-native-cli',
@@ -167,7 +169,7 @@ class UpdateItem(object):
         'use_tags_as_filter': 'use-tags-as-filter'
     }
 
-    def __init__(self, provider_type=None, accessibility='regular', add_tag=None, ara_enabled=None, cert_file_data=None, certificate_format=None, change_event=None, delete_protection=None, description='default_metadata', enable_agentic_runtime_authority=None, enable_ai_quorum=None, expiration_event_in=None, gcp_sm_regions=None, host_provider=None, input_rule=None, item_custom_fields=None, json=False, lock_during_sra_session=None, lock_on_read=None, lock_ttl=None, max_versions=None, name=None, new_metadata='default_metadata', new_name=None, output_rule=None, rm_tag=None, rotate_after_disconnect=None, rotate_on_unlock=None, secure_access_add_host=None, secure_access_allow_external_user=None, secure_access_allow_port_forwading=None, secure_access_api=None, secure_access_aws_account_id=None, secure_access_aws_native_cli=None, secure_access_aws_region=None, secure_access_bastion_api=None, secure_access_bastion_issuer=None, secure_access_bastion_ssh=None, secure_access_certificate_issuer=None, secure_access_cluster_endpoint=None, secure_access_dashboard_url=None, secure_access_db_name=None, secure_access_db_schema=None, secure_access_enable=None, secure_access_enforce_hosts_restriction=None, secure_access_gateway=None, secure_access_host=None, secure_access_rd_gateway_server=None, secure_access_rdp_domain=None, secure_access_rdp_user=None, secure_access_rm_host=None, secure_access_ssh=None, secure_access_ssh_creds=None, secure_access_ssh_creds_user=None, secure_access_url=None, secure_access_use_internal_bastion=None, secure_access_use_internal_ssh_access=None, secure_access_web_browsing=None, secure_access_web_proxy=None, target=None, token=None, uid_token=None, usc_tags=None, use_tags_as_filter=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, provider_type=None, accessibility='regular', add_tag=None, ara_enabled=None, cert_file_data=None, certificate_format=None, change_event=None, delete_protection=None, description='default_metadata', enable_agentic_runtime_authority=None, enable_ai_quorum=None, expiration_event_in=None, gcp_sm_regions=None, host_provider=None, input_rule=None, item_custom_fields=None, json=False, lock_during_sra_session=None, lock_on_read=None, lock_ttl=None, max_versions=None, name=None, new_metadata='default_metadata', new_name=None, output_rule=None, rm_tag=None, rotate_after_disconnect=None, rotate_on_unlock=None, secure_access_add_host=None, secure_access_allow_external_user=None, secure_access_allow_port_forwading=None, secure_access_allow_port_forwarding=None, secure_access_api=None, secure_access_aws_account_id=None, secure_access_aws_native_cli=None, secure_access_aws_region=None, secure_access_bastion_api=None, secure_access_bastion_issuer=None, secure_access_bastion_ssh=None, secure_access_certificate_issuer=None, secure_access_cluster_endpoint=None, secure_access_dashboard_url=None, secure_access_db_name=None, secure_access_db_schema=None, secure_access_enable=None, secure_access_enforce_hosts_restriction=None, secure_access_gateway=None, secure_access_host=None, secure_access_rd_gateway_server=None, secure_access_rdp_domain=None, secure_access_rdp_user=None, secure_access_rm_host=None, secure_access_ssh=None, secure_access_ssh_creds=None, secure_access_ssh_creds_user=None, secure_access_url=None, secure_access_use_internal_bastion=None, secure_access_use_internal_ssh_access=None, secure_access_web_browsing=None, secure_access_web_proxy=None, target=None, token=None, uid_token=None, usc_tags=None, use_tags_as_filter=None, local_vars_configuration=None):  # noqa: E501
         """UpdateItem - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -204,6 +206,7 @@ class UpdateItem(object):
         self._secure_access_add_host = None
         self._secure_access_allow_external_user = None
         self._secure_access_allow_port_forwading = None
+        self._secure_access_allow_port_forwarding = None
         self._secure_access_api = None
         self._secure_access_aws_account_id = None
         self._secure_access_aws_native_cli = None
@@ -245,8 +248,7 @@ class UpdateItem(object):
             self.accessibility = accessibility
         if add_tag is not None:
             self.add_tag = add_tag
-        if ara_enabled is not None:
-            self.ara_enabled = ara_enabled
+        self.ara_enabled = ara_enabled
         if cert_file_data is not None:
             self.cert_file_data = cert_file_data
         if certificate_format is not None:
@@ -257,10 +259,8 @@ class UpdateItem(object):
             self.delete_protection = delete_protection
         if description is not None:
             self.description = description
-        if enable_agentic_runtime_authority is not None:
-            self.enable_agentic_runtime_authority = enable_agentic_runtime_authority
-        if enable_ai_quorum is not None:
-            self.enable_ai_quorum = enable_ai_quorum
+        self.enable_agentic_runtime_authority = enable_agentic_runtime_authority
+        self.enable_ai_quorum = enable_ai_quorum
         if expiration_event_in is not None:
             self.expiration_event_in = expiration_event_in
         if gcp_sm_regions is not None:
@@ -298,14 +298,13 @@ class UpdateItem(object):
             self.secure_access_add_host = secure_access_add_host
         if secure_access_allow_external_user is not None:
             self.secure_access_allow_external_user = secure_access_allow_external_user
-        if secure_access_allow_port_forwading is not None:
-            self.secure_access_allow_port_forwading = secure_access_allow_port_forwading
+        self.secure_access_allow_port_forwading = secure_access_allow_port_forwading
+        self.secure_access_allow_port_forwarding = secure_access_allow_port_forwarding
         if secure_access_api is not None:
             self.secure_access_api = secure_access_api
         if secure_access_aws_account_id is not None:
             self.secure_access_aws_account_id = secure_access_aws_account_id
-        if secure_access_aws_native_cli is not None:
-            self.secure_access_aws_native_cli = secure_access_aws_native_cli
+        self.secure_access_aws_native_cli = secure_access_aws_native_cli
         if secure_access_aws_region is not None:
             self.secure_access_aws_region = secure_access_aws_region
         if secure_access_bastion_api is not None:
@@ -326,8 +325,7 @@ class UpdateItem(object):
             self.secure_access_db_schema = secure_access_db_schema
         if secure_access_enable is not None:
             self.secure_access_enable = secure_access_enable
-        if secure_access_enforce_hosts_restriction is not None:
-            self.secure_access_enforce_hosts_restriction = secure_access_enforce_hosts_restriction
+        self.secure_access_enforce_hosts_restriction = secure_access_enforce_hosts_restriction
         if secure_access_gateway is not None:
             self.secure_access_gateway = secure_access_gateway
         if secure_access_host is not None:
@@ -348,14 +346,10 @@ class UpdateItem(object):
             self.secure_access_ssh_creds_user = secure_access_ssh_creds_user
         if secure_access_url is not None:
             self.secure_access_url = secure_access_url
-        if secure_access_use_internal_bastion is not None:
-            self.secure_access_use_internal_bastion = secure_access_use_internal_bastion
-        if secure_access_use_internal_ssh_access is not None:
-            self.secure_access_use_internal_ssh_access = secure_access_use_internal_ssh_access
-        if secure_access_web_browsing is not None:
-            self.secure_access_web_browsing = secure_access_web_browsing
-        if secure_access_web_proxy is not None:
-            self.secure_access_web_proxy = secure_access_web_proxy
+        self.secure_access_use_internal_bastion = secure_access_use_internal_bastion
+        self.secure_access_use_internal_ssh_access = secure_access_use_internal_ssh_access
+        self.secure_access_web_browsing = secure_access_web_browsing
+        self.secure_access_web_proxy = secure_access_web_proxy
         if target is not None:
             self.target = target
         if token is not None:
@@ -1059,7 +1053,7 @@ class UpdateItem(object):
     def secure_access_allow_port_forwading(self):
         """Gets the secure_access_allow_port_forwading of this UpdateItem.  # noqa: E501
 
-        Enable Port forwarding while using CLI access (relevant only for EKS/GKE/K8s Dynamic-Secret)  # noqa: E501
+        Deprecated: old misspelled param, kept for backwards-compatibility. Hidden from help; use secure-access-allow-port-forwarding instead.  # noqa: E501
 
         :return: The secure_access_allow_port_forwading of this UpdateItem.  # noqa: E501
         :rtype: bool
@@ -1070,13 +1064,36 @@ class UpdateItem(object):
     def secure_access_allow_port_forwading(self, secure_access_allow_port_forwading):
         """Sets the secure_access_allow_port_forwading of this UpdateItem.
 
-        Enable Port forwarding while using CLI access (relevant only for EKS/GKE/K8s Dynamic-Secret)  # noqa: E501
+        Deprecated: old misspelled param, kept for backwards-compatibility. Hidden from help; use secure-access-allow-port-forwarding instead.  # noqa: E501
 
         :param secure_access_allow_port_forwading: The secure_access_allow_port_forwading of this UpdateItem.  # noqa: E501
         :type: bool
         """
 
         self._secure_access_allow_port_forwading = secure_access_allow_port_forwading
+
+    @property
+    def secure_access_allow_port_forwarding(self):
+        """Gets the secure_access_allow_port_forwarding of this UpdateItem.  # noqa: E501
+
+        Enable Port forwarding while using CLI access (relevant only for EKS/GKE/K8s Dynamic-Secret)  # noqa: E501
+
+        :return: The secure_access_allow_port_forwarding of this UpdateItem.  # noqa: E501
+        :rtype: bool
+        """
+        return self._secure_access_allow_port_forwarding
+
+    @secure_access_allow_port_forwarding.setter
+    def secure_access_allow_port_forwarding(self, secure_access_allow_port_forwarding):
+        """Sets the secure_access_allow_port_forwarding of this UpdateItem.
+
+        Enable Port forwarding while using CLI access (relevant only for EKS/GKE/K8s Dynamic-Secret)  # noqa: E501
+
+        :param secure_access_allow_port_forwarding: The secure_access_allow_port_forwarding of this UpdateItem.  # noqa: E501
+        :type: bool
+        """
+
+        self._secure_access_allow_port_forwarding = secure_access_allow_port_forwarding
 
     @property
     def secure_access_api(self):

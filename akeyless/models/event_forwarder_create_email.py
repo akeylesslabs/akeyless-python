@@ -386,7 +386,7 @@ class EventForwarderCreateEmail(object):
     def override_url(self):
         """Gets the override_url of this EventForwarderCreateEmail.  # noqa: E501
 
-        Override Akeyless default URL with your Gateway url (port 18888)  # noqa: E501
+        Override the Akeyless event link with the cluster URL of an active gateway in this account  # noqa: E501
 
         :return: The override_url of this EventForwarderCreateEmail.  # noqa: E501
         :rtype: str
@@ -397,7 +397,7 @@ class EventForwarderCreateEmail(object):
     def override_url(self, override_url):
         """Sets the override_url of this EventForwarderCreateEmail.
 
-        Override Akeyless default URL with your Gateway url (port 18888)  # noqa: E501
+        Override the Akeyless event link with the cluster URL of an active gateway in this account  # noqa: E501
 
         :param override_url: The override_url of this EventForwarderCreateEmail.  # noqa: E501
         :type: str

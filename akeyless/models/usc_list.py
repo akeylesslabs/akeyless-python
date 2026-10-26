@@ -34,11 +34,13 @@ class UscList(object):
                             and the value is json key in definition.
     """
     openapi_types = {
+        'aws_account_id': 'str',
         'gcp_project_id': 'str',
         'json': 'bool',
         'object_type': 'str',
         'page_size': 'int',
         'page_token': 'str',
+        'region': 'str',
         'search': 'str',
         'token': 'str',
         'uid_token': 'str',
@@ -46,34 +48,40 @@ class UscList(object):
     }
 
     attribute_map = {
+        'aws_account_id': 'aws-account-id',
         'gcp_project_id': 'gcp-project-id',
         'json': 'json',
         'object_type': 'object-type',
         'page_size': 'page-size',
         'page_token': 'page-token',
+        'region': 'region',
         'search': 'search',
         'token': 'token',
         'uid_token': 'uid-token',
         'usc_name': 'usc-name'
     }
 
-    def __init__(self, gcp_project_id=None, json=False, object_type=None, page_size=None, page_token=None, search=None, token=None, uid_token=None, usc_name=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, aws_account_id=None, gcp_project_id=None, json=False, object_type=None, page_size=None, page_token=None, region=None, search=None, token=None, uid_token=None, usc_name=None, local_vars_configuration=None):  # noqa: E501
         """UscList - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
+        self._aws_account_id = None
         self._gcp_project_id = None
         self._json = None
         self._object_type = None
         self._page_size = None
         self._page_token = None
+        self._region = None
         self._search = None
         self._token = None
         self._uid_token = None
         self._usc_name = None
         self.discriminator = None
 
+        if aws_account_id is not None:
+            self.aws_account_id = aws_account_id
         if gcp_project_id is not None:
             self.gcp_project_id = gcp_project_id
         if json is not None:
@@ -84,6 +92,8 @@ class UscList(object):
             self.page_size = page_size
         if page_token is not None:
             self.page_token = page_token
+        if region is not None:
+            self.region = region
         if search is not None:
             self.search = search
         if token is not None:
@@ -91,6 +101,29 @@ class UscList(object):
         if uid_token is not None:
             self.uid_token = uid_token
         self.usc_name = usc_name
+
+    @property
+    def aws_account_id(self):
+        """Gets the aws_account_id of this UscList.  # noqa: E501
+
+        The AWS account ID to list secrets from. Required when the connector spans multiple account IDs.  # noqa: E501
+
+        :return: The aws_account_id of this UscList.  # noqa: E501
+        :rtype: str
+        """
+        return self._aws_account_id
+
+    @aws_account_id.setter
+    def aws_account_id(self, aws_account_id):
+        """Sets the aws_account_id of this UscList.
+
+        The AWS account ID to list secrets from. Required when the connector spans multiple account IDs.  # noqa: E501
+
+        :param aws_account_id: The aws_account_id of this UscList.  # noqa: E501
+        :type: str
+        """
+
+        self._aws_account_id = aws_account_id
 
     @property
     def gcp_project_id(self):
@@ -204,6 +237,29 @@ class UscList(object):
         """
 
         self._page_token = page_token
+
+    @property
+    def region(self):
+        """Gets the region of this UscList.  # noqa: E501
+
+        The AWS region to list secrets from (AWS only). If empty, the target's region is used.  # noqa: E501
+
+        :return: The region of this UscList.  # noqa: E501
+        :rtype: str
+        """
+        return self._region
+
+    @region.setter
+    def region(self, region):
+        """Sets the region of this UscList.
+
+        The AWS region to list secrets from (AWS only). If empty, the target's region is used.  # noqa: E501
+
+        :param region: The region of this UscList.  # noqa: E501
+        :type: str
+        """
+
+        self._region = region
 
     @property
     def search(self):

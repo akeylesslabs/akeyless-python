@@ -60,6 +60,7 @@ class AuthMethodAccessInfo(object):
         'product_types': 'list[str]',
         'rules_type': 'str',
         'saml_access_rules': 'SAMLAccessRules',
+        'scim': 'ScimSettings',
         'sub_claims_delimiters': 'list[str]',
         'uid_expiration_events': 'list[UidExpirationEvent]',
         'universal_identity_access_rules': 'UniversalIdentityAccessRules'
@@ -92,12 +93,13 @@ class AuthMethodAccessInfo(object):
         'product_types': 'product_types',
         'rules_type': 'rules_type',
         'saml_access_rules': 'saml_access_rules',
+        'scim': 'scim',
         'sub_claims_delimiters': 'sub_claims_delimiters',
         'uid_expiration_events': 'uid_expiration_events',
         'universal_identity_access_rules': 'universal_identity_access_rules'
     }
 
-    def __init__(self, access_expires=None, access_id_alias=None, alicloud_access_rules=None, allowed_client_type=None, api_key_access_rules=None, audit_logs_claims=None, aws_iam_access_rules=None, azure_ad_access_rules=None, cert_access_rules=None, cidr_whitelist=None, email_pass_access_rules=None, enforce_client_type=None, force_sub_claims=None, gcp_access_rules=None, gw_cidr_whitelist=None, huawei_access_rules=None, jwt_ttl=None, k8s_access_rules=None, kerberos_access_rules=None, ldap_access_rules=None, oauth2_access_rules=None, oci_access_rules=None, oidc_access_rules=None, product_types=None, rules_type=None, saml_access_rules=None, sub_claims_delimiters=None, uid_expiration_events=None, universal_identity_access_rules=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, access_expires=None, access_id_alias=None, alicloud_access_rules=None, allowed_client_type=None, api_key_access_rules=None, audit_logs_claims=None, aws_iam_access_rules=None, azure_ad_access_rules=None, cert_access_rules=None, cidr_whitelist=None, email_pass_access_rules=None, enforce_client_type=None, force_sub_claims=None, gcp_access_rules=None, gw_cidr_whitelist=None, huawei_access_rules=None, jwt_ttl=None, k8s_access_rules=None, kerberos_access_rules=None, ldap_access_rules=None, oauth2_access_rules=None, oci_access_rules=None, oidc_access_rules=None, product_types=None, rules_type=None, saml_access_rules=None, scim=None, sub_claims_delimiters=None, uid_expiration_events=None, universal_identity_access_rules=None, local_vars_configuration=None):  # noqa: E501
         """AuthMethodAccessInfo - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -129,6 +131,7 @@ class AuthMethodAccessInfo(object):
         self._product_types = None
         self._rules_type = None
         self._saml_access_rules = None
+        self._scim = None
         self._sub_claims_delimiters = None
         self._uid_expiration_events = None
         self._universal_identity_access_rules = None
@@ -186,6 +189,8 @@ class AuthMethodAccessInfo(object):
             self.rules_type = rules_type
         if saml_access_rules is not None:
             self.saml_access_rules = saml_access_rules
+        if scim is not None:
+            self.scim = scim
         if sub_claims_delimiters is not None:
             self.sub_claims_delimiters = sub_claims_delimiters
         if uid_expiration_events is not None:
@@ -746,6 +751,27 @@ class AuthMethodAccessInfo(object):
         """
 
         self._saml_access_rules = saml_access_rules
+
+    @property
+    def scim(self):
+        """Gets the scim of this AuthMethodAccessInfo.  # noqa: E501
+
+
+        :return: The scim of this AuthMethodAccessInfo.  # noqa: E501
+        :rtype: ScimSettings
+        """
+        return self._scim
+
+    @scim.setter
+    def scim(self, scim):
+        """Sets the scim of this AuthMethodAccessInfo.
+
+
+        :param scim: The scim of this AuthMethodAccessInfo.  # noqa: E501
+        :type: ScimSettings
+        """
+
+        self._scim = scim
 
     @property
     def sub_claims_delimiters(self):

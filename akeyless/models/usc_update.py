@@ -34,12 +34,14 @@ class UscUpdate(object):
                             and the value is json key in definition.
     """
     openapi_types = {
+        'aws_account_id': 'str',
         'binary_value': 'bool',
         'description': 'str',
         'json': 'bool',
         'namespace': 'str',
         'object_type': 'str',
         'pfx_password': 'str',
+        'region': 'str',
         'remote_secret_activation_date': 'str',
         'remote_secret_expires': 'str',
         'secret_id': 'str',
@@ -53,12 +55,14 @@ class UscUpdate(object):
     }
 
     attribute_map = {
+        'aws_account_id': 'aws-account-id',
         'binary_value': 'binary-value',
         'description': 'description',
         'json': 'json',
         'namespace': 'namespace',
         'object_type': 'object-type',
         'pfx_password': 'pfx-password',
+        'region': 'region',
         'remote_secret_activation_date': 'remote-secret-activation-date',
         'remote_secret_expires': 'remote-secret-expires',
         'secret_id': 'secret-id',
@@ -71,18 +75,20 @@ class UscUpdate(object):
         'value': 'value'
     }
 
-    def __init__(self, binary_value=None, description=None, json=False, namespace=None, object_type=None, pfx_password=None, remote_secret_activation_date=None, remote_secret_expires=None, secret_id=None, selected_repositories=None, tags=None, token=None, uid_token=None, usc_encryption_key=None, usc_name=None, value=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, aws_account_id=None, binary_value=None, description=None, json=False, namespace=None, object_type=None, pfx_password=None, region=None, remote_secret_activation_date=None, remote_secret_expires=None, secret_id=None, selected_repositories=None, tags=None, token=None, uid_token=None, usc_encryption_key=None, usc_name=None, value=None, local_vars_configuration=None):  # noqa: E501
         """UscUpdate - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
+        self._aws_account_id = None
         self._binary_value = None
         self._description = None
         self._json = None
         self._namespace = None
         self._object_type = None
         self._pfx_password = None
+        self._region = None
         self._remote_secret_activation_date = None
         self._remote_secret_expires = None
         self._secret_id = None
@@ -95,6 +101,8 @@ class UscUpdate(object):
         self._value = None
         self.discriminator = None
 
+        if aws_account_id is not None:
+            self.aws_account_id = aws_account_id
         if binary_value is not None:
             self.binary_value = binary_value
         if description is not None:
@@ -107,6 +115,8 @@ class UscUpdate(object):
             self.object_type = object_type
         if pfx_password is not None:
             self.pfx_password = pfx_password
+        if region is not None:
+            self.region = region
         if remote_secret_activation_date is not None:
             self.remote_secret_activation_date = remote_secret_activation_date
         if remote_secret_expires is not None:
@@ -124,6 +134,29 @@ class UscUpdate(object):
             self.usc_encryption_key = usc_encryption_key
         self.usc_name = usc_name
         self.value = value
+
+    @property
+    def aws_account_id(self):
+        """Gets the aws_account_id of this UscUpdate.  # noqa: E501
+
+        The AWS account ID that contains the secret. Required when the connector spans multiple account IDs.  # noqa: E501
+
+        :return: The aws_account_id of this UscUpdate.  # noqa: E501
+        :rtype: str
+        """
+        return self._aws_account_id
+
+    @aws_account_id.setter
+    def aws_account_id(self, aws_account_id):
+        """Sets the aws_account_id of this UscUpdate.
+
+        The AWS account ID that contains the secret. Required when the connector spans multiple account IDs.  # noqa: E501
+
+        :param aws_account_id: The aws_account_id of this UscUpdate.  # noqa: E501
+        :type: str
+        """
+
+        self._aws_account_id = aws_account_id
 
     @property
     def binary_value(self):
@@ -260,6 +293,29 @@ class UscUpdate(object):
         """
 
         self._pfx_password = pfx_password
+
+    @property
+    def region(self):
+        """Gets the region of this UscUpdate.  # noqa: E501
+
+        The AWS region that contains the secret (AWS only). If empty, uses the target region.  # noqa: E501
+
+        :return: The region of this UscUpdate.  # noqa: E501
+        :rtype: str
+        """
+        return self._region
+
+    @region.setter
+    def region(self, region):
+        """Sets the region of this UscUpdate.
+
+        The AWS region that contains the secret (AWS only). If empty, uses the target region.  # noqa: E501
+
+        :param region: The region of this UscUpdate.  # noqa: E501
+        :type: str
+        """
+
+        self._region = region
 
     @property
     def remote_secret_activation_date(self):

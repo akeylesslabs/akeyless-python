@@ -34,10 +34,12 @@ class UscGet(object):
                             and the value is json key in definition.
     """
     openapi_types = {
+        'aws_account_id': 'str',
         'gcp_project_id': 'str',
         'json': 'bool',
         'namespace': 'str',
         'object_type': 'str',
+        'region': 'str',
         'secret_id': 'str',
         'selected_repositories': 'str',
         'token': 'str',
@@ -47,10 +49,12 @@ class UscGet(object):
     }
 
     attribute_map = {
+        'aws_account_id': 'aws-account-id',
         'gcp_project_id': 'gcp-project-id',
         'json': 'json',
         'namespace': 'namespace',
         'object_type': 'object-type',
+        'region': 'region',
         'secret_id': 'secret-id',
         'selected_repositories': 'selected-repositories',
         'token': 'token',
@@ -59,16 +63,18 @@ class UscGet(object):
         'version_id': 'version-id'
     }
 
-    def __init__(self, gcp_project_id=None, json=False, namespace=None, object_type=None, secret_id=None, selected_repositories=None, token=None, uid_token=None, usc_name=None, version_id=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, aws_account_id=None, gcp_project_id=None, json=False, namespace=None, object_type=None, region=None, secret_id=None, selected_repositories=None, token=None, uid_token=None, usc_name=None, version_id=None, local_vars_configuration=None):  # noqa: E501
         """UscGet - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
+        self._aws_account_id = None
         self._gcp_project_id = None
         self._json = None
         self._namespace = None
         self._object_type = None
+        self._region = None
         self._secret_id = None
         self._selected_repositories = None
         self._token = None
@@ -77,6 +83,8 @@ class UscGet(object):
         self._version_id = None
         self.discriminator = None
 
+        if aws_account_id is not None:
+            self.aws_account_id = aws_account_id
         if gcp_project_id is not None:
             self.gcp_project_id = gcp_project_id
         if json is not None:
@@ -85,6 +93,8 @@ class UscGet(object):
             self.namespace = namespace
         if object_type is not None:
             self.object_type = object_type
+        if region is not None:
+            self.region = region
         self.secret_id = secret_id
         if selected_repositories is not None:
             self.selected_repositories = selected_repositories
@@ -95,6 +105,29 @@ class UscGet(object):
         self.usc_name = usc_name
         if version_id is not None:
             self.version_id = version_id
+
+    @property
+    def aws_account_id(self):
+        """Gets the aws_account_id of this UscGet.  # noqa: E501
+
+        The AWS account ID that contains the secret. Required when the connector spans multiple account IDs.  # noqa: E501
+
+        :return: The aws_account_id of this UscGet.  # noqa: E501
+        :rtype: str
+        """
+        return self._aws_account_id
+
+    @aws_account_id.setter
+    def aws_account_id(self, aws_account_id):
+        """Sets the aws_account_id of this UscGet.
+
+        The AWS account ID that contains the secret. Required when the connector spans multiple account IDs.  # noqa: E501
+
+        :param aws_account_id: The aws_account_id of this UscGet.  # noqa: E501
+        :type: str
+        """
+
+        self._aws_account_id = aws_account_id
 
     @property
     def gcp_project_id(self):
@@ -185,6 +218,29 @@ class UscGet(object):
         """
 
         self._object_type = object_type
+
+    @property
+    def region(self):
+        """Gets the region of this UscGet.  # noqa: E501
+
+        The AWS region that contains the secret (AWS only). If empty, uses the target region.  # noqa: E501
+
+        :return: The region of this UscGet.  # noqa: E501
+        :rtype: str
+        """
+        return self._region
+
+    @region.setter
+    def region(self, region):
+        """Sets the region of this UscGet.
+
+        The AWS region that contains the secret (AWS only). If empty, uses the target region.  # noqa: E501
+
+        :param region: The region of this UscGet.  # noqa: E501
+        :type: str
+        """
+
+        self._region = region
 
     @property
     def secret_id(self):

@@ -34,6 +34,7 @@ class CreateUSC(object):
                             and the value is json key in definition.
     """
     openapi_types = {
+        'aws_organization_id': 'str',
         'azure_kv_name': 'str',
         'delete_protection': 'str',
         'description': 'str',
@@ -62,6 +63,7 @@ class CreateUSC(object):
     }
 
     attribute_map = {
+        'aws_organization_id': 'aws-organization-id',
         'azure_kv_name': 'azure-kv-name',
         'delete_protection': 'delete_protection',
         'description': 'description',
@@ -89,12 +91,13 @@ class CreateUSC(object):
         'use_tags_as_filter': 'use-tags-as-filter'
     }
 
-    def __init__(self, azure_kv_name=None, delete_protection=None, description=None, environment_names=None, gcp_folder_id=None, gcp_organization_id=None, gcp_project_id=None, gcp_scope='project', gcp_sm_regions=None, github_scope='repository', item_custom_fields=None, json=False, k8s_namespace=None, name=None, organization_name=None, repository_access='public', repository_names=None, tags=None, target_to_associate=None, token=None, uid_token=None, usc_prefix=None, usc_tags=None, use_prefix_as_filter='false', use_tags_as_filter=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, aws_organization_id=None, azure_kv_name=None, delete_protection=None, description=None, environment_names=None, gcp_folder_id=None, gcp_organization_id=None, gcp_project_id=None, gcp_scope='project', gcp_sm_regions=None, github_scope='repository', item_custom_fields=None, json=False, k8s_namespace=None, name=None, organization_name=None, repository_access='public', repository_names=None, tags=None, target_to_associate=None, token=None, uid_token=None, usc_prefix=None, usc_tags=None, use_prefix_as_filter='false', use_tags_as_filter=None, local_vars_configuration=None):  # noqa: E501
         """CreateUSC - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
+        self._aws_organization_id = None
         self._azure_kv_name = None
         self._delete_protection = None
         self._description = None
@@ -122,6 +125,8 @@ class CreateUSC(object):
         self._use_tags_as_filter = None
         self.discriminator = None
 
+        if aws_organization_id is not None:
+            self.aws_organization_id = aws_organization_id
         if azure_kv_name is not None:
             self.azure_kv_name = azure_kv_name
         if delete_protection is not None:
@@ -170,6 +175,29 @@ class CreateUSC(object):
             self.use_prefix_as_filter = use_prefix_as_filter
         if use_tags_as_filter is not None:
             self.use_tags_as_filter = use_tags_as_filter
+
+    @property
+    def aws_organization_id(self):
+        """Gets the aws_organization_id of this CreateUSC.  # noqa: E501
+
+        The AWS Organization ID to use for a multi-account connector. Requires a target in the AWS Management Account or a delegated administrator account.  # noqa: E501
+
+        :return: The aws_organization_id of this CreateUSC.  # noqa: E501
+        :rtype: str
+        """
+        return self._aws_organization_id
+
+    @aws_organization_id.setter
+    def aws_organization_id(self, aws_organization_id):
+        """Sets the aws_organization_id of this CreateUSC.
+
+        The AWS Organization ID to use for a multi-account connector. Requires a target in the AWS Management Account or a delegated administrator account.  # noqa: E501
+
+        :param aws_organization_id: The aws_organization_id of this CreateUSC.  # noqa: E501
+        :type: str
+        """
+
+        self._aws_organization_id = aws_organization_id
 
     @property
     def azure_kv_name(self):

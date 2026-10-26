@@ -14,7 +14,7 @@
 from setuptools import setup, find_packages  # noqa: H301
 
 NAME = "akeyless"
-VERSION = "5.0.39"
+VERSION = "5.0.40"
 # To install the library, run the following
 #
 # python setup.py install
@@ -31,6 +31,8 @@ setup(
     author="Akeyless",
     author_email="support@akeyless.io",
     url="https://www.akeyless.io/",
+    license="Apache-2.0",
+    classifiers=["License :: OSI Approved :: Apache Software License"],
     keywords=["OpenAPI", "OpenAPI-Generator", "Akeyless API"],
     install_requires=REQUIRES,
     packages=find_packages(exclude=["test", "tests"]),

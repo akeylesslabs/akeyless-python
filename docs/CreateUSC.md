@@ -4,6 +4,7 @@ CreateUSC is a command that creates a Universal Secrets Connector
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**aws_organization_id** | **str** | The AWS Organization ID to use for a multi-account connector. Requires a target in the AWS Management Account or a delegated administrator account. | [optional] 
 **azure_kv_name** | **str** | Azure Key Vault name (Relevant only for Azure targets) | [optional] 
 **delete_protection** | **str** | Protection from accidental deletion of this object [true/false] | [optional] 
 **description** | **str** | Description of the Universal Secrets Connector | [optional] 

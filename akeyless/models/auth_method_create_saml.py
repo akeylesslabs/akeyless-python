@@ -51,6 +51,10 @@ class AuthMethodCreateSAML(object):
         'jwt_ttl': 'int',
         'name': 'str',
         'product_type': 'list[str]',
+        'scim_bearer_access_id': 'str',
+        'scim_enabled': 'str',
+        'scim_endpoint': 'str',
+        'scim_gateway_url': 'str',
         'subclaims_delimiters': 'list[str]',
         'token': 'str',
         'uid_token': 'str',
@@ -76,6 +80,10 @@ class AuthMethodCreateSAML(object):
         'jwt_ttl': 'jwt-ttl',
         'name': 'name',
         'product_type': 'product-type',
+        'scim_bearer_access_id': 'scim-bearer-access-id',
+        'scim_enabled': 'scim-enabled',
+        'scim_endpoint': 'scim-endpoint',
+        'scim_gateway_url': 'scim-gateway-url',
         'subclaims_delimiters': 'subclaims-delimiters',
         'token': 'token',
         'uid_token': 'uid-token',
@@ -83,7 +91,7 @@ class AuthMethodCreateSAML(object):
         'use_dedicated_saml_urls': 'use-dedicated-saml-urls'
     }
 
-    def __init__(self, access_expires=0, allowed_client_type=None, allowed_redirect_uri=None, audit_logs_claims=None, bound_ips=None, delete_protection=None, description=None, expiration_event_in=None, force_sub_claims=None, gateway_url=None, gw_bound_ips=None, idp_metadata_url=None, idp_metadata_xml_data=None, json=False, jwt_ttl=0, name=None, product_type=None, subclaims_delimiters=None, token=None, uid_token=None, unique_identifier=None, use_dedicated_saml_urls=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, access_expires=0, allowed_client_type=None, allowed_redirect_uri=None, audit_logs_claims=None, bound_ips=None, delete_protection=None, description=None, expiration_event_in=None, force_sub_claims=None, gateway_url=None, gw_bound_ips=None, idp_metadata_url=None, idp_metadata_xml_data=None, json=False, jwt_ttl=0, name=None, product_type=None, scim_bearer_access_id=None, scim_enabled=None, scim_endpoint=None, scim_gateway_url=None, subclaims_delimiters=None, token=None, uid_token=None, unique_identifier=None, use_dedicated_saml_urls=None, local_vars_configuration=None):  # noqa: E501
         """AuthMethodCreateSAML - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -106,6 +114,10 @@ class AuthMethodCreateSAML(object):
         self._jwt_ttl = None
         self._name = None
         self._product_type = None
+        self._scim_bearer_access_id = None
+        self._scim_enabled = None
+        self._scim_endpoint = None
+        self._scim_gateway_url = None
         self._subclaims_delimiters = None
         self._token = None
         self._uid_token = None
@@ -146,6 +158,14 @@ class AuthMethodCreateSAML(object):
         self.name = name
         if product_type is not None:
             self.product_type = product_type
+        if scim_bearer_access_id is not None:
+            self.scim_bearer_access_id = scim_bearer_access_id
+        if scim_enabled is not None:
+            self.scim_enabled = scim_enabled
+        if scim_endpoint is not None:
+            self.scim_endpoint = scim_endpoint
+        if scim_gateway_url is not None:
+            self.scim_gateway_url = scim_gateway_url
         if subclaims_delimiters is not None:
             self.subclaims_delimiters = subclaims_delimiters
         if token is not None:
@@ -548,6 +568,98 @@ class AuthMethodCreateSAML(object):
         """
 
         self._product_type = product_type
+
+    @property
+    def scim_bearer_access_id(self):
+        """Gets the scim_bearer_access_id of this AuthMethodCreateSAML.  # noqa: E501
+
+        Access ID of the API Key auth method the IdP uses as the SCIM bearer  # noqa: E501
+
+        :return: The scim_bearer_access_id of this AuthMethodCreateSAML.  # noqa: E501
+        :rtype: str
+        """
+        return self._scim_bearer_access_id
+
+    @scim_bearer_access_id.setter
+    def scim_bearer_access_id(self, scim_bearer_access_id):
+        """Sets the scim_bearer_access_id of this AuthMethodCreateSAML.
+
+        Access ID of the API Key auth method the IdP uses as the SCIM bearer  # noqa: E501
+
+        :param scim_bearer_access_id: The scim_bearer_access_id of this AuthMethodCreateSAML.  # noqa: E501
+        :type: str
+        """
+
+        self._scim_bearer_access_id = scim_bearer_access_id
+
+    @property
+    def scim_enabled(self):
+        """Gets the scim_enabled of this AuthMethodCreateSAML.  # noqa: E501
+
+        Enable SCIM provisioning for this auth method [true/false]  # noqa: E501
+
+        :return: The scim_enabled of this AuthMethodCreateSAML.  # noqa: E501
+        :rtype: str
+        """
+        return self._scim_enabled
+
+    @scim_enabled.setter
+    def scim_enabled(self, scim_enabled):
+        """Sets the scim_enabled of this AuthMethodCreateSAML.
+
+        Enable SCIM provisioning for this auth method [true/false]  # noqa: E501
+
+        :param scim_enabled: The scim_enabled of this AuthMethodCreateSAML.  # noqa: E501
+        :type: str
+        """
+
+        self._scim_enabled = scim_enabled
+
+    @property
+    def scim_endpoint(self):
+        """Gets the scim_endpoint of this AuthMethodCreateSAML.  # noqa: E501
+
+        Where the IdP reaches the SCIM endpoint [public/private]. public is served by Akeyless, private by your own Akeyless Gateway  # noqa: E501
+
+        :return: The scim_endpoint of this AuthMethodCreateSAML.  # noqa: E501
+        :rtype: str
+        """
+        return self._scim_endpoint
+
+    @scim_endpoint.setter
+    def scim_endpoint(self, scim_endpoint):
+        """Sets the scim_endpoint of this AuthMethodCreateSAML.
+
+        Where the IdP reaches the SCIM endpoint [public/private]. public is served by Akeyless, private by your own Akeyless Gateway  # noqa: E501
+
+        :param scim_endpoint: The scim_endpoint of this AuthMethodCreateSAML.  # noqa: E501
+        :type: str
+        """
+
+        self._scim_endpoint = scim_endpoint
+
+    @property
+    def scim_gateway_url(self):
+        """Gets the scim_gateway_url of this AuthMethodCreateSAML.  # noqa: E501
+
+        URL of the Akeyless Gateway that serves the SCIM endpoint to the IdP, for example https://gateway.example.com:8000. Required for the private endpoint  # noqa: E501
+
+        :return: The scim_gateway_url of this AuthMethodCreateSAML.  # noqa: E501
+        :rtype: str
+        """
+        return self._scim_gateway_url
+
+    @scim_gateway_url.setter
+    def scim_gateway_url(self, scim_gateway_url):
+        """Sets the scim_gateway_url of this AuthMethodCreateSAML.
+
+        URL of the Akeyless Gateway that serves the SCIM endpoint to the IdP, for example https://gateway.example.com:8000. Required for the private endpoint  # noqa: E501
+
+        :param scim_gateway_url: The scim_gateway_url of this AuthMethodCreateSAML.  # noqa: E501
+        :type: str
+        """
+
+        self._scim_gateway_url = scim_gateway_url
 
     @property
     def subclaims_delimiters(self):

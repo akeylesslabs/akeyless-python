@@ -178,8 +178,7 @@ class GatewayCreateProducerLdap(object):
 
         if provider_type is not None:
             self.provider_type = provider_type
-        if ara_enabled is not None:
-            self.ara_enabled = ara_enabled
+        self.ara_enabled = ara_enabled
         if bind_dn is not None:
             self.bind_dn = bind_dn
         if bind_dn_password is not None:
@@ -188,10 +187,8 @@ class GatewayCreateProducerLdap(object):
             self.custom_username_template = custom_username_template
         if delete_protection is not None:
             self.delete_protection = delete_protection
-        if enable_agentic_runtime_authority is not None:
-            self.enable_agentic_runtime_authority = enable_agentic_runtime_authority
-        if enable_ai_quorum is not None:
-            self.enable_ai_quorum = enable_ai_quorum
+        self.enable_agentic_runtime_authority = enable_agentic_runtime_authority
+        self.enable_ai_quorum = enable_ai_quorum
         if external_username is not None:
             self.external_username = external_username
         if fixed_user_claim_keyname is not None:
@@ -233,8 +230,7 @@ class GatewayCreateProducerLdap(object):
             self.secure_access_rd_gateway_server = secure_access_rd_gateway_server
         if secure_access_rdp_domain is not None:
             self.secure_access_rdp_domain = secure_access_rdp_domain
-        if skip_dry_run is not None:
-            self.skip_dry_run = skip_dry_run
+        self.skip_dry_run = skip_dry_run
         if tags is not None:
             self.tags = tags
         if target is not None:

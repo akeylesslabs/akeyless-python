@@ -116,14 +116,11 @@ class GatewayCreateProducerGithub(object):
         self._uid_token = None
         self.discriminator = None
 
-        if ara_enabled is not None:
-            self.ara_enabled = ara_enabled
+        self.ara_enabled = ara_enabled
         if delete_protection is not None:
             self.delete_protection = delete_protection
-        if enable_agentic_runtime_authority is not None:
-            self.enable_agentic_runtime_authority = enable_agentic_runtime_authority
-        if enable_ai_quorum is not None:
-            self.enable_ai_quorum = enable_ai_quorum
+        self.enable_agentic_runtime_authority = enable_agentic_runtime_authority
+        self.enable_ai_quorum = enable_ai_quorum
         if github_app_id is not None:
             self.github_app_id = github_app_id
         if github_app_private_key is not None:
@@ -145,8 +142,7 @@ class GatewayCreateProducerGithub(object):
         self.name = name
         if output_rule is not None:
             self.output_rule = output_rule
-        if skip_dry_run is not None:
-            self.skip_dry_run = skip_dry_run
+        self.skip_dry_run = skip_dry_run
         if tags is not None:
             self.tags = tags
         if target_name is not None:

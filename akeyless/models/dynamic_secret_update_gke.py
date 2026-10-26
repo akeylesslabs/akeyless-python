@@ -52,6 +52,7 @@ class DynamicSecretUpdateGke(object):
         'output_rule': 'list[str]',
         'producer_encryption_key_name': 'str',
         'secure_access_allow_port_forwading': 'bool',
+        'secure_access_allow_port_forwarding': 'bool',
         'secure_access_bastion_issuer': 'str',
         'secure_access_certificate_issuer': 'str',
         'secure_access_cluster_endpoint': 'str',
@@ -85,6 +86,7 @@ class DynamicSecretUpdateGke(object):
         'output_rule': 'output-rule',
         'producer_encryption_key_name': 'producer-encryption-key-name',
         'secure_access_allow_port_forwading': 'secure-access-allow-port-forwading',
+        'secure_access_allow_port_forwarding': 'secure-access-allow-port-forwarding',
         'secure_access_bastion_issuer': 'secure-access-bastion-issuer',
         'secure_access_certificate_issuer': 'secure-access-certificate-issuer',
         'secure_access_cluster_endpoint': 'secure-access-cluster-endpoint',
@@ -99,7 +101,7 @@ class DynamicSecretUpdateGke(object):
         'user_ttl': 'user-ttl'
     }
 
-    def __init__(self, ara_enabled=None, delete_protection=None, description=None, enable_agentic_runtime_authority=None, enable_ai_quorum=None, gke_account_key=None, gke_cluster_cert=None, gke_cluster_endpoint=None, gke_cluster_name=None, gke_service_account_email=None, input_rule=None, item_custom_fields=None, json=False, name=None, new_name=None, output_rule=None, producer_encryption_key_name=None, secure_access_allow_port_forwading=None, secure_access_bastion_issuer=None, secure_access_certificate_issuer=None, secure_access_cluster_endpoint=None, secure_access_delay=None, secure_access_enable=None, secure_access_web=False, skip_dry_run=None, tags=None, target_name=None, token=None, uid_token=None, user_ttl='60m', local_vars_configuration=None):  # noqa: E501
+    def __init__(self, ara_enabled=None, delete_protection=None, description=None, enable_agentic_runtime_authority=None, enable_ai_quorum=None, gke_account_key=None, gke_cluster_cert=None, gke_cluster_endpoint=None, gke_cluster_name=None, gke_service_account_email=None, input_rule=None, item_custom_fields=None, json=False, name=None, new_name=None, output_rule=None, producer_encryption_key_name=None, secure_access_allow_port_forwading=None, secure_access_allow_port_forwarding=None, secure_access_bastion_issuer=None, secure_access_certificate_issuer=None, secure_access_cluster_endpoint=None, secure_access_delay=None, secure_access_enable=None, secure_access_web=False, skip_dry_run=None, tags=None, target_name=None, token=None, uid_token=None, user_ttl='60m', local_vars_configuration=None):  # noqa: E501
         """DynamicSecretUpdateGke - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -123,6 +125,7 @@ class DynamicSecretUpdateGke(object):
         self._output_rule = None
         self._producer_encryption_key_name = None
         self._secure_access_allow_port_forwading = None
+        self._secure_access_allow_port_forwarding = None
         self._secure_access_bastion_issuer = None
         self._secure_access_certificate_issuer = None
         self._secure_access_cluster_endpoint = None
@@ -172,6 +175,8 @@ class DynamicSecretUpdateGke(object):
             self.producer_encryption_key_name = producer_encryption_key_name
         if secure_access_allow_port_forwading is not None:
             self.secure_access_allow_port_forwading = secure_access_allow_port_forwading
+        if secure_access_allow_port_forwarding is not None:
+            self.secure_access_allow_port_forwarding = secure_access_allow_port_forwarding
         if secure_access_bastion_issuer is not None:
             self.secure_access_bastion_issuer = secure_access_bastion_issuer
         if secure_access_certificate_issuer is not None:
@@ -594,7 +599,7 @@ class DynamicSecretUpdateGke(object):
     def secure_access_allow_port_forwading(self):
         """Gets the secure_access_allow_port_forwading of this DynamicSecretUpdateGke.  # noqa: E501
 
-        Enable Port forwarding while using CLI access  # noqa: E501
+        Deprecated: old misspelled param, kept for backwards-compatibility. Hidden from help; use secure-access-allow-port-forwarding instead.  # noqa: E501
 
         :return: The secure_access_allow_port_forwading of this DynamicSecretUpdateGke.  # noqa: E501
         :rtype: bool
@@ -605,13 +610,36 @@ class DynamicSecretUpdateGke(object):
     def secure_access_allow_port_forwading(self, secure_access_allow_port_forwading):
         """Sets the secure_access_allow_port_forwading of this DynamicSecretUpdateGke.
 
-        Enable Port forwarding while using CLI access  # noqa: E501
+        Deprecated: old misspelled param, kept for backwards-compatibility. Hidden from help; use secure-access-allow-port-forwarding instead.  # noqa: E501
 
         :param secure_access_allow_port_forwading: The secure_access_allow_port_forwading of this DynamicSecretUpdateGke.  # noqa: E501
         :type: bool
         """
 
         self._secure_access_allow_port_forwading = secure_access_allow_port_forwading
+
+    @property
+    def secure_access_allow_port_forwarding(self):
+        """Gets the secure_access_allow_port_forwarding of this DynamicSecretUpdateGke.  # noqa: E501
+
+        Enable Port forwarding while using CLI access  # noqa: E501
+
+        :return: The secure_access_allow_port_forwarding of this DynamicSecretUpdateGke.  # noqa: E501
+        :rtype: bool
+        """
+        return self._secure_access_allow_port_forwarding
+
+    @secure_access_allow_port_forwarding.setter
+    def secure_access_allow_port_forwarding(self, secure_access_allow_port_forwarding):
+        """Sets the secure_access_allow_port_forwarding of this DynamicSecretUpdateGke.
+
+        Enable Port forwarding while using CLI access  # noqa: E501
+
+        :param secure_access_allow_port_forwarding: The secure_access_allow_port_forwarding of this DynamicSecretUpdateGke.  # noqa: E501
+        :type: bool
+        """
+
+        self._secure_access_allow_port_forwarding = secure_access_allow_port_forwarding
 
     @property
     def secure_access_bastion_issuer(self):

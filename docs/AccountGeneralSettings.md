@@ -23,6 +23,7 @@ Name | Type | Description | Notes
 **email_customization** | [**EmailCustomization**](EmailCustomization.md) |  | [optional] 
 **enable_request_for_access** | **bool** |  | [optional] 
 **enable_search_history** | **bool** |  | [optional] 
+**event_forwarder_allowed_email_domains** | **list[str]** | EventForwarderAllowedEmailDomains lists extra recipient domains for email event forwarders. The signup email domain is always allowed as well. Account-settings updates leave this field unchanged. | [optional] 
 **hide_personal_folder** | **bool** |  | [optional] 
 **hide_secret_reveal_copy** | **bool** |  | [optional] 
 **hide_static_password** | **bool** |  | [optional] 

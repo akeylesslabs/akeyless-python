@@ -115,17 +115,14 @@ class GatewayCreateProducerCustom(object):
 
         if admin_rotation_interval_days is not None:
             self.admin_rotation_interval_days = admin_rotation_interval_days
-        if ara_enabled is not None:
-            self.ara_enabled = ara_enabled
+        self.ara_enabled = ara_enabled
         self.create_sync_url = create_sync_url
         if delete_protection is not None:
             self.delete_protection = delete_protection
         if enable_admin_rotation is not None:
             self.enable_admin_rotation = enable_admin_rotation
-        if enable_agentic_runtime_authority is not None:
-            self.enable_agentic_runtime_authority = enable_agentic_runtime_authority
-        if enable_ai_quorum is not None:
-            self.enable_ai_quorum = enable_ai_quorum
+        self.enable_agentic_runtime_authority = enable_agentic_runtime_authority
+        self.enable_ai_quorum = enable_ai_quorum
         if input_rule is not None:
             self.input_rule = input_rule
         if item_custom_fields is not None:
@@ -142,8 +139,7 @@ class GatewayCreateProducerCustom(object):
         self.revoke_sync_url = revoke_sync_url
         if rotate_sync_url is not None:
             self.rotate_sync_url = rotate_sync_url
-        if skip_dry_run is not None:
-            self.skip_dry_run = skip_dry_run
+        self.skip_dry_run = skip_dry_run
         if tags is not None:
             self.tags = tags
         if timeout_sec is not None:

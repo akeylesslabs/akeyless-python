@@ -53,6 +53,7 @@ class AccountGeneralSettings(object):
         'email_customization': 'EmailCustomization',
         'enable_request_for_access': 'bool',
         'enable_search_history': 'bool',
+        'event_forwarder_allowed_email_domains': 'list[str]',
         'hide_personal_folder': 'bool',
         'hide_secret_reveal_copy': 'bool',
         'hide_static_password': 'bool',
@@ -89,6 +90,7 @@ class AccountGeneralSettings(object):
         'email_customization': 'email_customization',
         'enable_request_for_access': 'enable_request_for_access',
         'enable_search_history': 'enable_search_history',
+        'event_forwarder_allowed_email_domains': 'event_forwarder_allowed_email_domains',
         'hide_personal_folder': 'hide_personal_folder',
         'hide_secret_reveal_copy': 'hide_secret_reveal_copy',
         'hide_static_password': 'hide_static_password',
@@ -105,7 +107,7 @@ class AccountGeneralSettings(object):
         'sharing_policy': 'sharing_policy'
     }
 
-    def __init__(self, account_default_key_item_id=None, account_default_key_name=None, account_file_bytes_used=None, ai_insights=None, ai_quorum=None, allow_auto_fill=None, allow_passkeys=None, allowed_client_types=None, allowed_clients_ips=None, allowed_gateways_ips=None, auth_usage_event=None, certificate_expiration_events=None, data_protection_section=None, default_auth_method=None, default_home_page=None, dynamic_secret_max_ttl=None, email_customization=None, enable_request_for_access=None, enable_search_history=None, hide_personal_folder=None, hide_secret_reveal_copy=None, hide_static_password=None, invalid_characters=None, item_locking=None, item_usage_event=None, lock_default_key=None, password_expiration_info=None, password_policy=None, password_score=None, personal_folder_global_mapping=None, protect_items_by_default=None, rotation_secret_max_interval=None, sharing_policy=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, account_default_key_item_id=None, account_default_key_name=None, account_file_bytes_used=None, ai_insights=None, ai_quorum=None, allow_auto_fill=None, allow_passkeys=None, allowed_client_types=None, allowed_clients_ips=None, allowed_gateways_ips=None, auth_usage_event=None, certificate_expiration_events=None, data_protection_section=None, default_auth_method=None, default_home_page=None, dynamic_secret_max_ttl=None, email_customization=None, enable_request_for_access=None, enable_search_history=None, event_forwarder_allowed_email_domains=None, hide_personal_folder=None, hide_secret_reveal_copy=None, hide_static_password=None, invalid_characters=None, item_locking=None, item_usage_event=None, lock_default_key=None, password_expiration_info=None, password_policy=None, password_score=None, personal_folder_global_mapping=None, protect_items_by_default=None, rotation_secret_max_interval=None, sharing_policy=None, local_vars_configuration=None):  # noqa: E501
         """AccountGeneralSettings - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -130,6 +132,7 @@ class AccountGeneralSettings(object):
         self._email_customization = None
         self._enable_request_for_access = None
         self._enable_search_history = None
+        self._event_forwarder_allowed_email_domains = None
         self._hide_personal_folder = None
         self._hide_secret_reveal_copy = None
         self._hide_static_password = None
@@ -184,6 +187,8 @@ class AccountGeneralSettings(object):
             self.enable_request_for_access = enable_request_for_access
         if enable_search_history is not None:
             self.enable_search_history = enable_search_history
+        if event_forwarder_allowed_email_domains is not None:
+            self.event_forwarder_allowed_email_domains = event_forwarder_allowed_email_domains
         if hide_personal_folder is not None:
             self.hide_personal_folder = hide_personal_folder
         if hide_secret_reveal_copy is not None:
@@ -617,6 +622,29 @@ class AccountGeneralSettings(object):
         """
 
         self._enable_search_history = enable_search_history
+
+    @property
+    def event_forwarder_allowed_email_domains(self):
+        """Gets the event_forwarder_allowed_email_domains of this AccountGeneralSettings.  # noqa: E501
+
+        EventForwarderAllowedEmailDomains lists extra recipient domains for email event forwarders. The signup email domain is always allowed as well. Account-settings updates leave this field unchanged.  # noqa: E501
+
+        :return: The event_forwarder_allowed_email_domains of this AccountGeneralSettings.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._event_forwarder_allowed_email_domains
+
+    @event_forwarder_allowed_email_domains.setter
+    def event_forwarder_allowed_email_domains(self, event_forwarder_allowed_email_domains):
+        """Sets the event_forwarder_allowed_email_domains of this AccountGeneralSettings.
+
+        EventForwarderAllowedEmailDomains lists extra recipient domains for email event forwarders. The signup email domain is always allowed as well. Account-settings updates leave this field unchanged.  # noqa: E501
+
+        :param event_forwarder_allowed_email_domains: The event_forwarder_allowed_email_domains of this AccountGeneralSettings.  # noqa: E501
+        :type: list[str]
+        """
+
+        self._event_forwarder_allowed_email_domains = event_forwarder_allowed_email_domains
 
     @property
     def hide_personal_folder(self):

@@ -67,6 +67,7 @@ class UpdateRotatedSecret(object):
         'same_password': 'str',
         'secure_access_allow_external_user': 'str',
         'secure_access_allow_port_forwading': 'bool',
+        'secure_access_allow_port_forwarding': 'bool',
         'secure_access_aws_account_id': 'str',
         'secure_access_aws_native_cli': 'bool',
         'secure_access_bastion_issuer': 'str',
@@ -129,6 +130,7 @@ class UpdateRotatedSecret(object):
         'same_password': 'same-password',
         'secure_access_allow_external_user': 'secure-access-allow-external-user',
         'secure_access_allow_port_forwading': 'secure-access-allow-port-forwading',
+        'secure_access_allow_port_forwarding': 'secure-access-allow-port-forwarding',
         'secure_access_aws_account_id': 'secure-access-aws-account-id',
         'secure_access_aws_native_cli': 'secure-access-aws-native-cli',
         'secure_access_bastion_issuer': 'secure-access-bastion-issuer',
@@ -157,7 +159,7 @@ class UpdateRotatedSecret(object):
         'user_dn': 'user-dn'
     }
 
-    def __init__(self, provider_type=None, add_tag=None, api_id=None, api_key=None, auto_rotate=None, aws_region=None, custom_payload=None, description='default_metadata', gcp_key=None, grace_rotation=None, host_provider=None, json=False, keep_prev_version=None, key=None, lock_during_sra_session=None, lock_on_read=None, lock_ttl=None, name=None, new_metadata='default_metadata', new_name=None, new_version=None, rm_tag=None, rotate_after_disconnect=None, rotate_on_unlock=None, rotated_password=None, rotated_username=None, rotation_hour=None, rotation_interval=None, rotator_creds_type='use-self-creds', rotator_custom_cmd=None, same_password=None, secure_access_allow_external_user=None, secure_access_allow_port_forwading=None, secure_access_aws_account_id=None, secure_access_aws_native_cli=None, secure_access_bastion_issuer=None, secure_access_certificate_issuer=None, secure_access_db_name=None, secure_access_db_schema=None, secure_access_disable_concurrent_connections=None, secure_access_enable=None, secure_access_enforce_hosts_restriction=None, secure_access_host=None, secure_access_rdp_domain=None, secure_access_rdp_user=None, secure_access_url=None, secure_access_use_internal_bastion=None, secure_access_use_internal_ssh_access=None, secure_access_web=False, secure_access_web_browsing=None, secure_access_web_proxy=None, ssh_password=None, ssh_username=None, storage_account_key_name=None, target=None, token=None, uid_token=None, user_attribute='cn', user_dn=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, provider_type=None, add_tag=None, api_id=None, api_key=None, auto_rotate=None, aws_region=None, custom_payload=None, description='default_metadata', gcp_key=None, grace_rotation=None, host_provider=None, json=False, keep_prev_version=None, key=None, lock_during_sra_session=None, lock_on_read=None, lock_ttl=None, name=None, new_metadata='default_metadata', new_name=None, new_version=None, rm_tag=None, rotate_after_disconnect=None, rotate_on_unlock=None, rotated_password=None, rotated_username=None, rotation_hour=None, rotation_interval=None, rotator_creds_type='use-self-creds', rotator_custom_cmd=None, same_password=None, secure_access_allow_external_user=None, secure_access_allow_port_forwading=None, secure_access_allow_port_forwarding=None, secure_access_aws_account_id=None, secure_access_aws_native_cli=None, secure_access_bastion_issuer=None, secure_access_certificate_issuer=None, secure_access_db_name=None, secure_access_db_schema=None, secure_access_disable_concurrent_connections=None, secure_access_enable=None, secure_access_enforce_hosts_restriction=None, secure_access_host=None, secure_access_rdp_domain=None, secure_access_rdp_user=None, secure_access_url=None, secure_access_use_internal_bastion=None, secure_access_use_internal_ssh_access=None, secure_access_web=False, secure_access_web_browsing=None, secure_access_web_proxy=None, ssh_password=None, ssh_username=None, storage_account_key_name=None, target=None, token=None, uid_token=None, user_attribute='cn', user_dn=None, local_vars_configuration=None):  # noqa: E501
         """UpdateRotatedSecret - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -196,6 +198,7 @@ class UpdateRotatedSecret(object):
         self._same_password = None
         self._secure_access_allow_external_user = None
         self._secure_access_allow_port_forwading = None
+        self._secure_access_allow_port_forwarding = None
         self._secure_access_aws_account_id = None
         self._secure_access_aws_native_cli = None
         self._secure_access_bastion_issuer = None
@@ -287,12 +290,11 @@ class UpdateRotatedSecret(object):
             self.same_password = same_password
         if secure_access_allow_external_user is not None:
             self.secure_access_allow_external_user = secure_access_allow_external_user
-        if secure_access_allow_port_forwading is not None:
-            self.secure_access_allow_port_forwading = secure_access_allow_port_forwading
+        self.secure_access_allow_port_forwading = secure_access_allow_port_forwading
+        self.secure_access_allow_port_forwarding = secure_access_allow_port_forwarding
         if secure_access_aws_account_id is not None:
             self.secure_access_aws_account_id = secure_access_aws_account_id
-        if secure_access_aws_native_cli is not None:
-            self.secure_access_aws_native_cli = secure_access_aws_native_cli
+        self.secure_access_aws_native_cli = secure_access_aws_native_cli
         if secure_access_bastion_issuer is not None:
             self.secure_access_bastion_issuer = secure_access_bastion_issuer
         if secure_access_certificate_issuer is not None:
@@ -305,8 +307,7 @@ class UpdateRotatedSecret(object):
             self.secure_access_disable_concurrent_connections = secure_access_disable_concurrent_connections
         if secure_access_enable is not None:
             self.secure_access_enable = secure_access_enable
-        if secure_access_enforce_hosts_restriction is not None:
-            self.secure_access_enforce_hosts_restriction = secure_access_enforce_hosts_restriction
+        self.secure_access_enforce_hosts_restriction = secure_access_enforce_hosts_restriction
         if secure_access_host is not None:
             self.secure_access_host = secure_access_host
         if secure_access_rdp_domain is not None:
@@ -315,16 +316,12 @@ class UpdateRotatedSecret(object):
             self.secure_access_rdp_user = secure_access_rdp_user
         if secure_access_url is not None:
             self.secure_access_url = secure_access_url
-        if secure_access_use_internal_bastion is not None:
-            self.secure_access_use_internal_bastion = secure_access_use_internal_bastion
-        if secure_access_use_internal_ssh_access is not None:
-            self.secure_access_use_internal_ssh_access = secure_access_use_internal_ssh_access
+        self.secure_access_use_internal_bastion = secure_access_use_internal_bastion
+        self.secure_access_use_internal_ssh_access = secure_access_use_internal_ssh_access
         if secure_access_web is not None:
             self.secure_access_web = secure_access_web
-        if secure_access_web_browsing is not None:
-            self.secure_access_web_browsing = secure_access_web_browsing
-        if secure_access_web_proxy is not None:
-            self.secure_access_web_proxy = secure_access_web_proxy
+        self.secure_access_web_browsing = secure_access_web_browsing
+        self.secure_access_web_proxy = secure_access_web_proxy
         if ssh_password is not None:
             self.ssh_password = ssh_password
         if ssh_username is not None:
@@ -1082,7 +1079,7 @@ class UpdateRotatedSecret(object):
     def secure_access_allow_port_forwading(self):
         """Gets the secure_access_allow_port_forwading of this UpdateRotatedSecret.  # noqa: E501
 
-        Enable Port forwarding while using CLI access (relevant only for EKS/GKE/K8s Dynamic-Secret)  # noqa: E501
+        Deprecated: old misspelled param, kept for backwards-compatibility. Hidden from help; use secure-access-allow-port-forwarding instead.  # noqa: E501
 
         :return: The secure_access_allow_port_forwading of this UpdateRotatedSecret.  # noqa: E501
         :rtype: bool
@@ -1093,13 +1090,36 @@ class UpdateRotatedSecret(object):
     def secure_access_allow_port_forwading(self, secure_access_allow_port_forwading):
         """Sets the secure_access_allow_port_forwading of this UpdateRotatedSecret.
 
-        Enable Port forwarding while using CLI access (relevant only for EKS/GKE/K8s Dynamic-Secret)  # noqa: E501
+        Deprecated: old misspelled param, kept for backwards-compatibility. Hidden from help; use secure-access-allow-port-forwarding instead.  # noqa: E501
 
         :param secure_access_allow_port_forwading: The secure_access_allow_port_forwading of this UpdateRotatedSecret.  # noqa: E501
         :type: bool
         """
 
         self._secure_access_allow_port_forwading = secure_access_allow_port_forwading
+
+    @property
+    def secure_access_allow_port_forwarding(self):
+        """Gets the secure_access_allow_port_forwarding of this UpdateRotatedSecret.  # noqa: E501
+
+        Enable Port forwarding while using CLI access (relevant only for EKS/GKE/K8s Dynamic-Secret)  # noqa: E501
+
+        :return: The secure_access_allow_port_forwarding of this UpdateRotatedSecret.  # noqa: E501
+        :rtype: bool
+        """
+        return self._secure_access_allow_port_forwarding
+
+    @secure_access_allow_port_forwarding.setter
+    def secure_access_allow_port_forwarding(self, secure_access_allow_port_forwarding):
+        """Sets the secure_access_allow_port_forwarding of this UpdateRotatedSecret.
+
+        Enable Port forwarding while using CLI access (relevant only for EKS/GKE/K8s Dynamic-Secret)  # noqa: E501
+
+        :param secure_access_allow_port_forwarding: The secure_access_allow_port_forwarding of this UpdateRotatedSecret.  # noqa: E501
+        :type: bool
+        """
+
+        self._secure_access_allow_port_forwarding = secure_access_allow_port_forwarding
 
     @property
     def secure_access_aws_account_id(self):

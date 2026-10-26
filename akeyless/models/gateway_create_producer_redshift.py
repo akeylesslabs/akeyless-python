@@ -140,18 +140,15 @@ class GatewayCreateProducerRedshift(object):
         self._user_ttl = None
         self.discriminator = None
 
-        if ara_enabled is not None:
-            self.ara_enabled = ara_enabled
+        self.ara_enabled = ara_enabled
         if creation_statements is not None:
             self.creation_statements = creation_statements
         if custom_username_template is not None:
             self.custom_username_template = custom_username_template
         if delete_protection is not None:
             self.delete_protection = delete_protection
-        if enable_agentic_runtime_authority is not None:
-            self.enable_agentic_runtime_authority = enable_agentic_runtime_authority
-        if enable_ai_quorum is not None:
-            self.enable_ai_quorum = enable_ai_quorum
+        self.enable_agentic_runtime_authority = enable_agentic_runtime_authority
+        self.enable_ai_quorum = enable_ai_quorum
         if input_rule is not None:
             self.input_rule = input_rule
         if item_custom_fields is not None:
@@ -179,8 +176,7 @@ class GatewayCreateProducerRedshift(object):
             self.secure_access_enable = secure_access_enable
         if secure_access_host is not None:
             self.secure_access_host = secure_access_host
-        if skip_dry_run is not None:
-            self.skip_dry_run = skip_dry_run
+        self.skip_dry_run = skip_dry_run
         if ssl is not None:
             self.ssl = ssl
         if tags is not None:
