@@ -4,15 +4,13 @@ The official Python client for the [Akeyless](https://www.akeyless.io) secrets m
 
 Akeyless helps teams store, manage, and control access to sensitive data such as API keys, passwords, certificates, and encryption keys, without hardcoding them into applications or config files. This SDK lets you do all of that from Python, so your apps, scripts, and automation pipelines can fetch and manage secrets securely at runtime.
 
-## What you can do with it
+## Secure access for AI agents
 
-- **Manage static secrets**: create, read, update, and delete secrets such as passwords and API keys.
-- **Generate dynamic secrets**: issue short-lived, just-in-time credentials for databases (PostgreSQL, MySQL, MongoDB, and more), cloud providers (AWS, Azure, GCP), Kubernetes, and other services.
-- **Rotate credentials automatically**: set up rotated secrets so long-lived credentials change on a schedule.
-- **Encrypt and tokenize data**: encrypt, decrypt, and tokenize sensitive values using keys managed by Akeyless.
-- **Issue certificates**: manage PKI and SSH certificate issuers.
-- **Control access**: configure authentication methods (API key, AWS IAM, Azure AD, Kubernetes, LDAP, OIDC, SAML, and others), roles, and permissions.
-- **Administer your Gateway**: configure Akeyless Gateways, log forwarding, and event notifications.
+AI agents, LLM apps, and MCP servers need access to databases, cloud services, and APIs, but giving them credentials directly is risky. Anything an agent can see can be leaked, logged, or extracted through prompt injection.
+
+Akeyless solves this with **SecretlessAI** and **Agentic Runtime Authority**. Agents never hold credentials: access is brokered through your Akeyless Gateway, short-lived credentials are injected only for the approved task, and every action is checked against policy and fully audited. There's nothing in the agent's code, context, or memory to steal.
+
+This SDK lets you set up and automate that secure access in Python, right alongside your agent code. Create the roles, permissions, targets, dynamic secrets, and Gateway configuration your agents rely on, all from your Python scripts and pipelines.
 
 ## About this package
 
@@ -22,7 +20,7 @@ This SDK is generated automatically from the Akeyless OpenAPI specification usin
 - Package version: 5.0.40
 - Generator: `org.openapitools.codegen.languages.PythonClientCodegen`
 
-For more information, visit [akeyless.io](https://www.akeyless.io) or the [Akeyless documentation](https://docs.akeyless.io).
+For more information, visit [akeyless.io](https://www.akeyless.io), the [Akeyless documentation](https://docs.akeyless.io), or learn about [AI security with Akeyless](https://docs.akeyless.io/docs/ai-security).
 
 ## Requirements.
 
