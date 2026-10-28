@@ -1,16 +1,6 @@
 # Akeyless Python SDK
 
-The official Python client for the [Akeyless](https://www.akeyless.io) secrets management platform.
-
-Akeyless helps teams store, manage, and control access to sensitive data such as API keys, passwords, certificates, and encryption keys, without hardcoding them into applications or config files. This SDK lets you do all of that from Python, so your apps, scripts, and automation pipelines can fetch and manage secrets securely at runtime.
-
-## Secure access for AI agents
-
-AI agents, LLM apps, and MCP servers need access to databases, cloud services, and APIs, but giving them credentials directly is risky. Anything an agent can see can be leaked, logged, or extracted through prompt injection.
-
-Akeyless solves this with **SecretlessAI** and **Agentic Runtime Authority**. Agents never hold credentials: access is brokered through your Akeyless Gateway, short-lived credentials are injected only for the approved task, and every action is checked against policy and fully audited. There's nothing in the agent's code, context, or memory to steal.
-
-This SDK lets you set up and automate that secure access in Python, right alongside your agent code. Create the roles, permissions, targets, dynamic secrets, and Gateway configuration your agents rely on, all from your Python scripts and pipelines.
+Akeyless helps teams protect secrets, machine identities, and AI agents in one zero-trust platform, securing API keys, passwords, certificates, and encryption keys without ever exposing them in applications, config files, or agent code. This SDK lets you do all of that from Python, so your apps and automation pipelines receive short-lived credentials just in time, while AI agents and MCP servers get brokered access that never puts credentials in their hands, with every request governed by policy and fully audited.
 
 ## About this package
 
