@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **alicloud_target_details** | [**AliCloudTargetDetails**](AliCloudTargetDetails.md) |  | [optional] 
 **anthropic_target_details** | [**AnthropicTargetDetails**](AnthropicTargetDetails.md) |  | [optional] 
 **artifactory_target_details** | [**ArtifactoryTargetDetails**](ArtifactoryTargetDetails.md) |  | [optional] 
+**atlassian_target_details** | [**AtlassianTargetDetails**](AtlassianTargetDetails.md) |  | [optional] 
 **aws_target_details** | [**AWSTargetDetails**](AWSTargetDetails.md) |  | [optional] 
 **azure_target_details** | [**AzureTargetDetails**](AzureTargetDetails.md) |  | [optional] 
 **bedrock_target_details** | [**BedrockTargetDetails**](BedrockTargetDetails.md) |  | [optional] 

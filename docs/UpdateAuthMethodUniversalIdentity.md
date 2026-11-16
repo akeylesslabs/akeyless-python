@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **allowed_client_type** | **list[str]** | limit the auth method usage for specific client types [cli,ui,gateway-admin,sdk,mobile,extension] | [optional] 
 **audit_logs_claims** | **list[str]** | Subclaims to include in audit logs, e.g \&quot;--audit-logs-claims email --audit-logs-claims username\&quot; | [optional] 
 **bound_ips** | **list[str]** | A CIDR whitelist with the IPs that the access is restricted to | [optional] 
-**child_ttl_limit** | **int** | Maximum child token ttl allowed in uid-create-child-token | [optional] [default to 43200]
+**child_ttl_limit** | **int** | Maximum child token ttl allowed in uid-create-child-token. A struct tag cannot hold a constant, so dft must stay equal to types.UniversalIdentityDefaultTTLChildLimit | [optional] [default to 43200]
 **delete_protection** | **str** | Protection from accidental deletion of this object [true/false] | [optional] 
 **deny_inheritance** | **bool** | Deny from root to create children | [optional] 
 **deny_rotate** | **bool** | Deny from the token to rotate | [optional] 
@@ -20,6 +20,7 @@ Name | Type | Description | Notes
 **jwt_ttl** | **int** | Jwt TTL | [optional] [default to 0]
 **name** | **str** | Auth Method name | 
 **new_name** | **str** | Auth Method new name | [optional] 
+**owner** | **str** | Auth Method owner (free text, up to 255 characters). On update, omit to keep the current owner and pass an empty value to clear it | [optional] 
 **product_type** | **list[str]** | Choose the relevant product type for the auth method [sm, sra, pm, dp, ca, ara] | [optional] 
 **token** | **str** | Authentication token (see &#x60;/auth&#x60; and &#x60;/configure&#x60;) | [optional] 
 **tree_length** | **int** | Maximum UID tree depth allowed (child of child of ...) | [optional] [default to 200]

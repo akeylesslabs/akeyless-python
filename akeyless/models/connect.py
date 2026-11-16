@@ -203,7 +203,7 @@ class Connect(object):
     def rc_file_override(self):
         """Gets the rc_file_override of this Connect.  # noqa: E501
 
-        used to override .akeyless-connect.rc in tests  # noqa: E501
+        test only: the rc file to read instead of the home rc files  # noqa: E501
 
         :return: The rc_file_override of this Connect.  # noqa: E501
         :rtype: str
@@ -214,7 +214,7 @@ class Connect(object):
     def rc_file_override(self, rc_file_override):
         """Sets the rc_file_override of this Connect.
 
-        used to override .akeyless-connect.rc in tests  # noqa: E501
+        test only: the rc file to read instead of the home rc files  # noqa: E501
 
         :param rc_file_override: The rc_file_override of this Connect.  # noqa: E501
         :type: str

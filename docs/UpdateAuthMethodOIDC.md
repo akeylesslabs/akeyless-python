@@ -23,6 +23,7 @@ Name | Type | Description | Notes
 **jwt_ttl** | **int** | Jwt TTL | [optional] [default to 0]
 **name** | **str** | Auth Method name | 
 **new_name** | **str** | Auth Method new name | [optional] 
+**owner** | **str** | Auth Method owner (free text, up to 255 characters). On update, omit to keep the current owner and pass an empty value to clear it | [optional] 
 **product_type** | **list[str]** | Choose the relevant product type for the auth method [sm, sra, pm, dp, ca, ara] | [optional] 
 **required_scopes** | **list[str]** | RequiredScopes is a list of required scopes that the oidc method will request from the oidc provider and the user must approve | [optional] 
 **required_scopes_prefix** | **str** | RequiredScopesPrefix is a a prefix to add to all required-scopes when requesting them from the oidc server (for example, azures&#39; Application ID URI) | [optional] 

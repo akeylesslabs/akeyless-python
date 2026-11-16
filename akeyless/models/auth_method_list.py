@@ -36,6 +36,7 @@ class AuthMethodList(object):
     openapi_types = {
         'filter': 'str',
         'json': 'bool',
+        'owner': 'str',
         'pagination_token': 'str',
         'token': 'str',
         'type': 'list[str]',
@@ -45,13 +46,14 @@ class AuthMethodList(object):
     attribute_map = {
         'filter': 'filter',
         'json': 'json',
+        'owner': 'owner',
         'pagination_token': 'pagination-token',
         'token': 'token',
         'type': 'type',
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, filter=None, json=False, pagination_token=None, token=None, type=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, filter=None, json=False, owner=None, pagination_token=None, token=None, type=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """AuthMethodList - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -59,6 +61,7 @@ class AuthMethodList(object):
 
         self._filter = None
         self._json = None
+        self._owner = None
         self._pagination_token = None
         self._token = None
         self._type = None
@@ -69,6 +72,8 @@ class AuthMethodList(object):
             self.filter = filter
         if json is not None:
             self.json = json
+        if owner is not None:
+            self.owner = owner
         if pagination_token is not None:
             self.pagination_token = pagination_token
         if token is not None:
@@ -123,6 +128,29 @@ class AuthMethodList(object):
         """
 
         self._json = json
+
+    @property
+    def owner(self):
+        """Gets the owner of this AuthMethodList.  # noqa: E501
+
+        Filter by auth method owner or part of it  # noqa: E501
+
+        :return: The owner of this AuthMethodList.  # noqa: E501
+        :rtype: str
+        """
+        return self._owner
+
+    @owner.setter
+    def owner(self, owner):
+        """Sets the owner of this AuthMethodList.
+
+        Filter by auth method owner or part of it  # noqa: E501
+
+        :param owner: The owner of this AuthMethodList.  # noqa: E501
+        :type: str
+        """
+
+        self._owner = owner
 
     @property
     def pagination_token(self):

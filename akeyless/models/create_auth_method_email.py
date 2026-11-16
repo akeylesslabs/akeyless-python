@@ -49,6 +49,7 @@ class CreateAuthMethodEmail(object):
         'jwt_ttl': 'int',
         'mfa_type': 'str',
         'name': 'str',
+        'owner': 'str',
         'product_type': 'list[str]',
         'token': 'str',
         'uid_token': 'str'
@@ -70,12 +71,13 @@ class CreateAuthMethodEmail(object):
         'jwt_ttl': 'jwt-ttl',
         'mfa_type': 'mfa-type',
         'name': 'name',
+        'owner': 'owner',
         'product_type': 'product-type',
         'token': 'token',
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, access_expires=0, allowed_client_type=None, audit_logs_claims=None, bound_ips=None, delete_protection=None, description=None, email=None, enable_mfa=None, expiration_event_in=None, force_sub_claims=None, gw_bound_ips=None, json=False, jwt_ttl=0, mfa_type='email', name=None, product_type=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, access_expires=0, allowed_client_type=None, audit_logs_claims=None, bound_ips=None, delete_protection=None, description=None, email=None, enable_mfa=None, expiration_event_in=None, force_sub_claims=None, gw_bound_ips=None, json=False, jwt_ttl=0, mfa_type='email', name=None, owner=None, product_type=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """CreateAuthMethodEmail - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -96,6 +98,7 @@ class CreateAuthMethodEmail(object):
         self._jwt_ttl = None
         self._mfa_type = None
         self._name = None
+        self._owner = None
         self._product_type = None
         self._token = None
         self._uid_token = None
@@ -129,6 +132,7 @@ class CreateAuthMethodEmail(object):
         if mfa_type is not None:
             self.mfa_type = mfa_type
         self.name = name
+        self.owner = owner
         if product_type is not None:
             self.product_type = product_type
         if token is not None:
@@ -484,6 +488,29 @@ class CreateAuthMethodEmail(object):
             raise ValueError("Invalid value for `name`, must not be `None`")  # noqa: E501
 
         self._name = name
+
+    @property
+    def owner(self):
+        """Gets the owner of this CreateAuthMethodEmail.  # noqa: E501
+
+        Auth Method owner (free text, up to 255 characters). On update, omit to keep the current owner and pass an empty value to clear it  # noqa: E501
+
+        :return: The owner of this CreateAuthMethodEmail.  # noqa: E501
+        :rtype: str
+        """
+        return self._owner
+
+    @owner.setter
+    def owner(self, owner):
+        """Sets the owner of this CreateAuthMethodEmail.
+
+        Auth Method owner (free text, up to 255 characters). On update, omit to keep the current owner and pass an empty value to clear it  # noqa: E501
+
+        :param owner: The owner of this CreateAuthMethodEmail.  # noqa: E501
+        :type: str
+        """
+
+        self._owner = owner
 
     @property
     def product_type(self):

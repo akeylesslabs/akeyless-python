@@ -5,6 +5,7 @@ targetCreateDigiCert is a command that creates a new DigiCert target
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **acme_challenge** | **str** | ACME challenge type. Options: [dns] | [optional] [default to 'dns']
+**cert_central_api_key** | **str** | DigiCert CertCentral API key. Optional - when set, certificate renewal reissues the existing DigiCert order instead of placing a new (billable) order. DNS challenge and production endpoints only. On target update pass it again to keep it, omitting it clears it | [optional] 
 **delete_protection** | **str** | Protection from accidental deletion of this object [true/false] | [optional] 
 **description** | **str** | Description of the object | [optional] 
 **digicert_url** | **str** | DigiCert ACME endpoint selector. Options: [us-production/eu-production/us-demo/eu-demo] | [optional] [default to 'us-production']

@@ -34,6 +34,8 @@ class DSProducerDetails(object):
                             and the value is json key in definition.
     """
     openapi_types = {
+        'access_key': 'str',
+        'access_key_id': 'str',
         'access_token_manager_id': 'str',
         'acl_rules': 'list[str]',
         'active': 'bool',
@@ -59,6 +61,17 @@ class DSProducerDetails(object):
         'aerospike_ssl_connection_certificate': 'str',
         'aerospike_ssl_connection_mode': 'bool',
         'agentic_rules': 'AgenticRules',
+        'alicloud_access_mode': 'str',
+        'alicloud_external_id': 'str',
+        'alicloud_role_arns': 'str',
+        'alicloud_session_policy': 'str',
+        'alicloud_set_source_identity': 'bool',
+        'alicloud_site': 'str',
+        'alicloud_user_console_access': 'bool',
+        'alicloud_user_groups': 'str',
+        'alicloud_user_inline_policy': 'str',
+        'alicloud_user_policies': 'str',
+        'alicloud_user_programmatic_access': 'bool',
         'api_key': 'str',
         'api_key_id': 'str',
         'artifactory_admin_apikey': 'str',
@@ -287,6 +300,7 @@ class DSProducerDetails(object):
         'rdp_fixed_user_name_sub_claim_key': 'str',
         'redirect_uris': 'list[str]',
         'redshift_creation_statements': 'str',
+        'region': 'str',
         'restricted_scopes': 'list[str]',
         'revoke_sync_url': 'str',
         'rotate_sync_url': 'str',
@@ -336,6 +350,8 @@ class DSProducerDetails(object):
     }
 
     attribute_map = {
+        'access_key': 'access_key',
+        'access_key_id': 'access_key_id',
         'access_token_manager_id': 'access_token_manager_id',
         'acl_rules': 'acl_rules',
         'active': 'active',
@@ -361,6 +377,17 @@ class DSProducerDetails(object):
         'aerospike_ssl_connection_certificate': 'aerospike_ssl_connection_certificate',
         'aerospike_ssl_connection_mode': 'aerospike_ssl_connection_mode',
         'agentic_rules': 'agentic_rules',
+        'alicloud_access_mode': 'alicloud_access_mode',
+        'alicloud_external_id': 'alicloud_external_id',
+        'alicloud_role_arns': 'alicloud_role_arns',
+        'alicloud_session_policy': 'alicloud_session_policy',
+        'alicloud_set_source_identity': 'alicloud_set_source_identity',
+        'alicloud_site': 'alicloud_site',
+        'alicloud_user_console_access': 'alicloud_user_console_access',
+        'alicloud_user_groups': 'alicloud_user_groups',
+        'alicloud_user_inline_policy': 'alicloud_user_inline_policy',
+        'alicloud_user_policies': 'alicloud_user_policies',
+        'alicloud_user_programmatic_access': 'alicloud_user_programmatic_access',
         'api_key': 'api_key',
         'api_key_id': 'api_key_id',
         'artifactory_admin_apikey': 'artifactory_admin_apikey',
@@ -589,6 +616,7 @@ class DSProducerDetails(object):
         'rdp_fixed_user_name_sub_claim_key': 'rdp_fixed_user_name_sub_claim_key',
         'redirect_uris': 'redirect_uris',
         'redshift_creation_statements': 'redshift_creation_statements',
+        'region': 'region',
         'restricted_scopes': 'restricted_scopes',
         'revoke_sync_url': 'revoke_sync_url',
         'rotate_sync_url': 'rotate_sync_url',
@@ -637,12 +665,14 @@ class DSProducerDetails(object):
         'warn_before_user_expiration_min': 'warn_before_user_expiration_min'
     }
 
-    def __init__(self, access_token_manager_id=None, acl_rules=None, active=None, admin_name=None, admin_pwd=None, admin_rotation_interval_days=None, administrative_port=None, aerospike_admin_username=None, aerospike_client_certificate=None, aerospike_client_id=None, aerospike_client_private_key=None, aerospike_client_secret=None, aerospike_cloud=None, aerospike_cluster_id=None, aerospike_db_server_name=None, aerospike_enable_mtls=None, aerospike_hostname=None, aerospike_namespace=None, aerospike_password=None, aerospike_port=None, aerospike_roles=None, aerospike_skip_server_name_validation=None, aerospike_ssl_connection_certificate=None, aerospike_ssl_connection_mode=None, agentic_rules=None, api_key=None, api_key_id=None, artifactory_admin_apikey=None, artifactory_admin_username=None, artifactory_base_url=None, artifactory_token_audience=None, artifactory_token_scope=None, auth_mode=None, authorization_port=None, aws_access_key_id=None, aws_access_mode=None, aws_external_id=None, aws_region=None, aws_role_arns=None, aws_secret_access_key=None, aws_session_tags=None, aws_session_token=None, aws_transitive_tag_keys=None, aws_user_console_access=None, aws_user_groups=None, aws_user_name=None, aws_user_policies=None, aws_user_programmatic_access=None, azure_administrative_unit=None, azure_app_object_id=None, azure_client_id=None, azure_client_secret=None, azure_cloud=None, azure_fixed_user_name_sub_claim_key=None, azure_fixed_user_only=None, azure_resource_group_name=None, azure_resource_name=None, azure_subscription_id=None, azure_tenant_id=None, azure_user_groups_obj_id=None, azure_user_portal_access=None, azure_user_programmatic_access=None, azure_user_roles_template_id=None, azure_username=None, block_parent_target_access=None, cassandra_creation_statements=None, chef_organizations=None, chef_server_access_mode=None, chef_server_host_name=None, chef_server_key=None, chef_server_port=None, chef_server_url=None, chef_server_username=None, chef_skip_ssl=None, client_authentication_type=None, client_certificate=None, client_key_passphrase=None, client_private_key=None, cloud_service_provider=None, cluster_mode=None, connection_type=None, create_sync_url=None, db_client_id=None, db_client_secret=None, db_host_name=None, db_isolation_level=None, db_max_idle_conns=None, db_max_open_conns=None, db_name=None, db_port=None, db_private_key=None, db_private_key_passphrase=None, db_pwd=None, db_server_certificates=None, db_server_name=None, db_tenant_id=None, db_user_name=None, delete_protection=None, dynamic_secret_id=None, dynamic_secret_key=None, dynamic_secret_name=None, dynamic_secret_type=None, eks_access_key_id=None, eks_assume_role=None, eks_cluster_ca_certificate=None, eks_cluster_endpoint=None, eks_cluster_name=None, eks_region=None, eks_secret_access_key=None, enable_admin_rotation=None, enable_mtls=None, enforce_replay_prevention=None, expiration_date=None, externally_provided_user=None, failure_message=None, fixed_user_only=None, gcp_access_type=None, gcp_fixed_user_claim_keyname=None, gcp_key_algo=None, gcp_project_id=None, gcp_role_bindings=None, gcp_role_names=None, gcp_service_account_email=None, gcp_service_account_key=None, gcp_service_account_key_base64=None, gcp_service_account_key_id=None, gcp_service_account_type=None, gcp_tmp_service_account_name=None, gcp_token_lifetime=None, gcp_token_scope=None, gcp_token_type=None, github_app_id=None, github_app_private_key=None, github_base_url=None, github_installation_id=None, github_installation_token_permissions=None, github_installation_token_repositories=None, github_installation_token_repositories_ids=None, github_organization_name=None, github_repository_path=None, gitlab_access_token=None, gitlab_access_type=None, gitlab_certificate=None, gitlab_group_name=None, gitlab_project_name=None, gitlab_role=None, gitlab_token_scope=None, gitlab_url=None, gke_cluster_ca_certificate=None, gke_cluster_endpoint=None, gke_cluster_name=None, gke_service_account_key=None, gke_service_account_name=None, google_workspace_access_mode=None, google_workspace_admin_name=None, google_workspace_fixed_user_name_sub_claim_key=None, google_workspace_group_name=None, google_workspace_group_role=None, google_workspace_role_name=None, google_workspace_role_scope=None, grace_rotated_secret_key=None, grant_types=None, groups=None, gw_cloud_identity_external_id_opt=None, hanadb_creation_statements=None, hanadb_revocation_statements=None, host_name=None, host_port=None, implementation_type=None, is_fixed_user=None, issuer=None, item_custom_fields_details=None, item_targets_assoc=None, jwks=None, jwks_url=None, k8s_allowed_namespaces=None, k8s_auth_type=None, k8s_bearer_token=None, k8s_client_cert_data=None, k8s_client_key_data=None, k8s_cluster_ca_certificate=None, k8s_cluster_endpoint=None, k8s_cluster_name=None, k8s_dynamic_mode=None, k8s_multiple_doc_yaml_temp_definition=None, k8s_namespace=None, k8s_role_name=None, k8s_role_type=None, k8s_service_account=None, last_admin_rotation=None, ldap_audience=None, ldap_bind_dn=None, ldap_bind_password=None, ldap_certificate=None, ldap_fixed_user_name_sub_claim_key=None, ldap_fixed_user_type=None, ldap_group_dn=None, ldap_token_expiration=None, ldap_url=None, ldap_user_attr=None, ldap_user_dn=None, ldap_username=None, metadata=None, mongodb_atlas_api_private_key=None, mongodb_atlas_api_public_key=None, mongodb_atlas_project_id=None, mongodb_custom_data=None, mongodb_db_name=None, mongodb_default_auth_db=None, mongodb_host_port=None, mongodb_is_atlas=None, mongodb_password=None, mongodb_roles=None, mongodb_scopes=None, mongodb_uri_connection=None, mongodb_uri_options=None, mongodb_username=None, mssql_allowed_db_names=None, mssql_creation_statements=None, mssql_revocation_statements=None, mysql_creation_statements=None, mysql_revocation_statements=None, oauth_access_token=None, oauth_account_id=None, oauth_last_refresh=None, oauth_refresh_token=None, openai_url=None, oracle_creation_statements=None, oracle_revocation_statements=None, oracle_wallet_details=None, organization_id=None, password=None, password_length=None, password_policy=None, password_policy_info=None, payload=None, ping_url=None, postgres_creation_statements=None, postgres_revocation_statements=None, preserve_existing_password_settings=None, privileged_user=None, project_id=None, rabbitmq_server_password=None, rabbitmq_server_uri=None, rabbitmq_server_user=None, rabbitmq_user_conf_permission=None, rabbitmq_user_read_permission=None, rabbitmq_user_tags=None, rabbitmq_user_vhost=None, rabbitmq_user_write_permission=None, rdp_fixed_user_name_sub_claim_key=None, redirect_uris=None, redshift_creation_statements=None, restricted_scopes=None, revoke_sync_url=None, rotate_sync_url=None, scopes=None, secure_remote_access_details=None, session_extension_warn_interval_min=None, sf_account=None, sf_auth_mode=None, sf_key_algo=None, sf_user_role=None, sf_warehouse_name=None, should_stop=None, signing_algorithm=None, skip_dry_run=None, skip_server_name_validation=None, ssl_connection_certificate=None, ssl_connection_mode=None, subject_dn=None, tags=None, timeout_seconds=None, use_gw_cloud_identity=None, use_gw_service_account=None, user_name=None, user_password=None, user_principal_name=None, user_ttl=None, username_length=None, username_policy=None, username_template=None, venafi_allow_subdomains=None, venafi_allowed_domains=None, venafi_api_key=None, venafi_auto_generated_folder=None, venafi_base_url=None, venafi_root_first_in_chain=None, venafi_sign_using_akeyless_pki=None, venafi_signer_key_name=None, venafi_store_private_key=None, venafi_tpp_access_token=None, venafi_tpp_client_id=None, venafi_tpp_password=None, venafi_tpp_refresh_token=None, venafi_tpp_username=None, venafi_use_tpp=None, venafi_zone=None, warn_before_user_expiration_min=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, access_key=None, access_key_id=None, access_token_manager_id=None, acl_rules=None, active=None, admin_name=None, admin_pwd=None, admin_rotation_interval_days=None, administrative_port=None, aerospike_admin_username=None, aerospike_client_certificate=None, aerospike_client_id=None, aerospike_client_private_key=None, aerospike_client_secret=None, aerospike_cloud=None, aerospike_cluster_id=None, aerospike_db_server_name=None, aerospike_enable_mtls=None, aerospike_hostname=None, aerospike_namespace=None, aerospike_password=None, aerospike_port=None, aerospike_roles=None, aerospike_skip_server_name_validation=None, aerospike_ssl_connection_certificate=None, aerospike_ssl_connection_mode=None, agentic_rules=None, alicloud_access_mode=None, alicloud_external_id=None, alicloud_role_arns=None, alicloud_session_policy=None, alicloud_set_source_identity=None, alicloud_site=None, alicloud_user_console_access=None, alicloud_user_groups=None, alicloud_user_inline_policy=None, alicloud_user_policies=None, alicloud_user_programmatic_access=None, api_key=None, api_key_id=None, artifactory_admin_apikey=None, artifactory_admin_username=None, artifactory_base_url=None, artifactory_token_audience=None, artifactory_token_scope=None, auth_mode=None, authorization_port=None, aws_access_key_id=None, aws_access_mode=None, aws_external_id=None, aws_region=None, aws_role_arns=None, aws_secret_access_key=None, aws_session_tags=None, aws_session_token=None, aws_transitive_tag_keys=None, aws_user_console_access=None, aws_user_groups=None, aws_user_name=None, aws_user_policies=None, aws_user_programmatic_access=None, azure_administrative_unit=None, azure_app_object_id=None, azure_client_id=None, azure_client_secret=None, azure_cloud=None, azure_fixed_user_name_sub_claim_key=None, azure_fixed_user_only=None, azure_resource_group_name=None, azure_resource_name=None, azure_subscription_id=None, azure_tenant_id=None, azure_user_groups_obj_id=None, azure_user_portal_access=None, azure_user_programmatic_access=None, azure_user_roles_template_id=None, azure_username=None, block_parent_target_access=None, cassandra_creation_statements=None, chef_organizations=None, chef_server_access_mode=None, chef_server_host_name=None, chef_server_key=None, chef_server_port=None, chef_server_url=None, chef_server_username=None, chef_skip_ssl=None, client_authentication_type=None, client_certificate=None, client_key_passphrase=None, client_private_key=None, cloud_service_provider=None, cluster_mode=None, connection_type=None, create_sync_url=None, db_client_id=None, db_client_secret=None, db_host_name=None, db_isolation_level=None, db_max_idle_conns=None, db_max_open_conns=None, db_name=None, db_port=None, db_private_key=None, db_private_key_passphrase=None, db_pwd=None, db_server_certificates=None, db_server_name=None, db_tenant_id=None, db_user_name=None, delete_protection=None, dynamic_secret_id=None, dynamic_secret_key=None, dynamic_secret_name=None, dynamic_secret_type=None, eks_access_key_id=None, eks_assume_role=None, eks_cluster_ca_certificate=None, eks_cluster_endpoint=None, eks_cluster_name=None, eks_region=None, eks_secret_access_key=None, enable_admin_rotation=None, enable_mtls=None, enforce_replay_prevention=None, expiration_date=None, externally_provided_user=None, failure_message=None, fixed_user_only=None, gcp_access_type=None, gcp_fixed_user_claim_keyname=None, gcp_key_algo=None, gcp_project_id=None, gcp_role_bindings=None, gcp_role_names=None, gcp_service_account_email=None, gcp_service_account_key=None, gcp_service_account_key_base64=None, gcp_service_account_key_id=None, gcp_service_account_type=None, gcp_tmp_service_account_name=None, gcp_token_lifetime=None, gcp_token_scope=None, gcp_token_type=None, github_app_id=None, github_app_private_key=None, github_base_url=None, github_installation_id=None, github_installation_token_permissions=None, github_installation_token_repositories=None, github_installation_token_repositories_ids=None, github_organization_name=None, github_repository_path=None, gitlab_access_token=None, gitlab_access_type=None, gitlab_certificate=None, gitlab_group_name=None, gitlab_project_name=None, gitlab_role=None, gitlab_token_scope=None, gitlab_url=None, gke_cluster_ca_certificate=None, gke_cluster_endpoint=None, gke_cluster_name=None, gke_service_account_key=None, gke_service_account_name=None, google_workspace_access_mode=None, google_workspace_admin_name=None, google_workspace_fixed_user_name_sub_claim_key=None, google_workspace_group_name=None, google_workspace_group_role=None, google_workspace_role_name=None, google_workspace_role_scope=None, grace_rotated_secret_key=None, grant_types=None, groups=None, gw_cloud_identity_external_id_opt=None, hanadb_creation_statements=None, hanadb_revocation_statements=None, host_name=None, host_port=None, implementation_type=None, is_fixed_user=None, issuer=None, item_custom_fields_details=None, item_targets_assoc=None, jwks=None, jwks_url=None, k8s_allowed_namespaces=None, k8s_auth_type=None, k8s_bearer_token=None, k8s_client_cert_data=None, k8s_client_key_data=None, k8s_cluster_ca_certificate=None, k8s_cluster_endpoint=None, k8s_cluster_name=None, k8s_dynamic_mode=None, k8s_multiple_doc_yaml_temp_definition=None, k8s_namespace=None, k8s_role_name=None, k8s_role_type=None, k8s_service_account=None, last_admin_rotation=None, ldap_audience=None, ldap_bind_dn=None, ldap_bind_password=None, ldap_certificate=None, ldap_fixed_user_name_sub_claim_key=None, ldap_fixed_user_type=None, ldap_group_dn=None, ldap_token_expiration=None, ldap_url=None, ldap_user_attr=None, ldap_user_dn=None, ldap_username=None, metadata=None, mongodb_atlas_api_private_key=None, mongodb_atlas_api_public_key=None, mongodb_atlas_project_id=None, mongodb_custom_data=None, mongodb_db_name=None, mongodb_default_auth_db=None, mongodb_host_port=None, mongodb_is_atlas=None, mongodb_password=None, mongodb_roles=None, mongodb_scopes=None, mongodb_uri_connection=None, mongodb_uri_options=None, mongodb_username=None, mssql_allowed_db_names=None, mssql_creation_statements=None, mssql_revocation_statements=None, mysql_creation_statements=None, mysql_revocation_statements=None, oauth_access_token=None, oauth_account_id=None, oauth_last_refresh=None, oauth_refresh_token=None, openai_url=None, oracle_creation_statements=None, oracle_revocation_statements=None, oracle_wallet_details=None, organization_id=None, password=None, password_length=None, password_policy=None, password_policy_info=None, payload=None, ping_url=None, postgres_creation_statements=None, postgres_revocation_statements=None, preserve_existing_password_settings=None, privileged_user=None, project_id=None, rabbitmq_server_password=None, rabbitmq_server_uri=None, rabbitmq_server_user=None, rabbitmq_user_conf_permission=None, rabbitmq_user_read_permission=None, rabbitmq_user_tags=None, rabbitmq_user_vhost=None, rabbitmq_user_write_permission=None, rdp_fixed_user_name_sub_claim_key=None, redirect_uris=None, redshift_creation_statements=None, region=None, restricted_scopes=None, revoke_sync_url=None, rotate_sync_url=None, scopes=None, secure_remote_access_details=None, session_extension_warn_interval_min=None, sf_account=None, sf_auth_mode=None, sf_key_algo=None, sf_user_role=None, sf_warehouse_name=None, should_stop=None, signing_algorithm=None, skip_dry_run=None, skip_server_name_validation=None, ssl_connection_certificate=None, ssl_connection_mode=None, subject_dn=None, tags=None, timeout_seconds=None, use_gw_cloud_identity=None, use_gw_service_account=None, user_name=None, user_password=None, user_principal_name=None, user_ttl=None, username_length=None, username_policy=None, username_template=None, venafi_allow_subdomains=None, venafi_allowed_domains=None, venafi_api_key=None, venafi_auto_generated_folder=None, venafi_base_url=None, venafi_root_first_in_chain=None, venafi_sign_using_akeyless_pki=None, venafi_signer_key_name=None, venafi_store_private_key=None, venafi_tpp_access_token=None, venafi_tpp_client_id=None, venafi_tpp_password=None, venafi_tpp_refresh_token=None, venafi_tpp_username=None, venafi_use_tpp=None, venafi_zone=None, warn_before_user_expiration_min=None, local_vars_configuration=None):  # noqa: E501
         """DSProducerDetails - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
+        self._access_key = None
+        self._access_key_id = None
         self._access_token_manager_id = None
         self._acl_rules = None
         self._active = None
@@ -668,6 +698,17 @@ class DSProducerDetails(object):
         self._aerospike_ssl_connection_certificate = None
         self._aerospike_ssl_connection_mode = None
         self._agentic_rules = None
+        self._alicloud_access_mode = None
+        self._alicloud_external_id = None
+        self._alicloud_role_arns = None
+        self._alicloud_session_policy = None
+        self._alicloud_set_source_identity = None
+        self._alicloud_site = None
+        self._alicloud_user_console_access = None
+        self._alicloud_user_groups = None
+        self._alicloud_user_inline_policy = None
+        self._alicloud_user_policies = None
+        self._alicloud_user_programmatic_access = None
         self._api_key = None
         self._api_key_id = None
         self._artifactory_admin_apikey = None
@@ -896,6 +937,7 @@ class DSProducerDetails(object):
         self._rdp_fixed_user_name_sub_claim_key = None
         self._redirect_uris = None
         self._redshift_creation_statements = None
+        self._region = None
         self._restricted_scopes = None
         self._revoke_sync_url = None
         self._rotate_sync_url = None
@@ -944,6 +986,10 @@ class DSProducerDetails(object):
         self._warn_before_user_expiration_min = None
         self.discriminator = None
 
+        if access_key is not None:
+            self.access_key = access_key
+        if access_key_id is not None:
+            self.access_key_id = access_key_id
         if access_token_manager_id is not None:
             self.access_token_manager_id = access_token_manager_id
         if acl_rules is not None:
@@ -994,6 +1040,28 @@ class DSProducerDetails(object):
             self.aerospike_ssl_connection_mode = aerospike_ssl_connection_mode
         if agentic_rules is not None:
             self.agentic_rules = agentic_rules
+        if alicloud_access_mode is not None:
+            self.alicloud_access_mode = alicloud_access_mode
+        if alicloud_external_id is not None:
+            self.alicloud_external_id = alicloud_external_id
+        if alicloud_role_arns is not None:
+            self.alicloud_role_arns = alicloud_role_arns
+        if alicloud_session_policy is not None:
+            self.alicloud_session_policy = alicloud_session_policy
+        if alicloud_set_source_identity is not None:
+            self.alicloud_set_source_identity = alicloud_set_source_identity
+        if alicloud_site is not None:
+            self.alicloud_site = alicloud_site
+        if alicloud_user_console_access is not None:
+            self.alicloud_user_console_access = alicloud_user_console_access
+        if alicloud_user_groups is not None:
+            self.alicloud_user_groups = alicloud_user_groups
+        if alicloud_user_inline_policy is not None:
+            self.alicloud_user_inline_policy = alicloud_user_inline_policy
+        if alicloud_user_policies is not None:
+            self.alicloud_user_policies = alicloud_user_policies
+        if alicloud_user_programmatic_access is not None:
+            self.alicloud_user_programmatic_access = alicloud_user_programmatic_access
         if api_key is not None:
             self.api_key = api_key
         if api_key_id is not None:
@@ -1450,6 +1518,8 @@ class DSProducerDetails(object):
             self.redirect_uris = redirect_uris
         if redshift_creation_statements is not None:
             self.redshift_creation_statements = redshift_creation_statements
+        if region is not None:
+            self.region = region
         if restricted_scopes is not None:
             self.restricted_scopes = restricted_scopes
         if revoke_sync_url is not None:
@@ -1542,6 +1612,48 @@ class DSProducerDetails(object):
             self.venafi_zone = venafi_zone
         if warn_before_user_expiration_min is not None:
             self.warn_before_user_expiration_min = warn_before_user_expiration_min
+
+    @property
+    def access_key(self):
+        """Gets the access_key of this DSProducerDetails.  # noqa: E501
+
+
+        :return: The access_key of this DSProducerDetails.  # noqa: E501
+        :rtype: str
+        """
+        return self._access_key
+
+    @access_key.setter
+    def access_key(self, access_key):
+        """Sets the access_key of this DSProducerDetails.
+
+
+        :param access_key: The access_key of this DSProducerDetails.  # noqa: E501
+        :type: str
+        """
+
+        self._access_key = access_key
+
+    @property
+    def access_key_id(self):
+        """Gets the access_key_id of this DSProducerDetails.  # noqa: E501
+
+
+        :return: The access_key_id of this DSProducerDetails.  # noqa: E501
+        :rtype: str
+        """
+        return self._access_key_id
+
+    @access_key_id.setter
+    def access_key_id(self, access_key_id):
+        """Sets the access_key_id of this DSProducerDetails.
+
+
+        :param access_key_id: The access_key_id of this DSProducerDetails.  # noqa: E501
+        :type: str
+        """
+
+        self._access_key_id = access_key_id
 
     @property
     def access_token_manager_id(self):
@@ -2067,6 +2179,237 @@ class DSProducerDetails(object):
         """
 
         self._agentic_rules = agentic_rules
+
+    @property
+    def alicloud_access_mode(self):
+        """Gets the alicloud_access_mode of this DSProducerDetails.  # noqa: E501
+
+
+        :return: The alicloud_access_mode of this DSProducerDetails.  # noqa: E501
+        :rtype: str
+        """
+        return self._alicloud_access_mode
+
+    @alicloud_access_mode.setter
+    def alicloud_access_mode(self, alicloud_access_mode):
+        """Sets the alicloud_access_mode of this DSProducerDetails.
+
+
+        :param alicloud_access_mode: The alicloud_access_mode of this DSProducerDetails.  # noqa: E501
+        :type: str
+        """
+
+        self._alicloud_access_mode = alicloud_access_mode
+
+    @property
+    def alicloud_external_id(self):
+        """Gets the alicloud_external_id of this DSProducerDetails.  # noqa: E501
+
+
+        :return: The alicloud_external_id of this DSProducerDetails.  # noqa: E501
+        :rtype: str
+        """
+        return self._alicloud_external_id
+
+    @alicloud_external_id.setter
+    def alicloud_external_id(self, alicloud_external_id):
+        """Sets the alicloud_external_id of this DSProducerDetails.
+
+
+        :param alicloud_external_id: The alicloud_external_id of this DSProducerDetails.  # noqa: E501
+        :type: str
+        """
+
+        self._alicloud_external_id = alicloud_external_id
+
+    @property
+    def alicloud_role_arns(self):
+        """Gets the alicloud_role_arns of this DSProducerDetails.  # noqa: E501
+
+
+        :return: The alicloud_role_arns of this DSProducerDetails.  # noqa: E501
+        :rtype: str
+        """
+        return self._alicloud_role_arns
+
+    @alicloud_role_arns.setter
+    def alicloud_role_arns(self, alicloud_role_arns):
+        """Sets the alicloud_role_arns of this DSProducerDetails.
+
+
+        :param alicloud_role_arns: The alicloud_role_arns of this DSProducerDetails.  # noqa: E501
+        :type: str
+        """
+
+        self._alicloud_role_arns = alicloud_role_arns
+
+    @property
+    def alicloud_session_policy(self):
+        """Gets the alicloud_session_policy of this DSProducerDetails.  # noqa: E501
+
+
+        :return: The alicloud_session_policy of this DSProducerDetails.  # noqa: E501
+        :rtype: str
+        """
+        return self._alicloud_session_policy
+
+    @alicloud_session_policy.setter
+    def alicloud_session_policy(self, alicloud_session_policy):
+        """Sets the alicloud_session_policy of this DSProducerDetails.
+
+
+        :param alicloud_session_policy: The alicloud_session_policy of this DSProducerDetails.  # noqa: E501
+        :type: str
+        """
+
+        self._alicloud_session_policy = alicloud_session_policy
+
+    @property
+    def alicloud_set_source_identity(self):
+        """Gets the alicloud_set_source_identity of this DSProducerDetails.  # noqa: E501
+
+
+        :return: The alicloud_set_source_identity of this DSProducerDetails.  # noqa: E501
+        :rtype: bool
+        """
+        return self._alicloud_set_source_identity
+
+    @alicloud_set_source_identity.setter
+    def alicloud_set_source_identity(self, alicloud_set_source_identity):
+        """Sets the alicloud_set_source_identity of this DSProducerDetails.
+
+
+        :param alicloud_set_source_identity: The alicloud_set_source_identity of this DSProducerDetails.  # noqa: E501
+        :type: bool
+        """
+
+        self._alicloud_set_source_identity = alicloud_set_source_identity
+
+    @property
+    def alicloud_site(self):
+        """Gets the alicloud_site of this DSProducerDetails.  # noqa: E501
+
+
+        :return: The alicloud_site of this DSProducerDetails.  # noqa: E501
+        :rtype: str
+        """
+        return self._alicloud_site
+
+    @alicloud_site.setter
+    def alicloud_site(self, alicloud_site):
+        """Sets the alicloud_site of this DSProducerDetails.
+
+
+        :param alicloud_site: The alicloud_site of this DSProducerDetails.  # noqa: E501
+        :type: str
+        """
+
+        self._alicloud_site = alicloud_site
+
+    @property
+    def alicloud_user_console_access(self):
+        """Gets the alicloud_user_console_access of this DSProducerDetails.  # noqa: E501
+
+
+        :return: The alicloud_user_console_access of this DSProducerDetails.  # noqa: E501
+        :rtype: bool
+        """
+        return self._alicloud_user_console_access
+
+    @alicloud_user_console_access.setter
+    def alicloud_user_console_access(self, alicloud_user_console_access):
+        """Sets the alicloud_user_console_access of this DSProducerDetails.
+
+
+        :param alicloud_user_console_access: The alicloud_user_console_access of this DSProducerDetails.  # noqa: E501
+        :type: bool
+        """
+
+        self._alicloud_user_console_access = alicloud_user_console_access
+
+    @property
+    def alicloud_user_groups(self):
+        """Gets the alicloud_user_groups of this DSProducerDetails.  # noqa: E501
+
+
+        :return: The alicloud_user_groups of this DSProducerDetails.  # noqa: E501
+        :rtype: str
+        """
+        return self._alicloud_user_groups
+
+    @alicloud_user_groups.setter
+    def alicloud_user_groups(self, alicloud_user_groups):
+        """Sets the alicloud_user_groups of this DSProducerDetails.
+
+
+        :param alicloud_user_groups: The alicloud_user_groups of this DSProducerDetails.  # noqa: E501
+        :type: str
+        """
+
+        self._alicloud_user_groups = alicloud_user_groups
+
+    @property
+    def alicloud_user_inline_policy(self):
+        """Gets the alicloud_user_inline_policy of this DSProducerDetails.  # noqa: E501
+
+
+        :return: The alicloud_user_inline_policy of this DSProducerDetails.  # noqa: E501
+        :rtype: str
+        """
+        return self._alicloud_user_inline_policy
+
+    @alicloud_user_inline_policy.setter
+    def alicloud_user_inline_policy(self, alicloud_user_inline_policy):
+        """Sets the alicloud_user_inline_policy of this DSProducerDetails.
+
+
+        :param alicloud_user_inline_policy: The alicloud_user_inline_policy of this DSProducerDetails.  # noqa: E501
+        :type: str
+        """
+
+        self._alicloud_user_inline_policy = alicloud_user_inline_policy
+
+    @property
+    def alicloud_user_policies(self):
+        """Gets the alicloud_user_policies of this DSProducerDetails.  # noqa: E501
+
+
+        :return: The alicloud_user_policies of this DSProducerDetails.  # noqa: E501
+        :rtype: str
+        """
+        return self._alicloud_user_policies
+
+    @alicloud_user_policies.setter
+    def alicloud_user_policies(self, alicloud_user_policies):
+        """Sets the alicloud_user_policies of this DSProducerDetails.
+
+
+        :param alicloud_user_policies: The alicloud_user_policies of this DSProducerDetails.  # noqa: E501
+        :type: str
+        """
+
+        self._alicloud_user_policies = alicloud_user_policies
+
+    @property
+    def alicloud_user_programmatic_access(self):
+        """Gets the alicloud_user_programmatic_access of this DSProducerDetails.  # noqa: E501
+
+
+        :return: The alicloud_user_programmatic_access of this DSProducerDetails.  # noqa: E501
+        :rtype: bool
+        """
+        return self._alicloud_user_programmatic_access
+
+    @alicloud_user_programmatic_access.setter
+    def alicloud_user_programmatic_access(self, alicloud_user_programmatic_access):
+        """Sets the alicloud_user_programmatic_access of this DSProducerDetails.
+
+
+        :param alicloud_user_programmatic_access: The alicloud_user_programmatic_access of this DSProducerDetails.  # noqa: E501
+        :type: bool
+        """
+
+        self._alicloud_user_programmatic_access = alicloud_user_programmatic_access
 
     @property
     def api_key(self):
@@ -6907,6 +7250,27 @@ class DSProducerDetails(object):
         """
 
         self._redshift_creation_statements = redshift_creation_statements
+
+    @property
+    def region(self):
+        """Gets the region of this DSProducerDetails.  # noqa: E501
+
+
+        :return: The region of this DSProducerDetails.  # noqa: E501
+        :rtype: str
+        """
+        return self._region
+
+    @region.setter
+    def region(self, region):
+        """Sets the region of this DSProducerDetails.
+
+
+        :param region: The region of this DSProducerDetails.  # noqa: E501
+        :type: str
+        """
+
+        self._region = region
 
     @property
     def restricted_scopes(self):

@@ -50,6 +50,7 @@ class AuthMethodUpdateUniversalIdentity(object):
         'jwt_ttl': 'int',
         'name': 'str',
         'new_name': 'str',
+        'owner': 'str',
         'product_type': 'list[str]',
         'token': 'str',
         'tree_length': 'int',
@@ -75,6 +76,7 @@ class AuthMethodUpdateUniversalIdentity(object):
         'jwt_ttl': 'jwt-ttl',
         'name': 'name',
         'new_name': 'new-name',
+        'owner': 'owner',
         'product_type': 'product-type',
         'token': 'token',
         'tree_length': 'tree-length',
@@ -83,7 +85,7 @@ class AuthMethodUpdateUniversalIdentity(object):
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, access_expires=0, allowed_client_type=None, audit_logs_claims=None, bound_ips=None, child_ttl_limit=43200, delete_protection=None, deny_inheritance=None, deny_rotate=None, description=None, expiration_event_in=None, force_sub_claims=None, gw_bound_ips=None, json=False, jwt_ttl=0, name=None, new_name=None, product_type=None, token=None, tree_length=200, ttl=60, uid_expiration_event_at=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, access_expires=0, allowed_client_type=None, audit_logs_claims=None, bound_ips=None, child_ttl_limit=43200, delete_protection=None, deny_inheritance=None, deny_rotate=None, description=None, expiration_event_in=None, force_sub_claims=None, gw_bound_ips=None, json=False, jwt_ttl=0, name=None, new_name=None, owner=None, product_type=None, token=None, tree_length=200, ttl=60, uid_expiration_event_at=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """AuthMethodUpdateUniversalIdentity - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -105,6 +107,7 @@ class AuthMethodUpdateUniversalIdentity(object):
         self._jwt_ttl = None
         self._name = None
         self._new_name = None
+        self._owner = None
         self._product_type = None
         self._token = None
         self._tree_length = None
@@ -144,6 +147,8 @@ class AuthMethodUpdateUniversalIdentity(object):
         self.name = name
         if new_name is not None:
             self.new_name = new_name
+        if owner is not None:
+            self.owner = owner
         if product_type is not None:
             self.product_type = product_type
         if token is not None:
@@ -253,7 +258,7 @@ class AuthMethodUpdateUniversalIdentity(object):
     def child_ttl_limit(self):
         """Gets the child_ttl_limit of this AuthMethodUpdateUniversalIdentity.  # noqa: E501
 
-        Maximum child token ttl allowed in uid-create-child-token  # noqa: E501
+        Maximum child token ttl allowed in uid-create-child-token. A struct tag cannot hold a constant, so dft must stay equal to types.UniversalIdentityDefaultTTLChildLimit  # noqa: E501
 
         :return: The child_ttl_limit of this AuthMethodUpdateUniversalIdentity.  # noqa: E501
         :rtype: int
@@ -264,7 +269,7 @@ class AuthMethodUpdateUniversalIdentity(object):
     def child_ttl_limit(self, child_ttl_limit):
         """Sets the child_ttl_limit of this AuthMethodUpdateUniversalIdentity.
 
-        Maximum child token ttl allowed in uid-create-child-token  # noqa: E501
+        Maximum child token ttl allowed in uid-create-child-token. A struct tag cannot hold a constant, so dft must stay equal to types.UniversalIdentityDefaultTTLChildLimit  # noqa: E501
 
         :param child_ttl_limit: The child_ttl_limit of this AuthMethodUpdateUniversalIdentity.  # noqa: E501
         :type: int
@@ -526,6 +531,29 @@ class AuthMethodUpdateUniversalIdentity(object):
         """
 
         self._new_name = new_name
+
+    @property
+    def owner(self):
+        """Gets the owner of this AuthMethodUpdateUniversalIdentity.  # noqa: E501
+
+        Auth Method owner (free text, up to 255 characters). On update, omit to keep the current owner and pass an empty value to clear it  # noqa: E501
+
+        :return: The owner of this AuthMethodUpdateUniversalIdentity.  # noqa: E501
+        :rtype: str
+        """
+        return self._owner
+
+    @owner.setter
+    def owner(self, owner):
+        """Sets the owner of this AuthMethodUpdateUniversalIdentity.
+
+        Auth Method owner (free text, up to 255 characters). On update, omit to keep the current owner and pass an empty value to clear it  # noqa: E501
+
+        :param owner: The owner of this AuthMethodUpdateUniversalIdentity.  # noqa: E501
+        :type: str
+        """
+
+        self._owner = owner
 
     @property
     def product_type(self):

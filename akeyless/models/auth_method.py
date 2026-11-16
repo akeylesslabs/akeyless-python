@@ -52,6 +52,7 @@ class AuthMethod(object):
         'expiration_events': 'list[AuthExpirationEvent]',
         'is_approved': 'bool',
         'modification_date': 'datetime',
+        'owner': 'str',
         'uid_expiration_events': 'list[UidExpirationEvent]'
     }
 
@@ -74,10 +75,11 @@ class AuthMethod(object):
         'expiration_events': 'expiration_events',
         'is_approved': 'is_approved',
         'modification_date': 'modification_date',
+        'owner': 'owner',
         'uid_expiration_events': 'uid_expiration_events'
     }
 
-    def __init__(self, access_date=None, access_date_display=None, access_info=None, account_id=None, associated_gw_ids=None, auth_method_access_id=None, auth_method_additional_data=None, auth_method_id=None, auth_method_name=None, auth_method_roles_assoc=None, bookmark_login_url_template=None, client_permissions=None, creation_date=None, delete_protection=None, description=None, expiration_events=None, is_approved=None, modification_date=None, uid_expiration_events=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, access_date=None, access_date_display=None, access_info=None, account_id=None, associated_gw_ids=None, auth_method_access_id=None, auth_method_additional_data=None, auth_method_id=None, auth_method_name=None, auth_method_roles_assoc=None, bookmark_login_url_template=None, client_permissions=None, creation_date=None, delete_protection=None, description=None, expiration_events=None, is_approved=None, modification_date=None, owner=None, uid_expiration_events=None, local_vars_configuration=None):  # noqa: E501
         """AuthMethod - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -101,6 +103,7 @@ class AuthMethod(object):
         self._expiration_events = None
         self._is_approved = None
         self._modification_date = None
+        self._owner = None
         self._uid_expiration_events = None
         self.discriminator = None
 
@@ -140,6 +143,8 @@ class AuthMethod(object):
             self.is_approved = is_approved
         if modification_date is not None:
             self.modification_date = modification_date
+        if owner is not None:
+            self.owner = owner
         if uid_expiration_events is not None:
             self.uid_expiration_events = uid_expiration_events
 
@@ -522,6 +527,27 @@ class AuthMethod(object):
         """
 
         self._modification_date = modification_date
+
+    @property
+    def owner(self):
+        """Gets the owner of this AuthMethod.  # noqa: E501
+
+
+        :return: The owner of this AuthMethod.  # noqa: E501
+        :rtype: str
+        """
+        return self._owner
+
+    @owner.setter
+    def owner(self, owner):
+        """Sets the owner of this AuthMethod.
+
+
+        :param owner: The owner of this AuthMethod.  # noqa: E501
+        :type: str
+        """
+
+        self._owner = owner
 
     @property
     def uid_expiration_events(self):

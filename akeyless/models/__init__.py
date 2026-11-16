@@ -59,6 +59,7 @@ from akeyless.models.anthropic_target_details import AnthropicTargetDetails
 from akeyless.models.artifactory_target_details import ArtifactoryTargetDetails
 from akeyless.models.assoc_role_auth_method import AssocRoleAuthMethod
 from akeyless.models.assoc_target_item import AssocTargetItem
+from akeyless.models.atlassian_target_details import AtlassianTargetDetails
 from akeyless.models.attribute_type_and_value import AttributeTypeAndValue
 from akeyless.models.auth import Auth
 from akeyless.models.auth_expiration_event import AuthExpirationEvent
@@ -333,6 +334,7 @@ from akeyless.models.detokenize_output import DetokenizeOutput
 from akeyless.models.digi_cert_target_details import DigiCertTargetDetails
 from akeyless.models.dockerhub_target_details import DockerhubTargetDetails
 from akeyless.models.dynamic_secret_create_aerospike import DynamicSecretCreateAerospike
+from akeyless.models.dynamic_secret_create_ali_cloud import DynamicSecretCreateAliCloud
 from akeyless.models.dynamic_secret_create_artifactory import DynamicSecretCreateArtifactory
 from akeyless.models.dynamic_secret_create_aws import DynamicSecretCreateAws
 from akeyless.models.dynamic_secret_create_azure import DynamicSecretCreateAzure
@@ -374,6 +376,7 @@ from akeyless.models.dynamic_secret_tmp_creds_delete import DynamicSecretTmpCred
 from akeyless.models.dynamic_secret_tmp_creds_get import DynamicSecretTmpCredsGet
 from akeyless.models.dynamic_secret_tmp_creds_update import DynamicSecretTmpCredsUpdate
 from akeyless.models.dynamic_secret_update_aerospike import DynamicSecretUpdateAerospike
+from akeyless.models.dynamic_secret_update_ali_cloud import DynamicSecretUpdateAliCloud
 from akeyless.models.dynamic_secret_update_artifactory import DynamicSecretUpdateArtifactory
 from akeyless.models.dynamic_secret_update_aws import DynamicSecretUpdateAws
 from akeyless.models.dynamic_secret_update_azure import DynamicSecretUpdateAzure
@@ -893,6 +896,7 @@ from akeyless.models.producer import Producer
 from akeyless.models.producers_config_part import ProducersConfigPart
 from akeyless.models.provision_certificate import ProvisionCertificate
 from akeyless.models.provision_certificate_output import ProvisionCertificateOutput
+from akeyless.models.provision_ssh_rotated_secret_output import ProvisionSSHRotatedSecretOutput
 from akeyless.models.rabbit_mq_target_details import RabbitMQTargetDetails
 from akeyless.models.raw_creds import RawCreds
 from akeyless.models.refresh_key import RefreshKey
@@ -954,6 +958,11 @@ from akeyless.models.rotated_secret_details_info import RotatedSecretDetailsInfo
 from akeyless.models.rotated_secret_get_value import RotatedSecretGetValue
 from akeyless.models.rotated_secret_list import RotatedSecretList
 from akeyless.models.rotated_secret_output import RotatedSecretOutput
+from akeyless.models.rotated_secret_provision_assoc_output import RotatedSecretProvisionAssocOutput
+from akeyless.models.rotated_secret_provision_create import RotatedSecretProvisionCreate
+from akeyless.models.rotated_secret_provision_delete import RotatedSecretProvisionDelete
+from akeyless.models.rotated_secret_provision_push import RotatedSecretProvisionPush
+from akeyless.models.rotated_secret_provision_update import RotatedSecretProvisionUpdate
 from akeyless.models.rotated_secret_sync import RotatedSecretSync
 from akeyless.models.rotated_secret_update_aerospike import RotatedSecretUpdateAerospike
 from akeyless.models.rotated_secret_update_ali_cloud import RotatedSecretUpdateAliCloud
@@ -1049,6 +1058,7 @@ from akeyless.models.target_create_aerospike import TargetCreateAerospike
 from akeyless.models.target_create_ali_cloud import TargetCreateAliCloud
 from akeyless.models.target_create_anthropic import TargetCreateAnthropic
 from akeyless.models.target_create_artifactory import TargetCreateArtifactory
+from akeyless.models.target_create_atlassian import TargetCreateAtlassian
 from akeyless.models.target_create_aws import TargetCreateAws
 from akeyless.models.target_create_azure import TargetCreateAzure
 from akeyless.models.target_create_bedrock import TargetCreateBedrock
@@ -1100,6 +1110,7 @@ from akeyless.models.target_update_aerospike import TargetUpdateAerospike
 from akeyless.models.target_update_ali_cloud import TargetUpdateAliCloud
 from akeyless.models.target_update_anthropic import TargetUpdateAnthropic
 from akeyless.models.target_update_artifactory import TargetUpdateArtifactory
+from akeyless.models.target_update_atlassian import TargetUpdateAtlassian
 from akeyless.models.target_update_aws import TargetUpdateAws
 from akeyless.models.target_update_azure import TargetUpdateAzure
 from akeyless.models.target_update_bedrock import TargetUpdateBedrock

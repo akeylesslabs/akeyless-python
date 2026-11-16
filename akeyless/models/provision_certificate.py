@@ -38,6 +38,7 @@ class ProvisionCertificate(object):
         'item_id': 'int',
         'json': 'bool',
         'name': 'str',
+        'target_name': 'str',
         'token': 'str',
         'uid_token': 'str'
     }
@@ -47,11 +48,12 @@ class ProvisionCertificate(object):
         'item_id': 'item-id',
         'json': 'json',
         'name': 'name',
+        'target_name': 'target-name',
         'token': 'token',
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, display_id=None, item_id=None, json=False, name=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, display_id=None, item_id=None, json=False, name=None, target_name='all targets associated with the certificate)', token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """ProvisionCertificate - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -61,6 +63,7 @@ class ProvisionCertificate(object):
         self._item_id = None
         self._json = None
         self._name = None
+        self._target_name = None
         self._token = None
         self._uid_token = None
         self.discriminator = None
@@ -72,6 +75,8 @@ class ProvisionCertificate(object):
         if json is not None:
             self.json = json
         self.name = name
+        if target_name is not None:
+            self.target_name = target_name
         if token is not None:
             self.token = token
         if uid_token is not None:
@@ -170,6 +175,27 @@ class ProvisionCertificate(object):
             raise ValueError("Invalid value for `name`, must not be `None`")  # noqa: E501
 
         self._name = name
+
+    @property
+    def target_name(self):
+        """Gets the target_name of this ProvisionCertificate.  # noqa: E501
+
+
+        :return: The target_name of this ProvisionCertificate.  # noqa: E501
+        :rtype: str
+        """
+        return self._target_name
+
+    @target_name.setter
+    def target_name(self, target_name):
+        """Sets the target_name of this ProvisionCertificate.
+
+
+        :param target_name: The target_name of this ProvisionCertificate.  # noqa: E501
+        :type: str
+        """
+
+        self._target_name = target_name
 
     @property
     def token(self):

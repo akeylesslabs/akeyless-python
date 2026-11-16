@@ -49,6 +49,7 @@ class RotatedSecretDetailsInfo(object):
         'max_versions': 'int',
         'next_auto_rotate_type': 'str',
         'number_of_versions_to_save': 'int',
+        'public_key': 'str',
         'public_key_remote_path': 'str',
         'rotation_hour': 'int',
         'rotation_interval_min': 'bool',
@@ -78,6 +79,7 @@ class RotatedSecretDetailsInfo(object):
         'max_versions': 'max_versions',
         'next_auto_rotate_type': 'next_auto_rotate_type',
         'number_of_versions_to_save': 'number_of_versions_to_save',
+        'public_key': 'public_key',
         'public_key_remote_path': 'public_key_remote_path',
         'rotation_hour': 'rotation_hour',
         'rotation_interval_min': 'rotation_interval_min',
@@ -91,7 +93,7 @@ class RotatedSecretDetailsInfo(object):
         'timeout_seconds': 'timeout_seconds'
     }
 
-    def __init__(self, aws_user_name=None, delete_previous_version_in_days=None, enable_custom_password_policy=None, grace_rotation=None, grace_rotation_hour=None, grace_rotation_interval=None, grace_rotation_timing=None, gw_cluster_id=None, iis_apps_details=None, key_algorithm=None, last_rotation_error=None, managed_by_akeyless=None, max_versions=None, next_auto_rotate_type=None, number_of_versions_to_save=None, public_key_remote_path=None, rotation_hour=None, rotation_interval_min=None, rotation_statement=None, rotator_creds_type=None, rotator_status=None, rotator_type=None, same_password=None, services_details=None, skip_dry_run=None, timeout_seconds=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, aws_user_name=None, delete_previous_version_in_days=None, enable_custom_password_policy=None, grace_rotation=None, grace_rotation_hour=None, grace_rotation_interval=None, grace_rotation_timing=None, gw_cluster_id=None, iis_apps_details=None, key_algorithm=None, last_rotation_error=None, managed_by_akeyless=None, max_versions=None, next_auto_rotate_type=None, number_of_versions_to_save=None, public_key=None, public_key_remote_path=None, rotation_hour=None, rotation_interval_min=None, rotation_statement=None, rotator_creds_type=None, rotator_status=None, rotator_type=None, same_password=None, services_details=None, skip_dry_run=None, timeout_seconds=None, local_vars_configuration=None):  # noqa: E501
         """RotatedSecretDetailsInfo - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -112,6 +114,7 @@ class RotatedSecretDetailsInfo(object):
         self._max_versions = None
         self._next_auto_rotate_type = None
         self._number_of_versions_to_save = None
+        self._public_key = None
         self._public_key_remote_path = None
         self._rotation_hour = None
         self._rotation_interval_min = None
@@ -155,6 +158,8 @@ class RotatedSecretDetailsInfo(object):
             self.next_auto_rotate_type = next_auto_rotate_type
         if number_of_versions_to_save is not None:
             self.number_of_versions_to_save = number_of_versions_to_save
+        if public_key is not None:
+            self.public_key = public_key
         if public_key_remote_path is not None:
             self.public_key_remote_path = public_key_remote_path
         if rotation_hour is not None:
@@ -494,6 +499,29 @@ class RotatedSecretDetailsInfo(object):
         """
 
         self._number_of_versions_to_save = number_of_versions_to_save
+
+    @property
+    def public_key(self):
+        """Gets the public_key of this RotatedSecretDetailsInfo.  # noqa: E501
+
+        PublicKey is the OpenSSH authorized_keys line for an SSH rotated secret. Stored in the clear on item attributes so describe-item can return it under list permission.  # noqa: E501
+
+        :return: The public_key of this RotatedSecretDetailsInfo.  # noqa: E501
+        :rtype: str
+        """
+        return self._public_key
+
+    @public_key.setter
+    def public_key(self, public_key):
+        """Sets the public_key of this RotatedSecretDetailsInfo.
+
+        PublicKey is the OpenSSH authorized_keys line for an SSH rotated secret. Stored in the clear on item attributes so describe-item can return it under list permission.  # noqa: E501
+
+        :param public_key: The public_key of this RotatedSecretDetailsInfo.  # noqa: E501
+        :type: str
+        """
+
+        self._public_key = public_key
 
     @property
     def public_key_remote_path(self):

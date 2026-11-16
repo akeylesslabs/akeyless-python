@@ -35,6 +35,7 @@ class GatewayUpdateCache(object):
     """
     openapi_types = {
         'backup_interval': 'str',
+        'cache_item_metadata': 'str',
         'enable_cache': 'str',
         'enable_proactive': 'str',
         'json': 'bool',
@@ -46,6 +47,7 @@ class GatewayUpdateCache(object):
 
     attribute_map = {
         'backup_interval': 'backup-interval',
+        'cache_item_metadata': 'cache-item-metadata',
         'enable_cache': 'enable-cache',
         'enable_proactive': 'enable-proactive',
         'json': 'json',
@@ -55,13 +57,14 @@ class GatewayUpdateCache(object):
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, backup_interval='1', enable_cache=None, enable_proactive=None, json=False, minimum_fetch_interval='5', stale_timeout='60', token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, backup_interval='1', cache_item_metadata=None, enable_cache=None, enable_proactive=None, json=False, minimum_fetch_interval='5', stale_timeout='60', token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """GatewayUpdateCache - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._backup_interval = None
+        self._cache_item_metadata = None
         self._enable_cache = None
         self._enable_proactive = None
         self._json = None
@@ -73,6 +76,8 @@ class GatewayUpdateCache(object):
 
         if backup_interval is not None:
             self.backup_interval = backup_interval
+        if cache_item_metadata is not None:
+            self.cache_item_metadata = cache_item_metadata
         if enable_cache is not None:
             self.enable_cache = enable_cache
         if enable_proactive is not None:
@@ -110,6 +115,29 @@ class GatewayUpdateCache(object):
         """
 
         self._backup_interval = backup_interval
+
+    @property
+    def cache_item_metadata(self):
+        """Gets the cache_item_metadata of this GatewayUpdateCache.  # noqa: E501
+
+        Serve item metadata (describe-item and classic key details) from an on-demand cache, refreshed after the minimum fetching interval [true/false]  # noqa: E501
+
+        :return: The cache_item_metadata of this GatewayUpdateCache.  # noqa: E501
+        :rtype: str
+        """
+        return self._cache_item_metadata
+
+    @cache_item_metadata.setter
+    def cache_item_metadata(self, cache_item_metadata):
+        """Sets the cache_item_metadata of this GatewayUpdateCache.
+
+        Serve item metadata (describe-item and classic key details) from an on-demand cache, refreshed after the minimum fetching interval [true/false]  # noqa: E501
+
+        :param cache_item_metadata: The cache_item_metadata of this GatewayUpdateCache.  # noqa: E501
+        :type: str
+        """
+
+        self._cache_item_metadata = cache_item_metadata
 
     @property
     def enable_cache(self):

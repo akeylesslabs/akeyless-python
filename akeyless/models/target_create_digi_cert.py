@@ -35,6 +35,7 @@ class TargetCreateDigiCert(object):
     """
     openapi_types = {
         'acme_challenge': 'str',
+        'cert_central_api_key': 'str',
         'delete_protection': 'str',
         'description': 'str',
         'digicert_url': 'str',
@@ -64,6 +65,7 @@ class TargetCreateDigiCert(object):
 
     attribute_map = {
         'acme_challenge': 'acme-challenge',
+        'cert_central_api_key': 'cert-central-api-key',
         'delete_protection': 'delete_protection',
         'description': 'description',
         'digicert_url': 'digicert-url',
@@ -91,13 +93,14 @@ class TargetCreateDigiCert(object):
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, acme_challenge='dns', delete_protection=None, description=None, digicert_url='us-production', dns_propagation_wait=None, dns_resolvers=None, dns_skip_precheck=None, dns_target_creds=None, dns_timeout=None, dns_zone=None, eab_hmac_key=None, eab_key_id=None, email=None, gcp_project=None, hosted_zone=None, json=False, key=None, lock_on_read=None, lock_ttl=None, max_versions=None, name=None, resource_group=None, rotate_on_unlock=None, timeout='5m', token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, acme_challenge='dns', cert_central_api_key=None, delete_protection=None, description=None, digicert_url='us-production', dns_propagation_wait=None, dns_resolvers=None, dns_skip_precheck=None, dns_target_creds=None, dns_timeout=None, dns_zone=None, eab_hmac_key=None, eab_key_id=None, email=None, gcp_project=None, hosted_zone=None, json=False, key=None, lock_on_read=None, lock_ttl=None, max_versions=None, name=None, resource_group=None, rotate_on_unlock=None, timeout='5m', token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """TargetCreateDigiCert - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._acme_challenge = None
+        self._cert_central_api_key = None
         self._delete_protection = None
         self._description = None
         self._digicert_url = None
@@ -127,6 +130,8 @@ class TargetCreateDigiCert(object):
 
         if acme_challenge is not None:
             self.acme_challenge = acme_challenge
+        if cert_central_api_key is not None:
+            self.cert_central_api_key = cert_central_api_key
         if delete_protection is not None:
             self.delete_protection = delete_protection
         if description is not None:
@@ -198,6 +203,29 @@ class TargetCreateDigiCert(object):
         """
 
         self._acme_challenge = acme_challenge
+
+    @property
+    def cert_central_api_key(self):
+        """Gets the cert_central_api_key of this TargetCreateDigiCert.  # noqa: E501
+
+        DigiCert CertCentral API key. Optional - when set, certificate renewal reissues the existing DigiCert order instead of placing a new (billable) order. DNS challenge and production endpoints only. On target update pass it again to keep it, omitting it clears it  # noqa: E501
+
+        :return: The cert_central_api_key of this TargetCreateDigiCert.  # noqa: E501
+        :rtype: str
+        """
+        return self._cert_central_api_key
+
+    @cert_central_api_key.setter
+    def cert_central_api_key(self, cert_central_api_key):
+        """Sets the cert_central_api_key of this TargetCreateDigiCert.
+
+        DigiCert CertCentral API key. Optional - when set, certificate renewal reissues the existing DigiCert order instead of placing a new (billable) order. DNS challenge and production endpoints only. On target update pass it again to keep it, omitting it clears it  # noqa: E501
+
+        :param cert_central_api_key: The cert_central_api_key of this TargetCreateDigiCert.  # noqa: E501
+        :type: str
+        """
+
+        self._cert_central_api_key = cert_central_api_key
 
     @property
     def delete_protection(self):

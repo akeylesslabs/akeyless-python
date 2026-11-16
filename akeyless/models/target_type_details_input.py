@@ -38,6 +38,7 @@ class TargetTypeDetailsInput(object):
         'alicloud_target_details': 'AliCloudTargetDetails',
         'anthropic_target_details': 'AnthropicTargetDetails',
         'artifactory_target_details': 'ArtifactoryTargetDetails',
+        'atlassian_target_details': 'AtlassianTargetDetails',
         'aws_target_details': 'AWSTargetDetails',
         'azure_target_details': 'AzureTargetDetails',
         'bedrock_target_details': 'BedrockTargetDetails',
@@ -86,6 +87,7 @@ class TargetTypeDetailsInput(object):
         'alicloud_target_details': 'alicloud_target_details',
         'anthropic_target_details': 'anthropic_target_details',
         'artifactory_target_details': 'artifactory_target_details',
+        'atlassian_target_details': 'atlassian_target_details',
         'aws_target_details': 'aws_target_details',
         'azure_target_details': 'azure_target_details',
         'bedrock_target_details': 'bedrock_target_details',
@@ -129,7 +131,7 @@ class TargetTypeDetailsInput(object):
         'zerossl_target_details': 'zerossl_target_details'
     }
 
-    def __init__(self, aerospike_target_details=None, alicloud_target_details=None, anthropic_target_details=None, artifactory_target_details=None, aws_target_details=None, azure_target_details=None, bedrock_target_details=None, chef_target_details=None, cloudflare_target_details=None, custom_dns_target_details=None, custom_target_details=None, db_target_details=None, digicert_target_details=None, dockerhub_target_details=None, eks_target_details=None, f5_big_ip_target_details=None, gcp_target_details=None, gemini_target_details=None, github_target_details=None, gitlab_target_details=None, gke_target_details=None, globalsign_atlas_target_details=None, globalsign_target_details=None, godaddy_target_details=None, google_trust_target_details=None, grok_target_details=None, hashi_vault_target_details=None, keycloak_target_details=None, ldap_target_details=None, letsencrypt_target_details=None, linked_target_details=None, mongo_db_target_details=None, native_k8s_target_details=None, okta_target_details=None, openai_target_details=None, ping_target_details=None, rabbit_mq_target_details=None, salesforce_target_details=None, sectigo_target_details=None, splunk_target_details=None, ssh_target_details=None, venafi_target_details=None, web_target_details=None, windows_target_details=None, zerossl_target_details=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, aerospike_target_details=None, alicloud_target_details=None, anthropic_target_details=None, artifactory_target_details=None, atlassian_target_details=None, aws_target_details=None, azure_target_details=None, bedrock_target_details=None, chef_target_details=None, cloudflare_target_details=None, custom_dns_target_details=None, custom_target_details=None, db_target_details=None, digicert_target_details=None, dockerhub_target_details=None, eks_target_details=None, f5_big_ip_target_details=None, gcp_target_details=None, gemini_target_details=None, github_target_details=None, gitlab_target_details=None, gke_target_details=None, globalsign_atlas_target_details=None, globalsign_target_details=None, godaddy_target_details=None, google_trust_target_details=None, grok_target_details=None, hashi_vault_target_details=None, keycloak_target_details=None, ldap_target_details=None, letsencrypt_target_details=None, linked_target_details=None, mongo_db_target_details=None, native_k8s_target_details=None, okta_target_details=None, openai_target_details=None, ping_target_details=None, rabbit_mq_target_details=None, salesforce_target_details=None, sectigo_target_details=None, splunk_target_details=None, ssh_target_details=None, venafi_target_details=None, web_target_details=None, windows_target_details=None, zerossl_target_details=None, local_vars_configuration=None):  # noqa: E501
         """TargetTypeDetailsInput - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -139,6 +141,7 @@ class TargetTypeDetailsInput(object):
         self._alicloud_target_details = None
         self._anthropic_target_details = None
         self._artifactory_target_details = None
+        self._atlassian_target_details = None
         self._aws_target_details = None
         self._azure_target_details = None
         self._bedrock_target_details = None
@@ -190,6 +193,8 @@ class TargetTypeDetailsInput(object):
             self.anthropic_target_details = anthropic_target_details
         if artifactory_target_details is not None:
             self.artifactory_target_details = artifactory_target_details
+        if atlassian_target_details is not None:
+            self.atlassian_target_details = atlassian_target_details
         if aws_target_details is not None:
             self.aws_target_details = aws_target_details
         if azure_target_details is not None:
@@ -356,6 +361,27 @@ class TargetTypeDetailsInput(object):
         """
 
         self._artifactory_target_details = artifactory_target_details
+
+    @property
+    def atlassian_target_details(self):
+        """Gets the atlassian_target_details of this TargetTypeDetailsInput.  # noqa: E501
+
+
+        :return: The atlassian_target_details of this TargetTypeDetailsInput.  # noqa: E501
+        :rtype: AtlassianTargetDetails
+        """
+        return self._atlassian_target_details
+
+    @atlassian_target_details.setter
+    def atlassian_target_details(self, atlassian_target_details):
+        """Sets the atlassian_target_details of this TargetTypeDetailsInput.
+
+
+        :param atlassian_target_details: The atlassian_target_details of this TargetTypeDetailsInput.  # noqa: E501
+        :type: AtlassianTargetDetails
+        """
+
+        self._atlassian_target_details = atlassian_target_details
 
     @property
     def aws_target_details(self):

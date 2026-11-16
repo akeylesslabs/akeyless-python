@@ -52,6 +52,7 @@ class AuthMethodCreateOIDC(object):
         'json': 'bool',
         'jwt_ttl': 'int',
         'name': 'str',
+        'owner': 'str',
         'product_type': 'list[str]',
         'required_scopes': 'list[str]',
         'required_scopes_prefix': 'str',
@@ -84,6 +85,7 @@ class AuthMethodCreateOIDC(object):
         'json': 'json',
         'jwt_ttl': 'jwt-ttl',
         'name': 'name',
+        'owner': 'owner',
         'product_type': 'product-type',
         'required_scopes': 'required-scopes',
         'required_scopes_prefix': 'required-scopes-prefix',
@@ -97,7 +99,7 @@ class AuthMethodCreateOIDC(object):
         'unique_identifier': 'unique-identifier'
     }
 
-    def __init__(self, access_expires=0, allowed_client_type=None, allowed_redirect_uri=None, audience=None, audit_logs_claims=None, bound_ips=None, client_id=None, client_secret=None, delete_protection=None, description=None, expiration_event_in=None, force_sub_claims=None, gateway_url=None, gw_bound_ips=None, issuer=None, json=False, jwt_ttl=0, name=None, product_type=None, required_scopes=None, required_scopes_prefix=None, scim_bearer_access_id=None, scim_enabled=None, scim_endpoint=None, scim_gateway_url=None, subclaims_delimiters=None, token=None, uid_token=None, unique_identifier=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, access_expires=0, allowed_client_type=None, allowed_redirect_uri=None, audience=None, audit_logs_claims=None, bound_ips=None, client_id=None, client_secret=None, delete_protection=None, description=None, expiration_event_in=None, force_sub_claims=None, gateway_url=None, gw_bound_ips=None, issuer=None, json=False, jwt_ttl=0, name=None, owner=None, product_type=None, required_scopes=None, required_scopes_prefix=None, scim_bearer_access_id=None, scim_enabled=None, scim_endpoint=None, scim_gateway_url=None, subclaims_delimiters=None, token=None, uid_token=None, unique_identifier=None, local_vars_configuration=None):  # noqa: E501
         """AuthMethodCreateOIDC - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -121,6 +123,7 @@ class AuthMethodCreateOIDC(object):
         self._json = None
         self._jwt_ttl = None
         self._name = None
+        self._owner = None
         self._product_type = None
         self._required_scopes = None
         self._required_scopes_prefix = None
@@ -169,6 +172,8 @@ class AuthMethodCreateOIDC(object):
         if jwt_ttl is not None:
             self.jwt_ttl = jwt_ttl
         self.name = name
+        if owner is not None:
+            self.owner = owner
         if product_type is not None:
             self.product_type = product_type
         if required_scopes is not None:
@@ -606,6 +611,29 @@ class AuthMethodCreateOIDC(object):
             raise ValueError("Invalid value for `name`, must not be `None`")  # noqa: E501
 
         self._name = name
+
+    @property
+    def owner(self):
+        """Gets the owner of this AuthMethodCreateOIDC.  # noqa: E501
+
+        Auth Method owner (free text, up to 255 characters). On update, omit to keep the current owner and pass an empty value to clear it  # noqa: E501
+
+        :return: The owner of this AuthMethodCreateOIDC.  # noqa: E501
+        :rtype: str
+        """
+        return self._owner
+
+    @owner.setter
+    def owner(self, owner):
+        """Sets the owner of this AuthMethodCreateOIDC.
+
+        Auth Method owner (free text, up to 255 characters). On update, omit to keep the current owner and pass an empty value to clear it  # noqa: E501
+
+        :param owner: The owner of this AuthMethodCreateOIDC.  # noqa: E501
+        :type: str
+        """
+
+        self._owner = owner
 
     @property
     def product_type(self):

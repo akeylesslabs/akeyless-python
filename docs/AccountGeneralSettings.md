@@ -36,6 +36,7 @@ Name | Type | Description | Notes
 **password_score** | [**PasswordScoreSetting**](PasswordScoreSetting.md) |  | [optional] 
 **personal_folder_global_mapping** | [**PersonalFolderGlobalMappingSettings**](PersonalFolderGlobalMappingSettings.md) |  | [optional] 
 **protect_items_by_default** | **bool** |  | [optional] 
+**require_auth_method_owner** | **bool** | RequireAuthMethodOwner makes an owner mandatory when creating auth methods and on general-info updates of auth methods (see AuthMethodGeneralInfoUpdateModes). | [optional] 
 **rotation_secret_max_interval** | [**RotationSecretMaxInterval**](RotationSecretMaxInterval.md) |  | [optional] 
 **sharing_policy** | [**SharingPolicyInfo**](SharingPolicyInfo.md) |  | [optional] 
 

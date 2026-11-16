@@ -21,6 +21,7 @@ Name | Type | Description | Notes
 **json** | **bool** | Set output format to JSON | [optional] [default to False]
 **jwt_ttl** | **int** | Jwt TTL | [optional] [default to 0]
 **name** | **str** | Auth Method name | 
+**owner** | **str** | Auth Method owner (free text, up to 255 characters). On update, omit to keep the current owner and pass an empty value to clear it | [optional] 
 **product_type** | **list[str]** | Choose the relevant product type for the auth method [sm, sra, pm, dp, ca, ara] | [optional] 
 **public_key** | **str** | Base64-encoded or PEM formatted public key data for K8S authentication method is required [RSA2048] | [optional] 
 **token** | **str** | Authentication token (see &#x60;/auth&#x60; and &#x60;/configure&#x60;) | [optional] 

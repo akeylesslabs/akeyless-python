@@ -36,6 +36,7 @@ class DigiCertTargetDetails(object):
     openapi_types = {
         'account_key_pem': 'str',
         'account_url': 'str',
+        'cert_central_api_key': 'str',
         'challenge_type': 'str',
         'digicert_directory_type': 'str',
         'dns_propagation_wait': 'int',
@@ -57,6 +58,7 @@ class DigiCertTargetDetails(object):
     attribute_map = {
         'account_key_pem': 'account_key_pem',
         'account_url': 'account_url',
+        'cert_central_api_key': 'cert_central_api_key',
         'challenge_type': 'challenge_type',
         'digicert_directory_type': 'digicert_directory_type',
         'dns_propagation_wait': 'dns_propagation_wait',
@@ -75,7 +77,7 @@ class DigiCertTargetDetails(object):
         'timeout': 'timeout'
     }
 
-    def __init__(self, account_key_pem=None, account_url=None, challenge_type=None, digicert_directory_type=None, dns_propagation_wait=None, dns_resolvers=None, dns_skip_precheck=None, dns_target_name=None, dns_target_type=None, dns_timeout=None, dns_zone=None, eab_hmac_key=None, eab_key_id=None, email=None, gcp_project=None, hosted_zone=None, resource_group=None, timeout=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, account_key_pem=None, account_url=None, cert_central_api_key=None, challenge_type=None, digicert_directory_type=None, dns_propagation_wait=None, dns_resolvers=None, dns_skip_precheck=None, dns_target_name=None, dns_target_type=None, dns_timeout=None, dns_zone=None, eab_hmac_key=None, eab_key_id=None, email=None, gcp_project=None, hosted_zone=None, resource_group=None, timeout=None, local_vars_configuration=None):  # noqa: E501
         """DigiCertTargetDetails - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -83,6 +85,7 @@ class DigiCertTargetDetails(object):
 
         self._account_key_pem = None
         self._account_url = None
+        self._cert_central_api_key = None
         self._challenge_type = None
         self._digicert_directory_type = None
         self._dns_propagation_wait = None
@@ -105,6 +108,8 @@ class DigiCertTargetDetails(object):
             self.account_key_pem = account_key_pem
         if account_url is not None:
             self.account_url = account_url
+        if cert_central_api_key is not None:
+            self.cert_central_api_key = cert_central_api_key
         if challenge_type is not None:
             self.challenge_type = challenge_type
         if digicert_directory_type is not None:
@@ -183,6 +188,29 @@ class DigiCertTargetDetails(object):
         """
 
         self._account_url = account_url
+
+    @property
+    def cert_central_api_key(self):
+        """Gets the cert_central_api_key of this DigiCertTargetDetails.  # noqa: E501
+
+        DigiCert CertCentral API key (X-DC-DEVKEY). Optional. When set, renewals look up the DigiCert order of the existing certificate and ask DigiCert to reissue it (free, uses the existing order) instead of placing a new, billable ACME order.  # noqa: E501
+
+        :return: The cert_central_api_key of this DigiCertTargetDetails.  # noqa: E501
+        :rtype: str
+        """
+        return self._cert_central_api_key
+
+    @cert_central_api_key.setter
+    def cert_central_api_key(self, cert_central_api_key):
+        """Sets the cert_central_api_key of this DigiCertTargetDetails.
+
+        DigiCert CertCentral API key (X-DC-DEVKEY). Optional. When set, renewals look up the DigiCert order of the existing certificate and ask DigiCert to reissue it (free, uses the existing order) instead of placing a new, billable ACME order.  # noqa: E501
+
+        :param cert_central_api_key: The cert_central_api_key of this DigiCertTargetDetails.  # noqa: E501
+        :type: str
+        """
+
+        self._cert_central_api_key = cert_central_api_key
 
     @property
     def challenge_type(self):

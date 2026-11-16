@@ -66,6 +66,7 @@ class AccountGeneralSettings(object):
         'password_score': 'PasswordScoreSetting',
         'personal_folder_global_mapping': 'PersonalFolderGlobalMappingSettings',
         'protect_items_by_default': 'bool',
+        'require_auth_method_owner': 'bool',
         'rotation_secret_max_interval': 'RotationSecretMaxInterval',
         'sharing_policy': 'SharingPolicyInfo'
     }
@@ -103,11 +104,12 @@ class AccountGeneralSettings(object):
         'password_score': 'password_score',
         'personal_folder_global_mapping': 'personal_folder_global_mapping',
         'protect_items_by_default': 'protect_items_by_default',
+        'require_auth_method_owner': 'require_auth_method_owner',
         'rotation_secret_max_interval': 'rotation_secret_max_interval',
         'sharing_policy': 'sharing_policy'
     }
 
-    def __init__(self, account_default_key_item_id=None, account_default_key_name=None, account_file_bytes_used=None, ai_insights=None, ai_quorum=None, allow_auto_fill=None, allow_passkeys=None, allowed_client_types=None, allowed_clients_ips=None, allowed_gateways_ips=None, auth_usage_event=None, certificate_expiration_events=None, data_protection_section=None, default_auth_method=None, default_home_page=None, dynamic_secret_max_ttl=None, email_customization=None, enable_request_for_access=None, enable_search_history=None, event_forwarder_allowed_email_domains=None, hide_personal_folder=None, hide_secret_reveal_copy=None, hide_static_password=None, invalid_characters=None, item_locking=None, item_usage_event=None, lock_default_key=None, password_expiration_info=None, password_policy=None, password_score=None, personal_folder_global_mapping=None, protect_items_by_default=None, rotation_secret_max_interval=None, sharing_policy=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, account_default_key_item_id=None, account_default_key_name=None, account_file_bytes_used=None, ai_insights=None, ai_quorum=None, allow_auto_fill=None, allow_passkeys=None, allowed_client_types=None, allowed_clients_ips=None, allowed_gateways_ips=None, auth_usage_event=None, certificate_expiration_events=None, data_protection_section=None, default_auth_method=None, default_home_page=None, dynamic_secret_max_ttl=None, email_customization=None, enable_request_for_access=None, enable_search_history=None, event_forwarder_allowed_email_domains=None, hide_personal_folder=None, hide_secret_reveal_copy=None, hide_static_password=None, invalid_characters=None, item_locking=None, item_usage_event=None, lock_default_key=None, password_expiration_info=None, password_policy=None, password_score=None, personal_folder_global_mapping=None, protect_items_by_default=None, require_auth_method_owner=None, rotation_secret_max_interval=None, sharing_policy=None, local_vars_configuration=None):  # noqa: E501
         """AccountGeneralSettings - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -145,6 +147,7 @@ class AccountGeneralSettings(object):
         self._password_score = None
         self._personal_folder_global_mapping = None
         self._protect_items_by_default = None
+        self._require_auth_method_owner = None
         self._rotation_secret_max_interval = None
         self._sharing_policy = None
         self.discriminator = None
@@ -213,6 +216,8 @@ class AccountGeneralSettings(object):
             self.personal_folder_global_mapping = personal_folder_global_mapping
         if protect_items_by_default is not None:
             self.protect_items_by_default = protect_items_by_default
+        if require_auth_method_owner is not None:
+            self.require_auth_method_owner = require_auth_method_owner
         if rotation_secret_max_interval is not None:
             self.rotation_secret_max_interval = rotation_secret_max_interval
         if sharing_policy is not None:
@@ -901,6 +906,29 @@ class AccountGeneralSettings(object):
         """
 
         self._protect_items_by_default = protect_items_by_default
+
+    @property
+    def require_auth_method_owner(self):
+        """Gets the require_auth_method_owner of this AccountGeneralSettings.  # noqa: E501
+
+        RequireAuthMethodOwner makes an owner mandatory when creating auth methods and on general-info updates of auth methods (see AuthMethodGeneralInfoUpdateModes).  # noqa: E501
+
+        :return: The require_auth_method_owner of this AccountGeneralSettings.  # noqa: E501
+        :rtype: bool
+        """
+        return self._require_auth_method_owner
+
+    @require_auth_method_owner.setter
+    def require_auth_method_owner(self, require_auth_method_owner):
+        """Sets the require_auth_method_owner of this AccountGeneralSettings.
+
+        RequireAuthMethodOwner makes an owner mandatory when creating auth methods and on general-info updates of auth methods (see AuthMethodGeneralInfoUpdateModes).  # noqa: E501
+
+        :param require_auth_method_owner: The require_auth_method_owner of this AccountGeneralSettings.  # noqa: E501
+        :type: bool
+        """
+
+        self._require_auth_method_owner = require_auth_method_owner
 
     @property
     def rotation_secret_max_interval(self):

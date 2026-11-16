@@ -51,6 +51,7 @@ class UpdateAuthMethodSAML(object):
         'jwt_ttl': 'int',
         'name': 'str',
         'new_name': 'str',
+        'owner': 'str',
         'product_type': 'list[str]',
         'subclaims_delimiters': 'list[str]',
         'token': 'str',
@@ -77,6 +78,7 @@ class UpdateAuthMethodSAML(object):
         'jwt_ttl': 'jwt-ttl',
         'name': 'name',
         'new_name': 'new-name',
+        'owner': 'owner',
         'product_type': 'product-type',
         'subclaims_delimiters': 'subclaims-delimiters',
         'token': 'token',
@@ -85,7 +87,7 @@ class UpdateAuthMethodSAML(object):
         'use_dedicated_saml_urls': 'use-dedicated-saml-urls'
     }
 
-    def __init__(self, access_expires=0, allowed_client_type=None, allowed_redirect_uri=None, audit_logs_claims=None, bound_ips=None, delete_protection=None, description=None, expiration_event_in=None, force_sub_claims=None, gateway_url=None, gw_bound_ips=None, idp_metadata_url=None, idp_metadata_xml_data=None, json=False, jwt_ttl=0, name=None, new_name=None, product_type=None, subclaims_delimiters=None, token=None, uid_token=None, unique_identifier=None, use_dedicated_saml_urls=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, access_expires=0, allowed_client_type=None, allowed_redirect_uri=None, audit_logs_claims=None, bound_ips=None, delete_protection=None, description=None, expiration_event_in=None, force_sub_claims=None, gateway_url=None, gw_bound_ips=None, idp_metadata_url=None, idp_metadata_xml_data=None, json=False, jwt_ttl=0, name=None, new_name=None, owner=None, product_type=None, subclaims_delimiters=None, token=None, uid_token=None, unique_identifier=None, use_dedicated_saml_urls=None, local_vars_configuration=None):  # noqa: E501
         """UpdateAuthMethodSAML - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -108,6 +110,7 @@ class UpdateAuthMethodSAML(object):
         self._jwt_ttl = None
         self._name = None
         self._new_name = None
+        self._owner = None
         self._product_type = None
         self._subclaims_delimiters = None
         self._token = None
@@ -149,6 +152,7 @@ class UpdateAuthMethodSAML(object):
         self.name = name
         if new_name is not None:
             self.new_name = new_name
+        self.owner = owner
         if product_type is not None:
             self.product_type = product_type
         if subclaims_delimiters is not None:
@@ -553,6 +557,29 @@ class UpdateAuthMethodSAML(object):
         """
 
         self._new_name = new_name
+
+    @property
+    def owner(self):
+        """Gets the owner of this UpdateAuthMethodSAML.  # noqa: E501
+
+        Auth Method owner (free text, up to 255 characters). On update, omit to keep the current owner and pass an empty value to clear it  # noqa: E501
+
+        :return: The owner of this UpdateAuthMethodSAML.  # noqa: E501
+        :rtype: str
+        """
+        return self._owner
+
+    @owner.setter
+    def owner(self, owner):
+        """Sets the owner of this UpdateAuthMethodSAML.
+
+        Auth Method owner (free text, up to 255 characters). On update, omit to keep the current owner and pass an empty value to clear it  # noqa: E501
+
+        :param owner: The owner of this UpdateAuthMethodSAML.  # noqa: E501
+        :type: str
+        """
+
+        self._owner = owner
 
     @property
     def product_type(self):

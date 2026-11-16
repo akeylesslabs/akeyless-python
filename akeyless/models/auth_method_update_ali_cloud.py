@@ -54,6 +54,7 @@ class AuthMethodUpdateAliCloud(object):
         'jwt_ttl': 'int',
         'name': 'str',
         'new_name': 'str',
+        'owner': 'str',
         'product_type': 'list[str]',
         'sts_url': 'str',
         'token': 'str',
@@ -82,6 +83,7 @@ class AuthMethodUpdateAliCloud(object):
         'jwt_ttl': 'jwt-ttl',
         'name': 'name',
         'new_name': 'new-name',
+        'owner': 'owner',
         'product_type': 'product-type',
         'sts_url': 'sts-url',
         'token': 'token',
@@ -89,7 +91,7 @@ class AuthMethodUpdateAliCloud(object):
         'unique_identifier': 'unique-identifier'
     }
 
-    def __init__(self, access_expires=0, allowed_client_type=None, audit_logs_claims=None, bound_account_id=None, bound_arn=None, bound_ips=None, bound_resource_id=None, bound_role_id=None, bound_role_name=None, bound_user_id=None, bound_user_name=None, delete_protection=None, description=None, expiration_event_in=None, force_sub_claims=None, gw_bound_ips=None, json=False, jwt_ttl=0, name=None, new_name=None, product_type=None, sts_url='https://sts.aliyuncs.com', token=None, uid_token=None, unique_identifier=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, access_expires=0, allowed_client_type=None, audit_logs_claims=None, bound_account_id=None, bound_arn=None, bound_ips=None, bound_resource_id=None, bound_role_id=None, bound_role_name=None, bound_user_id=None, bound_user_name=None, delete_protection=None, description=None, expiration_event_in=None, force_sub_claims=None, gw_bound_ips=None, json=False, jwt_ttl=0, name=None, new_name=None, owner=None, product_type=None, sts_url='https://sts.aliyuncs.com', token=None, uid_token=None, unique_identifier=None, local_vars_configuration=None):  # noqa: E501
         """AuthMethodUpdateAliCloud - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -115,6 +117,7 @@ class AuthMethodUpdateAliCloud(object):
         self._jwt_ttl = None
         self._name = None
         self._new_name = None
+        self._owner = None
         self._product_type = None
         self._sts_url = None
         self._token = None
@@ -161,6 +164,8 @@ class AuthMethodUpdateAliCloud(object):
         self.name = name
         if new_name is not None:
             self.new_name = new_name
+        if owner is not None:
+            self.owner = owner
         if product_type is not None:
             self.product_type = product_type
         if sts_url is not None:
@@ -633,6 +638,29 @@ class AuthMethodUpdateAliCloud(object):
         """
 
         self._new_name = new_name
+
+    @property
+    def owner(self):
+        """Gets the owner of this AuthMethodUpdateAliCloud.  # noqa: E501
+
+        Auth Method owner (free text, up to 255 characters). On update, omit to keep the current owner and pass an empty value to clear it  # noqa: E501
+
+        :return: The owner of this AuthMethodUpdateAliCloud.  # noqa: E501
+        :rtype: str
+        """
+        return self._owner
+
+    @owner.setter
+    def owner(self, owner):
+        """Sets the owner of this AuthMethodUpdateAliCloud.
+
+        Auth Method owner (free text, up to 255 characters). On update, omit to keep the current owner and pass an empty value to clear it  # noqa: E501
+
+        :param owner: The owner of this AuthMethodUpdateAliCloud.  # noqa: E501
+        :type: str
+        """
+
+        self._owner = owner
 
     @property
     def product_type(self):

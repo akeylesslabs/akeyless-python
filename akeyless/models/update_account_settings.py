@@ -78,6 +78,7 @@ class UpdateAccountSettings(object):
         'password_length': 'int',
         'phone': 'str',
         'postal_code': 'str',
+        'require_auth_method_owner': 'str',
         'token': 'str',
         'uid_token': 'str',
         'usage_event_enable': 'str',
@@ -134,6 +135,7 @@ class UpdateAccountSettings(object):
         'password_length': 'password-length',
         'phone': 'phone',
         'postal_code': 'postal-code',
+        'require_auth_method_owner': 'require-auth-method-owner',
         'token': 'token',
         'uid_token': 'uid-token',
         'usage_event_enable': 'usage-event-enable',
@@ -145,7 +147,7 @@ class UpdateAccountSettings(object):
         'use_special_characters': 'use-special-characters'
     }
 
-    def __init__(self, address=None, allowed_client_type=None, allowed_email_domains=None, bound_ips=None, city=None, company_name=None, country=None, default_certificate_expiration_notification_days=None, default_key_name=None, default_share_link_ttl_minutes=None, default_versioning=None, dp_enable_classic_key_protection=None, dynamic_secret_max_ttl=None, dynamic_secret_max_ttl_enable=None, enable_ai_insights=None, enable_ai_quorum=None, enable_default_certificate_expiration_event=None, enable_item_sharing=None, enable_password_expiration=None, force_new_versions=None, gw_bound_ips=None, hide_personal_folder=None, hide_static_password=None, invalid_characters='notReceivedInvalidCharacter', item_locking_enabled=None, item_type=None, items_deletion_protection=None, json=False, jwt_ttl_default=None, jwt_ttl_max=None, jwt_ttl_min=None, lock_allowed_client_type=None, lock_bound_ips=None, lock_default_key=None, lock_gw_bound_ips=None, lock_max_ttl=None, max_rotation_interval=None, max_rotation_interval_enable=None, max_versions=None, password_expiration_days=None, password_expiration_notification_days=None, password_length=None, phone=None, postal_code=None, token=None, uid_token=None, usage_event_enable=None, usage_event_interval=None, usage_event_object_type=None, use_capital_letters=None, use_lower_letters=None, use_numbers=None, use_special_characters=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, address=None, allowed_client_type=None, allowed_email_domains=None, bound_ips=None, city=None, company_name=None, country=None, default_certificate_expiration_notification_days=None, default_key_name=None, default_share_link_ttl_minutes=None, default_versioning=None, dp_enable_classic_key_protection=None, dynamic_secret_max_ttl=None, dynamic_secret_max_ttl_enable=None, enable_ai_insights=None, enable_ai_quorum=None, enable_default_certificate_expiration_event=None, enable_item_sharing=None, enable_password_expiration=None, force_new_versions=None, gw_bound_ips=None, hide_personal_folder=None, hide_static_password=None, invalid_characters='notReceivedInvalidCharacter', item_locking_enabled=None, item_type=None, items_deletion_protection=None, json=False, jwt_ttl_default=None, jwt_ttl_max=None, jwt_ttl_min=None, lock_allowed_client_type=None, lock_bound_ips=None, lock_default_key=None, lock_gw_bound_ips=None, lock_max_ttl=None, max_rotation_interval=None, max_rotation_interval_enable=None, max_versions=None, password_expiration_days=None, password_expiration_notification_days=None, password_length=None, phone=None, postal_code=None, require_auth_method_owner=None, token=None, uid_token=None, usage_event_enable=None, usage_event_interval=None, usage_event_object_type=None, use_capital_letters=None, use_lower_letters=None, use_numbers=None, use_special_characters=None, local_vars_configuration=None):  # noqa: E501
         """UpdateAccountSettings - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -195,6 +197,7 @@ class UpdateAccountSettings(object):
         self._password_length = None
         self._phone = None
         self._postal_code = None
+        self._require_auth_method_owner = None
         self._token = None
         self._uid_token = None
         self._usage_event_enable = None
@@ -294,6 +297,8 @@ class UpdateAccountSettings(object):
             self.phone = phone
         if postal_code is not None:
             self.postal_code = postal_code
+        if require_auth_method_owner is not None:
+            self.require_auth_method_owner = require_auth_method_owner
         if token is not None:
             self.token = token
         if uid_token is not None:
@@ -1324,6 +1329,29 @@ class UpdateAccountSettings(object):
         """
 
         self._postal_code = postal_code
+
+    @property
+    def require_auth_method_owner(self):
+        """Gets the require_auth_method_owner of this UpdateAccountSettings.  # noqa: E501
+
+        Require an owner when creating or updating authentication methods [true/false]  # noqa: E501
+
+        :return: The require_auth_method_owner of this UpdateAccountSettings.  # noqa: E501
+        :rtype: str
+        """
+        return self._require_auth_method_owner
+
+    @require_auth_method_owner.setter
+    def require_auth_method_owner(self, require_auth_method_owner):
+        """Sets the require_auth_method_owner of this UpdateAccountSettings.
+
+        Require an owner when creating or updating authentication methods [true/false]  # noqa: E501
+
+        :param require_auth_method_owner: The require_auth_method_owner of this UpdateAccountSettings.  # noqa: E501
+        :type: str
+        """
+
+        self._require_auth_method_owner = require_auth_method_owner
 
     @property
     def token(self):

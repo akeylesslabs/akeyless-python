@@ -48,6 +48,7 @@ class UpdateAuthMethodOCI(object):
         'jwt_ttl': 'int',
         'name': 'str',
         'new_name': 'str',
+        'owner': 'str',
         'product_type': 'list[str]',
         'tenant_ocid': 'str',
         'token': 'str',
@@ -69,13 +70,14 @@ class UpdateAuthMethodOCI(object):
         'jwt_ttl': 'jwt-ttl',
         'name': 'name',
         'new_name': 'new-name',
+        'owner': 'owner',
         'product_type': 'product-type',
         'tenant_ocid': 'tenant-ocid',
         'token': 'token',
         'uid_token': 'uid-token'
     }
 
-    def __init__(self, access_expires=0, allowed_client_type=None, audit_logs_claims=None, bound_ips=None, delete_protection=None, description=None, expiration_event_in=None, force_sub_claims=None, group_ocid=None, gw_bound_ips=None, json=False, jwt_ttl=0, name=None, new_name=None, product_type=None, tenant_ocid=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, access_expires=0, allowed_client_type=None, audit_logs_claims=None, bound_ips=None, delete_protection=None, description=None, expiration_event_in=None, force_sub_claims=None, group_ocid=None, gw_bound_ips=None, json=False, jwt_ttl=0, name=None, new_name=None, owner=None, product_type=None, tenant_ocid=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
         """UpdateAuthMethodOCI - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -95,6 +97,7 @@ class UpdateAuthMethodOCI(object):
         self._jwt_ttl = None
         self._name = None
         self._new_name = None
+        self._owner = None
         self._product_type = None
         self._tenant_ocid = None
         self._token = None
@@ -127,6 +130,7 @@ class UpdateAuthMethodOCI(object):
         self.name = name
         if new_name is not None:
             self.new_name = new_name
+        self.owner = owner
         if product_type is not None:
             self.product_type = product_type
         self.tenant_ocid = tenant_ocid
@@ -460,6 +464,29 @@ class UpdateAuthMethodOCI(object):
         """
 
         self._new_name = new_name
+
+    @property
+    def owner(self):
+        """Gets the owner of this UpdateAuthMethodOCI.  # noqa: E501
+
+        Auth Method owner (free text, up to 255 characters). On update, omit to keep the current owner and pass an empty value to clear it  # noqa: E501
+
+        :return: The owner of this UpdateAuthMethodOCI.  # noqa: E501
+        :rtype: str
+        """
+        return self._owner
+
+    @owner.setter
+    def owner(self, owner):
+        """Sets the owner of this UpdateAuthMethodOCI.
+
+        Auth Method owner (free text, up to 255 characters). On update, omit to keep the current owner and pass an empty value to clear it  # noqa: E501
+
+        :param owner: The owner of this UpdateAuthMethodOCI.  # noqa: E501
+        :type: str
+        """
+
+        self._owner = owner
 
     @property
     def product_type(self):

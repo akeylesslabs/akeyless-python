@@ -47,6 +47,7 @@ class CreateAuthMethodLDAP(object):
         'json': 'bool',
         'jwt_ttl': 'int',
         'name': 'str',
+        'owner': 'str',
         'product_type': 'list[str]',
         'public_key_data': 'str',
         'token': 'str',
@@ -68,6 +69,7 @@ class CreateAuthMethodLDAP(object):
         'json': 'json',
         'jwt_ttl': 'jwt-ttl',
         'name': 'name',
+        'owner': 'owner',
         'product_type': 'product-type',
         'public_key_data': 'public-key-data',
         'token': 'token',
@@ -75,7 +77,7 @@ class CreateAuthMethodLDAP(object):
         'unique_identifier': 'unique-identifier'
     }
 
-    def __init__(self, access_expires=0, allowed_client_type=None, audit_logs_claims=None, bound_ips=None, delete_protection=None, description=None, expiration_event_in=None, force_sub_claims=None, gen_key='true', gw_bound_ips=None, json=False, jwt_ttl=0, name=None, product_type=None, public_key_data=None, token=None, uid_token=None, unique_identifier='users', local_vars_configuration=None):  # noqa: E501
+    def __init__(self, access_expires=0, allowed_client_type=None, audit_logs_claims=None, bound_ips=None, delete_protection=None, description=None, expiration_event_in=None, force_sub_claims=None, gen_key='true', gw_bound_ips=None, json=False, jwt_ttl=0, name=None, owner=None, product_type=None, public_key_data=None, token=None, uid_token=None, unique_identifier='users', local_vars_configuration=None):  # noqa: E501
         """CreateAuthMethodLDAP - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -94,6 +96,7 @@ class CreateAuthMethodLDAP(object):
         self._json = None
         self._jwt_ttl = None
         self._name = None
+        self._owner = None
         self._product_type = None
         self._public_key_data = None
         self._token = None
@@ -126,6 +129,7 @@ class CreateAuthMethodLDAP(object):
         if jwt_ttl is not None:
             self.jwt_ttl = jwt_ttl
         self.name = name
+        self.owner = owner
         if product_type is not None:
             self.product_type = product_type
         if public_key_data is not None:
@@ -437,6 +441,29 @@ class CreateAuthMethodLDAP(object):
             raise ValueError("Invalid value for `name`, must not be `None`")  # noqa: E501
 
         self._name = name
+
+    @property
+    def owner(self):
+        """Gets the owner of this CreateAuthMethodLDAP.  # noqa: E501
+
+        Auth Method owner (free text, up to 255 characters). On update, omit to keep the current owner and pass an empty value to clear it  # noqa: E501
+
+        :return: The owner of this CreateAuthMethodLDAP.  # noqa: E501
+        :rtype: str
+        """
+        return self._owner
+
+    @owner.setter
+    def owner(self, owner):
+        """Sets the owner of this CreateAuthMethodLDAP.
+
+        Auth Method owner (free text, up to 255 characters). On update, omit to keep the current owner and pass an empty value to clear it  # noqa: E501
+
+        :param owner: The owner of this CreateAuthMethodLDAP.  # noqa: E501
+        :type: str
+        """
+
+        self._owner = owner
 
     @property
     def product_type(self):

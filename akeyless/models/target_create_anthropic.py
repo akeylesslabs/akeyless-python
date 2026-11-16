@@ -46,7 +46,14 @@ class TargetCreateAnthropic(object):
         'name': 'str',
         'rotate_on_unlock': 'str',
         'token': 'str',
-        'uid_token': 'str'
+        'uid_token': 'str',
+        'use_gw_cloud_identity': 'bool',
+        'wif_azure_audience': 'str',
+        'wif_federation_rule_id': 'str',
+        'wif_identity_token_source': 'str',
+        'wif_organization_id': 'str',
+        'wif_service_account_id': 'str',
+        'wif_workspace_id': 'str'
     }
 
     attribute_map = {
@@ -62,10 +69,17 @@ class TargetCreateAnthropic(object):
         'name': 'name',
         'rotate_on_unlock': 'rotate-on-unlock',
         'token': 'token',
-        'uid_token': 'uid-token'
+        'uid_token': 'uid-token',
+        'use_gw_cloud_identity': 'use-gw-cloud-identity',
+        'wif_azure_audience': 'wif-azure-audience',
+        'wif_federation_rule_id': 'wif-federation-rule-id',
+        'wif_identity_token_source': 'wif-identity-token-source',
+        'wif_organization_id': 'wif-organization-id',
+        'wif_service_account_id': 'wif-service-account-id',
+        'wif_workspace_id': 'wif-workspace-id'
     }
 
-    def __init__(self, anthropic_url='https://api.anthropic.com', api_key=None, delete_protection=None, description=None, json=False, key=None, lock_on_read=None, lock_ttl=None, max_versions=None, name=None, rotate_on_unlock=None, token=None, uid_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, anthropic_url='https://api.anthropic.com', api_key=None, delete_protection=None, description=None, json=False, key=None, lock_on_read=None, lock_ttl=None, max_versions=None, name=None, rotate_on_unlock=None, token=None, uid_token=None, use_gw_cloud_identity=None, wif_azure_audience=None, wif_federation_rule_id=None, wif_identity_token_source=None, wif_organization_id=None, wif_service_account_id=None, wif_workspace_id=None, local_vars_configuration=None):  # noqa: E501
         """TargetCreateAnthropic - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -84,6 +98,13 @@ class TargetCreateAnthropic(object):
         self._rotate_on_unlock = None
         self._token = None
         self._uid_token = None
+        self._use_gw_cloud_identity = None
+        self._wif_azure_audience = None
+        self._wif_federation_rule_id = None
+        self._wif_identity_token_source = None
+        self._wif_organization_id = None
+        self._wif_service_account_id = None
+        self._wif_workspace_id = None
         self.discriminator = None
 
         if anthropic_url is not None:
@@ -111,6 +132,20 @@ class TargetCreateAnthropic(object):
             self.token = token
         if uid_token is not None:
             self.uid_token = uid_token
+        if use_gw_cloud_identity is not None:
+            self.use_gw_cloud_identity = use_gw_cloud_identity
+        if wif_azure_audience is not None:
+            self.wif_azure_audience = wif_azure_audience
+        if wif_federation_rule_id is not None:
+            self.wif_federation_rule_id = wif_federation_rule_id
+        if wif_identity_token_source is not None:
+            self.wif_identity_token_source = wif_identity_token_source
+        if wif_organization_id is not None:
+            self.wif_organization_id = wif_organization_id
+        if wif_service_account_id is not None:
+            self.wif_service_account_id = wif_service_account_id
+        if wif_workspace_id is not None:
+            self.wif_workspace_id = wif_workspace_id
 
     @property
     def anthropic_url(self):
@@ -412,6 +447,167 @@ class TargetCreateAnthropic(object):
         """
 
         self._uid_token = uid_token
+
+    @property
+    def use_gw_cloud_identity(self):
+        """Gets the use_gw_cloud_identity of this TargetCreateAnthropic.  # noqa: E501
+
+        Use the Gateway's cloud identity (Anthropic Workload Identity Federation) instead of an API key  # noqa: E501
+
+        :return: The use_gw_cloud_identity of this TargetCreateAnthropic.  # noqa: E501
+        :rtype: bool
+        """
+        return self._use_gw_cloud_identity
+
+    @use_gw_cloud_identity.setter
+    def use_gw_cloud_identity(self, use_gw_cloud_identity):
+        """Sets the use_gw_cloud_identity of this TargetCreateAnthropic.
+
+        Use the Gateway's cloud identity (Anthropic Workload Identity Federation) instead of an API key  # noqa: E501
+
+        :param use_gw_cloud_identity: The use_gw_cloud_identity of this TargetCreateAnthropic.  # noqa: E501
+        :type: bool
+        """
+
+        self._use_gw_cloud_identity = use_gw_cloud_identity
+
+    @property
+    def wif_azure_audience(self):
+        """Gets the wif_azure_audience of this TargetCreateAnthropic.  # noqa: E501
+
+        Identifier URI (api://<app-id>) of the Entra app registration for the Claude API audience, required with the azure source  # noqa: E501
+
+        :return: The wif_azure_audience of this TargetCreateAnthropic.  # noqa: E501
+        :rtype: str
+        """
+        return self._wif_azure_audience
+
+    @wif_azure_audience.setter
+    def wif_azure_audience(self, wif_azure_audience):
+        """Sets the wif_azure_audience of this TargetCreateAnthropic.
+
+        Identifier URI (api://<app-id>) of the Entra app registration for the Claude API audience, required with the azure source  # noqa: E501
+
+        :param wif_azure_audience: The wif_azure_audience of this TargetCreateAnthropic.  # noqa: E501
+        :type: str
+        """
+
+        self._wif_azure_audience = wif_azure_audience
+
+    @property
+    def wif_federation_rule_id(self):
+        """Gets the wif_federation_rule_id of this TargetCreateAnthropic.  # noqa: E501
+
+        Federation rule ID (fdrl_...), required with use-gw-cloud-identity  # noqa: E501
+
+        :return: The wif_federation_rule_id of this TargetCreateAnthropic.  # noqa: E501
+        :rtype: str
+        """
+        return self._wif_federation_rule_id
+
+    @wif_federation_rule_id.setter
+    def wif_federation_rule_id(self, wif_federation_rule_id):
+        """Sets the wif_federation_rule_id of this TargetCreateAnthropic.
+
+        Federation rule ID (fdrl_...), required with use-gw-cloud-identity  # noqa: E501
+
+        :param wif_federation_rule_id: The wif_federation_rule_id of this TargetCreateAnthropic.  # noqa: E501
+        :type: str
+        """
+
+        self._wif_federation_rule_id = wif_federation_rule_id
+
+    @property
+    def wif_identity_token_source(self):
+        """Gets the wif_identity_token_source of this TargetCreateAnthropic.  # noqa: E501
+
+        Where the Gateway reads its identity token: file (default), gcp, aws or azure  # noqa: E501
+
+        :return: The wif_identity_token_source of this TargetCreateAnthropic.  # noqa: E501
+        :rtype: str
+        """
+        return self._wif_identity_token_source
+
+    @wif_identity_token_source.setter
+    def wif_identity_token_source(self, wif_identity_token_source):
+        """Sets the wif_identity_token_source of this TargetCreateAnthropic.
+
+        Where the Gateway reads its identity token: file (default), gcp, aws or azure  # noqa: E501
+
+        :param wif_identity_token_source: The wif_identity_token_source of this TargetCreateAnthropic.  # noqa: E501
+        :type: str
+        """
+
+        self._wif_identity_token_source = wif_identity_token_source
+
+    @property
+    def wif_organization_id(self):
+        """Gets the wif_organization_id of this TargetCreateAnthropic.  # noqa: E501
+
+        Anthropic organization ID (UUID), required with use-gw-cloud-identity  # noqa: E501
+
+        :return: The wif_organization_id of this TargetCreateAnthropic.  # noqa: E501
+        :rtype: str
+        """
+        return self._wif_organization_id
+
+    @wif_organization_id.setter
+    def wif_organization_id(self, wif_organization_id):
+        """Sets the wif_organization_id of this TargetCreateAnthropic.
+
+        Anthropic organization ID (UUID), required with use-gw-cloud-identity  # noqa: E501
+
+        :param wif_organization_id: The wif_organization_id of this TargetCreateAnthropic.  # noqa: E501
+        :type: str
+        """
+
+        self._wif_organization_id = wif_organization_id
+
+    @property
+    def wif_service_account_id(self):
+        """Gets the wif_service_account_id of this TargetCreateAnthropic.  # noqa: E501
+
+        Claude service account ID (svac_...), required with use-gw-cloud-identity  # noqa: E501
+
+        :return: The wif_service_account_id of this TargetCreateAnthropic.  # noqa: E501
+        :rtype: str
+        """
+        return self._wif_service_account_id
+
+    @wif_service_account_id.setter
+    def wif_service_account_id(self, wif_service_account_id):
+        """Sets the wif_service_account_id of this TargetCreateAnthropic.
+
+        Claude service account ID (svac_...), required with use-gw-cloud-identity  # noqa: E501
+
+        :param wif_service_account_id: The wif_service_account_id of this TargetCreateAnthropic.  # noqa: E501
+        :type: str
+        """
+
+        self._wif_service_account_id = wif_service_account_id
+
+    @property
+    def wif_workspace_id(self):
+        """Gets the wif_workspace_id of this TargetCreateAnthropic.  # noqa: E501
+
+        Workspace ID (wrkspc_...), needed only when the federation rule covers more than one workspace  # noqa: E501
+
+        :return: The wif_workspace_id of this TargetCreateAnthropic.  # noqa: E501
+        :rtype: str
+        """
+        return self._wif_workspace_id
+
+    @wif_workspace_id.setter
+    def wif_workspace_id(self, wif_workspace_id):
+        """Sets the wif_workspace_id of this TargetCreateAnthropic.
+
+        Workspace ID (wrkspc_...), needed only when the federation rule covers more than one workspace  # noqa: E501
+
+        :param wif_workspace_id: The wif_workspace_id of this TargetCreateAnthropic.  # noqa: E501
+        :type: str
+        """
+
+        self._wif_workspace_id = wif_workspace_id
 
     def to_dict(self):
         """Returns the model properties as a dict"""

@@ -36,18 +36,24 @@ class ProvisionCertificateOutput(object):
     openapi_types = {
         'fail_message': 'str',
         'success_message': 'str',
+        'association_id': 'str',
         'host_names': 'list[str]',
-        'provisioned_at': 'datetime'
+        'provisioned_at': 'datetime',
+        'results': 'list[ProvisionCertificateOutput]',
+        'target_name': 'str'
     }
 
     attribute_map = {
         'fail_message': 'FailMessage',
         'success_message': 'SuccessMessage',
+        'association_id': 'association_id',
         'host_names': 'host_names',
-        'provisioned_at': 'provisioned_at'
+        'provisioned_at': 'provisioned_at',
+        'results': 'results',
+        'target_name': 'target_name'
     }
 
-    def __init__(self, fail_message=None, success_message=None, host_names=None, provisioned_at=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, fail_message=None, success_message=None, association_id=None, host_names=None, provisioned_at=None, results=None, target_name=None, local_vars_configuration=None):  # noqa: E501
         """ProvisionCertificateOutput - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -55,18 +61,27 @@ class ProvisionCertificateOutput(object):
 
         self._fail_message = None
         self._success_message = None
+        self._association_id = None
         self._host_names = None
         self._provisioned_at = None
+        self._results = None
+        self._target_name = None
         self.discriminator = None
 
         if fail_message is not None:
             self.fail_message = fail_message
         if success_message is not None:
             self.success_message = success_message
+        if association_id is not None:
+            self.association_id = association_id
         if host_names is not None:
             self.host_names = host_names
         if provisioned_at is not None:
             self.provisioned_at = provisioned_at
+        if results is not None:
+            self.results = results
+        if target_name is not None:
+            self.target_name = target_name
 
     @property
     def fail_message(self):
@@ -111,6 +126,29 @@ class ProvisionCertificateOutput(object):
         self._success_message = success_message
 
     @property
+    def association_id(self):
+        """Gets the association_id of this ProvisionCertificateOutput.  # noqa: E501
+
+        AssociationID and TargetName identify the row of a Results entry.  # noqa: E501
+
+        :return: The association_id of this ProvisionCertificateOutput.  # noqa: E501
+        :rtype: str
+        """
+        return self._association_id
+
+    @association_id.setter
+    def association_id(self, association_id):
+        """Sets the association_id of this ProvisionCertificateOutput.
+
+        AssociationID and TargetName identify the row of a Results entry.  # noqa: E501
+
+        :param association_id: The association_id of this ProvisionCertificateOutput.  # noqa: E501
+        :type: str
+        """
+
+        self._association_id = association_id
+
+    @property
     def host_names(self):
         """Gets the host_names of this ProvisionCertificateOutput.  # noqa: E501
 
@@ -151,6 +189,50 @@ class ProvisionCertificateOutput(object):
         """
 
         self._provisioned_at = provisioned_at
+
+    @property
+    def results(self):
+        """Gets the results of this ProvisionCertificateOutput.  # noqa: E501
+
+        Results holds one entry per row. It is set only when several rows were handled; the top-level fields then summarize them.  # noqa: E501
+
+        :return: The results of this ProvisionCertificateOutput.  # noqa: E501
+        :rtype: list[ProvisionCertificateOutput]
+        """
+        return self._results
+
+    @results.setter
+    def results(self, results):
+        """Sets the results of this ProvisionCertificateOutput.
+
+        Results holds one entry per row. It is set only when several rows were handled; the top-level fields then summarize them.  # noqa: E501
+
+        :param results: The results of this ProvisionCertificateOutput.  # noqa: E501
+        :type: list[ProvisionCertificateOutput]
+        """
+
+        self._results = results
+
+    @property
+    def target_name(self):
+        """Gets the target_name of this ProvisionCertificateOutput.  # noqa: E501
+
+
+        :return: The target_name of this ProvisionCertificateOutput.  # noqa: E501
+        :rtype: str
+        """
+        return self._target_name
+
+    @target_name.setter
+    def target_name(self, target_name):
+        """Sets the target_name of this ProvisionCertificateOutput.
+
+
+        :param target_name: The target_name of this ProvisionCertificateOutput.  # noqa: E501
+        :type: str
+        """
+
+        self._target_name = target_name
 
     def to_dict(self):
         """Returns the model properties as a dict"""

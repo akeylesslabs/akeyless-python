@@ -35,15 +35,29 @@ class AnthropicTargetDetails(object):
     """
     openapi_types = {
         'anthropic_url': 'str',
-        'api_key': 'str'
+        'api_key': 'str',
+        'use_gw_cloud_identity': 'bool',
+        'wif_azure_audience': 'str',
+        'wif_federation_rule_id': 'str',
+        'wif_identity_token_source': 'str',
+        'wif_organization_id': 'str',
+        'wif_service_account_id': 'str',
+        'wif_workspace_id': 'str'
     }
 
     attribute_map = {
         'anthropic_url': 'anthropic_url',
-        'api_key': 'api_key'
+        'api_key': 'api_key',
+        'use_gw_cloud_identity': 'use_gw_cloud_identity',
+        'wif_azure_audience': 'wif_azure_audience',
+        'wif_federation_rule_id': 'wif_federation_rule_id',
+        'wif_identity_token_source': 'wif_identity_token_source',
+        'wif_organization_id': 'wif_organization_id',
+        'wif_service_account_id': 'wif_service_account_id',
+        'wif_workspace_id': 'wif_workspace_id'
     }
 
-    def __init__(self, anthropic_url=None, api_key=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, anthropic_url=None, api_key=None, use_gw_cloud_identity=None, wif_azure_audience=None, wif_federation_rule_id=None, wif_identity_token_source=None, wif_organization_id=None, wif_service_account_id=None, wif_workspace_id=None, local_vars_configuration=None):  # noqa: E501
         """AnthropicTargetDetails - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -51,12 +65,33 @@ class AnthropicTargetDetails(object):
 
         self._anthropic_url = None
         self._api_key = None
+        self._use_gw_cloud_identity = None
+        self._wif_azure_audience = None
+        self._wif_federation_rule_id = None
+        self._wif_identity_token_source = None
+        self._wif_organization_id = None
+        self._wif_service_account_id = None
+        self._wif_workspace_id = None
         self.discriminator = None
 
         if anthropic_url is not None:
             self.anthropic_url = anthropic_url
         if api_key is not None:
             self.api_key = api_key
+        if use_gw_cloud_identity is not None:
+            self.use_gw_cloud_identity = use_gw_cloud_identity
+        if wif_azure_audience is not None:
+            self.wif_azure_audience = wif_azure_audience
+        if wif_federation_rule_id is not None:
+            self.wif_federation_rule_id = wif_federation_rule_id
+        if wif_identity_token_source is not None:
+            self.wif_identity_token_source = wif_identity_token_source
+        if wif_organization_id is not None:
+            self.wif_organization_id = wif_organization_id
+        if wif_service_account_id is not None:
+            self.wif_service_account_id = wif_service_account_id
+        if wif_workspace_id is not None:
+            self.wif_workspace_id = wif_workspace_id
 
     @property
     def anthropic_url(self):
@@ -99,6 +134,167 @@ class AnthropicTargetDetails(object):
         """
 
         self._api_key = api_key
+
+    @property
+    def use_gw_cloud_identity(self):
+        """Gets the use_gw_cloud_identity of this AnthropicTargetDetails.  # noqa: E501
+
+        UseGatewayCloudIdentity authenticates with Anthropic Workload Identity Federation instead of ApiKey: the Gateway exchanges its own identity token for a short-lived Anthropic access token. ApiKey must be empty. See go/src/targets/llm/anthropic_wif_client.go.  # noqa: E501
+
+        :return: The use_gw_cloud_identity of this AnthropicTargetDetails.  # noqa: E501
+        :rtype: bool
+        """
+        return self._use_gw_cloud_identity
+
+    @use_gw_cloud_identity.setter
+    def use_gw_cloud_identity(self, use_gw_cloud_identity):
+        """Sets the use_gw_cloud_identity of this AnthropicTargetDetails.
+
+        UseGatewayCloudIdentity authenticates with Anthropic Workload Identity Federation instead of ApiKey: the Gateway exchanges its own identity token for a short-lived Anthropic access token. ApiKey must be empty. See go/src/targets/llm/anthropic_wif_client.go.  # noqa: E501
+
+        :param use_gw_cloud_identity: The use_gw_cloud_identity of this AnthropicTargetDetails.  # noqa: E501
+        :type: bool
+        """
+
+        self._use_gw_cloud_identity = use_gw_cloud_identity
+
+    @property
+    def wif_azure_audience(self):
+        """Gets the wif_azure_audience of this AnthropicTargetDetails.  # noqa: E501
+
+        WIFAzureAudience is the identifier URI (api://<app-id>) of the Entra app registration that represents the Claude API audience. Required with the azure source, empty with every other source.  # noqa: E501
+
+        :return: The wif_azure_audience of this AnthropicTargetDetails.  # noqa: E501
+        :rtype: str
+        """
+        return self._wif_azure_audience
+
+    @wif_azure_audience.setter
+    def wif_azure_audience(self, wif_azure_audience):
+        """Sets the wif_azure_audience of this AnthropicTargetDetails.
+
+        WIFAzureAudience is the identifier URI (api://<app-id>) of the Entra app registration that represents the Claude API audience. Required with the azure source, empty with every other source.  # noqa: E501
+
+        :param wif_azure_audience: The wif_azure_audience of this AnthropicTargetDetails.  # noqa: E501
+        :type: str
+        """
+
+        self._wif_azure_audience = wif_azure_audience
+
+    @property
+    def wif_federation_rule_id(self):
+        """Gets the wif_federation_rule_id of this AnthropicTargetDetails.  # noqa: E501
+
+        WIFFederationRuleID is the federation rule ID (fdrl_...).  # noqa: E501
+
+        :return: The wif_federation_rule_id of this AnthropicTargetDetails.  # noqa: E501
+        :rtype: str
+        """
+        return self._wif_federation_rule_id
+
+    @wif_federation_rule_id.setter
+    def wif_federation_rule_id(self, wif_federation_rule_id):
+        """Sets the wif_federation_rule_id of this AnthropicTargetDetails.
+
+        WIFFederationRuleID is the federation rule ID (fdrl_...).  # noqa: E501
+
+        :param wif_federation_rule_id: The wif_federation_rule_id of this AnthropicTargetDetails.  # noqa: E501
+        :type: str
+        """
+
+        self._wif_federation_rule_id = wif_federation_rule_id
+
+    @property
+    def wif_identity_token_source(self):
+        """Gets the wif_identity_token_source of this AnthropicTargetDetails.  # noqa: E501
+
+        WIFIdentityTokenSource selects where the Gateway takes its identity token: file (default, projected Kubernetes or SPIFFE token), gcp (Google Cloud metadata server), aws (STS web identity token) or azure (Microsoft Entra ID).  # noqa: E501
+
+        :return: The wif_identity_token_source of this AnthropicTargetDetails.  # noqa: E501
+        :rtype: str
+        """
+        return self._wif_identity_token_source
+
+    @wif_identity_token_source.setter
+    def wif_identity_token_source(self, wif_identity_token_source):
+        """Sets the wif_identity_token_source of this AnthropicTargetDetails.
+
+        WIFIdentityTokenSource selects where the Gateway takes its identity token: file (default, projected Kubernetes or SPIFFE token), gcp (Google Cloud metadata server), aws (STS web identity token) or azure (Microsoft Entra ID).  # noqa: E501
+
+        :param wif_identity_token_source: The wif_identity_token_source of this AnthropicTargetDetails.  # noqa: E501
+        :type: str
+        """
+
+        self._wif_identity_token_source = wif_identity_token_source
+
+    @property
+    def wif_organization_id(self):
+        """Gets the wif_organization_id of this AnthropicTargetDetails.  # noqa: E501
+
+        WIFOrganizationID is the UUID of the Anthropic organization.  # noqa: E501
+
+        :return: The wif_organization_id of this AnthropicTargetDetails.  # noqa: E501
+        :rtype: str
+        """
+        return self._wif_organization_id
+
+    @wif_organization_id.setter
+    def wif_organization_id(self, wif_organization_id):
+        """Sets the wif_organization_id of this AnthropicTargetDetails.
+
+        WIFOrganizationID is the UUID of the Anthropic organization.  # noqa: E501
+
+        :param wif_organization_id: The wif_organization_id of this AnthropicTargetDetails.  # noqa: E501
+        :type: str
+        """
+
+        self._wif_organization_id = wif_organization_id
+
+    @property
+    def wif_service_account_id(self):
+        """Gets the wif_service_account_id of this AnthropicTargetDetails.  # noqa: E501
+
+        WIFServiceAccountID is the Claude service account ID (svac_...).  # noqa: E501
+
+        :return: The wif_service_account_id of this AnthropicTargetDetails.  # noqa: E501
+        :rtype: str
+        """
+        return self._wif_service_account_id
+
+    @wif_service_account_id.setter
+    def wif_service_account_id(self, wif_service_account_id):
+        """Sets the wif_service_account_id of this AnthropicTargetDetails.
+
+        WIFServiceAccountID is the Claude service account ID (svac_...).  # noqa: E501
+
+        :param wif_service_account_id: The wif_service_account_id of this AnthropicTargetDetails.  # noqa: E501
+        :type: str
+        """
+
+        self._wif_service_account_id = wif_service_account_id
+
+    @property
+    def wif_workspace_id(self):
+        """Gets the wif_workspace_id of this AnthropicTargetDetails.  # noqa: E501
+
+        WIFWorkspaceID is the optional workspace ID (wrkspc_...). Required by Anthropic only when the rule is enabled for more than one workspace.  # noqa: E501
+
+        :return: The wif_workspace_id of this AnthropicTargetDetails.  # noqa: E501
+        :rtype: str
+        """
+        return self._wif_workspace_id
+
+    @wif_workspace_id.setter
+    def wif_workspace_id(self, wif_workspace_id):
+        """Sets the wif_workspace_id of this AnthropicTargetDetails.
+
+        WIFWorkspaceID is the optional workspace ID (wrkspc_...). Required by Anthropic only when the rule is enabled for more than one workspace.  # noqa: E501
+
+        :param wif_workspace_id: The wif_workspace_id of this AnthropicTargetDetails.  # noqa: E501
+        :type: str
+        """
+
+        self._wif_workspace_id = wif_workspace_id
 
     def to_dict(self):
         """Returns the model properties as a dict"""

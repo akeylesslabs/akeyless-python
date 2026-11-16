@@ -141,6 +141,7 @@ Method | HTTP request | Description
 [**detokenize**](V2Api.md#detokenize) | **POST** /detokenize | 
 [**detokenize_batch**](V2Api.md#detokenize_batch) | **POST** /detokenize-batch | 
 [**dynamic_secret_create_aerospike**](V2Api.md#dynamic_secret_create_aerospike) | **POST** /dynamic-secret-create-aerospike | 
+[**dynamic_secret_create_ali_cloud**](V2Api.md#dynamic_secret_create_ali_cloud) | **POST** /dynamic-secret-create-alicloud | 
 [**dynamic_secret_create_artifactory**](V2Api.md#dynamic_secret_create_artifactory) | **POST** /dynamic-secret-create-artifactory | 
 [**dynamic_secret_create_aws**](V2Api.md#dynamic_secret_create_aws) | **POST** /dynamic-secret-create-aws | 
 [**dynamic_secret_create_azure**](V2Api.md#dynamic_secret_create_azure) | **POST** /dynamic-secret-create-azure | 
@@ -177,6 +178,7 @@ Method | HTTP request | Description
 [**dynamic_secret_tmp_creds_get**](V2Api.md#dynamic_secret_tmp_creds_get) | **POST** /dynamic-secret-tmp-creds-get | 
 [**dynamic_secret_tmp_creds_update**](V2Api.md#dynamic_secret_tmp_creds_update) | **POST** /dynamic-secret-tmp-creds-update | 
 [**dynamic_secret_update_aerospike**](V2Api.md#dynamic_secret_update_aerospike) | **POST** /dynamic-secret-update-aerospike | 
+[**dynamic_secret_update_ali_cloud**](V2Api.md#dynamic_secret_update_ali_cloud) | **POST** /dynamic-secret-update-alicloud | 
 [**dynamic_secret_update_artifactory**](V2Api.md#dynamic_secret_update_artifactory) | **POST** /dynamic-secret-update-artifactory | 
 [**dynamic_secret_update_aws**](V2Api.md#dynamic_secret_update_aws) | **POST** /dynamic-secret-update-aws | 
 [**dynamic_secret_update_azure**](V2Api.md#dynamic_secret_update_azure) | **POST** /dynamic-secret-update-azure | 
@@ -457,6 +459,10 @@ Method | HTTP request | Description
 [**rotated_secret_delete_sync**](V2Api.md#rotated_secret_delete_sync) | **POST** /rotated-secret-delete-sync | 
 [**rotated_secret_get_value**](V2Api.md#rotated_secret_get_value) | **POST** /rotated-secret-get-value | 
 [**rotated_secret_list**](V2Api.md#rotated_secret_list) | **POST** /rotated-secret-list | 
+[**rotated_secret_provision_create**](V2Api.md#rotated_secret_provision_create) | **POST** /rotated-secret-provision-create | 
+[**rotated_secret_provision_delete**](V2Api.md#rotated_secret_provision_delete) | **POST** /rotated-secret-provision-delete | 
+[**rotated_secret_provision_push**](V2Api.md#rotated_secret_provision_push) | **POST** /rotated-secret-provision-push | 
+[**rotated_secret_provision_update**](V2Api.md#rotated_secret_provision_update) | **POST** /rotated-secret-provision-update | 
 [**rotated_secret_sync**](V2Api.md#rotated_secret_sync) | **POST** /rotated-secret-sync | 
 [**rotated_secret_update_aerospike**](V2Api.md#rotated_secret_update_aerospike) | **POST** /rotated-secret-update-aerospike | 
 [**rotated_secret_update_ali_cloud**](V2Api.md#rotated_secret_update_ali_cloud) | **POST** /rotated-secret-update-alicloud | 
@@ -500,6 +506,7 @@ Method | HTTP request | Description
 [**target_create_ali_cloud**](V2Api.md#target_create_ali_cloud) | **POST** /target-create-alicloud | 
 [**target_create_anthropic**](V2Api.md#target_create_anthropic) | **POST** /target-create-anthropic | 
 [**target_create_artifactory**](V2Api.md#target_create_artifactory) | **POST** /target-create-artifactory | 
+[**target_create_atlassian**](V2Api.md#target_create_atlassian) | **POST** /target-create-atlassian | 
 [**target_create_aws**](V2Api.md#target_create_aws) | **POST** /target-create-aws | 
 [**target_create_azure**](V2Api.md#target_create_azure) | **POST** /target-create-azure | 
 [**target_create_bedrock**](V2Api.md#target_create_bedrock) | **POST** /target-create-bedrock | 
@@ -545,6 +552,7 @@ Method | HTTP request | Description
 [**target_update_ali_cloud**](V2Api.md#target_update_ali_cloud) | **POST** /target-update-alicloud | 
 [**target_update_anthropic**](V2Api.md#target_update_anthropic) | **POST** /target-update-anthropic | 
 [**target_update_artifactory**](V2Api.md#target_update_artifactory) | **POST** /target-update-artifactory | 
+[**target_update_atlassian**](V2Api.md#target_update_atlassian) | **POST** /target-update-atlassian | 
 [**target_update_aws**](V2Api.md#target_update_aws) | **POST** /target-update-aws | 
 [**target_update_azure**](V2Api.md#target_update_azure) | **POST** /target-update-azure | 
 [**target_update_bedrock**](V2Api.md#target_update_bedrock) | **POST** /target-update-bedrock | 
@@ -8901,6 +8909,66 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **dynamic_secret_create_ali_cloud**
+> DynamicSecretCreateOutput dynamic_secret_create_ali_cloud(dynamic_secret_create_ali_cloud)
+
+
+
+### Example
+
+```python
+from __future__ import print_function
+import time
+import akeyless
+from akeyless.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.akeyless.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = akeyless.Configuration(
+    host = "https://api.akeyless.io"
+)
+
+
+# Enter a context with an instance of the API client
+with akeyless.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = akeyless.V2Api(api_client)
+    dynamic_secret_create_ali_cloud = akeyless.DynamicSecretCreateAliCloud() # DynamicSecretCreateAliCloud | 
+
+    try:
+        api_response = api_instance.dynamic_secret_create_ali_cloud(dynamic_secret_create_ali_cloud)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling V2Api->dynamic_secret_create_ali_cloud: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **dynamic_secret_create_ali_cloud** | [**DynamicSecretCreateAliCloud**](DynamicSecretCreateAliCloud.md)|  | 
+
+### Return type
+
+[**DynamicSecretCreateOutput**](DynamicSecretCreateOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**201** | dynamicSecretCreateAliCloudResponse wraps response body. |  -  |
+**0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **dynamic_secret_create_artifactory**
 > DynamicSecretCreateOutput dynamic_secret_create_artifactory(dynamic_secret_create_artifactory)
 
@@ -11055,6 +11123,66 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | dynamicSecretUpdateAerospikeResponse wraps response body. |  -  |
+**0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **dynamic_secret_update_ali_cloud**
+> DynamicSecretUpdateOutput dynamic_secret_update_ali_cloud(dynamic_secret_update_ali_cloud)
+
+
+
+### Example
+
+```python
+from __future__ import print_function
+import time
+import akeyless
+from akeyless.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.akeyless.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = akeyless.Configuration(
+    host = "https://api.akeyless.io"
+)
+
+
+# Enter a context with an instance of the API client
+with akeyless.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = akeyless.V2Api(api_client)
+    dynamic_secret_update_ali_cloud = akeyless.DynamicSecretUpdateAliCloud() # DynamicSecretUpdateAliCloud | 
+
+    try:
+        api_response = api_instance.dynamic_secret_update_ali_cloud(dynamic_secret_update_ali_cloud)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling V2Api->dynamic_secret_update_ali_cloud: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **dynamic_secret_update_ali_cloud** | [**DynamicSecretUpdateAliCloud**](DynamicSecretUpdateAliCloud.md)|  | 
+
+### Return type
+
+[**DynamicSecretUpdateOutput**](DynamicSecretUpdateOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | dynamicSecretUpdateAliCloudResponse wraps response body. |  -  |
 **0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -27848,6 +27976,246 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **rotated_secret_provision_create**
+> RotatedSecretProvisionAssocOutput rotated_secret_provision_create(rotated_secret_provision_create)
+
+
+
+### Example
+
+```python
+from __future__ import print_function
+import time
+import akeyless
+from akeyless.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.akeyless.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = akeyless.Configuration(
+    host = "https://api.akeyless.io"
+)
+
+
+# Enter a context with an instance of the API client
+with akeyless.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = akeyless.V2Api(api_client)
+    rotated_secret_provision_create = akeyless.RotatedSecretProvisionCreate() # RotatedSecretProvisionCreate | 
+
+    try:
+        api_response = api_instance.rotated_secret_provision_create(rotated_secret_provision_create)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling V2Api->rotated_secret_provision_create: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **rotated_secret_provision_create** | [**RotatedSecretProvisionCreate**](RotatedSecretProvisionCreate.md)|  | 
+
+### Return type
+
+[**RotatedSecretProvisionAssocOutput**](RotatedSecretProvisionAssocOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+**0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **rotated_secret_provision_delete**
+> RotatedSecretProvisionAssocOutput rotated_secret_provision_delete(rotated_secret_provision_delete)
+
+
+
+### Example
+
+```python
+from __future__ import print_function
+import time
+import akeyless
+from akeyless.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.akeyless.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = akeyless.Configuration(
+    host = "https://api.akeyless.io"
+)
+
+
+# Enter a context with an instance of the API client
+with akeyless.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = akeyless.V2Api(api_client)
+    rotated_secret_provision_delete = akeyless.RotatedSecretProvisionDelete() # RotatedSecretProvisionDelete | 
+
+    try:
+        api_response = api_instance.rotated_secret_provision_delete(rotated_secret_provision_delete)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling V2Api->rotated_secret_provision_delete: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **rotated_secret_provision_delete** | [**RotatedSecretProvisionDelete**](RotatedSecretProvisionDelete.md)|  | 
+
+### Return type
+
+[**RotatedSecretProvisionAssocOutput**](RotatedSecretProvisionAssocOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+**0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **rotated_secret_provision_push**
+> ProvisionSSHRotatedSecretOutput rotated_secret_provision_push(rotated_secret_provision_push)
+
+
+
+### Example
+
+```python
+from __future__ import print_function
+import time
+import akeyless
+from akeyless.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.akeyless.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = akeyless.Configuration(
+    host = "https://api.akeyless.io"
+)
+
+
+# Enter a context with an instance of the API client
+with akeyless.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = akeyless.V2Api(api_client)
+    rotated_secret_provision_push = akeyless.RotatedSecretProvisionPush() # RotatedSecretProvisionPush | 
+
+    try:
+        api_response = api_instance.rotated_secret_provision_push(rotated_secret_provision_push)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling V2Api->rotated_secret_provision_push: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **rotated_secret_provision_push** | [**RotatedSecretProvisionPush**](RotatedSecretProvisionPush.md)|  | 
+
+### Return type
+
+[**ProvisionSSHRotatedSecretOutput**](ProvisionSSHRotatedSecretOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+**0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **rotated_secret_provision_update**
+> RotatedSecretProvisionAssocOutput rotated_secret_provision_update(rotated_secret_provision_update)
+
+
+
+### Example
+
+```python
+from __future__ import print_function
+import time
+import akeyless
+from akeyless.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.akeyless.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = akeyless.Configuration(
+    host = "https://api.akeyless.io"
+)
+
+
+# Enter a context with an instance of the API client
+with akeyless.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = akeyless.V2Api(api_client)
+    rotated_secret_provision_update = akeyless.RotatedSecretProvisionUpdate() # RotatedSecretProvisionUpdate | 
+
+    try:
+        api_response = api_instance.rotated_secret_provision_update(rotated_secret_provision_update)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling V2Api->rotated_secret_provision_update: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **rotated_secret_provision_update** | [**RotatedSecretProvisionUpdate**](RotatedSecretProvisionUpdate.md)|  | 
+
+### Return type
+
+[**RotatedSecretProvisionAssocOutput**](RotatedSecretProvisionAssocOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+**0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **rotated_secret_sync**
 > object rotated_secret_sync(rotated_secret_sync)
 
@@ -30424,6 +30792,66 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | targetCreateArtifactoryResponse wraps response body. |  -  |
+**0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **target_create_atlassian**
+> TargetCreateOutput target_create_atlassian(target_create_atlassian)
+
+
+
+### Example
+
+```python
+from __future__ import print_function
+import time
+import akeyless
+from akeyless.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.akeyless.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = akeyless.Configuration(
+    host = "https://api.akeyless.io"
+)
+
+
+# Enter a context with an instance of the API client
+with akeyless.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = akeyless.V2Api(api_client)
+    target_create_atlassian = akeyless.TargetCreateAtlassian() # TargetCreateAtlassian | 
+
+    try:
+        api_response = api_instance.target_create_atlassian(target_create_atlassian)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling V2Api->target_create_atlassian: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **target_create_atlassian** | [**TargetCreateAtlassian**](TargetCreateAtlassian.md)|  | 
+
+### Return type
+
+[**TargetCreateOutput**](TargetCreateOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**201** | targetCreateAtlassianResponse wraps response body. |  -  |
 **0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -33124,6 +33552,66 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | targetUpdateArtifactoryResponse wraps response body. |  -  |
+**0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **target_update_atlassian**
+> TargetUpdateOutput target_update_atlassian(target_update_atlassian)
+
+
+
+### Example
+
+```python
+from __future__ import print_function
+import time
+import akeyless
+from akeyless.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.akeyless.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = akeyless.Configuration(
+    host = "https://api.akeyless.io"
+)
+
+
+# Enter a context with an instance of the API client
+with akeyless.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = akeyless.V2Api(api_client)
+    target_update_atlassian = akeyless.TargetUpdateAtlassian() # TargetUpdateAtlassian | 
+
+    try:
+        api_response = api_instance.target_update_atlassian(target_update_atlassian)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling V2Api->target_update_atlassian: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **target_update_atlassian** | [**TargetUpdateAtlassian**](TargetUpdateAtlassian.md)|  | 
+
+### Return type
+
+[**TargetUpdateOutput**](TargetUpdateOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**201** | targetUpdateAtlassianResponse wraps response body. |  -  |
 **0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

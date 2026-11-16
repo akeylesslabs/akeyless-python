@@ -40,6 +40,7 @@ class Auth(object):
         'account_id': 'str',
         'admin_email': 'str',
         'admin_password': 'str',
+        'auth_via_gateway': 'bool',
         'azure_cloud': 'str',
         'cert_challenge': 'str',
         'cert_data': 'str',
@@ -75,6 +76,7 @@ class Auth(object):
         'account_id': 'account-id',
         'admin_email': 'admin-email',
         'admin_password': 'admin-password',
+        'auth_via_gateway': 'auth-via-gateway',
         'azure_cloud': 'azure-cloud',
         'cert_challenge': 'cert-challenge',
         'cert_data': 'cert-data',
@@ -103,7 +105,7 @@ class Auth(object):
         'username': 'username'
     }
 
-    def __init__(self, access_id=None, access_key=None, access_type='access_key', account_id=None, admin_email=None, admin_password=None, azure_cloud='AzureCloud', cert_challenge=None, cert_data=None, cloud_id=None, debug=None, disable_pafxfast=None, gateway_spn=None, gateway_url=None, gcp_audience='akeyless.io', json=False, jwt=None, k8s_auth_config_name=None, k8s_service_account_token=None, kerberos_token=None, kerberos_username=None, key_data=None, keytab_data=None, krb5_conf_data=None, ldap_password=None, oci_auth_type='apikey', oci_group_ocid=None, otp=None, signed_cert_challenge=None, uid_token=None, use_remote_browser=None, username=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, access_id=None, access_key=None, access_type='access_key', account_id=None, admin_email=None, admin_password=None, auth_via_gateway=None, azure_cloud='AzureCloud', cert_challenge=None, cert_data=None, cloud_id=None, debug=None, disable_pafxfast=None, gateway_spn=None, gateway_url=None, gcp_audience='akeyless.io', json=False, jwt=None, k8s_auth_config_name=None, k8s_service_account_token=None, kerberos_token=None, kerberos_username=None, key_data=None, keytab_data=None, krb5_conf_data=None, ldap_password=None, oci_auth_type='apikey', oci_group_ocid=None, otp=None, signed_cert_challenge=None, uid_token=None, use_remote_browser=None, username=None, local_vars_configuration=None):  # noqa: E501
         """Auth - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -115,6 +117,7 @@ class Auth(object):
         self._account_id = None
         self._admin_email = None
         self._admin_password = None
+        self._auth_via_gateway = None
         self._azure_cloud = None
         self._cert_challenge = None
         self._cert_data = None
@@ -155,6 +158,8 @@ class Auth(object):
             self.admin_email = admin_email
         if admin_password is not None:
             self.admin_password = admin_password
+        if auth_via_gateway is not None:
+            self.auth_via_gateway = auth_via_gateway
         if azure_cloud is not None:
             self.azure_cloud = azure_cloud
         if cert_challenge is not None:
@@ -345,6 +350,29 @@ class Auth(object):
         """
 
         self._admin_password = admin_password
+
+    @property
+    def auth_via_gateway(self):
+        """Gets the auth_via_gateway of this Auth.  # noqa: E501
+
+        Route the interactive OIDC/SAML browser login through the Gateway (gateway-url) instead of Akeyless Auth (relevant only for access-type=saml/oidc)  # noqa: E501
+
+        :return: The auth_via_gateway of this Auth.  # noqa: E501
+        :rtype: bool
+        """
+        return self._auth_via_gateway
+
+    @auth_via_gateway.setter
+    def auth_via_gateway(self, auth_via_gateway):
+        """Sets the auth_via_gateway of this Auth.
+
+        Route the interactive OIDC/SAML browser login through the Gateway (gateway-url) instead of Akeyless Auth (relevant only for access-type=saml/oidc)  # noqa: E501
+
+        :param auth_via_gateway: The auth_via_gateway of this Auth.  # noqa: E501
+        :type: bool
+        """
+
+        self._auth_via_gateway = auth_via_gateway
 
     @property
     def azure_cloud(self):
