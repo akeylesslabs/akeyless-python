@@ -14,6 +14,7 @@ Name | Type | Description | Notes
 **chef_target_details** | [**ChefTargetDetails**](ChefTargetDetails.md) |  | [optional] 
 **cloudflare_target_details** | [**CloudflareTargetDetails**](CloudflareTargetDetails.md) |  | [optional] 
 **custom_dns_target_details** | [**CustomDnsTargetDetails**](CustomDnsTargetDetails.md) |  | [optional] 
+**custom_llm_target_details** | [**CustomLLMTargetDetails**](CustomLLMTargetDetails.md) |  | [optional] 
 **custom_target_details** | [**CustomTargetDetails**](CustomTargetDetails.md) |  | [optional] 
 **db_target_details** | [**DbTargetDetails**](DbTargetDetails.md) |  | [optional] 
 **digicert_target_details** | [**DigiCertTargetDetails**](DigiCertTargetDetails.md) |  | [optional] 

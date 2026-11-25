@@ -35,26 +35,31 @@ class ImporterInfo(object):
     """
     openapi_types = {
         'external_item_id': 'str',
+        'source_version': 'int',
         'version': 'int'
     }
 
     attribute_map = {
         'external_item_id': 'external_item_id',
+        'source_version': 'source_version',
         'version': 'version'
     }
 
-    def __init__(self, external_item_id=None, version=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, external_item_id=None, source_version=None, version=None, local_vars_configuration=None):  # noqa: E501
         """ImporterInfo - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._external_item_id = None
+        self._source_version = None
         self._version = None
         self.discriminator = None
 
         if external_item_id is not None:
             self.external_item_id = external_item_id
+        if source_version is not None:
+            self.source_version = source_version
         if version is not None:
             self.version = version
 
@@ -78,6 +83,29 @@ class ImporterInfo(object):
         """
 
         self._external_item_id = external_item_id
+
+    @property
+    def source_version(self):
+        """Gets the source_version of this ImporterInfo.  # noqa: E501
+
+        SourceVersion is the last version imported from the source system (Vault KV v2). 0 means not tracked.  # noqa: E501
+
+        :return: The source_version of this ImporterInfo.  # noqa: E501
+        :rtype: int
+        """
+        return self._source_version
+
+    @source_version.setter
+    def source_version(self, source_version):
+        """Sets the source_version of this ImporterInfo.
+
+        SourceVersion is the last version imported from the source system (Vault KV v2). 0 means not tracked.  # noqa: E501
+
+        :param source_version: The source_version of this ImporterInfo.  # noqa: E501
+        :type: int
+        """
+
+        self._source_version = source_version
 
     @property
     def version(self):

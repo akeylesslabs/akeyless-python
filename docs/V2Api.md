@@ -512,6 +512,7 @@ Method | HTTP request | Description
 [**target_create_bedrock**](V2Api.md#target_create_bedrock) | **POST** /target-create-bedrock | 
 [**target_create_cloudflare**](V2Api.md#target_create_cloudflare) | **POST** /target-create-cloudflare | 
 [**target_create_custom_dns**](V2Api.md#target_create_custom_dns) | **POST** /target-create-custom-dns | 
+[**target_create_custom_llm**](V2Api.md#target_create_custom_llm) | **POST** /target-create-custom-llm | 
 [**target_create_db**](V2Api.md#target_create_db) | **POST** /target-create-db | 
 [**target_create_digi_cert**](V2Api.md#target_create_digi_cert) | **POST** /target-create-digicert | 
 [**target_create_dockerhub**](V2Api.md#target_create_dockerhub) | **POST** /target-create-dockerhub | 
@@ -558,6 +559,7 @@ Method | HTTP request | Description
 [**target_update_bedrock**](V2Api.md#target_update_bedrock) | **POST** /target-update-bedrock | 
 [**target_update_cloudflare**](V2Api.md#target_update_cloudflare) | **POST** /target-update-cloudflare | 
 [**target_update_custom_dns**](V2Api.md#target_update_custom_dns) | **POST** /target-update-custom-dns | 
+[**target_update_custom_llm**](V2Api.md#target_update_custom_llm) | **POST** /target-update-custom-llm | 
 [**target_update_db**](V2Api.md#target_update_db) | **POST** /target-update-db | 
 [**target_update_digi_cert**](V2Api.md#target_update_digi_cert) | **POST** /target-update-digicert | 
 [**target_update_dockerhub**](V2Api.md#target_update_dockerhub) | **POST** /target-update-dockerhub | 
@@ -31156,6 +31158,66 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **target_create_custom_llm**
+> TargetCreateOutput target_create_custom_llm(target_create_custom_llm)
+
+
+
+### Example
+
+```python
+from __future__ import print_function
+import time
+import akeyless
+from akeyless.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.akeyless.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = akeyless.Configuration(
+    host = "https://api.akeyless.io"
+)
+
+
+# Enter a context with an instance of the API client
+with akeyless.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = akeyless.V2Api(api_client)
+    target_create_custom_llm = akeyless.TargetCreateCustomLLM() # TargetCreateCustomLLM | 
+
+    try:
+        api_response = api_instance.target_create_custom_llm(target_create_custom_llm)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling V2Api->target_create_custom_llm: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **target_create_custom_llm** | [**TargetCreateCustomLLM**](TargetCreateCustomLLM.md)|  | 
+
+### Return type
+
+[**TargetCreateOutput**](TargetCreateOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**201** | targetCreateCustomLLMResponse wraps response body. |  -  |
+**0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **target_create_db**
 > TargetCreateOutput target_create_db(target_create_db)
 
@@ -33912,6 +33974,66 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | targetUpdateCustomDnsResponse wraps response body. |  -  |
+**0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **target_update_custom_llm**
+> TargetUpdateOutput target_update_custom_llm(target_update_custom_llm)
+
+
+
+### Example
+
+```python
+from __future__ import print_function
+import time
+import akeyless
+from akeyless.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.akeyless.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = akeyless.Configuration(
+    host = "https://api.akeyless.io"
+)
+
+
+# Enter a context with an instance of the API client
+with akeyless.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = akeyless.V2Api(api_client)
+    target_update_custom_llm = akeyless.TargetUpdateCustomLLM() # TargetUpdateCustomLLM | 
+
+    try:
+        api_response = api_instance.target_update_custom_llm(target_update_custom_llm)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling V2Api->target_update_custom_llm: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **target_update_custom_llm** | [**TargetUpdateCustomLLM**](TargetUpdateCustomLLM.md)|  | 
+
+### Return type
+
+[**TargetUpdateOutput**](TargetUpdateOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**201** | targetUpdateCustomLLMResponse wraps response body. |  -  |
 **0** | errorResponse wraps any error to return it as a JSON object with one \&quot;error\&quot; field. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

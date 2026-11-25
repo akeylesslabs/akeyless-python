@@ -21,6 +21,7 @@ Name | Type | Description | Notes
 **external_ca_id** | [**NullString**](NullString.md) |  | [optional] 
 **issuance_status** | **str** |  | [optional] 
 **leaf_certificate_pem** | **str** | LeafCertificatePem contains only the leaf certificate, derived from CertificatePem. Populated only when the certificate was issued with SplitCertificateChain enabled. | [optional] 
+**next_auto_renewal_date** | **datetime** | NextAutoRenewalDate is when auto-renewal will next renew the certificate. It is worked out when the certificate is described and never stored, and it is empty when the certificate will not be auto-renewed. | [optional] 
 **not_before** | **datetime** |  | [optional] 
 **renew_before_expiration_in_days** | **int** |  | [optional] 
 **split_certificate_chain** | **bool** | SplitCertificateChain reflects whether this certificate was issued while its PKI Cert Issuer had split-certificate-chain enabled. When true, LeafCertificatePem is populated in addition to CertificatePem (which always holds the full chain). | [optional] 

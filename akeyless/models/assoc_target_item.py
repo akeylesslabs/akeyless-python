@@ -44,7 +44,15 @@ class AssocTargetItem(object):
         'external_key_name': 'str',
         'f5_save_config': 'bool',
         'f5_sync_device_group': 'str',
+        'iis_binding_hostname': 'str',
+        'iis_binding_ip_address': 'str',
+        'iis_binding_port': 'int',
+        'iis_create_binding': 'bool',
+        'iis_restart_website': 'bool',
+        'iis_website_name': 'str',
+        'jks_password': 'str',
         'json': 'bool',
+        'key_alias': 'str',
         'key_operations': 'list[str]',
         'key_vault': 'str',
         'keyring_name': 'str',
@@ -58,6 +66,8 @@ class AssocTargetItem(object):
         'private_key_path': 'str',
         'project_id': 'str',
         'protection_level': 'str',
+        'provisioning_schedule_days': 'str',
+        'provisioning_schedule_time': 'str',
         'purpose': 'str',
         'regions': 'list[str]',
         'sra_association': 'bool',
@@ -79,7 +89,15 @@ class AssocTargetItem(object):
         'external_key_name': 'external-key-name',
         'f5_save_config': 'f5-save-config',
         'f5_sync_device_group': 'f5-sync-device-group',
+        'iis_binding_hostname': 'iis-binding-hostname',
+        'iis_binding_ip_address': 'iis-binding-ip-address',
+        'iis_binding_port': 'iis-binding-port',
+        'iis_create_binding': 'iis-create-binding',
+        'iis_restart_website': 'iis-restart-website',
+        'iis_website_name': 'iis-website-name',
+        'jks_password': 'jks-password',
         'json': 'json',
+        'key_alias': 'key-alias',
         'key_operations': 'key-operations',
         'key_vault': 'key-vault',
         'keyring_name': 'keyring-name',
@@ -93,6 +111,8 @@ class AssocTargetItem(object):
         'private_key_path': 'private-key-path',
         'project_id': 'project-id',
         'protection_level': 'protection-level',
+        'provisioning_schedule_days': 'provisioning-schedule-days',
+        'provisioning_schedule_time': 'provisioning-schedule-time',
         'purpose': 'purpose',
         'regions': 'regions',
         'sra_association': 'sra-association',
@@ -103,7 +123,7 @@ class AssocTargetItem(object):
         'vault_name': 'vault-name'
     }
 
-    def __init__(self, bind_ssl_profiles=None, certificate_arn=None, certificate_format='pem', certificate_name=None, certificate_path=None, chain_path=None, disable_previous_key_version=False, external_key_name=None, f5_save_config=False, f5_sync_device_group=None, json=False, key_operations=None, key_vault=None, keyring_name=None, kms_algorithm=None, location_id=None, location_scope=None, multi_region='false', name=None, pfx_password=None, post_provision_command=None, private_key_path=None, project_id=None, protection_level='software', purpose=None, regions=None, sra_association=False, target_name=None, tenant_secret_type=None, token=None, uid_token=None, vault_name=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, bind_ssl_profiles=None, certificate_arn=None, certificate_format='pem', certificate_name=None, certificate_path=None, chain_path=None, disable_previous_key_version=False, external_key_name=None, f5_save_config=False, f5_sync_device_group=None, iis_binding_hostname=None, iis_binding_ip_address=None, iis_binding_port=None, iis_create_binding=False, iis_restart_website=False, iis_website_name=None, jks_password=None, json=False, key_alias=None, key_operations=None, key_vault=None, keyring_name=None, kms_algorithm=None, location_id=None, location_scope=None, multi_region='false', name=None, pfx_password=None, post_provision_command=None, private_key_path=None, project_id=None, protection_level='software', provisioning_schedule_days=None, provisioning_schedule_time=None, purpose=None, regions=None, sra_association=False, target_name=None, tenant_secret_type=None, token=None, uid_token=None, vault_name=None, local_vars_configuration=None):  # noqa: E501
         """AssocTargetItem - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -119,7 +139,15 @@ class AssocTargetItem(object):
         self._external_key_name = None
         self._f5_save_config = None
         self._f5_sync_device_group = None
+        self._iis_binding_hostname = None
+        self._iis_binding_ip_address = None
+        self._iis_binding_port = None
+        self._iis_create_binding = None
+        self._iis_restart_website = None
+        self._iis_website_name = None
+        self._jks_password = None
         self._json = None
+        self._key_alias = None
         self._key_operations = None
         self._key_vault = None
         self._keyring_name = None
@@ -133,6 +161,8 @@ class AssocTargetItem(object):
         self._private_key_path = None
         self._project_id = None
         self._protection_level = None
+        self._provisioning_schedule_days = None
+        self._provisioning_schedule_time = None
         self._purpose = None
         self._regions = None
         self._sra_association = None
@@ -163,8 +193,24 @@ class AssocTargetItem(object):
             self.f5_save_config = f5_save_config
         if f5_sync_device_group is not None:
             self.f5_sync_device_group = f5_sync_device_group
+        if iis_binding_hostname is not None:
+            self.iis_binding_hostname = iis_binding_hostname
+        if iis_binding_ip_address is not None:
+            self.iis_binding_ip_address = iis_binding_ip_address
+        if iis_binding_port is not None:
+            self.iis_binding_port = iis_binding_port
+        if iis_create_binding is not None:
+            self.iis_create_binding = iis_create_binding
+        if iis_restart_website is not None:
+            self.iis_restart_website = iis_restart_website
+        if iis_website_name is not None:
+            self.iis_website_name = iis_website_name
+        if jks_password is not None:
+            self.jks_password = jks_password
         if json is not None:
             self.json = json
+        if key_alias is not None:
+            self.key_alias = key_alias
         if key_operations is not None:
             self.key_operations = key_operations
         if key_vault is not None:
@@ -190,6 +236,10 @@ class AssocTargetItem(object):
             self.project_id = project_id
         if protection_level is not None:
             self.protection_level = protection_level
+        if provisioning_schedule_days is not None:
+            self.provisioning_schedule_days = provisioning_schedule_days
+        if provisioning_schedule_time is not None:
+            self.provisioning_schedule_time = provisioning_schedule_time
         if purpose is not None:
             self.purpose = purpose
         if regions is not None:
@@ -256,7 +306,7 @@ class AssocTargetItem(object):
     def certificate_format(self):
         """Gets the certificate_format of this AssocTargetItem.  # noqa: E501
 
-        The format the certificate will be provisioned with, available options: pem,pfx (relevant only for certificate provisioning)  # noqa: E501
+        The format the certificate will be provisioned with, available options: pem,pfx,jks (jks uses --jks-password); pfx requires gateway version 5.5.0 or higher, and jks and pfx for Azure Key Vault require 5.8.0 or higher, or the association is rejected (relevant only for certificate provisioning)  # noqa: E501
 
         :return: The certificate_format of this AssocTargetItem.  # noqa: E501
         :rtype: str
@@ -267,7 +317,7 @@ class AssocTargetItem(object):
     def certificate_format(self, certificate_format):
         """Sets the certificate_format of this AssocTargetItem.
 
-        The format the certificate will be provisioned with, available options: pem,pfx (relevant only for certificate provisioning)  # noqa: E501
+        The format the certificate will be provisioned with, available options: pem,pfx,jks (jks uses --jks-password); pfx requires gateway version 5.5.0 or higher, and jks and pfx for Azure Key Vault require 5.8.0 or higher, or the association is rejected (relevant only for certificate provisioning)  # noqa: E501
 
         :param certificate_format: The certificate_format of this AssocTargetItem.  # noqa: E501
         :type: str
@@ -437,6 +487,167 @@ class AssocTargetItem(object):
         self._f5_sync_device_group = f5_sync_device_group
 
     @property
+    def iis_binding_hostname(self):
+        """Gets the iis_binding_hostname of this AssocTargetItem.  # noqa: E501
+
+        The optional host name of the IIS binding, which enables SNI for a binding that is created (requires gateway version 5.8.0 or higher, or the association is rejected; relevant only for Windows certificate provisioning, requires --certificate-format pfx and a --certificate-path of the form Cert:\\LocalMachine\\<store>, for example Cert:\\LocalMachine\\My)  # noqa: E501
+
+        :return: The iis_binding_hostname of this AssocTargetItem.  # noqa: E501
+        :rtype: str
+        """
+        return self._iis_binding_hostname
+
+    @iis_binding_hostname.setter
+    def iis_binding_hostname(self, iis_binding_hostname):
+        """Sets the iis_binding_hostname of this AssocTargetItem.
+
+        The optional host name of the IIS binding, which enables SNI for a binding that is created (requires gateway version 5.8.0 or higher, or the association is rejected; relevant only for Windows certificate provisioning, requires --certificate-format pfx and a --certificate-path of the form Cert:\\LocalMachine\\<store>, for example Cert:\\LocalMachine\\My)  # noqa: E501
+
+        :param iis_binding_hostname: The iis_binding_hostname of this AssocTargetItem.  # noqa: E501
+        :type: str
+        """
+
+        self._iis_binding_hostname = iis_binding_hostname
+
+    @property
+    def iis_binding_ip_address(self):
+        """Gets the iis_binding_ip_address of this AssocTargetItem.  # noqa: E501
+
+        Comma-separated IP addresses of the IIS bindings to update (or create with --iis-create-binding), one binding per address, or * for all unassigned addresses; required with --iis-website-name (requires gateway version 5.8.0 or higher, or the association is rejected; relevant only for Windows certificate provisioning, requires --certificate-format pfx and a --certificate-path of the form Cert:\\LocalMachine\\<store>, for example Cert:\\LocalMachine\\My)  # noqa: E501
+
+        :return: The iis_binding_ip_address of this AssocTargetItem.  # noqa: E501
+        :rtype: str
+        """
+        return self._iis_binding_ip_address
+
+    @iis_binding_ip_address.setter
+    def iis_binding_ip_address(self, iis_binding_ip_address):
+        """Sets the iis_binding_ip_address of this AssocTargetItem.
+
+        Comma-separated IP addresses of the IIS bindings to update (or create with --iis-create-binding), one binding per address, or * for all unassigned addresses; required with --iis-website-name (requires gateway version 5.8.0 or higher, or the association is rejected; relevant only for Windows certificate provisioning, requires --certificate-format pfx and a --certificate-path of the form Cert:\\LocalMachine\\<store>, for example Cert:\\LocalMachine\\My)  # noqa: E501
+
+        :param iis_binding_ip_address: The iis_binding_ip_address of this AssocTargetItem.  # noqa: E501
+        :type: str
+        """
+
+        self._iis_binding_ip_address = iis_binding_ip_address
+
+    @property
+    def iis_binding_port(self):
+        """Gets the iis_binding_port of this AssocTargetItem.  # noqa: E501
+
+        The port of the IIS binding, 443 when omitted (requires gateway version 5.8.0 or higher, or the association is rejected; relevant only for Windows certificate provisioning, requires --certificate-format pfx and a --certificate-path of the form Cert:\\LocalMachine\\<store>, for example Cert:\\LocalMachine\\My)  # noqa: E501
+
+        :return: The iis_binding_port of this AssocTargetItem.  # noqa: E501
+        :rtype: int
+        """
+        return self._iis_binding_port
+
+    @iis_binding_port.setter
+    def iis_binding_port(self, iis_binding_port):
+        """Sets the iis_binding_port of this AssocTargetItem.
+
+        The port of the IIS binding, 443 when omitted (requires gateway version 5.8.0 or higher, or the association is rejected; relevant only for Windows certificate provisioning, requires --certificate-format pfx and a --certificate-path of the form Cert:\\LocalMachine\\<store>, for example Cert:\\LocalMachine\\My)  # noqa: E501
+
+        :param iis_binding_port: The iis_binding_port of this AssocTargetItem.  # noqa: E501
+        :type: int
+        """
+
+        self._iis_binding_port = iis_binding_port
+
+    @property
+    def iis_create_binding(self):
+        """Gets the iis_create_binding of this AssocTargetItem.  # noqa: E501
+
+        Create the IIS https binding if the website has none matching the given IP addresses, port and host name; without it the run fails when such a binding does not exist (requires gateway version 5.8.0 or higher, or the association is rejected; relevant only for Windows certificate provisioning, requires --certificate-format pfx and a --certificate-path of the form Cert:\\LocalMachine\\<store>, for example Cert:\\LocalMachine\\My)  # noqa: E501
+
+        :return: The iis_create_binding of this AssocTargetItem.  # noqa: E501
+        :rtype: bool
+        """
+        return self._iis_create_binding
+
+    @iis_create_binding.setter
+    def iis_create_binding(self, iis_create_binding):
+        """Sets the iis_create_binding of this AssocTargetItem.
+
+        Create the IIS https binding if the website has none matching the given IP addresses, port and host name; without it the run fails when such a binding does not exist (requires gateway version 5.8.0 or higher, or the association is rejected; relevant only for Windows certificate provisioning, requires --certificate-format pfx and a --certificate-path of the form Cert:\\LocalMachine\\<store>, for example Cert:\\LocalMachine\\My)  # noqa: E501
+
+        :param iis_create_binding: The iis_create_binding of this AssocTargetItem.  # noqa: E501
+        :type: bool
+        """
+
+        self._iis_create_binding = iis_create_binding
+
+    @property
+    def iis_restart_website(self):
+        """Gets the iis_restart_website of this AssocTargetItem.  # noqa: E501
+
+        Restart the IIS website after the certificate is bound (requires gateway version 5.8.0 or higher, or the association is rejected; relevant only for Windows certificate provisioning, requires --certificate-format pfx and a --certificate-path of the form Cert:\\LocalMachine\\<store>, for example Cert:\\LocalMachine\\My)  # noqa: E501
+
+        :return: The iis_restart_website of this AssocTargetItem.  # noqa: E501
+        :rtype: bool
+        """
+        return self._iis_restart_website
+
+    @iis_restart_website.setter
+    def iis_restart_website(self, iis_restart_website):
+        """Sets the iis_restart_website of this AssocTargetItem.
+
+        Restart the IIS website after the certificate is bound (requires gateway version 5.8.0 or higher, or the association is rejected; relevant only for Windows certificate provisioning, requires --certificate-format pfx and a --certificate-path of the form Cert:\\LocalMachine\\<store>, for example Cert:\\LocalMachine\\My)  # noqa: E501
+
+        :param iis_restart_website: The iis_restart_website of this AssocTargetItem.  # noqa: E501
+        :type: bool
+        """
+
+        self._iis_restart_website = iis_restart_website
+
+    @property
+    def iis_website_name(self):
+        """Gets the iis_website_name of this AssocTargetItem.  # noqa: E501
+
+        The IIS website to bind the provisioned certificate to (requires gateway version 5.8.0 or higher, or the association is rejected; relevant only for Windows certificate provisioning, requires --certificate-format pfx and a --certificate-path of the form Cert:\\LocalMachine\\<store>, for example Cert:\\LocalMachine\\My)  # noqa: E501
+
+        :return: The iis_website_name of this AssocTargetItem.  # noqa: E501
+        :rtype: str
+        """
+        return self._iis_website_name
+
+    @iis_website_name.setter
+    def iis_website_name(self, iis_website_name):
+        """Sets the iis_website_name of this AssocTargetItem.
+
+        The IIS website to bind the provisioned certificate to (requires gateway version 5.8.0 or higher, or the association is rejected; relevant only for Windows certificate provisioning, requires --certificate-format pfx and a --certificate-path of the form Cert:\\LocalMachine\\<store>, for example Cert:\\LocalMachine\\My)  # noqa: E501
+
+        :param iis_website_name: The iis_website_name of this AssocTargetItem.  # noqa: E501
+        :type: str
+        """
+
+        self._iis_website_name = iis_website_name
+
+    @property
+    def jks_password(self):
+        """Gets the jks_password of this AssocTargetItem.  # noqa: E501
+
+        JKS file password; required when certificate-format is jks (relevant only for certificate provisioning)  # noqa: E501
+
+        :return: The jks_password of this AssocTargetItem.  # noqa: E501
+        :rtype: str
+        """
+        return self._jks_password
+
+    @jks_password.setter
+    def jks_password(self, jks_password):
+        """Sets the jks_password of this AssocTargetItem.
+
+        JKS file password; required when certificate-format is jks (relevant only for certificate provisioning)  # noqa: E501
+
+        :param jks_password: The jks_password of this AssocTargetItem.  # noqa: E501
+        :type: str
+        """
+
+        self._jks_password = jks_password
+
+    @property
     def json(self):
         """Gets the json of this AssocTargetItem.  # noqa: E501
 
@@ -458,6 +669,29 @@ class AssocTargetItem(object):
         """
 
         self._json = json
+
+    @property
+    def key_alias(self):
+        """Gets the key_alias of this AssocTargetItem.  # noqa: E501
+
+        Alias the entry is stored under in the JKS file, default certificate (max 128 characters). Only relevant when --certificate-format=jks  # noqa: E501
+
+        :return: The key_alias of this AssocTargetItem.  # noqa: E501
+        :rtype: str
+        """
+        return self._key_alias
+
+    @key_alias.setter
+    def key_alias(self, key_alias):
+        """Sets the key_alias of this AssocTargetItem.
+
+        Alias the entry is stored under in the JKS file, default certificate (max 128 characters). Only relevant when --certificate-format=jks  # noqa: E501
+
+        :param key_alias: The key_alias of this AssocTargetItem.  # noqa: E501
+        :type: str
+        """
+
+        self._key_alias = key_alias
 
     @property
     def key_operations(self):
@@ -649,7 +883,7 @@ class AssocTargetItem(object):
     def pfx_password(self):
         """Gets the pfx_password of this AssocTargetItem.  # noqa: E501
 
-        Password used to protect the provisioned PFX file. Required when --certificate-format=pfx (relevant only for certificate provisioning)  # noqa: E501
+        PFX file password; required when certificate-format is pfx (relevant only for certificate provisioning)  # noqa: E501
 
         :return: The pfx_password of this AssocTargetItem.  # noqa: E501
         :rtype: str
@@ -660,7 +894,7 @@ class AssocTargetItem(object):
     def pfx_password(self, pfx_password):
         """Sets the pfx_password of this AssocTargetItem.
 
-        Password used to protect the provisioned PFX file. Required when --certificate-format=pfx (relevant only for certificate provisioning)  # noqa: E501
+        PFX file password; required when certificate-format is pfx (relevant only for certificate provisioning)  # noqa: E501
 
         :param pfx_password: The pfx_password of this AssocTargetItem.  # noqa: E501
         :type: str
@@ -759,6 +993,52 @@ class AssocTargetItem(object):
         """
 
         self._protection_level = protection_level
+
+    @property
+    def provisioning_schedule_days(self):
+        """Gets the provisioning_schedule_days of this AssocTargetItem.  # noqa: E501
+
+        Comma-separated UTC weekdays (sun,mon,tue,wed,thu,fri,sat) on which the certificate is provisioned after a renewal, together with provisioning-schedule-time. Provisioning is not run when the association is created. Without a schedule, provisioning runs right away (relevant only for certificate provisioning)  # noqa: E501
+
+        :return: The provisioning_schedule_days of this AssocTargetItem.  # noqa: E501
+        :rtype: str
+        """
+        return self._provisioning_schedule_days
+
+    @provisioning_schedule_days.setter
+    def provisioning_schedule_days(self, provisioning_schedule_days):
+        """Sets the provisioning_schedule_days of this AssocTargetItem.
+
+        Comma-separated UTC weekdays (sun,mon,tue,wed,thu,fri,sat) on which the certificate is provisioned after a renewal, together with provisioning-schedule-time. Provisioning is not run when the association is created. Without a schedule, provisioning runs right away (relevant only for certificate provisioning)  # noqa: E501
+
+        :param provisioning_schedule_days: The provisioning_schedule_days of this AssocTargetItem.  # noqa: E501
+        :type: str
+        """
+
+        self._provisioning_schedule_days = provisioning_schedule_days
+
+    @property
+    def provisioning_schedule_time(self):
+        """Gets the provisioning_schedule_time of this AssocTargetItem.  # noqa: E501
+
+        The UTC time of day, as HH:MM, at which the certificate is provisioned on the scheduled days. A renewed certificate waits for the first such time (relevant only for certificate provisioning)  # noqa: E501
+
+        :return: The provisioning_schedule_time of this AssocTargetItem.  # noqa: E501
+        :rtype: str
+        """
+        return self._provisioning_schedule_time
+
+    @provisioning_schedule_time.setter
+    def provisioning_schedule_time(self, provisioning_schedule_time):
+        """Sets the provisioning_schedule_time of this AssocTargetItem.
+
+        The UTC time of day, as HH:MM, at which the certificate is provisioned on the scheduled days. A renewed certificate waits for the first such time (relevant only for certificate provisioning)  # noqa: E501
+
+        :param provisioning_schedule_time: The provisioning_schedule_time of this AssocTargetItem.  # noqa: E501
+        :type: str
+        """
+
+        self._provisioning_schedule_time = provisioning_schedule_time
 
     @property
     def purpose(self):

@@ -35,7 +35,6 @@ class DynamicSecretUpdateAws(object):
     """
     openapi_types = {
         'access_mode': 'str',
-        'admin_rotation_interval_days': 'int',
         'ara_enabled': 'bool',
         'aws_access_key_id': 'str',
         'aws_access_secret_key': 'str',
@@ -48,7 +47,6 @@ class DynamicSecretUpdateAws(object):
         'custom_username_template': 'str',
         'delete_protection': 'str',
         'description': 'str',
-        'enable_admin_rotation': 'bool',
         'enable_agentic_runtime_authority': 'bool',
         'enable_ai_quorum': 'bool',
         'input_rule': 'list[str]',
@@ -85,7 +83,6 @@ class DynamicSecretUpdateAws(object):
 
     attribute_map = {
         'access_mode': 'access-mode',
-        'admin_rotation_interval_days': 'admin-rotation-interval-days',
         'ara_enabled': 'ara-enabled',
         'aws_access_key_id': 'aws-access-key-id',
         'aws_access_secret_key': 'aws-access-secret-key',
@@ -98,7 +95,6 @@ class DynamicSecretUpdateAws(object):
         'custom_username_template': 'custom-username-template',
         'delete_protection': 'delete_protection',
         'description': 'description',
-        'enable_admin_rotation': 'enable-admin-rotation',
         'enable_agentic_runtime_authority': 'enable-agentic-runtime-authority',
         'enable_ai_quorum': 'enable-ai-quorum',
         'input_rule': 'input-rule',
@@ -133,14 +129,13 @@ class DynamicSecretUpdateAws(object):
         'user_ttl': 'user-ttl'
     }
 
-    def __init__(self, access_mode=None, admin_rotation_interval_days=0, ara_enabled=None, aws_access_key_id=None, aws_access_secret_key=None, aws_external_id=None, aws_role_arns=None, aws_user_console_access=False, aws_user_groups=None, aws_user_policies=None, aws_user_programmatic_access=True, custom_username_template=None, delete_protection=None, description=None, enable_admin_rotation=False, enable_agentic_runtime_authority=None, enable_ai_quorum=None, input_rule=None, item_custom_fields=None, json=False, name=None, new_name=None, output_rule=None, password_length=None, producer_encryption_key_name=None, region='us-east-2', secure_access_aws_account_id=None, secure_access_aws_native_cli=None, secure_access_bastion_issuer=None, secure_access_certificate_issuer=None, secure_access_delay=None, secure_access_enable=None, secure_access_web=True, secure_access_web_browsing=False, secure_access_web_proxy=False, session_tags=None, skip_dry_run=None, tags=None, target_name=None, token=None, transitive_tag_keys=None, uid_token=None, use_capital_letters=None, use_lower_letters=None, use_numbers=None, use_special_characters=None, user_ttl='60m', local_vars_configuration=None):  # noqa: E501
+    def __init__(self, access_mode=None, ara_enabled=None, aws_access_key_id=None, aws_access_secret_key=None, aws_external_id=None, aws_role_arns=None, aws_user_console_access=False, aws_user_groups=None, aws_user_policies=None, aws_user_programmatic_access=True, custom_username_template=None, delete_protection=None, description=None, enable_agentic_runtime_authority=None, enable_ai_quorum=None, input_rule=None, item_custom_fields=None, json=False, name=None, new_name=None, output_rule=None, password_length=None, producer_encryption_key_name=None, region='us-east-2', secure_access_aws_account_id=None, secure_access_aws_native_cli=None, secure_access_bastion_issuer=None, secure_access_certificate_issuer=None, secure_access_delay=None, secure_access_enable=None, secure_access_web=True, secure_access_web_browsing=False, secure_access_web_proxy=False, session_tags=None, skip_dry_run=None, tags=None, target_name=None, token=None, transitive_tag_keys=None, uid_token=None, use_capital_letters=None, use_lower_letters=None, use_numbers=None, use_special_characters=None, user_ttl='60m', local_vars_configuration=None):  # noqa: E501
         """DynamicSecretUpdateAws - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._access_mode = None
-        self._admin_rotation_interval_days = None
         self._ara_enabled = None
         self._aws_access_key_id = None
         self._aws_access_secret_key = None
@@ -153,7 +148,6 @@ class DynamicSecretUpdateAws(object):
         self._custom_username_template = None
         self._delete_protection = None
         self._description = None
-        self._enable_admin_rotation = None
         self._enable_agentic_runtime_authority = None
         self._enable_ai_quorum = None
         self._input_rule = None
@@ -190,8 +184,6 @@ class DynamicSecretUpdateAws(object):
 
         if access_mode is not None:
             self.access_mode = access_mode
-        if admin_rotation_interval_days is not None:
-            self.admin_rotation_interval_days = admin_rotation_interval_days
         if ara_enabled is not None:
             self.ara_enabled = ara_enabled
         if aws_access_key_id is not None:
@@ -216,8 +208,6 @@ class DynamicSecretUpdateAws(object):
             self.delete_protection = delete_protection
         if description is not None:
             self.description = description
-        if enable_admin_rotation is not None:
-            self.enable_admin_rotation = enable_admin_rotation
         if enable_agentic_runtime_authority is not None:
             self.enable_agentic_runtime_authority = enable_agentic_runtime_authority
         if enable_ai_quorum is not None:
@@ -302,29 +292,6 @@ class DynamicSecretUpdateAws(object):
         """
 
         self._access_mode = access_mode
-
-    @property
-    def admin_rotation_interval_days(self):
-        """Gets the admin_rotation_interval_days of this DynamicSecretUpdateAws.  # noqa: E501
-
-        Admin credentials rotation interval (days)  # noqa: E501
-
-        :return: The admin_rotation_interval_days of this DynamicSecretUpdateAws.  # noqa: E501
-        :rtype: int
-        """
-        return self._admin_rotation_interval_days
-
-    @admin_rotation_interval_days.setter
-    def admin_rotation_interval_days(self, admin_rotation_interval_days):
-        """Sets the admin_rotation_interval_days of this DynamicSecretUpdateAws.
-
-        Admin credentials rotation interval (days)  # noqa: E501
-
-        :param admin_rotation_interval_days: The admin_rotation_interval_days of this DynamicSecretUpdateAws.  # noqa: E501
-        :type: int
-        """
-
-        self._admin_rotation_interval_days = admin_rotation_interval_days
 
     @property
     def ara_enabled(self):
@@ -601,29 +568,6 @@ class DynamicSecretUpdateAws(object):
         """
 
         self._description = description
-
-    @property
-    def enable_admin_rotation(self):
-        """Gets the enable_admin_rotation of this DynamicSecretUpdateAws.  # noqa: E501
-
-        Automatic admin credentials rotation  # noqa: E501
-
-        :return: The enable_admin_rotation of this DynamicSecretUpdateAws.  # noqa: E501
-        :rtype: bool
-        """
-        return self._enable_admin_rotation
-
-    @enable_admin_rotation.setter
-    def enable_admin_rotation(self, enable_admin_rotation):
-        """Sets the enable_admin_rotation of this DynamicSecretUpdateAws.
-
-        Automatic admin credentials rotation  # noqa: E501
-
-        :param enable_admin_rotation: The enable_admin_rotation of this DynamicSecretUpdateAws.  # noqa: E501
-        :type: bool
-        """
-
-        self._enable_admin_rotation = enable_admin_rotation
 
     @property
     def enable_agentic_runtime_authority(self):

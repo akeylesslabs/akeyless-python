@@ -45,6 +45,7 @@ class TargetTypeDetailsInput(object):
         'chef_target_details': 'ChefTargetDetails',
         'cloudflare_target_details': 'CloudflareTargetDetails',
         'custom_dns_target_details': 'CustomDnsTargetDetails',
+        'custom_llm_target_details': 'CustomLLMTargetDetails',
         'custom_target_details': 'CustomTargetDetails',
         'db_target_details': 'DbTargetDetails',
         'digicert_target_details': 'DigiCertTargetDetails',
@@ -94,6 +95,7 @@ class TargetTypeDetailsInput(object):
         'chef_target_details': 'chef_target_details',
         'cloudflare_target_details': 'cloudflare_target_details',
         'custom_dns_target_details': 'custom_dns_target_details',
+        'custom_llm_target_details': 'custom_llm_target_details',
         'custom_target_details': 'custom_target_details',
         'db_target_details': 'db_target_details',
         'digicert_target_details': 'digicert_target_details',
@@ -131,7 +133,7 @@ class TargetTypeDetailsInput(object):
         'zerossl_target_details': 'zerossl_target_details'
     }
 
-    def __init__(self, aerospike_target_details=None, alicloud_target_details=None, anthropic_target_details=None, artifactory_target_details=None, atlassian_target_details=None, aws_target_details=None, azure_target_details=None, bedrock_target_details=None, chef_target_details=None, cloudflare_target_details=None, custom_dns_target_details=None, custom_target_details=None, db_target_details=None, digicert_target_details=None, dockerhub_target_details=None, eks_target_details=None, f5_big_ip_target_details=None, gcp_target_details=None, gemini_target_details=None, github_target_details=None, gitlab_target_details=None, gke_target_details=None, globalsign_atlas_target_details=None, globalsign_target_details=None, godaddy_target_details=None, google_trust_target_details=None, grok_target_details=None, hashi_vault_target_details=None, keycloak_target_details=None, ldap_target_details=None, letsencrypt_target_details=None, linked_target_details=None, mongo_db_target_details=None, native_k8s_target_details=None, okta_target_details=None, openai_target_details=None, ping_target_details=None, rabbit_mq_target_details=None, salesforce_target_details=None, sectigo_target_details=None, splunk_target_details=None, ssh_target_details=None, venafi_target_details=None, web_target_details=None, windows_target_details=None, zerossl_target_details=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, aerospike_target_details=None, alicloud_target_details=None, anthropic_target_details=None, artifactory_target_details=None, atlassian_target_details=None, aws_target_details=None, azure_target_details=None, bedrock_target_details=None, chef_target_details=None, cloudflare_target_details=None, custom_dns_target_details=None, custom_llm_target_details=None, custom_target_details=None, db_target_details=None, digicert_target_details=None, dockerhub_target_details=None, eks_target_details=None, f5_big_ip_target_details=None, gcp_target_details=None, gemini_target_details=None, github_target_details=None, gitlab_target_details=None, gke_target_details=None, globalsign_atlas_target_details=None, globalsign_target_details=None, godaddy_target_details=None, google_trust_target_details=None, grok_target_details=None, hashi_vault_target_details=None, keycloak_target_details=None, ldap_target_details=None, letsencrypt_target_details=None, linked_target_details=None, mongo_db_target_details=None, native_k8s_target_details=None, okta_target_details=None, openai_target_details=None, ping_target_details=None, rabbit_mq_target_details=None, salesforce_target_details=None, sectigo_target_details=None, splunk_target_details=None, ssh_target_details=None, venafi_target_details=None, web_target_details=None, windows_target_details=None, zerossl_target_details=None, local_vars_configuration=None):  # noqa: E501
         """TargetTypeDetailsInput - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -148,6 +150,7 @@ class TargetTypeDetailsInput(object):
         self._chef_target_details = None
         self._cloudflare_target_details = None
         self._custom_dns_target_details = None
+        self._custom_llm_target_details = None
         self._custom_target_details = None
         self._db_target_details = None
         self._digicert_target_details = None
@@ -207,6 +210,8 @@ class TargetTypeDetailsInput(object):
             self.cloudflare_target_details = cloudflare_target_details
         if custom_dns_target_details is not None:
             self.custom_dns_target_details = custom_dns_target_details
+        if custom_llm_target_details is not None:
+            self.custom_llm_target_details = custom_llm_target_details
         if custom_target_details is not None:
             self.custom_target_details = custom_target_details
         if db_target_details is not None:
@@ -508,6 +513,27 @@ class TargetTypeDetailsInput(object):
         """
 
         self._custom_dns_target_details = custom_dns_target_details
+
+    @property
+    def custom_llm_target_details(self):
+        """Gets the custom_llm_target_details of this TargetTypeDetailsInput.  # noqa: E501
+
+
+        :return: The custom_llm_target_details of this TargetTypeDetailsInput.  # noqa: E501
+        :rtype: CustomLLMTargetDetails
+        """
+        return self._custom_llm_target_details
+
+    @custom_llm_target_details.setter
+    def custom_llm_target_details(self, custom_llm_target_details):
+        """Sets the custom_llm_target_details of this TargetTypeDetailsInput.
+
+
+        :param custom_llm_target_details: The custom_llm_target_details of this TargetTypeDetailsInput.  # noqa: E501
+        :type: CustomLLMTargetDetails
+        """
+
+        self._custom_llm_target_details = custom_llm_target_details
 
     @property
     def custom_target_details(self):

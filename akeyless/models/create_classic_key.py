@@ -195,7 +195,7 @@ class CreateClassicKey(object):
     def alg(self):
         """Gets the alg of this CreateClassicKey.  # noqa: E501
 
-        Classic Key type; options: [AES128GCM, AES256GCM, AES128SIV, AES256SIV, RSA1024, RSA2048, RSA3072, RSA4096, EC256, EC384, GPG]  # noqa: E501
+        Classic Key type; options: [AES128GCM, AES256GCM, AES128SIV, AES256SIV, RSA1024, RSA2048, RSA3072, RSA4096, EC256, EC384, GPG, MLDSA44, MLDSA65, MLDSA87, MLKEM768, MLKEM1024, MLKEM768X25519]  # noqa: E501
 
         :return: The alg of this CreateClassicKey.  # noqa: E501
         :rtype: str
@@ -206,7 +206,7 @@ class CreateClassicKey(object):
     def alg(self, alg):
         """Sets the alg of this CreateClassicKey.
 
-        Classic Key type; options: [AES128GCM, AES256GCM, AES128SIV, AES256SIV, RSA1024, RSA2048, RSA3072, RSA4096, EC256, EC384, GPG]  # noqa: E501
+        Classic Key type; options: [AES128GCM, AES256GCM, AES128SIV, AES256SIV, RSA1024, RSA2048, RSA3072, RSA4096, EC256, EC384, GPG, MLDSA44, MLDSA65, MLDSA87, MLKEM768, MLKEM1024, MLKEM768X25519]  # noqa: E501
 
         :param alg: The alg of this CreateClassicKey.  # noqa: E501
         :type: str

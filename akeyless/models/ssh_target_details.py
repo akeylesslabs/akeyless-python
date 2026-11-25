@@ -34,6 +34,7 @@ class SSHTargetDetails(object):
                             and the value is json key in definition.
     """
     openapi_types = {
+        'auth_type': 'str',
         'host': 'str',
         'password': 'str',
         'port': 'str',
@@ -43,6 +44,7 @@ class SSHTargetDetails(object):
     }
 
     attribute_map = {
+        'auth_type': 'auth_type',
         'host': 'host',
         'password': 'password',
         'port': 'port',
@@ -51,12 +53,13 @@ class SSHTargetDetails(object):
         'username': 'username'
     }
 
-    def __init__(self, host=None, password=None, port=None, private_key=None, private_key_password=None, username=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, auth_type=None, host=None, password=None, port=None, private_key=None, private_key_password=None, username=None, local_vars_configuration=None):  # noqa: E501
         """SSHTargetDetails - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
+        self._auth_type = None
         self._host = None
         self._password = None
         self._port = None
@@ -65,6 +68,8 @@ class SSHTargetDetails(object):
         self._username = None
         self.discriminator = None
 
+        if auth_type is not None:
+            self.auth_type = auth_type
         if host is not None:
             self.host = host
         if password is not None:
@@ -77,6 +82,29 @@ class SSHTargetDetails(object):
             self.private_key_password = private_key_password
         if username is not None:
             self.username = username
+
+    @property
+    def auth_type(self):
+        """Gets the auth_type of this SSHTargetDetails.  # noqa: E501
+
+        AuthType is a non-secret auth indication (password | private_key). Prefer Target.Attributes[auth_type] for list responses; this field may be populated on get-target-details for convenience.  # noqa: E501
+
+        :return: The auth_type of this SSHTargetDetails.  # noqa: E501
+        :rtype: str
+        """
+        return self._auth_type
+
+    @auth_type.setter
+    def auth_type(self, auth_type):
+        """Sets the auth_type of this SSHTargetDetails.
+
+        AuthType is a non-secret auth indication (password | private_key). Prefer Target.Attributes[auth_type] for list responses; this field may be populated on get-target-details for convenience.  # noqa: E501
+
+        :param auth_type: The auth_type of this SSHTargetDetails.  # noqa: E501
+        :type: str
+        """
+
+        self._auth_type = auth_type
 
     @property
     def host(self):

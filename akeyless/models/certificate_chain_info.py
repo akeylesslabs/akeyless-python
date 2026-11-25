@@ -52,6 +52,7 @@ class CertificateChainInfo(object):
         'external_ca_id': 'NullString',
         'issuance_status': 'str',
         'leaf_certificate_pem': 'str',
+        'next_auto_renewal_date': 'datetime',
         'not_before': 'datetime',
         'renew_before_expiration_in_days': 'int',
         'split_certificate_chain': 'bool'
@@ -76,12 +77,13 @@ class CertificateChainInfo(object):
         'external_ca_id': 'external_ca_id',
         'issuance_status': 'issuance_status',
         'leaf_certificate_pem': 'leaf_certificate_pem',
+        'next_auto_renewal_date': 'next_auto_renewal_date',
         'not_before': 'not_before',
         'renew_before_expiration_in_days': 'renew_before_expiration_in_days',
         'split_certificate_chain': 'split_certificate_chain'
     }
 
-    def __init__(self, auto_renew_certificate=None, certificate_chain=None, certificate_format=None, certificate_has_private_key=None, certificate_issuer_gw_cluster_id=None, certificate_issuer_gw_cluster_url=None, certificate_issuer_item_id=None, certificate_issuer_name=None, certificate_pem=None, certificate_status=None, common_name=None, csr_pem=None, error_message=None, expiration_date=None, expiration_events=None, external_ca_id=None, issuance_status=None, leaf_certificate_pem=None, not_before=None, renew_before_expiration_in_days=None, split_certificate_chain=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, auto_renew_certificate=None, certificate_chain=None, certificate_format=None, certificate_has_private_key=None, certificate_issuer_gw_cluster_id=None, certificate_issuer_gw_cluster_url=None, certificate_issuer_item_id=None, certificate_issuer_name=None, certificate_pem=None, certificate_status=None, common_name=None, csr_pem=None, error_message=None, expiration_date=None, expiration_events=None, external_ca_id=None, issuance_status=None, leaf_certificate_pem=None, next_auto_renewal_date=None, not_before=None, renew_before_expiration_in_days=None, split_certificate_chain=None, local_vars_configuration=None):  # noqa: E501
         """CertificateChainInfo - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -105,6 +107,7 @@ class CertificateChainInfo(object):
         self._external_ca_id = None
         self._issuance_status = None
         self._leaf_certificate_pem = None
+        self._next_auto_renewal_date = None
         self._not_before = None
         self._renew_before_expiration_in_days = None
         self._split_certificate_chain = None
@@ -146,6 +149,8 @@ class CertificateChainInfo(object):
             self.issuance_status = issuance_status
         if leaf_certificate_pem is not None:
             self.leaf_certificate_pem = leaf_certificate_pem
+        if next_auto_renewal_date is not None:
+            self.next_auto_renewal_date = next_auto_renewal_date
         if not_before is not None:
             self.not_before = not_before
         if renew_before_expiration_in_days is not None:
@@ -534,6 +539,29 @@ class CertificateChainInfo(object):
         """
 
         self._leaf_certificate_pem = leaf_certificate_pem
+
+    @property
+    def next_auto_renewal_date(self):
+        """Gets the next_auto_renewal_date of this CertificateChainInfo.  # noqa: E501
+
+        NextAutoRenewalDate is when auto-renewal will next renew the certificate. It is worked out when the certificate is described and never stored, and it is empty when the certificate will not be auto-renewed.  # noqa: E501
+
+        :return: The next_auto_renewal_date of this CertificateChainInfo.  # noqa: E501
+        :rtype: datetime
+        """
+        return self._next_auto_renewal_date
+
+    @next_auto_renewal_date.setter
+    def next_auto_renewal_date(self, next_auto_renewal_date):
+        """Sets the next_auto_renewal_date of this CertificateChainInfo.
+
+        NextAutoRenewalDate is when auto-renewal will next renew the certificate. It is worked out when the certificate is described and never stored, and it is empty when the certificate will not be auto-renewed.  # noqa: E501
+
+        :param next_auto_renewal_date: The next_auto_renewal_date of this CertificateChainInfo.  # noqa: E501
+        :type: datetime
+        """
+
+        self._next_auto_renewal_date = next_auto_renewal_date
 
     @property
     def not_before(self):

@@ -3,6 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**auth_type** | **str** | AuthType is a non-secret auth indication (password | private_key). Prefer Target.Attributes[auth_type] for list responses; this field may be populated on get-target-details for convenience. | [optional] 
 **host** | **str** |  | [optional] 
 **password** | **str** |  | [optional] 
 **port** | **str** |  | [optional] 

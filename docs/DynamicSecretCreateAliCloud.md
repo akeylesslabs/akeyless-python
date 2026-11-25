@@ -4,7 +4,6 @@ dynamicSecretCreateAliCloud is a command that creates AliCloud dynamic secret
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**admin_rotation_interval_days** | **int** | Admin credentials rotation interval (days) | [optional] [default to 0]
 **alicloud_access_key_id** | **str** | AliCloud RAM access key ID | [optional] 
 **alicloud_access_mode** | **str** |  | [optional] 
 **alicloud_access_secret_key** | **str** | AliCloud RAM access key secret | [optional] 
@@ -23,7 +22,6 @@ Name | Type | Description | Notes
 **custom_username_template** | **str** | Customize how temporary usernames are generated using go template | [optional] 
 **delete_protection** | **str** | Protection from accidental deletion of this object [true/false] | [optional] 
 **description** | **str** | Description of the object | [optional] 
-**enable_admin_rotation** | **bool** | Automatic admin credentials rotation | [optional] [default to False]
 **enable_agentic_runtime_authority** | **bool** | EnableAra is the documented spelling of AraEnabled; --ara-enabled shipped first and stays as an undocumented alias. | [optional] 
 **enable_ai_quorum** | **bool** | Turns on AI Quorum checks for this item. | [optional] 
 **input_rule** | **list[str]** | Agentic input rule in name&#x3D;...,rule&#x3D;... format (e.g. name&#x3D;rule1,rule&#x3D;Sanitize input) Mirrors commands.AgenticRulesParams — kept separate because ResourceDS cannot embed it (different package, different struct layout). | [optional] 

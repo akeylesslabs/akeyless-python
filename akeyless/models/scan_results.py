@@ -39,6 +39,7 @@ class ScanResults(object):
         'count_hosts': 'int',
         'count_new': 'int',
         'count_subdomains': 'int',
+        'domain_coverage': 'list[DomainCoverage]',
         'error': 'str',
         'failed_targets': 'list[TargetError]',
         'item_names': 'list[str]'
@@ -50,12 +51,13 @@ class ScanResults(object):
         'count_hosts': 'CountHosts',
         'count_new': 'CountNew',
         'count_subdomains': 'CountSubdomains',
+        'domain_coverage': 'DomainCoverage',
         'error': 'Error',
         'failed_targets': 'FailedTargets',
         'item_names': 'ItemNames'
     }
 
-    def __init__(self, count_existing=None, count_failed=None, count_hosts=None, count_new=None, count_subdomains=None, error=None, failed_targets=None, item_names=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, count_existing=None, count_failed=None, count_hosts=None, count_new=None, count_subdomains=None, domain_coverage=None, error=None, failed_targets=None, item_names=None, local_vars_configuration=None):  # noqa: E501
         """ScanResults - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -66,6 +68,7 @@ class ScanResults(object):
         self._count_hosts = None
         self._count_new = None
         self._count_subdomains = None
+        self._domain_coverage = None
         self._error = None
         self._failed_targets = None
         self._item_names = None
@@ -81,6 +84,8 @@ class ScanResults(object):
             self.count_new = count_new
         if count_subdomains is not None:
             self.count_subdomains = count_subdomains
+        if domain_coverage is not None:
+            self.domain_coverage = domain_coverage
         if error is not None:
             self.error = error
         if failed_targets is not None:
@@ -192,6 +197,29 @@ class ScanResults(object):
         """
 
         self._count_subdomains = count_subdomains
+
+    @property
+    def domain_coverage(self):
+        """Gets the domain_coverage of this ScanResults.  # noqa: E501
+
+        DomainCoverage says, per public domain, how much of it subdomain discovery managed to cover. Clients that predate it ignore it, and a scan with no public domain omits it.  # noqa: E501
+
+        :return: The domain_coverage of this ScanResults.  # noqa: E501
+        :rtype: list[DomainCoverage]
+        """
+        return self._domain_coverage
+
+    @domain_coverage.setter
+    def domain_coverage(self, domain_coverage):
+        """Sets the domain_coverage of this ScanResults.
+
+        DomainCoverage says, per public domain, how much of it subdomain discovery managed to cover. Clients that predate it ignore it, and a scan with no public domain omits it.  # noqa: E501
+
+        :param domain_coverage: The domain_coverage of this ScanResults.  # noqa: E501
+        :type: list[DomainCoverage]
+        """
+
+        self._domain_coverage = domain_coverage
 
     @property
     def error(self):

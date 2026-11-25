@@ -39,6 +39,7 @@ class RenewCertificateOutput(object):
         'item_id': 'str',
         'parent_cert': 'str',
         'private_key': 'str',
+        'provisioning_schedule_errors': 'list[str]',
         'reading_token': 'str'
     }
 
@@ -48,10 +49,11 @@ class RenewCertificateOutput(object):
         'item_id': 'item_id',
         'parent_cert': 'parent_cert',
         'private_key': 'private_key',
+        'provisioning_schedule_errors': 'provisioning_schedule_errors',
         'reading_token': 'reading_token'
     }
 
-    def __init__(self, cert=None, cert_display_id=None, item_id=None, parent_cert=None, private_key=None, reading_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, cert=None, cert_display_id=None, item_id=None, parent_cert=None, private_key=None, provisioning_schedule_errors=None, reading_token=None, local_vars_configuration=None):  # noqa: E501
         """RenewCertificateOutput - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -62,6 +64,7 @@ class RenewCertificateOutput(object):
         self._item_id = None
         self._parent_cert = None
         self._private_key = None
+        self._provisioning_schedule_errors = None
         self._reading_token = None
         self.discriminator = None
 
@@ -75,6 +78,8 @@ class RenewCertificateOutput(object):
             self.parent_cert = parent_cert
         if private_key is not None:
             self.private_key = private_key
+        if provisioning_schedule_errors is not None:
+            self.provisioning_schedule_errors = provisioning_schedule_errors
         if reading_token is not None:
             self.reading_token = reading_token
 
@@ -182,6 +187,29 @@ class RenewCertificateOutput(object):
         """
 
         self._private_key = private_key
+
+    @property
+    def provisioning_schedule_errors(self):
+        """Gets the provisioning_schedule_errors of this RenewCertificateOutput.  # noqa: E501
+
+        ProvisioningScheduleErrors lists the targets whose provisioning could not be scheduled, as \"<target>: <error>\". The renewal itself succeeded.  # noqa: E501
+
+        :return: The provisioning_schedule_errors of this RenewCertificateOutput.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._provisioning_schedule_errors
+
+    @provisioning_schedule_errors.setter
+    def provisioning_schedule_errors(self, provisioning_schedule_errors):
+        """Sets the provisioning_schedule_errors of this RenewCertificateOutput.
+
+        ProvisioningScheduleErrors lists the targets whose provisioning could not be scheduled, as \"<target>: <error>\". The renewal itself succeeded.  # noqa: E501
+
+        :param provisioning_schedule_errors: The provisioning_schedule_errors of this RenewCertificateOutput.  # noqa: E501
+        :type: list[str]
+        """
+
+        self._provisioning_schedule_errors = provisioning_schedule_errors
 
     @property
     def reading_token(self):

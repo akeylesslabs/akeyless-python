@@ -277,6 +277,7 @@ from akeyless.models.create_windows_target_output import CreateWindowsTargetOutp
 from akeyless.models.create_zero_ssl_target import CreateZeroSSLTarget
 from akeyless.models.create_zero_ssl_target_output import CreateZeroSSLTargetOutput
 from akeyless.models.custom_dns_target_details import CustomDnsTargetDetails
+from akeyless.models.custom_llm_target_details import CustomLLMTargetDetails
 from akeyless.models.custom_target_details import CustomTargetDetails
 from akeyless.models.customer_fragment_config import CustomerFragmentConfig
 from akeyless.models.customer_fragments_config_json import CustomerFragmentsConfigJson
@@ -333,6 +334,7 @@ from akeyless.models.detokenize import Detokenize
 from akeyless.models.detokenize_output import DetokenizeOutput
 from akeyless.models.digi_cert_target_details import DigiCertTargetDetails
 from akeyless.models.dockerhub_target_details import DockerhubTargetDetails
+from akeyless.models.domain_coverage import DomainCoverage
 from akeyless.models.dynamic_secret_create_aerospike import DynamicSecretCreateAerospike
 from akeyless.models.dynamic_secret_create_ali_cloud import DynamicSecretCreateAliCloud
 from akeyless.models.dynamic_secret_create_artifactory import DynamicSecretCreateArtifactory
@@ -1064,6 +1066,7 @@ from akeyless.models.target_create_azure import TargetCreateAzure
 from akeyless.models.target_create_bedrock import TargetCreateBedrock
 from akeyless.models.target_create_cloudflare import TargetCreateCloudflare
 from akeyless.models.target_create_custom_dns import TargetCreateCustomDns
+from akeyless.models.target_create_custom_llm import TargetCreateCustomLLM
 from akeyless.models.target_create_db import TargetCreateDB
 from akeyless.models.target_create_digi_cert import TargetCreateDigiCert
 from akeyless.models.target_create_dockerhub import TargetCreateDockerhub
@@ -1116,6 +1119,7 @@ from akeyless.models.target_update_azure import TargetUpdateAzure
 from akeyless.models.target_update_bedrock import TargetUpdateBedrock
 from akeyless.models.target_update_cloudflare import TargetUpdateCloudflare
 from akeyless.models.target_update_custom_dns import TargetUpdateCustomDns
+from akeyless.models.target_update_custom_llm import TargetUpdateCustomLLM
 from akeyless.models.target_update_db import TargetUpdateDB
 from akeyless.models.target_update_digi_cert import TargetUpdateDigiCert
 from akeyless.models.target_update_dockerhub import TargetUpdateDockerhub

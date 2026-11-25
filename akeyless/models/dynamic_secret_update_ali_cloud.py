@@ -34,7 +34,6 @@ class DynamicSecretUpdateAliCloud(object):
                             and the value is json key in definition.
     """
     openapi_types = {
-        'admin_rotation_interval_days': 'int',
         'alicloud_access_key_id': 'str',
         'alicloud_access_mode': 'str',
         'alicloud_access_secret_key': 'str',
@@ -53,7 +52,6 @@ class DynamicSecretUpdateAliCloud(object):
         'custom_username_template': 'str',
         'delete_protection': 'str',
         'description': 'str',
-        'enable_admin_rotation': 'bool',
         'enable_agentic_runtime_authority': 'bool',
         'enable_ai_quorum': 'bool',
         'input_rule': 'list[str]',
@@ -77,7 +75,6 @@ class DynamicSecretUpdateAliCloud(object):
     }
 
     attribute_map = {
-        'admin_rotation_interval_days': 'admin-rotation-interval-days',
         'alicloud_access_key_id': 'alicloud-access-key-id',
         'alicloud_access_mode': 'alicloud-access-mode',
         'alicloud_access_secret_key': 'alicloud-access-secret-key',
@@ -96,7 +93,6 @@ class DynamicSecretUpdateAliCloud(object):
         'custom_username_template': 'custom-username-template',
         'delete_protection': 'delete_protection',
         'description': 'description',
-        'enable_admin_rotation': 'enable-admin-rotation',
         'enable_agentic_runtime_authority': 'enable-agentic-runtime-authority',
         'enable_ai_quorum': 'enable-ai-quorum',
         'input_rule': 'input-rule',
@@ -119,13 +115,12 @@ class DynamicSecretUpdateAliCloud(object):
         'user_ttl': 'user-ttl'
     }
 
-    def __init__(self, admin_rotation_interval_days=0, alicloud_access_key_id=None, alicloud_access_mode=None, alicloud_access_secret_key=None, alicloud_external_id=None, alicloud_region=None, alicloud_role_arns=None, alicloud_session_policy=None, alicloud_set_source_identity=False, alicloud_site='international', alicloud_user_console_access=False, alicloud_user_groups=None, alicloud_user_inline_policy=None, alicloud_user_policies=None, alicloud_user_programmatic_access=True, ara_enabled=None, custom_username_template=None, delete_protection=None, description=None, enable_admin_rotation=False, enable_agentic_runtime_authority=None, enable_ai_quorum=None, input_rule=None, item_custom_fields=None, json=False, name=None, new_name=None, output_rule=None, password_length=None, producer_encryption_key_name=None, skip_dry_run=None, tags=None, target_name=None, token=None, uid_token=None, use_capital_letters=None, use_lower_letters=None, use_numbers=None, use_special_characters=None, user_ttl='60m', local_vars_configuration=None):  # noqa: E501
+    def __init__(self, alicloud_access_key_id=None, alicloud_access_mode=None, alicloud_access_secret_key=None, alicloud_external_id=None, alicloud_region=None, alicloud_role_arns=None, alicloud_session_policy=None, alicloud_set_source_identity=False, alicloud_site='international', alicloud_user_console_access=False, alicloud_user_groups=None, alicloud_user_inline_policy=None, alicloud_user_policies=None, alicloud_user_programmatic_access=True, ara_enabled=None, custom_username_template=None, delete_protection=None, description=None, enable_agentic_runtime_authority=None, enable_ai_quorum=None, input_rule=None, item_custom_fields=None, json=False, name=None, new_name=None, output_rule=None, password_length=None, producer_encryption_key_name=None, skip_dry_run=None, tags=None, target_name=None, token=None, uid_token=None, use_capital_letters=None, use_lower_letters=None, use_numbers=None, use_special_characters=None, user_ttl='60m', local_vars_configuration=None):  # noqa: E501
         """DynamicSecretUpdateAliCloud - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
-        self._admin_rotation_interval_days = None
         self._alicloud_access_key_id = None
         self._alicloud_access_mode = None
         self._alicloud_access_secret_key = None
@@ -144,7 +139,6 @@ class DynamicSecretUpdateAliCloud(object):
         self._custom_username_template = None
         self._delete_protection = None
         self._description = None
-        self._enable_admin_rotation = None
         self._enable_agentic_runtime_authority = None
         self._enable_ai_quorum = None
         self._input_rule = None
@@ -167,8 +161,6 @@ class DynamicSecretUpdateAliCloud(object):
         self._user_ttl = None
         self.discriminator = None
 
-        if admin_rotation_interval_days is not None:
-            self.admin_rotation_interval_days = admin_rotation_interval_days
         if alicloud_access_key_id is not None:
             self.alicloud_access_key_id = alicloud_access_key_id
         if alicloud_access_mode is not None:
@@ -205,8 +197,6 @@ class DynamicSecretUpdateAliCloud(object):
             self.delete_protection = delete_protection
         if description is not None:
             self.description = description
-        if enable_admin_rotation is not None:
-            self.enable_admin_rotation = enable_admin_rotation
         if enable_agentic_runtime_authority is not None:
             self.enable_agentic_runtime_authority = enable_agentic_runtime_authority
         if enable_ai_quorum is not None:
@@ -246,29 +236,6 @@ class DynamicSecretUpdateAliCloud(object):
             self.use_special_characters = use_special_characters
         if user_ttl is not None:
             self.user_ttl = user_ttl
-
-    @property
-    def admin_rotation_interval_days(self):
-        """Gets the admin_rotation_interval_days of this DynamicSecretUpdateAliCloud.  # noqa: E501
-
-        Admin credentials rotation interval (days)  # noqa: E501
-
-        :return: The admin_rotation_interval_days of this DynamicSecretUpdateAliCloud.  # noqa: E501
-        :rtype: int
-        """
-        return self._admin_rotation_interval_days
-
-    @admin_rotation_interval_days.setter
-    def admin_rotation_interval_days(self, admin_rotation_interval_days):
-        """Sets the admin_rotation_interval_days of this DynamicSecretUpdateAliCloud.
-
-        Admin credentials rotation interval (days)  # noqa: E501
-
-        :param admin_rotation_interval_days: The admin_rotation_interval_days of this DynamicSecretUpdateAliCloud.  # noqa: E501
-        :type: int
-        """
-
-        self._admin_rotation_interval_days = admin_rotation_interval_days
 
     @property
     def alicloud_access_key_id(self):
@@ -681,29 +648,6 @@ class DynamicSecretUpdateAliCloud(object):
         """
 
         self._description = description
-
-    @property
-    def enable_admin_rotation(self):
-        """Gets the enable_admin_rotation of this DynamicSecretUpdateAliCloud.  # noqa: E501
-
-        Automatic admin credentials rotation  # noqa: E501
-
-        :return: The enable_admin_rotation of this DynamicSecretUpdateAliCloud.  # noqa: E501
-        :rtype: bool
-        """
-        return self._enable_admin_rotation
-
-    @enable_admin_rotation.setter
-    def enable_admin_rotation(self, enable_admin_rotation):
-        """Sets the enable_admin_rotation of this DynamicSecretUpdateAliCloud.
-
-        Automatic admin credentials rotation  # noqa: E501
-
-        :param enable_admin_rotation: The enable_admin_rotation of this DynamicSecretUpdateAliCloud.  # noqa: E501
-        :type: bool
-        """
-
-        self._enable_admin_rotation = enable_admin_rotation
 
     @property
     def enable_agentic_runtime_authority(self):
